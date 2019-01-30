@@ -1,21 +1,21 @@
 ---
-title: 'Azure AD Connect: справочник по модулю PowerShell ADSyncConfig | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADSyncConfig | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1.
 author: billmath
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.date: 10/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 84be07eeb112711de35853162b798b5f6ed0b2aa
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 1d2d921e02b56e951b4239c15471995eaf3cd0d1
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422768"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813588"
 ---
-# <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncConfig
+# <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADSyncConfig
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1, который входит в состав Azure AD Connect.
 
 
@@ -1367,7 +1367,7 @@ Show-ADSyncADObjectPermissions [-ADobjectDN] <String> [<CommonParameters>]
 ```
 
 ### <a name="description"></a>Описание
-Это функция возвращает все текущие разрешения AD, заданные для данного объекта AD, указанного в параметре -ADobjectDN.
+Эта функция возвращает все текущие разрешения конструктора приложений, заданные для данного объекта конструктора приложений, указанного в параметре — ADobjectDN.
 Значение ADobjectDN должно быть указано в формате различающегося имени.
 
 ### <a name="examples"></a>Примеры

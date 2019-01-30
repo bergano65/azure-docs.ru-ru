@@ -4,7 +4,7 @@ description: Обзор и карта содержимого руководст�
 documentationcenter: ''
 services: active-directory
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 100509c4-0b83-4207-90c8-549ba8372cf7
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: d85157c3f1aafd33a2b996168f2f9eac613a209c
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: d0930de0ac3272d2858e961ec2038093dcc9ccc9
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51344888"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463020"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Рекомендации по разработке архитектуры гибридной идентификации в Azure Active Directory
 Потребительские устройства распространяются в корпоративной среде, и облачные приложения, использующие принцип "Программное обеспечение как услуга" (SaaS), можно легко адаптировать для этих устройств. В результате усложняется управление доступом к приложениям пользователей в различных внутренних центрах обработки данных и облачных платформах.  

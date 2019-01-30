@@ -4,7 +4,7 @@ description: Описываются функциональные возможн�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/25/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 8d351e41eac3c820b9295b3b5cf314428bebc746
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f5a251c3e867035ecc00d449c4fbc1cf980a4f1f
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242999"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461218"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
 Средство синхронизации Azure AD Connect состоит из двух компонентов.
@@ -55,12 +55,12 @@ ms.locfileid: "51242999"
 
 | DirSyncFeature | Комментарий |
 | --- | --- |
-| DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md) |
+| DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md) |
 | DirectoryExtensions |[Синхронизация Azure AD Connect: расширения каталогов](how-to-connect-sync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Позволяет поместить атрибут, являющийся копией другого объекта, на карантин, вместо того чтобы прерывать весь процесс экспорта для этого объекта. |
 | Синхронизация хэша паролей |[Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md) |
 |Сквозная проверка подлинности|[Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](how-to-connect-pta.md)|
-| UnifiedGroupWriteback |[Предварительная версия. Обратная запись групп](how-to-connect-preview.md#group-writeback) |
+| UnifiedGroupWriteback |[Предварительная версия: обратная запись групп](how-to-connect-preview.md#group-writeback) |
 | UserWriteback |Сейчас не поддерживается. |
 
 ## <a name="duplicate-attribute-resiliency"></a>Устойчивость повторяющихся атрибутов

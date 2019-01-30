@@ -1,10 +1,10 @@
 ---
-title: Руководство по настройке Dropbox для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Dropbox для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox for Business.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 0f3a42e4-6897-4234-af84-b47c148ec3e1
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 8e61fe4af83ee72df74027b2e52a3e81db486798
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 3ae85b31e85ecc0f0df6500bc7cfda1719537f02
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44347313"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814195"
 ---
-# <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Dropbox for Business
+# <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Руководство. Настройка автоматической подготовки пользователей в Dropbox for Business
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей Azure AD в Dropbox for Business.
 

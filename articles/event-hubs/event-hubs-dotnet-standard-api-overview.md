@@ -9,12 +9,12 @@ ms.service: event-hubs
 ms.topic: article
 ms.date: 08/13/2018
 ms.author: shvija
-ms.openlocfilehash: 9b952bd96828c4f2c140cb2d75cecb9379895a63
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: f8cd167d8de738674939180e0d81fc9282434155
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746649"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54450461"
 ---
 # <a name="event-hubs-net-standard-api-overview"></a>Обзор API Центров событий для платформы .NET Standard
 
@@ -65,7 +65,7 @@ await eventHubClient.SendAsync(data);
 
 #### <a name="create-a-receiver"></a>Создание приемника
 
-Приемники связаны с определенными секциями. Поэтому для получения всех событий в концентраторе событий необходимо создать несколько экземпляров. Рекомендуем получать сведения о секциях программными средствами без жесткого программирования идентификаторов секций. Для этого можно использовать метод [GetRuntimeInformationAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient#Microsoft_Azure_EventHubs_EventHubClient_GetRuntimeInformationAsync).
+Приемники связаны с определенными секциями. Поэтому для получения всех событий в концентраторе событий необходимо создать несколько экземпляров. Рекомендуется получать сведения о секциях программными средствами, не задавая идентификаторы секций жестко в коде. Для этого можно использовать метод [GetRuntimeInformationAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient#Microsoft_Azure_EventHubs_EventHubClient_GetRuntimeInformationAsync).
 
 ```csharp
 // Create a list to keep track of the receivers

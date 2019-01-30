@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с песочницей Salesforce | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с песочницей Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Salesforce Sandbox.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: ee54c39e-ce20-42a4-8531-da7b5f40f57c
 ms.service: active-directory
@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 48dcb4a3b1e06ab62905092055ba1b48bd0dddb7
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 33d39e617bd55b88d8f04785d937faf176463ee5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49114502"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808822"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Учебник. Интеграция Azure Active Directory с песочницей Salesforce
+# <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Руководство. Интеграция Azure Active Directory с песочницей Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce Sandbox с Azure Active Directory (Azure AD).
 
 Песочницы позволяет создать несколько копий организации в отдельных средах для различных целей, например для разработки, тестирования и обучения, не подвергая риску данные и приложения в рабочей организации Salesforce.
-Дополнительные сведения см. в статье[Sandbox Types and Templates](https://help.salesforce.com/articleView?id=create_test_instance.htm&language=en_us&type=5) (Типы и шаблоны песочниц).
+Дополнительные сведения см. в статье  [Sandbox Types and Templates](https://help.salesforce.com/articleView?id=create_test_instance.htm&language=en_us&type=5) (Типы и шаблоны песочниц).
 
 Интеграция Azure AD с Salesforce Sandbox обеспечивает следующие преимущества:
 
@@ -115,7 +115,7 @@ ms.locfileid: "49114502"
 
     ![Ссылка "Настройка единого входа"](./media/salesforce-sandbox-tutorial/tutorial_general_301.png)
 
-4. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
    
     ![Ссылка "Настройка единого входа"](./media/salesforce-sandbox-tutorial/tutorial_general_302.png)
 
@@ -244,7 +244,7 @@ ms.locfileid: "49114502"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем выберите **All users** (Все пользователи).
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

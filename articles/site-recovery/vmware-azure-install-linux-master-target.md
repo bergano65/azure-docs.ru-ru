@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: befc979b84c5ace3b8c787b184e52f09ada9ea2b
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 7ff73051abc5168b4dc3852a9008adc22d7d56c6
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321418"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811865"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Установка главного целевого сервера Linux для восстановления размещения
 После отработки отказа виртуальных машин в Azure для них можно восстановить размещение на локальном сайте. Для восстановления размещения из Azure на локальном сайте необходимо повторно включить защиту виртуальной машины. Для этого понадобится локальный главный целевой сервер, который будет получать трафик. 
@@ -185,7 +185,7 @@ ms.locfileid: "54321418"
 #### <a name="download-and-install-additional-packages"></a>Скачивание и установка дополнительных пакетов
 
 > [!NOTE]
-> Убедитесь, что система подключена к Интернету, чтобы скачать и установить дополнительные пакеты. Без подключения к Интернету вам придется вручную найти и установить эти RPM.
+> Убедитесь, что система подключена к Интернету, чтобы скачать и установить дополнительные пакеты. Без подключения к Интернету вам придется вручную найти и установить эти пакеты Deb.
 
  `apt-get install -y multipath-tools lsscsi python-pyasn1 lvm2 kpartx`
 

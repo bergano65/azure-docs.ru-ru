@@ -1,9 +1,10 @@
 ---
-заголовок: Создание моделей анализа текста titleSuffix: Студия машинного обучения Azure description: Создание моделей анализа текста в Студии машинного обучения Azure с помощью модулей для предварительной обработки текста, N-грамм или служб хеширования функций: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Создание модели анализа тональности titleSuffix: Студия машинного обучения Azure description: Создание моделей анализа текста в Студии машинного обучения Azure с помощью модулей для предварительной обработки текста, N-грамм или служб хеширования функций: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 14.03.2018
 ---
-# <a name="create-text-analytics-models-in-azure-machine-learning-studio"></a>Создание моделей текстовой аналитики в Студии машинного обучения Azure
+# <a name="create-a-sentiment-analysis-model-in-azure-machine-learning-studio"></a>Создание модели анализа тональности в Студии машинного обучения Azure
+
 Машинное обучения Azure можно использовать для создания и ввода в эксплуатацию моделей текстовой аналитики. Эти модели могут быть полезными, например, при решении проблем с классификацией документов или анализом мнений.
 
 В эксперименте текстовой аналитики, как правило, выполняются следующие действия:

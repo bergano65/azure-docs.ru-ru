@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 01/23/2019
 ms.author: jeffgilb
 ms.reviewer: unknown
-ms.openlocfilehash: b6ec3283121a3403afb80ccad81f313decf16c88
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: a74fb749e130b565c44c637bfc16ff09e3314a05
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52957646"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857171"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
@@ -32,11 +32,31 @@ ms.locfileid: "52957646"
 Рекомендации по устранению неполадок, описанные в этом разделе, сформированы на основе нескольких источников и могут не помочь в решении конкретной проблемы. Примеры кода предоставляются как есть, и ожидаемые результаты не гарантируются. Этот раздел подвержен частым изменениям и обновлениям в связи с улучшениями продукта.
 
 ## <a name="deployment"></a>Развертывание
-### <a name="deployment-failure"></a>Сбой развертывания
+### <a name="general-deployment-failure"></a>Общий сбой развертывания
 Если во время установки возникнет сбой, можно использовать параметр -rerun для скрипта развертывания, чтобы перезапустить развертывание с этапа, завершившегося ошибкой.  
 
 ### <a name="at-the-end-of-asdk-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>В конце развертывания ASDK сеанс PowerShell все еще открыт и выходные данные не отображаются.
 Это поведение, скорее всего, является результатом поведения по умолчанию командного окна PowerShell (если оно выбрано). Развертывание комплекта разработки завершилось успешно, но скрипт был приостановлен при выборе окна. Чтобы узнать, завершилась ли установка, выполните поиск по слову "select" в строке заголовка командного окна.  Нажмите клавишу ESC, чтобы отменить выбор, после чего должно отобразиться сообщение о завершении.
+
+### <a name="deployment-fails-due-to-lack-of-external-access"></a>Происходит сбой развертывания из-за отсутствия доступа к внешним ресурсам
+При сбое развертывания на этапах, где требуется внешний доступ, будет возвращаться исключение, как в следующем примере:
+
+```
+An error occurred while trying to test identity provider endpoints: System.Net.WebException: The operation has timed out.
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()at, <No file>: line 48 - 8/12/2018 2:40:08 AM
+```
+Если эта ошибка возникает, проверьте, выполнены ли все минимальные требования к сети, просмотрев [документацию по сетевому трафику развертывания](deployment-networking.md). Средство проверки сети также доступно для партнеров в составе набора средств партнеров.
+
+Сбои при развертывании с исключением выше обычно возникают из-за проблемы с подключением к ресурсам в Интернете.
+
+Чтобы убедиться, что вы столкнулись именно с такой проблемой, вы можете выполнить следующие действия:
+
+1. Откройте PowerShell.
+2. Войдите на виртуальную машину WAS01 или любую из виртуальных машин ERCS с помощью командлета Enter-PSSession.
+3. Выполните командлет: Test-NetConnection login.windows.net -port 443
+
+Если эта команда не выполняется, убедитесь, что коммутатор TOR и другие сетевые устройства настроены для [разрешения сетевого трафика](azure-stack-network.md).
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 ### <a name="default-image-and-gallery-item"></a>Элемент коллекции и образ по умолчанию

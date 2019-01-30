@@ -3,21 +3,21 @@ title: Поддержка Azure Active Directory B2C | Документация 
 description: Узнайте, как регистрировать запросы на поддержку для Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/06/2016
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 04eae00d40470d5f6c992d9a0c8c9b0b49d7495f
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 003a65e0c9cc70639850ab9bacef5df3762dedc3
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007643"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54852444"
 ---
-# <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C: регистрация запросов в службу поддержки
+# <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C Регистрация запросов в службу поддержки
 Вы можете регистрировать запросы в службу поддержки для Azure Active Directory (AD) B2C на портале Azure следующим образом.
 
 1. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).

@@ -8,15 +8,15 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 01/22/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 48d3bc7ecdd66565372be8347897202cae3ec158
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 97de65acf724d12afd131ede25713e8f29d30bad
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53579793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54477641"
 ---
 # <a name="configure-recognize-text-containers"></a>Настройка контейнера распознавания текста
 
@@ -32,6 +32,7 @@ ms.locfileid: "53579793"
 * [Выставление счетов](#billing-configuration-setting)
 * [Лицензионное соглашение](#eula-configuration-setting)
 * [Fluentd](#fluentd-configuration-settings)
+* [Параметры учетных данных прокси-сервера HTTP](#http-proxy-credentials-settings)
 * [ведению журналов](#logging-configuration-settings)
 * [Подключения](#mounts-configuration-settings)
 
@@ -116,6 +117,11 @@ ms.locfileid: "53579793"
 | `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
 | `UseTLS` | Логическое | Указывает, должен ли контейнер использовать протокол SSL/TLS для связи с сервером Fluentd. По умолчанию для этого параметра используется значение false. |
 
+
+## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
+
+[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
+
 ## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журнала
 
 Параметры конфигурации `Logging` управляют поддержкой ведения журнала ASP.NET Core для контейнера. Вы можете использовать для контейнера те же параметры конфигурации и значения, что и для приложения ASP.NET Core. Контейнеры Компьютерного зрения поддерживают указанные ниже поставщики ведения журналов:
@@ -164,3 +170,7 @@ ms.locfileid: "53579793"
   ```Docker
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 --mount type=bind,source=D:\Output,destination=/output containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0 ApiKey=0123456789 Logging:Disk:Format=json
   ```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)

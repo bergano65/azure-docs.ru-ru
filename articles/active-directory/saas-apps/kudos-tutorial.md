@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Kudos | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kudos | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kudos.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 39c47ce6-4944-47ba-8f53-3afa95398034
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 878bbe16e2d33375c160c17d458654541e2f4174
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5e20a58542f4bc8220e9474a746d90dd89e5c5cb
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824904"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kudos"></a>Руководство. Интеграция Azure Active Directory с Kudos
 
@@ -152,7 +152,7 @@ ms.locfileid: "39435185"
     д. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

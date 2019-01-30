@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Huddle | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Huddle | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Huddle.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 8389ba4c-f5f8-4ede-b2f4-32eae844ceb0
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 050a5a210ab10a557b149513a0416b188f4618ba
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: d9d145aa5da636574426f1ff4ad978eb857ab252
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48885909"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827930"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-huddle"></a>Руководство. Интеграция Azure Active Directory с Huddle
 
@@ -105,7 +105,7 @@ ms.locfileid: "48885909"
 
     ![Настройка единого входа](./media/huddle-tutorial/tutorial_general_300.png)
 
-3. В диалоговом окне **Выбор метода единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
     ![Настройка единого входа](./media/huddle-tutorial/tutorial_general_301.png)
 
@@ -177,7 +177,7 @@ ms.locfileid: "48885909"
 
     ![Создание тестового пользователя Azure AD](./media/huddle-tutorial/create_aaduser_01.png) 
 
-3. В разделе свойств пользователя выполните описанные ниже действия.
+3. В разделе свойств пользователя сделайте следующее.
 
     ![Создание тестового пользователя Azure AD](./media/huddle-tutorial/create_aaduser_02.png)
 
@@ -224,7 +224,7 @@ ms.locfileid: "48885909"
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к Huddle, чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, затем **Все приложения**.
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
     ![Назначение пользователя][201]
 
@@ -240,7 +240,7 @@ ms.locfileid: "48885909"
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем нажмите кнопку **Выбрать** в нижней части экрана.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
 6. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 

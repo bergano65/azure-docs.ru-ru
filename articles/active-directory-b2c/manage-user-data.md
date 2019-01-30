@@ -3,19 +3,19 @@ title: Управление данными пользователей в Azure A
 description: Сведения о том, как удалить или экспортировать пользовательские данные в Azure AD B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/06/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 49e9efa537ad1f2a1d7f06dd7f8a68a409c7d4e0
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: fc49191fe6141470ddd5304bdd12cec1d40bd1ee
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42144696"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54854026"
 ---
 # <a name="manage-user-data-in-azure-active-directory-b2c"></a>Управление пользовательскими данными в Azure Active Directory B2C
 
@@ -46,8 +46,8 @@ ms.locfileid: "42144696"
 
 Пользовательские данные Azure AD B2C ограничены следующим:
 
-- **Данные, хранящиеся в Azure Active Directory** — данные можно извлечь при аутентификации пользователя в Azure AD B2C, используя идентификатор объекта или любое учетное имя, например адрес электронной почты или имя пользователя. 
-- **Отчет о событиях аудита для конкретного пользователя** — данные индексируются с использованием идентификатора объекта.
+- **Данные, хранящиеся в Azure Active Directory**: данные можно извлечь при аутентификации пользователя в Azure AD B2C, используя идентификатор объекта или любое учетное имя, например адрес электронной почты или имя пользователя. 
+- **Отчет о событиях аудита для конкретного пользователя**: данные индексируются с использованием идентификатора объекта.
 
 В следующем примере операции экспорта данных действия, выполняемые приложением, могут также выполняться серверным процессом или пользователем с ролью администратора в каталоге:
 

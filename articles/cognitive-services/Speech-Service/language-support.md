@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 27b952fb1a901ff716f25cc7d512f860f639fb02
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 688194c8d5ec0c2594d8c7178d8cae3925b8e482
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53632624"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413380"
 ---
 # <a name="language-and-region-support-for-speech-service-api"></a>Поддержка языков и регионов в API службы "Речь"
 
@@ -63,6 +63,9 @@ API распознавания речи Microsoft поддерживает сл�
 ## <a name="text-to-speech"></a>Преобразование текста в речь
 
 REST API преобразования текста в речь предлагает следующие голоса, каждый из которых поддерживает определенный язык и диалект, определяемые языковым стандартом.
+
+> [!IMPORTANT]
+> Стандартные, пользовательские и нейронные голосовые модели предлагаются по разным ценам. Дополнительные сведения см. на странице [Цены на Cognitive Services, службы речи](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
 
 ### <a name="neural-voices-preview"></a>Нейронные голосовые модели (предварительный просмотр)
 

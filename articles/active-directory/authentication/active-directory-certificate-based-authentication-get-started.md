@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: annaba
-ms.openlocfilehash: 3172ba12fbbd0135d1a5a3684145787c83aad040
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 7d8c0a837f5618580c5e76e5ca97e19844b95698
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242421"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427174"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "50242421"
 - Устройство клиента должно иметь доступ хотя бы к одному центру сертификации, выдающему сертификаты клиента.
 - Для аутентификации вашего клиента должен быть выдан сертификат клиента.
 
-## <a name="step-1-select-your-device-platform"></a>Шаг 1. Выбор платформы устройства
+## <a name="step-1-select-your-device-platform"></a>Шаг 1. Выбор платформы устройства
 
 При выборе платформы устройства для начала необходимо ознакомиться со следующими сведениями:
 
@@ -55,7 +55,7 @@ ms.locfileid: "50242421"
 - [Android](active-directory-certificate-based-authentication-android.md)
 - [iOS](active-directory-certificate-based-authentication-ios.md)
 
-## <a name="step-2-configure-the-certificate-authorities"></a>Шаг 2. Настройка центров сертификации
+## <a name="step-2-configure-the-certificate-authorities"></a>Шаг 2. Настройка центров сертификации
 
 Чтобы настроить в Azure Active Directory центры сертификации, для каждого центра сертификации отправьте следующие данные:
 
@@ -133,7 +133,7 @@ ms.locfileid: "50242421"
     $c[0].AuthorityType=1
     Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0]
 
-## <a name="step-3-configure-revocation"></a>Шаг 3. Настройка отзыва
+## <a name="step-3-configure-revocation"></a>Шаг 3. Настройка отзыва
 
 Чтобы отозвать сертификат клиента, Azure Active Directory извлекает список отзыва сертификатов (CRL) из URL-адресов, переданных вместе с информацией центра сертификации, и кэширует его. Метка времени последней публикации (свойство**Дата вступления в силу** ) в списке отзыва сертификатов обеспечивает допустимость этого списка. Список отзыва сертификатов периодически опрашивается для отзыва доступа к сертификатам, которые числятся в этом списке.
 
@@ -161,7 +161,7 @@ ms.locfileid: "50242421"
 
 Задаваемая дата должна быть в будущем. Если дата не в будущем, свойство **StsRefreshTokensValidFrom** не будет задано. Если дата в будущем, для **StsRefreshTokensValidFrom** задается актуальное время (не дата, указанная командой Set-MsolUser).
 
-## <a name="step-4-test-your-configuration"></a>Шаг 4. Тестирование конфигурации
+## <a name="step-4-test-your-configuration"></a>Шаг 4. Тестирование конфигурации
 
 ### <a name="testing-your-certificate"></a>Тестирование сертификата
 

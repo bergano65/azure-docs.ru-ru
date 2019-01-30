@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Mercer BenefitsCentral (MBC) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mercer BenefitsCentral (MBC).
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 3788b28c-49aa-4208-9acd-630362008e89
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2017
 ms.author: jeedes
-ms.openlocfilehash: 963aff019c849b2637819296185e138d531ddef2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 0bb6b5ac2a52f559461077d6318eee8ed52aedc2
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422541"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809522"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство по интеграции Azure Active Directory с Mercer BenefitsCentral (MBC)
+# <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство. Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC)
 
 В этом руководстве описано, как интегрировать Mercer BenefitsCentral (MBC) с Azure Active Directory (Azure AD).
 
@@ -132,7 +132,7 @@ ms.locfileid: "39422541"
 1. Чтобы настроить единый вход на стороне **Mercer BenefitsCentral (MBC)**, нужно отправить скачанный **XML-файл метаданных** и **URL-адрес службы единого входа SAML** [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39422541"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Если щелкнуть элемент "Mercer BenefitsCentral (MBC)" на панели доступа, вы автоматически войдете в приложение Mercer BenefitsCentral (MBC).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

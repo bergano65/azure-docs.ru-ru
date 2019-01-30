@@ -1,10 +1,10 @@
 ---
-title: 'Azure AD Connect: автоматическое обновление | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: автоматическое обновление | Документация Майкрософт'
 description: В этом разделе описывается встроенная функция автоматического обновления в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 6b395e8f-fa3c-4e55-be54-392dd303c472
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 09/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 72503c9f073a046b81001322cdbb4fb8a1af76cf
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 2c59d86de43772de9480edd3af187379220da8e8
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47224126"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54470670"
 ---
-# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
+# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
 
 ## <a name="overview"></a>Обзор

@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: edd5da35d33aa7e79fc3e972f3ea1cfe2ef40973
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: c2151a4b1eb2a853ed343f6720b4f53af5e5e449
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631419"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54449526"
 ---
 # <a name="implement-the-device-model-behavior"></a>Реализация поведения модели устройства
 
@@ -23,7 +23,7 @@ ms.locfileid: "53631419"
 - Файлы JavaScript **метода**, которые запускаются, когда решение вызывает метод на устройстве.
 
 > [!NOTE]
-> Поведение моделей устройств предназначено только для имитированных устройств, размещенных в службе моделирования устройств. Если вам требуется создать физическое устройство, см. статью [Подключение устройства к акселератору решений для удаленного мониторинга](iot-accelerators-connecting-devices.md).
+> Поведение моделей устройств предназначено только для имитированных устройств, размещенных в службе моделирования устройств. Если вам требуется создать реальное устройство, см. статью [Подключение устройства к акселератору решений для удаленного мониторинга (Node.js)](iot-accelerators-connecting-devices.md).
 
 В этой статье раскрываются следующие темы:
 

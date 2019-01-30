@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 12/09/2017
 ms.author: milanga;juliako;
-ms.openlocfilehash: 8488b968fe2ab823479d70a98ba86be97b28f67d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 12af87ab0a8b15528acbd9ce8a1bc92f478aba28
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783623"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820977"
 ---
 # <a name="detect-motions-with-azure-media-analytics"></a>Обнаружение движения с помощью медиа-аналитики Azure
 ## <a name="overview"></a>Обзор
@@ -31,7 +31,7 @@ ms.locfileid: "33783623"
 В этой статье приводятся сведения об **Azure Media Motion Detector** и демонстрируется использование этого обработчика с пакетом SDK служб мультимедиа для .NET.
 
 ## <a name="motion-detector-input-files"></a>Входные файлы детектора движения
-Видеофайлы. Сейчас поддерживаются следующие форматы: MP4, MOV и WMV.
+Видеофайлы. В настоящее время поддерживаются следующие форматы: MP4, MOV и WMV.
 
 ## <a name="task-configuration-preset"></a>Конфигурация задачи (предустановка)
 При создании задачи с использованием **Azure Media Motion Detector**необходимо задать предустановку конфигурации. 
@@ -44,7 +44,7 @@ ms.locfileid: "33783623"
 | sensitivityLevel |Строка: low, medium, high |Задает уровень чувствительности, используемый при предоставлении сведений о движениях. Измените его, чтобы настроить число ложных срабатываний. |medium |
 | frameSamplingValue |Положительное целое число |Задает частоту, с которой выполняется алгоритм. 1 соответствует каждому кадру, 2 — каждому второму кадру и т. д. |1 |
 | detectLightChange |Логическое значение: true или false |Определяет, будут ли сведения об изменениях освещения отображены в результатах |False |
-| mergeTimeThreshold |xs-time: "ЧЧ:ММ:СС", <br/>например 00:00:03 |Указывает промежуток времени между событиями движения. Произошедшие в рамках этого промежутка два события объединяются и отображаются в результатах как одно. |00:00:00 |
+| mergeTimeThreshold |Xs-time: (чч:мм:сс)<br/>Пример: 00:00:03 |Указывает промежуток времени между событиями движения. Произошедшие в рамках этого промежутка два события объединяются и отображаются в результатах как одно. |00:00:00 |
 | detectionZones |Массив зон обнаружения: <br/>зона обнаружения представляет собой массив из трех или более точек 3;<br/>точка — это координата по оси x и y в диапазоне от 0 до 1. |Выводит список многоугольных зон обнаружения, которые будут использоваться.<br/>В результатах в качестве зон отображаются идентификаторы (первый идентификатор — 0). |Отдельная зона, которая охватывает весь кадр. |
 
 ### <a name="json-example"></a>Пример JSON-файла
@@ -280,7 +280,7 @@ namespace VideoMotionDetection
             task.InputAssets.Add(asset);
 
             // Add an output asset to contain the results of the job.
-            task.OutputAssets.AddNew("My Video Motion Detectoion Output Asset", AssetCreationOptions.None);
+            task.OutputAssets.AddNew("My Video Motion Detection Output Asset", AssetCreationOptions.None);
 
             // Use the following event handler to check job progress.  
             job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);

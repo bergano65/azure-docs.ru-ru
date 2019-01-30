@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RightAnswers | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RightAnswers | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении RightAnswers.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7f09e25a-a716-41e1-8ca3-fd00e3d1b8cc
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/09/2017
 ms.author: jeedes
-ms.openlocfilehash: fc589554b6ce2bb3d6aa1f52d9eb697c211d2a88
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 610ca350ade6bbb6b66706b56074c8b9553b22b3
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421674"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827567"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Учебник. Интеграция Azure Active Directory с RightAnswers
+# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство. Интеграция Azure Active Directory с RightAnswers
 
 В этом учебнике описано, как интегрировать приложение RightAnswers с Azure Active Directory (Azure AD).
 
@@ -134,7 +134,7 @@ ms.locfileid: "39421674"
     >Как только единый вход для вашей подписки будет включен, вы получите уведомление.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

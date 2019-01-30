@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: juliako
-ms.openlocfilehash: 666be9c2ebba9dc9607e4188b2390fff49fd59b9
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: e83b634c11d0349f4917c063cde54e03fa1cac40
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53554662"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810709"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-v2-api"></a>Анализ выходных данных Индексатора видео, полученных с помощью API версии 2
 
@@ -166,7 +166,7 @@ ms.locfileid: "53554662"
 |audioEffects|Измерение [audioEffects](#audioEffects).|
 |sentiments|Измерение [sentiments](#sentiments).|
 |visualContentModeration|Измерение [VisualContentModeration](#visualcontentmoderation).|
-|textualConentModeration|Измерение [textualConentModeration](#textualconentmoderation).|
+|textualContentModeration|Измерение [textualConentModeration](#textualcontentmoderation).|
 |emotions| Измерение [emotions](#emotions).|
 |topics|Измерение [topics](#topics).|
 
@@ -187,7 +187,7 @@ ms.locfileid: "53554662"
   "audioEffects": ...,
   "sentiments": ...,
   "visualContentModeration": ...,
-  "textualConentModeration": ...
+  "textualContentModeration": ...
 }
 ```
 
@@ -334,7 +334,7 @@ instances|Список диапазонов времени этого блока
 |name|Имя лица. Это может быть "Неизвестный № 0", идентифицированная знаменитость или заданный клиентом человек.|
 |confidence|Достоверности идентификации лица.|
 |description|Текстовое описание знаменитости. |
-|thumbnalId|Идентификатор эскиза лица.|
+|thumbnailId|Идентификатор эскиза лица.|
 |knownPersonId|Если это известный человек, значением будет внутренний идентификатор.|
 |referenceId|Если это знаменитость, найденная с помощью Bing, значением будет ее идентификатор Bing.|
 |referenceType|В настоящее время только Bing.|
@@ -662,7 +662,7 @@ instances|Список диапазонов времени этого блока
 ] 
 ```
 
-#### <a name="textualconentmoderation"></a>textualConentModeration 
+#### <a name="textualcontentmoderation"></a>textualContentModeration 
 
 |ИМЯ|ОПИСАНИЕ|
 |---|---|

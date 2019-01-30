@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Apex Portal | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Apex Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Apex Portal.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: db204a46-6460-4ace-bdbb-4353846723ad
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: jeedes
-ms.openlocfilehash: 4c267313e4851e621b57aa1d2bddc73118405776
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 25fb68d3f29e0b3589e582551b88cc1cc7b5392f
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054239"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819855"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-apex-portal"></a>Руководство. Интеграция Azure Active Directory с Apex Portal
 
@@ -152,7 +152,7 @@ ms.locfileid: "39054239"
 8. Чтобы настроить единый вход на стороне **Apex Portal**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Apex Portal](mailto:support@apexanalytix.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -189,9 +189,9 @@ ms.locfileid: "39054239"
 ### <a name="create-an-apex-portal-test-user"></a>Создание тестового пользователя Apex Portal
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Apex Portal. Приложение Apex Portal поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Apex Portal (если он еще не создан).
- 
-> [!NOTE]
-> Если вам нужно вручную создать пользователя, необходимо обратиться в [службу поддержки Apex Portal](mailto:support@apexanalytix.com).
+ 
+> [!NOTE]
+> Если нужно создать пользователя вручную, обратитесь в  [службу поддержки Apex Portal](mailto:support@apexanalytix.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -228,7 +228,7 @@ ms.locfileid: "39054239"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Apex Portal на панели доступа, вы автоматически войдете в приложение Apex Portal.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

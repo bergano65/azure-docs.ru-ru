@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a68e4f70dac7aace9d49a41ecf282525ce6b1fd6
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: 665ceabe062fce454db377a384b1d12ba6868c40
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53752883"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54851731"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
@@ -33,6 +33,8 @@ az acr login --name <acrName>
 ```
 
 При входе с помощью команды `az acr login` интерфейс командной строки использует маркер, созданный при выполнении команды [az login](/cli/azure/reference-index#az-login), чтобы прозрачно выполнить аутентификацию вашего сеанса в реестре. После входа таким образом ваши учетные данные сохраняются в кэше, и при последующем выполнении команды `docker` не потребуется вводить имя пользователя или пароль. Если срок действия маркера истекает, его можно обновить его с помощью команды `az acr login`, чтобы повторно пройти аутентификацию. Использование `az acr login` с удостоверениями Azure обеспечивает [доступ на основе ролей](../role-based-access-control/role-assignments-portal.md).
+
+В некоторых сценариях может потребоваться вход в реестр с помощью собственных отдельных идентификаторов в Azure AD. Для сценариев между службами или для удовлетворения потребностей рабочей группы, в которой не требуется управлять отдельным доступом, вы можете войти в систему с помощью [управляемого удостоверения для ресурсов Azure](container-registry-authentication-managed-identity.md).
 
 ## <a name="service-principal"></a>Субъект-служба
 

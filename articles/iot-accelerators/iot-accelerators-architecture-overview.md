@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: philmea
-ms.openlocfilehash: 5fb615ff042cc5cdd3b6b8e42e4d91b161ebf445
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: ba5eb50dcf800c186124db348ac584ff6f55cebb
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602381"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467321"
 ---
 # <a name="introduction-to-the-azure-iot-reference-architecture"></a>Общие сведения об эталонной архитектуре Интернета вещей Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "53602381"
 
 Маршрутизация может отправлять данные телеметрии на одну или несколько конечных точек хранения, процессов анализа и действий. Решение может объединять этапы в разных порядках и обрабатывать их одновременно выполняемыми параллельными задачами.
 
-Решение удаленного мониторинга использует [Azure Stream Analytics](/azure/stream-analytics/) для обработки потока данных. Механизм правил в решении использует запросы Stream Analytics для создания сигналов тревоги и действий. Например, решение может использовать запрос, чтобы определить, когда средняя температура в секции хранения грузовика в течение пяти минут падает ниже 36 градусов.
+Решение удаленного мониторинга использует [Azure Stream Analytics](/azure/stream-analytics/) для обработки потока данных. Механизм правил в решении использует запросы Stream Analytics для создания оповещений и действий. Например, решение может использовать запрос, чтобы определить, когда средняя температура в секции хранения грузовика в течение пяти минут падает ниже 36 градусов.
 
 ### <a name="storage"></a>Хранилище
 

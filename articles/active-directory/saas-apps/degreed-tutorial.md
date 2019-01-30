@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Degreed | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Degreed | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Degreed.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 1eda2d1c-b5e2-4c53-ad46-bbeb91cd119a
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: f2e1be1bbbd69f7214080bf81ced96e0fac616d5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 3a5daf7f036331e66b819d59d07d647f6c28d6df
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438462"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820195"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-degreed"></a>Учебник. Интеграция Azure Active Directory с Degreed
+# <a name="tutorial-azure-active-directory-integration-with-degreed"></a>Руководство. Интеграция Azure Active Directory с Degreed
 
 В этом руководстве описано, как интегрировать Degreed с Azure Active Directory (Azure AD).
 
@@ -132,7 +132,7 @@ ms.locfileid: "39438462"
 1. Чтобы настроить единый вход на стороне **Degreed**, отправьте в [службу поддержки Degreed](mailTo:admin@degreed.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

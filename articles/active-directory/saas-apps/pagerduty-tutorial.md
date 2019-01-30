@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с PagerDuty | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с PagerDuty | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PagerDuty.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 0410456a-76f7-42a7-9bb5-f767de75a0e0
 ms.service: active-directory
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 0e571880d9893c0027c200c6f49dc704fea09ead
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 703bc11ec7b0de0e8b0cfe3b99b7516afe8cac0b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39443704"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810029"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство по интеграции Azure Active Directory с PagerDuty
+# <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство. Интеграция Azure Active Directory с PagerDuty
 
 В этом руководстве описано, как интегрировать PagerDuty с Azure Active Directory (Azure AD).
 

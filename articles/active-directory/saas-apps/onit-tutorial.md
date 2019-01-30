@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Onit | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Onit | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Onit.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: bc479a28-8fcd-493f-ac53-681975a5149c
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2017
 ms.author: jeedes
-ms.openlocfilehash: a93acc79fc447018b5cf63b2e2456bc394c1f78e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 80ae8d6a1e27d13bc6750779f2e38649c49e2498
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425975"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814755"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-onit"></a>Учебник. Интеграция Azure Active Directory с Onit
+# <a name="tutorial-azure-active-directory-integration-with-onit"></a>Руководство. Интеграция Azure Active Directory с Onit
 
 В этом руководстве описано, как интегрировать Onit с Azure Active Directory (Azure AD).
 
@@ -180,7 +180,7 @@ ms.locfileid: "39425975"
     d. В текстовое поле **Idp Cert Fingerprint (SHA1)** (Отпечаток сертификата IDP в формате SHA1) вставьте **отпечаток**, скопированный на портале Azure.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -272,7 +272,7 @@ ms.locfileid: "39425975"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Onit на панели доступа, вы автоматически войдете в приложение Onit.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

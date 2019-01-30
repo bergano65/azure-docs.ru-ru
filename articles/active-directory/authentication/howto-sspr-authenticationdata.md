@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: eb3c1177f86f4c595280521f4dbcbe8081f68895
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: f30a0d80b40626530ecebdb129daff4a0c5215fc
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296250"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426205"
 ---
 # <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
 
@@ -75,7 +75,7 @@ ms.locfileid: "46296250"
 
 * **Запасной адрес электронной почты**;
 * **Мобильный телефон**;
-* **Рабочий телефон** — его можно указать, только если это значение не синхронизируется с локальным каталогом.
+* **Рабочий телефон** — его можно указать, только если это значение не синхронизируется с локальным каталогом.
 
 ### <a name="use-powershell-version-1"></a>Использование PowerShell версии 1
 

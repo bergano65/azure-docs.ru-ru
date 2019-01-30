@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: предотвращение случайного удаления | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: предотвращение случайного удаления | Документация Майкрософт'
 description: В этом разделе описывается функция предотвращения случайного удаления в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 6b852cb4-2850-40a1-8280-8724081601f7
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6a535d776da216029b905fb604ed378449a81082
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 25bc3d0c0517278f20cba4fd4beb2fc4d82b66f1
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46309713"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464159"
 ---
-# <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращение случайного удаления
+# <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращения случайного удаления
 В этом разделе описывается функция предотвращения случайного удаления в Azure AD Connect.
 
 При установке Azure AD Connect функция предотвращения случайного удаления включается по умолчанию с настроенным запретом экспортировать более 500 операций удаления. Эта функция защищает от случайных изменений конфигурации и изменений в локальном каталоге, которые могут повлиять на большое количество пользователей и других объектов.
@@ -68,5 +68,5 @@ ms.locfileid: "46309713"
 ## <a name="next-steps"></a>Дополнительная информация
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

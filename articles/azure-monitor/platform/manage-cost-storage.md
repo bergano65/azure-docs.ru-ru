@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 262c81dbf2c094b6a823a8320a0657f2767bc20c
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.subservice: ''
+ms.openlocfilehash: 418d334133e1c223f2349ce79a51b229072c31e9
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332325"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475328"
 ---
 # <a name="manage-usage-and-costs-for-log-analytics"></a>Управление использованием и затратами для Log Analytics
 
@@ -335,4 +335,5 @@ ms.locfileid: "54332325"
 * Измените [конфигурацию счетчика производительности](data-sources-performance-counters.md).
 * Сведения об изменении параметров сбора событий см. в статье [Источники данных для журнала событий Windows в Log Analytics](data-sources-windows-events.md).
 * Сведения об изменении конфигурации системного журнала см. в статье [Источники данных для журнала событий Windows в Log Analytics](data-sources-syslog.md).
+
 

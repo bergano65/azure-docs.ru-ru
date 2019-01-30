@@ -4,12 +4,12 @@ ms.service: site-recovery
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: raynew
-ms.openlocfilehash: 4b0c8ad227b9aa8a0692ff453c3751aaa38a4849
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 9d9790c9b3dbe3b130be999dd76092ae64f7b52c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50166494"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54841452"
 ---
 |Имя параметра| type | ОПИСАНИЕ| Возможные значения|
 |-|-|-|-|
@@ -17,7 +17,7 @@ ms.locfileid: "50166494"
 |/InstallLocation|Обязательно|Папка для установки компонентов.| Любая папка на компьютере.|
 |/MySQLCredsFilePath|Обязательно|Путь к файлу, в котором хранятся учетные данные сервера MySQL.|Этот файл должен быть в формате, указанном ниже.|
 |/VaultCredsFilePath|Обязательно|Путь к файлу с учетными данными хранилища.|Допустимый путь к файлу.|
-|/EnvType|Обязательно|Тип среды, которую необходимо защитить. |VMware<br>NonVMware|
+|/EnvType|Обязательно|Тип среды, которую необходимо защитить |VMware<br>NonVMware|
 |/PSIP|Обязательно|IP-адрес сетевой карты для передачи данных репликации.| Любой допустимый IP-адрес|
 |/CSIP|Обязательно|IP-адрес сетевой карты, передачу данных через который ожидает сервер конфигурации.| Любой допустимый IP-адрес|
 |/PassphraseFilePath|Обязательно|Полный путь к расположению файла с парольной фразой.|Допустимый путь к файлу.|

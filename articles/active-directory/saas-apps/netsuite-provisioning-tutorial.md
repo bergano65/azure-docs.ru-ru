@@ -1,10 +1,10 @@
 ---
-title: Руководство по настройке Netsuite OneWorld для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Netsuite OneWorld для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Netsuite OneWorld.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 8a6d3994-ee33-4a6f-b0a2-9d0389467f16
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 81e590297283a8fe88d9257e201259056a3e3744
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: ef0c2f12e36150b044047214c43e88090bd61f68
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51823863"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54826587"
 ---
-# <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство по настройке Netsuite для автоматической подготовки пользователей
+# <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство. Настройка Netsuite для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Netsuite OneWorld и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Netsuite.
 

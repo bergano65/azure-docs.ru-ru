@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с IMAGE WORKS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с IMAGE WORKS | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в IMAGE WORKS.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 635d86a1-b512-442d-8851-3b18ec1a24a5
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: jeedes
-ms.openlocfilehash: 5d0ee49bf2a792e855ed020eba74db1d15278fad
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 4f1636d32782bcef31c1cea98eb9e91d6d7a5878
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442689"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54826299"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-image-works"></a>Руководство по интеграции Azure Active Directory с приложением IMAGE WORKS
+# <a name="tutorial-azure-active-directory-integration-with-image-works"></a>Руководство. Интеграция Azure Active Directory с IMAGE WORKS
 
 В этом руководстве описано, как интегрировать IMAGE WORKS с Azure Active Directory (Azure AD).
 
@@ -132,7 +132,7 @@ ms.locfileid: "39442689"
 1. Чтобы настроить единый вход на стороне **IMAGE WORKS**, нужно отправить **скачанный сертификат в кодировке Base64, URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки IMAGE WORKS](mailto:iw-sd-support@fujifilm.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -169,7 +169,7 @@ ms.locfileid: "39442689"
  
 ### <a name="create-a-image-works-test-user"></a>Создание тестового пользователя IMAGE WORKS
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении IMAGE WORKS. Обратитесь в [службу поддержки IMAGE WORKS](mailto:iw-sd-support@fujifilm.com), чтобы добавить пользователей на платформу IMAGE WORKS. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении IMAGE WORKS. Обратитесь в  [службу поддержки IMAGE WORKS](mailto:iw-sd-support@fujifilm.com) , чтобы добавить пользователей на платформу IMAGE WORKS. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -206,7 +206,7 @@ ms.locfileid: "39442689"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку IMAGE WORKS на панели доступа, вы автоматически войдете в приложение IMAGE WORKS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

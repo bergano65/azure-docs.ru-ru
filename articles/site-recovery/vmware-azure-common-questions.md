@@ -8,12 +8,12 @@ services: site-recovery
 ms.date: 12/31/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 90f3a4571e485e52a47eda34eacf6367aef35933
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 703d255a962dbac7a430404835c6d45c358d99a7
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320996"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478112"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -43,7 +43,23 @@ ms.locfileid: "54320996"
 ### <a name="does-my-azure-account-need-permissions-to-create-vms"></a>Требуются ли учетной записи Azure разрешения на создание виртуальных машин?
 Если вы являетесь администратором подписки, у вас есть необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
 
+## <a name="azure-site-recovery-components-upgrade"></a>Обновление компонентов Azure Site Recovery
 
+### <a name="my-mobility-agentconfiguration-serverprocess-server-version-is-very-old-and-my-upgrade-has-failed-how-should-i-upgrade-to-latest-version"></a>Моя версия агента мобильности/сервера конфигурации/сервера обработки очень старая и обновление завершилось сбоем. Как выполнить обновление до последней версии?
+
+Azure Site Recovery использует модель поддержки N-4. Подробнее об обновлении очень старых версий см. в нашем [заявлении о поддержке](https://aka.ms/asr_support_statement).
+
+### <a name="where-can-i-find-the-release-notesupdate-rollups-of-azure-site-recovery"></a>Где можно найти заметки о выпуске и накопительные пакеты обновления Azure Site Recovery?
+
+Дополнительные сведения см. в [документации](https://aka.ms/asr_update_rollups) о выпуске. Ссылки на установочные файлы соответствующих компонентов можно найти в каждом накопительном обновлении.
+
+### <a name="how-should-i-upgrade-site-recovery-components-for-on-premises-vmware-or-physical-site-to-azure"></a>Как обновить компоненты Site Recovery для локальных машин VMware или физического сайта до версии Azure?
+
+Чтобы обновить компоненты, следуйте этому [руководству](https://aka.ms/asr_vmware_upgrades).
+
+## <a name="is-reboot-of-source-machine-mandatory-for-each-upgrade"></a>Обязательно ли перезагружать исходный компьютер для каждого обновления?
+
+Хотя это рекомендуется, это не обязательно для каждого обновления. Рекомендации см. [здесь](https://aka.ms/asr_vmware_upgrades).
 
 ## <a name="on-premises"></a>Локальная система
 
@@ -142,7 +158,7 @@ Site Recovery реплицирует данные из локальной сре
 Это возможно, однако на виртуальной машине Azure, где запущен сервер конфигурации, необходимо настроить обмен данными с локальными инфраструктурой и виртуальными машинами VMware. Это может вызвать задержки и повлиять на текущую репликацию.
 
 ### <a name="how-do-i-update-the-configuration-server"></a>Как обновить сервер конфигурации?
-[Подробнее](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server) об обновлении сервера конфигурации. Последние сведения об обновлении можно найти на [странице обновлений Azure](https://azure.microsoft.com/updates/?product=site-recovery). Вы также можете напрямую скачать последнюю версию сервера конфигурации из [Центра загрузки Майкрософт](https://aka.ms/asrconfigurationserver).
+[Подробнее](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server) об обновлении сервера конфигурации. Последние сведения об обновлении можно найти на [странице обновлений Azure](https://azure.microsoft.com/updates/?product=site-recovery). Вы также можете напрямую скачать последнюю версию сервера конфигурации из [Центра загрузки Майкрософт](https://aka.ms/asrconfigurationserver). Если ваша версия старше 4-ой, обратитесь к [заявлению о поддержке](https://aka.ms/asr_support_statement), чтобы получить руководство по обновлению.
 
 ### <a name="should-i-backup-the-deployed-configuration-server"></a>Необходимо ли делать резервную копию развернутого сервера конфигурации?
 Мы рекомендуем создавать плановые резервные копии сервера конфигурации. Для успешного восстановления размещения виртуальная машина должна существовать в базе данных сервера конфигурации, а сам сервер должен быть запущен в подключенном состоянии. Дополнительные сведения о распространенных задачах управления сервером конфигурации см. [здесь](vmware-azure-manage-configuration-server.md).

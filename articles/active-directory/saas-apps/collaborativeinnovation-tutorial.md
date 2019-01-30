@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Collaborative Innovation | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Collaborative Innovation | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Collaborative Innovation.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: bba95df3-75a4-4a93-8805-b3a8aa3d4861
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 14dc0befdfe92970c194de852f6ef2dc98080ae7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 402b8be8ea3a569679baa833ef52fef9769bac30
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442070"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819566"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-collaborative-innovation"></a>Руководство по интеграции Azure Active Directory с Collaborative Innovation
+# <a name="tutorial-azure-active-directory-integration-with-collaborative-innovation"></a>Руководство. Интеграция Azure Active Directory с Collaborative Innovation
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Collaborative Innovation.
 
@@ -151,7 +151,7 @@ ms.locfileid: "39442070"
 1. Чтобы настроить единый вход на стороне **Collaborative Innovation**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Collaborative Innovation](https://www.unilever.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

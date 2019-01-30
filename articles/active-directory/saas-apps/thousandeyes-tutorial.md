@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ThousandEyes | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ThousandEyes | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ThousandEyes.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 790e3f1e-1591-4dd6-87df-590b7bf8b4ba
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: b6af7a3322b1a01c1d822df78d827121c19e21e1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 046832913a07c99310280d37ac1c6792692dd0cf
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444408"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824717"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Учебник. Интеграция Azure Active Directory с ThousandEyes
+# <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Руководство. Интеграция Azure Active Directory с ThousandEyes
 
 В этом руководстве описано, как интегрировать приложение ThousandEyes с Azure Active Directory (Azure AD).
 
@@ -46,7 +46,7 @@ ms.locfileid: "39444408"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.

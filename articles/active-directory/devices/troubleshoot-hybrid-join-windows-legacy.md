@@ -4,7 +4,7 @@ description: Устранение неполадок на устройствах
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 ms.assetid: cdc25576-37f2-4afb-a786-f59ba4c284c2
 ms.service: active-directory
 ms.component: devices
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: b5fd5a9544e27092c8b65e18d59701421fc59ef5
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 546f9054978f0b9fbe6bb9063905c982de627442
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48800865"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54445292"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -58,7 +58,7 @@ ms.locfileid: "48800865"
 
 - В случае с ОС Windows 7 с пакетом обновления 1 (SP1) или Windows Server 2008 R2 с пакетом обновления 1 (SP1) убедитесь, что обновление [KB4284842](https://support.microsoft.com/help/4284842) уже установлено. Это обновление предотвращает ошибки будущих проверок подлинности из-за потери доступа клиента к защищенными ключам после изменения пароля.
 
-## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
+## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
 
 **Чтобы проверить сведения о состоянии регистрации, сделайте следующее:**  
 
@@ -116,7 +116,7 @@ ms.locfileid: "48800865"
 
     ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/05.png)
 
-Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
+Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
   
 **Наиболее распространенные причины сбоя гибридного присоединения к Azure AD:** 
 

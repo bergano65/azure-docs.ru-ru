@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 47b58e74f57640098751b38c1a4fb504838c9ced
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: b9fa5fff46fa330a55125053b831c780f21f6e8f
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54242347"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54404665"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -60,13 +60,11 @@ ms.locfileid: "54242347"
 
 - Сохранение журналов в [учетную запись хранения](../articles/azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
 - [Потоковая передача журналов в Центры событий](../articles/azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
-- Анализ журналов с помощью [OMS Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
+- Анализ журналов с помощью [Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг
 
-- [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/) предоставляет возможности мониторинга, оповещений и внесения исправлений в соответствии с оповещениями для облачных и локальных ресурсов. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент OMS и регистрирует виртуальную машину в существующей рабочей области OMS.
-
-- [Log Analytics](../articles/log-analytics/log-analytics-overview.md) — это служба в OMS, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников.
+- [Log Analytics](../articles/log-analytics/log-analytics-overview.md) — это служба, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент Log Analytics и регистрирует виртуальную машину в существующей рабочей области Log Analytics.
 
     Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов и метрик является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
 

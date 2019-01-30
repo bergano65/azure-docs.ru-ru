@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Bambu by Sprout Social | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Bambu by Sprout Social | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bambu by Sprout Social.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: d2b9ddbc-cab7-40d6-aca1-5b171cab4199
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 317fb1dd1235793d31ab39f5cb2a99766ca33150
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 3cc4e4c6908823e6f76151f689a57f476c9d03ff
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116165"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819515"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство по интеграции Azure Active Directory с Bambu by Sprout Social
+# <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство. Интеграция Azure Active Directory с Bambu by Sprout Social
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с Bambu by Sprout Social.
 
@@ -127,7 +127,7 @@ ms.locfileid: "49116165"
 1. Чтобы настроить единый вход на стороне **Bambu by Sprout Social**, нужно отправить скачанный **XML метаданных** и **URL-адрес службы единого входа SAML** в [службу поддержки Bambu by Sprout Social](mailto:support@getbambu.com). Это позволит службе поддержки правильно настроить подключение единого входа SAML на обоих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 <!--### Next steps
@@ -212,7 +212,7 @@ To ensure users can sign-in to Bambu by Sprout Social after it has been configur
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Bambu by Sprout Social на панели доступа, вы автоматически войдете в приложение Bambu by Sprout Social. Дополнительные сведения о панели доступа можно найти в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент Bambu by Sprout Social на панели доступа, вы автоматически войдете в приложение Bambu by Sprout Social. Дополнительные сведения о панели доступа см. в статье  [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

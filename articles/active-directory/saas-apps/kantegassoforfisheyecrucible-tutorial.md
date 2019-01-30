@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Kantega SSO for FishEye/Crucible | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kantega SSO for FishEye/Crucible | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Kantega SSO for FishEye/Crucible.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 9fe951fd-1530-4d33-a1a4-390385b99ce9
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: f49ec56c3e891aff5c603af58a36a303f9d14de8
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: bfab82937bee0216c1619cd5888659bd6eb606b5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51821537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813395"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-fisheyecrucible"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for FishEye/Crucible
+# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-fisheyecrucible"></a>Руководство. Интеграция Azure Active Directory с Kantega SSO for FishEye/Crucible
 
 В этом руководстве описано, как интегрировать Kantega SSO for FishEye/Crucible с Azure Active Directory (Azure AD).
 
@@ -222,7 +222,7 @@ ms.locfileid: "51821537"
     c. Выберите команду **Сохранить**.  
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

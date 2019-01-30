@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: article
-ms.date: 01/11/2019
+ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: 513067f09d8cac64ca747ff217c84667c5469d82
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 19ac1819c3b098597819ec75adcedeca929e802d
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54248216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464550"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера распознавания языка в Службе Azure Kubernetes
 
@@ -38,7 +38,7 @@ ms.locfileid: "54248216"
 
 Эта процедура загружает и выполняет пример контейнера Cognitive Services для распознавания языка. Пример содержит два контейнера: один для клиентского приложения и второй для контейнера Cognitive Services. Передайте оба эти образа в свой Реестр контейнеров Azure. Разместив их в собственном реестре, создайте Службу Azure Kubernetes для доступа к образам и выполнения контейнеров. Когда контейнеры будут запущены, используйте интерфейс командной строки **kubectl** для контроля производительности контейнеров. Создайте HTTP-запрос к клиентскому приложению и проверьте результаты его выполнения. 
 
-
+![Концепция запуска примеров контейнеров](../media/how-tos/container-instance-sample/containers.png)
 
 ## <a name="the-sample-containers"></a>Примеры контейнеров
 
@@ -407,8 +407,8 @@ az group delete --name cogserv-container-rg
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-> [!div class="nextstepaction"]
-> [Использование подключенной службы Анализа текста](../vs-text-connected-service.md)
+* [Поддержка контейнеров в Azure Cognitive Services](../../cognitive-services-container-support.md)
+* Руководство. Подключение к службе "Анализ текста" в Cognitive Services с помощью подключенной службы в Visual Studio
 
 
 <!--

@@ -10,14 +10,14 @@ ms.component: core
 ms.reviewer: larryfr
 manager: cgronlun
 ms.topic: conceptual
-ms.date: 01/14/2018
+ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4ef62157644e55ed291562f581389228b5776f51
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 0f53b3cec843ca8016c61a360025b5e731b96f55
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815877"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "54353232"
 
 - В Windows вам понадобится командная строка по умолчанию или командная строка Anaconda (устанавливается вместе с Anaconda и Miniconda).
 
-## <a id="anotebooks"></a>Записные книжки Azure
+## <a id="aznotebooks"></a>Записные книжки Azure
 
 [Записные книжки Azure](https://notebooks.azure.com) (предварительная версия) — это интерактивная среда разработки в облаке Azure. Это самый простой способ начать разработку с использованием Машинного обучения Azure.
 
@@ -64,17 +64,21 @@ ms.locfileid: "54353232"
 
 Чтобы начать разработку с помощью Записных книжек Azure, обратитесь к статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md).
 
+По умолчанию Записные книжки Azure используют бесплатный уровень обслуживания, который ограничен 4 ГБ памяти и 1 ГБ данных. Однако вы можете снять эти ограничения, подключив экземпляр Виртуальной машины для обработки и анализа данных к проекту Записных книжек Azure. Дополнительные сведения см. в статье [Manage and configure Azure Notebooks projects — Compute tier](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier) (Управление и настройка проектов Записных книжек Azure — уровень вычислений).
+
 ## <a id="dsvm"></a>Виртуальная машина для обработки и анализа данных
 
 DSVM — это настраиваемый образ виртуальной машины. Он предназначен для обработки и анализа данных, и на нем предварительно настроены:
 
-  - Пакеты TensorFlow, PyTorch, Scikit-learn, XGBoost и пакет SDK для Машинного обучения Azure.
-  - Популярные инструменты для обработки и анализа данных, в том числе изолированная среда Spark и Drill.
-  - Инструменты Azure, такие как интерфейс командной строки Azure, AzCopy и Обозреватель службы хранилища.
-  - Интегрированные среды разработки, например Visual Studio Code, PyCharm и RStudio.
-  - Сервер Jupyter Notebook. 
+  - пакеты TensorFlow, PyTorch, Scikit-learn, XGBoost и пакет SDK для Машинного обучения Azure;
+  - популярные инструменты для обработки и анализа данных, в том числе изолированная среда Spark и Drill;
+  - инструменты Azure, такие как интерфейс командной строки Azure, AzCopy и Обозреватель службы хранилища;
+  - интегрированные среды разработки, например Visual Studio Code и PyCharm;
+  - Сервер Jupyter Notebook.
 
-Пакет SDK для Машинного обучения Azure работает с версией DSVM для Ubuntu или Windows. Чтобы использовать DSVM в качестве среды разработки, выполните следующие действия.
+Пакет SDK для Машинного обучения Azure работает с версией DSVM для Ubuntu или Windows. Но если вы также планируете использовать Виртуальную машину для обработки и анализа данных в качестве цели для вычислений, это возможно только на Ubuntu.
+
+Чтобы использовать DSVM в качестве среды разработки, выполните следующие действия.
 
 1. Создайте DSVM в любой из следующих сред:
 

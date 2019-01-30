@@ -3,9 +3,9 @@ title: Как использовать очереди служебной шин�
 description: Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на PHP.
 services: service-bus-messaging
 documentationcenter: php
-author: spelluru
+author: axisc
 manager: timlt
-editor: ''
+editor: spelluru
 ms.assetid: e29c829b-44c5-4350-8f2e-39e0c380a9f2
 ms.service: service-bus-messaging
 ms.workload: na
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: article
 ms.date: 09/10/2018
-ms.author: spelluru
-ms.openlocfilehash: 08894741f4b7c4d3ccb808a4e70ec1eeb4f6af49
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.author: aschhab
+ms.openlocfilehash: c320e06881c73feb228b9d5f49243d7e1d321f52
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392199"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847567"
 ---
 # <a name="how-to-use-service-bus-queues-with-php"></a>Как использовать очереди служебной шины с PHP
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -162,7 +162,7 @@ catch(ServiceException $e){
 
 ## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
 
-Наилучшим способом получать сообщения из очереди является использование метода `ServiceBusRestProxy->receiveQueueMessage`. Сообщения можно получать в двух различных режимах: [*ReceiveAndDelete*](/dotnet/api/microsoft.servicebus.messaging.receivemode) и [*PeekLock*](/dotnet/api/microsoft.servicebus.messaging.receivemode#Microsoft_ServiceBus_Messaging_ReceiveMode_PeekLock). Значение по умолчанию — **PeekLock**.
+Наилучшим способом получать сообщения из очереди является использование метода `ServiceBusRestProxy->receiveQueueMessage`. Сообщения можно получить в двух различных режимах: [*ReceiveAndDelete*](/dotnet/api/microsoft.servicebus.messaging.receivemode) и [*PeekLock*](/dotnet/api/microsoft.servicebus.messaging.receivemode#Microsoft_ServiceBus_Messaging_ReceiveMode_PeekLock). Значение по умолчанию — **PeekLock**.
 
 В режиме [ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode) получение является одиночной операцией. Это значит, что когда служебная шина получает запрос на чтение для сообщения в очереди, это сообщение помечается как использованное и возвращается в приложение. Режим [ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode) представляет собой самую простую модель, которая лучше всего работает в ситуациях, когда приложение может не обрабатывать сообщение при сбое. Чтобы это понять, рассмотрим сценарий, в котором объект-получатель выдает запрос на получение и выходит из строя до его обработки. Поскольку служебная шина помечает сообщение как использованное, то когда после своего перезапуска приложение снова начнет обрабатывать сообщения, оно пропустит сообщение, использованное до сбоя.
 

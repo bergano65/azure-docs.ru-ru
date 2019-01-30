@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Sprinklr | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Sprinklr | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Sprinklr.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: b33938a1-25a5-484c-8e75-7dc6de2d534d
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: b5f240091cf5ce9331ada818c218db04f508dbc8
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 062671313e42e6c936135dafb3d7d2a5c8adef82
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50241809"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816642"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sprinklr"></a>Учебник. Интеграция Azure Active Directory с Sprinklr
+# <a name="tutorial-azure-active-directory-integration-with-sprinklr"></a>Руководство. Интеграция Azure Active Directory со Sprinklr
 
 В этом руководстве описано, как интегрировать Sprinklr с Azure Active Directory (Azure AD).
 
@@ -147,7 +147,7 @@ ms.locfileid: "50241809"
    
     ![Единый вход](./media/sprinklr-tutorial/ic782910.png "Единый вход")
 
-    a. В текстовом поле **Имя** введите имя конфигурации (например, *WAADSSOTest*).
+    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например *WAADSSOTest*).
 
     b. Щелкните **Включено**.
 
@@ -170,7 +170,7 @@ ms.locfileid: "50241809"
     ![SAML](./media/sprinklr-tutorial/ic782911.png "SAML")
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

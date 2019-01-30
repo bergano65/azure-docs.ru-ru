@@ -1,10 +1,10 @@
 ---
-title: 'Azure AD Connect: вход пользователя | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: вход пользователя | Документация Майкрософт'
 description: Вход пользователя в Azure AD с пользовательскими настройками.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 38086d0e975956aefe4fcde4eda67d939d58f617
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 57f1879e79dfdfe8eff421deb466b3098f5a5c60
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46365848"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463462"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Параметры входа в Azure AD Connect
 Служба Azure Active Directory (Azure AD) Connect позволяет входить в облачные и локальные ресурсы, используя те же пароли. В этой статье рассматриваются основные сведения о каждой модели идентификации, с помощью которых вы можете выбрать удостоверение для входа в Azure AD.

@@ -14,12 +14,12 @@ ms.date: 01/05/2019
 ms.author: sethm
 ms.reviewer: sijuman
 <!-- dev: viananth -->
-ms.openlocfilehash: cafae6d71401bc44813b2e366f8e72f7b806236b
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 8049db848e34b0aa9bc23f08169a8c63f765791a
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54062781"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389755"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Использование профилей версий API и Python в Azure Stack
 
@@ -29,11 +29,12 @@ ms.locfileid: "54062781"
 
 Пакет SDK для Python поддерживает профили версии API для разных облачных платформ, например Azure Stack и глобальной среды Azure. Вы можете использовать профили API при создании решений для гибридного облака. Пакет SDK для Python поддерживает такие профили API:
 
-1. **Актуальная**  
+- **Актуальная**  
     Профиль предназначен для последних версий API всех поставщиков служб на платформе Azure.
-2. **2017-03-09-profile**  
-   **2017-03-09-profile**  
-   Профиль предназначен для версий API поставщиков ресурсов, поддерживаемых Azure Stack.
+- **2018-03-01-hybrid**     
+    Профиль предназначен для последних версий API всех поставщиков ресурсов на платформе Azure Stack.
+- **2017-03-09-profile**  
+    Профиль предназначен для наиболее совместимых версий API поставщиков ресурсов, поддерживаемых Azure Stack.
 
    Дополнительные сведения о профилях API и Azure Stack см. в статье [Управление профилями версий API в Azure Stack](azure-stack-version-profiles.md).
 
@@ -56,10 +57,19 @@ ms.locfileid: "54062781"
 | Идентификатор подписки | AZURE_SUBSCRIPTION_ID | [Идентификатор подписки](../azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack. |
 | Секрет клиента | AZURE_CLIENT_SECRET | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
 | Конечная точка Resource Manager | ARM_ENDPOINT | См. раздел [Конечная точка Resource Manager для Azure Stack](azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
+| Расположение ресурса | AZURE_RESOURCE_LOCATION | Расположение ресурса в среде Azure Stack.
 
 ## <a name="python-samples-for-azure-stack"></a>Примеры Python для Azure Stack
 
-Приведенные ниже примеры кода можно использовать для выполнения типичных задач управления для виртуальных машин в Azure Stack. Примеры кода показывают следующее:
+Ниже указанны некоторые примеры кода, доступные для Azure Stack с использованием пакета SDK для Python.
+
+- [Hybrid-ResourceManager-Python-Manage-Resources](https://azure.microsoft.com/resources/samples/hybrid-resourcemanager-python-manage-resources/).
+- [Hybrid-Storage-Python-Manage-Storage-Account](https://azure.microsoft.com/resources/samples/hybrid-storage-python-manage-storage-account/).
+- [Hybrid-Compute-Python-Manage-VM](https://azure.microsoft.com/resources/samples/hybrid-compute-python-manage-vm/).
+
+## <a name="python-manage-virtual-machine-sample"></a>Пример управления виртуальной машиной на Python
+
+Указанный ниже пример кода можно использовать для выполнения типичных задач управления для виртуальных машин в Azure Stack. Из примера кода вы узнаете:
 
 - Создание виртуальных машин:
   - Создание виртуальной машины Linux
@@ -76,7 +86,7 @@ ms.locfileid: "54062781"
 - Отображение списка виртуальных машин
 - удаление виртуальной машины
 
-Чтобы просмотреть код для выполнения этих операций, изучите функцию **run_example()** в сценарии Python **Hybrid/unmanaged-disks/example.py** из репозитория GitHub [virtual-machines-python-manage](https://github.com/Azure-Samples/virtual-machines-python-manage).
+Чтобы просмотреть код для выполнения этих операций, изучите функцию **run_example()** в сценарии Python **example.py** из репозитория GitHub [Hybrid-Compute-Python-Manage-VM](https://github.com/Azure-Samples/Hybrid-Compute-Python-Manage-VM).
 
 Каждая операция однозначно помечается комментарием и функцией печати. Примеры необязательно следуют в порядке, показанном в приведенном выше списке.
 
@@ -99,13 +109,13 @@ ms.locfileid: "54062781"
 4. Клонируйте репозиторий:
 
     ```bash
-    git clone https://github.com/Azure-Samples/virtual-machines-python-manage.git
+    git clone https://github.com/Azure-Samples/Hybrid-Compute-Python-Manage-VM.git
     ```
 
 5. Установите зависимости с помощью PIP:
 
     ```bash
-    cd virtual-machines-python-manage\Hybrid
+    cd Hybrid-Compute-Python-Manage-VM
     pip install -r requirements.txt
     ```
 
@@ -119,6 +129,7 @@ ms.locfileid: "54062781"
     export AZURE_CLIENT_SECRET={your client secret}
     export AZURE_SUBSCRIPTION_ID={your subscription id}
     export ARM_ENDPOINT={your AzureStack Resource Manager Endpoint}
+    export AZURE_RESOURCE_LOCATION={your AzureStack Resource location}
     ```
 
 8. Чтобы запустить этот пример, в Azure Stack Marketplace должны присутствовать образы Ubuntu 16.04-LTS и WindowsServer 2012-R2-Datacenter. Их можно [загрузить из Azure](../azure-stack-download-azure-marketplace-item.md) или добавить в [репозиторий образов платформы](../azure-stack-add-vm-image.md).
@@ -126,17 +137,9 @@ ms.locfileid: "54062781"
 9. Запустите пример:
 
     ```python
-    python unmanaged-disks\example.py
+    python example.py
     ```
 
-## <a name="notes"></a>Примечания
-
-Вам может быть предложено попытаться извлечь диск ОС виртуальной машины с помощью `virtual_machine.storage_profile.os_disk`. В некоторых случаях это может дать нужный результат, но не забывайте, что в этом случае вы получаете объект **OSDisk**. Чтобы изменить размер диска ОС, как это делает `example.py`, вам понадобится объект **Disk**, а не **OSDisk**. `example.py` возвращает объект **Disk** со следующими свойствами:
-
-```python
-os_disk_name = virtual_machine.storage_profile.os_disk.name
-os_disk = compute_client.disks.get(GROUP_NAME, os_disk_name)
-```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

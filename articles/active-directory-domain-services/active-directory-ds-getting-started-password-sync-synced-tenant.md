@@ -1,10 +1,10 @@
 ---
-title: Доменные службы Azure AD. Включение синхронизации паролей | Документация Майкрософт
+title: Доменные службы Azure AD. Включение синхронизации паролей| Документация Майкрософт
 description: Приступая к работе с доменными службами Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 8731f2b2-661c-4f3d-adba-2c9e06344537
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.author: ergreenl
-ms.openlocfilehash: 813d1d17f2d9b80c2e96f771fc346e553c59e95b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: be947e2867f00c34e5a0b66893765647349c7eeb
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234210"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54854213"
 ---
 # <a name="enable-password-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей учетных данных, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация учетных данных настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.
@@ -52,7 +52,7 @@ ms.locfileid: "51234210"
 
 **[Загрузка Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)**
 
-Рекомендуемая версия: **1.1.614.0** (опубликована 5 сентября 2017 г.).
+Рекомендуемая версия: **1.1.614.0** — опубликована 5 сентября 2017 г.
 
 > [!WARNING]
 > Последняя рекомендуемая версия Azure AD Connect НЕОБХОДИМА для синхронизации устаревших учетных данных (требуются для проверки подлинности NTLM и Kerberos) с вашим клиентом Azure AD. В предыдущих выпусках Azure AD Connect и в устаревшей версии DirSync эта возможность недоступна.

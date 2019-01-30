@@ -4,17 +4,17 @@ description: В этой статье описано программное со
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/06/2018
+ms.date: 01/23/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 3c8fd185feff9a580e2d23926dcf60cb33121122
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: adeb963333ffc2b587d7468eb357fab8dc4d6bbe
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312482"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847056"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -22,18 +22,20 @@ ms.locfileid: "53312482"
 
 Сведения о соответствии см. в статье [Получение данных о соответствии](getting-compliance-data.md).
 
+[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
 1. Установите [ARMClient](https://github.com/projectkudu/ARMClient), если его у вас еще нет. Это средство, которое отправляет HTTP-запросы к API-интерфейсам на основе Azure Resource Manager.
 
-1. Обновите свой модуль AzureRM PowerShell до последней версии. Дополнительные сведения о последней версии см. по ссылке [для Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
+1. Обновите свой модуль Azure PowerShell до последней версии. Дополнительные сведения см. в статье [Install the Azure PowerShell module](/powershell/azure/install-az-ps) (Установка модуля Azure PowerShell). Дополнительные сведения о последней версии см. по ссылке [для Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
 1. Зарегистрируйте поставщик ресурсов Policy Insights с помощью Azure PowerShell, чтобы связать подписку с поставщиком ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
 
    ```azurepowershell-interactive
-   Register-AzureRmResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
+   Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
    ```
 
    Дополнительные сведения о регистрации и просмотре поставщиков ресурсов см. в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/resource-manager-supported-services.md).
@@ -72,13 +74,13 @@ ms.locfileid: "53312482"
 1. Выполните следующую команду, чтобы создать определение политики с использованием файла AuditStorageAccounts.json.
 
    ```azurepowershell-interactive
-   New-AzureRmPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
+   New-AzPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
    ```
 
    Эта команда создает определение политики с именем _Audit Storage Accounts Open to Public Networks_ (Аудит учетных записей хранения, открытых для общедоступных сетей).
-   Дополнительные сведения о других параметрах, которые можно использовать, см. в статье о командлете [New-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/new-azurermpolicydefinition).
+   Дополнительные сведения о других параметрах, которые можно использовать, см. в статье о командлете [New-AzPolicyDefinition](/powershell/module/az.resources/new-azpolicydefinition).
 
-   При вызове без параметров расположения `New-AzureRmPolicyDefinition` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
+   При вызове без параметров расположения `New-AzPolicyDefinition` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
 
    - **SubscriptionId** — сохранение в другой подписке. Требуется значение _GUID_.
    - **ManagementGroupName** — сохранение в группе управления. Требуется значение _строки_.
@@ -86,21 +88,21 @@ ms.locfileid: "53312482"
 1. После создания определения политики вы можете создать назначение политики, выполнив следующие команды:
 
    ```azurepowershell-interactive
-   $rg = Get-AzureRmResourceGroup -Name 'ContosoRG'
-   $Policy = Get-AzureRmPolicyDefinition -Name 'AuditStorageAccounts'
-   New-AzureRmPolicyAssignment -Name 'AuditStorageAccounts' -PolicyDefinition $Policy -Scope $rg.ResourceId
+   $rg = Get-AzResourceGroup -Name 'ContosoRG'
+   $Policy = Get-AzPolicyDefinition -Name 'AuditStorageAccounts'
+   New-AzPolicyAssignment -Name 'AuditStorageAccounts' -PolicyDefinition $Policy -Scope $rg.ResourceId
    ```
 
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
-   Параметр **Scope** в `New-AzureRmPolicyAssignment` также работает с подписками и группами управления. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzureRmResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже.
+   Параметр **Scope** в `New-AzPolicyAssignment` также работает с подписками и группами управления. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже.
    Замените `{rgName}`, `{subId}` и `{mgName}` именем вашей группы ресурсов, идентификатором подписки и именем группы управления соответственно.
 
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
    - Подписка — `/subscriptions/{subId}/`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Дополнительные сведения об управлении политиками ресурсов с помощью модуля PowerShell Azure Resource Manager см. в разделе [Политики](/powershell/module/azurerm.resources/#policies).
+Дополнительные сведения об управлении политиками ресурсов с помощью модуля PowerShell Azure Resource Manager см. в разделе [Политики](/powershell/module/az.resources/#policies).
 
 ### <a name="create-and-assign-a-policy-definition-using-armclient"></a>Создание и назначение определения политики с помощью ARMClient
 
@@ -230,7 +232,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
-- [Модули Azure RM PowerShell](/powershell/module/azurerm.resources/#policies)
+- [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
 - [Policy Insights](/rest/api/policy-insights)
 - [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)

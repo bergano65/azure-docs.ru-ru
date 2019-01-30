@@ -7,21 +7,23 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 12/25/2018
+ms.date: 01/21/2019
 ms.author: juliako
-ms.openlocfilehash: 2c07cfcba473e2e27f14ff0118e6ca8a8f484df1
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: d5ec82decbb441c27fd0c5e8f1132caa126edbc1
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53791831"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54807751"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
 В этой статье показано, как внедрить мини-приложения Индексатора видео в приложение. Индексатор видео поддерживает два типа мини-приложений, которые можно внедрить в приложение: **Cognitive Insights** и **Player**. 
 
 > [!NOTE]
-> Начиная с 1 февраля 2018 г. версия 1 мини-приложения **Cognitive Insights** станет нерекомендуемой. По умолчанию будет использоваться встроенная версия URL-адреса `version=2`.
+> Начиная с 1 февраля 2018 г., версия 1 мини-приложения **Cognitive Insights** станет нерекомендуемой. По умолчанию будет использоваться встроенная версия URL-адреса `version=2`.
+
+Начиная с версии 2, базовый URL-адрес мини-приложения включает область для учетной записи. Например, создается учетная запись в западной части США: `https://wus2.videoindexer.ai/embed/insights/...`.
 
 ## <a name="widget-types"></a>Типы мини-приложений
 
@@ -69,7 +71,7 @@ ms.locfileid: "53791831"
 
 Чтобы внедрить **частное** видео, нужно передать маркер доступа в атрибуте **iframe** **src**:
 
-     https://www.videoindexer.ai/embed/[insights | player]/<accountId>/<videoId>/?accessToken=<accessToken>
+`https://www.videoindexer.ai/embed/[insights | player]/<accountId>/<videoId>/?accessToken=<accessToken>`
     
 Используйте API [**Get Insights Widget**](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-insights-widget?), чтобы получить содержимое мини-приложения Cognitive Insights, или используйте API [**Get Video Access Token**](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?), добавив его в качестве параметра запроса в URL-адрес, как показано выше. Укажите этот URL-адрес как значение атрибута **iframe** **src**.
 
@@ -94,13 +96,13 @@ ms.locfileid: "53791831"
 
 В этом разделе показано, как реализовать взаимодействие между двумя мини-приложениями Индексатора видео. Когда пользователь щелкнет элемент управления аналитическими сведениями в приложении, проигрыватель перейдет к соответствующему моменту в видео.
 
-    <script src="https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js"></script> 
+`<script src="https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js"></script> `
 
 1. Скопируйте код внедрения для мини-приложения **Player**.
 2. Скопируйте код внедрения для **Cognitive Insights**.
 3. Добавьте [**файл медиатора**](https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js), чтобы реализовать взаимодействие между двумя мини-приложениями:
 
-    <script src="https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js"></script>
+`<script src="https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js"></script>`
 
 Теперь, когда пользователь щелкнет элемент управления аналитическими сведениями в приложении, проигрыватель перейдет к соответствующему моменту в видео.
 
@@ -110,11 +112,7 @@ ms.locfileid: "53791831"
 
 В этом разделе показано, как реализовать взаимодействие между мини-приложением **Cognitive Insights** и экземпляром Проигрывателя мультимедиа Azure (AMP) с помощью [подключаемого модуля AMP](https://breakdown.blob.core.windows.net/public/amp-vb.plugin.js).
  
-1. Добавьте подключаемый модуль Индексатора видео для Проигрывателя мультимедиа Azure.
-
-        <script src="https://breakdown.blob.core.windows.net/public/amp-vb.plugin.js"></script>
-
-
+1. Добавьте подключаемый модуль Индексатора видео для Проигрывателя мультимедиа Azure.<br/> `<script src="https://breakdown.blob.core.windows.net/public/amp-vb.plugin.js"></script>`
 2. Создайте экземпляр Проигрывателя мультимедиа Azure с подключаемым модулем Индексатора видео.
 
         // Init Source
@@ -209,7 +207,6 @@ ms.locfileid: "53791831"
         
         </script>
 
-
 Дополнительные сведения см. в [этом примере](https://codepen.io/videoindexer/pen/YEyPLd).
 
 ## <a name="adding-subtitles"></a>Добавление субтитров
@@ -219,30 +216,41 @@ ms.locfileid: "53791831"
 ## <a name="customizing-embeddable-widgets"></a>Настройка внедряемых мини-приложений
 
 ### <a name="cognitive-insights-widget"></a>Мини-приложение Cognitive Insights
-Вы можете выбрать необходимые типы аналитических сведений, указав их в качестве значений для следующего параметра URL-адреса, который добавляется в получаемый код внедрения (из API или веб-приложения):
 
-**&widgets=** \<список необходимых мини-приложений>
+Вы можете выбрать необходимые типы аналитических сведений, указав их в качестве значений для следующего параметра URL-адреса, который добавляется в получаемый код внедрения (из API или веб-приложения): `&widgets=<list of wanted widgets>`.
 
 Возможные значения: people, keywords, sentiments, transcript, search.
 
-Например, если нужно внедрить мини-приложение, содержащее только такие аналитические сведения, как изображения людей и результаты поиска, внедряемый URL-адрес для iframe будет выглядеть так: https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search
+Например, если нужно внедрить мини-приложение, содержащее только такие аналитические сведения, как изображения людей и результаты поиска, внедряемый URL-адрес для iframe будет выглядеть так:
 
-Также можно настроить заголовок окна iframe, указав **&title=**<YourTitle> в URL-адресе для iframe. (Будет задано значение HTML-элемента \<title>).
-Например, если для окна iframe нужно указать заголовок MyInsights, URL-адрес будет выглядеть так: https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?title=MyInsights. Обратите внимание на то, что этот параметр применим, только когда аналитические сведения нужно открыть в новом окне.
+`https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search`
+
+Заголовок окна iframe можно настроить, указав `&title=<YourTitle>` в URL-адресе для iframe. (Будет задано значение HTML-элемента \<title>).
+    
+Например, если для окна iframe нужно указать заголовок MyInsights, URL-адрес будет выглядеть так:
+
+`https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?title=MyInsights`
+
+Обратите внимание на то, что этот параметр применим, только когда аналитические сведения нужно открыть в новом окне.
 
 ### <a name="player-widget"></a>Мини-приложение Player
+
 При внедрении проигрывателя Индексатора видео можно выбрать размер проигрывателя, указав размер для элемента iframe.
 
 Например: 
 
-    <iframe width="640" height="360" src="https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/" frameborder="0" allowfullscreen />
+`<iframe width="640" height="360" src="https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/" frameborder="0" allowfullscreen />`
 
 По умолчанию в Player Индексатора видео будут автоматически создаваться скрытые субтитры на основе расшифрованной речи. Эти расшифрованные сведения извлекаются из видео на исходном языке, который был выбран при отправке видео.
 
-Если нужно внедрить мини-приложение с другим языком, добавьте параметр **&captions=< Language | "all" | "false" >** в URL-адрес для внедрения проигрывателя или укажите значение all, чтобы получить субтитры на всех доступных языках.
-Чтобы субтитры отображались по умолчанию, передайте **&showCaptions=true**.
+Если нужно внедрить мини-приложение с другим языком, добавьте параметр `&captions=< Language | ”all” | “false” >` в URL-адрес для внедрения проигрывателя или укажите значение all, чтобы получить субтитры на всех доступных языках.
+Чтобы субтитры отображались по умолчанию, передайте `&showCaptions=true`.
 
-URL-адрес для внедрения будет выглядеть следующим образом: https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/?captions=italian. Чтобы отключить субтитры, передайте значение false для параметра captions.
+URL-адрес внедрения будет выглядеть так: 
+
+`https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/?captions=italian`
+
+Чтобы отключить субтитры, передайте значение false для параметра captions.
 
 Автоматическое воспроизведение означает, что проигрыватель по умолчанию начинает воспроизводить видео. Вы можете отменить это действие, передав &autoplay=false в URL-адрес внедрения выше.
 

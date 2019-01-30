@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/02/2017
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: cd2399e25889cdc9c885b76e002e47415c0629e5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 977d40ba6fdb00f47f4ff32e60642ee3ab102da2
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46984397"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413640"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "46984397"
 
 ### <a name="accounts"></a>учетные записи;
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-* **Учетная запись хранения**. См. раздел [Создание учетной записи хранения](storage-quickstart-create-account.md) в статье [Об учетных записях хранения Azure](storage-create-storage-account.md).
+* **Учетная запись хранения**. См. статью [Создание учетной записи хранения](storage-quickstart-create-account.md) в документации [по учетным записям хранения Azure](storage-create-storage-account.md).
 
 ### <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -183,10 +183,10 @@ az storage account create \
     --sku <account_sku>
 ```
 
-* `--location` — расположение (обязательный параметр). Например, "западная часть США".
-* `--name` — имя учетной записи хранения (обязательный параметр). Имя должно быть не меньше 3 и не больше 24 символов и содержать только буквенно-цифровые символы.
-* `--resource-group` — имя группы ресурсов (обязательный параметр).
-* `--sku` — номер SKU учетной записи хранения (обязательный параметр). Допустимые значения:
+* `--location` [обязательный параметр] — Расположение. Например, "западная часть США".
+* `--name` [обязательный параметр] — имя учетной записи хранения. Имя должно быть не меньше 3 и не больше 24 символов и содержать только буквенно-цифровые символы.
+* `--resource-group` [обязательный параметр] — Имя группы ресурсов.
+* `--sku` [обязательный параметр] — номер SKU учетной записи хранения. Допустимые значения:
   * `Premium_LRS`
   * `Standard_GRS`
   * `Standard_LRS`
@@ -197,7 +197,7 @@ az storage account create \
 
 В подписке может быть несколько учетных записей хранения Azure. Чтобы выбрать одну из них для использования для всех последующих команд службы хранилища, задайте эти переменные среды:
 
-Сначала отобразите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#list):
+Сначала отобразите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys):
 
 ```azurecli-interactive
 az storage account keys list \
@@ -242,7 +242,7 @@ az storage container create --name <container_name>
 
 Для нового контейнера можно задать один из трех уровней доступа на чтение с помощью необязательного аргумента `--public-access`.
 
-* `off`: данные контейнера являются личными данными владельца учетной записи (значение по умолчанию).
+* `off` (значение по умолчанию): данные контейнера являются личными данными владельца учетной записи.
 * `blob`: общий доступ на чтение для больших двоичных объектов.
 * `container`: общий доступ на чтение и создание списков для всего контейнера.
 

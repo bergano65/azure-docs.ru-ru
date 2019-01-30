@@ -4,7 +4,7 @@ description: Включение доменных служб Azure Active Directo
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: active-directory
@@ -15,33 +15,33 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/06/2017
 ms.author: ergreenl
-ms.openlocfilehash: b58df5ebf5332688424ac6ed2eeb9679487bcdc4
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 5ebb9f706d2e59b9c1227cec6fcc0e0619374069
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240262"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54855012"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Включение доменных служб Azure Active Directory с помощью PowerShell
 В этой статье показано, как включить доменные службы Azure Active Directory (AD) с помощью PowerShell.
 
-## <a name="task-1-install-the-required-powershell-modules"></a>Задача 1. Установка необходимых модулей PowerShell
+## <a name="task-1-install-the-required-powershell-modules"></a>Задача 1. Установка необходимых модулей PowerShell
 
 ### <a name="install-and-configure-azure-ad-powershell"></a>Установка и настройка Azure PowerShell
 Выполните инструкции из статьи [об установке модуля Azure AD PowerShell и подключении к Azure AD](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?toc=%2fazure%2factive-directory-domain-services%2ftoc.json).
 
 ### <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
-Выполните инструкции из статьи [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?toc=%2fazure%2factive-directory-domain-services%2ftoc.json).
+Выполните инструкции из статьи [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?toc=%2fazure%2factive-directory-domain-services%2ftoc.json).
 
 
-## <a name="task-2-create-the-required-service-principal-in-your-azure-ad-directory"></a>Задача 2. Создание обязательного субъекта-службы в каталоге Azure AD
+## <a name="task-2-create-the-required-service-principal-in-your-azure-ad-directory"></a>Задача 2. Создание обязательного субъекта-службы в каталоге Azure Active Directory.
 Введите следующую команду PowerShell, чтобы создать в каталоге Azure AD субъекта-службу, которая необходима для доменных служб Azure AD.
 ```powershell
 # Create the service principal for Azure AD Domain Services.
 New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 ```
 
-## <a name="task-3-create-and-configure-the-aad-dc-administrators-group"></a>Задача 3. Создание и настройка группы "Администраторы контроллера домена AAD"
+## <a name="task-3-create-and-configure-the-aad-dc-administrators-group"></a>Задача 3. Создание и настройка группы "Администраторы контроллера домена AAD".
 Теперь вам нужно создать группу администраторов, которая позволит делегировать административные задачи для управляемого домена.
 ```powershell
 # Create the delegated administration group for AAD Domain Services.
@@ -67,14 +67,14 @@ $UserObjectId = Get-AzureADUser `
 Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjectId.ObjectId
 ```
 
-## <a name="task-4-register-the-azure-ad-domain-services-resource-provider"></a>Задача 4. Регистрация поставщика ресурсов доменных служб Azure AD
+## <a name="task-4-register-the-azure-ad-domain-services-resource-provider"></a>Задача 4. Регистрация поставщика ресурсов доменных служб Azure AD.
 Введите следующую команду PowerShell, чтобы зарегистрировать поставщика ресурсов для доменных служб Azure AD:
 ```powershell
 # Register the resource provider for Azure AD Domain Services with Resource Manager.
 Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AAD
 ```
 
-## <a name="task-5-create-a-resource-group"></a>Задача 5. Создание группы ресурсов
+## <a name="task-5-create-a-resource-group"></a>Задача 5. Создание группы ресурсов
 Выполните следующую команду PowerShell, чтобы создать группу ресурсов:
 ```powershell
 $ResourceGroupName = "ContosoAaddsRg"
@@ -89,7 +89,7 @@ New-AzureRmResourceGroup `
 В этой группе ресурсов вы можете создать виртуальную сеть и управляемый домен доменных служб Azure AD.
 
 
-## <a name="task-6-create-and-configure-the-virtual-network"></a>Задача 6. Создание и настройка виртуальной сети
+## <a name="task-6-create-and-configure-the-virtual-network"></a>Задача 6. Создание и настройка виртуальной сети.
 Теперь создайте виртуальную сеть, чтобы включить в ней доменные службы Azure AD. Для доменных служб Azure Active Directory нужно обязательно предоставить выделенную подсеть. Не развертывайте в эту подсеть виртуальные машины для рабочих нагрузок.
 
 Введите следующие команды PowerShell, чтобы создать виртуальную сеть с выделенной подсетью для доменных служб Azure AD DS.
@@ -117,7 +117,7 @@ $Vnet=New-AzureRmVirtualNetwork `
 ```
 
 
-## <a name="task-7-provision-the-azure-ad-domain-services-managed-domain"></a>Задача 7. Подготовка управляемого домена доменных служб Azure AD
+## <a name="task-7-provision-the-azure-ad-domain-services-managed-domain"></a>Задача 7. Подготовка управляемого домена доменных служб Azure AD.
 Введите следующие команды PowerShell, чтобы включить доменные службы Azure AD для каталога:
 
 ```powershell

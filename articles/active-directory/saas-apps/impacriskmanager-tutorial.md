@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с IMPAC Risk Manager | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с IMPAC Risk Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в IMPAC Risk Manager.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 4d77390e-898c-4258-a562-a1181dfe2880
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: jeedes
-ms.openlocfilehash: c086d58a7de4897f93699d2c22b6598896eb50e7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ca0ea482b1cfb2f7af962ae1b7537f79bb60a62b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434486"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823153"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство по интеграции Azure Active Directory с IMPAC Risk Manager
+# <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство. Интеграция Azure Active Directory с IMPAC Risk Manager
 
 В этом руководстве описано, как интегрировать IMPAC Risk Manager с Azure Active Directory (Azure AD).
 
@@ -152,7 +152,7 @@ ms.locfileid: "39434486"
 1. Чтобы настроить единый вход на стороне **IMPAC Risk Manager**, нужно отправить скачанный **сертификат в кодировке Base64**, **URL-адрес выхода, идентификатор сущности SAML** и **URL-адрес службы единого входа SAML** в [службу поддержки IMPAC Risk Manager](mailto:rmsupport@Impac.co.nz). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -188,7 +188,7 @@ ms.locfileid: "39434486"
  
 ### <a name="create-a-impac-risk-manager-test-user"></a>Создание тестового пользователя приложения IMPAC Risk Manager
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении IMPAC Risk Manager. Чтобы добавить пользователей на платформу IMPAC Risk Manager, обратитесь в [службу поддержки IMPAC Risk Manager](mailto:rmsupport@Impac.co.nz). Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении IMPAC Risk Manager. Чтобы добавить пользователей на платформу IMPAC Risk Manager, обратитесь в  [службу поддержки IMPAC Risk Manager](mailto:rmsupport@Impac.co.nz) . Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -225,7 +225,7 @@ ms.locfileid: "39434486"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку IMPAC Risk Manager на панели доступа, вы автоматически войдете в приложение IMPAC Risk Manager.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

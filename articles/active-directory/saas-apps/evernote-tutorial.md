@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Evernote | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Evernote | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Evernote.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 7a9282f5418737b583e29d99893df3fc81f52955
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8ba80e113de8ea6754d8d2d6446fb26498904e12
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442638"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816812"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство по интеграции Azure Active Directory с Evernote
+# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство. Интеграция Azure Active Directory с Evernote
 
 В этом руководстве описано, как интегрировать Evernote с Azure Active Directory (Azure AD).
 
@@ -153,7 +153,7 @@ ms.locfileid: "39442638"
     Щелкните **Сохранить изменения**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

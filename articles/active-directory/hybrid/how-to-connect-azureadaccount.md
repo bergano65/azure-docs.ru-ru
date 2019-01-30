@@ -1,11 +1,11 @@
 ---
-title: 'Синхронизация Azure AD Connect: управление учетной записью службы Azure AD | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: управление учетной записью службы Azure AD | Документация Майкрософт'
 description: В этой статье описывается процедура восстановления учетной записи службы Azure AD.
 services: active-directory
 keywords: AADSTS70002, AADSTS50054 Как сбросить пароль для учетной записи службы соединителя синхронизации Azure AD Connect
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 6077043a-27f1-4304-a44b-81dc46620f24
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 93dcbe5ceac87d84db9638de6d5fe120de8c2d36
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 8fd8667484284fba8ba30e2f078538e7ed1888ef
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308313"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461372"
 ---
 # <a name="azure-ad-connect-sync-how-to-manage-the-azure-ad-service-account"></a>Синхронизация Azure AD Connect: управление учетной записью службы Azure AD
 Учетная запись службы, используемая соединителем Azure AD, как правило, не нуждается в обслуживании. Если требуется сбросить ее учетные данные, в этой статье вы найдете необходимые сведения. Например, это потребуется, если глобальный администратор по ошибке сбросит пароль учетной записи службы с помощью PowerShell.
@@ -42,16 +42,16 @@ ms.locfileid: "46308313"
 - - -
 Событие 6900  
 Сервер обнаружил непредвиденную ошибку при обработке уведомления об изменении пароля.  
-AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: старый пароль используется для проверки подлинности.
+AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: Для идентификации используется старый пароль.
 
 - - -
 Событие 659  
 Произошла ошибка при получении конфигурации синхронизации политики паролей. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException.  
-AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: старый пароль используется для проверки подлинности.
+AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: Для идентификации используется старый пароль.
 
 ## <a name="next-steps"></a>Дополнительная информация
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 

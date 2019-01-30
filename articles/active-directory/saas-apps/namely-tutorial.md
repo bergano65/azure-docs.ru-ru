@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Namely | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Namely | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Namely.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 9541d5c4-4c82-4b5b-b01a-6a3f75a2b7a1
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 344de0d5f09d33146fd5065a7dc723038b492273
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b76dfa7d16da487798281f5f31b9915ca9716ebc
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39445109"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808414"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-namely"></a>Руководство по интеграции Azure Active Directory с Namely
+# <a name="tutorial-azure-active-directory-integration-with-namely"></a>Руководство. Интеграция Azure Active Directory с Namely
 
 В этом руководстве описано, как интегрировать Namely с Azure Active Directory (Azure AD).
 
@@ -158,7 +158,7 @@ ms.locfileid: "39445109"
     d. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

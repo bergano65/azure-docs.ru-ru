@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Versal | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Versal | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Versal.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 5b2e53c0-61a3-4954-ae46-8c28c6368bfd
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: jeedes
-ms.openlocfilehash: a6e1f73218efb11da475f3e67188863c3b99de97
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a2d7661a9e837bebc873e54865f9b7c4259faf24
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421344"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816523"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-versal"></a>Руководство. Интеграция Azure Active Directory с Versal
 
@@ -132,7 +132,7 @@ ms.locfileid: "39421344"
 1. Для настройки единого входа на стороне **Versal** необходимо отправить скачанный **XML-файл метаданных** и **сертификат подписи SAML** в [службу поддержки Versal](https://support.versal.com/hc/). Специалисты службы поддержки настроят подключение единого входа SAML в организации Versal на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

@@ -3,19 +3,19 @@ title: Примеры преобразования утверждений JSON �
 description: Примеры преобразования утверждений JSON для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: d712286cb4ea5e67474ec11d56d99eaf2cabec3e
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: e7096773f2aaa39abd965b4697f45a3b3f80f136
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433078"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54850847"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -70,7 +70,7 @@ ms.locfileid: "47433078"
 | InputParameter | includeEmptyClaims | строка | Указывает, следует ли включать пустые утверждения. |
 | InputParameter | jsonSourceKeyName | строка | Имя ключа элемента |
 | InputParameter | jsonSourceValueName | строка | Имя значения элемента |
-| OutputClaim | Коллекция | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
+| outputClaim | Коллекция | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекаются следующие утверждения: email (string), displayName (string), membershipNum (int), active (boolean) и birthdate (datetime).
 
@@ -108,7 +108,7 @@ ms.locfileid: "47433078"
     - **jsonSourceValueName**: value.
 - Исходящие утверждения:
     - **email**: "someone@example.com".
-    - **displayName**: "Someone".
+    - **displayName**: "Someone"
     - **membershipNum**: 6353399.
     - **active**: true.
     - **birthdate**: 1980-09-23T00:00:00Z.
@@ -192,7 +192,7 @@ ms.locfileid: "47433078"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | xml | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
-| OutputClaim | json | строка | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
+| outputClaim | json | строка | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
 
 ```XML
 <ClaimsTransformation Id="ConvertXmlToJson" TransformationMethod="XmlStringToJsonString">

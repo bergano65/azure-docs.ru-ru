@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Mozy Enterprise | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Mozy Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mozy Enterprise.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 489b5e62-85c2-45c9-8766-326632d48114
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 7dc2f13979bb0ea919a78b750160119198ee7d6d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a5730b518ab19591188f0a7f56b706d8cf29e6f1
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436613"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816591"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Учебник. Интеграция Azure Active Directory с Mozy Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство. Интеграция Azure Active Directory с Mozy Enterprise
 
 В этом руководстве описано, как интегрировать Mozy Enterprise с Azure Active Directory (Azure AD).
 
@@ -156,7 +156,7 @@ ms.locfileid: "39436613"
    h. Нажмите кнопку **Сохранить изменения**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

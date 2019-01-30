@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: cwatson
-ms.openlocfilehash: 69c24e08ce2434c39b8bb67cb53173f9ceaee51b
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 7c856a076a3958cdd3aef4134c703128194fcc5d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52581449"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54849793"
 ---
 # <a name="add-update-or-remove-a-credit-or-debit-card-for-azure"></a>Добавление, обновление или удаление кредитной или дебетовой карты, используемой для оплаты в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "52581449"
 
 ## <a name="add-a-new-credit-or-debit-card"></a>Добавление новой кредитной или дебетовой карты
 
-1. Войдите в [Центр управления учетной записью](https://account.windowsazure.com/Subscriptions) в качестве администратора учетной записи.
+1. Войдите в [Центр управления учетной записью](https://account.windowsazure.com/Subscriptions) в качестве [администратора учетной записи](billing-subscription-transfer.md#whoisaa).
 1. Выберите подписку.
 1. В правой части страницы выберите **Manage payment methods**(Управление методами оплаты).
 
@@ -49,7 +49,7 @@ ms.locfileid: "52581449"
 
 Если существующая кредитная карта обновлена, а ее номер остается прежним, обновите данные такой карты, например дату окончания срока действия. Если номер кредитной карты изменен из-за потери, кражи или истечения срока ее действия, следуйте указаниям в разделе [Добавление кредитной карты в качестве метода оплаты](#addcard). Не нужно обновлять код безопасности карты (CVV).
 
-1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве администратора учетной записи.
+1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве [администратора учетной записи](billing-subscription-transfer.md#whoisaa).
 1. Выберите подписку, связанную с картой.
 1. Выберите **Управление методами оплаты**.
 1. Рядом с картой, которую необходимо обновить, щелкните **Изменить**.
@@ -58,14 +58,14 @@ ms.locfileid: "52581449"
 
 ## <a name="use-a-different-credit-card-for-the-azure-subscription"></a>Использование другой кредитной карты для подписки Azure
 
-1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве администратора учетной записи.
+1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве [администратора учетной записи](billing-subscription-transfer.md#whoisaa).
 1. Выберите подписку, связанную с картой.
 1. В правой части страницы выберите **Manage payment methods**(Управление методами оплаты).
 1. Щелкните **Использовать замену** рядом с картой, которую необходимо использовать. При этом также обновляются другие подписки, связанные с этой картой. 
 
 ## <a name="remove-a-credit-or-debit-card-from-the-account"></a>Удаление кредитной или дебетовой карты из учетной записи
 
-1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве администратора учетной записи.
+1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве [администратора учетной записи](billing-subscription-transfer.md#whoisaa).
 1. Выберите подписку, связанную с картой.
 3. В правой части страницы выберите **Manage payment methods**(Управление методами оплаты).
 4. Щелкните **Удалить** для кредитной карты, которую требуется удалить.
@@ -104,4 +104,4 @@ ms.locfileid: "52581449"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

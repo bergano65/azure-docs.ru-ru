@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 02/16/2017
 ms.author: v-livech
-ms.openlocfilehash: acfdd9070b49805c20b8ef921b5387c151448aa1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 862d239227c277a92cbf80e54b010a4b184da016
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961507"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54466097"
 ---
 # <a name="create-virtual-network-interface-cards-and-use-internal-dns-for-vm-name-resolution-on-azure"></a>Создание виртуальных сетевых карт и использование внутренних DNS-имен для разрешения имен виртуальных машин в Azure
 
@@ -49,7 +49,7 @@ az network nic create \
 ```
 
 ### <a name="deploy-a-vm-and-connect-the-vnic"></a>Развертывание виртуальной машины и подключение виртуальной сетевой карты
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Флаг `--nics` позволяет подключить виртуальную сетевую карту к виртуальной машине при развертывании в Azure. Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). Флаг `--nics` позволяет подключить виртуальную сетевую карту к виртуальной машине при развертывании в Azure. Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
 
 ```azurecli
 az vm create \
@@ -80,7 +80,7 @@ az group create --name myResourceGroup --location westus
 
 Следующий шаг — создание виртуальной сети Azure для запуска виртуальных машин. Для этого пошагового руководства виртуальная сеть содержит одну подсеть. Дополнительные сведения о виртуальных сетях Azure см. в разделе о [создании виртуальной сети](../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network). 
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В следующем примере создается виртуальная сеть `myVnet` и подсеть `mySubnet`.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть `myVnet` и подсеть `mySubnet`.
 
 ```azurecli
 az network vnet create \
@@ -103,7 +103,7 @@ az network nsg create \
 ```
 
 ## <a name="add-an-inbound-rule-to-allow-ssh"></a>Добавление правила входящего трафика, разрешающего подключения SSH
-Добавьте в группу безопасности сети правило входящего трафика с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create). В следующем примере создается правило `myRuleAllowSSH`.
+Добавьте в группу безопасности сети правило входящего трафика с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule). В следующем примере создается правило `myRuleAllowSSH`.
 
 ```azurecli
 az network nsg rule create \
@@ -149,7 +149,7 @@ az network nic create \
 ## <a name="deploy-the-vm-into-the-virtual-network-infrastructure"></a>Развертывание виртуальной машины в инфраструктуре виртуальной сети
 Теперь у нас есть виртуальная сеть, подсеть и группа безопасности сети, выступающая в качестве брандмауэра для защиты подсети путем блокирования всего входящего трафика, кроме трафика, поступающего через порт 22 по протоколу SSH, а также виртуальная сетевая карта. Теперь вы можете развернуть виртуальную машину в этой созданной сетевой инфраструктуре.
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
 
 ```azurecli
 az vm create \

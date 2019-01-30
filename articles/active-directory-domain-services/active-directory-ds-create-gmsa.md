@@ -4,7 +4,7 @@ description: Администрирование управляемых доме�
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: ergreenl
-ms.openlocfilehash: 06cac28f80fd576f5aaefcb56d88c53e230e18c2
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: e477bd310f2d5ea2e216ba2e7630a375ea81c48c
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157826"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856746"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-on-an-azure-ad-domain-services-managed-domain"></a>Создание групповой управляемой учетной записи службы в управляемом домене доменных служб AAD
 В этой статье показано, как создать управляемые учетные записи службы в управляемом домене доменных служб AAD.

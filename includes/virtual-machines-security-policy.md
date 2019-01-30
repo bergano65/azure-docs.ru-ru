@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 4887dbcc89180c54b8e991e6fa152463476c5ce9
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 801266ed13aa993ad04ed8a3b21d6a6b3e1d6603
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50227028"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54841451"
 ---
 Очень важно обеспечить безопасность виртуальной машины для выполняемых приложений. Для защиты виртуальных машин можно применить одну или несколько служб или функций Azure, которые обеспечивают безопасный доступ к виртуальным машинам и безопасное хранение данных. Из этой статьи вы узнаете, как обеспечить защиту своих виртуальных машин и приложений.
 

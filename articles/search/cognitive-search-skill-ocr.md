@@ -9,17 +9,22 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 05/01/2018
+ms.date: 01/17/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: b07c71a9365fca3a2e5d7c837acf689af980afdd
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: dbbff7644d0c9375a4d2a145769d09a786b01c25
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54075827"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412331"
 ---
 # <a name="ocr-cognitive-skill"></a>Когнитивный навык распознавания текста
+
+Навык оптического распознавания символов (OCR) распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
+
++ Если для textExtractionAlgorithm указано значение "handwritten", используется функция ["RecognizeText"](../cognitive-services/computer-vision/quickstarts-sdk/csharp-hand-text-sdk.md).
++ Если для textExtractionAlgorithm указано значение "printed", для других языков (кроме английского) используется функция ["OCR"](../cognitive-services/computer-vision/concept-extracting-text-ocr.md). Для английского языка используется новая функция [Распознавание текста](../cognitive-services/computer-vision/concept-recognizing-text.md) для печатного текста.
 
 Навык **OCR** извлекает текст из файлов изображений. Поддерживаемые форматы файлов включают:
 
@@ -30,12 +35,9 @@ ms.locfileid: "54075827"
 + .GIF
 
 > [!NOTE]
-> С 21 декабря 2018 г. вы сможете связывать ресурсы Cognitive Services с набором навыков службы "Поиск Azure". Благодаря этому мы сможем начать начислять плату за выполнение набора навыков. С этой даты мы также начнем начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
+> Начиная с 21 декабря 2018 г. можно [связывать ресурсы Cognitive Services](cognitive-search-attach-cognitive-services.md) с набором навыков службы "Поиск Azure". Это позволяет нам взимать плату за выполнение набора навыков. С этого момента мы также начали начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
 >
-> За операции с применением встроенных навыков взимается [плата по мере использования по существующим тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). За извлечение изображений взимается плата по тарифам для предварительной версии, как описано на странице [цен на службу "Поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400). Дополнительные сведения см. [здесь](cognitive-search-attach-cognitive-services.md).
->
->  Навык OCR сопоставляет следующие функциональные возможности службы Cognitive Services: Если для textExtractionAlgorithm указано значение "handwritten", используется функция ["RecognizeText"](../cognitive-services/computer-vision/quickstarts-sdk/csharp-hand-text-sdk.md).
->  Если для textExtractionAlgorithm указано значение "printed", для других языков (кроме английского) используется функция ["OCR"](../cognitive-services/computer-vision/concept-extracting-text-ocr.md). Для английского языка используется новая функция [Распознавание текста](../cognitive-services/computer-vision/concept-recognizing-text.md) для печатного текста.
+> За операции с применением [встроенных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Плата за извлечение изображения — это оплата за службу "Поиск Azure", которую сейчас предлагают по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -58,7 +60,7 @@ ms.locfileid: "54075827"
 | Имя вывода     | ОПИСАНИЕ                   |
 |---------------|-------------------------------|
 | текст          | Обычный текст, извлеченный из изображения.   |
-| layoutText    | Сложный тип, описывающий извлеченный текст, а также расположение, где найден указанный текст.|
+| layoutText    | Сложный тип, описывающий извлеченный текст и расположение, где найден указанный текст.|
 
 
 ## <a name="sample-definition"></a>Пример определения
@@ -136,7 +138,7 @@ ms.locfileid: "54075827"
 
 Распространенным вариантом использования текстового слияния является возможность объединить текстовое представление изображений (текст из навыка OCR или заголовок изображения) с полем содержимого документа. 
 
-В следующем примере набор навыков создает поле *merged_text*, содержащее текстовое содержимое вашего документа, а также текст OCRed из каждого изображения, внедренного в этот документ. 
+В следующем примере набора навыков создается поле *merged_text*. Это поле содержит текстовое содержимое вашего документа и текст OCRed из каждого изображения, встроенного в этот документ. 
 
 #### <a name="request-body-syntax"></a>Синтаксис текста запроса
 ```json

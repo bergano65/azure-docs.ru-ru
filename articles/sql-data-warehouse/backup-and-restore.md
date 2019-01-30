@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 09/06/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: e060075fbcf6a5083e51b753e119cb5471129a79
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: ca18aa5af89ec0a80d1aa8139671bf017a86e36c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465179"
 ---
 # <a name="backup-and-restore-in-azure-sql-data-warehouse"></a>Резервное копирование и восстановление в хранилище данных SQL Azure
 Сведения о том, как работает резервное копирование и восстановление в хранилище данных SQL Azure. Для восстановления или копирования хранилища данных до предыдущей точки восстановления в основном регионе можно использовать моментальные снимки хранилища данных, а для восстановления в другом географическом регионе — геоизбыточные резервные копии хранилища данных. 
@@ -86,7 +86,7 @@ order by run_id desc
 
 Можно сохранить восстановленное и текущее хранилища данных либо удалить один из них. Если необходимо заменить текущее хранилище данных восстанавливаемым, его можно переименовать с помощью инструкции [ALTER DATABASE (хранилище данных SQL Azure)](/sql/t-sql/statements/alter-database-azure-sql-data-warehouse) с параметром MODIFY NAME. 
 
-Чтобы восстановить хранилище данных, см. статьи [Восстановления хранилища данных с помощью портала Azure](sql-data-warehouse-restore-database-portal.md), [Восстановление хранилища данных с помощью PowerShell](sql-data-warehouse-restore-database-powershell.md) или [Восстановление хранилища данных с помощью T-SQL](sql-data-warehouse-restore-database-rest-api.md).
+Чтобы восстановить хранилище данных, см. статью [Восстановление хранилища данных SQL Azure (портал)](sql-data-warehouse-restore-database-portal.md), [Восстановление хранилища данных SQL Azure (PowerShell)](sql-data-warehouse-restore-database-powershell.md) или [Восстановление хранилища данных SQL Azure с помощью интерфейсов REST API](sql-data-warehouse-restore-database-rest-api.md).
 
 Чтобы восстановить удаленное или приостановленное хранилище данных, вы можете [создать запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md). 
 

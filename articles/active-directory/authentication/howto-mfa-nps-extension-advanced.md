@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: a857732bcbe70cec164cebb54d7c09a1f103a942
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 81f6d6607f2fcc86e2499a537f3ddeff470d35f9
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39160616"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54429112"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Параметры расширенной конфигурации расширения NPS для Многофакторной идентификации
 
@@ -47,7 +47,7 @@ ms.locfileid: "39160616"
 | ---- | ---- | ------------- | ----------- |
 | IP_WHITELIST | строка | Empty | Предоставьте список разделенных точкой с запятой IP-адресов. Включите в него IP-адреса компьютеров, где создаются запросы к службе, например NAS- или VPN-сервер. Диапазон IP-адресов подсети не поддерживается. <br><br> Например, *10.0.0.1;10.0.0.2;10.0.0.3*.
 
-При поступлении запроса с IP-адреса, который имеется в списке разрешений, двухфакторная проверка подлинности пропускается. Утвержденный список IP-адресов сравнивается с IP-адресом, который предоставляется в атрибуте *ratNASIPAddress* запроса RADIUS. При поступлении запроса RADIUS без атрибута ratNASIPAddress регистрируется следующее предупреждение: P_WHITE_LIST_WARNING::IP Whitelist is being ignored as source IP is missing in RADIUS request in NasIpAddress attribute (P_WHITE_LIST_WARNING: утвержденный список IP-адресов игнорируется, так как в атрибуте NasIpAddress запроса RADIUS отсутствует исходный IP-адрес).
+При поступлении запроса с IP-адреса, который имеется в списке разрешений, двухфакторная проверка подлинности пропускается. Утвержденный список IP-адресов сравнивается с IP-адресом, который предоставляется в атрибуте *ratNASIPAddress* запроса RADIUS. При поступлении запроса RADIUS без атрибута ratNASIPAddress регистрируется следующее предупреждение: P_WHITE_LIST_WARNING:IP Whitelist is being ignored as source IP is missing in RADIUS request in NasIpAddress attribute (P_WHITE_LIST_WARNING: список разрешенных IP-адресов игнорируется, так как в атрибуте NasIpAddress запроса RADIUS отсутствует исходный IP-адрес).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

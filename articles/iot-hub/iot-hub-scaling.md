@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: wesmc
-ms.openlocfilehash: 8ff99b8c5cf839afb8c8e73c18c2c413998ba64a
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 30b83613637d97bfe265c4f5a9c911d14da50c4f
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261724"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810913"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -43,6 +43,7 @@ ms.locfileid: "52261724"
 | [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Yes | Yes |
 | [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Yes |
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Yes |
+| [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Yes |
 | [Edge Интернета вещей Azure](../iot-edge/about-iot-edge.md) |   | Yes |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный". 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с FilesAnywhere | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с FilesAnywhere | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FilesAnywhere.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 220b5a486f5bb5d22c671ac6935e610a6eef62cf
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 2dab43499d5f55474117f88cfaa1cecd1a50bf3e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822048"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-filesanywhere"></a>Руководство по интеграции Azure Active Directory с FilesAnywhere
+# <a name="tutorial-azure-active-directory-integration-with-filesanywhere"></a>Руководство. Интеграция Azure Active Directory с FilesAnywhere
 
 В этом руководстве описано, как интегрировать приложение FilesAnywhere с Azure Active Directory (Azure AD).
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/11/2019
 ms.author: kumud
-ms.openlocfilehash: 2eb2fbb1d184bf58923748278d4989a271adf434
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: d914242b6a29e05e5b97ad11a1bde6f894113e43
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352586"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382557"
 ---
 # <a name="azure-standard-load-balancer-overview"></a>Обзор Azure Load Balancer (цен. категория "Стандартный")
 
@@ -213,7 +213,7 @@ Load Balancer уровня "Стандартный" доступен с согл
 
 За использование Load Balancer (цен. категория "Стандартный") взимается плата, размер которой зависит от таких факторов:
 
-- количество настроенных правил балансировки нагрузки и правил для исходящего трафика (правила преобразования сетевых адресов для входящих подключений не учитываются в общем количестве правил);
+- количество настроенных правил балансировки нагрузки и правил для исходящего трафика (правила NAT для входящего трафика не учитываются в общем количестве правил);
 - обработанного объема входящих и исходящих данных независимо от правил. 
 
 Сведения о ценах на Load Balancer уровня "Стандартный" см. на [странице цен](https://azure.microsoft.com/pricing/details/load-balancer/).

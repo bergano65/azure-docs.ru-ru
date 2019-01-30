@@ -9,17 +9,17 @@ ms.author: dwgeo
 ms.date: 11/10/2017
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 8372c405087c0dc7a000a65265bb99c395c3a8d6
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0894c3677b87fe48c130d648253dadd0d43429f4
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783183"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821453"
 ---
 # <a name="submit-clipping-jobs-from-azure-media-clipper"></a>Отправка заданий обрезки из Azure Media Clipper
 Чтобы обрабатывать отправку заданий обрезки, для Azure Media Clipper требуется реализация метода **submitSubclipCallback**. Эта функция служит для реализации отправки методом HTTP POST выходных данных Clipper в веб-службу. Эта веб-служба является местом, куда можно отправить задание кодирования. Выходные данные Clipper представляют собой либо предустановку кодирования Media Encoder Standard для преобразованных для просмотра заданий, либо полезные данные REST API для динамических вызовов фильтров манифестов. Такая модель сквозной передачи необходима, так как данные учетной записи служб мультимедиа не защищены в браузере клиента.
 
-На следующей схеме последовательностей показан рабочий процесс между клиентским браузером, веб-службой и службами мультимедиа Azure: ![Схема последовательностей Azure Media Clipper](media/media-services-azure-media-clipper-submit-job/media-services-azure-media-clipper-sequence-diagram.PNG)
+На следующей схеме последовательностей показан рабочий процесс между клиентским браузером, веб-службой и Службами мультимедиа Azure: ![Схема последовательностей Azure Media Clipper](media/media-services-azure-media-clipper-submit-job/media-services-azure-media-clipper-sequence-diagram.PNG)
 
 На предыдущей схеме показано четыре сущности: браузер пользователя, ваша веб-служба, конечная точка CDN, на которой размещены ресурсы Clipper, и службы мультимедиа Azure. Когда конечный пользователь переходит на веб-страницу, страница получает ресурсы JavaScript Clipper и CSS из конечной точки размещения в CDN. Пользователь настраивает в браузере задание обрезки или вызов для создания фильтра динамического манифеста. Когда пользователь отправляет задание или вызов для создания фильтра, браузер помещает полезные данные задания в веб-службу, которую необходимо развернуть. Затем эта веб-служба отправляет задание обрезки или вызов для создания фильтра в службы мультимедиа Azure, используя учетные данные учетной записи служб мультимедиа.
 
@@ -31,7 +31,7 @@ ms.locfileid: "33783183"
 // Parameter:
 // - subclip: object that represents the subclip (output contract).
 //
-// Returns: a Promise object that, when resolved, retuns true if the operation was accept in the back-end; otherwise, returns false.
+// Returns: a Promise object that, when resolved, returns true if the operation was accept in the back-end; otherwise, returns false.
 var onSubmitSubclip = function (subclip) {
     var promise = new Promise(function (resolve, reject) {
         // TODO: perform the back-end AJAX request to submit the subclip job.
@@ -99,7 +99,7 @@ var subclipper = new subclipper({
     "type": "job",
 
     /* Required if "type" === "job" */
-    /* NOTE: This is the preset for the Media Encoder Standard (MES) processor that can be used in the back-end to sumit the subclip job.
+    /* NOTE: This is the preset for the Media Encoder Standard (MES) processor that can be used in the back-end to submit the subclip job.
     The encoding profile ("Codecs" property) depends on the "singleBitrateMp4Profile" and "multiBitrateMp4Profile" option parameters
     specified when creating the widget instance. */
     /* REFERENCE: https://docs.microsoft.com/azure/media-services/media-services-advanced-encoding-with-mes */

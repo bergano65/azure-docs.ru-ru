@@ -25,7 +25,7 @@ author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=hain
 * Запуск эксперимента ([Start-AmlExperiment](https://github.com/hning86/azuremlps#start-amlexperiment)).
 * Создание веб-службы из прогнозного эксперимента ([New-AmlWebService](https://github.com/hning86/azuremlps#new-amlwebservice)).
 * Создание конечной точки в опубликованной веб-службе ([Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#add-amlwebserviceendpoint)).
-* Вызов конечной точки веб-службы BES и (или) RRS ([Invoke-AmlWebServiceRRSEndpoint](https://github.com/hning86/azuremlps#invoke-amlwebservicerrsendpoint) и [Invoke-AmlWebServicBESEndpoint](https://github.com/hning86/azuremlps#invoke-amlwebservicebesendpoint)).
+* Вызов конечной точки веб-службы BES и (или) RRS ([Invoke-AmlWebServiceRRSEndpoint](https://github.com/hning86/azuremlps#invoke-amlwebservicerrsendpoint) и [Invoke-AmlWebServiceBESEndpoint](https://github.com/hning86/azuremlps#invoke-amlwebservicebesendpoint)).
 
 Ниже представлен пример использования PowerShell для запуска существующего эксперимента:
 

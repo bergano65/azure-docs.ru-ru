@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 5702c6e9c9d75c6cccb82f1c57684ef7b9898c34
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 73ba80878615f04e1755a4d12014691c5ae2a077
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34666030"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54453126"
 ---
 ## <a name="view-device-telemetry"></a>Просмотр телеметрии устройства
 
@@ -39,7 +39,7 @@ ms.locfileid: "34666030"
 
 1. Выберите подготовленное устройство в списке устройств на странице **Устройства**:
 
-    ![Выбор физического устройства](media/iot-suite-visualize-connecting/devicesselect.png)
+    ![Выбор реального устройства](media/iot-suite-visualize-connecting/devicesselect.png)
 
 1. Чтобы отобразить список методов, которые можно вызвать на устройстве, выберите **Jobs** (Задания) > **Run method** (Метод выполнения). Чтобы запланировать выполнение задания на нескольких устройствах, можно выбрать несколько устройств в списке. На панели **Jobs** (Задания) отображаются типы метода, который является общим для всех выбранных устройств.
 

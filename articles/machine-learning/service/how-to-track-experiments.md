@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: c45023a462a5c01dfde806d7abbb9714aaf09b85
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 99b3a65feb232526cffecac4fec68d56fcd16ccb
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53189478"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846291"
 ---
 # <a name="track-experiments-and-training-metrics-in-azure-machine-learning"></a>Отслеживание экспериментов и метрик обучения в службе "Машинное обучение Azure"
 
@@ -128,10 +128,10 @@ ms.locfileid: "53189478"
 
 В этом примере расширяется указанная выше базовая модель sklearn Ridge. В нем выполняется простая замена параметров по альфа-значениям модели для записи метрик и обученных моделей в выполнениях в рамках эксперимента. Пример запускается локально в управляемой пользователем среде. 
 
-1. Создайте сценарий обучения. Этот код использует ```%%writefile%%``` для записи кода обучения в файл ```train.py``` в папке скрипта.
+1. Создайте сценарий обучения `train.py`.
 
   ```python
-  %%writefile $project_folder/train.py
+  # train.py
 
   import os
   from sklearn.datasets import load_diabetes
@@ -182,10 +182,11 @@ ms.locfileid: "53189478"
   
   ```
 
-2. Сценарий ```train.py``` ссылается на ```mylib.py```. Этот файл позволяет получить список альфа-значений для использования в модели ridge.
+2. Сценарий `train.py` ссылается на `mylib.py`, который позволяет получить список альфа-значений для использования в модели ridge.
 
   ```python
-  %%writefile $script_folder/mylib.py
+  # mylib.py
+  
   import numpy as np
 
   def get_alphas():
@@ -216,7 +217,31 @@ ms.locfileid: "53189478"
   src = ScriptRunConfig(source_directory = './', script = 'train.py', run_config = run_config_user_managed)
   run = experiment.submit(src)
   ```
+
+## <a name="cancel-a-run"></a>Отмена выполнения
+Если вы знаете имя эксперимента и идентификатор выполнения, после запуска выполнения вы можете отменить его, даже если потеряли ссылку на объект. 
+
+```python
+from azureml.core import Experiment
+exp = Experiment(ws, "my-experiment-name")
+
+# if you don't know the run id, you can list all runs under an experiment
+for r in exp.get_runs():  
+    print(r.id, r.get_status())
+
+# if you know the run id, you can "rehydrate" the run
+from azureml.core import get_run
+r = get_run(experiment=exp, run_id="my_run_id", rehydrate=True)
   
+# check the returned run type and status
+print(type(r), r.get_status())
+
+# you can only cancel a run if the status is Running
+if r.get_status() == 'Running':
+    r.cancel()
+```
+Обратите внимание, что в настоящее время только типы ScriptRun и PipelineRun поддерживают операцию отмены.
+
 ## <a name="view-run-details"></a>Просмотр сведений о выполнении
 
 ### <a name="monitor-run-with-jupyter-notebook-widgets"></a>Мониторинг выполнения с помощью мини-приложений записных книжек Jupyter
@@ -314,7 +339,7 @@ ms.locfileid: "53189478"
 
 
 
-### <a name="classification"></a>Классификация
+### <a name="classification"></a>классификация;
 
 Для каждой модели классификации, которую вы создаете с помощью автоматического машинного обучения в Машинном обучении Azure, отображаются следующие диаграммы: 
 + [матрица неточностей](#confusion-matrix);
@@ -390,7 +415,7 @@ ms.locfileid: "53189478"
 
 <a name="pvt"></a>
 
-#### <a name="predicted-vs-true"></a>Прогнозируемые и истинные значения
+#### <a name="predicted-vs-true"></a>Прогнозируемые и Истина
 
 Прогнозируемые и истинные значения. Эта диаграмма отображает зависимость между прогнозируемым значением для проблемы регрессии. Эта диаграмма позволяет оценить эффективность модели: чем ближе прогнозируемые значения к графику y=x, тем выше точность прогнозной модели.
 

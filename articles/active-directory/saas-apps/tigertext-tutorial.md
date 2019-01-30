@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с TigerText Secure Messenger | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с TigerText Secure Messenger | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TigerText Secure Messenger.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 03f1e128-5bcb-4e49-b6a3-fe22eedc6d5e
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/21/2017
 ms.author: jeedes
-ms.openlocfilehash: e74a1a17638a3d968f2216950f6310205fce86f5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9bb638f2ff4f94ebb6c75a05fd7de772f8f9cdec
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422490"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817883"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по интеграции Azure Active Directory с TigerText Secure Messenger
+# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство. Интеграция Azure Active Directory с TigerText Secure Messenger
 
 В этом руководстве описано, как интегрировать приложение TigerText Secure Messenger с Azure Active Directory (Azure AD).
 
@@ -126,7 +126,7 @@ ms.locfileid: "39422490"
 1. Для настройки единого входа в вашем приложении обратитесь в [службу поддержки TigerText Secure Messenger](mailTo:prosupport@tigertext.com) и предоставьте **скачанный файл метаданных**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

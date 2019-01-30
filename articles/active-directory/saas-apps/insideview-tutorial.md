@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с InsideView | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с InsideView | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении InsideView.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: c489a7ab-6b1f-4efb-8a66-8bc13bca78c3
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
-ms.openlocfilehash: fd004302018bf032675957c12e58759a0d4ed6e5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 06bdae468a15bfbc9c3aab3f9f6f4ddd81e0f678
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54812494"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство. Интеграция Azure Active Directory с InsideView
 
@@ -141,7 +141,7 @@ ms.locfileid: "39436280"
    
     a. В текстовом поле **Имя службы токенов безопасности** введите имя конфигурации.
 
-    b. В текстовое поле **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле  **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
     
     c. Откройте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **STS Certificate** (Сертификат STS).
 
@@ -156,7 +156,7 @@ ms.locfileid: "39436280"
     h. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
  
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -3,18 +3,18 @@ title: Обработка ошибок в графических модулях 
 description: В этой статье описывается, как реализовать логику обработки ошибок в графических модулях Runbook в службе автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 14112a9a9f64f20540a8f7e1d37cd31017238e59
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: d7fe38334b71334d4dae9235643117efdf5fbd5d
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34192716"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54436694"
 ---
 # <a name="error-handling-in-azure-automation-graphical-runbooks"></a>Обработка ошибок в графических модулях Runbook в службе автоматизации Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "34192716"
 
 * **Устранимая ошибка:** несерьезная ошибка, которая не останавливает выполнение. Примеры включают ошибки из-за отсутствия файла и проблемы с разрешениями.
 
-Графические модули Runbook службы автоматизации Azure теперь включают возможность обработки ошибок. Теперь можно преобразовывать исключения в устранимые ошибки и создавать ссылки ошибок между действиями. Этот процесс позволит автору модуля Runbook настроить перехват ошибок и управлять реализованными или непредвиденными условиями.  
+Графические модули runbook службы автоматизации Azure теперь включают возможность обработки ошибок. Теперь можно преобразовывать исключения в устранимые ошибки и создавать ссылки ошибок между действиями. Этот процесс позволит автору модуля Runbook настроить перехват ошибок и управлять реализованными или непредвиденными условиями.  
 
 ## <a name="when-to-use-error-handling"></a>Применение обработки ошибок
 
@@ -69,3 +69,4 @@ ms.locfileid: "34192716"
 * Дополнительные сведения о ссылках и их типах в графических модулях Runbook см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md#links-and-workflow).
 
 * Дополнительные сведения о выполнении модулей Runbook, отслеживании заданий модуля Runbook и других технических деталях см. в статье [Выполнение модуля Runbook в службе автоматизации Azure](automation-runbook-execution.md).
+

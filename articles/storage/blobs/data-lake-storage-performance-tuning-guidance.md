@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 43cec400a21671d47d1a6c390833a5e4c6517709
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 403d60232f6b22161031dd4eb1af062336c370ee
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976830"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54401764"
 ---
 # <a name="tuning-azure-data-lake-storage-gen2-for-performance"></a>Настройка Azure Data Lake Storage 2-го поколения для повышения производительности
 
@@ -139,4 +139,4 @@ Data Lake Storage 2-го поколения можно масштабирова�
 | [Storm в HDInsight](data-lake-storage-performance-tuning-storm.md)|  | <ul><li>Количество рабочих процессов</li><li>Количество экземпляров исполнителей воронки</li><li>Количество экземпляров исполнителей сита </li><li>Количество задач воронки</li><li>Количество задач сита</li></ul>|
 
 ## <a name="see-also"></a>См. также
-* [Introduction to Azure Data Lake Storage Gen2 Preview](data-lake-storage-introduction.md) (Введение в предварительную версию Azure Data Lake Storage 2-го поколения)
+* [Общие сведения об Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md)

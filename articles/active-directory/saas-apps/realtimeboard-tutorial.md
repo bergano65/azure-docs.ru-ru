@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RealtimeBoard | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RealtimeBoard | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении RealtimeBoard.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: a37fc1c0-4bae-4173-989b-00de53a0076f
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/31/2017
 ms.author: jeedes
-ms.openlocfilehash: 00b0844deb8cc81f770f6c98f8b020f1402d2ff7
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 613a31fdd82c45705b5a0baa3f07aa88d4eb4e0b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39045358"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815435"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-realtimeboard"></a>Руководство по интеграции Azure Active Directory с RealtimeBoard
+# <a name="tutorial-azure-active-directory-integration-with-realtimeboard"></a>Руководство. Интеграция Azure Active Directory с RealtimeBoard
 
 В этом руководстве описано, как интегрировать приложение RealtimeBoard с Azure Active Directory (Azure AD).
 
@@ -129,7 +129,7 @@ ms.locfileid: "39045358"
 7. Для настройки единого входа на стороне **RealtimeBoard** выполните [инструкции для RealtimeBoard](https://help.realtimeboard.com/support/solutions/articles/11000023465-saml-based-single-sign-on-) и используйте информацию из скачанных **метаданных в формате XML**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -205,7 +205,7 @@ ms.locfileid: "39045358"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку RealtimeBoard на панели доступа, вы автоматически войдете в приложение RealtimeBoard.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

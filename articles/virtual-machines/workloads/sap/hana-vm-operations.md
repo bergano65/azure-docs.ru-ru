@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: msjuergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 96b0c44ff36dac3832e518deeed7f07b11e78c16
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: cede896e9a2a4c92a495a502fb6cf69805d755ee
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54160052"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54402138"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -161,10 +161,10 @@ Linux имеет несколько разных режимов планиров
 
 | SKU виртуальной машины | ОЗУ | Макс. пропускная способность<br /> Пропускная способность | /hana/data и /hana/log,<br /> чередующиеся с диспетчером логических томов или MDADM | /hana/shared | том /root | /usr/sap | hana/backup |
 | --- | --- | --- | --- | --- | --- | --- | -- |
-| DS14v2 | 128 ГБ | 768 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S15 |
+| DS14v2 | 112 ГиБ | 768 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S15 |
 | E16v3 | 128 ГБ | 384 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S15 |
 | E32v3 | 256 Гиб | 768 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S20 |
-| E64v3 | 443 ГиБ | 1200 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S30 |
+| E64v3 | 432 ГиБ | 1200 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S30 |
 | GS5 | 448 ГиБ | 2000 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S30 |
 | M32ts | 192 ГиБ | 500 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S20 |
 | M32ls | 256 Гиб | 500 МБ/с | 3 x P20 | 1 x S20 | 1 x S6 | 1 x S6 | 1 x S20 |

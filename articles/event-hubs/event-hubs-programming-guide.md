@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 3aa5a1c640cc46d677a66f5179f9f07a81e62b15
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 60c709108da041dc1e54ba69d3b1b153accebc19
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138081"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54401407"
 ---
 # <a name="programming-guide-for-azure-event-hubs"></a>Руководство по программированию для Центров событий Azure
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
@@ -92,7 +92,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 
 Пакетная отправка событий позволяет повысить пропускную способность. Вы можете использовать API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch) для создания пакета, в который можно позже добавить объекты данных для вызова [SendAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync).
 
-Размер одного пакета не должен превышать 256 КБ для события. Кроме того, каждое сообщение в пакете использует один и тот же идентификатор издателя. Отправитель должен убедиться, что размер пакета не превышает максимальный размер события. Если же размер больше, генерируется ошибка **Send** клиента. Можно использовать вспомогательный метод [EventHubClient.CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), чтобы убедиться, что пакет не превысит 256 КБ. Вы получаете пустой пакет [EventDataBatch](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch) из API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), а затем с помощью [TryAdd](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch.tryadd) добавляете события для создания пакета. 
+Размер одного пакета не должен превышать 1 МБ для события. Кроме того, каждое сообщение в пакете использует один и тот же идентификатор издателя. Отправитель должен убедиться, что размер пакета не превышает максимальный размер события. Если же размер больше, генерируется ошибка **Send** клиента. Можно использовать вспомогательный метод [EventHubClient.CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), чтобы убедиться, что пакет не превысит 1 МБ. Вы получаете пустой пакет [EventDataBatch](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch) из API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), а затем с помощью [TryAdd](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch.tryadd) добавляете события для создания пакета. 
 
 ## <a name="send-asynchronously-and-send-at-scale"></a>Асинхронная отправка и отправка в нужном масштабе
 

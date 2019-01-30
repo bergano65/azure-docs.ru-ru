@@ -2,8 +2,8 @@
 title: Отправка push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure" | Документация Майкрософт
 description: Узнайте, как использовать службу "Центры уведомлений Azure" для отправки push-уведомлений определенным пользователям.
 documentationcenter: ios
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 services: notification-hubs
 ms.assetid: 1f7d1410-ef93-4c4b-813b-f075eed20082
@@ -12,16 +12,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 04/13/2018
-ms.author: dimazaid
-ms.openlocfilehash: 270311af94d0c0551626fc2906cade84e0c60664
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: 4ecac47de08b458eac375f8f5e774c396aeb2f5d
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918970"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448114"
 ---
-# <a name="tutorial-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -52,21 +52,21 @@ ms.locfileid: "42918970"
    > [!NOTE]
    > В этом разделе подразумевается, что вы настроили свой проект, указав пустое имя организации. Если вы этого не сделали, вам нужно будет добавить имя своей организации перед всеми именами классов.
 
-2. В **Main.storyboard** добавьте компоненты из библиотеки объектов, показанные на снимке экрана.
+2. В файл `Main.storyboard` добавьте компоненты из библиотеки объектов, показанные на снимке экрана.
 
     ![Отредактируйте storybard в построителе интерфейса Xcode][1]
 
-   * **Имя пользователя**: текстовое поле UITextField с замещающим текстом *Enter Username*, расположенное под меткой отправки результатов, справа, слева и сверху ограниченное полями.
-   * **Пароль**: текстовое поле UITextField с замещающим текстом *Enter Password*, расположенное под текстовым полем имени пользователя, справа, слева и сверху ограниченное полями. Отметьте параметр **Защищенный ввод текста** в инспекторе атрибутов в разделе *Символ вывода*.
-   * **Вход**: кнопка UIButton с меткой, которая расположена под текстовым полем пароля. Снимите флажок **Включить** в инспекторе атрибутов в разделе *Управление содержимым*.
-   * **WNS**: метка и переключатель для включения отправки уведомлений службы уведомлений Windows, если она установлена в центре. См. руководство [Начало работы с центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
-   * **GCM**: метка и переключатель для включения отправки уведомлений в службу Google Cloud Messaging, если она установлена в центре. См. руководство [Отправка push-уведомлений в приложения Android с помощью центров уведомлений Azure](notification-hubs-android-push-notification-google-gcm-get-started.md).
-   * **APNS**: метка и переключатель для включения отправки уведомлений в службу уведомлений платформы Apple Platform Notification Service.
+   * **Имя пользователя**. Текстовое поле UITextField с замещающим текстом *Введите имя пользователя*, расположенное под меткой отправки результатов, справа, слева и сверху ограниченное полями.
+   * **Пароль**. Текстовое поле UITextField с замещающим текстом *Ввод пароля*, расположенное под текстовым полем имени пользователя, справа, слева и сверху ограниченное полями. Отметьте параметр **Защищенный ввод текста** в инспекторе атрибутов в разделе *Символ вывода*.
+   * **Вход**. UIButton с меткой, которая расположена под текстовым полем пароля. Снимите флажок **Включить** в инспекторе атрибутов в разделе *Управление содержимым*.
+   * **WNS**. Метка и переключатель для включения отправки уведомлений службы уведомлений Windows, если она установлена в центре. См. руководство [Начало работы с центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
+   * **GCM**. Метка и переключатель для включения отправки уведомлений в службу Google Cloud Messaging, если она настроена в центре. См. руководство [Отправка push-уведомлений в приложения Android с помощью центров уведомлений Azure](notification-hubs-android-push-notification-google-gcm-get-started.md).
+   * **APNs**. Метка и переключатель для включения отправки уведомлений в службу уведомлений платформы Apple.
    * **Имя получателя**: текстовое поле UITextField с замещающим текстом *Введите имя получателя*, расположенное непосредственно под меткой GCM, справа, слева и сверху ограниченное полями.
 
     Подробнее о добавлении некоторых компонентов см. в руководстве [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md).
 
-3. Щелкните **Ctrl**, перетащите компоненты из представления в **ViewController.h** и добавьте эти новые элементы.
+3. Перетащите **CTRL** из компонентов в представлении в `ViewController.h` и добавьте эти новые элементы.
 
     ```objc
     @property (weak, nonatomic) IBOutlet UITextField *UsernameField;
@@ -86,13 +86,13 @@ ms.locfileid: "42918970"
     - (IBAction)LogInAction:(id)sender;
     ```
 
-4. В файл **ViewController.h** добавьте следующее `#define` после импорта операторов. Замените заполнитель *<Enter Your Backend Endpoint>\>* URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. (например, *http://you_backend.azurewebsites.net*).
+4. В файл `ViewController.h` добавьте следующее `#define` после импорта операторов. Замените заполнитель `<Enter Your Backend Endpoint>` URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. (например, *http://your_backend.azurewebsites.net*).
 
     ```objc
     #define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
     ```
 
-5. В проекте создайте класс **Cocoa Touch class** с именем **RegisterClient** для взаимодействия с серверной частью ASP.NET. Создайте класс, наследующий `NSObject`. Затем добавьте следующий код в раздел RegisterClient.h:
+5. В проекте создайте класс Cocoa Touch с именем `RegisterClient` для взаимодействия с серверной частью ASP.NET. Создайте класс, наследующий `NSObject`. Затем добавьте следующий код в `RegisterClient.h`.
 
     ```objc
     @interface RegisterClient : NSObject
@@ -288,9 +288,9 @@ ms.locfileid: "42918970"
 
     В этом коде реализуется логика, описываемая в статье [Регистрация из серверной части приложения](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend), при этом используется NSURLSession для выполнения вызовов REST к серверной части приложения и NSUserDefaults — для локального сохранения идентификатора registrationId, возвращаемого центром уведомлений.
 
-    Для нормальной работы этого класса должно быть правильно задано свойство **authorizationHeader**. Это свойство может быть установлено классом **ViewController** после выполнения входа.
+    Для нормальной работы этого класса должно быть правильно задано свойство `authorizationHeader`. Это свойство установлено классом `ViewController` после выполнения входа.
 
-8. В ViewController.h добавьте оператор `#import` для RegisterClient.h. Затем добавьте объявление для токена устройства и ссылку на экземпляр `RegisterClient` в разделе `@interface`.
+8. В `ViewController.h` добавьте инструкцию `#import` для `RegisterClient.h`. Затем добавьте объявление для токена устройства и ссылку на экземпляр `RegisterClient` в разделе `@interface`.
 
     ```objc
     #import "RegisterClient.h"
@@ -312,7 +312,7 @@ ms.locfileid: "42918970"
     ```
 
     > [!NOTE]
-    > Этот фрагмент не является безопасной схемой проверки подлинности. Следует заменить реализацию **createAndSetAuthenticationHeaderWithUsername:AndPassword:** своим собственным механизмом проверки подлинности, формирующим маркер проверки подлинности, используемый классом клиента register, например OAuth, Active Directory.
+    > Этот фрагмент не является безопасной схемой проверки подлинности. Следует заменить реализацию `createAndSetAuthenticationHeaderWithUsername:AndPassword:` своим собственным механизмом проверки подлинности, формирующим маркер проверки подлинности, который используется классом клиента регистра, например, OAuth, Active Directory.
 
 10. Затем в разделе `@implementation` в `ViewController.m` добавьте приведенный ниже код, который задает маркер устройства и заголовок аутентификации.
 
@@ -444,7 +444,7 @@ ms.locfileid: "42918970"
     }
     ```
 
-13. В функции **ViewDidLoad**введите следующий код, чтобы создать экземпляр RegisterClient и задать делегат для текстовых полей.
+13. В функции `ViewDidLoad` добавьте следующий код, чтобы создать экземпляр `RegisterClient` и задать делегат для текстовых полей.
 
     ```objc
     self.UsernameField.delegate = self;
@@ -453,7 +453,7 @@ ms.locfileid: "42918970"
     self.registerClient = [[RegisterClient alloc] initWithEndpoint:BACKEND_ENDPOINT];
     ```
 
-14. Теперь удалите в **AppDelegate.m** все содержимое метода `application:didRegisterForPushNotificationWithDeviceToken:` и замените его следующим содержимым, чтобы контроллер представления содержал последний маркер устройства, полученный из APNs.
+14. Теперь удалите в `AppDelegate.m` все содержимое метода `application:didRegisterForPushNotificationWithDeviceToken:` и замените его следующим содержимым (чтобы убедиться, что контроллер представления содержит последний маркер устройства, полученный из APNs).
 
     ```objc
     // Add import to the top of the file
@@ -467,7 +467,7 @@ ms.locfileid: "42918970"
     }
     ```
 
-15. Наконец, убедитесь, что в **AppDelegate.m**есть следующий метод:
+15. Наконец, убедитесь, что в `AppDelegate.m` есть следующий метод.
 
     ```objc
     - (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
@@ -497,8 +497,7 @@ ms.locfileid: "42918970"
 В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству: 
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spartial-data-geofencing-notification.md)
-
+>[Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spatial-data-geofencing-notification.md)
 
 [1]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-interface.png
 [2]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-user-pwd.png

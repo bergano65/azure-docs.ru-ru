@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/05/2018
 ms.author: juliako
-ms.openlocfilehash: aee2477e0633974cba42ab26e102323cb9606810
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: d96ed28be2fcb3941591854662f9aa20faf04e5d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33784553"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810165"
 ---
 # <a name="configure-asset-delivery-policies-with-net-sdk"></a>Настройка политик доставки ресурсов-контейнеров с помощью пакета SDK для .NET
 [!INCLUDE [media-services-selector-asset-delivery-policy](../../../includes/media-services-selector-asset-delivery-policy.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "33784553"
 
 Если необходимо доставить зашифрованный в хранилище ресурс-контейнер, необходимо настроить его политику доставки. Перед выполнением потоковой передачи ресурса сервер потоковой передачи удаляет шифрование хранилища и осуществляет потоковую передачу содержимого с помощью указанной политики доставки. Например, для доставки ресурса, зашифрованного с помощью ключа шифрования конвертного типа для AES, задайте для типа политики значение **DynamicEnvelopeEncryption**. Чтобы удалить шифрование хранилища и выполнить потоковую передачу ресурса в незашифрованном виде, задайте для типа политики значение **NoDynamicEncryption**. Далее приведены примеры, показывающие, как настроить эти типы политики.
 
-В зависимости от способа настройки политики для доставки ресурсов вы можете выполнить динамическую упаковку, шифрование и потоковую передачу с помощью следующих протоколов потоковой передачи: Smooth Streaming, HLS и MPEG-DASH.
+В зависимости от способа настройки политики для доставки ресурсов, вы можете выполнить динамическую упаковку, шифрование и потоковую передачу с помощью следующих протоколов потоковой передачи: Smooth Streaming, HLS и MPEG-DASH.
 
 В следующем списке приведены форматы, которые используются для потоковой передачи данных в формате Smooth, HLS и DASH.
 
@@ -62,7 +62,7 @@ MPEG DASH
 
 ## <a name="clear-asset-delivery-policy"></a>Политики доставки незашифрованных ресурсов
 
-Следующий метод **ConfigureClearAssetDeliveryPolicy** указывает, что не следует применять динамическое шифрование и осуществлять доставку с помощью потоковой передачи по любому из следующих протоколов: MPEG DASH, HLS и Smooth Streaming. Эту политику можно применить к зашифрованным в хранилище ресурсам-контейнерам.
+Следующий метод **ConfigureClearAssetDeliveryPolicy** указывает, что не следует применять динамическое шифрование и осуществлять доставку с помощью потоковой передачи по любому из следующих протоколов:  MPEG DASH, HLS или Smooth Streaming. Эту политику можно применить к зашифрованным в хранилище ресурсам-контейнерам.
 
 Сведения о том, какие значения можно задать при создании политики доставки ресурсов-контейнеров, см. в разделе [Типы, используемые при определении AssetDeliveryPolicy](#types).
 
@@ -79,7 +79,7 @@ MPEG DASH
 ```
 ## <a name="dynamiccommonencryption-asset-delivery-policy"></a>Политика доставки ресурсов DynamicCommonEncryption
 
-Следующий метод **CreateAssetDeliveryPolicy** создает сущность **AssetDeliveryPolicy**, для которой настроено динамическое общее шифрование содержимого (**DynamicCommonEncryption**), передаваемого по протоколу Smooth Streaming (потоковая передача по другим протоколам будет блокироваться). Этот метод принимает два параметра: **Asset** (ресурс, к которому нужно применить политики доставки) и **IContentKey** (ключ содержимого типа **CommonEncryption**). Дополнительные сведения см. в статье [Создание ContentKey с использованием .NET](media-services-dotnet-create-contentkey.md#common_contentkey).
+Следующий метод **CreateAssetDeliveryPolicy** создает сущность **AssetDeliveryPolicy**, для которой настроено динамическое общее шифрование содержимого (**DynamicCommonEncryption**), передаваемого по протоколу Smooth Streaming (потоковая передача по другим протоколам будет блокироваться). Этот метод принимает два параметра: **Asset** (ресурс, к которому нужно применить политики доставки) и **IContentKey** (ключ содержимого типа **CommonEncryption**). Дополнительные сведения см. в статье [Создание ключа содержимого](media-services-dotnet-create-contentkey.md#common_contentkey).
 
 Сведения о том, какие значения можно задать при создании политики доставки ресурсов-контейнеров, см. в разделе [Типы, используемые при определении AssetDeliveryPolicy](#types).
 
@@ -120,7 +120,7 @@ MPEG DASH
 
         // GetKeyDeliveryUrl for Widevine attaches the KID to the URL.
         // For example: https://amsaccount1.keydelivery.mediaservices.windows.net/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
-        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
+        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamic Encryption 
         // to append /? KID =< keyId > to the end of the url when creating the manifest.
         // As a result Widevine license acquisition URL will have KID appended twice, 
         // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
@@ -156,7 +156,7 @@ MPEG DASH
 > 
 
 ## <a name="dynamicenvelopeencryption-asset-delivery-policy"></a>Политика доставки ресурсов DynamicEnvelopeEncryption
-Следующий метод **CreateAssetDeliveryPolicy** создает сущность **AssetDeliveryPolicy**, для которой настроено применение динамического конвертного шифрования (**DynamicEnvelopeEncryption**) для протоколов Smooth Streaming, HLS и DASH (если вы не укажете какие-либо протоколы, то потоковая передача по ним будет блокироваться). Этот метод принимает два параметра: **Asset** (ресурс, к которому нужно применить политики доставки) и **IContentKey** (ключ содержимого типа **EnvelopeEncryption**). Дополнительные сведения см. в статье [Создание ContentKey с использованием .NET](media-services-dotnet-create-contentkey.md#envelope_contentkey).
+Следующий метод **CreateAssetDeliveryPolicy** создает сущность **AssetDeliveryPolicy**, для которой настроено применение динамического конвертного шифрования (**DynamicEnvelopeEncryption**) для протоколов Smooth Streaming, HLS и DASH (если вы не укажете какие-либо протоколы, то потоковая передача по ним будет блокироваться). Этот метод принимает два параметра: **Asset** (ресурс, к которому нужно применить политики доставки) и **IContentKey** (ключ содержимого типа **EnvelopeEncryption**). Дополнительные сведения см. в статье [Создание ключа содержимого](media-services-dotnet-create-contentkey.md#envelope_contentkey).
 
 Сведения о том, какие значения можно задать при создании политики доставки ресурсов-контейнеров, см. в разделе [Типы, используемые при определении AssetDeliveryPolicy](#types).   
 
@@ -166,7 +166,7 @@ MPEG DASH
 
         //  Get the Key Delivery Base Url by removing the Query parameter.  The Dynamic Encryption service will
         //  automatically add the correct key identifier to the url when it generates the Envelope encrypted content
-        //  manifest.  Omitting the IV will also cause the Dynamice Encryption service to generate a deterministic
+        //  manifest.  Omitting the IV will also cause the Dynamic Encryption service to generate a deterministic
         //  IV for the content automatically.  By using the EnvelopeBaseKeyAcquisitionUrl and omitting the IV, this
         //  allows the AssetDelivery policy to be reused by more than one asset.
         //
@@ -283,7 +283,7 @@ MPEG DASH
         None = 0,
 
         /// <summary>
-        /// Use PlayReady License acquistion protocol
+        /// Use PlayReady License acquisition protocol
         ///
         </summary>
         PlayReadyLicense = 1,
@@ -295,7 +295,7 @@ MPEG DASH
         BaselineHttp = 2,
 
         /// <summary>
-        /// Use Widevine License acquistion protocol
+        /// Use Widevine License acquisition protocol
         ///
         </summary>
         Widevine = 3

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Image Relay | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Image Relay | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Image Relay.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 65bb5990-07ef-4244-9f41-cd28fc2cb5a2
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 326f12ff3923855b09462d4909d37638d4010b48
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 0671d2f5ad4be34926c8e3d2b22711c4af5fd435
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435015"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54812103"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство по интеграции Azure Active Directory с приложением Image Relay
+# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство. Интеграция Azure Active Directory с Image Relay
 
 В этом учебнике описано, как интегрировать Image Relay с Azure Active Directory (Azure AD).
 
@@ -186,7 +186,7 @@ ms.locfileid: "39435015"
     i. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

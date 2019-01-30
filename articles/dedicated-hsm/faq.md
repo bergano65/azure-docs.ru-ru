@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: concepts
 ms.date: 12/11/2018
 ms.author: barclayn
-ms.openlocfilehash: 44507e919b7ed827eb3c08101a04849faf92293c
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: ec814bf641dea6f47b907e9f9e2646dfcf84ade1
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310299"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54451754"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
@@ -78,7 +78,7 @@ ms.locfileid: "53310299"
 
 ### <a name="q-can-i-encrypt-data-used-by-other-azure-services-using-keys-stored-in-dedicated-hsm"></a>Вопрос. Можно ли шифровать данные, используемые другими службами Azure, с помощью ключей, хранящихся на выделенном устройстве HSM?
 
- Нет. Выделенные устройства HSM Azure доступны только изнутри виртуальной сети.
+№ Выделенные устройства HSM Azure доступны только изнутри виртуальной сети.
 
 ### <a name="q-can-i-import-keys-from-an-existing-on-premises-hsm-to-dedicated-hsm"></a>Вопрос. Можно ли импортировать ключи с имеющегося локального устройства HSM на выделенное устройство HSM?
 
@@ -124,7 +124,7 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 ### <a name="q-can-dedicated-hsm-be-used-with-office-365-customer-key-azure-information-protection-azure-data-lake-store-disk-encryption-azure-storage-encryption-azure-sql-tde"></a>Вопрос. Можно ли использовать выделенное устройство HSM с ключом клиента Office 365, Azure Information Protection, Azure Data Lake Storage, службой шифрования дисков, шифрованием службы хранилища Azure, прозрачным шифрованием данных SQL Azure?
 
- Нет. Выделенное устройство HSM подготавливается непосредственно в частном диапазоне IP-адресов клиента, поэтому оно недоступно из других служб Azure или Майкрософт.
+№ Выделенное устройство HSM подготавливается непосредственно в частном диапазоне IP-адресов клиента, поэтому оно недоступно из других служб Azure или Майкрософт.
 
 ## <a name="administration-access-and-control"></a>Администрирование, доступ и управление
 
@@ -138,7 +138,7 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 ### <a name="q-can-microsoft-or-anyone-at-microsoft-access-keys-in-my-dedicated-hsm"></a>Вопрос. Может ли корпорация Майкрософт или какой-либо ее сотрудник получать доступ к ключам в моих выделенных устройствах HSM?
 
- Нет. У корпорации Майкрософт нет доступа к ключам, хранящимся на выделенном устройстве HSM пользователя.
+№ У корпорации Майкрософт нет доступа к ключам, хранящимся на выделенном устройстве HSM пользователя.
 
 ### <a name="q-can-i-upgrade-softwarefirmware-on-hsms-allocated-to-me"></a>Вопрос. Можно ли обновлять программное обеспечение или встроенное ПО на выделенных для меня устройствах HSM?
 
@@ -172,7 +172,7 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 ### <a name="can-i-add-luna-56-hsms-from-on-premises-networks-to-a-high-availability-group-with-azure-dedicated-hsm"></a>Можно ли добавлять устройства HSMLuna 5/6 из локальных сетей в группу высокого уровня доступности с помощью службы выделенных устройств HSM Azure?
 
- Нет.
+№
 
 ### <a name="q-how-many-hsms-can-i-add-to-the-same-high-availability-configuration-from-one-single-application"></a>Вопрос. Сколько устройств HSM можно добавить в одну конфигурацию высокого уровня доступности из одного приложения?
 

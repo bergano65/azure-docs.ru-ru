@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с BC in the Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с BC in the Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в BC in the Cloud.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7dc40d2c-6349-40cb-b304-b098bd03a66c
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/1/2017
 ms.author: jeedes
-ms.openlocfilehash: 5d9d2bb0dc44eab0a419efce0c26a8f30135285e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 33670ce210b7ca7bca276f463d029354dc3282fc
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39431663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817492"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bc-in-the-cloud"></a>Руководство по интеграции Azure Active Directory с BC in the Cloud
+# <a name="tutorial-azure-active-directory-integration-with-bc-in-the-cloud"></a>Руководство. Интеграция Azure Active Directory с BC in the Cloud
 
 В этом руководстве описано, как интегрировать BC in the Cloud с Azure Active Directory (Azure AD).
 
@@ -130,7 +130,7 @@ ms.locfileid: "39431663"
 1. Чтобы настроить единый вход на стороне **BC in the Cloud**, отправьте скачанный **XML-файл метаданных** [группе поддержки BC in the Cloud](https://www.bcinthecloud.com/supportcenter/).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -166,7 +166,7 @@ ms.locfileid: "39431663"
  
 ### <a name="creating-a-bc-in-the-cloud-test-user"></a>Создание тестового пользователя BC in the Cloud
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении BC in the Cloud. Обратитесь к [группе поддержки BC in the Cloud](https://www.bcinthecloud.com/supportcenter/) для добавления пользователей в приложение BC in the Cloud. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении BC in the Cloud. Обратитесь к  [группе поддержки BC in the Cloud](https://www.bcinthecloud.com/supportcenter/)  для добавления пользователей в приложение BC in the Cloud. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -202,7 +202,7 @@ ms.locfileid: "39431663"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
- Щелкнув элемент "BC in the Cloud" на панели доступа, вы автоматически войдете в приложение BC in the Cloud. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+ Щелкнув элемент "BC in the Cloud" на панели доступа, вы автоматически войдете в приложение BC in the Cloud. Дополнительные сведения о панели доступа см. в статье  [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

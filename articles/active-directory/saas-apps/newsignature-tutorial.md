@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с порталом управления облачными службами для Microsoft Azure | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и порталом управления облачными службами для Microsoft Azure.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 4ea9f47c-25ca-42b0-a878-9e7aa6f34973
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 0cd14a308758701e207e0b1ee6d3591c4b0347bd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 896a40bf9358d446eb7d02666d8ec956f9623e91
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39427641"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822014"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Учебник. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
+# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Руководство. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
 
 В этом учебнике описано, как интегрировать портал управления облачными службами для Microsoft Azure с Azure Active Directory (Azure AD).
 
@@ -152,7 +152,7 @@ ms.locfileid: "39427641"
 1. Для настройки единого входа на стороне **портала управления облачными службами для Microsoft Azure** необходимо отправить загруженный **сертификат**, **URL-адрес выхода**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки портала управления облачными службами для Microsoft Azure](mailto:jczernuszka@newsignature.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

@@ -1,5 +1,5 @@
 ---
-title: Заметки о предварительном выпуске шлюза Azure Data Box | Документация Майкрософт
+title: Заметки о предварительном выпуске Шлюза Azure Data Box | Документация Майкрософт
 description: В статье описаны открытые критические проблемы и способы их устранения для предварительного выпуска шлюза Azure Data Box.
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 01/07/2019
 ms.author: alkohli
-ms.openlocfilehash: 31bcc5ed447b32f4474ecef6a8a9f79377061975
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 738cc5b4e90d9572b65f122076973e2d9f1b264f
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078989"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54450496"
 ---
 # <a name="azure-data-box-gateway-preview-release-notes"></a>Заметки о предварительном выпуске шлюза Azure Data Box
 

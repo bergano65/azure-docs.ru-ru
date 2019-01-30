@@ -9,34 +9,29 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 01/16/2019
 ms.author: diberry
-ms.openlocfilehash: 46ad8beb81f42fa19b832c63355488f31da023f8
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: a5d6a5c6191b69d554e0a79dc1303faeddecc6c3
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54259382"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382392"
 ---
 # <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
 LUIS использует службу Cognitive Services Speech, чтобы преобразовать высказывания из произнесенной речи в текст перед получением прогноза. 
 
 ## <a name="speech-to-intent-conversion-concepts"></a>Принципы преобразования речи в намерения
-Преобразование речи в текст в LUIS позволяет отправить на конечную точку произнесенные высказывания и получить от LUIS ответ с прогнозом. Этот процесс выполняется за счет интеграции LUIS со службой [Речь](https://docs.microsoft.com/azure/cognitive-services/Speech). 
+Преобразование речи в текст в LUIS позволяет отправить на конечную точку произнесенные высказывания и получить от LUIS ответ с прогнозом. Этот процесс выполняется за счет интеграции LUIS со службой [Речь](https://docs.microsoft.com/azure/cognitive-services/Speech). Дополнительные сведения о преобразовании речи в намерения см. в [руководстве](../speech-service/how-to-recognize-intents-from-speech-csharp.md).
 
 ### <a name="key-requirements"></a>Основные требования
-Для этой интеграции нет необходимости создавать ключ **API распознавания речи Bing**. Здесь можно использовать ключ **службы "Распознавание речи"**, создаваемый на портале Azure. Не используйте начальный ключ LUIS, он не будет работать для этой интеграции.
+Для этой интеграции нет необходимости создавать ключ **API распознавания речи Bing**. Здесь можно использовать ключ **службы "Распознавание речи"**, создаваемый на портале Azure. Не используйте начальный ключ LUIS.
 
-### <a name="new-endpoint"></a>Новая конечная точка 
-При такой интеграции создается новая конечная точка и модель прогнозирования [цены](luis-boundaries.md#key-limits). С использованием [пакета SDK для распознавания речи](https://github.com/Azure-Samples/cognitive-services-speech-sdk) конечная точка может получать как текстовые, так и произнесенные высказывания, что позволяет обойтись одной конечной точкой. 
+### <a name="pricing-tier"></a>Ценовая категория
+Для этой интеграции используется [модель ценообразования](luis-boundaries.md#key-limits), отличная от обычных ценовых категорий Language Understanding. 
 
 ### <a name="quota-usage"></a>Использование квоты
 Информацию вы найдете в разделе об [ограничениях для ключей](luis-boundaries.md#key-limits). 
-
-### <a name="data-retention"></a>Хранение данных
-Данные, отправленные на конечную точку с использованием пакета SDK для распознавания речи, будь то текстовые или произнесенные высказывания, используются только для расширения возможностей модели речи. Они не используются за пределами модели для расширения возможностей службы "Речь" или LUIS в целом. При удалении приложения LUIS все сохраненные данные также удаляются.
-
-<!-- TBD: Machine translation conversion concepts -->
 
 ## <a name="next-steps"></a>Дополнительная информация
 

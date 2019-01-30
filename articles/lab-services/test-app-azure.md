@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: spelluru
-ms.openlocfilehash: 099bdc25c27e264c3c7732243068307856840409
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 655159185a6011d79b927fd16d2957e2a59c8376
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44030882"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437798"
 ---
 # <a name="test-your-app-in-azure"></a>Тестирование приложения в Azure 
 В этой статье описаны действия по тестированию приложения в Azure с помощью DevTest Labs. Сначала необходимо настроить общую папку в лаборатории и подключить ее как диск на локальном компьютере разработки и на виртуальной машине в лаборатории. Затем с помощью Visual Studio 2017 следует развернуть приложение в общей папке, чтобы его можно было запустить на виртуальной машине в лаборатории.  
@@ -56,7 +56,7 @@ ms.locfileid: "44030882"
 
     ![Выбор виртуальной машины для лаборатории](media/test-app-in-azure/select-lab-vm.png)
 2. Выберите **Подключиться** на панели инструментов для подключения к виртуальной машине. 
-3. [Установите Azure PowerShell](https://azure.microsoft.com/downloads/) с помощью ссылки **Windows install** (Установка для Windows) в разделе **Программы командной строки**. Другие способы установки Azure PowerShell см. в [этой статье](/powershell/azure/install-azurerm-ps?view=azurermps-6.8.1).
+3. [Установите Azure PowerShell](https://azure.microsoft.com/downloads/) с помощью ссылки **Windows install** (Установка для Windows) в разделе **Программы командной строки**. Другие способы установки Azure PowerShell см. в [этой статье](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.8.1).
 4. Следуйте инструкциям из раздела о [подключении общей папки](#mount-the-file-share). 
 
 ## <a name="publish-your-app-from-visual-studio"></a>Публикация веб-приложения из Visual Studio

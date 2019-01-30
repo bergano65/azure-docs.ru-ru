@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Getabstract | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Getabstract | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Getabstract.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 2b63d048-b529-4fad-9e90-f244323409dd
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: jeedes
-ms.openlocfilehash: 1bb43f65bd77315be398a9c22e7fc1500de07754
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 11515f74ae95cc317fe27de323da2de6c46c163c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424826"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54825108"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-getabstract"></a>Руководство по интеграции Azure Active Directory с Getabstract
+# <a name="tutorial-azure-active-directory-integration-with-getabstract"></a>Руководство. Интеграция Azure Active Directory с Getabstract
 
 В этом руководстве описано, как интегрировать Getabstract с Azure Active Directory (Azure AD).
 
@@ -146,7 +146,7 @@ ms.locfileid: "39424826"
 1. Чтобы настроить единый вход на стороне **Getabstract**, отправьте в [службу поддержки Getabstract](https://www.getabstract.com/en/contact) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -184,7 +184,7 @@ ms.locfileid: "39424826"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Getabstract. Приложение Getabstract поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Getabstract создается учетная запись пользователя (если она еще не создана).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь в [службу поддержки Getabstract](https://www.getabstract.com/en/contact).
+>Чтобы создать пользователя вручную, обратитесь к [группе поддержки Getabstract](https://www.getabstract.com/en/contact).
 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
@@ -222,7 +222,7 @@ ms.locfileid: "39424826"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Getabstract на панели доступа, вы автоматически войдете в приложение Getabstract.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

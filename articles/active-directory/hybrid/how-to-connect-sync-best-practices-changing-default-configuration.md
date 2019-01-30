@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: изменение конфигурации по умолчанию | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: изменение конфигурации по умолчанию | Документация Майкрософт'
 description: В этой статье приведены рекомендации по изменению стандартной конфигурации служб синхронизации Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 7638a031-1635-4942-94c3-fce8f09eed5e
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 08/29/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: ad19916dc49c2bee870eef77611d120cc66b44cd
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: f071d97df6932bec5ae4161511ba33369cc1828c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306243"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461183"
 ---
-# <a name="azure-ad-connect-sync-best-practices-for-changing-the-default-configuration"></a>Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию
+# <a name="azure-ad-connect-sync-best-practices-for-changing-the-default-configuration"></a>Синхронизация Azure AD Connect: Рекомендации по изменению конфигурации по умолчанию
 В этой статье описываются поддерживаемые и неподдерживаемые изменения в службах синхронизации Azure AD Connect.
 
 Конфигурация, созданная при помощи Azure AD Connect, подходит для большинства сред, в которых локальные каталоги Active Directory синхронизируются с Azure AD. Однако в некоторых случаях, чтобы выполнить определенную задачу или соблюсти нужные требования, в конфигурацию приходится вносить изменения.
@@ -73,5 +73,5 @@ ms.locfileid: "46306243"
 ## <a name="next-steps"></a>Дополнительная информация
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

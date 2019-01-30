@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: eb046ceebf9c6233fa5178d18603add2f0c26a29
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 94ed136b48c53bd582a8b3ad210d421764b9f0f6
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608023"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808465"
 ---
 # <a name="contoso-migration-refactor-an-on-premises-app-to-an-azure-web-app-and-azure-sql-database"></a>Миграция Contoso. Рефакторинг локального приложения для веб-приложения Azure и Базы данных SQL Azure
 
@@ -347,7 +347,7 @@ Contoso оценивает предлагаемый дизайн, составл
 
     ![Развертывание службы приложений](./media/contoso-migration-refactor-web-app-sql/pipeline15.png)
 
-18. В разделе **Select a file or folder** (Выберите файл или папку) они находят файл **SmartHotel.Registration.Wcf.zip**, который был создан во время выполнения сборки, и **сохраняют** его в формате SQL.
+18. В разделе **Select a file or folder** (Выберите файл или папку) они находят файл **SmartHotel.Registration.Wcf.zip**, который был создан во время выполнения сборки, и щелкают **Сохранить**.
 
     ![Сохранение WCF](./media/contoso-migration-refactor-web-app-sql/pipeline16.png)
 

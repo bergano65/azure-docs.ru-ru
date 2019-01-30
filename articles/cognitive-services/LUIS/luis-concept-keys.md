@@ -9,17 +9,17 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 01/18/2019
 ms.author: diberry
-ms.openlocfilehash: 6816fa3705348d07eced92c64e0c7020a08d01d5
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: ff7f25a9c1ac73c53587bb320ef3889a5bfa9dc5
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53132387"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54439125"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
-В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md#create-luis-endpoint-key), [назначить его](luis-how-to-manage-keys.md#assign-endpoint-key) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
+В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
 
 |Ключ|Назначение|
 |--|--|
@@ -33,7 +33,7 @@ ms.locfileid: "53132387"
 
 Ключ разработки, который также называется начальным ключом, создается автоматически при создании учетной записи LUIS и является бесплатным. У вас есть по одному ключу разработки для всех приложений LUIS в каждом [регионе](luis-reference-regions.md) разработки. Ключ разработки предоставляется для разработки приложения LUIS или для проверки отправки запросов к конечным точкам. 
 
-Чтобы найти ключ разработки, войдите в [LUIS](luis-reference-regions.md#luis-website) и щелкните имя учетной записи на панели навигации справа вверху, чтобы открыть **Параметры учетной записи**.
+Чтобы найти ключ разработки, войдите на [веб-сайт LUIS](luis-reference-regions.md#luis-website) и щелкните имя учетной записи на панели навигации справа вверху, чтобы открыть **Параметры учетной записи**.
 
 ![Ключ разработки](./media/luis-concept-keys/programatic-key.png)
 
@@ -43,15 +43,17 @@ ms.locfileid: "53132387"
 > Для удобства во многих примерах используется ключ разработки, так как в [квоту](luis-boundaries.md#key-limits) этого ключа входят несколько вызовов к конечным точкам.  
 
 ## <a name="endpoint-key"></a>Ключ конечной точки
- Если вы хотите отправлять запросы к **рабочей конечной точке**, создайте [ключ LUIS](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/) на портале Azure. Запомните имя, которое использовалось при создании ключа. Оно потребуется при добавлении ключа в приложение.
+При необходимости **запросов к рабочей конечной точки**, создайте ресурс Azure, а затем назначьте его для приложения LUIS. 
 
-Создав подписку LUIS, [назначьте ключ](luis-how-to-manage-keys.md#assign-endpoint-key) приложению. 
+[!INCLUDE [Azure resource creation for Language Understanding and Cognitive Service resources](../../../includes/cognitive-services-luis-azure-resource-instructions.md)]
 
-Ключ конечной точки предоставляет квоту обращений к конечной точке, которая зависит от плана использования, указанного при создании ключа. Сведения о ценах см. в разделе [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h).
+Создав ресурс Azure, [назначьте ключ](luis-how-to-azure-subscription.md) приложению. 
 
-Ключ конечной точки можно использовать для всех приложений LUIS или для конкретных приложений LUIS. 
+    * Ключ конечной точки предоставляет квоту обращений к конечной точке, которая зависит от плана использования, указанного при создании ключа. Сведения о ценах см. в разделе [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h).
 
-Не используйте ключ конечной точки для разработки приложений LUIS. 
+    * Ключ конечной точки можно использовать для всех приложений LUIS или для конкретных приложений LUIS. 
+
+    * Не используйте ключ конечной точки для разработки приложений LUIS. 
 
 ## <a name="use-endpoint-key-in-query"></a>Использование ключа конечной точки в запросе
 Конечная точка LUIS принимает два стиля запроса. Ключ конечной точки используется в каждом из них, но в различных местах:
@@ -74,12 +76,13 @@ API-интерфейсы LUIS используют заголовок `Ocp-Apim-
 Регионы публикации отличаются от регионов разработки. Убедитесь, что вы разрабатываете приложение в регионе разработки, соответствующем желаемому региону публикации.
 
 ## <a name="key-limit-errors"></a>Ошибки ограничений ключей
-При превышении заданного значения квоты в секунду вы получите ошибку HTTP 429. При превышении заданного значения квоты в месяц вы получите ошибку HTTP 403. Чтобы исправить эти ошибки, получите ключ [конечной точки](#endpoint-key) LUIS и [назначьте](luis-how-to-manage-keys.md#assign-endpoint-key) его приложению на странице **Публикация** веб-сайта [LUIS](luis-reference-regions.md#luis-website).
+При превышении заданного значения квоты в секунду вы получите ошибку HTTP 429. При превышении заданного значения квоты в месяц вы получите ошибку HTTP 403. Чтобы исправить эти ошибки, получите ключ [конечной точки](#endpoint-key) LUIS и [назначьте](luis-how-to-azure-subscription.md) его приложению на странице **Публикация** веб-сайта [LUIS](luis-reference-regions.md#luis-website).
 
-## <a name="automating-assignment-of-the-endpoint-key"></a>Автоматическое назначение ключа конечной точки
+## <a name="assignment-of-the-endpoint-key"></a>Назначение ключа конечной точки
 
-Чтобы назначить ключ конечной точки приложению LUIS, необходимо использовать веб-сайт LUIS для правильного указания [регионов](luis-reference-regions.md) разработки и публикации. Сделать это автоматически **нельзя**, какой механизм вы бы ни использовали — скрипт Azure Resource Manager, Azure CLI, программный пакет SDK или API-интерфейсы.
+Вы можете [назначить](luis-how-to-azure-subscription.md) ключ конечной точки на [портале LUIS](https://www.luis.ai) или с помощью соответствующих API. 
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь с [понятиями](luis-how-to-manage-keys.md#assign-endpoint-key), связанными с ключами разработки и конечных точек.
+* Ознакомьтесь с [понятиями](luis-how-to-azure-subscription.md), связанными с ключами разработки и конечных точек.

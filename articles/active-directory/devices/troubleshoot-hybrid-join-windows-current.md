@@ -4,7 +4,7 @@ description: Устранение неполадок на устройствах
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 ms.assetid: cdc25576-37f2-4afb-a786-f59ba4c284c2
 ms.service: active-directory
 ms.component: devices
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/08/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 1d96c1e8adee55127a50b2d7c374418c22bfec4c
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: f9a32058bb9d9cb2f1fa2d04c8002f06fa80edeb
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43050571"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54446108"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-windows-10-and-windows-server-2016-devices"></a>Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory 
 
@@ -45,7 +45,7 @@ ms.locfileid: "43050571"
 
 Для Windows 10 и Windows Server 2016 гибридное присоединение к Azure Active Directory поддерживает обновление Windows 10 от ноября 2015 г. Мы рекомендуем использовать юбилейное обновление.
 
-## <a name="step-1-retrieve-the-join-status"></a>Шаг 1. Получение сведений о состоянии присоединения 
+## <a name="step-1-retrieve-the-join-status"></a>Шаг 1. Получение сведений о состоянии присоединения 
 
 **Для получения сведений о состоянии присоединения выполните следующие действия:**
 
@@ -59,8 +59,8 @@ ms.locfileid: "43050571"
     | Состояние устройства                                                         |  +----------------------------------------------------------------------+
     
         AzureAdJoined: YES
-     EnterpriseJoined: NO DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7 Thumbprint: B753A6679CE720451921302CA873794D94C6204A KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9 KeyProvider: Microsoft Platform Crypto Provider TpmProtected: YES KeySignTest: : MUST Run elevated to test.
-                  Idp: login.windows.net TenantId: 72b988bf-86f1-41af-91ab-2d7cd011db47 TenantName: Contoso AuthCodeUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/authorize AccessTokenUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/token MdmUrl: https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc MdmTouUrl: https://portal.manage-beta.microsoft.com/TermsOfUse.aspx dmComplianceUrl: https://portal.manage-beta.microsoft.com/?portalAction=Compliance SettingsUrl: eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ== JoinSrvVersion: 1.0 JoinSrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/device/ JoinSrvId: urn:ms-drs:enterpriseregistration.windows.net KeySrvVersion: 1.0 KeySrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/key/ KeySrvId: urn:ms-drs:enterpriseregistration.windows.net DomainJoined: YES DomainName: CONTOSO
+     EnterpriseJoined: НЕТ DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7 Thumbprint: B753A6679CE720451921302CA873794D94C6204A KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9 KeyProvider: Microsoft Platform Crypto Provider TpmProtected: ДА KeySignTest: : НЕОБХОДИМО запускать с повышенными привилегиями к тестированию.
+                  Idp: login.windows.net TenantId: 72b988bf-86f1-41af-91ab-2d7cd011db47 TenantName: Contoso AuthCodeUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/authorize AccessTokenUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/token MdmUrl: https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc MdmTouUrl: https://portal.manage-beta.microsoft.com/TermsOfUse.aspx dmComplianceUrl: https://portal.manage-beta.microsoft.com/?portalAction=Compliance SettingsUrl: eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ== JoinSrvVersion: 1.0 JoinSrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/device/ JoinSrvId: urn:ms-drs:enterpriseregistration.windows.net KeySrvVersion: 1.0 KeySrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/key/ KeySrvId: urn:ms-drs:enterpriseregistration.windows.net DomainJoined: ДА DomainName: CONTOSO
     
     +----------------------------------------------------------------------+
     | Состояние пользователя                                                           |  +----------------------------------------------------------------------+
@@ -69,15 +69,15 @@ ms.locfileid: "43050571"
                NgcKeyId: {C7A9AEDC-780E-4FDA-B200-1AE15561A46B}
         WorkplaceJoined: NO
           WamDefaultSet: YES
-    WamDefaultAuthority: organizations         WamDefaultId: https://login.microsoft.com       WamDefaultGUID: {B16898C6-A148-4967-9171-64D755DA8520} (AzureAd)           AzureAdPrt: YES
+    WamDefaultAuthority: организации WamDefaultId: https://login.microsoft.com WamDefaultGUID: {B16898C6-A148-4967-9171-64D755DA8520} (AzureAd) AzureAdPrt: ДА
 
 
 
-## <a name="step-2-evaluate-the-join-status"></a>Шаг 2. Анализ состояния присоединения 
+## <a name="step-2-evaluate-the-join-status"></a>Шаг 2. Анализ состояния присоединения 
 
 Просмотрите следующие поля и убедитесь, что для них заданы ожидаемые значения.
 
-### <a name="azureadjoined--yes"></a>AzureAdJoined: YES  
+### <a name="azureadjoined--yes"></a>AzureAdJoined : ДА  
 
 Это поле показывает, присоединено ли устройство к Azure AD. Если отображается значение **NO**, то присоединение к Azure AD еще не завершено. 
 
@@ -103,19 +103,19 @@ ms.locfileid: "43050571"
 
 ---
 
-### <a name="domainjoined--yes"></a>DomainJoined: YES  
+### <a name="domainjoined--yes"></a>DomainJoined: ДА  
 
 Это поле показывает, присоединено ли устройство к локальному каталогу Active Directory или нет. Если отображается значение **NO**, то устройство не может выполнить гибридное присоединение к Azure AD.  
 
 ---
 
-### <a name="workplacejoined--no"></a>WorkplaceJoined: NO  
+### <a name="workplacejoined--no"></a>WorkplaceJoined: НЕТ  
 
 Это поле показывает, зарегистрировано ли устройство в Azure AD в качестве личного устройства (с пометкой *Присоединено к рабочей области*). Этот параметр должен иметь значение **NO** для присоединенных к домену компьютеров, на которых также настроено гибридное присоединение к Azure AD. Если этот параметр имеет значение **YES**, то рабочая или учебная учетная запись была добавлена до завершения гибридного присоединения к Azure AD. В таком случае при использовании версии юбилейного обновления Windows 10 (1607) учетная запись игнорируется.
 
 ---
 
-### <a name="wamdefaultset--yes-and-azureadprt--yes"></a>WamDefaultSet: YES и AzureADPrt: YES
+### <a name="wamdefaultset--yes-and-azureadprt--yes"></a>WamDefaultSet: ДА и AzureADPrt: ДА
   
 Эти поля показывают, прошел ли пользователь аутентификацию в Azure AD при входе в устройство. Если эти параметры имеют значение **NO**, то причины могут быть следующими:
 

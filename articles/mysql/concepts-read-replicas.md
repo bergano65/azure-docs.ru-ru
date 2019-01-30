@@ -5,19 +5,20 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/13/2018
-ms.openlocfilehash: 1c05203de694cde882277bf269f3ff87438f9f26
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 1/22/2019
+ms.openlocfilehash: 6ebbaece66d9055fd2bff68eee873b012b4a6d50
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53547734"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462426"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
 Компонент "Реплики чтения" (предварительная версия) позволяет реплицировать данные из базы данных Azure для сервера MySQL (главный сервер) на несколько (до пяти) серверов только для чтения (реплики) в одном регионе Azure. Реплики только для чтения асинхронно обновляются с помощью технологии репликации на основе позиции файла собственного двоичного журнала (binlog) ядра MySQL. Дополнительные сведения о репликации binlog MySQL см. в [этой статье](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
 
-Реплики, созданные в базе данных Azure для MySQL, — это новые серверы, управление которыми аналогично управлению обычными или изолированными серверами MySQL. Эти серверы оплачиваются по тому же тарифу, что и изолированный сервер.
+Реплики, созданные в базе данных Azure для MySQL, — это новые серверы, управление которыми аналогично управлению обычными или изолированными серверами MySQL. Для каждой реплики чтения вы оплачиваете подготовленные вычислительные ресурсы, выраженные в виртуальных ядрах, и подготовленный объем хранилища, выраженный в ГБ/месяц. 
+
 
 Дополнительные сведения о функциях и проблемах репликации MySQL см. в [документации по репликации MySQL](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html).
 

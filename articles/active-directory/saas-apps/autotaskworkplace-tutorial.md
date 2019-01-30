@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Autotask Workplace | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Autotask Workplace | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Autotask Workplace.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: a9a7ff71-c389-4169-aafd-d7a505244797
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: cc1ee04c9d614e895c4e8a021564e9b9405fa8c0
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8768e74455983c9cc405687ed8dbf7f3894cf9e5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438966"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809502"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-autotask-workplace"></a>Руководство по интеграции Azure Active Directory с Autotask Workplace
+# <a name="tutorial-azure-active-directory-integration-with-autotask-workplace"></a>Руководство. Интеграция Azure Active Directory с Autotask Workplace
 
 В этом руководстве описано, как интегрировать Autotask Workplace с Azure Active Directory (Azure AD).
 
@@ -158,7 +158,7 @@ ms.locfileid: "39438966"
 >Если вам требуется помощь по настройке Autotask Workplace и учетной записи Workplace, см. [эту страницу](https://awp.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -231,7 +231,7 @@ ms.locfileid: "39438966"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Autotask Workplace" на панели доступа, вы автоматически войдете в приложение Autotask Workplace.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

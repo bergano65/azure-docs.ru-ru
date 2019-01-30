@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LinkedInSalesNavigator.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7a9fa8f3-d611-4ffe-8d50-04e9586b24da
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: f0e34a614251cf11c9547d749fef58dfa8ca623a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b4a30259c4aa00530e5aadd2cb98c19b63bd5d8a
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425203"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817033"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-linkedin-sales-navigator"></a>Руководство по интеграции Azure Active Directory с LinkedIn Sales Navigator
+# <a name="tutorial-azure-active-directory-integration-with-linkedin-sales-navigator"></a>Руководство. Интеграция Azure Active Directory с LinkedIn Sales Navigator
 
 В этом руководстве описано, как интегрировать приложение LinkedIn Sales Navigator с Azure Active Directory (Azure AD).
 
@@ -187,7 +187,7 @@ ms.locfileid: "39425203"
 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -261,7 +261,7 @@ ms.locfileid: "39425203"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-При щелчке элемента LinkedIn Sales Navigator на панели доступа должна открыться страница организации, где нужно указать сведения о личной учетной записи LinkedIn. В результате ваша личная учетная запись связывается с вашей рабочей учетной записью LinkedIn. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+При щелчке элемента LinkedIn Sales Navigator на панели доступа должна открыться страница организации, где нужно указать сведения о личной учетной записи LinkedIn. В результате ваша личная учетная запись связывается с вашей рабочей учетной записью LinkedIn. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

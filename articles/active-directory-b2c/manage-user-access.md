@@ -3,19 +3,19 @@ title: Управление доступом пользователей в Azure
 description: Узнайте, как используя Azure AD B2C выявлять в приложении несовершеннолетних пользователей, собирать данные о дате рождения и стране пребывания, а также получать согласие с условиями использования.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/24/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 6709fb8ae328f749b367c58f95b8a9ef8da9bc65
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 982587fa7da41ea1de5fd11bb054f87039596da1
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143733"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54852037"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Управление доступом пользователей в Azure Active Directory B2C
 

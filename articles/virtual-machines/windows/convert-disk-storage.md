@@ -15,24 +15,25 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: ramankum
-ms.openlocfilehash: 958f661585b38b156cf523fe00986e7594474917
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.component: disks
+ms.openlocfilehash: 4f9e3468cc8ec94eeb3ba936b828e9adfd9a3e6d
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093822"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478524"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
-В службе "Управляемые диски Azure" доступны три варианта хранилища: [SSD (цен. категория "Премиум")](../windows/premium-storage.md), [SSD (цен. категория "Стандартный")](../windows/disks-standard-ssd.md) и [HDD (цен. категория "Стандартный")](../windows/standard-storage.md). Вы можете изменять типы хранилищ для управляемого диска с минимальным временем простоя, исходя из собственных потребностей в производительности. Такая возможность не поддерживается для неуправляемого диска. Однако вы можете легко [преобразовать неуправляемый диск в управляемый](convert-unmanaged-to-managed-disks.md).
+Управляемые диски Azure предлагают три варианта типа хранилища: [SSD (цен. категория "Премиум")](../windows/premium-storage.md), [SSD (цен. категория "Стандартный")](../windows/disks-standard-ssd.md) и [HDD (цен. категория "Стандартный")](../windows/standard-storage.md). Вы можете изменять типы хранилищ для управляемого диска с минимальным временем простоя, исходя из собственных потребностей в производительности. Такая возможность не поддерживается для неуправляемого диска. Однако вы можете легко [преобразовать неуправляемый диск в управляемый](convert-unmanaged-to-managed-disks.md).
 
-В этой статье рассматривается преобразование хранилища управляемых дисков с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью Azure PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. руководство по [установке и настройке Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.8.1).
+В этой статье рассматривается преобразование хранилища управляемых дисков с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью Azure PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. руководство по [установке и настройке Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.8.1).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Процесс преобразования требует перезагрузки виртуальной машины, поэтому запланируйте перенос хранилища дисков на предварительно заданный период обслуживания. 
 * Если вы используете неуправляемый диск, сначала [преобразуйте его в управляемый](convert-unmanaged-to-managed-disks.md), чтобы вы могли сменить тип хранилища для него. 
-* Для работы с примерами в этой статье требуется Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Выполните команду [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount) для подключения к Azure.
+* Для работы с примерами в этой статье требуется Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Выполните команду [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount) для подключения к Azure.
 
 
 ## <a name="convert-all-the-managed-disks-of-a-vm-from-standard-to-premium"></a>Преобразование всех управляемых дисков на виртуальной машине с уровня "Стандартный" до уровня "Премиум"

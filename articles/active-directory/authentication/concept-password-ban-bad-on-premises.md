@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: jsimmons
-ms.openlocfilehash: ca412e94f65c7e1ed9a547ec9dcabc62fac7d42f
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 45c77aa63159a8e62f65c0e250c0ace95b0d344e
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741833"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54429911"
 ---
-# <a name="preview-enforce-azure-ad-password-protection-for-windows-server-active-directory"></a>Предварительная версия. Применение защиты паролем Azure AD для Windows Server Active Directory
+# <a name="preview-enforce-azure-ad-password-protection-for-windows-server-active-directory"></a>Предварительный просмотр: применение защиты паролем Azure AD для Windows Server Active Directory
 
 |     |
 | --- |
@@ -44,7 +44,7 @@ ms.locfileid: "50741833"
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на [сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
-## <a name="download"></a>Загрузка
+## <a name="download"></a>Download (Скачать)
 
 Для защиты паролем Azure AD имеется два обязательных установщика, которые можно скачать из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 

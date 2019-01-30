@@ -3,19 +3,19 @@ title: Примеры преобразования общих утвержден
 description: Примеры преобразования общих утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 8ff418c24e9171d452bca873c4b8f66ada2adb7c
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 8cae6ec9693c0fadba059e641fb75e68bbbaec92
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47431332"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54853106"
 ---
 # <a name="general-claims-transformations"></a>Преобразования общих утверждений
 
@@ -60,7 +60,7 @@ ms.locfileid: "47431332"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | plaintext | строка | Входящее утверждение для шифрования |
 | InputClaim | salt | строка | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
-| InputParameter | randomizerSecret | строка | Указывает на существующие **ключи политики** Azure AD B2C. Чтобы создать новый, в клиенте Azure AD B2C выберите **B2C Settings (Параметры B2C) > Identity Experience Framework**. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Предоставьте имя (префикс B2C_1A_ может быть добавлен автоматически). В поле "Секрет" введите любой секрет, который нужно использовать, например 1234567890. Для параметра "Использование ключа" выберите **Секрет**. Нажмите кнопку **Создать**. |
+| InputParameter | randomizerSecret | строка | Указывает на существующие **ключи политики** Azure AD B2C. Чтобы создать ключ политики, в клиенте Azure AD B2C выберите **B2C Settings (Параметры B2C) > Identity Experience Framework**. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Предоставьте имя (префикс B2C_1A_ может быть добавлен автоматически). В поле "Секрет" введите любой секрет, который нужно использовать, например 1234567890. Для параметра "Использование ключа" выберите **Секрет**. Нажмите кнопку **Создать**. |
 | outputClaim | hash | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
 
 ```XML
@@ -85,7 +85,7 @@ ms.locfileid: "47431332"
     - **salt**: 487624568.
     - **randomizerSecret**: B2C_1A_AccountTransformSecret.
 - Исходящие утверждения: 
-    - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U=
+    - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U =
 
 
 

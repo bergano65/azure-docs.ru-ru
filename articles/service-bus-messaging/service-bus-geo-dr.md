@@ -2,18 +2,19 @@
 title: Географическое аварийное восстановление в служебной шине Azure | Документация Майкрософт
 description: Способы использования географических регионов для отработки отказа и аварийного восстановления в служебной шине Azure
 services: service-bus-messaging
-author: spelluru
+author: axisc
 manager: timlt
+editor: spelluru
 ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 09/14/2018
-ms.author: spelluru
-ms.openlocfilehash: 0436248dac2812c447d25de16a4ac6b45bd7248f
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.date: 01/23/2019
+ms.author: aschhab
+ms.openlocfilehash: d98ff2c5b9d18c36e7d16ec19d3e136be03b8d4c
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855189"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848008"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Географическое аварийное восстановление в служебной шине Azure
 
@@ -41,7 +42,7 @@ ms.locfileid: "48855189"
 
 -  *Метаданные*. Сущности, такие как очереди, разделы и подписки, и их свойства службы, связанные с пространством имен. Обратите внимание, что только сущности и их параметры реплицируются автоматически. Сообщения не реплицируются. 
 
--  *Отработка отказа*: процесс активации дополнительного пространства имен.
+-  *Отработка отказа*. Процесс активации дополнительного пространства имен.
 
 ## <a name="setup-and-failover-flow"></a>Настройка и поток отработки отказа
 

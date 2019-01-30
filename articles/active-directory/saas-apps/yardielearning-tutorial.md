@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Yardi eLearning | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Yardi eLearning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Yardi eLearning.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7ea58b54-ec5b-4576-8586-814b11d0f4fb
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: jeedes
-ms.openlocfilehash: 9a6bbb716957621daf4667a7e819c31eeedaa53a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9d5da9f1d49f666af4afc275e5ffa5f5afb6699e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437204"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811270"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yardi-elearning"></a>Учебник. Интеграция Azure Active Directory с Yardi eLearning
+# <a name="tutorial-azure-active-directory-integration-with-yardi-elearning"></a>Руководство. Интеграция Azure Active Directory с Yardi eLearning
 
 Это руководство описывает интеграцию Azure Active Directory (Azure AD) с приложением Yardi Learning.
 
@@ -130,7 +130,7 @@ ms.locfileid: "39437204"
 1. Чтобы настроить единый вход на стороне **Yardi eLearning** , отправьте скачанный **XML-файл метаданных** в [службу поддержки Yardi eLearning](mailto:elearning@yardi.com). 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

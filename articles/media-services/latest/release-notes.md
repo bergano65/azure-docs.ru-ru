@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 01/22/2019
 ms.author: juliako
-ms.openlocfilehash: bf80f78cc464fe274e83eca2f8afa420c2a8c453
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: a1d52e0c6f87b9075d73508c97bd270d67d3ecf5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54229962"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817628"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -33,6 +33,14 @@ ms.locfileid: "54229962"
 > В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
+
+## <a name="january-2019"></a>Январь 2019 г.
+
+### <a name="media-encoder-standard-and-mpi-files"></a>Файлы MPI и Media Encoder Standard 
+
+При кодировании с помощью Media Encoder Standard для создания файлов MP4 создается и добавляется в выходной ресурс новый MPI-файл. Этот MPI-файл предназначен для повышения производительности динамической упаковки и потоковой передачи.
+
+Не следует изменять или удалять MPI-файл, а также ваша служба не должна зависеть от существования (или отсутствия) такого файла.
 
 ## <a name="december-2018"></a>Декабрь 2018 г.
 

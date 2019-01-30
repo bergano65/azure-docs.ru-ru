@@ -7,14 +7,14 @@ manager: cgronlund
 ms.service: cognitive-services
 ms.component: ''
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 01/17/2018
 ms.author: nitinme
-ms.openlocfilehash: f7a68aab4959c3793c7688504d73d2b539a26f83
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 60bf74135e760e837de7e5548bcb60f6c7b8dd0c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025401"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475243"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Общие сведения об Azure Cognitive Services
 
@@ -89,6 +89,14 @@ Azure Cognitive Services — это API-интерфейсы, пакеты SDK �
 API-интерфейсы в Cognitive Services размещаются в растущей сети центров обработки данных корпорации Майкрософт. Вы можете найти локализацию для каждого API в [списке регионов Azure](https://azure.microsoft.com/regions).
 
 Ищете регион, который пока не поддерживается? Сообщите нам, отправив запрос функции на наш [форум UserVoice](https://cognitive.uservoice.com/).
+
+## <a name="supported-cultural-languages"></a>Поддерживаемые региональные языки
+
+ Cognitive Services поддерживает широкий спектр региональных языков на уровне службы. Дополнительные сведения о доступности языков для каждого API можно найти в [списке поддерживаемых языков](language-support.md).
+
+ ## <a name="container-support"></a>Поддержка контейнеров
+
+ Cognitive Services предоставляет контейнеры для развертывания в облаке Azure или локально. Дополнительные сведения о [контейнерах Cognitive Services](cognitive-services-container-support.md).
 
 ## <a name="support"></a>Поддержка
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: e8e838fae0da3a47fe1b3ec8d412f956f5f28034
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 31d6725b6e02bbc583ad80f235360574941a97d3
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53975515"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54468341"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -30,13 +30,14 @@ ms.locfileid: "53975515"
 
 |Обязательно|Параметр|Назначение|
 |--|--|--|
-|Да|[ApiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
+|Yes|[apiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет |[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
-|Да|[Billing](#billing-setting)|Задает URI конечной точки для ресурса службы в Azure.|
-|да|[Eula](#eula-setting)|Указывает, что вы приняли условия лицензии для контейнера.|
+|Yes|[Выставление счетов](#billing-setting)|Задает URI конечной точки для ресурса службы в Azure.|
+|Yes|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |Нет |[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
-|Нет |[Logging](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
-|Да|[Mounts](#mount-settings)|Читает и записывает данные с главного компьютера в контейнер и обратно.|
+|Нет |[прокси-серверу HTTP](#http-proxy-credentials-settings)|Настраивает прокси-сервер HTTP для исходящих запросов.|
+|Нет |[ведению журналов](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
+|Yes|[Подключения](#mount-settings)|Читает и записывает данные с главного компьютера в контейнер и обратно.|
 
 > [!IMPORTANT]
 > Параметры [`ApiKey`](#apikey-setting), [`Billing`](#billing-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](luis-container-howto.md#billing).
@@ -67,7 +68,7 @@ ms.locfileid: "53975515"
 
 |Обязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
+|Yes| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -77,6 +78,10 @@ ms.locfileid: "53975515"
 
 
 [!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-fluentd.md)]
+
+## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
+
+[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
 
 ## <a name="logging-settings"></a>Параметры ведения журнала
  
@@ -95,7 +100,7 @@ ms.locfileid: "53975515"
 
 |Обязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
 |-------|------|-----------|-------------|
-|Да| `Input` | Строка | Цель входного подключения. По умолчанию используется значение `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Yes| `Input` | Строка | Цель входного подключения. По умолчанию используется значение `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
 |Нет | `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="hierarchical-settings"></a>Иерархические параметры
@@ -189,3 +194,4 @@ ApiKey={APPLICATION_ID} \
 
 * Изучите статью об [установке и запуске контейнеров](luis-container-howto.md).
 * Чтобы решить проблемы, связанные с функциональностью LUIS, ознакомьтесь с [часто задаваемыми вопросами](luis-resources-faq.md).
+* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)

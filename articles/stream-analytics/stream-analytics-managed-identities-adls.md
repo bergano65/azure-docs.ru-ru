@@ -6,14 +6,14 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: bb25f237450a83a34645ad4dfd9a2839c5525c6f
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 87c605feeab742ae589cf8d5d9a98c8e53ccf662
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090437"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54410461"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities-preview"></a>Аутентификация заданий Azure Stream Analytics с помощью управляемых удостоверений для вывода данных в Azure Data Lake Storage 1-го поколения (предварительная версия)
 
@@ -21,9 +21,9 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 Ознакомьтесь с записью блога о [восьми новых возможностях Azure Stream Analytics](https://azure.microsoft.com/blog/eight-new-features-in-azure-stream-analytics/), чтобы зарегистрироваться для использования этой предварительной версии и получить подробные сведения о новых возможностях.
 
-В этой статье показано два способа включения управляемого удостоверения для задания Azure Stream Analytics, которое выводит данные в Azure Data Lake Storage 1-го поколения: через портал Azure и путем развертывания шаблона Azure Resource Manager.
+В этой статье показано два способа включения управляемого удостоверения для задания Azure Stream Analytics, которое выводит данные в Azure Data Lake Storage 1-го поколения: с помощью портала Azure (развертывания шаблона Azure Resource Manager) и средств Azure Stream Analytics для Visual Studio.
 
-## <a name="enable-managed-identity-with-azure-portal"></a>Включение управляемого удостоверения через портал Azure
+## <a name="azure-portal"></a>Портал Azure
 
 1. Начните с создания задания Stream Analytics или открытия имеющегося задания на портале Azure. В строке меню, расположенной в левой части экрана, выберите **Managed Identity (preview)** (Управляемое удостоверение (предварительная версия)) в разделе **Настройка**.
 
@@ -64,6 +64,28 @@ Azure Stream Analytics поддерживает аутентификацию с 
    ![Список доступа Stream Analytics на портале](./media/stream-analytics-managed-identities-adls/stream-analytics-access-list.png)
 
    Дополнительные сведения о разрешениях файловой системы Azure Data Lake Storage 1-го поколения см. в статье [Контроль доступа в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-access-control.md).
+
+## <a name="stream-analytics-tools-for-visual-studio"></a>Средства Stream Analytics для Visual Studio
+
+1. В JobConfig.json задайте **Использовать назначенное системой удостоверение** значение **True**.
+
+   ![Управляемые идентификаторы конфигурации задания Stream Analytics](./media/stream-analytics-managed-identities-adls/adls-mi-jobconfig-vs.png)
+
+2. В окне свойств выходных данных в приемнике выходных данных ADLS 1-го поколения щелкните раскрывающийся список режима аутентификации, а затем выберите **Managed Identity (preview)** (Управляемое удостоверение (предварительная версия)).
+
+   ![Управляемые удостоверения выходных данных ADLS](./media/stream-analytics-managed-identities-adls/adls-mi-output-vs.png)
+
+3. Укажите остальные свойства и щелкните **Сохранить**.
+
+4. Щелкните **Отправить в Azure** в редакторе запросов.
+
+   При отправке задания инструменты выполняют два действия.
+
+   * Автоматически создают субъект-службу для идентификации задания Stream Analytics в Azure Active Directory. Жизненным циклом нового удостоверения будет управлять Azure. При удалении задания Stream Analytics Azure автоматически удаляет связанное удостоверение (то есть субъект-службу).
+
+   * Автоматически установите разрешения на **запись** и **выполнение** для пути префикса ADLS 1-го поколения, используемого в задании, и назначьте его этой папке и ее всем дочерним элементам.
+
+5. Вы можете создать шаблоны Resource Manager со следующим свойством, используя [пакет Stream Analytics CI.CD Nuget](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/) версии 1.5.0 или более поздней на компьютере для сборки (вне Visual Studio). Следуйте инструкциям по развертыванию шаблона Resource Manager, приведенным в следующем разделе, чтобы получить субъект-службу и предоставить доступ субъект-службе через PowerShell.
 
 ## <a name="resource-manager-template-deployment"></a>Развертывание шаблонов Resource Manager
 
@@ -153,3 +175,5 @@ Azure Stream Analytics поддерживает аутентификацию с 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Создание выходных данных Data Lake Store с помощью Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)
+* [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
+* [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md) 

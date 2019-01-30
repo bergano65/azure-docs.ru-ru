@@ -3,6 +3,7 @@
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 02.05.2018
 ---
+
 # <a name="deploy-azure-machine-learning-studio-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Студии машинного обучения с помощью Azure Resource Manager
 
 Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Чтобы настроить рабочие области Машинного обучения Azure, например, сначала необходимо настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Простой альтернативой является развертывание рабочей области машинного обучения Azure и всех ее зависимых компонентов с помощью шаблона Azure Resource Manager. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md).
@@ -125,10 +126,8 @@ Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md). 
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates). 
 * Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39). 
-
-<!--Image references-->
-[1]: ./media/deploy-with-resource-manager-template/azuresubscription.png
-[2]: ./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png
+* См. [информативную справку по шаблонам Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.machinelearning/allversions)
+<!--Image references--> [1]: ./media/deploy-with-resource-manager-template/azuresubscription.png [2]: ./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png
 
 
 <!--Link references-->

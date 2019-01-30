@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/07/2018
+ms.date: 01/23/2019
 ms.author: magoedte
-ms.openlocfilehash: 69aa2cbcaa6861b1d5c5c71769be2fb8046d9ea5
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 0733b4179793e88759ca1c3330880546650fbe09
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53188523"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856389"
 ---
 # <a name="what-is-azure-monitor-for-vms-preview"></a>Что такое Azure Monitor для виртуальных машин (предварительная версия)?
 
@@ -50,7 +50,7 @@ Azure Monitor для виртуальных машин отслеживает в
 
 ![Перспектива полезных сведений о виртуальной машине на портале Azure](./media/vminsights-overview/vminsights-azmon-directvm-01.png)
 
-Пакет Azure DevOps может обеспечить прогнозируемую производительность и доступность важнейших приложений. Он идентифицирует важные события в операционной системе, узкие места производительности и сетевые проблемы. Azure DevOps может также помочь вам понять, связана ли проблема с другими зависимостями.  
+Пакет Azure Monitor для виртуальных машин может обеспечить прогнозируемую производительность и доступность важнейших приложений. Он идентифицирует важные события в операционной системе, узкие места производительности и сетевые проблемы. Azure Monitor для виртуальных машин может также помочь вам понять, связана ли проблема с другими зависимостями.  
 
 ## <a name="data-usage"></a>Использование данных 
 

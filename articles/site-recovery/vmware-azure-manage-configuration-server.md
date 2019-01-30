@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 0d45d460b56f956a97779b46a72d0e4cd97a6b41
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: db5482fe17b9181097e13d446937bc489c3db8fe
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849706"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462833"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vm-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware
 
@@ -137,10 +137,12 @@ ms.locfileid: "52849706"
 - Если вы используете версии 9.7, 9.8, 9.9 или 9.10, можно обновить их непосредственно до версии 9.11.
 - Если вы используете версию 9.6 или ниже и хотите обновить ее до версии 9.11, сначала выполните обновление до версии 9.7, а затем — до версии 9.11.
 
-Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны на [странице обновлений Azure](https://azure.microsoft.com/updates/?product=site-recovery).
+Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](https://aka.ms/asr_support_statement).
+Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны [здесь](https://aka.ms/asr_update_rollups).
 
 > [!IMPORTANT]
-> С каждой новой выпускаемой версией N компонента Azure Site Recovery поддержка всех версий ниже N-4 считается прекращенной. Рекомендуется всегда обновляться до последней доступной версии.
+> С каждой новой выпускаемой версией N компонента Azure Site Recovery поддержка всех версий ниже N-4 считается прекращенной. Рекомендуется всегда обновляться до последней доступной версии.</br>
+> Дополнительные сведения о заявлении о поддержке компонентов Azure Site Recovery см. [здесь](https://aka.ms/asr_support_statement).
 
 Инструкции по обновлению сервера:
 
@@ -158,6 +160,7 @@ ms.locfileid: "52849706"
     ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update3.png)
 
 7. Чтобы закрыть установщик, нажмите кнопку **Готово**.
+8. Сведения об обновлении остальных компонентов Site Recovery см. в [руководстве по обновлению](https://aka.ms/asr_vmware_upgrades).
 
 ## <a name="delete-or-unregister-a-configuration-server"></a>Отмена регистрации или удаление сервера конфигурации
 
@@ -174,7 +177,7 @@ ms.locfileid: "52849706"
 
 При необходимости можно удалить сервер конфигурации с помощью PowerShell.
 
-1. [Установите](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.4.0) модуль Azure PowerShell.
+1. [Установите](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.4.0) модуль Azure PowerShell.
 2. Войдите в учетную запись Azure с помощью следующей команды:
 
     `Connect-AzureRmAccount`

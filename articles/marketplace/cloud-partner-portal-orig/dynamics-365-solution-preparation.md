@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: c1e9c831681867e6a6238159599af39cbab10b7e
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 2ea62a826b9f99e264cb1b2242f8d8108453d8e7
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808434"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448777"
 ---
 # <a name="dynamics-365-solution-preparation"></a>Подготовка решения Dynamics 365
 
@@ -29,7 +29,7 @@ ms.locfileid: "48808434"
 
 ![CRMScreenShot1](media/CRMScreenShot1.png)
 
-_**Примечание**. В следующем примере пакета предполагается, что имя решения — "SampleSolution.zip"_
+_**Примечание**. В следующем примере пакета предполагается, что имя решения — SampleSolution.zip_.
 
 Если вы являетесь новым независимым поставщиком программного обеспечения, можно получить более подробную информацию о создании решения здесь: [https://msdn.microsoft.com/library/gg334530.aspx](https://msdn.microsoft.com/library/gg334530.aspx)
 

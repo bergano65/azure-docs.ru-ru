@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с ICIMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ICIMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ICIMS.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 72dbd649-e4b1-4d72-ad76-636d84922596
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 5ca6920c99a31c2b4699e9fb8a57689485a099ef
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: bd72b0b93693d26da9a26839e4bebf6435807b4c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39431119"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54826502"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-icims"></a>Руководство. Интеграция Azure Active Directory с ICIMS
 
@@ -131,7 +131,7 @@ ms.locfileid: "39431119"
 1. Чтобы настроить единый вход на стороне **ICIMS**, нужно передать скачанный **XML-файл метаданных**, а также **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки ICIMS](https://www.icims.com/contact-us). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -3,7 +3,7 @@ title: Часто задаваемые вопросы по поводу кэша
 description: Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis
 services: azure-cache-for-redis
 documentationcenter: ''
-author: wesmc7777
+author: yegu-ms
 manager: cfowler
 editor: ''
 ms.assetid: c2c52b7d-b2d1-433a-b635-c20180e5cab2
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: azure-cache-for-redis
 ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
-ms.author: wesmc
-ms.openlocfilehash: 5d70e4beb97a23212bc85d529382d8e89f09336d
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.author: yegu
+ms.openlocfilehash: 3a0fb06acd9fc798f1528a1487ae0682135187ca
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54199924"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54402405"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Azure для Redis
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -210,7 +210,7 @@ StackExchange.Redis имеет много параметров. В этом ра
       * Эта рекомендация может обеспечить более оптимизированную задержку на каждый класс `ConnectionMultiplexer`.
 
 ### <a name="what-azure-cache-for-redis-clients-can-i-use"></a>Каких клиентов кэша Azure для Redis я могу использовать?
-Одним из основных преимуществ Redis является то, что существует множество клиентов, поддерживающих множество языков разработки. Текущий список клиентов Redis см. [здесь](https://redis.io/clients). Руководство для нескольких различных языков и клиентов см. в статье [Краткое руководство. Использование кэша Azure для Redis с приложениями .NET](cache-dotnet-how-to-use-azure-redis-cache.md). Выберите нужный язык, используя переключатель языков в верхней части статьи.
+Одним из основных преимуществ Redis является то, что существует множество клиентов, поддерживающих множество языков разработки. Текущий список клиентов Redis см. [здесь](https://redis.io/clients). Дополнительные сведения см. в статье [Краткое руководство. Использование кэша Azure для Redis с приложениями .NET](cache-dotnet-how-to-use-azure-redis-cache.md). Похожие статьи вы найдете в таблице содержимого.
 
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
@@ -259,7 +259,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 ### <a name="why-doesnt-azure-cache-for-redis-have-an-msdn-class-library-reference-like-some-of-the-other-azure-services"></a>Почему в кэше Azure для Redis отсутствует ссылка на библиотеку классов MSDN, как в некоторых других службах Azure?
 Кэш Microsoft Azure для Redis основывается на популярном продукте с открытым кодом – кэше Azure для Redis. Воспользоваться им можно из самых разнообразных [клиентов Redis](https://redis.io/clients), доступных для многих языков программирования. Каждый клиент имеет собственный API, который вызывает экземпляр кэша Azure для Redis с помощью [команд Redis](https://redis.io/commands).
 
-Поскольку все клиенты разные, отсутствует одна централизованная ссылка на классы в MSDN, а каждый клиент поддерживает свою собственную справочную документацию. Помимо справочной документации имеется несколько учебников, показывающих, как приступить к работе с кэшем Azure для Redis, используя разные языки и клиенты кэша. Для доступа к этим учебникам перейдите к статье [Краткое руководство. Использование кэша Azure для Redis с приложениями .NET](cache-dotnet-how-to-use-azure-redis-cache.md) и выберите нужный язык, используя переключатель языков в верхней части статьи.
+Поскольку все клиенты разные, отсутствует одна централизованная ссылка на классы в MSDN, а каждый клиент поддерживает свою собственную справочную документацию. Помимо справочной документации имеется несколько учебников, показывающих, как приступить к работе с кэшем Azure для Redis, используя разные языки и клиенты кэша. Чтобы получить доступ к этим руководствам, см. в статью [Краткое руководство. Использование кэша Azure для Redis с приложениями .NET](cache-dotnet-how-to-use-azure-redis-cache.md). Похожие статьи вы найдете в таблице содержимого.
 
 ### <a name="can-i-use-azure-cache-for-redis-as-a-php-session-cache"></a>Можно ли использовать кэш Azure для Redis как кэш сеанса PHP?
 Да. Для использования кэша Azure для Redis в качестве кэша сеанса PHP укажите строку подключения к экземпляру кэша Azure для Redis в пути `session.save_path`.

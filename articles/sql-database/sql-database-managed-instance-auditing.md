@@ -10,16 +10,16 @@ ms.topic: conceptual
 f1_keywords:
 - mi.azure.sqlaudit.general.f1
 author: vainolo
-ms.author: vainolo
+ms.author: arib
 ms.reviewer: vanto
 manager: craigg
-ms.date: 01/12/2019
-ms.openlocfilehash: 716c4caa1b28cc40470d366e5fc6901de9462f9a
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.date: 01/15/2019
+ms.openlocfilehash: 04c4bba2647b9b17b1282c9a1608fd2e9325f661
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267272"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427922"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Приступая к аудиту управляемого экземпляра Базы данных SQL Azure
 
@@ -28,102 +28,135 @@ ms.locfileid: "54267272"
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
 - Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
 
-## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure 
+## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure
 
 В следующем разделе описывается настройка аудита для управляемого экземпляра.
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-2. С помощью следующих шагов вы создадите **контейнер** службы хранилища Azure для хранения журналов аудита.
+1. Создайте **контейнер** службы хранилища Azure для хранения журналов аудита.
 
-   - Перейдите к хранилищу Azure, в котором вы намерены хранить журналы аудита.
+   1. Перейдите к хранилищу Azure, в котором вы намерены хранить журналы аудита.
 
-     > [!IMPORTANT]
-     > Используйте учетную запись хранения из же региона, где размещен сервер управляемого экземпляра, чтобы избежать операций чтения и записи между регионами.
+      > [!IMPORTANT]
+      > Используйте учетную запись хранения из же региона, где размещен сервер управляемого экземпляра, чтобы избежать операций чтения и записи между регионами.
 
-   - На странице учетной записи хранения перейдите на вкладку **Обзор** и щелкните **BLOB-объекты**.
+   1. На странице учетной записи хранения перейдите на вкладку **Обзор** и щелкните **BLOB-объекты**.
 
-     ![Область навигации][1]
+      ![Мини-приложение больших двоичных объектов Azure](./media/sql-managed-instance-auditing/1_blobs_widget.png)
 
-   - В верхнем меню щелкните **+ Контейнер**, чтобы создать новый контейнер.
+   1. В верхнем меню щелкните **+ Контейнер**, чтобы создать новый контейнер.
 
-     ![Область навигации][2]
+      ![Значок создания контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/2_create_container_button.png)
 
-   - Укажите **имя** контейнера, установите **закрытый** уровень общего доступа и щелкните **ОК**.
+   1. Укажите **имя** контейнера, установите **закрытый** уровень общего доступа и щелкните **ОК**.
 
-     ![Область навигации][3]
+     ![Конфигурация создания контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/3_create_container_config.png)
 
-   - В списке контейнеров щелкните только что созданный контейнер, а затем **Свойства контейнера**.
+1. После создания контейнера существует два способа настроить его в качестве целевого объекта для журналов аудита: [с помощью T-SQL](#blobtsql) или [с помощью пользовательского интерфейса SQL Server Management Studio (SSMS)](#blobssms):
 
-     ![Область навигации][4]
+   - <a id="blobtsql"></a>Настройте хранилище BLOB-объектов для журналов аудита с помощью T-SQL:
 
-   - Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. URL-адрес контейнера должен иметь формат `https://<StorageName>.blob.core.windows.net/<ContainerName>`.
+     1. В списке контейнеров щелкните только что созданный контейнер, а затем **Свойства контейнера**.
 
-     ![Область навигации][5]
+        ![Кнопка свойств контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/4_container_properties_button.png)
 
-3. С помощью следующих действий можно создать **маркер SAS** службы хранилища Azure, который предоставляет права доступа к учетной записи хранения для аудита управляемого экземпляра.
+     1. Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. URL-адрес контейнера должен иметь формат `https://<StorageName>.blob.core.windows.net/<ContainerName>`.
 
-   - Перейдите к учетной записи хранения Azure, в которой вы создали контейнер на предыдущем шаге.
+        ![Копирование URL-адреса контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/5_container_copy_name.png)
 
-   - Щелкните **Подписанный URL-адрес** в меню "Параметры хранилища".
+     1. Создайте **маркер SAS** службы хранилища Azure, который предоставляет права доступа к учетной записи хранения для аудита Управляемого экземпляра:
 
-     ![Область навигации][6]
+        - Перейдите к учетной записи хранения Azure, в которой вы создали контейнер на предыдущем шаге.
 
-   - Настройте SAS следующим образом.
-     - **Допустимые службы**: BLOB-объект
-     - **Дата начала**: чтобы избежать проблем, связанных с часовыми поясами, выберите вчерашний день.
-     - **Дата окончания**: выберите дату окончания срока действия для этого маркера SAS. 
+        - Щелкните **Подписанный URL-адрес** в меню "Параметры хранилища".
 
-       > [!NOTE]
-       > Чтобы избежать сбоев аудита, не забудьте возобновить маркер по истечении срока действия.
+          ![Значок подписанного URL-адреса в меню параметров хранилища.](./media/sql-managed-instance-auditing/6_storage_settings_menu.png)
 
-     - Нажмите кнопку **Создать SAS**.
+        - Настройте SAS следующим образом.
 
-       ![Область навигации][7]
+          - **Допустимые службы**: BLOB-объект
 
-   - Когда вы щелкнете "Создать SAS", в нижней части страницы появится маркер SAS. Скопируйте маркер, щелкнув значок копирования, и сохраните его (например, в Блокноте) для дальнейшего использования.
+          - **Дата начала**: чтобы избежать проблем, связанных с часовыми поясами, выберите вчерашний день.
 
-     > [!IMPORTANT]
-     > Удалите символ знака вопроса (?) в начале маркера.
+          - **Дата окончания**: выберите дату окончания срока действия для этого маркера SAS.
 
-     ![Область навигации][8]
+            > [!NOTE]
+            > Чтобы избежать сбоев аудита, не забудьте возобновить маркер по истечении срока действия.
 
-4. Подключитесь к управляемому экземпляру через SQL Server Management Studio (SSMS).
+          - Нажмите кнопку **Создать SAS**.
+            
+            ![Конфигурация SAS](./media/sql-managed-instance-auditing/7_sas_configure.png)
 
-5. Выполните следующую инструкцию T-SQL, чтобы **создать новые учетные данные** с использованием URL-адреса контейнера и маркера SAS, которые вы создали на предыдущих этапах.
+        - Когда вы щелкнете "Создать SAS", в нижней части страницы появится маркер SAS. Скопируйте маркер, щелкнув значок копирования, и сохраните его (например, в Блокноте) для дальнейшего использования.
 
-    ```SQL
-    CREATE CREDENTIAL [<container_url>]
-    WITH IDENTITY='SHARED ACCESS SIGNATURE',
-    SECRET = '<SAS KEY>'
-    GO
-    ```
+          ![Копирование маркера SAS](./media/sql-managed-instance-auditing/8_sas_copy.png)
 
-6. Выполните следующую инструкцию T-SQL, чтобы создать новый аудит сервера (выберите любое удобное имя аудита и укажите URL-адрес контейнера, созданный ранее).
+          > [!IMPORTANT]
+          > Удалите символ знака вопроса (?) в начале маркера.
 
-    ```SQL
-    CREATE SERVER AUDIT [<your_audit_name>]
-    TO URL ( PATH ='<container_url>' [, RETENTION_DAYS =  integer ])
-    GO
-    ```
+     1. Подключитесь к Управляемому экземпляру, используя SQL Server Management Studio (SSMS) или любое другое поддерживаемое средство.
 
-    Если значение `RETENTION_DAYS` не указано, по умолчанию используется значение 0 (неограниченный период хранения).
+     1. Выполните следующую инструкцию T-SQL, чтобы **создать новые учетные данные** с использованием URL-адреса контейнера и маркера SAS, которые вы создали на предыдущих этапах.
 
-    Дополнительные сведения см. в следующих статьях:
-    - [Get started with Azure SQL Database Managed Instance Auditing](#auditing-differences-between-managed-instance-azure-sql-database-and-sql-server) (Приступая к аудиту управляемых экземпляров Базы данных SQL Azure)
-    - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
-    - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
+        ```SQL
+        CREATE CREDENTIAL [<container_url>]
+        WITH IDENTITY='SHARED ACCESS SIGNATURE',
+        SECRET = '<SAS KEY>'
+        GO
+        ```
 
-7. Создайте спецификацию аудита сервера или спецификацию аудита базы данных, как для обычного сервера SQL Server.
-    - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
-    - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+     1. Выполните следующую инструкцию T-SQL, чтобы создать новый аудит сервера (выберите любое удобное имя аудита и укажите URL-адрес контейнера, созданный ранее). Если значение `RETENTION_DAYS` не указано, по умолчанию используется значение 0 (неограниченный период удержания).
 
-8. Включите аудит сервера, созданный на шаге 6:
+        ```SQL
+        CREATE SERVER AUDIT [<your_audit_name>]
+        TO URL ( PATH ='<container_url>' [, RETENTION_DAYS =  integer ])
+        GO
+        ```
+
+      1. Продолжите, [создав спецификацию аудита сервера или спецификацию аудита базы данных](#createspec).
+
+   - <a id="blobssms"></a>Настройте хранилище BLOB-объектов для журналов аудита с помощью SQL Server Management Studio (SSMS) 18 (предварительная версия):
+
+     1. Подключитесь к управляемому экземпляру через пользовательский интерфейс SQL Server Management Studio (SSMS).
+
+     1. Разверните корневой узел обозревателя объектов.
+
+     1. Разверните узел **Безопасность**, щелкните правой кнопкой мыши узел **Аудиты** и щелкните "Создать аудит":
+
+        ![Развертывание узла аудитов и безопасности](./media/sql-managed-instance-auditing/10_mi_SSMS_new_audit.png)
+
+     1. Убедитесь, что в поле **Назначение аудита** выбрано значение "URL-адрес", и щелкните **Обзор**:
+
+        ![Просмотр службы хранилища](./media/sql-managed-instance-auditing/11_mi_SSMS_audit_browse.png)
+
+     1. Войдите в учетную запись Azure (необязательно):
+
+        ![Вход в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
+
+     1. Выберите подписку, учетную запись хранения и контейнер больших двоичных объектов из раскрывающихся списков или создайте собственный контейнер, щелкнув **Создать**. Когда вы зададите все необходимые параметры, нажмите кнопку **ОК**:
+
+        ![Выбор подписки Azure, учетной записи хранения и контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/13_mi_SSMS_select_subscription_account_container.png)
+
+     1. Нажмите кнопку **ОК** в диалоговом окне "Создать аудит".
+
+1. <a id="createspec"></a>После настройки контейнера больших двоичных объектов как целевого объекта для журналов аудита создайте спецификацию аудита сервера или аудита базы данных, как это делается для SQL Server:
+
+   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+
+1. Включите аудит сервера, созданный на шаге 6:
 
     ```SQL
     ALTER SERVER AUDIT [<your_audit_name>]
     WITH (STATE=ON);
     GO
     ```
+
+Дополнительные сведения см. в следующих статьях:
+
+- [Get started with Azure SQL Database Managed Instance Auditing](#auditing-differences-between-managed-instance-azure-sql-database-and-sql-server) (Приступая к аудиту управляемых экземпляров Базы данных SQL Azure)
+- [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
+- [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
 ## <a name="set-up-auditing-for-your-server-to-event-hub-or-log-analytics"></a>Настройка аудита для сервера в концентраторе событий или Log Analytics
 
@@ -141,7 +174,7 @@ ms.locfileid: "54267272"
 
 6. Выберите команду **Сохранить**.
 
-  ![Область навигации][9]
+    ![Настройка параметров диагностики](./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png)
 
 7. Подключитесь к Управляемому экземпляру, используя **SQL Server Management Studio (SSMS)** или любой другой поддерживаемый клиент.
 
@@ -172,12 +205,12 @@ ms.locfileid: "54267272"
 
 - Системная функция `sys.fn_get_audit_file` (T-SQL) возвращает данные журнала аудита в табличном формате. Дополнительные сведения об использовании этой функции см. в статье [sys.fn_get_audit_file (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql).
 
-- Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://azure.microsoft.com/en-us/features/storage-explorer/). В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере sqldbauditlogs. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
+- Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/). В хранилище Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере, который был определен для хранения журналов аудита. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
 
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing).
 
-> [!IMPORTANT]
-> Просмотр записей аудита на портале Azure (на панели "Записи аудита") сейчас не поддерживается для Управляемого экземпляра.
+  > [!IMPORTANT]
+  > Просмотр записей аудита на портале Azure (на панели "Записи аудита") сейчас не поддерживается для Управляемого экземпляра.
 
 ### <a name="consume-logs-stored-in-event-hub"></a>Использование журналов аудита, которые хранятся в концентраторе событий
 
@@ -213,12 +246,12 @@ Log Analytics предоставляет аналитические данные
 - Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
 
 <!--Image references-->
-[1]: ./media/sql-managed-instance-auditing/1_blobs_widget.png
-[2]: ./media/sql-managed-instance-auditing/2_create_container_button.png
-[3]: ./media/sql-managed-instance-auditing/3_create_container_config.png
-[4]: ./media/sql-managed-instance-auditing/4_container_properties_button.png
-[5]: ./media/sql-managed-instance-auditing/5_container_copy_name.png
-[6]: ./media/sql-managed-instance-auditing/6_storage_settings_menu.png
-[7]: ./media/sql-managed-instance-auditing/7_sas_configure.png
-[8]: ./media/sql-managed-instance-auditing/8_sas_copy.png
-[9]: ./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png
+
+
+
+
+
+
+
+
+

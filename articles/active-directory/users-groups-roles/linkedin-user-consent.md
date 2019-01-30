@@ -1,6 +1,6 @@
 ---
-title: Совместное использование данных интеграции LinkedIn в Azure Active Directory | Документация Майкрософт
-description: Сведения о том, как подключения к учетным записям LinkedIn предоставляют общий доступ к данным через приложения Майкрософт в Azure Active Directory
+title: Согласие пользователя и совместное использование данных интеграции LinkedIn в Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как интеграция LinkedIn предоставляет общий доступ к данным через приложения Майкрософт в Azure Active Directory
 services: active-directory
 author: curtand
 manager: mtillman
@@ -8,18 +8,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 01/14/2019
+ms.date: 01/22/2019
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
-ms.openlocfilehash: 25060f41528c59d252adbc854704c6060becd907
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 776c793fb797e9388f0852773315f27cd42dde25
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54319127"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54471724"
 ---
-# <a name="user-consent-and-linkedin-account-connections-data-sharing"></a>Согласие пользователя и предоставление общего доступа к данным через подключение к учетной записи LinkedIn
+# <a name="linkedin-integration-data-sharing-and-consent"></a>Согласие пользователя и совместное использование данных интеграции LinkedIn
 
 Администраторы Azure Active Directory (Azure AD) могут разрешить пользователям организации давать согласие на подключение своей рабочей или учебной учетной записи Майкрософт к их учетной записи LinkedIn. Когда пользователи подключают свои учетные записи, то сведения и новости из LinkedIn становятся доступны в некоторых приложениях и службах Майкрософт. Пользователи также могут ожидать, что их возможности сотрудничества в LinkedIn будут улучшены и обогащены благодаря сведениям от Майкрософт.
 
@@ -31,13 +31,13 @@ ms.locfileid: "54319127"
 
 Доступ к сведениям LinkedIn из приложений и служб Майкрософт упрощает пользователям налаживание, поддержание и развитие деловых отношений с коллегами, клиентами и партнерами внутри и за пределами своей организации. Новые пользователи могут быстрее включиться в работу, взаимодействуя с коллегами, получая от них новые знания и получая легкий доступ к большому количеству информации. Ниже приведен пример того, как сведения из LinkedIn отображаются в карточке профиля в приложениях Майкрософт:
 
-![Включение подключений к учетной записи LinkedIn](./media/linkedin-user-consent/display-example.png)
+![Включение интеграции с LinkedIn](./media/linkedin-user-consent/display-example.png)
 
-## <a name="enable-and-announce-linkedin-account-connections"></a>Включение и объявление о подключении к учетным записям LinkedIn
+## <a name="enable-and-announce-linkedin-integration"></a>Включение и объявление интеграции LinkedIn
 
 Для управления этим параметром вашей организации необходимо быть администратором Azure Active Directory. Вы можете включить его для всех пользователей или для определенного набора пользователей.
 
-1. Чтобы включить или отключить интеграцию подключений учетных записей, выполните действия, описанные в разделе [Подключения к учетным записям LinkedIn](linkedin-integration.md).
+1. Чтобы включить или отключить интеграцию, выполните действия, описанные в статье [Подключения к учетной записи LinkedIn](linkedin-integration.md).
 2. При объявлении об интеграции с LinkedIn в вашей организации ознакомьте пользователей со сборником часто задаваемых вопросов о [сведениях LinkedIn в приложениях и службах Майкрософт](https://support.office.com/article/about-linkedin-information-and-features-in-microsoft-apps-and-services-dc81cc70-4d64-4755-9f1c-b9536e34d381). В этой статье содержатся сведения о том, где отображается информация из LinkedIn, как подключить учетные записи и многое другое.
 
 ## <a name="user-consent-for-data-access-in-microsoft-and-linkedin"></a>Согласие пользователя для доступа к данным в Майкрософт и LinkedIn

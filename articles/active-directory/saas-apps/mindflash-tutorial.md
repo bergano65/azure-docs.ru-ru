@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Mindflash | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Mindflash | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Mindflash.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: bdf91993-aaaa-4598-89b7-77ef8ca065d5
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: e1b709944ce638579458680ecdbf3a5b7766eb13
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1d9518e02a726ffb0e1a4d852a68fcdc5dcd5080
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421497"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820578"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство. Интеграция Azure Active Directory с Mindflash
 
@@ -132,7 +132,7 @@ ms.locfileid: "39421497"
 1. Чтобы настроить единый вход на стороне **Mindflash**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Mindflash](https://www.mindflash.com/contact/).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

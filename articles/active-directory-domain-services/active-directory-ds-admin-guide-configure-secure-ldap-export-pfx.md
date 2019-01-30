@@ -4,7 +4,7 @@ description: Создание сертификата защищенного пр
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: c6da94b6-4328-4230-801a-4b646055d4d7
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/01/2017
 ms.author: ergreenl
-ms.openlocfilehash: a97b16451392ce0e84eb7b49a6fc71fb03adab12
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: d7fbfda9249f8276feed13204e8d6b1062fe2672
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157298"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846359"
 ---
 # <a name="create-a-pfx-file-with-the-secure-ldap-ldaps-certificate-for-a-managed-domain"></a>Создание PFX-файла с сертификатом защищенного протокола LDAP (LDAPS) для управляемого домена
 
@@ -28,7 +28,7 @@ ms.locfileid: "50157298"
 Выполните инструкции из раздела [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md).
 
 
-## <a name="task-2-export-the-secure-ldap-certificate-to-a-pfx-file"></a>Задача 2. Экспорт сертификата защищенного протокола LDAP в PFX-файл
+## <a name="task-2-export-the-secure-ldap-certificate-to-a-pfx-file"></a>Задача 2. Экспорт сертификата защищенного протокола LDAP в PFX-файл
 Прежде чем приступить к этой задаче, получите сертификат защищенного протокола LDAP из общедоступного центра сертификации либо создайте самозаверяющий сертификат.
 
 Чтобы экспортировать сертификат протокола LDAPS в PFX-файл, сделайте следующее:

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Vodeclic | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Vodeclic | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Vodeclic.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: d77a0f53-e3a3-445e-ab3e-119cef6e2e1d
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/06/2017
 ms.author: jeedes
-ms.openlocfilehash: fb985b389139bfd8d54e6c54d101bbfa8a68a6d4
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8f53082a2f6a33e934c2e3138d08725ffdf4fa2b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444629"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815418"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Руководство по интеграции Azure Active Directory с Vodeclic
+# <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Руководство. Интеграция Azure Active Directory с Vodeclic
 
 Из этого руководства вы узнаете, как интегрировать Vodeclic с Azure Active Directory (Azure AD).
 
@@ -170,7 +170,7 @@ ms.locfileid: "39444629"
  
 ### <a name="create-a-vodeclic-test-user"></a>Создание тестового пользователя Vodeclic
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в приложении Vodeclic. Обратитесь в [службу поддержки Vodeclic](mailto:hotline@vodeclic.com), чтобы добавить пользователей на платформу Vodeclic. Перед использованием единого входа необходимо создать и активировать пользователей.
+Из этого раздела вы узнаете, как создать пользователя Britta Simon в приложении Vodeclic. Обратитесь в [службу поддержки Vodeclic](mailto:hotline@vodeclic.com) , чтобы добавить пользователей на платформу Vodeclic. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 > [!NOTE]
 > Согласно требованиям приложения вам, возможно, понадобится включить свой компьютер в список разрешенных устройств. Для этого отправьте свой общедоступный IP-адрес в [службу поддержки Vodeclic](mailto:hotline@vodeclic.com).
@@ -211,7 +211,7 @@ ms.locfileid: "39444629"
 
 Выбрав плитку Vodeclic на панели доступа, вы автоматически войдете в приложение Vodeclic.
 
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

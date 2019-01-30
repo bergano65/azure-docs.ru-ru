@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/21/2018
+ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: b66373b6847b96a4fcbc1a0c9da42d285d089a9d
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 4a23d8c1e72ec453724514e4d1638c5a223d1644
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52727891"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389230"
 ---
 # <a name="eventstore-service-overview"></a>Общие сведения о службе EventStore
 
@@ -34,6 +34,7 @@ ms.locfileid: "52727891"
 * Проверить, правильно ли обрабатываются действия управления, предпринимаемые в кластере.
 * Получить моментальный снимок взаимодействия Service Fabric с конкретной сущностью.
 
+![EventStore](media/service-fabric-diagnostics-eventstore/eventstore.png)
 
 Полный список событий, доступных в EventStore, см. в [этом](service-fabric-diagnostics-event-generation-operational.md) разделе.
 
@@ -53,7 +54,7 @@ ms.locfileid: "52727891"
 * Реплики разделов. События из всех реплик или экземпляров в определенной секции, идентифицируемые на основе `partitionId`.
 * Реплика раздела. События из конкретной реплики или экземпляра, идентифицируемые на основе `replicaId` или `partitionId`.
 
-Дополнительные сведения об API см. в справочнике по [API EventStore]((https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-eventsstore)
+Дополнительные сведения об API см. в [справочнике по API EventStore](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-eventsstore).
 
 Служба EventStore также имеет возможность корреляции событий в кластере. Просмотрев события, записанные в то же время из различных объектов, которые могут влиять друг на друга, служба EventStore может связать эти события, что позволит определить причины возникновения действий в кластере. Например, если одно из приложений становится неработоспособным без принудительных изменений, EventStore будет также рассматривать другие события, предоставляемые платформой, и сопоставлять их с событием `Error` или `Warning`. Это позволяет быстрее обнаружить сбой и выполнить анализ первопричин.
 

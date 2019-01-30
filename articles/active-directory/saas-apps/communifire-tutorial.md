@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Communifire | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Communifire | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Communifire.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: de2a164d-2115-43e7-a9ed-e54f483f4aeb
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: jeedes
-ms.openlocfilehash: 590d8fe0e974587effc7d8a3c59546b5684b146c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 44cb5c847ea6c4186001f789de8c7ce04842af38
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811372"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство. Интеграция Azure Active Directory с Communifire
 
@@ -138,7 +138,7 @@ ms.locfileid: "39446237"
 1. Чтобы настроить единый вход на стороне **Communifire**, отправьте в [службу поддержки Communifire](https://my.axerosolutions.com/spaces/77/communifire-support/help/welcome) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -177,7 +177,7 @@ ms.locfileid: "39446237"
 Цель этого раздела — создать пользователя с именем Britta Simon в Communifire. Приложение Communifire поддерживает JIT-подготовку. Эта функция включена по умолчанию. Новый пользователь создается путем сохранения сведений о профиле при первой попытке доступа к Communifire, если такой пользователь еще не существует.
 
 >[!Note]
->Если вы хотите создать пользователя вручную, обратитесь к [группе поддержки Communifire](https://my.axerosolutions.com/spaces/77/communifire-support/help/welcome).
+>Чтобы создать пользователя вручную, обратитесь к [группе поддержки Communifire](https://my.axerosolutions.com/spaces/77/communifire-support/help/welcome).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -214,7 +214,7 @@ ms.locfileid: "39446237"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Communifire на панели доступа, вы автоматически войдете в приложение Communifire.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

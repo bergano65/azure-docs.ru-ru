@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: babanisa
-ms.openlocfilehash: db6db54d362e7ef6373271e238fdb1cf543a142e
-ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
+ms.openlocfilehash: 23e1de98fff891d199d1f33fcb714b2b284e8edb
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53413495"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382921"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -29,9 +29,9 @@ ms.locfileid: "53413495"
 
 Как и многие другие службы, поддерживающие веб-перехватчики, служба "Сетка событий" требует, чтобы вы подтвердили право собственности на конечную точку веб-перехватчика до того, как служба начнет доставку событий в эту конечную точку. Это требование не позволяет пользователю-злоумышленнику переполнить вашу конечную точку событиями. Инфраструктура Azure автоматически обрабатывает эту проверку, когда вы используете любую из следующих трех служб Azure:
 
-* Azure Logic Apps;
-* служба автоматизации Azure;
-* служба "Функции Azure" для триггера службы "Сетка событий".
+* Azure Logic Apps с [соединителем Сетки событий](https://docs.microsoft.com/en-us/connectors/azureeventgrid/);
+* служба автоматизации Azure через [веб-перехватчик](../event-grid/ensure-tags-exists-on-new-virtual-machines.md);
+* Функции Azure с [триггером службы "Сетка событий"](../azure-functions/functions-bindings-event-grid.md).
 
 При использовании любого другого типа конечной точки, такого как функция Azure на основе триггера HTTP, код конечной точки должен участвовать в подтверждении проверки со службой "Сетка событий". Сетка событий поддерживает два типа проверки подписки.
 

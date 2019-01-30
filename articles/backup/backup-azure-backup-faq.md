@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: raynew
-ms.openlocfilehash: a5619db18ef326b160bf9f4a1fbacbd6b3e9f012
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 4e3a79c28fc0e67fbf22e4d0fde3de9528d3edf4
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54319466"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382634"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 Эта статья содержит ответы на часто задаваемые вопросы о службе Azure Backup.
@@ -230,7 +230,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 ### <a name="is-the-data-sent-to-azure-encrypted"></a>Шифруются ли передаваемые в Azure данные?
 
-Да. Данные шифруются на локальном компьютере по протоколу AES256. Данные передаются через защищенное соединение HTTPS.
+Да. Данные шифруются на локальном компьютере по протоколу AES256. Данные передаются через защищенное соединение HTTPS. Для защиты данных, передаваемых в облако, используется связь по протоколу HTTPS только между службой хранения и службой восстановления. Для защиты данных, передаваемых между службой восстановления и пользовательским компьютером, используется протокол iSCSI. Для защиты канала iSCSI применяется безопасное туннелирование.
 
 ### <a name="is-the-backup-data-on-azure-encrypted-as-well"></a>Шифруются ли резервные копии данных в Azure?
 

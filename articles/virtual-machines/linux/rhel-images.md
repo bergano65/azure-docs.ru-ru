@@ -11,19 +11,25 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 12/18/2018
+ms.date: 01/18/2019
 ms.author: borisb
-ms.openlocfilehash: dbef04710e1a91cfda8b039605b517de9524ee19
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: fd73863dacd7914e23199ba92211ea67e68f7d0d
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54229580"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54402155"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
 
 Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
+
+>[!Important]
+> Образы RHEL сейчас доступны в службе поддержки Azure Marketplace моделей лицензирования "Создание собственной подписки" (BYOS) или "Оплата по мере использования" (PAYG). [AHB](../windows/hybrid-use-benefit-licensing.md) и динамическое переключение между BYOS и PAYG не поддерживается. Переключение режима лицензирования требует повторного развертывания виртуальной машины из соответствующего образа.
+
+>[!Note]
+> Если возникнут проблемы, связанные с образами RHEL в коллекции Azure Marketplace, отправьте запрос в службу поддержки Майкрософт.
 
 ## <a name="images-available-in-the-ui"></a>Образы, доступные в пользовательском интерфейсе
 Если ввести Red Hat в Marketplace или начать создавать ресурс в пользовательском интерфейсе портала Azure, вы увидите подмножество доступных образов RHEL и связанных с ним продуктов Red Hat. Вы всегда можете получить полный набор доступных образов виртуальных машин с помощью Azure CLI, PowerShell или API.

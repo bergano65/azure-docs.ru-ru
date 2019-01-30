@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: общие сведения о синхронизации и ее настройка | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка | Документация Майкрософт'
 description: В этой статье описываются принципы работы и настройка служб синхронизации Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 11/08/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 994169d4280c479ffe1b766a309198c8f4d951b5
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 74973371b3d893c1e0c94024a97c77b59fa570fe
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46309753"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461949"
 ---
-# <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка
+# <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка
 Службы синхронизации Azure Active Directory Connect (службы синхронизации Azure AD Connect) являются основным компонентом Azure AD Connect. Они отвечают за все операции, относящиеся к синхронизации идентификационных данных между локальной средой и Azure AD. Служба синхронизации Azure AD Connect — это преемник таких решений, как DirSync, Azure AD Sync и Forefront Identity Manager с настроенным соединителем Azure Active Directory.
 
 В этой статье описывается **служба синхронизации Azure AD Connect** (также называемая **модулем синхронизации**) и приводятся ссылки на другие статьи на эту тему. Ссылки на ресурсы, посвященные Azure AD Connect, приведены в статье [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

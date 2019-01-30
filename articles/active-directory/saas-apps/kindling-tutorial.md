@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Kindling | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kindling | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Kindling.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 71229751-74eb-4c2c-abb4-07caa95754c7
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: af92553b0b88febf86eb9aebaad99c7c3ddff792
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 0ee91afecb9c98249c4545bee244e8f4d2e2fc21
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428657"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822371"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kindling"></a>Учебник. Интеграция Azure Active Directory с Kindling
+# <a name="tutorial-azure-active-directory-integration-with-kindling"></a>Руководство. Интеграция Azure Active Directory с Kindling
 
 В этом руководстве описано, как интегрировать Kindling с Azure Active Directory (Azure AD).
 
@@ -134,7 +134,7 @@ ms.locfileid: "39428657"
 1. Чтобы настроить единый вход на стороне **Kindling**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Kindling](mailto:support@kindlingapp.com).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory со Sciforma | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Sciforma | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Sciforma.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: abbfb5ac-7687-4153-b263-8090102dae37
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 4dc7c9c9c702db7c0a10b89d33169a97541f3b30
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 8ab286a88f484a6711ce0702d56c40d2b33dcd8a
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716446"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819090"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sciforma"></a>Руководство. Интеграция Azure Active Directory с Sciforma
 
@@ -132,7 +132,7 @@ ms.locfileid: "39716446"
 1. Чтобы настроить единый вход на стороне **Sciforma**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Sciforma](https://www.sciforma.com/about/contact).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

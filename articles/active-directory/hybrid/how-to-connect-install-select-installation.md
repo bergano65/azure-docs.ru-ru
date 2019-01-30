@@ -1,10 +1,10 @@
 ---
-title: Выбор типа установки Azure AD Connect | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: выбор типа установки | Документация Майкрософт'
 description: В этом разделе описывается, как выбрать тип установки для Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e4185b6b30bdd01492d9aae7ac38e18aaba7eef5
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 6082d583432e246ba3d45f3e97f4b104710e8727
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306023"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473696"
 ---
 # <a name="select-which-installation-type-to-use-for-azure-ad-connect"></a>Выбор типа установки для Azure AD Connect
-При новой установке Azure AD Connect есть два типа установки: экспресс и пользовательская. Этот раздел поможет вам выбрать оптимальный вариант установки.
+При новой установке Azure AD Connect доступны два типа установки: экспресс и пользовательская. Этот раздел поможет вам выбрать оптимальный вариант установки.
 
 ## <a name="express"></a>Express
 Экспресс-установка наиболее распространена и используется в 90 % всех случаев новой установки. Она была разработана для предоставления конфигурации, которая подходит для большинства распространенных сценариев клиентов.

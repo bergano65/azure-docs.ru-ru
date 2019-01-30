@@ -1,10 +1,10 @@
 ---
-title: Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Workplace by Facebook для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 6341e67e-8ce6-42dc-a4ea-7295904a53ef
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 2b085d8b825055b5cb318da200eafb6d9000bf4b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 63faea6dffa47aa7b0b9a1cc27052c0b0885aca9
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814365"
 ---
-# <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
+# <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство. Настройка Workplace by Facebook для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Workplace by Facebook и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Workplace by Facebook.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workplace by Facebook, вам потребуется:
 

@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах | Документация Майкрософт'
 description: Общие сведения о пользователях, группах и контактах в службе синхронизации Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
 ms.service: active-directory
 ms.workload: identity
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 46d0ce28d6381662847917ce83c77780f1bd9e4c
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: c59065b21935336a77e3fb88c30f12cded341808
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310583"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473934"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах
 Существует несколько разных причин, по которым нужно иметь несколько лесов Active Directory. Кроме того, существует несколько разных топологий развертывания. Распространенные модели включают развертывание ресурсов учетной записи и лесов с синхронизированным глобальным списком адресов после слияния и поглощения. Но даже при наличии чистых моделей гибридные модели не менее часто используются. Конфигурация по умолчанию в службе синхронизации Azure AD Connect не предполагает какой-то конкретной модели. Тем не менее, в зависимости от выбора сопоставления пользователей в руководстве по установке, можно наблюдать разное поведение.
@@ -73,6 +73,6 @@ ms.locfileid: "46310583"
 После экспорта объекта в Azure AD изменить атрибут sourceAnchor невозможно. При экспорте объекта атрибуту метавселенной **cloudSourceAnchor** присваивается значение **sourceAnchor**, принятое Azure AD. Если атрибут **sourceAnchor** изменен и не соответствует **cloudSourceAnchor**, то правило **Out to AAD — User Join** породит ошибку **sourceAnchor attribute has changed** (атрибут sourceAnchor изменен). В таком случае необходимо исправить конфигурацию или данные, чтобы в метавселенной снова был представлен прежний атрибут sourceAnchor, прежде чем объект снова можно будет синхронизировать.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Azure AD Connect Sync: настройка параметров синхронизации](how-to-connect-sync-whatis.md)
+* [Службы синхронизации Azure AD Connect: общие сведения о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 

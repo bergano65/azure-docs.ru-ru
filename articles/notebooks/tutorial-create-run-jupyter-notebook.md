@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: 110ba7f13b2a0d44277c881d67f0c794c8658cd1
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: dcee7df0b5da53bd7014a26f1f09695fe874833d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244590"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54849667"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
 
@@ -128,7 +128,7 @@ ms.locfileid: "54244590"
 1. Так как файл *requirements.txt* указан в параметрах среды, отобразится сообщение "Waiting for your container to finish being prepared" (Ожидание завершения подготовки контейнера). Можно нажать кнопку **ОК**, чтобы закрыть сообщение и продолжить работу в записной книжке, но пока среда полностью не настроена, ячейки кода нельзя выполнить.
 1. Записная книжка откроется в интерфейсе Jupyter с одной пустой ячейкой кода по умолчанию.
 
-    [![](media/tutorial/tutorial-new-notebook.png "Первоначальный вид новой записной книжки в службе \"Записные книжки Azure\"")](media/tutorial/tutorial-new-notebook.png#lightbox)
+    [![Первоначальный вид новой записной книжки в службе "Записные книжки Azure"](media/tutorial/tutorial-new-notebook.png)](media/tutorial/tutorial-new-notebook.png#lightbox)
 
 ## <a name="tour-the-notebook-interface"></a>Обзор интерфейса записной книжки
 
@@ -144,7 +144,7 @@ ms.locfileid: "54244590"
 (F) Индикатор, показывающий, является ли записная книжка доверенной (значение по умолчанию — **Not Trusted** (Не является доверенной)).
 (G) Ядро, используемое для запуска записной книжки, с индикатором активности.
 
-[![](media/tutorial/tutorial-notebook-ui.png "Основные области пользовательского интерфейса Jupyter")](media/tutorial/tutorial-notebook-ui.png#lightbox)
+[![Основные области пользовательского интерфейса Jupyter](media/tutorial/tutorial-notebook-ui.png)](media/tutorial/tutorial-notebook-ui.png#lightbox)
 
 В Jupyter предоставляется встроенный обзор основных элементов пользовательского интерфейса. Чтобы начать обзор, выберите команду **Help** > **User Interface Tour** (Справка > Обзор пользовательского интерфейса) и поочередно выберите всплывающие окна.
 

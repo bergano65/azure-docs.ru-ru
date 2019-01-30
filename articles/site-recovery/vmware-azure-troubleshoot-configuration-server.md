@@ -5,14 +5,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 12/17/2018
+ms.date: 01/14/2019
 ms.author: ramamill
-ms.openlocfilehash: 597b8f59ef6991f7868d3de481e98ed9a459077b
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 0eebfd8b75f428d3b8f6024ed6ee71c18c1309f6
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54050801"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54435980"
 ---
 # <a name="troubleshoot-configuration-server-issues"></a>Устранение неполадок, связанных с сервером конфигурации
 
@@ -58,6 +58,16 @@ ms.locfileid: "54050801"
 
 Эта ошибка возникает, если службе не удается прочитать данные из транспортного подключения во время установки агента мобильности и регистрации на сервере конфигурации. Чтобы устранить эту проблему, убедитесь, что на исходном компьютере включен протокол TLS 1.0.
 
+## <a name="vcenter-discovery-failures"></a>Сбои обнаружения vCenter
+
+Чтобы устранить ошибки обнаружения vCenter, убедитесь, что сервер vCenter добавлен в настройки прокси-сервера списка byPass. Чтобы выполнить это действие,
+
+- загрузите средство PsExec из [этой статьи](https://aka.ms/PsExec) для доступа к содержимому пользователя системы.
+- Откройте Internet Explorer в системном пользовательском контенте, выполнив следующую командную строку psexec -s -i "% programfiles%\Internet Explorer\iexplore.exe"
+- Добавьте настройки прокси в Internet Explorer и перезапустите сервис tmanssvc.
+- Чтобы настроить параметры прокси-сервера DRA, запустите C:\Program Files\Microsoft Azure Site Recovery Provider.
+- Затем выполните DRCONFIGURATOR.EXE/configure/AddBypassUrls [добавить IP-адрес или полное доменное имя vCenter Server, предоставленное на шаге **Настройка сервера vCenter Server или vSphere ESXi** раздела [Настройка параметров](vmware-azure-deploy-configuration-server.md#configure-settings)]
+
 ## <a name="change-the-ip-address-of-the-configuration-server"></a>Изменение IP-адреса сервера конфигурации
 
 Изменять IP-адрес сервера конфигурации настоятельно не рекомендуется. Убедитесь, что все IP-адреса, назначенные серверу конфигурации, являются статическими. Не используйте IP-адреса DHCP.
@@ -70,7 +80,7 @@ ms.locfileid: "54050801"
 
 Не удалось создать сертификат, необходимый для аутентификации Site Recovery. Программу установки следует повторно запустить от имени локального администратора.
 
-## <a name="register-the-source-machine-with-the-configuration-server"></a>Регистрация исходного компьютера на сервере конфигурации
+## <a name="register-source-machine-with-configuration-server"></a>Регистрация исходного компьютера на сервере конфигурации
 
 ### <a name="if-the-source-machine-runs-windows"></a>Если исходный компьютер работает на платформе Windows
 

@@ -1,6 +1,6 @@
 ---
-title: Включение интеграции подключений LinkedIn в Azure Active Directory | Документация Майкрософт
-description: Сведения о том, как включить или отключить подключения к учетным записям LinkedIn для приложений Майкрософт в Azure Active Directory.
+title: Включение интеграции с LinkedIn в Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как включить или отключить интеграцию с LinkedIn для приложений Майкрософт в Azure Active Directory.
 services: active-directory
 author: curtand
 manager: mtillman
@@ -8,23 +8,23 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 09/11/2018
+ms.date: 01/22/2019
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
-ms.openlocfilehash: 0eaa2656313ecd9b64503051265dc16285f0a1f3
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 44bd03a8f710cf4b61e063688c9532dc6cce6480
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44492876"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465604"
 ---
-# <a name="linkedin-account-connections"></a>Подключения к учетной записи LinkedIn
+# <a name="linkedin-integration"></a>Интеграция с LinkedIn
 
-В статье рассматриваются вопросы включения или отключения подключений к учетным записям LinkedIn для вашего клиента в центре администрирования Azure Active Directory (Azure AD).
+В статье рассматриваются вопросы включения или отключения интеграции с LinkedIn для вашего клиента в Центре администрирования Azure Active Directory (Azure AD).
 
 > [!IMPORTANT]
-> Сейчас для клиентов Azure AD происходит внедрение параметра подключения к учетным записям LinkedIn. Если она внедрена для вашего клиента, она включена по умолчанию. 
+> Сейчас для клиентов Azure AD происходит внедрение параметра интеграции с LinkedIn. Если она внедрена для вашего клиента, она включена по умолчанию.
 > 
 > Исключения:
 > * Этот параметр недоступен для клиентов, использующих Microsoft Cloud for US Government, Microsoft Cloud Germany, а также служб Azure и Office 365, обслуживаемых 21Vianet в Китае.
@@ -33,25 +33,25 @@ ms.locfileid: "44492876"
 
 > Интеграция работает, только если она включена *и* вы разрешили пользователям устанавливать приложения, обращающимся к данным компании от своего имени. Сведения о настройке разрешения см. в статье [Удаление доступа пользователя к приложению](https://docs.microsoft.com/azure/active-directory/application-access-assignment-how-to-remove-assignment).
 
-## <a name="enable-or-disable-linkedin-account-connections-for-your-tenant-in-the-azure-portal"></a>Включение или отключение подключений к учетной записи LinkedIn для пользователей клиента на портале Azure
+## <a name="enable-or-disable-linkedin-integration-for-your-users-in-the-azure-portal"></a>Включение и отключение интеграции с LinkedIn для ваших пользователей на портале Azure
 
-Вы можете разрешить или запретить подключения к учетным записям LinkedIn для всех пользователей клиента или для ограниченной группы.
+Вы можете разрешить или запретить интеграцию с LinkedIn для всех пользователей клиента или для выбранных пользователей клиента.
 
 1. Войдите в [Центр администрирования Azure Active Directory](https://aad.portal.azure.com/) с помощью учетной записи глобального администратора клиента Azure AD.
 2. Выберите **Пользователи**.
 3. В колонке **Пользователи** выберите **Параметры пользователей**.
-4. В разделе **LinkedIn account connections** (Подключения к учетной записи LinkedIn).
-  * Выберите **Да**, чтобы включить подключения к учетной записи LinkedIn для всех пользователей вашего клиента.
-  * Выберите **Избранные**, чтобы включить подключения к учетной записи LinkedIn лишь для ограниченной группы пользователей вашего клиента.
-  * Выберите **Нет**, чтобы отключить подключения к учетной записи LinkedIn для всех пользователей в разделе ![LinkedIn account connections](./media/linkedin-integration/linkedin-integration.png) (Подключения к учетной записи LinkedIn).
+4. В разделе **Интеграция с LinkedIn**:
+  * Выберите **Да**, чтобы включить интеграцию с LinkedIn для всех пользователей вашего клиента.
+  * Выберите **Выбранный**, чтобы включить интеграцию с LinkedIn лишь для выбранных пользователей вашего клиента.
+  * Выберите **Нет** , чтобы отключить интеграцию с LinkedIn для всех пользователей. ![Включение интеграции с LinkedIn](./media/linkedin-integration/linkedin-integration.png)
 5. По завершении сохраните параметры, нажав кнопку **Сохранить**.
 
-## <a name="enable-or-disable-linkedin-account-connections-for-your-tenant-using-group-policy"></a>Включение или отключение подключений к учетной записи LinkedIn для пользователей клиента с помощью групповой политики
+## <a name="enable-or-disable-linkedin-integration-for-your-users-in-group-policy"></a>Включение и отключение интеграции с LinkedIn для ваших пользователей в групповой политике
 
 1. Скачайте [файлы административных шаблонов Office 2016 (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030).
 2. Извлеките файлы **ADMX** и скопируйте их в центральное хранилище.
 3. Откройте средство управления групповыми политиками.
-4. Создайте объект групповой политики со следующими параметрами: **Конфигурация пользователя** > **Административные шаблоны** > **Microsoft Office 2016** > **Разное** > **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office).
+4. Создайте объект групповой политики со следующими параметрами: **Конфигурация пользователя** > **Административные шаблоны** > **Microsoft Office 2016** > **Разное** > **Показывать функции LinkedIn в приложениях Office**.
 5. Выберите **Включено** или **Отключено**.
   
  Состояние | Результат
@@ -70,6 +70,7 @@ ms.locfileid: "44492876"
 * [Центр справки LinkedIn](https://www.linkedin.com/help/linkedin)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Просмотреть текущие настройки подключений к учетной записи LinkedIn на портале Azure можно по следующей ссылке.
 
-[Настройка подключений к учетной записи LinkedIn](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/UserSettings) 
+Просмотреть текущие настройки интеграции с LinkedIn на портале Azure можно по следующей ссылке:
+
+[Просмотр текущих настроек интеграции с LinkedIn на портале Azure](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/UserSettings)

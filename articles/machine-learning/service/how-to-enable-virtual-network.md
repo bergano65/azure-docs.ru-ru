@@ -1,7 +1,7 @@
 ---
-title: Выполнение экспериментов и формирование выводов в пределах виртуальной сети
+title: Выполнение экспериментов и вывод в виртуальной сети
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как безопасно запускать эксперименты машинного обучения и формировать выводы в виртуальной сети Azure. В этой статье объясняется, как создавать целевые объекты вычислений, которые используются для обучения моделей, и выполнять формирование выводов в виртуальной сети Azure. Также в ней рассматриваются требования к защищенным виртуальным сетям, например обязательные входящие и исходящие порты.
+description: Выполните эксперименты машинного обучения и сформируйте выводы в виртуальной сети Azure. Сведения о создании целевых объектов вычислений для обучения модели и способ вывода в виртуальной сети Azure. Также в ней рассматриваются требования к защищенным виртуальным сетям, например обязательные входящие и исходящие порты.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 01/08/2019
-ms.openlocfilehash: 1890f830f9b2a4b108328de056636335fd3746e3
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 21c4a9042a64a58f67f1f94c300b6438895eea5d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54248606"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856287"
 ---
 # <a name="securely-run-experiments-and-inferencing-inside-an-azure-virtual-network"></a>Безопасное выполнение экспериментов и формирование выводов в пределах виртуальной сети Azure
 

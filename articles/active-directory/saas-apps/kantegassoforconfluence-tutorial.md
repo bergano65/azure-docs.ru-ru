@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Kantega SSO for Confluence | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kantega SSO for Confluence | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Kantega SSO for Confluence.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: d0d99c14-a6ca-45f2-bb84-633126095e7a
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: fd53a6814649b529e301c3135fb491c51a13bcb1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 0f5dade35667595121c6ea0875c32e86e7df41ae
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824972"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-confluence"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for Confluence
+# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-confluence"></a>Руководство. Интеграция Azure Active Directory с Kantega SSO for Confluence
 
 В этом руководстве описано, как интегрировать Kantega SSO for Confluence с Azure Active Directory (Azure AD).
 
@@ -226,7 +226,7 @@ ms.locfileid: "39449232"
     c. Выберите команду **Сохранить**. 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -323,7 +323,7 @@ ms.locfileid: "39449232"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Kantega SSO for Confluence" на панели доступа, вы автоматически войдете в приложение Kantega SSO for Confluence.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

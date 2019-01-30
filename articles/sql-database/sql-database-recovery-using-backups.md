@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 10/23/2018
-ms.openlocfilehash: 8785ef50cd7bd27e866b1fa546317021eed5da01
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 301b0179c8222bfdff3b07f7962a74a4cc83b8f6
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53599116"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54432291"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий
 
@@ -92,10 +92,8 @@ ms.locfileid: "53599116"
 
 ## <a name="deleted-database-restore"></a>Восстановление удаленной базы данных
 
-Вы можете восстановить удаленную базу данных до момента удаления на том же логическом сервере с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase) или [REST (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Удаленную базу данных можно восстановить до предшествующей точки во времени при хранении с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase).
+Вы можете восстановить удаленную базу данных до момента удаления на том же логическом сервере с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase) или [REST (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Вы можете [восстановить удаленную базу данных в Управляемом экземпляре с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2019/01/21/recreate-dropped-database-on-azure-sql-managed-instance). Удаленную базу данных можно восстановить до предшествующей точки во времени при хранении с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/restore-azurermsqldatabase).
 
-> [!Note]
-> Восстановление удаленной базы данных в управляемом экземпляре недоступно.
 > [!TIP]
 > Пример сценария PowerShell, показывающий, как восстановить удаленную базу данных, приведен в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
 > [!IMPORTANT]

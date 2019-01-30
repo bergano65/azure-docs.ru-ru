@@ -13,16 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
-ms.openlocfilehash: 1dee53f633d8b5edf893e2f6c83430d7c1a69022
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 06532369efb802606eb13a4b38a8579a3528f999
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341598"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382952"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
 ![Значок "Управление оповещениями"](media/alert-management-solution/icon.png)
+
+> [!NOTE]
+>  Azure Monitor теперь поддерживает расширенные возможности для [управления оповещениями в требуемом масштабе](https://aka.ms/azure-alerts-overview), в том числе оповещениями других [средств мониторинга, таких как SCOM, Zabbix или Nagios](https://aka.ms/managing-alerts-other-monitoring-services).
+>  
+
 
 Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../../azure-monitor/platform/alerts-overview.md) или [импортированных из Nagios или Zabbix](../../azure-monitor/learn/quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md).
 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Moxtra | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Moxtra | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Moxtra.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 2aed2d4b-1dcd-4839-8fed-9419d107c61c
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
-ms.openlocfilehash: efb9d72de3b408ce741ed96aa2aecd2ed45e293c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ee8931f1f9121f3e645b2f94eece919ae6b19075
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428945"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808856"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Учебник. Интеграция Azure Active Directory с Moxtra
+# <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Руководство. Интеграция Azure Active Directory с Moxtra
 
 В этом руководстве описано, как интегрировать Moxtra с Azure Active Directory (Azure AD).
 
@@ -163,7 +163,7 @@ ms.locfileid: "39428945"
    
     ![Настройка единого входа](./media/moxtra-tutorial/tutorial_moxtra_08.png)   
  
-    a. В текстовом поле **Имя** введите имя конфигурации (например, *SAML*). 
+    a. В текстовом поле **Имя** введите имя конфигурации (например *SAML*). 
   
     b. В текстовое поле **Идентификатор сущности поставщика удостоверений** вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
  
@@ -183,7 +183,7 @@ ms.locfileid: "39428945"
     h. Нажмите кнопку **Обновить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

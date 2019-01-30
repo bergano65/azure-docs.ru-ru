@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Fieldglass | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Fieldglass | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Fieldglass.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 2510195f-d5b1-4684-b3da-283fb8619df2
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: a14aeb55d9e5756660708e9e63a867a66a54a7b6
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 0d8c1dc6d0044992692151465aa2b37f6a23445b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42443958"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822235"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство по интеграции Azure Active Directory с Fieldglass
+# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство. Интеграция Azure Active Directory с Fieldglass
 
 В этом учебнике описано, как интегрировать приложение Fieldglass с Azure Active Directory (Azure AD).
 
@@ -138,7 +138,7 @@ ms.locfileid: "42443958"
 1. Для настройки единого входа на стороне **Fieldglass** необходимо отправить загруженный **сертификат (Base64)**, а также **URL-адрес выхода и идентификатор сущности SAML** в [службу поддержки Fieldglass](https://www.fieldglass.com/customer-support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

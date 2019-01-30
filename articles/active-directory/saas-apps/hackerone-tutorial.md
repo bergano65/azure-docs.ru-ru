@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 229d1efb-b6a5-4df8-9839-5d551487db4e
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 4e33ad66fe0ced9a426a608f4193ff52dec4f7ee
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: fe070505970516efcd4e2ae46dedff2792f95b08
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441839"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817203"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Учебник. Интеграция Azure Active Directory с HackerOn
+# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
 
 В данном руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением HackerOne.
 
@@ -148,9 +148,9 @@ ms.locfileid: "39441839"
 
     a. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
 
-    b. В текстовое поле **URL-адрес для единого входа** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле   **URL-адрес для единого входа** вставьте значение  **URL-адреса службы единого входа SAML** , скопированное на портале Azure.
 
-    c. Откройте в блокноте **сертификат**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509**.
+    c. Откройте в блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле  **Сертификат X.509**.
     
     d. Выберите команду **Сохранить**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "39441839"
     b. Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

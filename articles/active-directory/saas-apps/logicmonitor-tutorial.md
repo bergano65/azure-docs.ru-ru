@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с LogicMonitor | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LogicMonitor | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении LogicMonitor.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 496156c3-0e22-4492-b36f-2c29c055e087
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/02/2018
 ms.author: jeedes
-ms.openlocfilehash: a6bc220d15e720662eaa9605421e21ccb99892ab
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 5aa11c15e038c0af8447debba0cd385c944c0bce
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39502351"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54812426"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Руководство. Интеграция Azure Active Directory с LogicMonitor
 
@@ -242,7 +242,7 @@ ms.locfileid: "39502351"
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
- 
+ 
 Щелкнув плитку LogicMonitor на панели доступа, вы автоматически войдете в приложение LogicMonitor.
 Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 

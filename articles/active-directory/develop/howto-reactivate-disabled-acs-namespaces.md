@@ -11,18 +11,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/07/2018
+ms.date: 01/21/2019
 ms.author: celested
 ms.reviewer: jlu
 ms.custom: aaddev
-ms.openlocfilehash: 0f0de122dc3dbd770e91a8412430423bee222b30
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: 085923dd124a4f973a709f0e59a07ad4137c6901
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51577974"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438504"
 ---
-# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
+# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство: Повторная активация отключенных пространств имен Службы контроля доступа
 
 В ноябре 2017 года мы объявили, что служба контроля доступа Microsoft Azure (ACS), относящаяся к Azure Active Directory (Azure AD), прекратит функционирование 7 ноября 2018 года.
 
@@ -32,7 +32,7 @@ ms.locfileid: "51577974"
 
 ## <a name="why-your-namespace-is-disabled"></a>Причины отключения пространства имен
 
-Если вы еще не дали согласие на расширение, пространства имен ACS будут отключены начиная с 7 ноября 2018 года. Если вы пропустили сообщение, но все еще хотите дать согласие на расширение до 4 февраля 2019 года, следуйте указаниям в следующих разделах.
+Если вы еще не дали согласие на расширение, пространства имен ACS будут отключены начиная с 7 ноября 2018 года. Возможно, вы уже запросили расширение за 4 февраля 2019 года. В противном случае вы не сможете включить пространство имен с помощью PowerShell.
 
 > [!NOTE]
 > Чтобы запустить команды PowerShell и запросить расширение, необходимо иметь права администратора служб или соадминистратора подписки.
@@ -57,7 +57,7 @@ ms.locfileid: "51577974"
 
         Чтобы получить справку по конкретной команде, выполните следующую команду:
 
-        ```
+        ```powershell
         Get-Help [Command-Name] -Full
         ```
     
@@ -79,18 +79,45 @@ ms.locfileid: "51577974"
 
 ## <a name="request-an-extension"></a>Запрос расширения
 
-1. Перейдите на портал управления пространствами имен ACS по адресу `https://{your-namespace}.accesscontrol.windows.net`.
-1. Нажмите кнопку **Прочитать условия**, чтобы ознакомиться с [обновленными условиями использования](https://azure.microsoft.com/support/legal/access-control/). При этом вы перейдете на страницу с условиями.
+Начиная с 21 января 2019 года, мы получаем запросы расширения.
 
-    [![Нажмите кнопку "Прочитать условия"](./media/howto-reactivate-disabled-acs-namespaces/read-terms-button-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/read-terms-button-expanded.png#lightbox)
+К 4 февраля 2019 года мы начнем отключать пространства имен для пользователей, запросивших расширения. Вы все еще сможете повторно включить пространства имен с помощью PowerShell, но они снова отключатся спустя 48 часов.
 
-1. На баннере в верхней части страницы выберите **Запросить расширение**. Эта кнопка станет активна только после прочтения [обновленных условий использования](https://azure.microsoft.com/support/legal/access-control/).
+После 4 марта 2019 года пользователи больше не смогут повторно включать пространства имен с помощью PowerShell.
 
-    [![Нажмите кнопку "Запросить расширение"](./media/howto-reactivate-disabled-acs-namespaces/request-extension-button-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/request-extension-button-expanded.png#lightbox)
+Дополнительные расширения больше не будут автоматически утверждаться. Если вам нужно дополнительное время для миграции, свяжитесь с [поддержкой Azure](https://portal.azure.com/#create/Microsoft.Support), чтобы получить более детальную временную шкалу миграции.
 
-1. После регистрации запроса расширения страница обновится, и в верхней части экрана появится новый баннер.
+### <a name="to-request-an-extension"></a>Запрос расширения
 
-    [![Обновленная страница с баннером](./media/howto-reactivate-disabled-acs-namespaces/updated-banner-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/updated-banner-expanded.png#lightbox)
+1. Войдите на портал Azure и создайте [новый запрос на поддержку](https://portal.azure.com/#create/Microsoft.Support).
+1. Заполните новую форму запроса на поддержку, как показано в следующем примере.
+
+    | Поле запроса на поддержку | Значение |
+    |-----------------------|--------------------|
+    | **Тип проблемы** | `Technical` |
+    | **Подписка** | Задается вашей подписке |
+    | **Служба** | `All services` |
+    | **Ресурс** | `General question/Resource not available` |
+    | **Тип проблемы** | `ACS to SAS Migration` |
+    | **Тема** | Описание проблемы |
+
+  ![Новый запрос на техническую поддержку](./media/howto-reactivate-disabled-acs-namespaces/new-technical-support-request.png)
+
+<!--
+
+1. Navigate to your ACS namespace's management portal by going to `https://{your-namespace}.accesscontrol.windows.net`.
+1. Select the **Read Terms** button to read the [updated Terms of Use](https://azure.microsoft.com/support/legal/access-control/), which will direct you to a page with the updated Terms of Use.
+
+    [![Select the Read Terms button](./media/howto-reactivate-disabled-acs-namespaces/read-terms-button-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/read-terms-button-expanded.png#lightbox)
+
+1. Select **Request Extension** on the banner at the top of the page. The button will only be enabled after you read the [updated Terms of Use](https://azure.microsoft.com/support/legal/access-control/).
+
+    [![Select the Request Extension button](./media/howto-reactivate-disabled-acs-namespaces/request-extension-button-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/request-extension-button-expanded.png#lightbox)
+
+1. After the extension request is registered, the page will refresh with a new banner at the top of the page.
+
+    [![Updated page with refreshed banner](./media/howto-reactivate-disabled-acs-namespaces/updated-banner-expanded.png)](./media/howto-reactivate-disabled-acs-namespaces/updated-banner-expanded.png#lightbox)
+-->
 
 ## <a name="help-and-support"></a>Справка и поддержка
 
@@ -99,4 +126,4 @@ ms.locfileid: "51577974"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Просмотрите сведения о прекращении поддержки ACS в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).
+- Дополнительную информацию см. в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).

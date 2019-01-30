@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание хранилища данных SQL Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание Хранилища данных SQL Azure с помощью Azure PowerShell | Документация Майкрософт
 description: Узнайте, как быстро создать логический сервер базы данных SQL, правило брандмауэра на уровне сервера и хранилище данных с помощью Azure PowerShell.
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,20 +10,20 @@ ms.component: manage
 ms.date: 11/15/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 60bd7cc2084ce64477cf89a5fd28d9a505fbfbfb
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 22ccc11d1eb74fd868fd740f02311baeb5ac5987
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51852645"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433617"
 ---
-# <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
+# <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание Хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
 
 С помощью Azure PowerShell можно быстро создать хранилище данных SQL Azure.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.1.1. Чтобы узнать текущую версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). 
+Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.1.1. Чтобы узнать текущую версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). 
 
 
 > [!NOTE]
@@ -45,7 +45,7 @@ Add-AzureRmAccount
 Get-AzureRmSubscription
 ```
 
-Если необходимо использовать не подписку по умолчанию, выполните командлет [Set-AzureRmContext](/powershell/module/azurerm.profile/set-azurermcontext).
+Если необходимо использовать подписку не по умолчанию, выполните командлет [Set-AzureRmContext](/powershell/module/azurerm.profile/set-azurermcontext).
 
 ```powershell
 Set-AzureRmContext -SubscriptionName "MySubscription"
@@ -122,16 +122,16 @@ New-AzureRmSqlDatabase `
 
 Ниже перечислены необходимые параметры.
 
-* **RequestedServiceObjectiveName** — количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-and-concurrency-limits.md).
-* **DatabaseName** — имя создаваемого Хранилища данных SQL.
-* **ServerName** — имя сервера, который используется для создания.
-* **ResourceGroupName** — используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
-* **Edition**: для создания хранилища данных необходим выпуск DataWarehouse.
+* **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-and-concurrency-limits.md).
+* **DatabaseName**: имя создаваемого Хранилища данных SQL.
+* **ServerName**: имя сервера, который используется для создания.
+* **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
+* **Выпуск**: для создания Хранилища данных SQL необходим выпуск DataWarehouse.
 
 Необязательные параметры.
 
-- **CollationName** — если параметры сортировки не указаны, по умолчанию используется SQL_Latin1_General_CP1_CI_AS. Параметры сортировки базы данных изменить нельзя.
-- **MaxSizeBytes**: по умолчанию максимальный размер базы данных составляет 10 ГБ.
+- **CollationName**: если параметры сортировки не указаны, по умолчанию используется SQL_Latin1_General_CP1_CI_AS. Параметры сортировки базы данных изменить нельзя.
+- **MaxSizeBytes**: по умолчанию максимальный размер базы данных составляет 10 ГБ.
 
 Дополнительные сведения о параметрах см. в статье о командлете [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
 
