@@ -163,7 +163,7 @@ items:
       - name: Обновление Mobility Service для виртуальных машин Azure
         href: azure-to-azure-autoupdate.md
       - name: Обновления в Azure Site Recovery
-        href: service updates-how-to.md
+        href: service-updates-how-to.md
   - name: Аварийное восстановление VMware в Azure
     items:
     - name: Настройка сети
@@ -239,7 +239,7 @@ items:
       - name: Управление серверами vCenter
         href: vmware-azure-manage-vcenter.md
       - name: Обновления в Azure Site Recovery
-        href: service updates-how-to.md
+        href: service-updates-how-to.md
       - name: Удаление серверов и отключение защиты
         href: site-recovery-manage-registration-and-protection.md
       - name: Удаление хранилища
@@ -281,7 +281,7 @@ items:
       - name: Удаление серверов и отключение защиты
         href: site-recovery-manage-registration-and-protection.md
       - name: Обновления в Azure Site Recovery
-        href: service updates-how-to.md
+        href: service-updates-how-to.md
       - name: Удаление хранилища
         href: delete-vault.md
   - name: Аварийное восстановление виртуальной машины Azure Stack
@@ -333,11 +333,9 @@ items:
       - name: Удаление серверов и отключение защиты
         href: site-recovery-manage-registration-and-protection.md
       - name: Обновления в Azure Site Recovery
-        href: service updates-how-to.md
+        href: service-updates-how-to.md
       - name: Удаление хранилища
         href: delete-vault.md
-      - name: Обновление серверов с Windows, настроенных с помощью Site Recovery
-        href: upgrade-2012R2-to-2016.md
   - name: Аварийное восстановление для приложений
     items:
     - name: Настройка аварийного восстановления в Azure для локальных приложений
@@ -454,9 +452,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: 8cbe1fe9d7cbd22dfb16661b87b8758c41da5d70
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: bd744e6d16f52c70ae70e7c90ca8ed011f02e275
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191199"
+ms.locfileid: "55222751"
