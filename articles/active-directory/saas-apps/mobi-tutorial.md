@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с MOBI | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с MOBI | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и MOBI.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: a410cabf-a47b-43fb-8c88-d45f5911e148
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: jeedes
-ms.openlocfilehash: 4d0ba2dbc074f40d4d3843ea983e7f45d5c888aa
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b1b145549f8a73f3e8033f1929988b8c98fb619b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823459"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mobi"></a>Руководство по интеграции Azure Active Directory с MOBI
+# <a name="tutorial-azure-active-directory-integration-with-mobi"></a>Руководство. Интеграция Azure Active Directory с MOBI
 
 В этом руководстве описано, как интегрировать MOBI с Azure Active Directory (Azure AD).
 
@@ -134,7 +134,7 @@ ms.locfileid: "39449576"
 1. Чтобы настроить единый вход на стороне **MOBI**, отправьте скачанный **XML-файл метаданных** в [службу поддержки MOBI](mailto:sso@mobiwm.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -170,7 +170,7 @@ ms.locfileid: "39449576"
  
 ### <a name="create-a-mobi-test-user"></a>Создание тестового пользователя MOBI
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении MOBI. Обратитесь в [службу поддержки MOBI](mailto:sso@mobiwm.com), чтобы добавить пользователей в платформу MOBI. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении MOBI. Чтобы добавить пользователей на платформу MOBI, обратитесь к [группе поддержки MOBI](mailto:sso@mobiwm.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -207,7 +207,7 @@ ms.locfileid: "39449576"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку MOBI на панели доступа, вы автоматически войдете в приложение MOBI.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

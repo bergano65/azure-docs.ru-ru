@@ -4,7 +4,7 @@ description: Решение распространенных проблем пр
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.component: app-mgmt
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: barbkess
 ms.reviewer: asmalser
-ms.openlocfilehash: fe96ecc0ba6904819f0262a2f470e37203a7952e
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 4d8e5cb577eb7b3eecc800e7a74b1ddcbbc2c76c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813378"
 ---
 # <a name="problem-saving-administrator-credentials-while-configuring-user-provisioning-to-an-azure-active-directory-gallery-application"></a>Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure Active Directory 
 
@@ -30,7 +30,7 @@ ms.locfileid: "44355793"
 
 Если для этого же приложения настроен единый вход на основе SAML, наиболее вероятная причина ошибки в том, что превышен внутренний лимит Azure AD на хранение сертификатов и учетных данных для одного приложения.
 
-Сейчас Azure AD поддерживает максимальную емкость хранилища в один килобайт для всех сертификатов, секретных маркеров, учетных данных и связанных данных конфигурации, относящихся к одному экземпляру приложения (также известных как запись субъекта-службы в Azure AD).
+Сейчас Azure AD поддерживает максимальную емкость хранилища в 1024 байта для всех сертификатов, секретных маркеров, учетных данных и связанных данных конфигурации, относящихся к одному экземпляру приложения (также известных как запись субъекта-службы в Azure Active Directory).
 
 При настройке единого входа на основе SAML здесь хранится сертификат, используемый для подписания маркеров SAML, который часто занимает более 50 % пространства.
 

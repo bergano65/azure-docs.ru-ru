@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ScreenSteps | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со ScreenSteps | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении ScreenSteps.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 4563fe94-a88f-4895-a07f-79df44889cf9
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 105ec895635a882d562de48203222702a2c6bfed
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 50e59c9ab04c1f17d55461b0562491143c21e51d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421752"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815911"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-screensteps"></a>Учебник. Интеграция Azure Active Directory с ScreenSteps
+# <a name="tutorial-azure-active-directory-integration-with-screensteps"></a>Руководство. Интеграция Azure Active Directory со ScreenSteps
 
 В этом учебнике описано, как интегрировать ScreenSteps с Azure Active Directory (Azure AD).
 
@@ -176,7 +176,7 @@ ms.locfileid: "39421752"
     h. Нажмите кнопку **Make default for account** (Сделать значением по умолчанию для учетной записи), чтобы использовать эту конечную точку для всех пользователей, осуществляющих вход в ScreenSteps. Кроме того, можно нажать кнопку **Add to Site** (Добавить на сайт), чтобы использовать эту конечную точку для определенных сайтов в **ScreenSteps**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -213,7 +213,7 @@ ms.locfileid: "39421752"
  
 ### <a name="create-a-screensteps-test-user"></a>Создание тестового пользователя ScreenSteps
 
-В этом разделе описано, как создать пользователя Britta Simon в ScreenSteps. Обратитесь в [службу поддержки ScreenSteps](https://www.screensteps.com/contact), чтобы добавить пользователей на платформу ScreenSteps. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в ScreenSteps. Чтобы добавить пользователей на платформу ScreenSteps, обратитесь к [группе поддержки ScreenSteps](https://www.screensteps.com/contact). Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -250,7 +250,7 @@ ms.locfileid: "39421752"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент ScreenSteps на панели доступа, вы автоматически войдете в приложение ScreenSteps.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

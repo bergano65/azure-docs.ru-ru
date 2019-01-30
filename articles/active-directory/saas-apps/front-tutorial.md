@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Front | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Front | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Front.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 88270b6d-2571-434a-b139-b6ccc3a2b19f
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: jeedes
-ms.openlocfilehash: d0bdf3ff282152f92e1b661bf19768489d1a029b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 72bbd6b39e6a2f59b718071f11882c37ef571cae
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438619"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54826383"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-front"></a>Учебник. Интеграция Azure Active Directory с Front
+# <a name="tutorial-azure-active-directory-integration-with-front"></a>Руководство. Интеграция Azure Active Directory с Front
 
 В этом руководстве описано, как интегрировать Front с Azure Active Directory (Azure AD).
 
@@ -162,7 +162,7 @@ ms.locfileid: "39438619"
 1. Нажмите кнопку **Сохранить** .
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -199,7 +199,7 @@ ms.locfileid: "39438619"
  
 ### <a name="create-a-front-test-user"></a>Создание тестового пользователя Front
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Front. Обратитесь в [службу поддержки клиентов Front](mailto:support@frontapp.com), чтобы добавить пользователей на платформу Front. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Front. Чтобы добавить пользователей на платформу Front, обратитесь к [группе поддержки клиентов Front](mailto:support@frontapp.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

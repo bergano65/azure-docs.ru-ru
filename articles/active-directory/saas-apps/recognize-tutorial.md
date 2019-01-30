@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Recognize | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Recognize | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Recognize.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: cfad939e-c8f4-45a0-bd25-c4eb9701acaa
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: jeedes
-ms.openlocfilehash: b2d5acfcb722845d7f346668597c073319f273f0
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 49d501a07f2efa6e9c6e20dfe2a026badf13f624
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448790"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824156"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по интеграции Azure Active Directory с Recognize
+# <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство. Интеграция Azure Active Directory с Recognize
 
 В этом руководстве описано, как интегрировать Recognize с Azure Active Directory (Azure AD).
 
@@ -46,7 +46,7 @@ ms.locfileid: "39448790"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
@@ -161,12 +161,12 @@ ms.locfileid: "39448790"
    
     ![Настройка единого входа на стороне приложения](./media/recognize-tutorial/tutorial_recognize_003.png)
 
-1. Откройте ссылку с **URL-адресом метаданных** в новом окне браузера, чтобы скачать документ метаданных. Затем скопируйте значение EntityDescriptor (entityID) из файла и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения Recognize** на портале Azure.
+1. Откройте ссылку с **URL-адресом метаданных** в новом окне браузера, чтобы скачать документ метаданных. Затем скопируйте значение EntityDescriptor (entityID) из файла и вставьте его в текстовое поле  **Идентификатор** в разделе **Домены и URL-адреса приложения Recognize** на портале Azure.
     
     ![Настройка единого входа на стороне приложения](./media/recognize-tutorial/tutorial_recognize_004.png)
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

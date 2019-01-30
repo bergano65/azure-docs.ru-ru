@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Synergi | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Synergi | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Synergi.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 73c970e1-f1ba-420b-b225-414fdf93b140
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 91b831be10f71b8f7e5f4226a697ed92eadfd68c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 30d678d50408fb41e844ff474c464c4c467fed5e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446274"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818750"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-synergi"></a>Руководство. Интеграция Azure Active Directory с Synergi
 
@@ -132,7 +132,7 @@ ms.locfileid: "39446274"
 1. Чтобы настроить единый вход на стороне **Synergi**, необходимо отправить загруженный **сертификат (Base64), а также URL-адрес выхода и идентификатор сущности SAML** в [службу поддержки Synergi](https://www.irmsecurity.com/contact/).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "39446274"
   
 ### <a name="create-a-synergi-test-user"></a>Создание тестового пользователя Synergi
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Synergi. Обратитесь в [службу поддержки Synergi](https://www.irmsecurity.com/contact/), чтобы добавить пользователей на платформу Synergi. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Synergi. Чтобы добавить пользователей на платформу Synergi, обратитесь к [группе поддержки Synergi](https://www.irmsecurity.com/contact/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39446274"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Synergi на панели доступа, вы автоматически войдете в приложение Synergi.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

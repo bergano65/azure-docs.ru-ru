@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Apptio | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Apptio | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Apptio.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: b23eba91-7698-47e7-ae75-0ceafd739965
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/6/2017
 ms.author: jeedes
-ms.openlocfilehash: ad5c8a61a83211147f5e4929a4f4f6fab738ba32
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 9db26db9d55ce567c41b12283ba94599074844b3
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39043760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816489"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-apptio"></a>Руководство по интеграции Azure Active Directory с Apptio
+# <a name="tutorial-azure-active-directory-integration-with-apptio"></a>Руководство. Интеграция Azure Active Directory с Apptio
 
 В этом руководстве описано, как интегрировать Apptio с Azure Active Directory (Azure AD).
 
@@ -150,7 +150,7 @@ ms.locfileid: "39043760"
 9. Чтобы настроить единый вход на стороне **Apptio**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Apptio](https://www.apptio.com/about/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -186,7 +186,7 @@ ms.locfileid: "39043760"
  
 ### <a name="create-an-apptio-test-user"></a>Создание тестового пользователя в Apptio
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Apptio. Обратитесь в [службу поддержки Apptio](https://www.apptio.com/about/contact), чтобы добавить пользователей на платформу Apptio. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Apptio. Чтобы добавить пользователей на платформу Apptio, обратитесь к [группе поддержки Apptio](https://www.apptio.com/about/contact). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -223,7 +223,7 @@ ms.locfileid: "39043760"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "Apptio" на панели доступа, вы автоматически войдете в приложение Apptio.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

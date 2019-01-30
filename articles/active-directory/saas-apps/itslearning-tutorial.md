@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с itslearning | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с itslearning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении itslearning.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 60587ba3-1396-4b8a-9ac1-e22a98e5e0ac
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: c6fc86d5179a5f7113e955ebc8f6b8994f30cb26
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9bd913c7894b47acd22814f7ad2e7fc70816ee9e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446090"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821855"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Учебник. Интеграция Azure Active Directory с itslearning
+# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Руководство. Интеграция Azure Active Directory с itslearning
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением itslearning.
 
@@ -131,7 +131,7 @@ ms.locfileid: "39446090"
 1. Чтобы настроить единый вход на стороне **itslearning**, отправьте скачанный **XML-файл метаданных** в [службу поддержки itslearning](mailto:support@itslearning.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -167,7 +167,7 @@ ms.locfileid: "39446090"
  
 ### <a name="creating-an-itslearning-test-user"></a>Создание тестового пользователя itslearning
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении itslearning. Обратитесь в [службу поддержки клиентов itslearning](mailto:support@itslearning.com), чтобы добавить пользователей на платформу itslearning. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении itslearning. Чтобы добавить пользователей на платформу itslearning, обратитесь к [группе поддержки клиентов itslearning](mailto:support@itslearning.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

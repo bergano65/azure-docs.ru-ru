@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Schoox | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Schoox | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Schoox.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: f8b4cdcc-cbf6-4229-9427-05632e33f942
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 3f26809d934708ecad2e3dda69a8cfc25e02d58a
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 9ea9bac0aac5fe491da14f077fa6615343013742
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39051406"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54807292"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-schoox"></a>Руководство по интеграции Azure Active Directory с приложением Schoox
+# <a name="tutorial-azure-active-directory-integration-with-schoox"></a>Руководство. Интеграция Azure Active Directory с приложением Schoox
 
 В этом руководстве описано, как интегрировать Schoox с Azure Active Directory (Azure AD).
 
@@ -136,7 +136,7 @@ ms.locfileid: "39051406"
 8. Чтобы настроить единый вход на стороне **Schoox**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Schoox](https://www.schoox.com/help/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -172,7 +172,7 @@ ms.locfileid: "39051406"
  
 ### <a name="create-a-schoox-test-user"></a>Создание тестового пользователя Schoox
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Schoox. Обратитесь в [службу поддержки Schoox](https://www.schoox.com/help/), чтобы добавить пользователей на платформу Schoox. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Schoox. Чтобы добавить пользователей на платформу Schoox, обратитесь к [группе поддержки Schoox](https://www.schoox.com/help/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -209,7 +209,7 @@ ms.locfileid: "39051406"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Schoox на панели доступа, вы автоматически войдете в приложение Schoox.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

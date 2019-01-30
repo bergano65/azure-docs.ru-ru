@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Achieve3000 | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Achieve3000 | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Achieve3000.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 83a83d07-ff9c-46c4-b5ba-25fe2b2cd003
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 72e327f3cfa81b1ff27fcad743f5bb9a98737ed9
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: bdee3d64348b734488f7fb19bf6c57353908ae9b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39053612"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822728"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-achieve3000"></a>Руководство по интеграции Azure Active Directory с Achieve3000
+# <a name="tutorial-azure-active-directory-integration-with-achieve3000"></a>Руководство. Интеграция Azure Active Directory с Achieve3000
 
 В этом руководстве описано, как интегрировать Achieve3000 с Azure Active Directory (Azure AD).
 
@@ -150,7 +150,7 @@ ms.locfileid: "39053612"
 8. Чтобы настроить единый вход на стороне **Achieve3000**, отправьте **группе поддержки Achieve3000** скачанный [XML-файл метаданных](https://www.achieve3000.com/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -186,7 +186,7 @@ ms.locfileid: "39053612"
  
 ### <a name="create-an-achieve3000-test-user"></a>Создание тестового пользователя Achieve3000
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Achieve3000. Обратитесь к [группе поддержки Achieve3000](https://www.achieve3000.com/contact-us/), чтобы добавить пользователей в платформу Achieve3000. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Achieve3000. Чтобы добавить пользователей на платформу Achieve3000, обратитесь к [группе поддержки Achieve3000](https://www.achieve3000.com/contact-us/). Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -223,7 +223,7 @@ ms.locfileid: "39053612"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Achieve3000" на панели доступа, вы автоматически войдете в приложение Achieve3000.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

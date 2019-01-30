@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Trakopolis | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Trakopolis | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и Trakopolis.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 73d67c3e-4b4b-4d3b-aa58-6699ea1ccea3
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: jeedes
-ms.openlocfilehash: 4f85ad5618132b86b01296d7aebae0c2aad09164
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: af872295e52323744ff50179471abd9319b5cb9d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39443593"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822779"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trakopolis"></a>Учебник. Интеграция Azure Active Directory с Trakopolis
+# <a name="tutorial-azure-active-directory-integration-with-trakopolis"></a>Руководство. Интеграция Azure Active Directory с Trakopolis
 
 В этом учебнике описано, как интегрировать приложение Trakopolis с Azure Active Directory (Azure AD).
 
@@ -134,7 +134,7 @@ ms.locfileid: "39443593"
 1. Чтобы настроить единый вход на стороне **Trakopolis**, нужно отправить скачанный **XML-файл метаданных, URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки Trakopolis](mailto:support@cantelematics.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -169,7 +169,7 @@ ms.locfileid: "39443593"
  
 ### <a name="creating-a-trakopolis-test-user"></a>Создание тестового пользователя Trakopolis
 
-В этом разделе описано, как создать пользователя Britta Simon в Trakopolis. Обратитесь к [группе поддержки Trakopolis](mailto:support@cantelematics.com), чтобы добавить пользователей в учетную запись Trakopolis. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Trakopolis. Чтобы добавить пользователей на платформу Trakopolis, обратитесь к [группе поддержки Trakopolis](mailto:support@cantelematics.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

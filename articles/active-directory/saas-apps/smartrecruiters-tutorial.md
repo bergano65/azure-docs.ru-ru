@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SmartRecruiters | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SmartRecruiters | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SmartRecruiters.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: e96aeecd-e113-454e-89c3-58c9f44cfd4c
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: jeedes
-ms.openlocfilehash: b248cd7d5d45e4f91bc97a5a29476f9bfa03089d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6624368e0438b8f41a0f90c5da3f7f00f4cbc86c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813565"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство по интеграции Azure Active Directory с SmartRecruiters
+# <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство. Интеграция Azure Active Directory с SmartRecruiters
 
 Из этого руководства вы узнаете, как интегрировать SmartRecruiters с Azure Active Directory (Azure AD).
 
@@ -160,7 +160,7 @@ ms.locfileid: "39426991"
 1. Щелкните **Save Web SSO configuration** (Сохранить конфигурацию единого входа через Интернет).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -196,7 +196,7 @@ ms.locfileid: "39426991"
  
 ### <a name="create-a-smartrecruiters-test-user"></a>Создание тестового пользователя SmartRecruiters
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в SmartRecruiters. Для добавления пользователей на платформе SmartRecruiters обратитесь в [службу поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/). Перед использованием единого входа необходимо создать и активировать пользователей. 
+Из этого раздела вы узнаете, как создать пользователя Britta Simon в SmartRecruiters. Чтобы добавить пользователей на платформу SmartRecruiters обратитесь к [группе поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/). Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -233,7 +233,7 @@ ms.locfileid: "39426991"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент SmartRecruiters на панели доступа, вы автоматически войдете в приложение SmartRecruiters.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

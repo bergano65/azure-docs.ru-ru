@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Klue | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Klue | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Klue.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 08341008-980b-4111-adb2-97bbabbf1e47
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2018
 ms.author: jeedes
-ms.openlocfilehash: 4afe11d6d241e86b57ebb40d54e4c2dceb63a46c
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 9312006af84e74aa039d762abdfc6edba79a47fb
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123062"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824802"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-klue"></a>Руководство по интеграции Azure Active Directory с Klue
+# <a name="tutorial-azure-active-directory-integration-with-klue"></a>Руководство. Интеграция Azure Active Directory с Klue
 
 В этом руководстве описано, как интегрировать Klue с Azure Active Directory (Azure AD).
 
@@ -206,7 +206,7 @@ ms.locfileid: "43123062"
 Цель этого раздела — создать пользователя с именем Britta Simon в Klue. Приложение Klue поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Klue (если он еще не создан).
 
 > [!Note]
-> Чтобы создать пользователя вручную, обратитесь к [группе поддержки Klue](mailto:support@klue.com).
+> Чтобы создать пользователя вручную, обратитесь к [группе поддержки Klue](mailto:support@klue.com).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -243,7 +243,7 @@ ms.locfileid: "43123062"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Klue" на панели доступа, вы автоматически войдете в приложение Klue.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

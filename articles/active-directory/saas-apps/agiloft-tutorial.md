@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Agiloft | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Agiloft | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Agiloft.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: aca13814-cdbd-46b8-93dc-1578099c5ee4
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/09/2017
 ms.author: jeedes
-ms.openlocfilehash: f11d705cceb05c9e9cd0b340a680684eecf4f5d9
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: f851bd260c18509a3233bb3401383e0e04ba6259
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054205"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813667"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по интеграции Azure Active Directory с Agiloft
+# <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство. Интеграция Azure Active Directory с Agiloft
 
 В этом руководстве описано, как интегрировать Agiloft с Azure Active Directory (Azure AD).
 
@@ -161,19 +161,19 @@ ms.locfileid: "39054205"
     
     ![Настройка Agiloft](./media/agiloft-tutorial/setup4.png) 
 
-    a. В текстовое поле **IdP Entity Id / Issuer** (Идентификатор сущности поставщика удостоверений / издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    a. В текстовое поле **IdP Entity Id / Issuer** (Идентификатор сущности поставщика удостоверений / издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    b. В текстовое поле **IdP Login URL** (URL-адрес входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b. В текстовое поле **IdP Login URL** (URL-адрес входа поставщика удостоверений) вставьте значение  **URL-адреса службы единого входа**, скопированное на портале Azure.
 
-    c. В текстовое поле **IdP Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    c. В текстовое поле  **IdP Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение  **URL-адреса выхода**, скопированное на портале Azure.
 
-    d. Откройте в блокноте **сертификат в кодировке Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **IdP Provided X.509 certificate contents** (Содержимое предоставленного поставщиком удостоверений сертификата X.509).
+    d. Откройте в блокноте **сертификат в кодировке Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле  **IdP Provided X.509 certificate contents** (Содержимое предоставленного поставщиком удостоверений сертификата X.509).
 
     д. Нажмите кнопку **Готово**
 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -246,7 +246,7 @@ ms.locfileid: "39054205"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Agiloft на панели доступа, вы автоматически войдете в приложение Agiloft.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

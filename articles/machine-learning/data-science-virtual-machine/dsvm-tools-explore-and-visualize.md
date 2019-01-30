@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: c83c9929019e6e236ead783c0c617e51523a5a8a
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: dfe6184779d3c26273e8e7cabef4890360cf7e76
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567389"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54446266"
 ---
 # <a name="data-exploration-and-visualization-tools-on-the-data-science-virtual-machine"></a>Средства исследования и визуализации данных на виртуальной машине для обработки и анализа данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "51567389"
 | Что это такое?   | Обработчик SQL-запросов с открытым исходным кодом для больших данных    |
 | Поддерживаемые версии виртуальных машин для обработки и анализа данных      | Windows, Linux  |
 | Настройка и установка на DSVM      |  Установлено в `/dsvm/tools/drill*` лишь во встроенном режиме   |
-| Распространенные способы применения      |  Просмотр данных на месте без использования процессов извлечения, преобразования и загрузки. Запрос разных источников и форматов данных, включая CSV, JSON, реляционные таблицы и Hadoop     |
+| Распространенные способы применения      |  Просмотр данных на месте без использования процессов извлечения, преобразования и загрузки. Запрос разных источников и форматов данных, включая CSV, JSON, реляционные таблицы и Hadoop.     |
 | Запуск и использование      | С помощью ярлыка на рабочем столе  <br/> [Drill in 10 Minutes](https://drill.apache.org/docs/drill-in-10-minutes/) (Начало работы с Drill за 10 минут)  |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      |   Rattle, Weka, SQL Server Management Studio      |
 

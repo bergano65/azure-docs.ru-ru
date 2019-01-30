@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: планировщик | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: Планировщик | Документация Майкрософт'
 description: В этом разделе описывается встроенная функция планировщика синхронизации Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: d8deb03d03446c1452d73a7c08df4cf14ffcd5b5
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 8099194feed3761e32686ab15e8738b10ffd4e8b
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46304563"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462323"
 ---
-# <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: планировщик
+# <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: Планировщик
 В этом разделе описывается встроенный планировщик синхронизации Azure AD Connect (модуль синхронизации).
 
 Эта функция появилась в сборке 1.1.105.0 (выпущенной в феврале 2016 года).
@@ -71,7 +71,7 @@ ms.locfileid: "46304563"
 
 ### <a name="customizedsynccycleinterval"></a>CustomizedSyncCycleInterval
 Синтаксис: `Set-ADSyncScheduler -CustomizedSyncCycleInterval d.HH:mm:ss`  
-d — дни, HH — часы, mm — минуты, ss — секунды.
+ d — дни, HH — часы, mm — минуты, ss — секунды.
 
 Пример: `Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00`  
 Планировщик будет запускаться каждые 3 часа.
@@ -165,7 +165,7 @@ Get-ADSyncConnectorRunStatus
 ```
 
 ![Состояние выполнения соединителя](./media/how-to-connect-sync-feature-scheduler/getconnectorrunstatus.png)  
-На рисунке выше первая строка — из состояния, в котором модуль синхронизации бездействует. Вторая строка — из состояния, в котором соединитель Azure AD выполняется.
+ На рисунке выше первая строка — из состояния, в котором модуль синхронизации бездействует. Вторая строка — из состояния, в котором соединитель Azure AD выполняется.
 
 ## <a name="scheduler-and-installation-wizard"></a>Планировщик и мастер установки
 При запуске мастера установки планировщик приостанавливается. Это связано с тем, что вы можете внести изменения в конфигурацию, а во время активной работы модуля синхронизации их нельзя будет применить. Пока мастер установки открыт, модуль синхронизации не выполняет никаких действий по синхронизации.

@@ -4,7 +4,7 @@ description: Узнайте, как обновить DirSync и Azure AD Sync д
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: bd68fb88-110b-4d76-978a-233e15590803
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7f4bf3e68c64281cb875c063597ab01eb53bbf78
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 60994ee928709206c6b55b7b0b687341f3219b5d
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310303"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54472081"
 ---
 # <a name="upgrade-windows-azure-active-directory-sync-and-azure-active-directory-sync"></a>Обновление Windows Azure Active Directory Sync и Azure Active Directory Sync
 Azure AD Connect — это лучший способ для подключения локального каталога к Azure AD и Office 365. Если вы пользуетесь Windows Azure Active Directory Sync (DirSync) или Azure AD Sync, настало время перейти на Azure AD Connect, поскольку эти продукты являются нерекомендуемыми и не поддерживаются с 13 апреля 2017 года.
@@ -55,14 +55,14 @@ Azure AD Connect является преемником DirSync и Azure AD Sync.
 >
 
 ## <a name="faq"></a>Часто задаваемые вопросы
-**Вопрос. Мне прислали уведомление по электронной почте от команды Azure и (или) сообщение из центра сообщений Office 365, хотя я использую Connect.**  
+**Вопрос. Мне прислали уведомление по электронной почте от команды Azure и (или) сообщение из центра сообщений Office 365, хотя я использую Connect.**  
 Уведомление было также отправлено клиентам, использующим Azure AD Connect с номером сборки 1.0.\*.0 (версии, предшествующие выпуску 1.1). Корпорация Майкрософт рекомендует пользователям обновлять Azure AD Connect до последних выпусков. Функция [автоматического обновления](how-to-connect-install-automatic-upgrade.md), представленная в версии 1.1, существенно упрощает эту задачу: благодаря ей у вас всегда будет установлена последняя версия Azure AD Connect.
 
-**Вопрос. Перестанет ли DirSync или Azure AD Sync работать 13 апреля 2017 года?**  
+**Вопрос. Перестал ли DirSync или Azure AD Sync работать 13 апреля 2017 года?**  
 Служба DirSync (Azure AD Sync) продолжит работу после 13 апреля 2017 года.  Но после 31 декабря 2017 г. служба Azure AD больше не будет принимать подключения из DirSync и Azure AD Sync.
 
 **Вопрос. Какие версии DirSync можно обновить?**  
-Поддерживается обновление любой версии DirSync, которая используется в настоящее время. 
+ Поддерживается обновление любой версии DirSync, которая используется в настоящее время. 
 
 **Вопрос. Как насчет соединителя Azure AD для FIM/MIM?**  
 Соединитель Azure AD для FIM или MIM устаревшим **не** объявлен. Проект **заморожен**, т. е. новые функции не добавляются, а ошибки не исправляются. Корпорация Майкрософт рекомендует использующим его клиентам перейти на Azure AD Connect. Настоятельно рекомендуем не запускать с его помощью никакие новые развертывания. В будущем соединитель будет объявлен устаревшим.

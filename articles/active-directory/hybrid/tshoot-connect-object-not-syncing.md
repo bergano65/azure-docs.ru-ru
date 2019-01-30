@@ -4,7 +4,7 @@ description: Узнайте, как устранять неполадки син
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: b66aeb0832058c56e63c56c0420c7793eb2a632a
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 5b64472c6388a642c817fb67c97e963ecfa14c2c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306563"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478660"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-to-azure-ad"></a>Устранение неполадок синхронизации объекта с Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "46306563"
 
 * Если получена ошибка из **SyncRulesEngine**, в начале сведений стека вызовов можно просмотреть список всех атрибутов объекта. Прокрутите вниз до заголовка **InnerException =>**.  
   ![Диспетчер службы синхронизации](./media/tshoot-connect-object-not-syncing/errorinnerexception.png)  
-  В строке ниже отображается ошибка. На рисунке выше ошибка получена из-за создания пользовательского правила синхронизации Fabrikam.
+   В строке ниже отображается ошибка. На рисунке выше ошибка получена из-за создания пользовательского правила синхронизации Fabrikam.
 
 Если сама ошибка не содержит достаточно сведений, значит, пора взглянуть на данные. Вы можете щелкнуть ссылку с идентификатором объекта и продолжить устранение неполадок в [импортированном объекте пространства соединителя](#cs-import).
 

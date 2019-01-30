@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/07/2018
+ms.date: 01/23/2019
 ms.author: magoedte
-ms.openlocfilehash: cfbe1ce39d7f68dd6ea2510b5c6cbddf4eb71710
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: e97ac849fa0e590dd2462d8e64b761da23576833
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332002"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54845968"
 ---
 # <a name="deploy-azure-monitor-for-vms-preview"></a>Развертывание Azure Monitor для виртуальных машин (предварительная версия)
 В этой статье описана настройка Azure Monitor для виртуальных машин. Служба отслеживает работоспособность операционной системы виртуальных машин и масштабируемых наборов виртуальных машин Azure, а также виртуальных машин в вашей среде. Этот мониторинг включает обнаружение и сопоставление зависимостей приложений, которые можно разместить на машинах. 
@@ -303,113 +303,128 @@ Dependency Agent можно скачать из следующего распо�
 
 1. Сохраните этот файл в локальную папку, присвоив ему имя *installsolutionsforvminsights.json*.
 
-1. Измените значения параметров *WorkspaceName*, *ResourceGroupName* и *WorkspaceLocation*. Значение *WorkspaceName* — это полный идентификатор ресурса рабочей области Log Analytics, включая имя рабочей области. Значение *WorkspaceLocation* — регион, в котором определена рабочая область.
+1. Соберите значения параметров *WorkspaceName*, *ResourceGroupName* и *WorkspaceLocation*. Значение для *WorkspaceName* — это имя рабочей области Log Analytics. Значение *WorkspaceLocation* — регион, в котором определена рабочая область.
 
-1. Теперь все готово для развертывания этого шаблона с помощью следующей команды PowerShell:
+1. Теперь вы можете развернуть этот шаблон.
+ 
+    * Выполните следующие команды PowerShell в папке с шаблоном:
 
-    ```powershell
-    New-AzureRmResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName <ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
-    ```
+        ```powershell
+        New-AzureRmResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName <ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
+        ```
 
-    Изменение конфигурации может занять несколько минут. После настройки появится сообщение, похожее на приведенное ниже, с таким результатом:
+        Изменение конфигурации может занять несколько минут. После настройки появится сообщение, похожее на приведенное ниже, с таким результатом:
 
-    ```powershell
-    provisioningState       : Succeeded
-    ```
+        ```powershell
+        provisioningState       : Succeeded
+        ```
 
-### <a name="enable-by-using-azure-policy"></a>Включение при помощи Политики Azure
-Рекомендуем масштабировать Azure Monitor для виртуальных машин таким образом, чтобы обеспечить согласованное соответствие и автоматическое включение новых подготовленных виртуальных машин. Это можно сделать с помощью [Политики Azure](../../azure-policy/azure-policy-introduction.md). С помощью политик можно:
+    * Выполните следующую команду с помощью Azure CLI:
+    
+        ```azurecli
+        az login
+        az account set --subscription "Subscription Name"
+        az group deployment create --name DeploySolutions --resource-group <ResourceGroupName> --template-file InstallSolutionsForVMInsights.json --parameters WorkspaceName=<workspaceName> WorkspaceLocation=<WorkspaceLocation - example: eastus>
 
-* Развернуть агент Log Analytics и Dependency Agent.
-* Создать отчет о результатах проверки на соответствие.
-* Исправить несоответствующие виртуальные машины.
+        The configuration change can take a few minutes to complete. When it's completed, a message is displayed that's similar to the following and includes the result:
 
-Чтобы включить Azure Monitor для виртуальных машин с помощью Политики Azure в своем арендаторе, выполните следующие действия:
+        ```azurecli
+        provisioningState       : Succeeded
 
-- Назначьте инициативу области: группе управления, подписке или группе ресурсов.
-- Просмотрите и исправьте результаты проверки на соответствие требованиям.
+### Enable by using Azure Policy
+To enable Azure Monitor for VMs at scale in a way that helps ensure consistent compliance and the automatic enabling of the newly provisioned VMs, we recommend [Azure Policy](../../azure-policy/azure-policy-introduction.md). These policies:
 
-Дополнительные сведения о назначении Политики Azure см. в [обзоре Политики Azure](../../governance/policy/overview.md#policy-assignment). Кроме того, прежде чем продолжить, ознакомьтесь с [обзором групп управления](../../governance/management-groups/index.md).
+* Deploy the Log Analytics agent and the Dependency agent.
+* Report on compliance results.
+* Remediate for non-compliant VMs.
 
-Определения политик перечислены в следующей таблице:
+To enable Azure Monitor for VMs by using Azure Policy in your tenant:
 
-|ИМЯ |ОПИСАНИЕ |type |
+- Assign the initiative to a scope: management group, subscription, or resource group
+- Review and remediate compliance results
+
+For more information about assigning Azure Policy, see [Azure Policy overview](../../governance/policy/overview.md#policy-assignment) and review the [overview of management groups](../../governance/management-groups/index.md) before you continue.
+
+The policy definitions are listed in the following table:
+
+|Name |Description |Type |
 |-----|------------|-----|
-|[Предварительный просмотр] Включение Azure Monitor для виртуальных машин |Включение Azure Monitor для виртуальных машин в указанной области (группе управления, подписке или группе ресурсов). В качестве параметра принимается рабочая область Log Analytics. |Инициатива |
-|[Предварительный просмотр] Проверка развертывания Dependency Agent — образ виртуальной машины (ОС) отсутствует в списке |Если образ виртуальной машины (ОС) не определен в заданном списке и агент не установлен, поступает сообщение о несоответствии виртуальной машины. |Политика |
-|[Предварительный просмотр] Проверка развертывания агента Log Analytics — образ виртуальной машины (ОС) отсутствует в списке |Если образ виртуальной машины (ОС) не определен в заданном списке и агент не установлен, поступает сообщение о несоответствии виртуальной машины. |Политика |
-|[Предварительный просмотр] Развертывание Dependency Agent для виртуальных машин Linux |Развертывание Dependency Agent для виртуальных машин Linux, если образ виртуальной машины (ОС) определен в заданном списке, а агент не установлен. |Политика |
-|[Предварительный просмотр] Развертывание Dependency Agent для виртуальных машин Windows |Развертывание Dependency Agent для виртуальных машин Windows, если образ виртуальной машины (ОС) определен в заданном списке, а агент не установлен. |Политика |
-|[Предварительный просмотр] Развертывание агента Log Analytics для виртуальных машин Linux |Развертывание агента Log Analytics для виртуальных машин Linux, если образ виртуальной машины (ОС) определен в заданном списке, а агент не установлен. |Политика |
-|[Предварительный просмотр] Развертывание агента Log Analytics для виртуальных машин Windows |Развертывание агента Log Analytics для виртуальных машин Windows, если в списке определен образ виртуальной машины (OS), а агент не установлен. |Политика |
+|[Preview]: Enable Azure Monitor for VMs |Enable Azure Monitor for the Virtual Machines (VMs) in the specified scope (management group, subscription, or resource group). Takes Log Analytics workspace as a parameter. |Initiative |
+|[Preview]: Audit Dependency Agent Deployment – VM Image (OS) unlisted |Reports VMs as non-compliant if the VM Image (OS) isn't defined in the list and the agent isn't installed. |Policy |
+|[Preview]: Audit Log Analytics Agent Deployment – VM Image (OS) unlisted |Reports VMs as non-compliant if the VM Image (OS) isn't defined in the list and the agent isn't installed. |Policy |
+|[Preview]: Deploy Dependency Agent for Linux VMs |Deploy Dependency Agent for Linux VMs if the VM Image (OS) is defined in the list and the agent isn't installed. |Policy |
+|[Preview]: Deploy Dependency Agent for Windows VMs |Deploy Dependency Agent for Windows VMs if the VM Image (OS) is defined in the list and the agent isn't installed. |Policy |
+|[Preview]: Deploy Log Analytics Agent for Linux VMs |Deploy Log Analytics Agent for Linux VMs if the VM Image (OS) is defined in the list and the agent isn't installed. |Policy |
+|[Preview]: Deploy Log Analytics Agent for Windows VMs |Deploy Log Analytics Agent for Windows VMs if the VM Image (OS) is defined in the list and the agent isn't installed. |Policy |
 
-Автономная политика (не включена в инициативу) описана здесь:
+Standalone policy (not included with the initiative) is described here:
 
-|ИМЯ |ОПИСАНИЕ |type |
+|Name |Description |Type |
 |-----|------------|-----|
-|[Предварительный просмотр] Проверка рабочей области Log Analytics для виртуальной машины — сообщение о несоответствии |Если для виртуальных машин не ведется журнал в рабочей области Log Analytics, указанной в назначении политики или инициативы, поступает сообщение о несоответствии виртуальных машин. |Политика |
+|[Preview]: Audit Log Analytics Workspace for VM - Report Mismatch |Report VMs as non-compliant if they aren't logging to the Log Analytics workspace specified in the policy/initiative assignment. |Policy |
 
-#### <a name="assign-the-azure-monitor-initiative"></a>Назначение инициативы Azure Monitor
-В этом первом выпуске вы можете создать назначение политики только на портале Azure. Чтобы понять, как выполняются эти шаги, изучите статью  [Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, в среде Azure](../../governance/policy/assign-policy-portal.md).
+#### Assign the Azure Monitor initiative
+With this initial release, you can create the policy assignment only in the Azure portal. To understand how to complete these steps, see [Create a policy assignment from the Azure portal](../../governance/policy/assign-policy-portal.md).
 
-1. Чтобы запустить службу "Политика Azure" на портале Azure, выберите **Все службы**, а затем найдите и выберите **Политика**.
+1. To launch the Azure Policy service in the Azure portal, select **All services**, and then search for and select **Policy**.
 
-1. Выберите **Назначения** на левой панели страницы "Политика Azure".  
-    Назначение — это политика, которая назначена в рамках определенной области.
+1. In the left pane of the Azure Policy page, select **Assignments**.  
+    An assignment is a policy that has been assigned to take place within a specific scope.
     
-1. В верхней части страницы **Policy — Assignments** (Политика — назначения) выберите **Назначить инициативу**.
+1. At the top of the **Policy - Assignments** page, select **Assign Initiative**.
 
-1. На странице **Назначить инициативу** выберите **Область**, щелкнув многоточие (...), и выберите группу управления или подписку.  
-    В нашем примере область действия ограничивает назначение политики группой виртуальных машин для принудительного применения.
+1. On the **Assign Initiative** page, select the **Scope** by clicking the ellipsis (...), and select a management group or subscription.  
+    In our example, a scope limits the policy assignment to a grouping of virtual machines for enforcement.
     
-1. В нижней части страницы **Область** нажмите кнопку **Выбрать**, чтобы сохранить изменения.
+1. At the bottom of the **Scope** page, save your changes by selecting **Select**.
 
-1. Чтобы удалить один или несколько ресурсов из области, выберите **Исключения** (необязательно).
+1. (Optional) To remove one or more resources from the scope, select **Exclusions**.
 
-1. Выберите многоточие (...) **Определения инициативы**, чтобы отобразился список доступных определений. Выберите **[Предварительный просмотр] Enable Azure Monitor for VMs** (Включить Azure Monitor для виртуальных машин (предварительная версия)), а затем нажмите **Выбрать**.  
-    В поле **Имя назначения** автоматически задается выбранное имя инициативы, но его можно изменить. При желании можно добавить необязательное описание. Поле **Кем назначено** заполняется автоматически в соответствии со сведениями о текущем пользователе. Это поле является необязательным.
+1. Select the **Initiative definition** ellipsis (...) to display the list of available definitions, select **[Preview] Enable Azure Monitor for VMs**, and then select **Select**.  
+    The **Assignment name** box is automatically populated with the initiative name you selected, but you can change it. You can also add an optional description. The **Assigned by** box is automatically populated based on who is logged in, and this value is optional.
     
-1. В раскрывающемся списке **Рабочая область Log Analytics** для поддерживаемого региона выберите рабочую область.
+1. In the **Log Analytics workspace** drop-down list for the supported region, select a workspace.
 
     >[!NOTE]
-    >Если рабочая область находится за пределами области назначения, предоставьте разрешения *участника Log Analytics* для идентификатора участника назначения политики. Если этого не сделать, может появиться ошибка развертывания, например: `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ... ` Чтобы предоставить доступ, просмотрите описание [настройки управляемого удостоверения вручную](../../governance/policy/how-to/remediate-resources.md#manually-configure-the-managed-identity).
+    >If the workspace is beyond the scope of the assignment, grant *Log Analytics Contributor* permissions to the policy assignment's Principal ID. If you don't do this, you might see a deployment failure such as: `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ... `
+    >To grant access, review [how to manually configure the managed identity](../../governance/policy/how-to/remediate-resources.md#manually-configure-the-managed-identity).
     >  
-    Флажок **Управляемое удостоверение** устанавливается, когда назначаемая инициатива содержит политику с эффектом *deployIfNotExists*.
+    The **Managed Identity** check box is selected, because the initiative being assigned includes a policy with the *deployIfNotExists* effect.
     
-1. В раскрывающемся списке **Manage Identity location** (Расположение для управления удостоверениями) выберите соответствующий регион.
+1. In the **Manage Identity location** drop-down list, select the appropriate region.
 
-1. Выберите **Назначить**.
+1. Select **Assign**.
 
-#### <a name="review-and-remediate-the-compliance-results"></a>Просмотр результатов проверки на соответствие и внесение исправлений
+#### Review and remediate the compliance results
 
-Чтобы узнать, как просмотреть результаты проверки на соответствие, прочитайте раздел [Выявление несоответствующих ресурсов](../../governance/policy/assign-policy-portal.md#identify-non-compliant-resources). На панели слева выберите **Соответствие** и найдите инициативу **[Предварительный просмотр] Enable Azure Monitor for VMs** (Включить Azure Monitor для виртуальных машин (предварительная версия)) для виртуальных машин, которые не соответствуют созданному вами назначению.
+You can learn how to review compliance results by reading [identify non-compliance results](../../governance/policy/assign-policy-portal.md#identify-non-compliant-resources). In the left pane, select **Compliance**, and then locate the **[Preview] Enable Azure Monitor for VMs** initiative for VMs that aren't compliant according to the assignment you created.
 
-![Соответствие политикам для виртуальных машин Azure](./media/vminsights-onboard/policy-view-compliance-01.png)
+![Policy compliance for Azure VMs](./media/vminsights-onboard/policy-view-compliance-01.png)
 
-На основе результатов политик в инициативе виртуальные машины указываются как несоответствующие в следующих сценариях:
+Based on the results of the policies included with the initiative, VMs are reported as non-compliant in the following scenarios:
 
-* Агент Log Analytics или Dependency Agent не развернут.  
-    Этот сценарий характерен для области с существующими виртуальными машинами. Чтобы устранить это несоответствие, разверните необходимые агенты. Для этого [создайте задачи по исправлению](../../governance/policy/how-to/remediate-resources.md) несоответствующей политики.  
-    - [Предварительный просмотр]: Deploy Dependency Agent for Linux VMs
-    - [Предварительный просмотр]: Deploy Dependency Agent for Windows VMs
-    - [Предварительный просмотр]: Deploy Log Analytics Agent for Linux VMs
-    - [Предварительный просмотр]: Deploy Log Analytics Agent for Windows VMs
+* Log Analytics or the Dependency agent isn't deployed.  
+    This scenario is typical for a scope with existing VMs. To mitigate it, deploy the required agents by [creating remediation tasks](../../governance/policy/how-to/remediate-resources.md) on a non-compliant policy.  
+    - [Preview]: Deploy Dependency Agent for Linux VMs
+    - [Preview]: Deploy Dependency Agent for Windows VMs
+    - [Preview]: Deploy Log Analytics Agent for Linux VMs
+    - [Preview]: Deploy Log Analytics Agent for Windows VMs
 
-* Образ виртуальной машины (ОС) не задан в определении политики.  
-    Условия политики развертывания включают в себя только виртуальные машины, развернутые на основе известных образов виртуальных машин Azure. Проверьте документацию, чтобы узнать, поддерживается ли ОС виртуальных машин. Если ОС не поддерживается, создайте копию политики развертывания и измените ее таким образом, чтобы образ соответствовал ее требованиям.  
-    - [Предварительный просмотр] Проверка развертывания Dependency Agent — образ виртуальной машины (ОС) отсутствует в списке
-    - [Предварительный просмотр] Проверка развертывания агента Log Analytics — образ виртуальной машины (ОС) отсутствует в списке
+* VM Image (OS) isn't identified in the policy definition.  
+    The criteria of the deployment policy include only VMs that are deployed from well-known Azure VM images. Check the documentation to see whether the VM OS is supported. If it isn't supported, duplicate the deployment policy and update or modify it to make the image compliant.  
+    - [Preview]: Audit Dependency Agent Deployment – VM Image (OS) unlisted
+    - [Preview]: Audit Log Analytics Agent Deployment – VM Image (OS) unlisted
 
-* Виртуальные машины не выполняют вход в указанную рабочую область Log Analytics.  
-    Возможно, некоторые виртуальные машины в области инициативы выполняют вход в рабочую область Log Analytics, отличную от той, которая указана в назначении политики. Данная политика — это инструмент, позволяющий определить, какие виртуальные машины отправляют отчеты в несоответствующую рабочую область.  
-    - [Предварительный просмотр]: Audit Log Analytics Workspace for VM - Report Mismatch
+* VMs aren't logging in to the specified Log Analytics workspace.  
+    It's possible that some VMs in the initiative scope are logging in to a Log Analytics workspace other than the one that's specified in the policy assignment. This policy is a tool to identify which VMs are reporting to a non-compliant workspace.  
+    - [Preview]: Audit Log Analytics Workspace for VM - Report Mismatch
 
-### <a name="enable-with-powershell"></a>Включение с помощью PowerShell
-Чтобы включить Azure Monitor для виртуальных машин на нескольких виртуальных машинах или в нескольких масштабируемых наборах виртуальных машин, можно использовать сценарий PowerShell [Install-VMInsights.ps1](https://www.powershellgallery.com/packages/Install-VMInsights/1.0), доступный в коллекции Azure PowerShell. В этом сценарии поочередно перебираются все виртуальные машины и масштабируемые наборы виртуальных машин в подписке в указанной с помощью параметра *ResourceGroup* группе ресурсов на одной виртуальной машине или в масштабируемом наборе, для которых указано *Имя*. Для каждой виртуальной машины или масштабируемого набора виртуальных машин в сценарии проверяется, установлено ли расширение виртуальной машины. Если расширение виртуальной машины не установлено, в сценарии выполняется повторная попытка его установки. Если расширение виртуальной машины установлено, в сценарии устанавливается расширение виртуальной машины для агента Log Analytics и Dependency Agent.
+### Enable with PowerShell
+To enable Azure Monitor for VMs for multiple VMs or virtual machine scale sets, you can use the PowerShell script [Install-VMInsights.ps1](https://www.powershellgallery.com/packages/Install-VMInsights/1.0), available from the Azure PowerShell Gallery. This script iterates through every virtual machine and virtual machine scale set in your subscription, in the scoped resource group that's specified by *ResourceGroup*, or to a single VM or virtual machine scale set that's specified by *Name*. For each VM or virtual machine scale set, the script verifies whether the VM extension is already installed. If the VM extension is not installed, the script tries to reinstall it. If the VM extension is installed, the script installs the Log Analytics and Dependency agent VM extensions.
 
-Для этого скрипта требуется модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+This script requires Azure PowerShell module version 5.7.0 or later. Run `Get-Module -ListAvailable AzureRM` to find the version. If you need to upgrade, see [Install Azure PowerShell module](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). If you're running PowerShell locally, you also need to run `Connect-AzureRmAccount` to create a connection with Azure.
 
-Чтобы получить список сведений об аргументах сценария и пример использования, выполните команду `Get-Help`.
+To get a list of the script's argument details and example usage, run `Get-Help`.
 
 ```powershell
 Get-Help .\Install-VMInsights.ps1 -Detailed
