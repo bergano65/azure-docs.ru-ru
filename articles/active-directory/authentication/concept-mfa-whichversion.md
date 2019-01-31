@@ -3,19 +3,19 @@ title: Сервер или служба Многофакторной идент�
 description: Мне, как администратору Azure AD, необходимо понять, какую версию Многофакторной идентификации следует развертывать.
 services: multi-factor-authentication
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: 50340218f80dfb0b443075a3a4f85e7a5ed86159
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 783564f8c924cc0b7f94d94748ead35300250ded
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54433282"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55075573"
 ---
 # <a name="which-version-of-azure-mfa-is-right-for-my-organization"></a>Какая версия Многофакторной идентификации Microsoft Azure подходит организации?
 

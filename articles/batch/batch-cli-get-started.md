@@ -3,7 +3,7 @@ title: Начало работы с интерфейсом командной с
 description: Ознакомьтесь с командами интерфейса командной строки пакетной службы Azure для управления ресурсами пакетной службы Azure.
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: fcd76587-1827-4bc8-a84d-bba1cd980d85
@@ -13,14 +13,14 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
 ms.date: 07/24/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b5c1df8776b63fc8ceecfa0377e74c757ba503c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0d51052f4e04a1497ccf2e91427e3465bdc5bf2f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950154"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55476831"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -62,7 +62,7 @@ Azure CLI — это интерфейс командной строки Azure д
 
 В Azure можно войти разными способами, описанными в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli):
 
-1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-interactive-log-in) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
+1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
 2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-logging-in-with-a-service-principal) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
 
 В рамках этого руководства мы покажем, как войти в Azure в интерактивном режиме. В окне командной строки введите [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login):

@@ -12,16 +12,16 @@ ms.author: ayolubek
 ms.reviewer: sstein
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: acc1b9e9561b9468a4638c7073a066e4cb34d911
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: d430a9f1ddec785d236f2501178bd3c7d493f716
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54264756"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470605"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
 
-В этом руководстве описан полный сценарий аварийного восстановления для мультитенантных приложений SaaS, использующих модель однотенантных баз данных. С помощью [геовосстановления](https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backups) вы восстановите базы данных каталогов и клиентов из автоматически сохраняемых геоизбыточных резервных копий в альтернативный регион восстановления. После устранения сбоя вы вернете измененные базы данных в исходный регион с помощью [георепликации](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview).
+В этом руководстве описан полный сценарий аварийного восстановления для мультитенантных приложений SaaS, использующих модель однотенантных баз данных. С помощью [геовосстановления](sql-database-recovery-using-backups.md) вы восстановите базы данных каталогов и клиентов из автоматически сохраняемых геоизбыточных резервных копий в альтернативный регион восстановления. После устранения сбоя вы вернете измененные базы данных в исходный регион с помощью [георепликации](sql-database-geo-replication-overview.md).
 
 ![Архитектура геовосстановления](media/saas-dbpertenant-dr-geo-restore/geo-restore-architecture.png)
 
@@ -63,12 +63,12 @@ ms.locfileid: "54264756"
 В этом руководстве такие задачи решаются с применением следующих возможностей базы данных SQL Azure и платформы Azure.
 
 * [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-create-first-template) для максимально быстрого резервирования необходимой емкости. Шаблоны Azure Resource Manager используются для подготовки зеркального образа исходных серверов и эластичных пулов в регионе восстановления. Для подготовки новых клиентов также создаются отдельные сервер и пул.
-* [Клиентская библиотека эластичной базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-database-client-library) (EDCL) — создание и обслуживание каталога клиентской базы данных. Расширенный каталог содержит периодически обновляемые сведения о конфигурации пула и базы данных.
-* [Функции восстановления управления сегментами](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-database-recovery-manager) EDCL — для сохранения записей расположения базы данных в каталоге во время восстановления и возвращения в исходное расположение.  
-* [Геовосстановление](https://docs.microsoft.com/azure/sql-database/sql-database-disaster-recovery) — восстановление баз данных каталогов и клиентов из автоматически сохраняемых геоизбыточных резервных копий. 
+* [Клиентская библиотека эластичной базы данных](sql-database-elastic-database-client-library.md) (EDCL) — создание и обслуживание каталога клиентской базы данных. Расширенный каталог содержит периодически обновляемые сведения о конфигурации пула и базы данных.
+* [Функции восстановления управления сегментами](sql-database-elastic-database-recovery-manager.md) EDCL — для сохранения записей расположения базы данных в каталоге во время восстановления и возвращения в исходное расположение.  
+* [Геовосстановление](sql-database-disaster-recovery.md) — восстановление баз данных каталогов и клиентов из автоматически сохраняемых геоизбыточных резервных копий. 
 * [Асинхронные операции восстановления](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations) создаются в порядке приоритета клиентов, упорядочиваются в отдельную очередь для каждого пула и обрабатываются в пакетном режиме, чтобы не перегружать пул. Эти операции при необходимости можно отменить до или во время выполнения.   
-* [Георепликация](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview) — репатриация баз данных в исходную область после сбоя. Георепликация гарантирует отсутствие потерь данных и минимальное влияние на клиента.
-* [DNS-псевдонимы сервера SQL](https://docs.microsoft.com/azure/sql-database/dns-alias-overview) позволяют процессу синхронизации каталога подключаться к активному каталогу независимо от его расположения.  
+* [Георепликация](sql-database-geo-replication-overview.md) — репатриация баз данных в исходную область после сбоя. Георепликация гарантирует отсутствие потерь данных и минимальное влияние на клиента.
+* [DNS-псевдонимы сервера SQL](dns-alias-overview.md) позволяют процессу синхронизации каталога подключаться к активному каталогу независимо от его расположения.  
 
 ## <a name="get-the-disaster-recovery-scripts"></a>Получение скриптов аварийного восстановления
 
@@ -378,4 +378,4 @@ ms.locfileid: "54264756"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-[Дополнительные руководства по работе с приложением SaaS Wingtip](https://docs.microsoft.com/azure/sql-database/sql-database-wtp-overview#sql-database-wingtip-saas-tutorials)
+[Дополнительные руководства по работе с приложением SaaS Wingtip](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)

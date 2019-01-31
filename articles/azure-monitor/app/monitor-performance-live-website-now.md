@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 2c8c8233e8d471b0f1934df9ff7e0f2b4b3e3860
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 3daa1c7b3594de227c43d7e722ee9c6cae0902f8
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54819141"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301617"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -114,9 +114,10 @@ handle.exe /p w3wp.exe
 
 ### <a name="unable-to-login"></a>Не удалось войти в систему
 
-* Если монитор состояний не может войти в систему, установите командную строку. Монитор состояний пытается войти в систему для сбора ключа ikey, однако его можно указать вручную с помощью команды: 
+* Если монитор состояний не может войти в систему, установите командную строку. Монитор состояний пытается войти в систему для сбора ключа ikey, однако его можно указать вручную с помощью команды:
+
 ```powershell
-Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\PowerShell\Microsoft.Diagnostics.Agent.StatusMonitor.PowerShell.dll
+Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\PowerShell\Microsoft.Diagnostics.Agent.StatusMonitor.PowerShell.dll'
 Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-000-000-000-0000000
 ```
 

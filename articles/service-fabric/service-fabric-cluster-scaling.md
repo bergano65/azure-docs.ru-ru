@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/13/2018
 ms.author: ryanwi
-ms.openlocfilehash: 1410d61fed2dc98f5fa657541c3863e09b803166
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: d93ebb01c905be6bf799ed6e4a037e3ddfdc2430
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53321789"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094178"
 ---
 # <a name="scaling-azure-service-fabric-clusters"></a>Масштабирование кластеров Azure Service Fabric
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Кластеры могут содержать тысячи узлов. После создания кластера Service Fabric можно масштабировать кластер горизонтально (изменение количества узлов) и вертикально (изменение ресурсов узлов).  Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки.  Вместе с кластером автоматически масштабируются ваши приложения.
@@ -92,5 +92,5 @@ API-интерфейс, использующийся для взаимодейс
 * Дополнительные сведения об [обновлениях приложений](service-fabric-concepts-scalability.md).
 * [Руководство. Масштабирование кластера Service Fabric](service-fabric-tutorial-scale-cluster.md)
 * [Масштабируйте кластер Azure программно](service-fabric-cluster-programmatic-scaling.md), используя свободный пакет SDK для вычислений Azure.
-* [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md)
+* [Увеличение и уменьшение масштаба автономного кластера](service-fabric-cluster-windows-server-add-remove-nodes.md).
 
