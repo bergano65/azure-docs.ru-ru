@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: overview
 ms.date: 07/19/2018
 ms.author: renash
-ms.component: files
-ms.openlocfilehash: ef2930f30bf700ce81a2763a5a96a5d154bda1b5
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.subservice: files
+ms.openlocfilehash: 647b1723136edd23f3e58f1c225c9226714d4d97
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008493"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466903"
 ---
 # <a name="what-is-azure-files"></a>Общие сведения о службе файлов Azure
 Файлы Azure представляют собой полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью [стандартного отраслевого протокола SMB и протокола CIFS](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Кроме того, общие ресурсы службы "Файлы Azure" можно кэшировать на серверах Windows Server с помощью службы "Синхронизация файлов Azure" для быстрого доступа из расположения, где используются данные.

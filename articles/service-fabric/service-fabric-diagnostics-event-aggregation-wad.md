@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: baa86fe70c394aaea31a6fa775073bb26d062c49
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 89cd8e85c9902bb1caeedd80240811f59ebec409
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002405"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55187442"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure
 > [!div class="op_single_selector"]
@@ -187,7 +187,7 @@ Service Fabric настраивает несколько [стандартных
 
 ### <a name="update-storage-quota"></a>Изменение квоты хранилища
 
-Это расширение постоянно увеличивает размер заполняемых таблиц, пока не будет достигнута квота хранилища. Возможно, вы захотите уменьшить эту квоту. По умолчанию квота имеет значение 50 ГБ, а изменить ее можно в шаблоне, в поле `overallQuotainMB` раздела `DiagnosticMonitorConfiguration`.
+Это расширение постоянно увеличивает размер заполняемых таблиц, пока не будет достигнута квота хранилища. Возможно, вы захотите уменьшить эту квоту. По умолчанию квота имеет значение 50 ГБ, а изменить ее можно в шаблоне, в поле `overallQuotaInMB` раздела `DiagnosticMonitorConfiguration`.
 
 ```json
 "overallQuotaInMB": "50000",

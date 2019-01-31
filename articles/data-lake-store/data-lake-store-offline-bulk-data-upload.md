@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: fc70089517bbc1aa90f95f1e0231f2c67f930090
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 43b482324f0244baf52edbb8989a56dd12833331
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242200"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104486"
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-azure-data-lake-storage-gen1"></a>Автономное копирование данных в Azure Data Lake Storage 1-го поколения с помощью службы импорта и экспорта Azure
 В этой статье описано, как скопировать огромные наборы данных (>200 ГБ) в Azure Data Lake Storage 1-го поколения, используя методы автономного копирования, такие как [служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
@@ -54,9 +54,9 @@ ms.locfileid: "51242200"
 2. Определите учетную запись хранения Azure, в которую будут скопированы данные после доставки диска в центр обработки данных Azure.
 3. Используйте [инструмент импорта и экспорта Azure](https://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) — служебную программу командной строки. Ниже приведен пример фрагмента кода, демонстрирующий использование инструмента.
 
-    ````
+    ```
     WAImportExport PrepImport /sk:<StorageAccountKey> /t: <TargetDriveLetter> /format /encrypt /logdir:e:\myexportimportjob\logdir /j:e:\myexportimportjob\journal1.jrn /id:myexportimportjob /srcdir:F:\demo\ExImContainer /dstdir:importcontainer/vf1/
-    ````
+    ```
     Дополнительные фрагменты кода см. в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).
 4. Приведенная выше команда создает файл журнала в указанном расположении. С его помощью вы создадите задание импорта из [портала Azure](https://portal.azure.com).
 
@@ -72,7 +72,7 @@ ms.locfileid: "51242200"
 В этом разделе указаны определения JSON, с помощью которых можно создать конвейер фабрики данных Azure для копирования данных. Эти определения JSON доступны на [портале Azure](../data-factory/tutorial-copy-data-portal.md), а также в [Visual Studio](../data-factory/tutorial-copy-data-dot-net.md).
 
 ### <a name="source-linked-service-azure-storage-blob"></a>Связанная служба источника (большой двоичный объект службы хранилища Azure)
-````
+```
 {
     "name": "AzureStorageLinkedService",
     "properties": {
@@ -83,10 +83,10 @@ ms.locfileid: "51242200"
         }
     }
 }
-````
+```
 
 ### <a name="target-linked-service-azure-data-lake-storage-gen1"></a>Связанная целевая служба (Azure Data Lake Storage 1-го поколения)
-````
+```
 {
     "name": "AzureDataLakeStorageGen1LinkedService",
     "properties": {
@@ -99,9 +99,9 @@ ms.locfileid: "51242200"
         }
     }
 }
-````
+```
 ### <a name="input-data-set"></a>Входной набор данных
-````
+```
 {
     "name": "InputDataSet",
     "properties": {
@@ -119,9 +119,9 @@ ms.locfileid: "51242200"
         "policy": {}
     }
 }
-````
+```
 ### <a name="output-data-set"></a>Выходной набор данных
-````
+```
 {
 "name": "OutputDataSet",
 "properties": {
@@ -137,9 +137,9 @@ ms.locfileid: "51242200"
     }
   }
 }
-````
+```
 ### <a name="pipeline-copy-activity"></a>Конвейер (действие копирования)
-````
+```
 {
     "name": "CopyImportedData",
     "properties": {
@@ -186,7 +186,7 @@ ms.locfileid: "51242200"
         "pipelineMode": "Scheduled"
     }
 }
-````
+```
 Дополнительные сведения см. в статье [Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью Фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md).
 
 ## <a name="reconstruct-the-data-files-in-azure-data-lake-storage-gen1"></a>Воссоздание файлов данных в Azure Data Lake Storage 1-го поколения
@@ -205,7 +205,7 @@ Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
 
 # Join  the files
 Join-AzureRmDataLakeStoreItem -AccountName "<adlsg1_account_name" -Paths "/importeddatafeb8job/319GB.tsv-part-aa","/importeddatafeb8job/319GB.tsv-part-ab", "/importeddatafeb8job/319GB.tsv-part-ac", "/importeddatafeb8job/319GB.tsv-part-ad" -Destination "/importeddatafeb8job/MergedFile.csv"
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

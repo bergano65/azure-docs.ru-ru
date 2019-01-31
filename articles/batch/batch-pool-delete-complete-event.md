@@ -2,7 +2,7 @@
 title: Событие завершения удаления пула пакетной службы Azure | Документы Майкрософт
 description: Справочник по событию завершения удаления пула пакетной службы.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
-ms.author: danlep
-ms.openlocfilehash: bfcbcf40efc64ab1c79ee1a86e02502c68ad6d47
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.author: lahugh
+ms.openlocfilehash: e715ccd0f5e79f9c640a3c060b0252b798748b4d
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30310320"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55474554"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
 
@@ -33,10 +33,10 @@ ms.locfileid: "30310320"
 }
 ```
 
-|Элемент|Тип|Заметки|
+|Элемент|Тип|Примечания|
 |-------------|----------|-----------|
 |id|Строка|Идентификатор пула.|
-|startTime|Datetime|Время, когда было начато удаление пула.|
+|startTime|DateTime|Время, когда было начато удаление пула.|
 |endTime|DateTime|Время, когда удаление пула было завершено.|
 
 ## <a name="remarks"></a>Примечания

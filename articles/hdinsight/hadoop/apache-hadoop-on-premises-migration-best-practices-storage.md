@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: ec67cb6b4bc1dd29dbbac4056d3365a74b31a24c
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 8f22885d67537194342115f07e4d04bc4b5c66da
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53013714"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54911750"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---storage-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию хранилища
 
@@ -117,6 +117,7 @@ ADLS 2-го поколения создано на основе  [хранил�
 
 - [Общие сведения о хранилище Data Lake Storage 2-го поколения (предварительная версия)](../../storage/data-lake-storage/introduction.md)
 - [Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop](../../storage/data-lake-storage/abfs-driver.md)
+- [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)
 
 ## <a name="secure-azure-storage-keys-within-on-premises-hadoop-cluster-configuration"></a>Обеспечение безопасности ключей хранилища Azure в локальной конфигурации кластера Hadoop
 

@@ -6,16 +6,16 @@ services: cognitive-services
 author: slivkins
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-decision-service
+ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: slivkins
-ms.openlocfilehash: 3d9b87241946a04ae71fabde9958b24ad626c0db
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 3476c353a2b5c5eeaaa7406712bebd178ac5c1e7
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364032"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55227749"
 ---
 # <a name="api"></a>API
 
@@ -144,7 +144,7 @@ $.ajax({
 Только для тестирования API ранжирования можно вызвать через [cURL](https://en.wikipedia.org/wiki/CURL):
 
 ```sh
-curl -v https://ds.microsoft.com/api/v2/<appId>/reward/<eventId> -X POST -d 1 -H "Content-Type: application/json"
+curl -v https://ds.microsoft.com/api/v2/<appId>/reward/<eventId> -X POST -d 1 -H "Content-Type: application/json"
 ```
 
 Ожидаемый результат: ответ HTTP 200 (ОК). Вознаграждение 1 за это событие можно увидеть в журнале (если на портале был добавлен ключ учетной записи Azure).

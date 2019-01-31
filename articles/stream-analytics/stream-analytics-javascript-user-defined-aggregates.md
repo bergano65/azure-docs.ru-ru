@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
-ms.openlocfilehash: bdf5b5188dd584c5eb20f72ff4a98ba6904bc53e
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 6663e3fc48408de83e92f39e8c8070005818852d
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702380"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097985"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates-preview"></a>Пользовательские статистические выражения JavaScript в Azure Stream Analytics (предварительная версия)
  
@@ -28,7 +28,7 @@ Azure Stream Analytics поддерживает пользовательские
 
 Статистические выражения AccumulateOnly могут накапливать только новые события в своем состоянии, их алгоритм не допускает удаления значений. Выберите этот тип статистического выражения, если удаление данных события из значения состояния невозможно реализовать. Ниже приведен шаблон JavaScript для статистических выражений AccumulatOnly.
 
-````JavaScript
+```JavaScript
 // Sample UDA which state can only be accumulated.
 function main() {
     this.init = function () {
@@ -43,13 +43,13 @@ function main() {
         return this.state;
     }
 }
-````
+```
 
 ### <a name="accumulatedeaccumulate-aggregates"></a>Статистические выражения AccumulateDeaccumulate
 
 Статистические выражения AccumulateDeaccumulate допускают удаление накопленного ранее значения из состояния, например удаление пары "ключ-значение" из списка значений события, или вычитание значения из состояния статистического выражения суммирования. Ниже приведен шаблон JavaScript для статистических выражений AccumulateDeaccumulate.
 
-````JavaScript
+```JavaScript
 // Sample UDA which state can be accumulated and deaccumulated.
 function main() {
     this.init = function () {
@@ -72,7 +72,7 @@ function main() {
         return this.state;
     }
 }
-````
+```
 
 ## <a name="uda---javascript-function-declaration"></a>Пользовательское статистическое выражение: объявление функции JavaScript
 
@@ -129,7 +129,7 @@ function main() {
 1. В представлении "Новая функция" выберите тип функции **JavaScript UDA**. В редакторе отобразится шаблон пользовательского статистического выражения по умолчанию.
 1. Введите "TWA" в качестве псевдонима пользовательского статистического выражения и измените реализацию функции, как показано ниже.
 
-    ````JavaScript
+    ```JavaScript
     // Sample UDA which calculate Time-Weighted Average of incoming values.
     function main() {
         this.init = function () {
@@ -167,7 +167,7 @@ function main() {
             return result;
         }
     }
-    ````
+    ```
 
 1. Щелкните "Сохранить", и пользовательское статистическое выражение (UDA) появится в списке функций.
 
@@ -177,7 +177,7 @@ function main() {
 
 На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Например: 
 
-````SQL
+```SQL
 WITH value AS
 (
     SELECT
@@ -191,13 +191,13 @@ SELECT
     uda.TWA(value) as NoseDoseTWA
 FROM value
 GROUP BY TumblingWindow(minute, 5)
-````
+```
 
 ## <a name="testing-query-with-uda"></a>Проверка запроса с пользовательским статистическим выражением
 
 Создайте локальный JSON-файл с приведенным ниже содержимым, передайте его в задание Stream Analytics и проверьте приведенный выше запрос.
 
-````JSON
+```JSON
 [
   {"EntryTime": "2017-06-10T05:01:00-07:00", "NoiseLevelDB": 80, "DurationSecond": 22.0},
   {"EntryTime": "2017-06-10T05:02:00-07:00", "NoiseLevelDB": 81, "DurationSecond": 37.8},
@@ -223,7 +223,7 @@ GROUP BY TumblingWindow(minute, 5)
   {"EntryTime": "2017-06-10T05:20:00-07:00", "NoiseLevelDB": 113, "DurationSecond": 25.1},
   {"EntryTime": "2017-06-10T05:22:00-07:00", "NoiseLevelDB": 110, "DurationSecond": 5.3}
 ]
-````
+```
 
 ## <a name="get-help"></a>Получение справки
 

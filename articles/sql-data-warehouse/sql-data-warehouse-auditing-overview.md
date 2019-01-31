@@ -2,20 +2,20 @@
 title: Аудит в хранилище данных SQL Azure | Документация Майкрософт
 description: Сведения об аудите и настройке аудита в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: manage
+ms.subservice: manage
 ms.date: 04/11/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: d35ac7cac5c14a7bd57913046e8f4c09a22f177a
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: ef791bdfafbbd49cacad1a75c7171b9a030df2a3
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267442"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55456227"
 ---
 # <a name="auditing-in-azure-sql-data-warehouse"></a>Аудит в хранилище данных SQL Azure
 

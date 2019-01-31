@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
-ms.component: tables
-ms.openlocfilehash: 8b4ae066edc1c62c25762b5c6feebce1ecfff5a2
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: tables
+ms.openlocfilehash: 97373f6f0138d3ed8028ed4327b7e6cf90ad76a7
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521546"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470745"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
 в решениях службы таблиц может быть связана с большим количеством операций чтения, записи или сочетания этих двух видов нагрузки. В этой статье рассматриваются вопросы, которые необходимо учесть при разработке службы таблиц для эффективной поддержки операций чтения. Как правило, схема, поддерживающая операции чтения, также эффективна для операций записи. Тем не менее, при реализации поддержки операций записи следует придерживаться дополнительных рекомендаций, которые приводятся в статье [Design for data modification](table-storage-design-for-modification.md) (Проектирование изменения данных).

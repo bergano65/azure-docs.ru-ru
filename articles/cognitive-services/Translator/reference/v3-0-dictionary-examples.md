@@ -6,16 +6,16 @@ services: cognitive-services
 author: Jann-Skotdal
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 4b24ba4b4d83ac3f0c8291308debb6317efa4a55
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b12b9d56f42911da606e3bdcfedbe3f789d2c4e8
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52968003"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466943"
 ---
 # <a name="translator-text-api-30-dictionary-examples"></a>API перевода текстов 3.0: Примеры словарей
 

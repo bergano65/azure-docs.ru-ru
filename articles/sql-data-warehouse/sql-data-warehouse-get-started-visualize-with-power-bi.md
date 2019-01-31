@@ -2,20 +2,20 @@
 title: Визуализация данных хранилища данных SQL с помощью Power BI | Microsoft Azure
 description: Визуализация данных хранилища данных SQL с помощью Power BI
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: consume
+ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 0fbb389120857a167867a5804c670e181f5232b6
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: df1fe833a5b0cb65372f8df73fb17231463d4d64
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54051447"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466274"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
 В этом руководстве показано, как использовать Power BI для подключения к хранилищу данных SQL и создания нескольких базовых визуализаций.

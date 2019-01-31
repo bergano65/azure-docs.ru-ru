@@ -6,16 +6,16 @@ services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: url-preview
+ms.subservice: url-preview
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: f75fc73bc1268db7b6f9f8a1f4fd602ee57281e8
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 985e08a9622e08d2a4b52dae996952cd6a7e7ad4
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49464954"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207461"
 ---
 # <a name="project-url-preview-endpoint"></a>Конечная точка службы предварительного просмотра URL-адресов в проектах
 
@@ -25,10 +25,10 @@ API службы предварительного просмотра URL-адр�
 Чтобы получить службу предварительного просмотра URL-адресов, отправьте запрос к следующей конечной точке. Используйте заголовки и параметры URL-адреса для других спецификаций.
 
 GET:
-````
+```
 https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=https://swiftkey.com
 
-````
+```
 
 ### <a name="query-parameters"></a>Параметры запроса
 |ИМЯ|Значение|type|Обязательно|  
@@ -40,7 +40,7 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=https://swiftk
 
 Ответ включает в себя заголовки HTTP и объект WebPage с атрибутами, как показано в следующем примере: `name`, `url`, `description`, `isFamilyFriendly` и `primaryImageOfPage`.
 
-````
+```
 BingAPIs-TraceId: 15AFE52A97AA422F960433A94803F6CE
 BingAPIs-SessionId: 40587764F42142D3A8BA99F66B2B3BB6
 X-MSEdge-ClientID: 0389E3EDED106B5E1424E82FEC436A56
@@ -57,7 +57,7 @@ X-MSEdge-Ref: Ref A: 15AFE52A97AA422F960433A94803F6CE Ref B: PAOEDGE0418 Ref C: 
   }
 }
 
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство для C#](csharp.md)
