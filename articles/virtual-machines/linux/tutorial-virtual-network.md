@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a0eb3ed26b0e8641cf4e1004c2c162c799dd8999
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 8548fe53288b2f9c486c9ccdc42afa08f40b4ae1
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54463768"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181605"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 
@@ -169,7 +169,7 @@ az vm create \
 
 В некоторых случаях есть смысл заранее создать группу безопасности сети, например, если не нужно создавать правила SSH по умолчанию или если группу безопасности сети нужно присоединить к подсети. 
 
-Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create).
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg).
 
 ```azurecli-interactive 
 az network nsg create --resource-group myRGNetwork --name myBackendNSG

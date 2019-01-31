@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 96daacef134ca60cb497907a770c83a4bba24a5b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 66ba6aa874e84ce86d54d5ea0f827a83dc6564b4
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956030"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208557"
 ---
 # <a name="azure-and-linux"></a>Azure и Linux
 Microsoft Azure — это расширяющийся набор интегрированных общедоступных облачных служб, которые включают в себя возможности анализа, работы с виртуальными машинами и базами данных, мобильные средства, веб-технологии, а также возможности работы в сети и хранения данных, требуемые для размещения ваших решений.  Microsoft Azure предоставляет масштабируемую платформу вычислений, которая позволяет платить только за те ресурсы, которые вы используете по требованию, без дополнительных затрат на локальное оборудование.  Среда Azure готова к использованию, когда вы можете масштабировать свои решения в соответствии с потребностями клиентов.
@@ -72,7 +72,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Корпорация Майкрософт тесно сотрудничает с партнерами, чтобы гарантировать обновление и оптимизацию доступных образов для среды выполнения Azure.  Дополнительные сведения о партнерах Azure см. по следующим ссылкам.
 
 * Linux в Azure — [рекомендованные дистрибутивы](endorsed-distros.md)
-* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=%27SUSE%27)
+* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps/SUSE.SLES?tab=Overview)
 * RedHat: [Azure Marketplace — RedHat Enterprise Linux 7.2](https://azure.microsoft.com/marketplace/partners/redhat/redhatenterpriselinux72/)
 * Canonical — [Azure Marketplace — Ubuntu Server 16.04 LTS](https://azure.microsoft.com/marketplace/partners/canonical/ubuntuserver1604lts/)
 * Debian — [Azure Marketplace — Debian 8 "Jessie"](https://azure.microsoft.com/marketplace/partners/credativ/debian8/)

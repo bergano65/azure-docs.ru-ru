@@ -3,23 +3,23 @@ title: Использование управляемого удостовере�
 description: Из этого руководства вы узнаете, как получить доступ к службе хранилища Azure с помощью управляемого удостоверения, назначаемого системой, на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: daveba
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2017
-ms.author: daveba
-ms.openlocfilehash: 3c253fbebff534b1dcaae8d75322fe524e82a368
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.date: 01/24/2019
+ms.author: priyamo
+ms.openlocfilehash: c19c5031c27ac37aee3707911268965912c20994
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421954"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158202"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к службе хранилища Azure с помощью ключа доступа
 
@@ -36,6 +36,8 @@ ms.locfileid: "54421954"
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
@@ -119,17 +121,17 @@ $keysContent = $keysResponse.Content | ConvertFrom-Json
 $key = $keysContent.keys[0].value
 ```
 
-Затем нужно создать файл с именем "test.txt". Используйте ключ доступа к хранилищу для аутентификации с помощью командлета `New-AzureStorageContent`, отправьте файл в контейнер больших двоичных объектов, а затем скачайте его.
+Затем нужно создать файл с именем "test.txt". Используйте ключ доступа к хранилищу для аутентификации с помощью командлета `New-AzStorageContent`, отправьте файл в контейнер больших двоичных объектов, а затем скачайте его.
 
 ```bash
 echo "This is a test text file." > test.txt
 ```
 
-Не забудьте сначала установить командлеты службы хранилища Azure с помощью `Install-Module Azure.Storage`, а затем отправьте созданный большой двоичный объект с помощью командлета PowerShell `Set-AzureStorageBlobContent`.
+Не забудьте сначала установить командлеты службы хранилища Azure с помощью `Install-Module Az.Storage`, а затем отправьте созданный большой двоичный объект с помощью командлета PowerShell `Set-AzStorageBlobContent`.
 
 ```powershell
-$ctx = New-AzureStorageContext -StorageAccountName <STORAGE-ACCOUNT> -StorageAccountKey $key
-Set-AzureStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
+$ctx = New-AzStorageContext -StorageAccountName <STORAGE-ACCOUNT> -StorageAccountKey $key
+Set-AzStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
 ```
 
 Ответ:
@@ -146,10 +148,10 @@ Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
 Name              : testblob
 ```
 
-Скачать отправленный большой двоичный объект с помощью командлета PowerShell `Get-AzureStorageBlobContent`.
+Скачать отправленный большой двоичный объект с помощью командлета PowerShell `Get-AzStorageBlobContent`.
 
 ```powershell
-Get-AzureStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
+Get-AzStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
 ```
 
 Ответ:

@@ -3,17 +3,17 @@ title: Создание учетной записи хранения Azure Data 
 description: Здесь показано, как быстро создавать учетную запись хранения с доступом к Azure Data Lake Storage 2-го поколения с использованием портала Azure, Azure PowerShell или Azure CLI
 services: storage
 author: jamesbak
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
 ms.date: 12/06/2018
 ms.author: jamesbak
-ms.openlocfilehash: c32e79098cb50600e10d353392e8ceb13d5014b2
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 906f1a85000a2be175a204e9e6e561a75cecfde3
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54475039"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55248441"
 ---
 # <a name="quickstart-create-an-azure-data-lake-storage-gen2-storage-account"></a>Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения
 
@@ -222,7 +222,7 @@ az storage account create `
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы удалить группу ресурсов и связанные с ней ресурсы, включая новую учетную запись хранения, используйте команду [az group delete](/cli/azure/group#az_group_delete).
+Чтобы удалить группу ресурсов и связанные с ней ресурсы, включая новую учетную запись хранения, используйте команду [az group delete](/cli/azure/group).
 
 ```azurecli-interactive
 az group delete --name myResourceGroup

@@ -3,7 +3,7 @@ title: Руководство. Автомасштабирование масшт
 description: Узнайте, как использовать Azure CLI для автомасштабирования масштабируемого набора виртуальных машин по мере увеличения и уменьшения нагрузки на ЦП.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/18/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b30c3a2e9f06cf02f27636592634884a7c3fdfc8
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: fdc1cb7c4b95a72aa55ccce57b2fa331f7c9615d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471311"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55170714"
 ---
-# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Автомасштабирование масштабируемого набора виртуальных машин с помощью Azure CLI
+# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure CLI
 
 При создании масштабируемого набора вы определяете количество экземпляров виртуальных машин для запуска. По мере изменения потребностей приложения можно автоматически увеличивать или уменьшать это количество. Возможность автоматического масштабирования позволяет удовлетворить пользовательский спрос или среагировать на изменения производительности приложения на протяжении его жизненного цикла. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -41,13 +41,13 @@ ms.locfileid: "49471311"
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#create), как показано ниже:
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group), как показано ниже:
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss#create). В следующем примере создается масштабируемый набор с *двумя* экземплярами и ключи SSH, если они еще не созданы.
+Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss). В следующем примере создается масштабируемый набор с *двумя* экземплярами и ключи SSH, если они еще не созданы.
 
 ```azurecli-interactive
 az vmss create \

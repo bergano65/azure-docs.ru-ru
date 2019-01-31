@@ -13,13 +13,14 @@ ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
+ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: f0ffb4a4c4ea12292639b5a94b7f2990db6e45bd
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 23bbcbf6947100db26f31562c44f8073e16e986f
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247815"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239347"
 ---
 # <a name="deploy-the-local-agent"></a>Развертывание локального агента.
 
@@ -114,9 +115,9 @@ Azure Stack является тестируемой системы. Компью
 
 2. Выполните следующую команду:
 
-    ````PowerShell
+    ```PowerShell
     .\Microsoft.VaaSOnPrem.TaskEngineHost.exe -u <VaaSUserId> -t <VaaSTenantId>
-    ````
+    ```
 
       **Параметры**  
     | Параметр | ОПИСАНИЕ |

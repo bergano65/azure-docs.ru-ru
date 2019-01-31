@@ -10,14 +10,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/18/2018
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 149c6436101750811af9ba3051ab715dd9eac021
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 0befcdd1a0708358d2ba034c7ec61a626a543be8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462341"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55183753"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
@@ -158,7 +158,7 @@ Azure AD Connect поставляется с несколькими функци
     
 ![Azure AD Connect Health](./media/whatis-hybrid-identity-health/portalsidebar.png)
 
-* **Быстрый запуск**. При выборе этого элемента откроется колонка **быстрого запуска**. Вы можете скачать агент Azure AD Connect Health, выбрав **Получить средства**. Кроме того, вы также можете получить доступ к документации и оставить отзыв.
+* **Краткое руководство**. При выборе этого элемента откроется колонка **быстрого запуска**. Вы можете скачать агент Azure AD Connect Health, выбрав **Получить средства**. Кроме того, вы также можете получить доступ к документации и оставить отзыв.
 * **Azure Active Directory Connect (Sync)**. В этом разделе отображаются серверы Azure AD Connect, которые отслеживает служба Azure AD Connect Health. В записи **Ошибки синхронизации** отображаются основные ошибки синхронизации в первой подключенной службе синхронизации по категориям. Когда вы выберете запись **Синхронизировать службы**, откроется колонка с информацией о серверах Azure AD Connect. Дополнительные сведения о возможностях см. в статье [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 * **Службы федерации Active Directory**. В этом разделе отображаются серверы Azure AD Connect, которые отслеживает служба Azure AD Connect Health. Если выбрать экземпляр, откроется колонка со сведениями об этом экземпляре службы. Сюда входит обзор, свойства, оповещения, мониторинг и аналитика по использованию. Дополнительные сведения о возможностях см. в статье [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-adfs.md).
 * **Доменные службы Active Directory**. В этом разделе отображаются леса AD DS, которые отслеживает служба Azure AD Connect Health. Если выбрать лес, откроется колонка со сведениями об этом лесе. Эти сведения включают обзор основной информации, панель мониторинга контроллеров домена, панель мониторинга состояния репликации, оповещения и мониторинг. Дополнительные сведения о возможностях см. в статье [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).

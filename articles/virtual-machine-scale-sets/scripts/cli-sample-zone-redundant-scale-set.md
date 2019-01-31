@@ -3,7 +3,7 @@ title: Примеры для Azure CLI. Избыточный между зона
 description: Примеры Azure CLI
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0a54889a93888ff3cbc50453ec6a10ade8304284
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 4e3ea171e34df27ebce63540f5fb21070a0808ec
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411329"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54882367"
 ---
 # <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного между зонами, с помощью PowerShell
 При помощи этого скрипта создается масштабируемый набор виртуальных машин под управлением Ubuntu в нескольких зонах доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.

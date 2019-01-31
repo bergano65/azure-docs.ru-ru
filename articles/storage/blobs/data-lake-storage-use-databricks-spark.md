@@ -3,17 +3,17 @@ title: Руководство. Доступ к данным предварите
 description: В этом руководстве показано, как выполнять запросы Spark на кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 services: storage
 author: dineshmurthy
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: tutorial
 ms.date: 01/14/2019
 ms.author: dineshm
-ms.openlocfilehash: e72a4f71a42a892d14fad076b124426f0c32ac7d
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 31d18d7ea4ee195f7ffcfa04fb247b5dfd525c6a
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321812"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251490"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 

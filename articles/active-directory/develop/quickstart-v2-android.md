@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,14 +16,14 @@ ms.workload: identity
 ms.date: 09/23/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 3e9c46e1315257d619f1624c06441adc08daddb2
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 808ee8bb34aa4bb81ce1bcdd50193efa05f5692d
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427021"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103770"
 ---
-# <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft Graph API из приложения Android
+# <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
 [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
@@ -38,8 +38,8 @@ ms.locfileid: "52427021"
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download"></a>Регистрация и загрузка
-> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка примера приложения и кода
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка приложения и примера кода
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 > 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app) для регистрации приложения.
 > 1. В поле **Имя приложения** введите имя приложения.
@@ -47,7 +47,7 @@ ms.locfileid: "52427021"
 > 1. Выберите **Добавление платформы**, **Собственное приложение**, а затем нажмите кнопку **Сохранить**.
 
 > [!div renderon="portal" class="sxs-lookup"]
-> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
+> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
 > Чтобы образец кода для этого краткого руководства работал, вам нужно добавить следующий URL-адрес ответа: **msal {AppId}://auth** (где {AppId} — это идентификатор вашего приложения).
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
@@ -55,11 +55,11 @@ ms.locfileid: "52427021"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-android/green-check.png). Ваше приложение настроено с помощью этих атрибутов
 
-#### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
+#### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
 
 * [Скачайте проект Android Studio](https://github.com/Azure-Samples/active-directory-android-native-v2/archive/master.zip)
 
-#### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
+#### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
 
 1. Извлеките и откройте проект в Android Studio.
 1. В разделе **Приложение** > **java** > **<i>{узел}.{пространство имен}</i>**, откройте **MainActivity**.

@@ -14,12 +14,13 @@ ms.topic: get-started-article
 ms.date: 1/18/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.openlocfilehash: bac0b2933d4b6d4a88ebbb0402bba0ffd508b395
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.lastreviewed: 06/08/2018
+ms.openlocfilehash: dce158e600d3bf5dbcc552aff82959208d7b47f8
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54474376"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55249067"
 ---
 # <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
 
@@ -82,14 +83,14 @@ ms.locfileid: "54474376"
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-  ````PowerShell  
+  ```PowerShell  
     Add-AzsPlatformimage -publisher "<publisher>" `
       -offer "<offer>" `
       -sku "<sku>" `
       -version "<#.#.#>” `
       -OSType "<ostype>" `
       -OSUri "<osuri>"
-  ````
+  ```
 
   Командлет **Add-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
   - **publisher**  
@@ -157,24 +158,24 @@ ms.locfileid: "54474376"
 
 5. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), отправьте этот образ в учетную запись хранения и запишите URI, по которому можно получить этот образ виртуальной машины из PowerShell.  
 
-  ````PowerShell  
+  ```PowerShell  
     Add-AzureRmAccount `
       -EnvironmentName "AzureStackAdmin" `
       -TenantId $TenantID
-  ````
+  ```
 
 6. (Необязательно.) В образе виртуальной машины можно передать массив дисков с данными. Создайте диски данных с помощью командлета New-DataDiskObject. Откройте PowerShell в командной строке с повышенными привилегиями и выполните следующую команду:
 
-  ````PowerShell  
+  ```PowerShell  
     New-DataDiskObject -Lun 2 `
     -Uri "https://storageaccount.blob.core.windows.net/vhds/Datadisk.vhd"
-  ````
+  ```
 
 7. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-  ````PowerShell  
+  ```PowerShell  
     Add-AzsPlatformimage -publisher "<publisher>" -offer "<offer>" -sku "<sku>" -version "<#.#.#>” -OSType "<ostype>" -OSUri "<osuri>"
-  ````
+  ```
 
     Дополнительные сведения о командлетах Add-AzsPlatformimage и New-DataDiskObject см. в [документации по модулю оператора Azure Stack](https://docs.microsoft.com/powershell/module/) для Microsoft PowerShell.
 
@@ -188,13 +189,13 @@ ms.locfileid: "54474376"
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-  ````PowerShell  
+  ```PowerShell  
   Remove-AzsPlatformImage `
     -publisher "<publisher>" `
     -offer "<offer>" `
     -sku "<sku>" `
     -version "<version>" `
-  ````
+  ```
   Командлет **Remove-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
   - **publisher**  
     Например: `Canonical`  

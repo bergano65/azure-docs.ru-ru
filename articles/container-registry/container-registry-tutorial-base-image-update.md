@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: b3d8c3aea4955d6f95ead69d5bed147cc486e7c8
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 781e64c57c53412e999de98b937d568097b2825e
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53254043"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204122"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
 
@@ -128,7 +128,7 @@ az acr task run --registry $ACR_NAME --name taskhelloworld
 
 По завершении сборки запишите **ИД запуска** (например, "da6"), если нужно выполнить следующий необязательный шаг.
 
-### <a name="optional-run-application-container-locally"></a>Необязательно. Локальный запуск контейнера приложения
+### <a name="optional-run-application-container-locally"></a>Необязательно: Локальный запуск контейнера приложения
 
 Если вы работаете локально (а не в облачной среде Cloud Shell) и у вас установлен Docker, запустите контейнер, чтобы увидеть приложение, отображаемое в веб-браузере, а затем восстановите его базовый образ. Если вы используете Cloud Shell, пропустите этот раздел (Cloud Shell не поддерживает `az acr login` или `docker run`).
 
@@ -214,7 +214,7 @@ da1                       Linux       Succeeded  Manual        2018-09-17T22:29:
 
 Если вы хотите выполнить следующий необязательный шаг (запуск только что созданного контейнера), чтобы отобразился обновленный номер версии, обратите внимание на значение **ИД запуска** для сборки образа, активируемой при обновлении (в предыдущих выходных данных — "da8").
 
-### <a name="optional-run-newly-built-image"></a>Необязательно. Запуск только что созданного образа
+### <a name="optional-run-newly-built-image"></a>Необязательно: Запуск только что созданного образа
 
 Если вы работаете локально (не в облачной среде Cloud Shell) и у вас установлен Docker, запустите новый образ приложения после завершения его сборки. Замените код `<run-id>` идентификатором запуска, полученным на предыдущем шаге. Если вы используете Cloud Shell, пропустите этот раздел (Cloud Shell не поддерживает `docker run`).
 
@@ -256,10 +256,10 @@ az ad sp delete --id http://$ACR_NAME-pull
 <!-- LINKS - Internal -->
 [azure-cli]: /cli/azure/install-azure-cli
 [az-acr-build]: /cli/azure/acr#az-acr-build-run
-[az-acr-task-create]: /cli/azure/acr#az-acr-task-create
+[az-acr-task-create]: /cli/azure/acr
 [az-acr-task-run]: /cli/azure/acr#az-acr-task-run
 [az-acr-login]: /cli/azure/acr#az-acr-login
-[az-acr-task-list-runs]: /cli/azure/acr#az-acr-task-list-runs
+[az-acr-task-list-runs]: /cli/azure/acr
 [az-acr-task]: /cli/azure/acr#az-acr-task
 
 <!-- IMAGES -->

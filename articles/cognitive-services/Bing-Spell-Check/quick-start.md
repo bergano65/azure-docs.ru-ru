@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. API Bing для проверки орфографии
+title: Краткое руководство. API проверки орфографии Bing
 titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как начать работу с API Bing для проверки орфографии.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-spell-check
+ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 06/21/2016
 ms.author: scottwhi
-ms.openlocfilehash: 4af90c0e1ffd6dbadcb31eb6141bc24f746d01f9
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: e5fa4db8754924b8c2bacfc8bf624380aae063c2
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316418"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55148954"
 ---
-# <a name="quickstart-your-first-spell-check-request"></a>Краткое руководство. Создание первого запроса на проверку орфографии
+# <a name="quickstart-your-first-spell-check-request"></a>Краткое руководство. Ваш первый запрос на проверку орфографии
 
 Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью **поиска**.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 

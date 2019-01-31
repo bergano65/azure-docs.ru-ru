@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 4674428cf96562670b0e24e5ac93a2f2979128da
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: ce48e9a17ab6b63c7fb8caa752258e218ca51ba3
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54042059"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55226389"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Перенос виртуальных машин Amazon Web Services (AWS) в Azure
 
@@ -169,7 +169,7 @@ ms.locfileid: "54042059"
 
 Включите репликацию для всех виртуальных машин, которые вы хотите перенести. Когда вы включите репликацию, Site Recovery автоматически установит службу Mobility Service.
 
-1. Перейдите на [портал Azure](htts://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 1. На странице хранилища в разделе **Начало работы** выберите **Site Recovery**.
 2. В разделе **Для локальных компьютеров и виртуальных машин Azure** выберите **Шаг 1. Репликация приложения**. Заполните страницы мастера следующими данными: Когда вы введете все данные, нажмите кнопку **ОК** на каждой странице:
     - 1: Настройка источника

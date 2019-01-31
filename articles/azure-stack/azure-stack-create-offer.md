@@ -14,12 +14,13 @@ ms.topic: get-started-article
 ms.date: 01/09/2019
 ms.author: sethm
 ms.reviewer: efemmano
-ms.openlocfilehash: 079f45e37bef24ac974a0e2df7b1e81f1002cac0
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.lastreviewed: 01/09/2019
+ms.openlocfilehash: 230415b84f06beac549693d49055d7cb998163d8
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159083"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251458"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Создание предложения в Azure Stack
 
@@ -40,7 +41,7 @@ ms.locfileid: "54159083"
 4. После создания предложения можно изменить его состояние. Предложения должны быть **общедоступными**, чтобы подписавшиеся пользователи могли получить о них полное представление. Предложения могут быть:
 
    - **Общедоступными** — видимые для пользователей.
-   - **Частными** — видимые только администраторам облака. Этот параметр полезен при разработке плана или предложения, или если администратору облака нужно [создать каждую подписку для пользователей](azure-stack-subscribe-plan-provision-vm.md#create-a-subscription-as-a-cloud-operator).
+   - **Частный доступ.** видимые только администраторам облака. Этот параметр полезен при разработке плана или предложения, или если администратору облака нужно [создать каждую подписку для пользователей](azure-stack-subscribe-plan-provision-vm.md#create-a-subscription-as-a-cloud-operator).
    - **Списанными** — закрытые для новых подписчиков. Администратор облака может списать предложение, чтобы новые пользователи не могли подписываться на него. Это не повлияет на текущих подписчиков предложения.
 
    > [!TIP]  

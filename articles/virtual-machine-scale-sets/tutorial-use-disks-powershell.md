@@ -3,7 +3,7 @@ title: Руководство. Создание и использование д
 description: Узнайте, как с помощью Azure PowerShell создавать и использовать Управляемые диски с масштабируемыми наборами виртуальных машин, в том числе добавлять, подготавливать, перечислять и отсоединять диски.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ebe4d877063f47cefcc5fd842fe2a096256a1702
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 9abfd410e9137a897753fcf04ee113bd04749a7a
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429469"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54881687"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
 В масштабируемых наборах виртуальных машин на дисках хранится операционная система, приложения и данные. Для создания масштабируемого набора и управления им важно выбрать размер диска и конфигурацию в соответствии с ожидаемой рабочей нагрузкой. В этом руководстве объясняется, как создать диски виртуальной машины и управлять ими. Из этого руководства вы узнаете, как выполнить следующие задачи:

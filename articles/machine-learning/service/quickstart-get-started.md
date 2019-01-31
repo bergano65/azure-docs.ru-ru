@@ -4,19 +4,19 @@ titleSuffix: Azure Machine Learning service
 description: Начало работы со Службой машинного обучения Azure. На портале Azure создайте рабочую область, которая является основным блоком в облаке для экспериментов, обучения и развертывания моделей машинного обучения.
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: quickstart
 ms.reviewer: sgilley
 author: hning86
 ms.author: haining
 ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: e3569f560224ab8c9a64ababb2fcea7e96e87367
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: f04cd2c6d3d4eff0cbc03ee57b9a57c6883db1d6
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812460"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239015"
 ---
 # <a name="quickstart-use-the-azure-portal-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure
 

@@ -15,12 +15,13 @@ ms.topic: get-started-article
 ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: unknown
-ms.openlocfilehash: 9ca777275aa4aa09a16c0248f6e3b1ecc76ac5b2
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.lastreviewed: 12/04/2018
+ms.openlocfilehash: 4fb636a91389309b44f2308efec1a6c257c41078
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267340"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55242592"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack. Прежде чем развертывать Azure Stack, проверьте решение для работы с удостоверениями Azure.  
@@ -65,7 +66,7 @@ ms.locfileid: "54267340"
    > `Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com`
 4. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что система соответствует требованиям для установки (**OK**). При успешном завершении проверки отобразится следующий результат: 
  
-````PowerShell
+```PowerShell
 Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
 Starting Azure Identity Validation
 
@@ -76,7 +77,7 @@ Finished Azure Identity Validation
 Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
 Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
 Invoke-AzsAzureIdentityValidation Completed
-````
+```
 
 
 ## <a name="report-and-log-file"></a>Файлы отчета и журнала
@@ -97,7 +98,7 @@ Invoke-AzsAzureIdentityValidation Completed
 
 ### <a name="expired-or-temporary-password"></a>Пароль с истекшим сроком действия или временный пароль 
  
-````PowerShell
+```PowerShell
 Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
 Starting Azure Identity Validation
 
@@ -111,7 +112,7 @@ Finished Azure Identity Validation
 Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
 Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
 Invoke-AzsAzureIdentityValidation Completed
-````
+```
 **Причина** — вход с помощью данной учетной записи невозможен, так как истек срок действия пароля или используется временный пароль.     
 
 **Решение** — выполните в PowerShell приведенную ниже команду и следуйте инструкциям на экране, чтобы сбросить пароль.  
@@ -120,7 +121,7 @@ Invoke-AzsAzureIdentityValidation Completed
 Также вы можете войти с этой учетной записью в https://portal.azure.com. В таком случае пользователь должен будет сменить пароль.
 ### <a name="unknown-user-type"></a>Неизвестный тип пользователя 
  
-````PowerShell
+```PowerShell
 Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
 Starting Azure Identity Validation
 
@@ -134,13 +135,13 @@ Finished Azure Identity Validation
 Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
 Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
 Invoke-AzsAzureIdentityValidation Completed
-````
+```
 **Причина** — вход в указанный каталог Azure Active Directory (AADDirectoryTenantName) с помощью данной учетной записи невозможен. В нашем примере параметр *AzureChinaCloud* имеет значение *AzureEnvironment*.
 
 **Решение** — убедитесь, что учетная запись существует в указанном окружении Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для конкретной среды:   Login-AzureRmAccount — EnvironmentName AzureChinaCloud 
 ### <a name="account-is-not-an-administrator"></a>Учетная запись не предоставляет права администратора 
  
-````PowerShell
+```PowerShell
 Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
 Starting Azure Identity Validation
 
@@ -154,7 +155,7 @@ Finished Azure Identity Validation
 Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
 Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
 Invoke-AzsAzureIdentityValidation Completed
-````
+```
 
 **Причина** — учетная запись позволяет успешно войти в систему, но не предоставляет права администратора в Azure Active Directory (AADDirectoryTenantName).  
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/15/2019
 ms.author: rezas
-ms.openlocfilehash: a90357e0075856049616a026fee7a49606ea4d90
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 590faaf727345dcfe8ab61a1860ca46d78256b22
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54830517"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219011"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -40,7 +40,7 @@ ms.locfileid: "54830517"
 
 Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x или более поздней версии на компьютере разработчика.
 
-Node.js, предназначенный для нескольких платформ, можно скачать здесь: [Node.js.org](https://Node.js.org).
+Node.js, предназначенный для нескольких платформ, можно скачать здесь: [Node.js.org](https://nodejs.org).
 
 Текущую версию Node.js на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -48,7 +48,7 @@ Node.js, предназначенный для нескольких платфо
 node --version
 ```
 
-Если вы еще не сделали это, скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip и извлеките ZIP-архив.
+Если вы еще не сделали это, скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip и извлеките ZIP-архив.
 
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей

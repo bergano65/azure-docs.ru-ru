@@ -3,7 +3,7 @@ title: Примеры Azure PowerShell. Установка приложений 
 description: Примеры сценариев Azure PowerShell.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 46d4b4c24de53de59645eeb18ce2c60c1eb6d517
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 5333c761c549bb0f86eeec9c72d58317b0efa7fa
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49468200"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54882317"
 ---
 # <a name="install-applications-into-a-virtual-machine-scale-set-with-powershell"></a>Установка приложений в масштабируемый набор виртуальных машин с помощью PowerShell
 Этот скрипт создает виртуальную машину Azure под управлением Windows Server 2016 и использует расширение пользовательских скриптов для установки базовых веб-приложений. После выполнения скрипта можно получить доступ к веб-приложению с помощью веб-браузера.
@@ -43,7 +43,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 ## <a name="script-explanation"></a>Описание скрипта
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss) | Создание масштабируемого набора виртуальных машин и всех вспомогательных ресурсов, включая виртуальную сеть, подсистему балансировки нагрузки и правила NAT. |
 | [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss) | Получение информации о масштабируемом наборе виртуальных машин. |
