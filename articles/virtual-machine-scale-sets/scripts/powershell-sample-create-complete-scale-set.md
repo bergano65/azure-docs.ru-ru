@@ -3,7 +3,7 @@ title: Примеры Azure PowerShell. Создание полного масш
 description: Примеры сценариев Azure PowerShell.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/29/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7466bebddd186bfe4e78d25cd8c4ccba84a1c390
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: a0800a434fdfef0002993fdae797af982391321f
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465310"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54883285"
 ---
 # <a name="create-a-complete-virtual-machine-scale-set-with-powershell"></a>Создание полного масштабируемого набора виртуальных машин с помощью PowerShell
 Этот скрипт позволяет создать масштабируемый набор виртуальных машин под управлением Windows Server 2016. Индивидуальные ресурсы настраиваются и создаются чаще, чем используются[ встроенные возможности создания ресурсов, доступные в New-AzureRmVmss](powershell-sample-create-simple-scale-set.md). После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу RDP.
@@ -43,7 +43,7 @@ Remove-AzureRmResourceGroup -Name $resourceGroupName
 ## <a name="script-explanation"></a>Описание скрипта
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети. |

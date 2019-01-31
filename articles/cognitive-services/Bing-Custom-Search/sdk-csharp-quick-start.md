@@ -6,16 +6,16 @@ services: cognitive-services
 author: swhite-msft
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-custom-search
+ms.subservice: bing-custom-search
 ms.topic: quickstart
 ms.date: 09/06/2018
 ms.author: scottwhi
-ms.openlocfilehash: f5ede8d8dc2950551655e7e0331a68b15ba13cf8
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 55a9982026e118e3c375908879967831a8121ede
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53555784"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55178245"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-the-c-sdk"></a>Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C# 
 
@@ -23,7 +23,7 @@ ms.locfileid: "53555784"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Экземпляр службы "Пользовательский поиск Bing". См. [Quickstart: Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
+- Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
 - Microsoft [.Net Core](https://www.microsoft.com/net/download/core)
 - Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/)
 - Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](http://www.mono-project.com/).

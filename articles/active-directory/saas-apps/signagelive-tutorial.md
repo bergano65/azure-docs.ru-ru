@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 1/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 4a8b45850ef609f908450fbcf35aad6b5c87540b
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: c2e67adb93c34cc4421145964ee809e4423b4843
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54818512"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101734"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-signagelive"></a>Руководство. Интеграция Azure Active Directory с Signagelive
 
@@ -104,7 +104,7 @@ ms.locfileid: "54818512"
 
     ![Сведения о домене и URL-адресах единого входа приложения Signagelive](common/sp-signonurl.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://login.signagelive.com/sso/<ORGANISATIONALUNITNAME>`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://login.signagelive.com/sso/<ORGANIZATIONALUNITNAME>`.
 
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов Signagelive](mailto:support@signagelive.com). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.

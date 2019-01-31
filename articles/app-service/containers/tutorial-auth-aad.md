@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 04/26/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 8ebaab260d38a3fe4f492f2545c5ec8b07990235
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: ed056bf28881f391ed1ba16a875259e8e420b39d
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53715245"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55296089"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
@@ -317,7 +317,7 @@ Azure Active Directory используется в качестве постав
 
 Теперь приложение настроено. Теперь интерфейсная часть готова к доступу к серверной части с помощью соответствующего маркера доступа.
 
-Сведения о том, как настроить это в других поставщиках, см. в разделе об [обновлении маркеров доступа](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#refresh-access-tokens).
+Сведения о том, как настроить это в других поставщиках, см. в разделе об [обновлении маркеров доступа](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#refresh-identity-provider-tokens).
 
 ## <a name="call-api-securely-from-server-code"></a>Безопасный вызов API из кода сервера
 

@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 11/01/2018
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: d61d0220a87f81ca68255d40c00a6b7783943231
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 64faed888352e641cb51200d81c038fe5caf7ef4
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50960210"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098550"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -35,8 +35,8 @@ ms.locfileid: "50960210"
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
 > [!div renderon="docs" class="sxs-lookup"]
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
-> * [Экспресс.] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample).
-> * [Вручную.] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample).
+> * [Экспресс-способ] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
+> * [Вручную] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample)
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
@@ -60,7 +60,7 @@ ms.locfileid: "50960210"
 > 1. Щелкните **Сохранить**.
 
 > [!div renderon="portal" class="sxs-lookup alert alert-info"]
-> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
+> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
 > Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления в виде **urn:ietf:wg:oauth:2.0:oob**.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
@@ -68,11 +68,11 @@ ms.locfileid: "50960210"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-uwp/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
-#### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Загрузка проекта Visual Studio
+#### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Скачивание проекта Visual Studio
 
  - [Загрузить проект Visual Studio 2017](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/master.zip)
 
-#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
+#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
 1. Откройте проект в Visual Studio.

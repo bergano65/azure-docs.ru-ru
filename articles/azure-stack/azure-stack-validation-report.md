@@ -15,12 +15,13 @@ ms.topic: get-started-article
 ms.date: 10/23/2018
 ms.author: sethm
 ms.reviewer: unknown
-ms.openlocfilehash: 0eed7943d782bda134c2df2de6cf9eeeb58bfa3b
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.lastreviewed: 10/23/2018
+ms.openlocfilehash: 1545fa3c1c94edc98e53b3579e5617a6bf16461c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54243871"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55238863"
 ---
 # <a name="azure-stack-validation-report"></a>Отчет о проверке Azure Stack
 Используйте средство проверки готовности Azure Stack, чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack.  
@@ -44,7 +45,7 @@ ms.locfileid: "54243871"
 
 Результат выглядит следующим образом:
 
-````PowerShell
+```PowerShell
 Reading All Validation(s) from Report C:\Contoso-AzsReadinessCheckerReport.json
 
 ############### Certificate Validation Summary ###############
@@ -84,7 +85,7 @@ StartTime         : 2018/10/22 14:24:16
 EndTime           : 2018/10/22 14:24:19
 Duration          : 3
 PSBoundParameters : 
-````
+```
 
 ## <a name="view-the-report-summary"></a>Просмотр сводного отчета
 Чтобы просмотреть сводную информацию из отчета, добавьте параметр **-Summary** в конец командной строки PowerShell. Например:  
@@ -92,7 +93,7 @@ PSBoundParameters :
 
 Сводные данные содержат список проверок, по которым пока нет данных, а также сведения об успешных или неудачных результатах проверок. Результат выглядит следующим образом:
 
-````PowerShell
+```PowerShell
 Reading All Validation(s) from Report C:\Contoso-AzsReadinessCheckerReport.json
 
 ############### Certificate Validation Summary ###############
@@ -114,7 +115,7 @@ Azure Stack Graph Validation results not available.
 ############### Azure Stack ADFS Validation Summary ###############
 
 Azure Stack ADFS Validation results not available.
-````
+```
 
 
 ## <a name="view-a-filtered-report"></a>Просмотр отчета с фильтром

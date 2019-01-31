@@ -3,7 +3,7 @@ title: Пример сценария Azure PowerShell для WordPress | Док�
 description: Пример сценария Azure PowerShell для WordPress.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: tysonn
 tags: azure-service-management
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/01/2017
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f338bb4c846ba6cdbf8aaecfe126cf512fc89109
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 7fab13e5b668725563510935c572a08f3329552c
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469526"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54887331"
 ---
 # <a name="create-a-wordpress-vm-with-powershell"></a>Создание виртуальной машины WordPress с помощью PowerShell
 
@@ -47,7 +47,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети. |

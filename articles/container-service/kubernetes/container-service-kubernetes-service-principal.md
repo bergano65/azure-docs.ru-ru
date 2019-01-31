@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: da4fda3d0cfa6cb33d2dd8bb3bb844f18654c30a
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: b2a9c6c31771be1316038d794d1c15ff9fa45916
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54851901"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55166736"
 ---
 # <a name="deprecated-set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров (НЕ РЕКОМЕНДУЕТСЯ)
 
@@ -26,7 +26,7 @@ ms.locfileid: "54851901"
 [Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
 
 
-В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs#az_acs_create), чтобы одновременно создать кластер Kubernetes и субъект-службу.
+В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs), чтобы одновременно создать кластер Kubernetes и субъект-службу.
 
 
 ## <a name="requirements-for-the-service-principal"></a>Требования для субъекта-службы

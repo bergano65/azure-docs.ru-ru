@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: e1f2991b2e006c97087c6288d3ed3c20d2927e8c
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: c08e5dc196c377b006be70339f402b2c023a3826
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413487"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299815"
 ---
 # <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric.
 
@@ -95,11 +95,11 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.ContainerRegistry
 
 При первой публикации в Azure образ docker помещается в Реестр контейнеров Azure (ACR), на что требуется определенное время в зависимости от размера образа. Следующие публикации того же проекта будут проходить быстрее. Ход выполнения процесса развертывания можно отследить, выбрав панель **Средства Service Fabric** в окне **Вывод** в Visual Studio. После завершения развертывания выходные данные **Средства Service Fabric** будут отображать IP-адрес и порт приложения в виде URL-адреса.
 
-```json
+```
 Packaging Application...
 Building Images...
 Web1 -> C:\Code\ServiceFabricMeshApp\ToDoService\bin\Any CPU\Release\netcoreapp2.0\ToDoService.dll
-Uploading the images to Azure Container Registy...
+Uploading the images to Azure Container Registry...
 Deploying application to remote endpoint...
 The application was deployed successfully and it can be accessed at http://10.000.38.000:20000.
 ```

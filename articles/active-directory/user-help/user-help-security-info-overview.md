@@ -7,25 +7,25 @@ manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
 ms.workload: identity
-ms.component: user-help
+ms.subservice: user-help
 ms.topic: overview
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 1e55ad5c056bf76f8332ea84fa960b4482825bfe
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 918f711002530735b9b4e09273fac3021a97a091
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54826162"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55189142"
 ---
 # <a name="security-info-preview-overview"></a>Обзор сведений для защиты (предварительная версия)
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
 
+Настройте сведения о двухфакторной проверке подлинности и сбросе пароля в **сведениях для защиты**. После первоначальной настройки сведений для защиты вам не придется выполнять ее повторно. Однако вы можете редактировать сведения и изменить метод по умолчанию в любое время.
+
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
-
-Настройте сведения о двухфакторной проверке подлинности и сбросе пароля в **сведениях для защиты**. После первоначальной настройки сведений для защиты вам не придется выполнять ее повторно. Однако вы можете редактировать сведения и изменить метод по умолчанию в любое время.
 
 Вы можете добавить любой из следующих методов, включая:
 

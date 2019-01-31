@@ -11,14 +11,14 @@ ms.author: andrela
 ms.reviewer: v-masebo
 manager: craigg
 ms.date: 11/20/2018
-ms.openlocfilehash: 5c12bd54c0ea96ac915fedab94f03cf044330dcf
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 6b748ebdbdc443c5fa44c82323774cd12c82ba38
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52723301"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197506"
 ---
-# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием Java
+# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для создания запросов к базе данных SQL Azure
 
 В этой статье показано, как подключаться к базе данных SQL Azure с помощью [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server). Затем можно запросить данные с использованием инструкций T-SQL.
 
@@ -27,8 +27,6 @@ ms.locfileid: "52723301"
 Для выполнения этого примера понадобится следующее:
 
 [!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
-
-- [Правило брандмауэра на уровне сервера](sql-database-get-started-portal-firewall.md) для общедоступного IP-адреса используемого компьютера.
 
 - Установленное связанное с Java программное обеспечение для используемой операционной системы:
 

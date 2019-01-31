@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 04/01/2018
-ms.openlocfilehash: 1782aa2a29bc2cf2593aa5bb1c356d4176196055
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 795fe2b54c806947df2f4c078722e9acae3df96f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54854417"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55148589"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для PostgreSQL в интерфейсе командной строки Azure 
 Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
@@ -44,7 +44,7 @@ az group create --name myresourcegroup --location westus
 ```
 
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера базы данных Azure для PostgreSQL
-Создайте [сервер базы данных Azure для PostgreSQL](overview.md), выполнив команду [az postgres server create](/cli/azure/postgres/server#az_postgres_server_create). Сервер содержит группу баз данных, которыми можно управлять как группой. 
+Создайте [сервер базы данных Azure для PostgreSQL](overview.md), выполнив команду [az postgres server create](/cli/azure/postgres/server). Сервер содержит группу баз данных, которыми можно управлять как группой. 
 
 В указанном ниже примере в группе ресурсов `myresourcegroup` создается сервер `mydemoserver` с именем для входа администратора сервера `myadmin`. Имя сервера сопоставляется с DNS-именем, и поэтому оно должно быть глобально уникальным в рамках Azure. Замените `<server_admin_password>` собственным значением. Это сервер общего назначения четвертого поколения с 2 виртуальными ядрами.
 ```azurecli-interactive

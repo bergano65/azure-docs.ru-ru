@@ -10,12 +10,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: quickstart
 ms.date: 12/27/2018
-ms.openlocfilehash: bec4e4271fa9f1e2333e9414268832fe77b722cb
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: a445f41732973dcd0053ada4aaef2458ec474830
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53811228"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54913518"
 ---
 # <a name="quickstart-get-started-with-apache-hadoop-and-apache-hive-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager
 
@@ -240,6 +240,7 @@ ms.locfileid: "53811228"
 * Сведения о том, как HDInsight использует службу хранилища Azure, см. в статье [Использование службы хранилища Azure в HDInsight](../hdinsight-hadoop-use-blob-storage.md).
 * Сведения о том, как создать кластер HDInsight с Data Lake Storage, см. в руководстве по [ настройке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 * Сведения об отправке данных в HDInsight см. в статье [Отправка данных в HDInsight](../hdinsight-upload-data.md).
+* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)
 
 Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:
 

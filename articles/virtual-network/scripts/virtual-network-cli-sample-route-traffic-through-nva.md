@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: jdial
-ms.openlocfilehash: 0f4b5e5605ed88aac2ffb979e2c009e0f0b99a98
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 667d32c825f61751970bbcaa47045929ad708490
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411430"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55160276"
 ---
 # <a name="route-traffic-through-a-network-virtual-appliance-script-sample"></a>Пример скрипта для маршрутизации трафика через виртуальный сетевой модуль
 
@@ -56,7 +56,7 @@ az group delete --name MyResourceGroup --yes
 | [az network nic create](/cli/azure/network/nic#az_network_nic_create) | Создает виртуальный сетевой интерфейс и включает IP-пересылку для него. |
 | [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create) | Создает группу безопасности сети (NSG). |
 | [az network nsg rule create](/cli/azure/network/nsg/rule) | Создает правила группы безопасности сети, которые разрешают входящий трафик по портам HTTP и HTTPS к виртуальной машине. |
-| [az network vnet subnet update](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update)| Связывает группы безопасности сети и таблицы маршрутов с подсетями. |
+| [az network vnet subnet update](/cli/azure/network/vnet/subnet)| Связывает группы безопасности сети и таблицы маршрутов с подсетями. |
 | [az network route-table create](/cli/azure/network/route-table#az-network-route-table-create)| Создает таблицу маршрутов для всех маршрутов. |
 | [az network route-table route create](/cli/azure/network/route-table/route#az-network-route-table-route-create)| Создает маршруты для маршрутизации трафика между подсетями и Интернетом через виртуальную машину. |
 | [az vm create](/cli/azure/vm#az_vm_create) | Создает виртуальную машину и присоединяет к ней сетевой адаптер. Эта команда также указывает образ виртуальной машины и учетные данные администратора. |

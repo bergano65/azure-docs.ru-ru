@@ -14,12 +14,12 @@ ms.date: 08/08/2018
 ms.author: curtand
 ms.reviewer: kairaz.contractor
 ms.custom: it-pro
-ms.openlocfilehash: 8c5d980f25e196add6885d250665eae7127456f1
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 4c607558c721b38bd63a8094f433bfe9499013af
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273125"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102215"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -38,14 +38,14 @@ ms.locfileid: "53273125"
 1. Запустите приложение Windows PowerShell от имени администратора.
 2. Удалите все предыдущие версии AzureADPreview.
   
-  ````
+  ```
   Uninstall-Module AzureADPreview
-  ````
+  ```
 3. Установите последнюю версию AzureADPreview.
   
-  ````
+  ```
   Install-Module AzureADPreview
-  ````
+  ```
 При появлении запроса на доступ к ненадежному репозиторию введите **Y** (Да). Установка нового модуля может занять несколько минут.
 
 ## <a name="set-up-naming-policy"></a>Настройка политики именования
@@ -56,10 +56,10 @@ ms.locfileid: "53273125"
 
 2. Выполните следующие команды, чтобы подготовить среду к выполнению командлетов.
   
-  ````
+  ```
   Import-Module AzureADPreview
   Connect-AzureAD
-  ````
+  ```
   На открывшемся экране **Вход в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, затем выберите **Войти**.
 
 3. Чтобы создать параметры группы для этого клиента, выполните инструкции в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md).
@@ -68,35 +68,35 @@ ms.locfileid: "53273125"
 
 1. Просмотрите текущие параметры политики именования.
   
-  ````
+  ```
   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-  ````
+  ```
   
 2. Отобразите на экране текущие параметры групп.
   
-  ````
+  ```
   $Setting.Values
-  ````
+  ```
   
 ### <a name="step-3-set-the-naming-policy-and-any-custom-blocked-words"></a>Шаг 3. Установка политики именований и любых настраиваемых запрещенных слов
 
 1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
   
-  ````
+  ```
   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
-  ````
+  ```
   
 2. Задайте настраиваемые запрещенные слова. В следующем примере показано, как можно добавить собственные настраиваемые слова.
   
-  ````
+  ```
   $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
-  ````
+  ```
   
 3. Сохраните параметры новой политики, чтобы она вступила в действие, как показано в следующем примере.
   
-  ````
+  ```
   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-  ````
+  ```
   
 Вот и все. Вы настроили политику именования и добавили настраиваемые запрещенные слова.
 
@@ -104,21 +104,21 @@ ms.locfileid: "53273125"
 
 1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
   
-  ````
+  ```
   $Setting["PrefixSuffixNamingRequirement"] =""
-  ````
+  ```
   
 2. Удалите настраиваемые запрещенные слова
   
-  ````
+  ```
   $Setting["CustomBlockedWordsList"]=""
-  ````
+  ```
   
 3. Сохраните параметры.
   
-  ````
+  ```
   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-  ````
+  ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

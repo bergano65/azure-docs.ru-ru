@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 11/20/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 2a6378406272f502af107a151e69fe33954f7780
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 064466b73e03e9648b78c32b7e6ffcd83defd607
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54187865"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55079364"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "54187865"
 ```bash
 mkdir quickstart
 
-cd quickstart
+cd $HOME/quickstart
 ```
 
 Затем выполните следующую команду, чтобы клонировать репозиторий с примером приложения в локальный каталог quickstart.

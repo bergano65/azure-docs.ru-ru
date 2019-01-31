@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/08/2019
 ms.author: barclayn
-ms.openlocfilehash: 9b57dfcd6ecd00f9f1bb8ec752e0996ee52305db
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: a78cc79031a8dc9b0c98beddf759fbc8674c6dd1
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159049"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168266"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
@@ -61,7 +61,7 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
 
 - **Имя хранилища.** В этом примере используется имя **Contoso-Vault2**. Вы будете использовать это имя для выполнения других команд Key Vault.
-- **URI хранилища**. В этом примере используется https://contoso-vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
+- **URI хранилища**. В нашем примере это https://contoso-vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
 
 На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
 
@@ -88,7 +88,7 @@ az keyvault secret show --name "ExamplePassword" --vault-name "Contoso-Vault2"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Другие руководства в этой серии созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
-Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group#delete). Удалите ресурсы следующим образом:
+Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group). Удалите ресурсы следующим образом:
 
 ```azurecli
 az group delete --name ContosoResourceGroup

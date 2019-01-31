@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: b396c0e485d4eb6c4ee541074f86357634c264c1
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 202b308c3add7facdbb28dc634f70e5090dd2a9c
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184446"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55092093"
 ---
 # <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-nodejs-service-sdk"></a>Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Node.js
 
@@ -66,7 +66,7 @@ ms.locfileid: "53184446"
         console.log("enrollment record returned: " + JSON.stringify(enrollmentResponse, null, 2));
       }
     });
-    ````
+    ```
 
 ## <a name="run-the-individual-enrollment-sample"></a>Запуск примера отдельной регистрации
   
