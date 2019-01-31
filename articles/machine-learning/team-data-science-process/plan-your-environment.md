@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 5faa7a58a252a5d3b8cc044f9e81a6d7cb2df7d5
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 0cf9ffddffe7f97008e69c9c4fb7945faeb779da
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138047"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55469606"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 Какие ресурсы следует учесть при настройке среды для проведения расширенной аналитической обработки набора данных? В этой статье приведен ряд вопросов, ответы на которые помогут определить задачи и ресурсы, соответствующие вашему сценарию. Пошаговые инструкции для проведения прогнозной аналитики описаны в статье [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md) На каждом из этих шагов требуются определенные ресурсы для выполнения задач, соответствующих конкретному сценарию. Основные вопросы, позволяющие определить сценарий, касаются логистики данных, их характеристик, качества наборов данных, а также средств и языков, используемых для проведения анализа.
@@ -72,7 +72,7 @@ ms.locfileid: "53138047"
 Для примера возьмем среду Студии машинного обучения Azure:
 
 * Список форматов и типов данных, поддерживаемых Студией машинного обучения Azure, см. в разделе [Поддерживаемые форматы и типы данных](../studio/import-data.md#data-formats-and-data-types-supported).
-* Дополнительные сведения об ограничениях размера данных в Студии машинного обучения Azure см. в подразделе **Насколько большими могут быть объемы наборов данных для модулей?** раздела [Импорт и экспорт данных для машинного обучения](../studio/faq.md#machine-learning-studio-questions).
+
 
 Дополнительные сведения об ограничениях других служб Azure, используемых в процессе аналитики, см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md).
 

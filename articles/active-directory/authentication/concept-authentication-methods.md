@@ -3,19 +3,19 @@ title: Методы проверки подлинности Azure AD
 description: Какие методы проверки подлинности доступны в Azure AD для MFA и SSPR.
 services: active-directory
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 90eb9177ec679fdf8007b734848a5bc3c72e5974
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 7951044f850d93659ca458d3bcc46376e7e6b34a
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430336"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55077367"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 

@@ -8,18 +8,18 @@ manager: daveba
 editor: ''
 ms.service: active-directory
 ms.topic: conceptual
-ms.component: fundamentals
+ms.subservice: fundamentals
 ms.workload: identity
 ms.date: 08/28/2017
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: feecc0b5b8c6bd7cb39a9aa8f40e84b07b242f39
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 2063f9fcd3e001f4f8f175bd6031c9d31313f9e6
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447775"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55092198"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Техническая поддержка по телефону и поддержка через Интернет по выставлению счетов доступны на разных языках. 

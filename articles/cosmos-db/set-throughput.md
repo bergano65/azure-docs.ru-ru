@@ -1,19 +1,19 @@
 ---
-title: Подготовка пропускной способности для Azure Cosmos DB
+title: Подготовка пропускной способности в контейнерах и базах данных Azure Cosmos
 description: Сведения о настройке подготовленной пропускной способности для контейнеров и баз данных Azure Cosmos DB.
 author: aliuy
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: andrl
-ms.openlocfilehash: 3e992dd8ab24e4e60b81c6565ea4ec3971a9336b
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: cbcfaab7dc1b716b3978f1b19870d945e0eabf89
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036440"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55459107"
 ---
-# <a name="provision-throughput-on-azure-cosmos-containers-and-databases"></a>Подготовка пропускной способности в контейнерах и базах данных Azure Cosmos
+# <a name="provision-throughput-on-containers-and-databases"></a>Обеспечение необходимой пропускной способности для контейнеров и баз данных
 
 База данных Azure Cosmos представляет собой единицу управления для набора контейнеров. База данных состоит из набора схемонезависимых контейнеров. Контейнер Azure Cosmos — это единица масштабируемости как для пропускной способности, так и для хранения. Контейнер горизонтально разделяется между набором компьютеров в регионе Azure и распределяется по всем регионам Azure, связанным с учетной записью Azure Cosmos.
 

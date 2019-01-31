@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 6a6782c5e1cd7b5f42b619cd52470b640813a905
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: afa4b3861e9fb7f91fd9f5d540353c5fad23efe0
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42144684"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54913620"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
 
@@ -54,7 +54,7 @@ ms.locfileid: "42144684"
 Корпорация Майкрософт предоставляет средства и примеры, которые помогут вам создать подписанный сертификат проверки. 
 
 - **Пакет SDK для устройства C Azure IoT** предоставляет скрипты PowerShell (Windows) и Bash (Linux), которые помогут вам создать сертификаты ЦС и конечные сертификаты для разработки и выполнения проверки принадлежности с помощью кода проверки. Вы можете загрузить [файлы](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates), связанные с вашей системой, в рабочую папку, затем следуйте инструкциям статьи [Managing CA Certificates Sample](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Пример управления сертификатами ЦС), чтобы подтвердить владение сертификатами ЦС. 
-- **Пакет SDK для устройства C# Azure IoT** содержит [пример проверки сертификата группы](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service/samples/GroupCertificateVerificationSample), который можно использовать для подтверждения владения.
+- **Пакет SDK для устройства C# Azure IoT** содержит [пример проверки сертификата группы](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/service/GroupCertificateVerificationSample), который можно использовать для подтверждения владения.
  
 > [!IMPORTANT]
 > Кроме выполнения проверки принадлежности, скрипты PowerShell и Bash, упомянутые выше, позволяют создать корневые, промежуточные и конечные сертификаты, которые можно использовать для проверки подлинности и подготовки устройств. Эти сертификаты следует использовать только для разработки. Их не следует использовать в рабочей среде. 
