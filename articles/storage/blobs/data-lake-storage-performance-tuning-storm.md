@@ -3,17 +3,17 @@ title: Рекомендации по настройке производител
 description: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения
 services: storage
 author: swums
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 845bb739408cb38d823ae662e261d6955726d28a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b242fca5a5a8490cc51222a6dd8b1ff1bb724417
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976797"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247914"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности Storm в HDInsight и Azure Data Lake Storage 2-го поколения
 
@@ -22,7 +22,7 @@ ms.locfileid: "52976797"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в статье [Основные сведения об Apache Storm в службе HDInsight. Аналитика в реальном времени для Hadoop](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md).   

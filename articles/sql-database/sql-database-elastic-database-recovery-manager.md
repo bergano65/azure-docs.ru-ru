@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 01/03/2019
-ms.openlocfilehash: d5bb914de1cded7c70516bfb4bfdaa93c83fe0e4
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: c4eeb73e3b0abfe2558fc387953023254952a515
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188680"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55296874"
 ---
 # <a name="using-the-recoverymanager-class-to-fix-shard-map-problems"></a>Устранение проблем сопоставления сегментов с помощью класса RecoveryManager
 
@@ -43,7 +43,7 @@ GSM и LSM могут рассинхронизироваться по следу
 
 Дополнительные сведения о средствах эластичной базы данных, входящей в базу данных SQL Azure, и о георепликации и восстановлении см. в следующих статьях:
 
-* [Обзор непрерывности облачных бизнес-процессов и аварийном восстановлении баз данных с использованием Базы данных SQL](sql-database-business-continuity.md)
+* [Apache непрерывности облачных бизнес-процессов и аварийном восстановлении баз данных с использованием Базы данных SQL](sql-database-business-continuity.md)
 * [Приступая к работе с инструментами эластичной базы данных](sql-database-elastic-scale-get-started.md)  
 * [Управление ShardMap](sql-database-elastic-scale-shard-map-management.md)
 
@@ -52,7 +52,7 @@ GSM и LSM могут рассинхронизироваться по следу
 Сначала нужно создать экземпляр RecoveryManager. [Метод GetRecoveryManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.getrecoverymanager) возвращает диспетчер восстановления для текущего экземпляра [ShardMapManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager). Чтобы устранить несоответствия в сопоставлении сегментов, необходимо сначала получить RecoveryManager для конкретного сопоставления сегментов.
 
    ```java
-    ShardMapManager smm = ShardMapManagerFactory.GetSqlShardMapManager(smmConnnectionString,  
+    ShardMapManager smm = ShardMapManagerFactory.GetSqlShardMapManager(smmConnectionString,  
              ShardMapManagerLoadPolicy.Lazy);
              RecoveryManager rm = smm.GetRecoveryManager();
    ```

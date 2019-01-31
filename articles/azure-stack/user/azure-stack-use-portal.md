@@ -10,15 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/23/2018
+ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: efemmano
-ms.openlocfilehash: 4ec9affa78d1f244208a24bcf8a6603e867d4c08
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.lastreviewed: 01/25/2019
+ms.openlocfilehash: 026e37534169fda8dbbf5a568f72046bc6ff55f7
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086511"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55252053"
 ---
 # <a name="use-the-azure-stack-portal"></a>Использование портала Azure Stack
 
@@ -60,7 +61,7 @@ ms.locfileid: "50086511"
 
     Рекомендуем перед началом работы изучить следующие статьи.
 
-    - [Key considerations: Using services or building apps for Azure Stack](azure-stack-considerations.md) (Важные аспекты использования служб и создания приложений в Azure Stack)
+    - [ Важные аспекты использования служб и создания приложений в Azure Stack](azure-stack-considerations.md).
     - В разделе документации **Использование служб** приведена статья с рекомендациями для каждой службы. На странице с рекомендациями описаны различия между службой в Azure и ее аналогом в Azure Stack. Например, см. [статью с рекомендациями по виртуальным машинам](azure-stack-vm-considerations.md). Также в разделе **Использование служб** вы найдете дополнительные сведения, которые относятся исключительно к Azure Stack.
 
       Документацию по Azure можно использовать как источник общих сведений о службе, но всегда нужно учитывать существующие различия. Не забывайте, что ссылки на документацию, размещенные на плитке **Краткие руководства**, ведут к документации по Azure.
@@ -73,4 +74,4 @@ ms.locfileid: "50086511"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Key considerations: Using services or building apps for Azure Stack](azure-stack-considerations.md) (Важные аспекты использования служб и создания приложений в Azure Stack)
+[ Важные аспекты использования служб и создания приложений в Azure Stack](azure-stack-considerations.md).

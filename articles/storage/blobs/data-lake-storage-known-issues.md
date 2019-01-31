@@ -3,17 +3,17 @@ title: Известные проблемы с Azure Data Lake Storage 2-го п�
 description: Сведения об ограничениях и известных проблемах с Azure Data Lake Storage 2-го поколения
 services: storage
 author: normesta
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: normesta
-ms.openlocfilehash: bc6f59922286663435782623a72345c19adb494c
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: cbd58c0873a4a46d175c6d7cbdf2d004da304c06
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53995043"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247244"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 

@@ -8,20 +8,20 @@ author: MarkusVi
 manager: daveba
 ms.assetid: de5bf637-75a7-4104-b6d8-03686372a319
 ms.service: active-directory
-ms.component: conditional-access
+ms.subservice: conditional-access
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: a0c351df535a1f2463c14a4719eac0e4c4896c2b
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 42a32562eccc86d2516af14a529967a08108c94c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54464210"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55155295"
 ---
 # <a name="sign-in-experiences-with-azure-ad-identity-protection"></a>Процедуры входа с защитой идентификации Azure AD
 С помощью защиты идентификации Azure Active Directory можно:
@@ -57,18 +57,13 @@ ms.locfileid: "54464210"
 
 1. На первом шаге пользователь получает уведомление о необходимости настроить учетную запись для использования многофакторной проверки подлинности. 
    
-    ![Исправление](./media/flows/301.png "Исправление")
-
+    ![Исправление](./media/flows/140.png "Исправление")
 2. Для этого необходимо указать системе, как ей следует связываться с вами.
    
-    ![Исправление](./media/flows/302.png "Исправление")
-
-3. Укажите свой номер телефона и предпочтительный способ связи с вами.
-
-    ![Исправление](./media/flows/303.png "Исправление")
-
-Чтобы завершить регистрацию, нужно ответить на телефонный звонок или ввести код. 
-
+    ![Исправление](./media/flows/141.png "Исправление")
+3. Система отправляет запрос, на который вы должны ответить.
+   
+    ![Исправление](./media/flows/142.png "Исправление")
 
 ## <a name="risky-sign-in-recovery"></a>Восстановление входа, представлявшего риск
 Если администратор настроил политику для риска при входе, пользователи, на которых она распространяется, будут уведомлены об этом при попытке входа. 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: bwren
-ms.openlocfilehash: 574391fd64d0525d3d77b80bb488bea8109729af
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 0103225803ca98cb9d8e27eb57f150e0660cd7ab
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53187342"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299142"
 ---
 # <a name="management-solutions-in-azure-monitor"></a>Решения по управлению в Azure Monitor
 Решения по управлению используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений по управлению в Azure и подробные сведения об их использовании и установке.
@@ -60,7 +60,7 @@ ms.locfileid: "53187342"
 ## <a name="install-a-management-solution"></a>Установка решения по управлению
 В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения по управлению, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
 
-1. В [списке решений в вашей подписке](#list-installed-monitoring-solutions) щелкните **Добавить**. 
+1. В [списке решений в вашей подписке](#list-installed-management-solutions) щелкните **Добавить**. 
 1. Справа от элемента **Решения для управления** щелкните **More** (Дополнительные). 
 1. Найдите нужное решение по управлению и прочитайте его описание.
 1. Нажмите кнопку **Создать**, чтобы запустить процесс установки.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/12/2018
 ms.author: jdial
-ms.openlocfilehash: 9a2272c61932fe4628a0c90101446b6105cab29e
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 8e46058432743febd70a017ee5131081a052364b
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413657"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195398"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-cli"></a>Краткое руководство. Создание виртуальной сети с помощью интерфейса командной строки Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "54413657"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В этом примере создается виртуальная сеть по умолчанию *myVirtualNetwork* с подсетью *default*:
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию *myVirtualNetwork* с подсетью *default*:
 
 ```azurecli-interactive
 az network vnet create \

@@ -9,13 +9,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: 7ebce84e6d8d3e7b1b8d3852951127ce954f9019
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: 1f79330f12117c6ade8884165d1538623e19c7ea
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54854060"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55175270"
 ---
 # <a name="azure-active-directory-b2c-use-custom-attributes-in-a-custom-profile-edit-policy"></a>Azure Active Directory B2C использование настраиваемых атрибутов в пользовательской политике изменения профиля
 
@@ -46,7 +46,6 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
 >Каталог Azure AD B2C обычно включает веб-приложение с именем `b2c-extensions-app`. Это приложение главным образом используется встроенными политиками B2C для пользовательских утверждений, созданных с помощью портала Azure. Регистрировать расширения для пользовательских политик B2C с помощью этого приложения рекомендуется для опытных пользователей.  
 Инструкции содержатся в разделе **Дальнейшие действия** этой статьи.
 
-
 ## <a name="create-a-new-application-to-store-the-extension-properties"></a>Создайте новое приложение для хранения свойств расширения
 
 1. Откройте браузер и перейдите на [портал Azure](https://portal.azure.com). Войдите в систему с учетными данными администратора каталога B2C, который необходимо настроить.
@@ -66,8 +65,6 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
     * **Идентификатор приложения**. Пример: `103ee0e6-f92d-4183-b576-8c3739027780`.
     * **Идентификатор объекта**. Пример: `80d8296a-da0a-49ee-b6ab-fd232aa45201`.
 
-
-
 ## <a name="modify-your-custom-policy-to-add-the-applicationobjectid"></a>Изменение пользовательской политики для добавления **ApplicationObjectId**
 
 Если вы следовали инструкциям из статьи [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md), вы скачали и изменили такие [файлы с примерами](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip): **TrustFrameworkBase.xml**, **TrustFrameworkExtensions.xml**, **SignUpOrSignin.xml**, **ProfileEdit.xml** и **PasswordReset.xml**. На этом этапе необходимо внести дополнительные изменения в эти файлы.
@@ -76,31 +73,31 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
 
     ```xml
     <ClaimsProviders>
-        <ClaimsProvider>
-          <DisplayName>Azure Active Directory</DisplayName>
-            <TechnicalProfile Id="AAD-Common">
+      <ClaimsProvider>
+        <DisplayName>Azure Active Directory</DisplayName>
+        <TechnicalProfile Id="AAD-Common">
           <DisplayName>Azure Active Directory</DisplayName>
           <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-              
+
           <!-- Provide objectId and appId before using extension properties. -->
           <Metadata>
             <Item Key="ApplicationObjectId">insert objectId here</Item>
             <Item Key="ClientId">insert appId here</Item>
           </Metadata>
           <!-- End of changes -->
-              
+
           <CryptographicKeys>
             <Key Id="issuer_secret" StorageReferenceId="TokenSigningKeyContainer" />
           </CryptographicKeys>
           <IncludeInSso>false</IncludeInSso>
           <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
         </TechnicalProfile>
-        </ClaimsProvider>
+      </ClaimsProvider>
     </ClaimsProviders>
     ```
 
 > [!NOTE]
-> При первой записи **TechnicalProfile** в недавно созданное свойство расширения может произойти одноразовая ошибка. Свойство расширения создается при первом использовании.  
+> При первой записи **TechnicalProfile** в недавно созданное свойство расширения может произойти одноразовая ошибка. Свойство расширения создается при первом использовании.
 
 ## <a name="use-the-new-extension-property-or-custom-attribute-in-a-user-journey"></a>Используйте новое свойство расширения или настраиваемого атрибута в пути взаимодействия пользователя
 
@@ -130,13 +127,13 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
 
     ```xml
     <BuildingBlocks>
-      <ClaimsSchema> 
-        <ClaimType Id="extension_loyaltyId"> 
-          <DisplayName>Loyalty Identification Tag</DisplayName> 
-          <DataType>string</DataType> 
-          <UserHelpText>Your loyalty number from your membership card</UserHelpText> 
-          <UserInputType>TextBox</UserInputType> 
-        </ClaimType> 
+      <ClaimsSchema>
+        <ClaimType Id="extension_loyaltyId">
+          <DisplayName>Loyalty Identification Tag</DisplayName>
+          <DataType>string</DataType>
+          <UserHelpText>Your loyalty number from your membership card</UserHelpText>
+          <UserInputType>TextBox</UserInputType>
+        </ClaimType>
       </ClaimsSchema>
     </BuildingBlocks>
     ```
@@ -157,7 +154,7 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
         <InputClaim ClaimTypeReferenceId="alternativeSecurityId" />
         <InputClaim ClaimTypeReferenceId="userPrincipalName" />
         <InputClaim ClaimTypeReferenceId="givenName" />
-            <InputClaim ClaimTypeReferenceId="surname" />
+        <InputClaim ClaimTypeReferenceId="surname" />
 
         <!-- Add the loyalty identifier -->
         <InputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
@@ -167,7 +164,7 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
         <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
         <OutputClaim ClaimTypeReferenceId="givenName" />
         <OutputClaim ClaimTypeReferenceId="surname" />
-        
+
         <!-- Add the loyalty identifier -->
         <OutputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
         <!-- End of changes -->
@@ -279,15 +276,15 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
   ```xml
       <ClaimsProviders>
         <ClaimsProvider>
-              <DisplayName>Azure Active Directory</DisplayName>
-            <TechnicalProfile Id="AAD-Common">
-                <DisplayName>Azure Active Directory</DisplayName>
-                <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-                <!-- Provide objectId and appId before using extension properties. -->
-                <Metadata>
-                  <Item Key="ApplicationObjectId">insert objectId here</Item> <!-- This is the "Object ID" from the "b2c-extensions-app"-->
-                  <Item Key="ClientId">insert appId here</Item> <!--This is the "Application ID" from the "b2c-extensions-app"-->
-                </Metadata>
+          <DisplayName>Azure Active Directory</DisplayName>
+          <TechnicalProfile Id="AAD-Common">
+            <DisplayName>Azure Active Directory</DisplayName>
+            <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            <!-- Provide objectId and appId before using extension properties. -->
+            <Metadata>
+              <Item Key="ApplicationObjectId">insert objectId here</Item> <!-- This is the "Object ID" from the "b2c-extensions-app"-->
+              <Item Key="ClientId">insert appId here</Item> <!--This is the "Application ID" from the "b2c-extensions-app"-->
+            </Metadata>
   ```
 
 3. Следите за взаимодействием с порталом. Создайте эти атрибуты с помощью пользовательского интерфейса портала, прежде чем использовать их в пользовательских политиках. При создании атрибута **ActivationStatus** на портале необходимо обратиться к нему следующим образом.
@@ -296,7 +293,6 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
   extension_ActivationStatus in the custom policy.
   extension_<app-guid>_ActivationStatus via Graph API.
   ```
-
 
 ## <a name="reference"></a>Справочные материалы
 

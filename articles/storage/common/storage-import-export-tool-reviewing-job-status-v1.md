@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 01/26/2017
 ms.author: muralikk
-ms.component: common
-ms.openlocfilehash: c5b9d1993c9e90411c7b05d9874721a159275f22
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.subservice: common
+ms.openlocfilehash: 306e3ccf19ba8db2de01e4b20a52707215a4a040
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44021834"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470371"
 ---
 # <a name="reviewing-azure-importexport-job-status-with-copy-log-files"></a>Просмотр состояния задания импорта и экспорта Azure с помощью файлов журнала копирования
 При обработке дисков, связанных с заданием импорта или экспорта, служба импорта и экспорта Microsoft Azure записывает файлы журнала копирования в учетную запись хранения, в которую импортируются большие двоичные объекты или из которой они экспортируются. Файл журнала содержит подробные сведения о состоянии каждого импортируемого или экспортируемого файла. При запросе состояния завершенного задания возвращается URL-адрес для каждого файла журнала копирования. Дополнительные сведения см. [здесь](https://docs.microsoft.com/rest/api/storageimportexport/Jobs/Get).  

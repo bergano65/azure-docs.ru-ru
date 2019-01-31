@@ -1,21 +1,21 @@
 ---
-title: Azure AD Connect. Справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1.
 author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.date: 10/19/2018
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: e398814e9ce8b98d8b1079d6f6c429e829c99d21
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 9738c745064607493fb2660c033dd3f2499fee58
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462103"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158695"
 ---
-# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect.  Справочник по модулю PowerShell ADConnectivityTools
+# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADConnectivityTools
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1, который входит в состав Azure AD Connect.
 
 ## <a name="confirm-dnsconnectivity"></a>Confirm-DnsConnectivity

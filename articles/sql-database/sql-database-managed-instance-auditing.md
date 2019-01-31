@@ -14,12 +14,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 01/15/2019
-ms.openlocfilehash: 04c4bba2647b9b17b1282c9a1608fd2e9325f661
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 3a445fbc135e0d7dc19907339506fd0c32bffb45
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427922"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55456040"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Приступая к аудиту управляемого экземпляра Базы данных SQL Azure
 
@@ -207,7 +207,7 @@ ms.locfileid: "54427922"
 
 - Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/). В хранилище Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере, который был определен для хранения журналов аудита. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
 
-- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing).
+- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](sql-database-auditing.md).
 
   > [!IMPORTANT]
   > Просмотр записей аудита на портале Azure (на панели "Записи аудита") сейчас не поддерживается для Управляемого экземпляра.
@@ -242,7 +242,7 @@ Log Analytics предоставляет аналитические данные
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing).
+- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](sql-database-auditing.md).
 - Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
 
 <!--Image references-->

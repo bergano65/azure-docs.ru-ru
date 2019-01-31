@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, carlrab
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: d8ddbb2590852ed80ce02f147886dc125815fc23
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: 94b793d4ab68ae4d2b8a28961d76eed1ea875ff7
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605982"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55468637"
 ---
 # <a name="manage-file-space-in-azure-sql-database"></a>Управление файловым пространством в Базе данных SQL Azure
 В этой статье описываются различные типы дискового пространства в Базе данных SQL Azure, а также действия, которые нужно предпринять, если управление файловым пространством, выделенным для баз данных и эластичных пулов, должно осуществляться явным образом.
@@ -27,6 +27,7 @@ ms.locfileid: "53605982"
 В Базе данных SQL Azure существуют шаблоны рабочей нагрузки, в которых распределение базовых файлов для баз данных может превысить объем используемых страниц данных. Это может произойти, когда используемое пространство увеличивается, а данные затем удаляются. Это объясняется тем, что выделенное файловое пространство автоматически не освобождается.
 
 Мониторинг использования файлового пространства и сжатие файлов базы данных может потребоваться в следующих сценариях:
+
 - предоставление места для роста данных в эластичном пуле, когда файловое пространство, выделенное для баз данных, достигает максимального размера пула;
 - уменьшение максимального размера отдельной базы данных или эластичного пула;
 - изменение уровня службы или производительности отдельной базы данных или эластичного пула с меньшим максимальным размером.
@@ -118,6 +119,7 @@ SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes
 Следующие запросы можно использовать для определения объема дискового пространства для эластичного пула.  
 
 ### <a name="elastic-pool-data-space-used"></a>Используемое пространство данных эластичного пула
+
 Измените следующий запрос, чтобы получить объем пространства, занятого данными эластичного пула.  Единицы результатов запроса указываются в МБ.
 
 ```sql
@@ -234,9 +236,9 @@ ALTER DATABASE [db1] SET AUTO_SHRINK ON
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о максимальных размерах базы данных см. в статьях:
-  - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases)
-  - [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases)
-  - [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-elastic-pools)
-  - [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools)
+  - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)
+  - [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](sql-database-dtu-resource-limits-single-databases.md)
+  - [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
+  - [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
 - Дополнительные сведения о команде `SHRINKDATABASE` см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql). 
 - Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).

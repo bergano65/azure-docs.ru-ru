@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/11/2018
 ms.author: anwestg
-ms.openlocfilehash: 31fe0ede202b72a3e71c8028543ef0677a44a335
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.lastreviewed: 12/11/2018
+ms.openlocfilehash: 558fc7280af398f0037c33121f662649ba9c3506
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413028"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251390"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Подготовка к работе со службой приложений в Azure Stack
 
@@ -331,7 +332,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 3. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
 4. Запустите скрипт **Create-AADIdentityApp.ps1**. Когда появится запрос, введите идентификатор клиента Azure AD, используемый для развертывания Azure Stack. Например, введите **myazurestack.onmicrosoft.com**.
 5. В окне **Учетные данные** введите учетную запись администратора службы Azure AD и пароль. Нажмите кнопку **ОК**.
-6. Введите путь к файлу сертификата и пароль для [сертификата, созданного ранее](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-before-you-get-started#certificates-required-for-azure-app-service-on-azure-stack). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
+6. Введите путь к файлу сертификата и пароль для [сертификата, созданного ранее](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-before-you-get-started). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
 7. Скрипт создаст приложение в экземпляре клиента Azure AD. Запишите идентификатор приложения, который возвращается в выходных данных PowerShell. Он вам понадобится при установке.
 8. Откройте новое окно в браузере и войдите на портал Azure в качестве [администратора службы Azure Active Directory](https://portal.azure.com).
 9. Откройте поставщик ресурсов Azure AD.
@@ -375,7 +376,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 3. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
 4. Запустите скрипт **Create-ADFSIdentityApp.ps1**.
 5. В окне **Учетные данные** укажите учетную запись администратора облака AD FS и пароль. Нажмите кнопку **ОК**.
-6. Предоставьте путь к файлу сертификата и пароль для [сертификата, созданного ранее](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-before-you-get-started#certificates-required-for-azure-app-service-on-azure-stack). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
+6. Предоставьте путь к файлу сертификата и пароль для [сертификата, созданного ранее](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-before-you-get-started). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
 
 ```PowerShell
     Create-ADFSIdentityApp.ps1

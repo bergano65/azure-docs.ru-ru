@@ -6,16 +6,16 @@ services: cognitive-services
 author: bojunehsu
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: knowledge-exploration
+ms.subservice: knowledge-exploration
 ms.topic: conceptual
 ms.date: 03/24/2016
 ms.author: paulhsu
-ms.openlocfilehash: 7ec2282317019275b15a8e506753408c75a68561
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 52d001e32e1bdb0d0046853f18649bafa49b1f14
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127161"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55228531"
 ---
 # <a name="command-line-interface"></a>Интерфейс командной строки
 
@@ -80,7 +80,7 @@ ms.locfileid: "46127161"
 |-----------------|----------------------------|
 | `<grammarFile>` | Путь к входной двоичной грамматике         |
 | `<indexFile>`   | Путь к входному двоичному индексу           |
-| `--port <port>` | Номер локального порта.  По умолчанию: 8000. |
+| `--port <port>` | Номер локального порта.  Значение по умолчанию: 8000 |
 
 Можно указать локальные пути к файлам или URL-адреса больших двоичных объектов Azure.  Веб-служба будет размещена по адресу http://localhost:&lt;порт&gt;/.  В разделе о [веб-API](WebAPI.md) представлен список поддерживаемых операций.
 

@@ -6,18 +6,18 @@ services: cognitive-services
 author: Jann-Skotdal
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: b51067b9e854566991d49aeb1ff2b1ad13999a51
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b6178c4e9c197539359058347b2409210d976569
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52957748"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458930"
 ---
-# <a name="translator-text-api-30-dictionary-lookup"></a>API перевода текстов 3.0: поиск по словарю
+# <a name="translator-text-api-30-dictionary-lookup"></a>API перевода текстов 3.0: Поиск по словарю
 
 Предоставляет альтернативные переводы слова и небольших идиоматических выражений. Каждый перевод содержит части речи и список обратных переводов. Обратные переводы позволяют пользователю понять перевод в контексте. Операция [Dictionary Example](./v3-0-dictionary-examples.md) позволяет продолжить детализацию, чтобы увидеть пример использования каждой пары переводов.
 

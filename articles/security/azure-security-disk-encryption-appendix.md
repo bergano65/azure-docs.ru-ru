@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mstewart
 ms.date: 01/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: b6d0b702a334bf1127f570bff026fa4332331209
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 64ae354c9233821ea7e53abfdc0dde105b22e466
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260144"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208080"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Приложение к статье о шифровании дисков Azure 
 
@@ -325,7 +325,7 @@ ms.locfileid: "54260144"
 
 1. Создайте файл /usr/local/sbin/azure_crypt_key.sh с приведенным ниже содержимым. Обратите внимание на параметр KeyFileName — это имя файла парольной фразы, используемое Azure.
 
-    ```
+    ```bash
     #!/bin/sh
     MountPoint=/tmp-keydisk-mount
     KeyFileName=LinuxPassPhraseFileName
@@ -405,7 +405,7 @@ ms.locfileid: "54260144"
     add_drivers+=" vfat ntfs nls_cp437 nls_iso8859-1"
     ```
 2. Закомментируйте приведенные строки в конце файла /usr/lib/dracut/modules.d/90crypt/module-setup.sh.
- ```
+ ```bash
     #        inst_multiple -o \
     #        $systemdutildir/system-generators/systemd-cryptsetup-generator \
     #        $systemdutildir/systemd-cryptsetup \
@@ -418,20 +418,20 @@ ms.locfileid: "54260144"
  ```
 
 3. В начале файла /usr/lib/dracut/modules.d/90crypt/parse-crypt.sh добавьте следующую строку.
- ```
+ ```bash
     DRACUT_SYSTEMD=0
  ```
 Затем измените все вхождения
- ```
+ ```bash
     if [ -z "$DRACUT_SYSTEMD" ]; then
  ```
 на:
-```
+```bash
     if [ 1 ]; then
 ```
 4. Измените файл /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh, добавив следующий текст после строки # Open LUKS device.
 
-    ```
+    ```bash
     MountPoint=/tmp-keydisk-mount
     KeyFileName=LinuxPassPhraseFileName
     echo "Trying to get the key from disks ..." >&2
@@ -485,7 +485,7 @@ ms.locfileid: "54260144"
     ```
 
 2. Закомментируйте приведенные строки в конце файла /usr/lib/dracut/modules.d/90crypt/module-setup.sh.
-```
+```bash
     #        inst_multiple -o \
     #        $systemdutildir/system-generators/systemd-cryptsetup-generator \
     #        $systemdutildir/systemd-cryptsetup \
@@ -498,19 +498,19 @@ ms.locfileid: "54260144"
 ```
 
 3. В начале файла /usr/lib/dracut/modules.d/90crypt/parse-crypt.sh добавьте следующую строку.
-```
+```bash
     DRACUT_SYSTEMD=0
 ```
 Затем измените все вхождения
-```
+```bash
     if [ -z "$DRACUT_SYSTEMD" ]; then
 ```
 значение
-```
+```bash
     if [ 1 ]; then
 ```
 4. Измените файл /usr/lib/dracut/modules.d/90crypt/cryptroot-ask.sh, добавив следующий текст после строки # Open LUKS device.
-    ```
+    ```bash
     MountPoint=/tmp-keydisk-mount
     KeyFileName=LinuxPassPhraseFileName
     echo "Trying to get the key from disks ..." >&2

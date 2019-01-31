@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 09/17/2018
 ms.author: jeffgilb
 ms.reviewer: thoroet
-ms.openlocfilehash: ff068ff5aa4401a80f2220df79fdac93db21cfb3
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.lastreviewed: 09/17/2018
+ms.openlocfilehash: d35d3bb32f9afabb0e2b02f0d93fc60e0121e9ce
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232878"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247652"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Добавление дополнительных узлов единиц масштабирования в Azure Stack
 
@@ -33,7 +34,7 @@ ms.locfileid: "54232878"
 
 На блок-схеме ниже показан общий процесс добавления узла единицы масштабирования.
 
-![Добавление последовательности единицы масштабирования](media/azure-stack-add-scale-node/add-node-flow.png) &#42; *Устанавливает ли поставщик оборудования OEM размещение стойки физического сервера и обновляет ли встроенное ПО, зависит от вашего контракта на поддержку.*
+![Процесс добавления единицы масштабирования](media/azure-stack-add-scale-node/add-node-flow.png) &amp;#42; *Устанавливает ли поставщик оборудования OEM размещение стойки физического сервера и обновляет ли встроенное ПО, зависит от вашего контракта на поддержку.*
 
 Операция добавления нового узла может занять несколько часов или дней.
 

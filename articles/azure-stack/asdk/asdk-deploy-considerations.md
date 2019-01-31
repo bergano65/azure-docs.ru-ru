@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 12/12/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 4bcb71829b2fb5f35398f36dee36d4e98c5a609b
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.lastreviewed: 12/12/2018
+ms.openlocfilehash: f874be6081a1ea01ecf616c9b97db878554d441c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106739"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55242422"
 ---
 # <a name="azure-stack-deployment-planning-considerations"></a>Рекомендации по планированию развертывания Azure Stack
 Перед развертыванием пакета средств разработки Azure Stack (ASDK) убедитесь, что главный компьютер соответствует требованиям, описанным в этой статье.

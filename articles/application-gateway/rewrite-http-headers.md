@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/20/2018
 ms.author: absha
-ms.openlocfilehash: 3e40dbb96b27df4b228c52e7a8f70d047a556c31
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 2babb6ff7b93ad9cf7c93565cadce9453a3b96ca
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54198531"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103434"
 ---
 # <a name="rewrite-http-headers-with-application-gateway-public-preview"></a>Повторное создание заголовков HTTP с помощью Шлюза приложений (общедоступная предварительная версия)
 
@@ -94,8 +94,6 @@ ms.locfileid: "54198531"
 | -------------------------- | :----------------------------------------------------------- |
 | ciphers_supported          | возвращает список шифров, поддерживаемых клиентом          |
 | ciphers_used               | возвращает строку шифров, которая используется для установленного безопасного соединения |
-| client_latitude            | в зависимости от IP-адреса клиента определяет страну, регион и город |
-| client_longitude           | в зависимости от IP-адреса клиента определяет страну, регион и город |
 | client_port                | порт клиента                                                  |
 | client_tcp_rtt             | предоставляет сведения о подключении протокола TCP клиента; доступен на системах, которые поддерживают параметр сокета TCP_INFO |
 | client_user                | при использовании проверки подлинности HTTP, используется имя пользователя |

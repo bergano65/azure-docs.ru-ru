@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 08/10/2018
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: 22c7adc5db044568b4aa49dbbb0e36d2c919f6a6
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.subservice: common
+ms.openlocfilehash: b3b011d9789cbb3dcd8557eda1473b7fd2609075
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53629634"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454289"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
 
@@ -167,7 +167,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 ### <a name="options"></a>Параметры
 Чтобы просмотреть список параметров, в командной строке введите `/help` .
 
-| Параметр | ОПИСАНИЕ | Get-Help | Аргументы |
+| Параметр | ОПИСАНИЕ | Команда | Аргументы |
 | --- | --- | --- | --- |
 | **Начало** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-inprocess*: запускает эмулятор в текущем процессе вместо создания нового процесса. |
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |

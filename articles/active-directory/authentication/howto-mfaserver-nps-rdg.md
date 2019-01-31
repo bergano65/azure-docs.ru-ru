@@ -3,19 +3,19 @@ title: Шлюз удаленных рабочих столов (RDG) и серв
 description: Это страница Многофакторной идентификации Azure, которая будет полезна при развертывании шлюза удаленных рабочих столов (RD) и сервера Многофакторной идентификации Azure с помощью RADIUS.
 services: multi-factor-authentication
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: db1b73dc683a1f109cddfe929ba4682b7c6674e8
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: e80b2fe9bfde7a2034877498897aff899234b58e
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438632"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55079449"
 ---
 # <a name="remote-desktop-gateway-and-azure-multi-factor-authentication-server-using-radius"></a>Шлюз удаленных рабочих столов и сервер Многофакторной идентификации, использующие проверку подлинности RADIUS
 

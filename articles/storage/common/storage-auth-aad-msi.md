@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: d8382cac86abb112018195695340ed12663a2333
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.subservice: common
+ms.openlocfilehash: 15c37be3f3b1b3f72c32865e095091fa10ee9750
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427422"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251696"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-managed-identities-for-azure-resources-preview"></a>Аутентификация доступа к большим двоичным объектам и очередям с помощью управляемых удостоверений для ресурсов Azure (предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "49427422"
 
 Чтобы проверить подлинность с помощью управляемого удостоверения, приложение или скрипт должны получить маркер доступа управляемого удостоверения. Дополнительные сведения о том, как получить маркер доступа, см. в статье [Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md).
 
-## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET: создание блочного BLOB-объекта
+## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET. Создание блочного BLOB-объекта
 
 В этом примере кода предполагается наличие маркера доступа управляемого удостоверения. Маркер доступа используется для авторизации управляемого удостоверения для создания блочного BLOB-объекта.
 
