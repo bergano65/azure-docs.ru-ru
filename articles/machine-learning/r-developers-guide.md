@@ -14,12 +14,12 @@ ms.devlang: R
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: jepeach
-ms.openlocfilehash: bc00bd3b61398355c663d133c0c9a66c2a52aa8d
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 102191b885d2a4a9234b7783b0a51b09903d3abd
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046946"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54807462"
 ---
 # <a name="r-developers-guide-to-azure"></a>Руководство по разработке на R в Azure
 <img src="media/r-developers-guide/logo_r.svg" alt="R logo" align="right" width="200" />
@@ -40,7 +40,7 @@ ms.locfileid: "47046946"
 |[Azure Databricks](#azure-databricks)                            |Среда Spark для совместной работы, поддерживающая язык R и другие языки               |
 |[Студия машинного обучения Azure](#azure-machine-learning-studio)  |Выполнение пользовательских R-сценариев в экспериментах машинного обучения Azure                      |
 |[Пакетная служба Azure](#azure-batch)                                      |Предоставляет различные варианты для выполнения кода R на многих узлах в кластере без лишних затрат|
-|[Azure Notebooks](#azure-notebooks);                              |Бесплатная (но ограниченная) облачная версия записных книжек Jupyter                  |
+|[Azure Notebooks](#azure-notebooks);                              |Бесплатная облачная версия записных книжек Jupyter                  |
 |[база данных SQL Azure;](#azure-sql-database)                        |Выполнение R-сценариев в ядре СУБД SQL Server                            |
 
 ## <a name="data-science-virtual-machine"></a>Виртуальная машина для обработки и анализа данных
@@ -104,16 +104,17 @@ DSVM может быть особенно удобна для небольших
 ## <a name="azure-batch"></a>Пакетная служба Azure
 Для крупномасштабных заданий R можно использовать [пакетную службу Azure](https://azure.microsoft.com/services/batch/).  Эта служба обеспечивает планирование заданий и управление вычислениями в масштабе облака, поэтому рабочую нагрузку R можно масштабировать в десятках, сотнях или тысячах виртуальных машин.  Так как это универсальная вычислительная платформа, есть несколько способов выполнения заданий R в пакетной службе Azure.
 
-Один способ — использовать пакет <code>[doAzureParallel](https://github.com/Azure/doAzureParallel)</code> Microsoft.  Этот пакет R является параллельной серверной частью для пакета `foreach`.  Он обеспечивает выполнение каждой итерации цикла `foreach` в параллельном режиме на узле в кластере пакетной службы Azure.  Общие сведения о пакете см. в записи блога, посвященной [использованию преимуществ гибких вычислений Azure непосредственно из сеанса R](https://azure.microsoft.com/blog/doazureparallel/).
+Один способ — использовать пакет <code>[doAzureParallel](https://github.com/Azure/doAzureParallel)</code> Microsoft.  Этот пакет R является параллельной серверной частью для пакета `foreach`.  Он обеспечивает выполнение каждой итерации цикла `foreach` в параллельном режиме на узле в кластере пакетной службы Azure.  Для получения сведений о пакете см. запись блога [doAzureParallel: Take advantage of Azure’s flexible compute directly from your R session](https://azure.microsoft.com/blog/doazureparallel/) (doAzureParallel. Воспользуйтесь преимуществами гибких вычислений Azure прямо из сеанса R).
 
 Другой способ выполнения R-сценария в пакетной службе Azure — объединение кода с использованием файла RScript.exe в качестве приложения пакетной службы на портале Azure.  Подробное пошаговое руководство см. в записи блога, посвященной [рабочим нагрузкам R в пакетной службе Azure](https://azure.microsoft.com/blog/r-workloads-on-azure-batch/).
 
 Третий способ — использовать [набор средств для инжиниринга распределенных данных Azure](https://github.com/Azure/aztk) (AZTK), что позволяет подготовить кластеры Spark по запросу с помощью контейнеров Docker в пакетной службе Azure.  Это экономичный способ выполнения заданий Spark в Azure.  При использовании [SparklyR с AZTK](https://github.com/Azure/aztk/wiki/SparklyR-on-Azure-with-AZTK) R-сценарии можно развернуть в облаке легко и без лишних затрат.
 
 ## <a name="azure-notebooks"></a>Azure Notebook
+
 [Записные книжки Azure](https://notebooks.azure.com) — это экономичный и эффективный метод для разработчиков R, которые предпочитают работать с записными книжками, чтобы перенести свой код в Azure.  Это бесплатная служба для всех, кто разрабатывает и выполняет код в браузере с помощью [Jupyter](https://jupyter.org/), проекта с открытым исходным кодом, позволяющим объединять текст разметки, исполняемый код и графику на одном холсте.
 
-Хотя Записные книжки Azure являются приемлемым вариантом для небольших проектов, они имеют некоторые ограничения, которые делают их непригодными для проектов обработки и анализа больших объемов данных.  Сейчас служба ограничивает каждый процесс записной книжки до 4 ГБ памяти, а размер наборов данных не может превышать 1 ГБ.  Тем не менее для публикации анализов меньшего размера это простой и бесплатный вариант.
+Бесплатный уровень обслуживания Записных книжек Azure приемлемый для небольших проектов, так как он ограничивает процесс каждой записной книжки 4 ГБ памяти и 1 ГБ наборов данных. Однако если вам требуется большая вычислительная мощность и количество данных, вы можете запускать записные книжки в экземпляре Виртуальной машины для обработки и анализа данных. Дополнительные сведения см. в статье [Manage and configure Azure Notebooks projects — Compute tier](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier) (Управление и настройка проектов Записных книжек Azure — уровень вычислений).
 
 ## <a name="azure-sql-database"></a>Базы данных SQL Azure
 [База данных SQL Azure](https://azure.microsoft.com/services/sql-database/) — это интеллектуальная, полностью управляемая служба реляционной облачной базы данных Microsoft.  Она позволяет использовать все возможности SQL Server без каких-либо сложностей с настройкой инфраструктуры.  Сюда входят [Службы машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning?view=sql-server-2017), которые являются одним из самых последних дополнений к службе SQL.
