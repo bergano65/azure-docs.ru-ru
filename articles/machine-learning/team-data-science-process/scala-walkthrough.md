@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: bf4e65b95211fc03ea4a319fd4e503396b893522
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 3109c4e6190cd8e485ae9b28117c4688836dfc26
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135153"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470320"
 ---
 # <a name="data-science-using-scala-and-spark-on-azure"></a>Обработка и анализ данных с использованием Scala и Spark в Azure
 В этой статье приводятся сведения о том, как использовать Scala, чтобы выполнять контролируемые задачи машинного обучения, применяя масштабируемую библиотеку машинного обучения (MLlib) Spark и пакеты Spark ML в кластере Spark Azure HDInsight. Здесь подробно расписаны задачи, которые образуют [процесс обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/): прием и исследование данных, визуализация, проектирование признаков, моделирование и использование моделей. В этой статье использованы такие модели, как логистическая и линейная регрессии, случайные леса и деревья с градиентным повышением (GBT), а также две распространенные контролируемые задачи машинного обучения:

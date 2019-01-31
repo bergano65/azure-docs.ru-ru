@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 886ac908d2e294f4627f95b35d93ea49a9e1607a
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 28f35fd1098e055b22dada703cd7e68de591eea7
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54472336"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55192627"
 ---
 # <a name="azure-ad-connect-sync-configure-filtering"></a>Синхронизация Azure AD Connect: Настройка фильтрации
 Возможность фильтрации позволяет управлять тем, какие объекты локального каталога будут синхронизированы с Azure Active Directory (Azure AD). При конфигурации по умолчанию это все объекты во всех доменах настроенных лесов. Эта конфигурация является рекомендуемой в большинстве случаев. Пользователи системы Office 365, будь-то Exchange Online или Skype для бизнеса, могут использовать глобальный список адресов для отправки сообщений электронной почты и осуществления звонков по всем адресам. Использование конфигурации по умолчанию позволяет им работать так же, как и с локальным экземпляром Exchange или Lync.
