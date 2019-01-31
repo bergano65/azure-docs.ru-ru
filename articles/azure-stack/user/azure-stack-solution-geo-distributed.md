@@ -14,12 +14,13 @@ ms.topic: tutorial
 ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: anajod
-ms.openlocfilehash: da6c9fa416d19916243860178d15619306aaf3c0
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.lastreviewed: 01/14/2019
+ms.openlocfilehash: 7c7279f1895764c2a3ed73e824d44c2eed68240c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305321"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244587"
 ---
 # <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения для географически распределенного приложения с помощью Azure и Azure Stack
 
@@ -122,7 +123,7 @@ ms.locfileid: "54305321"
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Создание развертывания веб-приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**: Выберите **Runtimeidentifier** и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Измените файл **WebApplication.csproj**: Выберите Runtimeidentifier и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
 
     ![Alt text](media/azure-stack-solution-geo-distributed/image3.png)
 
