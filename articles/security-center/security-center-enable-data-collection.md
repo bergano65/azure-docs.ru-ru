@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/2/2018
 ms.author: rkarlin
-ms.openlocfilehash: 40f3275b2f16a80f1199afdc0d7965cbd4433f50
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 5150f782d13e198c59e8d79f09ba0ffead5426d3
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53082461"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55100552"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные c виртуальных машин Azure и c компьютеров, не относящихся к Azure, чтобы отслеживать уязвимости и угрозы безопасности. Для сбора данных используется агент Microsoft Monitoring Agent, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера, а также копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя. Этот агент также копирует файлы аварийных дампов в рабочую область.
@@ -279,7 +279,7 @@ ms.locfileid: "53082461"
      
             $PublicConf = '{
                 "workspaceId": "WorkspaceID value",
-                "MultipleConnectistopOnons": true
+                "MultipleConnections": true
             }' 
  
             $PrivateConf = '{

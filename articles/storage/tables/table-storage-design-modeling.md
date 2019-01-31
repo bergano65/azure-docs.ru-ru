@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
-ms.component: tables
-ms.openlocfilehash: ed4399e2d58924f89d4201979ffe1fb903a05d0c
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: tables
+ms.openlocfilehash: 7f629ceb9fe5bd19c0558d1fde45d0bddcee744e
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522634"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458879"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
 В этой статье рассматривается процесс моделирования при разработке решений хранилища таблиц Azure.

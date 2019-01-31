@@ -4,18 +4,18 @@ titleSuffix: Azure Machine Learning Studio
 description: В этой статье содержится информация о том, как выбрать оптимальный набор параметров для алгоритма в Студии машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
-ms.component: studio
+ms.subservice: studio
 ms.topic: article
 author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 757819338433dc1ea8eedd34d8356166b68dd3fc
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 0f324dec9349b44252a85b2f9334a1b6d847faae
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54265563"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247143"
 ---
 # <a name="choose-parameters-to-optimize-your-algorithms-in-azure-machine-learning-studio"></a>Выбор параметров для оптимизации алгоритмов в Студии машинного обучения Azure
 

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a4ceaec8c71d4c13a18c8e28cc057b4b6d5337d5
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 52ac3f12fac5de3bbb772d943ea1bada5c18c1eb
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812511"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453456"
 documentType: LandingData
 title: Документация по Студии машинного обучения
 metadata:
@@ -12,7 +12,7 @@ metadata:
   description: Студия машинного обучения — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения.
   services: machine-learning
   ms.service: machine-learning
-  ms.component: studio
+  ms.subservice: studio
   ms.topic: landing-page
   author: j-martens
   ms.author: jmartens

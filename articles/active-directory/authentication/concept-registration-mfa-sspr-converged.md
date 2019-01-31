@@ -3,19 +3,19 @@ title: Конвергентная регистрация методов SSPR и 
 description: Регистрация методов многофакторной идентификации и самостоятельного сброса пароля в Azure AD (общедоступная предварительная версия)
 services: active-directory
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 192b88623d2f85efd619e26d51f35b4797706761
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 4080fe07f6624c96f6385492268042f6401f3694
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54433753"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472683"
 ---
 # <a name="converged-registration-for-self-service-password-reset-and-azure-multi-factor-authentication-public-preview"></a>Конвергентная регистрация методов самостоятельного сброса пароля и многофакторной идентификации Azure (общедоступная предварительная версия)
 
@@ -74,8 +74,6 @@ ms.locfileid: "54433753"
 Журналы аудита для нового интерфейса находятся в категории методов проверки подлинности журнала аудита.  
 
 ## <a name="known-issues"></a>Известные проблемы
-
-Мы обнаружили ошибку, при которой гостевым пользователям B2B, для которых активирована конвергентная регистрация, не удается зарегистрироваться для MFA. Когда они направляются на страницу регистрации, отображается сообщение об ошибке. Наши разработчики знают об этой проблеме и работают над ее решением. Сейчас в качестве обходного пути рекомендуем создать группу и исключить из нее всех пользователей B2B.
 
 **Когда пользователь регистрирует телефон с помощью SMS, в качестве метода MFA по умолчанию устанавливается телефонный звонок**
 

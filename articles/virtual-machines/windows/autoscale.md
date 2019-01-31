@@ -3,7 +3,7 @@ title: Автоматическое масштабирование виртуа�
 description: Сведения об автоматическом масштабировании виртуальных машин Windows и Linux в Azure.
 services: virtual-machines-windows
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -12,13 +12,13 @@ ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.date: 08/21/2017
-ms.author: zarhoads
-ms.openlocfilehash: 3eb235f185d2c964d0dd6a6318bcbb4c1aa77cdf
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.author: cynthn
+ms.openlocfilehash: 9308bbcee047d86d9ae1cd82346977264ab38dbb
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49464720"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54881781"
 ---
 # <a name="automatically-scale-virtual-machines-in-azure"></a>Автоматическое масштабирование виртуальных машин в Azure
 

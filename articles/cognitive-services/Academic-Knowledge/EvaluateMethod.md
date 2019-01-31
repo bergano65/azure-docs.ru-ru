@@ -6,16 +6,16 @@ services: cognitive-services
 author: alch-msft
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: academic-knowledge
+ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: 262beeefbbafefc95da51e9f4afcbc1bc143f952
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: c3449d3b61c9b8950c0530590e7f1950c06afbc3
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48902337"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55187306"
 ---
 # <a name="evaluate-method"></a>Метод Evaluate
 
@@ -32,9 +32,9 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 -----------|-----------|---------|--------
 **expr**       | Текстовая строка | Yes | Выражение запроса, которое указывает, какие сущности должны быть возвращены.
 **model**      | Текстовая строка | Нет   | Имя модели, которую необходимо запросить.  В настоящее время значение по умолчанию соответствует *latest*.        
-**attributes** | Текстовая строка | Нет <br>по умолчанию: Id | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
-**count**        | Number | Нет <br>Значение по умолчанию: 10. | Количество результатов для возврата.
-**offset**     | Number |   Нет <br>По умолчанию: 0    | Индекс первого результата для возврата.
+**attributes** | Текстовая строка | Нет <br>значение по умолчанию: Идентификатор | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
+**count**        | Number | Нет <br>Значение по умолчанию: 10 | Количество результатов для возврата.
+**offset**     | Number |   Нет <br>Значение по умолчанию: 0    | Индекс первого результата для возврата.
 **OrderBy** |   Текстовая строка | Нет <br>По умолчанию: по снижению | Имя атрибута, который используется для сортировки списка сущностей. При желании можно указать восходящий или нисходящий порядок. Недопустимый формат: *name:asc* или *name:desc*.
   
  <br>

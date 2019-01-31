@@ -3,17 +3,17 @@ title: Рекомендации по настройке производител
 description: Рекомендации по настройке производительности для Spark в Azure Data Lake Storage 2-го поколения
 services: storage
 author: swums
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 8be8fa68b48257a8d94d3ba6364d47c522bbf3de
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
+ms.openlocfilehash: 78402299aa0abc9b51b2995ffe6d2fc9b55c02aa
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54402002"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55241430"
 ---
 # <a name="performance-tuning-guidance-for-spark-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 2-го поколения
 

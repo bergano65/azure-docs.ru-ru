@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 18a32f5e07470f71ba276fbe3a2633150b1bf188
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: 43d72b88c96b45939cb394a26881b1272e250819
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53754670"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55217260"
 ---
 # <a name="tutorial-group-and-extract-related-data"></a>Руководство. Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
@@ -33,7 +33,7 @@ ms.locfileid: "53754670"
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Импорт примера приложения
+> * Импортировать пример приложения
 > * Создавать намерение.
 > * Добавление составной сущности 
 > * Train
@@ -108,11 +108,11 @@ LUIS предоставляет несколько предварительно 
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Опубликуйте приложение, чтобы в обученную модель можно было отправлять запросы из конечной точки
+## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Публикация приложения, чтобы в обученную модель можно было отправлять запросы из конечной точки
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получите намерение и прогнозирование сущности из конечной точки 
+## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получение намерения и прогнозирование сущности из конечной точки 
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
@@ -194,7 +194,7 @@ LUIS предоставляет несколько предварительно 
 * Сведения о понятии [составной сущности](luis-concept-entity-types.md)
 * [Обучение](luis-how-to-train.md)
 * [Как опубликовать предложение](luis-how-to-publish-app.md)
-* [Тестирование на портале LUIS](luis-interactive-test.md)
+* [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

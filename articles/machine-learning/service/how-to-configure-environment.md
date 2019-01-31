@@ -6,18 +6,18 @@ services: machine-learning
 author: rastala
 ms.author: roastala
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.reviewer: larryfr
 manager: cgronlun
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0f53b3cec843ca8016c61a360025b5e731b96f55
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 02d0afd18ad966baf8954ae5add180c970fe302e
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54815877"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247414"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "54815877"
 
 Чтобы начать разработку с помощью Записных книжек Azure, обратитесь к статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md).
 
-По умолчанию Записные книжки Azure используют бесплатный уровень обслуживания, который ограничен 4 ГБ памяти и 1 ГБ данных. Однако вы можете снять эти ограничения, подключив экземпляр Виртуальной машины для обработки и анализа данных к проекту Записных книжек Azure. Дополнительные сведения см. в статье [Manage and configure Azure Notebooks projects — Compute tier](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier) (Управление и настройка проектов Записных книжек Azure — уровень вычислений).
+По умолчанию Записные книжки Azure используют бесплатный уровень обслуживания, который ограничен 4 ГБ памяти и 1 ГБ данных. Однако вы можете снять эти ограничения, подключив экземпляр Виртуальной машины для обработки и анализа данных к проекту Записных книжек Azure. Дополнительные сведения см. в статье [Manage and configure Azure Notebooks projects — Compute tier](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier) (Управление и настройка проектов Записных книжек Azure — уровень вычислений).
 
 ## <a id="dsvm"></a>Виртуальная машина для обработки и анализа данных
 

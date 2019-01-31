@@ -4,19 +4,19 @@ titleSuffix: Azure Machine Learning service
 description: Сведения о проведении одноузлового и распределенного обучения моделей TensorFlow с помощью средства оценки TensorFlow
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: conceptual
 ms.author: minxia
 author: mx-iao
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: d15d3ed115009ad1395a85d36e833d85197d4d19
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: c76a94695114888ca8946106528fe179ff81c811
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53094119"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244731"
 ---
 # <a name="train-tensorflow-models-with-azure-machine-learning-service"></a>Обучение моделей TensorFlow с помощью Службы машинного обучения Azure
 
@@ -49,7 +49,7 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 --|--
 `source_directory` | Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
 `script_params` | Словарь, указывающий аргументы командной строки для сценария обучения `entry_script` в виде пар <аргумент командной строки, значение>.
-`compute_target` | Целевой объект удаленных вычислений, на котором будет выполняться скрипт обучения. В данном случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
+`compute_target` | Удаленный целевой объект вычислений, на котором будет выполняться сценарий обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
 `entry_script` | Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages` | Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda. В этом случае сценарий обучения использует `sklearn` для загрузки данных, поэтому необходимо указать этот пакет для установки.  Параметр `pip_packages` конструктора можно использовать для всех необходимых пакетов pip.
 `use_gpu` | Присвойте этому флагу значение `True`, чтобы использовать GPU для обучения. По умолчанию равен `False`.
@@ -173,8 +173,8 @@ run = exp.submit(tf_est)
 
 ## <a name="examples"></a>Примеры
 
-записных книжек по распределенному глубокому обучению см. в репозитории GitHub, раздел
-* [How-to-Use-azureml/Training-WITH-Deep-Learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning).
+Записные книжки по распределенному глубокому обучению см. в репозитории GitHub, раздел
+* [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

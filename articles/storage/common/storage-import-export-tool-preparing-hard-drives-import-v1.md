@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 01/15/2017
 ms.author: muralikk
-ms.component: common
-ms.openlocfilehash: 861b3302e065689a4ea9c0df0879f9c0df12e619
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: common
+ms.openlocfilehash: 185e243838d2ccdc920fa5b5714995801567a24f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526952"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454680"
 ---
 # <a name="preparing-hard-drives-for-an-import-job"></a>Подготовка жестких дисков для задания импорта
 Чтобы подготовить один или несколько жестких дисков к заданию импорта, сделайте следующее:
@@ -172,7 +172,7 @@ WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AbortSession
 * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup-v1.md)
 * [Настройка свойств и метаданных во время импорта](storage-import-export-tool-setting-properties-metadata-import-v1.md)
 * [Пример рабочего процесса по подготовке жестких дисков для задания импорта](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md)
-* [Краткий справочник по часто используемым командам](storage-import-export-tool-quick-reference-v1.md) 
+* [Краткий справочник по часто используемым командам](storage-import-export-tool-quick-reference-v1.md) 
 * [Просмотр состояния задания с помощью файлов журнала копирования](storage-import-export-tool-reviewing-job-status-v1.md)
 * [Подготовка задания импорта](storage-import-export-tool-repairing-an-import-job-v1.md)
 * [Подготовка задания экспорта](storage-import-export-tool-repairing-an-export-job-v1.md)

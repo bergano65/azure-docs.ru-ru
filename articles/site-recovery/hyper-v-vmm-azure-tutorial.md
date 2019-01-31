@@ -1,7 +1,20 @@
 ---
-заголовок: Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM с помощью Azure Site Recovery | Документация Майкрософт описание: Узнайте, как настроить аварийное восстановление в Azure для локальных виртуальных машин Hyper-V в облаках System Center VMM с помощью службы Azure Site Recovery.
-services: site-recovery author: rayne-wiselman ms.service: site-recovery ms.topic: conceptual ms.date: 12/27/2018 ms.author: raynew ms.custom: MVC
-
+title: Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как настроить аварийное восстановление в Azure для локальных виртуальных машин Hyper-V в облаках System Center VMM с помощью службы Azure Site Recovery.
+services: site-recovery
+author: rayne-wiselman
+ms.service: site-recovery
+ms.topic: conceptual
+ms.date: 12/27/2018
+ms.author: raynew
+ms.custom: MVC
+ms.openlocfilehash: 5dfa5bba41785532db07c7b8569f2e1e1d3e0004
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55300461"
+---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM
 
 Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию аварийного восстановления за счет управления процессами репликации, отработки отказа и восстановления локальных компьютеров и виртуальных машин Azure.
@@ -47,7 +60,7 @@ services: site-recovery author: rayne-wiselman ms.service: site-recovery ms.topi
 4. Скачайте ключ регистрации хранилища. Он понадобится при запуске программы установки поставщика. Ключ действителен в течение пяти дней после создания.
 5. Скачайте агент служб восстановления.
 
-    ![Загрузка](./media/hyper-v-vmm-azure-tutorial/download-vmm.png)
+    ![Download (Скачать)](./media/hyper-v-vmm-azure-tutorial/download-vmm.png)
 
 ### <a name="install-the-provider-on-the-vmm-server"></a>Установка поставщика на сервер VMM
 
