@@ -166,28 +166,28 @@ ms.locfileid: "54022297"
 
 | Тип данных SAP BW | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| ACCP | int |
-| CHAR | Строка |
-| CLNT | Строка |
+| ACCP | Int |
+| CHAR | String |
+| CLNT | String |
 | CURR | Decimal |
-| CUKY | Строка |
+| CUKY | String |
 | DEC | Decimal |
 | FLTP | Double |
 | INT1 | Byte |
 | INT2 | Int16 |
-| INT4 | int |
-| LANG | Строка |
-| LCHR | Строка |
+| INT4 | Int |
+| LANG | String |
+| LCHR | String |
 | LRAW | Byte[] |
 | PREC | Int16 |
 | QUAN | Decimal |
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
-| STRING | Строка |
-| ЕДИНИЦА ИЗМЕРЕНИЯ | Строка |
-| DATS | Строка |
-| NUMC | Строка |
-| TIMS | Строка |
+| STRING | String |
+| UNIT | String |
+| DATS | String |
+| NUMC | String |
+| TIMS | String |
 
 
 ## <a name="next-steps"></a>Дополнительная информация
