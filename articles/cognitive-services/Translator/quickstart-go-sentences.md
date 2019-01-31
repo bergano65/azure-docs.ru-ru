@@ -6,16 +6,16 @@ services: cognitive-services
 author: erhopf
 manager: erhopf
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 12/05/2018
 ms.author: erhopf
-ms.openlocfilehash: 71b88afeb941e6b635548468e634e07597318116
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 5f4a4a4518eb973dc9d2c7cbcb34683fe0b3db08
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994112"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55226848"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-go"></a>Краткое руководство. Определение длины предложения с помощью C# и API перевода текстов
 
@@ -88,7 +88,7 @@ func breakSentence(subscriptionKey string) {
 }
 ```
 
-Затем давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`.
+Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`.
 
 Скопируйте этот код в функцию `breakSentence`.
 
@@ -119,7 +119,7 @@ b, _ := json.Marshal(body)
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Теперь, когда вы закодировали текст запроса как объект JSON, создайте запрос POST и вызовите API перевода текстов.
+Теперь, когда вы закодировали текст запроса в формате JSON, можно создать запрос POST и вызвать API перевода текстов.
 
 ```go
 // Build the HTTP POST request
@@ -140,7 +140,7 @@ if err != nil {
 
 ## <a name="handle-and-print-the-response"></a>Обработка и вывод ответа
 
-Добавьте этот код в функцию `breakSentence`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
+Добавьте следующий код в функцию `breakSentence`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
 
 ```go
 // Decode the JSON response
@@ -190,7 +190,7 @@ go run sentence-length.go
 
 ## <a name="see-also"></a>См. также
 
-Узнайте, как использовать API перевода текстов, чтобы выполнять такие задачи:
+Узнайте, как с помощью API перевода текстов выполнять следующие задачи:
 
 * [перевод текста](quickstart-go-translate.md);
 * [транслитерация текста](quickstart-go-transliterate.md);
