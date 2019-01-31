@@ -1,5 +1,5 @@
 ---
-title: Azure AD Connect. Обновление службы DirSync | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Обновление службы DirSync | Документация Майкрософт'
 description: Узнайте, как обновить DirSync до Azure AD Connect. В этой статье описывается процедура обновления DirSync до Azure AD Connect
 services: active-directory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/13/2017
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9ec2cdd26db03698a3093336b500cb66e2125c50
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 12a11e444372ad7004e566851532a98be63af8e8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54467814"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195364"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect выполняет следующие функции: Обновление из DirSync
 Azure AD Connect является преемником Microsoft Azure Active Directory Sync Tool (DirSync). В этой статье описано, как можно обновить DirSync. Следующие действия не подходят для обновления другого выпуска Azure AD Connect или Azure AD Sync.
