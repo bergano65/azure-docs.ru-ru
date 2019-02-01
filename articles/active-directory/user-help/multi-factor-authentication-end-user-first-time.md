@@ -9,16 +9,16 @@ ms.reviewer: richagi
 ms.assetid: 46f83a6a-dbdd-4375-8dc4-e7ea77c16357
 ms.workload: identity
 ms.service: active-directory
-ms.component: user-help
+ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: lizross
-ms.openlocfilehash: a5cb5a879687bdbea043d582526f4dd357a2a620
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d53221a8bed6995231385cae21a8994fce132a30
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54809927"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55175916"
 ---
 # <a name="set-up-my-account-for-two-step-verification"></a>Настройка учетной записи для двухфакторной проверки подлинности
 Двухфакторная проверка подлинности — это этап дополнительного обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа. Если вы читаете эту статью, скорее всего, вы получили по электронной почте уведомление о многофакторной проверке подлинности от администратора вашей организации или учебного заведения. Или, возможно, вы попытались выполнить вход и получили сообщение с просьбой настроить дополнительную проверку безопасности. В этом случае **вы не сможете войти в учетную запись, пока не завершите процесс автоматической регистрации**.

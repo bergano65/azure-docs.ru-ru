@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 12/3/2018
 ms.author: pabouwer
-ms.openlocfilehash: 33a72b6e8fdd4a66425405ff15d7cc31461c0bf3
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: ecabb139b79494e8a62687a5634d9865d578c5c6
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52893307"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104476"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "52893307"
 > * скачивание Istio;
 > * установка двоичного файла клиента Istio;
 > * установка компонентов Istio для Kubernetes;
-> * проверка установки.
+> * проверка установки
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -141,7 +141,7 @@ cd istio-$ISTIO_VERSION
 New-Item -ItemType Directory -Force -Path "C:/Program Files/Istio"
 mv ./bin/istioctl.exe "C:/Program Files/Istio/"
 $PATH = [environment]::GetEnvironmentVariable("PATH", "User")
-[environment]::SetEnvironmentVariable("PATH", $PATH + "; C:/Program Files/Istio/", "User")
+[environment]::SetEnvironmentVariable("PATH", $PATH + "; C:\Program Files\Istio\", "User")
 ```
 
 ## <a name="install-the-istio-kubernetes-components"></a>Установка компонентов Istio для Kubernetes
@@ -158,7 +158,7 @@ helm install install/kubernetes/helm/istio --name istio --namespace istio-system
 
 Схема Helm развертывает большое число объектов. В зависимости от окружения кластера развертывание может занять 2–3 минуты.
 
-## <a name="validate-the-installation"></a>Проверка установки
+## <a name="validate-the-installation"></a>проверка установки
 
 Чтобы убедиться, что развертывание Istio прошло успешно, давайте проверим установку.
 

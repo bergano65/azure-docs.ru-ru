@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 01/23/2019
 ms.author: jingwang
-ms.openlocfilehash: 48f33dcf66c282ee75fe665531e1c9a4eb0d5382
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: c429945d4832710125a419b4e9a9b9165869ca97
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305950"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54888691"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -554,9 +554,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 | binary; | Byte[] |
 | bit | Логическое |
 | char; | String, Char[] |
-| дата | Datetime |
-| DateTime | Datetime |
-| datetime2; | Datetime |
+| дата | DateTime |
+| DateTime | DateTime |
+| datetime2; | DateTime |
 | Datetimeoffset | DateTimeOffset |
 | Decimal | Decimal |
 | Атрибут FILESTREAM (varbinary(max)) | Byte[] |
@@ -570,12 +570,12 @@ All columns of the table must be specified in the INSERT BULK statement.
 | nvarchar; | String, Char[] |
 | real; | Single |
 | rowversion | Byte[] |
-| smalldatetime; | Datetime |
+| smalldatetime; | DateTime |
 | smallint; | Int16 |
 | smallmoney; | Decimal |
-| sql_variant | Object * |
+| sql_variant | Объект. |
 | текст | String, Char[] |
-| Twitter в режиме реального | Интервал времени |
+| Twitter в режиме реального | TimeSpan |
 |  timestamp | Byte[] |
 | tinyint; | Byte |
 | uniqueidentifier | Guid |

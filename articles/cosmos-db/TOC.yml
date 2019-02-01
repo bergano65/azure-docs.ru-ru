@@ -254,14 +254,6 @@ items:
       items:
       - name: Настройка производительности запросов
         href: sql-api-query-metrics.md
-      - name: Программирование на стороне сервера
-        items:
-        - name: Запись хранимых процедур, триггеров и определяемых пользователем функций
-          href: how-to-write-stored-procedures-triggers-udfs.md
-        - name: Запись хранимых процедур и триггеров с помощью API запросов JavaScript
-          href: how-to-write-javascript-query-api.md
-        - name: Использование хранимых процедур, триггеров и определяемых пользователем функций
-          href: how-to-use-stored-procedures-triggers-udfs.md
       - name: Типы данных
         items:
         - name: DateTime
@@ -337,7 +329,7 @@ items:
         - name: Приложение Node.js и React
           href: tutorial-develop-mongodb-react.md
       - name: 2. Перенос данных
-        href: mongodb-migrate.md
+        href: https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json
       - name: 3. Запрос данных
         href: tutorial-query-mongodb.md
       - name: 4. Глобальное распределение данных
@@ -497,6 +489,14 @@ items:
       items:
       - name: Управление индексированием
         href: how-to-manage-indexing-policy.md
+  - name: Программирование на стороне сервера
+    items:
+    - name: Запись хранимых процедур, триггеров и определяемых пользователем функций
+      href: how-to-write-stored-procedures-triggers-udfs.md
+    - name: Запись хранимых процедур и триггеров с помощью API запросов JavaScript
+      href: how-to-write-javascript-query-api.md
+    - name: Использование хранимых процедур, триггеров и определяемых пользователем функций
+      href: how-to-use-stored-procedures-triggers-udfs.md
   - name: Безопасность
     items:
     - name: Настройка брандмауэра IP-адресов
@@ -627,9 +627,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 93d8abe428305ce62fb95afabc6ab71dfc8f67b4
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2fdf08837bc239ba10da85fad7b81c819b9f26fc
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464880"
+ms.locfileid: "55511927"

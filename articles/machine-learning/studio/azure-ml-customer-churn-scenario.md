@@ -4,18 +4,18 @@ titleSuffix: Azure Machine Learning Studio
 description: Пример разработки интегрированной модели для анализа и оценки оттока клиентов с помощью Студии машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
-ms.component: studio
+ms.subservice: studio
 ms.topic: article
 author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 12/18/2017
-ms.openlocfilehash: 153ddcc1ba0da6171963ec91511fafe84023ecf8
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
+ms.openlocfilehash: 47d267a2c4c122d8acbb2d3bf40e6858b4d6b77c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54401978"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244187"
 ---
 # <a name="analyze-customer-churn-using-azure-machine-learning-studio"></a>Анализ оттока клиентов с помощью Студии машинного обучения Azure
 ## <a name="overview"></a>Обзор
@@ -106,7 +106,7 @@ ms.locfileid: "54401978"
  
 
 > Обратите внимание, что эти данные являются частными, поэтому общий доступ к модели и данным должен быть ограничен.
-> Тем не менее для построения аналогичной модели в примере эксперимента [Telco Customer Churn](http://gallery.cortanaintelligence.com/Experiment/31c19425ee874f628c847f7e2d93e383) из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com/) используются общедоступные данные.
+> Тем не менее для построения аналогичной модели в примере эксперимента Telco Customer Churn из Коллекции решений ИИ Azure используются общедоступные данные.
 > 
 > Чтобы больше узнать о реализации модели анализа оттока клиентов с помощью Cortana Intelligence Suite, просмотрите [это видео](https://info.microsoft.com/Webinar-Harness-Predictive-Customer-Churn-Model.html) с участием старшего руководителя программы Ви Хен Тока (Wee Hyong Tok). 
 > 

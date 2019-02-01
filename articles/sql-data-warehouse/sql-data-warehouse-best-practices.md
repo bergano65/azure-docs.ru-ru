@@ -6,16 +6,16 @@ author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 11/26/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 0324a6f71a0a30fc9f3005a041b4c5413e6af8da
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 4d61176030285556545e5619669d07c62d908a4e
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317308"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471459"
 ---
 # <a name="best-practices-for-azure-sql-data-warehouse"></a>Рекомендации по использованию хранилища данных SQL Azure
 В этой статье содержится ряд рекомендаций, которые помогут достичь оптимальной производительности хранилища данных SQL Azure.  Некоторые понятия, рассмотренные в этой статье, достаточно простые и понятные, но есть и понятия, предназначенные для более опытных пользователей, поэтому они рассмотрены лишь в общих чертах.  Здесь представлены основные рекомендации и сведения относительно важных моментов, которые следует учитывать при создании хранилища данных.  В каждом разделе содержится краткое описание определенных понятий и ссылки на статьи с более подробными сведениями.

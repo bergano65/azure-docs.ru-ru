@@ -7,7 +7,7 @@ author: barbkess
 manager: daveba
 ms.assetid: ''
 ms.service: active-directory
-ms.component: app-mgmt
+ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 2a13df5fc609fe7cfddff91841e082c123d758f5
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 6cd926536242563d3114a30adce1568a1f7424e0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468805"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55171802"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Проблемы при входе в приложение Майкрософт
 
@@ -178,7 +178,7 @@ ms.locfileid: "54468805"
 
 Чтобы включить самостоятельный сброс пароля, следуйте указанным ниже разделам по развертыванию.
 
--   [Разрешение пользователям сбрасывать пароли Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started#enable-users-to-reset-their-azure-ad-passwords)
+-   [Разрешение пользователям сбрасывать пароли Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
 
 -   [Разрешение пользователям сбрасывать или изменять пароли AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)
 
@@ -204,7 +204,7 @@ ms.locfileid: "54468805"
 
 9.  Выберите его из списка пользователей и по своему усмотрению **включите**, **отключите** или **примените** Многофакторную Идентификацию.
 
-  * **Примечание**. Если пользователь находится в состоянии **Принудительно**, можно временно задать состояние **Отключено**, чтобы разрешить ему вернуться в свою учетную запись. После этого можно снова изменить состояние на **Включено**, чтобы при следующем входе пользователь повторно зарегистрировал контактные данные. Кроме того, можно выполнить действия, описанные в разделе [Проверка контактной информации для проверки подлинности](#check-a-users-authentication-contact-info), чтобы проверить или задать эти данные для пользователя.
+  * **Примечание**. Если пользователь находится в состоянии Принудительно, можно временно задать состояние **Отключено**, чтобы разрешить ему вернуться в свою учетную запись. После этого можно снова изменить состояние на **Включено**, чтобы при следующем входе пользователь повторно зарегистрировал контактные данные. Кроме того, можно выполнить действия, описанные в разделе [Проверка контактной информации для проверки подлинности](#check-a-users-authentication-contact-info), чтобы проверить или задать эти данные для пользователя.
 
 ### <a name="check-a-users-authentication-contact-info"></a>Проверка контактной информации для проверки подлинности
 
