@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Службы Базы данных SQL
   items:
-  - name: Что собой представляет База данных SQL
+  - name: Что такое база данных SQL
     href: sql-database-technical-overview.md
   - name: Выбор версии Azure SQL
     href: sql-database-paas-vs-sql-server-iaas.md
@@ -21,7 +21,7 @@ items:
       href: sql-database-managed-instance-get-started.md
   - name: Настройка
     items:
-    - name: Правило брандмауэра для логического сервера
+    - name: Правила брандмауэра для сервера Базы данных SQL
       href: sql-database-get-started-portal-firewall.md
     - name: Подключение клиентской виртуальной машины к Управляемому экземпляру
       href: sql-database-managed-instance-configure-vm.md
@@ -31,7 +31,7 @@ items:
     items:
     - name: Импорт BACPAC-файла в новую базу данных
       href: sql-database-import.md
-    - name: Восстановление резервной копии базы данных в Управляемый экземпляр
+    - name: Восстановление резервной копии базы данных в управляемый экземпляр
       href: sql-database-managed-instance-get-started-restore.md
   - name: Запрос
     href: sql-database-connect-query.md
@@ -75,9 +75,9 @@ items:
       href: sql-database-design-first-database-csharp.md
   - name: Миграция в Базу данных SQL Azure
     items:
-    - name: Миграция в отдельную базу данных с помощью DMS
+    - name: Миграция в отдельную базу данных или базу данных в составе пула с помощью DMS
       href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
-    - name: Миграция в Управляемый экземпляр с помощью DMS
+    - name: Миграция в управляемый экземпляр с помощью DMS
       href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
   - name: Защита данных в Базе данных SQL Azure
     items:
@@ -115,11 +115,11 @@ items:
     items:
     - name: Обзор
       href: sql-database-service-tiers-general-purpose-business-critical.md
-    - name: Общего назначения (цен. категория "Стандартный")
+    - name: Уровни служб "Общего назначения" и "Стандартный"
       href: sql-database-service-tier-general-purpose.md
-    - name: Критически важный для бизнеса (цен. категория "Премиум")
+    - name: Уровни служб "Критически важный для бизнеса" и "Премиум"
       href: sql-database-service-tier-business-critical.md
-    - name: Уровень "Гипермасштабирование"
+    - name: Уровень службы "Гипермасштабирование"
       href: sql-database-service-tier-hyperscale.md
     - name: Часто задаваемые вопросы о гипермасштабировании
       href: sql-database-service-tier-hyperscale-faq.md
@@ -127,36 +127,40 @@ items:
     items:
     - name: Общие сведения об отдельных базах данных
       href: sql-database-single-index.yml
-    - name: Справочник по API для управления
+    - name: Серверы Базы данных SQL
+      items:
+      - name: Обзор сервера базы данных
+        href: sql-database-servers.md
+      - name: Ограничения ресурсов сервера базы данных
+        href: sql-database-resource-limits-database-server.md
+    - name: Ресурсы отдельной базы данных
+      items:
+      - name: Ограничения ресурсов на основе виртуальных ядер
+        href: sql-database-vcore-resource-limits-single-databases.md
+      - name: Ограничения ресурсов на основе DTU
+        href: sql-database-dtu-resource-limits-single-databases.md
+      - name: Масштабирование ресурсов
+        href: sql-database-single-database-scale.md
+    - name: Создание серверов и баз данных и управление ими
       href: sql-database-single-databases-manage.md
-    - name: Логические серверы
-      items:
-      - name: Создание и управление
-        href: sql-database-logical-servers.md
-      - name: Ограничения ресурсов
-        href: sql-database-resource-limits-logical-server.md
-      - name: Архитектура подключения
-        href: sql-database-connectivity-architecture.md
+    - name: Архитектура подключения
+      href: sql-database-connectivity-architecture.md
+    - name: Отличия T-SQL
+      href: sql-database-transact-sql-information.md
+  - name: Пулы эластичных БД
+    items:
     - name: Пулы эластичных БД
+      href: sql-database-elastic-pool.md
+    - name: Ресурсы эластичного пула
       items:
-      - name: Пулы эластичных БД
-        href: sql-database-elastic-pool.md
-      - name: Создание и управление
-        href: sql-database-elastic-pool-manage.md
       - name: Ограничения ресурсов на основе виртуальных ядер
         href: sql-database-vcore-resource-limits-elastic-pools.md
       - name: Ограничения ресурсов на основе DTU
         href: sql-database-dtu-resource-limits-elastic-pools.md
       - name: Масштабирование ресурсов
         href: sql-database-elastic-pool-scale.md
-    - name: Ограничения ресурсов на основе виртуальных ядер
-      href: sql-database-vcore-resource-limits-single-databases.md
-    - name: Ограничения ресурсов на основе DTU
-      href: sql-database-dtu-resource-limits-single-databases.md
-    - name: Масштабирование ресурсов
-      href: sql-database-single-database-scale.md
-    - name: Отличия T-SQL
-      href: sql-database-transact-sql-information.md
+    - name: Создание и управление
+      href: sql-database-elastic-pool-manage.md
   - name: Управляемые экземпляры
     items:
     - name: Общие сведения об управляемых экземплярах
@@ -209,9 +213,9 @@ items:
       href: sql-database-security-index.yml
     - name: Возможности системы безопасности
       href: sql-database-security-overview.md
-    - name: Advanced Threat Protection
+    - name: Расширенная защита данных
       items:
-      - name: Advanced Threat Protection
+      - name: Расширенная защита данных
         href: sql-advanced-threat-protection.md
       - name: Обнаружение и классификация данных
         href: sql-database-data-discovery-and-classification.md
@@ -561,7 +565,7 @@ items:
           href: saas-tenancy-welcome-wingtip-tickets-app.md
         - name: Общее руководство
           href: saas-tenancy-wingtip-app-guidance-tips.md
-        - name: Автономное приложение
+        - name: Отдельное приложение
           items:
           - name: Развертывание примера приложения
             href: saas-standaloneapp-get-started-deploy.md
@@ -696,9 +700,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: b69adc5f54e2566f62049225ccb0fc438a33ca6e
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 0c34894ea3a09a4cd630938a045e0ab78681c10f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226814"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471034"

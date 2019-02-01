@@ -1,82 +1,87 @@
+items:
 - name: Azure для контейнеров
   href: index.yml
   items:
-    - name: Служба Kubernetes (AKS)
-      href: 'https://docs.microsoft.com/azure/aks/'
-      expanded: true
+  - name: Служба Kubernetes (AKS)
+    href: https://docs.microsoft.com/azure/aks/
+    items:
+    - name: Общие сведения об AKS
+      href: ../aks/intro-kubernetes.md
+    - name: Краткое руководство. Развертывание кластера AKS
+      href: ../aks/kubernetes-walkthrough.md
+    expanded: true
+  - name: Экземпляры контейнеров (ACI)
+    href: https://docs.microsoft.com/azure/container-instances/
+    items:
+    - name: Краткое руководство. Создание экземпляра контейнера
+      href: https://docs.microsoft.com/azure/container-instances/container-instances-quickstart
+    - name: Руководство. Создание и развертывание контейнера
       items:
-        - name: Общие сведения об AKS
-          href: ../aks/intro-kubernetes.md
-        - name: Развертывание кластера AKS
-          href: ../aks/kubernetes-walkthrough.md
-    - name: Экземпляры контейнеров (ACI)
-      href: 'https://docs.microsoft.com/azure/container-instances/'
+      - name: 1. Создание образа контейнера
+        href: https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app
+      - name: 2. Создание реестра контейнеров
+        href: https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-acr
+      - name: 3. Развертывание приложения
+        href: https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-deploy-app
+  - name: Реестр контейнеров (ACR)
+    href: https://docs.microsoft.com/azure/container-registry/
+    items:
+    - name: Краткое руководство. Создание реестра
+      href: https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli
+    - name: Руководство. Создание образов контейнеров
       items:
-        - name: Краткое руководство. Создание экземпляра контейнера
-          href: 'https://docs.microsoft.com/azure/container-instances/container-instances-quickstart'
-        - name: Руководство. Создание и развертывание контейнера
-          items:
-            - name: 1. Создание образа контейнера
-              href: 'https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app'
-            - name: 2. Создание реестра контейнеров
-              href: 'https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-acr'
-            - name: 3. Развертывание приложения
-              href: 'https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-deploy-app'
-    - name: Реестр контейнеров (ACR)
-      href: 'https://docs.microsoft.com/azure/container-registry/'
+      - name: 1. Создание образов в Azure
+        href: ../container-registry/container-registry-tutorial-quick-task.md
+      - name: 2. Автоматизация создания образов
+        href: ../container-registry/container-registry-tutorial-build-task.md
+      - name: 3. Создание обновлений базовых образов
+        href: ../container-registry/container-registry-tutorial-base-image-update.md
+  - name: Веб-приложение для контейнеров
+    href: https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro
+    items:
+    - name: Применение пользовательского образа Docker для веб-приложений Azure для контейнеров
+      href: https://docs.microsoft.com/azure/app-service/containers/tutorial-custom-docker-image
+    - name: Руководство. Создание многоконтейнерного приложения
+      href: https://docs.microsoft.com/azure/app-service/containers/tutorial-multi-container-app
+  - name: Service Fabric
+    href: https://docs.microsoft.com/azure/service-fabric/
+    items:
+    - name: Обзор. Service Fabric и контейнеры
+      href: https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview
+    - name: Практическое руководство
       items:
-        - name: Создание реестра с помощью CLI
-          href: 'https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli'
-        - name: Практическое руководство
-          items:
-            - name: Передача и получение образа
-              href: 'https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli'
-            - name: Просмотр списка репозиториев
-              href: 'https://docs.microsoft.com/azure/container-registry/container-registry-repositories'
-            - name: Создание субъекта-службы
-              href: 'https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal?toc=%2fazure%2fcontainer-registry%2ftoc.json'
-            - name: Аутентификация с помощью реестра
-              href: 'https://docs.microsoft.com/azure/container-registry/container-registry-authentication'
-            - name: Использование веб-перехватчиков ACR
-              href: 'https://docs.microsoft.com/azure/container-registry/container-registry-webhook'
-    - name: Веб-приложение для контейнеров
-      href: 'https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro'
-      items:
-        - name: Применение пользовательского образа Docker для веб-приложений Azure для контейнеров
-          href: 'https://docs.microsoft.com/azure/app-service/containers/tutorial-custom-docker-image'
-    - name: Service Fabric
-      href: 'https://docs.microsoft.com/azure/service-fabric/'
-      items:
-        - name: Обзор. Service Fabric и контейнеры
-          href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview'
-        - name: Практическое руководство
-          items:
-            - name: Создание приложения-контейнера в Windows
-              href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers'
-            - name: Создание приложения-контейнера в Linux
-              href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers-linux'
-            - name: Контейнеризация существующего приложения .NET
-              href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-host-app-in-a-container'
-    - name: Контейнеры Windows
-      href: 'https://docs.microsoft.com/azure/virtual-machines/windows/overview'
-      items:
-        - name: Краткое руководство. Контейнеры Windows в Windows Server
-          href: 'https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server'
-        - name: Сведения о контейнерах Windows
-          href: 'https://docs.microsoft.com/virtualization/windowscontainers/about/index'
-    - name: Справочные материалы
-      items:
-        - name: Служба "Экземпляры контейнеров Azure" (az container)
-          href: 'https://docs.microsoft.com/cli/azure/container'
-        - name: Служба контейнеров Azure (az acs)
-          href: 'https://docs.microsoft.com/cli/azure/acs'
-        - name: Реестр контейнеров Azure (az acr)
-          href: 'https://docs.microsoft.com/cli/azure/acr'
-        - name: Веб-приложение для контейнеров (az appservice)
-          href: 'https://docs.microsoft.com/cli/azure/appservice'
-        - name: Веб-приложение службы приложений Azure (az webapp)
-          href: 'https://docs.microsoft.com/cli/azure/webapp'
-        - name: Azure Service Fabric (az sf)
-          href: 'https://docs.microsoft.com/cli/azure/sf'
-        - name: Виртуальные машины Azure (az vm)
-          href: 'https://docs.microsoft.com/cli/azure/vm'
+      - name: Создание приложения-контейнера в Windows
+        href: https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers
+      - name: Создание приложения-контейнера в Linux
+        href: https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers-linux
+      - name: Контейнеризация существующего приложения .NET
+        href: https://docs.microsoft.com/azure/service-fabric/service-fabric-host-app-in-a-container
+  - name: Контейнеры Windows
+    href: https://docs.microsoft.com/azure/virtual-machines/windows/overview
+    items:
+    - name: Краткое руководство. Контейнеры Windows в Windows Server
+      href: https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server
+    - name: Сведения о контейнерах Windows
+      href: https://docs.microsoft.com/virtualization/windowscontainers/about/index
+  - name: Справочные материалы
+    items:
+    - name: Служба "Экземпляры контейнеров Azure" (az container)
+      href: https://docs.microsoft.com/cli/azure/container
+    - name: Служба контейнеров Azure (az acs)
+      href: https://docs.microsoft.com/cli/azure/acs
+    - name: Реестр контейнеров Azure (az acr)
+      href: https://docs.microsoft.com/cli/azure/acr
+    - name: Веб-приложение для контейнеров (az appservice)
+      href: https://docs.microsoft.com/cli/azure/appservice
+    - name: Веб-приложение службы приложений Azure (az webapp)
+      href: https://docs.microsoft.com/cli/azure/webapp
+    - name: Azure Service Fabric (az sf)
+      href: https://docs.microsoft.com/cli/azure/sf
+    - name: Виртуальные машины Azure (az vm)
+      href: https://docs.microsoft.com/cli/azure/vm
+ms.openlocfilehash: 9ee48a00784c0ca9fa00507e2956e34e7e6792d5
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55486237"

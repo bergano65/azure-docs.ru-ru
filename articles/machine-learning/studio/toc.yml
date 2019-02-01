@@ -15,8 +15,6 @@ items:
   - name: Часто задаваемые вопросы
     displayName: FAQ
     href: faq.md
-  - name: Новые возможности
-    href: whats-new.md
   expanded: true
 - name: Учебники
   items:
@@ -41,8 +39,6 @@ items:
     - name: 6. Доступ к веб-службе
       displayName: consume
       href: walkthrough-6-access-web-service.md
-  - name: Начало работы с R
-    href: r-quickstart.md
 - name: Примеры
   items:
   - name: Доступные наборы данных
@@ -120,6 +116,8 @@ items:
         href: debug-models.md
     - name: Использование R и Python
       items:
+      - name: Начало работы с R
+        href: r-quickstart.md
       - name: Выполнение скриптов R
         href: extend-your-experiment-with-r.md
       - name: Создание пользовательских модулей R
@@ -208,21 +206,25 @@ items:
     href: /rest/api/machinelearning
 - name: Ресурсы
   items:
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=machine-learning-studio
+  - name: Получение поддержки
+    href: support-aml-studio.md
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
   - name: Цены
     href: https://azure.microsoft.com/pricing/details/machine-learning/
   - name: Руководство для разработчиков R
     href: ../r-developers-guide.md
-  - name: Пользовательские нейронные сети с использованием Net#
+  - name: Пользовательские нейронные сети (Net#)
     href: azure-ml-netsharp-reference-guide.md
-  - name: Получение поддержки
-    href: support-aml-studio.md
   - name: Сравнить наши продукты Машинного обучения
     href: ../service/overview-more-machine-learning.md
-ms.openlocfilehash: 12fa71315c1cb43570505d2428804f4a5348a266
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 27cd57a52b80006482f50f96120e8eaf8a8cb00e
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156094"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512199"

@@ -80,7 +80,7 @@ items:
       href: consistency-levels.md
     - name: Выбор правильного уровня согласованности
       href: consistency-levels-choosing.md
-    - name: Уровни согласованности и API Cosmos DB
+    - name: Уровни согласованности и API для Azure Cosmos DB
       href: consistency-levels-across-apis.md
     - name: Компромиссы согласованности, доступности и производительности
       href: consistency-levels-tradeoffs.md
@@ -98,9 +98,9 @@ items:
     items:
     - name: Обзор
       href: partitioning-overview.md
-    - name: Логические секции
+    - name: Секционирование и горизонтальное масштабирование
       href: partition-data.md
-    - name: Создание суррогатного ключа раздела
+    - name: Создание искусственного ключа секции
       href: synthetic-partition-keys.md
   - name: Подготовленная пропускная способность
     items:
@@ -122,7 +122,7 @@ items:
       items:
       - name: Обзор
         href: index-overview.md
-      - name: Политика индексации
+      - name: Политика индексирования
         href: index-policy.md
       - name: Типы индексов
         href: index-types.md
@@ -136,13 +136,13 @@ items:
         href: read-change-feed.md
       - name: Обработчик канала изменений
         href: change-feed-processor.md
-      - name: Использование канала изменений с Функциями Azure
+      - name: Активация Функций Azure
         href: change-feed-functions.md
     - name: Срок жизни
       href: time-to-live.md
     - name: Ограничения уникальных ключей
       href: unique-keys.md
-    - name: Транзакции и оптимистическая блокировка
+    - name: Управление транзакциями и оптимистической блокировкой
       href: database-transactions-optimistic-concurrency.md
   - name: Программирование на стороне сервера
     items:
@@ -168,9 +168,9 @@ items:
       href: optimize-cost-reads-writes.md
     - name: Оптимизация затрат на развертывание в нескольких регионах
       href: optimize-cost-regions.md
-    - name: Оптимизация затрат на рабочие нагрузки разработки и тестирования
+    - name: Оптимизация затрат на разработку и тестирование
       href: optimize-dev-test.md
-    - name: Оптимизация затрат за счет резервной мощности
+    - name: Оптимизация затрат за счет зарезервированной мощности
       href: cosmos-db-reserved-capacity.md
   - name: Безопасность
     items:
@@ -186,7 +186,7 @@ items:
       href: vnet-service-endpoint.md
   - name: Готовность к работе в масштабах предприятия
     items:
-    - name: Оперативное резервное копирование и восстановление
+    - name: Оперативное резервное копирование и восстановление по запросу
       href: online-backup-and-restore.md
     - name: Соответствие нормативным требованиям
       href: compliance.md
@@ -264,7 +264,7 @@ items:
           href: how-to-use-stored-procedures-triggers-udfs.md
       - name: Типы данных
         items:
-        - name: Datetime
+        - name: DateTime
           href: working-with-dates.md
         - name: Геопространственные данные
           href: geospatial.md
@@ -467,19 +467,19 @@ items:
   expanded: true
 - name: Практические руководства
   items:
-  - name: Управление учетной записью базы данных
+  - name: Управление учетной записью Azure Cosmos
     href: how-to-manage-database-account.md
   - name: Глобальное распределение
     items:
-    - name: Управление согласованностью
+    - name: Управление уровнями согласованности
       href: how-to-manage-consistency.md
-    - name: Управление конфликтами
+    - name: Настройка политик устранения конфликтов
       href: how-to-manage-conflicts.md
   - name: Подготовленная пропускная способность
     items:
-    - name: Обеспечение необходимой пропускной способности для контейнера
+    - name: Подготовка пропускной способности для контейнера
       href: how-to-provision-container-throughput.md
-    - name: Обеспечение необходимой пропускной способности для базы данных
+    - name: Подготовка пропускной способности для базы данных
       href: how-to-provision-database-throughput.md
   - name: Работа с контейнерами и элементами
     items:
@@ -489,9 +489,13 @@ items:
       href: how-to-query-container.md
     - name: Настройка срока жизни
       href: how-to-time-to-live.md
+    - name: Работа с данными с помощью Обозревателя службы хранилища Azure
+      href: storage-explorer.md
+    - name: Работа с данными с помощью обозревателя Azure Cosmos
+      href: data-explorer.md
     - name: Индексация
       items:
-      - name: Настройка индексирования
+      - name: Управление индексированием
         href: how-to-manage-indexing-policy.md
   - name: Безопасность
     items:
@@ -501,22 +505,18 @@ items:
       href: how-to-configure-vnet-service-endpoint.md
     - name: Настройка предоставления общего доступа к ресурсам (CORS)
       href: how-to-configure-cross-origin-resource-sharing.md
-    - name: Защита с помощью Key Vault
+    - name: Защита ключей Azure Cosmos с помощью Key Vault
       href: access-secrets-from-keyvault.md
   - name: Готовность к работе в масштабах предприятия
     items:
     - name: Восстановление данных из резервной копии
       href: how-to-backup-and-restore.md
-  - name: управление
+  - name: Управление ресурсами Azure Cosmos DB
     items:
     - name: Управление с помощью PowerShell
       href: manage-account-with-powershell.md
     - name: Управление с помощью Azure CLI
       href: manage-with-cli.md
-    - name: Управление использованием Обозревателя службы хранилища
-      href: storage-explorer.md
-    - name: Управление с помощью обозревателя данных
-      href: data-explorer.md
   - name: Ведение журналов
     items:
     - name: Ведения журнала диагностики
@@ -627,9 +627,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 72d6169090749f81025dabed2b919e6c0a1dc70f
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 93d8abe428305ce62fb95afabc6ab71dfc8f67b4
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55094484"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55464880"

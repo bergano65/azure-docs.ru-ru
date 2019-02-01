@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: feb192b32928ef66f5722b4a0141eab437bddd27
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 00752e0b42b907699e9f314c2f216b69c9d3b2e8
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203357"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55506742"
 documentType: LandingData
-title: Документация по управлению пользователями Azure Active Directory
+title: Документация по управлению корпоративными пользователями — Azure Active Directory
 metadata:
   document_id: 
   title: Документация по пользователям, группам, ролям и лицензиям Azure Active Directory
@@ -17,7 +17,7 @@ metadata:
   manager: mtillman
   ms.service: active-directory
   ms.topic: landing-page
-  ms.date: 08/12/2018
+  ms.date: 01/31/2019
   ms.author: curtand
 abstract:
   description: Средства управления пользователями Azure AD, такие как создание групп и назначение ролей администратора, помогают быстрее справляться с основными задачами и способствуют развитию. Вы можете назначать лицензии или права доступа к приложениям SaaS группам, а не отдельным пользователям, или делегировать разрешения, чтобы распределять задачи управления удостоверениями Azure AD.
