@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hub-page
-ms.date: 01/15/2019
+ms.date: 01/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 5c3a61eb4509742f8f5a8732f5d4e81cab59ff78
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: a48e252d1dce2d9142249642a6221e8913c1d92d
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54829890"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55223431"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -53,8 +53,8 @@ ms.locfileid: "54829890"
                                                                     <p> 
                                                                         <a href="/azure/azure-monitor/overview">Общие сведения об Azure Monitor</a><br/>
                                                                         <a href="/azure/azure-monitor/azure-monitor-rebrand">Изменения фирменной символики Azure Monitor</a><br/>
-                                                                        <a href="/azure/azure-monitor/platform/monitoring-data-sources">Источники данных в Azure Monitor</a><br/>
-                                                                        <a href="/azure/azure-monitor/platform/log-analytics-service-providers">Log Analytics для поставщиков служб</a><br/>
+                                                                        <a href="/azure/azure-monitor/platform/data-sources">Источники данных в Azure Monitor</a><br/>
+                                                                        <a href="/azure/azure-monitor/platform/service-providers">Log Analytics для поставщиков служб</a><br/>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -75,8 +75,8 @@ ms.locfileid: "54829890"
                                                                 <div class="cardText" style="padding-left: 0px">
                                                                     <h3>Общие сведения о безопасности</h3> 
                                                                     <p>
-                                                                        <a href="/azure/azure-monitor/platform/log-analytics-data-security">Данные журнала</a><br/>
-                                                                        <a href="/azure/azure-monitor/platform/log-analytics-personal-data-mgmt">Обработка персональных данных</a><br/>
+                                                                        <a href="/azure/azure-monitor/platform/data-security">Данные журнала</a><br/>
+                                                                        <a href="/azure/azure-monitor/platform/personal-data-mgmt">Обработка персональных данных</a><br/>
                                                                         <a href="/azure/azure-monitor/platform/roles-permissions-security">Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor</a><br/>
                                                                     </p>
                                                                     <br>
@@ -103,7 +103,7 @@ ms.locfileid: "54829890"
                                                     <h3>Мониторинг</h3>
                                                         <p>
                                                             <a href="/azure/azure-monitor/platform/data-collection">Данные мониторинга, собираемые службой Azure Monitor</a><br/>
-                                                            <a href="/azure/azure-monitor/platform/log-analytics-data-ingestion-time">Время приема данных в Log Analytics</a><br/>
+                                                            <a href="/azure/azure-monitor/platform/data-ingestion-time">Время приема данных в Log Analytics</a><br/>
                                                         </p>
                                                         <br>
                                                         <h3>Источники данных</h3>
@@ -147,7 +147,7 @@ ms.locfileid: "54829890"
                                                         <br>
                                                         <h3>реагирование на инциденты.</h3>
                                                         <p>
-                                                            <a href="/azure/azure-monitor/platform/alerts-unified">Обзор оповещений в Microsoft Azure</a><br/>
+                                                            <a href="/azure/azure-monitor/platform/alerts-overview">Обзор оповещений в Microsoft Azure</a><br/>
                                                             <a href="/azure/azure-monitor/platform/autoscale-overview">Autoscale</a><br/>
                                                             <a href="/azure/azure-monitor/platform/alerts-unified-log">Оповещения журнала в Azure Monitor</a><br/>
                                                             <a href="/azure/azure-monitor/platform/alerts-activity-log">Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor</a><br/>

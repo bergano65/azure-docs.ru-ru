@@ -6,16 +6,16 @@ services: cognitive-services
 author: v-jaswel
 manager: nolachar
 ms.service: cognitive-services
-ms.component: conversation-learner
+ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 3d029c91debfc8ed3ac24e831224426a2780b763
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 0990ae2c21017c0d6ff25478eb4b5e3bfb4f0d11
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53791078"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251441"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Использование Node.js для создания модели Conversation Learner
 
@@ -78,26 +78,18 @@ Project Conversation Learner содержит пакет SDK, добавляем
 
     Будет запущен универсальный пустой бот в `cl-bot-01/src/app.ts`.
 
-3. Запустите пользовательский интерфейс Conversation Learner.
-
-    ```bash
-    [open second command prompt window]
-    cd cl-bot-01
-    npm run ui
-    ```
-
-4. Откройте в браузере страницу http://localhost:5050. 
+3. Откройте в браузере страницу http://localhost:3978.
 
 Вы запустили Conversation Learner, и теперь вы можете создать и обучить модель Conversation Learner.  
 
 > [!NOTE]
-> При запуске доступ к Project Conversation Learner осуществляется по приглашению.  Если http://localhost:5050 показывает ошибку HTTP `403`, это означает, ваша учетная запись не была приглашена.  [Запросите приглашение](https://aka.ms/conversation-learner-request-invite).
+> При запуске доступ к Project Conversation Learner осуществляется по приглашению.  Если http://localhost:3978/ui показывает ошибку HTTP `403`, это означает, ваша учетная запись не была приглашена.  [Запросите приглашение](https://aka.ms/conversation-learner-request-invite).
 
 ## <a name="tutorials-demos-and-switching-between-bots"></a>Руководства, демонстрационные версии и переключение между ботами
 
 Приведенных выше инструкциях описан запуск пустого универсального бота.  Чтобы вместо него запустить учебный или демонстрационный бот, сделайте следующее.
 
-1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:5050/home.
+1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:3978/ui/home.
     
 2. Если запущен другой бот (например, `npm start` или `npm run demo-pizza`), остановите его.  Нет необходимости останавливать процесс пользовательского интерфейса или закрывать веб-браузер.
 
@@ -114,7 +106,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
   npm run demo-storage
   ```
 
-4. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:5050/home. 
+4. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:3978/ui/home. 
 
 5. В пользовательском интерфейсе Conversation Learner щелкните "Импортировать учебники" и выберите демонстрационную модель, соответствующую запущенному примеру.
 
@@ -122,7 +114,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
 
 ## <a name="create-a-bot-which-includes-back-end-code"></a>Создание бота с кодом серверной части
 
-1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:5050/home.
+1. Если у вас открыт пользовательский веб-интерфейс Conversation Learner, вернитесь к списку моделей, который находится по адресу http://localhost:3978/ui/home.
     
 2. Если запущен бот (например, `npm run demo-pizza`), остановите его.  Нет необходимости останавливать процесс пользовательского интерфейса или закрывать веб-браузер.
 
@@ -135,7 +127,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
     npm start
     ```
 
-5. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:5050/home. 
+5. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:3978/ui/home. 
 
 6. Создайте новую модель Conversation Learner в пользовательском интерфейсе и начните обучение.
 

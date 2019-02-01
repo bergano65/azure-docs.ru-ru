@@ -184,7 +184,7 @@ ms.locfileid: "54022297"
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
 | STRING | String |
-| UNIT | String |
+| ЕДИНИЦА ИЗМЕРЕНИЯ | String |
 | DATS | String |
 | NUMC | String |
 | TIMS | String |

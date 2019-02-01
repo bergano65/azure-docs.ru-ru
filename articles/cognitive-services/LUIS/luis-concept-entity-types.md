@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: 9149cef7ba7fa2d0a3d853c3b8e26d364f22d954
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: a6dba36eadde9bc9bb1e6ca778a3bce07b561e54
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999991"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207298"
 ---
 # <a name="entity-types-and-their-purposes-in-luis"></a>Типы сущностей и их задачи в LUIS
 
@@ -108,7 +108,7 @@ LUIS предлагает множество типов сущностей. Вы
 
 Эта сущность оптимальна для данных в таких случаях.
 
-* Данные связаны между собой. 
+* данные связаны между собой; 
 * Связаны между собой в контексте фразы.
 * для них используются различные типы сущностей;
 * должны быть сгруппированы и обработаны клиентским приложением в качестве единицы информации;

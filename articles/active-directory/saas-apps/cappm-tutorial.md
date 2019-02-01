@@ -7,19 +7,19 @@ author: jeevansd
 manager: daveba
 ms.assetid: ca9d5e71-e429-4891-8d10-3498e7210e89
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: 777e1c5003cb9da418de1a2fd1e8c568dd779cdb
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: f7d91dec828f9f10f9f127a8619c9796975788c1
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54814178"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181067"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Руководство. Интеграция Azure Active Directory с CA PPM
 

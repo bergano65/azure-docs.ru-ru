@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/08/2018
+ms.date: 01/24/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 2b10de83e00b3668f70461f76634c560bcbea1a4
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: b40ab6bcc2f718eda85ff64d69a6689e12d60ab8
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133797"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094841"
 ---
 # <a name="scaling-media-processing"></a>Масштабирование при обработке мультимедиа
 
@@ -32,13 +32,13 @@ ms.locfileid: "53133797"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-- Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
-    Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
-
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+[!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="scale-media-reserved-units-with-cli"></a>Масштабирование зарезервированных единиц кодирования с помощью интерфейса командной строки
+
+Выполните команду `mru`.
 
 Следующая команда [az ams account mru](https://docs.microsoft.com/cli/azure/ams/account/mru?view=azure-cli-latest) настраивает зарезервированные единицы мультимедиа в учетной записи amsaccount с использованием параметров **count** и **type**.
 

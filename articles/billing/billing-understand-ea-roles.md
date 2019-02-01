@@ -12,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2018
-ms.author: cwatson
-ms.openlocfilehash: 77d061166d599fe7556be7d0237100154890fe19
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.author: banders
+ms.openlocfilehash: 98ed28af8df246549fb521a81f1968e1f5c28cc4
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52577196"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54901570"
 ---
 # <a name="understand-azure-enterprise-agreement-administrative-roles-in-azure"></a>Сведения об административных ролях для соглашения Azure Enterprise в Azure
 
@@ -103,6 +103,6 @@ ms.locfileid: "52577196"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Управление доступом к данным для выставления счетов в Azure](billing-manage-access.md)
+- [Управление доступом к сведениям о счетах Azure с помощью управления доступом на основе ролей](billing-manage-access.md)
 - [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)
 - [Встроенные роли управления доступом на основе ролей в Azure](../role-based-access-control/built-in-roles.md)
