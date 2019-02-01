@@ -7,19 +7,19 @@ author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
 ms.date: 06/28/2018
 ms.author: curtand
 ms.custom: aaddev;it-pro
 ms.reviewer: jeffsta
-ms.openlocfilehash: 86f6aa0de177196bb78ecdd855b21b3158b9c672
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 4dd7f5044733f0eeb6bcf4cb59eb9785ae22d38f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37871446"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55172074"
 ---
 # <a name="azure-ad-service-limits-and-restrictions"></a>Ограничения службы Azure AD
 В этой статье перечислены ограничения на использование и другие ограничения для службы Azure Active Directory (Azure AD). Если вам нужен полный список ограничений для службы Microsoft Azure, ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md).

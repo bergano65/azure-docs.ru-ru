@@ -6,16 +6,16 @@ author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 04e489e6b6841f1038830d0b160e88111be8d838
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 60f475afd8e9d599d3771b875f15a29e8a082fb7
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301966"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55245894"
 ---
 # <a name="partitioning-tables-in-sql-data-warehouse"></a>Секционирование таблиц в хранилище данных SQL
 Советы по использованию секций таблиц в хранилище данных SQL Azure и соответствующие примеры.
@@ -70,7 +70,7 @@ WITH
 ## <a name="migrating-partitioning-from-sql-server"></a>Перенос секционирования из SQL Server
 Чтобы перенести определения секций SQL Server в хранилище данных SQL, нужно сделать следующее:
 
-- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql) SQL Server;
+- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql)SQL Server;
 - добавить определение [функции секционирования](/sql/t-sql/statements/create-partition-function-transact-sql) в инструкцию CREATE TABLE.
 
 Если вы переносите секционированную таблицу из экземпляра SQL Server, количество строк в каждой секции можно запросить с помощью приведенного ниже алгоритма SQL. Обратите внимание: если в хранилище данных SQL используется такая же степень детализации секционирования, то количество строк в секции уменьшится в 60 раз.  

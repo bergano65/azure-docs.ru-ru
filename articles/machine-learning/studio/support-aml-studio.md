@@ -4,17 +4,17 @@ titleSuffix: Azure Machine Learning Studio
 description: Получение поддержки и обучения для Студии машинного обучения Azure и предоставление отзыва для нее
 services: machine-learning
 ms.service: machine-learning
-ms.component: studio
+ms.subservice: studio
 ms.topic: conceptual
 author: peterclu
 ms.author: amlstudiodocs
 ms.date: 01/18/2019
-ms.openlocfilehash: 6d8810e84240176b15bbb5ed76cad1e080f85e92
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: f7e5881b5b046379b4c79252489a4b3dd8eb1cad
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54440134"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453252"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio"></a>Получение поддержки и обучения для Студии машинного обучения Azure
 

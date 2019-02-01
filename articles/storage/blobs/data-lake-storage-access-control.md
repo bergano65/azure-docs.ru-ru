@@ -3,17 +3,17 @@ title: Обзор управления доступом в Azure Data Lake Stora
 description: Основные принципы управления доступом в Azure Data Lake Storage 2-го поколения
 services: storage
 author: jamesbak
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
-ms.openlocfilehash: 52af1a45f920139ddda1d02734de91372fe4719d
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 3005f19ffbc4771da442e36290a5803dddebfdbb
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976597"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55240181"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения
 
@@ -245,7 +245,7 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="do-i-have-to-enable-support-for-acls"></a>Нужно ли мне активировать поддержку ACL?
 
- Нет. Управление доступом с помощью списков ACL включено для учетной записи Data Lake Storage 2-го поколения, если включена функция "Иерархическое пространство имен" (HNS).
+№ Управление доступом с помощью списков ACL включено для учетной записи Data Lake Storage 2-го поколения, если включена функция "Иерархическое пространство имен" (HNS).
 
 Если функция HNS выключена, будут по-прежнему применяться правила авторизации Azure RBAC.
 

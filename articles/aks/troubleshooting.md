@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: fd3d1c464c6f2d4cbecd715db0689581ca141769
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 17f6971cfa2dcd8c8988edc063c89859abec5367
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53654076"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55468841"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -66,28 +66,3 @@ ms.locfileid: "53654076"
 ## <a name="im-trying-to-upgrade-or-scale-and-am-getting-a-message-changing-property-imagereference-is-not-allowed-error--how-do-i-fix-this-problem"></a>При попытке обновления или масштабирования я получаю подобное сообщение: Changing property 'imageReference' is not allowed (Не разрешено изменять свойство imageReference).  Как устранить эту проблему?
 
 Возможно, вы получаете эту ошибку, потому что изменили теги в узлах агента внутри кластера AKS. Изменение и удаление тегов и других свойств ресурсов в группе ресурсов MC_* может привести к непредвиденным результатам. Изменение ресурсов в группе MC_* в кластере AKS нарушает цель уровня обслуживания (SLO).
-
-## <a name="how-do-i-renew-the-service-principal-secret-on-my-aks-cluster"></a>Как продлить срок действия секрета субъекта-службы в моем кластере AKS?
-
-По умолчанию кластеры AKS создаются вместе с субъектом-службой, срок действия которого составляет один год. Когда будет истекать срок действия, вы можете сбросить учетные данные, чтобы продлить срок действия субъекта-службы на дополнительный период времени.
-
-В этом примере выполняются следующие действия:
-
-1. получение идентификатора субъекта-службы вашего кластера с помощью команды [az aks show](/cli/azure/aks#az-aks-show);
-1. перечисление секретов клиента субъекта-службы с помощью команды [az ad sp credential list](/cli/azure/ad/sp/credential#az-ad-sp-credential-list);
-1. продление срока действия субъекта-службы на год с помощью команды [az ad sp credential-reset](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset). Для правильной работы секрет клиента субъекта-службы должен оставаться неизменным в кластере AKS.
-
-```azurecli
-# Get the service principal ID of your AKS cluster.
-sp_id=$(az aks show -g myResourceGroup -n myAKSCluster \
-    --query servicePrincipalProfile.clientId -o tsv)
-
-# Get the existing service principal client secret.
-key_secret=$(az ad sp credential list --id $sp_id --query [].keyId -o tsv)
-
-# Reset the credentials for your AKS service principal and extend for one year.
-az ad sp credential reset \
-    --name $sp_id \
-    --password $key_secret \
-    --years 1
-```

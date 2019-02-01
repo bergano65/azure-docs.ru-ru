@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
-ms.component: common
-ms.openlocfilehash: 2ae44edf0d9356000f64ab72fd609f1921cf095c
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.subservice: common
+ms.openlocfilehash: cd3ae85e88151e234d42a29ad871a18c7829b05c
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316596"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454850"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Формат файла журнала службы импорта и экспорта Azure
 Когда служба импорта и экспорта Microsoft Azure выполняет действия на диске в ходе задания импорта или экспорта, в блочные BLOB-объекты в учетной записи хранения, связанной с этим заданием, записываются журналы.  
@@ -110,9 +110,9 @@ properties-status ::=
 |`Blob`|Вложенный XML-элемент|Представляет большой двоичный объект.|  
 |`Blob/BlobPath`|Строка|URI большого двоичного объекта.|  
 |`Blob/FilePath`|Строка|Относительный путь к файлу на диске.|  
-|`Blob/Snapshot`|Datetime|Версия моментального снимка большого двоичного объекта (только для задания экспорта).|  
+|`Blob/Snapshot`|DateTime|Версия моментального снимка большого двоичного объекта (только для задания экспорта).|  
 |`Blob/Length`|Целое число |Общая длина большого двоичного объекта в байтах.|  
-|`Blob/LastModified`|Datetime|Дата и время последнего изменения большого двоичного объекта (только для задания экспорта).|  
+|`Blob/LastModified`|DateTime|Дата и время последнего изменения большого двоичного объекта (только для задания экспорта).|  
 |`Blob/ImportDisposition`|Строка|Метод обработки импорта больших двоичных объектов (только для задания импорта).|  
 |`Blob/ImportDisposition/@Status`|Атрибут, строка|Состояние метода обработки импорта.|  
 |`PageRangeList`|Вложенный XML-элемент|Представляет список диапазонов страниц для страничного BLOB-объекта.|  

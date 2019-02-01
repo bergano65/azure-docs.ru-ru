@@ -12,32 +12,32 @@ ms.author: srbozovi
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 12/14/2018
-ms.openlocfilehash: 40d07827cbd856fe3be3d797dde793b1a7f50207
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: f75ea7bd728b16c91122119c3e14da2a1e123d45
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653244"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55452317"
 ---
 # <a name="quickstart-restore-a-database-to-a-managed-instance"></a>Краткое руководство. Восстановление базы данных в Управляемый экземпляр 
 
-В этом кратком руководстве будет использоваться SQL Server Management Studio (SSMS) для восстановления базы данных (Wide World Importers — стандартный файл резервной копии) из хранилища BLOB-объектов Azure в [Управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) Базы данных SQL Azure. 
+В этом кратком руководстве будет использоваться SQL Server Management Studio (SSMS) для восстановления базы данных (Wide World Importers — стандартный файл резервной копии) из хранилища BLOB-объектов Azure в [Управляемый экземпляр](sql-database-managed-instance.md) Базы данных SQL Azure. 
 
 > [!VIDEO https://www.youtube.com/embed/RxWYojo_Y3Q]
 
 > [!NOTE]
-> * Дополнительные сведения об использовании Azure Database Migration Service (DMS) для миграции см. в статье [Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме](../dms/tutorial-sql-server-to-managed-instance.md). 
-> * Дополнительные сведения о методах миграции см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-migrate.md).
+> - Дополнительные сведения об использовании Azure Database Migration Service (DMS) для миграции см. в статье [Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме](../dms/tutorial-sql-server-to-managed-instance.md). 
+> - Дополнительные сведения о методах миграции см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-migrate.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве:
+
 - Используйте ресурсы из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 - Необходимо, чтобы на вашем компьютере была установлена последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
 - SSMS используется для подключения к Управляемому экземпляру. Ознакомьтесь с этими краткими руководствами по подключению.
-  * [Connect to an Azure SQL Database Managed Instance from an Azure VM](sql-database-managed-instance-configure-vm.md) (Подключение к Управляемому экземпляру Базы данных SQL Azure с виртуальной машины Azure).
-  * [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
-
+  - [Connect to an Azure SQL Database Managed Instance from an Azure VM](sql-database-managed-instance-configure-vm.md) (Подключение к Управляемому экземпляру Базы данных SQL Azure с виртуальной машины Azure).
+  - [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
 
 > [!NOTE]
 > Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-get-started-restore.md).
@@ -47,9 +47,7 @@ ms.locfileid: "53653244"
 С помощью SSMS выполните следующие шаги для восстановления базы данных Wide World Importers в Управляемый экземпляр. Файл резервной копии базы данных хранится в предварительно настроенной учетной записи хранения больших двоичных объектов Azure.
 
 1. Откройте SMSS и подключитесь к Управляемому экземпляру.
-
 2. В меню слева щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос**, чтобы открыть новое окно запроса.
-
 3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SQL, для [создания учетных данных](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql?view=sql-server-2017) в Управляемом экземпляре.
 
    ```sql
@@ -60,8 +58,7 @@ ms.locfileid: "53653244"
 
     ![Создание учетных данных](./media/sql-database-managed-instance-get-started-restore/credential.png)
 
-  
-3. Чтобы проверить учетные данные, запустите следующий скрипт, который использует URL-адрес [контейнера](https://azure.microsoft.com/services/container-instances/) для получения списка файлов резервной копии.
+4. Чтобы проверить учетные данные, запустите следующий скрипт, который использует URL-адрес [контейнера](https://azure.microsoft.com/services/container-instances/) для получения списка файлов резервной копии.
 
    ```sql
    RESTORE FILELISTONLY FROM URL = 
@@ -70,7 +67,7 @@ ms.locfileid: "53653244"
 
     ![список файлов](./media/sql-database-managed-instance-get-started-restore/file-list.png)
 
-4. Запустите следующий скрипт, чтобы восстановить базу данных Wide World Importers.
+5. Запустите следующий скрипт, чтобы восстановить базу данных Wide World Importers.
 
    ```sql
    RESTORE DATABASE [Wide World Importers] FROM URL =
@@ -79,7 +76,7 @@ ms.locfileid: "53653244"
 
     ![Восстановление](./media/sql-database-managed-instance-get-started-restore/restore.png)
 
-5. Запустите следующий скрипт, чтобы отслеживать состояние восстановления.
+6. Запустите следующий скрипт, чтобы отслеживать состояние восстановления.
 
    ```sql
    SELECT session_id as SPID, command, a.text AS Query, start_time, percent_complete
@@ -89,7 +86,7 @@ ms.locfileid: "53653244"
    WHERE r.command in ('BACKUP DATABASE','RESTORE DATABASE')
    ```
 
-6. По завершении восстановления просмотрите восстановленную базу данных в обозревателе объектов. 
+7. По завершении восстановления просмотрите восстановленную базу данных в обозревателе объектов. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
-ms.date: 09/06/2018
+ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: d355e14d15dc6a393a6fabb90418cb3949fe0cf5
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: ed4bed77267790b10b44486f0e9c8242fe952cd8
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53601973"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207417"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 <a name="train-your-app"></a>
@@ -26,6 +26,7 @@ ms.locfileid: "53601973"
 <a name="test-your-app"></a>
 <a name="access-the-test-page"></a>
 <a name="luis-interactive-testing"></a>
+
 ## <a name="test-an-utterance"></a>Тестирование высказывания
 
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**. 
@@ -40,13 +41,8 @@ ms.locfileid: "53601973"
 
     ![Интерактивное тестирование определяет неправильное намерение](./media/luis-how-to-interactive-test/test-weather-1.png)
 
-## <a name="clear-test-panel"></a>Очистка панели тестирования
-Чтобы очистить все введенные тестовые высказывания и их результаты из консоли тестирования, выберите **Start over** (Начать сначала) в левом верхнем углу **панели тестирования**. 
-
-## <a name="close-test-panel"></a>Закрытие панели тестирования
-Чтобы закрыть панель **Test** (Тестирование), еще раз нажмите кнопку **Test** (Тестировать).
-
 ## <a name="inspect-score"></a>Проверка оценки
+
 Проверка сведений в результате тестирования выполняется на панели **Inspect** (Проверка). 
  
 1. На открытой выдвигающейся панели **Test** (Тестирование) нажмите кнопку **Inspect** (Проверить) рядом с высказыванием, которое нужно сравнить. 
@@ -72,9 +68,11 @@ ms.locfileid: "53601973"
 ![Изображение панели тестирования с анализом тональности](./media/luis-how-to-interactive-test/sentiment.png)
 
 ## <a name="correct-matched-patterns-intent"></a>Исправление соответствующего намерения шаблона
+
 Если при использовании [шаблонов](luis-concept-patterns.md) высказывание совпало с шаблоном, но было спрогнозировано неправильное намерение, щелкните ссылку **Изменить** в шаблоне, а затем выберите правильное намерение.
 
 ## <a name="compare-with-published-version"></a>Сравнение с опубликованной версией
+
 Можно протестировать активную версию приложения с опубликованной версией [конечной точки](luis-glossary.md#endpoint). На панели **Inspect** (Проверка) выберите **Compare with published** (Сравнить с опубликованной). Средства на тестирование на соответствие опубликованной модели вычитаются из суммы квоты на подписку Azure. 
 
 ![Сравнение с опубликованной версией](./media/luis-how-to-interactive-test/inspect-panel-compare.png)
@@ -88,12 +86,14 @@ ms.locfileid: "53601973"
 ## <a name="additional-settings-in-test-panel"></a>Дополнительные параметры на панели тестирования
 
 ### <a name="luis-endpoint"></a>Конечная точка LUIS
+
 При наличии нескольких конечных точек LUIS щелкните ссылку **Дополнительные параметры** на панели "Published" (Опубликовано), чтобы изменить конечную точку, используемую для тестирования. Если вы не уверены, какую конечную точку выбрать, выберите значение по умолчанию **Starter_Key**. 
 
 ![Панель тестирования с выделенной ссылкой "Дополнительные параметры"](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key.png)
 
 
 ### <a name="view-bing-spell-check-corrections-in-test-panel"></a>Просмотр проверки орфографии Bing на панели тестирования
+
 Требования к просмотру проверки орфографии: 
 
 * опубликованное приложение;
@@ -124,6 +124,7 @@ ms.locfileid: "53601973"
 <a name="view single-point utterance data"></a>
 <a name="relabel-utterances-and-retrain"></a>
 <a name="false-test-results"></a>
+
 ## <a name="batch-testing"></a>Пакетное тестирование
 Ознакомьтесь с [принципами](luis-concept-batch-test.md) пакетного тестирования и узнайте, [как](luis-how-to-batch-test.md) протестировать пакет высказываний.
 

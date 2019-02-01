@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/06/2018
+ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: ae0fdb17680f415a1dacce1738fa53fcda943788
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 46b7e7757c2bf1b01bebeff059f0028b9e9d189c
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135004"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55220762"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозирования
 После получения фрагментов речи конечной точки приложением LUIS используйте [понятие](luis-concept-patterns.md) шаблонов для повышения точности прогнозирования для фрагментов речи, в которых наблюдается определенный шаблон в порядке и выборе слов. Шаблоны используют [сущности](luis-concept-entity-types.md) и их роли для извлечения данных с помощью определенного синтаксиса шаблона. 

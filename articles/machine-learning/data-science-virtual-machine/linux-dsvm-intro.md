@@ -9,19 +9,19 @@ manager: cgronlun
 ms.custom: seodec18
 ms.assetid: 3bab0ab9-3ea5-41a6-a62a-8c44fdbae43b
 ms.service: machine-learning
-ms.component: data-science-vm
+ms.subservice: data-science-vm
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: 253934d450619ca67e429fbf396a5fed5b71a267
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: b5f2bee7ab0277b94da699be486594a602b94a29
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53081869"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55241708"
 ---
 # <a name="provision-a-linux-centos-data-science-virtual-machine-on-azure"></a>Подготовка виртуальной машины Linux (CentOS) для обработки и анализа данных в Azure
 
@@ -119,7 +119,7 @@ ms.locfileid: "53081869"
    * **Вкладка "Сеанс"**:
      * **Узел**: имя узла или IP-адрес виртуальной машины для обработки и анализа данных с ОС Linux;
      * **Имя входа**: имя пользователя виртуальной машины Linux;
-     * **Порт SSH**: оставьте 22 (значение по умолчанию);
+     * **Порт SSH**: Оставьте 22 (значение по умолчанию).
      * **Тип сеанса**: измените значение на XFCE. В настоящее время виртуальная машина Linux поддерживает только рабочий стол XFCE.
    * **Вкладка "Мультимедиа"**: можно отключить поддержку звука и печати на клиенте, если они не нужны.
    * **Общие папки**: если необходимо подключить каталоги клиентских компьютеров на виртуальной машине Linux, добавьте необходимые каталоги на этой вкладке.
@@ -154,7 +154,7 @@ R — один из самых популярных языков для анал
 
 Чтобы вызвать интерактивный сеанс python, просто введите **python** в оболочке. Если вы используете графический интерфейс или перенаправление X11, то можете ввести команду **pycharm** для запуска интегрированной среды разработки PyCharm Python.
 
-Чтобы установить дополнительные библиотеки Python, необходимо выполнить команду ```conda``` или ````pip````, используя sudo, и указать полный путь к диспетчеру пакетов Python (Conda или PIP) для установки в правильную среду Python. Например: 
+Чтобы установить дополнительные библиотеки Python, необходимо выполнить команду ```conda``` или ```pip```, используя sudo, и указать полный путь к диспетчеру пакетов Python (Conda или PIP) для установки в правильную среду Python. Например: 
 
     sudo /anaconda/bin/pip install <package> #pip for Python 2.7
     sudo /anaconda/envs/py35/bin/pip install <package> #pip for Python 3.5
@@ -198,7 +198,7 @@ R — один из самых популярных языков для анал
     chown hadoop:hadoop ~hadoop/.ssh/authorized_keys
     systemctl start hadoop-namenode hadoop-datanode hadoop-yarn
 
-Вы можете остановить работу связанных служб Hadoop, когда они не нужны, выполнив следующую команду: ````systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn```` Пример, демонстрирующий, как разрабатывать и тестировать с использованием MRS в удаленном контексте Spark (являющимся изолированным экземпляром Spark на виртуальной машине для обработки и анализа данных), доступен в каталоге `/dsvm/samples/MRS`. 
+Вы можете остановить работу связанных служб Hadoop, когда они не нужны, выполнив следующую команду: ```systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn``` Пример, демонстрирующий, как разрабатывать и тестировать с использованием MRS в удаленном контексте Spark (являющимся изолированным экземпляром Spark на виртуальной машине для обработки и анализа данных), доступен в каталоге `/dsvm/samples/MRS`. 
 
 ### <a name="ides-and-editors"></a>Интегрированные среды разработки и редакторы
 Для выбора доступны несколько редакторов кода. В частности, vi/VIM, Emacs, gEdit, PyCharm, RStudio, Eclipse и IntelliJ. gEdit, Eclipse, IntelliJ, RStudio и PyCharm — графические редакторы, и для их использования необходимо войти в графический рабочий стол. На рабочем столе есть меню и значки для запуска этих редакторов.

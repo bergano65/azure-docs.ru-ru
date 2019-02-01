@@ -13,12 +13,13 @@ ms.topic: article
 ms.date: 01/05/2019
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: 2769b78632e1a7f776359f2a4d768154c224aab5
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.lastreviewed: 01/05/2019
+ms.openlocfilehash: 6866c6d208468e53b04ede1b5e596f0ea625c49d
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54264620"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55248484"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack
 
