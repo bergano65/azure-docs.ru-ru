@@ -2,20 +2,20 @@
 title: Подключение к хранилищу данных SQL Azure — VSTS | Документация Майкрософт
 description: Отправка запросов к хранилищу данных SQL с помощью Visual Studio.
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: consume
+ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: db1c6117072157e0ca3a1bfcc735872b795a34d7
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 564a30767f650e4ead025acb22e518eb0da55bd4
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43306729"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55463588"
 ---
 # <a name="connect-to-sql-data-warehouse-with-visual-studio-and-ssdt"></a>Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]

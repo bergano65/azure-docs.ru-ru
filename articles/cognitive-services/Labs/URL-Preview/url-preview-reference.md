@@ -6,16 +6,16 @@ services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: url-preview
+ms.subservice: url-preview
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: rosh
-ms.openlocfilehash: 12e91a07d09929ba59873d0d56f4e19b20077f53
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: f7925c3eb14915c2b811ccfcd3a3803b9bd7c806
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999755"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55222921"
 ---
 # <a name="project-url-preview-v7-reference"></a>Документация по службе предварительному просмотру URL-адресов в проектах версии 7
 
@@ -31,10 +31,10 @@ ms.locfileid: "53999755"
 Чтобы запросить результаты предварительного просмотра URL-адресов, отправьте запрос в следующую конечную точку. Для определения дополнительных спецификаций используйте заголовки и параметры URL-адреса.
 
 Запрос GET к конечной точке:
-````
+```
 https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=queryURL
 
-````
+```
 
 Запрос должен использовать протокол HTTPS и включать следующий параметр запроса:
 

@@ -13,12 +13,13 @@ ms.topic: article
 ms.date: 01/19/2019
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: 36496dd80111689b510bbbd27edc35a454d230a3
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.lastreviewed: 01/19/2019
+ms.openlocfilehash: 9b66a7a176862fce687b7cc0b1ff3c14bda118d7
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448298"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55243895"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Использование профилей версий API и Go в Azure Stack
 
@@ -33,9 +34,9 @@ ms.locfileid: "54448298"
 
 В пакете SDK для Go профили доступны в пути к профилям с версией в формате **ГГГГ-ММ-ДД**. **2017-03-09** — последняя версия профиля API Azure Stack на данный момент. Чтобы импортировать данную службу из профиля, импортируйте из профиля ее соответствующий модуль. Например, чтобы импортировать службу **вычислений** из профиля **2017-03-09**, используйте следующий код:
 
-````go
+```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/compute/mgmt/compute"
-````
+```
 
 ## <a name="install-azure-sdk-for-go"></a>Установка пакета Azure SDK для Go
 
@@ -51,7 +52,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/compute/mgmt/compu
 
 Дополнительные сведения о пакете SDK для GO можно найти по следующим ссылкам:
 
-- [Установка пакета Azure SDK для Go](/azure/azure-sdk-go-install).
+- [Установка пакета Azure SDK для Go](/go/azure/azure-sdk-go-install).
 - Пакет Azure SDK для Go доступен на сайте GitHub в репозитории [azure-sdk-for-go](https://github.com/Azure/azure-sdk-for-go).
 
 ### <a name="go-autorest-dependencies"></a>Зависимости Go-AutoRest

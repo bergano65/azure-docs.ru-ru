@@ -12,12 +12,12 @@ ms.author: srinia
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/22/2018
-ms.openlocfilehash: d8af5e3919b731677b40726c37462832adc06677
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: ee9e9389962cd454f9861e561dd76c96d019a1f0
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449101"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55469346"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "54449101"
 
 1. Создайте учетные данные для выполнения задания в *базе данных заданий*, используя [PowerShell](elastic-jobs-powershell.md#create-job-credentials-so-that-jobs-can-execute-scripts-on-its-targets) или [T-SQL](elastic-jobs-tsql.md#create-a-credential-for-job-execution).
 2. Определите целевую группу (базы данных, в которых вы хотите запустить задание) с помощью [PowerShell](elastic-jobs-powershell.md#define-the-target-databases-you-want-to-run-the-job-against) или [T-SQL](elastic-jobs-tsql.md#create-a-target-group-servers).
-3. Создайте учетные данные агента заданий в каждой базе данных, где будет запущено задание [(добавьте пользователя (или роль) в каждую базу данных в группе)](https://docs.microsoft.com/azure/sql-database/sql-database-control-access). Пример см. в [руководстве по PowerShell](elastic-jobs-powershell.md#create-job-credentials-so-that-jobs-can-execute-scripts-on-its-targets).
+3. Создайте учетные данные агента заданий в каждой базе данных, где будет запущено задание [(добавьте пользователя (или роль) в каждую базу данных в группе)](sql-database-control-access.md). Пример см. в [руководстве по PowerShell](elastic-jobs-powershell.md#create-job-credentials-so-that-jobs-can-execute-scripts-on-its-targets).
 4. Создайте задание с помощью [PowerShell](elastic-jobs-powershell.md#create-a-job) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
 5. Добавьте шаги задания с помощью [PowerShell](elastic-jobs-powershell.md#create-a-job-step) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
 6. Запустите задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-SQL](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).

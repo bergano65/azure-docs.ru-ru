@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 4b6e6cf3fb030f5f9706ded19f85575baed69b39
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: cf2359834aa79b1d3fef8b65e4ef4191eb6ff867
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54471826"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467447"
 ---
 # <a name="choose-a-pricing-tier-for-azure-search"></a>Выбор ценовой категории службы "Поиск Azure"
 
@@ -108,7 +108,7 @@ The purpose of this article is to help you choose a tier. It supplements the [pr
 
 |  | S1 | S2 | S3 |  |  |  |  |
 |--|----|----|----|--|--|--|--|
-| Размер секции|  25 ГБ | 100 ГБ | 250 ГБ |  |  |  |  |
+| Размер секции|  25 ГБ | 100 ГБ | 200 ГБ |  |  |  |  |
 | Ограничения индекса и индексатора| 50 | 200 | 200 |  |  |  |  |
 
 **S1** — стандартный выбор, когда требуются выделенные ресурсы и несколько секций. При разбиении объема 25 ГБ на 12 секций предел каждой службы на уровне **S1** составляет 300 ГБ, если вы развертываете разделы по репликам (о более сбалансированных структурах см. в разделе [Уровень "Стандартный": сочетания разделов и реплик](search-capacity-planning.md#chart)).

@@ -11,20 +11,22 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: genemi
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: c41420e46a0bd4afbaed96da0e2fb9775d49c6fc
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: 7542e9fa04eb838baca37dbe13f7cdacdfaf041b
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53606543"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470269"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
+
 При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. В каждом уровне обслуживания "Премиум" и "Критически важный для бизнеса" используется максимальный объем хранилища OLTP в памяти. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
 При превышении этого ограничения операции вставки и обновления могут завершаться сбоем (ошибка 41823 для отдельных баз данных и ошибка 41840 для эластичных пулов). В таком случае потребуется либо удалить данные, чтобы освободить память, либо повысить объем вычислительных ресурсов базы данных.
 
 ## <a name="determine-whether-data-fits-within-the-in-memory-oltp-storage-cap"></a>Как определить, соответствует ли объем данных ограничениям хранилища выполняющейся в памяти OLTP
+
 Определите возможности хранения для различных уровней служб. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
 Оценка требований к памяти для таблицы, оптимизированной для памяти, выполняется одинаково как на сервере SQL Server, так и в базе данных SQL Azure. Потратьте несколько минут, чтобы прочесть эту статью в библиотеке [MSDN](https://msdn.microsoft.com/library/dn282389.aspx).
@@ -40,10 +42,12 @@ ms.locfileid: "53606543"
 
 Или используйте следующий запрос, чтобы отобразить использование выполняющегося в памяти хранилища:
 
+```sql
     SELECT xtp_storage_percent FROM sys.dm_db_resource_stats
-
+```
 
 ## <a name="correct-out-of-in-memory-oltp-storage-situations---errors-41823-and-41840"></a>Исправление нехватки памяти для хранилища выполняющейся в памяти OLTP: ошибки 41823 и 41840
+
 Достижение ограничения хранилища выполняющейся в памяти OLTP в базе данных приводит к сбою операций INSERT, UPDATE, ALTER, CREATE и отображению сообщения об ошибке 41823 (для отдельных баз данных) или ошибки 41840 (для эластичных пулов). Обе ошибки приводят к прерыванию активной транзакции.
 
 Сообщения об ошибках 41823 и 41840 указывают, что таблицы, оптимизированные для памяти, и табличные переменные в базе данных или пуле достигли максимального размера хранилища выполняющейся в памяти OLTP.

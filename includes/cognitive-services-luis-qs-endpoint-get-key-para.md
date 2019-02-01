@@ -5,17 +5,17 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: luis
+ms.subservice: luis
 ms.topic: include
 ms.custom: include file
 ms.date: 08/16/2018
 ms.author: diberry
-ms.openlocfilehash: fcf3bf29e2cdf89bdc93c7ebac313e5d9a9c18f0
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 14678a143e1b14b9b0b89435f356ac5df98ef40c
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47044044"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55478689"
 ---
 Для доступа к конечной точке прогнозирования предоставляется ключ этой конечной точки. В рамках этого краткого руководства используйте бесплатный начальный ключ, связанный с вашей учетной записи LUIS. 
  

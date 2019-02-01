@@ -11,13 +11,13 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/19/2018
-ms.openlocfilehash: a3a4e2c109541effdac01e0c9c03ee91cfdb30bf
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.date: 01/25/2019
+ms.openlocfilehash: b3ee256072e5c0b5b92daac07eae5b41b194ae8a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812256"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55475964"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "54812256"
 
 ## <a name="vcore-based-purchasing-model-change-compute-resources"></a>Модель покупки на основе числа виртуальных ядер — Изменение вычислительных ресурсов
 
-После выбора числа виртуальных ядер отдельную базу данных можно динамически масштабировать в сторону увеличения или уменьшения, исходя из фактического использования, с помощью [портала Azure](sql-database-single-databases-manage.md#manage-an-existing-sql-server), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
+После выбора числа виртуальных ядер отдельную базу данных можно динамически масштабировать в сторону увеличения или уменьшения, исходя из фактического использования, с помощью [портала Azure](sql-database-single-databases-manage.md#manage-an-existing-sql-database-server), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
 
 При изменении уровня служб или объема вычислительных ресурсов базы данных создается реплика исходной базы данных с новым объемом вычислительных ресурсов, после чего устанавливаются подключения к реплике. Во время этого процесса данные не теряются, но в течение короткого периода, когда производится переподключение к реплике, соединения с базой данных становятся неактивны, поэтому некоторые текущие транзакции могут откатиться. Интервал времени для переключения не фиксирован, но в 99 % случаев он обычно не превышает 30 секунд. Если в момент разрыва подключений выполняется большое число транзакций, период переключения может быть продолжительнее.
 

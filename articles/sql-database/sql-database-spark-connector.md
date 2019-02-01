@@ -12,18 +12,18 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/23/2018
-ms.openlocfilehash: 09035b19ee48602fde70736ab918fccae71108a5
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 864cf49634e4f9452829a30ce4b260179bdeb8db
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166260"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55476219"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью базы данных SQL Azure и SQL Server
 
 Соединитель Spark для базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая базы данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
-## <a name="download"></a>Загрузка
+## <a name="download"></a>Download (Скачать)
 Чтобы приступить к работе, скачайте соединитель Spark для базы данных SQL из репозитория [azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) на сайте GitHub.
 
 ## <a name="official-supported-versions"></a>Официальные поддерживаемые версии
@@ -161,7 +161,7 @@ collection.show()
 #### <a name="setup-requirement"></a>Настройка требований
 При использовании режима аутентификации на основе маркера доступа необходимо скачать [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) и его зависимости, а затем включить их в путь сборки Java.
 
-Дополнительные сведения о том, как получить маркер доступа для базы данных SQL Azure, см. в [этой статье](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication).
+Дополнительные сведения о том, как получить маркер доступа для базы данных SQL Azure, см. в [этой статье](sql-database-aad-authentication.md).
 
 ```scala
 import com.microsoft.azure.sqldb.spark.config.Config

@@ -8,12 +8,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 01/19/2019
 ms.author: mayg
-ms.openlocfilehash: 9b26c80b59a57b4a9b2423e1a9028cf723f40fb1
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: a1b35d4c10246af7e4dab36585c2bb9b72fd0c01
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321234"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216971"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.
@@ -59,7 +59,7 @@ ms.locfileid: "54321234"
 - Диск с файлом tempdb SQL Server.
 - Диск с файлом подкачки (pagefile.sys).
 
-## <a name="excample-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1. Исключение диска с файлом tempdb SQL Server
+## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1 Исключение диска с файлом tempdb SQL Server
 Рассмотрим виртуальную машину SQL Server с диском tempdb, который может быть исключен из репликации.
 
 Имя виртуального диска — SalesDB.

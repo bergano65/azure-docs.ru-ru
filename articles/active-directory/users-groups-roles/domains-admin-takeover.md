@@ -7,19 +7,19 @@ author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 01/14/2019
+ms.date: 01/28/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
-ms.custom: it-pro
-ms.openlocfilehash: 44fe3b54e2dfedb71b50a75befce96121ecebe05
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.custom: it-pro;seo-update-azuread-jan
+ms.openlocfilehash: 9cef490d22a013b952d6692d0ac0e932a35c9ba3
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320248"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55297639"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в статье [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
@@ -131,42 +131,42 @@ ms.locfileid: "54320248"
 ### <a name="powershell-example"></a>Пример PowerShell
 
 1. Подключитесь к Azure AD, используя учетные данные, использованные в ответ на предложение самообслуживания:
-  ````
+  ```
     Install-Module -Name MSOnline
     $msolcred = get-credential
     
     connect-msolservice -credential $msolcred
-  ````
+  ```
 2. Получение списка доменов:
   
-  ````
+  ```
     Get-MsolDomain
-  ````
+  ```
 3. Выполните командлет Get-MsolDomainVerificationDns для создания запроса защиты:
-  ````
+  ```
     Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
   
     For example:
   
     Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
-  ````
+  ```
 
 4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например: 
-  ````
+  ```
     MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
-  ````
+  ```
 5. В пространстве общедоступных имен DNS создайте DNS-запись TXT, содержащую значение, скопированное на предыдущем шаге. Имя для данной записи — это имя родительского домена, поэтому при создании этой записи ресурса с помощью роли DNS из Windows Server оставьте поле "Имя записи" пустым и просто вставьте это значение в текстовое поле.
 6. Выполните командлет Confirm-MsolDomain, чтобы подтвердить запрос защиты:
   
-  ````
+  ```
     Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
-  ````
+  ```
   
   Например: 
   
-  ````
+  ```
     Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
-  ````
+  ```
 
 Успешный запрос защиты возвращает строки без ошибок.
 

@@ -2,20 +2,20 @@
 title: Строки подключения для хранилища данных SQL Azure | Документация Майкрософт
 description: Строки подключения для хранилища данных SQL.
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: consume
+ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: de875731ffd2170f70d8034f0178d61351d86952
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 057e412857feb39069c55bb9905c83dcea7cbd4e
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43248027"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55460375"
 ---
 # <a name="connection-strings-for-azure-sql-data-warehouse"></a>Строки подключения для хранилища данных SQL Azure
 К хранилищу данных SQL можно подключиться с помощью различных протоколов, таких как [ADO.NET][ADO.NET], [ODBC][ODBC], [PHP][PHP] и [JDBC][JDBC]. Ниже приведены некоторые примеры строк подключения для каждого протокола.  Кроме того, для формирования строки подключения можно использовать портал Azure.  Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* щелкните *Показать строки подключения к базам данных*.

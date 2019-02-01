@@ -4,7 +4,7 @@ titleSuffix: Azure Machine Learning service
 description: Узнайте, как загружать данные с помощью пакета SDK для подготовки данных машинного обучения Azure. Можно загрузить различные типы входных данных, указать типы и параметры файлов данных или воспользоваться функцией интеллектуального чтения SDK, чтобы автоматически обнаружить тип файла.
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: conceptual
 ms.author: cforbe
 author: cforbe
@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 2478a5dd3f5d685253ef9145bec0a68ff324c6c3
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 08dcb75fabc109a8869151402d3a448333beb556
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54263821"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247533"
 ---
 # <a name="load-and-read-data-with-azure-machine-learning"></a>Загрузка и чтение данных с помощью службы "Машинное обучение Azure"
 
