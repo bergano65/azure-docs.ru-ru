@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: add01429-21bc-4bab-8b23-bc76ba7d0bde
 ms.date: 07/08/2016
-ms.openlocfilehash: 9dd471f70407191734b4c5a3aa84d5365a7beab8
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 4ebd96613378bbd907beb5109343a2427b1300b0
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125301"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55095674"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
 
@@ -88,7 +88,7 @@ ms.locfileid: "43125301"
 
   В этом примере показана карта, в которую добавлена ссылка на сборку с именем XslUtilitiesLib. В карте выполняется вызов метода `circumreference` из сборки.
 
-  ````xml
+  ```xml
   <?xml version="1.0" encoding="UTF-8"?>
   <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">
   <msxsl:script language="C#" implements-prefix="user">
@@ -109,13 +109,13 @@ ms.locfileid: "43125301"
      </circles>
     </xsl:template>
     </xsl:stylesheet>
-  ````
+  ```
 
 
 ### <a name="byte-order-mark"></a>Метка порядка байтов
 По умолчанию ответ при преобразовании начинается с метки порядка байтов. Эта функция доступна только при работе в редакторе представления кода. Чтобы отключить эту функцию, укажите `disableByteOrderMark` для свойства `transformOptions`:
 
-````json
+```json
 "Transform_XML": {
     "inputs": {
         "content": "@{triggerBody()}",
@@ -129,7 +129,7 @@ ms.locfileid: "43125301"
     "runAfter": {},
     "type": "Xslt"
 }
-````
+```
 
 
 

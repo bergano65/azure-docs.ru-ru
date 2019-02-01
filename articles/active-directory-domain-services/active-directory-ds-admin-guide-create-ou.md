@@ -8,19 +8,19 @@ manager: daveba
 editor: curtand
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
-ms.component: domain-services
+ms.subservice: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: 49b915242ca0a4775236da3314eed816fde7ea6b
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 33c4264d9aeffb721cd2d44df6d551126782f0e1
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856270"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55165716"
 ---
 # <a name="create-an-organizational-unit-ou-on-an-azure-ad-domain-services-managed-domain"></a>Создание подразделения в управляемом домене доменных служб Azure AD
 Управляемые домены доменных служб Azure AD включают два встроенных контейнера: "Компьютеры AADDC" и "Пользователи AADDC". Контейнер "Компьютеры AADDC" включает объекты-компьютеры для всех компьютеров, присоединенных к управляемому домену. Контейнер "Пользователи AADDC" включает пользователей и группы в клиенте Azure AD. В некоторых случаях в управляемом домене может потребоваться создать учетные записи служб для развертывания рабочих нагрузок. Для этой цели можно создать в управляемом домене пользовательское подразделение, а затем создать учетные записи служб в рамках этого подразделения. В этой статье демонстрируется создание подразделения в управляемом домене.

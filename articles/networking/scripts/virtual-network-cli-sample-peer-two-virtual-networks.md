@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
-ms.openlocfilehash: 8ad1e7de85f851b5db6764175bc1136dd19d418d
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 8d11ad9d2722bb8fc23154509feeca2a293bfa41
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29852376"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098002"
 ---
 # <a name="peer-two-virtual-networks"></a>Пиринг между двумя виртуальными сетями
 
@@ -47,7 +47,7 @@ az group delete --name myResourceGroup --yes
 
 Для создания группы ресурсов, виртуальной машины и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az_network_vnet_create) | Создает виртуальную сеть и подсеть Azure. |

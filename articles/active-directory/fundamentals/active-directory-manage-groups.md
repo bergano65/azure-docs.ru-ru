@@ -6,18 +6,18 @@ author: eross-msft
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.component: fundamentals
+ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: lizross
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 4c014392f0626a29c0ecf5f0371a3fd52ea9d163
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: d5a05db0ab69a1cb9f123bb73c0cb4151f1104d6
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447978"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103553"
 ---
 # <a name="manage-app-and-resource-access-using-azure-active-directory-groups"></a>Управление доступом к приложениям и ресурсам с помощью групп Azure Active Directory
 Azure Active Directory (Azure AD) помогает управлять облачными приложениями, локальными приложениями и ресурсами с помощью корпоративных групп. Ваши ресурсы могут как относиться к каталогу, например разрешения на управление объектами с помощью ролей в каталоге, так и не относиться, например приложения SaaS, службы Azure, сайты SharePoint и локальные ресурсы.

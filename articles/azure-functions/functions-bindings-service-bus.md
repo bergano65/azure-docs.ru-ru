@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: 21f8d8ad63e8ea7c134477a6171155c40a2b4dc8
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 2a0a4aeded3667b7c8f4a31821adb2fc40339137
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53792022"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104105"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -629,7 +629,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 |Свойство  |значение по умолчанию | ОПИСАНИЕ |
 |---------|---------|---------| 
 |maxAutoRenewDuration|00:05:00|Максимальный период времени, в течение которого блокировка сообщения будет продлеваться автоматически.| 
-|autoComplete|false|Триггер следует отметить как выполненный (автозавершение) или дождаться обработки вызова завершения.| 
+|autoComplete|Да|Триггер следует отметить как выполненный (автозавершение) или дождаться обработки вызова завершения.| 
 |maxConcurrentCalls|16|Максимальное число параллельных вызовов к обратному вызову, которое должен инициировать процесс обработки сообщений. По умолчанию в среде выполнения службы "Функции" одновременно обрабатывается несколько сообщений очереди. Чтобы среда выполнения обрабатывала в любой момент времени только одно сообщение очереди или раздела, для свойства `maxConcurrentCalls` нужно задать значение 1. | 
 |prefetchCount|Недоступно|Значение PrefetchCount по умолчанию, которое будет использоваться базовым компонентом MessageReceiver.| 
 

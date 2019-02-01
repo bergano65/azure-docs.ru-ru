@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 44950a467e99fb7968d838345d80c8e28aee62b9
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 55c1bc18422bc2be5172aebcd46b76ac6051a8a4
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54467474"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54885853"
 ---
 # <a name="collect-and-consume-log-data-from-your-azure-resources"></a>Сбор и использование данных журнала из ресурсов Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "54467474"
 
 Эти журналы также отличаются от журналов диагностики уровня гостевой ОС. Журналы диагностики гостевой ОС собирает агент, работающий на виртуальной машине или поддерживаемом ресурсе другого типа. Для сбора журналов диагностики уровня ресурса не требуется агент. В них записываются данные ресурсов из платформы Azure, тогда как в журналы диагностики уровня гостевой ОС записываются данные из операционной системы и приложений, выполняющихся на виртуальной машине.
 
-Не все ресурсы поддерживают описанные здесь типы журналов диагностики. [Эта статья содержит раздел со списком служб, поддерживающих журналы диагностики](./../../azure-monitor/platform/tutorial-dashboards.md).
+Не все ресурсы поддерживают описанные здесь типы журналов диагностики. [Эта статья содержит раздел со списком служб, поддерживающих журналы диагностики](./../../azure-monitor/platform/diagnostic-logs-schema.md).
 
 ## <a name="what-you-can-do-with-diagnostic-logs"></a>Что можно делать с журналами диагностики
 Ниже описано несколько доступных операций с журналами диагностики.
@@ -229,7 +229,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 ## <a name="supported-services-categories-and-schemas-for-diagnostic-logs"></a>Поддерживаемые службы, категории и схемы для журналов диагностики
 
-С полным списком поддерживаемых служб, категорий и схем журнала, используемых этими службами, ознакомьтесь в [этой статье](../../azure-monitor/platform/tutorial-dashboards.md).
+С полным списком поддерживаемых служб, категорий и схем журнала, используемых этими службами, ознакомьтесь в [этой статье](../../azure-monitor/platform/diagnostic-logs-schema.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

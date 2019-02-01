@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
 ms.author: ryanwi
-ms.openlocfilehash: 2fce90f971d13b94c73012d4089cca05739c5440
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 7f6e95b28482ed6d75bb76773da05aebd1855a66
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853716"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55093399"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
@@ -81,7 +81,7 @@ DnsSettings              : {
 
 1. Измените параметр подсети, указав имя существующей подсети, а затем добавьте два новых параметра для ссылки на существующую виртуальную сеть:
 
-    ```
+    ```json
         "subnet0Name": {
                 "type": "string",
                 "defaultValue": "default"
@@ -108,26 +108,26 @@ DnsSettings              : {
 
 2. Закомментируйте атрибут `nicPrefixOverride` в `Microsoft.Compute/virtualMachineScaleSets`, так как вы используете существующую подсеть и отключили эту переменную на шаге 1.
 
-    ```
+    ```json
             /*"nicPrefixOverride": "[parameters('subnet0Prefix')]",*/
     ```
 
 3. Измените переменную `vnetID`, чтобы она указывала на существующую виртуальную сеть:
 
-    ```
+    ```json
             /*old "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",*/
             "vnetID": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('existingVNetRGName'), '/providers/Microsoft.Network/virtualNetworks/', parameters('existingVNetName'))]",
     ```
 
 4. Удалите `Microsoft.Network/virtualNetworks` из ресурсов, чтобы платформа Azure не создала виртуальную сеть:
 
-    ```
+    ```json
     /*{
     "apiVersion": "[variables('vNetApiVersion')]",
     "type": "Microsoft.Network/virtualNetworks",
     "name": "[parameters('virtualNetworkName')]",
     "location": "[parameters('computeLocation')]",
-    "properities": {
+    "properties": {
         "addressSpace": {
             "addressPrefixes": [
                 "[parameters('addressPrefix')]"
@@ -151,7 +151,7 @@ DnsSettings              : {
 
 5. Закомментируйте виртуальную сеть из атрибута `dependsOn` в `Microsoft.Compute/virtualMachineScaleSets`, чтобы не зависеть от создания виртуальной сети:
 
-    ```
+    ```json
     "apiVersion": "[variables('vmssApiVersion')]",
     "type": "Microsoft.Computer/virtualMachineScaleSets",
     "name": "[parameters('vmNodeType0Name')]",
@@ -185,7 +185,7 @@ DnsSettings              : {
 
 1. Добавьте параметры для имени группы ресурсов существующего статического IP-адреса, его имени и полного доменного имени (FQDN):
 
-    ```
+    ```json
     "existingStaticIPResourceGroup": {
                 "type": "string"
             },
@@ -199,7 +199,7 @@ DnsSettings              : {
 
 2. Удалите параметр `dnsName` (он уже есть в статическом IP-адресе).
 
-    ```
+    ```json
     /*
     "dnsName": {
         "type": "string"
@@ -209,13 +209,13 @@ DnsSettings              : {
 
 3. Добавьте переменную для ссылки на существующий статический IP-адрес:
 
-    ```
+    ```json
     "existingStaticIP": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('existingStaticIPResourceGroup'), '/providers/Microsoft.Network/publicIPAddresses/', parameters('existingStaticIPName'))]",
     ```
 
 4. Удалите `Microsoft.Network/publicIPAddresses` из ресурсов, чтобы платформа Azure не создала IP-адрес:
 
-    ```
+    ```json
     /*
     {
         "apiVersion": "[variables('publicIPApiVersion')]",
@@ -237,7 +237,7 @@ DnsSettings              : {
 
 5. Закомментируйте IP-адрес из атрибута `dependsOn` в `Microsoft.Network/loadBalancers`, чтобы не зависеть от создания IP-адреса:
 
-    ```
+    ```json
     "apiVersion": "[variables('lbIPApiVersion')]",
     "type": "Microsoft.Network/loadBalancers",
     "name": "[concat('LB', '-', parameters('clusterName'), '-', parameters('vmNodeType0Name'))]",
@@ -251,7 +251,7 @@ DnsSettings              : {
 
 6. В ресурсе `Microsoft.Network/loadBalancers` измените элемент `publicIPAddress` в группе элементов `frontendIPConfigurations`, чтобы ссылаться на существующий статический IP-адрес, а не на только что созданный:
 
-    ```
+    ```json
                 "frontendIPConfigurations": [
                         {
                             "name": "LoadBalancerIPConfig",
@@ -267,7 +267,7 @@ DnsSettings              : {
 
 7. В ресурсе `Microsoft.ServiceFabric/clusters` измените элемент `managementEndpoint`, указав полное доменное имя DNS-сервера статического IP-адреса. При использовании защищенного кластера обязательно измените *http://* на *https://*. (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
 
-    ```
+    ```json
                     "fabricSettings": [],
                     /*"managementEndpoint": "[concat('http://',reference(concat(parameters('lbIPName'),'-','0')).dnsSettings.fqdn,':',parameters('nt0fabricHttpGatewayPort'))]",*/
                     "managementEndpoint": "[concat('http://',parameters('existingStaticIPDnsFQDN'),':',parameters('nt0fabricHttpGatewayPort'))]",
@@ -294,7 +294,7 @@ DnsSettings              : {
 
 1. Удалите параметр `dnsName` (он не требуется).
 
-    ```
+    ```json
     /*
     "dnsName": {
         "type": "string"
@@ -304,7 +304,7 @@ DnsSettings              : {
 
 2. При необходимости, если используется метод статического выделения, можно добавить параметр статического IP-адреса. При использовании метода динамического выделения этот шаг выполнять не нужно.
 
-    ```
+    ```json
             "internalLBAddress": {
                 "type": "string",
                 "defaultValue": "10.0.0.250"
@@ -313,7 +313,7 @@ DnsSettings              : {
 
 3. Удалите `Microsoft.Network/publicIPAddresses` из ресурсов, чтобы платформа Azure не создала IP-адрес:
 
-    ```
+    ```json
     /*
     {
         "apiVersion": "[variables('publicIPApiVersion')]",
@@ -335,7 +335,7 @@ DnsSettings              : {
 
 4. Удалите атрибут `dependsOn` IP-адреса в `Microsoft.Network/loadBalancers`, чтобы не зависеть от создания IP-адреса. Добавьте атрибут `dependsOn` виртуальной сети, так как теперь подсистема балансировки нагрузки зависит от подсети в виртуальной сети:
 
-    ```
+    ```json
                 "apiVersion": "[variables('lbApiVersion')]",
                 "type": "Microsoft.Network/loadBalancers",
                 "name": "[concat('LB','-', parameters('clusterName'),'-',parameters('vmNodeType0Name'))]",
@@ -348,7 +348,7 @@ DnsSettings              : {
 
 5. Измените параметр `frontendIPConfigurations` подсистемы балансировки нагрузки: вместо `publicIPAddress` укажите подсеть и `privateIPAddress`. `privateIPAddress` использует предварительно определенный статический внутренний IP-адрес. Чтобы использовать динамический IP-адрес, удалите элемент `privateIPAddress` и измените значение параметра `privateIPAllocationMethod` на **Dynamic**.
 
-    ```
+    ```json
                 "frontendIPConfigurations": [
                         {
                             "name": "LoadBalancerIPConfig",
@@ -369,7 +369,7 @@ DnsSettings              : {
 
 6. В ресурсе `Microsoft.ServiceFabric/clusters` измените значение параметра `managementEndpoint`, указав адрес внутренней подсистемы балансировки нагрузки. При использовании защищенного кластера обязательно измените *http://* на *https://*. (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
 
-    ```
+    ```json
                     "fabricSettings": [],
                     /*"managementEndpoint": "[concat('http://',reference(concat(parameters('lbIPName'),'-','0')).dnsSettings.fqdn,':',parameters('nt0fabricHttpGatewayPort'))]",*/
                     "managementEndpoint": "[concat('http://',reference(variables('lbID0')).frontEndIPConfigurations[0].properties.privateIPAddress,':',parameters('nt0fabricHttpGatewayPort'))]",
@@ -394,7 +394,7 @@ DnsSettings              : {
 
 1. Добавьте параметр статического IP-адреса для внутренней подсистемы балансировки нагрузки (сведения об использовании динамического IP-адреса см. в предыдущих разделах этой статьи).
 
-    ```
+    ```json
             "internalLBAddress": {
                 "type": "string",
                 "defaultValue": "10.0.0.250"
@@ -405,7 +405,7 @@ DnsSettings              : {
 
 3. Чтобы добавить внутренние версии существующих переменных сети, скопируйте и вставьте их, а также добавьте в имя окончание -Int:
 
-    ```
+    ```json
     /* Add internal load balancer networking variables */
             "lbID0-Int": "[resourceId('Microsoft.Network/loadBalancers', concat('LB','-', parameters('clusterName'),'-',parameters('vmNodeType0Name'), '-Internal'))]",
             "lbIPConfig0-Int": "[concat(variables('lbID0-Int'),'/frontendIPConfigurations/LoadBalancerIPConfig')]",
@@ -418,7 +418,7 @@ DnsSettings              : {
 
 4. Если вы используете созданный на портале шаблон с портом приложения 80, то он по умолчанию добавляет AppPort1 (порт 80) во внешнюю подсистему балансировки нагрузки. В этом случае удалите AppPort1 из `loadBalancingRules` и проб внешней подсистемы балансировки нагрузки, чтобы вы могли добавить этот порт во внутреннюю подсистему балансировки нагрузки:
 
-    ```
+    ```json
     "loadBalancingRules": [
         {
             "name": "LBHttpRule",
@@ -495,7 +495,7 @@ DnsSettings              : {
 
 5. Добавьте второй ресурс `Microsoft.Network/loadBalancers`. Он похож на внутреннюю подсистему балансировки нагрузки, созданную в разделе [Подсистема балансировки нагрузки только для внутреннего использования](#internallb), но использует переменные с окончанием -Int и реализует только порт приложения 80. Также удаляется `inboundNatPools`, чтобы оставить конечные точки RDP в общедоступной подсистеме балансировки нагрузки. Если требуется использовать RDP во внутренней подсистеме балансировки нагрузки, то переместите в нее `inboundNatPools` из внешней подсистемы балансировки нагрузки:
 
-    ```
+    ```json
             /* Add a second load balancer, configured with a static privateIPAddress and the "-Int" load balancer variables. */
             {
                 "apiVersion": "[variables('lbApiVersion')]",
@@ -580,7 +580,7 @@ DnsSettings              : {
 
 6. В `networkProfile` ресурса `Microsoft.Compute/virtualMachineScaleSets` добавьте внутренний пул адресов:
 
-    ```
+    ```json
     "loadBalancerBackendAddressPools": [
                                                         {
                                                             "id": "[variables('lbPoolID0')]"

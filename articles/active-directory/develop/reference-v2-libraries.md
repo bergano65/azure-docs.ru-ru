@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 19cec615-e51f-4141-9f8c-aaf38ff9f746
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
@@ -17,12 +17,12 @@ ms.date: 09/14/2018
 ms.author: negoe
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: a7034e65b0c1e804326e5c087b320f8e7ffde907
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: a7745a0c8a53a0726a27dc1e2642733bafeb8f30
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557106"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104574"
 ---
 # <a name="azure-active-directory-v20-authentication-libraries"></a>Библиотеки проверки подлинности Azure Active Directory версии 2.0
 
@@ -53,7 +53,7 @@ ms.locfileid: "53557106"
 
 Клиентские библиотеки аутентификации используются, чтобы получить маркер для вызова защищенного веб-API
 
-| платформа | Библиотека | Загрузка | Исходный код | Образец | Справочные материалы | Основная документация | Стратегия |
+| платформа | Библиотека | Download (Скачать) | Исходный код | Образец | Справочные материалы | Основная документация | Стратегия |
 | --- | --- | --- | --- | --- | --- | --- | ---|
 | ![JavaScript](media/sample-v2-code/logo_js.png) | MSAL.js (предварительная версия) | [NPM](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md) |  [Одностраничное приложение](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) |  | [Вики-сайт](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki)|
 |![Angular JS](media/sample-v2-code/logo_angular.png) | MSAL для Angular JS | [NPM](https://www.npmjs.com/package/@azure/msal-angularjs) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md) |  |  | |
@@ -66,7 +66,7 @@ ms.locfileid: "53557106"
 
 Библиотеки ПО промежуточного слоя используются для защиты веб-приложений и веб-API. Для веб-приложений или веб-API, написанных с помощью ASP.NET или ASP.NET Core, эти библиотеки используются ASP.NET и ASP.NET Core.
 
-| платформа | Библиотека | Загрузка | Исходный код | Образец | Справочные материалы
+| платформа | Библиотека | Download (Скачать) | Исходный код | Образец | Справочные материалы
 | --- | --- | --- | --- | --- | --- |
 | ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | Безопасность ASP.NET |[NuGet](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[Безопасность ASP.NET (GitHub)](https://github.com/aspnet/Security) |[Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник по API для ASP.NET](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0) |
 | ![.NET](media/sample-v2-code/logo_NET.png)| Расширения модели идентификации для .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочные материалы](https://docs.microsoft.com/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet) |

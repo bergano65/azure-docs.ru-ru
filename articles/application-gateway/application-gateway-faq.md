@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 1/11/2019
 ms.author: victorh
-ms.openlocfilehash: 45751af66b1b050d4d36d1b8aee52dc6a5d8cc7b
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: bd3711a88b14d7a24df7c20c72b49fca5953b568
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382411"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54886473"
 ---
 # <a name="frequently-asked-questions-for-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -105,8 +105,6 @@ Set-AzureRmApplicationGateway -ApplicationGateway $gw
 Подготовка новых развертываний номера SKU Шлюза приложений версии 1 может занять до 20 минут. Изменения в размере или числе экземпляров не нарушают работу шлюза приложений, он остается активным во время обновления.
 
 Подготовка развертываний номера SKU версии 2 может занять около 5–6 минут.
-
-Поддерживает ли Шлюз приложений заголовки X-Forwarded-For?
 
 ## <a name="configuration"></a>Параметр Configuration
 

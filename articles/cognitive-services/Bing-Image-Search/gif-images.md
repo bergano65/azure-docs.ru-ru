@@ -6,33 +6,33 @@ services: cognitive-services
 author: MikeDodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-image-search
+ms.subservice: bing-image-search
 ms.topic: article
 ms.date: 04/24/2018
 ms.author: rosh
 ms.custom: seodec2018
-ms.openlocfilehash: 7536452d3ed0030b34e4f30deba56d6d8ae1957c
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 458acef9224349d5e4c223999243322474daac3d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53249317"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55154939"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
 API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
 
 Приведенный ниже URL-адрес является запросом анимационных GIF-изображений.
-````
+```
 https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=interesting&imageType=AnimatedGif&mkt=en-us
-````
+```
 Параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#query) указывает условия поиска.  С помощью параметра фильтра [imageType](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#imagetype) в этом запросе также указывается тип содержимого — `animatedGif`.
 
 Чтобы просмотреть примеры результатов, используйте приведенный ниже URL-адрес для поиска через bing.com.
-````
+```
 https://www.bing.com/images/search?q=interesting&qft=%20filterui%3Aphoto-animatedgif
 
-````
+```
 ## <a name="query-parameters"></a>Параметры запроса
 
 Дополнительные сведения о параметрах и возможностях запроса см. в [справочнике по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#query-parameters). Пример приводится далее в этой статье после заголовка [Пример поиска анимационного GIF-изображения с помощью Java](#gifExample).
@@ -50,15 +50,15 @@ https://www.bing.com/images/search?q=interesting&qft=%20filterui%3Aphoto-animate
 ## <a name="example-search-for-animated-gif-using-java"></a>Пример поиска анимационного GIF-изображения с помощью Java
 
 Приведенный ниже URL-адрес выполняет поиск анимационных GIF-изображений: `q=interesting`
-````
+```
 https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=interesting&imageType=AnimatedGif&mkt=en-us
 
-````
+```
 Как показано в следующем примере, для запроса URL-адреса необходим заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#headers).
 
 В приведенном ниже примере Java создается и отправляется запрос.
 
-````
+```
 package gifSearch;
 import java.net.*;
 import java.util.*;
@@ -167,7 +167,7 @@ class SearchResults{
  }
 }
 
-````
+```
 
 ## <a name="results"></a>Результаты
 Код получает следующие результаты в формате объектов JSON:

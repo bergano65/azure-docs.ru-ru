@@ -12,12 +12,12 @@ ms.workload: na
 ms.date: 12/09/2018
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: b8c4fdc942af291e912a4c1e74d1292279cf9f8c
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: b16c67990099291381b6f11d9bd804bf4bef84e8
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53132335"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55078497"
 ---
 # <a name="azure-resource-manager-resource-group-deletion"></a>Удаление группы ресурсов в Azure Resource Manager
 
@@ -69,4 +69,4 @@ Resource Manager отправляет вызов GET для каждого ре�
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Основные понятия Azure Resource Manager см. в [этой статье](resource-group-overview.md).
-* Команды удаления см. в разделах [PowerShell](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup), [Azure CLI](/cli/azure/group?view=azure-cli-latest#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).
+* Команды удаления см. в разделах [PowerShell](/powershell/module/az.resources/Remove-AzResourceGroup), [Azure CLI](/cli/azure/group?view=azure-cli-latest#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).

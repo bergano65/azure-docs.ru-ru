@@ -14,13 +14,13 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.author: cwatson
-ms.openlocfilehash: 682ffb5659cd776117fd3eec8fdb0fa5e0427ab8
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.author: banders
+ms.openlocfilehash: 0b5e7a36c89c594dd0a7ec681b112ea523884461
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582314"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54904164"
 ---
 # <a name="sign-up-for-an-office-365-subscription-with-your-azure-account"></a>Регистрация для подписки Office 365 с помощью учетной записи Azure
 Если вы являетесь подписчиком Azure, то вы можете использовать учетную запись Azure для регистрации подписки Office 365. Если вы работаете в организации, которая имеет подписку Azure, то вы можете создать подписку Office 365 для пользователей в существующей службе Azure Active Directory (Azure AD). Подпишитесь на Office 365, используя учетную запись, которая имеет разрешения глобального администратора или администратора выставления счетов в клиенте Azure Active Directory. Дополнительные сведения см. в разделе [Проверка разрешений учетной записи в Azure AD](#RoleInAzureAD) и в статье [Назначение ролей администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).

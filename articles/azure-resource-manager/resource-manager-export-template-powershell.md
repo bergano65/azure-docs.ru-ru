@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/23/2018
 ms.author: tomfitz
-ms.openlocfilehash: c69bab9d2956568473dd6def86ecbd9bbb6577cf
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: cca81bf3f5a46b32cc901a0ac6024eb7888685f7
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359226"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55081611"
 ---
 # <a name="export-azure-resource-manager-templates-with-powershell"></a>Экспорт шаблонов Azure Resource Manager с помощью PowerShell
 
@@ -36,18 +36,18 @@ Resource Manager позволяет экспортировать шаблон и
 Чтобы продемонстрировать оба подхода для экспорта шаблона, начнем с развертывания решения в подписку. Если у вас уже есть группа ресурсов в подписке, в которую необходимо выполнить экспорт, то не нужно развертывать это решение. В остальной части этой статьи речь идет о шаблоне для этого решения. В примере сценария развертывается учетная запись хранения.
 
 ```powershell
-New-AzureRmResourceGroup -Name ExampleGroup -Location "South Central US"
-New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup `
+New-AzResourceGroup -Name ExampleGroup -Location "South Central US"
+New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup `
   -DeploymentName NewStorage
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
 ```  
 
 ## <a name="save-template-from-deployment-history"></a>Сохранение шаблона из журнала развертываний
 
-Шаблон можно извлечь из журнала развертываний с помощью команды [Save-AzureRmResourceGroupDeploymentTemplate](/powershell/module/azurerm.resources/save-azurermresourcegroupdeploymenttemplate). В следующем примере сохраняется шаблон, который вы ранее развернули:
+Шаблон можно извлечь из журнала развертываний с помощью команды [Save-AzureRmResourceGroupDeploymentTemplate](/powershell/module/az.resources/save-azresourcegroupdeploymenttemplate). В следующем примере сохраняется шаблон, который вы ранее развернули:
 
 ```powershell
-Save-AzureRmResourceGroupDeploymentTemplate -ResourceGroupName ExampleGroup -DeploymentName NewStorage
+Save-AzResourceGroupDeploymentTemplate -ResourceGroupName ExampleGroup -DeploymentName NewStorage
 ```
 
 Эта команда возвращает расположение шаблона.
@@ -62,10 +62,10 @@ C:\Users\exampleuser\NewStorage.json
 
 ## <a name="export-resource-group-as-template"></a>Экспорт группы ресурсов в виде шаблона
 
-Вместо извлечения шаблона из журнала развертываний можно получить шаблон, который представляет текущее состояние группы ресурсов. Для этого используйте команду [Export-AzureRmResourceGroup](/powershell/module/azurerm.resources/export-azurermresourcegroup). Эта команда используется, когда в группе ресурсов внесено много изменений и ни один из существующих шаблонов не содержит всех изменений. Он будет моментальным снимком группы ресурсов, который можно использовать для повторного развертывания в той же группе ресурсов. Чтобы использовать экспортированный шаблон для других решений, его необходимо значительно изменить.
+Вместо извлечения шаблона из журнала развертываний можно получить шаблон, который представляет текущее состояние группы ресурсов. Для этого используйте команду [Export-AzureRmResourceGroup](/powershell/module/az.resources/export-azresourcegroup). Эта команда используется, когда в группе ресурсов внесено много изменений и ни один из существующих шаблонов не содержит всех изменений. Он будет моментальным снимком группы ресурсов, который можно использовать для повторного развертывания в той же группе ресурсов. Чтобы использовать экспортированный шаблон для других решений, его необходимо значительно изменить.
 
 ```powershell
-Export-AzureRmResourceGroup -ResourceGroupName ExampleGroup
+Export-AzResourceGroup -ResourceGroupName ExampleGroup
 ```
 
 Эта команда возвращает расположение шаблона.
@@ -111,7 +111,7 @@ C:\Users\exampleuser\ExampleGroup.json
 Вы можете повторно развернуть этот шаблон, но в нем требуется подобрать уникальное имя для учетной записи хранения. Имя вашего параметра будет немного отличаться.
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup `
+New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup `
   -TemplateFile C:\Users\exampleuser\ExampleGroup.json `
   -storageAccounts_nf3mvst4nqb36standardsa_name tfnewstorage0501
 ```

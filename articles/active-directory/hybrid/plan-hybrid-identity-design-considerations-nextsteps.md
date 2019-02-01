@@ -13,14 +13,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/18/2017
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 37c89771823649f6a2590911ba41eaf64c6ccbd8
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: ab11783d48756796beae7485d65da73e58d0b71e
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54474427"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55161327"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations--next-steps"></a>Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги
 После завершения определения требований и проверки всех вариантов решения управления мобильными устройствами вы готовы к дальнейшим действиям по развертыванию инфраструктуры поддержки, которая идеально подходит вам и вашей организации.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 9f0c4789e73659e5965440989c23a8cf673f7cd2
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 33ada343738e113e8f14e1e5ac4a0e8aee481670
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53309167"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55185471"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-machine-development-setup"></a>Мониторинг и диагностика состояния служб в локальной среде разработки
 
@@ -51,7 +51,7 @@ java.util.logging.FileHandler.count = 10
 java.util.logging.FileHandler.pattern = /tmp/servicefabric/logs/mysfapp%u.%g.log
 ```
 
-Файл `app.properties` должен указывать на существующую папку. Затем, после создания файла `app.properties`, необходимо также изменить сценарий точки входа `entrypoint.sh` в папке `<applicationfolder>/<servicePkg>/Code/`, указав в качестве значения свойства `java.util.logging.config.file` файл `app.propertes`. Запись должна выглядеть примерно так:
+Файл `app.properties` должен указывать на существующую папку. Затем, после создания файла `app.properties`, необходимо также изменить сценарий точки входа `entrypoint.sh` в папке `<applicationfolder>/<servicePkg>/Code/`, указав в качестве значения свойства `java.util.logging.config.file` файл `app.properties`. Запись должна выглядеть примерно так:
 
 ```sh
 java -Djava.library.path=$LD_LIBRARY_PATH -Djava.util.logging.config.file=<path to app.properties> -jar <service name>.jar
@@ -74,7 +74,7 @@ java -Djava.library.path=$LD_LIBRARY_PATH -Djava.util.logging.config.file=<path 
 
 Сначала необходимо добавить System.Diagnostics.Tracing, чтобы иметь возможность записывать журналы в память, выходные потоки или файлы консоли.  Для ведения журналов с помощью EventSource добавьте в project.json следующий проект:
 
-```
+```json
     "System.Diagnostics.StackTrace": "4.0.1"
 ```
 

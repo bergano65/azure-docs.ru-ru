@@ -13,24 +13,24 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: richrund
-ms.openlocfilehash: 4363d7a319eb31dbf020121bf2fa5c5630296c5a
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 66bac977d05276833a357521a3a040c59b2f28fa
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53191720"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54900295"
 ---
 # <a name="azure-networking-monitoring-solutions-in-log-analytics"></a>Решения для мониторинга сетей Azure в Log Analytics
 
 Log Analytics предлагает следующие решения для мониторинга сетей.
 * Монитор производительности сети (NPM):
- * отслеживание работоспособности сети.
+    * отслеживание работоспособности сети.
 * Анализ шлюзов приложений Azure для проверки:
- * журналы шлюза приложений Azure;
- * метрику шлюза приложений Azure.
+    * журналы шлюза приложений Azure;
+    * метрику шлюза приложений Azure.
 * Решения для отслеживания и аудита сетевой активности в облачной сети.
-* [Анализ трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics). 
-* Анализ групп безопасности сети Azure
+    * [Анализ трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics). 
+    * Анализ групп безопасности сети Azure
 
 ## <a name="network-performance-monitor-npm"></a>Монитор производительности сети
 

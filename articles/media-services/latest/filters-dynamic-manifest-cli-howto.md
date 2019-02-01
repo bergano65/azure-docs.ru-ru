@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 471277433f0fc9a54a28baa158f1e20f1efb613f
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 2ba3de32f4ec3b9f6faf1d5a51da9c1c91e4a2e4
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000528"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55099312"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 
@@ -29,11 +29,10 @@ ms.locfileid: "54000528"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-- Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
-
-    Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - См. дополнительные сведения о [фильтрах и динамических манифестах](filters-dynamic-manifest-overview.md).
+
+[!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="define-a-filter"></a>Определение фильтра 
 
@@ -80,13 +79,6 @@ ms.locfileid: "54000528"
 
 Команде можно передать необязательный параметр `--tracks`, который содержит код JSON, представляющий выбранные элементы для отслеживания.  Чтобы загрузить JSON из файла, используйте синтаксис @{файл}. Если вы используете Azure CLI локально, укажите путь к файлу полностью.
 
-
-```azurecli
-az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @c:\tracks.json
-```
-
-Если вы используете Azure Cloud Shell, отправьте файл в Cloud Shell (для этого найдите кнопки для отправки и скачивания файлов в верхней части окна оболочки). После этого можно сослаться на файл следующим образом.
-
 ```azurecli
 az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @tracks.json
 ```
@@ -96,9 +88,6 @@ az ams account-filter create -a amsAccount -g resourceGroup -n filterName --trac
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов
 
 Следующая команда [az ams asset-filter](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest) создает фильтр ресурса с выбранными дорожками для отслеживания, которые были [определены ранее](#define-a-filter). 
-
-> [!TIP]
-> См. сведения об указании расположения имени файла в предыдущем разделе.
 
 ```azurecli
 az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-name assetName --tracks @tracks.json

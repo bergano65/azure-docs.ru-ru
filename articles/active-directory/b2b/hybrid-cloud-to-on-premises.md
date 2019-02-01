@@ -3,19 +3,19 @@ title: Предоставление пользователям B2B в Azure AD �
 description: В этой статье описано, как предоставить облачным пользователям B2B доступ к локальным приложениям с помощью службы совместной работы Azure AD B2B.
 services: active-directory
 ms.service: active-directory
-ms.component: B2B
+ms.subservice: B2B
 ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: 25decf303023e5a71faa987caf6311f6a6f52b22
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: ef70b9e58a669695f3bdec7ad8ea4bab93e7e4b9
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432478"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55082050"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 

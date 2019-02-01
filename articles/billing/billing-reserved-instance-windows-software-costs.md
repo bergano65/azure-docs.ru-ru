@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
-ms.author: cwatson
-ms.openlocfilehash: 0328f90eb1cb9c316eea76a0f36c123fd556d25e
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.author: banders
+ms.openlocfilehash: de2aee36f20bd5142f398de7edb301e53ab42cae
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584424"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54902675"
 ---
 # <a name="windows-software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances.
 
@@ -64,7 +64,7 @@ ms.locfileid: "52584424"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 
 

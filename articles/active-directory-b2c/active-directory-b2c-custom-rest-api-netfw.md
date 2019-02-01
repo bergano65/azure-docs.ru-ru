@@ -9,13 +9,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/30/2017
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: 9e5f8171dde2f6da153441dafd9a87fc5c946e71
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: 5ade3ac7587d4ac5c5a6d8e174e76e76088e4e57
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54853057"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55157947"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -215,7 +215,7 @@ Azure AD B2C позволяет добавлять собственную биз
     Откроется окно **Создать службу приложений**. В этом окне можно создать все необходимые ресурсы Azure для запуска веб-приложения ASP.NET в Azure.
 
     > [!NOTE]
-    >Дополнительные сведения см. в разделе о публикации статьи [Создание веб-приложения ASP.NET в Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet#publish-to-azure).
+    >Дополнительные сведения см. в разделе о публикации статьи [Создание веб-приложения ASP.NET в Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet).
 
 3. В поле **Имя веб-приложения** введите уникальное имя (допустимые символы: a–z, 0–9 и дефис (-)). URL-адрес веб-приложения: http://<app_name>.azurewebsites.NET, где *app_name* — это имя вашего веб-приложения. Можно принять имя, созданное автоматически, если оно является уникальным.
 

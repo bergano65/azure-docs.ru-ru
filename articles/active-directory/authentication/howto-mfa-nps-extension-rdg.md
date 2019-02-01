@@ -3,19 +3,19 @@ title: Интеграция шлюза удаленных рабочих сто�
 description: Интеграция инфраструктуры шлюза удаленных рабочих столов с Azure MFA с помощью расширения сервера политики сети для Microsoft Azure.
 services: multi-factor-authentication
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: 853f8a499bfed461f75a79ff18f878f37d109e81
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 3a6ede4447ff6ab11ed8b51f18d4ae6f04c7d191
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54425362"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55077528"
 ---
 # <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Интеграция инфраструктуры шлюза удаленных рабочих столов с помощью расширения сервера политики сети (NPS) и Azure AD
 

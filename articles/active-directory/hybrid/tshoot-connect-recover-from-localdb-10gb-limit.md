@@ -1,5 +1,5 @@
 ---
-title: Azure AD Connect. Восстановление из LocalDB с ограничением в 10 ГБ | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Восстановление из LocalDB с ограничением в 10 ГБ | Документация Майкрософт'
 description: В этой статье описывается восстановление службы синхронизации Azure AD Connect при возникновении проблемы LocalDB, связанной с ограничением в 10 ГБ.
 services: active-directory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 445137d268650f71bdc4d64342bc23d2b6da6daa
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 08e1beb199287db1d030d5ad9357cbd20f1eb859
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54474677"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168649"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect выполняет следующие функции: Восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.

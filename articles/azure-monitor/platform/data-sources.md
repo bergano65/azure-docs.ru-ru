@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/13/2018
 ms.author: bwren
-ms.openlocfilehash: 39229bbd120ca52f31a0bd54446e49990d952c9d
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: b9029676df6a878a6d3d5796928cbad9c20cd685
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020138"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54889065"
 ---
 # <a name="sources-of-data-in-azure-monitor"></a>Источники данных в Azure Monitor
 В этой статье описываются источники данных, собранные Azure Monitor для мониторинга работоспособности и производительности ваших ресурсов, а также выполняющихся на их базе приложений. Эти ресурсы могут находиться в Azure, в другом облаке или в локальной среде.  Подробную информацию о том, как эти данные хранятся и как вы можете их просматривать, см. в разделе [Сбор данных мониторинга в Azure](data-collection.md).
@@ -61,7 +61,7 @@ ms.locfileid: "54020138"
 
 
 ### <a name="resource-diagnostic-logs"></a>Журналы диагностики ресурсов
-Хотя журнал действий содержит сведения об операциях с ресурсами Azure, [журналы диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md) по уровням ресурсов предоставляют сведения о работе самого ресурса.   Требования к конфигурации и содержимое этих журналов [зависит от типа ресурса](../../azure-monitor/platform/tutorial-dashboards.md).
+Хотя журнал действий содержит сведения об операциях с ресурсами Azure, [журналы диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md) по уровням ресурсов предоставляют сведения о работе самого ресурса.   Требования к конфигурации и содержимое этих журналов [зависит от типа ресурса](../../azure-monitor/platform/diagnostic-logs-schema.md).
 
 Вы не можете просматривать журналы диагностики непосредственно на портале Azure, но можете [отправлять их в службу хранилища Azure для архивации](../../azure-monitor/platform/archive-diagnostic-logs.md) и экспортировать их в [концентратор событий](../../event-hubs/event-hubs-about.md) для перенаправления в другие службы либо в [Log Analytics](../../azure-monitor/platform/diagnostic-logs-stream-log-store.md) для анализа. Некоторые ресурсы могут выполнять запись непосредственно в Log Analytics, а другие записывают данные в учетную запись хранения перед их [импортом в Log Analytics](../../azure-monitor/platform/azure-storage-iis-table.md#use-the-azure-portal-to-collect-logs-from-azure-storage).
 

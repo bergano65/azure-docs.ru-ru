@@ -3,19 +3,19 @@ title: Аудит и отчеты для пользователей службы
 description: Свойства гостевого пользователя службы совместной работы Azure Active Directory B2B можно настраивать.
 services: active-directory
 ms.service: active-directory
-ms.component: B2B
+ms.subservice: B2B
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: a31f9a5a0f613d6c70e8c95e584d8caca87e93be
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 06622c093ca90b3873365e6c93c40fc7221a6398
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54434161"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55075199"
 ---
 # <a name="auditing-and-reporting-a-b2b-collaboration-user"></a>Аудит и отчеты для пользователей службы совместной работы B2B
 Для гостевых пользователей доступны такие же возможности аудита, как и для пользователей-участников. 

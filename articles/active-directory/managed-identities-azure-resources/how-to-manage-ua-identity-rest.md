@@ -3,23 +3,23 @@ title: Как управлять управляемыми удостоверен
 description: Пошаговые инструкции по созданию и удалению управляемых удостоверений, назначаемых пользователем, а также получению их списка для выполнения вызовов REST API.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/26/2018
-ms.author: daveba
-ms.openlocfilehash: 9ac036b11734e40d0f601f2416ef4892646e6390
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: priyamo
+ms.openlocfilehash: cfa9a2ab2ec5d5a666bd431a430c7d1bdce6c8d8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54425477"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55150454"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-rest-api-calls"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью вызовов REST API
 

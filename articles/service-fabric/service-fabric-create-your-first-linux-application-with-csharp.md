@@ -14,16 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/11/2018
 ms.author: subramar
-ms.openlocfilehash: e917119e2d0f9b7b5cfa9ea145cc6e540486ac66
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: aeea0a0b00ceaa936352d549a86040c2cc460167
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44052602"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55153868"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Создание первого приложения Azure Service Fabric
 > [!div class="op_single_selector"]
-> * [C# для Windows](service-fabric-create-your-first-application-in-visual-studio.md)
 > * [Использование Java в Linux (предварительная версия)](service-fabric-create-your-first-linux-application-with-java.md)
 > * [Использование C# в Linux (предварительная версия)](service-fabric-create-your-first-linux-application-with-csharp.md)
 >

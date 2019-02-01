@@ -3,7 +3,7 @@ title: Настройка PostgreSQL на виртуальной машине Li
 description: Узнайте, как установить и настроить PostgreSQL на виртуальной машине Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
-ms.author: zarhoads
-ms.openlocfilehash: e794c191737f14fb06351e345f70edb9f7cddb7c
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.author: cynthn
+ms.openlocfilehash: e851f6f5433a832aa30a0d87a917b64d1bc721f2
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322062"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54888283"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Установка и настройка PostgreSQL в Azure
 PostgreSQL — это расширенная открытая СУБД, аналогичная СУБД Oracle и DB2. Она предлагает возможности корпоративного уровня, обеспечивая полное соответствие принципам ACID, надежную обработку транзакций и управление параллелизмом в разных версиях. Она также поддерживает такие стандарты, как ANSI SQL и SQL/MED (включая оболочки для внешних данных Oracle, MySQL, MongoDB и др.). Высокая расширяемость обеспечивается поддержкой более 12 процедурных языков, индексов GIN и GIST, пространственных данных, различных функций NoSQL для JSON и приложений на основе пары "ключ — значение".

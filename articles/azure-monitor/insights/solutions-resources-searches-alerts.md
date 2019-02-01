@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 06/18/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b9ad1157469303f4065a3c27ccf6514aaa35155
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
+ms.openlocfilehash: c46c65fe7e720e3afdd976e2480e8f183cc4398d
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54402206"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54901196"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -447,6 +447,7 @@ ms.locfileid: "54402206"
 ```
 
 Следующий файл параметров содержит примеры значений для такого решения.
+
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",

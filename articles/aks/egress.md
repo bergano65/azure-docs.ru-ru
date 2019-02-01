@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 175fa625a94626cde4d782abd1e9629530cab8b4
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: aeffe172fd422f18e2828c5274e9a2ed13cc546a
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47408528"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103366"
 ---
 # <a name="use-a-static-public-ip-address-for-egress-traffic-in-azure-kubernetes-service-aks"></a>Использование статического IP-адреса для исходящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -24,7 +24,7 @@ ms.locfileid: "47408528"
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="egress-traffic-overview"></a>Обзор исходящего трафика
 
@@ -63,7 +63,7 @@ az network public-ip create \
     "ipAddress": "40.121.183.52",
     [..]
   }
-````
+```
 
 Позже можно получить общедоступный IP-адрес с помощью команды [az network public-ip list][az-network-public-ip-list]. Укажите имя группы ресурсов узла, а затем запросите *ipAddress*, как показано в следующем примере:
 
