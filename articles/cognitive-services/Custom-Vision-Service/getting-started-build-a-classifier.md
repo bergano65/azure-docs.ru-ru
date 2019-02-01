@@ -6,16 +6,16 @@ services: cognitive-services
 author: anrothMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: anroth
-ms.openlocfilehash: f6ab2d8bcf1ae02df95b0cf36eacffa90964d43e
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 088ca29a2b10845730e986995256eed99caa7401
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54243260"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210228"
 ---
 # <a name="how-to-build-a-classifier-with-custom-vision"></a>Как создать классификатор с помощью Пользовательской службы визуального распознавания
 
@@ -66,11 +66,11 @@ ms.locfileid: "54243260"
 Чтобы обучение модели было эффективным, используйте разнообразные изображения. Изображения должны отличаться по следующим аспектам:
 * угол обзора камеры;
 * освещение;
-* фон;
+* background
 * стиль изображения;
 * отдельные объекты и группы;
-* размер;
-* тип.
+* size
+* Тип
 
 Также убедитесь, что все обучающие изображения соответствуют следующим критериям:
 * файлы с расширением .jpg, .png или .bmp;

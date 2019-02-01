@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
-ms.author: cwatson
+ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 09ac7659487a81d68089a060bf038213722d4dbb
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: f399cf55123ad6bc8ccb011c5d7d59f615af652d
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52580433"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54904392"
 ---
 # <a name="change-your-azure-account-profile-information-such-as-contact-email-address-and-phone-number"></a>Изменение сведений в профиле учетной записи Azure, например контактного адреса электронной почты, адреса и номера телефона
 
@@ -46,7 +46,7 @@ ms.locfileid: "52580433"
 
 ### <a name="does-updating-my-profile-email-also-update-my-login-email-address"></a>Обновление электронной почты в профиле приводит к обновлению адреса электронной почты для входа?
 
- Нет. При обновлении электронной почты в профиле адрес электронной почты для входа не обновляется. Чтобы изменить адрес электронной почты для входа, необходимо передать владение учетной записью.
+№ При обновлении электронной почты в профиле адрес электронной почты для входа не обновляется. Чтобы изменить адрес электронной почты для входа, необходимо передать владение учетной записью.
 
 ### <a name="does-updating-my-profile-address-also-update-my-credit-card-billing-address"></a>Обновление электронной почты в профиле приводит к обновлению адреса для выставления счетов по кредитной карте?
 
@@ -58,5 +58,5 @@ ms.locfileid: "52580433"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

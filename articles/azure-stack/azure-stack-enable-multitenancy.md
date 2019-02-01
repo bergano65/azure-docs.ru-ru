@@ -14,12 +14,13 @@ ms.topic: article
 ms.date: 11/6/2018
 ms.author: patricka
 ms.reviewer: bryanr
-ms.openlocfilehash: 2861b0d1b7ac24a8e881ff052b865ca0384a55d6
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.lastreviewed: 11/6/2018
+ms.openlocfilehash: 7d013fce08f688c49d828b829f84e385455c84fe
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54464814"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55249703"
 ---
 # <a name="multi-tenancy-in-azure-stack"></a>Мультитенантность в Azure Stack
 
@@ -41,10 +42,10 @@ ms.locfileid: "54464814"
  - Убедитесь, что у вас [установлена](azure-stack-powershell-install.md) и [настроена](azure-stack-powershell-configure-admin.md) среда PowerShell для Azure Stack.
  - [Скачайте средства для Azure Stack](azure-stack-powershell-download.md) и импортируйте модули Connect и Identity.
 
-    ````PowerShell  
+    ```PowerShell  
     Import-Module .\Connect\AzureStack.Connect.psm1
     Import-Module .\Identity\AzureStack.Identity.psm1
-    ````
+    ```
 
 ### <a name="configure-azure-stack-directory"></a>Настройка каталога Azure Stack
 
@@ -54,7 +55,7 @@ ms.locfileid: "54464814"
 
 Администратор служб contoso.onmicrosoft.com должен выполнить следующие команды.
 
-````PowerShell  
+```PowerShell  
 ## The following Azure Resource Manager endpoint is for the ASDK. If you are in a multinode environment, contact your operator or service provider to get the endpoint.
 $adminARMEndpoint = "https://adminmanagement.local.azurestack.external"
 
@@ -75,7 +76,7 @@ Register-AzSGuestDirectoryTenant -AdminResourceManagerEndpoint $adminARMEndpoint
  -GuestDirectoryTenantName $guestDirectoryTenantToBeOnboarded `
  -Location $location `
  -ResourceGroupName $ResourceGroupName
-````
+```
 
 ### <a name="configure-guest-directory"></a>Настройка гостевого каталога
 
@@ -85,7 +86,7 @@ Register-AzSGuestDirectoryTenant -AdminResourceManagerEndpoint $adminARMEndpoint
 
 Мария, которая является администратором каталога Fabrikam, использует следующие команды в гостевом каталоге fabrikam.onmicrosoft.com.
 
-````PowerShell
+```PowerShell
 ## The following Azure Resource Manager endpoint is for the ASDK. If you are in a multinode environment, contact your operator or service provider to get the endpoint.
 $tenantARMEndpoint = "https://management.local.azurestack.external"
     
@@ -96,7 +97,7 @@ Register-AzSWithMyDirectoryTenant `
  -TenantResourceManagerEndpoint $tenantARMEndpoint `
  -DirectoryTenantName $guestDirectoryTenantName `
  -Verbose 
-````
+```
 
 > [!IMPORTANT]
 > Если в дальнейшем администратор Azure Stack будет устанавливать новые службы или обновления, возможно, потребуется снова запустить этот сценарий.

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/24/2018
 ms.author: mahender,cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 7fbf86a24ca6b2ba55ca33b20e67dea6a6e0c994
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: b66b293e5d6e422c994e2b7cef13fd4100144cbf
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730729"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55297010"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service"></a>Проверка подлинности и авторизация в службе приложений Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "53730729"
 - опубликовать запись в ленте Facebook прошедшего проверку подлинности пользователя;
 - прочитать корпоративные данные пользователя из API Graph Azure Active Directory или даже Microsoft Graph.
 
-Как правило, вам необходимо писать код для сбора, хранения и обновления этих токенов в своем приложении. В хранилище токенов при необходимости вы просто [извлекаете токены](app-service-authentication-how-to.md#retrieve-tokens-in-app-code) и [указываете службе приложений обновить их](app-service-authentication-how-to.md#refresh-access-tokens), если они становятся недопустимыми. 
+Как правило, вам необходимо писать код для сбора, хранения и обновления этих токенов в своем приложении. В хранилище токенов при необходимости вы просто [извлекаете токены](app-service-authentication-how-to.md#retrieve-tokens-in-app-code) и [указываете службе приложений обновить их](app-service-authentication-how-to.md#refresh-identity-provider-tokens), если они становятся недопустимыми. 
 
 Токены идентификатора, доступа и обновления кэшируются для проверенного сеанса. Они доступны только соответствующему пользователю.  
 

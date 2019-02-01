@@ -3,23 +3,23 @@ title: Использование управляемого удостовере�
 description: В этом руководстве показано, как использовать управляемое удостоверение, назначаемое системой, виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS (подписанного URL-адреса) вместо ключа доступа к учетной записи хранения.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: daveba
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2017
-ms.author: daveba
-ms.openlocfilehash: 6997812565e5e797e65d8e833a7f0f83db593923
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.date: 01/24/2019
+ms.author: priyamo
+ms.openlocfilehash: dc5d7b6d1047a3da2977f1d80c99e12d559a152d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54423890"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55184042"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage-via-a-sas-credential"></a>Руководство. Использование управляемого удостоверения, назначаемого системой, на виртуальной машине Windows для доступа к службе хранилища Azure с помощью учетных данных SAS
 
@@ -37,6 +37,8 @@ SAS службы позволяет предоставить определен�
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
@@ -150,17 +152,17 @@ PS C:\> $sasCred
 sv=2015-04-05&sr=c&spr=https&se=2017-09-23T00%3A00%3A00Z&sp=rcw&sig=JVhIWG48nmxqhTIuN0uiFBppdzhwHdehdYan1W%2F4O0E%3D
 ```
 
-Затем нужно создать файл с именем "test.txt". Используйте учетные данные SAS для проверки подлинности с помощью командлета `New-AzureStorageContent` и отправьте файл в контейнер больших двоичных объектов, а затем скачайте его.
+Затем нужно создать файл с именем "test.txt". Используйте учетные данные SAS для проверки подлинности с помощью командлета `New-AzStorageContent` и отправьте файл в контейнер больших двоичных объектов, а затем скачайте его.
 
 ```bash
 echo "This is a test text file." > test.txt
 ```
 
-Сначала установите командлеты службы хранилища Azure с помощью `Install-Module Azure.Storage`, а затем отправьте созданный большой двоичный объект с помощью командлета PowerShell `Set-AzureStorageBlobContent`.
+Сначала установите командлеты службы хранилища Azure с помощью `Install-Module Azure.Storage`, а затем отправьте созданный большой двоичный объект с помощью командлета PowerShell `Set-AzStorageBlobContent`.
 
 ```powershell
-$ctx = New-AzureStorageContext -StorageAccountName <STORAGE-ACCOUNT-NAME> -SasToken $sasCred
-Set-AzureStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
+$ctx = New-AzStorageContext -StorageAccountName <STORAGE-ACCOUNT-NAME> -SasToken $sasCred
+Set-AzStorageBlobContent -File test.txt -Container <CONTAINER-NAME> -Blob testblob -Context $ctx
 ```
 
 Ответ:
@@ -177,10 +179,10 @@ Context           : Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext
 Name              : testblob
 ```
 
-Скачать отправленный большой двоичный объект с помощью командлета PowerShell `Get-AzureStorageBlobContent`.
+Скачать отправленный большой двоичный объект с помощью командлета PowerShell `Get-AzStorageBlobContent`.
 
 ```powershell
-Get-AzureStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
+Get-AzStorageBlobContent -Blob testblob -Container <CONTAINER-NAME> -Destination test2.txt -Context $ctx
 ```
 
 Ответ:

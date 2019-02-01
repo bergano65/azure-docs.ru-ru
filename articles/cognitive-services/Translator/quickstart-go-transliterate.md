@@ -6,16 +6,16 @@ services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 12/05/2018
 ms.author: erhopf
-ms.openlocfilehash: 6b86d94e53b1ecb7a0d0d7b1f325a425f05c9e4f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 976ca2623667abc4e49ceb91ec97706723bc32c2
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993293"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55211752"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-go"></a>Краткое руководство. Транслитерация текста с помощью Go и API перевода текстов
 
@@ -88,7 +88,7 @@ func transliterate(subscriptionKey string) {
 }
 ```
 
-Затем давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере японский текст транслитерируется в текст на латинице.
+Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере японский текст транслитерируется в текст на латинице.
 
 Скопируйте этот код в функцию `transliterate`.
 
@@ -121,7 +121,7 @@ b, _ := json.Marshal(body)
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Теперь, когда вы закодировали текст запроса как объект JSON, создайте запрос POST и вызовите API перевода текстов.
+Теперь, когда вы закодировали текст запроса в формате JSON, можно создать запрос POST и вызвать API перевода текстов.
 
 ```go
 // Build the HTTP POST request
@@ -142,7 +142,7 @@ if err != nil {
 
 ## <a name="handle-and-print-the-response"></a>Обработка и вывод ответа
 
-Добавьте этот код в функцию `transliterate`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
+Добавьте следующий код в функцию `transliterate`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
 
 ```go
 // Decode the JSON response
@@ -185,7 +185,7 @@ go run transliterate-text.go
 
 ## <a name="see-also"></a>См. также
 
-Узнайте, как использовать API перевода текстов, чтобы выполнять такие задачи:
+Узнайте, как с помощью API перевода текстов выполнять следующие задачи:
 
 * [перевод текста](quickstart-go-translate.md);
 * [определение языка по входным данным](quickstart-go-detect.md);

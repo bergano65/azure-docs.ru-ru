@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeffgilb
-ms.openlocfilehash: f22754a16c4765989b5773d099fc3ecda73040db
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.lastreviewed: 10/15/2018
+ms.openlocfilehash: a9bf2240e6e60a3d2d80bf4829d74f1043024d7e
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52972394"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239678"
 ---
 # <a name="azure-stack-administration-basics"></a>Основы администрирования Azure Stack
 Если вы не знакомы с администрированием Azure Stack, вам необходимо знать несколько моментов. В этом руководстве представлен обзор роли оператора Azure Stack и сведения, которые необходимо сообщить пользователям, чтобы они сразу же начали продуктивно работать.

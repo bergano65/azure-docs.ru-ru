@@ -6,17 +6,17 @@ services: cognitive-services
 author: tulasim88
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 01/24/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 261d42a6c21681ee8015edfe73ad78b4458eb0ee
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 08373449b2e61da503ab785eda7d6df80d6d1c16
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53078822"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55227936"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 О выпуске общедоступной версии QnA Maker было объявлено 7 мая 2018 г. на конференции \\\build\. Общедоступная версия QnA Maker имеет новую архитектуру, основанную на Azure. Базы знаний, созданные с помощью бесплатной предварительной версии QnA Maker, будет необходимо перенести в общедоступную версию QnA Maker. Предварительная версия QnA Maker будет признана устаревшей в январе 2019 г. Дополнительные сведения об изменениях в общедоступной версии QnA Maker см. в объявлении о выпуске общедоступной версии QnA Maker в этой [публикации блога](https://aka.ms/qnamakerga-blog).

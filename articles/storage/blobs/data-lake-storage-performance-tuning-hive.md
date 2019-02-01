@@ -3,17 +3,17 @@ title: Рекомендации по настройке производител
 description: Рекомендации по настройке производительности Hive в Azure Data Lake Storage 2-го поколения
 services: storage
 author: swums
-ms.component: data-lake-storage-gen2
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 90982491ecd64ff707bc47d71f374668ed74eb38
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 07be781c917a466b67580a99490eca4f6ff29985
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976850"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239797"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности Hive в HDInsight и Azure Data Lake Storage 2-го поколения
 
@@ -25,7 +25,7 @@ ms.locfileid: "52976850"
 * **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения.
 * **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive).
-* **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md).
+* **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md)
 
 ## <a name="parameters"></a>Параметры
 

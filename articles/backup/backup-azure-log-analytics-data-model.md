@@ -2,19 +2,18 @@
 title: Модель данных Log Analytics для Azure Backup
 description: В этой статье представлены сведения о модели данных Log Analytics для данных Azure Backup.
 services: backup
-author: adiganmsft
+author: adigan
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/24/2017
 ms.author: adigan
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f4ecc87a0a7a0c74b02b72164fe129daa6530ea2
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 5921ca696076a16e39252a6cb3bfae98854b5a85
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877587"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299578"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 Для создания отчетов используйте модель данных Log Analytics. С помощью модели данных можно создавать пользовательские запросы и панели мониторинга или настраивать как удобно данные Azure Backup.
@@ -281,4 +280,4 @@ ms.locfileid: "52877587"
 | ResourceType |текст |Тип ресурса, для которого собираются данные. Например, "Хранилище" |
 
 ## <a name="next-steps"></a>Дополнительная информация
-После просмотра модели данных для создания отчетов Azure Backup вы можете приступить к [созданию панели мониторинга](../azure-monitor/platform/dashboards.md) в Log Analytics.
+После просмотра модели данных для создания отчетов Azure Backup вы можете приступить к [созданию панели мониторинга](../azure-monitor/learn/tutorial-logs-dashboards.md) в Log Analytics.
