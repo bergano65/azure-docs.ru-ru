@@ -6,37 +6,25 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.custom: seodec18
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 01/23/2019
 ms.author: diberry
 ms.service: cognitive-services
-ms.openlocfilehash: 3e6064b4c202c36e4b63d6e06edfbf3149f6665f
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 81b963a56b35cc1206982680f8742c2fea9f2446
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139877"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219334"
 ---
-# <a name="add-intents"></a>Добавление намерений 
+# <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
 
 Добавьте [намерения](luis-concept-intent.md) в приложение LUIS для определения групп вопросов или команд, которые имеют одинаковые намерения. 
 
 Для управления намерениями в верхней панели навигации выберите раздел **Построение**, а затем в левой панели выберите **Намерения**. 
 
-## <a name="create-an-app"></a>Создание приложения
-
-1. Войдите на портал [LUIS](https://www.luis.ai).
-
-1. Выберите **Создать приложение**. 
-
-1. Придумайте имя для приложения `MyHumanResourcesApp`. В пункте "Язык и региональные параметры" выберите **Английский**. Поле "Описание" заполнять необязательно. 
-
-1. Нажмите кнопку **Готово**. 
-
 ## <a name="add-intent"></a>Добавление намерения
-
-1. Откроется приложение со списком **Намерения**.
 
 1. На странице **намерений** выберите **Create new intent** (Создать намерение).
 
