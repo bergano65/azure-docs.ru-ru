@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 05/22/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
-ms.openlocfilehash: bace951141ea1d437d102b11ac4f548beaf5c75e
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: d99149f8112c19a07208523a1ee26ba1c36e5362
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54329418"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55474230"
 ---
 # <a name="creating-continuous-integration-pipeline-on-azure-using-docker-kubernetes-and-python-flask-application"></a>Создание конвейера непрерывной интеграции в Azure с помощью приложения Docker, Kubernetes или Flask Python
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.

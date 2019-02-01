@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 11/21/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: de8070906f7b2470378fb631f2e94a96b4a2960d
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: a74f2c21746deb16372174d4a769f9abb825a1cd
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138659"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55473316"
 ---
 # <a name="feature-selection-in-the-team-data-science-process-tdsp"></a>Выбор характеристик в процессе обработки и анализа данных группы (TDSP)
 В этой статье описаны цели выбора характеристик и приводятся примеры, поясняющие его роль в совершенствовании данных в процессе машинного обучения. Эти примеры взяты из Студии машинного обучения Azure. 

@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: f5610f03cb613c7da2f89da1a38b6bf058a4e0cc
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.lastreviewed: 11/05/2018
+ms.openlocfilehash: db2c55ec30e766496b98ef66b584df26f2dfe116
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714412"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239287"
 ---
 # <a name="enable-backup-for-azure-stack-from-the-administration-portal"></a>Включение резервного копирования для Azure Stack на портале администрирования
 Включите службу резервного копирования инфраструктуры с помощью портала администрирования, чтобы разрешить Azure Stack создавать резервные копии. Вы сможете использовать эти резервные копии для восстановления среды с помощью облачного восстановления в случае [неустранимого сбоя](./azure-stack-backup-recover-data.md). Облачное восстановление предназначено для того, чтобы операторы и пользователи смогли входить на портал по завершении восстановления. При этом восстанавливаются подписки пользователей, в том числе права доступа на основе ролей и роли, исходные планы, предложения и ранее определенные квоты вычислительных ресурсов, ресурсов хранилища и сетевых ресурсов.
