@@ -1,0 +1,149 @@
+items:
+- name: Принципы работы Azure IoT
+  href: /azure/iot-fundamentals
+- name: Документация по Azure IoT Central (новый пользовательский интерфейс)
+  href: ../iot-central/index.yml?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+- name: Обзор
+  items:
+  - name: Что собой представляет Azure IoT Central
+    href: ../iot-central/overview-iot-central.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Параметры решения для Интернета вещей
+    href: ../iot-central/overview-iot-options.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Обзор пользовательского интерфейса
+    href: ../iot-central/overview-iot-central-tour-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+- name: Быстрое начало работы
+  items:
+  - name: Создание приложения
+    href: ../iot-central/quick-deploy-iot-central.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  expanded: true
+- name: Учебники
+  items:
+  - name: 1. Определение нового типа устройства.
+    href: ../iot-central/tutorial-define-device-type-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: 2. Настройка правил.
+    href: ../iot-central/tutorial-configure-rules-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: 3. Настройка представления оператора.
+    href: ../iot-central/tutorial-customize-operator-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: 4. Мониторинг устройств.
+    href: ../iot-central/tutorial-monitor-devices.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: 5. Добавление устройства.
+    href: ../iot-central/tutorial-add-device.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+- name: Основные понятия
+  items:
+  - name: Архитектура
+    href: ../iot-central/concepts-architecture.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Соединение
+    href: ../iot-central/concepts-connectivity.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+- name: Практические руководства
+  items:
+  - name: Подключение устройств
+    items:
+    - name: Подготовка и подключение приложения Node.js (универсальное приложение)
+      href: ../iot-central/howto-connect-nodejs.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подготовка и подключение MXChip IoT DevKit
+      href: ../iot-central/howto-connect-devkit.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подготовка и подключение Raspberry Pi (Python)
+      href: ../iot-central/howto-connect-raspberry-pi-python.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подготовка и подключение Raspberry Pi (C#)
+      href: ../iot-central/howto-connect-raspberry-pi-csharp.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подготовка и подключение устройства с Windows IoT Базовая
+      href: ../iot-central/howto-connect-windowsiotcore.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Мониторинг подключения устройств с помощью командной строки
+      href: ../iot-central/howto-use-iotc-explorer.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Управление устройствами
+    items:
+    - name: Настройка шаблона устройства
+      href: ../iot-central/howto-set-up-template-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: управление устройствами.
+      href: ../iot-central/howto-manage-devices-experimental.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Выполнение задания
+      href: ../iot-central/howto-run-a-job.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Использование наборов устройств
+      href: ../iot-central/howto-use-device-sets.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Создание версии шаблона устройства
+      href: ../iot-central/howto-version-devicetemplate.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Мониторинг и аналитика
+    items:
+    - name: Создание правила телеметрии
+      href: ../iot-central/howto-create-telemetry-rules.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Создание правила события
+      href: ../iot-central/howto-create-event-rules.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Анализ данных устройства
+      href: ../iot-central/howto-create-analytics.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Действия и расширяемость
+    items:
+    - name: Создание действий веб-перехватчика на основе правил
+      href: ../iot-central/howto-create-webhooks.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Создание рабочих процессов в Microsoft Flow
+      href: ../iot-central/howto-add-microsoft-flow.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Создание рабочих процессов в Azure Logic Apps
+      href: ../iot-central/howto-build-azure-logic-apps.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Активация Функций Azure
+      href: ../iot-central/howto-trigger-azure-functions.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Экспорт данных
+      href: ../iot-central/howto-export-data.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+      items:
+      - name: Экспорт в службы "Центры событий" и "Служебная шина"
+        href: ../iot-central/howto-export-data-event-hubs-service-bus.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+      - name: Экспорт в хранилище BLOB-объектов
+        href: ../iot-central/howto-export-data-blob-storage.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Визуализация данных в Power BI
+      href: ../iot-central/howto-connect-powerbi.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подключение других облаков Интернета вещей
+      href: ../iot-central/howto-build-iotc-device-bridge.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Администрирование
+    items:
+    - name: Администрирование приложения
+      href: ../iot-central/howto-administer.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Подготовка и передача изображения
+      href: ../iot-central/howto-prepare-images.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Управление IoT Central на портале управления
+      href: ../iot-central/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Управление IoT Central в Azure PowerShell
+      href: ../iot-central/howto-manage-iot-central-from-powershell.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Создание и администрирование приложения на правах поставщика облачных решений
+      href: ../iot-central/howto-create-and-manage-applications-as-CSP.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+    - name: Настройка домашней страницы
+      href: ../iot-central/howto-configure-homepage.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Персонализация
+    items:
+    - name: Управление своими настройками
+      href: ../iot-central/howto-manage-preferences.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+- name: Сопутствующие материалы
+  items:
+  - name: Решения
+    items:
+    - name: Акселераторы решений для Интернета вещей
+      href: /azure/iot-suite
+    - name: IoT Central
+      href: /microsoft-iot-central
+  - name: Службы платформы
+    items:
+    - name: Центр Интернета вещей
+      href: /azure/iot-hub
+    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+      href: /azure/iot-dps
+    - name: Location Based Services
+      href: /azure/location-based-services
+    - name: Пакеты SDK службы
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+    - name: Аналитика временных рядов Azure
+      href: /azure/time-series-insights
+  - name: Microsoft Edge
+    items:
+    - name: IoT Edge
+      href: /azure/iot-edge
+    - name: Пакеты SDK для устройств IoT
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+- name: Ресурсы
+  items:
+  - name: Запросы данных клиентов
+    href: ../iot-central/iot-central-customer-data-requests.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+  - name: Поддерживаемые браузеры
+    href: ../iot-central/iot-central-supported-browsers.md?toc=/azure/iot-central-experimental/toc.json&bc=/azure/iot-central-experimental/breadcrumb/toc.json
+ms.openlocfilehash: ff26be9c367f80009fb1eda1632fcbda38f6a9ea
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55664460"

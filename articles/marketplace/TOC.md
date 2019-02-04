@@ -67,7 +67,7 @@
 
 ### [Управление предложениями](./cloud-partner-portal/manage-offers/cpp-manage-offers.md)
 #### [Создание предложения](./cloud-partner-portal/manage-offers/cpp-create-offer.md)
-<!-- #### [Publish offer](./cloud-partner-portal/manage-offers/cpp-publish-offer.md)   -->
+#### [Публикация предложения](./cloud-partner-portal/manage-offers/cpp-publish-offer.md) 
 #### [Просмотр сведений о состоянии предложения](./cloud-partner-portal/manage-offers/cpp-view-status-offer.md)
 #### [Обновление предложения](./cloud-partner-portal/manage-offers/cpp-update-offer.md)
 #### [Удаление предложения](./cloud-partner-portal/manage-offers/cpp-delete-offer.md) 
@@ -140,6 +140,17 @@
 #### [Создание технических ресурсов для модуля IoT Edge](./cloud-partner-portal/iot-edge-module/cpp-create-technical-assets.md)
 #### [Публикация предложения модуля IoT Edge](./cloud-partner-portal/iot-edge-module/cpp-publish-offer.md)
 #### [Обновление имеющегося предложения](./cloud-partner-portal/iot-edge-module/cpp-update-existing-offer.md)
+
+### [Предложение в виде приложения Power BI](./cloud-partner-portal/power-bi/cpp-power-bi-offer.md)
+#### [Предварительные требования](./cloud-partner-portal/power-bi/cpp-prerequisites.md)
+#### [Создание предложения в виде приложения Power BI](./cloud-partner-portal/power-bi/cpp-create-offer.md)
+##### [Вкладка с параметрами предложения](./cloud-partner-portal/power-bi/cpp-offer-settings-tab.md)
+##### [Вкладка с техническими сведениями](./cloud-partner-portal/power-bi/cpp-technical-info-tab.md)
+##### [Вкладка со сведениями об онлайн-магазине](./cloud-partner-portal/power-bi/cpp-storefront-details-tab.md)
+##### [Вкладка "Контакты"](./cloud-partner-portal/power-bi/cpp-contacts-tab.md)
+#### [Создание технических ресурсов приложения Power BI](./cloud-partner-portal/power-bi/cpp-create-technical-assets.md)
+#### [Публикация предложения в виде приложения Power BI](./cloud-partner-portal/power-bi/cpp-publish-offer.md)
+#### [Обновление имеющегося предложения](./cloud-partner-portal/power-bi/cpp-update-existing-offer.md)
 
 ### [Предложение приложения SaaS](./cloud-partner-portal/saas-app/cpp-saas-offer.md)
 #### [Предварительные требования](./cloud-partner-portal/saas-app/cpp-prerequisites.md)

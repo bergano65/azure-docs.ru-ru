@@ -1,48 +1,45 @@
 items:
-- name: Документация по API Bing для поиска видео
+- name: Документация по API Bing для поиска видео
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое API Bing для поиска видео?
-    href: search-the-web.md
+  - name: Что такое API Bing для поиска видео?
+    href: overview.md
   - name: Сравнение API-интерфейсов поиска Bing
     href: ../Bing-Web-Search/bing-api-comparison.md
     maintainContext: true
+  expanded: true
 - name: Краткие руководства по REST API
   items:
-  - name: Начало работы
-    href: quick-start.md
-  - name: C#
-    href: csharp.md
-  - name: Java
-    href: java.md
-  - name: Node.js
-    href: nodejs.md
-  - name: PHP
-    href: php.md
-  - name: Python
-    href: python.md
-  - name: Ruby
-    href: ruby.md
+  - name: REST API
+    items:
+    - name: Использование C#
+      href: quickstarts/csharp.md
+    - name: Использование Java
+      href: quickstarts/java.md
+    - name: Использование Node.js
+      href: quickstarts/nodejs.md
+    - name: Использование PHP
+      href: quickstarts/php.md
+    - name: Использование Python
+      href: quickstarts/python.md
+    - name: Использование Ruby
+      href: quickstarts/ruby.md
+  - name: SDK
+    items:
+    - name: Использование C#
+      href: quickstarts/sdk-csharp-quickstart.md
+    - name: Использование Node.js
+      href: quickstarts/sdk-node-quickstart.md
+    - name: Использование Python
+      href: quickstarts/sdk-python-quickstart.md
+    - name: Использование Java
+      href: quickstarts/sdk-java-quickstart.md
   expanded: true
-- name: Краткие руководства по пакетам SDK
-  items:
-  - name: Общие сведения о примерах пакетов SDK
-    href: sdk.md
-  - name: Краткое руководство по пакету SDK для поиска видео для C#
-    href: video-search-sdk-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска видео для Node.js
-    href: video-search-sdk-node-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска видео для Python
-    href: video-sdk-python-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска видео для Java
-    href: video-sdk-java-quickstart.md
 - name: Учебники
   items:
-  - name: Одностраничные веб-приложения
+  - name: Создание одностраничного веб-приложения
     href: tutorial-bing-video-search-single-page-app.md
-  - name: Одностраничные веб-приложения (исходный код)
-    href: tutorial-bing-video-search-single-page-app-source.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -59,6 +56,12 @@ items:
     href: resize-and-crop-thumbnails.md
   - name: Обновление с версии 5 до версии 7
     href: bing-video-upgrade-guide-v5-to-v7.md
+- name: Основные понятия
+  items:
+  - name: Поиск видео в Интернете
+    href: concepts/get-videos.md
+  - name: Отправка поисковых запросов
+    href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
   - name: API Bing для поиска видео версии 7
@@ -98,13 +101,11 @@ items:
     href: https://azure.microsoft.com/try/cognitive-services/?api=bing-video-search-api
   - name: Тестирование
     href: https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8
-  - name: Конечные точки API Bing для поиска видео
-    href: video-search-endpoints.md
   - name: Аналитика для API Bing для поиска видео
     href: bing-video-stats.md
-ms.openlocfilehash: e8f0e84b405232ff7145f0a8fed4ab42d03a4c63
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 9192f6aaa94d2aff310e8d12a66ac8ab75f772e2
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509727"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55568041"
