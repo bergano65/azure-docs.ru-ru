@@ -11,13 +11,13 @@ author: ronitr
 ms.author: ronitr
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: 1a5ec986f75c0a490316168b7f8df1dad3a51843
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.date: 01/25/2019
+ms.openlocfilehash: f25e41b8669922474c92919c3c29ad013d9a1609
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389155"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55452666"
 ---
 # <a name="use-powershell-to-configure-sql-database-auditing-and-threat-detection"></a>Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell
 
@@ -47,8 +47,8 @@ Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 | Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает логический сервер, на котором размещена база данных или эластичный пул. |
-| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает на логическом сервере отдельную базу данных или базу данных в составе пула. |
+| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
+| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает отдельную базу данных или пул эластичных баз данных. |
 | [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount) | Создает учетную запись хранения. |
 | [Set-AzureRmSqlDatabaseAuditingPolicy](/powershell/module/azurerm.sql/set-azurermsqldatabaseauditingpolicy) | Задает политику аудита для базы данных. |
 | [Set-AzureRmSqlDatabaseThreatDetectionPolicy](/powershell/module/azurerm.sql/set-azurermsqldatabasethreatdetectionpolicy) | Задает политику обнаружения угроз для базы данных. |

@@ -16,12 +16,13 @@ ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: anwestg
 ms.custom: mvc
-ms.openlocfilehash: f8a54436a61889e6d39c7e491e45c25e3b38236f
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.lastreviewed: 11/05/2018
+ms.openlocfilehash: e3ac94c91742f4a90f9ddd8c975d946bb918ac64
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036792"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244748"
 ---
 # <a name="tutorial-make-web-and-api-apps-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности веб-приложений и приложений API для пользователей Azure Stack
 
@@ -70,10 +71,10 @@ ms.locfileid: "51036792"
 1. Выберите **+** > **Данные+хранилище** > **База данных SQL**.
 2. Сохраните все значения по умолчанию, кроме следующих полей.
 
-    - **Имя базы данных**: DNNdb.
-    - **Максимальный размер (в МБ)**: 100.
-    - **Подписка**: TestAppServiceOffer.
-    - **Группа ресурсов**: DNN-RG.
+    - **Имя базы данных**: DNNdb
+    - **Максимальный размер (в МБ)**: 100
+    - **Подписка**: TestAppServiceOffer
+    - **Группа ресурсов**. DNN-RG
 
 3. Выберите **Login Settings** (Параметры входа), введите учетные данные для базы данных и нажмите кнопку **ОК**. Эти учетные данные будут использоваться далее в этом руководстве.
 4. В разделе **SKU** > выберите SQL SKU, созданный для сервер размещения SQL, > а затем нажмите кнопку **OK**.

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 33f7367d9cdc510cf04f349f44b6e85215d46038
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 44d6311246ab303966b7cfd8bee854b1c017f85d
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52995600"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54902693"
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Создание функции, активируемой хранилищем очередей Azure
 
@@ -113,8 +113,9 @@ ms.locfileid: "52995600"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы создали функцию, которая выполняется при добавлении сообщения в очередь хранилища.
+Вы создали функцию, которая выполняется при добавлении сообщения в очередь хранилища. Дополнительные сведения о триггерах хранилища очередей см. в статье [Привязки очередей службы хранилища для Функций Azure](functions-bindings-storage-queue.md).
 
-[!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]
+Теперь, когда вы создали первую функцию, давайте добавим к ней выходную привязку, которая позволяет записывать сообщения в другую очередь.
 
-Дополнительные сведения о триггерах хранилища очередей см. в статье [Привязки очередей службы хранилища для Функций Azure](functions-bindings-storage-queue.md).
+> [!div class="nextstepaction"]
+> [Добавление сообщений в очередь службы хранилища Azure с помощью Функций](functions-integrate-storage-queue-output-binding.md)

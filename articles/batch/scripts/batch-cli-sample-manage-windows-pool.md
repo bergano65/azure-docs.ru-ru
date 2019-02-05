@@ -3,7 +3,7 @@ title: 'Пример скрипта Azure CLI: пул Windows в пакетно�
 description: 'Пример скрипта Azure CLI: создание пула Windows и управление им в пакетной службе Azure'
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
-ms.author: danlep
-ms.openlocfilehash: 18fc7f9b0675f5c83f716aedfa6968d1ce48c0ed
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: lahugh
+ms.openlocfilehash: c4906ca67137790e19342f0434e6c2b3932819fd
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969009"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472236"
 ---
-# <a name="cli-example-create-and-manage-a-windows-pool-in-azure-batch"></a>Пример CLI: создание пула Windows и управление им в пакетной службе Azure
+# <a name="cli-example-create-and-manage-a-windows-pool-in-azure-batch"></a>Пример использования CLI. Создание пула Windows и управление им в пакетной службе Azure
 
 Этот скрипт демонстрирует некоторые из доступных команд Azure CLI для создания пулов вычислительных узлов Windows в пакетной службе Azure и управления ими. Пул Windows можно настроить двумя способами: с помощью настройки облачных служб или виртуальных машин. В этом примере показано создание пула Windows с помощью настройки облачных служб.
 
@@ -45,7 +45,7 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Создает учетную запись пакетной службы. |

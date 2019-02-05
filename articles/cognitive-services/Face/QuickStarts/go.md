@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: обнаружение лиц на изображении с помощью REST API и Go'
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Go
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя API распознавания лиц и Go.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 06/25/2018
 ms.author: pafarley
-ms.openlocfilehash: a66d50ac6984ea50eef1e34cc53db4d7e5bbdcad
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 7b01acecb8ccf48ae9ba196671c156edfa688b3d
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956210"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55215101"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-go"></a>Краткое руководство: обнаружение лиц на изображении с помощью REST API и Go
+# <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-go"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Go
 
 Из этого краткого руководства вы узнаете, как определять лица людей на изображениях с помощью API распознавания лиц.
 

@@ -1,33 +1,33 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Expensify | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в приложении Expensify.
+title: Руководство. Интеграция Azure Active Directory с Oracle Fusion ERP | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Oracle Fusion ERP.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
-ms.assetid: 1e761484-7a2f-4321-91f4-6d5d0b69344e
+ms.assetid: c7586369-c1d6-4e83-a33e-5e87a68a7722
 ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/23/2019
+ms.date: 1/23/2019
 ms.author: jeedes
-ms.openlocfilehash: c8d86cbcf4f5c5029f215cd6c327e05fb93f7144
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: b548c1abb9601a418e2e79fbc25afa8c6f9de0d6
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453899"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55105544"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-expensify"></a>Руководство. Интеграция Azure Active Directory с Expensify
+# <a name="tutorial-azure-active-directory-integration-with-oracle-fusion-erp"></a>Руководство. Интеграция Azure Active Directory с Oracle Fusion ERP
 
-В этом руководстве описано, как интегрировать Expensify с Azure Active Directory (Azure AD).
-Интеграция Expensify с Azure AD дает следующие преимущества:
+В этом учебнике описано, как интегрировать Oracle Fusion ERP с Azure Active Directory (Azure AD).
+Интеграция Azure AD с Oracle Fusion ERP обеспечивает следующие преимущества.
 
-* С помощью Azure AD вы можете контролировать доступ к Expensify.
-* Вы можете включить автоматический вход пользователей в Expensify (единый вход) с помощью учетных записей Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к Oracle Fusion ERP.
+* Вы можете включить автоматический вход пользователей в Oracle Fusion ERP (единый вход) с использованием учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -35,22 +35,22 @@ ms.locfileid: "55453899"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Expensify, вам потребуется:
+Чтобы настроить интеграцию Azure AD с приложением Oracle Fusion ERP, вам потребуется:
 
 * подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
-* подписка Expensify с поддержкой единого входа.
+* Подписка Oracle Fusion ERP с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-* Expensify поддерживает единый вход, инициированный **поставщиком услуг**.
+* Oracle Fusion ERP поддерживает единый вход, инициированный **поставщиком услуг**.
 
-## <a name="adding-expensify-from-the-gallery"></a>Добавление Expensify из коллекции
+## <a name="adding-oracle-fusion-erp-from-the-gallery"></a>Добавление Oracle Fusion ERP из коллекции
 
-Чтобы настроить интеграцию Expensify с Azure AD, необходимо добавить это приложение из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию Oracle Fusion ERP с Azure AD, необходимо добавить Oracle Fusion ERP из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Expensify из коллекции, выполните следующие действия:**
+**Чтобы добавить Oracle Fusion ERP из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -64,31 +64,31 @@ ms.locfileid: "55453899"
 
     ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Expensify**, выберите **Expensify** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Oracle Fusion ERP**, выберите **Oracle Fusion ERP** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Expensify в списке результатов](common/search-new-app.png)
+     ![Oracle Fusion ERP в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Expensify с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Expensify.
+В этом разделе описана настройка и проверка единого входа Azure AD в Oracle Fusion ERP с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Oracle Fusion ERP.
 
-Чтобы настроить и проверить единый вход Azure AD в Expensify, вам потребуется выполнить действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Oracle Fusion ERP, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Expensify](#configure-expensify-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в Oracle Fusion ERP](#configure-oracle-fusion-erp-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Expensify](#create-expensify-test-user)** требуется для создания в Expensify пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
+5. **[Создание тестового пользователя в Oracle Fusion ERP](#create-oracle-fusion-erp-test-user)** требуется для того, чтобы в Oracle Fusion ERP существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Expensify, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в Oracle Fusion ERP, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Expensify** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Oracle Fusion ERP** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -102,17 +102,20 @@ ms.locfileid: "55453899"
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о домене и URL-адресах для единого входа в приложение Expensify](common/sp-identifier.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения Oracle Fusion ERP](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.expensify.com/authentication/saml/login`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.fa.em2.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://www.expensify.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.login.em2.oraclecloud.com:443/oam/fed`.
+
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Требуемый URL-адрес можно скопировать из раздела **Настройка Expensify**.
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка Oracle Fusion ERP**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -122,19 +125,9 @@ ms.locfileid: "55453899"
 
     c. URL-адрес выхода
 
-### <a name="configure-expensify-single-sign-on"></a>Настройка единого входа Expensify
+### <a name="configure-oracle-fusion-erp-single-sign-on"></a>Настройка единого входа в Oracle Fusion ERP
 
-Чтобы включить единый вход в Expensify, сначала необходимо включить в этом приложении **управление доменами**. Это можно сделать, выполнив действия, указанные [здесь](https://help.expensify.com/domain-control). Для получения дополнительной поддержки обратитесь в [службу поддержки клиентов Expensify](mailto:help@expensify.com). После включения управления доменами сделайте следующее:
-   
-![Настройка единого входа](./media/expensify-tutorial/tutorial_expensify_51.png)
-    
-1. Войдите в приложение Expensify.
-    
-2. На панели слева щелкните **Параметры** и перейдите к **SAML**.
-    
-3. Переключите параметр **входа SAML** как **Включено**.
-    
-4. Откройте скачанные метаданные федерации из Azure AD в блокноте, скопируйте содержимое и вставьте его в текстовое поле **Метаданные поставщика удостоверений**.
+Чтобы настроить единый вход на стороне **Oracle Fusion ERP**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -163,15 +156,15 @@ ms.locfileid: "55453899"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к Expensify.
+В этом разделе описано, как предоставить пользователю Britta Simon доступ к Oracle Fusion ERP, чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Expensify**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Oracle Fusion ERP**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Expensify**.
+2. В списке приложений выберите **Oracle Fusion ERP**.
 
-    ![Ссылка на Expensify в списке "Приложения"](common/all-applications.png)
+    ![Ссылка на Oracle Fusion ERP в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -187,15 +180,15 @@ ms.locfileid: "55453899"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-expensify-test-user"></a>Создание тестового пользователя Expensify
+### <a name="create-oracle-fusion-erp-test-user"></a>Создание тестового пользователя в Oracle Fusion ERP
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Expensify. Обратитесь в [службу поддержки клиентов Expensify](mailto:help@expensify.com), чтобы добавить пользователей на платформу Expensify.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Oracle Fusion ERP. Обратитесь в  [группу поддержки Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com), чтобы добавить пользователей на платформу Oracle Fusion ERP. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Expensify на панели доступа, вы автоматически войдете в приложение Expensify, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку Oracle Fusion ERP на Панели доступа, вы автоматически войдете в приложение Oracle Fusion ERP, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Получение ответа из базы знаний с помощью Java REST в службе QnA Maker
+title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (Java)
 titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве по Java REST описывается, как получить ответ из базы знаний программными средствами.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: 630b033428ab6e21afeddf9d4162be015582dae9
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 34630b2d2852da37bdcb3e5f097b2d3f6ebc6f1a
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977813"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55217413"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-java"></a>Получение ответов на вопрос из базы знаний с помощью Java
 
@@ -24,19 +24,19 @@ ms.locfileid: "51977813"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
-* В этом примере используется [HTTP-клиент](http://hc.apache.org/httpcomponents-client-ga/) Apache от HTTP Components. Вам потребуется добавить в проект такие библиотеки для HTTP-клиента Apache: 
+* В этом примере используется [HTTP-клиент](http://hc.apache.org/httpcomponents-client-ga/) Apache от HTTP Components. Вам нужно добавить в проект следующие библиотеки для HTTP-клиента Apache: 
     * httpclient-4.5.3.jar;
     * httpcore-4.4.6.jar;
     * commons-logging-1.2.jar.
 * [Visual Studio Code](https://code.visualstudio.com/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
-* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте пустую базу знаний, а затем импортируйте базу знаний на странице **Параметры** и опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
+* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
-    К параметрам страницы публикации относится значение маршрута POST, значение Host и значение EndpointKey. 
+    На странице параметров публикации представлены значения Host, EndpointKey и маршрута POST. 
 
     ![Параметры публикации](../media/qnamaker-quickstart-get-answer/publish-settings.png)
 
-Код из этого краткого руководства доступен в репозитории [https://github.com/Azure-Samples/cognitive-services-qnamaker-java](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/get-answer). 
+Код для этого краткого руководства доступен в репозитории [https://github.com/Azure-Samples/cognitive-services-qnamaker-java](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/get-answer). 
 
 ## <a name="create-a-java-file"></a>Создание файла Java
 
@@ -76,7 +76,7 @@ public class GetAnswer {
 
 Выполните сборку и запуск программы из командной строки. Она автоматически отправит запрос к API службы QnA Maker, а полученный ответ отобразится в окне консоли.
 
-1. Выполните сборку файла.
+1. Выполните сборку файла:
 
     ```bash
     javac -cp "lib/*" GetAnswer.java

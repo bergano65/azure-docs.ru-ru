@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/15/2019
 ms.author: rezas
-ms.openlocfilehash: f1c2cd037539b3cf33f6c58c4ac8a3a1e8c304ce
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d0fc8d68b3412c2c43a88e3a9484dab3a150b811
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54830530"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54886277"
 ---
 # <a name="quickstart-sshrdp-over-iot-hub-device-streams-using-c-proxy-application-preview"></a>Краткое руководство. SSH/RDP через потоки устройств Центра Интернета вещей с помощью приложения прокси C (предварительная версия)
 
@@ -95,7 +95,7 @@ ms.locfileid: "54830530"
 
 ```
     # In Linux
-    cmake -Denable_streaming=ON ..
+    cmake ..
     make -j
 ```
 
@@ -104,10 +104,10 @@ ms.locfileid: "54830530"
 ```
     # In Windows
     # For VS2015
-    $ cmake -Denable_streaming=ON .. -G "Visual Studio 15 2015"
+    $ cmake .. -G "Visual Studio 15 2015"
     
     # Or for VS2017
-    $ cmake -Denable_streaming=ON .. -G "Visual Studio 15 2017
+    $ cmake .. -G "Visual Studio 15 2017
 
     # Then build the project
     cmake --build . -- /m /p:Configuration=Release
@@ -179,7 +179,6 @@ ms.locfileid: "54830530"
     # Go to sample's folder cmake/iothub_client/samples/iothub_client_c2d_streaming_proxy_sample
     $ ./iothub_client_c2d_streaming_proxy_sample
 
-
     # In Windows
     # Go to sample's release folder cmake\iothub_client\samples\iothub_client_c2d_streaming_proxy_sample\Release
     iothub_client_c2d_streaming_proxy_sample.exe
@@ -194,14 +193,14 @@ ms.locfileid: "54830530"
 
 Предположим, что локальные прокси-серверы устройства и службы запущены, теперь используйте клиентскую программу SSH и подключитесь к локальному прокси-серверу службы через порт 2222 (вместо подключения напрямую через управляющую программу SSH). 
 
-```azurecli-interactive
+```
 ssh <username>@localhost -p 2222
 ```
 
 На этом этапе откроется командная строка входа SSH для ввода учетных данных.
 
 
-Вывод на консоль на локальном прокси-сервере устройства, который подключается к управляющей программе SSH по адресу <code>IP_address:22</code>: ![Замещающий текст](./media/quickstart-device-streams-proxy-c/device-console-output.PNG "Вывод локального прокси-сервера устройства")
+Вывод на консоль на локальном прокси-сервере устройства, который подключается к управляющей программе SSH по адресу `IP_address:22`: ![Замещающий текст](./media/quickstart-device-streams-proxy-c/device-console-output.PNG "Вывод локального прокси-сервера устройства")
 
 Вывод на консоль клиентской программы SSH (клиент SSH связывается с управляющей программой SSH, подключаясь к порту 22, где прослушивает локальный прокси-сервер службы): ![Замещающий текст](./media/quickstart-device-streams-proxy-csharp/ssh-console-output.png "Вывод клиента SSH")
 

@@ -5,18 +5,18 @@ services: cognitive-services
 author: PanosPeriorellis
 manager: onano
 ms.service: cognitive-services
-ms.component: custom-speech
+ms.subservice: custom-speech
 ms.topic: tutorial
 ms.date: 05/03/2017
 ms.author: panosper
-ms.openlocfilehash: 6af2da9ffc7678a58fcf1c647ba89c586066d2ad
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 0798fb16954d2d0b5e0d614d619cd772670d30c3
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339102"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55218093"
 ---
-# <a name="tutorial-create-a-custom-language-model"></a>Руководство по созданию пользовательской языковой модели
+# <a name="tutorial-create-a-custom-language-model"></a>Руководство. Создание пользовательской языковой модели
 
 [!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
 
@@ -55,7 +55,7 @@ ms.locfileid: "49339102"
 
 | Свойство | Значение |
 |----------|-------|
-| Кодировка текста | en-US: US-ACSII или UTF-8; zh-CN: UTF-8|
+| Кодировка текста | en-US: US-ACSII, UTF-8 или zh-CN: UTF-8|
 | Количество фраз на строку | 1 |
 | Максимальный размер файла | 200 МБ |
 | Примечания | Избегайте повторения знаков более 4-х раз, например "aaaaa"|

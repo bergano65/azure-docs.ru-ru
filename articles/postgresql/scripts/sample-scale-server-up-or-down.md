@@ -43,4 +43,4 @@ ms.locfileid: "53548765"
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 - Дополнительные скрипты — [Примеры Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md)
-- Дополнительные сведения о масштабировании см. в статье [Ценовые категории службы "База данных Azure для PostgreSQL"](../concepts-service-tiers.md)[](../concepts-compute-unit-and-storage.md).
+- Дополнительные сведения о масштабировании см. в статье [Ценовые категории](../concepts-service-tiers.md) службы [База данных Azure для PostgreSQL](../concepts-compute-unit-and-storage.md).

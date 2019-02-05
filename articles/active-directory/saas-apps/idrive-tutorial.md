@@ -1,33 +1,33 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с iDiD Manager | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и iDiD Manager.
+title: Руководство. Интеграция Azure Active Directory с IDrive | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и IDrive.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
 ms.reviewer: barbkess
-ms.assetid: 5d2a0c25-168e-4842-b83b-74f8f50a8624
+ms.assetid: 72266be2-c21e-4745-96fb-14f112ac12d1
 ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 1/25/2019
+ms.date: 01/23/2019
 ms.author: jeedes
-ms.openlocfilehash: a12a0b383db63cc80aea045ca5afe6c75b0b83a9
+ms.openlocfilehash: 84f3c6cf7cba3d5678eb128acae6c72283c507bc
 ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/28/2019
-ms.locfileid: "55100025"
+ms.locfileid: "55105512"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-idid-manager"></a>Руководство. Интеграция Azure Active Directory с iDiD Manager
+# <a name="tutorial-azure-active-directory-integration-with-idrive"></a>Руководство. Интеграция Azure Active Directory с IDrive
 
-В этом руководстве описано, как интегрировать iDiD Manager с Azure Active Directory (Azure AD).
-Интеграция Azure AD с iDiD Manager обеспечивает следующие преимущества.
+В этом руководстве описано, как интегрировать IDrive с Azure Active Directory (Azure AD).
+Интеграция Azure AD с приложением IDrive обеспечивает следующие преимущества.
 
-* С помощью Azure AD можно контролировать доступ к iDiD Manager.
-* Вы можете включить автоматический вход пользователей в iDiD Manager (единый вход) через учетную запись Azure Active Directory.
+* С помощью Azure AD вы можете контролировать доступ к IDrive.
+* Вы можете включить автоматический вход пользователей в IDrive (единый вход) с помощью учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -35,22 +35,22 @@ ms.locfileid: "55100025"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с приложением iDiD Manager, вам потребуется следующее.
+Чтобы настроить интеграцию Azure AD с IDrive, вам понадобится следующее.
 
 * подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
-* Подписка iDiD Manager с поддержкой единого входа.
+* Подписка IDrive с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-* iDiD Manager поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
+* IDrive поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 
-## <a name="adding-idid-manager-from-the-gallery"></a>Добавление iDiD Manager из коллекции
+## <a name="adding-idrive-from-the-gallery"></a>Добавление IDrive из коллекции
 
-Чтобы настроить интеграцию iDiD Manager с Azure AD, необходимо добавить iDiD Manager из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию IDrive с Azure AD, необходимо добавить IDrive из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить iDiD Manager из коллекции, выполните следующие действия.**
+**Чтобы добавить IDrive из коллекции, выполните следующие шаги.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -64,31 +64,31 @@ ms.locfileid: "55100025"
 
     ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **iDiD Manager** и выберите **iDiD Manager** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
+4. В поле поиска введите **IDrive**, выберите **IDrive** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![iDiD Manager в списке результатов](common/search-new-app.png)
+     ![IDrive в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в iDiD Manager с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в iDiD Manager.
+В этом разделе описана настройка и проверка единого входа Azure AD в IDrive с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и одноименным пользователем в IDrive.
 
-Чтобы настроить и проверить единый вход Azure AD в iDiD Manager, потребуется выполнить действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в IDrive, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в iDiD Manager](#configure-idid-manager-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в IDrive](#configure-idrive-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя iDiD Manager](#create-idid-manager-test-user)** требуется, чтобы в iDiD Manager существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя в приложении IDrive](#create-idrive-test-user)** требуется для того, чтобы в IDrive существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в iDiD Manager, выполните следующие действия:
+Чтобы настроить единый вход Azure AD в IDrive, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **iDiD Manager** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **IDrive** щелкните **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -102,24 +102,31 @@ ms.locfileid: "55100025"
 
 4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения iDiD Manager](common/preintegrated.png)
+    ![Сведения о домене и URL-адресах единого входа для [название приложения]](common/preintegrated.png)
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
 
-    ![Сведения о домене и URL-адресах единого входа для приложения iDiD Manager](common/metadata-upload-additional-signon.png)
+    ![Сведения о домене и URL-адресах единого входа для [название приложения]](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://idid2.fi/saml/login/<domain>`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.idrive.com/idrive/login/loginForm`.
 
-    > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов iDiD Manager](mailto:support@idid.fi). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (необработанный)** из предложенных вариантов и сохранить его на компьютере.
 
-6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+    ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
-    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
+7. Требуемые URL-адреса можно скопировать из раздела **Настройка IDrive**.
 
-### <a name="configure-idid-manager-single-sign-on"></a>Настройка единого входа в iDiD Manager
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-Чтобы настроить единый вход на стороне **iDiD Manager**, отправьте [группе поддержки iDiD Manager](mailto:support@idid.fi) **URL-адрес метаданных федерации приложений**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-idrive-single-sign-on"></a>Настройка единого входа в IDrive
+
+Чтобы настроить единый вход на стороне **IDrive**, нужно отправить скачанный **сертификат (необработанный)** и соответствующие URL-адреса из портала Azure в [группу поддержки IDrive](https://www.idrive.com/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -148,15 +155,15 @@ ms.locfileid: "55100025"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к iDiD Manager.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к IDrive.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **iDiD Manager**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **IDrive**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **iDiD Manager**.
+2. В списке приложений выберите **IDrive**.
 
-    ![Ссылка на iDiD Manager в списке приложений](common/all-applications.png)
+    ![Ссылка на IDrive в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -172,15 +179,15 @@ ms.locfileid: "55100025"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-idid-manager-test-user"></a>Создание тестового пользователя iDiD Manager
+### <a name="create-idrive-test-user"></a>Создание тестового пользователя в приложении IDrive
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении iDiD Manager. Обратитесь в  [службу поддержки iDiD Manager](mailto:support@idid.fi), чтобы добавить пользователей на платформу iDiD Manager. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении IDrive. Обратитесь к  [группе поддержки IDrive](https://www.idrive.com/support), чтобы добавить пользователей на платформу IDrive. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку iDiD Manager на панели доступа, вы автоматически войдете в приложение iDiD Manager, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку IDrive на Панели доступа, вы автоматически войдете в приложение IDrive, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -6,17 +6,17 @@ services: cognitive-services
 author: anrothMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: emotion-api
+ms.subservice: emotion-api
 ms.topic: overview
 ms.date: 02/06/2017
 ms.author: anroth
 ROBOTS: NOINDEX
-ms.openlocfilehash: abf94e0ab6ebb3df649b1958503c086feb4fa19e
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 555b03be679b0d1ea61371d22ec9865e0e72b558
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48237132"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55215798"
 ---
 # <a name="what-is-the-emotion-api"></a>Что такое API распознавания эмоций?
 
@@ -34,7 +34,7 @@ API распознавания эмоций (бета-версия) приним
 При интерпретации результатов API распознавания эмоций определяемая эмоция получает наивысшую оценку. При этом оценки нормализуются так, чтобы в сумме составлять единицу. Пользователи по выбору могут задать более высокий порог достоверности в собственном приложении в зависимости от потребностей.
 
 Дополнительные сведения об определении эмоций см. в справочнике по API:
-  * Базовый уровень: если пользователь уже вызвал API распознавания лиц, он может отправить лицо в прямоугольнике в качестве входных данных и использовать базовый уровень. [Справочник по API](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/56f23eb019845524ec61c4d7)
-  * Стандартный уровень: если пользователь не отправляет лицо в прямоугольнике, ему следует использовать стандартный режим.  [Справочник по API](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa)
+  * Базовый уровень: если пользователь уже вызвал API распознавания лиц, он может отправить границы лица в качестве входных данных и использовать базовый уровень. [Справочник по API](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/56f23eb019845524ec61c4d7)
+  * Стандартный уровень: если пользователь не отправляет границы лица, ему следует использовать стандартный режим.  [Справочник по API](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa)
 
 Практический пример интерпретации потокового видео с помощью API распознавания эмоций см. в статье об [анализе видео в режиме реального времени](https://docs.microsoft.com/azure/cognitive-services/emotion/emotion-api-how-to-topics/howtoanalyzevideo_emotion).

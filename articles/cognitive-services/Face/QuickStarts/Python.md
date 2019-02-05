@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью Azure REST API и Python
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определять лица на изображении с помощью REST API распознавания лиц Azure и Python.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: d2a98226895bbe5996785ca4726f20df9b98ffdd
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 606f01059620443c8c42a24f416128d0856eff50
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51683616"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55213792"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-python"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и Python
 

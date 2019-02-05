@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. API Bing для поиска сущностей (C#)
+title: Краткое руководство. API Bing для поиска сущностей, C#
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска сущностей.
 services: cognitive-services
 author: aahill
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-entity-search
+ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 11/28/2017
 ms.author: aahi
-ms.openlocfilehash: 7c303516c9b455ce3477c348c59cbc88693e2297
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 62f260b11e4012b440fea51020b17590fece93fc
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313866"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55187034"
 ---
 # <a name="quickstart-for-bing-entity-search-api-with-c"></a>Краткое руководство по API Bing для поиска сущностей (C#) 
 

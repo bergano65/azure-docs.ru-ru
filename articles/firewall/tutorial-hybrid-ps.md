@@ -1,19 +1,19 @@
 ---
 title: Руководство. Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
-description: В этом руководстве вы можете узнать, как развернуть и настроить службу "Брандмауэр Azure" с помощью портала Azure.
+description: В этом руководстве вы можете узнать, как развернуть и настроить службу "Брандмауэр Azure" с помощью Azure PowerShell.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 12/14/2018
+ms.date: 1/30/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 511fb425c6b31d204c88094ec5b1a49316495a0a
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 29af70988cf77b9fad47e5c2478e5c86529fe9cf
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54431526"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458246"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство. Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -61,6 +61,8 @@ ms.locfileid: "54431526"
 
 >[!NOTE]
 >Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если маршрут UDR указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в UDR для обеих подсетей нужно явно указать префикс целевой подсети.
+
+Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

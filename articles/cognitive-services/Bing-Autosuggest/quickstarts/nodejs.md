@@ -1,25 +1,25 @@
 ---
-title: Краткое руководство. API автозаполнения Bing (Node.js)
+title: Краткое руководство. API автозаполнения Bing, Node.js
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
 author: v-jaswel
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-autosuggest
+ms.subservice: bing-autosuggest
 ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 498953625907aad85d8ea5999905cad21bf245da
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 4fc2fc93adbd4620a05c4d248ada45ded278021b
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48829993"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55196588"
 ---
 # <a name="quickstart-for-bing-autosuggest-api-with-nodejs"></a>Краткое руководство по API автозаполнения Bing с использованием Node.js
 
-В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/) с Node.js. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
+В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/)  с Node.js. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

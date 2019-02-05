@@ -3,7 +3,7 @@ title: Руководство. Создание конвейера разраб�
 description: В этом руководстве описано, как создать виртуальную машину Jenkins в Azure, которая получает данные из GitHub при каждой фиксации кода и создает новый контейнер Docker для выполнения приложения.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: tysonn
 tags: azure-resource-manager
@@ -14,16 +14,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/27/2017
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1a29d58ca96793c44878a6755cc74edeab6a7c4b
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 694448f6e3c788c0c9d336e75d5df579b90137df
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49470852"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55189873"
 ---
-# <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Создание инфраструктуры развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
+# <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
 
 Чтобы автоматизировать этапы создания и тестирования приложения, вы можете использовать конвейер непрерывной интеграции и развертывания (CI/CD). В этом учебнике мы создадим конвейер CI/CD на виртуальной машине Azure, включая следующие задачи:
 
@@ -75,7 +75,7 @@ runcmd:
 az group create --name myResourceGroupJenkins --location eastus
 ```
 
-Теперь создайте виртуальную машину командой [az vm create](/cli/azure/vm#az_vm_create). Используйте параметр `--custom-data`, чтобы передать файл конфигурации cloud-init. Укажите полный путь к конфигурации *cloud-init-jenkins.txt*, если этот файл сохранен вне текущего рабочего каталога.
+Теперь создайте виртуальную машину командой [az vm create](/cli/azure/vm). Используйте параметр `--custom-data`, чтобы передать файл конфигурации cloud-init. Укажите полный путь к конфигурации *cloud-init-jenkins.txt*, если этот файл сохранен вне текущего рабочего каталога.
 
 ```azurecli-interactive 
 az vm create --resource-group myResourceGroupJenkins \

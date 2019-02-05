@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
+title: Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 titlesuffix: Azure Cognitive Services
 description: Создание проекта, добавление тегов, загрузка изображений, обучение проекта и выполнение прогнозирования с использованием пакета SDK для Python.
 services: cognitive-services
 author: areddish
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 11/2/2018
 ms.author: areddish
-ms.openlocfilehash: b95adf3cb07ae98d4b690dbe29d72d30671c4a6a
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 25528d0d867700dcf1f46b62fbac387c3a1b6481
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52681217"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55214132"
 ---
-# <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-python-sdk"></a>Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
+# <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
 Эта статья содержит сведения и примеры кода, применяя которые вы можете создать модель распознавания изображений с помощью пакета SDK Пользовательской службы визуального распознавания совместно с Python. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 

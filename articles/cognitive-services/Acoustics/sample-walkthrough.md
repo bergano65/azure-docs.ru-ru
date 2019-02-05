@@ -1,21 +1,21 @@
 ---
-title: Пример. Project Acoustics
+title: 'Пример: Project Acoustics'
 titlesuffix: Azure Cognitive Services
 description: В этом пошаговом руководстве описывается пример сцены Unity для Project Acoustics, включая развертывание на рабочем столе и в виртуальную реальность.
 services: cognitive-services
 author: kegodin
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: acoustics
+ms.subservice: acoustics
 ms.topic: sample
 ms.date: 08/17/2018
 ms.author: kegodin
-ms.openlocfilehash: f5ea565e68579dfad601d1037daeb4113e3daa43
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 7d8ba2f25bd53b407ab6860bc57163a79b7d228a
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48901164"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55174267"
 ---
 # <a name="unity-sample-walkthrough"></a>Пример пошагового руководства Unity
 Это пошаговое руководство по примеру Project Acoustics. Общие сведения о Project Acoustics см. в [этой статье](what-is-acoustics.md). Чтобы получить справку по добавлению пакета Project Acoustics в существующий проект Unity, перейдите к статье о [начале работы с Project Acoustics](getting-started.md).

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/30/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 71eec62f4468b6b74a15a30be3e472b41c4d45b0
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: ce44d4c066183ff796c8efa1dceb20dff73868ee
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39397781"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55192406"
 ---
 # <a name="secure-access-to-an-applications-data-in-the-cloud"></a>Безопасный доступ к данным приложения в облаке
 
@@ -30,7 +30,7 @@ ms.locfileid: "39397781"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы пройти действия в этом учебнике, необходимо выполнить задачи в предыдущим учебнике по хранилищу: [Автоматическое изменение размера переданных изображений с помощью сетки событий][previous-tutorial]. 
+Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища — [Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"][previous-tutorial]. 
 
 ## <a name="set-container-public-access"></a>Установка общего доступа к контейнеру
 
@@ -50,7 +50,7 @@ az storage container set-permission \ --account-name $blobStorageAccount \ --acc
 
 В первой части этой серии учебников в веб-приложении отображались изображения из общедоступного контейнера. В этой части вы будете использовать [маркеры SAS](../common/storage-dotnet-shared-access-signature-part-1.md#what-is-a-shared-access-signature) для получения изображений эскизов. Маркеры SAS позволяют предоставлять ограниченный доступ к контейнеру или BLOB-объекту на основе IP-адреса, протокола, интервала времени или имеющихся прав.
 
-В этом примере репозиторий исходного кода использует ветвь `sasTokens` с примером обновленного кода. Удалите существующее развертывание GitHub с помощью команды [az webapp deployment source delete](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_delete). Затем настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config).  
+В этом примере репозиторий исходного кода использует ветвь `sasTokens` с примером обновленного кода. Удалите существующее развертывание GitHub с помощью команды [az webapp deployment source delete](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_delete). Затем настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source).  
 
 В следующей команде `<web-app>` — это имя веб-приложения.  
 

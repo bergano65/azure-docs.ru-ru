@@ -3,23 +3,23 @@ title: Получение доступа к Azure Resource Manager с помощ
 description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: daveba
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2018
-ms.author: daveba
-ms.openlocfilehash: 8a716c58c7b65a4f295bdf5ac68edff4d8808cd8
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: priyamo
+ms.openlocfilehash: f2d8abcb69c565c6e1fcf609a4984722a8a0898f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54423315"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55156574"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
 
@@ -36,6 +36,8 @@ ms.locfileid: "54423315"
 > * Получение маркера доступа и вызов Azure Resource Manager с помощью назначаемого пользователем удостоверения 
 > * Чтение свойств группы ресурсов.
 
+[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
@@ -45,21 +47,20 @@ ms.locfileid: "54423315"
 - [Создайте виртуальную машину Windows](/azure/virtual-machines/windows/quick-create-portal).
 
 - Для выполнения требуемых операций по созданию ресурсов и управлению ролями учетной записи в этом руководстве нужно предоставить учетной записи разрешения "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](/azure/role-based-access-control/role-assignments-portal), если нуждаетесь в помощи с назначением ролей.
-- Чтобы установить и использовать PowerShell локально для работы с этим руководством, понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). 
-- Если модуль PowerShell запущен локально, необходимо также выполнить следующие действия. 
-    - Выполните команду `Login-AzureRmAccount`, чтобы создать подключение к Azure.
-    - Установите [PowerShellGet последней версии](/powershell/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
-    - Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `AzureRM.ManagedServiceIdentity`).
-    - Выполните команду `Install-Module -Name AzureRM.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `AzureRM.ManagedServiceIdentity` для выполнения операций назначаемого пользователем удостоверения в рамках этой статьи.
+- [Установите модуль Azure PowerShell последней версии](/powershell/azure/install-az-ps). 
+- Выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
+- Установите [PowerShellGet последней версии](/powershell/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
+- Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `Az.ManagedServiceIdentity`).
+- Выполните команду `Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций назначаемого пользователем удостоверения в рамках этой статьи.
 
 ## <a name="create-a-user-assigned-identity"></a>Создание назначаемого пользователем удостоверения
 
-Назначаемое пользователем удостоверение создается как изолированный ресурс Azure. С помощью команды [New-AzureRmUserAssignedIdentity](/powershell/module/azurerm.managedserviceidentity/get-azurermuserassignedidentity) Azure создает в клиенте Azure AD удостоверение, которое можно назначить одному или нескольким экземплярам службы Azure.
+Назначаемое пользователем удостоверение создается как изолированный ресурс Azure. С помощью команды [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/get-azuserassignedidentity) Azure создает в клиенте Azure AD удостоверение, которое можно назначить одному или нескольким экземплярам службы Azure.
 
 [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
 ```azurepowershell-interactive
-New-AzureRmUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1
+New-AzUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1
 ```
 
 Ответ содержит подробные сведения о созданном назначаемом пользователем удостоверении, как показано в следующем примере. Запишите значения `Id` и `ClientId` для назначаемого пользователем удостоверения, так как они будут использоваться на следующих этапах:
@@ -83,8 +84,8 @@ Type: Microsoft.ManagedIdentity/userAssignedIdentities
 Клиенты могут использовать назначаемое пользователем удостоверение для целого ряда ресурсов Azure. Чтобы назначить пользовательское удостоверение отдельной виртуальной машине, используйте следующие команды. Используйте свойство `Id`, возвращенное на предыдущем шаге, для параметра `-IdentityID`.
 
 ```azurepowershell-interactive
-$vm = Get-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM
-Update-AzureRmVM -ResourceGroupName TestRG -VM $vm -IdentityType "UserAssigned" -IdentityID "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"
+$vm = Get-AzVM -ResourceGroupName myResourceGroup -Name myVM
+Update-AzVM -ResourceGroupName TestRG -VM $vm -IdentityType "UserAssigned" -IdentityID "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"
 ```
 
 ## <a name="grant-your-user-assigned-identity-access-to-a-resource-group-in-azure-resource-manager"></a>Предоставление назначаемому пользователем удостоверению доступа к группе ресурсов в Azure Resource Manager 
@@ -94,8 +95,8 @@ Update-AzureRmVM -ResourceGroupName TestRG -VM $vm -IdentityType "UserAssigned" 
 Чтобы ваш код мог получить доступ к API, необходимо сначала предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Измените значение `<SUBSCRIPTION ID>` в соответствии с вашей средой.
 
 ```azurepowershell-interactive
-$spID = (Get-AzureRmUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1).principalid
-New-AzureRmRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/"
+$spID = (Get-AzUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1).principalid
+New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/"
 ```
 
 Ответ содержит подробные сведения о созданном назначении роли, подобные следующему примеру.

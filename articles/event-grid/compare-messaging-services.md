@@ -6,15 +6,15 @@ author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: overview
-ms.date: 12/07/2018
+ms.date: 01/30/2019
 ms.author: spelluru
 ms.custom: seodec18
-ms.openlocfilehash: 80a2f9aa07f67c4d149a1ef8245f5e3269a751b3
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 0a71b88f6ad85cbd76f9bc789e87ad5b032418c9
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469854"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55297112"
 ---
 # <a name="choose-between-azure-messaging-services---event-grid-event-hubs-and-service-bus"></a>Сравнение трех служб обмена сообщениями Azure: Сетка событий, Центры событий и Служебная шина
 
@@ -97,9 +97,10 @@ Azure предлагает три службы, с помощью которых
 ![Обзор процесса потоковой передачи данных](./media/compare-messaging-services/overview.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+Ознакомьтесь со следующими статьями: 
 
-* Дополнительные сведения о службах обмена сообщениями Azure см. в записи блога [Events, Data Points, and Messages - Choosing the right Azure messaging service for your data](https://azure.microsoft.com/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/) (События, точки данных и сообщения: выбор оптимальной службы обмена сообщениями Azure для данных).
-* Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
-* Сведения о том, как приступить к использованию службы "Сетка событий", см. в статье [Создание и перенаправление пользовательских событий с помощью Azure CLI и службы "Сетка событий"](custom-event-quickstart.md).
-* Сведения о том, как приступить к использованию Центров событий, см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
-* Сведения о том, как приступить к использованию служебной шины, см. в статье [Создание пространства имен служебной шины с помощью портала Azure](../service-bus-messaging/service-bus-create-namespace-portal.md).
+- [Events, Data Points, and Messages - Choosing the right Azure messaging service for your data](https://azure.microsoft.com/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/) (События, точки данных, сообщения — выбор подходящей службы для ваших данных).
+- [Очереди службы хранилища и очереди служебной шины: сходства и различия](../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md).
+- Сведения о том, как приступить к использованию службы "Сетка событий", см. в статье [Создание и перенаправление пользовательских событий с помощью Azure CLI и службы "Сетка событий"](custom-event-quickstart.md).
+- Сведения о том, как приступить к использованию Центров событий, см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
+- Сведения о том, как приступить к использованию служебной шины, см. в статье [Создание пространства имен служебной шины с помощью портала Azure](../service-bus-messaging/service-bus-create-namespace-portal.md).

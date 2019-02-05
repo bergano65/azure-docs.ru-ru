@@ -5,23 +5,25 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: quickstart
-ms.date: 03/03/2018
+ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017, mvc
-ms.openlocfilehash: e75a2d126680c71542aa04bae5a30ea7c376cea1
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 37b1c8516268611a1174edfe20fef36dfb6b36c2
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255930"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55295837"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание закрытого реестра контейнеров с помощью Azure CLI
 
-Реестр контейнеров Azure — это управляемая служба реестра контейнеров Docker, используемая для хранения частных образов контейнеров Docker. В этом руководстве рассматривается создание экземпляра реестра контейнеров Azure с помощью Azure CLI, отправление образа контейнера в реестр и, наконец, развертывание контейнера из реестра в службе "Экземпляры контейнеров Azure" (ACI).
+Реестр контейнеров Azure — это управляемая служба реестра контейнеров Docker, используемая для хранения частных образов контейнеров Docker. В этом руководстве рассматривается создание экземпляра реестра контейнеров Azure с помощью Azure CLI. Затем используйте команды Docker, чтобы отправить образ контейнера в реестр, после чего извлеките образ из контейнера и запустите его.
 
-Для этого руководства требуется Azure CLI 2.0.27 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
+Для этого руководства требуется Azure CLI (рекомендуется версия 2.0.55 и выше). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
 Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+
+Та как в службе Azure Cloud Shell нет всех необходимых компонентов Docker (управляющая программа `dockerd`), ее нельзя использовать в этом руководстве.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -35,9 +37,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом кратком руководстве вы создадите реестр уровня *Базовый*. Реестр контейнеров Azure доступен в нескольких номерах SKU, которые кратко описаны в следующей таблице. См. дополнительные сведения о [номерах SKU реестра контейнеров][container-registry-skus].
-
-[!INCLUDE [container-registry-sku-matrix](../../includes/container-registry-sku-matrix.md)]
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. См. дополнительные сведения о [доступных номерах SKU реестра контейнеров][container-registry-skus].
 
 Создайте экземпляр ACR с помощью команды [az acr create][az-acr-create]. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry007*. Замените его уникальным значением.
 
@@ -50,10 +50,10 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry007 --s
 ```json
 {
   "adminUserEnabled": false,
-  "creationDate": "2017-09-08T22:32:13.175925+00:00",
+  "creationDate": "2019-01-08T22:32:13.175925+00:00",
   "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry007",
   "location": "eastus",
-  "loginServer": "myContainerRegistry007.azurecr.io",
+  "loginServer": "mycontainerregistry007.azurecr.io",
   "name": "myContainerRegistry007",
   "provisioningState": "Succeeded",
   "resourceGroup": "myResourceGroup",
@@ -68,11 +68,11 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry007 --s
 }
 ```
 
-В дальнейшем в этом кратком руководстве будет использоваться `<acrName>` как заполнитель имени реестра контейнеров.
+Запишите `loginServer` в выходных данных (в нижнем регистре). Это полное доменное имя реестра. В дальнейшем в этом кратком руководстве будет использоваться `<acrName>` как заполнитель имени реестра контейнеров.
 
-## <a name="log-in-to-acr"></a>Вход в ACR
+## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
-Перед отправкой и извлечением образов контейнеров необходимо войти в экземпляр ACR. Чтобы сделать это, используйте команду [az acr login][az-acr-login].
+Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. Чтобы сделать это, используйте команду [az acr login][az-acr-login].
 
 ```azurecli
 az acr login --name <acrName>
@@ -80,35 +80,11 @@ az acr login --name <acrName>
 
 По завершении команда возвращает сообщение `Login Succeeded`.
 
-## <a name="push-image-to-acr"></a>Отправка образа в ACR
-
-Чтобы отправить образ в реестр контейнеров Azure, сначала нужно получить этот образ. Если у вас еще нет образов локального контейнера, используйте следующую команду, чтобы извлечь существующий образ из Docker Hub.
-
-```bash
-docker pull microsoft/aci-helloworld
-```
-
-Прежде чем отправить образ в реестр, нужно добавить в него тег с полным именем сервера входа для ACR. Выполните следующую команду, чтобы получить полное имя сервера входа для экземпляра ACR.
-
-```azurecli
-az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
-```
-
-Присвойте образу тег с помощью команды [docker tag][docker-tag]. Замените значение `<acrLoginServer>` именем сервера входа для экземпляра ACR.
-
-```bash
-docker tag microsoft/aci-helloworld <acrLoginServer>/aci-helloworld:v1
-```
-
-Наконец, воспользуйтесь командой [docker push][docker-push] для принудительной отправки образа в экземпляр ACR. Замените значение `<acrLoginServer>` именем сервера входа для экземпляра ACR.
-
-```bash
-docker push <acrLoginServer>/aci-helloworld:v1
-```
+[!INCLUDE [container-registry-quickstart-docker-push](../../includes/container-registry-quickstart-docker-push.md)]
 
 ## <a name="list-container-images"></a>Список образов контейнеров
 
-В следующем примере перечисляются репозитории в реестре:
+В следующем примере перечисляются репозитории в реестре.
 
 ```azurecli
 az acr repository list --name <acrName> --output table
@@ -116,69 +92,31 @@ az acr repository list --name <acrName> --output table
 
 Выходные данные:
 
-```bash
+```
 Result
 ----------------
-aci-helloworld
+busybox
 ```
 
-В следующем примере перечисляются теги в репозитории **aci helloworld**.
+В следующем примере перечисляются теги в репозитории **busybox**.
 
 ```azurecli
-az acr repository show-tags --name <acrName> --repository aci-helloworld --output table
+az acr repository show-tags --name <acrName> --repository busybox --output table
 ```
 
 Выходные данные:
 
-```bash
+```
 Result
 --------
 v1
 ```
 
-## <a name="deploy-image-to-aci"></a>Развертывание образа в службе "Экземпляры контейнеров Azure"
-
-Чтобы развернуть экземпляр контейнера из реестра, который вы создали, во время развертывания необходимо указать учетные данные реестра. В рабочих сценариях для доступа к реестру контейнеров следует использовать [субъект-службу][container-registry-auth-aci], но чтобы упростить это быстрое руководство, включите пользователя "admin" в реестре с помощью следующей команды:
-
-```azurecli
-az acr update --name <acrName> --admin-enabled true
-```
-
-После того как пользователь "admin" будет включен, имя пользователя будет таким же, как и имя реестра, и вы сможете получить пароль с помощью следующей команды:
-
-```azurecli
-az acr credential show --name <acrName> --query "passwords[0].value"
-```
-
-Чтобы развернуть образ контейнера с одним ядром ЦП и 1 ГБ памяти, выполните следующую команду: Замените `<acrName>`, `<acrLoginServer>` и `<acrPassword>` значениями, полученными посредством предыдущих команд.
-
-```azurecli
-az container create --resource-group myResourceGroup --name acr-quickstart --image <acrLoginServer>/aci-helloworld:v1 --cpu 1 --memory 1 --registry-username <acrName> --registry-password <acrPassword> --dns-name-label aci-demo --ports 80
-```
-
-Вы получите начальный ответ от Azure Resource Manager с дополнительными сведениями о контейнере. Чтобы отслеживать и проверять состояние контейнера и проверять, работает ли он, повторите команду [az container show][az-container-show]. Операция займет не больше минуты.
-
-```azurecli
-az container show --resource-group myResourceGroup --name acr-quickstart --query instanceView.state
-```
-
-## <a name="view-the-application"></a>Просмотр приложения
-
-После успешного развертывания в ACI получите FQDN контейнера с помощью команды [az container show][az-container-show].
-
-```azurecli
-az container show --resource-group myResourceGroup --name acr-quickstart --query ipAddress.fqdn
-```
-
-Пример выходных данных: `"aci-demo.eastus.azurecontainer.io"`
-
-Чтобы увидеть работающее приложение, перейдите по общедоступному IP-адресу в своем браузере.
-
-![Приложение Hello World в браузере][aci-app-browser]
+[!INCLUDE [container-registry-quickstart-docker-pull](../../includes/container-registry-quickstart-docker-pull.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Ненужные группу ресурсов, экземпляр ACR и все образы контейнеров можно удалить с помощью команды [az group delete][az-group-delete].
+Ненужные группу ресурсов, реестр контейнеров и все образы контейнеров можно удалить с помощью команды [az group delete][az-group-delete].
 
 ```azurecli
 az group delete --name myResourceGroup
@@ -186,20 +124,18 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого краткого руководства вы создали реестр контейнеров Azure с использованием Azure CLI, отправили образ контейнера в реестр и запустили его экземпляр в службе "Экземпляры контейнеров Azure". Чтобы подробнее рассмотреть службу "Экземпляры контейнеров Azure", перейдите к следующему руководству.
+С помощью этого краткого руководства вы создали Реестр контейнеров Azure с использованием Azure CLI, отправили образ контейнера в реестр, а затем извлекли этот образ оттуда и запустили его. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию службы "Экземпляры контейнеров Azure"][container-instances-tutorial-prepare-app]
-
-<!-- IMAGES> -->
-[aci-app-browser]: ../container-instances/media/container-instances-quickstart/aci-app-browser.png
-
+> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-quick-task]
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
-[docker-login]: https://docs.docker.com/engine/reference/commandline/login/
 [docker-mac]: https://docs.docker.com/docker-for-mac/
 [docker-push]: https://docs.docker.com/engine/reference/commandline/push/
+[docker-pull]: https://docs.docker.com/engine/reference/commandline/pull/
+[docker-rmi]: https://docs.docker.com/engine/reference/commandline/rmi/
+[docker-run]: https://docs.docker.com/engine/reference/commandline/run/
 [docker-tag]: https://docs.docker.com/engine/reference/commandline/tag/
 [docker-windows]: https://docs.docker.com/docker-for-windows/
 
@@ -209,7 +145,5 @@ az group delete --name myResourceGroup
 [az-group-create]: /cli/azure/group#az-group-create
 [az-group-delete]: /cli/azure/group#az-group-delete
 [azure-cli]: /cli/azure/install-azure-cli
-[az-container-show]: /cli/azure/container#az-container-show
-[container-instances-tutorial-prepare-app]: ../container-instances/container-instances-tutorial-prepare-app.md
+[container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md
 [container-registry-skus]: container-registry-skus.md
-[container-registry-auth-aci]: container-registry-auth-aci.md

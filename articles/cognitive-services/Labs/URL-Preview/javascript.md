@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по использованию JavaScript для службы предварительного просмотра URL-адресов в проектах
+title: Краткое руководство. Служба предварительного просмотра URL-адресов в проектах, JavaScript
 titlesuffix: Azure Cognitive Services
 description: Пример скрипта для быстрого начала работы с API предварительного просмотра URL-адресов Bing с использованием JavaScript.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: url-preview
+ms.subservice: url-preview
 ms.topic: quickstart
 ms.date: 03/16/2018
 ms.author: rosh
-ms.openlocfilehash: f36609448819ed197cb92c0bc4d9cc0237fe6df8
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 941cdd25eb6f16b580900fed6e41aa4bf8df15f7
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466942"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55224887"
 ---
-# <a name="quickstart-url-preview-in-javascript"></a>Краткое руководство. Предварительный просмотр URL-адресов на JavaScript 
+# <a name="quickstart-url-preview-in-javascript"></a>Краткое руководство. Использование службы предварительного просмотра URL-адресов с JavaScript 
 
 В следующем одностраничном приложении с помощью JavaScript создается представление для предварительного просмотра URL-адреса сайта SwiftKey: https://swiftkey.com/en. 
 
@@ -34,7 +34,7 @@ ms.locfileid: "49466942"
 
 **Необработанный ответ JSON**
 
-````
+```
 {
   "_type": "WebPage",
   "name": "SwiftKey - Smart prediction technology for easier mobile typing",
@@ -46,7 +46,7 @@ ms.locfileid: "49466942"
   }
 }
 
-````
+```
 
 **Запущенная демонстрация**
 

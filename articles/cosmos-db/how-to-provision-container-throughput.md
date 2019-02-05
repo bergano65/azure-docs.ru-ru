@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: eb34385087118614f8d7057c2229bc3c9e8d1ae4
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 550201e692bb79197d50c2f44017c43ab9ea2016
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039492"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55477341"
 ---
-# <a name="provision-throughput-for-an-azure-cosmos-db-container"></a>Подготовка пропускной способности для коллекций Azure Cosmos DB
+# <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
 В этой статье описывается, как подготовить пропускную способность для контейнера (коллекции, диаграммы, таблицы) в Azure Cosmos DB. Можно подготовить пропускную способность для одного контейнера или [для базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ между контейнерами. Пропускную способность контейнера можно подготовить с помощью портала Azure, интерфейса командной строки Azure или пакетов SDK CosmosDB.
 

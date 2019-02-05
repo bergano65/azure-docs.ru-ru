@@ -3,19 +3,19 @@ title: Самостоятельный сброс пароля Azure AD в окн
 description: В этом руководстве описано, как сбросить пароль в окне входа в Windows 10, чтобы сократить число обращений в службу технической поддержки.
 services: active-directory
 ms.service: active-directory
-ms.component: authentication
+ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 640f03cd35ac74df9c7b25352ab294c35c4ec0ea
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: a36f9bf3ade623a6b623116c504c2b6a04fcdf2b
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430678"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55474876"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
@@ -28,11 +28,11 @@ ms.locfileid: "54430678"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Обновленный в апреле 2018 года клиент Windows 10 или новее, который:
-   * [компьютер, присоединенный к Azure AD](../device-management-azure-portal.md);
-   * [компьютеры с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
-* Функция самостоятельного сброса пароля Azure AD должна быть включена.
-* Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить HTTPS-трафик (443) к веб-сайтам `passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`.
+* Система должна работать под управлением Windows 10 (или более поздних версий) с обновлением за апрель 2018 г. Допустимые устройства:
+   * [присоединенные к Azure AD](../device-management-azure-portal.md);
+   * [с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
+* Нужно включить функцию самостоятельного сброса пароля Azure AD.
+* Если устройства с Windows 10 защищены прокси-сервером или брандмауэром, нужно добавить URL-адреса (`passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`) в список разрешенных для трафика HTTPS (порт 443).
 
 ## <a name="configure-reset-password-link-using-intune"></a>Настройка ссылки сброса пароля с помощью Intune
 

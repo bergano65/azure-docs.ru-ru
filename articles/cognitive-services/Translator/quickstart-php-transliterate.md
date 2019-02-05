@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: транслитерация текста, PHP — API перевода текстов'
+title: Краткое руководство. Транслитерация текста, PHP — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и PHP преобразовать текст на одном языке из одного набора символов в другой.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: erhopf
-ms.openlocfilehash: e858e33864ddec211f2424c7380b5b421a3db0f5
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: becc73438762efb4b8cdda2be32e59feebc7dd20
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649482"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208200"
 ---
-# <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-php"></a>Краткое руководство: транслитерация текста с помощью REST API перевода текстов (PHP)
+# <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-php"></a>Краткое руководство. Транслитерация текста с помощью REST API перевода текстов (PHP)
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов преобразовать текст на одном языке из одного набора символов в другой.
 

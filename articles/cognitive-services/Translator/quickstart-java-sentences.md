@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Получение длины предложений, Java — API перевода текстов
+title: Краткое руководство. Получение длины предложений, Java — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить длину предложения с помощью API перевода текстов и Java.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 12/03/2018
 ms.author: erhopf
-ms.openlocfilehash: 941467e7756faa4fd06220bafbf733f42b43e8d9
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 26c1d8c703f8bb03d06e742d52d639cf3dd24634
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888585"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208403"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-java"></a>Краткое руководство. Определение длины предложения с помощью Java и API перевода текстов
 
@@ -38,7 +38,7 @@ mkdir break-sentence-sample
 cd break-sentence-sample
 ```
 
-После этого вы инициализируете проект Gradle. Что самое важное, эта команда создает необходимый файл сборки для Gradle (`build.gradle.kts`), который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+После этого вы инициализируете проект Gradle. Эта команда создает необходимые файлы сборки для Gradle, прежде всего `build.gradle.kts`, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
 
 ```console
 gradle init --type basic

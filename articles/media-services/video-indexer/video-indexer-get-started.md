@@ -1,5 +1,5 @@
 ---
-title: Регистрация в Индексаторе видео и отправка первого видео
+title: Регистрация в Индексаторе видео и отправка первого видео — Azure
 titlesuffix: Azure Media Services
 description: Узнайте, как зарегистрироваться на портале Индексатора видео и отправить свое первое видео.
 services: media-services
@@ -7,16 +7,16 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: tutorial
-ms.date: 11/19/2018
+ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: 72412956d231ea2696c05ba250302faf5f90c91d
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 1e3ba1e12a8b058429f75b1d2aab3942cd843778
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54823289"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55090513"
 ---
-# <a name="tutorial-how-to-sign-up-and-upload-your-first-video"></a>Руководство. Как зарегистрироваться и отправить видео
+# <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>Краткое руководство. Как зарегистрироваться и отправить видео
 
 В этом руководстве по началу работы показано, как войти на веб-сайт Индексатора видео и отправить первое видео.
 

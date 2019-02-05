@@ -1,23 +1,23 @@
 ---
-title: Руководство. Одностраничное веб-приложение для службы "Поиск сущностей Bing"
+title: Руководство. Одностраничное веб-приложение для службы Поиск сущностей Bing
 titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как использовать API Bing для поиска сущностей в одностраничном веб-приложении.
 services: cognitive-services
 author: aahill
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-entity-search
+ms.subservice: bing-entity-search
 ms.topic: tutorial
 ms.date: 12/08/2017
 ms.author: aahi
-ms.openlocfilehash: 6bf3944017075ee04fe6ed3472a0cbe12d7f8ba0
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: f8aa6733748bbdf9ffff069126f6481c8b6788c8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162013"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197438"
 ---
-# <a name="tutorial-single-page-web-app"></a>Руководство: одностраничное веб-приложение
+# <a name="tutorial-single-page-web-app"></a>Руководство. Одностраничные веб-приложения
 
 API Bing для поиска сущностей позволяет выполнять в Интернете поиск сведений о *сущностях* и *местах*. В каждом запросе можно запросить один из типов результатов или оба типа. Определения мест и сущностей приводятся ниже.
 

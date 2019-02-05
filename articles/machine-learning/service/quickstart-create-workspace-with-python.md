@@ -4,29 +4,32 @@ titleSuffix: Azure Machine Learning service
 description: Начало работы со Службой машинного обучения Azure в среде Python. Используя пакет SDK для Python, создайте рабочую область, которая является основным блоком в облаке для экспериментов, обучения и развертывания моделей машинного обучения.
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: quickstart
 ms.reviewer: sgilley
 author: hning86
 ms.author: haining
-ms.date: 12/04/2018
+ms.date: 01/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8d45ca0f55b373970bfc0b1d146d5b3e2d6d66fa
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: e0c235a9fd3898fa4525651d514c77432627603c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54823408"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55238964"
 ---
 # <a name="quickstart-use-the-python-sdk-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python
 
-В рамках этой статьи будет использоваться пакет SDK для Машинного обучения Azure для Python для создания и применения [рабочей области](concept-azure-machine-learning-architecture.md) Службы машинного обучения Azure. Эта рабочая область — основной блок в облаке для экспериментов, обучения и развертывания моделей машинного обучения с помощью Машинного обучения Azure. 
+В рамках этой статьи будет использоваться пакет SDK для Машинного обучения Azure для Python 3 для создания и применения [рабочей области](concept-azure-machine-learning-architecture.md) Службы машинного обучения Azure. Эта рабочая область — основной блок в облаке для экспериментов, обучения и развертывания моделей машинного обучения с помощью Машинного обучения Azure.
 
-Вы начнете с настройки собственного окружения Python и сервера Jupyter Notebook. Сведения о запуске без установки см. в статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md).
+Вы начнете с настройки собственного окружения Python и сервера Jupyter Notebook. Сведения о запуске без установки см. в статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md). 
+
+Просмотрите видеоверсию этого краткого руководства:
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2G9N6]
 
-Работая с этой статьей, вы выполните следующие задачи:
+В этом кратком руководстве вы:
+
 * установите пакет SDK для Python;
 * Создавать рабочую область в своей подписке Azure.
 * создадите файл конфигурации для той рабочей области, которая будет использоваться позже в других записных книжках и скриптах;
@@ -42,25 +45,28 @@ ms.locfileid: "54823408"
 - [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) 
 - [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
 
+>[!NOTE]
+> Для выполнения кода из этой статьи требуется пакет SDK для Машинного обучения Azure 1.0.2 или более поздней версии. Код был протестирован с версией 1.0.8.
+
+
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 ## <a name="install-the-sdk"></a>Установка пакета SDK
 
 > [!IMPORTANT]
-> Пропустите этот раздел, если вы используете виртуальную машину для обработки и анализа данных, созданную после 27 сентября 2018 г.
-> Виртуальные машины для обработки и анализа, созданные после этой даты, поставляются с уже установленным пакетом SDK для Python.
-
-Для выполнения кода из этой статьи требуется пакет SDK для службы "Машинное обучение Azure" версии 1.0.2.
+> Пропустите этот раздел, если вы используете Виртуальную машину для обработки и анализа данных Azure или Azure Databricks.
+> * Виртуальные машины для обработки и анализа данных Azure, созданные после 27 сентября 2018 г., поставляются с уже установленным пакетом SDK для Python.
+> * В среде Azure Databricks выполните вместо этого [шаги установки Databricks](how-to-configure-environment.md#azure-databricks).
 
 Прежде чем устанавливать пакет SDK, сначала рекомендуется создать изолированную среду Python. Хотя в этой статье используется [Miniconda](https://docs.conda.io/en/latest/miniconda.html), также можно использовать полностью установленное средство [Anaconda](https://www.anaconda.com/) или [Python virtualenv](https://virtualenv.pypa.io/en/stable/).
 
 ### <a name="install-miniconda"></a>Установка Miniconda
 
-[Скачайте и установите Miniconda](https://conda.io/miniconda.html). Выберите Python 3.7 или более поздней версии. Не выбирайте версию Python 2.x.
+[Скачайте и установите Miniconda](https://docs.conda.io/en/latest/miniconda.html). Выберите Python 3.7 или более поздней версии для установки. Не выбирайте версию Python 2.x.  
 
-### <a name="create-an-isolated-python-environment"></a>Создание изолированной среды Python 
+### <a name="create-an-isolated-python-environment"></a>Создание изолированной среды Python
 
-1. Откройте окно командной строки и создайте среду conda с именем *myenv*, используя Python 3.6.
+1. Откройте окно командной строки, а затем создайте среду conda с именем *myenv* и установите Python 3.6. Пакет SDK для Машинного обучения Azure будет работать с Python 3.5.2 или более поздней версии, но автоматические компоненты машинного обучения не полностью функциональны на Python 3.7.
 
     ```shell
     conda create -n myenv -y Python=3.6
@@ -74,34 +80,35 @@ ms.locfileid: "54823408"
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
-В активированной среде conda установите пакет SDK. Этот код устанавливает основные компоненты пакета SDK для Машинного обучения. Он также устанавливает сервер Jupyter Notebook в среду conda. Установка занимает несколько минут в зависимости от конфигурации компьютера.
+1. В активированной среде conda установите основные компоненты пакета SDK для Машинного обучения Azure с возможностями записной книжки Jupyter.  Установка занимает несколько минут в зависимости от конфигурации компьютера.
 
-```shell
-# Install Jupyter
-conda install nb_conda
+  ```shell
+    pip install --upgrade azureml-sdk[notebooks]
+    ```
 
-# Install the base SDK and Jupyter Notebook
-pip install azureml-sdk[notebooks]
-```
+1. Установите сервер Jupyter Notebook в среде conda.
 
-Для установки других компонентов пакета SDK можно использовать дополнительные ключевые слова:
+  ```shell
+    conda install nb_conda
+    ```
 
-```shell
-# Install the base SDK and auto ml components
-pip install azureml-sdk[automl]
+1. Чтобы использовать эту среду для учебников по Машинному обучению Azure, установите следующие пакеты.
 
-# Install the base SDK and the model explainability component
-pip install azureml-sdk[explain]
+    ```shell
+    conda install -y cython matplotlib pandas
+    ```
 
-# Install the base SDK and experimental components
-pip install azureml-sdk[contrib]
-```
+1. Чтобы использовать эту среду для учебников по Машинному обучению Azure, установите автоматические компоненты машинного обучения.
 
-В среде Azure Databricks выполните вместо этого [шаги установки Databricks](how-to-configure-environment.md#azure-databricks
-).
-
+    ```shell
+    pip install --upgrade azureml-sdk[automl]
+    ```
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
+
+Создайте рабочую область в Jupyter Notebook с помощью пакета SDK для Python.
+
+1. Создайте каталог, который вы хотите использовать для краткого руководства и учебников, или перейдите к нему.
 
 1. Чтобы запустить Jupyter Notebook, введите эту команду:
 
@@ -123,7 +130,7 @@ pip install azureml-sdk[contrib]
                          subscription_id='<azure-subscription-id>', 
                          resource_group='myresourcegroup',
                          create_resource_group=True,
-                         location='eastus2' # Or other supported Azure region   
+                         location='eastus2' 
                         )
    ```
 
@@ -138,7 +145,11 @@ pip install azureml-sdk[contrib]
 
 Сохраните сведения рабочей области в файле конфигурации в текущем каталоге. Этот файл называется *aml_config\config.json*.  
 
-Вызов API `write_config()` позволяет создать файл конфигурации в текущем каталоге. Файл *config.json* содержит следующее:
+Этот файл конфигурации рабочей области упрощает дальнейшую загрузку этой же рабочей области. Вы можете загрузить ее с помощью других записных книжек и скриптов в том же каталоге или подкаталоге.  
+
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=writeConfig)]
+
+Этот вызов API `write_config()` позволяет создать файл конфигурации в текущем каталоге. Файл *config.json* содержит следующее:
 
 ```json
 {
@@ -148,15 +159,13 @@ pip install azureml-sdk[contrib]
 }
 ```
 
-Этот файл конфигурации рабочей области упрощает дальнейшую загрузку этой же рабочей области. Вы можете загрузить ее с помощью других записных книжек и скриптов в том же каталоге или подкаталоге. 
-
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=writeConfig)]
-
-
-
 ## <a name="use-the-workspace"></a>Используйте рабочую область
 
-Напишите код, использующий базовые интерфейсы API пакета SDK для отслеживания нескольких экспериментальных запусков.
+Запустите код, использующий базовые интерфейсы API пакета SDK для отслеживания нескольких экспериментальных запусков.
+
+1. Создайте эксперимент в рабочей области.
+1. Введите одно значение в эксперимент.
+1. Введите список значений в эксперимент.
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=useWs)]
 
@@ -182,19 +191,6 @@ print(run.get_portal_url())
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье вы создали ресурсы для экспериментирования и развертывания моделей. Кроме того, вы запускали код в записной книжке и изучали журнал выполнения из этого кода в вашей рабочей области в облаке.
-
-Для использования кода при работе с руководствами по Машинному обучению вам понадобится несколько пакетов в среде.
-
-1. Закройте записную книжку в браузере.
-1. В окне командной строки используйте клавиши CTRL+C, чтобы остановить работу сервера Jupyter Notebook.
-1. Установите дополнительные пакеты.  Если вы не установили `azureml-sdk[automl]` в одном из предыдущих шагов, обязательно сделайте это сейчас.
-
-    ```shell
-    conda install -y cython matplotlib scikit-learn pandas numpy
-    pip install azureml-sdk[automl]
-    ```
-
-После установки этих пакетов следуйте инструкциям в руководствах по обучению и развертыванию моделей. 
 
 > [!div class="nextstepaction"]
 > [Руководство Обучение модели классификации изображений](tutorial-train-models-with-aml.md)

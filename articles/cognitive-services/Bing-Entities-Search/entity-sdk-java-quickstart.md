@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Использование пакета SDK для API Bing для поиска сущностей (Java)
+title: Краткое руководство. Пакет SDK Поиска сущностей Bing для Java
 titlesuffix: Azure Cognitive Services
 description: Установка консольного приложения пакета SDK для API "Поиск сущностей Bing".
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-entity-search
+ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/19/2018
 ms.author: v-gedod
-ms.openlocfilehash: 291a307d4fd7c0fa723b8b17c13b3ef13cdeb8de
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: caa525df5091788ab8a5807272f895f46da9673a
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316826"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55149278"
 ---
-# <a name="quickstart-bing-entity-search-sdk-with-java"></a>Краткое руководство. Использование пакета SDK API Bing для поиска сущностей для Java
+# <a name="quickstart-bing-entity-search-sdk-with-java"></a>Краткое руководство. Пакет SDK Поиска сущностей Bing для Java
 
 Пакет SDK для API "Поиск сущностей Bing" предоставляет функциональные возможности интерфейса REST API для поиска сущностей и анализа результатов. 
 

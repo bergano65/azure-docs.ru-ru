@@ -6,27 +6,27 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: 9a3db996429bbbd0883643e2b7c6622dcff5480f
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 720d249321d20161b6a1ef19bb522ec6c2fc665e
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977856"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216686"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Получение ответов на вопрос из базы знаний с помощью Node.js
 
-В этом кратком руководстве описано, как программным способом получить ответ из базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Вопрос в формате JSON отправляется в тексте запроса API. 
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Вопрос в формате JSON отправляется в тексте запроса API. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ для ресурса QnA Maker, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга Azure. 
-* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [этот пример базы знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
+* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
+* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
     На странице параметров публикации представлены значения Host, EndpointKey и маршрута POST. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "51977856"
 
 ## <a name="add-the-required-dependencies"></a>Добавление необходимых зависимостей
 
-В верхней части файла `get-answer.js` добавьте необходимые зависимости в проект.
+В верхней части файла `get-answer.js` добавьте необходимые зависимости в проект:
 
 [!code-nodejs[Add the required dependencies](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/get-answer/get-answer.js?range=1-4 "Add the required dependencies")]
 
@@ -70,7 +70,7 @@ npm install request request-promise
 
 Выполните запуск программы из командной строки. Запрос к API службы QnA Maker будет отправлен автоматически, а полученный ответ отобразится в окне консоли.
 
-Выполните запуск файла:
+Запустите файл.
 
 ```bash
 node get-answer.js

@@ -3,7 +3,7 @@ title: Руководство. Защита веб-сервера Linux с по�
 description: В этом руководстве описано, как использовать Azure CLI для защиты виртуальной машины Linux, запущенной на веб-сервере NGINX, с помощью SSL-сертификатов, хранящихся в Azure Key Vault.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: tysonn
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/30/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1e072e81d2c7450ca087e9570994c6e0ce350108
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 85dbdc42dd55cdb262351511918d2b813212edb0
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466772"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54882214"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-linux-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство. Защита веб-сервера на виртуальной машине Linux в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 Чтобы защитить веб-серверы, можно использовать SSL-сертификат (Secure Sockets Layer) для шифрования веб-трафика. SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Linux в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:

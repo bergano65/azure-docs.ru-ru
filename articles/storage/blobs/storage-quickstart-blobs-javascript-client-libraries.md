@@ -9,13 +9,13 @@ ms.service: storage
 ms.author: tamram
 ms.date: 11/14/2018
 ms.topic: quickstart
-ms.component: blobs
-ms.openlocfilehash: c72cd83af2b06b19b285d3c939c0d45b995464d9
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.subservice: blobs
+ms.openlocfilehash: a5433284d9722ce907b962be7ba437ef32ad819c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51711488"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55245386"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -80,7 +80,7 @@ az storage account generate-sas
 
 | Параметр        | Значение   | ОПИСАНИЕ  |
 |------------------|---------|---------|
-| *permissions*    | racwdl  | Этот SAS позволяет выполнять *чтение*, *добавление*, *создание*, *запись*, *удаление* и *перечисление*. |
+| *разрешения*    | racwdl  | Этот SAS позволяет выполнять *чтение*, *добавление*, *создание*, *запись*, *удаление* и *перечисление*. |
 | *resource-types* | SCO     | SAS влияет на такие ресурсы, как *службы*, *контейнеры* и *объекты*. |
 | *services*       | b       | SAS влияет на службу *BLOB-объектов*. |
 
@@ -251,7 +251,7 @@ document.getElementById('delete-button').addEventListener('click', () => {
 > Чтобы этот пример кода работал, необходимо указать строковое значение для параметра *blobName*.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы очистить ресурсы, созданные в этом руководстве, вернитесь на [портал Azure](https://portal.azure.com) и выберите свою учетную запись хранения. После выбора учетной записи хранения ее можно удалить, щелкнув: **Обзор > Удалить учетную запись хранения**.
+Чтобы очистить ресурсы, созданные в этом руководстве, вернитесь на [портал Azure](https://portal.azure.com) и выберите свою учетную запись хранения. Выбрав учетную запись хранения, вы можете ее удалить. Для этого щелкните **Обзор > Удалить учетную запись хранения**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Изучите примеры, чтобы узнать, как отправлять большие двоичные объекты и отслеживать процесс выполнения во время отправки файлов.

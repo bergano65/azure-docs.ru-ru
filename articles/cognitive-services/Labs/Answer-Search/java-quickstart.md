@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: API поиска ответов в проектах с использованием Java'
+title: Краткое руководство. Служба поиска ответов в проекте, Java
 titlesuffix: Azure Cognitive Services
 description: Начало использования API поиска ответов в проектах на языке Java.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: answer-search
+ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 66d5488fa0e8f542327b4150d50e4351af6ade55
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 0353736b3b66c58288dbd3d351b3b3dd53f467d6
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469101"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55226882"
 ---
-# <a name="quickstart-project-answer-search-query-in-java"></a>Краткое руководство: Запрашивание API поиска ответов в проектах на Java
+# <a name="quickstart-project-answer-search-query-in-java"></a>Краткое руководство. Запрос к API поиска ответов в проектах на Java
 В этой статье с помощью Java демонстрируется API поиска ответов Bing, входящий в состав служб Microsoft Cognitive Services в Azure. API представляет собой веб-службу REST, совместимую с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
  
 В примере кода используется Java с минимальными внешними зависимостями.  Его также можно выполнить в Linux или Mac OS X с помощью Mono.
@@ -30,7 +30,7 @@ ms.locfileid: "49469101"
 
 Следующий код создает `WebRequest`, задает заголовок ключа доступа и добавляет строку запроса "Gibraltar" (Гибралтар).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
 
-````
+```
     static String host = "https://api.labs.cognitive.microsoft.com";
     static String path = "/answerSearch/v7.0/search";
 
@@ -46,7 +46,7 @@ ms.locfileid: "49469101"
 
     // construct result object for return
     SearchResults results = new SearchResults(new HashMap<String, String>(), response);
-````
+```
 
 ## <a name="complete-code"></a>Полный код
 
@@ -57,7 +57,7 @@ API поиска ответов Bing возвращает результаты �
 4. Замените значение subscriptionKey ключом доступа, допустимым для вашей подписки.
 5. Запустите программу.
 
-````
+```
 package knowledgeAPI;
 import java.io.InputStream;
 import java.net.*;
@@ -148,7 +148,7 @@ public class KnowledgeSrch {
         }
 }
 
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство для C#](c-sharp-quickstart.md)

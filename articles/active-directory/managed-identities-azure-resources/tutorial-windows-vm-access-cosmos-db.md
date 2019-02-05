@@ -3,23 +3,23 @@ title: Использование назначаемого системой уп
 description: В этом руководстве объясняется, как получить доступ к Azure Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: daveba
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2018
-ms.author: daveba
-ms.openlocfilehash: bd1fe465d085d79812f891195ab104f60c9ba5f3
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: priyamo
+ms.openlocfilehash: 331e59e234b66f465189248c755ebf450adcb603
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429605"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55150043"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к Azure Cosmos DB
 
@@ -36,6 +36,8 @@ ms.locfileid: "54429605"
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+
+- Установка последней версии [Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="create-a-cosmos-db-account"></a>Создание учетной записи Cosmos DB 
 
@@ -63,16 +65,14 @@ ms.locfileid: "54429605"
 Чтобы с помощью PowerShell предоставить назначаемому системой управляемому удостоверению доступ к учетной записи Cosmos DB в Azure Resource Manager, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить для учетной записи ключи для записи и чтения, или роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения.  Для этого руководства назначьте `Cosmos DB Account Reader Role`:
 
 ```azurepowershell
-$spID = (Get-AzureRMVM -ResourceGroupName myRG -Name myVM).identity.principalid
-New-AzureRmRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Reader Role" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.DocumentDb/databaseAccounts/<COSMOS DB ACCOUNT NAME>"
+$spID = (Get-AzVM -ResourceGroupName myRG -Name myVM).identity.principalid
+New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Reader Role" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.DocumentDb/databaseAccounts/<COSMOS DB ACCOUNT NAME>"
 ```
 ## <a name="get-an-access-token-using-the-windows-vm-system-assigned-managed-identity-to-call-azure-resource-manager"></a>получение маркера доступа с помощью назначаемого системой управляемого удостоверения виртуальной машины Windows и вызов Azure Resource Manager;
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 
 
-На этом этапе вы примените командлеты PowerShell для Azure Resource Manager.  Если у вас он не установлен, [скачайте последнюю версию](https://docs.microsoft.com/powershell/azure/overview), прежде чем продолжить.
-
-Вам также потребуется установить последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на виртуальной машине Windows.
+Вам потребуется установить последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на виртуальной машине Windows.
 
 1. На портале Azure перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Windows и вверху в разделе **Обзор** щелкните **Подключить**. 
 2. Введите **имя пользователя** и **пароль**, добавленные при создании виртуальной машины Windows. 
