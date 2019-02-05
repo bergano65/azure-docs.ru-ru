@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: f18c25d6d7692d5a0adff7e1efc69b25cdb31a0d
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 678f18d04ba25b614f490170aa9c4ba36d94b9e0
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49069409"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694291"
 documentType: LandingData
 title: Принципы работы Azure IoT
 metadata:
@@ -50,14 +50,14 @@ sections:
     - html: <a href="/azure/iot-dps">Службы подготовки устройств к добавлению в Центр Интернета вещей</a>
     - html: <a href="/azure/azure-maps">служба "Карты Azure"</a>;
     - html: <a href="/azure/time-series-insights">Аналитика временных рядов Azure</a>
-    - html: <a href="/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks">Пакеты SDK для службы IoT</a>
+    - html: <a href="/azure/iot-hub/iot-hub-devguide-sdks">Пакеты SDK для службы IoT</a>
   - type: paragraph
     text: Создание решений с использованием устройств IoT и пограничных вычислений.
   - type: list
     style: unordered
     items:
     - html: <a href="/azure/iot-edge">IoT Edge</a>
-    - html: <a href="/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks">Пакеты SDK для устройств IoT</a>
+    - html: <a href="/azure/iot-hub/iot-hub-devguide-sdks">Пакеты SDK для устройств IoT</a>
 - title: Примеры
   items:
   - type: paragraph
@@ -95,7 +95,7 @@ sections:
     items:
     - title: Командная строка
       html: <p><a href="/cli/azure/iot">Интерфейс командной строки Azure</a></p><p><a href="https://github.com/Azure/azure-iot-cli-extension">Расширение Azure IoT CLI</a></p>
-    - title: Языки
+    - title: Languages
       html: <p><a href="/azure/iot-hub/iot-hub-devguide-sdks">Пакеты SDK Azure IoT для .Net, C, Java, Node.js, Python</a></p>
     - title: REST
       html: <p><a href="/rest/api/iothub">Центр Интернета вещей</a></p><p><a href="/rest/api/iot-dps">Служба подготовки устройств для Центра Интернета вещей</a></p><p><a href="/rest/api/maps-management/">Управление службой "Карты"</a></p><p><a href="/rest/api/maps/">Функции службы "Карты"</a></p><p><a href="/rest/api/time-series-insights-management/">Управление Аналитикой временных рядов</a></p><p><a href="/rest/api/time-series-insights/">Аналитика временных рядов</a></p>
