@@ -1,27 +1,27 @@
 ---
-title: Краткое руководство по распознаванию эмоций лица на изображении — API распознавания эмоций с использованием C#
+title: Краткое руководство. Распознавание эмоций лица на изображении — API распознавания эмоций с использованием C#
 titlesuffix: Azure Cognitive Services
 description: Информация и примеры кода, которые помогут быстро приступить к работе с API распознавания эмоций для C#.
 services: cognitive-services
 author: anrothMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: emotion-api
+ms.subservice: emotion-api
 ms.topic: quickstart
 ms.date: 11/02/2017
 ms.author: anroth
 ROBOTS: NOINDEX
-ms.openlocfilehash: 530d05887e585884b184635e01031c1332fad3fb
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 45282c4ad534930fa72a8d8fb71105dca4af23de
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48239376"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55218246"
 ---
-# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство по созданию приложения для распознавания эмоций лица на изображении
+# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство. Создание приложения для распознавания эмоций лица на изображении
 
 > [!IMPORTANT]
-> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/).
+> 15 февраля 2019 г. API распознавания эмоций будет отмечен как нерекомендуемый. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/).
 
 В этой статье представлены сведения и примеры кода, которые помогут быстро приступить к работе с [методом Recognize из API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) для C#. Он позволяет распознавать эмоции одного или нескольких человек на изображении.
 
@@ -125,8 +125,8 @@ namespace CSHttpClientSample
 ## <a name="recognize-emotions-sample-response"></a>Пример ответа операции распознавания эмоций
 При успешном вызове возвращается массив записей лиц и связанные с ними оценки эмоций. Они сортируются по убыванию в зависимости от размера прямоугольника с лицом. Пустой ответ указывает на то, что лица не обнаружены. Запись об эмоции содержит следующие поля:
 
-* faceRectangle — расположение прямоугольника с лицом на изображении;
-* scores — результаты оценки эмоций для каждого лица на изображении.
+* faceRectangle — расположение прямоугольника с лицом на изображении;
+* scores — результаты оценки эмоций для каждого лица на изображении.
 
 ```json
 application/json

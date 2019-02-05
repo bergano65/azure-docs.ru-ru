@@ -1,6 +1,6 @@
 ---
 title: Пример для CLI. Масштабирование эластичного пула SQL в Базе данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure CLI для масштабирования эластичного пула SQL в Базе данных SQL Azure.
+description: Пример скрипта Azure CLI для масштабирования эластичного пула в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: elastic-pools
@@ -11,17 +11,17 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 09/20/2018
-ms.openlocfilehash: af7af24497054f7868e373150eefae9141239ec6
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: 444c93ea8c25e9f1ca9d906fd6d8fc69169163ae
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605038"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55452028"
 ---
-# <a name="use-cli-to-scale-a-sql-elastic-pool-in-azure-sql-database"></a>Масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью интерфейса командной строки
+# <a name="use-cli-to-scale-an-elastic-pool-in-azure-sql-database"></a>Масштабирование эластичного пула в Базе данных SQL Azure с помощью интерфейса командной строки
 
-Этот пример сценария Azure CLI создает эластичные пулы SQL и перемещает базы данных в составе пулов, а также изменяет вычислительную мощность эластичных пулов. 
+Этот пример скрипта Azure CLI создает эластичные пулы и перемещает базы данных в составе пула, а также изменяет вычислительную мощность эластичных пулов. 
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -43,15 +43,15 @@ az group delete --name myResourceGroup
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-Для создания группы ресурсов, логического сервера, базы данных SQL и правил брандмауэра этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+Для создания группы ресурсов, сервера Базы данных SQL, отдельной базы данных и правил брандмауэра Базы данных SQL этот скрипт использует приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az sql server create](https://docs.microsoft.com/cli/azure/sql/server#az-sql-server-create) | Создает логический сервер, на котором размещена база данных SQL. |
-| [az sql elastic-pools create](https://docs.microsoft.com/cli/azure/sql/elastic-pool#az-sql-elastic-pool-create) | Создает пул эластичных баз данных на логическом сервере. |
-| [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create) | Создает базу данных SQL на логическом сервере. |
-| [az sql elastic-pools update](https://docs.microsoft.com/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) | Обновляет пул эластичных баз данных. В этом примере также изменяется назначенная eDTU. |
+| [az sql server create](https://docs.microsoft.com/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
+| [az sql elastic-pools create](https://docs.microsoft.com/cli/azure/sql/elastic-pool#az-sql-elastic-pool-create) | Создает эластичный пул. |
+| [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create) | Создает отдельную базу данных или базу данных в составе пула. |
+| [az sql elastic-pools update](https://docs.microsoft.com/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) | Обновляет эластичный пул. В этом примере также изменяется назначенная единица eDTU. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

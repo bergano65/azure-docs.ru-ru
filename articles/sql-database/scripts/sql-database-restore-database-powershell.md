@@ -1,6 +1,6 @@
 ---
 title: Пример для PowerShell. Восстановление и архивация базы данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure PowerShell для восстановления базы данных SQL Azure из геоизбыточных резервных копий.
+description: Пример скрипта Azure PowerShell для восстановления отдельной базы данных SQL Azure из геоизбыточных резервных копий.
 services: sql-database
 ms.service: sql-database
 ms.subservice: backup-restore
@@ -11,15 +11,15 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: dc1697d24b936a22bacced96bb29cc590ccec88c
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.date: 01/25/2019
+ms.openlocfilehash: 5bf7d8717fd6b10fab454c6f11d459c6a620b42c
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54390602"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458743"
 ---
-# <a name="use-powershell-to-restore-an-azure-sql-database-from-backups"></a>Восстановление базы данных SQL Azure из резервных копий с помощью PowerShell
+# <a name="use-powershell-to-restore-an-azure-sql-single-database-from-backups"></a>Восстановление отдельной базы данных SQL Azure из резервных копий с помощью PowerShell
 
 Этот пример сценария PowerShell восстанавливает базу данных SQL Azure из геоизбыточной резервной копии, восстанавливает последнюю резервную копию удаленной базы данных SQL Azure и восстанавливает базу данных SQL Azure до определенной точки во времени.  
 
@@ -46,12 +46,12 @@ Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 
 | Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. | [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает логический сервер, на котором размещена база данных или эластичный пул. |
-| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает на логическом сервере отдельную базу данных или базу данных в составе пула. |
-[Get-AzureRmSqlDatabaseGeoBackup](/powershell/module/azurerm.sql/get-azurermsqldatabasegeobackup) | Получает геоизбыточную резервную копию базы данных. |
-| [Restore-AzureRmSqlDatabase](/powershell/module/azurerm.sql/restore-azurermsqldatabase) | Восстанавливает базу данных SQL. |
-|[Remove-AzureRmSqlDatabase](/powershell/module/azurerm.sql/remove-azurermsqldatabase) | Удаляет базу данных SQL Azure. |
-| [Get-AzureRmSqlDeletedDatabaseBackup](/powershell/module/azurerm.sql/get-azurermsqldeleteddatabasebackup) | Получает удаленную базу данных, которую можно восстановить. |
+| [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. | [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
+| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает на сервере Базы данных SQL отдельную базу данных или базу данных в составе пула. |
+[Get-AzureRmSqlDatabaseGeoBackup](/powershell/module/azurerm.sql/get-azurermsqldatabasegeobackup) | Получает геоизбыточную резервную копию отдельной базы данных или базы данных в составе пула. |
+| [Restore-AzureRmSqlDatabase](/powershell/module/azurerm.sql/restore-azurermsqldatabase) | Восстанавливает отдельную базу данных SQL или базу данных SQL в составе пула. |
+|[Remove-AzureRmSqlDatabase](/powershell/module/azurerm.sql/remove-azurermsqldatabase) | Удаляет отдельную базу данных SQL Azure или базу данных SQL Azure в составе пула. |
+| [Get-AzureRmSqlDeletedDatabaseBackup](/powershell/module/azurerm.sql/get-azurermsqldeleteddatabasebackup) | Получает удаленную отдельную базу данных или базу данных в составе пула, которую можно восстановить. |
 | [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

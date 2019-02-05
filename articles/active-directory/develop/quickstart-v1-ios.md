@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 42303177-9566-48ed-8abb-279fcf1e6ddb
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: brandwe
-ms.openlocfilehash: 89f2a4058006687fbe64ec64d98659e38f93f618
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 801da78de493b55655819ac16a9184d04a356786
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46980582"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55095980"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения iOS
 
@@ -43,15 +43,15 @@ ms.locfileid: "46980582"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы начать работу, выполните следующие предварительные требования.
+Чтобы начать работу, выполните следующие предварительные требования:
 
-* [Скачайте схему приложения](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip).
+* Скачайте [схему приложения](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip).
 * Убедитесь в наличии клиента Azure AD, в котором можно создать пользователей и зарегистрировать приложение. Если клиента нет, [узнайте, как его получить](quickstart-create-new-tenant.md).
 
 > [!TIP]
 > [Портал разработчика](https://identity.microsoft.com/Docs/iOS) поможет приступить к работе с Azure AD за считанные минуты. Портал разработчиков поможет зарегистрировать приложение и интегрировать Azure AD в код. Завершив работу, вы получите простое приложение, с помощью которого выполняется проверка подлинности пользователей в клиенте и на сервере, принимающем маркеры и проводящем проверку.
 
-## <a name="step-1-determine-what-your-redirect-uri-is-for-ios"></a>Шаг 1. Выбор URI перенаправления для iOS
+## <a name="step-1-determine-what-your-redirect-uri-is-for-ios"></a>Шаг 1. Выбор URI перенаправления для iOS
 
 Для безопасного запуска приложений в некоторых сценариях использования единого входа требуется создать *URI перенаправления* в определенном формате. URI перенаправления используется, чтобы гарантировать, что маркеры возвращаются именно в то приложение, которое их запрашивало.
 
@@ -68,7 +68,7 @@ ms.locfileid: "46980582"
 
 ***msquickstart://com.microsoft.azureactivedirectory.samples.graph.QuickStart***
 
-## <a name="step-2-register-the-directorysearcher-application"></a>Шаг 2. Регистрация приложения DirectorySearcher
+## <a name="step-2-register-the-directorysearcher-application"></a>Шаг 2. Регистрация приложения DirectorySearcher
 
 Чтобы настроить приложение для получения маркеров, необходимо зарегистрировать его в клиенте Azure AD и предоставить ему разрешение на доступ к API Graph для Azure AD.
 
@@ -240,7 +240,7 @@ ms.locfileid: "46980582"
 > [!NOTE]
 > Объект `AuthenticationResult` содержит объект `tokenCacheStoreItem`, который может использоваться для сбора сведений, необходимых приложению. В проекте QuickStart объект `tokenCacheStoreItem` используется, чтобы определить, была ли выполнена проверка подлинности.
 
-## <a name="step-5-build-and-run-the-application"></a>Шаг 5. Сборка и запуск приложения
+## <a name="step-5-build-and-run-the-application"></a>Шаг 5. Создание и запуск приложения
 
 Поздравляем! Теперь у нас есть рабочее приложение для iOS, которое может проверять подлинность пользователей, безопасно вызывать методы веб-API по протоколу OAuth 2.0 и получать основные сведения о пользователе.
 

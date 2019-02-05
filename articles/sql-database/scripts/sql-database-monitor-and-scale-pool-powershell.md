@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Мониторинг и масштабирование эластичного пула SQL в Базе данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure PowerShell для отслеживания и масштабирования эластичного пула SQL в Базе данных SQL Azure.
+title: Пример для PowerShell. Мониторинг и масштабирование эластичного пула в Базе данных SQL Azure | Документация Майкрософт
+description: Пример сценария Azure PowerShell для отслеживания и масштабирования эластичного пула в Базе данных SQL Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: performance
@@ -11,15 +11,15 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: 94e2f6aedc163d2b53b90908309e5c6167f8e6bb
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.date: 01/25/2019
+ms.openlocfilehash: 4ea6841992d61bd12a1180608abf0fa0ec4421c2
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54388274"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471629"
 ---
-# <a name="use-powershell-to-monitor-and-scale-a-sql-elastic-pool-in-azure-sql-database"></a>Отслеживание и масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью PowerShell
+# <a name="use-powershell-to-monitor-and-scale-an-elastic-pool-in-azure-sql-database"></a>Отслеживание и масштабирование эластичного пула в Базе данных SQL Azure с помощью PowerShell
 
 Этот пример сценария PowerShell отслеживает метрики производительности эластичного пула, увеличивает его вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности.
 
@@ -30,7 +30,7 @@ ms.locfileid: "54388274"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-powershell-interactive[main](../../../powershell_scripts/sql-database/monitor-and-scale-pool/monitor-and-scale-pool.ps1?highlight=16-17 "Monitor and scale single SQL Database")]
+[!code-powershell-interactive[main](../../../powershell_scripts/sql-database/monitor-and-scale-pool/monitor-and-scale-pool.ps1?highlight=16-17 "Monitor and scale a single SQL Database")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -47,9 +47,9 @@ Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 | Команда | Примечания |
 |---|---|
  [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает логический сервер, на котором размещена база данных или эластичный пул. |
-| [New-AzureRmSqlElasticPool](/powershell/module/azurerm.sql/new-azurermsqlelasticpool) | Создает эластичный пул на логическом сервере. |
-| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает на логическом сервере отдельную базу данных или базу данных в составе пула. |
+| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
+| [New-AzureRmSqlElasticPool](/powershell/module/azurerm.sql/new-azurermsqlelasticpool) | Создает эластичный пул. |
+| [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase) | Создает отдельную базу данных или базу данных в эластичном пуле. |
 | [Get-AzureRmMetric](/powershell/module/azurerm.insights/get-azurermmetric) | Отображает сведения об используемом размере базы данных.|
 | [Add-AzureRMMetricAlertRule](/powershell/module/azurerm.insights/add-azurermmetricalertrule) | Добавляет или обновляет правило генерации оповещений на основе метрики. |
 | [Set-AzureRmSqlElasticPool](/powershell/module/azurerm.sql/set-azurermsqlelasticpool) | Обновляет свойства эластичного пула. |

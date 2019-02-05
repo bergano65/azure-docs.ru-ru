@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/10/2018
+ms.date: 01/30/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 465f9d51f724bf1c8713259cd1d0b6ebabc230fe
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 8c699f8b3241694f36b73ae75b25754e551c91f6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239763"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470711"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -168,7 +168,13 @@ ms.locfileid: "55239763"
    $credential = Get-Credential -Message "Enter the azure stack operator credential:"
    Import-AzSOfflineMarketplaceItem -origin "marketplace content folder" -armendpoint "Environment Arm Endpoint" -AzsCredential $credential
    ```
+
+   Параметр `-origin` позволяет указать папку верхнего уровня, содержащую все скачанные файлы продуктов (например, `"D:\downloadfolder"`).
+
    Параметр `-AzsCredential` не обязателен. Он используется для обновления маркера доступа, если его срок действия истек. Если параметр `-AzsCredential` не указан и срок действия маркера истекает, появится запрос на ввод учетных данных оператора.
+
+    > [!Note]  
+    > AD FS поддерживает только интерактивную проверку подлинности с удостоверениями пользователей. Если требуется объект учетных данных, вам необходимо использовать субъект-службу (SPN). Дополнительные сведения о том, как с помощью Azure Stack и AD FS настроить субъект-службу в качестве службы управления удостоверениями, см. в разделе [Управление субъектом-службой для AD FS](azure-stack-create-service-principals.md#manage-service-principal-for-ad-fs).
 
 4. Элемент должен быть доступен в Azure Stack Marketplace после успешного выполнения скрипта.
 

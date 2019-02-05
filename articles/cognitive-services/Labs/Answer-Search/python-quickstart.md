@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство по работе с API поиска ответов в проектах, Python
+title: Краткое руководство. Служба поиска ответов в проекте, Python
 titlesuffix: Azure Cognitive Services
 description: Пример на Python для быстрого начала работы с API поиска ответов в проектах.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: answer-search
+ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 69c5edfef65af2ed1b27f9a512ad13c21468df7a
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 8d0ddf1d532c77f23a930c46bb261e03bc5822e7
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465514"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55218298"
 ---
 # <a name="quickstart-project-answer-search-with-python"></a>Краткое руководство по работе с API поиска ответов в проектах с использованием Python
 
@@ -41,7 +41,7 @@ ms.locfileid: "49465514"
 
 Полный код этого примера выглядит так:
 
-````
+```
 import http.client, urllib.parse
 import json
 
@@ -65,7 +65,7 @@ def get_local():
 result = get_local()
 print (json.dumps(json.loads(result), indent=4))
 
-````
+```
 ## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство для C#](c-sharp-quickstart.md)
 - [Краткое руководство для Java](java-quickstart.md)

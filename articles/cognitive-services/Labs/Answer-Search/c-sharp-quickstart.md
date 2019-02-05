@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по API поиска ответов в проектах с использованием C#
+title: Краткое руководство. Служба поиска ответов в проекте, C#
 titlesuffix: Azure Cognitive Services
 description: Пример кода для начала работы с API поиска ответов в проектах с использованием C#.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: answer-search
+ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 6d00c420ba84ea78235e138977cc4b5fde4fae64
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: fa6ee10b9597c32be11d15cad2a63eefe768472c
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49464851"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207434"
 ---
-# <a name="quickstart-project-answer-search-query-in-c"></a>Краткое руководство. Запрашивание API поиска ответов в проектах на C#
+# <a name="quickstart-project-answer-search-query-in-c"></a>Краткое руководство. Запрос для поиска ответов в проектах на C#
 
 С помощью приведенного ниже примера C# можно создать и отправить запрос для получения сведений о третьем правиле математического анализа.
 

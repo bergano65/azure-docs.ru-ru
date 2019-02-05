@@ -4,222 +4,196 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: f7f54202-1581-4e55-a97e-02633ff9382d
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/21/2017
+ms.topic: tutorial
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 5737bd76e7809035f21103f45a20fa8306061f30
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d3478e647114749647c18b75d624e0d73482b82a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54823306"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55460137"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-asc-contracts"></a>Руководство. Интеграция Azure Active Directory с ASC Contracts
 
 В этом руководстве описано, как интегрировать ASC Contracts с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением ASC Contracts обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к ASC Contracts.
-- Вы можете включить автоматический вход пользователей в ASC Contracts (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к ASC Contracts.
+* Вы можете включить автоматический вход для пользователей в ASC Contracts (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ASC Contracts, вам потребуется:
 
-- подписка Azure AD;
-- подписка ASC Contracts с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка ASC Contracts с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление ASC Contracts из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+
+* ASC Contracts поддерживает единый вход, инициированный **поставщиком удостоверений**.
 
 ## <a name="adding-asc-contracts-from-the-gallery"></a>Добавление ASC Contracts из коллекции
+
 Чтобы настроить интеграцию ASC Contracts с Azure AD, необходимо добавить ASC Contracts из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить ASC Contracts из коллекции, выполните следующее.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **ASC Contracts**.
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/tutorial_asccontracts_search.png)
+4. В поле поиска введите **ASC Contracts**, выберите **ASC Contracts** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **ASC Contracts** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![ASC Contracts в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/tutorial_asccontracts_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в ASC Contracts с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в ASC Contracts соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в ASC Contracts.
-
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в ASC Contracts.
+В этом разделе описана настройка и проверка единого входа Azure AD в ASC Contracts с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в ASC Contracts.
 
 Чтобы настроить и проверить единый вход Azure AD в ASC Contracts, требуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя ASC Contracts](#creating-an-asc-contracts-test-user)** требуется для создания в ASC Contracts пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в ASC Contracts](#configure-asc-contracts-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя ASC Contracts](#create-asc-contracts-test-user)** требуется для создания в ASC Contracts пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на новом портале Azure и настроить его в приложении ASC Contracts.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в ASC Contracts, выполните следующее.**
+Чтобы настроить единый вход Azure AD в ASC Contracts, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **ASC Contracts** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ASC Contracts** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/asccontracts-tutorial/tutorial_asccontracts_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения ASC Contracts** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/asccontracts-tutorial/tutorial_asccontracts_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.asccontracts.com/shibboleth`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения ASC Contracts](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.asccontracts.com/shibboleth`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.asccontracts.com/shibboleth.sso/login`.
 
-    > [!NOTE] 
+    > [!NOTE]
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь к группе поддержки ASC Networks Inc. (ASC) по номеру **(613) 599-61-78**, чтобы получить эти значения.
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-    ![Настройка единого входа](./media/asccontracts-tutorial/tutorial_asccontracts_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-1. Нажмите кнопку **Сохранить** .
+6. Скопируйте требуемый URL-адрес из раздела **Настройка ASC Contracts**.
 
-    ![Настройка единого входа](./media/asccontracts-tutorial/tutorial_general_400.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-1. Для настройки единого входа на стороне **ASC Contracts** обратитесь в службу поддержки ASC Networks Inc. (ASC) по номеру **(613) 599-61-78** и предоставьте скачанный **XML-файл метаданных**. Это позволит службе поддержки правильно настроить подключение единого входа SAML для приложения на обоих сторонах.
+    a. URL-адрес входа.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+    b. Идентификатор Azure AD.
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    c. URL-адрес выхода
+
+### <a name="configure-asc-contracts-single-sign-on"></a>Настройка единого входа для ASC Contracts
+
+Для настройки единого входа на стороне **ASC Contracts** обратитесь в службу поддержки ASC Networks Inc. (ASC) по номеру **(613) 599-61-78** и предоставьте скачанный **XML-файл метаданных федерации**. Это позволит службе поддержки правильно настроить подключение единого входа SAML для приложения на обоих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее.
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/asccontracts-tutorial/create_aaduser_04.png) 
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-an-asc-contracts-test-user"></a>Создание тестового пользователя ASC Contracts
 
-Обратитесь в службу поддержки ASC Networks Inc. (ASC) по номеру **(613) 599-61-78**, чтобы добавить пользователей на платформу ASC Contracts.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к ASC Contracts.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **ASC Contracts**.
 
-**Чтобы назначить пользователя Britta Simon приложению ASC Contracts, сделайте следующее.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. Из списка приложений выберите **ASC Contracts**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на ASC Contracts в списке приложений](common/all-applications.png)
 
-1. Из списка приложений выберите **ASC Contracts**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/asccontracts-tutorial/tutorial_asccontracts_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-asc-contracts-test-user"></a>Создание тестового пользователя ASC Contracts
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+Обратитесь в службу поддержки ASC Networks Inc. (ASC) по номеру **(613) 599-61-78**, чтобы добавить пользователей на платформу ASC Contracts.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент ASC Contracts на панели доступа, вы автоматически войдете в приложение ASC Contracts. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув плитку ASC Contracts на панели доступа, вы автоматически войдете в приложение ASC Contracts, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/asccontracts-tutorial/tutorial_general_01.png
-[2]: ./media/asccontracts-tutorial/tutorial_general_02.png
-[3]: ./media/asccontracts-tutorial/tutorial_general_03.png
-[4]: ./media/asccontracts-tutorial/tutorial_general_04.png
-
-[100]: ./media/asccontracts-tutorial/tutorial_general_100.png
-
-[200]: ./media/asccontracts-tutorial/tutorial_general_200.png
-[201]: ./media/asccontracts-tutorial/tutorial_general_201.png
-[202]: ./media/asccontracts-tutorial/tutorial_general_202.png
-[203]: ./media/asccontracts-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

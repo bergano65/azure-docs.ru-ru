@@ -12,26 +12,24 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 11/11/2018
+ms.date: 01/25/2019
 ms.author: juliako
-ms.openlocfilehash: 5120d938d137efef77eeb0b69a5bf571bd4c509b
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 9acb2d7db1d8cb30fb853b79e9627a1b50da2aaa
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614503"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55092257"
 ---
-# <a name="cli-example-upload-a-local-file-to-a-container"></a>Пример для CLI. Отправка локального файла в контейнер 
+# <a name="cli-example-upload-a-local-file-to-a-container"></a>Пример использования CLI. Отправка локального файла в контейнер 
 
 В скрипте Azure CLI в этой статье показано, как отправить локальный файл в контейнер для хранения.
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-- Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+[Создание учетной записи Служб мультимедиа](../create-account-cli-how-to.md).
 
-    Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
-
-- [Создание учетной записи Служб мультимедиа](../create-account-cli-how-to.md).
+[!INCLUDE [media-services-cli-instructions.md](../../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="example-script"></a>Пример сценария
 

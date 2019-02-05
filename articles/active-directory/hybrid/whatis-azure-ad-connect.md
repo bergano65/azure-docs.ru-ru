@@ -7,15 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: get-started-article
-ms.date: 11/28/2018
 ms.component: hybrid
+ms.date: 01/30/2019
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1c18200bb36b75a07d7b26e3ea0016ec35efdd87
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: cb1ba63a0f32d026d51507fe66432a520a6f6e71
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54460513"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55298982"
 ---
 # <a name="what-is-azure-ad-connect"></a>Что такое Azure AD Connect?
 
@@ -49,6 +50,20 @@ Azure Active Directory (Azure AD) Connect Health предоставляет на
 
 ## <a name="why-use-azure-ad-connect-health"></a>Зачем использовать Azure AD Connect Health?
 Интеграция с Azure AD помогает повысить продуктивность ваших пользователей, предоставляя им единую идентификацию для доступа к облачным и локальным ресурсам. Обеспечение надежности среды, чтобы пользователи могли получать доступ к этим ресурсам, является непростой задачей.  Служба Azure AD Connect Health помогает отслеживать и получать полезные сведения о локальной инфраструктуре идентификации, таким образом обеспечивая надежность этой среды. Использовать службу так же просто, как установить агент на локальных серверах удостоверений.
+
+Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016. Поддерживается также мониторинг прокси-серверов AD FS и веб-приложений, которые обеспечивают проверку подлинности для доступа к экстрасети. Azure AD Connect Health для AD FS предоставляет следующий набор основных возможностей с помощью простой и быстрой установки агента работоспособности:
+
+Основные преимущества и рекомендации
+
+|Основные преимущества|Рекомендации|
+|-----|-----|
+|Повышенная безопасность|[Тенденции блокировки экстрасети](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).</br>[Отчет о неудачных попытках входа в систему](how-to-connect-health-adfs.md#risky-ip-report-public-preview).</br>[Соответствие требованиям конфиденциальности](reference-connect-health-user-privacy.md).|
+|Оповещения обо [всех критических проблемах системы ADFS](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services).|Конфигурация и доступность сервера.</br>[Производительность и возможность подключения](how-to-connect-health-adfs.md#performance-monitoring-for-ad-fs).</br>Регулярное обслуживание.|
+|Простота развертывания и управления.|[Быстрая установка агента](how-to-connect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
+Расширенные [метрики использования](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).|Основные приложения.</br>Расположение в сети и TCP-подключение.</br>Количество запросов маркера на каждый сервер.|
+|Удобство работы для пользователей|Панель мониторинга на портале Azure.</br>[Оповещения по электронной почте](how-to-connect-health-adfs.md#alerts-for-ad-fs).|
+
+
 
 
 ## <a name="next-steps"></a>Дополнительная информация

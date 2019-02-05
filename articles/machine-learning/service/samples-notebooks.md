@@ -4,93 +4,56 @@ titleSuffix: Azure Machine Learning service
 description: Для изучения Службы машинного обучения Azure в Python найдите и используйте примеры записных книжек Jupyter.
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: sample
 author: sdgilley
 ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6befe3a3fee80dd65fd3ac5be241c558707224e6
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 5ba555ad31545e1ae1aa822ec58b0bd22ef486ac
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54811100"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55295157"
 ---
 # <a name="use-jupyter-notebooks-to-explore-azure-machine-learning-service"></a>Использование записных книжек Jupyter в Azure Machine Learning Workbench
-
 
 Для вашего удобства разработан ряд записных книжек Jupyter Python, которые можно использовать для изучения Службы машинного обучения Azure. 
 
 Благодаря документации на этом сайте, узнайте, как использовать службу и как настроить записные книжки по своему усмотрению. 
 
-## <a name="prerequisite"></a>Предварительные требования
+Используйте один из приведенных ниже путей, чтобы запустить сервер с этими примерами записных книжек.  Когда сервер будет запущен, найдите записные книжки для руководств в папке **tutorials** или ознакомьтесь с различными компонентами в папке **how-to-use-azureml**.
 
-Чтобы создать рабочую область и запустить Записные книжки Azure, выполните действия, описанные в [этом руководстве](quickstart-get-started.md).
 
 ## <a name="try-azure-notebooks-free-jupyter-notebooks-in-the-cloud"></a>Поработайте со службой "Записные книжки Azure": к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
 
 Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
   
-+ Чтобы запустить **основные записные книжки руководств**, следуйте приведенным ниже действиям.
-  1. Перейдите в [Записные книжки Azure](https://notebooks.azure.com/).
-    
-  1. Найдите папку **Руководства** в библиотеке **Начало работы**, которая была создана во время изучения предварительных требований краткого руководства.
-    
-  1. Откройте записную книжку, которую хотите запустить.
-    
-+ Выполните следующие действия, чтобы запустить **другие записные книжки**.
-
-  1. [Импортируйте примеры записных книжек](https://aka.ms/aml-clone-azure-notebooks) в Записные книжки Azure.
-
-  1. Добавьте файл конфигурации рабочей области в библиотеку с помощью любого из следующих методов.
-     + Из библиотеки **Начало работы** скопируйте файл **config.json** в новую клонированную библиотеку.
-
-     + Создайте новую рабочую область с помощью кода в [configuration.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/configuration.ipynb).
-    
-  1. Откройте записную книжку, которую хотите запустить.     
+[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
 
 
 ## <a name="use-a-data-science-virtual-machine-dsvm"></a>Использование Виртуальной машины для обработки и анализа данных (DSVM)
 
-[Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) и сервер записной книжки уже установлены и настроены в DSVM. С помощью следующих шагов запустите записные книжки.
+[Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) и сервер записной книжки уже установлены и настроены в DSVM. 
 
-1. [Создайте DSVM](how-to-configure-environment.md#dsvm).
+Когда вы [создадите DSVM](how-to-configure-environment.md#dsvm), выполните следующие действия на этой виртуальной машине, чтобы запустить записные книжки.
 
-1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
+[!INCLUDE [aml-dsvm-server](../../../includes/aml-dsvm-server.md)]
 
-1. Добавьте файл конфигурации рабочей области в библиотеку с помощью любого из следующих методов.
-    * С помощью предварительных требований краткого руководства скопируйте созданный файл **aml_config\config.json** в клонированный каталог.
-
-    * Создайте новую рабочую область с помощью кода в [configuration.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/configuration.ipynb).
-
-1. Запустите сервер записной книжки из клонированного каталога.
 
 ## <a name="use-your-own-jupyter-notebook-server"></a>Использование собственного сервера записных книжек Jupyter
 
 Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.
 
-1. Убедитесь, что предварительное требование краткого руководства, в котором выполнена установка пакетов SDK для Машинного обучения Azure, выполнено.
+[!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
 
-1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
+<a name="automated-ml-setup"></a>
 
-1. Добавьте файл конфигурации рабочей области в библиотеку с помощью любого из следующих методов.
-    * С помощью предварительных требований краткого руководства скопируйте созданный файл **aml_config\config.json** в клонированный каталог.
-    
-    * Создайте новую рабочую область с помощью кода в [configuration.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/configuration.ipynb).
+## <a name="automated-machine-learning-setup"></a>Настройка автоматического машинного обучения 
 
-1. Запустите сервер записной книжки из клонированного каталога.
-
-1. Перейдите к папке, содержащей записную книжку.
-
-1. Откройте записную книжку.
-
-<a name="auto"></a>
-
-## <a name="automated-ml-setup"></a>Автоматическая настройка Машинного обучения 
-
-**Эти шаги применяются только к записным книжкам в папке `automated-machine-learning`.**
+_Эти шаги применимы только к записным книжкам в папке **how-to-use-azureml/automated-machine-learning**._
 
 Выполнив следующие инструкции, с помощью любого из перечисленных выше параметров можно одновременно установить среду и создать рабочую область. 
 
@@ -106,7 +69,7 @@ ms.locfileid: "54811100"
    
    1. Перейдите к извлеченным на локальный компьютер файлам.
    
-   1. Откройте папку `automated-machine-learning`.
+   1. Откройте папку **automated-machine-learning**.
    
    1. Выполните `automl_setup.cmd` в запросе Conda для Windows или в файле `.sh` для вашей операционной системы. Это может занять около 10 минут.
 
@@ -123,7 +86,7 @@ ms.locfileid: "54811100"
 
 1. Перейдите к пути, где были сохранены записные книжки. 
 
-1. Откройте папку "automated-machine-learning", а затем записную книжку `configuration.ipynb`. 
+1. Откройте папку "automated-machine-learning", а затем записную книжку **configuration.ipynb**. 
 
 1. Заполните ячейки в записной книжке, чтобы зарегистрировать поставщик ресурсов Службы машинного обучения, и создайте рабочую область.
 

@@ -1,29 +1,29 @@
 ---
-title: Пример. Добавление лиц в API распознавания лиц
+title: 'Пример: добавление лиц с помощью API распознавания лиц'
 titleSuffix: Azure Cognitive Services
 description: Использование API распознавания лиц для добавления лиц в изображения.
 services: cognitive-services
 author: SteveMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: fb5d03e2cb3c11daf7a94966fda46345ee910ded
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: f443eb13650483bc3ee63dad59cc40b8042bc35b
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46125108"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55222820"
 ---
-# <a name="example-how-to-add-faces"></a>Пример. Как добавлять лица
+# <a name="example-how-to-add-faces"></a>Пример: Как добавлять лица
 
 В этом руководстве демонстрируются лучшие методики добавления значительного числа людей и лиц в PersonGroup.
 Та же стратегия применима к FaceList и LargePersonGroup.
 Примеры написаны на языке C# с помощью клиентской библиотеки API распознавания лиц.
 
-## <a name="step-1-initialization"></a>Шаг 1. Инициализация
+## <a name="step-1-initialization"></a>Шаг 1. Инициализация
 
 Объявляется несколько переменных и реализуется вспомогательная функция для планирования запросов.
 
@@ -60,7 +60,7 @@ static async Task WaitCallLimitPerSecondAsync()
 }
 ```
 
-## <a name="step-2-authorize-the-api-call"></a>Шаг 2. Авторизация вызова API
+## <a name="step-2-authorize-the-api-call"></a>Шаг 2. Авторизация вызова API
 
 При использовании клиентской библиотеки ключ подписки передается через конструктор класса FaceServiceClient. Например: 
 
@@ -70,7 +70,7 @@ FaceServiceClient faceServiceClient = new FaceServiceClient("<Subscription Key>"
 
 Ключ подписки можно получить на странице "Marketplace" портала Azure. Ознакомьтесь со страницей [подписок](https://www.microsoft.com/cognitive-services/en-us/sign-up).
 
-## <a name="step-3-create-the-persongroup"></a>Шаг 3. Создание PersonGroup
+## <a name="step-3-create-the-persongroup"></a>Шаг 3. Создание PersonGroup
 
 Для сохранения данных людей лиц создается PersonGroup с именем MyPersonGroup.
 Время запроса ставится в очередь `_timeStampQueue` для обеспечения общей проверки.
@@ -82,7 +82,7 @@ _timeStampQueue.Enqueue(DateTime.UtcNow);
 await faceServiceClient.CreatePersonGroupAsync(personGroupId, personGroupName);
 ```
 
-## <a name="step-4-create-the-persons-to-the-persongroup"></a>Шаг 4. Создание данных людей в PersonGroup
+## <a name="step-4-create-the-persons-to-the-persongroup"></a>Шаг 4. Создание данных людей в PersonGroup
 
 Данные людей создаются одновременно. Кроме того, во избежание превышения предельного количества вызовов применяется `await WaitCallLimitPerSecondAsync()`.
 
@@ -97,7 +97,7 @@ Parallel.For(0, PersonCount, async i =>
 });
 ```
 
-## <a name="step-5-add-faces-to-the-persons"></a>Шаг 5. Добавление лиц людей
+## <a name="step-5-add-faces-to-the-persons"></a>Шаг 5. Добавление лиц людей
 
 Добавление лиц разных людей выполняется параллельно, в то время как для одного определенного пользователя это выполняется последовательно.
 Опять же, во избежание превышения предельной частоты запросов вызывается `await WaitCallLimitPerSecondAsync()`.

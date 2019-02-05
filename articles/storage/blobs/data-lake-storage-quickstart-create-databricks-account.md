@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure | Документация Майкрософт
-description: Это краткое руководство содержит сведения об использовании портала Azure для создания рабочей области Azure Databricks и кластера Apache Spark и запуска задания Spark.
+title: Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks | Документация Майкрософт
+description: Узнайте, как выполнить задание Spark в Azure Databricks с помощью портала Azure и учетной записи хранения Azure Data Lake Storage 2-го поколения.
 services: storage
-author: jamesbak
-ms.author: jamesbak
-ms.component: data-lake-storage-gen2
+author: normesta
+ms.author: normesta
+ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 01/14/2019
-ms.openlocfilehash: 49039e742ebd4354f9a52572ffdc69e95bf7f85e
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.date: 01/24/2019
+ms.openlocfilehash: cbd17ef81f5bcdf1c5c2f14f11388fd4f23e5da6
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321217"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239932"
 ---
-# <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
+# <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
 В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для выполнения аналитики хранимых данных в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения (предварительная версия).
 
@@ -123,10 +123,10 @@ ms.locfileid: "54321217"
 
    ```scala
    spark.conf.set("fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net", "OAuth")
-   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<application-id>")
    spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<authentication-key>")
-   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
+   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
    dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
@@ -214,7 +214,7 @@ ms.locfileid: "54321217"
 
 ![Завершение работы кластера Databricks](./media/data-lake-storage-quickstart-create-databricks-account/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). Если установить эту опцию, кластер завершит роботу после того, как не будет активен в течение заданного промежутка времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). Если установить эту опцию, кластер завершит роботу после того, как не будет активен в течение заданного промежутка времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

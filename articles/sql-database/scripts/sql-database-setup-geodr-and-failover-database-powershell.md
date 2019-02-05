@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Активная георепликация отдельной базы данных SQL Azure | Документация Майкрософт
-description: Пример скрипта Azure PowerShell для настройки активной георепликации базы данных SQL Azure и отработки ее отказа.
+title: Пример для PowerShell. Активная георепликация отдельной базы данных SQL Azure | Документация Майкрософт
+description: Пример скрипта Azure PowerShell для настройки активной георепликации автономной базы данных в Базе данных SQL Azure и отработки отказа этой базы данных.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -11,17 +11,17 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: fd699c622c44cec3a0077314e5d2b43016c13d87
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.date: 01/25/2019
+ms.openlocfilehash: 0fa689c91ed6844c2314b3b9d3bea2619540bc50
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389717"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55463792"
 ---
-# <a name="use-powershell-to-configure-active-geo-replication-for-a-single-azure-sql-database"></a>Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell
+# <a name="use-powershell-to-configure-active-geo-replication-for-a-single-database-in-azure-sql-database"></a>Настройка активной георепликации для отдельной базы данных в Базе данных SQL Azure с помощью PowerShell
 
-Этот пример сценария PowerShell настраивает активную георепликацию для отдельной базы данных SQL Azure и выполняет для нее отработку отказа во вторичную реплику базы данных SQL Azure.
+Этот пример скрипта PowerShell настраивает активную георепликацию для отдельной базы данных и выполняет для нее отработку отказа во вторичную реплику базы данных.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
@@ -48,8 +48,8 @@ Remove-AzureRmResourceGroup -ResourceGroupName $secondaryresourcegroupname
 | Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает логический сервер, на котором размещена база данных или эластичный пул. |
-| [New-AzureRmSqlElasticPool](/powershell/module/azurerm.sql/new-azurermsqlelasticpool) | Создает эластичный пул на логическом сервере. |
+| [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
+| [New-AzureRmSqlElasticPool](/powershell/module/azurerm.sql/new-azurermsqlelasticpool) | Создает эластичный пул. |
 | [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) | Обновляет свойства базы данных или перемещает базу данных в эластичный пул, из него или между эластичными пулами. |
 | [New-AzureRmSqlDatabaseSecondary](/powershell/module/azurerm.sql/new-azurermsqldatabasesecondary)| Создает базу данных-получатель для существующей базы данных и начинает репликацию данных. |
 | [Get-AzureRmSqlDatabase](/powershell/module/azurerm.sql/get-azurermsqldatabase)| Получает одну или несколько баз данных. |

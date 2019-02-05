@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Распознавание лиц на изображении с помощью пакета SDK распознавания лиц Azure для .NET
+title: Краткое руководство. Распознавание лиц на изображении с помощью пакета SDK службы "Распознавание лиц Azure" для .NET
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определять лица на изображении с помощью пакета SDK распознавания лиц Azure и C#.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.author: pafarley
-ms.openlocfilehash: 4fbbde167a8c895a71ab3614e8c3ecbce26604a9
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: caaef0f7fdbfc3ad639deddb328c98334ad3e99d
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578167"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55213329"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с помощью пакета SDK распознавания лиц для .NET
+# <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с использованием пакета SDK службы "Распознавание лиц" для .NET
 
 В этом кратком руководстве описано, как определять лица на изображении с помощью пакета SDK распознавания лиц и C#. Рабочий пример кода, используемого в этом кратком руководстве, можно найти в проекте Face в репозитории [Cognitive Services Vision csharp quickstarts](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/Face) на GitHub.
 
@@ -97,4 +97,4 @@ Male 37   Female 56
 В этом кратком руководстве вы создали простое консольное приложение .NET, которое может использовать службу API распознавания лиц для распознавания лиц на локальных и удаленных изображениях. Перейдите к более подробному руководству, чтобы узнать, как можно интуитивно понятным образом предоставлять информацию о лицах пользователю.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении с помощью пакета SDK .NET](../Tutorials/FaceAPIinCSharpTutorial.md)
+> [Руководство. Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)

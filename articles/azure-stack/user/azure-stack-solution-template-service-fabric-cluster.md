@@ -11,15 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/22/2018
+ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.openlocfilehash: 151f6fa7880db03909c522147d9c1f74508f51a1
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.lastreviewed: 01/25/2019
+ms.openlocfilehash: a8897288e19a7628dbd1cc2c022de4db2a111393
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54351855"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55248050"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
@@ -210,7 +211,7 @@ ms.locfileid: "54351855"
 
 1. После изменения порядка переменных среды перезапустите PowerShell и выполните следующий скрипт PowerShell для получения доступа к кластеру Service Fabric:
 
-   ````PowerShell  
+   ```PowerShell  
     Connect-ServiceFabricCluster -ConnectionEndpoint "\[Service Fabric
     CLUSTER FQDN\]:19000" \`
 
@@ -221,8 +222,11 @@ ms.locfileid: "54351855"
     0272251171BA32CEC7938A65B8A6A553AA2D3283 \`
 
     -StoreLocation CurrentUser -StoreName My -Verbose
-   ````
+   ```
    
    > [!NOTE]  
    > В скрипте отсутствует *https://* перед именем кластера. Требуется порт 19000.
- 
+
+## <a name="next-steps"></a>Дополнительная информация
+
+[Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)

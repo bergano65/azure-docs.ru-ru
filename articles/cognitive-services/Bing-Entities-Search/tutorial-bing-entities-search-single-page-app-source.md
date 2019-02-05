@@ -1,23 +1,23 @@
 ---
-title: Руководство по одностраничному веб-приложению для службы "Поиск сущностей Bing" | Документация Майкрософт
+title: Руководство. Одностраничное веб-приложение для службы "Поиск сущностей Bing" (исходный код)
 titlesuffix: Azure Cognitive Services
 description: Исходный код для руководства по использованию API Bing для поиска сущностей в одностраничном веб-приложении.
 services: cognitive-services
 author: aahill
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-entity-search
+ms.subservice: bing-entity-search
 ms.topic: tutorial
 ms.date: 10/04/2017
 ms.author: aahi
-ms.openlocfilehash: 774c61f3a089b2ee54f60d654bb1ef7c251cbdb7
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 6165bca1eff248f15cfce4638a6f9817db550c04
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165039"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55156264"
 ---
-# <a name="tutorial-single-page-web-app-source"></a>Руководство: исходный код для одностраничного веб-приложения
+# <a name="tutorial-single-page-web-app-source"></a>Руководство. Исходный код одностраничного веб-приложения
 
 Здесь приводится полный исходный код, описанный в [руководстве по одностраничным приложениям](tutorial-bing-entities-search-single-page-app.md), для службы "Поиск сущностей Bing". Чтобы запустить приложение, скопируйте исходный код, вставьте его в Блокнот или другой текстовый редактор и сохраните как `bing.html`. Затем откройте сохраненный файл в Microsoft Edge или другом популярном браузере.
 

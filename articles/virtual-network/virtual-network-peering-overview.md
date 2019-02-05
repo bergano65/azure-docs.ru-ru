@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: jdial
-ms.openlocfilehash: 1085be57583762e8f1d419e2aacc699032340d90
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 6bb075857d67885d968b495cc8d545af9994eaf0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054560"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55169320"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -72,6 +72,8 @@ ms.locfileid: "54054560"
 Чтобы подтвердить пиринг между виртуальными сетями, вы можете [проверить действующие маршруты](diagnose-network-routing-problem.md) для сетевого интерфейса в любой подсети виртуальной сети. Если пиринг между виртуальными сетями настроен, все подсети виртуальной сети будут иметь маршруты со следующим прыжком типа *Пиринг виртуальных сетей* для каждого адресного пространства в каждой пиринговой виртуальной сети.
 
 Чтобы устранить неполадки подключения к виртуальной машине в пиринговой виртуальной сети, используйте [проверку подключения](../network-watcher/network-watcher-connectivity-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) службы "Наблюдатель за сетями". Проверка подключения позволяет увидеть, как трафик направляется из сетевого интерфейса исходящей виртуальной машины к сетевому интерфейсу конечной виртуальной машины.
+
+Также см. статью [об устранении неполадок с пирингом между виртуальными сетями](https://support.microsoft.com/help/4486956/troubleshooter-for-virtual-network-peering-issues).
 
 ## <a name="requirements-and-constraints"></a>Требования и ограничения
 

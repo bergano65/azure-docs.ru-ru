@@ -12,13 +12,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 12/04/2018
-ms.openlocfilehash: 23f2d32b2323821155467bd1ad12e9baf8c33074
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.date: 01/25/2019
+ms.openlocfilehash: 2b510accb2a30250a2855cfa22dbf45546a77569
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150756"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55461752"
 ---
 # <a name="quickstart-use-sql-server-management-studio-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio
 
@@ -30,7 +30,9 @@ ms.locfileid: "55150756"
 
 [!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
 
-#### <a name="install-the-latest-ssms"></a>Установка последней версии SSMS
+* Настройка правила брандмауэра на уровне сервера. Подробные сведения см. в статье [Краткое руководство. Создание правила брандмауэра на уровне сервера для базы данных SQL с помощью портала Azure](sql-database-get-started-portal-firewall.md).
+
+## <a name="install-the-latest-ssms"></a>Установка последней версии SSMS
 
 Перед началом работы убедитесь, что вы установили последнюю версию [SSMS][ssms-install-latest-84g]. 
 
@@ -43,7 +45,7 @@ ms.locfileid: "55150756"
 В SMSS подключитесь к своему серверу Базы данных SQL Azure. 
 
 > [!IMPORTANT]
-> Логический сервер базы данных SQL Azure прослушивает порт 1433. Чтобы подключиться к логическому серверу не из пределов корпоративного брандмауэра, необходимо открыть этот порт в брандмауэре.
+> Сервер Базы данных SQL Azure прослушивает порт 1433. Чтобы подключиться к серверу Базы данных SQL при включенном корпоративном брандмауэре, необходимо открыть этот порт в брандмауэре.
 >
 
 1. Откройте среду SSMS. Отобразится диалоговое окно **Подключение к серверу**.

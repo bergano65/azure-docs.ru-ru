@@ -8,20 +8,20 @@ manager: mtillman
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/28/2018
+ms.date: 1/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 3e5e364e9c3327e9d666a9a3096573267d0e1983
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 0aa15c34e6fd6c7952a457d36e072bc91d4d5dab
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53727614"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102178"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -107,7 +107,7 @@ ms.locfileid: "53727614"
     
 #### <a name="step-4-admin-consent"></a>Шаг 4. Согласие администратора
 
-Любому *разрешению только для приложения* требуется согласие администратора. Это означает, что глобальный администратор каталога должен дать согласие приложению. Выберите один из приведенных ниже вариантов в зависимости от своей роли.
+Если попытаться запустить приложение на этом этапе, вы получите ошибку *HTTP 403 — Forbidden*: `Insufficient privileges to complete the operation`. Это происходит потому, что *разрешение только для приложения* предоставляется с согласия администратора. Это означает, что глобальный администратор каталога должен предоставить такое согласие приложению. Выберите один из приведенных ниже вариантов в зависимости от своей роли.
 
 ##### <a name="global-tenant-administrator"></a>Глобальный администратор клиента
 
@@ -149,6 +149,9 @@ dotnet run
 
 В результате вы увидите список пользователей в каталоге Azure AD.
 
+> [!IMPORTANT]
+> В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, из соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. См. дополнительные сведения о том, как [использовать сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/#variation-daemon-application-using-client-credentials-with-certificates) в репозитории GitHub.
+
 ## <a name="more-information"></a>Дополнительные сведения
 
 ### <a name="msalnet"></a>MSAL.NET
@@ -158,7 +161,13 @@ MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Ident
  MSAL.NET можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующую команду.
 
 ```powershell
-Install-Package Microsoft.Identity.Client -Pre
+Install-Package Microsoft.Identity.Client
+```
+
+Кроме того, если вы не используете Visual Studio, выполните следующую команду, чтобы добавить MSAL в проект:
+
+```console
+dotnet add package Microsoft.Identity.Client
 ```
 
 ### <a name="msal-initialization"></a>Инициализация MSAL

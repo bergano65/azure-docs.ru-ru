@@ -6,16 +6,16 @@ services: cognitive-services
 author: DavidLiCIG
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: entity-linking-intelligence
+ms.subservice: entity-linking-intelligence
 ms.topic: tutorial
 ms.date: 07/06/2016
 ms.author: davl
-ms.openlocfilehash: 907b4cab483f1bf63a864094530784f9c632a1c8
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 883d566fd3a6089eb9e72498089f995697a318f1
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46365644"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216818"
 ---
 # <a name="tutorial-build-an-entity-linking-app-with-c"></a>Руководство. Создание приложения для связывания сущностей с помощью C#
 
@@ -32,10 +32,10 @@ API связывания сущностей Майкрософт — это ин
 
 Вы можете скачать клиентскую библиотеку API аналитической службы связывания сущностей с помощью [пакета SDK](https://www.github.com/microsoft/cognitive-entitylinking-windows). Содержимое скачанного ZIP-файла нужно извлечь в папку по своему усмотрению. Многие пользователи выбирают папку Visual Studio 2015.
 
-### <a name="step-1-subscribe-entity-linking-intelligence-service-and-get-your-own-key">Шаг 1. Подписка на Аналитическую службу связывания сущностей и получение ключа</a>
+### <a name="step-1-subscribe-entity-linking-intelligence-service-and-get-your-own-key">Шаг 1. Подписка на Аналитическую службу связывания сущностей и получение ключа</a>
 Прежде чем использовать Аналитическую службу связывания сущностей, необходимо зарегистрироваться и получить ключ API. Ознакомьтесь со страницей [подписок](https://www.microsoft.com/cognitive-services/en-us/sign-up). В этом руководстве можно использовать как первичный, так и вторичный ключ.
 
-### <a name="step-2-create-a-new-project-in-visual-studio">Шаг 2. Создание проекта в Visual Studio</a>
+### <a name="step-2-create-a-new-project-in-visual-studio">Шаг 2. Создание проекта в Visual Studio</a>
 
 Давайте начнем с создания проекта в Visual Studio. Запустите Visual Studio 2015 из меню "Пуск". Затем создайте проект, выбрав **Установленные → Шаблоны → Visual C# → Универсальные приложения Windows → Пустое приложение** для шаблона проекта.
 
@@ -54,7 +54,7 @@ API связывания сущностей Майкрософт — это ин
 
  ![Библиотека NuGet, добавленная в проект](./Images/NugetLibraryInProject.png)
  
-### <a name="step-4-add-an-input-and-output-text-block-to-your-apps-xaml">Шаг 4. Добавление текстовых полей ввода и вывода в код XAML приложения</a>
+### <a name="step-4-add-an-input-and-output-text-block-to-your-apps-xaml">Шаг 4. Добавление текстовых полей ввода и вывода в XAML-код приложения</a>
 Перейдите к файлу **MainPage.xaml** в **обозревателе решений** и дважды щелкните этот файл, чтобы открыть его в новом окне. Для удобства можно дважды нажать кнопку **XAML** на вкладке **Конструктор**. При этом **визуальный конструктор** будет скрыт, и все пространство будет доступно просмотра кода.
 
  ![Библиотека NuGet, добавленная в проект](./Images/UWPMainPage.png)
@@ -74,7 +74,7 @@ API связывания сущностей Майкрософт — это ин
 </Grid>
  ```
  
-### <a name="step-5-proceed-to-add-entity-linking-intelligence-service">Шаг 5. Добавление Аналитической службы связывания сущностей</a>
+### <a name="step-5-proceed-to-add-entity-linking-intelligence-service">Шаг 5. Добавление Аналитической службы связывания сущностей</a>
  
 Пользовательский интерфейс создан. Прежде чем использовать службу связывания сущностей, необходимо добавить обработчик button-Click. Откройте файл **MainPage.xaml** в **обозревателе решений**. Добавьте обработчик button-Click в конец определения кнопки.
  

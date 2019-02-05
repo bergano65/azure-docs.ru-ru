@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: d4ea471712276ebd0b18155c754d431541108d3c
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: b3c9c2b5040dfc00aa1e8c5eeea57693f86b62d1
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54813616"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453167"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory"></a>Подготовка Integration Runtime Azure–SSIS в Фабрике данных Azure
 В этом руководстве представлены шаги по подготовке с помощью портала Azure среды выполнения интеграции Azure SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения в Azure. См. дополнительные сведения о [среде выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime).
@@ -134,7 +134,7 @@ ms.locfileid: "54813616"
 
    b. В раскрывающемся списке **Расположение** выберите расположение сервера базы данных узла SSISDB. Для среды выполнения интеграции рекомендуется выбирать одинаковые расположения. 
 
-   c. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как автономная база данных, а также как часть эластичного пула или управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение логического сервера базы данных SQL и управляемого экземпляра](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). Если база данных SQL Azure была выбрана вместе с конечными точками службы виртуальной сети или управляемого экземпляра для размещения SSISDB или требования доступа к локальным данным, необходимо присоединить среду выполнения интеграции Azure-SSIS к виртуальной сети. См. статью [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
+   c. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение логического сервера базы данных SQL и управляемого экземпляра базы данных SQL](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-single-databaseelastic-pool-and-sql-database-managed-instance). Если база данных SQL Azure была выбрана вместе с конечными точками службы виртуальной сети или управляемого экземпляра для размещения SSISDB или требования доступа к локальным данным, необходимо присоединить среду выполнения интеграции Azure-SSIS к виртуальной сети. См. статью [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
 
    d. С помощью флажка в поле **Use AAD authentication...** (Использовать проверку подлинности AAD...) выберите метод проверки подлинности для сервера базы данных, на котором будет размещаться SSISDB: SQL или Azure Active Directory (AAD) с управляемым удостоверением для Фабрики данных Azure (ADF). Если флажок установлен, управляемое удостоверение ADF нужно добавить в группу AAD, которая обладает разрешениями на доступ к серверу базы данных. См.статью [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
 

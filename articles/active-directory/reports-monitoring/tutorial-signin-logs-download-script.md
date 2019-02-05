@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.component: report-monitor
+ms.subservice: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ad34a5c3d72ec1f7fce0b56a85fd7c9cba007366
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: ca3b25929a21e844b6350a79a3713d8e1b7ef0f8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54824581"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168657"
 ---
 # <a name="tutorial-how-to-download-and-use-a-script-to-access-sign-in-logs"></a>Руководство. Скачивание и использование скрипта для доступа к журналам входа
 
@@ -35,7 +35,7 @@ ms.locfileid: "54824581"
 
 * Клиент Azure Active Directory с лицензией Premium (P1/P2). Обратите внимание, если до обновления данные о действиях отсутствовали, данные отобразятся в отчетах через несколько дней после обновления до лицензии Premium. 
 * Пользователь в роли **глобального администратора**, **администратора безопасности**, **читателя безопасности** или **читателя отчетов** для клиента, а также любой пользователь, который может получить доступ к своим собственным событиям входов. 
-* Если вы хотите запустить скачанный скрипт на своем компьютере Windows 10, [настройте модуль AzureRM и установите политику выполнения](concept-sign-ins.md#running-the-script-on-a-windows-10-machine).
+* Если вы хотите запустить скачанный скрипт на компьютере под управлением Windows 10, [настройте модуль Azure PowerShell и установите политику выполнения](concept-sign-ins.md#running-the-script-on-a-windows-10-machine).
 
 ## <a name="tutorial"></a>Учебник
 

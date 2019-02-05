@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI для добавления при�
 description: Пример скрипта Azure CLI для добавления приложения в пакетную службу
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
-ms.author: danlep
-ms.openlocfilehash: a407522e1c5e674dcaee2a4bf019bc858668969a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: lahugh
+ms.openlocfilehash: a2abcfeee6fe1a08e2b02ff87e75217daddcfad4
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968736"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472275"
 ---
-# <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI: добавление приложения в учетную запись пакетной службы Azure
+# <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI. Добавление приложения в учетную запись пакетной службы Azure
 
 В этом скрипте показано, как добавить приложение для использования в пуле или задаче пакетной службы Azure. Чтобы настроить приложение для его добавления в учетную запись пакетной службы, упакуйте его исполняемый файл и зависимые компоненты в ZIP-файл. 
 
@@ -46,7 +46,7 @@ az group delete --name myResourceGroup
 Этот скрипт использует следующие команды.
 Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создание учетной записи хранения. |

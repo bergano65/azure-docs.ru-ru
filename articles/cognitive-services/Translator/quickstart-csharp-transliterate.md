@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Транслитерация текста, C# — API перевода текстов
+title: Краткое руководство. Транслитерация текста, C# — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного набора символов в другой с помощью .NET Core и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 11/21/2018
 ms.author: erhopf
-ms.openlocfilehash: d67fbdad32612f23b1de31f7d2a1d7b4dee3b68e
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 7beddd7f7f21466ee404303b2727370d0cfc86f6
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52889146"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55220168"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-c"></a>Краткое руководство. Транслитерация текста с помощью API перевода текстов и C#
+# <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-c"></a>Краткое руководство. Транслитерация текста с помощью C# и API перевода текстов
 
 Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного набора символов в другой с помощью .NET Core (C#) и REST API перевода текстов. В приведенном примере японский текст транслитерируется в текст на латинице.
 
@@ -166,7 +166,7 @@ dotnet run
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите все конфиденциальные сведения из исходного кода примера приложения, например ключи подписки.
+Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

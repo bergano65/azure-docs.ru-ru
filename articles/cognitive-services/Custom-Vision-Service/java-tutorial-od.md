@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по созданию проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Java
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Java
 titlesuffix: Azure Cognitive Services
 description: Создавайте проект, добавляйте теги, загружайте изображения, обучайте свой проект и находите объекты с помощью пакетов SDK для Java.
 services: cognitive-services
 author: areddish
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 10/31/2018
 ms.author: areddish
-ms.openlocfilehash: d5dd481d32ede9a400def02d421a7cb8b816338a
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 8012dd484e769041ea235c33c334bfbbf8580800
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279591"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207655"
 ---
-# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-sdk-for-java"></a>Краткое руководство по созданию проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Java
+# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-sdk-for-java"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Java
 
 Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательской службы визуального распознавания для Java, чтобы создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Java. 
 

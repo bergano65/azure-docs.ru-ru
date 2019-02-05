@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Получение списка поддерживаемых языков, Ruby — API перевода текстов
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью Ruby и API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Ruby.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: erhopf
-ms.openlocfilehash: 02ebeae83464aa9770854fd06468b3731d6b8549
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 67f1a7b4a064aa46ef7d258dd72b1d686a797349
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49645275"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458114"
 ---
 # <a name="quickstart-get-supported-languages-with-the-translator-text-rest-api-ruby"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью API перевода текстов (Ruby)
 

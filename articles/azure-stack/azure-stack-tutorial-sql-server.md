@@ -15,13 +15,14 @@ ms.topic: tutorial
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: quying
+ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: ae32138dffa296a4aad9917897e180d364f189fc
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 983e8b279261d3ff8e5d24c8e3a6f61c5a787e5b
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037844"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55240817"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности баз данных SQL для пользователей Azure Stack
 
@@ -66,10 +67,10 @@ ms.locfileid: "51037844"
 
 1. Выберите **+** > **Данные+хранилище** > **База данных SQL**.
 2. Сохраните значения по умолчанию или используйте эти примеры для следующих полей.
-    - **Имя базы данных**: SQLdb.
-    - **Максимальный размер (в МБ)**: 100.
-    - **Подписка**: TestSQLOffer.
-    - **Группа ресурсов**: SQL-RG.
+    - **Имя базы данных**: SQLdb
+    - **Максимальный размер (в МБ)**: 100
+    - **Подписка**: TestSQLOffer
+    - **Группа ресурсов**. SQL-RG
 3. Выберите **Login Settings** (Параметры входа), введите учетные данные для базы данных и нажмите кнопку **ОК**.
 4. Последовательно выберите **SKU** > SQL SKU, созданный для сервера размещения SQL, > а затем нажмите кнопку **OK**.
 5. Нажмите кнопку **Создать**.

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e0ad51bd2370cd8b7569d76e5d91b606928eea6d
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: a48a2ebc64d156d2755a2bef32672bc58b57ad00
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189360"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54911259"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве с Windows на портале Azure (предварительная версия)
 
@@ -104,7 +104,7 @@ ms.locfileid: "54189360"
    az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
-3. Скопируйте строку подключения из выходных данных JSON и сохраните ее. Это значение потребуется для настройки среды выполнения IoT Edge в следующем разделе.
+3. Скопируйте значение ключа `cs` из выходных данных JSON и сохраните его. Это значение — строка подключения устройства. Эта строка потребуется для настройки среды выполнения IoT Edge в следующем разделе.
 
    ![Получение строки подключения из выходных данных интерфейса командной строки](./media/quickstart/retrieve-connection-string.png)
 
@@ -170,6 +170,8 @@ ms.locfileid: "54189360"
    ```
 
    ![Просмотр данных об одном модуле на устройстве](./media/quickstart/iotedge-list-1.png)
+
+Установка и запуск модуля агента IoT Edge могут занять несколько минут, особенно если вы используете устройство с ограниченной емкостью или доступом к Интернету. 
 
 Теперь устройство IoT Edge настроено. Оно готово для запуска модулей, развернутых в облаке.
 

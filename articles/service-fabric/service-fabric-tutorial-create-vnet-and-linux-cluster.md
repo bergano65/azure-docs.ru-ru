@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 33b95c1b0e3d654ce8bb6eda3e96b7b3e9c9bc13
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: b494da1c87feafd1b9db8485d16a9dcf5b999e3d
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48831489"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101811"
 ---
 # <a name="tutorial-deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "48831489"
 
 * один тип узла;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона);
-* ОС: Ubuntu 16.04 LTS (можно настроить в параметрах шаблона);
+* ОС: Ubuntu 16.04 LTS (можно настроить в параметрах шаблона);
 * защищенный сертификат (можно настроить в параметрах шаблона);
 * [служба DNS](service-fabric-dnsservice.md) включена;
 * [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
@@ -102,16 +102,16 @@ ms.locfileid: "48831489"
 В ресурсе **Microsoft.Network/loadBalancers** настроена подсистема балансировки нагрузки, а также указаны пробы и правила для следующих портов:
 
 * конечная точка подключения клиента: 19000;
-* конечная точка HTTP шлюза: 19080;
-* порт приложения: 80;
-* порт приложения: 443;
+* конечная точка HTTP-шлюза: 19080;
+* порт приложения: 80
+* порт приложения: 443
 
 ### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
 В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
 
-* адресное пространство виртуальной сети: 10.0.0.0/16;
-* адресное пространство подсети Service Fabric: 10.0.2.0/24.
+* Диапазон адресов виртуальной сети: 10.0.0.0/16
+* Диапазон адресов подсети Service Fabric: 10.0.2.0/24
 
 Если нужны другие порты приложений, нужно настроить ресурс Microsoft.Network/loadBalancers, чтобы разрешить входящий трафик.
 

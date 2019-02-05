@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Получение длины предложений, C# — API перевода текстов
+title: Краткое руководство. Получение длины предложений, C# — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить длину предложения с помощью REST API перевода текстов и .NET Core.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: 868c19f8c9e42bcd4a03aa2c766dff185f6319a7
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: daa1afd2caf5d5bfa2452858501f550e4c7e387b
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888347"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55212024"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-c"></a>Краткое руководство. Определение длины предложения с помощью C# и API перевода текстов
 
@@ -169,7 +169,7 @@ dotnet run
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите все конфиденциальные сведения из исходного кода примера приложения, например ключи подписки.
+Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

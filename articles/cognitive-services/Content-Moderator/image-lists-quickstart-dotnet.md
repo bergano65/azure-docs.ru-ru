@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по проверке изображений с использованием списков на C# — Content Moderator
+title: Краткое руководство. Проверка изображений с использованием списков на C# — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Как модерировать изображения с использованием настраиваемых списков изображений посредством пакета SDK Content Moderator для C#.
 services: cognitive-services
 author: sanjeev3
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: content-moderator
+ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 10/10/2018
 ms.author: sajagtap
-ms.openlocfilehash: 7165bdc4aebec886a57990281bc35c83b1d7bf04
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: f7894fa54b634df450d3f7eb90d594cf0315970c
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49309405"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55228191"
 ---
-# <a name="quickstart-moderate-with-custom-image-lists-in-c"></a>Краткое руководство. Модерация с использованием настраиваемых списков изображений посредством C#
+# <a name="quickstart-moderate-with-custom-image-lists-in-c"></a>Краткое руководство. Модерация с помощью настраиваемых списков изображений на C#
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 - создание настраиваемого списка изображений;

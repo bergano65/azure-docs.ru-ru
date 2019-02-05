@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 181addbcf4d0cfd51e74a24677de63f66e6fec1d
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: f49d61204bbaff58aecafbc933efd214897ea45f
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190529"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54913195"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-linux-x64-device"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux
 
@@ -109,7 +109,7 @@ Azure IoT Edge переносит мощь облака на ваши устро
    az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
-3. Скопируйте строку подключения из выходных данных JSON и сохраните ее. Это значение потребуется для настройки среды выполнения IoT Edge в следующем разделе.
+3. Скопируйте значение ключа `cs` из выходных данных JSON и сохраните его. Это значение — строка подключения устройства. Эта строка потребуется для настройки среды выполнения IoT Edge в следующем разделе.
 
    ![Получение строки подключения из выходных данных интерфейса командной строки](./media/quickstart/retrieve-connection-string.png)
 

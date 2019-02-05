@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/07/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0c2b8b205229ec1ef180e52372f75d06c83f1cc7
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: ff0cb82e3f1ddedf8dabebadf7a0309d08b2c4e3
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53716418"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55297095"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -293,7 +293,7 @@ Azure Active Directory используется в качестве постав
 
 Теперь приложение настроено. Теперь интерфейсная часть готова к доступу к серверной части с помощью соответствующего маркера доступа.
 
-Сведения о том, как настроить это в других поставщиках, см. в разделе об [обновлении маркеров доступа](app-service-authentication-how-to.md#refresh-access-tokens).
+Сведения о том, как настроить это в других поставщиках, см. в разделе об [обновлении маркеров поставщиков удостоверений](app-service-authentication-how-to.md#refresh-identity-provider-tokens).
 
 ## <a name="call-api-securely-from-server-code"></a>Безопасный вызов API из кода сервера
 
@@ -417,7 +417,7 @@ git push frontend master
 
 ## <a name="when-access-tokens-expire"></a>Когда истекает срок действия маркеров доступа
 
-Срок действия маркеров доступа истекает через некоторое время. Сведения об обновлении маркеров доступа без повторной проверки подлинности пользователей в приложении см. в разделе [Обновление токенов доступа](app-service-authentication-how-to.md#refresh-access-tokens).
+Срок действия маркеров доступа истекает через некоторое время. Сведения об обновлении маркеров доступа без повторной проверки подлинности пользователей в приложении см. в разделе об [обновлении маркеров поставщиков удостоверений](app-service-authentication-how-to.md#refresh-identity-provider-tokens).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

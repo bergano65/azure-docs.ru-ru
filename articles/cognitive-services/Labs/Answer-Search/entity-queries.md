@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: Запрос сущностей API поиска ответов в проекте'
+title: Краткое руководство. Запрос сущностей поиска ответов в проекте
 titlesuffix: Azure Cognitive Services
 description: Запросы сущностей с использованием службы поиска ответов в проектах.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: answer-search
+ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/16/2018
 ms.author: rosh
-ms.openlocfilehash: 09af064a1c072996171e6afa4f043e84f18612b4
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 2ec11412b5b0e713742029f05c91a6ecbe78c344
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49467418"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210698"
 ---
-# <a name="quickstart-query-for-entities"></a>Краткое руководство: Запрос сущностей
+# <a name="quickstart-query-for-entities"></a>Краткое руководство. Запрос для сущностей
 
 Если запрос извлекает сведения о человеке, месте или предмете, результат может содержать ответ `entities`.  Запросы всегда возвращают веб-страницы, [факты](fact-queries.md) и (или) [сущности](entity-queries.md), которые зависят от запроса.
 
@@ -33,7 +33,7 @@ ms.locfileid: "49467418"
 -   Attraction 
  
 Чтобы определить тип сущности, содержащейся в ответе, используйте поле `entityTypeHints`, как показано в запросе "Bill Gates".
-````
+```
         },
         "description": "Bill Gates is an American business man and philanthropist, co-founder of Microsoft",
         "entityPresentationInfo": {
@@ -44,13 +44,13 @@ ms.locfileid: "49467418"
         },
         "bingId": "6d7d66a7-2cb8-0ae9-637c-f81fd749dc9a"
       }
-````
+```
 Ниже приведен запрос "Space Needle".
-````
+```
 https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=space+needle&mkt=en-us
-````
+```
 Результат содержит ответ `entities`. Обратите внимание на поля `entityScenario` и `entityTypeHints`. 
-````
+```
   "entities": {
     "value": [
       {
@@ -108,19 +108,19 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=space+needle
       }
     ]
   },
-````
+```
 
 Запрос может вернуть список, если он соответствует запросу.
 
-**Запрос:** следующий запрос находит список вымирающих видов.
+**Запрос** Следующий запрос находит список вымирающих видов.
 
-````
+```
 https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=list+of+endangered+species
 
-````
+```
 
-**Ответ:** ответ включает в себя список, отформатированный для отображения в виде табличных значений.
-````
+**Ответ.** Ответ включает в себя список, отформатированный для отображения в виде табличных значений.
+```
   "facts": {
     "id": "https://www.bingapis.com/api/v7/#Facts",
     "contractualRules": [
@@ -217,7 +217,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=list+of+enda
     ]
   },
 
-````
+```
 
 
 ## <a name="next-steps"></a>Дополнительная информация

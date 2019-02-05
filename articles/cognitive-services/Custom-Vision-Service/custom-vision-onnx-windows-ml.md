@@ -1,23 +1,23 @@
 ---
-title: Руководство. Использование модели ONNX с Windows ML — Пользовательская служба визуального распознавания
+title: Руководство. Использование модели ONNX с Windows ML — Пользовательская служба визуального распознавания
 titlesuffix: Azure Cognitive Services
 description: Сведения о создании приложения Windows UWP, в котором используется модель ONNX, экспортированная из Azure Cognitive Services.
 services: cognitive-services
 author: larryfr
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 10/16/2018
 ms.author: larryfr
-ms.openlocfilehash: f9ffbdd34c6fe7e8fc0f5e8ad8a49a3ad922f88a
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 55235c8c209a17a494c3879d61e22665ba7a893b
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49362981"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55224910"
 ---
-# <a name="tutorial-use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Руководство по использованию модели ONNX из пользовательской службы визуального распознавания с Windows ML (предварительная версия)
+# <a name="tutorial-use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Руководство. Использование модели ONNX из Пользовательской службы визуального распознавания с Windows ML (предварительная версия)
 
 Сведения об использовании модели ONNX, экспортированной из пользовательской службы визуального распознавания, с Windows ML (предварительная версия).
 

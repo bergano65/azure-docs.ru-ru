@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Создание проекта поиска объектов с помощью пакета SDK Пользовательского визуального распознавания для Python
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 titlesuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, передайте изображения, обучите свой проект и найдите объекты с помощью пакетов SDK для Python.
 services: cognitive-services
 author: areddish
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 11/5/2018
 ms.author: areddish
-ms.openlocfilehash: 1b301f2197b16d8cd74c3cf3616de70f28ac64df
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 9c13c2747b75184c559f7520fd5932daf6a3ced0
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52874946"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208051"
 ---
-# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта поиска объектов с помощью пакета SDK Пользовательского визуального распознавания для Python
+# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
 Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательской службы визуального распознавания для Python, чтобы создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python.
 

@@ -9,13 +9,13 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
-ms.component: blobs
-ms.openlocfilehash: 2966683c086cfcd122c364dd6808f841a85bbee9
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.subservice: blobs
+ms.openlocfilehash: 180e38146911b15e95828bf033cbcaefae22d094
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51704721"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55241395"
 ---
 # <a name="download-large-amounts-of-random-data-from-azure-storage"></a>Скачивание больших объемов случайных данных из службы хранилища Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "51704721"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить инструкции этого руководства, сначала следует ознакомиться с предыдущим руководством по службе хранилища: [Make your application data highly available with Azure storage][previous-tutorial] (Обеспечение высокой доступности данных с помощью службы хранилища Azure).
+Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища: [Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure][previous-tutorial].
 
 ## <a name="remote-into-your-virtual-machine"></a>Удаленное подключение к виртуальной машине
 

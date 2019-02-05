@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 53ad780ff0b199764c354327439fa69c360e7cb5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: db0b1cd9d61e498430bff417573b63f99c0ae7e4
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996814"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301736"
 ---
-# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
+# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство. Развертывание приложения Java в кластере Service Fabric в Azure
 
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
@@ -247,7 +247,6 @@ ms.locfileid: "46996814"
 > [!div class="checklist"]
 > * Создание защищенного кластера Linux в Azure.
 > * Создание ресурсов, необходимых для мониторинга с помощью ELK.
-> * Необязательно: способ использования сторонних кластеров для тестирования Service Fabric.
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]

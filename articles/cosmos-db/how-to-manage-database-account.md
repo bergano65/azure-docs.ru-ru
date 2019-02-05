@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 10/17/2018
 ms.author: chrande
-ms.openlocfilehash: d3ee6db382f848a029f3e0355abdfe5eecc80656
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 1486ab3240036abedea2cbb3cbe93e5c061691d8
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54035837"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467413"
 ---
-# <a name="manage-database-accounts-in-azure-cosmos-db"></a>Управление учетными записями базы данных в Azure Cosmos DB
+# <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
 В этой статье описывается, как управлять учетной записью Azure Cosmos DB. Узнайте, как настроить множественные адресации, добавить и удалить регион, настроить несколько регионов записи и установить приоритеты при отработке отказа. 
 

@@ -3,7 +3,7 @@ title: Руководство. Установка приложений в мас
 description: Узнайте, как с помощью Azure CLI устанавливать приложения в масштабируемых наборах виртуальных машин с использованием расширения пользовательских сценариев.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2018
-ms.author: zarhoads
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 913d1b9125bcfa57334e70dcca44965fdb3d5ba6
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 9f979922b2abd2ce1a707a8b91656bbe64119938
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242064"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55157267"
 ---
 # <a name="tutorial-install-applications-in-virtual-machine-scale-sets-with-the-azure-cli"></a>Руководство. Установка приложений в масштабируемом наборе виртуальных машин с помощью Azure CLI
 Для запуска приложений в экземплярах виртуальных машин в масштабируемом наборе необходимо сначала установить компоненты и необходимые файлы этих приложений. Из предыдущего руководства вы узнали, как создать и использовать настраиваемый образ виртуальной машины для развертывания экземпляров виртуальных машин. Этот настраиваемый образ включал ручную установку и конфигурацию приложения. Также можно автоматизировать установку приложений в масштабируемом наборе после развертывания каждого экземпляра виртуальной машины или обновить приложение, которое уже выполняется в масштабируемом наборе. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -60,13 +60,13 @@ ms.locfileid: "50242064"
 
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss#create). В следующем примере создаются масштабируемый набор *myScaleSet* и ключи SSH, если они еще не созданы.
+Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss). В следующем примере создаются масштабируемый набор *myScaleSet* и ключи SSH, если они еще не созданы.
 
 ```azurecli-interactive
 az vmss create \
@@ -98,7 +98,7 @@ az vmss extension set \
 
 
 ## <a name="test-your-scale-set"></a>Проверка масштабируемого набора
-Чтобы разрешить передачу трафика в веб-сервер, создайте правило подсистемы балансировки нагрузки с помощью команды [az network lb rule create](/cli/azure/network/lb/rule#create). В следующем примере создается правило *myLoadBalancerRuleWeb*.
+Чтобы разрешить передачу трафика в веб-сервер, создайте правило подсистемы балансировки нагрузки с помощью команды [az network lb rule create](/cli/azure/network/lb/rule). В следующем примере создается правило *myLoadBalancerRuleWeb*.
 
 ```azurecli-interactive
 az network lb rule create \

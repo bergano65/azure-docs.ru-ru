@@ -7,7 +7,7 @@ author: CelesteDG
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,14 +16,14 @@ ms.date: 10/25/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: a0082be25ec4ad326e4473cbe69f9ff029898f5b
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: a2f0d97d6b7040f874fc03ffe19f247cdc742c77
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988802"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103655"
 ---
-# <a name="quickstart-configure-a-client-application-to-access-web-apis-preview"></a>Краткое руководство: настройка клиентского приложения для доступа к веб-API (предварительная версия)
+# <a name="quickstart-configure-a-client-application-to-access-web-apis-preview"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API (предварительная версия)
 
 Чтобы клиентское конфиденциальное или веб-приложение могло участвовать в потоке предоставления кода авторизации, требующего проверки подлинности (и получения маркера доступа), ему необходимо установить безопасные учетные данные. По умолчанию на портале Azure используется метод аутентификации "идентификатор клиента + секретный ключ".
 
@@ -38,8 +38,8 @@ ms.locfileid: "49988802"
 В этом кратком руководстве мы покажем, как настроить приложение для выполнения следующих задач:
 
 * [Добавление URI перенаправления в приложение](#add-redirect-uris-to-your-application).
-* [Добавление учетных данных в веб-приложение](#add-credentials-to-your-web-application).
-* [Добавление разрешений для доступа к веб-API](#add-permissions-to-access-web-apis).
+* [Добавьте учетные данные в веб-приложение](#add-credentials-to-your-web-application).
+* [Добавьте разрешения для доступа к веб-API](#add-permissions-to-access-web-apis).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

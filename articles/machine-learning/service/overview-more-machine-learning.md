@@ -1,7 +1,6 @@
 ---
-title: Сравнение продуктов для машинного обучения
-titleSuffix: Microsoft
-description: Сравнение различных продуктов корпорации Майкрософт для сборки и развертывания моделей машинного обучения, а также управления ими. Выберите продукты для своего решения.
+title: Выбор технологии машинного обучения из предлагаемых корпорацией Майкрософт
+description: Сравнение вариантов для сборки, развертывания и администрирования моделей машинного обучения. Выберите продукты корпорации Майкрософт для своего решения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,13 +8,13 @@ ms.topic: overview
 ms.reviewer: jmartens
 author: garyericson
 ms.author: garye
-ms.date: 1/17/2019
-ms.openlocfilehash: d7c7c383f51d8bcc2b1691724e8f22b43782c5e8
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.date: 1/30/2019
+ms.openlocfilehash: 4d4d7c587dcc34b12ed757b7da54f5ad0b04e8cc
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242075"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55451875"
 ---
 # <a name="what-are-the-machine-learning-products-at-microsoft"></a>Какие продукты для машинного обучения предлагает корпорация Майкрософт?
 

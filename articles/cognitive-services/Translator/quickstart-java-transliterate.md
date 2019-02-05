@@ -1,21 +1,21 @@
 ---
-title: 'Краткое руководство: транслитерация текста, Java — API перевода текстов'
+title: Краткое руководство. Транслитерация текста, Java — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного сценария в другой с помощью Java и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 12/03/2018
 ms.author: erhopf
-ms.openlocfilehash: 1679445f73cd6b90423e05f985b83b818e32997e
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: e42aa7ec796b3be912614ced5f3a4db47f67c124
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888874"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210069"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-java"></a>Краткое руководство. Транслитерация текста с помощью Java и API перевода текстов
 
@@ -25,30 +25,30 @@ ms.locfileid: "52888874"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [JDK 7 или более поздняя](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [JDK 7 или более поздней версии](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Gradle](https://gradle.org/install/)
 * ключ подписки Azure для API перевода текстов.
 
 ## <a name="initialize-a-project-with-gradle"></a>Инициализация проекта с помощью Gradle
 
-Начнем с создания рабочего каталога для этого проекта. Из командной строки (или терминалов) выполните приведенную ниже команду.
+Начнем с создания рабочего каталога для этого проекта. Из командной строки (или терминала) выполните приведенную ниже команду.
 
 ```console
 mkdir transliterate-sample
 cd transliterate-sample
 ```
 
-Далее вы будете инициализировать проект Gradle. Что самое важное, эта команда создает необходимые файлы сборки для Gradle, `build.gradle.kts`, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+После этого вы инициализируете проект Gradle. Эта команда создает необходимые файлы сборки для Gradle, прежде всего `build.gradle.kts`, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
 
 ```console
 gradle init --type basic
 ```
 
-Когда будет запрос на выбор **DSL**, выберите **Kotlin**.
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
 
 ## <a name="configure-the-build-file"></a>Настройка файла сборки
 
-Разместите `build.gradle.kts` и откройте его с помощью избранной интегрированной среды разработки или текстового редактора. Затем скопируйте в этой конфигурации следующее:
+Найдите файл `build.gradle.kts` и откройте его с помощью любой интегрированной среды разработки или текстового редактора. Затем скопируйте и вставьте в файл эту конфигурацию сборки:
 
 ```
 plugins {
@@ -67,21 +67,21 @@ dependencies {
 }
 ```
 
-Примите во внимание, что этот пример зависим от OkHttp для HTTP-запросов и Gson для обработки и анализа JSON. Чтобы узнать больше о конфигурациях сборки, см. раздел [Creating New Gradle Builds](https://guides.gradle.org/creating-new-gradle-builds/) (Создание новых сборок Gradle).
+Примите во внимание, что этот пример зависим от OkHttp для HTTP-запросов и Gson для обработки и анализа JSON. Дополнительные сведения о конфигурациях сборки см. в разделе [Creating New Gradle Builds](https://guides.gradle.org/creating-new-gradle-builds/) (Создание сборок Gradle).
 
 ## <a name="create-a-java-file"></a>Создание файла Java
 
-Создайте папку для примера приложения. В рабочем каталоге запустите следующее:
+Создайте папку для примера приложения. Выполните следующую команду из рабочего каталога:
 
 ```console
 mkdir -p src/main/java
 ```
 
-Далее в этой папке создайте файл с именем `Transliterate.java`.
+Затем в этой папке создайте файл с именем `Transliterate.java`.
 
 ## <a name="import-required-libraries"></a>Импорт обязательных библиотек
 
-Откройте `Transliterate.java` и добавьте следующие инструкции импорта.
+Откройте файл `Transliterate.java` и добавьте следующие инструкции импорта:
 
 ```java
 import java.io.*;
@@ -94,7 +94,7 @@ import com.squareup.okhttp.*;
 
 ## <a name="define-variables"></a>Определение переменных
 
-Во-первых, для проекта необходимо создать открытый класс.
+Сначала создайте открытый класс для проекта.
 
 ```java
 public class Transliterate {
@@ -111,7 +111,7 @@ String url = "https://api.cognitive.microsofttranslator.com/transliterate?api-ve
 
 ## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 
-Добавьте приведенную ниже строку к классу `Transliterate` для создания экземпляра `OkHttpClient`.
+Добавьте приведенную ниже строку в класс `Transliterate` для создания экземпляра `OkHttpClient`.
 
 ```java
 // Instantiates the OkHttpClient.
@@ -137,7 +137,7 @@ public String Post() throws IOException {
 
 ## <a name="create-a-function-to-parse-the-response"></a>Создайте функцию для анализа ответа
 
-Эта простая функция анализирует и упорядочивает ответ JSON от службы API перевода текстов.
+Эта простая функция анализирует и упорядочивает ответ JSON от службы "Перевод текстов".
 
 ```java
 // This function prettifies the json response.
@@ -151,7 +151,7 @@ public static String prettify(String json_text) {
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Последний шаг — это сделать запрос и получить ответ. Добавьте следующие строки в функцию.
+Последний шаг — это сделать запрос и получить ответ. Добавьте следующие строки в функцию:
 
 ```java
 public static void main(String[] args) {

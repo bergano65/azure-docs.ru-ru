@@ -2,22 +2,22 @@
 title: Краткое руководство Azure по выполнению пакетного задания на портале
 description: Быстро научитесь выполнять пакетное задание на портале Azure.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.service: batch
 ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/03/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 7daaf042d22ba4ac0369b732b586a3760d8cd51c
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 4356ea57e73e063d18155611b8c11090aa11edb3
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37859580"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471221"
 ---
-# <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Краткое руководство по выполнению первого пакетного задания на портале Azure
+# <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Краткое руководство. Выполнение пакетного задания на портале Azure
 
 В этом кратком руководстве показано, как использовать портал Azure для создания учетной записи пакетной службы, *пула* вычислительных узлов (виртуальных машин) и *заданий*, выполняющих основные *задачи* в пуле. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 

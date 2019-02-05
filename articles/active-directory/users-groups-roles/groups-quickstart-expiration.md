@@ -7,20 +7,20 @@ author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: quickstart
 ms.date: 08/07/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 7008943e9077cbad3c58de43f64b105f35931bf3
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 6d2b5201c41ba9d5c849976f0227e9abadea7658
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "40208933"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55165240"
 ---
-# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
+# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
 В этом кратком руководстве описано, как задать политику срока действия групп Office 365. Если у пользователя есть возможность настройки собственных групп, количество неиспользуемых групп увеличивается. Первый способ управления неиспользуемыми группами — задание срока действия этих групп, чтобы сократить обслуживание при их удалении вручную.
 
@@ -54,7 +54,7 @@ ms.locfileid: "40208933"
   
   ![Параметры срока действия](./media/groups-quickstart-expiration/expiration-settings.png)
 
-2. Установите интервал срока действия. Выберите заранее установленное значение или введите пользовательское значение больше 31 дня. 
+2. Установите интервал срока действия. Выберите заранее установленное значение или введите пользовательское значение больше 31 дня. 
 
 3. Если у группы нет владельца, укажите адрес электронной почты, на который необходимо отправлять уведомления об истечении срока действия.
 

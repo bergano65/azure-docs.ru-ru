@@ -4,23 +4,23 @@ titleSuffix: Azure Machine Learning service
 description: В этом руководстве показано, как использовать службу "Машинное обучение Azure" для обучения модели классификации изображений с помощью scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой первую часть серии, состоящей из двух частей.
 services: machine-learning
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.topic: tutorial
 author: hning86
 ms.author: haining
 ms.reviewer: sgilley
-ms.date: 12/04/2018
+ms.date: 01/28/2019
 ms.custom: seodec18
-ms.openlocfilehash: a9fc0655a3666f09fed342af5b4f14e2097290ab
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 6811888b5113a2cf5a06811f0e1b1bcee57d864b
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54828263"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55298064"
 ---
 # <a name="tutorial-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure
 
-В этом руководстве необходимо обучить модель машинного обучения как локально, так и на удаленных вычислительных ресурсах. Вы примените рабочий процесс обучения и развертывания для Службы машинного обучения Azure в записной книжке Jupyter для Python. Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
+В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для службы "Машинное обучение Azure" (предварительная версия) в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
 
 Это руководство обучает простую логистическую регрессию по набору данных [MNIST](http://yann.lecun.com/exdb/mnist/) с помощью библиотеки [scikit-learn](https://scikit-learn.org) и Службы машинного обучения Azure. MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждое изображение содержит рукописную цифру размером 28 x 28 пикселей, то есть числа от нуля до девяти. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает указанное изображение. 
 
@@ -38,16 +38,40 @@ ms.locfileid: "54828263"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 >[!NOTE]
-> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 1.0.2.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.8.
 
-## <a name="get-the-notebook"></a>Получение записной книжки
+## <a name="prerequisites"></a>Предварительные требования
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb). Запустите записную книжку `tutorials/img-classification-part1-training.ipynb` в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
+Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек.  Чтобы запустить записную книжку, вам потребуется:
 
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
+* Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
+    * пакет SDK для Машинного обучения Azure для Python;
+    * `matplotlib` и `scikit-learn`
+* Пример записной книжки и файл utils.py.
+* Рабочая область машинного обучения. 
+* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка. 
+
+Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
+ 
+* Использование [Записных книжек Azure](#azure) 
+* Использование [собственного сервера записных книжек](#server)
+
+### <a name="azure"></a>Использование Записных книжек Azure: к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
+
+Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
+
+Выполнив указанные ниже действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb** в проекте **Начало работы**.
+
+[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
 
 
-## <a name="set-up-your-development-environment"></a>Настройка среды разработки
+### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
+
+Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb**.
+
+[!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
+
+## <a name="start"></a>Настройка среды разработки
 
 Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
 
@@ -63,11 +87,10 @@ ms.locfileid: "54828263"
 ```python
 %matplotlib inline
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 
-import azureml
-from azureml.core import Workspace, Run
+import azureml.core
+from azureml.core import Workspace
 
 # check core SDK version number
 print("Azure ML SDK Version: ", azureml.core.VERSION)
@@ -94,11 +117,11 @@ from azureml.core import Experiment
 exp = Experiment(workspace=ws, name=experiment_name)
 ```
 
-### <a name="create-or-attach-an-existing-amlcompute"></a>Создание или подключение существующего класса AMlCompute
+### <a name="create-or-attach-an-existing-compute-resource"></a>Создание или подключение существующего ресурса вычислений
 
-Использование Вычислительной среды Машинного обучения Azure (управляемой службы AMLCompute) позволяет специалистам по анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure. Часто используются виртуальные машины с поддержкой GPU. В рамках этого руководства вы создадите AMLCompute в качестве среды для обучения. Этот код создаст вычислительные кластеры, если они еще не существуют в вашей рабочей области.
+Использование Вычислительной среды Машинного обучения Azure (управляемой службы) позволяет специалистам по обработке и анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure. Часто используются виртуальные машины с поддержкой GPU. В этом руководстве описано, как создать Вычислительную среду Машинного обучения Azure в качестве среды обучения. Приведенный ниже код создаст вычислительные кластеры, если они еще не существуют в вашей рабочей области.
 
- **Создание вычислительной среды занимает около пяти минут.** Если вычислительная среда уже находится в рабочей области, этот код сразу применяет ее, пропуская процесс создания.
+ **Создание вычислительной среды занимает около пяти минут.** Если вычислительная среда уже находится в рабочей области, код сразу применяет ее, пропуская процесс создания.
 
 
 ```python
@@ -132,8 +155,8 @@ else:
     # if no min node count is provided it will use the scale settings for the cluster
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
     
-     # For a more detailed view of current AmlCompute status, use the 'status' property    
-    print(compute_target.status.serialize())
+     # For a more detailed view of current AmlCompute status, use get_status()
+    print(compute_target.get_status().serialize())
 ```
 
 Теперь у вас есть необходимые пакеты и вычислительные ресурсы для обучения модели в облаке. 
@@ -155,13 +178,15 @@ else:
 import os
 import urllib.request
 
-os.makedirs('./data', exist_ok = True)
+data_path = os.path.join(os.getcwd(), 'data')
+os.makedirs(data_path, exist_ok = True)
 
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz', filename='./data/train-images.gz')
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz', filename='./data/train-labels.gz')
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz', filename='./data/test-images.gz')
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz', filename='./data/test-labels.gz')
 ```
+Вы увидите примерно такие выходные данные: ```('./data/test-labels.gz', <http.client.HTTPMessage at 0x7f40864c77b8>)```.
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
 
@@ -210,60 +235,32 @@ MNIST-файлы передаются в каталог с именем `mnist`,
 ds = ws.get_default_datastore()
 print(ds.datastore_type, ds.account_name, ds.container_name)
 
-ds.upload(src_dir='./data', target_path='mnist', overwrite=True, show_progress=True)
+ds.upload(src_dir=data_path, target_path='mnist', overwrite=True, show_progress=True)
 ```
 Теперь у вас есть все необходимое для начала обучения модели. 
 
-## <a name="train-a-local-model"></a>Обучение локальной модели
-
-Обучите модель простой логистической регрессии, локально применяя библиотеку scikit-learn.
-
-**Локальное обучение может занять одну или две минуты** в зависимости от конфигурации компьютера.
-
-```python
-%%time
-from sklearn.linear_model import LogisticRegression
-
-clf = LogisticRegression()
-clf.fit(X_train, y_train)
-```
-
-Далее создайте прогнозы на основе проверочного набора и вычислите их точность. 
-
-```python
-y_hat = clf.predict(X_test)
-print(np.average(y_hat == y_test))
-```
-
-Точность локальной модели изображена ниже.
-
-`0.9202`
-
-Создав несколько строк кода, вы получили точность 92 %.
 
 ## <a name="train-on-a-remote-cluster"></a>Обучение на удаленном кластере
 
-Теперь вы можете расширить эту простую модель, построив модель с другой скоростью регуляризации. Теперь вы будете обучать модель на удаленном ресурсе.  
-
-Для выполнения этой задачи отправьте задание в кластер удаленного обучения, который мы настроили ранее. Чтобы отправить задание, необходимо сделать следующее:
-* Создайте каталог.
-* Создайте сценарий обучения.
-* Создайте объект оценщика.
-* Отправка задания.
+Для выполнения этой задачи отправьте задание в кластер удаленного обучения, который мы настроили ранее.  Чтобы отправить задание, нужно:
+* создать каталог;
+* Создание сценария обучения
+* Создание объекта оценщика
+* отправить задание. 
 
 ### <a name="create-a-directory"></a>создать каталог;
 
-Создайте каталог для доставки необходимого кода с локального компьютера на удаленный ресурс.
+Создайте каталог для доставки необходимого кода с компьютера на удаленный ресурс.
 
 ```python
 import os
-script_folder = './sklearn-mnist'
+script_folder  = os.path.join(os.getcwd(), "sklearn-mnist")
 os.makedirs(script_folder, exist_ok=True)
 ```
 
 ### <a name="create-a-training-script"></a>Создание сценария обучения
 
-Чтобы отправить задание в кластер, необходимо сначала создать сценарий обучения. Выполните следующий код, который создает скрипт обучения с именем `train.py` в только что созданном каталоге. Он настраивает в алгоритме обучения скорость регуляризации. Для этого он создает новую версию модели, которая слегка отличается от локальной.
+Чтобы отправить задание в кластер, необходимо сначала создать сценарий обучения. Для создания сценария обучения выполните следующий код, который называется `train.py`, в каталоге, который был только что создан.
 
 ```python
 %%writefile $script_folder/train.py
@@ -406,6 +403,8 @@ RunDetails(run).show()
 
 ![Мини-приложение записной книжки](./media/tutorial-train-models-with-aml/widget.png)
 
+Если необходимо отменить выполнение, вы можете выполнить [эти инструкции](https://aka.ms/aml-docs-cancel-run).
+
 ### <a name="get-log-results-upon-completion"></a>Получение результатов записи по завершении
 
 Обучение и мониторинг модели происходит в фоновом режиме. Прежде, чем выполнять другой код, дождитесь завершения обучения модели. `wait_for_completion` позволяет узнать, когда завершится обучение модели. 
@@ -422,7 +421,7 @@ run.wait_for_completion(show_output=False) # specify True for a verbose log
 ```python
 print(run.get_metrics())
 ```
-Выходные данные показывают, что точность удаленной модели немного выше, чем у локальной модели. Это связано с тем, что во время обучения мы настроили скорость регуляризации.  
+В выходных данных показано, что точность удаленной модели — 0,9204.
 
 `{'regularization rate': 0.8, 'accuracy': 0.9204}`
 
@@ -465,8 +464,7 @@ compute_target.delete()
 > [!div class="checklist"]
 > * Настройка среды разработки.
 > * Подключение к данным и их проверка.
-> * Локальное обучение простой логистической регрессии с помощью популярной библиотеки машинного обучениях scikit-learn.
-> * Обучение нескольких моделей в удаленном кластере.
+> * Обучение нескольких моделей на удаленном кластере с помощью популярной библиотеки машинного обучения scikit-learn.
 > * Проверка сведений об обучении и регистрация наилучшей модели.
 
 Теперь вы готовы развернуть зарегистрированную модель с помощью инструкций, представленных в следующей части серии руководств.

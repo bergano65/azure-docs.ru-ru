@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Определение языка текста, PHP — API перевода текстов
+title: Краткое руководство. Определение языка текста, PHP — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как определить язык исходного текста, используя API перевода текстов и PHP.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: erhopf
-ms.openlocfilehash: e13dbe63efe950061f157b6d8dec7665c1bc5c42
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: db563a111abe069e361dfed03718bd75cdd0311e
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649457"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210801"
 ---
 # <a name="quickstart-identify-language-from-text-with-the-translator-text-rest-api-php"></a>Краткое руководство. Определение языка текста с помощью REST API перевода текстов (PHP)
 

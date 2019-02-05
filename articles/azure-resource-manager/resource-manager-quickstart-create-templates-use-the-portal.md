@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/11/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: f989a006251313a8439432861477dc133374af35
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: c7759b9f0787b7926b3642b8b912ec5391347adf
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54304677"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54911495"
 ---
 # <a name="quickstart-create-and-deploy-azure-resource-manager-templates-by-using-the-azure-portal"></a>Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "54304677"
 
     ![Создание шаблона с портала](./media/resource-manager-quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-create-storage-account-template.png)
 
-    Шаблон отображается на главной панели. Это файл JSON с четырьмя элементами верхнего уровня: `schema`, `contentVersion`, `parameters`, `variables`, `resources` и `output`. Дополнительные сведения см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
+    Шаблон отображается на главной панели. Это файл JSON с шестью элементами верхнего уровня: `schema`, `contentVersion`, `parameters`, `variables`, `resources` и `output`. Дополнительные сведения см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
 
     В шаблоне определяются шесть параметров. Один из них — **storageAccountName**. На втором выделенном элементе на предыдущем снимке экрана показано, как ссылаться на этот параметр в шаблоне. В следующем разделе описано, как изменить шаблон, указав в нем имя созданной учетной записи хранения.
 

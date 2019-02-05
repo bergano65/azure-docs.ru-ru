@@ -7,7 +7,7 @@ author: CelesteDG
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: 4608e9ec0cd67b6c0f7ac23e27761b0355a5d738
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: 1411d9b4a199685315587cb642842286da575c63
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50911870"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098533"
 ---
 # <a name="quickstart-register-an-app-with-the-azure-active-directory-v10-endpoint"></a>Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0
 
@@ -56,7 +56,7 @@ ms.locfileid: "50911870"
       - Выберите **Машинный код** для [клиентских приложений](developer-glossary.md#client-application), которые установлены локально на устройстве. Этот параметр используется для общедоступных [собственных клиентов](developer-glossary.md#native-client) OAuth.
       - Выберите **Веб-приложение или API** для [клиентских приложений](developer-glossary.md#client-application) и [приложений ресурсов или API](developer-glossary.md#resource-server), установленных на защищенном сервере. Этот параметр используется для конфиденциальных [веб-клиентов](developer-glossary.md#web-client) и общедоступных [клиентов на основе агента пользователя](developer-glossary.md#user-agent-based-client) OAuth. То же приложение может также предоставлять клиент и ресурс или API.
     - **URL-адрес входа**. Для приложений "Веб-приложение или API" укажите основной URL-адрес приложения. Например, `http://localhost:31544` может быть URL-адресом веб-приложения, выполняемого на локальном компьютере. Пользователи будут использовать этот URL-адрес для входа в приложение веб-клиента. 
-    - **URI перенаправления**. Для приложений "Машинный код" предоставьте универсальный код ресурса (URI), используемый Azure AD для возвращения ответов маркера. Укажите значение, специфичное для вашего приложения, например `http://MyFirstAADApp`.
+    - **URI перенаправления**. Для приложений "Машинный код" укажите универсальный код ресурса (URI), который Azure AD будет использовать для возвращения токенов ответа. Укажите значение, специфичное для вашего приложения, например `http://MyFirstAADApp`.
 
       ![Раздел регистрации нового приложения, кнопка "Создать"](./media/quickstart-v1-integrate-apps-with-azure-ad/add-app-registration-create.png)
 

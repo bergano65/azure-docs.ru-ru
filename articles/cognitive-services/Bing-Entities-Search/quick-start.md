@@ -5,18 +5,18 @@ services: cognitive-services
 author: swhite-msft
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-entity-search
+ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 07/06/2017
 ms.author: scottwhi
-ms.openlocfilehash: ffc9ebb21c6646b1a39af4659053adf4157d204b
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 1bb2c4b73b29d832a289c7a5c1c86b958302086a
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48813963"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55153459"
 ---
-# <a name="quickstart-making-your-first-bing-entity-search-request"></a>Краткое руководство по созданию первого запроса к API Bing для поиска сущностей.
+# <a name="quickstart-making-your-first-bing-entity-search-request"></a>Краткое руководство. Создание запроса к API Bing для поиска сущностей
 
 API Bing для поиска сущностей отправляет запрос на поиск в Bing и получает результаты, которые включают сущности и места. Результаты поиска мест включают рестораны, отели или другие местные учреждения. При поиске мест в запросе может указываться имя местного учреждения или запрашиваться список (например, ближайших ресторанов). В результатах поиска сущностей содержатся субъекты, места или вещи. Местами в данном контексте являются достопримечательности, регионы, страны и т. д. 
 

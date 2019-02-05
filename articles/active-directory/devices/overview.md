@@ -8,7 +8,7 @@ manager: daveba
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
-ms.component: devices
+ms.subservice: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,12 +16,12 @@ ms.topic: overview
 ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: e7cc11fd35049bf55c848293fa5aaafbdd7b7370
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 704f854d7be9930923cb6e1955c3670f296035ed
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452774"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299832"
 ---
 # <a name="what-is-device-management-in-azure-active-directory"></a>Что такое управление устройствами в Azure Active Directory
 
@@ -45,7 +45,7 @@ ms.locfileid: "54452774"
 
 **Регистрация** устройства в Azure AD позволяет управлять идентификатором устройства. В ходе регистрации служба регистрации устройств Azure Active Directory назначает устройству идентификатор, который используется для проверки подлинности устройства при входе пользователя в Azure AD. Идентификатор можно использовать для включения или отключения устройства.
 
-При применении вместе с таким решением MDM (управление мобильными устройствами), как Microsoft Intune, в атрибуты устройства в Azure Active Directory добавляются дополнительные данные о нем. Это позволяет создавать правила условного доступа, которые обеспечивают доступ с устройств в соответствии с вашими стандартами безопасности и соблюдения нормативных требований. Дополнительные сведения о регистрации устройств в Microsoft Intune см. в статье о [регистрации устройств для управления в Intune](https://docs.microsoft.com/intune/device-enrollment#supported-device-platforms).
+При применении вместе с таким решением MDM (управление мобильными устройствами), как Microsoft Intune, в атрибуты устройства в Azure Active Directory добавляются дополнительные данные о нем. Это позволяет создавать правила условного доступа, которые обеспечивают доступ с устройств в соответствии с вашими стандартами безопасности и соблюдения нормативных требований. Дополнительные сведения о регистрации устройств в Microsoft Intune см. в статье [Что такое регистрация устройств?](https://docs.microsoft.com/intune/device-enrollment)
 
 **Присоединение** устройства является расширением для регистрации устройства. Это означает, что оно предоставляет все преимущества регистрации устройства и дополнительно изменяет локальное состояние устройства. За счет изменения локального состояния пользователи могут входить на устройство с помощью рабочей или учебной учетной записи организации вместо личной учетной записи.
 

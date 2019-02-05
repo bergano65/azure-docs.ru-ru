@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: f2991054-8146-4718-a5f7-59b892230ad7
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: javascript
@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 23912f9d004d051c422f93e8b10f1aa6cb8b2626
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a39fc2d0e1a57322f3cce63fa298657c1f938e55
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959501"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55100739"
 ---
 # <a name="quickstart-build-an-angularjs-single-page-app-for-sign-in-and-sign-out-with-azure-active-directory"></a>Краткое руководство. Создание одностраничного приложения AngularJS для входа и выхода с помощью Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "46959501"
 * безопасно вызывает реализованный в приложении интерфейс приложения со списком дел, используя токены носителя из Azure AD;
 * Обеспечивает функцию выхода пользователя из приложения.
 
-Для создания полного рабочего приложения необходимо:
+Для создания полного рабочего приложения необходимо сделать следующее.
 
 1. Зарегистрировать приложения в Azure AD.
 2. Установить библиотеку ADAL и настроить одностраничное приложение.
@@ -52,7 +52,7 @@ ms.locfileid: "46959501"
 * Скачайте [схему приложения](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/complete.zip).
 * Убедитесь в наличии клиента Azure AD, в котором можно создать пользователей и зарегистрировать приложение. Если клиента нет, [узнайте, как его получить](quickstart-create-new-tenant.md).
 
-## <a name="step-1-register-the-directorysearcher-application"></a>Шаг 1. Регистрация приложения DirectorySearcher
+## <a name="step-1-register-the-directorysearcher-application"></a>Шаг 1. Регистрация приложения DirectorySearcher
 
 Чтобы приложение могло осуществлять аутентификацию пользователей и получать маркеры, необходимо зарегистрировать его в клиенте Azure AD.
 
@@ -75,7 +75,7 @@ ms.locfileid: "46959501"
 1. Предоставьте разрешения для приложения в клиенте. Перейдите к разделу **Параметры > Необходимые разрешения**, а затем нажмите кнопку **Предоставить разрешения** на панели сверху.
 1. Выберите **Да** для подтверждения.
 
-## <a name="step-2-install-adal-and-configure-the-single-page-app"></a>Шаг 2. Установка библиотеки ADAL и настройка одностраничного приложения
+## <a name="step-2-install-adal-and-configure-the-single-page-app"></a>Шаг 2. Установка библиотеки ADAL и настройка одностраничного приложения
 
 Теперь, когда приложение зарегистрировано в Azure AD, можно установить библиотеку adal.js и написать код для работы с удостоверением.
 
@@ -101,7 +101,7 @@ ms.locfileid: "46959501"
    * `ida:Tenant` — это имя вашего клиента Azure AD, например contoso.onmicrosoft.com.
    * Для `ida:Audience` укажите скопированный на портале идентификатор клиента приложения.
 
-## <a name="step-3-use-adal-to-help-secure-pages-in-the-single-page-app"></a>Шаг 3. Применение ADAL для защиты страниц одностраничного приложения
+## <a name="step-3-use-adal-to-help-secure-pages-in-the-single-page-app"></a>Шаг 3. Применение ADAL для защиты страниц одностраничного приложения
 
 Adal.js интегрируется с маршрутом AngularJS и поставщиками HTTP, позволяя вам защищать отдельные представления в одностраничных приложениях.
 

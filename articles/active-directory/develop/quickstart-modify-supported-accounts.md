@@ -7,7 +7,7 @@ author: CelesteDG
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,14 +16,14 @@ ms.date: 10/25/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: 71c8b9cc05d15a4c4eadb6321de580ed9768a438
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 2d10dcde0a0e35a3e717cde34048437b6119fbf6
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988771"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101238"
 ---
-# <a name="quickstart-modify-the-accounts-supported-by-an-application-preview"></a>Краткое руководство. Изменение учетных записей, поддерживаемых приложением (предварительная версия)
+# <a name="quickstart-modify-the-accounts-supported-by-an-application-preview"></a>Краткое руководство. Краткое руководство. Изменение учетных записей, поддерживаемых приложением (предварительная версия)
 
 При регистрации приложения на платформе удостоверений Майкрософт вам может потребоваться предоставить доступ к этому приложению только пользователям в вашей организации. Кроме того, вы также можете сделать свои приложения доступными для пользователей во внешних организациях или пользователей, которые не являются частью организации (личные учетные записи).
 

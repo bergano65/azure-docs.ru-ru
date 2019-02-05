@@ -5,18 +5,18 @@ services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: bbe9ffd0709157b5f0389ccc68a285b9c3829db9
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: e5ceb6208229baf3e07e4030992d5de85309789c
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632872"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55212500"
 ---
-# <a name="example-how-to-detect-sentiment-in-text-analytics"></a>Пример. Как определить тональность с помощью Анализа текста
+# <a name="example-how-to-detect-sentiment-in-text-analytics"></a>Пример: Как определить тональность в службе "Анализ текста"
 
 [API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) вычисляет ввод текста и возвращает оценку тональности для каждого документа в диапазоне от 0 (отрицательное значение) до 1 (положительное значение).
 
@@ -73,11 +73,11 @@ ms.locfileid: "51632872"
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Изучите документацию по API для этого запроса: [API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9)
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9)
 
 + Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
 
@@ -88,7 +88,7 @@ ms.locfileid: "51632872"
 > [!Tip]
 > Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
-## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
+## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
 Анализ выполняется при получении запроса. Служба принимает до 100 запросов в минуту. Каждый запрос не должен превышать 1 МБ.
 

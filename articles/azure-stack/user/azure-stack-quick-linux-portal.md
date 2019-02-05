@@ -11,12 +11,13 @@ ms.date: 12/03/2018
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.custom: mvc
-ms.openlocfilehash: 0664316d73b1473ab52b08f8abead2ec33d121b6
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.lastreviewed: 12/03/2018
+ms.openlocfilehash: ef2d59393902194af3e257ce0fd5bf403b293af1
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52836752"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55245429"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины для сервера Linux с помощью портала Azure Stack
 
@@ -40,7 +41,7 @@ ms.locfileid: "52836752"
 
 * **Доступ к клиенту SSH**.
 
-   Если вы используете Пакет средств разработки Azure Stack, клиент SSH может быть недоступен. Если вам нужен клиент, используйте любой из нескольких пакетов, которые включают клиент SSH. Например, в состав PuTTY входят клиент SSH и генератор ключей SSH (puttygen.exe). Дополнительные сведения о вариантах пакетов см. в статье об [использовании ключей SSH с Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows#windows-packages-and-ssh-clients).
+   Если вы используете Пакет средств разработки Azure Stack, клиент SSH может быть недоступен. Если вам нужен клиент, используйте любой из нескольких пакетов, которые включают клиент SSH. Например, в состав PuTTY входят клиент SSH и генератор ключей SSH (puttygen.exe). Дополнительные сведения о доступных пакетах см. в статье [Как использовать ключи SSH с Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows#windows-packages-and-ssh-clients).
 
    В этом кратком руководстве с помощью PuTTY создаются ключи SSH и устанавливается подключение к виртуальной машине для сервера Linux. Скачайте и установите PuTTY. Для этого перейдите по адресу [http://www.putty.org/](http://www.putty.org).
 

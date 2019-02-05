@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Определение лиц на изображении с помощью Azure REST API и C#
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и C#
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и C#.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: 24b506b0dd22b388a57f88f1105742660b02269c
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 6dce69b06d00ef41f4ffee46f644fb0dc3560ecc
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854022"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55220609"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-c"></a>Краткое руководство. Определение лиц на изображении с помощью REST API распознавания лиц и C#
+# <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и C#
 
 В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и C#.
 

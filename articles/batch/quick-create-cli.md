@@ -2,22 +2,22 @@
 title: Краткое руководство Azure по выполнению пакетного задания с помощью CLI
 description: Быстро научитесь выполнять пакетное задание с помощью Azure CLI.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.service: batch
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/03/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 75703b4b10bbf3864076952990df2e6c2a9ab28d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 10f84a758bdb2e01793aee06cba59a29b5639775
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969654"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470966"
 ---
-# <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Краткое руководство по выполнению первого пакетного задания с помощью Azure CLI
+# <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Краткое руководство. Выполнение пакетного задания с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве показано, как использовать Azure CLI для создания учетной записи пакетной службы, *пула* вычислительных узлов (виртуальных машин) и *заданий*, выполняющих *задачи* в пуле. Каждый образец задачи запускает основную команду на одном из узлов пула. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 

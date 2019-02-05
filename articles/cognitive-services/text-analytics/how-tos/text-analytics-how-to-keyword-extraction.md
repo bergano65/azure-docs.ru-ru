@@ -5,18 +5,18 @@ services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: d38886d40a92d5e75f5d0b6b189dbf7c067e1635
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: bbca745da1fe657c1316d9e4e5fbeeeabfa5e1ef
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632396"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216750"
 ---
-# <a name="example-how-to-extract-key-phrases-in-text-analytics"></a>Пример. Как извлечь ключевые фразы с помощью Анализа текста
+# <a name="example-how-to-extract-key-phrases-in-text-analytics"></a>Пример: Инструкции по извлечению ключевых фраз при анализе текста
 
 [API извлечения ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз. 
 
@@ -67,11 +67,11 @@ ms.locfileid: "51632396"
     }
 ```    
     
-## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Проверьте документацию по API для этого запроса: [API ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6)
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для поиска ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6)
 
 + Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases`
 

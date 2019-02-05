@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по использованию PHP для вызова API анализа текста
+title: Краткое руководство. Вызов API анализа текста с использованием PHP
 titleSuffix: Azure Cognitive Services
 description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API анализа текста в Cognitive Services в Azure.
 services: cognitive-services
 author: noellelacharite
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: nolachar
-ms.openlocfilehash: 6ce4dda4a8a927ea904d241d63eed3483468961e
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 0d35fa388b9300804243b8144372be0eb2a97e02
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52282827"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55211820"
 ---
-# <a name="quickstart-using-php-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию PHP для вызова API анализа текста Cognitive Services
+# <a name="quickstart-using-php-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование PHP для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и PHP.

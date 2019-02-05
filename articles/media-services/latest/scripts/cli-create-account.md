@@ -12,24 +12,22 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 01/15/2019
+ms.date: 01/25/2019
 ms.author: juliako
-ms.openlocfilehash: 2eeb47c2e0f96eca1ca9b852a2be6ca3102ba71e
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 41d9548aa33ee29c40179506ae824ab79b000859
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353351"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55213180"
 ---
 # <a name="cli-example-create-an-azure-media-services-account"></a>Пример использования CLI. Создание учетной записи служб мультимедиа Azure
 
-В скрипте Azure CLI в этой статье показано, как создать учетную запись Служб мультимедиа Azure. Учетная запись Службы мультимедиа Azure и связанная с ней учетная запись хранения должны размещаться в одном центре обработки данных и в одной группе ресурсов.
+В скрипте Azure CLI в этой статье показано, как создать учетную запись Служб мультимедиа Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+Учетная запись Служб мультимедиа и все связанные учетные записи хранения должны размещаться в одной подписке Azure. Рекомендуется использовать учетные записи хранения из того же расположения, что и учетная запись Служб мультимедиа.
 
-Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
-
-Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
+[!INCLUDE [media-services-cli-instructions.md](../../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="example-script"></a>Пример сценария
 

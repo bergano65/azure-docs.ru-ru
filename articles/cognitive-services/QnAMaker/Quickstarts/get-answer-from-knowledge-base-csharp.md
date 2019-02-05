@@ -6,27 +6,27 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: d3c476d480b57c6125f0e2d632d2713d09dffff0
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 9b268424a07568868fc760e42bcf7d8130a7b41f
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977831"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55226901"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-c"></a>Получение ответов на вопрос из базы знаний с помощью C#
 
-В этом кратком руководстве описано, как программным способом получить ответ из базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Вопрос в формате JSON отправляется в тексте запроса API. 
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Вопрос в формате JSON отправляется в тексте запроса API. 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Последний [**выпуск Visual Studio Community**](https://www.visualstudio.com/downloads/).
-* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ для ресурса QnA Maker, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга Azure. 
-* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [этот пример базы знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
+* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
+* Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
     На странице параметров публикации представлены значения Host, EndpointKey и маршрута POST. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "51977831"
 
 ## <a name="build-and-run-the-program"></a>Сборка и запуск проекта
 
-Выполните сборку и запуск программы из Visual Studio. Запрос к API службы QnA Maker будет отправлен автоматически, а полученный ответ отобразится в окне консоли.
+Выполните сборку и запуск программы из Visual Studio. Она автоматически отправит запрос к API службы QnA Maker, а полученный ответ отобразится в окне консоли.
 
 [!INCLUDE [JSON request and response](../../../../includes/cognitive-services-qnamaker-quickstart-get-answer-json.md)] 
 

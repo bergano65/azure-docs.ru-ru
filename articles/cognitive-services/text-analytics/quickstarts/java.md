@@ -6,18 +6,18 @@ services: cognitive-services
 author: noellelacharite
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: nolachar
-ms.openlocfilehash: f2e576b421526c0245ff249d77214b27c9fd649a
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: fdca883e2637998222bfcc4cdc799fe4dec4ab13
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52283950"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55223312"
 ---
-# <a name="quickstart-using-java-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию Java для вызова API анализа текста Cognitive Services
+# <a name="quickstart-using-java-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Java для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и Java.

@@ -7,13 +7,13 @@ ms.service: storage
 ms.author: jamesbak
 ms.topic: tutorial
 ms.date: 01/14/2019
-ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 0bb2e9a91890f88466b27439b55d516848fd2270
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.subservice: data-lake-storage-gen2
+ms.openlocfilehash: 4d0ff4941405f09c2231b9cde16f4e75e2b88b4b
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438834"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251679"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -42,6 +42,7 @@ ms.locfileid: "54438834"
 > * Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../../sql-data-warehouse/create-data-warehouse-portal.md).
 > * Создайте главный ключ базы данных для хранилища данных SQL Azure. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
 > * Создайте учетную запись Azure Data Lake Storage 2-го поколения. Ознакомьтесь со статьей о [создании учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+> * Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. См. [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](storage-quickstart-blobs-portal.md).
 > * Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
@@ -145,17 +146,17 @@ ms.locfileid: "54438834"
 
    ```scala
    spark.conf.set("fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net", "OAuth")
-   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<application-id>")
    spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<authentication-key>")
-   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
+   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    ```
 
-5. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах статьи [Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](#config). Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
+6. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах статьи [Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](#config). Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
 
-6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
+7. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
-7. Теперь можно загрузить пример JSON-файла в виде кадра данных в Azure Databricks. Вставьте следующий код в новую ячейку. Замените значения заменителей, показанные в скобках, собственными.
+8. Теперь можно загрузить пример JSON-файла в виде кадра данных в Azure Databricks. Вставьте следующий код в новую ячейку. Замените значения заменителей, показанные в скобках, собственными.
 
    ```scala
    val df = spark.read.json("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/small_radio_json.json")
@@ -165,9 +166,9 @@ ms.locfileid: "54438834"
 
    * Замените заполнитель `storage-account-name` именем вашей учетной записи хранения.
 
-8. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
+9. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
-9. Чтобы просмотреть содержимое кадра данных, выполните следующий код:
+10. Чтобы просмотреть содержимое кадра данных, выполните следующий код:
 
     ```scala
     df.show()
@@ -267,37 +268,37 @@ ms.locfileid: "54438834"
 
 В этом разделе преобразованные данные отправляются в хранилище данных SQL Azure. С помощью соединителя Хранилища данных SQL Azure для Azure Databricks можно напрямую отправить кадр данных в виде таблицы в хранилище данных SQL.
 
-Соединитель Хранилища данных SQL использует хранилище BLOB-объектов Azure в качестве временного хранилища для передачи данных между Azure Databricks и Хранилищем данных SQL Azure. Таким образом сначала нужно предоставить конфигурацию для подключения к учетной записи хранения. Вы уже должны были создать учетную запись, выполняя предварительные требования для этой статьи.
+Как упоминалось ранее, соединитель Хранилища данных SQL использует хранилище BLOB-объектов Azure в качестве временного хранилища для передачи данных между Azure Databricks и Хранилищем данных SQL Azure. Таким образом сначала нужно предоставить конфигурацию для подключения к учетной записи хранения. Вы уже должны были создать учетную запись, выполняя предварительные требования для этой статьи.
 
 1. Предоставьте конфигурацию для получения доступа к учетной записи хранения Azure из Azure Databricks.
 
    ```scala
-   val storageURI = "<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net"
-   val fileSystemName = "<FILE_SYSTEM_NAME>"
-   val accessKey =  "<ACCESS_KEY>"
+   val blobStorage = "<blob-storage-account-name>.blob.core.windows.net"
+   val blobContainer = "<blob-container-name>"
+   val authenticationKey =  "<authentication-key>"
    ```
 
 2. Укажите временную папку, которая будет использоваться при перемещении данных между Azure Databricks и Хранилищем данных SQL Azure.
 
    ```scala
-   val tempDir = "abfss://" + fileSystemName + "@" + storageURI +"/tempDirs"
+   val tempDir = "wasbs://" + blob-container-name + "@" + blobStorage +"/tempDirs"
    ```
 
 3. Запустите следующий фрагмент кода, чтобы сохранить ключ доступа к хранилищу BLOB-объектов Azure в конфигурации. Благодаря этому действию вам не придется хранить ключ доступа в записной книжке в виде обычного текста.
 
    ```scala
-   val acntInfo = "fs.azure.account.key."+ storageURI
-   sc.hadoopConfiguration.set(acntInfo, accessKey)
+   val acntInfo = "fs.azure.account.key."+ blobStorage
+   sc.hadoopConfiguration.set(acntInfo, authenticationKey)
    ```
 
 4. Укажите значения для подключения к экземпляру хранилища данных SQL Azure. Вы должны были создать хранилище данных SQL, выполняя требования для этой статьи.
 
    ```scala
    //SQL Data Warehouse related settings
-   val dwDatabase = "<DATABASE NAME>"
-   val dwServer = "<DATABASE SERVER NAME>" 
-   val dwUser = "<USER NAME>"
-   val dwPass = "<PASSWORD>"
+   val dwDatabase = "<database-name>"
+   val dwServer = "<database-server-name>"
+   val dwUser = "<user-name>"
+   val dwPass = "<password>"
    val dwJdbcPort =  "1433"
    val dwJdbcExtraOptions = "encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
    val sqlDwUrl = "jdbc:sqlserver://" + dwServer + ".database.windows.net:" + dwJdbcPort + ";database=" + dwDatabase + ";user=" + dwUser+";password=" + dwPass + ";$dwJdbcExtraOptions"

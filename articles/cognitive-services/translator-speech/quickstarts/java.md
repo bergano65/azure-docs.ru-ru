@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по использованию API перевода речи с Java
+title: Краткое руководство. API перевода речи с Java
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
 author: v-jaswel
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-speech
+ms.subservice: translator-speech
 ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: ebff07a68975f3629b57df4cfc8a5bbcf564ce27
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 1fb6eeb30b8ba348ce90916955bd8ffbb2cbb7c5
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412930"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55459179"
 ---
-# <a name="quickstart-translator-speech-api-with-java"></a>Краткое руководство по использованию API перевода речи с Java 
+# <a name="quickstart-translator-speech-api-with-java"></a>Краткое руководство. API перевода речи с Java 
 <a name="HOLTop"></a>
 
 [!INCLUDE [Deprecation note](../../../../includes/cognitive-services-translator-speech-deprecation-note.md)]

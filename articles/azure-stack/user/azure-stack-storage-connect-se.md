@@ -10,15 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/14/2018
+ms.date: 01/24/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 6ab2d92e2a3c62719af1c8ab6d6eda935fc49505
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.lastreviewed: 01/24/2019
+ms.openlocfilehash: d1bddc8331fc1a9ded37949a8065636947074852
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386780"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55246742"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-subscription-or-a-storage-account"></a>Подключение обозревателя службы хранилища к подписке Azure Stack или к учетной записи хранения
 
@@ -37,7 +38,10 @@ ms.locfileid: "53386780"
 
 Чтобы получить доступ к подписке Azure Stack, обозревателю службы хранилища требуется прямой доступ к Azure Stack или VPN-подключение. Дополнительные сведения о настройке VPN-подключения в Azure Stack см. в разделе [Подключение c VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
 
-Для Пакета средств разработки Azure Stack необходимо экспортировать корневой сертификат центра сертификации Azure Stack.
+Для Пакета средств разработки Azure Stack (ASDK) необходимо экспортировать корневой сертификат центра сертификации Azure Stack.
+
+> [!Note]  
+> Если вы подключаетесь к ASDK через VPN-подключение, не используйте корневой сертификат (CA.cer), созданный во время настройки VPN.  Это DER-шифрованный сертификат, с помощью которого Обозреватель службы хранилища не сможет получить подписки Azure Stack. Выполните приведенные ниже действия, чтобы экспортировать сертификат в кодировке Base-64 для использования с Обозревателем службы хранилища.
 
 ### <a name="export-and-then-import-the-azure-stack-certificate"></a>Экспорт и импорт сертификата Azure Stack
 

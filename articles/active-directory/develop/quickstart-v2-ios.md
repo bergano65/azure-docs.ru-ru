@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
@@ -16,14 +16,14 @@ ms.workload: identity
 ms.date: 09/23/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 49ced3277a659ddacef239c7a1394cbe5ce06ac9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2f91cfc6c391bb22ca5f75a7a72123b695380aff
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973615"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094314"
 ---
-# <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-native-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft Graph API из собственного приложения iOS
+# <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-native-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из собственного приложения iOS
 
 [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
@@ -33,8 +33,8 @@ ms.locfileid: "46973615"
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download"></a>Регистрация и загрузка
-> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка примера приложения и кода
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка приложения и примера кода
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 > 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app) для регистрации приложения.
 > 1. В поле **Имя приложения** введите имя приложения.
@@ -42,19 +42,19 @@ ms.locfileid: "46973615"
 > 1. Выберите **Добавление платформы**, **Собственное приложение**, а затем нажмите кнопку **Сохранить**.
 
 > [!div renderon="portal" class="sxs-lookup"]
-> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
+> #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
 > Для работы примера кода в этом кратком руководстве необходимо добавить URL-адрес ответа `msal<AppId>://auth` (где msal<AppId> является идентификатором этого приложения).
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
 > > [!div id="appconfigured" class="alert alert-info"]
-> > ![Уже настроено](media/quickstart-v2-ios/green-check.png). Ваше приложение настроено с помощью этого атрибута
+> > ![Уже настроено](media/quickstart-v2-ios/green-check.png) Ваше приложение настроено с использованием этого атрибута
 
-#### <a name="step-2-download-your-web-server-or-project"></a>Шаг 2. Загрузка веб-сервера или проекта
+#### <a name="step-2-download-your-web-server-or-project"></a>Шаг 2. Скачивание веб-сервера или проекта
 
 - [Загрузка проекта XCode](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
 
-#### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
+#### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
 
 1. Извлеките ZIP-файл и откройте проект в XCode.
 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода.
@@ -156,10 +156,10 @@ MSAL имеет два метода получения маркеров безо
 
 Некоторые ситуации требуют принуждения пользователей взаимодействовать с конечной точкой Azure Active Directory (Azure AD) версии 2.0, что приведет к переключению контекста в системный браузер для проверки учетных данных пользователей или для получения согласия. Некоторые примеры:
 
-* Первый вход пользователей в приложение.
-* Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля.
-* Ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие.
-* Требуется двухфакторная проверка подлинности.
+* первый вход пользователей в приложение;
+* когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;
+* когда ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие.
+* когда требуется двухфакторная проверка подлинности.
 
 ```swift
 applicationContext.acquireToken(forScopes: self.kScopes) { (result, error) in /* Add your handling logic */}

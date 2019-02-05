@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Получение списка поддерживаемых языков, Node.js — API перевода текстов
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью Node.js и API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Node.js.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 10/29/2018
 ms.author: erhopf
-ms.openlocfilehash: 2d87173384a171d6b96ffa52c1d0bf80069a34c2
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 71af575273b7299979679fa149c4960143b2b221
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50250671"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208352"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-with-nodejs"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Node.js, используя API перевода текстов
+# <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-with-nodejs"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Node.js и API перевода текстов
 
 В этом кратком руководстве вы узнаете, как сделать запрос GET, который возвращает список поддерживаемых языков, с использованием Node.js и REST API перевода текстов.
 
@@ -27,7 +27,7 @@ ms.locfileid: "50250671"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Node 8.12.x или более поздней версии](https://nodejs.org/en/).
+* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
 * ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
@@ -68,7 +68,7 @@ if (!subscriptionKey) {
 Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [определениям в Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
 
 ```javascript
 let options = {
@@ -215,7 +215,7 @@ node get-languages.js
 
 Помимо определения языка, API перевода текстов можно использовать для выполнения и других задач, в частности:
 
-* [перевода текста](quickstart-nodejs-translate.md);
+* [перевод текста](quickstart-nodejs-translate.md);
 * [транслитерация текста](quickstart-nodejs-transliterate.md);
 * [определение языка по входным данным](quickstart-nodejs-detect.md);
 * [получение вариантов перевода](quickstart-nodejs-dictionary.md);

@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/11/2019
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 97b1efbcb02277028782764ca1018b195ab21277
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 906efa00243cc622c374d442a7982d87d106079b
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54246370"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158848"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -109,7 +109,7 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry --sku 
 
 ## <a name="push-the-images-to-azure-container-registry"></a>Принудительная отправка образов в Реестр контейнеров Azure
 
-В этом руководстве используется пример приложения списка дел.  Образы контейнера для [WebFrontEnd](https://hub.docker.com/r/seabreeze/azure-mesh-todo-webfrontend/) и службы [ToDoService](https://hub.docker.com/r/seabreeze/azure-mesh-todo-service/) можно найти в центре Docker. Дополнительные сведения о том, как создать приложение в Visual Studio, см. в разделе [Создание веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-create-dotnetcore.md). Сетка Service Fabric может запускать контейнеры Docker Windows или Linux.  Если вы работаете с контейнерами Linux, выберите **Переключиться на контейнеры Linux** в Docker.  Если вы работаете с контейнерами Windows, выберите **Переключиться на контейнеры Windows** в Docker.
+В этом руководстве используется пример приложения списка дел.  Образы контейнера для [WebFrontEnd](https://hub.docker.com/r/seabreeze/azure-mesh-todo-webfrontend/) и службы [ToDoService](https://hub.docker.com/r/seabreeze/azure-mesh-todo-service/) можно найти в центре Docker. Дополнительные сведения о том, как создать приложение в Visual Studio, см. в статье [Руководство по созданию, отладке, развертыванию и обновлению приложения на базе нескольких служб в Сетке Service Fabric](service-fabric-mesh-tutorial-create-dotnetcore.md). Сетка Service Fabric может запускать контейнеры Docker Windows или Linux.  Если вы работаете с контейнерами Linux, выберите **Переключиться на контейнеры Linux** в Docker.  Если вы работаете с контейнерами Windows, выберите **Переключиться на контейнеры Windows** в Docker.
 
 Чтобы отправить образ в экземпляр ACR, сначала нужно получить образ контейнера. Если у вас еще нет локальных образов контейнера, используйте команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы извлечь образы [WebFrontEnd](https://hub.docker.com/r/seabreeze/azure-mesh-todo-webfrontend/) и [ToDoService](https://hub.docker.com/r/seabreeze/azure-mesh-todo-service/) из Docker Hub.
 

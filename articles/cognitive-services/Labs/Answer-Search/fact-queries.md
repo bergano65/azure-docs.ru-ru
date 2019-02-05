@@ -6,18 +6,18 @@ services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: answer-search
+ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/16/2018
 ms.author: rosh
-ms.openlocfilehash: 7e8a793362e51a05a73c0b42346e2e8fafb3f44d
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: b8358890658a38133452ba2092ac9b8b78114ff7
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469407"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210953"
 ---
-# <a name="quickstart-query-for-facts"></a>Краткое руководство. Запрашивание фактов
+# <a name="quickstart-query-for-facts"></a>Краткое руководство. Запрос фактов
 
 Если запрос относится к факту, например дате или идентифицируемому знанию, ответ может содержать ответы `facts`. Ответы фактов содержат соответствующие запросу результаты, извлеченные из абзацев в веб-документах.  Такие запросы всегда возвращают веб-страницы, а [факты](fact-queries.md) и (или) [сущности](entity-queries.md) зависят от запроса.
 
@@ -26,14 +26,14 @@ ms.locfileid: "49469407"
 В следующем примере представлен ответ `facts`, связанный с датой. 
 
 **Запрос**
-````
+```
 https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=valentines+2016
 
-````
+```
 
-**Ответ:** поле `subjectName` содержит отображаемую версию пользовательского запроса, которую можно использовать в качестве метки при отображении факта. Если строка запроса — "валентинки+2016", Bing может изменить ее на "День святого Валентина 2016". В поле описания содержится факт.
+**Ответ.** Поле `subjectName` содержит отображаемую версию пользовательского запроса, которую можно использовать в качестве метки при отображении факта. Если строка запроса — "валентинки+2016", Bing может изменить ее на "День святого Валентина 2016". В поле описания содержится факт.
 
-````
+```
 {   
     "_type" : "SearchResponse",   
     "queryContext" : {   
@@ -57,20 +57,20 @@ https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=valentines+2016
     }   
 }   
 
-````
+```
 
 Запрос "Почему небо голубое?" возвращает пример ответа, связанного со знанием.
 
 **Запрос**
 
-````
+```
 https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=why+is+the+sky+blue
 
-````
+```
 
-**Ответ:** поле `value/description` содержит знание или сведения, запрашиваемые в запросе.
+**Ответ.** Поле `value/description` содержит знание или сведения, запрашиваемые в запросе.
 
-````
+```
   "facts": {
     "id": "https://www.bingapis.com/api/v7/#Facts",
     "contractualRules": [
@@ -112,17 +112,17 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=why+is+the+s
     ]
   },
 
-````
+```
 
 ## <a name="tabular-data"></a>табличные данные.
 В некоторых случаях факты могут возвращаться как `_type: StructuredValue/TabularData`. Следующий запрос получает табличные данные с контрастными сведениями о кофе и чае.
 
-````
+```
 https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=coffee+vs+tea&mkt=en-us 
 
-````
+```
 Результаты `facts` включают в себя следующие строки и ячейки:
-````
+```
     "value": [
       {
         "subjectName": "Coffee vs. Tea",
@@ -196,7 +196,7 @@ https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=coffee+vs+tea&mkt
     ]
   },
 
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство для C#](c-sharp-quickstart.md)

@@ -6,16 +6,16 @@ services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 12/03/2018
 ms.author: erhopf
-ms.openlocfilehash: d810b282936db1a31cdeb0133ce3c5bf0059850b
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 00ffb0eef5b7452894b27a00328dae4546d45c6f
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890792"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208443"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-java"></a>Краткое руководство. Определение языка текста с помощью Java и API перевода текстов
 
@@ -38,7 +38,7 @@ mkdir detect-sample
 cd detect-sample
 ```
 
-После этого вы инициализируете проект Gradle. Что самое важное, эта команда создает необходимый файл сборки для Gradle (`build.gradle.kts`), который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+После этого вы инициализируете проект Gradle. Эта команда создает необходимые файлы сборки для Gradle, прежде всего `build.gradle.kts`, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
 
 ```console
 gradle init --type basic

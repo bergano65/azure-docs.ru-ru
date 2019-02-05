@@ -9,13 +9,13 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
-ms.component: blobs
-ms.openlocfilehash: a69d67ee455b447eb038903bb8fafb644d025662
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.subservice: blobs
+ms.openlocfilehash: a1dba92a9e156c82f49b9f6f85faf227fc652029
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51565740"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55240086"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "51565740"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством вы должны прежде ознакомиться с руководством о [создании виртуальной машины и учетной записи хранения для масштабируемого приложения][previous-tutorial].
+Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища: [Создание виртуальной машины и учетной записи хранения для масштабируемого приложения][previous-tutorial].
 
 ## <a name="remote-into-your-virtual-machine"></a>Удаленное подключение к виртуальной машине
 

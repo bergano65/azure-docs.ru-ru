@@ -6,18 +6,18 @@ services: cognitive-services
 author: SteveMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: face-api
+ms.subservice: face-api
 ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: e8bbf78da84ddb77ce956e37f91be46e96144991
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 9289f7178a6e285b447041937f191d283fc2f2f0
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123085"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55222904"
 ---
-# <a name="example-how-to-use-the-large-scale-feature"></a>Пример. Как использовать функцию увеличения масштаба
+# <a name="example-how-to-use-the-large-scale-feature"></a>Пример: Как использовать функцию увеличения масштаба
 
 Это руководство представляет собой расширенную статью о переносе кода для увеличения масштаба существующих PersonGroup и FaceList до LargePersonGroup и LargeFaceList соответственно.
 В нем демонстрируется процесс переноса и предполагается, что пользователь владеет базовыми навыками работы с PersonGroup и FaceList.
@@ -39,13 +39,13 @@ LargePersonGroup может содержать до 1 000 000 человек и 
 
 Если вы не знакомы с приведенными ниже понятиями в этом руководстве, их определения можно найти в нашем [глоссарии](../Glossary.md).
 
-- LargePersonGroup: коллекция Person, содержащая до 1 000 000 элементов.
-- LargePersonGroup: коллекция Face, содержащая до 1 000 000 элементов.
-- Train: предварительная обработка для обеспечения производительности операций Identification и FindSimilar.
+- LargePersonGroup: коллекция Person, содержащая до 1 000 000 элементов.
+- LargeFaceList: коллекция Face, содержащая до 1 000 000 элементов.
+- Обучение: предварительная обработка для обеспечения производительности операций Identification и FindSimilar.
 - Identification: определение одного или нескольких лиц в PersonGroup или LargePersonGroup.
 - FindSimilar: поиск похожих лиц в FaceList или LargeFaceList.
 
-## <a name="step-1-authorize-the-api-call"></a>Шаг 1. Авторизация вызова API
+## <a name="step-1-authorize-the-api-call"></a>Шаг 1. Авторизация вызова API
 
 При использовании клиентской библиотеки API распознавания лиц ключ и конечная точка подписки передаются через конструктор класса FaceServiceClient. Например: 
 
@@ -59,14 +59,14 @@ FaceServiceClient FaceServiceClient = new FaceServiceClient(SubscriptionKey, Sub
 Ключ подписки и соответствующую конечную точку можно получить на странице "Marketplace" портала Azure.
 Ознакомьтесь со страницей [подписок](https://azure.microsoft.com/services/cognitive-services/directory/vision/).
 
-## <a name="step-2-code-migration-in-action"></a>Шаг 2. Перенос кода
+## <a name="step-2-code-migration-in-action"></a>Шаг 2. Перенос кода
 
 Этот раздел посвящен только переносу реализации PersonGroup и FaceList в LargePersonGroup и LargeFaceList.
 Хотя структура и внутренняя реализация LargePersonGroup и LargeFaceList отличается от PersonGroup и FaceList, их интерфейсы API схожи, что обеспечивает обратную совместимость.
 
 Перенос данных не поддерживается, вам потребуется воссоздать LargePersonGroup и LargeFaceList.
 
-## <a name="step-21-migrate-persongroup-to-largepersongroup"></a>Шаг 2.1. Перенос PersonGroup в LargePersonGroup
+## <a name="step-21-migrate-persongroup-to-largepersongroup"></a>Шаг 2.1. Перенос PersonGroup в LargePersonGroup
 
 Перенести PersonGroup в LargePersonGroup просто, так как они используют одинаковые операции уровня группы.
 
@@ -74,12 +74,12 @@ FaceServiceClient FaceServiceClient = new FaceServiceClient(SubscriptionKey, Sub
 
 С переносом данных можно ознакомиться в разделе [Как добавлять лица](how-to-add-faces.md).
 
-## <a name="step-22-migrate-facelist-to-largefacelist"></a>Шаг 2.2. Перенос FaceList в LargeFaceList
+## <a name="step-22-migrate-facelist-to-largefacelist"></a>Шаг 2.2. Перенос FaceList в LargeFaceList
 
 | Интерфейсы API FaceList | Интерфейсы API LargeFaceList |
 |:---:|:---:|
 | Создание | Создание |
-| Delete | Delete |
+| Delete (Удалить) | Delete (Удалить) |
 | Получить | Получить |
 | список | список |
 | Блокировка изменений | Блокировка изменений |
@@ -212,7 +212,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 Как показано выше, управление данными и часть FindSimilar почти идентичны.
 Единственным исключением является новая операция предварительной обработки Train, которую необходимо выполнить в LargeFaceList перед операцией FindSimilar.
 
-## <a name="step-3-train-suggestions"></a>Шаг 3. Формирование вариантов поиска
+## <a name="step-3-train-suggestions"></a>Шаг 3. Формирование вариантов поиска
 
 Хотя операция Train ускоряет операции [FindSimilar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) и [Identification](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), время обучения при большом масштабе особенно увеличивается.
 В следующей таблице приведено предполагаемое время обучения при различных масштабах.
@@ -226,7 +226,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Для оптимального использования крупномасштабных функций рекомендуется рассмотреть несколько стратегий.
 
-## <a name="step-31-customize-time-interval"></a>Шаг 3.1. Интервал времени настройки
+## <a name="step-31-customize-time-interval"></a>Шаг 3.1. Настройка интервала времени
 
 Как показано в `TrainLargeFaceList()`, имеется параметр `timeIntervalInMilliseconds`, позволяющий отложить процесс проверки бесконечного состояния обучения.
 Если указать больший интервал для LargeFaceList с большим числом лиц, это сократит количество вызовов и затраты.

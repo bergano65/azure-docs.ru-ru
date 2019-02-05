@@ -4,223 +4,196 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: d26034b8-f0d5-4f65-aa56-0fc168ceec8c
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/05/2017
+ms.topic: tutorial
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: d55aa873d0ad410b91dc678d1fe4784e00ed5487
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 4c2d07ba33e26b1b85225f0577754cd375e887db
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812477"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55460307"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange
 
 В этом руководстве описано, как интегрировать Alcumus Info Exchange с Azure Active Directory (Azure AD).
-
 Интеграция приложения Alcumus Info Exchange с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Alcumus Info Exchange.
-- Вы можете включить автоматический вход пользователей в Alcumus Info Exchange (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Alcumus Info Exchange.
+* Можно включить автоматический вход пользователей в Alcumus Info Exchange (единый вход) с использованием их учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Alcumus Info Exchange, вам потребуется:
 
-- подписка Azure AD;
-- подписка Alcumus Info Exchange с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Alcumus Info Exchange с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Alcumus Info Exchange из коллекции
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+
+* Alcumus Info Exchange поддерживает единый вход, инициируемый **поставщиком удостоверений**.
 
 ## <a name="adding-alcumus-info-exchange-from-the-gallery"></a>Добавление Alcumus Info Exchange из коллекции
+
 Чтобы настроить интеграцию Alcumus Info Exchange с Azure AD, вам нужно добавить Alcumus Info Exchange из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Alcumus Info Exchange из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Alcumus Info Exchange**.
+4. Чтобы добавить это приложение, в поле поиска введите **Alcumus Info Exchange**, выберите **Alcumus Info Exchange** на панели результатов и нажмите кнопку **Добавить**.
 
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_search.png)
+     ![Alcumus Info Exchange в списке результатов](common/search-new-app.png)
 
-5. В области результатов выберите **Alcumus Info Exchange** и щелкните **Добавить**, чтобы добавить это приложение.
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_addfromgallery.png)
-
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Alcumus Info Exchange с использованием тестового пользователя Britta Simon.
-
-Для использования единого входа в Azure AD необходимо знать, какой пользователь в Alcumus Info Exchange соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Alcumus Info Exchange.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Alcumus Info Exchange.
+В этом разделе описана настройка и проверка единого входа Azure AD в Alcumus Info Exchange с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить единый вход, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Alcumus Info Exchange.
 
 Чтобы настроить и проверить единый вход Azure AD в Alcumus Info Exchange, вам потребуется выполнить действия в следующих стандартных блоках:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Alcumus Info Exchange](#creating-an-alcumus-info-exchange-test-user)** нужно для того, чтобы в Alcumus Info Exchange также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройку единого входа в Alcumus Info Exchange](#configure-alcumus-info-exchange-single-sign-on)** необходимо выполнить, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Alcumus Info Exchange](#create-alcumus-info-exchange-test-user)** нужно для того, чтобы в Alcumus Info Exchange также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход в Azure AD на портале управления Azure и настроить его в приложении Alcumus Info Exchange.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Alcumus Info Exchange, выполните следующие действия:**
+Чтобы настроить единый вход Azure AD в Alcumus Info Exchange, выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Alcumus Info Exchange** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Alcumus Info Exchange** выберите **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения Alcumus Info Exchange** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.info-exchange.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Alcumus Info Exchange](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.info-exchange.com`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.info-exchange.com/Auth/`.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь к [группе поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы получить эти значения.
- 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь в [службу технической поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы получить эти значения. Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_certificate.png) 
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-5. Нажмите кнопку **Сохранить** .
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-    ![Настройка единого входа](./media/alcumus-info-tutorial/tutorial_general_400.png)
+6. Требуемый URL-адрес можно скопировать из раздела **настройки Alcumus Info Exchange**.
 
-6. Чтобы настроить единый вход на стороне **Alcumus Info Exchange**, отправьте скачанный **XML-файл метаданных** [группе поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com).
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+    a. URL-адрес входа.
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-alcumus-info-exchange-single-sign-on"></a>Настройка единого входа в приложении Alcumus Info Exchange
+
+Чтобы настроить единый вход на стороне **Alcumus Info Exchange**, необходимо отправить скачанный **XML-файл метаданных федерации** и соответствующие скопированные URL-адреса с портала Azure в [службу технической поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-2. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее.
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/alcumus-info-tutorial/create_aaduser_04.png) 
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    d. Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
-
-    d. Щелкните **Создать**.
- 
-### <a name="creating-an-alcumus-info-exchange-test-user"></a>Создание тестового пользователя Alcumus Info Exchange
-
-Цель этого раздела — создать пользователя с именем Britta Simon в Alcumus Info Exchange.
-
-Чтобы создать пользователя Britta Simon в Alcumus Info Exchange, обратитесь к [группе поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com).
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Alcumus Info Exchange.
 
-![Назначение пользователя][200] 
+1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения** и **Alcumus Info Exchange**.
 
-**Чтобы назначить Britta Simon в Alcumus Info Exchange, выполните следующие действия:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. В списке приложений выберите **Alcumus Info Exchange**.
 
-    ![Настройка единого входа](./media/alcumus-info-tutorial/tutorial_alcumusinfoexchange_app.png) 
+    ![Ссылка на Alcumus Info Exchange в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][203]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
 
-Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.  
-Щелкнув элемент Alcumus Info Exchange на панели доступа, вы автоматически войдете в приложение Alcumus Info Exchange.
+### <a name="create-alcumus-info-exchange-test-user"></a>Создание тестового пользователя Alcumus Info Exchange
+
+В рамках этого раздела вы создадите пользователя Britta Simon в приложении Alcumus Info Exchange. Обратитесь в  [службу технической поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы добавить пользователей на платформу Alcumus Info Exchange. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув элемент Alcumus Info Exchange на панели доступа, вы автоматически войдете в приложение Alcumus Info Exchange, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/alcumus-info-tutorial/tutorial_general_01.png
-[2]: ./media/alcumus-info-tutorial/tutorial_general_02.png
-[3]: ./media/alcumus-info-tutorial/tutorial_general_03.png
-[4]: ./media/alcumus-info-tutorial/tutorial_general_04.png
-
-[100]: ./media/alcumus-info-tutorial/tutorial_general_100.png
-
-[200]: ./media/alcumus-info-tutorial/tutorial_general_200.png
-[201]: ./media/alcumus-info-tutorial/tutorial_general_201.png
-[202]: ./media/alcumus-info-tutorial/tutorial_general_202.png
-[203]: ./media/alcumus-info-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

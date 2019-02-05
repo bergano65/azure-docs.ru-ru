@@ -1,21 +1,21 @@
 ---
-title: Руководство. Использование Анализа текста и C#
+title: Руководство. API анализа текста с использованием C#
 titleSuffix: Azure Cognitive Services
 description: Подключение к службе "Анализ текста" из веб-приложения ASP.NET Core.
 services: cognitive-services
 author: ghogen
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 09/12/2018
 ms.author: ghogen
-ms.openlocfilehash: 95de174087fb2a73ad6c75a2e96caf872c351854
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 6527e053f685fd7947e123d15c0d33399d07e61f
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605238"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55227256"
 ---
 # <a name="tutorial-connect-to-the-text-analytics-cognitive-service-by-using-connected-services-in-visual-studio"></a>Руководство. Подключение к службе "Анализ текста" в Cognitive Services с помощью Подключенных службы в Visual Studio
 

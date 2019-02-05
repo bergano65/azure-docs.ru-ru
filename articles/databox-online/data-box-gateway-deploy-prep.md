@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 01/28/2019
 ms.author: alkohli
-ms.openlocfilehash: 6db713984b62ce3db48b2e72a4b117696bdd6add
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 6f47606e91ec55bae624527bace81d947c5ea4f9
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452978"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55091552"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway-preview"></a>Руководство. Подготовка к развертыванию Шлюза Azure Data Box (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "54452978"
 | **#** | **Шаг** | **Документы для изучения** |
 | --- | --- | --- | 
 | 1. |**[Руководство: подготовка к развертыванию Шлюза Azure Data Box (предварительная версия)](data-box-gateway-deploy-prep.md)** |Создайте и настройте свой ресурс Шлюза Data Box перед подготовкой виртуального устройства Шлюза Data Box. |
-| 2. |**[Подготовка Шлюза Data Box в Hyper-V](data-box-gateway-deploy-provision-hyperv.md)** <br><br><br>**[Руководство. Подготовка к работе Шлюза Azure Data Box в VMware](data-box-gateway-deploy-provision-vmware.md)**|Для Hyper-V: подготовьте виртуальное устройство Шлюза Data Box к работе и установите подключение к нему в главной системе под управлением Hyper-V на платформе Windows Server 2016 или Windows Server 2012 R2. <br><br><br> Для VMware: подготовьте виртуальное устройство Шлюза Data Box к работе и установите подключение к нему в главной системе под управлением VMware ESXi версии 6.0 или 6.5.<br></br> |
+| 2. |**[Подготовка Шлюза Data Box в Hyper-V](data-box-gateway-deploy-provision-hyperv.md)** <br><br><br>**[Руководство. Подготовка к работе Шлюза Azure Data Box в VMware](data-box-gateway-deploy-provision-vmware.md)**|Для Hyper-V: подготовьте виртуальное устройство Шлюза Data Box к работе и установите подключение к нему в главной системе под управлением Hyper-V на платформе Windows Server 2016 или Windows Server 2012 R2. <br><br><br> В случае с VMware подготовьте виртуальное устройство Шлюза Data Box и установите подключение к нему в главной системе под управлением VMware ESXi версии 6.0, 6.5 или 6.7.<br></br> |
 | 3. |**[Connect, set up, activate the Data Box Gateway](data-box-gateway-deploy-connect-setup-activate.md)** (Подключение, настройка, активация Шлюза Data Box) |Подключитесь к локальному пользовательскому веб-интерфейсу, выполните настройку устройства и активируйте устройство. Затем подготовьте к работе общие папки SMB.  |
 | 4. |**[Руководство по передаче данных с помощью службы "Шлюз Azure Data Box" (предварительная версия)](data-box-gateway-deploy-add-shares.md)** |Предоставьте общий доступ, подключитесь к общим ресурсам через SMB или NFS. |
 
@@ -63,7 +63,7 @@ ms.locfileid: "54452978"
 
 Перед развертыванием виртуального устройства нужно выполнить указанные ниже условия.
 
-* У вас должен быть доступ к главной системе, в которой выполняется Hyper-V на платформе Windows Server 2012 R2 или более поздней версии либо VMware (ESXi 6.0 или 6.5), которую можно использовать для подготовки устройства.
+* У вас должен быть доступ к главной системе, в которой выполняется Hyper-V на платформе Windows Server 2012 R2 или более поздней версии либо VMware (ESXi 6.0, 6.5 или 6.7), которую можно использовать для подготовки устройства.
 * Главная система должна быть в состоянии выделить указанный ниже объем ресурсов для подготовки виртуального устройства Data Box.
   
   * Не менее 4 ядер.
@@ -126,7 +126,7 @@ ms.locfileid: "54452978"
 4. В области быстрого запуска справа щелкните ссылку на образ, который вы хотите скачать. Размер файла образа составляет около 4,8 ГБ.
    
    * [VHDX для Hyper-V в Windows Server 2012 R2 и более поздней версии](https://aka.ms/dbe-vhdx-2012).
-   * [VMDK для VMWare ESXi 6.0 и 6.5](https://aka.ms/dbe-vmdk).
+   * [VMDK для VMWare ESXi 6.0, 6.5 или 6.7](https://aka.ms/dbe-vmdk).
 
 5. Скачайте файл и распакуйте его на локальный диск, запомнив, где находится распакованный файл.
 

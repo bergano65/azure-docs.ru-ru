@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 67e74774-1748-43ea-8130-55275a18320f
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -17,14 +17,14 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: jmprieur, andret
 ms.custom: aaddev
-ms.openlocfilehash: 239c0d0adbe89dd3d1d7bc7244a52ab079a36ad4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f44955e13cb5774119dc083f4a3220b432d9cd9e
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952551"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098070"
 ---
-# <a name="quickstart-build-a-net-web-api-that-integrates-with-azure-ad-for-authentication-and-authorization"></a>Краткое руководство по созданию веб-интерфейса API для .NET, который интегрируется с Azure AD для аутентификации и авторизации
+# <a name="quickstart-build-a-net-web-api-that-integrates-with-azure-ad-for-authentication-and-authorization"></a>Краткое руководство. Создание веб-интерфейса API для .NET, который интегрируется с Azure AD для аутентификации и авторизации
 
 [!INCLUDE [active-directory-develop-applies-v1](../../../includes/active-directory-develop-applies-v1.md)]
 
@@ -43,12 +43,12 @@ ms.locfileid: "46952551"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы начать работу, выполните следующие предварительные требования.
+Чтобы начать работу, выполните следующие предварительные требования:
 
-* [Скачайте схему приложения](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip). Каждый из них является решением Visual Studio 2013.
+* Скачайте [схему приложения](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip). Каждый из них является решением Visual Studio 2013.
 * Вам также потребуется клиент Azure AD для регистрации приложения. Если у вас нет клиента, [узнайте, как его получить](quickstart-create-new-tenant.md).
 
-## <a name="step-1-register-an-application-with-azure-ad"></a>Шаг 1. Регистрация приложения в Azure AD
+## <a name="step-1-register-an-application-with-azure-ad"></a>Шаг 1. зарегистрировать приложение в Azure AD;
 
 Для защиты приложения необходимо сначала создать приложение в клиенте и предоставить Azure AD некоторую важную информации.
 
@@ -65,7 +65,7 @@ ms.locfileid: "46952551"
 6. На странице **Параметры > Свойства** приложения обновите URI идентификатора. Введите идентификатор конкретного клиента. Например, введите `https://contoso.onmicrosoft.com/TodoListService`.
 7. Сохраните конфигурацию. Не закрывайте портал, так как через некоторое время потребуется зарегистрировать клиентское приложение.
 
-## <a name="step-2-set-up-the-app-to-use-the-owin-authentication-pipeline"></a>Шаг 2. Настройка приложения для использования конвейера аутентификации OWIN
+## <a name="step-2-set-up-the-app-to-use-the-owin-authentication-pipeline"></a>Шаг 2. Настройка приложения для использования конвейера аутентификации OWIN
 
 Чтобы проверять входящие запросы и токены, необходимо настроить приложение для взаимодействия с Azure AD.
 
@@ -135,7 +135,7 @@ ms.locfileid: "46952551"
     * `ida:Tenant` — это имя вашего клиента Azure AD, например contoso.onmicrosoft.com.
     * `ida:Audience` — это URI идентификатора приложения, введенное на портале Azure.
 
-## <a name="step-3-configure-a-client-application-and-run-the-service"></a>Шаг 3. Настройка клиентского приложения и запуск службы
+## <a name="step-3-configure-a-client-application-and-run-the-service"></a>Шаг 3. Настройка клиентского приложения и запуск службы
 
 Чтобы увидеть службу списка дел в действии, необходимо настроить клиент списка дел для получения токенов от Azure AD и выполнения вызовов службы.
 

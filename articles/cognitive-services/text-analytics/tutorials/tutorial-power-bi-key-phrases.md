@@ -1,21 +1,21 @@
 ---
-title: Руководство. Использование Анализа текста с Power BI
+title: Руководство. Текстовая аналитика с использованием Power BI
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать службу "Анализ текста" для извлечения ключевых фраз из текста, хранимого в Power BI.
 services: cognitive-services
 author: luiscabrer
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 09/12/2018
 ms.author: luisca
-ms.openlocfilehash: fe6bc384e4190cd17df00ddf285701db8c4199a6
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 0bda38db089218e0d5f6f8ff15c9eac888900e95
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45733335"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55209100"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство. Интеграция Power BI с Анализом текста в Cognitive Services
 

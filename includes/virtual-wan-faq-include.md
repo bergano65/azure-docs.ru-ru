@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: include
-ms.date: 10/05/2018
+ms.date: 10/19/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 761b68ca99df8ae5b4d379b95e7d2a300f7e6238
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 98ea4d78a473123708be6e371587252acad6ffcd
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48874101"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55205109"
 ---
 ### <a name="what-is-the-difference-between-an-azure-virtual-network-gateway-vpn-gateway-and-an-azure-virtual-wan-vpngateway"></a>Какая разница между шлюзом Виртуальной сети Azure (VPN-шлюз) и Виртуальной глобальной сетью Azure vpngateway?
 
@@ -29,7 +29,7 @@ ms.locfileid: "48874101"
 
 ### <a name="am-i-required-to-use-a-preferred-partner-device"></a>Нужно ли использовать основное устройство партнера?
 
-Нет. Вы можете использовать любое VPN-устройство, отвечающее требованиям Azure для поддержки IKEv2/IKEv1 IPsec.
+№ Вы можете использовать любое VPN-устройство, отвечающее требованиям Azure для поддержки IKEv2/IKEv1 IPsec.
 
 ### <a name="how-do-virtual-wan-partners-automate-connectivity-with-azure-virtual-wan"></a>Как партнеры Виртуальной глобальной сети автоматизируют подключение с помощью Виртуальной глобальной сети Azure?
 
@@ -53,11 +53,11 @@ ms.locfileid: "48874101"
 
 ### <a name="is-global-vnet-peering-supported-with-azure-virtual-wan"></a>Поддерживает ли Виртуальная глобальная сеть Azure глобальный пиринг виртуальных сетей? 
 
- Нет.
+ №
 
 ### <a name="can-spoke-vnets-connected-to-a-virtual-hub-communicate-with-each-other"></a>Может ли периферийная зона виртуальных сетей, подключенная к виртуальному центру, обмениваться данными?
 
-Да. Можно сделать пиринговую связь между виртуальными сетями и периферийными зонами, которые подключаются к виртуальному центру. Дополнительные сведения см. в статье [Virtual network peering](../articles/virtual-network/virtual-network-peering-overview.md) (Пиринг между виртуальными сетями).
+Да. Лучевые виртуальные сети могут взаимодействовать напрямую с помощью пиринга между виртуальными сетями. Но транзитное взаимодействие виртуальных сетей через центральную виртуальную сеть не поддерживается. Дополнительные сведения см. в статье [Virtual network peering](../articles/virtual-network/virtual-network-peering-overview.md) (Пиринг между виртуальными сетями).
 
 ### <a name="can-i-deploy-and-use-my-favorite-network-virtual-appliance-in-an-nva-vnet-with-azure-virtual-wan"></a>Можно ли развернуть и использовать избранный модуль виртуальной сети (в модуле виртуальной сети) в Виртуальной глобальной сети Azure?
 
@@ -65,7 +65,7 @@ ms.locfileid: "48874101"
 
 ### <a name="can-an-nva-vnet-have-a-virtual-network-gateway"></a>Может ли модуль виртуальной сети иметь шлюз?
 
-Нет. Модуль виртуальной сети не может иметь шлюз, если он подключен к виртуальному центру. 
+№ Модуль виртуальной сети не может иметь шлюз, если он подключен к виртуальному центру. 
 
 ### <a name="is-there-support-for-bgp"></a>Поддерживается ли протокол BGP?
 
