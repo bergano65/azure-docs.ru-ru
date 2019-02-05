@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 01/24/2019
 ms.author: alkohli
-ms.openlocfilehash: fa0883c18e0d586e6e9b35fb19dbe304388045b5
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: 85c9eeb60027ba44fd5e65d056864aa76a6e720a
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215292"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54900890"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -22,9 +22,9 @@ ms.locfileid: "54215292"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Подключение к хранилищу BLOB-объектов Data Box по протоколу *HTTP* или *HTTPS*
+> * Предварительные требования
+> * Подключение к хранилищу BLOB-объектов Data Box по протоколу *HTTP* или *HTTPS*.
 > * копирование данных в Data Box;
-> * Подготовка к отправке
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -201,20 +201,19 @@ ms.locfileid: "54215292"
     AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
 
 
-## <a name="prepare-to-ship"></a>Подготовка к отправке
-
-[!INCLUDE [data-box-prepare-to-ship](../../includes/data-box-prepare-to-ship.md)]
+Следующий шаг — подготовка устройства к отправке.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве были освещены следующие темы относительно Azure Data Box.
 
 > [!div class="checklist"]
+> * Предварительные требования
 > * Подключение к хранилищу BLOB-объектов Data Box по протоколу *HTTP* или *HTTPS*.
 > * копирование данных в Data Box;
-> * Подготовка к отправке
 
-Перейдите к следующему руководству, чтобы узнать, как отправить свой диск Data Box обратно в корпорацию Майкрософт.
+
+Перейдите к следующему руководству, чтобы узнать, как отправить свой Data Box обратно в корпорацию Майкрософт.
 
 > [!div class="nextstepaction"]
 > [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
