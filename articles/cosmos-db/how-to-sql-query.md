@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/15/2018
 ms.author: mjbrown
-ms.openlocfilehash: c3a25f69424d56e77022a89580ace59259af0e47
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 5884295e93a14d74a125c27ea597f2311478042a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888623"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55459032"
 ---
-# <a name="sql-query-examples-to-query-data-from-azure-cosmos-db"></a>Примеры запросов SQL для запроса данных из Azure Cosmos DB
+# <a name="sql-query-examples-for-azure-cosmos-db"></a>Примеры SQL-запросов для Azure Cosmos DB
 
 Azure Cosmos DB поддерживает элементы запросов на SQL (язык структурированных запросов) в качестве языка запросов JSON в учетных записях API SQL. При разработке языка запросов для Azure Cosmos DB рассматриваются следующие две цели.
 

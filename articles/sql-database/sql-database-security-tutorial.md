@@ -1,6 +1,6 @@
 ---
-title: Защита отдельной базы данных в Базе данных SQL Azure | Документация Майкрософт
-description: Узнайте о методах и функциях, используемых для защиты отдельной базы данных в Базе данных SQL Azure.
+title: Защита изолированной базы данных или базы данных в составе пула в Базе данных SQL Azure | Документация Майкрософт
+description: Узнайте о методах и функциях, используемых для защиты изолированной базы данных или базы данных в составе пула в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -10,16 +10,16 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/30/2019
-ms.openlocfilehash: 627e7acf0cf2bc38a54f6c89e16242055caca611
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 1fe92f5632544f21506bd19a52a59ed75cabe3b3
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55297078"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55461208"
 ---
-# <a name="tutorial-single-database-security-in-azure-sql-database"></a>Руководство. Защита отдельной базы данных в Базе данных SQL Azure
+# <a name="tutorial-secure-a-standalone-or-pooled-database"></a>Руководство. Защита изолированной базы данных или базы данных в составе пула
 
-База данных SQL Azure защищает данные в отдельной базе данных SQL, предоставляя возможность:
+База данных SQL Azure защищает данные в изолированной базе данных или базе данных в составе пула, предоставляя возможность:
 
 - ограничить доступ с помощью правил брандмауэра;
 - использовать механизмы аутентификации, требующие учетных данных;
@@ -45,7 +45,7 @@ ms.locfileid: "55297078"
 
 - [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
 - Сервер SQL Azure и база данных.
-    - Создайте их с помощью [портала Azure](sql-database-get-started-portal.md), [CLI](sql-database-cli-samples.md) или [PowerShell](sql-database-powershell-samples.md).
+  - Создайте их с помощью [портала Azure](sql-database-get-started-portal.md), [CLI](sql-database-cli-samples.md) или [PowerShell](sql-database-powershell-samples.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -62,9 +62,9 @@ ms.locfileid: "55297078"
 > [!NOTE]
 > База данных SQL обменивается данными через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш администратор не откроет порт 1433.
 
-### <a name="set-up-server-level-firewall-rules"></a>Установка правил брандмауэра уровня сервера
+### <a name="set-up-sql-database-server-firewall-rules"></a>Настройка правил брандмауэра для сервера Базы данных SQL
 
-Правила брандмауэра уровня сервера применяются ко всем базам данных на одном логическом сервере.
+Правила брандмауэра уровня сервера применяются ко всем базам данных на одном сервере Базы данных SQL.
 
 Чтобы установить правило брандмауэра на уровне сервера, сделайте следующее:
 
@@ -88,7 +88,7 @@ ms.locfileid: "55297078"
 > [!IMPORTANT]
 > По умолчанию доступ через брандмауэр Базы данных SQL в разделе **Разрешить доступ к службам Azure** включен для всех служб Azure. Щелкните **Выключено**, чтобы отключить доступ для всех служб Azure.
 
-### <a name="setup-database-level-firewall-rules"></a>Установка правил брандмауэра на уровне базы данных
+### <a name="setup-database-firewall-rules"></a>Настройка правил брандмауэра для базы данных
 
 Правила брандмауэра на уровне базы данных применяются только к отдельным базам данных. Эти правила переносимы и останутся привязанными к базе данных даже в случае отработки отказа сервера. Правила брандмауэра уровня базы данных можно настроить только с помощью инструкций Transact-SQL (T-SQL) и только после настройки правила брандмауэра уровня сервера.
 
