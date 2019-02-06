@@ -6,16 +6,16 @@ services: cognitive-services
 author: ashmaka
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: article
 ms.date: 10/01/2018
 ms.author: ashmaka
-ms.openlocfilehash: e81428d5bdffb65b5e61a7aba7496da275f249a5
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 3f56bd4efafe506a95d46524713ebe49e3250f63
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230562"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55220398"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
 
@@ -54,14 +54,14 @@ ms.locfileid: "50230562"
 | Количество      | Валюта      | "10,99 долл. США"     | 
 | Количество      | Измерение     | "10 миль", "40 см"     | 
 | Количество      | температура;   | "32 градуса"    |
-| Datetime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
-| Datetime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
+| DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
+| DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
 | Дата и время     | Время          | "8 утра", "8:00"  | 
-| Datetime      | Диапазон дат     | "с 2 по 5 мая"    | 
-| Datetime      | Диапазон времени     | "6:00–17:00"     | 
-| Datetime      | Duration      | "1 минута и 45 секунд"   | 
-| Datetime      | Set           | "каждый вторник"     | 
-| Datetime      | TimeZone      |    | 
+| DateTime      | Диапазон дат     | "с 2 по 5 мая"    | 
+| DateTime      | Диапазон времени     | "6:00–17:00"     | 
+| DateTime      | Duration      | "1 минута и 45 секунд"   | 
+| DateTime      | Set           | "каждый вторник"     | 
+| DateTime      | TimeZone      |    | 
 | URL-адрес           | Недоступно\*         | "http://www.bing.com"    |
 | Email         | Недоступно\*         | "support@contoso.com" |
 \* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.
@@ -89,11 +89,11 @@ ms.locfileid: "50230562"
 }
 ```    
     
-## <a name="step-1-structure-the-request"></a>Шаг 1: Структура запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Изучите документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634).
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634)
 
 + Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
 

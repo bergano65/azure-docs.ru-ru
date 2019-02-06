@@ -11,17 +11,17 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
-ms.date: 01/16/2019
-ms.openlocfilehash: 568b239cf41c802cc5d25b638f6d1501f58eccdf
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.date: 01/25/2019
+ms.openlocfilehash: b0188a0983ea18490f3997b857386e313daa58ed
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360094"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467669"
 ---
 # <a name="configure-replication-in-azure-sql-database-managed-instance"></a>Настройка репликации в Управляемом экземпляре Базы данных SQL Azure
 
-Репликация транзакций позволяет реплицировать данные из баз данных SQL Server или Управляемого экземпляра Базы данных SQL в Управляемый экземпляр или передавать внесенные изменения в SQL Server в отдельную базу данных или в другой Управляемой экземпляр. Репликация в общедоступной предварительной версии в [Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance.md). В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Сведения о доступных конфигурациях см. [здесь](sql-database-managed-instance-transactional-replication.md#common-configurations).
+Репликация транзакций позволяет реплицировать данные из баз данных SQL Server или Управляемого экземпляра Базы данных SQL в Управляемый экземпляр. Также можно отправлять изменения, внесенные в базах данных, в SQL Server, в отдельную базу данных SQL или эластичный пул либо в другой Управляемой экземпляр. Репликация в общедоступной предварительной версии в [Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance.md). В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Сведения о доступных конфигурациях см. [здесь](sql-database-managed-instance-transactional-replication.md#common-configurations).
 
 ## <a name="requirements"></a>Требования
 
@@ -46,7 +46,7 @@ ms.locfileid: "54360094"
 
 - Сочетание экземпляров транзакционной репликации и репликации моментальных снимков в локальной среде и Управляемых экземплярах Базы данных SQL Azure.
 
-- Подписчики могут быть отдельными локальными базами данных в Базе данных SQL Azure или базами данных в эластичных пулах Базы данных SQL Azure.
+- Подписчиками могут быть отдельные локальные базы данных или базы данных в эластичных пулах в Базе данных SQL Azure.
 
 - Односторонняя или двухсторонняя репликация.
 
@@ -71,7 +71,7 @@ ms.locfileid: "54360094"
 
    В примерах сценариев ниже используйте `<SQL_USER>` и `<PASSWORD>` в качестве имени пользователя и пароля для этой учетной записи базы данных SQL Server.
 
-5. [Установите подключение к Управляемому экземпляру Базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-ssms).
+5. [Установите подключение к Управляемому экземпляру Базы данных SQL](sql-database-connect-query-ssms.md).
 
 6. Выполните следующий запрос, чтобы добавить распространителя и базу данных распространителя.
 
@@ -172,4 +172,4 @@ ms.locfileid: "54360094"
 ## <a name="see-also"></a>См. также
 
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md)
-- [Общие сведения об Управляемом экземпляре](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)
+- [Общие сведения об Управляемом экземпляре](sql-database-managed-instance.md)

@@ -8,13 +8,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/12/2017
 ms.author: seguler
-ms.component: common
-ms.openlocfilehash: 663df77a7fb574f05cfaa9378dff53ca5db21c49
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: common
+ms.openlocfilehash: c4dcb3f42d97624e66258228ce27e130a05cac70
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526115"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55456142"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -210,5 +210,5 @@ ms.locfileid: "39526115"
 
 Дополнительные сведения о примерах для других языков см. здесь:
 
-* Java: [Azure Storage samples using Java](storage-samples-java.md) (Примеры для службы хранилища Azure с использованием Java)
-* Все остальные языки: [Azure Storage samples](../storage-samples.md) (Примеры для службы хранилища Azure)
+* Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* Остальные языки: [Примеры для службы хранилища Azure](../storage-samples.md)

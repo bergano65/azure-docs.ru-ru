@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: magoedte
-ms.openlocfilehash: 3a20884dedf2d0f197cd73f0e67f412633736686
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 3a7c823493369735df23360645004b0bec85dbd7
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421581"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54885513"
 ---
 # <a name="configure-collection-of-azure-paas-resource-metrics-with-log-analytics"></a>Сбор метрик ресурсов PaaS в Azure с помощью Log Analytics
 
@@ -67,7 +67,7 @@ ms.locfileid: "54421581"
 
 При помощи скрипта для каждого из ресурсов, соответствующих выбранным условиям, будет включен сбор метрик. Когда работа завершится, появится сообщение о завершении настройки.  
 
-Вскоре после завершения вы сможете убедиться, что данные из выбранных ресурсов (ресурса) PaaS Azure поступают в репозиторий Log Analytics.  Будет создана запись с типом `AzureMetrics`. Такие записи вы можете анализировать в решениях по управлению [Аналитика SQL Azure](../../azure-monitor/insights/azure-sql.md) и [Аналитика веб-приложений Azure](../../azure-monitor/insights/azure-web-apps-analytics.md).   
+Вскоре после завершения вы сможете убедиться, что данные из выбранных ресурсов (ресурса) PaaS Azure поступают в репозиторий Log Analytics.  Будет создана запись с типом `AzureMetrics`. Такие записи вы можете анализировать в решениях по управлению [Аналитика SQL Azure](../insights/azure-sql.md) и [Аналитика веб-приложений Azure](../insights/azure-web-apps-analytics.md).   
 
 ## <a name="update-a-resource-to-send-data-to-another-workspace"></a>Изменение параметров ресурса для отправки данных в другую рабочую область
 Если ваш ресурс отправляет данные в рабочую область Log Analytics, но вам нужно перенаправить их в другую рабочую область, можно применить тот же самый скрипт с параметром `-Update`.  
@@ -79,8 +79,8 @@ ms.locfileid: "54421581"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Узнайте больше об [операциях поиска по журналу](../../azure-monitor/log-query/log-query-overview.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Узнайте больше об [операциях поиска по журналу](../log-query/log-query-overview.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 
 
-* Используйте [настраиваемые поля](../../azure-monitor/platform/custom-fields.md) для анализа записей событий по отдельным полям.
+* Используйте [настраиваемые поля](custom-fields.md) для анализа записей событий по отдельным полям.
 
-* Из статьи [Создание пользовательской панели мониторинга для Log Analytics](../../azure-monitor/platform/dashboards.md) вы узнаете, как визуализировать поиск по журналам, чтобы получить полезную для вашей организации информацию.
+* Из статьи [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](../learn/tutorial-logs-dashboards.md) вы узнаете, как визуализировать поиск по журналам, чтобы получить полезную для вашей организации информацию.

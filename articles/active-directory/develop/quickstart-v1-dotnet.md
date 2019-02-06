@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: ed33574f-6fa3-402c-b030-fae76fba84e1
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: f9389a7c0e80f075c01f2236fa1bdf9dc9544ac6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 968afcba8b0a6ab9d46c5582eecbb4901975257c
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987447"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101157"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-a-net-desktop-wpf-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из классического приложения .NET (WPF)
 
@@ -44,12 +44,12 @@ ms.locfileid: "46987447"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы начать работу, выполните следующие предварительные требования.
+Чтобы начать работу, выполните следующие предварительные требования:
 
 * [Загрузите каркас приложения](https://github.com/AzureADQuickStarts/NativeClient-DotNet/archive/skeleton.zip) или [готовый пример](https://github.com/AzureADQuickStarts/NativeClient-DotNet/archive/complete.zip)
 * Убедитесь в наличии клиента Azure AD, в котором можно создать пользователей и зарегистрировать приложение. Если клиента нет, [узнайте, как его получить](quickstart-create-new-tenant.md).
 
-## <a name="step-1-register-the-directorysearcher-application"></a>Шаг 1. Регистрация приложения DirectorySearcher
+## <a name="step-1-register-the-directorysearcher-application"></a>Шаг 1. Регистрация приложения DirectorySearcher
 
 Чтобы приложение могло получать маркеры, зарегистрируйте его в клиенте Azure AD и предоставьте ему разрешение на доступ к интерфейсу API Graph для Azure AD.
 
@@ -64,7 +64,7 @@ ms.locfileid: "46987447"
 6. После завершения регистрации служба Azure AD присваивает приложению уникальный идентификатор приложения. Это значение вам понадобится в следующих разделах, поэтому не забудьте скопировать его на странице приложения.
 7. На странице **Параметры** выберите **Необходимые разрешения** и щелкните **Добавить**. Выберите **Microsoft Graph** в качестве интерфейса API и добавьте разрешение **Чтение данных каталога** в **Делегированные разрешения**. Установка этого разрешения позволит приложению запрашивать API Graph для пользователей.
 
-## <a name="step-2-install-and-configure-adal"></a>Шаг 2. Установка и настройка ADAL
+## <a name="step-2-install-and-configure-adal"></a>Шаг 2. Установка и настройка ADAL
 
 Теперь, когда приложение зарегистрировано в Azure AD, можно установить библиотеку ADAL и написать код для работы с удостоверением. Чтобы ADAL могла обмениваться информацией с Azure AD, необходимо предоставить некоторую информацию о регистрации вашего приложения.
 
@@ -80,7 +80,7 @@ ms.locfileid: "46987447"
   * `ida:ClientId` — это идентификатор клиента приложения, скопированный с портала.
   * `ida:RedirectUri` — это URL-адрес перенаправления, зарегистрированный на портале.
 
-## <a name="step-3-use-adal-to-get-tokens-from-azure-ad"></a>Шаг 3. Использование ADAL для получения маркеров из Azure AD
+## <a name="step-3-use-adal-to-get-tokens-from-azure-ad"></a>Шаг 3. Использование ADAL для получения маркеров из Azure AD
 
 Основной принцип ADAL состоит в следующем: каждый раз, когда вашему приложению необходим маркер доступа, оно будет просто вызывать `authContext.AcquireTokenAsync(...)`, а ADAL сделает все остальное.
 

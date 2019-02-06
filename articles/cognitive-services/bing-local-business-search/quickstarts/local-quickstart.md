@@ -6,20 +6,20 @@ services: cognitive-services
 author: mikedodaro
 manager: rosh
 ms.service: cognitive-services
-ms.component: bing-local-business
+ms.subservice: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 3513ada8a911c36a31c5796214cfe35d088320b7
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 37cb122503dba31ba57dd6445317f3c54db08084
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316044"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181458"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
 
-Используйте это краткое руководство, чтобы начать отправку запросов в API Bing Local Business Search в Cognitive Services. Хотя это простое приложение написано на C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
+С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services. Хотя это простое приложение написано на C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
@@ -34,7 +34,7 @@ ms.locfileid: "52316044"
 
 Следующий код создает `WebRequest`, задает заголовок ключа доступа и добавляет строку запроса "restaurant in Bellevue" (ресторан в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
 
-````
+```
     // Replace the accessKey string value with your valid access key.
     const string accessKey = "enter key here";
 
@@ -50,7 +50,7 @@ ms.locfileid: "52316044"
 
     HttpWebResponse response = (HttpWebResponse)request.GetResponseAsync().Result;
     string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
-````
+```
 
 ## <a name="run-the-complete-application"></a>Запуск готового приложения
 
@@ -60,7 +60,7 @@ API Bing для поиска местных компаний возвращае�
 3. Замените значение accessKey ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
-````
+```
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -206,7 +206,7 @@ namespace localSearch
     }
 }
 
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](local-search-java-quickstart.md)

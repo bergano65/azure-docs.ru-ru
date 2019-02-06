@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Accredible | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Accredible | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Accredible.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 7284dfb6-df62-41f1-a4a4-1b8322b7ef44
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/07/2017
 ms.author: jeedes
-ms.openlocfilehash: b997d03534fdd7c5075b1bd483dac9ad5e1ddbd3
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: c5eaa0944210e701c306180709bf97abdbb3b9e3
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39048333"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55151283"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство по интеграции Azure Active Directory с Accredible
+# <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство. Интеграция Azure Active Directory с Accredible
 
 В этом руководстве описано, как интегрировать Accredible с Azure Active Directory (Azure AD).
 
@@ -132,7 +132,7 @@ ms.locfileid: "39048333"
 6. Чтобы настроить единый вход на стороне **Accredible**, отправьте скачанный **XML-файл метаданных** [группе поддержки Accredible](mailto:support@accredible.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "39048333"
   
 ### <a name="create-an-accredible-test-user"></a>Создание тестового пользователя Accredible
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя [группе поддержки Accredible](mailto:support@accredible.com), чтобы его проверили и отправили вам пригласительное письмо для добавления пользователя на платформу Accredible.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя  [группе поддержки Accredible](mailto:support@accredible.com), чтобы его проверили и отправили вам пригласительное письмо для добавления пользователя на платформу Accredible.
  
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39048333"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Accredible" на панели доступа, вы автоматически войдете в приложение Accredible.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

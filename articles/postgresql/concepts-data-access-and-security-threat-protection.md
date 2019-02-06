@@ -5,13 +5,13 @@ author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/20/2018
-ms.openlocfilehash: 68027526fb98db4cb5b7eaf75f117692222c6039
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 01/24/2019
+ms.openlocfilehash: b01238b0ebfe07b605824a75301165e477bd05e9
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53549026"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54910718"
 ---
 # <a name="azure-database-for-postgresql-advanced-threat-protection"></a>Расширенная защита от угроз для Базы данных Azure для PostgreSQL
 
@@ -22,6 +22,9 @@ ms.locfileid: "53549026"
 > [!NOTE]
 > Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах Azure для национальных облаков и облаков для государственных организаций: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай — 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 >
+
+> [!NOTE]
+> Эта функция доступна во всех регионах Azure, где База данных Azure для PostgreSQL развернута для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
 ## <a name="what-is-advanced-threat-protection"></a>Что являет собою Расширенная защита от угроз Azure?
 

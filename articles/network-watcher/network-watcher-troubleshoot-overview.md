@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: jdial
-ms.openlocfilehash: 2f8a41834c1451d80c53cfed4bae3b7e36281702
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 8048dde6158d9eaa9bf38a8c3020420b81bdd55b
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32779266"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55099787"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "32779266"
 | ConnectionEntityNotFound | Отсутствует конфигурация подключения | Нет  |
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет |
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Yes |
-| ConnectionMarkedStandy | Базовая служба помечена как ждущая.| Yes|
+| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Yes|
 | Authentication | Несоответствие предварительного ключа | Yes|
 | PeerReachability | Одноранговый шлюз недоступен. | Yes|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|
@@ -107,7 +107,7 @@ ms.locfileid: "32779266"
 > [!NOTE]
 > В некоторых случаях только подмножество файлов журнала записывается в хранилище.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения о Storage Explorer можно найти по следующей ссылке: [Storage Explorer](http://storageexplorer.com/).
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об Обозревателе службы хранилища см. по этой ссылке: [Обозреватель хранилища](http://storageexplorer.com/)
 
 ### <a name="connectionstatstxt"></a>ConnectionStats.txt
 

@@ -6,17 +6,17 @@ services: cognitive-services
 author: anrothMSFT
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: emotion-api
+ms.subservice: emotion-api
 ms.topic: conceptual
 ms.date: 01/26/2017
 ms.author: anroth
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6c1c4b8e5c2701f3c419a58bc3fdc33f7e629bbd
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: ded91c6de498b130cc26109a70e89955dd70d862
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48238545"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55208998"
 ---
 # <a name="emotion-api-frequently-asked-questions"></a>Часто задаваемые вопросы об API распознавания эмоций
 
@@ -53,7 +53,7 @@ ms.locfileid: "48238545"
 
 -----
 
-**Вопрос**. *Я передаю двоичные данные изображения, но получаю сообщение "Invalid face image" (Недопустимое изображение лица).**
+**Вопрос**. *Я передаю двоичные данные изображения, но получаю сообщение: "Invalid face image" (Недопустимое изображение лица)**.
 
 **Ответ**. Получение такого сообщения означает, что при анализе изображения с помощью алгоритма возникла проблема.  
 * Поддерживаемые форматы входных изображений включают в себя JPEG, PNG, GIF (первый кадр) и BMP

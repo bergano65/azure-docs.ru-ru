@@ -14,12 +14,13 @@ ms.topic: article
 ms.date: 11/12/2018
 ms.author: sethm
 ms.reviewer: avishwan
-ms.openlocfilehash: bf70f9a74b58758e03800d7f6fb92a8f8754828a
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.lastreviewed: 11/12/2018
+ms.openlocfilehash: 03a6f649f15f6a4905433d6e2ec292a901340929
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51613101"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55249686"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -37,10 +38,10 @@ ms.locfileid: "51613101"
 
 Корпорация Майкрософт предоставляет две версии образов Windows Server через Azure Stack Marketplace.
 
-- **С оплатой по мере использования**. В таких образах используются единицы измерения полной цены для Windows. 
-   Для кого предназначены: клиенты с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщики облачных решений, которые не хотят использовать лицензирование SPLA.
-- **С использованием собственной лицензии (BYOL)**. В этих образах используются базовые единицы измерения.
-   Для кого предназначены: клиенты EA с лицензией Windows Server; поставщики облачных решений с лицензированием SPLA.
+- **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows. 
+   Предназначены для: клиентов с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщиков облачных решений, которые не хотят использовать лицензирование SPLA.
+- **С использованием собственной лицензии (BYOL)**. Эти образы выполняют базовые единицы измерения.
+   Предназначены для: клиентов EA с лицензией Windows Server; поставщиков облачных решений с лицензированием SPLA.
 
 Преимущество гибридного использования Azure (AHUB) в Azure Stack не поддерживается. Клиенты, которые приобрели лицензию по модели "Производительность", должны использовать образ BYOL. При тестировании с помощью Пакета средств разработки Azure Stack (ASDK) можно использовать любой из этих вариантов.
 
@@ -62,7 +63,7 @@ ms.locfileid: "51613101"
 
 ### <a name="i-have-an-enterprise-agreement-ea-and-will-be-using-my-ea-windows-server-license-how-do-i-make-sure-images-are-billed-correctly"></a>У меня есть Соглашение Enterprise (EA), и я буду использовать лицензию EA для Windows Server. Как можно убедиться, что образы оплачиваются правильно?
 
-Добавьте параметр **licenseType: Windows_Server** в шаблон Azure Resource Manager. Этот параметр добавляется в каждый блок ресурса виртуальной машины.
+Вы можете добавить **licenseType: Windows_Server** в шаблоне Azure Resource Manager. Этот параметр добавляется в каждый блок ресурса виртуальной машины.
 
 ## <a name="activation"></a>Активация
 

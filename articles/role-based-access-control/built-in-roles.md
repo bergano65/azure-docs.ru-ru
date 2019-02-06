@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 12/05/2018
+ms.date: 01/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: b2d834c5f9f46f2ebe3c997c75dc50f30ed4bda7
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 8626dcb5b5c8eb7e83123eaeadb601e65d52f2c8
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558929"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55081234"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
@@ -37,6 +37,8 @@ ms.locfileid: "53558929"
 | [Участник](#contributor) | Позволяет управлять всем, кроме доступа к ресурсам. |
 | [Читатель](#reader) | Может просматривать все элементы, но не вносить изменения. |
 | [AcrImageSigner](#acrimagesigner) | Средство подписывания образов ACR. |
+| [AcrPull](#acrpull) | Извлечение ACR. |
+| [AcrPush](#acrpush) | Отправка ACR. |
 | [AcrQuarantineReader](#acrquarantinereader) | Модуль чтения данных карантина ACR. |
 | [AcrQuarantineWriter](#acrquarantinewriter) | Модуль записи данных карантина ACR. |
 | [Участник службы управления API](#api-management-service-contributor) | Может управлять службой и интерфейсами API. |
@@ -66,6 +68,7 @@ ms.locfileid: "53558929"
 | [Участник служб Cognitive Services](#cognitive-services-contributor) | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. |
 | [Пользователь служб Cognitive Services](#cognitive-services-user) | Позволяет создавать и читать список ключей служб Cognitive Services. |
 | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). |
+| [CosmosBackupOperator](#cosmosbackupoperator) | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. |
 | [Участник службы "Управление затратами"](#cost-management-contributor) | Позволяет просматривать расходы и управлять конфигурацией затрат (например, бюджеты, экспорты) |
 | [Читатель службы "Управление затратами"](#cost-management-reader) | Позволяет просматривать данные о расходах и конфигурации (например, бюджеты, экспорты) |
 | [Участник Data Box](#data-box-contributor) | Позволяет управлять всеми данными службы Data Box, кроме предоставления доступа другим пользователям. |
@@ -76,8 +79,8 @@ ms.locfileid: "53558929"
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
-| [Участник EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-contributor-preview) | Позволяет управлять операциями с подписками на события Сетки событий. |
-| [Читатель EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-reader-preview) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
+| [Участник EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Позволяет управлять операциями с подписками на события Сетки событий. |
+| [Читатель EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
 | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
@@ -98,7 +101,7 @@ ms.locfileid: "53558929"
 | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. |
 | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. |
 | [Модуль чтения и доступ к данным](#reader-and-data-access) | Позволяет просматривать все данные, но не позволит удалить или создать учетную запись хранения или содержащий ресурс. Он также предоставит доступ на чтение и запись для всех данных, содержащихся в учетной записи хранения через доступ к ключам учетной записи хранения. |
-| [Участник кэша Azure для Redis](#redis-cache-contributor). | Позволяет управлять кэшем Azure для Redis, но не доступом к нему. |
+| [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Azure для Redis, но не доступом к нему. |
 | [Участник политики ресурсов (предварительная версия)](#resource-policy-contributor-preview) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
 | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. |
 | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. |
@@ -114,7 +117,7 @@ ms.locfileid: "53558929"
 | [Участник учетной записи хранения](#storage-account-contributor) | Позволяет управлять учетными записями хранения, но не доступом к ним. |
 | [Роль службы оператора ключей учетных записей хранения](#storage-account-key-operator-service-role) | Операторы ключей учетных записей хранения могут перечислять и повторно создавать ключи в учетных записях хранения. |
 | [Участник данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
-| [Владелец данных BLOB-объектов хранилища (предварительная версия)](#storage-blob-data-owner-preview). | Дает доступ на чтение, запись, удаление, а также доступ суперпользователя POSIX к контейнерам больших двоичных объектов и данным службы хранилища Azure. |
+| [Владелец данных BLOB-объектов хранилища (предварительная версия)](#storage-blob-data-owner-preview). | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
 | [Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-reader-preview) | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
 | [Участник данных очереди хранилища (предварительная версия)](#storage-queue-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
 | [Модуль чтения данных очереди хранилища (предварительная версия)](#storage-queue-data-reader-preview) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
@@ -169,6 +172,25 @@ ms.locfileid: "53558929"
 > | **Id** | 6cef56e8-d556-48e5-a04f-b8e64114680f |
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/sign/write | Передача или извлечение метаданных доверия к содержимому для реестра контейнеров. |
+
+## <a name="acrpull"></a>AcrPull
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Извлечение ACR. |
+> | **Id** | 7f951dda-4ed3-4680-a7ca-43fe172d538d |
+> | **Действия** |  |
+> | Microsoft.ContainerRegistry/registries/pull/read | Извлечение или получение образов из реестра контейнеров. |
+
+## <a name="acrpush"></a>AcrPush
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Отправка ACR. |
+> | **Id** | 8311e382-0749-4cb8-b61a-304f252e45ec |
+> | **Действия** |  |
+> | Microsoft.ContainerRegistry/registries/pull/read | Извлечение или получение образов из реестра контейнеров. |
+> | Microsoft.ContainerRegistry/registries/push/write | Передача или запись образов в реестр контейнеров. |
 
 ## <a name="acrquarantinereader"></a>AcrQuarantineReader
 > [!div class="mx-tableFixed"]
@@ -385,7 +407,7 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read | Возвращает результат операции задания экспорта. |
+> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/* | Создание метаданных, связанных с управлением резервным копированием, и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/* | Создание политик резервного копирования и управление ими |
@@ -445,8 +467,8 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read | Возвращает результат операции задания экспорта. |
-> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read | Возвращает метаданные управления архивацией для хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
+> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |
@@ -506,8 +528,8 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/Vaults/backupJobs/operationResults/read | Возвращает результат операции задания. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/read | Возвращает все объекты заданий. |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read | Возвращает результат операции задания экспорта. |
-> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read | Возвращает метаданные управления архивацией для хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
+> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/read | Возвращает результат операции архивации для хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |
@@ -754,6 +776,16 @@ ms.locfileid: "53558929"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
+## <a name="cosmosbackupoperator"></a>CosmosBackupOperator
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. |
+> | **Id** | db7b14f2-5adf-42da-9f96-f2ee17bab5cb |
+> | **Действия** |  |
+> | Microsoft.DocumentDB/databaseAccounts/backup/action | Отправка запроса на настройку резервного копирования |
+> | Microsoft.DocumentDB/databaseAccounts/restore/action | Отправка запроса восстановления |
+
 ## <a name="cost-management-contributor"></a>Участник службы "Управление затратами"
 > [!div class="mx-tableFixed"]
 > | | |
@@ -940,7 +972,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
-## <a name="eventgrid-eventsubscription-contributor-preview"></a>участник EventGrid EventSubscription (предварительная версия)
+## <a name="eventgrid-eventsubscription-contributor"></a>Участник EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -957,7 +989,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
-## <a name="eventgrid-eventsubscription-reader-preview"></a>и читатель EventGrid EventSubscription (предварительная версия).
+## <a name="eventgrid-eventsubscription-reader"></a>Читатель EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1201,6 +1233,7 @@ ms.locfileid: "53558929"
 > | Microsoft.AlertsManagement/alerts/* |  |
 > | Microsoft.AlertsManagement/alertsSummary/* |  |
 > | Microsoft.Insights/actiongroups/* |  |
+> | Microsoft.Insights/activityLogAlerts/* |  |
 > | Microsoft.Insights/AlertRules/* | Чтение, запись и удаление правила генерации оповещений. |
 > | Microsoft.Insights/components/* | Чтение, запись и удаление компонентов Application Insights. |
 > | Microsoft.Insights/DiagnosticSettings/* | Чтение, запись и удаление параметров диагностики. |
@@ -1285,7 +1318,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
 
-## <a name="azure-cache-for-redis-contributor"></a>Участник кэша Azure для Redis.
+## <a name="redis-cache-contributor"></a>Участник кэша Redis
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -1370,6 +1403,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Security/pricings/delete | Удаление параметров ценообразования для области. |
 > | Microsoft.Security/securityContacts/delete | Удаление контактного лица по вопросам безопасности. |
 > | Microsoft.Security/securityContacts/write | Обновление контактного лица по вопросам безопасности. |
+> | Microsoft.Security/InformationProtectionPolicies/write | Обновление политик защиты сведений для ресурса |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="security-manager-legacy"></a>Диспетчер безопасности (устаревший)
@@ -1430,7 +1464,7 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/vaults/replicationPolicies/* | Создание политик репликации и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/* | Создание планов восстановления и управление ими |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/* | Создание конфигурации службы хранилища для хранилища служб восстановления и управление ею |
-> | Microsoft.RecoveryServices/Vaults/tokenInfo/read | Возвращает сведения о маркере для хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/Vaults/tokenInfo/read |  |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/vaultTokens/read | Операцию получения маркера хранилища можно использовать, чтобы получить маркер хранилища для операций серверной части уровня хранилища. |
 > | Microsoft.RecoveryServices/Vaults/monitoringAlerts/* | Чтение оповещений для хранилища служб восстановления |
@@ -1497,7 +1531,7 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/Vaults/monitoringAlerts/* | Чтение оповещений для хранилища служб восстановления |
 > | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/notificationConfiguration/read |  |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/read |  |
-> | Microsoft.RecoveryServices/Vaults/tokenInfo/read | Возвращает сведения о маркере для хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/Vaults/tokenInfo/read |  |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/vaultTokens/read | Операцию получения маркера хранилища можно использовать, чтобы получить маркер хранилища для операций серверной части уровня хранилища. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
@@ -1540,7 +1574,7 @@ ms.locfileid: "53558929"
 > | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/read |  |
-> | Microsoft.RecoveryServices/Vaults/tokenInfo/read | Возвращает сведения о маркере для хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/Vaults/tokenInfo/read |  |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/vaultTokens/read | Операцию получения маркера хранилища можно использовать, чтобы получить маркер хранилища для операций серверной части уровня хранилища. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
@@ -1565,6 +1599,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Insights/metricDefinitions/read | Считывает определения метрик. |
 > | **NotActions** |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита |
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Не может изменять параметры аудита |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Извлекает записи аудита больших двоичных объектов для базы данных. |
@@ -1578,6 +1613,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
+> | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
 
 ## <a name="sql-security-manager"></a>Диспетчер безопасности SQL
 > [!div class="mx-tableFixed"]
@@ -1593,6 +1629,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Создание политик аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/auditingSettings/* | Создание параметров аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/extendedAuditingSettings/read | Извлечение сведений о расширенной политике аудита больших двоичных объектов, настроенной на заданном сервере. |
@@ -1616,6 +1653,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Sql/servers/firewallRules/* |  |
 > | Microsoft.Sql/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.Sql/servers/securityAlertPolicies/* | Создание политик оповещения системы безопасности SQL Server и управление ими |
+> | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="sql-server-contributor"></a>Участник SQL Server
@@ -1637,6 +1675,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Insights/metricDefinitions/read | Считывает определения метрик. |
 > | **NotActions** |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
+> | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Не может изменять политики аудита SQL Server |
 > | Microsoft.Sql/servers/auditingSettings/* | Не может изменять параметры аудита SQL Server |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита баз данных SQL Server |
@@ -1654,6 +1693,7 @@ ms.locfileid: "53558929"
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
 > | Microsoft.Sql/servers/extendedAuditingSettings/* |  |
 > | Microsoft.Sql/servers/securityAlertPolicies/* | Не может изменять политики оповещения системы безопасности SQL Server |
+> | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
 
 ## <a name="storage-account-contributor"></a>Участник учетной записи хранения
 > [!div class="mx-tableFixed"]
@@ -1690,8 +1730,8 @@ ms.locfileid: "53558929"
 > | **Id** | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращение контейнера или списка контейнеров. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращение результата размещения или аренды контейнера больших двоичных объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращает результат размещения контейнера больших двоичных объектов. |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
@@ -1701,16 +1741,12 @@ ms.locfileid: "53558929"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Дает доступ на чтение, запись, удаление, а также доступ суперпользователя POSIX к контейнерам больших двоичных объектов и данным службы хранилища Azure. |
+> | **Описание** | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
 > | **Id** | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращение контейнера или списка контейнеров. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращение результата размещения или аренды контейнера больших двоичных объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/* |  |
 > | **Действия с данными** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/* |  |
 
 ## <a name="storage-blob-data-reader-preview"></a>Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1719,7 +1755,7 @@ ms.locfileid: "53558929"
 > | **Описание** | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
 > | **Id** | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | **Действия** |  |
-> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращение контейнера или списка контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
 

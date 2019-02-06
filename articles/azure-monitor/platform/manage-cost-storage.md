@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 418d334133e1c223f2349ce79a51b229072c31e9
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 3372d399c339133fc0ee3dbfd031ec3c4c03cc3b
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54475328"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54901171"
 ---
 # <a name="manage-usage-and-costs-for-log-analytics"></a>Управление использованием и затратами для Log Analytics
 
@@ -231,7 +231,7 @@ ms.locfileid: "54475328"
 
 | Источник превышенного объема данных | Как сократить объем данных |
 | -------------------------- | ------------------------- |
-| События безопасности            | Выберите [события со стандартным или минимальным уровнем безопасности](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/). <br> Измените политику аудита безопасности таким образом, чтобы собирать только необходимые события. В частности проверьте необходимость сбора следующих событий: <br> - [аудит платформы фильтрации](https://technet.microsoft.com/library/dd772749(WS.10).aspx); <br> - [аудит реестра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10));<br> - [аудит файловой системы](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10));<br> - [аудит объектов ядра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10));<br> - [аудит работы с дескрипторами](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10));<br> — аудит съемных носителей. |
+| События безопасности            | Выберите [события со стандартным или минимальным уровнем безопасности](https://docs.microsoft.com/en-us/azure/security-center/security-center-enable-data-collection#data-collection-tier). <br> Измените политику аудита безопасности таким образом, чтобы собирать только необходимые события. В частности проверьте необходимость сбора следующих событий: <br> - [аудит платформы фильтрации](https://technet.microsoft.com/library/dd772749(WS.10).aspx); <br> - [аудит реестра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10));<br> - [аудит файловой системы](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10));<br> - [аудит объектов ядра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10));<br> - [аудит работы с дескрипторами](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10));<br> — аудит съемных носителей. |
 | Счетчики производительности       | Измените [конфигурацию счетчика производительности](data-sources-performance-counters.md), чтобы <br> уменьшить частоту сбора или <br> сократить число счетчиков производительности. |
 | Журналы событий                 | Измените [конфигурацию журнала событий](data-sources-windows-events.md), чтобы <br> сократить число собранных журналов событий или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений*. |
 | syslog                     | Измените [конфигурацию системного журнала](data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
@@ -331,7 +331,7 @@ ms.locfileid: "54475328"
 * Ознакомьтесь со статьей [Поиск данных по журналам](../log-query/log-query-overview.md), чтобы узнать, как использовать язык поиска. Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 * Выполните действия, описанные в разделе о [создании оповещений журналов](alerts-metric.md), чтобы получать уведомления при выполнении условий поиска.
 * Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров.
-* Сведения о настройке эффективной политики сбора событий безопасности см. в статье [Сбор данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md).
+* Сведения о настройке эффективной политики сбора событий см. в статье [Сбор данных в Центре безопасности Azure](../../security-center/security-center-enable-data-collection.md).
 * Измените [конфигурацию счетчика производительности](data-sources-performance-counters.md).
 * Сведения об изменении параметров сбора событий см. в статье [Источники данных для журнала событий Windows в Log Analytics](data-sources-windows-events.md).
 * Сведения об изменении конфигурации системного журнала см. в статье [Источники данных для журнала событий Windows в Log Analytics](data-sources-syslog.md).

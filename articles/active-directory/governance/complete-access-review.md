@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.component: compliance
+ms.subservice: compliance
 ms.date: 05/02/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 72b560aa742fb509b55fe5e27cb87b9a224bce7e
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: ce791e2b230360a04a3051a8964e39c6d5a457ab
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45606884"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55191369"
 ---
 # <a name="complete-an-access-review-of-members-of-a-group-or-users-access-to-an-application-in-azure-ad"></a>Выполнение проверки доступа для участников группы или пользователей с доступом к приложению с помощью Azure AD
 
@@ -48,7 +48,7 @@ ms.locfileid: "45606884"
 
 Чтобы получить результаты проверки, щелкните **Утверждения**, а затем выберите **Скачать**. Полученный CSV-файл можно просмотреть в Excel или в других программах, которые поддерживают CSV-файлы в кодировке UTF-8.
 
-## <a name="optional-delete-a-review"></a>Удаление проверки (необязательно)
+## <a name="optional-delete-a-review"></a>Необязательно: удаление отзыва
 Если проверка больше не нужна, ее можно удалить. Выберите **Удалить**, чтобы удалить проверку из Azure AD.
 
 > [!IMPORTANT]

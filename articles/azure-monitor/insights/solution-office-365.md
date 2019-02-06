@@ -10,14 +10,14 @@ ms.service: operations-management-suite
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 01/24/2019
 ms.author: bwren
-ms.openlocfilehash: 3eb1228ed9d15fb976f94df114f8725a8c41599d
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 370483b92dcd2c468cd676a32db0ded80e8814d0
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54230464"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216618"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "54230464"
 - Отслеживать действия администратора, чтобы контролировать изменения конфигурации или операции с высоким уровнем привилегий.
 - Выявлять и анализировать нежелательное поведение пользователей, которое можно настраивать, исходя из потребностей организации.
 - Выполнять аудит и проверку соответствия. Например, можно отслеживать операции доступа к файлам для конфиденциальных файлов, что поможет в процессе аудита и проверки соответствия.
-- Оперативно устраняйте неполадки с помощью [поисковых запросов](../../azure-monitor/log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
+- Оперативно устраняйте неполадки с помощью [поисковых запросов](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
@@ -40,7 +40,7 @@ ms.locfileid: "54230464"
  
 
 ## <a name="management-packs"></a>Пакеты управления
-В этом решении не предусматривается установка пакетов управления в [подключенных группах управления](../../azure-monitor/platform/om-agents.md).
+В этом решении не предусматривается установка пакетов управления в [подключенных группах управления](../platform/om-agents.md).
   
 ## <a name="install-and-configure"></a>Установка и настройка
 Начните с добавления [решения Office 365 в подписку](solutions.md#install-a-management-solution). Когда оно будет добавлено, вам нужно выполнить шаги по настройке, описанные в этом разделе, чтобы предоставить решению доступ к подписке Office 365.
@@ -158,7 +158,7 @@ ms.locfileid: "54230464"
     AdminConsent -ErrorAction Stop
     ```
 
-2. Выполните следующую команду, чтобы запустить сценарий.
+2. Выполните следующую команду, чтобы запустить сценарий. Вам будет дважды предложено ввести учетные данные. Сначала укажите учетные данные для рабочей области Log Analytics, а затем учетные данные глобального администратора для арендатора Office 365.
     ```
     .\office365_consent.ps1 -WorkspaceName <Workspace name> -ResourceGroupName <Resource group name> -SubscriptionId <Subscription ID>
     ```
@@ -351,7 +351,7 @@ ms.locfileid: "54230464"
 
 ### <a name="troubleshooting"></a>Устранение неполадок
 
-При попытке создать подписку, когда она уже имеется, может появиться следующая ошибка:
+Если приложение уже подписано на эту рабочую область или если этот арендатор подписан на другую рабочую область, может появиться следующая ошибка.
 
 ```
 Invoke-WebRequest : {"Message":"An error has occurred."}
@@ -394,7 +394,7 @@ At line:12 char:18
     $Subscription = (Select-AzureRmSubscription -SubscriptionId $($SubscriptionId) -ErrorAction Stop)
     $Subscription
     $option = [System.StringSplitOptions]::RemoveEmptyEntries 
-    $Workspace = (Set-AzureRMOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
+    $Workspace = (Get-AzureRMOperationalInsightsWorkspace -Name $($WorkspaceName) -ResourceGroupName $($ResourceGroupName) -ErrorAction Stop)
     $Workspace
     $WorkspaceLocation= $Workspace.Location
     
@@ -476,7 +476,7 @@ At line:12 char:18
 
 ## <a name="data-collection"></a>Сбор данных
 ### <a name="supported-agents"></a>Поддерживаемые агенты
-Решение Office 365 не получает данные из [агентов Log Analytics](../../azure-monitor/platform/agent-data-sources.md).  Оно извлекает данные непосредственно из Office 365.
+Решение Office 365 не получает данные из [агентов Log Analytics](../platform/agent-data-sources.md).  Оно извлекает данные непосредственно из Office 365.
 
 ### <a name="collection-frequency"></a>Частота сбора
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Log Analytics [уведомление веб-перехватчика](https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Log Analytics в течение нескольких минут после ее получения.
@@ -708,6 +708,6 @@ At line:12 char:18
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте поиск по журналам в [Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные данные об обновлениях.
-* [Создайте собственные панели мониторинга](../../azure-monitor/platform/dashboards.md) для отображения избранных поисковых запросов Office 365.
-* [Создайте оповещения](../../azure-monitor/platform/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  
+* Используйте поиск по журналам в [Log Analytics](../log-query/log-query-overview.md), чтобы просматривать подробные данные об обновлениях.
+* [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.
+* [Создайте оповещения](../platform/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  

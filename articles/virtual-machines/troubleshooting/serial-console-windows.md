@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: harijay
-ms.openlocfilehash: 61b64b63a53318e0a703678d5525399fe13efa83
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: b280c86b15f7af01b04d41b4c2d625ea4ec4a398
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432769"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104452"
 ---
 # <a name="virtual-machine-serial-console-for-windows"></a>Последовательная консоль виртуальной машины для Windows
 
@@ -136,6 +136,13 @@ ms.locfileid: "54432769"
 
 ### <a name="use-wsl-in-serial-console"></a>Использование WSL в последовательной консоли
 Подсистема Windows для Linux (WSL) включена для Windows Server 2019 или более поздней версии, поэтому, если вы используете такую ОС, эту подсистему также можно включить для использования в последовательной консоли. Это может быть полезным для пользователей, которые умеют работать с командами Linux. Инструкции по включению WSL для Windows Server см. в [руководстве по установке](https://docs.microsoft.com/windows/wsl/install-on-server).
+
+### <a name="restart-your-windows-vm-within-serial-console"></a>Перезапуск виртуальной машины Windows в последовательной консоли
+Вы можете перезапустить виртуальную машину в последовательной консоли, перейдя к кнопке питания и щелкнув "Перезапуск виртуальной машины". При этом запустится перезагрузка виртуальной машины и на портале Azure появится уведомление о перезапуске.
+
+Это полезно в ситуациях, когда нужно получить доступ к меню загрузки виртуальной машины, не выходя из последовательной консоли.
+
+![Перезагрузка последовательной консоли Windows](./media/virtual-machines-serial-console/virtual-machine-serial-console-restart-button-windows.gif)
 
 ## <a name="disable-serial-console"></a>Отключение последовательной консоли
 По умолчанию доступ к последовательной консоли включен для всех виртуальных машин во всех подписках. Последовательную консоль можно отключить на уровне подписки или на уровне виртуальной машины.

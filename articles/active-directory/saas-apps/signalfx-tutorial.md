@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SignalFx | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SignalFx | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SignalFx.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 6d5ab4b0-29bc-4b20-8536-d64db7530f32
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 0d21a409669cc7d7fceeec9787efbe31d880597c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6f2d869f345aeb8f50d42de6b1533b849ffb2182
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437854"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197574"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-signalfx"></a>Руководство по интеграции Azure Active Directory с SignalFx
+# <a name="tutorial-azure-active-directory-integration-with-signalfx"></a>Руководство. Интеграция Azure Active Directory с SignalFx
 
 В этом руководстве описано, как интегрировать SignalFx с Azure Active Directory (Azure AD).
 
@@ -223,7 +223,7 @@ ms.locfileid: "39437854"
 При первом входе пользователя в SignalFx с использованием единого входа SAML [служба поддержки SignalFx](mailto:kmazzola@signalfx.com) отправит ему по электронной почте ссылку, которую необходимо открыть для проверки подлинности. Это происходит только при первом входе пользователя. При последующих попытках входа проверка по электронной почте не требуется.
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь в [службу поддержки SignalFx](mailto:kmazzola@signalfx.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки SignalFx](mailto:kmazzola@signalfx.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -260,7 +260,7 @@ ms.locfileid: "39437854"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SignalFx на панели доступа, вы автоматически войдете в приложение SignalFx.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

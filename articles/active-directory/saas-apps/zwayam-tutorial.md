@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Zwayam | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Zwayam | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zwayam.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 7754344c-34d6-4764-a368-e1dbfe876c0c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/23/2018
 ms.author: jeedes
-ms.openlocfilehash: dd98886e2bdcaecdd685dd714b6d4bacd96e6e29
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e3b70c7c7ef50b536618517c6b8f2e670322a881
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438353"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55180863"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zwayam"></a>Руководство. Интеграция Azure Active Directory со Zwayam
 
@@ -130,7 +130,7 @@ ms.locfileid: "39438353"
 1. Чтобы настроить единый вход на стороне **Zwayam**, отправьте в [службу поддержки Zwayam](mailto:opendoors@zwayam.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -167,7 +167,7 @@ ms.locfileid: "39438353"
  
 ### <a name="create-a-zwayam-test-user"></a>Создание тестового пользователя Zwayam
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Zwayam. Обратитесь в [службу поддержки Zwayam](mailto:opendoors@zwayam.com), чтобы добавить пользователей на платформу Zwayam. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Zwayam. Обратитесь к  [группе поддержки Zwayam](mailto:opendoors@zwayam.com) для добавления пользователей на платформу Zwayam. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39438353"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Zwayam на панели доступа, вы автоматически войдете в приложение Zwayam.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

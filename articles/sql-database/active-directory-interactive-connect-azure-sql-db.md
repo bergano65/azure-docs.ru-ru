@@ -10,23 +10,20 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: MirekS
 ms.reviewer: GeneMi
-ms.date: 04/06/2018
+ms.date: 01/25/2019
 manager: craigg
-ms.openlocfilehash: 0b8b83651fb5466f5d9a2f703667d7645b498e89
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 7a05c6b4fac031482d77827a817ef56920a0c314
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52958823"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55464557"
 ---
 # <a name="use-activedirectoryinteractive-mode-to-connect-to-azure-sql-database"></a>Использование режима ActiveDirectoryInteractive для подключения к службе "База данных SQL Azure"
 
 В этой статье содержится готовый к запуску пример кода C#, который подключается к службе "База данных SQL Microsoft Azure". В программе на C# используется интерактивный режим проверки подлинности, который поддерживает многофакторную проверку подлинности (MFA) Azure AD. Например, при попытке подключения на мобильный телефон может отправляться код проверки.
 
 Дополнительные сведения о поддержке MFA для средств SQL см. в статье [Azure Active Directory support in SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/azure-active-directory) (Поддержка Azure Active Directory в SQL Server Data Tools (SSDT)).
-
-
-
 
 ## <a name="sqlauthenticationmethod-activedirectoryinteractive-enum-value"></a>Значение перечисления SqlAuthenticationMethod .ActiveDirectoryInteractive
 
@@ -54,11 +51,9 @@ ms.locfileid: "52958823"
 >
 > [https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod](https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod)
 
-
 ## <a name="preparations-for-c-by-using-the-azure-portal"></a>Подготовка для C# с использованием портала Azure
 
 Мы предполагаем, что вы уже [создали сервер службы "База данных SQL Azure"](sql-database-get-started-portal.md) и он доступен.
-
 
 ### <a name="a-create-an-app-registration"></a>О. Регистрация приложения
 
@@ -87,7 +82,7 @@ ms.locfileid: "52958823"
 
 ### <a name="b-set-azure-ad-admin-on-your-sql-database-server"></a>B. Определение администратора Azure AD на сервере службы "База данных SQL"
 
-У каждого сервера службы "База данных SQL Azure" есть собственный логический сервер SQL из Azure AD. В нашем сценарии C# необходимо определить администратора Azure AD для сервера SQL Azure.
+Каждая отдельная База данных SQL Azure и пул эластичных баз данных имеет свой собственный сервер Базы данных SQL Azure в Azure AD. В нашем сценарии C# необходимо определить администратора Azure AD для сервера SQL Azure.
 
 1. **SQL Server** &gt; **Администратор Active Directory** &gt; **Задать администратора**
 

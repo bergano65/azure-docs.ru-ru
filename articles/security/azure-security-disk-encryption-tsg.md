@@ -6,14 +6,14 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 01/08/2018
+ms.date: 01/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 36ecfe8942d263ed84e430b01727743ed2cad00c
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 70cf6c65592eef94ce657c9aaef7dc78de4ffa11
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103171"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55468399"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -33,7 +33,23 @@ ms.locfileid: "54103171"
 - Диски данных рекурсивно подключены в каталоге /mnt/ или любом другом (например, /mnt/data1, /mnt/data2, /data3 + /data3/data4).
 - Другие [предварительные требования](azure-security-disk-encryption-prerequisites.md) к шифрованию дисков Azure для ОС Linux не выполнены.
 
-## <a name="unable-to-encrypt"></a>Сбой шифрования
+## <a name="bkmk_Ubuntu14"></a> Обновление ядра по умолчанию для Ubuntu 14.04 LTS
+
+Образ Ubuntu 14.04 LTS поставляется с версией ядра 4.4 по умолчанию. В этой версии ядра существует известная проблема, в которой компонент, призванный решать проблему недостатка памяти, неправильно завершает команду dd во время процесса шифрования ОС. Эта ошибка исправлена в самой последней версии настроенного ядра Linux Azure. Чтобы избежать этой ошибки, перед включением шифрования в образе обновите настройки ядра до версии [Azure 4.15](https://packages.ubuntu.com/trusty/linux-azure) или более поздней с помощью следующих команд.
+
+```
+sudo apt-get update
+sudo apt-get install linux-azure
+sudo reboot
+```
+
+После перезапуска виртуальной машины в новое ядро новую версию ядра можете подтвердить с помощью следующей команды.
+
+```
+uname -a
+```
+
+## <a name="unable-to-encrypt-linux-disks"></a>Сбой шифрования дисков Linux
 
 В некоторых случаях шифрование диска зависает на этапе "OS disk encryption started" (Начато шифрование диска ОС) и SSH отключается. При выполнении в готовом образе из коллекции этот процесс может занять от 3 до 16 часов. Если добавляется диск данных объемом в несколько терабайт, процесс может занять несколько дней.
 
@@ -71,7 +87,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 Любые применяемые параметры группы безопасности сети должны позволять конечной точке соответствовать предусмотренным [предварительным требованиям](azure-security-disk-encryption-prerequisites.md#bkmk_GPO) к конфигурации сети для шифрования диска.
 
 ### <a name="azure-key-vault-behind-a-firewall"></a>Azure Key Vault за брандмауэром
-Виртуальная машина должна иметь доступ к хранилищу ключей. Дополнительные сведения о получении доступа к хранилищу ключей за брандмауэром, который поддерживает группа, работающая с Azure Key Vault, см. в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../key-vault/key-vault-access-behind-firewall.md). 
+При включении шифрования [учетных данных из Azure AD](azure-security-disk-encryption-prerequisites-aad.md) целевой виртуальной машине необходимо предоставить доступ к конечным точкам проверки подлинности Azure AD, а также к конечным точкам Key Vault.  Дополнительные сведения об этом процессе см. в руководстве о получении доступа к хранилищу ключей из защищенного брандмауэра, который поддерживает команда [Azure Key Vault](../key-vault/key-vault-access-behind-firewall.md). 
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../virtual-machines/windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.

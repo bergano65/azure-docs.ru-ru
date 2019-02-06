@@ -8,18 +8,18 @@ manager: mtillman
 editor: ''
 ms.service: active-directory
 ms.workload: identity
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 01/29/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 50fbafdf714e6071ffac6f9f18d0802ecc1e574d
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: 16f238114b56bd4e13358de34dfb33d93dbb1890
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360060"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301294"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -49,9 +49,26 @@ ms.locfileid: "54360060"
 
 * **[Администратор облачных устройств](#cloud-device-administrator)**: пользователи с этой ролью могут включать, отключать и удалять устройства в Azure AD и считывать ключи BitLocker в Windows 10 (при наличии) на портале Azure. Роль не предоставляет разрешения на управление любыми другими свойствами устройства.
 
-* **[Администратор соответствия требованиям](#compliance-administrator)**: Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в центре соответствия Microsoft 365, центре безопасности Microsoft 365, центре администрирования Microsoft 365 и Azure. Пользователи также могут управлять всеми функциями в центре администрирования Exchange, диспетчере соответствия требованиям и центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d). 
+* **[Администратор соответствия требованиям](#compliance-administrator)**: Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в Центре соответствия требованиям Microsoft 365, Центре администрирования Microsoft 365, Azure и Центре безопасности и соответствия требованиям Office 365. Пользователи также могут управлять всеми функциями в Центре администрирования Exchange и Центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
+  В | Может
+  ----- | ----------
+  [Центр соответствия требованиям Microsoft 365](https://protection.microsoft.com) | Защита и управление данными организации во всех службах Microsoft 365.<br>Управление оповещениями по соответствию.
+  [Диспетчер соответствия](https://docs.microsoft.com/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud) | Отслеживание, назначение и проверка деятельности организации на соответствие требованиям.
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление системой управления данными.<br>Выполнение юридического расследование и анализа данных.<br>Управление запросом субъекта данных.
+  [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр всех данных проверки Intune.
+  [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.<br>Может создавать и изменять файловые политики и давать разрешение на управление файлом.<br> Позволяет просматривать все встроенные отчеты в разделе "Управление данными".
 
+<!--* **[Compliance Data Administrator](#compliance-data-administrator)**: Users with this role have permissions to protect and track data in the Microsoft 365 compliance center, Microsoft 365 admin center, and Azure. Users can also manage all features within the Exchange admin center, Compliance Manager, and Teams & Skype for Business admin center and create support tickets for Azure and Microsoft 365.
+
+  In | Can do
+  ----- | ----------
+  [Microsoft 365 compliance center](https://protection.microsoft.com) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts
+  [Compliance Manager](https://docs.microsoft.com/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud) | Track, assign, and verify your organization's regulatory compliance activities
+  [Office 365 Security & Compliance Center](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request
+  [Intune](https://docs.microsoft.com/intune/role-based-access-control) | View all Intune audit data
+  [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br> Can view all the built-in reports under Data Management
+-->
 * **[Администратор условного доступа](#conditional-access-administrator)**: пользователи с этой ролью могут управлять параметрами условного доступа в Azure Active Directory.
   > [!NOTE]
   > Чтобы развернуть политику условного доступа Exchange ActiveSync в Azure, у пользователя должны быть права глобального администратора.
@@ -64,15 +81,15 @@ ms.locfileid: "54360060"
 
 * **[Создатели каталогов](#directory-writers)**: это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
 
-* **[Администратор Dynamics 365 или администратор CRM](#dynamics-365-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
+* **[Администратор Dynamics 365 или администратор CRM](#crm-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
   > [!NOTE] 
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Dynamics 365". На портале Azure она называется "Администратор Dynamics 365".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Dynamics 365". На [портале Azure](https://portal.azure.com) она называется "Администратор Dynamics 365".
 
-* **[Администратор Exchange](#exchange-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор Exchange](#exchange-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
   > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На портале Azure она называется "Администратор Exchange".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На [портале Azure](https://portal.azure.com) она называется "Администратор Exchange".
 
-* **[Глобальный администратор или администратор организации](#company-administrator)**: пользователи с этой ролью имеют доступ ко всем административным функциям в Azure Active Directory, а также к службам, использующим идентификаторы Azure Active Directory, например Exchange Online, SharePoint Online и Skype для бизнеса Online. Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. Только глобальные администраторы могут назначать другие административные роли. В компании может быть несколько глобальных администраторов. Глобальные администраторы могут сбросить пароль любого пользователя и администратора.
+* **[Глобальный администратор или администратор организации](#company-administrator)**: пользователи с этой ролью имеют доступ ко всем административным функциям в Azure Active Directory, а также к службам, использующим идентификаторы Azure Active Directory, например Центр безопасности Microsoft 365, Центр соответствия требованиям Microsoft 365, Exchange Online, SharePoint Online и Skype для бизнеса Online. Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. Только глобальные администраторы могут назначать другие административные роли. В компании может быть несколько глобальных администраторов. Глобальные администраторы могут сбросить пароль любого пользователя и администратора.
 
   > [!NOTE]
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор организации". На [портале Azure](https://portal.azure.com)это "Глобальный администратор".
@@ -83,13 +100,13 @@ ms.locfileid: "54360060"
 
 * **[Администратор Azure Information Protection](#information-protection-administrator)**: пользователи с этой ролью имеют все разрешения в службе Azure Information Protection. Эта роль позволяет настраивать метки для политики Azure Information Protection, управлять шаблонами защиты и активировать защиту. Эта роль не предоставляет разрешений в центре защиты идентификации, службе управления привилегированными пользователями, службе отслеживания работоспособности служб Office 365, а также Центре безопасности и соответствия требованиям Office 365.
 
-* **[Администратор Intune](#intune-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+* **[Администратор Intune](#intune-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
   > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Intune". На портале Azure она называется "Администратор Intune".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Intune". На [портале Azure](https://portal.azure.com) она называется "Администратор Intune".
 
-* **[Администратор лицензий](#license-administrator)**: пользователи с этой ролью могут добавлять, удалять и изменять назначенные лицензии для пользователей и групп (с использованием группового лицензирования), а также управлять расположением использования для пользователей. Роль не предоставляет возможности управления подписками или их приобретения, создания групп или управления ими, или создания и управления пользователями за пределами расположения использования.
+* **[Администратор лицензий](#license-administrator)**: пользователи с этой ролью могут добавлять, удалять и изменять назначенные лицензии для пользователей и групп (с использованием группового лицензирования), а также управлять расположением использования для пользователей. Роль не предоставляет возможности управления подписками или их приобретения, создания групп или управления ими, или создания и управления пользователями за пределами расположения использования. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-* **[Читатель центра сообщений](#message-center-reader)**: пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. 
+* **[Читатель центра сообщений](#message-center-reader)**: пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
 * **[Служба поддержка партнеров уровня 1](#partner-tier1-support)**: Не используйте. Она больше не поддерживается и будет удалена из Azure AD в будущем. Эта роль использовалась небольшим числом торговых представителей корпорации Майкрософт и не предназначена для общего использования.
 
@@ -113,52 +130,80 @@ ms.locfileid: "54360060"
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы поддержки". На [портале Azure](https://portal.azure.com/) это "Администратор паролей".
   >
   
-* **[Администратор Power BI](#power-bi-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Power BI (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Основные сведения о роли администратора Power BI](https://docs.microsoft.com/power-bi/service-admin-role).
+* **[Администратор Power BI](#power-bi-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Power BI (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Основные сведения о роли администратора Power BI](https://docs.microsoft.com/power-bi/service-admin-role).
   > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Power BI". На портале Azure она называется "Администратор Power BI".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Power BI". На [портале Azure](https://portal.azure.com) она называется "Администратор Power BI".
 
 * **[Администратор привилегированных ролей](#privileged-role-administrator)**: пользователи с этой ролью могут управлять назначениями ролей в Azure Active Directory и Azure AD Privileged Identity Management. Кроме того, эта роль позволяет управлять всеми аспектами управления привилегированными пользователями.
 
   <b>Важно!</b> Эта роль предоставляет возможность управлять членством во всех ролях Azure AD, включая роль глобального администратора. Эта роль не включает в себя какие-либо другие привилегированные возможности Azure AD, например создание или обновление пользователей. Тем не менее пользователи, которым назначена эта роль, могут предоставить себе или другим пользователям дополнительные привилегии, назначив дополнительные роли.
 
-* **[Читатель отчетов](#reports-reader)**: пользователи с этой ролью могут просматривать данные отчетов об использовании и панель мониторинга отчетов в центре администрирования Office 365, а также пакет контекста внедрения в Power BI. Кроме того, эта роль предоставляет доступ к отчетам о входе, сведениям о действиях в Azure AD и данным от API отчетов Microsoft Graph. Пользователь с ролью "Читатель отчетов" имеет доступ только к релевантным метрикам использования и внедрения. Он не приобретает полномочия администратора по настройке или использованию центров администрирования отдельных продуктов (например, Excahange). 
+* **[Читатель отчетов](#reports-reader)**: пользователи с этой ролью могут просматривать данные отчетов об использовании и панель мониторинга отчетов в центре администрирования Office 365, а также пакет контекста внедрения в Power BI. Кроме того, эта роль предоставляет доступ к отчетам о входе, сведениям о действиях в Azure AD и данным от API отчетов Microsoft Graph. Пользователь с ролью "Читатель отчетов" имеет доступ только к релевантным метрикам использования и внедрения. Он не приобретает полномочия администратора по настройке или использованию центров администрирования отдельных продуктов (например, Excahange). Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-* **[Администратор безопасности](#security-administrator)**: пользователи с этой ролью имеют все разрешения только для чтения в роли "читатель безопасности", а также могут управлять конфигурацией служб, связанных с безопасностью: защита идентификации Azure Active Directory, Azure Information Protection и центр безопасности и соответствия требованиям Office 365. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Permissions-in-the-Office-365-Security-Compliance-Center-d10608af-7934-490a-818e-e68f17d0e9c1).
+* **[Администратор безопасности](#security-administrator)**: Пользователи с этой ролью обладают разрешениями по управлению функциями, которые связанные с безопасностью в Центре безопасности Microsoft 365, службе "Защита идентификации Azure Active Directory" и Центре безопасности и соответствия требованиям Office 365. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Permissions-in-the-Office-365-Security-Compliance-Center-d10608af-7934-490a-818e-e68f17d0e9c1).
   
-  | В | Может |
-  | --- | --- |
-  | Центр защиты идентификации |<ul><li>Все разрешения роли читателя безопасности.<li>А также возможность выполнять все операции центра защиты идентификации кроме сброса паролей. |
-  | Управление привилегированными пользователями (PIM) |<ul><li>Все разрешения роли читателя безопасности.<li>**Не может** управлять принадлежностью к ролям или параметрами ролей Azure AD. |
-  | <p>Отслеживание работоспособности службы Office 365</p><p>Центр безопасности и соответствия требованиям Office 365 |<ul><li>Все разрешения роли читателя безопасности.<li>Может настраивать все параметры функции "Дополнительная защита от угроз" (защита от вредоносных программ и вирусов, защита от вредоносных URL-адресов, трассировка URL-адресов и т. д.). |
-  
-* **[Чтение данных безопасности](#security-reader)**: пользователи с этой ролью имеют глобальный доступ только на чтение, в том числе сведений в Azure Active Directory, службе защиты идентификации, управления привилегированными пользователями, а также имеют возможность чтения отчетов о входе в Azure Active Directory и журналов аудита. Эта роль также предоставляет разрешения только на чтение в Центре безопасности и соответствия требованиям Office 365. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Permissions-in-the-Office-365-Security-Compliance-Center-d10608af-7934-490a-818e-e68f17d0e9c1).
+  В | Может
+  --- | ---
+  [Центр безопасности Microsoft 365](https://protection.microsoft.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Просмотр отчетов
+  Центр защиты идентификации | Все разрешения роли читателя безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
+  [управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя безопасности.<br>**Не может** осуществлять доступ к данным без прав на управление членством в роли или параметрами ролей Azure AD.
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление политиками безопасности.<br>Просмотр, исследование и реагирование на угрозы безопасности.<br>Просмотр отчетов
+  Azure Advanced Threat Protection | Мониторинг и реагирование на подозрительные безопасные действия.
+  EDR и ATP в Защитнике Windows | Назначение ролей<br>Управление группами компьютеров<br>Настройка выявления угроз в конечной точке и автоматизированном исправлении.<br>Просмотр, исследование и реагирование на оповещения.
+  [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, конфигурации и сведений о приложении.<br>Не может вносить изменения в Intune.
+  [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Добавление администраторов, политики и параметров, загрузка журналов и выполнение действия системы управления.
+  [Центр безопасности Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) | Может просматривать политики и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации.
+  [Работоспособность службы Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
 
-  | В | Может |
-  | --- | --- |
-  | Центр защиты идентификации |Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты |
-  | Управление привилегированными пользователями (PIM) |<p>Имеет доступ только для чтения ко всем сведениям, отображаемым в службе управления привилегированными пользователями (PIM) Azure AD: политики и отчеты для назначения ролей Azure AD, проверки безопасности, а в будущем также доступ на чтение для данных политик и отчетов, относящихся к сценариям за пределами назначения ролей Azure AD.<p>**Не может** регистрироваться в службе управления привилегированными пользователями Azure AD или вносить в нее какие-либо изменения. Используя портал службы управления привилегированными пользователями или PowerShell, кто-то в этой роли может активировать дополнительные роли (например, глобальный администратор или администратор привилегированных ролей), если пользователь является кандидатом на них. |
-  | <p>Отслеживание работоспособности службы Office 365</p><p>Центр безопасности и соответствия требованиям Office 365</p> |<ul><li>Чтение оповещений и управление ими<li>Чтение политик безопасности<li>Чтение данных аналитики угроз, Cloud App Discovery и карантин во время поиска и изучения<li>Чтение всех отчетов |
+<!--* **[Security operator](#security-operator)**: Users with this role can manage alerts and have global read-only access on security-related feature, including all information in Microsoft 365 security center, Azure Active Directory, Identity Protection, Privileged Identity Management, as well as the ability to read Azure Active Directory sign-in reports and audit logs, and in Office 365 Security & Compliance Center.
+
+  In | Can do
+  --- | ---
+  [Microsoft 365 security center](https://protection.microsoft.com) | All permissions of the Security Reader role<br>View, investigate, and respond to security threats alerts
+  Identity Protection Center | All permissions of the Security Reader role<br>Additionally, the ability to perform all Identity Protection Center operations except for resetting passwords
+  [Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | All permissions of the Security Reader role
+  [Office 365 Security & Compliance Center](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts
+  Windows Defender ATP and EDR | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts
+  [Intune](https://docs.microsoft.com/intune/role-based-access-control) | All permissions of the Security Reader role
+  [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | All permissions of the Security Reader role
+  [Office 365 service health](https://docs.microsoft.com/office365/enterprise/view-service-health) | View the health of Office 365 services
+-->
+* **[Чтение данных безопасности](#security-reader)**: Пользователи с этой ролью имеют глобальный доступ только для чтения для функций, связанных с безопасностью, включая все данные в Центре безопасности Microsoft 365, Azure Active Directory, Защите идентификации и Privileged Identity Management, а также могут просматривать отчеты и журналы аудита входа в Azure Active Directory и Центр безопасности и соответствия требованиям Office 365. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Permissions-in-the-Office-365-Security-Compliance-Center-d10608af-7934-490a-818e-e68f17d0e9c1).
+
+  В | Может
+  --- | ---
+  [Центр безопасности Microsoft 365](https://protection.microsoft.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Просмотр отчетов
+  Центр защиты идентификации | Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<br><ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты
+  [управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всем сведениям, отображаемым в службе управления привилегированными пользователями (PIM) Azure AD: политики и отчеты для назначения ролей Azure AD, проверки безопасности, а в будущем также доступ на чтение для данных политик и отчетов, относящихся к сценариям за пределами назначения ролей Azure AD.<br>**Не может** регистрироваться в службе управления привилегированными пользователями Azure AD или вносить в нее какие-либо изменения. Используя портал службы управления привилегированными пользователями или PowerShell, кто-то в этой роли может активировать дополнительные роли (например, глобальный администратор или администратор привилегированных ролей), если пользователь является допустимым для них.
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
+  EDR и ATP в Защитнике Windows | Просмотр и анализ оповещений.
+  [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, настроек и сведений о приложении. Не может вносить изменения в Intune.
+  [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.
+  [Центр безопасности Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) | Может просматривать оповещения и рекомендации, просматривать политики и состояния безопасности, но не может вносить изменения.
+  [Работоспособность службы Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
 
 * **[Администратор службы поддержки](#service-support-administrator)**: пользователи с этой ролью могут открывать запросы в службу поддержки корпорации Майкрософт для служб Azure и Office 365 и просматривать панель мониторинга служб и центр сообщений на портале Azure и портале администрирования Office 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
-
-* **[Администратор SharePoint](#sharepoint-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
   > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы SharePoint". На портале Azure она называется "Администратор SharePoint".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы поддержки". На [портале Azure](https://portal.azure.com), портале администрирования Office 365 и портале Intune выполняет роль "Администратор служб".
 
-* **[Администратор службы Skype для бизнеса или администратор Lync](#skype-for-business-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Skype для бизнеса при наличии этой службы, а также возможность управлять определенными атрибутами пользователя Skype в Azure Active Directory. Кроме того, эта роль позволяет управлять запросами в службу поддержки и отслеживать работоспособность служб, а также предоставляет доступ к центру администрирования Teams и Skype для бизнеса. Учетная запись также должна иметь лицензию Teams, иначе она не сможет запускать командлеты PowerShell Teams. Дополнительные сведения см. в руководствах по [использованию роли администратора Skype для бизнеса](https://support.office.com/article/about-the-skype-for-business-admin-role-aeb35bda-93fc-49b1-ac2c-c74fbeb737b5) и [лицензировании дополнительных компонентов Skype для бизнеса и Microsoft Teams](https://docs.microsoft.com/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
+* **[Администратор SharePoint](#sharepoint-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+  > [!NOTE]
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы SharePoint". На [портале Azure](https://portal.azure.com) она называется "Администратор SharePoint".
+
+* **[Администратор службы Skype для бизнеса или администратор Lync](#lync-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Skype для бизнеса при наличии этой службы, а также возможность управлять определенными атрибутами пользователя Skype в Azure Active Directory. Кроме того, эта роль позволяет управлять запросами в службу поддержки и отслеживать работоспособность служб, а также предоставляет доступ к центру администрирования Teams и Skype для бизнеса. Учетная запись также должна иметь лицензию Teams, иначе она не сможет запускать командлеты PowerShell Teams. Дополнительные сведения см. в руководствах по [использованию роли администратора Skype для бизнеса](https://support.office.com/article/about-the-skype-for-business-admin-role-aeb35bda-93fc-49b1-ac2c-c74fbeb737b5) и [лицензировании дополнительных компонентов Skype для бизнеса и Microsoft Teams](https://docs.microsoft.com/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
 
   > [!NOTE]
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Lync". На [портале Azure](https://portal.azure.com/) она называется "Администратор Skype для бизнеса".
 
+* **[Администратор Teams](#teams-service-administrator)**: пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
+  > [!NOTE]
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Teams". На [портале Azure](https://portal.azure.com) она называется "Администратор Teams".
+
 * **[Администратор связи Teams](#teams-communications-administrator)**: пользователи с этой ролью могут управлять функциями рабочей нагрузки Microsoft Teams, связанными с голосовой связью и телефонией. Сюда входят средства управления для назначения номера телефона, политики голосовой связи и собраний, а также полный доступ к набору инструментов анализа вызовов.
 
-* **[Инженер службы поддержки связи Teams](#teams-communications-support-engineer)**: пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать полные сведения о записях вызовов для всех задействованных участников.
+* **[Инженер службы поддержки связи Teams](#teams-communications-support-engineer)**: пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать полные сведения о записях вызовов для всех задействованных участников. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-* **[Специалист службы поддержки связи Teams](#teams-communications-support-specialist)**: пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове.
-
-* **[Администратор Teams](#teams-administrator)**: пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
-  > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Teams". На портале Azure она называется "Администратор Teams".
+* **[Специалист службы поддержки связи Teams](#teams-communications-support-specialist)**: пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
 * **[Администратор учетных записей пользователей](#user-account-administrator)**: пользователи с этой ролью могут создавать пользователей и управлять всеми аспектами пользователей (с некоторыми ограничениями, указанными ниже). Кроме того, пользователи с этой ролью могут создавать группы и управлять ими. Кроме того, эта роль включает в себя возможность создавать представления пользователей и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
 
@@ -441,7 +486,7 @@ ms.locfileid: "54360060"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="customer-lockbox-access-approver"></a>Лицо, утверждающее доступ клиентов к LockBox
-Может утверждать запросы в службу поддержки Майкрософт для получения доступа к данным организации клиента.
+Может утверждать запросы в службу поддержки Майкрософт для получения доступа к данным организации клиента. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -705,7 +750,7 @@ ms.locfileid: "54360060"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="message-center-reader"></a>Читатель Центра сообщений
-Может читать сообщения и обновления для своей организации только в Центре сообщений Office 365. 
+Может читать сообщения и обновления для своей организации только в Центре сообщений Office 365. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -964,7 +1009,7 @@ ms.locfileid: "54360060"
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
 ### <a name="teams-service-administrator"></a>Администратор службы Teams
-Может управлять службой Microsoft Teams.
+Может управлять службой Microsoft Teams. 
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.

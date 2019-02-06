@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Wrike | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Wrike | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wrike.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 894b7520-5136-4973-a1ba-942a9f7f0a03
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2018
 ms.author: jeedes
-ms.openlocfilehash: d2a8db071152e95b3c70509a1c10f7aa73f02c21
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 1eba7769717f2dc92f9600b46162ec95a13bd84c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51978176"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195763"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство. Интеграция Azure Active Directory с Wrike
 
@@ -53,7 +53,7 @@ ms.locfileid: "51978176"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. добавление Wrike из коллекции;
+1. Добавление Wrike из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-wrike-from-the-gallery"></a>Добавление Wrike из коллекции

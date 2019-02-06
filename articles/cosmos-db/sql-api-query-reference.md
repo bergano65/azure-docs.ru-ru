@@ -8,14 +8,14 @@ ms.topic: reference
 ms.date: 12/07/2018
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 9ec8ecf7b875b32d0ea5715e407b444fa1b25c50
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: bfc3ed5553802c8a87776dc1a5372bc27ac8d13d
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54354473"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55475199"
 ---
-# <a name="azure-cosmos-db-sql-language-reference"></a>Справочник по языку SQL в Azure Cosmos DB 
+# <a name="sql-language-reference-for-azure-cosmos-db"></a>Справочник по языку SQL для Azure Cosmos DB 
 
 Azure Cosmos DB позволяет выполнять запросы к документам с помощью знакомой грамматики SQL, например к иерархическим файлам JSON, без использования явных схем или создания вторичных индексов. В этой статье содержится документация по синтаксису языка SQL-запросов, совместимому с учетными записями API SQL. Пошаговое руководство с примерами SQL-запросов см. в статье [Запрос данных Azure Cosmos DB с помощью SQL-запросов](how-to-sql-query.md).  
   
@@ -2169,7 +2169,10 @@ REPLICATE(<str_expr>, <num_expr>)
   
 -   `num_expr`  
   
-     Любое допустимое числовое выражение.  
+     Любое допустимое числовое выражение. Если значение num_expr является отрицательным или бесконечным, результат не определяется.
+
+  > [!NOTE]
+  > Максимальная длина результата — 10 000 символов, т. е. (length(str_expr) * num_expr) < = 10 000.
   
  **Типы возвращаемого значения**  
   

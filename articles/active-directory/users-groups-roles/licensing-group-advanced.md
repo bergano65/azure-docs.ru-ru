@@ -10,16 +10,16 @@ editor: piotrci
 ms.service: active-directory
 ms.topic: article
 ms.workload: identity
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.date: 10/29/2018
 ms.author: curtand
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b94bf4c499a5d6323e774df90304f0134bc5894
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: b2e52b1e9aad05af173bf86e769e0c6ff7d28d9d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215418"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195166"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 
@@ -187,7 +187,7 @@ New Value : [Users successfully assigned licenses: 6, Users for whom license ass
 > ```
 
 3. Чтобы просмотреть полный журнал и узнать, как выполнялась обработка группы, включая все изменения пользователей, задайте следующие фильтры:
-  - **Инициатор (субъект)**: "Лицензирование Microsoft Azure AD на основе группы"
+  - **Кем инициировано (субъект)**: "Лицензирование Microsoft Azure AD на основе группы".
   - **Диапазон дат** (необязательно): пользовательский диапазон, если известно, что для определенной группы была запущена и завершена обработка
 
 В этом примере выходных данных показаны дата и время запуска обработки, все результирующие изменения пользователей, а также дата и время завершения обработки.
@@ -201,7 +201,7 @@ New Value : [Users successfully assigned licenses: 6, Users for whom license ass
 
 Удалить группу с активной назначенной лицензией невозможно. Администратор может удалить группу, не понимая, что это приведет к удалению лицензий пользователей. По этой причине мы требуем, чтобы все лицензии сначала были удалены из группы.
 
-При попытке удалить группу на портале Azure может появиться уведомление об ошибке. Например, ![Снимок экрана. Не удалось удалить группу](./media/licensing-group-advanced/groupdeletionfailed.png)
+При попытке удалить группу на портале Azure может появиться уведомление об ошибке. ![Снимок экрана. Не удалось удалить группу](./media/licensing-group-advanced/groupdeletionfailed.png)
 
 Перейдите на вкладку **Лицензии** в группе и проверьте, нет ли назначенных лицензий. Если есть, удалите их и попытайтесь снова удалить группу.
 

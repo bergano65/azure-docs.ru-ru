@@ -3,19 +3,19 @@ title: Часто задаваемые вопросы о службе совме
 description: Ответы на часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
-ms.component: B2B
+ms.subservice: B2B
 ms.topic: reference
 ms.date: 10/29/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: 481fb929a8f937b1d822755e93fae09d9f585fad
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 36efb943855d36d1f830ba08554eabd0a8a88f50
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436830"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55169337"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -73,7 +73,7 @@ ms.locfileid: "54436830"
  
 * Гостевые пользователи, использующие для входа учетную запись Майкрософт (например, guestuser@live.com), могут сбросить собственные пароли с помощью самостоятельного сброса паролей (SSPR). Ознакомьтесь со статьей [Как сбросить пароль учетной записи Майкрософт](https://support.microsoft.com/help/4026971/microsoft-account-how-to-reset-your-password).
 * Гостевые пользователи, использующие для входа учетную запись Google или другого внешнего поставщика удостоверений, могут сбросить собственные пароли с помощью метода SSPR поставщика удостоверений. Например, гостевой пользователь с учетной записью Google guestuser@gmail.comможет сбросить пароль, следуя инструкциям в [Change or reset your password](https://support.google.com/accounts/answer/41078) (Изменение или сброс пароля).
-* Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль.
+* Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль. Иногда организация будет [управлять вирусными клиентами](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover), которые создаются, когда сотрудники используют свои рабочие электронные адреса для регистрации в службах. После получения организацией контроля над вирусным клиентом только администратор в организации может сбросить пароль пользователя или включить SSPR. При необходимости приглашающая организация может удалить учетную запись гостя из каталога и повторно отправить приглашение.
 * Если домашним каталогом гостевого пользователя является клиент Azure AD, вы можете сбросить пароль пользователя. Например, вы могли создать пользователя или синхронизировать его из локальной службы Active Directory и задать для свойства UserType значение "Гость". Так как этот пользователь размещен в вашем каталоге, вы можете сбросить его пароль на портале Azure.
 
 ### <a name="does-microsoft-dynamics-365-provide-online-support-for-azure-ad-b2b-collaboration"></a>Предоставляет ли Microsoft Dynamics 365 поддержку через Интернет для пользователей службы совместной работы Azure AD B2B?

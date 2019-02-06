@@ -1,6 +1,6 @@
 ---
-заголовок: Задайте вопрос, на который можно ответить с помощью обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: Узнайте, как формулировать точные вопросы обработки и анализа данных. В этом вам поможет видео 3 из цикла "Обработка и анализ данных для начинающих". Включает сравнение вопросов классификации и регрессии.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Задайте вопрос, на который можно ответить с помощью обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: Узнайте, как формулировать точные вопросы обработки и анализа данных. В этом вам поможет видео 3 из цикла "Обработка и анализ данных для начинающих". Включает сравнение вопросов классификации и регрессии.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 03.01.2018
 ---

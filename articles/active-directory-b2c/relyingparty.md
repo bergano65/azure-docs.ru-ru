@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 01/25/2019
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: 8ec9e5a50f2350a17d5845f5c52954df10fa1d10
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: 5d42568a738d946d7df65601044b9797a35f6b1f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856831"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55176018"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -44,7 +44,7 @@ ms.locfileid: "54856831"
   <RelyingParty>
     <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
     <UserJourneyBehaviors>
-      <SingleSignOn Scope="TrustFramework" />
+      <SingleSignOn Scope="TrustFramework" KeepAliveInDays="7"/>
       <SessionExpiryType>Rolling</SessionExpiryType>
       <SessionExpiryInSeconds>300</SessionExpiryInSeconds>
       <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="your-application-insights-key" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
@@ -125,6 +125,7 @@ ms.locfileid: "54856831"
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | Область | Yes | Область поведение единого входа. Возможные значения: `Suppressed`, `Tenant`, `Application` или `Policy`. Значение `Suppressed` указывает, что поведение подавляется. Например, в случае сеанса единого входа сеанс не поддерживается для пользователя, и пользователь всегда получает запрос на выбор поставщика удостоверений. Значение `TrustFramework` указывает, что поведение применяется для всех политик в инфраструктуре доверия. Например, пользователь, который проходит через пути взаимодействия двух политик для инфраструктуры доверия, не получает запрос на выбор поставщика удостоверений. Значение `Tenant` указывает, что поведение применяется для всех политик в клиенте. Например, пользователь, который проходит через пути взаимодействия двух политик для клиента, не получает запрос на выбор поставщика удостоверений. Значение `Application` указывает, что поведение применяется ко всем политикам для приложения, делающего запрос. Например, пользователь, который проходит через пути взаимодействия двух политик для приложения, не получает запрос на выбор поставщика удостоверений. Значение `Policy` указывает, что поведение применяется только к политике. Например, пользователь, который проходит через пути взаимодействия двух политик для инфраструктуры доверия, получает запрос на выбор поставщика удостоверений при переключении политик. |
+| KeepAliveInDays | Yes | Контролирует, как долго пользователь будет оставаться в системе. Если задать значение 0, функция "Оставаться в системе" будет отключена. Дополнительные сведения см. в статье [Включение функции "Оставаться в системе" в Azure Active Directory B2C](active-directory-b2c-reference-kmsi-custom.md). |
 
 ## <a name="journeyinsights"></a>JourneyInsights
 
@@ -159,7 +160,7 @@ ms.locfileid: "54856831"
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| ИМЯ | Yes | Имя пары "ключ — значение". |
+| Name | Yes | Имя пары "ключ — значение". |
 
 Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](active-directory-b2c-ui-customization-custom-dynamic.md).
 
@@ -186,7 +187,7 @@ ms.locfileid: "54856831"
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| ИМЯ | Yes | Имя допустимого протокола, поддерживаемого в Azure AD B2C и используемого в составе технического профиля. Возможные значения: `OpenIdConnect` или `SAML2`. Значение `OpenIdConnect` представляет собой стандарт протокола OpenID Connect 1.0 согласно спецификации OpenID Foundation. Значение `SAML2` представляет стандартный протокол SAML 2.0 согласно спецификации OASIS. Не используйте токен SAML в рабочей среде. |
+| Name | Yes | Имя допустимого протокола, поддерживаемого в Azure AD B2C и используемого в составе технического профиля. Возможные значения: `OpenIdConnect` или `SAML2`. Значение `OpenIdConnect` представляет собой стандарт протокола OpenID Connect 1.0 согласно спецификации OpenID Foundation. Значение `SAML2` представляет стандартный протокол SAML 2.0 согласно спецификации OASIS. Не используйте токен SAML в рабочей среде. |
 
 ## <a name="outputclaims"></a>OutputClaims
 

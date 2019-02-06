@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: jeffgilb
 ms.reviewer: prchint
-ms.openlocfilehash: 9ea46860817d60c2ffbde68c0fc5ae6f6ca14877
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.lastreviewed: 09/18/2018
+ms.openlocfilehash: 5d9d01a482483d030569a4dcad03c9ecef7cffc0
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46369762"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55245156"
 ---
 # <a name="azure-stack-storage-capacity-planning"></a>Планирование емкости хранилища для Azure Stack
 В следующих разделах приводятся сведения о планировании емкости хранилища для Azure Stack, которые помогут спланировать потребности решения в ресурсах хранения.

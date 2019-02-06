@@ -11,13 +11,13 @@ author: douglaslMS
 ms.author: douglasl
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 804202149234a55de4f7f99b18dc40b8136463a3
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.date: 01/25/2019
+ms.openlocfilehash: e980ec81f66e1045a4d9df33b3392589f5c1a668
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651051"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55463758"
 ---
 # <a name="export-an-azure-sql-database-to-a-bacpac-file"></a>Экспорт базы данных SQL Azure в BACPAC-файл
 
@@ -47,7 +47,7 @@ ms.locfileid: "53651051"
 
 ![Экспорт базы данных](./media/sql-database-export/database-export.png)
 
-Чтобы отслеживать ход выполнения операции экспорта, откройте страницу логического сервера, содержащего экспортируемую базу данных. Прокрутите ее вниз до раздела **Операции** и щелкните журнал **Импорт и экспорт**.
+Чтобы отслеживать ход выполнения операции экспорта, откройте страницу сервера Базы данных SQL, содержащего экспортируемую базу данных. Прокрутите ее вниз до раздела **Операции** и щелкните журнал **Импорт и экспорт**.
 
 ![журнал экспорта](./media/sql-database-export/export-history.png)
 ![состояние журнала экспорта](./media/sql-database-export/export-history2.png)
@@ -97,7 +97,7 @@ $exportStatus
 
 - Дополнительные сведения о долгосрочном хранении резервных копий базы данных SQL Azure как альтернативе экспорту базы данных для создания архива приведены в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](sql-database-long-term-retention.md).
 - Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
-- Чтобы узнать об импорте BACPAC-файла в базу данных SQL Server, ознакомьтесь с разделом [Импорт файла BACPAC для создания новой пользовательской базы данных](https://msdn.microsoft.com/library/hh710052.aspx).
+- Сведения об импорте BACPAC-файла в базу данных SQL Server см. в статье [Импорт файла BACPAC для создания новой пользовательской базы данных](https://msdn.microsoft.com/library/hh710052.aspx).
 - Сведения об экспорте BACPAC-файла из базы данных SQL Server см. в разделе [Export a Data-tier Application](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) (Экспорт приложения уровня данных).
 - Дополнительные сведения об использовании службы миграции данных для переноса базы данных см. в разделе [Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS](../dms/tutorial-sql-server-to-azure-sql.md).
 - Если вы экспортируете данные из SQL Server, чтобы потом перенести их в базу данных SQL Azure, см. в статью [Migrate a SQL Server database to Azure SQL Database](sql-database-cloud-migrate.md) (Миграция базы данных SQL Server в базу данных SQL).

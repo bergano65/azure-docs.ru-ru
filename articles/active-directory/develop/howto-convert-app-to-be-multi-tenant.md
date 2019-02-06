@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 35af95cb-ced3-46ad-b01d-5d2f6fd064a3
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
@@ -17,14 +17,14 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: justhu, elisol
 ms.custom: aaddev
-ms.openlocfilehash: 5c904feacef4f5c15784c5f30c5f8bedf3940329
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: ae9412ed7c02d88e7d0c35c6ea0f95da755b84d4
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52425349"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097050"
 ---
-# <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
+# <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Практическое руководство: Вход любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
 Если вы предлагаете приложение по схеме "программное обеспечение как сервис" (SaaS) для многих организаций, вы можете настроить его так, чтобы оно поддерживало вход из любого клиента Azure AD (AD). Это и называется *сделать приложение мультитенантным*. Пользователи из любого клиента Azure AD смогут входить в приложение после того, как согласятся использовать свою учетную запись с вашим приложением. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "52425349"
 
 Если используется мультитенантное приложение, то оно не знает заранее, из какого клиента тот или иной пользователь, поэтому невозможно отправить запрос в конечную точку клиента. Вместо этого запросы отправляются в конечную точку, которая мультиплексируется по всем клиентам Azure AD: `https://login.microsoftonline.com/common`
 
-Когда служба Azure AD получает запрос в конечной точке /common, она выполняет вход пользователя и, как следствие, выясняет, из какого клиента этот пользователь. Конечная точка /common работает со всеми протоколами проверки подлинности, поддерживаемыми Azure AD: OpenID Connect, OAuth 2.0, SAML 2.0 и WS-Federation.
+Когда служба Azure AD получает запрос в конечной точке /common, она выполняет вход пользователя и, как следствие, выясняет, из какого клиента этот пользователь. Конечная точка /common работает со всеми протоколами аутентификации, поддерживаемыми Azure Active Directory:  OpenID Connect, OAuth 2.0, SAML 2.0 и WS-Federation.
 
 Ответ приложению на вход содержит маркер, представляющий пользователя. Значение издателя в маркере сообщает приложению, из какого клиента этот пользователь. Когда из конечной точки "/common" возвращается ответ, значение издателя в маркере соответствует клиенту пользователя. 
 

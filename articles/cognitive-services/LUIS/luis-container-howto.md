@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: ac97cf3e269652dc33ce4211947b45631228a697
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 97f11523c0418caaee66930c87a7de64570097d6
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54463292"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55296908"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -40,11 +40,7 @@ ms.locfileid: "54463292"
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
-**Главным** является компьютер, на котором выполняется контейнер Docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
-
-* [Служба Azure Kubernetes (AKS)](../../aks/index.yml)
-* [Экземпляры контейнеров Azure](../../container-instances/index.yml);
-* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](../../azure-stack/index.yml). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](../../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
+[!INCLUDE [Request access to private preview](../../../includes/cognitive-services-containers-host-computer.md)]
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
@@ -52,9 +48,11 @@ ms.locfileid: "54463292"
 
 |Параметр| Минимальная | Рекомендуется |
 |-----------|---------|-------------|
-|Ядра<BR>`--cpus`|1 ядро<BR>от 2,6 ГГц|1 ядро|
+|Ядра<BR>`--cpus`|1 ядро|1 ядро|
 |Память<BR>`--memory`|2 ГБ|4 ГБ|
 |Транзакций в секунду<BR>(TPS)|20 TPS|40 TPS|
+
+Частота каждого ядра должна быть минимум 2,6 ГГц.
 
 Параметры `--cpus` и `--memory` используются как часть команды `docker run`.
 
@@ -66,17 +64,12 @@ ms.locfileid: "54463292"
 docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 ```
 
+Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера.
+
 Полное описание доступных тегов, таких как `latest` из предыдущей команды, см. в разделе [LUIS](https://go.microsoft.com/fwlink/?linkid=2043204) на сайте Docker Hub.
 
-> [!TIP]
-> Используйте команду [docker images](https://docs.docker.com/engine/reference/commandline/images/), чтобы получить список скачанных образов контейнеров. Например, следующая команда возвращает таблицу со списком идентификаторов, репозиториев и тегов для каждого скачанного образа контейнера:
->
->  ```Docker
->  docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
->
->  IMAGE ID            REPOSITORY                                                                TAG
->  ebbee78a6baa        mcr.microsoft.com/azure-cognitive-services/luis                           latest
->  ``` 
+[!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
+
 
 ## <a name="how-to-use-the-container"></a>Использование контейнера
 
@@ -325,14 +318,7 @@ curl -X GET \
 
 ## <a name="containers-api-documentation"></a>Документация по API контейнера
 
-Контейнер предоставляет полный набор документации для конечных точек, а также функцию `Try it now`. Эта функция позволяет ввести параметры в веб-форму HTML и создать запрос без необходимости писать код. После возвращения результатов запроса предоставляется пример команды CURL с примером требуемого формата HTTP-заголовков и текста. 
-
-> [!TIP]
-> Прочитайте [спецификацию OpenAPI](https://swagger.io/docs/specification/about/) с описанием операций API, поддерживаемых контейнеров, из относительного URI `/swagger`. Например: 
->
->  ```http
->  http://localhost:5000/swagger
->  ```
+[!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
 ## <a name="billing"></a>Выставление счетов
 
@@ -371,7 +357,7 @@ curl -X GET \
 
 В этой статье описаны основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Интеллектуальной службы распознавания речи (LUIS). В разделе "Сводка" сделайте следующее.
 
-* Интеллектуальная служба распознавания речи (LUIS) предоставляет контейнеры Linux для Docker, обеспечивая прогнозы фраз по запросам конечных точек.
+* Интеллектуальная служба распознавания речи (LUIS) предоставляет один контейнер Linux для Docker, обеспечивая прогнозы фраз по запросам конечных точек.
 * Образы контейнеров скачиваются из Реестра контейнеров Майкрософт (MCR).
 * Образы контейнеров выполняются в Docker.
 * С помощью REST API можно выполнять запросы к конечным точкам контейнера, указывая URI узла контейнера.
@@ -384,4 +370,4 @@ curl -X GET \
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](luis-container-configuration.md).
 * Чтобы решить проблемы, связанные с функциональностью LUIS, ознакомьтесь с [часто задаваемыми вопросами](luis-resources-faq.md).
-* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)
+* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)

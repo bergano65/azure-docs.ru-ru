@@ -4,14 +4,14 @@ description: Эта статья содержит обзор известных 
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 01/10/2019
+ms.date: 01/25/2019
 ms.author: raynew
-ms.openlocfilehash: 0c7d0980c928ecefebeabff555378230453c742f
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: ebd374cc8792545d1db57f624a5831dc9ded272f
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54827947"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102131"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -153,8 +153,20 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 Эта ошибка может возникать из-за проблемы с установкой VMware PowerCLI. Устранить проблему можно следующим образом:
 
 1. Если вы используете не самую новую версию модуля сборщика, обновите его до [последней версии](https://aka.ms/migrate/col/checkforupdates) и проверьте, устранена ли проблема.
-2. Если установлена последняя версия сборщика, вручную установите [VMware PowerCLI 6.5.2](https://www.powershellgallery.com/packages/VMware.PowerCLI/6.5.2.6268016) и проверьте, устранена ли проблема.
-3. Если описанные выше действия не устраняют проблему, перейдите в папку C:\Program Files\ProfilerService и удалите в ней файлы VMware.dll и VimService65.dll, а затем перезапустите службу "Сборщик Миграции Azure" в диспетчере служб Windows (откройте "Выполнить" и ведите services.msc, чтобы открыть диспетчер служб Windows).
+2. При наличии последней версии сборщика выполните следующие действия, чтобы выполнить чистую установку PowerCLI.
+
+   a. Закройте веб-браузер на устройстве.
+
+   b. Остановите службу "Сборщик Миграции Azure", перейдя к диспетчеру служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщика Миграции Azure" правой кнопкой мыши и выберите "Остановить".
+
+   c. Удалите все папки, начинающиеся с "VMware", из следующих расположений: C:\Program Files\WindowsPowerShell\Modules;  
+        C:\Program Files (x86)\WindowsPowerShell\Modules.
+
+   d. Перезапустите службу "Сборщик Миграции Azure" в диспетчере служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщик Миграции Azure" правой кнопкой и выберите "Запустить".
+   
+   д. Дважды щелкните ярлык "Запуск сборщика" на рабочем столе, чтобы запустить приложение сборщика. Приложение сборщика должно автоматически скачивать и устанавливать требуемую версию PowerCLI.
+
+3. Если приведенные выше шаги не помогают устранить проблему, установите [VMware PowerCLI 6.5.2](https://www.powershellgallery.com/packages/VMware.PowerCLI/6.5.2.6268016) вручную и проверьте, устранена ли проблема.
 
 ### <a name="error-unabletoconnecttoserver"></a>Ошибка UnableToConnectToServer
 
@@ -210,7 +222,7 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 Список операционных систем Linux, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-linux-operating-systems).
 
 ### <a name="i-am-unable-to-visualize-dependencies-in-azure-migrate-for-more-than-one-hour-duration"></a>В службе "Миграция Azure" нельзя визуализировать зависимости за период свыше одного часа?
-В службе "Миграция Azure" можно визуализировать зависимости за период не больше одного часа. Хотя служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час.
+В службе "Миграция Azure" можно визуализировать зависимости за период не больше одного часа. Хотя служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час. Тем не менее можно использовать Log Analytics для [запроса данных зависимостей](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies#query-dependency-data-from-log-analytics) за более длительный срок.
 
 ### <a name="i-am-unable-to-visualize-dependencies-for-groups-with-more-than-10-vms"></a>Можно ли визуализировать зависимости для групп из более чем 10 виртуальных машин?
 Вы можете [визуализировать зависимости групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies), в которых имеется до 10 виртуальных машин. Если в группе более 10 виртуальных машин, рекомендуем разбить ее на более мелкие группы, а после этого приступить к визуализации зависимостей.

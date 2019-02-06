@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: e51d31035a8b05238ef0f8d13dd6b6c3f9ad02e8
-ms.sourcegitcommit: b07d06ea51a20e32fdc61980667e801cb5db7333
+ms.openlocfilehash: f5c4f8d2c9cec4372ef5de70485d45ab33e022de
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
-ms.locfileid: "26374208"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55099402"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
 
@@ -36,7 +36,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 1. Подключение типа "сеть — сеть" (на основе маршрута) — [подключение между VPN-шлюзом и локальным маршрутизатором](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#createconnection).
 1. [Configuring FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md) (Настройка FortiGate)
 
-Подробное пошаговое руководство по настройке конфигурации "сеть — сеть" можно найти в статье [Создание виртуальной сети с подключением типа "сеть — сеть" с помощью портала Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+Подробные пошаговые инструкции по настройке конфигурации "сеть — сеть" см. в статье: [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
 
 Один из важных этапов — настройка параметров связи IPsec. Любая ошибка в настройках приведет к потере подключения между локальной сетью и Azure. В настоящее время VPN-шлюзы Azure настроены для поддержки приведенных ниже параметров IPsec на этапе 1. Обратите внимание, что, как упоминалось ранее, эти параметры нельзя изменить.  Как можно видеть в таблице ниже, алгоритмы шифрования, поддерживаемые VPN-шлюзом Azure, это AES256, AES128 и 3DES.
 
@@ -103,7 +103,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | ConnectionEntityNotFound | Отсутствует конфигурация подключения. | Нет  |
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |Нет |
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Yes |
-| ConnectionMarkedStandy | Базовая служба помечена как ждущая.| Yes|
+| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Yes|
 | Authentication | Несоответствие предварительного ключа. | Yes|
 | PeerReachability | Одноранговый шлюз недоступен. | Yes|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|

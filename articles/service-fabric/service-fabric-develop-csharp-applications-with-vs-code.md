@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2018
 ms.author: v-jamebr
-ms.openlocfilehash: 27c7c62125f3f559fb1764292729cbbfdc1c4e5f
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: d2e890110194b1fbe0528191fa645628cc3a1345
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37115823"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55161367"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
 
@@ -27,7 +27,7 @@ ms.locfileid: "37115823"
 
 В этой статье показано, как создавать, развертывать и отлаживать приложение .NET Core Service Fabric с помощью Visual Studio Code.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что уже установлено VS Code, расширение Service Fabric Reliable Services для VS Code и все зависимости, необходимые для среды разработки. Дополнительные сведения см в разделе [Руководство](./service-fabric-get-started-vs-code.md#prerequisites).
 
@@ -42,7 +42,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-st
 
 ## <a name="open-the-application-in-vs-code"></a>Открытие приложения в VS Code
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 Щелкните правой кнопкой мыши значок VS Code в меню "Пуск" и выберите **Запуск от имени администратора**. Чтобы подключить отладчик к службам, необходимо запустить VS Code от имени администратора.
 
 ### <a name="linux"></a>Linux
@@ -57,16 +57,16 @@ sudo code . --user-data-dir='.'
 
 ![Приложение Counter Service в рабочей области](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-application-in-workspace.png)
 
-## <a name="build-the-application"></a>Создание приложения
+## <a name="build-the-application"></a>создание приложения;
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
-2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.
+2. Найдите и выберите команду **Service Fabric: Build Application** (Service Fabric: создать приложение). Выходные данные сборки передаются во встроенный терминал.
 
    ![Команда сборки приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-build-application.png)
 
 ## <a name="deploy-the-application-to-the-local-cluster"></a>Развертывание приложения в локальном кластере
 Созданное приложение можно развернуть в локальном кластере. 
 
-1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)**. Выходные данные процесса установки отправляются в интегрированный терминал.
+1. В **палитре команд** выберите команду **Service Fabric: Deploy Application (Localhost)** (Service Fabric: развернуть приложение (Localhost)). Выходные данные процесса установки отправляются в интегрированный терминал.
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
@@ -107,7 +107,7 @@ sudo code . --user-data-dir='.'
    
    ![Отключение отладчика](./media/service-fabric-develop-csharp-applications-with-vs-code/debug-bar-disconnect.png)
        
-7. После завершения отладки можно использовать команду **​​Service Fabric: Remove Application** (Service Fabric: удалить приложение) для удаления приложения CounterService из локального кластера. 
+7. После завершения отладки вы можете использовать команду **Service Fabric: Remove Application** (Service Fabric: удалить приложение) для удаления приложения CounterService из локального кластера. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

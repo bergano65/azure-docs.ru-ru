@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/09/2019
-ms.openlocfilehash: 818dbf84f7b706d6f4a89354291775f091bb1afc
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.date: 01/30/2019
+ms.openlocfilehash: 48cdd064155bfbdfa2fef2ce5a8410e4c95e4c3b
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215479"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55461072"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-elastic-pools"></a>Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер
 
@@ -174,7 +174,7 @@ ms.locfileid: "54215479"
 |Виртуальные ядра|7|8|9|10|16|24|
 |Память (ГБ)|81,6|91,8|102|122,4|163,2|204|408|
 |Поддержка columnstore|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|
-|Хранилище выполняющейся в памяти OLTP (ГБ)|7|8|9.5|11|20|36|
+|Хранилище выполняющейся в памяти OLTP (ГБ)|7|8|9,5|11|20|36|
 |Тип хранилища|Локальный SSD|Локальный SSD|Локальный SSD|Локальный SSD|Локальный SSD|Локальный SSD|
 |Максимальный размер данных (ГБ)|1024|1024|1024|1024|1024|1024|
 |Максимальный размер журнала (ГБ)|307|307|307|307|307|307|
@@ -260,5 +260,5 @@ ms.locfileid: "54215479"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
-- Сведения об ограничениях на уровнях сервера и подписки см. в статье [SQL Database resource limits for single and pooled databases on a logical server](sql-database-resource-limits-logical-server.md) (Ограничения ресурсов Базы данных SQL для отдельных баз данных и баз данных в пуле на логическом сервере).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [SQL Database resource limits for Azure SQL Database server](sql-database-resource-limits-database-server.md) (Ограничения ресурсов Базы данных SQL для сервера Базы данных SQL).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).

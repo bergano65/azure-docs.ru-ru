@@ -1,6 +1,6 @@
 ---
-заголовок: Прогнозирования ответов с помощью моделей регрессии titleSuffix: Студия машинного обучения Azure description: Создание простой модели регрессии для прогнозирования цены в видео 4 из цикла "Обработка и анализ данных для начинающих". Содержит линейную регрессию с целевыми данными.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Прогнозирования ответов с помощью моделей регрессии titleSuffix: Студия машинного обучения Azure description: Создание простой модели регрессии для прогнозирования цены в видео 4 из цикла "Обработка и анализ данных для начинающих". Содержит линейную регрессию с целевыми данными.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---

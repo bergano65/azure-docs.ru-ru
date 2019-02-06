@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 01df34025c0389a4ea8bcd5eceaa29f0351df5f7
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 556ec0b55ea2e62975661eb5f668b4d3acda7c30
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54329712"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466359"
 documentType: LandingData
 title: Управляемый экземпляр Базы данных SQL Azure
 metadata:
@@ -78,7 +78,7 @@ sections:
     - html: <a href="https://aka.ms/managed-instance-configurable-backup-retention">Настройка периода хранения резервных копий (до 35 дней)</a> для восстановления на момент времени. Обратите внимание, что долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> в качестве альтернативы.
     - html: Использование <a href="https://aka.ms/managed-instance-failover-groups">географически распределенных групп отработки отказа</a> для сохранения копии экземпляра в другом регионе и обеспечение доступности данных даже в сценарии региональной аварии (предварительная версия).
     - html: <a href="https://aka.ms/managed-instance-tde-byok">Использование собственных ключей шифрования</a> при переносе локальных баз данных, в которых уже включено прозрачное шифрование данных (предварительная версия).
-    - html: Управляемые экземпляры защищены с помощью <a href="https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-management-endpoint-verify-built-in-firewall">встроенного брандмауэра</a>.
+    - html: Управляемые экземпляры защищены с помощью <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенного брандмауэра</a>.
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

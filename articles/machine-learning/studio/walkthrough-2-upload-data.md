@@ -1,6 +1,6 @@
 ---
-заголовок: 'Шаг 2. Отправка данных в эксперимент Студии машинного обучения Azure' titleSuffix: Студия машинного обучения Azure description: 'Пошаговое руководство по разработке решения прогнозирования (шаг 2). Передача сохраненных общедоступных данных в Студию машинного обучения Azure.'
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: 'Шаг 2. Отправка данных в эксперимент Студии машинного обучения Azure' titleSuffix: Студия машинного обучения Azure description: 'Пошаговое руководство по разработке решения прогнозирования (шаг 2). Передача сохраненных общедоступных данных в Студию машинного обучения Azure.'
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 23.03.2017
 ---

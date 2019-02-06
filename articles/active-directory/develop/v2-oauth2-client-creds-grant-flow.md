@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 9b7cfbd7-f89f-4e33-aff2-414edd584b07
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: be10af7096a11fb27971af9dc28036df4a4b0968
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 090f9771bf8d1010e4249d97d5768891f02c54b3
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423564"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55096608"
 ---
 # <a name="azure-active-directory-v20-and-the-oauth-20-client-credentials-flow"></a>Azure Active Directory версии 2.0 и поток учетных данных клиента OAuth 2.0
 
@@ -80,7 +80,7 @@ ms.locfileid: "52423564"
 2. Найдите раздел **Разрешения Microsoft Graph** и добавьте **разрешения приложения**, необходимые для приложения.
 3. **Сохраните** регистрацию приложения.
 
-#### <a name="recommended-sign-the-user-in-to-your-app"></a>Выполнение входа пользователя в приложение (рекомендуется)
+#### <a name="recommended-sign-the-user-in-to-your-app"></a>Рекомендация: выполнение входа пользователя в приложение
 
 Обычно при создании приложения, использующего разрешения, для него нужно настроить страницу или представление, в котором администратор может утвердить разрешения приложения. Эта страница может быть частью потока входа в приложение, параметров приложения или выделенного потока подключения. Во многих случаях разумно отображать это представление подключения в приложении только после того, как пользователь выполнил вход с помощью учебной или рабочей учетной записи Майкрософт.
 
@@ -149,7 +149,7 @@ GET http://localhost/myapp/permissions?error=permission_denied&error_description
 
 Авторизовав приложение, можно переходить к получению маркеров доступа для интерфейсов API. Для получения маркера путем предоставления учетных данных клиента отправьте запрос POST к конечной точке версии 2.0 `/token`.
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый вариант. Запрос маркера доступа с помощью общего секрета
 
 ```
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity
@@ -174,7 +174,7 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=
 | `client_secret` | Обязательно | Секрет приложения, созданный для приложения на портале регистрации приложений. Секрет клиента должен быть преобразован в формат URL-адреса перед отправкой. |
 | `grant_type` | Обязательно | Этот параметр должен содержать значение `client_credentials`. |
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
+### <a name="second-case-access-token-request-with-a-certificate"></a>Второй вариант. Запрос маркера доступа с помощью сертификата
 
 ```
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity

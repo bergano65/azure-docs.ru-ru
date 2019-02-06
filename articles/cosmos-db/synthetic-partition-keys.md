@@ -1,17 +1,17 @@
 ---
-title: Искусственные ключи секций в Azure Cosmos DB
+title: Создание искусственного ключа секции в Azure Cosmos DB для равномерного распределения данных и рабочей нагрузки.
 description: Сведения об использовании искусственных ключей секций в контейнерах Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: mjbrown
-ms.openlocfilehash: 37d220a13aec99de94afa3357db1462d11f8662c
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 987bfe023e7355a2780af57dc5e5cac3129a5ca1
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043374"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454154"
 ---
 # <a name="create-a-synthetic-partition-key"></a>Создание искусственного ключа секции
 

@@ -1,5 +1,5 @@
 ---
-title: Как связать подписку Azure с клиентом Azure Active Directory B2C | Документация Майкрософт
+title: Как связать подписку Azure с Azure Active Directory B2C | Документация Майкрософт
 description: Пошаговое руководство по настройке выставления счетов для клиента Azure AD B2C в подписке Azure.
 services: active-directory-b2c
 author: davidmu1
@@ -7,27 +7,29 @@ manager: daveba
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/07/2018
+ms.date: 01/24/2019
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: e39b7472904e7635340327d311eb7d4b9123f51e
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: c914b3a3ab40971cf9318cafc787d358dab2faff
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54853193"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55196180"
 ---
-# <a name="linking-an-azure-subscription-to-an-azure-ad-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure B2C
+# <a name="link-an-azure-subscription-to-an-azure-active-directory-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure Active Directory B2C
 
 > [!IMPORTANT]
-> Последние сведения о выставлении счетов за использование и ценах на Azure AD B2C см. на странице [Цены на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
+> Актуальные сведения о выставлении счетов за использование, а также о ценах на Azure Active Directory (Azure AD) B2C см. на [этой странице](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
 Счета за использование Azure AD B2C выставляются для подписки Azure. Администратор созданного клиента Azure AD B2C должен явным образом связать созданный клиент Azure AD B2C с подпиской Azure. В этой статье показано, как это сделать.
 
 > [!NOTE]
 > Подписку, связанную с клиентом Azure AD B2C, можно использовать только для выставления счетов за использование Azure AD B2C или других ресурсов Azure, включая дополнительные ресурсы Azure AD B2C.  Она не позволяет добавлять другие лицензируемые службы Azure или лицензии Office 365 в клиенте Azure AD B2C.
 
- Чтобы реализовать такую связь, следует создать ресурс Azure AD B2C в целевой подписке Azure. В одной подписке Azure можно создать несколько клиентов B2C наряду с другими ресурсами Azure (такими как виртуальные машины, хранилища данных, приложения логики). Чтобы увидеть все ресурсы, размещенные в подписке, перейдите к клиенту Azure AD, с которым связана эта подписка.
+Чтобы реализовать такую связь, следует создать ресурс Azure AD B2C в целевой подписке Azure. В одной подписке Azure можно создать несколько клиентов B2C наряду с другими ресурсами Azure (такими как виртуальные машины, хранилища данных, приложения логики). Чтобы увидеть все ресурсы, размещенные в подписке, перейдите к клиенту Azure AD, с которым связана эта подписка.
+
+Подписки поставщиков облачных решений (CSP) Azure поддерживаются в Azure AD B2C. Эта функция доступна при использовании API или портала Azure для Azure AD B2C и для всех ресурсов Azure. Администраторы подписок CSP могут связывать, перемещать и удалять связи с Azure AD B2C так же, как это делается для всех ресурсов Azure. Администрирование Azure AD B2C с помощью управления доступом на основе ролей не зависит от связи между клиентом Azure AD B2C и подпиской Azure CSP. Для управления доступом на основе ролей используются роли на основе клиента, а не на основе подписки.
 
 Для работы с руководством требуется действующая подписка Azure.
 
@@ -81,10 +83,6 @@ ms.locfileid: "54853193"
 ![Параметры ресурсов B2C](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.png)
 
 ## <a name="known-issues"></a>Известные проблемы
-
-### <a name="csp-subscriptions"></a>Подписки CSP
-
-Сейчас клиент Azure AD B2C **нельзя** связать с подпиской CSP.
 
 ### <a name="self-imposed-restrictions"></a>Самоназначенные ограничения
 

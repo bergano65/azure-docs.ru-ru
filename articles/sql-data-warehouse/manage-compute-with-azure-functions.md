@@ -1,21 +1,21 @@
 ---
-title: Руководство. Управление вычислениями с помощью службы "Функции Azure" в хранилище данных Azure SQL | Документация Майкрософт
+title: Руководство. Управление вычислениями с помощью службы "Функции Azure" в Хранилище данных SQL Azure | Документация Майкрософт
 description: Инструкции по использованию службы "Функции Azure" для управления вычислениями в хранилище данных.
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: consume
+ms.subservice: consume
 ms.date: 04/27/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 2f366718a11f715b0c91a556eb3b0f216424b82c
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 0832fbcacd8b58ffaf36ce2e55e3add151a881db
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287907"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55470201"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных Azure SQL с помощью службы "Функции Azure"
 

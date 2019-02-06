@@ -1,6 +1,6 @@
 ---
-заголовок: Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Обзор пакетных служб Azure для обработки заданий машинного обучения Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Обзор пакетных служб Azure для обработки заданий машинного обучения Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-title='Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure | Документация Майкрософт' ms.date: 19.04.2017
 ---

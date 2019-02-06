@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с YardiOne | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с YardiOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и YardiOne.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 508957f6-caa5-4234-a7f3-90015937e4eb
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: d14cca505f85bdf0d8abd32a954487639fe54631
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f326e7d1599d3c797311c85635516d591fd681a6
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444224"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55153988"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yardione"></a>Руководство. Интеграция Azure Active Directory с YardiOne
 
@@ -162,7 +162,7 @@ ms.locfileid: "39444224"
 Цель этого раздела — создать пользователя с именем Britta Simon в YardiOne. Приложение YardiOne поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к YardiOne (если он еще не создан).
 
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу технической поддержки YardiOne](https://clientcentral.yardi.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки YardiOne](https://clientcentral.yardi.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -199,7 +199,7 @@ ms.locfileid: "39444224"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент YardiOne на панели доступа, вы автоматически войдете в приложение YardiOne.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

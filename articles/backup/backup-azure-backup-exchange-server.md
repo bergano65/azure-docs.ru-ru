@@ -2,18 +2,18 @@
 title: Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 description: Узнайте, как выполнить резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 services: backup
-author: adigan
-manager: NKolli1
+author: kasinh
+manager: vvithal
 ms.service: backup
 ms.topic: conceptual
-ms.date: 10/19/2018
-ms.author: adigan
-ms.openlocfilehash: 7e95fa0cc6b5f9476df68ab44e5dbc8bb5432d52
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 01/31/2019
+ms.author: kasinh
+ms.openlocfilehash: ef976667ec580ea75dd1b8566c7bdddf35eeb0fc
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234466"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55298319"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 В этой статье описывается настройка сервера Data Protection Manager (DPM) в System Center 2012 R2 для резервного копирования Microsoft Exchange Server в службу архивации Azure.  
@@ -110,11 +110,11 @@ ms.locfileid: "51234466"
 
 Для точек оперативного восстановления существует пять типов восстановления:
 
-* **Восстановить в исходное расположение сервера Exchange.** Данные будут восстановлены на исходный сервер Exchange Server.
-* **Восстановить в другую базу данных на сервере Exchange.** Данные будут восстановлены в другую базу данных на другом сервере Exchange Server.
-* **Восстановить в базу данных восстановления.** Данные будут восстановлены в базу данных восстановления Exchange (RDB).
-* **Копировать в сетевую папку.** Данные будут восстановлены в сетевую папку.
-* **Копировать на ленту.** Если у вас имеется ленточная библиотека или изолированный ленточный накопитель, подключенные и настроенные на сервере DPM, точка восстановления будет скопирована на свободную ленту.
+* **Recover to original Exchange Server location** (Восстановить в исходное расположение сервера Exchange Server.) Данные будут восстановлены на исходном сервере Exchange Server.
+* **Recover to another database on an Exchange Server** (Восстановить в другую базу данных на сервере Exchange Server). Данные будут восстановлены в другую базу данных на другом сервере Exchange Server.
+* **Recover to a Recovery Database** (Восстановить в базу данных восстановления). Данные будут восстановлены в базу данных восстановления Exchange (RDB).
+* **Copy to a network folder** (Копировать в сетевую папку). Данные будут восстановлены в сетевую папку.
+* **Copy to tape** (Копировать на ленту). Если у вас имеется ленточная библиотека или изолированный ленточный накопитель, подключенные и настроенные на сервере DPM, точка восстановления будет скопирована на свободную ленту.
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 

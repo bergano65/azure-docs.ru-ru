@@ -1,6 +1,6 @@
 ---
-заголовок: Использование примеров наборов данных titleSuffix: Студия машинного обучения Azure description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения. Эти наборы данных можно использовать для собственных экспериментов.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Использование примеров наборов данных titleSuffix: Студия машинного обучения Azure description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения. Эти наборы данных можно использовать для собственных экспериментов.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 19.01.2018
 ---

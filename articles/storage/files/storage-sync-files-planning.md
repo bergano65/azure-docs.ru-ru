@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: wgries
-ms.component: files
-ms.openlocfilehash: 750ab99df1d241cf4252c49a5a9ced08a82b1c92
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.subservice: files
+ms.openlocfilehash: 246b7ae21ceca80c2d1af74330691e527c73cf51
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54809197"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55452742"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -283,3 +283,4 @@ ms.locfileid: "54809197"
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)
 * [Как развернуть службу файлов Azure](storage-files-deployment-guide.md)
 * [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
+* [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

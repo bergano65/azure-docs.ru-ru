@@ -5,16 +5,16 @@ services: cognitive-services
 author: PanosPeriorellis
 manager: onano
 ms.service: cognitive-services
-ms.component: custom-speech
+ms.subservice: custom-speech
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: panosper
-ms.openlocfilehash: a9bdb257137db0063d39f028a69e2164eccbdc31
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 71aa20c779ae0c73db3d7ce6f267524c5bf71ea5
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340466"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55214574"
 ---
 # <a name="migrate-deployments-to-the-new-pricing-model"></a>Перенос развертываний на новую модель ценообразования
 
@@ -37,12 +37,12 @@ ms.locfileid: "49340466"
 
 Чтобы выполнить миграцию на новый уровень, сделайте следующее.
 
-## <a name="step-1-check-your-existing-deployment"></a>Шаг 1. Проверка существующего развертывания
+## <a name="step-1-check-your-existing-deployment"></a>Шаг 1. Проверка имеющегося развертывания
 Откройте [портал Пользовательской службы распознавания речи](http://cris.ai) и проверьте параметры существующих развертываний. В нашем примере есть два развертывания. Одно из них работает на уровне S0, а второе — на уровне S1. Эти развертывания отображаются в столбце **вариантов развертывания** в следующей таблице:
 
-![Страница развертываний](../../../media/cognitive-services/custom-speech-service/custom-speech-deployments.png)
+![Страница "Развертывания"](../../../media/cognitive-services/custom-speech-service/custom-speech-deployments.png)
 
-## <a name="step-2-select-your-new-pricing-tier-in-the-azure-portal"></a>Шаг 2. Выбор новой ценовой категории на портале Azure
+## <a name="step-2-select-your-new-pricing-tier-in-the-azure-portal"></a>Шаг 2. Выбор новой ценовой категории на портале Azure
 1. Откройте новую вкладку браузера и войдите на [портал Azure](http://ms.portal.azure.com/). 
 
 2. На панели **Cognitive Services** в списке **Подписки** выберите подписку Пользовательской службы распознавания речи. 
@@ -57,7 +57,7 @@ ms.locfileid: "49340466"
 
     ![Страница "Выбор ценовой категории"](../../../media/cognitive-services/custom-speech-service/custom-speech-update-pricing.png)
 
-## <a name="step-3-check-the-migration-status-in-the-custom-speech-service-portal"></a>Шаг 3. Проверка состояния миграции на портале Пользовательской службы распознавания речи
+## <a name="step-3-check-the-migration-status-in-the-custom-speech-service-portal"></a>Шаг 3. Проверка состояния миграции на портале Пользовательской службы распознавания речи
 Вернитесь на портал Пользовательской службы распознавания речи и снова проверьте состояние для развертываний. (Если эта страница все еще открыта в браузере, обновите ее.) 
 
 Состояние развертываний должно измениться на *Обработка*. Также вы можете проверить состояние миграции по столбцу **Параметры развертывания**. В нем приводятся сведения о единицах масштабирования и ведении журнала. Единицы масштабирования должны соответствовать той ценовой категории, которую вы использовали ранее. Ведение журнала также должно быть включено, как показано в следующей таблице:

@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке Cornerstone OnDemand для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Cornerstone OnDemand для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Cornerstone OnDemand.
 services: active-directory
 documentationcenter: ''
@@ -8,21 +8,21 @@ writer: zhchia
 manager: beatrizd
 ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: v-ant
-ms.openlocfilehash: 6a6cfb2cb1fd6b70be0437c8b6fa62f50e76e53b
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 9f18fcb38e6e0855a00ffb454211273dfb2041a6
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44345419"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168504"
 ---
-# <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство по настройке Cornerstone OnDemand для автоматической подготовки пользователей
+# <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство. Настройка Cornerstone OnDemand для автоматической подготовки пользователей
 
 
 В этом руководстве показаны шаги, которые необходимо выполнить в Cornerstone OnDemand и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Cornerstone OnDemand.
@@ -112,7 +112,7 @@ ms.locfileid: "44345419"
 
     *   В поле **Пароль администратора** введите пароль, соответствующий имени пользователя администратора.
 
-    *   В поле **Домен** введите URL-адрес веб-службы клиента Cornerstone OnDemand. Например, если служба расположена в `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, доменом Contoso будет `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL-адрес веб-службы, приведены [здесь](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
+    *   В поле **Домен** введите URL-адрес веб-службы клиента Cornerstone OnDemand. Пример: если служба расположена в `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, то доменом Contoso будет `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL-адрес веб-службы, приведены [здесь](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
 
 6. После заполнения поля, указанного в шаге 5, нажмите кнопку **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cornerstone OnDemand. Если установить подключение не удалось, убедитесь, что у учетной записи Cornerstone OnDemand есть разрешения администратора и попробуйте еще раз.
 

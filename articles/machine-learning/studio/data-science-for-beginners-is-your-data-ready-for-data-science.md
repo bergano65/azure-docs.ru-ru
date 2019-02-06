@@ -1,6 +1,6 @@
 ---
-заголовок: Оценка данных titleSuffix: Студия машинного обучения Azure description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Оценка данных titleSuffix: Студия машинного обучения Azure description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---

@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: 1ee45699040f58a1317009ab44bb5ac863323869
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: e96c637e3c01ccfc27afa967d830c7d0254d11e7
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54816761"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104241"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -59,7 +59,7 @@ ms.locfileid: "54816761"
 **Шаг 1. [Удаление блокировки с группы ресурсов точки восстановления](#remove_lock_from_the_recovery_point_resource_group)** <br>
 **Шаг 2. [ Очистка коллекции точек восстановления](#clean_up_restore_point_collection)**<br>
 
-## <a name="usererrorkeyvaultpermissionsnotconfigured---backup-doesnt-have-sufficient-permissions-to-the-key-vault-for-backup-of-encrypted-vms"></a>UserErrorKeyvaultPermissionsNotConfigured — служба архивации не имеет достаточных разрешений на доступ к хранилищу ключей для резервного копирования зашифрованных виртуальных машин.
+## <a name="usererrorkeyvaultpermissionsnotconfigured---backup-doesnt-have-sufficient-permissions-to-the-key-vault-for-backup-of-encrypted-vms"></a>UserErrorKeyvaultPermissionsNotConfigured — служба Backup не имеет достаточных разрешений на доступ к хранилищу ключей для резервного копирования зашифрованных виртуальных машин.
 
 **Код ошибки** UserErrorKeyvaultPermissionsNotConfigured <br>
 **Сообщение об ошибке** Служба резервного копирования не имеет достаточных разрешений к хранилищу ключей для резервного копирования зашифрованных виртуальных машин. <br>
@@ -105,7 +105,7 @@ ms.locfileid: "54816761"
 **Код ошибки** UserErrorUnsupportedDiskSize <br>
 **Сообщение об ошибке** Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ <br>
 
-Операция резервного копирования виртуальной машины с размером диска более 1023 ГБ может завершиться ошибкой, так как хранилище не поддерживает мгновенное восстановление (требуется обновление). Такое обновление обеспечит поддержку до 4 ТБ. Дополнительные сведения см. в [этой статье](backup-instant-restore-capability.md).  
+Операция резервного копирования виртуальной машины с размером диска более 1023 ГБ может завершиться ошибкой, так как хранилище не поддерживает мгновенное восстановление (требуется обновление). Такое обновление обеспечит поддержку до 4 ТБ. Дополнительные сведения см. в [этой статье](backup-instant-restore-capability.md#upgrading-to-instant-restore). После обновления может потребоваться до двух часов, прежде чем функция отобразится в подписке. Предоставьте достаточный буфер, прежде чем повторить операцию.  
 
 ## <a name="usererrorstandardssdnotsupported---currently-azure-backup-does-not-support-standard-ssd-disks"></a>UserErrorStandardSSDNotSupported. В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный"
 
@@ -132,7 +132,6 @@ ms.locfileid: "54816761"
 4. Повторите операцию резервного копирования.
 
 Если запланированная операция резервного копирования занимает больше времени, что вызывает конфликт со следующей конфигурацией резервного копирования, просмотрите разделы [Рекомендации](backup-azure-vms-introduction.md#best-practices), [Производительность резервного копирования](backup-azure-vms-introduction.md#backup-performance) и [Рекомендации относительно восстановления](backup-azure-vms-introduction.md#restore-considerations).
-
 
 
 ## <a name="causes-and-solutions"></a>Причины и решения

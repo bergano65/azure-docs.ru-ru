@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: vanto, genemi
 manager: craigg
-ms.date: 01/17/2019
-ms.openlocfilehash: 0a0a5a046bd1afefe3f4c72e713a0dafe0c856e4
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.date: 01/25/2019
+ms.openlocfilehash: ccc97adadef43390d2b82e206adb60962d6e1fb2
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54390400"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453933"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql"></a>Использование конечных точек службы и правил виртуальной сети для SQL Azure
 
@@ -162,7 +162,7 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 ### <a name="impact-on-data-sync"></a>Влияние на синхронизацию данных
 
-Компонент "Синхронизация данных" в базе данных SQL Azure подключается к базам данных через IP-адреса Azure. При использовании конечных точек служб вполне вероятно, что вы запретите **всем службам Azure доступ к логическому серверу**. Это приведет к разрыву подключения к компоненту "Синхронизация данных".
+Компонент "Синхронизация данных" в базе данных SQL Azure подключается к базам данных через IP-адреса Azure. При использовании конечных точек служб вполне вероятно, что вы запретите **всем службам Azure доступ к серверу Базы данных SQL**. Это приведет к разрыву подключения к компоненту "Синхронизация данных".
 
 ## <a name="impact-of-using-vnet-service-endpoints-with-azure-storage"></a>Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure
 
@@ -173,17 +173,18 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, сделайте следующее:
 
 #### <a name="prerequisites"></a>Предварительные требования
+
 1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 2.  При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
 3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
  
 #### <a name="steps"></a>Действия
-1.  В PowerShell **зарегистрируйте логический сервер SQL Server** с помощью Azure Active Directory (AAD):
+1.  В PowerShell **зарегистрируйте сервер Базы данных SQL** с помощью Azure Active Directory (AAD):
 
     ```powershell
     Add-AzureRmAccount
     Select-AzureRmSubscription -SubscriptionId your-subscriptionId
-    Set-AzureRmSqlServer -ResourceGroupName your-logical-server-resourceGroup -ServerName your-logical-servername -AssignIdentity
+    Set-AzureRmSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
     ```
     
  1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -192,7 +193,7 @@ PolyBase часто используют для загрузки данных в
     > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
     > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
     
-1.  В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роль RBAC **Участник для данных больших двоичных объектов хранилища (предварительная версия)** логическому серверу SQL Server.
+1.  В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роль RBAC **Участник для данных больших двоичных объектов хранилища (предварительная версия)** серверу Базы данных SQL.
 
     > [!NOTE] 
     > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).

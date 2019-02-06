@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: b120d50b6b0f72b5977d238866cfdf26fd9be5ff
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: d1d515786fde06f4622402f2c1d0c3add7cd8843
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436897"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54913162"
 ---
 # <a name="an-introduction-to-apache-hadoop-security-with-enterprise-security-package"></a>Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности
 
@@ -56,7 +56,7 @@ ms.locfileid: "53436897"
 ## <a name="encryption"></a>Шифрование
 Защита данных важна для соблюдения требований безопасности и соответствия, установленных в организации. Помимо ограничения доступа неавторизованных сотрудников к данным, их следует зашифровать. 
 
-Оба хранилища данных для кластеров HDInsight, хранилище BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения, поддерживают [шифрование неактивных данных](../../storage/common/storage-service-encryption.md) на стороне сервера. Защищенные кластеры HDInsight полностью поддерживают шифрование неактивных данных на стороне сервера.
+Оба хранилища данных для кластеров HDInsight, хранилище BLOB-объектов Azure и Azure Data Lake Storage 1-го и 2-го поколения, поддерживают [шифрование неактивных данных](../../storage/common/storage-service-encryption.md) на стороне сервера. Защищенные кластеры HDInsight полностью поддерживают шифрование неактивных данных на стороне сервера.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

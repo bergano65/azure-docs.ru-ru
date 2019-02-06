@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/15/2017
 ms.author: harahma
-ms.openlocfilehash: 367f21c63eac3969fb19eada91eae9a8577921de
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 80d9d447a86b58c8d6db5a62d3b0df997e42f673
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348486"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55172380"
 ---
 # <a name="azure-service-fabric-hosting-model"></a>Модель размещения Azure Service Fabric
 В этой статье представлен обзор моделей размещения приложений, предоставленных Azure Service Fabric, и приведены различия между моделями **с общим** и **монопольным процессом**. Здесь также описывается, как развернутое приложение выглядит на узле Service Fabric, и рассматриваются связи между репликами (или экземплярами) службы и процессом размещения служб.

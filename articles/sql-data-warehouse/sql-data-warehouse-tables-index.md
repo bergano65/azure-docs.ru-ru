@@ -6,16 +6,16 @@ author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: d709acfe378583a21b72971f465e4b5d73818bcd
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 2d57097e4d3317bfba5055a6b75ae72dd60f046a
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307734"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244698"
 ---
 # <a name="indexing-tables-in-sql-data-warehouse"></a>Индексирование таблиц в хранилище данных SQL
 Советы по использованию индексирования таблиц в хранилище данных SQL Azure и соответствующие примеры.
@@ -204,7 +204,7 @@ WHERE    COMPRESSED_rowgroup_rows_AVG < 100000
 Когда в таблицу будут загружены данные, чтобы определить и перестроить таблицы с неоптимальными кластеризованными индексами Columnstore, выполните приведенные ниже действия.
 
 ## <a name="rebuilding-indexes-to-improve-segment-quality"></a>Повышение качества сегментов за счет перестроения индексов
-### <a name="step-1-identify-or-create-user-which-uses-the-right-resource-class"></a>Шаг 1. Определение или создание пользователя, который использует соответствующий класс ресурсов
+### <a name="step-1-identify-or-create-user-which-uses-the-right-resource-class"></a>Шаг 1. Определение или создание пользователя, который использует соответствующий класс ресурсов
 Простой способ быстро повысить качество сегментов — перестроить индекс.  Инструкция SQL, возвращенная в предыдущем представлении, возвращает инструкцию ALTER INDEX REBUILD, которую можно использовать для перестроения индексов. При перестроении индексов необходимо выделить достаточный объем памяти для сеанса.  Для этого повысьте класс ресурсов для пользователя, который имеет разрешение на перестроение индекса для этой таблицы, до рекомендованного минимального класса ресурсов. Класс ресурсов пользователя владельца базы данных нельзя изменить, поэтому если вы не создали пользователя в системе, вам нужно это сделать. Рекомендации по минимальному классу ресурсов: xlargerc для DW300 или ниже, largerc для DW400–DW600 и mediumrc для DW1000 и выше.
 
 Ниже приведен пример того, как можно выделить дополнительный объем памяти для пользователя, увеличив класс ресурсов. Сведения об использовании классов ресурсов см. в статье [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md).
@@ -213,7 +213,7 @@ WHERE    COMPRESSED_rowgroup_rows_AVG < 100000
 EXEC sp_addrolemember 'xlargerc', 'LoadUser'
 ```
 
-### <a name="step-2-rebuild-clustered-columnstore-indexes-with-higher-resource-class-user"></a>Шаг 2. Перестройка кластеризованных индексов Columnstore, используя пользователя с более высоким классом ресурсов
+### <a name="step-2-rebuild-clustered-columnstore-indexes-with-higher-resource-class-user"></a>Шаг 2. Перестройка кластеризованных индексов columnstore, используя пользователя с более высоким классом ресурсов
 Войдите в систему от имени пользователя из шага 1 (например, LoadUser), которому теперь соответствует более высокий класс ресурсов, и выполните инструкции ALTER INDEX. Убедитесь, что этот пользователь имеет разрешение ALTER в отношении таблиц, в которых будет выполнятся перестроение индекса. В этих примерах показано перестроение всего индекса Columnstore и перестроение одной секции. В больших таблицах целесообразно перестроить только одну секцию за раз.
 
 Кроме того, вместо перестроения индекса можно копировать таблицу в новую таблицу, используя инструкцию [CTAS](sql-data-warehouse-develop-ctas.md). Какой способ лучше? Для больших объемов данных инструкция CTAS обычно выполняется быстрее, чем [ALTER INDEX](/sql/t-sql/statements/alter-index-transact-sql). Что же касается небольших объемов данных, рекомендуем использовать инструкцию ALTER INDEX. Она проще в использовании и не требует замены таблицы. Дополнительные сведения о перестроении индексов с использованием инструкции CTAS см. в **этом разделе**.
@@ -240,7 +240,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 
 В хранилище данных SQL операция перестроения индекса выполняется в автономном режиме.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql).
 
-### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Шаг 3. Проверка улучшения качества кластеризованных сегментов Columnstore
+### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Шаг 3. Проверка улучшения качества кластеризованных сегментов columnstore
 Повторно выполните запрос на определение таблицы с сегментами низкого качества и убедитесь, что качество сегментов улучшилось.  Если это не так, возможно, в таблице слишком широкие строки.  Если для перестроения индексов требуется более высокий объем памяти,
 
 ## <a name="rebuilding-indexes-with-ctas-and-partition-switching"></a>Перестроение индексов с помощью инструкции CTAS и переключения секций

@@ -14,12 +14,13 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: a0a482e44617732c9dc6cd6609672e8204001dbc
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.lastreviewed: 10/16/2018
+ms.openlocfilehash: f1b39601f0f6d254daadfafdd812549c6c95ed35
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49362064"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239474"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 
@@ -61,9 +62,9 @@ ms.locfileid: "49362064"
 
 Можно создать пользователя с более низкими привилегиями, чем системный администратор SQL. Пользователю необходимы разрешения только для выполнения следующих операций:
 
-* База данных. Создание, изменение, с вложением (только для решения Always On), перенос, резервное копирование.
+* База данных: создание, изменение, с вложением (только для решения Always On), перенос, резервное копирование.
 * Группа доступности: изменение, присоединение, добавление или удаление базы данных.
-* Имя входа: создание, выбор, изменение, перенос, отмена.
+* Имя для входа: создание, выбор, изменение, перенос, отмена.
 * Выберите операции: \[master\].\[sys\].\[availability_group_listeners\] (группы доступности AlwaysOn) sys.availability_replicas (группы доступности AlwaysOn), sys.databases, \[master\].\[sys\].\[dm_os_sys_memory\], SERVERPROPERTY, \[master\].\[ sys\].\[ availability_groups\] (группы доступности AlwaysOn), sys.master_files.
 
 ### <a name="additional-security-information"></a>Дополнительные сведения о безопасности

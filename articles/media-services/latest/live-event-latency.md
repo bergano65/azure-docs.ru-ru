@@ -11,18 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 12/19/2018
+ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: f4ded67ef964482a2acea0d731b1b154a95168d2
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: db6646c2066be940b2c058653fe8f2ceb9bff3a2
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53741357"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55169712"
 ---
-# <a name="liveevent-latency-in-media-services"></a>Задержка LiveEvent в Службах мультимедиа
+# <a name="live-event-latency-in-media-services"></a>Задержка события потоковой трансляции в Службах мультимедиа
 
-В этой статье показано, как настроить низкую задержку [LiveEvent](https://docs.microsoft.com/rest/api/media/liveevents). Здесь также рассмотрены результаты настройки низкой задержки в разных проигрывателях. Результаты различаются в зависимости от задержки сети и CDN.
+В этой статье показано, как настроить низкую задержку [события потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents). Здесь также рассмотрены результаты настройки низкой задержки в разных проигрывателях. Результаты различаются в зависимости от задержки сети и CDN.
 
 Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. Когда поток запущен и работает, можно использовать демонстрационную страницу [проигрывателя мультимедиа Azure](http://ampdemo.azureedge.net/) (AMP) и установить параметры воспроизведения так, чтобы использовался профиль Low Latency Heuristics Profile (Эвристический профиль малой задержки).
 
@@ -54,7 +54,7 @@ LiveEvent liveEvent = new LiveEvent(
 
 Полный пример см. здесь: [MediaV3LiveApp](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/Live/MediaV3LiveApp/Program.cs#L126).
 
-## <a name="liveevents-latency"></a>Задержка LiveEvents
+## <a name="live-events-latency"></a>Задержка событий потоковой трансляции
 
 В следующих таблицах приведены результаты настройки задержки (установленный флаг LowLatency) в Службах мультимедиа. Задержка измеряется с момента, когда веб-канал входного потока достигает службы, и до момента, когда проигрыватель может запросить воспроизведение. Чтобы оптимально использовать низкую задержку, в параметрах кодировщика задайте для длительности группы изображений (GOP) значение менее 1 секунды. Если задать меньшую длительность GOP, вы уменьшите использование пропускной способности и скорость при одинаковой частоте кадров. Это особенно подходит для видео, где меньше движения.
 

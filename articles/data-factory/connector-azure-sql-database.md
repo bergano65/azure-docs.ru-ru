@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/08/2018
+ms.date: 01/23/2019
 ms.author: jingwang
-ms.openlocfilehash: fcf5b5d0064292c11abeb361b0c046b5a3388457
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 24fdfcb53e8f3cbf0e1bf4f7e567d9f768383ac1
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54025697"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54884237"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
@@ -35,6 +35,8 @@ ms.locfileid: "54025697"
 - копирование данных с использованием аутентификации SQL и аутентификации на основе маркеров приложения Azure Active Directory (Azure AD) с субъектом-службой или управляемыми удостоверениями ресурсов Azure;
 - извлечение данных с использованием SQL-запроса или хранимой процедуры (в качестве источника);
 - добавление данных в целевую таблицу или вызов хранимой процедуры во время копирования с помощью пользовательской логики (в качестве приемника).
+
+База данных SQL Azure с [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) в настоящее время не поддерживается. 
 
 > [!IMPORTANT]
 > При копировании данных с использованием среды выполнения интеграции фабрики данных Azure настройте [брандмауэр Azure SQL Server](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) таким образом, чтобы он разрешал службам Azure получать доступ к серверу.
@@ -580,9 +582,9 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | binary; |Byte[] |
 | bit |Логическое |
 | char; |String, Char[] |
-| дата |Datetime |
-| DateTime |Datetime |
-| datetime2; |Datetime |
+| дата |DateTime |
+| DateTime |DateTime |
+| datetime2; |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | Атрибут FILESTREAM (varbinary(max)) |Byte[] |
@@ -596,18 +598,21 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | nvarchar; |String, Char[] |
 | real; |Single |
 | rowversion |Byte[] |
-| smalldatetime; |Datetime |
+| smalldatetime; |DateTime |
 | smallint; |Int16 |
 | smallmoney; |Decimal |
-| sql_variant |Object * |
+| sql_variant |Объект. |
 | текст |String, Char[] |
-| Twitter в режиме реального |Интервал времени |
+| Twitter в режиме реального |TimeSpan |
 |  timestamp |Byte[] |
 | tinyint; |Byte |
 | uniqueidentifier |Guid |
 | varbinary; |Byte[] |
 | varchar. |String, Char[] |
 | xml |xml |
+
+>[!NOTE]
+> В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal (десятичное число), Фабрика данных Azure поддерживает точность до 28. При наличии данных с точностью больше 28 их можно преобразовать в строку в SQL-запросе.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: da8fd886afa6028959247caa0c6e007df20fdd1b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 66f850225faba8d45eaa07493a0817c9ed0ed52b
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077748"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55075590"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -32,11 +32,17 @@ ms.locfileid: "54077748"
 - Шаблоны Azure Resource Manager. Вы можете использовать шаблоны Resource Manager или шаблоны решений, чтобы развертывать службы Azure для запуска программного обеспечения партнера. Партнеры могут создать шаблон Resource Manager, который определяет инфраструктуру и конфигурацию решения Azure. Шаблон Resource Manager позволит вам и вашим клиентам легко развертывать решение на всем протяжении его жизненного цикла. Вы можете быть уверены, что все ресурсы развертываются в согласованном состоянии. 
 - API Azure Resource Manager. Партнеры могут напрямую вызывать интерфейсы API Resource Manager, чтобы развернуть шаблон Azure Resource Manager или создавать вызовы API для непосредственной подготовки служб Azure. 
 
-Определение потребления услуг клиентами необходимо для всех [шаблонов решений](./cloud-partner-portal-orig/cloud-partner-portal-solution-template-offer-publish.md), публикуемых в Azure Marketplace. 
+Определение потребления услуг клиентами необходимо для [предложения приложения Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/azure-applications/cpp-azure-app-offer), публикуемого в Microsoft Azure Marketplace.
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
 
-Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если ваш шаблон Resource Manager уже размещен в Azure Marketplace, GitHub или репозитории шаблонов быстрого запуска, вам будет легко изменить этот шаблон, чтобы реализовать новый метод отслеживания. Дополнительные сведения см. в статье [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-create-first-template).
+Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если ваш шаблон Resource Manager уже размещен в Azure Marketplace, GitHub или репозитории шаблонов быстрого запуска, вам будет легко изменить этот шаблон, чтобы реализовать новый метод отслеживания.
+
+Дополнительные сведения о создании и публикации шаблонов решений см. в статье
+
+* [Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal).
+* [Предложение приложения Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/azure-applications/cpp-azure-app-offer).
+* Видео: [Building Solution Templates, and Managed Applications for the Azure Marketplace](https://channel9.msdn.com/Events/Build/2018/BRK3603) (Создание управляемых приложений и шаблонов решений для Microsoft Azure Marketplace).
 
 
 ## <a name="add-a-guid-to-your-template"></a>Добавление GUID в шаблон

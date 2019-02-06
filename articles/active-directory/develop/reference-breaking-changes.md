@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 68517c83-1279-4cc7-a7c1-c7ccc3dbe146
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -17,12 +17,12 @@ ms.date: 10/02/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 8e00674f331a56be9abe6f2356aa88d7dcf1d0b0
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 3da99506d50ec12140c188cd86cde2556be4a308
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52282390"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55099147"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -46,11 +46,11 @@ ms.locfileid: "52282390"
 
 ### <a name="authorization-codes-can-no-longer-be-reused"></a>Коды авторизации больше нельзя использовать повторно
 
-**Дата вступления в силу**: 15 ноября 2018 г.
+**Дата вступления в силу**: 15 ноября 2018 г.
 
-**Затронутые конечные точки**: версии 1.0 и 2.0.
+**Затронутые конечные точки**: версии 1.0 и 2.0.
 
-**Затронутый протокол**: [последовательность кода](v2-oauth2-auth-code-flow.md).
+**Затронутый протокол**: [поток кода](v2-oauth2-auth-code-flow.md).
 
 С 15 ноября 2018 г. в Azure AD прекращается поддержка использованных кодов аутентификации для приложений. Это изменение системы безопасности помогает Azure AD соответствовать спецификации OAuth и будет применяться для конечных точек версии 1 и 2.
 
@@ -62,11 +62,11 @@ ms.locfileid: "52282390"
 
 ### <a name="id-tokens-cannot-be-used-for-the-obo-flow"></a>Для потока OBO нельзя использовать маркеры идентификации
 
-**Дата**: 1 мая 2018 г.
+**Дата**. 1 мая 2018 г.
 
-**Затронутые конечные точки**: версии 1.0 и 2.0.
+**Затронутые конечные точки**: версии 1.0 и 2.0.
 
-**Затронутые протоколы**: неявная последовательность и [последовательность OBO](v1-oauth2-on-behalf-of-flow.md).
+**Затронутые протоколы**: неявный поток и [поток OBO](v1-oauth2-on-behalf-of-flow.md)/
 
 Начиная с 1 мая 2018 г. новые приложения не могут использовать маркеры id_token в качестве утверждения в потоке OBO. Вместо этого следует использовать маркеры доступа для защиты API, даже между клиентом и средним уровнем того же приложения. Приложения, зарегистрированные до 1 мая 2018 г., будут дальше работать с возможностью замены маркеров id_token на маркеры доступа, но это нерекомендуемый подход.
 

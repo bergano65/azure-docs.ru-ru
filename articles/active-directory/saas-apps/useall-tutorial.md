@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Useall | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Useall | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Useall.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 8dd9e452-a5b6-4a16-a97c-b60211ea6b95
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 8deacddc9dcc7571ea725143fa9a9c002c1602b1
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 393494410b14bd54f1878cc372e76ad8a7ee3c7d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50743019"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55164764"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-useall"></a>Руководство по интеграции Azure Active Directory с Useall
+# <a name="tutorial-azure-active-directory-integration-with-useall"></a>Руководство. Интеграция Azure Active Directory с Useall
 
 В этом руководстве описано, как интегрировать Useall с Azure Active Directory (Azure AD).
 
@@ -53,7 +53,7 @@ ms.locfileid: "50743019"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Useall из коллекции.
+1. Добавление Useall из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-useall-from-the-gallery"></a>Добавление Useall из коллекции
@@ -185,7 +185,7 @@ ms.locfileid: "50743019"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Useall" на панели доступа, вы автоматически войдете в приложение Useall.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

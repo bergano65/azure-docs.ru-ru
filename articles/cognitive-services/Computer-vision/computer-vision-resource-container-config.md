@@ -6,171 +6,142 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 01/29/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 97de65acf724d12afd131ede25713e8f29d30bad
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: f29bb4ec8154c1d17eef18310037c42426d1522f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54477641"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458658"
 ---
-# <a name="configure-recognize-text-containers"></a>Настройка контейнера распознавания текста
+# <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
-Компьютерное зрение предоставляет контейнер для Распознавания текста с помощью общей платформы конфигурации, что позволяет легко настроить хранилище, ведение журнала, данные телеметрии и параметры безопасности для контейнеров, а также управлять ими.
+Среда выполнения контейнера **Распознавание текста** настраивается с помощью аргументов команды `docker run`. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
+
+Параметры контейнера применяются [иерархически](#hierarchical-settings) и настраиваются через [переменные среды](#environment-variable-settings) или [аргументы командной строки](#command-line-argument-settings) Docker.
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 
-Параметры конфигурации в контейнерах Компьютерного зрения являются иерархическими и все контейнеры используют общую иерархию, основываясь на следующей подробной структуре:
-
-* [apiKey](#apikey-configuration-setting)
-* [ApplicationInsights](#applicationinsights-configuration-settings)
-* [Проверка подлинности](#authentication-configuration-settings)
-* [Выставление счетов](#billing-configuration-setting)
-* [Лицензионное соглашение](#eula-configuration-setting)
-* [Fluentd](#fluentd-configuration-settings)
-* [Параметры учетных данных прокси-сервера HTTP](#http-proxy-credentials-settings)
-* [ведению журналов](#logging-configuration-settings)
-* [Подключения](#mounts-configuration-settings)
-
-Вы можете использовать либо [переменные среды](#configuration-settings-as-environment-variables), либо [аргументы командной строки](#configuration-settings-as-command-line-arguments) для определения параметров конфигурации при создании контейнера из контейнеров Компьютерного зрения.
-
-Значения переменной среды переопределяет значения аргументов командной строки, которые, в свою очередь, переопределяют значения по умолчанию для образа контейнера. Другими словами, если задать разные значения в переменной среды и аргументе командной строки для одного параметра конфигурации, такие как `Logging:Disk:LogLevel`, а затем создать контейнер, значение в переменной среды будет использоваться созданным контейнером.
-
-### <a name="configuration-settings-as-environment-variables"></a>Параметры конфигурации в виде переменных среды
-
-Для определения параметров конфигурации можно использовать [синтаксис переменных среды ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#environment-variables-configuration-provider).
-
-Контейнер считывает переменные среды пользователя при создании контейнера. Если существует переменная среды, ее значение переопределяет значение по умолчанию для указанного параметра конфигурации. Преимущество использования переменных среды — перед созданием контейнеров можно задать несколько параметров конфигурации и несколько контейнеров могут автоматически использовать тот же набор параметров конфигурации.
-
-Например, приведенные ниже команды используют переменную среды, чтобы задать уровень ведения журнала консоли [LogLevel.Information](https://msdn.microsoft.com), а потом создают контейнер Распознавания текста из образа контейнера. Значение переменной среды переопределяет параметр конфигурации по умолчанию.
-
-  ```Docker
-  SET Logging:Console:LogLevel=Information
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0 ApiKey=0123456789
-  ```
-
-### <a name="configuration-settings-as-command-line-arguments"></a>Параметры конфигурации в виде аргументов командной строки
-
-Вы можете использовать [синтаксис аргументов командной строки ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#arguments) для определения параметров конфигурации.
-
-Вы можете определять параметры конфигурации в необязательном параметре `ARGS` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания контейнера из скачанного образа контейнера. Преимуществом использования аргументов командной строки является то, что каждый контейнер может использовать различный пользовательский набор параметров конфигурации.
-
-Например, следующая команда создает контейнер из образа контейнера для Распознавания текста и настраивает уровень ведения журнала консоли LogLevel.Information, переопределяя настройку конфигурации по умолчанию.
-
-  ```Docker
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0 ApiKey=0123456789 Logging:Console:LogLevel=Information
-  ```
-
-## <a name="apikey-configuration-setting"></a>Настройка конфигурации ApiKey
-
-Настройка конфигурации `ApiKey` определяет ключ конфигурации ресурса Компьютерного зрения в Azure, используемый, чтобы отслеживать данные для выставления счетов для контейнера. Вам необходимо задать значение этого параметра конфигурации, которое должно быть допустимым ключом конфигурации для ресурса Компьютерного зрения, определяемого для параметра конфигурации [`Billing`](#billing-configuration-setting).
+[!INCLUDE [Container shared configuration settings table](../../../includes/cognitive-services-containers-configuration-shared-settings-table.md)]
 
 > [!IMPORTANT]
-> Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
+> Параметры [`ApiKey`](#apikey-setting), [`Billing`](#billing-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
 
-## <a name="applicationinsights-configuration-settings"></a>Параметры конфигурации Application Insights
+## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
-С помощью параметров конфигурации в разделе `ApplicationInsights` можно добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights). Application Insights обеспечивает детализированный мониторинг контейнера на уровне кода. Вы можете легко отслеживать доступность, производительность и использование своего контейнера. Вы также можете быстро идентифицировать и диагностировать ошибки в контейнере, не дожидаясь, пока пользователь сообщит о них.
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Компьютерное зрение_, который определяется в параметре конфигурации [`Billing`](#billing-setting).
 
-В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `ApplicationInsights`.
+Этот параметр можно найти в следующем месте.
 
-| ИМЯ | Тип данных | ОПИСАНИЕ |
-|------|-----------|-------------|
-| `InstrumentationKey` | Строка | Ключ инструментирования экземпляра Application Insights, которому отправляются данные телеметрии для контейнера. Дополнительные сведения см. в статье [Application Insights для ASP.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core). |
+* Портал Azure: Управление ресурсами **Компьютерное зрение** в разделе **Ключи**
 
-## <a name="authentication-configuration-settings"></a>Параметры конфигурации проверки подлинности
+## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
-Параметры конфигурации `Authentication` предоставляют параметры безопасности Azure для контейнера. Несмотря на то что в этом разделе доступны параметры конфигурации, контейнер Распознавания текста не использует этот раздел.
+[!INCLUDE [Container shared configuration ApplicationInsights settings](../../../includes/cognitive-services-containers-configuration-shared-settings-application-insights.md)]
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр конфигурации `Billing` задает URI конечной точки для ресурса API компьютерного зрения в Azure, с помощью которого измеряются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса Компьютерного зрения в Azure.
+Параметр `Billing` задает URI конечной точки для ресурса _Компьютерное зрение_ в Azure, с помощью которого измеряются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _API компьютерного зрения_ в Azure.
 
-> [!IMPORTANT]
-> Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
+Этот параметр можно найти в следующем месте.
 
-## <a name="eula-configuration-setting"></a>Параметр конфигурации лицензионного соглашения
+* Портал Azure: "Обзор" **API компьютерного зрения**, помеченный `Endpoint`
 
-Параметр конфигурации `Eula` указывает, что вы приняли условия лицензии для контейнера. Для этого параметра конфигурации необходимо указать значение `accept`.
+|Обязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|--|------|-----------|-------------|
+|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
-> [!IMPORTANT]
-> Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
+## <a name="eula-setting"></a>Параметр Eula
 
-Лицензия на использование контейнеров Cognitive Services предоставляется в рамках [вашего соглашения](https://go.microsoft.com/fwlink/?linkid=2018657) об использовании Azure. Если вы не заключали соглашение, регламентирующее использование Azure, вы подтверждаете, что ваше соглашение об использовании Azure является [соглашением Microsoft Online Subscription](https://go.microsoft.com/fwlink/?linkid=2018755), которое содержит [условия использования веб-служб](https://go.microsoft.com/fwlink/?linkid=2018760). Что касается предварительных версий, вы также принимаете [Дополнительные условия использования предварительных версий Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2018815). Факт использования вами контейнера подтверждает ваше согласие с этими условиями.
+[!INCLUDE [Container shared configuration eula settings](../../../includes/cognitive-services-containers-configuration-shared-settings-eula.md)]
 
-## <a name="fluentd-configuration-settings"></a>Параметры конфигурации Fluentd
+## <a name="fluentd-settings"></a>Параметры Fluentd
 
-Раздел `Fluentd` управляет параметрами конфигурации для [Fluentd](https://www.fluentd.org) — сборщика данных для единого ведения журнала с открытым кодом. Контейнеры Компьютерного зрения включают поставщика ведения журнала Fluentd, который позволяет контейнеру записывать данные журнала и при необходимости данные метрики на сервер Fluentd.
-
-В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `Fluentd`.
-
-| ИМЯ | Тип данных | ОПИСАНИЕ |
-|------|-----------|-------------|
-| `Host` | Строка | IP-адрес или имя узла DNS сервера Fluentd. |
-| `Port` | Целое число  | Порт сервера Fluentd.<br/> Значение по умолчанию — 24224. |
-| `HeartbeatMs` | Целое число  | Интервал пульса в миллисекундах. Если до окончания этого интервала не отправлялся никакой трафик событий, пульс отправляется на сервер Fluentd. Значение по умолчанию — 60 000 миллисекунд (1 минута). |
-| `SendBufferSize` | Целое число  | Место в сетевом буфере (в байтах), выделенное для операций отправки. Значение по умолчанию — 32768 байт (32 килобайта). |
-| `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
-| `UseTLS` | Логическое | Указывает, должен ли контейнер использовать протокол SSL/TLS для связи с сервером Fluentd. По умолчанию для этого параметра используется значение false. |
-
+[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-fluentd.md)]
 
 ## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
 
 [!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
 
-## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журнала
+## <a name="logging-settings"></a>Параметры ведения журнала
+ 
+[!INCLUDE [Container shared configuration logging settings](../../../includes/cognitive-services-containers-configuration-shared-settings-logging.md)]
 
-Параметры конфигурации `Logging` управляют поддержкой ведения журнала ASP.NET Core для контейнера. Вы можете использовать для контейнера те же параметры конфигурации и значения, что и для приложения ASP.NET Core. Контейнеры Компьютерного зрения поддерживают указанные ниже поставщики ведения журналов:
+## <a name="mount-settings"></a>Параметры подключения
 
-* [Console](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#console-provider)  
-  Поставщик ведения журнала `Console` для ASP.NET Core. Для этого поставщика ведения журнала поддерживаются все параметры конфигурации ASP.NET Core и значения по умолчанию.
-* [Отладка](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#debug-provider)  
-  Поставщик ведения журнала `Debug` для ASP.NET Core. Для этого поставщика ведения журнала поддерживаются все параметры конфигурации ASP.NET Core и значения по умолчанию.
-* Диск  
-  Поставщик ведения журнала JSON. Поставщик ведения журнала записывает данные журнала в выходное подключение.  
-  Поставщик ведения журнала `Disk` поддерживает перечисленные ниже параметры конфигурации:  
+Используйте подключения привязок для чтения данных из контейнера и записи в него. Вы можете указать входное или выходное подключение, указав параметр `--mount` в команде [docker run](https://docs.docker.com/engine/reference/commandline/run/).
 
-  | ИМЯ | Тип данных | ОПИСАНИЕ |
-  |------|-----------|-------------|
-  | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить регистратор, необходимо указать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
-  | `MaxFileSize` | Целое число  | Максимальный размер файла журнала в мегабайтах (МБ). Когда размер текущего файла журнала достигает этого значения или превышает его, поставщик ведения журнала создает файл журнала. Если задано значение –1, то размер файла журнала ограничивается только максимальным размером файла (если он задан) для выходного подключения. Значение по умолчанию — 1. |
+Контейнеры API компьютерного зрения не используют входные или выходные подключения для хранения учебных данных или данных службы. 
 
-Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Ведение журнала ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#configuration).
+Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](computer-vision-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-## <a name="mounts-configuration-settings"></a>Параметры конфигурации подключений
+|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|-------|------|-----------|-------------|
+|Не разрешено| `Input` | Строка | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
-Контейнеры Docker, предоставляемые Компьютерным зрением, неизменяемы и без отслеживания состояния. Другими словами, созданные в контейнере файлы хранятся на поддерживающем запись уровне контейнера, который сохраняется только на время работы контейнера и к которому сложно получить доступ. Если остановить или удалить этот контейнер, созданные в этом контейнере файлы будут удалены.
+## <a name="hierarchical-settings"></a>Иерархические параметры
 
-Однако так как это контейнеры Docker, вы можете использовать параметры хранения Docker, например тома или подключения привязки, чтобы считывать и записывать сохраненные данные вне контейнера, если последний поддерживает это. Дополнительные сведения о том, как задавать и контролировать параметры хранения Docker, см. в статье [Manage data in Docker](https://docs.docker.com/storage/) (Управление данными в Docker).
+[!INCLUDE [Container shared configuration hierarchical settings](../../../includes/cognitive-services-containers-configuration-shared-hierarchical-settings.md)]
 
-> [!NOTE]
-> Как правило, вам не потребуется менять значения этих параметров конфигурации. Вместо этого значения, заданные для этих параметров конфигурации, используются как цели при указании входных и выходных подключений для контейнера. Дополнительные сведения об указании входных и выходных подключений см. в [этом разделе](#input-and-output-mounts).
+## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
-В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `Mounts`.
+В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](computer-vision-how-to-install-containers.md#stop-the-container).
 
-| ИМЯ | Тип данных | ОПИСАНИЕ |
-|------|-----------|-------------|
-| `Input` | Строка | Цель входного подключения. По умолчанию используется значение `/input`. |
-| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. |
+* **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
+* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
 
-### <a name="input-and-output-mounts"></a>Входные и выходные подключения
+Замените строку {_имя_аргумента_} собственными значениями.
 
-По умолчанию каждый контейнер может поддерживать *входное подключение*, из которого контейнер может считывать данные, и *выходное подключение*, в которое он может записывать их. Однако контейнерам не обязательно поддерживать входные или выходные подключения, а каждый контейнер может использовать входные и выходные подключения для своих специфических целей помимо вариантов ведения журнала, поддерживаемых контейнером Компьютерного зрения.
+| Placeholder | Значение | Формат или пример |
+|-------------|-------|---|
+|{BILLING_KEY} | Ключ конечной точки ресурса API компьютерного зрения. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{BILLING_ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|
 
-Контейнер Распознавания текста не поддерживает входные подключения, а при необходимости поддерживает выходные.
+> [!IMPORTANT]
+> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](computer-vision-how-to-install-containers.md#billing).
+> Значение ApiKey — это **ключ** со страницы ключей ресурса API компьютерного зрения Azure. 
 
-Вы можете указать входное или выходное подключение с помощью параметра `--mount` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания из скачанного образа контейнера. По умолчанию входное подключение использует цель `/input`, а выходное — `/output`. Любой параметр хранения Docker, доступный контейнеру Docker, можно указать в параметре `--mount`.
+## <a name="recognize-text-container-docker-examples"></a>Примеры распознавания текста контейнера Docker
 
-Например, приведенная ниже команда определяет подключение привязки Docker к папке `D:\Output` на хост-компьютере в выходном подключении, а затем создает контейнер из образа контейнера для Распознавания текста, сохраняя файлы журнала в формате JSON в выходное подключение.
+Следующие примеры Docker предназначены для контейнера распознавания текста. 
+
+### <a name="basic-example"></a>Простой пример 
 
   ```Docker
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 --mount type=bind,source=D:\Output,destination=/output containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0 ApiKey=0123456789 Logging:Disk:Format=json
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
+  Eula=accept \
+  Billing={BILLING_ENDPOINT_URI} \
+  ApiKey={BILLING_KEY} 
+  ```
+
+### <a name="logging-example-with-command-line-arguments"></a>Пример настройки ведения журнала через аргументы командной строки
+
+  ```Docker
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
+  Eula=accept \
+  Billing={BILLING_ENDPOINT_URI} \
+  ApiKey={BILLING_KEY} \
+  Logging:Console:LogLevel=Information
+  ```
+
+### <a name="logging-example-with-environment-variable"></a>Пример настройки ведения журнала с помощью переменной среды
+
+  ```Docker
+  SET Logging:Console:LogLevel=Information
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
+  Eula=accept \
+  Billing={BILLING_ENDPOINT_URI} \
+  ApiKey={BILLING_KEY}
   ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)
+* Изучите статью об [установке и запуске контейнеров](computer-vision-how-to-install-containers.md).

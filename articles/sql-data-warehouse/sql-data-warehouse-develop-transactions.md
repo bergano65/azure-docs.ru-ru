@@ -6,16 +6,16 @@ author: ckarst
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 121fa87cb295799fdcd3de5e627fb894efc24c49
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 2f463620f43ae95535a55005ebe9732495b89dc9
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301271"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55456669"
 ---
 # <a name="using-transactions-in-sql-data-warehouse"></a>Использование транзакций в хранилище данных Azure SQL
 Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
@@ -175,5 +175,5 @@ THROW — это более современная реализация вызо
 * не поддерживаются операторы DDL, такие как CREATE TABLE, внутри определенной пользователем транзакции.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше об оптимизации транзакций, ознакомившись со статьей [Оптимизация транзакций для хранилища данных SQL](sql-data-warehouse-develop-best-practices-transactions.md). Ознакомьтесь с дополнительными [рекомендациями по использованию хранилища данных SQL Azure](sql-data-warehouse-best-practices.md).
+Узнайте больше об оптимизации транзакций, ознакомившись с [рекомендациями по транзакциям](sql-data-warehouse-develop-best-practices-transactions.md). Ознакомьтесь с дополнительными [рекомендациями по использованию хранилища данных SQL Azure](sql-data-warehouse-best-practices.md).
 

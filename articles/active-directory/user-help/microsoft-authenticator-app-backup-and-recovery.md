@@ -4,19 +4,19 @@ description: Узнайте, как выполнять резервное коп
 services: active-directory
 author: eross-msft
 manager: daveba
-ms.component: user-help
+ms.subservice: user-help
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/28/2018
+ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
-ms.openlocfilehash: 49cc5114106336f41d119b00db1bfa472f09d2d5
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 56ea48accea135f79e4c8984238002f2eec5167b
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54821708"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55167416"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
 
@@ -39,11 +39,11 @@ ms.locfileid: "54821708"
 Требование использовать для входа сразу две учетные записи повышает безопасность хранения резервных копий.
 
 **Включение резервного копирования в облако**
--   На устройстве iOS выберите элементы **Параметры**, **Резервное копирование**, а затем включите параметр **Автоматическое резервное копирование**.
+-   На устройстве iOS выберите элементы **Параметры**, **Резервное копирование**, а затем включите параметр **Резервное копирование iCloud**.
 
     Учетные данные сохранятся в учетной записи iCloud.
 
-    ![Экран параметров iOS, указывающий расположение для автоматического резервного копирования](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-turn-on.png)
+    ![Экран параметров iOS, указывающий расположение для резервного копирования iCloud](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-turn-on.png)
 
 ## <a name="recover-your-account-credentials-on-your-new-device"></a>Восстановление учетных данных на новое устройство
 Вы можете восстановить учетные данные из учетной записи iCloud, используя ту же учетную запись Майкрософт, которую вы указали для восстановления при настройке резервного копирования.
@@ -101,7 +101,6 @@ ms.locfileid: "54821708"
 
 ## <a name="related-topics"></a>Связанные разделы
 - [Начало работы с приложением Microsoft Authenticator](microsoft-authenticator-app-how-to.md)  
-
 - [Часто задаваемые вопросы о приложении Microsoft Authenticator](microsoft-authenticator-app-faq.md)
 
 - [Многофакторная идентификация](https://docs.microsoft.com/azure/multi-factor-authentication/)

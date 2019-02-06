@@ -8,13 +8,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/21/2018
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: 718a8fb82c3d85baf94e2e9c316f40b964749912
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.subservice: common
+ms.openlocfilehash: 3e2083b03b8463907c6d80fb5a9e1f25cca9beb5
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51231369"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454949"
 ---
 # <a name="designing-highly-available-applications-using-ra-grs"></a>Проектирование высокодоступных приложений с использованием RA-GRS
 
@@ -24,7 +24,7 @@ ms.locfileid: "51231369"
 
 В этой статье мы рассмотрим GRS и RA-GRS. При использовании GRS три копии ваших данных хранятся в основном регионе, выбранном при настройке учетной записи хранения. Три дополнительные копии сохраняются асинхронно в дополнительном регионе, заданном Azure. RA-GRS обеспечивает геоизбыточное хранилище с доступом на чтение к дополнительной копии.
 
-Сведения о том, с какой дополнительной копией сопоставляется каждый основной регион, см. в статье [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+Сведения о том, с какой дополнительной копией сопоставляется каждый основной регион, см. в статье [Непрерывность бизнес-процессов и аварийное восстановление (BCDR) в парах регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
 Эта статья содержит фрагменты кода и ссылку на полный пример в конце, который можно скачать и запустить.
 

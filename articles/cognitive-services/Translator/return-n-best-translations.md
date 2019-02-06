@@ -6,16 +6,16 @@ services: cognitive-services
 author: Jann-Skotdal
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: a0f4e4dd5cea9c3ea7b682e6372d2ffa8726e6ef
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: ea409a4295cb07800e3f48ab408135071d0faea6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646479"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55464829"
 ---
 # <a name="how-to-return-n-best-translations"></a>Возврат определенного количества (N) лучших переводов
 
@@ -44,9 +44,9 @@ ms.locfileid: "49646479"
 | maxTranslations | **Обязательный**. Целочисленное значение, представляющее максимальное количество возвращаемых переводов. |
 | options | **Необязательный**. Объект TranslateOptions, содержащий значения, перечисленные ниже. Все они необязательны и по умолчанию соответствуют наиболее распространенным настройкам.
 
-* Category (категория). Единственный поддерживаемый и установленный по умолчанию параметр — general.
-* ContentType. Единственный поддерживаемый и установленный по умолчанию параметр — text/plain.
-* State: состояние пользователя, помогающее согласовать запрос и ответ. В ответе будет возвращено то же содержимое.
+* Категория: единственный поддерживаемый и установленный по умолчанию параметр — general.
+* ContentType: единственный поддерживаемый и установленный по умолчанию параметр — text/plain.
+* Состояние: состояние пользователя для помощи в согласовании запроса и ответа. В ответе будет возвращено то же содержимое.
 * IncludeMultipleMTAlternatives: флаг, позволяющий определить, следует ли возвращать несколько альтернативных вариантов из модуля машинного перевода. По умолчанию имеет значение false и включает только один вариант.
 
 ## <a name="ratings"></a>Оценки

@@ -5,15 +5,20 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/17/2019
-ms.openlocfilehash: 6c1a0a4a13a70daec157ede98f850f87150f8d93
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.date: 01/23/2019
+ms.openlocfilehash: bf6e9947c21e5b07b2adc99de585c77444447c04
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54383867"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54902667"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-the-azure-portal"></a>Создание реплик чтения и управление ими с помощью портала Azure
+
+> [!IMPORTANT]
+> Компонент "Реплика чтения" доступен в рамках общедоступной предварительной версии.
+
+
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [документации с описанием концепций](concepts-read-replicas.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -41,6 +46,7 @@ ms.locfileid: "54383867"
    ![База данных Azure для PostgreSQL: уведомление после сохранения](./media/howto-read-replicas-portal/parameter-save-notification.png)
 
 6. После сохранения перезапустите сервер, чтобы применить изменения. Дополнительные сведения о перезапуске сервера см. в [этой документации](howto-restart-server-portal.md).
+
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
 Для создания реплик чтения выполните следующие действия:

@@ -4,16 +4,16 @@ description: Современные алгоритмы средства для �
 services: cognitive-services
 author: tonyxing
 ms.service: cognitive-services
-ms.component: anomaly-detection
+ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: tonyxing
-ms.openlocfilehash: c0c15f077a0a7dd302a377aa6f82ba2f8533d862
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: ad0af6137e2a127e2f9981c2707906514bf8c591
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456258"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55215203"
 ---
 # <a name="what-is-anomaly-finder"></a>Что такое средство для поиска аномалий
 

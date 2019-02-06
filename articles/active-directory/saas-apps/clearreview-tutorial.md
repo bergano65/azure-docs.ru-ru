@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Clear Review | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Clear Review | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Clear Review.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 8264159a-11a2-4a8c-8285-4efea0adac8c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 604a557a91176c08a361ffd058adda63f53b30fc
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 577dc0192dc9956e302e327092bc21d59fb5a0c0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433026"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55179554"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство по интеграции Azure Active Directory с Clear Review
+# <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство. Интеграция Azure Active Directory с Clear Review
 
 В этом руководстве описано, как интегрировать Clear Review с Azure Active Directory (Azure AD).
 
@@ -165,7 +165,7 @@ ms.locfileid: "39433026"
 1. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

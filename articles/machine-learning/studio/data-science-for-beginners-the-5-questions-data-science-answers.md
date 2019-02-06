@@ -1,6 +1,6 @@
 ---
 заголовок: Обработка и анализ данных для начинающих titleSuffix: Студия машинного обучения Azure description: Обработка и анализ данных для начинающих объясняет основные понятия в пяти коротких видеороликах. Первое видео содержит ответы на 5 вопросов об обработке и анализе данных. Из машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---

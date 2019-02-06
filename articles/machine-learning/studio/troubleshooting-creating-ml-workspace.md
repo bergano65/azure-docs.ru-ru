@@ -1,6 +1,6 @@
 ---
-заголовок: 'Устранение неполадок, связанных с созданием рабочей области Студии машинного обучения Azure и подключением к ней' titleSuffix: Студия машинного обучения Azure description: В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: 'Устранение неполадок, связанных с созданием рабочей области Студии машинного обучения Azure и подключением к ней' titleSuffix: Студия машинного обучения Azure description: В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
 ---

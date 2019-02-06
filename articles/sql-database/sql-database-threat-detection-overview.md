@@ -11,24 +11,22 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 587c0718e333f121d0ff8b32d8c2a7dad6b8f774
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.date: 01/29/2019
+ms.openlocfilehash: 4c9700344ca5b973b8dad9fd1505d15f58c06126
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037146"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55451722"
 ---
 # <a name="azure-sql-database-threat-detection"></a>Обнаружение угроз базы данных SQL Azure
 
 Система обнаружения угроз SQL Azure для служб [База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) выявляет аномальные действия, указывающие на необычные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями.
 
-Система обнаружения угроз входит в состав предложения [Расширенная защита от угроз SQL ](sql-advanced-threat-protection.md), которое представляет собой унифицированный пакет расширенных возможностей безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ATP. Там же ею можно управлять.
+Система обнаружения угроз входит в состав предложения [Расширенная защита данных SQL](sql-advanced-threat-protection.md), которое представляет собой единый пакет расширенных средств обеспечения безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять.
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
-
-За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц за все базы данных для каждого логического сервера или управляемого экземпляра. При этом первые 30 дней системой можно пользоваться бесплатно.
 
 ## <a name="what-is-threat-detection"></a>Что такое система обнаружения угроз?
 
@@ -69,7 +67,7 @@ ms.locfileid: "54037146"
 
 ## <a name="explore-threat-detection-alerts-for-your-database-in-the-azure-portal"></a>Изучение оповещений об обнаружении угроз базы данных на портале Azure
 
-Оповещения об обнаружении угроз базы данных SQL интегрируются с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). На динамических плитках обнаружения угроз SQL в колонках базы данных и SQL ATP на портале Azure отображается состояние активных угроз.
+Оповещения об обнаружении угроз базы данных SQL интегрируются с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Динамические плитки обнаружения угроз SQL в колонках базы данных и SQL ATP на портале Azure отслеживают состояние активных угроз.
 
 Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных или хранилище данных.
 
@@ -79,9 +77,9 @@ ms.locfileid: "54037146"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Подробнее об [обнаружении угроз в отдельной базе данных](sql-database-threat-detection.md).
+- Дополнительные сведения об обнаружении угроз в отдельной базе данных и в составе см. [здесь](sql-database-threat-detection.md).
 - Подробнее об [обнаружении угроз в Управляемом экземпляре](sql-database-managed-instance-threat-detection.md).
-- Дополнительные сведения о службе "Расширенная защита от угроз SQL" см. в [этой статье](sql-advanced-threat-protection.md).
+- Дополнительные сведения о пакете "Расширенная защита данных" см. в [этой статье](sql-advanced-threat-protection.md).
 - Узнайте больше об [аудите базы данных SQL Azure](sql-database-auditing.md).
 - Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 - Дополнительные сведения о ценах см. на [странице цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).  

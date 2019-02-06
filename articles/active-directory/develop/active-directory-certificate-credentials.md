@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 88f0c64a-25f7-4974-aca2-2acadc9acbd8
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -17,12 +17,12 @@ ms.date: 07/24/2018
 ms.author: celested
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7d3796d8d4a5a2e292afaf9cd013ff04ffc082c5
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: d9e877fd648c28564f5eccc46f9c20741fe446f8
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39578676"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55076321"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -45,12 +45,12 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 
 | Параметр |  Примечания |
 | --- | --- |
-| `aud` | Аудитория: должно быть значение **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
+| `aud` | Audience: Должно быть **https://login.microsoftonline.com/*tenant_Id* /oauth2/token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
 | `iss` | Издатель: параметр должен иметь значение client_id (идентификатор приложения службы клиента) |
 | `jti` | GUID: идентификатор JWT |
 | `nbf` | Не ранее: дата, до которой маркер не может использоваться. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до времени выдачи маркера. |
-| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента), как и `iss` |
+| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента, как и `iss`) |
 
 ### <a name="signature"></a>Подпись
 

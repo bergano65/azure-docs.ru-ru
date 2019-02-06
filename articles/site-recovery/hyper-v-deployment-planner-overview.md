@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: nisoneji
-ms.openlocfilehash: 7c5a5cddca2aa8e459bde711465425bdd32c669e
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 06e3139ffa958637721aae7e912b34070d307757
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52964022"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55207400"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "52964022"
 
 | Требование к серверу | ОПИСАНИЕ |
 |---|---|
-|Получение списка виртуальных машин, профилирование и оценка пропускной способности |<ul><li>Операционная система: Microsoft Windows Server 2016 или Microsoft Windows Server 2012 R2 </li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[Microsoft .NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Microsoft Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Интернет-доступ к Azure с этого сервера.</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Виртуальную машину, на которой выполняется планировщик развертывания Azure Site Recovery, необходимо добавить в список TrustedHosts для всех серверов Hyper-V.</li><li>Все виртуальные машины Hyper-V для профилирования нужно добавить в список TrustedHosts на клиентской виртуальной машине, где запущена программа. [Дополнительные сведения о добавлении серверов в список TrustedHosts](#steps-to-add-servers-into-trustedhosts-list). </li><li> Программу следует запускать с правами администратора из PowerShell или консоли командной строки в клиенте.</ul></ul>|
+|Получение списка виртуальных машин, профилирование и оценка пропускной способности |<ul><li>Операционная система: Microsoft Windows Server 2016 или Microsoft Windows Server 2012 R2 </li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[Microsoft .NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Microsoft Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Интернет-доступ к Azure с этого сервера.</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Виртуальную машину, на которой выполняется планировщик развертывания Azure Site Recovery, необходимо добавить в список TrustedHosts для всех серверов Hyper-V.</li><li>Все серверы Hyper-V для профилирования нужно добавить в список TrustedHosts на клиентской виртуальной машине, где запущена программа. [Дополнительные сведения о добавлении серверов в список TrustedHosts](#steps-to-add-servers-into-trustedhosts-list). </li><li> Программу следует запускать с правами администратора из PowerShell или консоли командной строки в клиенте.</ul></ul>|
 | Создание отчетов. | Любой компьютер с Windows или Windows Server с Microsoft Excel 2013 или более поздней версии. |
 | Разрешения пользователя | Учетная запись администратора для доступа к кластеру или узлу Hyper-V при получении списка виртуальных машин и профилировании.<br>В учетных записях администратора домена для всех узлов, которые необходимо профилировать, должны использоваться одни и те же учетные данные, т. е. имя пользователя и пароль.
  |

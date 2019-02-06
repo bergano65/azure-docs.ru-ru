@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке Asana для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Asana для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Asana.
 services: active-directory
 documentationcenter: ''
@@ -8,7 +8,7 @@ writer: asmalser-msft
 manager: sakula
 ms.assetid: 0b38ee73-168b-42cb-bd8b-9c5e5126d648
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser
 ms.reviewer: asmalser
-ms.openlocfilehash: 26642fefbb86b2709e110b13d782286fd18d5e60
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 11ab8bd5f5967f886d8bf1e03df4c9d88bf36b33
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348061"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55156366"
 ---
-# <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство по настройке Asana для автоматической подготовки пользователей
+# <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство. Настройка Asana для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Asana и Azure Active Directory (Azure AD) настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Asana.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с TonicDM | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с TonicDM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TonicDM.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 19ea9a07-9ecf-43dc-91ba-593ce3c00b01
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: jeedes
-ms.openlocfilehash: b582af22707b7bff187ed93fb48ba96d15634ab3
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8e92e97a27f36d37d30335b6eb8492f41ede7510
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433330"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55190434"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство по интеграции Azure Active Directory с TonicDM
+# <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство. Интеграция Azure Active Directory с TonicDM
 
 В этом руководстве описано, как интегрировать TonicDM с Azure Active Directory (Azure AD).
 
@@ -160,7 +160,7 @@ ms.locfileid: "39433330"
  
 ### <a name="create-a-tonicdm-test-user"></a>Создание тестового пользователя TonicDM
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении TonicDM. Обратитесь в [службу поддержки TonicDM](mailto:support@tonicdm.com), чтобы добавить пользователей на платформу TonicDM. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении TonicDM. Обратитесь к  [группе поддержки TonicDM](mailto:support@tonicdm.com), чтобы добавить пользователей на платформу TonicDM. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -197,7 +197,7 @@ ms.locfileid: "39433330"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент TonicDM на панели доступа, вы автоматически войдете в приложение TonicDM.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

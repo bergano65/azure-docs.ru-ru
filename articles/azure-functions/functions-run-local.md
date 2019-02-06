@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
-ms.openlocfilehash: c99d5e9d64e9e9715589ecf2c0de57ce660917aa
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 214f32c4dc35661480b96477caf0cdf6243c75a8
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103695"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094253"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -40,13 +40,13 @@ ms.locfileid: "54103695"
 
 ### <a name="v2"></a>Версия 2.x
 
-В версии 2.x инструментов используется среда выполнения Функций Azure версии 2.x, которая основана на .NET Core. Эта версия поддерживается на всех платформах, которые поддерживает .NET Core 2.x, включая [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux).
+В версии 2.x инструментов используется среда выполнения Функций Azure версии 2.x, которая основана на .NET Core. Эта версия поддерживается на всех платформах, которые поддерживает .NET Core 2.x, включая [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Сначала вам необходимо установить пакет SDK для .NET Core 2.x.
 
 #### <a name="windows-npm"></a>Windows
 
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
-1. Установите [.NET Core 2.1 для Windows](https://www.microsoft.com/net/download/windows).
+1. Установите [пакет SDK для .NET Core 2.x для Windows](https://www.microsoft.com/net/download/windows).
 
 2. Установите [Node.js], который содержит пакет npm. Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
 
@@ -60,7 +60,7 @@ ms.locfileid: "54103695"
 
 На следующих шагах Homebrew используется для установки основных инструментов на компьютерах macOS.
 
-1. Установите [.NET Core 2.1 для macOS](https://www.microsoft.com/net/download/macos).
+1. Установите [пакет SDK для .NET Core 2.x для macOS](https://www.microsoft.com/net/download/macos).
 
 2. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
 
@@ -75,7 +75,7 @@ ms.locfileid: "54103695"
 
 На следующих шагах [APT](https://wiki.debian.org/Apt) используется для установки основных инструментов на дистрибутив Linux Ubuntu/Debian. Чтобы выполнить установку на другие дистрибутивы Linux, ознакомьтесь с [файлом сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#linux).
 
-1. Установите [.NET Core 2.1 для Linux](https://www.microsoft.com/net/download/linux).
+1. Установите [пакет SDK для .NET Core 2.x для Linux](https://www.microsoft.com/net/download/linux).
 
 2. Зарегистрируйте ключ продукта Майкрософт как доверенный:
 
@@ -371,7 +371,7 @@ curl --request POST http://localhost:7071/api/MyHttpTrigger --data '{"name":"Azu
 {
     "input": "<trigger_input>"
 }
-````
+```
 
 Значение `<trigger_input>` содержит данные в формате, ожидаемом функцией. В следующем примере представлен запрос POST к функции `QueueTriggerJS`. В этом случае входные данные представляют собой строку, соответствующую сообщению, которое нужно найти в очереди.
 

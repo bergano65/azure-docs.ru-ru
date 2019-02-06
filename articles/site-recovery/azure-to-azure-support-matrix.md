@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 01/21/2019
 ms.author: raynew
-ms.openlocfilehash: fa25c144737c4d070b2dbd08700c68e617950e0d
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 138c5ee54d175c4bd5f727acc3375405850f86a0
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452264"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301600"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 
@@ -108,15 +108,15 @@ Oracle Linux | 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+14.04 LTS | 9.22 | С 3.13.0-24-generic по 3.13.0-164-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1036-azure. |
 14.04 LTS | 9.21 | С 3.13.0-24-generic по 3.13.0-163-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1035-azure. |
 14.04 LTS | 9.20 | С 3.13.0-24-generic по 3.13.0-161-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1030-azure |
 14.04 LTS | 9.19 | С 3.13.0-24-generic по 3.13.0-153-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-131-generic. |
-14.04 LTS | 9.18 | С 3.13.0-24-generic по 3.13.0-151-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-128-generic. |
 |||
+16.04 LTS | 9.22 | С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-43-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1036-azure.|
 16.04 LTS | 9.21 | С 4.4.0-21-generic по 4.4.0-140-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-42-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1035-azure.|
 16.04 LTS | 9.20 | С 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1030-azure.|
 16.04 LTS | 9.19 | с 4.4.0-21-generic по 4.4.0-131-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-30-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1019-azure.|
-16.04 LTS | 9.18 | С 4.4.0-21-generic по 4.4.0-128-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. |
 
 
 #### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure

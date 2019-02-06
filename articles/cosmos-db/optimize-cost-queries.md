@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: rimman
-ms.openlocfilehash: e2cb1a76bfde5bea7707cf3cc6658e3fc82163c5
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: cb85d09a1d5dee6cb54254baac4698cdad093785
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043096"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457672"
 ---
-# <a name="optimize-the-cost-required-to-run-queries-in-azure-cosmos-db"></a>Оптимизируйте затраты на выполнение запросов в Azure Cosmos DB
+# <a name="optimize-query-cost-in-azure-cosmos-db"></a>Оптимизация затрат на отправку запросов в Azure Cosmos DB
 
 Azure Cosmos DB предлагает широкий набор операций с базой данных, включая реляционные и иерархические запросы к элементам в контейнере. Затраты, связанные с каждой из этих операций, зависят от типа процессора, операций ввода-вывода и памяти, необходимой для завершения операции. Вы можете не беспокоиться об управлении аппаратными ресурсами, а использовать унифицированную меру — единицы запроса — для всех ресурсов, необходимых для выполнения операций с базами данных и обслуживания запросов. В этой статье описано, как оценить затраты на запрос в единицах запроса, а также оптимизировать производительность и стоимость запроса. 
 

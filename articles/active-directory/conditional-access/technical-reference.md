@@ -7,20 +7,20 @@ author: MarkusVi
 manager: daveba
 ms.assetid: 56a5bade-7dcc-4dcf-8092-a7d4bf5df3c1
 ms.service: active-directory
-ms.component: conditional-access
+ms.subservice: conditional-access
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/13/2018
+ms.date: 01/30/2019
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 0971b5abee872d9a7010f0ce931f09c47808eb80
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 6c340cde488ee37d2454468356f1ceee03f74844
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452145"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55302110"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -53,6 +53,8 @@ ms.locfileid: "54452145"
 - Azure Information Protection — [узнайте больше](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
 
 - Azure RemoteApp
+
+- [См. дополнительные сведения о Базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 
 - Microsoft Dynamics 365
 
@@ -242,7 +244,7 @@ ms.locfileid: "54452145"
 
 - Функция **Требовать утвержденное клиентское приложение**:
 
-    - поддерживает только iOS и Android для [условия платформы устройства](#device-platforms-condition);
+    - поддерживает только iOS и Android для [условия платформы устройства](#device-platform-condition);
 
 
 ## <a name="next-steps"></a>Дополнительная информация

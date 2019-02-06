@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: 7681e3fabe9eb216da81d9f09dc584097bcbaf84
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.date: 01/25/2019
+ms.openlocfilehash: 4257baf437ec6c77ccf9fe4a7f0e6195ddd933be
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48830011"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458131"
 ---
 # <a name="monitor-and-manage-performance-of-sharded-multi-tenant-azure-sql-database-in-a-multi-tenant-saas-app"></a>Мониторинг производительности сегментированной мультитенантной базы данных SQL Azure в мультитенантном приложении SaaS и управление ею
 
@@ -161,7 +161,7 @@ SaaS-приложение Wingtip Tickets c мультитенантной БД 
 
 Этот скрипт подготовит клиент в отдельной базе данных, зарегистрирует базу данных и клиент в каталоге, а также откроет страницу событий клиента в браузере. Обновите страницу концентратора событий и вы увидите, что Salix Salsa добавлен как место проведения.
 
-## <a name="manage-performance-of-a-single-database"></a>Управление производительностью отдельной базы данных
+## <a name="manage-performance-of-an-individual-database"></a>Управление производительностью отдельной базы данных
 
 Если нагрузка отдельного клиента в мультитенантной базе данных постоянно высокая, это может влиять на ресурсы в базе данных и другие клиенты. Если эта активность не прекращается в течение некоторого времени, клиент можно временно изъять из базы данных и поместить в его собственную мультитенантную базу данных. Это позволяет настроить для клиента необходимые дополнительные ресурсы и полностью изолирует его от других клиентов.
 

@@ -3,7 +3,7 @@ title: Использование расширения виртуальной м
 description: Узнайте, как использовать расширение виртуальной машины Docker для быстрого и безопасного развертывания среды Docker в Azure с помощью шаблонов Resource Manager и интерфейса командной строки Azure.
 services: virtual-machines-linux
 documentationcenter: ''
-author: zr-msft
+author: cynthn
 manager: jeconnoc
 editor: ''
 ms.assetid: 936d67d7-6921-4275-bf11-1e0115e66b7f
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/18/2017
-ms.author: zarhoads
-ms.openlocfilehash: 75959225d6fcc5487466ed26a21ba2d26c55cde9
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.author: cynthn
+ms.openlocfilehash: f30305374b1fcaabfb36533195a098073d33b6c3
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465939"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197608"
 ---
 # <a name="create-a-docker-environment-in-azure-using-the-docker-vm-extension"></a>Создание среды Docker в Azure с помощью расширения виртуальной машины Docker
 
@@ -39,7 +39,7 @@ Docker — это популярная платформа для управле�
 
 
 ## <a name="deploy-a-template-with-the-azure-docker-vm-extension"></a>Развертывание шаблона с помощью расширения виртуальных машин Docker для Azure
-Чтобы создать виртуальную машину Ubuntu, на которой установлено расширение виртуальной машины Docker для Azure (для установки и настройки узла Docker), мы используем готовый шаблон быстрого запуска. Шаблон можно найти в разделе [Simple deployment of an Ubuntu VM with Docker](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)(Простое развертывание виртуальной машины Ubuntu с Docker). Нужно установить последнюю версию [ Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Чтобы создать виртуальную машину Ubuntu, на которой установлено расширение виртуальной машины Docker для Azure (для установки и настройки узла Docker), мы используем готовый шаблон быстрого запуска. Вы можете просмотреть шаблон здесь: [Simple deployment of an Ubuntu VM with Docker](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) (Простое развертывание виртуальной машины Ubuntu с помощью Docker). Нужно установить последнюю версию [ Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -58,7 +58,7 @@ az group deployment create --resource-group myResourceGroup \
 
 
 ## <a name="deploy-your-first-nginx-container"></a>Развертывание первого контейнера NGINX
-Для просмотра сведений о виртуальной машине, включая DNS-имя, можно использовать команду [az vm show](/cli/azure/vm#az_vm_show):
+Для просмотра сведений о виртуальной машине, включая DNS-имя, можно использовать команду [az vm show](/cli/azure/vm):
 
 ```azurecli
 az vm show \

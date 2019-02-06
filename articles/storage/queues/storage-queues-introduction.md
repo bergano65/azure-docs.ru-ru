@@ -8,13 +8,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/07/2017
 ms.author: tamram
-ms.component: queues
-ms.openlocfilehash: d2d4a31097c4050ba9193fc9d6fa076fe9c6e27f
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: queues
+ms.openlocfilehash: b173934db17b8c3ac5a48e599b75478fb214c240
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524837"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458403"
 ---
 # <a name="introduction-to-queues"></a>Общие сведения об очередях
 
@@ -40,11 +40,11 @@ ms.locfileid: "39524837"
   
     `https://myaccount.queue.core.windows.net/images-to-download`
 
-* **Учетная запись хранения.** Доступ к службе хранилища Azure всегда осуществляется с помощью учетной записи хранения. Сведения об емкости учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
+* **Учетная запись хранения**. Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Сведения об емкости учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
 
 * **Очередь**. Очередь содержит набор сообщений. Все сообщения должны находиться в очереди. Обратите внимание: имя очереди должно содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://msdn.microsoft.com/library/azure/dd179349.aspx).
 
-* **Сообщение.** Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней.
+* **Сообщение**. Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

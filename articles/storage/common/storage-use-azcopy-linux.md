@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: seguler
-ms.component: common
-ms.openlocfilehash: 79aa9cd3e634238702419d01650c7ef29c4dbb95
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.subservice: common
+ms.openlocfilehash: 1059dec80dcca80380b58aa8057162679496adc6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242031"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467379"
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Перенос данных с помощью AzCopy для Linux
 
@@ -92,7 +92,7 @@ azcopy --source <source> --destination <destination> [Options]
 
 В приведенных ниже примерах описаны разные сценарии копирования данных в большие двоичные объекты и файлы Microsoft Azure (и обратно). Чтобы получить подробное объяснение параметров, используемых в каждом примере, воспользуйтесь меню `azcopy --help`.
 
-## <a name="blob-download"></a>Большой двоичный объект: скачивание
+## <a name="blob-download"></a>Большой двоичный объект: Download (Скачать)
 ### <a name="download-single-blob"></a>Скачивание одного большого двоичного объекта
 
 ```azcopy
@@ -211,7 +211,7 @@ azcopy \
     --exclude-older
 ```
 
-## <a name="blob-upload"></a>Большой двоичный объект: отправка
+## <a name="blob-upload"></a>Большой двоичный объект: Передать
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy
@@ -346,7 +346,7 @@ azcopy \
 ### <a name="customizing-the-mime-content-type-mapping"></a>Настройка сопоставления типов содержимого MIME
 AzCopy использует файл конфигурации, содержащий сопоставление расширения файла с типом содержимого. При необходимости можно настроить это сопоставление и добавить новые пары. Сопоставление находится в файле ```/usr/lib/azcopy/AzCopyConfig.json```.
 
-## <a name="blob-copy"></a>Большой двоичный объект: копирование
+## <a name="blob-copy"></a>Большой двоичный объект: Копировать
 ### <a name="copy-single-blob-within-storage-account"></a>Копирование большого двоичного объекта в пределах учетной записи хранения
 
 ```azcopy
@@ -420,7 +420,7 @@ azcopy \
 
 Параметр `--sync-copy` может повлечь дополнительные затраты на исходящий трафик по сравнению с асинхронным копированием. Во избежание таких затрат мы советуем использовать данный режим в виртуальных машинах Azure, которые находятся в одном регионе с вашей исходной учетной записью хранения.
 
-## <a name="file-download"></a>Файл: скачивание
+## <a name="file-download"></a>File (Файл): Download (Скачать)
 ### <a name="download-single-file"></a>Скачивание одного файла
 
 ```azcopy
@@ -444,7 +444,7 @@ azcopy \
 
 Обратите внимание на то, что пустые папки не скачиваются.
 
-## <a name="file-upload"></a>Файл: отправка
+## <a name="file-upload"></a>File (Файл): Передать
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy
@@ -477,7 +477,7 @@ azcopy \
     --recursive
 ```
 
-## <a name="file-copy"></a>Файл: копирование
+## <a name="file-copy"></a>File (Файл): Копировать
 ### <a name="copy-across-file-shares"></a>Копирование общих файловых ресурсов
 
 ```azcopy
@@ -715,10 +715,10 @@ azcopy \
 ### <a name="azure-storage-blog-posts"></a>Записи блога по хранилищу Azure:
 * [Announcing AzCopy on Linux Preview](https://azure.microsoft.com/blog/announcing-azcopy-on-linux-preview/) (Объявление о выпуске предварительной версии AzCopy для Linux)
 * [Введение в предварительную версию библиотеки движения данных в хранилище Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
-* [AzCopy: введение в синхронное копирование и настраиваемый тип содержимого](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
-* [AzCopy: выпуск общедоступной версии AzCopy 3.0 и предварительной версии AzCopy 4.0 с поддержкой таблиц и файлов](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
-* [AzCopy: оптимизированные сценарии для крупномасштабного копирования](https://go.microsoft.com/fwlink/?LinkId=507682)
-* [AzCopy: поддержка геоизбыточного хранилища для доступа с правом чтения](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
-* [AzCopy – Transfer data with re-startable mode and SAS Token](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx) (AzCopy: передача данных с использованием перезапускаемого режима и маркера SAS)
-* [AzCopy: использование копирования больших двоичных объектов между разными учетными записями](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
-* [AzCopy: отправка и скачивание файлов для больших двоичных объектов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
+* [AzCopy — введение в синхронное копирование и настраиваемый тип содержимого](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx).
+* [AzCopy — выпуск общедоступной версии AzCopy 3.0 и предварительной версии AzCopy 4.0 с поддержкой таблиц и файлов](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx).
+* [AzCopy — 2.5 Release](https://go.microsoft.com/fwlink/?LinkId=507682) (Выпуск версии AzCopy 2.5)
+* [AzCopy — Support for Read Access Geo-Redundant account](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx) (AzCopy: поддержка учетной записи геоизбыточного хранилища для доступа с правом чтения).
+* [AzCopy — передача данных с использованием перезапускаемого режима и маркера SAS](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
+* [AzCopy — Using cross-account Copy Blob](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx) (AzCopy: использование копирования больших двоичных объектов между разными учетными записями)
+* [AzCopy — Uploading/downloading files for Azure Blobs](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx) (AzCopy: отправка и скачивание файлов для больших двоичных объектов Microsoft Azure)

@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 11/16/2018
-ms.openlocfilehash: c33952f893d5ef2cfb9020acbf813d30b6c105e7
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: d59bc20ea745412f8f2549e0359483d1dd3e608d
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469755"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912788"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -119,9 +119,9 @@ ms.locfileid: "54469755"
 
 | ИМЯ | Ограничение | Примечания |
 |------|-------|-------|
-| FTP | 50 MB | Чтобы обойти это ограничение, см. раздел [Обработка больших сообщений с фрагментацией в Azure Logic Apps](../logic-apps/logic-apps-handle-large-messages.md). Тем не менее некоторые соединители и API-интерфейсы могут не поддерживать фрагментацию и даже ограничение по умолчанию. | 
-| SFTP | 50 MB | Чтобы обойти это ограничение, см. статьи [Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps](../connectors/connectors-sftp-ssh.md) и [Обработка больших сообщений с фрагментацией в Azure Logic Apps](../logic-apps/logic-apps-handle-large-messages.md). Тем не менее некоторые соединители и API-интерфейсы могут не поддерживать фрагментацию и даже ограничение по умолчанию. | 
-| SFTP-SSH | 1 GB | Этот соединитель обрабатывает до 1 ГБ, но передает эти данные по 50 МБ, а не по 1 ГБ. | 
+| FTP | 50 MB | Чтобы обойти это ограничение только для действий, обратитесь к статье [Обработка больших сообщений с фрагментацией в Azure Logic Apps](../logic-apps/logic-apps-handle-large-messages.md). <p>**Примечание**. Фрагментация не применяется к триггерам. Кроме того, некоторые соединители и API-интерфейсы могут не поддерживать фрагментацию и даже ограничение по умолчанию. | 
+| SFTP | 50 MB | Чтобы обойти это ограничение только для действий, перейдите к статьям [Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps](../connectors/connectors-sftp-ssh.md) и [Обработка больших сообщений с фрагментацией в Azure Logic Apps](../logic-apps/logic-apps-handle-large-messages.md). <p>**Примечание**. Фрагментация не применяется к триггерам. Кроме того, некоторые соединители и API-интерфейсы могут не поддерживать фрагментацию и даже ограничение по умолчанию. | 
+| SFTP-SSH | 1 GB | Этот соединитель обрабатывает до 1 ГБ, но передает эти данные по 50 МБ, а не по 1 ГБ. Чтобы обойти это ограничение только для действий, обратитесь к статье [Обработка больших сообщений с фрагментацией в Azure Logic Apps](../logic-apps/logic-apps-handle-large-messages.md). <p>**Примечание**. Фрагментация не применяется к триггерам. | 
 |||| 
 
 <a name="request-limits"></a>

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 07/02/2017
 ms.author: mfussell
-ms.openlocfilehash: 0f4bb3f32b264bd894341a8776d48eb9f8b061a2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d8b78e42dc5909e6c80f100c9337880b1ad2d9e6
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258737"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168419"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Упаковка и развертывание существующего исполняемого файла вручную
 При упаковке существующего исполняемого файла в качестве [гостевого](service-fabric-guest-executables-introduction.md) вы можете использовать шаблон проекта Visual Studio или [создать пакет приложения вручную](#manually). При использовании Visual Studio шаблон проекта создает для вас структуру пакета приложения и файлы манифеста.
@@ -143,7 +143,7 @@ Service Fabric создает расширенную копию содержим
 
 Атрибут `Name` определяет имя каталога в пакете приложения, где хранится код службы. `CodePackage` также имеет атрибут `version`. Он определяет версию кода, а также может использоваться для обновления кода службы с помощью инфраструктуры Service Fabric для управления жизненным циклом приложения.
 
-#### <a name="optional-update-setupentrypoint"></a>Обновление SetupEntrypoint (необязательно)
+#### <a name="optional-update-setupentrypoint"></a>Необязательно: обновление SetupEntryPoint
 ```xml
 <SetupEntryPoint>
    <ExeHost>
@@ -302,4 +302,4 @@ New-ServiceFabricService -ApplicationName 'fabric:/nodeapp' -ServiceName 'fabric
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started), включая ссылку на предварительную версию средства упаковки
 * [Пример двух гостевых исполняемых файлов (C# и Node.js), которые взаимодействуют через службу именования с помощью REST](https://github.com/Azure-Samples/service-fabric-containers)
 * [Развертывание нескольких пользовательских приложений](service-fabric-deploy-multiple-apps.md)
-* [Создание первого приложения Service Fabric в Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)
+* [Создание первого приложения Service Fabric в Visual Studio](service-fabric-tutorial-create-dotnet-app.md)

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 9d4b664c9b1fc0deb10794a5f0b29c2b600d19e2
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 17ea8545855cd926a393e9e40d3eccaabd6dba53
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53712669"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54886532"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Клонирование приложений службы приложений Azure с помощью PowerShell
 С выходом Microsoft Azure PowerShell версии 1.1.0 был добавлен новый параметр `New-AzureRMWebApp`, позволяющий клонировать существующее приложение службы приложений во вновь созданное приложение, размещенное в том же или в другом регионе. Так пользователи смогут легко и быстро развернуть целый ряд приложений в различных регионах.
@@ -116,7 +116,7 @@ $destapp = New-AzureRmWebApp -ResourceGroupName <Resource group name> -Name dest
 ```
 
 ## <a name="current-restrictions"></a>Существующие ограничения
-Эта функция в настоящее время находится в предварительной версии, со временем появятся новые возможности. Ниже приведены известные ограничения текущей версии приложения для клонирования:
+Ниже приведены известные ограничения клонирования приложения:
 
 * Параметры автоматического масштабирования не клонируются
 * Параметры расписания резервного копирования не клонируются

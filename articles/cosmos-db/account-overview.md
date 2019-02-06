@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: 7c4c1a5991445448f015dc0912383baf53f4e38c
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: cbc11e2fc54ecffbea22a66354f334f3562e3339
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034936"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55459219"
 ---
-# <a name="working-with-azure-cosmos-account"></a>Работа с учетной записью Azure Cosmos
+# <a name="work-with-azure-cosmos-account"></a>Работа с учетной записью Azure Cosmos
 
 Azure Cosmos DB — это полностью управляемая платформа как услуга (PaaS). Чтобы начать использовать Azure Cosmos DB, нужно создать учетную запись Azure Cosmos в подписке Azure. Учетная запись Azure Cosmos содержит уникальное DNS-имя. Вы можете управлять ею с помощью портала Azure, Azure CLI или разных языковых пакетов SDK. Дополнительные сведения см. в статье [об управлении учетной записью Azure Cosmos](how-to-manage-database-account.md).
 

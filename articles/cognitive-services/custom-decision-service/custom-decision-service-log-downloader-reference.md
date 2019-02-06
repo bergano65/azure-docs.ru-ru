@@ -6,16 +6,16 @@ services: cognitive-services
 author: marco-rossi29
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-decision-service
+ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: marossi
-ms.openlocfilehash: 8c5ab0e297690f1fbdb41a2627dd63c3ea522d1b
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 227caaa1b726210fd498596d716aa41365a63c7a
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46366818"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55228123"
 ---
 # <a name="logdownloader"></a>LogDownloader
 
@@ -23,10 +23,10 @@ ms.locfileid: "46366818"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Python 3: установлен и указан в переменной path. Рекомендуется использовать 64-разрядную версию для обработки больших файлов.
-- Репозиторий *Microsoft/mwt-ds*: [клонируйте репозиторий](https://github.com/Microsoft/mwt-ds).
+- Python 3: установлен и указан в пути. Рекомендуется использовать 64-разрядную версию для обработки больших файлов.
+- Репозиторий *Microsoft/mwt-ds*: [Клонирование репозитория](https://github.com/Microsoft/mwt-ds).
 - Пакет *azure-storage-blob*: для получения подробных сведений об установке см. [библиотеку службы хранилища Microsoft Azure для Python](https://github.com/Azure/azure-storage-python#option-1-via-pypi).
-- Введите строку подключения хранилища Azure в файле *mwt-ds/DataScience/ds.config*: следуйте шаблону *my_app_id: my_connectionString*. Можно указать несколько `app_id`. Если при запуске `LogDownloader.py` входные данные `app_id` не найдены в `ds.config`, `LogDownloader.py` использует строку подключения `$Default`.
+- Введите строку подключения хранилища Azure в *mwt-ds/DataScience/ds.config*: следуйте шаблону *my_app_id: my_connectionString*. Можно указать несколько `app_id`. Если при запуске `LogDownloader.py` входные данные `app_id` не найдены в `ds.config`, `LogDownloader.py` использует строку подключения `$Default`.
 
 ## <a name="usage"></a>Использование
 

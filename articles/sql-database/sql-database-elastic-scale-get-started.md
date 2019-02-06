@@ -11,24 +11,28 @@ author: anumjs
 ms.author: anjangsh
 ms.reviewer: sstein
 manager: craigg
-ms.date: 08/27/2018
-ms.openlocfilehash: b3bdcc81776067f279c1f95458a0a79a8824f51c
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: dbc3b7e2e013dc53a1e2524c44bd2229a6a1b18d
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53603055"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55462976"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
+
 В этом документе описано, как разработать [клиентскую библиотеку эластичной базы данных](sql-database-elastic-database-client-library.md), которая поможет запустить пример приложения. Используя пример приложения, мы создадим простое сегментированное приложение и изучим основные возможности инструментов эластичных баз данных SQL Azure. В этом документе описано, как [управлять сопоставлениями сегментов](sql-database-elastic-scale-shard-map-management.md), [настроить маршрутизацию, зависящую от данных](sql-database-elastic-scale-data-dependent-routing.md), и [создавать многосегментные запросы](sql-database-elastic-scale-multishard-querying.md). Клиентская библиотека доступна для .NET и Java. 
 
 ## <a name="elastic-database-tools-for-java"></a>Инструменты эластичных баз данных для Java
+
 ### <a name="prerequisites"></a>Предварительные требования
+
 * Java Developer Kit (JDK) версии 1.8 или более поздней
 * [Maven](http://maven.apache.org/download.cgi)
-* Логический сервер в Azure или локальный экземпляр SQL Server
+* Сервер Базы данных SQL в Azure или локальный экземпляр SQL Server
 
 ### <a name="download-and-run-the-sample-app"></a>Загрузка и запуск примера приложения
+
 Чтобы создать JAR-файлы и начать работу с примером проекта, сделайте следующее: 
 1. Клонируйте [репозиторий GitHub](https://github.com/Microsoft/elastic-db-tools-for-java), содержащий клиентскую библиотеку и пример приложения. 
 
@@ -65,12 +69,15 @@ ms.locfileid: "53603055"
 </dependency> 
 ```
 
-## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET 
+## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET
+
 ### <a name="prerequisites"></a>Предварительные требования
+
 * Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 * NuGet 2.7 или более поздней версии. Сведения о получении последней версии см. в разделе [Установка NuGet](http://docs.nuget.org/docs/start-here/installing-nuget).
 
 ### <a name="download-and-run-the-sample-app"></a>Загрузка и запуск примера приложения
+
 Чтобы установить библиотеку, перейдите по ссылке [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). Эта библиотека устанавливается с примером приложения, описанным в следующем разделе.
 
 Чтобы загрузить и запустить демонстрационное приложение, выполните следующие действия. 
@@ -91,10 +98,9 @@ ms.locfileid: "53603055"
 
 > [!IMPORTANT]
 > Чтобы обеспечить синхронизацию с обновлениями Azure и базы данных SQL, рекомендуется всегда использовать последнюю версию Management Studio. [Обновите среду SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
-> 
-> 
 
 ## <a name="key-pieces-of-the-code-sample"></a>Ключевые фрагменты программного кода демонстрационного приложения
+
 * **Управление сегментами и сопоставлениями сегментов**. Этот программный код, демонстрирующий способ работы с сегментами, диапазонами и сопоставлениями, взят из файла *ShardManagementUtils.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](https://go.microsoft.com/?linkid=9862595).  
 
 * **Маршрутизация, зависящая от данных**. Маршрутизация транзакций к необходимому сегменту демонстрируется в файле *DataDependentRoutingSample.cs*. Дополнительные сведения см. в статье [Маршрутизация, зависящая от данных](https://go.microsoft.com/?linkid=9862596). 
@@ -104,11 +110,13 @@ ms.locfileid: "53603055"
 * **Добавление пустых сегментов**. Итеративное добавление новых пустых сегментов выполняется программным кодом, который приведен в файле *CreateShardSample.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](https://go.microsoft.com/?linkid=9862595).
 
 ## <a name="other-elastic-scale-operations"></a>Другие операции, относящиеся к эластичному масштабированию
+
 * **Разбиение существующего сегмента**. Разбиение сегментов выполняется с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).
 
 * **Объединение имеющихся сегментов**. Объединение сегментов также выполняется с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).   
 
 ## <a name="cost"></a>Стоимость
+
 Библиотека инструментов эластичных баз данных предоставляется бесплатно. При использовании инструментов эластичных баз данных не взимаются какие-либо дополнительные платежи, помимо оплаты за работу на платформе Azure. 
 
 Например, демонстрационное приложение создает новую базу данных. Плата за эту возможность зависит от выбранной версии базы данных SQL и от использования приложением платформы Azure.
@@ -116,6 +124,7 @@ ms.locfileid: "53603055"
 Сведения о ценах см. на [странице с ценами на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Дополнительные сведения об инструментах эластичных баз данных см. в приведенных ниже статьях.
 
 * Примеры кода: 

@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: d8c4a97b-4de6-49d4-b64e-42222c2ec6c9
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 1e42d83ed7f74b366d2bca248a794cc9fb506b73
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f0701a7f046666a135c3325eb22d1d12cbd59ba0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435362"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55156893"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-qumu-cloud"></a>Руководство. Интеграция Azure Active Directory с Qumu Cloud
 
@@ -159,7 +159,7 @@ ms.locfileid: "39435362"
 1. Чтобы настроить единый вход на стороне **Qumu Cloud**, отправьте скачанный **XML-файл метаданных** [группе поддержки Qumu Cloud](mailto:support@qumu.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -197,7 +197,7 @@ ms.locfileid: "39435362"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Qumu Cloud. Приложение Qumu Cloud поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь создается при попытке получить доступ к приложению Qumu Cloud (если он еще не существует).
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки Qumu Cloud](mailto:support@qumu.com).
+>Чтобы создать учетную запись пользователя вручную, обратитесь к  [группе поддержки клиентов Qumu Cloud](mailto:support@qumu.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -234,7 +234,7 @@ ms.locfileid: "39435362"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Qumu Cloud на панели доступа, вы автоматически войдете в приложение Qumu Cloud.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 34c8a7d547acf023af442599708f9c183e5b9ae9
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: e5949016281b5f8ba5d8770403a146e52d279c73
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54431203"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55079993"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -40,17 +40,16 @@ ms.locfileid: "54431203"
 
 Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь привилегии и разрешения. Глобальный администратор или соадминистратор может выполнить все задачи. В следующей таблице показаны списки задач, эквивалентный командлет и необходимые разрешения для ситуаций, когда присутствует разделение обязанностей:
 
-|Задача|Командлет  |Минимальные разрешения  |
-|---|---------|---------|
-|Создание приложения Azure AD|[New-AzureRmADApplication](/powershell/module/azurerm.resources/new-azurermadapplication)     | Роль разработчика приложения        |
-|Добавление учетных данных приложения|[New-AzureRmADAppCredential](/powershell/module/AzureRM.Resources/New-AzureRmADAppCredential)     | Администратор приложения или глобальный администратор         |
-|Создание или получение субъекта-службы AAD|[New-AzureRMADServicePrincipal](/powershell/module/AzureRM.Resources/New-AzureRmADServicePrincipal)</br>[Get-AzureRmADServicePrincipal](/powershell/module/AzureRM.Resources/Get-AzureRmADServicePrincipal)     | Администратор приложения или глобальный администратор        |
-|Назначение или получение роли RBAC для указанного субъекта|[New-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)</br>[Get-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)      | Администратор доступа пользователей или владелец        |
-|Создание или удаление сертификата службы автоматизации|[New-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/New-AzureRmAutomationCertificate)</br>[Remove-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationCertificate)     | Участник группы ресурсов         |
-|Создание или удаление подключения службы автоматизации|[New-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/New-AzureRmAutomationConnection)</br>[Remove-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationConnection)|Участник группы ресурсов |
+|Задача|Командлет  |Минимальные разрешения  |Где необходимо установить разрешения|
+|---|---------|---------|---|
+|Создание приложения Azure AD|[New-AzureRmADApplication](/powershell/module/azurerm.resources/new-azurermadapplication)     | Роль разработчика приложения<sup>1</sup>        |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений" |
+|Добавление учетных данных приложения|[New-AzureRmADAppCredential](/powershell/module/AzureRM.Resources/New-AzureRmADAppCredential)     | Администратор приложения или глобальный администратор<sup>1</sup>         |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений"|
+|Создание или получение субъекта-службы AAD|[New-AzureRMADServicePrincipal](/powershell/module/AzureRM.Resources/New-AzureRmADServicePrincipal)</br>[Get-AzureRmADServicePrincipal](/powershell/module/AzureRM.Resources/Get-AzureRmADServicePrincipal)     | Администратор приложения или глобальный администратор        |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений"|
+|Назначение или получение роли RBAC для указанного субъекта|[New-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)</br>[Get-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)      | Администратор доступа пользователей или владелец        | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>"Начальная страница > Подписки > \<имя подписки\> — Управление доступом (IAM)"|
+|Создание или удаление сертификата службы автоматизации|[New-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/New-AzureRmAutomationCertificate)</br>[Remove-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationCertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
+|Создание или удаление подключения службы автоматизации|[New-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/New-AzureRmAutomationConnection)</br>[Remove-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationConnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
 
-* Необходимо добавить учетную запись пользователя AD с разрешениями, аналогичными роли участника для ресурсов Microsoft.Automation, как описано в разделе об [участнике](automation-role-based-access-control.md#contributor).  
-* Пользователи без прав администратора в клиенте Azure AD могут [регистрировать приложения AD](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если для этого параметра задано значение **Нет**, пользователю потребуются права глобального администратора в Azure AD, чтобы выполнить это действие.
+<sup>1</sup> Пользователи без прав администратора в клиенте Azure Active Directory могут [регистрировать приложения домена приложения](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если для этого параметра задано значение **Нет**, пользователю потребуются права глобального администратора в Azure AD, чтобы выполнить это действие.
 
 Если пользователь, которому назначают роль глобального администратора или соадминистратора подписки, не является участником экземпляра подписки Active Directory, он будет добавлен в качестве гостя. В этом случае вы получите предупреждение `You do not have permissions to create…` на странице **добавления учетной записи службы автоматизации**. Пользователей, которым назначена роль соадминистратора или глобального администратора, можно удалить из экземпляра подписки Active Directory, а затем повторно добавить, чтобы предоставить им права полного доступа к Active Directory. Чтобы проверить это, на портале Azure в области **Azure Active Directory** выберите **Пользователи и группы** и **Все пользователи**. Выбрав нужного пользователя, щелкните **Профиль**. Значение атрибута **Тип пользователя** в профиле пользователя не должно соответствовать значению **Гость**.
 

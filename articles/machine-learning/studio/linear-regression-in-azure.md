@@ -1,5 +1,5 @@
 ---
-заголовок: Перенос аналитики из Excel в Студию машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Сравнение моделей линейной регрессии в службах Excel и в среде машинного обучения Azure: services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Перенос аналитики из Excel в Студию машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Сравнение моделей линейной регрессии в Excel и Студии машинного обучения Azure services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
 ---

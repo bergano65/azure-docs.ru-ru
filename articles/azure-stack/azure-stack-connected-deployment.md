@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.openlocfilehash: e0f51306ab17e88db9d28da14faab9de0b445f74
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.lastreviewed: 11/05/2018
+ms.openlocfilehash: 491bdf121729d690784324051ff701f3ed2d2b7a
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037912"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55243187"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний с подключением к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
@@ -68,7 +69,7 @@ ms.locfileid: "51037912"
 
 ## <a name="learn-more"></a>Подробнее
 - Дополнительные сведения об использовании, покупке, партнерах и поставщиках оборудования OEM см. на странице продукта [Azure Stack](https://azure.microsoft.com/overview/azure-stack/).
-- Сведения о стратегии развития и географической доступности интегрированных систем Azure Stack см. в техническом документе: [Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure (PDF)). 
+- Сведения о стратегии развития и географической доступности интегрированных систем Azure Stack см. в технической документации [Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure). 
 - Чтобы узнать больше о пакетах и ценах Microsoft Azure Stack, [скачайте документ PDF](https://azure.microsoft.com/mediahandler/files/resourcefiles/5bc3f30c-cd57-4513-989e-056325eb95e1/Azure-Stack-packaging-and-pricing-datasheet.pdf). 
 
 ## <a name="next-steps"></a>Дополнительная информация

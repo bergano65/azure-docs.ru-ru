@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/22/2019
-ms.openlocfilehash: 197281a4666179037cd689e7e8d488e73039174b
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.date: 01/24/2019
+ms.openlocfilehash: 2966a2733904200f404d67c4e825d6b9deffdea2
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54810301"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54903032"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mariadb"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -26,12 +26,14 @@ ms.locfileid: "54810301"
 ![Сохранение настроенного элемента](./media/howto-configure-ssl/mysql-workbench-ssl.png). Для существующих подключений можно привязать SSL-сертификат, щелкнув правой кнопкой мыши значок подключения и выбрав "Изменить". Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
-Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующую команду.
+Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 
+
 ```bash
-mysql.exe -h mydemoserver.mariadb.database.azure.com -u Username@mydemoserver -p --ssl-ca=c:\ssl\BaltimoreCyberTrustRoot.crt.pem
+mysql.exe -h mydemoserver.mariadb.database.azure.com -u Username@mydemoserver -p --ssl-mode=REQUIRED --ssl-ca=c:\ssl\BaltimoreCyberTrustRoot.crt.pem
 ```
+
 > [!NOTE]
-> При использовании более новых версий интерфейса командной строки MySQL для Windows может появиться ошибка `SSL connection error: Certificate signature check failed`. В этом случае замените параметр `--ssl-ca={filepath}` на `--ssl`.
+> При использовании интерфейса командной строки MySQL для Windows может появиться ошибка `SSL connection error: Certificate signature check failed`. В этом случае замените параметр `--ssl-mode=REQUIRED --ssl-ca={filepath}` на `--ssl`.
 
 ## <a name="enforcing-ssl-connections-in-azure"></a>Применение SSL-соединений в Azure 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure

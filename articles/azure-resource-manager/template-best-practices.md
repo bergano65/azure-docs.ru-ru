@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
 ms.author: tomfitz
-ms.openlocfilehash: bd54ae2c82d3baf716784c39951c5cad7ec364b3
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 0736ed32fa6f17cc840d6b144503409365c33d84
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730719"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55077951"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
@@ -82,7 +82,7 @@ ms.locfileid: "53730719"
 
 * Используйте `allowedValues` только в крайнем случае. Используйте ее только в том случае, когда необходимо убедиться в том, что некоторые значения не включены в разрешенные параметры. При излишнем использованием `allowedValues` допустимые развертывания можно заблокировать, не обновляя списка.
 
-* Если имя параметра в шаблоне совпадает с параметром в команде развертывания PowerShell, Resource Manager разрешает такие конфликты именования, добавляя постфикс **FromTemplate** к параметру шаблона. Предположим, вы добавили в шаблон параметр **ResourceGroupName**, и он конфликтует с параметром **ResourceGroupName** в командлете [New-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment). При развертывании вам будет предложено указать значение для параметра **ResourceGroupNameFromTemplate**.
+* Если имя параметра в шаблоне совпадает с параметром в команде развертывания PowerShell, Resource Manager разрешает такие конфликты именования, добавляя постфикс **FromTemplate** к параметру шаблона. Предположим, вы добавили в шаблон параметр **ResourceGroupName**, и он конфликтует с параметром **ResourceGroupName** в командлете [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment). При развертывании вам будет предложено указать значение для параметра **ResourceGroupNameFromTemplate**.
 
 ### <a name="security-recommendations-for-parameters"></a>Рекомендации по безопасности параметров
 

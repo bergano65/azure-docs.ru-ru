@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: snehaa
-ms.openlocfilehash: cc71aba3e884214b054e0ac4e888a52e38b1c390
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 619369972991bab0b23e7e9ae4e0a146f875e59a
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812545"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55079262"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -33,7 +33,7 @@ ms.locfileid: "54812545"
 
 ### <a name="whats-the-difference-between-using-azure-migrate-for-assessments-and-the-map-toolkit"></a>В чем разница между оценкой с помощью службы "Миграция Azure" и MAP Toolkit?
 
-[Служба "Миграция Azure"](migrate-overview.md) оценивает миграцию исключительно в контексте готовности локальных рабочих нагрузок к переносу в Azure. [Microsoft Assessment and Planning (MAP) Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=7826) имеет другое предназначение. Например, это средство полезно для планирования перехода на новые версии клиентских и серверных операционных систем Windows, отслеживания использования программного обеспечения и др. Для всех этих сценариев нужно и дальше использовать MAP Toolkit.
+[Служба "Миграция Azure"](migrate-overview.md) оценивает миграцию исключительно в контексте готовности локальных рабочих нагрузок к переносу в Azure. [Microsoft Assessment and Planning (MAP) Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=7826) обеспечивает другие функции, такие как планирование миграции для новых версий операционных систем клиента и сервера Windows и отслеживание потребления программного обеспечения. Для всех этих сценариев нужно и дальше использовать MAP Toolkit.
 
 
 ### <a name="how-is-azure-migrate-different-from-azure-site-recovery-deployment-planner"></a>Чем служба "Миграция Azure" отличается от Планировщика развертывания Azure Site Recovery?
@@ -48,7 +48,7 @@ ms.locfileid: "54812545"
 
 ### <a name="which-azure-geographies-are-supported-by-azure-migrate"></a>Какие географические регионы Azure поддерживает служба "Миграция Azure"?
 
-Служба "Миграция Azure" в настоящее время поддерживает Европу, США и Azure для государственных организаций в качестве географических регионов проекта. Хотя проекты миграции можно создавать только в этих географических регионах, вы все равно можете оценить компьютеры для [нескольких целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties). Географический регион проекта используется только для хранения обнаруженных метаданных.
+В качестве географических регионов проекта служба "Миграция Azure" в настоящее время поддерживает такие: Европа, США и Azure для государственных организаций. Хотя проекты миграции можно создавать только в этих географических регионах, вы все равно можете оценить компьютеры для [нескольких целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties). Географический регион проекта используется только для хранения обнаруженных метаданных.
 
 **География** | **Место хранения метаданных**
 --- | ---
@@ -198,7 +198,7 @@ Azure Government | Правительство штата Вирджиния
 
 ### <a name="how-can-i-automate-the-installation-of-microsoft-monitoring-agent-mma-and-dependency-agent"></a>Как автоматизировать установку агентов Microsoft Monitoring Agent (MMA) и Dependency Agent?
 
-[Вот](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) сценарий, который можно использовать для установки Dependency Agent. Для MMA это сценарий, который можно использовать, доступен в TechNet [здесь](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+[Вот](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) сценарий, который можно использовать для установки Dependency Agent. [Здесь](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent) представлены инструкции о том, как установить MMA с помощью командной строки или автоматизированных методов. Для MMA вы также можете использовать сценарий, [доступный](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab) на сайте Technet.
 
 Помимо сценариев, для развертывания агентов можно использовать инструменты развертывания, такие как System Center Configuration Manager (SCCM), [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) и т. д.
 
@@ -213,10 +213,10 @@ Azure Government | Правительство штата Вирджиния
 Список операционных систем Linux, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-linux-operating-systems).
 
 ### <a name="can-i-visualize-dependencies-in-azure-migrate-for-more-than-one-hour-duration"></a>Возможно ли в службе "Миграция Azure" визуализировать зависимости за период свыше одного часа?
-Нет, в службе "Миграция Azure" визуализация зависимостей не может длиться больше часа. Служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, но максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час.
+Нет, в службе "Миграция Azure" визуализация зависимостей не может длиться больше часа. Служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, но максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час. Тем не менее можно использовать Log Analytics для [запроса данных зависимостей](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies#query-dependency-data-from-log-analytics) за более длительный срок.
 
 ### <a name="is-dependency-visualization-supported-for-groups-with-more-than-10-vms"></a>Поддерживается ли визуализация зависимостей для групп, в которых более 10 виртуальных машин?
-Вы можете [визуализировать зависимости групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies), в которых имеется до 10 виртуальных машин. Если в группе более 10 виртуальных машин, рекомендуем разбить ее на более мелкие группы, а после этого приступить к визуализации зависимостей.
+Вы можете [визуализировать зависимости групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies), содержащих до 10 виртуальных машин. Если в группе более 10 виртуальных машин, рекомендуем разбить ее на более мелкие группы, а после этого приступить к визуализации зависимостей.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

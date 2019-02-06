@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 93ad629a-f516-4cac-bfe2-a77257e3a797
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 1c604eebb2c1c85de717217063333190ffa865f4
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6658cc2db28fb58821afbc320ed4f7227fb3ccc2
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426522"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55194991"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumtotalcentral"></a>Руководство. Интеграция Azure Active Directory с SumTotalCentral
 
@@ -128,7 +128,7 @@ ms.locfileid: "39426522"
 1. Чтобы настроить единый вход на стороне **SumTotalCentral**, отправьте скачанный **XML-файл метаданных** в [службу поддержки SumTotalCentral](http://www.sumtotalsystems.com/support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -165,7 +165,7 @@ ms.locfileid: "39426522"
  
 ### <a name="create-a-sumtotalcentral-test-user"></a>Создание тестового пользователя SumTotalCentral
 
-В этом разделе описано, как создать пользователя Britta Simon в SumTotalCentral. Обратитесь в [службу поддержки SumTotalCentral](http://www.sumtotalsystems.com/support/), чтобы добавить пользователей на платформу SumTotalCentral. Перед использованием единого входа необходимо создать и активировать пользователей.  
+В этом разделе описано, как создать пользователя Britta Simon в SumTotalCentral. Обратитесь к  [группе поддержки SumTotalCentral](http://www.sumtotalsystems.com/support/) для добавления пользователей на платформу SumTotalCentral. Перед использованием единого входа необходимо создать и активировать пользователей.  
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -202,7 +202,7 @@ ms.locfileid: "39426522"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SumTotalCentral на панели доступа, вы автоматически войдете в приложение SumTotalCentral.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

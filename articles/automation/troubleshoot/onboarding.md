@@ -4,16 +4,16 @@ description: Сведения о том, как устранить ошибки 
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/19/2018
+ms.date: 01/25/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 52ff52ffb558278507bb24e1b1e2054c251b2512
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 78e78bc019ab5f8be1cfd3448220b97b89cde6a5
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52879648"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55228786"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
 
@@ -21,7 +21,25 @@ ms.locfileid: "52879648"
 
 ## <a name="general-errors"></a>Общие ошибки
 
-### <a name="computer-group-query-format-error"></a>Ошибка ComputerGroupQueryFormatError
+### <a name="missing-write-permissions"></a>Сценарий. Подключение завершается сбоем и сообщением "Не удается включить решение"
+
+#### <a name="issue"></a>Проблема
+
+При попытке подключить виртуальную машину к решению вы получаете следующее сообщение:
+
+```
+The solution cannot be enabled due to missing permissions for the virtual machine or deployments
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка возникла из-за неправильных или отсутствующих разрешений на виртуальной машине или для пользователя.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Убедитесь, что у вас есть разрешение на подключение виртуальной машины. Просмотрите [разрешения, необходимые для подключения компьютеров](../automation-role-based-access-control.md#onboarding), и попробуйте еще раз подключить решение.
+
+### <a name="computer-group-query-format-error"></a>Сценарий. ComputerGroupQueryFormatError
 
 #### <a name="issue"></a>Проблема
 

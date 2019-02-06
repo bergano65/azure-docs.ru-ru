@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 7/10/2018
 ms.author: aljo-microsoft
-ms.openlocfilehash: 4e6d5cb3191be7188c1a7c4753200cf049800f04
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 02ad880f3c4a4f5812b60887090c29a0a39f6742
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436013"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55206975"
 ---
 # <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды
 
@@ -27,15 +27,15 @@ ms.locfileid: "53436013"
 
 
 ## <a name="pre-requisites-for-production"></a>Предварительные требования для рабочей среды
-1. [Рекомендации по работе с Service Fabric:](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices) 
+1. [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices): 
 * Использование сертификата X.509.
 * Настройка политик безопасности.
 * Настройка SSL для Azure Service Fabric.
 * Обеспечение изоляции и безопасности сетей с помощью Azure Service Fabric
 * Настройка Azure Key Vault для обеспечения безопасности
-* Назначение пользователей ролям
+* Пользователи Microsoft.Network/loadBalancersAssign с ролями
 * Если используется модель программирования субъектов, реализуйте конфигурации безопасности на основе Reliable Actors.
-2. Для кластеров с более чем 20 ядрами или 10 узлами создайте выделенный тип основного узла для системных служб. Добавьте [ограничения размещения](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md), чтобы зарезервировать тип основного узла для системных служб. 
+2. Для кластеров с более чем 20 ядрами или 10 узлами создайте выделенный тип основного узла для системных служб. Добавьте [ограничения размещения](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md), чтобы зарезервировать тип основного узла для системных служб.
 3. Используйте номер SKU D2v2 или выше для типа основного узла. Рекомендуется выбрать номер SKU с емкостью диска по меньшей мере 50 ГБ.
 4. Рабочие кластеры должны быть [защищены](service-fabric-cluster-security.md). Примером настройки безопасного кластера может послужить этот [шаблон кластера](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/7-VM-Windows-3-NodeTypes-Secure-NSG). Используйте общие имена сертификатов и старайтесь не использовать самозаверяющие сертификаты.
 5. Добавьте [ограничения ресурсов для контейнеров и служб](service-fabric-resource-governance.md) таким образом, чтобы они не занимали более 75 % ресурсов узла. 
@@ -61,8 +61,8 @@ ms.locfileid: "53436013"
 22. Обновляйте приложения во время локальной разработки, чтобы убедиться, что код службы учитывает маркер отмены в методе `RunAsync` и закрывает пользовательские прослушиватели связи.
 23. Избегайте [типичных проблем](service-fabric-work-with-reliable-collections.md) при использовании Reliable Collections.
 24. Отслеживайте счетчики производительности памяти среды CLR .NET при выполнении нагрузочных тестов. Кроме того, проверяйте наличие высокой частоты сбора мусора или неконтролируемого увеличения размера кучи.
-25. Храните автономные резервные копии [Reliable Services и Reliable Actors](service-fabric-reliable-services-backup-restore.md) и проверьте процесс восстановления. 
-
+25. Храните автономные резервные копии [Reliable Services и Reliable Actors](service-fabric-reliable-services-backup-restore.md) и проверьте процесс восстановления.
+26. Количество экземпляров виртуальной машины основного NodeType в идеале должно быть равным минимальному значению для уровня надежности кластеров; условия, при которых уместно превышать минимальный уровень: временно при вертикальном масштабировании номера SKU масштабируемого набора виртуальных машин основных NodeType.
 
 ## <a name="optional-best-practices"></a>Дополнительные рекомендации
 

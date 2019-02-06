@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 114b6b0cc0fd4e8e51a9dbf2cdc8d9e2a2261754
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 57279a4e92b1f42505003f12d41c8203aa5603d4
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54823493"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54881875"
 ---
 # <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects-preview"></a>Создание конвейера CI/CD для IoT Edge с помощью Azure DevOps Projects (предварительная версия)
 
@@ -38,7 +38,7 @@ DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы мо
 
    ![Выбор языка для создания приложения](./media/how-to-devops-project/select-language.png)
 
-2. Выберите **Простой Интернет вещей (предварительная версия)** как платформу приложения, а затем щелкните **Далее**.
+2. Выберите **Простой Интернет вещей (предварительная версия)** как исполняющую среду, а затем щелкните **Далее**.
 
    ![Выбор платформы "Простой Интернет вещей"](media/how-to-devops-project/select-iot.png)
 

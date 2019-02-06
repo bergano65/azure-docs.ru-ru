@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/07/2017
 ms.author: muralikk
-ms.component: common
-ms.openlocfilehash: b21c378d58590e33c7b6aeffe627ce5602074fa2
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: common
+ms.openlocfilehash: de2cfbf2b4119daf965c95d8973b8528799c9502
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524626"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454635"
 ---
 # <a name="sample-workflow-to-prepare-hard-drives-for-an-import-job"></a>Пример рабочего процесса подготовки жестких дисков для задания импорта
 
@@ -70,9 +70,9 @@ K:\Temp\FavoriteVideo.ISO,favorite/FavoriteVideo.ISO,BlockBlob,rename,None,H:\my
 
 Кроме того, для всех файлов можно задать следующие метаданные.
 
-* **UploadMethod:** Microsoft Azure Import/Export service
+* **UploadMethod:** Служба импорт и экспорт Microsoft Azure
 * **DataSetName:** SampleData
-* **CreationDate:** 10/1/2013
+* **CreationDate:** 10.01.2013
 
 Чтобы задать метаданные для импортируемых файлов, создайте текстовый файл `c:\WAImportExport\SampleMetadata.txt` со следующим содержимым.
 

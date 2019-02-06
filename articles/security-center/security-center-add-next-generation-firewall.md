@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 0f1949373e99df1cccd6c49ff92c80d595519377
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: a71f2044b799fb47e4ab8991d76f92a1ccc049f5
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341157"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102453"
 ---
 # <a name="add-a-next-generation-firewall-in-azure-security-center"></a>Добавление брандмауэра следующего поколения в центре безопасности Azure
 Для повышения безопасности центр безопасности Azure может порекомендовать вам добавить брандмауэр следующего поколения (NGFW) от партнера корпорации Майкрософт. В этом документе вы найдете пример применения такой рекомендации.

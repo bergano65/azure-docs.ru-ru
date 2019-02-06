@@ -1,6 +1,6 @@
 ---
-заголовок: Выполнение скриптов машинного обучения Python titleSuffix: Студия машинного обучения Azure description: Описываются принципы проектирования, лежащие в основе поддержки сценариев Python в Студии машинного обучения Azure, а также основные сценарии использования, возможности и ограничения.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Выполнение скриптов машинного обучения Python titleSuffix: Студия машинного обучения Azure description: Описываются принципы проектирования, лежащие в основе поддержки сценариев Python в Студии машинного обучения Azure, а также основные сценарии использования, возможности и ограничения.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 29.11.2017
 ---

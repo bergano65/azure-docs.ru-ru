@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: be257b49e5ad5acc47a6daeec203e8513995e52e
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.openlocfilehash: be953621dbadee74361b2170c2a532cfec6ef77a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54390940"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55477867"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
@@ -25,12 +25,12 @@ ms.locfileid: "54390940"
 ## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы:
 
-* Создали учетную запись хранения Azure. Инструкции см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-create-storage-account.md).
-* Подготовили настраиваемый кластер Hadoop с помощью службы HDInsight.  Инструкции см. в статье [Настройка кластеров Azure HDInsight Hadoop для процесса обработки и анализа данных группы](customize-hadoop-cluster.md).
-* Включили удаленный доступ к кластеру, вошли в систему и открыли консоль командной строки Hadoop. Инструкции можно найти в разделе [Доступ к головному узлу в кластере Hadoop](customize-hadoop-cluster.md).
+* Создали учетную запись хранения Azure. Инструкции см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-introduction.md).
+* Подготовили настраиваемый кластер Hadoop с помощью службы HDInsight.  Инструкции можно найти в статье об [установке кластеров HDInsight](../../hdinsight/hdinsight-hadoop-provision-linux-clusters.md).
+* Включили удаленный доступ к кластеру, вошли в систему и открыли консоль командной строки Hadoop. Инструкции можно найти в статье об [управлении кластерами Apache Hadoop](../../hdinsight/hdinsight-administer-use-portal-linux.md).
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище больших двоичных объектов Azure
-Если вы создали виртуальную машину Azure в соответствии с инструкциями в разделе [Настройка виртуальной машины Azure для расширенной аналитики](../data-science-virtual-machine/setup-virtual-machine.md), этот файл сценария должен быть загружен в каталог *C:\\Users\\\<имя пользователя\>\\Documents\\Data Science Scripts* на виртуальной машине. Чтобы запросы Hive были готовы к отправке, достаточно подключить свою схему данных и применить конфигурацию хранилища больших двоичных объектов Azure в соответствующих полях.
+Если вы создали виртуальную машину Azure в соответствии с инструкциями в разделе [Настройка виртуальной машины Azure для расширенной аналитики](../../machine-learning/data-science-virtual-machine/overview.md), этот файл сценария должен быть загружен в каталог *C:\\Users\\\<имя пользователя\>\\Documents\\Data Science Scripts* на виртуальной машине. Чтобы запросы Hive были готовы к отправке, достаточно подключить свою схему данных и применить конфигурацию хранилища больших двоичных объектов Azure в соответствующих полях.
 
 Предполагается, что формат данных для таблиц Hive — табличный формат **без сжатия** и что данные отправлены в контейнер по умолчанию (или дополнительный контейнер) учетной записи хранения, которую использует кластер Hadoop.
 
@@ -38,7 +38,7 @@ ms.locfileid: "54390940"
 
 * **скачать** 24 файла [набора данных "Поездки такси Нью-Йорка"](http://www.andresmh.com/nyctaxitrips) (12 файлов поездок и 12 файлов тарифов);
 * **распаковать** все CSV-файлы; а затем
-* **передать** их в контейнер по умолчанию (или соответствующий контейнер) в учетной записи хранения Azure, которая создана с помощью процедуры, описанной в разделе [Настройка кластеров Azure HDInsight Hadoop для процесса обработки и анализа данных группы](customize-hadoop-cluster.md) . Процесс отправки CSV-файла в контейнер по умолчанию в учетной записи хранения описан на этой [странице](hive-walkthrough.md#upload).
+* **передать**  их в контейнер по умолчанию (или соответствующий контейнер) в учетной записи хранения Azure. Параметры такой учетной записи описываются в статье [Использование службы хранилища Azure с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-blob-storage.md). Процесс отправки CSV-файла в контейнер по умолчанию в учетной записи хранения описан на этой [странице](hive-walkthrough.md#upload).
 
 ## <a name="submit"></a>Отправка запросов Hive
 Инструменты для отправки запросов Hive:

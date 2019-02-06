@@ -13,14 +13,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 01/22/2019
+ms.date: 01/24/2019
 ms.author: jowargo
-ms.openlocfilehash: afc3b0022056d529c69eeaabd229b809623e66ea
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 7e31f4f229e722d51f5de6b133e70dfb1c013533
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54478592"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54888164"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -194,7 +194,7 @@ Push-уведомления поддерживаются на платформа
 
 ### <a name="is-there-audit-log-capability"></a>Предусмотрена ли возможность ведения журнала аудита?
 
-Все операции по управлению Центрами уведомлений регистрируются в журналах операций, которые представлены на [портал Azure].
+Да. Все операции по управлению Центрами уведомлений обновляются в журнале действий Azure, который представлен на [портал Azure]. Журнал действий Azure предлагает аналитические сведения об операциях, которые выполнялись с ресурсами в подписках. С помощью журнала действий можно ответить на вопросы что, кто и когда о любой операции записи (PUT, POST, DELETE) с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Тем не менее журнал действий не содержит сведения об операции чтения (GET).
 
 ## <a name="monitoring-and-troubleshooting"></a>Мониторинг и устранение неполадок
 

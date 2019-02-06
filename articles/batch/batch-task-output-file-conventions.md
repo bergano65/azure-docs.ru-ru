@@ -3,7 +3,7 @@ title: Сохранение выходных данных заданий и за
 description: Узнайте, как использовать библиотеку соглашений для пакетных файлов Azure для .NET для сохранения выходных данных задач и заданий пакетной службы в службе хранилища Azure и просматривать сохраненные выходные данные на портале Azure.
 services: batch
 documentationcenter: .net
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: 16e12d0e-958c-46c2-a6b8-7843835d830e
@@ -13,14 +13,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 11/14/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2f6ac523d7944f80da1b75993bfd05d617eb8f85
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: 970cab2c782e71defbda828a42273f317dee80e4
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51706608"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472989"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET
 
@@ -115,7 +115,7 @@ await taskOutputStorage.SaveAsync(TaskOutputKind.TaskPreview, "frame_low_res.jpg
 Эти типы позволяют указать тип выходных данных, отображаемых в списке, когда вы запрашиваете у пакетной службы сохраненные выходные данные какой-либо определенной задачи. Другими словами, при выводе списка выходных данных их можно отфильтровать по одному из типов выходных данных. Например, "Выдайте мне версию *preview* выходных данных для задачи *109*". Дополнительные сведения о выводе списка и извлечении выходных данных приведены далее, в разделе [Извлечение выходных данных](#retrieve-output) этой статьи.
 
 > [!TIP]
-> Тип выходных данных также определяет, где на портале Azure будет отображен каждый конкретный файл: файлы из категории *TaskOutput* — в разделе **Task output files** (Выходные файлы задач), а файлы из категории *TaskLog* — в разделе **Task logs** (Журналы задач).
+> Тип выходных данных также определяет, где на портале Azure будет отображаться определенный файл. Файлы, классифицированные по типу *TaskOutput* отображаются в разделе **Task output files** (Выходные данные задач), а файлы *TaskLog* — в разделе **Журналы задач**.
 
 ### <a name="store-job-outputs"></a>Хранения выходных данных заданий
 

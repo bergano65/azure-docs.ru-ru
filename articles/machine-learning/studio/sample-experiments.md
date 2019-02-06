@@ -1,8 +1,21 @@
 ---
-заголовок: Создание экспериментов Студии машинного обучения Azure на примерах titleSuffix: Студия машинного обучения Azure description: Узнайте, как использовать примеры экспериментов машинного обучения для создания экспериментов с использованием Коллекции решений ИИ Azure и Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: conceptual
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 05.01.2018
+title: Создание экспериментов Студии машинного обучения Azure на примерах
+titleSuffix: Azure Machine Learning Studio
+description: Узнайте, как использовать примеры экспериментов машинного обучения для создания экспериментов с использованием Коллекции решений ИИ Azure и Студии машинного обучения Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: conceptual
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.date: 01/05/2018
+ms.openlocfilehash: 653b9aa0d6083436a394cf886f8c7d8d1ed2e2ab
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55465526"
 ---
 # <a name="create-azure-machine-learning-studio-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов Студии машинного обучения на основе рабочих примеров из Коллекции решений ИИ Azure
 

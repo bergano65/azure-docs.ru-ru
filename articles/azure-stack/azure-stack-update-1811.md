@@ -12,15 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 01/30/2019
 ms.author: sethm
 ms.reviewer: adepue
-ms.openlocfilehash: 0c681e7406f5c0c6e205f9dc54ee5eea63b40252
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.lastreviewed: 01/25/2019
+ms.openlocfilehash: 444c67e942fad732c959f834e2c50f0b2a35562c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54853244"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55246540"
 ---
 # <a name="azure-stack-1811-update"></a>Обновление 1811 для Azure Stack
 
@@ -186,8 +187,7 @@ Azure Stack выпускает исправления на регулярной 
 - [CVE-2018-8566](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8566)
 - [CVE-2018-8584](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8584)
 
-
-Дополнительные сведения об этих уязвимостях см. по предыдущим ссылкам или в статье базы знаний Майкрософт [4467684](https://support.microsoft.com/help/4467684).
+Дополнительные сведения об этих уязвимостях доступны по предыдущим ссылкам или в статье базы знаний Майкрософт [4478877](https://support.microsoft.com/help/4478877).
 
 ## <a name="known-issues-with-the-update-process"></a>Известные проблемы с процессом обновления
 
@@ -353,6 +353,8 @@ Azure Stack выпускает исправления на регулярной 
     Другие варианты не поддерживаются как теги источников в Azure Stack. Аналогично, если добавить правило безопасности для исходящего трафика и выбрать **тег службы** как целевой объект, отобразится тот же список вариантов для **тега источника**. Единственные допустимые варианты такие же, как и для **тегов источников** (приведены в предыдущем списке).
 
 - Командлет PowerShell **New-AzureRmIpSecPolicy** не поддерживает настройку **DHGroup24** для параметра `DHGroup`.
+
+- Группы безопасности сети (NSG) работают в Azure Stack не так, как в глобальной среде Azure. В Azure можно задать несколько портов в одном правиле группы безопасности сети (с помощью портала, PowerShell и шаблонов Resource Manager). В Azure Stack невозможно задать несколько портов в одном правиле группы безопасности сети с помощью портала. Чтобы обойти эту проблему, используйте шаблон Resource Manager для установки этих дополнительных правил.
 
 ### <a name="infrastructure-backup"></a>Резервное копирование инфраструктуры
 

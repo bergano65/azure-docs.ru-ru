@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: f339cadc63d5e5cd934d07e7b0fffc6342ca04c7
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: a6fc5f353eceab5ac02895e110aec6e11ddc5d0c
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159110"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101907"
 ---
 # <a name="manage-historical-data-in-temporal-tables-with-retention-policy"></a>Управление историческими данными в темпоральных таблицах с политикой хранения
 Темпоральные таблицы увеличивают размер базы данных больше, чем обычные таблицы, особенно если исторические данные хранятся в течение длительного времени. Поэтому политика хранения для исторических данных является важной составляющей управления жизненным циклом любой темпоральной таблицы. Темпоральные таблицы в базе данных SQL Azure включают удобный механизм хранения, который помогает выполнить эту задачу.
@@ -26,26 +26,26 @@ ms.locfileid: "47159110"
 
 Когда вы определите политику хранения, база данных SQL Azure будет регулярно проверять, есть ли строки исторических данных, соответствующие условиям автоматической очистки. Выявление и удаление строк в таблице исторических данных прозрачно выполняется в фоновой задаче, которая назначается и запускается самой системой. Условие устаревания для строк таблицы исторических данных проверяется по столбцу, представляющему окончание периода SYSTEM_TIME. Например, если задан срок хранения 6 месяцев, подлежащие очистке строки таблицы будут удовлетворять следующему условию:
 
-````
+```
 ValidTo < DATEADD (MONTH, -6, SYSUTCDATETIME())
-````
+```
 
 В приведенном выше примере мы предположили, что столбец **ValidTo** соответствует окончанию периода SYSTEM_TIME.
 
 ## <a name="how-to-configure-retention-policy"></a>Настройка политики хранения
 Прежде чем настраивать политику хранения для темпоральной таблицы, проверьте, включена ли функция темпорального хранения исторических данных *на уровне базы данных*.
 
-````
+```
 SELECT is_temporal_history_retention_enabled, name
 FROM sys.databases
-````
+```
 
 Флаг базы данных **is_temporal_history_retention_enabled** по умолчанию имеет значение ON (Вкл.), но пользователи могут изменить его с помощью инструкции ALTER DATABASE. Он также автоматически получает значение OFF (Выкл.) после [восстановления до точки во времени](sql-database-recovery-using-backups.md). Чтобы включить темпоральную очистку исторических данных для базы данных, выполните следующую инструкцию:
 
-````
+```
 ALTER DATABASE <myDB>
 SET TEMPORAL_HISTORY_RETENTION  ON
-````
+```
 
 > [!IMPORTANT]
 > Срок хранения для темпоральных таблиц можно настроить, даже если флаг **is_temporal_history_retention_enabled** имеет значение OFF, но в этом случае не будет активироваться автоматическая очистка для устаревших строк.
@@ -54,7 +54,7 @@ SET TEMPORAL_HISTORY_RETENTION  ON
 
 Политика хранения настраивается во время создания таблицы. Для этого нужно указать значение для параметра HISTORY_RETENTION_PERIOD:
 
-````
+```
 CREATE TABLE dbo.WebsiteUserInfo
 (  
     [UserID] int NOT NULL PRIMARY KEY CLUSTERED
@@ -72,16 +72,16 @@ CREATE TABLE dbo.WebsiteUserInfo
         HISTORY_RETENTION_PERIOD = 6 MONTHS
      )
  );
-````
+```
 
 База данных SQL Azure позволяет указать срок хранения, используя различные единицы времени: DAYS (дни), WEEKS (недели), MONTHS (месяцы) и YEARS (годы). Если параметр HISTORY_RETENTION_PERIOD не указан, подразумевается неограниченное хранение (INFINITE). Его также можно настроить, явно указав ключевое слово INFINITE.
 
 Иногда требуется настроить политику хранения уже после создания таблицы или изменить настроенное ранее значение. В этом случае используйте инструкцию ALTER TABLE:
 
-````
+```
 ALTER TABLE dbo.WebsiteUserInfo
 SET (SYSTEM_VERSIONING = ON (HISTORY_RETENTION_PERIOD = 9 MONTHS));
-````
+```
 
 > [!IMPORTANT]
 > Если для параметра SYSTEM_VERSIONING задать значение OFF, значение срока хранения *не сохраняется*. Если для параметра SYSTEM_VERSIONING задать значение ON, не указывая явно значение HISTORY_RETENTION_PERIOD, будет установлен неограниченный (INFINITE) срок хранения.
@@ -90,7 +90,7 @@ SET (SYSTEM_VERSIONING = ON (HISTORY_RETENTION_PERIOD = 9 MONTHS));
 
 Чтобы просмотреть текущее состояние политики хранения, используйте следующий запрос, который объединяет флаг включения темпорального хранения на уровне базы данных со сроками хранения для отдельных таблиц:
 
-````
+```
 SELECT DB.is_temporal_history_retention_enabled,
 SCHEMA_NAME(T1.schema_id) AS TemporalTableSchema,
 T1.name as TemporalTableName,  SCHEMA_NAME(T2.schema_id) AS HistoryTableSchema,
@@ -101,7 +101,7 @@ OUTER APPLY (select is_temporal_history_retention_enabled from sys.databases
 where name = DB_NAME()) AS DB
 LEFT JOIN sys.tables T2   
 ON T1.history_table_id = T2.object_id WHERE T1.temporal_type = 2
-````
+```
 
 
 ## <a name="how-sql-database-deletes-aged-rows"></a>Как база данных SQL удаляет устаревшие строки?
@@ -127,7 +127,7 @@ ON T1.history_table_id = T2.object_id WHERE T1.temporal_type = 2
 
 Старайтесь не перестраивать кластеризованный индекс columnstore для таблицы исторических данных с ограниченным сроком хранения, так как это может изменить порядок групп строк, естественным образом созданный в результате работы системы управления версиями. Если необходимо перестроить кластеризованный индекс columnstore для таблицы исторических данных, создавайте его поверх правильного индекса сбалансированного дерева, чтобы сохранить в группах строк порядок, необходимый для регулярной очистки данных. Аналогичный подход следует применять и при создании темпоральной таблицы из существующей таблицы исторических данных с кластеризованным индексом столбцов, но без гарантированного порядка данных:
 
-````
+```
 /*Create B-tree ordered by the end of period column*/
 CREATE CLUSTERED INDEX IX_WebsiteUserInfoHistory ON WebsiteUserInfoHistory (ValidTo)
 WITH (DROP_EXISTING = ON);
@@ -135,13 +135,13 @@ GO
 /*Re-create clustered columnstore index*/
 CREATE CLUSTERED COLUMNSTORE INDEX IX_WebsiteUserInfoHistory ON WebsiteUserInfoHistory
 WITH (DROP_EXISTING = ON);
-````
+```
 
 Если вы настроите ограниченный срок хранения для таблицы исторических данных с кластеризованным индексом columnstore, вы не сможете создавать дополнительные некластеризованные индексы сбалансированного дерева для этой таблицы:
 
-````
+```
 CREATE NONCLUSTERED INDEX IX_WebHistNCI ON WebsiteUserInfoHistory ([UserName])
-````
+```
 
 Попытка выполнить приведенную выше инструкцию завершится следующей ошибкой.
 
@@ -152,9 +152,9 @@ CREATE NONCLUSTERED INDEX IX_WebHistNCI ON WebsiteUserInfoHistory ([UserName])
 
 На следующем рисунке показан план для простого запроса.
 
-````
+```
 SELECT * FROM dbo.WebsiteUserInfo FOR SYSTEM_TIME ALL;
-````
+```
 
 План запроса содержит дополнительный фильтр, применяемый к столбцу окончания периода (ValidTo) в операторе "Clustered Index Scan" (Сканирование кластеризованного индекса) в таблице исторических данных (выделено). В этом примере предполагается, что для таблицы WebsiteUserInfo задан срок хранения "1 MONTH" (1 месяц).
 
@@ -173,10 +173,10 @@ SELECT * FROM dbo.WebsiteUserInfo FOR SYSTEM_TIME ALL;
 
 Если вы хотите активировать очистку темпорального хранения, выполните следующую инструкцию Transact-SQL после восстановления до точки во времени:
 
-````
+```
 ALTER DATABASE <myDB>
 SET TEMPORAL_HISTORY_RETENTION  ON
-````
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 Чтобы узнать, как использовать темпоральные таблицы в приложениях, ознакомьтесь со статьей [Приступая к работе с временными таблицами в базе данных SQL Azure](sql-database-temporal-tables.md).

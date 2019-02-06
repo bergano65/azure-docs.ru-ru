@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 01/29/2019
 ms.author: tomfitz
-ms.openlocfilehash: f4d63d4ad0841244cf2548b0842eea880e27a152
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 1ab3abb2542b3fec461f1d9ff569ea8ab74458d3
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54463037"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251985"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -57,6 +57,7 @@ ms.locfileid: "54463037"
 * Azure Active Directory B2C
 * Azure Cosmos DB
 * Обозреватель данных Azure
+* База данных Azure для MariaDB
 * База данных Azure для MySQL
 * База данных Azure для PostgreSQL
 * Azure DevOps. Организации Azure DevOps с приобретенными расширениями сторонних производителей должны [отменить свои приобретения](https://go.microsoft.com/fwlink/?linkid=871160), прежде чем смогут перемещать учетную запись между подписками.
@@ -99,7 +100,7 @@ ms.locfileid: "54463037"
 * Панели мониторинга на портале
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — общедоступный IP-адрес с номером SKU "Базовый" можно переместить. Номер SKU "Стандартный" общедоступного IP-адреса нельзя переместить.
-* Хранилище Служб восстановления — зарегистрируйте подписку для получения [ограниченной общедоступной предварительной версии](https://docs.microsoft.com/azure/backup/backup-azure-move-recovery-services-vault).
+* Хранилище Служб восстановления — зарегистрируйтесь для использования [закрытой предварительной версии](#recovery-services-limitations).
 * Кэш Azure для Redis — если экземпляр кэша Azure для Redis настроен с помощью виртуальной сети, его нельзя переместить в другую подписку. Обратитесь к разделу [Ограничения для виртуальных сетей](#virtual-networks-limitations).
 * Планировщик
 * Поиск — вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
@@ -176,7 +177,7 @@ ms.locfileid: "54463037"
 * Найдите расположение виртуальной машины.
 * Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
 * Затем на портале Azure щелкните "Показать скрытые типы".
-* В PowerShell используйте командлет `Get-AzureRmResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
+* В PowerShell используйте командлет `Get-AzResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
 * В CLI используйте команду `az resource list -g AzureBackupRG_<location of your VM>_1`.
 * Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
 * Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
@@ -307,7 +308,7 @@ ms.locfileid: "54463037"
 
 ### <a name="recovery-services-limitations"></a>Ограничения служб восстановления
 
- Чтобы переместить хранилище Служб восстановления, зарегистрируйте подписку для получения [ограниченной общедоступной предварительной версии](https://docs.microsoft.com/azure/backup/backup-azure-move-recovery-services-vault).
+ Чтобы переместить хранилище Служб восстановления, вы должны быть зарегистрированы для использования закрытой предварительной версии. Для выполнения перемещения напишите по адресу электронной почты AskAzureBackupTeam@microsoft.com.
 
 В настоящее время за один раз можно переместить одно хранилище Служб восстановления в каждом регионе. Вы не можете перемещать хранилища, которые создают резервные копии служб "Файлы Azure", "Синхронизация файлов Azure" или SQL на виртуальных машинах IaaS.
 
@@ -336,13 +337,15 @@ ms.locfileid: "54463037"
 
 Вот некоторые важные особенности, которые следует учитывать перед перемещением ресурса. Проверив эти условия, можно избежать ошибок.
 
+1. Исходная и целевая подписки должны быть активными. Если у вас возникла проблема при включении учетной записи, которая была отключена, [создайте запрос на поддержку Azure](../azure-supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
+
 1. Исходная и целевая подписка должны существовать в пределах одного [клиента Azure Active Directory](../active-directory/develop/quickstart-create-new-tenant.md). Используя Azure PowerShell или командную строку Azure, можно убедиться, что обе подписки имеют один и тот же идентификатор клиента.
 
   Для Azure PowerShell:
 
   ```azurepowershell-interactive
-  (Get-AzureRmSubscription -SubscriptionName <your-source-subscription>).TenantId
-  (Get-AzureRmSubscription -SubscriptionName <your-destination-subscription>).TenantId
+  (Get-AzSubscription -SubscriptionName <your-source-subscription>).TenantId
+  (Get-AzSubscription -SubscriptionName <your-destination-subscription>).TenantId
   ```
 
   Для интерфейса командной строки Azure:
@@ -362,14 +365,14 @@ ms.locfileid: "54463037"
   Для PowerShell используйте следующие команды, чтобы получить состояние регистрации:
 
   ```azurepowershell-interactive
-  Set-AzureRmContext -Subscription <destination-subscription-name-or-id>
-  Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
+  Set-AzContext -Subscription <destination-subscription-name-or-id>
+  Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
   ```
 
   Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
 
   ```azurepowershell-interactive
-  Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
+  Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
   ```
 
   Для Azure CLI используйте следующие команды, чтобы получить состояние регистрации:
@@ -473,12 +476,12 @@ Authorization: Bearer <access-token>
 
 ### <a name="by-using-azure-powershell"></a>с помощью Azure PowerShell;
 
-Чтобы переместить существующие ресурсы в другую группу ресурсов или подписку, используйте команду [Move-AzureRmResource](/powershell/module/azurerm.resources/move-azurermresource) . В следующем примере показано, как переместить несколько ресурсов в новую группу ресурсов.
+Чтобы переместить существующие ресурсы в другую группу ресурсов или подписку, используйте команду [Move-AzResource](/powershell/module/az.resources/move-azresource). В следующем примере показано, как переместить несколько ресурсов в новую группу ресурсов.
 
 ```azurepowershell-interactive
-$webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite
-$plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan
-Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId $webapp.ResourceId, $plan.ResourceId
+$webapp = Get-AzResource -ResourceGroupName OldRG -ResourceName ExampleSite
+$plan = Get-AzResource -ResourceGroupName OldRG -ResourceName ExamplePlan
+Move-AzResource -DestinationResourceGroupName NewRG -ResourceId $webapp.ResourceId, $plan.ResourceId
 ```
 
 Чтобы переместить ресурс в новую подписку, добавьте значение параметра `DestinationSubscriptionId`.

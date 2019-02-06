@@ -1,6 +1,6 @@
 ---
-заголовок: Создание конечных точек веб-службы titleSuffix: Студия машинного обучения Azure description: Создание конечных точек веб-службы в Машинном обучении Azure. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Создание конечных точек веб-службы titleSuffix: Студия машинного обучения Azure description: Создание конечных точек веб-службы в Машинном обучении Azure. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 04.10.2016
 ---

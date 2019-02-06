@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ChronicX® | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ChronicX® | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ChronicX®.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: f3f19be6-6ee8-413c-919c-4884ffe685ca
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: jeedes
-ms.openlocfilehash: 51eab8099aee6378893f24e0cea6aa37a4995495
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 982a639fe7a57c2db484acc6b272e5314637d1c4
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428154"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55167671"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-chronicx"></a>Руководство по интеграции Azure Active Directory с ChronicX®
+# <a name="tutorial-azure-active-directory-integration-with-chronicx"></a>Руководство. Интеграция Azure Active Directory с ChronicX®
 
 В этом руководстве описано, как интегрировать ChronicX® с Azure Active Directory (Azure AD).
 
@@ -162,7 +162,7 @@ ms.locfileid: "39428154"
 Цель этого раздела — создать пользователя с именем Britta Simon в ChronicX®. Приложение ChronicX® поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Новый пользователь будет создан при попытке получить доступ к приложению ChronicX® (если он еще не создан).
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь в [службу поддержки ChronicX®](https://www.casebank.com/contact-us/).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки ChronicX®](https://www.casebank.com/contact-us/).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -199,7 +199,7 @@ ms.locfileid: "39428154"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент ChronicX® на панели доступа, вы автоматически войдете в приложение ChronicX®.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с FloQast | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с FloQast | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FloQast.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 013cb57d-567c-44d0-a119-e6ba6e607153
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/21/2018
 ms.author: jeedes
-ms.openlocfilehash: 212e9b8c404cda330d2415b4f3274b668df8977b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f46714d2d4860abd1857e6ae16f98848678336aa
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39432214"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55184786"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-floqast"></a>Руководство по интеграции Azure Active Directory с FloQast
+# <a name="tutorial-azure-active-directory-integration-with-floqast"></a>Руководство. Интеграция Azure Active Directory с FloQast
 
 В этом руководстве описано, как интегрировать FloQast с Azure Active Directory (Azure AD).
 
@@ -159,7 +159,7 @@ ms.locfileid: "39432214"
 1. Чтобы настроить единый вход на стороне **FloQast**, отправьте [группе поддержки FloQast](mailto:support@floqast.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -195,7 +195,7 @@ ms.locfileid: "39432214"
  
 ### <a name="create-a-floqast-test-user"></a>Создание тестового пользователя FloQast
 
-В этом разделе описано, как создать пользователя Britta Simon в FloQast. Обратитесь к [группе поддержки FloQast](mailto:support@floqast.com), чтобы добавить пользователей на платформу FloQast. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в FloQast. Обратитесь к  [группе поддержки FloQast](mailto:support@floqast.com) для добавления пользователей на платформу FloQast. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -232,7 +232,7 @@ ms.locfileid: "39432214"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "FloQast" на панели доступа, вы автоматически войдете в приложение FloQast.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

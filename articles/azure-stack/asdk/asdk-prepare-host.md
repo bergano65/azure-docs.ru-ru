@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: b5314ce874c253151b88882b086257f96612c019
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.lastreviewed: 10/22/2018
+ms.openlocfilehash: ec7b56a7324f3c8c3e3459639e4fd00e92d93e8f
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615404"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55249754"
 ---
 # <a name="prepare-the-asdk-host-computer"></a>Подготовка главного компьютера для ASDK
 Перед установкой ASDK на главном компьютере необходимо подготовить среду ASDK. После подготовки данные главного компьютера, на котором будет размещен пакет средств разработки, загружаются с виртуального жесткого диска CloudBuilder.vhdx, чтобы начать развертывание ASDK.

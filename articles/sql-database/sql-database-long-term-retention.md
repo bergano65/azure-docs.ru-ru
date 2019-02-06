@@ -11,20 +11,20 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 10/24/2018
-ms.openlocfilehash: b1ef03b97f9fe95286d427effc40e69ae07b6b3c
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: 3d6010df64c4e3c75bd05e2eb9828c07cf3fb342
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53601497"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471391"
 ---
 # <a name="store-azure-sql-database-backups-for-up-to-10-years"></a>Хранение резервных копий базы данных SQL Azure до 10 лет
 
 В соответствии с нормативными требованиями, стандартами соответствия или бизнес-задачами многие приложения должны хранить резервные копии баз данных более 7–35 дней, то есть дольше, чем при [автоматическом резервном копировании](sql-database-automated-backups.md) базы данных SQL Azure. Используя возможность долгосрочного хранения (LTR), можно хранить полные резервные копии указанной базы данных SQL в хранилище BLOB-объектов [RA-GRS](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) сроком до 10 лет. Впоследствии любую резервную копию можно восстановить как новую базу данных.
 
 > [!NOTE]
-> LTR можно включить для базы данных, размещенной в логических серверах базы данных SQL Azure. Он пока недоступен для баз данных, размещенных в Управляемых экземплярах. Задания агентов SQL можно использовать для планирования [резервных копий только для копирования базы данных](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server) как альтернативу LTR за 35 дней.
+> LTR можно включать для отдельных и находящихся в пуле баз данных. Эта функция пока недоступна для баз данных экземпляров в Управляемых экземплярах. Задания агентов SQL можно использовать для планирования [резервных копий только для копирования базы данных](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server) как альтернативу LTR за 35 дней.
 > 
 
 ## <a name="how-sql-database-long-term-retention-works"></a>Принципы работы долгосрочного хранения базы данных SQL

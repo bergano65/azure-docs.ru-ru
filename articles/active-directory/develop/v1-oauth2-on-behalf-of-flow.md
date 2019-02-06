@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 09f6f318-e88b-4024-9ee1-e7f09fb19a82
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -17,12 +17,12 @@ ms.date: 06/06/2017
 ms.author: celested
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 72b1ba51f306203092b420e6f2d6186b3307d35d
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 3c2953d44587d72517c6f619ee9c9f05aabff186
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422751"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094382"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -37,7 +37,7 @@ ms.locfileid: "52422751"
 
 Поток OBO начинается после того, как пользователь пройдет проверку подлинности для приложения с использованием [потока для предоставления кода проверки подлинности в OAuth 2.0](v1-protocols-oauth-code.md). На этом этапе приложение отправляет маркер доступа (токен A) в веб-API среднего уровня (API A), содержащий утверждения пользователя и его согласие на доступ к API A. Затем API A может отправить запрос проверки подлинности в нижестоящий веб-API (API B).
 
-Поток On-Behalf-Of состоит из следующих этапов: ![Поток On-Behalf-Of в OAuth2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
+Поток On-Behalf-Of состоит из следующих этапов: ![Поток On-Behalf-Of в OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
 
 1. Клиентское приложение отправляет запрос к API A с токеном A.
 1. API A выполняет проверку подлинности на конечной точке выдачи токена Azure AD и запрашивает токен доступа к API B.
@@ -103,7 +103,7 @@ https://login.microsoftonline.com/<tenant>/oauth2/token
 
 Клиентское приложение защищается либо общим секретом, либо сертификатом.
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый вариант. Запрос маркера доступа с помощью общего секрета
 
 При использовании общего секрета запрос маркера взаимного доступа между службами содержит следующие параметры:
 
@@ -137,7 +137,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 &scope=openid
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
+### <a name="second-case-access-token-request-with-a-certificate"></a>Второй вариант. Запрос маркера доступа с помощью сертификата
 
 Запрос маркера взаимного доступа между службами с помощью сертификата содержит следующие параметры:
 
@@ -181,7 +181,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 | Параметр | ОПИСАНИЕ |
 | --- | --- |
-| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о токенах носителей см. в разделе [OAuth 2.0 Authorization Framework: использование токена носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)). |
 | scope |Область доступа, предоставляемая токеном. |
 | expires_in |Срок действия доступа для токена (в секундах). |
 | expires_on |Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров. |
@@ -272,7 +272,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdW
 
 | Параметр | ОПИСАНИЕ |
 | --- | --- |
-| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [Платформа авторизации OAuth2.0: использование маркера носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)). |
 | scope |Область доступа, предоставляемая токеном. |
 | expires_in |Срок действия доступа для токена (в секундах). |
 | expires_on |Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров. |
@@ -280,14 +280,14 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdW
 | access_token |Параметр, возвращающий утверждение SAML. |
 | refresh_token |Маркер обновления. Вызывающая служба может использовать этот токен для запроса другого токена доступа по истечении срока действия текущего утверждения SAML. |
 
-- token_type: Bearer
-- expires_in: 3296
+- token_type Носитель
+- expires_in: 3296.
 - ext_expires_in: 0
-- expires_on: 1529627844
+- expires_on: 1529627844.
 - resource: `https://api.contoso.com`
-- access_token: \<утверждение SAML\>
+- access_token: \<утверждение SAML\>.
 - issued_token_type: urn:ietf:params:oauth:token-type:saml2
-- refresh_token: \<маркер обновления\>
+- refresh_token: \<маркер обновления\>.
 
 ## <a name="client-limitations"></a>Ограничения клиентов
 

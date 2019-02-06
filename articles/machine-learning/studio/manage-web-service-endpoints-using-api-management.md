@@ -1,6 +1,6 @@
 ---
-заголовок: Управление веб-службами Студии машинного обучения Azure с помощью Управления API titleSuffix: Студия машинного обучения Azure description: Руководство по управлению веб-службами AzureML с помощью управления API. Управление конечными точками REST API путем настройки доступа пользователей, регулирования использования и мониторинга панели мониторинга.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Управление веб-службами Студии машинного обучения Azure с помощью Управления API titleSuffix: Студия машинного обучения Azure description: Руководство по управлению веб-службами AzureML с помощью управления API. Управление конечными точками REST API путем настройки доступа пользователей, регулирования использования и мониторинга панели мониторинга.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 03.11.2017
 ---

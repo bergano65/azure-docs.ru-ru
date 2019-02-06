@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 services: site-recovery
-ms.date: 12/31/2018
+ms.date: 1/29/2019
 ms.topic: conceptual
-ms.author: raynew
-ms.openlocfilehash: 703d255a962dbac7a430404835c6d45c358d99a7
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.author: mayg
+ms.openlocfilehash: aa4b0fcdfecde181eea4481cc40b898ca74fce76
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54478112"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55212245"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -42,6 +42,9 @@ ms.locfileid: "54478112"
 
 ### <a name="does-my-azure-account-need-permissions-to-create-vms"></a>Требуются ли учетной записи Azure разрешения на создание виртуальных машин?
 Если вы являетесь администратором подписки, у вас есть необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
+
+### <a name="can-i-use-guest-os-server-license-on-azure"></a>Можно ли использовать серверную лицензию гостевой ОС в Azure?
+Да, клиенты Microsoft Software Assurance могут использовать программу Преимуществ гибридного использования Azure, чтобы сэкономить на стоимости лицензирования **компьютеров Windows Server**, которые переносятся в Azure, или использовать Azure для аварийного восстановления.
 
 ## <a name="azure-site-recovery-components-upgrade"></a>Обновление компонентов Azure Site Recovery
 
@@ -250,7 +253,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 При восстановлении размещения из Azure данные из Azure копируются обратно на локальную виртуальную машину и требуется закрытый доступ.
 
 ### <a name="can-i-resize-the-azure-vm-after-failover"></a>Можно ли изменить размер виртуальной машины Azure после отработки отказа?
-Нет, изменить размер целевой виртуальной машины после отработки отказа невозможно.
+Нет, изменить размер или тип целевой виртуальной машины после отработки отказа невозможно.
 
 
 ## <a name="automation-and-scripting"></a>Автоматизация и использование скриптов

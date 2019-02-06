@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 10/20/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 52f08511d16e216ced7e3d1de11eae960cdbaeb8
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: f56b1b06e8be46c1a111e920cfb98bc58d4f6636
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041872"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466869"
 ---
-# <a name="availability-and-performance-tradeoffs-for-various-consistency-levels-in-azure-cosmos-db"></a>Достижение компромисса между доступностью и быстродействием для разных уровней согласованности в Azure Cosmos DB
+# <a name="consistency-availability-and-performance-tradeoffs"></a>Компромиссы согласованности, доступности и производительности 
 
 Распределенные базы данных, которые полагаются на репликацию для обеспечения высокого уровня доступности, низкой задержки или того и другого, должны быть компромиссными. Это компромиссы между согласованностью чтения и доступностью, задержкой и пропускной способностью. 
 

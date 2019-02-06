@@ -1,6 +1,6 @@
 ---
-заголовок: Расширение возможностей эксперимента с помощью R titleSuffix: Студия машинного обучения Azure description: Рассматривается, как расширить функциональные возможности Студии машинного обучения Microsoft Azure с помощью языка R, используя модуль «Выполнение сценария R».
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Расширение возможностей эксперимента с помощью R titleSuffix: Студия машинного обучения Azure description: Рассматривается, как расширить функциональные возможности Студии машинного обучения Microsoft Azure с помощью языка R, используя модуль «Выполнение сценария R».
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
 ---

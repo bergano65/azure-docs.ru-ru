@@ -1,6 +1,6 @@
 ---
-заголовок: Копирование чужих примеров обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: 'Секрет успешного процесса обработки и анализа данных. заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из Коллекция решений ИИ Azure.'
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Копирование чужих примеров обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: 'Секрет успешного процесса обработки и анализа данных. заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из Коллекция решений ИИ Azure.'
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 05.01.2018
 ---

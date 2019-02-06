@@ -1,5 +1,5 @@
 ---
-заголовок: Развертывание рабочего пространства Studio с помощью Azure Resource Manager titleSuffix: Студия машинного обучения Azure description: Развертывание рабочей области машинного обучения Azure с помощью служб шаблона Azure Resource Manager: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Развертывание рабочего пространства Studio с помощью Azure Resource Manager titleSuffix: Студия машинного обучения Azure description: Развертывание рабочей области машинного обучения Azure с помощью служб шаблона Azure Resource Manager: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 02.05.2018
 ---
@@ -64,7 +64,7 @@ author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 02.05
 
 ### <a name="deploy-the-resource-group-based-on-the-template"></a>Развертывание группы ресурсов на основе шаблона
 * Откройте PowerShell.
-* Установите модули для Azure Resource Manager и управления службами Azure.  
+* Установите модули для Azure Resource Manager и управления службами Azure.
 
 ```
 # Install the Azure Resource Manager modules from the PowerShell Gallery (press “A”)
@@ -74,9 +74,9 @@ Install-Module AzureRM -Scope CurrentUser
 Install-Module Azure -Scope CurrentUser
 ```
 
-   При этом скачиваются и устанавливаются модули, необходимые для выполнения оставшихся действий. Их достаточно выполнить один раз в среде выполнения команд PowerShell.   
+   При этом скачиваются и устанавливаются модули, необходимые для выполнения оставшихся действий. Их достаточно выполнить один раз в среде выполнения команд PowerShell.
 
-* Проверка подлинности в Azure  
+* Проверка подлинности в Azure
 
 ```
 # Authenticate (enter your credentials in the pop-up window)
@@ -110,22 +110,22 @@ $rgd = New-AzureRmResourceGroupDeployment -Name "demo" -TemplateFile "C:\temp\ml
 После завершения развертывания очень просто получить доступ к свойствам развернутой рабочей области. Например, можно получить доступ к сведениям о маркере первичного ключа.
 
 ```
-# Access Azure ML Workspace Token after its deployment.
+# Access Azure Machine Learning studio Workspace Token after its deployment.
 $rgd.Outputs.mlWorkspaceToken.Value
 ```
 
 Другой способ получения маркеров существующей рабочей области — использовать команду Invoke-AzureRmResourceAction. Например, можно отобразить список основных и дополнительных маркеров всех рабочих областей.
 
-```  
+```
 # List the primary and secondary tokens of all workspaces
-Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |% { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}  
+Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |% { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}
 ```
 После подготовки рабочей области к работе можно автоматизировать многие задачи Студии машинного обучения Azure с помощью [модуля PowerShell для Машинного обучения Azure](https://aka.ms/amlps).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md). 
-* Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates). 
-* Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39). 
+* Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
+* Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
+* Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39).
 * См. [информативную справку по шаблонам Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.machinelearning/allversions)
 <!--Image references--> [1]: ./media/deploy-with-resource-manager-template/azuresubscription.png [2]: ./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png
 

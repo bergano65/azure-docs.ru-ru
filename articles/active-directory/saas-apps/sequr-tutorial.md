@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Sequr | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Sequr | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Sequr.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: a491e2ce-b4e8-41b8-8f4a-a2e263e462c3
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 1/8/2017
 ms.author: jeedes
-ms.openlocfilehash: 183d5f9d1e8da4e0ed9e4648ea48ba5e23e2e70e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a13a14ffbc88b655293cb35e72541df76551de62
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447930"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55172397"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sequr"></a>Руководство. Интеграция Azure Active Directory с Sequr
 
@@ -155,7 +155,7 @@ ms.locfileid: "39447930"
     d. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -191,7 +191,7 @@ ms.locfileid: "39447930"
  
 ### <a name="create-a-sequr-test-user"></a>Создание тестового пользователя Sequr
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Sequr. Обратитесь в [службу поддержки клиентов Sequr](mailto:support@sequr.io), чтобы добавить пользователей на платформу Sequr. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Sequr. Обратитесь к  [группе поддержки клиентов Sequr](mailto:support@sequr.io) для добавления пользователей на платформу Sequr. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -228,7 +228,7 @@ ms.locfileid: "39447930"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Sequr на панели доступа, вы автоматически войдете в приложение Sequr.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

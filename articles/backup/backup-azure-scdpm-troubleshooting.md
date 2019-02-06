@@ -2,18 +2,18 @@
 title: Устранение неполадок System Center Data Protection Manager с помощью Azure Backup
 description: Устранение неполадок при работе с System Center Data Protection Manager.
 services: backup
-author: adigan
-manager: shreeshd
+author: kasinh
+manager: vvithal
 ms.service: backup
 ms.topic: conceptual
-ms.date: 11/24/2017
-ms.author: adigan
-ms.openlocfilehash: d3776df8184523999433059e95bc72e1d3abb1c7
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.date: 01/30/2019
+ms.author: kasinh
+ms.openlocfilehash: 4108616e3ae41e2c88b74bb08d5f846c0035101f
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606449"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55294001"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "34606449"
 Последние заметки о выпуске System Center Data Protection Manager приведены в [документации по System Center](https://docs.microsoft.com/system-center/dpm/dpm-release-notes?view=sc-dpm-2016). Узнать больше о поддержке Data Protection Manager можно из [этой матрицы](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2016).
 
 
-## <a name="error-replica-is-inconsistent"></a>Ошибка: "Реплика не согласована"
+## <a name="error-replica-is-inconsistent"></a>Ошибка: Несогласованная реплика.
 
 Реплика может быть несогласованной по следующим причинам.
 - Ошибка задания создания реплики.
@@ -42,7 +42,7 @@ ms.locfileid: "34606449"
 - Убедитесь, что диск работоспособен и содержит достаточно места для реплики.
 - Проверьте, нет ли выполняющихся параллельно аналогичных заданий резервного копирования.
 
-## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: "Сбой при создании точки восстановления в сети"
+## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: Сбой при создании точки восстановления в сети.
 
 Чтобы устранить эту проблему, выполните описанные ниже действия.
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
@@ -53,7 +53,7 @@ ms.locfileid: "34606449"
 - Убедитесь, что реплика существует.
 - Убедитесь, что реплика содержит достаточно места для создания журнала номеров последовательных обновлений (USN).
 
-## <a name="error-unable-to-configure-protection"></a>Ошибка: "Не удалось настроить защиту"
+## <a name="error-unable-to-configure-protection"></a>Ошибка: Не удалось настроить защиту.
 
 Эта ошибка возникает, когда серверу Data Protection Manager не удается связаться с защищенным сервером. 
 
@@ -70,7 +70,7 @@ ms.locfileid: "34606449"
 1. Скачайте файл учетных данных из хранилища служб восстановления, в котором зарегистрирован сервер Data Protection Manager или Azure Backup Server.
 2. Попробуйте зарегистрировать сервер в хранилище с помощью самого последнего скачанного файла учетных данных хранилища.
 
-## <a name="error-no-recoverable-data-or-selected-server-not-a-data-protection-manager-server"></a>Ошибка: " No recoverable data or selected server not a Data Protection Manager server" (Восстанавливаемые данные отсутствуют или выбранный сервер не является сервером Data Protection Manager)
+## <a name="error-no-recoverable-data-or-selected-server-not-a-data-protection-manager-server"></a>Ошибка: "No recoverable data or selected server not a Data Protection Manager server" (Восстанавливаемые данные отсутствуют или выбранный сервер не является сервером Data Protection Manager)
 
 Эта ошибка возникает последующим причинам.
 - В хранилище служб восстановления не зарегистрированы другие серверы Data Protection Manager или Azure Backup Server.

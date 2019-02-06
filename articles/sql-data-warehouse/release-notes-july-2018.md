@@ -6,16 +6,16 @@ author: twounder
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: manage
+ms.subservice: manage
 ms.date: 08/06/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: c7d2211ca69fcd18588ea1b20b638b2970b8439c
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: e63dd0a6feaedf95bb4845a3c5eded89e6585e36
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318849"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55463503"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-july-2018"></a>Что нового в Хранилище данных SQL Azure? Июль 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июля 2018 г.
@@ -23,12 +23,12 @@ ms.locfileid: "49318849"
 ## <a name="lightning-fast-query-performance"></a>Высокая производительность запросов
 [Хранилище данных SQL Azure](https://aka.ms/sqldw) задает новые показатели производительности благодаря введению мгновенного доступа к данным, который улучшает операции смешения. Мгновенный доступ к данным снижает затраты на операции перемещения данных за счет использования прямых собственных операций с данными между экземплярами SQL Server. Интеграция с ядром SQL Server непосредственно для перемещения данных означает, что хранилище данных SQL теперь на**67 % быстрее, чем Amazon Redshift**. Для измерения взята рабочая нагрузка, полученная из теста производительности [TPC Benchmark™ H (TPC-H)](http://www.tpc.org/tpch/), который является известным отраслевым стандартом.
 
-![Хранилище данных SQL Azure — быстрее и дешевле, чем Amazon Redshift](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/eb3b908a-464d-4847-b384-9f296083a737.png)
-<sub>Источник: [аналитический отчет Gigaom Research. Тест производительности хранилища данных в облаке](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/)</sub>
+![Хранилище данных SQL Azure быстрее и дешевле, чем Amazon Redshift](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/eb3b908a-464d-4847-b384-9f296083a737.png)
+<sub>Источник: [Аналитический отчет Gigaom Research Data Warehouse in the Cloud Benchmark](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/)</sub> (Сравнительный анализ облачных хранилищ данных)
 
 Помимо производительности среды выполнения в отчете [Gigaom Research](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/) также содержится измерение соотношения цены и производительности для количественной оценки стоимости конкретных рабочих нагрузок в долларах США. Хранилище данных SQL было **не менее чем на 23 % дешевле**, чем Redshift для рабочих нагрузок в 30 ТБ. Благодаря способности Хранилища данных SQL Azure масштабировать вычислительные ресурсы, а также приостанавливать и возобновлять рабочие нагрузки, клиенты платят только в том случае, если служба используется, что еще больше снижает стоимость.
-![Хранилище данных SQL Azure — быстрее и дешевле, чем Amazon Redshift](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/cb76447e-621e-414b-861e-732ffee5345a.png)
-<sub>Источник: [аналитический отчет Gigaom Research. Тест производительности хранилища данных в облаке](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/)</sub>
+![Хранилище данных SQL Azure быстрее и дешевле, чем Amazon Redshift](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/cb76447e-621e-414b-861e-732ffee5345a.png)
+<sub>Источник: [Аналитический отчет Gigaom Research Data Warehouse in the Cloud Benchmark](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/)</sub> (Сравнительный анализ облачных хранилищ данных)
 
 ### <a name="query-concurrency"></a>Параллелизм запросов
 Хранилище данных SQL также гарантирует доступность данных в ваших организациях. Корпорация Майкрософт расширила службу для поддержки 128 одновременных запросов, чтобы больше пользователей могли запрашивать одну и ту же базу данных и не блокироваться другими запросами. Для сравнения в Amazon Redshift максимальное количество одновременных запросов составляет 50, что ограничивает доступ к данным в организации.

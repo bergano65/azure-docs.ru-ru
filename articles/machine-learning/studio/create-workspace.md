@@ -1,6 +1,6 @@
 ---
-заголовок: Создание рабочей области titleSuffix: Студия машинного обучения Azure description: Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Создание рабочей области titleSuffix: Студия машинного обучения Azure description: Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 07.12.2017
 ---

@@ -4,17 +4,17 @@ description: В этой статье описано программное со
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/23/2019
+ms.date: 01/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: adeb963333ffc2b587d7468eb357fab8dc4d6bbe
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 575e2974131a09bdbdbc96d3ad252365ac9da86e
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54847056"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101793"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -201,17 +201,34 @@ ms.locfileid: "54847056"
   }
   ```
 
+   Дополнительные сведения о создании определения политики см. в статье [Структура определения службы "Политика Azure"](../concepts/definition-structure.md).
+
 1. Чтобы создать определение политики, выполните следующую команду:
 
    ```azurecli-interactive
    az policy definition create --name 'audit-storage-accounts-open-to-public-networks' --display-name 'Audit Storage Accounts Open to Public Networks' --description 'This policy ensures that storage accounts with exposures to public networks are audited.' --rules '<path to json file>' --mode All
    ```
 
+   Эта команда создает определение политики с именем _Audit Storage Accounts Open to Public Networks_ (Аудит учетных записей хранения, открытых для общедоступных сетей).
+   Дополнительные сведения о других параметрах, которые можно использовать, см. в разделе о [az policy definition create](/cli/azure/policy/definition#az-policy-definition-create).
+
+   При вызове без параметров расположения `az policy definition creation` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
+
+   - **--subscription** — сохранение в другой подписке. Требуется значение _GUID_ для идентификатора подписки или значение _строки_ для имени подписки.
+   - **--management-group** — сохранение в группе управления. Требуется значение _строки_.
+
 1. Чтобы создать назначение политики, выполните следующую команду: Замените данные в символах &lt;&gt; на собственные значения.
 
    ```azurecli-interactive
    az policy assignment create --name '<name>' --scope '<scope>' --policy '<policy definition ID>'
    ```
+
+   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **--scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+
+   - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
+   - Группа ресурсов — `/subscriptions/{subID}/resourceGroups/{rgName}`
+   - Подписка — `/subscriptions/{subID}`
+   - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
 Вы можете получить идентификатор определения политики с помощью следующей команды в PowerShell.
 

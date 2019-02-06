@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.component: pim
-ms.date: 08/30/2018
+ms.subservice: pim
+ms.date: 01/23/2019
 ms.author: rolyon
-ms.openlocfilehash: d9a6ab49d619e487eee6fb13abe128cfc167b560
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: e6548c2635afd8e1ac784a1930c2277548647cfd
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43306695"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55192763"
 ---
 # <a name="discover-azure-resources-to-manage-in-pim"></a>Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями
 
@@ -52,12 +52,16 @@ ms.locfileid: "43306695"
 
 1. Установите флажок рядом с неуправляемыми ресурсами, которыми вы хотите управлять.
 
+1. Щелкните **Управление ресурсом** и приступите к управлению выбранными ресурсами.
+
     > [!NOTE]
     > После настройки управления для группы управления или подписки ее уже невозможно будет сделать неуправляемый. Благодаря этому другой администратор не сможет удалить заданные вами параметры PIM.
 
     ![Область "Обнаружение". Управление ресурсами](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
 
-1. Щелкните **Управление ресурсом** и приступите к управлению выбранными ресурсами.
+1. Если вы видите сообщение для подтверждения подключения выбранного ресурса для управления, щелкните **Да**.
+
+    ![Область "Обнаружение". Сообщение об управлении ресурсами](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

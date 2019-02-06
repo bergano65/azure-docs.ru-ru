@@ -3,7 +3,7 @@ title: Общая папка Azure для пулов пакетной служб
 description: Как подключить общую папку с помощью функции "Файлы Azure" к вычислительным узлам в пуле Linux или Windows пакетной службы Azure
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
 ms.date: 05/24/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: 88d7c0d033d7b517a396df27468de8be7ae20be9
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 13ed2caa5ae547747707c368246ea23486dbed72
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34811792"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55469572"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы
 
@@ -51,7 +51,7 @@ ms.locfileid: "34811792"
 
 Например, включите команду `net use`, чтобы подключить общую папку как часть командной строки каждой задачи. Для подключения общей папки требуются следующие учетные данные:
 
-* **имя пользователя**: AZURE\\\<имя_учетной_записи_хранения\>, например AZURE\\*mystorageaccountname*;
+* **Имя пользователя**. AZURE\\\<имя_учетной_записи_хранения\>, например AZURE\\*mystorageaccountname*;
 * **пароль**: <ключ_учетной_записи_хранения==>, например *XXXXXXXXXXXXXXXXXXXXX==*.
 
 Следующая команда позволяет подключить общую папку *myfileshare* в учетной записи хранения *mystorageaccountname* как диск *S:*

@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: cf283803dfa45c362330ccf73fc5eea198d3a5e2
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 0d9ee24e9ab104fb554033802507f78fcbf38fc3
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278650"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55170935"
 ---
 # <a name="sfctl-cluster"></a>sfctl cluster
 Выбор кластеров Service Fabric, управление ими и их эксплуатация.
 
 ## <a name="commands"></a>Команды
 
-|Get-Help|ОПИСАНИЕ|
+|Команда|ОПИСАНИЕ|
 | --- | --- |
 | code-versions | Возвращает список версий кода структуры, которые были подготовлены в кластере Service Fabric. |
 | config-versions | Возвращает список версий конфигураций структуры, которые были подготовлены в кластере Service Fabric. |

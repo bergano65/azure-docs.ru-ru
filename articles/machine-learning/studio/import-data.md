@@ -1,6 +1,6 @@
 ---
-заголовок: Импорт данных в Студию машинного обучения titleSuffix: Студия машинного обучения Azure description: Импорт данных в студию машинного обучения Azure из разных источников данных Узнайте, какие типы данных и форматы данных поддерживаются.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Импорт данных в Студию машинного обучения titleSuffix: Студия машинного обучения Azure description: Импорт данных в студию машинного обучения Azure из разных источников данных Узнайте, какие типы данных и форматы данных поддерживаются.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 29.11.2017
 ---
@@ -57,8 +57,8 @@ author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heather
 * Целое число 
 * Double
 * Логическое
-* Datetime
-* Интервал времени
+* DateTime
+* TimeSpan
 
 Для передачи данных между модулями Студия машинного обучения Microsoft Azure использует внутренний тип данных, который называется ***Data Table***. Данные можно явно преобразовать в формат Data Table с использованием модуля [Convert to Dataset][convert-to-dataset] (Преобразование в набор данных).
 

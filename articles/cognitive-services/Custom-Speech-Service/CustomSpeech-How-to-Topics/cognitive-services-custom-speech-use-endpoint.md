@@ -5,16 +5,16 @@ services: cognitive-services
 author: PanosPeriorellis
 manager: onano
 ms.service: cognitive-services
-ms.component: custom-speech
+ms.subservice: custom-speech
 ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ms.openlocfilehash: 9f1a21d6f099bc27c81e8c254f7df73d6c3e585d
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 3f99172f486c374cdbd0b6ebd50fdf7bfec98ec3
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341810"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55227154"
 ---
 # <a name="use-a-custom-speech-to-text-endpoint"></a>Использование пользовательской конечной точки преобразования речи в текст
 
@@ -36,10 +36,10 @@ ms.locfileid: "49341810"
 
 Чтобы отправлять запросы к пользовательской конечной точке с помощью клиентской библиотеки распознавания речи, запустите клиент распознавания. Используйте пакет SDK распознавания речи для клиента из [NuGet](http://nuget.org/). Выполните поиск *speech recognition* и выберите пакет распознавания речи от корпорации Майкрософт для своей платформы. Примеры исходного кода можно найти на сайте [GitHub](https://github.com/Microsoft/Cognitive-Speech-STT-Windows). Пакет SDK распознавания речи для клиента предоставляет класс фабрики **SpeechRecognitionServiceFactory**, который предоставляет следующие методы.
 
-  *   ```CreateDataClient(...)```: клиент распознавания данных.
-  *   ```CreateDataClientWithIntent(...)```: клиент распознавания данных с намерением.
-  *   ```CreateMicrophoneClient(...)```: клиент распознавания с поддержкой микрофона.
-  *   ```CreateMicrophoneClientWithIntent(...)```: клиент распознавания с поддержкой микрофона с намерением.
+  *   ```CreateDataClient(...)```: Клиент распознавания данных.
+  *   ```CreateDataClientWithIntent(...)```: Клиент распознавания данных с намерением.
+  *   ```CreateMicrophoneClient(...)```: Клиент распознавания с поддержкой микрофона.
+  *   ```CreateMicrophoneClientWithIntent(...)```: Клиент распознавания с поддержкой микрофона с намерением.
 
 Подробное описание представлено в документации по [API распознавания речи Bing](https://docs.microsoft.com/azure/cognitive-services/speech/home). Конечные точки Пользовательской службы распознавания речи поддерживают тот же пакет SDK.
 

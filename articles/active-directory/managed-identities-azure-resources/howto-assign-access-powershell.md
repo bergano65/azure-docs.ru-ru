@@ -3,23 +3,23 @@ title: Как назначить доступ на основе управляе
 description: Пошаговые инструкции по назначению управляемого удостоверения для одного ресурса и предоставлению доступа к другому ресурсу с помощью PowerShell.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2018
-ms.author: daveba
-ms.openlocfilehash: 72e05af92e88dc04f470d8be9a65347672777556
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: priyamo
+ms.openlocfilehash: 765276ce179c0d9858a39a62adc5ea0e96ae79ea
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427667"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55188785"
 ---
 # <a name="assign-a-managed-identity-access-to-a-resource-using-powershell"></a>Назначение доступа на основе управляемого удостоверения к ресурсу с помощью PowerShell
 
@@ -27,26 +27,28 @@ ms.locfileid: "54427667"
 
 После настройки ресурса Azure с помощью управляемого удостоверения можно предоставить доступ на основе управляемого удостоверения другому ресурсу, как и любому субъекту безопасности. В этом примере показано, как предоставить управляемому удостоверению виртуальной машине Azure доступ к учетной записи хранения Azure с помощью PowerShell.
 
+[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-- Установите [последнюю версию Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM), если это еще не сделано.
+- Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
 
 ## <a name="use-rbac-to-assign-a-managed-identity-access-to-another-resource"></a>Назначение управляемому удостоверению прав доступа к другому ресурсу с помощью RBAC
 
 После включения управляемого удостоверения для ресурса Azure, [например виртуальной машины Azure](qs-configure-powershell-windows-vm.md), сделайте следующее.
 
-1. Войдите в Azure с помощью командлета `Connect-AzureRmAccount`. Используйте учетную запись, связанную с подпиской Azure, с помощью которой было настроено управляемое удостоверение.
+1. Войдите в Azure с помощью командлета `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, с помощью которой было настроено управляемое удостоверение.
 
    ```powershell
-   Connect-AzureRmAccount
+   Connect-AzAccount
    ```
-2. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала с помощью [Get-AzureRMVM](/powershell/module/azurerm.compute/get-azurermvm) получите субъект-службу для виртуальной машины с именем `myVM`, который был создан при включении управляемого удостоверения. Затем с помощью [New-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment) предоставьте этой виртуальной машине доступ для **чтения** к учетной записи хранения с именем `myStorageAcct`.
+2. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала с помощью [Get-AzVM](/powershell/module/az.compute/get-azvm) получите для виртуальной машины с именем `myVM` субъект-службу, который был создан при включении управляемого удостоверения. Затем с помощью [New-AzRoleAssignment](/powershell/module/Az.Resources/New-AzRoleAssignment) предоставьте этой виртуальной машине доступ для **чтения** к учетной записи хранения с именем `myStorageAcct`.
 
     ```powershell
-    $spID = (Get-AzureRMVM -ResourceGroupName myRG -Name myVM).identity.principalid
-    New-AzureRmRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.Storage/storageAccounts/<myStorageAcct>"
+    $spID = (Get-Az -ResourceGroupName myRG -Name myVM).identity.principalid
+    New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.Storage/storageAccounts/<myStorageAcct>"
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация

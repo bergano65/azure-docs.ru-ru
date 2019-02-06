@@ -2,19 +2,18 @@
 title: Подготовка сервера DPM к резервному копированию рабочих нагрузок в Azure
 description: Общие сведения о резервном копировании данных DPM в хранилище Служб восстановления Azure.
 services: backup
-author: adigan
-manager: nkolli
-keywords: System Center Data Protection Manager, диспетчер защиты данных, диспетчер защиты данных резервного копирования
+author: kasinh
+manager: vvithal
 ms.service: backup
 ms.topic: conceptual
-ms.date: 10/18/2018
-ms.author: adigan
-ms.openlocfilehash: ac89f0f2e2f86fa34fc754ee23e9b67329560fa4
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.date: 01/30/2019
+ms.author: kasinh
+ms.openlocfilehash: 1f2defd2adb580aee71482a699c7987ca3fa7807
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024483"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301073"
 ---
 # <a name="prepare-to-back-up-workloads-to-azure-with-system-center-dpm"></a>Подготовка к резервному копированию рабочих нагрузок в Azure с помощью System Center DPM
 
@@ -115,7 +114,7 @@ DPM на виртуальной машине VMware | System Center 2012 R2 с �
 
 4. В разделе **Свойства** > **Учетные данные службы архивации** щелкните **Скачать**. Портал создаст учетные данные хранилища, используя сочетание имени хранилища и текущей даты, и предоставит их вам для скачивания.
 
-    ![Загрузка](./media/backup-azure-dpm-introduction/vault-credentials.png)
+    ![Download (Скачать)](./media/backup-azure-dpm-introduction/vault-credentials.png)
 
 5. Щелкните **Сохранить**, чтобы скачать учетные данные хранилища в локальную папку, или **Сохранить как** для выбора расположения файла. Создание файла займет около одной минуты.
 
@@ -130,7 +129,7 @@ DPM на виртуальной машине VMware | System Center 2012 R2 с �
     ![Открытие меню хранилищ](./media/backup-azure-dpm-introduction/vault-settings-dpm.png)
 3. На странице **Свойства** скачайте агент Azure Backup.
 
-    ![Загрузка](./media/backup-azure-dpm-introduction/azure-backup-agent.png)
+    ![Download (Скачать)](./media/backup-azure-dpm-introduction/azure-backup-agent.png)
 
 
 4. Когда скачивание завершится, запустите файл MARSAgentInstaller.exe для установки агента на компьютере DPM. 

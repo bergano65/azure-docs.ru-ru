@@ -7,20 +7,20 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: 31d6725b6e02bbc583ad80f235360574941a97d3
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 5437e81397182ede37ef98ad40b54c64f94e2092
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468341"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55294729"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
-Среда выполнения контейнера Интеллектуальной службы распознавания речи (LUIS) настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные [параметры подключения](#mount-settings) и параметры выставления счетов. 
+Среда выполнения контейнера **Интеллектуальной службы распознавания речи (LUIS)** настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные [параметры подключения](#mount-settings) и параметры выставления счетов. 
 
 Параметры контейнера применяются [иерархически](#hierarchical-settings) и настраиваются через [переменные среды](#environment-variable-settings) или [аргументы командной строки](#command-line-argument-settings) Docker.
 
@@ -33,7 +33,7 @@ ms.locfileid: "54468341"
 |Да|[ApiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет |[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
 |Да|[Выставление счетов](#billing-setting)|Задает URI конечной точки для ресурса службы в Azure.|
-|Да|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
+|Да|[Eula](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |Нет |[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
 |Нет |[прокси-серверу HTTP](#http-proxy-credentials-settings)|Настраивает прокси-сервер HTTP для исходящих запросов.|
 |Нет |[Logging](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |

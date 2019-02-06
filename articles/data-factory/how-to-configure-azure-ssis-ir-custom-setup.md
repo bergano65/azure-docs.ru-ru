@@ -7,17 +7,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/3/2018
+ms.date: 1/25/2019
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: ec1c24e4a9714506a4107fd5bfd53d1a562c8781
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 66f41ffef5d72f5d574bb78d3b810f4a4dc2c4c1
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022365"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098737"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -27,6 +27,8 @@ ms.locfileid: "54022365"
 
 Можно установить как бесплатные, так и нелицензированные компоненты, а также платные или лицензированные компоненты. Если вы являетесь независимым поставщиком ПО, ознакомьтесь со статьей [Develop paid or licensed custom components for the Azure SSIS integration runtime](how-to-develop-azure-ssis-ir-licensed-components.md) (Разработка платных или лицензионных пользовательских компонентов для среды выполнения интеграции Azure SSIS).
 
+> [!IMPORTANT]
+> Узлы версии 2 Azure-SSIS IR не подходят для пользовательской установки, поэтому рекомендуется использовать вместо них узлы версии 3.  Если вы уже используете узлы версии 2, перейдите на узлы версии 3 как можно скорее.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
@@ -78,7 +80,7 @@ ms.locfileid: "54022365"
 
        ![Создание контейнера BLOB-объектов](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
-    1.  Выберите новый контейнер и передайте скрипт пользовательской установки и связанные с ним файлы. Убедитесь, что `main.cmd` отправлен в верхний уровень контейнера, а не в любую другую папку. 
+    1.  Выберите новый контейнер и передайте скрипт пользовательской установки и связанные с ним файлы. Убедитесь, что `main.cmd` отправлен в верхний уровень вашего контейнера, а не в любую другую папку. Кроме того, убедитесь, что контейнер содержит только необходимые для пользовательской установки файлы. Таким образом, их дальнейшая загрузка на ваш Azure-SSIS IR не займет много времени.
 
        ![Отправка файлов в контейнер больших двоичных объектов](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image5.png)
 
@@ -140,15 +142,15 @@ ms.locfileid: "54022365"
 
        1. Папка `.NET FRAMEWORK 3.5`, в которой содержится конфигурация пользовательской установки для установки более ранней версии .NET Framework, которая может потребоваться для пользовательских компонентов на каждом узле вашей Azure SSIS IR.
 
-       1. Папка `AAS`, которая содержит файл пользовательских настроек для установки клиентских библиотек на каждом узле Azure-SSIS IR, которые позволят задачам Analysis Services подключаться к экземпляру Azure Analysis Services (AAS) с помощью проверки подлинности субъекта-службы. Прежде всего скачайте последнюю версию клиентских библиотек и средств установки Windows для **MSOLAP (amd64)** и **AMO** (например, `x64_15.0.900.108_SQL_AS_OLEDB.msi` и `x64_15.0.900.108_SQL_AS_AMO.msi` можно получить [здесь](https://docs.microsoft.com/azure/analysis-services/analysis-services-data-providers)), затем загрузите их в контейнер вместе с `main.cmd`.  
-
        1. Папка `BCP`, которая содержит файл пользовательской установки для установки служебных программ командной строки SQL Server (`MsSqlCmdLnUtils.msi`), включая программу массового копирования (`bcp`), на каждом узле Azure SSIS IR.
 
        1. Папка `EXCEL`, где содержится файл пользовательской установки для установки сборок с открытым исходным кодом (`DocumentFormat.OpenXml.dll`, `ExcelDataReader.DataSet.dll` и `ExcelDataReader.dll`) на каждом узле Azure SSIS IR.
 
        1. Папка `ORACLE ENTERPRISE`, которая содержит пользовательский скрипт установки (`main.cmd`) и файл конфигурации автоматической установки (`client.rsp`), позволяющие установить соединители Oracle и драйвер OCI на каждом узле Azure-SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Oracle. Прежде всего скачайте соединители Microsoft версии 5.0 для Oracle (`AttunitySSISOraAdaptersSetup.msi` и `AttunitySSISOraAdaptersSetup64.msi`) из [центра загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=55179) и последнюю версию клиента Oracle — например, версию `winx64_12102_client.zip` с сайта [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-win64-download-2297732.html), и отправьте их в контейнер вместе с `main.cmd` и `client.rsp`. Если TNS используется для подключения к Oracle, необходимо загрузить файл `tnsnames.ora`, изменить его и отправить в контейнер, чтобы его можно было скопировать в папку установки Oracle во время установки.
 
-       1. Папка `ORACLE STANDARD`, где содержится скрипт пользовательской установки (`main.cmd`) для установки драйвера Oracle ODP.NET на каждом узле Azure SSIS IR. Эта установка дает возможность использовать диспетчер подключений, источник и назначение ADO.NET. Сначала загрузите последнюю версию драйвера Oracle ODP.NET (например, `ODP.NET_Managed_ODAC122cR1.zip`) из [Oracle](http://www.oracle.com/technetwork/database/windows/downloads/index-090165.html) и затем передайте его вместе с `main.cmd` в свой контейнер.
+       1. Папка `ORACLE STANDARD ADO.NET`, где содержится скрипт пользовательской установки (`main.cmd`) для установки драйвера Oracle ODP.NET на каждом узле Azure SSIS IR. Эта установка дает возможность использовать диспетчер подключений, источник и назначение ADO.NET. Сначала загрузите последнюю версию драйвера Oracle ODP.NET (например, `ODP.NET_Managed_ODAC122cR1.zip`) из [Oracle](http://www.oracle.com/technetwork/database/windows/downloads/index-090165.html) и затем передайте его вместе с `main.cmd` в свой контейнер.
+       
+       1. Папка `ORACLE STANDARD ODBC`, где содержится сценарий пользовательской установки (`main.cmd`) для установки драйвера Oracle ODBC и настройки имени источника данных на каждом узле Azure-SSIS IR. Эта установка позволяет использовать диспетчер подключений ODBC, источник и назначение или диспетчер подключений Power Query и источник с источником данных ODBC для подключения к серверу Oracle. Сначала загрузите последнюю версию Oracle Instant Client (базовый пакет или базовый пакет Lite) и пакет ODBC, например 64-битные пакеты можно скачать [здесь](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) (базовый пакет — `instantclient-basic-windows.x64-18.3.0.0.0dbru.zip`, базовый пакет — `instantclient-basiclite-windows.x64-18.3.0.0.0dbru.zip`, пакет ODBC — `instantclient-odbc-windows.x64-18.3.0.0.0dbru.zip`), а 32-битные пакеты [здесь](https://www.oracle.com/technetwork/topics/winsoft-085727.html) (базовый пакет — `instantclient-basic-nt-18.3.0.0.0dbru.zip`, базовый пакет Lite — `instantclient-basiclite-nt-18.3.0.0.0dbru.zip`, пакет ODBC — `instantclient-odbc-nt-18.3.0.0.0dbru.zip`), а затем отправьте их вместе с файлом `main.cmd` в свой контейнер.
 
        1. Папка `SAP BW`, которая содержит скрипт пользовательской установки (`main.cmd`), чтобы установить сборку соединителя SAP .NET (`librfc32.dll`) на каждом узле среды выполнения интеграции Azure SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение SAP BW. Сначала передайте в контейнер 64- или 32-разрядную версию `librfc32.dll` из папки установки SAP вместе с `main.cmd`. Затем скрипт скопирует сборку SAP в папку `%windir%\SysWow64` или `%windir%\System32` во время установки.
 

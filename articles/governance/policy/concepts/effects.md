@@ -4,17 +4,17 @@ description: Определения политик Azure содержат раз
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/06/2018
+ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 0fcb30132a83502b8ca5f58364d78129109b8a9d
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 68abb5fd95823941bdb5d87d7ebc6675b0760850
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310850"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912515"
 ---
 # <a name="understand-policy-effects"></a>Сведения о действии политики
 
@@ -257,6 +257,11 @@ ms.locfileid: "53310850"
   - Например, можно убедиться, что родительский ресурс (из условия **if**) находится там же, где и соответствующий связанный ресурс.
 - **roleDefinitionIds** [обязательное свойство].
   - Это свойство должно содержать массив строк, которые соответствуют идентификатору роли управления доступом на основе ролей, доступному для определенной подписки. Дополнительные сведения см. в статье [Исправление несоответствующих ресурсов с помощью службы "Политика Azure"](../how-to/remediate-resources.md#configure-policy-definition).
+- **DeploymentScope** (необязательно)
+  - Допустимые значения: _Subscription_ и _ResourceGroup_.
+  - Задает тип развертывания, которое должно выполняться. _Subscription_ указывает на [развертывание на уровне подписки](../../../azure-resource-manager/deploy-to-subscription.md), а _ResourceGroup_ — на развертывание в группе ресурсов.
+  - Свойство _location_ должно быть указано для объекта _Deployment_ при использовании развертываний на уровне подписки.
+  - По умолчанию задано значение _ResourceGroup_.
 - **Deployment** [обязательный]
   - Это свойство должно содержать полный шаблон развертывания, так как оно будет передано в API PUT `Microsoft.Resources/deployments`. Дополнительные сведения см. в [документации по REST API развертываний](/rest/api/resources/deployments).
 

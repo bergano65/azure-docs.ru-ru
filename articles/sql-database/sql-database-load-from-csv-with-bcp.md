@@ -11,31 +11,36 @@ author: douglaslMS
 ms.author: douglasl
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 50c5071ce672e3a2aba130817628ad0d26f656e5
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.date: 01/25/2019
+ms.openlocfilehash: f51b31903953f9a1d4959f78d570d3de92478f50
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653490"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55455309"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
+
 Для импорта данных из CSV-файла в базу данных SQL Azure можно использовать программу командной строки bcp.
 
 ## <a name="before-you-begin"></a>Перед началом работы
+
 ### <a name="prerequisites"></a>Предварительные требования
+
 Для выполнения задач из этой статьи необходимо следующее:
 
-* Логический сервер и база данных SQL Azure
+* Сервер и база данных SQL Azure
 * установленная служебная программа командной строки bcp;
 * установленная служебная программа командной строки sqlcmd.
 
 Вы можете скачать служебные программы bcp и sqlcmd в [Центре загрузки Майкрософт][Microsoft Download Center].
 
 ### <a name="data-in-ascii-or-utf-16-format"></a>Данные в формате ASCII или UTF-16
+
 Чтобы выполнить действия, описанные в этом руководстве, необходимо использовать данные в формате ASCII или UTF-16, так как bcp не поддерживает кодировку UTF-8. 
 
 ## <a name="1-create-a-destination-table"></a>1. Создание целевой таблицы
+
 Определите таблицу в базе данных SQL как целевую таблицу. Столбцы в таблице должны соответствовать данным в каждой строке файла данных.
 
 Чтобы создать таблицу, откройте окно командной строки и используйте sqlcmd.exe для выполнения следующей команды:
@@ -54,6 +59,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 
 
 ## <a name="2-create-a-source-data-file"></a>2. Создание файла источника данных
+
 Откройте блокнот и скопируйте следующие строки данных в новый текстовый файл, а затем сохраните этот файл в локальный временный каталог (C:\Temp\DimDate2.txt). Эти данные имеют формат ASCII.
 
 ```
@@ -78,6 +84,7 @@ bcp <TableName> out C:\Temp\DimDate2_export.txt -S <ServerName> -d <DatabaseName
 ```
 
 ## <a name="3-load-the-data"></a>3. Загрузка данных
+
 Чтобы загрузить данные, откройте окно командной строки и выполните следующую команду, подставив собственные значения имени сервера, базы данных, пользователя и пароль.
 
 ```bcp
@@ -108,6 +115,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 | 20151201 |4. |2 |
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Миграция базы данных SQL Server описана в статье [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
 
 <!--MSDN references-->

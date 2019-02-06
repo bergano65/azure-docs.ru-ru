@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 01/28/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 403906a60d16a478dffd313b45aa1ce24e42196a
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: f369eb6241a8eb3d44a0a38e243c533da47103e1
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119243"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104620"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -36,19 +36,19 @@ ms.locfileid: "54119243"
 
 [![Видео, посвященное Live Metrics Stream](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
 
+В настоящее время динамические метрики поддерживаются для приложений ASP.NET, ASP.NET Core, Функций Azure и Java.
+
 ## <a name="get-started"></a>Начало работы
 
-1. Если вы еще не [установили Application Insights](../../azure-monitor/app/asp-net.md) в своем веб-приложении ASP.NET или [приложении Windows Server](../../azure-monitor/app/windows-services.md), сделайте это сейчас. 
-2. **Выполните обновление до последней версии** пакета Application Insights. В Visual Studio щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet**. Откройте вкладку **Обновления**, установите флажок **Включить предварительные выпуски** и выберите все пакеты Microsoft.ApplicationInsights.*.
+1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.md), сделайте это сейчас.
+2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
+3. **Выполните обновление до последней версии** пакета Application Insights. В Visual Studio щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet**. Откройте вкладку **Обновления** и выберите все пакеты "Microsoft.ApplicationInsights.*".
 
     Разверните приложение заново.
 
 3. На [портале Azure](https://portal.azure.com) откройте ресурс Application Insights для своего приложения, а затем откройте Live Stream.
 
 4. [Защитите канал управления](#secure-the-control-channel), если в фильтрах могут использоваться конфиденциальные данные, например имена клиентов.
-
-
-![В колонке обзора щелкните Live Stream (Динамический поток).](./media/live-stream/live-stream-2.png)
 
 ### <a name="no-data-check-your-server-firewall"></a>Данные отсутствуют? Проверьте брандмауэр сервера
 
@@ -69,7 +69,7 @@ ms.locfileid: "54119243"
 
 ## <a name="select-and-filter-your-metrics"></a>Выбор и фильтрация метрик
 
-(Доступно для классических приложений ASP.NET с последней версией пакета SDK.)
+(Доступно с ASP.NET, ASP.NET Core и Функциями Azure версии 2.)
 
 Можно отслеживать пользовательский КПЭ в реальном времени, применяя произвольные фильтры к любым данным телеметрии Application Insights на портале. Щелкните элемент управления фильтром, появляющийся при наведении указателя мыши на любую диаграмму. На диаграмме ниже показан пользовательский КПЭ числа запросов с фильтрами по для атрибутам URL-адреса и длительности. Проверьте результат фильтрации в разделе "Просмотр потока", в котором отображается динамический веб-канал телеметрии, соответствующей критериям, которые можно указать в любой момент времени. 
 
@@ -161,6 +161,12 @@ using Microsoft.ApplicationInsights.Extensibility;
 
 ```
 
+### <a name="azure-function-apps"></a>Приложения-функции Azure
+
+Для приложений-функций Azure версии 2 канал с ключом API можно защитить с помощью переменной среды. 
+
+Создайте ключ API из ресурса Application Insights и перейдите к **параметрам приложения** вашего приложения-функции. Выберите **Добавить новый параметр** и введите имя `APPINSIGHTS_QUICKPULSEAUTHAPIKEY` и значение, соответствующее ключу API.
+
 ### <a name="aspnet-core-requires-application-insights-aspnet-core-sdk-230-beta-or-greater"></a>ASP.NET Core (требует пакет SDK для ASP.NET Core для Application Insights версии 2.3.0-beta или выше)
 
 Измените файл startup.cs следующим образом.
@@ -176,7 +182,6 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 ``` C#
 services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => module.AuthenticationApiKey = "YOUR-API-KEY-HERE");
 ```
-
 
 Однако, если все подключенные серверы опознаны и надежны, можно использовать настраиваемые фильтры без аутентифицированного канала. Эта возможность доступна в течение шести месяцев. Это переопределение требуется после каждого создания сеанса или подключения нового сервера.
 

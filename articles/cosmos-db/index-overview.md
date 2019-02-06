@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/10/2018
 ms.author: mjbrown
-ms.openlocfilehash: adddbc03b5ec61944e95a2e0fff8767c41d96b0e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 9e1ae9faecea67e1abb2a1b08d5641bc25c9f38a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54033763"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55469096"
 ---
-# <a name="indexing-in-azure-cosmos-db"></a>Индексирование в Azure Cosmos DB
+# <a name="indexing-in-azure-cosmos-db---overview"></a>Индексирование в Azure Cosmos DB. Общие сведения
 
 Azure Cosmos DB — это база данных без использования схем, которая позволяет выполнять итерацию приложения, не отвлекаясь на управление схемами или индексами. По умолчанию Azure Cosmos DB автоматически индексирует все элементы в контейнере. И разработчикам не нужно создавать схемы или вторичные индексы.
 

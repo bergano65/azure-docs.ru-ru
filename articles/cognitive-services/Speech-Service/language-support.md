@@ -6,17 +6,17 @@ services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: speech-service
+ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 688194c8d5ec0c2594d8c7178d8cae3925b8e482
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: bc85de9d2d94cd325095f5f6555105a724865005
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413380"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55213330"
 ---
 # <a name="language-and-region-support-for-speech-service-api"></a>Поддержка языков и регионов в API службы "Речь"
 
@@ -79,6 +79,10 @@ REST API преобразования текста в речь предлага�
 |--------|----------|---------|--------------------|
 | en-US | Английский (США) | Male | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, GuyNeural)" |
 | en-US | Английский (США) | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, JessaNeural)" |
+| zh-CN | Китайский | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, XiaoxiaoNeural)" |
+
+> [!IMPORTANT]
+> Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, XiaoxiaoNeural) доступен только через конечную точку Юго-Восточной Азии: https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1.
 
 ### <a name="standard-voices"></a>Стандартные голосовые модели
 

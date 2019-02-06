@@ -5,15 +5,15 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 10/19/2018
-ms.component: hybrid
+ms.date: 01/24/2019
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1d2d921e02b56e951b4239c15471995eaf3cd0d1
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 19b7cebd1c75e1a2bbfe34e3ab4e657051e8a6d4
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54813588"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55159538"
 ---
 # <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADSyncConfig
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1, который входит в состав Azure AD Connect.
@@ -1215,7 +1215,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADob
 ### <a name="description"></a>Описание
 Функция Set-ADSyncUnifiedGroupWritebackPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
-универсальные разрешения на чтение и запись, удаление, удаление дерева, создание и удаление дочерних объектов для всех типов объектов и дочерних объектов.
+Универсальные разрешения на чтение и запись, удаление, удаление дерева, создание и удаление дочерних объектов для всех типов объектов и дочерних объектов группы.
 
 Эти разрешения применяются ко всем доменам в лесу.
 При необходимости вы можете указать различающееся имя в параметре ADobjectDN, чтобы задавать эти разрешения только для данного объекта AD (с учетом наследования дочерними объектами).

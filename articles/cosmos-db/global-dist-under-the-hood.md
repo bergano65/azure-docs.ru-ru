@@ -1,5 +1,5 @@
 ---
-title: Глобальное распределение Azure Cosmos DB (взгляд изнутри)
+title: Глобальное распределение в Azure Cosmos DB — взгляд изнутри
 description: Эта статья содержит технические сведения, относящиеся к глобальному распределению Azure Cosmos DB
 author: dharmas-cosmos
 ms.service: cosmos-db
@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: e1c84bb28747cf1799b39c70b6df3dc0cb9f8d78
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 86e4441174fa89fc688fa4e411ead0a7b3ebc8ee
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54038948"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55475386"
 ---
-# <a name="azure-cosmos-db-global-distribution---under-the-hood"></a>Глобальное распределение Azure Cosmos DB (взгляд изнутри)
+# <a name="global-data-distribution-with-azure-cosmos-db---under-the-hood"></a>Глобальное распределение данных в Azure Cosmos DB — взгляд изнутри
 
 Azure Cosmos DB является базовой службой Azure, поэтому она развернута во всех регионах Azure по всему миру, включая общедоступные, национальные облака, облака Министерства обороны (DOD) и государственных организаций. В центре обработки данных мы развертываем службу Azure Cosmos DB и управляем ей на больших метках машин, каждая из которых имеет выделенное локальное хранилище. В центре обработки данных Azure Cosmos DB развертывается во многих кластерах, каждый из которых потенциально запускает несколько поколений оборудования. Машины в кластере обычно распределяются по 10–20 доменам сбоя. На следующем рисунке показана топология системы к использованию глобального распределения Cosmos DB.
 

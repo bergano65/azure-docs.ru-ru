@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: 4ed919b76ddebde8337337c18c04093bc6072e82
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 25592f80abc8aea338679f199f03114c2d0785f6
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121266"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55077494"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -168,7 +168,7 @@ public IDictionary<string, string> Execute(
     /// Execute method is the only method of IDotNetActivity interface you must implement.
     /// In this sample, the method invokes the Calculate method to perform the core logic.
     /// </summary>
-    
+
     public IDictionary<string, string> Execute(
         IEnumerable<LinkedService> linkedServices,
         IEnumerable<Dataset> datasets,
@@ -201,7 +201,7 @@ public IDictionary<string, string> Execute(
 
         // get type properties from the dataset object
         inputTypeProperties = inputDataset.Properties.TypeProperties as AzureBlobDataset;
-    
+
         // log linked services passed in linkedServices parameter
         // you will see two linked services of type: AzureStorage
         // one for input dataset and the other for output dataset
@@ -239,7 +239,7 @@ public IDictionary<string, string> Execute(
                                      continuationToken,
                                      null,
                                      null);
-    
+
             // Calculate method returns the number of occurrences of
             // the search term (“Microsoft”) in each blob associated
             // with the data slice. definition of the method is shown in the next step.
@@ -257,7 +257,7 @@ public IDictionary<string, string> Execute(
         // get the folder path from the output dataset definition
         folderPath = GetFolderPath(outputDataset);
 
-        // log the output folder path   
+        // log the output folder path
         logger.Write("Writing blob to the folder: {0}", folderPath);
 
         // create a storage object for the output blob.
@@ -293,7 +293,7 @@ public IDictionary<string, string> Execute(
             return null;
         }
 
-        // get type properties of the dataset   
+        // get type properties of the dataset
         AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
         if (blobDataset == null)
         {
@@ -307,30 +307,30 @@ public IDictionary<string, string> Execute(
     /// <summary>
     /// Gets the fileName value from the input/output dataset.
     /// </summary>
-    
+
     private static string GetFileName(Dataset dataArtifact)
     {
         if (dataArtifact == null || dataArtifact.Properties == null)
         {
             return null;
         }
-    
+
         // get type properties of the dataset
         AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
         if (blobDataset == null)
         {
             return null;
         }
-    
+
         // return the blob/file name in the type properties
         return blobDataset.FileName;
     }
-    
+
     /// <summary>
     /// Iterates through each blob (file) in the folder, counts the number of instances of search term in the file,
     /// and prepares the output text that is written to the output blob.
     /// </summary>
-    
+
     public static string Calculate(BlobResultSegment Bresult, IActivityLogger logger, string folderPath, ref BlobContinuationToken token, string searchTerm)
     {
         string output = string.Empty;
@@ -379,7 +379,7 @@ public IDictionary<string, string> Execute(
     > Все файлы в ZIP-файле для настраиваемого действия должны размещаться на **верхнем уровне** без вложенных папок.
 
     ![Двоичные выходные файлы](./media/data-factory-use-custom-activities/Binaries.png)
-14. Создайте контейнер больших двоичных объектов **customactivitycontainer**, если он еще не создан. 
+14. Создайте контейнер больших двоичных объектов **customactivitycontainer**, если он еще не создан.
 15. Отправьте файл MyDotNetActivity.zip в виде BLOB-объекта в контейнер customactivitycontainer в хранилище BLOB-объектов Azure **общего назначения** (не в "горячее" или "холодное" хранилище BLOB-объектов), на которое ссылается служба AzureStorageLinkedService.
 
 > [!IMPORTANT]
@@ -420,7 +420,7 @@ test custom activity Microsoft test custom activity Microsoft
    1. В меню слева выберите **Создать ресурс**.
    2. В колонке **Создание** щелкните **Данные и аналитика**.
    3. Щелкните **Фабрика данных** в колонке **Аналитика данных**.
-   
+
     ![Меню создания фабрики данных Azure](media/data-factory-use-custom-activities/new-azure-data-factory-menu.png)
 2. В колонке **Создание фабрики данных** в поле "Имя" введите **CustomActivityFactory**. Имя фабрики данных Azure должно быть глобально уникальным. Если возникнет ошибка, сделайте следующее. **Имя фабрики данных "CustomActivityFactory" недоступно**, измените имя этой фабрики данных (например, на **yournameCustomActivityFactory**) и попробуйте создать ее снова.
 
@@ -430,7 +430,7 @@ test custom activity Microsoft test custom activity Microsoft
 5. В колонке **Создание фабрики данных** нажмите кнопку **Создать**.
 6. Созданная фабрика данных появится на **панели мониторинга** портала Azure.
 7. После создания фабрики данных ее содержимое отобразится в соответствующей колонке.
-    
+
     ![Колонка "Фабрика данных"](media/data-factory-use-custom-activities/data-factory-blade.png)
 
 ### <a name="step-2-create-linked-services"></a>Шаг 2. Создание связанных служб
@@ -439,7 +439,7 @@ test custom activity Microsoft test custom activity Microsoft
 #### <a name="create-azure-storage-linked-service"></a>Создание связанной службы хранения Azure
 1. В колонке **Фабрика данных** для **CustomActivityFactory** щелкните элемент **Создание и развертывание**. Отобразится редактор фабрики данных.
 2. На панели команд щелкните **Создание хранилища данных** и выберите **Служба хранилища Azure**. В редакторе отобразится сценарий JSON для создания связанной службы хранилища Azure.
-    
+
     !["Новое хранилище данных" — "Служба хранилища Azure"](media/data-factory-use-custom-activities/new-data-store-menu.png)
 3. Замените `<accountname>` именем своей учетной записи хранения Azure, а `<accountkey>` — ключом доступа к ней. Сведения о получении ключа доступа к хранилищу см. в разделах о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
 
@@ -1025,7 +1025,7 @@ namespace DataFactoryAPITestApp
 | Образец | Результат настраиваемого действия |
 | --- | --- |
 | [Загрузчик данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/HttpDataDownloaderSample) |Загрузка данных из конечной точки HTTP в хранилище BLOB-объектов с помощью настраиваемого действия C# в фабрике данных Azure. |
-| [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |
+| [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели Студии машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |
 | [Запуск скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample) |Вызов сценария R путем запуска RScript.exe в кластере HDInsight, где уже установлен R. |
 | [Действие перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/CrossAppDomainDotNetActivitySample) |Использование разных версий сборок, которые используются средством запуска фабрики данных. |
 | [Повторная обработка модели в службах Azure Analysis Services](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/AzureAnalysisServicesProcessSample) |  Повторная обработка модели в службах Azure Analysis Services. |

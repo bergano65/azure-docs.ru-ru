@@ -1,27 +1,25 @@
 ---
-title: Как переносить пользователей между лицензиями продуктов с использованием групп в Azure Active Directory | Microsoft Docs
-description: В этой статье описывается рекомендуемый процесс миграции пользователей между лицензиями продуктов (например, Office 365 корпоративный E1 и Office 365 корпоративный E3) с использованием лицензирования на основе групп
+title: Как перемещать пользователей на лицензии продуктов с использованием групп в Azure Active Directory | Документация Майкрософт
+description: В этой статье описывается рекомендуемый процесс миграции пользователей в группе на лицензии продуктов (например, Office 365 корпоративный E1 и Office 365 корпоративный E3) с использованием лицензирования на основе групп
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
 author: curtand
 manager: mtillman
 editor: ''
-ms.assetid: ''
 ms.service: active-directory
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/14/2019
+ms.date: 01/28/2019
 ms.author: curtand
 ms.reviewer: sumitp
-ms.openlocfilehash: f675ff0dfaf183c2efd177c7888549e6976fbe6d
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.custom: it-pro;seo-update-azuread-jan
+ms.openlocfilehash: ea6159f487b35192e0e2137662a664a2796843c0
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389478"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55294579"
 ---
 # <a name="how-to-safely-migrate-users-between-product-licenses-by-using-group-based-licensing"></a>Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования
 

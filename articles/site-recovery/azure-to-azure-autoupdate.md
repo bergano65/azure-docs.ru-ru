@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: 275dd48e08aa74d84b0e1b91d5df9599ce524489
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: f31fccd2bf6d0daae03b025b53a41a0fad4ce2ef
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52957697"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210137"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Автоматическое обновление службы мобильности в Azure при репликации Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "52957697"
 1. Внутри хранилища выберите **Управление**-> **Site Recovery Infrastructure** (Инфраструктура Site Recovery).
 2. В разделе **For Azure virtual Machines**-> **Extension Update Settings** (Для виртуальных машин Azure > Параметры обновления для расширения) щелкните переключатель, чтобы разрешить *ASR управлять обновлениями* или *обновлять ими вручную*. Выберите команду **Сохранить**.
 
-![vault-toggle-autuo-update](./media/azure-to-azure-autoupdate/vault-toggle.png)
+![vault-toggle-auto-update](./media/azure-to-azure-autoupdate/vault-toggle.png)
 
 > [!Important] 
 > Если выбрать значение *Allow ASR to manage* (Разрешить управление ASR), оно применяется ко всем виртуальным машинам в соответствующем хранилище.

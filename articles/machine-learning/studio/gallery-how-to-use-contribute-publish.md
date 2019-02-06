@@ -1,6 +1,6 @@
 ---
-заголовок: Коллекция решений ИИ Azure titleSuffix: Студия машинного обучения Azure description: Находите ресурсы аналитики и многое другое, а также обменивайтесь ими с помощью коллекции решений ИИ Azure. Учитесь у других и вносите свой вклад в сообщество.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Коллекция решений ИИ Azure titleSuffix: Студия машинного обучения Azure description: Находите ресурсы аналитики и многое другое, а также обменивайтесь ими с помощью коллекции решений ИИ Azure. Учитесь у других и вносите свой вклад в сообщество.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 11.01.2019
 ---

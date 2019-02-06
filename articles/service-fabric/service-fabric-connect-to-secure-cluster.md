@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/18/2018
+ms.date: 01/29/2019
 ms.author: ryanwi
-ms.openlocfilehash: f2a181fbae8ab1e08669021c42c5b4be08f66172
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 55564de4a3c5ff2d3ba3ddc5e68fa3d1b2d51e71
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34364817"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55296398"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
 
@@ -33,7 +33,13 @@ ms.locfileid: "34364817"
 
 Можно подключиться к кластеру с помощью команды `sfctl cluster select`.
 
-Сертификаты клиента можно указать как сертификат и пару ключей или как отдельный PEM-файл. Вам автоматически будет предложено ввести пароль для защищенных файлов формата `pem`.
+Сертификаты клиента можно указать как сертификат и пару ключей или как отдельный PFX-файл. Вам автоматически будет предложено ввести пароль для защищенных файлов формата PEM. Если вы получили сертификат клиента в файле формата PFX, сначала преобразуйте формат PFX в PEM, используя следующую команду. 
+
+```bash
+openssl pkcs12 -in your-cert-file.pfx -out your-cert-file.pem -nodes -passin pass:your-pfx-password
+```
+
+Если PFX-файл не защищен паролем, укажите -passin pass: в качестве последнего параметра.
 
 Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Например: 
 
@@ -234,7 +240,7 @@ catch (Exception e)
 
 ### <a name="connect-to-a-secure-cluster-non-interactively-using-azure-active-directory"></a>Неинтерактивное подключение к защищенному кластеру с помощью Azure Active Directory
 
-Приведенный ниже пример основан на пространстве имен Microsoft.IdentityModel.Clients.ActiveDirectory версии 2.19.208020213.
+Указанный ниже пример основан на Microsoft.IdentityModel.Clients.ActiveDirectory версии 2.19.208020213.
 
 Дополнительные сведения о получении маркеров AAD см. в описании [Microsoft.IdentityModel.Clients.ActiveDirectory](https://msdn.microsoft.com/library/microsoft.identitymodel.clients.activedirectory.aspx).
 
@@ -341,7 +347,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 Полный URL-адрес доступен также на панели основных компонентов кластера портала Azure.
 
-Чтобы подключиться к безопасному кластеру в Windows или OS X с помощью браузера, можно импортировать сертификат клиента. Браузер запросит его, чтобы подключиться к кластеру.  Для компьютеров Linux необходимо импортировать сертификат с помощью расширенных параметров браузера (в каждом браузере используется свой механизм), а затем указать его расположение на диске.
+Чтобы подключиться к безопасному кластеру в Windows или OS X с помощью браузера, можно импортировать сертификат клиента. Браузер запросит его, чтобы подключиться к кластеру.  Для компьютеров Linux необходимо импортировать сертификат с помощью расширенных параметров браузера (в каждом браузере используется свой механизм), а затем указать его расположение на диске. Дополнительные сведения см. в разделе [Настройка сертификата клиента на удаленном компьютере](#connectsecureclustersetupclientcert).
 
 ### <a name="connect-to-a-secure-cluster-using-azure-active-directory"></a>Подключение к защищенному кластеру с помощью Azure Active Directory
 
@@ -360,24 +366,28 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 После этого автоматически появится запрос на выбор сертификата клиента.
 
 <a id="connectsecureclustersetupclientcert"></a>
+
 ## <a name="set-up-a-client-certificate-on-the-remote-computer"></a>Настройка сертификата клиента на удаленном компьютере
+
 Для обеспечения безопасности кластера следует использовать по крайней мере два сертификата: один для кластера и сервера, а второй для клиентского доступа.  Рекомендуется также использовать дополнительные сертификаты и сертификаты клиентского доступа.  Чтобы защитить обмен данными между клиентом и узлом кластера с помощью сертификатов, сначала необходимо получить и установить сертификат клиента. Его можно установить в личное хранилище на локальном компьютере или в личное хранилище текущего пользователя.  Отпечаток в сертификате сервера также нужен, чтобы клиент мог аутентифицировать кластер.
 
-Выполните следующий командлет PowerShell, чтобы установить сертификат клиента на компьютер, который используется для доступа к кластеру.
+* Действия для ОС Windows. Дважды щелкните PFX-файл и следуйте инструкциям на экране для установки сертификата в личном хранилище `Certificates - Current User\Personal\Certificates`. Кроме того, вы можете использовать команду PowerShell.
 
-```powershell
-Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
-        -FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
-        -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
-```
+    ```powershell
+    Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
+            -FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
+            -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
+    ```
 
-Если это самозаверяющий сертификат, то перед использованием для подключения к безопасному кластеру его необходимо импортировать в хранилище "Доверенные лица" на своем компьютере.
+    Если это самозаверяющий сертификат, то перед использованием для подключения к безопасному кластеру его необходимо импортировать в хранилище "Доверенные лица" на своем компьютере.
 
-```powershell
-Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople `
--FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
--Password (ConvertTo-SecureString -String test -AsPlainText -Force)
-```
+    ```powershell
+    Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople `
+    -FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
+    -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
+    ```
+
+* Для компьютеров Mac. Дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

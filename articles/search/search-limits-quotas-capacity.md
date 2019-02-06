@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 98902c7a27d769b59b20d4560b2cda21bfcff6c6
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 5187052316e229273aa49eb784bf200c0f16a0f7
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310263"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55165393"
 ---
 # <a name="service-limits-in-azure-search"></a>Ограничения поиска Azure
 Максимальные ограничения хранилища, рабочих нагрузок, количества индексов, документов и других объектов зависят от того, для какой ценовой категории вы [подготовили службу поиска Azure](search-create-service-portal.md): **Бесплатный**, **Базовый** или **Стандартный**.
@@ -124,6 +124,10 @@ ms.locfileid: "53310263"
 Оценка QPS должна отдельно проводиться каждым клиентом. Основными определителями QPS являются размер и сложность индексов, размер и сложность запросов, а также объем трафика. Если такие факторы неизвестны, оценка не будет информативной.
 
 Прогнозируемость показателей повышается, если оцениваются службы, работающие в выделенных ресурсах (категорий "Базовый" и "Стандартный"). Можно точнее оценить QPS, так как вы можете контролировать больше параметров. Рекомендации по оценке см. в разделе о [производительности и оптимизации службы "Поиск Azure"](search-performance-optimization.md).
+
+## <a name="data-limits-cognitive-search"></a>Ограничения данных (когнитивный поиск)
+
+Ограничение данных применяется к [конвейеру когнитивного поиска](cognitive-search-concept-intro.md), который обращается к ресурсу Анализа текста для [распознавания сущностей](cognitive-search-skill-entity-recognition.md), [извлечения ключевых фраз](cognitive-search-skill-keyphrases.md), [анализа тональности](cognitive-search-skill-sentiment.md) и [распознавания языка](cognitive-search-skill-language-detection.md). Максимальный размер записи — 50 000 знаков, как определено в `String.Length`. Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="api-request-limits"></a>Ограничения запроса API
 * Максимум 16 МБ на один запрос <sup>1</sup>

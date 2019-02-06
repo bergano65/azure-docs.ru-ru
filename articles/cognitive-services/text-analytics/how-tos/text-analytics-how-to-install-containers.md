@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: text-analytics
+ms.subservice: text-analytics
 ms.topic: article
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: e3b1655207f3baba6ea6e3cf2f00e3540a3602ad
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 07fbf51f584d691b08d94f68fefa8c3f9348227f
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969375"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55294834"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
@@ -40,12 +40,7 @@ ms.locfileid: "53969375"
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
-**Главным** является компьютер, на котором выполняется контейнер Docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
-
-* [Служба Azure Kubernetes (AKS)](../../../aks/index.yml)
-* [Экземпляры контейнеров Azure](../../../container-instances/index.yml);
-* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](../../../azure-stack/index.yml). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](../../../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
-
+[!INCLUDE [Request access to private preview](../../../../includes/cognitive-services-containers-host-computer.md)]
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
@@ -77,6 +72,8 @@ ms.locfileid: "53969375"
 * [Распознавание языка](https://go.microsoft.com/fwlink/?linkid=2018759).
 * [Анализ тональности](https://go.microsoft.com/fwlink/?linkid=2018654).
 
+Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера.
+
 
 ### <a name="docker-pull-for-the-key-phrase-extraction-container"></a>docker pull для контейнера извлечения ключевой фразы
 
@@ -96,13 +93,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language:latest
 docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest
 ```
 
-### <a name="listing-the-containers"></a>Список контейнеров
-
-Используйте команду [docker images](https://docs.docker.com/engine/reference/commandline/images/), чтобы получить список скачанных образов контейнеров. Например, следующая команда возвращает таблицу со списком идентификаторов, репозиториев и тегов для каждого скачанного образа контейнера:
-
-```Docker
-docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
-```
+[!INCLUDE [Tip for using docker list](../../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
 
 ## <a name="how-to-use-the-container"></a>Использование контейнера
@@ -159,14 +150,7 @@ ApiKey={BILLING_KEY}
 
 ## <a name="containers-api-documentation"></a>Документация по API контейнера
 
-Контейнер предоставляет полный набор документации для конечных точек, а также функцию `Try it now`. Эта функция позволяет ввести параметры в веб-форму HTML и создать запрос без необходимости писать код. После возвращения результатов запроса предоставляется пример команды CURL с примером требуемого формата HTTP-заголовков и текста. 
-
-> [!TIP]
-> Прочитайте [спецификацию OpenAPI](https://swagger.io/docs/specification/about/) с описанием операций API, поддерживаемых контейнеров, из относительного URI `/swagger`. Например: 
->
->  ```http
->  http://localhost:5000/swagger
->  ```
+[!INCLUDE [Container's API documentation](../../../../includes/cognitive-services-containers-api-documentation.md)]
 
 ## <a name="billing"></a>Выставление счетов
 

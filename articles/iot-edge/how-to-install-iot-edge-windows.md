@@ -7,15 +7,15 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 12/17/2018
+ms.date: 01/25/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: c280410816bfb48f21c68fe5d57b6ae18af0e855
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 27478de68cde9a097dcc160a4553839aef9a018c
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53970667"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54902811"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "53970667"
 
 Дополнительные сведения о среде выполнения IoT Edge см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье описаны этапы установки среды выполнения Azure IoT Edge на компьютере под управлением 64-разрядной ОС Windows (на базе процессора AMD или Intel). Сейчас поддержка ОС Windows доступна в предварительной версии.
+В этой статье описаны этапы установки среды выполнения Azure IoT Edge на компьютере под управлением 64-разрядной ОС Windows (на базе процессора AMD или Intel). Сейчас поддержка Windows доступна в предварительной версии.
 
 >[!NOTE]
 Использование контейнеров Linux в системах Windows не является рекомендуемым или поддерживаемым производственной конфигурацией для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования.

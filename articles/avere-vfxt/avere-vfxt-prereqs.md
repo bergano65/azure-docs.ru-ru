@@ -4,14 +4,14 @@ description: Необходимые условия для Avere vFXT для Azur
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 01/29/2019
 ms.author: v-erkell
-ms.openlocfilehash: d32c664049b7e7c1231e78c552e7c61d016fbe84
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: 9c3301ba16bfaeb7014658a380e287a36a505be8
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51286764"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299213"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -33,22 +33,20 @@ ms.locfileid: "51286764"
 Кластер vFXT должен создать пользователь с разрешениями владельца подписки. Эти разрешения требуются для выполнения таких действий, как:
 
 * принятие условий для программного обеспечения Avere vFXT;
-* создание роли доступа к узлу кластера;
-* предоставление узлу контроллера кластера разрешений на управление группами ресурсов и виртуальными сетями; 
-* предоставление контроллеру кластера разрешений на создание и изменение узлов кластера. 
+* создание роли доступа к узлу кластера; 
 
 Если вы не хотите предоставить доступ владельца пользователям, которые создают vFXT, есть два обходных решения.
 
 * Владелец группы ресурсов может создать кластер, если выполняются такие условия:
 
-  * Владелец подписки должен [принять условия соглашения программного обеспечения Avere vFXT](#accept-software-terms-in-advance) и [создать роль доступа к узлу кластера](avere-vfxt-deploy.md#create-the-cluster-node-access-role).
+  * Владелец подписки должен [принять условия соглашения программного обеспечения Avere vFXT](#accept-software-terms) и [создать роль доступа к узлу кластера](#create-the-cluster-node-access-role). 
   * Все ресурсы Avere vFXT должны быть развернуты в группе ресурсов, включая:
     * контроллер кластера;
     * Узлы кластера
     * Хранилище BLOB-объектов
     * элементы сети.
  
-* Пользователь без прав владельца может создавать кластеры vFXT, если для него заранее создана и назначена дополнительная роль доступа. Тем не менее эта роль предоставляет ему значимые разрешения. [В этой статье](avere-vfxt-non-owner.md) объясняется, как предоставить пользователям без прав владельца возможность создавать кластеры.
+* Пользователь, у которого нет прав владельца, может создавать кластеры vFXT, заблаговременно используя механизм управления доступом на основе ролей (RBAC), чтобы назначить привилегии пользователю. Таким способом можно предоставить пользователям значимые разрешения. [В этой статье](avere-vfxt-non-owner.md) объясняется, как создать роль доступа, чтобы разрешить пользователям без прав владельца создавать кластеры.
 
 ## <a name="quota-for-the-vfxt-cluster"></a>Квота для кластера vFXT
 
@@ -64,12 +62,12 @@ ms.locfileid: "51286764"
 |Учетная запись хранения (необязательно) |версия 2|
 |Серверное хранилище данных (необязательно) |Один новый контейнер больших двоичных объектов в LRS |
 
-## <a name="accept-software-terms-in-advance"></a>Принятие условий программного обеспечения заранее
+## <a name="accept-software-terms"></a>Принятие условий программного обеспечения
 
 > [!NOTE] 
 > Этот шаг не является обязательным, если владелец подписки создает кластер Avere vFXT.
 
-Перед созданием кластера необходимо принять условия предоставления услуг для программного обеспечения Avere vFXT. Если вы не являетесь владельцем подписки, он должен принять условия заранее. Этот шаг достаточно выполнить один раз для каждой подписки.
+Во время создания кластера необходимо принять условия предоставления услуг для программного обеспечения Avere vFXT. Если вы не являетесь владельцем подписки, он должен принять условия заранее. Этот шаг достаточно выполнить один раз для каждой подписки.
 
 Чтобы принять условия программного обеспечения заранее: 
 
@@ -85,6 +83,74 @@ ms.locfileid: "51286764"
    ```azurecli
    az vm image accept-terms --urn microsoft-avere:vfxt:avere-vfxt-controller:latest
    ```
+
+## <a name="create-access-roles"></a>Создание ролей доступа 
+
+[Управление доступом на основе ролей](../role-based-access-control/index.yml) (RBAC) обеспечивает авторизацию узлов и контроллера кластера vFXT, позволяя им выполнять необходимые задачи.
+
+* Контроллеру кластера необходимо предоставить разрешение на создание и изменение виртуальных машин для создания кластера. 
+
+* Отдельные узлы vFXT должны считывать свойства ресурса Azure, управлять хранилищем, а также параметрами сетевого интерфейса других узлов в рамках обычной работы кластера vFXT.
+
+Перед созданием кластера Avere vFXT необходимо определить настраиваемую роль, которая будет использоваться с узлами кластера. 
+
+Для контроллера кластера можно принять роль по умолчанию из шаблона. Значение по умолчанию предоставляет контроллеру кластера права владельца группы ресурсов. Если вам нужно создать настраиваемую роль для контроллера, ознакомьтесь со статьей [Настраиваемая роль доступа для контроллера](avere-vfxt-controller-role.md).
+
+> [!NOTE] 
+> Возможность создания ролей доступна только для владельца подписки, а также ролей владельца и администратора доступа пользователей. Роли можно создать заблаговременно.  
+
+### <a name="create-the-cluster-node-access-role"></a>создание роли доступа к узлу кластера;
+
+<!-- caution - this header is linked to in the template so don't change it unless you can change that -->
+
+Перед созданием кластера Avere vFXT для Azure необходимо создать роль узла кластера.
+
+> [!TIP] 
+> Внутренние пользователи корпорации Майкрософт должны использовать существующую роль с именем "Оператор среды выполнения кластеров Avere", вместо того чтобы создавать новую. 
+
+1. Скопируйте этот файл. Добавьте идентификатор подписки в строку AssignableScopes.
+
+   (Текущая версия этого файла с именем [AvereOperator.txt](https://github.com/Azure/Avere/blob/master/src/vfxt/src/roles/AvereOperator.txt) хранится в репозитории github.com/Azure/Avere.)  
+
+   ```json
+   {
+      "AssignableScopes": [
+          "/subscriptions/PUT_YOUR_SUBSCRIPTION_ID_HERE"
+      ],
+      "Name": "Avere Operator",
+      "IsCustom": "true",
+      "Description": "Used by the Avere vFXT cluster to manage the cluster",
+      "NotActions": [],
+      "Actions": [
+          "Microsoft.Compute/virtualMachines/read",
+          "Microsoft.Network/networkInterfaces/read",
+          "Microsoft.Network/networkInterfaces/write",
+          "Microsoft.Network/virtualNetworks/subnets/read",
+          "Microsoft.Network/virtualNetworks/subnets/join/action",
+          "Microsoft.Network/networkSecurityGroups/join/action",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/write"
+      ],
+      "DataActions": [
+          "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write"
+      ]
+   }
+   ```
+
+1. Сохраните файл под именем ``avere-operator.json`` или аналогичным запоминающимся именем. 
+
+
+1. Откройте Azure Cloud Shell и выполните вход, используя собственный идентификатор подписки (описано [ранее в этом документе](#accept-software-terms)). Создайте роль с помощью следующей команды:
+
+   ```bash
+   az role definition create --role-definition /avere-operator.json
+   ```
+
+Имя роли используется при создании кластера. В этом примере используется имя ``avere-operator``.
 
 ## <a name="next-step-create-the-vfxt-cluster"></a>Следующий шаг: создание кластера vFXT
 

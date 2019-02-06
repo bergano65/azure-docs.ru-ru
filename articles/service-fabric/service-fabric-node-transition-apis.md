@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/12/2017
 ms.author: lemai
-ms.openlocfilehash: 95c3726caeb19d6bbf7153533951bb18cd7d0e57
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: ff5d4267de172aa83fae6ce70a609ad9897d7374
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44055409"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102691"
 ---
 # <a name="replacing-the-start-node-and-stop-node-apis-with-the-node-transition-api"></a>Замена API-интерфейсов запуска и остановки узла API-интерфейсом перехода узла
 
@@ -42,10 +42,10 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
 
 **Использование**
 
-Если при вызове API перехода узла не возвращается исключение, это означает, что система приняла асинхронную операцию и собирается ее выполнить.  Успешный вызов еще не означает, что операция завершена.  Для получения сведений о текущем состоянии операции вызовите API хода выполнения перехода узла (управляемый: [GetNodeTransitionProgressAsync()][gntp]) с помощью идентификатора GUID, используемого при вызове API перехода узла для этой операции.  API хода выполнения перехода узла возвращает объект NodeTransitionProgress.  Это свойство State объекта указывает текущее состояние операции.  Если свойство имеет значение Running, операция выполняется.  Значение Completed указывает на то, что операция завершена без ошибок.  А значение Faulted — на ошибку, возникшую при выполнении операции.  Свойство Exception в свойстве Result указывает на наличие проблемы.  Дополнительные сведения о свойстве State доступны в статье https://docs.microsoft.com/dotnet/api/system.fabric.testcommandprogressstate. Ознакомьтесь также с примерами кода в разделе "Пример использования" ниже.
+Если при вызове API перехода узла не возвращается исключение, это означает, что система приняла асинхронную операцию и собирается ее выполнить.  Успешный вызов еще не означает, что операция завершена.  Чтобы получить сведения о текущем состоянии операции, вызовите API хода выполнения перехода узла (управляемый: [GetNodeTransitionProgressAsync()][gntp]) с идентификатором guid, используемым при вызове API перехода узла для этой операции.  API хода выполнения перехода узла возвращает объект NodeTransitionProgress.  Это свойство State объекта указывает текущее состояние операции.  Если свойство имеет значение Running, операция выполняется.  Значение Completed указывает на то, что операция завершена без ошибок.  А значение Faulted — на ошибку, возникшую при выполнении операции.  Свойство Exception в свойстве Result указывает на наличие проблемы.  Дополнительные сведения о свойстве State доступны в статье https://docs.microsoft.com/dotnet/api/system.fabric.testcommandprogressstate. Ознакомьтесь также с примерами кода в разделе "Пример использования" ниже.
 
 
-**Определение остановленного и отключенного узла.** Если узел *остановлен* с помощью API перехода узла, в выходных данных запроса узла (управляемый: [GetNodeListAsync()][nodequery], PowerShell: [Get-ServiceFabricNode][nodequeryps]) свойство *IsStopped* этого узла будет иметь значение true.  Обратите внимание, что оно отличается от значения свойства *NodeStatus*, которое равно *Down*.  Если свойство *NodeStatus* имеет значение *Down*, но свойство *IsStopped* имеет значение false, это значит, что узел не был остановлен с помощью API перехода узла, а *отключен* по какой-то другой причине.  Если свойство *IsStopped* имеет значение true, а свойство *NodeStatus* — значение *Down*, это значит, что узел остановлен с помощью API перехода узла.
+**Разделение остановленного и отключенного узла**. Если узел *остановлен* с помощью API перехода узла, в выходных данных запроса узла (управляемый: [GetNodeListAsync()][nodequery], PowerShell: [Get-ServiceFabricNode][nodequeryps]) будут отображаться данные о том, что этот узел содержит true в качестве значения свойства *IsStopped*.  Обратите внимание, что оно отличается от значения свойства *NodeStatus*, которое равно *Down*.  Если свойство *NodeStatus* имеет значение *Down*, но свойство *IsStopped* имеет значение false, это значит, что узел не был остановлен с помощью API перехода узла, а *отключен* по какой-то другой причине.  Если свойство *IsStopped* имеет значение true, а свойство *NodeStatus* — значение *Down*, это значит, что узел остановлен с помощью API перехода узла.
 
 Запуск *остановленного* узла с помощью API перехода узла вернет его к работе в качестве обычного элемента кластера.  В выходных данных API запроса узла для свойства *IsStopped* будет отображаться значение false, а для свойства *NodeStatus* — значение, отличное от Down (например, Up).
 
@@ -159,7 +159,7 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
             }
             while (!wasSuccessful);
 
-            // Now call StartNodeTransitionProgressAsync() until hte desired state is reached.
+            // Now call StartNodeTransitionProgressAsync() until the desired state is reached.
             await WaitForStateAsync(fc, guid, TestCommandProgressState.Completed).ConfigureAwait(false);
         }
 ```
@@ -202,7 +202,7 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
             }
             while (!wasSuccessful);
 
-            // Now call StartNodeTransitionProgressAsync() until hte desired state is reached.
+            // Now call StartNodeTransitionProgressAsync() until the desired state is reached.
             await WaitForStateAsync(fc, guid, TestCommandProgressState.Completed).ConfigureAwait(false);
         }
 ```

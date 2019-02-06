@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 10/05/2018
-ms.openlocfilehash: 1c83ebd0153e7a28365317b02d3debbe43d976f9
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: 49743130966589cceedb7756540c723a6f3276ff
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53601582"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55471673"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Динамическое масштабирование ресурсов базы данных с минимальным временем простоя
 
@@ -54,9 +54,9 @@ ms.locfileid: "53601582"
 
 Все три вида базы данных SQL Azure предлагают определенные возможности динамического масштабирования баз данных.
 
-- В [отдельной базе данных SQL Azure](sql-database-single-database-scale.md) можно воспользоваться моделями на основе [DTU](sql-database-dtu-resource-limits-single-databases.md) или [виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md), чтобы определить максимальное количество ресурсов, которые будут назначены каждой базе данных.
-- [Управляемый экземпляр SQL Azure](sql-database-managed-instance.md) использует режим [виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model) и позволяет определять максимальное число ядер ЦП и максимальный объем хранилища, выделяемый экземпляру. Ресурсы, выделенные экземпляру, будут общими для всех баз данных в этом экземпляре.
-- [Эластичные пулы SQL Azure](sql-database-elastic-pool-scale.md) позволяют определять максимальный предел использования ресурсов для каждой группы баз данных в пуле.
+- Для [отдельной базы данных](sql-database-single-database-scale.md) можно воспользоваться моделями на основе [DTU](sql-database-dtu-resource-limits-single-databases.md) или [виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md), чтобы определить максимальное количество ресурсов, которые будут назначены каждой базе данных.
+- [Управляемый экземпляр](sql-database-managed-instance.md) использует режим [виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model) и позволяет определять максимальное число ядер ЦП и максимальный объем хранилища, выделяемый экземпляру. Ресурсы, выделенные экземпляру, будут общими для всех баз данных в этом экземпляре.
+- [Эластичные пулы](sql-database-elastic-pool-scale.md) позволяют определять максимальный предел использования ресурсов для каждой группы баз данных в пуле.
 
 ## <a name="alternative-scale-methods"></a>Альтернативные методы масштабирования
 

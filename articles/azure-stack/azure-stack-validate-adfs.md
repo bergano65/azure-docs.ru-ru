@@ -12,15 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 01/28/2019
 ms.author: patricka
 ms.reviewer: jerskine
-ms.openlocfilehash: 87e3f03ce5d4c65d5c4b1754300f5d57feca2a49
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.lastreviewed: 01/28/2019
+ms.openlocfilehash: 2200b9a48d7f83d6785c8dbb4a7b02be52fca75a
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416517"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55241072"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack"></a>Проверка интеграции AD FS с Azure Stack
 
@@ -101,8 +102,8 @@ ms.locfileid: "50416517"
 
 Используйте следующую команду:
 
-* **-OutputPath**: параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
-* **-CleanReport**: этот параметр в конце команды позволяет удалить из файла AzsReadinessCheckerReport.json сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
+* **-OutputPath**. Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
+* **-CleanReport**. В конце команды, чтобы удалить из файла AzsReadinessCheckerReport.json сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
@@ -114,9 +115,9 @@ ms.locfileid: "50416517"
 
 `Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
 
-**Причина**: при автозагрузке PowerShell не удалось правильно загрузить модуль проверки готовности.
+**Причина.** При автозагрузке PowerShell не удалось правильно загрузить модуль проверки готовности.
 
-**Решение**: импортируйте модуль проверки готовности явным образом. Скопируйте и вставьте приведенный ниже код в PowerShell и укажите в параметре \<version\> номер текущей установленной версии.
+**Решение**. Импортируйте модуль проверки готовности явным образом. Скопируйте и вставьте приведенный ниже код в PowerShell и укажите в параметре \<version\> номер текущей установленной версии.
 
 `Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force`
 

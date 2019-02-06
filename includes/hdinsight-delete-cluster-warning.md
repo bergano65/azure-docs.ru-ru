@@ -4,15 +4,15 @@ ms.service: hdinsight
 ms.topic: include
 ms.date: 10/25/2018
 ms.author: jasonh
-ms.openlocfilehash: 2428845b1ccf302eb1cfe75c4b6545e574ce6f17
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 6f565391727c2296e7e2081c0157aa62b18fe9da
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165182"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55084819"
 ---
 > [!WARNING]
-> Счета за кластеры HDInsight выставляются пропорционально за минуту независимо от их использования. Обязательно удалите кластер, когда завершите его использование. Дополнительные сведения см. в статье [Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI](../articles/hdinsight/hdinsight-delete-cluster.md).
+> Счета за кластеры HDInsight выставляются пропорционально в минутах, независимо от их использования. Обязательно удалите кластер, когда завершите его использование. Дополнительные сведения см. в статье [Удаление кластера HDInsight с помощью браузера, PowerShell или классического интерфейса Azure CLI](../articles/hdinsight/hdinsight-delete-cluster.md).
 > 
 > 
 

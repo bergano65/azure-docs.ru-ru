@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Zscaler Private Access Administrator.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: c87392a7-e7fe-4cdc-a8e6-afe1ed975172
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 61b469ba5f64a52b87843432dfe60fe1d83ffec2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6eca534f933742e4797ca164637e7d536d194ba3
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428389"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181509"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Private Access Administrator
 
 В этом руководстве описано, как интегрировать Zscaler Private Access Administrator с Azure Active Directory (Azure AD).
 
@@ -158,7 +158,7 @@ ms.locfileid: "39428389"
     д. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -267,7 +267,7 @@ ms.locfileid: "39428389"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Zscaler Private Access Administrator" на панели доступа, вы автоматически войдете в приложение Zscaler Private Access Administrator.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

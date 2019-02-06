@@ -2,19 +2,19 @@
 title: Отправка образа Docker в частный реестр контейнеров Azure
 description: Отправка образов Docker в частный реестр контейнеров в Azure и их получение с помощью интерфейса командной строки Docker
 services: container-registry
-author: stevelas
+author: dlepow
 manager: jeconnoc
 ms.service: container-registry
 ms.topic: article
-ms.date: 11/29/2017
-ms.author: stevelas
+ms.date: 01/23/2019
+ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: 3cbc9f30f180913fefa79f24612e50db75f5c9cd
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: e4963ebae73bdd81246433fe43206139caa1661c
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53260588"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55295786"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
@@ -25,7 +25,7 @@ ms.locfileid: "53260588"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Интерфейс командной строки Docker**. Установите [Docker](https://docs.docker.com/engine/installation/), чтобы настроить локальный компьютер в качестве узла Docker и получить доступ к командам Docker CLI.
+* **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 
@@ -35,13 +35,13 @@ ms.locfileid: "53260588"
 az acr login --name myregistry
 ```
 
-Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, [назначение субъекта-службы](container-registry-authentication.md#service-principal) для реестра позволяет автоматизировать некоторые сценарии.
+Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Например, [назначение субъекта-службы](container-registry-authentication.md#service-principal) для реестра позволяет автоматизировать некоторые сценарии. При запуске следующей команды, когда появляется запрос в интерактивном режиме, укажите идентификатор приложения (имя пользователя) и пароль субъекта-службы. Рекомендации по управлению учетными данными см. в справочнике по команде [docker login](https://docs.docker.com/engine/reference/commandline/login/).
 
-```Bash
-docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
+```Docker
+docker login myregistry.azurecr.io
 ```
 
-По завершению обе команды возвращают `Login Succeeded`. Если вы используете `docker login`, также может появиться предупреждение системы безопасности, рекомендующее использовать параметр `--password-stdin`. Хотя его использование выходит за рамки данной статьи, мы рекомендуем следовать данной рекомендации. Чтобы получить дополнительные сведения, ознакомьтесь с описанием команды [docker login](https://docs.docker.com/engine/reference/commandline/login/).
+По завершению обе команды возвращают `Login Succeeded`.
 
 > [!TIP]
 > Всегда указывайте полное имя реестра (все знаки в нижнем реестре), когда используете `docker login` и когда отмечаете изображения тегами для отправки в свой реестр. В примерах этой статьи полное доменное имя выглядит так: *myregistry.azurecr.io*.
@@ -50,7 +50,7 @@ docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p my
 
 Сначала общедоступный образ Nginx нужно отправить на локальный компьютер.
 
-```Bash
+```Docker
 docker pull nginx
 ```
 
@@ -58,7 +58,7 @@ docker pull nginx
 
 Выполните указанную ниже команду [docker run](https://docs.docker.com/engine/reference/run/), чтобы запустить локальный экземпляр контейнера Nginx в интерактивном режиме (`-it`) на порте 8080. Аргумент `--rm` указывает, что контейнер следует удалить, когда вы его остановите.
 
-```Bash
+```Docker
 docker run -it --rm -p 8080:80 nginx
 ```
 
@@ -74,7 +74,7 @@ docker run -it --rm -p 8080:80 nginx
 
 Выполните команду [docker tag](https://docs.docker.com/engine/reference/commandline/tag/), чтобы создать псевдоним образа с полным путем к вашему реестру. Чтобы избежать беспорядка в корне реестра, эта команда указывает пространство имен `samples`.
 
-```Bash
+```Docker
 docker tag nginx myregistry.azurecr.io/samples/nginx
 ```
 
@@ -84,7 +84,7 @@ docker tag nginx myregistry.azurecr.io/samples/nginx
 
 Теперь, когда вы отметили образ с абсолютным путем к частному реестру тегами, его можно отправить в реестр, выполнив команду [docker push](https://docs.docker.com/engine/reference/commandline/push/).
 
-```Bash
+```Docker
 docker push myregistry.azurecr.io/samples/nginx
 ```
 
@@ -92,7 +92,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 Выполните команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы извлечь образ из реестра:
 
-```Bash
+```Docker
 docker pull myregistry.azurecr.io/samples/nginx
 ```
 
@@ -100,7 +100,7 @@ docker pull myregistry.azurecr.io/samples/nginx
 
 Выполните команду [docker run](https://docs.docker.com/engine/reference/run/), чтобы запустить образ, извлеченный из реестра:
 
-```Bash
+```Docker
 docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 ```
 
@@ -112,7 +112,7 @@ docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 
 Если вам больше не нужен образ Nginx, можно удалить его локально, выполнив команду [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/).
 
-```Bash
+```Docker
 docker rmi myregistry.azurecr.io/samples/nginx
 ```
 
@@ -124,7 +124,7 @@ az acr repository delete --name myregistry --repository samples/nginx --tag late
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы знаете основы, можно приступать к использованию реестра. Разверните образы контейнера из реестра в следующие службы:
+Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 
 * [Служба Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md)
 * [Экземпляры контейнеров Azure](../container-instances/container-instances-tutorial-prepare-app.md);

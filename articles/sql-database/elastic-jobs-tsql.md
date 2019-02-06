@@ -11,13 +11,13 @@ ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
-ms.date: 06/14/2018
-ms.openlocfilehash: e00722259abaa02d3dce6ca26c8cd0ea7c42db29
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.date: 01/25/2019
+ms.openlocfilehash: bb7908c5ed72bf58f1bd8920983d76cb674286a3
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449407"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55458097"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -75,9 +75,9 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name='ServerGroup1';
 ```
 
 
-## <a name="exclude-a-single-database"></a>Исключение отдельной базы данных
+## <a name="exclude-an-individual-database"></a>Исключение отдельной базы данных
 
-В приведенном ниже примере показано, как выполнить задание со всеми базами данных на сервере, кроме базы данных *MappingDB*.  
+В приведенном ниже примере показано, как выполнить задание со всеми базами данных на сервере Базы данных SQL, кроме *MappingDB*.  
 Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
@@ -103,7 +103,7 @@ EXEC [jobs].sp_add_target_group_member
 @server_name='server2.database.windows.net'
 GO
 
---Excude a database target member from the server target group
+--Exclude a database target member from the server target group
 EXEC [jobs].sp_add_target_group_member
 @target_group_name = N'ServerGroup',
 @membership_type = N'Exclude',
@@ -1032,10 +1032,10 @@ sp_add_job необходимо выполнять из базы данных а
 Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле, все базы данных в сопоставлении сегментов или отдельную базу данных. Типом target_type является nvarchar(128), значение по умолчанию отсутствует. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase, SqlShardMap. 
 
 [ **@refresh_credential_name =** ] 'refresh_credential_name'  
-Имя логического сервера. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя сервера Базы данных SQL. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **@server_name =** ] 'server_name'  
-Имя логического сервера, добавляемого в указанную целевую группу. Значение server_name следует указывать, если значением target_type является SqlServer. Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя сервера Базы данных SQL, которое следует добавить в указанную целевую группу. Значение server_name следует указывать, если значением target_type является SqlServer. Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **@database_name =** ] 'database_name'  
 Имя базы данных, добавляемой в указанную целевую группу. Значение database_name следует указывать, если значением target_type является SqlDatabase. Типом database_name является nvarchar(128), значение по умолчанию отсутствует.
@@ -1051,7 +1051,7 @@ sp_add_job необходимо выполнять из базы данных а
 Значения кода возврата: 0 (успех) или 1 (сбой).
 
 #### <a name="remarks"></a>Примечания
-Если логический сервер или эластичный пул добавлен в целевую группу, то задание выполняется для всех баз данных на этом сервере или в этом эластичном пуле.
+Если сервер Базы данных SQL или эластичный пул добавлен в целевую группу, то задание выполняется для всех баз данных на этом сервере Базы данных SQL или в этом эластичном пуле.
 
 #### <a name="permissions"></a>Разрешения
 По умолчанию участники фиксированной роли сервера sysadmin могут выполнять эту хранимую процедуру. Чтобы ограничить возможности пользователя исключительно отслеживанием заданий, его можно добавить в приведенную ниже роль базы данных агента заданий, указанной при создании этого агента.
@@ -1229,7 +1229,7 @@ GO
 |**target_type**|   nvarchar(128)   |Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле или отдельную базу данных. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase. Значение NULL означает, что выполняется родительское задание.
 |**target_id**  |uniqueidentifier|  Уникальный идентификатор элемента целевой группы.  Значение NULL означает, что выполняется родительское задание.
 |**target_group_name**  |nvarchar(128)  |Имя целевой группы. Значение NULL означает, что выполняется родительское задание.
-|**target_server_name**|    nvarchar(256)|  Имя логического сервера в целевой группе. Указывается, только если значением target_type является SqlServer. Значение NULL означает, что выполняется родительское задание.
+|**target_server_name**|    nvarchar(256)|  Имя сервера Базы данных SQL в целевой группе. Указывается, только если значением target_type является SqlServer. Значение NULL означает, что выполняется родительское задание.
 |**target_database_name**   |nvarchar(128)| Имя базы данных в целевой группе. Указывается, только если значением target_type является SqlDatabase. Значение NULL означает, что выполняется родительское задание.
 
 
@@ -1253,7 +1253,7 @@ GO
 
 ### <a name="jobversions-view"></a>Представление job_versions
 
-[jobs].[job_verions]
+[jobs].[job_versions]
 
 Отображает все версии задания.
 
@@ -1332,7 +1332,7 @@ GO
 |**refresh_credential_name**    |nvarchar(128)  |Имя учетных данных базы данных, используемых для подключения к элементу целевой группы.|
 |**subscription_id**    |uniqueidentifier|  Уникальный идентификатор подписки.|
 |**resource_group_name**    |nvarchar(128)| Имя группы ресурсов, в которой находится элемент целевой группы.|
-|**server_name**    |nvarchar(128)  |Имя логического сервера в целевой группе. Указывается, только если значением target_type является SqlServer. |
+|**server_name**    |nvarchar(128)  |Имя сервера Базы данных SQL в целевой группе. Указывается, только если значением target_type является SqlServer. |
 |**database_name**  |nvarchar(128)  |Имя базы данных в целевой группе. Указывается, только если значением target_type является SqlDatabase.|
 |**elastic_pool_name**  |nvarchar(128)| Имя эластичного пула в целевой группе. Указывается, только если значением target_type является SqlElasticPool.|
 |**shard_map_name** |nvarchar(128)| Имя сопоставления сегментов в целевой группе. Указывается, только если значением target_type является SqlShardMap.|

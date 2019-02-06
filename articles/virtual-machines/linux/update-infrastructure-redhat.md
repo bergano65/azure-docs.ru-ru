@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 1/7/2019
 ms.author: borisb
-ms.openlocfilehash: 61d2c82f875c4f40e370515fd249e23601e91678
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 7ab8b66d516368bf866aa9d2a202ccd261394b93
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232062"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55243153"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -51,12 +51,12 @@ ms.locfileid: "54232062"
 
 1. Отключите репозитории без поддержки EUS:
     ```bash
-    sudo yum --disablerepo=* remove rhui-azure-rhel7
+    sudo yum --disablerepo='*' remove 'rhui-azure-rhel7'
     ```
 
 1. Добавьте репозитории EUS:
     ```bash
-    yum --config=https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7-eus.config install rhui-azure-rhel7-eus
+    yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7-eus.config' install 'rhui-azure-rhel7-eus'
     ```
 
 1. Заблокируйте переменную releasever:
@@ -103,15 +103,10 @@ ms.locfileid: "54232062"
 
 ### <a name="update-expired-rhui-client-certificate-on-a-vm"></a>Обновление сертификата клиента RHUI с истекшим сроком действия на виртуальной машине
 
-Если вы используете одну из предыдущих версий образа виртуальной машины RHEL, например RHEL 7.4 (URN образа: `RedHat:RHEL:7.4:7.4.2018010506`), будут возникать проблемы с подключением к инфраструктуре RHUI из-за просроченного (с 21 ноября 2018 года) SSL-сертификата клиента. Чтобы решить эту проблему, обновите пакет клиента RHUI на виртуальной машине, используя следующую команду.
+Если вы используете одну из предыдущих версий образа виртуальной машины RHEL, например RHEL 7.4 (URN образа: `RedHat:RHEL:7.4:7.4.2018010506`), будут возникать проблемы с подключением к инфраструктуре RHUI из-за просроченного SSL-сертификата клиента. Ошибка, которую вы увидите, может иметь вид _"Кэширующий узел SSL отклонил сертификат, срок действия которого истек"_. Чтобы решить эту проблему, обновите пакет клиента RHUI на виртуальной машине, используя следующую команду.
 
 ```bash
-sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-azure-rhel7
-```
-
-Если виртуальная машина RHEL размещена в облаке US Government, используйте следующую команду.
-```bash
-sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-usgov-rhel7
+sudo yum update -y --disablerepo='*' --enablerepo='*-microsoft-*'
 ```
 
 Кроме того, с помощью команды `sudo yum update` также можно обновить пакет сертификата клиента, несмотря на ошибки "Срок действия SSL-сертификата истек", которые будут отображаться для других репозиториев. После обновления нормальное подключение к другим репозиториям RHUI должно быть восстановлено, как и возможность успешного запуска команды `sudo yum update`.

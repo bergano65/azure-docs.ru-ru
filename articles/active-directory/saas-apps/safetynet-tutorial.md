@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SafetyNet | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SafetyNet | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SafetyNet.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: caa96ea2-da21-4529-8fab-0e06367beb40
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 7756e943d25a02b3ec3e5a9150bb5eec8485eda7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 4fb21f96c682775b4f7360abcdac7b64c78f76d9
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421538"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158287"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-safetynet"></a>Руководство: интеграция Azure Active Directory с SafetyNet
+# <a name="tutorial-azure-active-directory-integration-with-safetynet"></a>Руководство. Интеграция Azure Active Directory с SafetyNet
 
 В этом руководстве описано, как интегрировать SafetyNet с Azure Active Directory (Azure AD).
 
@@ -121,7 +121,7 @@ ms.locfileid: "39421538"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов SafetyNet](mailto:dev@predictivesolutions.com).
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
 
     ![Ссылка для скачивания сертификата](./media/safetynet-tutorial/tutorial_safetynet_certificate.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "39421538"
  
 ### <a name="create-a-safetynet-test-user"></a>Создание тестового пользователя SafetyNet
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении SafetyNet. Обратитесь в [службу поддержки SafetyNet](mailto:dev@predictivesolutions.com), чтобы добавить пользователей на платформу SafetyNet. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении SafetyNet. Обратитесь к  [группе поддержки SafetyNet](mailto:dev@predictivesolutions.com), чтобы добавить пользователей на платформу SafetyNet. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -202,7 +202,7 @@ ms.locfileid: "39421538"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SafetyNet на панели доступа, вы автоматически войдете в приложение SafetyNet.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

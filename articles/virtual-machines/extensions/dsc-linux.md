@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 70280676453bd146102ca331daae038b947aab58
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: ade066c08829181bc7d1ad5623934b98909e0310
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45632863"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54888997"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
@@ -424,8 +424,8 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 /var/log/azure/<extension-name>/<version>/extension.log file.
 ```
 
-Код ошибки 51 указывает на неподдерживаемый дистрибутив или неподдерживаемое действие расширения.
-Иногда расширению DSC Linux не удается установить OMI, если на компьютере уже есть более новая версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию не разрешен)
+Код ошибки: 51 указывает на неподдерживаемый дистрибутив или неподдерживаемое действие расширения.
+Иногда расширению DSC Linux не удается установить OMI, если на компьютере уже есть более новая версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию запрещен)
 
 
 

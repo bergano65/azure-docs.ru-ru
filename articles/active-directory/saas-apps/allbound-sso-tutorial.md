@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Allbound SSO | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Allbound SSO | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Allbound SSO.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 15011ddf-941f-4da2-b993-40ad94a08e42
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 3446ccae631efb763d9a216aac313abf9e1af72f
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: e0658841e121dc8ea5bd4c704d99fd6bac98a32f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52166846"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55171394"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство по интеграции Azure Active Directory с Allbound SSO
+# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство. Интеграция Azure Active Directory с Allbound SSO
 
 В этом руководстве описано, как интегрировать Allbound SSO с Azure Active Directory (Azure AD).
 
@@ -56,7 +56,7 @@ ms.locfileid: "52166846"
 1. добавление Allbound SSO из коллекции;
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-allbound-sso-from-the-gallery"></a>Добавление Allbound SSO из коллекции
+## <a name="adding-allbound-sso-from-the-gallery"></a>добавление Allbound SSO из коллекции;
 
 Чтобы настроить интеграцию Allbound SSO с Azure AD, необходимо добавить Allbound SSO из коллекции в список управляемых приложений SaaS.
 

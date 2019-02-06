@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Ziflow | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Ziflow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Ziflow.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 84e60fa4-36fb-49c4-a642-95538c78f926
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 460a52f240f6b3723f93e81a11a8cd1ccc6c30c9
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: ca687f15187d4dd485d2c59e3c46fa3158802ff4
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626699"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55180008"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
 
@@ -251,7 +251,7 @@ ms.locfileid: "39626699"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Ziflow на панели доступа, вы автоматически войдете в приложение Ziflow.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

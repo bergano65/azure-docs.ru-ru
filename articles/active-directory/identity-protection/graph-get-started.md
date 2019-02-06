@@ -8,40 +8,44 @@ author: MarkusVi
 manager: daveba
 ms.assetid: fa109ba7-a914-437b-821d-2bd98e681386
 ms.service: active-directory
-ms.component: conditional-access
+ms.subservice: identity-protection
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/26/2018
+ms.date: 01/25/2019
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: d1703df524976bac4880975585e9d2e4f8af72fd
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: b82458de95014d22625a9c8029e064ed21120488
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54475277"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158304"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
-Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. В статье описывается, как выполнять запросы к этому API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://developer.microsoft.com/graph/).
 
+Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Существует три API, которые предоставляют информацию о пользователях и входах в систему, связанных с рискованными действиями. Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. Эта статья знакомит вас с [подключением к Microsoft Graph](#Connect-to-Microsoft-Graph) и [запросами к этим API-интерфейсам](#Query-the-APIs). Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/) или по следующим ссылкам на документацию по API-интерфейсам:
+
+* [API identityRiskEvents](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/identityriskevent)
+* [API riskyUsers](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/riskyuser)
+* [API signIn](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/signin)
+
+
+## <a name="connect-to-microsoft-graph"></a>Подключение к Microsoft Graph
 
 Получить доступ к данным защиты идентификации с помощью Microsoft Graph можно в четыре этапа:
 
 1. Получение имени домена.
 2. Создание регистрации приложения. 
-2. Использование этого секрета и других данных для прохождения проверки подлинности в Microsoft Graph и получения маркера проверки подлинности. 
-3. Использование полученного маркера для отправки запросов к конечной точке API и получения данных защиты идентификации.
+3. Использование этого секрета и других данных для прохождения проверки подлинности в Microsoft Graph и получения маркера проверки подлинности. 
+4. Использование полученного маркера для отправки запросов к конечной точке API и получения данных защиты идентификации.
 
 Перед началом работы вам потребуются:
 
-- клиент Azure AD P2;
-
-- права администратора для создания приложения в Azure AD;
-
-- имя домена клиента (например, contoso.onmicrosoft.com).
+* права администратора для создания приложения в Azure AD;
+* имя домена клиента (например, contoso.onmicrosoft.com).
 
 
 ## <a name="retrieve-your-domain-name"></a>Получение имени домена 
@@ -52,14 +56,12 @@ Microsoft Graph — это конечная точка Unified API (Майкро
    
     ![Создание приложения](./media/graph-get-started/41.png)
 
-3. Щелкните **Имена пользовательских доменов**.
 
-    ![Имена пользовательских доменов](./media/graph-get-started/71.png)
+3. В разделе **Управление** щелкните **Свойства**.
 
-4. В списке доменных имен скопируйте имя домена, который помечен как основной.
+    ![Создание приложения](./media/graph-get-started/42.png)
 
-    ![Имена пользовательских доменов](./media/graph-get-started/72.png)
-
+4. Скопируйте имя домена.
 
 
 ## <a name="create-a-new-app-registration"></a>Создание регистрации приложения
@@ -79,7 +81,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Имя** введите имя приложения (например, приложение API события риска AADIP).
    
-    b. В поле **Тип приложения** выберите **Веб-приложение и/или веб-API**.
+    b. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
    
     c. В текстовом поле **URL-адрес входа** введите `http://localhost`.
 
@@ -161,9 +163,9 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 Чтобы выполнить проверку подлинности, отправьте запрос POST по адресу `https://login.microsoft.com` со следующими параметрами в тексте:
 
-- grant_type: "**client_credentials**"
+- grant_type: “**client_credentials**”
 
--  resource: "**https://graph.microsoft.com**"
+-  resource: “**https://graph.microsoft.com**”
 
 - client_id: \<ваш идентификатор клиента\>;
 
@@ -173,7 +175,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 В случае успешного выполнения этот метод возвращает маркер проверки подлинности.  
 Для вызова API создайте заголовок со следующим параметром:
 
-    `Authorization`="<token_type> <access_token>"
+    `Authorization`=”<token_type> <access_token>"
 
 
 При проверке подлинности тип маркера и маркер доступа можно найти в возвращаемом маркере.
@@ -213,13 +215,44 @@ Microsoft Graph — это конечная точка Unified API (Майкро
         Write-Host "ERROR: No Access Token"
     } 
 
+## <a name="query-the-apis"></a>Запросы к API-интерфейсам
 
-## <a name="next-steps"></a>Дополнительная информация
+Эти три API-интерфейса предоставляют множество возможностей для получения информации о пользователях и входах в вашу организацию, связанных с рискованными действиями. Ниже приведены некоторые варианты использования этих API и связанные примеры запросов. Вы можете выполнить эти запросы, используя приведенный выше пример кода или [песочницу Graph](https://developer.microsoft.com/en-us/graph/graph-explorer).
+
+### <a name="get-the-high-risk-and-medium-risk-events-identityriskevents-api"></a>Получение списка событий риска высокого и среднего уровня (API identityRiskEvents)
+
+События со средним и высоким уровнем риска представляют собой события, которые могут активировать политики защиты идентификации (риска входа в систему или пользователя). Исправление этих событий должно быть приоритетным, так как они имеют среднюю или высокую вероятность того, что пользователь, пытающийся войти в систему, не является законным владельцем удостоверения. 
+
+```
+GET https://graph.microsoft.com/beta/identityRiskEvents?`$filter=riskLevel eq 'high' or riskLevel eq 'medium'" 
+```
+
+### <a name="get-all-of-the-users-who-successfully-passed-an-mfa-challenge-triggered-by-risky-sign-ins-policy-riskyusers-api"></a>Получение списка всех пользователей, успешно прошедших многофакторную проверку подлинности, активированную политикой рискованных входов (API riskyUsers)
+
+Чтобы понять влияние основанных на рисках политик Защиты идентификации на вашу организацию, вы можете запросить всех пользователей, успешно прошедших многофакторную проверку подлинности, активированную политикой рискованных входов. Эта информация поможет понять, каких пользователей Защита идентификации может ошибочно определить как рискованных, а также какие из ваших уполномоченных пользователей могут выполнять действия, которые искусственный интеллект считает рискованными.
+
+```
+GET https://graph.microsoft.com/beta/riskyUsers?$filter=riskDetail eq 'userPassedMFADrivenByRiskBasedPolicy'
+```
+
+### <a name="get-all-the-risky-sign-ins-for-a-specific-user-signin-api"></a>Получение списка всех рискованных входов конкретного пользователя (API signIn)
+
+Если вы полагаете, что пользователь может быть скомпрометирован, можно понять состояние риска, получив список всех рискованных входов в систему, выполненных этим пользователем. 
+```
+https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>' and riskState eq 'atRisk'
+```
+
+
+
+
+# <a name="next-steps"></a>Дополнительная информация
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.
 
-Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://developer.microsoft.com/graph/docs), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/graph/). Кроме того, сохраните в закладки страницу, посвященную [API защиты идентификации Azure AD](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root). Она содержит список всех доступных в Graph интерфейсов API защиты идентификации. Мы будем добавлять на эту страницу новые способы работы с защитой идентификации через API, поэтому следите за новостями.
+
+Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/en-us/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/en-us/graph). 
+
 
 Связанные сведения:
 
@@ -232,4 +265,3 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 - [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://developer.microsoft.com/graph/docs)
 
 - [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root)
-

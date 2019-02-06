@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 82ccbe8e57ff35904b7e763e838a81660ab13f88
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: db11ddc275b1e47b728cdc0f9b7d9bf6b6aa9652
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412824"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55189533"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect выполняет следующие функции: включение обратной записи устройств
 > [!NOTE]
@@ -89,7 +89,7 @@ ms.locfileid: "54412824"
 
 Начнем сначала:
 
-* Убедитесь, что по крайней мере в одном лесу есть 2012R2 Windows Server. Тип объекта устройства должен быть указан.
+* Лес, где присутствуют устройства, должен иметь схему леса, обновленную до уровня Windows 2012 R2, чтобы присутствовали объект устройства и связанные с ним атрибуты.
 * Если мастер установки уже запущен, то изменения не будут обнаружены. В этом случае завершите работу мастера установки и запустите его снова.
 * Убедитесь, что учетная запись, указанная в сценарии инициализации, соответствует пользователю, используемому соединителем Active Directory. Чтобы это проверить, выполните следующие действия.
   * В меню "Пуск" щелкните **Служба синхронизации**.

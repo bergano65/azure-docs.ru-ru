@@ -1,6 +1,6 @@
 ---
-заголовок: Надстройка Excel для веб-службы titleSuffix: Студия машинного обучения Azure description: Использование веб-служб машинного обучения Azure непосредственно из Excel без написания кода.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Надстройка Excel для веб-службы titleSuffix: Студия машинного обучения Azure description: Использование веб-служб машинного обучения Azure непосредственно из Excel без написания кода.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 01.02.2018
 ---

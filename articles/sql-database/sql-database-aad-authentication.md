@@ -11,13 +11,13 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 12/03/2018
-ms.openlocfilehash: ff9011dda4a94f323b430a3860eadc8d970a23f7
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 01/18/2019
+ms.openlocfilehash: 0bb7c047f6bd03a45aa6c5c6d07b8022ee59bec9
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838622"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55217192"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -35,8 +35,9 @@ ms.locfileid: "52838622"
 - возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов проверки подлинности, поддерживаемых Azure Active Directory;
 - При проверке подлинности Azure AD используются данные пользователей автономной базы данных для проверки подлинности удостоверений на уровне базы данных.
 - Azure AD поддерживает проверку подлинности на основе маркеров для приложений, подключающихся к базе данных SQL.
-- Azure AD поддерживает проверку подлинности с использованием AD FS (федерация доменов) или собственную проверку подлинности с помощью имени пользователя и пароля для локального каталога Azure Active Directory без синхронизации домена.  
-- Azure AD поддерживает подключения из SQL Server Management Studio, использующие универсальную проверку подлинности Active Directory, в том числе Многофакторную идентификацию (MFA).  MFA обеспечивает надежную аутентификацию с использованием ряда простых вариантов проверки посредством телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Дополнительные сведения см. в разделе [Поддержка SSMS в Azure AD MFA для базы данных SQL и хранилища данных SQL](sql-database-ssms-mfa-authentication.md).  
+- Azure AD поддерживает проверку подлинности с использованием AD FS (федерация доменов) или собственную проверку подлинности с помощью имени пользователя и пароля для локального каталога Azure Active Directory без синхронизации домена.
+- Azure AD поддерживает подключения из SQL Server Management Studio, использующие универсальную проверку подлинности Active Directory, в том числе Многофакторную идентификацию (MFA).  MFA обеспечивает надежную аутентификацию с использованием ряда простых вариантов проверки посредством телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Дополнительные сведения см. в разделе [Поддержка SSMS в Azure AD MFA для базы данных SQL и хранилища данных SQL](sql-database-ssms-mfa-authentication.md).
+- Azure AD поддерживает аналогичные подключения из SQL Server Data Tools (SSDT), использующие интерактивную аутентификацию Active Directory. Дополнительные сведения см. в статье [Поддержка Azure Active Directory в SQL Server Data Tools (SSDT)](/sql/ssdt/azure-active-directory).
 
 > [!NOTE]  
 > Подключение к SQL Server на виртуальной машине Azure с использованием учетной записи Azure Active Directory не поддерживается. Вместо этого используйте учетную запись домена Active Directory.  
@@ -77,22 +78,40 @@ ms.locfileid: "52838622"
 
 ## <a name="azure-ad-features-and-limitations"></a>Функции и ограничения Azure AD
 
-На сервере Azure SQL Server или в хранилище данных SQL можно выполнить подготовку для следующих членов Azure AD.
+- На сервере Azure SQL Server или в хранилище данных SQL можно выполнить подготовку для следующих членов Azure AD.
 
-- Собственные члены. Члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
-- Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
-- Импортированные члены из других каталогов Azure AD, являющиеся собственными или федеративными членами домена.
-- Группы Active Directory, созданные как группы безопасности.
+  - Собственные члены. Члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
+  - Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+  - Импортированные члены из других каталогов Azure AD, являющиеся собственными или федеративными членами домена.
+  - Группы Active Directory, созданные как группы безопасности.
 
-Имена для входа и пользователи Azure AD поддерживаются в [Управляемых экземплярах](sql-database-managed-instance.md) в качестве предварительной версии функции.
+- Пользователи Azure AD, которые входят в группу с ролью сервера `db_owner`, не могут использовать синтаксис **[CREATE DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql)** для Базы данных SQL Azure и Хранилища данных SQL Azure. Отобразится следующая ошибка:
 
-Эти системные функции возвращают значения NULL при выполнении с помощью субъектов Azure AD:
+    `SQL Error [2760] [S0001]: The specified schema name 'user@mydomain.com' either does not exist or you do not have permission to use it.`
 
-- `SUSER_ID()`
-- `SUSER_NAME(<admin ID>)`
-- `SUSER_SNAME(<admin SID>)`
-- `SUSER_ID(<admin name>)`
-- `SUSER_SID(<admin name>)`
+    Предоставляйте роль `db_owner` напрямую отдельным пользователям Azure AD во избежание проблем с синтаксисом **CREATE DATABASE SCOPED CREDENTIAL**.
+
+- Эти системные функции возвращают значения NULL при выполнении с помощью субъектов Azure AD:
+
+  - `SUSER_ID()`
+  - `SUSER_NAME(<admin ID>)`
+  - `SUSER_SNAME(<admin SID>)`
+  - `SUSER_ID(<admin name>)`
+  - `SUSER_SID(<admin name>)`
+
+### <a name="manage-instances"></a>Управление экземплярами
+
+- Имена для входа и пользователи Azure AD поддерживаются в [Управляемых экземплярах](sql-database-managed-instance.md) в качестве предварительной версии функции.
+- Настройка имен для входа Azure AD, сопоставленных с группой Azure AD в качестве владельца базы данных, не поддерживается в [Управляемых экземплярах](sql-database-managed-instance.md).
+    - Кроме этого, при добавлении группы как части роли сервера `dbcreator` пользователи этой группы могут подключаться к Управляемому экземпляру и создавать базы данных, но не могут получить доступ к базе данных. Это происходит, так как новый владелец базы данных является системным администратором, а не пользователем Azure AD. Эта проблема не проявляется при добавлении роли сервера `dbcreator` для отдельного пользователя.
+- Имена для входа Azure AD поддерживают выполнение заданий и управление агентом SQL.
+- Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью имен для входа Azure AD.
+- Поддерживается аудит всех инструкций, связанных с именами для входа Azure AD и событиями аутентификации.
+- Поддерживается выделенное административное соединение для имен для входа Azure AD, которые являются участниками роли сервера системного администратора.
+    - Поддерживается с помощью служебной программы SQLCMD и SQL Server Management Studio.
+- Триггеры входа поддерживаются для событий входа, поступающих от имен для входа Azure AD.
+- С использованием имени для входа Azure AD можно настроить компоненты Service Broker и Database Mail.
+
 
 ## <a name="connecting-using-azure-ad-identities"></a>Подключение с использованием удостоверений Azure AD
 
@@ -102,15 +121,23 @@ ms.locfileid: "52838622"
 - Использование имени субъекта-пользователя и пароля Azure AD
 - Использование маркера проверки подлинности приложения
 
+Для имен входа Azure AD поддерживаются следующие методы проверки подлинности (**общедоступная предварительная версия**).
+
+- Пароль Azure Active Directory.
+- Встроенная служба Azure Active Directory.
+- Универсальная служба Azure Active Directory с поддержкой MFA.
+- Интерактивная служба Azure Active Directory.
+
+
 ### <a name="additional-considerations"></a>Дополнительные замечания
 
 - Для повышения управляемости рекомендуем подготовить специальную группу Azure AD от имени администратора.   
-- Одновременно можно настроить только одного администратора Azure AD (пользователя или группу) для сервера Базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL Azure.
+- За один раз можно настроить только одну учетную запись администратора Azure AD (пользователя или группу) для сервера Базы данных SQL Azure или Хранилища данных SQL Azure.
+  - Добавление имен входа Azure AD для Управляемых экземпляров (**общедоступной предварительной версии**) позволяет создавать несколько имен входа Azure AD, которые можно добавить для роли `sysadmin`.
 - Изначально только администратор Azure AD для SQL Server может подключаться к серверу Базы данных SQL Azure, управляемому экземпляру или хранилищу данных SQL Azure, используя учетную запись Azure Active Directory. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.   
 - Мы рекомендуем установить время ожидания подключения в 30 секунд.   
 - Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server**, требуется версия .NET Framework не ниже 4.6.) Поэтому для последних версий этих инструментов и приложений уровня данных (DAC и BACPAC-файлов) можно применять аутентификацию Azure AD.   
-- [ODBC версии 13.1](https://www.microsoft.com/download/details.aspx?id=53339) поддерживает проверку подлинности Azure Active Directory, однако `bcp.exe` не может подключаться с использованием проверки подлинности Azure Active Directory, так как использует устаревший поставщик ODBC.   
-- `sqlcmd` поддерживает аутентификацию Azure Active Directory, начиная с версии 13.1, доступной в [Центре загрузки](https://go.microsoft.com/fwlink/?LinkID=825643).
+- Начиная с версии 15.0.1, служебные программы[SQLCMD](/sql/tools/sqlcmd-utility) и [BCP](/sql/tools/bcp-utility) поддерживают интерактивную аутентификацию Active Directory с возможностью MFA.
 - Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](https://msdn.microsoft.com/library/ms187328.aspx).   
 - [Драйвер Microsoft JDBC 6.0 для SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) поддерживает проверку подлинности Azure AD. Вы можете также ознакомиться с [настройкой свойств подключения](https://msdn.microsoft.com/library/ms378988.aspx).   
 - PolyBase не поддерживает проверку подлинности Azure AD.   
@@ -120,10 +147,12 @@ ms.locfileid: "52838622"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о создании и заполнении каталога Azure AD, а также настройке Azure AD с помощью базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).
+- Дополнительные сведения об использовании имен входа Azure AD с Управляемыми экземплярами см. в статье [Руководство. Обеспечение безопасности Управляемого экземпляра в Базе данных SQL Azure с помощью имен для входа Azure AD](sql-database-managed-instance-aad-security-tutorial.md)
 - Общие сведения о доступе к базе данных SQL и управлении ею см. в статье [Контроль доступа к базе данных SQL Azure](sql-database-control-access.md).
 - Общие сведения об именах для входа, пользователях и ролях базы данных в базе данных SQL см. в статье [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md).
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
 - Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
+- Сведения о синтаксисе для создания имен входа Azure AD для Управляемых экземпляров см. в статье [CREATE LOGIN (Transact-SQL)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
 - Дополнительные сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](sql-database-firewall-configure.md).
 
 <!--Image references-->

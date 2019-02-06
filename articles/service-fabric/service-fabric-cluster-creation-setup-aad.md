@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/15/2018
 ms.author: aljo
-ms.openlocfilehash: 75ba2ee378e9eddfeaeb2346b4d5bb584844afe2
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 691995d0aa426766caed2f5e2458399b32332c9d
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636682"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54903508"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
@@ -33,7 +33,7 @@ ms.locfileid: "51636682"
 > [!NOTE]
 > Перед созданием кластера необходимо выполнить следующие действия. Поскольку в сценариях предварительно заданы имена кластеров и конечные точки, эти имена нужно выбрать заблаговременно, при этом они должны отличаться от созданных ранее имен.
 
-1. [Скачайте сценарии][sf-aad-ps-script-download] на компьютер.
+1. [Скачайте сценарии](https://github.com/robotechredmond/Azure-PowerShell-Snippets/tree/master/MicrosoftAzureServiceFabric-AADHelpers/AADTool) на компьютер.
 2. Щелкните правой кнопкой мыши ZIP-файл, выберите **Свойства**, установите флажок **Разблокировать** и нажмите кнопку **Применить**.
 3. Извлеките ZIP-файл.
 4. Запустите `SetupApplications.ps1` и укажите TenantId (идентификатор клиента), ClusterName (имя кластера) и WebApplicationReplyUrl (URL-адрес ответа веб-приложения) в качестве параметров. Например: 
@@ -108,16 +108,16 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 #### <a name="solution"></a>Решение
 Следуйте инструкциям по настройке Azure AD и назначению ролей пользователей. Кроме того, рекомендуется включить параметр "Для доступа к приложению требуется назначение пользователей", как делает сценарий `SetupApplications.ps1`.
 
-### <a name="connection-with-powershell-fails-with-an-error-the-specified-credentials-are-invalid"></a>Подключение с помощью PowerShell завершается ошибкой: "Указанные учетные данные недействительны".
+### <a name="connection-with-powershell-fails-with-an-error-the-specified-credentials-are-invalid"></a>Подключение с помощью PowerShell завершается с ошибкой: "Указаны недопустимые учетные данные"
 #### <a name="problem"></a>Проблема
-После успешного входа в Azure AD при использовании PowerShell для подключения к кластеру с помощью режима безопасности AzureActiveDirectory возникла ошибка, подключение завершается с ошибкой: "Указанные учетные данные недействительны".
+После успешного входа в Azure AD при использовании PowerShell для подключения к кластеру с помощью режима безопасности AzureActiveDirectory подключение завершается с ошибкой: "Указанные учетные данные недействительны".
 
 #### <a name="solution"></a>Решение
 Решение этой проблемы такое же, как и в предыдущем случае.
 
 ### <a name="service-fabric-explorer-returns-a-failure-when-you-sign-in-aadsts50011"></a>Service Fabric Explorer при входе возвращает ошибку "AADSTS50011"
 #### <a name="problem"></a>Проблема
-При попытке входа на страницу Azure AD в Service Fabric Explorer выдается ошибка: "AADSTS50011: адрес ответа &lt;URL-адрес&gt; не совпадает с адресами ответа, настроенными для приложения: &lt;guid&gt;".
+При попытке входа в Azure AD в Service Fabric Explorer страница возвращает ошибку: "AADSTS50011: адрес ответа &lt;URL-адрес&gt; не совпадает с настроенными адресами ответа приложения: &lt;GUID&gt;".
 
 ![Несовпадение адреса ответа в Service Fabric Explorer][sfx-reply-address-not-match]
 

@@ -6,16 +6,16 @@ services: cognitive-services
 author: v-jaswel
 manager: nolachar
 ms.service: cognitive-services
-ms.component: conversation-learner
+ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 0bcb6262201b3399ca4d759bb306a570bea33b00
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 56dab93087249082330c0f685e5457bc2585664c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45578775"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55237937"
 ---
 # <a name="how-to-deploy-a-conversation-learner-bot"></a>Развертывание бота Conversation Learner
 
@@ -53,7 +53,7 @@ ms.locfileid: "45578775"
 
 5. Откроется страница, в верхней части которой указан GUID "Идентификатор модели".
 
-## <a name="option-1-deploying-a-conversation-learner-bot-to-run-locally"></a>Вариант 1. Локальное развертывание бота Conversation Learner
+## <a name="option-1-deploying-a-conversation-learner-bot-to-run-locally"></a>Вариант 1. Локальное развертывание бота Conversation Learner
 
 Эта процедура развертывает бот на локальном компьютере и демонстрирует доступ к нему через Bot Framework Channel Emulator.
 
@@ -90,7 +90,7 @@ ms.locfileid: "45578775"
 
 2. Откроется окно диалога с ботом.
 
-## <a name="option-2-deploy-to-azure"></a>Вариант 2. Развертывание в Azure
+## <a name="option-2-deploy-to-azure"></a>Вариант 2. Развернуть в Azure
 
 Публикация бота Conversation Learner выполняется почти так же, как и для любого другого бота. Если коротко, то вам нужно лишь передать код на размещенный веб-сайт, задать необходимые значения конфигурации и зарегистрировать бот в нужных каналах. В этом видео представлены подробные инструкции по публикации бота с помощью службы Azure Bot.
 
@@ -118,6 +118,7 @@ ms.locfileid: "45578775"
         CONVERSATION_LEARNER_SERVICE_URI | "https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/"
         CONVERSATION_LEARNER_MODEL_ID      | Идентификатор приложения (GUID), полученный из пользовательского интерфейса Conversation Learner в разделе параметров модели.
         LUIS_AUTHORING_KEY               | Ключ разработки LUIS для этой модели
+        LUIS_SUBSCRIPTION_KEY            | Не обязательно, но рекомендуется для опубликованных ботов, чтобы не использовать квоту на создание.
     
     4. Щелкните "Сохранить" в верхней части страницы.
     5. Выберите элемент навигации "Сборка" слева.

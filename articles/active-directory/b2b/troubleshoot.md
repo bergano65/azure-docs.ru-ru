@@ -3,19 +3,19 @@ title: Устранение неполадок службы совместной
 description: Способы устранения распространенных проблем со службой совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
-ms.component: B2B
+ms.subservice: B2B
 ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: 29ebf91801478ab3d4790fafa0dfb099201e1595
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 764b5defd2fb647fd52e1e93441b68ffe492d0c9
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54431033"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181271"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -76,6 +76,10 @@ ms.locfileid: "54431033"
 - если приглашение отправляет субъект-служба приложения.
 
 Если вам важно использовать именно этот сценарий, вы можете запретить отправку сообщения с приглашением из API-интерфейса, и отправить его через любой другой механизм отправки электронной почты. Проконсультируйтесь к юристом своей организации, чтобы убедиться, что отправляемые таким образом сообщения не нарушают требования законов о защите конфиденциальности данных.
+
+## <a name="a-guest-user-with-a-just-in-time-or-viral-tenant-is-unable-to-reset-their-password"></a>Гостевому пользователю клиента JIT или "вирусного" клиента не удается сбросить пароль
+
+Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль. Иногда организация будет [управлять вирусными клиентами](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover), которые создаются, когда сотрудники используют свои рабочие электронные адреса для регистрации в службах. После получения организацией контроля над вирусным клиентом только администратор в организации может сбросить пароль пользователя или включить SSPR. При необходимости приглашающая организация может удалить учетную запись гостя из каталога и повторно отправить приглашение.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

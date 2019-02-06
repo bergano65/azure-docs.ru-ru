@@ -9,17 +9,17 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: trinadhk
-ms.openlocfilehash: a0cbb8650a818c3ae6c839d69bbc9b94f8d080ca
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: a5afdd0dca55a5df075acb99e488c932196d95c5
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54351402"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55092308"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
 > [!NOTE]
-> На основании отзывов, полученных от пользователей, путающих **стек резервного копирования виртуальной машины V2** и стек Azure, мы переименовали этот компонент в **Мгновенное восстановление**, облегчив работу пользователям.
+> Учитывая отзывы пользователей, мы переименовали **стек резервного копирования виртуальных машин версии 2** на **мгновенное восстановление** во избежание путаницы с функциональными возможностями Azure Stack.
 
 Новая модель для мгновенного восстановления обеспечивает следующее расширение функциональных возможностей:
 

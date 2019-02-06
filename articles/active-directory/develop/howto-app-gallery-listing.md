@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
@@ -17,14 +17,14 @@ ms.date: 09/14/2018
 ms.author: celested
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev
-ms.openlocfilehash: dd164882f9820cab970edd4d01f2f28c26771f88
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: fd02c2d10d072f33fdc265feaadf9776e9c1d679
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48815225"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102040"
 ---
-# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
+# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство: Добавление приложения в коллекцию приложений Azure Active Directory
 
 ## <a name="what-is-the-azure-ad-application-gallery"></a>Что такое коллекция приложений Azure AD?
 
@@ -72,14 +72,14 @@ ms.locfileid: "48815225"
 
 Чтобы включить приложение в коллекцию приложений Azure AD, сначала необходимо реализовать один из приведенных ниже протоколов федерации, поддерживаемых Azure AD, и принять условия использования коллекции приложений Azure AD. Прочитайте описанные [здесь](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/) условия использования коллекции приложений Azure AD.
 
-- **OpenID Connect**: для интеграции приложения с Azure AD с помощью протокола Open ID Connect следуйте [инструкциям для разработчиков](authentication-scenarios.md).
+- **OpenID Connect**. Для интеграции приложения с Azure Active Directory с помощью протокола Open ID Connect следуйте [инструкциям для разработчиков](authentication-scenarios.md).
 
     ![Временная шкала включения в коллекцию приложения OpenID Connect](./media/howto-app-gallery-listing/openid.png)
 
     * Если вы хотите добавить в коллекцию приложение, использующее OpenID Connect, выберите **OpenID Connect & OAuth 2.0** (OpenID Connect и OAuth 2.0), как описано выше.
     * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
 
-*   **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
+*   **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
 
     ![Временная шкала включения в коллекцию приложения SAML 2.0 или WS-Fed](./media/howto-app-gallery-listing/saml.png)
 

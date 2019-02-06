@@ -5,15 +5,19 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/22/2019
-ms.openlocfilehash: cb02f0b786ff6f1c7dbef5471fb95ce6516f824c
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.date: 01/23/2019
+ms.openlocfilehash: 9270c3290bd7be0bbb79d30aff8becc04dcfc603
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54466080"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54904018"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql"></a>Реплики чтения в Базе данных Azure для PostgreSQL
+
+> [!IMPORTANT]
+> Компонент "Реплика чтения" доступен в рамках общедоступной предварительной версии.
+
 Компонент "Реплики чтения" позволяет реплицировать данные с сервера Базы данных Azure для PostgreSQL (главный сервер) на несколько (до пяти) серверов только для чтения (реплики чтения) в том же регионе Azure. Реплики чтения асинхронно обновляются с использованием собственной технологии репликации ядра PostgreSQL.
 
 Каждая реплика является новым сервером и ими можно управлять точно так же, как обычными автономными серверами Базы данных Azure для PostgreSQL. Для каждой реплики чтения вы оплачиваете подготовленные вычислительные ресурсы, выраженные в виртуальных ядрах, и подготовленный объем хранилища, выраженный в ГБ/месяц.

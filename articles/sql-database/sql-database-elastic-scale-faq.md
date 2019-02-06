@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: f3192aafb6f19695bc99310dd980382510bc633b
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.date: 01/25/2019
+ms.openlocfilehash: b5ba5fadd229fa7119f9af791f7eaedbc984c92a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188121"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457196"
 ---
 # <a name="elastic-database-tools-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об инструментах эластичных баз данных
 
@@ -43,13 +43,13 @@ ms.locfileid: "54188121"
 
 ## <a name="i-have-questions-about-using-elastic-database-tools-how-do-i-get-them-answered"></a>У меня есть вопросы об использовании инструментов эластичной базы данных. Как найти ответы?
 
-Задайте нам свои вопросы на [форуме, посвященном Базе данных SQL Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted).
+Задайте нам свои вопросы на [форуме, посвященном Базе данных SQL](https://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted).
 
 ## <a name="when-i-get-a-database-connection-using-a-sharding-key-i-can-still-query-data-for-other-sharding-keys-on-the-same-shard--is-this-by-design"></a>При подключении к базе данных с помощью ключа сегментирования все равно удается запрашивать данные для других ключей сегментирования в том же сегменте.  Так и должно быть?
 
 Интерфейсы API гибкого масштабирования позволяют подключаться к нужным базам данных с помощью ключа сегментирования, но не обеспечивают фильтрацию этих ключей.  Добавьте предложения **WHERE** к своему запросу, чтобы ограничить масштаб до соответствующего ключа сегментирования, если потребуется.
 
-## <a name="can-i-use-a-different-azure-database-edition-for-each-shard-in-my-shard-set"></a>Можно ли использовать разные выпуски базы данных Azure для каждого сегмента моего набора сегментов?
+## <a name="can-i-use-a-different-sql-database-edition-for-each-shard-in-my-shard-set"></a>Можно ли использовать разные выпуски Базы данных SQL для каждого сегмента моего набора сегментов?
 
 Да. Ваш сегмент является отдельной базой данных и поэтому один сегмент может быть выпуском Premium, тогда как другой — выпуском Standard. Кроме того, выпуск сегмента можно многократно масштабировать во время срока жизни сегмента.
 

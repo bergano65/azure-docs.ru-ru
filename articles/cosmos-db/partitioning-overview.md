@@ -6,14 +6,14 @@ author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 20e869d30f9e7b8102b723870f0102e041e064d7
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: d9bd1bec6d1df6fab634c5d929cb778abbd3d13d
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54042280"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55478412"
 ---
-# <a name="partitioning-in-azure-cosmos-db"></a>Секционирование в базе данных Azure Cosmos DB
+# <a name="partitioning-in-azure-cosmos-db---overview"></a>Общие сведения о секционировании в Azure Cosmos DB
 
 Секционирование — это метод, используемый в Cosmos DB для масштабирования отдельных контейнеров в базе данных в соответствии с требованиями к производительности приложения. При использовании секционирования элементы в контейнере разделяются на отдельные подмножества, называемые логическими секциями. Логические секции создаются на основе значения свойства ключа секции, связанного с каждым элементом.
 

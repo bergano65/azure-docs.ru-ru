@@ -7,30 +7,28 @@ documentationcenter: ''
 author: curtand
 manager: mtillman
 editor: ''
-ms.assetid: ''
 ms.service: active-directory
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/14/2019
+ms.date: 01/28/2019
 ms.author: curtand
 ms.reviewer: sumitp
-ms.openlocfilehash: 9d229dfa11a317c1f3b3121cdc7c1cdfa7df9c5e
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.custom: it-pro;seo-update-azuread-jan
+ms.openlocfilehash: 3d2c15d3658ed93348c5ec23198d2cc97a94e0aa
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321642"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55297877"
 ---
 # <a name="product-names-and-service-plan-identifiers-for-licensing"></a>Названия продуктов и идентификаторы планов служб для лицензирования
 
 При управлении лицензиями на порталах [Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) или Office 365 вы видите названия продуктов в таком формате: *Office 365 Enterprise E3*. Когда используются командлеты PowerShell версии 1.0, тот же продукт указывается с помощью определенного, но менее понятного имени: *ENTERPRISEPACK*. При использовании командлетов PowerShell версии 2.0 или Microsoft Graph продукт идентифицируется с помощью значения GUID: *6fd2c87f-b296-42f0-b197-1e91e994b900*. В таблице ниже представлен список самых популярных продуктов Microsoft Online Services, а также значения их идентификаторов. Эти таблицы предназначены для справочных целей и точны только на момент последнего обновления этой статьи. Корпорация Майкрософт не планирует периодически обновлять их для новых добавленных служб.
 
-- **Название продукта:** используется на порталах управления.
+- **Название продукта**: используется на порталах управления.
 - **Идентификатор строки:** используется командлетами PowerShell версии 1.0 для операций с лицензиями.
-- **Идентификатор GUID:** идентификатор, используемый в Azure AD Graph и Microsoft Graph.
-- **Включенные планы службы:** список планов службы, предусмотренных для продукта, которые соответствуют идентификатору строки и GUID
+- **GUID**: идентификатор, используемый в Azure AD Graph и Microsoft Graph.
+- **Включенные планы службы**: список предусмотренных для продукта планов службы, которые соответствуют идентификатору строки и GUID.
 
 >[!NOTE]
 >Эти сведения достоверные по состоянию на 17 августа 2018 года.

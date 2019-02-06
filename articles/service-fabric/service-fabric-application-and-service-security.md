@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/16/2018
 ms.author: ryanwi
-ms.openlocfilehash: fa6d46186ad833b68e60c24f742d210b7845759a
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f83f7afa4173316f127c76f20967054bf13c9a6b
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207916"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097917"
 ---
 # <a name="service-fabric-application-and-service-security"></a>Безопасность приложений и служб Service Fabric
 Архитектура микрослужб может обеспечить [множество преимуществ](service-fabric-overview-microservices.md). Тем не менее управление безопасностью микрослужб является непростой задачей и отличается от управления безопасностью традиционных неделимых приложений. 
@@ -46,7 +46,7 @@ ms.locfileid: "34207916"
 ## <a name="restrict-and-secure-access-using-an-api-gateway"></a>Ограничение и защита доступа с помощью шлюза API
 Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. [Шлюз API](/azure/architecture/microservices/gateway) располагается между клиентами и службами и является точкой входа для всех служб, предоставляемых вашим приложением. Он выполняет роль обратного прокси-сервера, который перенаправляет запросы от клиентов к службам. Он также может выполнять такие специализированные задачи, как аутентификация и авторизация, завершение SSL-запросов и ограничение частоты. Если этот шлюз не будет развернут, клиенты должны будут отправлять запросы непосредственно к внешним службам.
 
-В Service Fabric в качестве шлюза может выступать любая служба без отслеживания состояния, например [приложение ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md), или другая служба, предназначенная для обработки входящего трафика, например [Træfik](https://docs.traefik.io/), [концентраторы событий](https://docs.microsoft.com/azure/event-hubs/), [Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/) или [служба управления API Azure](https://docs.microsoft.com/azure/api-management).
+В Service Fabric в качестве шлюза может выступать любая служба без отслеживания состояния, например [приложение ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md), или другая служба, предназначенная для обработки входящего трафика, например [Traefik](https://docs.traefik.io/), [Центры событий](https://docs.microsoft.com/azure/event-hubs/), [Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/) или [Управление API Azure](https://docs.microsoft.com/azure/api-management).
 
 Служба управления API непосредственно интегрируется с Service Fabric. Это позволяет публиковать интерфейсы API с широким набором правил маршрутизации к внутренним службам Service Fabric.  Можно защитить доступ к внутренним службам, предотвращать DOS-атаки с помощью регулирования или проверять ключи API, токены JWT, сертификаты и другие учетные данные. Чтобы узнать больше, прочитайте раздел [Общие сведения о Service Fabric со службой управления API Azure](service-fabric-api-management-overview.md).
 

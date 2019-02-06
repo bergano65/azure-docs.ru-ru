@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Trisotech Digital Enterprise Server.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 6d54d20c-eca1-4fa6-b56a-4c3ed0593db0
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: e36a4be3a95b67c040855171d4b167e495a22496
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e3f90da177f46246d1a7453796b7b9a9c93f4a21
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39439632"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55193172"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по интеграции Azure Active Directory с Trisotech Digital Enterprise Server
+# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство. Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
 
 В этом руководстве описано, как интегрировать Trisotech Digital Enterprise Server с Azure Active Directory (Azure AD).
 
@@ -185,7 +185,7 @@ ms.locfileid: "39439632"
 
 Цель этого раздела — создать в приложении Trisotech Digital Enterprise Server пользователя с именем Britta Simon. Приложение Trisotech Digital Enterprise Server поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Trisotech Digital Enterprise Server учетная запись пользователя создается автоматически, если она еще не создана.
 >[!Note]
->Если необходимо создать пользователя вручную, обратитесь в [службу поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com).
+>Если необходимо создать пользователя вручную, обратитесь к  [группе поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -222,7 +222,7 @@ ms.locfileid: "39439632"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Trisotech Digital Enterprise Server на панели доступа, вы автоматически войдете в приложение Trisotech Digital Enterprise Server.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

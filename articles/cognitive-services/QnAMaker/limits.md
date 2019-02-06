@@ -6,17 +6,17 @@ services: cognitive-services
 author: tulasim88
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 01/24/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 772153040ac76f4b7bbee55c48527a841fc69037
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 443ecdeab057c863763501e5da7d36e9fb6a4eea
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084794"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55223142"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 Полный список ограничений в QnA Maker.
@@ -27,7 +27,9 @@ ms.locfileid: "53084794"
 
 |**Категория службы поиска Azure** | **Бесплатный** | **базовая;** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
-|Максимальное разрешенное число опубликованных баз знаний (макс. индексы — 1 (зарезервировано для тестирования)|2|14|49|199|199|2 999|
+|Максимальное разрешенное число опубликованных баз знаний|2|14|49|199|199|2 999|
+
+ Например, если для уровня допускается 15 индексов, можно опубликовать 14 баз знаний (1 индекс для каждой опубликованной базы знаний). Пятнадцатый индекс (`testkb`) используется для разработки и тестирования всех баз знаний. 
 
 ## <a name="extraction-limits"></a>Ограничения на извлечение
 * Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. на странице [цен на QnAMaker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
@@ -64,3 +66,11 @@ ms.locfileid: "53084794"
 * Максимальное число добавленных или удаленных альтернативных вопросов: 100
 * Максимальное число добавленных или удаленных полей метаданных: 10
 * Максимальное число URL-адресов, которые можно обновить: 5
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Узнайте, когда и как можно изменять уровни служб.
+
+* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku). Если вам необходимо расширить число вопросов и ответов в базе знаний за пределы текущего уровня, перейдите на ценовую категорию службы QnA Maker.
+* [Поиск](how-to/upgrade-qnamaker-service.md#upgrade-app-service). Если потребуется, чтобы база знаний обслуживала большее количество запросов из клиентского приложения, перейдите на ценовую категорию службы приложений.
+* [Служба приложений](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service). Если вы планируете использовать несколько баз знаний, перейдите на ценовую категорию службы "Поиск Azure".

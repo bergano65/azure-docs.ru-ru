@@ -8,20 +8,20 @@ author: MarkusVi
 manager: daveba
 ms.assetid: ''
 ms.service: active-directory
-ms.component: conditional-access
+ms.subservice: conditional-access
 ms.topic: article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/14/2018
+ms.date: 01/30/2019
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 05d447a7d36e0e8ca9da35407e825eb8f49fb4a3
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 6276231f8d63840dcf46f7456d584880315533bf
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448281"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299917"
 ---
 # <a name="quickstart-require-mfa-for-specific-apps-with-azure-active-directory-conditional-access"></a>Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory 
 
@@ -43,6 +43,9 @@ ms.locfileid: "54448281"
 - **доступ к Azure AD Premium** — условный доступ Azure AD является возможностью Azure AD Premium; 
 
 - **тестовая учетная запись Isabella Simonsen** — сведения о создании тестовой учетной записи см. в разделе о [добавлении облачных пользователей](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
+
+
+Сценарий этого краткого руководства предполагает, что многофакторная идентификация каждого отдельного пользователя отключена в тестовой учетной записи. Дополнительные сведения см. в статье [Включение двухфакторной проверки подлинности пользователя](../authentication/howto-mfa-userstates.md).
 
 
 ## <a name="test-your-sign-in"></a>Проверка входа

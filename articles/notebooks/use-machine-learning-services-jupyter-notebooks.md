@@ -13,23 +13,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: b6d3cbd56182b8dba3738f38798efa378c6b49d0
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: bdfc9b3e981a1b88fbae7805785d9bb4c823bccb
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53254832"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55074468"
 ---
-# <a name="use-azure-machine-learning-services-in-a-notebook"></a>Работа со Службами машинного обучения Azure в записной книжке
+# <a name="use-azure-machine-learning-service-in-a-notebook"></a>Работа со Службами машинного обучения Azure в записной книжке
 
-Служба "Записные книжки Azure" предварительно настроена со средой, необходимой для работы со [Службами машинного обучения Azure](/azure/machine-learning/service/). Можно легко клонировать пример проекта в свою учетную запись Записных книжек для изучения различных сценариев Машинного обучения.
+Служба "Записные книжки Azure" предварительно настроена со средой, необходимой для работы со [Службой машинного обучения Azure](/azure/machine-learning/service/). Можно легко клонировать пример проекта в свою учетную запись Записных книжек для изучения различных сценариев Машинного обучения.
 
 ## <a name="clone-the-sample-into-your-account"></a>Клонирование примера в свою учетную запись
 
 1. Войдите в [Записные книжки Azure](https://notebooks.azure.com/).
 1. Выберите **My Projects** (Мои проекты), чтобы перейти к панели мониторинга проектов.
 1. Нажмите кнопку (со стрелкой вверх) **Upload GitHub Repo** (Отправить репозиторий GitHub), после чего откроется всплывающее окно **отправки репозитория GitHub**.
-1. Во всплывающем окне введите `Azure/MachineLearningNotebooks` в поле **GitHub repository** (Репозиторий GitHub), укажите имя проекта в поле **Имя проекта**, например "Службы Машинного обучения Azure", укажите идентификатор в поле **Идентификатор проекта**, снимите флажок **Общедоступный**, а затем нажмите кнопку **Импорт**.
+1. Во всплывающем окне введите `Azure/MachineLearningNotebooks` в поле **GitHub repository** (Репозиторий GitHub), укажите имя проекта в поле **Имя проекта**, например "Служба машинного обучения Azure", и идентификатор в поле **Идентификатор проекта**, снимите флажок **Общедоступный**, а затем выберите **Импорт**.
 
     ![Импорт примера записной книжки Машинного обучения Azure в учетную запись службы "Записные книжки"](media/azureml-import-project.png)
 

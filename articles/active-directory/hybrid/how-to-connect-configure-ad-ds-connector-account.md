@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 01/14/2019
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: a23561e082736b7dfae6205e75fd1e9ccfab5f6c
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 531ba32125479528b1a847b32d711049e699dda0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54463395"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55191667"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
@@ -205,21 +205,21 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobject
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании записи групп, запустите: 
 
 ``` powershell
-Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
 ```
 или; 
 
 ``` powershell
-Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
+Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
  
 Этот командлет задаст следующие разрешения: 
 
 |type |ИМЯ |Access |Применяется к|
 |-----|-----|-----|-----| 
-|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Универсальное чтение/запись |Дочерние объекты группы| 
-|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать/удалить дочерний объект |Этот объект и все дочерние объекты| 
-|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать или удалить объект и все его дочерние элементы |Этот объект и все дочерние объекты|
+|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Универсальное чтение/запись |Все атрибуты группы типов объектов и дочерних объектов| 
+|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать/удалить дочерний объект |Все атрибуты группы типов объектов и дочерних объектов| 
+|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Удалить объекты дерева|Все атрибуты группы типов объектов и дочерних объектов|
 
 ### <a name="permissions-for-exchange-hybrid-deployment"></a>Разрешения для гибридного развертывания Exchange 
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании гибридного развертывания Exchange, запустите: 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с XaitPorter | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с XaitPorter | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в XaitPorter.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: d33c7cb7-0550-425b-882a-619a713a71b7
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 12fb8e5b2b940c48de766a48f59ed0cc342b5356
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: fe89b64fb5f188591ce123e8ed7ed410d3c5ab48
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421072"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55170051"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство по интеграции Azure Active Directory с XaitPorter
+# <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство. Интеграция Azure Active Directory с XaitPorter
 
 В этом руководстве описано, как интегрировать XaitPorter с Azure Active Directory (Azure AD).
 
@@ -183,7 +183,7 @@ ms.locfileid: "39421072"
  
 ### <a name="create-a-xaitporter-test-user"></a>Создание тестового пользователя XaitPorter
 
-В этом разделе описано, как создать пользователя Britta Simon в XaitPorter. Обратитесь к [группе поддержки XaitPorter](https://www.xait.com/support/), чтобы добавить пользователей на платформу XaitPorter. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в XaitPorter. Обратитесь к  [группе поддержки XaitPorter](https://www.xait.com/support/) для добавления пользователей на платформу XaitPorter. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -220,7 +220,7 @@ ms.locfileid: "39421072"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "XaitPorter" на панели доступа, вы автоматически войдете в приложение XaitPorter.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

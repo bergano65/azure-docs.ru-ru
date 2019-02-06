@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с PatentSQUARE | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с PatentSQUARE | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PatentSQUARE.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 5ab95cea-4839-4588-b2d0-c8b7066415a1
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: jeedes
-ms.openlocfilehash: cc64fb0c35edefa2173f4a94c7744567bac369bb
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a4b73b191cef132176da185b3ebf206c9e05e483
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428253"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55167977"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-patentsquare"></a>Руководство. Интеграция Azure Active Directory с PatentSQUARE
 
@@ -123,7 +123,7 @@ ms.locfileid: "39428253"
 1. Чтобы настроить единый вход на стороне **PatentSQUARE**, отправьте в [службу поддержки PatentSQUARE](https://www.panasonic.com/jp/business/its/patentsquare.html) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -160,7 +160,7 @@ ms.locfileid: "39428253"
  
 ### <a name="create-a-patentsquare-test-user"></a>Создание тестового пользователя PatentSQUARE
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении PatentSQUARE. Обратитесь в [службу поддержки PatentSQUARE](https://www.panasonic.com/jp/business/its/patentsquare.html), чтобы добавить пользователей на платформу PatentSQUARE. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении PatentSQUARE. Обратитесь к  [группе поддержки PatentSQUARE](https://www.panasonic.com/jp/business/its/patentsquare.html) для добавления пользователей на платформу PatentSQUARE. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -197,7 +197,7 @@ ms.locfileid: "39428253"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку PatentSQUARE на панели доступа, вы автоматически войдете в приложение PatentSQUARE.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

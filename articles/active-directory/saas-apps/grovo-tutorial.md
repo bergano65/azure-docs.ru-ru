@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Grovo | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Grovo | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Grovo.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 399cecc3-aa62-4914-8b6c-5a35289820c1
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/12/2018
 ms.author: jeedes
-ms.openlocfilehash: be49cbba53441124bd538a5d82e8c0e1d20d9e45
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 057775f7818d1a6dc521fe81b01748fa40085cc8
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433068"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55174250"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-grovo"></a>Руководство по интеграции Azure Active Directory с Grovo
+# <a name="tutorial-azure-active-directory-integration-with-grovo"></a>Руководство. Интеграция Azure Active Directory с Grovo
 
 Из этого руководства вы узнаете, как интегрировать Grovo с Azure Active Directory (Azure AD).
 
@@ -194,7 +194,7 @@ ms.locfileid: "39433068"
     д. Щелкните **Далее**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -232,7 +232,7 @@ ms.locfileid: "39433068"
 
 В этом разделе в приложении Grovo создается пользователь с именем Britta Simon. Приложение Grovo поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Grovo создается учетная запись пользователя (если она еще не создана).
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки Grovo](https://www.grovo.com/contact-us).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Grovo](https://www.grovo.com/contact-us).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -269,7 +269,7 @@ ms.locfileid: "39433068"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Grovo на панели доступа, вы автоматически войдете в приложение Grovo.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

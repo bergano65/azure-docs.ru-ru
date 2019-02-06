@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: ad89acb63057ff260332384372bcb7719cc8e4f3
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 1482497f3767e7533d1d56e6eb63e55cdb5c9ebb
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064837"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104649"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -229,7 +229,7 @@ $restoreResponse | Format-List
     ```
     
 3. **Success**, **Failure** или **Timeout**. Любое из этих состояний означает завершение запрошенного восстановления. Ниже описано значение каждого из этих состояний и подробное описание ответов для них.
-    - **Выполнено**. Состояние восстановления _Success_ указывает на то, что состояние секции восстановлено. Секция возвращает состояния _RestoreEpoch_ и _RestordLSN_, а также время в формате UTC.
+    - **Выполнено**. Состояние восстановления _Success_ указывает на то, что состояние секции восстановлено. Секция возвращает состояния _RestoredEpoch_ и _RestoredLSN_, а также время в формате UTC.
 
         ```
         RestoreState  : Success

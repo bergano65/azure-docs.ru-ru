@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/05/2018
-ms.component: hybrid
+ms.date: 01/24/2019
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 30ed7ff2026c64c7e40d43597a2747f1144ae125
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 1d6808f17116df033c2b001eff05bd83bc5f1d3d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468633"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55196537"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Синхронизация Azure AD Connect: Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -45,6 +45,7 @@ ms.locfileid: "54468633"
 | displayName |X | |
 | objectSID |X |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | pwdLastSet |X |Механическое свойство. Используется, чтобы определить, когда необходимо сделать недействительными уже выданные маркеры. Используется для синхронизации хэша паролей, сквозной аутентификации и федерации. |
+|samAccountName|X| |
 | sourceAnchor |X |Механическое свойство. Неизменяемый идентификатор для поддержания связи между доменными службами Active Directory и Azure AD. |
 | usageLocation |X |Механическое свойство. Страна пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |

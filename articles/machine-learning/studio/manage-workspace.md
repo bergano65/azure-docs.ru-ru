@@ -1,5 +1,5 @@
 ---
-заголовок: Управление рабочей областью Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Управление доступом к рабочим областям Студии машинного обучения Azure, развертывание API веб-служб Машинного обучения и управление ими services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Управление рабочей областью Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Управление доступом к рабочим областям Студии машинного обучения Azure, развертывание API веб-служб Машинного обучения и управление ими services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 27.02.2017
 ---

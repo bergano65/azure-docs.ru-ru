@@ -1,6 +1,6 @@
 ---
-заголовок: Отладка модели titleSuffix Студия машинного обучения Azure description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Отладка модели titleSuffix Студия машинного обучения Azure description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 14.03.2017
 ---

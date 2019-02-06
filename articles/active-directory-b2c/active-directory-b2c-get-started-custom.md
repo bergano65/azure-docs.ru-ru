@@ -7,21 +7,21 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/17/2018
+ms.date: 01/25/2019
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: 235b72393801717bb5d7258d6492dc4c943fe232
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: d4105aab80add8556bcbe79c9c6e8dd7743b25b7
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852309"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55298745"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Начало работы с настраиваемыми политиками в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-[Настраиваемые политики](active-directory-b2c-overview-custom.md) — это файлы конфигурации, определяющие поведение вашего клиента Azure Active Directory (Azure AD) B2C. В рамках этой статьи вы создадите настраиваемую политику, которая будет поддерживать регистрацию и вход с помощью локальной учетной записи с использованием адреса электронной почты и пароля. Кроме того, вы подготовите среду для добавления поставщиков удостоверений (например, Facebook или Azure Active Directory).
+[Настраиваемые политики](active-directory-b2c-overview-custom.md) — это файлы конфигурации, определяющие поведение вашего клиента Azure Active Directory (Azure AD) B2C. В рамках этой статьи вы создадите настраиваемую политику, которая будет поддерживать регистрацию и вход с помощью локальной учетной записи с использованием адреса электронной почты и пароля. Вы также можете подготовить среду для добавления поставщиков удостоверений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,9 +31,6 @@ ms.locfileid: "54852309"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-fb-app/switch-directories.png)
-
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
 
@@ -72,7 +69,7 @@ ms.locfileid: "54852309"
 
 ### <a name="register-the-identityexperienceframework-application"></a>Регистрация приложения IdentityExperienceFramework
 
-1. Выберите **Все службы** в левом верхнем углу портала Azure, найдите и выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений**.
+1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 2. Выберите **Регистрация нового приложения**.
 3. Для параметра **Имя** введите `IdentityExperienceFramework`.
 4. Для параметра **Тип приложения** выберите **Веб-приложение или API**.
@@ -105,8 +102,8 @@ ms.locfileid: "54852309"
 Каждый начальный пакет содержит:
 
 - Базовый файл. Для базового файла требуется несколько изменений.
-* Файл расширения.  В этот файл вносится большинство изменений конфигурации.
-* Файлы проверяющей стороны. Файлы, запрашиваемые приложением для выполнения определенных задач.
+- Файл расширения.  В этот файл вносится большинство изменений конфигурации.
+- Файлы проверяющей стороны. Файлы, запрашиваемые приложением для выполнения определенных задач.
 
 >[!NOTE]
 >Если в редакторе XML поддерживается проверка, проверьте файлы с помощью XML-файла схемы TrustFrameworkPolicy_0.3.0.0.xsd, который расположен в корневом каталоге начального пакета. При проверке по схеме XML определяются ошибки перед отправкой.
@@ -117,17 +114,14 @@ ms.locfileid: "54852309"
     git clone https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack
     ```
 
-2. В папке SocialAndLocalAccounts измените все файлы, заменив `yourtenant.onmicrosoft.com` именем вашего клиента. Например, `contosoTenant.onmicrosoft.com`. Если вам нужен редактор XML, [попробуйте Visual Studio Code](https://code.visualstudio.com/download) — упрощенный кроссплатформенный редактор.
+2. В папке SocialAndLocalAccounts измените все файлы, заменив `yourtenant` именем вашего клиента. Например, `contosoTenant.onmicrosoft.com`. Если вам нужен редактор XML, [попробуйте Visual Studio Code](https://code.visualstudio.com/download) — упрощенный кроссплатформенный редактор.
 
 ### <a name="add-application-ids-to-the-custom-policy"></a>Добавление идентификаторов приложений в настраиваемую политику
 
 В файл расширений *TrustFrameworkExtensions* добавьте идентификаторы приложений.
 
 1. Откройте файл *TrustFrameworkExtensions* и найдите элемент `<TechnicalProfile Id="login-NonInteractive">`.
-2. Замените оба экземпляра `IdentityExperienceFrameworkAppId` идентификатором созданного ранее приложения инфраструктуры процедур идентификации. Замените оба экземпляра `ProxyIdentityExperienceFrameworkAppId` идентификатором созданного ранее приложения прокси инфраструктуры процедур идентификации. В следующем примере показан технический профиль **login-NonInteractive** после внесения изменений:
-
-    ![Идентификаторы приложений](./media/active-directory-b2c-get-started-custom/login-NonInteractive.png)
-
+2. Замените оба экземпляра `IdentityExperienceFrameworkAppId` идентификатором созданного ранее приложения инфраструктуры процедур идентификации. Замените оба экземпляра `ProxyIdentityExperienceFrameworkAppId` идентификатором созданного ранее приложения прокси инфраструктуры процедур идентификации.
 3. Сохраните файл расширений.
 
 ## <a name="upload-the-policies"></a>Отправка политик
@@ -158,6 +152,6 @@ ms.locfileid: "54852309"
 3. Отправьте файл *TrustFrameworkExtensions.xml* в клиент.
 4. Выполните проверку с помощью команды **Запустить сейчас** или вызовите политику непосредственно из зарегистрированного приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Добавьте Azure Active Directory в качестве поставщика удостоверений. В базовом файле, который использовался в этом руководстве по началу работы, уже имеется некоторое содержимое, необходимое для добавления других поставщиков удостоверений. Сведения о настройке входа в систему см. в статье [Azure Active Directory B2C. Выполнение входа с помощью учетных записей Azure AD](active-directory-b2c-setup-aad-custom.md).

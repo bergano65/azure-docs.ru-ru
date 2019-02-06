@@ -9,12 +9,12 @@ ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 115604d9b2aa21018742bbedbc737405b52599e4
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 7ad494a3a1ce657951a0afab4d5ca838821927ad
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188952"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55158831"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -28,7 +28,11 @@ ms.locfileid: "54188952"
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
 > [!NOTE]  
-> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, отключите MFA только для тех пользователей, которым будет предоставлен доступ к кластеру. Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
+> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, необходимо отключить MFA только для тех пользователей, которым будет предоставлен доступ к кластеру с использованием базовой аутентификации Kerberose. Вы можете использовать [доверенные IP-адреса](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips) или [условный доступ](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. При использовании условного доступа убедитесь, что эта конечная точка службы AD включена в виртуальной сети HDInsight.
+>
+>Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
+
+
 
 Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md). 
 

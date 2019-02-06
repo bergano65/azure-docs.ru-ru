@@ -11,15 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
-ms.openlocfilehash: df1f8d805c950bdfbe2c18f365a450a6d630891b
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.lastreviewed: 01/25/2019
+ms.openlocfilehash: ff7513f197b3035b88748e2e73c38789d9010d9c
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300444"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55251322"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -52,38 +53,38 @@ ms.locfileid: "51300444"
 
     - В интегрированной системе выполните указанную ниже команду из сеанса Windows PowerShell с повышенными правами, чтобы добавить PEP в качестве доверенного узла на защищенную виртуальную машину, работающую на узле жизненного цикла оборудования, или на рабочую станцию с привилегированным доступом.
 
-      ````PowerShell
+      ```PowerShell
         winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
-      ````
+      ```
     - Если вы используете ASDK, войдите на узел комплекта разработки.
 
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
     - В интегрированной системе:
-      ````PowerShell
+      ```PowerShell
         $cred = Get-Credential
 
         Enter-PSSession -ComputerName <IP_address_of_ERCS> `
           -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ````
+      ```
       Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
     - При использовании ASDK:
      
-      ````PowerShell
+      ```PowerShell
         $cred = Get-Credential
 
         Enter-PSSession -ComputerName azs-ercs01 `
           -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ```` 
+      ``` 
    При появлении запроса используйте следующие учетные данные:
 
       - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
-      - **Пароль.** Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
+      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
     > [!NOTE]
     > Если не удается подключиться к конечной точке ERCS, попробуйте повторить шаги 1 и 2, указав IP-адрес виртуальной машины ERCS, к которой вы еще не пытались подключиться.
 
-3.  После подключения запрос изменится на **[*IP-адрес или имя виртуальной машины ERCS*]: PS>** или на **[azs-ercs01]: PS>**, в зависимости от среды. Теперь запустите командлет `Get-Command`, чтобы просмотреть список доступных командлетов.
+3.  После подключения запрос изменится на **[*IP-адрес или имя виртуальной машины ERCS*]: PS>** или на **[azs-ercs01]: PS>** (в зависимости от среды). Теперь запустите командлет `Get-Command`, чтобы просмотреть список доступных командлетов.
 
     Многие из этих командлетов предназначены только для сред интегрированных систем (например, командлеты, относящиеся к интеграции центра обработки данных). В ASDK проверены следующие командлеты:
 
@@ -124,38 +125,38 @@ ms.locfileid: "51300444"
 
     – В интегрированной системе выполните указанную ниже команду из сеанса Windows PowerShell с повышенными правами, чтобы добавить PEP в качестве доверенного узла на защищенную виртуальную машину, работающую на узле жизненного цикла оборудования, или на рабочую станцию с привилегированным доступом.
 
-      ````PowerShell
+      ```PowerShell
         winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
-      ````
+      ```
     - Если вы используете ASDK, войдите на узел комплекта разработки.
 
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
     - В интегрированной системе:
-      ````PowerShell
+      ```PowerShell
         $cred = Get-Credential
 
         $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
           -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ````
+      ```
       Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
     - При использовании ASDK:
      
-      ````PowerShell
+      ```PowerShell
        $cred = Get-Credential
 
        $session = New-PSSession -ComputerName azs-ercs01 `
           -ConfigurationName PrivilegedEndpoint -Credential $cred
-      ```` 
+      ``` 
    При появлении запроса используйте следующие учетные данные:
 
       - **Имя пользователя**. Укажите учетную запись CloudAdmin в формате **&lt;*домен Azure Stack*&gt;\cloudadmin**. (При использовании ASDK имя пользователя — **azurestack\cloudadmin**.)
-      - **Пароль.** Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
+      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
 3. Импорт сеанса привилегированной конечной точки на локальный компьютер
-    ````PowerShell 
+    ```PowerShell 
         Import-PSSession $session
-    ````
+    ```
 4. Теперь можно использовать выполнение нажатием клавиши TAB и запускать сценарии обычным образом в локальным сеансе PowerShell, располагая всеми функциями и командлетами привилегированной конечной точки и не снижая уровень безопасности Azure Stack. Вот и все!
 
 
@@ -178,4 +179,5 @@ ms.locfileid: "51300444"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 [Azure Stack diagnostic tools](azure-stack-diagnostics.md) (Средства диагностики Azure Stack)

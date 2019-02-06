@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: jeedes
-ms.openlocfilehash: 0f8878505280371bf6046c1d1f0d7fc1275dd496
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 197e0cceb7457ffdd96ada7d4561de56c7ed10fc
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039893"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55095657"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dmarcian"></a>Руководство. Интеграция Azure Active Directory с dmarcian
 
@@ -157,18 +157,18 @@ ms.locfileid: "47039893"
 
     ![Аутентификация ](./media/dmarcian-tutorial/tutorial_dmarcian_auth.png)
 
-    * В разделе **Add dmarcian to your Identity Provider** (Добавление dmarcian к поставщику удостоверений) нажмите **COPY** (Копировать), чтобы скопировать **URL-адрес службы обработчика утверждений** для вашего экземпляра и вставить его в текстовое поле **URL-адреса ответа** в разделе **Домены и URL-адреса dmarcian** на портале Azure.
+    * В разделе **Add dmarcian to your Identity Provider** (Добавление dmarcian к поставщику удостоверений) щелкните  **COPY** (Копировать), чтобы скопировать **URL-адрес службы обработчика утверждений** для своего экземпляра и вставить его в текстовое поле  **URL-адрес ответа** в разделе  **Домены и URL-адреса приложения dmarcian** на портале Azure.
 
-    * В разделе **Add dmarcian to your Identity Provider** (Добавление dmarcian к поставщику удостоверений) нажмите **COPY** (Копировать), чтобы скопировать **идентификатор сущности** для вашего экземпляра и вставить его в текстовое поле **идентификатора** в разделе **Домены и URL-адреса dmarcian** на портале Azure.
+    * В разделе **Add dmarcian to your Identity Provider** (Добавление dmarcian к поставщику удостоверений) щелкните  **COPY** (Копировать), чтобы скопировать **идентификатор сущности** для своего экземпляра и вставить его в текстовое поле  **Идентификатор** в разделе  **Домены и URL-адреса приложения dmarcian** на портале Azure.
 
     * В разделе **Set up Authentication** (Настройка проверки подлинности) в текстовое поле **Identity Provider Metadata** (Метаданные поставщика удостоверений) вставьте **URL-адрес метаданных федерации приложений**, который вы скопировали на портале Azure.
 
     * В разделе **Set up Authentication** (Настройка проверки подлинности) в текстовое поле **Attribute Statements** (Операторы атрибута) вставьте URL-адрес `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    * В разделе **Set up Login URL** (Настройка URL-адреса входа) скопируйте **URL-адрес входа** для вашего экземпляра и вставьте его в текстовое поле **URL-адреса входа** в разделе **Домены и URL-адреса dmarcian** на портале Azure.
+    * В разделе **Set up Login URL** (Настройка URL-адреса входа) скопируйте **URL-адрес входа** для своего экземпляра и вставьте его в текстовое поле  **URL-адрес входа** в разделе  **Домены и URL-адреса приложения dmarcian** на портале Azure.
 
         > [!Note]
-        > Вы можете изменить **URL-адрес входа** в соответствии с вашей организацией.
+        > Вы можете изменить **URL-адрес входа** в соответствии со своей организацией.
 
     * Выберите команду **Сохранить**.
 
@@ -265,7 +265,7 @@ ms.locfileid: "47039893"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент dmarcian на панели доступа, вы автоматически войдете в приложение dmarcian.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

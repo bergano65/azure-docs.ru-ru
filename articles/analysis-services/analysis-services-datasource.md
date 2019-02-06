@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 01/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e1a001a60151136be6bde9de38f971807cf0c288
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 92c2d59ffe8c144bea6e7f8676880c866e234885
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188408"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299050"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -23,17 +23,20 @@ ms.locfileid: "54188408"
 
 |Источник данных  |В памяти  |DirectQuery  |
 |---------|---------|---------|
-|Базы данных SQL Azure     |   Yes      |    Yes      |
+|База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Yes      |    Yes      |
 |Хранилище данных SQL Azure     |   Yes      |   Yes       |
-|Хранилище BLOB-объектов Azure*     |   Yes       |    Нет       |
-|Хранилище таблиц Azure*    |   Yes       |    Нет       |
-|Azure Cosmos DB*     |  Yes        |  Нет         |
-|Azure Data Lake Store*     |   Yes       |    Нет       |
-|Azure HDInsight HDFS*     |     Yes     |   Нет        |
-|Azure HDInsight Spark*     |   Yes       |   Нет        |
+|Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Yes       |    Нет       |
+|Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Yes       |    Нет       |
+|Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Yes        |  Нет         |
+|Azure Data Lake Store<sup>[1](#tab1400a)</sup>     |   Yes       |    Нет       |
+|Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     Yes     |   Нет        |
+|Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   Yes       |   Нет        |
 ||||
 
-\* Только для табличных моделей 1400.
+<a name="tab1400a">1</a> Только табличная модель 1400 и более поздние.   
+<a name="azsqlmanaged">2</a> Поддерживается Управляемый экземпляр Базы данных SQL Azure. Так как управляемый экземпляр работает в виртуальной сети Azure с частным IP-адресом, требуется локальный шлюз данных.   
+<a name="databricks">3</a> Экземпляр Azure Databricks, использующий соединитель Spark, в настоящее время не поддерживается.
+
 
 **Поставщик**   
 Для размещенных в памяти моделей и моделей DirectQuery, подключающихся к источникам данных Azure, используется поставщик данных .NET Framework для SQL Server.
@@ -57,31 +60,31 @@ ms.locfileid: "54188408"
 |Источник данных  |  
 |---------|---------|
 |База данных Access     |  
-|Active Directory*     |  
+|Active Directory<sup>[1](#tab1400b)</sup>     |  
 |Analysis Services     |  
 |Система платформы аналитики     |  
-|Dynamics CRM*     |  
+|Dynamics CRM<sup>[1](#tab1400b)</sup>     |  
 |Книга Excel     |  
-|Exchange*     |  
-|Папка*     |
-|IBM Informix* (бета-версия) |
-|Документ JSON*     |  
-|Строки из двоичного файла*     | 
+|Exchange<sup>[1](#tab1400b)</sup>     |  
+|Папка<sup>[1](#tab1400b)</sup>     |
+|IBM Informix<sup>[1](#tab1400b)</sup> (бета-версия) |
+|Документ JSON<sup>[1](#tab1400b)</sup>     |  
+|Строки из двоичного файла<sup>[1](#tab1400b)</sup>     | 
 |База данных MySQL     | 
-|Веб-канал OData*     |  
+|Канал OData<sup>[1](#tab1400b)</sup>     |  
 |Запрос ODBC     | 
 |OLE DB     |   
-|База данных SQL Postgre*    | 
-|Объекты Salesforce* |  
-|Отчеты Salesforce* |
-|SAP HANA*    |  
-|SAP Business Warehouse*    |  
-|SharePoint*     |   
+|База данных SQL Postgre<sup>[1](#tab1400b)</sup>    | 
+|Объекты Salesforce<sup>[1](#tab1400b)</sup> |  
+|Отчеты Salesforce<sup>[1](#tab1400b)</sup> |
+|SAP HANA<sup>[1](#tab1400b)</sup>    |  
+|SAP Business Warehouse<sup>[1](#tab1400b)</sup>    |  
+|SharePoint<sup>[1](#tab1400b)</sup>     |   
 |База данных Sybase     |  
-|Таблица XML*    |  
+|Таблица XML<sup>[1](#tab1400b)</sup>    |  
 |||
  
-\* Только для табличных моделей 1400.
+<a name="tab1400b">1</a> Только табличная модель 1400 и более поздние.
 
 ## <a name="specifying-a-different-provider"></a>Указание другого поставщика
 

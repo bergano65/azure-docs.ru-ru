@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 977123459bcf9bb10c6b7ecf5d7a364f60564c48
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 7e4b52f0a3ca5e924d9d41e38e51f0cba8b75690
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437084"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54885819"
 ---
 # <a name="handling-external-events-in-durable-functions-azure-functions"></a>Обработка внешних событий в устойчивых функциях (Функции Azure)
 
@@ -191,10 +191,10 @@ module.exports = async function(context, instanceId) {
 };
 ```
 
-Внутри системы `RaiseEventAsync` (.NET) или `raiseEvent`(JavaScript) помещает в очередь сообщение, которое получает ожидающая функция оркестратора.
+Внутри системы `RaiseEventAsync` (.NET) или `raiseEvent`(JavaScript) помещает в очередь сообщение, которое получает ожидающая функция оркестратора. Если экземпляр не ожидает *события с указанным именем*, сообщение о событии добавляется в очередь в памяти. Если экземпляр оркестрации позже начинает ожидать *события с этим именем*, он проверяет сообщения о событиях в очереди.
 
-> [!WARNING]
-> Если экземпляра оркестрации с указанным *идентификатором* не существует или этот экземпляр не ожидает указанное *имя события*, сообщение о событии игнорируется. Дополнительные сведения об этом поведении см. в [описании проблемы на GitHub](https://github.com/Azure/azure-functions-durable-extension/issues/29).
+> [!NOTE]
+> Если экземпляр оркестрации с указанным *идентификатором экземпляра* отсутствует, сообщение о событии отменяется. Дополнительные сведения об этом поведении см. в [описании проблемы на GitHub](https://github.com/Azure/azure-functions-durable-extension/issues/29). 
 
 > [!WARNING]
 > При локальной разработке на языке JavaScript необходимо задать для переменной среды `WEBSITE_HOSTNAME` значение `localhost:<port>`, например `localhost:7071`, чтобы использовать методы для `DurableOrchestrationClient`. Дополнительные сведения об этом требовании см. в [описании проблемы на сайте GitHub](https://github.com/Azure/azure-functions-durable-js/issues/28).

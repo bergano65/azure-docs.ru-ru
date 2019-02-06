@@ -10,16 +10,16 @@ ms.reviewer: estfan, LADocs
 ms.assetid: 63b0b843-f6b0-4d9a-98d0-17500be17385
 ms.topic: article
 ms.date: 07/29/2016
-ms.openlocfilehash: 0c6062fb9e9708b0fa6aef7a6d7390287cbf69d4
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 58e59e4faa135e24124f494d90437b49caa30129
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124041"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098669"
 ---
-# <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий обработки исключений и ведения журнала ошибок для приложений логики
+# <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий. Сценарий обработки исключений и ведения журнала ошибок для приложений логики
 
-В этом сценарии описано, как улучшить поддержку для обработки исключений в приложении логики. Мы использовали пример из реальной жизни, который можно считать ответом на вопрос "Поддерживает ли Azure Logic Apps обработку исключений и ошибок?".
+В этом сценарии описано, как улучшить поддержку для обработки исключений в приложении логики. Мы положились на реальный вариант использования, чтобы ответить на вопрос: "Поддерживает ли Azure Logic Apps обработку ошибок и исключений?"
 
 > [!NOTE]
 > В текущей схеме Azure Logic Apps предоставляется стандартный шаблон для ответов на действия. В этот шаблон входят внутренние проверки и обработка сообщений об ошибках, возвращаемых из приложения API.
@@ -57,7 +57,7 @@ ms.locfileid: "43124041"
 
 Мы используем триггер **запроса**, как показано в следующем примере:
 
-```` json
+``` json
 "triggers": {
         "request": {
           "type": "request",
@@ -90,7 +90,7 @@ ms.locfileid: "43124041"
         }
       },
 
-````
+```
 
 
 ## <a name="steps"></a>Действия

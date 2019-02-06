@@ -1,5 +1,5 @@
 ---
-заголовок: Создание модели анализа тональности titleSuffix: Студия машинного обучения Azure description: Создание моделей анализа текста в Студии машинного обучения Azure с помощью модулей для предварительной обработки текста, N-грамм или служб хеширования функций: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Создание модели анализа тональности titleSuffix: Студия машинного обучения Azure description: Создание моделей анализа текста в Студии машинного обучения Azure с помощью модулей для предварительной обработки текста, N-грамм или хеширования функций services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 14.03.2018
 ---

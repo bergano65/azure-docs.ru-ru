@@ -3,7 +3,7 @@ title: Использование задач с несколькими экзе�
 description: Узнайте, как выполнять приложения с интерфейсом передачи сообщений (MPI), используя тип задачи с несколькими экземплярами в пакетной службе Azure.
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: 83e34bd7-a027-4b1b-8314-759384719327
@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.date: 06/12/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a443dd7ed4f95b3e283603fa8938a08c2c177827
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: f2c7d6f75b9f2d6932ae3c8de863ad277fea8ffe
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39174305"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55460545"
 ---
 # <a name="use-multi-instance-tasks-to-run-message-passing-interface-mpi-applications-in-batch"></a>Использование задач с несколькими экземплярами для запуска приложений с интерфейсом передачи сообщений в пакетной службе
 
@@ -286,7 +286,7 @@ await subtasks.ForEachAsync(async (subtask) =>
     `azure-batch-samples\CSharp\ArticleProjects\MultiInstanceTasks\`
 3. Введите данные своей учетной записи пакетной службы и учетной записи хранения в `AccountSettings.settings` в проекте **Microsoft.Azure.Batch.Samples.Common**.
 4. **Создайте и запустите** решение MultiInstanceTasks, чтобы выполнить пример приложения MPI на вычислительных узлах в пуле пакетной службы.
-5. *Необязательно.* Используйте [портал Azure][portal] или [Batch Explorer][batch_labs], чтобы проверить пример пула, задания и задачи ("MultiInstanceSamplePool", "MultiInstanceSampleJob", "MultiInstanceSampleTask"), а затем удалить ресурсы.
+5. *Необязательно*: используйте [портал Azure][portal] или [Batch Explorer][batch_labs], чтобы проверить пример пула, задания и задачи ("MultiInstanceSamplePool", "MultiInstanceSampleJob", "MultiInstanceSampleTask"), а затем удалить ресурсы.
 
 > [!TIP]
 > Вы можете скачать [Visual Studio Community][visual_studio] бесплатно, если у вас нет Visual Studio.

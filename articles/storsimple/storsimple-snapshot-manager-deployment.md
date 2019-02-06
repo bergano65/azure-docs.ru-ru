@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
-ms.openlocfilehash: cde355381b0d726a1ab340bc4230b2dc8f6e2c56
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ee17e4b69d1e6c9de465e4241ee2237361e320b7
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23110672"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168011"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Развертывание оснастки консоли управления диспетчера моментальных снимков StorSimple (необязательно)
 
@@ -66,7 +66,7 @@ ms.locfileid: "23110672"
    * динамические зеркальные тома (RAID 1);
    * общие тома кластера.
      
-     Чтобы узнать, как создать тома на физическом или виртуальном устройстве StorSimple, см. в разделе [Шаг 6. Создание тома](storsimple-8000-deployment-walkthrough-u2.md#step-6-create-a-volume) в статье [Развертывание локального устройства StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
+     Сведения о создании тома на физическом или виртуальном устройстве StorSimple см. в разделе [Шаг 6. Создание тома](storsimple-8000-deployment-walkthrough-u2.md#step-6-create-a-volume) в статье [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md).
 
 ## <a name="install-a-new-storsimple-snapshot-manager"></a>Установка нового диспетчера моментальных снимков StorSimple
 Прежде чем приступить к установке диспетчера моментальных снимков StorSimple, убедитесь, что тома, созданные на физическом или виртуальном устройстве StorSimple, подключены, инициализированы и отформатированы согласно инструкциям, приведенным в разделе [Настройка необходимых компонентов](#configure-prerequisites).
@@ -78,11 +78,11 @@ ms.locfileid: "23110672"
 
 Выполните следующие действия, чтобы выполнить новую установку диспетчера моментальных снимков StorSimple. Если вы устанавливаете обновление, перейдите к разделу [Обновление или переустановка диспетчера моментальных снимков StorSimple](#upgrade-or-reinstall-storsimple-snapshot-manager).
 
-* Шаг 1. Установка диспетчера моментальных снимков StorSimple 
-* Шаг 2. Подключение диспетчера моментальных снимков StorSimple к устройству 
-* Шаг 3. Проверка подключения к устройству 
+* Шаг 1. Установка диспетчера моментальных снимков StorSimple 
+* Шаг 2. Подключение StorSimple Snapshot Manager к устройству 
+* Шаг 3. Проверка подключения к устройству 
 
-### <a name="step-1-install-storsimple-snapshot-manager"></a>Шаг 1. Установка диспетчера моментальных снимков StorSimple
+### <a name="step-1-install-storsimple-snapshot-manager"></a>Шаг 1. Установка диспетчера моментальных снимков StorSimple
 Чтобы установить диспетчер моментальных снимков StorSimple, выполните следующие действия.
 
 #### <a name="to-install-storsimple-snapshot-manager"></a>Установка диспетчера моментальных снимков StorSimple
@@ -101,7 +101,7 @@ ms.locfileid: "23110672"
    
     ![Значок рабочего стола](./media/storsimple-snapshot-manager-deployment/HCS_SSM_desktop_icon.png) 
 
-### <a name="step-2-connect-storsimple-snapshot-manager-to-a-device"></a>Шаг 2. Подключение диспетчера моментальных снимков StorSimple к устройству
+### <a name="step-2-connect-storsimple-snapshot-manager-to-a-device"></a>Шаг 2. Подключение StorSimple Snapshot Manager к устройству
 Чтобы подключить диспетчер моментальных снимков StorSimple к устройству StorSimple, выполните следующие действия.
 
 #### <a name="to-connect-storsimple-snapshot-manager-to-a-device"></a>Подключение диспетчера моментальных снимков StorSimple к устройству
@@ -123,7 +123,7 @@ ms.locfileid: "23110672"
     Если по какой-либо причине устройство недоступно, диспетчер моментальных снимков StorSimple вернет сообщение об ошибке. Нажмите кнопку **ОК**, чтобы закрыть сообщение об ошибке, а затем щелкните **Отмена** для закрытия диалогового окна **Настройка устройства**.
 5. При подключении к устройству диспетчер моментальных снимков StorSimple импортирует каждую группу томов, настроенную для этого устройства, если у группы томов есть связанные резервные копии. Группы томов, у которых нет связанных резервных копий, не импортируются. Кроме того, не импортируются политики архивации, созданные для группы томов. Чтобы просмотреть импортированные группы, щелкните правой кнопкой мыши самый верхний узел **Группы томов** на панели **Область** и выберите пункт **Toggle imported groups** (Переключить импортированные группы).
 
-### <a name="step-3-verify-the-connection-to-the-device"></a>Шаг 3. Проверка подключения к устройству
+### <a name="step-3-verify-the-connection-to-the-device"></a>Шаг 3. Проверка подключения к устройству
 Выполните следующие действия, чтобы убедиться, что диспетчер моментальных снимков StorSimple подключен к устройству StorSimple.
 
 #### <a name="to-verify-the-connection"></a>Проверка подключения
@@ -143,11 +143,11 @@ ms.locfileid: "23110672"
 
 При обновлении или переустановке диспетчера моментальных снимков StorSimple выполните следующие действия.
 
-* Шаг 1. Удаление диспетчера моментальных снимков StorSimple 
-* Шаг 2. Архивация базы данных диспетчера моментальных снимков StorSimple 
-* Шаг 3. Переустановка диспетчера моментальных снимков StorSimple и восстановление базы данных 
+* Шаг 1. Удаление StorSimple Snapshot Manager 
+* Шаг 2. Резервное копирование базы данных StorSimple Snapshot Manager 
+* Шаг 3. Переустановка StorSimple Snapshot Manager и восстановление базы данных 
 
-### <a name="step-1-uninstall-storsimple-snapshot-manager"></a>Шаг 1. Удаление диспетчера моментальных снимков StorSimple
+### <a name="step-1-uninstall-storsimple-snapshot-manager"></a>Шаг 1. Удаление StorSimple Snapshot Manager
 Чтобы удалить диспетчер моментальных снимков StorSimple, выполните следующие действия.
 
 #### <a name="to-uninstall-storsimple-snapshot-manager"></a>Удаление диспетчера моментальных снимков StorSimple
@@ -162,7 +162,7 @@ ms.locfileid: "23110672"
    > 
 5. После завершения процесса удаления появится сообщение **Установка успешно завершена** . Нажмите кнопку **Закрыть**
 
-### <a name="step-2-back-up-the-storsimple-snapshot-manager-database"></a>Шаг 2. Архивация базы данных диспетчера моментальных снимков StorSimple
+### <a name="step-2-back-up-the-storsimple-snapshot-manager-database"></a>Шаг 2. Резервное копирование базы данных StorSimple Snapshot Manager
 Чтобы создать и сохранить копию базы данных диспетчера моментальных снимков StorSimple, выполните следующие действия.
 
 #### <a name="to-back-up-the-database"></a>Архивация базы данных
@@ -188,7 +188,7 @@ ms.locfileid: "23110672"
    2. На странице **Службы** выберите пункт **Microsoft StorSimple Management Service** (Служба управления Microsoft StorSimple).
    3. В области справа в разделе **Microsoft StorSimple Management Service** (Служба управления Microsoft StorSimple) щелкните **Перезапустить службу**. 
 
-### <a name="step-3-reinstall-storsimple-snapshot-manager-and-restore-the-database"></a>Шаг 3. Переустановка диспетчера моментальных снимков StorSimple и восстановление базы данных
+### <a name="step-3-reinstall-storsimple-snapshot-manager-and-restore-the-database"></a>Шаг 3. Переустановка StorSimple Snapshot Manager и восстановление базы данных
 Чтобы переустановить диспетчер моментальных снимков StorSimple, выполните действия, описанные в разделе [Установка нового диспетчера моментальных снимков StorSimple](#install-a-new-storsimple-snapshot-manager). Затем выполните следующие действия, чтобы восстановить базу данных диспетчера моментальных снимков StorSimple.
 
 #### <a name="to-restore-the-database"></a>Восстановление базы данных

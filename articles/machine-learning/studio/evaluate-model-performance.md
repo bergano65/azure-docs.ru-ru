@@ -1,6 +1,6 @@
 ---
-заголовок: Оценка работы модели titleSuffix: Студия машинного обучения Azure description: В этой статье показано, как оценить эффективность модели в студии машинного обучения Azure. Вы также найдете здесь краткое описание метрик, доступных для выполнения этой задачи.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Оценка работы модели titleSuffix: Студия машинного обучения Azure description: В этой статье показано, как оценить эффективность модели в студии машинного обучения Azure. Вы также найдете здесь краткое описание метрик, доступных для выполнения этой задачи.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
 ---

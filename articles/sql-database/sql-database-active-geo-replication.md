@@ -11,20 +11,20 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 12/10/2018
-ms.openlocfilehash: 157d7776cc9a8eff485bd18658527bc8d30f4df0
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/25/2019
+ms.openlocfilehash: ae57605b0fb2cba8cdb0c2f9ecfbab8eef7a5197
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602976"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55468280"
 ---
 # <a name="create-readable-secondary-databases-using-active-geo-replication"></a>Создание доступных для чтения баз данных-получателей с помощью активной георепликации
 
-Активная георепликация — это компонент Базы данных SQL Azure, который позволяет создавать читаемые базы данные-получатели отдельных баз данных на логическом сервере в одном и том же или другом центре обработки данных (регионе).
+Активная георепликация — это компонент Базы данных SQL Azure, который позволяет создавать читаемые базы данных-получатели отдельных баз данных на сервере Базы данных SQL в одном и том же или другом центре обработки данных (регионе).
 
 > [!NOTE]
-> Активная георепликация не поддерживается в Управляемом экземпляре.
+> Управляемый экземпляр не поддерживает активную георепликацию. Дополнительные сведения о географической отработке отказа см. в статье [Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных](sql-database-auto-failover-group.md).
 
 Активная георепликация разработана в качестве решения для обеспечения непрерывности бизнес-процессов, которое позволяет приложению выполнять быстрое аварийное восстановление отдельных баз данных в случае регионального сбоя или сбоя масштабирования. Если георепликация включена, приложение может инициировать отработку отказа в базу данных-получатель в другом регионе Azure. В одном или разных регионах поддерживается до четырех баз данных-получателей, которые также можно использовать для запросов на доступ только для чтения. Отработка отказа должна инициироваться вручную приложением пользователя. После отработки отказа у новой базы данных-источника будет другая конечная точка подключения. На следующей схеме показана типичная конфигурация геоизбыточного облачного приложения, использующего активную георепликацию.
 
@@ -122,23 +122,23 @@ ms.locfileid: "53602976"
 
 Как уже говорилось ранее, активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о том, как реализовать контроль доступа на основе ролей, см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../role-based-access-control/overview.md).
 
-### <a name="t-sql-manage-failover-of-single-and-pooled-databases"></a>T-SQL: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="t-sql-manage-failover-of-standalone-and-pooled-databases"></a>T-SQL: управление отработкой отказа для изолированных и объединенных в пул баз данных
 
 > [!IMPORTANT]
 > Приведенные ниже команды Transact-SQL применяются только к активной георепликации — они неприменимы к группам отработки отказа. Как таковые, они также не применяются к Управляемым экземплярам, так как они поддерживают только группы отработки отказа.
 
-| Get-Help | ОПИСАНИЕ |
+| Команда | ОПИСАНИЕ |
 | --- | --- |
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент REMOVE SECONDARY ON SERVER, чтобы завершить репликацию данных между базой данных SQL и указанной базой данных-получателем. |
-| [sys.geo_replication_links](/sql/relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database) |Возвращает сведения о всех существующих связях репликации для каждой базы данных на логическом сервере Базы данных SQL Azure. |
+| [sys.geo_replication_links](/sql/relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database) |Возвращает сведения о всех существующих связях репликации для каждой базы данных на сервере Базы данных SQL Azure. |
 | [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) |Получает время последней репликации, задержку при последней репликации и другие сведения о связи репликации для заданной базы данных SQL. |
 | [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) |Показывает состояние всех операций с базой данных, включая состояние связей репликации. |
 | [sp_wait_for_database_copy_sync](/sql/relational-databases/system-stored-procedures/active-geo-replication-sp-wait-for-database-copy-sync) |Указывает приложению ждать, пока все зафиксированные транзакции не будут реплицированы и подтверждены активной базой данных-получателем. |
 |  | |
 
-### <a name="powershell-manage-failover-of-single-and-pooled-databases"></a>PowerShell: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="powershell-manage-failover-of-standalone-and-pooled-databases"></a>PowerShell: управление отработкой отказа для изолированных и объединенных в пул баз данных
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
@@ -152,7 +152,7 @@ ms.locfileid: "53602976"
 > [!IMPORTANT]
 > Дополнительные сведения о примерах сценариев см. в статьях [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md) и [Настройка активной георепликации для базы данных SQL Azure в составе пула с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md).
 
-### <a name="rest-api-manage-failover-of-single-and-pooled-databases"></a>REST API: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="rest-api-manage-failover-of-standalone-and-pooled-databases"></a>REST API: управление отработкой отказа для изолированных и объединенных в пул баз данных
 
 | API | ОПИСАНИЕ |
 | --- | --- |

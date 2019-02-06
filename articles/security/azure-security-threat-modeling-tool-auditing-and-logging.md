@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 990f300055f7c0c7132dd44271dea73044649fc5
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 1d67f981991796b81ba3ab6540631e6d62be8077
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307004"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55092180"
 ---
 # <a name="security-frame-auditing-and-logging--mitigations"></a>Механизм безопасности. Аудит и ведение журналов | Устранение проблем 
 | Продукт или служба | Статья |
@@ -196,7 +196,7 @@ ms.locfileid: "43307004"
 
 ### <a name="example"></a>Пример
 Элемент `<behavior/>` файла конфигурации WCF ниже указывает службе WCF уведомлять приложению о неудачной попытке службы записать событие в журнал аудита.
-````
+```
 <behaviors>
     <serviceBehaviors>
         <behavior name="NewBehavior">
@@ -207,7 +207,7 @@ ms.locfileid: "43307004"
         </behavior>
     </serviceBehaviors>
 </behaviors>
-````
+```
 Настройте службу WCF уведомлять программу всякий раз, когда не удается выполнить запись в журнал аудита. Для программы следует разработать альтернативную схему оповещения, чтобы уведомлять организации, в которых ведение журналов аудита не поддерживается. 
 
 ## <a id="logging-web-api"></a>Проверка принудительного применения аудита и ведения журнала в веб-API

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 843feb83b8202d3ef8e2c6c8c60cb9b509048530
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: 114d71227e3cf3d0f235fc63135534b1030d4adc
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52290779"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55188348"
 ---
 # <a name="performance-metrics"></a>Метрики производительности
 
@@ -80,7 +80,7 @@ ms.locfileid: "52290779"
 
 Service Fabric создает достаточное число настраиваемых счетчиков производительности. Если у вас установлен пакет SDK, то полный список счетчиков можно просмотреть на компьютере Windows в приложении системного монитора ("Пуск" > "Системный монитор"). 
 
-Если используется Reliable Actors, то для приложений, которые вы развертываете в кластере, добавьте счетчики из категорий `Service Fabric Actor` и `Service Fabric Actor Method` (см. раздел [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)).
+Если используется Reliable Actors, то для приложений, которые вы развертываете в кластере, добавьте счетчики из категорий `Service Fabric Actor` и `Service Fabric Actor Method` (см. статью [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)).
 
 Для Reliable Services или удаленного взаимодействия со службой имеются аналогичные категории счетчиков `Service Fabric Service` и `Service Fabric Service Method`, данные которых следует собирать. См. статьи о [мониторинге с помощью удаленного взаимодействия со службой](service-fabric-reliable-serviceremoting-diagnostics.md) и [счетчиках производительности для Reliable Services](service-fabric-reliable-services-diagnostics.md#performance-counters). 
 

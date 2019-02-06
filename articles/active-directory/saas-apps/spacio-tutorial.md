@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Spacio | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Spacio | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Spacio.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 9df8d199-b955-483c-aa4e-cabad1a0b9d6
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: aa5c91265a832ef8a66948086b407688fdcbbbc2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 76507fab4050f3ff762713081d2e588dc04f3f1b
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435480"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55157828"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-spacio"></a>Руководство. Интеграция Azure Active Directory с Spacio
+# <a name="tutorial-azure-active-directory-integration-with-spacio"></a>Руководство. Интеграция Azure Active Directory со Spacio
 
 В этом руководстве описано, как интегрировать Spacio с Azure Active Directory (Azure AD).
 
@@ -159,7 +159,7 @@ ms.locfileid: "39435480"
  
 ### <a name="create-a-spacio-test-user"></a>Создание тестового пользователя Spacio
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Spacio. Обратитесь в [службу поддержки Spacio](mailto:support@spac.io), чтобы добавить пользователей на платформу Spacio. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Spacio. Обратитесь к  [группе поддержки Spacio](mailto:support@spac.io), чтобы добавить пользователей на платформу Spacio. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -196,7 +196,7 @@ ms.locfileid: "39435480"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Spacio на панели доступа, вы автоматически войдете в приложение Spacio.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

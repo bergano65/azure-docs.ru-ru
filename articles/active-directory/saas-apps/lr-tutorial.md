@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 5715579e-598f-4d2e-970a-107b80b97be4
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 4c5ce02efb48b5b49f6e861dac90f4d59e4ded39
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 90fda216fc1e4bd4e96714c625aaa9c01d11a70c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437871"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55160171"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Руководство. Интеграция Azure Active Directory с LoginRadius
 
@@ -126,7 +126,7 @@ ms.locfileid: "39437871"
 1. Чтобы настроить единый вход на стороне **LoginRadius**, отправьте в [службу поддержки LoginRadius](mailto:support@loginradius.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -162,7 +162,7 @@ ms.locfileid: "39437871"
  
 ### <a name="create-a-loginradius-test-user"></a>Создание тестового пользователя LoginRadius
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении LoginRadius. Обратитесь в [службу поддержки LoginRadius](mailto:support@loginradius.com), чтобы добавить пользователей на платформу LoginRadius. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении LoginRadius. Обратитесь к  [группе поддержки LoginRadius](mailto:support@loginradius.com) для добавления пользователей на платформу LoginRadius. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -199,7 +199,7 @@ ms.locfileid: "39437871"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент LoginRadius на панели доступа, вы автоматически войдете в приложение LoginRadius.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

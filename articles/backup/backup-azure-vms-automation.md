@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/20/2018
 ms.author: raynew
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f0a18931c037a1cf34d8a296a6330264bc8d38af
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: fa53a7e598b42e93e86eb059c36ff89f38bb7093
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424529"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55300597"
 ---
 # <a name="use-powershell-to-back-up-and-restore-virtual-machines"></a>Использование PowerShell для резервного копирования и восстановления виртуальных машин
 
@@ -355,11 +355,17 @@ $restorejob
 #### <a name="restore-managed-disks"></a>Восстановление управляемых дисков
 
 > [!NOTE]
-> Если в резервной копии виртуальной машины содержатся управляемые диски и их необходимо восстановить в качестве управляемых дисков, вы можете это сделать с помощью Azure PowerShell 6.7.0. и более поздних версий.
+> Если в резервной копии виртуальной машины содержатся управляемые диски и их необходимо восстановить в качестве управляемых дисков, вы можете это сделать с помощью модуля RM Azure PowerShell 6.7.0. и более поздних версий.
 >
 >
 
-Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски.
+Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски. 
+
+> [!NOTE]
+> Настоятельно рекомендуется использовать параметр **TargetResourceGroupName** для восстановления управляемых дисков, поскольку это приведет к значительному повышению производительности. Для модуля Az Azure Powershell, начиная с версии 1.0, этот параметр является обязательным в случае восстановления с управляемых дисков.
+>
+>
+
 
 ```powershell
 $restorejob = Restore-AzureRmRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks"

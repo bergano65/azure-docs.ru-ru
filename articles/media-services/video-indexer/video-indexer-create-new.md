@@ -1,5 +1,5 @@
 ---
-title: Создание аналитических сведений из существующих видео
+title: Создание аналитических сведений из существующих видео в Azure
 titlesuffix: Azure Media Services
 description: В этой статье показано, как создать и опубликовать аналитические сведения о видео на основе существующих видеофайлов.
 services: media-services
@@ -7,16 +7,16 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: 7ba3fab514729b7b5645254fa9d34dd42b6718d5
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: 2f6ceeebd18a91472ee12f04c0ac8e602b05f269
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52292005"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197557"
 ---
-# <a name="tutorial-create-highlights-from-existing-videos"></a>Руководство. Создание аналитических сведений на основе существующих видеофайлов
+# <a name="create-highlights-from-existing-videos"></a>Создание аналитических сведений из существующих видео
 
 В этом разделе показано, как создавать и публиковать аналитические сведения о видео на основе некоторых других видео.
 

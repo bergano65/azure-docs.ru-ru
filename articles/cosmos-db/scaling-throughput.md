@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: c5e4720a6b830158581d17bbdcb9aba49e13183b
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: dd17b08a16dedf474b2a1eca8fa8034672610c1f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064497"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454442"
 ---
-# <a name="scaling-throughput-in-azure-cosmos-db"></a>Масштабирование пропускной способности в Azure Cosmos DB
+# <a name="globally-scale-provisioned-throughput"></a>Глобальное масштабирование подготовленной пропускной способности 
 
 В Azure Cosmos DB подготовленная пропускная способность представлена в виде единиц запросов в секунду (ЕЗ). Эти единицы запросов измеряют стоимость операций чтения и записи в контейнере Cosmos, как показано на рисунке ниже.
 

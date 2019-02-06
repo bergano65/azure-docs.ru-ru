@@ -4,20 +4,20 @@ description: Установка Visual Studio и SQL Server Data Tools (SSDT) д
 services: sql-data-warehouse
 ms.custom: vs-azure
 ms.workload: azure-vs
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: consume
+ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: ba84b64afb1d5ebcd5ec153787ddc7d0739bd8d8
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: e27a3d4f2fe4b8421b637e485d77d6376d15bf9a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307391"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55461497"
 ---
 # <a name="install-visual-studio-and-ssdt-for-sql-data-warehouse"></a>Установка Visual Studio и SSDT для хранилища данных SQL
 При разработке приложений для хранилища данных SQL мы рекомендуем использовать последнюю версию Visual Studio с последней версией SQL Server Data Tools (SSDT).  Также для обратной совместимости поддерживается Visual Studio 2013 Update 5 с SSDT.  
@@ -29,13 +29,13 @@ ms.locfileid: "43307391"
 > 
 > 
 
-## <a name="step-1-install-visual-studio"></a>Шаг 1. Установка Visual Studio
+## <a name="step-1-install-visual-studio"></a>Шаг 1. Установка Visual Studio
 Скачайте и установите Visual Studio, используя приведенные ниже ссылки. Если приложение Visual Studio 2013 или его более поздняя версия уже установлена, можно перейти к шагу 2 и установить SSDT.
 
 1. [Скачайте Visual Studio][].
 2. Выполните установку, следуя инструкциям по [установке Visual Studio][Installing Visual Studio] с сайта MSDN, а затем выберите настройки по умолчанию.
 
-## <a name="step-2-install-ssdt"></a>Шаг 2. Установка SSDT
+## <a name="step-2-install-ssdt"></a>Шаг 2. Установить SSDT
 Чтобы установить SSDT для Visual Studio, сначала проверьте наличие обновления SSDT в Visual Studio, выполнив следующие действия.
 
 1. В Visual Studio щелкните **Сервис** / **Расширения и обновления…** /  **Обновления**

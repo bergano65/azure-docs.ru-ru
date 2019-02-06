@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: e21a3ae23ca6a856c9524e52e80f33362f53cae1
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 7f99b6d2f6fc1c6d1c270bd66965d978749ac63f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040852"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55455938"
 ---
-# <a name="how-to-restore-azure-cosmos-db-data-from-a-backup"></a>Как восстановить данные Azure Cosmos DB из резервной копии
+# <a name="restore-data-from-a-backup-in-azure-cosmos-db"></a>Восстановление данных из резервной копии в Azure Cosmos DB 
 
 Если вы случайно удалите базу данных или контейнер, вы можете [отправить запрос в службу поддержки]( https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) или [позвонить в службу поддержки Azure]( https://azure.microsoft.com/support/options/), чтобы восстановить данные из автоматически созданных онлайновых резервных копий. Поддержка Azure предоставляется только для некоторых планов, таких как **Стандартный** и **"Разработка", а также более высокого уровня. Для плана **Базовый** поддержка Azure не предоставляется. Дополнительные сведения о различных планах поддержки см. на странице [Планы поддержки Azure](https://azure.microsoft.com/support/plans/). 
 

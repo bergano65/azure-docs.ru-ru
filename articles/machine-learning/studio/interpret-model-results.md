@@ -1,6 +1,6 @@
 ---
-заголовок: Интерпретация результатов модели в Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Интерпретация результатов модели в Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 29.11.2017
 ---

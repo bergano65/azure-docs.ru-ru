@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Settling music | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Settling music | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Settling music.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 6f86a8a2-4bd0-40cc-b1b4-752fce123328
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/07/2018
 ms.author: jeedes
-ms.openlocfilehash: fda6ca2efb670c8087252428e417a3e0901fa748
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 900254e42410aafa0d8e58048c7d88efa94dfed5
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449069"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55178551"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство по интеграции Azure Active Directory с Settling music
+# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство. Интеграция Azure Active Directory с Settling music
 
 В этом руководстве описано, как интегрировать Settling music с Azure Active Directory (Azure AD).
 
@@ -189,7 +189,7 @@ ms.locfileid: "39449069"
  
 ### <a name="create-a-settling-music-test-user"></a>Создание тестового пользователя Settling music
 
-В этом разделе описано, как создать пользователя Britta Simon в Settling music. Обратитесь к [группе поддержки клиентов Settling music](https://rakurakuseisan.jp/), чтобы добавить пользователей на платформу Settling music. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Settling music. Обратитесь к  [группе поддержки клиентов Settling music](https://rakurakuseisan.jp/), чтобы добавить пользователей на платформу Settling music. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -226,7 +226,7 @@ ms.locfileid: "39449069"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "Settling music" на панели доступа, вы автоматически войдете в приложение Settling music.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

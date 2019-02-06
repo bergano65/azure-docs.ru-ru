@@ -3,23 +3,23 @@ title: Настройка управляемых удостоверений дл
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью шаблона Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
-author: daveba
+author: priyamohanram
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.component: msi
+ms.subservice: msi
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
-ms.author: daveba
-ms.openlocfilehash: 6498079950310e52fcb16172a34b9848e6a98e8b
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: priyamo
+ms.openlocfilehash: 6fff8890a32cd6c3f0aeb506425964edcc841c5e
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429027"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55193477"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин Azure с помощью шаблона
 
@@ -173,7 +173,7 @@ ms.locfileid: "54429027"
 > [!Note]
 > Чтобы создать управляемое удостоверение, назначаемое пользователем, с помощью шаблона Azure Resource Manager, обратитесь к разделу [Создание управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-arm.md#create-a-user-assigned-managed-identity).
 
-### <a name="assign-a-user-assigned-managed-identity-to-a-virutal-machine-scale-set"></a>Задание управляемого удостоверения, назначаемого пользователем, для масштабируемого набора виртуальных машин
+### <a name="assign-a-user-assigned-managed-identity-to-a-virtual-machine-scale-set"></a>Присвоение управляемого удостоверения, назначаемого пользователем, для масштабируемого набора виртуальных машин
 
 1. Чтобы задать управлемое удостоверение, назначаемое пользователем, для масштабируемого набора виртуальных машин, в элемент `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` именем созданного управляемого удостоверения, назначаемого пользователем.
    

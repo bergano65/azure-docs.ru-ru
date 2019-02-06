@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с LINE WORKS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в LINE WORKS.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 725f32fd-d0ad-49c7-b137-1cc246bf85d7
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 34059652a33ddb539bf10a6d7931502c5a8694e3
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 3ebb8917ffadf11ecf8e2e89a67508be3dee7ef5
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423666"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55150349"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство по интеграции Azure Active Directory с приложением LINE WORKS
+# <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство. Интеграция Azure Active Directory с LINE WORKS
 
 В этом руководстве описано, как интегрировать LINE WORKS с Azure Active Directory (Azure AD).
 

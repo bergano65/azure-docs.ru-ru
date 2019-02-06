@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 09/28/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: 5a97a683e7f25029199ba68ce3d5cee410c3cf29
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.lastreviewed: 09/28/2018
+ms.openlocfilehash: cd02845f648275ee17f763bd5a94b386f7ed64fd
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886830"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55246370"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Использование профилей версий API с помощью Java в Azure Stack
 
@@ -149,7 +150,7 @@ Microsoft Azure Resource Manager — это платформа управлен�
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-1.  **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: актуальный профиль для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack с меткой 1808 или более новой.
+1.  **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: последний профиль, созданный для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack с меткой 1808 или более новой.
 
 2.  **com.microsoft.azure**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб.
 

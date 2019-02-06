@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Reviewsnap | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Reviewsnap | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Reviewsnap.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: b00fb373-2b31-4dcf-84ce-abc29e4c639c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 8c66985c7a1d9084ab2a264b1ba799b1fdfa3b0f
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 421031713a8c0677670a13d8190aec7c0113043a
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448420"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195772"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по интеграции Azure Active Directory с Reviewsnap
+# <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство. Интеграция Azure Active Directory с Reviewsnap
 
 В этом руководстве описано, как интегрировать Reviewsnap с Azure Active Directory (Azure AD).
 
@@ -170,7 +170,7 @@ ms.locfileid: "39448420"
  
 ### <a name="create-a-reviewsnap-test-user"></a>Создание тестового пользователя Reviewsnap
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Reviewsnap. Обратитесь к [группе поддержки Reviewsnap](mailto:support@reviewsnap.com), чтобы добавить пользователей на платформу Reviewsnap. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Reviewsnap. Обратитесь к  [группе поддержки Reviewsnap](mailto:support@reviewsnap.com), чтобы добавить пользователей на платформу Reviewsnap. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -207,7 +207,7 @@ ms.locfileid: "39448420"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Reviewsnap на панели доступа, вы автоматически войдете в приложение Reviewsnap.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

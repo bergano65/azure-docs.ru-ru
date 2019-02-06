@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 863f7340-b065-4f59-b092-daa67da6f703
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 2ca787be6d3697c84b8eeef637af8a14b190b428
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 2588511ac3892575b5decadd5ddca474e29a0abc
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428355"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55170850"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dynamic-signal"></a>Руководство. Интеграция Azure Active Directory с Dynamic Signal
 
@@ -168,7 +168,7 @@ ms.locfileid: "39428355"
 Цель этого раздела — создать пользователя с именем Britta Simon в Dynamic Signal. Приложение Dynamic Signal поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Dynamic Signal (если он еще не создан).
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39428355"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Dynamic Signal на панели доступа, вы автоматически войдете в приложение Dynamic Signal.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

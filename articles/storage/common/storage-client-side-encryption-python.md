@@ -8,13 +8,13 @@ ms.devlang: python
 ms.topic: article
 ms.date: 05/11/2017
 ms.author: lakasa
-ms.component: common
-ms.openlocfilehash: 6a6508393fe935b456cde815d35f2fd4447cd2d4
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: common
+ms.openlocfilehash: dfff159d7e0204a752935458a2b4845499c0d652
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528128"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453405"
 ---
 # <a name="client-side-encryption-with-python-for-microsoft-azure-storage"></a>Шифрование на стороне клиента с помощью Python для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -125,12 +125,12 @@ ms.locfileid: "39528128"
 
 KEK должен реализовывать следующие методы для успешного шифрования данных:
 
-* wrap_key(cek): шифрует заданный CEK (байты) с помощью алгоритма по выбору пользователя. Возвращает зашифрованный ключ.
-* get_key_wrap_algorithm(): возвращает алгоритм, используемый для шифрования ключей.
-* get_kid(): возвращает идентификатор ключа строки для данного KEK.
+* wrap_key(cek): шифрует заданный ключ CEK (байты) с помощью алгоритма по выбору пользователя. Возвращает зашифрованный ключ.
+* get_key_wrap_algorithm(): возвращает алгоритм, используемый для упаковки ключей.
+* get_kid(): возвращает идентификатор ключа строки для этого ключа KEK.
   KEK должен реализовывать следующие методы для успешной расшифровки данных:
-* unwrap_key (cek, algorithm): возвращает указанный CEK в расшифрованном виде с помощью алгоритма, соответствующего строке.
-* get_kid(): возвращает идентификатор ключа строки для данного KEK.
+* unwrap_key(cek, algorithm): возвращает указанный ключ CEK в расшифрованном виде с помощью алгоритма, соответствующего строке.
+* get_kid(): возвращает идентификатор ключа строки для этого ключа KEK.
 
 Сопоставитель ключей по крайней мере должен реализовывать метод, который по заданному идентификатору ключа возвращает соответствующий KEK, реализующий приведенный выше интерфейс. Только этот метод может быть назначен свойству key_resolver_function объекта службы.
 

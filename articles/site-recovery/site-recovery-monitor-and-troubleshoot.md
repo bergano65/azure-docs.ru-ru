@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/27/2018
 ms.author: bsiva
-ms.openlocfilehash: e34409490f9e120cb39daf99b280cc52c59f54e2
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 48e53bcc542b9a0e00a544f80ec796082fa71f7b
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845651"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210426"
 ---
 # <a name="monitor-and-troubleshoot-site-recovery"></a>Мониторинг и устранение неполадок Site Recovery
 

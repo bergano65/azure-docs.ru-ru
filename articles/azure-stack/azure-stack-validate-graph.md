@@ -12,15 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 01/28/2019
 ms.author: patricka
 ms.reviewer: jerskine
-ms.openlocfilehash: 43f30989fa09e711fc71941e7722dcd195212472
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.lastreviewed: 01/28/2019
+ms.openlocfilehash: 0755f9d60bee8a57f9259a51cf54e8cda566175e
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416245"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55247023"
 ---
 # <a name="validate-graph-integration-for-azure-stack"></a>Проверка интеграции Azure Graph для Azure Stack
 
@@ -94,7 +95,7 @@ ms.locfileid: "50416245"
     Invoke-AzsGraphValidation Completed
     ```
 
-В рабочей среде проверка сетевого подключения с рабочей станции оператора не может считаться достаточной для определения наличия подключения к Azure Stack. Открытой виртуальной IP-сети отметки Azure Stack потребуется подключение для трафика LDAP для выполнения интеграции удостоверений.
+В рабочей среде проверка сетевого подключения с рабочей станции оператора не может считаться достаточной для определения наличия подключения к Azure Stack. Открытой виртуальной IP-сети для отметки Azure Stack потребуется подключение для трафика LDAP для выполнения интеграции удостоверений.
 
 ## <a name="report-and-log-file"></a>Файлы отчета и журнала
 
@@ -106,8 +107,8 @@ ms.locfileid: "50416245"
 
 Используйте следующую команду:
 
-* **-OutputPath**: параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
-* **-CleanReport**: этот параметр в конце команды позволяет удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
+* **-OutputPath**. Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
+* **-CleanReport**. В конце команды, чтобы удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 

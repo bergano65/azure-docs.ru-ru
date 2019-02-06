@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 43e842d6325897f484d9dff342505cace6640e78
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 64fb629e29de9771ca5f76d1c454ec5d14337a57
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54472294"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104518"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor  
 
@@ -72,6 +72,7 @@ ms.locfileid: "54472294"
     ![параметр "Агрегация по"](media/alerts-log/aggregate-on.png)
 
 1.  *Оповещения журналов.* После настройки визуализации можно выбрать **логику оповещений** из показанных параметров "Условие", "Агрегирование" и "Пороговое значение". В логике укажите время для оценки заданного условия с помощью параметра **Period** (Период). Кроме того, укажите частоту запуска оповещений, выбрав параметр **Frequency** (Частота).
+
 **Оповещения журналов** могут создаваться на основе таких данных:
    - *Число записей.* Оповещение создается, если количество записей, возвращаемых запросом, больше или меньше указанного вами значения.
    - *Измерение метрик.* Оповещение создается, если каждое *статистическое значение* в результатах превышает указанное пороговое значение, которое *группируется* в соответствии с выбранным значением. Количество нарушений для оповещения — это количество превышений порогового значения в течение выбранного периода времени. Можно указать значение свойства Всего брешей, чтобы учитывать любое сочетание нарушений в наборе результатов, или значение свойства Последовательные бреши, чтобы учитывать только нарушения, следующие подряд. Дополнительные сведения см. в статье [Log alerts in Azure Monitor — Alerts (Preview)](../../azure-monitor/platform/alerts-unified-log.md) (Журнал оповещений в Azure Monitor ("Оповещения (предварительная версия)")).
@@ -108,7 +109,7 @@ ms.locfileid: "54472294"
     Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
 Пользователи также могут завершить свой запрос аналитики на [странице Logs Analytics на портале Azure](../../azure-monitor/log-query/portals.md#log-analytics-page
-) и отправить его, чтобы создать оповещение с помощью кнопки «Настроить оповещение», а затем следовать инструкциям, начиная с шага 6, в приведенном выше руководстве.
+) и отправить его, чтобы создать оповещение с помощью кнопки "+ Новое правило генерации оповещений", а затем следовать инструкциям, начиная с шага 6, в приведенном выше руководстве.
 
  ![Настройка оповещения в Log Analytics](media/alerts-log/AlertsAnalyticsCreate.png)
 
@@ -125,35 +126,31 @@ ms.locfileid: "54472294"
     ![Управление правилами генерации оповещений](media/alerts-log/manage-alert-rules.png)
 
 ## <a name="managing-log-alerts-using-azure-resource-template"></a>Управление оповещениями журнала с помощью шаблона ресурсов Azure
-В настоящее время оповещения журнала можно создавать с помощью двух разных шаблонов ресурсов, на основе которых оповещение платформы аналитики должно основываться на Log Analytics или Application Insights.
 
-Поэтому в следующем разделе приводятся сведения об использовании шаблона ресурсов для оповещений журнала для каждой платформы аналитики.
+Оповещения журналов в Azure Monitor связаны с типом ресурса `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов). Оповещения журналов для Application Insights или Log Analytics можно создать с помощью [API правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/).
 
-### <a name="azure-resource-template-for-log-analytics"></a>Шаблон ресурсов Azure для Log Analytics
-Оповещения журнала для Log Analytics создаются правилами генерации оповещений, которые выполняют сохраненный поиск через равные промежутки времени. Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий. 
-
-Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../../azure-monitor/insights/solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
-
-### <a name="azure-resource-template-for-application-insights"></a>Шаблон ресурсов Azure для Application Insights
-Оповещение журнала для ресурсов Application Insights имеет тип `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов).
+> [!NOTE]
+> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
 Ниже приведена структура для [создания правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate) на основе шаблона ресурсов, содержащего пример набора данных в качестве переменных.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0", 
     "parameters": {      
     },   
     "variables": {
-    "alertLocation": "southcentralus",
-    "alertName": "samplelogalert",
-    "alertTag": "hidden-link:/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/myRG/providers/microsoft.insights/components/sampleAIapplication",
-    "alertDescription": "Sample log search alert",
+    "alertLocation": "Region Name for your Application Insights App or Log Analytics Workspace",
+    "alertName": "sample log alert",
+    "alertDescr": "Sample log search alert",
     "alertStatus": "true",
+    "alertTag": "hidden-link:/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.OperationalInsights/workspaces/servicews",
     "alertSource":{
-        "Query":"requests",
-        "SourceId": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/myRG/providers/microsoft.insights/components/sampleAIapplication",
+        "Query":"union workspace("servicews").Update, app('serviceapp').requests | summarize AggregatedValue = count() by bin(TimeGenerated,1h), Classification",
+        "Resource1": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.OperationalInsights/workspaces/servicews", 
+        "Resource2": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.insights/components/serviceapp",
+        "SourceId": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.OperationalInsights/workspaces/servicews",
         "Type":"ResultCount"
          },
      "alertSchedule":{
@@ -161,17 +158,24 @@ ms.locfileid: "54472294"
          "Time": 60
          },
      "alertActions":{
-         "SeverityLevel": "4"
+         "SeverityLevel": "4",
+         "SuppressTimeinMin": 20
          },
       "alertTrigger":{
         "Operator":"GreaterThan",
         "Threshold":"1"
          },
+      "metricMeasurement": {
+          "thresholdOperator": "Equal",
+          "threshold": "1",
+          "metricTriggerType": "Consecutive",
+          "metricColumn": "Classification"
+      },
        "actionGrp":{
-        "ActionGroup": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/myRG/providers/microsoft.insights/actiongroups/sampleAG",
+        "ActionGroup": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.insights/actiongroups/sampleAG",
         "Subject": "Customized Email Header",
-        "Webhook": "{ \"alertname\":\"#alertrulename\", \"IncludeSearchResults\":true }"           
-         }
+        "Webhook": "{ \"alertname\":\"#alertrulename\", \"IncludeSearchResults\":true }"
+        }
   },
   "resources":[ {
     "name":"[variables('alertName')]",
@@ -180,28 +184,36 @@ ms.locfileid: "54472294"
     "location": "[variables('alertLocation')]",
     "tags":{"[variables('alertTag')]": "Resource"},
     "properties":{
-       "description": "[variables('alertDescription')]",
+       "description": "[variables('alertDescr')]",
        "enabled": "[variables('alertStatus')]",
        "source": {
            "query": "[variables('alertSource').Query]",
+           "authorizedResources": "[concat(array(variables('alertSource').Resource1), array(variables('alertSource').Resource2))]",
            "dataSourceId": "[variables('alertSource').SourceId]",
            "queryType":"[variables('alertSource').Type]"
        },
       "schedule":{
            "frequencyInMinutes": "[variables('alertSchedule').Frequency]",
-           "timeWindowInMinutes": "[variables('alertSchedule').Time]"    
+           "timeWindowInMinutes": "[variables('alertSchedule').Time]"
        },
       "action":{
            "odata.type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction",
            "severity":"[variables('alertActions').SeverityLevel]",
+           "throttlingInMin": "[variables('alertActions').SuppressTimeinMin]",
            "aznsAction":{
-               "actionGroup":"[array(variables('actionGrp').ActionGroup)]",
+               "actionGroup": "[array(variables('actionGrp').ActionGroup)]",
                "emailSubject":"[variables('actionGrp').Subject]",
                "customWebhookPayload":"[variables('actionGrp').Webhook]"
            },
        "trigger":{
                "thresholdOperator":"[variables('alertTrigger').Operator]",
-               "threshold":"[variables('alertTrigger').Threshold]"
+               "threshold":"[variables('alertTrigger').Threshold]",
+               "metricTrigger":{
+                   "thresholdOperator": "[variables('metricMeasurement').thresholdOperator]",
+                   "threshold": "[variables('metricMeasurement').threshold]",
+                   "metricColumn": "[variables('metricMeasurement').metricColumn]",
+                   "metricTriggerType": "[variables('metricMeasurement').metricTriggerType]"
+               }
            }
        }
      }
@@ -214,32 +226,26 @@ ms.locfileid: "54472294"
 
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 
-
 ## <a name="managing-log-alerts-using-powershell-cli-or-api"></a>Управление оповещениями журнала с помощью PowerShell, CLI или API
-В настоящее время оповещения журнала можно создавать с помощью двух разных интерфейсов API совместимых с Resource Manager, на основе которых оповещение платформы аналитики должно основываться на Log Analytics или Application Insights.
 
-Таким образом в следующем разделе приведены сведения об использовании API с помощью Powershell или CLI для оповещений журнала для каждой платформы аналитики.
+API правил запланированных запросов в Azure Monitor](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
 
-### <a name="powershell-cli-or-api-for-log-analytics"></a>PowerShell, CLI или API для Log Analytics
-В службе Log Analytics используется REST API, поддерживающий RESTful. К нему можно получить доступ с помощью REST API Azure Resource Manager. Следовательно, к этому API можно обратиться из командной строки PowerShell, и он будет выдавать результаты поиска в формате JSON, позволяя программно использовать эти результаты различными способами.
+> [!NOTE]
+> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
-Ознакомьтесь с разделом [Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API](../../azure-monitor/platform/api-alerts.md), включая примеры доступа к API из PowerShell.
 
-### <a name="powershell-cli-or-api-for-application-insights"></a>PowerShell, CLI или API для Application Insights
-[Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
-
-Ниже показано использование командлета PowerShell для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleScheduledQueryRule.json) в [разделе шаблонов ресурсов](#azure-resource-template-for-application-insights).
+В настоящее время в оповещениях журналов нет выделенных команд PowerShell или CLI, но, как показано ниже, можно использовать командлет PowerShell для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleScheduledQueryRule.json) в [разделе шаблонов ресурсов](#azure-resource-template-for-application-insights).
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile "D:\Azure\Templates\sampleScheduledQueryRule.json"
+New-AzureRmResourceGroupDeployment -ResourceGroupName "contosoRG" -TemplateFile "D:\Azure\Templates\sampleScheduledQueryRule.json"
 ```
+
 Ниже показано использование команды Azure CLI для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleScheduledQueryRule.json) в [разделе шаблонов ресурсов](#azure-resource-template-for-application-insights).
 
 ```azurecli
-az group deployment create --resource-group myRG --template-file sampleScheduledQueryRule.json
+az group deployment create --resource-group contosoRG --template-file sampleScheduledQueryRule.json
 ```
+
 После успешного выполнения возвращается код 201, который означает, что новое правило создано. Если было изменено существующее правило генерации оповещений, то возвращается код 200.
-
-
   
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,5 +1,5 @@
 ---
-title: Использование API Индексатора видео
+title: Использование API Индексатора видео Azure
 titlesuffix: Azure Media Services
 description: В этой статье объясняется, как приступить к работе с API Индексатора видео.
 services: media-services
@@ -7,16 +7,16 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: d7af0d8961d5fa4d3f76b76a48ec613d954298ad
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: fcde97c76e11c6ecbdb22befcb1a8d1ce0437942
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52292052"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299034"
 ---
-# <a name="use-the-video-indexer-api"></a>Использование API Индексатора видео
+# <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
 
 > [!Note]
 > 1 августа 2018 г. API Индексатора видео версии 1 был объявлен нерекомендуемым. Теперь следует использовать API Индексатора видео версии 2. <br/>См. [инструкции по разработке с помощью API Индексатора видео версии 2](https://api-portal.videoindexer.ai/). 
@@ -82,7 +82,7 @@ ms.locfileid: "52292052"
 
 |**Имя**|**Значение параметра**|**Описание**|
 |---|---|---|
-|Пробная версия|trial|Используется для пробных учетных записей.|
+|Пробная версия|trail|Используется для пробных учетных записей.|
 |Запад США|westus2|Используется для региона Azure "Западная часть США 2".|
 |Северная Европа |northeurope|Используется для региона Azure "Северная Европа".|
 |Восточная Азия|eastasia|Используется для региона Azure "Восточная Азия".|

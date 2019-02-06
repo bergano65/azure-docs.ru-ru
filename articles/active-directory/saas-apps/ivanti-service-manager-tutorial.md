@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Ivanti Service Manager (ISM) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Ivanti Service Manager (ISM) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Ivanti Service Manager (ISM).
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 14297c74-0d57-4146-97fa-7a055fb73057
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 3b394ff8e3638a9663e756fd6db866b0c3e5d2ef
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 7a125ea70a891d8db0ec652844a99153f19253bd
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447665"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55150297"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство по интеграции Azure Active Directory с Ivanti Service Manager (ISM)
+# <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство. Интеграция Azure Active Directory с Ivanti Service Manager (ISM)
 
 В этом руководстве описано, как интегрировать Ivanti Service Manager (ISM) с Azure Active Directory (AAD).
 
@@ -53,7 +53,7 @@ ms.locfileid: "52447665"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Ivanti Service Manager (ISM) из коллекции.
+1. Добавление Ivanti Service Manager (ISM) из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-ivanti-service-manager-ism-from-the-gallery"></a>Добавление Ivanti Service Manager (ISM) из коллекции

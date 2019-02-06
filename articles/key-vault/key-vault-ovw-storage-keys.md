@@ -9,23 +9,31 @@ author: prashanthyv
 ms.author: pryerram
 manager: mbaldwin
 ms.date: 10/03/2018
-ms.openlocfilehash: 3ee0d19c174490d558a8ff06d3f5e038ffff211f
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 0392d84efa3a82a6323d6d09db792df7d6c42256
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064446"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55210681"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
 > [!NOTE]
-> [Служба хранилища Azure теперь поддерживает авторизацию AAD](https://docs.microsoft.com/azure/storage/common/storage-auth-aad). Мы рекомендуем использовать Azure Active Directory для аутентификации и авторизации в хранилище, так как пользователям не придется беспокоиться о смене ключей учетной записи хранения.
+> [Интеграция хранилища Azure с Azure Active Directory (Azure AD) теперь доступна в предварительной версии](https://docs.microsoft.com/azure/storage/common/storage-auth-aad). Рекомендуем использовать Azure AD для аутентификации и авторизации, которые обеспечивают доступ на базе токенов OAuth2 к службе хранилища Azure, как и Azure Key Vault. Это позволяет следующее:
+> - Проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. 
+> - Использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения полностью устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
+> - Для управления авторизацией, которая также поддерживается с помощью Key Vault, используйте управление доступом на основе ролей (RBAC).
 
 - Служба хранилища Azure Key Vault управляет ключами учетной записи хранения Azure (ASA).
     - На внутреннем уровне Azure Key Vault может выводить список (синхронизировать) ключи с помощью учетной записи хранения Azure.    
     - Azure Key Vault периодически повторно создает (сменяет) ключи.
     - Значения ключей никогда не возвращаются в ответе вызывающему объекту.
     - Azure Key Vault управляет ключами как учетных записей хранения, так и классических учетных записей хранения.
+    
+> [!IMPORTANT]
+> Арендатор Azure AD предоставляет каждому зарегистрированному приложению **[субъект-службу](/azure/active-directory/develop/developer-glossary#service-principal-object)**, который используется в качестве удостоверения приложения. Идентификатор приложения субъекта-службы используется при авторизации для доступа к другим ресурсам Azure, посредством управления доступом на основе ролей (RBAC). Key Vault — это приложение корпорации Майкрософт, поэтому оно предварительно зарегистрировано во всех арендаторах Azure AD под одним идентификатором приложения в каждом из следующих облаков Azure:
+> - Клиенты Azure AD в облаке Azure для государственных организаций используют идентификатор приложения `7e7c393b-45d0-48b1-a35e-2905ddf8183c`.
+> - Клиенты Azure AD в общедоступном облаке других облаках Azure используют идентификатор приложения `cfa8b339-82a2-471a-a3c9-0fc0be7a4093`.
 
 <a name="prerequisites"></a>Предварительные требования
 --------------
@@ -74,8 +82,46 @@ ms.locfileid: "54064446"
 
     az keyvault set-policy --name <YourVaultName> --object-id <ObjectId> --storage-permissions backup delete list regeneratekey recover     purge restore set setsas update
     ```
+    
+## <a name="how-to-access-your-storage-account-with-sas-tokens"></a>Как получить доступ к учетной записи хранения с помощью маркеров SAS
+
+В этом разделе мы обсудим выполнение операций с вашей учетной записью хранения путем получения [маркеров SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) из Key Vault.
+
+Ниже показано, как получить ключ учетной записи хранения, который находится в Key Vault, и использовать его для создания определения SAS для вашей учетной записи хранения.
+
+> [!NOTE] 
+  Существует 3 способа аутентификации в Key Vault (с которыми можно ознакомиться в разделе об [основных понятиях](key-vault-whatis.md#basic-concepts)):
+- использование Управляемого удостоверения службы (настоятельно рекомендуется);
+- использование субъекта-службы и сертификата; 
+- использование субъекта-службы и пароля (не рекомендуется).
+
+```cs
+// Once you have a security token from one of the above methods, then create KeyVaultClient with vault credentials
+var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(securityToken));
+
+// Get a SAS token for our storage from Key Vault. SecretUri is of the format https://<VaultName>.vault.azure.net/secrets/<ExamplePassword>
+var sasToken = await kv.GetSecretAsync("SecretUri");
+
+// Create new storage credentials using the SAS token.
+var accountSasCredential = new StorageCredentials(sasToken.Value);
+
+// Use the storage credentials and the Blob storage endpoint to create a new Blob service client.
+var accountWithSas = new CloudStorageAccount(accountSasCredential, new Uri ("https://myaccount.blob.core.windows.net/"), null, null, null);
+
+var blobClientWithSas = accountWithSas.CreateCloudBlobClient();
+```
+
+Если срок действия маркера SAS истекает, нужно еще раз получить маркер SAS из Key Vault и обновить код.
+
+```cs
+// If your SAS token is about to expire, get the SAS Token again from Key Vault and update it.
+sasToken = await kv.GetSecretAsync("SecretUri");
+accountSasCredential.UpdateSASToken(sasToken);
+```
+
+
 ### <a name="relavant-azure-cli-cmdlets"></a>Соответствующие командлеты Azure CLI
-- [Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest)
+[Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest)
 
 ### <a name="relevant-powershell-cmdlets"></a>Соответствующие командлеты PowerShell
 

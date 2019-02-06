@@ -9,20 +9,20 @@ manager: daveba
 editor: ''
 ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
 ms.service: active-directory
-ms.component: conditional-access
+ms.subservice: conditional-access
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/22/2018
+ms.date: 01/24/2019
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 39d49a223fb02d00af2309922ccd98a764264b4d
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 4e6912d13b4192b1f938acf5a9808221f5aa42f7
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452519"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55077664"
 ---
 # <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory
 
@@ -71,9 +71,15 @@ ms.locfileid: "54452519"
 
 ### <a name="compliant-device"></a>Устройства, соответствующие требованиям
 
-Политики условного доступа можно настроить на основе устройств. Цель политики условного доступа на основе устройств — предоставить доступ к настроенным ресурсам только с [управляемых устройств](require-managed-devices.md). Требование устройства, соответствующего требованиям, — это один из способов определения управляемого устройства. Если этот параметр выбран, то политика условного доступа разрешает попытки доступа с устройств, которые [зарегистрированы](../devices/overview.md) в Azure Active Directory и помечены Intune как соответствующие требованиям (для любой операционной системы) или сторонней системой MDM для Windows 10. Сторонние системы управления мобильными устройствами для ОС, отличных от Windows 10, не поддерживаются.
+Политики условного доступа можно настроить на основе устройств. Цель политики условного доступа на основе устройств — предоставить доступ к выбранным облачным приложениям только с [управляемых устройств](require-managed-devices.md). Один из вариантов ограничения доступа к управляемым устройствам — требование отметки устройства в качестве соответствующего. Устройство может быть помечено как соответствующее службой Intune (для любой операционной системы устройства) или сторонней системой управления мобильными устройствами для устройств Windows 10. Сторонние системы управления мобильными устройствами для ОС, отличных от Windows 10, не поддерживаются. 
 
-Дополнительные сведения см. в статье [Настройка политик условного доступа на основе устройств для Azure Active Directory](require-managed-devices.md).
+Ваше устройство должно быть зарегистрировано в Azure AD, прежде чем его можно будет пометить как соответствующее. Чтобы зарегистрировать устройство, у вас есть три варианта: 
+
+- [устройства, зарегистрированные в Azure AD](../devices/overview.md#azure-ad-registered-devices);
+- [устройства, присоединенные к Azure AD](../devices/overview.md#azure-ad-joined-devices);  
+- [устройства, использующие гибридное присоединение к Azure AD](../devices/overview.md#hybrid-azure-ad-joined-devices).
+
+Дополнительные сведения см. в статье [Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](require-managed-devices.md).
 
 ### <a name="hybrid-azure-ad-joined-device"></a>Гибридные устройства, присоединенные к Azure AD
 

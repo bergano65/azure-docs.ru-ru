@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: 857ab3ad9870407b91b0fdc9c552a89fd1f4ccd4
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.subservice: common
+ms.openlocfilehash: 2f646df3cab0320b574023cd543015921c640cab
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140525"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55478327"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -241,7 +241,7 @@ ms.locfileid: "50140525"
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и вектор инициализации необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
+* [Руководство Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
 * Скачайте [Azure Storage Client Library for .NET NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage)
 * Скачайте пакеты NuGet [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) и [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) для хранилища ключей Azure.  
 * Просмотрите [документацию по хранилищу ключей Azure](../../key-vault/key-vault-whatis.md)

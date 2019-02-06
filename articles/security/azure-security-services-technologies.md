@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/25/2018
+ms.date: 1/29/2019
 ms.author: barclayn
-ms.openlocfilehash: 32174af9edcd6da7b87b6b38c0824fa7f07aa8f9
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 6f571655bb0501f8ef4018bf47588c8db4cc2a3e
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49384893"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097672"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -84,7 +84,11 @@ ms.locfileid: "49384893"
 | [Группы&nbsp;безопасности&nbsp;сети](../virtual-network/virtual-networks-nsg.md)| Функция управления доступом на основе сети, использующая 5 кортежей для разрешения и запрета.  |
 | [VPN-шлюз Azure](../vpn-gateway/vpn-gateway-about-vpngateways.md)| Сетевое устройство, используемое в качестве конечной точки VPN для обеспечения доступа между локальными сетями к виртуальным сетям Azure.  |
 | [Шлюз приложений Azure](../application-gateway/application-gateway-introduction.md)|Расширенный балансировщик нагрузки веб-приложения, который может выполнять маршрутизацию на основе URL-адреса и выполнять SSL-разгрузку. |
+|[Брандмауэр веб-приложения](../application-gateway/waf-overview.md) (WAF)|Компонент шлюза приложений для централизованной защиты веб-приложений от распространенных эксплойтов и уязвимостей.|
 | [Подсистема балансировщика нагрузки Azure](../load-balancer/load-balancer-overview.md)|Подсистема балансировки нагрузки сети приложения TCP/UDP. |
 | [Azure ExpressRoute](../expressroute/expressroute-introduction.md)| Выделенная ссылка WAN между локальными сетями и виртуальными сетями Azure. |
 | [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md)| Балансировщик нагрузки глобальной DNS.|
 | [Прокси приложения Azure](../active-directory/active-directory-application-proxy-get-started.md)| Внешний интерфейс аутентификации, используемый для защиты удаленного доступа к веб-приложениям, размещенным локально. |
+|[Брандмауэр Azure](../firewall/overview.md)|Управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure.|
+|[Защита от атак DDoS Azure](../virtual-network/ddos-protection-overview.md)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
+|[Конечные точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md)|Расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению.|

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Opal | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Opal | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Opal.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 434fc204-e9f9-4678-ad5f-054d621bb2f9
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2018
 ms.author: jeedes
-ms.openlocfilehash: a20818fc03117b3e6a6cdb882c7323d6b9aec533
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: cacfa736a91d47abb91b40b1c549aba884d16ec0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438847"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55168963"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-opal"></a>Руководство по интеграции Azure Active Directory с Opal
+# <a name="tutorial-azure-active-directory-integration-with-opal"></a>Руководство. Интеграция Azure Active Directory с Opal
 
 В этом руководстве описано, как интегрировать Opal с Azure Active Directory (Azure AD).
 
@@ -153,7 +153,7 @@ ms.locfileid: "39438847"
 1. Чтобы настроить единый вход на стороне **Opal**, отправьте [группе поддержки Opal](mailto:support@workwithopal.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -189,7 +189,7 @@ ms.locfileid: "39438847"
   
 ### <a name="create-an-opal-test-user"></a>Создание тестового пользователя Opal
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Opal. Обратитесь к [группе поддержки Opal](mailto:support@workwithopal.com), чтобы добавить пользователей на платформу Opal. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Opal. Обратитесь к  [группе поддержки Opal](mailto:support@workwithopal.com) для добавления пользователей на платформу Opal. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -226,7 +226,7 @@ ms.locfileid: "39438847"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Opal" на панели доступа, вы автоматически войдете в приложение Opal.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

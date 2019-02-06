@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.component: compliance
+ms.subservice: compliance
 ms.date: 09/25/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 0ae6c27091dd2938ec7410e78ae12dbe20509029
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 12a9602ecd61da5dc497790ecca6d8d6f874252e
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47167827"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55184297"
 ---
 # <a name="use-azure-ad-access-reviews-to-manage-users-that-have-been-excluded-from-conditional-access-policies"></a>Использование проверок доступа Azure AD для управления пользователями, которые исключены из политик условного доступа
 
@@ -96,7 +96,7 @@ ms.locfileid: "47167827"
 
 Давайте рассмотрим два примера, в которых проверка доступа поможет в управлении исключениями из политик условного доступа.
 
-## <a name="example-1-access-review-for-users-accessing-from-blocked-countries"></a>Пример 1. Проверка доступа для пользователей, которым нужен доступ из заблокированных стран
+## <a name="example-1-access-review-for-users-accessing-from-blocked-countries"></a>Пример 1 Проверка доступа для пользователей, которым нужен доступ из заблокированных стран
 
 Предположим, у вас есть политика условного доступа, которая блокирует доступ из определенных стран. В этой политике также настроена группа исключений. Для членов этой группы мы рекомендуем применить следующую проверку доступа.
 
@@ -117,7 +117,7 @@ ms.locfileid: "47167827"
 
     ![Создание проверки доступа](./media/conditional-access-exclusion/create-access-review-1.png)
 
-## <a name="example-2-access-review-for-users-accessing-with-legacy-authentication"></a>Пример 2. Проверка доступа для пользователей, использующих устаревшие методы проверки подлинности
+## <a name="example-2-access-review-for-users-accessing-with-legacy-authentication"></a>Пример 2 Проверка доступа для пользователей, использующих устаревшие методы аутентификации
 
 Предположим, вы настроили политику условного доступа, которая блокирует доступ для пользователей со старыми версиями клиента и старыми методами проверки подлинности. В этой политике также настроена группа исключений. Для членов этой группы мы рекомендуем применить следующую проверку доступа.
 

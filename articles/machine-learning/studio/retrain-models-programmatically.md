@@ -1,6 +1,6 @@
 ---
-заголовок: Программное переобучение моделей Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Узнайте, как выполнить программное переобучение модели с помощью C# и службы пакетного выполнения Машинного обучения.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Программное переобучение моделей Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Узнайте, как выполнить программное переобучение модели с помощью C# и службы пакетного выполнения Машинного обучения.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 19.04.2017
 ---

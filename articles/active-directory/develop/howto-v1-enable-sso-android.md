@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 40710225-05ab-40a3-9aec-8b4e96b6b5e7
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: android
 ms.devlang: java
@@ -17,14 +17,14 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: dadobali
 ms.custom: aaddev
-ms.openlocfilehash: 2c7ccd8d2022631e32c240007a782d2382aac518
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 9f0cc19ae220d27de620e5bd347fe78d9bfab2d5
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422853"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55093297"
 ---
-# <a name="how-to-enable-cross-app-sso-on-android-using-adal"></a>Включение единого входа для нескольких приложений Android с помощью ADAL
+# <a name="how-to-enable-cross-app-sso-on-android-using-adal"></a>Практическое руководство: включение единого входа для нескольких приложений Android с помощью ADAL
 
 [!INCLUDE [active-directory-develop-applies-v1-adal](../../../includes/active-directory-develop-applies-v1-adal.md)]
 
@@ -108,7 +108,7 @@ ms.locfileid: "52422853"
 2. Укажите новый код URI перенаправления для самого приложения и его регистрации.
 3. Настройте требуемые разрешения в манифесте Android.
 
-#### <a name="step-1-enable-broker-mode-in-your-application"></a>Шаг 1. Включение режима брокера в приложении
+#### <a name="step-1-enable-broker-mode-in-your-application"></a>Шаг 1. Включение режима брокера в приложении
 
 Возможность использовать в приложении брокер включается во время создания параметров или при первоначальной настройке экземпляра проверки подлинности. Чтобы сделать это в приложении:
 
@@ -116,7 +116,7 @@ ms.locfileid: "52422853"
 AuthenticationSettings.Instance.setUseBroker(true);
 ```
 
-#### <a name="step-2-establish-a-new-redirect-uri-with-your-url-scheme"></a>Шаг 2. Настройка нового кода URI перенаправления в схеме URL-адреса
+#### <a name="step-2-establish-a-new-redirect-uri-with-your-url-scheme"></a>Шаг 2. Установка нового URI перенаправления в схеме URL-адреса
 
 Чтобы гарантировать возврат маркеров учетных данных в нужное приложение, необходимо убедиться, что способ выполнения обратного вызова к приложению доступен для проверки операционной системой Android. Операционная система Android использует хэш сертификата в магазине Google Play. Этот хэш сертификата не может быть подделан мошенническим приложением. Вместе с кодом URI приложения брокера корпорация Майкрософт следит за тем, чтобы маркеры возвращались в нужное приложение. Для регистрации в приложении требуется уникальный код URI перенаправления.
 
@@ -128,7 +128,7 @@ AuthenticationSettings.Instance.setUseBroker(true);
 
 Вы можете указать этот код URI перенаправления при регистрации приложения на [портале Azure](https://portal.azure.com/). Дополнительные сведения о регистрации приложения Azure AD см. в статье, посвященной [интеграции с Azure Active Directory](active-directory-how-to-integrate.md).
 
-#### <a name="step-3-set-up-the-correct-permissions-in-your-application"></a>Шаг 3. Настройка требуемых разрешений в приложении
+#### <a name="step-3-set-up-the-correct-permissions-in-your-application"></a>Шаг 3. Настройка требуемых разрешений в приложении
 
 Приложение брокера в Android использует функцию диспетчера учетных записей ОС Android для управления учетными данными в разных приложениях. Чтобы использовать брокер в приложении Android, ваш манифест приложения должен содержать разрешения на использование учетных записей AccountManager. Дополнительные сведения об этих разрешениях см. в [документации Google по использованию диспетчера учетных записей](https://developer.android.com/reference/android/accounts/AccountManager.html).
 

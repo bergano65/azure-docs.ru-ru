@@ -7,7 +7,7 @@ author: andretms
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 10/24/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 4ba4e844ed6bb01204b7a0adf5020aec255147dd
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: a0c2d13b2ac6715db047d56e998294688d9b65cf
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986548"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097067"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -359,7 +359,7 @@ ms.locfileid: "49986548"
 |---------|---------|---------|
 |**Имя** |Полное имя пользователя|Имя и фамилия пользователя.|
 |**Имя пользователя** |<span>user@domain.com</span> |Имя пользователя, которое позволяет его идентифицировать.|
-|**Истечение срока действия маркера** |Datetime |Это время, когда истекает срок действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
+|**Истечение срока действия маркера** |DateTime |Это время, когда истекает срок действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
 |**Маркер доступа** |Строка |Строка маркера, которая отправляется к HTTP-запросам, требующим *Заголовок авторизации*.|
 
 #### <a name="see-whats-in-the-access-token-optional"></a>Просмотр содержимого маркера доступа (необязательно)
@@ -384,13 +384,13 @@ ms.locfileid: "49986548"
 
 **Причина.** Не включены возможности корпоративного уровня и сертификатов.
 
-**Решение.** Выполните действия из раздела о [встроенной проверке подлинности в федеративных доменах](#enable-integrated-authentication-on-federated-domains-optional).
+**Решение.** Выполните действия из раздела о [встроенной аутентификации в федеративных доменах](#enable-integrated-authentication-on-federated-domains-optional).
 
 ### <a name="issue-2"></a>Проблема 2
 Вы включили [встроенную проверку подлинности в федеративных доменах](#enable-integrated-authentication-on-federated-domains-optional) и пытаетесь использовать Windows Hello на компьютере под управлением Windows 10 для входа в среду с настроенной многофакторной проверкой подлинности. Отображается список сертификатов. Однако если вы решили использовать ПИН-код, окно ПИН-кода никогда не отображается.
 
-**Причина.** Эта проблема вызвана известным ограничением веб-брокера проверки подлинности в приложениях UWP, запускаемых на рабочем столе Windows 10. В Windows 10 Mobile он работает нормально.
+**Причина.** Эта проблема вызвана известным ограничением веб-брокера аутентификации в приложениях UWP, запускаемых на рабочем столе Windows 10. В Windows 10 Mobile он работает нормально.
 
-**Обходной путь.** Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
+**Возможное решение.** Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

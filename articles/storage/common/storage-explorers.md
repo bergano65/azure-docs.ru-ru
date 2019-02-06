@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/06/2017
 ms.author: dineshmurthy
-ms.component: common
-ms.openlocfilehash: 55fa63e75768662a0f909cef0e3cc04b9c2dae41
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.subservice: common
+ms.openlocfilehash: c45c70055817eeeed19f9c8a832a76b10beceaa6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526204"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467039"
 ---
 # <a name="azure-storage-client-tools"></a>Клиентские инструменты службы хранилища Azure
 Пользователям службы хранилища Azure часто требуется просматривать свои данные или взаимодействовать с ними с помощью клиентского инструмента службы хранилища Azure. В приведенных ниже таблицах перечислен ряд инструментов, которые позволяют это сделать. Соответствующее поле содержит "X", если инструмент позволяет перечислить абстракцию данных и (или) предоставить к ней доступ. В таблице также показано, являются ли инструменты бесплатными. "Пробная версия" означает, что доступна бесплатная пробная версия, но полная версия продукта платная. "Да/нет" указывает, что есть как платная, так и бесплатная версии.
@@ -36,7 +36,7 @@ ms.locfileid: "39526204"
   </tr>
   <tr>
     <td>Web</td>
-    <td>Windows</td>
+    <td> Windows</td>
     <td>OSX</td>
     <td>Linux</td>
   </tr>
@@ -102,7 +102,7 @@ ms.locfileid: "39526204"
   </tr>
   <tr>
     <td>Web</td>
-    <td>Windows</td>
+    <td> Windows</td>
     <td>OSX</td>
     <td>Linux</td>
   </tr>
@@ -177,7 +177,7 @@ ms.locfileid: "39526204"
     <td></td>
   </tr>
   <tr>
-    <td><a href="http://clumsyleaf.com">ClumsyLeaf: AzureXplorer, CloudXplorer, TableXplorer</a></td>
+    <td><a href="http://clumsyleaf.com">ClumsyLeaf: AzureXplorer, CloudXplorer и TableXplorer</a></td>
     <td>X</td>
     <td>X</td>
     <td>X</td>

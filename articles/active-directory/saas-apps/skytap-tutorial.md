@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Skytap | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Skytap | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Skytap.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: d6cb7ab2-da1a-4015-8e6f-c0c47bb6210f
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 754697682470ac3c1f982e6cb1fc5f6043f3b92c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6466e40fca954d41a32424c55b8ee465fb7ad7ec
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438136"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55195715"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skytap"></a>Руководство по интеграции Azure Active Directory с приложением Skytap
+# <a name="tutorial-azure-active-directory-integration-with-skytap"></a>Руководство. Интеграция Azure Active Directory с приложением Skytap
 
 В этом руководстве описано, как интегрировать Skytap с Azure Active Directory (Azure AD).
 
@@ -167,7 +167,7 @@ ms.locfileid: "39438136"
  
 ### <a name="create-a-skytap-test-user"></a>Создание тестового пользователя Skytap
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Skytap. Обратитесь в [службу поддержки Skytap](mailto:support@skytap.com), чтобы добавить пользователей на платформу Skytap. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Skytap. Обратитесь в  [службу поддержки Skytap](mailto:support@skytap.com), чтобы добавить пользователей на платформу Skytap. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39438136"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Skytap на панели доступа, вы автоматически войдете в приложение Skytap.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

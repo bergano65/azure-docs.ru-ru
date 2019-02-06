@@ -8,20 +8,20 @@ author: MarkusVi
 manager: daveba
 ms.assetid: e7434eeb-4e98-4b6b-a895-b5598a6cccf1
 ms.service: active-directory
-ms.component: identity-protection
+ms.subservice: identity-protection
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/13/2018
+ms.date: 01/29/2019
 ms.author: markvi
 ms.reviewer: raluthra
-ms.openlocfilehash: 73b76561829e6d50918881427894ea310920fce6
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 1e08af577bec463263045a0f0355acffaad5e599
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54465212"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244170"
 ---
 # <a name="what-is-azure-active-directory-identity-protection"></a>Что такое защита идентификации Azure Active Directory?
 
@@ -48,7 +48,7 @@ ms.locfileid: "54465212"
 
 Обнаружение скомпрометированных удостоверений — непростая задача. Azure Active Directory использует адаптивные алгоритмы машинного обучения и эвристические методы, чтобы обнаруживать аномалии и подозрительные инциденты, которые могут указывать на компрометацию удостоверений. На основе этих данных служба защиты идентификации создает отчеты и оповещения, с помощью которых можно оценить обнаруженные проблемы и предпринять действия по исправлению и устранению рисков.
 
-Защита идентификации Azure Active Directory — это больше, чем просто инструмент для мониторинга и создания отчетности. Для защиты удостоверений организации можно настроить политики на основе рисков, которые автоматически реагируют на обнаруженные проблемы в случае достижения указанного уровня риска. Эти политики, помимо других элементов управления условным доступом Azure Active Directory и EMS, позволяют обеспечить автоматическую блокировку или инициировать адаптивные действия по исправлению, в том числе сброс пароля и принудительную многофакторную идентификацию.
+Защита идентификации Azure Active Directory — это больше, чем просто инструмент для мониторинга и создания отчетности. Для защиты удостоверений организации можно настроить политики на основе рисков, которые автоматически реагируют на обнаруженные проблемы в случае достижения указанного уровня риска. Эти политики, помимо других элементов управления условным доступом Azure Active Directory и [Enterprise Mobility + Security](https://docs.microsoft.com/enterprise-mobility-security/) (EMS), позволяют обеспечить автоматическую блокировку или инициировать адаптивные действия по исправлению, в том числе сброс пароля и принудительную многофакторную идентификацию.
 
 
 #### <a name="identity-protection-capabilities"></a>Возможности защиты идентификации

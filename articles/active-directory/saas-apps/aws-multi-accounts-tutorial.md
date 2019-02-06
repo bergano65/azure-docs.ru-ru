@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Amazon Web Services (AWS) для подключения нескольких учетных записей | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Amazon Web Services (AWS) для подключения нескольких учетных записей | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и несколькими учетными записями Amazon Web Services (AWS).
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 7561c20b-2325-4d97-887f-693aa383c7be
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeedes
-ms.openlocfilehash: a9acb9539497c85f408ce7417fa5983072ea80b9
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 48d8516a1923aaacc26db2eb9a9acfd0ddff737e
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365668"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197523"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по интеграции Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство. Интеграция Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать приложение Azure Active Directory (Azure AD) с несколькими учетными записями Amazon Web Services (AWS).
 
@@ -122,7 +122,7 @@ ms.locfileid: "49365668"
 
     ![изображение](./media/aws-multi-accounts-tutorial/b1_b2_saml_sso.png)
 
-3. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![изображение](./media/aws-multi-accounts-tutorial/b1-domains_and_urlsedit.png)
 
@@ -158,7 +158,7 @@ ms.locfileid: "49365668"
 
     Е. Выберите команду **Сохранить**.
 
-7. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML), в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML-файл метаданных федерации** и сохранить его на компьютере.
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации** и сохранить его на компьютере.
 
     ![изображение](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_certificate.png) 
 
@@ -202,13 +202,13 @@ ms.locfileid: "49365668"
 
     a. В разделе **Select type of trusted entity** (Выберите тип доверенной сущности) выберите **SAML 2.0 federation** (Федерация SAML 2.0).
 
-    b. В разделе **Choose a SAML 2.0 Provider** (Выберите поставщик SAML 2.0) выберите **поставщик SAML**, созданный ранее (например, *WAAD*).
+    b. В разделе **Choose a SAML 2.0 Provider** (Выберите поставщик SAML 2.0) выберите **поставщик SAML**, созданный ранее (например, *WAAD*).
 
     c. Установите флажок **Allow programmatic and AWS Management Console access** (Разрешить программный доступ и доступ через консоль управления AWS).
   
-    d. Щелкните **Next: Permissions** (Далее: разрешения).
+    d. Щелкните **Далее: разрешения**.
 
-16. В диалоговом окне **Attach Permissions Policies** (Присоединение политик разрешений) не нужно присоединять какую-либо политику. Щелкните **Next: Review** (Далее. Проверка).  
+16. В диалоговом окне **Attach Permissions Policies** (Присоединение политик разрешений) не нужно присоединять какую-либо политику. Щелкните **Далее: Review** (Далее: проверка).  
 
     ![Настройка политики единого входа][33]
 
@@ -352,7 +352,7 @@ ms.locfileid: "49365668"
 
 ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_test_saml.png)
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

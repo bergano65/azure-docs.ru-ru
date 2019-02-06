@@ -1,5 +1,5 @@
 ---
-title: Azure Backup. Восстановление виртуальных машин Azure с помощью REST API
+title: 'Azure Backup: Восстановление виртуальных машин Azure с помощью REST API'
 description: Управление операциями восстановления из резервной копии виртуальной машины Azure с помощью REST API
 services: backup
 author: pvrk
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/12/2018
 ms.author: pullabhk
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: 68c611b08524b5fc037598bafe46d75b3293886d
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: 4a65e8a855b9be797c1ceeacf4b74fea74697d00
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51289501"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55100220"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -43,7 +43,7 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 #### <a name="example-response"></a>Пример ответа
 
-После отправки URI *GET* возвращается ответ 200 (OK).
+После отправки универсального кода ресурса (URI) *GET* возвращается ответ 200 (OК).
 
 ```http
 HTTP/1.1 200 OK
@@ -127,9 +127,9 @@ X-Powered-By: ASP.NET
 
 Активация восстановления дисков — это запрос *POST*. Дополнительные сведения об операции восстановления дисков см. [в этой статье](https://docs.microsoft.com/rest/api/backup/restores/trigger).
 
-````http
+```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore?api-version=2016-12-01
-````
+```
 
 `{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-1). `{fabricName}` — это Azure, а `{recoveryPointId}` — это поле `{name}` точки восстановления, которое упоминалось [выше](#example-response).
 
@@ -147,7 +147,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 Следующий текст запроса определяет свойства, необходимые для запуска восстановления диска.
 
-````json
+```json
 {
   "properties": {
     "objectType": "IaasVMRestoreRequest",
@@ -163,13 +163,13 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
     }
   }
 }
-````
+```
 
 ### <a name="response"></a>Ответ
 
-Активация восстановления диска является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
+Активация восстановления диска является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и затем 200 (ОК) после завершения этой операции.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
 |ИМЯ  |type  |ОПИСАНИЕ  |
 |---------|---------|---------|
@@ -243,7 +243,7 @@ X-Powered-By: ASP.NET
 
 Следующий текст запроса определяет свойства, необходимые для запуска восстановления виртуальной машины.
 
-````json
+```json
 {
   "parameters": {
         "subscriptionId": "00000000-0000-0000-0000-000000000000",
@@ -275,7 +275,7 @@ X-Powered-By: ASP.NET
       }
     }
 }
-````
+```
 
 Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#response).
 

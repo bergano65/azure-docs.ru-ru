@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 3bb8d4796d23b84f815d28efa45af619efe19af3
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: c44e000a60e4391faf38cb275f35ec512e19aea3
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338239"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101691"
 ---
 # <a name="protect-your-network-resources-in-azure-security-center"></a>Защита ресурсов сети в центре безопасности Azure
 Центр безопасности Azure постоянно анализирует состояние безопасности ресурсов Azure, чтобы предоставлять рекомендации по обеспечению безопасности сети. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления, чтобы укрепить защиту ресурсов.

@@ -6,14 +6,14 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 12/21/2018
+ms.date: 01/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1db379a48d4dafdaa2494d081658296a7145bcd9
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 80510b4f3f07b96b9084108fcb89c75e108cbc65
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54815240"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55096856"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -42,8 +42,8 @@ ms.locfileid: "54815240"
 
 | Дистрибутив Linux | Version (версия) | Тип тома, для которого поддерживается шифрование|
 | --- | --- |--- |
-| Ubuntu | 16.04-DAILY-LTS | Диск операционной системы и данных |
-| Ubuntu | 14.04.5-DAILY-LTS | Диск операционной системы и данных |
+| Ubuntu | 16.04| Диск операционной системы и данных |
+| Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
 | RHEL | 7.5 | Диск операционной системы и данных * |
 | RHEL | 7.4 | Диск операционной системы и данных * |
 | RHEL | 7.3 | Диск операционной системы и данных * |
@@ -59,12 +59,10 @@ ms.locfileid: "54815240"
 | CentOS | 6.7 | Диск данных |
 | CentOS | 6.6 | Диск данных |
 | CentOS | 6,5 | Диск данных |
-| openSUSE | 13.2 | Диск данных |
-| SLES | 12 с пакетом обновления 1 (SP1) | Диск данных |
-| SLES | Приоритет: 12-SP1 | Диск данных |
-| SLES | HPC 12 | Диск данных |
-| SLES | Приоритет: 11-SP4 | Диск данных |
-| SLES | 11 SP4 | Диск данных |
+| openSUSE | SUSE:openSUSE-Leap:42.3:latest | Диск данных |
+| SLES | SUSE:SLES-Priority:12-SP4:latest | Диск данных |
+| SLES | SUSE:SLES-HPC:12-SP3:latest | Диск данных |
+| SLES | SUSE:SLES-Priority:12-SP3:latest | Диск данных |
 
 
 *__Новая реализация ADE поддерживается для операционной системы RHEL и диска данных для образов RHEL7 с оплатой по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. Дополнительные сведения см. в статье [Шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md).__

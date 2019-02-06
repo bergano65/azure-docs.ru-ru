@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 9f01e94eb23083ab25dd2cbd41e8bad1297abb54
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 007f7fe95be77a2b1661cd6c82118eb875401f24
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255267"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472581"
 ---
 # <a name="refine-a-group-using-group-dependency-mapping"></a>Уточнение группы с помощью сопоставления зависимостей группы
 
@@ -52,6 +52,8 @@ ms.locfileid: "53255267"
 
 ### <a name="install-the-mma"></a>Установка MMA
 
+#### <a name="install-the-agent-on-a-windows-machine"></a>Установка агента на компьютере Windows
+
 Вот как можно установить агент на компьютере Windows.
 
 1. Дважды щелкните скачанный файл агента.
@@ -60,6 +62,9 @@ ms.locfileid: "53255267"
 4. В разделе **Параметры установки агента** последовательно выберите **Azure Log Analytics** > **Далее**.
 5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
+Вы можете установить агент из командной строки или автоматически, например с помощью Azure Automation DSC, System Center Configuration Manager или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных. Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent).
+
+#### <a name="install-the-agent-on-a-linux-machine"></a>Установка агента на компьютере Linux
 
 Вот как можно установить агент на компьютере Linux.
 
@@ -68,6 +73,10 @@ ms.locfileid: "53255267"
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
+#### <a name="install-the-agent-on-a-machine-monitored-by-system-center-operations-manager"></a>Установка агента на компьютере под наблюдением System Center Operations Manager (SCOM)
+
+Для компьютеров, отслеживаемых Operations Manager 2012 R2 или более поздней версии, нет необходимости устанавливать агент MMA. Сопоставление служб интегрируется с SCOM, которая использует Operations Manager MMA для сбора необходимых данных о зависимостях. Вы можете включить интеграцию с помощью инструкций, которые находятся [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-scom#prerequisites). Однако обратите внимание, что на этих компьютерах необходимо установить агент зависимости.
+
 ### <a name="install-the-dependency-agent"></a>Установка агента зависимостей
 1. Чтобы установить агент зависимостей на компьютере Windows, дважды щелкните файл установки и следуйте инструкциям мастера.
 2. Чтобы установить агент зависимостей на компьютере Linux, сделайте это с правами привилегированного пользователя, используя следующую команду.
@@ -75,6 +84,8 @@ ms.locfileid: "53255267"
     ```sh InstallDependencyAgent-Linux64.bin```
 
 Узнайте больше о поддержке агента зависимостей для ОС [Windows](../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems) и [Linux](../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems).
+
+[Узнайте больше](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) о том, как установить агент зависимостей с помощью скриптов.
 
 ## <a name="refine-the-group-based-on-dependency-visualization"></a>Уточнение группы на основе визуализации зависимостей
 После установки агентов на всех компьютерах группы можно визуализировать зависимости группы и уточнить ее, выполнив приведенные ниже действия.
@@ -91,6 +102,10 @@ ms.locfileid: "53255267"
      ![Просмотр зависимостей группы](./media/how-to-create-group-dependencies/view-group-dependencies.png)
 
 3. Чтобы просмотреть более подробные сведения о зависимостях, щелкните диапазон времени, чтобы изменить его. По умолчанию диапазон равен одному часу. Можно изменить диапазон времени или указать даты начала и окончания и длительность.
+
+    > [!NOTE]
+      Сейчас пользовательский интерфейс визуализации зависимостей не поддерживает выбор диапазона времени, превышающего час. Используйте Log Analytics для [запроса данных зависимостей](https://docs.microsoft.com/azure/migrate/how-to-create-a-group#query-dependency-data-from-log-analytics) на более длительный срок.
+
 4. Проверьте зависимые компьютеры, процесс, выполняющийся внутри каждого компьютера, и определите компьютеры, которые следует добавить в группу или удалить из нее.
 5. Чтобы выбрать несколько компьютеров на карте для их добавления или удаления, щелкните их, удерживая клавишу CTRL.
     - Добавить можно только компьютеры, которые были обнаружены.
@@ -101,6 +116,20 @@ ms.locfileid: "53255267"
     ![Добавление или удаление компьютеров](./media/how-to-create-group-dependencies/add-remove.png)
 
 Если вы хотите проверить зависимости конкретного компьютера, который отображается в сопоставлении зависимостей группы, [настройте сопоставление зависимостей компьютера](how-to-create-group-machine-dependencies.md).
+
+## <a name="query-dependency-data-from-log-analytics"></a>Запрос данных зависимостей из Log Analytics
+
+Данные о зависимостях, собранные Сопоставлением служб, доступны для запросов в рабочей области Log Analytics, связанной с вашим проектом Миграции Azure. Дополнительные сведения о таблицах данных Сопоставления служб для запроса в Log Analytics см. в разделе [Записи Log Analytics](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records). 
+
+Для выполнения запросов Log Analytics выполните следующее.
+
+1. После установки агентов перейдите на портал и выберите **Обзор**.
+2. В разделе **Обзор** перейдите в раздел проекта **Основное** и щелкните по имени рабочей области, указанному рядом с разделом **Рабочая область OMS**.
+3. На странице "Рабочая область Log Analytics" щелкните **Общие** > **Журналы**.
+4. Составьте запрос для сбора данных о зависимости с помощью Log Analytics. Примеры запросов для сбора данных о зависимости см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#sample-log-searches).
+5. Выполните запрос, нажав кнопку "Запуск". 
+
+Дополнительные сведения о написании запросов Log Analytics см. в статье [Начало работы с Log Analytics на портале Azure](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal). 
 
 
 ## <a name="next-steps"></a>Дополнительная информация

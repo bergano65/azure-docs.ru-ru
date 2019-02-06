@@ -1,6 +1,6 @@
 ---
-заголовок: Создание множества моделей из одного эксперимента Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Используйте PowerShell для создания нескольких моделей машинного обучения и конечных точек веб-службы с одним алгоритмом, но разными наборами данных для обучения.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Создание множества моделей из одного эксперимента Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Используйте PowerShell для создания нескольких моделей машинного обучения и конечных точек веб-службы с одним алгоритмом, но разными наборами данных для обучения.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 04.04.2017
 ---

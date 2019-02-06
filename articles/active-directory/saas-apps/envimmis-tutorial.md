@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: ab89f8ee-2507-4625-94bc-b24ef3d5e006
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2018
 ms.author: jeedes
-ms.openlocfilehash: 96168dcb8400d2580d0b64257ceb861c1da3ff65
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b85dc27f6b6a23be6dc89a0f0a7cf9f78681446d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447291"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55197455"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
 
@@ -263,7 +263,7 @@ ms.locfileid: "39447291"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Envi MMIS на панели доступа, вы автоматически войдете в приложение Envi MMIS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

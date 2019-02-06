@@ -1,6 +1,6 @@
 ---
-заголовок: Подготовка модели к развертыванию titleSuffix: Студия машинного обучения Azure description: Как подготовить обученную модель для развертывания в виде веб-службы, преобразовав обучающий эксперимент студии машинного обучения в прогнозный эксперимент.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Подготовка модели к развертыванию titleSuffix: Студия машинного обучения Azure description: Как подготовить обученную модель для развертывания в виде веб-службы, преобразовав обучающий эксперимент студии машинного обучения в прогнозный эксперимент.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.date: 28.03.2017
 ---

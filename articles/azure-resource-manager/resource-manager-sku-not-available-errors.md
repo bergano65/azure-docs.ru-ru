@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/19/2018
 ms.author: tomfitz
-ms.openlocfilehash: d1279b5319ddd52ff2f3f6b4e696b73e8fe67607
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 4688acbb2742579e0f9f3fbb2604ffd8ef12bfd5
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49468693"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55081047"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
@@ -41,10 +41,10 @@ for subscription '<subscriptionID>'. Please try another tier or deploy to a diff
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 
-Чтобы определить, какие номера SKU доступны в регионе, используйте команду [Get-AzureRmComputeResourceSku](/powershell/module/azurerm.compute/get-azurermcomputeresourcesku). Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
+Чтобы определить, какие номера SKU доступны в регионе, используйте команду [Get-AzComputeResourceSku](/powershell/module/az.compute/get-azcomputeresourcesku). Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
 
 ```azurepowershell-interactive
-Get-AzureRmComputeResourceSku | where {$_.Locations -icontains "centralus"}
+Get-AzComputeResourceSku | where {$_.Locations -icontains "centralus"}
 ```
 
 Результаты включают список номеров SKU для расположения и имеющиеся ограничения для этого номера SKU. Обратите внимание, что номер SKU может отображаться как `NotAvailableForSubscription`.

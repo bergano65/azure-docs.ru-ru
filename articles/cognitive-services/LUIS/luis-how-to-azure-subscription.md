@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/18/2019
+ms.date: 01/29/2019
 ms.author: diberry
-ms.openlocfilehash: 7662d58c1686dfa4e545246eb897af134a67144c
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 26954c8f839ff0bfb2da484e4fb535f33d4e07ed
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54473390"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55239185"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
 
@@ -43,7 +43,7 @@ ms.locfileid: "54473390"
 
     ![Выбор API Azure](./media/luis-azure-subscription/azure-api-choice.png) 
 
-1. После создания ресурса службы "Распознавание речи" можно просмотреть созданные ключи доступа в разделе **Управление ресурсами -> Ключи**. Не изменяйте ключи. В следующем разделе будет показано, как подключить этот новый ресурс к приложению LUIS на портале LUIS. Вам понадобится имя ресурса LUIS из шага 3.
+1. После создания ресурса службы "Распознавание речи" можно просмотреть созданные ключи доступа в разделе **Управление ресурсами -> Ключи**. В следующем разделе будет показано, как подключить этот новый ресурс к приложению LUIS на портале LUIS. Вам понадобится имя ресурса LUIS из шага 3.
 
     ![Ключи Azure](./media/luis-azure-subscription/azure-keys.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "54473390"
 
     ![Присвоение ресурса приложению](./media/luis-manage-keys/assign-key.png)
 
-1. В диалоговом окне выберите клиент, связанный с адресом электронной почты, с помощью которого вы входите на веб-сайт LUIS.  
+1. В диалоговом окне выберите арендатора, связанного с адресом электронной почты, с помощью которого вы входите на веб-сайт LUIS.  
 
 1. Выберите **Имя подписки**, связанное с ресурсом Azure, который вы хотите добавить.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Yodeck | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Yodeck | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yodeck.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: b2c8dccb-eeb0-4f4d-a24d-8320631ce819
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: jeedes
-ms.openlocfilehash: b017efd2c170f543041dcb35a3a3d040389d1dac
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 2f767e813c2ba803cfafaaf6d9798ee2ea3f93d2
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436800"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55165104"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Учебник. Интеграция Azure Active Directory с Yodeck
+# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Руководство. Интеграция Azure Active Directory с Yodeck
 
 В этом руководстве описано, как интегрировать Yodeck с Azure Active Directory (Azure AD).
 
@@ -240,7 +240,7 @@ ms.locfileid: "39436800"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Yodeck на панели доступа, вы автоматически войдете в приложение Yodeck.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

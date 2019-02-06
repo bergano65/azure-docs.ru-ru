@@ -5,13 +5,13 @@ author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/20/2018
-ms.openlocfilehash: b7c1f873d47be0f2ec0125f769a47a399e492662
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 01/24/2019
+ms.openlocfilehash: bbb48708d0e5a7cd07a3971a6966f40696107562
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536157"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55095101"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-postgresql"></a>Расширенная защита от угроз для Базы данных Azure для PostgreSQL
 
@@ -22,6 +22,9 @@ ms.locfileid: "53536157"
 > [!NOTE]
 > Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах Azure для национальных облаков и облаков для государственных организаций: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай — 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 >
+
+> [!NOTE]
+> Эта функция доступна во всех регионах Azure, где База данных Azure для PostgreSQL развернута для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
@@ -55,7 +58,7 @@ ms.locfileid: "53536157"
 
 Щелкните **Оповещения безопасности** в разделе **Защита от угроз**, чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
 
-  ![Защита от угроз ASC](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
+  ![Повышение защиты от угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

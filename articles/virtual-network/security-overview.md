@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: jdial
-ms.openlocfilehash: 52cac856fbec79842cc4661f38342cb972ea40df
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: bbfb070a66bdae415d357542459ee88fd8b1865f
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159066"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104489"
 ---
 # <a name="security-groups"></a>Группы безопасности
 <a name="network-security-groups"></a>
@@ -58,7 +58,7 @@ ms.locfileid: "54159066"
  В определении правила безопасности можно использовать указанные ниже теги служб. Их имена незначительно отличаются при использовании разных [моделей развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 * **VirtualNetwork** (для развертываний Resource Manager) или **VIRTUAL_NETWORK** (для классических развертываний). Этот тег включает адресное пространство виртуальной сети (все диапазоны CIDR, определенные для виртуальной сети), все адресное пространство подключенных локальных сетей и [пиринговые](virtual-network-peering-overview.md) виртуальные сети или виртуальные сети, подключенные к [шлюзу виртуальной сети](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-* **AzureLoadBalancer** (для развертываний Resource Manager) или **AZURE_LOADBALANCER** (для классических развертываний). Это тег по умолчанию, обозначающий подсистему балансировки нагрузки для инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md##azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Если подсистема балансировки нагрузки Azure не используется, это правило можно переопределить.
+* **AzureLoadBalancer** (для развертываний Resource Manager) или **AZURE_LOADBALANCER** (для классических развертываний). Это тег по умолчанию, обозначающий подсистему балансировки нагрузки для инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Если подсистема балансировки нагрузки Azure не используется, это правило можно переопределить.
 * **Internet** (для развертываний Resource Manager) или **INTERNET** (для классических развертываний). Это тег, обозначающий пространство IP-адресов, которые находятся за пределами виртуальной сети и к которым можно получить доступ из общедоступного сегмента Интернета. К этим адресам относится [общедоступное пространство IP-адресов, принадлежащее Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 * **AzureCloud** (только для развертываний Resource Manager). Этот тег определяет пространство IP-адресов для Azure, включая все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=41653). Значение *AzureCloud* отвечает за разрешение или запрет трафика к общедоступным IP-адресам Azure. Чтобы разрешить доступ к AzureCloud только в определенном [регионе](https://azure.microsoft.com/regions), можно указать этот регион. Например, чтобы разрешить доступ только к AzureCloud в регионе "Восточная часть США", вы можете указать *AzureCloud.EastUS* как тег службы. 
 * **AzureTrafficManager** (только для развертываний с помощью Resource Manager). Этот тег определяет диапазон IP-адресов для IP-адресов пробы диспетчера трафика Azure. Дополнительные сведения об IP-адресах пробы диспетчера трафика см. в статье [Диспетчер трафика Azure: вопросы и ответы](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs). 

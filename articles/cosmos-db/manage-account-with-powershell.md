@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 7f58e851ab7783e43cd6235b2169847cbf0ac5a4
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 80ed88bbc901d2cbcd6bc8104e55de73549744f8
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036636"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55477834"
 ---
-# <a name="create-and-manage-azure-cosmos-db-resources-by-using-powershell"></a>Создание ресурсов Azure Cosmos DB и управление ими с помощью PowerShell
+# <a name="manage-azure-cosmos-resources-using-powershell"></a>Управление ресурсами Azure Cosmos DB с помощью PowerShell
 
 В этом руководстве содержатся команды Azure PowerShell, используемые для автоматизации управления учетными записями баз данных Azure Cosmos DB. Здесь также приведены команды для управления ключами учетных записей и изменения порядка при отработке отказа в [межрегиональных учетных записях баз данных][distribute-data-globally]. Вы можете изменить политики согласованности, а также добавить или удалить регионы в учетной записи базы данных. Чтобы управлять своей учетной записью базы данных Azure Cosmos DB между несколькими регионами, можно использовать [Azure CLI](cli-samples.md), [REST API поставщика ресурсов][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
 

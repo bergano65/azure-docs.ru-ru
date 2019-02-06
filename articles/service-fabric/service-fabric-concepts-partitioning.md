@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/30/2017
 ms.author: msfussell
-ms.openlocfilehash: 70305468ca20c48bdc26e7e000a0e5edb63508cd
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 0012304412b343918ab69abf6eababc033cddc6f
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261576"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55198220"
 ---
 # <a name="partition-service-fabric-reliable-services"></a>Секционирование служб Reliable Services в Service Fabric
 В этой статье рассматриваются основные понятия, связанные с секционированием служб Reliable Services в инфраструктуре Azure Service Fabric. Исходный код, который используется в этой статье, можно найти на [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
@@ -129,11 +129,7 @@ Service Fabric упрощает процесс разработки масшта
 1. Выберите **Visual Studio** > **Файл** > **Создать** > **Проект**.
 2. В диалоговом окне **Создание проекта** выберите приложение Service Fabric.
 3. Назовите проект AlphabetPartitions.
-4. В диалоговом окне **Создание службы** выберите службу **с отслеживанием состояния** и назовите ее Alphabet.Processing, как показано на рисунке ниже.
-       ![Диалоговое окно "Новая служба" в Visual Studio][1]
-
-  <!--  ![Stateful service screenshot](./media/service-fabric-concepts-partitioning/createstateful.png)-->
-
+4. В диалоговом окне **Создание службы** выберите службу **с отслеживанием состояния** и назовите ее Alphabet.Processing.
 5. Укажите количество секций. Откройте файл Applicationmanifest.xml в папке ApplicationPackageRoot проекта AlphabetPartitions и задайте для параметра Processing_PartitionCount значение 26, как показано ниже.
    
     ```xml
@@ -167,7 +163,7 @@ Service Fabric упрощает процесс разработки масшта
    
     На одном компьютере может быть размещено несколько реплик этой службы, поэтому адрес должен быть уникальным для каждой реплики. Именно по этой причине в URL-адресе указываются идентификаторы секции и реплики. HttpListener может прослушивать несколько адресов на одном порту при условии, что префикс URL-адреса является уникальным.
    
-    Дополнительный GUID используется в сложных случаях, когда вторичные реплики также прослушивают запросы только для чтения. Если это так, следует убедиться, что новый уникальный адрес используется при переходе от первичной реплики к вторичной для принудительного разрешения адресов клиентами. Здесь в качестве адреса используется "+", чтобы реплика прослушивала все доступные узлы (IP-адрес, полное доменное имя, localhost и т. д.). В приведенном ниже коде показан пример.
+    Дополнительный GUID используется в сложных случаях, когда вторичные реплики также прослушивают запросы только для чтения. Если это так, следует убедиться, что новый уникальный адрес используется при переходе от первичной реплики к вторичной для принудительного разрешения адресов клиентами. Здесь в качестве адреса используется "+", чтобы реплика прослушивала все доступные узлы (IP-адрес, полное доменное имя, localhost и т. д.). В приведенном ниже коде показан пример.
    
     ```CSharp
     protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()

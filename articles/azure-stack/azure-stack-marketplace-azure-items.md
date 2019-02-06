@@ -12,21 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 01/29/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.openlocfilehash: d006deb83ca16860eb669548ae8563304f7937fa
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.lastreviewed: 01/29/2019
+ms.openlocfilehash: c9f6ad48f6c2e3b2ed60833f0cba111cc96a8a54
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54306613"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55240766"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*.
 
-## <a name="virtual-machine-extensions"></a>Расширения виртуальных машин
+## <a name="virtual-machine-extensions"></a>Расширения виртуальной машины
 
 Если для используемых расширений виртуальных машин есть обновления, скачайте их. Расширения, поставляемые с продуктом, не обновляются в обычном процессе исправления и обновления. Регулярно проверяйте наличие обновлений. Другие расширения доступны только с использованием служб управления Marketplace.
 
@@ -97,10 +98,11 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![SLES 12 с пакетом обновления 3 (SP3) (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SLES 12 с пакетом обновления 3 (SP3) (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/SUSE.SLES) | SUSE Linux Enterprise Server 12 с пакетом обновления 3 (SP3). | SUSE |
 | ![SLES 15 (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SLES 15 с пакетом обновления 3 (SP3) (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/SUSE.SLES) | SUSE Linux Enterprise Server 15. | SUSE |
 
-## <a name="third-party-byol-free-and-trial-images-and-solution-templates"></a>Образы BYOL, бесплатных и пробных версий, а также шаблоны решений сторонних производителей
+## <a name="third-party-byol-free-trial-images-and-solution-templates"></a>Образы BYOL, бесплатных и пробных версий, а также шаблоны решений сторонних производителей
 
 |  | Имя элемента. | ОПИСАНИЕ | ИЗДАТЕЛЬ |
 | --- | --- | --- | --- |
+| ![A10 vThunder ADC](media/azure-stack-marketplace-azure-items/a10.png) | [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1) | Контроллер доставки приложений (ADC) A10 Networks vThunder для Microsoft Azure разработан с учетом высокой производительности, гибкости, доставки простых в развертывании приложений, балансировки нагрузки сервера, а также оптимизирован для работы в облаке Azure. | A10 Networks |
 | ![Arista vEOS Router](media/azure-stack-marketplace-azure-items/arista.png) | [Arista vEOS Router](https://azuremarketplace.microsoft.com/marketplace/apps/arista-networks.veos-router) | Arista vEOS Router представляет собой многофункциональный виртуальный маршрутизатор с несколькими облаками и несколькими гипервизорами, который позволяет предприятиям и облачным провайдерам создавать согласованные, надежные и масштабируемые гибридные сети. | Arista Networks |
 | ![Центр управления защитой приложений Barracuda](media/azure-stack-marketplace-azure-items/barracuda.png) | [Barracuda Application Security Control Center](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-app-sec-control-center) | Система централизованного управления несколькими брандмауэрами веб-приложения Barracuda. | Barracuda Networks, Inc. |
 | ![Шлюз защиты электронной почты Barracuda](media/azure-stack-marketplace-azure-items/barracuda.png) | [Шлюз защиты электронной почты Barracuda](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-email-security-gateway) | Шлюз защиты электронной почты для предотвращения угроз входящей электронной почты. | Barracuda Networks, Inc. |

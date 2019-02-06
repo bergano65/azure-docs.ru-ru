@@ -11,17 +11,17 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
-ms.date: 11/09/2018
-ms.openlocfilehash: 6fbfaaa82095fbf093560e65076b40a392356da8
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.date: 01/25/2019
+ms.openlocfilehash: 78858ba888986b75a1da77caaec1ef02ffcdf307
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330166"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467702"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в составе пула службы "База данных SQL Azure"
 
-На [логическом сервере](sql-database-logical-servers.md) в Базе данных SQL Azure репликацию SQL Server можно настроить как для отдельной базы данных, так и для баз данных в составе пула.  
+На [сервере Базы данных SQL](sql-database-servers.md) в Базе данных SQL Azure репликацию SQL Server можно настроить как для отдельной базы данных, так и для базы данных в составе пула.  
 
 ## <a name="supported-configurations"></a>**Поддерживаемые конфигурации**
   
@@ -65,7 +65,7 @@ ms.locfileid: "54330166"
 
 1. Создайте публикацию репликации транзакций в базе данных на локальном сервере SQL Server.  
 2. На локальном сервере SQL Server используйте **мастер создания подписок** или инструкции Transact-SQL, чтобы создать принудительную подписку на Базу данных SQL Azure.  
-3. Для отдельных баз данных и баз данных в пуле исходный набор данных обычно является моментальным снимком, который создается агентом моментальных снимков, а затем распределяется и применяется агентом распространения. С помощью Управляемого экземпляра Базы данных SQL Azure также можно использовать резервную копию базы данных для заполнения базы данных подписчика.
+3. Для отдельных баз данных и баз данных в пуле исходный набор данных обычно является моментальным снимком, который создается агентом моментальных снимков, а затем распределяется и применяется агентом распространения. С помощью управляемого экземпляра базы данных также можно использовать резервную копию базы данных для заполнения базы данных подписчика начальными значениями.
 
 ### <a name="data-migration-scenario"></a>Сценарий переноса данных  
 
@@ -107,7 +107,7 @@ ms.locfileid: "54330166"
 Создайте публикацию и принудительную подписку. Дополнительные сведения можно найти в разделе 
   
 - [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени логического сервера базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'**) и имя Базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
+- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'**) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
 ## <a name="see-also"></a>См. также  
 

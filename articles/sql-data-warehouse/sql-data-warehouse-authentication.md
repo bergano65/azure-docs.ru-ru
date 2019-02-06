@@ -2,20 +2,20 @@
 title: Аутентификация в хранилище данных SQL Azure | Документация Майкрософт
 description: Узнайте, как пройти аутентификацию в хранилище данных SQL Azure с помощью аутентификации Azure Active Directory (AAD) или SQL Server.
 services: sql-data-warehouse
-author: kavithaj
+author: KavithaJonnakuti
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/12/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: d082ba8bd2819450609a8a6e4ab41b4320158d4b
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 7f26ded5fae1bde5b2e6485ae2a2f99eebb17563
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43310572"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55463334"
 ---
 # <a name="authenticate-to-azure-sql-data-warehouse"></a>Аутентификация в хранилище данных SQL Azure
 Узнайте, как пройти аутентификацию в хранилище данных SQL Azure с помощью аутентификации Azure Active Directory (AAD) или SQL Server.
@@ -67,7 +67,7 @@ ms.locfileid: "43310572"
 Следуйте приведенным ниже инструкциям, чтобы настроить аутентификацию Azure Active Directory.
 
 1. Создание и заполнение каталога Azure Active Directory
-2. Связывание каталога Active Directory с подпиской Azure или изменение каталога, который сейчас связан с этой подпиской (этот шаг можно пропустить)
+2. Необязательно: Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
 3. Создание администратора Azure Active Directory для хранилища данных SQL Azure
 4. Настройка клиентских компьютеров
 5. Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD

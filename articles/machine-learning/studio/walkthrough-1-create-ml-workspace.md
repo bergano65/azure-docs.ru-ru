@@ -1,6 +1,6 @@
 ---
-заголовок: 'Шаг 1. Создание коллекции рабочей области' titleSuffix: Студия машинного обучения Azure description: 'Пошаговое руководство по разработке решения прогнозирования (шаг 1). Узнайте, как настроить новую рабочую область Студии машинного обучения Azure.'
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: 'Шаг 1. Создание коллекции рабочей области' titleSuffix: Студия машинного обучения Azure description: 'Пошаговое руководство по разработке решения прогнозирования (шаг 1). Узнайте, как настроить новую рабочую область Студии машинного обучения Azure.'
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 23.03.2017
 ---

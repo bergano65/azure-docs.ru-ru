@@ -2,18 +2,18 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 11/25/2018
+ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: a2ee8705be3f34b6df113c68d88e375411f84bf2
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 7c081b3bc5f9e6273f680b24897f9aced4999afa
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52440402"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55302348"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
 
-Для развертывания шаблона можно использовать [Cloud Shell](../articles/cloud-shell/overview.md). Однако сначала необходимо загрузить шаблон для Cloud Shell в учетную запись хранения. Если вы еще не использовали Cloud Shell, ознакомьтесь со статьей [Обзор Azure Cloud Shell (предварительная версия)](../articles/cloud-shell/overview.md), чтобы узнать о настройке службы.
+Для развертывания шаблона можно использовать [Cloud Shell](../articles/cloud-shell/overview.md). Чтобы развернуть внешний шаблон, укажите URI шаблона точно так же, как и для любого внешнего развертывания. Чтобы развернуть локальный шаблон, сначала необходимо загрузить шаблон для Cloud Shell в учетную запись хранения. В этом разделе описывается, как загрузить шаблон в свою учетную запись облачной оболочки и развернуть его как локальный файл. Если вы еще не использовали Cloud Shell, ознакомьтесь со статьей [Обзор Azure Cloud Shell](../articles/cloud-shell/overview.md), чтобы узнать о настройке службы.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 

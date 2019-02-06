@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: mareat
-ms.openlocfilehash: 1f8807094c6e93cf55467e76e0fa2b617ec3d5fb
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 6b3f3217f90c2c5a72ba9576b5e0cc89e6133cd8
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51822880"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54913314"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
 
@@ -46,7 +46,7 @@ ms.locfileid: "51822880"
 
 ## <a name="setup"></a>Настройка
 
-Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Введение в журналы потоков для групп безопасности сети).
+Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
 
 Также вам потребуется компьютер с установленным клиентом Power BI Desktop и достаточным объемом дискового пространства для хранения и загрузки данных журналов, сохраненных в учетной записи хранения.
 
@@ -123,7 +123,7 @@ ms.locfileid: "51822880"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как визуализировать журналы потоков для групп безопасности сети с помощью Elastick Stack, прочитав статью [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-open-source-tools.md).
+Узнайте, как визуализировать журналы потоков для групп безопасности сети с помощью Elastick Stack, прочитав статью [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md).
 
 [1]: ./media/network-watcher-visualize-nsg-flow-logs-power-bi/figure1.png
 [2]: ./media/network-watcher-visualize-nsg-flow-logs-power-bi/figure2.png

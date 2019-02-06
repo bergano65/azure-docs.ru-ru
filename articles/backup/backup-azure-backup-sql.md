@@ -2,18 +2,18 @@
 title: Резервное копирование рабочих нагрузок SQL Server в Azure с помощью DPM
 description: Общие сведения о резервном копировании баз данных SQL Server с помощью службы архивации Azure
 services: backup
-author: adigan
-manager: Nkolli
+author: kasinh
+manager: vvithal
 ms.service: backup
 ms.topic: conceptual
-ms.date: 10/18/2018
-ms.author: adigan
-ms.openlocfilehash: 232885398c996d0c744ac55b6c6967fd398eec0b
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.date: 01/30/2019
+ms.author: kasinh
+ms.openlocfilehash: d7d94c7b238f8d413d8837c3c34468c6cd653fe3
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945660"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55300699"
 ---
 # <a name="back-up-sql-server-to-azure-as-a-dpm-workload"></a>Архивация SQL Server в Azure с помощью рабочей нагрузки DPM
 В этой статье описывается процесс настройки архивации баз данных SQL Server с помощью службы архивации Azure.
@@ -90,7 +90,7 @@ ms.locfileid: "49945660"
     >
     >
 
-    **Рекомендация**. После завершения архивации локального диска с помощью DPM создайте расписание архивации в Azure. Таким образом в Azure будет передаваться последняя резервная копия диска.
+    **Рекомендация**. Выполнив резервное копирование локального диска с помощью DPM, создайте расписание резервного копирования в Azure. Таким образом в Azure будет передаваться последняя резервная копия диска.
 
 13. Выберите расписание для политики хранения. Дополнительные сведения о том, как работает политика хранения, см. в статье [Использование службы архивации Azure для замены ленточной инфраструктуры](backup-azure-backup-cloud-as-tape.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Infogix Data3Sixty Govern | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Infogix Data3Sixty Govern | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Infogix Data3Sixty Govern.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: aa3109b8-bdbe-45ae-933a-2eb4dc03855c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: 3e54ade44828bf1e26c310a14ae401fe8ae33229
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5e9b805786346abd6dfe830c9ce6ae4cc341c9e7
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437669"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55194276"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по интеграции Azure Active Directory с Infogix Data3Sixty Govern
+# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство. Интеграция Azure Active Directory с Infogix Data3Sixty Govern
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Infogix Data3Sixty Govern.
 
@@ -199,7 +199,7 @@ ms.locfileid: "39437669"
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении Infogix Data3Sixty Govern. Приложение Infogix Data3Sixty Govern поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Infogix Data3Sixty Govern (если он еще не создан).
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь в [службу Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -236,7 +236,7 @@ ms.locfileid: "39437669"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Infogix Data3Sixty Govern на панели доступа, вы автоматически войдете в приложение Infogix Data3Sixty Govern.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

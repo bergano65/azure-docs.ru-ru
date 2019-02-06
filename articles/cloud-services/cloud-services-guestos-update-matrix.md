@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 1/7/2019
+ms.date: 1/25/2019
 ms.author: raiye
-ms.openlocfilehash: e621d526aed3c4d98d964dfdcd7ba01e8c1fb830
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 9d2fa8497ac773ba086f3a4550e20ac5f5f0d882
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104868"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55075471"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK
 В данном разделе предоставляются новейшие сведения о последних выпусках гостевых ОС Azure для облачных служб. Эта информация поможет вам спланировать обновление до того, как гостевая ОС будет отключена. Если роли настроены для *автоматического* обновления гостевой ОС, как описано в разделе [Параметры обновления гостевой ОС Azure][Azure Guest OS Update Settings], ознакомление с этой страницей необязательно.
@@ -43,6 +43,9 @@ ms.locfileid: "54104868"
 
 ## <a name="news-updates"></a>Новости по обновлениям
 
+###### <a name="january-24-2019"></a>**24 января 2019 г.**
+Выпущена гостевая ОС семейства 6 (Windows Server 2019).
+
 ###### <a name="january-7-2019"></a>**7 января 2019 г.**
 Выпущена декабрьская гостевая ОС.
 
@@ -65,6 +68,21 @@ ms.locfileid: "54104868"
 Выпущена версия гостевой ОС за июнь.
 
 ## <a name="releases"></a>Выпуски
+
+## <a name="family-6-releases"></a>Выпуски семейства 6
+**Windows Server 2019**
+
+Версии установленной платформы .NET Framework: 3.5, 4.7.2
+
+> [!NOTE]
+> Пакет SDK Microsoft Azure для .NET 3.0 можно скачать [здесь][Windows Azure SDK].
+>
+
+| Строка конфигурации | Дата выпуска | Дата отключения |
+| --- | --- | --- |
+| WA-GUEST-OS-6.2_201812-01 |24 января 2019 г. |После 6.4 |
+| WA-GUEST-OS-6.1_201811-01 |24 января 2019 г. |После 6.3 |
+
 ## <a name="family-5-releases"></a>Выпуски семейства 5
 **Windows Server 2016**
 
@@ -137,6 +155,7 @@ ms.locfileid: "54104868"
 
 | Семейство версий гостевой ОС | Совместимые версии пакета SDK |
 | --- | --- |
+| 6 |Версия 2.9.6+ |
 | 5 |Версия 2.9.5.1 или выше |
 | 4. |Версия 2.1 или выше |
 | 3 |Версия 1.8 или выше |
@@ -205,3 +224,4 @@ ms.locfileid: "54104868"
 [retirepolicy]: cloud-services-guestos-retirement-policy.md
 [fam1retire]: cloud-services-guestos-family1-retirement.md
 [fix]: https://technet.microsoft.com/library/security/ms17-010.aspx
+[Windows Azure SDK]: https://www.microsoft.com/en-us/download/details.aspx?id=54917

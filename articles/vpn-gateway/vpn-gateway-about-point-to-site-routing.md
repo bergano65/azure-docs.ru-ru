@@ -2,25 +2,17 @@
 title: Сведения о маршрутизации подключений Azure типа "точка — сеть" | Документация Майкрософт
 description: Эта статья поможет вам понять, как функционирует маршрутизация VPN-подключений типа "точка — сеть".
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: ''
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 04/16/2018
+ms.date: 01/28/2019
 ms.author: anzaman
-ms.openlocfilehash: 620a2bf9221bdb7c46dc36a2b3ed23d853faff35
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 486a910226db5dc7b36aaf873e7bb8115eb78805
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031726"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55189660"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Сведения о маршрутизации VPN-подключений типа "точка — сеть"
 
@@ -44,7 +36,7 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
 ### <a name="routes-added"></a>Добавленные маршруты
 
@@ -68,9 +60,9 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Диапазон адресов:
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
-* VNet2: 10.2.0.0/16.
+* VNet2: 10.2.0.0/16
 
 * VNet3: 10.3.0.0/16.
 
@@ -98,9 +90,9 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
-* VNet2: 10.2.0.0/16.
+* VNet2: 10.2.0.0/16
 
 * VNet3: 10.3.0.0/16.
 
@@ -126,15 +118,15 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
-* VNet2: 10.2.0.0/16.
+* VNet2: 10.2.0.0/16
 
 * VNet3: 10.3.0.0/16.
 
 ### <a name="routes-added"></a>Добавленные маршруты
 
-* Маршруты, добавленные в клиенты Windows: 10.1.0.0/16.
+* Маршруты, добавленные в клиенты Windows: 10.1.0.0/16
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16, 192.168.0.0/24.
 
@@ -154,7 +146,7 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
 * Site1: 10.101.0.0/16.
 
@@ -180,7 +172,7 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
 * Site1: 10.101.0.0/16.
 
@@ -207,9 +199,9 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
-* VNet2: 10.2.0.0/16.
+* VNet2: 10.2.0.0/16
 
 * VNet3: 10.3.0.0/16.
 
@@ -237,9 +229,9 @@ ms.locfileid: "47031726"
 
 ### <a name="address-space"></a>Пространство адресов
 
-* VNet1: 10.1.0.0/16.
+* VNet1: 10.1.0.0/16
 
-* VNet2: 10.2.0.0/16.
+* VNet2: 10.2.0.0/16
 
 * VNet3: 10.3.0.0/16.
 

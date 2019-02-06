@@ -1,21 +1,21 @@
 ---
-title: Руководство. Загрузка из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure | Документы Майкрософт
+title: Руководство. Загрузка из Azure Data Lake Storage 1-го поколения в Хранилище данных SQL Azure | Документация Майкрософт
 description: Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: c3902061264b75ba177ba150176d784ad5384a9f
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 32ac5b0841365acfc0a52e343eafc4f3760dffaa
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297202"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472239"
 ---
 # <a name="load-data-from-azure-data-lake-storage-gen1-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL
 Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы данных, хранящихся в Data Lake Storage 1-го поколения, мы рекомендуем импортировать данные в хранилище данных SQL для обеспечения максимальной производительности.
@@ -184,7 +184,7 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 ## <a name="optimize-statistics"></a>Оптимизация статистики
 Одностолбцовую статистику рекомендуется создавать сразу после загрузки. Существует несколько вариантов статистики. Например, при создании одностолбцовой статистики для каждого столбца перестройка всех статистических данных может занять длительное время. Если вам известно, что некоторые столбцы не будут входить в предикаты запросов, можно пропустить создание статистики для этих столбцов.
 
-Если вам потребуется создать одностолбцовую статистику для каждого столбца в каждой таблице, можно использовать пример кода хранимой процедуры `prc_sqldw_create_stats` из статьи, посвященной [статистике](sql-data-warehouse-tables-statistics.md).
+Если вам потребуется создать одностолбцовую статистику для каждого столбца в каждой таблице, можно использовать пример кода хранимой процедуры `prc_sqldw_create_stats` в статье, посвященной [статистике](sql-data-warehouse-tables-statistics.md) .
 
 Следующий пример кода — хорошая отправная точка для создания статистики. Он создает одностолбцовую статистику для каждого столбца в таблице измерения и для каждого соответствующего столбца в таблицах фактов. Одно- или многостолбцовую статистику в другие столбцы таблицы фактов можно добавить позже.
 

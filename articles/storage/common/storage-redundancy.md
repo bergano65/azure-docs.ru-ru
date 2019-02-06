@@ -7,13 +7,13 @@ ms.service: storage
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: tamram
-ms.component: common
-ms.openlocfilehash: 7afbdaba46674b69aa601355e80160e7c72ff373
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.subservice: common
+ms.openlocfilehash: 3fb3860cbda2e1d46505711d7a175e5d42ec7018
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240976"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55455513"
 ---
 # <a name="azure-storage-replication"></a>Репликация службы хранилища Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "51240976"
 При создании учетной записи хранения можно выбрать один из следующих вариантов репликации:
 
 * [Локально избыточное хранилище (LRS)](storage-redundancy-lrs.md)
-* [Хранилище, избыточное в пределах зоны (ZRS)](storage-redundancy-zrs.md)
+* [Хранилище, избыточное между зонами (ZRS)](storage-redundancy-zrs.md)
 * [Геоизбыточное хранилище (GRS)](storage-redundancy-grs.md)
 * [Геоизбыточное хранилище с доступом для чтения (RA-GRS)](storage-redundancy-grs.md#read-access-geo-redundant-storage)
 
@@ -48,7 +48,7 @@ ms.locfileid: "51240976"
 Сведения о гарантиях службы хранилища Azure в вопросах устойчивости и доступности см. в [Соглашении об уровне обслуживания службы хранилища Azure](https://azure.microsoft.com/support/legal/sla/storage/).
 
 > [!NOTE]
-> Хранилище класса Premium поддерживает только локально избыточное хранилище (LRS). Сведения о хранилище класса "Премиум" см. в статье [Хранилище класса "Премиум": высокопроизводительное хранилище для рабочих нагрузок виртуальных машин Azure](../../virtual-machines/windows/premium-storage.md).
+> Хранилище класса Premium поддерживает только локально избыточное хранилище (LRS). Сведения о хранилище класса Premium см. в статье [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](../../virtual-machines/windows/premium-storage.md).
 
 ## <a name="changing-replication-strategy"></a>Изменение стратегии репликации
 Изменять стратегию репликации учетной записи хранения можно с помощью [портала Azure](https://portal.azure.com/), [Azure Powershell](storage-powershell-guide-full.md), [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) или одной из [клиентских библиотек Azure](https://docs.microsoft.com/azure/index?view=azure-dotnet#pivot=sdkstools). При изменении типа репликации для учетной записи хранения простоя не будет.
@@ -63,10 +63,10 @@ ms.locfileid: "51240976"
 
 ## <a name="see-also"></a>См. также
 
-- [Локально избыточное хранилище (LRS). Недорогая избыточность данных для службы хранилища Azure](storage-redundancy-lrs.md)
-- [Хранилище, избыточное в пределах зоны (ZRS). Высокодоступные приложения для службы хранилища Azure](storage-redundancy-zrs.md)
-- [Геоизбыточное хранилище (GRS). Межрегиональная репликация для службы хранилища Azure](storage-redundancy-grs.md)
+- [Локально избыточное хранилище (LRS). Недорогое средство для обеспечения избыточности данных для службы хранилища Azure](storage-redundancy-lrs.md)
+- [Хранилище, избыточное между зонами (ZRS). Высокодоступные приложения для службы хранилища Azure](storage-redundancy-zrs.md)
+- [Гео-избыточное хранилище (GRS). Межрегиональная репликация для службы хранилища Azure](storage-redundancy-grs.md)
 - [Целевые показатели масштабируемости и производительности службы хранилища Azure](storage-scalability-targets.md)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](../storage-designing-ha-apps-with-ragrs.md)
 - [Windows Azure Storage Redundancy Options and Read Access Geo Redundant Storage](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx) (Варианты избыточности и геоизбыточное хранилище с доступом для чтения службы хранилища Microsoft Azure)
-- [Документ SOSP — служба хранилища Azure: высокодоступная облачная служба хранилища со строгой согласованностью](https://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- [Документ SOSP, Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](https://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (Служба хранилища Azure: высокодоступная служба облачного хранения со строгой согласованностью).

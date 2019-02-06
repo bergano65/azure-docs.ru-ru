@@ -1,6 +1,6 @@
 ---
-заголовок: Повторное обучение классической веб-службы titleSuffix: Студия машинного обучения Azure description: Узнайте о том, как осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала переобученную модель при задействовании функций машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Повторное обучение классической веб-службы titleSuffix: Студия машинного обучения Azure description: Узнайте о том, как осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала переобученную модель при задействовании функций машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 19.04.2017
 ---

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/25/2017
 ms.author: maghan
-ms.openlocfilehash: a2e1604a51b8343d926dda3b258d38b19266deeb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 630413d15df04d27599389f647c57876fff9d295
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51246690"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55094433"
 ---
 # <a name="get-started-with-power-bi-workspace-collections-sample"></a>Пример для начала работы с коллекциями рабочих областей Power BI
 
@@ -24,7 +24,7 @@ ms.locfileid: "51246690"
 > [!IMPORTANT]
 > Использовать службу "Коллекции рабочих областей Power BI" не рекомендуется. Она будет доступна до июня 2018 года или до даты, указанной в договоре. Мы советуем организовать перенос приложения в Power BI Embedded, чтобы избежать прерываний в его работе. Сведения о том, как перенести данные из коллекций рабочих областей Power BI в Power BI Embedded, см. в [этой статье](https://powerbi.microsoft.com/documentation/powerbi-developer-migrate-from-powerbi-embedded/).
 
-Прежде чем мы продолжим, необходимо сохранить приведенные ниже ресурсы. Они помогут при интеграции отчетов Power BI в пример приложения, а также в ваши приложения.
+Прежде чем мы продолжим, вам следует сохранить приведенные ниже ресурсы. Они помогут вам при интеграции отчетов Power BI в пример приложения, а также в собственные приложения.
 
 * [Пример веб-приложения рабочей области](https://go.microsoft.com/fwlink/?LinkId=761493)
 * [Справочник по API коллекций рабочих областей Power BI](https://msdn.microsoft.com/library/azure/mt711507.aspx)
@@ -71,7 +71,7 @@ Checking import state... Succeeded
 Пример веб-приложения представляет собой приложение, в котором отображаются отчеты, импортированные в **рабочую область**. Вот как настроить пример веб-приложения.
 
 1. В решении **PowerBI-embedded** Visual Studio щелкните веб-приложение **EmbedSample** правой кнопкой мыши и выберите **Назначить запускаемым проектом**.
-2. В файле **web.config** в веб-приложении **EmbedSample** измените параметры приложения **appSettings**: ключ доступа **AccessKey**, имя коллекции рабочих областей **WorkspaceCollection** и идентификатор рабочей области **WorkspaceId**.
+2. В файле **web.config** для веб-приложения **EmbedSample** измените параметры **appSettings**: **AccessKey**, имя **WorkspaceCollection** и **WorkspaceId**.
 
     ```
     <appSettings>
@@ -93,7 +93,7 @@ Checking import state... Succeeded
 
 ## <a name="explore-the-sample-code"></a>Изучение примера кода
 
-Пример для **коллекций рабочих областей Power BI** представляет собой веб-приложение и показывает, как интегрировать отчеты **Power BI** в приложение. Для демонстрации рекомендаций в нем используется шаблон проектирования "модель-представление-контроллер" (MVC). В этом разделе описаны части примера кода, которые можно изучить в решении веб-приложения **PowerBI-embedded**. Шаблон "модель-представление-контроллер" (MVC) разбивает модель домена, представление и действия на основе ввода пользователя на три различных класса: модель, представление и контроллер. Дополнительные сведения о MVC см. в документации [ASP.NET](http://www.asp.net/mvc).
+Пример для **коллекций рабочих областей Power BI** представляет собой веб-приложение и показывает, как интегрировать отчеты **Power BI** в приложение. Для демонстрации рекомендаций в нем используется шаблон проектирования "модель-представление-контроллер" (MVC). В этом разделе описаны части примера кода, которые можно изучить в решении веб-приложения **PowerBI-embedded**. Шаблон "Модель — представление — контроллер" (MVC) разбивает модель домена, представление и действия на основе ввода пользователя на три различных класса: модель, представление и контроллер. Дополнительные сведения о MVC см. в документации [ASP.NET](http://www.asp.net/mvc).
 
 Пример кода для **коллекций рабочих областей Power BI** разделяется следующим образом. Каждая часть включает имя файла для решения PowerBI-embedded.sln, поэтому вы легко найдете соответствующий код в примере.
 
@@ -128,7 +128,7 @@ Checking import state... Succeeded
 Data Source=tcp:MyServer.database.windows.net,1433;Initial Catalog=MyDatabase
 ```
 
-Попытка использования общих атрибутов сервера и базы данных завершается ошибкой. Например: Server=tcp:MyServer.database.windows.net,1433;Database=MyDatabase,
+Попытка использования общих атрибутов сервера и базы данных завершается ошибкой. Например:  Server=tcp:MyServer.database.windows.net,1433;Database=MyDatabase,
 
 ### <a name="view"></a>Просмотр
 
@@ -228,7 +228,7 @@ ActionResult Reports()
 ```
 init: function() {
     var embedUrl = this.getEmbedUrl();
-    var iframeHtml = '<igrame style="width:100%;height:100%;" src="' + embedUrl + 
+    var iframeHtml = '<iframe style="width:100%;height:100%;" src="' + embedUrl + 
         '" scrolling="no" allowfullscreen="true"></iframe>';
     this.element.innerHTML = iframeHtml;
     this.iframe = this.element.childNodes[0];

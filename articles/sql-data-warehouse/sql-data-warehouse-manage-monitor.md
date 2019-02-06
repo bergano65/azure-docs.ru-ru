@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: manage
+ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fe989a1693d73dbbea7ed0e3e91ed7aaf6fc37c4
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: fdb51bf249990a10b8476a55be1103cb05c5821b
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301088"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55466989"
 ---
 # <a name="monitor-your-workload-using-dmvs"></a>Мониторинг рабочей нагрузки с помощью динамических административных представлений
 В этой статье объясняется, как отслеживать рабочую нагрузку с помощью динамических административных представлений (DMV). Она включает в себя анализ выполнения запросов в хранилище данных SQL Azure.
@@ -45,7 +45,7 @@ SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed' and session_id <
 
 Ниже приведено несколько действий для проверки планов выполнения запросов и длительности конкретных запросов.
 
-### <a name="step-1-identify-the-query-you-wish-to-investigate"></a>Шаг 1. Определение запроса, который нужно исследовать
+### <a name="step-1-identify-the-query-you-wish-to-investigate"></a>Шаг 1. Определение запроса для исследования
 ```sql
 -- Monitor active queries
 SELECT * 
@@ -80,7 +80,7 @@ OPTION (LABEL = 'My Query')
 ;
 ```
 
-### <a name="step-2-investigate-the-query-plan"></a>Шаг 2. Изучение плана запроса
+### <a name="step-2-investigate-the-query-plan"></a>Шаг 2. Изучение плана запроса
 С помощью идентификатора запроса получите план DSQL запроса из [sys.dm_pdw_request_steps][sys.dm_pdw_request_steps].
 
 ```sql
@@ -99,7 +99,7 @@ ORDER BY step_index;
 * Перейдите к шагу 3а для **операций SQL**: OnOperation, RemoteOperation, ReturnOperation.
 * Перейдите к шагу 3б для **операций перемещения данных**: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
 
-### <a name="step-3a-investigate-sql-on-the-distributed-databases"></a>Шаг 3а. Изучение SQL распределенных баз данных
+### <a name="step-3a-investigate-sql-on-the-distributed-databases"></a>Шаг 3a. Изучение SQL на примере распределенных баз данных
 Используйте идентификатор запроса и индекс этапа, чтобы извлечь сведения из представления [sys.dm_pdw_sql_requests][sys.dm_pdw_sql_requests], которое содержит информацию о выполнении этапа запроса на каждой из распределенных баз данных.
 
 ```sql
@@ -119,7 +119,7 @@ WHERE request_id = 'QID####' AND step_index = 2;
 DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 ```
 
-### <a name="step-3b-investigate-data-movement-on-the-distributed-databases"></a>Шаг 3б. Изучение перемещения данных в распределенных базах данных
+### <a name="step-3b-investigate-data-movement-on-the-distributed-databases"></a>Шаг 3б. Изучение перемещения данных в распределенных базах данных
 Используйте идентификатор запроса и индекс этапа, чтобы получить из [sys.dm_pdw_dms_workers][sys.dm_pdw_dms_workers] сведения об этапе перемещения данных, выполняющемся для каждого распределения.
 
 ```sql

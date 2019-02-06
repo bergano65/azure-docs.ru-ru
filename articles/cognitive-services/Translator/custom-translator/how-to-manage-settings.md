@@ -5,16 +5,16 @@ description: Как управлять параметрами, создават�
 author: rajdeep-in
 manager: christw
 ms.service: cognitive-services
-ms.component: custom-translator
+ms.subservice: custom-translator
 ms.date: 11/13/2018
 ms.author: v-rada
 ms.topic: article
-ms.openlocfilehash: 7b6dd0ec271d335d1055381a8cb7256600be283f
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 6fabbb57538f5e10e6cd91ebc109707045e54033
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51626912"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55227086"
 ---
 # <a name="how-to-manage-settings"></a>Как управлять параметрами
 
@@ -103,4 +103,4 @@ ms.locfileid: "51626912"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [центра Microsoft Translator](https://hub.microsofttranslator.com).
+- Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [Microsoft Translator Hub](https://hub.microsofttranslator.com).

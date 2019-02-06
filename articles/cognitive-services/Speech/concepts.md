@@ -6,16 +6,16 @@ services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
-ms.component: bing-speech
+ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 6089f053472faaa7fa8c957904f73c7061cb2d3f
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 4f96302f1035500a10cebaa24efd4b8db329fdff
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344931"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219776"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 
@@ -75,8 +75,8 @@ API-интерфейсы для микрофона должны позволяю
 
 Службой распознавания речи Microsoft предусмотрено два способа добавления разработчиками распознавания речи в свои приложения.
 
-- [REST API](GetStarted/GetStartedREST.md): разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
-- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md): для расширения возможностей разработчики могут загрузить клиентские библиотеки Microsoft и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC).
+- [REST API](GetStarted/GetStartedREST.md). Разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
+- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md). Для расширения возможностей разработчики могут загрузить клиентские библиотеки Microsoft и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC).
 
 | Варианты использования | [Интерфейсы REST API](GetStarted/GetStartedREST.md) | [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md) |
 |-----|-----|-----|

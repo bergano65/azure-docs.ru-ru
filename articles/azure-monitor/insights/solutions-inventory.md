@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: 14f373b5459aaa7a9e51ba284f6a30094c4e7617
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 48f1789d4909a1c3af9e9ca01d0b9d0a8e6e09f8
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53194187"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55299646"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Также вы здесь найдете сведения о методах и частоте сбора данных в Log Analytics.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -48,7 +48,7 @@ ms.locfileid: "53194187"
 | [Управление оповещениями](../../azure-monitor/platform/alert-management-solution.md) (Zabbix) |Linux |&#8226; | | | | |1 минута |
 | [Управление оповещениями](../../azure-monitor/platform/alert-management-solution.md) (Operations Manager) | Windows | |&#8226; | |&#8226; |&#8226; |3 минуты |
 | [Azure Site Recovery](../../site-recovery/site-recovery-overview.md) | Таблицы Azure | | | | | | Недоступно |
-| [Соединитель Application Insights (предварительная версия)](../../azure-monitor/platform/app-insights-connector.md) | Таблицы Azure | | | |  |  | при уведомлении |
+| [Соединитель Application Insights (не рекомендуется)](../../azure-monitor/platform/app-insights-connector.md) | Таблицы Azure | | | |  |  | при уведомлении |
 | [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) |  Windows | &#8226; | &#8226; |  |  |  | Недоступно |
 | [Анализ шлюзов приложений Azure](../../azure-monitor/insights/azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | **Решение по управлению** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |

@@ -3,25 +3,25 @@ title: Добавление Google в качестве поставщика уд
 description: Установите федерацию с Google, чтобы гостевые пользователи входили в свои приложения Azure AD с помощью учетных записей Gmail.
 services: active-directory
 ms.service: active-directory
-ms.component: B2B
+ms.subservice: B2B
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: mal
-ms.openlocfilehash: 329c12f76862addb6d14271f219b48089c615395
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: bc0a4d4ce13c4013d634748503f98451e5fae9be
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54428738"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55216162"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
 Настроив федерацию с Google, можно разрешить приглашенным пользователям входить в общие приложения и ресурсы с помощью собственных учетных записей Google без необходимости создавать учетные записи Майкрософт (MSA) или Azure AD.  
 > [!NOTE]
-> Ваши гостевые пользователи Google должны входить в систему, используя ссылку, которая содержит контекст клиента, например `https://myapps.microsoft.com/<tenant id>`. Прямые ссылки на приложения и ресурсы также работают, если они содержат контекст клиента. В настоящее время пользователи не могут войти в систему, используя конечные точки, которые не имеют контекста клиента. Например, использование `https://myapps.microsoft.com`, `https://portal.azure.com` или общей конечной точки команды приведет к ошибке.
+> Гостевым пользователям Google необходимо войти по ссылке, содержащей контекст клиента (например `https://myapps.microsoft.com/?tenantid=<tenant id>` или `https://portal.azure.com/<tenant id>`, или в случае проверенного домена по умолчанию — `https://myapps.microsoft.com/<verified domain>.onmicrosoft.com`). Прямые ссылки на приложения и ресурсы также работают, если они содержат контекст клиента. В настоящее время пользователи не могут войти в систему, используя конечные точки, которые не имеют контекста клиента. Например, использование `https://myapps.microsoft.com`, `https://portal.azure.com` или общей конечной точки команды приведет к ошибке.
  
 ## <a name="what-is-the-experience-for-the-google-user"></a>Как эта возможность выглядит для пользователя Google?
 Когда вы отправляете приглашение пользователю Google Gmail, гостевой пользователь должен получить доступ к вашим общим приложениям или ресурсам, используя ссылку, которая содержит контекст клиента. Способ взаимодействия с пользователем зависит от того, выполнил ли он вход в Google:

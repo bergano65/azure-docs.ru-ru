@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: iainfou
-ms.openlocfilehash: 9bdd3060219907f95454bfc9248572f796afd72e
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 78f00b00465b6d834f30411485a874d6d2116ea4
+ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437613"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55081251"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -22,7 +22,7 @@ ms.locfileid: "53437613"
 
 Действительны следующие ограничения.
 
-- Существующие кластеры AKS без поддержки RBAC, на данный момент не могут быть обновлены для использования поддержки RBAC.
+- Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
 - *Гостевые* пользователи в Azure AD, например, при использовании федеративного входа из другого каталога, не поддерживаются.
 
 ## <a name="authentication-details"></a>Подробные сведения о проверке подлинности

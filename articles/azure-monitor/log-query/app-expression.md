@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 01/25/2019
 ms.author: bwren
-ms.openlocfilehash: e83ba321a98e40f07ff82e68c7961c2a6a49076d
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 2d6f3517e988d6bd66ee9007e072ee87c71d1340
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53191841"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55104666"
 ---
 # <a name="app-expression-in-log-analytics-query"></a>Выражение app() в запросах Log Analytics
 
@@ -48,6 +48,7 @@ ms.locfileid: "53191841"
 * У вас должен быть доступ на чтение приложения.
 * Для идентификации приложения по имени его имя должно быть уникальным во всех доступных подписках. Если у вас есть несколько приложений с таким именем, запрос не будет выполнен из-за неоднозначности. В этом случае необходимо воспользоваться другим идентификатором.
 * Связанное выражение [workspace](workspace-expression.md) используется для запрашивания данных из рабочих областей Log Analytics.
+* Выражение app() сейчас не поддерживается в поисковом запросе при использовании портала Azure для создания [правила генерации оповещений о пользовательском поиске по журналам](../platform/alerts-log.md), если только приложение Application Insights не используется как ресурс для правила генерации оповещений.
 
 ## <a name="examples"></a>Примеры
 

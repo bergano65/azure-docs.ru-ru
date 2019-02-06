@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 12/28/2018
 ms.author: mayg
-ms.openlocfilehash: 210872a468f92f92edef9c8e29a26382c5646dae
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 55d6f1393f4f180776557ea9a2651064d61c3e06
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321557"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301515"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -169,7 +169,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 |-Currency|(Необязательно.) Валюта, в которой отображается стоимость в созданном отчете. Значение по умолчанию — доллар США ($) или последняя указанная валюта.<br>Ознакомьтесь со списком [поддерживаемых валют](site-recovery-vmware-deployment-planner-cost-estimation.md#supported-currencies).|
 
 По умолчанию средство настроено для профилирования и создания отчетов максимум для 1000 виртуальных машин. Это ограничение можно изменить, переопределив значение ключа MaxVMsSupported в файле *ASRDeploymentPlanner.exe.config*.
-```
+```xml
 <!-- Maximum number of vms supported-->
 <add key="MaxVmsSupported" value="1000"/>
 ```
@@ -192,7 +192,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Serve
 
 #### <a name="example-4-generate-a-report-with-a-5-percent-growth-factor-instead-of-the-default-30-percent"></a>Пример 4. Создание отчета с коэффициентом роста 5 %, а не 30 % (значение по умолчанию)
 ```
-ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualzation VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -GrowthFactor 5
+ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -GrowthFactor 5
 ```
 
 #### <a name="example-5-generate-a-report-with-a-subset-of-profiled-data"></a>Пример 5. Создание отчета с подмножеством данных профилирования
@@ -219,7 +219,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 По умолчанию планировщик использует значения 95-го процентиля числа операций записи и чтения на диск в секунду, числа операций вода-вывода в секунду при записи и активности обработки данных, собранных во время профилирования всех виртуальных машин. Это гарантирует, что для определения требований к пропускной способности учетной записи хранения и целевой службы не будут использоваться пиковые значения 100-го процентиля, которые могут возникать на виртуальной машине из-за временных событий, например из-за выполнения задания архивации раз в день, периодического индексирования базы данных, создания аналитического отчета или какого-либо другого кратковременного события, происходящего в определенный момент времени.
 
 При использовании значений 95-го процентиля вы получите точные сведения об особенностях рабочей нагрузки, что, в свою очередь, позволяет обеспечить наилучшую производительность при выполнении этих рабочих нагрузок в Azure. Мы не рекомендуем изменять это значение, но если вы решили сделать это, например изменить на 90-й процентиль, обновите файл конфигурации *ASRDeploymentPlanner.exe.config*, который находится в каталоге по умолчанию, а затем сохраните этот файл, чтобы создать отчет на основе имеющихся данных профилирования.
-```
+```xml
 <add key="WriteIOPSPercentile" value="95" />      
 <add key="ReadWriteIOPSPercentile" value="95" />      
 <add key="DataChurnPercentile" value="95" />

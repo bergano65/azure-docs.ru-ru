@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок развертывания Kubernetes в Azure Stack | Документация Майкрософт
-description: Узнайте, как устранять неполадки развертывания в Kubernetes в Azure Stack.
+description: Узнайте, как устранять неполадки развертывания Kubernetes в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,17 +11,18 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 01/24/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 844feb7999f88f63c9406c9f430d1d076cd032df
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.lastreviewed: 01/24/2019
+ms.openlocfilehash: 9a65ef9acf7a1a133b3f479fe75921191949eeb8
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54390688"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55237857"
 ---
-# <a name="troubleshoot-your-deployment-to-kubernetes-to-azure-stack"></a>Устранение неполадок развертывания в Kubernetes (K8) в Azure Stack
+# <a name="troubleshoot-your-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок развертывания Kubernetes в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 

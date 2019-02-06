@@ -11,19 +11,19 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 49c411487a29a7faa5a6cec5087a85d472309a4b
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.date: 01/25/2019
+ms.openlocfilehash: 40dd963a4aad7ffdd092d6835e8444cf0789e129
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044575"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55462806"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
 База данных SQL Azure, эластичные пулы, Управляемый экземпляр и базы данных Управляемого экземпляра могут передавать потоки метрик и журналов диагностики для упрощения мониторинга производительности. Вы можете настроить базу данных для передачи сведений об использовании ресурсов, о рабочих ролях и сеансах, а также настроить подключение к одному из следующих ресурсов Azure:
 
-- **Аналитика SQL Azure:** для интеллектуального мониторинга баз данных Azure, который включает в себя отчеты о производительности, оповещения и рекомендации по устранению рисков.
+- **Аналитика SQL Azure:** для интеллектуального мониторинга Баз данных SQL Azure, который включает в себя отчеты о производительности, оповещения и рекомендации по устранению рисков.
 - **Центры событий Azure:** для интеграции данных телеметрии Базы данных SQL с настраиваемыми решениями для мониторинга или горячими конвейерами.
 - **Служба хранилища Azure:** для архивации больших объемов данных телеметрии по сниженной цене.
 
@@ -68,7 +68,7 @@ ms.locfileid: "54044575"
 | [Все метрики.](sql-database-metrics-diag-logging.md#all-metrics) Сведения о проценте использования DTU и ЦП, ограничении DTU и ЦП, проценте чтения физических данных, проценте записей в журнал, проценте успешных, неудачных или заблокированных подключений брандмауэра, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища и проценте хранилища XTP. | Yes | Нет  |
 | [QueryStoreRuntimeStatistics.](sql-database-metrics-diag-logging.md#query-store-runtime-statistics) Сведения о статистике выполнения запросов, такие как данные об использовании ЦП и длительность запросов. | Yes | Yes |
 | [QueryStoreWaitStatistics.](sql-database-metrics-diag-logging.md#query-store-wait-statistics) Сведения о статистике ожидания (чего ожидали запросы), например CPU (ЦП), LOG (журнал) и LOCKING (блокировка). | Yes | Yes |
-| [Ошибки.](sql-database-metrics-diag-logging.md#errors-dataset) Сведения об ошибках SQL в базе данных. | Yes | Нет  |
+| [Ошибки.](sql-database-metrics-diag-logging.md#errors-dataset) Сведения об ошибках SQL в базе данных. | Yes | Yes |
 | [DatabaseWaitStatistics.](sql-database-metrics-diag-logging.md#database-wait-statistics-dataset) Содержит статистику по значениям времени ожидания различных типов для базы данных. | Yes | Нет  |
 | [Время ожидания.](sql-database-metrics-diag-logging.md#time-outs-dataset) Содержит сведения о превышении времени ожидания в базе данных. | Yes | Нет  |
 | [Блоки.](sql-database-metrics-diag-logging.md#blockings-dataset) Содержит сведения о событиях блокировки в базе данных. | Yes | Нет  |

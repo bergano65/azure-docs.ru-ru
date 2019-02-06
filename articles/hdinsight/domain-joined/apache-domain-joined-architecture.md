@@ -9,12 +9,12 @@ ms.reviewer: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 50c5838f576b6fd6775373f2dbe3c46d751545c1
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 3e58c22048c9b71b00cffb0657fc924277304662
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437594"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55462438"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Корпоративный пакет безопасности для HDInsight
 
@@ -55,9 +55,41 @@ HDInsight в настоящее время поддерживает только
 
 Если у вас используется локальный экземпляр Active Directory или более сложная конфигурация Active Directory для домена, то вы можете синхронизировать их удостоверения в Azure AD с помощью Azure AD Connect. Затем вы можете включить Azure AD DS на этом клиенте Active Directory. 
 
-Так как в протоколе Kerberos используются хэши паролей, необходимо будет [включить синхронизацию хэша пароля в Azure AD DS](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md). Если вы используете федерацию на основе служб федерации Active Directory (AD FS), то у вас есть возможность настроить синхронизацию паролей для дополнительной защиты на случай сбоя в инфраструктуре AD FS. Дополнительные сведения см. в статье [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md). 
+Так как в протоколе Kerberos используются хэши паролей, необходимо будет [включить синхронизацию хэша пароля в Azure AD DS](../../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md). 
+
+Если вы используете федерацию с помощью служб федерации Active Directory (ADFS), вы должны включить синхронизацию хэша пароля (рекомендуемую настройку см. [здесь](https://youtu.be/qQruArbu2Ew)), что также помогает при аварийном восстановлении в случае сбоя инфраструктуры ADFS и утечке учетных данных. Дополнительные сведения см. в статье [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md). 
 
 Использование только локальной службы Active Directory или Active Directory на виртуальных машинах IaaS, без Azure AD и Azure AD DS, не поддерживается для кластеров HDInsight с ESP.
+
+Если используется федерация и хэши паролей синхронизируются правильно, но вы получаете сбой при аутентификации, проверьте, включена ли аутентификация пароля в облаке субъекта-службы Powershell. Если нет, вы должны установить [Политику обнаружения домашней области (HRD)](../../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) для вашего клиента AAD. Чтобы проверить и установить политику HRD, выполните следующие действия.
+
+ 1. Установите модуль AzureAD PowerShell.
+
+ ```
+  Install-Module AzureAD
+ ```
+
+ 2. ```Connect-AzureAD``` с помощью учетных данных глобального администратора (администратора клиента).
+
+ 3. Проверьте, был ли уже создан субъект-служба "Microsoft Azure Powershell".
+
+```
+ $powershellSPN = Get-AzureADServicePrincipal -SearchString "Microsoft Azure Powershell"
+```
+
+ 4. Если нет (т. е. если ($ powershellSPN -q $ null)), то создайте субъект-службу.
+
+```
+ $powershellSPN = New-AzureADServicePrincipal -AppId 1950a258-227b-4e31-a9cf-717495945fc2
+```
+
+ 5. Создайте и примените политику к этому субъекту-службе. 
+
+```
+ $policy = New-AzureADPolicy -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AllowCloudPasswordValidation`":true}}") -DisplayName EnableDirectAuth -Type HomeRealmDiscoveryPolicy
+
+ Add-AzureADServicePrincipalPolicy -Id $powershellSPN.ObjectId -refObjectID $policy.ID
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

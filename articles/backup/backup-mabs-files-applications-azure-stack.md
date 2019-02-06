@@ -2,18 +2,18 @@
 title: Архивация файлов на виртуальных машинах Azure Stack
 description: Использование службы Azure Backup для резервного копирования и восстановления файлов и приложений Azure Stack в среду Azure Stack.
 services: backup
-author: adiganmsft
+author: adigan
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/5/2018
 ms.author: adigan
-ms.openlocfilehash: acbd1bb98fd9a3eb24b7b3262c3fe9fe47200385
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 67d79f2aa41bab8a14d693098538d22ffeb05a4e
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579211"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55301481"
 ---
 # <a name="back-up-files-on-azure-stack"></a>Архивация файлов в Azure Stack
 Службу Azure Backup можно использовать для защиты (или резервного копирования) файлов и приложений в Azure Stack. Чтобы создать резервные копии файлов и приложений, установите Microsoft Azure Backup Server в качестве виртуальной машины, выполняющейся в Azure Stack. Вы можете защитить файлы на любом сервере Azure Stack в той же виртуальной сети. Установив Azure Backup Server, добавьте диски Azure, чтобы увеличить локальное хранилище, доступное для краткосрочного резервного копирования данных. Azure Backup Server использует хранилища Azure для долгосрочного хранения.

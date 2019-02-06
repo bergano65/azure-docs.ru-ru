@@ -7,7 +7,7 @@ author: CelesteDG
 manager: mtillman
 ms.assetid: d2caf121-9fbe-4f00-bf9d-8f3d1f00a6ff
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: multiple
@@ -15,14 +15,14 @@ ms.workload: na
 ms.date: 10/24/2018
 ms.author: celested
 ms.reviewer: tomfitz
-ms.openlocfilehash: e00dcd90db4d7d7d67273da4840db6a784a5d86c
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 35a69f12dc73ef0cbf9bc1541fa75037f6ef06f5
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49959958"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55228242"
 ---
-# <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
+# <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство: Использование Azure PowerShell для создания субъекта-службы с сертификатом
 
 При наличии приложения или сценария, которому требуется доступ к ресурсам, можно настроить удостоверение для приложения и аутентифицировать его с помощью собственных учетных данных. Этот идентификатор известен как субъект-служба. Такой подход позволяет выполнить следующие действия:
 
@@ -34,7 +34,9 @@ ms.locfileid: "49959958"
 
 В этой статье показано, как создать субъект-службу, который выполняет аутентификацию с помощью сертификата. Настройка субъекта-службы с паролем описана в статье [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
 
-Для выполнения задач из этой статься требуется Azure PowerShell [последней версии](/powershell/azure/get-started-azureps).
+Для выполнения задач из этой статься требуется Azure PowerShell [последней версии](/powershell/azure/install-az-ps).
+
+[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -44,7 +46,7 @@ ms.locfileid: "49959958"
 
 ## <a name="create-service-principal-with-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
 
-Ниже приводится простой пример сценария. В нем используется команда [New-AzureRmADServicePrincipal](/powershell/module/azurerm.resources/new-azurermadserviceprincipal), чтобы создать субъект-службу с самозаверяющим сертификатом, а затем выполняется [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) для присвоения этому субъекту-службе роли [участника](../../role-based-access-control/built-in-roles.md#contributor). Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните [Set-AzureRmContext](/powershell/module/azurerm.profile/set-azurermcontext).
+Ниже приводится простой пример сценария. В нем используется команда [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal), чтобы создать субъект-службу с самозаверяющим сертификатом, а затем выполняется командлет [New-AzureRmRoleAssignment](/powershell/module/az.resources/new-azroleassignment) для присвоения этому субъекту-службе роли [участника](../../role-based-access-control/built-in-roles.md#contributor). Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
 
 ```powershell
 $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" `
@@ -52,15 +54,15 @@ $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" `
   -KeySpec KeyExchange
 $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
 
-$sp = New-AzureRMADServicePrincipal -DisplayName exampleapp `
+$sp = New-AzADServicePrincipal -DisplayName exampleapp `
   -CertValue $keyValue `
   -EndDate $cert.NotAfter `
   -StartDate $cert.NotBefore
 Sleep 20
-New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
+New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```
 
-Пример бездействует 20 секунд, чтобы данные нового субъекта-службы распространились в Azure AD. Если период ожидания окажется недостаточным, появится следующее сообщение об ошибке: "Субъект {идентификатор} не существует в каталоге {идентификатор_каталога}". Чтобы устранить эту ошибку, подождите немного и выполните команду **New-AzureRmRoleAssignment** еще раз.
+Пример бездействует 20 секунд, чтобы данные нового субъекта-службы распространились в Azure AD. Если сценарий не подождет достаточно долго, появится сообщение об ошибке. "Субъект {ИД} не существует в каталоге {ИД каталога}". Чтобы устранить эту ошибку, подождите немного и выполните команду **New-AzRoleAssignment** еще раз.
 
 Вы можете задать область назначения ролей для определенной группы ресурсов с помощью параметра **ResourceGroupName**. Кроме того, вы можете задать область для определенного ресурса с помощью параметров **ResourceType** и **ResourceName**. 
 
@@ -86,11 +88,11 @@ $cert = Get-ChildItem -path Cert:\CurrentUser\my | where {$PSitem.Subject -eq 'C
 При каждом входе в приложение AD в качестве субъекта-службы необходимо указать идентификатор клиента каталога. Клиент — это экземпляр Azure AD.
 
 ```powershell
-$TenantId = (Get-AzureRmSubscription -SubscriptionName "Contoso Default").TenantId
-$ApplicationId = (Get-AzureRmADApplication -DisplayNameStartWith exampleapp).ApplicationId
+$TenantId = (Get-AzSubscription -SubscriptionName "Contoso Default").TenantId
+$ApplicationId = (Get-AzADApplication -DisplayNameStartWith exampleapp).ApplicationId
 
  $Thumbprint = (Get-ChildItem cert:\CurrentUser\My\ | Where-Object {$_.Subject -match "CN=exampleappScriptCert" }).Thumbprint
- Connect-AzureRmAccount -ServicePrincipal `
+ Connect-AzAccount -ServicePrincipal `
   -CertificateThumbprint $Thumbprint `
   -ApplicationId $ApplicationId `
   -TenantId $TenantId
@@ -115,18 +117,18 @@ Param (
  [String] $CertPlainPassword
  )
 
- Connect-AzureRmAccount
- Import-Module AzureRM.Resources
- Set-AzureRmContext -Subscription $SubscriptionId
+ Connect-AzAccount
+ Import-Module Az.Resources
+ Set-AzContext -Subscription $SubscriptionId
  
  $CertPassword = ConvertTo-SecureString $CertPlainPassword -AsPlainText -Force
 
  $PFXCert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($CertPath, $CertPassword)
  $KeyValue = [System.Convert]::ToBase64String($PFXCert.GetRawCertData())
 
- $ServicePrincipal = New-AzureRMADServicePrincipal -DisplayName $ApplicationDisplayName
- New-AzureRmADSpCredential -ObjectId $ServicePrincipal.Id -CertValue $KeyValue -StartDate $PFXCert.NotBefore -EndDate $PFXCert.NotAfter
- Get-AzureRmADServicePrincipal -ObjectId $ServicePrincipal.Id 
+ $ServicePrincipal = New-AzADServicePrincipal -DisplayName $ApplicationDisplayName
+ New-AzADSpCredential -ObjectId $ServicePrincipal.Id -CertValue $KeyValue -StartDate $PFXCert.NotBefore -EndDate $PFXCert.NotAfter
+ Get-AzADServicePrincipal -ObjectId $ServicePrincipal.Id 
 
  $NewRole = $null
  $Retries = 0;
@@ -134,8 +136,8 @@ Param (
  {
     # Sleep here for a few seconds to allow the service principal application to become active (should only take a couple of seconds normally)
     Sleep 15
-    New-AzureRMRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $ServicePrincipal.ApplicationId | Write-Verbose -ErrorAction SilentlyContinue
-    $NewRole = Get-AzureRMRoleAssignment -ObjectId $ServicePrincipal.Id -ErrorAction SilentlyContinue
+    New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $ServicePrincipal.ApplicationId | Write-Verbose -ErrorAction SilentlyContinue
+    $NewRole = Get-AzRoleAssignment -ObjectId $ServicePrincipal.Id -ErrorAction SilentlyContinue
     $Retries++;
  }
  
@@ -167,7 +169,7 @@ Param (
   -ArgumentList @($CertPath, $CertPassword)
  $Thumbprint = $PFXCert.Thumbprint
 
- Connect-AzureRmAccount -ServicePrincipal `
+ Connect-AzAccount -ServicePrincipal `
   -CertificateThumbprint $Thumbprint `
   -ApplicationId $ApplicationId `
   -TenantId $TenantId
@@ -176,29 +178,29 @@ Param (
 Идентификаторы приложения и клиента не являются конфиденциальными, поэтому их можно внедрить непосредственно в скрипт. Чтобы получить идентификатор клиента, используйте следующий командлет:
 
 ```powershell
-(Get-AzureRmSubscription -SubscriptionName "Contoso Default").TenantId
+(Get-AzSubscription -SubscriptionName "Contoso Default").TenantId
 ```
 
 Чтобы получить идентификатор приложения, используйте следующий командлет:
 
 ```powershell
-(Get-AzureRmADApplication -DisplayNameStartWith {display-name}).ApplicationId
+(Get-AzADApplication -DisplayNameStartWith {display-name}).ApplicationId
 ```
 
 ## <a name="change-credentials"></a>Изменение учетных данных
 
-Чтобы изменить учетные данные для приложения AD из-за нарушения безопасности или истечения их срока действия, используйте командлеты [Remove-AzureRmADAppCredential](/powershell/module/azurerm.resources/remove-azurermadappcredential) и [New-AzureRmADAppCredential](/powershell/module/azurerm.resources/new-azurermadappcredential).
+Чтобы изменить учетные данные для приложения AD из-за нарушения безопасности или истечения их срока действия, используйте командлеты [Remove-AzADAppCredential](/powershell/module/az.resources/remove-azadappcredential) и [New-AzADAppCredential](/powershell/module/az.resources/new-azadappcredential).
 
 Чтобы удалить все учетные данные для приложения, используйте следующую команду.
 
 ```powershell
-Get-AzureRmADApplication -DisplayName exampleapp | Remove-AzureRmADAppCredential
+Get-AzADApplication -DisplayName exampleapp | Remove-AzADAppCredential
 ```
 
 Чтобы добавить значение сертификата, создайте самозаверяющий сертификат, как показано в этой статье. Затем используйте следующую команду.
 
 ```powershell
-Get-AzureRmADApplication -DisplayName exampleapp | New-AzureRmADAppCredential `
+Get-AzADApplication -DisplayName exampleapp | New-AzADAppCredential `
   -CertValue $keyValue `
   -EndDate $cert.NotAfter `
   -StartDate $cert.NotBefore

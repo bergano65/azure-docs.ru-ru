@@ -8,15 +8,15 @@ ms.topic: article
 ms.devlang: dotnet
 ms.date: 05/15/2017
 ms.author: tamram
-ms.component: blobs
-ms.openlocfilehash: 6e33f700e9f453f419bf431d772d3db27e806ac0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.subservice: blobs
+ms.openlocfilehash: 9c5f32bb1b4f335fab11f0fd865421f2eec5eee9
+ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240704"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55244918"
 ---
-# <a name="shared-access-signatures-part-2-create-and-use-a-sas-with-blob-storage"></a>Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов
+# <a name="shared-access-signatures-part-2-create-and-use-a-sas-with-blob-storage"></a>Подписанные URL-адреса. Часть 2. Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов
 
 [В части 1](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) этого учебника приведен обзор подписей общего доступа (SAS), а также даны советы и рекомендации по их использованию. В части 2 показано, как создать и затем использовать подписи общего доступа с помощью хранилища BLOB-объектов. Примеры написаны на C# и используют библиотеку клиента хранения Azure для .NET. В примерах этого руководства выполняются следующие задачи:
 
@@ -28,11 +28,11 @@ ms.locfileid: "51240704"
 ## <a name="about-this-tutorial"></a>О данном учебнике
 В этом руководстве мы создадим два консольных приложения, демонстрирующих создание и использование подписанных URL-адресов для контейнеров и больших двоичных объектов.
 
-**Приложение 1.** Приложение управления. Создает подписанный URL-адрес для контейнера и большого двоичного объекта. Включает ключ доступа учетной записи в исходном коде.
+**Приложение 1**. Приложение управления. Создает подписанный URL-адрес для контейнера и большого двоичного объекта. Включает ключ доступа учетной записи в исходном коде.
 
-**Приложение 2.** Клиентское приложение. Обращается к ресурсам контейнера и большого двоичного объекта с использованием подписанных URL-адресов, созданных с помощью первого приложения. Использует только подписанные URL-адреса для доступа к ресурсам контейнера и большого двоичного объекта. Оно *не* включает ключ доступа к учетной записи хранения.
+**Приложение 2**. Клиентское приложение. Обращается к ресурсам контейнера и большого двоичного объекта с использованием подписанных URL-адресов, созданных с помощью первого приложения. Использует только подписанные URL-адреса для доступа к ресурсам контейнера и большого двоичного объекта. Оно *не* включает ключ доступа к учетной записи хранения.
 
-## <a name="part-1-create-a-console-application-to-generate-shared-access-signatures"></a>Часть 1. Создание консольного приложения для создания подписанных URL-адресов
+## <a name="part-1-create-a-console-application-to-generate-shared-access-signatures"></a>Часть 1. Создание консольного приложения для создания подписанных URL-адресов
 Прежде всего убедитесь, что установлена библиотека клиента хранения Azure для .NET. Вы можете установить [пакет NuGet](http://nuget.org/packages/WindowsAzure.Storage/ "пакет NuGet"), содержащий самые новые сборки для клиентской библиотеки. Так вы будете получать все последние исправления. Клиентскую библиотеку также можно скачать в составе последней версии [пакета Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
 В Visual Studio создайте новое консольное приложение Windows и назовите его **GenerateSharedAccessSignatures**. Добавьте ссылки на [Microsoft.WindowsAzure.ConfigurationManager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) и [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/), используя один из следующих методов.
@@ -337,7 +337,7 @@ Container SAS URI using stored access policy: https://storagesample.blob.core.wi
 Blob SAS URI using stored access policy: https://storagesample.blob.core.windows.net/sascontainer/sasblobpolicy.txt?sv=2016-05-31&sr=b&si=tutorialpolicy&sig=%2FkTWkT23SS45%2FoF4bK2mqXkN%2BPKs%2FyHuzkfQ4GFoZVU%3D
 ```
 
-## <a name="part-2-create-a-console-application-to-test-the-shared-access-signatures"></a>Часть 2. Создание консольного приложения для проверки подписанных URL-адресов
+## <a name="part-2-create-a-console-application-to-test-the-shared-access-signatures"></a>Часть 2. Создание консольного приложения для проверки подписанных URL-адресов
 Чтобы проверить подписанные URL-адреса, созданные в предыдущих примерах, мы создадим второе консольное приложение, использующее подписи для выполнения операций с контейнером и большим двоичным объектом.
 
 > [!NOTE]
@@ -589,7 +589,7 @@ Additional error information: The remote server returned an error: (403) Forbidd
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Подписанные URL-адреса. Часть 1: общие сведения о модели SAS](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+* [Использование подписанных URL-адресов (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 * [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](storage-manage-access-to-resources.md)
 * [Delegating Access with a Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) (Делегирование доступа с помощью подписанного URL-адреса)
 * [Введение в использование SAS таблиц и очередей](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)

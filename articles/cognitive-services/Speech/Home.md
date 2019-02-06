@@ -6,16 +6,16 @@ services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
-ms.component: bing-speech
+ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 960d2d402f223b306aa6ff05b567d13525e3d525
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 9b462ba594122b86580b9d136a844db070eea92d
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340364"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55217651"
 ---
 # <a name="what-is-bing-speech"></a>Что такое Распознавание речи Bing?
 
@@ -28,10 +28,10 @@ ms.locfileid: "49340364"
 
 ## <a name="speech-to-text-speech-recognition"></a>Преобразование речи в текст (распознавание речи)
 
-API распознавания речи (Майкрософт) *транскрибирует* аудиопотоки в текст, который приложение может отображать пользователю или выполнять в качестве входящей команды. Это дает разработчикам возможность добавлять функции для обработки речи в приложения двумя способами: с использованием REST API**или** клиентских библиотек на основе WebSocket.
+API распознавания речи (Майкрософт) *транскрибирует* аудиопотоки в текст, который приложение может отображать пользователю или выполнять в качестве входящей команды. Предусмотрено два способа добавления разработчиками службы "Речь" в свои приложения: REST API **или** библиотеки клиента на основе Websocket.
 
-- [REST API](GetStarted/GetStartedREST.md): разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
-- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md): для расширения возможностей разработчики могут загрузить клиентские библиотеки Microsoft и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC). В отличие от REST API клиентские библиотеки используют протокол на основе WebSocket.
+- [REST APIs](GetStarted/GetStartedREST.md): разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
+- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md). Для расширения возможностей разработчики могут скачать клиентские библиотеки Microsoft Speech и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC). В отличие от REST API клиентские библиотеки используют протокол на основе WebSocket.
 
 | Варианты использования | [Интерфейсы REST API](GetStarted/GetStartedREST.md) | [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md) |
 |-----|-----|-----|
@@ -60,4 +60,4 @@ API *преобразования текста в речь* используют
 
 ### <a name="next-steps"></a>Дополнительная информация
 
-- Начните использовать службы преобразование текста в речь (Майкрософт): [Справочник по API преобразования текста в речь](api-reference-rest/bingvoiceoutput.md). Полный список языков и голосов, поддерживаемых функцией преобразования текста в речь, см. в разделе [Поддерживаемые языковые стандарты и голоса](api-reference-rest/bingvoiceoutput.md#SupLocales).
+- Начните использовать службу преобразование текста в речь (Майкрософт): [API преобразования текста в речь Bing](api-reference-rest/bingvoiceoutput.md). Полный список языков и голосов, поддерживаемых функцией преобразования текста в речь, см. в разделе [Поддерживаемые языковые стандарты и голоса](api-reference-rest/bingvoiceoutput.md#SupLocales).

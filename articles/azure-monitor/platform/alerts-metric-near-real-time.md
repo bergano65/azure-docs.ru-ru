@@ -8,22 +8,21 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 8235ba65d9e2e000995d338c200a61845911fbff
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 05812d3c1f1596cbc560d50ac37a058d9438581a
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54426749"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101541"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
 Azure Monitor теперь поддерживает [новый тип оповещений о метриках](../../azure-monitor/platform/alerts-overview.md), который имеет ряд преимуществ перед [классическими оповещениями](../../azure-monitor/platform/alerts-classic.overview.md). Метрики доступны для [большого числа служб Azure](../../azure-monitor/platform/metrics-supported.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности.
 
-
 Новые оповещения на основе метрик можно применять для популярных журналов Log Analytics, извлекаемых в виде метрик. Дополнительные сведения см. в статье [Создание оповещений о метриках для журналов в Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md).
 
 ## <a name="portal-powershell-cli-rest-support"></a>Поддержка портала, PowerShell, CLI и REST
-В настоящее время новые оповещения на основе метрик можно создать только на портале Azure, с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts/) или [шаблонов Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md). Возможность настройки новых оповещений с помощью PowerShell и Azure CLI версии 2.0 и выше будет реализована в ближайшее время.
+В настоящее время новые оповещения на основе метрик можно создать только на портале Azure, с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts/) или [шаблонов Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md). Возможность настройки новых оповещений с помощью PowerShell и Azure CLI версии 2.0 и выше будет реализована в ближайшее время.
 
 ## <a name="metrics-and-dimensions-supported"></a>Поддерживаемые метрики и измерения
 Новые оповещения на основе метрик поддерживают оповещения для метрик, использующих измерения. Измерения можно использовать для фильтрации метрик до необходимого уровня. Все поддерживаемые метрики с применимыми измерениями можно изучить и визуализировать с помощью [обозревателя метрик Azure Monitor](../../azure-monitor/platform/metrics-charts.md).
@@ -65,57 +64,56 @@ Azure Monitor теперь поддерживает [новый тип опов�
 | Microsoft.Web/sites/slots | Yes | [Слоты Службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebsitesslots)|
 |Microsoft.OperationalInsights/workspaces| Yes|[Рабочие области Log Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftoperationalinsightsworkspaces)|
 
-
-
 ## <a name="payload-schema"></a>Схема полезных данных
 
 Если используется соответствующим образом настроенная [группа действий](../../azure-monitor/platform/action-groups.md), то операция POST содержит следующие полезные данные и схему JSON для всех новых оповещений на основе метрик:
 
 ```json
-{"schemaId":"AzureMonitorMetricAlert","data":
-    {
+{
+  "schemaId": "AzureMonitorMetricAlert",
+  "data": {
     "version": "2.0",
     "status": "Activated",
     "context": {
-    "timestamp": "2018-02-28T10:44:10.1714014Z",
-    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/microsoft.insights/metricAlerts/StorageCheck",
-    "name": "StorageCheck",
-    "description": "",
-    "conditionType": "SingleResourceMultipleMetricCriteria",
-    "condition": {
-      "windowSize": "PT5M",
-      "allOf": [
-        {
-          "metricName": "Transactions",
-          "dimensions": [
-            {
-              "name": "AccountResourceId",
-              "value": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500"
-            },
-            {
-              "name": "GeoType",
-              "value": "Primary"
-            }
-          ],
-          "operator": "GreaterThan",
-          "threshold": "0",
-          "timeAggregation": "PT5M",
-          "metricValue": 1.0
-        },
-      ]
+      "timestamp": "2018-02-28T10:44:10.1714014Z",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/microsoft.insights/metricAlerts/StorageCheck",
+      "name": "StorageCheck",
+      "description": "",
+      "conditionType": "SingleResourceMultipleMetricCriteria",
+      "condition": {
+        "windowSize": "PT5M",
+        "allOf": [
+          {
+            "metricName": "Transactions",
+            "dimensions": [
+              {
+                "name": "AccountResourceId",
+                "value": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500"
+              },
+              {
+                "name": "GeoType",
+                "value": "Primary"
+              }
+            ],
+            "operator": "GreaterThan",
+            "threshold": "0",
+            "timeAggregation": "PT5M",
+            "metricValue": 1
+          }
+        ]
+      },
+      "subscriptionId": "00000000-0000-0000-0000-000000000000",
+      "resourceGroupName": "Contoso",
+      "resourceName": "diag500",
+      "resourceType": "Microsoft.Storage/storageAccounts",
+      "resourceId": "/subscriptions/1e3ff1c0-771a-4119-a03b-be82a51e232d/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500",
+      "portalLink": "https://portal.azure.com/#resource//subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500"
     },
-    "subscriptionId": "00000000-0000-0000-0000-000000000000",
-    "resourceGroupName": "Contoso",
-    "resourceName": "diag500",
-    "resourceType": "Microsoft.Storage/storageAccounts",
-    "resourceId": "/subscriptions/1e3ff1c0-771a-4119-a03b-be82a51e232d/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500",
-    "portalLink": "https://portal.azure.com/#resource//subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Contoso/providers/Microsoft.Storage/storageAccounts/diag500"
-  },
-        "properties": {
-                "key1": "value1",
-                "key2": "value2"
-        }
+    "properties": {
+      "key1": "value1",
+      "key2": "value2"
     }
+  }
 }
 ```
 
@@ -124,4 +122,3 @@ Azure Monitor теперь поддерживает [новый тип опов�
 * Получите дополнительные сведения об [интерфейсе оповещений](../../azure-monitor/platform/alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../../azure-monitor/platform/alerts-unified-log.md).
 * [Подробнее об оповещениях в Azure](../../azure-monitor/platform/alerts-overview.md)
-

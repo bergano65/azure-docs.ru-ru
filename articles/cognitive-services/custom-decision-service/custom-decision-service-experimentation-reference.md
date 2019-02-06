@@ -6,16 +6,16 @@ services: cognitive-services
 author: marco-rossi29
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-decision-service
+ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: marossi
-ms.openlocfilehash: eec2c82b779fa5421bc9ac58107ef56f8c71bd1e
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 90a99d4910b0afb885b415760f6a7ef1ca2aec33
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46366562"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219827"
 ---
 # <a name="experimentation"></a>Экспериментирование
 
@@ -35,8 +35,8 @@ ms.locfileid: "46366562"
 * Проверяет вычисление политики `--cb_type` (оценку обратной предрасположенности (`ips`) или двойственную надежность (`dr`). Дополнительные сведения можно получить, ознакомившись с [примером Contextual Bandit](https://github.com/JohnLangford/vowpal_wabbit/wiki/Contextual-Bandit-Example).
 * Выполняет граничную проверку.
 * Проверяет функции квадратичного взаимодействия:
-   * **этап подбора**: проверяются все сочетания с парами `--q_bruteforce_terms` (или меньше);
-   * **этап "жадности"**: добавляются наиболее соответствующие пары, пока циклы `--q_greedy_stop` не перестают обеспечивать улучшение.
+   * **этап подбора**: проверяет все сочетания с парами `--q_bruteforce_terms` (или меньше);
+   * **этап "жадности"**: добавляет наиболее соответствующие пары, пока циклы `--q_greedy_stop` не перестают обеспечивать улучшение.
 * Выполняет второй проход по гиперпараметрам (`learning rate`, `L1 regularization` и `power_t`).
 
 Этими действиями управляют параметры с аргументами Vowpal Wabbit.
@@ -53,13 +53,13 @@ ms.locfileid: "46366562"
 Более подробно приведенные выше аргументы рассмотрены в описании [аргументов командной строки Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments).
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Vowpal Wabbit: установлен и указан в переменной path:
-  - Windows: [используйте установщик (`.msi`)](https://github.com/eisber/vowpal_wabbit/releases);
-  - другие платформы: [получите исходный код](https://github.com/JohnLangford/vowpal_wabbit/releases).
-- Python 3: установлен и указан в переменной path.
+- Vowpal Wabbit: установлен и указан в пути.
+  - Windows: [используйте установщик `.msi`](https://github.com/eisber/vowpal_wabbit/releases).
+  - Другие платформы: [получите исходный код](https://github.com/JohnLangford/vowpal_wabbit/releases).
+- Python 3: установлен и указан в пути.
 - NumPy: используйте диспетчер пакетов на свой выбор.
 - Репозиторий *Microsoft/mwt-ds*: [клонируйте репозиторий](https://github.com/Microsoft/mwt-ds).
-- Файл журнала службы принятия решений в формате JSON: по умолчанию базовая команда включает в себя параметр `--dsjson`, обеспечивающий анализ файла входных данных JSON в службе принятия решений. [Получите пример этого формата](https://github.com/JohnLangford/vowpal_wabbit/blob/master/test/train-sets/decisionservice.json).
+- Файл журнала службы принятия решений в формате JSON. По умолчанию базовая команда включает в себя параметр `--dsjson`, который разрешает анализ файла входных данных JSON в службе принятия решений. [Получите пример этого формата](https://github.com/JohnLangford/vowpal_wabbit/blob/master/test/train-sets/decisionservice.json).
 
 ## <a name="usage"></a>Использование
 Перейдите к `mwt-ds/DataScience` и запустите `Experimentation.py` с соответствующими аргументами, как показано в следующем коде.

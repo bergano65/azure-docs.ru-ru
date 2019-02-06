@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: bc1353ffb4514622ce0ef6e5c3ced76adc7f999f
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 8f87cb68aeea8b953b9883e92fd5080569c6cdd0
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53314794"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55203697"
 ---
 # <a name="predefined-skills-for-content-enrichment-azure-search"></a>Предопределенные навыки для обогащения содержимого ("Поиск Azure")
 
@@ -24,7 +24,7 @@ ms.locfileid: "53314794"
 > [!NOTE]
 > С 21 декабря 2018 г. вы сможете связывать ресурсы Cognitive Services с набором навыков службы "Поиск Azure". Благодаря этому мы сможем начать начислять плату за выполнение набора навыков. С этой даты мы также начнем начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
 >
-> За операции с применением встроенных навыков взимается [плата по мере использования по имеющимся тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). За извлечение изображений взимается плата по тарифам для предварительной версии, как описано на странице [цен на службу "Поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400). Дополнительные сведения см. [здесь](cognitive-search-attach-cognitive-services.md).
+> За операции с применением встроенных навыков взимается [плата по мере использования по существующим тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). За извлечение изображений взимается плата по тарифам для предварительной версии, как описано на странице [цен на службу "Поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400). Дополнительные сведения см. [здесь](cognitive-search-attach-cognitive-services.md).
 
 ## <a name="predefined-skills"></a>Предопределенные навыки
 
@@ -35,7 +35,7 @@ ms.locfileid: "53314794"
 | [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md) | Этот навык использует предварительно обученную модель для выявления важных фраз в зависимости от расположения терминов, лингвистических правил, близости к другим терминам и того, насколько необычным является термин в исходных данных. |
 | [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)  | Этот навык использует предварительно обученную модель, чтобы определить используемый язык (один идентификатор языка на документ). Если в одних сегментах текста используется несколько языков, выводится код основного используемого языка.|
 | [Microsoft.Skills.Text.MergerSkill](cognitive-search-skill-textmerger.md) | Объединяет текст из коллекции полей в одном поле.  |
-| [Microsoft.Skills.Text.NamedEntityRecognitionSkill](cognitive-search-skill-named-entity-recognition.md) | Этот навык использует предварительно обученную модель, чтобы установить сущности для фиксированного набора категорий: пользователей, расположения и организации. |
+| [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md) | Этот навык использует предварительно обученную модель, чтобы установить сущности для фиксированного набора категорий: пользователей, расположений, организаций, электронных адресов, URL-адресов, полей даты и времени. |
 | [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)  | Этот навык использует предварительно обученную модель, чтобы оценить положительную или отрицательную тональность отдельных записей. Оценка находится в пределах от 0 до 1. Нейтральные оценки применяются в неопределенных случаях, когда установить тональность не удается, а также для текста, считающегося нейтральным.  |
 | [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md) | Разбивает текст на страницы, чтобы можно было постепенно обогатить или дополнить содержимое. |
 | [Microsoft.Skills.Vision.ImageAnalysisSkill](cognitive-search-skill-image-analysis.md) | Этот навык использует алгоритм обнаружения изображений, чтобы определить содержимое изображения и создать текстовое описание. |

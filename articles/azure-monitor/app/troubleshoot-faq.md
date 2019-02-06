@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mbullwin
-ms.openlocfilehash: a8c371d9d221ac6232c9293f6ca3192f163dfacb
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 115be0ad1b7dec44f036f6d50c2ac30ceba37ba7
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156295"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457094"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -245,42 +245,51 @@ ms.locfileid: "54156295"
 
 ## <a name="can-i-monitor-an-intranet-web-server"></a>Можно ли отслеживать веб-сервер в интрасети?
 
-Есть два способа.
+Да, но вам потребуется разрешить службам использовать трафик путем внесения их в исключения брандмауэра или использовав перенаправления прокси-сервера.
+- QuickPulse `rt.services.visualstudio.com:443` 
+- ApplicationIdProvider `https://dc.services.visualstudio.com:443` 
+- TelemetryChannel `https://dc.services.visualstudio.com:443` 
 
-### <a name="firewall-door"></a>Разрешение в брандмауэре
 
-Разрешите веб-серверу отправлять данные телеметрии в наши конечные точки https://dc.services.visualstudio.com:443 и https://rt.services.visualstudio.com:443. 
+[Здесь](../../azure-monitor/app/ip-addresses.md) можно проверить список служб и IP-адресов.
 
-### <a name="proxy"></a>Прокси-сервер
+### <a name="firewall-exception"></a>Исключение брандмауэра
 
-Маршрутизируйте трафик со своего сервера на шлюз в интрасети, перезаписав эти параметры в примере ApplicationInsights.config. Если эти свойства "Конечная точка" отсутствуют в вашей конфигурации, эти классы будут использовать значения по умолчанию, показанные в приведенном ниже примере.
+Разрешите веб-серверу отправлять данные телеметрии в наши конечные точки. 
 
-#### <a name="example-applicationinsightsconfig"></a>Пример ApplicationInsights.config:
+### <a name="proxy-redirect"></a>Перенаправление прокси-сервера
+
+Маршрутизация трафика с сервера в шлюз интрасети выполняется путем перезаписи конечных точек в конфигурации.
+Если эти свойства "Конечная точка" отсутствуют в вашей конфигурации, эти классы будут использовать значения по умолчанию, показанные в примере ApplicationInsights.config, приведенном ниже. 
+
+Шлюз должен выполнять маршрутизацию трафика, который идет к базовому адресу конечных точек. В файле настроек замените значение по умолчанию следующими параметрами `http://<your.gateway.address>/<relative path>`.
+
+
+#### <a name="example-applicationinsightsconfig-with-default-endpoints"></a>Пример ApplicationInsights.config со значением по умолчанию для конечных точек.
 ```xml
 <ApplicationInsights>
+  ...
+  <TelemetryModules>
+    <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule, Microsoft.AI.PerfCounterCollector"/>
+      <QuickPulseServiceEndpoint>https://rt.services.visualstudio.com/QuickPulseService.svc</QuickPulseServiceEndpoint>
+    </Add>
+  </TelemetryModules>
     ...
-    <TelemetryChannel>
-         <EndpointAddress>https://dc.services.visualstudio.com/v2/track</EndpointAddress>
-    </TelemetryChannel>
-    ...
-    <ApplicationIdProvider Type="Microsoft.ApplicationInsights.Extensibility.Implementation.ApplicationId.ApplicationInsightsApplicationIdProvider, Microsoft.ApplicationInsights">
-        <ProfileQueryEndpoint>https://dc.services.visualstudio.com/api/profiles/{0}/appId</ProfileQueryEndpoint>
-    </ApplicationIdProvider>
-    ...
+  <TelemetryChannel>
+     <EndpointAddress>https://dc.services.visualstudio.com/v2/track</EndpointAddress>
+  </TelemetryChannel>
+  ...
+  <ApplicationIdProvider Type="Microsoft.ApplicationInsights.Extensibility.Implementation.ApplicationId.ApplicationInsightsApplicationIdProvider, Microsoft.ApplicationInsights">
+    <ProfileQueryEndpoint>https://dc.services.visualstudio.com/api/profiles/{0}/appId</ProfileQueryEndpoint>
+  </ApplicationIdProvider>
+  ...
 </ApplicationInsights>
 ```
 
 _Примечание. ApplicationIdProvider доступен, начиная с версии 2.6.0_
 
-Шлюз должен направлять трафик на адрес https://dc.services.visualstudio.com:443.
 
-Замените значения выше на `http://<your.gateway.address>/<relative path>`
  
-Пример: 
-```
-http://<your.gateway.endpoint>/v2/track 
-http://<your.gateway.endpoint>/api/profiles/{0}/apiId
-```
 
 ## <a name="can-i-run-availability-web-tests-on-an-intranet-server"></a>Можно ли выполнять веб-тесты доступности на сервере в интрасети?
 

@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: dech
-ms.openlocfilehash: df0b031e432c91897ff61e2cd9fcadc86bb54ee2
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: d50bf7d865cb286f2a1421156b477dc92dc978d1
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036874"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453609"
 ---
-# <a name="use-azure-cosmos-db-explorer-to-manage-your-data"></a>Использование обозревателя Azure Cosmos DB для управления данными 
+# <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
 
 Обозреватель Azure Cosmos DB — это автономный веб-интерфейс, который позволяет просматривать и управлять данными, которые хранятся в базе данных Azure Cosmos DB. Обозреватель Azure Cosmos DB эквивалентен существующей вкладке **Обозреватель данных**, которая доступна на портале Azure при создании учетной записи Azure Cosmos DB. Основные преимущества обозревателя Azure Cosmos DB над существующим обозревателем данных перечислены ниже.
 

@@ -7,7 +7,7 @@ author: kkrishna
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,14 +16,14 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: 6321823eed00cffc6565471ec1ba3b4d846cd027
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b44aa35765cba33a85519fcd53f0df365c26be6b
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948712"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55093428"
 ---
-# <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
+# <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство: Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
 Управление доступом на основе ролей (RBAC) — это популярный механизм для принудительного применения авторизации в приложениях. При использовании RBAC администратор предоставляет разрешения ролям, а не отдельным пользователям или группам. Затем администратор может назначить роли для различных пользователей и групп, чтобы контролировать доступ к соответствующему содержимому и функциональным возможностям.
 

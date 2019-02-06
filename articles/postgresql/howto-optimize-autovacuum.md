@@ -6,12 +6,12 @@ ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/22/2018
-ms.openlocfilehash: 0f8db7dd3a90e06587a7e0e05f33cb6fba5c72e1
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 21ac48ff473dcf494f96f87210bdfe09e4d82646
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539795"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55103400"
 ---
 # <a name="optimizing-autovacuum-on-azure-database-for-postgresql-server"></a>Оптимизация автоматической очистки на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается эффективная оптимизация автоматической очистки в службе "База данных Azure для PostgreSQL".
@@ -97,6 +97,6 @@ ALTER TABLE t SET (autovacuum_vacuum_cost_delay = 10);
 Автоматическая очистка представляет собой синхронный процесс, настраиваемый отдельно для каждой таблицы. Чем больше процент неиспользуемых кортежей в таблице, тем выше затраты на автоматическую очистку.  Разделение таблиц с высокой частотой операций обновления и удаления на несколько таблиц поможет параллелизовать автоматическую очистку и сократить затраты на ее выполнение в одной таблице. Вы также можете повысить количество параллельных рабочих ролей автоматической очистки, чтобы обеспечить их свободное планирование.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения об использовании и настройке автоматической очистки см. в приведенной ниже документации по PostgreSQL.
+Дополнительные сведения об использовании и настройке автоматической очистки доступны в приведенной ниже документации по PostgreSQL.
  - Документация по PostgreSQL — [раздел 18, "Настройка сервера"](https://www.postgresql.org/docs/9.5/static/runtime-config-autovacuum.html)
  - Документации по PostgreSQL — [раздел 24, "Повседневные задачи обслуживания баз данных"](https://www.postgresql.org/docs/9.6/static/routine-vacuuming.html)

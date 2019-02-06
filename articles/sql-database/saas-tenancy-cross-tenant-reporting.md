@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewers: billgib,ayolubek
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: e23b679d6c81d1a4103f010a9d13c35e80d4d2af
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.date: 01/25/2019
+ms.openlocfilehash: ccf6ff75cb041c7d9998f67d579d1b392f83cee9
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240994"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55476253"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
 
@@ -148,7 +148,7 @@ ms.locfileid: "50240994"
 
 При проверке плана выполнения наведите указатель мыши на значки плана, чтобы получить дополнительные сведения. 
 
-Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждое значение *VenueId* сопоставляется с отдельной базой данных, фильтрацию легко выполнять удаленно, возвращая только необходимые данные.
+Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждое значение *VenueId* сопоставляется с отдельной базой данных, фильтрация легко выполнять удаленно, возвращая только необходимые данные.
 
 1. В SSMS откройте файл \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReportingQueries.sql*.
 2. Убедитесь в наличии подключения к базе данных **adhocreporting**.

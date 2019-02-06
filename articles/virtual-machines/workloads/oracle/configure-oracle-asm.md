@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 236809336975eec94d7decd9822fc9143ae19bfb
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 692f6b1f02c6c1e86170971886e83722d0160838
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981031"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55203595"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
@@ -50,7 +50,7 @@ az group create --name myResourceGroup --location eastus
 
 ### <a name="create-a-vm"></a>Создание виртуальной машины
 
-Чтобы создать виртуальную машину на основе образа базы данных Oracle и настроить ее для использования Oracle ASM, выполните команду [az vm create](/cli/azure/vm#az_vm_create). 
+Чтобы создать виртуальную машину на основе образа базы данных Oracle и настроить ее для использования Oracle ASM, выполните команду [az vm create](/cli/azure/vm). 
 
 В следующем примере создается виртуальная машина с именем myVM размера Standard_DS2_v2, к которой подключено четыре диска данных по 50 ГБ каждый. Кроме того, создаются ключи SSH, если они не существуют в расположении ключей по умолчанию.  Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.  
 
@@ -540,7 +540,7 @@ ssh <publicIpAddress>
 
 6. Нажмите кнопку **Выйти**, чтобы закрыть ASM Configuration Assistant.
 
-   ![Снимок экрана с диалоговым окном "Configure ASM: Disk Groups" (Настройка ASM: группы дисков) с кнопкой "Выйти"](./media/oracle-asm/asm05.png)
+   ![Снимок экрана со страницей Configure ASM: Disk Groups (Настройка ASM: группы дисков)](./media/oracle-asm/asm05.png)
 
 ## <a name="create-the-database"></a>Создание базы данных
 
@@ -583,8 +583,8 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
+[Руководство Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 
-[Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
+[Руководство Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
 
 Ознакомьтесь со статьей [Разработка базы данных Oracle и ее внедрение в Azure](oracle-design.md)

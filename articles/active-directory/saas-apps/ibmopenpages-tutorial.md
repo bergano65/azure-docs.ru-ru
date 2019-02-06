@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с IBM OpenPages | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с IBM OpenPages | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и IBM OpenPages.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 74d5dea5-2c48-464a-a7d0-cdd481c429d7
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: jeedes
-ms.openlocfilehash: dcc08596378f9e48bbeb379a5e939a77820bdc83
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a9efdc918340d127c554e84d29db2b2df784a4ce
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436341"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181628"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство по интеграции Azure Active Directory с IBM OpenPages
+# <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство. Интеграция Azure Active Directory с IBM OpenPages
 
 В этом руководстве описано, как интегрировать IBM OpenPages с Azure Active Directory (Azure AD).
 
@@ -128,7 +128,7 @@ ms.locfileid: "39436341"
 1. Чтобы настроить единый вход на стороне **IBM OpenPages**, отправьте [группе поддержки IBM OpenPages](https://www.ibm.com/support/home/) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -165,7 +165,7 @@ ms.locfileid: "39436341"
  
 ### <a name="create-an-ibm-openpages-test-user"></a>Создание тестового пользователя IBM OpenPages
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении IBM OpenPages. Обратитесь к [группе поддержки IBM OpenPages](https://www.ibm.com/support/home/) для добавления пользователей на платформу IBM OpenPages. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении IBM OpenPages. Обратитесь к  [группе поддержки IBM OpenPages](https://www.ibm.com/support/home/) для добавления пользователей на платформу IBM OpenPages. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -202,7 +202,7 @@ ms.locfileid: "39436341"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "IBM OpenPages" на панели доступа, вы автоматически войдете в приложение IBM OpenPages.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

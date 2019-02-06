@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Insider Track | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Insider Track | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insider Track.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 53b6a928-e8a4-4cf1-9952-50cd3f013b7c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2018
 ms.author: jeedes
-ms.openlocfilehash: 09f0e38dc8eab2042a28e6816155ad14b185a034
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e23949ac4957325c3949312dad61071a1f527789
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39047269"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55191114"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insider-track"></a>Руководство по интеграции Azure Active Directory с Insider Track
+# <a name="tutorial-azure-active-directory-integration-with-insider-track"></a>Руководство. Интеграция Azure Active Directory с Insider Track
 
 В этом руководстве описано, как интегрировать Insider Track с Azure Active Directory (Azure AD).
 
@@ -130,7 +130,7 @@ ms.locfileid: "39047269"
 7. Чтобы настроить единый вход на стороне **Insider Track**, нужно передать скачанный **XML-файл метаданных**, а также **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки Insider Track](https://cytecsolutions.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -167,7 +167,7 @@ ms.locfileid: "39047269"
  
 ### <a name="create-an-insider-track-test-user"></a>Создание тестового пользователя Insider Track
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Insider Track. Обратитесь к [группе поддержки Insider Track](https://cytecsolutions.com/contact/) для добавления пользователей на платформу Insider Track. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Insider Track. Обратитесь к  [группе поддержки Insider Track](https://cytecsolutions.com/contact/) для добавления пользователей на платформу Insider Track. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39047269"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Insider Track" на панели доступа, вы автоматически войдете в приложение Insider Track.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

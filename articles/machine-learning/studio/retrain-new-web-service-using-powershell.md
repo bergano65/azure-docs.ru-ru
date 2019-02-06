@@ -1,6 +1,6 @@
 ---
-заголовок: Переобучение новой веб-службы Студии машинного обучения Azure с помощью PowerShell titleSuffix: Студия машинного обучения Azure description: Узнайте, как с помощью командлетов управления PowerShell для машинного обучения осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала заново обученную модель в машинном обучении Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Переобучение новой веб-службы Студии машинного обучения Azure с помощью PowerShell titleSuffix: Студия машинного обучения Azure description: Узнайте, как с помощью командлетов управления PowerShell для машинного обучения осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала заново обученную модель в машинном обучении Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 28.03.2017
 ---

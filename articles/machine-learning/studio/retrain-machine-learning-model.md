@@ -1,6 +1,6 @@
 ---
-заголовок: Переобучение модели Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Переобучение модели Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 19.04.2017
 ---

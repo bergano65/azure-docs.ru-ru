@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/08/2018
+ms.date: 01/25/2019
 ms.author: davidmu
-ms.component: B2C
-ms.openlocfilehash: 6b7f3dc79e3b4c06b2b974e0cdca0bf20221c3ad
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.subservice: B2C
+ms.openlocfilehash: 99498646a65865add35ec4a86cb7a25b42dd5523
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54845022"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55162197"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -97,6 +97,11 @@ ms.locfileid: "54845022"
 | {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
 | {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
 
+### <a name="oauth2"></a>OAuth2
+
+| Утверждение | ОПИСАНИЕ | Пример |
+| ----- | ----------------------- | --------|
+| {oauth2:access_token} | Маркер доступа. | Недоступно |
 
 ## <a name="how-to-use-claim-resolvers"></a>Как использовать арбитры утверждений
 

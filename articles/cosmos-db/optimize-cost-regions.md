@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: rimman
-ms.openlocfilehash: b4c873e319dd611221c81deb948db3a64062631e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 1bf65883ecf23f726aefd2cd889a2bcb08e9b6a6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54032607"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457655"
 ---
-# <a name="optimize-the-cost-for-multi-region-deployments-in-azure-cosmos-db"></a>Оптимизация затрат для развертываний в нескольких регионах в Azure Cosmos DB
+# <a name="optimize-multi-region-cost-in-azure-cosmos-db"></a>Оптимизация затрат на использование нескольких регионов в Azure Cosmos DB
 
 Добавить или удалить регионы в учетной записи Azure Cosmos можно в любое время. Пропускная способность, настроенная для разных баз данных и контейнеров Azure Cosmos, зарезервирована в каждом регионе, связанном с учетной записью. Если объем подготовленной пропускной способности в час (сумма ЕЗ/с, настроенных для всех баз данных и контейнеров для вашей учетной записи Azure Cosmos) `T`, а количество регионов Azure, связанных с учетной записью базы данных — `N`, общая подготовленная пропускная способность для учетной записи Cosmos для заданного часа равна следующему:
 

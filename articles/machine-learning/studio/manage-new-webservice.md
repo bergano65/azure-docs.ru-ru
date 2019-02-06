@@ -1,6 +1,6 @@
 ---
-заголовок: Использование портала веб-служб Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Использование портала веб-служб Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 28.02.2017
 ---

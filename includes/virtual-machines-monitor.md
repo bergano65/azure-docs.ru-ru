@@ -2,14 +2,14 @@
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 10/26/2018
+ms.date: 01/27/2019
 ms.author: cynthn
-ms.openlocfilehash: b9fa5fff46fa330a55125053b831c780f21f6e8f
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
+ms.openlocfilehash: a13ce8d3dc71be83e05fae5bd07f30f413ce59f2
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54404665"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55148039"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "54404665"
 
 Служба [Работоспособность ресурсов Azure](../articles/service-health/resource-health-overview.md) поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 
-## <a name="logs"></a>Журналы
+## <a name="azure-activity-log"></a>Журнал действий Azure
 
 [Журнал действий Azure](../articles/azure-monitor/platform/activity-logs-overview.md) — это журнал подписки с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этот журнал входят различные данные: от операционных данных Azure Resource Manager до обновлений в событиях работоспособности службы. Чтобы просмотреть журнал виртуальной машины, щелкните "Журнал действий" на портале Azure.
 
@@ -64,11 +64,13 @@ ms.locfileid: "54404665"
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг
 
-- [Log Analytics](../articles/log-analytics/log-analytics-overview.md) — это служба, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент Log Analytics и регистрирует виртуальную машину в существующей рабочей области Log Analytics.
+- [Azure Monitor](../articles/azure-monitor/overview.md) — это служба, отслеживающая облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Эта служба обеспечивает комплексное решение для сбора, анализа и использования телеметрии из облака и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент Log Analytics для сбора данных журнала и хранения этих данных в рабочей области Log Analytics.
 
-    Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов и метрик является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
+    Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
 
 - [Наблюдатель за сетями](../articles/network-watcher/network-watcher-monitoring-overview.md) позволяет выполнять мониторинг виртуальной машины и связанных с ней ресурсов, которые находятся в одной сети. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-nwa.md) или [Windows](../articles/virtual-machines/windows/extensions-nwa.md) можно установить расширения для агента Наблюдателя за сетями.
+
+- [Azure Monitor для виртуальных машин](../articles/azure-monitor/insights/vminsights-overview.md) отслеживает виртуальные машины Azure в масштабе, анализируя производительность и работоспособность виртуальных машин Windows и Linux, включая различные процессы и взаимосвязанные зависимости от других ресурсов и внешних процессов. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Выполните инструкции в статьях [Мониторинг виртуальных машин Windows с помощью Azure PowerShell](../articles/virtual-machines/windows/tutorial-monitoring.md) или [Мониторинг виртуальных машин Linux в Azure](../articles/virtual-machines/linux/tutorial-monitoring.md).

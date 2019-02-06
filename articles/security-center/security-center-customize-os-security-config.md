@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/26/2018
 ms.author: rkarlin
-ms.openlocfilehash: 91ee57ccd676d1d5e806e3f22eed3389d0fe5e73
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 16c7ad523bcd4a1f7b7b1f80d99e4d36dade72df
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334199"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55102436"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Настройка конфигураций безопасности операционной системы в центре безопасности Azure (предварительная версия)
 
@@ -90,29 +90,29 @@ ms.locfileid: "52334199"
 >
 >
 
-В файле настройки можно изменить как одно правило, так и все. Каждый набор содержит раздел *правил*, разделенный на три категории: "Реестр", "Политика аудита" и "Политика безопасности", как показано ниже.
+В файле настройки можно изменить как одно правило, так и все. Каждый набор содержит раздел *rules*, состоящий из трех категорий: Registry, Audit Policy и Security Policy, как показано ниже.
 
 ![Три категории набора правил](media/security-center-customize-os-security-config/rules-section.png)
 
 Каждая категория имеет свой собственный набор атрибутов. Изменить можно следующие атрибуты:
 
-- **expectedValue.** Этот тип данных поля атрибута должен соответствовать поддерживаемым значениям *типа правила*, например:
+- **expectedValue** Этот тип данных поля атрибута должен соответствовать поддерживаемым значениям *типа правила*, например:
 
-  - **baselineRegistryRules.** Это значение должно соответствовать значению [regValueType](https://msdn.microsoft.com/library/windows/desktop/ms724884), определенному в правиле.
+  - **baselineRegistryRules** Это значение должно соответствовать значению [regValueType](https://msdn.microsoft.com/library/windows/desktop/ms724884), определенному в правиле.
 
-  - **baselineAuditPolicyRules.** Используйте одно из следующих строковых значений:
+  - **baselineAuditPolicyRules** Используйте одно из следующих строковых значений:
 
     - *Success and Failure*
 
     - *Success*
 
-  - **baselineSecurityPolicyRules.** Используйте одно из следующих строковых значений:
+  - **baselineSecurityPolicyRules** Используйте одно из следующих строковых значений:
 
     - *No one*
 
-    - Список разрешенных групп пользователей, например: *Administrators*, *Backup Operators*
+    - Список разрешенных групп пользователей, например: *Администраторы*, *Операторы архива*
 
--   **state.** Эта строка может содержать параметры *Disabled* или *Enabled*. В этой закрытой предварительной версии значение строки следует вводить с учетом регистра.
+-   **state**. Эта строка может содержать параметры *Disabled* или *Enabled*. В этой закрытой предварительной версии значение строки следует вводить с учетом регистра.
 
 Изменить можно только значения этих полей. Если использовать неправильный формат или размер файла, вы не сможете сохранить изменения. Появится сообщение об ошибке, в котором указано, что необходимо передать допустимый файл конфигурации JSON.
 
@@ -121,7 +121,7 @@ ms.locfileid: "52334199"
 Ниже приведены три раздела, содержащие примеры предыдущих правил. Изменить можно атрибуты *expectedValue* и *state*.
 
 **baselineRegistryRules**
-```
+```json
     {
     "hive": "LocalMachine",
     "regValueType": "Int",
@@ -144,7 +144,7 @@ ms.locfileid: "52334199"
 ```
 
 **baselineAuditPolicyRules**
-```
+```json
     {
     "auditPolicyId": "0cce923a-69ae-11d9-bed3-505054503030",
     "ruleId": "37745508-95fb-44ec-ab0f-644ec0b16995",
@@ -161,7 +161,7 @@ ms.locfileid: "52334199"
 ```
 
 **baselineSecurityPolicyRules**
-```
+```json
     {
     "sectionName": "Privilege Rights",
     "settingName": "SeIncreaseWorkingSetPrivilege",
@@ -194,17 +194,17 @@ ms.locfileid: "52334199"
 
 В новых настраиваемых правилах указывается новый пользовательский источник (!= "Microsoft"). Поле *ruleId* может быть пустым или иметь значение NULL. Если оно пустое, идентификатор создает корпорация Майкрософт. В противном случае оно должно содержать допустимый глобальный идентификатор, уникальный среди всех правил (стандартных и настраиваемых). К основным полям применяются такие ограничения:
 
--   **originalId.** Это поле может быть пустым или иметь значение NULL. Значением поля *originalId* может быть допустимый глобальный уникальный идентификатор.
+-   **originalId** Это поле может быть пустым или иметь значение NULL. Значением поля *originalId* может быть допустимый глобальный уникальный идентификатор.
 
--   **cceId.** Это поле может быть пустым или иметь значение NULL. Значение поля *cceId* должно быть уникальным.
+-   **CCEID** Это поле может быть пустым или иметь значение NULL. Значение поля *cceId* должно быть уникальным.
 
 -   **ruleType.** Допустимые значения (необходимо выбрать одно): Registry, AuditPolicy или SecurityPolicy.
 
 -   **Severity.** Допустимые значения (необходимо выбрать одно): Unknown, Critical, Warning или Informational.
 
--   **analyzeOperation.** Допустимое значение: *Equals*.
+-   **analyzeOperation** Должно иметь значение *Equals*.
 
--   **auditPolicyId.** Допустимое значение: глобальный уникальный идентификатор.
+-   **auditPolicyId** Должно содержать допустимый GUID.
 
 -   **regValueType.** Допустимые значения (необходимо выбрать одно): Int, Long, String или MultipleString.
 
@@ -216,7 +216,7 @@ ms.locfileid: "52334199"
 Ниже приведены примеры нового настраиваемого правила.
 
 **Реестр**:
-```
+```json
     {
     "hive": "LocalMachine",
     "regValueType": "Int",
@@ -225,7 +225,7 @@ ms.locfileid: "52334199"
     "valueName": "MyValueName",
     "originalId": "",
     "cceId": "",
-    "ruleName": "My new registry rule”, "baselineRuleType": "Registry",
+    "ruleName": "My new registry rule", "baselineRuleType": "Registry",
     "expectedValue": "123", "severity": "Critical",
     "analyzeOperation": "Equals",
     "source": "MyCustomSource",
@@ -233,7 +233,7 @@ ms.locfileid: "52334199"
     }
 ```
 **Политика безопасности**:
-```
+```json
    {
    "sectionName": "Privilege Rights",
    "settingName": "SeDenyBatchLogonRight",
@@ -248,7 +248,7 @@ ms.locfileid: "52334199"
    }
 ```
 **Политика аудита**:
-```
+```json
    {
    "auditPolicyId": "0cce923a-69ae-11d9-bed3-505054503030",
    "originalId": "",
@@ -275,7 +275,7 @@ ms.locfileid: "52334199"
 
 | **Ошибка**                                | **Описание**                                                                                                                              |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| BaselineConfiguratiohSchemaVersionError  | Свойство *schemaVersion* недопустимое или пустое. Допустимое значение: *{0}*.                                                         |
+| BaselineConfigurationSchemaVersionError  | Свойство *schemaVersion* недопустимое или пустое. Допустимое значение: *{0}*.                                                         |
 | BaselineInvalidStringError               | Свойство *{0}* не может содержать символ *\\n*.                                                                                                         |
 | BaselineNullRuleError                    | Список базовых правил конфигурации содержит правило со значением *NULL*.                                                                         |
 | BaselineRuleCceIdNotUniqueError          | Идентификатор CCE-ID *{0}* не уникален.                                                                                                                  |

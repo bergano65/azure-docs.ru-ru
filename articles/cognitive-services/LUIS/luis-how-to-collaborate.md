@@ -7,16 +7,16 @@ author: diberry
 manager: cgronlun
 ms.custom: seodec18
 ms.service: cognitive-services
-ms.component: language-understanding
+ms.subservice: language-understanding
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: d1db8974ce134b50340db500c9ea1b00126fe10a
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: bf714e5bd47e244a410d1062488af623253bbee6
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086425"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55217787"
 ---
 # <a name="how-to-manage-authors-and-collaborators"></a>Как управлять авторами и участниками совместной работы 
 
@@ -67,7 +67,12 @@ ms.locfileid: "53086425"
 
 ![Разрешение Azure Active Directory на веб-сайте приложения](./media/luis-how-to-collaborate/tenant-permissions.png)
 
-Если администратор клиента хочет, чтобы определенные пользователи использовали службу LUIS, обратитесь к этому [идентификатору блога](https://blogs.technet.microsoft.com/tfg/2017/10/15/english-tips-to-manage-azure-ad-users-consent-to-applications-using-azure-ad-graph-api/).
+Если администратору клиента требуется, чтобы только определенные пользователи могли применять LUIS, для этого есть несколько возможных решений.
+* Предоставить "согласие администратора" (согласия для всех пользователей Azure AD), а затем установить значение "Да" для параметра "Требуется назначение пользователей" в свойствах приложения уровня "Корпоративный" и наконец назначить или добавить только нужных пользователей к приложению. При использовании этого метода администратор по-прежнему предоставляет "согласие администратора", имея при этом возможность контролировать доступ пользователей к приложению.
+* Второе решение — использовать [API Graph Azure AD](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия для каждого конкретного пользователя. 
+
+Узнайте больше о пользователях и согласии Azure Active Directory. 
+* [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.
 
 ### <a name="user-accounts-with-multiple-emails-for-collaborators"></a>Учетные записи пользователей с несколькими адресами электронной почты для сотрудников
 

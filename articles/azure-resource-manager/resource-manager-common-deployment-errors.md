@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/16/2018
 ms.author: tomfitz
-ms.openlocfilehash: 3363b0bbd98b125f0108ca842d5c0b6b9941bf9e
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 64af946c3f8f58808f1bca06f1ef21d92da8cda8
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330392"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55223567"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "54330392"
 | Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | DeploymentActive | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |
 | DeploymentFailed | Ошибка DeploymentFailed является общей ошибкой, которая не содержит сведений, необходимых для ее устранения. Найдите в сведениях об ошибке ее код, с помощью которого можно получить дополнительные сведения. | [Поиск кода ошибки](#find-error-code) |
-| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete) в Azure CLI или с помощью командлета [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. | |
+| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete) в Azure CLI или с помощью командлета [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. | |
 | DnsRecordInUse | Имя записи DNS должно быть уникальным. Предоставьте другое имя или измените имеющуюся запись. | |
 | ImageNotFound | Проверьте параметры образа виртуальной машины. |  |
 | InUseSubnetCannotBeDeleted | Эта ошибка возникает, если вы пытаетесь обновить ресурс, но при обработке запроса он удаляется и создается вновь. Укажите все неизменяемые значения. | [Обновление ресурса](/azure/architecture/building-blocks/extending-templates/update-resource) |
@@ -71,7 +71,7 @@ ms.locfileid: "54330392"
 | RequestDisallowedByPolicy | Подписка включает в себя политику ресурсов, предотвращающую действие, которое вы пытаетесь выполнить во время развертывания. Найдите политику, которая блокирует действие. Измените развертывание в соответствии с ограничениями политики, если это возможно. | [Устранение ошибок с политиками](resource-manager-policy-requestdisallowedbypolicy-error.md) |
 | ReservedResourceName | Укажите ресурс, имя которого не включает в себя зарезервированное имя. | [Зарезервированные имена ресурсов](resource-manager-reserved-resource-name.md) |
 | ResourceGroupBeingDeleted | Дождитесь завершения удаления. | |
-| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Оно уже должно существовать в подписке. Проверьте контекст подписки. | [Azure CLI](/cli/azure/account?#az-account-set), [PowerShell](/powershell/module/azurerm.profile/set-azurermcontext) |
+| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Оно уже должно существовать в подписке. Проверьте контекст подписки. | [Azure CLI](/cli/azure/account?#az-account-set), [PowerShell](/powershell/module/Az.Accounts/Set-AzContext) |
 | ResourceNotFound | Развертывание ссылается на ресурс, который не может быть разрешен. Убедитесь, что для функции **reference** указаны параметры, необходимые для вашего сценария. | [Устранение ошибок с поиском ресурсов](resource-manager-not-found-errors.md) |
 | ResourceQuotaExceeded | Развертывание пытается создать ресурсы, которые превышают квоту для подписки, группы ресурсов или региона. Если возможно, измените инфраструктуру, чтобы не превышать квоты. В противном случае запросите изменение квот. | [Устранение ошибок квот ресурсов](resource-manager-quota-errors.md) |
 | SkuNotAvailable | Выберите номер SKU (например, размер виртуальной машины), который доступен в выбранном расположении. | [Устранение ошибок, связанных с недоступностью номера SKU](resource-manager-sku-not-available-errors.md) |
@@ -110,7 +110,7 @@ ms.locfileid: "54330392"
 Чтобы просмотреть коды и сообщения ошибок развертывания с помощью PowerShell, используйте следующую команду:
 
 ```azurepowershell-interactive
-(Get-AzureRmResourceGroupDeploymentOperation -DeploymentName exampledeployment -ResourceGroupName examplegroup).Properties.statusMessage
+(Get-AzResourceGroupDeploymentOperation -DeploymentName exampledeployment -ResourceGroupName examplegroup).Properties.statusMessage
 ```
 
 Чтобы просмотреть коды и сообщения ошибок развертывания с помощью Azure CLI, используйте следующую команду:
@@ -140,7 +140,7 @@ az group deployment operation list --name exampledeployment -g examplegroup --qu
 В PowerShell для параметра **DeploymentDebugLogLevel** задайте значение All, ResponseContent или RequestContent.
 
 ```powershell
-New-AzureRmResourceGroupDeployment `
+New-AzResourceGroupDeployment `
   -Name exampledeployment `
   -ResourceGroupName examplegroup `
   -TemplateFile c:\Azure\Templates\storage.json `
@@ -150,7 +150,7 @@ New-AzureRmResourceGroupDeployment `
 Проверьте содержимое запроса с помощью следующего командлета.
 
 ```powershell
-(Get-AzureRmResourceGroupDeploymentOperation `
+(Get-AzResourceGroupDeploymentOperation `
 -DeploymentName exampledeployment `
 -ResourceGroupName examplegroup).Properties.request `
 | ConvertTo-Json
@@ -159,7 +159,7 @@ New-AzureRmResourceGroupDeployment `
 Или проверьте содержимое ответа, выполнив команду, указанную ниже.
 
 ```powershell
-(Get-AzureRmResourceGroupDeploymentOperation `
+(Get-AzResourceGroupDeploymentOperation `
 -DeploymentName exampledeployment `
 -ResourceGroupName examplegroup).Properties.response `
 | ConvertTo-Json

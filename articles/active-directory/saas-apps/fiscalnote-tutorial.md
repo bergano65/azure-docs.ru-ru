@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с FiscalNote | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с FiscalNote | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FiscalNote.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 55274f26-be7e-4514-964c-7186ecb55c4a
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 2dfc450fe53c543c1d5119cd9c6954aadaa3b3ff
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: cea5c6ad57d8c391bd1d5264abbc1397fbad0f30
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421429"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55162011"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fiscalnote"></a>Руководство. Интеграция Azure Active Directory с FiscalNote
 
@@ -192,7 +192,7 @@ ms.locfileid: "39421429"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в FiscalNote. Приложение FiscalNote поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь создается при попытке получить доступ к приложению FiscalNote (если он еще не существует).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки FiscalNote](mailto:support@fiscalnote.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки FiscalNote](mailto:support@fiscalnote.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -229,7 +229,7 @@ ms.locfileid: "39421429"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку FiscalNote на панели доступа, вы автоматически войдете в приложение FiscalNote.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

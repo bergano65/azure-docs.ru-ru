@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 10/05/2018
 ms.reviewer: mbullwin
 ms.author: tilee
-ms.openlocfilehash: 9ad0579ff9c25753b1e4816b80948b4d8d1232f7
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 06feece050835b2b9188eb702210770b44a6b49c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082556"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55185822"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -40,6 +40,7 @@ ms.locfileid: "54082556"
 | | | | 
 | **Поддерживаемые функции**                |                   |                   |               
 | &bull; QuickPulse/LiveMetrics       | Yes             | Yes               | 
+| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | Yes               | 
 | &bull; Выборка                     | Yes             | Yes               | 
 | &bull; Пакет пульса                   |                 | Yes               | 
 | | | | 
@@ -50,6 +51,10 @@ ms.locfileid: "54082556"
 | **Можно настроить**                      |                   |                   |           
 | &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Yes                   | 
 
+
+## <a name="live-metrics--secure-control-channel"></a>Интерактивные метрики и безопасный канал управления
+
+Указываемые вами пользовательские критерии фильтра передаются в компонент Live Metrics в пакете SDK для Application Insights. Фильтры могут содержать конфиденциальные сведения, например идентификаторы клиентов. Вы можете защитить канал, используя секретный ключ API. Инструкции см. в разделе [Защита канала управления](https://docs.microsoft.com/azure/azure-monitor/app/live-stream#secure-the-control-channel).
 
 ## <a name="sampling"></a>Выборка
 

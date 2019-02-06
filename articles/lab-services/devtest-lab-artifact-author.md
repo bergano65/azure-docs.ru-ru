@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2018
 ms.author: spelluru
-ms.openlocfilehash: ad9e9e893dc831530b69a30cc3dd930e879e9d7b
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 05abc61da7af02c56dacd632175d6fbfa64cb9e1
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185124"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55098567"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
 
 Просмотрите следующее видео, чтобы ознакомиться с действиями, описанными в этой статье:
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/how-to-author-custom-artifacts/player]
-> 
-> 
+>
+>
 
 ## <a name="overview"></a>Обзор
 Вы можете использовать *артефакты* для развертывания и настройки приложения после подготовки виртуальной машины. Артефакт состоит из файла определения артефакта и других файлов скриптов, которые хранятся в папке в репозитории Git. Файлы определения артефактов состоят из JSON и выражений, позволяющих указать, какие компоненты должны быть установлены на виртуальной машине. Например, можно определить имя артефакта, выполняемую команду и параметры, которые станут доступны после запуска команды. В файле определения артефакта можно ссылаться на другие файлы скриптов, используя их имена.
@@ -69,12 +69,12 @@ ms.locfileid: "39185124"
 Параметры определяются с помощью следующей структуры.
 
     "parameters": {
-        "<parameterName>": {
-          "type": "<type-of-parameter-value>",
-          "displayName": "<display-name-of-parameter>",
-          "description": "<description-of-parameter>"
-        }
+      "<parameterName>": {
+        "type": "<type-of-parameter-value>",
+        "displayName": "<display-name-of-parameter>",
+        "description": "<description-of-parameter>"
       }
+    }
 
 | Имя элемента | Обязательный? | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -96,13 +96,13 @@ ms.locfileid: "39185124"
 
 Ниже приведен список распространенных функций.
 
-* **parameters(parameterName)**  — возвращает значение параметра, предоставляемого при выполнении команды артефакта.
-* **concat(arg1, arg2, arg3,….. )** — объединяет несколько строковых значений. Эта функция может принимать различные аргументы.
+* **parameters(parameterName)**: возвращает значение параметра, предоставляемого при выполнении команды артефакта.
+* **concat(arg1, arg2, arg3,….. )**: объединяет несколько строковых значений. Эта функция может принимать различные аргументы.
 
 В следующем примере показано, как составить значение, используя выражения и функции:
 
     runCommand": {
-         "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./startChocolatey.ps1'
+        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./startChocolatey.ps1'
     , ' -RawPackagesList ', parameters('packages')
     , ' -Username ', parameters('installUsername')
     , ' -Password ', parameters('installPassword'))]"
@@ -113,7 +113,7 @@ ms.locfileid: "39185124"
 1. Установите редактор JSON — он требуется для работы с файлами определения артефактов. Мы советуем использовать [Visual Studio Code](https://code.visualstudio.com/), доступный для Windows, Linux и OS X.
 2. Получите пример файла определения artifactfile.json. Изучите артефакты, созданные командой DevTest Labs, в [репозитории GitHub](https://github.com/Azure/azure-devtestlab). Он содержит богатую библиотеку артефактов, которая поможет вам создавать собственные артефакты. Загрузите файл определения артефакта и внесите в него изменения, чтобы создать свои собственные артефакты.
 3. Используйте IntelliSense — он позволяет просматривать элементы, которые можно использовать для создания файла определения артефакта. Здесь же можно увидеть различные варианты значений каждого элемента. Например, при редактировании элемента **targetOsType** IntelliSense предлагает два варианта — для Windows и для Linux.
-4. Сохраните артефакт в [общедоступном репозитории Git для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или [своем репозитория Git](devtest-lab-add-artifact-repo.md). В общедоступном репозитории вы можете просматривать артефакты, к которым пользователи предоставили общий доступ и которые можно использовать напрямую или настроить в соответствии со своими потребностями. 
+4. Сохраните артефакт в [общедоступном репозитории Git для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или [своем репозитория Git](devtest-lab-add-artifact-repo.md). В общедоступном репозитории вы можете просматривать артефакты, к которым пользователи предоставили общий доступ и которые можно использовать напрямую или настроить в соответствии со своими потребностями.
    
    1. Создайте для каждого артефакта отдельный каталог. Имя каталога должно совпадать с именем артефакта.
    2. Сохраните файл определения артефакта (artifactfile.json) в созданный каталог.
@@ -124,11 +124,9 @@ ms.locfileid: "39185124"
       ![Пример папки артефакта](./media/devtest-lab-artifact-author/git-repo.png)
 5. Если вы используете свой репозиторий для хранения артефактов, добавьте репозиторий артефактов в лабораторию, как описано в руководстве по [добавлению репозитория Git для хранения артефактов и шаблонов](devtest-lab-add-artifact-repo.md).
 
-
 ## <a name="related-articles"></a>Связанные статьи
 * [Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](http://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте, как [добавить репозиторий артефактов Git в лабораторию](devtest-lab-add-artifact-repo.md).
-

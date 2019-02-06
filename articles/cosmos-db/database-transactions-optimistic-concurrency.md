@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 5af305a2e0d4754cf4fad8557db9d367c828ecc5
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.openlocfilehash: 044fe3de265d298ecd366a50b9db77eeea32bbb7
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389108"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457944"
 ---
-# <a name="database-transactions-and-optimistic-concurrency-control"></a>Транзакции базы данных и оптимистическая блокировка
+# <a name="transactions-and-optimistic-concurrency-control"></a>Управление транзакциями и оптимистической блокировкой
 
 Транзакции базы данных обеспечивают безопасную и предсказуемую модель программирования для работы с одновременными изменениями данных. В традиционных реляционных базах данных, таких как SQL Server, вы можете создавать бизнес-логику на основе хранимых процедур и (или) триггеров, которые отправляются на сервер для выполнения непосредственно в ядре СУБД. В традиционных реляционных базах данных вы вынуждены иметь дело с двумя языками программирования — обычный (нетранзакционный) язык приложений, например JavaScript, Python, C#, Java, и отдельный язык для транзакций (T-SQL), который поддерживается базой данных.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Elium | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Elium | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Elium.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: fae344b3-5bd9-40e2-9a1d-448dcd58155f
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: jeedes
-ms.openlocfilehash: dfa90474632b2cf18055e0ba95994f120cb293ef
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ac88d3accad8aa9ec523ecce5eb11b6c10eb913c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447790"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181492"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-elium"></a>Руководство. Интеграция Azure Active Directory с Elium
 
@@ -233,7 +233,7 @@ ms.locfileid: "39447790"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении Elium. Приложение Elium поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Elium создается учетная запись пользователя (если она еще не создана).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки Elium](mailto:support@elium.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Elium](mailto:support@elium.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -270,7 +270,7 @@ ms.locfileid: "39447790"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Elium на панели доступа, вы автоматически войдете в приложение Elium.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

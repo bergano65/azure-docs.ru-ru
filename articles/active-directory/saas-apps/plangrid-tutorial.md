@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с PlanGrid | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с PlanGrid | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и PlanGrid.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 0ba72432-9b49-4358-b756-14c982422be8
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2018
 ms.author: jeedes
-ms.openlocfilehash: b2225a48e78e8c609223510a32d3ed5c735ed3b6
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 5ceb5f09b599b6c42dea3359b18c319e7b44fed7
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39046073"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55165087"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-plangrid"></a>Руководство по интеграции Azure Active Directory с PlanGrid
+# <a name="tutorial-azure-active-directory-integration-with-plangrid"></a>Руководство. Интеграция Azure Active Directory с PlanGrid
 
 В этом руководстве описано, как интегрировать PlanGrid с Azure Active Directory (Azure AD).
 
@@ -160,7 +160,7 @@ ms.locfileid: "39046073"
  
 ### <a name="create-a-plangrid-test-user"></a>Создание тестового пользователя PlanGrid
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении PlanGrid. Обратитесь в [службу поддержки PlanGrid](mailto:help@plangrid.com), чтобы добавить пользователей на платформу PlanGrid. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении PlanGrid. Обратитесь к  [группе поддержки PlanGrid](mailto:help@plangrid.com) для добавления пользователей на платформу PlanGrid. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -197,7 +197,7 @@ ms.locfileid: "39046073"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент PlanGrid на панели доступа, вы автоматически войдете в приложение PlanGrid.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

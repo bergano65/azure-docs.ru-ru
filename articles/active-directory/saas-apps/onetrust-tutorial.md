@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с OneTrust Privacy Management Software | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с OneTrust Privacy Management Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OneTrust Privacy Management Software.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 71c2b6d0-3d28-4130-a2c8-1e72ab3d5814
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: jeedes
-ms.openlocfilehash: f8e06a4578d2f11331b87fdfb493e2bba4edb8cf
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 46480119579513839024d89e7657661e12e5509c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421696"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55167298"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство по интеграции Azure Active Directory с OneTrust Privacy Management Software
+# <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство. Интеграция Azure Active Directory с OneTrust Privacy Management Software
 
 В этом руководстве описано, как интегрировать OneTrust Privacy Management Software с Azure Active Directory (Azure AD).
 
@@ -134,7 +134,7 @@ ms.locfileid: "39421696"
 1. Чтобы настроить единый вход на стороне **OneTrust Privacy Management Software**, необходимо отправить скачанный **XML-файл метаданных** [группе поддержки OneTrust Privacy Management Software](mailto:support@onetrust.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -173,7 +173,7 @@ ms.locfileid: "39421696"
 Цель этого раздела — создать пользователя Britta Simon в OneTrust Privacy Management Software. Приложение OneTrust Privacy Management Software поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к OneTrust Privacy Management Software (если он еще не создан).
 
 >[!Note]
->Если необходимо вручную создать пользователя, обратитесь к [группе поддержки OneTrust Privacy Management Software](mailto:support@onetrust.com).
+>Если необходимо вручную создать пользователя, обратитесь к  [группе поддержки OneTrust Privacy Management Software](mailto:support@onetrust.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -210,7 +210,7 @@ ms.locfileid: "39421696"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "OneTrust Privacy Management Software" на панели доступа, вы автоматически войдете в приложение OneTrust Privacy Management Software.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,13 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2018
 ms.author: cynthn
-ms.component: disks
-ms.openlocfilehash: 5e2a485630b7e3c9cc5977170d7e7e7eeb3e6ff5
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.subservice: disks
+ms.openlocfilehash: 4aefc8c033383125a803eb0c8a38e2f3de119540
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54474223"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55467923"
 ---
 # <a name="migrate-azure-vms-to-managed-disks-in-azure"></a>Миграция виртуальных машин Azure на Управляемые диски Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "54474223"
 | Перенос…                                            | Ссылка на документацию                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Преобразование автономных виртуальных машин и виртуальных машин в набор доступности для управляемых дисков   | [Переключение виртуальной машины с неуправляемых на управляемые диски](convert-unmanaged-to-managed-disks.md) |
-| отдельной виртуальной машины из классической модели развертывания в модель развертывания с помощью Resource Manager на управляемых дисках.     | [Migrate a single Azure VM from classic to Managed Disks](migrate-single-classic-to-resource-manager.md) (Миграция отдельной виртуальной машины из классической модели развертывания на управляемые диски)  | 
+| отдельной виртуальной машины из классической модели развертывания в модель развертывания с помощью Resource Manager на управляемых дисках.     | [Создание виртуальной машины на классическом виртуальном жестком диске](create-vm-specialized-portal.md)  | 
 | всех виртуальных машин в виртуальной сети из классической модели развертывания в модель развертывания с помощью Resource Manager на управляемых дисках.     | [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](migration-classic-resource-manager-ps.md), затем [Convert a VM from unmanaged disks to managed disks](convert-unmanaged-to-managed-disks.md) (Преобразование виртуальной машины с неуправляемыми дисками для использования управляемых дисков) | 
 
 

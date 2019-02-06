@@ -9,12 +9,12 @@ ms.author: robreed
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: 74587d05ec27e87d87aa3647c22f5c90a9cdcf58
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 1a3cfb51cc75c89c5a4580b1b7721eb763078980
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436406"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55096710"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -168,7 +168,7 @@ $VM | Update-AzureVM
 1. Убедитесь, что на компьютерах, которые будут подключены к службе "Настройка состояния службы автоматизации Azure", установлена последняя версия [службы настройки требуемого состояния PowerShell для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux).
 1. Если [значения по умолчанию локального диспетчера конфигураций DSC PowerShell](/powershell/dsc/metaconfig4) соответствуют требуемым, а подключаемые компьютеры должны извлекать данные из "Настройка состояния службы автоматизации Azure" **и** передают их туда, сделайте следующее:
 
-   - На каждом компьютере под управлением Linux, который будет подключен к службе Azure Automation State Configuratin, используйте файл `Register.py` для подключения с помощью значений по умолчанию локального диспетчера конфигураций DSC PowerShell:
+   - На каждом компьютере под управлением Linux, который будет подключен к службе Azure Automation State Configuration, используйте файл `Register.py` для подключения с помощью значений по умолчанию локального диспетчера конфигураций DSC PowerShell:
 
      `/opt/microsoft/dsc/Scripts/Register.py <Automation account registration key> <Automation account registration URL>`
 

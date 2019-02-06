@@ -12,19 +12,19 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 4339782304f1bc175f1066954f1050bc00f25005
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 5b6bef8194123ed6c83a48dd5e819085d4bc5424
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54434246"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55453473"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure-SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения интеграции в Azure. 
 
 В разделе [Руководство. Развертывание пакетов служб SSIS в Azure](tutorial-create-azure-ssis-runtime-portal.md) показано, как создать среду выполнения интеграции Azure-SSIS, используя сервер Azure SQL Database для размещения базы данных каталога SSIS (SSISDB). Эта статья дополняет руководство и содержит следующие инструкции: 
 
-- При необходимости используйте сервер базы данных SQL Azure с конечными точками службы виртуальной сети или управляемым экземпляром для размещения базы данных SSISDB. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение сервера базы данных SQL Azure и управляемого экземпляра базы данных SQL](create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). Предварительно необходимо подключить среду выполнения интеграции Azure-SSIS к виртуальной сети и при необходимости настроить разрешения и параметры виртуальной сети. См. статью [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). 
+- При необходимости используйте сервер базы данных SQL Azure с конечными точками службы виртуальной сети или управляемым экземпляром для размещения базы данных SSISDB. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение отдельной Базы данных SQL или пула эластичных баз данных и Управляемого экземпляра Базы данных SQL](create-azure-ssis-integration-runtime.md#compare-sql-database-single-databaseelastic-pool-and-sql-database-managed-instance). Предварительно необходимо подключить среду выполнения интеграции Azure-SSIS к виртуальной сети и при необходимости настроить разрешения и параметры виртуальной сети. См. статью [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). 
 
 - При необходимости используйте аутентификацию Azure Active Directory (AAD) с помощью управляемого удостоверения фабрики данных Azure (ADF) для подключения к серверу базы данных. Предварительно необходимо добавить управляемое удостоверение для ADF, поскольку пользователь автономной базы данных может создать SSISDB на вашем сервере базы данных SQL Azure или в управляемом экземпляре. Дополнительные сведения см. в разделе [Включение проверки подлинности Azure Active Directory для среды выполнения интеграции Azure-SSIS](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
 
@@ -55,11 +55,11 @@ ms.locfileid: "54434246"
 ### <a name="region-support"></a>Поддержка регионов
 Список регионов Azure, в которых сейчас доступны ADF и среда выполнения интеграции Azure-SSIS, см. на странице [Доступность ADF и среды выполнения интеграции Azure-SSIS по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all). 
 
-### <a name="compare-sql-database-logical-server-and-sql-database-managed-instance"></a>Сравнение логического сервера базы данных SQL и управляемого экземпляра базы данных SQL
+### <a name="compare-sql-database-single-databaseelastic-pool-and-sql-database-managed-instance"></a>Сравнение отдельной Базы данных SQL или пула эластичных баз данных и Управляемого экземпляра Базы данных SQL
 
 В следующей таблице приведены сравнения некоторых функций сервера базы данных SQL Azure и управляемого экземпляра, так как они связаны со средой выполнения интеграции Azure-SSIR.
 
-| Функция | сервер базы данных SQL Azure;| Управляемый экземпляр |
+| Функция | Отдельная база данных / эластичный пул| Управляемый экземпляр |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступен.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере ADF](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент управляемого экземпляра. |
 | **Проверка подлинности** | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего любую группу AAD с управляемым удостоверением ADF, в качестве члена роли **db_owner**.<br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего управляемое удостоверение ADF. <br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB в управляемом экземпляре базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance). |
@@ -69,9 +69,11 @@ ms.locfileid: "54434246"
 | | | |
 
 ## <a name="azure-portal"></a>Портал Azure
+
 В этом разделе для создания среды выполнения интеграции Azure-SSIS используется портал Azure, в частности пользовательский интерфейс или приложение ADF. 
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных 
+
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных. 
 1. Войдите на [портал Azure](https://portal.azure.com/). 
 1. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 

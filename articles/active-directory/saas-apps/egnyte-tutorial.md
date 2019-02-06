@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Egnyte | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Egnyte | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Egnyte.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 8c2101d4-1779-4b36-8464-5c1ff780da18
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 33989d04cba06c789089dfc0db62d177d258292a
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: e33fc71e0e43864d7d70495fc5056a8acaf4ad56
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976117"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55159018"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство. Интеграция Azure Active Directory с Egnyte
 

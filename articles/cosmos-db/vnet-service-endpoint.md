@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 25a05df42029fe444b8d5ceddb2972f779f1b232
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: 199e1dda3e4629c0298d4aae1cb5d09e20e4b3b8
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54358734"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55452047"
 ---
-# <a name="access-azure-cosmos-db-resources-from-virtual-networks"></a>Доступ к ресурсам Azure Cosmos DB из виртуальных сетей
+# <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
-Учетные записи Azure Cosmos можно настроить для предоставления доступа только из определенной подсети виртуальной сети Azure. Если включить [конечную точку службы](../virtual-network/virtual-network-service-endpoints-overview.md) для доступа к Azure Cosmos DB в подсети в виртуальной сети, трафик из этой подсети отправляется в базу данных Azure Cosmos DB с удостоверением подсети и виртуальной сети. После включения конечной точки службы Azure Cosmos DB можно ограничить доступ к подсети, добавив ее в учетную запись Azure Cosmos.
+Учетные записи Azure Cosmos можно настроить для предоставления доступа только из определенной подсети виртуальной сети. Если включить [конечную точку службы](../virtual-network/virtual-network-service-endpoints-overview.md) для доступа к Azure Cosmos DB в подсети в виртуальной сети, трафик из этой подсети отправляется в базу данных Azure Cosmos DB с удостоверением подсети и виртуальной сети. После включения конечной точки службы Azure Cosmos DB можно ограничить доступ к подсети, добавив ее в учетную запись Azure Cosmos.
 
 По умолчанию доступ к учетной записи Azure Cosmos можно получить через любой источник при условии, что запрос сопровождается допустимым маркером проверки подлинности. При добавлении одной или нескольких подсетей в виртуальную сеть только запросы, полученные из этих подсетей, будут получать правильный ответ. Запросы, полученные из любого другого источника, получат ответ "403 (запрещено)". 
 

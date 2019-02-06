@@ -2,7 +2,7 @@
 layout: HubPage
 hide_bc: false
 title: Документация по Azure Monitor Application Insights. Руководства и справочник по API | Документация Майкрософт
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: Azure Monitor Application Insights обеспечивает глубокий мониторинг производительности приложений на уровне кода.
 services: application-insights
 author: mrbullwinkle
 manager: carmonmills
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/15/2019
 ms.author: mbullwin
-ms.openlocfilehash: 713368ab02e72ad0b8e51d0bb312a20bd2df690c
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: f2c6475d67958e8ccd3e46598a46cc8bfee9ef54
+ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54830120"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55300682"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -220,7 +220,7 @@ ms.locfileid: "54830120"
                                                         <h3>Конфиденциальность, безопасность, использование и стоимость</h3>
                                                         <p>
                                                             <a href="https://docs.microsoft.com/azure/log-analytics/log-analytics-personal-data-mgmt">Руководство по хранению персональных данных в Log Analytics и Application Insights</a><br>
-                                                            <a href="./app/data-retention-privacy.md">Сбор и хранение данных в Application Insights</a><br>
+                                                            <a href="./app/data-retention-privacy.md">Сбор, период удержания и &amp;хранение данных</a><br>
                                                             <a href="./app/resources-roles-access-control.md">Ресурсы, роли и контроль доступа в Application Insights</a><br>
                                                             <a href="./app/ip-addresses.md">IP-адреса, используемые Application Insights и Log Analytics</a><br>
                                                             <a href="https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs">Мониторинг использования и ожидаемых затрат</a>

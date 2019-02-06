@@ -9,16 +9,16 @@ editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.component: pim
+ms.subservice: pim
 ms.date: 02/14/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: ab5a072d845bfdbaafabe1e0e7bdce2dfce6184d
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: a4dbce678d5d3eac106363e958636810ea9040bb
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43188185"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55180217"
 ---
 # <a name="view-audit-history-for-azure-ad-directory-roles-in-pim"></a>Просмотр журнала аудита для ролей каталога Azure AD в PIM
 Вы можете использовать журнал аудита управления привилегированными пользователями (PIM) для просмотра всех назначенных пользователям и активированных ролей за определенный период времени для всех привилегированных ролей. Если требуется просмотреть весь журнал аудита действий в клиенте, включая действия администратора, пользователя и действия при синхронизации, можно использовать [отчеты о доступе и использовании Azure Active Directory.](../reports-monitoring/overview-reports.md)
@@ -64,4 +64,4 @@ ms.locfileid: "43188185"
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Просмотр журнала аудита для ролей ресурсов Azure в PIM](pim-resource-roles-use-the-audit-log.md)
+- [Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM](azure-pim-resource-rbac.md)

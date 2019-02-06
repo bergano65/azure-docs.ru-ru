@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/08/2018
+ms.date: 01/23/2019
 ms.author: jingwang
-ms.openlocfilehash: 54db7cc65e05b383b251c21aa95569c6c2d58194
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 6da3a9bceaee67d0101abb0837580f4e35e160b3
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54306171"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54885138"
 ---
 # <a name="copy-data-to-and-from-sql-server-using-azure-data-factory"></a>Копирование данных в базу данных SQL Server и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,6 +36,8 @@ ms.locfileid: "54306171"
 - копирование данных с помощью проверки подлинности **SQL** или **Windows**;
 - извлечение данных с использованием SQL-запроса или хранимой процедуры (в качестве источника);
 - добавление данных в целевую таблицу или вызов хранимой процедуры во время копирования с помощью пользовательской логики (в качестве приемника).
+
+SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) в настоящее время не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -487,9 +489,9 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | binary; |Byte[] |
 | bit |Логическое |
 | char; |String, Char[] |
-| дата |Datetime |
-| DateTime |Datetime |
-| datetime2; |Datetime |
+| дата |DateTime |
+| DateTime |DateTime |
+| datetime2; |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | Атрибут FILESTREAM (varbinary(max)) |Byte[] |
@@ -503,18 +505,21 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | nvarchar; |String, Char[] |
 | real; |Single |
 | rowversion |Byte[] |
-| smalldatetime; |Datetime |
+| smalldatetime; |DateTime |
 | smallint; |Int16 |
 | smallmoney; |Decimal |
-| sql_variant |Object * |
+| sql_variant |Объект. |
 | текст |String, Char[] |
-| Twitter в режиме реального |Интервал времени |
+| Twitter в режиме реального |TimeSpan |
 |  timestamp |Byte[] |
 | tinyint; |Int16 |
 | uniqueidentifier |Guid |
 | varbinary; |Byte[] |
 | varchar. |String, Char[] |
 | xml |xml |
+
+>[!NOTE]
+> В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal (десятичное число), Фабрика данных Azure поддерживает точность до 28. При наличии данных с точностью больше 28 их можно преобразовать в строку в SQL-запросе.
 
 ## <a name="troubleshooting-connection-issues"></a>Устранение неполадок с подключением
 

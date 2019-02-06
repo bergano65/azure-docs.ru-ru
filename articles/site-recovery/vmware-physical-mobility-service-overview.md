@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: e3967319cd41399209bd50886bce88efc8ba6ba6
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 6319ef908b5b040bf61285451448c08bb3960fe2
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956522"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55215016"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -64,7 +64,7 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
 
 5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service.
 
-## <a name="update-the-acount-used-for-push-installation-of-the-mobility-service"></a>Обновление учетной записи, используемой для принудительной установки Mobility Service
+## <a name="update-the-account-used-for-push-installation-of-the-mobility-service"></a>Обновление учетной записи, используемой для принудительной установки Mobility Service
 
 При развертывании Site Recovery, чтобы включить принудительную установку Mobility Service, вы указали учетную запись, которую сервер обработки Site Recovery использует для доступа к компьютерам и установки службы (если на компьютере включена репликация). Если вы хотите обновить учетные данные для этой учетной записи, следуйте [этим инструкциям](vmware-azure-manage-configuration-server.md).
 

@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: fbbaefc62adedc2374c47fd0736368d3dec3e6a4
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 9b5054da56bdc6a88642ea7860702b280a76dbb1
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043436"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55461174"
 ---
-# <a name="time-to-live-for-azure-cosmos-db-data"></a>Срок жизни для данных Azure Cosmos DB
+# <a name="time-to-live-in-azure-cosmos-db"></a>Срок жизни в Azure Cosmos DB 
 
 С помощью срока жизни или TTL Azure Cosmos DB позволяет автоматически по прошествии определенного периода времени удалять элементы из контейнера. По умолчанию можно задать срок жизни на уровне контейнера и переопределить значения по элементу. После установки срока жизни на уровне контейнера или элемента Azure Cosmos DB будет автоматически удалять эти элементы по прошествии периода времени с момента их последнего изменения. Значение срока жизни настраивается в секундах. При настройке срока жизни система автоматически удалит просроченные элементы на основе значения срока жизни в отличие от операции удаления, которую явно выдает клиентское приложение.
 

@@ -15,13 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
-ms.component: disks
-ms.openlocfilehash: 668f14d491fe3e47a445e6d80efda69c017024e2
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.subservice: disks
+ms.openlocfilehash: 2c1b46f1c1726a473fe15e490f3000f3c5235a77
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54470925"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55477511"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -99,7 +99,7 @@ dmesg | grep SCSI
 
 В данном примере *sdc* — это диск, который нам нужен. 
 
-### <a name="partion-a-new-disk"></a>Разбиение нового диска на разделы
+### <a name="partition-a-new-disk"></a>Разбиение нового диска на разделы
 Если вы используете существующий диск, содержащий данные, перейдите к подключению диска. Если вы подключаете новый диск, разбейте его на разделы.
 
 Для этого воспользуйтесь `fdisk`, установите его как основной диск в разделе 1 и примите остальные значения по умолчанию. В следующем примере запускается процесс `fdisk` в */dev/sdc*:

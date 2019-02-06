@@ -13,14 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/19/2019
 ms.author: sethm
-ms.openlocfilehash: cfd46f8178f36213ecc16db0e092e81ac2d0eff1
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.lastreviewed: 01/19/2019
+ms.openlocfilehash: 9a14c819acbc46d8a281f73fd4f3185caa8a1e02
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54414758"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55478157"
 ---
-# <a name="configure-ipsecike-policy-for-site-to-site-vpn-or-vnet-to-vnet-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
+# <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
 В этой статье описано, как настроить политики IPsec/IKE для VPN-подключений типа "сеть — сеть" в Azure Stack.
 
@@ -102,10 +103,10 @@ ms.locfileid: "54414758"
 |----------------------|-----------|---------------|---------------|
 | 1                    | DHGroup1  | PFS1          | MODP (768 бит)  |
 | 2                    | DHGroup2  | PFS2          | MODP (1024 бит) |
-| 14                   | DHGroup14 |               |               |
-| DHGroup2048          | PFS2048   | MODP (2048 бит) |               |
+| 14                   | DHGroup14<br/>DHGroup2048 | PFS2048       | MODP (2048 бит) |
 | 19                   | ECP256    | ECP256        | ECP (256 бит)   |
-| 20                   | ECP384    | ECP284        | ECP (384 бит)   |
+| 20                   | ECP384    | ECP384        | ECP (384 бит)   |
+| 24                   | DHGroup24 | PFS24         | MODP (2048 бит) |
 
 Дополнительные сведения см. в документах  [RFC3526](https://tools.ietf.org/html/rfc3526) и [RFC5114](https://tools.ietf.org/html/rfc5114).
 

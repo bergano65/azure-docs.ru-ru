@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: устранение неполадок при настройке субъекта-службы | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Устранение неполадок при настройке субъекта-службы | Документация Майкрософт
 description: Устранение неполадок конфигурации субъекта-службы для доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
@@ -8,25 +8,25 @@ manager: ''
 editor: ''
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
 ms.service: active-directory
-ms.component: domain-services
+ms.subservice: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ergreenl
-ms.openlocfilehash: bba7c70a5078d309a55f898c24389d42a8a604ab
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 2c39e8f172283f512037e0d991b2c22eb816c8f6
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035041"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55191335"
 ---
 # <a name="troubleshoot-invalid-service-principal-configuration-for-your-managed-domain"></a>Устранение неполадок с недопустимой конфигурацией субъекта-службы для управляемого домена
 
 Эта статья поможет вам определить и устранить ошибки конфигурации субъекта-службы, которые приводят к появлению следующего оповещения.
 
-## <a name="alert-aadds102-service-principal-not-found"></a>Оповещение AADDS102: субъект-служба не найдена
+## <a name="alert-aadds102-service-principal-not-found"></a>Оповещение AADDS102: субъект-служба не найден
 
 **Оповещение.** *Субъект-служба, необходимая для правильной работы доменных служб Azure AD, удалена из каталога Azure AD. Эта конфигурация влияет на возможность корпорации Майкрософт наблюдать за управляемым доменом, управлять им, обновлять и синхронизировать его.*
 
@@ -50,7 +50,7 @@ ms.locfileid: "51035041"
 ## <a name="recreate-a-missing-service-principal-with-powershell"></a>Повторное создание отсутствующего субъекта-службы с помощью PowerShell
 Выполните следующие действия, если субъект-служба с идентификатором ```2565bd9d-da50-47d4-8b85-4c97f669dc36``` отсутствует в каталоге Azure AD.
 
-**Решение**. Для выполнения этих шагов потребуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
+**Способы устранения:** Для выполнения этих инструкций требуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
 
 Чтобы устранить эту проблему, введите следующие команды в окне PowerShell:
 1. Установите модуль Azure AD PowerShell и импортируйте его.
@@ -78,7 +78,7 @@ ms.locfileid: "51035041"
 ## <a name="re-register-to-the-microsoft-aad-namespace-using-the-azure-portal"></a>Повторная регистрация в пространстве имен Microsoft.AAD с помощью портала Azure
 Выполните следующие действия, если субъект-служба с идентификатором ```443155a6-77f3-45e3-882b-22b3a8d431fb```, или ```abba844e-bc0e-44b0-947a-dc74e5d09022```, или ```d87dcbc6-a371-462e-88e3-28ad15ec4e64``` отсутствует в каталоге Azure AD.
 
-**Решение**. Чтобы восстановить доменные службы в каталоге, сделайте следующее.
+**Способы устранения:** Чтобы восстановить доменные службы в каталоге, сделайте следующее:
 
 1. Перейдите к странице [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure.
 2. Из таблицы, связанной с управляемым доменом, выберите подписку.
@@ -87,12 +87,12 @@ ms.locfileid: "51035041"
 5. Чтобы убедиться, что причина оповещения устранена, просмотрите страницу работоспособности для управляемого домена через два часа.
 
 
-## <a name="alert-aadds105-password-synchronization-application-is-out-of-date"></a>Предупреждение AADDS105: приложение синхронизации пароля устарело
+## <a name="alert-aadds105-password-synchronization-application-is-out-of-date"></a>Оповещение AADDS105: приложение синхронизации паролей устарело
 
-**Текст предупреждения:** субъект-служба с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64 удален и создан снова. Повторное создание позволяет избавиться от несогласованных разрешений для ресурсов доменных служб Azure AD, необходимых для обслуживания управляемого домена. Это может повлиять на синхронизацию паролей для управляемого домена.
+**Оповещение.** Субъект-служба с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64 был удален и создан снова. Повторное создание позволяет избавиться от несогласованных разрешений для ресурсов доменных служб Azure AD, необходимых для обслуживания управляемого домена. Это может повлиять на синхронизацию паролей для управляемого домена.
 
 
-**Решение**. Для выполнения этих шагов потребуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
+**Способы устранения:** Для выполнения этих инструкций требуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
 
 Чтобы устранить эту проблему, введите следующие команды в окне PowerShell:
 1. Установите модуль Azure AD PowerShell и импортируйте его.

@@ -1,23 +1,23 @@
 ---
-title: Руководство по загрузке данных в хранилище данных SQL Azure | Документация Майкрософт
+title: Руководство. Загрузка данных в Хранилище данных SQL Azure | Документация Майкрософт
 description: В руководстве используется портал Azure и SQL Server Management Studio для загрузки хранилища данных WideWorldImportersDW из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 57803d6b83b71e65064c4ec701ed5b7e7607321f
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 44ad37120034d59161fe3b5f0ed521fc6f630b0f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43286939"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55454340"
 ---
-# <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Руководство по загрузке данных в хранилище данных SQL Azure
+# <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Руководство. Загрузка данных в Хранилище данных SQL Azure
 
 В этом руководстве описана загрузка хранилища данных WideWorldImportersDW из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия: 
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Andromeda | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Andromeda | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Andromeda.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 7a142c86-ca0c-4915-b1d8-124c08c3e3d8
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 047e1ea6a474d95c57ffc2bdff5ad8a5c45e0d36
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 6d280a7e0e10b00e4d8d8f631d0d5987f2fbecb4
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39048571"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55157879"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство по интеграции Azure Active Directory с Andromeda
+# <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство. Интеграция Azure Active Directory с Andromeda
 
 Из этого руководства вы узнаете, как интегрировать Andromeda с Azure Active Directory (Azure AD).
 
@@ -189,7 +189,7 @@ ms.locfileid: "39048571"
 
     д. В разделе **SAML Identity Provider** (Поставщик удостоверений SAML) введите имя поставщика удостоверений.
 
-    f. В текстовое поле **Single Sign On End Point** (Конечная точка единого входа) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    Е. В текстовое поле **Single Sign On End Point** (Конечная точка единого входа) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
     ж. Откройте в Блокноте **сертификат в кодировке Base64**, загруженный с портала Azure, и вставьте его в текстовое поле **Сертификат X 509**.
     
@@ -200,7 +200,7 @@ ms.locfileid: "39048571"
     i. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

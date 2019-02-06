@@ -8,7 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 198cd2c3-f7c8-4ec2-b59d-dfdea9fe7d95
 ms.service: active-directory
-ms.component: develop
+ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8af6846da78d12460b7866297c9802c5dab20a69
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5b721dfd7a229220836f273be58c5ca74c4284d1
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967529"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55097938"
 ---
 # <a name="quickstart-build-a-xamarin-app-that-integrates-microsoft-sign-in"></a>Краткое руководство. Создание приложения Xamarin, которое интегрирует функцию входа в Майкрософт
 
@@ -43,13 +43,13 @@ ms.locfileid: "46967529"
 
 Когда будете готовы, выполните процедуры, описанные в следующих четырех разделах.
 
-## <a name="step-1-set-up-your-xamarin-development-environment"></a>Шаг 1. Настройка среды разработки Xamarin
+## <a name="step-1-set-up-your-xamarin-development-environment"></a>Шаг 1. настроить среду разработки Xamarin;
 
 Это руководство содержит проекты для iOS, Android и Windows, поэтому вам потребуются Visual Studio и Xamarin. Для создания необходимой среды следуйте инструкциям в разделе [Настройка и установка](https://msdn.microsoft.com/library/mt613162.aspx) на сайте MSDN. Эти инструкции содержат материалы, которые можно просмотреть, чтобы больше узнать о Xamarin, пока вы ожидаете завершения процессов установки.
 
 После завершения настройки откройте решение в Visual Studio. Вы увидите шесть проектов: пять проектов для конкретной платформы и одну переносимую библиотеку классов DirectorySearcher.cs, которая будет общей для всех платформ.
 
-## <a name="step-2-register-the-directorysearcher-app"></a>Шаг 2. Регистрация приложения DirectorySearcher
+## <a name="step-2-register-the-directorysearcher-app"></a>Шаг 2. Регистрация приложения DirectorySearcher
 
 Чтобы приложение могло получать маркеры, сначала необходимо его зарегистрировать в клиенте Azure AD и предоставить ему разрешение на доступ к интерфейсу API Graph для Azure AD. Этот процесс описывается далее.
 
@@ -187,7 +187,7 @@ List<User> results = await DirectorySearcherLib.DirectorySearcher.SearchByAlias(
 
 Теперь у нас есть рабочее приложение Xamarin, которое позволяет проверять подлинность пользователей и безопасным образом вызывать веб-интерфейсы API с помощью OAuth 2.0 на пяти различных платформах.
 
-## <a name="step-5-populate-your-tenant"></a>Шаг 5. Заполнение клиента 
+## <a name="step-5-populate-your-tenant"></a>Шаг 5. Заполнение клиента 
 
 Если в клиент еще не добавлены пользователи, то сейчас самое время это сделать.
 

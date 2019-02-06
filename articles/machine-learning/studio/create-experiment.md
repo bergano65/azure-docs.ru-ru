@@ -1,6 +1,6 @@
 ---
-заголовок: Простой эксперимент titleSuffix: Студия машинного обучения Azure description: В этом пошаговом руководстве по машинному обучению описано, как создать простой эксперимент по обработке и анализу данных. Мы предскажем цену автомобиля, используя алгоритм регрессии.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: tutorial
+заголовок: Простой эксперимент titleSuffix: Студия машинного обучения Azure description: В этом пошаговом руководстве по машинному обучению описано, как создать простой эксперимент по обработке и анализу данных. Мы предскажем цену автомобиля, используя алгоритм регрессии.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: tutorial
 
 author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 20.03.2017
 ---

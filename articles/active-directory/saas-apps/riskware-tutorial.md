@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Riskware | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Riskware | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Riskware.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 81866167-b163-4695-8978-fd29a25dac7a
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 4c664fac99e93e94b46f5d917a63aa6530b695bd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 3b4c979bf03b23280c9389a043375f088624efe6
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437779"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55163251"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство по интеграции Azure Active Directory с Riskware
+# <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство. Интеграция Azure Active Directory с Riskware
 
 В этом руководстве описано, как интегрировать Riskware с Azure Active Directory (Azure AD).
 
@@ -111,17 +111,17 @@ ms.locfileid: "39437779"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
     | Среда| Шаблон URL-адреса|
     |--|--|
-    | UAT|  `https://riskcloud.net/uat?ccode=<COMPANYCODE>` |
-    | PROD| `https://riskcloud.net/prod?ccode=<COMPANYCODE>` |
-    | DEMO| `https://riskcloud.net/demo?ccode=<COMPANYCODE>` |
+    | UAT|  `https://riskcloud.net/uat?ccode=<COMPANYCODE>` |
+    | PROD| `https://riskcloud.net/prod?ccode=<COMPANYCODE>` |
+    | DEMO| `https://riskcloud.net/demo?ccode=<COMPANYCODE>` |
     |||
 
     b. В текстовом поле **Идентификатор (сущности)** введите такой URL-адрес:
     | Среда| Шаблон URL-адреса|
     |--|--|
-    | UAT| `https://riskcloud.net/uat` |
-    | PROD| `https://riskcloud.net/prod` |
-    | DEMO| `https://riskcloud.net/demo` |
+    | UAT| `https://riskcloud.net/uat` |
+    | PROD| `https://riskcloud.net/prod` |
+    | DEMO| `https://riskcloud.net/demo` |
     |||
 
     > [!NOTE]
@@ -167,7 +167,7 @@ ms.locfileid: "39437779"
 
     ж. В текстовом поле **XML Identity Tag Name** (Имя тега идентификатора XML) введите имя атрибута ответа SAML, который содержит уникальный идентификатор, например NameID.
 
-    h. Откройте в Блокноте скачанный с портала Azure **XML-файл метаданных**, скопируйте из этого файла сертификат безопасности и вставьте его в текстовое поле **Certificate** (Сертификат).
+    h. Откройте в Блокноте скачанный с портала Azure  **XML-файл метаданных** и скопируйте из этого файла сертификат безопасности. Затем вставьте его в текстовое поле **Certificate** (Сертификат).
 
     i. В текстовом поле **Consumer URL** (URL-адрес объекта-получателя) вставьте значение **URL-адреса ответа**, которое вы получили от службы поддержки.
 
@@ -297,7 +297,7 @@ ms.locfileid: "39437779"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Riskware на панели доступа, вы автоматически войдете в приложение Riskware.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

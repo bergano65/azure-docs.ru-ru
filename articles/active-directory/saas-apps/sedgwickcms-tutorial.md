@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Sedgwick CMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Sedgwick CMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Sedgwick CMS.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 957931e0-e426-47e7-9904-3ed98d3f504c
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 796ed1cb0fde6b29a931099336fd91e2e931fc29
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 611a877b44093efe7384400ffcc8dec76338c9f9
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51820502"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55194871"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство по интеграции Azure Active Directory с Sedgwick CMS
+# <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство. Интеграция Azure Active Directory с Sedgwick CMS
 
 В этом руководстве описано, как интегрировать Sedgwick CMS с Azure Active Directory (Azure AD).
 
@@ -137,7 +137,7 @@ ms.locfileid: "51820502"
 1. Чтобы настроить единый вход на стороне **Sedgwick CMS**, отправьте [группе поддержки Sedgwick CMS](https://www.sedgwick.com/help) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

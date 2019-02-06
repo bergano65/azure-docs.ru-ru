@@ -6,17 +6,17 @@ services: cognitive-services
 author: noellelacharite
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: personality-chat
+ms.subservice: personality-chat
 ms.topic: faq
 ms.date: 05/07/2018
 ms.author: nolachar
 comment: As a bot developer, I want my bot to be able to handle small talk in a consistent tone so that my bot appears more complete and conversational.
-ms.openlocfilehash: 274b232f321b3ad739d18a8580b4a178dbde633e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 95a6511ce818fda6db0cec507a1f9e3b034f17b0
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47219827"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219062"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -28,7 +28,7 @@ ms.locfileid: "47219827"
 
 Выберите самую подходящую личность из доступных по умолчанию. Сейчас вы можете взять за основу редакторскую библиотеку и внести изменения в ответы, чтобы они более полно соответствовали вашему фирменному стилю. В будущем можно будет отправить пример набора фраз для выбранной личности и найти самую подходящую ее версию по идентификатору личности. Также существуют способы повторного обучения и настройки модели.
 
-## <a name="is-this-service-powering-existing-intelligent-agents-such-as-zo"></a>Поддерживает ли эта служба существующие интеллектуальные агенты, например Zo?
+## <a name="is-this-service-powering-existing-intelligent-agents-such-aszo"></a>Поддерживает ли эта служба имеющиеся интеллектуальные агенты, например Zo?
 
 В службах, поддерживающих Zo, Cortana и индивидуальный чат в проектах, используются некоторые похожие методики, но их стеки отличаются. Эта служба создана с учетом результатов обучения, полученных при взаимодействии с Zo и Cortana.
 

@@ -8,18 +8,18 @@ manager: mtillman
 editor: ''
 ms.service: active-directory
 ms.workload: identity
-ms.component: users-groups-roles
+ms.subservice: users-groups-roles
 ms.topic: article
 ms.date: 03/09/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 9e73a979950e856a7fc2bfa2193ea4ca0d59bac2
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 070e86f2d5d37823f1596cf04735b199289f3d75
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242234"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55166175"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -91,45 +91,45 @@ ms.locfileid: "50242234"
 Ниже приведены примеры того, как можно использовать командлеты PowerShell для настройки срока действия групп Office 365 в клиенте.
 
 1. Установите предварительную версию модуля PowerShell 2.0 (2.0.0.137) и выполните вход в командной строке PowerShell.
-  ````
+  ```
   Install-Module -Name AzureADPreview
   connect-azuread 
-  ````
-2. Настройте параметры срока действия с помощью New-AzureADMSGroupLifecyclePolicy. Этот командлет задает время существования для всех групп Office 365 в клиенте, равное 365 дням. Уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
+  ```
+2. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy.  Этот командлет задает время существования всех групп Office 365 в клиенте на 365 дней. Уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
   
-  ````
+  ```
   New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails emailaddress@contoso.com
-  ````
-3. Получите существующую политику с помощью Get-AzureADMSGroupLifecyclePolicy. Этот командлет извлекает текущие параметры срока действия группы Office 365. В этом примере отображается следующее:
+  ```
+3. Получите существующую политику с помощью командлета Get-AzureADMSGroupLifecyclePolicy. Этот командлет извлекает текущие параметры срока действия группы Office 365, которые были настроены. В этом примере отображается следующее:
   * идентификатор политики; 
   * время существования для всех групп Office 365 в клиенте составляет 365 дней;
   * уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
   
-  ````
+  ```
   Get-AzureADMSGroupLifecyclePolicy
   
   ID                                    GroupLifetimeInDays ManagedGroupTypes AlternateNotificationEmails
   --                                    ------------------- ----------------- ---------------------------
   26fcc232-d1c3-4375-b68d-15c296f1f077  365                 All               emailaddress@contoso.com
-  ```` 
+  ``` 
    
-4. Обновите существующую политику с помощью Set-AzureADMSGroupLifecyclePolicy. Этот командлет используется для обновления существующей политики. В следующем примере время существования группы в существующей политике изменяется с 365 дней на 180 дней. 
+4. Обновите существующую политику с помощью командлета Set-AzureADMSGroupLifecyclePolicy. Этот командлет используется для обновления существующей политики. В следующем примере время существования группы в существующей политике изменяется с 365 дней на 180 дней. 
   
-  ````
+  ```
   Set-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
-  ````
+  ```
   
-5. Добавьте определенные группы в политику с помощью Add-AzureADMSLifecyclePolicyGroup. Этот командлет добавляет группу политика жизненного цикла. Например: 
+5. Добавьте определенные группы в политику с помощью командлета Add-AzureADMSLifecyclePolicyGroup. Этот командлет добавляет группу в политику жизненного цикла. Например: 
   
-  ````
+  ```
   Add-AzureADMSLifecyclePolicyGroup -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -groupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
-  ````
+  ```
   
-6. Удалите существующую политику с помощью Remove-AzureADMSGroupLifecyclePolicy. Этот командлет удаляет параметры срока действия группы Office 365, но требует указать идентификатор политики. При этом будет отключен срок действия групп Office 365. 
+6. Удалите существующие политики помощью командлета Remove-AzureADMSGroupLifecyclePolicy. Этот командлет удаляет параметры срока действия группы Office 365, но требует идентификатор политики. При этом будет отключен срок действия групп Office 365. 
   
-  ````
+  ```
   Remove-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077"
-  ````
+  ```
   
 Приведенные ниже командлеты можно использовать для более точной настройки политики. Дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&branch=master#groups).
 
