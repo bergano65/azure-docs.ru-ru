@@ -136,7 +136,11 @@ items:
   - name: Настройка сети
     items:
     - name: Создание виртуальной сети или использование существующей
-      href: configure-advanced-networking.md
+      items:
+      - name: С помощью kubenet
+        href: configure-kubenet.md
+      - name: С помощью Azure CNI
+        href: configure-azure-cni.md
     - name: Создание внутреннего балансировщика нагрузки
       href: internal-lb.md
     - name: Использование статических IP-адресов
@@ -312,9 +316,9 @@ items:
     href: https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest
   - name: Часто задаваемые вопросы
     href: faq.md
-ms.openlocfilehash: 52956dd55cbb78b074a7898d5415dc204975893b
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: ea35745cdab3cc5a0c1521c03b32c4038fa9fff5
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55656487"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692564"

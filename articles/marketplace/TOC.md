@@ -1,7 +1,7 @@
 # [Документация по Azure Marketplace и AppSource](index.md)
+## [Стратегия развития Azure Marketplace и AppSource](./marketplace-roadmap.md)
 
 ## [Общие сведения об Azure Marketplace и AppSource и их преимуществах](./marketplace-publishers-guide.md)  
-
 ### [Как стать издателем в Marketplace](./become-publisher.md)  
 #### [Создание учетной записи Майкрософт](./guidelines.md)
 #### [Регистрация в центре разработчиков](./register-dev-center.md) 

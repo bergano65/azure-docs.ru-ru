@@ -74,6 +74,7 @@
 ### Архитектура высокого уровня доступности
 #### [Архитектура и сценарии высокого уровня доступности](sap-high-availability-architecture-scenarios.md)
 #### [Повышение уровня доступности архитектуры и сценариев](sap-higher-availability-architecture-scenarios.md)
+#### [Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure](sap-ha-availability-zones.md)
 #### [Высокий уровень доступности в Windows с общим диском для экземпляра (A)SCS](sap-high-availability-guide-wsfc-shared-disk.md)
 #### [Высокий уровень доступности в Windows с общей папкой SOFS для экземпляра (A)SCS](sap-high-availability-guide-wsfc-file-share.md)
 #### [Высокий уровень доступности в SUSE Linux для экземпляра (A)SCS](high-availability-guide-suse.md)
