@@ -6,14 +6,14 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/26/2018
-ms.openlocfilehash: 3599875f96c6bd79ecace1d59c3580027fab3168
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 28c945223d225d7e91df1041bcbe02ee87b93c6a
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040359"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55475063"
 ---
-# <a name="global-data-distribution-with-azure-cosmos-db"></a>Глобальное распределение данных с помощью Azure Cosmos DB
+# <a name="global-data-distribution-with-azure-cosmos-db---overview"></a>Общие сведения о глобальном распределении данных с помощью Azure Cosmos DB
 
 Современные приложения должны мгновенно реагировать на запросы и быть постоянно доступными в Интернете. Чтобы обеспечить низкую задержку и высокий уровень доступности, экземпляры этих приложений нужно развернуть в ближайших к пользователям центрах обработки данных. Такие приложения обычно развертываются в нескольких центрах обработки данных и называются глобально распределенными. Глобально распределенные приложения требуют глобально распределенной базы данных, которая обеспечивает прозрачную репликацию данных в любую точку мира. Это позволит приложениям работать с копией данных, которая размещена в ближайшем к пользователям расположении. 
 

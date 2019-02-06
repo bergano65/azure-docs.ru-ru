@@ -6,17 +6,17 @@ author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
-ms.component: team-data-science-process
+ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 9c6e88eb2e3f3e1b6e6ce2b7f8984799397af582
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 2f47a145f00748a3366ea5bd1aa961f4b556a08f
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54451619"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55474672"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Масштабируемая обработка и анализ данных с помощью Azure Data Lake. Полное пошаговое руководство
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
@@ -26,13 +26,13 @@ ms.locfileid: "54451619"
 
 Аналитика озера данных — это также ключевая часть Cortana Analytics Suite. Она поддерживает работу с хранилищем данных SQL Azure, Power BI и фабрикой данных. Это создает всеобъемлющую облачную платформу для работы с большими данными и углубленной аналитики.
 
-В начале этого пошагового руководства описано, как установить необходимые компоненты и ресурсы, которые требуются для выполнения задач обработки и анализа данных. Затем здесь описаны шаги по обработке данных, выполняемые с использованием U-SQL. В конце статьи показано, как использовать Python и Hive со студией машинного обучения Azure для создания и развертывания прогнозных моделей. 
+В начале этого пошагового руководства описано, как установить необходимые компоненты и ресурсы, которые требуются для выполнения задач обработки и анализа данных. Затем здесь описаны шаги по обработке данных, выполняемые с использованием U-SQL. В конце статьи показано, как использовать Python и Hive со студией машинного обучения Azure для создания и развертывания прогнозных моделей.
 
 ### <a name="u-sql-and-visual-studio"></a>U-SQL и Visual Studio
-В этом пошаговом руководстве рекомендуется использовать Visual Studio, чтобы изменять сценарии U-SQL для обработки набора данных. Сценарии U-SQL, описанные в документе, приводятся в отдельном файле. Процесс включает в себя прием, исследование и выборку данных. Также здесь показывается, как выполнить задание со сценарием U-SQL на портале Azure. Для данных в связанном кластере HDInsight создаются таблицы Hive, которые упрощают сборку и развертывание модели двоичной классификации в Студии машинного обучения Azure.  
+В этом пошаговом руководстве рекомендуется использовать Visual Studio, чтобы изменять сценарии U-SQL для обработки набора данных. Сценарии U-SQL, описанные в документе, приводятся в отдельном файле. Процесс включает в себя прием, исследование и выборку данных. Также здесь показывается, как выполнить задание со сценарием U-SQL на портале Azure. Для данных в связанном кластере HDInsight создаются таблицы Hive, которые упрощают сборку и развертывание модели двоичной классификации в Студии машинного обучения Azure.
 
 ### <a name="python"></a>Python
-В этом пошаговом руководстве также содержится раздел, в котором показано, как создавать и развертывать прогнозную модель с помощью Python и студии машинного обучения Azure. Здесь предоставлена записная книжка Jupyter со скриптами Python для шагов в этом процессе. Этот Notebook включает в себя код для некоторых дополнительных шагов проектирования признаков и создания моделей, например многоклассовой классификации и регрессии, в дополнение к модели двоичной классификации, описанной здесь. Задача регрессии: спрогнозировать сумму чаевых в зависимости от других признаков. 
+В этом пошаговом руководстве также содержится раздел, в котором показано, как создавать и развертывать прогнозную модель с помощью Python и студии машинного обучения Azure. Здесь предоставлена записная книжка Jupyter со скриптами Python для шагов в этом процессе. Этот Notebook включает в себя код для некоторых дополнительных шагов проектирования признаков и создания моделей, например многоклассовой классификации и регрессии, в дополнение к модели двоичной классификации, описанной здесь. Задача регрессии: спрогнозировать сумму чаевых в зависимости от других признаков.
 
 ### <a name="azure-machine-learning"></a>Машинное обучение Azure
 Студия машинного обучения Azure используется для создания и развертывания прогнозных моделей. Для этого используется два подхода: первый — с помощью сценариев Python, а второй — с использованием таблиц Hive на кластере HDInsight (Hadoop).
@@ -47,15 +47,15 @@ ms.locfileid: "54451619"
 * [Рекомендуется] Visual Studio 2013 или более поздней версии. Если вы еще не установили одну из этих версий, можно скачать бесплатную версию Community с сайта [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
 > [!NOTE]
-> Чтобы отправлять запросы Azure Data Lake, можно использовать не только Visual Studio, но и портал Azure. Инструкции о том, как сделать это с помощью Visual Studio и на портале, см. в разделе **Обработка данных с использованием U-SQL**. 
-> 
-> 
+> Чтобы отправлять запросы Azure Data Lake, можно использовать не только Visual Studio, но и портал Azure. Инструкции о том, как сделать это с помощью Visual Studio и на портале, см. в разделе **Обработка данных с использованием U-SQL**.
+>
+>
 
 
 ## <a name="prepare-data-science-environment-for-azure-data-lake"></a>Подготовка среды анализа данных для озера данных Azure
 Чтобы подготовить среду анализа данных для этого пошагового руководства, создайте следующие ресурсы:
 
-* хранилище озера данных Azure; 
+* хранилище озера данных Azure;
 * Аналитику озера данных Azure;
 * учетную запись хранения BLOB-объектов;
 * учетную запись Студии машинного обучения Azure;
@@ -67,17 +67,17 @@ ms.locfileid: "54451619"
 > [!NOTE]
 > **Azure Data Lake Store** можно создать отдельно или вместе с **Azure Data Lake Analytics** в качестве хранилища по умолчанию. В предлагаемых инструкциях эти ресурсы создаются отдельно, но для учетной записи хранения Data Lake это не обязательно.
 >
-> 
+>
 
 ### <a name="create-an-azure-data-lake-store"></a>Создание хранилища озера данных Azure
 
 
-Создайте ADLS на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация**, показанной здесь. 
+Создайте ADLS на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация**, показанной здесь.
 
  ![3](./media/data-lake-walkthrough/3-create-ADLS.PNG)
 
 ### <a name="create-an-azure-data-lake-analytics-account"></a>Создание учетной записи Аналитики озера данных Azure
-Создайте учетную запись ADLA на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Руководство. Начало работы с Azure Data Lake Analytics с помощью портала Azure](../../data-lake-analytics/data-lake-analytics-get-started-portal.md). 
+Создайте учетную запись ADLA на [портале Azure](http://portal.azure.com). Дополнительные сведения см. в статье [Руководство. Начало работы с Azure Data Lake Analytics с помощью портала Azure](../../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 
  ![4.](./media/data-lake-walkthrough/4-create-ADLA-new.PNG)
 
@@ -87,7 +87,7 @@ ms.locfileid: "54451619"
  ![5](./media/data-lake-walkthrough/5-Create-Azure-Blob.PNG)
 
 ### <a name="set-up-an-azure-machine-learning-studio-account"></a>Настройка учетной записи Студии машинного обучения Azure
-Войдите в студию машинного обучения со страницы [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/) . Нажмите кнопку **Начните прямо сейчас** и выберите Free Workspace ("Бесплатная рабочая область") или Standard Workspace ("Стандартная рабочая область"). Теперь вы можете создавать эксперименты в Студии машинного обучения Azure.  
+Зарегистрируйтесь или войдите в Студию машинного обучения со страницы [Студия машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/). Нажмите кнопку **Начните прямо сейчас** и выберите Free Workspace ("Бесплатная рабочая область") или Standard Workspace ("Стандартная рабочая область"). Теперь вы можете создавать эксперименты в Студии машинного обучения Azure.
 
 ### <a name="install-azure-data-lake-tools-recommended"></a>Установка инструментов озера данных Azure [рекомендуется]
 Установите инструменты озера данных Azure в зависимости от своей версии Visual Studio со страницы [Azure Data Lake Tools for Visual Studio](https://www.microsoft.com/download/details.aspx?id=49504)(Инструменты озера данных Azure для Visual Studio).
@@ -141,17 +141,17 @@ CSV-файл trip_fare содержит подробную информацию 
 
 > [!NOTE]
 > Для выполнения сценариев U-SQL вместо Visual Studio можно использовать портал Azure. Вы можете перейти к ресурсу Azure Data Lake Analytics на портале и отправить запросы напрямую, как показано на следующем рисунке.
-> 
-> 
+>
+>
 
 ![9](./media/data-lake-walkthrough/9-portal-submit-job.PNG)
 
 ### <a name="ingest"></a>Прием данных. Чтение данных из общедоступного большого двоичного объекта
-Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv**  . 
+Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv**  .
 
     ///Read in Trip data
     @trip0 =
-        EXTRACT 
+        EXTRACT
         medallion string,
         hack_license string,
         vendor_id string,
@@ -170,11 +170,11 @@ CSV-файл trip_fare содержит подробную информацию 
     FROM "wasb://container_name@blob_storage_account_name.blob.core.windows.net/nyctaxitrip/trip_data_{*}.csv"
     USING Extractors.Csv();
 
-В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Обработанные данные вы можете сохранить в хранилище Azure Data Lake с помощью **swebhdfs://data_lake_storage_name.azuredatalakestorage.net/имя_папки/имя_файла**_ или в учетной записи хранилища BLOB-объектов Azure с помощью **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**. 
+В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Обработанные данные вы можете сохранить в хранилище Azure Data Lake с помощью **swebhdfs://data_lake_storage_name.azuredatalakestorage.net/имя_папки/имя_файла**_ или в учетной записи хранилища BLOB-объектов Azure с помощью **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**.
 
     // change data types
     @trip =
-        SELECT 
+        SELECT
         medallion,
         hack_license,
         vendor_id,
@@ -193,23 +193,23 @@ CSV-файл trip_fare содержит подробную информацию 
     WHERE medallion != "medallion";
 
     ////output data to ADL
-    OUTPUT @trip   
+    OUTPUT @trip
     TO "swebhdfs://data_lake_storage_name.azuredatalakestore.net/nyctaxi_folder/demo_trip.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
     ////Output data to blob
-    OUTPUT @trip   
+    OUTPUT @trip
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_trip.csv"
-    USING Outputters.Csv();  
+    USING Outputters.Csv();
 
-Аналогичным образом можно выполнить чтение наборов данных о тарифах. Чтобы просмотреть данные, щелкните Azure Data Lake Store правой кнопкой мыши и выберите **Портал Azure --> Обозреватель данных** или **Проводник** в Visual Studio. 
+Аналогичным образом можно выполнить чтение наборов данных о тарифах. Чтобы просмотреть данные, щелкните Azure Data Lake Store правой кнопкой мыши и выберите **Портал Azure --> Обозреватель данных** или **Проводник** в Visual Studio.
 
  ![10](./media/data-lake-walkthrough/10-data-in-ADL-VS.PNG)
 
  ![11](./media/data-lake-walkthrough/11-data-in-ADL.PNG)
 
 ### <a name="quality"></a>Проверка качества данных
-После считывания таблиц trip и fare можно проверить качество данных следующим образом. Полученные файлы в формате CSV можно поместить в хранилище BLOB-объектов Azure или хранилище озера данных Azure. 
+После считывания таблиц trip и fare можно проверить качество данных следующим образом. Полученные файлы в формате CSV можно поместить в хранилище BLOB-объектов Azure или хранилище озера данных Azure.
 
 Узнайте количество медальонов и их уникальные номера:
 
@@ -223,14 +223,14 @@ CSV-файл trip_fare содержит подробную информацию 
 
     @ex_1 =
         SELECT
-        pickup_month, 
+        pickup_month,
         COUNT(medallion) AS cnt_medallion,
         COUNT(DISTINCT(medallion)) AS unique_medallion
         FROM @trip2
         GROUP BY pickup_month;
-        OUTPUT @ex_1   
+        OUTPUT @ex_1
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_1.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Определите медальоны, которые принадлежат такси, осуществившим более 100 поездок:
 
@@ -242,9 +242,9 @@ CSV-файл trip_fare содержит подробную информацию 
         //where pickup_datetime >= "2013-01-01t00:00:00.0000000" and pickup_datetime <= "2013-04-01t00:00:00.0000000"
         GROUP BY medallion
         HAVING COUNT(medallion) > 100;
-        OUTPUT @ex_2   
+        OUTPUT @ex_2
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_2.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Найдите записи, недопустимые в отношении pickup_longitude:
 
@@ -254,9 +254,9 @@ CSV-файл trip_fare содержит подробную информацию 
         FROM @trip
         WHERE
         pickup_longitude <- 90 OR pickup_longitude > 90;
-        OUTPUT @ex_3   
+        OUTPUT @ex_3
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_3.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Найдите отсутствующие значения некоторых переменных:
 
@@ -267,11 +267,11 @@ CSV-файл trip_fare содержит подробную информацию 
         FROM @trip;
 
     @trip_summary6 =
-        SELECT 
+        SELECT
             vendor_id,
-        SUM(missing_medallion) AS medallion_empty, 
+        SUM(missing_medallion) AS medallion_empty,
         COUNT(medallion) AS medallion_total,
-        COUNT(DISTINCT(medallion)) AS medallion_total_unique  
+        COUNT(DISTINCT(medallion)) AS medallion_total_unique
         FROM @res
         GROUP BY vendor_id;
     OUTPUT @trip_summary6
@@ -296,9 +296,9 @@ CSV-файл trip_fare содержит подробную информацию 
                COUNT(*) AS tip_freq
         FROM @tip_or_not
         GROUP BY tipped;
-        OUTPUT @ex_4   
+        OUTPUT @ex_4
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_4.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Получите распределение сумм чаевых с пороговыми значениями 0, 5, 10 и 20 долларов.
 
@@ -312,20 +312,20 @@ CSV-файл trip_fare содержит подробную информацию 
                COUNT(*) AS tip_freq
         FROM @tip_class
         GROUP BY tip_class;
-        OUTPUT @ex_5   
+        OUTPUT @ex_5
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_5.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Получите базовые статистические данные о расстоянии поездок:
 
     // find basic statistics for trip_distance
     @trip_summary4 =
-        SELECT 
+        SELECT
             vendor_id,
             COUNT(*) AS cnt_row,
             MIN(trip_distance) AS min_trip_distance,
             MAX(trip_distance) AS max_trip_distance,
-            AVG(trip_distance) AS avg_trip_distance 
+            AVG(trip_distance) AS avg_trip_distance
         FROM @trip
         GROUP BY vendor_id;
     OUTPUT @trip_summary4
@@ -344,7 +344,7 @@ CSV-файл trip_fare содержит подробную информацию 
        // group by vendor_id;
     OUTPUT @trip_summary3
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_13.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 
 ### <a name="join"></a>Объединение таблиц trip и fare
@@ -353,7 +353,7 @@ CSV-файл trip_fare содержит подробную информацию 
     //join trip and fare table
 
     @model_data_full =
-    SELECT t.*, 
+    SELECT t.*,
     f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount,  f.total_amount, f.tip_amount,
     (f.tip_amount > 0 ? 1: 0) AS tipped,
     (f.tip_amount >20? 4: (f.tip_amount >10? 3:(f.tip_amount >5 ? 2:(f.tip_amount > 0 ? 1: 0)))) AS tip_class
@@ -362,14 +362,14 @@ CSV-файл trip_fare содержит подробную информацию 
     WHERE   (pickup_longitude != 0 AND dropoff_longitude != 0 );
 
     //// output to blob
-    OUTPUT @model_data_full   
+    OUTPUT @model_data_full
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_7_full_data.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
     ////output data to ADL
-    OUTPUT @model_data_full   
+    OUTPUT @model_data_full
     TO "swebhdfs://data_lake_storage_name.azuredatalakestore.net/nyctaxi_folder/demo_ex_7_full_data.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 
 Вычислите количество записей, среднюю сумму чаевых, дисперсию суммы чаевых и процент поездок, за которые выплатили чаевые, для каждого уровня количества пассажиров.
@@ -403,9 +403,9 @@ CSV-файл trip_fare содержит подробную информацию 
     FROM @addrownumberres_randomsample
     WHERE rownum % 1000 == 0;
 
-    OUTPUT @model_data_random_sample_1_1000   
+    OUTPUT @model_data_random_sample_1_1000
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_7_random_1_1000.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 Затем выполните стратифицированную выборку по двоичной переменной tip_class:
 
@@ -420,17 +420,17 @@ CSV-файл trip_fare содержит подробную информацию 
     FROM @addrownumberres_stratifiedsample
     WHERE rownum % 1000 == 0;
     //// output to blob
-    OUTPUT @model_data_stratified_sample_1_1000   
+    OUTPUT @model_data_stratified_sample_1_1000
     TO "wasb://container_name@blob_storage_account_name.blob.core.windows.net/demo_ex_9_stratified_1_1000.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
     ////output data to ADL
-    OUTPUT @model_data_stratified_sample_1_1000   
+    OUTPUT @model_data_stratified_sample_1_1000
     TO "swebhdfs://data_lake_storage_name.azuredatalakestore.net/nyctaxi_folder/demo_ex_9_stratified_1_1000.csv"
-    USING Outputters.Csv(); 
+    USING Outputters.Csv();
 
 
 ### <a name="run"></a>Выполнение заданий U-SQL
-Завершив редактировать сценарии U-SQL, вы можете отправить их на сервер, используя учетную запись Аналитики озера данных Azure. Выберите вкладку **Data Lake**, щелкните **Отправить задание**, а затем выберите свою учетную запись в поле **Analytics Account** (Учетная запись Аналитики), значение параметра **Параллелизм** и нажмите кнопку **Отправить**.  
+Завершив редактировать сценарии U-SQL, вы можете отправить их на сервер, используя учетную запись Аналитики озера данных Azure. Выберите вкладку **Data Lake**, щелкните **Отправить задание**, а затем выберите свою учетную запись в поле **Analytics Account** (Учетная запись Аналитики), значение параметра **Параллелизм** и нажмите кнопку **Отправить**.
 
  ![12](./media/data-lake-walkthrough/12-submit-USQL.PNG)
 
@@ -447,13 +447,13 @@ CSV-файл trip_fare содержит подробную информацию 
  ![16](./media/data-lake-walkthrough/16-U-SQL-output-csv-portal.PNG)
 
 ## <a name="build-and-deploy-models-in-azure-machine-learning"></a>Создание и развертывание моделей в Машинном обучении Azure
-Доступны два варианта извлечения данных в службу "Машинное обучение Azure" для создания и развертывания моделей. 
+Доступны два варианта извлечения данных в службу "Машинное обучение Azure" для создания и развертывания моделей.
 
-* Первый вариант предусматривает использование данных выборки, записанных в большой двоичный объект Azure (на шаге **Выборка данных** выше), и Python, чтобы создать и развернуть модели из Машинного обучения Azure. 
-* Второй вариант предполагает, что вы запрашиваете данные озера данных Azure напрямую с помощью запроса Hive. При выборе такого варианта необходимо создать новый кластер HDInsight или использовать кластер HDInsight, который уже есть. Таблицы Hive кластера должны указывать на данные о такси Нью-Йорка в хранилище озера данных Azure.  В следующих разделах рассматриваются оба варианта. 
+* Первый вариант предусматривает использование данных выборки, записанных в большой двоичный объект Azure (на шаге **Выборка данных** выше), и Python, чтобы создать и развернуть модели из Машинного обучения Azure.
+* Второй вариант предполагает, что вы запрашиваете данные озера данных Azure напрямую с помощью запроса Hive. При выборе такого варианта необходимо создать новый кластер HDInsight или использовать кластер HDInsight, который уже есть. Таблицы Hive кластера должны указывать на данные о такси Нью-Йорка в хранилище озера данных Azure.  В следующих разделах рассматриваются оба варианта.
 
 ## <a name="option-1-use-python-to-build-and-deploy-machine-learning-models"></a>Вариант 1. Использование Python для создания и развертывания моделей машинного обучения
-Для создания и развертывания моделей машинного обучения, используя Python, создайте записную книжки Jupyter на локальном компьютере или в студии машинного обучения Azure. Записная книжка Jupyter, которая доступна на сайте [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough), содержит полный код для исследования и визуализации данных, проектирования признаков, моделирования и развертывания. В этой статье описаны только моделирование и развертывание. 
+Для создания и развертывания моделей машинного обучения, используя Python, создайте записную книжки Jupyter на локальном компьютере или в студии машинного обучения Azure. Записная книжка Jupyter, которая доступна на сайте [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough), содержит полный код для исследования и визуализации данных, проектирования признаков, моделирования и развертывания. В этой статье описаны только моделирование и развертывание.
 
 ### <a name="import-python-libraries"></a>Импорт библиотек Python
 Чтобы запустить пример Jupyter Notebook или файл сценария Python, необходимо установить следующие пакеты Python. Если вы используете службу Notebook Машинного обучения Azure, эти пакеты уже установлены.
@@ -480,29 +480,29 @@ CSV-файл trip_fare содержит подробную информацию 
 
 
 ### <a name="read-in-the-data-from-blob"></a>Считывание данных из большого двоичного объекта
-* Строка подключения   
-  
+* Строка подключения
+
         CONTAINERNAME = 'test1'
         STORAGEACCOUNTNAME = 'XXXXXXXXX'
         STORAGEACCOUNTKEY = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYY'
         BLOBNAME = 'demo_ex_9_stratified_1_1000_copy.csv'
         blob_service = BlobService(account_name=STORAGEACCOUNTNAME,account_key=STORAGEACCOUNTKEY)
 * Считайте данные в качестве текста:
-  
+
         t1 = time.time()
         data = blob_service.get_blob_to_text(CONTAINERNAME,BLOBNAME).split("\n")
         t2 = time.time()
         print(("It takes %s seconds to read in "+BLOBNAME) % (t2 - t1))
-  
-  ![17](./media/data-lake-walkthrough/17-python_readin_csv.PNG)    
+
+  ![17](./media/data-lake-walkthrough/17-python_readin_csv.PNG)
 * Добавьте имена столбцов и отделите столбцы:
-  
+
         colnames = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','pickup_datetime','dropoff_datetime',
         'passenger_count','trip_time_in_secs','trip_distance','pickup_longitude','pickup_latitude','dropoff_longitude','dropoff_latitude',
         'payment_type', 'fare_amount', 'surcharge', 'mta_tax', 'tolls_amount',  'total_amount', 'tip_amount', 'tipped', 'tip_class', 'rownum']
         df1 = pd.DataFrame([sub.split(",") for sub in data], columns = colnames)
 * Измените значения в некоторых столбцах на числовые:
-  
+
         cols_2_float = ['trip_time_in_secs','pickup_longitude','pickup_latitude','dropoff_longitude','dropoff_latitude',
         'fare_amount', 'surcharge','mta_tax','tolls_amount','total_amount','tip_amount', 'passenger_count','trip_distance'
         ,'tipped','tip_class','rownum']
@@ -513,87 +513,87 @@ CSV-файл trip_fare содержит подробную информацию 
 В этом разделе вы создадите модель двоичной классификации, чтобы спрогнозировать вероятность получения чаевых за поездку. В Jupyter Notebook можно найти две другие модели: многоклассовой классификации и регрессии.
 
 * Сначала вам следует создать фиктивные переменные, которые можно использовать в моделях scikit-learn:
-  
+
         df1_payment_type_dummy = pd.get_dummies(df1['payment_type'], prefix='payment_type_dummy')
         df1_vendor_id_dummy = pd.get_dummies(df1['vendor_id'], prefix='vendor_id_dummy')
 * Создайте кадр данных для моделирования:
-  
+
         cols_to_keep = ['tipped', 'trip_distance', 'passenger_count']
         data = df1[cols_to_keep].join([df1_payment_type_dummy,df1_vendor_id_dummy])
-  
+
         X = data.iloc[:,1:]
         Y = data.tipped
 * Обучите и протестируйте разбиение на 60/40:
-  
+
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.4, random_state=0)
 * Получите логистическую регрессию в обучающем наборе:
-  
+
         model = LogisticRegression()
         logit_fit = model.fit(X_train, Y_train)
         print ('Coefficients: \n', logit_fit.coef_)
         Y_train_pred = logit_fit.predict(X_train)
-  
+
        ![c1](./media/data-lake-walkthrough/c1-py-logit-coefficient.PNG)
 * Оцените тестируемый набор данных:
-  
+
         Y_test_pred = logit_fit.predict(X_test)
 * Выполните вычисление метрик оценки:
-  
+
         fpr_train, tpr_train, thresholds_train = metrics.roc_curve(Y_train, Y_train_pred)
         print fpr_train, tpr_train, thresholds_train
-  
-        fpr_test, tpr_test, thresholds_test = metrics.roc_curve(Y_test, Y_test_pred) 
+
+        fpr_test, tpr_test, thresholds_test = metrics.roc_curve(Y_test, Y_test_pred)
         print fpr_test, tpr_test, thresholds_test
-  
+
         #AUC
         print metrics.auc(fpr_train,tpr_train)
         print metrics.auc(fpr_test,tpr_test)
-  
+
         #Confusion Matrix
         print metrics.confusion_matrix(Y_train,Y_train_pred)
         print metrics.confusion_matrix(Y_test,Y_test_pred)
-  
+
        ![c2](./media/data-lake-walkthrough/c2-py-logit-evaluation.PNG)
 
 ### <a name="build-web-service-api-and-consume-it-in-python"></a>Создание API веб-службы и его использование в Python
 Когда вы завершите создание модели машинного обучения, ее можно ввести в эксплуатацию. В качестве примера используется двоичная логистическая модель. Убедитесь, что на локальном компьютере установлена версия scikit-learn 0.15.1. Если вы используете службу Студии машинного обучения Microsoft Azure, этого делать не нужно.
 
-* Найдите учетные данные своей рабочей области в настройках Студии машинного обучения Microsoft Azure. В Студии машинного обучения Azure выберите **Параметры** --> **Имя** --> **Authorization Tokens** (Маркеры авторизации). 
-  
+* Найдите учетные данные своей рабочей области в настройках Студии машинного обучения Azure. В Студии машинного обучения Azure выберите **Параметры** --> **Имя** --> **Authorization Tokens** (Маркеры авторизации).
+
     ![c3](./media/data-lake-walkthrough/c3-workspace-id.PNG)
 
         workspaceid = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
         auth_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 * Создайте веб-службу:
-  
-        @services.publish(workspaceid, auth_token) 
+
+        @services.publish(workspaceid, auth_token)
         @services.types(trip_distance = float, passenger_count = float, payment_type_dummy_CRD = float, payment_type_dummy_CSH=float, payment_type_dummy_DIS = float, payment_type_dummy_NOC = float, payment_type_dummy_UNK = float, vendor_id_dummy_CMT = float, vendor_id_dummy_VTS = float)
         @services.returns(int) #0, or 1
         def predictNYCTAXI(trip_distance, passenger_count, payment_type_dummy_CRD, payment_type_dummy_CSH,payment_type_dummy_DIS, payment_type_dummy_NOC, payment_type_dummy_UNK, vendor_id_dummy_CMT, vendor_id_dummy_VTS ):
             inputArray = [trip_distance, passenger_count, payment_type_dummy_CRD, payment_type_dummy_CSH, payment_type_dummy_DIS, payment_type_dummy_NOC, payment_type_dummy_UNK, vendor_id_dummy_CMT, vendor_id_dummy_VTS]
             return logit_fit.predict(inputArray)
 * Получите учетные данные веб-службы:
-  
+
         url = predictNYCTAXI.service.url
         api_key =  predictNYCTAXI.service.api_key
-  
+
         print url
         print api_key
-  
+
         @services.service(url, api_key)
         @services.types(trip_distance = float, passenger_count = float, payment_type_dummy_CRD = float, payment_type_dummy_CSH=float,payment_type_dummy_DIS = float, payment_type_dummy_NOC = float, payment_type_dummy_UNK = float, vendor_id_dummy_CMT = float, vendor_id_dummy_VTS = float)
         @services.returns(float)
         def NYCTAXIPredictor(trip_distance, passenger_count, payment_type_dummy_CRD, payment_type_dummy_CSH,payment_type_dummy_DIS, payment_type_dummy_NOC, payment_type_dummy_UNK, vendor_id_dummy_CMT, vendor_id_dummy_VTS ):
             pass
 * Вызовите API веб-службы. После выполнения предыдущего шага нужно будет подождать 5–10 секунд.
-  
+
         NYCTAXIPredictor(1,2,1,0,0,0,0,0,1)
-  
+
        ![c4](./media/data-lake-walkthrough/c4-call-API.PNG)
 
 ## <a name="option-2-create-and-deploy-models-directly-in-azure-machine-learning"></a>Вариант 2. Создание и развертывание моделей прямо в Машинном обучении Azure
-Студия машинного обучения Azure может считывать данные прямо из хранилища озера данных Azure, а затем использоваться для создания и развертывания моделей. Этот подход использует таблицу Hive, которая указывает на хранилище озера данных Azure. Для этого необходимо подготовить отдельный кластер Azure HDInsight, а в нем создать таблицу Hive. В следующих разделах показано, как это сделать. 
+Студия машинного обучения Azure может считывать данные прямо из хранилища озера данных Azure, а затем использоваться для создания и развертывания моделей. Этот подход использует таблицу Hive, которая указывает на хранилище озера данных Azure. Для этого необходимо подготовить отдельный кластер Azure HDInsight, а в нем создать таблицу Hive. В следующих разделах показано, как это сделать.
 
 ### <a name="create-an-hdinsight-linux-cluster"></a>Создание кластера HDInsight на платформе Linux
 Создайте кластер HDInsight (Linux) с помощью [портала Azure](http://portal.azure.com). Дополнительные сведения см. в разделе о **создании кластера Azure HDInsight с доступом к Azure Data Lake Store** в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
@@ -601,7 +601,7 @@ CSV-файл trip_fare содержит подробную информацию 
  ![18](./media/data-lake-walkthrough/18-create_HDI_cluster.PNG)
 
 ### <a name="create-hive-table-in-hdinsight"></a>Создание таблицы Hive в HDInsight
-Теперь создайте в кластере HDInsight таблицы Hive для Студии машинного обучения Azure, используя данные из Azure Data Lake Store, сохраненные на предыдущем шаге. Перейдите к новому кластеру HDInsight. Выберите **Параметры** --> **Свойства** --> **Удостоверение кластера AAD** --> **ADLS Access** (Доступ ADLS), убедитесь, что учетная запись Azure Data Lake Store добавлена в список и есть права на чтение, запись и выполнение. 
+Теперь создайте в кластере HDInsight таблицы Hive для Студии машинного обучения Azure, используя данные из Azure Data Lake Store, сохраненные на предыдущем шаге. Перейдите к новому кластеру HDInsight. Выберите **Параметры** --> **Свойства** --> **Удостоверение кластера AAD** --> **ADLS Access** (Доступ ADLS), убедитесь, что учетная запись Azure Data Lake Store добавлена в список и есть права на чтение, запись и выполнение.
 
  ![19](./media/data-lake-walkthrough/19-HDI-cluster-add-ADLS.PNG)
 
@@ -651,14 +651,14 @@ CSV-файл trip_fare содержит подробную информацию 
 ### <a name="build-and-deploy-models-in-azure-machine-learning-studio"></a>Создание и развертывание моделей в Студии машинного обучения Azure
 Теперь вы готовы создать и развернуть в службе "Машинное обучение Microsoft Azure" модель, которая прогнозирует выплату чаевых. Данные стратифицированной выборки готовы к использованию в этой задаче двоичной классификации (поездка с чаевыми или без чаевых). Также в Студии машинного обучения Microsoft Azure можно создать и развернуть прогнозные модели, использующие многоклассовую классификацию (tip_class) и регрессию (tip_amount). Здесь мы продемонстрировали только применение модели двоичной классификации.
 
-1. Загрузите данные в Машинное обучение Azure, используя модуль **Импорт данных**, доступный в разделе **Ввод и вывод данных**. Дополнительные сведения см. на странице справки [Импорт данных](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/).
+1. Загрузите данные в Студию машинного обучения Azure с помощью модуля **Импорт данных**, доступного в разделе **Data Input and Output** (Ввод и вывод данных). Дополнительные сведения см. на странице справки [Импорт данных](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/).
 2. Выберите значение **Hive Query** (Запрос Hive) для параметра **Источник данных** на панели **Свойства**.
 3. Вставьте следующий сценарий Hive в редактор **Hive database query** (Запрос к базе данных Hive):
-   
+
         select * from nyc_stratified_sample;
 4. Введите универсальный код ресурса (URI) кластера HDInsight (его можно найти на портале Azure), учетные данные Hadoop, расположение выходных данных и имя контейнера, ключа или учетной записи хранения Azure.
-   
-   ![23](./media/data-lake-walkthrough/23-reader-module-v3.PNG)  
+
+   ![23](./media/data-lake-walkthrough/23-reader-module-v3.PNG)
 
 На следующем рисунке показан пример эксперимента по двоичной классификации, связанного с считыванием данных из таблицы Hive.
 

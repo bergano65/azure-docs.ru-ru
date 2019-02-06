@@ -6,18 +6,18 @@ services: cognitive-services
 author: Jann-Skotdal
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: translator-text
+ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 6698960cca39fb49fe8ba6e79b957be469ea7c50
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 892a029c3a51aa3574d92b838a51359438a6bdb6
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126128"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55464999"
 ---
-# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
+# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
 
 Определяет язык для фрагмента текста.
 
@@ -83,17 +83,17 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства:
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
-  * `language` — код обнаруженного языка.
+  * `language`: код распознанного языка.
 
-  * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
+  * `score`: значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
 
-  * `isTranslationSupported` — логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для перевода текста.
+  * `isTranslationSupported`: логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для перевода текста.
 
-  * `isTransliterationSupported` — логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для транслитерации.
+  * `isTransliterationSupported`: логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для транслитерации.
   
-  * `alternatives` — массив других возможных языков. Каждый элемент этого массива содержит другой объект с такими же свойствами, как перечислено выше: `language`, `score`, `isTranslationSupported` и `isTransliterationSupported`.
+  * `alternatives`: массив других возможных языков. Каждый элемент этого массива содержит другой объект с такими же свойствами, как перечислено выше: `language`, `score`, `isTranslationSupported` и `isTransliterationSupported`.
 
 Пример ответа в формате JSON:
 

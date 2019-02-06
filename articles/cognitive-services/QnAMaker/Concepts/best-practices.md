@@ -6,17 +6,17 @@ services: cognitive-services
 author: tulasim88
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: qna-maker
+ms.subservice: qna-maker
 ms.topic: article
 ms.date: 12/18/2018
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: d51cbc7bd88fd9f4baf066210e7b7da8cd175cd6
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 4adadf4951ffbb31a354284340a3716b194d864d
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53603129"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55219283"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Рекомендации по использованию базы знаний QnA Maker
 Руководства по [жизненному циклу разработки базы знаний](../Concepts/development-lifecycle-knowledge-base.md) помогут полостью управлять базой знаний. Используйте эти рекомендации, чтобы улучшить базу знаний и предоставлять лучшие результаты пользователям приложения или чат-бота.
@@ -95,6 +95,10 @@ ms.locfileid: "53603129"
 
 ## <a name="collaborate"></a>Совместная работа
 QnA Maker дает пользователям возможность [совместно работать](../How-to/collaborate-knowledge-base.md) над базой знаний. Чтобы получить доступ к базам знаний, пользователям нужен доступ к группе ресурсов Azure для QnA Maker. Некоторым организациям может потребоваться использовать внешнего исполнителя для редактирования и обслуживания баз знаний, сохраняя при этом безопасность доступа к своим ресурсам Azure. Эту модель с редактором и утверждающим можно реализовать, установив две идентичные [службы QnA Maker](../How-to/set-up-qnamaker-service-azure.md) в разных подписках и выбрав одну из них для цикла редактирования и тестирования. По завершении тестирования содержимое базы знаний переместится посредством процесса [импорта и экспорта](../Tutorials/migrate-knowledge-base.md) в службу QnA Maker утверждающего, который опубликует окончательную версию базы знаний и обновит конечную точку.
+
+## <a name="active-learning"></a>Активное обучение
+
+[Активное обучение](../How-to/improve-knowledge-base.md) позволяет идеально предложить альтернативные вопросы при обеспечении достаточного качества и количества пользовательских запросов. Очень важно разрешить пользовательским запросам от клиента к приложению принимать участие в цикле обратной связи активного обучения без цензуры.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -11,13 +11,13 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 10/05/2018
-ms.openlocfilehash: 1de0f9b77bd1248d77f182a2e32e490c2814f42b
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.date: 01/25/2019
+ms.openlocfilehash: 5b3a77a28945b597fe4fdd57aadfc3e05196a353
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382787"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55478259"
 ---
 # <a name="enable-automatic-tuning-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки для отслеживания запросов и повышения производительности рабочей нагрузки
 
@@ -26,9 +26,11 @@ ms.locfileid: "54382787"
 Автоматическую настройку можно включить на уровне сервера или базы данных с помощью [портала Azure](sql-database-automatic-tuning-enable.md#azure-portal), вызовов [REST API](sql-database-automatic-tuning-enable.md#rest-api) или команд [T-SQL](sql-database-automatic-tuning-enable.md#t-sql).
 
 ## <a name="enable-automatic-tuning-on-server"></a>Включение автоматической настройки на сервере
+
 На уровне сервера можно выбрать или отключить наследование автоматической настройки конфигурации из значений Azure по умолчанию. Значения Azure по умолчанию: FORCE_LAST_GOOD_PLAN включено, CREATE_INDEX включено, а DROP_INDEX отключено.
 
 ### <a name="azure-portal"></a>Портал Azure
+
 Чтобы включить автоматическую настройку на логическом **сервере** базы данных SQL Azure, перейдите на сервер на портале Azure, а затем выберите в меню **Автонастройка**.
 
 ![сервер;](./media/sql-database-automatic-tuning-enable/server.png)
@@ -44,7 +46,6 @@ ms.locfileid: "54382787"
 ### <a name="rest-api"></a>REST API
 
 Дополнительные сведения о включении автоматической настройки на сервере с помощью REST API см. в разделе, посвященном [методам HTTP UPDATE и GET для автонастройки SQL Server](https://docs.microsoft.com/rest/api/sql/serverautomatictuning).
-
 
 ## <a name="enable-automatic-tuning-on-an-individual-database"></a>Включение автоматической настройки для отдельной базы данных
 
@@ -74,27 +75,28 @@ ms.locfileid: "54382787"
 
 Чтобы включить автоматическую настройку в одной базе данных через T-SQL, подключитесь к базе данных и выполните следующий запрос.
 
-   ```T-SQL
-   ALTER DATABASE current SET AUTOMATIC_TUNING = AUTO | INHERIT | CUSTOM
-   ```
-   
+```SQL
+ALTER DATABASE current SET AUTOMATIC_TUNING = AUTO | INHERIT | CUSTOM
+```
+
 Если установить для автоматической настройки значение AUTO, будут применяться значения Azure по умолчанию. Если установить значение INHERIT, автоматическая настройка конфигурации будет унаследована от родительского сервера. Если установить значение CUSTOM, автоматическую настройку необходимо будет настраивать вручную.
 
 Для настройки отдельных параметров автоматической настройки через T-SQL подключитесь к базе данных и выполните запрос, подобный следующему.
 
-   ```T-SQL
-   ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_INDEX = DEFAULT, DROP_INDEX = OFF)
-   ```
-   
+```SQL
+ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_INDEX = DEFAULT, DROP_INDEX = OFF)
+```
+
 Если задать для отдельного параметра настройки значение ON, это переопределит наследуемое значение базы данных и включит параметр настройки. Если задать значение OFF, это также переопределит наследуемое значение базы данных и отключит параметр настройки. Параметр автоматической настройки, для которого задано значение DEFAULT, будет наследовать конфигурацию от параметра автоматической настройки уровня базы данных.  
 
 > [!IMPORTANT]
 > В случае активной георепликации нужно настроить автоматическую настройку только на базу данных-источник, подробнее см. в [этой статье](sql-database-auto-failover-group.md). Действия по настройке, которые применяются автоматически, например создание индекса или удаление, будут автоматически реплицированы в дополнение только для чтения. При попытке включения автоматической настройки с помощью T-SQL для дополнения только для чтения произойдет сбой, поскольку для него не поддерживаются различные конфигурации настроек.
 >
 
-Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
+Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
 
 ## <a name="disabled-by-the-system"></a>Отключено системой
+
 Автоматическая настройка контролирует все действия, которые она выполняет в базе данных, и в некоторых случаях может определить, что автоматическая настройка в базе данных работает не должным образом. В этом случае параметр настройки будет отключен системой. В большинстве случаев это происходит потому, что хранилище запросов отключено или доступно только для чтения в определенной базе данных.
 
 ## <a name="configure-automatic-tuning-e-mail-notifications"></a>Настройка уведомлений по электронной почте об автоматической настройке
@@ -102,6 +104,7 @@ ms.locfileid: "54382787"
 Ознакомьтесь с руководством [Уведомления по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 * Дополнительные сведения об автоматической настройке и о том, как она повышает производительность, см. в [этой статье](sql-database-automatic-tuning.md).
 * Общие сведения о рекомендациях по производительности базы данных SQL Azure см. в статье [Помощник по работе с базами данных SQL](sql-database-advisor.md).
 * См. статью [Анализ производительности запросов базы данных Azure SQL](sql-database-query-performance.md), чтобы узнать о том, как просмотреть влияние на производительность основных запросов.

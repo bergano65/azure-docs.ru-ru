@@ -11,13 +11,13 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 manager: craigg
-ms.date: 12/06/2018
-ms.openlocfilehash: f87b7093a732639db8a53ebec68fcae8f29735f3
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.date: 01/25/2019
+ms.openlocfilehash: 59a3b4a4e1b08a9a9985836a9f9be44d1eff9c71
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158675"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55472071"
 ---
 # <a name="configure-threat-detection-preview-in-azure-sql-database-managed-instance"></a>Настройка обнаружения угроз в Управляемом экземпляре Базы данных SQL Azure (предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "54158675"
 
 Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](sql-database-threat-detection-overview.md#explore-anomalous-database-activities-upon-detection-of-a-suspicious-event) или [портала Azure](sql-database-threat-detection-overview.md#explore-threat-detection-alerts-for-your-database-in-the-azure-portal)
 
-[Система обнаружения угроз](sql-database-threat-detection-overview.md) входит в состав предложения [Расширенная защита от угроз SQL](sql-advanced-threat-protection.md), которое представляет собой единый пакет расширенных средств обеспечения безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ATP. Там же ею можно управлять. За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц для каждого Управляемого экземпляра. При этом первые 30 дней системой можно пользоваться бесплатно.
+[Система обнаружения угроз](sql-database-threat-detection-overview.md) входит в состав предложения [Расширенная защита данных SQL](sql-advanced-threat-protection.md), которое представляет собой единый пакет расширенных средств обеспечения безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять. За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц для каждого Управляемого экземпляра. При этом первые 30 дней системой можно пользоваться бесплатно.
 
 ## <a name="set-up-threat-detection-for-your-managed-instance-in-the-azure-portal"></a>Настройка обнаружения угроз для управляемого экземпляра на портале Azure
 

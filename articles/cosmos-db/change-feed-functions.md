@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 41cbb657a4fc83b498c5cc9a6a16397a619aa075
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 93cd93b40c142d504c52f08f9005d082fb5a2a20
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034052"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55469487"
 ---
-# <a name="how-to-use-azure-cosmos-db-change-feed-with-azure-functions"></a>Как использовать канал изменений Azure Cosmos DB с Функциями Azure
+# <a name="trigger-azure-functions-from-azure-cosmos-db"></a>Запуск службы Функции Azure из Azure Cosmos DB
 
 Если вы используете службу "Функции Azure", самый простой способ подключиться к каналу изменений — это добавить триггер [Azure Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger) в приложении Функций Azure. Когда вы создаете триггер Cosmos DB в приложении Функций Azure, нужно выбрать контейнер Cosmos для подключения, и функция будет запускаться при каждом внесении изменений в контейнере.
 

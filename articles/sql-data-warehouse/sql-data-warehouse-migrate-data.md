@@ -6,16 +6,16 @@ author: jrowlandjones
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.component: implement
+ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: fc7bf4eaeb073b0337be68632e5057bfce96e06a
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: a09037f2e33d87446696dd11477c4e8b45af4187
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43311095"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55474179"
 ---
 # <a name="migrate-your-data"></a>Перенос данных
 Данные из различных источников можно переместить в хранилище данных SQL с помощью различных инструментов.  Для достижения этой цели можно использовать ADF Copy, службы SSIS и bcp. Тем не менее по мере увеличения объема данных есть смысл подумать о разделении процесса переноса на несколько этапов. Это позволит оптимизировать каждый этап как в плане производительности, так и в плане гибкости, обеспечивая плавный перенос данных.
@@ -157,7 +157,7 @@ AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/myconta
 3. Копирование данных с помощью AZCopy в контейнер хранилища больших двоичных объектов Azure
 4. Загрузка данных в хранилище данных SQL с помощью PolyBase
 
-См. полную документацию по [AzCopy][AzCopy].
+См. полную документацию по [AZCopy][AZCopy].
 
 ## <a name="optimizing-data-export"></a>Оптимизация экспорта данных
 Помимо соблюдения требований PolyBase к экспорту данных, рекомендуется оптимизировать экспорт данных, чтобы еще больше улучшить процесс.

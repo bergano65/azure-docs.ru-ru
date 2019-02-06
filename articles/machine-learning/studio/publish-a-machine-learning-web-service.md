@@ -1,6 +1,6 @@
 ---
-заголовок: Развертывание веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Развертывание веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 06.01.2017
 ---

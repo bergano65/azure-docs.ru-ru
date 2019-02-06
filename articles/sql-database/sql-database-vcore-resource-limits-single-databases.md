@@ -3,7 +3,7 @@ title: Ограничения ресурсов для отдельной баз�
 description: На этой странице описаны некоторые общие ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер.
 services: sql-database
 ms.service: sql-database
-ms.subservice: single-database
+ms.subservice: standalone-database
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -11,24 +11,24 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/09/2019
-ms.openlocfilehash: 894922a80ab874e5304ef441571e03ef559a34b0
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.date: 01/25/2019
+ms.openlocfilehash: e38f90acf1ffb0b63379727287f7451f99b6dd0d
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215428"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55460171"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-a-single-database"></a>Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер
 
 Эта статья содержит подробные сведения об ограничениях ресурсов для отдельных баз данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер.
 
-Сведения об ограничениях модели приобретения на основе DTU для отдельных баз данных на логическом сервере см. в статье [SQL Database resource limits for single and pooled databases on a logical server](sql-database-resource-limits-logical-server.md) (Ограничения ресурсов Базы данных SQL для отдельных баз данных и базы данных в пуле на логическом сервере).
+Сведения об ограничениях модели приобретения на основе DTU для отдельных баз данных на сервере Базы данных SQL см. в статье [SQL Database resource limits for Azure SQL Database server](sql-database-resource-limits-database-server.md) (Ограничения ресурсов Базы данных SQL для сервера Базы данных SQL).
 
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-Уровень служб, объем вычислительных ресурсов и объем хранилища для отдельной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](sql-database-single-databases-manage.md#transact-sql-manage-logical-servers-and-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-logical-servers-and-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-logical-servers-and-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-logical-servers-and-databases).
+Уровень служб, объем вычислительных ресурсов и объем хранилища для отдельной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#manage-an-existing-sql-database-server), [Transact-SQL](sql-database-single-databases-manage.md#transact-sql-manage-sql-database-servers-and-single-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-sql-database-servers-and-single-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-sql-database-servers-and-single-databases).
 
 ## <a name="general-purpose-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб общего назначения — размеры хранилищ и объемы вычислительных ресурсов
 

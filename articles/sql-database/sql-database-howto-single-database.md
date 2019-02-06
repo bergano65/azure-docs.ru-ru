@@ -1,6 +1,6 @@
 ---
-title: Настройка отдельной Базы данных SQL Azure | Документация Майкрософт
-description: Сведения о том, как настроить отдельную Базу данных SQL Azure и управлять ею.
+title: Как настроить отдельную Базу данных SQL Azure | Документация Майкрософт
+description: Сведения о том, как настроить отдельную Базу данных SQL Azure и управлять ею
 services: sql-database
 ms.service: sql-database
 ms.subservice: ''
@@ -11,21 +11,21 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
 manager: craigg
-ms.date: 12/14/2018
-ms.openlocfilehash: d34853220e423e73c6ca8cf7c76ba616b815b8bd
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.date: 01/25/2019
+ms.openlocfilehash: bf126caa378eafe569b83f211d9d2bbfd37e18f9
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53439751"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55477800"
 ---
-# <a name="how-to-use-single-database"></a>Использование отдельной базы данных
+# <a name="how-to-use-a-single-database-in-azure-sql-database"></a>Использование отдельной базы данных в Базе данных SQL Azure
 
-В этом статье можно найти различные руководства, сценарии и пояснения, которые помогут в администрировании и настройке отдельной Базы данных SQL Azure.
+В этом разделе можно найти различные руководства, сценарии и объяснения, которые помогут в управлении и настройке отдельной базы данных в Базе данных SQL Azure.
 
 ## <a name="migrate"></a>Миграция
 
-- [Перенос Базы данных SQL Server в Базу данных SQL Azure](sql-database-cloud-migrate.md) — содержит информацию о рекомендуемом процессе миграции и средствах для миграции в Управляемый экземпляр.
+- [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-cloud-migrate.md) — содержит информацию о рекомендуемом процессе миграции и средствах для миграции в управляемый экземпляр.
 - [Новый администратор базы данных в облаке — управление базой данных в службе "База данных SQL Azure"](sql-database-manage-after-migration.md).
 
 ## <a name="configure-features"></a>Настройка компонентов
@@ -66,7 +66,7 @@ ms.locfileid: "53439751"
 - [Выполнение запросов к нескольким сегментам](sql-database-elastic-scale-multishard-querying.md).
 - [Перемещение сегментированных данных](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
 - [Настройка параметров безопасности для сегментов базы данных](sql-database-elastic-scale-split-merge-security-configuration.md).
-- [Добавление сегмента в текущий набор сегментов базы данных](sql-database-elastic-scale-add-a-shard.md).
+- [Добавление сегмента](sql-database-elastic-scale-add-a-shard.md) в текущий набор сегментов базы данных.
 - [Устранение проблем с картой сегментов](sql-database-elastic-database-recovery-manager.md).
 - [Перенос сегментированной базы данных](sql-database-elastic-convert-to-use-elastic-tools.md).
 - [Создание счетчиков](sql-database-elastic-database-perf-counters.md).
@@ -74,4 +74,4 @@ ms.locfileid: "53439751"
 - [Использование платформы Dapper](sql-database-elastic-scale-working-with-dapper.md) для запроса сегментированных данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения о [практических руководствах в Управляемом экземпляре](sql-database-howto-managed-instance.md).
+- Дополнительные сведения о руководствах по Управляемому экземпляру см. в [этой статье](sql-database-howto-managed-instance.md).

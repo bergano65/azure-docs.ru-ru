@@ -1,6 +1,6 @@
 ---
-заголовок: 'Шаг 3. Создание эксперимента в Студии машинного обучения Azure' titleSuffix: Студия машинного обучения Azure description: Пошаговое руководство по разработке решения прогнозирования (шаг 3). Создание простого обучающего эксперимента в Студии машинного обучения Azure.'
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: 'Шаг 3. Создание эксперимента в Студии машинного обучения Azure' titleSuffix: Студия машинного обучения Azure description: Пошаговое руководство по разработке решения прогнозирования (шаг 3). Создание простого обучающего эксперимента в Студии машинного обучения Azure.'
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: garyericson ms.author: garye ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 23.03.2017
 ---

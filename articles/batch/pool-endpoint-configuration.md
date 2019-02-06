@@ -2,18 +2,18 @@
 title: Настройка конечных точек узла в пуле пакетной службы Azure | Документация Майкрософт
 description: Сведения о том, как настроить или отключить доступ к портам SSH или RDP на вычислительных узлах пула пакетной службы Azure.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
-ms.author: danlep
-ms.openlocfilehash: 5898206761e5029f94b6d1f1b48223481ae2ca13
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.author: lahugh
+ms.openlocfilehash: a6c2c343b13b77048c772cb1e5c2ba06cf8add50
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358733"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55457621"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Настройка или отключение удаленного доступа к вычислительным узлам пула пакетной службы Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "34358733"
 * При настройке пула NAT можно настроить несколько правил группы безопасности сети (NSG). Правила проверяются в порядке приоритета. Когда применяется правило, соответствие других правил не проверяется.
 
 
-## <a name="example-deny-all-rdp-traffic"></a>Пример. Запрет всего трафика RDP
+## <a name="example-deny-all-rdp-traffic"></a>Пример: запрет всего трафика RDP
 
 В следующем фрагменте кода C# показано, как настроить конечную точку RDP на вычислительных узлах в пуле Windows, чтобы запретить весь сетевой трафик. Конечная точка использует пул интерфейсных портов в диапазоне *60000–60099*. 
 
@@ -48,7 +48,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 };
 ```
 
-## <a name="example-deny-all-ssh-traffic-from-the-internet"></a>Пример. Запрет на получение всего трафика SSH из Интернета
+## <a name="example-deny-all-ssh-traffic-from-the-internet"></a>Пример: запрет на получение всего трафика SSH из Интернета
 
 В следующем фрагменте кода Python показано, как настроить конечную точку SSH на вычислительных узлах в пуле Linux, чтобы запретить весь сетевой трафик. Конечная точка использует пул интерфейсных портов в диапазоне *4000–4100*. 
 
@@ -74,7 +74,7 @@ pool.network_configuration=batchmodels.NetworkConfiguration(
 )
 ```
 
-## <a name="example-allow-rdp-traffic-from-a-specific-ip-address"></a>Пример. Разрешение трафика RDP с определенного IP-адреса
+## <a name="example-allow-rdp-traffic-from-a-specific-ip-address"></a>Пример: разрешение трафика RDP с определенного IP-адреса
 
 В следующем фрагменте кода C# показано, как настроить конечную точку RDP на вычислительных узлах в пуле Windows, чтобы предоставить доступ RDP только с одного IP-адреса: *198.51.100.7*. Второе правило NSG запрещает трафик, для которого не соответствует IP-адрес.
 
@@ -92,7 +92,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 };
 ```
 
-## <a name="example-allow-ssh-traffic-from-a-specific-subnet"></a>Пример. Разрешение трафика SSH из определенной подсети
+## <a name="example-allow-ssh-traffic-from-a-specific-subnet"></a>Пример: разрешение трафика SSH из определенной подсети
 
 В следующем фрагменте кода Python показано, как настроить конечную точку SSH на вычислительных узлах в пуле Linux, чтобы разрешить доступ только из подсети по адресу *192.168.1.0/24*. Второе правило NSG запрещает трафик, который не соответствует подсети.
 

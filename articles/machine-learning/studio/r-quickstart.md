@@ -1,6 +1,6 @@
 ---
-заголовок: Краткое руководство по языку R titleSuffix: Студия машинного обучения Azure description: Это руководство по языку программирования R поможет быстро создать прогностическое решение, используя язык R в Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+заголовок: Краткое руководство по языку R titleSuffix: Студия машинного обучения Azure description: Это руководство по языку программирования R поможет быстро создать прогностическое решение, используя язык R в Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
 
 author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 06.01.2017
 ---
