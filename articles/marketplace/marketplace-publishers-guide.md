@@ -14,19 +14,19 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 487872b1e9344aaefad5ca0953c41b59f01027b0
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: 43badaada3de352ec7bafeb422965a047261a1e4
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53753971"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55656840"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
 
 Руководство по публикации в Marketplace призвано помочь новым и существующим издателям узнать, как использовать онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) для развития бизнеса в партнерстве с корпорацией Майкрософт, публикуя приложения и службы.
 
 >[!Note]
->Под Marketplace здесь имеются в виду Azure Marketplace и AppSource.  Дополнительные сведения см. в разделе [Два онлайн-магазина на одной площадке Marketplace](https://docs.microsoft.com/en-us/azure/marketplace/comparing-appsource-azure-marketplace).
+>Под Marketplace здесь имеются в виду Azure Marketplace и AppSource.  Дополнительные сведения см. в разделе [Два онлайн-магазина на одной площадке Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace).
 
 В этом руководстве рассматриваются следующие темы: 
 *   что такое Marketplace и как он работает; 

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: lizross
 ms.reviewer: jairoc
-ms.openlocfilehash: 97d35eb3442b63736b40d51dda57b872813293ad
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 668d69921fd2001cd52bc864e5ee272d179a7bbc
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164067"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55770475"
 ---
 # <a name="potential-reasons-for-the-you-cant-get-there-from-here-error-message"></a>Возможные причины сообщения об отказе в доступе
 При попытке доступа к внутренним веб-приложениям или службам организации вы можете получить сообщение об **отказе в доступе**. Это сообщение означает, что организация применила политику, которая препятствует доступу вашего устройства к ресурсам организации. Хотя вам может понадобиться обратиться в службу поддержки, чтобы исправить эту проблему, можно попробовать сначала выполнить некоторые действия.
@@ -68,4 +68,4 @@ ms.locfileid: "55164067"
 ## <a name="next-steps"></a>Дополнительная информация
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
-- [Вход с использованием телефона вместо ввода пароля](microsoft-authenticator-app-phone-signin-faq.md)
+- [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

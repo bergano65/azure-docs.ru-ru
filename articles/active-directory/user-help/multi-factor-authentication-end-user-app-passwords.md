@@ -12,12 +12,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 87f98f084cf857ff8ab0651a02b98e64512e62f6
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 12998547c5525a7132bc350dbbaa7016e4bbeaf0
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181696"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55767702"
 ---
 # <a name="manage-app-passwords-for-two-step-verification"></a>Управление паролями приложения для двухфакторной проверки подлинности
 
@@ -121,4 +121,4 @@ ms.locfileid: "55181696"
 
 - [Управление параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md)
 
-- Попробуйте использовать [приложение Microsoft Authenticator](microsoft-authenticator-app-how-to.md), чтобы входить в систему с помощью уведомлений в приложении вместо текстовых сообщений или звонков.
+- Попробуйте использовать [приложение Microsoft Authenticator](user-help-auth-app-download-install.md), чтобы входить в систему с помощью уведомлений в приложении вместо текстовых сообщений или звонков.

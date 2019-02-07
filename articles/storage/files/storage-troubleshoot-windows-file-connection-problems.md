@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 384a277f3465ac97285fbb08fa299a5bed8c87c4
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2289fc143abfde0aaaf2bcb079a6d24b74d57975
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477698"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564448"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -61,7 +61,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Чтобы проверить, не блокирует ли брандмауэр или поставщик услуг Интернета порт 445, используйте средство [AzFileDiagnostics](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5) или командлет `Test-NetConnection`. 
 
-Для использования командлета `Test-NetConnection` должен быть установлен модуль AzureRM PowerShell. Дополнительные сведения см. в разделе, посвященном [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
+Для использования командлета `Test-NetConnection` должен быть установлен модуль AzureRM PowerShell. Дополнительные сведения см. в разделе, посвященном [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
    
     $resourceGroupName = "<your-resource-group-name>"
@@ -265,11 +265,11 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 ### <a name="cause"></a>Причина:
 
-Ошибка AadDsTenantNotFound происходит при попытке [включить аутентификацию Azure Active Directory (AAD) для службы "Файлы Azure"](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-enable) в учетной записи хранения, где [доменная служба AAD (AAD DS)](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте AAD связанной подписки.  
+Ошибка AadDsTenantNotFound происходит при попытке [включить аутентификацию Azure Active Directory (AAD) для службы "Файлы Azure"](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-enable) в учетной записи хранения, где [доменная служба AAD (AAD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте AAD связанной подписки.  
 
 ### <a name="solution"></a>Решение
 
-Включите доменную службу AAD в клиенте AAD подписки, в которой развернута учетная запись хранения. Вам необходимы права администратора клиента AAD, чтобы создать управляемый домен. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-getting-started).
+Включите доменную службу AAD в клиенте AAD подписки, в которой развернута учетная запись хранения. Вам необходимы права администратора клиента AAD, чтобы создать управляемый домен. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

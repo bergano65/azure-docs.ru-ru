@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: qianw211
-ms.openlocfilehash: 3ad9308f3bc714ee2877627da8fdb328459b9fe4
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 247a45a38d732ace0455c6ca2ebbd5c44c384004
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351955"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732334"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
 
@@ -59,7 +59,7 @@ ms.locfileid: "49351955"
 
 Автоматизация настройки клиента может увеличить вероятность преобразования. Когда клиент выбирает тип приложения пробную версию и перенаправляется в пробную среду, вы можете выполнять настройку для клиента напрямую, не требуя дополнительных шагов входа.
 
-Во время процесса проверки подлинности Azure AD отправляет маркер приложению или предложению. Сведения о пользователе, предоставляемые маркером, используются для создания учетной записи пользователя в приложении или предложении. Дополнительные сведения см. в статье [Маркеры идентификации](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims#sample-tokens).
+Во время процесса проверки подлинности Azure AD отправляет маркер приложению или предложению. Сведения о пользователе, предоставляемые маркером, используются для создания учетной записи пользователя в приложении или предложении. Дополнительные сведения см. в статье [Маркеры идентификации](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims).
 
 Использование Azure AD для включения аутентификации одним щелчком в приложении или в типе приложения пробной версии дает следующе преимущества.
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 2d1a449511ce944783c8d93b79d59be263b20fa3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 38075c9216eab955a023fee53aad74f3768d783c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163949"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822278"
 ---
 # <a name="problem-configuring-user-provisioning-to-an-azure-ad-gallery-application"></a>Проблема при настройке подготовки пользователей для приложения из коллекции Azure AD
 
@@ -41,7 +41,7 @@ ms.locfileid: "55163949"
 Ниже приведен список общих проблемных областей, в которые можно углубиться, если у вас есть какие-то идеи.
 
 * [Служба подготовки не запускается](#provisioning-service-does-not-appear-to-start)
-* [Не удалось сохранить конфигурацию из-за недействительных учетных данных приложения](#can’t-save-configuration-due-to-app-credentials-not-working)
+* Не удалось сохранить конфигурацию из-за недействительных учетных данных приложения
 * [Судя по журналам аудита, пользователи не подготовлены, несмотря на то, что они назначены](#audit-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
 
 ## <a name="provisioning-service-does-not-appear-to-start"></a>Служба подготовки не запускается

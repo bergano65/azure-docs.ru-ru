@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 2b7a90f948f0176285f1e56bc3c84a2cda2f2577
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: d22318f4d9e233a57d521fe36f0827b9fc3af3e0
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023535"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746342"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Перемещение данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -30,7 +30,7 @@ ms.locfileid: "54023535"
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных Teradata. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
-Вы можете скопировать данные из локального хранилища данных Teradata в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из локального хранилища данных Teradata в другие хранилища данных, но не наоборот. 
+Вы можете скопировать данные из локального хранилища данных Teradata в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из локального хранилища данных Teradata в другие хранилища данных, но не наоборот.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Фабрика данных поддерживает подключение к локальным источникам Teradata с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
@@ -44,18 +44,18 @@ ms.locfileid: "54023535"
 Для подключения шлюза управления данными к базе данных Teradata необходимо установить [поставщик данных .NET для Teradata](https://go.microsoft.com/fwlink/?LinkId=278886) версии 14 и более в одной системе со шлюзом управления данными. Поддерживается Teradata версии 12 и более.
 
 ## <a name="getting-started"></a>Приступая к работе
-Вы можете создать конвейер с действием копирования, которое перемещает данные из локального хранилища данных Cassandra, с помощью разных инструментов и интерфейсов API. 
+Вы можете создать конвейер с действием копирования, которое перемещает данные из локального хранилища данных Cassandra, с помощью разных инструментов и интерфейсов API.
 
-- Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных. 
-- Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+- Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
+- Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
 1. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных.
-2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. 
-3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. 
+2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования.
+3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определения JSON для сущностей Фабрики данных, которые используются для копирования данных из локального хранилища данных Teradata, см. в разделе [Пример JSON. Копирование данных из Teradata в большой двоичный объект Azure](#json-example-copy-data-from-teradata-to-azure-blob) далее в этой статье. 
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определения JSON для сущностей Фабрики данных, которые используются для копирования данных из локального хранилища данных Teradata, см. в разделе [Пример JSON. Копирование данных из Teradata в большой двоичный объект Azure](#json-example-copy-data-from-teradata-to-azure-blob) далее в этой статье.
 
 Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, характерных для хранилища данных Teradata.
 
@@ -88,7 +88,7 @@ ms.locfileid: "54023535"
 | query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Yes |
 
 ### <a name="json-example-copy-data-from-teradata-to-azure-blob"></a>Пример JSON. Копирование данных из Teradata в большой двоичный объект Azure
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Teradata в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.   
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Teradata в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
 
 Образец состоит из следующих сущностей фабрики данных.
 
@@ -257,7 +257,7 @@ ms.locfileid: "54023535"
                     {
                         "name": "AzureBlobTeradataDataSet"
                     }
-                ],                    
+                ],
                 "policy": {
                     "timeout": "01:00:00",
                     "concurrency": 1
@@ -300,21 +300,21 @@ ms.locfileid: "54023535"
 | Целое число  |Int32 |
 | Number |Double |
 | SmallInt |Int16 |
-| Дата |Datetime |
-| Время |Интервал времени |
+| Дата |DateTime |
+| Время |TimeSpan |
 | Time With Time Zone |Строка |
-| Timestamp |Datetime |
+| Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
-| Interval Day |Интервал времени |
-| Interval Day To Hour |Интервал времени |
-| Interval Day To Minute |Интервал времени |
-| Interval Day To Second |Интервал времени |
-| Interval Hour |Интервал времени |
-| Interval Hour To Minute |Интервал времени |
-| Interval Hour To Second |Интервал времени |
-| Interval Minute |Интервал времени |
-| Interval Minute To Second |Интервал времени |
-| Interval Second |Интервал времени |
+| Interval Day |TimeSpan |
+| Interval Day To Hour |TimeSpan |
+| Interval Day To Minute |TimeSpan |
+| Interval Day To Second |TimeSpan |
+| Interval Hour |TimeSpan |
+| Interval Hour To Minute |TimeSpan |
+| Interval Hour To Second |TimeSpan |
+| Interval Minute |TimeSpan |
+| Interval Minute To Second |TimeSpan |
+| Interval Second |TimeSpan |
 | Interval Year |Строка |
 | Interval Year To Month |Строка |
 | Interval Month |Строка |

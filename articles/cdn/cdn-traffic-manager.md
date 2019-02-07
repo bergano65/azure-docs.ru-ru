@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 2d184cc849eb3da60bbf0c387655da9fdf878853
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 4c072ef63c0d4961fba695fc8d9be1d12b4b0e8b
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091612"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55749220"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "49091612"
 ## <a name="set-up-azure-traffic-manager"></a>Настройка диспетчера трафика Azure
 Создайте профиль диспетчера трафика Azure и настройте балансировку нагрузки между ранее созданными конечными точками CDN. 
 
-1. Создайте профиль диспетчера трафика Azure, следуя пошаговому руководству в разделе [Создание профиля диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-create-profile#create-a-traffic-manager-profile-1). 
+1. Создайте профиль диспетчера трафика Azure, следуя пошаговому руководству в разделе [Создание профиля диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-create-profile). 
 
     В пункте **Метод маршрутизации** выберите **Приоритет**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "49091612"
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
-    b. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
+    б) Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
 
       Например:  
       

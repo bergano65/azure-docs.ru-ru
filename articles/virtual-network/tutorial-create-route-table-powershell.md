@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: d077f64081ff7ca53a0ec569ea99658d29654cda
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 0c2ff94d65e775a12fd76b3115aa8b69ae9a405f
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429350"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815019"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-powershell"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов при использовании PowerShell
 
@@ -248,7 +248,7 @@ New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4
 
 Хотя в этой статье и используется команда трассировки для тестирования маршрутизации, мы рекомендуем не пропускать входящий трафик по протоколу ICMP через брандмауэр Windows в рабочей среде.
 
-Вы уже включили в Azure IP-пересылку для сетевого интерфейса виртуальной машины, выполняя инструкции из раздела [Включение IP-пересылки](#enable-ip-forwarding). Операционная система или приложение, работающие на виртуальной машине, также должны уметь перенаправлять сетевой трафик. Включите IP-пересылку в операционной системе на *myVmNva*.
+Вы уже включили в Azure IP-пересылку для сетевого интерфейса виртуальной машины, выполнив инструкции из раздела [Включение IP-пересылки](#enable-ip-forwarding). Операционная система или приложение, работающие на виртуальной машине, также должны уметь перенаправлять сетевой трафик. Включите IP-пересылку в операционной системе на *myVmNva*.
 
 Из командной строки на виртуальной машине *myVmPrivate* подключитесь к виртуальной машине *myVmNva* по протоколу удаленного рабочего стола:
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
-ms.openlocfilehash: aaeec216e2a89cfd230208d0c674e15153224b5a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: b77ed879375cff8d45f7d532283647e70252bdab
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157505"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732844"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -27,7 +27,7 @@ ms.locfileid: "55157505"
 В этой статье подробно описывается, как создать виртуальную машину с несколькими сетевыми адаптерами с помощью Azure CLI.
 
 ## <a name="create-supporting-resources"></a>Создание вспомогательных ресурсов
-Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index#az_login).
+Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *mystorageaccount* и *myVM*.
 
@@ -37,7 +37,7 @@ ms.locfileid: "55157505"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnetFrontEnd*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnetFrontEnd*.
 
 ```azurecli
 az network vnet create \
@@ -48,7 +48,7 @@ az network vnet create \
     --subnet-prefix 10.0.1.0/24
 ```
 
-Создайте подсеть для внутреннего трафика с помощью команды [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create). В следующем примере создается подсеть с именем *mySubnetBackEnd*:
+Создайте подсеть для внутреннего трафика с помощью команды [az network vnet subnet create](/cli/azure/network/vnet/subnet). В следующем примере создается подсеть с именем *mySubnetBackEnd*:
 
 ```azurecli
 az network vnet subnet create \
@@ -87,7 +87,7 @@ az network nic create \
 ## <a name="create-a-vm-and-attach-the-nics"></a>Создание виртуальной машины и подключение сетевых карт
 При создании виртуальной машины укажите сетевые карты, созданные с помощью `--nics`. Необходимо выбрать соответствующий размер виртуальной машины. Для каждой виртуальной машины существуют ограничения на общее количество сетевых карт, которые можно в нее добавить. Прочитайте дополнительные сведения о [размерах виртуальных машин Linux](sizes.md).
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). В следующем примере создается виртуальная машина с именем *myVM*.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина с именем *myVM*.
 
 ```azurecli
 az vm create \
@@ -116,14 +116,14 @@ az network nic create \
     --network-security-group myNetworkSecurityGroup
 ```
 
-Чтобы добавить сетевую карту к существующей виртуальной машине, сначала отмените распределение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm#az_vm_deallocate). В следующем примере отменяется распределение виртуальной машины *myVM*.
+Чтобы добавить сетевую карту к существующей виртуальной машине, сначала отмените распределение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm). В следующем примере отменяется распределение виртуальной машины *myVM*.
 
 
 ```azurecli
 az vm deallocate --resource-group myResourceGroup --name myVM
 ```
 
-Добавьте сетевую карту, выполнив команду [az vm nic add](/cli/azure/vm/nic#az_vm_nic_add). В следующем примере сетевая карта *myNic3* добавляется к виртуальной машине *myVM*:
+Добавьте сетевую карту, выполнив команду [az vm nic add](/cli/azure/vm/nic). В следующем примере сетевая карта *myNic3* добавляется к виртуальной машине *myVM*:
 
 ```azurecli
 az vm nic add \
@@ -141,13 +141,13 @@ az vm start --resource-group myResourceGroup --name myVM
 Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for- multiple-nics).
 
 ## <a name="remove-a-nic-from-a-vm"></a>Удаление сетевой карты с виртуальной машины
-Чтобы удалить сетевую карту с существующей виртуальной машины, сначала отмените распределение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm#az_vm_deallocate). В следующем примере отменяется распределение виртуальной машины *myVM*.
+Чтобы удалить сетевую карту с существующей виртуальной машины, сначала отмените распределение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm). В следующем примере отменяется распределение виртуальной машины *myVM*.
 
 ```azurecli
 az vm deallocate --resource-group myResourceGroup --name myVM
 ```
 
-Удалите сетевую карту, выполнив команду [az vm nic remove](/cli/azure/vm/nic#az_vm_nic_remove). В следующем примере удаляется сетевая карта *myNic3* с виртуальной машины *myVM*:
+Удалите сетевую карту, выполнив команду [az vm nic remove](/cli/azure/vm/nic). В следующем примере удаляется сетевая карта *myNic3* с виртуальной машины *myVM*:
 
 ```azurecli
 az vm nic remove \

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
-ms.openlocfilehash: cd3ae85e88151e234d42a29ad871a18c7829b05c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 00e226134039d29efd744290c4bc63abd50adc89
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454850"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55697838"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Формат файла журнала службы импорта и экспорта Azure
 Когда служба импорта и экспорта Microsoft Azure выполняет действия на диске в ходе задания импорта или экспорта, в блочные BLOB-объекты в учетной записи хранения, связанной с этим заданием, записываются журналы.  
@@ -22,7 +22,7 @@ ms.locfileid: "55454850"
   
 -   журнал ошибок, который всегда создается в случае возникновения ошибки;  
   
--   подробный журнал, который не включен по умолчанию. Чтобы включить его, установите свойство `EnableVerboseLog` для операции [Put Job](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) (Поместить задание) или [Update Job Properties](/rest/api/storageimportexport/jobs#Jobs_Update) (Обновить свойства задания).  
+-   подробный журнал, который не включен по умолчанию. Чтобы включить его, установите свойство `EnableVerboseLog` для операции [Put Job](/rest/api/storageimportexport/jobs) (Поместить задание) или [Update Job Properties](/rest/api/storageimportexport/jobs) (Обновить свойства задания).  
   
 ## <a name="log-file-location"></a>Расположение файла журнала  
 Журналы записываются в блочные BLOB-объекты в контейнере или виртуальном каталоге, указанном в параметре `ImportExportStatesPath`, который можно установить для операции `Put Job`. Расположение, в которое записываются журналы, зависит от того, как задана проверка подлинности задания, а также от значения, установленного для параметра `ImportExportStatesPath`. Проверка подлинности для задания может быть задана с использованием ключа учетной записи хранения или SAS (подписанного URL-адреса) контейнера.  
@@ -38,7 +38,7 @@ ms.locfileid: "55454850"
 |SAS контейнера|Значение по умолчанию|Виртуальный каталог с именем по умолчанию (`waimportexport`) в контейнере, указанном в SAS.<br /><br /> Например, если для задания указан SAS `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, расположением журнала будет `https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport`.|  
 |SAS контейнера|Значение, заданное пользователем|Виртуальный каталог с именем, заданным пользователем, в контейнере, указанном в SAS.<br /><br /> Например, если для задания указан SAS `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, а указанному виртуальному каталогу присвоено имя `mylogblobs`, расположение журнала будет `https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport/mylogblobs`.|  
   
-URL-адреса журнала ошибок и подробного журнала можно получить, вызвав операцию [Get Job](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) (получить задание). Журналы будут доступны после завершения обработки диска.  
+URL-адреса журнала ошибок и подробного журнала можно получить, вызвав операцию [Get Job](/rest/api/storageimportexport/jobs) (получить задание). Журналы будут доступны после завершения обработки диска.  
   
 ## <a name="log-file-format"></a>Формат файла журнала  
 Формат обоих журналов одинаков: большой двоичный объект, содержащий XML-описания событий, возникших при копировании больших двоичных объектов между жестким диском и учетной записью клиента.  
