@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: c6a47448fc99c2f58b315898c1b6af65f894da8d
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 0e17fa877bc2e1e4f72891315d940546a11e674d
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436693"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812503"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Подробный обзор расширенной аналитики
 
@@ -56,10 +56,10 @@ HDInsight предоставляет возможность получать ц�
 
 HDInsight имеет несколько вариантов машинного обучения для рабочего процесса расширенной аналитики:
 
-* [Машинное обучение и Apache Spark](#machine-learning-and-spark).
-* [Службы машинного обучения и R](#r-and-r-server)
-* [Машинное обучение Azure и Apache Hive](#azure-machine-learning-and-hive).
-* [Apache Spark и глубокое обучение](#spark-and-deep-learning).
+* Машинное обучение и Apache Spark.
+* Службы машинного обучения и R
+* Машинное обучение Azure и Apache Hive
+* Apache Spark и глубокое обучение
 
 ### <a name="machine-learning-and-apache-spark"></a>Машинное обучение и Apache Spark.
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/03/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f4abacb42cfd5efe22d29b58b36eca0a7a1f5ba8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4d4acecbbb90fff7865902a3371d282f1d402374
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55161326"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55662896"
 ---
 # <a name="azure-active-directory-b2c-migrate-users-with-social-identities"></a>Azure Active Directory B2C Миграция пользователей с удостоверениями социальных сетей
 При планировании миграции поставщика удостоверений в Azure Active Directory B2C также может потребоваться перенести пользователей с удостоверениями социальных сетей. В этой статье описывается процедура переноса имеющихся учетных записей удостоверений социальных сетей, таких как: учетные записи Facebook, LinkedIn, Майкрософт и Google в Azure AD B2C. Приведенные здесь сведения также применимы к федеративным удостоверениям, однако такие миграции менее распространены.
@@ -46,7 +46,7 @@ ms.locfileid: "55161326"
 * В зависимости от поставщика удостоверений **идентификатор пользователя социальной сети** является уникальным значением для пользователя определенного приложения или учетной записи разработки. Настройте политику Azure AD B2C с тем же идентификатором приложения, который ранее был назначен поставщиком удостоверений социальных сетей. Или используйте другое приложение в той же учетной записи для разработки.
 
 ## <a name="use-graph-api-to-migrate-users"></a>Перенос пользователей с помощью API Graph
-Создайте учетную запись пользователя Azure AD B2C с помощью [API Graph](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet). Для взаимодействия с API Graph сначала необходимо иметь учетную запись службы с правами администратора. В Azure AD зарегистрируйте приложение и выполните аутентификацию в Azure AD. Учетные данные приложения такие: идентификатор приложения и секрет приложения. Приложение вызывает API Graph, действуя само по себе, а не под именем конкретного пользователя. Выполните инструкции в разделе [Шаг 1. Миграция пользователей с помощью API Graph](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-user-migration#step-1-use-graph-api-to-migrate-users).
+Создайте учетную запись пользователя Azure AD B2C с помощью [API Graph](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet). Для взаимодействия с API Graph сначала необходимо иметь учетную запись службы с правами администратора. В Azure AD зарегистрируйте приложение и выполните аутентификацию в Azure AD. Учетные данные приложения такие: идентификатор приложения и секрет приложения. Приложение вызывает API Graph, действуя само по себе, а не под именем конкретного пользователя. Выполните инструкции в разделе [Шаг 1. Миграция пользователей с помощью API Graph](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-user-migration).
 
 ## <a name="required-properties"></a>Обязательные свойства
 Ниже приведен список свойств, которые являются обязательными при создании пользователя.

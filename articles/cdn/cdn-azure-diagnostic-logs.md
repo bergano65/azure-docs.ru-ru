@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2018
 ms.author: magattus
-ms.openlocfilehash: 2beb5aa7218df25a1af87411d9481d30b259c353
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 6fca764c191c801cbca86c573339b397e61ead07
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256735"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700236"
 ---
 # <a name="azure-diagnostic-logs"></a>Журналы диагностики Azure
 
@@ -290,7 +290,7 @@ Log Analytics — это служба Azure, которая отслеживае
 
 ### <a name="offers-and-pricing-tiers"></a>Предложения и ценовые категории
 
-Предложения и ценовые категории для решений по управлению представлены [здесь](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions#offers-and-pricing-tiers).
+Предложения и ценовые категории для решений по управлению представлены [здесь](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions).
 
 ### <a name="customizing-views"></a>Настройка представлений
 

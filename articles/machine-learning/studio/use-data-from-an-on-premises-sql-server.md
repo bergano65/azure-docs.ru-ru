@@ -1,8 +1,21 @@
 ---
-заголовок: Локальная база данных SQL Server titleSuffix: Студия машинного обучения Azure description: Использование данных из локальной базы данных SQL Server для выполнения расширенной аналитики с помощью Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 13.03.2017
+title: Локальный сервер SQL Server
+titleSuffix: Azure Machine Learning Studio
+description: Использование данных из локальной базы данных SQL Server для выполнения расширенной аналитики с помощью Студии машинного обучения Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 03/13/2017
+ms.openlocfilehash: 61feb1365a5007a55d18f0f4366bd5c69148e88d
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55511162"
 ---
 # <a name="perform-analytics-with-azure-machine-learning-studio-using-an-on-premises-sql-server-database"></a>Выполнение аналитики с помощью студии машинного обучения Azure на основе данных из локальной базы данных SQL Server
 

@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 06/28/2017
 ms.author: tamram
-ms.openlocfilehash: c38a49e82a71a23fdf621f5ac350c4242ffc2f8f
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 3cb1e35617a58fcde7968ab45d437d865c91f983
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29847113"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55696945"
 ---
 # <a name="calculate-the-size-of-a-blob-storage-container"></a>Вычисление размера контейнера в хранилище BLOB-объектов
 
@@ -49,11 +49,11 @@ az group delete --name myResourceGroup
 
 Ниже приведены команды, на основе которых скрипт вычисляет размер контейнера в хранилище BLOB-объектов. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
-| [az group create](/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az storage blob upload](/cli/azure/storage/account#az_storage_account_create) | Отправляет локальные файлы в контейнер хранилища BLOB-объектов Azure. |
-| [az storage blob list](/cli/azure/storage/account/keys#az_storage_account_keys_list) | Возвращает список больших двоичных объектов в контейнере хранилища BLOB-объектов Azure. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az storage blob upload](/cli/azure/storage/account) | Отправляет локальные файлы в контейнер хранилища BLOB-объектов Azure. |
+| [az storage blob list](/cli/azure/storage/account/keys) | Возвращает список больших двоичных объектов в контейнере хранилища BLOB-объектов Azure. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

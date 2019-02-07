@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vs-getting-started
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: cawa
-ms.openlocfilehash: 8f3cdf366830549c3ebb9c5680ecf36d1053d1d9
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: df6330827a4fb8bb8e80af89855c3ea104584295
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54075300"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55662311"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "54075300"
 ## <a name="aspnet-and-net-core-applications"></a>Приложения ASP.NET Core и .NET Core
 
 ### <a name="save-secret-settings-in-user-secret-store-that-is-outside-of-source-control-folder"></a>Хранение секретных параметров в хранилище секретов пользователя за пределами папки системы управления версиями
-Если вы создаете упрощенный прототип или у вас нет доступа к Интернету, переместите секретные параметры из папки системы управления версиями в хранилище секретов пользователя. Хранилище секретов пользователя — это файл, сохраненный в папке профиля пользователя, следовательно, секреты не будут регистрироваться в системе управления версиями. На следующей схеме показано, как применяется [секрет пользователя](https://docs.microsoft.com/aspnet/core/security/app-secrets?tabs=visual-studio#SecretManager).
+Если вы создаете упрощенный прототип или у вас нет доступа к Интернету, переместите секретные параметры из папки системы управления версиями в хранилище секретов пользователя. Хранилище секретов пользователя — это файл, сохраненный в папке профиля пользователя, следовательно, секреты не будут регистрироваться в системе управления версиями. На следующей схеме показано, как применяется [секрет пользователя](https://docs.microsoft.com/aspnet/core/security/app-secrets?tabs=visual-studio).
 
 ![Хранение секретных параметров с помощью секрета пользователя за пределами системы управления версиями](./media/vs-secure-secret-appsettings/aspnetcore-usersecret.PNG)
 

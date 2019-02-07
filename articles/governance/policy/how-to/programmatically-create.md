@@ -4,17 +4,17 @@ description: В этой статье описано программное со
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/26/2019
+ms.date: 01/31/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 575e2974131a09bdbdbc96d3ad252365ac9da86e
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: afdd6a238671bf41252eae8b55f1b6e61f358336
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101793"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510839"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -96,8 +96,9 @@ ms.locfileid: "55101793"
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
    Параметр **Scope** в `New-AzPolicyAssignment` также работает с подписками и группами управления. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже.
-   Замените `{rgName}`, `{subId}` и `{mgName}` именем вашей группы ресурсов, идентификатором подписки и именем группы управления соответственно.
+   Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
+   - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
    - Подписка — `/subscriptions/{subId}/`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`

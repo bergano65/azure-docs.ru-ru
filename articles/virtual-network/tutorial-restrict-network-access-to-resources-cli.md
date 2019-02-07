@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 80ca9df064239e9c7beb9d45acfabe963c532e4a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 31d583456f2ca0a2804c2215906965c2241af52d
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150554"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751503"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек службы виртуальной сети с помощью Azure CLI
 
@@ -43,7 +43,7 @@ ms.locfileid: "55150554"
 
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-Перед созданием виртуальной сети необходимо создать для нее группу ресурсов и другие компоненты, указанные в этой статье. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Перед созданием виртуальной сети необходимо создать для нее группу ресурсов и другие компоненты, указанные в этой статье. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create \
@@ -51,7 +51,7 @@ az group create \
   --location eastus
 ```
 
-Создайте виртуальную сеть с одной подсетью при помощи команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create).
+Создайте виртуальную сеть с одной подсетью при помощи команды [az network vnet create](/cli/azure/network/vnet).
 
 ```azurecli-interactive
 az network vnet create \
@@ -64,7 +64,7 @@ az network vnet create \
 
 ## <a name="enable-a-service-endpoint"></a>Включение конечной точки службы 
 
-Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотрите, какие службы с поддержкой конечных точек службы доступны в расположении Azure, выполнив команду [az network vnet list-endpoint-services](/cli/azure/network/vnet#az_network_vnet_list_endpoint_services). В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
+Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотрите, какие службы с поддержкой конечных точек службы доступны в расположении Azure, выполнив команду [az network vnet list-endpoint-services](/cli/azure/network/vnet). В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
 
 ```azurecli-interactive
 az network vnet list-endpoint-services \
@@ -103,7 +103,7 @@ az network vnet subnet update \
   --network-security-group myNsgPrivate
 ```
 
-Создайте правила безопасности командой [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
+Создайте правила безопасности командой [az network nsg rule create](/cli/azure/network/nsg/rule). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -168,7 +168,7 @@ az storage account create \
   --kind StorageV2
 ```
 
-После создания учетной записи хранения передайте ее строку подключения в переменную, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account#az_storage_account_show_connection_string). Строка подключения используется для создания файлового ресурса на более позднем этапе.
+После создания учетной записи хранения передайте ее строку подключения в переменную, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Строка подключения используется для создания файлового ресурса на более позднем этапе.
 
 ```azurecli-interactive
 saConnectionString=$(az storage account show-connection-string \
@@ -223,7 +223,7 @@ az storage account network-rule add \
 
 ### <a name="create-the-first-virtual-machine"></a>Создание первой виртуальной машины
 
-Создайте виртуальную машину в подсети *Public* с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.
+Создайте виртуальную машину в подсети *Public* с помощью команды [az vm create](/cli/azure/vm). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.
 
 ```azurecli-interactive
 az vm create \
@@ -322,7 +322,7 @@ sudo mount --types cifs //storage-account-name>.file.core.windows.net/my-file-sh
 
 Закройте сеанс SSH с виртуальной машиной *myVmPublic*.
 
-Используя свой компьютер, попытайтесь просмотреть файловые ресурсы в учетной записи хранения, выполнив команду [az storage share list](/cli/azure/storage/share?view=azure-cli-latest#az_storage_share_list). Замените `<account-name>` и `<account-key>` именем и ключом учетной записи хранения, полученными при [создании учетной записи хранения](#create-a-storage-account).
+Используя свой компьютер, попытайтесь просмотреть файловые ресурсы в учетной записи хранения, выполнив команду [az storage share list](/cli/azure/storage/share?view=azure-cli-latest). Замените `<account-name>` и `<account-key>` именем и ключом учетной записи хранения, полученными при [создании учетной записи хранения](#create-a-storage-account).
 
 ```azurecli-interactive
 az storage share list \

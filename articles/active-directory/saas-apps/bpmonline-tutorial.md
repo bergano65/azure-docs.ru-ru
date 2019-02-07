@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Bpm’online | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Bpm’online | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bpm’online.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 052db91d-ccff-4098-8ae3-2f76eca90539
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: b6fe50b24a20f81500ac1ed5008fcb6c59c0243a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 97b0530f3a260b4ad82c4287b4b37595ab1cf25d
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449406"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55187340"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bpmonline"></a>Учебник. Интеграция Azure Active Directory с Bpm’online
+# <a name="tutorial-azure-active-directory-integration-with-bpmonline"></a>Руководство. Интеграция Azure Active Directory с Bpm’online
 
 В этом учебнике описано, как интегрировать Bpm’online с Azure Active Directory (Azure AD).
 
@@ -123,7 +123,7 @@ ms.locfileid: "39449406"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Bpm’online](mailto:support@bpmonline.com). 
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
     
     ![Настройка единого входа](./media/bpmonline-tutorial/tutorial_metadataurl.png)
      
@@ -167,7 +167,7 @@ ms.locfileid: "39449406"
  
 ### <a name="create-a-bpmonline-test-user"></a>Создание тестового пользователя Bpm’online
 
-В этом разделе описано, как создать пользователя Britta Simon в Bpm’online. Обратитесь к [группе поддержки](mailto:support@bpmonline.com) Bpm’online, чтобы добавить пользователей на платформу Bpm’online. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в Bpm’online. Обратитесь к  [группе поддержки Bpm’online](mailto:support@bpmonline.com) для добавления пользователей на платформу Bpm’online. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39449406"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните плитку Bpm’online на панели доступа, чтобы автоматически войти в приложение Bpm’online.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

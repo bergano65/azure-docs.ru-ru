@@ -8,12 +8,12 @@ ms.date: 01/30/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: 6c2a642c30be79c907286e4ffac6bcea40d86fcd
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4bc683908646a5c05fee14f721e2c26482518947
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247754"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751401"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Реагирование на события хранилища BLOB-объектов
 
@@ -90,7 +90,7 @@ ms.locfileid: "55247754"
 Дополнительные сведения см. в статье [Схема событий службы "Сетка событий Azure"](../../event-grid/event-schema-blob-storage.md).
 
 ## <a name="filtering-events"></a>Фильтрация событий
-Подписки на события больших двоичных объектов можно фильтровать на основе типа события, а также по имени контейнера и имени созданного или удаленного большого двоичного объекта.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create) подписки на событие или [позже](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update). Фильтры темы в службе "Сетка событий" работают на основе совпадений "начинается с" и "заканчивается на", что позволяет доставлять подписчику события с соответствующей темой. 
+Подписки на события больших двоичных объектов можно фильтровать на основе типа события, а также по имени контейнера и имени созданного или удаленного большого двоичного объекта.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest) подписки на событие или [позже](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest). Фильтры темы в службе "Сетка событий" работают на основе совпадений "начинается с" и "заканчивается на", что позволяет доставлять подписчику события с соответствующей темой. 
 
 Тема событий хранилища BLOB-объектов использует следующий формат:
 

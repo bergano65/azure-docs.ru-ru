@@ -11,13 +11,13 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
-ms.date: 09/20/2018
-ms.openlocfilehash: cfd59c3e64e019feb4efe4546872012a02402ad7
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.date: 11/14/2018
+ms.openlocfilehash: 058c759e77c0d9cab3bd9a114a2d22606046390e
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684336"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563326"
 ---
 # <a name="automate-the-replication-of-schema-changes-in-azure-sql-data-sync"></a>Автоматическая репликация изменений схемы при синхронизации данных SQL Azure
 
@@ -188,7 +188,7 @@ END
 
     a.  Игнорируйте команды, которые невозможно выполнить в базе данных конечной точки. Необходимо устранить несовместимость схем. Отмените исходные изменения схемы, если несовместимость влияет на приложение.
 
-    b.  Примените вручную те команды, которые должны быть применены.
+    б)  Примените вручную те команды, которые должны быть применены.
 
 1.  Обновите таблицу журнала изменений схемы и задайте для последнего примененного идентификатора правильное значение.
 
@@ -224,7 +224,7 @@ END
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
+    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

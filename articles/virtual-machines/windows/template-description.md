@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: efd645faf3bf85f181b086fea8e55b0ab78be412
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: e32e2833edc7027a984bb27b34608e4b1b898113
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412858"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55767090"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -164,7 +164,7 @@ ms.locfileid: "54412858"
 
 - Для REST API выполните операцию [вывода списка всех поставщиков ресурсов](https://docs.microsoft.com/rest/api/resources/providers).
 - В PowerShell используйте командлет [Get-AzureRmResourceProvider](/powershell/module/azurerm.resources/get-azurermresourceprovider).
-- Azure CLI: [az provider show](https://docs.microsoft.com/cli/azure/provider#az_provider_show)
+- Azure CLI: [az provider show](https://docs.microsoft.com/cli/azure/provider)
 
 ## <a name="parameters-and-variables"></a>Параметры и переменные
 

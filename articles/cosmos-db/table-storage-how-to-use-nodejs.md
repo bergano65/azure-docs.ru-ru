@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: b32fd36c5fd546f7d2138cb2b48ee2854667f948
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 58022ca4f605b4672cd9b6e22993fca8ff6dc591
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044269"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510958"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -56,34 +56,34 @@ ms.locfileid: "54044269"
 ### <a name="import-the-package"></a>Импорт пакета
 Добавьте следующий код в начало файла **server.js** в приложении:
 
-```nodejs
+```javascript
 var azure = require('azure-storage');
 ```
 
 ## <a name="add-an-azure-storage-connection"></a>Добавление подключения к службе хранилища Azure
 Модуль Azure считывает переменные среды AZURE_STORAGE_ACCOUNT и AZURE_STORAGE_ACCESS_KEY или AZURE_STORAGE_CONNECTION_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **TableService**необходимо указать сведения об учетной записи. Например, следующий код создает объект **TableService**.
 
-```nodejs
+```javascript
 var tableSvc = azure.createTableService('myaccount', 'myaccesskey');
 ```
 
 ## <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
 Чтобы добавить подключение к Azure Cosmos DB, создайте объект **TableService** и укажите имя учетной записи, первичный ключ и конечную точку. Эти значения можно скопировать из раздела **Параметры** > **Строка подключения** на портале Azure для вашей учетной записи Cosmos DB. Например: 
 
-```nodejs
+```javascript
 var tableSvc = azure.createTableService('myaccount', 'myprimarykey', 'myendpoint');
 ```  
 
 ## <a name="create-a-table"></a>Создание таблицы
 Следующий код создает объект **TableService** и использует его для создания новой таблицы. 
 
-```nodejs
+```javascript
 var tableSvc = azure.createTableService();
 ```
 
 Вызов **createTableIfNotExists** создает новую таблицу с определенным именем, если она еще не существует. В следующем примере создается новая таблица с именем "mytable", если она еще не создана:
 
-```nodejs
+```javascript
 tableSvc.createTableIfNotExists('mytable', function(error, result, response){
   if(!error){
     // Table exists or created
@@ -96,13 +96,13 @@ tableSvc.createTableIfNotExists('mytable', function(error, result, response){
 ### <a name="filters"></a>Фильтры
 К операциям, выполняемым с помощью **TableService**, можно применить дополнительную фильтрацию. Фильтровать можно операции ведения журнала, автоматические повторы и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
 
-```nodejs
+```javascript
 function handle (requestOptions, next)
 ```
 
 Выполнив предварительную обработку параметров запроса, метод должен вызвать функцию **next**, передав ему обратный вызов со следующей сигнатурой.
 
-```nodejs
+```javascript
 function (returnObject, finalCallback, next)
 ```
 
@@ -110,7 +110,7 @@ function (returnObject, finalCallback, next)
 
 В пакет SDK Azure для Node.js включены два фильтра, реализующие логику повторных попыток: **ExponentialRetryPolicyFilter** и **LinearRetryPolicyFilter**. Следующий код создает объект **TableService**, использующий фильтр **ExponentialRetryPolicyFilter**:
 
-```nodejs
+```javascript
 var retryOperations = new azure.ExponentialRetryPolicyFilter();
 var tableSvc = azure.createTableService().withFilter(retryOperations);
 ```
@@ -125,7 +125,7 @@ var tableSvc = azure.createTableService().withFilter(retryOperations);
 
 Ниже приводится пример задания сущности. Обратите внимание, что **dueDate** определяется как тип **Edm.DateTime**. Задание типа необязательно, типы будут выведены, если они не заданы.
 
-```nodejs
+```javascript
 var task = {
   PartitionKey: {'_':'hometasks'},
   RowKey: {'_': '1'},
@@ -141,7 +141,7 @@ var task = {
 
 Чтобы создать сущность, можно также использовать **entityGenerator** . В следующем примере код создает сущность для той же задачи с использованием **entityGenerator**.
 
-```nodejs
+```javascript
 var entGen = azure.TableUtilities.entityGenerator;
 var task = {
   PartitionKey: entGen.String('hometasks'),
@@ -153,7 +153,7 @@ var task = {
 
 Чтобы добавить сущность в таблицу, передайте объект сущности в метод **insertEntity** .
 
-```nodejs
+```javascript
 tableSvc.insertEntity('mytable',task, function (error, result, response) {
   if(!error){
     // Entity inserted
@@ -165,7 +165,7 @@ tableSvc.insertEntity('mytable',task, function (error, result, response) {
 
 Пример ответа:
 
-```nodejs
+```javascript
 { '.metadata': { etag: 'W/"datetime\'2015-02-25T01%3A22%3A22.5Z\'"' } }
 ```
 
@@ -186,7 +186,7 @@ tableSvc.insertEntity('mytable',task, function (error, result, response) {
 
 В следующем примере показано обновление сущности с помощью **replaceEntity**.
 
-```nodejs
+```javascript
 tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response){
   if(!error) {
     // Entity updated
@@ -214,7 +214,7 @@ tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response)
 
  В следующем примере показана отправка двух сущностей в пакете:
 
-```nodejs
+```javascript
 var task1 = {
   PartitionKey: {'_':'hometasks'},
   RowKey: {'_': '1'},
@@ -254,7 +254,7 @@ tableSvc.executeBatch('mytable', batch, function (error, result, response) {
 ## <a name="retrieve-an-entity-by-key"></a>Получение сущности по ключу
 Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey**, используйте метод **retrieveEntity**.
 
-```nodejs
+```javascript
 tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, response){
   if(!error){
     // result contains the entity
@@ -276,7 +276,7 @@ tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, res
 
 Следующий пример собирает запрос, который возвращает первые пять элементов с использованием ключа PartitionKey со значением "hometasks".
 
-```nodejs
+```javascript
 var query = new azure.TableQuery()
   .top(5)
   .where('PartitionKey eq ?', 'hometasks');
@@ -284,7 +284,7 @@ var query = new azure.TableQuery()
 
 Так как параметр **select** не используется, возвращаются все поля. Чтобы выполнить запрос сущности в таблице, используйте **queryEntities**. В следующем примере используется запрос для возврата сущностей из таблицы 'mytable'.
 
-```nodejs
+```javascript
 tableSvc.queryEntities('mytable',query, null, function(error, result, response) {
   if(!error) {
     // query was successful
@@ -298,7 +298,7 @@ tableSvc.queryEntities('mytable',query, null, function(error, result, response) 
 Запрос к таблице может получить лишь несколько полей сущности.
 Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate**.
 
-```nodejs
+```javascript
 var query = new azure.TableQuery()
   .select(['description', 'dueDate'])
   .top(5)
@@ -308,7 +308,7 @@ var query = new azure.TableQuery()
 ## <a name="delete-an-entity"></a>Удаление сущности
 Сущность можно удалить с помощью ее ключей раздела и строки. В этом примере объект **task1** содержит значения ключей **RowKey** и **PartitionKey** удаляемой сущности. Затем этот объект передается в метод **deleteEntity** .
 
-```nodejs
+```javascript
 var task = {
   PartitionKey: {'_':'hometasks'},
   RowKey: {'_': '1'}
@@ -329,7 +329,7 @@ tableSvc.deleteEntity('mytable', task, function(error, response){
 ## <a name="delete-a-table"></a>Удаление таблицы
 Следующий код удаляет таблицу из учетной записи хранения.
 
-```nodejs
+```javascript
 tableSvc.deleteTable('mytable', function(error, response){
     if(!error){
         // Table deleted
@@ -346,7 +346,7 @@ tableSvc.deleteTable('mytable', function(error, response){
 
 При выполнении запросов для экземпляра объекта запроса и функции обратного вызова можно указать параметр `continuationToken`.
 
-```nodejs
+```javascript
 var nextContinuationToken = null;
 dc.table.queryEntities(tableName,
     query,
@@ -372,7 +372,7 @@ dc.table.queryEntities(tableName,
 
 В следующем примере создается новая общая политика, которая позволяет держателю подписи SAS запрашивать ('r') в таблице в течение 100 минут с момента своего создания.
 
-```nodejs
+```javascript
 var startDate = new Date();
 var expiryDate = new Date(startDate);
 expiryDate.setMinutes(startDate.getMinutes() + 100);
@@ -394,7 +394,7 @@ var host = tableSvc.host;
 
 Клиентское приложение далее использует подпись SAS с помощью **TableServiceWithSAS** для выполнения операций с таблицей. Следующий пример выполняет подключение к таблице и выполняет запрос. Сведения о формате tableSAS см. в статье об [использовании подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#examples-of-sas-uris). 
 
-```nodejs
+```javascript
 // Note in the following command, host is in the format: `https://<your_storage_account_name>.table.core.windows.net` and the tableSAS is in the format: `sv=2018-03-28&si=saspolicy&tn=mytable&sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D`;
 
 var sharedTableService = azure.createTableServiceWithSas(host, tableSAS);
@@ -415,7 +415,7 @@ sharedTableService.queryEntities(query, null, function(error, result, response) 
 
 ACL реализуется с помощью массива политик доступа, каждая из которых связана со своим идентификатором. В следующем примере определяются две политики, по одной для пользователей user1 и user2:
 
-```nodejs
+```javascript
 var sharedAccessPolicy = {
   user1: {
     Permissions: azure.TableUtilities.SharedAccessPermissions.QUERY,
@@ -432,7 +432,7 @@ var sharedAccessPolicy = {
 
 В этом примере код получает текущий список ACL для таблицы **hometasks**, а затем добавляет новые политики с помощью **setTableAcl**. Такой подход допускает выполнение:
 
-```nodejs
+```javascript
 var extend = require('extend');
 tableSvc.getTableAcl('hometasks', function(error, result, response) {
 if(!error){
@@ -448,7 +448,7 @@ if(!error){
 
 После задания списка управления доступом можно создать подписанный URL-адрес на основе идентификатора политики. В следующем примере создается новая подпись SAS для пользователя 'user2':
 
-```nodejs
+```javascript
 tableSAS = tableSvc.generateSharedAccessSignature('hometasks', { Id: 'user2' });
 ```
 

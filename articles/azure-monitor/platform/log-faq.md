@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: 693d66c6b56fd759086236ae0252d2c6f1b5693e
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 0edb3441083a6eb6f95b3ca3ade2bf0b1582858d
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55301260"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564958"
 ---
 # <a name="log-analytics-faq"></a>Часто задаваемые вопросы по Log Analytics
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы о Log Analytics в Microsoft Azure. Если у вас возникли дополнительные вопросы о Log Analytics, задайте их на [форуме](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -55,7 +55,7 @@ ms.locfileid: "55301260"
 
 ### <a name="q-why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-in-logs-after-drilling-in-from-vm"></a>В. Почему я получаю ошибку? Почему после перехода в систему из виртуальной машины я получаю в журналах ошибку: "Зарегистрируйте поставщик ресурсов Microsoft.Insights для этой подписки, чтобы выполнить этот запрос"? 
 
-Ответ. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее может потребоваться зарегистрировать вручную некоторые поставщики ресурсов. При этом настраивается подписка для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. См. дополнительные сведения о [поставщиках и типах ресурсов](../../azure-resource-manager/resource-manager-supported-services.md#portal).
+Ответ. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее может потребоваться зарегистрировать вручную некоторые поставщики ресурсов. При этом настраивается подписка для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. См. дополнительные сведения о [поставщиках и типах ресурсов](../../azure-resource-manager/resource-manager-supported-services.md#azure-portal).
 
 ### <a name="q-why-am-i-am-getting-no-access-error-message-when-accessing-logs-from-a-vm-page"></a>В. Почему я получаю сообщение об ошибке "Нет доступа" при доступе к журналам со страницы виртуальной машины? 
 

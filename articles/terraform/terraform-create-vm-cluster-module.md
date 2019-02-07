@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/19/2017
-ms.openlocfilehash: efeae877161b2632112938d63b6f6e31cce96ac5
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: d5a820da94254fe0da416d9219f7582d3a4241cb
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077204"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55696172"
 ---
 # <a name="create-a-vm-cluster-with-terraform-using-the-module-registry"></a>Создание кластера виртуальных машин с помощью Terraform с использованием реестра модулей
 
@@ -31,7 +31,7 @@ ms.locfileid: "54077204"
 ## <a name="set-up-authentication-with-azure"></a>Настройка аутентификации в Azure
 
 > [!TIP]
-> При [использовании переменной среды Terraform](/azure/virtual-machines/linux/terraform-install-configure#set-environment-variables) или выполнении этого руководства в [Azure Cloud Shell](/azure/cloud-shell/overview) пропустите этот шаг.
+> При [использовании переменной среды Terraform](/azure/virtual-machines/linux/terraform-install-configure) или выполнении этого руководства в [Azure Cloud Shell](/azure/cloud-shell/overview) пропустите этот шаг.
 
  Просмотрите статью об [установке Terraform и настройке доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure), чтобы создать субъект-службу Azure. Используйте этот субъект-службу для заполнения нового файла `azureProviderAndCreds.tf` в пустом каталоге с помощью следующего кода:
 

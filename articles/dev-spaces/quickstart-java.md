@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: mmontwil
-ms.openlocfilehash: c448521d7e1ce70a44ca23f58d0034ca2041cbed
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 24bb5a044db813e1ee3cf2c9ff3e36a9b9ff86d7
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453439"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55657065"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-java-and-vs-code"></a>Краткое руководство. Создание среды разработки Kubernetes с помощью Azure Dev Spaces (Java и VS Code)
 
@@ -27,7 +27,7 @@ ms.locfileid: "55453439"
 - Отладка кода в среде разработки с помощью VS Code
 
 > [!Note]
-> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице. Можно также ознакомиться с более подробным [руководством](get-started-netcore.md).
+> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице. Можно также ознакомиться с более подробным [руководством](get-started-java.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -137,4 +137,4 @@ public String greeting()
 Узнайте, каким образом в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, работая с разными версиями или ветвями кода в разных средах.
 
 > [!div class="nextstepaction"]
-> [Работа с несколькими контейнерами и командной разработкой](team-development-java.md)
+> [Работа с несколькими контейнерами и командной разработкой](multi-service-java.md)

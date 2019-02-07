@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: justhu, elisol
 ms.custom: aaddev
-ms.openlocfilehash: ae9412ed7c02d88e7d0c35c6ea0f95da755b84d4
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: f9a1b303fb66e71ffb1834c5b5fb4796867a0944
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55097050"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819422"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Практическое руководство: Вход любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -38,7 +38,7 @@ ms.locfileid: "55097050"
 1. [Измените тип регистрации вашего приложения на мультитенантную.](#update-registration-to-be-multi-tenant)
 2. [Обновите код для отправки запросов в конечную точку /common.](#update-your-code-to-send-requests-to-common)
 3. [Обновите код для обработки нескольких значений издателя.](#update-your-code-to-handle-multiple-issuer-values)
-4. [Изучите особенности получения согласия пользователя и администратора и внесите соответствующие изменения в код.](#understanding-user-and-admin-consent)
+4. Изучите особенности получения согласия пользователя и администратора и внесите соответствующие изменения в код.
 
 Давайте рассмотрим каждый из этих шагов подробнее. Вы также можете сразу перейти к [этому списку примеров кода для мультитенантных приложений][AAD-Samples-MT].
 

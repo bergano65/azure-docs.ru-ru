@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: lahugh
-ms.openlocfilehash: b296dce0a83971626c8e66ddc314c4d1e07d8602
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 0bc43b82a987ab065677bdbb56de73ef341c249d
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52840373"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752132"
 ---
 # <a name="use-a-custom-image-to-create-a-pool-of-virtual-machines"></a>Использование пользовательского образа для создания пула виртуальных машин 
 
@@ -69,7 +69,7 @@ ms.locfileid: "52840373"
 
 ### <a name="create-an-image-from-one-or-more-snapshots"></a>Создание образа на основе одного или нескольких моментальных снимков
 
-Чтобы создать управляемый образ на основе моментального снимка, используйте средства командной строки Azure, такие как команда [az image create](/cli/azure/image#az_image_create). Можно создать образ, указав моментальный снимок диска ОС и при необходимости один или несколько моментальных снимков дисков данных.
+Чтобы создать управляемый образ на основе моментального снимка, используйте средства командной строки Azure, такие как команда [az image create](/cli/azure/image). Можно создать образ, указав моментальный снимок диска ОС и при необходимости один или несколько моментальных снимков дисков данных.
 
 ## <a name="create-a-pool-from-a-custom-image-in-the-portal"></a>Создание пула на основе пользовательского образа на портале
 

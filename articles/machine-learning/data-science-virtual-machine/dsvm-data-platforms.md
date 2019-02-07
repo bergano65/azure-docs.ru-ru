@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: 744c8d6488b9b0688126d305426f90647a89d4be
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 27e0deae9c35ad8fa00659e3e3e505cace6e9014
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478089"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733439"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
@@ -105,5 +105,5 @@ SQL Server устанавливается обычным образом. Его 
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|
 
 
-Библиотеки для доступа к данным из большого двоичного объекта или хранилища Azure Data Lake (ADLS) и библиотеки с использованием машинного обучения MMLSpark корпорации Майкрософт предварительно установлены в JAR-файлах $SPARK_HOME. Эти JAR-файлы автоматически загружаются при запуске Spark. По умолчанию Spark использует данные на локальном диске. Чтобы экземпляр Spark на DSVM получил доступ к данным, хранящимся в большом двоичном объекте Azure или ADLS, необходимо создать и настроить файл `core-site.xml` на основе шаблона, хранящегося в файле $SPARK_HOME/conf/core-site.xml.template (в котором находятся заполнители для конфигураций большого двоичного объекта и ADLS), с правильными учетными данными для большого двоичного объекта Azure и хранилища Azure Data Lake. Более подробные инструкции по созданию учетных данных службы ADLS можно найти [здесь](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-authenticate-using-active-directory#create-an-active-directory-application). После ввода учетных данных для большого двоичного объекта Azure или ADLS в файле core-site.xml можно ссылаться на данные, хранящиеся в этих источниках данных, используя префикс универсального кода ресурса wasb:// или adl://. 
+Библиотеки для доступа к данным из большого двоичного объекта или хранилища Azure Data Lake (ADLS) и библиотеки с использованием машинного обучения MMLSpark корпорации Майкрософт предварительно установлены в JAR-файлах $SPARK_HOME. Эти JAR-файлы автоматически загружаются при запуске Spark. По умолчанию Spark использует данные на локальном диске. Чтобы экземпляр Spark на DSVM получил доступ к данным, хранящимся в большом двоичном объекте Azure или ADLS, необходимо создать и настроить файл `core-site.xml` на основе шаблона, хранящегося в файле $SPARK_HOME/conf/core-site.xml.template (в котором находятся заполнители для конфигураций большого двоичного объекта и ADLS), с правильными учетными данными для большого двоичного объекта Azure и хранилища Azure Data Lake. Более подробные инструкции по созданию учетных данных службы ADLS можно найти [здесь](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-authenticate-using-active-directory). После ввода учетных данных для большого двоичного объекта Azure или ADLS в файле core-site.xml можно ссылаться на данные, хранящиеся в этих источниках данных, используя префикс универсального кода ресурса wasb:// или adl://. 
 

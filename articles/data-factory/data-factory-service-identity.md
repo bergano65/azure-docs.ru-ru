@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: jingwang
-ms.openlocfilehash: a42f5f441dd63f8d6a7f5bd1cfdf0452d025816e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 068929bbde8e4c1411004b45fc77f0188de43ff8
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54017690"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814220"
 ---
 # <a name="azure-data-factory-service-identity"></a>Удостоверение службы фабрики данных Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "54017690"
 
 - [Создание удостоверения службы с помощью PowerShell](#generate-service-identity-using-powershell)
 - [Создание удостоверения службы с помощью REST API](#generate-service-identity-using-rest-api)
-- [Создание удостоверения службы с помощью шаблона Azure Resource Manager](#generate-service-identity-using-azure-resource-manager-template)
+- Создание удостоверения службы с помощью шаблона Azure Resource Manager
 - [Создание удостоверения службы с помощью пакета SDK](#generate-service-identity-using-sdk)
 
 >[!NOTE]
@@ -192,4 +192,4 @@ Type                  : ServicePrincipal
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)
 - [Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
 
-Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, на основе которых создается идентификация фабрики данных, см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](~/articles/active-directory/msi-overview.md). 
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, на основе которых создается идентификация фабрики данных, см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview). 

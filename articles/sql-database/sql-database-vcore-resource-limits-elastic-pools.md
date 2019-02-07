@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/30/2019
-ms.openlocfilehash: 48cdd064155bfbdfa2fef2ce5a8410e4c95e4c3b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/01/2019
+ms.openlocfilehash: cb4d3c4d15dded3c7f90a1e3cf118ca10371dcb1
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461072"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55701001"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-elastic-pools"></a>Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер
 
@@ -198,7 +198,7 @@ ms.locfileid: "55461072"
 |:--- | --: |--: |--: |--: |---: | --: |--: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|5|5|5|5|5|5|5|
 |Виртуальные ядра|2|4.|6|8|10|12|14|
-|Память (ГБ)|11|22|33|44|55|66|77|
+|Память (ГБ)|10.2|20,4|30,6|40,8|51|61,2|71,4|
 |Поддержка columnstore|Yes|Да|Да|Да|Да|Да|Yes|
 |Хранилище выполняющейся в памяти OLTP (ГБ)|1,571|3,142|4,713|6,284|8,655|11,026|13,397|
 |Максимальный размер данных (ГБ)|1024|1024|1024|1536|1536|1536|1536|

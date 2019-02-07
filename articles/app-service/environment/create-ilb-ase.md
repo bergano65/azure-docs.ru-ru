@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 06/12/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: edea614065d67bab23de29e5cef3b56c69905a90
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: a707ae6959b035ae0bcc05ead027dabd528e1b59
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188615"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747515"
 ---
 # <a name="create-and-use-an-internal-load-balancer-with-an-app-service-environment"></a>Создание и использование внутренней подсистемы балансировки нагрузки с использованием среды службы приложений #
 
@@ -90,7 +90,7 @@ ms.locfileid: "54188615"
 
 8. Щелкните **ОК**, а затем выберите **Создать**.
 
-    ![Создание ASE][1]
+    ![создание ASE][1]
 
 В колонке **Виртуальная сеть** есть параметр **Конфигурация виртуальной сети**. Он позволяет выбрать внешний или внутренний виртуальный IP-адрес. По умолчанию используется значение **Внешний**. Если выбрать значение **Внешний**, для среды службы приложений будет использоваться виртуальный IP-адрес, доступный из Интернета. Если выбрать **внутренний** виртуальный IP-адрес, то для ASE будет настроена внутренний балансировщик нагрузки с IP-адресом в виртуальной сети.
 
@@ -119,7 +119,7 @@ ms.locfileid: "54188615"
 
 1. Нажмите кнопку **Создать**. Чтобы приложение отображалось на панели мониторинга, установите флажок **Закрепить на панели мониторинга**.
 
-    ![Удаление плана службы приложений][2]
+    ![Создание плана служб приложений][2]
 
     Доменное имя в **имени приложения** обновится с учетом домена ASE.
 
@@ -172,7 +172,7 @@ SSL-сертификат необходимо преобразовать в PFX-
 
     a. Если доменное имя вашей среды ASE — _.ilbase.com_ и вы создали приложение с именем _mytestapp_, его адрес — _mytestapp.ilbase.com_. Позднее вы настроите разрешение имени _mytestapp.ilbase.com_ в адрес ILB. (В Windows файл hosts находится в папке C:\Windows\System32\drivers\…\_)
 
-    b. Чтобы протестировать публикацию веб-развертывания или доступ к расширенной консоли, создайте запись для _mytestapp.scm.ilbase.com_.
+    б) Чтобы протестировать публикацию веб-развертывания или доступ к расширенной консоли, создайте запись для _mytestapp.scm.ilbase.com_.
 
 5. Воспользуйтесь браузером на этой виртуальной машине и перейдите по адресу https://mytestapp.ilbase.com. (Или перейдите к любому имени приложения в вашем домене.)
 
@@ -223,8 +223,13 @@ SSL-сертификат необходимо преобразовать в PFX-
 
 * Сведения о том, как начать работу со средами службы приложений, см. в статье [Общие сведения о среде службы приложений][Intro].
  
+
 <!--Image references-->
-[1]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-network.png [2]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-webapp.png [3]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-certificate.png [4]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-certificate2.png [5]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-ipaddresses.png
+[1]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-network.png
+[2]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-webapp.png
+[3]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-certificate.png
+[4]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-certificate2.png
+[5]: ./media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase-ipaddresses.png
 
 <!--Links-->
 [Intro]: ./intro.md

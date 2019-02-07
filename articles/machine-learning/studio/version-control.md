@@ -1,7 +1,21 @@
 ---
-заголовок: Управление жизненным циклом приложений titleSuffix: Студия машинного обучения Azure description: Применяйте лучшие методики по управлению жизненным циклом приложений в Студии машинного обучения Azure services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=haining, previous-author=hning86 ms.date: 27.10.2016
+title: Управление жизненным циклом приложения
+titleSuffix: Azure Machine Learning Studio
+description: Использование рекомендаций по управлению жизненным циклом приложений в студии машинного обучения Azure
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: previous-ms.author=haining, previous-author=hning86
+ms.date: 10/27/2016
+ms.openlocfilehash: 26e469076e16f57300cf3e385620a723ddf51a4c
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510737"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio"></a>Управление жизненным циклом приложений в студии машинного обучения Azure
 Студия машинного обучения Azure — это средство для разработки экспериментов машинного обучения и их применения на базе облачной платформы Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Студия машинного обучения Azure поддерживает стандартные методы управления жизненным циклом приложения (ALM) — от управления версиями разных ресурсов до автоматического выполнения и развертывания. В этой статье рассматриваются некоторые возможности и подходы.

@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 061987105eac976e40a003a8108921ed0008630d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 71a5ca62dc5d21e30a4944f8be57a77040f4f204
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55169167"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733694"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В [связанной статье об Azure AD B2C](active-directory-b2c-custom-rest-api-netfw.md) вы создаете службу RESTful (веб-API), которая интегрируется с Azure Active Directory B2C (Azure AD B2C) в пути взаимодействия пользователя без использования проверки подлинности. 
+В [связанной статье об Azure AD B2C](active-directory-b2c-custom-rest-api-netfw.md) вы создаете службу RESTful (веб-API), которая интегрируется с Azure Active Directory B2C (Azure AD B2C) в пути взаимодействия пользователя без использования проверки подлинности.
 
-В этой статье вы добавите обычную проверку подлинности HTTP к вашей службе RESTful, чтобы дать возможность проверенным пользователям, включая B2C, получать доступ к вашему API. При использовании обычной проверки подлинности HTTP учетные данные пользователя (идентификатор и секрет приложения) указываются в настраиваемой политике. 
+В этой статье вы добавите обычную проверку подлинности HTTP к вашей службе RESTful, чтобы дать возможность проверенным пользователям, включая B2C, получать доступ к вашему API. При использовании обычной проверки подлинности HTTP учетные данные пользователя (идентификатор и секрет приложения) указываются в настраиваемой политике.
 
 Дополнительные сведения см. в статье [Basic authentication in ASP.NET web API](https://docs.microsoft.com/aspnet/web-api/overview/security/basic-authentication) (Обычная проверка подлинности в веб-API ASP.NET).
 
@@ -33,7 +33,7 @@ ms.locfileid: "55169167"
 ## <a name="step-1-add-authentication-support"></a>Шаг 1. Добавление поддержки проверки подлинности
 
 ### <a name="step-11-add-application-settings-to-your-projects-webconfig-file"></a>Шаг 1.1. Добавление параметров приложения в файл web.config проекта
-1. Откройте ранее созданный проект Visual Studio. 
+1. Откройте ранее созданный проект Visual Studio.
 
 2. Добавьте следующие параметры приложения в элемент `appSettings` в файле web.config:
 
@@ -205,7 +205,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
         {
             public void Configuration(IAppBuilder app)
             {
-                    app.Use<ClientAuthMiddleware>();
+                app.Use<ClientAuthMiddleware>();
             }
         }
     }
@@ -220,7 +220,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 Чтобы опубликовать проект, в обозревателе решений щелкните правой кнопкой мыши проект **Contoso.AADB2C.API** и выберите **Опубликовать**.
 
 ## <a name="step-3-add-the-restful-services-app-id-and-app-secret-to-azure-ad-b2c"></a>Шаг 3. Добавление идентификатора и секрета приложения службы RESTful в Azure AD B2C
-Защитив службу RESTful при помощи идентификатора (имя пользователя) и секрета клиента, следует сохранить эти учетные данные в клиенте Azure AD B2C. Пользовательская политика предоставляет учетные данные при вызове служб RESTful. 
+Защитив службу RESTful при помощи идентификатора (имя пользователя) и секрета клиента, следует сохранить эти учетные данные в клиенте Azure AD B2C. Пользовательская политика предоставляет учетные данные при вызове служб RESTful.
 
 ### <a name="step-31-add-a-restful-services-client-id"></a>Шаг 3.1. Добавление идентификатора клиента служб RESTful
 1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
@@ -275,7 +275,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     <Item Key="AuthenticationType">Basic</Item>
     ```
 
-5. Сразу после завершения элемента `<Metadata>` добавьте следующий фрагмент XML-кода: 
+5. Сразу после завершения элемента `<Metadata>` добавьте следующий фрагмент XML-кода:
 
     ```xml
     <CryptographicKeys>

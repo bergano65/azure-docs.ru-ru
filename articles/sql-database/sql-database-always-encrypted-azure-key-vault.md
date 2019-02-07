@@ -13,12 +13,12 @@ ms.author: vanto
 ms.reviewer: ''
 manager: craigg
 ms.date: 01/03/2019
-ms.openlocfilehash: e988a3c86302b875f8393264279e4a65c45ba1eb
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: fa37a83799ec50c7a8a87a0ac8a3232035a49234
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041243"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755668"
 ---
 # <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted. защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
 
@@ -81,7 +81,7 @@ Always Encrypted — это новая технология шифровани�
 ## <a name="create-a-blank-sql-database"></a>Создание пустой базы данных SQL
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Выберите **Создать ресурс** > **Базы данных** > **База данных SQL**.
-3. Создайте **пустую** базу данных **Clinic** на новом или имеющемся сервере. Подробные инструкции по созданию базы данных на портале Azure см. в статье [Краткое руководство. Начало работы с базой данных SQL Azure](sql-database-get-started-portal.md).
+3. Создайте **пустую** базу данных **Clinic** на новом или имеющемся сервере. Подробные инструкции по созданию базы данных на портале Azure см. в статье [Краткое руководство. Начало работы с базой данных SQL Azure](sql-database-single-database-get-started.md).
    
     ![Создание пустой базы данных](./media/sql-database-always-encrypted-azure-key-vault/create-database.png)
 

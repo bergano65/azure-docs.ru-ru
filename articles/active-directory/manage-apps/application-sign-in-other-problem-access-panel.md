@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviewer: japere
-ms.openlocfilehash: 529191cf867b6003b0c2eab5ed919087277c7095
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 6dfc0f80285dfd7da6e78d7cbf9c993fed388a2b
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178041"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813540"
 ---
 # <a name="problems-signing-in-to-an-application-from-the-access-panel"></a>Проблемы при входе в приложение из панели доступа
 
@@ -104,7 +104,7 @@ ms.locfileid: "55178041"
 
 Чтобы настроить приложение из коллекции Azure AD, выполните указанные ниже действия.
 
--   [Добавление приложения из коллекции Azure AD](#add-an-application)
+-   Добавление приложения из коллекции Azure AD
 
 -   [Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)](#configure-single-sign-on-for-an-application-from-the-azure-ad-gallery)
 
@@ -114,7 +114,7 @@ ms.locfileid: "55178041"
 
 -   [Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)](#configure-single-sign-on-for-an-application-from-the-azure-ad-gallery)
 
--   [Назначение пользователей для приложения](#assign-users-to-the-application)
+-   Назначение пользователей для приложения
 
 ### <a name="add-an-application-from-the-azure-ad-gallery"></a>Добавление приложения из коллекции Azure AD
 
@@ -362,9 +362,9 @@ ms.locfileid: "55178041"
 
 Чтобы настроить приложение из коллекции Azure AD, выполните указанные ниже действия.
 
--   [Добавление приложения из коллекции Azure AD](#add-an-application)
+-   Добавление приложения из коллекции Azure AD
 
--   [настройте приложение для единого входа по паролю](#configure-the-application);
+-   Настройка приложения для единого входа на основе пароля
 
 ### <a name="add-an-application-from-the-azure-ad-gallery"></a>Добавление приложения из коллекции Azure AD
 

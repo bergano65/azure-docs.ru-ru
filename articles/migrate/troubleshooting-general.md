@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: raynew
-ms.openlocfilehash: ebd374cc8792545d1db57f624a5831dc9ded272f
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: bb9d22b45011f5156a63444ec8e1651f148993b6
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102131"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751911"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -38,7 +38,7 @@ ms.locfileid: "55102131"
 
    ![Рабочая область LA](./media/troubleshooting-general/LA-workspace.png)
 
-   b. Если вы уже удалили проект миграции, щелкните **Группы ресурсов** на панели слева на портале Azure и перейдите к группе ресурсов, в которой была создана рабочая область, а затем перейдите к нему.
+   б) Если вы уже удалили проект миграции, щелкните **Группы ресурсов** на панели слева на портале Azure и перейдите к группе ресурсов, в которой была создана рабочая область, а затем перейдите к нему.
 2. Следуйте инструкциям из [этой статьи](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace), чтобы удалить рабочую область.
 
 ### <a name="migration-project-creation-failed-with-error-requests-must-contain-user-identity-headers"></a>Создание проекта миграции завершилось ошибкой *Requests must contain user identity headers* (Запросы должны содержать заголовки удостоверений пользователей)
@@ -55,7 +55,7 @@ ms.locfileid: "55102131"
 
   a. В окне командной строки с правами администратора выполните следующую команду: ```@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"```
 
-  b. В окне Windows PowerShell с правами администратора выполните следующую команду: ```choco install armclient```
+  б) В окне Windows PowerShell с правами администратора выполните следующую команду: ```choco install armclient```
 
 2.  Получите URL-адрес загрузки для отчета об оценке с помощью REST API службы "Миграция Azure".
 
@@ -63,7 +63,7 @@ ms.locfileid: "55102131"
 
   Откроется всплывающее окно входа в Azure, и вам необходимо будет выполнить вход в Azure.
 
-  b.    В том же окне PowerShell выполните следующую команду, чтобы получить URL-адрес загрузки для отчета об оценке. Замените параметры URI соответствующими значениями. Пример запроса API приведен ниже.
+  б)    В том же окне PowerShell выполните следующую команду, чтобы получить URL-адрес загрузки для отчета об оценке. Замените параметры URI соответствующими значениями. Пример запроса API приведен ниже.
 
        ```armclient POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}/assessments/{assessmentName}/downloadUrl?api-version=2018-02-02```
 
@@ -117,7 +117,7 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 
 **Сборщик не может подключиться к Интернету из-за ошибки при проверке сертификата**
 
-Это может произойти, если вы подключаетесь к Интернету через перехватывающий прокси-сервер и если вы не импортировали сертификат прокси-сервера на виртуальную машину сборщика. Сертификат прокси-сервера можно импортировать с помощью действий, описанных [здесь](https://docs.microsoft.com/azure/migrate/concepts-collector#internet-connectivity).
+Это может произойти, если вы подключаетесь к Интернету через перехватывающий прокси-сервер и если вы не импортировали сертификат прокси-сервера на виртуальную машину сборщика. Сертификат прокси-сервера можно импортировать с помощью действий, описанных [здесь](https://docs.microsoft.com/azure/migrate/concepts-collector).
 
 **Сборщику не удается подключиться к проекту, используя идентификатор и ключ проекта, скопированные на портале.**
 
@@ -157,12 +157,12 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 
    a. Закройте веб-браузер на устройстве.
 
-   b. Остановите службу "Сборщик Миграции Azure", перейдя к диспетчеру служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщика Миграции Azure" правой кнопкой мыши и выберите "Остановить".
+   б) Остановите службу "Сборщик Миграции Azure", перейдя к диспетчеру служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщика Миграции Azure" правой кнопкой мыши и выберите "Остановить".
 
    c. Удалите все папки, начинающиеся с "VMware", из следующих расположений: C:\Program Files\WindowsPowerShell\Modules;  
         C:\Program Files (x86)\WindowsPowerShell\Modules.
 
-   d. Перезапустите службу "Сборщик Миграции Azure" в диспетчере служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщик Миграции Azure" правой кнопкой и выберите "Запустить".
+   4.3. Перезапустите службу "Сборщик Миграции Azure" в диспетчере служб Windows (откройте "Выполнить" и введите services.msc, чтобы открыть диспетчер служб Windows). Щелкните службу "Сборщик Миграции Azure" правой кнопкой и выберите "Запустить".
    
    д. Дважды щелкните ярлык "Запуск сборщика" на рабочем столе, чтобы запустить приложение сборщика. Приложение сборщика должно автоматически скачивать и устанавливать требуемую версию PowerCLI.
 
@@ -172,7 +172,7 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 
 Не удается подключиться к vCenter Server Servername.com:9443 из-за ошибки: There was no endpoint listening at https://Servername.com:9443/sdk that could accept the message (Ни одна конечная точка, которая могла бы принять сообщение, не ожидала передачи данных по адресу https://Servername.com:9443/sdk).
 
-Проверьте, установлена ли последняя версия устройства сборщика. В противном случае обновите устройство до [последней версии](https://docs.microsoft.com/azure/migrate/concepts-collector#how-to-upgrade-collector).
+Проверьте, установлена ли последняя версия устройства сборщика. В противном случае обновите устройство до [последней версии](https://docs.microsoft.com/azure/migrate/concepts-collector).
 
 Если проблема не исчезает в последней версии, это может происходить, если компьютеру сборщика не удается разрешить указанное имя сервера vCenter Server, или если порт указан неправильно. Если порт не указан, сборщик по умолчанию будет пытаться подключиться к порту 443.
 

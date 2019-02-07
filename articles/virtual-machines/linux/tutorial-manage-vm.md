@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bc548ea23249f89fadcec481cc97b6ca3ed2b909
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 270479061ad40fdda9db06571ad4ef24b00d6c4d
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54466862"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55749148"
 ---
 # <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство. Создание виртуальных машин Linux и управление ими с помощью Azure CLI
 
@@ -40,7 +40,7 @@ ms.locfileid: "54466862"
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create). 
+Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group). 
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов следует создавать до виртуальной машины. В этом примере создается группа ресурсов с именем *myResourceGroupVM* в регионе *eastus*. 
 
@@ -52,7 +52,7 @@ az group create --name myResourceGroupVM --location eastus
 
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину, выполнив команду [az vm create](https://docs.microsoft.com/cli/azure/vm#az_vm_create). 
+Создайте виртуальную машину, выполнив команду [az vm create](https://docs.microsoft.com/cli/azure/vm). 
 
 При создании виртуальной машины доступно несколько вариантов, таких как образ операционной системы, определение размера диска и учетные данные администратора. В следующем примере создается виртуальная машина *myVM* под управлением Ubuntu Server. На виртуальной машине создается учетная запись пользователя с именем *azureuser*, а также ключи SSH, если их еще нет в расположении для ключей по умолчанию (*~/.ssh*):
 
@@ -98,7 +98,7 @@ exit
 
 Azure Marketplace содержит множество образов, которые можно использовать для создания виртуальных машин. На предыдущих шагах виртуальная машина создавалась с помощью образа Ubuntu. На этом шаге Azure CLI используется для поиска на сайте Marketplace образа CentOS, который затем используется для развертывания второй виртуальной машины. 
 
-Чтобы просмотреть список наиболее часто используемых образов, используйте команду [az vm image list](/cli/azure/vm/image#az_vm_image_list).
+Чтобы просмотреть список наиболее часто используемых образов, используйте команду [az vm image list](/cli/azure/vm/image).
 
 ```azurecli-interactive 
 az vm image list --output table
@@ -167,7 +167,7 @@ az vm create --resource-group myResourceGroupVM --name myVM2 --image OpenLogic:C
 
 ### <a name="find-available-vm-sizes"></a>Поиск всех доступных размеров виртуальных машин
 
-Чтобы просмотреть список доступных размеров виртуальных машин в определенном регионе, используйте команду [az vm list-sizes](/cli/azure/vm#az_vm_list_sizes). 
+Чтобы просмотреть список доступных размеров виртуальных машин в определенном регионе, используйте команду [az vm list-sizes](/cli/azure/vm). 
 
 ```azurecli-interactive 
 az vm list-sizes --location eastus --output table
@@ -198,7 +198,7 @@ az vm list-sizes --location eastus --output table
 
 ### <a name="create-vm-with-specific-size"></a>Создание виртуальной машины с определенным размером
 
-В предыдущем примере создания виртуальной машины размер не был указан, что привело к использованию размера по умолчанию. Размер виртуальной машины можно выбрать во время ее создания с помощью команды [az vm create](/cli/azure/vm#az_vm_create) и аргумента `--size`. 
+В предыдущем примере создания виртуальной машины размер не был указан, что привело к использованию размера по умолчанию. Размер виртуальной машины можно выбрать во время ее создания с помощью команды [az vm create](/cli/azure/vm) и аргумента `--size`. 
 
 ```azurecli-interactive 
 az vm create \
@@ -217,12 +217,12 @@ az vm create \
 az vm show --resource-group myResourceGroupVM --name myVM --query hardwareProfile.vmSize
 ```
 
-Перед изменением размера виртуальной машины проверьте, доступен ли желаемый размер в текущем кластере Azure. Команда [az vm list-vm-resize-options](/cli/azure/vm#az_vm_list_vm_resize_options) отображает список всех размеров. 
+Перед изменением размера виртуальной машины проверьте, доступен ли желаемый размер в текущем кластере Azure. Команда [az vm list-vm-resize-options](/cli/azure/vm) отображает список всех размеров. 
 
 ```azurecli-interactive 
 az vm list-vm-resize-options --resource-group myResourceGroupVM --name myVM --query [].name
 ```
-Если желаемый размер доступен, то размер виртуальной машины можно изменить во включенном состоянии, однако виртуальную машину нужно будет перезагрузить. Используйте команду [az vm resize]( /cli/azure/vm#az_vm_resize) для изменения размера.
+Если желаемый размер доступен, то размер виртуальной машины можно изменить во включенном состоянии, однако виртуальную машину нужно будет перезагрузить. Используйте команду [az vm resize]( /cli/azure/vm) для изменения размера.
 
 ```azurecli-interactive 
 az vm resize --resource-group myResourceGroupVM --name myVM --size Standard_DS4_v2
@@ -264,7 +264,7 @@ az vm start --resource-group myResourceGroupVM --name myVM
 
 ### <a name="find-the-power-state"></a>Поиск состояния электропитания
 
-Чтобы получить сведения о состоянии конкретной виртуальной машины, используйте команду [az vm get-instance-view](/cli/azure/vm#az_vm_get_instance_view). Необходимо указать допустимое имя виртуальной машины и группы ресурсов. 
+Чтобы получить сведения о состоянии конкретной виртуальной машины, используйте команду [az vm get-instance-view](/cli/azure/vm). Необходимо указать допустимое имя виртуальной машины и группы ресурсов. 
 
 ```azurecli-interactive 
 az vm get-instance-view \

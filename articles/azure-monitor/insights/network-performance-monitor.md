@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 1ba1f11029e98f6bf324466627c465507829dc4d
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: cff96ecb4f4b20e7e3542f6ae6e3e7740b750235
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54229852"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729801"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -52,14 +52,14 @@ ms.locfileid: "54229852"
 * Южная часть Соединенного Королевства
 * Правительство США (Вирджиния)
 
-Список поддерживаемых регионов для мониторинга ExpressRoute см. в разделе [Поддерживаемые регионы](https://docs.microsoft.com/azure/expressroute/how-to-npm?utm_swu=8117#regions).
+Список поддерживаемых регионов для мониторинга ExpressRoute см. в разделе [Поддерживаемые регионы](https://docs.microsoft.com/azure/expressroute/how-to-npm?utm_swu=8117).
 
 
 ## <a name="set-up-and-configure"></a>Установка и настройка
 
 ### <a name="install-and-configure-agents"></a>Установка и настройка агентов 
 
-Базовая процедура установки агентов приведена в статьях [Подключение компьютеров Windows к службе Log Analytics](../../azure-monitor/platform/om-agents.md) и [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
+Базовая процедура установки агентов приведена в статьях [Подключение компьютеров Windows к службе Log Analytics](../../azure-monitor/platform/agent-windows.md) и [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
 ### <a name="where-to-install-the-agents"></a>Место для установки агентов 
 

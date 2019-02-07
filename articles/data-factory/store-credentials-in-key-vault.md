@@ -9,14 +9,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/22/2017
+ms.date: 02/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 60dd0bdd529b4ee8fc8377093d49b8a27fb9b3f1
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: ff070adbda2a36261ca24eb0cc993ca22eada1c7
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54016654"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661247"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -27,9 +27,6 @@ ms.locfileid: "54016654"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Эта функция основывается на удостоверении службы фабрики данных. Узнайте, как работает [удостоверение службы фабрики данных](data-factory-service-identity.md), и убедитесь, что фабрике данных назначено удостоверение.
-
->[!TIP]
->В Azure Key Vault, когда вы создадите секрет, **поместите все значения свойства, которые запрашивает связанная служба ADF (например, строка подключения, пароль, ключ субъекта-службы и т. д.)**. Например, для связанной службы хранилища Azure укажите в качестве секрета AKV `DefaultEndpointsProtocol=http;AccountName=myAccount;AccountKey=myKey;`, а затем задайте ссылку на поле connectionString из ADF. Для связанной службы Dynamics укажите в качестве секрета AKV `myPassword`, а затем задайте ссылку на поле password из ADF. Дополнительные сведения о поддерживаемых свойствах см. в статьях о каждом соединителе или вычислительном ресурсе.
 
 ## <a name="steps"></a>Действия
 

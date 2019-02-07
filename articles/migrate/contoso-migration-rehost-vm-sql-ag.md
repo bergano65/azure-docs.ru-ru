@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: c1fdd09023c07808226c95ed82d0c22e09d09ec4
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 84a2ef60c9f6aa4270c3fc4f83327070b298b8b2
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267391"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55697193"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
@@ -698,7 +698,7 @@ DMS подключается к локальной виртуальной маш
 - Команда рассматривает возможность защиты данных на диске с использованием функций шифрования дисков Azure и хранилища ключей.
 - Команда должна оценить прозрачное шифрование данных (TDE), а затем включить его в базе данных SmartHotel360, работающей на новой виртуальной машине SQL AOG. [Узнайте больше](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017).
 
-[Узнайте больше](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms#vm-authentication-and-access-control) о рекомендациях по обеспечению безопасности виртуальных машин.
+[Узнайте больше](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms) о рекомендациях по обеспечению безопасности виртуальных машин.
 
 
 ## <a name="bcdr"></a>Непрерывность бизнес-процессов и аварийное восстановление

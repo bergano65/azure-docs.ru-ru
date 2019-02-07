@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: 7d79e81f8670492d025727ed76d7d529dbd4719d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 177a9cbf9235bb3d2deb0d5f8e4e31a0e1472b48
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188326"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756484"
 ---
 # <a name="get-trending-images-from-the-web"></a>Получение набирающих популярность изображений из Интернета
 
@@ -90,7 +90,7 @@ Host: api.cognitive.microsoft.com
 
 Каждый элемент содержит изображение и способы получения связанных изображений. Для получения связанных изображений можно использовать параметр запроса `text`, чтобы вызвать [API для поиска изображений](./search-the-web.md) и отобразить связанные изображения самостоятельно. Также можно использовать URL-адрес в параметре `webSearchUrl`, чтобы перенаправить пользователя на страницу Bing с результатами поиска изображений, которая содержит связанные изображения.
 
-Если для получения связанных изображений вы вызываете API для поиска изображений, то задайте для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#id) значение идентификатора в поле `id`. Указав идентификатор, вы гарантируете, что ответ будет содержать изображение (это первое изображение в ответе) и связанные с ним изображения. Кроме того, в качестве значения параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#q) укажите текст из поля `text` объекта `query`.
+Если для получения связанных изображений вы вызываете API для поиска изображений, то задайте для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#id) значение идентификатора в поле `id`. Указав идентификатор, вы гарантируете, что ответ будет содержать изображение (это первое изображение в ответе) и связанные с ним изображения. Кроме того, в качестве значения параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference) укажите текст из поля `text` объекта `query`.
 
 В приведенном ниже примере показано, как использовать идентификатор изображения для получения изображений, связанных с г-ном Смитом (Mr. Smith) из предыдущего ответа API для поиска изображений, набирающих популярность.
 

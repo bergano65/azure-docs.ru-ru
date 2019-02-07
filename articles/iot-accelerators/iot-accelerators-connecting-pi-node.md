@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: dobett
-ms.openlocfilehash: 75869de67d006b2053e9c3f9eed2fd8166a0e8e1
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: af269085550f71323c8098b4cdf3c88ec8035dfe
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200995"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563309"
 ---
 # <a name="connect-your-raspberry-pi-device-to-the-remote-monitoring-solution-accelerator-nodejs"></a>Подключение устройства Raspberry Pi к акселератору решения для удаленного мониторинга с помощью Node.js
 
@@ -96,7 +96,7 @@ ms.locfileid: "54200995"
 
 1. Откройте файл **remote-monitoring.js** и добавьте следующие инструкции `require`:
 
-    ```nodejs
+    ```javascript
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     var Client = require('azure-iot-device').Client;
     var Message = require('azure-iot-device').Message;
@@ -105,13 +105,13 @@ ms.locfileid: "54200995"
 
 1. После операторов `require` добавьте указанные ниже объявления переменных. Замените значение заполнителя `{device connection string}` ранее записанным значением для своего устройства, подготовленного в решении для удаленного мониторинга:
 
-    ```nodejs
+    ```javascript
     var connectionString = '{device connection string}';
     ```
 
 1. Чтобы определить базовые данные телеметрии, добавьте следующие переменные:
 
-    ```nodejs
+    ```javascript
     var temperature = 50;
     var temperatureUnit = 'F';
     var humidity = 50;
@@ -122,7 +122,7 @@ ms.locfileid: "54200995"
 
 1. Чтобы определить некоторые значения свойств, добавьте следующие переменные:
 
-    ```nodejs
+    ```javascript
     var schema = "real-chiller;v1";
     var deviceType = "RealChiller";
     var deviceFirmware = "1.0.0";
@@ -135,7 +135,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте следующую переменную, чтобы определить, какие передаваемые свойства должны отправляться в решение. Эти свойства содержат метаданные, отображаемые в пользовательском веб-интерфейсе.
 
-    ```nodejs
+    ```javascript
     var reportedProperties = {
       "SupportedMethods": "Reboot,FirmwareUpdate,EmergencyValveRelease,IncreasePressure",
       "Telemetry": {
@@ -153,7 +153,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте следующую вспомогательную функцию для вывода результатов операции:
 
-    ```nodejs
+    ```javascript
     function printErrorFor(op) {
         return function printError(err) {
             if (err) console.log(op + ' error: ' + err.toString());
@@ -163,7 +163,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте следующую вспомогательную функцию для создания случайных значений телеметрии:
 
-    ```nodejs
+    ```javascript
     function generateRandomIncrement() {
         return ((Math.random() * 2) - 1);
     }
@@ -171,7 +171,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте приведенную ниже общую функцию для обработки вызовов прямого метода из решения. Функция отвечает за отображение сведений о вызванном прямом методе. В этом примере ее использование не приводит к каким-либо изменениям устройства. Решение использует прямые методы для выполнения действий на устройствах:
 
-    ```nodejs
+    ```javascript
     function onDirectMethod(request, response) {
       // Implement logic asynchronously here.
       console.log('Simulated ' + request.methodName);
@@ -186,7 +186,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте приведенную ниже функцию для обработки вызовов прямого метода **FirmwareUpdate** из решения. Функция отвечает за проверку параметров, переданных в полезные данные прямого метода, и асинхронный запуск моделирования для обновления встроенного ПО:
 
-    ```nodejs
+    ```javascript
     function onFirmwareUpdate(request, response) {
       // Get the requested firmware version from the JSON request body
       var firmwareVersion = request.payload.Firmware;
@@ -215,7 +215,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте следующую функцию для моделирования длительного потока обновления встроенного ПО с передачей в решение сведений о ходе выполнения:
 
-    ```nodejs
+    ```javascript
     // Simulated firmwareUpdate flow
     function runFirmwareUpdateFlow(firmwareVersion, firmwareUri) {
       console.log('Simulating firmware update flow...');
@@ -293,7 +293,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте приведенный ниже код для отправки данных телеметрии в решение. Клиентское приложение добавляет свойства в сообщение, чтобы определить его схему:
 
-    ```nodejs
+    ```javascript
     function sendTelemetry(data, schema) {
       if (deviceOnline) {
         var d = new Date();
@@ -312,7 +312,7 @@ ms.locfileid: "54200995"
 
 1. Добавьте следующий код для создания экземпляра клиента:
 
-    ```nodejs
+    ```javascript
     var client = Client.fromConnectionString(connectionString, Protocol);
     ```
 
@@ -324,7 +324,7 @@ ms.locfileid: "54200995"
     * регистрирует обработчики для прямых методов; В примере используется отдельный обработчик для прямого метода обновления встроенного ПО.
     * начинает отправку данных телеметрии.
 
-    ```nodejs
+    ```javascript
     client.open(function (err) {
       if (err) {
         printErrorFor('open')(err);

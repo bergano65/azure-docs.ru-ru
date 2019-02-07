@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: d4b706a088769530e3994d8813b28f99d5a56df5
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 25ec82c923ebe322194d868159332ef145727999
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411974"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55693011"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-in-azure"></a>Общие предварительные требования для развертывания OpenShift в Azure
 
@@ -53,14 +53,14 @@ ms.locfileid: "54411974"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure 
-Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index#az_login) и следуйте инструкциям на экране или щелкните **Попробовать**, чтобы использовать Cloud Shell.
+Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index) и следуйте инструкциям на экране или щелкните **Попробовать**, чтобы использовать Cloud Shell.
 
 ```azurecli 
 az login
 ```
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Мы рекомендуем использовать выделенную группу ресурсов для размещения хранилища ключей. Эта группа отделена от группы ресурсов, в которой развертываются ресурсы кластера OpenShift.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Мы рекомендуем использовать выделенную группу ресурсов для размещения хранилища ключей. Эта группа отделена от группы ресурсов, в которой развертываются ресурсы кластера OpenShift.
 
 В следующем примере создается группа ресурсов с именем *keyvaultrg* в расположении *eastus*:
 
@@ -69,7 +69,7 @@ az group create --name keyvaultrg --location eastus
 ```
 
 ## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
-Создайте хранилище ключей, где будут храниться ключи SSH для кластера, с помощью команды [az keyvault create](/cli/azure/keyvault#az_keyvault_create). Имя хранилища ключей должно быть глобально уникальным.
+Создайте хранилище ключей, где будут храниться ключи SSH для кластера, с помощью команды [az keyvault create](/cli/azure/keyvault). Имя хранилища ключей должно быть глобально уникальным.
 
 В следующем примере создается хранилище ключей с именем *keyvault* в группе ресурсов *keyvaultrg*:
 

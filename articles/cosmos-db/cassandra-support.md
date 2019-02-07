@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/24/2018
-ms.openlocfilehash: a68d290bc21a8cdc36d5c85f770752ad67a4e91e
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 57127f3a87d8ec3077c0e2f5f6e16f536931e97f
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330766"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756858"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 
@@ -161,7 +161,6 @@ API Cassandra для Azure Cosmos DB предоставляет согласов
 Azure Cosmos DB поддерживает управление доступом на основе ролей (RBAC), а также пароли (ключи) для чтения и записи или только для чтения, которые можно получить с помощью [портала Azure](https://portal.azure.com). Azure Cosmos DB пока не поддерживает концепцию пользователей и ролей для действий на плоскости данных. 
 
 ## <a name="planned-support"></a>Плановая поддержка 
-* Одновременное использование метки времени и срока жизни  
 * В настоящее время имя региона в команде create keyspace пропускается, а распространение данных реализуется на базовой платформе Cosmos DB и доступно для учетной записи на портале или в Powershell. 
 
 

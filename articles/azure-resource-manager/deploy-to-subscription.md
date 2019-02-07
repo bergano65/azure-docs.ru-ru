@@ -11,18 +11,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: d86a1591c81c6343ec376c080945b4bf1f97638a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: ce95406cbcb6d9514159d84d653a9ff361713aec
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471782"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55744404"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
 Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Но можете также создавать группы ресурсов Azure и создавать ресурсы Azure на уровне подписки. Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI и Azure PowerShell. Портал Azure не поддерживает развертывания на уровне подписки.
 
-Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите имя и расположение ресурса [**Microsoft.Resources/resourceGroups**](/azure/templates/microsoft.resources/allversions.md) для группы ресурсов. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне. Ресурсы, которые можно развернуть на уровне подписки: [Политики](../azure-policy/azure-policy-introduction.md) и [Управление доступом на основе ролей](../role-based-access-control/overview.md).
+Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите имя и расположение ресурса [**Microsoft.Resources/resourceGroups**](/azure/templates/microsoft.resources/allversions) для группы ресурсов. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне. Ресурсы, которые можно развернуть на уровне подписки: [Политики](../azure-policy/azure-policy-introduction.md) и [Управление доступом на основе ролей](../role-based-access-control/overview.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
@@ -99,7 +101,7 @@ New-AzDeployment `
 }
 ```
 
-Схему шаблона можно найти [здесь](/azure/templates/microsoft.resources/allversions.md). Аналогичные шаблоны можно найти в [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
+Схему шаблона можно найти [здесь](/azure/templates/microsoft.resources/allversions). Аналогичные шаблоны можно найти в [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
 
 ## <a name="create-multiple-resource-groups"></a>Создание нескольких групп ресурсов
 

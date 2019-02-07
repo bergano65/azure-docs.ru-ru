@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/12/2018
 ms.author: dugill
-ms.openlocfilehash: d7beab66bdaed312f32adef74ceb4b2944e6853e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: a81c1d20e0f7b58c132a5ece04f05d6740c2308f
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103897"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55498256"
 ---
 # <a name="use-resource-manager-authentication-api-to-access-subscriptions"></a>Использование API аутентификации Resource Manager для доступа к подпискам
-## <a name="introduction"></a>Введение
+
 Если вы разрабатываете программное обеспечение и хотите создать приложение для управления ресурсами Azure клиента, эта статья предназначена для вас. Здесь вы узнаете, как выполнить проверку подлинности с помощью API-интерфейсов Azure Resource Manager и получить доступ к ресурсам в других подписках.
 
 Приложение может получить доступ к интерфейсам API Azure Resource Manager двумя способами:
@@ -32,7 +32,10 @@ ms.locfileid: "54103897"
 
 В этой статье содержатся пошаговые инструкции по созданию приложения, поддерживающего оба эти метода авторизации. Здесь показано, как выполнить каждое действие, используя REST API или C#. Полное приложение ASP.NET MVC можно получить на странице [https://github.com/dushyantgill/VipSwapper/tree/master/CloudSense](https://github.com/dushyantgill/VipSwapper/tree/master/CloudSense).
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="what-the-web-app-does"></a>Возможности веб-приложения
+
 Веб-приложение обеспечивает следующие возможности:
 
 1. Вход пользователя Azure в систему.
@@ -74,7 +77,7 @@ ms.locfileid: "54103897"
 В приведенном ниже примере показано, как зарегистрировать приложение с помощью Azure PowerShell. Эта команда поддерживается только в Azure PowerShell последней версии (обновление от августа 2016 г.).
 
 ```azurepowershell-interactive
-$app = New-AzureRmADApplication -DisplayName "{app name}" -HomePage "https://{your domain}/{app name}" -IdentifierUris "https://{your domain}/{app name}" -Password "{your password}" -AvailableToOtherTenants $true
+$app = New-AzADApplication -DisplayName "{app name}" -HomePage "https://{your domain}/{app name}" -IdentifierUris "https://{your domain}/{app name}" -Password "{your password}" -AvailableToOtherTenants $true
 ```
 
 Для входа в систему в качестве приложения AD необходимо указать идентификатор приложения и пароль. Чтобы просмотреть идентификатор приложения, который возвращается в результате выполнения предыдущей команды, используйте следующую команду:

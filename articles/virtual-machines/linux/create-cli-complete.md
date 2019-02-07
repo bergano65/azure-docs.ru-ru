@@ -15,17 +15,17 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/14/2017
 ms.author: cynthn
-ms.openlocfilehash: ec520e7d06f6c5a560af56e6616eeed8481520fe
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 7090f9da1ec1bd1453b6f0ddb327abe2f1374844
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180370"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55697079"
 ---
 # <a name="create-a-complete-linux-virtual-machine-with-the-azure-cli"></a>Создание полнофункциональной виртуальной машины Linux с помощью Azure CLI
 Чтобы быстро создать виртуальную машину в Azure, можно использовать одну команду Azure CLI, использующую значения по умолчанию для создания любых необходимых вспомогательных ресурсов. Ресурсы, такие как виртуальная сеть, общедоступный IP-адрес и правила группы сетевой безопасности, создаются автоматически. Чтобы получить дополнительные возможности управления в рабочей среде, можно создать эти ресурсы заранее и затем добавлять в них виртуальные машины. В этой статье описывается, как создать виртуальную машину и каждый из вспомогательных ресурсов по одному.
 
-Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
@@ -51,7 +51,7 @@ az group create --name myResourceGroup --location eastus
 ```
 
 ## <a name="create-a-virtual-network-and-subnet"></a>Создание виртуальной сети и подсети
-Затем создается виртуальная сеть в Azure и подсеть, в которой можно создать виртуальные машины. Используйте команду [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create), чтобы создать виртуальную сеть с именем *myVnet* с префиксом адреса *192.168.0.0/16*. Кроме того, можно добавить подсеть с именем *mySubnet* с префиксом адреса *192.168.1.0/24*:
+Затем создается виртуальная сеть в Azure и подсеть, в которой можно создать виртуальные машины. Используйте команду [az network vnet create](/cli/azure/network/vnet), чтобы создать виртуальную сеть с именем *myVnet* с префиксом адреса *192.168.0.0/16*. Кроме того, можно добавить подсеть с именем *mySubnet* с префиксом адреса *192.168.1.0/24*:
 
 ```azurecli
 az network vnet create \
@@ -103,7 +103,7 @@ az network vnet create \
 
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
-Теперь создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create). Этот общедоступный IP-адрес позволяет подключаться к виртуальной машине через Интернет. Так как адрес по умолчанию является динамическим, создайте запись DNS с параметром `--domain-name-label`. В следующем примере создается общедоступный IP-адрес *myPublicIP* с DNS-именем *mypublicdns*. Так как DNS-имя должно быть уникальным, укажите собственное уникальное имя:
+Теперь создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). Этот общедоступный IP-адрес позволяет подключаться к виртуальной машине через Интернет. Так как адрес по умолчанию является динамическим, создайте запись DNS с параметром `--domain-name-label`. В следующем примере создается общедоступный IP-адрес *myPublicIP* с DNS-именем *mypublicdns*. Так как DNS-имя должно быть уникальным, укажите собственное уникальное имя:
 
 ```azurecli
 az network public-ip create \
@@ -142,7 +142,7 @@ az network public-ip create \
 
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
-Для управления входящим и исходящим потоком трафика виртуальных машин к виртуальным сетевым адаптерам или подсети применяются группы безопасности сети. В следующем примере с помощью команды [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create) создается группа безопасности сети с именем *myNetworkSecurityGroup*:
+Для управления входящим и исходящим потоком трафика виртуальных машин к виртуальным сетевым адаптерам или подсети применяются группы безопасности сети. В следующем примере с помощью команды [az network nsg create](/cli/azure/network/nsg) создается группа безопасности сети с именем *myNetworkSecurityGroup*:
 
 ```azurecli
 az network nsg create \
@@ -150,7 +150,7 @@ az network nsg create \
     --name myNetworkSecurityGroup
 ```
 
-Вы определяете правила, разрешающие или запрещающие определенный трафик. Чтобы разрешить входящие подключения через порт 22 (для включения доступа по SSH), создайте правило входящего трафика с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create). В следующем примере создается правило *myNetworkSecurityGroupRuleSSH*.
+Вы определяете правила, разрешающие или запрещающие определенный трафик. Чтобы разрешить входящие подключения через порт 22 (для включения доступа по SSH), создайте правило входящего трафика с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule). В следующем примере создается правило *myNetworkSecurityGroupRuleSSH*.
 
 ```azurecli
 az network nsg rule create \
@@ -176,7 +176,7 @@ az network nsg rule create \
     --access allow
 ```
 
-Чтобы проверить группу безопасности сети и правила, выполните команду [az network nsg show](/cli/azure/network/nsg#az_network_nsg_show).
+Чтобы проверить группу безопасности сети и правила, выполните команду [az network nsg show](/cli/azure/network/nsg).
 
 ```azurecli
 az network nsg show --resource-group myResourceGroup --name myNetworkSecurityGroup
@@ -445,7 +445,7 @@ az network nic create \
 
 Azure автоматически распределяет виртуальные машины между доменами сбоя и обновления при помещении их в группу доступности. Дополнительные сведения см. в статье [Управление доступностью виртуальных машин Linux](manage-availability.md).
 
-Создайте группу доступности для виртуальных машин с помощью команды [az vm availability-set create](/cli/azure/vm/availability-set#az_vm_availability_set_create). В следующем примере создается группа доступности *myAvailabilitySet*.
+Создайте группу доступности для виртуальных машин с помощью команды [az vm availability-set create](/cli/azure/vm/availability-set). В следующем примере создается группа доступности *myAvailabilitySet*.
 
 ```azurecli
 az vm availability-set create \
@@ -478,11 +478,11 @@ az vm availability-set create \
 
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
-Вы создали ресурсы сети для доступных через Интернет виртуальных машин. Теперь создайте виртуальную машину и защитите ее с помощью ключа SSH. В этом примере давайте создадим виртуальную машину Ubuntu с использованием новейшего LTS. Дополнительные образы можно найти с помощью команды [az vm image list](/cli/azure/vm/image#az_vm_image_list), как это описано в статье о [поиске образов виртуальных машин Azure](cli-ps-findimage.md).
+Вы создали ресурсы сети для доступных через Интернет виртуальных машин. Теперь создайте виртуальную машину и защитите ее с помощью ключа SSH. В этом примере давайте создадим виртуальную машину Ubuntu с использованием новейшего LTS. Дополнительные образы можно найти с помощью команды [az vm image list](/cli/azure/vm/image), как это описано в статье о [поиске образов виртуальных машин Azure](cli-ps-findimage.md).
 
 Укажите ключ SSH для аутентификации. Если у вас нет пары открытых ключей SSH, их [можно создать](mac-create-ssh-keys.md) или использовать параметр `--generate-ssh-keys` для их создания. Если у вас уже есть пара ключей, этот параметр будет использовать имеющиеся ключи в `~/.ssh`.
 
-Создайте виртуальную машину, собрав воедино все ресурсы и информацию с помощью команды [az vm create](/cli/azure/vm#az_vm_create). В следующем примере создается виртуальная машина с именем *myVM*.
+Создайте виртуальную машину, собрав воедино все ресурсы и информацию с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина с именем *myVM*.
 
 ```azurecli
 az vm create \
@@ -567,7 +567,7 @@ az group export --name myResourceGroup > myResourceGroup.json
 
 С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте файл parameters.json](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , задающий их.
 
-Чтобы создать среду с помощью шаблона, используйте команду [az group deployment create](/cli/azure/group/deployment#az_group_deployment_create) следующим образом:
+Чтобы создать среду с помощью шаблона, используйте команду [az group deployment create](/cli/azure/group/deployment) следующим образом:
 
 ```azurecli
 az group deployment create \

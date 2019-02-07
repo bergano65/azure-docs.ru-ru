@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 11/29/2018
 ms.author: sngun
-ms.openlocfilehash: cf011558ab984ecaf8181a4dc4ffcb80851f24fb
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: ebb6fe9f583c2658f187d3cca1185f1525fb1bf5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352960"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811041"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -32,20 +32,14 @@ ms.locfileid: "54352960"
 
 Пакет SDK Java для API-интерфейса SQL поддерживает синхронные операции. Для асинхронных операций используйте [пакет SDK Java Async для API-интерфейса SQL](sql-api-sdk-async-java.md). 
 
-<table>
-
-<tr><td>**Скачивание пакета SDK**</td><td>[Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)</td></tr>
-
-<tr><td>**Документация по API**</td><td>[Справочная документация по API Java](/java/api/com.microsoft.azure.documentdb)</td></tr>
-
-<tr><td>**Участие в разработке пакета SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
-
-<tr><td>**Начало работы**</td><td>[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)</td></tr>
-
-<tr><td>**Учебник по веб-приложениям**</td><td>[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-java-application.md)</td></tr>
-
-<tr><td>**Минимальная поддерживаемая среда выполнения**</td><td>[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)</td></tr>
-</table></br>
+| |  |
+|---|---|
+|**Скачивание пакета SDK**|[Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)|
+|**Документация по API**|[Справочная документация по API Java](/java/api/com.microsoft.azure.documentdb)|
+|**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-documentdb-java/)|
+|**Начало работы**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
+|**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-java-application.md)|
+|**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
@@ -218,7 +212,7 @@ ms.locfileid: "54352960"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
-| [2.1.1](#2.1.1) |21 ноября 2018 г. |--- |
+| 2.1.1 |21 ноября 2018 г. |--- |
 | [2.0.0](#2.0.0) |21 сентября 2018 г. |--- |
 | [1.16.4](#1.16.4) |10 сентября 2018 г. |--- |
 | [1.16.3](#1.16.3) |9 сентября 2018 г. |--- |
@@ -249,7 +243,7 @@ ms.locfileid: "54352960"
 | [1.3.0](#1.3.0) |5 октября 2015 г. |--- |
 | [1.2.0](#1.2.0) |5 августа 2015 г. |--- |
 | [1.1.0](#1.1.0) |9 июля 2015 г. |--- |
-| [1.0.1](#1.0.1) |12 мая 2015 г. |--- |
+| 1.0.1 |12 мая 2015 г. |--- |
 | [1.0.0](#1.0.0) |7 апреля 2015 г. |--- |
 | 0.9.5-prelease |9 марта 2015 г. |29 февраля 2016 г. |
 | 0.9.4-prelease |17 февраля 2015 г. |29 февраля 2016 г. |

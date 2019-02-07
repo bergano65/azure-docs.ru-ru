@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
-ms.openlocfilehash: 20d806540b0aa814c88ef4ff69834283ba4a7722
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 71aecc1748e70e2119b1f54c21a0f705afc5d5d0
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413844"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55731314"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
@@ -110,7 +110,7 @@ az vm user delete \
 ```
 
 ## <a name="use-json-files-and-the-vmaccess-extension"></a>Использование JSON-файлов и расширения VMAccess
-В следующих примерах используется необработанные JSON-файлы. Используйте команду [az vm extension set](/cli/azure/vm/extension#az_vm_extension_set) для последующего вызова своих JSON-файлов. Эти JSON-файлы также можно вызывать из шаблонов Azure. 
+В следующих примерах используется необработанные JSON-файлы. Используйте команду [az vm extension set](/cli/azure/vm/extension) для последующего вызова своих JSON-файлов. Эти JSON-файлы также можно вызывать из шаблонов Azure. 
 
 ### <a name="reset-user-access"></a>Сброс доступа пользователей
 Если вы потеряли доступ к учетной записи root на виртуальной машине Linux, можете выполнить скрипт VMAccess, чтобы обновить ключ SSH или пароль пользователя.

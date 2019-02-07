@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: a51664144d0dba8eeb82999b212beaf79b4503b2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 125c3a925bf6eff04035bb755a07f19367d1abd2
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51236936"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661094"
 ---
 # <a name="authenticating-and-authorizing-with-power-bi-workspace-collections"></a>Аутентификация и авторизация в коллекциях рабочих областей Power BI
 
@@ -84,7 +84,7 @@ Body
 
 ```
 
-В пакетах SDK доступны методы, которые упрощают создание маркеров приложений. Например, для .NET это класс [Microsoft.PowerBI.Security.PowerBIToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken) и методы [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_).
+В пакетах SDK доступны методы, которые упрощают создание маркеров приложений. Например, для .NET это класс [Microsoft.PowerBI.Security.PowerBIToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken) и методы [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN).
 
 Методы для пакета SDK для .NET см. в статье [Класс Scopes](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.scopes).
 
@@ -176,7 +176,7 @@ Body
 
 ## <a name="see-also"></a>См. также
 
-[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
+[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN)  
 [Пример для начала работы с коллекциями рабочих областей Power BI](get-started-sample.md)  
 [Распространенные сценарии работы с коллекциями рабочих областей Microsoft Power BI](scenarios.md)  
 [Начало работы с коллекциями рабочих областей Microsoft Power BI](get-started.md)  

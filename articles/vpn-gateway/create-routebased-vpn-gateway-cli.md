@@ -1,5 +1,5 @@
 ---
-title: Создание VPN-шлюза Azure на основе заданного маршрута. CLI | Документация Майкрософт
+title: Создание VPN-шлюза на основе маршрутов — Azure CLI | Документация Майкрософт
 description: Краткое руководство по созданию VPN-шлюза с использованием интерфейса CLI
 services: vpn-gateway
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: cherylmc
-ms.openlocfilehash: b8ca2d74012418dbd8ca9e878f133a250ebb5991
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: f5f62a6bfa1baa205e0496dd901f1f1eef660079
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465106"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55698196"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "49465106"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 
 ```azurecli-interactive 
@@ -35,7 +35,7 @@ az group create --name TestRG1 --location eastus
 
 ## <a name="vnet"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В следующем примере создается виртуальная сеть с именем **VNet1** в расположении **EastUS**.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть с именем **VNet1** в расположении **EastUS**.
 
 ```azurecli-interactive 
 az network vnet create \
@@ -56,7 +56,7 @@ az network vnet subnet create \
   --vnet-name VNet1 \
   -n GatewaySubnet \
   -g TestRG1 \
-  --address-prefix 10.1.255.0/27 
+  --address-prefix 10.1.255.0/27 
 ```
 
 ## <a name="PublicIP"></a>Запрос общедоступного IP-адреса
@@ -67,12 +67,12 @@ VPN-шлюз должен иметь динамически выделяемый
 az network public-ip create \
   -n VNet1GWIP \
   -g TestRG1 \
-  --allocation-method Dynamic 
+  --allocation-method Dynamic 
 ```
 
 ## <a name="CreateGateway"></a>Создание VPN-шлюза
 
-Чтобы создать VPN-шлюз, используйте команду [az network vnet-gateway create](/cli/azure/group#az_network_vnet_gateway_create).
+Чтобы создать VPN-шлюз, используйте команду [az network vnet-gateway create](/cli/azure/group).
 
 При выполнении этой команды с использованием параметра `--no-wait` вы не увидите ответа или выходных данных. Параметр `--no-wait` позволяет создать шлюз в фоновом режиме. Это не означает, что создание VPN-шлюза завершается немедленно.
 
@@ -172,7 +172,7 @@ az network public-ip show \
 ```
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-При отсутствии необходимости дальнейшего использования созданных ресурсов группу ресурсов можно удалить командой [az group delete](/cli/azure/group#az_group_delete). При этом будет удалена группа ресурсов и все содержащиеся в ней ресурсы.
+При отсутствии необходимости дальнейшего использования созданных ресурсов группу ресурсов можно удалить командой [az group delete](/cli/azure/group). При этом будет удалена группа ресурсов и все содержащиеся в ней ресурсы.
 
 ```azurecli-interactive 
 az group delete --name TestRG1 --yes

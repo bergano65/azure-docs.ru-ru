@@ -6,6 +6,8 @@ items:
   - name: Студия машинного обучения
     displayName: overview
     href: what-is-ml-studio.md
+  - name: Сравнить наши продукты Машинного обучения
+    href: ../service/overview-more-machine-learning.md
   - name: Возможности студии машинного обучения
     displayName: overview
     href: studio-overview-diagram.md
@@ -93,10 +95,6 @@ items:
     - name: Попробуйте провести эксперимент в Коллекции решений ИИ
       displayName: gallery
       href: sample-experiments.md
-    - name: Выбор алгоритмов
-      href: algorithm-choice.md
-    - name: Памятка по алгоритмам
-      href: algorithm-cheat-sheet.md
     - name: Оценка и интерпретация результатов
       items:
       - name: Оценка производительности
@@ -118,6 +116,12 @@ items:
         href: custom-r-modules.md
       - name: Выполнение скриптов Python
         href: execute-python-scripts.md
+  - name: Выбор алгоритма
+    items:
+    - name: Выбор алгоритмов
+      href: algorithm-choice.md
+    - name: Памятка по алгоритмам
+      href: algorithm-cheat-sheet.md
   - name: Развертывание моделей
     items:
     - name: Развертывание веб-службы
@@ -210,15 +214,11 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Цены
     href: https://azure.microsoft.com/pricing/details/machine-learning/
-  - name: Руководство для разработчиков R
-    href: ../r-developers-guide.md
   - name: Пользовательские нейронные сети (Net#)
     href: azure-ml-netsharp-reference-guide.md
-  - name: Сравнить наши продукты Машинного обучения
-    href: ../service/overview-more-machine-learning.md
-ms.openlocfilehash: 400e6a2e98b8d29018b135204eaefa7ae3a7d965
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: d6d4020d76c8eab2418b3b7ac5d26eaf93363870
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731433"
+ms.locfileid: "55746172"

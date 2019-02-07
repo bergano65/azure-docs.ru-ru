@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0f5c60b25ad305b9e76eebcc72639a596b407801
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 7a6372f90cde75cb3314a049de41a4826510bd3f
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457553"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752251"
 documentType: LandingData
 title: Документация по Базе данных SQL Azure
 metadata:
@@ -22,7 +22,7 @@ metadata:
   ms.date: 01/25/2019
   ms.author: carlrab
 abstract:
-  description: База данных SQL Azure — это реляционная база данных, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL — это высокопроизводительная, надежная и безопасная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств.
+  description: База данных SQL Azure — это реляционная база данных общего назначения, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL — это высокопроизводительная, надежная и безопасная облачная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств.
   aside:
     image:
       alt: 
@@ -106,10 +106,10 @@ sections:
     rows:
     - title: Создание отдельной базы данных
       values:
-      - href: /azure/sql-database/sql-database-get-started-portal
+      - href: /azure/sql-database/sql-database-single-database-get-started
       - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-cli
       - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-powershell
-      - href: 
+      - href: https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-database-transparent-encryption-create
     - title: Создание управляемого экземпляра
       values:
       - href: /azure/sql-database/sql-database-managed-instance-get-started
@@ -118,33 +118,10 @@ sections:
       - href: https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet
     - title: Создание эластичного пула
       values:
-      - href: 
+      - href: /azure/sql-database/sql-database-elastic-pool-manage
       - href: /azure/sql-database/scripts/sql-database-move-database-between-pools-cli
       - href: /azure/sql-database/scripts/sql-database-move-database-between-pools-powershell
       - href: https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-elastic-pool-create
-    - title: Масштабирование отдельной базы данных
-      values:
-      - href: 
-      - href: /azure/sql-database/scripts/sql-database-monitor-and-scale-database-cli
-      - href: /azure/sql-database/scripts/sql-database-monitor-and-scale-database-powershell
-      - href: 
-    - title: Масштабирование эластичного пула
-      values:
-      - href: 
-      - href: /azure/sql-database/scripts/sql-database-scale-pool-cli
-      - href: /azure/sql-database/scripts/sql-database-monitor-and-scale-pool-powershell
-    - title: Масштабирование управляемого экземпляра
-      values:
-      - href: 
-      - href: https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44
-      - href: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/05/31/change-size-azure-sql-managed-instance-using-powershell/
-      - href: 
-    - title: Настройка сети Azure для Управляемого экземпляра
-      values:
-      - href: /azure/sql-database/sql-database-managed-instance-get-started
-      - href: 
-      - href: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/25/quick-start-script-setup-azure-network-environment-for-azure-sql-managed-instance/
-      - href: https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-managed-instance-azure-environment
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -152,6 +129,7 @@ sections:
   - type: list
     style: ordered
     items:
+    - html: Начните работу с <a href="/azure/sql-database/sql-database-quickstart-guide">отдельной базой данных</a> и <a href="/azure/sql-database/sql-database-managed-instance-quickstart-guide">Управляемым экземпляром</a>, используя наши краткие руководства.
     - html: Создание и проектирование схемы для новой отдельной базы данных с помощью <a href="/azure/sql-database/sql-database-design-first-database">SSMS</a> или <a href="/azure/sql-database/sql-database-design-first-database-csharp">.NET</a>
     - html: Перенос существующей базы данных в Azure с помощью <a href="/azure/sql-database/sql-database-managed-instance-get-started-restore">функции восстановления базы данных</a>, <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">помощника по миграции баз данных</a> или <a href="/azure/sql-database/sql-database-import">импорта файла BACPAC</a>
     - html: <a href="/azure/sql-database/sql-database-security-tutorial">Secure your Azure SQL Database</a> (Безопасность базы данных SQL Azure)

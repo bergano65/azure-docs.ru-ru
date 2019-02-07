@@ -10,12 +10,12 @@ ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 08e144022c79182a63fd99dbce48a5e505aba3f2
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: c1bc4265c44f007e794b873d732a06d1e30f324f
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478004"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661944"
 ---
 # <a name="integrate-other-services-with-sql-data-warehouse"></a>Интеграция других служб с хранилищем данных SQL
 Помимо базовых возможностей, хранилище данных SQL позволяет пользователям интегрировать многие другие службы в Azure. К этим службам относятся следующие:
@@ -41,7 +41,7 @@ ms.locfileid: "55478004"
 * **Хранимые процедуры.** Управление выполнением хранимых процедур в Хранилище данных SQL.
 * **Действие копирования.** Используйте ADF для перемещения данных в Хранилище данных SQL. В основе этой операции может использоваться стандартный механизм перемещения данных ADF или PolyBase. 
 
-Дополнительную информацию см. в статье [Визуализация данных с помощью Power BI](https://docs.microsoft.com/en-us/azure/data-factory/load-azure-sql-data-warehouse?toc=/azure/sql-data-warehouse/toc.json).
+Дополнительную информацию см. в статье [Визуализация данных с помощью Power BI](https://docs.microsoft.com/azure/data-factory/load-azure-sql-data-warehouse?toc=/azure/sql-data-warehouse/toc.json).
 
 ## <a name="azure-machine-learning"></a>Машинное обучение Azure
 Служба "Машинное обучение Azure" — это полностью управляемая аналитическая служба, позволяющая пользователям создавать сложные модели с использованием крупного набора прогнозируемых инструментов. Хранилище данных SQL поддерживается в качестве источника и цели для этих моделей со следующими возможностями.

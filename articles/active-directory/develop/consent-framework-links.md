@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: celested
-ms.openlocfilehash: da22c7a62d39b348e2114fd208d2aa8dd9711e0d
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 2356167fca0bde9fd7dd78c3c893218967e41220
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55099232"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750058"
 ---
 # <a name="how-application-consent-works"></a>Как действует согласие для приложения
 
@@ -28,8 +28,8 @@ ms.locfileid: "55099232"
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 - Получите общее представление о том, [как владелец ресурса может управлять доступом приложения к ресурсам благодаря согласию](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#consent).
-- Ознакомьтесь с пошаговым руководством по [реализации согласия в инфраструктуре согласия Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#overview-of-the-consent-framework).
-- Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
+- Ознакомьтесь с пошаговым руководством по [реализации согласия в инфраструктуре согласия Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
+- Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
 - Узнайте подробнее о том, [как согласие поддерживается на уровне протокола OAuth 2.0 во время предоставления кода авторизации.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code#request-an-authorization-code)
 
 ## <a name="next-steps"></a>Дополнительная информация

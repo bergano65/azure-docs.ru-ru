@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9c6729abefc62aeae232fff5ea48619377630635
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 1c2be140e4d7156a1e23e1064436dda959c9cd14
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197625"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750007"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -79,7 +79,7 @@ exit
 az vm deallocate --resource-group myResourceGroup --name myVM
 ```
 
-Наконец, сообщите платформе Azure, что виртуальная машина подготовлена к использованию, выполнив команду [az vm generalize](/cli//azure/vm#generalize). Создать образ можно только из подготовленной виртуальной машины.
+Наконец, сообщите платформе Azure, что виртуальная машина подготовлена к использованию, выполнив команду [az vm generalize](/cli//azure/vm). Создать образ можно только из подготовленной виртуальной машины.
    
 ```azurecli-interactive 
 az vm generalize --resource-group myResourceGroup --name myVM
@@ -87,7 +87,7 @@ az vm generalize --resource-group myResourceGroup --name myVM
 
 ### <a name="create-the-image"></a>Создание образа
 
-Теперь можно создать образ виртуальной машины с помощью команды [az image create](/cli//azure/image#create). В следующем примере создается образ *myImage* из виртуальной машины *myVM*.
+Теперь можно создать образ виртуальной машины с помощью команды [az image create](/cli//azure/image). В следующем примере создается образ *myImage* из виртуальной машины *myVM*.
    
 ```azurecli-interactive 
 az image create \
@@ -98,7 +98,7 @@ az image create \
  
 ## <a name="create-vms-from-the-image"></a>Создание виртуальных машин из образа
 
-Теперь, когда образ готов, из него можно создать одну или несколько виртуальных машин с помощью команды [az vm create](/cli/azure/vm#az_vm_create). В следующем примере создается виртуальная машина *myVMfromImage* из образа *myImage*.
+Теперь, когда образ готов, из него можно создать одну или несколько виртуальных машин с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина *myVMfromImage* из образа *myImage*.
 
 ```azurecli-interactive 
 az vm create \

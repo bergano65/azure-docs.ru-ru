@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/24/2019
 ms.author: priyamo
-ms.openlocfilehash: c19c5031c27ac37aee3707911268965912c20994
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: e266ebca40ac9a3c1d6c1a77e30fed717f4b1b51
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158202"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753464"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к службе хранилища Azure с помощью ключа доступа
 
@@ -173,5 +173,5 @@ Name              : testblob
 Из этого руководства вы узнали, как создать управляемое удостоверение, назначаемое системой, чтобы получить доступ к службе хранилища Azure с помощью ключа доступа.  Дополнительные сведения о ключах доступа к службе хранилища Azure см. здесь:
 
 > [!div class="nextstepaction"]
->[Управление ключами доступа к хранилищу](/azure/storage/common/storage-create-storage-account#manage-your-storage-access-keys)
+>[Управление ключами доступа к хранилищу](/azure/storage/common/storage-create-storage-account)
 

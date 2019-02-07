@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 93aa77edaedbd3984e9e83ccfb7374422952e83a
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: e24ed3921872a4c754967841634ebab23b972e59
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226979"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55736066"
 ---
 Прослушиватель группы доступности — это IP-адрес и сетевое имя, с которых ожидается передача данных в группе доступности SQL Server. Чтобы создать прослушиватель группы доступности, сделайте следующее:
 
@@ -17,7 +17,7 @@ ms.locfileid: "50226979"
 
     a. Подключитесь по протоколу RDP к виртуальной машине Azure, на которой размещена основная реплика. 
 
-    b. Откройте диспетчер отказоустойчивости кластеров.
+    б) Откройте диспетчер отказоустойчивости кластеров.
 
     c. Выберите узел **Сети** и запишите имя сети кластера. Это имя нужно использовать в переменной `$ClusterNetworkName` в сценарии PowerShell. На следующем изображении сетевое имя кластера — **Cluster Network 1**:
 
@@ -28,14 +28,14 @@ ms.locfileid: "50226979"
 
     a. Разверните имя кластера и нажмите кнопку **Роли**.
 
-    b. На панели **Роли** щелкните правой кнопкой мыши имя группы доступности и выберите **Добавить ресурс** > **Точка доступа клиента**.
+    б) На панели **Роли** щелкните правой кнопкой мыши имя группы доступности и выберите **Добавить ресурс** > **Точка доступа клиента**.
 
    ![Точка доступа клиента](./media/virtual-machines-ag-listener-configure/92-addclientaccesspoint.png)
 
     c. В поле **Имя** создайте имя для нового прослушивателя. 
    Имя для нового прослушивателя — это сетевое имя, которое используют приложения для подключения к базам данных в группе доступности SQL Server.
 
-    d. Чтобы завершить создание прослушивателя, нажмите кнопку **Далее** дважды, а затем нажмите кнопку **Готово**. Не подключайте прослушивателя или ресурс на этом этапе.
+    4.3. Чтобы завершить создание прослушивателя, нажмите кнопку **Далее** дважды, а затем нажмите кнопку **Готово**. Не подключайте прослушивателя или ресурс на этом этапе.
 
 1. Отключите группу доступности роли кластера. В **диспетчере отказоустойчивых кластеров** в разделе **Роли** щелкните правой кнопкой мыши роль и выберите **Остановить роль**.
 
@@ -46,7 +46,7 @@ ms.locfileid: "50226979"
 
    ![Точка доступа клиента](./media/virtual-machines-ag-listener-configure/94-newclientaccesspoint.png) 
 
-    b. Щелкните правой кнопкой мыши ресурс IP-адреса и выберите пункт "Свойства". Запишите IP-адрес и используйте его в переменной `$IPResourceName` в скрипте PowerShell.
+    б) Щелкните правой кнопкой мыши ресурс IP-адреса и выберите пункт "Свойства". Запишите IP-адрес и используйте его в переменной `$IPResourceName` в скрипте PowerShell.
 
     c. В разделе **IP-адрес** выберите параметр **Статический IP-адрес**. Задайте тот же IP-адрес, который использовался на портале Azure при настройке адреса подсистемы балансировки нагрузки.
 
@@ -60,19 +60,19 @@ ms.locfileid: "50226979"
 
     a. В диспетчере отказоустойчивости кластеров щелкните **Роли** и выберите группу доступности.
 
-    b. На вкладке **Ресурсы** в разделе **Другие ресурсы** щелкните правой кнопкой мыши группу ресурсов и выберите **Свойства**. 
+    б) На вкладке **Ресурсы** в разделе **Другие ресурсы** щелкните правой кнопкой мыши группу ресурсов и выберите **Свойства**. 
 
     c. На вкладке "Зависимости" добавьте имя ресурса точки доступа клиента (прослушивателя).
 
    ![Ресурс IP-адреса](./media/virtual-machines-ag-listener-configure/97-propertiesdependencies.png) 
 
-    d. Последовательно выберите **ОК**.
+    4.3. Последовательно выберите **ОК**.
 
 1. <a name="listname"></a>Сделайте так, чтобы ресурс точки доступа клиента зависел от IP-адреса.
 
     a. В диспетчере отказоустойчивости кластеров щелкните **Роли** и выберите группу доступности. 
 
-    b. На вкладке **Ресурсы** в разделе **Имя сервера** щелкните ресурс точки доступа клиента правой кнопкой мыши и выберите **Свойства**. 
+    б) На вкладке **Ресурсы** в разделе **Имя сервера** щелкните ресурс точки доступа клиента правой кнопкой мыши и выберите **Свойства**. 
 
    ![Ресурс IP-адреса](./media/virtual-machines-ag-listener-configure/98-dependencies.png) 
 
@@ -103,7 +103,7 @@ ms.locfileid: "50226979"
   Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ListenerILBIP";"ProbePort"=$ListenerProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
   ```
 
-  b. Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
+  б) Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
 
   > [!NOTE]
   > Если экземпляры SQL Server находятся в разных регионах, необходимо дважды запустить сценарий PowerShell. При первом запуске используйте значения `$ListenerILBIP` и `$ListenerProbePort` из первого региона. При втором запуске используйте значения `$ListenerILBIP` и `$ListenerProbePort` из второго региона. Имя сети кластера и имя ресурса IP-кластера разные для каждого региона.
@@ -130,14 +130,14 @@ ms.locfileid: "50226979"
   $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
   $IPResourceName = "<ClusterIPResourceName>" # the IP Address resource name
   $ClusterCoreIP = "<n.n.n.n>" # the IP Address of the Cluster IP resource. This is the static IP address for the load balancer you configured in the Azure portal.
-  [int]$ClusterProbePort = <nnnnn> # The probe port from the WSFCEndPointprobe in the Azure portal. This port must be different from the probe port for the availability grouop listener probe port.
+  [int]$ClusterProbePort = <nnnnn> # The probe port from the WSFCEndPointprobe in the Azure portal. This port must be different from the probe port for the availability group listener probe port.
   
   Import-Module FailoverClusters
   
   Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ClusterCoreIP";"ProbePort"=$ClusterProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
   ```
 
-  b. Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
+  б) Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
 
 >[!WARNING]
 >Порт пробы работоспособности прослушивателя группы доступности должен отличаться от порта пробы работоспособности ядра кластера IP-адреса. В этих примерах порт прослушивателя — 59999, а IP-адрес ядра кластера — 58888. Оба порта требуют правило разрешения брандмауэра для входящих подключений.

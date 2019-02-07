@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: scottwhi
-ms.openlocfilehash: 6cf308ae65e7fe85a89ac76b17a4bd1b3a4ada1b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 76d83397f27509b09b04753bce62b5a329da8d71
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55177004"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733711"
 ---
 # <a name="news-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска новостей
 
@@ -76,7 +76,7 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#categories-by-market).
+- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference).
 
 - Добавлен параметр запроса [SortBy](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#sortby), который возвращает темы, набирающие популярность (начиная с самых последних).
 

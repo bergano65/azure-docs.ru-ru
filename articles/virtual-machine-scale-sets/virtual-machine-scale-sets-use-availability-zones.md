@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 771aba1d18dc0cf691c338e06278a356caebda96
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 32679e37062fbf77ce6ab03b6ea708c0d5eeea30
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54886243"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816243"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -65,7 +65,7 @@ ms.locfileid: "54886243"
 Чтобы использовать зоны доступности, масштабируемый набор должен быть создан в [поддерживаемом регионе Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones). Вы можете создать масштабируемый набор, использующий зоны доступности, с помощью одного из следующих методов:
 
 - [портал Azure](#use-the-azure-portal)
-- [Интерфейс командной строки Azure](#use-the-azure-cli-20)
+- Инфраструктура CLI Azure
 - [Azure PowerShell](#use-azure-powershell)
 - [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
 
@@ -81,7 +81,7 @@ ms.locfileid: "54886243"
 
 Процесс создания масштабируемого набора, использующего зону доступности, описан в статье [Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell](quick-create-cli.md). Чтобы использовать зоны доступности, необходимо создать масштабируемый набор в поддерживаемом регионе Azure.
 
-Добавьте параметр `--zones` в команду [az vmss create](/cli/azure/vmss#az_vmss_create) и укажите, какую зону использовать (например, зону *1*, *2* или *3*). В следующем примере создается однозонный масштабируемый набор *myScaleSet* в зоне *1*:
+Добавьте параметр `--zones` в команду [az vmss create](/cli/azure/vmss) и укажите, какую зону использовать (например, зону *1*, *2* или *3*). В следующем примере создается однозонный масштабируемый набор *myScaleSet* в зоне *1*:
 
 ```azurecli
 az vmss create \

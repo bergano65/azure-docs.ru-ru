@@ -10,19 +10,19 @@ items:
 - name: Быстрое начало работы
   items:
   - name: Краткое руководство по работе с отдельной базой данных
-    href: sql-database-quickstart-guide.md
+    href: sql-database-single-database-quickstart-guide.md
   - name: Краткое руководство по работе с управляемыми экземплярами
     href: sql-database-managed-instance-quickstart-guide.md
   - name: Создание
     items:
     - name: Отдельная база данных
-      href: sql-database-get-started-portal.md
+      href: sql-database-single-database-get-started.md
     - name: Управляемый экземпляр
       href: sql-database-managed-instance-get-started.md
   - name: Настройка
     items:
-    - name: Правила брандмауэра для сервера базы данных
-      href: sql-database-get-started-portal-firewall.md
+    - name: Правила брандмауэра для IP-адресов на уровне сервера
+      href: sql-database-server-level-firewall-rule.md
     - name: Подключение клиентской виртуальной машины к управляемому экземпляру
       href: sql-database-managed-instance-configure-vm.md
     - name: Подключение "точка — сеть" к управляемому экземпляру
@@ -97,6 +97,8 @@ items:
     href: sql-database-cli-samples.md
   - name: Azure PowerShell
     href: sql-database-powershell-samples.md
+  - name: Azure Resource Manager
+    href: sql-database-resource-manager-samples.md
 - name: Основные понятия
   items:
   - name: Модели приобретения
@@ -225,7 +227,7 @@ items:
         href: sql-vulnerability-assessment.md
       - name: Обнаружение угроз
         href: sql-database-threat-detection-overview.md
-    - name: 'Сервер базы данных: правила брандмауэра для IP-адресов'
+    - name: Правила брандмауэра для IP-адресов на уровне сервера
       items:
       - name: Создание и управление
         href: sql-database-firewall-configure.md
@@ -710,9 +712,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: fc900fc17f4dbd1ee1527fc8a84053408d83d98d
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 9a04e463a7324b1021594a8fbefc5988ad8471f2
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731297"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756739"

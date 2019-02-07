@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: 9f96b4cbe95d918a94ea0d02f9b8fdd8f663eeec
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: f6a678e03818f1e1f2182b3b0dfab221d415dc72
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54001470"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55698273"
 ---
 # <a name="create-a-serverless-api-using-azure-functions"></a>Создание бессерверного API с помощью Функций Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "54001470"
 
 1. Выберите команду **Сохранить**.
 
-Дополнительные сведения см. в статье [Привязки HTTP и webhook в Функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook#customizing-the-http-endpoint).
+Дополнительные сведения см. в статье [Привязки HTTP и webhook в Функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook).
 
 ### <a name="test-your-api"></a>Тестирование API
 
@@ -176,7 +176,7 @@ ms.locfileid: "54001470"
 }
 ```
 
-При этом добавляется новый прокси, GetUserByName, без свойства backendUri. Вместо вызова другого ресурса он изменяет ответ по умолчанию от прокси-серверов, используя переопределение ответа. Переопределение запроса и ответа может также использоваться в сочетании с URL-адресом внутреннего сервера. Это особенно полезно при перенаправлении к устаревшим системам, где вам может потребоваться изменить заголовки, параметры запроса и т. д. Дополнительные сведения о переопределении запроса и ответа см. в [этой статье](https://docs.microsoft.com/azure/azure-functions/functions-proxies#a-namemodify-requests-responsesamodifying-requests-and-responses).
+При этом добавляется новый прокси, GetUserByName, без свойства backendUri. Вместо вызова другого ресурса он изменяет ответ по умолчанию от прокси-серверов, используя переопределение ответа. Переопределение запроса и ответа может также использоваться в сочетании с URL-адресом внутреннего сервера. Это особенно полезно при перенаправлении к устаревшим системам, где вам может потребоваться изменить заголовки, параметры запроса и т. д. Дополнительные сведения о переопределении запроса и ответа см. в [этой статье](https://docs.microsoft.com/azure/azure-functions/functions-proxies).
 
 Протестируйте макет API, вызвав конечную точку `<YourProxyApp>.azurewebsites.net/api/users/{username}` с помощью браузера или избранного клиента REST. Замените _{username}_ строковым значением, представляющим имя пользователя.
 

@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/08/2018
 ms.author: raynew
-ms.openlocfilehash: b8ff1ae2f4c07dc59bd1ffb631378817493b96b0
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 974ea5803b6e31ad8f940265071f41440d5355da
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53995054"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700644"
 ---
 # <a name="best-practices-for-costing-and-sizing-workloads-migrated-to-azure"></a>Рекомендации по оценке затрат на рабочие нагрузки, перенесенные в Azure, и определению их размеров
 
@@ -154,7 +154,7 @@ Azure предоставляет различные типы учетных за
 
 - [Калькулятор сбережений на основе преимуществ гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/).
 - [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) для Windows Server.
-- [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance#bring-your-own-license-byol).
+- [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
 
 ## <a name="best-practice-use-reserved-vm-instances"></a>Рекомендация. Использование зарезервированных экземпляров виртуальной машины
@@ -174,7 +174,7 @@ Azure предоставляет различные типы учетных за
 **Дополнительные сведения**
 - [Общие сведения об Azure Reserved VM Instances](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations).
 - [Часто задаваемые вопросы по зарезервированным экземплярам](https://azure.microsoft.com/pricing/reserved-vm-instances/#faq).
-- [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance#bring-your-own-license-byol).
+- [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
 
 ## <a name="best-practice-aggregate-cloud-spend-across-subscriptions"></a>Рекомендация. Выполнение статистического вычисления расходов на облако для нескольких подписок

@@ -11,12 +11,12 @@ ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 840c230ae3b2fc167c0d59a4a9a0155fe5deb661
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 3e838f932299a9ea7f837570f9d15725230eb4f8
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238263"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660091"
 ---
 # <a name="prepare-for-extension-host-for-azure-stack"></a>Подготовка хост-процесса для расширений для Azure Stack
 
@@ -141,7 +141,7 @@ ms.locfileid: "55238263"
 
 ### <a name="publish-new-endpoints"></a>Публикация новых конечных точек
 
-Есть две новые конечные точки, которые необходимо опубликовать через брандмауэр. Выделенные IP-адреса из пула общедоступных виртуальных IP-адресов можно получить, используя следующий код, который должен выполняться с помощью [привилегированной конечной точки среды](https://docs.microsoft.com/en-gb/azure/azure-stack/azure-stack-privileged-endpoint) Azure Stack.
+Есть две новые конечные точки, которые необходимо опубликовать через брандмауэр. Выделенные IP-адреса из пула общедоступных виртуальных IP-адресов можно получить, используя следующий код, который должен выполняться с помощью [привилегированной конечной точки среды](https://docs.microsoft.com/azure/azure-stack/azure-stack-privileged-endpoint) Azure Stack.
 
 ```PowerShell
 # Create a PEP Session

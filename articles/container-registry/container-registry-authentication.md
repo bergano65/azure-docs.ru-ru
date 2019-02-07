@@ -9,20 +9,18 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 66f9c41e2551dffc32932f1cfa53fa444251b303
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: a6ae388107e527b399dc758abccbefcec955a60d
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55301056"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661638"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
 Существует несколько способов аутентификации в реестре контейнеров Azure, каждый из которых подходит для одного или нескольких сценариев использования реестра.
 
 Вы можете входить в реестр напрямую с помощью [отдельного входа](#individual-login-with-azure-ad), а ваши приложения и оркестраторы контейнеров могут осуществлять автоматическую аутентификацию с помощью [субъекта-службы](#service-principal) Active Directory Azure (Azure AD).
-
-Реестр контейнеров Azure не поддерживает неаутентифицированные операции Docker или анонимный доступ. Для общедоступных образов можно использовать [концентратор Docker](https://docs.docker.com/docker-hub/).
 
 ## <a name="individual-login-with-azure-ad"></a>Отдельный вход с помощью Azure AD
 
@@ -69,7 +67,7 @@ docker login myregistry.azurecr.io
 После входа в систему Docker кэширует учетные данные, поэтому вам не нужно запоминать идентификатор приложения.
 
 > [!TIP]
-> Можно создать пароль субъекта-службы повторно, выполнив команду [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-reset-credentials).
+> Можно создать пароль субъекта-службы повторно, выполнив команду [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest).
 >
 
 ## <a name="admin-account"></a>Учетная запись администратора

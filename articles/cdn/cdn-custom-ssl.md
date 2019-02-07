@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/18/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 5b8277c0688d0fd08dfa81cb7d5f7155840843c0
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: f75b14ce2ca860ee894fe0a2ef501066b91f8e8a
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413589"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755651"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Руководство. Настройка протокола HTTPS для личного домена в Azure CDN
 
@@ -172,7 +172,7 @@ Azure CDN по умолчанию поддерживает HTTPS в имени �
 |-----------------|-------|-----------------------|
 | www.contoso.com; | CNAME | contoso.azureedge.net |
 
-Дополнительные сведения о записи CNAME см. в разделе [о создании записи CNAME в DNS](https://docs.microsoft.com/azure/cdn/cdn-map-content-to-custom-domain#create-the-cname-dns-records).
+Дополнительные сведения о записи CNAME см. в разделе [о создании записи CNAME в DNS](https://docs.microsoft.com/azure/cdn/cdn-map-content-to-custom-domain).
 
 Если запись CNAME имеет правильный формат, DigiCert автоматически подтверждает имя личного домена и добавляет его к сертификату SAN. DigitCert не будет отправлять писем для подтверждения и вам не нужно подтверждать этот запрос. Сертификат будет действителен в течение одного года, а перед истечением срока действия — автоматически продлеваться. Переходите к разделу [Ожидание распространения](#wait-for-propagation). 
 

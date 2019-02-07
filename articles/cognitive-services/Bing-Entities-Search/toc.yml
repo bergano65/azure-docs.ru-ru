@@ -4,43 +4,41 @@ items:
 - name: Обзор
   items:
   - name: Что такое Поиск сущностей Bing?
-    href: search-the-web.md
+    href: overview.md
   - name: Сравнение API-интерфейсов поиска Bing
     href: ../Bing-Web-Search/bing-api-comparison.md
     maintainContext: true
 - name: Краткие руководства по REST API
   items:
-  - name: C#
-    href: quickstarts/csharp.md
-  - name: Java
-    href: quickstarts/java.md
-  - name: Node.js
-    href: quickstarts/nodejs.md
-  - name: PHP
-    href: quickstarts/php.md
-  - name: Python
-    href: quickstarts/python.md
-  - name: Ruby
-    href: quickstarts/ruby.md
+  - name: REST API
+    items:
+    - name: Использование C#
+      href: quickstarts/csharp.md
+    - name: Использование Java
+      href: quickstarts/java.md
+    - name: Использование Node.js
+      href: quickstarts/nodejs.md
+    - name: Использование PHP
+      href: quickstarts/php.md
+    - name: Использование Python
+      href: quickstarts/python.md
+    - name: Использование Ruby
+      href: quickstarts/ruby.md
+  - name: SDK
+    items:
+    - name: Использование C#
+      href: quickstarts/entity-sdk-csharp-quickstart.md
+    - name: Использование Node.js
+      href: quickstarts/entity-sdk-node-quickstart.md
+    - name: Использование Python
+      href: quickstarts/entity-sdk-python-quickstart.md
+    - name: Использование Java
+      href: quickstarts/entity-sdk-java-quickstart.md
   expanded: true
-- name: Краткие руководства по пакетам SDK
-  items:
-  - name: Общие сведения о примерах пакетов SDK
-    href: sdk.md
-  - name: Краткое руководство по API Bing для поиска сущностей для C#
-    href: entity-search-sdk-quickstart.md
-  - name: Краткое руководство по API Bing для поиска сущностей для Node.js
-    href: entity-search-sdk-node-quickstart.md
-  - name: Краткое руководство по API Bing для поиска сущностей для Python
-    href: entity-sdk-python-quickstart.md
-  - name: Краткое руководство по API Bing для поиска сущностей для Java
-    href: entity-sdk-java-quickstart.md
 - name: Учебники
   items:
-  - name: Одностраничные веб-приложения
+  - name: Создание одностраничного веб-приложения
     href: tutorial-bing-entities-search-single-page-app.md
-  - name: Одностраничные веб-приложения (исходный код)
-    href: tutorial-bing-entities-search-single-page-app-source.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -49,6 +47,12 @@ items:
   items:
   - name: Изменение размера и обрезка эскизов
     href: resize-and-crop-thumbnails.md
+- name: Основные понятия
+  items:
+  - name: Поиск сущностей
+    href: concepts/search-for-entities.md
+  - name: Отправка поисковых запросов
+    href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
   - name: Требования к использованию и отображению API-интерфейсов поиска Bing
@@ -90,9 +94,9 @@ items:
     href: entity-search-endpoint.md
   - name: Аналитика для API Bing для поиска сущностей
     href: bing-entity-stats.md
-ms.openlocfilehash: 919d44bbf41397cf58c06cfe2eff56867546b61e
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 6574b06a9aced43f381bcb106e0b6426bd6f4fd7
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509938"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755803"

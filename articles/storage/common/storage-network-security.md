@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: cbrooks
 ms.subservice: common
-ms.openlocfilehash: c6b4ed787fa9e8881990801bdee77550a1a0bf2f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: ce682263663c0547d9e35a4d29037fd125d8bc6c
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473635"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699182"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -241,7 +241,7 @@ ms.locfileid: "55473635"
 
 Чтобы предоставить доступ из вашей локальной сети к учетной записи хранения в правиле IP-сети, необходимо определить IP-адреса для Интернета, которые используются в вашей сети. За помощью обращайтесь к администратору сети.
 
-Для подключения своей сети к сети Azure можно использовать [ExpressRoute](/azure/expressroute/expressroute-introduction). В этом случае для каждого канала настраивается два общедоступных IP-адреса. Их можно найти в Microsoft Edge и подключаться к службам Майкрософт (например, к службе хранилища Azure) с помощью [общедоступного пиринга Azure](/azure/expressroute/expressroute-circuit-peerings#expressroute-routing-domains). Чтобы разрешить взаимодействие со службой хранилища Azure, создайте правила IP-сети для общедоступных IP-адресов ваших цепей. Чтобы найти общедоступные IP-адреса цепей ExpressRoute, [отправьте запрос ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) на портале Azure.
+Для подключения своей сети к сети Azure можно использовать [ExpressRoute](/azure/expressroute/expressroute-introduction). В этом случае для каждого канала настраивается два общедоступных IP-адреса. Их можно найти в Microsoft Edge и подключаться к службам Майкрософт (например, к службе хранилища Azure) с помощью [общедоступного пиринга Azure](/azure/expressroute/expressroute-circuit-peerings). Чтобы разрешить взаимодействие со службой хранилища Azure, создайте правила IP-сети для общедоступных IP-адресов ваших цепей. Чтобы найти общедоступные IP-адреса цепей ExpressRoute, [отправьте запрос ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) на портале Azure.
 
 ### <a name="managing-ip-network-rules"></a>Управление правилами IP-сети
 
@@ -355,7 +355,7 @@ ms.locfileid: "55473635"
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
 |Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)|
 |Сеть Azure|Microsoft.Networking|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
-|Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security#monitoring-and-secured-Azure-storage-and-networks).|
+|Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).|
 |Хранилище данных SQL Azure|Microsoft.Sql|Позволяет импортировать и экспортировать сценарии с использованием PolyBase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища

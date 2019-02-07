@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/16/2017
 ms.author: genli
-ms.openlocfilehash: e6d6c47726b21a241b379366bd1fde6c6b90e223
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 76a29ce05aab39d9460dcf068ec8a7f60d1e8fac
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462018"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753288"
 ---
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-with-the-azure-cli"></a>Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация возникает из-за неправильной записи в `/etc/fstab`, которая мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure CLI подключить виртуальный жесткий диск к другой виртуальной машине Linux для устранения ошибок, а затем восстановить исходную виртуальную машину. 
@@ -43,7 +43,7 @@ ms.locfileid: "54462018"
 ## <a name="determine-boot-issues"></a>Выявление проблем при загрузке
 Изучите последовательные выходные данные, чтобы определить, почему виртуальная машина не может правильно загрузиться. Например, причиной может быть некорректная запись в `/etc/fstab`, удаление или перемещение базового виртуального жесткого диска.
 
-Получите журналы загрузки с помощью команды [az vm boot-diagnostics get-boot-log](/cli/azure/vm/boot-diagnostics#az_vm_boot_diagnostics_get_boot_log). В следующем примере возвращаются последовательные выходные данные с виртуальной машины `myVM` в группе ресурсов `myResourceGroup`:
+Получите журналы загрузки с помощью команды [az vm boot-diagnostics get-boot-log](/cli/azure/vm/boot-diagnostics). В следующем примере возвращаются последовательные выходные данные с виртуальной машины `myVM` в группе ресурсов `myResourceGroup`:
 
 ```azurecli
 az vm boot-diagnostics get-boot-log --resource-group myResourceGroup --name myVM
@@ -55,7 +55,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroup --name myVM
 ## <a name="view-existing-virtual-hard-disk-details"></a>Просмотр сведений для существующего виртуального жесткого диска
 Прежде чем подключить виртуальный жесткий диск к другой виртуальной машине, следует определить универсальный код ресурса (URI) диска ОС. 
 
-Просмотрите сведения о виртуальной машине с помощью команды [az vm show](/cli/azure/vm#az_vm_show). Используйте флаг `--query` для извлечения универсального кода ресурса (URI) диска ОС. В следующем примере возвращаются сведения о дисках виртуальной машины `myVM` в группе ресурсов `myResourceGroup`.
+Просмотрите сведения о виртуальной машине с помощью команды [az vm show](/cli/azure/vm). Используйте флаг `--query` для извлечения универсального кода ресурса (URI) диска ОС. В следующем примере возвращаются сведения о дисках виртуальной машины `myVM` в группе ресурсов `myResourceGroup`.
 
 ```azurecli
 az vm show --resource-group myResourceGroup --name myVM \
@@ -81,7 +81,7 @@ az vm delete --resource-group myResourceGroup --name myVM
 ## <a name="attach-existing-virtual-hard-disk-to-another-vm"></a>Присоединение существующего виртуального жесткого диска к другой виртуальной машине
 В следующих нескольких шагах описывается использование другой виртуальной машины для устранения неполадок. Присоедините существующий виртуальный жесткий диск к виртуальной машине для устранения неполадок, чтобы просматривать и изменять содержимое диска. Этот процесс позволяет, например, исправить ошибки конфигурации или изучить дополнительные журналы протоколов или системы. Выберите или создайте другую виртуальную машину, которая будет использоваться для устранения неполадок.
 
-Подключите существующий виртуальный жесткий диск с помощью команды [az vm unmanaged-disk attach](/cli/azure/vm/unmanaged-disk#az_vm_unmanaged_disk_attach). При присоединении существующего виртуального жесткого диска укажите универсальный код ресурса (URI) адрес диска, полученный в предыдущей команде `az vm show`. В следующем примере существующий виртуальный жесткий диск присоединяется к виртуальной машине для устранения неполадок `myVMRecovery` в группе ресурсов `myResourceGroup`:
+Подключите существующий виртуальный жесткий диск с помощью команды [az vm unmanaged-disk attach](/cli/azure/vm/unmanaged-disk). При присоединении существующего виртуального жесткого диска укажите универсальный код ресурса (URI) адрес диска, полученный в предыдущей команде `az vm show`. В следующем примере существующий виртуальный жесткий диск присоединяется к виртуальной машине для устранения неполадок `myVMRecovery` в группе ресурсов `myResourceGroup`:
 
 ```azurecli
 az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecovery \
@@ -147,7 +147,7 @@ az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecov
     sudo umount /dev/sdc1
     ```
 
-2. Теперь отсоедините виртуальный жесткий диск от виртуальной машины. Выйдите из сеанса SSH и вернитесь к виртуальной машине для устранения неполадок. Выведите список дисков данных, подключенные к виртуальной машине для устранения неполадок, выполнив команду [az vm unmanaged-disk list](/cli/azure/vm/unmanaged-disk#az_vm_unmanaged_disk_list). В следующем примере указываются диски данных, подключенные к виртуальной машине `myVMRecovery` в группе ресурсов `myResourceGroup`:
+2. Теперь отсоедините виртуальный жесткий диск от виртуальной машины. Выйдите из сеанса SSH и вернитесь к виртуальной машине для устранения неполадок. Выведите список дисков данных, подключенные к виртуальной машине для устранения неполадок, выполнив команду [az vm unmanaged-disk list](/cli/azure/vm/unmanaged-disk). В следующем примере указываются диски данных, подключенные к виртуальной машине `myVMRecovery` в группе ресурсов `myResourceGroup`:
 
     ```azurecli
     azure vm unmanaged-disk list --resource-group myResourceGroup --vm-name myVMRecovery \
@@ -156,7 +156,7 @@ az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecov
 
     Обратите внимание на имя существующего виртуального жесткого диска. Например, имя диска с URI **https://mystorageaccount.blob.core.windows.net/vhds/myVM.vhd** — **myVHD**. 
 
-    Отключите диск данных от виртуальной машины командой [az vm unmanaged-disk detach](/cli/azure/vm/unmanaged-disk#az_vm_unmanaged_disk_detach). В следующем примере диск `myVHD` отключается от виртуальной машины `myVMRecovery` в группе ресурсов `myResourceGroup`.
+    Отключите диск данных от виртуальной машины командой [az vm unmanaged-disk detach](/cli/azure/vm/unmanaged-disk). В следующем примере диск `myVHD` отключается от виртуальной машины `myVMRecovery` в группе ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm unmanaged-disk detach --resource-group myResourceGroup --vm-name myVMRecovery \
@@ -169,7 +169,7 @@ az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecov
 
 - https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-specialized-vhd-new-or-existing-vnet/azuredeploy.json
 
-Шаблон развертывает виртуальную машину с помощью универсального кода ресурса (URI) виртуального жесткого диска из предыдущей команды. Разверните шаблон с помощью команды [az group deployment create](/cli/azure/group/deployment#az_group_deployment_create). Введите универсальный код ресурса (URI) для исходного виртуального жесткого диска, а затем укажите тип ОС, размер и имя виртуальной машины, как показано ниже.
+Шаблон развертывает виртуальную машину с помощью универсального кода ресурса (URI) виртуального жесткого диска из предыдущей команды. Разверните шаблон с помощью команды [az group deployment create](/cli/azure/group/deployment). Введите универсальный код ресурса (URI) для исходного виртуального жесткого диска, а затем укажите тип ОС, размер и имя виртуальной машины, как показано ниже.
 
 ```azurecli
 az group deployment create --resource-group myResourceGroup --name myDeployment \
@@ -181,7 +181,7 @@ az group deployment create --resource-group myResourceGroup --name myDeployment 
 ```
 
 ## <a name="re-enable-boot-diagnostics"></a>Восстановление диагностики загрузки
-При создании виртуальной машины на основе существующего виртуального жесткого диска диагностика загрузки не всегда автоматически включена. Включите диагностику загрузки с помощью команды [az vm boot-diagnostics enable](/cli/azure/vm/boot-diagnostics#az_vm_boot_diagnostics_enable). В следующем примере на виртуальной машине `myDeployedVM` в группе ресурсов `myResourceGroup` включается расширение диагностики:
+При создании виртуальной машины на основе существующего виртуального жесткого диска диагностика загрузки не всегда автоматически включена. Включите диагностику загрузки с помощью команды [az vm boot-diagnostics enable](/cli/azure/vm/boot-diagnostics). В следующем примере на виртуальной машине `myDeployedVM` в группе ресурсов `myResourceGroup` включается расширение диагностики:
 
 ```azurecli
 az vm boot-diagnostics enable --resource-group myResourceGroup --name myDeployedVM

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 12/31/2018
 ms.author: ellacroi
-ms.openlocfilehash: 93b1b0c8288fb408e4af6aba2eb2267ce650208c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 56a324aba3c5d8f550e5b51ff49b5ee0e74a3415
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247125"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55658340"
 ---
 # <a name="marketplace-faqs"></a>Часто задаваемые вопросы о Marketplace
 
@@ -358,7 +358,7 @@ Azure Marketplace — это магазин, в котором партнеры
 
 **Что такое интересы и почему они важны для меня как издателя на Marketplace?**
 
-Интересы — это пользователи, которые развертывают ваши продукты из Marketplace. Независимо от того, где содержится ваш продукт (в [Azure Marketplace](https://azuremarketplace.microsoft.com) или в [AppSource](https://appsource.microsoft.com)), вы сможете получать сведения о потенциальных клиентах, заинтересованных в вашем продукте.  В своем предложении вы можете настроить назначения потенциального клиента. Дополнительные сведения см. в статье [Регистрация в качестве издателя в облаке Marketplace](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher).
+Интересы — это пользователи, которые развертывают ваши продукты из Marketplace. Независимо от того, где содержится ваш продукт (в [Azure Marketplace](https://azuremarketplace.microsoft.com) или в [AppSource](https://appsource.microsoft.com)), вы сможете получать сведения о потенциальных клиентах, заинтересованных в вашем продукте.  В своем предложении вы можете настроить назначения потенциального клиента. Дополнительные сведения см. в статье [Регистрация в качестве издателя в облаке Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).
 
 **Где можно получить помощь про поводу настройки назначения моего интереса?**
 

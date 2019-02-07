@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 12/17/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 238b75681ec525187ea27f60ac8b21b05b13954d
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: f2bd1d863a7900b50712eb23c1088c6b271befa3
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54063120"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755903"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -199,7 +199,7 @@ appInsights.context.addTelemetryInitializer((envelope) => {
 
 3. При использовании Функций Azure с C# выполните обновление до [Функций версии 2](https://docs.microsoft.com/azure/azure-functions/functions-versions).
 
-4. Настройте [cloud_RoleName](app-map.md#Set-cloud-RoleName) должным образом.
+4. Настройте [cloud_RoleName](app-map.md#set-cloudrolename) должным образом.
 
 5. Если вы пропустили зависимость, убедитесь, что она находится в списке [автоматически собранных зависимостей](https://docs.microsoft.com/azure/application-insights/auto-collect-dependencies). Если нет, вы можете по-прежнему отследить ее вручную с помощью [вызова зависимости отслеживания](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackdependency).
 

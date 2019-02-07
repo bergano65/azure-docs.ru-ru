@@ -9,12 +9,12 @@ ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: 0238c8f9c7a7e571ab23b3147381d7fa22c4d8d4
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: a05874e28c08087b6f82c3aa5a02e83d2629ffe5
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413317"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694692"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
@@ -184,7 +184,7 @@ Azure AD поддерживает следующие методы аутенти
 |Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления для функции условного доступа*](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления для функции условного доступа*](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Пользовательские элементы управления для функции условного доступа*](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|
 |Какие состояния учетной записи пользователя поддерживаются?|Отключенные учетные записи<br>(до 30-минутной задержки)|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|
 |Какие варианты условного доступа поддерживаются?|[Условный доступ Azure AD с Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)|[Условный доступ Azure AD с Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)|[Условный доступ Azure AD с Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
-|Поддерживается ли блокировка устаревших протоколов?|[Да](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication)|[Да](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication)|[Да](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
+|Поддерживается ли блокировка устаревших протоколов?|[Да](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions)|[Да](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions)|[Да](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Можно ли настроить логотип, изображение и описание на страницах входа?|[Да, в Azure AD Premium](https://docs.microsoft.com/azure/active-directory/customize-branding)|[Да, в Azure AD Premium](https://docs.microsoft.com/azure/active-directory/customize-branding)|[Да](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-federation-management#customlogo)|
 |Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords)<br><br>[Отчеты об утечке учетных данных, с Azure AD Premium P2](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-risk-events)|[Интеллектуальная блокировка паролей](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication-smart-lockout)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-federation-compatibility)|
 

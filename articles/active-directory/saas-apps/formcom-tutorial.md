@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Form.com | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Form.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Form.com.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: f1bc0112-315c-4e6f-8c69-7c6873007bcf
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: faa89ffd572733c580235b1c6dec58893de20503
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d5748cad11e8e0e4bdfd1000b312ab44fc304059
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449627"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55161068"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по интеграции Azure Active Directory с Form.com
+# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство. Интеграция Azure Active Directory с Form.com
 
 В этом руководстве описано, как интегрировать Form.com с Azure Active Directory (Azure AD).
 
@@ -123,11 +123,11 @@ ms.locfileid: "39449627"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, URL-адреса ответа и идентификатора. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Form.com](https://form.com/about/company/contact-us/).
 
-1. В разделе **Сертификат подписи SAML** сделайте следующее:
+1. В разделе  **Сертификат подписи SAML** сделайте следующее.
     
     ![Настройка единого входа](./media/formcom-tutorial/tutorial_metadataurl.png)
 
-    a. Нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот.
+    a. Нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот.
 
     b. Щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
      
@@ -212,7 +212,7 @@ ms.locfileid: "39449627"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Form.com" на панели доступа, вы автоматически войдете в приложение Form.com.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

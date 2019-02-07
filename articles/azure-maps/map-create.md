@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 97b94cf54454a83510c5be2cf0d71281dbf5b004
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 222fc5e9083c03ff0d4e31927363c5f517cf32a9
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424245"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699370"
 ---
 # <a name="create-a-map"></a>Создание карты
 
@@ -40,16 +40,16 @@ ms.locfileid: "52424245"
 <iframe height='500' scrolling='no' title='Создание карты с помощью CameraBoundsOptions' src='//codepen.io/azuremaps/embed/ZrRbPg/?height=543&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/ZrRbPg/'>Создание карты через `CameraBoundsOptions` </a>от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-В представленном выше примере кода создается [объект map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) с помощью `new atlas.Map()`. Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
+В представленном выше примере кода создается [объект map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) с помощью `new atlas.Map()`. Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
 
 ### <a name="animate-map-view"></a>Просмотр анимации карты
 
 <iframe height='500' scrolling='no' title='Просмотр анимации карты' src='//codepen.io/azuremaps/embed/WayvbO/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/WayvbO/'>Просмотр анимации карты</a> для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Первый блок в приведенном выше коде создает [объект карты](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) через `new atlas.Map()`. Свойства карты, такие как положение центральной точки и уровень масштабирования, входят в [CameraOptions](/javascript/api/azure-maps-control/atlas.cameraoptions). `CameraOptions` можно определить через конструктор карты или с помощью функции [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera) класса Map. [Стиль карты](https://docs.microsoft.com/azure/azure-maps/supported-map-styles) получает значение `road`.
+Первый блок в приведенном выше коде создает [объект карты](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) через `new atlas.Map()`. Свойства карты, такие как положение центральной точки и уровень масштабирования, входят в [CameraOptions](/javascript/api/azure-maps-control/atlas.cameraoptions). `CameraOptions` можно определить через конструктор карты или с помощью функции [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) класса Map. [Стиль карты](https://docs.microsoft.com/azure/azure-maps/supported-map-styles) получает значение `road`.
 
-Второй блок кода создает функцию анимации карты, которая анимирует изменения в представлении карты, определяя [AnimationOption](/javascript/api/azure-maps-control/atlas.animationoptions) с помощью функции [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera). Эта функция активируется кнопкой "Анимация карты" и создает случайный уровень масштаба при каждом щелчке мыши.
+Второй блок кода создает функцию анимации карты, которая анимирует изменения в представлении карты, определяя [AnimationOption](/javascript/api/azure-maps-control/atlas.animationoptions) с помощью функции [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). Эта функция активируется кнопкой "Анимация карты" и создает случайный уровень масштаба при каждом щелчке мыши.
 
 ## <a name="try-out-the-code"></a>Тестирование кода
 

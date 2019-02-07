@@ -8,32 +8,32 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/11/2018
-ms.openlocfilehash: 4f3712a45fdb2474eedeb8d4eac034060723010d
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 540634d68f28aadeed308bc6cc84f459b79385e2
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156550"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729293"
 ---
 # <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.  
+Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
-- **Масштабируемый набор виртуальных машин**. Если у вас еще нет масштабируемого набора виртуальных машин, вы можете [создать его с помощью Ansible](ansible-create-configure-vmss.md). 
+- **Масштабируемый набор виртуальных машин**. Если у вас еще нет масштабируемого набора виртуальных машин, вы можете [создать его с помощью Ansible](ansible-create-configure-vmss.md).
 - **git** - [git](https://git-scm.com) используется для скачивания примеров Java, которые есть в этом руководстве.
 - **Пакет SDK для Java SE (JDK)**. [JDK](https://aka.ms/azure-jdks) используется для сборки примера проекта Java.
 - **Средства сборки Apache Maven**[Средства сборки Apache Maven](https://maven.apache.org/download.cgi) используются для создания примера проекта Java.
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6. 
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6.
 
 ## <a name="get-host-information"></a>Получение сведений об узле
 
-В этом разделе показано, как использовать Ansible для получения сведений об узле для группы виртуальных машин Azure. Ниже приведен пример сборника схем Ansible. Код получает общедоступные IP-адреса и подсистему балансировки нагрузки в указанной группе ресурсов и создает группу узлов с именем **saclesethosts** в списке. 
+В этом разделе показано, как использовать Ansible для получения сведений об узле для группы виртуальных машин Azure. Ниже приведен пример сборника схем Ansible. Код получает общедоступные IP-адреса и подсистему балансировки нагрузки в указанной группе ресурсов и создает группу узлов с именем **saclesethosts** в списке.
 
-Сохраните следующий пример сборника схем как `get-hosts-tasks.yml`: 
+Сохраните следующий пример сборника схем как `get-hosts-tasks.yml`:
 
   ```yml
   - name: Get facts for all Public IPs within a resource groups
@@ -59,7 +59,7 @@ Ansible позволяет автоматизировать развертыва
       - "{{ output.ansible_facts.azure_loadbalancers[0].properties.inboundNatRules }}"
   ```
 
-## <a name="prepare-an-application-for-deployment"></a>Подготовка приложения для развертывания  
+## <a name="prepare-an-application-for-deployment"></a>Подготовка приложения для развертывания
 
 В этом разделе вы используете git для клонирования примера проекта Java из GitHub и выполните сборку проекта. Сохраните следующий сборник схем как `app.yml`:
 
@@ -69,7 +69,7 @@ Ansible позволяет автоматизировать развертыва
       repo_url: https://github.com/spring-guides/gs-spring-boot.git
       workspace: ~/src/helloworld
 
-    tasks: 
+    tasks:
     - name: Git Clone sample app
       git:
         repo: "{{ repo_url }}"
@@ -106,7 +106,7 @@ Ansible позволяет автоматизировать развертыва
 
 ## <a name="deploy-the-application-to-vmss"></a>Развертывание приложения в VMSS
 
-В следующем разделе сборника схем Ansible устанавливается JRE (Java Runtime Environment) в группе узлов с именем **saclesethosts** и развертывается приложение Java в группе узлов с именем **saclesethosts**: 
+В следующем разделе сборника схем Ansible устанавливается JRE (Java Runtime Environment) в группе узлов с именем **saclesethosts** и развертывается приложение Java в группе узлов с именем **saclesethosts**:
 
 (Измените `admin_password` на свой пароль).
 
@@ -118,7 +118,7 @@ Ansible позволяет автоматизировать развертыва
       loadbalancer_name: myVMSSlb
       admin_username: azureuser
       admin_password: "your_password"
-    tasks:   
+    tasks:
     - include: get-hosts-tasks.yml
 
   - name: Install JRE on VMSS
@@ -147,9 +147,9 @@ Ansible позволяет автоматизировать развертыва
       poll: 0
   ```
 
-Вы можете сохранить предыдущий пример сборника схем Ansible как `vmss-setup-deploy.yml` или [загрузить весь пример сборника схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss). 
+Вы можете сохранить предыдущий пример сборника схем Ansible как `vmss-setup-deploy.yml` или [загрузить весь пример сборника схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss).
 
-Чтобы использовать тип SSH-подключения с паролями, необходимо установить программу sshpass. 
+Чтобы использовать тип SSH-подключения с паролями, необходимо установить программу sshpass.
   - Для Ubuntu версии 16.04 выполните команду `apt-get install sshpass`.
   - Для CentOS версии 7.4 выполните команду `yum install sshpass`.
 
@@ -207,5 +207,5 @@ Ansible позволяет автоматизировать развертыва
 ![Приложение Java, работающее в масштабируемом наборе виртуальных машин на портале Azure.](media/ansible-deploy-app-vmss/ansible-deploy-app-vmss.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss)

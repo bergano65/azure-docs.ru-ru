@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: ada579af44d1d0b4ea08a8ae9eadbec386e44f08
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 20616adf649924a13e80411aa5135889a175f442
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51823016"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750194"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений на основе координат
 
@@ -33,7 +33,7 @@ ms.locfileid: "51823016"
 
 В третьем блоке кода стиль курсора мыши меняется на указатель и объект [popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#open). См. инструкции по [добавлению всплывающего окна на карту](./map-add-popup.md).
 
-В четвертом блоке кода добавляется [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) для щелчков мышью. При щелчке мышью создается поисковой запрос с координатами щелкнутого расположения. Затем используется конечная точка [getSearchAddressReverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.search?view=azure-iot-typescript-latest#getsearchaddressreverse) карты, чтобы запросить координаты из адреса.
+В четвертом блоке кода добавляется [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) для щелчков мышью. При щелчке мышью создается поисковой запрос с координатами щелкнутого расположения. Затем используется конечная точка [getSearchAddressReverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.search?view=azure-iot-typescript-latest) карты, чтобы запросить координаты из адреса.
 
 При получении ответа фиксируется адрес щелкнутого расположения. Также в коде определяется содержимое и расположение всплывающего окна с помощью функции [setOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#setoptions-popupoptions-) класса Popup.
 

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с FreshGrade | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с FreshGrade | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в FreshGrade.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: femila
 ms.assetid: 1055bba6-f4df-462e-bc9b-1ad5ada0f638
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: c6439b31d2f8c95e0dc1526b92f21aee2966f12f
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1861dfb23d105fa6b403095b5fc36d1f2a894fe9
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436365"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55152561"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Учебник. Интеграция Azure Active Directory с FreshGrade
+# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство. Интеграция Azure Active Directory с FreshGrade
 
 В этом учебнике описано, как интегрировать FreshGrade с Azure Active Directory (Azure AD).
 
@@ -127,7 +127,7 @@ ms.locfileid: "39436365"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов FreshGrade](mailTo:support@freshgrade.com).
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
     
     ![Настройка единого входа](./media/freshgrade-tutorial/tutorial_metadataurl.png)
      

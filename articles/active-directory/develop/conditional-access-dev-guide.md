@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.openlocfilehash: c5df6d1b3480a93a0667aaec0bcf0e171d4a0fe6
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: b84d7a6f266ffae062d861c53a229225403e07c5
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101759"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55727999"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство для разработчиков по условному доступу в Azure Active Directory
 
@@ -77,7 +77,7 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Условный доступ Azure AD — это функция, включенная в [Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-whatis#choose-an-edition). Дополнительные сведения о требованиях к лицензиям см. в статье [Отчет о нелицензированном использовании](../active-directory-conditional-access-unlicensed-usage-report.md). Разработчики могут присоединиться к сети разработчиков [Microsoft Developer Network](https://msdn.microsoft.com/dn308572.aspx), которая включает бесплатную подписку на Enterprise Mobility Suite, содержащую Azure AD Premium.
+Условный доступ Azure AD — это функция, включенная в [Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-whatis). Дополнительные сведения о требованиях к лицензиям см. в статье [Отчет о нелицензированном использовании](../active-directory-conditional-access-unlicensed-usage-report.md). Разработчики могут присоединиться к сети разработчиков [Microsoft Developer Network](https://msdn.microsoft.com/dn308572.aspx), которая включает бесплатную подписку на Enterprise Mobility Suite, содержащую Azure AD Premium.
 
 ### <a name="considerations-for-specific-scenarios"></a>Рекомендации для конкретных сценариев
 

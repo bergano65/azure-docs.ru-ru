@@ -4,12 +4,12 @@ ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: dobett
-ms.openlocfilehash: e1618ded270cddca13145195522d7b42a00d6585
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: e6dbfe225b6957406b7143d5db4a28cb50f13e7b
+ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54841449"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55480508"
 ---
 В следующей таблице перечислены ограничения, связанные с разными уровнями служб (S1, S2, S3, F1). Сведения о стоимости каждой *единицы* на каждом уровне см. на странице [Цены на Центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub/).
 
@@ -57,7 +57,7 @@ ms.locfileid: "54841449"
 
 
 > [!NOTE]
-> Сейчас максимальное число устройств, которые можно подключить к одному Центру Интернета вещей, составляет 500 000. Если вам необходимо увеличить это ограничение, обратитесь в [службу поддержки Майкрософт](https://azure.microsoft.com/support/options/).
+> Сейчас максимальное число устройств, которые можно подключить к одному Центру Интернета вещей, составляет 1 000 000. Если вам необходимо увеличить это ограничение, обратитесь в [службу поддержки Майкрософт](https://azure.microsoft.com/support/options/).
 
 Служба Центра Интернета вещей регулирует запросы при превышении следующих квот:
 

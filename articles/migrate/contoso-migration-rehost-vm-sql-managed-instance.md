@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 6e15d4376fae576f615cac7c094f53dfcc22618e
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 76af79cc9ef1ebea30b30a291f451b7b0a4f3ba6
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54826621"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694488"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-an-azure-vm-and-sql-database-managed-instance"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальной машине Azure и в Управляемом экземпляре Базы данных SQL
 
@@ -173,7 +173,7 @@ Service | ОПИСАНИЕ | Стоимость
 - Подсеть должна иметь таблицу маршрутов "Определяемые пользователем маршруты (UDR)". Должен быть назначен единственный интернет-маршрут следующего прыжка 0.0.0.0/0. 
 - Наличие необязательной пользовательской DNS. Если в виртуальной сети Azure определена пользовательская DNS, то в список должен быть добавлен IP-адрес рекурсивных сопоставителей Azure (например, 168.63.129.16). Дополнительные сведения см. в разделе [Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-custom-dns).
 - С подсетью не должна быть связана конечная точка службы (хранилище или база данных SQL). Конечные точки службы должны быть отключены в виртуальной сети.
-- Для подсети необходимо как минимум 16 IP-адресов. Дополнительные сведения см. в разделе [Определение размера подсети для управляемого экземпляра](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-vnet-configuration#determine-the-size-of-subnet-for-managed-instances).
+- Для подсети необходимо как минимум 16 IP-адресов. Дополнительные сведения см. в разделе [Определение размера подсети для управляемого экземпляра](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-vnet-configuration).
 - В гибридной среде Contoso требуются пользовательские параметры DNS. Компания Contoso настроит параметры DNS для использования одного или нескольких серверов DNS Azure компании. Дополнительные сведения см. в разделе [Настройка DNS](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-custom-dns).
 
 ### <a name="set-up-a-virtual-network-for-the-managed-instance"></a>Настройка виртуальной сети в управляемом экземпляре
@@ -207,7 +207,7 @@ Service | ОПИСАНИЕ | Стоимость
 *Нужна дополнительная помощь?*
 
 - См. раздел [Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance).
-- См. раздел [Создание виртуальной сети для управляемых экземпляров](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-vnet-configuration#create-a-new-virtual-network-for-managed-instances).
+- См. раздел [Создание виртуальной сети для управляемых экземпляров](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-vnet-configuration).
 - См. раздел [Создание, изменение и удаление пиринга в виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering).
 - См. раздел [Включение доменных служб Azure Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-dns).
 
@@ -609,7 +609,7 @@ Site Recovery требуется доступ к серверам VMware, что
 
      ![Безопасность Управляемого экземпляра — обнаружение угроз](./media/contoso-migration-rehost-vm-sql-managed-instance/mi-security.png)  
 
-Дополнительные сведения см. в разделе [Рекомендации по безопасности для рабочих нагрузок IaaS в Azure](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms#vm-authentication-and-access-control).
+Дополнительные сведения см. в разделе [Рекомендации по безопасности для рабочих нагрузок IaaS в Azure](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms).
 
 ### <a name="bcdr"></a>Непрерывность бизнес-процессов и аварийное восстановление
 

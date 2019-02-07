@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: dda4f68046b81d96cfe92d5e8b09eab23df0003b
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: e26ae189b6b0bdcbfdcf225772cb3fd0361abca2
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54846320"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55698995"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -140,7 +140,7 @@ ms.locfileid: "54846320"
   ```azurecli
   az network vnet create -n TestVNet1 -g TestRG1 --address-prefix 10.11.0.0/16 -l eastus --subnet-name FrontEnd --subnet-prefix 10.11.0.0/24
   ```
-3. Создайте дополнительное адресное пространство для внутренней подсети. Обратите внимание, что на этом шаге мы указываем созданное ранее адресное пространство, а также дополнительное адресное пространство, которое нужно добавить. Это связано с тем, что команда [az network vnet update](https://docs.microsoft.com/cli/azure/network/vnet#az_network_vnet_update) перезаписывает предыдущие параметры. При использовании этой команды обязательно укажите все префиксы адресов.
+3. Создайте дополнительное адресное пространство для внутренней подсети. Обратите внимание, что на этом шаге мы указываем созданное ранее адресное пространство, а также дополнительное адресное пространство, которое нужно добавить. Это связано с тем, что команда [az network vnet update](https://docs.microsoft.com/cli/azure/network/vnet) перезаписывает предыдущие параметры. При использовании этой команды обязательно укажите все префиксы адресов.
 
   ```azurecli
   az network vnet update -n TestVNet1 --address-prefixes 10.11.0.0/16 10.12.0.0/16 -g TestRG1
@@ -384,5 +384,5 @@ ms.locfileid: "54846320"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
+* Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

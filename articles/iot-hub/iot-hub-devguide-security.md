@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: ecde1c19a56a7f99284fe738a19eac07322c2dae
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: f347c9ca3d56bedcc838d72ca15793bd13ee19ad
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54826179"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563938"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -137,7 +137,7 @@ ms.locfileid: "54826179"
 | Значение | ОПИСАНИЕ |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256. |
-| {resourceURI} |Начинающийся с имени узла Центра Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Например, `myHub.azure-devices.net/devices/device1` |
+| {resourceURI} |Начинающийся с имени узла Центра Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Например `myHub.azure-devices.net/devices/device1`. |
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |
 | {URL-encoded-resourceURI} |Строчное URL-кодирование строчного URL ресурса |
 | {policyName} |Имя политики общего доступа, к которой относится этот маркер. Отсутствует, если маркер относится к учетным данным реестра устройства. |
@@ -146,7 +146,7 @@ ms.locfileid: "54826179"
 
 В следующем фрагменте кода Node.js показан функция **generateSasToken**, которая вычисляет маркер, используя входные данные`resourceUri, signingKey, policyName, expiresInMins`. В следующих разделах показано, как инициализировать различные входные данные для различных сценариев использования маркеров.
 
-```nodejs
+```javascript
 var generateSasToken = function(resourceUri, signingKey, policyName, expiresInMins) {
     resourceUri = encodeURIComponent(resourceUri);
 
@@ -260,7 +260,7 @@ public static string generateSasToken(string resourceUri, string key, string pol
 
 Далее приведен пример использования предыдущей функции Node.js:
 
-```nodejs
+```javascript
 var endpoint ="myhub.azure-devices.net/devices/device1";
 var deviceKey ="...";
 
@@ -294,7 +294,7 @@ var token = generateSasToken(endpoint, deviceKey, null, 60);
 
 Далее приведен пример использования предыдущей функции Node.js:
 
-```nodejs
+```javascript
 var endpoint ="myhub.azure-devices.net/devices/device1";
 var policyName = 'device';
 var policyKey = '...';
@@ -328,7 +328,7 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 * имя политики: `registryRead`;
 * время окончания срока действия.
 
-```nodejs
+```javascript
 var endpoint ="myhub.azure-devices.net/devices";
 var policyName = 'registryRead';
 var policyKey = '...';

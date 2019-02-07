@@ -17,12 +17,12 @@ ms.date: 01/25/2019
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: b82458de95014d22625a9c8029e064ed21120488
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4ee2f0387ee3c56dda7cd1a89f5c808f55699856
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158304"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55658629"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
@@ -81,11 +81,11 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Имя** введите имя приложения (например, приложение API события риска AADIP).
    
-    b. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
+    б) В качестве **типа** выберите **Веб-приложение и/или веб-API**.
    
     c. В текстовом поле **URL-адрес входа** введите `http://localhost`.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 4. Чтобы открыть страницу **Параметры**, в списке приложений щелкните только что созданную регистрацию приложения. 
 
@@ -140,11 +140,11 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Описание ключа** введите описание (например, *Событие риска AADIP*).
     
-    b. Для параметра **Длительность** выберите значение **Через один год**.
+    б) Для параметра **Длительность** выберите значение **Через один год**.
 
     c. Выберите команду **Сохранить**.
    
-    d. Скопируйте значение ключа и вставьте его в безопасное место.   
+    4.3. Скопируйте значение ключа и вставьте его в безопасное место.   
    
    > [!NOTE]
    > Если ключ будет утерян, вам нужно будет вернуться в этот раздел и создать новый ключ. Не предоставляйте этот ключ никому: с его помощью кто угодно может получить доступ к вашим данным.
@@ -251,7 +251,7 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.
 
 
-Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/en-us/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/en-us/graph). 
+Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/en-us/graph). 
 
 
 Связанные сведения:

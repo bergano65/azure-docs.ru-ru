@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
-ms.openlocfilehash: 395ff654bcacf1a4f70a9032492deb2a9d5202f3
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 915cf1e66ec400e0d2461873d9fb3d66be9883fb
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454765"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756756"
 ---
 # <a name="repairing-an-export-job"></a>Исправление задания экспорта
 После завершения задания экспорта вы можете локально выполнить следующие задачи с помощью инструмента импорта и экспорта Microsoft Azure:  
@@ -81,7 +81,7 @@ WAImportExport.exe RepairExport /r:C:\WAImportExport\9WM35C3U.rep /d:G:\ /sn:bob
 ## <a name="using-repairexport-to-validate-drive-contents"></a>Использование RepairExport для проверки содержимого диска  
 Также средство импорта и экспорта Azure в режиме **RepairExport** можно использовать для проверки правильности содержимого на диске. Файл манифеста на каждом экспортируемом диске содержит MD5-хэши всего содержимого диска.  
   
-Служба импорта и экспорта Azure может в процессе экспорта сохранять эти файлы манифеста в учетную запись хранения. Расположение файлов манифеста можно получить после завершения задания с помощью команды [получения задания](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate). Дополнительные сведения о формате файла манифеста диска см. в статье [Формат файла манифеста службы импорта и экспорта](storage-import-export-file-format-metadata-and-properties.md).  
+Служба импорта и экспорта Azure может в процессе экспорта сохранять эти файлы манифеста в учетную запись хранения. Расположение файлов манифеста можно получить после завершения задания с помощью команды [получения задания](/rest/api/storageimportexport/jobs). Дополнительные сведения о формате файла манифеста диска см. в статье [Формат файла манифеста службы импорта и экспорта](storage-import-export-file-format-metadata-and-properties.md).  
   
 В следующем примере показано, как запустить инструмент импорта и экспорта Azure с параметрами **/ManifestFile** и **/CopyLogFile**.  
   

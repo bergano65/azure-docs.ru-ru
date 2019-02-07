@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0609a653327640c542457822e41143b9b39dd6d4
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: dc2b38f8e8065b8d8763365bf0cbad56ae00cd4b
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462205"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55565434"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга
 
@@ -84,7 +84,7 @@ ms.locfileid: "54462205"
 * Поменяйте местами панели "Карта" и "Телеметрия".
 * Измените относительную ширину панелей карты и аналитики.
 
-```nodejs
+```javascript
 <PageContent className="dashboard-container">
   <Grid>
     <Cell className="col-1 devices-overview-cell">
@@ -156,7 +156,7 @@ ms.locfileid: "54462205"
 
 Вы также можете добавить несколько экземпляров одной панели или нескольких версий, если [дублируете и настроите панель](#duplicate-and-customize-an-existing-control). В следующем примере показано, как добавить два экземпляра панели телеметрии. Чтобы выполнить изменения, отредактируйте файл `src/components/pages/dashboard/dashboard.js`.
 
-```nodejs
+```javascript
 <PageContent className="dashboard-container">
   <Grid>
     <Cell className="col-1 devices-overview-cell">
@@ -247,19 +247,19 @@ ms.locfileid: "54462205"
 
 1. В файле **alertsPanel.js** папки **cust_alerts** измените имя класса на **CustAlertsPanel**:
 
-    ```nodejs
+    ```javascript
     export class CustAlertsPanel extends Component {
     ```
 
 1. Добавьте следующую строку в файл `src/components/pages/dashboard/panels/index.js` :
 
-    ```nodejs
+    ```javascript
     export * from './cust_alerts';
     ```
 
 1. Замените `alertsPanel` на `CustAlertsPanel` в файле `src/components/pages/dashboard/dashboard.js`:
 
-    ```nodejs
+    ```javascript
     import {
       OverviewPanel,
       CustAlertsPanel,
@@ -287,7 +287,7 @@ ms.locfileid: "54462205"
 
 1. Измените определения столбцов, как показано в следующем фрагменте кода:
 
-    ```nodejs
+    ```javascript
     this.columnDefs = [
       rulesColumnDefs.severity,
       {
@@ -312,7 +312,7 @@ ms.locfileid: "54462205"
 
 1. В файле `src/services/telemetryService.js` найдите функцию **getTelemetryByDeviceIdP15M**. Скопируйте функцию и измените ее копию следующим образом:
 
-    ```nodejs
+    ```javascript
     static getTelemetryByDeviceIdP5M(devices = []) {
       return TelemetryService.getTelemetryByMessages({
         from: 'NOW-PT5M',
@@ -325,7 +325,7 @@ ms.locfileid: "54462205"
 
 1. Чтобы использовать эту функцию для заполнения диаграммы телеметрии, откройте файл `src/components/pages/dashboard/dashboard.js`. Найдите строку, которая инициализирует поток телеметрии, и измените ее следующим образом:
 
-    ```node.js
+    ```javascript
     const getTelemetryStream = ({ deviceIds = [] }) => TelemetryService.getTelemetryByDeviceIdP5M(deviceIds)
     ```
 
@@ -339,7 +339,7 @@ ms.locfileid: "54462205"
 
 1. Откройте файл `src/components/pages/dashboard/dashboard.js` . Измените объект **initialState**, чтобы он включал свойство **warningAlertsChange**, как показано ниже.
 
-    ```nodejs
+    ```javascript
     const initialState = {
       ...
 
@@ -359,7 +359,7 @@ ms.locfileid: "54462205"
 
 1. Измените объект **currentAlertsStats**, чтобы он включал свойство **totalWarningCount**:
 
-    ```nodejs
+    ```javascript
     return {
       openWarningCount: (acc.openWarningCount || 0) + (isWarning && isOpen ? 1 : 0),
       openCriticalCount: (acc.openCriticalCount || 0) + (isCritical && isOpen ? 1 : 0),
@@ -371,7 +371,7 @@ ms.locfileid: "54462205"
 
 1. Вычислите новый ключевой показатель эффективности. Найти вычисления по количеству критических оповещений. Дублируйте код и измените копию следующим образом:
 
-    ```nodejs
+    ```javascript
     // ================== Warning Alerts Count - START
     const currentWarningAlerts = currentAlertsStats.totalWarningCount;
     const previousWarningAlerts = previousAlerts.reduce(
@@ -384,7 +384,7 @@ ms.locfileid: "54462205"
 
 1. Добавьте ключевой показатель эффективности **warningAlertsChange** в поток данных КПЭ.
 
-    ```nodejs
+    ```javascript
     return ({
       analyticsIsPending: false,
       analyticsVersion: this.state.analyticsVersion + 1,
@@ -402,7 +402,7 @@ ms.locfileid: "54462205"
 
 1. Добавьте ключевой показатель эффективности **warningAlertsChange** в данные о состоянии, используемые для визуализации пользовательского интерфейса:
 
-    ```nodejs
+    ```javascript
     const {
       ...
 
@@ -421,7 +421,7 @@ ms.locfileid: "54462205"
 
 1. Обновите данные, передаваемые на панель ключевых показателей эффективности:
 
-    ```node.js
+    ```javascript
     <AnalyticsPanel
       timeSeriesExplorerUrl={timeSeriesParamUrl}
       topAlerts={topAlertsWithName}
@@ -439,13 +439,13 @@ ms.locfileid: "54462205"
 
 1. Измените следующую строку кода для получения нового значения ключевого показателя эффективности следующим образом:
 
-    ```nodejs
+    ```javascript
     const { t, isPending, criticalAlertsChange, warningAlertsChange, alertsPerDeviceId, topAlerts, timeSeriesExplorerUrl, error } = this.props;
     ```
 
 1. Измените разметку для отображения нового значения ключевого показателя эффективности следующим образом:
 
-    ```nodejs
+    ```javascript
     <div className="analytics-cell">
       <div className="analytics-header">{t('dashboard.panels.analytics.criticalAlerts')}</div>
       <div className="critical-alerts">

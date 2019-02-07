@@ -9,14 +9,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: 292bcf5974f8c51f99a676786c66316e9cde0748
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 8a24ffa4717244d8ce2ef507183cff06cbea5797
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215923"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55492238"
 ---
 # <a name="tutorial-luis-bot-in-nodejs-with-the-bot-framework-4x-and-the-azure-web-app-bot"></a>Руководство. Создание бота Интеллектуальной службы распознавания речи на Node.js с помощью Bot Framework 4.x и бота веб-приложения Azure
 Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), с помощью Node.js. Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
@@ -114,7 +114,7 @@ ms.locfileid: "55215923"
 
 6. Откройте файл bot.cs и введите `const results = await this.luisRecognizer.recognize(context);`. Здесь высказывание пользователя, введенное в бот, отправляется в LUIS.
 
-    ```nodejs
+   ```javascript
     /**
      * Driver code that does one of the following:
      * 1. Display a welcome card upon startup
@@ -247,7 +247,7 @@ ms.locfileid: "55215923"
 
 1. В верхней части файла найдите раздел **Поддерживаемые намерения LUIS** и добавьте константы для намерений HomeAutomation.
 
-    ```nodejs
+   ```javascript
     // Supported LUIS Intents
     const GREETING_INTENT = 'Greeting';
     const CANCEL_INTENT = 'Cancel';
@@ -261,7 +261,7 @@ ms.locfileid: "55215923"
 
 2. Найдите **isTurnInterrupted**, который получает прогнозирование фразы LUIS и добавляет строку для вывода результата на консоль.
 
-    ```nodejs
+   ```javascript
     /**
      * Look at the LUIS results and determine if we need to handle
      * an interruptions due to a Help or Cancel intent
@@ -309,7 +309,7 @@ ms.locfileid: "55215923"
 
 3. Добавьте намерения в оператор switch метода onTurn для случая `DialogTurnStatus.empty`.
 
-    ```nodejs
+   ```javascript
     switch (topIntent) {
         case GREETING_INTENT:
             await dc.begin(GREETING_DIALOG);

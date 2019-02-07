@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
-ms.openlocfilehash: efe7b6722a9cfa24ea86130a13a0599115e89821
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 15ec4f006147cdffb46598d22a937aec429fd8ac
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55451671"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729410"
 ---
 # <a name="creating-an-import-job-for-the-azure-importexport-service"></a>Создание задания импорта для службы импорта и экспорта Azure
 
@@ -61,14 +61,14 @@ ms.locfileid: "55451671"
 
  Выполните следующие действия, чтобы получить адрес доставки.
 
--   Определите имя расположения своей учетной записи хранения. Оно находится в поле **Расположение** на **панели мониторинга** учетной записи хранения на портале Azure. Это значение также можно получить, отправив запрос с помощью операции API управления службами [Get Storage Account Properties](/rest/api/storagerp/storageaccounts#StorageAccounts_GetProperties) (Получить свойства учетной записи хранения).
+-   Определите имя расположения своей учетной записи хранения. Оно находится в поле **Расположение** на **панели мониторинга** учетной записи хранения на портале Azure. Это значение также можно получить, отправив запрос с помощью операции API управления службами [Get Storage Account Properties](/rest/api/storagerp/storageaccounts) (Получить свойства учетной записи хранения).
 
 -   Вызовите операцию `Get Location`, чтобы узнать расположение для обработки информации по этой учетной записи.
 
 -   Расположение можно использовать, если его свойство `AlternateLocations` указывает на это же расположение. В противном случае снова вызовите операцию `Get Location` для одного из альтернативных расположений. Исходное расположение может быть временно закрыто для обслуживания.
 
 ## <a name="creating-the-import-job"></a>Создание задания импорта
-Чтобы создать задание импорта, вызовите операцию [создания задания](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate). Необходимо будет указать следующие сведения:
+Чтобы создать задание импорта, вызовите операцию [создания задания](/rest/api/storageimportexport/jobs). Необходимо будет указать следующие сведения:
 
 -   имя задания;
 

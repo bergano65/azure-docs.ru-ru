@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Boxcryptor | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boxcryptor.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: c46aa523-b58c-4a95-a800-db2e5e01c542
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2018
 ms.author: jeedes
-ms.openlocfilehash: ec9ebb5673a5bca9c5eda2b08baa1a825edcefe4
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 43b761897d3db49da88bdb88f6ff01821bff8e58
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424876"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55181101"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство. Интеграция Azure Active Directory с Boxcryptor
 
@@ -127,7 +127,7 @@ ms.locfileid: "39424876"
 1. Чтобы настроить единый вход на стороне **Boxcryptor**, нужно отправить скачанный **сертификат в кодировке Base64**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки Boxcryptor](mailto:support@boxcryptor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -164,7 +164,7 @@ ms.locfileid: "39424876"
  
 ### <a name="create-a-boxcryptor-test-user"></a>Создание тестового пользователя Boxcryptor
 
-В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь в [службу поддержки Boxcryptor](mailto:support@boxcryptor.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь к  [группе поддержки Boxcryptor](mailto:support@boxcryptor.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -201,7 +201,7 @@ ms.locfileid: "39424876"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Boxcryptor на панели доступа, вы автоматически войдете в приложение Boxcryptor.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

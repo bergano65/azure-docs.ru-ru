@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 12/20/2017
 ms.author: spelluru
-ms.openlocfilehash: 6c8498a43b127fecc02473177ac955ae51a647d6
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: ee78227f645cbeded7a5c689750db835faf1055f
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854122"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55728318"
 ---
 # <a name="how-to-use-azure-relay-wcf-relays-with-net"></a>Как использовать ретрансляторы WCF на основе ретранслятора Azure с помощью .NET
 В этой статье описываются методы использования службы ретрансляции Azure. Примеры написаны на языке C# и используют API службы Windows Communication Foundation (WCF) с расширениями, содержащимися в сборке служебной шины. Дополнительные сведения о ретрансляторе Azure см. в статье [Что такое ретранслятор Azure?](relay-what-is-it.md).
@@ -116,7 +116,7 @@ Console.ReadLine();
 sh.Close();
 ```
 
-В этом примере вы создаете две конечных точки в рамках одного и того же исполнения контракта. Одна из них является локальной, а вторая проецируется с помощью ретранслятора Azure. Основным различием между ними являются привязки [NetTcpBinding](https://msdn.microsoft.com/library/system.servicemodel.nettcpbinding.aspx) для локальной и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding#microsoft_servicebus_nettcprelaybinding) для конечной точки ретранслятора и адресов. Для локальной конечной точки используется локальный сетевой адрес с отдельным портом. Адрес конечной точки ретранслятора включает в себя строку `sb`, имя вашего пространства имен и путь solver. Результатом является универсальный код ресурса (URI) `sb://[serviceNamespace].servicebus.windows.net/solver`, определяющий конечную точку службы как конечную точку службы TCP служебной шины (ретранслятора) с полным внешним DNS-именем. Если в функции `Main` приложения **Service** вместо заполнителей использовать код, будет создана функциональная служба. Если нужно, чтобы ваша служба ожидала передачи данных только на ретрансляторе, удалите объявление конечной локальной точки.
+В этом примере вы создаете две конечных точки в рамках одного и того же исполнения контракта. Одна из них является локальной, а вторая проецируется с помощью ретранслятора Azure. Основным различием между ними являются привязки [NetTcpBinding](https://msdn.microsoft.com/library/system.servicemodel.nettcpbinding.aspx) для локальной и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) для конечной точки ретранслятора и адресов. Для локальной конечной точки используется локальный сетевой адрес с отдельным портом. Адрес конечной точки ретранслятора включает в себя строку `sb`, имя вашего пространства имен и путь solver. Результатом является универсальный код ресурса (URI) `sb://[serviceNamespace].servicebus.windows.net/solver`, определяющий конечную точку службы как конечную точку службы TCP служебной шины (ретранслятора) с полным внешним DNS-именем. Если в функции `Main` приложения **Service** вместо заполнителей использовать код, будет создана функциональная служба. Если нужно, чтобы ваша служба ожидала передачи данных только на ретрансляторе, удалите объявление конечной локальной точки.
 
 ### <a name="configure-a-service-host-in-the-appconfig-file"></a>Настройка узла службы в файле App.config
 С помощью файла App.config также можно настроить узел. В этом случае код размещения службы выглядит так, как показано в следующем примере.
@@ -161,7 +161,7 @@ sh.Close();
 
 ### <a name="create-the-client"></a>Создание клиента
 #### <a name="configure-a-client-programmatically"></a>Программная настройка клиента
-Для использования службы вы можете создать клиент WCF, работающий с объектом [ChannelFactory](https://msdn.microsoft.com/library/system.servicemodel.channelfactory.aspx). Служебная шина использует модель безопасности на основе маркеров, реализованную с помощью SAS. Класс [TokenProvider](/dotnet/api/microsoft.servicebus.tokenprovider) представляет собой поставщика маркеров безопасности со встроенными методами генерации, которые возвращают ряд хорошо известных поставщиков маркеров. В приведенном ниже примере используется метод [CreateSharedAccessSignatureTokenProvider](/dotnet/api/microsoft.servicebus.tokenprovider#Microsoft_ServiceBus_TokenProvider_CreateSharedAccessSignatureTokenProvider_System_String_) для обработки получения соответствующего маркера SAS. Значения имени и ключа наследуются с портала, как описано в предыдущем разделе.
+Для использования службы вы можете создать клиент WCF, работающий с объектом [ChannelFactory](https://msdn.microsoft.com/library/system.servicemodel.channelfactory.aspx). Служебная шина использует модель безопасности на основе маркеров, реализованную с помощью SAS. Класс [TokenProvider](/dotnet/api/microsoft.servicebus.tokenprovider) представляет собой поставщика маркеров безопасности со встроенными методами генерации, которые возвращают ряд хорошо известных поставщиков маркеров. В приведенном ниже примере используется метод [CreateSharedAccessSignatureTokenProvider](/dotnet/api/microsoft.servicebus.tokenprovider) для обработки получения соответствующего маркера SAS. Значения имени и ключа наследуются с портала, как описано в предыдущем разделе.
 
 Во-первых, создайте в проекте клиента ссылку или скопируйте в него код контракта `IProblemSolver` из службы.
 

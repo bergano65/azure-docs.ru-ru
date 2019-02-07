@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2017
 ms.author: wesmc
-ms.openlocfilehash: 6c92b71a8f2b9fbeae9afc5f06b6d5412f6421a6
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: e71d92b2cf7888fd9e3c560beb6e0e7f18e7add0
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022173"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822652"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
@@ -83,11 +83,11 @@ ms.locfileid: "53022173"
 ## <a name="azure-cache-for-redis-vnet-faq"></a>Вопросы и ответы по виртуальной сети кэша Azure для Redis
 Следующий список содержит ответы на часто задаваемые вопросы о виртуальных сетях кэша Azure для Redis.
 
-* [Каковы распространенные ошибки в конфигурации кэша Azure для Redis и виртуальных сетей?](#what-are-some-common-misconfiguration-issues-with-azure-redis-cache-and-vnets)
+* Каковы распространенные ошибки в конфигурации кэша Azure для Redis и виртуальных сетей?
 * [Как проверить, что кэш работает в виртуальной сети?](#how-can-i-verify-that-my-cache-is-working-in-a-vnet)
 * [Почему при попытке подключения к моему кэшу Azure для Redis в виртуальной сети происходит ошибка и появляется сообщение о том, что удаленный сертификат недействителен?](#when-trying-to-connect-to-my-redis-cache-in-a-vnet-why-am-i-getting-an-error-stating-the-remote-certificate-is-invalid)
 * [Можно ли использовать виртуальные сети в кэше уровня "Стандартный" или "Базовый"?](#can-i-use-vnets-with-a-standard-or-basic-cache)
-* [Почему в одних подсетях не удается создать кэш Azure для Redis, а в других удается?](#why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others)
+* Почему в одних подсетях не удается создать кэш Azure для Redis, а в других удается?
 * [Каковы требования к адресному пространству подсети?](#what-are-the-subnet-address-space-requirements)
 * [Do all cache features work when hosting a cache in a VNET? (Все ли функции кэша работают, когда он размещен в виртуальной сети?)](#do-all-cache-features-work-when-hosting-a-cache-in-a-vnet)
 
@@ -236,7 +236,7 @@ Azure резервирует некоторые IP-адреса в каждой 
 ## <a name="next-steps"></a>Дополнительная информация
 Узнайте, как использовать расширенные функции кэша.
 
-* [Общие сведения о кэше Azure для Redis ценовой категории "Премиум"](cache-premium-tier-intro.md)
+* [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)
 
 <!-- IMAGES -->
 

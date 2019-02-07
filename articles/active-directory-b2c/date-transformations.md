@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 35c5731d260fb63dece3d2b8ae4f4a4522fb91b8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: d36abb669490b3d3f6818c018b3844a82ecd0617
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153410"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564801"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -23,7 +23,7 @@ ms.locfileid: "55153410"
 
 В этой статье приведены примеры использования преобразований утверждений даты схемы инфраструктуры процедур идентификации в Azure Active Directory (Azure AD) B2C. Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
-## <a name="assertdatetimeisgreaterthan"></a>AssertDateTimeIsGreaterThan 
+## <a name="assertdatetimeisgreaterthan"></a>AssertDateTimeIsGreaterThan
 
 Проверяет, что одно утверждение даты и времени (строковый тип данных) соответствует более позднему моменту, чем второе утверждение даты и времени (строковый тип данных), и создает исключение.
 
@@ -85,7 +85,6 @@ ms.locfileid: "55153410"
     - **rightOperand**: 2018-10-01T14:00:00.0000000Z
 - Результат: возникла ошибка.
 
-
 ## <a name="convertdatetodatetimeclaim"></a>ConvertDateToDateTimeClaim
 
 Преобразует ClaimType **Date** в тип **DateTime**. Преобразование утверждений преобразует формат времени и добавляет 00:00:00 к дате.
@@ -98,7 +97,7 @@ ms.locfileid: "55153410"
 В следующем примере показано преобразование утверждения `dateOfBirth` (тип данных date) в другое утверждение `dateOfBirthWithTime` (тип данных dateTime).
 
 ```XML
-<ClaimsTransformation Id="ConvertToDateTime" TransformationMethod="ConvertDateToDateTimeClaim">
+  <ClaimsTransformation Id="ConvertToDateTime" TransformationMethod="ConvertDateToDateTimeClaim">
     <InputClaims>
       <InputClaim ClaimTypeReferenceId="dateOfBirth" TransformationClaimType="inputClaim" />
     </InputClaims>
@@ -163,7 +162,7 @@ ms.locfileid: "55153410"
   </InputParameters>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="isLastTOSAcceptedGreaterThanNow" TransformationClaimType="result" />
-  </OutputClaims>      
+  </OutputClaims>
 </ClaimsTransformation>
 ```
 
@@ -175,6 +174,5 @@ ms.locfileid: "55153410"
 - Входные параметры:
     - **operator**: later than
     - **timeSpanInSeconds**: 7 776 000 (90 дней)
-- Исходящие утверждения: 
+- Исходящие утверждения:
     - **result**: true
-

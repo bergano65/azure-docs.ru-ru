@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory c IQNavigator VMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory c IQNavigator VMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в IQNavigator VMS.
 services: active-directory
 documentationCenter: na
@@ -7,21 +7,21 @@ author: jeevansd
 manager: femila
 ms.assetid: a8a09b25-dfa5-4c31-aea2-53bf1853b365
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: f568f33de348289334c4b4c346e9525e28cce51c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 062c83c7e1d621a80a5e81cdaf6b070eb446453c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39445128"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55180540"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство по интеграции Azure Active Directory c IQNavigator VMS
+# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство. Интеграция Azure Active Directory c IQNavigator VMS
 
 В этом руководстве описано, как интегрировать IQNavigator VMS с Azure Active Directory (Azure AD).
 
@@ -125,7 +125,7 @@ ms.locfileid: "39445128"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/).
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
     
     ![Настройка единого входа](./media/iqnavigatorvms-tutorial/tutorial_metadataurl.png)
 

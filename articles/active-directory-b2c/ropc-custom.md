@@ -10,24 +10,24 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 7dffa1480be73f1dbf5e99d11fd8d33eb2ab9038
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 816d25473bfe5f9dc61d6d6f2e50d6cd82ace50c
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55196418"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55562204"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory (Azure AD) B2C поток учетных данных пароля владельца ресурса (ROPC) — это процесс стандартной проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления. 
+В Azure Active Directory (Azure AD) B2C поток учетных данных пароля владельца ресурса (ROPC) — это процесс стандартной проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
 В потоке ROPC поддерживаются следующие параметры.
 
 - **Собственный клиент**. Взаимодействие с пользователем во время аутентификации происходит, когда код выполняется на устройстве на стороне пользователя.
 - **Поток общедоступного клиента**. При вызове API отправляются только учетные данные, полученные приложением. Учетные данные приложения не отправляются.
-- **Добавление новых утверждений**. Содержимое токена идентификатора можно изменить для добавления новых утверждений. 
+- **Добавление новых утверждений**. Содержимое токена идентификатора можно изменить для добавления новых утверждений.
 
 Следующие потоки не поддерживаются.
 
@@ -43,7 +43,7 @@ ms.locfileid: "55196418"
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
-3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**. 
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Укажите имя приложения, например *ROPC_Auth_app*.
 6. Выберите значение **Нет** для параметра **Веб-приложение или веб-интерфейс API** и значение **Да** для параметра **Собственный клиент**.
@@ -193,7 +193,7 @@ ms.locfileid: "55196418"
           </Metadata>
         </TechnicalProfile>
       </TechnicalProfiles>
-    </ClaimsProvider>    
+    </ClaimsProvider>
     ```
 
 6. Добавьте элемент **UserJourneys** и его дочерние элементы в элемент **TrustFrameworkPolicy**.
@@ -201,7 +201,7 @@ ms.locfileid: "55196418"
     ```XML
     <UserJourney Id="ResourceOwnerPasswordCredentials">
       <PreserveOriginalAssertion>false</PreserveOriginalAssertion>
-        <OrchestrationSteps>
+      <OrchestrationSteps>
         <OrchestrationStep Order="1" Type="ClaimsExchange">
           <ClaimsExchanges>
             <ClaimsExchange Id="ResourceOwnerFlow" TechnicalProfileReferenceId="ResourceOwnerPasswordCredentials-OAUTH2" />
@@ -278,7 +278,7 @@ ms.locfileid: "55196418"
 
 - Замените `user-account` на имя учетной записи пользователя в клиенте.
 - Замените `password1` паролем к учетной записи пользователя.
-- Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*. 
+- Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.
 - *Offline_access* является необязательным, если вы хотите получить токен обновления.
 
 Фактический запрос POST выглядит так.
@@ -291,17 +291,16 @@ Content-Type: application/x-www-form-urlencoded
 username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scope=openid+bef22d56-552f-4a5b-b90a-1988a7d634ce+offline_access&client_id=bef22d56-552f-4a5b-b90a-1988a7d634ce&response_type=token+id_token
 ```
 
-
 Успешный ответ с автономным доступом выглядит так:
 
 ```JSON
-{ 
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9YQjNhdTNScWhUQWN6R0RWZDM5djNpTmlyTWhqN2wxMjIySnh6TmgwRlki...", 
-    "token_type": "Bearer", 
-    "expires_in": "3600", 
-    "refresh_token": "eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3REVk1EVFBLbUJLb0FUcWQ1ZWFja1hBIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6Ij...", 
-    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9YQjNhdTNScWhUQWN6R0RWZDM5djNpTmlyTWhqN2wxMjIySnh6TmgwRlki..." 
-} 
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9YQjNhdTNScWhUQWN6R0RWZDM5djNpTmlyTWhqN2wxMjIySnh6TmgwRlki...",
+    "token_type": "Bearer",
+    "expires_in": "3600",
+    "refresh_token": "eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3REVk1EVFBLbUJLb0FUcWQ1ZWFja1hBIiwidmVyIjoiMS4wIiwiemlwIjoiRGVmbGF0ZSIsInNlciI6Ij...",
+    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9YQjNhdTNScWhUQWN6R0RWZDM5djNpTmlyTWhqN2wxMjIySnh6TmgwRlki..."
+}
 ```
 
 ## <a name="redeem-a-refresh-token"></a>Погашение токена обновления
@@ -322,7 +321,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 | refresh_token | `refresh-token` |
 
 - Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.
-- Замените `refresh-token` на **refresh_token**, который был отправлен в предыдущем ответе. 
+- Замените `refresh-token` на **refresh_token**, который был отправлен в предыдущем ответе.
 
 Успешный ответ выглядит примерно так:
 
@@ -350,5 +349,3 @@ Azure AD B2C соответствует стандартам OAuth 2.0 для
 
 - См. полный пример такого сценария в [начальном пакете настраиваемой политики Azure Active Directory B2C](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/source/aadb2c-ief-ropc).
 - Дополнительные сведения о маркерах, которые используются Azure Active Directory B2C, см. в [справочнике по маркерам](active-directory-b2c-reference-tokens.md).
-
-

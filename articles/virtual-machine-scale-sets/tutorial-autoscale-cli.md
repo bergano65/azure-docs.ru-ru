@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/18/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: fdc1cb7c4b95a72aa55ccce57b2fa331f7c9615d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4064816ae932a0f26fd3478420c69f3e8fba8732
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170714"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751282"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure CLI
 
@@ -107,7 +107,7 @@ az monitor autoscale rule create \
 
 Чтобы проверить правила автомасштабирования, создайте нагрузку на ЦП в экземплярах виртуальных машин в масштабируемом наборе. В результате этой имитации нагрузки на ЦП происходит автомасштабирование и увеличение числа экземпляров виртуальных машин. Когда имитированная нагрузка на ЦП снижается, в соответствии с правилами автомасштабирования выполняется уменьшение числа экземпляров виртуальных машин.
 
-Сначала нужно получить список адресов и портов для подключения к экземплярам виртуальных машин в масштабируемом наборе. Для этого введите команду [az vmss list-instance-connection-info](/cli/azure/vmss#az_vmss_list_instance_connection_info):
+Сначала нужно получить список адресов и портов для подключения к экземплярам виртуальных машин в масштабируемом наборе. Для этого введите команду [az vmss list-instance-connection-info](/cli/azure/vmss):
 
 ```azurecli-interactive
 az vmss list-instance-connection-info \
@@ -141,7 +141,7 @@ sudo stress --cpu 10 --timeout 420 &
 
 Чтобы убедиться, что программа **stress** создает нагрузку на ЦП, проверьте активную нагрузку на систему с помощью служебной программы **top**.
 
-```azuecli-interactive
+```azurecli-interactive
 top
 ```
 
@@ -152,7 +152,7 @@ Ctrl-c
 exit
 ```
 
-Подключитесь ко второму экземпляру виртуальной машины, используя номер порта, указанный в предыдущей команде [az vmss list-instance-connection-info](/cli/azure/vmss#az_vmss_list_instance_connection_info).
+Подключитесь ко второму экземпляру виртуальной машины, используя номер порта, указанный в предыдущей команде [az vmss list-instance-connection-info](/cli/azure/vmss).
 
 ```azurecli-interactive
 ssh azureuser@13.92.224.66 -p 50003
@@ -208,7 +208,7 @@ Every 2.0s: az vmss list-instances --resource-group myResourceGroup --name mySca
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [az group delete](/cli/azure/group#az_group_delete). При использовании параметра `--no-wait` управление возвращается в командную строку без ожидания завершения операции. Параметр `--yes` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса.
+Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [az group delete](/cli/azure/group). При использовании параметра `--no-wait` управление возвращается в командную строку без ожидания завершения операции. Параметр `--yes` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait

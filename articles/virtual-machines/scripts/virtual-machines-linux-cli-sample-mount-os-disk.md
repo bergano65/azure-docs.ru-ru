@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5459ba31d30a86efbe40239f9531298c10cf9d98
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 6f2d4c9a7871e0917b33407605abe1389eb4420e
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54413606"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753611"
 ---
 # <a name="troubleshoot-a-vms-operating-system-disk"></a>Устранение неполадок диска операционной системы виртуальных машин
 
@@ -41,11 +41,11 @@ ms.locfileid: "54413606"
 
 | Команда | Примечания |
 |---|---|
-| [az vm show](https://docs.microsoft.com/cli/azure/vm#az_vm_show) | Возвращает список виртуальных машин. В этом случае параметр запроса используется для возвращения диска операционной системы виртуальной машины. Это значение добавляется к имени переменной uri. |
-| [az vm delete](https://docs.microsoft.com/cli/azure/vm#az_vm_delete) | Удаляет виртуальную машину. |
+| [az vm show](https://docs.microsoft.com/cli/azure/vm) | Возвращает список виртуальных машин. В этом случае параметр запроса используется для возвращения диска операционной системы виртуальной машины. Это значение добавляется к имени переменной uri. |
+| [az vm delete](https://docs.microsoft.com/cli/azure/vm) | Удаляет виртуальную машину. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину.  |
 | [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk) | Подключает диск к виртуальной машине. |
-| [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az_vm_list_ip_addresses) | Возвращает IP-адреса виртуальной машины. |
+| [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm) | Возвращает IP-адреса виртуальной машины. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

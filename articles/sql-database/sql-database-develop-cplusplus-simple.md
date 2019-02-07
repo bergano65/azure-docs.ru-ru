@@ -11,18 +11,20 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: f1aa037afd0fa1cbe37add24a354e4dc62c13b9a
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.date: 12/12/2018
+ms.openlocfilehash: 5a6f8328f6809a20b821f5b72106fa48fabf0e91
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310136"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755158"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
+
 Эта публикация предназначена для разработчиков C и C++, выполняющих подключение приложений к базе данных SQL Azure. Публикация содержит несколько разделов, что дает возможность переходить сразу к интересующей вас теме.
 
 ## <a name="prerequisites-for-the-cc-tutorial"></a>Предварительные требования для выполнения инструкций руководства по C/C++
+
 Убедитесь, что у вас есть указанные ниже компоненты.
 
 * Активная учетная запись Azure. Если у вас нет такой учетной записи, вы можете зарегистрироваться для использования [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -38,7 +40,7 @@ ms.locfileid: "53310136"
 Подключение к базе данных SQL Azure ничем не отличается. Сейчас есть два способа подключения к базам данных: ODBC (Open Database Connectivity) и OLE DB (Object Linking and Embedding Database). В последние годы корпорация Майкрософт поддерживает [ODBC для доступа к собственным реляционным данным](https://blogs.msdn.microsoft.com/sqlnativeclient/2011/08/29/microsoft-is-aligning-with-odbc-for-native-relational-data-access/). Технология ODBC относительно проста и работает гораздо быстрее, чем OLE DB. Единственное предостережение — ODBC использует старый API в стиле C.
 
 ## <a id="Create"></a>Шаг 1.  Создание Базы данных SQL Azure
-Чтобы узнать, как создать образец базы данных, перейдите на страницу [Начало работы](sql-database-get-started-portal.md) .  Или просмотрите [этот короткий 2 -минутный видеоролик](https://azure.microsoft.com/documentation/videos/azure-sql-database-create-dbs-in-seconds/), чтобы создать базу данных SQL Azure с помощью портала Azure.
+Чтобы узнать, как создать образец базы данных, перейдите на страницу [Начало работы](sql-database-single-database-get-started.md) .  Или просмотрите [этот короткий 2 -минутный видеоролик](https://azure.microsoft.com/documentation/videos/azure-sql-database-create-dbs-in-seconds/), чтобы создать базу данных SQL Azure с помощью портала Azure.
 
 ## <a id="ConnectionString"></a>Шаг 2.  Получение строки подключения
 После подготовки базы данных SQL Azure необходимо выполнить следующие действия, чтобы найти информацию о подключении и добавить IP-адрес клиента для доступа через брандмауэр.

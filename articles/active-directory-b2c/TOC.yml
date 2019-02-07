@@ -19,11 +19,13 @@ items:
   items:
   - name: 1. Создание клиента B2C
     href: tutorial-create-tenant.md
-  - name: 2. Регистрация приложений
+  - name: 2. Регистрация приложения
     href: tutorial-register-applications.md
   - name: 3. Создание потоков пользователей
     href: tutorial-create-user-flows.md
-  - name: 4. Настройка пользовательского интерфейса
+  - name: Добавление поставщиков удостоверений
+    href: tutorial-add-identity-providers.md
+  - name: Настройка пользовательского интерфейса
     href: tutorial-customize-ui.md
   - name: Аутентификация учетных записей
     items:
@@ -75,7 +77,11 @@ items:
   items:
   - name: Доступ к журналам аудита
     href: active-directory-b2c-reference-audit-logs.md
-  - name: Фильтрация по возрасту
+  - name: Добавление приложения веб-API
+    href: add-web-application.md
+  - name: Добавление собственного клиентского приложения
+    href: add-native-application.md
+  - name: Настройка проверки возраста
     href: basic-age-gating.md
   - name: Настройка маркеров
     href: active-directory-b2c-token-session-sso.md
@@ -318,9 +324,9 @@ items:
     href: active-directory-b2c-support.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c
-ms.openlocfilehash: c7f7036e52c5c9d0f9d7c51a882474028ba63aef
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 8aa1d5bf118330f6f04cfd35a59f2b60ce6e1ee8
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240851"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751792"

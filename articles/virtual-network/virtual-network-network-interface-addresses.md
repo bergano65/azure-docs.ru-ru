@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: jdial
-ms.openlocfilehash: 64aa936dc1dbb1d2a700a31253cf7a3caee6b66f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 4fae4486e6cf47892ba2133885ec864969f66001
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436780"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55663610"
 ---
 # <a name="add-change-or-remove-ip-addresses-for-an-azure-network-interface"></a>Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "54436780"
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic ip-config create](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_create)|
+|Интерфейс командной строки|[az network nic ip-config create](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Add-AzureRmNetworkInterfaceIpConfig](/powershell/module/azurerm.network/add-azurermnetworkinterfaceipconfig)|
 
 ## <a name="change-ip-address-settings"></a>Изменение параметров IP-адреса
@@ -82,7 +82,7 @@ ms.locfileid: "54436780"
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_update)|
+|Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Set-AzureRMNetworkInterfaceIpConfig](/powershell/module/azurerm.network/set-azurermnetworkinterfaceipconfig)|
 
 ## <a name="remove-ip-addresses"></a>Удаление IP-адресов
@@ -98,7 +98,7 @@ ms.locfileid: "54436780"
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic ip-config delete](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_delete)|
+|Интерфейс командной строки|[az network nic ip-config delete](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Remove-AzureRmNetworkInterfaceIpConfig](/powershell/module/azurerm.network/remove-azurermnetworkinterfaceipconfig)|
 
 ## <a name="ip-configurations"></a>Конфигурации IP
@@ -144,7 +144,7 @@ ms.locfileid: "54436780"
 4. Запустите виртуальную машину.
 5. [Вручную настройте](virtual-network-multiple-ip-addresses-portal.md#os-config) дополнительные IP-адреса в операционной системе (и также основной IP-адрес в Windows) в соответствии с адресами, задаваемыми в Azure.
 
-Если выполнить приведенные выше инструкции, частный IP-адрес, назначенный сетевому интерфейсу в Azure, и IP-адрес в операционной системе виртуальной машины не изменятся. Чтобы следить за тем, для каких виртуальных машин в подписке вы вручную задали IP-адреса в операционной системе, рассмотрите возможность добавления [тега](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#tags) Azure к таким виртуальным машинам. Например, можно использовать тег "Назначение IP-адресов: статическое". Таким образом можно будет легко находить в подписке виртуальные машины, для которых вы вручную задали IP-адрес в операционной системе.
+Если выполнить приведенные выше инструкции, частный IP-адрес, назначенный сетевому интерфейсу в Azure, и IP-адрес в операционной системе виртуальной машины не изменятся. Чтобы следить за тем, для каких виртуальных машин в подписке вы вручную задали IP-адреса в операционной системе, рассмотрите возможность добавления [тега](../azure-resource-manager/resource-group-using-tags.md) Azure к таким виртуальным машинам. Например, можно использовать тег "Назначение IP-адресов: статическое". Таким образом можно будет легко находить в подписке виртуальные машины, для которых вы вручную задали IP-адрес в операционной системе.
 
 Помимо возможности взаимодействия виртуальной машины с другими ресурсами в той же виртуальной сети или в подключенных к ней виртуальных сетях, частный IP-адрес также обеспечивает исходящее подключение к Интернету. Для установления исходящих подключений Azure преобразовывает исходный сетевой адрес в непредсказуемый общедоступный IP-адрес. Чтобы узнать больше об исходящих интернет-подключениях Azure, прочитайте статью [Общие сведения об исходящих подключениях в Azure](../load-balancer/load-balancer-outbound-connections.md?toc=%2fazure%2fvirtual-network%2ftoc.json). К частному IP-адресу виртуальной машины невозможно подключиться из Интернета. Если для исходящих подключений вам нужен прогнозируемый общедоступный IP-адрес, привяжите к сетевому интерфейсу ресурс общедоступного IP-адреса.
 

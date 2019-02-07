@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: shlo
-ms.openlocfilehash: 6efccdb3034bb25e60904c858f346ff9a5695fc0
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: e5910d08cf7ea5e1da094a0313513123d7c7813c
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54019730"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55567042"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Создание триггера, который запускает конвейер в "переворачивающемся" окне
 Эта статья содержит шаги по созданию, запуску и мониторингу триггера "переворачивающегося" окна. Дополнительные сведения о триггерах и поддерживаемых типах см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md).
@@ -33,7 +33,7 @@ ms.locfileid: "54019730"
 ## <a name="tumbling-window-trigger-type-properties"></a>Свойства типа триггера "переворачивающегося" окна
 "Переворачивающееся" окно имеет следующие свойства типа триггеров:
 
-```  
+```
 {
     "name": "MyTriggerName",
     "properties": {
@@ -47,31 +47,30 @@ ms.locfileid: "54019730"
             "delay": "<<timespan – optional>>",
             “maxConcurrency”: <<int>> (required, max allowed: 50),
             "retryPolicy": {
-                "count":  <<int - optional, default: 0>>,
+                "count": <<int - optional, default: 0>>,
                 “intervalInSeconds”: <<int>>,
             }
         },
-        "pipeline":
-            {
-                "pipelineReference": {
-                    "type": "PipelineReference",
-                    "referenceName": "MyPipelineName"
+        "pipeline": {
+            "pipelineReference": {
+                "type": "PipelineReference",
+                "referenceName": "MyPipelineName"
+            },
+            "parameters": {
+                "parameter1": {
+                    "type": "Expression",
+                    "value": "@{concat('output',formatDateTime(trigger().outputs.windowStartTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
                 },
-                "parameters": {
-                    "parameter1": {
-                        "type": "Expression",
-                        "value": "@{concat('output',formatDateTime(trigger().outputs.windowStartTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
-                    },
-                    "parameter2": {
-                        "type": "Expression",
-                        "value": "@{concat('output',formatDateTime(trigger().outputs.windowEndTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
-                    },
-                    "parameter3": "https://mydemo.azurewebsites.net/api/demoapi"
-                }
+                "parameter2": {
+                    "type": "Expression",
+                    "value": "@{concat('output',formatDateTime(trigger().outputs.windowEndTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
+                },
+                "parameter3": "https://mydemo.azurewebsites.net/api/demoapi"
             }
-      }    
+        }
+    }
 }
-```  
+```
 
 Таблица ниже содержит обзор основных элементов JSON, связанных с периодичностью выполнения и расписанием триггера "переворачивающегося" окна.
 
@@ -81,8 +80,8 @@ ms.locfileid: "54019730"
 | **runtimeState** | Текущее состояние времени выполнения триггера.<br/>**Примечание**. Этот элемент — \<readOnly>. | Строка | "Started," "Stopped," "Disabled" | Yes |
 | **frequency** | Строка, представляющая единицу частоты (минуты или часы), с которой выполняется триггер. Если значения даты **startTime** являются более детализированными, чем значение **частоты**, даты **startTime** учитываются при вычислении границ окна. Например, если значение **частоты** соответствует ежечасному выполнению, а значение **startTime** — 2017-09-01T10:10:10Z, первое окно будет (2017-09-01T10:10:10Z, 2017-09-01T11:10:10Z). | Строка | "minute," "hour"  | Yes |
 | **interval** | Положительное целое число, указывающее интервал для значения **frequency**, которое определяет, как часто выполняется триггер. Например, если **interval** имеет значение 3, а для элемента **frequency** выбран вариант "hour", триггер будет выполняться один раз каждые 3 часа. | Целое число  | Положительное целое число. | Yes |
-| **startTime**| Первое возникновение, которое может быть в прошлом. Первым интервалом триггера является (**startTime**, **startTime** + **interval**). | Datetime | Значение даты и времени. | Yes |
-| **endTime**| Последнее возникновение, которое может быть в прошлом. | Datetime | Значение даты и времени. | Yes |
+| **startTime**| Первое возникновение, которое может быть в прошлом. Первым интервалом триггера является (**startTime**, **startTime** + **interval**). | DateTime | Значение даты и времени. | Yes |
+| **endTime**| Последнее возникновение, которое может быть в прошлом. | DateTime | Значение даты и времени. | Yes |
 | **delay** | Время задержки до начала обработки данных окна. Запуск конвейера начинается после истечения ожидаемого времени выполнения плюс время **задержки**. **Задержка** определяет, как долго триггер ожидает, прежде чем начать новое выполнение по окончании предыдущего. **Задержка** не изменяет окно **startTime**. Например, значение **задержки** 00:10:00 подразумевает задержку длительностью 10 минут. | Timespan<br/>(чч:мм:сс)  | Значение времени, где время по умолчанию — 00:00:00. | Нет  |
 | **maxConcurrency** | Количество одновременных выполнений триггеров, запущенных в окнах, которые готовы. Например, чтобы заполнить ежечасные запуски для вчерашних результатов в 24 окнах. Если **maxConcurrency** равно 10, события триггера активируются только для первых 10 окон (00:00–01:00 — 09:00–10:00). После завершения первых 10 активированных выполнений конвейера выполнения триггер запускается для следующих 10 окон (10:00–11:00 — 19:00–20:00). Продолжая пример с **maxConcurrency** равным 10, если 10 окон готовы, значит есть всего 10 выполнений конвейера. Если готово только одно окно, значит готово только 1 выполнение конвейера. | Целое число  | Целое число от 1 до 50. | Yes |
 | **retryPolicy: Количество** | Число повторных попыток, после которых выполнение конвейера будет помечено как "Failed".  | Целое число  | Целое число, в котором значение по умолчанию — 0 (повторы отсутствуют). | Нет  |
@@ -92,32 +91,31 @@ ms.locfileid: "54019730"
 
 Системные переменные **WindowStart** и **WindowEnd** триггера "переворачивающегося" окна можно использовать в определении **конвейера** (то есть для части запроса). Передайте системные переменные в качестве параметров конвейера в определении **триггера**. В следующем примере показано, как передавать эти переменные в качестве параметров:
 
-```  
+```
 {
     "name": "MyTriggerName",
     "properties": {
         "type": "TumblingWindowTrigger",
             ...
-        "pipeline":
-            {
-                "pipelineReference": {
-                    "type": "PipelineReference",
-                    "referenceName": "MyPipelineName"
+        "pipeline": {
+            "pipelineReference": {
+                "type": "PipelineReference",
+                "referenceName": "MyPipelineName"
+            },
+            "parameters": {
+                "MyWindowStart": {
+                    "type": "Expression",
+                    "value": "@{concat('output',formatDateTime(trigger().outputs.windowStartTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
                 },
-                "parameters": {
-                    "MyWindowStart": {
-                        "type": "Expression",
-                        "value": "@{concat('output',formatDateTime(trigger().outputs.windowStartTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
-                    },
-                    "MyWindowEnd": {
-                        "type": "Expression",
-                        "value": "@{concat('output',formatDateTime(trigger().outputs.windowEndTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
-                    }
+                "MyWindowEnd": {
+                    "type": "Expression",
+                    "value": "@{concat('output',formatDateTime(trigger().outputs.windowEndTime,'-dd-MM-yyyy-HH-mm-ss-ffff'))}"
                 }
             }
-      }    
+        }
+    }
 }
-```  
+```
 
 Чтобы использовать значения системных переменных **WindowStart** и **WindowEnd** в определении конвейера, используйте параметры "MyWindowStart" и "MyWindowEnd" соответственно.
 
@@ -135,10 +133,10 @@ ms.locfileid: "54019730"
 
 1. Создайте файл JSON с именем **MyTrigger.json** в папке C:\ADFv2QuickStartPSH со следующим содержимым:
 
-   > [!IMPORTANT]
-   > Прежде чем сохранить файл JSON, установите значение элемента **startTime** на текущее время в формате UTC. Установите значение элемента **endTime** на один час после текущего времени UTC.
+    > [!IMPORTANT]
+    > Прежде чем сохранить файл JSON, установите значение элемента **startTime** на текущее время в формате UTC. Установите значение элемента **endTime** на один час после текущего времени UTC.
 
-    ```json   
+    ```json
     {
       "name": "PerfTWTrigger",
       "properties": {
@@ -167,7 +165,7 @@ ms.locfileid: "54019730"
         "runtimeState": "Started"
       }
     }
-    ```  
+    ```
 
 2. Создайте триггер с помощью командлета **Set-AzureRmDataFactoryV2Trigger**:
 

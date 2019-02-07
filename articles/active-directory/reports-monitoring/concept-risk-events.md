@@ -15,12 +15,12 @@ ms.subservice: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: a1ca5125162460b95c0ffcadb1551173d06b5838
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 1117ffa94a30a55b7b2a7477bf2770d21dcb5441
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163591"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746512"
 ---
 # <a name="azure-active-directory-risk-events"></a>События риска Azure Active Directory
 
@@ -164,7 +164,7 @@ ms.locfileid: "55163591"
 
 Мы советуем связаться с пользователем и сканировать все его устройства. Может оказаться, что инфицировано личное устройство этого пользователя или какого-то другого пользователя, который использовал тот же IP-адрес. Обычно инфицированные устройства — это устройства, антивирусное программное обеспечение которых еще не выявило вредоносные программы или у пользователей которых есть вредные привычки использования, повлекшие заражение.
 
-Дополнительную информацию о том, как обеспечить защиту от вредоносных программ, см. в [центре защиты от вредоносных программ](https://go.microsoft.com/fwlink/?linkid=335773&clcid=0x409).
+Дополнительную информацию о том, как обеспечить защиту от вредоносных программ, см. в [центре защиты от вредоносных программ](https://www.microsoft.com/en-us/security/portal/definitions/adl.aspx/).
 
 ### <a name="sign-ins-from-ip-addresses-with-suspicious-activity"></a>Попытки входа с IP-адресов с подозрительными действиями
 

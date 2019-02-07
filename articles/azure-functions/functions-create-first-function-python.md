@@ -11,12 +11,12 @@ ms.service: functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 631fc4e613311df9386084408ead625f6d018151
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: 2c14cdf963d1d6c792e6101d8a2179a560dcf096
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54911896"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55731263"
 ---
 # <a name="create-your-first-python-function-in-azure-preview"></a>Создание первой функции Python в Azure (предварительная версия)
 
@@ -179,7 +179,7 @@ Http Functions:
 
 ## <a name="create-a-linux-function-app-in-azure"></a>Создание приложения-функции Linux в Azure
 
-Приложение-функция предоставляет среду для выполнения кода функции. Это позволяет группировать функции в логические единицы, чтобы упростить управление, развертывание и совместное использование ресурсов. Создайте **приложение-функцию Python, выполняемое в Linux** с помощью команды [az functionapp create](/cli/azure/functionapp#az_functionapp_create).
+Приложение-функция предоставляет среду для выполнения кода функции. Это позволяет группировать функции в логические единицы, чтобы упростить управление, развертывание и совместное использование ресурсов. Создайте **приложение-функцию Python, выполняемое в Linux** с помощью команды [az functionapp create](/cli/azure/functionapp).
 
 Выполните следующею команду, используя уникальное имя приложения-функции, в котором будут отображаться заполнитель `<app_name>` и имя учетной записи хранения `<storage_name>`. `<app_name>` также является доменом DNS по умолчанию для приложения-функции. Это имя должно быть уникальным среди всех приложений Azure.
 

@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 84e952514b88620af565cf7e9775c055476fb530
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 2530f6f59ef458d5a7c2de5850d8fab322798ba3
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247567"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752668"
 ---
 # <a name="tutorial-configure-hybrid-cloud-connectivity-with-azure-and-azure-stack"></a>Руководство по настройке подключения к гибридному облаку в Azure и Azure Stack
 
@@ -61,7 +61,7 @@ ms.locfileid: "55247567"
 ### <a name="azure"></a>Таблицы Azure
 
  - Если у вас еще нет подписки Azure,  [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
- - Создайте  [веб-приложение](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts#create-an-azure-web-app-using-the-portal) в Azure. Запишите URL-адрес веб-приложения. Он пригодится вам дальше при работе с этим руководством.
+ - Создайте  [веб-приложение](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) в Azure. Запишите URL-адрес веб-приложения. Он пригодится вам дальше при работе с этим руководством.
 
 ### <a name="azure-stack"></a>Azure Stack
 
