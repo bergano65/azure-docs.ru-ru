@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 044bd34a5b9e4b9bea61e804aa038daf6129185d
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 030f3d9455956c3c728e450aca058b2df10eb3d3
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584570"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55691191"
 ---
 # <a name="create-a-managed-disk-from-a-snapshot-with-cli"></a>Создание управляемого диска на основе моментального снимка с помощью интерфейса командной строки
 
@@ -41,10 +41,10 @@ ms.locfileid: "53584570"
 
 Этот сценарий использует приведенные ниже команды для создания управляемого диска на основе моментального снимка. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [az snapshot show](https://docs.microsoft.com/cli/azure/snapshot#az_snapshot_show) | Получает все свойства моментального снимка, используя имя и свойства группы ресурсов моментального снимка. Свойство идентификатора используется для создания управляемого диска.  |
-| [az disk create](https://docs.microsoft.com/cli/azure/disk#az_disk_create) | Создает управляемый диск с помощью идентификатора управляемого моментального снимка. |
+| [az snapshot show](https://docs.microsoft.com/cli/azure/snapshot) | Получает все свойства моментального снимка, используя имя и свойства группы ресурсов моментального снимка. Свойство идентификатора используется для создания управляемого диска.  |
+| [az disk create](https://docs.microsoft.com/cli/azure/disk) | Создает управляемый диск с помощью идентификатора управляемого моментального снимка. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

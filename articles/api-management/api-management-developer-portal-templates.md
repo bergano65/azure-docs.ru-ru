@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 90084f6c4fb270c34165bf12763109d9be2398aa
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 00d5e3df78e85d19a519786dad1a1b176ad7fa08
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446965"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733065"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
 
@@ -45,15 +45,15 @@ ms.locfileid: "52446965"
 
 ![Шаблоны портала разработчика][api-management-templates-menu]
 
-Щелкнув шаблон, можно перейти на страницу портала разработчика, которая настраивается с помощью этого шаблона. В этом примере отображается шаблон **Список продуктов**. Шаблон **Список продуктов** управляет областью экрана, обозначенной красным прямоугольником. 
+Щелкнув шаблон, можно перейти на страницу портала разработчика, которая настраивается с помощью этого шаблона. В этом примере отображается шаблон **Список продуктов**. Шаблон **Список продуктов** управляет областью экрана, обозначенной красным прямоугольником.
 
 ![Шаблон "Список продуктов"][api-management-developer-portal-templates-overview]
 
-Некоторые шаблоны, например шаблоны **Профиля пользователя**, настраивают другие области на той же странице. 
+Некоторые шаблоны, например шаблоны **Профиля пользователя**, настраивают другие области на той же странице.
 
 ![Шаблоны "Профиль пользователя"][api-management-user-profile-templates]
 
-Редактор для каждого шаблона портала разработчика состоит из двух разделов, отображаемых в нижней части страницы. Слева отображается область редактирования шаблона, а справа — модель данных для шаблона. 
+Редактор для каждого шаблона портала разработчика состоит из двух разделов, отображаемых в нижней части страницы. Слева отображается область редактирования шаблона, а справа — модель данных для шаблона.
 
 Область редактирования шаблона содержит разметку, которая определяет внешний вид и поведение соответствующей страницы на портале разработчика. В разметке шаблона используется синтаксис [DotLiquid](http://dotliquidmarkup.org/) . Один из популярных редакторов для DotLiquid — [DotLiquid для конструкторов](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers). Любые изменения, внесенные в шаблон во время редактирования, отображаются в браузере в режиме реального времени, но не будут видны клиентам, пока вы не [сохраните](#to-save-a-template) и не [опубликуете](#to-publish-a-template) шаблон.
 
@@ -118,7 +118,7 @@ ms.locfileid: "52446965"
         <li>
             <h3><a href="/products/{{product.id}}">{{product.title}}</a></h3>
             {{product.description}}
-        </li>    
+        </li>
     {% endfor %}
     </ul>
     <paging-control></paging-control>
@@ -209,10 +209,3 @@ ms.locfileid: "52446965"
 [api-management-reset-template]: ./media/api-management-developer-portal-templates/api-management-reset-template.png
 [api-management-reset-template-confirm]: ./media/api-management-developer-portal-templates/api-management-reset-template-confirm.png
 [api-management-restore-templates]: ./media/api-management-developer-portal-templates/api-management-restore-templates.png
-
-
-
-
-
-
-

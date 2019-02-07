@@ -10,73 +10,73 @@ ms.subservice: manage
 ms.date: 06/15/2018
 ms.author: kavithaj
 ms.reviewer: igorstan, carlrab
-ms.openlocfilehash: 323879fff90fa478797f85415faae9ae02ea5bcd
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 379425a4c0b21234fb4e48dc1c8a56cfea645045
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461514"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55727387"
 ---
-# <a name="column-level-security"></a>Безопасность на уровне столбцов 
-С помощью функции безопасности на уровне столбцов (CLS) можно управлять доступом к столбцам таблицы базы данных на основе контекста выполнения пользователя или членства в группе.  
+# <a name="column-level-security"></a>Безопасность на уровне столбцов
+С помощью функции безопасности на уровне столбцов (CLS) можно управлять доступом к столбцам таблицы базы данных на основе контекста выполнения пользователя или членства в группе.
 
 > [!VIDEO https://www.youtube.com/embed/OU_ESg0g8r8]
 
-CLS упрощает проектирование и программирование безопасности в приложении. CLS позволяет реализовать ограничения на доступ к столбцам для защиты конфиденциальных данных. Например, можно предоставить конкретным пользователям доступ только к определенным столбцам таблицы, имеющей отношение к их отделу. Логика ограничения доступа находится на уровне базы данных, а не на другом уровне приложения отдельно от данных. Базы данных применяет ограничения доступа при каждой попытке получения доступа к данным независимо от уровня. Это ограничение делает систему безопасности более надежной и устойчивой за счет уменьшения ее контактной зоны. Кроме того, безопасность на уровне столбцов также позволяет отказаться от ввода представлений для фильтрации столбцов с целью наложения на пользователей ограничений доступа. 
+CLS упрощает проектирование и программирование безопасности в приложении. CLS позволяет реализовать ограничения на доступ к столбцам для защиты конфиденциальных данных. Например, можно предоставить конкретным пользователям доступ только к определенным столбцам таблицы, имеющей отношение к их отделу. Логика ограничения доступа находится на уровне базы данных, а не на другом уровне приложения отдельно от данных. Базы данных применяет ограничения доступа при каждой попытке получения доступа к данным независимо от уровня. Это ограничение делает систему безопасности более надежной и устойчивой за счет уменьшения ее контактной зоны. Кроме того, безопасность на уровне столбцов также позволяет отказаться от ввода представлений для фильтрации столбцов с целью наложения на пользователей ограничений доступа.
 
 Реализовать CLS можно с помощью инструкции T-SQL [GRANT](https://docs.microsoft.com/sql/t-sql/statements/grant-transact-sql). При использовании этого механизма поддерживаются проверки подлинности SQL и Azure Active Directory (AAD).
 
 ![cls](./media/column-level-security/cls.png)
 
-## <a name="syntax"></a>Синтаксис 
+## <a name="syntax"></a>Синтаксис
 
 ```sql
-GRANT <permission> [ ,...n ] ON    
-    [ OBJECT :: ][ schema_name ]. object_name [ ( column [ ,...n ] ) ]   
-    TO <database_principal> [ ,...n ]    
-    [ WITH GRANT OPTION ]   
-    [ AS <database_principal> ]   
-<permission> ::=   
-    SELECT 
-  | UPDATE  
-<database_principal> ::=    
-      Database_user    
-    | Database_role    
-    | Database_user_mapped_to_Windows_User    
-    | Database_user_mapped_to_Windows_Group    
+GRANT <permission> [ ,...n ] ON
+    [ OBJECT :: ][ schema_name ]. object_name [ ( column [ ,...n ] ) ]
+    TO <database_principal> [ ,...n ]
+    [ WITH GRANT OPTION ]
+    [ AS <database_principal> ]
+<permission> ::=
+    SELECT
+  | UPDATE
+<database_principal> ::=
+      Database_user
+    | Database_role
+    | Database_user_mapped_to_Windows_User
+    | Database_user_mapped_to_Windows_Group
 ```
 
-## <a name="example"></a>Пример 
-В следующем примере показано, как ограничить доступ пользователя "TestUser" к столбцу "SSN" таблицы "Membership". 
+## <a name="example"></a>Пример
+В следующем примере показано, как ограничить доступ пользователя "TestUser" к столбцу "SSN" таблицы "Membership".
 
 Создайте таблицу "Membership" со столбцом "SSN" для хранения номеров социального страхования.
 
 ```sql
-CREATE TABLE Membership   
-  (MemberID int IDENTITY,   
-   FirstName varchar(100) NULL,   
-   SSN char(9) NOT NULL, 
-   LastName varchar(100) NOT NULL,   
-   Phone varchar(12) NULL,   
-   Email varchar(100) NULL);  
+CREATE TABLE Membership
+  (MemberID int IDENTITY,
+   FirstName varchar(100) NULL,
+   SSN char(9) NOT NULL,
+   LastName varchar(100) NOT NULL,
+   Phone varchar(12) NULL,
+   Email varchar(100) NULL);
 ```
 
-Предоставьте пользователю "TestUser" доступ ко всем столбцам, за исключением столбца "SSN", который содержит конфиденциальные данные. 
+Предоставьте пользователю "TestUser" доступ ко всем столбцам, за исключением столбца "SSN", который содержит конфиденциальные данные.
 
-```sql  
-GRANT SELECT ON Membership(MemberID, FirstName, LastName, Phone, Email) TO TestUser;   
-``` 
+```sql
+GRANT SELECT ON Membership(MemberID, FirstName, LastName, Phone, Email) TO TestUser;
+```
 
 Запросы, выполняемые от имени "TestUser", завершатся ошибкой, если они содержат столбец "SSN".
 
-```sql  
+```sql
 SELECT * FROM Membership;
 
 Msg 230, Level 14, State 1, Line 12
-The SELECT permission was denied on the column 'SSN' of the object 'Membership', database 'CLS_TestDW', schema 'dbo'. 
-``` 
+The SELECT permission was denied on the column 'SSN' of the object 'Membership', database 'CLS_TestDW', schema 'dbo'.
+```
 
 ## <a name="use-cases"></a>Варианты использования
-Ниже приведены некоторые примеры использования CLS в современном мире. 
+Ниже приведены некоторые примеры использования CLS в современном мире.
 - В компании, предоставляющей финансовые услуги, обращаться к номерам социального страхования (SSN), номерам телефонов и другим персональным данным клиентов могут только менеджеры по работе с клиентами.
 - В медицинской организации доступ к конфиденциальным медицинским записям имеют только врачи и медсестры. Сотрудники отдела выставления счетов не могут просматривать эти данные.

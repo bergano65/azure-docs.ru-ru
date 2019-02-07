@@ -16,12 +16,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 5361b93d24c66ef6ccb2f117e6e3a68de4c5f459
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: e0d5e466da8804e89ffecd38dd2db6e37a3cb334
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55195618"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55663644"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Синхронизация Azure AD Connect: Обработка ошибок LargeObject, вызванных атрибутом userCertificate
 
@@ -33,7 +33,7 @@ ms.locfileid: "55195618"
 
 Список объектов в клиенте с ошибками LargeObject можно получить одним из следующих методов:
 
- * Если в клиенте включена служба Azure AD Connect Health для синхронизации, вы можете ознакомиться с предоставляемым [отчетом об ошибках синхронизации](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-sync#object-level-synchronization-error-report-preview).
+ * Если в клиенте включена служба Azure AD Connect Health для синхронизации, вы можете ознакомиться с предоставляемым [отчетом об ошибках синхронизации](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-sync).
  
  * В электронном письме с уведомлением для ошибок синхронизации каталогов, отправляемом в конце каждого цикла синхронизации, есть список объектов с ошибками LargeObject. 
  * Если выбрать новую операцию экспорта в Azure AD, на [вкладке операций Synchronization Service Manager](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui-operations) отобразится список объектов с ошибками LargeObject.

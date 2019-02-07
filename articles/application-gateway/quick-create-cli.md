@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 1/8/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: d14b8c9c752c9d41a42f092662c5f3aa88840dc5
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 0ba18b1ef0ba6c0a73759577c83ab80550baa6f8
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157723"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754750"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и Azure CLI.
 
@@ -39,7 +39,7 @@ az group create --name myResourceGroupAG --location eastus
 
 После создания виртуальной сети шлюз приложений сможет обмениваться данными с другими ресурсами. Вы можете создать виртуальную сеть во время создания шлюза приложений. В этом примере создаются две подсети: одна предназначена для шлюза приложения, а другая — для виртуальных машин. Подсеть шлюза приложений может содержать только шлюзы приложений. Другие ресурсы запрещены.
 
-Чтобы создать виртуальную сеть и подсеть, выполните команду [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). Чтобы создать общедоступный IP-адрес, выполните команду [az network public-ip create](/cli/azure/network/public-ip#az-public-ip-create).
+Чтобы создать виртуальную сеть и подсеть, выполните команду [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). Чтобы создать общедоступный IP-адрес, выполните команду [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network vnet create \
@@ -133,7 +133,7 @@ done
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Создайте шлюз приложения с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway#az-application-gateway-create). При создании шлюза приложения с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Azure добавляет частные IP-адреса сетевых интерфейсов в качестве серверов внутреннего пула шлюза приложения.
+Создайте шлюз приложения с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway). При создании шлюза приложения с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Azure добавляет частные IP-адреса сетевых интерфейсов в качестве серверов внутреннего пула шлюза приложения.
 
 ```azurecli-interactive
 address1=$(az network nic show --name myNic1 --resource-group myResourceGroupAG | grep "\"privateIpAddress\":" | grep -oE '[^ ]+$' | tr -d '",')

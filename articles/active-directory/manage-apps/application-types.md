@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: barbkess
-ms.openlocfilehash: 441821ae422fb4cbddbca5b4c30d68484ce6bc1f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 55632acf516198b5ad0b6430480836dcc62fd5a5
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55186983"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755393"
 ---
 # <a name="unexpected-application-in-my-applications-list"></a>Неожиданные приложения в списке приложений
 
@@ -63,15 +63,15 @@ ms.locfileid: "55186983"
 
 4.  При добавлении новой регистрации приложения путем создания собственного приложения с помощью [реестра приложений](https://docs.microsoft.com/azure/active-directory/active-directory-app-registration).
 
-5.  При добавлении новой регистрации приложения путем создания собственного приложения с помощью [портала регистрации приложений версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-app-registration#visit-the-microsoft-app-registration-portal).
+5.  При добавлении новой регистрации приложения путем создания собственного приложения с помощью [портала регистрации приложений версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-app-registration).
 
 6.  При добавлении приложения, которое вы разрабатываете с помощью [методов аутентификации ASP.net](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) или [подключенных служб](https://blogs.msdn.com/b/visualstudio/archive/2014/11/19/connecting-to-cloud-services.aspx) Visual Studio.
 
 7.  При создании субъекта-службы с помощью [модуля Azure AD PowerShell](/powershell/azure/install-adv2?view=azureadps-2.0).
 
-8.  Когда вы в качестве администратора предоставляете приложению [согласие](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent) на использование данных в клиенте.
+8.  Когда вы в качестве администратора предоставляете приложению [согласие](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview) на использование данных в клиенте.
 
-9.  Когда [пользователь предоставляет приложению согласие](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent) на использование данных в клиенте.
+9.  Когда [пользователь предоставляет приложению согласие](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview) на использование данных в клиенте.
 
 10. При включении определенных служб, которые хранят данные в клиенте. Примером может служить служба сброса паролей, которая оформлена как субъект-служба для безопасного хранения политики сброса паролей.
 
@@ -107,7 +107,7 @@ ms.locfileid: "55186983"
 
 ## <a name="i-want-to-disable-all-future-user-consent-operations-to-any-application"></a>Я хочу отключить все будущие операции пользователя по предоставлению согласия для всех приложений
 
-Если вы отключите для всего каталога возможность предоставлять согласие, пользователь не сможет согласиться с условиями использования приложения. Администратор сохранит возможность предоставлять согласие от имени пользователя. Дополнительные сведения о согласии в приложениях и возможных мотивах для его отключения или предоставления см. в разделе [Получение согласия пользователя и администратора](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent).
+Если вы отключите для всего каталога возможность предоставлять согласие, пользователь не сможет согласиться с условиями использования приложения. Администратор сохранит возможность предоставлять согласие от имени пользователя. Дополнительные сведения о согласии в приложениях и возможных мотивах для его отключения или предоставления см. в разделе [Получение согласия пользователя и администратора](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview).
 
 Чтобы **отключить все последующие операции по предоставлению согласия пользователя во всем каталоге**, выполните следующие действия:
 

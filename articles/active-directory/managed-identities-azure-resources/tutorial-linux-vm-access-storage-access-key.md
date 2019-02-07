@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: priyamo
-ms.openlocfilehash: 7617b19fe4f59b582b878d5dfe365810963ff51e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 2b27553e16225a7bc0d9ca74c7ec013a231d64e6
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158100"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755481"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure с помощью ключа доступа
 
@@ -198,4 +198,4 @@ az storage blob download -c <CONTAINER NAME> -n test.txt -f test-download.txt --
 Из этого руководства вы узнали, как использовать назначаемое системой управляемое удостоверение виртуальной машины Linux для получения доступа к службе хранилища Azure с помощью ключа доступа.  Дополнительные сведения о ключах доступа к службе хранилища Azure см. здесь:
 
 > [!div class="nextstepaction"]
->[Управление ключами доступа к хранилищу](/azure/storage/common/storage-create-storage-account#manage-your-storage-access-keys)
+>[Управление ключами доступа к хранилищу](/azure/storage/common/storage-create-storage-account)

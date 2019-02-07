@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: kaanan
-ms.openlocfilehash: 36de5ec6f7384663106bfb88ee9f236cced6930a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0662b66d44533a888d491810ba45efac9a397aa1
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46997953"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700848"
 ---
 # <a name="work-with-a-virtual-network-tap-using-the-azure-cli"></a>Работа с TAP виртуальной сети с помощью Azure CLI
 
@@ -79,7 +79,7 @@ TAP (точка доступа к терминалу) виртуальной с�
    - Извлеките IP-конфигурацию внешнего интерфейса внутренней подсистемы балансировки нагрузки Azure в переменную, которая используется позднее. Идентификатор является конечной точкой, которая будет агрегировать трафик TAP. В следующем примере извлекается идентификатор IP-конфигурации внешнего интерфейса *frontendipconfig1* для подсистемы балансировки нагрузки с именем *myInternalLoadBalancer* в группе ресурсов с именем  *myResourceGroup*:
 
       ```azurecli-interactive
-      FrondendIpConfigId=$(az network lb fronend-ip show \
+      FrontendIpConfigId=$(az network lb frontend-ip show \
       --name frontendipconfig1 \
       --lb-name myInternalLoadBalancer \
       --resource-group myResourceGroup \

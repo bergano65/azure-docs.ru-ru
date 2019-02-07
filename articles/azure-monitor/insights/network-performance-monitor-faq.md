@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/12/2018
 ms.author: vinynigam
-ms.openlocfilehash: 554d837d9fa70c2af581f9b582001c7f32d442e7
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 5186c11259a03717f83db675cbfe7c90f3ecb7cc
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232348"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734561"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Вопросы и ответы по решению "Монитор производительности сети"
 
@@ -134,7 +134,7 @@ NPM ограничивает количество IP-адресов до 5000 I
 Решение "Монитор производительности сети" может отслеживать подключение к службам, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](../../azure-monitor/insights/network-performance-monitor.md#supported-regions).
 
 ### <a name="which-regions-are-supported-for-npms-expressroute-monitor"></a>Какие регионы поддерживаются для монитора ExpressRoute, входящего в решение "Монитор производительности сети"?
-Решение "Монитор производительности сети" может отслеживать каналы ExpressRoute, расположенные в любом регионе Azure. Чтобы подключить канал к решению "Монитор производительности сети", нужно создать рабочую область Log Analytics в одном из [поддерживаемых регионов](/azure/expressroute/how-to-npm#regions).
+Решение "Монитор производительности сети" может отслеживать каналы ExpressRoute, расположенные в любом регионе Azure. Чтобы подключить канал к решению "Монитор производительности сети", нужно создать рабочую область Log Analytics в одном из [поддерживаемых регионов](/azure/expressroute/how-to-npm).
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 

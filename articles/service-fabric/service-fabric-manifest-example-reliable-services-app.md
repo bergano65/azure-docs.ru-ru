@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/11/2018
 ms.author: ryanwi
-ms.openlocfilehash: 9cb41bfde38d9b47f5db994c0ca39c64b453ef1d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 548c05963b0b99ba3434d600b19f80cef6a09d6a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171462"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813353"
 ---
 # <a name="reliable-services-application-and-service-manifest-examples"></a>Примеры манифестов приложений Reliable Services и служб
 Ниже приведены примеры манифестов приложений и служб для приложения Service Fabric с внешним веб-интерфейсном ASP.NET Core и серверной частью с отслеживанием состояния. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [в кратком руководстве по Service Fabric для .NET](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
@@ -28,8 +28,8 @@ ms.locfileid: "55171462"
 |Manifest|Функции|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Управление ресурсами](service-fabric-resource-governance.md), [запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md), [применение политики по умолчанию для всех пакетов кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages), [создание субъектов пользователей и групп](service-fabric-application-runas-security.md), совместное использование пакета данных экземплярами служб, [переопределение конечных точек службы](service-fabric-service-manifest-resources.md#overriding-endpoints-in-servicemanifestxml)| 
-|[Манифест службы FrontEndService](#frontendservice-service-manifest)| [Выполнение сценария при запуске службы](service-fabric-run-script-at-service-startup.md), [определение конечной точки HTTPS](service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest) | 
-|[Манифест службы BackEndService](#backendservice-service-manifest)| [Объявление пакета конфигурации](service-fabric-application-and-service-manifests.md), [объявление пакета данных](service-fabric-application-and-service-manifests.md), [настройка конечной точки](service-fabric-service-manifest-resources.md)| 
+|Манифест службы FrontEndService| [Выполнение сценария при запуске службы](service-fabric-run-script-at-service-startup.md), [определение конечной точки HTTPS](service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest) | 
+|Манифест службы BackEndService| [Объявление пакета конфигурации](service-fabric-application-and-service-manifests.md), [объявление пакета данных](service-fabric-application-and-service-manifests.md), [настройка конечной точки](service-fabric-service-manifest-resources.md)| 
 
 Дополнительные сведения о конкретных XML-элементах см. в разделах [Элементы манифеста приложения](#application-manifest-elements), [Элементы манифеста службы VotingWeb](#votingweb-service-manifest-elements) и [Элементы манифеста службы VotingData](#votingdata-service-manifest-elements).
 

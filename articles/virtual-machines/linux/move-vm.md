@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: cynthn
-ms.openlocfilehash: c451377d6274c50f22e3b1d4cd32fb0f3edd9d9e
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: d2d3f36c9b4ee0557f9e060bec762877a94ea637
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220406"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734187"
 ---
 # <a name="move-a-linux-vm-to-another-subscription-or-resource-group"></a>Перемещение виртуальной машины Linux в другую подписку или группу ресурсов
 В этой статье описано перемещение виртуальной машины Linux между группами ресурсов или подписками. Перемещение ВМ между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку.
@@ -35,7 +35,7 @@ ms.locfileid: "55220406"
 ## <a name="use-the-azure-cli-to-move-a-vm"></a>Использование Azure CLI для перемещения виртуальной машины
 
 
-Перед перемещением виртуальной машины с помощью Azure CLI удостоверьтесь, что исходная и целевая подписки находятся в пределах одного клиента. Чтобы убедиться, что обе подписки имеют один и тот же идентификатор клиента, выполните команду [az account show](/cli/azure/account#az_account_show).
+Перед перемещением виртуальной машины с помощью Azure CLI удостоверьтесь, что исходная и целевая подписки находятся в пределах одного клиента. Чтобы убедиться, что обе подписки имеют один и тот же идентификатор клиента, выполните команду [az account show](/cli/azure/account).
 
 ```azurecli-interactive
 az account show --subscription mySourceSubscription --query tenantId
@@ -43,13 +43,13 @@ az account show --subscription myDestinationSubscription --query tenantId
 ```
 Если идентификаторы клиентов для исходной и целевой подписок не совпадают, необходимо обратиться в [службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) для перемещения ресурсов в новый клиент.
 
-Для успешного перемещения виртуальной машины необходимо перенести саму виртуальную машину и все вспомогательные ресурсы. Чтобы вывести список всех ресурсов в группе и их идентификаторы, используйте команду [az resource list](/cli/azure/resource#az_resource_list). Желательно сохранить выходные данные этой команды в файл, чтобы позже можно было копировать и вставлять идентификаторы в командах.
+Для успешного перемещения виртуальной машины необходимо перенести саму виртуальную машину и все вспомогательные ресурсы. Чтобы вывести список всех ресурсов в группе и их идентификаторы, используйте команду [az resource list](/cli/azure/resource). Желательно сохранить выходные данные этой команды в файл, чтобы позже можно было копировать и вставлять идентификаторы в командах.
 
 ```azurecli-interactive
 az resource list --resource-group "mySourceResourceGroup" --query "[].{Id:id}" --output table
 ```
 
-Чтобы переместить виртуальную машину и ее ресурсы в другую группу ресурсов, выполните команду [az resource move](/cli/azure/resource#az_resource_move). Ниже показано, как переместить ВМ и наиболее распространенные ресурсы, которые для этого понадобятся. Используйте параметр **-ids** и передайте разделенный запятыми список (без пробелов) идентификаторов ресурсов для перемещения.
+Чтобы переместить виртуальную машину и ее ресурсы в другую группу ресурсов, выполните команду [az resource move](/cli/azure/resource). Ниже показано, как переместить ВМ и наиболее распространенные ресурсы, которые для этого понадобятся. Используйте параметр **-ids** и передайте разделенный запятыми список (без пробелов) идентификаторов ресурсов для перемещения.
 
 ```azurecli-interactive
 vm=/subscriptions/mySourceSubscriptionID/resourceGroups/mySourceResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM

@@ -10,20 +10,20 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/16/2018
 ms.author: rosh
-ms.openlocfilehash: b8358890658a38133452ba2092ac9b8b78114ff7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 8402d0228e062aed60adee1c4622ade31771584d
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210953"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700287"
 ---
 # <a name="quickstart-query-for-facts"></a>Краткое руководство. Запрос фактов
 
 Если запрос относится к факту, например дате или идентифицируемому знанию, ответ может содержать ответы `facts`. Ответы фактов содержат соответствующие запросу результаты, извлеченные из абзацев в веб-документах.  Такие запросы всегда возвращают веб-страницы, а [факты](fact-queries.md) и (или) [сущности](entity-queries.md) зависят от запроса.
 
-Запросы такого вида, как "валентинки+2016" или "когда+рамадан", считаются связанными с датой. Если Bing определит, что запрос связан с датой, в ответе будет содержаться ответ `facts`. 
+Запросы такого вида, как "валентинки+2016" или "когда+рамадан", считаются связанными с датой. Если Bing определит, что запрос связан с датой, в ответе будет содержаться ответ `facts`.
 
-В следующем примере представлен ответ `facts`, связанный с датой. 
+В следующем примере представлен ответ `facts`, связанный с датой.
 
 **Запрос**
 ```
@@ -34,28 +34,29 @@ https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=valentines+2016
 **Ответ.** Поле `subjectName` содержит отображаемую версию пользовательского запроса, которую можно использовать в качестве метки при отображении факта. Если строка запроса — "валентинки+2016", Bing может изменить ее на "День святого Валентина 2016". В поле описания содержится факт.
 
 ```
-{   
-    "_type" : "SearchResponse",   
-    "queryContext" : {   
-        "originalQuery" : "valentines 2016" 
-    },   
-    "facts" : {   
-        "id" : "https:\/\/www.bingapis.com\/api\/v7\/#Facts",   
-        "value" : [{   
-            "description" : "Valentine's Day was on Sunday, February 14, 2016.",   
-            "subjectName" : "Valentine's Day 2016"   
-        }]   
-    },   
-    "rankingResponse" : {   
-        "mainline" : {   
-            "items" : [{   
-                "answerType" : "Facts",   
-                "value" : {   
-                    "id" : "https:\/\/www.bingapis.com\/api\/v7\/knowledge\/#Facts"                   }   
-            }]   
-        }   
-    }   
-}   
+{
+    "_type" : "SearchResponse",
+    "queryContext" : {
+        "originalQuery" : "valentines 2016"
+    },
+    "facts" : {
+        "id" : "https:\/\/www.bingapis.com\/api\/v7\/#Facts",
+        "value" : [{
+            "description" : "Valentine's Day was on Sunday, February 14, 2016.",
+            "subjectName" : "Valentine's Day 2016"
+        }]
+    },
+    "rankingResponse" : {
+        "mainline" : {
+            "items" : [{
+                "answerType" : "Facts",
+                "value" : {
+                    "id" : "https:\/\/www.bingapis.com\/api\/v7\/knowledge\/#Facts"
+                }
+            }]
+        }
+    }
+}
 
 ```
 
@@ -118,7 +119,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=why+is+the+s
 В некоторых случаях факты могут возвращаться как `_type: StructuredValue/TabularData`. Следующий запрос получает табличные данные с контрастными сведениями о кофе и чае.
 
 ```
-https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=coffee+vs+tea&mkt=en-us 
+https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=coffee+vs+tea&mkt=en-us
 
 ```
 Результаты `facts` включают в себя следующие строки и ячейки:

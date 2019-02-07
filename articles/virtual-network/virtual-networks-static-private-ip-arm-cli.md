@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/16/2017
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a6e217194508feae3b227b5ef65b02d0305a22a7
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 06016cf7a8ba10a9a8f49f90da99a26aaa072441
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852904"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695534"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Настройка частных IP-адресов для виртуальной машины с помощью Azure CLI
 
@@ -42,7 +42,7 @@ ms.locfileid: "54852904"
 
 Чтобы создать виртуальную машину с именем *DNS01* в подсети *FrontEnd* виртуальной сети *TestVNet* со статическим частным IP-адресом *192.168.1.101*, сделайте следующее:
 
-1. Установите и настройте последнюю версию [Azure CLI](/cli/azure/install-azure-cli) (если вы еще этого не сделали), а затем войдите с использованием учетной записи Azure, выполнив команду [az login](/cli/azure/reference-index#az_login).
+1. Установите и настройте последнюю версию [Azure CLI](/cli/azure/install-azure-cli) (если вы еще этого не сделали), а затем войдите с использованием учетной записи Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 2. Создайте общедоступный IP-адрес для виртуальной машины с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В списке, который откроется после выполнения команды, будут указаны используемые параметры.
 
@@ -75,7 +75,7 @@ ms.locfileid: "54852904"
    * `--name`: Имя общедоступного IP-адреса.
    * `--location`: регион Azure, в котором будет создан общедоступный IP-адрес.
 
-3. Выполните команду [az network nic create](/cli/azure/network/nic#az_network_nic_create), чтобы создать сетевую карту со статическим частным IP-адресом. В списке, который откроется после выполнения команды, будут указаны используемые параметры. 
+3. Выполните команду [az network nic create](/cli/azure/network/nic), чтобы создать сетевую карту со статическим частным IP-адресом. В списке, который откроется после выполнения команды, будут указаны используемые параметры. 
    
     ```azurecli
     az network nic create \
@@ -127,7 +127,7 @@ ms.locfileid: "54852904"
     * `--vnet-name`: имя виртуальной сети, в которой будет создана сетевая карта.
     * `--subnet`: имя подсети для создания сетевой карты.
 
-4. Выполните команду [azure vm create](/cli/azure/vm/nic#az_vm_nic_create), чтобы создать виртуальную машину с созданными ранее общедоступным IP-адресом и сетевой картой. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
+4. Выполните команду [azure vm create](/cli/azure/vm/nic), чтобы создать виртуальную машину с созданными ранее общедоступным IP-адресом и сетевой картой. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
    
     ```azurecli
     az vm create \
@@ -155,7 +155,7 @@ ms.locfileid: "54852904"
     }
     ```
    
-   Параметры, отличные от базовых параметров [az vm create](/cli/azure/vm#az_vm_create).
+   Параметры, отличные от базовых параметров [az vm create](/cli/azure/vm).
 
    * `--nics`: имя сетевой карты, к которой подключена виртуальная машина.
    

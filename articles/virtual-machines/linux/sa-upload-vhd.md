@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: cynthn
-ms.openlocfilehash: efb8887085ad1f6f47667b1305191e514de74330
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 01d3a20022972b0e18de02bd2730ca31e57cd77a
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468188"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755043"
 ---
 # <a name="upload-and-create-a-linux-vm-from-custom-disk-with-the-azure-cli"></a>Передача пользовательского диска и создание на его основе виртуальной машины Linux с помощью Azure CLI
 
@@ -31,11 +31,11 @@ ms.locfileid: "54468188"
 ## <a name="quick-commands"></a>Быстрые команды
 Если вам необходимо быстро выполнить задачу, в следующем разделе описаны основные команды для отправки виртуального жесткого диска в Azure. Более подробные сведения и контекст для каждого этапа можно найти в остальной части документа [начиная отсюда](#requirements).
 
-Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров — `myResourceGroup`, `mystorageaccount`, и `mydisks`.
 
-Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `WestUs`:
+Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `WestUs`:
 
 ```azurecli
 az group create --name myResourceGroup --location westus
@@ -48,20 +48,20 @@ az storage account create --resource-group myResourceGroup --location westus \
   --name mystorageaccount --kind Storage --sku Standard_LRS
 ```
 
-Отобразите список ключей доступа к своей учетной записи хранилища с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list). Запишите `key1`:
+Отобразите список ключей доступа к своей учетной записи хранилища с помощью команды [az storage account keys list](/cli/azure/storage/account/keys). Запишите `key1`:
 
 ```azurecli
 az storage account keys list --resource-group myResourceGroup --account-name mystorageaccount
 ```
 
-Создайте контейнер в своей учетной записи хранения, используя ключ к хранилищу данных, полученный с помощью команды [az storage container create](/cli/azure/storage/container#az_storage_container_create). В следующем примере создается контейнер с именем `mydisks` с использованием значения ключа к хранилищу данных из `key1`:
+Создайте контейнер в своей учетной записи хранения, используя ключ к хранилищу данных, полученный с помощью команды [az storage container create](/cli/azure/storage/container). В следующем примере создается контейнер с именем `mydisks` с использованием значения ключа к хранилищу данных из `key1`:
 
 ```azurecli
 az storage container create --account-name mystorageaccount \
     --account-key key1 --name mydisks
 ```
 
-Наконец, отправьте виртуальный жесткий диск в созданный контейнер, используя команду [az storage blob upload](/cli/azure/storage/blob#az_storage_blob_upload). Укажите локальный путь к виртуальному жесткому диску в `/path/to/disk/mydisk.vhd`:
+Наконец, отправьте виртуальный жесткий диск в созданный контейнер, используя команду [az storage blob upload](/cli/azure/storage/blob). Укажите локальный путь к виртуальному жесткому диску в `/path/to/disk/mydisk.vhd`:
 
 ```azurecli
 az storage blob upload --account-name mystorageaccount \
@@ -97,7 +97,7 @@ az vm create --resource-group myResourceGroup --location westus \
   * Создайте учетную запись хранения и контейнер для хранения пользовательского диска и созданных виртуальных машин.
   * Когда вы закончите создание всех виртуальных машин, диск можно спокойно удалить.
 
-Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров — `myResourceGroup`, `mystorageaccount`, и `mydisks`.
 
@@ -122,7 +122,7 @@ Azure поддерживает различные дистрибутивы Linux
 > 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-Группы ресурсов логически объединяют все ресурсы Azure для обеспечения работы виртуальных машин, в том числе виртуальные сети и хранилища. См. дополнительные сведения о [группах ресурсов](../../azure-resource-manager/resource-group-overview.md). Перед отправкой пользовательского диска и созданием виртуальных машин необходимо создать группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create).
+Группы ресурсов логически объединяют все ресурсы Azure для обеспечения работы виртуальных машин, в том числе виртуальные сети и хранилища. См. дополнительные сведения о [группах ресурсов](../../azure-resource-manager/resource-group-overview.md). Перед отправкой пользовательского диска и созданием виртуальных машин необходимо создать группу ресурсов с помощью команды [az group create](/cli/azure/group).
 
 В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `westus`:
 
@@ -142,7 +142,7 @@ az storage account create --resource-group myResourceGroup --location westus \
 ```
 
 ## <a name="list-storage-account-keys"></a>Вывод списка ключей учетной записи хранения
-Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при аутентификации в учетной записи хранения, например, для выполнения операций записи. Узнайте больше об управлении доступом к хранилищу [здесь](../../storage/common/storage-account-manage.md#access-keys). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list).
+Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при аутентификации в учетной записи хранения, например, для выполнения операций записи. Узнайте больше об управлении доступом к хранилищу [здесь](../../storage/common/storage-account-manage.md#access-keys). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys).
 
 Просмотрите ключи доступа для созданной учетной записи хранения.
 
@@ -164,7 +164,7 @@ info:    storage account keys list command OK
 Запишите значение `key1`, так как оно будет использоваться для работы с учетной записью хранения на следующих шагах.
 
 ## <a name="create-a-storage-container"></a>Создание контейнера хранилища
-Точно так же, как вы создаете различные каталоги для логической организации локальной файловой системы, вы создаете контейнеры в учетной записи хранения, чтобы упорядочить диски. Учетная запись хранения может содержать любое количество контейнеров. Создайте контейнер с помощью команды [az storage container create](/cli/azure/storage/container#az_storage_container_create).
+Точно так же, как вы создаете различные каталоги для логической организации локальной файловой системы, вы создаете контейнеры в учетной записи хранения, чтобы упорядочить диски. Учетная запись хранения может содержать любое количество контейнеров. Создайте контейнер с помощью команды [az storage container create](/cli/azure/storage/container).
 
 В следующем примере создается контейнер с именем `mydisks`:
 
@@ -175,7 +175,7 @@ az storage container create \
 ```
 
 ## <a name="upload-vhd"></a>Передача VHD
-Теперь передайте пользовательский диск с помощью команды [az storage blob upload](/cli/azure/storage/blob#az_storage_blob_upload). Пользовательский диск передается и хранится как страничный BLOB-объект.
+Теперь передайте пользовательский диск с помощью команды [az storage blob upload](/cli/azure/storage/blob). Пользовательский диск передается и хранится как страничный BLOB-объект.
 
 Укажите ключ доступа, созданный на предыдущем шаге контейнер и путь к пользовательскому диску на локальном компьютере:
 
@@ -226,7 +226,7 @@ az vm create --resource-group myResourceGroup --location westus \
 
 Можно использовать [этот существующий шаблон для создания виртуальной машины на основе пользовательского образа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) или [создать собственные шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md). 
 
-Настроив шаблон, приступайте к созданию виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment#az_group_deployment_create) Укажите универсальный код ресурса (URI) шаблона JSON с параметром `--template-uri` .
+Настроив шаблон, приступайте к созданию виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment) Укажите универсальный код ресурса (URI) шаблона JSON с параметром `--template-uri` .
 
 ```azurecli
 az group deployment create --resource-group myNewResourceGroup \

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 728adae62677eb2edb1e203df9b0d9f11f6acecf
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 101385b23d8ea683dc5762d491e6a4bef91bbed4
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022314"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813777"
 ---
 # <a name="data-management-gateway"></a>Шлюз управления данными
 > [!NOTE]
@@ -246,7 +246,7 @@ ms.locfileid: "54022314"
 
     msiexec /q /i DataManagementGateway.msi NOFIREWALL=1
 
-Если вы не хотите открывать порт 8050 на компьютере шлюза, то настроить учетные данные для хранилища данных с помощью приложения **настройки учетных данных** будет невозможно. Используйте другие механизмы настройки. Например, можно использовать командлет PowerShell [New-AzureRmDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue). Дополнительные сведения о настройке учетных данных хранилища данных см. в разделе [Настройка учетных данных и безопасность](#set-credentials-and-securityy).
+Если вы не хотите открывать порт 8050 на компьютере шлюза, то настроить учетные данные для хранилища данных с помощью приложения **настройки учетных данных** будет невозможно. Используйте другие механизмы настройки. Например, можно использовать командлет PowerShell [New-AzureRmDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue). Дополнительные сведения см. в статье о настройке учетных данных и параметров безопасности.
 
 ## <a name="update"></a>Блокировка изменений
 По умолчанию шлюз управления данными автоматически обновляется, если доступна новая версия. Он не будет обновлен, пока не будут выполнены все запланированные задания. До завершения операции обновления в шлюзе не будут обрабатываться какие-либо дополнительные задачи. Если обновление завершится сбоем, для шлюза будет выполнен откат к предыдущей версии.

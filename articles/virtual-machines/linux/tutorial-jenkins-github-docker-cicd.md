@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 694448f6e3c788c0c9d336e75d5df579b90137df
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: be4549b8b9cca3f4aa48a21fb9377dbd203dde69
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189873"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751129"
 ---
 # <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
 
@@ -69,7 +69,7 @@ runcmd:
   - service jenkins restart
 ```
 
-Прежде чем создать виртуальную машину, выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupJenkins* в расположении *eastus*.
+Прежде чем создать виртуальную машину, выполните команду [az group create](/cli/azure/group), чтобы создать группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupJenkins* в расположении *eastus*.
 
 ```azurecli-interactive 
 az group create --name myResourceGroupJenkins --location eastus
@@ -88,7 +88,7 @@ az vm create --resource-group myResourceGroupJenkins \
 
 Создание и настройка виртуальной машины может занять несколько минут.
 
-Чтобы разрешить веб-трафик к вашей виртуальной машине, используйте команду [az vm open-port](/cli/azure/vm#az_vm_open_port) для открытия порта *8080* для трафика Jenkins и порта *1337* для приложения Node.js, которое используется для запуска примера приложения:
+Чтобы разрешить веб-трафик к вашей виртуальной машине, используйте команду [az vm open-port](/cli/azure/vm) для открытия порта *8080* для трафика Jenkins и порта *1337* для приложения Node.js, которое используется для запуска примера приложения:
 
 ```azurecli-interactive 
 az vm open-port --resource-group myResourceGroupJenkins --name myVM --port 8080 --priority 1001
@@ -160,7 +160,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 Вернитесь к веб-интерфейсу пользователя GitHub, выберите разветвление репозитория и щелкните файл **index.js**. Щелкните значок карандаша и измените этот файл так, чтобы строка 6 выглядела следующим образом.
 
-```nodejs
+```javascript
 response.end("Hello World!");
 ```
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: juluk
-ms.openlocfilehash: 606b36be4a2bbeff8dd226f41341d60e23f0d988
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 4671287d78dafce9b662a167ba99a680d2fa70d2
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163283"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734081"
 ---
 [!INCLUDE [PersistingStorage-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
@@ -75,7 +75,7 @@ clouddrive mount -s mySubscription -g myRG -n storageAccountName -f fileShareNam
 ### <a name="list-clouddrive"></a>Вывод объектов `clouddrive`
 Чтобы узнать, какой файловый ресурс подключен как `clouddrive`, выполните команду `df`. 
 
-В пути к каталогу clouddrive указано имя учетной записи хранения и файловый ресурс в URL-адресе. Например, `//storageaccountname.file.core.windows.net/filesharename`
+В пути к каталогу clouddrive указано имя учетной записи хранения и файловый ресурс в URL-адресе. Например `//storageaccountname.file.core.windows.net/filesharename`.
 
 ```
 justin@Azure:~$ df
@@ -105,5 +105,5 @@ justin@Azure:~$
 ## <a name="next-steps"></a>Дополнительная информация
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
-[Сведения о хранилище файлов Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction#file-storage) <br>
+[Сведения о хранилище файлов Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction) <br>
 [Использование тегов для организации ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags) <br>
