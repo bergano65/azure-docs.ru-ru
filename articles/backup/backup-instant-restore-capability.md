@@ -2,19 +2,18 @@
 title: Возможность мгновенного восстановления в Azure
 description: Возможность мгновенного восстановления в Azure и часто задаваемые вопросы о стеке резервного копирования виртуальных машин и модели развертывания с помощью Resource Manager
 services: backup
-author: trinadhk
+author: sogup
 manager: vijayts
-tags: azure-resource-manager, virtual-machine-backup
 ms.service: backup
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.author: trinadhk
-ms.openlocfilehash: a5afdd0dca55a5df075acb99e488c932196d95c5
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.author: sogup
+ms.openlocfilehash: cc4f559efecec3f024ce995dcf8f8757eb9cb4fb
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092308"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55489702"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 

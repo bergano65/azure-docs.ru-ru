@@ -1,8 +1,21 @@
 ---
-заголовок: Коллекция решений ИИ Azure titleSuffix: Студия машинного обучения Azure description: Находите ресурсы аналитики и многое другое, а также обменивайтесь ими с помощью коллекции решений ИИ Azure. Учитесь у других и вносите свой вклад в сообщество.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 11.01.2019
+title: Коллекция решений ИИ Azure
+titleSuffix: Azure Machine Learning Studio
+description: Находите ресурсы аналитики и многое другое, а также обменивайтесь ими с помощью коллекции решений ИИ Azure. Учитесь у других и вносите свой вклад в сообщество.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.date: 01/11/2019
+ms.openlocfilehash: b5a460f3449785721ac360ba398bc47d1945b954
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55497709"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
 

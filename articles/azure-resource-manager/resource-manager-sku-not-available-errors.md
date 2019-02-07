@@ -13,17 +13,18 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/19/2018
 ms.author: tomfitz
-ms.openlocfilehash: 4688acbb2742579e0f9f3fbb2604ffd8ef12bfd5
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 1dd0532452c3558e53f0236998953d2055ed328c
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55081047"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55489701"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
 В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вам не удалось найти подходящий номер SKU в этом или любом другом регионе, который соответствует потребностям вашей компании, отправьте [запрос на получение SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="symptom"></a>Симптом
 
