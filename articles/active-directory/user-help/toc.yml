@@ -48,24 +48,25 @@ items:
   - name: Обзор
     href: user-help-auth-app-overview.md
   - name: Скачивание и установка приложения
-    href: microsoft-authenticator-app-how-to.md
+    href: user-help-auth-app-download-install.md
   - name: Общие сведения о добавлении учетных записей
-    href: microsoft-authenticator-app-add-accounts-overview.md
+    href: user-help-auth-app-add-account-overview.md
     items:
     - name: Добавление рабочей или учебной учетной записи
-      href: microsoft-authenticator-app-add-work-account.md
+      href: user-help-auth-app-add-work-school-account.md
     - name: Добавление личной учетной записи Майкрософт
-      href: microsoft-authenticator-app-add-personal-account.md
+      href: user-help-auth-app-add-personal-ms-account.md
     - name: Добавление учетной записи стороннего поставщика (не Майкрософт)
-      href: microsoft-authenticator-app-add-non-microsoft-account.md
+      href: user-help-auth-app-add-non-ms-account.md
     - name: Добавление учетной записи вручную
-      href: microsoft-authenticator-app-add-account-manual.md
+      href: user-help-auth-app-add-account-manual.md
+    expanded: true
   - name: Вход с помощью приложения Microsoft Authenticator
-    href: microsoft-authenticator-app-phone-signin-faq.md
+    href: user-help-auth-app-sign-in.md
   - name: Резервное копирование и восстановление учетных записей
-    href: microsoft-authenticator-app-backup-and-recovery.md
+    href: user-help-auth-app-backup-recovery.md
   - name: Часто задаваемые вопросы
-    href: microsoft-authenticator-app-faq.md
+    href: user-help-auth-app-faq.md
 - name: Справка по порталу "Мои приложения"
   items:
   - name: Обзор
@@ -84,9 +85,9 @@ items:
     href: user-help-register-device-on-network.md
   - name: Устранение проблемы с доступом
     href: user-help-device-remediation.md
-ms.openlocfilehash: ed41c40adc0d09d60f43cf3826c6bb84a464c31f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 604b2c204f893bf0abaaec86f85e2159c17a8656
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755277"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816056"
