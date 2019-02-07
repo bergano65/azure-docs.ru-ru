@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/15/2019
 ms.author: rkarlin
-ms.openlocfilehash: dbff728c888e9e2f83d9a82ca9819bf9dd0b89e9
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 252337c0d2bc162d418d20ca4641673d1564daa6
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54268185"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660432"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Руководство. Обеспечение соответствия нормативным требованиям на высоком уровне
 ---
@@ -37,7 +37,7 @@ ms.locfileid: "54268185"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения инструкций этого руководства требуется Центр безопасности ценовой категории "Стандартный". Вы можете бесплатно опробовать центр безопасности ценовой категории "Стандартный".
-Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/). Следуйте инструкциям в [кратком руководстве по центру безопасности Azure](https://docs.microsoft.com/en-us/azure/security-center/security-center-get-started), чтобы обновить ценовую категорию до уровня "Стандартный".
+Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/). Следуйте инструкциям в [кратком руководстве по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started), чтобы обновить ценовую категорию до уровня "Стандартный".
 
 ##  <a name="assess-your-regulatory-compliance"></a>Доступ к соответствию нормативным требованиям
 

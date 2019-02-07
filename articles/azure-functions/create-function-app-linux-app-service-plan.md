@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: d9800ff3fc82636c5cae12167738667ec84326ee
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ec7b71c7da19ecefc14696c029e63a074b498ec8
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52855555"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55696759"
 ---
 # <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan-preview"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure (предварительная версия)
 
@@ -84,7 +84,7 @@ az functionapp create --resource-group myResourceGroup --plan myAppServicePlan \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье описывается как в Azure создать приложение-функцию размещенную в Linux. Теперь в это приложение-функцию можно [развернуть проект функции](https://docs.microsoft.com/cli/azure/functionapp/deployment/source?view=azure-cli-latest). Чтобы [создать проект функций](functions-run-local.md#create-a-local-functions-project) на локальном компьютере и развернуть его в новом приложении-функции Linux, можно использовать Azure Functions Core Tools.  
+В этой статье описывается как в Azure создать приложение-функцию размещенную в Linux. Теперь в это приложение-функцию можно [развернуть проект функции](https://docs.microsoft.com/cli/azure/functionapp/deployment/source?view=azure-cli-latest). Чтобы [создать проект функций](functions-run-local.md) на локальном компьютере и развернуть его в новом приложении-функции Linux, можно использовать Azure Functions Core Tools.  
 
 > [!div class="nextstepaction"] 
 > [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md)

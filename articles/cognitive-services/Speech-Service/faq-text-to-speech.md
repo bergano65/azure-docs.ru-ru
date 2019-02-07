@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: panosper
-ms.openlocfilehash: 2252dc9d1cb4a8b5666e3f8078528206ac0fddf7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9b8340221c61bedbe010b9ef280ada62cfee7a21
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228259"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754882"
 ---
 # <a name="text-to-speech-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании текста в речь
 
@@ -29,7 +29,7 @@ ms.locfileid: "55228259"
 
 **Вопрос. С чего лучше начинать работу, если требуется использовать стандартную голосовую модель?**
 
-**Ответ**. С помощью HTTP-запросов можно обращаться к более чем 80 стандартным голосовым моделям на более чем 45 языках. Сначала получите [ключ подписки](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started). Чтобы узнать, как делать вызовы REST к предварительно развернутым голосовым моделям, см. раздел [REST API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech).
+**Ответ**. С помощью HTTP-запросов можно обращаться к более чем 80 стандартным голосовым моделям на более чем 45 языках. Сначала получите [ключ подписки](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started). Чтобы узнать, как делать вызовы REST к предварительно развернутым голосовым моделям, см. раздел [REST API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 
 **Вопрос. Если я хочу применить пользовательскую голосовую модель, можно ли использовать тот же API, что и для стандартных голосов?**
 

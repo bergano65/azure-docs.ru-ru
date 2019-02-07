@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 0b3b3cd1c9c0410c4cc0ffda8887b40123c1ac7a
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: b69b16cec08c5d29d4812258f694f2d078a9ff35
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53718524"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700984"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -73,7 +73,7 @@ ms.locfileid: "53718524"
 
 #### <a name="identity-and-authentication"></a>Идентификация и аутентификация
 
-Эта схема обеспечивает защиту доступа к ресурсам с помощью службы управления каталогами и удостоверениями. Такая архитектура позволяет полноценно использовать [удостоверение как периметр безопасности](https://docs.microsoft.com/azure/security/security-paas-deployments#identity-as-the-primary-security-perimeter). 
+Эта схема обеспечивает защиту доступа к ресурсам с помощью службы управления каталогами и удостоверениями. Такая архитектура позволяет полноценно использовать [удостоверение как периметр безопасности](https://docs.microsoft.com/azure/security/security-paas-deployments). 
 
 Следующие технологии обеспечивают возможности управления удостоверениями в среде Azure:
 

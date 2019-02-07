@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/06/2018
 ms.author: jamesbak
-ms.openlocfilehash: 906f1a85000a2be175a204e9e6e561a75cecfde3
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b49c69a488402e593573e7f9e4fda81057519149
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55248441"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732453"
 ---
 # <a name="quickstart-create-an-azure-data-lake-storage-gen2-storage-account"></a>Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения
 
@@ -125,11 +125,8 @@ Azure CLI также можно установить и применять ло�
 Установка модуля Az.Storage
 
 ```powershell
-Install-Module Az.Storage -Repository PSGallery -RequiredVersion 0.7.0 -AllowPrerelease -AllowClobber -Force
+Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -Force
 ```
-
-> [!NOTE]
-> Модули Azure PowerShell Az — это предпочтительные модули для работы со службами Azure в PowerShell. Дополнительные сведения см. в статье [Знакомство с новым модулем Az для Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
 
 ### <a name="log-in-to-your-azure-subscription"></a>Вход в подписку Azure
 
@@ -195,7 +192,7 @@ az login
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Чтобы создать группу ресурсов с помощью Azure CLI, используйте команду [az group create](/cli/azure/group#az_group_create).
+Чтобы создать группу ресурсов с помощью Azure CLI, используйте команду [az group create](/cli/azure/group).
 
 ```azurecli-interactive
 az group create `

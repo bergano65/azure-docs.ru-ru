@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: 6c8f48ce71e11d1de0c28b4dab5327ab03e54f28
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 32a31a87bacbb13cd3b2cb4561ac04e54d51ba46
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54231790"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55656759"
 ---
 # <a name="manage-workspaces"></a>Управление рабочими областями
 
@@ -40,7 +40,7 @@ ms.locfileid: "54231790"
 
 * географическое расположение для хранения данных;
 * изоляцию данных для определения прав доступа для другого пользователя;
-* конфигурацию параметров, включая [ценовую категорию](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#changing-pricing-tier), параметры [хранения](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period) и [ограничения данных](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#daily-cap). 
+* конфигурацию параметров, включая [ценовую категорию](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#changing-pricing-tier), параметры [хранения](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period) и [ограничения данных](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#daily-cap). 
 
 В контексте потребления рекомендуется создавать минимальное число рабочих областей. Это упростит и ускорит процессы администрирования и выполнения запросов. Но даже с учетом указанного вы можете создать большее число рабочих областей в следующих ситуациях:
 

@@ -1,8 +1,21 @@
 ---
-заголовок: Оценка работы модели titleSuffix: Студия машинного обучения Azure description: В этой статье показано, как оценить эффективность модели в студии машинного обучения Azure. Вы также найдете здесь краткое описание метрик, доступных для выполнения этой задачи.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
+title: Оценка работы модели.
+titleSuffix: Azure Machine Learning Studio
+description: В этой статье показано, как оценить эффективность модели в студии машинного обучения Azure. Вы также найдете здесь краткое описание метрик, доступных для выполнения этой задачи.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.date: 03/20/2017
+ms.openlocfilehash: b663177a07446b888bc7bf9e919bf180458d36bc
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55487014"
 ---
 # <a name="how-to-evaluate-model-performance-in-azure-machine-learning-studio"></a>Как оценить эффективность модели в Студии машинного обучения Azure
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 261af3524b36d3742c68ef147bfa648bfe95034c
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 5e02c88d894c01752965af77861d3e11e1bb101d
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54887774"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55749199"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-an-azure-template"></a>Руководство. Автомасштабирование масштабируемого набора виртуальных машин с помощью шаблона Azure
 При создании масштабируемого набора вы определяете количество экземпляров виртуальных машин для запуска. По мере изменения потребностей приложения можно автоматически увеличивать или уменьшать это количество. Возможность автоматического масштабирования позволяет удовлетворить пользовательский спрос или среагировать на изменения производительности приложения на протяжении его жизненного цикла. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -144,13 +144,13 @@ ms.locfileid: "54887774"
 ## <a name="create-an-autoscaling-scale-set"></a>Создание масштабируемого набора автомасштабирования
 Мы используем пример шаблона для создания масштабируемого набора и применения правил автомасштабирования. См. [полный шаблон](https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/autoscale.json) или [раздел *шаблона о поставщике ресурсов* Microsoft.insights/autoscalesettings](https://github.com/Azure-Samples/compute-automation-configurations/blob/master/scale_sets/autoscale.json#L220).
 
-Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment#az_group_deployment_create). При появлении запроса укажите имя пользователя, например *azureuser*, и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины.
+Создайте масштабируемый набор виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment). При появлении запроса укажите имя пользователя, например *azureuser*, и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины.
 
 ```azurecli-interactive
 az group deployment create \
@@ -198,7 +198,7 @@ sudo stress --cpu 10 --timeout 420 &
 
 Чтобы убедиться, что программа **stress** создает нагрузку на ЦП, проверьте активную нагрузку на систему с помощью служебной программы **top**.
 
-```azuecli-interactive
+```azurecli-interactive
 top
 ```
 
@@ -264,7 +264,7 @@ Every 2.0s: az vmss list-instances --resource-group myResourceGroup --name mySca
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [az group delete](/cli/azure/group#az_group_delete).
+Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [az group delete](/cli/azure/group).
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait

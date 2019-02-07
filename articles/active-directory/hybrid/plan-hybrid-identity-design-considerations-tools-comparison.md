@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 08/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 26c00ba1dc6a4d597db8fe067d28d687f50412b3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4c26fe0e712e5b78a929ff886f5822f430feadcd
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194496"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55486135"
 ---
 # <a name="hybrid-identity-directory-integration-tools-comparison"></a>Сравнение инструментов интеграции каталогов гибридной идентификации
 На протяжении многих лет инструменты интеграции каталогов развивались и расширялись.  Этот документ предназначен, чтобы помочь предоставить единое представление об этих инструментах и сравнение функций, доступных в каждом из них.

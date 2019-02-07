@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: b2b247b50eff446776edfbf3a552e92af3c7dfff
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: fe98caa2a78722d621c43f1ef708e24add0efb56
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228803"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55664120"
 ---
 # <a name="azure-advanced-threat-detection"></a>Расширенное обнаружение угроз Azure
 
@@ -29,7 +29,7 @@ Azure предоставляет широкий набор параметров 
 
 ## <a name="azure-active-directory-identity-protection"></a>Защита идентификации Azure Active Directory
 
-[Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) — это функция [Azure Active Directory уровня Premium P2](https://docs.microsoft.com/azure/active-directory/active-directory-editions), обеспечивающая обзор всех событий риска и возможных уязвимостей, которые могут влиять на удостоверения организации. Защита идентификации предусматривает возможности обнаружения аномалий Azure AD (они доступны в [отчетах Azure AD об аномальных действиях](https://docs.microsoft.com/azure/active-directory/active-directory-view-access-usage-reports#anomalous-activity-reports)) и новые типы событий риска, которые позволяют обнаруживать аномалии в реальном времени.
+[Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) — это функция [Azure Active Directory уровня Premium P2](https://docs.microsoft.com/azure/active-directory/active-directory-editions), обеспечивающая обзор всех событий риска и возможных уязвимостей, которые могут влиять на удостоверения организации. Защита идентификации предусматривает возможности обнаружения аномалий Azure AD (они доступны в [отчетах Azure AD об аномальных действиях](https://docs.microsoft.com/azure/active-directory/active-directory-view-access-usage-reports)) и новые типы событий риска, которые позволяют обнаруживать аномалии в реальном времени.
 
 ![Схема защиты идентификации Azure AD](./media/azure-threat-detection/azure-threat-detection-fig1.png)
 

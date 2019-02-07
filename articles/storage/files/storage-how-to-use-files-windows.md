@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 06/07/2018
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: e3b0773da49499e2eaa8c9b9f59ced4ed26276ba
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 4361ec72f5f9cff924900ddd712aa1aa029c5ef4
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/31/2019
-ms.locfileid: "55465169"
+ms.locfileid: "55509026"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -45,7 +45,7 @@ ms.locfileid: "55465169"
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.
 
-* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
+* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
     ```PowerShell
     $resourceGroupName = "<your-resource-group-name>"
@@ -83,7 +83,7 @@ ms.locfileid: "55465169"
 Общим вариантом для переноса бизнес-приложений, которые ожидают наличия подключенной к Azure общей папки SMB, является использование общей папки Azure в качестве альтернативы для запуска выделенного файлового сервера Windows на виртуальной машине Azure. Одна из важных рекомендаций для успешного перевода бизнес-приложения на использование общей папки Azure заключается в том, что многие бизнес-приложения работают в контексте выделенной учетной записи службы с ограниченными системными правами, а не административной учетной записью виртуальной машины. Поэтому нужно обязательно подключить или сохранить учетные данные для общей папки Azure из контекста учетной записи службы, а не вашей учетной записи администратора.
 
 ### <a name="persisting-azure-file-share-credentials-in-windows"></a>Сохранение учетных данных общей папки Azure в Windows  
-Программа [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) позволяет сохранить учетные данные учетной записи хранения в Windows. Это означает, что когда вы пытаетесь получить доступ к общей папке Azure через UNC-путь или подключаете общую папку Azure, вам не нужно указывать учетные данные. Чтобы сохранить данные учетной записи хранения, выполните следующие команды PowerShell, заменив `<your-storage-account-name>` и `<your-resoure-group-name>` там, где это необходимо.
+Программа [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) позволяет сохранить учетные данные учетной записи хранения в Windows. Это означает, что когда вы пытаетесь получить доступ к общей папке Azure через UNC-путь или подключаете общую папку Azure, вам не нужно указывать учетные данные. Чтобы сохранить данные учетной записи хранения, выполните следующие команды PowerShell, заменив `<your-storage-account-name>` и `<your-resource-group-name>` там, где это необходимо.
 
 ```PowerShell
 $resourceGroupName = "<your-resource-group-name>"

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 36a84618a998dd2e06f5563fb8706a1dc8400e59
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 47b16966f9e72a43cf4fb934706f7b96becef59a
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54823357"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694505"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-to-azure-vms"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальных машинах Azure
 
@@ -460,7 +460,7 @@ Site Recovery требуется доступ к серверам VMware, что
 - Чтобы можно было управлять доступом, команда проверяет группы безопасности сети (NSG) для виртуальных машин. NSG используются, чтобы в приложение поступал только разрешенный для него трафик.
 - Команда также рассматривает возможность защиты данных на диске с использованием шифрования дисков Azure и KeyVault.
 
-[Узнайте больше](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms#vm-authentication-and-access-control) о рекомендациях по обеспечению безопасности виртуальных машин.
+[Узнайте больше](https://docs.microsoft.com/azure/security/azure-security-best-practices-vms) о рекомендациях по обеспечению безопасности виртуальных машин.
 
 ## <a name="bcdr"></a>Непрерывность бизнес-процессов и аварийное восстановление
 

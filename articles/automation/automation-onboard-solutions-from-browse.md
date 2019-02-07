@@ -9,12 +9,12 @@ ms.date: 06/06/2018
 ms.topic: article
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: f1607a7d795e3934881429feb18c711a75995e31
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: f83c05f4d1dcb93bd424a733866f85edf04bbd05
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54062950"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55745272"
 ---
 # <a name="enable-update-management-change-tracking-and-inventory-solutions-on-multiple-vms"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации на нескольких виртуальных машинах
 
@@ -76,6 +76,7 @@ ms.locfileid: "54062950"
 |UKSouth|UKSouth|
 |USGovVirginia|USGovVirginia|
 |EastUS2EUAP|CentralUSEUAP|
+|Западный регион США 2|Западный регион США 2|
 
 Если какую-то виртуальную машину не нужно подключать, снимите флажок рядом с ее именем. Если виртуальную машину подключить невозможно, флажок рядом с ее именем стоять не будет.
 

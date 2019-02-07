@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: c197ead3a7b0f61b9dd5f1e3ea0bd197c23a2778
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 86f2a8fa11becdf24c0a10c0325893946a033c3d
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180778"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55568181"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -97,7 +97,7 @@ ms.locfileid: "55180778"
 | OutputClaimsTransformations | 0:1 | Список ссылок на предварительно определенные преобразования утверждений, которые должны быть выполнены после получения утверждений от поставщика утверждений. |
 | ValidationTechnicalProfiles | 0:n | Список ссылок на другие технические профили, которые этот технический профиль использует для проверки. Дополнительные сведения см. в [ описании технического профиля проверки](validation-technical-profile.md).|
 | SubjectNamingInfo | 0:1 | Управляет созданием имени субъекта, для маркеров, в которых имя субъекта указывается отдельно от утверждений. Например, OAuth или SAML.  |
-| IncludeClaimsFromTechnicalProfile | 0:1 | Идентификатор технического профиля, все входные и выходные утверждения из которого нужно добавить в текущий технический профиль. Технический профиль, указанный в этой ссылке, должен быть определен в том же файле политики. | 
+| IncludeClaimsFromTechnicalProfile | 0:1 | Идентификатор технического профиля, все входные и выходные утверждения из которого нужно добавить в текущий технический профиль. Технический профиль, указанный в этой ссылке, должен быть определен в том же файле политики. |
 | IncludeTechnicalProfile |0:1 | Идентификатор технического профиля, все данные из которого нужно добавить в текущий технический профиль. Технический профиль, указанный в этой ссылке, должен существовать в том же файле политики. |
 | UseTechnicalProfileForSessionManagement | 0:1 | Другой технический профиль, который нужно использовать для управления сеансами. |
 |EnabledForUserJourneys| 0:1 |Указывает, выполняется ли технический профиль в пути взаимодействия пользователя.  |
@@ -168,7 +168,7 @@ ms.locfileid: "55180778"
 | ------- | ----------- | ----------- |
 | InputClaim | 1:n | Ожидаемый тип входящего утверждения. |
 
-#### <a name="inputclaim"></a>InputClaim 
+#### <a name="inputclaim"></a>InputClaim
 
 Элемент **InputClaim** содержит следующие атрибуты:
 
@@ -186,7 +186,7 @@ ms.locfileid: "55180778"
 | ------- | ----------- | ----------- |
 | PersistedClaim | 1:n | Тип утверждения, который нужно сохранять. |
 
-#### <a name="persistedclaim"></a>PersistedClaim 
+#### <a name="persistedclaim"></a>PersistedClaim
 
 Элемент **PersistedClaim** содержит следующие атрибуты:
 
@@ -204,7 +204,7 @@ ms.locfileid: "55180778"
 | ------- | ----------- | ----------- |
 | outputClaim | 1:n | Ожидаемый тип исходящего утверждения. |
 
-#### <a name="outputclaim"></a>OutputClaim 
+#### <a name="outputclaim"></a>OutputClaim
 
 Элемент **OutputClaim** содержит следующие атрибуты:
 
@@ -275,9 +275,9 @@ ms.locfileid: "55180778"
 **ClaimsProviderSelections** в пути взаимодействия пользователя определяет список и порядок расположения вариантов для выбора поставщика утверждений. Элемент **EnabledForUserJourneys** позволяет отфильтровать доступных для пользователя поставщиков утверждений. Элемент **EnabledForUserJourneys** содержит одно из следующих значений:
 
 - **Always** обозначает, что технический профиль выполняется.
-- **Never** обозначает, что технический профиль пропускается. 
-- **OnClaimsExistence** указывает, что выполнение происходит только при наличии в техническом профиле определенного утверждения. 
-- **OnItemExistenceInStringCollectionClaim** указывает, что выполнение происходит только при наличии элемента в утверждении коллекции строк. 
+- **Never** обозначает, что технический профиль пропускается.
+- **OnClaimsExistence** указывает, что выполнение происходит только при наличии в техническом профиле определенного утверждения.
+- **OnItemExistenceInStringCollectionClaim** указывает, что выполнение происходит только при наличии элемента в утверждении коллекции строк.
 - **OnItemAbsenceInStringCollectionClaim** указывает, что выполнение происходит только при отсутствии элемента в утверждении коллекции строк.
 
 С помощью **OnClaimsExistence**, **OnItemExistenceInStringCollectionClaim** или **OnItemAbsenceInStringCollectionClaim** вы должны указать следующие метаданные: **ClaimTypeOnWhichToEnable** указывает тип утверждения, который будет вычисляться, **ClaimValueOnWhichToEnable** определяет значение для сравнения.
@@ -289,22 +289,10 @@ ms.locfileid: "55180778"
   <DisplayName>Unlink Facebook</DisplayName>
 ...
     <Metadata>
-        <Item Key="ClaimTypeOnWhichToEnable">identityProviders</Item>
-        <Item Key="ClaimValueOnWhichToEnable">facebook.com</Item>
-    </Metadata>        
+      <Item Key="ClaimTypeOnWhichToEnable">identityProviders</Item>
+      <Item Key="ClaimValueOnWhichToEnable">facebook.com</Item>
+    </Metadata>
 ...
   <EnabledForUserJourneys>OnItemExistenceInStringCollectionClaim</EnabledForUserJourneys>
-</TechnicalProfile>  
+</TechnicalProfile>
 ```
-
-
-
-
-
-
-
-
-
-
-
-

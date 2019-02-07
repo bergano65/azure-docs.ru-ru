@@ -15,16 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/16/2018
 ms.author: tomfitz
-ms.openlocfilehash: 64af946c3f8f58808f1bca06f1ef21d92da8cda8
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 600b79ec0b34d6b79b1b56719dd800bbe8ec803a
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223567"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55487155"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
 В этой статье описаны некоторые распространенные ошибки при развертывании в Azure и предоставлены сведения об их устранении. Если не удается найти код ошибки развертывания, ознакомьтесь с разделом [Поиск кода ошибки](#find-error-code).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="error-codes"></a>Коды ошибок
 

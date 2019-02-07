@@ -13,12 +13,12 @@ ms.subservice: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 9c7560dc6c3c5237a056a9468d3ab4f440e8e6dc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: bc726f63ea5c8473601623024e18c1402cbebb51
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190791"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820323"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
 
@@ -49,8 +49,6 @@ ms.locfileid: "55190791"
 
 Вы можете использовать расширенную фильтрацию в отчете аудита для доступа к определенной категории данных аудита, указав ее в фильтре **Категория действия**. Например, чтобы просмотреть все действия, связанные с самостоятельным сбросом пароля, выберите категорию **Self-service password management** (Самостоятельное управление паролями). 
 
-    ![Category options on the Filter Audit Logs page](./media/howto-find-activity-reports/06.png "Category options on the Filter Audit Logs page")
-
 Категории действий включают:
 
 - "Core Directory" (Основной каталог);
@@ -62,8 +60,6 @@ ms.locfileid: "55190791"
 ## <a name="sign-ins-report"></a>Отчет о входе 
 
 В представлении **Входы** содержатся все пользовательские входы, а также отчет **Использование приложения**. Вы также можете просмотреть информацию об использовании приложения в разделе **Управление** обзора **корпоративных приложений**.
-
-    ![Enterprise applications](./media/howto-find-activity-reports/484.png "Enterprise applications")
 
 Для получения доступа к отчету о входах сделайте следующее:
 

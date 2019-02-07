@@ -4,12 +4,14 @@ ms.service: azure-stack
 ms.topic: include
 ms.date: 11/26/2018
 ms.author: mabrigg
-ms.openlocfilehash: be9b3b3a9cbb39386d13f76c595ce5e34688adac
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.reviewer: johnhas
+ms.lastreviewed: 11/26/2018
+ms.openlocfilehash: 5cd64b806392162fd3bee14ddaf607385ac05264
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52336077"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55807119"
 ---
 В рабочих процессах проверки при **планировании** теста используются общие параметры уровня рабочего процесса, которые вы указали во время его создания (см. раздел [Workflow common parameters for Azure Stack Validation as a Service](../azure-stack-vaas-parameters.md) (Общие параметры рабочих процессов для проверки как услуги в Azure Stack)). Если какие-либо из значений параметров станут недействительными, необходимо указать их повторно, как описано в разделе об [изменении параметров рабочего процесса](../azure-stack-vaas-monitor-test.md#change-workflow-parameters).
 

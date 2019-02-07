@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: bryanla
-ms.openlocfilehash: f5a6365476f5dc626766ca33f9c933cd12226957
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: b6c77a2e7ae9cb4c463900ec34989ebaff22e5e1
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078088"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55726894"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Мониторинг и администрирование процесса создания сертификатов
-Область применения: Таблицы Azure  
+Область применения: Таблицы Azure
 
 В этой статье описаны 
 
@@ -41,450 +41,441 @@ ms.locfileid: "54078088"
 
 ## <a name="request-a-kv-certificate-with-a-supported-issuer"></a>Запрос сертификата Key Vault с помощью поддерживаемого издателя 
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
-Для следующего примера необходимо, чтобы объект с именем mydigicert уже был доступен в хранилище ключей с поставщиком издателя DigiCert. Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.  
+Для следующего примера необходимо, чтобы объект с именем mydigicert уже был доступен в хранилище ключей с поставщиком издателя DigiCert. Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
 
-### <a name="request"></a>Запрос  
+### <a name="request"></a>Запрос
 
 ```json
-{  
-  "policy": {  
-    "x509_props": {  
-      "subject": "CN=MyCertSubject1"  
-    },  
-  "issuer": {  
-       "name": "mydigicert",  
-    "cty": "OV-SSL",  
-    }  
-  }  
-}  
+{
+  "policy": {
+    "x509_props": {
+      "subject": "CN=MyCertSubject1"
+    },
+    "issuer": {
+      "name": "mydigicert",
+      "cty": "OV-SSL",
+    }
+  }
+}
+```
 
-```  
+### <a name="response"></a>Ответ
 
-### <a name="response"></a>Ответ  
+```
+StatusCode: 202, ReasonPhrase: 'Accepted'
+Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "mydigicert"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": false,
+  "status": "InProgress",
+  "status_details": "Pending certificate created. Certificate request is in progress. This may take some time based on the issuer provider. Please check again later",
+  "request_id": "a76827a18b63421c917da80f28e9913d"
+}
 
-```  
-StatusCode: 202, ReasonPhrase: 'Accepted'  
-Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "mydigicert"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": false,  
-  "status": "InProgress",  
-  "status_details": "Pending certificate created. Certificate request is in progress. This may take some time based on the issuer provider. Please check again later",  
-  "request_id": "a76827a18b63421c917da80f28e9913d"  
-}  
-
-```  
+```
 
 ## <a name="get-pending-request---request-status-is-inprogress"></a>Получение ожидающего запроса (состояние запроса "Выполняется").
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
+### <a name="request"></a>Запрос
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
- Или  
+Или
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
 > [!NOTE]
->  Если *request_id* указан в запросе, он действует как фильтр. Если *request_id* в запросе и ожидающем объекте различается, возвращается код состояния HTTP 404.  
+> Если *request_id* указан в запросе, он действует как фильтр. Если *request_id* в запросе и ожидающем объекте различается, возвращается код состояния HTTP 404.
 
-### <a name="response"></a>Ответ  
+### <a name="response"></a>Ответ
 
-```  
-StatusCode: 200, ReasonPhrase: 'OK'  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "{issuer-name}"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": false,  
-  "status": "inProgress",  
-  "status_details": "…",  
-  "request_id": "a76827a18b63421c917da80f28e9913d"  
-}  
+```
+StatusCode: 200, ReasonPhrase: 'OK'
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "{issuer-name}"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": false,
+  "status": "inProgress",
+  "status_details": "…",
+  "request_id": "a76827a18b63421c917da80f28e9913d"
+}
 
-```  
+```
 
 ## <a name="get-pending-request---request-status-is-complete"></a>Получение ожидающего запроса (состояние запроса "Готово").
 
-### <a name="request"></a>Запрос  
+### <a name="request"></a>Запрос
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
- Или  
+Или
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ  
+### <a name="response"></a>Ответ
 
-```  
-StatusCode: 200, ReasonPhrase: 'OK'  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "{issuer-name}"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": false,  
-  "status": "completed",  
-  "request_id": "a76827a18b63421c917da80f28e9913d",  
-   "target": “https://mykeyvault.vault.azure.net/certificates/mycert1?api-version={api-version}"  
-}  
+```
+StatusCode: 200, ReasonPhrase: 'OK'
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "{issuer-name}"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": false,
+  "status": "completed",
+  "request_id": "a76827a18b63421c917da80f28e9913d",
+  "target": “https://mykeyvault.vault.azure.net/certificates/mycert1?api-version={api-version}"
+}
 
-```  
+```
 
-## <a name="get-pending-request---pending-request-status-is-canceled-or-failed"></a>Получение ожидающих запросов (состояние ожидающего запроса "Отменено" или "Сбой").  
+## <a name="get-pending-request---pending-request-status-is-canceled-or-failed"></a>Получение ожидающих запросов (состояние ожидающего запроса "Отменено" или "Сбой").
 
-### <a name="request"></a>Запрос  
+### <a name="request"></a>Запрос
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
- Или  
+Или
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ  
+### <a name="response"></a>Ответ
 
-```  
-StatusCode: 200, ReasonPhrase: 'OK'  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "{issuer-name}"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": false,  
-  "status": "failed",  
-  "status_details": "",  
-  "request_id": "a76827a18b63421c917da80f28e9913d",  
-   "error":  
-    {  
-        "code": "<errorcode>",    
-        "message": "<message>"  
-    }  
-}  
+```
+StatusCode: 200, ReasonPhrase: 'OK'
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "{issuer-name}"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": false,
+  "status": "failed",
+  "status_details": "",
+  "request_id": "a76827a18b63421c917da80f28e9913d",
+  "error": {
+    "code": "<errorcode>",
+    "message": "<message>"
+  }
+}
 
-```  
+```
 
 > [!NOTE]
-> Значение *errorcode* может быть следующим: Certificate issuer error (Ошибка, связанная с издателем сертификата) или "Запрос отклонен". Это зависит от ошибки издателя или пользователя соответственно.  
+> Значение *errorcode* может быть следующим: Certificate issuer error (Ошибка, связанная с издателем сертификата) или "Запрос отклонен". Это зависит от ошибки издателя или пользователя соответственно.
 
-## <a name="get-pending-request---pending-request-status-is-deleted-or-overwritten"></a>Получение ожидающих запросов (состояние ожидающего запроса "Удалено" или "Перезаписано")  
- Если ожидающий объект не находится в состоянии "Выполняется", он может быть удален или перезаписан при выполнении операции создания или импорта.
+## <a name="get-pending-request---pending-request-status-is-deleted-or-overwritten"></a>Получение ожидающих запросов (состояние ожидающего запроса "Удалено" или "Перезаписано")
+Если ожидающий объект не находится в состоянии "Выполняется", он может быть удален или перезаписан при выполнении операции создания или импорта.
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
+### <a name="request"></a>Запрос
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
- Или  
+Или
 
- GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ  
+### <a name="response"></a>Ответ
 
-```  
-StatusCode: 404, ReasonPhrase: 'Not Found'  
-{  
-  "error":  
-    {  
-         "code": "PendingCertificateNotFound",  
-        "message": "…"  
-    }  
-}  
+```
+StatusCode: 404, ReasonPhrase: 'Not Found'
+{
+  "error": {
+    "code": "PendingCertificateNotFound",
+    "message": "…"
+  }
+}
 
-```  
+```
 
 ## <a name="create-or-import-when-pending-request-exists---status-is-inprogress"></a>Создание (или импорт) при имеющемся ожидающем запросе (состояние "Выполняется").
- Ожидающий объект может находиться в одном из четырех возможных состояний: "Выполняется", "Отменено", "Сбой" или "Готово".
+Ожидающий объект может находиться в одном из четырех возможных состояний: "Выполняется", "Отменено", "Сбой" или "Готово".
 
- Если состояние ожидающего запроса — "Выполняется", операции создания и импорта завершаются ошибкой с кодом состояния HTTP 409 (конфликт).  
+Если состояние ожидающего запроса — "Выполняется", операции создания и импорта завершаются ошибкой с кодом состояния HTTP 409 (конфликт).
 
- Чтобы устранить конфликт, сделайте следующее.  
+Чтобы устранить конфликт, сделайте следующее.
 
- - Если сертификат создается вручную, можно завершить создание, выполнив слияние или удалив ожидающий объект.  
+- Если сертификат создается вручную, можно завершить создание, выполнив слияние или удалив ожидающий объект.
 
- - Если сертификат создается с помощью издателя, можно подождать, пока сертификат создастся или же произойдет сбой либо отмена операции. Кроме того, можно удалить ожидающий объект.
+- Если сертификат создается с помощью издателя, можно подождать, пока сертификат создастся или же произойдет сбой либо отмена операции. Кроме того, можно удалить ожидающий объект.
 
 > [!NOTE]
-> Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.  
+> Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
+### <a name="request"></a>Запрос
 
 ```json
-{  
-  "policy": {  
-    "x509_props": {  
-      "subject": "CN=MyCertSubject1"  
-    },  
-  "issuer": {  
-       "name": "mydigicert"  
-    }  
-  }  
-}  
+{
+  "policy": {
+    "x509_props": {
+      "subject": "CN=MyCertSubject1"
+    },
+    "issuer": {
+      "name": "mydigicert"
+    }
+  }
+}
+```
 
-```  
+### <a name="response"></a>Ответ
 
-### <a name="response"></a>Ответ  
+```
+StatusCode: 409, ReasonPhrase: 'Conflict'
+{
+  "error": {
+    "code": "Forbidden",
+    "message": "A new key vault certificate can not be created or imported while a pending key vault certificate's status is inProgress."
+  }
+}
 
-```  
-StatusCode: 409, ReasonPhrase: 'Conflict'  
-{  
-  "error":  
-    {  
-        "code": "Forbidden",  
-        "message": "A new key vault certificate can not be created or imported while a pending key vault certificate's status is inProgress."  
-    }  
-}  
-
-```  
+```
 
 ## <a name="merge-when-pending-request-is-created-with-an-issuer"></a>Слияние при создании ожидающего выполнения запроса с помощью издателя
- Слияние запрещено, если ожидающий объект создан с помощью издателя, но разрешено, если он находится в состоянии "Выполняется". 
+Слияние запрещено, если ожидающий объект создан с помощью издателя, но разрешено, если он находится в состоянии "Выполняется". 
 
- Если запрос на создание сертификата x509 завершается сбоем или отменяется по некоторым причинам и если сертификат x509 можно получить другим способом, для завершения создания сертификата Key Vault можно выполнить операцию слияния.  
+Если запрос на создание сертификата x509 завершается сбоем или отменяется по некоторым причинам и если сертификат x509 можно получить другим способом, для завершения создания сертификата Key Vault можно выполнить операцию слияния.
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
-
-```json
-{  
-  "x5c": [  "MIICxTCCAbi………………………trimmed for brevitiy……………………………………………EPAQj8="  
-  ]  
-}  
-
-```  
-
-### <a name="response"></a>Ответ  
+### <a name="request"></a>Запрос
 
 ```json
-StatusCode: 403, ReasonPhrase: 'Forbidden'  
-{  
-  "error":  
-    {  
-       "code": "Forbidden",  
-       "message": "Merge is forbidden on pending object created with issuer : <issuer-name> while it is in progess."  
-    }  
-}  
+{
+  "x5c": [ "MIICxTCCAbi………………………trimmed for brevitiy……………………………………………EPAQj8=" ]
+}
 
-```  
+```
 
-## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Запрос отмены при состоянии ожидающего запроса "Выполняется".  
- Отмену можно только запросить.  При необходимости запрос можно отменить. Если запрос не выполняется, возвращается код состояния HTTP 400 (недопустимый запрос).  
-
-|Метод|URI запроса|  
-|------------|-----------------|  
-|PATCH|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
-
-### <a name="request"></a>Запрос  
- PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
-
- Или  
-
- PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+### <a name="response"></a>Ответ
 
 ```json
-{  
-  "cancellation_requested": true  
-}  
+StatusCode: 403, ReasonPhrase: 'Forbidden'
+{
+  "error": {
+    "code": "Forbidden",
+    "message": "Merge is forbidden on pending object created with issuer : <issuer-name> while it is in progess."
+  }
+}
 
-```  
+```
 
-### <a name="response"></a>Ответ  
+## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Запрос отмены при состоянии ожидающего запроса "Выполняется".
+Отмену можно только запросить. При необходимости запрос можно отменить. Если запрос не выполняется, возвращается код состояния HTTP 400 (недопустимый запрос).
 
-```  
-StatusCode: 200, ReasonPhrase: 'OK'  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "{issuer-name}"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": true,  
-  "status": "inProgress",  
-  "status_details": "…",  
-  "request_id": "a76827a18b63421c917da80f28e9913d"  
-}  
+|Метод|URI запроса|
+|------------|-----------------|
+|PATCH|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-```  
+### <a name="request"></a>Запрос
+PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-## <a name="delete-a-pending-request-object"></a>Удаление ожидающего объекта запроса.  
+Или
+
+PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
+
+```json
+{
+  "cancellation_requested": true
+}
+
+```
+
+### <a name="response"></a>Ответ
+
+```
+StatusCode: 200, ReasonPhrase: 'OK'
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "{issuer-name}"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": true,
+  "status": "inProgress",
+  "status_details": "…",
+  "request_id": "a76827a18b63421c917da80f28e9913d"
+}
+```
+
+## <a name="delete-a-pending-request-object"></a>Удаление ожидающего объекта запроса.
 
 > [!NOTE]
-> Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.  
+> Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|УДАЛИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|УДАЛИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
- DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`  
+### <a name="request"></a>Запрос
+DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
- Или  
+Или
 
- DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`  
+DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ  
+### <a name="response"></a>Ответ
 
-```  
-StatusCode: 200, ReasonPhrase: 'OK'  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "{issuer-name}"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "cancellation_requested": false,  
-  "status": "inProgress",  
-  "request_id": "a76827a18b63421c917da80f28e9913d",  
-}  
-```  
+```
+StatusCode: 200, ReasonPhrase: 'OK'
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "{issuer-name}"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "cancellation_requested": false,
+  "status": "inProgress",
+  "request_id": "a76827a18b63421c917da80f28e9913d",
+}
+```
 
-## <a name="create-a-kv-certificate-manually"></a>Создание сертификата Key Vault вручную.  
- Вы можете вручную создать сертификат, выданный в центре сертификации. В качестве имени издателя укажите Unknown либо оставьте поле издателя пустым.  
+## <a name="create-a-kv-certificate-manually"></a>Создание сертификата Key Vault вручную.
+Вы можете вручную создать сертификат, выданный в центре сертификации. В качестве имени издателя укажите Unknown либо оставьте поле издателя пустым.
 
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|  
+|Метод|URI запроса|
+|------------|-----------------|
+|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
-### <a name="request"></a>Запрос  
-
-```json
-{  
-  "policy": {  
-    "x509_props": {  
-      "subject": "CN=MyCertSubject1"  
-    }  
-  "issuer": {  
-       "name": "Unknown"  
-    }  
-  }  
-}  
-
-```  
-
-### <a name="response"></a>Ответ  
-
-```  
-StatusCode: 202, ReasonPhrase: 'Accepted'  
-Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"  
-{  
-  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",  
-  "issuer": {  
-    "name": "Unknown"  
-  },  
-  "csr": "MIICq......DD5Lp5cqXg==",  
-  "status": "inProgress",  
-  "status_details": "Pending certificate created. Please Perform Merge to complete the request.",  
-  "request_id": "a76827a18b63421c917da80f28e9913d"  
-}  
-
-```  
-
-## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Слияние при создании ожидающего запроса (создание сертификата вручную).  
-
-|Метод|URI запроса|  
-|------------|-----------------|  
-|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|  
-
-### <a name="request"></a>Запрос  
+### <a name="request"></a>Запрос
 
 ```json
-{  
-  "x5c": [  "MIICxTCCAbi………………………trimmed for brevitiy……………………………………………EPAQj8="  
-  ]  
-}  
+{
+  "policy": {
+    "x509_props": {
+      "subject": "CN=MyCertSubject1"
+    },
+    "issuer": {
+      "name": "Unknown"
+    }
+  }
+}
 
-```  
+```
 
-|Имя элемента|Обязательно|type|Version (версия)|ОПИСАНИЕ|  
-|------------------|--------------|----------|-------------|-----------------|  
-|x5c|Yes|array|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|  
+### <a name="response"></a>Ответ
 
-### <a name="response"></a>Ответ  
+```
+StatusCode: 202, ReasonPhrase: 'Accepted'
+Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"
+{
+  "id": “https://mykeyvault.vault.azure.net/certificates/mycert1/pending",
+  "issuer": {
+    "name": "Unknown"
+  },
+  "csr": "MIICq......DD5Lp5cqXg==",
+  "status": "inProgress",
+  "status_details": "Pending certificate created. Please Perform Merge to complete the request.",
+  "request_id": "a76827a18b63421c917da80f28e9913d"
+}
 
-```  
-StatusCode: 201, ReasonPhrase: 'Created'  
-Location: “https://mykeyvault.vault.azure.net/certificates/mycert1?api-version={api-version}"  
-{  
-"id": "https mykeyvault.vault.azure.net/certificates/mycert1/f366e1a9dd774288ad84a45a5f620352",  
-    "kid": "https:// mykeyvault.vault.azure.net/keys/mycert1/f366e1a9dd774288ad84a45a5f620352",  
-    "sid": " mykeyvault.vault.azure.net/secrets/mycert1/f366e1a9dd774288ad84a45a5f620352",  
-    "cer": "……de34534……",  
-    "x5t": "n14q2wbvyXr71Pcb58NivuiwJKk",  
-    "attributes": {  
-        "enabled": true,  
-        "exp": 1530394215,  
-        "nbf": 1435699215,  
-        "created": 1435699919,  
-        "updated": 1435699919  
-    },  
-    "pending": {  
-        "id": "https:// mykeyvault.vault.azure.net/certificates/mycert1/pending"  
-    },  
-    "policy": {  
-        "id": "https:// mykeyvault.vault.azure.net/certificates/mycert1/policy",  
-        "key_props": {  
-            "exportable": false,  
-            "kty": "RSA",  
-            "key_size": 2048,  
-            "reuse_key": false  
-        },  
-        "secret_props": {  
-            "contentType": "application/x-pkcs12"  
-        },  
-        "x509_props": {  
-            "subject": "CN=Mycert1",  
-            "ekus": ["1.3.6.1.5.5.7.3.1", "1.3.6.1.5.5.7.3.2"],  
-                       "validity_months":12  
-        },  
-        "lifetime_actions": [{  
-            "trigger": {  
-                "lifetime_percentage": 80  
-            },  
-            "action": {  
-                "action_type": "EmailContacts"  
-            }  
-        }],  
-        "issuer": {  
-            "name": "Unknown"  
-        },  
-        "attributes": {  
-            "enabled": true,  
-            "created": 1435699811,  
-            "updated": 1435699811  
-        }  
-    }  
-}  
+```
+
+## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Слияние при создании ожидающего запроса (создание сертификата вручную).
+
+|Метод|URI запроса|
+|------------|-----------------|
+|ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
+
+### <a name="request"></a>Запрос
+
+```json
+{
+  "x5c": [ "MIICxTCCAbi………………………trimmed for brevitiy……………………………………………EPAQj8=" ]
+}
+
+```
+
+|Имя элемента|Обязательно|type|Version (версия)|ОПИСАНИЕ|
+|------------------|--------------|----------|-------------|-----------------|
+|x5c|Yes|array|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|
+
+### <a name="response"></a>Ответ
+
+```
+StatusCode: 201, ReasonPhrase: 'Created'
+Location: “https://mykeyvault.vault.azure.net/certificates/mycert1?api-version={api-version}"
+{
+    "id": "https mykeyvault.vault.azure.net/certificates/mycert1/f366e1a9dd774288ad84a45a5f620352",
+    "kid": "https:// mykeyvault.vault.azure.net/keys/mycert1/f366e1a9dd774288ad84a45a5f620352",
+    "sid": " mykeyvault.vault.azure.net/secrets/mycert1/f366e1a9dd774288ad84a45a5f620352",
+    "cer": "……de34534……",
+    "x5t": "n14q2wbvyXr71Pcb58NivuiwJKk",
+    "attributes": {
+        "enabled": true,
+        "exp": 1530394215,
+        "nbf": 1435699215,
+        "created": 1435699919,
+        "updated": 1435699919
+    },
+    "pending": {
+        "id": "https:// mykeyvault.vault.azure.net/certificates/mycert1/pending"
+    },
+    "policy": {
+        "id": "https:// mykeyvault.vault.azure.net/certificates/mycert1/policy",
+        "key_props": {
+            "exportable": false,
+            "kty": "RSA",
+            "key_size": 2048,
+            "reuse_key": false
+        },
+        "secret_props": {
+            "contentType": "application/x-pkcs12"
+        },
+        "x509_props": {
+            "subject": "CN=Mycert1",
+            "ekus": ["1.3.6.1.5.5.7.3.1", "1.3.6.1.5.5.7.3.2"],
+            "validity_months": 12
+        },
+        "lifetime_actions": [{
+            "trigger": {
+                "lifetime_percentage": 80
+            },
+            "action": {
+                "action_type": "EmailContacts"
+            }
+        }],
+        "issuer": {
+            "name": "Unknown"
+        },
+        "attributes": {
+            "enabled": true,
+            "created": 1435699811,
+            "updated": 1435699811
+        }
+    }
+}
 
 ```
 

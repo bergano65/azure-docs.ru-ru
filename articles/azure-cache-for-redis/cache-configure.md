@@ -14,12 +14,12 @@ ms.tgt_pltfrm: azure-cache-for-redis
 ms.workload: tbd
 ms.date: 08/22/2017
 ms.author: wesmc
-ms.openlocfilehash: 8a78823a208a5310e62714de7b1a3cd2e35eaa8f
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 67cc7d0dc162f2b36e38f1068f46079f46120f1c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104681"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819847"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -57,7 +57,7 @@ ms.locfileid: "54104681"
     * [Свойства](#properties)
     * [Блокировки](#locks)
     * [Сценарий автоматизации](#automation-script)
-* [Администрирование](#administration)
+* Администрирование
     * [Импорт данных](#importexport)
     * [Экспорт данных](#importexport)
     * [Reboot](#reboot)
@@ -65,7 +65,7 @@ ms.locfileid: "54104681"
     * [Метрики Redis](#redis-metrics)
     * [Правила оповещения](#alert-rules)
     * [Диагностика](#diagnostics)
-* [Настройки поддержки и устранения неполадок](#support-amp-troubleshooting-settings)
+* Настройки поддержки и устранения неполадок
     * [Работоспособность ресурса](#resource-health)
     * [Новый запрос в службу поддержки](#new-support-request)
 

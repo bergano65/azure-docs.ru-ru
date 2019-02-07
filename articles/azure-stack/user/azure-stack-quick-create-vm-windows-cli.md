@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 1ba612a90ffb4c767ca333faee4b7d97180a2025
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: d2e29e183ab898635f550290b6ebd6eddd42c4d2
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249026"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55659207"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack
 
@@ -72,7 +72,7 @@ az vm create \
 
 На этой виртуальной машине будет выполняться веб-сервер IIS, а значит порт 80 должен быть доступен из Интернета.
 
-Выполните команду [az vm open-port](/cli/azure/vm#open-port), чтобы открыть порт 80.
+Выполните команду [az vm open-port](/cli/azure/vm), чтобы открыть порт 80.
 
 ```cli
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM

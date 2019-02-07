@@ -1,10 +1,22 @@
 ---
-заголовок: Создание рабочей области titleSuffix: Студия машинного обучения Azure description: Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 07.12.2017
+title: Создание рабочей области
+titleSuffix: Azure Machine Learning Studio
+description: Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 12/07/2017
+ms.openlocfilehash: 16c67c217c8ef33a360fd479a45317d6c42af494
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55486323"
 ---
-
 # <a name="create-and-share-an-azure-machine-learning-studio-workspace"></a>Создание рабочей области Студии машинного обучения Azure и предоставление к ней общего доступа
 
 Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.

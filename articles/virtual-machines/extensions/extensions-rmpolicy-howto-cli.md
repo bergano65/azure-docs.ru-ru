@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: roiyz;cynthn
-ms.openlocfilehash: 529758a7b9fe4c8b669ade72273335389020fb65
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 536239a9ff98c76badfc042a2d59d19b8fb6f04a
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451209"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55770590"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Ограничение установки расширений на виртуальных машинах Linux с помощью службы "Политика Azure"
 
@@ -98,7 +98,7 @@ vim ~/clouddrive/azurepolicy.parameters.json
 
 ## <a name="create-the-policy"></a>Создание политики
 
-Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью команды [az policy definition create](/cli/azure/role/assignment?view=azure-cli-latest#az_role_assignment_create).
+Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью команды [az policy definition create](/cli/azure/role/assignment?view=azure-cli-latest).
 
 В этом примере правила и параметры представлены в виде файлов, которые вы создали в формате JSON и сохранили с помощью Cloud Shell.
 
@@ -115,9 +115,9 @@ az policy definition create \
 
 ## <a name="assign-the-policy"></a>Назначение политики
 
-В этом примере назначается политика для группы ресурсов с помощью команды [az policy assignment create](/cli/azure/policy/assignment#az_policy_assignment_create). На всех виртуальных машинах, созданных в группе ресурсов **myResourceGroup**, невозможно будет установить расширение доступа к виртуальной машине Linux и пользовательские расширения для Linux. Прежде чем назначить политику, нужно создать группу ресурсов.
+В этом примере назначается политика для группы ресурсов с помощью команды [az policy assignment create](/cli/azure/policy/assignment). На всех виртуальных машинах, созданных в группе ресурсов **myResourceGroup**, невозможно будет установить расширение доступа к виртуальной машине Linux и пользовательские расширения для Linux. Прежде чем назначить политику, нужно создать группу ресурсов.
 
-Команда [az account list](/cli/azure/account?view=azure-cli-latest#az_account_list) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
+Команда [az account list](/cli/azure/account?view=azure-cli-latest) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
 
 
 ```azurecli-interactive

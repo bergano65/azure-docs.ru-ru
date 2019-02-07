@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 20894a74bf0cc3911272385721da74871df95ade
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: ea83d061f7160db04c847be66e79da60da78634d
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54913241"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55662913"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -224,7 +224,7 @@ ms.locfileid: "54913241"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе используется командлет [Add-AzureRmHDInsightScriptAction](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/add-azurermhdinsightscriptaction) для вызова сценариев, настраивающих кластер. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
+В этом разделе используется командлет [Add-AzureRmHDInsightScriptAction](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/add-azurermhdinsightscriptaction) для вызова сценариев, настраивающих кластер. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
 
 Следующий сценарий демонстрирует применение действия сценария при создании кластера с помощью PowerShell:
 
@@ -276,7 +276,7 @@ ms.locfileid: "54913241"
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-azure-powershell"></a>Применение действия сценария в работающем кластере с помощью Azure PowerShell
 
-Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
+Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для выполнения командлетов HDInsight PowerShell см. в статье [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0#run-or-install) (Общие сведения об Azure PowerShell).
 
 Следующий пример демонстрирует применение действия сценария к работающему кластеру:
 

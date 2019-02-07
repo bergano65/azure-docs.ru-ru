@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 031085b3048d0ffc92dd5a35b4054903088b4858
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: c68b4bdffde5f987fe07d50d76fa83e7bdfa5235
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51824342"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755062"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 
@@ -29,7 +29,7 @@ ms.locfileid: "51824342"
 
 В примере кода выше в его первом блоке создается объект карты и инициализируется клиентская служба. См. инструкции по [созданию карты](./map-create.md).
 
-В [модуле службы](https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1) во втором блоке кода используется метод [getSearchFuzzy](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.search?view=azure-iot-typescript-latest#getsearchfuzzy-string--searchgetsearchfuzzyoptionalparams-). Он позволяет выполнять поиск текста произвольной формы с помощью [REST API поиска нечетких соответствий](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точки интереса. API нечеткого поиска может обрабатывать любую комбинацию нечетких входных данных. Ответ службы поиска нечетких соответствий преобразуется в формате GeoJSON с помощью метода [getGeoJsonSearchResponse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.geojson.geojsonsearchresponse?view=azure-iot-typescript-latest#geojsonsearchresponse). 
+В [модуле службы](https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1) во втором блоке кода используется метод [getSearchFuzzy](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.search?view=azure-iot-typescript-latest#getsearchfuzzy-string--searchgetsearchfuzzyoptionalparams-). Он позволяет выполнять поиск текста произвольной формы с помощью [REST API поиска нечетких соответствий](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точки интереса. API нечеткого поиска может обрабатывать любую комбинацию нечетких входных данных. Ответ службы поиска нечетких соответствий преобразуется в формате GeoJSON с помощью метода [getGeoJsonSearchResponse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.geojson.geojsonsearchresponse?view=azure-iot-typescript-latest). 
 
 В третьем блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), к которому добавляются результаты поиска. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Источник данных добавляется на создаваемый слой символов, который затем добавляется на карту.
 

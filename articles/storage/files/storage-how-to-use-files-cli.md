@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 82d1a83dfd96dd6d4c2b37567c745998a6f0cbdb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: ee8dcf1488cfb407793bdb35cdbbee18b2ef15ab
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473516"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750976"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство. Создание файловых ресурсов Azure и управление ими с помощью Azure CLI
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
@@ -34,7 +34,7 @@ az login
 ```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Если у вас еще нет группы ресурсов Azure, ее можно создать с помощью команды [az group create](/cli/azure/group#create). 
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Если у вас еще нет группы ресурсов Azure, ее можно создать с помощью команды [az group create](/cli/azure/group). 
 
 В следующем примере создается группа ресурсов под названием *myResourceGroup* в расположении *Восточная часть США*.
 
@@ -45,7 +45,7 @@ az group create --name myResourceGroup --location eastus
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 Учетная запись хранения представляет собой общий пул носителей, который можно использовать для развертывания файловых ресурсов Azure или других ресурсов хранения, например больших двоичных объектов или очередей. Учетная запись хранения может содержать неограниченное количество файловых ресурсов. В общем ресурсе может храниться любое число файлов, насколько это позволяет емкость учетной записи хранения.
 
-В следующем примере с помощью команды [az storage account create](/cli/azure/storage/account#create) создается учетная запись хранения с именем *mystorageaccount\<случайное число\>*, а затем имя этой учетной записи помещается в переменную `$STORAGEACCT`. Имена учетных записей хранения должны быть уникальными. Используйте `$RANDOM`, чтобы добавить уникальный номер в конец имени учетной записи хранения. 
+В следующем примере с помощью команды [az storage account create](/cli/azure/storage/account) создается учетная запись хранения с именем *mystorageaccount\<случайное число\>*, а затем имя этой учетной записи помещается в переменную `$STORAGEACCT`. Имена учетных записей хранения должны быть уникальными. Используйте `$RANDOM`, чтобы добавить уникальный номер в конец имени учетной записи хранения. 
 
 ```azurecli-interactive 
 STORAGEACCT=$(az storage account create \
@@ -57,7 +57,7 @@ STORAGEACCT=$(az storage account create \
 ```
 
 ### <a name="get-the-storage-account-key"></a>Получение ключа учетной записи хранения
-Ключи учетной записи хранения определяют доступ к хранящихся в ней ресурсам. Эти ключи автоматически создаются при создании учетной записи хранения. Ключи учетной записи хранения можно получить с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#list). 
+Ключи учетной записи хранения определяют доступ к хранящихся в ней ресурсам. Эти ключи автоматически создаются при создании учетной записи хранения. Ключи учетной записи хранения можно получить с помощью команды [az storage account keys list](/cli/azure/storage/account/keys). 
 
 ```azurecli-interactive 
 STORAGEKEY=$(az storage account keys list \
@@ -67,7 +67,7 @@ STORAGEKEY=$(az storage account keys list \
 ```
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
-Теперь можно создать первый файловый ресурс Azure. Используйте для этого команду [az storage share create](/cli/azure/storage/share#create). В этом примере создается файловый ресурс Azure с именем *myshare*. 
+Теперь можно создать первый файловый ресурс Azure. Используйте для этого команду [az storage share create](/cli/azure/storage/share). В этом примере создается файловый ресурс Azure с именем *myshare*. 
 
 ```azurecli-interactive
 az storage share create \
@@ -98,7 +98,7 @@ az storage share create \
 В следующих примерах показано, как использовать Azure CLI для управления общим файловым ресурсом Azure с помощью протокола File REST. 
 
 ### <a name="create-a-directory"></a>создать каталог;
-Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure, выполните команду [`az storage directory create`](/cli/azure/storage/directory#az_storage_directory_create).
+Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure, выполните команду [`az storage directory create`](/cli/azure/storage/directory).
 
 ```azurecli-interactive
 az storage directory create \
@@ -109,7 +109,7 @@ az storage directory create \
 ```
 
 ### <a name="upload-a-file"></a>Отправка файла
-Чтобы продемонстрировать передачу файла с помощью команды [`az storage file upload`](/cli/azure/storage/file#az_storage_file_upload), сначала создайте файл для отправки на временном диске Cloud Shell. В следующем примере создается, а затем отправляется файл.
+Чтобы продемонстрировать передачу файла с помощью команды [`az storage file upload`](/cli/azure/storage/file), сначала создайте файл для отправки на временном диске Cloud Shell. В следующем примере создается, а затем отправляется файл.
 
 ```azurecli-interactive
 date > ~/clouddrive/SampleUpload.txt
@@ -124,7 +124,7 @@ az storage file upload \
 
 При работе в Azure CLI локально следует заменить `~/clouddrive` путем, который имеется на вашем компьютере.
 
-После отправки файла можно использовать команду [`az storage file list`](/cli/azure/storage/file#az_storage_file_list), чтобы убедиться, что файл отправлен в файловый ресурс Azure.
+После отправки файла можно использовать команду [`az storage file list`](/cli/azure/storage/file), чтобы убедиться, что файл отправлен в файловый ресурс Azure.
 
 ```azurecli-interactive
 az storage file list \
@@ -136,7 +136,7 @@ az storage file list \
 ```
 
 ### <a name="download-a-file"></a>скачать файл;
-С помощью команды [`az storage file download`](/cli/azure/storage/file#az_storage_file_download) можно загрузить копию файла, отправленного на временный диск Cloud Shell.
+С помощью команды [`az storage file download`](/cli/azure/storage/file) можно загрузить копию файла, отправленного на временный диск Cloud Shell.
 
 ```azurecli-interactive
 # Delete an existing file by the same name as SampleDownload.txt, if it exists, because you've run this example before
@@ -191,7 +191,7 @@ az storage file list \
 
 - [диспетчер логических томов (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Basic_functionality) для систем Linux;
 - [файловая система Apple (APFS)](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Features/Features.html) для macOS;
-- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, например NTFS и ReFS, которая позволяет создать снимок общего ресурса с помощью команды [`az storage share snapshot`](/cli/azure/storage/share#az_storage_share_snapshot):
+- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, например NTFS и ReFS, которая позволяет создать снимок общего ресурса с помощью команды [`az storage share snapshot`](/cli/azure/storage/share):
 
 ```azurecli-interactive
 SNAPSHOT=$(az storage share snapshot \
@@ -250,7 +250,7 @@ az storage file copy start \
 ```
 
 ### <a name="delete-a-share-snapshot"></a>Удаление моментального снимка общего ресурса
-Моментальный снимок общего ресурса можно удалить с помощью команды [`az storage share delete`](/cli/azure/storage/share#az_storage_share_delete). Воспользуйтесь переменной, содержащей ссылку `$SNAPSHOT` на параметр `--snapshot`.
+Моментальный снимок общего ресурса можно удалить с помощью команды [`az storage share delete`](/cli/azure/storage/share). Воспользуйтесь переменной, содержащей ссылку `$SNAPSHOT` на параметр `--snapshot`.
 
 ```azurecli-interactive
 az storage share delete \
@@ -261,7 +261,7 @@ az storage share delete \
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Закончив работу, удалите группу ресурсов и все связанные с ней ресурсы с помощью команды [`az group delete`](/cli/azure/group#delete). 
+Закончив работу, удалите группу ресурсов и все связанные с ней ресурсы с помощью команды [`az group delete`](/cli/azure/group). 
 
 ```azurecli-interactive 
 az group delete --name "myResourceGroup"

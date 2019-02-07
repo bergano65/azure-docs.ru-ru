@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 1/15/2019
 ms.author: cherylmc
 ms.openlocfilehash: cd84948b5895a628fc94cc2946156d9fa2284369
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352331"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55508680"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway-preview"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure (предварительная версия)
 

@@ -3,7 +3,7 @@ title: Сравнение функций Базы данных SQL Azure | До�
 description: В этой статье сравниваются функции SQL Server, которые доступны в разных вариантах баз данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: ''
+ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 8cda0b5a06eb4299c439b58ecf721971288fa5fb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 7445496154d9fc2ca59e19059a87a794a1361b14
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455088"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747413"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -52,7 +52,7 @@ ms.locfileid: "55455088"
 | [Запись измененных данных](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Нет  | Yes |
 | [отслеживание изменений;](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) | Yes |Yes |
 | [Параметры сортировки базы данных](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation) | Yes | Yes |
-| [Параметры сортировки сервера или экземпляра](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation) | Нет  | [Да (предварительная версия)](/scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
+| [Параметры сортировки сервера или экземпляра](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation) | Нет  | [Да (предварительная версия)](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
 | [Индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) | Да, [в категориях "Премиум" и "Стандартный" (S3 и выше), а также в категориях "Общего назначения" и "Критически важный для бизнеса"](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview). |Yes |
 | [Среда CLR](https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts) | Нет  | Да. См. раздел [CLR](sql-database-managed-instance-transact-sql-information.md#clr) (Среда CLR). |
 | [автономные базы данных;](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | Yes | Yes |

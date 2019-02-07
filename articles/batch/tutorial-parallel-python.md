@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: b5b6f1a1cbd4c06106b7817f9fc28d8d4a9cfc06
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: f537ccfd18685cd5aa8ee06910fc80ac3d2056c9
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54306341"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750415"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API
 
@@ -170,7 +170,7 @@ input_files = [
 
 Кроме свойств физических узлов эта конфигурация пула включает объект [StartTask](/python/api/azure.batch.models.starttask). Задача StartTask выполняется на каждом узле по мере его присоединения к пулу, а также при каждом перезапуске узла. В этом примере StartTask запускает команды оболочки Bash для установки пакета ffmpeg и зависимостей с узлами.
 
-Метод [pool.add](/python/api/azure.batch.operations.pooloperations#azure_batch_operations_PoolOperations_add) отправляет пул в пакетную службу.
+Метод [pool.add](/python/api/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -200,7 +200,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-job"></a>создать задание;
 
-Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `create_job`. Определенная функция использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations#azure_batch_operations_JobOperations_add) отправляет пул в пакетную службу. Изначально у задания нет задач.
+Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `create_job`. Определенная функция использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations) отправляет пул в пакетную службу. Изначально у задания нет задач.
 
 ```python
 job = batch.models.JobAddParameter(
@@ -216,7 +216,7 @@ batch_service_client.job.add(job)
 
 В примере создается объект [OutputFile](/python/api/azure.batch.models.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) загружаются в контейнер в связанной учетной записи с использованием свойства задачи `output_files`.
 
-Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations#azure_batch_operations_TaskOperations_add_collection), который ставит их в очередь для запуска на вычислительных узлах. 
+Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
 
 ```python
 tasks = list()

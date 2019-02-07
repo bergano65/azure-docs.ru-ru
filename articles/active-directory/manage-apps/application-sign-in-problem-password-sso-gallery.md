@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 5ae7643123552eaa17d51e6cd1ed9c0293292ed0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 734169a0bce546ee2492d100b2abcb2ba8b6ffc9
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55184977"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822533"
 ---
 # <a name="problems-signing-in-to-an-azure-ad-gallery-application-configured-for-password-single-sign-on"></a>Проблемы с входом в приложение из коллекции Azure AD, для которого настроен единый вход по паролю
 
@@ -88,7 +88,7 @@ ms.locfileid: "55184977"
 
 Чтобы настроить приложение из коллекции Azure AD, выполните указанные ниже действия.
 
--   [Добавление приложения из коллекции Azure AD](#_Add_an_application)
+-   Добавление приложения из коллекции Azure AD
 
 -   [настройте приложение для единого входа по паролю](#configure-the-application-for-password-single-sign-on);
 
@@ -140,7 +140,7 @@ ms.locfileid: "55184977"
 
 8.  Выберите режим **Вход по паролю**.
 
-9.  [Назначьте пользователей приложению](#_How_to_assign).
+9.  Назначьте пользователей приложению.
 
 10. Кроме того, можно также предоставить учетные данные от имени пользователя, выбрав строки пользователей, щелкнув **Обновить учетные данные** и введя имя пользователя и пароль. В противном случае пользователям будет предложено ввести учетные данные при запуске.
 

@@ -16,12 +16,12 @@ ms.date: 12/11/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: 5447bcb0dc37cb3c923c4e6bbff4d69d987b6df6
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 05bf01e2b7c380f7bb79230885e247bd8c834d14
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244374"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55691173"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
@@ -47,7 +47,7 @@ ms.locfileid: "55244374"
 |Развертывание виртуальной машины с расширением Docker для выполнения команд Docker.|Ограничено. Docker ищет в Интернете последнюю версию, и этот поиск завершается ошибкой.|
 |Ссылки на документацию на портале Azure Stack.|Недоступно. Такие ссылки, как "Отправить отзыв", "Справка", "Краткое руководство" и т. д., которые используют URL-адреса, не будут работать.|
 |Устранение рисков и исправление оповещений, которое ссылается на онлайн-руководство по исправлению.|Недоступно. Все ссылки на исправление оповещений, которые используют URL-адреса, не будут работать.|
-|Marketplace. Возможность выбирать и добавлять пакеты для коллекции непосредственно в Azure Marketplace.|Ограничено. При развертывании Azure Stack в отключенном режиме (без подключения к Интернету) вы не сможете скачать элементы Marketplace с помощью портала Azure Stack. Но можно воспользоваться средством [синдикации Marketplace](https://docs.microsoft.com/azure/azure-stack/azure-stack-download-azure-marketplace-item#download-marketplace-items-in-a-disconnected-or-a-partially-connected-scenario-with-limited-internet-connectivity), чтобы скачать элементы Marketplace на компьютер с подключением к Интернету, а затем передать их в среду Azure Stack.|
+|Marketplace. Возможность выбирать и добавлять пакеты для коллекции непосредственно в Azure Marketplace.|Ограничено. При развертывании Azure Stack в отключенном режиме (без подключения к Интернету) вы не сможете скачать элементы Marketplace с помощью портала Azure Stack. Но можно воспользоваться средством [синдикации Marketplace](https://docs.microsoft.com/azure/azure-stack/azure-stack-download-azure-marketplace-item), чтобы скачать элементы Marketplace на компьютер с подключением к Интернету, а затем передать их в среду Azure Stack.|
 |Использование учетных записей федерации Azure Active Directory для управления развертыванием Azure Stack.|Недоступно. Для работы этого компонента требуется возможность подключения к Azure. Вместо этого компонента следует использовать службы федерации Active Directory (AD FS) с локальным экземпляром Active Directory.|
 |Службы приложений|Ограничено. Веб-приложениям может потребоваться доступ к Интернету для получения обновленного содержимого.|
 |Интерфейс командной строки|Ограничено. Возможности интерфейса командной строки ограничены в контексте аутентификации и подготовки субъектов-служб.|

@@ -11,18 +11,18 @@ ms.topic: overview
 ms.date: 08/14/2018
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 5c2a31e10d53c8088afd3c3910b1b2f9d2b2d247
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 46d79b1ac6c56ba953eb0908e46338387b69ff1f
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55159237"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55768277"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 
 API Bing для поиска в Интернете — это служба RESTful, которая мгновенно отвечает на запросы пользователей. Результаты поиска можно легко настроить таким образом, чтобы они содержали веб-страницы, изображения, видео, новости, переводы и прочее. Результаты предоставляются в формате JSON и основаны на релевантности поиска и подписках API Bing для поиска в Интернете.
 
-Этот API является оптимальным для приложений, которым требуется доступ ко всему содержимому, имеющему отношение к поисковым запросам пользователя. Если вы создаете приложение, которому требуется только определенный тип результата, рассмотрите возможность использования [API Bing для поиска изображений](../Bing-Image-Search/overview.md), [API Bing для поиска видео](../Bing-Video-Search/search-the-web.md) или [API Bing для поиска новостей](../Bing-News-Search/search-the-web.md). Полный список API-интерфейсов поиска Bing см. в разделе с [API-интерфейсами Cognitive Services](https://docs.microsoft.com/azure/cognitive-services#cognitive-services-apis).
+Этот API является оптимальным для приложений, которым требуется доступ ко всему содержимому, имеющему отношение к поисковым запросам пользователя. Если вы создаете приложение, которому требуется только определенный тип результата, рассмотрите возможность использования [API Bing для поиска изображений](../Bing-Image-Search/overview.md), [API Bing для поиска видео](../Bing-Video-Search/search-the-web.md) или [API Bing для поиска новостей](../Bing-News-Search/search-the-web.md). Полный список API-интерфейсов поиска Bing см. в разделе с [API-интерфейсами Cognitive Services](https://docs.microsoft.com/azure/cognitive-services).
 
 Хотите увидеть, как работает эта служба? Попробуйте [демоверсию API Bing для поиска в Интернете](https://azure.microsoft.com/services/cognitive-services/bing-web-search-api/).
 

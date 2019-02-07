@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 02/05/2019
 ms.author: alkohli
-ms.openlocfilehash: 412727d79c194172f2855d014d1eaf18f44167f6
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 6a7f7943e9d567a953c0e21697dfe4fdedd6e8f0
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159355"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55744795"
 ---
 # <a name="azure-data-box-disk-limits"></a>Ограничения для Диска Azure Data Box
 
@@ -66,8 +66,8 @@ ms.locfileid: "54159355"
 
 | Тип объекта Azure | Ограничение по умолчанию                                             |
 |-------------------|-----------------------------------------------------------|
-| Блочный BLOB-объект        | ~ 8 ТБ                                                 |
-| Страничный BLOB-объект         | 1 TБ <br> (Каждый файл, отправляемый в формате страничного BLOB-объекта, должен быть выровнен по размеру 512 байт (целое кратное), в противном случае произойдет сбой передачи. <br> VHD и VHDX выровнены по размеру 512 байт.) |
+| Блочный BLOB-объект        | ~4,75 ТиБ                                                 |
+| Страничный BLOB-объект         | 8 ТиБ <br> (Каждый файл, отправляемый в формате страничного BLOB-объекта, должен быть выровнен по размеру 512 байт (целое кратное), в противном случае произойдет сбой передачи. <br> VHD и VHDX выровнены по размеру 512 байт.) |
 
 
 ## <a name="azure-block-blob-and-page-blob-naming-conventions"></a>Соглашения об именовании для блочных и страничных BLOB-объектов Azure

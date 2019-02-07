@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
-ms.openlocfilehash: 9d0f814428a4d7bc57b4f0a01ff5adc658af1d91
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: fc963987b45751aab33035a83b2b477129e9a756
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54466991"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55730906"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -66,7 +66,7 @@ ms.locfileid: "54466991"
 
 3. Создайте субъект-службу. Grafana использует субъект-службу Azure Active Directory для подключения к API Azure Monitor и сбора данных. Необходимо создать или использовать существующий субъект-службу для управления доступом к ресурсам Azure.
     * Инструкции по созданию субъекта-службы см. в [этой статье](../../azure-resource-manager/resource-group-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора (идентификатор каталога), идентификатор клиента (идентификатор приложения) и секрет клиента (значение ключа приложения).
-    * См. раздел о [назначении роли для приложения](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#assign-application-to-role), чтобы узнать, как назначить роль читателя приложению Azure Active Directory для подписки, группы ресурсов или ресурса, который нужно отслеживать. 
+    * См. раздел о [назначении роли для приложения](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal), чтобы узнать, как назначить роль читателя приложению Azure Active Directory для подписки, группы ресурсов или ресурса, который нужно отслеживать. 
     Для Log Analytics API требуется [роль читателя Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader), которая включает разрешения роли читателя и добавляется к ней.
 
 4. Передайте сведения о подключении в интерфейсы API, которые вы хотите использовать. Можно подключиться ко всем или некоторым из них. 

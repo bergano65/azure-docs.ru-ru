@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/15/2018
 ms.author: priyamo
-ms.openlocfilehash: 03e22ae9aaa3ab967b55443ccbd933c265510227
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 42b0ab15f43d301629b9fbb3208ba24eae8c227e
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180115"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694607"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-azure-cli"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI
 
@@ -113,7 +113,7 @@ az vmss update -n myVM -g myResourceGroup --set identity.type='UserAssigned'
 az vmss update -n myVM -g myResourceGroup --set identity.type="none"
 ```
 
-Чтобы удалить расширение виртуальной машины для управляемых удостоверений для ресурсов Azure (прекращение поддержки запланировано на няварь 2019 г.), используйте команду [az vmss identity remove](/cli/azure/vmss/identity/#az-vmss-remove-identity) для удаления управляемого удостоверения, назначаемого системой, из масштабируемого набора виртуальных машин.
+Чтобы удалить расширение виртуальной машины для управляемых удостоверений для ресурсов Azure (прекращение поддержки запланировано на няварь 2019 г.), используйте команду [az vmss identity remove](/cli/azure/vmss/identity/) для удаления управляемого удостоверения, назначаемого системой, из масштабируемого набора виртуальных машин.
 
 ```azurecli-interactive
 az vmss extension delete -n ManagedIdentityExtensionForWindows -g myResourceGroup -vmss-name myVMSS
@@ -190,7 +190,7 @@ az vmss extension delete -n ManagedIdentityExtensionForWindows -g myResourceGrou
    }
    ```
 
-2. Задайте управляемое удостоверение, назначаемое пользователем, для масштабируемого набора виртуальных машин с помощью команды [az vmss identity assign](/cli/azure/vmss/identity#az-vm-assign-identity). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VMSS NAME>` собственными. `<USER ASSIGNED IDENTITY>` — свойство ресурса `name` удостоверения, назначаемого пользователем, созданное на предыдущем шаге.
+2. Задайте управляемое удостоверение, назначаемое пользователем, для масштабируемого набора виртуальных машин с помощью команды [az vmss identity assign](/cli/azure/vmss/identity). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VMSS NAME>` собственными. `<USER ASSIGNED IDENTITY>` — свойство ресурса `name` удостоверения, назначаемого пользователем, созданное на предыдущем шаге.
 
     ```azurecli-interactive
     az vmss identity assign -g <RESOURCE GROUP> -n <VMSS NAME> --identities <USER ASSIGNED IDENTITY>

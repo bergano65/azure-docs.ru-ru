@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.openlocfilehash: 0cf301b98e5fa530b234dbd5953746241c0021ee
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 15f280b16e362a4b39cb9fc0e4baaf67d0e31942
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244245"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661706"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Настройка оповещений на основе метрик для Базы данных Azure для MariaDB на портале Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "54244245"
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Интерфейс командной строки Azure](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
-* [Azure Monitor REST API](https://docs.microsoft.com/en-us/rest/api/monitor/metricalerts)
+* [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric"></a>Создание правила генерации оповещений на основе метрики
 1. На [портале Azure](https://portal.azure.com/) выберите сервер Базы данных Azure для MariaDB, который нужно отследить.

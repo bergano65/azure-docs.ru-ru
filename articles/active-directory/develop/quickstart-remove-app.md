@@ -16,12 +16,12 @@ ms.date: 10/25/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: 61da59fd570b9acc58dce89907eb5a1726a28de9
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 55866d5ff28c707c26141683bb90c8f2873b17c8
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104491"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818912"
 ---
 # <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform-preview"></a>Краткое руководство. Удаление приложения, зарегистрированного с помощью платформы удостоверений Майкрософт (предварительная версия)
 
@@ -29,8 +29,8 @@ ms.locfileid: "55104491"
 
 В этом кратком руководстве описано следующее:
 
-* [Удаление приложения, созданного вами или организацией](#remove-an-application-authored-by-your-organization).
-* [Удаление приложения, созданного другой организацией](#remove-an-application-authoried-by-another-organization).
+* Удаление приложения, созданного вами или организацией
+* Удаление приложения, созданного другой организацией
 
 ## <a name="prerequisites"></a>Предварительные требования
 

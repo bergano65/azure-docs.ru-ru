@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 author: garyericson
 ms.author: garye
 ms.date: 1/30/2019
-ms.openlocfilehash: 4d4d7c587dcc34b12ed757b7da54f5ad0b04e8cc
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: cd156a10faf396778b76687b3666887a6a60876c
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/31/2019
-ms.locfileid: "55451875"
+ms.locfileid: "55505705"
 ---
 # <a name="what-are-the-machine-learning-products-at-microsoft"></a>Какие продукты для машинного обучения предлагает корпорация Майкрософт?
 
@@ -27,7 +27,7 @@ ms.locfileid: "55451875"
 
 | Варианты&nbsp;облачных решений | Что это | Возможности |
 |-|-|-|
-| [Служба "Машинное обучение Azure"](#azure-machine-learning-services) | Управляемая облачная служба для машинного обучения  | Обучение и развертывание моделей и управление ими в Azure с помощью Python и CLI |
+| [Служба "Машинное обучение Azure"](#azure-machine-learning-service) | Управляемая облачная служба для машинного обучения  | Обучение и развертывание моделей и управление ими в Azure с помощью Python и CLI |
 | [Студия машинного обучения Azure](#azure-machine-learning-studio) | Визуальный интерфейс с поддержкой перетаскивания для машинного обучения | Сборка и развертывание моделей, а также экспериментирование с ними с помощью предварительно настроенных алгоритмов (Python и R)|
 | [Azure Databricks](#azure-databricks) | Платформа аналитики на основе Spark | Сборка и развертывание моделей и рабочих процессов данных |
 | [Azure Cognitive Services](#azure-cognitive-services) | Службы Azure с готовым ИИ и моделями машинного обучения | Простое добавление интеллектуальных функций в приложения |

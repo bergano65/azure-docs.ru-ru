@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/23/2018
-ms.openlocfilehash: c4f78d8bb43b26814dc3a4b94109dfd8719cb48f
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: df1efc1506fbbe51ba5afb03f147c51a57d9bbdb
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54258838"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55727064"
 ---
 # <a name="create-and-configure-azure-kubernetes-service-clusters-in-azure-using-ansible"></a>Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления службой Azure Kubernetes (AKS). В этой статье приводятся сведения об использовании Ansible для создания и настройки кластера службы Azure Kubernetes.
@@ -25,13 +25,13 @@ Ansible позволяет автоматизировать развертыва
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6. 
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6.
 
 ## <a name="create-a-managed-aks-cluster"></a>Создание управляемого кластера AKS
 В этом разделе представлен пример кода сборника схем Ansible для создания группы ресурсов и кластера AKS, который находится в группе ресурсов.
 
 > [!Tip]
-> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa. 
+> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
 
   ```yaml
   - name: Create Azure Kubernetes Service
@@ -71,8 +71,8 @@ Ansible позволяет автоматизировать развертыва
   ```
 
 Следующие маркеры поясняют предыдущий код сборника схем Ansible:
-- В первом разделе в **tasks** определяется группа ресурсов с именем **myResourceGroup** в расположении **eastus**. 
-- Во втором разделе в **tasks** определяется кластер AKS с именем **myAKSCluster** в группе ресурсов **myResourceGroup**. 
+- В первом разделе в **tasks** определяется группа ресурсов с именем **myResourceGroup** в расположении **eastus**.
+- Во втором разделе в **tasks** определяется кластер AKS с именем **myAKSCluster** в группе ресурсов **myResourceGroup**.
 
 Чтобы создать кластер AKS с помощью Ansible, сохраните предыдущий пример сборника схем как `azure_create_aks.yml` и запустите сборник схем, выполнив следующую команду:
 
@@ -100,10 +100,10 @@ Ansible позволяет автоматизировать развертыва
 
 ## <a name="scale-aks-nodes"></a>Масштабирование узлов AKS
 
-Сборник схем из предыдущего раздела определяет два узла. Если вам требуется больше или меньше рабочих нагрузок контейнеров в кластере, вы можете легко изменить количество узлов. В этом разделе тот же сборник схем увеличивает количество узлов с двух до трех. Изменение количества узлов выполняется путем изменения значения **count** в блоке **agent_pool_profiles**. 
+Сборник схем из предыдущего раздела определяет два узла. Если вам требуется больше или меньше рабочих нагрузок контейнеров в кластере, вы можете легко изменить количество узлов. В этом разделе тот же сборник схем увеличивает количество узлов с двух до трех. Изменение количества узлов выполняется путем изменения значения **count** в блоке **agent_pool_profiles**.
 
 > [!Tip]
-> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa. 
+> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
 
 ```yaml
 - name: Scale AKS cluster
@@ -120,10 +120,10 @@ Ansible позволяет автоматизировать развертыва
   tasks:
   - name: Scaling an existed AKS cluster
     azure_rm_aks:
-        name: "{{ aks_name }}"    
+        name: "{{ aks_name }}"
         location: "{{ location }}"
-        resource_group: "{{ resource_group }}" 
-        dns_prefix: "{{ aks_name }}" 
+        resource_group: "{{ resource_group }}"
+        dns_prefix: "{{ aks_name }}"
         linux_profile:
           admin_username: "{{ username }}"
           ssh_key: "{{ ssh_key }}"
@@ -168,7 +168,7 @@ Ansible позволяет автоматизировать развертыва
       resource_group: myResourceGroup
       aks_name: myAKSCluster
     tasks:
-    - name: 
+    - name:
       azure_rm_aks:
         name: "{{ aks_name }}"
         resource_group: "{{ resource_group }}"
@@ -193,7 +193,7 @@ TASK [azure_rm_aks] ************************************************************
 PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0
   ```
-  
+
 ## <a name="next-steps"></a>Дополнительная информация
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Руководство. Масштабирование приложения в службе Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-scale)

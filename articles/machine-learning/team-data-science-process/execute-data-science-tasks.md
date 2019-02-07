@@ -10,19 +10,19 @@ ms.topic: article
 ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 51d76e16e93ccffc1a069e64808563d62f428dbf
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 9d8ae3a95262b1554e7e97fac8375a44743bf4df
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476355"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55731467"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
 В типичным задачам обработки и анализа данных относятся изучение, моделирование и развертывание. В этой статье показано, как использовать служебные программы для **интерактивного изучения данных, анализа данных и создания отчетов (IDEAR)** и **автоматического моделирования и создания отчетов (АМАР)** для выполнения типичных задач обработки и анализа данных, в том числе интерактивного изучения данных, анализа данных, создания отчетов и создания моделей. В ней также описаны варианты развертывания модели в рабочей среде с помощью различных платформ данных и наборов средств, в том числе следующих:
 
 - [машинное обучение Azure](../service/index.yml)
-- [SQL Server со службами машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/r/r-services#in-database-analytics-with-sql-server)
+- [SQL Server со службами машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/r/r-services)
 - [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
 
 

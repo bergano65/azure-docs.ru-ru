@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: magoedte
-ms.openlocfilehash: 3a7c823493369735df23360645004b0bec85dbd7
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 08fdbc80c0f7dd1093020d64f4fc6f04fb7a88ae
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885513"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55657048"
 ---
 # <a name="configure-collection-of-azure-paas-resource-metrics-with-log-analytics"></a>Сбор метрик ресурсов PaaS в Azure с помощью Log Analytics
 
@@ -37,7 +37,7 @@ ms.locfileid: "54885513"
 >[!NOTE]
 >Рекомендуем использовать одинаковые версии модулей Azure Resource Manager, чтобы обеспечить их совместимость при выполнении команд Azure Resource Manager из PowerShell.
 >
-Чтобы установить на компьютере последнюю версию модулей Azure Resource Manager, выполните инструкции в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.4.1#update-azps).  
+Чтобы установить на компьютере последнюю версию модулей Azure Resource Manager, выполните инструкции в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.4.1).  
 
 ## <a name="enable-azure-diagnostics"></a>Включение системы диагностики Azure  
 Чтобы настроить систему диагностики Azure для ресурсов PaaS, выполните скрипт **Enable-AzureRMDiagnostics.ps1** из [коллекции PowerShell](https://www.powershellgallery.com/packages/Enable-AzureRMDiagnostics/2.52).  Этот скрипт поддерживает несколько сценариев работы:

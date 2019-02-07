@@ -7,19 +7,19 @@ ms.subservice: change-inventory-management
 keywords: данные инвентаризации, автоматизация, отслеживание
 author: jennyhunter-msft
 ms.author: jehunte
-ms.date: 03/30/2018
+ms.date: 02/06/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 9fabaa2be850e5b15f10fc78adb14dfd5c112906
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 2d6cc55ec2e3be3510b9547025db17bcbee97e10
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54426052"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55765387"
 ---
 # <a name="manage-an-azure-virtual-machine-with-inventory-collection"></a>Управление виртуальной машиной Azure с помощью сбора данных инвентаризации
 
-Отслеживание данных для виртуальной машины Azure можно включить со страницы ресурсов виртуальной машины. В этом способе предоставляется пользовательский интерфейс на основе браузера для настройки сбора данных инвентаризации.
+Отслеживание данных для виртуальной машины Azure можно включить со страницы ресурсов виртуальной машины. Вы можете собирать и просматривать сведения об установленных на компьютерах программном обеспечении, файлах, управляющих программах, службах и разделах реестра Windows. В этом способе предоставляется пользовательский интерфейс на основе браузера для настройки сбора данных инвентаризации.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

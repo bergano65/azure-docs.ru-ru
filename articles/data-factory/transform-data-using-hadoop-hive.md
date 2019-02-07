@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: douglasl
-ms.openlocfilehash: d9a649e3b49c71a24d06656e0667765ef9cc5508
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: e77b8c89954064fb143f04f0f901d1512d4fc50d
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321341"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55491014"
 ---
 # <a name="transform-data-using-hadoop-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -52,7 +52,7 @@ ms.locfileid: "54321341"
         "defines": {
             "param1": "param1Value"
         }
-    }   
+    }
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
@@ -67,7 +67,7 @@ ms.locfileid: "54321341"
 | getDebugInfo        | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None (никогда), Always (всегда) или Failure (в случае сбоя). Значение по умолчанию: Отсутствует. | Нет        |
 | arguments           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет        |
 | defines             | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | Нет        |
-| queryTimeout        | Значение времени ожидания запроса (в минутах).  Применяется, если кластер HDInsight доступный с Корпоративными пакетами безопасности. | Нет        |
+| queryTimeout        | Значение времени ожидания запроса (в минутах). Применяется, если кластер HDInsight доступный с Корпоративными пакетами безопасности. | Нет        |
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами: 
@@ -80,4 +80,3 @@ ms.locfileid: "54321341"
 * [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
 * [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)
-

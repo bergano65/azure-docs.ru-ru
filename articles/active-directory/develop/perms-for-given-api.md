@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: celested
-ms.openlocfilehash: 473cc855e2667f0e87d79b99786c879c17dc6363
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 3eb5b0d84186eb06af6f99695fee9419f25a91db
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101164"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55730957"
 ---
 # <a name="how-to-select-permissions-for-a-given-api"></a>Выбор разрешений для заданного API 
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 - Дополнительные сведения о том, как клиентские приложения используют [запросы делегированных разрешений и разрешений приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#permissions) для доступа к ресурсам.
-- Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#configuring-a-client-application-to-access-web-apis)
+- Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)
 - Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#scopes) и [роли приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно. 
 
 ## <a name="next-steps"></a>Дополнительная информация

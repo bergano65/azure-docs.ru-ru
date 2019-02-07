@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: 204f69ad37a7e38337c87e2053a10c96dadf380d
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: ec9551b92702c3c9050e60c7550b89e99b99b6b6
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812664"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661689"
 ---
 # <a name="api-management-caching-policies"></a>Политики кэширования в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -115,7 +115,7 @@ ms.locfileid: "54812664"
 | cache-preference               | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Использование внешнего кэша Redis для Azure в Управлении API Azure](api-management-howto-cache-external.md);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
 | downstream-caching-type        | Для этого атрибута следует указать одно из таких значений:<br /><br /> - none — нисходящее кэширование не разрешено;<br />- private — разрешено нисходящее частное кэширование;<br />- public — разрешено частное и совместно используемое нисходящее кэширование.                                                                                                          | Нет        | Нет              |
 | must-revalidate                | Если включено нисходящее кэширование, этот атрибут включает или отключает директиву управления кэшем `must-revalidate` в ответах шлюза.                                                                                                                                                                                                                      | Нет        | Да              |
-| vary-by-developer              | Установите значение `true`, если нужно кэшировать ответы в зависимости от [ключа подписки](https://docs.microsoft.com/azure/api-management/api-management-subscriptions#what-is-subscriptions).                                                                                                                                                                                                                                                                                                         | Yes      |         Ложь          |
+| vary-by-developer              | Установите значение `true`, если нужно кэшировать ответы в зависимости от [ключа подписки](https://docs.microsoft.com/azure/api-management/api-management-subscriptions).                                                                                                                                                                                                                                                                                                         | Yes      |         Ложь          |
 | vary-by-developer-groups       | Установите значение `true`, если нужно кэшировать ответы в зависимости от [группы пользователя](https://docs.microsoft.com/azure/api-management/api-management-howto-create-groups).                                                                                                                                                                                                                                                                                                             | Yes      |       Ложь            |
 
 ### <a name="usage"></a>Использование

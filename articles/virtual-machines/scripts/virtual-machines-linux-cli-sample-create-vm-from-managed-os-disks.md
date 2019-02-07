@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 319803a8b6c07de6efafa80789248c60a9cdad06
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 3ec3d152864ab8caf9f0c68966b6d4f8fd9e64dd
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241447"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695242"
 ---
 # <a name="create-a-virtual-machine-using-an-existing-managed-os-disk-with-cli"></a>Создание виртуальной машины с помощью существующего управляемого диска ОС с использованием CLI
 
@@ -52,8 +52,8 @@ az group delete --name myResourceGroup
 
 | Команда | Примечания |
 |---|---|
-| [az disk show](https://docs.microsoft.com/cli/azure/disk#az_disk_show) | Получает свойства управляемого диска, используя имя диска и имя группы ресурсов. Свойство идентификатора используется для подключения управляемого диска к новой виртуальной машине. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm#az_vm_create) | Создает виртуальную машину с помощью управляемого диска ОС. |
+| [az disk show](https://docs.microsoft.com/cli/azure/disk) | Получает свойства управляемого диска, используя имя диска и имя группы ресурсов. Свойство идентификатора используется для подключения управляемого диска к новой виртуальной машине. |
+| [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину с помощью управляемого диска ОС. |
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).

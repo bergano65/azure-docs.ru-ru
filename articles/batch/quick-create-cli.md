@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 07/03/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 10f84a758bdb2e01793aee06cba59a29b5639775
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: df56fd00d5a5ff2f9e9000b39939d0f33b3737d5
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470966"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752353"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Краткое руководство. Выполнение пакетного задания с помощью Azure CLI
 
@@ -139,7 +139,7 @@ az batch task show \
 
 ## <a name="view-task-output"></a>Просмотр выходных данных задачи
 
-Чтобы получить список файлов, созданных задачей на вычислительном узле, используйте команду [az batch task file list](/cli/azure/batch/task#az-batch-task-file-list). Следующая команда создает список файлов, созданных при выполнении задачи *mytask1*: 
+Чтобы получить список файлов, созданных задачей на вычислительном узле, используйте команду [az batch task file list](/cli/azure/batch/task). Следующая команда создает список файлов, созданных при выполнении задачи *mytask1*: 
 
 ```azurecli-interactive 
 az batch task file list \
@@ -160,7 +160,7 @@ stderr.txt  https://mybatchaccount.eastus2.batch.azure.com/jobs/myjob/tasks/myta
 
 ```
 
-Чтобы скачать один из выходных файлов в локальный каталог, используйте команду [az batch task file download](/cli/azure/batch/task#az-batch-task-file-download). В этом примере выходные данные задачи находятся в файле `stdout.txt`. 
+Чтобы скачать один из выходных файлов в локальный каталог, используйте команду [az batch task file download](/cli/azure/batch/task). В этом примере выходные данные задачи находятся в файле `stdout.txt`. 
 
 ```azurecli-interactive
 az batch task file download \

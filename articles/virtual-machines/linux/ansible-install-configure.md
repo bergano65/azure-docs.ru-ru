@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 08/21/2018
-ms.openlocfilehash: 227f3baf67bd65a8c6eeb170ce219a3ddf79606a
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: abf5857ed105f85e51c7eac4a5d1eb8cabe7a44a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078054"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815121"
 ---
 # <a name="install-ansible-on-azure-virtual-machines"></a>Установка Ansible на виртуальные машины Azure
 
@@ -32,7 +32,7 @@ Ansible позволяет автоматизировать развертыва
 Войдите в компьютер под управлением Linux и выберите один из следующих дистрибутивов для выполнения шагов по установке Ansible:
 
 - [CentOS 7.4](#centos-74)
-- [Ubuntu 16.04 LTS](#ubuntu1604-lts)
+- Ubuntu 16.04 LTS
 - [SLES 12 SP2](#sles-12-sp2)
 
 ### <a name="centos-74"></a>CentOS 7.4

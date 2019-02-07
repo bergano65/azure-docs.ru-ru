@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 12/19/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0ae29146b1b44f3017d37b3cebf7ec4cf39115d0
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 3aadeb92fccc2baa445bce73e3d3111168aeecf6
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53731764"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55490283"
 ---
 # <a name="tutorial-move-azure-resources-to-another-resource-group-or-subscription"></a>Руководство. Перемещение ресурсов Azure в другую группу ресурсов или подписку
 
@@ -35,6 +35,8 @@ ms.locfileid: "53731764"
 > * Очистка ресурсов.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prepare-the-resources"></a>Подготовка ресурсов
 
@@ -63,7 +65,7 @@ ms.locfileid: "53731764"
 
 ```azurepowershell-interactive
 $projectName = Read-Host -prompt "Enter a project name"
-New-AzureRmDeployment `
+New-AzDeployment `
     -Name $projectname `
     -Location "centralus" `
     -TemplateUri "https://armtutorials.blob.core.windows.net/moveresources/azuredeploy.json" `
@@ -101,8 +103,8 @@ $resourceGroupSource = $projectName + "rg1"
 $resourceGroupDestination = $projectName + "rg2"
 $storageAccountName = $projectName + "store"
 
-$storageAccount = Get-AzureRmResource -ResourceGroupName $resourceGroupSource -ResourceName $storageAccountName
-Move-AzureRmResource -DestinationResourceGroupName $resourceGroupDestination -ResourceId $storageAccount.ResourceId
+$storageAccount = Get-AzResource -ResourceGroupName $resourceGroupSource -ResourceName $storageAccountName
+Move-AzResource -DestinationResourceGroupName $resourceGroupDestination -ResourceId $storageAccount.ResourceId
 ```
 
 Откройте [портал Azure](https://portal.azure.com) и убедитесь, что учетная запись перемещена в другую группу ресурсов, а также что учетная запись по-прежнему расположена в восточной части США.

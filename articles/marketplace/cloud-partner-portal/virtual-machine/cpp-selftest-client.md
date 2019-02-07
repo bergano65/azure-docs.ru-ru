@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 82f7d69120cf3d6f44c981f985ae29f467ee0655
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 7afa64ebedb38b4514bbd155bf8f29268d420d18
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55198910"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55745764"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "55198910"
 API самопроверки содержит одну конечную точку, которая поддерживает только метод POST.  Она имеет следующую структуру:
 
 ```
-Uri:             https://isvapp.azurewebsites.net/selftest
+Uri:             https://isvapp.azurewebsites.net/selftest-vm
 Method:          Post
 Request Header:  Content-Type: “application/json”
 Authorization:   “Bearer xxxx-xxxx-xxxx-xxxxx”
@@ -215,7 +215,7 @@ For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 ```
 CURL POST -H "Content-Type:application/json" 
 -H "Authorization: Bearer XXXXXX-Token-XXXXXXXX”
-https://isvapp.azurewebsites.net/selftest 
+https://isvapp.azurewebsites.net/selftest-vm 
 -d '{ "DNSName":"XXXX.westus.cloudapp.azure.com", "User":"XXX", "Password":"XXXX@123456", "OS":"Linux", "PortNo":"22", "CompanyName":"ABCD"}'
 
 ```
@@ -260,7 +260,7 @@ https://isvapp.azurewebsites.net/selftest
 
    - **Имя** — введите понятное имя для приложения. Например, SelfTestClient.
    - **Тип приложения** — выберите вариант **Web App/API** (Веб-приложение или API).
-   - **URL-адрес входа** — введите "https://isvapp.azurewebsites.net/selftest".
+   - **URL-адрес входа** — введите "https://isvapp.azurewebsites.net/selftest-vm".
 
 4. Нажмите кнопку **Создать**.
 5. В разделе **Регистрация приложений** или **Зарегистрированное приложение** скопируйте значение параметра **Идентификатор приложения**.
@@ -410,7 +410,7 @@ $token.AccessToken
 Передайте маркер в API самотестирования, добавив следующий код в заголовок авторизации:
 
 ```
-$redirectUri = ‘https://isvapp.azurewebsites.net/selftest’
+$redirectUri = ‘https://isvapp.azurewebsites.net/selftest-vm’
 $accesstoken = ‘place your token here’
 
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"

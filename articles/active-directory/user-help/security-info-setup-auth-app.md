@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 191afec8733258519370d11942c0f6d18da6b603
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 6ee75b0ee465e330d78b166b0da12232b7915ae7
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180404"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55766067"
 ---
 # <a name="set-up-security-info-to-use-an-authenticator-app-preview"></a>Настройка использования приложения проверки подлинности в сведениях для защиты (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "55180404"
 
 В зависимости от параметров вашей организации вам может быть предложено настроить приложение Microsoft Authenticator при входе в систему. В противном случае, чтобы начать настройку приложения Microsoft Authenticator в сведениях для защиты, выполните действия, описанные в [этой статье](security-info-manage-settings.md).
 
-Чтобы загрузить приложение Microsoft Authenticator, а также получить о нем дополнительные сведения, ознакомьтесь со статьей [Начало работы с приложением Microsoft Authenticator](microsoft-authenticator-app-how-to.md).
+Чтобы загрузить приложение Microsoft Authenticator, а также получить о нем дополнительные сведения, ознакомьтесь со статьей [Начало работы с приложением Microsoft Authenticator](user-help-auth-app-download-install.md).
 
 >[!Note]
 >Если вы не хотите использовать приложение Microsoft Authenticator, вы можете выбрать другое приложение во время настройки. В рамках этой статьи используется приложение Microsoft Authenticator. Если вы не видите вариант выбора приложения для проверки подлинности, возможно, ваша организация не позволяет использовать данное приложение для проверки. Если это так, вам нужно выбрать другой метод или обратиться за помощью к администратору.

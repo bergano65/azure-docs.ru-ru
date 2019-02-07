@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/10/2018
 ms.author: priyamo
-ms.openlocfilehash: a2e42b165596d26672ee22813e53d02ca0e3a7e9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4c17128f07475b6aeaef9ae15a13bc4863d7e663
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55195670"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699896"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-azure-cli"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI
 
@@ -82,7 +82,7 @@ ms.locfileid: "55195670"
    az login
    ```
 
-2. Чтобы включить удостоверение, назначаемое системой на имеющейся виртуальной машине, используйте команду [az vm identity assign](/cli/azure/vm/identity/#az-vm-identity-assign) с параметром `identity assign`.
+2. Чтобы включить удостоверение, назначаемое системой на имеющейся виртуальной машине, используйте команду [az vm identity assign](/cli/azure/vm/identity/) с параметром `identity assign`.
 
    ```azurecli-interactive
    az vm identity assign -g myResourceGroup -n myVm
@@ -107,7 +107,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type='UserAssigned'
 az vm update -n myVM -g myResourceGroup --set identity.type="none"
 ```
 
-Чтобы удалить расширение виртуальной машины для управляемых удостоверений для ресурсов Azure (прекращение поддержки запланировано на январь 2019 г.), выполните команду [az vm extension delete](https://docs.microsoft.com/cli/azure/vm/#assign-identity) с параметром `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` (в зависимости от типа виртуальной машины).
+Чтобы удалить расширение виртуальной машины для управляемых удостоверений для ресурсов Azure (прекращение поддержки запланировано на январь 2019 г.), выполните команду [az vm extension delete](https://docs.microsoft.com/cli/azure/vm/) с параметром `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` (в зависимости от типа виртуальной машины).
 
 ```azurecli-interactive
 az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentityExtensionForWindows
@@ -186,7 +186,7 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
    }
    ```
 
-2. Задайте удостоверение, назначаемое пользователем, для виртуальной машины с помощью команды [az vm identity assign](/cli/azure/vm#az-vm-identity-assign). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — свойство ресурса `name` управляемого удостоверения, назначаемого пользователем, созданного на предыдущем шаге.
+2. Задайте удостоверение, назначаемое пользователем, для виртуальной машины с помощью команды [az vm identity assign](/cli/azure/vm). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — свойство ресурса `name` управляемого удостоверения, назначаемого пользователем, созданного на предыдущем шаге.
 
     ```azurecli-interactive
     az vm identity assign -g <RESOURCE GROUP> -n <VM NAME> --identities <USER ASSIGNED IDENTITY>

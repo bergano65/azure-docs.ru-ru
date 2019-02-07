@@ -9,12 +9,12 @@ ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7ad494a3a1ce657951a0afab4d5ca838821927ad
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: b6cc65d10fc8924686d01c02177a9cb76f7a9571
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158831"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660924"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "55158831"
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
 > [!NOTE]  
-> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, необходимо отключить MFA только для тех пользователей, которым будет предоставлен доступ к кластеру с использованием базовой аутентификации Kerberose. Вы можете использовать [доверенные IP-адреса](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips) или [условный доступ](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. При использовании условного доступа убедитесь, что эта конечная точка службы AD включена в виртуальной сети HDInsight.
+> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, необходимо отключить MFA только для тех пользователей, которым будет предоставлен доступ к кластеру с использованием базовой аутентификации Kerberose. Вы можете использовать [доверенные IP-адреса](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips) или [условный доступ](https://docs.microsoft.com/azure/active-directory/conditional-access/overview), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. При использовании условного доступа убедитесь, что эта конечная точка службы AD включена в виртуальной сети HDInsight.
 >
 >Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 
@@ -87,7 +87,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ![Настройка пользовательских DNS-серверов для пиринговой виртуальной сети](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png)
 
-Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-extend-hadoop-virtual-network#hdinsight-ip-1) для входящего и исходящего трафика. 
+Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](https://docs.microsoft.com/azure/hdinsight/hdinsight-extend-hadoop-virtual-network#hdinsight-ip-1) для входящего и исходящего трафика. 
 
 **Чтобы проверить** правильность установки сети, присоедините виртуальную машину Windows к виртуальной сети или подсети HDInsight и проверьте связь по доменному имени (оно должно разрешить протокол IP), а затем запустите **ldp.exe** для доступа к домену Azure AD DS. Затем **присоедините эту виртуальную машину Windows к домену, чтобы подтвердить**, что все необходимые вызовы RPC между клиентом и сервером успешно выполнены. Можно также использовать **nslookup** для подтверждения сетевого доступа к учетной записи хранения или любой внешней базе данных (например, внешнему хранилищу метаданных Hive или базе данных Ranger).
 Если доменные службы AAD защищены группой безопасности сети, убедитесь, что все [необходимые порты](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) находятся в списке разрешений в правилах NSG подсети AAD DS. Если присоединение к домену этого окна виртуальной машины прошло успешно, можно переходить к следующему шагу и создавать кластеры ESP.

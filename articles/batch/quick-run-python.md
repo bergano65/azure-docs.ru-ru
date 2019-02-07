@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 3a2e48697efbe0f4969a8fae20c050a38645ed6f
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 9ede1b48d1b69c738e335676f10233af72e8564e
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462085"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754427"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
 
@@ -153,7 +153,7 @@ batch_client = batch.BatchServiceClient(
 
 Количество узлов (`_POOL_NODE_COUNT`) и размер виртуальной машины (`_POOL_VM_SIZE`) являются определенными константами. В образце по умолчанию создается пул с 2 узлами размера *Standard_A1_v2*. Предлагаемый размер в этом кратком руководстве обеспечивает оптимальный баланс производительности и стоимости.
 
-Метод [pool.add](/python/api/azure.batch.operations.pooloperations#azure_batch_operations_PoolOperations_add) отправляет пул в пакетную службу.
+Метод [pool.add](/python/api/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -187,7 +187,7 @@ batch_service_client.job.add(job)
 
 Это приложение создает список объектов задачи с помощью класса [TaskAddParameter](/python/api/azure.batch.models.taskaddparameter). Каждая задача обрабатывает входной объект `resource_files`, используя параметр `command_line`. В этом примере командная строка запускает команду оболочки Bash `cat`, чтобы отобразить текстовый файл. Эта команда является простым примером для демонстрационных целей. При использовании пакетной службы в командной строке задайте приложение или скрипт. В пакетной службе предусмотрен ряд способов для развертывания приложений и скриптов на вычислительных узлах.
 
-Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations#azure_batch_operations_TaskOperations_add_collection), который ставит их в очередь для запуска на вычислительных узлах. 
+Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
 
 ```python
 tasks = list()

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 692de0e18ac279174f1227a7c25913fc59e626eb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 39a42891a73bd64731dd19aa22214a62d913d975
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470065"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700831"
 ---
 # <a name="convert-a-linux-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Linux с неуправляемых дисков на управляемые диски
 
@@ -44,13 +44,13 @@ ms.locfileid: "55470065"
     az vm deallocate --resource-group myResourceGroup --name myVM
     ```
 
-2. Преобразуйте виртуальную машину для использования управляемых дисков, выполнив команду [az vm convert](/cli/azure/vm#az_vm_convert). Приведенный ниже процесс преобразовывает виртуальную машину `myVM`, включая ее диск ОС и все диски данных.
+2. Преобразуйте виртуальную машину для использования управляемых дисков, выполнив команду [az vm convert](/cli/azure/vm). Приведенный ниже процесс преобразовывает виртуальную машину `myVM`, включая ее диск ОС и все диски данных.
 
     ```azurecli
     az vm convert --resource-group myResourceGroup --name myVM
     ```
 
-3. После преобразования запустите виртуальную машину командой [az vm start](/cli/azure/vm#az_vm_start). В следующем примере запускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`.
+3. После преобразования запустите виртуальную машину командой [az vm start](/cli/azure/vm). В следующем примере запускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm start --resource-group myResourceGroup --name myVM
@@ -62,7 +62,7 @@ ms.locfileid: "55470065"
 
 Перед преобразованием группы доступности нужно освободить все виртуальные машины в этой группе. Запланируйте преобразование всех виртуальных машин для использования управляемых дисков после того, как содержащая их группа доступности будет преобразована в управляемую группу доступности. Затем можно будет запустить все виртуальные машины и продолжить работу в обычном режиме.
 
-1. Выведите список всех виртуальных машин в группе доступности, выполнив команду [az vm availability-set list](/cli/azure/vm/availability-set#az_vm_availability_set_list). В следующем примере выводится список виртуальных машин в группе доступности `myAvailabilitySet` в группе ресурсов `myResourceGroup`.
+1. Выведите список всех виртуальных машин в группе доступности, выполнив команду [az vm availability-set list](/cli/azure/vm/availability-set). В следующем примере выводится список виртуальных машин в группе доступности `myAvailabilitySet` в группе ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm availability-set show \
@@ -78,7 +78,7 @@ ms.locfileid: "55470065"
     az vm deallocate --resource-group myResourceGroup --name myVM
     ```
 
-3. Преобразуйте группу доступности с помощью команды [az vm availability-set convert](/cli/azure/vm/availability-set#az_vm_availability_set_convert). В следующем примере преобразовывается группа доступности `myAvailabilitySet` в группе ресурсов `myResourceGroup`.
+3. Преобразуйте группу доступности с помощью команды [az vm availability-set convert](/cli/azure/vm/availability-set). В следующем примере преобразовывается группа доступности `myAvailabilitySet` в группе ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm availability-set convert \
@@ -86,13 +86,13 @@ ms.locfileid: "55470065"
         --name myAvailabilitySet
     ```
 
-4. Преобразуйте все виртуальные машины для использования управляемых дисков с помощью команды [az vm convert](/cli/azure/vm#az_vm_convert). Приведенный ниже процесс преобразовывает виртуальную машину `myVM`, включая ее диск ОС и все диски данных.
+4. Преобразуйте все виртуальные машины для использования управляемых дисков с помощью команды [az vm convert](/cli/azure/vm). Приведенный ниже процесс преобразовывает виртуальную машину `myVM`, включая ее диск ОС и все диски данных.
 
     ```azurecli
     az vm convert --resource-group myResourceGroup --name myVM
     ```
 
-5. После преобразования запустите все виртуальные машины с помощью команды [az vm start](/cli/azure/vm#az_vm_start). В следующем примере запускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`:
+5. После преобразования запустите все виртуальные машины с помощью команды [az vm start](/cli/azure/vm). В следующем примере запускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`:
 
     ```azurecli
     az vm start --resource-group myResourceGroup --name myVM

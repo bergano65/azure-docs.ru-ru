@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: c77467efbbc1c33be5bc2aaf3251a5803beee864
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 78e3f6a5f4a55fd4bf1925672205eb490e7c6b24
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317115"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695712"
 ---
 # <a name="choose-a-map-style-in-azure-maps"></a>Выбор стиля карты в службе Azure Maps
 
@@ -33,7 +33,7 @@ ms.locfileid: "52317115"
 
 Блок кода, приведенный выше, устанавливает ключ подписки и создает объект map, предварительно не задавая стиль. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода использует метод карты [setStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setstyle), чтобы установить стиль карты в качестве вспомогательного.
+Второй блок кода использует метод карты [setStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest), чтобы установить стиль карты в качестве вспомогательного.
 
 ## <a name="add-the-style-picker"></a>Добавление средства выбора стиля
 
@@ -44,7 +44,7 @@ ms.locfileid: "52317115"
 
 Второй блок кода создает селектор стиля с помощью атласа [StyleControl](/javascript/api/azure-maps-control/atlas.controls.stylecontrol).
 
-Элемент выбора стиля позволяет выбрать стиль для карты. Третий блок кода добавляет элемент выбора стиля на карту с помощью метода карты [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addcontrol). Селектор стиля находится в пределах **прослушивателя событий** карты для того, чтобы обеспечить его загрузку после полной загрузки карты.
+Элемент выбора стиля позволяет выбрать стиль для карты. Третий блок кода добавляет элемент выбора стиля на карту с помощью метода карты [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). Селектор стиля находится в пределах **прослушивателя событий** карты для того, чтобы обеспечить его загрузку после полной загрузки карты.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

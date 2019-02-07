@@ -17,18 +17,18 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: 61f4237756d7a808bcc8a5983508d72fa49f4cbd
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: e983ae549664abf46de256e987e09191a2a44c0f
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55459186"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55728526"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Оптимизация виртуальной машины Linux в Azure
 Вы можете легко создать виртуальную машину (VM) Linux с помощью портала или командной строки. В этом руководстве показано, как при помощи настроек оптимизировать производительность VM на платформе Microsoft Azure. В этой статье описывается виртуальная машина Ubuntu Server, но вы можете также создавать виртуальные машины Linux, используя [собственные образы в качестве шаблонов](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
 
 ## <a name="prerequisites"></a>Предварительные требования
-В этой статье предполагается, что у вас уже есть действующая подписка Azure ([бесплатная пробная подписка](https://azure.microsoft.com/pricing/free-trial/)), в которой подготовлена виртуальная машина. Прежде чем [создавать виртуальную машину](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure, выполнив команду [az login](/cli/azure/reference-index#az_login).
+В этой статье предполагается, что у вас уже есть действующая подписка Azure ([бесплатная пробная подписка](https://azure.microsoft.com/pricing/free-trial/)), в которой подготовлена виртуальная машина. Прежде чем [создавать виртуальную машину](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 ## <a name="azure-os-disk"></a>Диск ОС в Azure
 У созданной в Azure виртуальной машины Linux будет два диска: **/dev/sda** (диск операционной системы) и **/dev/sdb** (временный диск).  Не используйте основной диск ОС (**/dev/sda**) для чего-либо, кроме операционной системы, так как он оптимизирован для быстрой загрузки виртуальной машины и не обеспечивает высокую производительность при рабочих нагрузках. К виртуальной машине можно подключить один или несколько дисков, чтобы создать постоянное оптимизированное хранилище данных. 

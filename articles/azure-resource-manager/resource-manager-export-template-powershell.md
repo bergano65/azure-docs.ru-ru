@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/23/2018
 ms.author: tomfitz
-ms.openlocfilehash: cca81bf3f5a46b32cc901a0ac6024eb7888685f7
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 0313266c9e9bf7814d4581dc04d70cf80e1f8172
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55081611"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55494720"
 ---
 # <a name="export-azure-resource-manager-templates-with-powershell"></a>Экспорт шаблонов Azure Resource Manager с помощью PowerShell
 
@@ -30,6 +30,8 @@ Resource Manager позволяет экспортировать шаблон и
 * Вы можете экспортировать **созданный шаблон, который представляет текущее состояние группы ресурсов**. Он не основан на каком-либо шаблоне, который использовался для развертывания. Вместо этого создается шаблон, который является "моментальным снимком" или "резервной копией" группы ресурсов. Экспортированный шаблон содержит много жестко заданных значений и, скорее всего, меньше параметров, чем вы обычно определяете. Этот вариант подходит для повторного развертывания ресурсов в той же группе ресурсов. Чтобы использовать этот шаблон для другой группы ресурсов, возможно, его потребуется значительно изменить.
 
 В этой статье показаны оба подхода.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="deploy-a-solution"></a>Развертывание решения
 
