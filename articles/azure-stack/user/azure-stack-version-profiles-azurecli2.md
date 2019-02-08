@@ -14,12 +14,12 @@ ms.date: 01/24/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 6d494cbc53ce83cfe4aaef63653eab2da9b35937
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b27dd1b9aec89f259649b313d3ba7f944ea647f1
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249949"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55765727"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -126,7 +126,7 @@ Write-Host "Python Cert store was updated to allow the Azure Stack CA root certi
         --suffix-keyvault-dns ".adminvault.local.azurestack.external" \ 
         --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
       ```
-    b. Чтобы зарегистрировать среду *пользователя*, используйте команду:
+    б) Чтобы зарегистрировать среду *пользователя*, используйте команду:
 
       ```azurecli
       az cloud register \ 
@@ -148,7 +148,7 @@ Write-Host "Python Cert store was updated to allow the Azure Stack CA root certi
         --endpoint-active-directory-resource-id=<URI of the ActiveDirectoryServiceEndpointResourceID> \
         --profile 2018-03-01-hybrid
       ```
-    d. Чтобы зарегистрировать пользователя в среде AD FS, используйте команду:
+    4.3. Чтобы зарегистрировать пользователя в среде AD FS, используйте команду:
 
       ```azurecli
       az cloud register \
@@ -171,7 +171,7 @@ Write-Host "Python Cert store was updated to allow the Azure Stack CA root certi
         -n AzureStackAdmin
       ```
 
-    b. В среде *пользователя* используйте команду:
+    б) В среде *пользователя* используйте команду:
 
       ```azurecli
       az cloud set \

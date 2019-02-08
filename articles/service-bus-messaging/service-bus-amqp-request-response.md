@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 113ed80910e396361396a9c1298fc04a55ac4800
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 13495107aff24b868a4188c25768868945e70db8
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852482"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55658221"
 ---
 # <a name="amqp-10-in-microsoft-azure-service-bus-request-response-based-operations"></a>AMQP 1.0 в служебной шине Microsoft Azure: операции c запросами и ответами
 
@@ -505,7 +505,7 @@ properties: {
 |session-id|строка|Нет ||  
 |reply-to-session-id|строка|Нет ||  
 |content-type|строка|Нет ||  
-|properties|map|Нет |Сопоставляется с [BrokeredMessage.Properties](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Properties) в служебной шине.|  
+|properties|map|Нет |Сопоставляется с [BrokeredMessage.Properties](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) в служебной шине.|  
   
 Схема **sql-rule-action** должна включать следующие элементы.  
   

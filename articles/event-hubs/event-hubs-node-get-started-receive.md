@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: d13f97ff7ec25fd638b92dc1c057afcaeecc2bf9
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 6986a5c40b51300b631f3fdce6c3a88b43fb5b11
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434075"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55730889"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-nodejs"></a>Получение событий от Центров событий Azure с помощью Node.js
 
@@ -49,7 +49,7 @@ ms.locfileid: "53434075"
 ## <a name="install-the-eventprocessorhost"></a>Установка EventProcessorHost
 Установите EventProcessorHost для модуля Центров событий. 
 
-```nodejs
+```shell
 npm install @azure/event-processor-host
 ```
 
@@ -61,20 +61,20 @@ npm install @azure/event-processor-host
 3. Настройте строку подключения, имя концентратора событий и конечную точку хранилища. Вы можете скопировать строку подключения для концентратора событий из поля **Строка подключения — первичный ключ** в разделе **RootManageSharedAccessKey** на странице Центра событий на портале Azure. Подробные сведения см. в [этом разделе](event-hubs-create.md#create-an-event-hubs-namespace).
 4. В интерфейсе командной строки Azure перейдите к папке **processor**. Установите пакеты узла и создайте проект, выполнив следующие команды:
 
-    ```nodejs
+    ```shell
     npm i
     npm run build
     ```
 5. Получите события с помощью узла обработчика событий путем выполнения следующей команды:
 
-    ```nodejs
+    ```shell
     node dist/examples/singleEph.js
     ```
 
 ## <a name="review-the-sample-code"></a>Просмотр примера кода 
 Ниже приведен пример кода для получения событий от концентратора событий с помощью Node.js. Вы можете вручную создать файл sampleEph.js и запустить его, чтобы получать события в концентраторе событий. 
 
-  ```nodejs
+  ```javascript
   const { EventProcessorHost, delay } = require("@azure/event-processor-host");
 
   const path = process.env.EVENTHUB_NAME;
@@ -127,7 +127,7 @@ npm install @azure/event-processor-host
 
 Прежде чем выполнять этот скрипт, не забудьте задать переменные среды. Вы можете настроить это в командной строке, как показано в следующем примере, или использовать [пакет dotenv](https://www.npmjs.com/package/dotenv#dotenv). 
 
-```
+```shell
 // For windows
 set EVENTHUB_CONNECTION_STRING="<your-connection-string>"
 set EVENTHUB_NAME="<your-event-hub-name>"

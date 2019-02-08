@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/26/2018
-ms.openlocfilehash: 86b6c4284cccb183ac9f19911abd4b6cb1d308e5
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 01/01/2019
+ms.openlocfilehash: a6b31933f7170006046846c458e21efd8c54034c
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53546918"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660737"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
@@ -83,7 +83,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 Ниже приведены настраиваемые параметры для хранилища запросов.
 | **Параметр** | **Описание** | **По умолчанию** | **Range**|
 |---|---|---|---|
-| pg_qs.query_capture_mode | Задает, какие инструкции отслеживаются. | top | none, top, all |
+| pg_qs.query_capture_mode | Задает, какие инструкции отслеживаются. | Нет | none, top, all |
 | pg_qs.max_query_text_length | Задает максимальную длину запроса, которую можно сохранить. Более длинные запросы будут усечены. | 6000 | 100–10 000 |
 | pg_qs.retention_period_in_days | Задает период хранения. | 7 | 1–30 |
 | pg_qs.track_utility | Задает, будут ли отслеживаться команды служебных программ. | on | on, off |

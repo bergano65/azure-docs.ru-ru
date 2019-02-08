@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 06/28/2017
 ms.author: dobett
-ms.openlocfilehash: 12ff4fef5e04819e967a39fe65845b89790e22d6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: b3afbeb5a3fa2cda6ec5eaabe368163a370352d1
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234457"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55568198"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Передача файлов с устройства в облако с помощью Центра Интернета вещей
 
@@ -69,7 +69,7 @@ ms.locfileid: "51234457"
 
 1. Добавьте следующие инструкции ```require``` в начало файла **SimulatedDevice.js** :
 
-    ```nodejs
+    ```javascript
     'use strict';
     
     var fs = require('fs');
@@ -79,7 +79,7 @@ ms.locfileid: "51234457"
 
 1. Добавьте переменную ```deviceconnectionstring```, чтобы создать с ее помощью экземпляр **клиента**.  Замените ```{deviceconnectionstring}``` именем устройства, созданного в разделе о _создании центра Интернета вещей_.
 
-    ```nodejs
+    ```javascript
     var connectionString = '{deviceconnectionstring}';
     var filename = 'myimage.png';
     ```
@@ -89,14 +89,14 @@ ms.locfileid: "51234457"
 
 1. Чтобы подключить клиент, добавьте следующий код:
 
-    ```nodejs
+    ```javascript
     var client = clientFromConnectionString(connectionString);
     console.log('Client connected');
     ```
 
 1. Создайте обратный вызов и отправьте файл с помощью функции **uploadToBlob**.
 
-    ```nodejs
+    ```javascript
     fs.stat(filename, function (err, stats) {
         const rr = fs.createReadStream(filename);
     
@@ -136,7 +136,7 @@ ms.locfileid: "51234457"
 
 1. Добавьте следующие инструкции ```require``` в начало файла **FileUploadNotification.js**:
 
-    ```nodejs
+    ```javascript
     'use strict';
     
     var Client = require('azure-iothub').Client;
@@ -144,7 +144,7 @@ ms.locfileid: "51234457"
 
 1. Добавьте переменную ```iothubconnectionstring```, чтобы создать с ее помощью экземпляр **клиента**.  Замените ```{iothubconnectionstring}``` строкой подключения к Центру Интернета вещей, созданному в _соответствующем разделе_.
 
-    ```nodejs
+    ```javascript
     var connectionString = '{iothubconnectionstring}';
     ```
 
@@ -153,13 +153,13 @@ ms.locfileid: "51234457"
 
 1. Чтобы подключить клиент, добавьте следующий код:
 
-    ```nodejs
+    ```javascript
     var serviceClient = Client.fromConnectionString(connectionString);
     ```
 
 1. Откройте клиент и воспользуйтесь функцией **getFileNotificationReceiver**, чтобы получить обновления состояния.
 
-    ```nodejs
+    ```javascript
     serviceClient.open(function (err) {
       if (err) {
         console.error('Could not connect: ' + err.message);

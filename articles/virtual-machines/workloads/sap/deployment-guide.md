@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
-ms.openlocfilehash: dc44394bda1208eb2dab0a02dd73152e51788d4c
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: b2c3e8d7c465ca4fa9427c3a14ef04e4f69d17d6
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54424909"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661570"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -719,7 +719,7 @@ ms.locfileid: "54424909"
 
     В системах большого размера мы настоятельно рекомендуем использовать хранилище Azure класса Premium. Дополнительные сведения о типах хранилищ см. в следующих ресурсах:
       * [Использование хранилища SSD класса Premium Azure для экземпляра СУБД SAP][2367194]
-      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64)
+      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64)
       * [Хранилище класса Premium: высокопроизводительное хранилище для рабочих нагрузок виртуальных машин Azure][storage-premium-storage-preview-portal]
       * [Введение в службу хранилища Microsoft Azure][storage-introduction]
   * **OS disk VHD URI** (Универсальный код ресурса (URI) VHD диска ОС). Универсальный код ресурса (URI) частного диска ОС, например https://&lt;имя_учетной_записи>.blob.core.windows.net/vhds/osdisk.vhd.
@@ -1085,7 +1085,7 @@ azure --version
 
    **Ожидаемый результат**: возвращается список счетчиков производительности. Файл не должен быть пустым.
 
- b. Запустите `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
+ б) Запустите `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
 
    **Ожидаемый результат**: Возвращается одна строка, где для параметра error задано значение **none**, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;**.
 
@@ -1101,7 +1101,7 @@ azure --version
 
       **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
-  b.  Запустите `ps -ax | grep waagent`
+  б)  Запустите `ps -ax | grep waagent`
 
    **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /usr/sbin/waagent -daemon`.
 
@@ -1111,7 +1111,7 @@ azure --version
 
     **Ожидаемый результат**: должно отобразиться содержимое каталога расширения расширенного мониторинга Azure.
 
-  b. Запустите `ps -ax | grep AzureEnhanced`
+  б) Запустите `ps -ax | grep AzureEnhanced`
 
      **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-2.0.0.2/handler.py daemon`.
 
@@ -1119,7 +1119,7 @@ azure --version
 
   a.  Запустите `/usr/sap/hostctrl/exe/saposcol -d`
 
-  b.  Запустите `dump ccm`
+  б)  Запустите `dump ccm`
 
   c.  Проверьте, задано ли для метрики **Virtualization_Configuration\Enhanced Monitoring Access** значение **true**.
 

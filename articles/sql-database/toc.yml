@@ -191,6 +191,8 @@ items:
       href: sql-database-automated-backups.md
     - name: Долгосрочное хранение резервных копий
       href: sql-database-long-term-retention.md
+    - name: События планового обслуживания
+      href: sql-database-planned-maintenance.md
     - name: Группы отработки отказа и георепликация
       items:
       - name: Активная георепликация
@@ -295,8 +297,6 @@ items:
       href: sql-database-elastic-query-overview.md
     - name: Эластичные транзакции
       href: sql-database-elastic-transactions-overview.md
-  - name: Сравнение возможностей SQL
-    href: sql-database-features.md
   - name: Мониторинг и настройка
     items:
     - name: Общие сведения о мониторинге и настройке
@@ -321,24 +321,28 @@ items:
         href: sql-database-performance.md
       - name: Рекомендации по производительности Помощника по базам данных
         href: sql-database-advisor.md
-  - name: Загрузка и перемещение данных
-    items:
-    - name: Синхронизация данных SQL
-      href: sql-database-sync-data.md
-    - name: Репликация транзакций
-      href: sql-database-managed-instance-transactional-replication.md
   - name: Функции баз данных
     items:
-    - name: Функции баз данных
-      href: sql-database-develop-overview.md
+    - name: Сравнение возможностей SQL
+      href: sql-database-features.md
     - name: Возможности при использовании нескольких моделей
       href: sql-database-multi-model-features.md
     - name: В памяти
       href: sql-database-in-memory.md
+    - name: Репликация транзакций
+      href: sql-database-managed-instance-transactional-replication.md
+    - name: Синхронизация данных SQL
+      href: sql-database-sync-data.md
     - name: Временные таблицы
       href: sql-database-temporal-tables.md
     - name: Автоматизация заданий
       href: sql-database-job-automation-overview.md
+    - name: Машинное обучение
+      items:
+      - name: Общие сведения о машинном обучении
+        href: sql-database-machine-learning-services-overview.md
+      - name: Основные отличия
+        href: sql-database-machine-learning-services-differences.md
 - name: Практические руководства
   items:
   - name: Обзор
@@ -523,8 +527,8 @@ items:
       href: sql-database-manage-automation.md
   - name: Разработка приложений
     items:
-    - name: Соединение
-      href: sql-database-libraries.md
+    - name: Обзор
+      href: sql-database-develop-overview.md
     - name: Работа с данными JSON
       href: sql-database-json-features.md
     - name: Использование соединителя Spark
@@ -712,9 +716,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: 9a04e463a7324b1021594a8fbefc5988ad8471f2
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 1b32688e6e9ed6b826dd9191c8d58e85b1b2b128
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756739"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813687"
