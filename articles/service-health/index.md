@@ -1,23 +1,18 @@
 ---
 title: Служба "Работоспособность служб Azure" | Документация Майкрософт
 description: Служба "Работоспособность служб Azure" предоставляет индивидуальные инструкции и средства поддержки на случай проблем со службами Azure.
-services: Azure Service Health
-author: czeumault
-manager: carolz
+author: stephbaron
 layout: LandingPage
-ms.assetid: ''
 ms.service: service-health
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 03/27/2018
-ms.author: carolz
-ms.openlocfilehash: ab00f53b6fa6338e999590ccfc6e6bfff84c2276
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: stbaron
+ms.openlocfilehash: d8d922dd16cb00b5e3a682dc491af6b59f8476f2
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949457"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55881933"
 ---
 # <a name="azure-service-health-documentation"></a>Документация по службе работоспособности служб Azure
 

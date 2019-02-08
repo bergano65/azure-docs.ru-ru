@@ -130,6 +130,10 @@ items:
       href: howto-manage-vnet-portal.md
     - name: Инфраструктура CLI Azure
       href: howto-manage-vnet-cli.md
+  - name: Перезапуск сервера
+    items:
+    - name: Портал Azure
+      href: howto-restart-server-portal.md
 - name: Справочные материалы
   items:
   - name: REST API
@@ -156,9 +160,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: be43ebf5bf400b671f45f4ab6d8e3a75d85c4714
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 4df6cff8267964899cbeede6f505f6a04e405dd5
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190157"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895202"
