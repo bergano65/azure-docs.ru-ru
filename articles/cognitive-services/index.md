@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.author: nitinme
 ms.date: 10/23/2018
 ms.topic: hub-page
-ms.openlocfilehash: 389dd4e8b6f2157c1c53528506435a97a07a493e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: ceb5bb59f65e0f01d04d1aa9726b2494384b4a67
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55872940"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998959"
 ---
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
@@ -316,7 +316,6 @@ ms.locfileid: "55872940"
                         <p><a href="/azure/cognitive-services/speech-service">API службы "Речь"</a></p>
                         <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/speech/home"><span>API распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><span>Пользовательская служба распознавания речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/translator-speech/"><span>Перевод речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                      </div>
                 </div>
