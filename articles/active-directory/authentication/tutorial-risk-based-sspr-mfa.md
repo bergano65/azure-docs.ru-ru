@@ -5,17 +5,17 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 07/11/2018
+ms.date: 01/31/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 504e314151409732cba23af97224683eb35a7c81
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: df3344efadbc915bba0c863979cae8b8fdff99b0
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55075488"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512131"
 ---
 # <a name="tutorial-use-risk-events-to-trigger-multi-factor-authentication-and-password-changes"></a>Руководство. Использование событий риска для активации Многофакторной идентификации и изменения пароля
 
@@ -51,7 +51,7 @@ ms.locfileid: "55075488"
 
 ### <a name="enable-users-to-register-for-multi-factor-authentication"></a>Включение пользователей для регистрации для Многофакторной идентификации
 
-Защита идентификации Azure AD включает по умолчанию политику, которая поможет обеспечить регистрацию для Многофакторной идентификации пользователей и легко определить текущее состояние регистрации. Включение этой политики не требует от пользователей выполнения Многофакторной идентификации, но попросит их предварительно зарегистрироваться.
+Защита идентификации Azure AD включает по умолчанию политику, которая поможет обеспечить регистрацию для многофакторной проверки подлинности пользователей и легко определить текущее состояние регистрации. Включение этой политики не требует от пользователей выполнения Многофакторной идентификации, но попросит их предварительно зарегистрироваться.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Щелкните **Все службы**, затем перейдите к разделу **Защита идентификации Azure AD**.

@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 09/24/2018
+ms.date: 02/05/2019
 ms.author: celested
 ms.reviewer: dadobali
 ms.custom: aaddev
-ms.openlocfilehash: 3e4cd8859f376fa4fbb9069b145d893483c3fc14
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 0ffde84a39ef2955f14af66a05195e35109d41bb
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101266"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692143"
 ---
 # <a name="quickstart-set-up-a-dev-environment"></a>Краткое руководство. Настройка среды разработки
 
@@ -64,8 +64,11 @@ ms.locfileid: "55101266"
 Если у вас еще нет клиента Azure AD или вы хотите создать клиент для разработки, используйте [процедуру создания каталога](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
-- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже. 
+- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
 - **Страна или регион**
+
+> [!NOTE]
+> Имя вашего клиента должно содержать буквы и цифры. Использовать специальные знаки не допускается. Длина имени не должна превышать 256 символов.
 
 ## <a name="social-and-local-accounts"></a>Учетные записи социальных сетей и локальные учетные записи
 

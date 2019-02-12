@@ -3,7 +3,7 @@ title: Руководство. Развертывание LAMP на виртуа
 description: В этом руководство описано, как установить стек LAMP на виртуальной машине Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: dlepow
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 11/27/2017
-ms.author: danlep
-ms.openlocfilehash: 5caed6fba607cb93a6168bded7531bc8bf63b9da
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 01/30/2019
+ms.author: cynthn
+ms.openlocfilehash: c69c7055e420ffa64e547f5c3fe53d997cf90168
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46970691"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753713"
 ---
 # <a name="tutorial-install-a-lamp-web-server-on-a-linux-virtual-machine-in-azure"></a>Руководство. Установка веб-сервера LAMP на виртуальной машине Linux в Azure
 
@@ -50,15 +50,12 @@ ms.locfileid: "46970691"
 sudo apt update && sudo apt install lamp-server^
 ```
 
-
-Отобразится запрос на установку пакетов и других зависимостей. При появлении запроса укажите пароль привилегированного пользователя для MySQL, а затем нажмите клавишу ВВОД для продолжения. Выполните оставшиеся инструкции на экране. Это позволит установить минимальный набор расширений PHP, необходимый для использования PHP с MySQL. 
-
-![Страница с паролем привилегированного пользователя MySQL][1]
+Отобразится запрос на установку пакетов и других зависимостей. Это позволит установить минимальный набор расширений PHP, необходимый для использования PHP с MySQL.  
 
 ## <a name="verify-installation-and-configuration"></a>Проверка установки и настройки
 
 
-### <a name="apache"></a>Apache
+### <a name="verify-apache"></a>Проверка Apache
 
 Проверьте версию Apache, выполнив следующую команду:
 ```bash
@@ -70,7 +67,7 @@ apache2 -v
 ![Страница Apache по умолчанию][3]
 
 
-### <a name="mysql"></a>MySQL
+### <a name="verify-and-secure-mysql"></a>Проверка и обеспечение защиты MySQL
 
 Узнайте версию MySQL, выполнив указанную ниже команду. Обратите внимание, что параметр `V` указан с заглавной буквы.
 
@@ -78,23 +75,23 @@ apache2 -v
 mysql -V
 ```
 
-Чтобы защитить установку MySQL, выполните сценарий `mysql_secure_installation`. Если вы настраиваете только временный сервер, этот шаг можно пропустить.
+Чтобы обеспечить безопасную установку MySQL и указать пароль привилегированного пользователя, выполните скрипт `mysql_secure_installation`. 
 
 ```bash
-mysql_secure_installation
+sudo mysql_secure_installation
 ```
 
-Введите пароль привилегированного пользователя MySQL и настройте параметры безопасности для своей среды.
+При необходимости можно настроить подключаемый модуль проверки пароля (рекомендуется). Затем укажите пароль привилегированного пользователя MySQL и настройте остальные параметры безопасности для вашей среды. Мы рекомендуем ответить "Да" на все вопросы.
 
 Чтобы опробовать функции MySQL (создать базу данных MySQL, добавить пользователей или изменить параметры конфигурации), войдите в MySQL. Этот шаг не требуется для изучения данного руководства.
 
 ```bash
-mysql -u root -p
+sudo mysql -u root -p
 ```
 
 По окончании выйдите из командной строки MySQL, введя `\q`.
 
-### <a name="php"></a>PHP
+### <a name="verify-php"></a>Проверка PHP
 
 Узнайте версию PHP, выполнив следующую команду:
 
@@ -114,7 +111,6 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 
 [!INCLUDE [virtual-machines-linux-tutorial-wordpress.md](../../../includes/virtual-machines-linux-tutorial-wordpress.md)]
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как развернуть сервер LAMP в Azure. Вы научились выполнять следующие задачи:
@@ -131,6 +127,5 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 > [!div class="nextstepaction"]
 > [Secure a web server with SSL certificates on a Linux virtual machine in Azure](tutorial-secure-web-server.md) (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
 
-[1]: ./media/tutorial-lamp-stack/configmysqlpassword-small.png
 [2]: ./media/tutorial-lamp-stack/phpsuccesspage.png
 [3]: ./media/tutorial-lamp-stack/apachesuccesspage.png

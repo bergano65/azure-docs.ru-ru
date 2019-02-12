@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 12/19/2018
-ms.openlocfilehash: f23b297acdd8de0c26bf5fc02bc2d5415845b828
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.date: 02/04/2019
+ms.openlocfilehash: ac3f24530d23278eb8f59ddc195ae1ac4f881a37
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53718186"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700865"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md) с минимальным временем простоя в работе приложений. Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
@@ -135,6 +135,15 @@ Azure Database Migration Service можно использовать для пе
    ![Сведения об источнике](media/tutorial-sql-server-to-managed-instance-online/dms-source-details2.png)
 
 3. Щелкните **Сохранить**.
+
+4. На экране **Выбор баз данных-источников** выберите базу данных **Adventureworks2012** для миграции.
+
+   ![Выбор баз данных-источников](media/tutorial-sql-server-to-managed-instance-online/dms-source-database1.png)
+
+    > [!IMPORTANT]
+    > При использовании SQL Server Integration Services (SSIS), DMS не поддерживает перенос базы данных каталога для проектов или пакеты служб SSIS (SSISDB) с SQL Server в Управляемый экземпляр Базы данных SQL Azure. Но можно подготовить SSIS в Фабрике данных Azure (ADF) и повторно развернуть проекты или пакеты служб SSIS в целевую базу данных SSISDB, размещенную в Управляемом экземпляре Базы данных SQL Azure. Дополнительные сведения о миграции пакетов SSIS см. в статье [Перенос пакетов SQL Server Integration Services в Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
+
+5. Щелкните **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 

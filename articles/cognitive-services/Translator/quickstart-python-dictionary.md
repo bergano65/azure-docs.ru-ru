@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 10/21/2018
+ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 8dcde1231d5e2d73b868411cb22b8420843197be
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 4ca07416c615984b4eb6c7799ff17d9fbe43fa3b
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458277"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55691476"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-python"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Python
 
@@ -64,7 +64,7 @@ else:
 #subscriptionKey = 'put_your_key_here'
 ```
 
-В настоящее время для API перевода текстов доступна одна конечная точка и она задана как `base_url`. Параметр `path` задает маршрут `dictionary/lookup` и определяет, что нужно использовать версию 3 API.
+Конечная точка для перевода текстов задается как `base_url`. Параметр `path` задает маршрут `dictionary/lookup` и определяет, что нужно использовать версию 3 API.
 
 Параметры `params` используются для установки исходных и выходных языков. В этом примере мы используем английский и испанский языки: `en` и `es`.
 

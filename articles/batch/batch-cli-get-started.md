@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 07/24/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0d51052f4e04a1497ccf2e91427e3465bdc5bf2f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5117d426ac9595dfe25828013c1bd8c7fa81f92c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476831"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812367"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -63,7 +63,7 @@ Azure CLI — это интерфейс командной строки Azure д
 В Azure можно войти разными способами, описанными в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli):
 
 1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
-2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-logging-in-with-a-service-principal) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
+2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
 
 В рамках этого руководства мы покажем, как войти в Azure в интерактивном режиме. В окне командной строки введите [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login):
 
@@ -76,7 +76,7 @@ az login
 
 ![Вход в Azure](./media/batch-cli-get-started/az-login.png)
 
-Примеры, приведенные в разделе [Примеры скриптов оболочки](#sample-shell-scripts), позволяют запустить сеанс Azure CLI после входа в Azure в интерактивном режиме. После входа вы сможете вызвать команды для работы с ресурсами управления пакетной службой, в том числе учетные записи пакетной службы, ключи, пакеты приложений и квоты.  
+Примеры, приведенные в разделе примеров скриптов оболочки, позволяют запустить сеанс Azure CLI после входа в Azure в интерактивном режиме. После входа вы сможете вызвать команды для работы с ресурсами управления пакетной службой, в том числе учетные записи пакетной службы, ключи, пакеты приложений и квоты.  
 
 ### <a name="log-in-to-your-batch-account"></a>Вход в учетную запись пакетной службы
 
@@ -110,7 +110,7 @@ az login
     az batch account login -g myresourcegroup -n mybatchaccount --shared-key-auth
     ```
 
-В примерах, приведенных в разделе [Примеры скриптов оболочки](#sample-shell-scripts), описано, как войти в учетную запись пакетной службы с помощью Azure CLI, использую и Azure AD, и общий ключ.
+В примерах, приведенных в разделе примеров скриптов оболочки, описано, как войти в учетную запись пакетной службы с помощью Azure CLI, используя Azure AD и общий ключ.
 
 ## <a name="use-azure-batch-cli-extension-commands"></a>Использование команд расширения CLI для пакетной службы Azure
 
@@ -168,7 +168,7 @@ az batch task list --job-id job001
 
 * Используйте параметр `-h` , чтобы вывести на экран **текст справки** по любой из команд интерфейса командной строки.
 * Чтобы отобразить выходные данные команды **verbose**, используйте `-v` и `-vv`. Когда флаг `-vv` включен, Azure CLI отображает текущие REST-запросы и ответы. Эти параметры удобно использовать для просмотра полного вывода ошибок.
-* Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный [JSON-файлам](#json-files)).
+* Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный JSON-файлам).
 <!---Loc Comment: Please, check link [JSON files] since it's not redirecting to any location.--->
 
 ## <a name="next-steps"></a>Дополнительная информация

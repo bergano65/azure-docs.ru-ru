@@ -3,7 +3,7 @@ title: Примеры сценариев Azure CLI для базы данных 
 description: Примеры сценариев Azure CLI для создания серверов, эластичных пулов, баз данных, а также брандмауэров базы данных SQL Azure и управления ими.
 services: sql-database
 ms.service: sql-database
-ms.subservice: ''
+ms.subservice: service
 ms.custom: overview-samples, mvc
 ms.devlang: azurecli
 ms.topic: sample
@@ -11,15 +11,25 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 3eb077cf705f08e1ad953211c00c6b1eaa50ee3b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/03/2019
+ms.openlocfilehash: 3b98214da259e9e429c938f8ca7963c9f525e862
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477902"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55560827"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для базы данных SQL Azure
+
+Базу данных SQL Azure можно настроить с помощью <a href="/cli/azure">Azure CLI</a>.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
+
+## <a name="single-database--elastic-pools"></a>Отдельная база данных и эластичные пулы
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для базы данных SQL Azure.
 
@@ -31,5 +41,19 @@ ms.locfileid: "55477902"
 |**Масштабирование отдельной базы данных и эластичного пула**||
 | [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует отдельную базу данных SQL Azure до другого уровня вычислительной мощности после запроса на получение сведений о размере базы данных. |
 | [Масштабирование эластичного пула](scripts/sql-database-scale-pool-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует эластичный пул SQL, изменяя его вычислительную мощность.  |
-| [Создание управляемого экземпляра и управление им](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) | Эти сценарии интерфейса командной строки демонстрируют создание управляемого экземпляра и управление им с помощью Azure CLI. |
 |||
+
+См. дополнительные сведения об [API управления отдельной базой данных с помощью Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).
+
+## <a name="managed-instance"></a>Управляемый экземпляр
+
+В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для Управляемого экземпляра Базы данных SQL Azure.
+
+| |  |
+|---|---|
+| [Создание Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/11/14/create-azure-sql-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как создать Управляемый экземпляр. |
+| [Обновление Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/11/14/modify-azure-sql-database-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как обновить Управляемый экземпляр. |
+| [Перемещение базы данных в другой Управляемый экземпляр](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/07/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/) | В этом скрипте CLI показано, как восстановить резервную копию базы данных из одного экземпляра в другой. |
+|||
+
+См. дополнительные сведения об [API управления Управляемым экземпляром с помощью Azure CLI](sql-database-managed-instance-create-manage.md#azure-cli-create-and-manage-managed-instances). Дополнительные примеры можно найти [здесь](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).

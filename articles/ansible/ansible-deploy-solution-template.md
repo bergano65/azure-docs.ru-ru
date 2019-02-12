@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 01/28/2019
-ms.openlocfilehash: 705d23a93b25c513d413f2115c47d52ff6ef2bac
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9fa711c86e3ef7f05e87504905ec642808d8f601
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55229217"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55770288"
 ---
 # <a name="deploy-the-ansible-solution-template-for-azure-to-centos"></a>Развертывание шаблона решения Ansible для Azure в CentOS
 Шаблон решения Ansible для Azure позволяет настроить экземпляр Ansible на виртуальной машине CentOS вместе с Ansible и набором средств для работы с Azure. Вот эти средства:

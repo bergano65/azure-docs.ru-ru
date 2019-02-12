@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/18/2018
 ms.author: zhshang
-ms.openlocfilehash: 0cd0dcaf200b1248204efc2d2c0011a94d3c41d3
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: b66d4c9fb3bce03248f5696d5a7b2b7b62b7ffd3
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720974"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746385"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
@@ -302,7 +302,7 @@ ms.locfileid: "53720974"
 
 При отправке сообщения приложение будет определять, нужно ли отправить его всем подключенным клиентам или только тем, которые прошли аутентификацию от имени определенного пользователя.
 
-1. В VS Code откройте файл **SendMessage/function.json**.
+1. В VS Code откройте файл **SignalRInfo/function.json**.
 
 1. Вставьте [выражение привязки](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#binding-expressions-and-patterns) в свойство *userId* для привязки *SignalRConnectionInfo*: `{headers.x-ms-client-principal-name}`. Так мы сохраним в этом значении имя пользователя, прошедшего аутентификацию. Теперь этот атрибут будет выглядеть следующим образом:
 

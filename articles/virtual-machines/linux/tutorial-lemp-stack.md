@@ -3,7 +3,7 @@ title: Руководство. Развертывание LEMP на виртуа
 description: В этом руководстве описано, как установить стек LEMP на виртуальной машине Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: dlepow
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 11/27/2017
-ms.author: danlep
-ms.openlocfilehash: c4926760162baa5687242f4372377c64c7e24b19
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 01/30/2019
+ms.author: cynthn
+ms.openlocfilehash: 0a9d63f4064952adbfedfc3f9656370ef7c4a1cc
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999364"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55511283"
 ---
 # <a name="tutorial-install-a-lemp-web-server-on-a-linux-virtual-machine-in-azure"></a>Руководство. Установка веб-сервера LEMP на виртуальной машине Linux в Azure
 
@@ -46,17 +46,15 @@ ms.locfileid: "46999364"
 Чтобы обновить источники пакетов Ubuntu и установить NGINX, PHP и MySQL, выполните команду ниже. 
 
 ```bash
-sudo apt update && sudo apt install nginx mysql-server php-mysql php php-fpm
+sudo apt update && sudo apt install nginx && sudo apt install mysql-server php-mysql php-fpm
 ```
 
-Отобразится запрос на установку пакетов и других зависимостей. При появлении запроса укажите пароль привилегированного пользователя для MySQL, а затем нажмите клавишу ВВОД для продолжения. Выполните оставшиеся инструкции на экране. Это позволит установить минимальный набор расширений PHP, необходимый для использования PHP с MySQL. 
-
-![Страница с паролем привилегированного пользователя MySQL][1]
+Отобразится запрос на установку пакетов и других зависимостей. Это позволит установить минимальный набор расширений PHP, необходимый для использования PHP с MySQL.  
 
 ## <a name="verify-installation-and-configuration"></a>Проверка установки и настройки
 
 
-### <a name="nginx"></a>NGINX
+### <a name="verify-nginx"></a>Проверка NGINX
 
 Узнайте версию NGINX с помощью следующей команды:
 ```bash
@@ -68,7 +66,7 @@ nginx -v
 ![Страница NGINX по умолчанию][3]
 
 
-### <a name="mysql"></a>MySQL
+### <a name="verify-and-secure-mysql"></a>Проверка и обеспечение защиты MySQL
 
 Узнайте версию MySQL, выполнив указанную ниже команду. Обратите внимание, что параметр `V` указан с заглавной буквы.
 
@@ -76,24 +74,24 @@ nginx -v
 mysql -V
 ```
 
-Чтобы защитить установку MySQL, выполните сценарий `mysql_secure_installation`. Если вы настраиваете только временный сервер, этот шаг можно пропустить. 
+Чтобы обеспечить безопасную установку MySQL и указать пароль привилегированного пользователя, выполните скрипт `mysql_secure_installation`. 
 
 ```bash
-mysql_secure_installation
+sudo mysql_secure_installation
 ```
 
-Введите пароль привилегированного пользователя MySQL и настройте параметры безопасности для своей среды.
+При необходимости можно настроить подключаемый модуль проверки пароля (рекомендуется). Затем укажите пароль привилегированного пользователя MySQL и настройте остальные параметры безопасности для вашей среды. Мы рекомендуем ответить "Да" на все вопросы.
 
 Чтобы опробовать функции MySQL (создать базу данных MySQL, добавить пользователей или изменить параметры конфигурации), войдите в MySQL. Этот шаг не требуется для изучения данного руководства. 
 
 
 ```bash
-mysql -u root -p
+sudo mysql -u root -p
 ```
 
 По окончании выйдите из командной строки MySQL, введя `\q`.
 
-### <a name="php"></a>PHP
+### <a name="verify-php"></a>Проверка PHP
 
 Узнайте версию PHP, выполнив следующую команду:
 
@@ -109,7 +107,7 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_ba
 sudo sensible-editor /etc/nginx/sites-available/default
 ```
 
-В редакторе замените содержимое `/etc/nginx/sites-available/default` кодом ниже. Описания параметров см. в комментариях. Замените общедоступный IP-адрес виртуальной машины на *свой_общедоступный_IP-адрес*, а остальные параметры оставьте без изменений. Затем сохраните файл.
+В редакторе замените содержимое `/etc/nginx/sites-available/default` кодом ниже. Описания параметров см. в комментариях. Замените общедоступный IP-адрес виртуальной машины на *свой_общедоступный_IP-адрес*, проверьте версию PHP в `fastcgi_pass`, а остальные параметры оставьте без изменений. Затем сохраните файл.
 
 ```
 server {
@@ -129,7 +127,7 @@ server {
     # Include FastCGI configuration for NGINX
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
     }
 }
 ```
@@ -177,6 +175,5 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'
 > [!div class="nextstepaction"]
 > [Secure a web server with SSL certificates on a Linux virtual machine in Azure](tutorial-secure-web-server.md) (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
 
-[1]: ./media/tutorial-lemp-stack/configmysqlpassword-small.png
 [2]: ./media/tutorial-lemp-stack/phpsuccesspage.png
 [3]: ./media/tutorial-lemp-stack/nginx.png

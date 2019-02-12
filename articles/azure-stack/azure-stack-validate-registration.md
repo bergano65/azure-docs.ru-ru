@@ -16,12 +16,12 @@ ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/04/2018
-ms.openlocfilehash: 0281186be4fae71c56b65327e0c67da3f252a33c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 614f8a3e3738e1c99f5a089410814765d278d3fe
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239525"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55743853"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
  
@@ -67,6 +67,8 @@ ms.locfileid: "55239525"
    ```powershell
    $registrationCredential = Get-Credential subscriptionowner@contoso.onmicrosoft.com -Message "Enter Credentials for Subscription Owner"
    ```
+> [!NOTE]
+  > Как поставщик служб шифрования при использовании общих служб или подписки IUR вы должны указать учетные данные пользователя из этого соответствующего клиента AAD. Как правило, имя будет выглядеть примерно так: `subscriptionowner@iurcontoso.onmicrosoft.com`. Этот пользователь должен иметь соответствующие учетные данные, как описано выше.
 
 3. В командной строке PowerShell выполните команду ниже, чтобы задать `$subscriptionID` в качестве используемой подписки Azure. Замените `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` фактическим идентификатором подписки:
    ```powershell

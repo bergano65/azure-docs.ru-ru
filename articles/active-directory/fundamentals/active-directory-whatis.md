@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 11/13/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 44533ea4430bb7cd3bc7e0b6451892cc68bacc19
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 251161fbb5213c765463835e4537f1b443699670
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54450223"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55491745"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Microsoft Azure Active Directory 
 Azure Active Directory (Azure AD) — это облачная служба управления удостоверениями и доступом от корпорации Майкрософт. Azure AD помогает сотрудникам входить в систему и получать доступ к ресурсам:
@@ -72,7 +72,7 @@ Azure AD могут использовать:
 |Глобальный администратор Azure AD|Эта роль администратора будет автоматически назначена тому, кто создал клиент Azure AD. Глобальные администраторы могут выполнять все административные функции для Azure AD и любых служб, которые включены в федерацию с Azure AD, например Exchange Online, SharePoint Online и Skype для бизнеса Online. У вас может быть несколько глобальных администраторов. Только они могут присваивать роли администратора (включая назначение других глобальных администраторов) пользователям.<br><br>**Примечание.**<br>Эта роль администратора называется "глобальный администратор" на портале Azure, но в API Microsoft Graph, API Graph для Azure AD и Azure AD PowerShell она называется **администратор компании**.<br><br>Дополнительные сведения о различных ролях администраторов см. в статье [Разрешения роли администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).|
 |Учетная запись Майкрософт (также называемая MSA)|Личные учетные записи, которые предоставляют доступ к ориентированным на потребителя продуктам Microsoft и облачным службам, таким как Outlook, OneDrive, Xbox LIVE или Office 365. Ваша учетная запись Майкрософт создается и хранится в системе учетных записей удостоверений потребителей под управлением корпорации Майкрософт.|
 
-## <a name="what-features-work-in-azure-ad"></a>Какие функции поддерживает Azure AD?
+## <a name="which-features-work-in-azure-ad"></a>Какие функции поддерживает Azure AD?
 После выбора лицензии Azure AD вы получите доступ ко всем (или некоторым) следующим функциям для своей организации:
 
 |Категория|ОПИСАНИЕ|

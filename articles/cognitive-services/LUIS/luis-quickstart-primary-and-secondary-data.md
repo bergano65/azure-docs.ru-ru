@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 167dce168f9adfa59a96c09c62548c7c6e253b09
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 53e975719b911a27667afc8565bd86261f927068
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211412"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820986"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство. Извлечение имен с использованием простой сущности и списка фраз
 
@@ -239,7 +239,7 @@ ms.locfileid: "55211412"
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз со словами в области значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Screenshot of create new phrase list dialog pop-up with words in phrase list values box")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 
-1. [Обучите](#train) и [опубликуйте](#publish) приложение еще раз, чтобы использовать список фраз.
+1. Обучите и опубликуйте приложение еще раз, чтобы использовать список фраз.
 
 1. Сделайте повторный запрос к конечной точке с той же фразой: `This is the lead welder paperwork.`
 

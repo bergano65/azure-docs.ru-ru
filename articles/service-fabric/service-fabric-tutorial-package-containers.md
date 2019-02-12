@@ -13,15 +13,15 @@ ms.service: service-fabric
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/12/2017
+ms.date: 01/31/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 7d622b834cef31552cac60b359cdd8404592eda9
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 135189c576c67212dac6afc1388a6ef9fb045346
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255563"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512386"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство. Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
 
@@ -227,17 +227,42 @@ r = redis.StrictRedis(host=redis_server, port=6379, db=0)
 
 ## <a name="create-a-service-fabric-cluster"></a>Создание кластера Service Fabric
 
-Чтобы развернуть приложение в кластере Azure, создайте собственный кластер.
+Чтобы развернуть приложение в Azure, требуется кластер Service Fabric, в котором будет выполняться приложение. С помощью следующих команд можно создать кластер из пяти узлов в Azure.  Команды также создают самозаверяющий сертификат, добавляют его в хранилище ключей и скачивают сертификат в виде PEM-файла на локальный компьютер. Новый сертификат используется для защиты кластера во время развертывания и для проверки подлинности клиентов.
 
-Кластеры сообщества — это бесплатные временные кластеры Service Fabric, размещенные в Azure. Их запускает команда Service Fabric. Любой пользователь может развертывать приложения в этих кластерах и изучать платформу. Чтобы получить доступ к кластеру сообщества, следуйте инструкциям в [этом разделе](https://aka.ms/tryservicefabric).
+```azurecli
+#!/bin/bash
 
-Чтобы выполнять операции управления на безопасном общедоступном кластере, можно использовать Service Fabric Explorer, CLI или Powershell. Чтобы использовать Service Fabric Explorer, необходимо скачать с веб-сайта общедоступного кластера PFX-файл и импортировать сертификат в хранилище сертификатов (Windows или Mac) или сам браузер (Ubuntu). Пароль для самозаверяющих сертификатов из общедоступного кластера стороны отсутствует.
+# Variables
+ResourceGroupName="containertestcluster" 
+ClusterName="containertestcluster" 
+Location="eastus" 
+Password="q6D7nN%6ck@6" 
+Subject="containertestcluster.eastus.cloudapp.azure.com" 
+VaultName="containertestvault" 
+VmPassword="Mypa$$word!321"
+VmUserName="sfadminuser"
 
-Для выполнения операций управления с помощью Powershell или CLI, требуется PFX-файл (Powershell) или PEM-файл (CLI). Чтобы преобразовать PFX-файл в PEM-файл, используйте следующую команду:
+# Login to Azure and set the subscription
+az login
 
-```bash
-openssl pkcs12 -in party-cluster-1277863181-client-cert.pfx -out party-cluster-1277863181-client-cert.pem -nodes -passin pass:
+az account set --subscription <mySubscriptionID>
+
+# Create resource group
+az group create --name $ResourceGroupName --location $Location 
+
+# Create secure five node Linux cluster. Creates a key vault in a resource group
+# and creates a certficate in the key vault. The certificate's subject name must match 
+# the domain that you use to access the Service Fabric cluster.  
+# The certificate is downloaded locally as a PEM file.
+az sf cluster create --resource-group $ResourceGroupName --location $Location \ 
+--certificate-output-folder . --certificate-password $Password --certificate-subject-name $Subject \ 
+--cluster-name $ClusterName --cluster-size 5 --os UbuntuServer1604 --vault-name $VaultName \ 
+--vault-resource-group $ResourceGroupName --vm-password $VmPassword --vm-user-name $VmUserName
 ```
+
+> [!Note]
+> Служба веб-интерфейса ожидает передачи данных через порт 80 для входящего трафика. По умолчанию порт 80 открыт в виртуальных машинах кластера и в подсистеме балансировки нагрузки Azure.
+>
 
 См. дополнительные сведения о [создании кластера Service Fabric в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
@@ -245,10 +270,10 @@ openssl pkcs12 -in party-cluster-1277863181-client-cert.pfx -out party-cluster-1
 
 Приложение можно развернуть в кластере Azure с помощью интерфейса командной строки Service Fabric. На вашем компьютере не установлен интерфейс командной строки Service Fabric, следуйте [этим](service-fabric-get-started-linux.md#set-up-the-service-fabric-cli) инструкциям, чтобы установить его.
 
-Подключитесь к кластеру Service Fabric в Azure. Замените конечную точку собственной. Конечная точка должна быть в формате полного URL-адреса, как показано ниже.
+Подключитесь к кластеру Service Fabric в Azure. Замените конечную точку собственной. Конечная точка должна быть в формате полного URL-адреса, как показано ниже.  PEM-файл — это самозаверяющий сертификат, который был создан ранее.
 
 ```bash
-sfctl cluster select --endpoint https://linh1x87d1d.westus.cloudapp.azure.com:19080 --pem party-cluster-1277863181-client-cert.pem --no-verify
+sfctl cluster select --endpoint https://containertestcluster.eastus.cloudapp.azure.com:19080 --pem containertestcluster22019013100.pem --no-verify
 ```
 
 С помощью сценария установки в каталоге **TestContainer** скопируйте пакет приложения в хранилище образов кластера, зарегистрируйте тип приложения и создайте экземпляр приложения.
@@ -257,11 +282,11 @@ sfctl cluster select --endpoint https://linh1x87d1d.westus.cloudapp.azure.com:19
 ./install.sh
 ```
 
-Откройте браузер и перейдите к Service Fabric Explorer по адресу http://lin4hjim3l4.westus.cloudapp.azure.com:19080/Explorer. Разверните узел Applications. Вы увидите одну запись для типа приложения и еще одну — для его экземпляра.
+Откройте браузер и перейдите к Service Fabric Explorer по адресу http://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer. Разверните узел Applications. Вы увидите одну запись для типа приложения и еще одну — для его экземпляра.
 
 ![Service Fabric Explorer][sfx]
 
-Чтобы подключиться к работающему приложению, откройте браузер и перейдите по URL-адресу кластера (например, http://lin0823ryf2he.cloudapp.azure.com:80). Вы должны увидеть приложение Voting в пользовательском веб-интерфейсе.
+Чтобы подключиться к работающему приложению, откройте браузер и перейдите по URL-адресу кластера (например, http://containertestcluster.eastus.cloudapp.azure.com:80). Вы должны увидеть приложение Voting в пользовательском веб-интерфейсе.
 
 ![votingapp][votingapp]
 

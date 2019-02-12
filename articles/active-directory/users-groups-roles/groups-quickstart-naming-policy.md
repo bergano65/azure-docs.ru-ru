@@ -1,5 +1,5 @@
 ---
-title: Добавление политики именования для групп Office 365 в Azure Active Directory | Документация Майкрософт
+title: Краткое руководство о добавлении политики именования для групп Office 365 — Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению новых или удалению существующих пользователей в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -10,16 +10,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/08/2018
+ms.date: 01/31/2019
 ms.author: curtand
 ms.reviewer: kairaz.contractor
 ms.custom: it-pro
-ms.openlocfilehash: 4c607558c721b38bd63a8094f433bfe9499013af
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 43ce034f2960f31d614636c77e8f30f05e8aa41e
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102215"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55507115"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 

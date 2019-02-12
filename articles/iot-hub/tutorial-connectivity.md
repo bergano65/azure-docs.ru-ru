@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.date: 05/29/2018
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: 05f6b32fad4f0a449f0d801c1c7cc6a28be6f940
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: bb9bcfcc5f78ee82f187d331055e8f2fd2ed9e64
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685368"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55745815"
 ---
 # <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство. Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
@@ -75,7 +75,7 @@ node --version
 
 Чтобы имитировать отправку телеметрии от **MyTestDevice** в Центр Интернета вещей, запустите приложение Node.js для имитации устройства, которое вы скачали ранее.
 
-На компьютере разработки в окне терминала перейдите в корневую папку скачанного тестового проекта Node.js. Затем перейдите в ней к вложенной папке **iot-hub\Tutorials\ConnectivityTests\simulated-device**.
+На компьютере разработки в окне терминала перейдите в корневую папку скачанного тестового проекта Node.js. Затем перейдите к папке **iot-hub\Tutorials\ConnectivityTests**.
 
 Установите необходимые библиотеки и запустите приложение имитированного устройства, выполнив в окне терминала следующие команды: Используйте строку подключения для устройства, которую вы записали при добавлении устройства на портале.
 

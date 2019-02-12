@@ -10,14 +10,14 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 91c4bc76a7753c7d51310fbe9b807f0969ca900c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 942d9a7b4160189d14ecdd85b21b2537d1a2a8d3
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467294"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55656368"
 ---
-# <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы в Azure Dev Spaces с Node.js
+# <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы с Node.js в Azure Dev Spaces
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -101,7 +101,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-versi
 ### <a name="create-a-nodejs-web-app"></a>Создание веб-приложения Node.js
 Скачайте код из GitHub, перейдя по ссылке https://github.com/Azure/dev-spaces, и выберите **Clone or Download** (Клонировать или скачать), чтобы скачать репозиторий GitHub в локальную среду. Код для этого руководства находится в папке `samples/nodejs/getting-started/webfrontend`.
 
-## <a name="preparing-code-for-docker-and-kubernetes-development"></a>Подготовка кода для разработки Docker и Kubernetes
+## <a name="prepare-code-for-docker-and-kubernetes-development"></a>Подготовка кода для разработки в Docker и Kubernetes
 На данный момент у вас есть базовое веб-приложение, которое можно запустить локально. Теперь вы упакуете его в контейнер, создав ресурсы, определяющие контейнер приложения и способ его развертывания в Kubernetes. Эту задачу легко выполнить с помощью Azure Dev Spaces: 
 
 1. Запустите VS Code и откройте папку `webfrontend`. (Вы можете игнорировать любые запросы по умолчанию на добавление ресурсов отладки или восстановления проекта.)
@@ -278,5 +278,5 @@ app.get('/api', function (req, res) {
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [См. дополнительные сведения о коллективной разработке](team-development-nodejs.md)
+> [Узнайте больше о разработке с использованием нескольких служб](multi-service-nodejs.md)
 

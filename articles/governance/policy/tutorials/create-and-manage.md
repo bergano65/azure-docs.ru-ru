@@ -4,17 +4,17 @@ description: Использование Политики Azure для обесп
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/06/2018
+ms.date: 02/04/2019
 ms.topic: tutorial
 ms.service: azure-policy
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: ecebeef509f1f23e34ade6a79b8ffe39d4cbb0a5
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: cb6f033c784832efab23c747057b1c0ef1b317fa
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54845628"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55730277"
 ---
 # <a name="create-and-manage-policies-to-enforce-compliance"></a>Создание политик и управление ими для обеспечения соответствия требованиям
 
@@ -322,7 +322,7 @@ az policy definition list
 
 ## <a name="create-and-assign-an-initiative-definition"></a>Создание определения инициативы и его назначение
 
-С помощью определения инициативы вы можете сгруппировать несколько определений политики для достижения одной ключевой цели. Определение инициативы создается, чтобы убедиться, что ресурсы в рамках определения будут соответствовать определениям политики, которые составляют определение инициативы. Дополнительные сведения об определениях инициативы см. в статье [What is Azure Policy?](../overview.md) (Что такое служба "Политика Azure"?).
+С помощью определения инициативы вы можете сгруппировать несколько определений политики для достижения одной ключевой цели. Инициатива оценивает, насколько ресурсы в области назначения соответствуют требованиям указанных политик. Дополнительные сведения об определениях инициативы см. в статье [What is Azure Policy?](../overview.md) (Что такое служба "Политика Azure"?).
 
 ### <a name="create-an-initiative-definition"></a>Создание определения инициативы
 

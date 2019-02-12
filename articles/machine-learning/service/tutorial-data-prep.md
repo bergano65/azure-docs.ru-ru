@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: cforbe
 ms.author: cforbe
 ms.reviewer: trbye
-ms.date: 12/04/2018
+ms.date: 02/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: c199a403e65bd084428fd45e8dc67cca214f5f9f
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 7be1bf8c003315fc4dbed449283f7c92850edced
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251288"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752047"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство. Подготовка данных для моделирования регрессии
 
@@ -33,34 +33,71 @@ ms.locfileid: "55251288"
 > * преобразуете данные, используя интеллектуальные преобразования, чтобы создать компоненты;
 > * сохраните объект потока данных, чтобы использовать его в модели регрессии.
 
-Вы можете подготовить данные в Python, используя [пакет SDK для подготовки данных службы "Машинное обучение Azure"](https://aka.ms/data-prep-sdk).
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="get-the-notebook"></a>Получение записной книжки
+Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек. Чтобы запустить записную книжку, вам потребуется:
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/regression-part1-data-prep.ipynb). Запустите записную книжку **regression-part1-data-prep.ipynb** в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
+* Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
+    * пакет SDK службы "Машинное обучение Azure" для подготовки данных для Python;
+* пример записной книжки.
 
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
+Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
 
-## <a name="import-packages"></a>Импорт пакетов
+* Использование [Записных книжек Azure](#azure)
+* Использование [собственного сервера записных книжек](#server)
 
-Вы начнете с импорта пакетов SDK.
+### <a name="azure"></a>Использование Записных книжек Azure: к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
 
-```python
-import azureml.dataprep as dprep
-```
+Начать работу с Записными книжками Azure очень просто. [Пакет SDK службы "Машинное обучение Azure" для подготовки данных для Python](https://aka.ms/data-prep-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
 
-Если вы работаете с руководством в собственной среде Python, используйте следующую команду для установки необходимых пакетов.
+Выполнив указанные ниже действия, запустите записную книжку **tutorials/regression-part1-data-prep.ipynb** в проекте **Начало работы**.
+
+[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
+
+### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
+
+Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/regression-part1-data-prep.ipynb**.
+
+1. Чтобы создать среду Miniconda для службы "Машинное обучение Azure" с помощью Python, выполните действия, описанные в [этом кратком руководстве](quickstart-create-workspace-with-python.md).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
+1. Установите пакет SDK для подготовки данных в вашей среде с помощью `pip install azureml-dataprep`.
+1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
+
+    ```
+    git clone https://github.com/Azure/MachineLearningNotebooks.git
+    ```
+
+1. Запустите сервер записной книжки из клонированного каталога.
+
+    ```shell
+    jupyter notebook
+
+## <a name="start"></a>Set up your development environment
+
+All the setup for your development work can be accomplished in a Python notebook. Setup includes the following actions:
+
+* Install the SDK
+* Import Python packages
+
+### Install and import packages
+
+Use the following to install necessary packages if you don't already have them.
 
 ```shell
 pip install azureml-dataprep
+```
+
+Импортируйте пакет SDK.
+
+```python
+import azureml.dataprep as dprep
 ```
 
 ## <a name="load-data"></a>Загрузка данных
 
 Скачайте два разных набора данных о такси Нью-Йорка в объекты потока данных. Поля в этих наборах данных немного отличаются. Метод `auto_read_file()` автоматически распознает тип входного файла.
 
-
 ```python
+from IPython.display import display
 dataset_root = "https://dprepdata.blob.core.windows.net/demo"
 
 green_path = "/".join([dataset_root, "green-small/*"])

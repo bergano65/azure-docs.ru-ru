@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/24/2019
+ms.date: 02/06/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: d1bddc8331fc1a9ded37949a8065636947074852
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 9debcd121cbbde626758abccfe838abda12ad840
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55246742"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822839"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-subscription-or-a-storage-account"></a>Подключение обозревателя службы хранилища к подписке Azure Stack или к учетной записи хранения
 
@@ -45,20 +45,15 @@ ms.locfileid: "55246742"
 
 ### <a name="export-and-then-import-the-azure-stack-certificate"></a>Экспорт и импорт сертификата Azure Stack
 
+Экспорт и импортируйте сертификат безопасности Azure Stack в ASDK. Для интегрированной системы используется публично подписанный сертификат. Поэтому этот шаг не является обязательным при настройке подключения Обозревателя службы хранилища к интегрированной системе Azure Stack.
+
 1. Откройте `mmc.exe` на хост-компьютере или локальном компьютере Azure Stack с помощью VPN-подключения к Azure Stack. 
 
 2. В меню **Файл** выберите **Добавить или удалить оснастку**, затем добавьте **сертификаты** для управления **своей учетной записью пользователя**.
 
-3.  В разделе **Console Root (Корень консоли)\Certificated (Local Computer) (Cертифицированный (локальный компьютер)\Trusted Root Certification Authorities (Доверенные корневые центры сертификации)\Сертификаты**
+3.  В разделе **Console Root (Корень консоли)\Certificated (Local Computer) (Cертифицированный (локальный компьютер)\Trusted Root Certification Authorities (Доверенные корневые центры сертификации)\Сертификаты** Найдите **AzureStackSelfSignedRootCert**.
 
-    - найдите **AzureStackSelfSignedRootCert** для ASDK.
-
-        ![Загрузка корневого сертификата Azure Stack с помощью mmc.exe](./media/azure-stack-storage-connect-se/add-certificate-azure-stack.png)
-
-    - Найдите корневой сертификат внешних сертификатов для интегрированной системы. 
-    
-        ![Загрузка корневого сертификата Azure Stack с помощью mmc.exe](./media/azure-stack-storage-connect-se/azure-stack-storage-cert-location-is.png)
-        
+    ![Загрузка корневого сертификата Azure Stack с помощью mmc.exe](./media/azure-stack-storage-connect-se/add-certificate-azure-stack.png)
 
 4. Щелкните правой кнопкой мыши сертификат, выберите **All Tasks** (Все задачи) > **Export** (Экспорт), а затем следуйте инструкциям, чтобы экспортировать сертификат в виде **файла X.509 (CER) в кодировке Base-64**.
 

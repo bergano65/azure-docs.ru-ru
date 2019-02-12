@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 06/15/2017
 ms.author: lizross
 ms.reviewer: richagi
-ms.openlocfilehash: a6beba81bf76549010bbf586cfbd0f018ee0a0dd
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 853ca60ac10272062a1eb61c5f8763e4d9e120f7
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55166617"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55748222"
 ---
 # <a name="what-does-azure-multi-factor-authentication-mean-for-me"></a>Что для меня означает служба Многофакторной идентификации Azure
 Вы получили сообщение электронной почты от сотрудника ИТ-отдела или даже от самого начальника о том, что для вашей учетной записи будет выполнена дополнительная проверка безопасности.  Так что же это значит?
@@ -44,4 +44,4 @@ ms.locfileid: "55166617"
 | [Процесс входа](multi-factor-authentication-end-user-signin.md) |Описание входа в систему с помощью различных методов, включая использование телефона или приложения. |
 | [Изменение параметров](multi-factor-authentication-end-user-manage-settings.md) |Описание способа изменения параметров, включая номер телефона или предпочтительный метод регистрации. |
 | [Справка о паролях приложений](multi-factor-authentication-end-user-app-passwords.md) |Информация о создании и использовании паролей приложений. |
-| [Использование мобильного приложения](microsoft-authenticator-app-how-to.md) |Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071). |
+| [Использование мобильного приложения](microsoft-authenticator-app-how-to.md) |Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594) и [iOS](https://go.microsoft.com/fwlink/?linkid=866594).|

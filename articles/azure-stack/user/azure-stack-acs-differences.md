@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 12/03/2018
+ms.date: 01/30/2019
 ms.author: mabrigg
 ms.reviwer: xiaofmao
-ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 947886a96ab31150cf81ebea0a3cdd69e0273b01
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.lastreviewed: 01/30/2019
+ms.openlocfilehash: 11736b978242416bcfb95d3025975028e4148e98
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305761"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55486544"
 ---
 # <a name="azure-stack-storage-differences-and-considerations"></a>Объем хранилища для Azure Stack. Отличия и рекомендации
 
@@ -67,16 +67,8 @@ API-интерфейсы служб хранилища Azure.
 
 Обновление 1811 или более новые версии:
 
- - [2017-11-09](https://docs.microsoft.com/rest/api/storageservices/version-2017-11-09)
- - [2017-07-29](https://docs.microsoft.com/rest/api/storageservices/version-2017-07-29)
- - [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17);
- - [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31);
- - [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11);
- - [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08);
- - [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
-
-Обновления 1802–1809:
-
+- [2017-11-09](https://docs.microsoft.com/rest/api/storageservices/version-2017-11-09)
+- [2017-07-29](https://docs.microsoft.com/rest/api/storageservices/version-2017-07-29)
 - [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17);
 - [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31);
 - [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11);
@@ -85,35 +77,34 @@ API-интерфейсы служб хранилища Azure.
 
 Предыдущие версии:
 
+- [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17);
+- [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31);
+- [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11);
+- [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08);
 - [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
 
 API управления службами хранилища Azure:
 
-- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
-- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
+Обновление 1811 или более новые версии:
+
+- [01.10.2017](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
+- [01.06.2017](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
+- [01.12.2016](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
+- [01.05.2016](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
 - [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN).
+- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
+- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
 
 Предыдущие версии:
 
- - [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN).
- - [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
- - [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
- 
-## <a name="sdk-versions"></a>Версии пакета SDK
+- [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN).
+- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
+- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
 
-Хранилище Azure Stack поддерживает следующие клиентские библиотеки:
-
-| Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка                                                                                                                                                                                                                                                                                                                                     | Спецификация конечной точки       |
-|----------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| .NET           | От 6.2.0 до 8.7.0          | Пакет NuGet:<br>https://www.nuget.org/packages/WindowsAzure.Storage/<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-net/releases                                                                                                                                                                                    | Файл app.config              |
-| Java           | От 4.1.0 до 6.1.0           | Пакет Maven<br>http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-java/releases                                                                                                                                                                    | Настройка строки подключения      |
-| Node.js        | От 1.1.0 до 2.7.0           | Ссылка на NPM:<br>https://www.npmjs.com/package/azure-storage<br>(Например: выполните команду "npm install azure-storage@2.7.0")<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-node/releases                                                                                                                                         | Объявление экземпляра службы |
-| C++            | От 2.4.0 до 3.1.0           | Пакет NuGet:<br>https://www.nuget.org/packages/wastorage.v140/<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-cpp/releases                                                                                                                                                                                          | Настройка строки подключения      |
-| PHP            | От 0.15.0 до 1.0.0          | Выпуск GitHub:<br>https://github.com/Azure/azure-storage-php/releases<br> <br>Установка через компоновщик (подробности см. ниже)                                                                                                                                                                                                                  | Настройка строки подключения      |
-| Python         | От 0.30.0 до 1.0.0          | Выпуск GitHub:<br>https://github.com/Azure/azure-storage-python/releases                                                                                                                                                                                                                                                                | Объявление экземпляра службы |
-| Ruby           | От 0.12.1 до 1.0.1          | Пакет RubyGems:<br>Общая версия:<br>https://rubygems.org/gems/azure-storage-common/<br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/<br>Очередь: https://rubygems.org/gems/azure-storage-queue/<br>Таблица: https://rubygems.org/gems/azure-storage-table/<br> <br>Выпуск GitHub:<br>https://github.com/Azure/azure-storage-ruby/releases | Настройка строки подключения      |
+Дополнительные сведения о поддерживаемых клиентских библиотеках службы хранилища Azure Stack см. в статье: [Начало работы со средствами разработки хранилища Azure Stack](azure-stack-storage-dev.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Приступая к работе со средствами разработки хранилища Azure Stack](azure-stack-storage-dev.md)
+* [Использование средств передачи данных в хранилище Azure Stack](azure-stack-storage-transfer.md)
 * [Общие сведения о хранилище Azure Stack](azure-stack-storage-overview.md)

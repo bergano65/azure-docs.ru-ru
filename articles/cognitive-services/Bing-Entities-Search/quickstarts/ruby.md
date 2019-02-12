@@ -1,73 +1,81 @@
 ---
-title: Краткое руководство. API Bing для поиска сущностей, Ruby
+title: Краткое руководство. Отправка запросов в REST API Поиска сущностей Bing с помощью Ruby
 titlesuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска сущностей.
+description: В этом кратком руководстве показано, как отправлять запросы в REST API Поиска сущностей Bing с помощью Ruby и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 11/28/2017
+ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 2dec6359da7afc9e0e6c8dabaec1afb35e77e85c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: ed8b590d5f31daebb0cffb270f72ae156acab778
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191556"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753152"
 ---
 # <a name="quickstart-for-bing-entity-search-api-with-ruby"></a>Краткое руководство по API Bing для поиска сущностей (Ruby)
 
-В этой статье описано, как использовать API [Bing для поиска сущностей](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/search-the-web) с Ruby.
+Из этого краткого руководства вы узнаете, как вызвать API Поиска сущностей Bing и просмотреть ответ в формате JSON. Это простое приложение Ruby отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingEntitySearchv7.rb).
+
+Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
+* [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API Bing для поиска сущностей**. Для данного краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-entity-search-api). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.   См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+[!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]
 
-## <a name="search-entities"></a>Сущности для поиска
+## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-Чтобы запустить это приложение, сделайте следующее.
+1. В избранной интегрированной среде разработки или редакторе кода создайте файл новостей Ruby и импортируйте следующие пакеты.
 
-1. Создайте проект Ruby в используемой вами интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+    ```ruby
+    require 'net/https'
+    require 'cgi'
+    require 'json'
+    ```
 
-```ruby
-require 'net/https'
-require 'cgi'
-require 'json'
+2. Создайте переменные для своей конечной точки API, URL-адрес для Поиска новостей, ключ подписки и поисковый запрос.
+    
+    ```ruby
+    host = 'https://api.cognitive.microsoft.com'
+    path = '/bing/v7.0/entities'
+    
+    mkt = 'en-US'
+    query = 'italian restaurants near me'
+    ```
 
-# **********************************************
-# *** Update or verify the following values. ***
-# **********************************************
+## <a name="format-and-make-an-api-request"></a>Форматирование и выполнение запроса API
 
-# Replace the subscriptionKey string value with your valid subscription key.
-subscriptionKey = 'ENTER KEY HERE'
+1. Создайте строку параметров для запроса, добавив переменную market к параметру `?mkt=`. Выполните кодирование поискового запроса и добавьте его к параметру `&q=`. Объедините узел API, путь и параметры для запроса и приведите их к типу объекта URI.
 
-host = 'https://api.cognitive.microsoft.com'
-path = '/bing/v7.0/entities'
+    ```ruby
+    params = '?mkt=' + mkt + '&q=' + CGI.escape(query)
+    uri = URI (host + path + params)
+    ```
 
-mkt = 'en-US'
-query = 'italian restaurants near me'
+2. Для создания запроса используйте переменные из последнего шага. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
 
-params = '?mkt=' + mkt + '&q=' + CGI.escape(query)
-uri = URI (host + path + params)
+    ```ruby
+    request = Net::HTTP::Get.new(uri)
+    request['Ocp-Apim-Subscription-Key'] = subscriptionKey
+    ```
 
-request = Net::HTTP::Get.new(uri)
-request['Ocp-Apim-Subscription-Key'] = subscriptionKey
+3. Отправка запроса и вывод ответа
 
-response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-    http.request (request)
-end
+    ```ruby
+    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+        http.request (request)
+    end
 
-puts JSON::pretty_generate (JSON (response.body))
-```
+    puts JSON::pretty_generate (JSON (response.body))
+    ```
 
-**Ответ**
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -132,11 +140,10 @@ puts JSON::pretty_generate (JSON (response.body))
 }
 ```
 
-[Вверх](#HOLTop)
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по API Bing для поиска сущностей](../tutorial-bing-entities-search-single-page-app.md)
-> [Общие сведения об API Bing для поиска сущностей](../search-the-web.md )
-> [Справочник по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)
+> [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
+
+* [What is Bing Entity Search API?](../search-the-web.md) (Что такое API Поиска сущностей Bing?)
+* [Bing Entity Search API v7 Reference](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference) (Справочник по API Поиска сущностей Bing версии 7)

@@ -8,12 +8,12 @@ ms.reviewer: orspod
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 1/30/2019
-ms.openlocfilehash: 8b56203b700d42f3fdec1b066ed05caf92eb53f1
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 343baedb77eb5c8a250e2ab967332dc0905f5112
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55462041"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55743691"
 ---
 # <a name="quickstart-ingest-azure-blobs-into-azure-data-explorer-by-subscribing-to-event-grid-notifications"></a>Краткое руководство. Прием больших двоичных объектов Azure в Azure Data Explorer благодаря подписке на уведомления службы "Сетка событий Azure"
 
@@ -99,7 +99,7 @@ ms.locfileid: "55462041"
     **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Имя подключения к данным | *test-hub-connection* | Имя создаваемого подключения к обозревателю данных Azure.|
-    | Подписка учетной записи хранения | Идентификатор подписки | Идентификатор подписки, где находится учетная запись хранилища.|
+    | Подписка учетной записи хранения | идентификатор подписки; | Идентификатор подписки, где находится учетная запись хранилища.|
     | Учетная запись хранения | *gridteststorage* | Имя созданной учетной записи хранения.|
     | Сетка событий Azure | *test-grid-connection* | Имя создаваемой Сетки событий. |
     | имя концентратора событий; | *test-hub* | Созданный концентратор событий. Это значение заполняется автоматически при выборе Сетки событий. |
@@ -111,7 +111,7 @@ ms.locfileid: "55462041"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
-    | Формат данных | *JSON* | Поддерживаются форматы JSON и CSV. |
+    | Формат данных | *JSON* | К поддерживаемым форматам относятся: Avro, CSV, JSON, многострочный JSON, PSV, SOH, SCSV, TSV и TXT. |
     | Сопоставление столбцов | *TestMapping* | Сопоставление, созданное в таблице **TestDatabase**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestTable**.|
     | | |
 

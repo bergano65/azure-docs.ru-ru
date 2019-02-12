@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 7e5c78e1b30b311c6ce918453fe728ae86060dda
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 54872a1c5a40cdb3f51c17362daed93c3892001e
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720668"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754563"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство. Развертывание кластера службы Azure Kubernetes (AKS)
 
@@ -67,10 +67,10 @@ az ad sp create-for-rbac --skip-assignment
 az acr show --resource-group myResourceGroup --name <acrName> --query "id" --output tsv
 ```
 
-Чтобы предоставить кластеру AKS соответствующие права доступа для использования образов, хранящихся в ACR, создайте назначение ролей с помощью команды [az role assignment create][]. Замените `<appId`> и `<acrId>` на значения, собранных на предыдущих двух шагах.
+Чтобы предоставить кластеру AKS соответствующие права доступа для извлечения образов, хранящихся в ACR, назначьте роль `AcrPull` с помощью команды [az role assignment create][]. Замените `<appId`> и `<acrId>` на значения, собранных на предыдущих двух шагах.
 
 ```azurecli
-az role assignment create --assignee <appId> --scope <acrId> --role Reader
+az role assignment create --assignee <appId> --scope <acrId> --role acrpull
 ```
 
 ## <a name="create-a-kubernetes-cluster"></a>Создание кластера Kubernetes

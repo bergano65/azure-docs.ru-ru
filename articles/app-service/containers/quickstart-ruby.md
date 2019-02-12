@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 01/23/2019
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: 3ddf98abf0c52d3bc1fb0a6ce43755d5adcf87fa
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: e57142631668ba0b74573b2953e84f581023b24f
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54848637"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660652"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 
@@ -139,4 +139,4 @@ http://<app name>.azurewebsites.net
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Build a Ruby and MySQL web app in Azure App Service on Linux](tutorial-ruby-postgres-app.md) (Создание веб-приложения Ruby и MySQL в службе приложений Azure на платформе Linux)
+> [Ruby on Rails с Postgres](tutorial-ruby-postgres-app.md)

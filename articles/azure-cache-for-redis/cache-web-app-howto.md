@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: wesmc
 ms.custom: mvc
-ms.openlocfilehash: fd5a995bf03d530ccbcf9b839ccc840d202b47d6
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: d80a10bea58fdcd5b20e24f9f8ba633f2714d55c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53556193"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822584"
 ---
 # <a name="quickstart-create-an-aspnet-web-app"></a>Краткое руководство. Создание веб-приложения ASP.NET 
 
@@ -48,11 +48,11 @@ ms.locfileid: "53556193"
 
     a. В списке **Шаблоны** разверните узел **Visual C#**.
 
-    b. Выберите **Облако**.
+    б) Выберите **Облако**.
 
     c. Выберите **Веб-приложение ASP.NET**.
 
-    d. Убедитесь, что выбрана платформа **.NET Framework 4.5.2** или ее более новая версия.
+    4.3. Убедитесь, что выбрана платформа **.NET Framework 4.5.2** или ее более новая версия.
 
     д. В поле **Имя** укажите имя проекта. В этом примере используется имя **ContosoTeamStats**.
 
@@ -98,9 +98,9 @@ ms.locfileid: "53556193"
 В этом разделе вы обновите приложение для поддержки нового представления, которое отображает простой тест кэша Azure для Redis.
 
 * [Добавление в файл web.config параметра приложения для использования кэша](#Update-the-webconfig-file-with-an-app-setting-for-the-cache)
-* [Настройка приложения для использования клиента StackExchange.Redis](#configure-the-application-to-use-stackexchangeredis)
-* [Обновление HomeController и макета](#update-the-homecontroller-and-layout)
-* [Добавление нового представления RedisCache](#add-a-new-rediscache-view)
+* Настройка приложения для использования клиента StackExchange.Redis
+* Обновление HomeController и макета
+* Добавление нового представления RedisCache
 
 ### <a name="update-the-webconfig-file-with-an-app-setting-for-the-cache"></a>Добавление в файл web.config параметра приложения для использования кэша
 
@@ -326,7 +326,7 @@ ms.locfileid: "53556193"
 
 2. Введите имя группы ресурсов в поле **Фильтровать по имени...** В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем выберите **Удалить группу ресурсов**.
 
-    ![Delete](./media/cache-web-app-howto/cache-delete-resource-group.png)
+    ![Delete (Удалить)](./media/cache-web-app-howto/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**.
 

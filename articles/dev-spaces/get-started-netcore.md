@@ -1,5 +1,5 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и VS Code | Документация Майкрософт
+title: Создание среды разработки Kubernetes в облаке с помощью .NET Core и VS Code | Документация Майкрософт
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -10,12 +10,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: b51bf83d2e44239ebd6bc17e25efaa2fe94250f3
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5cecb11494926444249c8061f1ec93622e4d6c78
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467141"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700712"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
@@ -99,13 +99,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-versi
 В этом разделе вы создадите веб-приложение ASP.NET Core и запустите его в контейнере в Kubernetes.
 
 ### <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
-Если у вас установлен [.NET Core](https://www.microsoft.com/net), вы можете быстро создать веб-приложение ASP.NET Core в папке с именем `webfrontend`.
-    
-```cmd
-dotnet new mvc --name webfrontend
-```
-
-Можно также **скачать пример кода из GitHub**, перейдя по ссылке https://github.com/Azure/dev-spaces и выбрав **Clone or Download** (Клонировать или скачать), чтобы скачать репозиторий GitHub в локальную среду. Код для этого руководства находится в папке `samples/dotnetcore/getting-started/webfrontend`.
+Клонируйте или скачайте [пример приложения для Azure Dev Spaces](https://github.com/Azure/dev-spaces). При работе с этой статьей используется код, доступный в каталоге *samples/dotnetcore/getting-started/webfrontend*.
 
 ## <a name="preparing-code-for-docker-and-kubernetes-development"></a>Подготовка кода для разработки Docker и Kubernetes
 На данный момент у вас есть базовое веб-приложение, которое можно запустить локально. Теперь вы упакуете его в контейнер, создав ресурсы, определяющие контейнер приложения и способ его развертывания в Kubernetes. Эту задачу легко выполнить с помощью Azure Dev Spaces: 
@@ -245,4 +239,4 @@ public IActionResult About()
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [См. дополнительные сведения о коллективной разработке](team-development-netcore.md)
+> [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore.md)

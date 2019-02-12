@@ -4,219 +4,197 @@ description: Сведения о том, как настроить единый 
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 2f95b226-1465-47f4-b8b7-de4b0772abbc
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/02/2018
+ms.topic: tutorial
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: aa20e4544fcd78330c0daa15b9aa058ba80af2d5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: e8b8f99b25063e29f9a4ae51387a00c247e31ec5
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171955"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700355"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Руководство. Интеграция Azure Active Directory с Adobe Captivate Prime
 
 В этом руководстве описано, как интегрировать приложение Adobe Captivate Prime с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Adobe Captivate Prime обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Adobe Captivate Prime.
-- Вы можете включить автоматический вход пользователей в Adobe Captivate Prime (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Adobe Captivate Prime.
+* Вы можете включить автоматический вход пользователей в Adobe Captivate Prime (единый вход) с использованием учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Captivate Prime, вам потребуется:
 
-- подписка Azure AD;
-- подписка с поддержкой единого входа Adobe Captivate Prime.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка с поддержкой единого входа Adobe Captivate Prime.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Adobe Captivate Prime из коллекции
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Adobe Captivate Prime поддерживает инициированную единым входом **выдающую точку распространения**.
 
 ## <a name="adding-adobe-captivate-prime-from-the-gallery"></a>Добавление Adobe Captivate Prime из коллекции
+
 Чтобы настроить интеграцию Adobe Captivate Prime с Azure AD, нужно добавить Adobe Captivate Prime из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Adobe Captivate Prime из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Adobe Captivate Prime**, выберите **Adobe Captivate Prime** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Adobe Captivate Prime в списке результатов](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_addfromgallery.png)
+     ![Adobe Captivate Prime в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Captivate Prime с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD нужно знать, какой пользователь в Adobe Captivate Prime соответствует пользователю в Azure AD. Иными словами, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Captivate Prime.
+В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Captivate Prime с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Captivate Prime.
 
 Чтобы настроить и проверить единый вход Azure AD в Adobe Captivate Prime, нужно выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Adobe Captivate Prime](#create-an-adobe-captivate-prime-test-user)** требуется для того, чтобы в Adobe Captivate Prime существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Adobe Captivate Prime](#configure-adobe-captivate-prime-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Adobe Captivate Prime](#create-adobe-captivate-prime-test-user)** требуется для того, чтобы в Adobe Captivate Prime существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход в Azure AD на портале Azure и настроить его в приложении Adobe Captivate Prime.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Adobe Captivate Prime, выполните следующие действия:**
+Чтобы настроить единый вход Azure AD в Adobe Captivate Prime, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Adobe Captivate Prime** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Adobe Captivate Prime** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения Adobe Captivate Prime** сделайте следующее:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа приложения Adobe Captivate Prime](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа приложения Adobe Captivate Prime](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://captivateprime.adobe.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://captivateprime.adobe.com/saml/SSO`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес `https://captivateprime.adobe.com/saml/SSO`
 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-5. Нажмите кнопку **Сохранить** .
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Adobe Captivate Prime**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobecaptivateprime-tutorial/tutorial_general_400.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-6. Откройте вкладку **Свойства**, скопируйте **URL-адрес пользовательского доступа** и вставьте его в Блокнот.
+    а) URL-адрес входа.
+
+    б) Идентификатор Azure AD.
+
+    в) URL-адрес выхода.
+
+7. Откройте вкладку **Свойства**, скопируйте **URL-адрес пользовательского доступа** и вставьте его в Блокнот.
 
     ![Ссылка для доступа пользователя](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_appprop.png)
 
-7. Чтобы настроить единый вход на стороне **Adobe Captivate Prime**, нужно передать скачанный **XML-файл метаданных** и скопированный **URL-адрес пользовательского доступа** [группе поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+### <a name="configure-adobe-captivate-prime-single-sign-on"></a>Настройка единого входа для Adobe Captivate Prime
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+Чтобы настроить единый вход на стороне **Adobe Captivate Prime**, нужно передать скачанный файл **XML метаданных федерации**, скопированный **URL-адрес пользовательского доступа** и скопированные соответствующие URL-адреса с портала Azure в [группу поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-   ![Создание тестового пользователя Azure AD][100]
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    ![Кнопка "Azure Active Directory"](./media/adobecaptivateprime-tutorial/create_aaduser_01.png)
+2. В верхней части экрана выберите **Новый пользователь**.
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/adobecaptivateprime-tutorial/create_aaduser_02.png)
+3. В разделе свойств пользователя сделайте следующее:
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    ![Кнопка "Добавить"](./media/adobecaptivateprime-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/adobecaptivateprime-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    d. Нажмите кнопку **Создать**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-### <a name="create-an-adobe-captivate-prime-test-user"></a>Создание тестового пользователя Adobe Captivate Prime
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Adobe Captivate Prime. Обратитесь к  [группе поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com), чтобы добавить пользователей на платформу Adobe Captivate Prime. Перед использованием единого входа необходимо создать и активировать пользователей.
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Adobe Captivate Prime.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Adobe Captivate Prime**.
 
-**Чтобы назначить пользователя Britta Simon в Adobe Captivate Prime, выполните следующие действия:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. В списке приложений выберите **Adobe Captivate Prime**.
 
-    ![Ссылка на Adobe Captivate Prime в списке приложений](./media/adobecaptivateprime-tutorial/tutorial_adobecaptivateprime_app.png)  
+    ![Ссылка на Adobe Captivate Prime в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+
+### <a name="create-adobe-captivate-prime-test-user"></a>Создание тестового пользователя Adobe Captivate Prime
+
+В этом разделе описано, как создать пользователя Britta Simon в приложении Adobe Captivate Prime. Обратитесь к  [группе поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com), чтобы добавить пользователей на платформу Adobe Captivate Prime. Перед использованием единого входа необходимо создать и активировать пользователей.
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Adobe Captivate Prime на панели доступа, вы автоматически войдете в приложение Adobe Captivate Prime.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент "Adobe Captivate Prime" на панели доступа, вы автоматически войдете в приложение Adobe Captivate Prime, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/adobecaptivateprime-tutorial/tutorial_general_01.png
-[2]: ./media/adobecaptivateprime-tutorial/tutorial_general_02.png
-[3]: ./media/adobecaptivateprime-tutorial/tutorial_general_03.png
-[4]: ./media/adobecaptivateprime-tutorial/tutorial_general_04.png
-
-[100]: ./media/adobecaptivateprime-tutorial/tutorial_general_100.png
-
-[200]: ./media/adobecaptivateprime-tutorial/tutorial_general_200.png
-[201]: ./media/adobecaptivateprime-tutorial/tutorial_general_201.png
-[202]: ./media/adobecaptivateprime-tutorial/tutorial_general_202.png
-[203]: ./media/adobecaptivateprime-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

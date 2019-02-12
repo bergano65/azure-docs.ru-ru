@@ -1,5 +1,5 @@
 ---
-title: Пример. Приступая к работе с API службы поиска и распознавания данных
+title: 'Пример: Приступая к работе с API службы поиска и распознавания данных'
 titlesuffix: Azure Cognitive Services
 description: Используйте API службы поиска и распознавания данных (KES), чтобы создать обработчик для интерактивного поиска в научных публикациях.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: knowledge-exploration
 ms.topic: sample
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: 14dc1ca90ecd342330425db840776fa67caa80b0
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: e2bb5550cfe07064d595151305955d87f9c61050
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55208148"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819541"
 ---
 # <a name="get-started-with-the-knowledge-exploration-service"></a>Начало работы со Службой поиска и распознавания данных
 
@@ -100,7 +100,7 @@ ms.locfileid: "55208148"
 
 `kes.exe build_index Academic.schema Academic.data Academic.index`
 
-Для быстрого создания прототипов за пределами Azure [`kes.exe build_index`](CommandLine.md#build_index-command) может локально создавать малые индексы из файлов данных, содержащих до 10 000 объектов. Для обработки больших файлов данных  можно либо выполнить команду внутри [виртуальной Машины Windows в Azure](../../../articles/virtual-machines/windows/quick-create-portal.md), либо выполнить удаленную сборку в Azure. Дополнительные сведения см. в разделе [Увеличение масштаба](#scaling-up).
+Для быстрого создания прототипов за пределами Azure [`kes.exe build_index`](CommandLine.md#build_index-command) может локально создавать малые индексы из файлов данных, содержащих до 10 000 объектов. Для обработки больших файлов данных  можно либо выполнить команду внутри [виртуальной Машины Windows в Azure](../../../articles/virtual-machines/windows/quick-create-portal.md), либо выполнить удаленную сборку в Azure. См. дополнительные сведения в разделе "Увеличение масштаба".
 
 ## <a name="use-an-xml-grammar-specification"></a>Использование спецификации грамматики XML
 
@@ -211,7 +211,7 @@ ms.locfileid: "55208148"
 
 `kes.exe host_service Academic.grammar Academic.index --port 8000`
 
-При этом инициируется локальный экземпляр веб-службы. Можно интерактивно проверить службу, перейдя в браузере на `http::localhost:<port>`. Для получения дополнительных сведений см. раздел [Служба тестирования](#testing-service).
+При этом инициируется локальный экземпляр веб-службы. Можно интерактивно проверить службу, перейдя в браузере на `http::localhost:<port>`. См. дополнительные сведения в разделе "Проверка службы".
 
 Можно также непосредственно вызывать различные [веб-API](WebAPI.md) для тестирования интерпретации естественного языка, завершения запроса, оценки структурированных запросов и вычисления гистограммы. Чтобы остановить службу, введите quit в командной строке `kes.exe host_service` или нажмите клавиши CTRL + C. Ниже приведены некоторые примеры:
 
@@ -220,7 +220,7 @@ ms.locfileid: "55208148"
 * [http://localhost:8000/evaluate?expr=Composite(Author.Name=='susan t dumais')&attributes=Title,Year,Author.Name,Author.Id&count=2](http://localhost:8000/evaluate?expr=Composite%28Author.Name==%27susan%20t%20dumais%27%29&attributes=Title,Year,Author.Name,Author.Id&count=2)
 * [http://localhost:8000/calchistogram?expr=And(Composite(Author.Name=='susan t dumais'),Year>=2013)&attributes=Year,Keyword&count=4](http://localhost:8000/calchistogram?expr=And%28Composite%28Author.Name=='susan%20t%20dumais'%29,Year>=2013%29&attributes=Year,Keyword&count=4)
 
-За пределами Azure [`kes.exe host_service`](CommandLine.md#host_service-command) ограничена по индексам до 10 000 объектов. Другие ограничения включают скорость API в 10 запросов в секунду и общее количество в 1000 запросов перед автоматическим завершением процесса. Чтобы обойти эти ограничения, выполните команду изнутри [виртуальной машины Windows в Azure](../../../articles/virtual-machines/windows/quick-create-portal.md) или разверните облачную службу Azure с помощью команды [`kes.exe deploy_service`](CommandLine.md#deploy_service-command). Дополнительные сведения см. в разделе [Развертывание службы](#deploying-service).
+За пределами Azure [`kes.exe host_service`](CommandLine.md#host_service-command) ограничена по индексам до 10 000 объектов. Другие ограничения включают скорость API в 10 запросов в секунду и общее количество в 1000 запросов перед автоматическим завершением процесса. Чтобы обойти эти ограничения, выполните команду изнутри [виртуальной машины Windows в Azure](../../../articles/virtual-machines/windows/quick-create-portal.md) или разверните облачную службу Azure с помощью команды [`kes.exe deploy_service`](CommandLine.md#deploy_service-command). См. дополнительные сведения в разделе Развертывание службы.
 
 ## <a name="scale-up-to-host-larger-indices"></a>Масштабирование для размещения больших индексов
 
@@ -262,7 +262,7 @@ ms.locfileid: "55208148"
 
 ## <a name="test-the-service"></a>Тестирование службы
 
-Перейдите на хост-компьютер из веб-браузера для отладки службы в режиме реального времени. Для развертывания локальной службы через [host_service](#hosting-service) посетите `http://localhost:<port>/`.  Для развертывания облачной службы Azure через [host_service](#deploying-service) посетите `http://<serviceName>.cloudapp.net/`.
+Перейдите на хост-компьютер из веб-браузера для отладки службы в режиме реального времени. Для развертывания локальной службы через host_service посетите `http://localhost:<port>/`.  Для развертывания облачной службы Azure через host_service перейдите на страницу `http://<serviceName>.cloudapp.net/`.
 
 Эта страница содержит ссылку на сведения о базовой статистике вызова API, а также грамматики и индекса, размещенных в этой службе. Эта страница также содержит интерфейс интерактивного поиска, который демонстрирует использование веб-API. Введите запросы в поле поиска, чтобы просмотреть результаты [интерпретации](interpretMethod.md), [оценки](evaluateMethod.md) и [вычисления гистограммы](calchistogramMethod.md) вызовов API. Источник базового HTML для этой страницы также служит в качестве примера того, как интегрировать веб-API в приложение для создания интерактивного поиска с широкими возможностями.
 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/07/2018
 ms.author: wolfma
-ms.openlocfilehash: 97ec3db40279f12fd0e0f53b11b5d7f9ca7063d5
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: f35a6c61cdbbb71d937b5293df1535e7751cf31d
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48020879"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55757527"
 ---
 > [!IMPORTANT]
-> Скачивая компоненты пакета SDK для службы "Речь" в Cognitive Services на этой странице, вы соглашаетесь на использование лицензии. См. [лицензионное соглашение об использовании пакета SDK для службы "Речь"](https://aka.ms/csspeech/license201809).
+> Скачивая компоненты пакета SDK службы "Речь" для Azure Cognitive Services на этой странице, вы соглашаетесь на использование лицензии. См. [лицензионное соглашения об использовании программного обеспечения Майкрософт для пакета SDK службы "Речь"](https://aka.ms/csspeech/license201809).

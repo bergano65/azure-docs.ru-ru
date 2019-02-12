@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 10/29/2018
+ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 0997b12ed7bc86134d0f2cc875a98ee554c667d2
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: dd875fe19bdf9d02fc7217b66c8fd442abef2d42
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461242"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700270"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-python"></a>Краткое руководство. Транслитерация текста с помощью Python и API перевода текстов
 
@@ -64,7 +64,7 @@ else:
 #subscriptionKey = 'put_your_key_here'
 ```
 
-В настоящее время для API перевода текстов доступна одна конечная точка и она задана как `base_url`. Параметр `path` задает маршрут `transliterate` и определяет, что нужно использовать версию 3 API.
+Конечная точка для перевода текстов задается как `base_url`. Параметр `path` задает маршрут `transliterate` и определяет, что нужно использовать версию 3 API.
 
 Параметры `params` используются для настройки языка ввода, а также входные и выходные наборы символов. В этом примере японский текст транслитерируется в текст на латинице.
 

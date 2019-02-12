@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure PowerShell. Создание VPN-шлюза | Документация Майкрософт
+title: Пример сценария Azure PowerShell — создание VPN-шлюза | Документация Майкрософт
 description: Создание VPN-шлюза с использованием PowerShell.
 services: vpn-gateway
 documentationcenter: vpn-gateway
@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 04/17/2018
 ms.author: alzam
-ms.openlocfilehash: 705a2089262da5e32ced8a6d0642e87d626e600c
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: c1b5a164f477887c68a8988f3ea4ca1dc20306eb
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43343738"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700525"
 ---
 # <a name="create-a-vpn-gateway-with-powershell"></a>Создание VPN-шлюза с помощью PowerShell
 
@@ -66,7 +66,7 @@ Remove-AzureRmResourceGroup -Name TestRG1
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Add-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/add-azurermvirtualnetworksubnetconfig) | Добавление конфигурации подсети. Эта конфигурация используется в процессе создания виртуальной сети. |
 | [Get-AzureRmVirtualNetwork](/powershell/module/azurerm.network/get-azurermvirtualnetwork) | Получение сведений о виртуальной сети. |

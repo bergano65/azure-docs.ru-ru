@@ -4,17 +4,17 @@ description: Схемы Azure позволяют создавать, опред�
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/15/2019
+ms.date: 02/01/2019
 ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b66a1c2c12a97ea8754377a138b51a4ca1739c21
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 78ce7c1063623e0c002bb6084d8c18139b3f889f
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320690"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566985"
 ---
 # <a name="define-and-assign-an-azure-blueprint-with-rest-api"></a>Определение и назначение схемы Azure с помощью REST API
 
@@ -76,7 +76,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -135,7 +135,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleContributor?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleContributor?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -155,7 +155,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyTags?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyTags?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -183,7 +183,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -211,7 +211,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/templateStorage?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/templateStorage?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -297,7 +297,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2017-11-11-preview
+     PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -320,14 +320,14 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 - Универсальный код ресурса (URI) REST API
 
   ```http
-  PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/versions/{BlueprintVersion}?api-version=2017-11-11-preview
+  PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/versions/{BlueprintVersion}?api-version=2018-11-01-preview
   ```
 
 Значение `{BlueprintVersion}` представляет собой строку, состоящую из букв, цифр и дефисов (без пробелов или других специальных символов), содержащую не более 20 символов. Оно должно быть уникальным и информативным, например **v20180622-135541**.
 
 ## <a name="assign-a-blueprint"></a>Назначение схемы
 
-После публикации схемы с помощью REST API ее можно назначить подписке. Назначьте созданную схему одной из подписок в иерархии группы управления. В **тексте запроса** указываются назначаемая схема, имена и расположения всех групп ресурсов в определении схемы, а также все параметры, определенные в схеме и используемые одним или несколькими связанными артефактами.
+После публикации схемы с помощью REST API ее можно назначить подписке. Назначьте созданную схему одной из подписок в иерархии группы управления. Если схема сохранена в подписке, схему можно будет назначить только этой подписке. В **тексте запроса** указываются назначаемая схема, имена и расположения всех групп ресурсов в определении схемы, а также все параметры, определенные в схеме и используемые одним или несколькими связанными артефактами.
 
 1. Предоставьте субъекту-службе Azure Blueprint роль **владельца** в целевой подписке. Идентификатор AppId является статическим (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), однако идентификатор субъекта-службы зависит от клиента. Подробные сведения для своего клиента можно запросить с помощью приведенного ниже REST API. Он использует [API Graph Azure Active Directory](../../active-directory/develop/active-directory-graph-api.md), схема авторизации которого отличается.
 
@@ -342,7 +342,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
    - Универсальный код ресурса (URI) REST API
 
      ```http
-     PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2017-11-11-preview
+     PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
      ```
 
    - Текст запроса
@@ -395,7 +395,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 - Универсальный код ресурса (URI) REST API
 
   ```http
-  DELETE https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2017-11-11-preview
+  DELETE https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
   ```
 
 ## <a name="delete-a-blueprint"></a>Удаление схемы
@@ -405,7 +405,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 - Универсальный код ресурса (URI) REST API
 
   ```http
-  DELETE https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2017-11-11-preview
+  DELETE https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
   ```
 
 ## <a name="next-steps"></a>Дополнительная информация

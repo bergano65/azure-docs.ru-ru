@@ -15,12 +15,12 @@ ms.date: 01/18/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 022dd937ae0557ca848a329039703f3b94ad0885
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b5254b45fcd71901876d9e77d1f29c0a0d40ce3f
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245360"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813880"
 ---
 # <a name="create-virtual-machine-disk-storage-in-azure-stack"></a>Создание хранилища для дисков виртуальных машин в Azure Stack
 
@@ -50,7 +50,7 @@ ms.locfileid: "55245360"
 
 | Метод | Параметры
 |-|-|
-|[Пользовательский портал](#use-the-portal-to-add-additional-disks-to-a-vm)|— Добавление нового диска данных на существующую виртуальную машину. Эти диски создаются с помощью Azure Stack. </br> </br>— Добавление имеющегося диска в виде VHD-файла на заранее созданную виртуальную машину. Для этого необходимо подготовить VHD-файл и передать его в Azure Stack. |
+|Пользовательский портал|— Добавление нового диска данных на существующую виртуальную машину. Эти диски создаются с помощью Azure Stack. </br> </br>— Добавление имеющегося диска в виде VHD-файла на заранее созданную виртуальную машину. Для этого необходимо подготовить VHD-файл и передать его в Azure Stack. |
 |[PowerShell](#use-powershell-to-add-multiple-unmanaged-disks-to-a-vm) | — Создайте виртуальную машину с диском ОС и в то же время добавьте на нее один или несколько дисков данных. |
 
 ## <a name="use-the-portal-to-add-disks-to-a-vm"></a>Добавление дисков на виртуальную машину с помощью портала

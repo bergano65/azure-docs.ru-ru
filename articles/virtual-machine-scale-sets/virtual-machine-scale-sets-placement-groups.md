@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 11/9/2017
 ms.author: rajraj
-ms.openlocfilehash: 5280936cdec25f7b5fc4b77c989b31c7a01f7bd6
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 2a1c78a4cec595b672604c90e103ae3b9e40273f
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958641"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55693689"
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Работа с крупными масштабируемыми наборами виртуальных машин
 Теперь вы можете создавать [масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets/) Azure, включающие до 1000 виртуальных машин. В этом документе под _крупным масштабируемым набором виртуальных машин_ подразумевается масштабируемый набор, в который можно добавить более 100 виртуальных машин. Эта возможность задается с помощью свойства масштабируемого набора (_singlePlacementGroup=False_). 
@@ -61,7 +61,7 @@ az vmss create -g biginfra -n bigvmss --image ubuntults --instance-count 1000
 az vmss create --help
 ```
 
-Если для создания крупного масштабируемого набора используется шаблон Azure Resource Manager, он должен создавать масштабируемый набор на основе управляемых дисков Azure. Вы можете задать для свойства _singlePlacementGroup_ значение _false_ в разделе _properties_ ресурса _Microsoft.Compute/virtualMAchineScaleSets_. В следующем фрагменте JSON показано начало шаблона масштабируемого набора, включая параметры "capacity": 1000 и _"singlePlacementGroup": false_:
+Если для создания крупного масштабируемого набора используется шаблон Azure Resource Manager, он должен создавать масштабируемый набор на основе управляемых дисков Azure. Вы можете задать для свойства _singlePlacementGroup_ значение _false_ в разделе _properties_ ресурса _Microsoft.Compute/virtualMachineScaleSets_. В следующем фрагменте JSON показано начало шаблона масштабируемого набора, включая параметры "capacity": 1000 и _"singlePlacementGroup": false_:
 ```json
 {
   "type": "Microsoft.Compute/virtualMachineScaleSets",

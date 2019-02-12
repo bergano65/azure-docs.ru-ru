@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.date: 11/13/2018
 ms.author: spelluru
-ms.openlocfilehash: 132fca9c8904c4f64fffe167e3a3f2c6bb0d2cfe
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 2937d1f665dae03795892f9ff0e8a93a894e1992
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621034"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818045"
 ---
 # <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
 Служба Azure Relay позволяет безопасно предоставлять службы, выполняющиеся в корпоративной сети в общедоступном облаке. Для этого вам не нужно открывать порт брандмауэра или вносить значительные изменения в инфраструктуру корпоративной сети. 
@@ -44,7 +44,7 @@ ms.locfileid: "51621034"
 Ретранслятор Azure предоставляет две функции:
 
 - [Гибридные подключения](#hybrid-connections). Используются веб-сокеты на основе открытых стандартов, что обеспечивает реализацию многоплатформенных сценариев.
-- [Ретрансляторы WCF](#wcf-relays). Используется Windows Communication Foundation (WCF), чтобы обеспечить возможность удаленно вызывать процедуры (RPC). Ретранслятор WCF — это устаревшее предложение для ретрансляции, которое многие клиенты уже используют в своих моделях программирования WCF.
+- Ретрансляторы WCF — используется Windows Communication Foundation (WCF), чтобы обеспечить возможность удаленного вызова процедур (RPC). Ретранслятор WCF — это устаревшее предложение для ретрансляции, которое многие клиенты уже используют в своих моделях программирования WCF.
 
 ## <a name="hybrid-connections"></a>через гибридные подключения
 
@@ -70,7 +70,7 @@ ms.locfileid: "51621034"
 | **Открытый протокол на основе стандартов** | |x |
 | **Модели программирования RPC** | |x |
 
-## <a name="architecture-processing-of-incoming-relay-requests"></a>Архитектура: обработка входящих запросов на ретрансляцию
+## <a name="architecture-processing-of-incoming-relay-requests"></a>Архитектура. Обработка входящих запросов на ретрансляцию
 На следующей схеме показано, как входящие запросы ретрансляции обрабатываются в службе Azure Relay:
 
 ![Обработка входящих запросов ретранслятора WCF](./media/relay-what-is-it/ic690645.png)

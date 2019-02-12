@@ -8,12 +8,12 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.openlocfilehash: 3554151490215f128efc6725b7aaa0628d503366
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: b0f909bb7f4b59e083f0ef1c8a19c11d5d9fb312
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260137"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821309"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
@@ -45,7 +45,7 @@ ms.locfileid: "54260137"
 
   Если у вас нет сервера Jenkins, выполните на портале Azure действия, описанные в руководстве по [созданию сервера Jenkins на виртуальной машине Azure под управлением Linux](/azure/jenkins/install-jenkins-solution-template).
 
-* Учетная запись [GitHub](https://github.com), чтобы создать рабочую копию ([вилку](#fork)) для примера веб-приложения Java. 
+* Учетная запись [GitHub](https://github.com), чтобы создать рабочую копию (вилку) для примера веб-приложения Java. 
 
 * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli), который можно запустить из локальной командной строки или [Azure Cloud Shell](/azure/cloud-shell/overview).
 

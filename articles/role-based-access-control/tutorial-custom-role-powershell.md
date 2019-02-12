@@ -11,14 +11,14 @@ ms.devlang: ''
 ms.topic: tutorial
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 06/12/2018
+ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: f49f6f03b6d9f1c51cada58ae782bbc364fc9d66
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 7ea9ce47b82dd4ad31caf935fd10e04daa07faba
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427293"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700018"
 ---
 # <a name="tutorial-create-a-custom-role-using-azure-powershell"></a>Руководство. Создание пользовательских ролей с помощью Azure PowerShell
 
@@ -34,12 +34,14 @@ ms.locfileid: "54427293"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+[!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
 - разрешения на создание пользовательских ролей, такие как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователя](built-in-roles.md#user-access-administrator);
-- Локальная установка [Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+- Локальная установка [Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="sign-in-to-azure-powershell"></a>Вход в Azure PowerShell
 
@@ -49,10 +51,10 @@ ms.locfileid: "54427293"
 
 Создать пользовательскую роль проще всего с помощью встроенной роли, в которую вы можете добавлять изменения для создания новой роли.
 
-1. В PowerShell вы можете получить список операций, доступных поставщику ресурсов с помощью команды [Get-AzureRmProviderOperation](/powershell/module/azurerm.resources/get-azurermprovideroperation). Полезно знать операции, которые доступны для создания разрешений. См. дополнительные сведения о [доступных операциях поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md#microsoftsupport).
+1. В PowerShell вы можете получить список операций, доступных поставщику ресурсов с помощью команды [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation). Полезно знать операции, которые доступны для создания разрешений. См. дополнительные сведения о [доступных операциях поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md#microsoftsupport).
 
     ```azurepowershell
-    Get-AzureRMProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoSize
+    Get-AzProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoSize
     ```
     
     ```Output
@@ -63,10 +65,10 @@ ms.locfileid: "54427293"
     Microsoft.Support/supportTickets/write Creates or Updates a Support Ticket. You can create a Support Tic...
     ```
 
-1. Используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition), чтобы отобразить роль [Читатель](built-in-roles.md#reader) в формате JSON.
+1. Используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition), чтобы отобразить роль [Читатель](built-in-roles.md#reader) в формате JSON.
 
     ```azurepowershell
-    Get-AzureRmRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole.json
+    Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole.json
     ```
 
 1. Откройте в редакторе файл **ReaderSupportRole.json**.
@@ -75,34 +77,28 @@ ms.locfileid: "54427293"
 
     ```json
     {
-        "Name":  "Reader",
-        "Id":  "acdd72a7-3385-48ef-bd42-f606fba81ae7",
-        "IsCustom":  false,
-        "Description":  "Lets you view everything, but not make any changes.",
-        "Actions":  [
-                        "*/read"
-                    ],
-        "NotActions":  [
-    
-                       ],
-        "DataActions":  [
-    
-                        ],
-        "NotDataActions":  [
-    
-                           ],
-        "AssignableScopes":  [
-                                 "/"
-                             ]
+      "Name": "Reader",
+      "Id": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+      "IsCustom": false,
+      "Description": "Lets you view everything, but not make any changes.",
+      "Actions": [
+        "*/read"
+      ],
+      "NotActions": [],
+      "DataActions": [],
+      "NotDataActions": [],
+      "AssignableScopes": [
+        "/"
+      ]
     }
     ```
     
 1. Измените файл JSON, добавив операцию `"Microsoft.Support/*"` в свойство `Actions`. Не забудьте включить запятую после операции чтения. Это действие разрешит пользователю создавать запросы в службу поддержки.
 
-1. Получите идентификатор подписки с помощью команды [Get-AzureRmSubscription](/powershell/module/azurerm.profile/get-azurermsubscription).
+1. Получите идентификатор подписки с помощью команды [Get-AzSubscription](/powershell/module/az.profile/get-azsubscription).
 
     ```azurepowershell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
 
 1. В `AssignableScopes` добавьте свой идентификатор подписки в следующем формате: `"/subscriptions/00000000-0000-0000-0000-000000000000"`
@@ -117,32 +113,26 @@ ms.locfileid: "54427293"
 
     ```json
     {
-        "Name":  "Reader Support Tickets",
-        "IsCustom":  true,
-        "Description":  "View everything in the subscription and also open support tickets.",
-        "Actions":  [
-                        "*/read",
-                        "Microsoft.Support/*"
-                    ],
-        "NotActions":  [
-    
-                       ],
-        "DataActions":  [
-    
-                        ],
-        "NotDataActions":  [
-    
-                           ],
-        "AssignableScopes":  [
-                                 "/subscriptions/00000000-0000-0000-0000-000000000000"
-                             ]
+      "Name": "Reader Support Tickets",
+      "IsCustom": true,
+      "Description": "View everything in the subscription and also open support tickets.",
+      "Actions": [
+        "*/read",
+        "Microsoft.Support/*"
+      ],
+      "NotActions": [],
+      "DataActions": [],
+      "NotDataActions": [],
+      "AssignableScopes": [
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
+      ]
     }
     ```
     
-1. Чтобы создать пользовательскую роль, используйте команду [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/new-azurermroledefinition) и укажите файл определения роли JSON.
+1. Чтобы создать пользовательскую роль, используйте команду [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition) и укажите файл определения роли JSON.
 
     ```azurepowershell
-    New-AzureRmRoleDefinition -InputFile "C:\CustomRoles\ReaderSupportRole.json"
+    New-AzRoleDefinition -InputFile "C:\CustomRoles\ReaderSupportRole.json"
     ```
 
     ```Output
@@ -161,10 +151,10 @@ ms.locfileid: "54427293"
 
 ## <a name="list-custom-roles"></a>Вывод списка настраиваемых ролей
 
-- Получить список всех пользовательских ролей можно с помощью команды [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition).
+- Получить список всех пользовательских ролей можно с помощью команды [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition).
 
     ```azurepowershell
-    Get-AzureRmRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
+    Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
     ```
 
     ```Output
@@ -181,10 +171,10 @@ ms.locfileid: "54427293"
 
 Чтобы обновить пользовательскую роль, обновите файл JSON или используйте объект `PSRoleDefinition`.
 
-1. Используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition), чтобы обновить файл JSON и отобразить пользовательскую роль в формате JSON.
+1. Используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition), чтобы обновить файл JSON и отобразить пользовательскую роль в формате JSON.
 
     ```azurepowershell
-    Get-AzureRmRoleDefinition -Name "Reader Support Tickets" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole2.json
+    Get-AzRoleDefinition -Name "Reader Support Tickets" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole2.json
     ```
 
 1. Откройте файл в редакторе.
@@ -195,34 +185,28 @@ ms.locfileid: "54427293"
 
     ```json
     {
-        "Name":  "Reader Support Tickets",
-        "Id":  "22222222-2222-2222-2222-222222222222",
-        "IsCustom":  true,
-        "Description":  "View everything in the subscription and also open support tickets.",
-        "Actions":  [
-                        "*/read",
-                        "Microsoft.Support/*",
-                        "Microsoft.Resources/deployments/*"
-                    ],
-        "NotActions":  [
-    
-                       ],
-        "DataActions":  [
-    
-                        ],
-        "NotDataActions":  [
-    
-                           ],
-        "AssignableScopes":  [
-                                 "/subscriptions/00000000-0000-0000-0000-000000000000"
-                             ]
+      "Name": "Reader Support Tickets",
+      "Id": "22222222-2222-2222-2222-222222222222",
+      "IsCustom": true,
+      "Description": "View everything in the subscription and also open support tickets.",
+      "Actions": [
+        "*/read",
+        "Microsoft.Support/*",
+        "Microsoft.Resources/deployments/*"
+      ],
+      "NotActions": [],
+      "DataActions": [],
+      "NotDataActions": [],
+      "AssignableScopes": [
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
+      ]
     }
     ```
         
-1. Чтобы обновить пользовательскую роль, используйте команду [Set-AzureRmRoleDefinition](/powershell/module/azurerm.resources/set-azurermroledefinition) и укажите обновленный файл JSON.
+1. Чтобы обновить пользовательскую роль, используйте команду [Set-AzRoleDefinition](/powershell/module/az.resources/set-azroledefinition) и укажите обновленный файл JSON.
 
     ```azurepowershell
-    Set-AzureRmRoleDefinition -InputFile "C:\CustomRoles\ReaderSupportRole2.json"
+    Set-AzRoleDefinition -InputFile "C:\CustomRoles\ReaderSupportRole2.json"
     ```
 
     ```Output
@@ -237,10 +221,10 @@ ms.locfileid: "54427293"
     AssignableScopes : {/subscriptions/00000000-0000-0000-0000-000000000000}
     ```
 
-1. Чтобы с помощью объекта `PSRoleDefintion` обновить пользовательскую роль, сначала получите эту роль, используя команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition).
+1. Чтобы с помощью объекта `PSRoleDefintion` обновить пользовательскую роль, сначала получите эту роль, используя команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition).
 
     ```azurepowershell
-    $role = Get-AzureRmRoleDefinition "Reader Support Tickets"
+    $role = Get-AzRoleDefinition "Reader Support Tickets"
     ```
     
 1. Вызовите метод `Add`, чтобы добавить операцию для чтения параметров диагностики.
@@ -249,10 +233,10 @@ ms.locfileid: "54427293"
     $role.Actions.Add("Microsoft.Insights/diagnosticSettings/*/read")
     ```
 
-1. Обновите роль с помощью команды [Set-AzureRmRoleDefinition](/powershell/module/azurerm.resources/set-azurermroledefinition).
+1. Обновите роль с помощью команды [Set-AzRoleDefinition](/powershell/module/az.resources/set-azroledefinition).
 
     ```azurepowershell
-    Set-AzureRmRoleDefinition -Role $role
+    Set-AzRoleDefinition -Role $role
     ```
     
     ```Output
@@ -270,16 +254,16 @@ ms.locfileid: "54427293"
     
 ## <a name="delete-a-custom-role"></a>Удаление настраиваемой роли
 
-1. Получите идентификатор пользовательской роли с помощью команды [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition).
+1. Получите идентификатор пользовательской роли с помощью команды [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition).
 
     ```azurepowershell
-    Get-AzureRmRoleDefinition "Reader Support Tickets"
+    Get-AzRoleDefinition "Reader Support Tickets"
     ```
 
-1. Укажите идентификатор пользовательской роли, чтобы удалить пользовательскую роль, с помощью команды [Remove-AzureRmRoleDefinition](/powershell/module/azurerm.resources/remove-azurermroledefinition).
+1. Укажите идентификатор пользовательской роли, чтобы удалить пользовательскую роль, с помощью команды [Remove-AzRoleDefinition](/powershell/module/az.resources/remove-azroledefinition).
 
     ```azurepowershell
-    Remove-AzureRmRoleDefinition -Id "22222222-2222-2222-2222-222222222222"
+    Remove-AzRoleDefinition -Id "22222222-2222-2222-2222-222222222222"
     ```
 
     ```Output

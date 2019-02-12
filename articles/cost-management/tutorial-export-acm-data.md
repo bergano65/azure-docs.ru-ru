@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/04/2019
+ms.date: 02/05/2019
 ms.topic: tutorial
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 4ad93dad2044526f5825823540325b73f2d0d7ae
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 5f979f562ee871e7ae5f48de5bc53405cb3d1116
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053540"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55766423"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание задачи для экспорта данных и управление экспортированными данными
 
@@ -30,8 +30,7 @@ ms.locfileid: "54053540"
 > * Проверка сбора данных
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Экспорт данных доступен для всех клиентов с [Соглашением Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Для экспорта данных пользователем или группой поддерживаются следующие разрешения Azure на подписку.
+Экспорт данных доступен в различных типах учетной записи Azure, включая клиентов [Соглашения Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Для экспорта данных пользователем или группой поддерживаются следующие разрешения Azure на подписку.
 
 - Владелец: может создавать, изменять или удалять операции экспорта для подписки.
 - Участник: может создавать, изменять или удалять свои запланированные операции экспорта. Может изменять имена запланированных операций экспорта, созданных другими пользователями.

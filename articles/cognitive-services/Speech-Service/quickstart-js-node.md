@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 1/16/2019
 ms.author: fmegen
-ms.openlocfilehash: c9f83368a540003e8bcc35282c664ec23e4ff068
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 99938f8b64339556c0ee4b9caa9124c609159af6
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226508"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747287"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-nodejs"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Node.js
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как создать проект Node.js, использующий привязку JavaScript из пакета SDK для службы "Речь" в Cognitive Services, который будет преобразовывать речь в текст.
-Приложение создано на базе [пакета SDK для службы "Речь" в Microsoft Cognitive Services](https://aka.ms/csspeech/npmpackage).
+Из этой статьи вы узнаете, как создать проект Node.js с помощью привязки JavaScript из пакета SDK для службы "Речь" в Cognitive Services для преобразования речи в текст.
+Приложение основано на службе "Речь" пакета SDK для JavaScript, подробнее см. [здесь](https://aka.ms/csspeech/npmpackage).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,48 +31,48 @@ ms.locfileid: "55226508"
 
 ## <a name="create-a-new-project"></a>Создание нового проекта
 
-Создайте папку и инициализируйте проект.
+Создайте новую папку и инициализируйте проект:
 
 ```sh
 npm init -f
 ```
 
-В результате инициализируются файлы package.json со значениями по умолчанию. Вы, вероятно, захотите изменить этот файл позже.
+Эта команда инициализирует файлы **package.json** со значениями по умолчанию. Вы, вероятно, захотите изменить этот файл позже.
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Добавьте пакет SDK для службы "Речь" в проект Node.js.
+Добавьте пакет SDK для службы "Речь" в проект Node.js:
 
 ```
 npm install microsoft-cognitiveservices-speech-sdk
 ```
 
-В результате будет скачана и установлена последняя версия пакета SDK для службы "Речь" и все необходимые компоненты из npmjs. Пакет SDK будет установлен в каталог `node_modules` внутри папки проекта.
+С помощью этой команды можете скачать и установить последнюю версию пакета SDK для службы "Речь" и все необходимые компоненты из **npmjs**. Пакет SDK будет установлен в каталог `node_modules` внутри папки проекта.
 
 ## <a name="use-the-speech-sdk"></a>Использование пакета SDK для службы "Речь"
 
-Создайте в папке файл `index.js` и откройте его в текстовом редакторе.
+Создайте в папке файл с именем `index.js` и откройте его в текстовом редакторе.
 
 > [!NOTE]
-> Обратите внимание, что в Node.js пакет SDK для службы "Речь" не поддерживает микрофон или тип данных файла. Они поддерживаются только в браузерах. Вместо этого используйте интерфейс потоковой передачи для пакета SDK для службы "Речь" с помощью `AudioInputStream.createPushStream()` либо `AudioInputStream.createPullStream()`.
+> В Node.js пакет SDK для службы "Речь" не поддерживает микрофон или тип данных **файла**. Они поддерживаются только в браузерах. Вместо этого используйте интерфейс **Stream** для пакета SDK службы "Речь" с помощью `AudioInputStream.createPushStream()` или `AudioInputStream.createPullStream()`.
 
 В этом примере используется интерфейс `PushAudioInputStream`.
 
-Добавьте следующий код JavaScript:
+Добавьте следующий код JavaScript.
 
 [!code-javascript[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/js-node/index.js#code)]
 
 ## <a name="run-the-sample"></a>Запуск примера
 
-Чтобы запустить приложение, адаптируйте `YourSubscriptionKey`, `YourServiceRegion` и `YourAudioFile.wav` для своей конфигурации. После этого его можно запустить, вызвав следующую команду:
+Чтобы открыть приложение, адаптируйте `YourSubscriptionKey`, `YourServiceRegion` и `YourAudioFile.wav` для своей конфигурации. Затем запустите его с помощью следующей команды.
 
 ```sh
 node index.js
 ```
 
-Она активирует распознавание на основе предоставленного имени файла и выведет выходные данные в консоли.
+Она активирует распознавание, используя указанное имя файла. И представляет выходные данные на консоль.
 
-Ниже приведен пример выходных данных выполнения `index.js` после обновления ключа подписки и использования файла `whatstheweatherlike.wav`.
+В этом примере приведены выходные данные при запуске `index.js` после обновления ключа подписки и использования файла `whatstheweatherlike.wav`:
 
 ```json
 SpeechRecognitionResult {
@@ -94,35 +94,35 @@ SpeechRecognitionResult {
 
 ## <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
-Вы также можете запустить пример из Visual Studio Code. Выполните следующие действия, чтобы установить, открыть и выполнить шаблон быстрого запуска:
+Вы также можете запустить пример из Visual Studio Code. Выполните следующие действия, чтобы установить, открыть и выполнить быстрый запуск.
 
-1. Запустите Visual Studio Code и щелкните "Открыть папку", а затем перейдите к папке шаблона быстрого запуска.
+1. Запустите Visual Studio Code. Выберите **Открыть папку**. Затем перейдите к папке быстрого запуска.
 
-   ![Снимок экрана с открытой папкой](media/sdk/qs-js-node-01-open_project.png)
+   ![Открытие папки](media/sdk/qs-js-node-01-open_project.png)
 
 1. Откройте терминал в Visual Studio Code.
 
-   ![Снимок экрана с окном терминала](media/sdk/qs-js-node-02_open_terminal.png)
+   ![Окно терминала](media/sdk/qs-js-node-02_open_terminal.png)
 
-1. Запустите npm для установки зависимостей.
+1. Запустите `npm`, чтобы установить зависимости.
 
-   ![Снимок экрана установки npm](media/sdk/qs-js-node-03-npm_install.png)
+   ![Установка npm](media/sdk/qs-js-node-03-npm_install.png)
 
-1. Теперь вы готовы открыть `index.js` и задать точку останова.
+1. Теперь можете открыть `index.js` и задать точку останова.
 
-   ![Снимок экрана index.js с точкой останова на строке 16](media/sdk/qs-js-node-04-setup_breakpoint.png)
+   ![index.js с точкой останова на 16 строке](media/sdk/qs-js-node-04-setup_breakpoint.png)
 
-1. Чтобы начать отладку, нажмите клавишу F5 или выберите в меню "Отладка/Начать отладку".
+1. Чтобы начать отладку, нажмите клавишу F5 или выберите в меню **Отладка/Начать отладку**.
 
-   ![Снимок экрана с меню отладки](media/sdk/qs-js-node-05-start_debugging.png)
+   ![Меню отладки](media/sdk/qs-js-node-05-start_debugging.png)
 
-1. При достижении точки останова можно проверить стек вызова и переменные.
+1. При достижении точки останова можете проверить стек вызова и переменные.
 
-   ![Снимок экрана отладчика](media/sdk/qs-js-node-06-hit_breakpoint.png)
+   ![Отладчик](media/sdk/qs-js-node-06-hit_breakpoint.png)
 
-1. Любые выходные данные будут показаны в окне консоли отладки.
+1. Любые выходные данные отображаются в окне консоли отладки.
 
-   ![Снимок экрана консоли отладки](media/sdk/qs-js-node-07-debug_output.png)
+   ![Консоль отладки](media/sdk/qs-js-node-07-debug_output.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -7,16 +7,16 @@ author: billmath
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/30/2019
-ms.component: hybrid
+ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 7e7c9ca30659fd1e99989bb77406b653a8ed9e7f
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 5219241de9b18008032a3eb78c6aab25a2713370
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302976"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55660414"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>Руководство.  Настройка PHS в качестве резервной копии для AD FS в Azure AD Connect
 
@@ -43,7 +43,7 @@ ms.locfileid: "55302976"
 10. Вот и все!  Готово.  Синхронизация хэшей паролей теперь будет происходить и может использоваться в качестве резервной копии, если AD FS станет недоступным.
 
 ## <a name="switch-to-password-hash-synchronization"></a>Переключение на синхронизацию хэшей паролей
-Теперь мы покажем, как переключиться на синхронизацию хэшей паролей, если это вам нужно.  Выполните следующее:
+Теперь мы покажем, как переключиться на синхронизацию хэшей паролей. Прежде чем начать, рассмотрим, при каких условиях следует использовать переключение. Не используйте переключение для решения временных проблем, например сбоя сети, небольших проблем с AD FS или проблемы, которая влияет на группу пользователей. Если вы решили использовать переключение, потому что устранение проблем займет слишком много времени, сделайте следующее:
 
 1. Дважды щелкните значок Azure AD Connect, созданный на рабочем столе.
 2.  Нажмите **Настроить**.

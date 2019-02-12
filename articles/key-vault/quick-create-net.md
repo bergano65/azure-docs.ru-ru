@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения узла | Документация Майкрософт
-description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
+description: В этом кратком руководстве вы настроите и получите секрет из Azure Key Vault с помощью веб-приложения .NET.
 services: key-vault
 author: prashanthyv
 manager: sumedhb
@@ -9,31 +9,32 @@ ms.topic: quickstart
 ms.date: 01/02/2019
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 20d47ecaea8ce393f60cba93c3dbcf7ca4a076c8
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 300ee1b01f346f7e1c118b76d64d0eda6e4d7934
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002609"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55565553"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
-В этом кратком руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Вы узнаете, как выполнять следующие задачи:
+В этом кратком руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. С помощью Key Vault можно защитить данные. Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Создать хранилище ключей.
-> * сохранение секрета в хранилище ключей;
-> * получение секрета из хранилища ключей;
-> * создание веб-приложения Azure;
-> * активация [управляемого удостоверения службы](../active-directory/managed-identities-azure-resources/overview.md) для веб-приложения;
-> * предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
+* Создать хранилище ключей.
+* сохранение секрета в хранилище ключей;
+* получение секрета из хранилища ключей;
+* создание веб-приложения Azure;
+* активация [управляемого удостоверения службы](../active-directory/managed-identities-azure-resources/overview.md) для веб-приложения;
+* предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
 
-Прежде чем мы продолжим, ознакомьтесь с [основными понятиями](key-vault-whatis.md#basic-concepts).
+Прежде чем мы продолжим, ознакомьтесь с разделом [Основные понятия](key-vault-whatis.md#basic-concepts) для Key Vault.
 
 >[!NOTE]
 >Key Vault — это центральный репозиторий для хранения секретов программным способом. Но чтобы воспользоваться возможностями хранилища ключей, приложения и пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. В соответствии с рекомендациями по безопасности первый секрет должен периодически меняться. 
 >
 >Благодаря [управляемым удостоверениям служб для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) приложения, работающие в Azure, получают удостоверение, которым автоматически управляет Azure. Это помогает устранить *проблему введения секрета*, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -77,7 +78,7 @@ az group create --name "<YourResourceGroupName>" --location "East US"
 
 Теперь создайте хранилище ключей в группе ресурсов, созданной на предыдущем шаге. Введите следующие сведения:
 
-* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких символов: 0–9, a–z, A–Z и -.
+* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 символов, которые содержат: 0–9, a–z, A–Z и дефис (-).
 * Имя группы ресурсов.
 * Расположение. **Восточная часть США**.
 
@@ -119,7 +120,7 @@ git clone https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart.git
 
 1. Перейдите в папку key-vault-dotnet-core-quickstart.
 2. Откройте в Visual Studio 2017 файл key-vault-dotnet-core-quickstart.sln.
-3. Откройте файл Program.cs и измените заполнитель *YourKeyVaultName* на имя вашего хранилища ключей, созданного ранее.
+3. Откройте файл Program.cs и измените *YourKeyVaultName* заполнителя на имя хранилища ключей, созданного ранее.
 
 Это решение использует библиотеки NuGet [AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
 
@@ -143,8 +144,7 @@ git clone https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart.git
 
 Azure Key Vault позволяет обеспечить безопасное хранение учетных данных, а также других ключей и секретов, но для их получения код должен выполнять аутентификацию в Key Vault. [Управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) упрощают решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, включая Key Vault, не храня какие-либо учетные данные в коде.
 
-1. Вернитесь в окно командной строки Azure.
-2. Выполните команду assign-identity, чтобы создать удостоверение для этого приложения.
+В Azure CLI выполните команду assign-identity, чтобы создать удостоверение для приложения:
 
    ```azurecli
    az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group "<YourResourceGroupName>"
@@ -171,10 +171,20 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 
 ```
 
-Теперь при запуске приложения должно отображаться извлеченное значение секрета. В приведенной выше команде вы предоставляете удостоверению (MSI) разрешения службы приложений на операции **get** и **list** в Key Vault.
+Теперь при запуске приложения должно отображаться извлеченное значение секрета. В приведенной выше команде вы предоставляете удостоверению разрешения службы приложений на операции **get** и **list** в хранилище ключей.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Удалите группу ресурсов, виртуальную машину и все связанные ресурсы, если они вам больше не нужны. Чтобы сделать это, выберите группу ресурсов для виртуальной машины и нажмите **Удалить**.
+
+Удалите хранилище ключей с помощью команды [az keyvault delete](https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-delete).
+
+```azurecli
+az keyvault delete --name
+                   [--resource-group]
+                   [--subscription]
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Что такое хранилище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)
-* [Пакет Azure SDK для .NET](https://github.com/Azure/azure-sdk-for-net)
-* [Справочник по REST API Azure](https://docs.microsoft.com/rest/api/keyvault/)
+> [!div class="nextstepaction"]
+> [Что такое хранилище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)

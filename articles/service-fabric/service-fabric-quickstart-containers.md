@@ -4,7 +4,7 @@ description: В этом кратком руководстве вы создад
 services: service-fabric
 documentationcenter: .net
 author: TylerMSFT
-manager: timlt
+manager: jpconnock
 editor: vturecek
 ms.assetid: ''
 ms.service: service-fabric
@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/30/2018
+ms.date: 01/31/2019
 ms.author: twhitney
 ms.custom: mvc
-ms.openlocfilehash: 2855d28a3d5414413ca1657a7bef9c060f6d4424
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 816f12ca5837fa99b4e945c965f9cbad406c63bb
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300342"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55749803"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -63,11 +63,12 @@ Azure Service Fabric — это платформа распределенных 
 ![Диалоговое окно создания службы][new-service]
 
 ## <a name="specify-the-os-build-for-your-container-image"></a>Укажите сборку операционной системы для образа контейнера
+
 Контейнеры, созданные с помощью одной версии Windows Server могут не работать на узле под управлением другой версии Windows Server. Например, созданные с помощью Windows Server версии 1709 контейнеры, не работают в Windows Server 2016. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
 
 В версии 6.1 среды выполнения Service Fabric и более поздних можно указать несколько образов операционной системы на контейнер и отметить каждый из них, указав версию сборки операционной системы, для которой он будет развертываться. Это помогает обеспечить запуск приложения на узлах под управлением других версий ОС Windows. Дополнительные сведения см. в разделе [Указание сборок ОС для образов контейнеров](service-fabric-get-started-containers.md#specify-os-build-specific-container-images). 
 
-Корпорация Майкрософт публикует различные образы для версий IIS, встроенных в разных версиях Windows Server. Чтобы убедиться в том, что Service Fabric развертывает контейнер, совместимый с версией Windows Server на узлах кластера, где он развертывает приложение, добавьте следующие строки в файл *ApplicationManifest.xml*. Версия сборки для Windows Server 2016 — 14393, а версия сборки для Windows Server версии 1709 — 16299. 
+Корпорация Майкрософт публикует различные образы для версий IIS, встроенных в разных версиях Windows Server. Чтобы убедиться в том, что Service Fabric развертывает контейнер, совместимый с версией Windows Server на узлах кластера, где он развертывает приложение, добавьте следующие строки в файл *ApplicationManifest.xml*. Версия сборки для Windows Server 2016 — 14393, а версия сборки для Windows Server версии 1709 — 16299.
 
 ```xml
     <ContainerHostPolicies CodePackageRef="Code"> 
@@ -80,34 +81,57 @@ Azure Service Fabric — это платформа распределенных 
     </ContainerHostPolicies> 
 ```
 
-Манифест служб продолжает указывать только один образ для наносервера, `microsoft/iis:nanoserver`. 
+Манифест служб продолжает указывать только один образ для наносервера, `microsoft/iis:nanoserver`.
+
+Кроме того, в файле *ApplicationManifest.xml* измените значение параметра **PasswordEncrypted** на **false**. Учетная запись и пароль не указаны для образа общедоступного контейнера, находящегося в центре Docker, поэтому мы отключили возможность шифрования, так как шифрование пустого пароля приведет к возникновению ошибки сборки.
+
+```xml
+<RepositoryCredentials AccountName="" Password="" PasswordEncrypted="false" />
+```
 
 ## <a name="create-a-cluster"></a>Создание кластера
 
-Для развертывания приложения в кластере Azure можно использовать кластер сообщества. Кластеры сообщества — это бесплатные кластеры Service Fabric, которые доступны в течение ограниченного времени. Эти кластеры размещены в Azure и поддерживаются командой Service Fabric. Любой пользователь может развертывать приложения на этих кластерах и знакомиться с платформой.  Кластер использует один самозаверяющий сертификат для обмена данными между узлами и обеспечения безопасности при взаимодействии между клиентом и узлом. Контейнеры с поддержкой кластеров сообщества. Чтобы настроить и использовать собственный кластер, связанный с ним номер SKU должен поддерживать контейнеры (например, Windows Server Datacenter 2016 с контейнерами).
+В следующем примере сценария создается кластер Service Fabric из пяти узлов, защищенный с помощью сертификата X.509. Команда создает самозаверяющий сертификат и отправляет его в новое хранилище ключей. Сертификат также копируется в локальный каталог. Дополнительные сведения о создании кластера с помощью этого сценария см. в статье [Создание кластера Service Fabric](scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
-Войдите в систему и [присоедините кластер Windows](https://aka.ms/tryservicefabric). Скачайте сертификат PFX на компьютер, щелкнув ссылку **PFX**. Щелкните ссылку **How to connect to a secure Party cluster?** (Как подключиться к безопасному кластеру сообщества) и скопируйте пароль сертификата. Сертификат, пароль сертификата и значение **конечной точки подключения** будут использоваться в дальнейшем.
+При необходимости установите Azure PowerShell с помощью инструкций, приведенных в [руководстве по Azure PowerShell](/powershell/azure/overview).
 
-![Конечная точка подключения и файл PFX](./media/service-fabric-quickstart-containers/party-cluster-cert.png)
+Прежде чем запустить следующий сценарий, в PowerShell выполните командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
-> [!Note]
-> В течение одного часа доступно ограниченное число кластеров сообщества. Если при попытке регистрации в кластере сообщества поступает сообщение об ошибке, подождите немного и повторите попытку. Или следуйте инструкциям из раздела о [развертывании приложения .NET](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-app-to-party-cluster#deploy-the-sample-application), чтобы создать кластер Service Fabric в подписке Azure и развернуть в нем приложение. Кластер, созданный с помощью Visual Studio, поддерживает контейнеры. После развертывания и проверки приложения в кластере можно сразу перейти к работе с [полными примерами манифестов службы и приложений Service Fabric](#complete-example-service-fabric-application-and-service-manifests).
->
+Скопируйте приведенный ниже сценарий в буфер обмена и откройте **интегрированную среду сценариев Windows PowerShell**.  Вставьте содержимое в пустое окно Untitled1.ps1. Затем укажите значения для содержащихся в сценарии переменных: `subscriptionId`, `certpwd`, `certfolder`, `adminuser`, `adminpwd` и т. д.  Указанный для `certfolder` каталог должен существовать до запуска сценария.
 
-На компьютере Windows установите PFX в хранилище сертификатов: *CurrentUser\My*.
+[!code-powershell[main](../../powershell_scripts/service-fabric/create-secure-cluster/create-secure-cluster.ps1 "Create a Service Fabric cluster")]
+
+Предоставив значения для переменных, нажмите клавишу **F5**, чтобы запустить сценарий.
+
+После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Например: 
+
+```PowerShell
+...
+ClusterEndpoint : https://southcentralus.servicefabric.azure.com/runtime/clusters/b76e757d-0b97-4037-a184-9046a7c818c0
+```
+
+### <a name="install-the-certificate-for-the-cluster"></a>Установка сертификата для кластера
+
+Теперь мы установим PFX в хранилище сертификатов *CurrentUser\My*. PFX-файл будет расположен в каталоге, указанном с помощью переменной среды `certfolder` в приведенном выше сценарии PowerShell.
+
+Перейдите в этот каталог, а затем выполните следующую команду PowerShell, подставив имя PFX-файла, который находится в каталоге `certfolder`, и пароль, указанный в переменной `certpwd`. В этом примере текущий каталог получает значение каталога, указанного в переменной `certfolder` в сценарии PowerShell. Из этого каталога выполняется команда `Import-PfxCertificate`:
 
 ```powershell
-PS C:\mycertificates> Import-PfxCertificate -FilePath .\party-cluster-873689604-client-cert.pfx -CertStoreLocation Cert:\CurrentUser\My -Password (ConvertTo-SecureString 873689604 -AsPlainText -Force)
+PS C:\mycertificates> Import-PfxCertificate -FilePath .\mysfclustergroup20190130193456.pfx -CertStoreLocation Cert:\CurrentUser\My -Password (ConvertTo-SecureString Password#1234 -AsPlainText -Force)
+```
 
+Эта команда возвращает отпечаток:
 
+```powershell
+  ...
   PSParentPath: Microsoft.PowerShell.Security\Certificate::CurrentUser\My
 
 Thumbprint                                Subject
 ----------                                -------
-3B138D84C077C292579BA35E4410634E164075CD  CN=zwin7fh14scd.westus.cloudapp.azure.com
+0AC30A2FA770BEF566226CFCF75A6515D73FC686  CN=mysfcluster.SouthCentralUS.cloudapp.azure.com
 ```
 
-Помните об отпечатке для следующего шага.
+Запомните значение отпечатка для выполнения следующего шага.
 
 ## <a name="deploy-the-application-to-azure-using-visual-studio"></a>Развертывание приложения в Azure с помощью Visual Studio
 
@@ -115,15 +139,23 @@ Thumbprint                                Subject
 
 Щелкните правой кнопкой мыши **MyFirstContainer** в обозревателе решений и выберите команду **Опубликовать**. Появится диалоговое окно "Опубликовать".
 
-Скопируйте **конечную точку подключения** со страницы кластера сообщества в поле **Конечная точка подключения**. Например, `zwin7fh14scd.westus.cloudapp.azure.com:19000`. Щелкните **Расширенные параметры подключения** и проверьте сведения о параметрах подключения.  Значения *FindValue* и *ServerCertThumbprint* должны соответствовать отпечатку сертификата, который установлен на предыдущем шаге.
+Скопируйте содержимое после **CN=** из результатов выполнения приведенной выше команды `Import-PfxCertificate` в окне PowerShell и добавьте к нему порт `19000`. Например, `mysfcluster.SouthCentralUS.cloudapp.azure.com:19000`. Скопируйте его в поле **Конечная точка подключения**. Запомните это значение, так как оно понадобится при выполнении следующего шага.
+
+Щелкните **Расширенные параметры подключения** и проверьте сведения о параметрах подключения.  Значения *FindValue* и *ServerCertThumbprint* должны соответствовать отпечатку сертификата, установленного при выполнении командлета `Import-PfxCertificate` на предыдущем шаге.
 
 ![Диалоговое окно "Публикация"](./media/service-fabric-quickstart-containers/publish-app.png)
 
 Щелкните **Опубликовать**.
 
-Имя каждого приложения в кластере должно быть уникальным.  Кластеры сообщества — это открытая общедоступная среда. Но они могут конфликтовать с существующим приложением.  В случае конфликта имен переименуйте проект Visual Studio и повторите развертывание.
+Имя каждого приложения в кластере должно быть уникальным. В случае конфликта имен переименуйте проект Visual Studio и повторите развертывание.
 
-Откройте браузер и перейдите к **конечной точки подключения**, указанной на странице кластера сообщества. При необходимости можно добавить в начало URL-адреса идентификатор схемы `http://` и порт `:80`. Например, http://zwin7fh14scd.westus.cloudapp.azure.com:80. Откроется веб-страница IIS по умолчанию. ![Веб-страница IIS по умолчанию][iis-default]
+Откройте браузер и перейдите по адресу, указанному в поле **Конечная точка подключения** на предыдущем шаге. При необходимости можно добавить в начало URL-адреса идентификатор схемы `http://` и порт `:80`. Например, http://mysfcluster.SouthCentralUS.cloudapp.azure.com:80.
+
+ Должна открыться веб-страница служб IIS по умолчанию. ![Страница служб IIS по умолчанию][iis-default]
+
+## <a name="clean-up"></a>Очистка
+
+Пока кластер работает, с вас будет взиматься плата. Рекомендуем [удалить кластер](service-fabric-cluster-delete.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

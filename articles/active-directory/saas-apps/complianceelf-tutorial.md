@@ -1,227 +1,194 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Compliance ELF | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Compliance ELF | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Compliance ELF.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 69c6efc3-54c7-49ec-b827-33177c09aa13
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/16/2018
+ms.topic: tutorial
+ms.date: 01/24/2019
 ms.author: jeedes
-ms.openlocfilehash: e5a7bfc51bcd1931def202d701127de701afb595
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: f29b87a314974154076a81572eca4b5db2d4fb30
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39042866"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55567355"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство по интеграции Azure Active Directory с Compliance ELF
+# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство. Интеграция Azure Active Directory с Compliance ELF
 
 Из этого руководства вы узнаете, как интегрировать Compliance ELF с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Compliance ELF обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Compliance ELF.
-- Вы можете включить автоматический вход пользователей в Compliance ELF (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Compliance ELF.
+* Вы можете включить автоматический вход пользователей в Compliance ELF (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Compliance ELF, вам потребуется:
 
-- подписка Azure AD;
-- подписка Compliance ELF с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Compliance ELF с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Compliance ELF из коллекции
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Compliance ELF поддерживает единый вход, инициируемый **поставщиком услуг и поставщиком удостоверений**.
 
 ## <a name="adding-compliance-elf-from-the-gallery"></a>Добавление Compliance ELF из коллекции
+
 Чтобы настроить интеграцию Compliance ELF с Azure AD, необходимо добавить Compliance ELF из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Compliance ELF из коллекции, выполните инструкции ниже.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Compliance ELF**, выберите **Compliance ELF** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Compliance ELF в списке результатов](./media/complianceelf-tutorial/tutorial_complianceelf_addfromgallery.png)
+     ![Compliance ELF в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Compliance ELF при помощи тестового пользователя Britta Simon.
-
-Для работы единого входа Azure AD необходимо знать, какой пользователь в Compliance ELF соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Compliance ELF.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Compliance ELF.
+В этом разделе описана настройка и проверка единого входа Azure AD в Compliance ELF при помощи тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Compliance ELF.
 
 Чтобы настроить и проверить единый вход Azure AD в Compliance ELF, вам потребуется выполнить действия в указанных ниже стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создав тестового пользователя Compliance ELF](#create-a-compliance-elf-test-user)** Britta Simon, мы сможем связать его с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Compliance ELF](#configure-compliance-elf-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Compliance ELF](#create-compliance-elf-test-user)** требуется, чтобы в Compliance ELF существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Compliance ELF.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Compliance ELF, выполните инструкции ниже.**
+Чтобы настроить единый вход Azure AD в Compliance ELF, выполните инструкции ниже.
 
-1. На портале Azure на странице интеграции с приложением **Compliance ELF** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Compliance ELF** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Диалоговое окно "Единый вход"](./media/complianceelf-tutorial/tutorial_complianceelf_samlbase.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. Чтобы настроить приложение в режиме, инициированном **IDP**, в разделе **Compliance ELF Domain and URLs** (Домен и URL-адреса приложения Compliance ELF) сделайте следующее:
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Compliance ELF](./media/complianceelf-tutorial/tutorial_complianceelf_url.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    В текстовом поле **Идентификатор** введите URL-адрес в формате `https://sso.cordium.com`.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+    ![Сведения о домене и URL-адресах единого входа для приложения Compliance ELF](common/idp-identifier.png)
 
-    ![Домен и URL-адреса единого входа для приложения Compliance ELF](./media/complianceelf-tutorial/tutorial_complianceelf_url1.png)
+    В текстовом поле **Идентификатор** введите URL-адрес: `https://sso.cordium.com`
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.complianceelf.com`
-    
-    > [!NOTE] 
-    > Это значение приведено для справки. Замените эти значения фактическим URL-адресом для входа. Для получения этого значения обратитесь в [службу поддержки Compliance ELF](mailto:support@complianceelf.com).
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-5. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
-    
-    ![Настройка единого входа](./media/complianceelf-tutorial/tutorial_metadataurl.png)
-     
-6. Нажмите кнопку **Сохранить** .
+    ![изображение](common/both-preintegrated-signon.png)
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/complianceelf-tutorial/tutorial_general_400.png)
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<subdomain>.complianceelf.com`.
 
-7. Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте [группе поддержки Compliance ELF](mailto:support@complianceelf.com) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    > [!NOTE]
+    > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Для получения этого значения обратитесь в [службу поддержки Compliance ELF](mailto:support@complianceelf.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-   ![Создание тестового пользователя Azure AD][100]
+### <a name="configure-compliance-elf-single-sign-on"></a>Настройка единого входа Compliance ELF
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте [группе поддержки Compliance ELF](mailto:support@complianceelf.com) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-    ![Кнопка "Azure Active Directory"](./media/complianceelf-tutorial/create_aaduser_01.png)
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/complianceelf-tutorial/create_aaduser_02.png)
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Добавить"](./media/complianceelf-tutorial/create_aaduser_03.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Диалоговое окно "Пользователь"](./media/complianceelf-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    d. Нажмите кнопку **Создать**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-### <a name="create-a-compliance-elf-test-user"></a>Создание тестового пользователя Compliance ELF
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в Compliance ELF. Для добавления пользователей на платформе Compliance ELF свяжитесь с [группой поддержки Compliance ELF](mailto:support@complianceelf.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе пользователю Britta Simon предоставляется разрешение на использование единого входа Azure для доступа к Compliance ELF.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Compliance ELF**.
 
-**Чтобы назначить пользователя Britta Simon в Compliance ELF, выполните инструкции ниже.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. В списке приложений выберите **Compliance ELF**.
 
-    ![Ссылка на Compliance ELF в списке "Приложения"](./media/complianceelf-tutorial/tutorial_complianceelf_app.png)  
+    ![Ссылка на Compliance ELF в списке "Приложения"](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+
+### <a name="create-compliance-elf-test-user"></a>Создание тестового пользователя Compliance ELF
+
+Из этого раздела вы узнаете, как создать пользователя Britta Simon в Compliance ELF. Для добавления пользователей на платформе Compliance ELF свяжитесь с  [группой поддержки Compliance ELF](mailto:support@complianceelf.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Compliance ELF на панели доступа, вы автоматически войдете в приложение Compliance ELF.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Compliance ELF на панели доступа, вы автоматически войдете в приложение Compliance ELF, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/complianceelf-tutorial/tutorial_general_01.png
-[2]: ./media/complianceelf-tutorial/tutorial_general_02.png
-[3]: ./media/complianceelf-tutorial/tutorial_general_03.png
-[4]: ./media/complianceelf-tutorial/tutorial_general_04.png
-
-[100]: ./media/complianceelf-tutorial/tutorial_general_100.png
-
-[200]: ./media/complianceelf-tutorial/tutorial_general_200.png
-[201]: ./media/complianceelf-tutorial/tutorial_general_201.png
-[202]: ./media/complianceelf-tutorial/tutorial_general_202.png
-[203]: ./media/complianceelf-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

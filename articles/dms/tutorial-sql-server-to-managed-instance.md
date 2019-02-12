@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 10/10/2018
-ms.openlocfilehash: e9baf8c838da2201fbb588d278cbf1ce5bbe6354
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.date: 02/04/2019
+ms.openlocfilehash: 041d9b76c899c33e551b57bbbf42d0fa82b5e537
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53713325"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692951"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-managed-instance-offline-using-dms"></a>Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
@@ -131,6 +131,9 @@ Azure Database Migration Service можно использовать для пе
 4. На экране **Выбор баз данных-источников** выберите базу данных **Adventureworks2012** для миграции.
 
    ![Выбор баз данных-источников](media/tutorial-sql-server-to-managed-instance/dms-source-database1.png)
+
+    > [!IMPORTANT]
+    > При использовании SQL Server Integration Services (SSIS), DMS не поддерживает перенос базы данных каталога для проектов или пакеты служб SSIS (SSISDB) с SQL Server в Управляемый экземпляр Базы данных SQL Azure. Но можно подготовить SSIS в Фабрике данных Azure (ADF) и повторно развернуть проекты или пакеты служб SSIS в целевой базе данных SSISDB, размещенной в Управляемом экземпляре Базы данных SQL Azure. Дополнительные сведения о переносе пакетов SSIS в Azure см. [в этой статье](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
 
 5. Щелкните **Сохранить**.
 

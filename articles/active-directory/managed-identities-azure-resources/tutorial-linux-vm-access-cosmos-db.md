@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: priyamo
-ms.openlocfilehash: a79a776e088461b702a3fe5217eceb6c7234919c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: d107e8283e68043a49c080fd1b021b29b917c6f7
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55186644"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812478"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Cosmos DB 
 
@@ -87,7 +87,7 @@ az resource show --id /subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE 
 
 В Cosmos DB не встроена поддержка аутентификации Azure AD. Но можно использовать управляемое удостоверение для извлечения ключей доступа к Cosmos DB из Resource Manager, а затем применить эти ключи для получения доступа к Cosmos DB. На этом шаге управляемому удостоверению предоставляется доступ к ключам учетной записи Cosmos DB.
 
-Чтобы предоставить назначаемому системой управляемому удостоверению доступ к учетной записи Cosmos DB в Azure Resource Manager с помощью Azure CLI, обновите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при [получении principalID управляемого удостоверения виртуальной машины Linux](#retrieve-the-principalID-of-the-linux-VM's-system-assigned-identity).  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
+Чтобы предоставить назначаемому системой управляемому удостоверению доступ к учетной записи Cosmos DB в Azure Resource Manager с помощью Azure CLI, обновите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при получении principalID управляемого удостоверения виртуальной машины Linux.  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
 
 ```azurecli-interactive
 az role assignment create --assignee <MI PRINCIPALID> --role '<ROLE NAME>' --scope "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.DocumentDB/databaseAccounts/<COSMODS DB ACCOUNT NAME>"

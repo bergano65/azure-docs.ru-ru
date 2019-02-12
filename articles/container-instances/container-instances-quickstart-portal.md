@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/02/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 8f547977e544854e281e1c6be442607d55149e5e
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: d6a1d442eca0cf5e433a82fb52ed54b09b56c779
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53190294"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566125"
 ---
 # <a name="quickstart-run-a-container-application-in-azure-container-instances-in-the-azure-portal"></a>Краткое руководство. Запуск контейнерного приложения в службе "Экземпляры контейнеров Azure" с помощью портала Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "53190294"
 
 ![Настройка основных параметров для нового экземпляра контейнера на портале Azure][aci-portal-03]
 
-Вы можете создать контейнеры Windows и Linux в службе "Экземпляры контейнеров Azure". В рамках этого руководства сохраните значение по умолчанию **Linux**, чтобы развернуть образ `microsoft/aci-helloworld` на основе Linux.
+В рамках этого краткого руководства оставьте значение по умолчанию **Общедоступный**, чтобы развернуть образ `microsoft/aci-helloworld` из общедоступного реестра Docker Hub. Этот образ содержит небольшое веб-приложение, написанное на Node.js, которое обслуживает статические HTML-страницы.
 
 В разделе **Конфигурация** укажите **метку DNS-имени** для контейнера. Это имя должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Контейнер будет доступен для всех по адресу `<dns-name-label>.<region>.azurecontainer.io`.
 

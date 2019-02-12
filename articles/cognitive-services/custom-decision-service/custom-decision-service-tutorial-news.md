@@ -10,12 +10,12 @@ ms.subservice: custom-decision-service
 ms.topic: tutorial
 ms.date: 05/08/2018
 ms.author: slivkins
-ms.openlocfilehash: 1589ef94946a6396ee51b8fecfe2ed3e80db08e5
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: fce90c05fb2e79be23cfd7a58875f8cb6b3ddbf7
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212237"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819779"
 ---
 # <a name="tutorial-article-personalization-for-contextual-decision-making"></a>Руководство. Персонализация статей для принятия решений на основе контекста
 
@@ -44,7 +44,7 @@ ms.locfileid: "55212237"
 </channel></rss>
 ```
 
-Порядок статей имеет значение. Он определяет ранжирование по умолчанию, которое представляет собой самый оптимальный способ упорядочивания статей. Ранжирование по умолчанию используется для сравнения производительности на [панели мониторинга](#performance-dashboard).
+Порядок статей имеет значение. Он определяет ранжирование по умолчанию, которое представляет собой самый оптимальный способ упорядочивания статей. Ранжирование по умолчанию используется для сравнения производительности на панели мониторинга.
 
 Дополнительные сведения о формате веб-канала см. в разделе [API набора действий (предоставляемый клиентом)](custom-decision-service-api-reference.md#action-set-api-customer-provided).
 

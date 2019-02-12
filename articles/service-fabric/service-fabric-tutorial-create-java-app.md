@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 09/01/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: e4552157cab846356c57a135d4e273f5a545bce9
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 619f77b6b50a005b4b5cc688bdbf32d1ce3dce26
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43667223"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810820"
 ---
-# <a name="tutorial-create-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service-on-service-fabric"></a>Руководство по созданию приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния в Service Fabric
+# <a name="tutorial-create-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service-on-service-fabric"></a>Руководство. Создание приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния в Service Fabric
 
 Это руководство представляет первую часть цикла. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. В этой серии руководств требуется, чтобы у вас был работающий компьютер для разработчиков Mac OSX или Linux. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-java-quickstart) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](service-fabric-tutorial-create-java-app.md#walk-through-the-voting-sample-application).
 
@@ -228,7 +228,7 @@ protected List<ServiceInstanceListener> createServiceInstanceListeners() {
 
 Прослушиватель для обмена данными HTTP действует в качестве контроллера, который настраивает сервер HTTP и предоставляет API, определяющий действия голосования. Щелкните правой кнопкой мыши пакет *statelessservice* в папке *VotingWeb/src/statelessservice*, а затем последовательно выберите **Создать-> Файл**.  Назовите файл *HttpCommunicationListener.java* и щелкните **Готово**.
 
-Замените содержимое файла следующим образом, а затем сохраните изменения.  Затем на этапе [Обновление файла HttpCommunicationListener.java](#updatelistener_anchor) этот файл будет изменен для преобразования для просмотра, чтения и записи данных голосования, полученных из серверной службы.  Теперь прослушиватель просто возвращает статические HTML для приложения для голосования.
+Замените содержимое файла следующим образом, а затем сохраните изменения.  Затем на этапе обновления файл HttpCommunicationListener.java будет изменен для преобразования для просмотра, чтения и записи данных голосования, полученных из серверной службы.  Теперь прослушиватель просто возвращает статические HTML для приложения для голосования.
 
 ```java
 // ------------------------------------------------------------
@@ -891,7 +891,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 
 2. Запустите удаленный кластер Service Fabric. Этот шаг зависит от среды разработки (Mac или Linux).
 
-    Если используется Mac, запустите локальный кластер со следующей командой. Замените команду, переданную в параметр **-v**, путем к собственной рабочей области.
+    Если вы используете компьютер Mac, запустите локальный кластер с помощью приведенной ниже команды. Замените команду, переданную в параметр **-v** на путь к своей рабочей области.
 
     ```bash
     docker run -itd -p 19080:19080 -p 8080:8080 -p --name sfonebox servicefabricoss/service-fabric-onebox

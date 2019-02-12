@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 81bc37a4bbd63beda122d7254409e2b16f0e3cb1
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 2075f8f83392c9ddd1761a96958fcb6cb12dc013
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852172"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816430"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 
@@ -45,13 +45,13 @@ ms.locfileid: "54852172"
 > [!NOTE] 
 > Вы также можете создать пространство имен служебной шины и сущности обмена сообщениями [с помощью PowerShell](/powershell/azure/get-started-azureps). Дополнительные сведения см. в статье [Управление ресурсами служебной шины с помощью модуля PowerShell](service-bus-manage-with-ps.md).
 
-Если пространство имен для обмена сообщениями служебной шины уже создано, перейдите к разделу [Создание очереди с помощью портала Azure](#2-create-a-queue-using-the-azure-portal).
+Если пространство имен для обмена сообщениями служебной шины уже создано, перейдите к разделу Создание очереди с помощью портала Azure.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## <a name="create-a-queue-using-the-azure-portal"></a>Создание очереди с помощью портала Azure
 
-Если очередь служебной шины уже создана, перейдите к разделу [Отправка сообщений в очередь](#3-send-messages-to-the-queue).
+Если очередь служебной шины уже создана, перейдите к разделу Отправка сообщений в очередь.
 
 [!INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 

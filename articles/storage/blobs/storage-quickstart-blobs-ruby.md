@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: seguler
-ms.openlocfilehash: f6a163b151a6b9066ea58c5834204ed54e51cfc2
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 7f6bd1857c056d7b3570d5d2367ade7e20a19108
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51711231"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752622"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-using-ruby"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью аннотации
+# <a name="quickstart-upload-download-and-list-blobs-using-ruby"></a>Краткое руководство. Отправка, скачивание и составление списков больших двоичных объектов с помощью Ruby
 
 Из этого краткого руководства вы узнаете, как использовать Ruby для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
 
@@ -25,8 +25,8 @@ ms.locfileid: "51711231"
 
 Прежде чем приступить к работе, убедитесь, что у вас установлены следующие дополнительные компоненты:
 
-* [Ruby](https://www.ruby-lang.org/en/downloads/);
-* [библиотека Службы хранилища Azure для Ruby](https://docs.microsoft.com/azure/storage/blobs/storage-ruby-how-to-use-blob-storage#configure-your-application-to-access-storage), которая устанавливается с помощью пакета rubygem: 
+* [Ruby](https://www.ruby-lang.org/en/downloads/)
+* [библиотека Службы хранилища Azure для Ruby](https://docs.microsoft.com/azure/storage/blobs/storage-ruby-how-to-use-blob-storage), которая устанавливается с помощью пакета rubygem: 
 
     ```
     gem install azure-storage-blob

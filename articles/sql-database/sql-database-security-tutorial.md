@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/30/2019
-ms.openlocfilehash: 1fe92f5632544f21506bd19a52a59ed75cabe3b3
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2ea87b36d8b489abf59ac4550121369a2ddf540f
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461208"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752523"
 ---
 # <a name="tutorial-secure-a-standalone-or-pooled-database"></a>Руководство. Защита изолированной базы данных или базы данных в составе пула
 
@@ -45,7 +45,7 @@ ms.locfileid: "55461208"
 
 - [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
 - Сервер SQL Azure и база данных.
-  - Создайте их с помощью [портала Azure](sql-database-get-started-portal.md), [CLI](sql-database-cli-samples.md) или [PowerShell](sql-database-powershell-samples.md).
+  - Создайте их с помощью [портала Azure](sql-database-single-database-get-started.md), [CLI](sql-database-cli-samples.md) или [PowerShell](sql-database-powershell-samples.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -64,7 +64,7 @@ ms.locfileid: "55461208"
 
 ### <a name="set-up-sql-database-server-firewall-rules"></a>Настройка правил брандмауэра для сервера Базы данных SQL
 
-Правила брандмауэра уровня сервера применяются ко всем базам данных на одном сервере Базы данных SQL.
+Правила брандмауэра для IP-адресов уровня сервера применяются ко всем базам данных на одном сервере базы данных SQL.
 
 Чтобы установить правило брандмауэра на уровне сервера, сделайте следующее:
 
@@ -231,7 +231,7 @@ ms.locfileid: "55461208"
 
 ## <a name="enable-security-features"></a>Включение функций безопасности
 
-База данных SQL Azure предоставляет возможности безопасности, доступ к которым можно получить на портале Azure. Эти возможности представлены и для сервера, и для базы данных, за исключением маскирования данных, доступного только в базе данных. См. дополнительные сведения о [расширенной защите данных](sql-advanced-threat-protection.md), [аудите](sql-database-auditing.md), [динамическом маскировании данных](sql-database-dynamic-data-masking-get-started.md) и [прозрачном шифровании данных](transparent-data-encryption-azure-sql.md).
+База данных SQL Azure предоставляет возможности безопасности, доступ к которым можно получить на портале Azure. Эти возможности представлены и для сервера, и для базы данных, за исключением маскирования данных, доступного только в базе данных. См. дополнительные сведения о [расширенной защите данных](sql-database-advanced-data-security.md), [аудите](sql-database-auditing.md), [динамическом маскировании данных](sql-database-dynamic-data-masking-get-started.md) и [прозрачном шифровании данных](transparent-data-encryption-azure-sql.md).
 
 ### <a name="advanced-data-security"></a>Расширенная защита данных
 

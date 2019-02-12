@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: hning86
 ms.author: haining
 ms.reviewer: sgilley
-ms.date: 09/24/2018
+ms.date: 01/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 887be89060a6d02eea74cd127cfbc93e48c0b3ff
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 0f596f40cdea095ea152785e656c44eaa062e28c
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240868"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564040"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство. Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -33,23 +33,18 @@ ms.locfileid: "55240868"
 > * развертывание модели в Экземплярах контейнеров;
 > * тестирование развернутой модели.
 
-Экземпляры контейнеров не являются идеальным решением для рабочих развертываний, но отлично подходят для тестирования и понимания рабочего процесса. Для масштабируемых рабочих развертываний рекомендуется использовать Службу Azure Kubernetes. Дополнительные сведения см. в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
-
-## <a name="get-the-notebook"></a>Получение записной книжки
-
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part2-deploy.ipynb). Запустите записную книжку *tutorials/img-classification-part2-deploy.ipynb* в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
-
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
+Экземпляры контейнеров — это идеальное решение для тестирования и понимания рабочего процесса. Для масштабируемых рабочих развертываний рекомендуется использовать Службу Azure Kubernetes. Дополнительные сведения см. в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 >[!NOTE]
-> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 1.0.2.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.8.
 
 ## <a name="prerequisites"></a>Предварительные требования
+Перейдите к разделу о [настройке среды разработки](#start), чтобы ознакомиться с шагами записной книжки.  
 
-Выполните обучение модели в следующей записной книжке: [Руководство (часть 1). Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).  
+Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).   Затем запустите записную книжку **tutorials/img-classification-part2-deploy.ipynb**, используя тот же сервер записных книжек.
 
 
-## <a name="set-up-the-environment"></a>Настройка среды
+## <a name="start"></a>Настройка среды
 
 Начните с создания тестовой среды.
 
@@ -78,13 +73,16 @@ print("Azure ML SDK Version: ", azureml.core.VERSION)
 ```python
 from azureml.core import Workspace
 from azureml.core.model import Model
-
+import os 
 ws = Workspace.from_config()
 model=Model(ws, 'sklearn_mnist')
-model.download(target_dir = '.')
-import os 
+
+model.download(target_dir=os.getcwd(), exist_ok=True)
+
 # verify the downloaded model file
-os.stat('./sklearn_mnist_model.pkl')
+file_path = os.path.join(os.getcwd(), "sklearn_mnist_model.pkl")
+
+os.stat(file_path)
 ```
 
 ## <a name="test-the-model-locally"></a>Локальное тестирование модели
@@ -100,12 +98,12 @@ os.stat('./sklearn_mnist_model.pkl')
 
 ```python
 from utils import load_data
+import os
 
+data_folder = os.path.join(os.getcwd(), 'data')
 # note we also shrink the intensity values (X) from 0-255 to 0-1. This helps the neural network converge faster
-
-X_test = load_data('./data/test-images.gz', False) / 255.0
-y_test = load_data('./data/test-labels.gz', True).reshape(-1)
-
+X_test = load_data(os.path.join(data_folder, 'test-images.gz'), False) / 255.0
+y_test = load_data(os.path.join(data_folder, 'test-labels.gz'), True).reshape(-1)
 ```
 
 ### <a name="predict-test-data"></a>Прогнозирование тестовых данных
@@ -116,7 +114,7 @@ y_test = load_data('./data/test-labels.gz', True).reshape(-1)
 import pickle
 from sklearn.externals import joblib
 
-clf = joblib.load('./sklearn_mnist_model.pkl')
+clf = joblib.load( os.path.join(os.getcwd(), 'sklearn_mnist_model.pkl'))
 y_hat = clf.predict(X_test)
 ```
 
@@ -214,7 +212,8 @@ def run(raw_data):
     data = np.array(json.loads(raw_data)['data'])
     # make prediction
     y_hat = model.predict(data)
-    return json.dumps(y_hat.tolist())
+    # you can return any data type as long as it is JSON-serializable
+    return y_hat.tolist()
 ```
 
 <a name="make-myenv"></a>
@@ -314,10 +313,10 @@ n = 30
 sample_indices = np.random.permutation(X_test.shape[0])[0:n]
 
 test_samples = json.dumps({"data": X_test[sample_indices].tolist()})
-test_samples = bytes(test_samples, encoding = 'utf8')
+test_samples = bytes(test_samples, encoding='utf8')
 
 # predict using the deployed model
-result = json.loads(service.run(input_data=test_samples))
+result = service.run(input_data=test_samples)
 
 # compare actual value vs. the predicted values:
 i = 0
@@ -347,7 +346,6 @@ plt.show()
 
 ```python
 import requests
-import json
 
 # send a random row from the test set to score
 random_index = np.random.randint(0, len(X_test)-1)
@@ -380,6 +378,8 @@ service.delete()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-+ Сведения обо всех [вариантах развертывания для Службы машинного обучения Azure](how-to-deploy-and-where.md). Варианты включают Экземпляры контейнеров Azure, Службу Azure Kubernetes, FPGA и Azure IoT Edge.
-
-+ Узнайте, как Служба машинного обучения Azure может автоматически выбирать и настраивать подходящий для вашей модели алгоритм. Она также создает эту модель. Ознакомьтесь с руководством по [автоматическому выбору алгоритма](tutorial-auto-train-models.md). 
++ Сведения обо всех [вариантах развертывания для Службы машинного обучения Azure](how-to-deploy-and-where.md).
++ Сведения о [создании клиентов для веб-службы](how-to-consume-web-service.md).
++  Асинхронное [создание прогнозов на больших объемах данных](how-to-run-batch-predictions.md).
++ Мониторинг моделей машинного обучения в Azure с помощью [Application Insights](how-to-enable-app-insights.md).
++ Ознакомьтесь с руководством по [автоматическому выбору алгоритма](tutorial-auto-train-models.md). 

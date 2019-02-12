@@ -1,55 +1,50 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Comeet Recruiting Software | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Comeet Recruiting Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Comeet Recruiting Software.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 75f51dc9-9525-4ec6-80bf-28374f0c8adf
-ms.service: active-directory
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 08/29/2018
+ms.topic: tutorial
+ms.date: 01/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 137ba7a7e82ff3e57d862868859e8049838701a3
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: f49d57207a7e8ea421ff64afc6aa98ed6a0cdc91
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43310463"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55663491"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-comeet-recruiting-software"></a>Руководство по интеграции Azure Active Directory с Comeet Recruiting Software
+# <a name="tutorial-azure-active-directory-integration-with-comeet-recruiting-software"></a>Руководство. Интеграция Azure Active Directory с Comeet Recruiting Software
 
 В этом руководстве описано, как интегрировать Comeet Recruiting Software с Azure Active Directory (Azure AD).
-
 Интеграция Comeet Recruiting Software с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD можно контролировать доступ к Comeet Recruiting Software.
-- Вы можете включить автоматический вход пользователей в Comeet Recruiting Software (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD можно контролировать доступ к Comeet Recruiting Software.
+* Вы можете включить автоматический вход пользователей в Comeet Recruiting Software (единый вход) с использованием учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Comeet Recruiting Software, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка Comeet Recruiting Software с поддержкой единого входа.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Comeet Recruiting Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-1. Добавление Comeet Recruiting Software из коллекции.
-2. настройка и проверка единого входа в Azure AD.
+* Comeet Recruiting Software поддерживает запущенный единый вход **пакета обновления и выдающей точки распространения**.
 
 ## <a name="adding-comeet-recruiting-software-from-the-gallery"></a>Добавление Comeet Recruiting Software из коллекции
 
@@ -57,187 +52,184 @@ ms.locfileid: "43310463"
 
 **Чтобы добавить Comeet Recruiting Software из коллекции, сделайте следующее.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Comeet Recruiting Software**, выберите **Comeet Recruiting Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Comeet Recruiting Software в списке результатов](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_addfromgallery.png)
+     ![Comeet Recruiting Software в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Comeet Recruiting Software с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Comeet Recruiting Software соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Comeet Recruiting Software.
+В этом разделе описана настройка и проверка единого входа Azure AD в Comeet Recruiting Software с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Comeet Recruiting Software.
 
 Чтобы настроить и проверить единый вход в Azure AD в Comeet Recruiting Software, вам потребуется выполнить действия в следующих блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Comeet Recruiting Software](#create-a-comeet-recruiting-software-test-user)** требуется для создания пользователя Britta Simon в Comeet Recruiting Software, связанного с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Comeet Recruiting Software](#configure-comeet-recruiting-software-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Comeet Recruiting Software](#create-comeet-recruiting-software-test-user)** требуется для того, чтобы в Comeet Recruiting Software существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Comeet Recruiting Software.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Comeet Recruiting Software, сделайте следующее.**
+Чтобы настроить единый вход Azure AD в Comeet Recruiting Software, сделайте следующее.
 
-1. На портале Azure на странице интеграции с приложением **Comeet Recruiting Software** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Comeet Recruiting Software** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Диалоговое окно "Единый вход"](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_samlbase.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то в разделе **Домены и URL-адреса приложения Comeet Recruiting Software** сделайте следующее.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Comeet Recruiting Software](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_url1.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
+    ![Сведения о домене и URL-адресах единого входа для приложения Comeet Recruiting Software](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
+
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Эти значения можно получить на портале Comeet Recruiting Software, как показано на [странице службы поддержки](https://support.comeet.co/knowledgebase/adfs-single-sign-on/).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Comeet Recruiting Software](https://support.comeet.co/knowledgebase/adfs-single-sign-on/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Comeet Recruiting Software](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_url2.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения Comeet Recruiting Software](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://app.comeet.co`
+    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.comeet.co`.
 
-5. Приложение Comeet Recruiting Software ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана приведен пример. По умолчанию **идентификатор пользователя** имеет значение **user.userprincipalname**, но для **Comeet Recruiting Software** требуется сопоставить это значение с адресом электронной почты пользователя. Для этого можно использовать атрибут **user.mail** из списка или соответствующее значение атрибута, основанное на конфигурации организации.
+5. Приложение Comeet Recruiting Software ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![Настройка единого входа](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_attribute.png)
+    ![изображение](common/edit-attribute.png)
 
-6. В разделе **Атрибуты пользователя** установите флажок **Просмотреть и изменить все другие атрибуты пользователей**, чтобы развернуть атрибуты. Выполните следующие действия для каждого отображаемого атрибута.
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
-    | Имя атрибута | Значение атрибута |
+    | ИМЯ |  Исходный атрибут|
     | ---------------| --------------- |
+    | nameidentifier | user.mail |
     | comeet_id | user.userprincipalname |
 
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Настройка единого входа](./media/comeetrecruitingsoftware-tutorial/tutorial_attribute_04.png)
+    ![изображение](common/new-save-attribute.png)
 
-    ![Настройка единого входа](./media/comeetrecruitingsoftware-tutorial/tutorial_attribute_05.png)
+    ![изображение](common/new-attribute-details.png)
 
-    b. В текстовом поле **Имя** введите **имя атрибута**, отображаемое для этой записи.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
+    c. Оставьте пустым поле **Пространство имен**.
 
-    d. Нажмите кнопку **ОК**.
+    4.3. В качестве источника выберите **Атрибут**.
 
-7. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    ![Ссылка для скачивания сертификата](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_certificate.png)
+    Е. Нажмите кнопку **ОК**.
 
-8. Нажмите кнопку **Сохранить** .
+    ж. Выберите команду **Сохранить**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/comeetrecruitingsoftware-tutorial/tutorial_general_400.png)
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-9. Чтобы настроить единый вход на стороне **Comeet Recruiting Software**, вставьте содержимое скачанного XML-файла метаданных в Comeet Recruiting Software, как показано на [странице службы поддержки](https://support.comeet.co/knowledgebase/adfs-single-sign-on/).
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+6. Требуемый URL-адрес можете скопировать из раздела **Настройка Comeet Recruiting Software**.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-   ![Создание тестового пользователя Azure AD][100]
+    а) URL-адрес входа.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    б) Идентификатор Azure AD.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+    в) URL-адрес выхода.
 
-    ![Кнопка "Azure Active Directory"](./media/comeetrecruitingsoftware-tutorial/create_aaduser_01.png)
+### <a name="configure-comeet-recruiting-software-single-sign-on"></a>Настройка единого входа в Comeet Recruiting Software
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+Чтобы настроить единый вход на стороне **Comeet Recruiting Software**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Comeet Recruiting Software](https://support.comeet.co/knowledgebase/adfs-single-sign-on/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/comeetrecruitingsoftware-tutorial/create_aaduser_02.png)
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-    ![Кнопка "Добавить"](./media/comeetrecruitingsoftware-tutorial/create_aaduser_03.png)
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    ![Диалоговое окно "Пользователь"](./media/comeetrecruitingsoftware-tutorial/create_aaduser_04.png)
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+3. В разделе свойств пользователя сделайте следующее:
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    d. Нажмите кнопку **Создать**.
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-### <a name="create-a-comeet-recruiting-software-test-user"></a>Создание тестового пользователя Comeet Recruiting Software
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Comeet Recruiting Software. Обратитесь к [группе поддержки Comeet Recruiting Software](mailto:support@comeet.co), чтобы добавить пользователей на платформу Comeet Recruiting Software. Перед использованием единого входа необходимо создать и активировать пользователей.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как включить единый вход Azure для пользователя Britta Simon, предоставив этому пользователю доступ к Comeet Recruiting Software.
 
-![Назначение роли пользователя][200]
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Comeet Recruiting Software**.
 
-**Чтобы назначить Britta Simon в Comeet Recruiting Software, сделайте следующее.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. Из списка приложений выберите **Comeet Recruiting Software**.
 
-    ![Ссылка на Comeet Recruiting Software в списке "Приложения"](./media/comeetrecruitingsoftware-tutorial/tutorial_comeetrecruitingsoftware_app.png)  
+    ![Ссылка на Comeet Recruiting Software в списке "Приложения"](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="create-comeet-recruiting-software-test-user"></a>Создание тестового пользователя Comeet Recruiting Software
+
+В этом разделе описано, как создать пользователя Britta Simon в приложении Comeet Recruiting Software. Обратитесь к [группе поддержки Comeet Recruiting Software](mailto:support@comeet.co), чтобы добавить пользователей на платформу Comeet Recruiting Software. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Comeet Recruiting Software" на панели доступа, вы автоматически войдете в приложение Comeet Recruiting Software.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+При нажатии на плитку "Comeet Recruiting Software" на панели доступа вы автоматически войдете в Comeet Recruiting Software, для которого выполнялась настройка единого входа. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_01.png
-[2]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_02.png
-[3]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_03.png
-[4]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_04.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-[100]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_100.png
-
-[200]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_200.png
-[201]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_201.png
-[202]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_202.png
-[203]: ./media/comeetrecruitingsoftware-tutorial/tutorial_general_203.png

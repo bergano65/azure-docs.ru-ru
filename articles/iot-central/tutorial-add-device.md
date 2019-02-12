@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: c3b8f4f8188a6a28cca8b77f169a00657b11dfc5
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 695050a46df4b208205ce394cc79db891803cfa4
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50154817"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55731535"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство. Добавление реального устройства в приложение Azure IoT Central
 
@@ -109,9 +109,11 @@ ms.locfileid: "50154817"
 
    Дополнительные сведения о [программе командной строки см. здесь](https://www.npmjs.com/package/dps-keygen).
 
-1. Скачайте средство dps_cstr с сайта [GitHub](https://github.com/Azure/dps-keygen/tree/master/bin). Распакуйте архив ZIP, если вы скачали средство для Windows.
+1. Скачайте и распакуйте (при работе в Windows) средство dps_cstr с [GitHub](https://github.com/Azure/dps-keygen/archive/master.zip
 
-    Выберите средство для своей платформы. Например, в ОС Windows программа dps_cstr.exe и файлы DLL должны находиться в рабочей папке. 
+)
+
+    Make sure you choose the one that matches your platform. For example, on Windows the dps_cstr.exe and the dll files should be now available in your folder. 
 
 1. Срока подключения для экземпляра устройства в приложении создается на основе сведений об устройстве, предоставляемых IoT Central.
 

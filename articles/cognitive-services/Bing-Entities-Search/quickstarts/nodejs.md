@@ -1,94 +1,114 @@
 ---
-title: Краткое руководство. API Bing для поиска сущностей, Node.js
+title: Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
 titlesuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска сущностей.
+description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска сущностей с помощью C# и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 11/28/2017
+ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 18476b8fa272ea235526693a9e2bab577298244d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 37e00c6cdc5340607a4aabc446d87e1a8575c552
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174471"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55755141"
 ---
-# <a name="quickstart-for-bing-entity-search-api-with-nodejs"></a>Краткое руководство по API Bing для поиска сущностей (Node.js)
+# <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-nodejs"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
 
-В этой статье описано, как использовать API [Bing для поиска сущностей](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/search-the-web) с Node.js.
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение JavaScript отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingEntitySearchv7.js).
+
+Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Node.js 6](https://nodejs.org/en/download/).
+* Последняя версия [Node.js](https://nodejs.org/en/download/).
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API Bing для поиска сущностей**. Для данного краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-entity-search-api). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+* [Библиотека запросов JavaScript](https://github.com/request/request)
 
-## <a name="search-entities"></a>Сущности для поиска
+[!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]
 
-Чтобы запустить это приложение, сделайте следующее.
+## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте Node.js в используемой вами интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и установите степень строгости, а также требования к HTTPS.
 
-```nodejs
-'use strict';
+    ```javaScript
+    'use strict';
+    let https = require ('https');
+    ```
 
-let https = require ('https');
+2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса.
 
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
+    ```javascript
+    let subscriptionKey = 'ENTER YOUR KEY HERE';
+    let host = 'api.cognitive.microsoft.com';
+    let path = '/bing/v7.0/entities';
+    
+    let mkt = 'en-US';
+    let q = 'italian restaurant near me';
+    ```
 
-// Replace the subscriptionKey string value with your valid subscription key.
-let subscriptionKey = 'ENTER KEY HERE';
+3. Добавьте параметры рынка и запроса в строку `query`. Не забудьте выполнить URL-кодирование запроса с помощью `encodeURI()`.
+    ```javascript 
+    let query = '?mkt=' + mkt + '&q=' + encodeURI(q);
+    ```
 
-let host = 'api.cognitive.microsoft.com';
-let path = '/bing/v7.0/entities';
+## <a name="handle-and-parse-the-response"></a>Обработка и анализ ответа
 
-let mkt = 'en-US';
-let q = 'italian restaurant near me';
+1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. Выполните следующие действия в этой функции.
 
-let params = '?mkt=' + mkt + '&q=' + encodeURI(q);
+    1. Определите переменную для хранения текста ответа JSON.  
+        ```javascript
+        let response_handler = function (response) {
+            let body = '';
+        };
+        ```
 
-let response_handler = function (response) {
-    let body = '';
-    response.on ('data', function (d) {
-        body += d;
-    });
-    response.on ('end', function () {
-        let body_ = JSON.parse (body);
-        let body__ = JSON.stringify (body_, null, '  ');
-        console.log (body__);
-    });
-    response.on ('error', function (e) {
-        console.log ('Error: ' + e.message);
-    });
-};
+    2. Сохраните текст ответа при вызове флага **data**.
+        ```javascript
+        response.on('data', function (d) {
+            body += d;
+        });
+        ```
 
-let Search = function () {
-    let request_params = {
-        method : 'GET',
-        hostname : host,
-        path : path + params,
-        headers : {
-            'Ocp-Apim-Subscription-Key' : subscriptionKey,
-        }
-    };
+    3. При активации флага **end** можно проанализировать и распечатать код JSON.
 
-    let req = https.request (request_params, response_handler);
-    req.end ();
-}
+        ```javascript
+        response.on ('end', function () {
+        let json = JSON.stringify(JSON.parse(body), null, '  ');
+        console.log (json);
+        });
+        ```
 
-Search ();
-```
+## <a name="send-a-request"></a>Отправка запроса
 
-**Ответ**
+1. Создайте функцию `Search`, чтобы отправить поисковый запрос. В ней необходимо выполнить следующие действия.
+
+    1. Создать объект JSON, содержащий параметры запроса. Используйте команду `Get` для метода, а затем добавьте сведения об узле и пути. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. 
+    2. Чтобы отправить запрос с помощью обработчика ответов, созданного ранее, и параметров поиска, используйте метод `https.request()`.
+    
+    ```javascript
+    let Search = function () {
+        let request_params = {
+            method : 'GET',
+            hostname : host,
+            path : path + query,
+            headers : {
+                'Ocp-Apim-Subscription-Key' : subscriptionKey,
+            }
+        };
+    
+        let req = https.request (request_params, response_handler);
+        req.end ();
+    }
+    ```
+
+2. Вызовите функцию `Search()`.
+
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -153,11 +173,10 @@ Search ();
 }
 ```
 
-[Вверх](#HOLTop)
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по API Bing для поиска сущностей](../tutorial-bing-entities-search-single-page-app.md)
-> [Общие сведения об API Bing для поиска сущностей](../search-the-web.md )
-> [Справочник по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)
+> [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
+
+* [Основные сведения об API Bing для поиска сущностей](../overview.md )
+* [Bing Entity Search API v7 Reference](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference) (Справочник по API Bing для поиска сущностей версии 7)

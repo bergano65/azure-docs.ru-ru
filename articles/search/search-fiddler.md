@@ -1,5 +1,5 @@
 ---
-title: Работа с REST API в веб-инструментах тестирования на основе HTTP Fiddler или Postman — Поиск Azure | Документация Майкрософт
+title: Работа с REST API в веб-инструментах тестирования на основе HTTP Postman или Fiddler — Поиск Azure | Документация Майкрософт
 description: Как использовать Fiddler или Postman для отправки HTTP-запросов и вызовов REST API в службу "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
@@ -10,16 +10,16 @@ ms.topic: quickstart
 ms.date: 04/20/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 5946ff5e75e7c3fedf42c23200f61e821c0d9d61
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 06e2667b59b27039ad3c62379f654dd693999f99
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631402"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756081"
 ---
-# <a name="explore-azure-search-rest-apis-using-fiddler-or-postman"></a>Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman
+# <a name="explore-azure-search-rest-apis-using-postman-or-fiddler"></a>Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler
 
-Проще всего изучить [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice) с помощью Fiddler или Postman для формирования HTTP-запросов и изучения ответов. С помощью соответствующих средств и этих инструкций вы сможете отправлять запросы и просматривать ответы без написания кода.
+Проще всего изучить [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice) с помощью Postman или Fiddler для формирования HTTP-запросов и изучения ответов. С помощью соответствующих средств и этих инструкций вы сможете отправлять запросы и просматривать ответы без написания кода.
 
 > [!div class="checklist"]
 > * Скачивание средства тестирования веб-API

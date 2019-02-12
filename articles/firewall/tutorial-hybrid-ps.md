@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 1/30/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 29af70988cf77b9fad47e5c2478e5c86529fe9cf
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: cf3c691553f2bc7ae8f10345daee92a8380aba25
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458246"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815750"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство. Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -54,7 +54,7 @@ ms.locfileid: "55458246"
 - В подсети Брандмауэра Azure не требуется указывать UDR, так как он узнает о маршрутах из BGP.
 - Не забудьте указать параметр **AllowGatewayTransit** при пиринге из VNet-Hub в VNet-Spoke и параметр **UseRemoteGateways** при пиринге из VNet-Spoke в VNet-Hub.
 
-См. раздел [Создание маршрутов](#create-routes) в этом руководстве, чтобы узнать, как создаются эти маршруты.
+См. раздел "Создание маршрутов" в этом руководстве, чтобы узнать, как создаются эти маршруты.
 
 >[!NOTE]
 >Брандмауэр Azure должен быть напрямую подключен к Интернету. Если включено принудительное туннелирование в локальную сеть через ExpressRoute или Шлюз приложений, необходимо настроить определяемый пользователем маршрут 0.0.0.0/0, задав для **NextHopType** значение **Internet**, а затем назначив его подсети  **AzureFirewallSubnet**.

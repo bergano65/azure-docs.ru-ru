@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 11c6f421e2eb1c3e508868d4a87f838781bda8e2
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 5d9819d60e21c80b882db1d12b0318599fa54095
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54478456"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729750"
 ---
 # <a name="quickstart-ingest-data-from-event-hub-into-azure-data-explorer"></a>Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer
 
@@ -129,7 +129,7 @@ ms.locfileid: "54478456"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
-    | Формат данных | *JSON* | Поддерживаются форматы JSON и CSV. |
+    | Формат данных | *JSON* | К поддерживаемым форматам относятся: Avro, CSV, JSON, многострочный JSON, PSV, SOH, SCSV, TSV и TXT. |
     | Сопоставление столбцов | *TestMapping* | Сопоставление, созданное в таблице **TestDatabase**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestTable**.|
     | | |
 

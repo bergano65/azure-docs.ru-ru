@@ -1,123 +1,82 @@
 ---
-title: Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C | Документация Майкрософт
+title: Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения. Azure Active Directory B2C | Документация Майкрософт
 description: Руководство по использованию Active Directory B2C для защиты веб-API .NET Core и его вызова из одностраничного приложения.
 services: active-directory-b2c
 author: davidmu1
 manager: daveba
 ms.author: davidmu
-ms.date: 3/02/2018
+ms.date: 02/04/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 7c7d23f8b3792ceedc27a81e81be7787452c156e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 13cbf1e81e0d203c181efb0881ec2a437cbaef24
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181526"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752183"
 ---
-# <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
+# <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
 В этом руководстве показано, как вызывать защищенный с помощью Azure Active Directory (Azure AD) B2C ресурс веб-API ASP.NET Core из одностраничного приложения.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Регистрация веб-API в клиенте Azure AD B2C.
-> * Определение и настройка областей для веб-API.
-> * Предоставление приложению прав для использования веб-API.
-> * Обновление примера кода для защиты веб-API с помощью Azure AD B2C.
+> * Добавление приложения веб-API
+> * Настройка областей для веб-API.
+> * Предоставление разрешения на использование веб-API.
+> * Настройка примера для использования приложения.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Изучите [руководство по проверке подлинности пользователей с помощью Azure Active Directory B2C в одностраничном приложении](active-directory-b2c-tutorials-spa.md).
-* Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
-* Установите [пакет SDK для NET Core 2.0.0](https://www.microsoft.com/net/core) или более поздней версии.
-* Установите [Node.js](https://nodejs.org/en/download/)
+Выполните действия и необходимые условия в статье [Руководство. Включение в одностраничном приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-spa.md).
 
-## <a name="register-web-api"></a>Регистрация веб-API
+## <a name="add-a-web-api-application"></a>Добавление приложения веб-API
 
-Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/developer-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/developer-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/developer-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/developer-glossary.md#application-object) в клиенте. 
+Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать запросы защищенных ресурсов от клиентских приложений, которые представляют токен доступа, и отвечать на них.
 
-Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+4. Щелкните **Приложения**, а затем выберите **Добавить**.
+5. Введите имя приложения. Например, *webapi1*.
+6. Для поля **Включить веб-приложение или веб-API** и **Разрешить неявный поток** выберите **Да**.
+7. Для **URL-адреса ответа** введите конечные точки, куда Azure AD B2C возвращает все маркеры, запрашиваемые вашим приложением. В этом руководстве пример выполняется локально и ожидает передачи данных по адресу `https://localhost:5000`.
+8. Для поля **URI идентификатора приложения** выберите идентификатор, используемый для веб-API. Полный URI код с доменом создается автоматически. Например, `https://contosotenant.onmicrosoft.com/api`.
+9. Нажмите кнопку **Создать**.
+10. На странице свойств запишите идентификатор приложения, который будет использоваться при настройке веб-приложения.
 
-[!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
+## <a name="configure-scopes"></a>Настройка областей
 
-1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Нужно использовать клиент, созданный в рамках предыдущего руководства.
+Области предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, некоторые пользователи могут иметь доступ на чтение и запись, тогда как другие пользователи могут иметь разрешения только на чтение. В этом руководстве вы определяете разрешения на чтение для веб-API.
 
-2. Щелкните **Приложения**, а затем выберите **Добавить**.
-
-    Чтобы зарегистрировать пример веб-API в клиенте, используйте следующие параметры.
-    
-    ![Добавление нового API](media/active-directory-b2c-tutorials-spa-webapi/web-api-registration.png)
-    
-    | Параметр      | Рекомендуемое значение  | Описание                                        |
-    | ------------ | ------- | -------------------------------------------------- |
-    | **Имя** | Hello Core API | Введите **имя**, которое описывает веб-API для разработчиков. |
-    | **Включить веб-приложение или веб-интерфейс API** | Yes | Выберите **Да** для веб-API. |
-    | **Разрешить неявный поток** | Yes | Выберите **Да**, так как API использует [вход в OpenID Connect](active-directory-b2c-reference-oidc.md). |
-    | **URL-адрес ответа** | `http://localhost:5000` | URL-адреса ответа — это конечные точки, куда Azure AD B2C возвращает все токены, запрашиваемые вашим API. В этом руководстве пример веб-API выполняется локально (localhost) и ожидает передачи данных с порта 5000 (после настройки позже в этом руководстве). |
-    | **URI кода приложения** | HelloCoreAPI | URI уникально идентифицирует API в клиенте. Это позволяет регистрировать несколько API-интерфейсов в каждом клиенте. [Области](../active-directory/develop/developer-glossary.md#scopes) управляют доступом к защищенному ресурсу API и определяются для каждого URI идентификатора приложения. |
-    | **Собственный клиент** | Нет  | Так как это веб-API, а не собственный клиент, выберите "Нет". |
-    
-3. Чтобы зарегистрировать API, щелкните **Создать**.
-
-Зарегистрированные API отобразятся в списке приложений для клиента Azure AD B2C. Выберите веб-API в списке. Откроется панель свойств веб-API.
-
-![Свойства веб-API](./media/active-directory-b2c-tutorials-spa-webapi/b2c-web-api-properties.png)
-
-Запишите значение **идентификатора клиента приложения**. Идентификатор уникально идентифицирует API и необходим при настройке API далее в этом руководстве.
-
-Регистрация веб-API в Azure AD B2C позволяет определить отношение доверия. Так как API зарегистрирован в B2C, он теперь может доверять токенам доступа B2C, предоставляемым другими приложениями.
-
-## <a name="define-and-configure-scopes"></a>Определение и настройка областей
-
-[Области](../active-directory/develop/developer-glossary.md#scopes) предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, некоторые пользователи могут иметь доступ на чтение и запись, тогда как другие пользователи могут иметь разрешения только на чтение. В этом руководстве вы определяете разрешения на чтение для веб-API.
-
-### <a name="define-scopes-for-the-web-api"></a>Определение областей для веб-API
-
-Зарегистрированные API отобразятся в списке приложений для клиента Azure AD B2C. Выберите веб-API в списке. Откроется панель свойств веб-API.
-
-Щелкните **Опубликованные области (предварительная версия)**.
-
-Чтобы настроить области для API, добавьте следующие записи. 
-
-![области, определенные в веб-API](media/active-directory-b2c-tutorials-spa-webapi/scopes-web-api.png)
-
-| Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                        |
-| ------------ | ------- | -------------------------------------------------- |
-| **Область** | demo.read | Доступ на чтение к демонстрационному API |
-
-Выберите команду **Сохранить**.
+1. Щелкните **Приложения**, а затем выберите *webapi1*.
+2. Выберите **Опубликованные области**.
+3. Для **области** введите `Hello.Read`, а для описания — `Read access to hello`.
+4. Для **области** введите `Hello.Write`, а для описания — `Write access to hello`.
+5. Выберите команду **Сохранить**.
 
 Опубликованные области можно использовать для предоставления приложению клиента разрешения на доступ к веб-API.
 
-### <a name="grant-app-permissions-to-web-api"></a>Предоставление приложению разрешений на использование веб-API
+## <a name="grant-permissions"></a>Предоставление разрешений
 
-Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. В этой статье используется одностраничное приложение, созданное в рамках работы с руководством по [проверке подлинности пользователей с помощью Azure Active Directory B2C в одностраничном приложении (JavaScript)](active-directory-b2c-tutorials-spa.md).
+Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. Как часть предварительного требования, вы создали веб-приложение *webapp1* в Azure AD B2C, следуя руководству. Используйте это приложение для вызова веб-API.
 
-1. На портале Azure выберите **Azure AD B2C** из списка служб и щелкните **Приложения**, чтобы просмотреть список зарегистрированных приложений.
-
-2. Выберите **My sample single page app** (Пример одностраничного приложения) в списке приложений и щелкните **Доступ через API (предварительная версия)**, а затем — **Добавить**.
-
-3. В раскрывающемся списке **Выбрать API** выберите зарегистрированный веб-API **Hello Core API**.
-
-4. В раскрывающемся списке **Выбрать области** выберите области, определенные в регистрации веб-API.
-
-    ![выбор областей для приложения](media/active-directory-b2c-tutorials-spa-webapi/selecting-scopes-for-app.png)
-
+1. Щелкните **Приложения**, а затем выберите *webapp1*.
+2. Щелкните **Доступ к API**, а затем выберите **Добавить**.
+3. В раскрывающемся списке **Выбрать API** выберите *webapi1*.
+4. В раскрывающемся списке **Выбрать области** выберите области **Hello.Read** и **Hello.Write**, определенные ранее.
 5. Последовательно выберите **ОК**.
 
-Приложение **My sample single page app** зарегистрировано для вызова защищенного **Hello Core API**. Пользователь [выполняет аутентификацию](../active-directory/develop/developer-glossary.md#authentication) в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение получает [предоставление авторизации](../active-directory/develop/developer-glossary.md#authorization-grant) из Azure AD B2C для доступа к защищенному веб-API.
+Приложение **My sample single page app** зарегистрировано для вызова защищенного **Hello Core API**. Пользователь выполняет аутентификацию в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение получает предоставление авторизации из Azure AD B2C для доступа к защищенному веб-API.
 
-## <a name="update-code"></a>Обновление кода
+## <a name="configure-the-sample"></a>Настройка примера
 
-Теперь, когда веб-API зарегистрирован и определены области, необходимо настроить код веб-API для использования клиента Azure AD B2C. С помощью этого руководства вы настроите пример веб-приложения .NET Core, который можно скачать из репозитория GitHub. 
-
-[Загрузите ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapi/archive/master.zip) или клонируйте пример приложения с GitHub.
+Теперь, когда веб-API зарегистрирован и определены области, необходимо настроить код веб-API для использования клиента Azure AD B2C. С помощью этого руководства вы настроите пример веб-приложения .NET Core, который можно скачать из репозитория GitHub. [Загрузите ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapi/archive/master.zip) или клонируйте пример приложения с GitHub.
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapi.git
@@ -126,16 +85,15 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 ### <a name="configure-the-web-api"></a>Настройка веб-API
 
 1. Откройте решение **B2C-WebAPI.sln** в Visual Studio.
-
 2. Откройте файл **appsettings.json**. Обновите следующие значения, чтобы настроить веб-API для использования со своим клиентом:
 
     ```javascript
     "AzureAdB2C": 
       {
         "Tenant": "<your tenant name>.onmicrosoft.com", 
-        "ClientId": "<The Application ID for your web API obtained from the Azure portal>",
-        "Policy": "<Your sign up sign in policy e.g. B2C_1_SiUpIn>",
-        "ScopeRead": "demo.read"  
+        "ClientId": "<application-ID>",
+        "Policy": "B2C_1_signupsignin1>",
+        "ScopeRead": "Hello.Read"  
       },
     ```
 
@@ -160,25 +118,26 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 
 3. Откройте файл **launchSettings.json** в разделе **Свойства**, найдите параметр **iisSettings** *applicationURL* и задайте номер порта, зарегистрированный для URL-адреса ответа API `http://localhost:5000`.
 
-### <a name="configure-the-single-page-app"></a>Настройка одностраничного приложения
+### <a name="configure-the-single-page-application"></a>Настройка одностраничного приложения
 
-Одностраничное приложение использует Azure AD B2C для регистрации и входа пользователей, а также вызывает защищенный веб-API ASP.NET Core. Для вызова веб-API .NET Core в одностраничное приложение необходимо внести изменения.
+Одностраничное приложение использует Azure AD B2C для регистрации и входа пользователей, а также вызывает защищенный веб-API ASP.NET Core. Для вызова веб-API .NET Core нужно внести изменения в одностраничное приложение.
+
 Чтобы изменить параметры приложения:
 
-1. Откройте файл `index.html` в примере одностраничного приложения Node.js.
+1. Откройте файл `index.html` .
 2. Настройте пример, указав сведения о регистрации клиента Azure AD B2C. В следующем коде добавьте имя клиента в **b2cScopes** и измените значение **webApi** на ранее сохраненное значение *applicationURL*:
 
     ```javascript
     // The current application coordinates were pre-registered in a B2C tenant.
     var applicationConfig = {
-        clientID: '<Application ID for your SPA obtained from portal app registration>',
-        authority: "https://<your-tenant-name>.b2clogin.com/tfp/<your-tenant-name>.onmicrosoft.com/B2C_1_SiUpIn",
-        b2cScopes: ["https://<Your tenant name>.onmicrosoft.com/HelloCoreAPI/demo.read"],
+        clientID: '<application-ID>',
+        authority: "https://<your-tenant-name>.b2clogin.com/tfp/<your-tenant-name>.onmicrosoft.com/B2C_1_signupsignin1",
+        b2cScopes: ["https://<Your tenant name>.onmicrosoft.com/api/Hello.Read"],
         webApi: 'http://localhost:5000/api/values',
     };
     ```
 
-## <a name="run-the-spa-app-and-web-api"></a>Запуск одностраничного приложения и веб-API
+## <a name="run-the-spa-application-and-web-api"></a>Запуск одностраничного приложения и веб-API
 
 Теперь нужно запустить одностраничное приложение Node.js и веб-API .NET Core.
 
@@ -206,17 +165,19 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 
 4. С помощью браузера перейдите по адресу `http://localhost:6420`, чтобы просмотреть приложение.
 5. Войдите с помощью адреса электронной почты и пароля, которые использовались при работе с руководством по [проверке подлинности пользователей с помощью Azure Active Directory B2C в одностраничном приложении (JavaScript)](active-directory-b2c-tutorials-spa.md).
-6. Нажмите кнопку **вызова API**.
+6. Щелкните **Call API** (Вызов API).
 
 После регистрации или входа с учетной записью пользователя пример приложения вызовет защищенный веб-API и вернет результат.
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Вы можете использовать ваш клиент Azure AD B2C при работе с другими руководствами по Azure AD B2C. [Удалите клиент Azure AD B2C](active-directory-b2c-faqs.md#how-do-i-delete-my-azure-ad-b2c-tenant), если он больше не нужен.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье подробно описан процесс защиты веб-приложения путем регистрации и определения областей в Azure AD B2C. Чтобы узнать больше, просмотрите доступные примеры кода Azure AD B2C.
+Из этого руководства вы узнали, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> * Добавление приложения веб-API
+> * Настройка областей для веб-API.
+> * Предоставление разрешения на использование веб-API.
+> * Настройка примера для использования приложения.
 
 > [!div class="nextstepaction"]
-> [Примеры кода Azure AD B2C](https://azure.microsoft.com/resources/samples/?service=active-directory-b2c&sort=0)
+> [Руководство по добавлению поставщиков удостоверений для приложений в Azure Active Directory B2C](tutorial-add-identity-providers.md)

@@ -3,7 +3,7 @@ title: Краткие руководства по подключению и со
 description: В этих кратких руководствах по базе данных SQL Azure объясняется, как подключаться и создавать запросы к базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: ''
+ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
@@ -11,15 +11,15 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 11/01/2018
-ms.openlocfilehash: 613b4cf2b08269259a4608a6960b815777cd0ae9
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 12/18/2018
+ms.openlocfilehash: c569b7ba6c49a560b4a6a1ecb10a6a61378a1228
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608040"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814903"
 ---
-# <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к базе данных SQL Azure
+# <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к Базе данных SQL Azure
 
 В этом документе представлены ссылки на примеры для Azure, в которых показано, как подключаться и создавать запросы к базе данных SQL Azure. В нем также приводятся рекомендации по использованию протокола TLS.
 
@@ -53,6 +53,51 @@ ms.locfileid: "53608040"
 
 Сторонние драйверы могут не поддерживать TLS по умолчанию. Это может вызвать трудности при подключении к базе данных SQL Azure. Иногда в приложениях со встроенными драйверами не предусмотрено управление этими параметрами подключения. Мы рекомендуем проверять безопасность таких драйверов и приложений перед их использованием в системах, которые взаимодействуют с конфиденциальными данными.
 
+## <a name="libraries"></a>Библиотеки
+
+Для подключения к Базе данных SQL Azure можно использовать различные библиотеки и платформы. Ознакомьтесь с нашими [руководствами по началу работы](https://aka.ms/sqldev), чтобы быстро приступить к программированию на таких языках, как C#, Java, Node.js, PHP и Python. Затем создайте приложение с помощью SQL Server в Linux или Windows либо Docker в macOS.
+
+В следующей таблице перечислены библиотеки подключений или *драйверы*, которые клиентские приложения могут применять с помощью различных языков для подключения и использования сервера SQL Server, работающего локально или в облаке. Эти библиотеки и драйверы можно использовать в среде Linux, Windows или Docker, а также при подключении к базе данных SQL Azure и хранилищу данных SQL Azure. 
+
+| Язык | платформа | Дополнительные ресурсы | Download (Скачать) | Начало работы |
+| :-- | :-- | :-- | :-- | :-- |
+| C# | Windows, Linux, macOS | [Microsoft ADO.NET для SQL Server](https://docs.microsoft.com/sql/connect/ado-net/microsoft-ado-net-for-sql-server) | [Загрузить](https://www.microsoft.com/net/download/) | [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/csharp/ubuntu)
+| Java | Windows, Linux, macOS | [Microsoft JDBC Driver для SQL Server](https://msdn.microsoft.com/library/mt484311.aspx) | [Загрузить](https://go.microsoft.com/fwlink/?linkid=852460) |  [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu)
+| PHP | Windows, Linux, macOS| [Драйвер PHP SQL для SQL Server](https://docs.microsoft.com/sql/connect/php/microsoft-php-driver-for-sql-server) | [Загрузить](https://docs.microsoft.com/sql/connect/php/download-drivers-php-sql-server) | [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/php/ubuntu/)
+| Node.js | Windows, Linux, macOS | [Драйвер Node.js для SQL Server](https://msdn.microsoft.com/library/mt652093.aspx) | [Установка](https://msdn.microsoft.com/library/mt652094.aspx) |  [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu)
+| Python | Windows, Linux, macOS | [Драйвер Python SQL](https://msdn.microsoft.com/library/mt652092.aspx) | Варианты установки: <br/> \* [pymssql](https://msdn.microsoft.com/library/mt694094.aspx) <br/> \* [pyodbc](https://msdn.microsoft.com/library/mt763257.aspx) |  [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/python/ubuntu)
+| Ruby | Windows, Linux, macOS | [Драйвер Ruby для SQL Server](https://msdn.microsoft.com/library/mt691981.aspx) | [Установка](https://msdn.microsoft.com/library/mt711041.aspx) | [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/ruby/ubuntu)
+| C++ | Windows, Linux, macOS | [Microsoft ODBC Driver for SQL Server](https://msdn.microsoft.com/library/mt654048(v=sql.1).aspx) | [Загрузить](https://msdn.microsoft.com/library/mt654048(v=sql.1).aspx) |  
+
+В следующей таблице перечислены примеры платформ объектно-реляционного сопоставления и веб-платформ, которые клиентские приложения могут использовать с сервером SQL Server, работающим локально или в облаке. Эти платформы можно использовать в Linux, Windows или Docker, а также при подключении к базе данных SQL и хранилищу данных SQL. 
+
+| Язык | платформа | Платформы ORM |
+| :-- | :-- | :-- |
+| C# | Windows, Linux, macOS | [Entity Framework](https://docs.microsoft.com/ef)<br>[Entity Framework Core](https://docs.microsoft.com/ef/core/index) |
+| Java | Windows, Linux, macOS |[Hibernate ORM](https://hibernate.org/orm)|
+| PHP | Windows, Linux, macOS | [Laravel (Eloquent)](https://laravel.com/docs/5.0/eloquent) |
+| Node.js | Windows, Linux, macOS | [Sequelize ORM](https://docs.sequelizejs.com) |
+| Python | Windows, Linux, macOS |[Django](https://www.djangoproject.com/) |
+| Ruby | Windows, Linux, macOS | [Ruby on Rails](https://rubyonrails.org/) |
+||||
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сведения об архитектуре подключения см. в статье [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md).
+- Сведения об архитектуре подключения см. в статье [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md).
+- Получите [драйверы SQL Server](https://msdn.microsoft.com/library/mt654049.aspx), которые используются для подключения из клиентских приложений.
+- Подключение к базе данных SQL:
+  - [Подключение к базе данных SQL с помощью .NET (C#)](sql-database-connect-query-dotnet.md) 
+  - [Подключение к Базе данных SQL с помощью PHP](sql-database-connect-query-php.md) 
+  - [Подключение к базе данных SQL с помощью Node.js](sql-database-connect-query-nodejs.md) 
+  - [Подключение к Базе данных SQL с помощью Java](sql-database-connect-query-java.md) 
+  - [Подключение к базе данных SQL с помощью Python](sql-database-connect-query-python.md)
+  - [Подключение к базе данных SQL с помощью Ruby](sql-database-connect-query-ruby.md)
+- Примеры кода логики повторов:
+  - [Step 4: Connect resiliently to SQL with ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n] (Шаг 4. Выполнение устойчивого подключения к SQL с помощью ADO.NET)
+  - [Step 4: Connect resiliently to SQL with PHP][step-4-connect-resiliently-to-sql-with-php-p42h] (Шаг 4. Выполнение устойчивого подключения к SQL с помощью PHP)
+
+<!-- Link references. -->
+
+[step-4-connect-resiliently-to-sql-with-ado-net-a78n]: https://docs.microsoft.com/sql/connect/ado-net/step-4-connect-resiliently-to-sql-with-ado-net
+
+[step-4-connect-resiliently-to-sql-with-php-p42h]: https://docs.microsoft.com/sql/connect/php/step-4-connect-resiliently-to-sql-with-php

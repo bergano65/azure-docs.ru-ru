@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 10/24/2018
+ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 22b12349ac93f0c9dd595e01ecb4661e019c346b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: ad5af3e43e1419246d1692c5028cb2453b04516c
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458252"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55696151"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-python"></a>Краткое руководство. Определение длины предложения с помощью API перевода текстов и Python
 
@@ -64,7 +64,7 @@ else:
 #subscriptionKey = 'put_your_key_here'
 ```
 
-В настоящее время для API перевода текстов доступна одна конечная точка и она задана как `base_url`. Параметр `path` задает маршрут `breaksentence` и определяет, что нужно использовать версию 3 API.
+Конечная точка для перевода текстов задается как `base_url`. Параметр `path` задает маршрут `breaksentence` и определяет, что нужно использовать версию 3 API.
 
 `params` в этом примере используются для задания языка указанного текста. `params` не являются обязательными для маршрута `breaksentence`. Если их исключить из запроса, API попытается определить язык заданного текста и предоставит эти сведения в ответе вместе с оценкой достоверности.
 

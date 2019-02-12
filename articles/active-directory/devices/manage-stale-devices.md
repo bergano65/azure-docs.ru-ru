@@ -1,6 +1,6 @@
 ---
-title: Управление жизненным циклом устройств в Azure Active Directory | Документация Майкрософт
-description: Узнайте, как с помощью управления устройствами можно контролировать устройства, получающие доступ к ресурсам в вашей среде.
+title: Управление устаревшими устройствами в Azure AD | Документация Майкрософт
+description: В некоторых случаях устройства остаются в среде как устаревшие, например если они украдены, потеряны, сломаны или на них переустановлена ОС. Узнайте, как удалить устаревшие устройства из базы данных зарегистрированных устройств в Azure Active Directory (Azure AD).
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/03/2018
+ms.date: 01/30/2019
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 20bfa4cf02c86922836a70f8885f910814eafb22
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: d6d0ee1c9a77006df2239f4e0e0457c0c0aa2c28
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092188"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55493326"
 ---
-# <a name="how-to-manage-the-stale-devices-in-azure-ad"></a>Практическое руководство. Управление устаревшими устройствами в Azure AD
+# <a name="how-to-manage-stale-devices-in-azure-ad"></a>Практическое руководство. Управление устаревшими устройствами в Azure AD
 
 Чтобы правильно завершить жизненный цикл ставшего ненужным зарегистрированного устройства, нужно отменить его регистрацию. Но в некоторых случаях такие устройства остаются в среде как устаревшие, например если они украдены, потеряны, сломаны или на них переустановлена ОС. ИТ-администратору будет полезно научиться удалять такие устаревшие устройства, чтобы не тратить время не на них, а на другие актуальные ресурсы.
 

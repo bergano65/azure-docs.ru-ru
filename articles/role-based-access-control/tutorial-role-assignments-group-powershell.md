@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: tutorial
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 06/11/2018
+ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 8bb06493683dabb92dfe75f371f96db14a7951b3
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: ba37be1f0d7224b7e607955ab350e756b6fec350
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301009"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55697557"
 ---
-# <a name="tutorial-grant-access-for-a-group-using-rbac-and-azure-powershell"></a>Руководство по предоставлению доступа для группы с помощью RBAC и Azure PowerShell | Документы Microsoft
+# <a name="tutorial-grant-access-for-a-group-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа для группы с помощью RBAC и Azure PowerShell
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять групповой доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
@@ -32,6 +32,8 @@ ms.locfileid: "43301009"
 > * Запрет доступа
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+[!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -68,16 +70,16 @@ ms.locfileid: "43301009"
    11111111-1111-1111-1111-111111111111 RBAC Tutorial Group
    ```
 
-Если у вас нет разрешений на создание групп, можно обратиться к [руководству по предоставлению доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md).
+Если у вас нет разрешений на создание групп, ознакомьтесь со статьей [Руководство по предоставлению доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Используйте группу ресурсов, чтобы показать, как назначить роль в области действия группы ресурсов.
 
-1. Получите список расположений в регионе с помощью команды [Get-AzureRmLocation](/powershell/module/azurerm.resources/get-azurermlocation).
+1. Получите список расположений в регионе с помощью команды [Get-AzLocation](/powershell/module/az.resources/get-azlocation).
 
    ```azurepowershell
-   Get-AzureRmLocation | select Location
+   Get-AzLocation | select Location
    ```
 
 1. Выберите расположение недалеко от вас и присвойте его переменной.
@@ -86,10 +88,10 @@ ms.locfileid: "43301009"
    $location = "westus"
    ```
 
-1. Создайте группу ресурсов с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup).
+1. Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
    ```azurepowershell
-   New-AzureRmResourceGroup -Name "rbac-tutorial-resource-group" -Location $location
+   New-AzResourceGroup -Name "rbac-tutorial-resource-group" -Location $location
    ```
 
    ```Example
@@ -102,7 +104,7 @@ ms.locfileid: "43301009"
 
 ## <a name="grant-access"></a>Предоставление доступа
 
-Чтобы предоставить доступ для группы, используйте команду [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) для назначения роли. Необходимо указать субъект безопасности, определение роли и область действия.
+Чтобы предоставить доступ для группы, используйте команду [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) для назначения роли. Необходимо указать субъект безопасности, определение роли и область действия.
 
 1. Получите идентификатор объекта группы с помощью команды [Get AzureADGroup](/powershell/module/azuread/new-azureadgroup).
 
@@ -122,10 +124,10 @@ ms.locfileid: "43301009"
     $groupId = "11111111-1111-1111-1111-111111111111"
     ```
 
-1. Получите идентификатор подписки с помощью команды [Get-AzureRmSubscription](/powershell/module/azurerm.profile/get-azurermsubscription).
+1. Получите идентификатор подписки с помощью команды [Get-AzSubscription](/powershell/module/az.profile/get-azsubscription).
 
     ```azurepowershell
-    Get-AzureRmSubscription
+    Get-AzSubscription
     ```
 
     ```Example
@@ -144,7 +146,7 @@ ms.locfileid: "43301009"
 1. Назначьте группе роль [Читатель](built-in-roles.md#reader) в области действия подписки.
 
     ```azurepowershell
-    New-AzureRmRoleAssignment -ObjectId $groupId `
+    New-AzRoleAssignment -ObjectId $groupId `
       -RoleDefinitionName "Reader" `
       -Scope $subScope
     ```
@@ -164,7 +166,7 @@ ms.locfileid: "43301009"
 1. Назначьте роль [Участник](built-in-roles.md#contributor) в области действия группы ресурсов.
 
     ```azurepowershell
-    New-AzureRmRoleAssignment -ObjectId $groupId `
+    New-AzRoleAssignment -ObjectId $groupId `
       -RoleDefinitionName "Contributor" `
       -ResourceGroupName "rbac-tutorial-resource-group"
     ```
@@ -183,10 +185,10 @@ ms.locfileid: "43301009"
 
 ## <a name="list-access"></a>Вывод списка доступа
 
-1. Чтобы проверить доступ для подписки, используйте команду [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment), которая отобразит список назначений ролей.
+1. Чтобы проверить доступ для подписки, используйте команду [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment), которая отобразит список назначений ролей.
 
     ```azurepowershell
-    Get-AzureRmRoleAssignment -ObjectId $groupId -Scope $subScope
+    Get-AzRoleAssignment -ObjectId $groupId -Scope $subScope
     ```
 
     ```Example
@@ -203,10 +205,10 @@ ms.locfileid: "43301009"
 
     В выходных данных вы увидите, что роль "Читатель" была назначена группе руководства по RBAC в пределах области действия подписки.
 
-1. Чтобы проверить доступ для группы ресурсов, используйте команду [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment), которая отобразит список назначений ролей.
+1. Чтобы проверить доступ для группы ресурсов, используйте команду [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment), которая отобразит список назначений ролей.
 
     ```azurepowershell
-    Get-AzureRmRoleAssignment -ObjectId $groupId -ResourceGroupName "rbac-tutorial-resource-group"
+    Get-AzRoleAssignment -ObjectId $groupId -ResourceGroupName "rbac-tutorial-resource-group"
     ```
 
     ```Example
@@ -245,12 +247,12 @@ ms.locfileid: "43301009"
 
 ## <a name="remove-access"></a>Запрет доступа
 
-Чтобы лишить прав доступа пользователей, группы и приложения, используйте команду [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) для удаления назначений ролей.
+Чтобы лишить прав доступа пользователей, группы и приложения, используйте команду [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment) для удаления назначений ролей.
 
 1. Используйте следующую команду, чтобы удалить назначение роли участника для группы в области действия группы ресурсов.
 
     ```azurepowershell
-    Remove-AzureRmRoleAssignment -ObjectId $groupId `
+    Remove-AzRoleAssignment -ObjectId $groupId `
       -RoleDefinitionName "Contributor" `
       -ResourceGroupName "rbac-tutorial-resource-group"
     ```
@@ -258,7 +260,7 @@ ms.locfileid: "43301009"
 1. Используйте следующую команду, чтобы удалить назначение роли читателя для группы в области действия подписки.
 
     ```azurepowershell
-    Remove-AzureRmRoleAssignment -ObjectId $groupId `
+    Remove-AzRoleAssignment -ObjectId $groupId `
       -RoleDefinitionName "Reader" `
       -Scope $subScope
     ```
@@ -267,10 +269,10 @@ ms.locfileid: "43301009"
 
 Чтобы очистить ресурсы, созданные при работе с этим руководством, удалите группу ресурсов и саму группу.
 
-1. Удалите группу ресурсов с помощью команды [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup).
+1. Удалите группу ресурсов с помощью команды [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
     ```azurepowershell
-    Remove-AzureRmResourceGroup -Name "rbac-tutorial-resource-group"
+    Remove-AzResourceGroup -Name "rbac-tutorial-resource-group"
     ```
 
     ```Example

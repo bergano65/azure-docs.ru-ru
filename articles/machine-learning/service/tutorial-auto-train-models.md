@@ -8,15 +8,15 @@ ms.subservice: core
 ms.topic: tutorial
 author: nacharya1
 ms.author: nilesha
-ms.reviewer: sgilley
-ms.date: 12/04/2018
+ms.reviewer: trbye
+ms.date: 02/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1e2746ef55f5c50ce9452b7a9d1ab060c69830db
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: a293389b8175406d9036cd95c14748e5a626fb91
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244281"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752540"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство. Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -34,7 +34,6 @@ ms.locfileid: "55244281"
 > * Автоматическое обучение модели регрессии.
 > * Локальный запуск модели с пользовательскими параметрами.
 > * Изучение результатов.
-> * Регистрация наилучшей модели.
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
@@ -43,36 +42,74 @@ ms.locfileid: "55244281"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-> * [Выполнение руководства по подготовке данных](tutorial-data-prep.md).
-> * Настроенная среда автоматического машинного обучения. Например, это могут быть [Записные книжки Azure](https://notebooks.azure.com/), локальная среда Python или Виртуальная машина для обработки и анализа данных. [Статья о настройке автоматического машинного обучения](samples-notebooks.md).
+Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек. Чтобы запустить записную книжку, вам потребуется:
 
-## <a name="get-the-notebook"></a>Получение записной книжки
+* [Выполнение руководства по подготовке данных](tutorial-data-prep.md).
+* Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
+    * пакет SDK для Машинного обучения Azure для Python с `automl` и `notebooks`;
+    * `matplotlib`
+* Пример записной книжки.
+* Рабочая область машинного обучения.
+* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка.
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/regression-part2-automated-ml.ipynb). Запустите записную книжку `regression-part2-automated-ml.ipynb` в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
+Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
 
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
+* Использование [Записных книжек Azure](#azure)
+* Использование [собственного сервера записных книжек](#server)
 
-## <a name="import-packages"></a>Импорт пакетов
+### <a name="azure"></a>Использование Записных книжек Azure: к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
+
+Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
+
+Выполнив указанные ниже действия, запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb** в проекте **Начало работы**.
+
+[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
+
+### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
+
+Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb**.
+
+1. Чтобы создать рабочую область и среду Miniconda для службы "Машинное обучение Azure" с помощью Python, выполните действия, описанные в [этом кратком руководстве](quickstart-create-workspace-with-python.md).
+1. Установите `automl` и `notebooks` для в вашей среде с помощью `pip install azureml-sdk[automl,notebooks]`.
+1. Установите `maplotlib`, используя `pip install maplotlib`.
+1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
+
+    ```
+    git clone https://github.com/Azure/MachineLearningNotebooks.git
+    ```
+
+1. Запустите сервер записной книжки из клонированного каталога.
+
+    ```shell
+    jupyter notebook
+
+## <a name="start"></a>Set up your development environment
+
+All the setup for your development work can be accomplished in a Python notebook. Setup includes the following actions:
+
+* Install the SDK
+* Import Python packages
+* Configure your workspace
+
+### Install and import packages
+
+If you are following the tutorial in your own Python environment, use the following to install necessary packages.
+
+```shell
+pip install azureml-sdk[automl,notebooks] matplotlib
+```
+
 Импортируйте пакеты Python, которые необходимы в этом руководстве.
-
 
 ```python
 import azureml.core
 import pandas as pd
 from azureml.core.workspace import Workspace
-from azureml.train.automl.run import AutoMLRun
-import time
 import logging
 import os
 ```
 
-Если вы работаете с руководством в собственной среде Python, используйте следующую команду для установки необходимых пакетов.
-
-```shell
-pip install azureml-sdk[automl,notebooks] azureml-dataprep pandas scikit-learn matplotlib
-```
-
-## <a name="configure-workspace"></a>Настройка рабочей области
+### <a name="configure-workspace"></a>Настройка рабочей области
 
 В существующей рабочей области создайте объект. Класс `Workspace` принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели.
 
@@ -743,7 +780,6 @@ for run in children:
     metrics = {k: v for k, v in run.get_metrics().items() if isinstance(v, float)}
     metricslist[int(properties['iteration'])] = metrics
 
-import pandas as pd
 rundata = pd.DataFrame(metricslist).sort_index(1)
 rundata
 ```
@@ -1177,6 +1213,5 @@ print(1 - mean_abs_percent_error)
 > * Настройка рабочей области и подготовка данных для эксперимента.
 > * Обучение с помощью локальной автоматической модели регрессии с пользовательскими параметрами.
 > * Просмотр и проверка результатов обучения.
-> * Регистрация лучшей модели.
 
 [Разверните модель](tutorial-deploy-models-with-aml.md) с помощью службы "Машинное обучение Azure".
