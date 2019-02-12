@@ -1,5 +1,5 @@
 ---
-title: Руководство. Обеспечение высокой доступности данных приложений в Azure | Документация Майкрософт
+title: Руководство. Создание высокодоступного приложения с помощью хранилища BLOB-объектов — служба хранилища Azure
 description: Использование геоизбыточного хранилища с доступом на чтение для обеспечения высокой доступности данных приложений
 services: storage
 author: tamram
@@ -9,14 +9,14 @@ ms.date: 01/03/2019
 ms.author: tamram
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 81cd6b073fb46b01b3b98543d8f92e2ef7b1ec1b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: d2fef3a47cbcb4cfd8bce8978003eca1044d7de3
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245394"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510639"
 ---
-# <a name="tutorial-make-your-application-data-highly-available-with-azure-storage"></a>Руководство. Обеспечение высокой доступности данных приложений в хранилище Azure
+# <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>Руководство. Создание высокодоступного приложения с помощью хранилища BLOB-объектов
 
 Это руководство представляет первую часть цикла. В нем вы узнаете, как обеспечить высокую доступность данных приложений в Azure.
 

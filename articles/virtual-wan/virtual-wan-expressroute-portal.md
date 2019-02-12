@@ -7,13 +7,13 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 10/5/2018
 ms.author: cherylmc
-Customer intent: As someone with a networking background, I want to connect my corporoate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: c02020ba8d49b123cf8914214d52ac40896a3c20
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
+ms.openlocfilehash: 17d80d07f9b272b0dcb7449404d5d6626e72ce65
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248186"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692892"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan-preview"></a>Руководство. Создание связи ExpressRoute с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "51248186"
 
 **Рекомендации по использованию предварительной версии:**
 
-* Доступность в регионах: центрально-западная часть США.
+* Доступность по регионам: Западно-центральная часть США
 * Необходимо включить канал ExpressRoute в стране, где поддерживается [ExpressRoute Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-faqs#where-is-expressroute-global-reach-supported)
 
 ## <a name="vnet"></a>1. Создать виртуальную сеть
@@ -70,12 +70,12 @@ ms.locfileid: "51248186"
 
 1. Выберите свою виртуальную глобальную сеть (vWAN) и в разделе **Virtual WAN Architecture** (Архитектура виртуальной глобальной сети) щелкните **Цепи ExpressRoute**.
 2. Если канал ExpressRoute находится в той же подписке, что и vWAN, щелкните **Select ExpressRoute circuit from your subscription(s)** (Выбрать канал ExpressRoute из подписок). 
-3. Нажмите кнопку с раскрывающимся меню и выберите канал ExpressRoute, который нужно связать с концентратором.
-4. Если канал ExpressRoute находится в другой подписке или вы указали [ключ авторизации идентификатор и идентификатор однорангового узла](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) выберите **Find a circuit redeeming an authorization key** (Найти канал, который активирует ключ авторизации).
+3. Нажмите кнопку с раскрывающимся меню и выберите канал ExpressRoute, который нужно связать с центром.
+4. Если канал ExpressRoute находится в другой подписке или вы указали [ключ авторизации и идентификатор однорангового узла](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md) выберите **Find a circuit redeeming an authorization key** (Найти канал, который активирует ключ авторизации).
 5. Введите следующие сведения:
 * **Ключ авторизации** — созданный владельцем канала, как описано выше.
 * **URI одноранговой цепи** — URI канала, который предоставил владелец канала и который является уникальным идентификатором для канала.
-* **Вес маршрутизации** - [этот параметр](../expressroute/expressroute-optimize-routing.md) позволяет выбрать определенные пути, если к одному центру подключены несколько каналов из разных расположений пиринга.
+* **Вес маршрутизации** — [этот параметр](../expressroute/expressroute-optimize-routing.md) позволяет выбрать определенные пути, если к одному центру подключены несколько каналов из разных расположений пиринга.
 6. Щелкните **Find circuit** (Найти канал). Если канал найден, выберите его.
 7. Выберите один или несколько концентраторов в раскрывающемся списке и нажмите кнопку **Сохранить**.
 
