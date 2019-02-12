@@ -296,8 +296,8 @@ ms.locfileid: "54118998"
 | mobile scale show *имя* |site show *имя* |
 | mobile scale change *имя* |site scale mode *режим* *имя* <br /> site scale instances *экземпляры* *имя* |
 | mobile appsetting list *имя* |site appsetting list *имя* |
-| mobile appsetting add *имя* *ключ* *значение* |site appsetting add *key*=*value* *name* |
-| mobile appsetting delete *name* *key* |site appsetting delete *ключ* *значение* |
+| mobile appsetting add *имя* *ключ* *значение* |site appsetting add *ключ*=*значение* *имя* |
+| mobile appsetting delete *имя* *ключ* |site appsetting delete *ключ* *значение* |
 | mobile appsetting show *имя* *ключ* |site appsetting delete *ключ* *значение* |
 
 Обновите параметры проверки подлинности или push-уведомлений, обновив соответствующие параметры приложения.
