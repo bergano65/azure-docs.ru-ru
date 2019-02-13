@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 6748998e87de7f0d5ea41a10ba16600aa7b31505
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 269ea0162f85c7bd632e0528680fc8b0e2885aa9
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53972045"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818130"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -57,7 +57,7 @@ ms.locfileid: "53972045"
 * [JavaScript](#trigger---javascript-example)
 * [Python](#trigger---python-example)
 
-[Пропустить примеры триггеров](#trigger---attributes)
+Пропустить примеры триггеров
 
 ### <a name="trigger---c-example"></a>Пример C# в триггере
 
@@ -93,7 +93,7 @@ namespace CosmosDBSamplesV2
 }
 ```
 
-[Пропустить примеры триггеров](#trigger---attributes)
+Пропустить примеры триггеров
 
 ### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
 
@@ -131,7 +131,7 @@ namespace CosmosDBSamplesV2
     }
 ```
 
-[Пропустить примеры триггеров](#trigger---attributes)
+Пропустить примеры триггеров
 
 ### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
 
@@ -199,7 +199,7 @@ namespace CosmosDBSamplesV2
 В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBTrigger` для параметров, значения которых будут поступать из Cosmos DB.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>.
 
 
-[Пропустить примеры триггеров](#trigger---attributes)
+Пропустить примеры триггеров
 
 ### <a name="trigger---python-example"></a>Пример Python: триггер
 
@@ -1727,7 +1727,7 @@ public class DocsFromRouteSqlQuery {
 
 В функциях C# и F# любые изменения, внесенные во входной документ посредством именованных входных параметров, сохраняются автоматически после успешного выхода из функции.
 
-В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с [примером на языке JavaScript](#input---javascript-example).
+В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с примером на языке JavaScript.
 
 ## <a name="output"></a>Выходные данные
 

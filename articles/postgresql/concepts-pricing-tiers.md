@@ -5,13 +5,13 @@ author: jan-eng
 ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/15/2019
-ms.openlocfilehash: 49c9d908970425165fcdd76171c20ab65454f42a
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.date: 02/01/2019
+ms.openlocfilehash: 8cc7d7d93f483289ab7faa3f5a7193fc218b57bc
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54318585"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695033"
 ---
 # <a name="azure-database-for-postgresql-pricing-tiers"></a>Ценовые категории службы "База данных Azure для PostgreSQL"
 
@@ -129,5 +129,5 @@ ms.locfileid: "54318585"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью портала Azure](tutorial-design-database-using-azure-portal.md).
-- [Мониторинг и масштабирование отдельного сервера PostgreSQL с помощью Azure CLI](scripts/sample-scale-server-up-or-down.md).
-- [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md). 
+- Дополнительные сведения см. в статье [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md). 
+- Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).

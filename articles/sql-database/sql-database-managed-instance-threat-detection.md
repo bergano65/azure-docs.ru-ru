@@ -1,6 +1,6 @@
 ---
-title: Настройка обнаружения угроз — Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
-description: Система обнаружения угроз выявляет подозрительные действия в базе данных, указывающие на наличие потенциальных угроз для ее безопасности в Управляемом экземпляре.
+title: Настройка обнаружения угроз в управляемом экземпляре Базы данных SQL Azure | Документация Майкрософт
+description: Система обнаружения угроз выявляет подозрительные действия в базе данных, указывающие на наличие потенциальных угроз для ее безопасности в управляемом экземпляре.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -11,21 +11,21 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 59a3b4a4e1b08a9a9985836a9f9be44d1eff9c71
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/04/2019
+ms.openlocfilehash: d8522967154a69b8473475932f2074bc98b4f24d
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472071"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55731229"
 ---
-# <a name="configure-threat-detection-preview-in-azure-sql-database-managed-instance"></a>Настройка обнаружения угроз в Управляемом экземпляре Базы данных SQL Azure (предварительная версия)
+# <a name="configure-threat-detection-preview-in-azure-sql-database-managed-instance"></a>Настройка обнаружения угроз в управляемом экземпляре Базы данных SQL Azure (предварительная версия)
 
-[Система обнаружения угроз](sql-database-threat-detection-overview.md) SQL Azure выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями в [Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance-index.yml). Система обнаружения угроз может определить **потенциальную атаку путем внедрения кода SQL**, **доступ из необычного центра обработки данных или расположения**, **доступ из незнакомого субъекта или потенциально опасного приложения**, а также **подбор учетных данных SQL** (см. дополнительные сведения об [оповещениях системы обнаружения угроз](sql-database-threat-detection-overview.md#azure-sql-database-threat-detection-alerts)).
+[Система обнаружения угроз](sql-database-threat-detection-overview.md) для [управляемого экземпляра](sql-database-managed-instance-index.yml) обнаруживает аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями. Система обнаружения угроз может определить **потенциальную атаку путем внедрения кода SQL**, **доступ из необычного центра обработки данных или расположения**, **доступ из незнакомого субъекта или потенциально опасного приложения**, а также **подбор учетных данных SQL** (см. дополнительные сведения об [оповещениях системы обнаружения угроз](sql-database-threat-detection-overview.md#threat-detection-alerts)).
 
 Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](sql-database-threat-detection-overview.md#explore-anomalous-database-activities-upon-detection-of-a-suspicious-event) или [портала Azure](sql-database-threat-detection-overview.md#explore-threat-detection-alerts-for-your-database-in-the-azure-portal)
 
-[Система обнаружения угроз](sql-database-threat-detection-overview.md) входит в состав предложения [Расширенная защита данных SQL](sql-advanced-threat-protection.md), которое представляет собой единый пакет расширенных средств обеспечения безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять. За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц для каждого Управляемого экземпляра. При этом первые 30 дней системой можно пользоваться бесплатно.
+[Система обнаружения угроз](sql-database-threat-detection-overview.md) входит в состав предложения [Расширенная защита данных](sql-database-advanced-data-security.md) (ADS), которое представляет собой единый пакет расширенных возможностей безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять. За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц за каждый управляемый экземпляр. При этом первые 30 дней системой можно пользоваться бесплатно.
 
 ## <a name="set-up-threat-detection-for-your-managed-instance-in-the-azure-portal"></a>Настройка обнаружения угроз для управляемого экземпляра на портале Azure
 
@@ -41,8 +41,8 @@ ms.locfileid: "55472071"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. дополнительные сведения о [системе обнаружения угроз](sql-database-threat-detection-overview.md).
-- См. дополнительные сведения об [Управляемых экземплярах](sql-database-managed-instance.md).
+- Дополнительные сведения о [системе обнаружения угроз](sql-database-threat-detection-overview.md).
+- Дополнительные сведения см. в статье [Использование Управляемого экземпляра базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 - См. дополнительные сведения об [обнаружении угроз в отдельной базе данных](sql-database-threat-detection.md).
-- См. дополнительные сведения об [аудите Управляемых экземпляров](https://go.microsoft.com/fwlink/?linkid=869430).
-- См. дополнительные сведения о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+- Дополнительные сведения см. в статье [Приступая к аудиту управляемого экземпляра Базы данных SQL Azure](https://go.microsoft.com/fwlink/?linkid=869430).
+- Дополнительные сведения см. в статье [Что такое Центр безопасности Azure?](https://docs.microsoft.com/azure/security-center/security-center-intro).

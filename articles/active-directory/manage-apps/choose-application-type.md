@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: barbkess
-ms.openlocfilehash: e10784957365df62e64c306c97ea17fb6a5e7c49
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: ef752d2f9d57ee8674d91fd14b56b804ccf50d22
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55202932"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814208"
 ---
 # <a name="choosing-the-application-type-when-adding-an-application-in-azure-active-directory"></a>Выбор типа приложения при добавлении приложения в Azure Active Directory
 Сведения о четырех типах приложений, которые можно добавить в Azure Active Directory (Azure AD). При добавлении приложения в Azure Active Directory вам будет предложено выбрать один из четырех типов приложений. 
@@ -42,7 +42,7 @@ Azure AD поддерживает четыре основных типа при�
 
 -   **Быстрый запуск.** Быстро приступите к работе с приложением, выполнив [простые шаги по развертыванию](https://docs.microsoft.com/azure/active-directory/active-directory-integrating-applications-getting-started).
 
--   **Управление общими свойствами.** Получите [прямую ссылку](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis#deploying-azure-ad-integrated-applications-to-users) на приложение, [настройте фирменную символику](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-change-app-logo-user-azure-portal) приложения или [отключите приложение](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal) для всех пользователей.
+-   **Управление общими свойствами.** Получите [прямую ссылку](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) на приложение, [настройте фирменную символику](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-change-app-logo-user-azure-portal) приложения или [отключите приложение](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal) для всех пользователей.
 
 -   **Управление пользователями и группами.** [Назначьте](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) или [удалите](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-remove-assignment-azure-portal) пользователей и группы в приложении и при необходимости назначьте им конкретные роли, к которым они будут иметь доступ.
 
@@ -95,7 +95,7 @@ Azure AD поддерживает четыре основных типа при�
 
 ## <a name="single-sign-on-modes-for-custom-developed-applications"></a>Режимы единого входа для специально разработанных приложений
 
-[Специально разработанные приложения](#_Custom-Developed_Applications) также поддерживают дополнительные режимы единого входа, не указанные в списке выше, к которым относятся:
+Специально разработанные приложения также поддерживают дополнительные режимы единого входа, не указанные в списке выше, к которым относятся:
 
 -   единый вход на основе [OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code);
 
@@ -134,7 +134,7 @@ Azure AD поддерживает четыре основных типа при�
 -   **Автоматическая подготовка.** Выберите **режим подготовки** [Автоматически](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-provisioning#configuring-automatic-user-account-provisioning), если необходимо включить автоматическую подготовку на основе API или отмену подготовки учетных записей пользователей для этого приложения. 
 
    >[!NOTE]
-   >Этот параметр доступен только для приложений, находящихся в категории **избранных** [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-whats-new-azure-portal#the-new-and-improved-application-gallery).
+   >Этот параметр доступен только для приложений, находящихся в категории **избранных** [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-whats-new-azure-portal).
    >
    >
 

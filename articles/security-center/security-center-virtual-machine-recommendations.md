@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/12/2018
 ms.author: rkarlin
-ms.openlocfilehash: b77e814f9f339dff4539a04ab8b492e9777abe0d
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 32ca3fc87c91deba26e63a5938536d488e7dc5a8
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53537653"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55488753"
 ---
 # <a name="understand-azure-security-center-resource-recommendations"></a>Общие сведения о рекомендациях центра безопасности ресурсов Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "53537653"
 | [Оценка уязвимостей не установлена](security-center-vulnerability-assessment-recommendations.md) |Рекомендует установить решение для оценки уязвимостей на виртуальную машину. |
 | [Исправление уязвимостей](security-center-vulnerability-assessment-recommendations.md#review-the-recommendation) |Позволяет просматривать уязвимости системы и приложений, обнаруженные решением для оценки уязвимостей, установленным на виртуальной машине. |
 
-### <a name="app-services"></a>Службы приложений
+### Службы приложения <a name="app-services"></a>
 | Рекомендации | ОПИСАНИЕ |
 | --- | --- |
 | Служба приложений должна быть доступна только по HTTPS | Рекомендуется ограничить доступ Службы приложений только по протоколу HTTPS. |

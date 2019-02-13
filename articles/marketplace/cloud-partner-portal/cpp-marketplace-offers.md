@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 0d6879c6b9be06af4bb289761cc8f26b7e56d18e
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: ca4979188830fcb53732750a3eaadfc2009c4f9a
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355339"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55658714"
 ---
 # <a name="azure-and-appsource-marketplace-offers"></a>Предложения Azure и AppSource Marketplace
 
@@ -47,6 +47,7 @@ ms.locfileid: "54355339"
 | [Dynamics 365 for Customer Engagement](./dyn365ce/cpp-customer-engagement-offer.md) | AppSource | Пакет, расширяющий систему управления ресурсами клиента (CRM) с помощью модулей продаж, обслуживания, обслуживания проектов и выездного обслуживания.  |
 | [Dynamics 365 for Finance and Operations](../cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md) | AppSource | Пакет, расширяющий службу планирования ресурсов предприятия (ERP), которая поддерживает расширенное управление финансами, операциями, производством и цепочкой поставок. |
 | [Модуль IoT Edge](./iot-edge-module/cpp-offer-process-parts.md) | Таблицы Azure | Docker-совместимый контейнер, работающий на устройстве IoT Edge.  Он содержит небольшие вычислительные модули, которые используют комбинации пользовательского кода, других служб Azure и сторонних служб. |
+| [Приложение Power BI](./power-bi/cpp-power-bi-offer.md) | AppSource | Пакет, который использует потоки данных для подключения отчетов и панелей мониторинга к данным в общем хранилище данных. |
 | [Приложение SaaS](./saas-app/cpp-saas-offer.md) | Таблицы Azure | Решение — это подписка по модели "программное обеспечение как услуга", управляемая издателем, пользователи которого входят в систему через настраиваемый интерфейс, использующий Azure Active Directory. |
 | [Виртуальная машина](./virtual-machine/cpp-virtual-machine-offer.md)  | Таблицы Azure  | Решение содержится в одной виртуальной машине, развернутой по подписке клиента.  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |   |   |

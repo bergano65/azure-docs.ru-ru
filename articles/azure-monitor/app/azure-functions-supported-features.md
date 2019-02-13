@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 10/05/2018
 ms.reviewer: mbullwin
 ms.author: tilee
-ms.openlocfilehash: 06feece050835b2b9188eb702210770b44a6b49c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: dd28bc3925b0f07a441c46a26498ef1a14c3e650
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55185822"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510329"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -32,6 +32,7 @@ ms.locfileid: "55185822"
 | **Автоматический сбор**        |                 |                   |               
 | &bull; Запросы                     | Yes             | Yes               | 
 | &bull; Исключения                   | Yes             | Yes               | 
+| &bull; Счетчики производительности         | Yes             |                   |
 | &bull; Зависимости                   |                   |                   |               
 | &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Yes               | 
 | &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Yes               | 
@@ -50,6 +51,11 @@ ms.locfileid: "55185822"
 | | | | 
 | **Можно настроить**                      |                   |                   |           
 | &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Yes                   | 
+
+
+## <a name="performance-counters"></a>Счетчики производительности
+
+Автоматический сбор данных счетчиков производительности работает только на компьютерах Windows.
 
 
 ## <a name="live-metrics--secure-control-channel"></a>Интерактивные метрики и безопасный канал управления

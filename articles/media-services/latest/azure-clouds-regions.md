@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: juliako
-ms.openlocfilehash: 8eb49010d89c3039f46e5c84cd305b7d0b5ca025
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: d176152429ecac1ed4e570533f1bc0426cc7655f
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54306990"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55767458"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -33,9 +33,16 @@ ms.locfileid: "54306990"
 | [LiveEvents](live-streaming-overview.md) | Доступна | Доступна | Доступна | Доступна |
 | [StreamingEndpoints](streaming-endpoint-concept.md) | Доступна | Доступна | Доступна | Доступна |
 
-## <a name="regions"></a>регионы 
+## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
-Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения имени кода региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest):
+* [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
+* [Продукты по регионам](https://azure.microsoft.com/global-infrastructure/services/)
+* [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
+* [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
+
+## <a name="region-code-name"></a>Кодовое имя региона 
+
+Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения кодового имени региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
 ```bash
 az account list-locations

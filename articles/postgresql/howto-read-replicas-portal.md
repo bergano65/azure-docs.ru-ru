@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/23/2019
-ms.openlocfilehash: bf6e9947c21e5b07b2adc99de585c77444447c04
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.date: 02/01/2019
+ms.openlocfilehash: 37150f67e29dae0357c978cfaea9abeebeef428c
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54902667"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55691411"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-the-azure-portal"></a>Создание реплик чтения и управление ими с помощью портала Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "54902667"
 
 ## <a name="monitor-a-replica"></a>Мониторинг реплики
 ### <a name="max-lag-across-replicas"></a>Максимальная задержка между репликами
-Метрика **Max lag across replicas** (Максимальная задержка между репликами) показывает время задержки между главным сервером и репликой, которая последней обновила данные. 
+Метрика **Max lag across replicas** (Максимальная задержка между репликами) показывает задержку между главной репликой и репликой с наибольшей задержкой в байтах. 
 
 1.  На портале Azure выберите **главный сервер** Базы данных Azure для PostgreSQL.
 

@@ -1,6 +1,6 @@
 ---
 title: Расширения и компоненты виртуальной машины Azure | Документы Майкрософт
-description: Сведения о расширениях виртуальной машины Azure и их использовании на виртуальных машинах Azure
+description: Сведения о расширениях виртуальной машины Azure и их использовании на виртуальных машинах Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: roiyz-msft
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 38f885cc230df6e0edb1e5b5254faf0cd519847a
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 1d092f03013d98106138f35734d960567121a5bf
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451449"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692789"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Расширения и компоненты виртуальной машины Azure
 Расширения виртуальных машин Azure — это небольшие приложения для выполнения задач настройки и автоматизации после развертывания на виртуальных машинах Azure. Вы можете использовать существующие образы и затем настраивать их в рамках развертываний, не прибегая к процедуре создания настраиваемых образов.

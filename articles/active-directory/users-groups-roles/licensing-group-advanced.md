@@ -1,25 +1,25 @@
 ---
-title: Дополнительные сценарии лицензирования на основе группы в Azure Active Directory | Документация Майкрософт
+title: Дополнительные сценарии лицензирования на основе группы в Azure Active Directory | Документация Майкрософт
 description: Дополнительные сценарии лицензирования на основе группы в Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
 author: curtand
 manager: mtillman
-editor: piotrci
 ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.date: 10/29/2018
+ms.date: 01/31/2019
 ms.author: curtand
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b2e52b1e9aad05af173bf86e769e0c6ff7d28d9d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.reviewer: sumitp
+ms.custom: ''
+ms.openlocfilehash: a7937e6a532883c2808160fd88096bdfc1b4f4c2
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55195166"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55508646"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 

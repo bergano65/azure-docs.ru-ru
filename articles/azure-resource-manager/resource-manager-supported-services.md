@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/08/2018
+ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: fafc16bdf00f947d4ba8ffe56d7cf2ae3e0bc489
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: aa61b88bb0a944a048bc4b2db9c542efe3e30ddf
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51344949"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564125"
 ---
-# <a name="resource-providers-and-types"></a>Поставщики и типы ресурсов
+# <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
 При развертывании ресурсов часто бывает необходимо получить сведения о типах и поставщиках ресурсов. В этой статье раскрываются следующие темы:
 
@@ -32,14 +32,58 @@ ms.locfileid: "51344949"
 * просмотр допустимых расположений для типа ресурса;
 * просмотр допустимых версий API для типа ресурса.
 
-Вы можете выполнить эти шаги с помощью портала, PowerShell или Azure CLI.
+Вы можете выполнить эти шаги с помощью портала Azure, Azure PowerShell или Azure CLI.
 
-## <a name="powershell"></a>PowerShell
+## <a name="azure-portal"></a>Портал Azure
+
+Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Выбор пункта **Все службы**.
+
+    ![выбор подписок](./media/resource-manager-supported-services/select-subscriptions.png)
+3. В поле **Все службы** введите **подписка**, а затем выберите **Подписки**.
+4. Выберите подписку из списка подписок для просмотра.
+5. Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
+
+    ![отображение поставщиков ресурсов](./media/resource-manager-supported-services/show-resource-providers.png)
+
+6. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение операции `/register/action` для поставщика ресурсов. Эта операция включается в роли участника и владельца. Чтобы зарегистрировать поставщика ресурсов, выберите **Регистрация**. На предыдущем снимке экрана ссылка **Регистрация** выделена в поле **Microsoft.Blueprint**.
+
+    Невозможно отменить регистрацию поставщика ресурсов, если в подписке еще есть типы ресурсов из этого поставщика ресурсов.
+
+Чтобы просмотреть сведения для конкретного поставщика ресурсов, сделайте следующее:
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Щелкните **Все службы**.
+
+    ![Пункт "Все службы"](./media/resource-manager-supported-services/more-services.png)
+
+3. В поле **Все службы** введите **обозреватель ресурсов** и выберите **Обозреватель ресурсов**.
+4. Разверните список **Поставщики**, щелкнув стрелку вправо.
+
+    ![выбор поставщиков](./media/resource-manager-supported-services/select-providers.png)
+
+5. Разверните поставщик ресурсов и тип ресурса, который вы хотите просмотреть.
+
+    ![Выбор типа ресурсов](./media/resource-manager-supported-services/select-resource-type.png)
+
+6. Диспетчер ресурсов поддерживается во всех регионах, однако развертываемые вами ресурсы могут поддерживаться не во всех регионах. Кроме того, на вашу подписку могут налагаться ограничения, которые препятствуют использованию определенных регионов, поддерживающих ресурс. Обозреватель ресурсов отображает допустимые расположения для типа ресурса.
+
+    ![Отображение расположений](./media/resource-manager-supported-services/show-locations.png)
+
+7. Версия API соответствует версии операций API REST, выполняемых поставщиком ресурсов. При появлении в поставщике ресурсов новых возможностей выпускается новая версия REST API. Обозреватель ресурсов отображает допустимые версии API для типа ресурса.
+
+    ![Отображение версий API](./media/resource-manager-supported-services/show-api-versions.png)
+
+## <a name="azure-powershell"></a>Azure PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, используйте команду ниже:
 
 ```azurepowershell-interactive
-Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
+Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
 ```
 
 Она возвращает результаты, подобные следующим:
@@ -57,7 +101,7 @@ Microsoft.CognitiveServices      Registered
 Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение операции `/register/action` для поставщика ресурсов. Эта операция включается в роли участника и владельца.
 
 ```azurepowershell-interactive
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
+Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
 ```
 
 Она возвращает результаты, подобные следующим:
@@ -74,7 +118,7 @@ Locations         : {West Europe, East US, East US 2, West US...}
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, используйте команду ниже:
 
 ```azurepowershell-interactive
-Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
+Get-AzResourceProvider -ProviderNamespace Microsoft.Batch
 ```
 
 Она возвращает результаты, подобные следующим:
@@ -91,7 +135,7 @@ Locations         : {West Europe, East US, East US 2, West US...}
 Чтобы просмотреть типы ресурсов для поставщика ресурсов, используйте команду ниже:
 
 ```azurepowershell-interactive
-(Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes.ResourceTypeName
+(Get-AzResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes.ResourceTypeName
 ```
 
 Возвращаемые данные:
@@ -108,7 +152,7 @@ locations/quotas
 Чтобы получить список доступных версий API для типа ресурса, используйте следующую команду:
 
 ```azurepowershell-interactive
-((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes | Where-Object ResourceTypeName -eq batchAccounts).ApiVersions
+((Get-AzResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes | Where-Object ResourceTypeName -eq batchAccounts).ApiVersions
 ```
 
 Возвращаемые данные:
@@ -126,7 +170,7 @@ locations/quotas
 Чтобы получить список поддерживаемых расположений для типа ресурса, используйте следующую команду:
 
 ```azurepowershell-interactive
-((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes | Where-Object ResourceTypeName -eq batchAccounts).Locations
+((Get-AzResourceProvider -ProviderNamespace Microsoft.Batch).ResourceTypes | Where-Object ResourceTypeName -eq batchAccounts).Locations
 ```
 
 Возвращаемые данные:
@@ -245,52 +289,9 @@ West US
 ...
 ```
 
-## <a name="portal"></a>Microsoft Azure
-
-Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, выберите **Подписки**.
-
-![выбор подписок](./media/resource-manager-supported-services/select-subscriptions.png)
-
-Выберите подписку, которую нужно просмотреть.
-
-![указание подписки](./media/resource-manager-supported-services/subscription.png)
-
-Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
-
-![отображение поставщиков ресурсов](./media/resource-manager-supported-services/show-resource-providers.png)
-
-Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение операции `/register/action` для поставщика ресурсов. Эта операция включается в роли участника и владельца. Чтобы зарегистрировать поставщика ресурсов, выберите **Регистрация**.
-
-![регистрация поставщика ресурсов](./media/resource-manager-supported-services/register-provider.png)
-
-Невозможно отменить регистрацию поставщика ресурсов, если в подписке еще есть типы ресурсов из этого поставщика ресурсов.
-
-Чтобы просмотреть сведения о конкретном поставщике ресурсов, выберите **Все службы**.
-
-![Пункт "Все службы"](./media/resource-manager-supported-services/more-services.png)
-
-Найдите **Обозреватель ресурсов** и выберите его из списка доступных вариантов.
-
-![выбор обозревателя ресурсов](./media/resource-manager-supported-services/select-resource-explorer.png)
-
-Выберите **Поставщики**.
-
-![выбор поставщиков](./media/resource-manager-supported-services/select-providers.png)
-
-Выберите поставщика ресурсов и тип ресурса, который вы хотите просмотреть.
-
-![Выбор типа ресурсов](./media/resource-manager-supported-services/select-resource-type.png)
-
-Диспетчер ресурсов поддерживается во всех регионах, однако развертываемые вами ресурсы могут поддерживаться не во всех регионах. Кроме того, на вашу подписку могут налагаться ограничения, которые препятствуют использованию определенных регионов, поддерживающих ресурс. Обозреватель ресурсов отображает допустимые расположения для типа ресурса.
-
-![Отображение расположений](./media/resource-manager-supported-services/show-locations.png)
-
-Версия API соответствует версии операций API REST, выполняемых поставщиком ресурсов. При появлении в поставщике ресурсов новых возможностей выпускается новая версия REST API. Обозреватель ресурсов отображает допустимые версии API для типа ресурса.
-
-![Отображение версий API](./media/resource-manager-supported-services/show-api-versions.png)
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md).
+* Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md). 
+* Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).
 * Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).
 * Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).

@@ -16,12 +16,12 @@ ms.date: 09/10/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 09/10/2018
-ms.openlocfilehash: 363e0868542f56df8c37639b2af7ac295be97da2
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 20c96d1e25e0aef86d09c37ed919e61ec6058c6d
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249911"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747447"
 ---
 # <a name="install-the-azure-stack-development-kit-asdk"></a>Установка Пакета средств разработки Azure Stack (ASDK)
 После [подготовки главного компьютера ASDK](asdk-prepare-host.md) вы можете развернуть пакет ASDK в образе CloudBuilder.vhdx, выполнив описанные в этой статье действия.
@@ -59,7 +59,7 @@ ms.locfileid: "55249911"
     - Введите допустимый **IP-адрес сервера времени**. Это обязательное поле задает сервер времени,который будет использоваться Пакетом средств разработки. Этот параметр может быть предоставлен в качестве допустимого IP-адреса сервера времени. Имена серверов не поддерживаются.
 
       > [!TIP]
-      > Чтобы найти IP-адрес сервера времени, перейдите на сайт [pool.ntp.org](http://pool.ntp.org) или выполните проверку связи с сервером time.windows.com. 
+      > Чтобы найти IP-адрес сервера времени, перейдите на сайт [ntppool.org](https://www.ntppool.org/) или выполните проверку связи с сервером time.windows.com. 
 
     - Вы можете задать следующие значения (**необязательно**):
         - **ИД виртуальной ЛС**. Задает идентификатор виртуальной локальной сети. Используйте этот параметр только в том случае, если на узле и AzS-BGPNAT01 необходимо настроить идентификатор виртуальной сети для доступа к физической сети (и Интернету). 

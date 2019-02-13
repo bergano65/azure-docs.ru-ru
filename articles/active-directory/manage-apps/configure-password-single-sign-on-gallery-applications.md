@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
-ms.openlocfilehash: 141caeb180fd0f5663c0fd51aadb0a397665c6d3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 236ba7e2a76e95f3a78457fbdb0b49fd82e20b36
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168623"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815410"
 ---
 # <a name="how-to-configure-password-single-sign-on-for-an-azure-ad-gallery-application"></a>Настройка единого входа по паролю для приложения из коллекции Azure AD
 
-При добавлении приложения из [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis#get-started-with-the-azure-ad-application-gallery) вы можете выбрать для него способ входа пользователей. Этот способ можно настроить в любое время, выбрав элемент навигации **Единый вход** в корпоративном приложении на [портале Azure](https://portal.azure.com/).
+При добавлении приложения из [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) вы можете выбрать для него способ входа пользователей. Этот способ можно настроить в любое время, выбрав элемент навигации **Единый вход** в корпоративном приложении на [портале Azure](https://portal.azure.com/).
 
-Один из доступных методов единого входа — это [Единый вход на основе пароля](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis#how-does-single-sign-on-with-azure-active-directory-work). Это отличный способ для быстрой интеграции приложений в Azure AD. Он предоставляет следующие преимущества.
+Один из доступных методов единого входа — это [Единый вход на основе пароля](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis). Это отличный способ для быстрой интеграции приложений в Azure AD. Он предоставляет следующие преимущества.
 
 -   Использование **единого входа для пользователей** путем безопасного хранения и воспроизведения имен пользователей и паролей для приложений, интегрированных с Azure AD.
 
@@ -41,16 +41,16 @@ ms.locfileid: "55168623"
 
 -   **Администратор** может назначать группам пользователей совместно используемые имена для входа и пароли, используя функцию обновления учетных данных при [назначении групп приложениям](#assign-an-application-to-a-group-directly).
 
-В следующем разделе представлены сведения о том, как включить [единый вход по паролю](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis#how-does-single-sign-on-with-azure-active-directory-work) для приложения, которое уже находится в [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis#get-started-with-the-azure-ad-application-gallery).
+В следующем разделе представлены сведения о том, как включить [единый вход по паролю](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) для приложения, которое уже находится в [коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="overview-of-steps-required"></a>Обзор необходимых действий
 Чтобы настроить приложение из коллекции Azure AD, выполните указанные ниже действия.
 
 -   [Добавление приложения из коллекции Azure AD](#add-an-application-from-the-azure-ad-gallery)
 
--   [Настройте приложение для единого входа на основе пароля](#configure-the-application-for-password-single-sign-on).
+-   [настройте приложение для единого входа по паролю](#configure-the-application-for-password-single-sign-on);
 
--   [назначьте приложение пользователю или группе](#assign-the-application-to-a-user-or-a-group);
+-   назначьте приложение пользователю или группе;
 
     -   [назначьте приложение пользователю напрямую](#assign-a-user-to-an-application-directly);
 

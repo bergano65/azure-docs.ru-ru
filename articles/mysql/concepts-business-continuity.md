@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/28/2018
-ms.openlocfilehash: 9b9e2362553eb93cbb111b70cf29a1cc1524e77e
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.date: 02/01/2019
+ms.openlocfilehash: a09c1934ecb34518b191a8e730a72efecc85aa2f
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53554543"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55692935"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-mysql"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"
 
@@ -50,6 +50,6 @@ ms.locfileid: "53554543"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения об автоматическом создании резервных копий см. в статье о [резервных копиях в базе данных Azure для MySQL](concepts-backup.md).
-- Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).
-- Сведения о восстановлении базы данных до точки во времени с помощью Azure CLI см. в  [этой статье](howto-restore-server-cli.md).
+- Дополнительные сведения об автоматическом создании резервных копий в Базе данных Azure для MySQL см. в [этой статье](concepts-backup.md).
+- Узнайте, как выполнить восстановление с помощью [портала Azure](howto-restore-server-portal.md) или [Azure CLI](howto-restore-server-cli.md).
+- Узнайте больше о [репликах чтения в Базе данных Azure для MySQL](concepts-read-replicas.md).

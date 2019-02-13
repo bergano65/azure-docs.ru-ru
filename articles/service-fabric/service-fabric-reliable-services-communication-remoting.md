@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: b8abf7a0dc85d20e9075b51b8d42a068cf56846f
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 4110b8f1b336a604c89180ac44ad470132765830
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620529"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820680"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -211,7 +211,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    b. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    б) Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -239,7 +239,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 ## <a name="use-the-remoting-v2-interface-compatible-stack"></a>Использование стека удаленного взаимодействия версии 2 (с совместимым интерфейсом)
 
- Стек удаленного взаимодействия версии 2 (с совместимым интерфейсом, известный как V2_1) обладает всеми функциями стека удаленного взаимодействия версии 2. Стек его интерфейса совместим со стеком удаленного взаимодействия версии 1, но не обладает обратной совместимостью с версиями 1 и 2. Чтобы выполнить обновление версии 1 до версии 2_1, не влияя на доступность службы, выполните процедуру из [этой статьи](#upgrade-from-remoting-v1-to-remoting-v2interfacecompatible).
+ Стек удаленного взаимодействия версии 2 (с совместимым интерфейсом, известный как V2_1) обладает всеми функциями стека удаленного взаимодействия версии 2. Стек его интерфейса совместим со стеком удаленного взаимодействия версии 1, но не обладает обратной совместимостью с версиями 1 и 2. Чтобы выполнить обновление версии 1 до версии 2_1, не влияя на доступность службы, следуйте действиям, описанным в этой статье.
 
 
 ### <a name="use-an-assembly-attribute-to-use-the-remoting-v2-interface-compatible-stack"></a>Использование атрибута сборки для перехода на стек удаленного взаимодействия версии 2 (с совместимым интерфейсом)
@@ -333,7 +333,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    b. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    б) Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()

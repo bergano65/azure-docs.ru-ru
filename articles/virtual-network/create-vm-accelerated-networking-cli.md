@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 53945559be01b6e9f5778f5df096f7fcbb24a03f
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: 8c913d618313a72f6fb05ea45847a220f6070d42
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54214493"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55765744"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking"></a>Создание виртуальной машины Linux с ускоренной сетью
 
@@ -42,7 +42,7 @@ ms.locfileid: "54214493"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 Без дополнительной настройки из коллекции Azure поддерживаются следующие дистрибутивы: 
-* **Ubuntu 16.04** 
+* **Ubuntu 16.04 или более поздней версии** 
 * **SLES 12 с пакетом обновления 3 (SP3)** 
 * **RHEL 7.4**
 * **CentOS 7.4**
@@ -76,9 +76,9 @@ removed per issue https://github.com/MicrosoftDocs/azure-docs/issues/9772 -->
 
 ### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index#az_login). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
+Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *centralus*.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *centralus*.
 
 ```azurecli
 az group create --name myResourceGroup --location centralus
@@ -86,7 +86,7 @@ az group create --name myResourceGroup --location centralus
 
 Выберите поддерживаемый регион Linux, указанный в статье [General availability (Windows) and preview (Linux): Accelerated Networking](https://azure.microsoft.com/updates/accelerated-networking-in-expanded-preview) (Ускоренная сеть: общедоступная версия (Windows) и предварительная версия (Linux)).
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В следующем примере создаются виртуальная сеть *myVnet* и одна подсеть.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создаются виртуальная сеть *myVnet* и одна подсеть.
 
 ```azurecli
 az network vnet create \
@@ -98,7 +98,7 @@ az network vnet create \
 ```
 
 ### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
-Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create). В следующем примере создается группа безопасности сети *myNetworkSecurityGroup*.
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети *myNetworkSecurityGroup*.
 
 ```azurecli
 az network nsg create \
@@ -106,7 +106,7 @@ az network nsg create \
     --name myNetworkSecurityGroup
 ```
 
-Группа безопасности сети содержит несколько правил по умолчанию, одно из которых отключает входящий доступ из Интернета. Откройте порт, чтобы разрешить доступ к виртуальной машине по SSH с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create):
+Группа безопасности сети содержит несколько правил по умолчанию, одно из которых отключает входящий доступ из Интернета. Откройте порт, чтобы разрешить доступ к виртуальной машине по SSH с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule):
 
 ```azurecli
 az network nsg rule create \
@@ -125,7 +125,7 @@ az network nsg rule create \
 
 ### <a name="create-a-network-interface-with-accelerated-networking"></a>Создание сетевого интерфейса с функцией ускорения сети
 
-Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create). Если вы не планируете входить на виртуальную машину из Интернета, общедоступный IP-адрес не требуется, однако он нужен, чтобы выполнить шаги, описанные в этой статье.
+Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). Если вы не планируете входить на виртуальную машину из Интернета, общедоступный IP-адрес не требуется, однако он нужен, чтобы выполнить шаги, описанные в этой статье.
 
 ```azurecli
 az network public-ip create \
@@ -133,7 +133,7 @@ az network public-ip create \
     --resource-group myResourceGroup
 ```
 
-Создайте сетевой интерфейс с включенной функцией ускорения сети, выполнив команду [az network nic create](/cli/azure/network/nic#az_network_nic_create). В следующем примере создается сетевой интерфейс с именем *myNic* в подсети *mySubnet* виртуальной сети *myVnet* и группа безопасности сети *myNetworkSecurityGroup* связывается с сетевым интерфейсом:
+Создайте сетевой интерфейс с включенной функцией ускорения сети, выполнив команду [az network nic create](/cli/azure/network/nic). В следующем примере создается сетевой интерфейс с именем *myNic* в подсети *mySubnet* виртуальной сети *myVnet* и группа безопасности сети *myNetworkSecurityGroup* связывается с сетевым интерфейсом:
 
 ```azurecli
 az network nic create \
@@ -149,7 +149,7 @@ az network nic create \
 ### <a name="create-a-vm-and-attach-the-nic"></a>Создание виртуальной машины и подключение сетевого адаптера
 При создании виртуальной машины укажите сетевой адаптер, созданный с помощью `--nics`. Выберите размер и распределение, указанные в статье [General availability (Windows) and preview (Linux): Accelerated Networking](https://azure.microsoft.com/updates/accelerated-networking-in-expanded-preview) (Ускоренная сеть: общедоступная версия (Windows) и предварительная версия (Linux)). 
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). В следующем примере создается виртуальная машина *myVM* с образом UbuntuLTS и размером, поддерживающим ускоренную сеть (*Standard_DS4_v2*):
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина *myVM* с образом UbuntuLTS и размером, поддерживающим ускоренную сеть (*Standard_DS4_v2*):
 
 ```azurecli
 az vm create \

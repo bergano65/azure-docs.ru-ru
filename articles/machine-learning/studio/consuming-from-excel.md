@@ -1,8 +1,21 @@
 ---
-заголовок: Использование веб-службы в Excel titleSuffix: Студия машинного обучения Azure description: Студия машинного обучения Azure упрощает вызов веб-службы оценки непосредственно из Excel, избавляя от необходимости написания какого-либо кода.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 01.02.2018
+title: Использование веб-службы в Excel
+titleSuffix: Azure Machine Learning Studio
+description: Студия машинного обучения Azure упрощает вызов веб-службы оценки непосредственно из Excel, избавляя от необходимости написания какого-либо кода.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 02/01/2018
+ms.openlocfilehash: 95206d0e3cb7bdb619524237ca1e466414c5acf5
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55492891"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-web-service-from-excel"></a>Использование веб-службы Студии машинного обучения Azure в Excel
 

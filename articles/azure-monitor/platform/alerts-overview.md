@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/28/2018
 ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 156c977e197084d18d8fd32f55e58c512a66ef9d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 59b190065c678ef61b3e0dec8df13db4215a8229
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156417"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55486306"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -174,7 +174,7 @@ ms.locfileid: "55156417"
 
 Метрики Azure Monitor и возможности оповещений журнала действий, выпущенные до июня 2018 года, называются "Оповещения (классические)". 
 
-Дополнительные сведения см. в статье [Что такое классические оповещения в Microsoft Azure?](./../../azure-monitor/platform/alerts-classic.overview.md).
+Дополнительные сведения см. в статье [Что такое классические оповещения в Microsoft Azure?](./../../azure-monitor/platform/alerts-classic.overview.md)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

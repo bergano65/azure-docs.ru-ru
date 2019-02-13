@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/08/2018
 ms.author: raynew
-ms.openlocfilehash: b2b5d62c54fbfdef8a5e448a089800eedcb66d07
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: eaef1c904b5404339c476d86c5b8c2a1740e5a3e
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54827505"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55700083"
 ---
 # <a name="best-practices-for-securing-and-managing-workloads-migrated-to-azure"></a>Рекомендации по обеспечению безопасности рабочих нагрузок, перенесенных в Azure, и управлению ими
 
@@ -400,8 +400,7 @@ Azure Backup создает точки восстановления данных
 - [Сведения о том, как](https://docs.microsoft.com/azure/storage/blobs/storage-blob-snapshots) создать моментальный снимок BLOB-объекта.
 - [Просмотр демонстрационного сценария](https://azure.microsoft.com/blog/microsoft-azure-block-blob-storage-backup) резервного копирования хранилища BLOB-объектов.
 - [Сведения](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete) об обратимом удалении.
-- [Просмотр](https://docs.microsoft.com/azure/storage/common/storage-disaster-recovery-guidance?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) сведений о том, что делать в случае простоя службы хранилища Azure.
-
+- [Что делать в случае простоя службы хранилища Azure](../storage/common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 #### <a name="third-party-backup"></a>Сторонние решения для резервного копирования
 
@@ -517,7 +516,7 @@ Azure Site Recovery — это основная служба Azure, обесп�
 - [Основы](https://azure.microsoft.com/blog/azure-sql-databases-disaster-recovery-101/) работы с Базами данных SQL Azure для аварийного восстановления.
 - [Обзор](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview) активной георепликации и групп автоматической отработки отказа.
 - [Сведения](https://docs.microsoft.com/azure/sql-database/sql-database-designing-cloud-solutions-for-disaster-recovery) о проектировании сети для аварийного восстановления.
-- [Рекомендации](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview#best-practices-of-using-failover-groups-for-business-continuity) для групп отработки отказа.
+- [Рекомендации](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview) для групп отработки отказа.
 - [Рекомендации](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-security-config) по обеспечению безопасности после геовосстановления или отработки отказа.
 - [Сведения](https://docs.microsoft.com/azure/sql-database/sql-database-high-availability#zone-redundant-configuration) об избыточности в пределах зоны.
 - [Сведения о том, как](https://docs.microsoft.com/azure/sql-database/sql-database-disaster-recovery-drills) выполнить детализацию аварийного восстановления для базы данных SQL.

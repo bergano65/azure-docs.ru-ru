@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/09/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 86c62c021c6668783b3f843a908f4b17845f8c72
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 0ea781188e40d6389da8188379d792c922d3bdca
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172992"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55768356"
 ---
 # <a name="azure-ad-b2c-requesting-access-tokens"></a>Azure AD B2C. Запрос маркеров доступа
 
@@ -78,8 +78,15 @@ ms.locfileid: "55172992"
 > [!NOTE]
 > Сейчас пользовательские домены и маркеры доступа не поддерживаются. В URL-адресе запроса следует использовать домен tenantName.onmicrosoft.com.
 
+В следующем примере замените следующие значения.
+
+- `<tenant-name>` — имя вашего клиента Azure Active Directory B2C.
+- `<policy-name>` — имя вашей пользовательской политики или потока пользователя.
+- `<application-ID>` — идентификатор клиентского приложения, которое вы зарегистрировали.
+- `<redirect-uri>` — **URI перенаправления**, который вы ввели при регистрации клиентского приложения.
+
 ```
-https://<tenantName>.b2clogin.com/tfp/<tenantName>.onmicrosoft.com/<yourPolicyId>/oauth2/v2.0/authorize?client_id=<appID_of_your_client_application>&nonce=anyRandomValue&redirect_uri=<redirect_uri_of_your_client_application>&scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fnotes%2Fread&response_type=code 
+https://<tenant-name>.b2clogin.com/tfp/<tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/authorize?client_id=<application-ID>&nonce=anyRandomValue&redirect_uri=<redirect_uri>&scope=https%3A%2F%2F<tenant-name>.onmicrosoft.com%2Fnotes%2Fread&response_type=code 
 ```
 
 Чтобы получить несколько разрешений в одном запросе, можно добавить несколько записей в одном параметре **scope**, разделив их пробелами. Например: 

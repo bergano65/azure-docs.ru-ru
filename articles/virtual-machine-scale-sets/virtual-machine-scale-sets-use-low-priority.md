@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: memccror
-ms.openlocfilehash: c0b4e3e0a924c1353f7732737670dee7ed45a62a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 85b974e954fd99f6f10426f1961ea9f4a5343c59
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953878"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811109"
 ---
 # <a name="low-priority-vms-on-scale-sets-preview"></a>Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)
 
@@ -42,14 +42,14 @@ ms.locfileid: "46953878"
 ## <a name="deploying-low-priority-vms-on-scale-sets"></a>Развертывание виртуальных машин низкого приоритета в масштабируемых наборах
 
 Чтобы развернуть виртуальные машины низкого приоритета в масштабируемых наборах, можно установить для нового параметра *Priority* значение *Low*. Все виртуальные машины в масштабируемом наборе будут настроены как низкоприоритетные. Чтобы создать масштабируемый набор с виртуальными машинами низкого приоритета, используйте один из следующих способов.
-- [портала Azure](#use-the-azure-portal)
-- [интерфейс командной строки Azure](#use-the-azure-cli-20)
+- [портал Azure](#use-the-azure-portal)
+- Инфраструктура CLI Azure
 - [Azure PowerShell](#use-azure-powershell)
 - [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
-Процесс создания масштабируемого набора с низкоприоритетными виртуальными машинами такой же, как описано в [статье о начале работы](quick-create-portal.md). При развертывании масштабируемого набора можно задать флаг низкого приоритета и политику вытеснения: ![Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)](media/virtual-machine-scale-sets-use-low-priority/vmss-low-priority-portal.png).
+Процесс создания масштабируемого набора с низкоприоритетными виртуальными машинами такой же, как описано в [статье о начале работы](quick-create-portal.md). При развертывании масштабируемого набора можно задать флаг низкого приоритета и политику вытеснения: ![Создание масштабируемого набора с виртуальными машинами низкого приоритета](media/virtual-machine-scale-sets-use-low-priority/vmss-low-priority-portal.png)
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 

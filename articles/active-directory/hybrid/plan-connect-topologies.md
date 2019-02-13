@@ -11,16 +11,16 @@ ms.service: active-directory
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/27/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: ffd10504d496d0a46b373451a0d0400fc16c2e8d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 988e72a20fdd80e41ce8fc1ef568d90d4283a848
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55186211"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813506"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии Azure AD Connect.
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -63,7 +63,7 @@ ms.locfileid: "55186211"
 
 Мастер установки Azure AD Connect предлагает несколько вариантов консолидации пользователей, представленных в нескольких лесах. Каждый пользователь должен быть представлен в Azure AD только один раз. Есть несколько распространенных топологий, которые можно настроить в режиме выборочной установки в мастере установки. На странице **Уникальная идентификация пользователей** выберите вариант, соответствующий вашей топологии. Функция консолидации настроена только для пользователей. В конфигурации по умолчанию дубликаты групп не консолидируются.
 
-В следующем разделе описываются такие стандартные топологии, как [отдельные топологии](#multiple-forests-separate-topologies), [полная сетка](#multiple-forests-full-mesh-with-optional-galsync) и [топология ресурсов учетной записи](#multiple-forests-account-resource-forest).
+В следующем разделе описываются такие стандартные топологии, как отдельные топологии, [полная сетка](#multiple-forests-full-mesh-with-optional-galsync) и [топология ресурсов учетной записи](#multiple-forests-account-resource-forest).
 
 При стандартной конфигурации Azure AD Connect предполагается следующее.
 

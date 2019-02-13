@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 419b7c436e79b00d8f49d9e3801886f4e37e2c32
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 02/06/2019
+ms.openlocfilehash: ff28fbb52b33308967051a37fdaa3c6c273fc282
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241650"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816106"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Интеграция внешнего решения для мониторинга с Azure Stack
 
@@ -38,6 +38,9 @@ ms.locfileid: "55241650"
 На следующей диаграмме показан поток трафика между интегрированной системой Azure Stack, узлом отслеживания жизненного цикла оборудования, внешним решением для мониторинга и внешней системой отправки запросов и сбора данных.
 
 ![Схема прохождения трафика между Azure Stack, решением для мониторинга и решением для отправки запросов](media/azure-stack-integrate-monitor/MonitoringIntegration.png)  
+
+> [!NOTE]
+> Интеграция внешнего мониторинга непосредственно с физическими серверами и сетевыми устройствами запрещена и активно блокируется списками управления доступом (ACL). 
 
 В этой статье объясняется, как интегрировать Azure Stack с внешними решениями для мониторинга, например System Center Operations Manager и Nagios. В ней также поясняется, как программно работать с оповещениями с помощью PowerShell или вызовов REST API.
 

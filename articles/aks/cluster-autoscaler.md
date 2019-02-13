@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: iainfou
-ms.openlocfilehash: 6b2302e69c9412170b55df4bfd8c1df5a9f75ef3
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: bfdea1d5380750ec23964cd8564db9b3a9539f15
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479166"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754651"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
 
@@ -63,6 +63,9 @@ az extension add --name aks-preview
 ## <a name="create-an-aks-cluster-and-enable-the-cluster-autoscaler"></a>Создание кластера AKS и включение средства автомасштабирования кластера
 
 Если вам нужен новый кластер AKS, выполните команду [az aks create][az-aks-create]. В параметре *--kubernetes-version* укажите версию не ниже минимально необходимой, как описано выше в разделе [Перед началом работы](#before-you-begin). Чтобы включить и настроить средство автомасштабирования кластера, примените параметр *--enable-cluster-autoscaler* и укажите минимальное (*--min-count*) и максимальное (*--max-count*) число узлов.
+
+> [!IMPORTANT]
+> Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе часто задаваемых вопросов [Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов MC_*?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-mc-resource-group).
 
 В следующем примере создается кластер AKS с масштабируемым набором виртуальных машин, включенным средством автомасштабирования кластера и числом узлов в диапазоне от *1* до *3*:
 

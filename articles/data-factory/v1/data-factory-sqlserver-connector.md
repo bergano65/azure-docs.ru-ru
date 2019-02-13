@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: a8283ebe135c5204dd64d8955295fdece38e0ebe
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 38070c3073febbdbea896c177ae68d4b9519314d
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023504"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813387"
 ---
 # <a name="move-data-to-and-from-sql-server-on-premises-or-on-iaas-azure-vm-using-azure-data-factory"></a>Перемещение данных в базу данных SQL Server и обратно на локальных компьютерах и виртуальных машинах Azure IaaS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -28,7 +28,7 @@ ms.locfileid: "54023504"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе SQL Server в службе "Фабрика данных Azure" версии 2](../connector-sql-server.md).
 
-В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в локальную базу данных SQL Server и обратно. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования. 
+В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в локальную базу данных SQL Server и обратно. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 Данные можно скопировать **из базы данных SQL Server** в следующие хранилища данных:
@@ -52,20 +52,20 @@ ms.locfileid: "54023504"
 ## <a name="getting-started"></a>Приступая к работе
 Можно создать конвейер с действием копирования, которое перемещает данные из базы данных SQL Server или в нее с помощью различных инструментов и интерфейсов API.
 
-Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведены краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных.
+Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
-Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги: 
+Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
-1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров. 
-2. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных. Например, при копировании данных из базы данных SQL Server в хранилище BLOB-объектов Azure создайте две связанные службы, чтобы связать базу данных SQL Server и учетную запись хранения Azure с фабрикой данных. Сведения о свойствах связанной службы, относящихся к базе данных SQL Server, см. в разделе [Свойства связанной службы](#linked-service-properties). 
+1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров.
+2. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных. Например, при копировании данных из базы данных SQL Server в хранилище BLOB-объектов Azure создайте две связанные службы, чтобы связать базу данных SQL Server и учетную запись хранения Azure с фабрикой данных. Сведения о свойствах связанной службы, относящихся к базе данных SQL Server, см. в разделе [Свойства связанной службы](#linked-service-properties).
 3. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. В примере, упомянутом в последнем шаге, создайте набор данных, чтобы указать таблицу SQL в базе данных SQL Server, содержащую входные данные. И создайте другой набор данных, чтобы указать контейнер BLOB-объектов и папку, содержащую данные, скопированные из базы данных SQL Server. Сведения о свойствах набора данных, относящихся к базе данных SQL Server, см. в разделе [Свойства набора данных](#dataset-properties).
-4. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше SqlSource используется как источник, а BlobSink — как приемник для действия копирования. Аналогично, при копировании из хранилища BLOB-объектов Azure в базу данных SQL Server в действии копирования используются BlobSource и SqlSink. Сведения о свойствах действия копирования, относящихся к базе данных SQL Server, см. в разделе [Свойства действия копирования](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных в качестве источника или приемника, щелкните ссылку в предыдущем разделе об источнике данных. 
+4. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше SqlSource используется как источник, а BlobSink — как приемник для действия копирования. Аналогично, при копировании из хранилища BLOB-объектов Azure в базу данных SQL Server в действии копирования используются BlobSource и SqlSink. Сведения о свойствах действия копирования, относящихся к базе данных SQL Server, см. в разделе [Свойства действия копирования](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных в качестве источника или приемника, щелкните ссылку в предыдущем разделе об источнике данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Примеры с определениями JSON для сущностей фабрики данных, которые используются для копирования данных в локальную базу данных SQL Server и обратно, см. в разделе [Примеры определений JSON](#json-examples-for-copying-data-from-and-to-sql-server) этой статьи. 
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON. Примеры с определениями JSON для сущностей фабрики данных, которые используются для копирования данных в локальную базу данных SQL Server и обратно, см. в разделе [Примеры определений JSON](#json-examples-for-copying-data-from-and-to-sql-server) этой статьи.
 
-Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, характерных для базы данных SQL Server. 
+Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, характерных для базы данных SQL Server.
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 Создайте связанную службу типа **OnPremisesSqlServer**, чтобы связать локальную базу данных SQL Server с фабрикой данных. В следующей таблице содержится описание элементов JSON, которые относятся к локальной связанной службе SQL Server.
@@ -80,7 +80,7 @@ ms.locfileid: "54023504"
 | Имя пользователя |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет  |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет  |
 
-Вы можете зашифровать учетные данные с помощью командлета **New-AzureRmDataFactoryEncryptValue** и использовать их в строке подключения, как показано в следующем примере (свойство **EncryptedCredential**):  
+Вы можете зашифровать учетные данные с помощью командлета **New-AzureRmDataFactoryEncryptValue** и использовать их в строке подключения, как показано в следующем примере (свойство **EncryptedCredential**):
 
 ```JSON
 "connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;EncryptedCredential=<encrypted credential>",
@@ -104,26 +104,26 @@ ms.locfileid: "54023504"
 ```
 **JSON для использования проверки подлинности Windows**
 
-Шлюз управления данными будет действовать от имени соответствующей учетной записи пользователя для подключения к локальной базе данных SQL Server. 
+Шлюз управления данными будет действовать от имени соответствующей учетной записи пользователя для подключения к локальной базе данных SQL Server.
 
 ```json
 {
-     "Name": " MyOnPremisesSQLDB",
-     "Properties":
-     {
-         "type": "OnPremisesSqlServer",
-         "typeProperties": {
-             "ConnectionString": "Data Source=<servername>;Initial Catalog=MarketingCampaigns;Integrated Security=True;",
-             "username": "<domain\\username>",
-             "password": "<password>",
-             "gatewayName": "<gateway name>"
+    "Name": " MyOnPremisesSQLDB",
+    "Properties":
+    {
+        "type": "OnPremisesSqlServer",
+        "typeProperties": {
+            "ConnectionString": "Data Source=<servername>;Initial Catalog=MarketingCampaigns;Integrated Security=True;",
+            "username": "<domain\\username>",
+            "password": "<password>",
+            "gatewayName": "<gateway name>"
         }
-     }
+    }
 }
 ```
 
 ## <a name="dataset-properties"></a>Свойства набора данных
-В примерах использовался набор данных типа **SqlServerTable** для представления таблицы в базе данных SQL Server.  
+В примерах использовался набор данных типа **SqlServerTable** для представления таблицы в базе данных SQL Server.
 
 Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных](data-factory-create-datasets.md). Разделы JSON набора данных, такие как структура, доступность и политика, одинаковы для всех типов наборов данных (SQL Server, большой двоичный объект Azure, таблица Azure и т. д.).
 
@@ -176,7 +176,7 @@ ms.locfileid: "54023504"
 
 
 ## <a name="json-examples-for-copying-data-from-and-to-sql-server"></a>Примеры JSON для копирования данных в SQL Server и обратно
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В следующих примерах показано, как копировать данные в базу данных SQL Server и хранилище BLOB-объектов Azure и обратно. Тем не менее данные можно копировать **непосредственно** из любых источников в любой указанный [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник. Это делается с помощью действия копирования в фабрике данных Azure.     
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В следующих примерах показано, как копировать данные в базу данных SQL Server и хранилище BLOB-объектов Azure и обратно. Тем не менее данные можно копировать **непосредственно** из любых источников в любой указанный [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник. Это делается с помощью действия копирования в фабрике данных Azure.
 
 ## <a name="example-copy-data-from-sql-server-to-azure-blob"></a>Пример: копирование данных из SQL Server в хранилище BLOB-объектов Azure
 В примере ниже используется следующее:
@@ -311,13 +311,13 @@ ms.locfileid: "54023504"
 Конвейер содержит действие копирования, которое использует эти входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** установлено значение **SqlSource**, а для типа **sink** — значение **BlobSink**. SQL-запрос, указанный для свойства **SqlReaderQuery** , выбирает для копирования данные за последний час.
 
 ```json
-{  
-    "name":"SamplePipeline",
-    "properties":{  
+{
+  "name":"SamplePipeline",
+  "properties":{
     "start":"2016-06-01T18:00:00",
     "end":"2016-06-01T19:00:00",
     "description":"pipeline for copy activity",
-    "activities":[  
+    "activities":[
       {
         "name": "SqlServertoBlob",
         "description": "copy activity",
@@ -341,7 +341,7 @@ ms.locfileid: "54023504"
             "type": "BlobSink"
           }
         },
-       "scheduler": {
+        "scheduler": {
           "frequency": "Hour",
           "interval": 1
         },
@@ -352,8 +352,8 @@ ms.locfileid: "54023504"
           "timeout": "01:00:00"
         }
       }
-     ]
-   }
+    ]
+  }
 }
 ```
 В этом примере для свойства SqlSource указано **sqlReaderQuery** . Действие копирования выполняет этот запрос к источнику базы данных SQL Server с целью получения данных. Кроме того, можно создать хранимую процедуру, указав **sqlReaderStoredProcedureName** и **storedProcedureParameters** (если хранимая процедура принимает параметры). Свойство sqlReaderQuery может ссылаться на несколько таблиц из базы данных, на которую ссылается входной набор данных. Он не ограничивается таблицей, заданной свойством typeProperty в качестве параметра tableName набора данных.
@@ -369,7 +369,7 @@ ms.locfileid: "54023504"
 2. Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
 3. Входной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).
 4. Выходной [набор данных](data-factory-create-datasets.md) типа [SqlServerTable](data-factory-sqlserver-connector.md#dataset-properties).
-5. [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) и [SqlSink](#sql-server-copy-activity-type-properties).
+5. [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) и SqlSink.
 
 В этом примере данные временного ряда каждый час копируются из большого двоичного объекта Azure в таблицу SQL Server. Используемые в этих примерах свойства JSON описаны в разделах, следующих за примерами.
 
@@ -493,13 +493,13 @@ ms.locfileid: "54023504"
 Конвейер содержит действие копирования, которое использует эти входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** установлено значение **BlobSource**, а для типа **sink** — значение **SqlSink**.
 
 ```json
-{  
-    "name":"SamplePipeline",
-    "properties":{  
+{
+  "name":"SamplePipeline",
+  "properties":{
     "start":"2014-06-01T18:00:00",
     "end":"2014-06-01T19:00:00",
     "description":"pipeline with copy activity",
-    "activities":[  
+    "activities":[
       {
         "name": "AzureBlobtoSQL",
         "description": "Copy Activity",
@@ -523,7 +523,7 @@ ms.locfileid: "54023504"
             "type": "SqlSink"
           }
         },
-       "scheduler": {
+        "scheduler": {
           "frequency": "Hour",
           "interval": 1
         },
@@ -534,8 +534,8 @@ ms.locfileid: "54023504"
           "timeout": "01:00:00"
         }
       }
-      ]
-   }
+    ]
+  }
 }
 ```
 
@@ -552,8 +552,8 @@ ms.locfileid: "54023504"
     Подробные сведения и альтернативные способы включения протокола TCP/IP см. в статье [Включение или отключение сетевого протокола сервера](https://msdn.microsoft.com/library/ms191294.aspx).
 3. В этом же окне дважды щелкните **TCP/IP**, чтобы открыть окно **TCP/IP Properties** (Свойства TCP/IP).
 4. Перейдите на вкладку **IP-адреса** . Прокрутите вниз до раздела **IPAll** . Запишите значение параметра **TCP-порт** (по умолчанию — **1433**).
-5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт.  
-6. **Проверьте подключение**. Чтобы подключиться к SQL Server, используя полное имя, используйте SQL Server Management Studio с другого компьютера. Например, <machine><domain>.corp<company>.com,1433.
+5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт.
+6. **Проверьте подключение**. Чтобы подключиться к SQL Server, используя полное имя, используйте SQL Server Management Studio с другого компьютера. Например: "\<machine\>.\<domain\>.corp.\<company\>.com,1433."
 
    > [!IMPORTANT]
 
@@ -572,8 +572,8 @@ ms.locfileid: "54023504"
 ```sql
 create table dbo.SourceTbl
 (
-       name varchar(100),
-       age int
+    name varchar(100),
+    age int
 )
 ```
 **Целевая таблица:**
@@ -581,9 +581,9 @@ create table dbo.SourceTbl
 ```sql
 create table dbo.TargetTbl
 (
-       identifier int identity(1,1),
-       name varchar(100),
-       age int
+    identifier int identity(1,1),
+    name varchar(100),
+    age int
 )
 ```
 
@@ -657,9 +657,9 @@ create table dbo.TargetTbl
 | binary; |Byte[] |
 | bit |Логическое |
 | char; |String, Char[] |
-| дата |Datetime |
-| DateTime |Datetime |
-| datetime2; |Datetime |
+| дата |DateTime |
+| DateTime |DateTime |
+| datetime2; |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | Атрибут FILESTREAM (varbinary(max)) |Byte[] |
@@ -673,12 +673,12 @@ create table dbo.TargetTbl
 | nvarchar; |String, Char[] |
 | real; |Single |
 | rowversion |Byte[] |
-| smalldatetime; |Datetime |
+| smalldatetime; |DateTime |
 | smallint; |Int16 |
 | smallmoney; |Decimal |
 | sql_variant |Object * |
 | текст |String, Char[] |
-| Twitter в режиме реального |Интервал времени |
+| Twitter в режиме реального |TimeSpan |
 |  timestamp |Byte[] |
 | tinyint; |Byte |
 | uniqueidentifier |Guid |
@@ -690,7 +690,7 @@ create table dbo.TargetTbl
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
 
 ## <a name="repeatable-copy"></a>Повторяющаяся операция копирования
-При копировании данных в базу данных SQL Server действие копирования по умолчанию добавляет данные в таблицу приемника. Чтобы вместо этого выполнить операцию UPSERT, изучите раздел [Повторяемая запись в SqlSink](data-factory-repeatable-copy.md#repeatable-write-to-sqlsink). 
+При копировании данных в базу данных SQL Server действие копирования по умолчанию добавляет данные в таблицу приемника. Чтобы вместо этого выполнить операцию UPSERT, изучите раздел [Повторяемая запись в SqlSink](data-factory-repeatable-copy.md#repeatable-write-to-sqlsink).
 
 При копировании данных из реляционных хранилищ важно помнить о повторяемости, чтобы избежать непредвиденных результатов. В фабрике данных Azure можно вручную повторно выполнить срез. Вы можете также настроить для набора данных политику повтора, чтобы при сбое срез выполнялся повторно. При повторном выполнении среза в любом случае необходимо убедиться в том, что считываются те же данные, независимо от того, сколько раз выполняется срез. Ознакомьтесь с разделом [Повторяющиеся операции чтения из реляционных источников](data-factory-repeatable-copy.md#repeatable-read-from-relational-sources).
 

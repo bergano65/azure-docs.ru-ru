@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 1/24/2019
 ms.author: tomfitz
-ms.openlocfilehash: fc085a94e2412ff21b09755102f79636a0b0d3b5
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: d9892b158eae1a83ab1f8eed6c14224e1d4bca15
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54884951"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55509921"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md).
@@ -666,6 +666,7 @@ ms.locfileid: "54884951"
 | logDefinitions | Нет  | 
 | logprofiles | Нет  | 
 | журналы | Нет  | 
+| metricAlerts | Yes |
 | migrateToNewPricingModel | Нет  | 
 | myWorkbooks | Нет  | 
 | Запросы | Нет  | 
@@ -1108,7 +1109,7 @@ ms.locfileid: "54884951"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | managedInstances | Yes |
-| managedInstances/databases | Yes |
+| managedInstances/databases | Да (см. примечание ниже) |
 | managedInstances/databases/backupShortTermRetentionPolicies | Нет  |
 | managedInstances/databases/schemas/tables/columns/sensitivityLabels | Нет  |
 | managedInstances/databases/vulnerabilityAssessments | Нет  |
@@ -1120,12 +1121,16 @@ ms.locfileid: "54884951"
 | servers | Yes | 
 | servers/administrators | Нет  | 
 | servers/communicationLinks | Нет  | 
-| servers/databases | Yes | 
+| servers/databases | Да (см. примечание ниже) | 
 | servers/encryptionProtector | Нет  | 
 | servers/keys | Нет  | 
 | servers/restorableDroppedDatabases | Нет  | 
 | servers/serviceobjectives | Нет  | 
 | servers/tdeCertificates | Нет  | 
+
+> [!NOTE]
+> База данных Master не поддерживает теги, но другие базы данных поддерживают их.
+
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 | Тип ресурса | Поддержка тегов |
@@ -1163,8 +1168,11 @@ ms.locfileid: "54884951"
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| streamingjobs | Yes | 
+| streamingjobs | Да (см. примечание ниже) | 
 | streamingjobs/diagnosticSettings | Нет  | 
+
+> [!NOTE]
+> Невозможно добавить тег при выполнении streamingjobs. Остановите ресурс, чтобы добавить тег.
 
 ## <a name="microsoftsubscription"></a>Microsoft.Subscription
 | Тип ресурса | Поддержка тегов |

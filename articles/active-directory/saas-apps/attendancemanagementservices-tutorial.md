@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 331a8d07004a8915d27b28ca0fba940b1aa3ab72
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: bcbb3d5d25fdc3de71045cedfd4634e47b3947bf
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164815"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811960"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство. Интеграция Azure Active Directory с Attendance Management Services
 
@@ -30,7 +30,7 @@ ms.locfileid: "55164815"
 
 - С помощью Azure AD вы можете контролировать доступ к Attendance Management Services.
 - Вы можете включить автоматический вход пользователей в Attendance Management Services (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +70,7 @@ ms.locfileid: "55164815"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Attendance Management Services**, выберите **Attendance Management Services** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,8 +86,8 @@ ms.locfileid: "55164815"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Attendance Management Services](#create-an-attendance-management-service-test-user)** требуется для создания соответствующего пользователя Britta Simon в Attendance Management Services, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **Создание тестового пользователя Attendance Management Services** требуется для создания соответствующего пользователя Britta Simon в Attendance Management Services, связанного с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -113,7 +113,7 @@ ms.locfileid: "55164815"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группу поддержки Attendance Management Services](https://www.obcnet.jp/) для получения этих значений.
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группу поддержки Attendance Management Services](https://www.obcnet.jp/) для получения этих значений.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -139,11 +139,11 @@ ms.locfileid: "55164815"
 
     a. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
 
-    b. В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
+    б) В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
     c. В текстовое поле **Authentication endpoint URL** (URL-адрес конечной точки аутентификации) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
-    d. Щелкните **Select a file** (Выбрать файл), чтобы передать сертификат, скачанный из Azure AD.
+    4.3. Щелкните **Select a file** (Выбрать файл), чтобы передать сертификат, скачанный из Azure AD.
 
     д. Установите флажок **Disable password authentication** (Отключить проверку пароля).
 
@@ -163,7 +163,7 @@ ms.locfileid: "55164815"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/attendancemanagementservices-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/attendancemanagementservices-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "55164815"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-attendance-management-services-test-user"></a>Создание тестового пользователя Attendance Management Services
 
@@ -207,7 +207,7 @@ ms.locfileid: "55164815"
 
     a. В текстовое поле **OBCiD** введите электронную почту пользователя, например **BrittaSimon@contoso.com**.
 
-    b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    б) В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     c. Щелкните **Registration** (Регистрация).
 

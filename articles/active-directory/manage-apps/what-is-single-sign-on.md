@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: barbkess
 ms.reviewer: arvindh
-ms.openlocfilehash: 9e06e53f83dd05d53b76a2a07e465133f052dba8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 8216eb9c076111bfa70633b24f36ac97b0ee319a
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157709"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55664035"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 Единый вход обеспечивает безопасность и удобство при входе пользователей в приложения в Azure Active Directory (Azure AD). В этой статье описываются способы единого входа и представлены рекомендации, которые помогут выбрать наиболее подходящий метод единого входа при настройке приложений.
@@ -49,9 +49,7 @@ ms.locfileid: "55157709"
 | [На основе заголовков](#header-based-sso) | Только в локальной среде | Используйте единый вход на основе заголовков, если приложение использует заголовки для проверки подлинности. Для единого входа на основе заголовков требуется PingAccess для Azure AD. Прокси приложения использует Azure AD для проверки подлинности пользователя, а затем передает трафик через службу соединителей.  | 
 
 ## <a name="openid-connect-and-oauth"></a>OpenID Connect и OAuth
-С помощью OpenID Connect и OAuth можно реализовать единый вход, который упрощает процесс добавления корпоративного приложения в Azure AD. Администратору приложения не нужно настраивать единый вход. Вместо этого Azure AD добавляет приложение, когда администратор [предоставляет согласие пользователя](configure-user-consent.md). 
-
-[Пакеты SDK](../develop/reference-v2-libraries.md) для OpenID Connect и OAuth легко внедрить, так что ваше приложение будет готово к использованию MS Graph. 
+При разработке новых приложений используйте современные протоколы, такие как OpenID Connect и OAuth, чтобы оптимально использовать единый вход для своего приложения на различных платформах устройств. OAuth позволяет пользователям и администраторам [дать согласие](configure-user-consent.md) для защищенных ресурсов, таких как [Microsoft Graph](/graph/overview). Вы получаете средства для простой настройки [пакета SDK](../develop/reference-v2-libraries.md) в соответствии с требованиями своего приложения. Кроме того, приложение будет готово к использованию [Microsoft Graph](/graph/overview).
 
 Дополнительные сведения можно найти в разделе 
 

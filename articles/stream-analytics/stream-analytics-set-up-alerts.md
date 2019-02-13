@@ -7,14 +7,14 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/19/2019
+ms.date: 02/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4c0d32a201da5befbc8b68148f0b051e283ec289
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 52db8217cc1e1f84d25ab896be9b42db3bf6bd81
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412397"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55769504"
 ---
 # <a name="set-up-alerts-for-azure-stream-analytics-jobs"></a>Настройка оповещений для заданий Azure Stream Analytics
 
@@ -46,17 +46,17 @@ ms.locfileid: "54412397"
 
    ![Настройка оповещений для заданий Azure Streaming Analytics](./media/stream-analytics-set-up-alerts/stream-analytics-add-group-email-action.png)
 
-7. В полях **Ресурс**, **Условие** и **Группы действий** должны быть записи.
+7. В полях **Ресурс**, **Условие** и **Группы действий** должны быть записи. Обратите внимание, что для работы оповещений должны быть соблюдены определенные условия. Например, вы можете каждые 5 минут измерять среднее значение по метрике за последние 15 минут.
 
    ![Создание правила генерации оповещений Stream Analytics](./media/stream-analytics-set-up-alerts/stream-analytics-create-alert-rule-2.png)
 
    В разделе **Сведения об оповещении** введите значения в поля **Имя правила генерации оповещений** и **Описание**, укажите свою **группу ресурсов** и щелкните **Создать правило генерации оповещений**, чтобы создать правило для задания Stream Analytics.
 
    ![Создание правила генерации оповещений Stream Analytics](./media/stream-analytics-set-up-alerts/stream-analytics-create-alert-rule.png)
-
+   
 ## <a name="scenarios-to-monitor"></a>Сценарии для мониторинга
 
-Для мониторинга производительности задания Stream Analytics рекомендуется использовать следующие оповещения. Эти метрики должны оцениваться каждую минуту за последний 5-минутный период. Если во время выполнения задания наблюдаются проблемы с производительностью, оптимизируйте его, используя параллелизацию запросов, и попробуйте увеличить число единиц потоковой передачи.
+Для мониторинга производительности задания Stream Analytics рекомендуется использовать следующие оповещения. Эти метрики должны оцениваться каждую минуту за последний 5-минутный период.
 
 |Метрика|Условие|Агрегат времени|Threshold (Пороговое значение)|Корректирующие действия|
 |-|-|-|-|-|

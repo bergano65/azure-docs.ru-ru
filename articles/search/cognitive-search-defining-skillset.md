@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 091a165dacbf0e98532f343745e56c4acf765b84
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 9369e076517e295a7d17011e024353614ec8ad46
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53320801"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751979"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
 
@@ -142,11 +142,11 @@ Content-Type: application/json
 
 ## <a name="add-predefined-skills"></a>Добавление предопределенных навыков
 
-Рассмотрим первый навык — предопределенный [навык распознавания именованных сущностей](cognitive-search-skill-named-entity-recognition.md):
+Рассмотрим первый навык — предопределенный [навык распознавания сущностей](cognitive-search-skill-entity-recognition.md).
 
 ```json
     {
-      "@odata.type": "#Microsoft.Skills.Text.NamedEntityRecognitionSkill",
+      "@odata.type": "#Microsoft.Skills.Text.EntityRecognitionSkill",
       "context": "/document",
       "categories": [ "Organization" ],
       "defaultLanguageCode": "en",
@@ -155,7 +155,8 @@ Content-Type: application/json
           "name": "text",
           "source": "/document/content"
         }
-      ],      "outputs": [
+      ],
+      "outputs": [
         {
           "name": "organizations",
           "targetName": "organizations"
@@ -228,7 +229,7 @@ Content-Type: application/json
     }
 ```
 
-Это определение представляет собой настраиваемый навык, который вызывает веб-API в ходе обогащения. Для каждой организации, идентифицированной при распознавании именованных сущностей, этот навык вызывает веб-API, чтобы найти описание организации. Оркестрация времени вызова веб-API и включения в поток полученной информации обрабатывается внутренним модулем обогащения. При этом инициализация, необходимая для вызова этого настраиваемого API, должна быть задана в JSON (например, uri, httpHeaders и ожидаемые входные данные). Инструкции по созданию настраиваемого веб-API для конвейера обогащения см. в руководстве по [определению настраиваемого интерфейса](cognitive-search-custom-skill-interface.md).
+Это определение представляет собой [пользовательский навык](cognitive-search-custom-skill-web-api.md), который вызывает веб-API в процессе обогащения. Для каждой организации, идентифицированной при распознавании именованных сущностей, этот навык вызывает веб-API, чтобы найти описание организации. Оркестрация времени вызова веб-API и включения в поток полученной информации обрабатывается внутренним модулем обогащения. При этом инициализация, необходимая для вызова этого настраиваемого API, должна быть задана в JSON (например, uri, httpHeaders и ожидаемые входные данные). Инструкции по созданию настраиваемого веб-API для конвейера обогащения см. в руководстве по [определению настраиваемого интерфейса](cognitive-search-custom-skill-interface.md).
 
 Обратите внимание, что в поле context задается значение ```"/document/organizations/*"``` со звездочкой. Это означает, что этап обогащения вызывается *для каждой* организации из ```"/document/organizations"```. 
 

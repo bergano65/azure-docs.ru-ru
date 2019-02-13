@@ -1,8 +1,21 @@
 ---
-заголовок: Масштабирование веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как повысить параллелизм веб-службы Студии машинного обучения Azure с помощью добавления дополнительных конечных точек.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 23.01.2017
+title: Масштабирование веб-службы Студии машинного обучения
+titleSuffix: Azure Machine Learning Studio
+description: Узнайте, как повысить параллелизм веб-службы Студии машинного обучения Azure с помощью добавления дополнительных конечных точек.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
+ms.date: 01/23/2017
+ms.openlocfilehash: c5874029e17b0ad7c9787beb0177b8211cbf6e6b
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512080"
 ---
 # <a name="scaling-an-azure-machine-learning-studio-web-service-by-adding-additional-endpoints"></a>Масштабирование веб-службы Студии машинного обучения Azure с помощью добавления дополнительных конечных точек
 > [!NOTE]

@@ -1,7 +1,21 @@
 ---
-заголовок: Создание модели анализа тональности titleSuffix: Студия машинного обучения Azure description: Создание моделей анализа текста в Студии машинного обучения Azure с помощью модулей для предварительной обработки текста, N-грамм или хеширования функций services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 14.03.2018
+title: Создание модели анализа тональности
+titleSuffix: Azure Machine Learning Studio
+description: Узнайте, как с помощью модулей для предварительной обработки текста, N-грамм и хэширования признаков создавать модели текстовой аналитики в Студии машинного обучения Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 03/14/2018
+ms.openlocfilehash: 431aa2d379639b8daea2519ed643c9949102e117
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55511366"
 ---
 # <a name="create-a-sentiment-analysis-model-in-azure-machine-learning-studio"></a>Создание модели анализа тональности в Студии машинного обучения Azure
 

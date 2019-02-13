@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/11/2017
 ms.author: fhryo-msft
 ms.subservice: common
-ms.openlocfilehash: 6b40741545ff286bc1b8e696d28c61b197605247
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 25ec52b44f8d5a36868cc609c42b6db5ab939fa4
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474009"
+ms.locfileid: "55490272"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -637,7 +637,7 @@ client.SetServiceProperties(sp);
 Если операции удаления и повторного создания выполняются часто, то клиентское приложение должно использовать уникальные имена при создании каждого контейнера.
 
 ### <a name="metrics-show-low-percent-success"></a>Метрики содержат низкие значения PercentSuccess, или в записях журналов аналитики присутствуют операции с состоянием транзакции ClientOtherErrors
-В метрике **PercentSuccess** (Процент удачных завершений) фиксируется доля успешно завершенных операций с учетом кода состояния HTTP. Операции с кодом состояния 2XX относятся к успешным, а с кодом 3XX, 4XX или 5XX — к неудачным и приводят к уменьшению значения метрики **PercentSucess** . В файлах журналов хранилища на стороне сервера такие операции отображаются с состоянием транзакции **ClientOtherErrors**(Другие ошибки клиента).
+В метрике **PercentSuccess** (Процент удачных завершений) фиксируется доля успешно завершенных операций с учетом кода состояния HTTP. Операции с кодом состояния 2XX относятся к успешным, а с кодом 3XX, 4XX или 5XX — к неудачным и приводят к уменьшению значения метрики **PercentSuccess**. В файлах журналов хранилища на стороне сервера такие операции отображаются с состоянием транзакции **ClientOtherErrors**(Другие ошибки клиента).
 
 Важно отметить, что эти операции успешно выполнены и поэтому не влияют на другие метрики, например доступность. Вот несколько примеров операций, которые при успешном выполнении могут сопровождаться кодами состояния HTTP, свидетельствующими о неудаче:
 

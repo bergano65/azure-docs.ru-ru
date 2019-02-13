@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/15/2017
 ms.author: dekapur
-ms.openlocfilehash: 9b851b2d75cf78a02dd223788085ac9a0963376e
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 829d1ffd1ef75d18f0d87a127c43666703e8a756
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211360"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55497372"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>Агрегирование и сбор событий с помощью EventFlow
 
@@ -142,7 +142,7 @@ namespace Stateless1
 
 ### <a name="use-service-fabric-settings-and-application-parameters-in-eventflowconfig"></a>Использование параметров Service Fabric и параметров приложений в eventFlowConfig
 
-EventFlow поддерживает использование параметров Service Fabric и параметров приложений для настройки параметров EventFlow. На параметры Service Fabric можно ссылаться с помощью специального синтаксиса для значений:
+EventFlow поддерживает использование параметров Service Fabric и параметров приложения для настройки параметров EventFlow. На параметры Service Fabric можно ссылаться с помощью специального синтаксиса для значений:
 
 ```json
 servicefabric:/<section-name>/<setting-name>

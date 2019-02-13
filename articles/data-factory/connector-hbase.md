@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 9c574d5e5cecaa4618bbd44fae8a2200930ab2e3
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 09f0416e5a03527613e7c353961d81de39c4fe0e
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54019458"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566845"
 ---
 # <a name="copy-data-from-hbase-using-azure-data-factory"></a>Копирование данных из HBase с помощью фабрики данных Azure 
 
@@ -42,7 +42,7 @@ ms.locfileid: "54019458"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **HBase** | Yes |
-| host | IP-адрес или имя узла сервера HBase. (Например, `[clustername].azurehdinsight.net` или 192.168.222.160.)  | Yes |
+| host | IP-адрес или имя узла сервера HBase. (т. е. `[clustername].azurehdinsight.net`, 192.168.222.160)  | Да |
 | порт | TCP-порт, используемый экземпляром HBase для прослушивания клиентских подключений. По умолчанию используется значение 9090. При подключении к Azure HDInsights укажите порт 443. | Нет  |
 | httpPath | Частичный URL-адрес, соответствующий серверу HBase, например `/hbaserest0` при использовании кластера HDInsights. | Нет  |
 | authenticationType | Механизм аутентификации, используемый для подключения к серверу HBase. <br/>Допустимые значения: **Anonymous**, **Basic** | Yes |
@@ -71,8 +71,8 @@ ms.locfileid: "54019458"
             "authenticationType" : "Basic",
             "username" : "<username>",
             "password": {
-                 "type": "SecureString",
-                 "value": "<password>"
+                "type": "SecureString",
+                "value": "<password>"
             },
             "enableSsl" : true
         },
@@ -98,8 +98,8 @@ ms.locfileid: "54019458"
             "authenticationType" : "Basic",
             "username" : "<username>",
             "password": {
-                 "type": "SecureString",
-                 "value": "<password>"
+                "type": "SecureString",
+                "value": "<password>"
             },
             "enableSsl" : true,
             "trustedCertPath" : "<trustedCertPath>",

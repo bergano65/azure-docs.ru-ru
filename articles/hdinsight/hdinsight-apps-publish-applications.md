@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 90ba4f2197dc1b00ad2a3d234f3e81e529ae7e4f
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: fd6d47d8300872f5bcdf36aec492289f93858504
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653923"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814211"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
@@ -75,9 +75,9 @@ ms.locfileid: "53653923"
 * Если сценарий запускает службы на узлах, они отслеживаются и настраиваются для автоматического запуска в случае перезагрузки узла.
 
 ## <a name="package-the-application"></a>Создание пакета приложения
-Создайте ZIP-файл, содержащий все необходимые файлы для установки приложений HDInsight. Используйте этот ZIP-файл, чтобы [опубликовать приложение](#publish-application). Этот ZIP-файл содержит следующие файлы:
+Создайте ZIP-файл, содержащий все необходимые файлы для установки приложений HDInsight. Используйте этот ZIP-файл, чтобы опубликовать приложение. Этот ZIP-файл содержит следующие файлы:
 
-* [createUiDefinition.json](#define-application);
+* createUiDefinition.json;
 * mainTemplate.json (пример см. в статье [Установка пользовательских приложений Hadoop в Azure HDInsight](hdinsight-apps-install-custom-applications.md));
 * все необходимые сценарии.
 
@@ -94,7 +94,7 @@ ms.locfileid: "53653923"
 5. Выберите **Define some Topologies to get Started** (Определить некоторые топологии и начать работу). Шаблон решения служит родительским элементом для всех своих топологий. В одном шаблоне предложений или решения можно определить сразу несколько топологий. Когда предложение переходит к стадии промежуточного развертывания, вместе с ним отправляются все его топологии. 
 6. Введите имя топологии, а затем выберите **+**.
 7. Введите новую версию, а затем выберите **+**.
-8. Отправьте ZIP-файл, созданный при [создании пакета приложения](#package-application).  
+8. Отправьте ZIP-файл, созданный при создании пакета приложения.  
 9. Выберите **Request Certification** (Запросить сертификацию). Команда сертификации Майкрософт проверяет файлы и выполняет сертификацию топологии.
 
 ## <a name="next-steps"></a>Дополнительная информация

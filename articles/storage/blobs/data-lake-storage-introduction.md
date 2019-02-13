@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)
-description: Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия).
+title: Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
+description: Предоставляет сведения о хранилище Azure Data Lake Storage 2-го поколения
 services: storage
 author: jamesbak
 ms.service: storage
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 17b6d0ecf56ec07d3a46949b6ae3b63a6c4b94d7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 018171d4b2253c2cf7942f9f10424a9c695438b9
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250118"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55809442"
 ---
-# <a name="introduction-to-azure-data-lake-storage-gen2-preview"></a>Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)
+# <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
-Azure Data Lake Storage 2-го поколения (предварительная версия) — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](storage-blobs-introduction.md). Data Lake Storage 2-го поколения — результат объединения возможностей двух имеющихся служб хранения: хранилища BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения. Функции, описанные в статье [Документация по Azure Data Lake Storage Gen1](https://docs.microsoft.com/azure/data-lake-store/index), например семантика файловой системы, защита на уровне файлов и масштабирование, объединены с экономичностью, многоуровневостью, возможностями высокой доступности и аварийного восстановления [хранилища BLOB-объектов Azure](storage-blobs-introduction.md).
+Azure Data Lake Storage 2-го поколения — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](storage-blobs-introduction.md). Data Lake Storage 2-го поколения — результат объединения возможностей двух имеющихся служб хранения: хранилища BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения. Функции, описанные в статье [Документация по Azure Data Lake Storage Gen1](https://docs.microsoft.com/azure/data-lake-store/index), например семантика файловой системы, защита на уровне файлов и масштабирование, объединены с экономичностью, многоуровневостью, возможностями высокой доступности и аварийного восстановления [хранилища BLOB-объектов Azure](storage-blobs-introduction.md).
 
 ## <a name="designed-for-enterprise-big-data-analytics"></a>Возможности аналитики больших данных организаций
 

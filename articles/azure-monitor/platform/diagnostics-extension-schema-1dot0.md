@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 05/15/2017
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 0e1a0919975253e24318bb8029249958cbc50d62
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 36b9e6c97a10f7608a4faaef005ca4eeb1fc09c6
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54473169"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811534"
 ---
 # <a name="azure-diagnostics-10-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.0
 > [!NOTE]
@@ -109,7 +109,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="diagnosticinfrastructurelogs-element"></a>Элемент DiagnosticInfrastructureLogs  
 Определяет конфигурацию буфера для журналов, которые создает базовая инфраструктура диагностики.
 
-Родительский элемент: [DiagnosticMonitorConfiguration](#DiagnosticMonitorConfiguration).  
+Родительский элемент: Элемент DiagnosticMonitorConfiguration.  
 
 Атрибуты:
 
@@ -122,7 +122,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="logs-element"></a>Элемент Logs  
  Определяет конфигурацию буфера для базовых журналов Azure.
 
- Родительский элемент: [DiagnosticMonitorConfiguration](#DiagnosticMonitorConfiguration).  
+ Родительский элемент: Элемент DiagnosticMonitorConfiguration.  
 
 Атрибуты:  
 
@@ -135,7 +135,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="directories-element"></a>Элемент Directories  
 Определяет конфигурацию буфера для журналов на основе файлов, которые можно определить.
 
-Родительский элемент: [DiagnosticMonitorConfiguration](#DiagnosticMonitorConfiguration).  
+Родительский элемент: Элемент DiagnosticMonitorConfiguration.  
 
 
 Атрибуты:  
@@ -148,7 +148,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="crashdumps-element"></a>Элемент CrashDumps  
  Определяет каталог аварийных дампов.
 
- Родительский элемент: [Directories](#Directories).  
+ Родительский элемент: Элемент Directories.  
 
 Атрибуты:  
 
@@ -160,7 +160,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="failedrequestlogs-element"></a>Элемент FailedRequestLogs  
  Определяет каталог журнала невыполненных запросов.
 
- Родительский элемент: [Directories](#Directories).  
+ Родительский элемент: Directories.  
 
 Атрибуты:  
 
@@ -172,7 +172,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ##  <a name="iislogs-element"></a>Элемент IISLogs  
  Определяет каталог журнала IIS.
 
- Родительский элемент: [Directories](#Directories).  
+ Родительский элемент: Directories.  
 
 Атрибуты:  
 
@@ -184,12 +184,12 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="datasources-element"></a>Элемент DataSources  
  Определяет ноль или более дополнительных каталогов журналов.
 
- Родительский элемент: [Directories](#Directories).
+ Родительский элемент: Элемент Directories.
 
 ## <a name="directoryconfiguration-element"></a>Элемент DirectoryConfiguration  
  Определяет каталог файлов журнала для отслеживания.
 
- Родительский элемент: [DataSources](#DataSources).
+ Родительский элемент: Элемент DataSources.
 
 Атрибуты:
 
@@ -201,7 +201,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="absolute-element"></a>Элемент Absolute  
  Определяет абсолютный путь к отслеживаемому каталогу с необязательным раскрытием переменных среды.
 
- Родительский элемент: [DirectoryConfiguration](#DirectoryConfiguration).  
+ Родительский элемент: Элемент DirectoryConfiguration.  
 
 Атрибуты:  
 
@@ -213,7 +213,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="localresource-element"></a>Элемент LocalResource  
  Определяет путь относительно локального ресурса, заданного в определении службы.
 
- Родительский элемент: [DirectoryConfiguration](#DirectoryConfiguration).  
+ Родительский элемент: Элемент DirectoryConfiguration.  
 
 Атрибуты:  
 
@@ -225,7 +225,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="performancecounters-element"></a>Элемент PerformanceCounters  
  Определяет путь к счетчику производительности, данные которого будут собираться.
 
- Родительский элемент: [DiagnosticMonitorConfiguration](#DiagnosticMonitorConfiguration).
+ Родительский элемент: Элемент DiagnosticMonitorConfiguration.
 
 
  Атрибуты:  
@@ -238,7 +238,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="performancecounterconfiguration-element"></a>Элемент PerformanceCounterConfiguration  
  Определяет счетчик производительности, данные которого будут собираться.
 
- Родительский элемент: [PerformanceCounters](#PerformanceCounters).  
+ Родительский элемент: Элемент PerformanceCounters.  
 
  Атрибуты:  
 
@@ -250,7 +250,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="windowseventlog-element"></a>Элемент WindowsEventLog  
  Определяет журналы событий для отслеживания.
 
- Родительский элемент: [DiagnosticMonitorConfiguration](#DiagnosticMonitorConfiguration).
+ Родительский элемент: Элемент DiagnosticMonitorConfiguration.
 
   Атрибуты:
 
@@ -263,7 +263,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 ## <a name="datasource-element"></a>Элемент DataSource  
  Определяет журнал событий для отслеживания.
 
- Родительский элемент: [WindowsEventLog](#windowsEventLog).  
+ Родительский элемент: Элемент WindowsEventLog.  
 
  Атрибуты:
 

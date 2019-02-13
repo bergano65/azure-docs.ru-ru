@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
-ms.openlocfilehash: 6466dc1ec0dcaae6045fadfae7f3a552345be2e8
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: c0a86b76622862b477d539c25dd98c925f09192c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267301"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812044"
 ---
 # <a name="deploy-storsimple-virtual-array--set-up-as-an-iscsi-server-via-azure-portal"></a>Развертывание виртуального массива StorSimple. Установка в качестве сервера iSCSI на портале Azure
 
-![последовательность операций процесса настройки сервера iSCSI](./media/storsimple-virtual-array-deploy3-iscsi-setup/iscsi4.png)
+![Последовательность операций процесса настройки сервера iSCSI](./media/storsimple-virtual-array-deploy3-iscsi-setup/iscsi4.png)
 
 ## <a name="overview"></a>Обзор
 
@@ -44,7 +44,7 @@ ms.locfileid: "54267301"
 Следующие пошаговые инструкции позволяют установить и настроить виртуальный массив StorSimple.
 
 * [Шаг 1. Завершение настройки локального веб-интерфейса и регистрация устройства](#step-1-complete-the-local-web-ui-setup-and-register-your-device)
-* [Шаг 2. Завершение необходимой настройки устройства](#step-2-complete-the-required-device-setup)
+* Шаг 2. Завершение необходимой настройки устройства
 * [Шаг 3. Добавление тома](#step-3-add-a-volume)
 * [Шаг 4. Подключение, инициализация и форматирование тома](#step-4-mount-initialize-and-format-a-volume)
 

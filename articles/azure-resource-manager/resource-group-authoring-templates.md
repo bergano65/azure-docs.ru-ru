@@ -10,16 +10,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/18/2018
+ms.date: 02/05/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7d6b942ea8b2bf61bee472811648e5089f280354
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 07f4d170ec6f9d71ea3ecdabd88f4438fb7c1c69
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54102420"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55745595"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
+
 В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания. Пошаговое руководство по созданию шаблона приведено в разделе [Создание первого шаблона Azure Resource Manager](resource-manager-create-first-template.md).
 
 ## <a name="template-format"></a>Формат шаблона
@@ -40,7 +41,7 @@ ms.locfileid: "54102420"
 
 | Имя элемента | Обязательно | ОПИСАНИЕ |
 |:--- |:--- |:--- |
-| $schema |Yes |Расположение файла схемы JSON, который описывает версию языка шаблона.<br><br> Для развертывания групп ресурсов используйте `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`.<br><br>Для развертывания подписки используйте `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`. |
+| $schema |Yes |Расположение файла схемы JSON, который описывает версию языка шаблона.<br><br> Для развертывания групп ресурсов используйте `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`<br><br>Для развертывания подписки используйте `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#` |
 | contentVersion |Yes |Версия шаблона (например, 1.0.0.0). Для этого элемента можно предоставить любое значение. Это значение позволяет задокументировать важные изменения в шаблоне. При развертывании ресурсов с помощью шаблона это значение позволяет убедиться в том, что используется нужный шаблон. |
 | parameters |Нет  |Значения, которые предоставляются при выполнении развертывания для настройки развертывания ресурсов. |
 | variables |Нет  |Значения, используемые в виде фрагментов JSON в шаблоне для упрощения выражений на языке шаблона. |
@@ -161,6 +162,7 @@ ms.locfileid: "54102420"
 В этой статье подробнее описаны разделы шаблона.
 
 ## <a name="syntax"></a>Синтаксис
+
 Базовый синтаксис шаблона — это JSON. Тем не менее выражения и функции расширяют значения JSON, доступные в шаблоне.  Выражения записываются в строковых литералах JSON, первым и последним знаком которых являются квадратные скобки: `[` и `]` соответственно. Значение выражения вычисляется при развертывании шаблона. Хотя результат вычисления выражения и записывается как строковый литерал, он может иметь другой тип JSON, например массив или целое число, в зависимости от фактического выражения.  Чтобы строковый литерал, начинающийся с квадратной скобки (`[`), не интерпретировался как выражение, добавьте дополнительную скобку, чтобы строка начиналась со знака `[[`.
 
 Как правило, выражения используются с функциями для выполнения операций по настройке развертывания. Как и в языке JavaScript, вызовы функций форматируются так: `functionName(arg1,arg2,arg3)`. Обращение к свойствам производится с помощью точки и операторов [index].
@@ -176,6 +178,7 @@ ms.locfileid: "54102420"
 Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](resource-group-template-functions.md). 
 
 ## <a name="parameters"></a>Параметры
+
 В разделе параметров шаблона указываются значения, которые вы можете вводить во время развертывания ресурсов. Значения этих параметров позволяют настраивать развертывание путем предоставления значений, предназначенных для конкретной среды (например, для среды разработки, тестирования и рабочей среды). Задавать параметры в шаблоне не обязательно, однако без них шаблон всегда будет развертывать одни и те же ресурсы с одинаковыми именами, расположениями и свойствами.
 
 В следующем примере показано определение простого параметра:
@@ -194,6 +197,7 @@ ms.locfileid: "54102420"
 Дополнительные сведения об определении параметров см. в описании [шаблонов Azure Resource Manager](resource-manager-templates-parameters.md).
 
 ## <a name="variables"></a>Переменные
+
 В разделе переменных вы создаете значения, которые можно использовать в разных частях шаблона. Переменные определять не обязательно, однако они часто упрощают шаблон, снижая число сложных выражений.
 
 В следующем примере показано определение простой переменной:
@@ -294,6 +298,101 @@ ms.locfileid: "54102420"
 
 Дополнительные сведения о выходных данных см. в описании [шаблонов Azure Resource Manager](resource-manager-templates-outputs.md).
 
+## <a name="comments"></a>Комментарии
+
+Есть несколько вариантов добавления комментариев к шаблону.
+
+В разделе **параметров** добавьте объект `metadata` со свойством `description`.
+
+```json
+"parameters": {
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "User name for the Virtual Machine."
+      }
+    },
+```
+
+При развертывании шаблона через портал текст, который вы указываете в описании, автоматически используется в качестве подсказки для этого параметра.
+
+![Отображается подсказка для параметра](./media/resource-group-authoring-templates/show-parameter-tip.png)
+
+В разделе **ресурсов** добавьте элемент `comments` или объект метаданных. В следующем примере показан и элемент комментариев, и объект метаданных.
+
+```json
+"resources": [
+  {
+    "comments": "Storage account used to store VM disks",
+    "apiVersion": "2018-07-01",
+    "type": "Microsoft.Storage/storageAccounts",
+    "name": "[concat('storage', uniqueString(resourceGroup().id))]",
+    "location": "[parameters('location')]",
+    "metadata": {
+      "comments": "These tags are needed for policy compliance."
+    },
+    "tags": {
+      "Dept": "[parameters('deptName')]",
+      "Environment": "[parameters('environment')]"
+    },
+    "sku": {
+      "name": "Standard_LRS"
+    },
+    "kind": "Storage",
+    "properties": {}
+  }
+]
+```
+
+Вы можете добавить объект `metadata` практически в любом месте шаблона. Resource Manager игнорирует объект, но ваш редактор JSON может предупредить вас, что свойство недопустимо. Определите необходимые свойства в объекте.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "comments": "This template was developed for demonstration purposes.",
+        "author": "Example Name"
+    },
+```
+
+В разделе **выходных данных** добавьте объект метаданных в выходное значение.
+
+```json
+"outputs": {
+    "hostname": {
+      "type": "string",
+      "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]",
+      "metadata": {
+        "comments": "Return the fully qualified domain name"
+      }
+    },
+```
+
+Добавить объект метаданных в определяемые пользователем функции невозможно.
+
+Для встроенных комментариев можно использовать `//`, но этот синтаксис поддерживается не во всех инструментах. Вы не можете использовать интерфейс командной строки Azure для развертывания шаблона со встроенными комментариями, а также применять редактор шаблонов на портале для работы с шаблонами со встроенными комментариями. Если вы добавляете этот стиль комментариев, убедитесь, что используемые инструменты поддерживают встроенные комментарии JSON.
+
+```json
+{
+  "type": "Microsoft.Compute/virtualMachines",
+  "name": "[variables('vmName')]", // to customize name, change it in variables
+  "location": "[parameters('location')]", //defaults to resource group location
+  "apiVersion": "2018-10-01",
+  "dependsOn": [ // storage account and network interface must be deployed first
+      "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+      "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
+  ],
+```
+
+В Visual Studio Code вы можете установить языковой режим, поддерживающий JSON-файл с комментариями. В таком случае встроенные комментарии больше не будут помечены как недопустимые. Чтобы изменить режим:
+
+1. Откройте раздел выбора языкового режима, нажав клавиши CTRL+K+M.
+
+1. Выберите **JSON with Comments** (JSON с комментариями).
+
+   ![Выбор языкового режима](./media/resource-group-authoring-templates/select-json-comments.png)
+
 ## <a name="template-limits"></a>Ограничения шаблонов
 
 Задайте максимальный размер шаблона, равный 1 МБ, а максимальный размер каждого файла параметров — 64 КБ. Ограничение в 1 МБ применяется к конечному состоянию шаблона после расширения с использованием итеративных определений ресурсов, а также значений переменных и параметров. 
@@ -315,4 +414,4 @@ ms.locfileid: "54102420"
 * Дополнительные сведения о функциях, которые можно использовать в шаблонах, см. в статье [Функции шаблонов Azure Resource Manager](resource-group-template-functions.md).
 * Инструкции по объединению нескольких шаблонов при развертывании см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Дополнительные рекомендации по созданию шаблонов см. в статье [Рекомендации по работе с шаблонами Azure Resource Manager](template-best-practices.md).
-* Рекомендации по созданию шаблонов Resource Manager, которые можно использовать для глобальной платформы Azure, национальных облаков Azure и Azure Stack, см. в разделе [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).
+* Рекомендации по созданию шаблонов Resource Manager, которые можно использовать для Azure Stack и всех окружений Azure, см. в статье [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).

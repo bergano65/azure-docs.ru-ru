@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 52e1a7bf3e8f8770e4ba4f931c4d7427a7362f2f
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 2ed9d9fd020bb14db7e1d171a32c25239d7ee802
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226892"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55736200"
 ---
 При диагностике неполадок в облачной службе Microsoft Azure файлы журналов служб на виртуальных машинах собираются по мере возникновения проблем. Вы можете использовать запускаемое по запросу расширение AzureVMLogCollector для однократного сбора журналов из одной или нескольких виртуальных машин облачной службы (из веб-ролей или рабочих ролей) и передачи собранных файлов в учетную запись хранения Azure. Все эти действия выполняются без удаленного входа на виртуальные машины.
 
@@ -31,9 +31,9 @@ ms.locfileid: "50226892"
 
 Для двух этих режимов сбора можно указать папки, в которые будут собираться дополнительные данные. Это можно сделать с помощью коллекции со следующей структурой.
 
-* **Name.** Имя коллекции, которое используется как имя вложенной папки в ZIP-файле с собранными файлами.
-* **Location.** Путь к папке на виртуальной машине, в которой размещаются собираемые файлы.
-* **SearchPattern**: шаблон имен файлов, которые будут собраны. Значение по умолчанию — \*.
+* **Имя.** Имя коллекции, которое используется как имя вложенной папки в ZIP-файле с собранными файлами.
+* **Расположение.** Путь к папке на виртуальной машине, в которой размещаются собираемые файлы.
+* **SearchPattern**. Шаблон имен файлов, которые будут собраны. Значение по умолчанию — \*.
 * **Recursive.** Применяется, если собираемые файлы рекурсивно размещаются в указанном расположении.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -174,14 +174,14 @@ param (
 )
 ```
 
-* **ServiceName**: имя облачной службы.
-* **Roles**: список ролей, например WebRole1 или WorkerRole1.
-* **Instances**: список имен экземпляров ролей, разделенных запятыми. Чтобы включить все экземпляры роли, используйте строку с подстановочным знаком (*).
-* **Slot**: имя слота. Возможные значения: Production или Staging.
-* **Mode**: режим сбора данных. Возможные значения: Full или GA.
-* **StorageAccountName**: имя учетной записи Azure для хранения собранных данных.
-* **StorageAccountKey**: имя ключа учетной записи хранения Azure.
-* **AdditionalDataLocationList**: список со следующей структурой:
+* **ServiceName**. Имя облачной службы.
+* **Roles**. Список ролей, например WebRole1 или WorkerRole1.
+* **Instances**. Список имен экземпляров ролей, разделенных запятыми.Чтобы включить все экземпляры ролей, используйте строку с подстановочным знаком (*).
+* **Slot**. Имя слота. Возможные значения: Production или Staging.
+* **Режим**. Режим сбора. Возможные значения: Full или GA.
+* **StorageAccountName**. Имя учетной записи Azure для хранения собранных данных.
+* **StorageAccountKey**. Имя ключа учетной записи хранения Azure.
+* **AdditionalDataLocationList**. Список со следующей структурой:
 
   ```powershell
   {
@@ -256,12 +256,12 @@ param (
 )
 ```
 
-* **ServiceName**: имя облачной службы.
-* **VMName.** Имя виртуальной машины.
-* **Mode**: режим сбора данных. Возможные значения: Full или GA.
-* **StorageAccountName**: имя учетной записи Azure для хранения собранных данных.
-* **StorageAccountKey**: имя ключа учетной записи хранения Azure.
-* **AdditionalDataLocationList**: список со следующей структурой:
+* **ServiceName**. Имя облачной службы.
+* **VMName**. Имя виртуальной машины.
+* **Режим**. Режим сбора. Возможные значения: Full или GA.
+* **StorageAccountName**. Имя учетной записи Azure для хранения собранных данных.
+* **StorageAccountKey**. Имя ключа учетной записи хранения Azure.
+* **AdditionalDataLocationList**. Список со следующей структурой:
 
   ```
   {
@@ -374,7 +374,7 @@ else
 }
 
 #
-#This is an optional step: generate a sasUri to the container so it can be shared with other people if nened
+#This is an optional step: generate a sasUri to the container so it can be shared with other people if needed.
 #
 $SasExpireTime = [DateTime]::Now.AddMinutes(120).ToString("o")
 $SasUri = New-AzureStorageContainerSASToken -ExpiryTime $ExpiryTime -FullUri -Name $ContainerName -Permission rl -Context $context
@@ -449,7 +449,7 @@ if ($AdditionDataLocationList -ne $null )
 #
 $publicConfigJSON = $publicConfig | ConvertTo-Json
 
-Write-Output "PublicConfigurtion is: \r\n$publicConfigJSON"
+Write-Output "PublicConfiguration is: \r\n$publicConfigJSON"
 
 #
 #we just provide a empty privateConfig object

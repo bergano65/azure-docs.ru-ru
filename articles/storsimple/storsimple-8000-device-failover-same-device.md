@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/23/2017
 ms.author: alkohli
-ms.openlocfilehash: acc8929dc3476e9590e8e4d9526b38b7c0719570
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dd207eaad1a3e821724d51a890d0882bfffda131
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108202"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55809067"
 ---
 # <a name="fail-over-your-storsimple-physical-device-to-same-device"></a>Отработка отказа физического устройства StorSimple на то же устройство
 
@@ -32,7 +32,7 @@ ms.locfileid: "23108202"
 Сведения об отработке отказа с одного физического устройства на другое физическое устройство см. в статье [Fail over to a StorSimple 8000 series physical device](storsimple-8000-device-failover-physical-device.md) (Отработка отказа на то же физическое устройство StorSimple серии 8000). Сведения об отработке отказа физического устройства StorSimple на облачное устройство StorSimple см. в статье [Fail over to your StorSimple Cloud Appliance](storsimple-8000-device-failover-cloud-appliance.md) (Отработка отказа на облачное устройство StorSimple).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Обязательно ознакомьтесь с рекомендациями по отработке отказа устройств. Дополнительные сведения см. в статье с [общими рекомендациями по отработке отказа устройств](storsimple-8000-device-failover-disaster-recovery.md).
 
@@ -50,7 +50,7 @@ ms.locfileid: "23108202"
 4. Настройте устройство и снова зарегистрируйте его в службе диспетчера устройств StorSimple. У только что зарегистрированного устройства отображается состояние **Готово к настройке**. Имя нового устройства такое же, что и у старого, но дополнено цифрой, чтобы обозначить, что устройство восстановлено до уровня заводских настроек и зарегистрировано снова.
 
     ![Только что зарегистрированное устройство готово к настройке](./media/storsimple-8000-device-failover-disaster-recovery/failover-single-dev3.png)
-5. Нужно выполнить настройку нового устройства. Дополнительные сведения см. в разделе [Выполнение минимальной настройки устройства](storsimple-8000-deployment-walkthrough-u2.md#step-4-complete-minimum-device-setup). В колонке **Устройства** состояние устройства изменится на **Включено**.
+5. Нужно выполнить настройку нового устройства. Дополнительные сведения см. в разделе [Шаг 4. Минимальная настройка устройства](storsimple-8000-deployment-walkthrough-u2.md#step-4-complete-minimum-device-setup). В колонке **Устройства** состояние устройства изменится на **Включено**.
 
    > [!IMPORTANT]
    > **Сначала выполните минимальную настройку, иначе аварийное восстановление может завершиться сбоем.**
@@ -61,7 +61,7 @@ ms.locfileid: "23108202"
 
     ![Сводка отработки отказа](./media/storsimple-8000-device-failover-disaster-recovery/failover-single-dev11.png)
 
-    Подробные инструкции см. в разделе [Отработка отказа на другое физическое устройство](#fail-over-to-another-physical-device).
+    Подробные инструкции см. в разделе "Отработка отказа на другое физическое устройство".
 
 7. Будет создано задание восстановления устройства, которое можно отслеживать в колонке **Задания**.
 

@@ -16,12 +16,12 @@ ms.date: 12/12/2017
 ms.author: barbkess
 ms.reviewer: asmalser
 ms.custom: aaddev;it-pro;seohack1
-ms.openlocfilehash: 140391b02dab8ce6b47d5350d6d40a9673b29e11
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: e16598a10cbbe4cfa65e6b5394e749bfee99dbdc
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55161772"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732589"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -120,7 +120,7 @@ Azure Active Directory (Azure AD) может выполнять автомати
 ### <a name="getting-started"></a>Приступая к работе
 Начнем с самого простого способа реализации конечной точки SCIM. Этот пример кода принимает запросы на подготовку от Azure AD и сохраняет пользователей в файл формата CSV (значения, разделенные запятыми).
 
-**Создание конечной точки SCIM из этого примера:**
+#### <a name="to-create-a-sample-scim-endpoint"></a>Создание конечной точки SCIM
 
 1. Скачайте пакет с примером кода со страницы [https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master)
 2. Распакуйте пакет и поместите его в любую удобную папку на компьютере Windows, например C:\AzureAD-BYOA-Provisioning-Samples.
@@ -142,7 +142,7 @@ Azure Active Directory (Azure AD) может выполнять автомати
 8. В Windows откройте раздел **Параметры Windows > Параметры сети и Интернета**, выберите **Брандмауэр Windows > Дополнительные параметры** и создайте **правило для входящего трафика**, разрешающее входящий доступ к порту 9000.
 9. Если компьютер Windows подключен через маршрутизатор, то на этом маршрутизаторе нужно настроить преобразование сетевых адресов между внешним портом 9000 и портом 9000 на компьютере Windows. Эта конфигурация необходима, чтобы служба Azure AD могла получить доступ к этой конечной точке в облаке.
 
-**Регистрация примера конечной точки SCIM в Azure AD:**
+#### <a name="to-register-the-sample-scim-endpoint-in-azure-ad"></a>Регистрация примера конечной точки SCIM в Azure AD
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Перейдите к **Azure Active Directory > Корпоративные приложения** и выберите **Новое приложение > Все > Приложение не из коллекции**.

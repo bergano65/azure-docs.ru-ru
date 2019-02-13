@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 2108de8988e973644e0622a4b76a04408949298e
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: f6e9641d106c40c061752b57744eda09aac157a5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635159"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821972"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "53635159"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-Значения конфигурации для этой процедуры были предварительно заданы в HDInsight. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
+Значения конфигурации для этой процедуры были предварительно заданы в HDInsight. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел "Что вызывает в приложении Apache Spark исключение OutOfMemoryError?" 
 
 1. В списке кластеров выберите **Spark2**.
 
@@ -92,7 +92,7 @@ ms.locfileid: "53635159"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел "Что вызывает в приложении Apache Spark исключение OutOfMemoryError?"
 
 2. Укажите конфигурации Spark в допустимом формате JSON в первой ячейке Jupyter Notebook после директивы **%%configure**. При необходимости измените фактические значения:
 
@@ -107,7 +107,7 @@ ms.locfileid: "53635159"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел "Что вызывает в приложении Apache Spark исключение OutOfMemoryError?" 
 
 2. Отправьте приложение Spark в Livy с помощью клиента REST, например cURL. Используйте команду, аналогичную приведенной ниже. При необходимости измените фактические значения:
 
@@ -124,7 +124,7 @@ ms.locfileid: "53635159"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел "Что вызывает в приложении Apache Spark исключение OutOfMemoryError?"
 
 2. Запустите оболочку Spark с помощью команды, аналогичной приведенной ниже. При необходимости измените фактические значения конфигураций: 
 

@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: ef70b9e58a669695f3bdec7ad8ea4bab93e7e4b9
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 084784af256fdf31cf1661109c0535cb91ef1db5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55082050"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55817424"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -43,7 +43,7 @@ ms.locfileid: "55082050"
 
    При работе с пользователями B2B вы можете использовать два метода создания объектов для гостевых пользователей, которым нужна авторизации в локальном каталоге.
 
-   - Microsoft Identity Manager (MIM) и [агент управления MIM для Microsoft Graph](#create-b2b-guest-user-objects-through-mim-preview). 
+   - Microsoft Identity Manager (MIM) и агент управления MIM для Microsoft Graph. 
    - [Скрипт PowerShell](#create-b2b-guest-user-objects-through-a-script-preview). Решение на основе сценария проще в реализации и не требует наличия MIM. 
 
 Ниже представлена обобщенная схема совместной работы AD Application Proxy и создания объекта пользователя B2B в локальном каталоге для предоставления пользователям B2B доступа к локальным приложениям на основе IWA и KCD. Порядок шагов описан на схеме ниже.

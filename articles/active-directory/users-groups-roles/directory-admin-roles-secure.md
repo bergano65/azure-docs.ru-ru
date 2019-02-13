@@ -1,24 +1,24 @@
 ---
-title: Советы и рекомендации по защите административного доступа в Azure AD | Документация Майкрософт
+title: Рекомендации по обеспечению безопасного доступа администраторов в Azure Active Directory | Документация Майкрософт
 description: Рекомендации по защите учетных записей администраторов и административного доступа в вашей организации. Для архитекторов систем и ИТ-специалистов, которые настраивают Azure AD, Azure и Microsoft Online Services.
 services: active-directory
 keywords: ''
 author: curtand
 manager: mtillman
 ms.author: curtand
-ms.date: 06/25/2018
+ms.date: 01/31/2019
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.custom: it-pro
-ms.reviewer: martincoetzer, MarkMorow
-ms.openlocfilehash: ba7baf41a1753625ee3e97acde1d954e914545bb
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.reviewer: martincoetzer; MarkMorow
+ms.openlocfilehash: 327ea929b5825abb448cb13b1bd0cbfa5681521c
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190774"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512505"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 

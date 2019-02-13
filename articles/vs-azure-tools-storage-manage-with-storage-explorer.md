@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: a540e6c585210f7b1dc36a89eaae7a4b4bf8fc70
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 77763765e75500d994235bba0a5c0c3bb3e3be70
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422734"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756824"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -85,11 +85,11 @@ ms.locfileid: "52422734"
 Можно также работать с учетными записями хранения в глобальной и национальной среде Azure.
 
 * [Подключение к подписке Azure](#connect-to-an-azure-subscription) — управление ресурсами хранилища, принадлежащими к подписке Azure.
-* [Работа с локальным хранилищем разработки](#work-with-local-development-storage) — управление локальным хранилищем с помощью эмулятора хранения Azure.
-* [Подключение к внешнему хранилищу](#attach-or-detach-an-external-storage-account) — управление ресурсами хранилища, которые принадлежат другой подписке Azure или находятся под национальным облакам Azure, с использованием имени, ключа и конечных точек учетной записи хранения.
-* [Подключение учетной записи хранения с помощью SAS](#attach-storage-account-using-sas) — управление ресурсами хранения, принадлежащими другой подписке Azure, с помощью подписанного URL-адреса (SAS).
-* [Присоединение службы с помощью подписанного SAS](#attach-service-using-sas) — управление конкретной службой хранилища (контейнером больших двоичных объектов, очередью или таблицей), принадлежащей к другой подписке Azure, с помощью подписанного URL-адреса.
-* [Подключение учетной записи Azure Cosmos DB с помощью строки подключения](#connect-to-an-azure-cosmos-db-account-by-using-a-connection-string) — управление учетной записью Cosmos DB с помощью строки подключения.
+* [Работа с локальным хранилищем разработки](#work-with-local-development-storage) — управление локальным хранилищем с помощью эмулятора службы хранилища Azure.
+* [Подключение к внешнему хранилищу](#attach-or-detach-an-external-storage-account) — управление ресурсами хранилища, которые принадлежат другой подписке Azure или находятся под национальными облаками Azure, с использованием имени, ключа и конечных точек учетной записи хранения.
+* [Подключение учетной записи хранения с помощью SAS](#attach-a-storage-account-by-using-a-shared-access-signature-sas) — управление ресурсами хранилища, принадлежащими к другой подписке Azure, с помощью подписанного URL-адреса (SAS).
+* [Присоединение службы с помощью SAS](#attach-a-service-by-using-a-shared-access-signature-sas) — управление конкретной службой хранилища (контейнером больших двоичных объектов, очередью или таблицей), принадлежащей к другой подписке Azure, с помощью подписанного URL-адреса.
+* [Подключение к учетной записи Azure Cosmos DB с помощью строки подключения](#connect-to-an-azure-cosmos-db-account-by-using-a-connection-string) — управление учетной записью Azure Cosmos DB с помощью строки подключения.
 
 ## <a name="connect-to-an-azure-subscription"></a>Подключение к подписке Azure
 
@@ -295,7 +295,7 @@ ms.locfileid: "52422734"
 
     ![Подключение к Azure Cosmos DB с помощью строки подключения][21]
 
-2. Выберите API Azure Cosmos DB, вставьте **строку подключения** и нажмите кнопку **ОК**, чтобы подключиться к учетной записи Azure Cosmos DB. Сведения о том, как получить строку подключения, см. в разделе [Получение строки подключения](https://docs.microsoft.com/azure/cosmos-db/manage-account#get-the--connection-string).
+2. Выберите API Azure Cosmos DB, вставьте **строку подключения** и нажмите кнопку **ОК**, чтобы подключиться к учетной записи Azure Cosmos DB. Сведения о том, как получить строку подключения, см. в разделе [Получение строки подключения](https://docs.microsoft.com/azure/cosmos-db/manage-account).
 
     ![Строка подключения][22]
 

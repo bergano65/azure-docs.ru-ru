@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 02/05/2019
 ms.author: magoedte
-ms.openlocfilehash: 6fd614a632945dbcc89c530df54b8416809029d1
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 7d538695fe7c920bbd22fcfb0e097220aa249f07
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53194034"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811823"
 ---
 # <a name="container-monitoring-solution-in-log-analytics"></a>Решение для мониторинга контейнеров в Log Analytics
 
@@ -100,16 +100,16 @@ ms.locfileid: "53194034"
 2. Установите и используйте Docker с агентом Log Analytics. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
   - Для автономных узлов:
     - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md).  
-    - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел [Для всех узлов контейнера Linux, включая CoreOS](#for-all-linux-container-hosts-including-coreos) или [Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS](#for-all-azure-government-linux-container-hosts-including-coreos).
+    - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел "Для всех узлов контейнера Linux, включая CoreOS" или "Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS".
     - В Windows Server 2016 и Windows 10 установите модуль и клиент Docker, после чего подключите агент, чтобы собрать сведения и отправить их в Log Analytics. Если вы используете среду Windows, см. сведения в разделе [Установка и настройка узлов контейнера Windows](#install-and-configure-windows-container-hosts).
   - Для многоузловой оркестрации Docker:
-    - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по [настройке агента Log Analytics для Red Hat OpenShift](#configure-an-oms-agent-for-red-hat-openshift).
+    - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по настройке агента Log Analytics для Red Hat OpenShift.
     - Если вы используете кластер Kubernetes с помощью Службы контейнеров Azure (AKS), см. следующие разделы:
-       - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-an-oms-linux-agent-for-kubernetes).
-       - См. дополнительные сведения о [настройке агента Log Analytics в Windows для Kubernetes](#configure-an-oms-windows-agent-for-kubernetes).
-       - Ознакомьтесь с разделом [Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux](#use-helm-to-deploy-oms-agent-on-linux-kubernetes).
+       - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-a-log-analytics-linux-agent-for-kubernetes).
+       - См. дополнительные сведения о [настройке агента Log Analytics в Windows для Kubernetes](#configure-a-log-analytics-windows-agent-for-kubernetes).
+       - Ознакомьтесь с разделом "Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux".
     - При наличии кластера DC/OS в службе контейнеров Azure дополнительные сведения см. в статье [Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics](../../container-service/dcos-swarm/container-service-monitoring-oms.md).
-    - При наличии среды режима Docker Swarm ознакомьтесь с разделом [Настройка агента Log Analytics для Docker Swarm](#configure-an-oms-agent-for-docker-swarm).
+    - При наличии среды режима Docker Swarm ознакомьтесь с разделом "Настройка агента Log Analytics для Docker Swarm".
     - При наличии кластера Service Fabric ознакомьтесь со статьей [Мониторинг контейнеров с помощью Log Analytics](../../service-fabric/service-fabric-diagnostics-oms-containers.md).
 
 Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).

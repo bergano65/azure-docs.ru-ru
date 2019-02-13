@@ -1,27 +1,31 @@
 ---
-title: Поиск набирающих популярность видео в Интернете — Поиск видео Bing
+title: Поиск набирающих популярность видео в Интернете с помощью API Bing для поиска видео
 titlesuffix: Azure Cognitive Services
-description: В этой статье показано, как с помощью API Bing для поиска видео искать в Интернете видео, набирающие популярность.
+description: Узнайте, как с помощью API Bing для поиска видео искать в Интернете видео, набирающие популярность.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: conceptual
-ms.date: 04/15/2017
+ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: 71dd888199e9e630835c4916d35f6308431bab62
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 55f29a31a9574c7c32e6708565e961950520593f
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203561"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566109"
 ---
-# <a name="get-trending-videos"></a>Получение видео, набирающих популярность  
+# <a name="get-trending-videos-with-the-bing-video-search-api"></a>Поиск видео, набирающего популярность, с помощью API Bing для поиска видео 
 
-Чтобы получить видео, набирающие сегодня популярность, отправьте следующий запрос GET:  
+API Bing для поиска видео позволяет искать в Интернете видео, набирающие сегодня популярность, в разных категориях. 
+
+## <a name="get-request"></a>Запрос GET
+
+Чтобы получить видео, набирающие сегодня популярность, от API Bing для поиска видео, отправьте следующий запрос GET.  
   
-```
+```cURL
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/trending?mkt=en-us HTTP/1.1
 Ocp-Apim-Subscription-Key: 123456789ABCDE  
 User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)  
@@ -30,6 +34,8 @@ X-Search-Location: lat:47.60357;long:-122.3295;re:100
 X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>  
 Host: api.cognitive.microsoft.com  
 ```
+
+## <a name="market-support"></a>Поддержка рынков
 
 Поиск видео, набирающих популярность, поддерживается для следующих рынков:  
  
@@ -47,10 +53,11 @@ Host: api.cognitive.microsoft.com
 -   en-ZA (английский, Южная Африка)  
 -   zh-CN (китайский, Китай)
 
-  
-В следующем примере показан ответ, который содержит видео, набирающие популярность.  
+## <a name="example-json-response"></a>Пример ответа в формате JSON  
 
-```  
+В примере показан ответ API, содержащий видео, набирающие популярность, которые перечислены по категориям и подкатегориям. Ответ также содержит баннеры с видео, которые являются самыми популярными видео в одной или нескольких категориях.  
+
+```json
 {  
     "_type" : "TrendingVideos",  
     "bannerTiles" : [
@@ -112,8 +119,9 @@ Host: api.cognitive.microsoft.com
     ]  
 }  
   
-```  
-Этот ответ содержит список видео, разделенный на категории и подкатегории. Например, если список категорий содержал категорию "Music Videos" (Музыкальные видео) и одна из ее подкатегорий называлась "Top" (Лучшие), то можно создать категорию "Top Music Videos" (Лучшие музыкальные видео) и сделать ее доступной для пользователей. Затем можно использовать поля `thumbnailUrl`, `displayText` и `webSearchUrl`, чтобы создать гиперактивный элемент под каждой категорией (например, "Top Music Videos"). Когда пользователь щелкнет такой гиперактивный элемент, откроется браузер Bing, в котором и будет воспроизведено видео.
+```
 
-Ответ также содержит баннеры с видео, которые являются самыми популярными видео. Баннеры с видео могут поступать из одной или нескольких категорий.  
-  
+## <a name="next-steps"></a>Дополнительная информация
+
+> [!div class="nextstepaction"]
+[Получение полезных сведений о видео](video-insights.md)

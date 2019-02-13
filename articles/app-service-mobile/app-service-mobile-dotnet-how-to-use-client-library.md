@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 62711ac094a10a9e4a0350319a316c5a293fd522
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: fb9725e18c53e9d42ae51418a1eb614aaa10fd12
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157334"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816787"
 ---
 # <a name="how-to-use-the-managed-client-for-azure-mobile-apps"></a>Использование управляемого клиента для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -103,7 +103,7 @@ var client = new MobileServiceClient("MOBILE_APP_URL");
 * [Поиск записи по идентификатору](#lookingup)
 * [Работа с нетипизированными запросами](#untypedqueries)
 * [Вставка данных](#inserting)
-* [Обновление данных](#updating)
+* Обновление данных
 * [Удаление данных](#deleting)
 * [Разрешение конфликтов и оптимистичный параллелизм](#optimisticconcurrency)
 * [Привязка к пользовательскому интерфейсу Windows](#binding)
@@ -902,7 +902,7 @@ private async void InitNotificationsAsync()
 При отправке push-уведомлений в WNS необходимо [получить идентификатор безопасности пакета Microsoft Store](#package-sid).  Дополнительные сведения о приложениях Windows, включая способ регистрации шаблонов, см. в разделе [Добавление push-уведомлений в приложение].
 
 Запрос тегов от клиента не поддерживается.  Запросы тегов автоматически отбрасываются из регистрации.
-Если вы хотите зарегистрировать устройство с тегами, создайте пользовательский интерфейс API, который использует API центров уведомлений для выполнения регистрации от вашего имени.  [Используйте вызов настраиваемого API](#customapi) вместо метода `RegisterNativeAsync()`.
+Если вы хотите зарегистрировать устройство с тегами, создайте пользовательский интерфейс API, который использует API центров уведомлений для выполнения регистрации от вашего имени.  Используйте вызов настраиваемого API вместо метода `RegisterNativeAsync()`.
 
 ### <a name="package-sid"></a>Практическое руководство. Получение ИД безопасности пакета Microsoft Store
 Для включения push-уведомлений для приложений Microsoft Store необходим SID пакета.  Для получения идентификатора безопасности пакета зарегистрируйте приложение в Microsoft Store.

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1ab3abb2542b3fec461f1d9ff569ea8ab74458d3
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 84f8d8ecbeacc5acb6b19462096e6fbd1aa45816
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251985"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810292"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -32,6 +32,8 @@ ms.locfileid: "55251985"
 > * Сведения о том, как перейти с бесплатной пробной версии или подписки Azure Microsoft Imagine на подписку с оплатой по мере использования, см. [здесь](..//billing/billing-upgrade-azure-subscription.md).
 > * Сведения о том, как перейти с подписки с оплатой по мере использования на другое предложение, см. [здесь](../billing/billing-how-to-switch-azure-offer.md).
 > * Если вам не удается перейти на другую подписку, [создайте запрос на поддержку Azure](../azure-supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="when-to-call-azure-support"></a>Когда обращаться в службу поддержки Azure
 
@@ -237,7 +239,7 @@ ms.locfileid: "55251985"
 * Одновременно можно перемещать только одну учетную запись хранения (классическую).
 * Нельзя перемещать учетную запись хранения (классическую) в рамках одной операции с виртуальной машиной или облачной службой.
 
-Для перемещения классических ресурсов в новую группу ресурсов в пределах одной подписки используйте стандартные операции перемещения на [портале](#use-portal), в [Azure PowerShell](#use-powershell), [интерфейсе командной строки Azure](#use-azure-cli) или интерфейсе [REST API](#use-rest-api). При этом используются те же операции, что и для перемещения ресурсов Resource Manager.
+Для перемещения классических ресурсов в новую группу ресурсов в пределах одной подписки используйте стандартные операции перемещения на [портале](#use-portal), в Azure PowerShell, интерфейсе командной строки Azure или интерфейсе REST API. При этом используются те же операции, что и для перемещения ресурсов Resource Manager.
 
 #### <a name="new-subscription"></a>Новая подписка
 

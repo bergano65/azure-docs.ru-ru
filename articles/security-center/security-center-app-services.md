@@ -3,7 +3,7 @@ title: Защита служб приложений в центре безопа
 description: Эта статья поможет вам начать защищать свои службы приложений в центре безопасности Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
+author: monhaber
 manager: mbaldwin
 editor: ''
 ms.assetid: e8518710-fcf9-44a8-ae4b-8200dfcded1a
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/9/2018
-ms.author: rkarlin
-ms.openlocfilehash: b38ba140a1e2b853c07e1ffe53405b58663653b5
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.date: 1/27/2019
+ms.author: monhaber
+ms.openlocfilehash: bf3ceb0d5f12783957e127b3596ab07b7531ad5a
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343876"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55491949"
 ---
 # <a name="protect-app-service-with-azure-security-center"></a>Защита службы приложений с помощью центра безопасности Azure
 Эта статья позволяет вам использовать центр безопасности Azure для мониторинга и защиты своих приложений, работающих на базе службы приложений.
@@ -65,6 +65,7 @@ ms.locfileid: "53343876"
 
 * [Руководство: определение и оценка политик безопасности.](tutorial-security-policy.md) Узнайте, как настроить параметры безопасности в Центре безопасности Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них.](security-center-managing-and-responding-alerts.md) Узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-* [Интеграция решений по обеспечению безопасности в центре безопасности Azure.](security-center-partner-solutions.md) Узнайте, как отслеживать работоспособность партнерских решений.
+* [Службы приложений](security-center-virtual-machine-protection.md#app-services).  Просматривайте список сред ваших служб приложений со сводками работоспособности.
+* [Интеграция решений по обеспечению безопасности в Центре безопасности Azure](security-center-partner-solutions.md). Узнайте, как отслеживать работоспособность партнерских решений.
 * [Центр безопасности Azure: часто задаваемые вопросы.](security-center-faq.md) Часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure.](http://blogs.msdn.com/b/azuresecurity/) Записи блога, посвященные безопасности и соответствию требованиям в Azure.

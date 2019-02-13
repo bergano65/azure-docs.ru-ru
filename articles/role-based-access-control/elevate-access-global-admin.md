@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/15/2019
+ms.date: 02/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 7552018c32078295c164023f909a604c6522c32f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: d6778e1749493a04a73d0ac210c1557b89343d00
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54437476"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695586"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -83,12 +83,14 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
+[!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
+
 ### <a name="list-role-assignment-at-the-root-scope-"></a>Получение списка назначения ролей в корневой области (/)
 
-Чтобы получить список назначения роли администратора доступа пользователей для пользователя в области scope (`/`), выполните команду [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment).
+Чтобы получить список назначения ролей администратора доступа пользователей для пользователя в области root (`/`), выполните команду [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment).
 
 ```azurepowershell
-Get-AzureRmRoleAssignment | where {$_.RoleDefinitionName -eq "User Access Administrator" `
+Get-AzRoleAssignment | where {$_.RoleDefinitionName -eq "User Access Administrator" `
   -and $_.SignInName -eq "<username@example.com>" -and $_.Scope -eq "/"}
 ```
 
@@ -111,10 +113,10 @@ CanDelegate        : False
 1. Войдите в систему как пользователь, который может удалить повышенный уровень доступа. Это может быть тот же пользователь, который использовался для повышения прав доступа, или другой глобальный администратор с повышенными правами доступа в корневой области.
 
 
-1. Чтобы удалить назначение роли администратора доступа пользователей, воспользуйтесь командой [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment).
+1. Чтобы удалить назначение роли администратора доступа пользователей, воспользуйтесь командой [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment).
 
     ```azurepowershell
-    Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
+    Remove-AzRoleAssignment -SignInName <username@example.com> `
       -RoleDefinitionName "User Access Administrator" -Scope "/"
     ```
 

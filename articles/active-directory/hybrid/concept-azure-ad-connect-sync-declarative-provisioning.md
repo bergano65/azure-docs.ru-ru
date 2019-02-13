@@ -11,16 +11,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: a59a7610a067a292d9b5dd7bb1a611b4bade05e9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 5e8d45a9bf9fdffc824994238add2b8541a878a5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193817"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812725"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Синхронизация Azure AD Connect: Общие сведения о декларативной подготовке
 В этой статье объясняется используемая в Azure AD Connect модель конфигурации, именуемая декларативной подготовкой. Она позволяет без труда вносить изменения в конфигурацию. Некоторые сложные аспекты, описанные в этой статье, не предназначены для большинства клиентских сценариев.
@@ -37,7 +37,7 @@ ms.locfileid: "55193817"
 * Исходное пространство представляет исходный объект.
 * [Область](#scope)— находит все правила синхронизации в области.
 * [Объединение](#join)— определяет связь между пространством соединителя и метавселенной.
-* [Преобразование](#transform)— вычисляет, как атрибуты должны быть преобразованы, и сам поток.
+* Преобразование — вычисляет, как атрибуты должны быть преобразованы, и сам поток.
 * [Приоритет](#precedence)— разрешает конфликтующие изменения атрибута.
 * Целевое пространство представляет целевой объект.
 

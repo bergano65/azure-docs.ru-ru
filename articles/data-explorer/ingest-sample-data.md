@@ -8,19 +8,19 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 7fdd32f9263b4d1694a0516a98b681ba8744ab6b
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: ebe362b89eb6ffcde006ff824fbee40b1a9175d3
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394584"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733405"
 ---
 # <a name="ingest-sample-data-into-azure-data-explorer"></a>Прием демонстрационных данных в обозреватель данных Azure
 
 В этой статье показано, как принять (загрузить) демонстрационные данные в базу данных обозревателя данных Azure. Существует [несколько способов приема данных](ingest-data-overview.md). В этой статье описан базовый метод, который подходит для тестирования.
 
 > [!NOTE]
-> У вас уже есть эти данные, если вы выполнили [Краткое руководство. Прием данных с помощью библиотеки Python в обозревателе данных Azure](python-ingest-data.md).
+> У вас уже есть эти данные, если вы выполнили инструкции из статьи [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -57,6 +57,11 @@ ms.locfileid: "49394584"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Написание запросов](write-queries.md)
+> [!div class="nextstepaction"]
+> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
 
-[Прием данных в обозреватель данных Azure](ingest-data-overview.md)
+> [!div class="nextstepaction"]
+> [Написание запросов](write-queries.md)
+
+> [!div class="nextstepaction"]
+> [Прием данных в обозреватель данных Azure](ingest-data-overview.md)

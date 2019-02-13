@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 87b39c400d189c7be6ead9770fb833f7c5e3036b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 40e519495b8a245f72e51167f5807f9c585cb344
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191257"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55817552"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Использование соединителей с Synchronization Service Manager Azure AD Connect
 
@@ -42,7 +42,7 @@ ms.locfileid: "55191257"
 | Импортировать соединитель |Не используйте. |
 | Обновить соединитель |Не используйте. |
 | Обновить схему |Обновляет кэшированную схему. Этот параметр рекомендуется использовать в мастере установки, так как он также обновляет правила синхронизации. |
-| [Пространство поиска соединителя](#search-connector-space) |Применяется для поиска объектов и [отслеживания объекта и его данных в системе](#follow-an-object-and-its-data-through-the-system). |
+| [Пространство поиска соединителя](#search-connector-space) |Применяется для поиска объектов и отслеживания объекта и его данных в системе. |
 
 ### <a name="delete"></a>Delete (Удалить)
 Действие удаления используется в двух разных целях.  

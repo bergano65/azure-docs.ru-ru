@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: arjmands
-ms.openlocfilehash: 9a68d928c70e1e233f6de7df13441a1f688f456a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1c7fa798c2e767aa6a21b3c56da6f69b4d3a1406
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629853"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732361"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure
 При *регистрации устройства* создается запись одного устройства или группы устройств, которые можно в будущем зарегистрировать с помощью службы подготовки устройств. Запись регистрации содержит необходимую начальную конфигурацию устройств как часть регистрации, включая нужный Центр Интернета вещей. В этой статье показано, как управлять регистрацией устройств для подготовки службы программным способом с помощью пакетов SDK службы подготовки Интернета вещей Azure.  Пакеты SDK доступны в GitHub в том же хранилище, что и пакет SDK Интернета вещей Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Получите строку подключения из экземпляра службы подготовки устройств.
 * Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-security.md#attestation-mechanism).
     * [**Доверенный платформенный модуль(TPM)**](/azure/iot-dps/concepts-security#trusted-platform-module).
         * Отдельная регистрация. Идентификатор регистрации и ключ подтверждения доверенного платформенного модуля (TPM) физического устройства или симулятора TPM.
         * Группа регистрации не применяется к аттестации TPM.
     * [**X.509**](/azure/iot-dps/concepts-security):
-        * Индивидуальная регистрация. [Конечный сертификат](/azure/iot-dps/concepts-security#leaf-certificate) с физического устройства или эмулятора [DICE](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) в пакете SDK.
+        * Отдельная регистрация. [Конечный сертификат](/azure/iot-dps/concepts-security) с физического устройства или эмулятора [DICE](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) в пакете SDK.
         * Группа регистрации. [Корневой сертификат или сертификат от ЦС](/azure/iot-dps/concepts-security#root-certificate), либо [промежуточный сертификат](/azure/iot-dps/concepts-security#intermediate-certificate), используемый для создания сертификата на физическом устройстве.  Сертификат можно сгенерировать с помощью эмулятора DICE в пакете SDK.
 * Точные вызовы API могут отличаться из-за различия языков. Ознакомьтесь с примерами, представленными на GitHub, чтобы получить подробные сведения:
    * [Samples for the Azure Provisioning Clients SDK for Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-samples) (Примеры для пакета SDK клиента службы подготовки Azure для Java).

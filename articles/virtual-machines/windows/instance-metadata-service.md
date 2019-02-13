@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: b88f1ff84cc26e1db88027a55b506fd37476aae5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: a3db99de2fffa19a98fa306477b30fdccf2290ec
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197693"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733167"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -299,8 +299,8 @@ subscriptionId | Подписка Azure для виртуальной машин
 tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) для виртуальной машины  | 2017-08-01
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) для виртуальной машины | 2017-08-01
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
-План | [План](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) для виртуальной машины в образе Azure Marketplace содержит имя, продукт и издателя | 2017-04-02
-publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2017-04-02
+План | [План](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) для виртуальной машины в образе Azure Marketplace содержит имя, продукт и издателя | 2018-04-02
+publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2018-04-02
 vmScaleSetName | [Имя масштабируемого набора виртуальной машины](../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01 
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02

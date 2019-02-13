@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/24/2017
 ms.author: jeedes
-ms.openlocfilehash: bb03506bac22c8c82e856f403710a4908af6f9de
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 7d77d72264580e4cde83f6cbb9f83bf7030d941e
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55149261"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820051"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство. Интеграция Azure Active Directory с HR2day by Merces
 
@@ -37,7 +37,7 @@ ms.locfileid: "55149261"
 
 Чтобы настроить интеграцию Azure AD с HR2day от Merces, вам потребуется:
 
-- подписка Azure AD;
+- подписка Azure AD
 - подписка HR2day от Merces с поддержкой единого входа.
 
 > [!NOTE]
@@ -88,11 +88,11 @@ ms.locfileid: "55149261"
 
 Чтобы настроить и проверить единый вход Azure AD в HR2day от Merces, вам потребуется выполнить следующие действия.
 
-1. [Настройка единого входа Azure AD](#configuring-azure-ad-single-sign-on). Включите для пользователей такую возможность.
-1. [Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user). Проверьте работу единого входа Azure AD с помощью пользователя Britta Simon.
-1. [Создание тестового пользователя HR2day by Merces](#creating-an-hr2day-by-merces-test-user) требуется для создания пользователя Britta Simon в HR2day by Merces, связанного с соответствующим представлением в Azure AD.
-1. [Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user). Разрешите пользователю Britta Simon использовать единый вход Azure AD.
-1. [Проверка единого входа](#testing-single-sign-on) необходима, чтобы убедиться в корректной работе конфигурации.
+1. Настройка единого входа Azure AD. Включите для пользователей такую возможность.
+1. Создание тестового пользователя Azure AD. Проверьте работу единого входа Azure AD с помощью пользователя Britta Simon.
+1. Создание тестового пользователя HR2day by Merces. требуется для создания пользователя Britta Simon в HR2day by Merces, связанного с соответствующим представлением в Azure AD.
+1. Назначение тестового пользователя Azure AD. Разрешите пользователю Britta Simon использовать единый вход Azure AD.
+1. Проверка единого входа. Она необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -114,10 +114,10 @@ ms.locfileid: "55149261"
 
     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.force.com/<instancename>`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://hr2day.force.com/<companyname>`.
+    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://hr2day.force.com/<companyname>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов HR2day от Merces](mailto:servicedesk@merces.nl). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов HR2day от Merces](mailto:servicedesk@merces.nl). 
  
 
 
@@ -146,11 +146,11 @@ ms.locfileid: "55149261"
 
     ![Настройка единого входа](./media/hr2day-tutorial/tutorial_attribute_05.png)
 
-    b. В поле **Имя** введите **ATTR_LOGINCLAIM**.
+    б) В поле **Имя** введите **ATTR_LOGINCLAIM**.
 
     c. В списке **Значения** выберите **Join()**.
 
-    d. В списке **String1** выберите **user.mail**.
+    4.3. В списке **String1** выберите **user.mail**.
 
     д. Для поля **String2** введите уникальный идентификатор, предоставленный вашей службой поддержки HR2day.
 
@@ -200,11 +200,11 @@ ms.locfileid: "55149261"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    b. В поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль**, а затем запишите пароль.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-hr2day-by-merces-test-user"></a>Создание тестового пользователя HR2day от Merces
 

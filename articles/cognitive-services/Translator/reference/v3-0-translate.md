@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/29/2018
+ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 77edf892c3c2ca1434331fb5560f0db8ca16e306
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 800c6d3441e75f428f58fe76ea653f04353064bb
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470881"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699726"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
@@ -54,7 +54,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>category</td>
-    <td>*Необязательный параметр.*<br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью [Custom Translator](../customization.md). Значение по умолчанию: `general`.</td>
+    <td>*Необязательный параметр.*<br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью [Custom Translator](../customization.md). Добавьте идентификатор категории из проекта службы "Пользовательский переводчик" в этот параметр, чтобы использовать развернутую настраиваемую систему. Значение по умолчанию: `general`.</td>
   </tr>
   <tr>
     <td>profanityAction</td>
@@ -126,7 +126,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 Действительны следующие ограничения.
 
-* Массив может содержать не более 25 элементов.
+* Массив может содержать не более 100 элементов.
 * Общий объем текста запроса не должен превышать 5000 символов, в том числе пробелы.
 
 ## <a name="response-body"></a>Тело ответа
@@ -224,6 +224,8 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
     <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
+
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 

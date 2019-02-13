@@ -1,8 +1,21 @@
 ---
-заголовок: Отладка модели titleSuffix Студия машинного обучения Azure description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 14.03.2017
+title: Отладка модели
+titleSuffix: Azure Machine Learning Studio
+description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в Студии машинного обучения Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 03/14/2017
+ms.openlocfilehash: a6708a1c414277cd4ee9b90851e19a94ea86c55b
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55491677"
 ---
 # <a name="debug-your-model-in-azure-machine-learning-studio"></a>Отладка модели в Студии машинного обучения Azure
 

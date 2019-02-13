@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: a53e37cf2ac99dcd755f71e9a2a236f27832fbd7
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 3458bdc0f010cab622a5ddbb87cb8e1077c404a5
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54079210"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55693890"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure
 
@@ -260,6 +260,9 @@ KeyVault-BYOK-Tools-UnitedKingdom.zip
    ```
 
 Эта программа создает файл **Security World** в каталоге %NFAST_KMDATA%\local\world, который соответствует папке C:\ProgramData\nCipher\Key Management Data\local. Можно использовать разные значения для кворума, но в данном примере вам будет предложено ввести три пустые карты и закрепления для каждой из них. После этого любые две карты предоставят полный доступ к системе безопасности. Эти карты станут **набором карт администратора** для новой системы безопасности.
+
+> [!NOTE]
+> Если HSM поддерживает более новый набор тестов DLf3072s256mRijndael, вы можете заменить --cipher-suite=DLf1024s160mRijndael на --cipher-suite=DLf3072s256mRijndael.
 
 После этого выполните описанные ниже действия.
 

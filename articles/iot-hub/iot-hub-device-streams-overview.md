@@ -8,12 +8,12 @@ ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: rezas
-ms.openlocfilehash: 426c8995e5c3d98e42d0ad334b8ae52171556dce
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: ea50902a557e8bd7aa18fbc03fca8fc4a99ac2e2
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54884968"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55770794"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -82,8 +82,22 @@ ms.locfileid: "54884968"
 Кроме того, информацию о конечных точках, в частности ключи `property.hostname` и `property.deviceStreams`, также можно получить с помощью Azure CLI в разделе свойств центра.
 
 ```azurecli-interactive
-az iot hub show --name <YourIoTHubName>
+az iot hub devicestream show --name <YourIoTHubName>
 ```
+
+Результат представляет собой объект JSON всех конечных точек, к которым службе и устройству центра необходимо подключаться для установки потока устройства.
+
+```json
+{
+  "streamingEndpoints": [
+    "https://<YourIoTHubName>.<region-stamp>.streams.azure-devices.net"
+  ]
+}
+```
+
+> [!NOTE]
+> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно загрузить [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> 
 
 ## <a name="whitelist-device-streaming-endpoints"></a>Добавление конечных точек потоковой передачи устройств в список разрешений
 
@@ -92,9 +106,14 @@ az iot hub show --name <YourIoTHubName>
 Имя узла конечной точки потоковой передачи устройства можно найти на портале Центра Интернета вещей Azure на вкладке "Обзор". ![Замещающий текст](./media/iot-hub-device-streams-overview/device-stream-portal.PNG "Конечные точки потоков устройств")
 
 Кроме того, эти сведения можно найти с помощью Azure CLI:
-```cmd/sh
-az iot hub show --name <YourIoTHubName>
+
+```azurecli-interactive
+az iot hub devicestream show --name <YourIoTHubName>
 ```
+
+> [!NOTE]
+> Убедитесь, что вы установили Azure CLI 2.0.57 или новее. Последнюю версию можно загрузить [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> 
 
 ## <a name="troubleshoot-via-device-streams-activity-logs"></a>Устранение неполадок с использованием журналов действий потоков устройств
 

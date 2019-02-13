@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 12/19/2018
 ms.author: ellacroi
-ms.openlocfilehash: c02bc75a978325f8cb0dc8733fb8d296e8710975
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 8232a197b7916c069ef17393e44a4f9a512a7598
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54264688"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818538"
 ---
 # <a name="requirements-by-listing-type"></a>Требования по типам приложений  
 Технические требования и требования к маркетинговому содержимому различаются в зависимости от онлайн-магазина, типа предложения и типа приложения. Ознакомьтесь со следующими характеристиками для проверки соответствия.  
@@ -64,10 +64,10 @@ ms.locfileid: "54264688"
 
 | Тип предложения | Онлайн-магазин | Сведения |  
 |:---        |:---        |:---     |  
-| Консультационные услуги | AppSource | [Требования: AppSource: список: консультационные услуги](#requirements-appsource-list-consulting-services) |  
-| Консультационные услуги | Azure Marketplace | [Требования: Azure Marketplace: список: консультационные услуги](#requirements-azure-marketplace-list-consulting-services) |  
+| Консультационные услуги | AppSource | Требования: AppSource: список: Консультационные услуги |  
+| Консультационные услуги | Azure Marketplace | Требования: Azure Marketplace: список: Консультационные услуги |  
 | Связь со мной | AppSource | [](#) |  
-| Связь со мной | Azure Marketplace | [Требования: AppSource: список: "Свяжитесь со мной"](#requirements-azure-marketplace-list-contact-me) |  
+| Связь со мной | Azure Marketplace | Требования: AppSource: список: Связь со мной |  
 
 #### <a name="requirements-appsource-list-consulting-service"></a>Требования: AppSource: список: Консультационная услуга  
 
@@ -91,11 +91,11 @@ ms.locfileid: "54264688"
 
 | Тип предложения | Онлайн-магазин | Сведения |  
 |:---        |:---        |:---     |  
-| Бесплатная пробная версия или пробная версия SaaS | AppSource | [Требования к типу приложения: пробная версия](#listing-type-requirements-trial) |  
-| Бесплатная пробная версия или пробная версия SaaS | Azure Marketplace | [Требования: Azure Marketplace: пробная версия: бесплатная пробная версия или пробная версия SaaS](#requirements-azure-marketplace-trial-free-trial-/-saas-trial) |  
-| Интерактивная демоверсия | AppSource | [Требования к типу приложения: пробная версия](#listing-type-requirements-trial) |  
+| Бесплатная пробная версия или пробная версия SaaS | AppSource | Требования к типу приложения: Пробная версия |  
+| Бесплатная пробная версия или пробная версия SaaS | Azure Marketplace | Требования: Azure Marketplace: пробная версия: бесплатная пробная версия или пробная версия SaaS |  
+| Интерактивная демоверсия | AppSource | Требования к типу приложения: Пробная версия |  
 | Интерактивная демоверсия | Azure Marketplace | [Требования: Azure Marketplace: пробная версия: интерактивная демоверсия](#requirements-azure-marketplace-trial-interactive-demo) |  
-| Тестовый выпуск | AppSource | [Требования к типу приложения: пробная версия](#listing-type-requirements-trial) |  
+| Тестовый выпуск | AppSource | Требования к типу приложения: Пробная версия |  
 | Тестовый выпуск | Azure Marketplace | [Требования: Azure Marketplace: пробная версия: тестовый выпуск](#requirements-azure-marketplace-trial-test-drive) |  
 
 #### <a name="requirements-azure-marketplace-trial"></a>Требования: Azure Marketplace: Пробная версия  
@@ -133,8 +133,8 @@ ms.locfileid: "54264688"
 
 | Тип предложения | Онлайн-магазин | Сведения |   
 |:---        |:---        | :--- |  
-| Приложения Azure: управляемое приложение | Azure Marketplace | [Требования: Azure Marketplace: транзакция: приложения Azure: управляемое приложение](#requirements-azure-marketplace-transact-azure-apps-managed-app) |  
-| Приложения Azure: Шаблон решения | Azure Marketplace | [Требования: Azure Marketplace: транзакция: приложения Azure: шаблон решения](#requirements-azure-marketplace-transact-azure-apps-solution-template) |  
+| Приложения Azure: управляемое приложение | Azure Marketplace | Требования: Azure Marketplace: транзакция: Приложения Azure: управляемое приложение. |  
+| Приложения Azure: Шаблон решения | Azure Marketplace | Требования: Azure Marketplace: транзакция: Приложения Azure: Шаблон решения |  
 | Контейнеры | Azure Marketplace | [Требования: Azure Marketplace: транзакция: Контейнер](#requirements-azure-marketplace-transact-container) |  
 | Приложение SaaS  | Azure Marketplace | [Требования: Azure Marketplace: транзакция: Приложение SaaS](#requirements-azure-marketplace-transact-saas-app) |  
 | Виртуальная машина. | Azure Marketplace | [Требования: Azure Marketplace: транзакция: виртуальная машина](#requirements-azure-marketplace-transact-virtual-machine) |  

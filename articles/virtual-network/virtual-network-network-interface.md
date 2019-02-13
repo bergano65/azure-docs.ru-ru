@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: jdial
-ms.openlocfilehash: 381c9a2af0f1743509db4495603c0e26da5c1736
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: deca97b0749ceab9f2dfaf3c3940ac6b02b9c104
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54474525"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822193"
 ---
 # <a name="create-change-or-delete-a-network-interface"></a>Создание, изменение или удаление сетевых интерфейсов
 
@@ -52,7 +52,7 @@ ms.locfileid: "54474525"
     |Назначение частного IP-адреса|Yes| Здесь вы выбираете метода назначения IPv4-адреса. Выберите один из следующих методов назначения. **Динамический.** При выборе этого параметра Azure автоматически назначает следующий доступный адрес из адресного пространства выбранной подсети. **Статический.** При выборе этого параметра необходимо вручную назначить доступный IP-адрес из адресного пространства подсети, которую вы выбрали. Статические и динамические адреса меняются только по требованию или при удалении сетевого интерфейса. Метод назначения можно изменить после создания сетевого интерфейса. DHCP-сервер Azure назначает этот адрес сетевому интерфейсу в операционной системе виртуальной машины.|
     |Группа безопасности сети|Нет | Оставьте значение **Нет**, выберите имеющуюся [группу безопасности сети](security-overview.md) или [создайте новую](tutorial-filter-network-traffic.md). Группы безопасности сети позволяют фильтровать передачу исходящего и входящего сетевого трафика сетевого интерфейса. К сетевому интерфейсу можно применить одну группу безопасности сети или не применять их вообще. К подсети, к которой назначен сетевой интерфейс, также можно применить одну группу безопасности сети или не применять их вообще. Применение группы безопасности сети к сетевому интерфейсу и подсети, которой назначен сетевой интерфейс, иногда может приводить к неожиданным результатам. Чтобы устранить проблемы с группами безопасности сети, примененными к сетевым интерфейсам и подсетям, воспользуйтесь [этими инструкциями](diagnose-network-traffic-filter-problem.md).|
     |Подписка|Yes|Выберите одну из [подписок](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription) Azure. Виртуальная машина и виртуальная сеть, к которой подключен сетевой интерфейс, должна находится в одной подписке.|
-    |"Private IP address (IPv6)" (Частный IP-адрес (IPv6))|Нет | Если этот флажок установлен, кроме IPv4-адреса сетевому интерфейсу назначается IPv6-адрес. Важные сведения об использовании IPv6 с сетевыми интерфейсами см. в [этом разделе](#IPv6) статьи. Выбрать метод назначения IPv6-адреса невозможно. IPv6-адрес назначается динамическим методом.
+    |"Private IP address (IPv6)" (Частный IP-адрес (IPv6))|Нет | Если этот флажок установлен, кроме IPv4-адреса сетевому интерфейсу назначается IPv6-адрес. Важные сведения об использовании IPv6 с сетевыми интерфейсами приведены в соответствующем разделе этой статьи. Выбрать метод назначения IPv6-адреса невозможно. IPv6-адрес назначается динамическим методом.
     |"IPv6 name" (Имя IPv6) (отображается только если установлен флажок **Private IP address (IPv6)** (Частный IP-адрес (IPv6))). |Да, если установлен флажок **Private IP address (IPv6)** (Частный IP-адрес (IPv6)).| Это имя присваивается дополнительной IP-конфигурации сетевого интерфейса. Дополнительные сведения об IP-конфигурации см. в разделе [Просмотр параметров сетевого интерфейса](#view-network-interface-settings).|
     |Группа ресурсов|Yes|Выберите существующую [группу ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group) или создайте новую. Сетевой интерфейс может находится в одной группе ресурсов с виртуальной машиной, к которой он подключен, и с виртуальной сетью или в разных.|
     |Расположение|Yes|Виртуальная машина и виртуальная сеть, к которой подключен сетевой интерфейс, должна находится в одном [расположении](https://azure.microsoft.com/regions) (регионе).|
@@ -68,7 +68,7 @@ ms.locfileid: "54474525"
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic create](/cli/azure/network/nic#az_network_nic_create)|
+|Интерфейс командной строки|[az network nic create](/cli/azure/network/nic)|
 |PowerShell|[New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface)|
 
 ## <a name="view-network-interface-settings"></a>Просмотр параметров сетевого интерфейса
@@ -85,7 +85,7 @@ ms.locfileid: "54474525"
     - **Свойства.** Здесь отображаются основные параметры сетевого интерфейса, включая MAC-адрес (остается пустым, если сетевой интерфейс не подключен к виртуальной машине), а также подписка, в которой он находится.
     - **Действующие правила безопасности.**  Правила безопасности указываются, если сетевой интерфейс подключен к работающей виртуальной машине, а NSG связана с сетевым интерфейсом, подсетью, которой он назначен, или и с тем и с другим. Чтобы узнать больше о том, что отображено, изучите раздел [Создание, изменение или удаление сетевых интерфейсов](#view-effective-security-rules). Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](security-overview.md).
     - **Действующие маршруты.** Маршруты указываются, если сетевой интерфейс подключен к работающей виртуальной машине. Маршруты представляют собой сочетание маршрутов Azure по умолчанию, любых определяемых пользователем маршрутов и всех маршрутов BGP, которые могут существовать для подсети, к которой подключен сетевой интерфейс. Чтобы узнать больше о том, что отображено, изучите раздел [Создание, изменение или удаление сетевых интерфейсов](#view-effective-routes). Чтобы узнать больше о маршрутах по умолчанию Azure и определяемых пользователем маршрутах, изучите раздел [Маршрутизация трафика в виртуальной сети](virtual-networks-udr-overview.md).
-    - **Общие параметры диспетчера ресурсов Azure.**  Дополнительные сведения об общих параметрах диспетчера ресурсов Azure см. в документах о [журнале действий](../azure-monitor/platform/activity-logs-overview.md), [контроле доступа (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control), [тегах](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [блокировках](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [скрипте службы автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group).
+    - **Общие параметры диспетчера ресурсов Azure.**  Дополнительные сведения об общих параметрах диспетчера ресурсов Azure см. в документах о [журнале действий](../azure-monitor/platform/activity-logs-overview.md), [контроле доступа (IAM)](../role-based-access-control/overview.md), [тегах](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [блокировках](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [скрипте службы автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group).
 
 <a name="view-settings-commands"></a>**Команды**
 
@@ -93,7 +93,7 @@ ms.locfileid: "54474525"
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic list](/cli/azure/network/nic#az_network_nic_list) для просмотра сетевых интерфейсов в подписке, [az network nic show](/cli/azure/network/nic#az_network_nic_show) для просмотра параметров сетевого интерфейса.|
+|Интерфейс командной строки|[az network nic list](/cli/azure/network/nic) для просмотра сетевых интерфейсов в подписке, [az network nic show](/cli/azure/network/nic) для просмотра параметров сетевого интерфейса.|
 |PowerShell|[Get-AzureRmNetworkInterface](/powershell/module/azurerm.network/get-azurermnetworkinterface) для просмотра сетевых интерфейсов в подписке или для просмотра параметров сетевого интерфейса.|
 
 ## <a name="change-dns-servers"></a>Изменение DNS-серверов
@@ -153,7 +153,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 |Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_update)|
+|Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Set-AzureRmNetworkInterfaceIpConfig](/powershell/module/azurerm.network/set-azurermnetworkinterfaceipconfig)|
 
 ## <a name="add-to-or-remove-from-application-security-groups"></a>Добавление в группы безопасности приложений или удаление из них

@@ -1,27 +1,25 @@
 ---
-title: Получение аналитических сведений о видео — Поиск видео Bing
+title: Получение полезных сведений о видео с помощью API Bing для поиска видео
 titlesuffix: Azure Cognitive Services
-description: Узнайте, как использовать API "Поиск видео Bing" для получения дополнительных сведений о видео.
+description: Узнайте, как использовать API Bing для поиска видео для получения дополнительных сведений о видео, в том числе связанных видео.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: conceptual
-ms.date: 04/15/2017
+ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: 9c36208a35d66fcd6df6ac2ccd4a28c55ed92937
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 5abc5ee96c503bed9509e3d35b442ea5e0330ac7
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170791"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55568215"
 ---
 # <a name="get-insights-about-a-video"></a>Получение полезных сведений о видео
 
-Каждое видео содержит идентификатор, с помощью которого можно получить дополнительные сведения о видео, например найти связанные видео.  
-  
-Чтобы получить полезные сведения о видео, запишите токен [videoId](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#video-videoid), указанный в ответе. 
+Каждое видео, возвращаемое API Bing для поиска видео, содержит идентификатор, с помощью которого можно получить дополнительные сведения об этом видео, например найти связанные видео. Чтобы получить полезные сведения о видео, получите токен [videoId](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#video-videoid), указанный в ответе API. 
 
 ```json
     "value" : [
@@ -36,9 +34,9 @@ ms.locfileid: "55170791"
     ],
 ```
 
-Отправьте приведенный ниже запрос GET к конечной точке сведений о видео. Укажите для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#id) значение токена `videoId`. Чтобы указать полезные сведения, которые необходимо получить, задайте значение параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#modulesrequested). Чтобы получить все сведения, задайте для `modules` значение All. Ответ будет содержать все сведения, которые вы запросили, если они доступны.
+Затем отправьте запрос GET к конечной точке сведений о видео, указав этот идентификатор. Укажите для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#id) значение токена `videoId`. Чтобы указать полезные сведения, которые необходимо получить, задайте значение параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#modulesrequested). Чтобы получить все сведения, задайте для `modules` значение All. Ответ будет содержать все сведения, которые вы запросили, если они доступны.
 
-```
+```cURL
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/details?q=sailiing+dinghies&id=6DB795E11A6E3CBAAD636DB795E11A6E3CBAAD63&modules=All&mkt=en-us HTTP/1.1  
 Ocp-Apim-Subscription-Key: 123456789ABCDE  
 User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)  
@@ -50,9 +48,9 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="getting-related-videos-insights"></a>Получение полезных сведений о связанных видео  
 
-Чтобы найти видео, связанные с указанным видео, задайте для параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#modulesrequested) значение RelatedVideos.
+Чтобы найти видео, связанные с указанным видео, задайте для параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#modulesrequested) значение `RelatedVideos`.
   
-```  
+```cURL  
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/details?q=sailiing+dinghies&id=6DB795E11A6E3CBAAD636DB795E11A6E3CBAAD63&modules=RelatedVideos&mkt=en-us HTTP/1.1  
 Ocp-Apim-Subscription-Key: 123456789ABCDE  
 User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)  
@@ -61,10 +59,10 @@ X-Search-Location: lat:47.60357;long:-122.3295;re:100
 X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>  
 Host: api.cognitive.microsoft.com  
 ```  
+
+Ответ на этот запрос будет содержать объект верхнего уровня [VideoDetails](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videodetails) вместо объекта [Videos](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videos).  
   
-Ниже показан ответ на предыдущий запрос. Объектом верхнего уровня является объект [VideoDetails](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videodetails), а не [Videos](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videos).  
-  
-```  
+```json
 {
     "_type" : "Api.VideoDetails.VideoDetails",
     "relatedVideos" : {
@@ -95,3 +93,9 @@ Host: api.cognitive.microsoft.com
     }
 }
 ```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+> [!div class="nextstepaction"]
+> [Поиск видео, набирающих популярность](trending-videos.md)
+

@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: 469faeee4706c33b09f89bfbed1bb229a6aea20e
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: fee5a025b97343936a002156e4cb895c91e04405
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54848382"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821343"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -81,7 +81,7 @@ ms.locfileid: "54848382"
 | [1.1.1](#1.1.1) |26 марта 2018 г.|--- |
 | [1.1.0](#1.1.0) |21 февраля 2018 г.|--- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г.|--- |
-| [0.9.0 (предварительная версия)](#0.9.0-preview) |11 ноября 2017 г. |--- |
+| 0.9.0 (предварительная версия) |11 ноября 2017 г. |--- |
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

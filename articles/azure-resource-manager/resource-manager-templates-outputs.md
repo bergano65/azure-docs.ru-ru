@@ -11,16 +11,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/18/2018
+ms.date: 02/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9a46d813f2e50831240303ba47380da39e2cb6af
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: aadc92c232d32d827644caa52b3c362d9c8d4c9b
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53725818"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55691037"
 ---
 # <a name="outputs-section-in-azure-resource-manager-templates"></a>Раздел выходных данных в шаблонах Azure Resource Manager
+
 В разделе выходных данных следует указать значения, которые возвращаются после развертывания. Например, можно возвращать URI для доступа к развернутому ресурсу.
 
 ## <a name="define-and-use-output-values"></a>Определение и использование выходных значений
@@ -39,7 +40,7 @@ ms.locfileid: "53725818"
 После развертывания вы можете извлечь значение с помощью скрипта. Для PowerShell используйте команду:
 
 ```powershell
-(Get-AzureRmResourceGroupDeployment -ResourceGroupName <resource-group-name> -Name <deployment-name>).Outputs.resourceID.value
+(Get-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -Name <deployment-name>).Outputs.resourceID.value
 ```
 
 Для интерфейса командной строки Azure:
@@ -81,6 +82,7 @@ az group deployment show -g <resource-group-name> -n <deployment-name> --query p
 | Тип |Yes |Тип выходного значения. Выходные значения поддерживает те же типы, что и входные параметры шаблона. |
 | value |Yes |Выражение на языке шаблона, которое вычисляется и возвращается в качестве выходного значения. |
 
+Дополнительные сведения о добавлении комментариев см. в разделе [о комментариях в шаблонах](resource-group-authoring-templates.md#comments).
 
 ## <a name="example-templates"></a>Образцы шаблонов
 

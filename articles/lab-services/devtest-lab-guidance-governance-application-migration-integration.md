@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: spelluru
-ms.openlocfilehash: 8a661c94ecc660e0ebd0e9818acef81b8a7b819b
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 4bab3413b3e3cfcf1972b6cf721120d95851f7cd
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978621"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55498205"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---application-migration-and-integration"></a>Система управления инфраструктурой Azure DevTest Labs. Миграция и интеграция приложений
 После создания лабораторной среды для разработки и тестирования обдумайте следующие вопросы.
@@ -62,9 +62,9 @@ ms.locfileid: "50978621"
 
 С помощью DevTest Labs создайте конвейер пользовательского образа в Azure Pipelines.
 
-- [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовьте виртуальные машины за несколько минут, настроив фабрику образов в Azure DevTest Labs)
+- [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовка виртуальных машин за несколько минут за счет настройки фабрики образов в Azure DevTest Labs)
 - [Image Factory – Part 2! Setup Azure Pipelines and Factory Lab to Create VMs](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/) (Фабрика образов, часть 2. Установка Azure Pipelines и лаборатории фабрики для создания виртуальных машин)
-- [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
+- [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
 - [Video: Custom Image Factory with Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/) (Видео. Фабрика пользовательских образов в Azure DevTest Labs)
 
 ## <a name="patterns-to-set-up-network-configuration"></a>Шаблоны для настройки конфигурации сети

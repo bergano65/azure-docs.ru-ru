@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 7e0064495cfb3d82c349a23d914195c5f211dc19
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 54d98c02ee9e5202c09e333843f8c16955f4e2d4
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187085"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819253"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -155,7 +155,7 @@ ms.locfileid: "55187085"
     Откроется окно **Создать службу приложений**. В этом окне вы можете приступить к созданию всех необходимых ресурсов Azure для запуска веб-приложения ASP.NET в Azure.
 
     > [!NOTE]
-    > Дополнительные сведения см. в разделе о публикации статьи [Создание веб-приложения ASP.NET в Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet#publish-to-azure).
+    > Дополнительные сведения см. в разделе о публикации статьи [Создание веб-приложения ASP.NET в Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet).
 
 3. В поле **Имя веб-приложения** введите уникальное имя (допустимые символы: a–z, A–Z, 0–9 и дефис (-)). URL-адрес веб-приложения: `http://<app_name>.azurewebsites.NET`, где `<app_name>` — имя веб-приложения. Можно принять имя, созданное автоматически, если оно является уникальным.
 
@@ -247,16 +247,18 @@ ms.locfileid: "55187085"
 Добавьте элемент `ContentDefinitionParameters` следующим образом:
 1. Откройте файл политики *SignUpOrSignin* (например, *SignUpOrSignin.xml*).
 
-2. Найдите узел `<DefaultUserJourney>`. 
-
-3. В узел `<DefaultUserJourney>` добавьте следующий фрагмент кода XML:  
+2. В узле `<DefaultUserJourney>` добавьте узел `UserJourneyBehaviors`:  
 
     ```XML
-    <UserJourneyBehaviors>
+    <RelyingParty>
+      <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+      <UserJourneyBehaviors>
         <ContentDefinitionParameters>
-            <Parameter Name="campaignId">{OAUTH-KV:campaignId}</Parameter>
+          <Parameter Name="campaignId">{OAUTH-KV:campaignId}</Parameter>
         </ContentDefinitionParameters>
-    </UserJourneyBehaviors>
+      </UserJourneyBehaviors>
+      ...
+    </RelyingParty>
     ```
 
 ### <a name="step-82-change-your-code-to-accept-a-query-string-parameter-and-replace-the-background-image"></a>Шаг 8.2. Изменение кода, позволяющее принять параметр строки запроса и заменить фоновое изображение
@@ -321,17 +323,17 @@ ms.locfileid: "55187085"
 
     a. Скачайте файл *selfasserted*.
 
-    b. Скопируйте содержимое файла.
+    б) Скопируйте содержимое файла.
 
     c. Создайте представление *selfasserted*.
 
-    d. Добавьте *selfasserted* в контроллер **Home**.
+    4.3. Добавьте *selfasserted* в контроллер **Home**.
 
 2. Вернитесь к шагу 4 и выполните следующие действия. 
 
     a. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    b. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    б) Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*. 
 

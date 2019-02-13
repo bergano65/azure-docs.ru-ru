@@ -11,16 +11,16 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: e8b318626947c1d1147e43ca6c183ae724080a59
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: caafd5ac43ca94f8b01298b4e18e48065b7001b9
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251611"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55766628"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
-Служба машинного обучения Azure предоставляет несколько способов развертывания обученной модели с помощью пакета SDK. В этом документе вы научитесь развертывать модель как веб-службу в облаке Azure и на устройствах IoT Edge.
+Служба машинного обучения Azure предоставляет несколько способов развертывания обученной модели с помощью пакета SDK. В рамках этого документа вы научитесь развертывать модель как веб-службу в облаке Azure и на устройствах IoT Edge.
 
 > [!IMPORTANT]
 > Предоставление общего доступа к ресурсам независимо от источника (CORS) при развертывании модели в качестве веб-службы сейчас не поддерживается.
@@ -119,7 +119,7 @@ image_config = ContainerImage.image_configuration(execution_script = "score.py",
 
 #### <a name="working-with-json-data"></a>Работа с данными JSON
 
-Ниже приведен пример сценария, который принимает и возвращает данные JSON. Функция `run` преобразует данные из JSON в формат, ожидаемый моделью, а затем преобразует ответ JSON перед его возвратом:
+Следующий пример сценария принимает и возвращает данные JSON. Функция `run` преобразует данные из JSON в формат, ожидаемый моделью, а затем преобразует ответ JSON перед его возвратом:
 
 ```python
 # import things required by this script
@@ -149,7 +149,7 @@ def run(raw_data):
 
 #### <a name="working-with-binary-data"></a>Работа с двоичными данными
 
-Если ваша модель принимает __двоичные данные__, используйте `AMLRequest`, `AMLResponse` и `rawhttp`. Ниже приведен пример сценария, который принимает двоичные данные и возвращает обращенные байты для запросов POST. Для запросов GET он возвращает полный URL-адрес в тексте ответа:
+Если ваша модель принимает __двоичные данные__, используйте `AMLRequest`, `AMLResponse` и `rawhttp`. Следующий пример сценария принимает двоичные данные и возвращает обращенные байты для запросов POST. Для запросов GET он возвращает полный URL-адрес в тексте ответа:
 
 ```python
 from azureml.contrib.services.aml_request  import AMLRequest, rawhttp
@@ -244,9 +244,6 @@ image = ContainerImage.create(name = "myimage",
 
     **Примерное время**: приблизительно 3 минуты.
 
-    > [!TIP]
-    > Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы. Информация в этих журналах может указывать на причину ошибки.
-
 Дополнительные сведения см. в справочной документации по классам [AciWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py) и [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
 
 ### <a id="aks"></a> Развертывание в Службе Azure Kubernetes
@@ -334,9 +331,6 @@ print(service.state)
 
 **Оценка времени**. приблизительно 3 минуты.
 
-> [!TIP]
-> Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы. Информация в этих журналах может указывать на причину ошибки.
-
 Дополнительные сведения см. в справочной документации по классам [AksWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) и [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
 
 ### <a id="fpga"></a> Развертывание в программируемых пользователем вентильных матрицах (ППВМ)
@@ -371,7 +365,7 @@ sudo ./createNregister <The Azure subscriptionID you want to use> <Resourcegroup
 
 Сохраните результирующую строку подключения после "cs":"{copy this string}".
 
-Инициализируйте устройство, загрузив [этот сценарий](https://raw.githubusercontent.com/Azure/ai-toolkit-iot-edge/master/amliotedge/installIoTEdge) в граничный узел Интернета вещей UbuntuX64 или Виртуальную машину для обработки и анализа данных для выполнения следующих команд:
+Инициализируйте устройство, загрузив [этот сценарий](https://raw.githubusercontent.com/Azure/ai-toolkit-iot-edge/master/amliotedge/installIoTEdge) в граничный узел IoT Edge UbuntuX64 или на Виртуальную машину для обработки и анализа данных, чтобы выполнить следующие команды:
 
 ```bash
 ssh <yourusername>@<yourdeviceip>
@@ -469,7 +463,7 @@ print(prediction)
 
 ## <a id="update"></a> Обновление веб-службы
 
-Чтобы обновить веб-службу, используйте метод `update`. Следующий код демонстрирует, как обновлять веб-службу для использования нового образа.
+При создании образа каждую службу, которая должна использовать его, необходимо обновить вручную. Чтобы обновить веб-службу, используйте метод `update`. Следующий код демонстрирует, как обновлять веб-службу для использования нового образа.
 
 ```python
 from azureml.core.webservice import Webservice
@@ -487,9 +481,6 @@ service.update(image = new_image)
 print(service.state)
 ```
 
-> [!NOTE]
-> При обновлении образа веб-служба автоматически не обновляется. Каждую службу, которая должна использовать новый образ, необходимо обновить вручную.
-
 Дополнительные сведения см. в справочной документации по классу [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py).
 
 ## <a name="clean-up"></a>Очистка
@@ -502,6 +493,19 @@ print(service.state)
 
 Дополнительные сведения см. в справочной документации по классам [WebService.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--), [Image.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.image(class)?view=azure-ml-py#delete--) и [Model.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+* __Если во время развертывания возникают ошибки__, используйте `service.get_logs()` для просмотра журналов службы. Информация в этих журналах может указывать на причину ошибки.
+
+* Журналы могут содержать ошибку, которая указывает __установить уровень ведения журнала DEBUG__. Чтобы установить уровень ведения журнала, добавьте следующие строки в сценарий оценки, создайте образ, а затем службу, используя этот образ:
+
+    ```python
+    import logging
+    logging.basicConfig(level=logging.DEBUG)
+    ```
+
+    Это изменение включает расширенное ведение журнала и может возвращать больше информации о причине возникновения ошибки.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
@@ -511,3 +515,5 @@ print(service.state)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
 * [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) (Что такое пакет SDK Службы машинного обучения Azure для Python?)
 * [Securely run experiments and inferencing inside an Azure Virtual Network](how-to-enable-virtual-network.md) (Безопасное выполнение экспериментов и формирование выводов внутри виртуальной сети Azure)
+* [Recommenders](https://github.com/Microsoft/Recommenders) (Системы рекомендаций)
+* [Создание API рекомендаций в режиме реального времени в Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/real-time-recommendation)

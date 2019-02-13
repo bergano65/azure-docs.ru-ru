@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 01/31/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 7951044f850d93659ca458d3bcc46376e7e6b34a
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 2720d239c31a0cbfab215c7e297627c9f0d8c781
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55077367"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55510244"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
@@ -171,6 +171,8 @@ Helga@contoso.com,1234567,1234567890abcdef1234567890abcdef,60,Contoso,HardwareKe
 В зависимости от размера CSV-файла этот процесс может занять несколько минут. Нажмите кнопку **Обновить**, чтобы получить сведения о текущим состоянии. Если в файле есть какие-либо ошибки, у вас будет возможность загрузить CSV-файл с указанием любых ошибок, которые вы разрешите.
 
 После устранения ошибок администратор может активировать каждый ключ, щелкнув **Активировать** для активации токена, и ввести одноразовый пароль, отображаемый на токене.
+
+Пользователи могут настроить сочетание до 5 OATH-токенов оборудования или приложений аутентификации, таких как приложение Microsoft Authenticator, для использования в любое время.
 
 ## <a name="mobile-phone"></a>Мобильный телефон
 

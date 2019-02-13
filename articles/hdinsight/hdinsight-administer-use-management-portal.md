@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4210528003cdb1f584bec3dea80c1aa1db2f86df
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: dd94330835c52b27c61c484d44991152d092fbe7
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53632031"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811704"
 ---
 # <a name="manage-windows-based-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure
 
@@ -203,7 +203,7 @@ HDInsight работает с разными компонентами Apache Had
 Сведения о ценах см. на странице [цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Удаление кластера на портале описано в разделе [Удаление кластеров](#delete-clusters).
 
 ## <a name="change-cluster-username"></a>Изменение имени пользователя кластера
-Кластер HDInsight может иметь две учетные записи пользователя. Учетная запись пользователя кластера HDInsight создается в процессе создания кластера. Вы также можете создать учетную запись пользователя RDP для доступа к кластеру через RDP. См. сведения о [включении удаленного рабочего стола](#connect-to-hdinsight-clusters-by-using-rdp).
+Кластер HDInsight может иметь две учетные записи пользователя. Учетная запись пользователя кластера HDInsight создается в процессе создания кластера. Вы также можете создать учетную запись пользователя RDP для доступа к кластеру через RDP. Ознакомьтесь со сведениями о включении удаленного рабочего стола.
 
 **Изменение имени пользователя и пароля для кластера HDInsight**
 

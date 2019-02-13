@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 01/15/2019
 ms.author: alkohli
-ms.openlocfilehash: f01fb88bf0ea726b421111a262bdfdd68cd3d38c
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.openlocfilehash: acf455bff739666712917008dc8090c6a95c6dc4
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54388425"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815658"
 ---
 # <a name="azure-data-box-gateway-limits-preview"></a>Ограничения для шлюза Azure Data Box (предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "54388425"
 
 ## <a name="data-box-gateway-service-limits"></a>Ограничения службы шлюза Data Box
 
-- В этом выпуске служба доступна только в определенных регионах США, Европы и Азиатско-Тихоокеанского региона. Дополнительные сведения см. в разделе о [доступности по регионам](#data-box-gateway-overview#region-availability). Учетная запись хранения должна быть физически ближе всего к региону, где развернуто устройство (может отличаться от географического размещения службы).
+- В этом выпуске служба доступна только в определенных регионах США, Европы и Азиатско-Тихоокеанского региона. Дополнительные сведения см. в разделе о доступности по регионам. Учетная запись хранения должна быть физически ближе всего к региону, где развернуто устройство (может отличаться от географического размещения службы).
 - Перемещение ресурса шлюза Data Box в другую группу ресурсов или подписку не поддерживается. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
 
 ## <a name="data-box-gateway-device-limits"></a>Ограничение устройства шлюза Data Box

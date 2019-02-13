@@ -10,19 +10,19 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 6017fc957d511aa21f8e28cf011378e8012123cc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: b3e948c2eafb43f804b330287b114ef9307b0aac
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151725"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813370"
 ---
 # <a name="using-an-insights-token-to-get-insights-about-an-image"></a>Получение полезных сведений об изображении с помощью токена аналитики
 
 API Bing для визуального поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих способах см. в статье [What is Bing Visual Search API?](overview.md) (Что такое API Bing для визуального поиска?). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие отправку изображения для получения аналитических сведений, см. в кратких руководствах ([C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [Node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)).
 
 
-Если вы отправляете в API визуального поиска токен изображения или URL-адрес, в текст запроса POST необходимо добавить данные формы, показанные ниже. Данные формы должны включать заголовок Content-Disposition, а его параметру `name` необходимо присвоить значение knowledgeRequest. Подробные сведения об объекте `imageInfo` см. в разделе [The request](#the-request) (Запрос).
+Если вы отправляете в API визуального поиска токен изображения или URL-адрес, в текст запроса POST необходимо добавить данные формы, показанные ниже. Данные формы должны включать заголовок Content-Disposition, а его параметру `name` необходимо присвоить значение knowledgeRequest. Дополнительные сведения об объекте `imageInfo` см. в разделе "Запрос".
 
 ```json
 {

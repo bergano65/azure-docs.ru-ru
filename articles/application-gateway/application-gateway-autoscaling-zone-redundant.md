@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 1/31/2019
+ms.date: 2/5/2019
 ms.author: victorh
-ms.openlocfilehash: 0c8a600342e0240d435999b1b5ddabc0234c142f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 880a6fc9d5636ff0ac67d24d0ef66c8f48ae22fb
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461446"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55743656"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-public-preview"></a>Автоматическое масштабирование и шлюз приложений, избыточный между зонами (общедоступная предварительная версия)
 
@@ -34,7 +34,7 @@ ms.locfileid: "55461446"
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы
 
-Номер SKU автоматического масштабирования доступен в следующих регионах: eastus2, westus2, westeurope, southeastasia, centralus, francecentral, eastus, japaneast, northeurope, southcentralus, ukwest, northcentralus, westus, eastus (BL), centralus (DM), japanwest (OS).
+Номер SKU автомасштабирования доступен в следующих регионах: центрально-северной части США, центрально-южной части США, западной части США, западной части США 2, восточной части США, восточной части США 2, центральной части США, Северной Европе, Западной Европе, Юго-Восточной Азии, Центральной Франции, западной части Соединенного Королевства, Восточной Японии, Западной Японии.
 
 ## <a name="pricing"></a>Цены
 

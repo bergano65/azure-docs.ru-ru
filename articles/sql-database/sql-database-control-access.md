@@ -11,13 +11,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 6153fbdb6e085d1c817fac5db5eddb5e2c6ae7fa
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/04/2019
+ms.openlocfilehash: 8cb044397cf439e97f3630b5c1c3f53fbf3f356d
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55465447"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729943"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-access-control"></a>Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"
 
@@ -69,5 +69,5 @@ ms.locfileid: "55465447"
 - Обзор функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).
 - Общие сведения о правилах брандмауэра см. в [этой статье](sql-database-firewall-configure.md).
 - Сведения о пользователях и имена для входа см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](sql-database-manage-logins.md). 
-- Описание упреждающего мониторинга см. во вводных статьях об [аудите базы данных](sql-database-auditing.md) и [системе обнаружения угроз базы данных SQL](sql-database-threat-detection.md).
+- Описание упреждающего мониторинга см. в статьях [Приступая к работе с аудитом базы данных SQL](sql-database-auditing.md) и [Обнаружение угроз Базы данных SQL Azure для отдельной базы данных или базы данных в составе пула](sql-database-threat-detection.md).
 - Ознакомьтесь с руководством [Защита базы данных SQL Azure](sql-database-security-tutorial.md).

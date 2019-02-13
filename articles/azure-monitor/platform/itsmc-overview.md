@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: cd27a4d43333674ec1928fbd873e873afe84d26d
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: f0d3641800d8ec2f9fd403b006e81af04444c143
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54262886"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813132"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -44,7 +44,7 @@ ms.locfileid: "54262886"
 Вы можете начать использование соединителя ITSM, выполнив следующие шаги:
 
 1.  [Добавьте решение соединителя ITSM](#adding-the-it-service-management-connector-solution).
-2.  [Создайте подключение ITSM](#creating-an-itsm-connection).
+2.  Создайте подключение ITSM.
 3.  [Используйте подключение](#using-the-solution).
 
 

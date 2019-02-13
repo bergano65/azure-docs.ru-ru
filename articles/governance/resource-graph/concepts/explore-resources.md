@@ -4,17 +4,17 @@ description: Сведения об изучении ресурсов и связ
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/23/2019
+ms.date: 02/05/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 090ea6fa38f07dda2f3769398c082e302edebe94
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: d6ce615e23ce71f22eff3c2c70b387267792fef9
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55095529"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55768442"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
 
@@ -40,8 +40,11 @@ az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | limit 1"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | limit 1"
+Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | limit 1" | ConvertTo-Json -Depth 100
 ```
+
+> [!NOTE]
+> Командлет `Search-AzGraph` Azure PowerShell по умолчанию возвращает **PSCustomObject**. Чтобы вывод выглядел так же, как и возвращаемый интерфейсом командной строки Azure, используется командлет `ConvertTo-Json`. Значение по умолчанию для **глубины** — _2_. При установке значения _100_ все возвращенные уровни должны преобразоваться.
 
 Результаты в формате JSON имеют структуру, аналогичную представленной ниже.
 

@@ -11,27 +11,27 @@ author: oslake
 ms.author: moslake
 ms.reviewer: genemi, vanto
 manager: craigg
-ms.date: 10/05/2018
-ms.openlocfilehash: b841f985c758cb1e354d3c3537c532a253e81d92
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.date: 10/23/2018
+ms.openlocfilehash: ae29fcfe39b5844ab948eb55ca314ae51dcae174
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945932"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566301"
 ---
-# <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell: создание конечной точки службы и правила виртуальной сети для SQL
+# <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell:  создание конечной точки виртуальной службы и правила виртуальной сети для SQL
 
 [База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают конечные точки виртуальной службы.
 
 > [!NOTE]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к **Управляемому экземпляру базы данных SQL Azure**, так как у вас нет конечной точки службы, связанной с подсетью Управляемого экземпляра.
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к **Управляемому экземпляру базы данных SQL Azure**, так как у вас нет конечной точки службы, связанной с подсетью Управляемого экземпляра.
 
 В этой статье предлагается и описывается сценарий PowerShell, который выполняет следующие действия:
 
 1. Создает *конечную точку службы виртуальной сети* Microsoft Azure в подсети.
 2. Добавляет конечную точку в брандмауэр сервера базы данных SQL Azure, чтобы создать *правило виртуальной сети*.
 
-Причины для создания правила приведены в разделе [Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
+Причины для создания правила приведены в статье [Использование конечных точек службы и правил виртуальной сети для SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
 
 > [!TIP]
 > Если все, что вам требуется, это оценить или добавить *имя типа* конечной точки службы виртуальной сети для базы данных SQL в подсеть, то вы можете сразу перейти к более [прямолинейному сценарию PowerShell](#a-verify-subnet-is-endpoint-ps-100).
@@ -43,10 +43,10 @@ ms.locfileid: "49945932"
 В следующем списке приведена последовательность других *основных* командлетов, которые нужно выполнить для подготовки к вызову **New-AzureRmSqlServerVirtualNetworkRule**. В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
 
 1. [New-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig): создает объект подсети.
-2. [New-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetwork): создает виртуальную сеть, добавив в нее подсеть.
-3. [Set-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetworkSubnetConfig): назначает конечную точку службы виртуальной сети в качестве подсети.
-4. [Set-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetwork): сохраняет изменения, внесенные в виртуальную сеть.
-5. [New-AzureRmSqlServerVirtualNetworkRule](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список контроля доступа сервера базы данных SQL Azure.
+2. [New-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetwork): создает виртуальную сеть, предоставляя ей подсеть.
+3. [Set-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetworkSubnetConfig): присваивает конечную точку виртуальной службы подсети.
+4. [Set-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetwork): сохраняет обновления, внесенные в виртуальную сеть.
+5. [New-AzureRmSqlServerVirtualNetworkRule](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список управления доступом сервера Базы данных SQL Azure.
    - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях командлет предоставляет параметр **-IgnoreMissingVnetServiceEndpoint**.
 
 ## <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell
@@ -63,7 +63,7 @@ ms.locfileid: "49945932"
 
 <a name="a-script-10" />
 
-### <a name="script-1-variables"></a>Сценарий 1: переменные
+### <a name="script-1-variables"></a>Сценарий 1. Переменные
 
 Первый сценарий PowerShell присваивает переменным значения. Последующие сценарии зависят от этих переменных.
 
@@ -112,7 +112,7 @@ Write-Host 'Completed script 1, the "Variables".';
 
 <a name="a-script-20" />
 
-### <a name="script-2-prerequisites"></a>Сценарий 2: предварительные требования
+### <a name="script-2-prerequisites"></a>Сценарий 2. Предварительные требования
 
 Этот сценарий подготавливает среду к следующему сценарию, который выполняет действие с конечной точкой. Этот сценарий создает перечисленные ниже элементы, но только если они еще не существует. Сценарий 2 можно пропустить, если вы уверены, что эти элементы уже существуют:
 
@@ -203,7 +203,7 @@ Write-Host 'Completed script 2, the "Prerequisites".';
 
 <a name="a-script-30" />
 
-## <a name="script-3-create-an-endpoint-and-a-rule"></a>Сценарий 3: создание конечной точки и правила
+## <a name="script-3-create-an-endpoint-and-a-rule"></a>Сценарий 3. Создание конечной точки и правила
 
 Этот сценарий создает виртуальную сеть с подсетью. Затем он присваивает тип конечной точки **Microsoft.Sql** подсети. Наконец, этот сценарий добавляет подсеть в список управления доступом (ACL) вашего сервера базы данных SQL, тем самым создавая правило.
 
@@ -289,7 +289,7 @@ Write-Host 'Completed script 3, the "Virtual-Network-Rule".';
 
 <a name="a-script-40" />
 
-## <a name="script-4-clean-up"></a>Сценарий 4: очистка
+## <a name="script-4-clean-up"></a>Сценарий 4. Очистка
 
 Этот сценарий удаляет ресурсы, созданные предыдущим сценарии в целях демонстрации. Однако этот сценарий запрашивает подтверждение, прежде чем удалить следующие элементы:
 

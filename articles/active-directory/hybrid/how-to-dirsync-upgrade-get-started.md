@@ -11,16 +11,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 12a11e444372ad7004e566851532a98be63af8e8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 15d5b824525bc19d83abfbf2c08e068bd3837350
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55195364"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821207"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect выполняет следующие функции: Обновление из DirSync
 Azure AD Connect является преемником Microsoft Azure Active Directory Sync Tool (DirSync). В этой статье описано, как можно обновить DirSync. Следующие действия не подходят для обновления другого выпуска Azure AD Connect или Azure AD Sync.
@@ -34,7 +34,7 @@ Azure AD Connect является преемником Microsoft Azure Active Di
 > [!NOTE]
 > Если вы уже используете новый сервер Azure AD Connect для запуска синхронизации изменений в Azure AD, то откат к использованию DirSync или Azure AD Sync уже невозможен. Обратный переход с Azure AD Connect к устаревшим клиентам, включая DirSync и Azure AD Sync, не поддерживается и может привести к таким проблемам, как потеря данных в Azure AD.
 
-Если вам не нужно обновлять DirSync, см. другие сценарии в [документации](#related-documentation).
+Если вам не нужно обновлять DirSync, см. другие сценарии в документации.
 
 ## <a name="upgrade-from-dirsync"></a>Обновление из DirSync
 В зависимости от текущего развертывания DirSync, существуют различные параметры для обновления. Если ожидаемое время обновления составляет менее трех часов, рекомендуем выполнить обновление на месте. Если ожидаемое время обновления составляет более трех часов, рекомендуем реализовать параллельное развертывание на другом сервере. Предполагается, что при наличии более 50 000 объектов для обновления потребуется более трех часов.
@@ -127,7 +127,7 @@ Azure AD Connect является преемником Microsoft Azure Active Di
 
 * Нажмите кнопку **Экспорт параметров** . Если вы устанавливаете Azure AD Connect на отдельном сервере, эти параметры будут перенесены из текущей службы DirSync в устанавливаемую службу Azure AD Connect.
 
-После успешного экспорта настроек вы можете закрыть мастер Azure AD Connect на сервере DirSync. Перейдите к следующему шагу [Установка Azure AD Connect на отдельном сервере](#installation-of-azure-ad-connect-on-separate-server)
+После успешного экспорта настроек вы можете закрыть мастер Azure AD Connect на сервере DirSync. Перейдите к следующему шагу, чтобы установить Azure AD Connect на отдельном сервере.
 
 **Параллельное развертывание — менее 50 000 объектов**
 
@@ -141,7 +141,7 @@ Azure AD Connect является преемником Microsoft Azure Active Di
 
 ![Анализ завершен.](./media/how-to-dirsync-upgrade-get-started/forceexport.png)
 
-После успешного экспорта настроек вы можете закрыть мастер Azure AD Connect на сервере DirSync. Перейдите к следующему шагу, чтобы [установить Azure AD Connect на отдельном сервере](#installation-of-azure-ad-connect-on-separate-server).
+После успешного экспорта настроек вы можете закрыть мастер Azure AD Connect на сервере DirSync. Перейдите к следующему шагу, чтобы установить Azure AD Connect на отдельном сервере.
 
 ### <a name="install-azure-ad-connect-on-separate-server"></a>Установка Azure AD Connect на отдельном сервере
 При установке Azure AD Connect на новом сервере предполагается, что вы хотите выполнить чистую установку Azure AD Connect. Так как вы собираетесь использовать конфигурацию DirSync, необходимо выполнить некоторые дополнительные действия.

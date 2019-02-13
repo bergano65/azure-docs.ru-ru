@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 25e47ecc9d9915ab618bc45f2e95f12bae68c7f0
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: af90a946f12e11602d45300a2796787f839dcf02
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332614"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811092"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Наборы данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -54,7 +54,7 @@ ms.locfileid: "54332614"
     "name": "<name of dataset>",
     "properties": {
         "type": "<type of dataset: AzureBlob, AzureSql etc...>",
-        "external": <boolean flag to indicate external data. only for input datasets>,
+        "external": "<boolean flag to indicate external data. only for input datasets>",
         "linkedServiceName": "<Name of the linked service that refers to a data store.>",
         "structure": [
             {
@@ -86,7 +86,7 @@ ms.locfileid: "54332614"
 | structure |Схема набора данных.<br/><br/>Дополнительные сведения см. в разделе [Структура набора данных](#Structure). |Нет  |Нет данных |
 | typeProperties | Свойства каждого типа отличаются (например, свойства большого двоичного объекта Azure и таблицы SQL Azure). Сведения о поддерживаемых типах и их свойствах см. в разделе [Тип набора данных](#Type). |Yes |Нет данных |
 | external | Этот логический флаг указывает, создается ли набор данных конвейером фабрики данных явным образом. Если входной набор данных для действия не создается текущим конвейером, присвойте этому флагу значение true. Присвойте этому флагу значение true для входного набора данных первого действия в конвейере.  |Нет  |false |
-| availability | Определяет окно обработки (например, каждый час или ежедневно) или модель среза для создания набора данных. Каждая единица данных, потребляемых и создаваемых запуском действия, называется срезом данных. Если для выходного набора данных задана ежедневная доступность (параметр frequency имеет значение Day, а параметр interval имеет значение 1), то срез создается каждый день. <br/><br/>Дополнительные сведения см. в разделе [Доступность набора данных](#Availability). <br/><br/>Дополнительные сведения о модели срезов набора данных см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md). |Yes |Нет данных |
+| availability | Определяет окно обработки (например, каждый час или ежедневно) или модель среза для создания набора данных. Каждая единица данных, потребляемых и создаваемых запуском действия, называется срезом данных. Если для выходного набора данных задана ежедневная доступность (параметр frequency имеет значение Day, а параметр interval имеет значение 1), то срез создается каждый день. <br/><br/>Дополнительные сведения см. в разделе "Доступность набора данных". <br/><br/>Дополнительные сведения о модели срезов набора данных см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md). |Yes |Нет данных |
 | policy |Определяет условия, которым должен соответствовать срез данных. <br/><br/>Дополнительные сведения см. в разделе [Политика наборов данных](#Policy). |Нет  |Нет данных |
 
 ## <a name="dataset-example"></a>Пример набора данных

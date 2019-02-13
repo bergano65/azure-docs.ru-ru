@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 7b43b0e0676cc31938bf64cf84f9e6799c2dd3dd
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 4336cabd256e492981e1bbff8d1b3b9e4ef07df1
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55296611"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820527"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-to-azure-ad"></a>Устранение неполадок синхронизации объекта с Azure AD
 
@@ -143,7 +143,7 @@ ms.locfileid: "55296611"
 Страница журнала используется для проверки состояния синхронизации пароля и просмотра сведений журнала. Дополнительные сведения см. в статье об [устранении неполадок синхронизации хэшей паролей](tshoot-connect-password-hash-synchronization.md).
 
 ## <a name="metaverse-object-properties"></a>Свойства объекта метавселенной
-Как правило, лучше начинать поиск с исходного [пространства соединителя](#connector-space) Active Directory. Но также можно начать поиск с метавселенной.
+Как правило, лучше начинать поиск с исходного пространства соединителя Active Directory. Но также можно начать поиск с метавселенной.
 
 ### <a name="search-for-an-object-in-the-mv"></a>Поиск объекта в метавселенной
 В **Synchronization Service Manager** щелкните **Metaverse Search** (Поиск в метавселенной). Создайте запрос, который точно найдет пользователя. Можно искать по распространенным атрибутам, таким как accountName (sAMAccountName) или userPrincipalName. Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: Synchronization Service Manager](how-to-connect-sync-service-manager-ui-mvsearch.md).
@@ -195,6 +195,5 @@ ms.locfileid: "55296611"
 С этой вкладки также можно перейти к [объекту пространства соединителя](#connector-space-object-properties). Выберите строку и щелкните **Свойства**.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
-
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+- [Синхронизация Azure AD Connect: общие сведения о синхронизации и ее настройка](how-to-connect-sync-whatis.md).
+- [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md).

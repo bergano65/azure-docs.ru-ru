@@ -7,19 +7,30 @@ ms.service: site-recovery
 ms.date: 12/12/2018
 ms.topic: conceptual
 ms.author: asgang
-ms.openlocfilehash: a277e392acb8587e05bb78d1d8dacce40bf91f56
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: bfce998fbabb89d5e9e964bd504571756941afb4
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449560"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55770492"
 ---
 # <a name="common-questions-azure-to-azure-replication"></a>Часто задаваемые вопросы: Репликация Azure — Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при развертывании аварийного восстановления виртуальных машин Azure в другом регионе Azure с помощью Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
 
 
+## <a name="in-this-article"></a>Содержание 
+1.  **[Общие вопросы о службе в Azure](#general)** 
+1.  **[Репликация](#replication)** 
+1.  **[Политика репликации](#replication-policy)** 
+1.  **[Согласованность нескольких виртуальных машин](#multi-vm-consistency)** 
+1.  **[План восстановления](#recovery-plan)** 
+1.  **[Повторное включение защиты и восстановление размещения](#reprotection-and-failback)** 
+1.  **[Безопасность](#security)** 
+
+
 ## <a name="general"></a>Общие сведения
+
 ### <a name="how-is-site-recovery-priced"></a>Как образуются цены на Site Recovery?
 Ознакомьтесь со сведениями о [расценках на Azure Site Recovery](https://azure.microsoft.com/blog/know-exactly-how-much-it-will-cost-for-enabling-dr-to-your-azure-vm/).
 
@@ -198,7 +209,7 @@ Site Recovery имеет Соглашение об уровне обслужив
 ### <a name="how-much-time-does-it-take-to-fail-back"></a>Сколько времени занимает восстановление размещения?
 После повторного включения защиты обычно требуется столько же времени, сколько на отработку отказа из основного региона в дополнительный. 
 
-## <a name="security"></a>Безопасность
+## <a name="a-namesecuritysecurity"></a><a name="security">Безопасность
 ### <a name="is-replication-data-sent-to-the-site-recovery-service"></a>Отправляются ли данные репликации в службу Site Recovery?
 Нет, служба Site Recovery не перехватывает реплицируемые данные и не получает сведения о компонентах, запущенных на ваших виртуальных машинах. В службу Site Recovery передаются только метаданные, необходимые для управления репликацией и отработкой отказа.  
 Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DPA и сейчас проходит проверки на соответствие SOC2 и FedRAMP JAB.

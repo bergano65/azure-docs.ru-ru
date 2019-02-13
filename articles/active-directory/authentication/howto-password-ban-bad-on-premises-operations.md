@@ -5,23 +5,23 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: article
-ms.date: 11/02/2018
+ms.date: 02/01/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
-ms.openlocfilehash: 8d7002a014fc6cfab1888a6bc97c0f864de1d99d
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: a77a6dd8b408fd8151cb12b7d0269b8890ef929b
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55080877"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55662420"
 ---
 # <a name="preview-azure-ad-password-protection-operational-procedures"></a>Предварительный просмотр: операционные процедуры службы защиты паролем Azure AD
 
 |     |
 | --- |
-| Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 После завершения локальной [установки службы защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md) необходимо настроить несколько параметров на портале Azure.
@@ -33,7 +33,7 @@ ms.locfileid: "55080877"
 ## <a name="enable-password-protection"></a>Включение защиты паролем
 
 1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **Способы проверки подлинности**, а затем выберите **Защита паролем (предварительная версия)**.
-1. Для параметра **Enable password protection on Windows Server Active Directory** (Включить защиту паролем в Windows Server Active Directory) выберите значение **Да**.
+1. Для параметра **Включить защиту паролем в Windows Server Active Directory** выберите значение **Да**.
 1. Как упоминалось в [руководстве по развертыванию](howto-password-ban-bad-on-premises-deploy.md#deployment-strategy), рекомендуется изначально выбрать **режим** **Аудит**.
    * Ознакомившись с возможностями этого компонента, вы сможете переключиться на **режим** **Применено**.
 1. Нажмите кнопку **Сохранить**
@@ -63,47 +63,6 @@ ms.locfileid: "55080877"
 
 Как правило, этот параметр должен оставаться во включенном состоянии по умолчанию (Да). Если отключить этот параметр (то есть выбрать значение "Нет"), то все развернутые агенты контроллера домена защиты паролем Azure AD перейдут в режим бездействия, в котором все пароли принимаются "как есть" и какие-либо действия проверки не выполняются ни при каких обстоятельствах (например, даже не создаются события аудита).
 
-## <a name="usage-reporting"></a>Отчеты об использовании
-
-С помощью командлета `Get-AzureADPasswordProtectionSummaryReport` можно создать сводное представление о действиях. Пример выходных данных этого командлета выглядит следующим образом:
-
-```PowerShell
-Get-AzureADPasswordProtectionSummaryReport -DomainController bplrootdc2
-DomainController                : bplrootdc2
-PasswordChangesValidated        : 6677
-PasswordSetsValidated           : 9
-PasswordChangesRejected         : 10868
-PasswordSetsRejected            : 34
-PasswordChangeAuditOnlyFailures : 213
-PasswordSetAuditOnlyFailures    : 3
-PasswordChangeErrors            : 0
-PasswordSetErrors               : 1
-```
-
-Область, охватываемую отчетом этого командлета, можно указать с помощью параметра -Forest, -Domain или -DomainController. Если этот параметр не указан, используется параметр -Forest.
-
-> [!NOTE]
-> Для выполнения этого командлета на каждом контроллере домена запускается сеанс PowerShell. Для успешного выполнения на каждом контроллере домена необходимо включить поддержку удаленных сеансов PowerShell, а клиент должен иметь достаточные привилегии. Чтобы получить дополнительные сведения о требованиях к удаленным сеансам PowerShell, выполните командлет Get-Help about_Remote_Troubleshooting в окне PowerShell.
-
-> [!NOTE]
-> Этот командлет удаленно запрашивает журнал событий администратора для каждого службы агента контроллера домена. Если журналы событий содержат большое количество событий, выполнение командлета может занять много времени. Кроме того, пакетные сетевые запросы для передачи больших наборов данных могут повлиять на производительность контроллера домена. Поэтому данный командлет следует осмотрительно использовать в рабочих средах.
-
-## <a name="dc-agent-discovery"></a>Обнаружение агента контроллера домена
-
-Командлет `Get-AzureADPasswordProtectionDCAgent` может использоваться для отображения базовой информации о различных агентах контроллера домена, работающих в домене или лесу. Эта информация извлекается из объектов serviceConnectionPoint, зарегистрированных запущенными службами агента контроллера домена. Пример выходных данных этого командлета выглядит следующим образом:
-
-```PowerShell
-Get-AzureADPasswordProtectionDCAgent
-ServerFQDN            : bplChildDC2.bplchild.bplRootDomain.com
-Domain                : bplchild.bplRootDomain.com
-Forest                : bplRootDomain.com
-Heartbeat             : 2/16/2018 8:35:01 AM
-```
-
-Различные свойства обновляются каждой службой агента контроллера домена приблизительно каждый час. Данные по-прежнему зависят от задержки репликации Active Directory.
-
-На объем запроса командлета может влиять использование параметров -Forest или -Domain.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Устранение неполадок и мониторинг службы защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
+[Preview: Azure AD Password Protection monitoring and logging](howto-password-ban-bad-on-premises-monitor.md) (Предварительная версия. Мониторинг и ведение журнала службы защиты паролем Azure AD)

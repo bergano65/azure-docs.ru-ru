@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/29/2018
+ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 2a97c55c7caa7b0b2c4aa10b01abd2714b8ace7a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: a74b3ba4fe9f12ce9d205b3865435edfb99566a8
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458539"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55693706"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 
@@ -165,6 +165,8 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
     <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
+
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 

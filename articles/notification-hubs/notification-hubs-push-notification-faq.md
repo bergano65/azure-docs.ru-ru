@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: jowargo
-ms.openlocfilehash: 7e31f4f229e722d51f5de6b133e70dfb1c013533
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 7f1a1bd22ecd0b0a7ab64e639683ae316742c5f0
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888164"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563989"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -80,7 +80,7 @@ ms.locfileid: "54888164"
 
 ### <a name="which-client-platforms-do-you-support"></a>Какие клиентские платформы вы поддерживаете?
 
-Push-уведомления поддерживаются на платформах [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-gcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и [Android](xamarin-notification-hubs-push-notifications-android-gcm.md)), [приложения Chrome](notification-hubs-chrome-push-notifications-get-started.md) и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
+Push-уведомления поддерживаются на платформах [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android), в [приложениях Chrome](notification-hubs-chrome-push-notifications-get-started.md) и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
 
@@ -144,7 +144,7 @@ Push-уведомления поддерживаются на платформа
 
 #### <a name="geo-distribution"></a>Географическое распределение
 
-Географическое распределение не всегда является критически важным для push-уведомлений. Различные службы PNS (например, APNS или GCM), которые доставляют push-уведомления на устройства, распределены неравномерно.
+Географическое распределение не всегда является критически важным для push-уведомлений. Различные службы PNS (например, APNS или FCM), которые доставляют push-уведомления на устройства, распределены неравномерно.
 
 Однако при наличии приложения, которое используется глобально, вы можете создать Центры в разных пространствах имен с помощью службы Центров уведомлений в разных регионах Azure по всему миру.
 
@@ -207,7 +207,7 @@ Push-уведомления поддерживаются на платформа
 Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портал Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [Метрики].
 
 > [!NOTE]
-> Успешная доставка уведомлений означает только то, что push-уведомления доставлены во внешнюю службу PNS (например, APNS для Apple или GCM для Google). Службы PNS отвечают за доставку уведомлений на целевые устройства. Как правило, служба PNS не предоставляет метрики доставки третьим лицам.  
+> Успешная доставка уведомлений означает только то, что push-уведомления доставлены во внешнюю службу PNS (например, APNS для Apple или FCM для Google). Службы PNS отвечают за доставку уведомлений на целевые устройства. Как правило, служба PNS не предоставляет метрики доставки третьим лицам.  
 
 Центры уведомлений также предоставляют возможность экспортировать данные телеметрии программным путем (на уровне "Стандартный"). Дополнительные сведения см. в статье [Fetch Notification Hubs Telemetry Programmatically] (Получение данных телеметрии Центров уведомлений программным путем).
 

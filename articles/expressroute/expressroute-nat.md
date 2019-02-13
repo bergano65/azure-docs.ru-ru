@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/08/2018
+ms.date: 01/30/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 4aa1b170b0c0c515faa67118772ad14d34c7276b
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 508a20e826c2f7bf1260bde6858eb4472c16a5c0
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278259"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55496537"
 ---
 # <a name="expressroute-nat-requirements"></a>Требования ExpressRoute к NAT
 Для подключения к облачным службам Майкрософт с помощью ExpressRoute необходима настройка и управление NAT. Некоторые поставщики услуг подключения предлагают настройку NAT как управляемой службы и управление этой службой. Узнайте у поставщика услуг подключения, предоставляет ли он такую услугу. В противном случае необходимо выполнить требования, описанные ниже. 
@@ -41,6 +41,11 @@ ms.locfileid: "53278259"
 ![Асимметричная маршрутизация с помощью ExpressRoute](./media/expressroute-asymmetric-routing/AsymmetricRouting2.png)
 
 ## <a name="nat-requirements-for-azure-public-peering"></a>Требования к NAT для общедоступного пиринга Azure
+
+> [!NOTE]
+> Общедоступный пиринг Azure не рекомендуется для новых каналов.
+> 
+
 Путь общедоступного пиринга Azure позволяет подключаться ко всем службам, размещенным в Azure, по их открытым IP-адресам. Сюда входят службы, перечисленные в статье [Вопросы и ответы по ExpessRoute](expressroute-faqs.md), а также все службы, размещенные независимыми поставщиками программного обеспечения в Microsoft Azure. 
 
 > [!IMPORTANT]

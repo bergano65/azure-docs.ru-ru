@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: lastcoolnameleft
-ms.openlocfilehash: 36e87550c90c1a5d4b05aa62f2fbe79b04b25445
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 9958f5f0f1435af231c1426a249c745f4a2352c5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382439"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816617"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -21,11 +21,11 @@ ms.locfileid: "54382439"
 Эта статья содержит рекомендации по планированию непрерывности бизнес-процессов и аварийного восстановления в AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-* [планирование развертывания кластеров AKS в нескольких регионах](#region-planning);
-* [маршрутизация трафика между несколькими кластерами с помощью диспетчера трафика Azure](#ingress-traffic);
-* [применение георепликации для реестров образов контейнеров](#container-registry);
-* [планирование сохранения состояния приложений между несколькими кластерами](#managing-application-state);
-* [репликация хранилища между несколькими регионами](#storage).
+* планирование развертывания кластеров AKS в нескольких регионах;
+* маршрутизация трафика между несколькими кластерами с помощью диспетчера трафика Azure;
+* применение георепликации для реестров образов контейнеров;
+* планирование сохранения состояния приложений между несколькими кластерами;
+* репликация хранилища между несколькими регионами.
 
 ## <a name="plan-for-multi-region-deployment"></a>Планирование развертывания в нескольких регионах
 

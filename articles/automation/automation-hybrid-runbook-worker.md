@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/25/2018
+ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1671a068611d9f5842c2cb09f3b83b18dd483921
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d61b39eb0a7b6a35330e0cde2142029b8eb7ce03
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54820688"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55512216"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -51,13 +51,13 @@ ms.locfileid: "54820688"
 В зависимости от необходимости можно удалить одну или несколько гибридных рабочих ролей Runbook из группы либо удалить группу. Чтобы удалить гибридную рабочую роль Runbook на локальном компьютере, сделайте следующее:
 
 1. На портале Azure перейдите в свою учетную запись в службе автоматизации.
-2. В разделе **Параметры** выберите **Ключи** и запишите значения **URL-адреса** и **Первичного ключа доступа**. Эти сведения потребуются для выполнения следующего шага.
+2. В разделе **Параметры учетной записи** выберите **Ключи** и запишите значения **URL-адреса** и **первичного ключа доступа**. Эти сведения потребуются для выполнения следующего шага.
 
 ### <a name="windows"></a> Windows
 
 Откройте сеанс PowerShell в режиме администратора и выполните следующую команду. Получить подробный журнал процедуры удаления можно с помощью параметра **-Verbose** .
 
-```powershell
+```powershell-interactive
 Remove-HybridRunbookWorker -url <URL> -key <PrimaryAccessKey>
 ```
 
@@ -68,6 +68,8 @@ Remove-HybridRunbookWorker -url <URL> -key <PrimaryAccessKey> -machineName <Comp
 ```
 
 ### <a name="linux"></a>Linux
+
+Вы можете использовать команду `ls /var/opt/microsoft/omsagent` в гибридной рабочей роли Runbook для получения идентификатора рабочей области. В каталоге есть папка, имя которой является идентификатором рабочей области.
 
 ```bash
 sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessKey>" --groupname="Example" --workspaceid="<workspaceId>"
@@ -81,11 +83,11 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 Чтобы удалить группу, необходимо сначала удалить гибридную рабочую роль Runbook с помощью показанной выше процедуры с каждого компьютера, который является участником этой группы. Затем выполните указанные ниже действия для удаления группы:
 
 1. На портале Azure откройте учетную запись службы автоматизации.
-1. В разделе **Автоматизация процессов** выберите пункт **Группы гибридных рабочих ролей**. Выберите группу, которую нужно удалить. Откроется страница свойств этой группы.
+2. В разделе **Автоматизация процессов** выберите пункт **Группы гибридных рабочих ролей**. Выберите группу, которую нужно удалить. Откроется страница свойств этой группы.
 
    ![Страница свойств](media/automation-hybrid-runbook-worker/automation-hybrid-runbook-worker-group-properties.png)
 
-1. На странице свойств выбранной группы выберите **Удалить**. Появится сообщение с запросом на подтверждение этого действия. Выберите **Да**, если хотите продолжить.
+3. На странице свойств выбранной группы выберите **Удалить**. Появится сообщение с запросом на подтверждение этого действия. Выберите **Да**, если хотите продолжить.
 
    ![Сообщение с подтверждением](media/automation-hybrid-runbook-worker/automation-hybrid-runbook-worker-confirm-delete.png)
 

@@ -6,23 +6,23 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/14/2019
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 531ba32125479528b1a847b32d711049e699dda0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 5ad77b0c88c71860db939feecac5a1aecfc4ca40
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191667"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756292"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
 Модуль PowerShell [ADSyncConfig.psm1](reference-connect-adsyncconfig.md) был представлен в сборке 1.1.880.0 (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для развертывания соединителя Azure AD. 
 
 ## <a name="overview"></a>Обзор 
-Чтобы настроить разрешения Active Directory для учетной записи соединителя AD DS, можно использовать следующие командлеты PowerShell. Их можно использовать для каждой функции, какую вы будто бы включаете в Azure AD Connect. Чтобы избежать проблем, следует заранее подготовлять разрешения Active Directory каждый раз, когда вы хотите установить Azure AD Connect, используя личный домен для подключения к вашему лесу. Модуль ADSyncConfig также можно использовать для настройки разрешений после развертывания Azure AD Connect.
+Чтобы настроить разрешения Active Directory для учетной записи соединителя AD DS, можно использовать следующие командлеты PowerShell. Их можно использовать для каждой функции, какую вы включаете в Azure AD Connect. Чтобы избежать проблем, следует заранее подготовлять разрешения Active Directory каждый раз, когда вы хотите установить Azure AD Connect, используя личный домен для подключения к вашему лесу. Модуль ADSyncConfig также можно использовать для настройки разрешений после развертывания Azure AD Connect.
 
 ![](media/how-to-connect-configure-ad-ds-connector-account/configure1.png)
 

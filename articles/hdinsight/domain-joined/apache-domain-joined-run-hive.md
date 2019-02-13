@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 51e9d12d9f8801102997266cfd6699a367b11126
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 8effa84c9d7adc14060fb00fae9915a04c1d04cc
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435521"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821224"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
 Узнайте, как настроить политики Apache Ranger для Apache Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
@@ -45,7 +45,7 @@ ms.locfileid: "53435521"
 
 **Создание политик Ranger**
 
-1. Откройте пользовательский интерфейс администратора Ranger. См. раздел [Подключение к пользовательскому интерфейсу администратора Apache Ranger](#connect-to-apache-ranager-admin-ui).
+1. Откройте пользовательский интерфейс администратора Ranger. Ознакомьтесь с разделом "Подключение к пользовательскому интерфейсу администратора Apache Ranger".
 2. Щелкните **&lt;имя_кластера>_hive** в разделе **Hive**. Отобразятся две предварительно настроенные политики.
 3. Щелкните **Добавить новую политику**, а затем введите следующие значения.
 

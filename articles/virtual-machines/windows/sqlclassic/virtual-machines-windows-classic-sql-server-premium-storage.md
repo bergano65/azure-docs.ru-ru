@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: df3f4dc163f94ddab08ecdad7f8d4cc625b8917d
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: cbb15ff084c3639be801458d071f3966873c2509
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300274"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815665"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
 ## <a name="overview"></a>Обзор
@@ -1191,7 +1191,7 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 
 После возобновления перенесенной вторичной реплики и добавления нового ресурса IP-адреса для новой облачной службы перед переходом существующего основного сервера на другой ресурс, необходимо выполнить указанные ниже действия в диспетчере отказоустойчивости кластеров.
 
-Чтобы добавить IP-адрес, см. [приложение](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage), шаг 14.
+Чтобы добавить IP-адрес, ознакомьтесь с шагом 14 в Приложении.
 
 1. Для текущего ресурса IP-адреса измените возможного владельца на существующий сервер-источник SQL Server (в примере — dansqlams4):
 

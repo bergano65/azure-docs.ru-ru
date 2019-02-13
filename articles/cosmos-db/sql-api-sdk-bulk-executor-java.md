@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 11/21/2018
 ms.author: ramkris
-ms.openlocfilehash: 956f2f723703e0263739ad57ebcb8215db634269
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 790aba3f523cadce97caa4c5c044276c349e6045
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040682"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55769310"
 ---
 # <a name="java-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для Java: информация о скачивании
 
@@ -31,18 +31,12 @@ ms.locfileid: "54040682"
 > * [Массовый исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Массовый исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
 
-<table>
-
-<tr><td>**Описание**</td><td>Библиотека массового исполнителя позволяет клиентским приложениям выполнять массовые операции в учетных записях Azure Cosmos DB. Библиотека массового исполнителя предоставляет пространства имен BulkImport и BulkUpdate. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль BulkUpdate позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos DB в качестве исправлений.</td></tr>
-
-<tr><td>**Скачивание пакета SDK**</td><td>[Maven](https://search.maven.org/#search%7Cga%7C1%7Cdocumentdb-bulkexecutor)</td></tr>
-
-<tr><td>**Библиотека BulkExecutor в GitHub**</td><td>[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)</td></tr>
-
-<tr><td>**Документация по API**</td><td>[Справочная документация по API .NET](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.bulkexecutor)</td></tr>
-
-<tr><td>**Начало работы**</td><td>[Начало работы с пакетом SDK для Java для библиотеки массового исполнителя](bulk-executor-java.md)</td></tr>
-
-<tr><td>**Минимальная поддерживаемая среда выполнения**</td><td>[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)</td></tr>
-</table></br>
+| |  |
+|---|---|
+|**Описание**|Библиотека массового исполнителя позволяет клиентским приложениям выполнять массовые операции в учетных записях Azure Cosmos DB. Библиотека массового исполнителя предоставляет пространства имен BulkImport и BulkUpdate. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль BulkUpdate позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos DB в качестве исправлений.|
+|**Скачивание пакета SDK**|[Maven](https://search.maven.org/#search%7Cga%7C1%7Cdocumentdb-bulkexecutor)|
+|**Библиотека BulkExecutor в GitHub**|[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)|
+| **Документация по API**| [Справочная документация по API .NET](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.bulkexecutor)|
+|**Начало работы**|Начало работы с пакетом SDK для Java для библиотеки массового исполнителя](bulk-executor-java.md)|
+|**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
 

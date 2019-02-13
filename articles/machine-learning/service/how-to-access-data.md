@@ -1,7 +1,7 @@
 ---
-title: Доступ к данным в хранилищам данных для обучения
+title: Доступ к данным в хранилищах данных или больших двоичных объектах для обучения
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать хранилища данных для доступа к данным во время обучения с помощью Службы машинного обучения Azure.
+description: Узнайте, как использовать хранилища данных BLOB-объектов для доступа к данным во время обучения с помощью Службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 09/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: a4960f3e29011948ec30fbc24222d8a6dccf6b8a
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 759ae1c077a2c93ee4450843a796b84d95701a10
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252121"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55769901"
 ---
 # <a name="access-data-during-training-from-your-datastores"></a>Доступ к данным в хранилище данных во время обучения
 Чтобы получить доступ к данным или взаимодействию с ними в рабочих процессах машинного обучения Azure, используйте хранилище данных.
@@ -76,8 +76,8 @@ ds = Datastore.get(ws, datastore_name='your datastore name')
 
 Также можно получить все хранилища данных для рабочей области:
 ```Python
-datastores = ws.datastores()
-for name, ds in datastores.items(),
+datastores = ws.datastores
+for name, ds in datastores.items():
     print(name, ds.datastore_type)
 ```
 

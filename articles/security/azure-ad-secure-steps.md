@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: 3e2fa822698f3888e1168ab7773d87e41db9eb5c
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: f0b76e54da60396e01b5893b143bcee9048e2184
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165651"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750330"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -38,7 +38,7 @@ ms.locfileid: "52165651"
 
 ![Оценка безопасности удостоверений](media/azure-ad/azure-ad-sec-steps0.png)
 
-## <a name="before-you-begin-protect-privileged-accounts-with-mfa"></a>Перед началом работы: защита привилегированных учетных записей с помощью многофакторной идентификации
+## <a name="before-you-begin-protect-privileged-accounts-with-mfa"></a>Перед началом работы Защита привилегированных учетных записей с помощью Многофакторной идентификации
 
 Перед выполнением задач в этом контрольном списке убедитесь, что во время чтения этого списка ваша безопасность не пострадает. Сначала необходимо защитить привилегированные учетные записи.
 
@@ -99,7 +99,7 @@ ms.locfileid: "52165651"
 
 1. Блокировка [устаревшей проверки подлинности (если используются службы AD FS)](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12).
 2. Настройка [SharePoint Online и Exchange Online для использования современных способов проверки подлинности](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
-3. Использование [политик условного доступа для блокировки устаревших видов проверки подлинности](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication).
+3. Использование [политик условного доступа для блокировки устаревших видов проверки подлинности](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-conditions).
 
 ### <a name="block-invalid-authentication-entry-points"></a>Блокировка недопустимых точек входа для проверки подлинности
 

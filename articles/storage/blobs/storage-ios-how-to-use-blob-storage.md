@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: michaelhauss
 ms.subservice: blobs
-ms.openlocfilehash: 9e4c717b3b205d6c8fdd309dada918eb6df35181
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 65ecaaea09c28c31d76f31dc447108273b379f9e
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244769"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811670"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
@@ -162,7 +162,7 @@ ms.locfileid: "55244769"
 ```
 
 ## <a name="upload-a-blob-into-a-container"></a>Отправка BLOB-объекта в контейнер
-Как упоминалось в разделе [Основные понятия службы BLOB-объектов](#blob-service-concepts), хранилище BLOB-объектов может содержать три разных типа BLOB-объектов: блочные BLOB-объекты, BLOB-объекты добавления и страничные BLOB-объекты. Библиотека iOS хранилища Azure поддерживает все три типа BLOB-объектов. В большинстве случаев рекомендуется использовать блочные BLOB-объекты.
+Как упоминалось в разделе об основных понятиях службы BLOB-объектов, хранилище BLOB-объектов может содержать три разных типа BLOB-объектов: блочные BLOB-объекты, BLOB-объекты добавления и страничные BLOB-объекты. Библиотека iOS хранилища Azure поддерживает все три типа BLOB-объектов. В большинстве случаев рекомендуется использовать блочные BLOB-объекты.
 
 В следующем примере показано, как отправить блочный BLOB-объект из NSString. Если BLOB-объект с таким именем уже существует в этом контейнере, содержимое этого объекта будет перезаписано.
 

@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/17/2018
+ms.date: 02/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 5e080614d4f0001a0bf1b44dd402f37db2463e03
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: b8c6ac78447a4e4db79ed75100222eee8d528b58
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39206695"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55696903"
 ---
 # <a name="manage-access-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом с помощью RBAC и шаблонов Azure Resource Manager
 
@@ -92,16 +92,18 @@ ms.locfileid: "39206695"
 
 ## <a name="deploy-template-using-azure-powershell"></a>Развертывание шаблона с помощью Azure PowerShell
 
+[!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
+
 Чтобы развернуть предыдущий шаблон с помощью Azure PowerShell, выполните такие действия.
 
 1. Создайте файл с именем rbac rg.json и скопируйте предыдущий шаблон.
 
 1. Войдите в [Azure PowerShell](/powershell/azure/authenticate-azureps).
 
-1. Получите уникальный идентификатор пользователя, группы или приложения. Например, чтобы получить список пользователей Azure AD, можно использовать команду [Get-AzureRmADUser](/powershell/module/azurerm.resources/get-azurermaduser).
+1. Получите уникальный идентификатор пользователя, группы или приложения. Например, чтобы получить список пользователей Azure AD, можно использовать команду [Get-AzADUser](/powershell/module/az.resources/get-azaduser).
 
     ```azurepowershell
-    Get-AzureRmADUser
+    Get-AzADUser
     ```
 
 1. Используйте средство GUID для создания уникального идентификатора, который будет использоваться для назначения роли. Этот идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`
@@ -109,21 +111,21 @@ ms.locfileid: "39206695"
 1. Создайте пример группы ресурсов.
 
     ```azurepowershell
-    New-AzureRmResourceGroup -Name ExampleGroup -Location "Central US"
+    New-AzResourceGroup -Name ExampleGroup -Location "Central US"
     ```
 
-1. Чтобы начать развертывание, используйте команду [New-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment).
+1. Чтобы начать развертывание, используйте команду [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
     ```azurepowershell
-    New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-rg.json
+    New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-rg.json
     ```
 
     Вам будет предложено указать необходимые параметры. Ниже приведен пример выходных данных.
 
     ```Output
-    PS /home/user> New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-rg.json
+    PS /home/user> New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-rg.json
     
-    cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
+    cmdlet New-AzResourceGroupDeployment at command pipeline position 1
     Supply values for the following parameters:
     (Type !? for Help.)
     principalId: 22222222-2222-2222-2222-222222222222

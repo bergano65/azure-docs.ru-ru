@@ -7,19 +7,19 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: b5f0a2a418c53a5049ebff9bba9188219a9aeb13
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 16c37f5ccaed7c161ecaae65a07c5da7400aad3c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321183"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815085"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления Hyper-V в Azure
 
 Программу командной строки (ASRDeploymentPlanner.exe) для планировщика развертывания Site Recovery можно запустить в любом из следующих четырех режимов: 
--   [Получение списка виртуальных машин](#get-vm-list-for-profiling-hyper-v-vms).
+-   Получение списка виртуальных машин
 -   [Профиль](#profile-hyper-v-vms)
--   [Создание отчета](#generate-report).
+-   Создание отчета
 -   [Получение данных пропускной способности](#get-throughput).
 
 Сначала запустите планировщик, чтобы получить список виртуальных машин из одного или нескольких узлов Hyper-V. Затем запустите программу в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите его в режиме создания отчетов, чтобы оценить требования к пропускной способности сети и хранилищу.
@@ -74,7 +74,7 @@ ASRDeploymentPlanner.exe -Operation GetVMList -Directory "E:\Hyper-V_ProfiledDat
 Программа легко обрабатывает перенос виртуальных машин между узлами в кластере и перенос хранилища в пределах узла.
 
 ### <a name="getting-the-vm-list-to-profile"></a>Получение списка виртуальных машин для профилирования
-Создайте список виртуальных машин для профилирования при помощи операции [GetVMList](#get-vm-list-for-profiling-hyper-v-vms).
+Чтобы создать список виртуальных машин для профилирования, используйте операцию GetVMList.
 
 После создания списка виртуальных машин можно запустить программу в режиме профилирования. 
 

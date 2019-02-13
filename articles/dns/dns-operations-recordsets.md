@@ -14,19 +14,19 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/21/2016
 ms.author: victorh
-ms.openlocfilehash: b89b7885989a5e93d3d292e5cdcff733fed657af
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c60dded96df091b1a715fb7b972e9d7a23608d44
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46990184"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818827"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-azure-powershell"></a>Управление записями и наборами записей DNS в службе DNS Azure с помощью Azure PowerShell
 
 > [!div class="op_single_selector"]
 > * [портал Azure](dns-operations-recordsets-portal.md)
 > * [Классический Azure CLI](dns-operations-recordsets-cli-nodejs.md)
-> * [интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
+> * [Интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье описывается, как управлять записями DNS для зоны DNS с помощью Azure PowerShell. Записями DNS также можно управлять с помощью кроссплатформенного [интерфейса командной строки Azure](dns-operations-recordsets-cli.md) или [портала Azure](dns-operations-recordsets-portal.md).
@@ -50,7 +50,7 @@ ms.locfileid: "46990184"
 
 Для создания наборов записей используется командлет `New-AzureRmDnsRecordSet`. Создавая набор записей, вам нужно определить для него имя, зону, срок жизни (TTL), тип записей и сами создаваемые записи.
 
-Параметры для добавления записей в набор записей зависят от типа набора записей. Например, при использовании набора записей типа A вам нужно указать IP-адрес с использованием параметра `-IPv4Address`. Другие параметры используются для других типов записей (см. [примеры других типов записей](#additional-record-type-examples)).
+Параметры для добавления записей в набор записей зависят от типа набора записей. Например, при использовании набора записей типа A вам нужно указать IP-адрес с использованием параметра `-IPv4Address`. Другие параметры используются для других типов записей (подробные сведения см. в разделе с примерами других типов записей).
 
 В следующем примере создается набор записей с относительным именем www в зоне DNS contoso.com. Полное доменное имя набора записей — www.contoso.com. Тип записи — A, а срок жизни — 3600 секунд. Каждый такой набор содержит одну запись с IP-адресом 1.2.3.4.
 
@@ -236,7 +236,7 @@ $recordsets = Get-AzureRmDnsRecordSet -Zone $zone
 Get-AzureRmDnsRecordSet -Name "www" –ZoneName "contoso.com" -ResourceGroupName "MyResourceGroup" -RecordType A | Add-AzureRmDnsRecordConfig -Ipv4Address "5.6.7.8" | Set-AzureRmDnsRecordSet
 ```
 
-Приведенные выше примеры иллюстрируют добавление записи типа А в существующий набор записей типа A. Аналогичная последовательность операций используется и для добавления записей в наборы записей других типов. Для этого в `Add-AzureRmDnsRecordConfig` нужно просто заменить параметр `-Ipv4Address` параметром, соответствующим нужному типу записи. Как видно в [примерах с другими типами записей](#additional-record-type-examples) (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzureRmDnsRecordConfig`.
+Приведенные выше примеры иллюстрируют добавление записи типа А в существующий набор записей типа A. Аналогичная последовательность операций используется и для добавления записей в наборы записей других типов. Для этого в `Add-AzureRmDnsRecordConfig` нужно просто заменить параметр `-Ipv4Address` параметром, соответствующим нужному типу записи. Как видно в примерах с другими типами записей (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzureRmDnsRecordConfig`.
 
 Наборы записей типа CNAME или SOA не могут содержать более одной записи. Это ограничение определяется общими стандартами DNS, а не Azure DNS.
 
@@ -270,7 +270,7 @@ Get-AzureRmDnsRecordSet -Name "www" –ZoneName "contoso.com" -ResourceGroupName
 Get-AzureRmDnsRecordSet -Name www –ZoneName "contoso.com" -ResourceGroupName "MyResourceGroup" -RecordType A | Remove-AzureRmDnsRecordConfig -Ipv4Address "5.6.7.8" | Set-AzureRmDnsRecordSet
 ```
 
-Поддержку разных типов записей можно реализовать, передав в `Remove-AzureRmDnsRecordSet` соответствующие каждому типу параметры. Как видно в [примерах с другими типами записей](#additional-record-type-examples) (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzureRmDnsRecordConfig`.
+Поддержку разных типов записей можно реализовать, передав в `Remove-AzureRmDnsRecordSet` соответствующие каждому типу параметры. Как видно в примерах с другими типами записей (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzureRmDnsRecordConfig`.
 
 
 ## <a name="modify-an-existing-record-set"></a>Обновление существующего набора записей

@@ -3,7 +3,7 @@ title: Вопросы и ответы об уровне служб "Гиперм
 description: Ответы на распространенные вопросы о Базе данных Azure SQL в уровне службы "Гипермасштабирование", обычно называемой базой данных уровня "Гипермасштабирование".
 services: sql-database
 ms.service: sql-database
-ms.subservice: ''
+ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 470a00e62aba4baf5dd13a9c80a0c72df04a81c8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/06/2019
+ms.openlocfilehash: 3ee952f10cebe374767e0db4a592695eeb1b4417
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478344"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810071"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -222,7 +222,7 @@ Yes
 
 Да. Для миграции можно использовать все имеющиеся технологии миграции, включая BACPAC, репликацию транзакций, загрузку логических данных. Дополнительные сведения см. в статье [Что такое Azure Database Migration Service?](../dms/dms-overview.md).
 
-### <a name="what-is-my-downtown-during-migration-from-an-on-premises-or-virtual-machine-environment-to-hyperscale-and-how-can-i-minimize-it"></a>Что такое простой во время миграции из локальной среды или виртуальной машины на уровень "Гипермасштабирование", и как свести его минимуму
+### <a name="what-is-my-downtime-during-migration-from-an-on-premises-or-virtual-machine-environment-to-hyperscale-and-how-can-i-minimize-it"></a>Что такое простой во время миграции из локальной среды или виртуальной машины на уровень "Гипермасштабирование", и как свести его минимуму
 
 Время простоя такое же, как и время простоя при переносе баз данных в отдельную базу данных в Базе данных Azure SQL. Вы можете использовать [репликацию транзакций](replication-to-sql-database.md#data-migration-scenario
 ), чтобы минимизировать время простоя при миграции баз данных размером до нескольких TБ. Для очень больших баз данных (более 10 ТБ) вы можете перенести данные с помощью ADF, Spark или других технологий перемещения данных.

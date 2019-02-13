@@ -15,17 +15,17 @@ ms.date: 01/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 8626dcb5b5c8eb7e83123eaeadb601e65d52f2c8
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: c49e521e9bf7e04eeda47c6b27c0b63cca653006
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55081234"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699269"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
 
-Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
+Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
 
 ## <a name="built-in-role-descriptions"></a>Описание встроенных ролей
 В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли.
@@ -149,8 +149,8 @@ ms.locfileid: "55081234"
 > | **Действия** |  |
 > | * | Создание ресурсов всех типов и управление ими |
 > | **NotActions** |  |
-> | Microsoft.Authorization/*/Delete | Не может удалять роли и назначения ролей. |
-> | Microsoft.Authorization/*/Write | Не может создавать роли и назначения ролей. |
+> | Microsoft.Authorization/*/Delete | Удаление и назначение ролей. |
+> | Microsoft.Authorization/*/Write | Создание и назначение ролей. |
 > | Microsoft.Authorization/elevateAccess/Action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
 > | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
 > | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы |
@@ -1600,15 +1600,15 @@ ms.locfileid: "55081234"
 > | **NotActions** |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
-> | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита |
-> | Microsoft.Sql/servers/databases/auditingSettings/* | Не может изменять параметры аудита |
+> | Microsoft.Sql/servers/databases/auditingPolicies/* | Изменение политик аудита. |
+> | Microsoft.Sql/servers/databases/auditingSettings/* | Изменение параметров аудита. |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Извлекает записи аудита больших двоичных объектов для базы данных. |
-> | Microsoft.Sql/servers/databases/connectionPolicies/* | Не может изменять политики подключения |
-> | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Не может изменять политики маскирования данных |
+> | Microsoft.Sql/servers/databases/connectionPolicies/* | Изменение политик подключения. |
+> | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Изменение политик маскирования данных. |
 > | Microsoft.Sql/servers/databases/extendedAuditingSettings/* |  |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
-> | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Не может изменять политики оповещения системы безопасности |
-> | Microsoft.Sql/servers/databases/securityMetrics/* | Не может изменять метрики безопасности |
+> | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Изменение политик оповещения системы безопасности. |
+> | Microsoft.Sql/servers/databases/securityMetrics/* | Изменение метрик безопасности. |
 > | Microsoft.Sql/servers/databases/sensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
@@ -1676,23 +1676,23 @@ ms.locfileid: "55081234"
 > | **NotActions** |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
-> | Microsoft.Sql/servers/auditingPolicies/* | Не может изменять политики аудита SQL Server |
-> | Microsoft.Sql/servers/auditingSettings/* | Не может изменять параметры аудита SQL Server |
-> | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита баз данных SQL Server |
-> | Microsoft.Sql/servers/databases/auditingSettings/* | Не может изменять параметры аудита баз данных SQL Server |
-> | Microsoft.Sql/servers/databases/auditRecords/read | Не может читать записи аудита |
-> | Microsoft.Sql/servers/databases/connectionPolicies/* | Не может изменять политики подключения баз данных SQL Server |
-> | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Не может изменять политики маскирования данных баз данных SQL Server |
+> | Microsoft.Sql/servers/auditingPolicies/* | Изменение политик аудита SQL Server. |
+> | Microsoft.Sql/servers/auditingSettings/* | Изменение параметров аудита SQL Server. |
+> | Microsoft.Sql/servers/databases/auditingPolicies/* | Изменение политик аудита баз данных SQL Server. |
+> | Microsoft.Sql/servers/databases/auditingSettings/* | Изменение параметров аудита баз данных SQL Server. |
+> | Microsoft.Sql/servers/databases/auditRecords/read | Чтение записей аудита |
+> | Microsoft.Sql/servers/databases/connectionPolicies/* | Изменение политик подключения баз данных SQL Server. |
+> | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Изменение политик маскирования данных баз данных SQL Server. |
 > | Microsoft.Sql/servers/databases/extendedAuditingSettings/* |  |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
-> | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Не может изменять политики оповещения системы безопасности баз данных SQL Server |
-> | Microsoft.Sql/servers/databases/securityMetrics/* | Не может изменять метрики безопасности баз данных SQL Server |
+> | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Изменение политик оповещения системы безопасности баз данных SQL Server. |
+> | Microsoft.Sql/servers/databases/securityMetrics/* | Изменение метрик безопасности баз данных SQL Server. |
 > | Microsoft.Sql/servers/databases/sensitivityLabels/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
 > | Microsoft.Sql/servers/extendedAuditingSettings/* |  |
-> | Microsoft.Sql/servers/securityAlertPolicies/* | Не может изменять политики оповещения системы безопасности SQL Server |
+> | Microsoft.Sql/servers/securityAlertPolicies/* | Изменение политик оповещения системы безопасности SQL Server. |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
 
 ## <a name="storage-account-contributor"></a>Участник учетной записи хранения

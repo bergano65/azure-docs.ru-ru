@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 03/27/2018
+ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 6fa468308bb7187111a6f7f65366d83eaadd9494
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 7f5dfd9488e6017acfdf66cdb7d4cee3aedd1ab3
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227783"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55699930"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -109,7 +109,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Узнайте больше о настройке нейронного машинного перевода](custom-translator/overview.md)
 
-Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, text, generalnn).
+Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, tech, generalnn).
 
 | |Конечная точка|    Соответствие требованиям процессора GDPR|  Использование Translator Hub| Использование Пользовательского переводчика (предварительная версия)|
 |:-----|:-----|:-----|:-----|:-----|

@@ -12,11 +12,13 @@ items:
     displayName: FAQ
     href: faq.md
   expanded: true
-- name: Учебники
+- name: Быстрое начало работы
   items:
   - name: Создание первого эксперимента
     displayName: quickstart
     href: create-experiment.md
+- name: Учебники
+  items:
   - name: Создание прогнозного решения
     items:
     - name: 1. Создание эксперимента
@@ -145,8 +147,6 @@ items:
       href: retrain-machine-learning-model.md
     - name: Повторное обучение программным образом
       href: retrain-models-programmatically.md
-    - name: Переобучение классической веб-службы
-      href: retrain-a-classic-web-service.md
     - name: Повторное обучение с помощью PowerShell
       href: retrain-new-web-service-using-powershell.md
     - name: Повторное обучение существующей веб-службы
@@ -203,9 +203,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/machine-learning/
   - name: Пользовательские нейронные сети (Net#)
     href: azure-ml-netsharp-reference-guide.md
-ms.openlocfilehash: 8835a25811afb9dbf18a1e76b0f8144d1b3b6b10
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: ac8621773366d7e6dff26f053172e2831fa2d2a1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001789"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211484"

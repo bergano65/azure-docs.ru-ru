@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: 9877698c8c6af68c5ffd88dab37150274ce87b37
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 8a0300eeda49d85ffc08db8f285550e217613dcf
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077340"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821623"
 ---
 # <a name="secure-your-key-vault"></a>Защита хранилища ключей
 
@@ -34,7 +34,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Ниже приведен краткий обзор статьи.
 
-[Проверка подлинности с помощью Azure Active Directory.](#authentication-using-azure-active-directory) В этом разделе объясняется, как вызывающий объект проходит проверку подлинности с помощью Azure Active Directory, чтобы получить доступ к хранилищу ключей через плоскость управления и плоскость данных. 
+Аутентификация с помощью Azure Active Directory. В этом разделе объясняется, как вызывающий объект проходит аутентификацию с помощью Azure Active Directory, чтобы получить доступ к хранилищу ключей через плоскость управления и плоскость данных. 
 
 Для проверки подлинности в обоих плоскостях используется Azure Active Directory (Azure AD). Для авторизации в плоскости управления используется управление доступом на основе ролей (RBAC), а в плоскости данных — политика доступа к Key Vault.
 

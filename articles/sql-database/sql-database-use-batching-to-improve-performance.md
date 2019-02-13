@@ -1,6 +1,6 @@
 ---
 title: Повышение производительности приложений базы данных SQL Azure с помощью пакетной обработки
-description: В разделе предоставлены доказательства того, что пакетная обработка операций базы данных существенно повышает быстродействие и масштабируемость приложений базы данных SQL Azure. Несмотря на то, что эти методы пакетной обработки применимы для любой базы данных SQL Server, основное внимание здесь уделяется базе данных SQL Azure.
+description: В разделе предоставлены доказательства того, что пакетная обработка операций базы данных существенно повышает быстродействие и масштабируемость приложений Базы данных SQL Azure. Несмотря на то, что эти методы пакетной обработки применимы для любой базы данных SQL Server, основное внимание здесь уделяется базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: genemi
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: f347543bbea11329cf4bb7c03dac6ccf7f04ac77
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: b94c5f712469183d64704307316f8bbdaa3d5a11
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455394"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55751639"
 ---
 # <a name="how-to-use-batching-to-improve-sql-database-application-performance"></a>Как повысить производительность приложений базы данных SQL с помощью пакетной обработки
 
@@ -50,42 +50,47 @@ ms.locfileid: "55455394"
 
 Рассмотрим следующий код на языке C#, содержащий последовательность из операций вставки и обновления для простой таблицы.
 
-    List<string> dbOperations = new List<string>();
-    dbOperations.Add("update MyTable set mytext = 'updated text' where id = 1");
-    dbOperations.Add("update MyTable set mytext = 'updated text' where id = 2");
-    dbOperations.Add("update MyTable set mytext = 'updated text' where id = 3");
-    dbOperations.Add("insert MyTable values ('new value',1)");
-    dbOperations.Add("insert MyTable values ('new value',2)");
-    dbOperations.Add("insert MyTable values ('new value',3)");
-
+```csharp
+List<string> dbOperations = new List<string>();
+dbOperations.Add("update MyTable set mytext = 'updated text' where id = 1");
+dbOperations.Add("update MyTable set mytext = 'updated text' where id = 2");
+dbOperations.Add("update MyTable set mytext = 'updated text' where id = 3");
+dbOperations.Add("insert MyTable values ('new value',1)");
+dbOperations.Add("insert MyTable values ('new value',2)");
+dbOperations.Add("insert MyTable values ('new value',3)");
+```
 Следующий фрагмент кода ADO.NET последовательно выполняет эти операции.
 
-    using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
-    {
-        conn.Open();
+```csharp
+using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+{
+    conn.Open();
 
-        foreach(string commandString in dbOperations)
-        {
-            SqlCommand cmd = new SqlCommand(commandString, conn);
-            cmd.ExecuteNonQuery();                   
-        }
+    foreach(string commandString in dbOperations)
+    {
+        SqlCommand cmd = new SqlCommand(commandString, conn);
+        cmd.ExecuteNonQuery();
     }
+}
+```
 
 Лучший способ оптимизации этого кода — реализовывать какую-либо форму клиентской пакетной обработки этих вызовов. Однако есть простой способ повышения производительности этого кода — просто поместить последовательность вызовов в одну транзакцию. Ниже приведен тот же код с использованием транзакции.
 
-    using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+```csharp
+using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+{
+    conn.Open();
+    SqlTransaction transaction = conn.BeginTransaction();
+
+    foreach (string commandString in dbOperations)
     {
-        conn.Open();
-        SqlTransaction transaction = conn.BeginTransaction();
-
-        foreach (string commandString in dbOperations)
-        {
-            SqlCommand cmd = new SqlCommand(commandString, conn, transaction);
-            cmd.ExecuteNonQuery();
-        }
-
-        transaction.Commit();
+        SqlCommand cmd = new SqlCommand(commandString, conn, transaction);
+        cmd.ExecuteNonQuery();
     }
+
+    transaction.Commit();
+}
+```
 
 На самом деле, транзакции используются в обоих этих примерах. В первом примере каждый отдельный вызов — это неявная транзакция. Во втором примере в явную транзакцию включены все вызовы. Согласно документации по [журналу транзакций с упреждающей записью](https://msdn.microsoft.com/library/ms186259.aspx), записи журнала записываются на диск при фиксации транзакции. Таким образом, включая больше вызовов в транзакцию, можно отложить запись в журнал транзакций до момента фиксации транзакции. В действительности реализуется пакетная обработка записей в журнал транзакций сервера.
 
@@ -124,59 +129,66 @@ ms.locfileid: "55455394"
 
 Параметры, которые возвращают табличное значение, поддерживают определяемые пользователем типы таблиц в качестве параметров в инструкциях, хранимых процедурах и функциях Transact-SQL. Этот метод клиентской пакетной обработки позволяет отправить несколько строк данных в рамках параметра, который возвращает табличное значение . Чтобы использовать такие параметры, необходимо сначала определить тип таблицы. Следующая инструкция Transact-SQL создает тип таблицы с именем **MyTableType**.
 
+```sql
     CREATE TYPE MyTableType AS TABLE 
     ( mytext TEXT,
       num INT );
-
+```
 
 В коде создается объект **DataTable** с теми же именами и типами таблиц. Передайте этот экземпляр **DataTable** в качестве параметра в текстовом запросе или вызове хранимой процедуры. Демонстрация этого метода приведена в следующем примере:
 
-    using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+```csharp
+using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+{
+    connection.Open();
+
+    DataTable table = new DataTable();
+    // Add columns and rows. The following is a simple example.
+    table.Columns.Add("mytext", typeof(string));
+    table.Columns.Add("num", typeof(int));
+    for (var i = 0; i < 10; i++)
     {
-        connection.Open();
-
-        DataTable table = new DataTable();
-        // Add columns and rows. The following is a simple example.
-        table.Columns.Add("mytext", typeof(string));
-        table.Columns.Add("num", typeof(int));    
-        for (var i = 0; i < 10; i++)
-        {
-            table.Rows.Add(DateTime.Now.ToString(), DateTime.Now.Millisecond);
-        }
-
-        SqlCommand cmd = new SqlCommand(
-            "INSERT INTO MyTable(mytext, num) SELECT mytext, num FROM @TestTvp",
-            connection);
-
-        cmd.Parameters.Add(
-            new SqlParameter()
-            {
-                ParameterName = "@TestTvp",
-                SqlDbType = SqlDbType.Structured,
-                TypeName = "MyTableType",
-                Value = table,
-            });
-
-        cmd.ExecuteNonQuery();
+        table.Rows.Add(DateTime.Now.ToString(), DateTime.Now.Millisecond);
     }
+
+    SqlCommand cmd = new SqlCommand(
+        "INSERT INTO MyTable(mytext, num) SELECT mytext, num FROM @TestTvp",
+        connection);
+
+    cmd.Parameters.Add(
+        new SqlParameter()
+        {
+            ParameterName = "@TestTvp",
+            SqlDbType = SqlDbType.Structured,
+            TypeName = "MyTableType",
+            Value = table,
+        });
+
+    cmd.ExecuteNonQuery();
+}
+```
 
 В предыдущем примере объект **SqlCommand** вставляет строки из параметра с табличным значением **@TestTvp**. Ранее созданный объект **DataTable** назначается этому параметру методом **SqlCommand.Parameters.Add**. Пакетная обработка операций вставки в рамках одного вызова существенно повышает производительность по сравнению с последовательными вставками.
 
 Чтобы совершенствовать предыдущий пример, используйте хранимую процедуру вместо текстовой команды. Следующая команда Transact-SQL создает хранимую процедуру, которая принимает возвращающий табличное значение параметр **SimpleTestTableType** .
 
-    CREATE PROCEDURE [dbo].[sp_InsertRows] 
-    @TestTvp as MyTableType READONLY
-    AS
-    BEGIN
-    INSERT INTO MyTable(mytext, num) 
-    SELECT mytext, num FROM @TestTvp
-    END
-    GO
+```sql
+CREATE PROCEDURE [dbo].[sp_InsertRows] 
+@TestTvp as MyTableType READONLY
+AS
+BEGIN
+INSERT INTO MyTable(mytext, num) 
+SELECT mytext, num FROM @TestTvp
+END
+GO
+```
 
 Затем измените объявление объекта **SqlCommand** , приведенное в предыдущем примере кода, на следующее:
 
-    SqlCommand cmd = new SqlCommand("sp_InsertRows", connection);
-    cmd.CommandType = CommandType.StoredProcedure;
+```csharp
+SqlCommand cmd = new SqlCommand("sp_InsertRows", connection);
+cmd.CommandType = CommandType.StoredProcedure;
+```
 
 В большинстве случаев параметры, которые возвращают табличное значение, отличаются аналогичной или более высокой производительностью в сравнении с другими методами пакетной обработки. Зачастую такие параметры более предпочтительны, так как они более универсальны в использовании, чем другие способы. Например, такие способы, как массовое копирование SQL, позволяют вставлять только новые строки. Однако с параметрами, которые возвращают табличное значение, можно использовать логику в хранимой процедуре, чтобы определить, какие строки являются вставками, а какие — обновлениями. Кроме того, тип таблицы можно изменить таким образом, чтобы он содержал столбец «Операция», указывающий на действие, которое следует выполнить со строкой (вставка, обновление или удаление).
 
@@ -203,18 +215,20 @@ ms.locfileid: "55455394"
 
 Массовое копирование SQL представляет собой еще один способ вставки больших объемов данных в целевую базу данных. Для выполнения операций массовой вставки в приложениях .NET можно использовать класс **SqlBulkCopy** . Класс **SqlBulkCopy** работает аналогично программе командной строки **Bcp.exe** или инструкции Transact-SQL **BULK INSERT**. В следующем примере кода показано, как выполнить массовое копирование строк из исходной таблицы **DataTable**(table) в целевую таблицу SQL Server (MyTable).
 
-    using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
-    {
-        connection.Open();
+```csharp
+using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+{
+    connection.Open();
 
-        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
-        {
-            bulkCopy.DestinationTableName = "MyTable";
-            bulkCopy.ColumnMappings.Add("mytext", "mytext");
-            bulkCopy.ColumnMappings.Add("num", "num");
-            bulkCopy.WriteToServer(table);
-        }
+    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
+    {
+        bulkCopy.DestinationTableName = "MyTable";
+        bulkCopy.ColumnMappings.Add("mytext", "mytext");
+        bulkCopy.ColumnMappings.Add("num", "num");
+        bulkCopy.WriteToServer(table);
     }
+}
+```
 
 В некоторых случаях вместо параметров, которые возвращают табличное значение, рекомендуется использовать массовое копирование. Сравнительная таблица параметров с табличным значением и операций BULK INSERT приведена в статье [Использование параметров, возвращающих табличные значения (компонент Database Engine)](https://msdn.microsoft.com/library/bb510489.aspx).
 
@@ -241,24 +255,25 @@ ms.locfileid: "55455394"
 
 Альтернатива небольшим пакетам — создание большой параметризованной инструкции INSERT, которая вставляет несколько строк. Использование этого метода показано в следующем примере кода.
 
-    using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+```csharp
+using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
+{
+    connection.Open();
+
+    string insertCommand = "INSERT INTO [MyTable] ( mytext, num ) " +
+        "VALUES (@p1, @p2), (@p3, @p4), (@p5, @p6), (@p7, @p8), (@p9, @p10)";
+
+    SqlCommand cmd = new SqlCommand(insertCommand, connection);
+
+    for (int i = 1; i <= 10; i += 2)
     {
-        connection.Open();
-
-        string insertCommand = "INSERT INTO [MyTable] ( mytext, num ) " +
-            "VALUES (@p1, @p2), (@p3, @p4), (@p5, @p6), (@p7, @p8), (@p9, @p10)";
-
-        SqlCommand cmd = new SqlCommand(insertCommand, connection);
-
-        for (int i = 1; i <= 10; i += 2)
-        {
-            cmd.Parameters.Add(new SqlParameter("@p" + i.ToString(), "test"));
-            cmd.Parameters.Add(new SqlParameter("@p" + (i+1).ToString(), i));
-        }
-
-        cmd.ExecuteNonQuery();
+        cmd.Parameters.Add(new SqlParameter("@p" + i.ToString(), "test"));
+        cmd.Parameters.Add(new SqlParameter("@p" + (i+1).ToString(), i));
     }
 
+    cmd.ExecuteNonQuery();
+}
+```
 
 Этот пример демонстрирует сам принцип. В более реалистичном случае необходимо выполнить цикл с включением необходимых сущностей для одновременного создания строки запроса и параметров команды. Для запроса существует ограничение в 2100 параметров, поэтому общее количество строк, которое можно обработать таким образом, также ограничивается.
 
@@ -378,88 +393,92 @@ ms.locfileid: "55455394"
 
 Следующий класс NavHistoryData моделирует информацию о навигации пользователя. Он содержит основную информацию, например идентификатор пользователя, URL-адрес, к которому получен доступ, а также время доступа.
 
-```c#
-    public class NavHistoryData
-    {
-        public NavHistoryData(int userId, string url, DateTime accessTime)
-        { UserId = userId; URL = url; AccessTime = accessTime; }
-        public int UserId { get; set; }
-        public string URL { get; set; }
-        public DateTime AccessTime { get; set; }
-    }
+```csharp
+public class NavHistoryData
+{
+    public NavHistoryData(int userId, string url, DateTime accessTime)
+    { UserId = userId; URL = url; AccessTime = accessTime; }
+    public int UserId { get; set; }
+    public string URL { get; set; }
+    public DateTime AccessTime { get; set; }
+}
 ```
 
 Класс NavHistoryDataMonitor отвечает за буферизацию данных навигации пользователя в базу данных. Он содержит метод RecordUserNavigationEntry, который отвечает вызовом события **OnAdded** . В следующем коде показано, как логика конструктора использует расширение Rx, чтобы создать наблюдаемую коллекцию на основе события. Затем с помощью метода Buffer реализуется подписка на эту наблюдаемую коллекцию. Перегрузка указывает, что буфер должен отправляться каждые 20 секунд или при достижении 1000 записей.
 
-```c#
+```csharp
+public NavHistoryDataMonitor()
+{
+    var observableData =
+        Observable.FromEventPattern<NavHistoryDataEventArgs>(this, "OnAdded");
+
+    observableData.Buffer(TimeSpan.FromSeconds(20), 1000).Subscribe(Handler);
+}
+```
+
+Обработчик преобразует все буферизованные элементы в тип, который возвращает табличное значение, а затем передает этот тип в хранимую процедуру, которая обрабатывает пакет. В следующем примере кода показаны полные определения для классов NavHistoryDataEventArgs и NavHistoryDataMonitor.
+
+```csharp
+public class NavHistoryDataEventArgs : System.EventArgs
+{
+    public NavHistoryDataEventArgs(NavHistoryData data) { Data = data; }
+    public NavHistoryData Data { get; set; }
+}
+
+public class NavHistoryDataMonitor
+{
+    public event EventHandler<NavHistoryDataEventArgs> OnAdded;
+
     public NavHistoryDataMonitor()
     {
         var observableData =
             Observable.FromEventPattern<NavHistoryDataEventArgs>(this, "OnAdded");
 
-        observableData.Buffer(TimeSpan.FromSeconds(20), 1000).Subscribe(Handler);           
+        observableData.Buffer(TimeSpan.FromSeconds(20), 1000).Subscribe(Handler);
     }
 ```
 
 Обработчик преобразует все буферизованные элементы в тип, который возвращает табличное значение, а затем передает этот тип в хранимую процедуру, которая обрабатывает пакет. В следующем примере кода показаны полные определения для классов NavHistoryDataEventArgs и NavHistoryDataMonitor.
 
-```c#
+```csharp
     public class NavHistoryDataEventArgs : System.EventArgs
     {
-        public NavHistoryDataEventArgs(NavHistoryData data) { Data = data; }
-        public NavHistoryData Data { get; set; }
+        if (OnAdded != null)
+            OnAdded(this, new NavHistoryDataEventArgs(data));
     }
 
-    public class NavHistoryDataMonitor
+    protected void Handler(IList<EventPattern<NavHistoryDataEventArgs>> items)
     {
-        public event EventHandler<NavHistoryDataEventArgs> OnAdded;
-
-        public NavHistoryDataMonitor()
+        DataTable navHistoryBatch = new DataTable("NavigationHistoryBatch");
+        navHistoryBatch.Columns.Add("UserId", typeof(int));
+        navHistoryBatch.Columns.Add("URL", typeof(string));
+        navHistoryBatch.Columns.Add("AccessTime", typeof(DateTime));
+        foreach (EventPattern<NavHistoryDataEventArgs> item in items)
         {
-            var observableData =
-                Observable.FromEventPattern<NavHistoryDataEventArgs>(this, "OnAdded");
-
-            observableData.Buffer(TimeSpan.FromSeconds(20), 1000).Subscribe(Handler);           
+            NavHistoryData data = item.EventArgs.Data;
+            navHistoryBatch.Rows.Add(data.UserId, data.URL, data.AccessTime);
         }
 
-        public void RecordUserNavigationEntry(NavHistoryData data)
-        {    
-            if (OnAdded != null)
-                OnAdded(this, new NavHistoryDataEventArgs(data));
-        }
-
-        protected void Handler(IList<EventPattern<NavHistoryDataEventArgs>> items)
+        using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
         {
-            DataTable navHistoryBatch = new DataTable("NavigationHistoryBatch");
-            navHistoryBatch.Columns.Add("UserId", typeof(int));
-            navHistoryBatch.Columns.Add("URL", typeof(string));
-            navHistoryBatch.Columns.Add("AccessTime", typeof(DateTime));
-            foreach (EventPattern<NavHistoryDataEventArgs> item in items)
-            {
-                NavHistoryData data = item.EventArgs.Data;
-                navHistoryBatch.Rows.Add(data.UserId, data.URL, data.AccessTime);
-            }
+            connection.Open();
 
-            using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
-            {
-                connection.Open();
+            SqlCommand cmd = new SqlCommand("sp_RecordUserNavigation", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlCommand cmd = new SqlCommand("sp_RecordUserNavigation", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(
+                new SqlParameter()
+                {
+                    ParameterName = "@NavHistoryBatch",
+                    SqlDbType = SqlDbType.Structured,
+                    TypeName = "NavigationHistoryTableType",
+                    Value = navHistoryBatch,
+                });
 
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@NavHistoryBatch",
-                        SqlDbType = SqlDbType.Structured,
-                        TypeName = "NavigationHistoryTableType",
-                        Value = navHistoryBatch,
-                    });
-
-                cmd.ExecuteNonQuery();
-            }
+            cmd.ExecuteNonQuery();
         }
     }
+}
 ```
 
 Для использования этого класса буферизации приложение создает статический объект NavHistoryDataMonitor. Каждый раз, когда пользователь обращается к странице, приложение вызывает метод NavHistoryDataMonitor.RecordUserNavigationEntry. Затем выполняется логика буферизации, которая отправляет эти записи в базу данных в виде пакетов.
@@ -469,97 +488,97 @@ ms.locfileid: "55455394"
 Параметры, которые возвращают табличное значение, используются в простых сценариях с использованием инструкции INSERT. Однако этот метод может быть более трудоемким для пакетных вставок при использовании нескольких таблиц. Сценарий с использованием основной или подробной информации хорошо это иллюстрирует. Главная таблица определяет базовую сущность. В одной или нескольких таблицах хранятся дополнительные данные о сущности. В этом случае внешний ключ принудительно устанавливает связь подробной информации с уникальной основной сущностью. Рассмотрим упрощенную версию таблицы PurchaseOrder и связанной с ней таблицы OrderDetail. Следующий сценарий Transact-SQL создает таблицу PurchaseOrder с четырьмя столбцами: OrderID, OrderDate, CustomerID и Status.
 
 ```sql
-    CREATE TABLE [dbo].[PurchaseOrder](
-    [OrderID] [int] IDENTITY(1,1) NOT NULL,
-    [OrderDate] [datetime] NOT NULL,
-    [CustomerID] [int] NOT NULL,
-    [Status] [nvarchar](50) NOT NULL,
-     CONSTRAINT [PrimaryKey_PurchaseOrder] 
-    PRIMARY KEY CLUSTERED ( [OrderID] ASC ))
+CREATE TABLE [dbo].[PurchaseOrder](
+[OrderID] [int] IDENTITY(1,1) NOT NULL,
+[OrderDate] [datetime] NOT NULL,
+[CustomerID] [int] NOT NULL,
+[Status] [nvarchar](50) NOT NULL,
+CONSTRAINT [PrimaryKey_PurchaseOrder] 
+PRIMARY KEY CLUSTERED ( [OrderID] ASC ))
 ```
 
 Каждый заказ содержит информацию об одной или нескольких покупках товара. Эта информация сохраняется в таблице PurchaseOrderDetail. Следующий сценарий Transact-SQL создает таблицу PurchaseOrderDetail с пятью столбцами: OrderID, OrderDetailID, ProductID, UnitPrice и OrderQty.
 
 ```sql
-    CREATE TABLE [dbo].[PurchaseOrderDetail](
-    [OrderID] [int] NOT NULL,
-    [OrderDetailID] [int] IDENTITY(1,1) NOT NULL,
-    [ProductID] [int] NOT NULL,
-    [UnitPrice] [money] NULL,
-    [OrderQty] [smallint] NULL,
-     CONSTRAINT [PrimaryKey_PurchaseOrderDetail] PRIMARY KEY CLUSTERED 
-    ( [OrderID] ASC, [OrderDetailID] ASC ))
+CREATE TABLE [dbo].[PurchaseOrderDetail](
+[OrderID] [int] NOT NULL,
+[OrderDetailID] [int] IDENTITY(1,1) NOT NULL,
+[ProductID] [int] NOT NULL,
+[UnitPrice] [money] NULL,
+[OrderQty] [smallint] NULL,
+CONSTRAINT [PrimaryKey_PurchaseOrderDetail] PRIMARY KEY CLUSTERED 
+( [OrderID] ASC, [OrderDetailID] ASC ))
 ```
 
 Столбец OrderID таблицы PurchaseOrderDetail должен ссылаться на заказ из таблицы PurchaseOrder. Следующее определение внешнего ключа обеспечивает принудительное применение этого ограничения.
 
 ```sql
-    ALTER TABLE [dbo].[PurchaseOrderDetail]  WITH CHECK ADD 
-    CONSTRAINT [FK_OrderID_PurchaseOrder] FOREIGN KEY([OrderID])
-    REFERENCES [dbo].[PurchaseOrder] ([OrderID])
+ALTER TABLE [dbo].[PurchaseOrderDetail]  WITH CHECK ADD 
+CONSTRAINT [FK_OrderID_PurchaseOrder] FOREIGN KEY([OrderID])
+REFERENCES [dbo].[PurchaseOrder] ([OrderID])
 ```
 
 Чтобы использовать параметры, которые возвращают табличное значение, необходимо иметь по одному пользовательскому типу таблицы для каждой целевой таблицы.
 
 ```sql
-    CREATE TYPE PurchaseOrderTableType AS TABLE 
-    ( OrderID INT,
-      OrderDate DATETIME,
-      CustomerID INT,
-      Status NVARCHAR(50) );
-    GO
+CREATE TYPE PurchaseOrderTableType AS TABLE 
+( OrderID INT,
+    OrderDate DATETIME,
+    CustomerID INT,
+    Status NVARCHAR(50) );
+GO
 
-    CREATE TYPE PurchaseOrderDetailTableType AS TABLE 
-    ( OrderID INT,
-      ProductID INT,
-      UnitPrice MONEY,
-      OrderQty SMALLINT );
-    GO
+CREATE TYPE PurchaseOrderDetailTableType AS TABLE 
+( OrderID INT,
+    ProductID INT,
+    UnitPrice MONEY,
+    OrderQty SMALLINT );
+GO
 ```
 
 Затем определите хранимую процедуру, которая принимает таблицы этих типов. Эта процедура позволяет приложению выполнять локальную пакетную обработку набора заказов и информации о них в одном вызове. Следующий сценарий Transact-SQL позволяет выполнить полное объявление хранимой процедуры для этого примера заказа на покупку.
 
 ```sql
-    CREATE PROCEDURE sp_InsertOrdersBatch (
-    @orders as PurchaseOrderTableType READONLY,
-    @details as PurchaseOrderDetailTableType READONLY )
-    AS
-    SET NOCOUNT ON;
+CREATE PROCEDURE sp_InsertOrdersBatch (
+@orders as PurchaseOrderTableType READONLY,
+@details as PurchaseOrderDetailTableType READONLY )
+AS
+SET NOCOUNT ON;
 
-    -- Table that connects the order identifiers in the @orders
-    -- table with the actual order identifiers in the PurchaseOrder table
-    DECLARE @IdentityLink AS TABLE ( 
-    SubmittedKey int, 
-    ActualKey int, 
-    RowNumber int identity(1,1)
-    );
+-- Table that connects the order identifiers in the @orders
+-- table with the actual order identifiers in the PurchaseOrder table
+DECLARE @IdentityLink AS TABLE ( 
+SubmittedKey int, 
+ActualKey int, 
+RowNumber int identity(1,1)
+);
 
-          -- Add new orders to the PurchaseOrder table, storing the actual
-    -- order identifiers in the @IdentityLink table   
-    INSERT INTO PurchaseOrder ([OrderDate], [CustomerID], [Status])
-    OUTPUT inserted.OrderID INTO @IdentityLink (ActualKey)
-    SELECT [OrderDate], [CustomerID], [Status] FROM @orders ORDER BY OrderID;
+-- Add new orders to the PurchaseOrder table, storing the actual
+-- order identifiers in the @IdentityLink table   
+INSERT INTO PurchaseOrder ([OrderDate], [CustomerID], [Status])
+OUTPUT inserted.OrderID INTO @IdentityLink (ActualKey)
+SELECT [OrderDate], [CustomerID], [Status] FROM @orders ORDER BY OrderID;
 
-    -- Match the passed-in order identifiers with the actual identifiers
-    -- and complete the @IdentityLink table for use with inserting the details
-    WITH OrderedRows As (
-    SELECT OrderID, ROW_NUMBER () OVER (ORDER BY OrderID) As RowNumber 
-    FROM @orders
-    )
-    UPDATE @IdentityLink SET SubmittedKey = M.OrderID
-    FROM @IdentityLink L JOIN OrderedRows M ON L.RowNumber = M.RowNumber;
+-- Match the passed-in order identifiers with the actual identifiers
+-- and complete the @IdentityLink table for use with inserting the details
+WITH OrderedRows As (
+SELECT OrderID, ROW_NUMBER () OVER (ORDER BY OrderID) As RowNumber 
+FROM @orders
+)
+UPDATE @IdentityLink SET SubmittedKey = M.OrderID
+FROM @IdentityLink L JOIN OrderedRows M ON L.RowNumber = M.RowNumber;
 
-    -- Insert the order details into the PurchaseOrderDetail table, 
-          -- using the actual order identifiers of the master table, PurchaseOrder
-    INSERT INTO PurchaseOrderDetail (
-    [OrderID],
-    [ProductID],
-    [UnitPrice],
-    [OrderQty] )
-    SELECT L.ActualKey, D.ProductID, D.UnitPrice, D.OrderQty
-    FROM @details D
-    JOIN @IdentityLink L ON L.SubmittedKey = D.OrderID;
-    GO
+-- Insert the order details into the PurchaseOrderDetail table, 
+-- using the actual order identifiers of the master table, PurchaseOrder
+INSERT INTO PurchaseOrderDetail (
+[OrderID],
+[ProductID],
+[UnitPrice],
+[OrderQty] )
+SELECT L.ActualKey, D.ProductID, D.UnitPrice, D.OrderQty
+FROM @details D
+JOIN @IdentityLink L ON L.SubmittedKey = D.OrderID;
+GO
 ```
 
 В этом примере локально определенная таблица @IdentityLink сохраняет фактические значения OrderID из только что вставленных строк. Эти идентификаторы заказов отличаются от временных значений OrderID в возвращающих табличное значение параметрах @orders и @details. Поэтому таблица @IdentityLink соединяет значения OrderID из параметра @orders с реальными значениями OrderID для новых строк в таблице PurchaseOrder. После завершения этого шага таблица @IdentityLink может упростить вставку информации о заказе с фактическим значением OrderID, что соответствует ограничению внешнего ключа.
@@ -567,23 +586,23 @@ ms.locfileid: "55455394"
 Эту хранимую процедуру можно использовать из кода или из других вызовов Transact-SQL. Примеры кода см. в разделе «Параметры, которые возвращают табличное значение». Следующий сценарий Transact-SQL демонстрирует вызов sp_InsertOrdersBatch.
 
 ```sql
-    declare @orders as PurchaseOrderTableType
-    declare @details as PurchaseOrderDetailTableType
+declare @orders as PurchaseOrderTableType
+declare @details as PurchaseOrderDetailTableType
 
-    INSERT @orders 
-    ([OrderID], [OrderDate], [CustomerID], [Status])
-    VALUES(1, '1/1/2013', 1125, 'Complete'),
-    (2, '1/13/2013', 348, 'Processing'),
-    (3, '1/12/2013', 2504, 'Shipped')
+INSERT @orders 
+([OrderID], [OrderDate], [CustomerID], [Status])
+VALUES(1, '1/1/2013', 1125, 'Complete'),
+(2, '1/13/2013', 348, 'Processing'),
+(3, '1/12/2013', 2504, 'Shipped')
 
-    INSERT @details
-    ([OrderID], [ProductID], [UnitPrice], [OrderQty])
-    VALUES(1, 10, $11.50, 1),
-    (1, 12, $1.58, 1),
-    (2, 23, $2.57, 2),
-    (3, 4, $10.00, 1)
+INSERT @details
+([OrderID], [ProductID], [UnitPrice], [OrderQty])
+VALUES(1, 10, $11.50, 1),
+(1, 12, $1.58, 1),
+(2, 23, $2.57, 2),
+(3, 4, $10.00, 1)
 
-    exec sp_InsertOrdersBatch @orders, @details
+exec sp_InsertOrdersBatch @orders, @details
 ```
 
 Это решение позволяет использовать для каждого пакета набор значений OrderID, которые начинаются с 1. Эти временные значения OrderID служат для описания связей в пакете, но фактические значения OrderID определяются во время операции вставки. Можно повторно выполнить операторы, которые использовались в предыдущем примере, и сформировать уникальные заказы в базе данных. Поэтому рассмотрите возможность добавления дополнительного кода или логики базы данных, которые не допустят повторения заказов при использовании этого метода пакетной обработки.
@@ -597,40 +616,40 @@ ms.locfileid: "55455394"
 Параметры, которые возвращают табличное значение, можно использовать с помощью инструкции MERGE для выполнения операций обновления и вставки. Например, рассмотрим упрощенную таблицу Employee со следующими столбцами: EmployeeID, FirstName, LastName, SocialSecurityNumber:
 
 ```sql
-    CREATE TABLE [dbo].[Employee](
-    [EmployeeID] [int] IDENTITY(1,1) NOT NULL,
-    [FirstName] [nvarchar](50) NOT NULL,
-    [LastName] [nvarchar](50) NOT NULL,
-    [SocialSecurityNumber] [nvarchar](50) NOT NULL,
-     CONSTRAINT [PrimaryKey_Employee] PRIMARY KEY CLUSTERED 
-    ([EmployeeID] ASC ))
+CREATE TABLE [dbo].[Employee](
+[EmployeeID] [int] IDENTITY(1,1) NOT NULL,
+[FirstName] [nvarchar](50) NOT NULL,
+[LastName] [nvarchar](50) NOT NULL,
+[SocialSecurityNumber] [nvarchar](50) NOT NULL,
+CONSTRAINT [PrimaryKey_Employee] PRIMARY KEY CLUSTERED 
+([EmployeeID] ASC ))
 ```
 
 В этом примере слияние нескольких сотрудников выполняется на основе уникального свойства SocialSecurityNumber. Сначала создайте определяемый пользователем тип таблицы:
 
 ```sql
-    CREATE TYPE EmployeeTableType AS TABLE 
-    ( Employee_ID INT,
-      FirstName NVARCHAR(50),
-      LastName NVARCHAR(50),
-      SocialSecurityNumber NVARCHAR(50) );
-    GO
+CREATE TYPE EmployeeTableType AS TABLE 
+( Employee_ID INT,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    SocialSecurityNumber NVARCHAR(50) );
+GO
 ```
 
 Затем создайте хранимую процедуру или напишите код, в котором инструкция MERGE выполняет обновление и вставку. В следующем примере инструкция MERGE используется с параметром с табличным значением @employees типа EmployeeTableType. Содержимое таблицы @employees здесь не показано.
 
 ```sql
-    MERGE Employee AS target
-    USING (SELECT [FirstName], [LastName], [SocialSecurityNumber] FROM @employees) 
-    AS source ([FirstName], [LastName], [SocialSecurityNumber])
-    ON (target.[SocialSecurityNumber] = source.[SocialSecurityNumber])
-    WHEN MATCHED THEN 
-    UPDATE SET
-    target.FirstName = source.FirstName, 
-    target.LastName = source.LastName
-    WHEN NOT MATCHED THEN
-       INSERT ([FirstName], [LastName], [SocialSecurityNumber])
-       VALUES (source.[FirstName], source.[LastName], source.[SocialSecurityNumber]);
+MERGE Employee AS target
+USING (SELECT [FirstName], [LastName], [SocialSecurityNumber] FROM @employees) 
+AS source ([FirstName], [LastName], [SocialSecurityNumber])
+ON (target.[SocialSecurityNumber] = source.[SocialSecurityNumber])
+WHEN MATCHED THEN 
+UPDATE SET
+target.FirstName = source.FirstName, 
+target.LastName = source.LastName
+WHEN NOT MATCHED THEN
+    INSERT ([FirstName], [LastName], [SocialSecurityNumber])
+    VALUES (source.[FirstName], source.[LastName], source.[SocialSecurityNumber]);
 ```
 
 Дополнительную информацию см. в примерах и документации по инструкции MERGE. Хотя такие же действия можно выполнить в рамках вызова многоступенчатой хранимой процедуры с отдельными операциями INSERT и UPDATE, использование инструкции MERGE является более эффективным. Код базы данных также может формировать вызовы Transact-SQL с использованием инструкции MERGE напрямую без необходимости дважды вызывать базу данных, чтобы выполнить операции INSERT и UPDATE.

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2019
+ms.date: 02/01/2019
 ms.author: magoedte
-ms.openlocfilehash: 1f6be45e7f53aff7f9b8957ca88efe7605e4a984
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 37e2da00ecbecdddcc8757e64c57b03774092e14
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889048"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814995"
 ---
 # <a name="deploy-azure-monitor-for-vms-preview"></a>Развертывание Azure Monitor для виртуальных машин (предварительная версия)
 В этой статье описана настройка Azure Monitor для виртуальных машин. Служба отслеживает работоспособность операционной системы виртуальных машин и масштабируемых наборов виртуальных машин Azure, а также виртуальных машин в вашей среде. Этот мониторинг включает обнаружение и сопоставление зависимостей приложений, которые можно разместить на машинах. 
@@ -62,7 +62,7 @@ Azure Monitor для виртуальных машин включается од
 * Установите решения ServiceMap и InfrastructureInsights. Установку можно выполнить только с помощью шаблона Azure Resource Manager, который предоставляется в этой статье.
 * Настройте рабочую область Log Analytics для сбора данных счетчиков производительности.
 
-Чтобы настроить рабочую область Log Analytics для этого сценария масштабирования, см. [эти инструкции](#setup-log-analytics-workspace).
+Чтобы настроить рабочую область Log Analytics для этого сценария масштабирования, ознакомьтесь с соответствующими инструкциями.
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -70,6 +70,7 @@ Azure Monitor для виртуальных машин включается од
 
 |Версия ОС |Производительность |Карты |Health |
 |-----------|------------|-----|-------|
+|Windows Server 2019 | X | X |  |
 |Windows Server 2016 1803 | X | X | X |
 |Windows Server 2016 | X | X | X |
 |Windows Server 2012 R2 | X | X | |
@@ -102,6 +103,7 @@ Azure Monitor для виртуальных машин включается од
 | 7.3 | 3.10.0–514 |
 | 7.4 | 3.10.0-693 |
 | 7.5 | 3.10.0-862 |
+| 7.6 | 3.10.0-957 |
 
 #### <a name="red-hat-linux-6"></a>Red Hat Linux 6
 
@@ -117,6 +119,7 @@ Azure Monitor для виртуальных машин включается од
 | 6.7 | 2.6.32-573 |
 | 6,8 | 2.6.32-642 |
 | 6.9 | 2.6.32-696 |
+| 6.10 | 2.6.32-754 |
 
 #### <a name="ubuntu-server"></a>Сервер Ubuntu
 

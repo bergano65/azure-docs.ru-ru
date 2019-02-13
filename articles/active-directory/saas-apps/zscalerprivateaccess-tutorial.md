@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 8d150a91a00652d5af74253dfdf60eb728db97b5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 8be5e94886237129824204ea166a2663e2f3110e
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55192842"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814460"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-zpa"></a>Руководство. Интеграция Azure Active Directory с Zscaler Private Access (ZPA)
 
@@ -31,7 +31,7 @@ ms.locfileid: "55192842"
 - Вы можете включить автоматический вход пользователей в Zscaler Private Access (ZPA) (единый вход) с их учетными записями Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -95,7 +95,7 @@ ms.locfileid: "55192842"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Zscaler Private Access (ZPA)](#creating-a-zscaler-private-access-(zpa)-test-user)** требуется для создания в Zscaler Private Access (ZPA) пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
+1. **Создание тестового пользователя Zscaler Private Access (ZPA)** требуется для того, чтобы в Zscaler Private Access (ZPA) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -119,7 +119,7 @@ ms.locfileid: "55192842"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://samlsp.private.zscaler.com/auth/login?domain=<your-domain-name>`.
 
-    b. В текстовом поле **Идентификатор** введите `https://samlsp.private.zscaler.com/auth/metadata`.
+    б) В текстовом поле **Идентификатор** введите `https://samlsp.private.zscaler.com/auth/metadata`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать для идентификатора уникальное значение URL-адреса. Обратитесь к [группе поддержки Zscaler Private Access (ZPA)](https://help.zscaler.com/zpa-submit-ticket), чтобы получить эти значения.
@@ -160,7 +160,7 @@ ms.locfileid: "55192842"
 
     a. Чтобы отправить скачанный файл метаданных, щелкните **Select File** (Выбрать файл).
 
-    b. Нажмите кнопку **Сохранить** .
+    б) Нажмите кнопку **Сохранить** .
     
 
 
@@ -189,11 +189,11 @@ ms.locfileid: "55192842"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 
 

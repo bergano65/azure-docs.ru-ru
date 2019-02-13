@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: article
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: c327d973170a4556471663c3bea9dcae9b5794fb
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b10e434aece0ac214a0fd397ea94cbeccca4e44a
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238617"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746496"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -26,7 +26,8 @@ ms.locfileid: "55238617"
 
 **Сообщение об ошибке: не удается удалить "PyYAML"**
 
-Пакет SDK Машинного обучения Azure для Python. PyYAML — это проект, установленный в distutils. Поэтому невозможно точно определить, какие файлы принадлежат ему в случае частичной деинсталляции. Чтобы продолжить установку SDK игнорируя эту ошибку, используйте:
+Пакет SDK Машинного обучения Azure для Python. PyYAML — это проект, установленный в distutils. Поэтому невозможно точно определить, какие файлы принадлежат ему в случае частичного удаления. Чтобы продолжить установку SDK игнорируя эту ошибку, используйте:
+
 ```Python
 pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 ```
@@ -41,7 +42,7 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 
 ## <a name="deployment-failure"></a>Сбой развертывания
 
-Если вы обнаружили, что операция "DaskOnBatch:context_managers.DaskOnBatch", "setup.py"]" завершилась ошибкой <Signals.SIGKILL: 9>, измените номер SKU для виртуальных машин, используемых в развертывании, на другой с большим объемом памяти.
+Если отображается `['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`, измените номер SKU для виртуальных машин, используемых в развертывании, на другой с большим объемом памяти.
 
 ## <a name="fpgas"></a>FPGA
 Вы не сможете развернуть модели на FPGA до тех пор, пока не будет запрошена и одобрена квота FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai
@@ -50,7 +51,7 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 
 Ниже описаны проблемы, которые могут возникать в службе "Машинное обучение Azure" и Databricks.
 
-1. Сбой установки пакета SDK для службы "Машинное обучение Azure" в Databricks, если установлены дополнительные пакеты.
+1. Сбой установки пакета SDK Машинного обучения Azure в Databricks в случае большего количества установленных пакетов.
 
    Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, заморозив версию lib. Эта проблема связана с Databricks и не связана с пакетом SDK Службы машинного обучения Azure. Вы можете столкнуться с ней и при использовании других библиотек. Пример:
    ```python
@@ -58,9 +59,9 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
    ```
    В качестве альтернативы можно использовать сценарии инициализации, если проблемы при установке библиотек Python не исчезли. Этот подход не является официальным. Вы можете ознакомиться с этим [документом](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
 
-2. Если при использовании автоматического машинного обучения в Databricks, нужно отменить выполнение и запустить новый эксперимент, перезапустите кластер Azure Databricks.
+2. Если при использовании автоматического машинного обучения в Databricks нужно отменить выполнение и запустить новый эксперимент, перезапустите кластер Azure Databricks.
 
-3. Если выполняется больше 10 итераций, в параметрах автоматического машинного обучения укажите для show_output значение False при отправке задачи на выполнение.
+3. Если выполняется больше 10 итераций, в параметрах автоматического машинного обучения укажите для `show_output` значение `False` при отправке задачи на выполнение.
 
 
 ## <a name="azure-portal"></a>Портал Azure
@@ -73,6 +74,20 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 ## <a name="resource-quotas"></a>Квоты ресурсов
 
 Дополнительные сведения о квотах ресурсов в службе "Машинное обучение Azure" см. [здесь](how-to-manage-quotas.md).
+
+## <a name="authentication-errors"></a>Ошибки проверки подлинности
+
+При выполнении операции управления на целевом объекте вычислений из удаленного задания вы получите одну из следующих ошибок:
+
+```json
+{"code":"Unauthorized","statusCode":401,"message":"Unauthorized","details":[{"code":"InvalidOrExpiredToken","message":"The request token was either invalid or expired. Please try again with a valid token."}]}
+```
+
+```json
+{"error":{"code":"AuthenticationFailed","message":"Authentication failed."}}
+```
+
+Например, вы получите сообщение об ошибке, если попытаетесь создать или вложить целевой объект вычислений из конвейера Машинного обучения, который передается для удаленного выполнения.
 
 ## <a name="get-more-support"></a>Получение поддержки
 

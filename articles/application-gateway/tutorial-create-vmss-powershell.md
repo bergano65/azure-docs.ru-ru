@@ -1,21 +1,18 @@
 ---
-title: Создание шлюза приложений с масштабируемым набором виртуальных машин — Azure PowerShell | Документация Майкрософт
+title: Создание шлюза приложений с масштабируемым набором виртуальных машин — Azure PowerShell
 description: Узнайте, как создать шлюз приложений с масштабируемым набором виртуальных машин с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
 ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 01/25/2018
+ms.date: 2/5/2019
 ms.author: victorh
-ms.openlocfilehash: 215543246057a59c80bf63910c7e90b7b5d041b4
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 09434c0b20845fcc790f1861a55b9c7d8b8046ac
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438445"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55748750"
 ---
 # <a name="create-an-application-gateway-and-virtual-machine-scale-set-using-azure-powershell"></a>Создание шлюза приложений и масштабируемого набора виртуальных машин с помощью Azure PowerShell
 
@@ -170,6 +167,7 @@ $vmssConfig = New-AzureRmVmssConfig `
   -SkuName Standard_DS2 `
   -UpgradePolicyMode Automatic
 Set-AzureRmVmssStorageProfile $vmssConfig `
+  -OsDiskCreateOption "FromImage" -OsDiskCaching "None"
   -ImageReferencePublisher MicrosoftWindowsServer `
   -ImageReferenceOffer WindowsServer `
   -ImageReferenceSku 2016-Datacenter `

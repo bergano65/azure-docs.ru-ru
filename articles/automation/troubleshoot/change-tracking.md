@@ -6,25 +6,25 @@ ms.service: automation
 ms.subservice: change-inventory-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/24/2018
+ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 63dc7148904089a31ff95764898a8dac72c37049
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 2a6610b5cb3f01fc70b1737fc4492e09d9a7637b
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421342"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55507340"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory"></a>Устранение неполадок в службах "Отслеживание изменений" и "Учет"
 
 ## <a name="windows"></a> Windows
 
-### <a name="records-not-showing-windows"></a>Сценарий. Записи Отслеживания изменений не отображаются на портале Azure
+### <a name="records-not-showing-windows"></a>Сценарий. Записи Отслеживания изменений не отображаются для компьютеров Windows
 
 #### <a name="issue"></a>Проблема
 
-Вы не видите никаких результатов от служб Учет или Отслеживание изменений для компьютеров, которые подключены к Отслеживанию изменений.
+Вы не видите никаких результатов от служб "Учет" или "Отслеживание изменений" для компьютеров Windows, которые подключены к Отслеживанию изменений.
 
 #### <a name="cause"></a>Причина:
 
@@ -38,12 +38,13 @@ ms.locfileid: "54421342"
 #### <a name="resolution"></a>Способы устранения:
 
 1. Убедитесь, выполняется ли на компьютере **Microsoft Monitoring Agent** (HealthService.exe).
-2. Дополнительные сведения о том, какие адреса и порты должны быть разрешены для работы Отслеживания изменений, см. в разделе [Настройка сети](../automation-hybrid-runbook-worker.md#network-planning).
-3. Убедитесь, что на локальном компьютере существуют следующие пакеты служб "Отслеживание изменений" и "Учет".
+1. Проверьте компонент **Просмотр событий** на компьютере, а также найдите любые события, которые содержат слово `changetracking`.
+1. Дополнительные сведения о том, какие адреса и порты должны быть разрешены для работы Отслеживания изменений, см. в разделе [Настройка сети](../automation-hybrid-runbook-worker.md#network-planning).
+1. Убедитесь, что на локальном компьютере существуют следующие пакеты служб "Отслеживание изменений" и "Учет".
     * Microsoft.IntelligencePacks.ChangeTrackingDirectAgent.*
     * Microsoft.IntelligencePacks.InventoryChangeTracking.*
     * Microsoft.IntelligencePacks.SingletonInventoryCollection.*
-4. Если вы используете клонированный образ, выполните для него sysprep, а затем установите агент MMA.
+1. Если вы используете клонированный образ, выполните для него sysprep, а затем установите агент MMA.
 
 Если эти решения не устранят проблему, вы можете обратиться в службу поддержки, выполнив следующие команды для сбора диагностических данных об агенте.
 

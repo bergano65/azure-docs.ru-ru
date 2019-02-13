@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 02129fbddae2e3a82299eb3b03d6e73030b44c4d
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 6fb8166893f0dada019ca633933833d17b95fee9
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477885"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811466"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -37,7 +37,7 @@ ms.locfileid: "55477885"
 
 * по умолчанию включены для всех учетных записей пакетной службы и не требуют настройки;
 * создаются каждую минуту;
-* не сохраняются автоматически, но доступны в течение 30 дней в обновляемом журнале. Метрики действий можно сохранять в [журнале ведения диагностики](#work-with-diagnostic-logs).
+* не сохраняются автоматически, но доступны в течение 30 дней в обновляемом журнале. Метрики действий можно сохранять в журнале ведения диагностики.
 
 ### <a name="view-metrics"></a>Просмотр метрик
 

@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: babanisa
-ms.openlocfilehash: 23e1de98fff891d199d1f33fcb714b2b284e8edb
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: ec34b9c5f78b4d0ea59382f616fab88e0e1dedc9
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382921"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55730940"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -29,7 +29,7 @@ ms.locfileid: "54382921"
 
 Как и многие другие службы, поддерживающие веб-перехватчики, служба "Сетка событий" требует, чтобы вы подтвердили право собственности на конечную точку веб-перехватчика до того, как служба начнет доставку событий в эту конечную точку. Это требование не позволяет пользователю-злоумышленнику переполнить вашу конечную точку событиями. Инфраструктура Azure автоматически обрабатывает эту проверку, когда вы используете любую из следующих трех служб Azure:
 
-* Azure Logic Apps с [соединителем Сетки событий](https://docs.microsoft.com/en-us/connectors/azureeventgrid/);
+* Azure Logic Apps с [соединителем Сетки событий](https://docs.microsoft.com/connectors/azureeventgrid/);
 * служба автоматизации Azure через [веб-перехватчик](../event-grid/ensure-tags-exists-on-new-virtual-machines.md);
 * Функции Azure с [триггером службы "Сетка событий"](../azure-functions/functions-bindings-event-grid.md).
 
@@ -50,7 +50,7 @@ ms.locfileid: "54382921"
 * Текст события имеет ту же схему, что и другие события сетки событий.
 * Свойству события eventType соответствует значение `Microsoft.EventGrid.SubscriptionValidationEvent`.
 * К свойству данных события относится свойство `validationCode` со строкой, сгенерированной случайным образом. Например "validationCode: acb13…".
-* Если вы используете API версии 2018-05-01-preview, данные события будут также включать свойство `validationUrl` с URL-адресом для проверки подписки вручную.
+* Данные о событии включают свойство `validationUrl` с URL-адресом для проверки подписки вручную.
 * Массив содержит только событие проверки. Другие события отправляются в отдельном запросе после возврата кода проверки.
 * Пакеты SDK EventGrid DataPlane содержат классы, соответствующие данным события проверки подписки и ответу на проверку подписки.
 

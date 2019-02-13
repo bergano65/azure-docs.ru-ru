@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/12/2018
+ms.date: 02/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0125c64a96929db9c8846ca7ad731fa3dc795f98
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 34a695daa077e882e911d3fb59f8a30e39c3a9d2
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432971"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55756637"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-log-analytics"></a>Пересылка состояния задания и потоков заданий из службы автоматизации в Log Analytics
 
@@ -64,11 +64,12 @@ Get-AzureRmResource -ResourceType "Microsoft.OperationalInsights/workspaces"
    Set-AzureRmDiagnosticSetting -ResourceId $automationAccountId -WorkspaceId $workspaceId -Enabled $true
    ```
 
-После запуска этого сценария вы увидите записи в Log Analytics, добавленные в новый элемент JobLogs или JobStreams за 10 минут.
+После запуска этого сценария записи в Log Analytics для новых элементов JobLogs или для регистрируемых элементов JobStreams могут появиться через час.
 
 Чтобы просмотреть журналы, выполните следующий запрос в поиске по журналам Log Analytics: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
 ### <a name="verify-configuration"></a>Проверка конфигурации
+
 Чтобы убедиться, что ваша учетная запись службы автоматизации отправляет журналы в рабочую область Log Analytics, проверьте правильность настройки диагностики в учетной записи службы автоматизации, используя следующую команду PowerShell.
 
 ```powershell-interactive
@@ -76,14 +77,16 @@ Get-AzureRmDiagnosticSetting -ResourceId $automationAccountId
 ```
 
 В выходных данных убедитесь в следующем.
-+ В разделе *Logs* значение *Enabled* равно *True*.
-+ *WorkspaceId* присвоено значение ResourceId рабочей области Log Analytics.
+
+* В разделе *Logs* значение *Enabled* равно *True*.
+* *WorkspaceId* присвоено значение ResourceId рабочей области Log Analytics.
 
 ## <a name="log-analytics-records"></a>Записи Log Analytics
 
 При диагностике из службы автоматизации Azure в Log Analytics создаются записи двух типов, которые помечаются как **AzureDiagnostics**. В следующих запросах к Log Analytics используется обновленный язык запросов. Сведения об общих запросах в устаревшем и новом языках запросов Azure Log Analytics приведены в [кратком справочнике по отличиям между устаревшим и новым языками запросов Azure Log Analytics](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language).
 
 ### <a name="job-logs"></a>Журналы заданий
+
 | Свойство | ОПИСАНИЕ |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
@@ -128,6 +131,7 @@ Get-AzureRmDiagnosticSetting -ResourceId $automationAccountId
 | ResourceType | AUTOMATIONACCOUNTS |
 
 ## <a name="viewing-automation-logs-in-log-analytics"></a>Просмотр журналов службы автоматизации в Log Analytics
+
 Теперь, когда вы начали отправку журналов заданий службы автоматизации в Log Analytics, давайте узнаем, что с ними можно сделать в Log Analytics.
 
 Чтобы просмотреть журналы, выполните следующий запрос: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
@@ -141,7 +145,7 @@ Get-AzureRmDiagnosticSetting -ResourceId $automationAccountId
 2. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`  Вы также можете использовать группирование по RunbookName с помощью `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`.
 
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Имя учетной записи службы автоматизации можно найти в поле "Ресурс" для поиска JobLogs.
-1. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
+3. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
 
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Поиск всех заданий, завершенных с ошибками
 Помимо оповещений о сбоях можно узнать, когда задание Runbook вызывает устранимую ошибку. В этих случаях PowerShell создает поток сообщений об ошибках, но устранимые ошибки не приводят к приостановке или сбою задания.    

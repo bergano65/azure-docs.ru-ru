@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: a174ae5eb31620646167f36a6f3e13605db5eac6
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 5ba12e48092c02f9628e15166c84e871310d7556
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54052774"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816379"
 ---
 # <a name="use-data-lake-storage-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage с кластерами Azure HDInsight
 
@@ -69,7 +69,7 @@ ms.locfileid: "54052774"
 - Папка для всех папок кластера.  Например: adl://mydatalakestore/clusters.
 - Папка для кластера.  Например: adl://mydatalakestore/clusters/cluster1storage.
 
-Дополнительные сведения о создании субъекта-службы и предоставлении доступа см. в разделе [Настройка доступа к Data Lake Storage](#configure-data-lake-store-access).
+Дополнительные сведения о создании субъекта-службы и предоставлении доступа см. в разделе "Настройка доступа к Data Lake Storage".
 
 ### <a name="extracting-a-certificate-from-azure-keyvault-for-use-in-cluster-creation"></a>Извлечение сертификата из Azure Key Vault для использования при создании кластера
 
@@ -117,12 +117,12 @@ Data Lake Storage также можно использовать в качес
 
     adl://mydatalakestore.azuredatalakestore.net/<file_path>
 
-Дополнительные сведения о создании субъекта-службы и предоставлении доступа см. в разделе [Настройка доступа к Data Lake Storage](#configure-data-lake-store-access).
+Дополнительные сведения о создании субъекта-службы и предоставлении доступа см. в разделе "Настройка доступа к Data Lake Storage".
 
 
 ## <a name="use-more-than-one-data-lake-storage-accounts"></a>Использование нескольких учетных записей Data Lake Storage
 
-Можно добавить учетную запись Data Lake Storage в качестве дополнительного хранилища и несколько учетных записей Data Lake Storage, предоставив кластеру HDInsight разрешение на доступ к данным в одной учетной записи Data Lake Storage или нескольких. См. раздел [Настройка доступа к Data Lake Storage](#configure-data-lake-store-access).
+Можно добавить учетную запись Data Lake Storage в качестве дополнительного хранилища и несколько учетных записей Data Lake Storage, предоставив кластеру HDInsight разрешение на доступ к данным в одной учетной записи Data Lake Storage или нескольких. Ознакомьтесь с разделом "Настройка доступа к Data Lake Storage".
 
 ## <a name="configure-data-lake-storage-access"></a>Настройка доступа к Data Lake Storage
 

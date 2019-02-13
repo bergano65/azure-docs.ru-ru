@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 12/03/2018
 ms.author: anzaman
-ms.openlocfilehash: f970f535f83bc3b3c2a850ec126a7afff2af739f
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: b6c6f2890cf9bd3c8cb412b3fa2f28d8ea3b6f72
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54827590"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734323"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-api"></a>Настройка модели торговых марок с помощью API Индексатора видео
 
@@ -26,17 +26,17 @@ ms.locfileid: "54827590"
 
 ## <a name="create-a-brand"></a>Создание торговой марки
 
-Вы сможете создать новую собственную торговую марку и добавить ее к специальной модели торговых марок для указанной учетной записи. 
+Вы сможете создать новую собственную торговую марку и добавить ее к специальной модели торговых марок для указанной учетной записи.
 
 ### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Brand).
 
-### <a name="request-parameters"></a>Параметры запроса 
+### <a name="request-parameters"></a>Параметры запроса
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
@@ -95,7 +95,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Brand?).
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -117,17 +117,17 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="get-a-specific-brand"></a>Получение определенной торговой марки
 
-Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки. 
+Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки.
 
 ### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brand?).
 
-### <a name="request-parameters"></a>Параметры запроса 
+### <a name="request-parameters"></a>Параметры запроса
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
@@ -167,14 +167,14 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="update-a-specific-brand"></a>Обновление определенной торговой марки
 
-Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки. 
+Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки.
 
 ### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brand?).
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -237,7 +237,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands?).
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -270,7 +270,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
         "description": "This is an example",
         "tags": ["Tag1", "Tag2"]
     },
-        {
+    {
         "ReferenceUrl": null,
         "id": 97975,
         "name": "Example2",
@@ -297,7 +297,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands).
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -330,14 +330,14 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 Благодаря этому параметры модели торговых марок в указанной учетной записи обновляются. Параметры торговой марки отображают, включена или нет база данных торговой марки Bing. Если торговые марки Bing не включены, Индексатор видео обнаружит только торговые марки из специальной модели торговых марок указанной учетной записи.
 
-### <a name="request-url"></a>URL-адрес запроса 
+### <a name="request-url"></a>URL-адрес запроса
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/BrandsModelSettings?accessToken={accessToken}
 ```
- 
+
 [Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brands-Model-Settings?).
 
-### <a name="request-parameters"></a>Параметры запроса 
+### <a name="request-parameters"></a>Параметры запроса
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|

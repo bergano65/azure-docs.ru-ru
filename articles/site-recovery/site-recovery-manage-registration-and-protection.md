@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajani-janaki-ram
-ms.openlocfilehash: 7a9c0ec081b676631f950270f9234284a102d7fa
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9aaa5dd2c636f9b5d92e949e1af71eda809cdac7
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212194"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810326"
 ---
 # <a name="remove-servers-and-disable-protection"></a>Удаление серверов и отключение защиты
 
@@ -154,7 +154,7 @@ ms.locfileid: "55212194"
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-hyper-v-to-azure"></a>Отключение защиты виртуальной машины Hyper-V (из Hyper-V в Azure)
 
 > [!NOTE]
-> Если вы реплицируете виртуальные машины Hyper-V в Azure, не используя сервер VMM, сделайте следующее: Если выполняется репликация виртуальных машин с помощью **System Center VMM в Azure**, следуйте инструкциям в разделе [Удаление серверов и отключение защиты](#disable-protection-for-a-hyper-v-virtual-machine-replicating-using-the-system-centet-vmm-to-azure-scenario).
+> Если вы реплицируете виртуальные машины Hyper-V в Azure, не используя сервер VMM, сделайте следующее: Если выполняется репликация виртуальных машин с помощью **System Center VMM в Azure**, следуйте инструкциям в разделе "Отключение защиты для виртуальной машины Hyper-V, реплицируемой в Azure, при использовании сценария репликации из System Center VMM в Azure".
 
 1. Выберите **Защищенные элементы** > **Реплицированные элементы**, щелкните виртуальную машину правой кнопкой мыши и выберите **Отключить репликацию**.
 2. В разделе **Отключение репликации** можно выбрать следующие параметры:

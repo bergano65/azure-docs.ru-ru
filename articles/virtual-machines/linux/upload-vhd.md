@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: cynthn
-ms.openlocfilehash: bbbcc1b3b505aae4bcc6869359ca27a8cd3fd1be
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: edebd2efda7d8217c9b554f2d1f54135203502cb
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638118"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55821564"
 ---
 # <a name="create-a-linux-vm-from-a-custom-disk-with-the-azure-cli"></a>Создание виртуальной машины Linux на основе пользовательского диска с помощью Azure CLI
 
@@ -31,8 +31,8 @@ ms.locfileid: "49638118"
 Чтобы создать несколько виртуальных машин на основе пользовательского диска, сначала создайте образ на основе виртуальной машины или виртуальный жесткий диск. Дополнительные сведения см. в статье [Создание пользовательского образа виртуальной машины Azure с помощью интерфейса командной строки](tutorial-custom-images.md).
 
 Создать пользовательский диск можно двумя способами:
-* [Передача VHD](#option-1-upload-a-specialized-vhd)
-* [Копирование имеющейся виртуальной машины Azure](#option-2-copy-an-existing-azure-vm)
+* Отправка VHD
+* Копирование имеющейся виртуальной машины Azure.
 
 ## <a name="quick-commands"></a>Быстрые команды
 
@@ -82,7 +82,7 @@ Azure поддерживает различные дистрибутивы Linux
 > 
 > 
 
-## <a name="option-1-upload-a-vhd"></a>Вариант 1. Передача VHD
+## <a name="option-1-upload-a-vhd"></a>Вариант 1. Отправка VHD
 
 Вы можете передать настраиваемый VHD, выполняемый на локальном компьютере или который вы экспортировали из другого облака. Чтобы создать виртуальную машину Azure с помощью VHD, необходимо передать VHD в учетную запись хранения и создать управляемый диск на основе VHD. Дополнительные сведения об Управляемых дисках Azure см. в [этой статье](../windows/managed-disks-overview.md).
 
@@ -100,7 +100,7 @@ az group create \
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения для пользовательского диска и виртуальных машин с помощью команды [az storage account create](/cli/azure/storage/account#az-storageaccount-create). В следующем примере создается учетная запись хранения с именем *mystorageaccount* в ранее созданной группе ресурсов:
+Создайте учетную запись хранения для пользовательского диска и виртуальных машин с помощью команды [az storage account create](/cli/azure/storage/account). В следующем примере создается учетная запись хранения с именем *mystorageaccount* в ранее созданной группе ресурсов:
 
 ```azurecli
 az storage account create \

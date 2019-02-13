@@ -3,7 +3,7 @@ title: Приложение для управления исправлениям
 description: Приложение для автоматизации установки исправлений операционной системы в кластере Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: novino
+author: khandelwalbrijeshiitr
 manager: timlt
 editor: ''
 ms.assetid: de7dacf5-4038-434a-a265-5d0de80a9b1d
@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 5/22/2018
-ms.author: nachandr
-ms.openlocfilehash: 43133a1666dc3551e0f935ceb2af4cf1297d44a7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.date: 2/01/2019
+ms.author: brkhande
+ms.openlocfilehash: 88618e5b9de9cb8ac46b9b167e6fa6dbccd73687
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55155312"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55732317"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -131,7 +131,7 @@ POA — это приложение Azure Service Fabric, которое поз
     ],
     ```
 
-3. Обновите манифест кластера, добавив эти изменения с помощью манифеста обновления кластера [Создание кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-for-windows-server) или [Обновление конфигурации кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-upgrade-windows-server#Upgrade-the-cluster-configuration). Как только кластер запустится с обновленным манифестом, вы увидите, что системная служба Repair Manager выполняется в кластере, который называется `fabric:/System/RepairManagerService`, в разделе системных служб в Service Fabric Explorer.
+3. Обновите манифест кластера, добавив эти изменения с помощью манифеста обновления кластера [Создание кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-for-windows-server) или [Обновление конфигурации кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-upgrade-windows-server). Как только кластер запустится с обновленным манифестом, вы увидите, что системная служба Repair Manager выполняется в кластере, который называется `fabric:/System/RepairManagerService`, в разделе системных служб в Service Fabric Explorer.
 
 ### <a name="disable-automatic-windows-update-on-all-nodes"></a>Отключение автоматического обновления Windows на всех узлах
 
@@ -154,9 +154,9 @@ POA — это приложение Azure Service Fabric, которое поз
 |LogsDiskQuotaInMB   |длинное целое  <br> (Значение по умолчанию: 1024)               |Максимальный размер журналов приложения для управления исправлениями, которые могут быть сохранены локально на узле (в мегабайтах).
 | WUQuery               | строка<br>(Значение по умолчанию: IsInstalled=0)                | Запрос на получение обновлений Windows. Дополнительные сведения см. в разделе [WuQuery](https://msdn.microsoft.com/library/windows/desktop/aa386526(v=vs.85).aspx).
 | InstallWindowsOSOnlyUpdates | Логическое <br> (значение по умолчанию — false)                 | Используйте этот флаг, чтобы контролировать, какие обновления следует скачать и установить. Допустимы следующие значения: <br>true — устанавливает только обновления операционной системы Windows;<br>false — устанавливает все доступные обновления на компьютере.          |
-| WUOperationTimeOutInMinutes | int <br>(Значение по умолчанию: 90)                   | Указывает время ожидания для любой операции обновления Windows (поиск, скачивание или установка). Если операция не завершена по истечении заданного времени ожидания, она будет прервана.       |
-| WURescheduleCount     | int <br> (Значение по умолчанию: 5)                  | Максимальное количество операций изменения службой расписания обновления Windows в случае постоянных сбоев операции.          |
-| WURescheduleTimeInMinutes | int <br>(Значение по умолчанию: 30) | Интервал, согласно которому служба будет изменять расписание обновления Windows, если сбой продолжает происходить. |
+| WUOperationTimeOutInMinutes | Int <br>(Значение по умолчанию: 90)                   | Указывает время ожидания для любой операции обновления Windows (поиск, скачивание или установка). Если операция не завершена по истечении заданного времени ожидания, она будет прервана.       |
+| WURescheduleCount     | Int <br> (Значение по умолчанию: 5)                  | Максимальное количество операций изменения службой расписания обновления Windows в случае постоянных сбоев операции.          |
+| WURescheduleTimeInMinutes | Int <br>(Значение по умолчанию: 30) | Интервал, согласно которому служба будет изменять расписание обновления Windows, если сбой продолжает происходить. |
 | WUFrequency           | Строка с разделителями-запятыми (по умолчанию: Weekly, Wednesday, 7:00:00 [еженедельно, среда, 07:00:00])     | Частота установки обновлений Windows. Формат и возможные значения: <br>- Monthly, ДД, ЧЧ:ММ:СС (ежемесячно, например: Monthly, 5, 12:22:32);<br>Допустимые значения для поля ДД (день) являются числами в диапазоне 1–28 и "последние". <br> — Еженедельно, ДЕНЬ, ЧЧ:ММ:СС (например: Weekly, Tuesday, 12:22:32);  <br> - Ежедневно, ЧЧ:ММ:СС (например: Daily, 12:22:32);  <br> - Никогда — указывает, что обновление Windows не должно выполняться.  <br><br> Обратите внимание, что значения времени указаны в формате UTC.|
 | AcceptWindowsUpdateEula | Логическое <br>(значение по умолчанию: True) | Если этот флажок установлен, приложение принимает условия лицензионного соглашения Центра обновления Windows от имени владельца компьютера.              |
 
@@ -413,3 +413,6 @@ RebootRequired | true — требовалась перезагрузка<br> f
 - Исправление регрессии: POA 1.3.0 не работал в пакете Windows Server 2012 R2 или более низкой версии из-за сбоя при отключении автоматических обновлений. 
 - Исправлена ошибка, при которой для конфигурации InstallWindowsOSOnlyUpdates всегда выбирается значение True.
 - Значения по умолчанию InstallWindowsOSOnlyUpdates изменилось на False.
+
+### <a name="version-132"></a>Версия 1.3.2
+- Решение проблемы, которая влияет на жизненный цикл исправления узла, если есть узлы с именем, которое является подмножеством имени текущего узла. Для таких узлов, возможно, пропущено исправление или ожидается перезагрузка. 

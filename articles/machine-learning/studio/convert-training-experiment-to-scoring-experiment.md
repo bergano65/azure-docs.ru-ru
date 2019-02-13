@@ -1,8 +1,20 @@
 ---
-заголовок: Подготовка модели к развертыванию titleSuffix: Студия машинного обучения Azure description: Как подготовить обученную модель для развертывания в виде веб-службы, преобразовав обучающий эксперимент студии машинного обучения в прогнозный эксперимент.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.date: 28.03.2017
+title: Подготовка модели к развертыванию
+titleSuffix: Azure Machine Learning Studio
+description: Как подготовить обученную модель для развертывания в виде веб-службы, преобразовав обучающий эксперимент студии машинного обучения в прогнозный эксперимент.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.date: 03/28/2017
+ms.openlocfilehash: fe7d3956c1a5ead55acd8605086668e20e85e1d2
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55496080"
 ---
 # <a name="how-to-prepare-your-model-for-deployment-in-azure-machine-learning-studio"></a>Как подготовить модель к развертыванию в студии машинного обучения Azure
 

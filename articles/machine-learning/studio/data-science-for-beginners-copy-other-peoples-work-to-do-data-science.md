@@ -1,8 +1,21 @@
 ---
-заголовок: Копирование чужих примеров обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: 'Секрет успешного процесса обработки и анализа данных. заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из Коллекция решений ИИ Azure.'
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 05.01.2018
+title: Копирование чужих примеров обработки и анализа данных
+titleSuffix: Azure Machine Learning Studio
+description: 'Секрет успешного процесса обработки и анализа данных: заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из коллекции средств ИИ Azure.'
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: garyericson
+ms.author: garye
+ms.custom: seodec18
+ms.date: 01/05/2018
+ms.openlocfilehash: 69d3e02ca8d3f020a50b81785c58a3f5a42ce4b0
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55493003"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
 ## <a name="video-5-data-science-for-beginners-series"></a>Видео 5. Обработка и анализ данных для начинающих

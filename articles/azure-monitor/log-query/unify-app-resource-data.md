@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: magoedte
-ms.openlocfilehash: e3b118306b5a139ba31029bc6191368690b36666
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: f9138ec06900f4a7f856cc90362d16496b7b4fed
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54265215"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55766018"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
-В этой статье описывается выполнение запросов и централизованный просмотр всех данных журнала приложения Application Insights (в качестве замены устаревающему Соединителю Application Insights), даже если они находятся в разных подписках Azure.  
+В этой статье описывается выполнение запросов и централизованный просмотр всех данных журнала приложения Application Insights (в качестве замены устаревающему Соединителю Application Insights), даже если они находятся в разных подписках Azure. Вы можете включить в один запрос не более 100 ресурсов Application Insights.  
 
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>Рекомендуемый подход для запроса нескольких ресурсов Application Insights 
 Перечисление нескольких ресурсов Application Insights в запросе может быть весьма трудоемким и трудным в поддержке процессом. Вместо этого вы можете использовать функции для отделения логики запросов и области приложений.  
@@ -51,7 +51,20 @@ app('Contoso-app5').requests
 >
 >Оператор parse является необязательным в этом примере. Этот оператор извлекает имя приложения из свойства SourceApp. 
 
-Теперь вы готовы использовать функцию applicationsScoping в межресурсном запросе. Псевдоним функции возвращает объединение запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению. ![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
+Теперь вы готовы использовать функцию applicationsScoping в межресурсном запросе.  
+
+```
+applicationsScoping 
+| where timestamp > ago(12h)
+| where success == 'False'
+| parse SourceApp with * '(' applicationName ')' * 
+| summarize count() by applicationName, bin(timestamp, 1h) 
+| render timechart
+```
+
+Псевдоним функции возвращает объединение запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению.
+
+![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
 
 ## <a name="query-across-application-insights-resources-and-workspace-data"></a>Запрос в ресурсах Application Insights и данных рабочей области 
 При остановке работы Соединителя и необходимости выполнения запросов за промежуток времени, который был усечен при хранении данных Application Insights (90 дней), вам необходимо выполнить [межресурсные запросы](../../azure-monitor/log-query/cross-workspace-query.md) по рабочей области и ресурсам Application Insights за промежуточный период. Это происходит до тех пор, пока данные приложений не будут накапливаться в соответствии с новым параметром хранения данных Application Insights, упомянутым выше. Запрос требует некоторых манипуляций, так как схемы в Application Insights и в рабочей области отличаются. Различия схемы описаны в указанной ниже таблице в этом разделе. 

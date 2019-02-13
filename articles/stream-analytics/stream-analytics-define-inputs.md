@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 66e57d95125bd6404ec23302e4c336ab0b71ea78
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 2a366a9030104c885adb1a4f773de04cdc439044
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53099738"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694641"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Потоковые данные в качестве входных данных Stream Analytics
 
@@ -26,7 +26,7 @@ Stream Analytics полностью интегрируется с потокам
 Эти ресурсы входных данных могут существовать в той же подписке Azure, что и задание Stream Analytics, или другой подписке.
 
 ### <a name="compression"></a>Сжатие
-Stream Analytics поддерживает функцию сжатия во всех источниках входных потоковых данных. Сейчас поддерживаются такие ссылочные типы: без сжатия, форматы GZIP и DEFLATE. Для ссылочных данных сжатие не поддерживается. Если у входных данных формат AVRO, они сжимаются и выполняется их прозрачная обработка. Для сериализации Avro не требуется указывать тип сжатия. 
+Stream Analytics поддерживает функцию сжатия во всех источниках входных потоковых данных. Сейчас поддерживаются следующие типы сжатия. без сжатия, форматы GZIP и DEFLATE. Для ссылочных данных сжатие не поддерживается. Если у входных данных формат AVRO, они сжимаются и выполняется их прозрачная обработка. Для сериализации Avro не требуется указывать тип сжатия. 
 
 ## <a name="create-edit-or-test-inputs"></a>Создание, изменение или проверка входных данных
 С помощью [портала Azure](https://portal.azure.com) вы можете [создавать входные данные](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal#configure-job-input) и просматривать или изменять их в задании потоковой передачи. Вы также можете проверять подключения к источникам входных данных и [запросы](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-manage-job#test-your-query) на основе примеров данных. При написании запроса укажите входные данные в предложении FROM. Список доступных входных данных можно получить на странице **Запрос** на портале. Чтобы использовать несколько источников входных данных, объедините их с помощью параметра `JOIN` или напишите несколько запросов `SELECT`.
@@ -75,7 +75,7 @@ FROM Input
 ```
 
 > [!NOTE]
-> При использовании концентратора события в качестве конечной точки для маршрутов Центра Интернета вещей вы можете получить доступ к метаданным Центра Интернета вещей с помощью [функции GetMetadataPropertyValue](https://msdn.microsoft.com/library/azure/mt793845.aspx).
+> При использовании концентратора событий в качестве конечной точки для маршрутов Центра Интернета вещей вы можете получить доступ к метаданным Центра Интернета вещей с помощью [функции GetMetadataPropertyValue](https://msdn.microsoft.com/library/azure/mt793845.aspx).
 > 
 
 ## <a name="stream-data-from-iot-hub"></a>Потоковая передача данных из Центра Интернета вещей

@@ -15,12 +15,12 @@ ms.date: 01/09/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 1b22d465df12d313e05d3fd93437b461ef939ee7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b7a12494585cedd8f75fd9061f8eb29a0b5dc319
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242490"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747430"
 ---
 # <a name="delegate-offers-in-azure-stack"></a>Делегирование предложений в Azure Stack
 
@@ -77,6 +77,9 @@ ms.locfileid: "55242490"
 | Делегированный поставщик |Пользователь |
 | Пользователь |Пользователь |
 
+ > [!NOTE]
+   > В случае CSP-торгового посредника для создания этого делегированного поставщика потребуется задать этих пользователей в каталоге клиента (AAD пользователя). Оператору Azure Stack необходимо [сначала подключить](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-enable-multitenancy) AAD клиента, а затем настроить потребление и выставление счетов, выполнив [эти действия](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-csp-howto-register-tenants).
+
 ### <a name="identify-the-delegated-provider"></a>Идентификация делегированного поставщика
 
 1. Войдите на портал администратора с учетной записью оператора Azure Stack.
@@ -86,7 +89,7 @@ ms.locfileid: "55242490"
    a.  [Создайте план](azure-stack-create-plan.md).
        Этот план должен содержать только службу подписки. В этой статье в качестве примера используется план с именем **PlanForDelegation**.
 
-   b.  [Создайте предложение](azure-stack-create-offer.md) на основе этого плана. В этой статье в качестве примера используется предложение с именем **OfferToDP**.
+   б)  [Создайте предложение](azure-stack-create-offer.md) на основе этого плана. В этой статье в качестве примера используется предложение с именем **OfferToDP**.
 
    c.  Добавьте делегированного поставщика в качестве подписчика на это предложение, выбрав **Подписки**, затем **Добавить** и **Новая подписка клиента**.
 
@@ -131,7 +134,7 @@ ms.locfileid: "55242490"
 
     a.  Выберите **Обзор**, **Все службы**, а затем в категории **Общие** выберите **Подписки**. Выберите подписку делегированного поставщика; например **DPSubscription**, затем **Свойства**.
 
-    b.  Скопируйте URL-адрес портала в отдельное расположение, например в Блокнот.
+    б)  Скопируйте URL-адрес портала в отдельное расположение, например в Блокнот.
 
     ![Выбор подписки делегированного поставщика](media/azure-stack-delegated-provider/dpportaluri.png)  
 

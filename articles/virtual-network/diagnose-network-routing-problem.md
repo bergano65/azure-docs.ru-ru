@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: jdial
-ms.openlocfilehash: 56dd13f5c2c0db4af65d8bc5d4ee5c072a161964
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: ee807387b5fc7c8a9d42564cdb6cee7d59db2508
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429640"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819796"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Диагностика проблем с маршрутизацией виртуальной машины
 
@@ -116,7 +116,7 @@ az vm show \
 - Обеспечение привязки таблицы маршрутов, которая содержит определенные вами настраиваемые маршруты, к подсети сетевого интерфейса. Узнайте, как [связать таблицу маршрутов с подсетью](manage-route-table.md#associate-a-route-table-to-a-subnet).
 - Обеспечение работоспособности устройств, таких как развернутые вами VPN-шлюз Azure или сетевые виртуальные модули. Используйте возможности [диагностики VPN](../network-watcher/diagnose-communication-problem-between-networks.md?toc=%2fazure%2fvirtual-network%2ftoc.json) в службе "Наблюдатель за сетями", чтобы выявить проблемы с VPN-шлюзом Azure.
 
-Если у вас по-прежнему возникают проблемы с подключениями, ознакомьтесь с разделами [Рекомендации](#considerations) и [Дополнительная диагностика](#additional-dignosis).
+Если у вас по-прежнему возникают проблемы с подключениями, ознакомьтесь с разделами [Рекомендации](#considerations) и "Дополнительная диагностика".
 
 ## <a name="considerations"></a>Рекомендации
 

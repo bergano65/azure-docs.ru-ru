@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 1/7/2019
 ms.author: borisb
-ms.openlocfilehash: 7ab8b66d516368bf866aa9d2a202ccd261394b93
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4505dcf5d9407a609bcf97c56835ff186607127d
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243153"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563746"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -109,7 +109,7 @@ ms.locfileid: "55243153"
 sudo yum update -y --disablerepo='*' --enablerepo='*-microsoft-*'
 ```
 
-Кроме того, с помощью команды `sudo yum update` также можно обновить пакет сертификата клиента, несмотря на ошибки "Срок действия SSL-сертификата истек", которые будут отображаться для других репозиториев. После обновления нормальное подключение к другим репозиториям RHUI должно быть восстановлено, как и возможность успешного запуска команды `sudo yum update`.
+Кроме того, с помощью команды `sudo yum update` можно также обновить пакет сертификата клиента (в зависимости от версии RHEL), несмотря на ошибки "Срок действия SSL-сертификата истек", которые будут отображаться для других репозиториев. После успешного обновления нормальное подключение к другим репозиториям RHUI должно быть восстановлено, как и возможность успешного выполнения команды `sudo yum update`.
 
 
 ### <a name="troubleshoot-connection-problems-to-azure-rhui"></a>Устранение неполадок подключения к инфраструктуре RHUI в Azure
@@ -119,7 +119,7 @@ sudo yum update -y --disablerepo='*' --enablerepo='*-microsoft-*'
 
     a. Проверьте, содержит ли файл `/etc/yum.repos.d/rh-cloud.repo` ссылку на `rhui-[1-3].microsoft.com` в `baseurl` раздела `[rhui-microsoft-azure-rhel*]`. Если это так, то вы используете новую версию инфраструктуры RHUI Azure.
 
-    b. Если он указывает на расположение с помощью шаблона `mirrorlist.*cds[1-4].cloudapp.net`, то требуется обновить конфигурацию. Вы используете устаревший моментальный снимок виртуальной машины. Его нужно обновить, чтобы в файле было указано расположение новой версии инфраструктуры RHUI в Azure.
+    б) Если он указывает на расположение с помощью шаблона `mirrorlist.*cds[1-4].cloudapp.net`, то требуется обновить конфигурацию. Вы используете устаревший моментальный снимок виртуальной машины. Его нужно обновить, чтобы в файле было указано расположение новой версии инфраструктуры RHUI в Azure.
 
 1. Доступ к размещенной в Azure инфраструктуре RHUI могут получать только виртуальные машины с [IP-адресами в диапазонах центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
@@ -188,7 +188,7 @@ sudo yum update -y --disablerepo='*' --enablerepo='*-microsoft-*'
         curl -o azureclient.rpm https://rhui-1.microsoft.com/pulp/repos/microsoft-azure-rhel7/rhui-azure-rhel7-2.2-74.noarch.rpm
         ```
 
-   b. Выполните проверку.
+   б) Выполните проверку.
 
    ```bash
    rpm -Kv azureclient.rpm
@@ -204,7 +204,7 @@ sudo yum update -y --disablerepo='*' --enablerepo='*-microsoft-*'
        MD5 digest: OK (c04ff605f82f4be8c96020bf5c23b86c)
    ```
 
-   d. Установите RPM.
+   4.3. Установите RPM.
 
     ```bash
     sudo rpm -U azureclient.rpm

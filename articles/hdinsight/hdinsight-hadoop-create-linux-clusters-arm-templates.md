@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1b145b1162dcba5653c962f0af1969c1aa017f57
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: d40d3b32f3af8e50079de0a5988584427ea6777c
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054645"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819813"
 ---
 # <a name="create-apache-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -38,11 +38,12 @@ ms.locfileid: "54054645"
 
 Примеры шаблонов HDInsight можно найти в [коллекции шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=hdinsight). Используйте кроссплатформенный редактор [Visual Studio Code](https://code.visualstudio.com/#alt-downloads) с [расширением Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) или текстовый редактор, чтобы сохранить шаблон в файл на своей рабочей станции. 
 
-Дополнительные сведения о шаблонах Resource Manager см. в перечисленных ниже статьях.
+Дополнительные сведения о шаблонах Resource Manager см. в перечисленных ниже статьях и примерах:
 
 * [Шаблоны диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/resource-group-template-deploy.md)
-* Справочник по шаблону [Microsoft.HDInsight/clusters](/azure/templates/microsoft.hdinsight/clusters)
+* Справочник по шаблону [Microsoft.HDInsight/clusters](/azure/templates/microsoft.hdinsight/allversions)
+* [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Hdinsight&pageNumber=1&sort=Popular)
 
 ## <a name="generate-templates"></a>Создание шаблонов
 
@@ -51,7 +52,6 @@ Resource Manager позволяет экспортировать шаблон Re
 - Портал Azure: См. [Экспорт шаблона Azure Resource Manager из существующих ресурсов](../azure-resource-manager/resource-manager-export-template.md).
 - Azure PowerShell См. [Экспорт шаблонов Azure Resource Manager с помощью PowerShell](../azure-resource-manager/resource-manager-export-template-powershell.md).
 - Классический Azure CLI: см. [Экспорт шаблонов Azure Resource Manager с помощью классического Azure CLI](../azure-resource-manager/resource-manager-export-template-cli.md).
-
 
 ## <a name="deploy-using-the-portal"></a>Развертывание с помощью портала
 

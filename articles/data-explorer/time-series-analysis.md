@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 53ef96b561ccaa1480125f2c509381e980084b7a
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: dd9314b8c61a98e6bc080503bcdd6b5c6257bd49
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636700"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55750568"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Анализ временных рядов в службе Azure Data Explorer
 
@@ -64,7 +64,7 @@ demo_make_series1
     - `byOsVer`: секционирование по ОС.
 - Фактическая структура данных во временных рядах представляет собой числовой массив агрегированных значений по каждой ячейке времени. Мы используем `render timechart` для визуализации.
 
-В приведенной выше таблице есть три секции. Мы можем создать отдельные временные ряды для каждой версии операционной системы — Windows 10 (красный), 7 (синий) и 8.1 (зеленый), как показано на графике:
+В приведенной выше таблице есть три секции. Мы можем создать отдельные временные ряды для каждой версии операционной системы — Windows 10 (красный), 7 (синий) и 8.1 (зеленый), как показано на графике:
 
 ![Секция временных рядов](media/time-series-analysis/time-series-partition.png)
 
@@ -77,8 +77,8 @@ demo_make_series1
 
 Фильтрация — это распространенная практика при обработке сигналов, которая полезна в задачах обработки временных рядов (например, для сглаживания сигнала с шумами, обнаружения изменений).
 - Существует две универсальные функции фильтрации.
-    - [`series_fir()`](/azure/kusto/query/series-firfunction): применение фильтра FIR. Используется для простого вычисления скользящего среднего и дифференциации временных рядов для обнаружения изменений.
-    - [`series_iir()`](/azure/kusto/query/series-iirfunction): применение фильтра IIR. Используется для экспоненциального сглаживания и вычисления кумулятивной суммы.
+    - [`series_fir()`](/azure/kusto/query/series-firfunction). Применение фильтра FIR. Используется для простого вычисления скользящего среднего и дифференциации временных рядов для обнаружения изменений.
+    - [`series_iir()`](/azure/kusto/query/series-iirfunction). Применение фильтра IIR. Используется для экспоненциального сглаживания и вычисления кумулятивной суммы.
 - Можно расширить временной ряд функцией `Extend` путем добавления в запрос нового ряда скользящих средних с размером в 5 ячеек (с именем *ma_num*):
 
 ```kusto
@@ -103,7 +103,7 @@ ADX поддерживает сегментированный анализ ли�
 ```kusto
 demo_series2
 | extend series_fit_2lines(y), series_fit_line(y)
-| render linechart
+| render linechart with(xcolumn=x)
 ```
 
 ![Регрессия временного ряда](media/time-series-analysis/time-series-regression.png)
@@ -206,7 +206,7 @@ let min_t = toscalar(demo_many_series1 | summarize min(TIMESTAMP));
 let max_t = toscalar(demo_many_series1 | summarize max(TIMESTAMP));  
 demo_many_series1
 | make-series reads=avg(DataRead) on TIMESTAMP in range(min_t, max_t, 1h)
-| render timechart 
+| render timechart with(ymin=0) 
 ```
 
 ![Масштабирование временного ряда](media/time-series-analysis/time-series-at-scale.png)
@@ -217,7 +217,7 @@ demo_many_series1
 
 ```kusto
 demo_many_series1
-| summarize by Loc, anonOp, DB
+| summarize by Loc, Op, DB
 | count
 ```
 
@@ -232,7 +232,7 @@ demo_many_series1
 let min_t = toscalar(demo_many_series1 | summarize min(TIMESTAMP));  
 let max_t = toscalar(demo_many_series1 | summarize max(TIMESTAMP));  
 demo_many_series1
-| make-series reads=avg(DataRead) on TIMESTAMP in range(min_t, max_t, 1h) by Loc, anonOp, DB
+| make-series reads=avg(DataRead) on TIMESTAMP in range(min_t, max_t, 1h) by Loc, Op, DB
 | extend (rsquare, slope) = series_fit_line(reads)
 | top 2 by slope asc 
 | render timechart with(title='Service Traffic Outage for 2 instances (out of 23115)')
@@ -246,17 +246,17 @@ demo_many_series1
 let min_t = toscalar(demo_many_series1 | summarize min(TIMESTAMP));  
 let max_t = toscalar(demo_many_series1 | summarize max(TIMESTAMP));  
 demo_many_series1
-| make-series reads=avg(DataRead) on TIMESTAMP in range(min_t, max_t, 1h) by Loc, anonOp, DB
+| make-series reads=avg(DataRead) on TIMESTAMP in range(min_t, max_t, 1h) by Loc, Op, DB
 | extend (rsquare, slope) = series_fit_line(reads)
 | top 2 by slope asc
-| project Loc, anonOp, DB, slope 
+| project Loc, Op, DB, slope 
 ```
 
 |   |   |   |   |   |
 | --- | --- | --- | --- | --- |
-|   | Loc | anonOp | DB | slope |
-|   | Loc 15 | -3207352159611332166 | 1151 | -102743.910227889 |
-|   | Loc 13 | -3207352159611332166 | 1249 | -86303.2334644601 |
+|   | Loc | Оператор | DB | slope |
+|   | Loc 15 | 37 | 1151 | -102743.910227889 |
+|   | Loc 13 | 37 | 1249 | -86303.2334644601 |
 
 Менее чем за две минуты служба ADX проанализировала свыше 20 тыс. временных рядов и обнаружила два ряда с отклонениями, в которых число операций чтения неожиданно уменьшилось.
 

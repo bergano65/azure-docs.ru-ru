@@ -1,6 +1,6 @@
 ---
-title: Затраты на программное обеспечение Windows при резервировании в Azure | Документация Майкрософт
-description: Узнайте, какие счетчики программного обеспечения Windows не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
+title: Затраты на резервирование программного обеспечения для Azure | Документация Майкрософт
+description: Узнайте, какие счетчики программного обеспечения не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
 services: billing
 documentationcenter: ''
 author: manish-shukla01
@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/09/2018
+ms.date: 01/30/2019
 ms.author: banders
-ms.openlocfilehash: de2aee36f20bd5142f398de7edb301e53ab42cae
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: 63b1e850cbcea089a6a115f53ea1ef579a16886f
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54902675"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55744986"
 ---
-# <a name="windows-software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances.
+# <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
 
-Если не применяется преимущество гибридного использования Azure для зарезервированных экземпляров виртуальных машин, плата будет взиматься за единицы измерения программного обеспечения Windows (см. раздел ниже).
+Если не применяется Преимущество гибридного использования Azure для зарезервированных экземпляров виртуальных машин, плата будет взиматься за единицы измерения программного обеспечения (см. раздел ниже).
 
 ## <a name="windows-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
 
@@ -50,6 +50,22 @@ ms.locfileid: "54902675"
 | 904c5c71-1eb7-43a6-961c-d305a9681624 | Зарезервированные экземпляры с Windows Server (256 ядер) | Все, кроме серии B |
 | 6fdab81b-4284-4df9-8939-c237cc7462fe | Зарезервированные экземпляры с Windows Server (96 ядер) | Все, кроме серии B |
 
+## <a name="cloud-services-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
+
+| Значение MeterId | Значение MeterName в файле использования |
+| ------- | ------------------------|
+|ac9d47ff-ff68-4afc-a145-0c321cf8d0d5|Лицензия на использование 1 виртуального ЦП облачных служб|
+|e0434559-19ee-4132-9c46-05ad4044f3f7|Лицензия на использование 2 виртуальных ЦП облачных служб|
+|6ecc834e-39b3-48b3-8d10-cc5626bacb66|Лицензия на использование 4 виртуальных ЦП облачных служб|
+|13103090-ca72-4825-ab12-7f16c4931d95|Лицензия на использование 8 виртуальных ЦП облачных служб|
+|ecd2bb6e-45a5-49aa-a58b-3947ba21c364|Лицензия на использование 16 виртуальных ЦП облачных служб|
+|de2c7f1d-06dc-4b16-bc8b-c2ec5f4c8aee|Лицензия на использование 20 виртуальных ЦП облачных служб|
+|ca1af837-4b35-47f5-8d14-b1988149c4ca|Лицензия на использование 32 виртуальных ЦП облачных служб|
+|dc72ee45-2ab7-4698-b435-e2cf10d1f9f6|Лицензия на использование 64 виртуальных ЦП облачных служб|
+|7a803026-244c-4659-834c-11e6b2d6b76f|Лицензия на использование 80 виртуальных ЦП облачных служб|
+
+## <a name="rates-for-azure-meters"></a>Ставки для единиц измерения Azure
+
 Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](https://msdn.microsoft.com/library/azure/mt219004) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -65,6 +81,3 @@ ms.locfileid: "54902675"
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
-
-
-

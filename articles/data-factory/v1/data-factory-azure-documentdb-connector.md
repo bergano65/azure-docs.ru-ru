@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: af528f210f4464c973d88fab7eeb1572effc87bc
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 54e78496b98fffefd2932a2ce7625f8b325fb32a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330404"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812656"
 ---
 # <a name="move-data-to-and-from-azure-cosmos-db-using-azure-data-factory"></a>Перемещение данных в Azure Cosmos DB и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -301,11 +301,11 @@ SELECT Person.PersonId, Person.Name.First AS FirstName, Person.Name.Middle as Mi
 ## <a name="example-copy-data-from-azure-blob-to-azure-cosmos-db"></a>Пример: Копирование данных из большого двоичного объекта в Azure Cosmos DB
 В примере ниже показано следующее.
 
-1. Связанная служба типа [DocumentDb](#azure-documentdb-linked-service-properties).
+1. Связанная служба типа DocumentDb.
 2. Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
 3. Входной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).
-4. Выходной [набор данных](data-factory-create-datasets.md) типа [DocumentDbCollection](#azure-documentdb-dataset-type-properties).
-5. Конвейер [pipeline](data-factory-create-pipelines.md) с действием копирования, в котором используются [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) и [DocumentDbCollectionSink](#azure-documentdb-copy-activity-type-properties).
+4. Выходной [набор данных](data-factory-create-datasets.md) типа DocumentDbCollection.
+5. [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) и DocumentDbCollectionSink.
 
 В этом примере данные копируются из большого двоичного объекта Azure в Azure Cosmos DB. Используемые в этих примерах свойства JSON описаны в разделах, следующих за примерами.
 

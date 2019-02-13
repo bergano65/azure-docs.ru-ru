@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 13e00acaf287a9e153aaa8e5ce7d630f8d198f02
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: a7789f9a3f3da46305a9d8cd7cda24019658f2ad
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330421"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811493"
 ---
 # <a name="copy-data-to-and-from-azure-sql-database-using-azure-data-factory"></a>Копирование данных в базу данных SQL Azure и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -199,7 +199,7 @@ GO
   }
 }
 ```
-Список свойств, поддерживаемых этой связанной службой, приведен в разделе [Связанная служба SQL Azure](#linked-service) .
+Список свойств, поддерживаемых этой связанной службой, приведен в разделе "Связанная служба SQL Azure".
 
 **Связанная служба хранилища BLOB-объектов Azure**
 
@@ -248,7 +248,7 @@ GO
 }
 ```
 
-Список свойств, поддерживаемых этим типом набора данных, приведен в разделе [Свойства типа «Набор данных Azure SQL»](#dataset) .
+Список свойств, поддерживаемых этим типом набора данных, приведен в разделе "Свойства типа «Набор данных Azure SQL»".
 
 **Выходной набор данных BLOB-объекта Azure**
 
@@ -391,7 +391,7 @@ GO
   }
 }
 ```
-Список свойств, поддерживаемых этой связанной службой, приведен в разделе [Связанная служба SQL Azure](#linked-service) .
+Список свойств, поддерживаемых этой связанной службой, приведен в разделе "Связанная служба SQL Azure".
 
 **Связанная служба хранилища BLOB-объектов Azure**
 
@@ -499,7 +499,7 @@ GO
   }
 }
 ```
-Список свойств, поддерживаемых этим типом набора данных, приведен в разделе [Свойства типа «Набор данных Azure SQL»](#dataset) .
+Список свойств, поддерживаемых этим типом набора данных, приведен в разделе "Свойства типа «Набор данных Azure SQL»".
 
 **Действие копирования в конвейере с BLOB-объектом в качестве источника и базой данных SQL в качестве приемника:**
 
@@ -641,9 +641,9 @@ create table dbo.TargetTbl
 | binary; |Byte[] |
 | bit |Логическое |
 | char; |String, Char[] |
-| дата |Datetime |
-| DateTime |Datetime |
-| datetime2; |Datetime |
+| дата |DateTime |
+| DateTime |DateTime |
+| datetime2; |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | Атрибут FILESTREAM (varbinary(max)) |Byte[] |
@@ -657,12 +657,12 @@ create table dbo.TargetTbl
 | nvarchar; |String, Char[] |
 | real; |Single |
 | rowversion |Byte[] |
-| smalldatetime; |Datetime |
+| smalldatetime; |DateTime |
 | smallint; |Int16 |
 | smallmoney; |Decimal |
 | sql_variant |Object * |
 | текст |String, Char[] |
-| Twitter в режиме реального |Интервал времени |
+| Twitter в режиме реального |TimeSpan |
 |  timestamp |Byte[] |
 | tinyint; |Byte |
 | uniqueidentifier |Guid |

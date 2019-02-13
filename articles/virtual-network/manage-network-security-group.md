@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/05/2018
 ms.author: jdial
-ms.openlocfilehash: 7505715641462f4a07d999ea419632bd91e925fb
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 21a3efb67f837a05f3c070d0805aa033f86efbd5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438921"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822448"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
 
@@ -66,7 +66,7 @@ ms.locfileid: "54438921"
 2. Выберите из списка группу безопасности сети, о которой нужно просмотреть сведения. В разделе **Параметры** можно просмотреть **правила безопасности для входящего трафика** и **правила безопасности для исходящего трафика**, **сетевые интерфейсы** и **подсети**, связанные с группой безопасности сети. Можно также включить или отключить **журналы диагностики** и просмотреть **действующие правила безопасности**. Чтобы узнать больше, ознакомьтесь с разделами [Аналитика журналов для групп безопасности сети](virtual-network-nsg-manage-log.md) и [Устранение проблем с группами безопасности сети на портале Azure](diagnose-network-traffic-filter-problem.md).
 3. Дополнительные сведения о перечисленных общих параметрах Azure доступны в следующих статьях:
     *   [Журнал действий](../azure-monitor/platform/activity-logs-overview.md)
-    *   [Управление доступом (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control)
+    *   [Управление доступом (IAM)](../role-based-access-control/overview.md)
     *   [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
     *   [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
     *   [Сценарий автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group)
@@ -92,7 +92,7 @@ ms.locfileid: "54438921"
 
 ### <a name="delete-a-network-security-group"></a>Удаление группы безопасности сети
 
-Если группа безопасности сети связана с какой-либо подсетью или сетевыми интерфейсами, ее невозможно удалить. [Удалите связи](#associate-or-dissociate-a-network-security-group-to-or-from-a-resource) группы безопасности сети со всеми связанными с ней подсетями и сетевыми интерфейсами, прежде чем пытаться удалить эту группу.
+Если группа безопасности сети связана с какой-либо подсетью или сетевыми интерфейсами, ее невозможно удалить. Удалите связи группы безопасности сети со всеми связанными с ней подсетями и сетевыми интерфейсами, прежде чем пытаться удалить эту группу.
 
 1. В поле поиска в верхней части портала введите *группы безопасности сети*. Когда элемент **Группы безопасности сети** появится в результатах поиска, выберите его.
 2. Выберите из списка группу безопасности сети для удаления.

@@ -10,12 +10,12 @@ ms.author: shwinne
 author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 409d1bb30dc956bb19e9a37212d93990d1401e7b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 6d190e4c5d283b9f803cf7287445d7591b5465db
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240120"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753118"
 ---
 # <a name="use-visual-studio-code-to-train-and-deploy-machine-learning-models"></a>Использование Visual Studio Code для обучения и развертывания моделей машинного обучения
 
@@ -108,9 +108,9 @@ ms.locfileid: "55240120"
 
 #### <a name="the-conda-dependencies-file"></a>Файл зависимостей conda
 
-По умолчанию создается новая среда conda, которая управляет устанавливаемыми зависимостями. Но сами зависимости следует включить в файл `aml_config/conda_dependencies.yml`.
+По умолчанию создается новая среда conda, которая управляет устанавливаемыми зависимостями. Однако сами зависимости и их версии следует включить в файл `aml_config/conda_dependencies.yml`. 
 
-Ниже представлен фрагмент файла aml_config/conda_dependencies.yml, используемого по умолчанию.
+Ниже представлен фрагмент файла aml_config/conda_dependencies.yml, используемого по умолчанию. Например, вы можете указать "tensorflow=1.12.0", как показано ниже. Если вы не укажете версию зависимости, будет использоваться последняя версия.  
 Вы можете добавить в файл конфигурации дополнительные зависимости.
 
 ```yaml
@@ -123,7 +123,7 @@ dependencies:
   # Currently Azure Machine Learning service only supports 3.5.2 and later.
 
 - python=3.6.2
-- tensorflow
+- tensorflow=1.12.0
 
 - pip:
     # Required packages for Azure Machine Learning service execution, history, and data preparation.

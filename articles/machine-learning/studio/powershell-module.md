@@ -1,7 +1,21 @@
 ---
-заголовок: Модули PowerShell для Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Использование PowerShell для создания рабочих областей, экспериментов, веб-служб и другого, а также управления этими компонентами в Студии машинного обучения Microsoft Azure. services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=haining, previous-author=hning86 ms.date: 25.01.2019
+title: Модули PowerShell для Студии машинного обучения
+titleSuffix: Azure Machine Learning Studio
+description: Использование PowerShell для создания рабочих областей, экспериментов, веб-служб и другого, а также управления этими компонентами в Студии машинного обучения Microsoft Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: previous-ms.author=haining, previous-author=hning86
+ms.date: 01/25/2019
+ms.openlocfilehash: b6080e6e81b6cedce4d08cf20e082c87e5cecade
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55489824"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio"></a>Модули PowerShell для Студии машинного обучения Microsoft Azure
 

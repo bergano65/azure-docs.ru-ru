@@ -15,21 +15,25 @@ ms.workload: iaas-sql-server
 ms.date: 11/14/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 1b1c7192eb8389d3ad3a1c7c935d9c7e2d8769a9
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: ff1281a249abf456176cffe2b02ef3c63b718d5a
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359924"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55768002"
 ---
 # <a name="how-to-change-the-licensing-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL Server в Azure
 В этой статье описывается процесс, позволяющий изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL **Microsoft.SqlVirtualMachine**. Для виртуальной машины, на которой размещен сервер SQL Server, предлагаются две модели лицензирования — оплата по мере использования или использование собственной лицензии (BYOL). Теперь вы можете изменить выбранную модель лицензирования для виртуальной машины SQL Server, используя PowerShell или интерфейс командной строки Azure. 
 
-Модель **оплаты по мере использования** означает, что в стоимость секунды выполнения виртуальной машины Azure включается стоимость лицензии SQL Server.
+Модель **оплаты по мере использования** (PAYG) означает, что в стоимость секунды выполнения виртуальной машины Azure включается стоимость лицензии SQL Server.
 
-Модель **с использованием собственной лицензии** также называется [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/). Она позволяет использовать собственную лицензию SQL Server для виртуальной машины, на которой работает SQL Server. Дополнительные сведения о ценах см. в статье [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
+Модель **с использованием собственной лицензии** (BYOL) также называется [Преимуществом гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/). Она позволяет использовать собственную лицензию SQL Server для виртуальной машины, на которой работает SQL Server. Дополнительные сведения о ценах см. в статье [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
 Переключение между двумя моделями лицензирования выполняется **без простоя**, без перезапуска виртуальной машины, **без дополнительных затрат** (более того, включение Преимущества гибридного использования Azure даже *снижает* затраты) и **вступает в силу немедленно**. 
+
+  >[!NOTE]
+  > - Возможность преобразования модели лицензирования в данный момент доступна только для тех клиентов, которые начали работу с образом виртуальной Машины SQL Server с оплатой по мере использования. Если же начать работу с образом с использованием собственной лицензии с портала, вы не сможете преобразовать этот образ для оплаты по мере использования. 
+  > - Клиенты CSP могут использовать преимущества AHB, сначала развернув виртуальную машину с оплатой по мере использования, а затем преобразовав ее для использования собственной лицензии. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для использования поставщика ресурсов виртуальной машины SQL требуется расширение SQL IaaS. Таким образом, чтобы продолжить использование поставщика ресурсов виртуальной машины SQL, вам потребуется следующее:
@@ -37,52 +41,45 @@ ms.locfileid: "54359924"
 - [Виртуальная машина SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) с установленным [расширением SQL IaaS](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension). 
 
 
-## <a name="register-existing-sql-server-vm-with-new-resource-provider"></a>Регистрация имеющейся виртуальной машины SQL Server в новом поставщике ресурсов
+## <a name="register-existing-sql-server-vm-with-sql-resource-provider"></a>Регистрация имеющейся виртуальной машины SQL Server в поставщике ресурсов SQL
 Возможность переключения моделей лицензирования предоставляется только новым поставщиком ресурсов виртуальной машины SQL (Microsoft.SqlVirtualMachine). Виртуальные машины SQL Server, развернутые после декабря 2018 года, автоматически регистрируются в новом поставщике ресурсов. Тем не менее имеющиеся виртуальные машины, развернутые до этой даты, необходимо вручную зарегистрировать в поставщике ресурсов, прежде чем изменять их модель лицензирования. 
 
-
-
-
+  > [!NOTE] 
   > В случае удаления ресурса виртуальной машины SQL вы вернетесь к тем настройкам лицензирования, которые запрограммированы в коде образа. 
 
+### <a name="register-sql-resource-provider-with-your-subscription"></a>Регистрация поставщика ресурсов SQL в подписке 
 
-### <a name="powershell"></a>PowerShell
+Чтобы зарегистрировать виртуальную машину SQL Server в поставщике ресурсов SQL, необходимо зарегистрировать этот поставщик ресурсов в своей подписке. Для этого можно использовать PowerShell или портал Azure. 
 
-Следующий фрагмент кода выполняет подключение к Azure и проверяет, какой идентификатор подписки вы используете. 
-```PowerShell
-# Connect to Azure
-Connect-AzureRmAccount
-Account: <account_name>
-
-# Verify your subscription ID
-Get-AzureRmContext
-
-# Set the correct Azure Subscription ID
-Set-AzureRmContext -SubscriptionId <Subscription_ID>
-```
-
-Следующий фрагмент кода регистрирует новый поставщик ресурсов SQL в используемой подписке, а затем регистрирует имеющуюся виртуальную машину SQL Server в новом поставщике ресурсов. 
+#### <a name="using-powershell"></a>с использованием PowerShell.
+Приведенный ниже фрагмент кода зарегистрирует поставщик ресурсов SQL в вашей подпиской Azure. 
 
 ```powershell
 # Register the new SQL resource provider for your subscription
 Register-AzureRmResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
+```
+
+#### <a name="using-azure-portal"></a>Использование портала Azure
+Приведенные ниже инструкции позволят зарегистрировать поставщик ресурсов SQL в вашей подпиской Azure. 
+
+1. Войдите на портал Azure и откройте раздел **Все службы**. 
+1. Перейдите к разделу **Подписки** и выберите нужную подписку.  
+1. В колонке **Подписки** перейдите к элементу **Поставщики ресурсов**. 
+1. Введите в фильтр значение `sql`, чтобы отсортировать поставщиков ресурсов, имеющих отношение к SQL. 
+1. Выберите действие *Зарегистрировать*, *Перерегистрировать* или *Отменить регистрацию* для поставщика **Microsoft.SqlVirtualMachine** в зависимости от ваших намерений. 
+
+  ![Изменение поставщика](media/virtual-machines-windows-sql-ahb/select-resource-provider-sql.png)
+
+### <a name="register-sql-server-vm-with-sql-resource-provider"></a>Регистрация виртуальной машины SQL Server в поставщике ресурсов SQL
+После регистрации поставщика ресурсов SQL в подписке можно использовать PowerShell, чтобы зарегистрировать виртуальную машину SQL Server в этом поставщике ресурсов SQL. 
 
 
+```powershell
 # Register your existing SQL Server VM with the new resource provider
 # example: $vm=Get-AzureRmVm -ResourceGroupName AHBTest -Name AHBTest
 $vm=Get-AzureRmVm -ResourceGroupName <ResourceGroupName> -Name <VMName>
 New-AzureRmResource -ResourceName $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines -Properties @{virtualMachineResourceId=$vm.Id}
 ```
-
-### <a name="portal"></a>Microsoft Azure
-Вы также можете зарегистрировать новый поставщик ресурсов для виртуальной машины SQL с помощью портала. Для этого выполните следующие действия.
-1. Войдите на портал Azure и откройте раздел **Все службы**. 
-1. Перейдите к разделу **Подписки** и выберите нужную подписку.  
-1. В колонке **Подписки** перейдите к элементу **Поставщик ресурсов**. 
-1. Введите в фильтр значение `sql`, чтобы отсортировать поставщиков ресурсов, имеющих отношение к SQL. 
-1. Выберите действие *Зарегистрировать*, *Перерегистрировать* или *Отменить регистрацию* для поставщика **Microsoft.SqlVirtualMachine** в зависимости от ваших намерений. 
-
-  ![Изменение поставщика](media/virtual-machines-windows-sql-ahb/select-resource-provider-sql.png)
 
 
 ## <a name="use-powershell"></a>Использование PowerShell 
@@ -113,7 +110,7 @@ $SqlVm | Set-AzureRmResource -Force
 ```
 
   >[!NOTE]
-  > Чтобы изменить модель лицензирования, необходимо использовать новый поставщик ресурсов виртуальной машины SQL. Если вы попытаетесь выполнить эти команды, прежде чем зарегистрируете виртуальную машину SQL Server в новом поставщике, может возникнуть такая ошибка: `Get-AzureRmResource : The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/AHBTest' under resource group 'AHBTest' was not found. The property 'sqlServerLicenseType' cannot be found on this object. Verify that the property exists and can be set. ` Если вы видите эту ошибку, [зарегистрируйте виртуальную машину SQL Server в новом поставщике ресурсов](#register-existing-SQL-vm-with-new-resource-provider). 
+  > Чтобы изменить модель лицензирования, необходимо использовать новый поставщик ресурсов виртуальной машины SQL. Если вы попытаетесь выполнить эти команды, прежде чем зарегистрируете виртуальную машину SQL Server в новом поставщике, может возникнуть такая ошибка: `Get-AzureRmResource : The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/AHBTest' under resource group 'AHBTest' was not found. The property 'sqlServerLicenseType' cannot be found on this object. Verify that the property exists and can be set. ` Если вы видите эту ошибку, [зарегистрируйте виртуальную машину SQL Server в новом поставщике ресурсов](#register-existing-sql-server-vm-with-sql-resource-provider). 
  
 
 ## <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure
@@ -132,7 +129,7 @@ az resource update -g <resource_group_name> -n <sql_virtual_machine_name> --reso
 ```
 
   >[!NOTE]
-  >Чтобы изменить модель лицензирования, необходимо использовать новый поставщик ресурсов виртуальной машины SQL. Если вы попытаетесь выполнить эти команды, прежде чем зарегистрируете виртуальную машину SQL Server в новом поставщике, может возникнуть такая ошибка: `The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/AHBTest' under resource group 'AHBTest' was not found. ` Если вы видите эту ошибку, [зарегистрируйте виртуальную машину SQL Server в новом поставщике ресурсов](#register-existing-SQL-vm-with-new-resource-provider). 
+  >Чтобы изменить модель лицензирования, необходимо использовать новый поставщик ресурсов виртуальной машины SQL. Если вы попытаетесь выполнить эти команды, прежде чем зарегистрируете виртуальную машину SQL Server в новом поставщике, может возникнуть такая ошибка: `The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/AHBTest' under resource group 'AHBTest' was not found. ` Если вы видите эту ошибку, [зарегистрируйте виртуальную машину SQL Server в новом поставщике ресурсов](#register-existing-sql-server-vm-with-sql-resource-provider). 
 
 ## <a name="view-current-licensing"></a>Просмотр текущей модели лицензирования 
 

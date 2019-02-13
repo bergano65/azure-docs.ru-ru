@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/30/2019
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 6c340cde488ee37d2454468356f1ceee03f74844
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 9677f6e7f78f241c863fdd9cc88fcfb7298d9164
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302110"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563749"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -177,24 +177,27 @@ ms.locfileid: "55302110"
 Этот параметр влияет на попытки доступа, предпринимаемые из следующих мобильных приложений и классических клиентов. 
 
 
-|Клиентские приложения|Целевая служба|платформа|
-|---|---|---|
-|Azure RemoteApp|Удаленная служба приложений Azure|Windows 10, Windows 8.1, Windows 7, iOS, Android и Mac OS X|
-|Приложение Dynamics CRM|Dynamics CRM|Windows 10, Windows 8.1, iOS и Android|
-|Приложения "Почта", "Календарь" и "Люди", Outlook 2016, Outlook 2013 |Office 365 Exchange Online|Windows 10|
-|MFA и политика расположения для приложений Политики на основе устройств не поддерживаются. |Все службы приложения "Мои приложения"|Android и iOS|
-|Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент.|Microsoft Teams|Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
-|Приложения Office 2013 и Office 2016, клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))|Office 365 SharePoint Online|Windows 8.1, Windows 7|
-|Приложения Office 2016, универсальные приложения Office, Office 2013, клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем|Office 365 SharePoint Online|Windows 10|
-|Office 2016 для macOS (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.|Office 365 SharePoint Online|Mac OS X|
-|Мобильные приложения Office|Office 365 SharePoint Online|Android, iOS|
-|Приложение Office Yammer|Office 365 Yammer|Windows 10, iOS, Android|
-|Outlook 2016 (Office для macOS)|Office 365 Exchange Online|Mac OS X|
-|Outlook 2016, Outlook 2013, Skype для бизнеса|Office 365 Exchange Online|Windows 8.1, Windows 7|
-|Приложение Outlook Mobile|Office 365 Exchange Online|Android, iOS|
-|Приложение PowerBI|Служба PowerBI|Windows 10, Windows 8.1, Windows 7, Android и iOS|
-|Skype для бизнеса|Office 365 Exchange Online|Android, iOS |
-|Приложение Azure DevOps|Azure DevOps|Windows 10, Windows 8.1, Windows 7, iOS и Android|
+| Клиентские приложения| Целевая служба| платформа |
+| --- | --- | --- |
+| Azure RemoteApp| Удаленная служба приложений Azure| Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS|
+| Приложение Dynamics CRM| Dynamics CRM| Windows 10, Windows 8.1, iOS и Android|
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online| Windows 10|
+| MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения"| Android и iOS|
+| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент.| Microsoft Teams| Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS|
+| Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))| Office 365 SharePoint Online| Windows 8.1, Windows 7|
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем| Office 365 SharePoint Online| Windows 10|
+| Office 2016 (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.| Office 365 SharePoint Online| macOS|
+| Office 2019| Office 365 SharePoint Online| Windows 10, macOS|
+| Мобильные приложения Office| Office 365 SharePoint Online| Android, iOS|
+| Приложение Office Yammer| Office 365 Yammer| Windows 10, iOS, Android|
+| Outlook 2019| Office 365 SharePoint Online| Windows 10, macOS|
+| Outlook 2016 (Office для macOS)| Office 365 Exchange Online| macOS|
+| Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности)| Office 365 Exchange Online| Windows 8.1, Windows 7|
+| Приложение Outlook Mobile| Office 365 Exchange Online| Android, iOS|
+| Приложение PowerBI| Служба PowerBI| Windows 10, Windows 8.1, Windows 7, Android и iOS|
+| Skype для бизнеса| Office 365 Exchange Online| Android, iOS|
+| Приложение Visual Studio Team Services| Visual Studio Team Services| Windows 10, Windows 8.1, Windows 7, iOS и Android|
+
 
 
 ## <a name="support-for-legacy-authentication"></a>Поддержка устаревших методов проверки подлинности
@@ -214,27 +217,33 @@ ms.locfileid: "55302110"
 Этот параметр применяется к следующим клиентским приложениям.
 
 
-- Microsoft Intune Managed Browser
-- Microsoft PowerBI;
-- Microsoft Invoicing.
-- Microsoft Launcher;
+
 - Microsoft Azure Information Protection.
+- Microsoft Edge
 - Microsoft Excel
+- Microsoft Flow
+- Microsoft Intune Managed Browser
+- Microsoft Invoicing.
 - Microsoft Kaizala 
+- Microsoft Launcher;
 - Microsoft OneDrive
 - Microsoft OneNote;
 - Microsoft Outlook
 - Планировщик (Майкрософт);
+- Microsoft PowerApps
+- Microsoft PowerBI;
 - Microsoft PowerPoint
 - Microsoft SharePoint
 - Microsoft Skype для бизнеса;
 - Microsoft StaffHub
+- Microsoft Stream;
 - Microsoft Teams
+- Microsoft To-Do
 - Microsoft Visio;
 - Microsoft Word
-- Microsoft To-Do
-- Microsoft Stream;
-- Microsoft Edge
+- Microsoft Yammer
+
+
 
 
 

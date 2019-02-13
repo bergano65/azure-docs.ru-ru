@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/21/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: bb8ab22db18bbe170a20d253e601eb78855aafa7
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 88a1405a55432b6f5932f2675260540a8aea46aa
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102742"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55697705"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство: Планирование реализации присоединения к Azure AD
 
@@ -126,8 +126,10 @@ ms.locfileid: "55102742"
 - применимо только к устройствам с Windows 10; 
 
 - не применимо к предыдущим версиям Windows или другим операционным системам. Если у вас есть устройства с Windows 7 или Windows 8.1, то необходимо перейти на Windows 10, чтобы развернуть присоединение к Azure AD.
+
+- Не поддерживается на устройствах с доверенным платформенным модулем (TPM) в режиме FIPS.
  
-**Рекомендация**. Всегда используйте последний выпуск Windows 10, чтобы воспользоваться обновленными функциями.
+**Рекомендация.** Всегда используйте последний выпуск Windows 10, чтобы воспользоваться обновленными функциями.
 
 
 ### <a name="management-platform"></a>Платформа управления

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: e1dca8655c6bf609bee255f183bcd2fe9b56bc55
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: aafed492e83066be20b4728a2617527351291a5b
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54437499"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813115"
 ---
 # <a name="understand-the-linux-agent-check-results-in-update-management"></a>Общие сведения о результатах проверки агента Linux в службе "Управление обновлениями"
 
@@ -28,7 +28,7 @@ ms.locfileid: "54437499"
 
 ## <a name="start-the-troubleshooter"></a>Запуск средства устранения неполадок
 
-Для компьютеров Azure: на портале щелкните ссылку **Устранение неполадок** в столбце **Update Agent Readiness** (Готовность агента обновления), после чего откроется страница **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления). Для устранения неполадок со сторонними компьютерами перейдите к разделу в этой статье: Для устранения неполадок стороннего компьютера см. [инструкции по автономному устранению неполадок](#offline).
+Для компьютеров Azure: на портале щелкните ссылку **Устранение неполадок** в столбце **Update Agent Readiness** (Готовность агента обновления), после чего откроется страница **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления). Для устранения неполадок со сторонними компьютерами перейдите к разделу в этой статье: Ознакомьтесь с инструкциями по автономному устранению неполадок стороннего компьютера.
 
 ![Страница со списком виртуальных машин](../media/update-agent-issues-linux/vm-list.png)
 
@@ -39,7 +39,7 @@ ms.locfileid: "54437499"
 
 ![Страница "Устранение неполадок"](../media/update-agent-issues-linux/troubleshoot-page.png)
 
-По завершении проверок в окне появляются результаты. [Разделы о проверках](#pre-requisistes-checks) предоставляют сведения о предназначении каждой проверки.
+По завершении проверок в окне появляются результаты. Разделы о проверках предоставляют сведения о предназначении каждой проверки.
 
 ![Страница проверки агента обновлений](../media/update-agent-issues-linux/update-agent-checks.png)
 

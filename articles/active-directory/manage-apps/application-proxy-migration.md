@@ -15,12 +15,12 @@ ms.date: 07/27/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: d0a28dc1eee1536a0cabe454cd899d9111edff88
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 0d38fa458ae87ce29110b2423e832ff5c6262a01
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197744"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55817586"
 ---
 # <a name="compare-remote-access-solutions"></a>Сравнение решений для удаленного доступа
 
@@ -56,7 +56,7 @@ ms.locfileid: "55197744"
 - Расширение Azure AD для использования с локальными ресурсами
    - Безопасность и защита в масштабе облака
    - Простое включение таких функций, как условный доступ и многофакторная проверка подлинности
-- Отсутствие компонентов в демилитаризованной зоне
+- Без компонентов в сети периметра
 - Отсутствие необходимости во входящих соединениях
 - Единая панель доступа для пользователей всех приложений, включая O365, интегрированные с Azure AD приложения SaaS и веб-приложения локальной среды. 
 

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
 ms.custom: seodec18
-ms.openlocfilehash: cdda4b0951edd0d1471113c48a4082dfa7407211
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: a12d3708cdb547cc036b249bebf901d2ec5121c3
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719088"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55729325"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -77,7 +77,7 @@ ms.locfileid: "53719088"
 
 - Используйте возможность непрерывной поставки (предварительная версия). Чтобы использовать непрерывную поставку Azure, исходный код приложения можно хранить в репозитории Git для Azure DevOps или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
 
-- Используйте [API развертывания ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). Чтобы использовать этот API, [установите SSH-подключение к веб-приложению](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support#making-a-client-connection) и перейдите в папку, в которую требуется развернуть код. Выполните следующий код:
+- Используйте [API развертывания ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). Чтобы использовать этот API, [установите SSH-подключение к веб-приложению](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) и перейдите в папку, в которую требуется развернуть код. Выполните следующий код:
 
    ```bash
    curl -X POST -u <user> --data-binary @<zipfile> https://{your-sitename}.scm.azurewebsites.net/api/zipdeploy
@@ -132,7 +132,7 @@ var io = require('socket.io')(server,{
 
 **Можно ли использовать собственное хранилище?**
 
-Сейчас нет возможности использовать собственное хранилище.
+Да, [функция использования собственного хранилища](https://docs.microsoft.com/azure/app-service/containers/how-to-serve-content-from-azure-storage) находится на этапе предварительной версии.
 
 **Почему мне не удается просматривать файловую систему или выполняющиеся процессы моего пользовательского контейнера на сайте SCM?**
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложение N2F - Expense reports | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с N2F - Expense reports | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и приложением N2F - Expense reports.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 27fb299bc3bbbbf75bdf40ae02eac627763ce6d4
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: d8d3d9c14ee1eaa5e5d6dc3245c0d4071306f12a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40007598"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811636"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство по интеграции Azure Active Directory с приложением N2F - Expense reports
+# <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство. Интеграция Azure Active Directory с N2F - Expense reports
 
 В этом руководстве описано, как интегрировать приложение N2F - Expense reports с Azure Active Directory (Azure AD).
 
@@ -29,7 +29,7 @@ ms.locfileid: "40007598"
 
 - C помощью Azure AD вы можете контролировать доступ к N2F - Expense reports.
 - Вы можете включить автоматический вход пользователей в N2F - Expense reports (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "40007598"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. добавление N2F - Expense reports из коллекции;
+1. Добавление N2F - Expense reports из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-n2f---expense-reports-from-the-gallery"></a>Добавление N2F - Expense reports из коллекции
@@ -71,7 +71,7 @@ ms.locfileid: "40007598"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **N2F - Expense reports**, на панели результатов выберите **N2F - Expense reports** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,8 +87,8 @@ ms.locfileid: "40007598"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя N2F - Expense reports](#create-a-n2f---expense-reports-test-use)** требуется для создания в N2F - Expense reports пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+3. **Создание тестового пользователя N2F - Expense reports** требуется для создания в N2F - Expense reports пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -151,7 +151,7 @@ ms.locfileid: "40007598"
 
     a. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
-    b. В текстовое поле **Metadata URL** (URL-адрес метаданных) вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
+    б) В текстовое поле **Metadata URL** (URL-адрес метаданных) вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
 
     c. Выберите команду **Сохранить**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "40007598"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/n2f-expensereports-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/n2f-expensereports-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "40007598"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-n2f---expense-reports-test-user"></a>Создание тестового пользователя N2F - Expense reports
 
@@ -213,11 +213,11 @@ ms.locfileid: "40007598"
 
     a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
-    b. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
+    б) В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Name** (Имя) введите имя, например **BrittaSimon**.
 
-    d. Выберите **роль, непосредственного руководителя (N + 1)** и **отделение** в соответствии с требованиями своей организации.
+    4.3. Выберите **роль, непосредственного руководителя (N + 1)** и **отделение** в соответствии с требованиями своей организации.
 
     д. Нажмите кнопку **Validate and send invitation** (Проверить и отправить приглашение).
 
@@ -259,7 +259,7 @@ ms.locfileid: "40007598"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку N2F - Expense reports на панели доступа, вы автоматически войдете в приложение N2F - Expense reports.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

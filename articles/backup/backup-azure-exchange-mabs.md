@@ -2,23 +2,23 @@
 title: Резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server
 description: Узнайте, как выполнить резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server.
 services: backup
-author: pvrk
-manager: shivamg
+author: kasinh
+manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.author: pullabhk
-ms.openlocfilehash: d64c273a189b1fe2337c4430b156874e0adf54b2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: kasinh
+ms.openlocfilehash: 40541596b4da9e0590d497785afd7d6d7f4cbcb4
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605966"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55495400"
 ---
-# <a name="back-up-an-exchange-server-to-azure-backup-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server
+# <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 В этой статье описывается, как настроить Microsoft Azure Backup Server (MABS) для резервного копирования сервера Microsoft Exchange Server в Azure.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем продолжить, убедитесь, что Azure Backup Server [установлен и подготовлен](backup-azure-microsoft-azure-backup.md).
 
 ## <a name="mabs-protection-agent"></a>Агент защиты MABS
@@ -47,7 +47,7 @@ ms.locfileid: "34605966"
 
    * «Мне нужна краткосрочная защита с использованием диска»;
    * «Мне нужна оперативная защита».
-6. Нажмите кнопку **Далее**.
+6. Щелкните **Далее**.
 7. Выберите параметр **Запустить программу Eseutil для проверки целостности данных** , чтобы проверить целостность баз данных Exchange Server.
 
     После этого проверка согласованности резервных копий будет выполняться на сервере MABS, что позволит исключить операции ввода-вывода при выполнении команды **eseutil** на сервере Exchange Server.
@@ -57,7 +57,7 @@ ms.locfileid: "34605966"
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
-8. Нажмите кнопку **Далее**.
+8. Щелкните **Далее**.
 9. Выберите базу данных для **копирующей архивации**, а затем нажмите кнопку **Далее**.
 
    > [!NOTE]
@@ -96,11 +96,11 @@ ms.locfileid: "34605966"
 
 Для точек оперативного восстановления существует пять типов восстановления:
 
-* **Восстановить в исходное расположение сервера Exchange.** Данные будут восстановлены на исходный сервер Exchange Server.
-* **Восстановить в другую базу данных на сервере Exchange.** Данные будут восстановлены в другую базу данных на другом сервере Exchange Server.
-* **Восстановить в базу данных восстановления.** Данные будут восстановлены в базу данных восстановления Exchange (RDB).
-* **Копировать в сетевую папку.** Данные будут восстановлены в сетевую папку.
-* **Копировать на ленту.** Если на сервере MABS подключена и настроена ленточная библиотека или изолированный ленточный накопитель, то точка восстановления будет скопирована на свободную ленту.
+* **Recover to original Exchange Server location** (Восстановить в исходное расположение сервера Exchange Server.) Данные будут восстановлены на исходном сервере Exchange Server.
+* **Recover to another database on an Exchange Server** (Восстановить в другую базу данных на сервере Exchange Server). Данные будут восстановлены в другую базу данных на другом сервере Exchange Server.
+* **Recover to a Recovery Database** (Восстановить в базу данных восстановления). Данные будут восстановлены в базу данных восстановления Exchange (RDB).
+* **Copy to a network folder** (Копировать в сетевую папку). Данные будут восстановлены в сетевую папку.
+* **Copy to tape** (Копировать на ленту). Если на сервере MABS подключена и настроена ленточная библиотека или изолированный ленточный накопитель, то точка восстановления будет скопирована на свободную ленту.
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 

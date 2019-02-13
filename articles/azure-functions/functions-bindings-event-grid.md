@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: 78290f6d1b31788c3f2de99996739cc8e7b20419
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: d865028a2ddc7315192030b704a77a332dab14aa
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53810940"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822718"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -103,7 +103,7 @@ namespace Company.Function
 }
 ```
 
-См. дополнительные сведения о [пакетах](#packages), [атрибутах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
+Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
 
 ### <a name="c-script-example"></a>Пример сценария C#
 
@@ -155,7 +155,7 @@ public static void Run(EventGridEvent eventGridEvent, ILogger log)
 }
 ```
 
-См. дополнительные сведения о [пакетах](#packages), [атрибутах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
+Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
 
 ### <a name="javascript-example"></a>Пример JavaScript
 

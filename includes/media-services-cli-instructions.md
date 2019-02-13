@@ -5,19 +5,19 @@ services: media-services
 author: Juliako
 ms.service: media-services
 ms.topic: include
-ms.date: 01/25/2019
+ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: b335cf996de41f4eea15af1899a0c6654c2f679f
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 06651b06ae84934c16e9f1ac9f604abda8b65615
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104989"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648621"
 ---
 ## <a name="open-cli-shell"></a>Открытие оболочки CLI
 
-Для выполнения команд CLI мы рекомендуем использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). **Cloud Shell** — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Нажмите кнопку "Копировать", чтобы скопировать код. Вставьте его в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить код. Cloud Shell можно открыть разными способами:
+Для выполнения команд CLI мы рекомендуем использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). **Cloud Shell** — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы. Пользователи Linux могут использовать Bash, а пользователи Windows — PowerShell.
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
@@ -29,13 +29,21 @@ ms.locfileid: "55104989"
 
 ### <a name="specify-location-of-files"></a>Определение расположения файлов
 
-Многие команды CLI Служб мультимедиа позволяют передавать параметр с именем файла. 
-
-Если вы используете **Azure Cloud Shell**, отправьте файл в **Azure Cloud Shell**. Вы можете найти кнопку "Отправка и скачивание файлов" в верхней части окна оболочки. После этого сошлитесь на файл следующим образом: `@{FileName}.`. 
+Многие команды CLI Служб мультимедиа позволяют передавать параметр с именем файла. Если вы используете **Cloud Shell**, вы можете отправить файл в clouddrive (с помощью Bash или PowerShell). 
 
 ![Отправка файлов]
 
-Если вы используете Azure CLI локально, укажите полный путь к файлу. Например, `@c:\tracks.json`.
+Независимо от того, используете ли вы локальный интерфейс командной строки или **Cloud Shell**, вам необходимо указать путь к файлу в соответствии с операционной системой или Cloud Shell (Bash или PowerShell), которую вы используете. Ниже приведено несколько примеров.
+
+Относительный путь к файлу (все ОС)
+
+* `@"mytestfile.json"`
+* `@"../mytestfile.json"`
+
+Абсолютный путь к файлу в операционных системах Linux или Mac и Windows
+
+* `@ "/usr/home/mytestfile.json"`
+*   `@"c:\tmp\user\mytestfile.json"`
 
 
 [Передача файлов]: ./media/media-services-cli/upload-download-files.png

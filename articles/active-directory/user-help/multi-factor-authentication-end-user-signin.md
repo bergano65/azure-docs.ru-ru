@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/02/2017
 ms.author: lizross
 ms.reviewer: librown
-ms.openlocfilehash: aafc960c0c26a94a8be672d0d72a46dfcb559013
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 13b82aa4f256bf0ec2d0805e85241d72e115d737
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157012"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810207"
 ---
 # <a name="the-sign-in-experience-with-azure-multi-factor-authentication"></a>Варианты входа с помощью Многофакторной идентификации Azure
 > [!NOTE]
@@ -31,8 +31,8 @@ ms.locfileid: "55157012"
 | --- |
 | [С помощью звонка на мобильный или рабочий телефон](#signing-in-with-a-phone-call) |
 | [С помощью текстового сообщения на мобильный телефон](#signing-in-with-a-text-message)
-| [Вход с помощью уведомлений Microsoft Authenticator](#signing-in-with-the-microsoft-authenticator-app-using-notification) |
-| [Вход с помощью кодов проверки Microsoft Authenticator ](#signing-in-with-the-microsoft-authenticator-app-using-verification-code) |
+| С помощью уведомлений из приложения Microsoft Authenticator |
+| С помощью кодов проверки приложения Microsoft Authenticator |
 | [С помощью другого метода, так как я не могу использовать прямо сейчас основной вариант](#signing-in-with-an-alternate-method) |
 
 ## <a name="signing-in-with-a-phone-call"></a>Вход с помощью телефонного звонка
@@ -87,4 +87,4 @@ ms.locfileid: "55157012"
 
 Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).
 
-Узнайте, как [начать работу с приложением Microsoft Authenticator](microsoft-authenticator-app-how-to.md), чтобы вместо использоваться для входа уведомления вместо текстовых сообщений и звонков.
+Узнайте, как [начать работу с приложением Microsoft Authenticator](user-help-auth-app-download-install.md), чтобы вместо использоваться для входа уведомления вместо текстовых сообщений и звонков.

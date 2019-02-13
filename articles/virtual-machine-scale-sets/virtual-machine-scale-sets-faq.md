@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/12/2017
+ms.date: 01/30/2019
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 6b470bfbb97cb14ccb1f63b34218575b64e686de
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 85b05e50dd989ef8db737df0a43f29b20aefb596
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54812596"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55657762"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "54812596"
 
 **Вопрос.** Можно ли указать последовательность выполнения при использовании нескольких расширений в масштабируемом наборе?
 
-**Ответ.** Напрямую нет, но при использовании расширения customScript ваш скрипт может подождать, пока завершится выполнение другого расширения. Дополнительные рекомендации по виртуализации расширения см. в записи блога [Extension Sequencing in Azure virtual machine scale sets](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/) (Последовательность расширений в масштабируемых наборах виртуальных машин Azure).
+**Ответ.** Да, вы можете использовать [последовательность расширений](virtual-machine-scale-sets-extension-sequencing.md) для масштабируемого набора.
 
 **Вопрос.** Работают ли масштабируемые наборы с группами доступности Azure?
 
@@ -176,7 +176,7 @@ az sf cluster create -h
 
 Актуальные поддерживаемые операции с сертификатами в Azure см. в документации к хранилищам ключей.
 
-Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/en-us/azure/security/azure-service-fabric-security-best-practices) и [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
+Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices) и [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
 
 ### <a name="can-i-specify-an-ssh-key-pair-to-use-for-ssh-authentication-with-a-linux-virtual-machine-scale-set-from-a-resource-manager-template"></a>Можно ли определить пару ключей SSH, используемых в процессе проверки подлинности SSH с помощью масштабируемого набора виртуальных машин Linux, развернутого из шаблона Resource Manager?
 
@@ -230,6 +230,7 @@ az sf cluster create -h
             }
         ]
     }
+}
 ```
 
 Имя элемента конфигурации Linux | Обязательно | type | ОПИСАНИЕ
@@ -392,13 +393,13 @@ Update-AzureRmVmss -ResourceGroupName "resource_group_name" -VMScaleSetName "vms
 - Сбросьте пароль с помощью расширений доступа к виртуальной машине.
 
     Используйте следующий пример сценария PowerShell:
-    
+
     ```powershell
     $vmssName = "myvmss"
     $vmssResourceGroup = "myvmssrg"
     $publicConfig = @{"UserName" = "newuser"}
     $privateConfig = @{"Password" = "********"}
-    
+
     $extName = "VMAccessAgent"
     $publisher = "Microsoft.Compute"
     $vmss = Get-AzureRmVmss -ResourceGroupName $vmssResourceGroup -VMScaleSetName $vmssName
@@ -630,7 +631,9 @@ IP-адреса выбираются из указанной подсети.
                     }
                 ]
             }
-        ],
+        ]
+    }
+}
 ```
 
 В этом примере при достижении порогового значения оповещение отправляется на сайт Pagerduty.com.

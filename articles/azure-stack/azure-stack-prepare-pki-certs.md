@@ -11,22 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/02/2019
+ms.date: 01/30/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.lastreviewed: 01/02/2019
-ms.openlocfilehash: 496a6c45c9f8930f77b3a3dab2f81db1b24c1801
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 01/30/2019
+ms.openlocfilehash: fab7ead59ce8d7e12d145095c64cedf4234e6233
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247210"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55656725"
 ---
 # <a name="prepare-azure-stack-pki-certificates-for-use-in-deployment-or-rotation"></a>Подготовка сертификатов PKI Azure Stack для развертывания или смены секретов
+
 Файлы сертификатов, [полученные из выбранного центра сертификации](azure-stack-get-pki-certs.md), необходимо импортировать и экспортировать со свойствами, которые соответствуют требованиям к сертификату Azure Stack.
 
-
 ## <a name="prepare-certificates-for-deployment"></a>Подготовка сертификатов к развертыванию
+
 Для подготовки и проверки сертификатов Azure Stack PKI, которые будут использоваться для развертывания новой среды Azure Stack или для смены секретов в имеющейся среде Azure Stack, выполните следующие действия. 
 
 ### <a name="import-the-certificate"></a>Импорт сертификата
@@ -83,7 +84,9 @@ ms.locfileid: "55247210"
     
     ![Мастер экспорта сертификатов с выбранными параметрами](./media/prepare-pki-certs\azure-stack-save-cert.png)
 
-1. Выберите **Пароль** и укажите пароль для сертификатов. Запомните этот пароль, так как он используется в качестве параметра развертывания. Щелкните **Далее**.
+1. Выберите **Пароль** и укажите пароль для сертификатов. Создайте пароль, отвечающий следующим требованиям сложности пароля. Минимальная длина — 8 знаков. Пароль содержит по крайней мере три знака из перечисленных групп: прописные буквы, строчные буквы, цифры от 0 до 9, специальные символы, алфавитный символ, не являющийся прописным или строчным. Запишите этот пароль. Вы будете использовать его в качестве параметра развертывания.
+
+1. Щелкните **Далее**.
 
 1. Выберите имя и расположение для экспортируемого PFX-файла. Щелкните **Далее**.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/26/2018
 ms.author: shvija
-ms.openlocfilehash: 4a0e2cd7e0c768512e1aafc042fe55338fdc206e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 88fdaec9e19c082a6fe981dc4d9a0e015335f1e2
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084980"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818624"
 ---
 # <a name="how-to-use-azure-event-hubs-from-a-python-application"></a>Как использовать Центры событий Azure из приложения Python
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Дополнительные сведения см. в статье [Центры событий Azure представляют собой платформу потоковой передачи и службу приема событий.](event-hubs-what-is-event-hubs.md) 
@@ -29,7 +29,7 @@ ms.locfileid: "53084980"
 
 - [отправка событий в концентратор событий](#send-events-to-event-hubs);
 - [получение событий из концентратора событий](#receive-events-from-event-hubs);
-- [чтение собранных данных о событиях из хранилища Azure](#capture-event-hubs-data). 
+- чтение собранных данных о событиях из хранилища Azure. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Создайте концентратор событий, используя одно из кратких руководств в зависимости от используемого средства: [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md). 

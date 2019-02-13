@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: ade066c08829181bc7d1ad5623934b98909e0310
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 34b70b1a6a77a20a034a7822d9c4961c36cdd51c
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888997"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55663967"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
@@ -40,17 +40,12 @@ Desired State Configuration (DSC) — это платформа, которая 
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC Linux поддерживает все [ОС, поддерживаемые расширением](https://azurewiki.cloudapp.netVMAgentExtension/extensionSupportedOSs) за исключением следующих.
+Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
 | Дистрибутив | Version (версия) |
 |---|---|
-| CentOS Linux | 6.5 и более новая |
-| Ubuntu| 12.04 LTS, 14.04 LTS, 16.04 LTS  |
-| RHEL| 6.5 и более новая  |
-| openSUSE| 13.1 и более новая  |
-| SUSE Linux Enterprise Server| 11 SP3 и более новая  |
-
-  
+| Debian | Все версии. |
+| Ubuntu| 18,04 |
  
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 

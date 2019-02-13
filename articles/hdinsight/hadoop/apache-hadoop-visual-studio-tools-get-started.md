@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: dc93d0b44d6d99e8418d4333ca8698bc9ebf3a96
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: a23a2f536f765c62919960f3c582d04543b1f49a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53629685"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820834"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
@@ -250,11 +250,11 @@ ms.locfileid: "53629685"
 ![Снимок экрана средств Data Lake для Visual Studio: представление выполнения заданий](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png "Представление выполнения заданий")
 
 ## <a name="run-hive-batch-jobs"></a>Выполнение пакетных заданий Hive
-Тестирование скрипта Hive в кластере HDInsight может длиться очень долго. Исключением является кластер интерактивных запросов. Этот процесс может занять от нескольких минут. Средства Data Lake для Visual Studio могут проверить скрипт Hive локально без подключения к кластеру в оперативном режиме. Дополнительные сведения о выполнении интерактивных запросов см. в разделе [Выполнение интерактивных запросов Hive](#run-interactive-hive-queries).
+Тестирование скрипта Hive в кластере HDInsight может длиться очень долго. Исключением является кластер интерактивных запросов. Этот процесс может занять от нескольких минут. Средства Data Lake для Visual Studio могут проверить скрипт Hive локально без подключения к кластеру в оперативном режиме. Дополнительные сведения о выполнении интерактивных запросов см. в разделе "Выполнение интерактивных запросов Hive".
 
 Средства Data Lake для Visual Studio также позволяют пользователям видеть, что находится внутри задания Hive, собирая и отображая журналы YARN определенных заданий Hive.
 
-Дополнительные сведения о выполнении пакетных заданий Hive см. в разделе [Выполнение интерактивных запросов Hive](#run-interactive-hive-queries). Информация в этом разделе относится к пакетным заданиям Hive, которые выполняются дольше.
+Дополнительные сведения о выполнении пакетных заданий Hive см. в разделе "Выполнение интерактивных запросов Hive". Информация в этом разделе относится к пакетным заданиям Hive, которые выполняются дольше.
 
 ## <a name="run-apache-pig-scripts"></a>Запуск скриптов Apache Pig
 Средства Data Lake для Visual Studio поддерживают создание и отправку скриптов Pig в кластеры HDInsight. Сначала создайте проект Pig из шаблона. Затем отправьте скрипт в кластеры HDInsight.

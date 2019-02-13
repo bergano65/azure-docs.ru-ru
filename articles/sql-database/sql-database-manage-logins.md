@@ -13,12 +13,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 7cb2e4214e868bdf9f585d6b0f4468a6c8375191
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 81ec99c5de94736d68392cc7cf0bc3e305e0ce7d
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55459246"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55754024"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -49,13 +49,13 @@ ms.locfileid: "55459246"
 - Эти учетные записи входят в пользовательские базы данных в качестве пользователя `dbo`. Они обладают всеми разрешениями в пользовательских базах данных. (Владелец пользовательской базы данных также входит в базу данных в качестве пользователя `dbo`.) 
 - Не входят в базу данных `master` в качестве пользователя `dbo`. Для них назначены ограниченные разрешения в базе данных master. 
 - **Не** являются членами предопределенной роли `sysadmin` стандартного сервера SQL Server, недоступной в базе данных SQL.  
-- Могут создавать, изменять и удалять базы данных, имена для входа, пользователей в базе данных master и правила брандмауэра на уровне сервера.
+- Могут создавать, изменять и удалять базы данных, имена для входа, пользователей в базе данных master и правила брандмауэра протокола IP на уровне сервера.
 - Могут добавлять и удалять членов в ролях `dbmanager` и `loginmanager`.
 - Могут просматривать системную таблицу `sys.sql_logins`.
 
 ### <a name="configuring-the-firewall"></a>Настройка брандмауэра
 
-Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-get-started-portal.md), с помощью [PowerShell](sql-database-powershell-samples.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра уровня сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
+Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-single-database-get-started.md), с помощью [PowerShell](sql-database-powershell-samples.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра протокола IP на уровне сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
 
 ### <a name="administrator-access-path"></a>Путь доступа администратора
 
@@ -67,7 +67,7 @@ ms.locfileid: "55459246"
 
 ### <a name="connecting-to-a-database-by-using-sql-server-management-studio"></a>Подключение к базе данных с помощью SQL Server Management Studio
 
-Пошаговые инструкции по созданию сервера, базы данных, правил брандмауэра на уровне сервера и использованию SQL Server Management Studio для отправки запросов к базе данных см. в руководстве [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-get-started-portal.md).
+Пошаговые инструкции по созданию сервера, базы данных, правил брандмауэра протокола IP на уровне сервера и использованию SQL Server Management Studio для отправки запросов к базе данных см. в руководстве [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-single-database-get-started.md).
 
 > [!IMPORTANT]
 > Чтобы обеспечить синхронизацию с обновлениями Microsoft Azure и Базой данных SQL, рекомендуется всегда использовать последнюю версию Management Studio. [Обновите среду SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).

@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 06/03/2018
+ms.date: 01/30/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: edf99f57fe2166e5ea7f91817dde978015af9348
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 311ec7bacdfe58982ee670277000d81756f92005
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54841450"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648623"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -347,7 +347,7 @@ Yes
 
 **В каких регионах поддерживаются управляемые диски размером больше 4 ТиБ?**
 
-Сейчас на этапе предварительной версии управляемые диски поддерживаются только в центрально-западной части США.
+В настоящее время в предварительной версии размеры управляемых дисков поддерживаются в центрально-западной части США, Северной Европе, Западной Европе, западной части США 2, восточной части США 2, восточной части США.
 
 **Поддерживают ли новые размеры дисков кэширование узла?**
 

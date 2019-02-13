@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: fe647f96d8b992d8d5c1682d588bbdbba0ddf43b
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 921788d1cd3ff24140bdff0c9b6a181e4ab7f0a8
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54055138"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816226"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -66,7 +66,7 @@ $profile = New-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName M
 | MonitorPort |Задает порт TCP, который следует использовать для контроля работоспособности конечных точек. |
 | MonitorPath |Задает путь относительно доменного имени конечной точки, который используется для проверки ее работоспособности. |
 
-Командлет создает профиль диспетчера трафика в Azure и возвращает соответствующий объект профиля в PowerShell. На этом этапе профиль не содержит конечные точки. Дополнительные сведения о добавлении конечных точек в профиль диспетчера трафика см. в разделе [о добавлении конечных точек диспетчера трафика](#adding-traffic-manager-endpoints).
+Командлет создает профиль диспетчера трафика в Azure и возвращает соответствующий объект профиля в PowerShell. На этом этапе профиль не содержит конечные точки. Дополнительные сведения о добавлении конечных точек в профиль диспетчера трафика см. в разделе о добавлении конечных точек диспетчера трафика.
 
 ## <a name="get-a-traffic-manager-profile"></a>Получение профиля диспетчера трафика
 

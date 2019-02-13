@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2018
 ms.author: juliako
-ms.openlocfilehash: 06ecdf31c2627eda5bf651667703ddcf39c9d307
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 24ee0083ec79265f0ac4dfc0a2e235bc72522831
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53604105"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813897"
 ---
 # <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа
 
@@ -57,7 +57,7 @@ ms.locfileid: "53604105"
     > [!Note]
     > Задайте переменным доступа новые значения, полученные в разделе **Доступ к API Служб мультимедиа** выше.
 
-7. Дважды щелкните выбранный файл и введите значения, которые вы получили, получив [доступ к API](#access-the-media-services-api).
+7. Дважды щелкните выбранный файл и введите значения, которые вы получили, получив доступ к API.
 8. Закройте диалоговое окно.
 9. Выберите среду **Azure Media Service v3 Environment** в раскрывающемся списке.
 

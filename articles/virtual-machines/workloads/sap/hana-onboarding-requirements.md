@@ -11,15 +11,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/04/2018
+ms.date: 01/31/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9a445e5a7d230195472c2202d3f40458a23883e9
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 8cfcf9c2f008abb571347e32f2be190dc51901e3
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477862"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55563836"
 ---
 # <a name="onboarding-requirements"></a>Требования для подключения
 
@@ -33,7 +33,7 @@ ms.locfileid: "55477862"
 
 **Сетевое подключение**
 
-- ExpressRoute между локальной средой в Azure. Чтобы подключить локальный центр обработки данных к Azure, у поставщика услуг Интернета необходимо запросить подключение со скоростью не менее 1 Гбит/с. В возможных подключениях между крупными экземплярами HANA и Azure также используется технология ExpressRoute. Подключение ExpressRoute между крупными экземплярами HANA и Azure включено в цену крупных экземпляров HANA. Тем не менее вы как клиент не будете нести дополнительные затраты, а платить только за связь с помощью технологии ExpressRoute между локальной средой и Azure.
+- ExpressRoute между локальной средой в Azure. Чтобы подключить локальный центр обработки данных к Azure, у поставщика услуг Интернета необходимо запросить подключение со скоростью не менее 1 Гбит/с. В возможных подключениях между крупными экземплярами HANA и Azure также используется технология ExpressRoute. Подключение ExpressRoute между крупными экземплярами HANA и Azure включено в цену крупных экземпляров HANA. Сюда входит плата за входящий и исходящий трафик, передаваемый по определенному каналу ExpressRoute. Тем не менее вы как клиент не будете нести дополнительные затраты, а платить только за связь с помощью технологии ExpressRoute между локальной средой и Azure.
 
 **Операционная система**
 

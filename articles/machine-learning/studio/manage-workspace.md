@@ -1,7 +1,21 @@
 ---
-заголовок: Управление рабочей областью Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Управление доступом к рабочим областям Студии машинного обучения Azure, развертывание API веб-служб Машинного обучения и управление ими services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 27.02.2017
+title: Управление рабочей областью Студии машинного обучения
+titleSuffix: Azure Machine Learning Studio
+description: Управление доступом к рабочим областям Машинного обучения Azure, а также развертывание веб-служб API ML и управление ими
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.date: 02/27/2017
+ms.openlocfilehash: f1904552b6c43cadd611659ed544b9f4bafcb465
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55487287"
 ---
 # <a name="manage-an-azure-machine-learning-studio-workspace"></a>Управление рабочей областью Студии машинного обучения Azure
 

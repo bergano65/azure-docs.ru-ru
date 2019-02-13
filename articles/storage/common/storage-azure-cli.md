@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/02/2017
 ms.author: rogarana
 ms.subservice: common
-ms.openlocfilehash: 707ee508b0615ab873b60b45eb1d9f0294313367
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: f485f38d4c580937b027bb76d0c34c98f699ed93
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464575"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816855"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "55464575"
 Скачайте и установите Azure CLI согласно инструкциям в статье [Установка интерфейса командной строки Azure](/cli/azure/install-az-cli2).
 
 > [!TIP]
-> Если у вас возникают проблемы с установкой, см. сведения об устранении неполадок в [этом разделе](/cli/azure/install-az-cli2#installation-troubleshooting) и в руководстве по [устранению неполадок при установке](https://github.com/Azure/azure-cli/blob/master/doc/install_troubleshooting.md) на GitHub.
+> Если у вас возникают проблемы с установкой, см. сведения об устранении неполадок в [этом разделе](/cli/azure/install-az-cli2) и в руководстве по [устранению неполадок при установке](https://github.com/Azure/azure-cli/blob/master/doc/install_troubleshooting.md) на GitHub.
 >
 
 ## <a name="working-with-the-cli"></a>Работа с интерфейсом командной строки
@@ -173,7 +173,7 @@ Done
 ## <a name="manage-storage-accounts"></a>Управление учетными записями хранения
 
 ### <a name="create-a-new-storage-account"></a>Создание новой учетной записи хранения
-Для использования службы хранилища Azure вам потребуется учетная запись хранения. После настройки компьютера для [подключения к подписке](#connect-to-your-azure-subscription) можно создать новую учетную запись хранения Azure.
+Для использования службы хранилища Azure вам потребуется учетная запись хранения. После настройки компьютера для подключения к подписке можно создать новую учетную запись хранения Azure.
 
 ```azurecli
 az storage account create \
@@ -277,7 +277,7 @@ az storage blob download \
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Выведите список больших двоичных объектов в контейнере, выполнив команду [az storage blob list](/cli/azure/storage/blob#az_storage_blob_list).
+Выведите список больших двоичных объектов в контейнере, выполнив команду [az storage blob list](/cli/azure/storage/blob).
 
 ```azurecli
 az storage blob list \

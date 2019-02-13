@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 02/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 2dd02e50ecde19b3affd26a024c4734e99fc4978
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 9fa0a1eb590d99b48e737794352625848f3d3dc8
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54017333"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55661298"
 ---
 # <a name="copy-data-from-drill-using-azure-data-factory-preview"></a>Копирование данных из Drill с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "54017333"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **Drill**. | Yes |
-| connectionString | Строка для подключения к Drill по протоколу ODBC. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| connectionString | Строка для подключения к Drill по протоколу ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
 **Пример.**
@@ -57,8 +57,8 @@ ms.locfileid: "54017333"
         "type": "Drill",
         "typeProperties": {
             "connectionString": {
-                 "type": "SecureString",
-                 "value": "ConnectionType=Direct;Host=<host>;Port=<port>;AuthenticationType=Plain;UID=<user name>;PWD=<password>"
+                "type": "SecureString",
+                "value": "ConnectionType=Direct;Host=<host>;Port=<port>;AuthenticationType=Plain;UID=<user name>;PWD=<password>"
             }
         },
         "connectVia": {
@@ -68,6 +68,36 @@ ms.locfileid: "54017333"
     }
 }
 ```
+
+**Пример: хранение пароля в Azure Key Vault**
+
+```json
+{
+    "name": "DrillLinkedService",
+    "properties": {
+        "type": "Drill",
+        "typeProperties": {
+            "connectionString": {
+                 "type": "SecureString",
+                 "value": "ConnectionType=Direct;Host=<host>;Port=<port>;AuthenticationType=Plain;UID=<user name>;"
+            },
+            "pwd": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 

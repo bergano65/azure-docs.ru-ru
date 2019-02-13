@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: c242d8dd64dc58b0c20b6fb15747f201f85cc482
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: f640ea2e8af8c8ae2bc8a6a1224adca17e897b81
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320943"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811330"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -105,7 +105,7 @@ az vm extension set \
 > [!NOTE]
 > Чтобы разрешить пользователю входить в на виртуальную машину через SSH, необходимо назначить ему роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*. Пользователю Azure с ролью *Владелец* или *Участник*, назначенной для виртуальной машины, права для входа на эту виртуальную машину через SSH не предоставляются автоматически.
 
-В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли *Имя для входа администратора виртуальной машины* виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве *области* задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в статье об [управлении доступом на основе ролей](../../azure-resource-manager/resource-group-overview.md#access-control).
+В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли *Имя для входа администратора виртуальной машины* виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве *области* задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в статье об [управлении доступом на основе ролей](../../role-based-access-control/overview.md).
 
 ```azurecli-interactive
 username=$(az account show --query user.name --output tsv)
@@ -171,7 +171,7 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 
 ### <a name="access-denied-rbac-role-not-assigned"></a>Доступ запрещен: не назначена роль RBAC
 
-Если в запросе SSH отображается приведенное ниже сообщение об ошибке, проверьте наличие [настроенных политик RBAC](#configure-rbac-policy-for-the-virtual-machine) для виртуальной машины, которая предоставляет пользователю роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*:
+Если в запросе SSH отображается приведенное ниже сообщение об ошибке, проверьте наличие настроенных политик RBAC для виртуальной машины, которая предоставляет пользователю роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*.
 
 ```bash
 login as: azureuser@contoso.onmicrosoft.com

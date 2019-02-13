@@ -9,99 +9,66 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 12/22/2018
+ms.date: 02/03/2019
 ms.author: juliako
-ms.openlocfilehash: d74ce913a2189dd1062b30f9def919cbbabe7b64
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 10600d8f3ff4e08b8d90f28ec15d3cb0c56bcae0
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53742530"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746750"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
-Политики потоковой передачи в Службах мультимедиа Azure версии 3 позволяют вам определять потоковые протоколы и параметры шифрования для StreamingLocators. Вы можете указать имя созданной вами политики потоковой передачи или использовать одну из предопределенных политик. Сейчас доступны следующие предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.
+[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies) в Службах мультимедиа Azure версии 3 позволяют определять протоколы потоковой передачи и параметры шифрования для [указателей потоковой передачи](streaming-locators-concept.md). Можно использовать одну из предопределенных политик потоковой передачи или создать настраиваемую политику. Сейчас доступны следующие предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.
 
 > [!IMPORTANT]
-> При использовании настраиваемой политики [StreamingPolicy](https://docs.microsoft.com/rest/api/media/streamingpolicies) следует разработать ограниченный набор таких политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры и протоколы шифрования. У вашей учетной записи служб мультимедиа есть квота на количество входов в политику потоковой передачи. Вы не должны создавать новую политику потоковой передачи для каждого указателя потоковой передачи.
+> * Свойства **политик потоковой передачи** типа Datetime всегда задаются в формате UTC.
+> * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. 
 
-## <a name="streamingpolicy-definition"></a>Определение политики StreamingPolicy
+## <a name="examples"></a>Примеры
 
-В следующей таблице представлены свойства StreamingPolicy и их определения.
+### <a name="not-encrypted"></a>Не зашифровано
 
-|ИМЯ|ОПИСАНИЕ|
-|---|---|
-|id|Полный идентификатор ресурса.|
-|name|Имя ресурса.|
-|properties.commonEncryptionCbcs|Конфигурация CommonEncryptionCbcs|
-|properties.commonEncryptionCenc|Конфигурация CommonEncryptionCenc|
-|properties.created |Время создания политики потоковой передачи|
-|properties.defaultContentKeyPolicyName |ContentKey, который по умолчанию используется текущей потоковой политикой|
-|properties.envelopeEncryption  |Конфигурация EnvelopeEncryption|
-|properties.noEncryption|Конфигурации NoEncryption|
-|Тип|Тип ресурса.|
+Если нужно передать необработанный файл (без шифрования), установите предопределенную политику потоковой передачи без шифрования: Predefined_ClearStreamingOnly (в .NET можно использовать PredefinedStreamingPolicy.ClearStreamingOnly).
 
-Полное определение см. на странице [политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies).
+```csharp
+StreamingLocator locator = await client.StreamingLocators.CreateAsync(
+    resourceGroup,
+    accountName,
+    locatorName,
+    new StreamingLocator
+    {
+        AssetName = assetName,
+        StreamingPolicyName = PredefinedStreamingPolicy.ClearStreamingOnly
+    });
+```
+
+### <a name="encrypted"></a>зашифрованные; 
+
+Если нужно зашифровать содержимое с помощью шифрования конверта и CENC, установите политику Predefined_MultiDrmCencStreaming. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM).
+
+```csharp
+StreamingLocator locator = await client.StreamingLocators.CreateAsync(
+    resourceGroup,
+    accountName,
+    locatorName,
+    new StreamingLocator
+    {
+        AssetName = assetName,
+        StreamingPolicyName = "Predefined_MultiDrmCencStreaming",
+        DefaultContentKeyPolicyName = contentPolicyName
+    });
+```
+
+Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming.
 
 ## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
 
-Службы мультимедиа поддерживают следующие параметры запроса OData для политик потоковой передачи: 
-
-* $filter 
-* $orderby 
-* $top 
-* $skiptoken 
-
-Описание оператора:
-
-* Eq = равно.
-* Ne = не равно.
-* Ge = больше или равно.
-* Le = меньше или равно.
-* Gt = больше чем.
-* Lt = меньше чем.
-
-### <a name="filteringordering"></a>Фильтрация и упорядочение
-
-В следующей таблице показано, как можно применить эти параметры к свойствам StreamingPolicy: 
-
-|ИМЯ|Фильтр|Порядок|
-|---|---|---|
-|id|||
-|name|Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
-|properties.commonEncryptionCbcs|||
-|properties.commonEncryptionCenc|||
-|properties.created |Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
-|properties.defaultContentKeyPolicyName |||
-|properties.envelopeEncryption|||
-|properties.noEncryption|||
-|Тип|||
-
-### <a name="pagination"></a>Разбиение на страницы
-
-Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
-
-> [!TIP]
-> Для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы.
-
-Если ответ на запрос содержит большое количество элементов, служба возвращает свойство \@odata.nextLink, чтобы получить следующую страницу результатов. Это можно использовать для просмотра всего результирующего набора. Вы не можете настроить размер страницы. 
-
-Если StreamingPolicy создается или удаляется во время разбивки коллекции на страницы, изменения отражаются в возвращаемых результатах (если эти изменения находятся в той части коллекции, которая не была загружена). 
-
-В следующем примере C# показано перечисление всех StreamingPolicy в учетной записи.
-
-```csharp
-var firstPage = await MediaServicesArmClient.StreamingPolicies.ListAsync(CustomerResourceGroup, CustomerAccountName);
-
-var currentPage = firstPage;
-while (currentPage.NextPageLink != null)
-{
-    currentPage = await MediaServicesArmClient.StreamingPolicies.ListNextAsync(currentPage.NextPageLink);
-}
-```
-
-Примеры использования REST см. в статье о [перечислении политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies/list).
+Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
+* [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
+* [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)
+* [Использование динамического шифрования DRM и службы доставки лицензий](protect-with-drm.md)

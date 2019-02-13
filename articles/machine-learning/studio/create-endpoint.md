@@ -1,8 +1,21 @@
 ---
-заголовок: Создание конечных точек веб-службы titleSuffix: Студия машинного обучения Azure description: Создание конечных точек веб-службы в Машинном обучении Azure. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 04.10.2016
+title: Создание конечных точек веб-служб
+titleSuffix: Azure Machine Learning Studio
+description: Создание конечных точек веб-службы в Машинном обучении Azure. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 10/04/2016
+ms.openlocfilehash: fc3a92aaf13f13682cfc56333618436ffe3d65ef
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55493377"
 ---
 # <a name="creating-endpoints-for-deployed-azure-machine-learning-studio-web-services"></a>Создание конечных точек для развернутых веб-служб Студии машинного обучения Azure
 > [!NOTE]

@@ -10,12 +10,12 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 4f96302f1035500a10cebaa24efd4b8db329fdff
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: b5e6853653bab96cd11196ba03fbeadbdc6b337f
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219776"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816219"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 
@@ -75,8 +75,8 @@ API-интерфейсы для микрофона должны позволяю
 
 Службой распознавания речи Microsoft предусмотрено два способа добавления разработчиками распознавания речи в свои приложения.
 
-- [REST API](GetStarted/GetStartedREST.md). Разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
-- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md). Для расширения возможностей разработчики могут загрузить клиентские библиотеки Microsoft и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC).
+- [REST API](GetStarted/GetStartedREST.md). разработчики могут использовать HTTP-вызовы из своих приложений к службам распознавания речи.
+- [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md). Для расширения возможностей разработчики могут скачать клиентские библиотеки Microsoft Speech и внедрить их в свои приложения.  Клиентские библиотеки доступны на разных платформах (Windows, Android, iOS) с использованием разных языков (C#, Java, JavaScript, ObjectiveC).
 
 | Варианты использования | [Интерфейсы REST API](GetStarted/GetStartedREST.md) | [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md) |
 |-----|-----|-----|
@@ -92,7 +92,7 @@ API-интерфейсы для микрофона должны позволяю
 Существуют три режима распознавания: `interactive`, `conversation` и `dictation`. Режим распознавания корректирует распознавание речи в зависимости от того, как пользователи разговаривают. Выберите соответствующий режим распознавания для своего приложения.
 
 > [!NOTE]
-> Режимы распознавания могут иметь разные характеристики в [протоколе REST](#rest-speech-recognition-api) и похожие в [протоколе WebSocket](#webSocket-speech-recognition-api). Например, REST API не поддерживает непрерывное распознавание даже в режиме диалога или диктовки.
+> Режимы распознавания могут иметь разные характеристики в протоколе REST и похожие в протоколе WebSocket. Например, REST API не поддерживает непрерывное распознавание даже в режиме диалога или диктовки.
 > [!NOTE]
 > Эти режимы применяются при использовании непосредственно протокола REST или WebSocket. [Клиентские библиотеки](GetStarted/GetStartedClientLibraries.md) используют разные параметры для указания режима распознавания. Дополнительные сведения см. в документации к нужной клиентской библиотеке.
 

@@ -3,23 +3,24 @@ title: Использование Azure Key Vault с управляемыми п
 description: Демонстрация использования секретов доступа в Azure Key Vault при развертывании управляемых приложений
 services: managed-applications
 author: tfitzmac
-manager: timlt
 ms.service: managed-applications
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 07/11/2018
+ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: dcfbb7f3b1d110d4c1fdf22863d795c85152ec35
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 55410250ccd4dfceac8ac9ae5b81d4736de0d91a
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52725018"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55492683"
 ---
 # <a name="access-key-vault-secret-when-deploying-azure-managed-applications"></a>Доступ к секрету Key Vault при развертывании Управляемых приложений Azure
 
-Если необходимо передать защищенное значение (например, пароль) в качестве параметра во время развертывания, можно извлечь его из [Azure Key Vault](../key-vault/key-vault-whatis.md). Чтобы получить доступ к Key Vault при развертывании управляемых приложений, нужно предоставить доступ к субъекту-службе **Поставщик ресурсов устройств**. Эта статья описывает настройку Key Vault для работы с управляемыми приложениями.
+Если необходимо передать защищенное значение (например, пароль) в качестве параметра во время развертывания, можно извлечь его из [Azure Key Vault](../key-vault/key-vault-whatis.md). Чтобы получить доступ к Key Vault при развертывании управляемых приложений, нужно предоставить доступ к субъекту-службе **Поставщик ресурсов устройств**. Служба управляемых приложений использует это удостоверение для выполнения операций. Для успешного извлечения значения из Key Vault во время развертывания у субъекта-службы должен быть доступ к Key Vault.
+
+Эта статья описывает настройку Key Vault для работы с управляемыми приложениями.
 
 ## <a name="enable-template-deployment"></a>Включение развертывания шаблона
 

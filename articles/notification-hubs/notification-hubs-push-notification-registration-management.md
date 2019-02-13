@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.author: jowargo
 ms.date: 01/23/2019
-ms.openlocfilehash: 1ace7ecd42ac36be1c38e52dcef6663439b7db4c
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d87cd174e3fca7ce2088ad270a74b08de4ac7cb5
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54817840"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55566166"
 ---
 # <a name="registration-management"></a>Управление регистрацией
 
@@ -33,7 +33,7 @@ ms.locfileid: "54817840"
 
 ### <a name="registrations"></a>Регистрация
 
-Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или регистрационный идентификатор GCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
+Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или регистрационный идентификатор FCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
 > [!NOTE]
 > Центры уведомлений Azure поддерживают не более 60 тегов для каждой регистрации.
@@ -295,8 +295,8 @@ public async Task<HttpResponseMessage> Put(DeviceInstallation deviceUpdate)
         case "apns":
             installation.Platform = NotificationPlatform.Apns;
             break;
-        case "gcm":
-            installation.Platform = NotificationPlatform.Gcm;
+        case "fcm":
+            installation.Platform = NotificationPlatform.Fcm;
             break;
         default:
             throw new HttpResponseException(HttpStatusCode.BadRequest);

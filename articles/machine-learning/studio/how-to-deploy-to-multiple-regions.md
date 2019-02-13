@@ -1,8 +1,21 @@
 ---
-заголовок: Развертывание веб-служба Студии машинного обучения Azure в нескольких регионах titleSuffix: Студия машинного обучения Azure description: Действия по развертыванию (копированию) новой веб-службы в других регионах. Вы можете легко развернуть веб-службу в нескольких регионах. При этом не требуется иметь несколько подписок или рабочих областей.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 19.04.2017
+title: Развертывание веб-службы Студии в нескольких регионах
+titleSuffix: Azure Machine Learning Studio
+description: Действия по развертыванию (копированию) новой веб-службы в других регионах. Вы можете легко развернуть веб-службу в нескольких регионах. При этом не требуется иметь несколько подписок или рабочих областей.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 04/19/2017
+ms.openlocfilehash: 536a4ae0b740eae7f6072cbd23d96e199e1598e7
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55487087"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service-to-multiple-regions"></a>Развертывание веб-службы Студии машинного обучения Azure в нескольких регионах
 

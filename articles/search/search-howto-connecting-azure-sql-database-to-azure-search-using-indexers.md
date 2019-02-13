@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 66712b97807135b1e9e8321e441ac21368f86fc5
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 7df785d1493ad2df698ff197d72824ceb15d39ad
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633033"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55752898"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов службы Поиска Azure
 
@@ -210,6 +210,9 @@ ms.locfileid: "53633033"
 
 При использовании интегрированной политики отслеживания изменений SQL не указывайте отдельную политику обнаружения удаления данных, так как она уже поддерживает выявление удаленных строк. Однако, чтобы автоматически обнаруживать удаления, ключ документа в индексе поиска должен быть таким же, что и основной ключ в таблице SQL. 
 
+> [!NOTE]  
+> При использовании [TRUNCATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/truncate-table-transact-sql) для удаления большого количества строк из таблицы SQL необходимо, чтобы индексатор был [сброшен](https://docs.microsoft.com/rest/api/searchservice/reset-indexer), чтобы сбросить состояние отслеживания изменений для сбора удалений строк.
+
 <a name="HighWaterMarkPolicy"></a>
 
 ### <a name="high-water-mark-change-detection-policy"></a>Политика обнаружения изменений максимального уровня
@@ -325,7 +328,7 @@ ms.locfileid: "53633033"
 
 **Вопрос. Можно ли использовать индексатор SQL Azure с базами данных в IaaS в Azure помимо баз SQL Server?**
 
- Нет. Мы не поддерживаем этот сценарий, так как мы не проверяли работу индексатора с базами данных не из SQL Server.  
+№ Мы не поддерживаем этот сценарий, так как мы не проверяли работу индексатора с базами данных не из SQL Server.  
 
 **Вопрос. Можно ли создать несколько индексаторов, выполняющих обработку по расписанию?**
 

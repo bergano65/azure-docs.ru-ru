@@ -8,12 +8,12 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 09/28/2017
 ms.author: wesmc
-ms.openlocfilehash: e476ca498e4dc1b36d18927beddc812d6d803120
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 0258a37b0614ca7505a90f88afaaaee1a6d5c04e
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818516"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55496976"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "42818516"
 
 * **Политики авторизации общего доступа**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#device-provisioning-service-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программными средствами, используя [интерфейсы REST API службы подготовки устройств][lnk-resource-provider-apis]. По умолчанию для только что созданной службы подготовки задана следующая политика по умолчанию:
 
-* **provisioningserviceowner.** Политика со всеми разрешениями.
+* **provisioningserviceowner**: политика со всеми разрешениями.
 
 > [!NOTE]
 > Дополнительные сведения см. в статье о [разрешениях](#device-provisioning-service-permissions).
@@ -86,7 +86,7 @@ SharedAccessSignature sr =
 
 В следующем фрагменте кода Node.js показан функция **generateSasToken**, которая вычисляет маркер, используя входные данные`resourceUri, signingKey, policyName, expiresInMins`. В следующих разделах показано, как инициализировать различные входные данные для различных сценариев использования маркеров.
 
-```nodejs
+```javascript
 var generateSasToken = function(resourceUri, signingKey, policyName, expiresInMins) {
     resourceUri = encodeURIComponent(resourceUri);
 
@@ -157,7 +157,7 @@ def generate_sas_token(uri, key, policy_name, expiry=3600):
 
 ![Создание политики общего доступа для экземпляра службы подготовки устройств на портале][img-add-shared-access-policy]
 
-```nodejs
+```javascript
 var endpoint ="mydps.azure-devices-provisioning.net";
 var policyName = 'enrollmentread'; 
 var policyKey = '...';

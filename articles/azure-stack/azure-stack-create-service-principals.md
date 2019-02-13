@@ -13,12 +13,12 @@ ms.workload: na
 ms.date: 12/18/2018
 ms.author: sethm
 ms.lastreviewed: 12/18/2018
-ms.openlocfilehash: 5ff2ee3ed271d8c32e2d41f40a56f71aa4c6c67c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 3c36bca12a16a796a964c4447b47265eecd756be
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245275"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55809254"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -38,10 +38,10 @@ ms.locfileid: "55245275"
 
 Прежде всего нужно создать субъект-службу. Процесс будет разным в зависимости от способа развертывания Azure Stack. В этом документе описывается создание субъекта-службы для
 
-- [Azure Active Directory (Azure AD).](#create-service-principal-for-azure-ad) Azure AD — это мультитенантный облачный каталог и служба управления удостоверениями. Azure AD можно использовать с подключенной инфраструктурой Azure Stack.
-- [Служба федерации Active Directory (AD FS)](#create-service-principal-for-ad-fs). В AD FS представлены возможности упрощенной безопасной федерации удостоверений и единого входа. AD FS можно использовать с подключенными и отключенными экземплярами Azure Stack.
+- Azure Active Directory (Azure AD). Azure AD — это мультитенантный облачный каталог и служба управления удостоверениями. Azure AD можно использовать с подключенной инфраструктурой Azure Stack.
+- Служба федерации Active Directory (AD FS). В AD FS представлены возможности упрощенной безопасной федерации удостоверений и единого входа. AD FS можно использовать с подключенными и отключенными экземплярами Azure Stack.
 
-Создав субъект-службу, вы [делегируете разрешения](#assign-role-to-service-principal) для этой роли, используя единый процесс для AD FS и Azure AD.
+Создав субъект-службу, вы делегируете разрешения для этой роли, используя единый процесс для AD FS и Azure AD.
 
 ## <a name="manage-service-principal-for-azure-ad"></a>Управление субъектом-службой для Azure AD
 
@@ -63,7 +63,7 @@ ms.locfileid: "55245275"
 
 1. В Active Directory в разделе **регистрации приложений** выберите нужное приложение.
 
-2. Скопируйте **идентификатор приложения** и сохраните его в коде приложения. Приложения в разделе [примеров приложений](#sample-applications) используют это значение как идентификатор клиента.
+2. Скопируйте **идентификатор приложения** и сохраните его в коде приложения. Приложения в разделе примеров приложений используют это значение как идентификатор клиента.
 
      ![Идентификатор клиента](./media/azure-stack-create-service-principal/image12.png)
 3. Чтобы создать ключ аутентификации для веб-приложения или API, выберите **Параметры** > **Ключи**. 
@@ -74,7 +74,7 @@ ms.locfileid: "55245275"
 
 ![Сохраненный ключ](./media/azure-stack-create-service-principal/image15.png)
 
-После завершения можно [назначить роль приложению](#assign-role-to-service-principal).
+После завершения можно назначить роль приложению.
 
 ## <a name="manage-service-principal-for-ad-fs"></a>Управление субъектом-службой для AD FS
 

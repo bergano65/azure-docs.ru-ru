@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 310963d5593dde0540c95920214a14a4195c346a
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 6bd61923dafb605e09c6ca6ab86dcd85fe60b37c
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242337"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734663"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>Настройка экспериментов автоматического машинного обучения
 
@@ -174,7 +174,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 
 На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/automl) доступны примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
 
-<a name='configure-experiment'/>
+<a name='configure-experiment'></a>
 
 ## <a name="configure-your-experiment-settings"></a>Настройка параметров эксперимента
 
@@ -207,36 +207,48 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
         n_cross_validations=5)
     ```
 
-В этой таблице приведены параметры, доступные для вашего эксперимента, и их значения по умолчанию.
+Есть три различных значения параметров `task`, которые определяют список алгоритмов для применения.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения.
+* классификация;
+    * LogisticRegression;
+    * SGD
+    * MultinomialNaiveBayes;
+    * BernoulliNaiveBayes;
+    * SVM
+    * LinearSVM;
+    * kNN;
+    * DecisionTree;
+    * RandomForest;
+    * ExtremeRandomTrees;
+    * LightGBM
+    * GradientBoosting;
+    * TensorFlowDNN.
+    * TensorFlowLinearClassifier.
+* Регрессия
+    * ElasticNet;
+    * GradientBoosting;
+    * DecisionTree;
+    * kNN;
+    * LassoLars;
+    * SGD 
+    * RandomForest;
+    * ExtremeRandomTree;
+    * LightGBM
+    * TensorFlowLinearRegressor;
+    * TensorFlowDNN.
+* Прогнозирование
+    * ElasticNet;
+    * GradientBoosting;
+    * DecisionTree;
+    * kNN;
+    * LassoLars;
+    * SGD 
+    * RandomForest;
+    * ExtremeRandomTree;
+    * LightGBM
+    * TensorFlowLinearRegressor;
+    * TensorFlowDNN.
 
-Свойство |  ОПИСАНИЕ | По умолчанию
---|--|--
-`task`  |Укажите тип задачи машинного обучения. Допустимые значения: <li>классификация;</li><li>Регрессия</li><li>Прогнозирование</li>    | Нет |
-`primary_metric` |Метрика, которую требуется оптимизировать при компиляции модели. Например, если задать в качестве свойства primary_metric значение accuracy, служба автоматического машинного обучения выполнит поиск модели с максимальной точностью. Указать свойство primary_metric для эксперимента можно только один раз. Допустимые значения: <br/>**Классификация**:<br/><li> accuracy;  </li><li> AUC_weighted;</li><li> precision_score_weighted; </li><li> balanced_accuracy; </li><li> average_precision_score_weighted. </li><br/>**Регрессия:** <br/><li> normalized_mean_absolute_error; </li><li> spearman_correlation; </li><li> normalized_root_mean_squared_error; </li><li> normalized_root_mean_squared_log_error;</li><li> R2_score.  </li> | Для классификации: accuracy <br/>Для регрессии: spearman_correlation <br/> |
-`experiment_exit_score` |   Для свойства primary_metric можно задать целевое значение. После обнаружения модели, которая отвечает целевой метрике primary_metric, служба автоматического машинного обучения прекращает итерацию и эксперимент завершается. Если это значение не задано (по умолчанию), эксперимент автоматического машинного обучения продолжит выполнять указанное количество итераций. Принимает значение типа double. Если целевой метрики невозможно достичь, служба автоматического машинного обучения будет выполнять итерации, пока не будет достигнуто указанное количество итераций.| Нет
-`iterations` |Максимальное количество итераций. Каждая итерация равняется заданию обучения, которое предоставляет конвейер. Конвейер — это предварительная обработка данных и модель. Чтобы получить модель высокого качества, используйте 250 или более итераций.    | 100
-`max_concurrent_iterations`|    Максимальное количество итераций, выполняемых параллельно. Этот параметр работает только для удаленных объектов вычислений.|   1
-`max_cores_per_iteration`   | Указывает, сколько ядер в целевом объекте вычислений будет использоваться для обучения одного конвейера. Если для алгоритма может использоваться несколько ядер, это увеличивает производительность на компьютере с несколькими ядрами. Для него можно задать значение -1, чтобы использовать все доступные ядра на компьютере.|  1
-`iteration_timeout_minutes` |   Ограничивает количество времени (в минутах), в течение которого длится определенная итерация. Если итерация превышает заданное количество, эта итерация отменяется. Если количество не задано, итерация продолжает выполняться до завершения. |   Нет
-`n_cross_validations`   |Количество разделений перекрестной проверки.| Нет
-`validation_size`   |Размер проверочного набора, выраженный в проценте от всего обучающего примера.|  Нет
-`preprocess` | True или False <br/>Если задано значение true, эксперимент может выполнять предварительную обработку входных данных. Ниже приведено подмножество предварительной обработки:<li>отсутствующие данные: замещает отсутствующие числовые данные средним значением, текстовые — наиболее часто встречающимися вхождениями; </li><li>категориальные значения: если тип данных числовой, а количество уникальных значений — менее 5 %, преобразует в прямое кодирование. </li><li>И другое. Полный список см. в [репозитории GitHub](https://aka.ms/aml-notebooks).</li><br/>Примечание. Если данные разрежены, для предварительной обработки нельзя задать значение true. |  Ложь |
-`enable_cache`  | True или False <br/>Если для этого параметра установлено значение True, предварительная обработка выполняется один раз и повторно используются одни и те же предварительно обработанные данные для всех итераций. | Истина |
-`blacklist_models`  | В эксперименте автоматического машинного обучения есть множество различных алгоритмов, которые он пытается выполнить. Исключите определенные алгоритмы из эксперимента автоматического машинного обучения. Это полезно, если известно, что какой-либо алгоритм не подходит для вашего набора данных. Исключение алгоритмов может сэкономить вычислительные ресурсы и время обучения.<br/>Допустимые значения для классификации:<br/><li>LogisticRegression;</li><li>SGD</li><li>MultinomialNaiveBayes;</li><li>BernoulliNaiveBayes;</li><li>SVM</li><li>LinearSVM;</li><li>kNN;</li><li>DecisionTree;</li><li>RandomForest;</li><li>ExtremeRandomTrees;</li><li>LightGBM</li><li>GradientBoosting;</li><li>TensorFlowDNN.</li><li>TensorFlowLinearClassifier.</li><br/>Допустимые значения для регрессии:<br/><li>ElasticNet;</li><li>GradientBoosting;</li><li>DecisionTree;</li><li>kNN;</li><li>LassoLars;</li><li>SGD </li><li>RandomForest;</li><li>ExtremeRandomTree;</li><li>LightGBM</li><li>TensorFlowLinearRegressor;</li><li>TensorFlowDNN.</li></li><br/>Допустимые значения для прогнозирования:<br/><li>ElasticNet;</li><li>GradientBoosting;</li><li>DecisionTree;</li><li>kNN;</li><li>LassoLars;</li><li>SGD </li><li>RandomForest;</li><li>ExtremeRandomTree;</li><li>LightGBM</li><li>TensorFlowLinearRegressor;</li><li>TensorFlowDNN.</li></li>|   Нет
-`whitelist_models`  | В эксперименте автоматического машинного обучения есть множество различных алгоритмов, которые он пытается выполнить. Включите определенные алгоритмы в эксперимент автоматического машинного обучения. Это полезно, если известно, что какой-либо алгоритм подходит для вашего набора данных. <br/>Допустимые значения для классификации:<br/><li>LogisticRegression;</li><li>SGD</li><li>MultinomialNaiveBayes;</li><li>BernoulliNaiveBayes;</li><li>SVM</li><li>LinearSVM;</li><li>kNN;</li><li>DecisionTree;</li><li>RandomForest;</li><li>ExtremeRandomTrees;</li><li>LightGBM</li><li>GradientBoosting;</li><li>TensorFlowDNN.</li><li>TensorFlowLinearClassifier.</li><br/>Допустимые значения для регрессии:<br/><li>ElasticNet;</li><li>GradientBoosting;</li><li>DecisionTree;</li><li>kNN;</li><li>LassoLars;</li><li>SGD </li><li>RandomForest;</li><li>ExtremeRandomTree;</li><li>LightGBM</li><li>TensorFlowLinearRegressor;</li><li>TensorFlowDNN.</li></li><br/>Допустимые значения для прогнозирования:<br/><li>ElasticNet;</li><li>GradientBoosting;</li><li>DecisionTree;</li><li>kNN;</li><li>LassoLars;</li><li>SGD </li><li>RandomForest;</li><li>ExtremeRandomTree;</li><li>LightGBM</li><li>TensorFlowLinearRegressor;</li><li>TensorFlowDNN.</li></li>|  Нет
-`verbosity` |Определяет уровень ведения журнала со значением INFO для наиболее подробного протоколирования и CRITICAL для наименее подробного протоколирования. Уровень детализации принимает значения, определенные в пакете Python для ведения журнала. Допустимые значения:<br/><li>logging.INFO</li><li>logging.WARNING;</li><li>logging.ERROR;</li><li>logging.CRITICAL;</li>  | logging.INFO</li>
-`X` | Все признаки для обучения |  Нет
-`y` |   Данные метки для обучения. Для классификации это должен быть массив целых чисел|  Нет
-`X_valid`|_Необязательно._ Все признаки для проверки. Если не указано, X разделяется на экземпляры для обучения и проверки |   Нет
-`y_valid`   |_Необязательно._ Данные метки для проверки. Если не указано, y разделяется на экземпляры для обучения и проверки    | Нет
-`sample_weight` |   _Необязательно._ Значение веса для каждой выборки. Используйте, если необходимо назначить разный вес для точек данных |   Нет
-`sample_weight_valid`   |   _Необязательно._ Значение веса для каждой выборки для проверки. Если не указано, sample_weight разделяется на экземпляры для обучения и проверки   | Нет
-`run_configuration` |   Объект RunConfiguration.  Используется для удаленных выполнений. |Нет
-`data_script`  |    Путь к файлу, содержащему метод get_data.  Требуется для удаленных выполнений.   |Нет
-`model_explainability` | _Необязательно._ True или False <br/>  Значение True позволяет эксперименту вычислять важность признаков для каждой итерации. Можно также использовать метод explain_model() в определенной итерации, чтобы иметь возможность вычислить важность признаков по запросу для этой итерации после завершения эксперимента. | Ложь
-`enable_ensembling`|Флаг, позволяющий включить итерацию сборки после завершения всех итераций.| Истина
-`ensemble_iterations`|Число итераций, во время которых мы выбираем подходящий конвейер для добавления в окончательную совокупность.| 15
-`experiment_timeout_minutes`| Ограничивает длительность всего эксперимента (в минутах). | Нет
+Полный список параметров см. в статье [AutoMLConfig class](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) (Класс AutoMLConfig).  
 
 ## <a name="data-pre-processing-and-featurization"></a>Предварительная обработка данных и добавление признаков
 

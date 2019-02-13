@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/30/2019
+ms.date: 02/05/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0988a6367eb1a1bacaab61f8bc5924a2c9f0a58c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 0b7515a5c22b98fb14499e07057ff52311fc6e67
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474723"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55744830"
 ---
 # <a name="using-azure-for-hosting-and-running-sap-workload-scenarios"></a>Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure
 
@@ -35,6 +35,8 @@ Azure для SAP HANA — это предложение, выделяющее A
 При размещении сценариев рабочей нагрузки SAP в Azure может потребоваться интеграция удостоверений и единого входа с помощью Azure Active Directory для других компонентов SAP, а также для предложений SAP SaaS или PaaS. Список таких сценариев интеграции и единого входа с помощью сущностей Azure Active Directory (AAD) и SAP представлен в разделе "Интеграция AAD с приложением для управления удостоверениями SAP и единый вход".
 
 ## <a name="latest-changes"></a>Последние изменения
+
+Опубликована статья [Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure](sap-ha-availability-zones.md).
 
 Опубликована статья [SAP workload planning and deployment checklist](sap-deployment-checklist.md) (Контрольный список для планирования и развертывания рабочей нагрузки SAP).
 

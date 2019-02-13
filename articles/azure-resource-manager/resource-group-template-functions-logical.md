@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8745519f1a0fdda7a5feb6ffb3f61e5250bb260a
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 109bd1c987c86721c6064fc0294913c85fa3a901
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164793"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55745577"
 ---
 # <a name="logical-functions-for-azure-resource-manager-templates"></a>Логические функции для шаблонов Azure Resource Manager
 
@@ -31,10 +31,12 @@ Resource Manager предоставляет ряд функций для вып�
 * [not](#not) (не);
 * [or](#or) (или).
 
-## <a name="and"></a>и
-`and(arg1, arg2)`
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Проверяет, соответствуют ли истине два значения параметров.
+## <a name="and"></a>и
+`and(arg1, arg2, ...)`
+
+Проверяет, соответствуют ли истине все значения параметров.
 
 ### <a name="parameters"></a>Параметры
 
@@ -42,10 +44,11 @@ Resource Manager предоставляет ряд функций для вып�
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Yes |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
+| дополнительные аргументы |Нет  |Логическое |Дополнительные аргументы для проверки соответствия истине. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Возвращает результат **True** (Истина), если оба значения соответствуют истине. В противном случае — **False** (Ложь).
+Возвращает результат **True**, если все значения соответствуют истине. В противном случае — **False**.
 
 ### <a name="examples"></a>Примеры
 
@@ -90,7 +93,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
 ```
 
 ## <a name="bool"></a>bool
@@ -155,7 +158,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/bool.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/bool.json
 ```
 
 ## <a name="if"></a>if
@@ -265,7 +268,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/if.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/if.json
 ```
 
 ## <a name="not"></a>not
@@ -326,7 +329,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
 ```
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется **not** и [equals](resource-group-template-functions-comparison.md#equals).
@@ -360,13 +363,13 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
 ```
 
 ## <a name="or"></a>или
-`or(arg1, arg2)`
+`or(arg1, arg2, ...)`
 
-Проверяет, соответствует ли истине одно из значений параметров.
+Проверяет, соответствует ли истине какое-либо значение параметров.
 
 ### <a name="parameters"></a>Параметры
 
@@ -374,10 +377,11 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Yes |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
+| дополнительные аргументы |Нет  |Логическое |Дополнительные аргументы для проверки соответствия истине. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Возвращает результат **True** (Истина), если одно из значений соответствует истине. В противном случае — **False** (Ложь).
+Возвращает результат **True**, если какое-либо значение соответствует истине. В противном случае — **False**.
 
 ### <a name="examples"></a>Примеры
 
@@ -422,7 +426,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

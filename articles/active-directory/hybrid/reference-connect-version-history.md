@@ -9,18 +9,18 @@ editor: ''
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.devlang: na
-ms.topic: article
+ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/18/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: c42abf043c528f86db7af164c21c45b21e7bf1ac
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: caff4973515d3866b94dba2e89d089ff042de43b
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55196282"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813251"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -36,6 +36,9 @@ ms.locfileid: "55196282"
 Необходимые разрешения | Разрешения, необходимые для установки обновления, см. в [этом](reference-connect-accounts-permissions.md#upgrade) разделе.
 
 Скачивание | [Скачать Azure AD Connect ](https://go.microsoft.com/fwlink/?LinkId=615771).
+
+>[!NOTE]
+>Автоматическое обновление будет доступно не для всех выпусков Azure AD Connect. Состояние выпуска указывает, доступен ли выпуск для автоматического обновления или только для скачивания. Если на сервере Azure AD Connect включено автоматическое обновление, этот сервер автоматически обновится до последней версии Azure AD Connect, выпущенной для автоматического обновления. Обратите внимание, что не все конфигурации Azure AD Connect подходят для автоматического обновления. Перейдите по этой ссылке, чтобы узнать больше об [автоматическом обновлении](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade).
 
 ## <a name="12700"></a>1.2.70.0
 

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 01/12/2019
 ms.author: ellacroi
-ms.openlocfilehash: bf73c3226af5b2480d52d5010058f24d912bdab5
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 0e324ae82a0223cf48f00b186f46e26840d4d655
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355316"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55747532"
 ---
 # <a name="your-marketplace-benefits"></a>Преимущества Microsoft Azure Marketplace
 
@@ -41,7 +41,7 @@ ms.locfileid: "54355316"
 2. Консультации Microsoft Marketplace. Воспользуйтесь преимуществами этой [бесплатной консультации](https://support.microsoft.com/help/4010317/microsoft-marketplaces-consultation) для планирования архитектуры приложения в marketplace.
 3. Форумы Microsoft Azure Marketplace. Задайте вопрос непосредственно сотрудникам корпорации Майкрософт и другим партнерам marketplace на [форуме Microsoft Azure Marketplace](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222).
 4. Техническая поддержка. Используйте меню "Справка" на [Портале Cloud Partner](https://cloudpartner.azure.com/) для получения справки по касающимся поддержки вопросам, связанным с marketplace. 
-5. Спонсорство тестирования при разработке. Просмотрите условия принятия ниже и отправьте запрос на спонсорство с помощью [регистрационной формы](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR3omd2bW7etLoEoufw2-vMdUNUkxSjQ5V0hJOEtZSks3ME45TDJNTkVUTi4u).
+5. Спонсорство тестирования при разработке. Просмотрите указанные ниже условия принятия и отправьте запрос на спонсорство с помощью [регистрационной формы](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR3omd2bW7etLoEoufw2-vMdUNUkxSjQ5V0hJOEtZSks3ME45TDJNTkVUTi4u).
     * Разработка и тестирование направлены на публикацию в Microsoft Azure Marketplace.
     * Финансирование не должно использоваться для других целей.
     * Вознаграждение — 5000 долл. США за 90 дней использования, начиная с момента выполнения первого действия в назначенной подписке.
@@ -61,7 +61,7 @@ ms.locfileid: "54355316"
 Для доступа к этим преимуществам вам потребуется:
 
 1. Опубликуйте предложение в Azure Marketplace или AppSource.
-2. Убедитесь, что вы ввели контактные данные для обращения по вопросам маркетинга в часть **контактных данных** вашего предложения. Это должен быть специальный сотрудник или отдел. Не используйте универсальный псевдоним (например, "support@", "info@", "marketing@" и т. д.).
+2. Убедитесь, что вы ввели контактные данные для обращения по вопросам маркетинга в часть **контактных данных** вашего предложения. Это должен быть специальный сотрудник или отдел. Не используйте универсальный псевдоним (например, не используйте "support\@", "info\@", "marketing\@" и т. д.).
 
 В зависимости от состояния вашего решения, вы получите сообщение электронной почты с ресурсами для самостоятельного решения проблем или приглашение на консультационный вызов со специальным диспетчером служб взаимодействия. Вам не нужно ничего делать для инициирования вызова — команда подключения Microsoft Azure Marketplace свяжется с вами, используя данные, предоставленные на [Портале Cloud Partner](https://cloudpartner.azure.com/).
 

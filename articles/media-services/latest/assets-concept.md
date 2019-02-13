@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/01/2018
+ms.date: 02/03/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 8507d51f0d4d49d89fc24b38ed73df7488261daa
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 72229a723247d6f0d68341771b073d0626ab2edb
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969581"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746002"
 ---
 # <a name="assets"></a>Активы
 
@@ -27,25 +27,8 @@ ms.locfileid: "53969581"
 
 **Архивный уровень хранилища** рекомендуется только для очень больших исходных файлов, которые уже были закодированы, а выходные данные задания кодирования были помещены в выходной контейнер больших двоичных объектов. Большие двоичные объекты в выходном контейнере, который вы хотите привязать к ресурсу и использовать для потоковой передачи или анализа содержимого, должны существовать на **горячем** или **холодном** уровне хранилища.
 
-## <a name="asset-definition"></a>Определение ресурса
-
-В следующей таблице представлены свойства ресурса и их определения.
-
-|ИМЯ|ОПИСАНИЕ|
-|---|---|
-|id|Полный идентификатор ресурса.|
-|name|Имя ресурса.|
-|properties.alternateId |Альтернативный идентификатор ресурса.|
-|properties.assetId |Идентификатор ресурса.|
-|properties.container |Имя контейнера больших двоичных объектов ресурса.|
-|properties.created |Дата создания ресурса.<br/> Дата и время всегда указаны в формате UTC.|
-|properties.description|Описание ресурса.|
-|properties.lastModified |Дата последнего изменения ресурса. <br/> Дата и время всегда указаны в формате UTC.|
-|properties.storageAccountName |Имя учетной записи хранения.|
-|properties.storageEncryptionFormat |Формат шифрования ресурса. Не указан или MediaStorageEncryption.|
-|Тип|Тип ресурса.|
-
-Полное определение см. в статье о [ресурсах](https://docs.microsoft.com/rest/api/media/assets).
+> [!NOTE]
+> Свойства ресурса типа Datetime всегда задаются в формате UTC.
 
 ## <a name="upload-digital-files-into-assets"></a>Отправка цифровых файлов в ресурсы
 
@@ -104,113 +87,7 @@ curl -X PUT \
 
 ## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
 
-Службы мультимедиа поддерживают следующие параметры запроса OData для ресурсов: 
-
-* $filter 
-* $orderby 
-* $top 
-* $skiptoken 
-
-Описание оператора:
-
-* Eq = равно.
-* Ne = не равно.
-* Ge = больше или равно.
-* Le = меньше или равно.
-* Gt = больше чем.
-* Lt = меньше чем.
-
-### <a name="filteringordering"></a>Фильтрация и упорядочение
-
-В следующей таблице показано, как эти параметры могут быть применены к свойствам ресурса: 
-
-|ИМЯ|Фильтр|Порядок|
-|---|---|---|
-|id|||
-|name|Поддерживает: Eq, Gt, Lt|Поддерживает: по возрастанию и убыванию|
-|properties.alternateId |Поддерживает: Eq||
-|properties.assetId |Поддерживает: Eq||
-|properties.container |||
-|properties.created|Поддерживает: Eq, Gt, Lt| Поддерживает: по возрастанию и убыванию|
-|properties.description |||
-|properties.lastModified |||
-|properties.storageAccountName |||
-|properties.storageEncryptionFormat | ||
-|Тип|||
-
-В следующем примере C# выполняется фильтрация по дате создания:
-
-```csharp
-var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:08.387Z");
-var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName, odataQuery);
-```
-
-### <a name="pagination"></a>Разбиение на страницы
-
-Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. Сейчас размер страницы составляет 1000.
-
-> [!TIP]
-> Для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы.
-
-Если ответ на запрос содержит большое количество элементов, служба возвращает свойство \@odata.nextLink, чтобы получить следующую страницу результатов. Это можно использовать для просмотра всего результирующего набора. Вы не можете настроить размер страницы. 
-
-Если ресурсы создаются или удаляются во время разбивки коллекции на страницы, изменения отражаются в возвращаемых результатах (если эти изменения находятся в той части коллекции, которая не была загружена). 
-
-#### <a name="c-example"></a>Пример C#
-
-В следующем примере C# показано перечисление всех ресурсов в учетной записи.
-
-```csharp
-var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName);
-
-var currentPage = firstPage;
-while (currentPage.NextPageLink != null)
-{
-    currentPage = await MediaServicesArmClient.Assets.ListNextAsync(currentPage.NextPageLink);
-}
-```
-
-#### <a name="rest-example"></a>Пример REST
-
-Рассмотрим следующий пример, где используется $skiptoken. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
-
-При запросе списка ресурсов следующим образом:
-
-```
-GET  https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01 HTTP/1.1
-x-ms-client-request-id: dd57fe5d-f3be-4724-8553-4ceb1dbe5aab
-Content-Type: application/json; charset=utf-8
-```
-
-вы должны увидеть ответ следующего вида.
-
-```
-HTTP/1.1 200 OK
- 
-{
-"value":[
-{
-"name":"Asset 0","id":"/subscriptions/00000000-3761-485c-81bb-c50b291ce214/resourceGroups/mediaresources/providers/Microsoft.Media/mediaservices/amstestaccount/assets/Asset 0","type":"Microsoft.Media/mediaservices/assets","properties":{
-"assetId":"00000000-5a4f-470a-9d81-6037d7c23eff","created":"2018-12-11T22:12:44.98Z","lastModified":"2018-12-11T22:15:48.003Z","container":"asset-98d07299-5a4f-470a-9d81-6037d7c23eff","storageAccountName":"amsdevc1stoaccount11","storageEncryptionFormat":"None"
-}
-},
-// lots more assets
-{
-"name":"Asset 517","id":"/subscriptions/00000000-3761-485c-81bb-c50b291ce214/resourceGroups/mediaresources/providers/Microsoft.Media/mediaservices/amstestaccount/assets/Asset 517","type":"Microsoft.Media/mediaservices/assets","properties":{
-"assetId":"00000000-912e-447b-a1ed-0f723913b20d","created":"2018-12-11T22:14:08.473Z","lastModified":"2018-12-11T22:19:29.657Z","container":"asset-fd05a503-912e-447b-a1ed-0f723913b20d","storageAccountName":"amsdevc1stoaccount11","storageEncryptionFormat":"None"
-}
-}
-],"@odata.nextLink":"https:// management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$skiptoken=Asset+517"
-}
-```
-
-Необходимо затем запросить следующую страницу, отправив запрос get.
-
-```
-https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$skiptoken=Asset+517
-```
-
-Дополнительные примеры REST для перечисления ресурсов см. в [этой статье](https://docs.microsoft.com/rest/api/media/assets/list).
+Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
 ## <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
 
@@ -228,6 +105,6 @@ https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
-
-[Различия между Службами мультимедиа версий 2 и 3](migrate-from-v2-to-v3.md)
+* [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
+* [Использование средства цифровой видеозаписи в облаке](live-event-cloud-dvr.md)
+* [Различия между Службами мультимедиа версий 2 и 3](migrate-from-v2-to-v3.md)

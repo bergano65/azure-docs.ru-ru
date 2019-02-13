@@ -11,23 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 01/30/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: c207fb866cdd17e4db1796e415c159eb887eef08
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 8d2d8d0595099081498202a3103caa10df8cf67d
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243561"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55657847"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!Note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии.
+> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме.
 
 Вы можете выполнить действия, описанные в этой статье, чтобы развернуть и настроить ресурсы для Kubernetes при использовании Azure Active Directory (Azure AD) в качестве службы управления удостоверениями в одной скоординированной операции.
 
@@ -63,11 +63,11 @@ ms.locfileid: "55243561"
 
     a. Последовательно выберите элементы **Azure Active Directory** > **+ Регистрация приложений** > **Регистрация нового приложения**.
 
-    b. Введите **имя** приложения.
+    б) Введите **имя** приложения.
 
     c. Выберите **Веб-приложение или API**.
 
-    d. Введите `http://localhost` в поле **URL-адрес для входа**.
+    4.3. Введите `http://localhost` в поле **URL-адрес для входа**.
 
     c. Нажмите кнопку **Создать**.
 
@@ -77,7 +77,7 @@ ms.locfileid: "55243561"
 
     a. Введите **описание**.
 
-    b. Выберите для параметра **Срок действия** значение **Срок действия неограничен**.
+    б) Выберите для параметра **Срок действия** значение **Срок действия неограничен**.
 
     c. Щелкните **Сохранить**. Запишите строку ключа. Строка ключа потребуется при создании кластера. Этот ключ называется **секретом клиента субъекта-службы**.
 

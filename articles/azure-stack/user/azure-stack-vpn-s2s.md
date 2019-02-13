@@ -14,16 +14,19 @@ ms.topic: article
 ms.date: 01/19/2019
 ms.author: sethm
 ms.lastreviewed: 01/19/2019
-ms.openlocfilehash: 9a14c819acbc46d8a281f73fd4f3185caa8a1e02
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 96cb07ca4ede26e9bf0e5ceba28f1549061d0bf3
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478157"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815682"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
 В этой статье описано, как настроить политики IPsec/IKE для VPN-подключений типа "сеть — сеть" в Azure Stack.
+
+>[!NOTE]
+> Чтобы использовать эту функцию, ваш компьютер должен работать под управлением Azure Stack сборки **1809** или более поздней.  При использовании сборки до 1809 обновите систему Azure Stack до последней сборки, прежде чем использовать эту функцию, или выполните действия, описанные в этой статье.
 
 ## <a name="ipsec-and-ike-policy-parameters-for-vpn-gateways"></a>Параметры политики IPsec и IKE для VPN-шлюзов
 

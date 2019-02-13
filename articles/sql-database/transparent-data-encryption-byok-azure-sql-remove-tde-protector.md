@@ -11,21 +11,24 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 manager: craigg
-ms.date: 08/07/2017
-ms.openlocfilehash: 6675a68222e09be9a092ad21ee318a53a0a39ca5
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.date: 10/12/2018
+ms.openlocfilehash: 8ffda7fd1b987e34dc0e8157b535ccef65571247
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49311309"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55567899"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Удаление предохранителя TDE с помощью PowerShell
+
 ## <a name="prerequisites"></a>Предварительные требования
+
 - Подписка Azure и права администратора для нее.
 - Установленная и запущенная среда Azure PowerShell 4.2.0 или более поздней версии. 
 - В этом практическом руководстве предполагается, что вы уже используете ключ из Azure Key Vault в качестве предохранителя TDE для Базы данных SQL Azure или хранилища данных. См. дополнительные сведения о [прозрачном шифровании данных с поддержкой создания собственных ключей](transparent-data-encryption-byok-azure-sql.md).
 
 ## <a name="overview"></a>Обзор
+
 Это практическое руководство описывает, как правильно реагировать на потенциальную компрометацию предохранителя TDE для базы данных SQL Azure или хранилища данных, для которых настроено прозрачное шифрование данных (TDE) с поддержкой создания собственных ключей (BYOK). См. дополнительные сведения о [поддержке BYOK для TDE](transparent-data-encryption-byok-azure-sql.md). 
 
 Следующие процедуры следует выполнять только в крайних случаях или тестовых средах. Внимательно изучите это практическое руководство, так как удаление используемых предохранителей TDE из Azure Key Vault может привести к **потере данных**. 
@@ -35,10 +38,12 @@ ms.locfileid: "49311309"
 Но при этом не забывайте, что сразу после удаления предохранителя TDE в Key Vault **блокируются все подключения к зашифрованным базам данных на сервере, и эти базы данных переходят в автономный режим, а затем удаляются в течение 24 часов**. Старые резервные копии, зашифрованные с помощью скомпрометированного ключа, становятся недоступными.
 
 В этом практическом руководстве рассматриваются два подхода в зависимости от результата, которого вы хотите добиться с помощью реагирования:
+
 - вы можете **сохранить доступность** баз данных SQL Azure и (или) хранилищ данных;
 - вы можете **заблокировать доступность** баз данных SQL Azure и (или) хранилищ данных.
 
 ## <a name="to-keep-the-encrypted-resources-accessible"></a>Сохранение доступности зашифрованных ресурсов
+
 1. Создайте [ключ в Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/add-azurekeyvaultkey?view=azurermps-4.1.0). Убедитесь, что новый ключ успешно создан в другом хранилище. Нельзя использовать то же хранилище, где размещен скомпрометированный предохранитель TDE, так как управление доступом предоставляется на уровне хранилища. 
 2. Добавьте на сервер новый ключ с помощью командлетов [Add-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/add-azurermsqlserverkeyvaultkey) и [Set-AzureRmSqlServerTransparentDataEncryptionProtector](/powershell/module/azurerm.sql/set-azurermsqlservertransparentdataencryptionprotector), а затем настройте его в качестве нового предохранителя TDE для этого сервера.
 
@@ -48,7 +53,7 @@ ms.locfileid: "49311309"
    -ResourceGroupName <SQLDatabaseResourceGroupName> `
    -ServerName <LogicalServerName> `
    -KeyId <KeyVaultKeyId>
-   
+
    # Set the key as the TDE protector for all resources under the server
    Set-AzureRmSqlServerTransparentDataEncryptionProtector `
    -ResourceGroupName <SQLDatabaseResourceGroupName> `
@@ -60,7 +65,6 @@ ms.locfileid: "49311309"
 
    >[!NOTE]
    > Распространение нового предохранителя TDE на все базы данных-источники и базы данных-получатели для обновляемого сервера может занять несколько минут.
-   >
 
    ```powershell
    Get-AzureRmSqlServerTransparentDataEncryptionProtector `
@@ -78,7 +82,7 @@ ms.locfileid: "49311309"
    -Name <KeyVaultKeyName> `
    -OutputFile <DesiredBackupFilePath>
    ```
- 
+
 5. Удалите скомпрометированный ключ из Key Vault с помощью командлета [Remove-AzureKeyVaultKey](/powershell/module/azurerm.keyvault/remove-azurekeyvaultkey). 
 
    ```powershell
@@ -86,22 +90,23 @@ ms.locfileid: "49311309"
    -VaultName <KeyVaultName> `
    -Name <KeyVaultKeyName>
    ```
- 
+
 6. В будущем вы сможете восстановить ключ в Key Vault с помощью командлета [Restore-AzureKeyVaultKey](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey):
    ```powershell
    Restore-AzureKeyVaultKey `
    -VaultName <KeyVaultName> `
    -InputFile <BackupFilePath>
    ```
- 
+
 ## <a name="to-make-the-encrypted-resources-inaccessible"></a>Блокирование доступности зашифрованных ресурсов
+
 1. Удалите все базы данных, которые зашифрованы с помощью потенциально скомпрометированного ключа.
-Для файлов базы данных и журналов резервные копии создаются автоматически, поэтому вы всегда сможете восстановить базу данных на определенный момент времени, предоставив нужный ключ. Удаление баз данных перед удалением действующего предохранителя TDE нужно для того, чтобы предотвратить потерю данных из последних транзакций (до 10 минут). 
+
+   Для файлов базы данных и журналов резервные копии создаются автоматически, поэтому вы всегда сможете восстановить базу данных на определенный момент времени, предоставив нужный ключ. Удаление баз данных перед удалением действующего предохранителя TDE нужно для того, чтобы предотвратить потерю данных из последних транзакций (до 10 минут). 
 2. Создайте в Key Vault резервную копию материала ключа для предохранителя TDE.
 3. Удалите потенциально скомпрометированный ключ из Key Vault.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. дополнительные сведения о том, как [заменить предохранитель TDE для сервера в соответствии с требованиями к безопасности с помощью PowerShell](transparent-data-encryption-byok-azure-sql-key-rotation.md).
-
-- См. дополнительные сведения о [включении прозрачного шифрования данных с помощью собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).
+- Сведения о том, как повернуть предохранитель TDE сервера в соответствии с требованиями безопасности, вы найдете в статье [Смена предохранителя TDE с помощью PowerShell](transparent-data-encryption-byok-azure-sql-key-rotation.md).
+- См. дополнительные сведения о [включении прозрачного шифрования данных с использованием собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).

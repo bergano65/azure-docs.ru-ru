@@ -7,14 +7,14 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 01/31/2019
 ms.author: juliako
-ms.openlocfilehash: 205a4f2089ec5f415932f98eefe2f3d5f614f0ba
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
+ms.openlocfilehash: 84f2b4d68bf95d18a63401f796e2ffca682c808f
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54402053"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55567287"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -102,6 +102,10 @@ ms.locfileid: "54402053"
 
 В соответствии с [условиями использования веб-служб Azure](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31), вы сохраняете полные права на ваше содержимое, а корпорация Майкрософт осуществляет доступ к этому содержимому, метаданным и извлеченным сведениям только в строгом соответствии с условиями использования веб-служб и заявлением Майкрософт о конфиденциальности.
 
+### <a name="are-the-custom-models-that-i-build-in-my-video-indexer-account-available-to-other-accounts"></a>Будут ли доступны настраиваемые модели, которые я встраиваю в свою учетную запись Индексатора видео, в других учетных записях?
+
+ Нет, настраиваемые модели, создаваемые в вашей учетной записи, недоступны для любой другой учетной записи. Сейчас Индексатор видео позволяет создавать в учетной записи настраиваемые модели [торговых марок](customize-brands-model-overview.md), [языков](customize-language-model-overview.md) и [людей](customize-person-model-overview.md). Эти модели доступны только в учетной записи, в которой они были созданы.
+  
 ### <a name="is-the-content-indexed-by-video-indexer-kept-within-the-azure-region-where-i-am-using-video-indexer"></a>Содержимое, проиндексированное Индексатором видео, хранится в регионе Azure, где я использую Индексатор видео?
 
 Да, содержимое и его аналитические сведения хранятся в одном регионе Azure, если вы не настроили для подписки Azure особую конфигурацию с несколькими регионами Azure. 

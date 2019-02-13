@@ -6,17 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 12/06/2018
+ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: wamota
-ms.lastreviewed: 12/06/2018
-keywords: ''
-ms.openlocfilehash: 5946f62821d05bd9036b9fc0e6b0fc8daa74c5dc
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 02/06/2019
+ms.openlocfilehash: 0bb2f3ffb4b615451abc41d0d8945b4b3efdde53
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241208"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816362"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -69,19 +68,24 @@ ms.locfileid: "55241208"
 > [!Note]  
 > Azure Stack не поддерживает использование Express Route для доступа к службам Azure, перечисленным в следующей таблице.
 
-|Назначение|URL-адрес|Протокол|порты;|
-|---------|---------|---------|---------|
-|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https://secure.aadcdn.microsoftonline-p.com<br>office.com|HTTP<br>HTTPS|80<br>443|
-|Синдикация Marketplace|https://management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|
-|Обновления и исправления|https://&#42;.azureedge.net|HTTPS|443|
-|Регистрация|https://management.azure.com|HTTPS|443|
-|Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net|HTTPS|443|
-|Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>`https://www.microsoft.com/pkiops/crl`<br>`https://www.microsoft.com/pkiops/certs`<br>`https://crl.microsoft.com/pki/crl/products`<br>`https://www.microsoft.com/pki/certs`<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|
-|NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|
-|DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|
-|Список отзыва сертификатов|(URL-адрес сертификата для точек распространения списков отзыва)|HTTP|80|
-|Резервное копирование инфраструктуры|(IP-адрес или FQDN внешнего целевого файлового сервера)|SMB|445|
-|     |     |     |     |
+|Назначение|URL-адрес назначения|Протокол|порты;|Исходная сеть|
+|---------|---------|---------|---------|---------|
+|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https://secure.aadcdn.microsoftonline-p.com<br>office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Синдикация Marketplace|https://management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Обновления и исправления|https://&#42;.azureedge.net|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Регистрация|https://management.azure.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>https://www.microsoft.com/pkiops/crl<br>https://www.microsoft.com/pkiops/certs<br>https://crl.microsoft.com/pki/crl/products<br>https://www.microsoft.com/pki/certs<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|Общедоступный виртуальный IP-адрес — /27|
+|DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|Общедоступный виртуальный IP-адрес — /27|
+|Список отзыва сертификатов|(URL-адрес сертификата для точек распространения списков отзыва)|HTTP|80|Общедоступный виртуальный IP-адрес — /27|
+|Резервное копирование инфраструктуры|(IP-адрес или FQDN внешнего целевого файлового сервера)|SMB|445|Открытая сеть инфраструктуры|
+|LDAP|Лес AD DS для интеграции Graph|TCP<br>UDP|389|Общедоступный виртуальный IP-адрес — /27|
+|LDAP SSL|Лес AD DS для интеграции Graph|TCP|636|Общедоступный виртуальный IP-адрес — /27|
+|LDAP GC|Лес AD DS для интеграции Graph|TCP|3268|Общедоступный виртуальный IP-адрес — /27|
+|LDAP GC SSL|Лес AD DS для интеграции Graph|TCP|3269|Общедоступный виртуальный IP-адрес — /27|
+|AD FS|Конечная точка метаданных AD FS для интеграции AD FS|TCP|443|Общедоступный виртуальный IP-адрес — /27|
+|     |     |     |     |     |
 
 > [!Note]  
 > Исходящие URL-адреса распределяются с помощью диспетчера трафика Azure, чтобы обеспечить наилучшие возможные соединения, основанные на географическом расположении. С помощью распределенных URL-адресов Microsoft может обновлять и изменять конечные точки сервера без влияния на пользователей. Корпорация Майкрософт не предоставляет список IP-адресов для распределенных URL-адресов. Необходимо использовать устройство, которое поддерживает фильтрацию по URL-адресу, а не IP-адресу.

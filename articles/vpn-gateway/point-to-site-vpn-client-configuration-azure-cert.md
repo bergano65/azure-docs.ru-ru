@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/18/2019
 ms.author: cherylmc
-ms.openlocfilehash: 0f834c88a22aca52a861309681ea0da204b2a552
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 0a9c5b5f0fd47f2fcf0c9df02789abae5f07f023
+ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412071"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55564992"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -79,7 +79,7 @@ ms.locfileid: "54412071"
 
 Чтобы настроить на устройстве Mac собственный VPN-клиент для аутентификации на основе сертификата, сделайте следующее: Выполните следующие действия на каждом компьютере Mac, который будет подключаться к Azure:
 
-1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его.  
+1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его.
 Чтобы выполнить импорт, щелкните **Add** (Добавить).
 
   ![Добавление сертификата](./media/point-to-site-vpn-client-configuration-azure-cert/addcert.png)
@@ -113,10 +113,13 @@ ms.locfileid: "54412071"
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)
 
-### <a name="extract-the-key-and-certificate"></a>Извлечение ключа и сертификата
+### <a name="1-generate-the-key-and-certificate"></a>1: Создание ключа и сертификата
 
 Для strongSwan необходимо извлечь ключ и сертификат из сертификата клиента (PFX-файл) и сохранить их в отдельных PEM-файлах.
-Для этого сделайте вот что.
+
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
+
+### <a name="2-extract-the-key"></a>2. Извлечение ключа
 
 1. Скачайте и установите OpenSSL из [OpenSSL](https://www.openssl.org/source/).
 2. Откройте окно командной строки и перейдите в каталог, в котором установлен OpenSSL, например c:\OpenSLL-Win64\bin\'.
@@ -125,13 +128,13 @@ ms.locfileid: "54412071"
   ```
   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nocerts -out privatekey.pem -nodes
   ```
-4.  Теперь выполните следующую команду, чтобы извлечь открытый сертификат и сохранить его в новом файле:
-
+4.  Выполните следующую команду, чтобы извлечь открытый сертификат и сохранить его в новом файле:
+ 
   ```
   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nokeys -out publiccert.pem -nodes
   ```
 
-### <a name="install"></a>Установка и настройка
+### <a name="install"></a>3: Установка и настройка
 
 Приведенные ниже инструкции были созданы с помощью strongSwan 5.5.1 в Ubuntu 17.0.4. Ubuntu 16.0.10 не поддерживает графический пользовательский интерфейс strongSwan. Использовать Ubuntu 16.0.10 можно только с помощью [командной строки](#linuxinstallcli). В зависимости от версии Linux и strongSwan указанные ниже примеры могут отличаться от экранов, которые вы видите.
 
@@ -160,14 +163,13 @@ ms.locfileid: "54412071"
 
 ## <a name="linuxinstallcli"></a>Linux (strongSwan CLI)
 
-### <a name="install-strongswan"></a>Установка strongSwan
+### <a name="1-generate-the-key-and-certificate"></a>1: Создание ключа и сертификата
 
 Установить strongSwan можно с помощью приведенных ниже команд CLI или следуя указаниям в [графическом пользовательском интерфейсе](#install).
 
-1. `apt-get install strongswan-ikev2 strongswan-plugin-eap-tls`
-2. `apt-get install libstrongswan-standard-plugins`
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
-### <a name="install-and-configure"></a>Установка и настройка
+### <a name="2-install-and-configure"></a>2. Установка и настройка
 
 1. Загрузите пакет VPN-клиента с портала Azure.
 2. Извлеките файл.

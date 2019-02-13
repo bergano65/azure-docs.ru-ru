@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
-ms.openlocfilehash: 6bc1255c5bbb9cf74c97b88600f34e7fcd90ae4f
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: e955d21132dda6caa137ad3b5de9d00ccf7ed1b4
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343159"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811058"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
 
@@ -55,11 +55,11 @@ ms.locfileid: "39343159"
 
 6. На экране появится нечто похожее на *Приложение-функция. Название приложения-функции — xxx*. Запишите название приложения-функции, используемое далее.
 
-7. Дождитесь окончания развертывания шаблона Azure Resource Manager, о чем свидетельствует появившееся сообщение *Resource Manager template deployment: Done* (Развертывание шаблона диспетчера ресурсов: выполнено).
+7. Дождитесь окончания развертывания шаблона Azure Resource Manager, о чем свидетельствует появившееся сообщение *Resource Manager template deployment: Done* (Развертывание шаблона Resource Manager: выполнено).
 
 ## <a name="deploy-function-app"></a>Развертывание приложения-функции
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**, **cloud-deploy**.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - **cloud-deploy**.
 
 2. Дождитесь, пока завершится передача кода приложения-функции (появится сообщение *function app deploys: Done* (Развертывание приложения-функции: выполнено)).
 
@@ -83,7 +83,7 @@ ms.locfileid: "39343159"
 
 ## <a name="monitor-devkit-state-in-browser"></a>Мониторинг состояния DevKit в браузере
 
-1. Откройте в веб-браузере файл `DevKitState\web\index.html`, созданный на шаге [требуемых элементов](#whatyouneed).
+1. Откройте в веб-браузере файл `DevKitState\web\index.html`, созданный на шаге требуемых элементов.
 
 2. Откроется соответствующая веб-страница.![Укажите название приложения-функции.](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state-function-app-name.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "39343159"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Вы можете просмотреть необработанные данные двойника устройства на портале Azure: "Центр Интернета вещей" —\> "Устройства Интернета вещей" —\> *\<ваше_устройство\>* -\> "Двойник устройства".
+> Вы можете просмотреть необработанные данные двойника устройства на портале Azure. Центр Интернета вещей —\> устройства Интернета вещей —\> *\<ваше устройство\>* -\> Двойник устройства.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

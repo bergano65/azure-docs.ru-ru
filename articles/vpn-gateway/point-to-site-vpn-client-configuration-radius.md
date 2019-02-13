@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/07/2018
 ms.author: cherylmc
-ms.openlocfilehash: 52c7734c2af80d29433c20191d8b5b7c0ee0fe48
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 8fc2c487a374a34cd9a7642a45fd59c04061b398
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "51252014"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55817824"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>Создание и установка файлов конфигурации VPN-клиента для аутентификации при подключениях типа "точка — сеть" с использованием RADIUS
 
@@ -98,10 +98,10 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 
 2. Найдите файл **mobileconfig** на компьютере Mac.
 
-   ![Расположение файла MOBILCONFIG](./media/point-to-site-vpn-client-configuration-radius/admobileconfigfile.png)
+   ![Расположение файла mobileconfig](./media/point-to-site-vpn-client-configuration-radius/admobileconfigfile.png)
 
 3. (Необязательно.) Если вы хотите указать пользовательскую службу DNS, добавьте следующие строки в файл **mobileconfig**:
-```
+```xml
     <key>DNS</key>
     <dict>
       <key>ServerAddresses</key>
@@ -260,17 +260,17 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | 
 
 Чтобы использовать другой тип проверки подлинности (например, OTP) либо же другой протокол проверки подлинности (например, протокол PEAP-MSCHAPv2, а не EAP-MSCHAPv2), создайте собственный профиль конфигурации VPN-клиента. Чтобы создать профиль, требуются следующие данные: IP-адрес шлюза виртуальной сети, тип туннеля и сведения о маршрутах с разделенный туннелем. Эти данные можно получить, сделав следующее:
 
-1. Выполните командлет `Get-AzureRmVpnClientConfiguration`, чтобы создать конфигурацию VPN-клиента для EapMSChapv2. Инструкции см. в [этом разделе](#ccradius) статьи.
+1. Выполните командлет `Get-AzureRmVpnClientConfiguration`, чтобы создать конфигурацию VPN-клиента для EapMSChapv2. Инструкции см. в соответствующем разделе статьи.
 
-2. Распакуйте файл VpnClientConfiguration.zip и найдите папку **GenenericDevice**. Не используйте папки с установщиками Windows для 64- и 32-разрядной архитектур.
+2. Распакуйте файл VpnClientConfiguration.zip и найдите папку **GenericDevice**. Не используйте папки с установщиками Windows для 64- и 32-разрядной архитектур.
  
-3. Папка **GenenericDevice** содержит XML-файл с именем **VpnSettings**. В этом файле находится вся необходимая информация.
+3. Папка **GenericDevice** содержит XML-файл с именем **VpnSettings**. В этом файле находится вся необходимая информация.
 
    * **VpnServer**. Полное доменное имя VPN-шлюза Azure. Это адрес, по которому подключается клиент.
    * **VpnType**. Тип туннеля, который вы используете для подключения.
    * **Routes**. Маршруты, которые нужно настроить в профиле, чтобы через P2S-туннель отправлялся только трафик виртуальной сети Azure.
    
-   Кроме того, папка **GenenericDevice** содержит CER-файл с именем **VpnServerRoot**. В этом файле содержится корневой сертификат, который требуется для проверки VPN-шлюза Azure при установке подключения "точка — сеть". Установите сертификат на всех устройствах, которые будут подключаться к виртуальной сети Azure.
+   Кроме того, папка **GenericDevice** содержит CER-файл с именем **VpnServerRoot**. В этом файле содержится корневой сертификат, который требуется для проверки VPN-шлюза Azure при установке подключения "точка — сеть". Установите сертификат на всех устройствах, которые будут подключаться к виртуальной сети Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

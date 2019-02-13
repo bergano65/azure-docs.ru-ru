@@ -1,5 +1,5 @@
 ---
-title: Настройка BGP на VPN-шлюзах Azure с помощью Resource Manager и PowerShell | Документы Майкрософт
+title: 'Настройка BGP на VPN-шлюзе Azure. Resource Manager: PowerShell | Документация Майкрософт'
 description: В этой статье описана поэтапная настройка протокола BGP для VPN-шлюзов Azure с помощью Azure Resource Manager и PowerShell.
 services: vpn-gateway
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2017
 ms.author: yushwang
-ms.openlocfilehash: 97b33ed76776ae00c109e891b3d91638080ed778
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: b48382c8f429576a3d15c624c9c9028cffec3872
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632591"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813030"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>Настройка BGP на VPN-шлюзах Azure с помощью PowerShell
 В этой статье содержится пошаговое описание процесса, который позволит с помощью модели развертывания Resource Manager и PowerShell включить BGP для VPN-подключения типа "сеть — сеть" (S2S), настроенного между локальными сетями, или для подключения между виртуальными сетями.
@@ -35,7 +35,7 @@ ms.locfileid: "52632591"
 В этой статье описано выполнение следующих действий:
 
 * [Часть 1 — активация BGP на VPN-шлюзе Azure](#enablebgp)
-* [Часть 2 — создание подключения между локальными сетями с использованием BGP](#crossprembgp)
+* Часть 2 — создание подключения между локальными сетями с использованием BGP
 * [Часть 3 — создание подключения между виртуальными сетями с использованием BGP](#v2vbgp)
 
 Каждая часть этой инструкции является базовым блоком для использования BGP в вашей сети. Выполнив инструкции, приведенные в трех частях, вы создадите топологию, которая представлена на следующей схеме:
@@ -174,7 +174,7 @@ $BGPPeerIP5 = "10.52.255.254"
 
 #### <a name="2-create-the-local-network-gateway-for-site5"></a>2. Создание локального сетевого шлюза для сети Site5
 
-Прежде чем создавать локальный сетевой шлюз, не забудьте создать группу ресурсов, если она не была создана ранее. Обратите внимание на два дополнительных параметра локального сетевого шлюза: Asn и BgpPeerAddress.
+Прежде чем создавать локальный сетевой шлюз, не забудьте создать группу ресурсов, если она не была создана ранее. Обратите внимание также на два дополнительных параметра локального сетевого шлюза: ASN и BgpPeerAddress.
 
 ```powershell
 New-AzureRmResourceGroup -Name $RG5 -Location $Location5

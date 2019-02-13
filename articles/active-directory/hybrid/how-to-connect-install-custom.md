@@ -11,23 +11,23 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 10/04/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 49f1b953784aca0776357cc4071efbbff6064660
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: fb451ab3a28ecca42fc05edad14cd513c4fe1f68
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55155346"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820493"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Выборочная установка Azure AD Connect
 **Настраиваемые параметры** в Azure AD Connect используются, когда для установки необходимо указать больше параметров. В частности, если есть несколько лесов или требуется настроить дополнительные компоненты, которые не входят в экспресс-установку. Они также используются в тех случаях, когда [**экспресс-установка**](how-to-connect-install-express.md) не соответствует требованиям развертывания или топологии.
 
 Перед установкой Azure AD Connect [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в перечне [требований к оборудованию и программному обеспечению](how-to-connect-install-prerequisites.md). Кроме того, убедитесь в наличии учетных записей, описанных в статье [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md).
 
-Если настраиваемые параметры не соответствуют топологии, например для обновления DirSync, сведения о других сценариях см. в разделе [Дополнительная документация](#related-documentation).
+Если настраиваемые параметры не соответствуют топологии, например для обновления DirSync, сведения о других сценариях см. в дополнительной документации.
 
 ## <a name="custom-settings-installation-of-azure-ad-connect"></a>Выборочная установка Azure AD Connect с настраиваемыми параметрами
 ### <a name="express-settings"></a>Стандартные параметры

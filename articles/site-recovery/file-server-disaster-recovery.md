@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
 ms.custom: mvc
-ms.openlocfilehash: c6db0b9dda9f383ddc062c41bae0be0b56f7e69d
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 2f52b3d1a5aa5b934954da09d114dce1efb8ef32
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53794096"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55508374"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Защита файлового сервера с помощью Azure Site Recovery 
 
@@ -94,7 +94,7 @@ DFSR применяет алгоритм сжатия (известный как
 
 Указанные ниже действия содержат краткие сведения об использовании службы синхронизации файлов.
 
-1. [Создайте учетную запись хранения в Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Если вы выбрали геоизбыточное хранилище с доступом на чтение для учетных записей хранения, то в случае сбоя у вас будет доступ только на чтение к своим данным из дополнительного региона. Дополнительные сведения см. в статье [Что делать в случае простоя службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-disaster-recovery-guidance?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+1. [Создайте учетную запись хранения в Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Если вы выбрали геоизбыточное хранилище с доступом на чтение для учетных записей хранения, то в случае сбоя у вас будет доступ только на чтение к своим данным из дополнительного региона. Дополнительные сведения см. в статье [Disaster recovery and storage account failover (preview) in Azure Storage](../storage/common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiless%2ftoc.json) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure).
 2. [Создайте файловый ресурс](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 3. [Запустите службу синхронизации файлов](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide) на файловом сервере Azure.
 4. Создайте группу синхронизации. Конечные точки в группе синхронизации синхронизируются. Группа синхронизации должна содержать по крайней мере одну облачную конечную точку, которая представляет собой общий файловый ресурс Azure. Кроме того, она должна содержать одну серверную конечную точку, которая представляет собой путь в Windows Server.
@@ -143,7 +143,7 @@ DFSR применяет алгоритм сжатия (известный как
 
 Ниже приведены указания по использованию службы синхронизации файлов.
 
-1. [Создайте учетную запись хранения в Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Если вы выбрали геоизбыточное хранилище с доступом на чтение (рекомендуется) для учетных записей хранения, то у вас будет доступ только на чтение к своим данным из дополнительного региона в случае сбоя. Дополнительные сведения см. в статье [Что делать в случае простоя службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-disaster-recovery-guidance?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+1. [Создайте учетную запись хранения в Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Если вы выбрали геоизбыточное хранилище с доступом на чтение (рекомендуется) для учетных записей хранения, то у вас будет доступ только на чтение к своим данным из дополнительного региона в случае сбоя. Дополнительные сведения см. в статье [Disaster recovery and storage account failover (preview) in Azure Storage](../storage/common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiless%2ftoc.json) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure).
 2. [Создайте файловый ресурс](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 3. [Разверните службу синхронизации файлов](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide) на локальном файловом сервере.
 4. Создайте группу синхронизации. Конечные точки в группе синхронизации синхронизируются. Группа синхронизации должна содержать по крайней мере одну облачную конечную точку, которая представляет собой общий файловый ресурс Azure. Кроме того, она должна содержать одну серверную конечную точку, которая представляет собой путь в Windows Server в локальной среде.

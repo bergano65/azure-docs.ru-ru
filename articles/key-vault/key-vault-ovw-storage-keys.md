@@ -9,12 +9,12 @@ author: prashanthyv
 ms.author: pryerram
 manager: mbaldwin
 ms.date: 10/03/2018
-ms.openlocfilehash: 0392d84efa3a82a6323d6d09db792df7d6c42256
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 152e1e5892e3a72286205c2f5bf4e18b2a2bcbf7
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210681"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814849"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
@@ -52,35 +52,48 @@ ms.locfileid: "55210681"
 1. После создания учетной записи хранения выполните следующую команду, чтобы получить идентификатор ресурса учетной записи хранения, которой требуется управлять.
 
     ```
-    az storage account show -n storageaccountname (Copy ID field out of the result of this command)
+    az storage account show -n storageaccountname 
     ```
+    Скопируйте поле идентификатора из результата приведенной выше команды.
     
-2. Получите идентификатор приложения субъекта-службы Azure Key Vault. 
+2. Получите идентификатор объекта субъекта-службы Azure Key Vault, выполнив следующую команду.
 
     ```
     az ad sp show --id cfa8b339-82a2-471a-a3c9-0fc0be7a4093
     ```
     
+    После успешного завершения этой команды найдите идентификатор объекта в результате.
+    ```console
+        {
+            ...
+            "objectId": "93c27d83-f79b-4cb2-8dd4-4aa716542e74"
+            ...
+        }
+    ```
+    
 3. Присвойте идентификатору Azure Key Vault роль оператора учетной записи хранения.
 
     ```
-    az role assignment create --role "Storage Account Key Operator Service Role"  --assignee-object-id <ApplicationIdOfKeyVault> --scope <IdOfStorageAccount>
+    az role assignment create --role "Storage Account Key Operator Service Role"  --assignee-object-id <ObjectIdOfKeyVault> --scope <IdOfStorageAccount>
     ```
     
 4. Создайте управляемую учетную запись хранения в Key Vault.     <br /><br />
-   Ниже мы указываем для повторного создания период в 90 дней. Через 90 дней хранилище ключей повторно создаст ключ key1 и установит его в качестве активного вместо key2.
+   Ниже мы указываем для повторного создания период в 90 дней. Через 90 дней хранилище ключей повторно создаст ключ key1 и установит его в качестве активного вместо key2. Теперь оно пометит Key1 как активный ключ. 
    
     ```
-    az keyvault storage add --vault-name <YourVaultName> -n <StorageAccountName> --active-key-name key2 --auto-regenerate-key --regeneration-period P90D --resource-id <Resource-id-of-storage-account>
+    az keyvault storage add --vault-name <YourVaultName> -n <StorageAccountName> --active-key-name key1 --auto-regenerate-key --regeneration-period P90D --resource-id <Id-of-storage-account>
     ```
     Если пользователь не создал учетную запись хранения и не имеет разрешений для доступа к ней, выполнив описанные ниже действия, можно установить разрешения для учетной записи, чтобы обеспечить возможность управления всеми разрешениями хранилища в Key Vault.
+    
  > [!NOTE] 
-    Если пользователь не имеет разрешений для учетной записи хранения, мы сначала получим идентификатор объекта пользователя.
+ > Если пользователь не имеет разрешений для учетной записи хранения, мы сначала получим идентификатор объекта пользователя.
+
 
     ```
     az ad user show --upn-or-object-id "developer@contoso.com"
 
     az keyvault set-policy --name <YourVaultName> --object-id <ObjectId> --storage-permissions backup delete list regeneratekey recover     purge restore set setsas update
+    
     ```
     
 ## <a name="how-to-access-your-storage-account-with-sas-tokens"></a>Как получить доступ к учетной записи хранения с помощью маркеров SAS
@@ -91,9 +104,9 @@ ms.locfileid: "55210681"
 
 > [!NOTE] 
   Существует 3 способа аутентификации в Key Vault (с которыми можно ознакомиться в разделе об [основных понятиях](key-vault-whatis.md#basic-concepts)):
-- использование Управляемого удостоверения службы (настоятельно рекомендуется);
-- использование субъекта-службы и сертификата; 
-- использование субъекта-службы и пароля (не рекомендуется).
+> - использование Управляемого удостоверения службы (настоятельно рекомендуется);
+> - использование субъекта-службы и сертификата; 
+> - использование субъекта-службы и пароля (не рекомендуется).
 
 ```cs
 // Once you have a security token from one of the above methods, then create KeyVaultClient with vault credentials

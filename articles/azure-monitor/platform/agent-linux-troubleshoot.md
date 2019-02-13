@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: b95a9b2243dda83be7de67802a8b6678419e335f
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 84c6a88449844d3a2f59b3b93dd95b102b653679
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54102590"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55817620"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -60,7 +60,7 @@ ms.locfileid: "54102590"
 | NOT_DEFINED | Подключаемый модуль auoms auditd не будет установлен, так как не установлены необходимые зависимости | Установить auoms не удалось, установите пакет auditd. |
 | 2 | Набору оболочки предоставлен недопустимый параметр. Запустите `sudo sh ./omsagent-*.universal*.sh --help` для информации об использовании |
 | 3 | Набору оболочки не предоставлен параметр. Выполните `sudo sh ./omsagent-*.universal*.sh --help`, чтобы получить сведения об использовании. |
-| 4. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Также [просмотрите](#issue:-unable-to-connect-through-proxy-to-log-analytics) и проверьте настройки прокси-сервера. |
+| 4. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
 | 5 | Набор оболочки должен выполняться от имени привилегированного пользователя, ИЛИ получена ошибка 403 во время подключения. Выполните команду с использованием `sudo`. |
 | 6 | Недопустимая архитектура пакета, ИЛИ получена ошибка 200 во время подключения; пакеты omsagent-*x64.sh можно установить только в 64-разрядных системах, а пакеты omsagent-* x86.sh — только в 32-разрядных системах. Скачайте правильный пакет для используемой архитектуры из [последнего выпуска](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Не удалось установить пакет OMS. Просмотрите выходные данные команды, чтобы определить причину сбоя. |

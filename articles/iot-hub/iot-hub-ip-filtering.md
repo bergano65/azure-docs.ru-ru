@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/23/2017
 ms.author: rezas
-ms.openlocfilehash: 903f8284327d3d5b9ef386305a436ce44a8a11b2
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: cd382c0daff79b487f4ecae01ad852f6e57f3a25
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378108"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734255"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
 
@@ -42,7 +42,7 @@ ms.locfileid: "49378108"
 
 При добавлении правила фильтрации IP-адресов требуется ввести следующие значения:
 
-* **Название правила фильтрации IP-адресов** должно быть уникальной строкой с буквами и цифрами длиной до 128 знаков, регистр не учитывается. Допускаются только 7-разрядные буквы и цифры ASCII, а также `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}`.
+* **Название правила фильтрации IP-адресов** должно быть уникальной строкой с буквами и цифрами длиной до 128 знаков, регистр не учитывается. Допускаются только 7-разрядные буквы и цифры ASCII, а также `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}`.
 
 * В качестве **действия** для правила фильтрации IP-адресов выберите **Отклонить** или **Принять**.
 
@@ -69,6 +69,84 @@ ms.locfileid: "49378108"
 Чтобы удалить правило фильтрации IP-адресов, выберите одно или несколько правил из списка и нажмите кнопку **Удалить**.
 
 ![Удаление правила фильтрации IP-адресов в Центре Интернета вещей](./media/iot-hub-ip-filtering/ip-filter-delete-rule.png)
+
+## <a name="retrieve-and-update-ip-filters-using-azure-cli"></a>Получение и обновление фильтров IP-адресов с помощью Azure CLI
+
+Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest). 
+
+Чтобы получить текущие фильтры IP-адресов Центра Интернета вещей, выполните следующую команду:
+
+```azurecli-interactive
+az resource show -n <iothubName> -g <resourceGroupName> --resource-type Microsoft.Devices/IotHubs
+```
+
+Она возвратит объект JSON, в котором ваши имеющиеся фильтры IP-адресов отображаются в разделе `properties.ipFilterRules`:
+
+```json
+{
+...
+    "properties": {
+        "ipFilterRules": [
+        {
+            "action": "Reject",
+            "filterName": "MaliciousIP",
+            "ipMask": "6.6.6.6/6"
+        },
+        {
+            "action": "Allow",
+            "filterName": "GoodIP",
+            "ipMask": "131.107.160.200"
+        },
+        ...
+        ],
+    },
+...
+}
+```
+
+Чтобы добавить новый фильтр IP-адреса для Центра Интернета вещей, выполните следующую команду:
+
+```azurecli-interactive
+az resource update -n <iothubName> -g <resourceGroupName> --resource-type Microsoft.Devices/IotHubs --add properties.ipFilterRules "{\"action\":\"Reject\",\"filterName\":\"MaliciousIP\",\"ipMask\":\"6.6.6.6/6\"}"
+```
+
+Чтобы удалить имеющийся фильтр IP-адреса в Центре Интернета вещей, выполните следующую команду:
+
+```azurecli-interactive
+az resource update -n <iothubName> -g <resourceGroupName> --resource-type Microsoft.Devices/IotHubs --add properties.ipFilterRules <ipFilterIndexToRemove>
+```
+
+Обратите внимание, что `<ipFilterIndexToRemove>` должен соответствовать порядковому номеру IP-фильтра в Центре Интернета вещей раздела `properties.ipFilterRules`.
+
+
+## <a name="retrieve-and-update-ip-filters-using-azure-powershell"></a>Получение и обновление фильтров IP-адресов с помощью Azure PowerShell
+
+Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview?view=azps-1.2.0). 
+
+```powershell
+# Get your IoT Hub resource using its name and its resource group name
+$iothubResource = Get-AzureRmResource -ResourceGroupName <resourceGroupNmae> -ResourceName <iotHubName> -ExpandProperties
+
+# Access existing IP filter rules
+$iothubResource.Properties.ipFilterRules |% { Write-host $_ }
+
+# Construct a new IP filter
+$filter = @{'filterName'='MaliciousIP'; 'action'='Reject'; 'ipMask'='6.6.6.6/6'}
+
+# Add your new IP filter rule
+$iothubResource.Properties.ipFilterRules += $filter
+
+# Remove an existing IP filter rule using its name, e.g., 'GoodIP'
+$iothubResource.Properties.ipFilterRules = @($iothubResource.Properties.ipFilterRules | Where 'filterName' -ne 'GoodIP')
+
+# Update your IoT Hub resource with your updated IP filters
+$iothubResource | Set-AzureRmResource -Force
+```
+
+## <a name="update-ip-filter-rules-using-rest"></a>Обновление правил фильтра IP-адреса с помощью REST
+
+Вы также можете получать и изменять фильтры IP-адресов Центра Интернета вещей, используя конечную точку REST поставщика ресурсов Azure. Подробные сведения о `properties.ipFilterRules` см. в статье [Iot Hub Resource — Create Or Update](https://docs.microsoft.com/en-us/rest/api/iothub/iothubresource/createorupdate) (Ресурс Центра Интернета вещей. Создание или обновление).
+
 
 ## <a name="ip-filter-rule-evaluation"></a>Оценка правила фильтрации IP-адресов
 

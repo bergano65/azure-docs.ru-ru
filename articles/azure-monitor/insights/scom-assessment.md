@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
-ms.openlocfilehash: fc625192464dce174b4c2a6d8a2a98343519699f
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 7ae87763d280e129bab96c604f9118ecf088ea2f
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186129"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55819864"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -55,7 +55,7 @@ ms.locfileid: "53186129"
 
  Для настройки оценки с помощью консоли управления Operations Manager выполните следующие действия (в таком же порядке):
 1. [Установите учетную запись запуска от имени для проверки работоспособности System Center Operations Manager](#operations-manager-run-as-accounts-for-log-analytics).  
-2. [Настройте правило проверки работоспособности System Center Operations Manager](#configure-the-assessment-rule).
+2. Настройте правило Проверки работоспособности System Center Operations Manager.
 
 ## <a name="system-center-operations-manager-assessment-data-collection-details"></a>Сведения о сборе данных оценки System Center Operations Manager
 

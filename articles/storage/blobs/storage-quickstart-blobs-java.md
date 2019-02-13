@@ -1,23 +1,26 @@
 ---
-title: Создание большого двоичного объекта в службе хранилища Azure с помощью пакета SDK службы хранилища для Java версии 7 | Документация Майкрософт
+title: Создание большого двоичного объекта в службе хранилища Azure с использованием клиентской библиотеки для Java версии 7 | Документация Майкрософт
 description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используйте клиентскую библиотеку службы хранилища Azure для Java, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и отобразить большие двоичные объекты в контейнере.
 services: storage
 author: roygara
 ms.custom: mvc
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 02/04/2019
 ms.author: rogarana
-ms.openlocfilehash: be994c9b3c9ee4f3c6ccd5c01e762c05f740be09
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 3bf82f37752009a488512d720093bc9c595dff8e
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469650"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753220"
 ---
-# <a name="how-to-upload-download-and-list-blobs-using-java-sdk-v7"></a>Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK для Java версии 7
+# <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-java-v7"></a>Отправка, скачивание и вывод списка больших двоичных объектов с помощью клиентской библиотеки для Java версии 7
 
-Из этого краткого руководства вы узнаете, как использовать Java для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure.
+Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку для Java версии 7 для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure.
+
+> [!TIP]
+> Последняя версия клиентской библиотеки службы хранилища Azure для Java — версия 10. Корпорация Майкрософт рекомендует по возможности использовать последнюю версию клиентской библиотеки. Чтобы начать работу с использованием версии 10, перейдите к [краткому руководству по отправке, скачиванию и перечислению больших двоичных объектов с помощью пакета SDK службы хранилища для Java версии 10](storage-quickstart-blobs-java-v10.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -130,7 +133,7 @@ container.createIfNotExists(BlobContainerPublicAccessType.CONTAINER, new BlobReq
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
-Чтобы отправить файл в блочный BLOB-объект, получите ссылку на этот объект в целевом контейнере. При наличии ссылки на BLOB-объект вы можете передать в него данные с помощью [CloudBlockBlob.Upload](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.upload#com_microsoft_azure_storage_blob__cloud_block_blob_upload_final_InputStream_final_long). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет его, если существует.
+Чтобы отправить файл в блочный BLOB-объект, получите ссылку на этот объект в целевом контейнере. При наличии ссылки на BLOB-объект вы можете передать в него данные с помощью [CloudBlockBlob.Upload](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_block_blob.upload). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет его, если существует.
 
 В примере кода создается локальный файл, который будет использоваться для передачи и скачивания. Передаваемый файл сохраняется как **source**, и большому двоичному объекту присваивается имя в **blob**. В приведенном ниже примере файл отправляется в контейнер с именем **quickstart**.
 
@@ -156,7 +159,7 @@ blob.uploadFromFile(sourceFile.getAbsolutePath());
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Получить список файлов в контейнере можно с помощью метода [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.listblobs#com_microsoft_azure_storage_blob__cloud_blob_container_listBlobs). Следующий код извлекает список BLOB-объектов, затем переходит по ним, отображая найденные URI. Можно скопировать URI из окна командной строки и вставить его в адресную строку браузера для просмотра файла.
+Получить список файлов в контейнере можно с помощью метода [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.listblobs). Следующий код извлекает список BLOB-объектов, затем переходит по ним, отображая найденные URI. Можно скопировать URI из окна командной строки и вставить его в адресную строку браузера для просмотра файла.
 
 ```java
 //Listing contents of container
@@ -182,7 +185,7 @@ blob.downloadToFile(downloadedFile.getAbsolutePath());
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны отправленные большие двоичные объекты, удалите весь контейнер с помощью метода [CloudBlobContainer.DeleteIfExists](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.deleteifexists#com_microsoft_azure_storage_blob__cloud_blob_container_deleteIfExists). Он также удаляет файлы в контейнере.
+Если вам больше не нужны отправленные большие двоичные объекты, удалите весь контейнер с помощью метода [CloudBlobContainer.DeleteIfExists](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_blob_container.deleteifexists). Он также удаляет файлы в контейнере.
 
 ```java
 try {
@@ -206,8 +209,6 @@ sourceFile.deleteOnExit();
 В этом кратком руководстве описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. Чтобы узнать подробнее о работе с Java, перейдите в репозиторий исходного кода на GitHub.
 
 > [!div class="nextstepaction"]
-> [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java) 
-> [Справочник по API](https://docs.microsoft.com/java/azure/?view=azure-java-stable)
+> [Пакет SDK службы хранилища Microsoft Azure версии 10 для Java](https://github.com/azure/azure-storage-java) 
+> [Справочник по API Java](https://docs.microsoft.com/java/azure/)
 > [Примеры кода для Java](../common/storage-samples-java.md)
-
-* Дополнительные сведения об обозревателе объектов и BLOB-объектах см. в статье [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ](../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).

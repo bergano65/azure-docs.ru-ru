@@ -15,12 +15,12 @@ ms.date: 09/08/2017
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 0937ad12ad74209e84ee1316a090af8a6469a044
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 3e8d9cc44e4e83dac963b3d85f7dd4d058323bf6
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151623"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813829"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD
 
@@ -48,7 +48,7 @@ ms.locfileid: "55151623"
 
 Благодаря [условному доступу](../conditional-access/overview.md) можно определить ограничения в отношении трафика, который может передаваться к внутренним приложениям. Вы можете создать политики, ограничивающие вход на основе расположения, надежности аутентификации и профиля риска пользователя.
 
-С помощью условного доступа можно также настроить политики Многофакторной идентификации, добавив еще один уровень безопасности при проверке подлинности пользователей. Кроме того, ваши приложения также можно направить в Microsoft Cloud App Security с помощью условного доступа Azure AD, чтобы предоставить мониторинг и контроль в реальном времени и элементы управления, или с помощью [политики доступа](https://docs.microsoft.com/en-us/cloud-app-security/access-policy-aad) и [политики сеансов](https://docs.microsoft.com/en-us/cloud-app-security/session-policy-aad).
+С помощью условного доступа можно также настроить политики Многофакторной идентификации, добавив еще один уровень безопасности при проверке подлинности пользователей. Кроме того, ваши приложения также можно направить в Microsoft Cloud App Security с помощью условного доступа Azure AD, чтобы предоставить мониторинг и контроль в реальном времени и элементы управления, или с помощью [политики доступа](https://docs.microsoft.com/cloud-app-security/access-policy-aad) и [политики сеансов](https://docs.microsoft.com/cloud-app-security/session-policy-aad).
 
 ### <a name="traffic-termination"></a>Завершение трафика
 
@@ -128,11 +128,11 @@ ms.locfileid: "55151623"
 
 При доступе пользователей к опубликованному приложению служба прокси приложения и соединитель прокси приложения взаимодействуют следующим образом.
 
-1. [Служба аутентифицирует пользователя для приложения](#the-service-checks-the-configuration-settings-for-the-app)
-2. [Служба помещает запрос в очередь соединителя.](#The-service-places-a-request-in-the-connector-queue)
-3. [Соединитель обрабатывает запрос из очереди.](#the-connector-receives-the-request-from-the-queue)
-4. [Соединитель ожидает ответ.](#the-connector-waits-for-a-response)
-5. [Служба передает пользователю поток данных.](#the-service-streams-data-to-the-user)
+1. Служба аутентифицирует пользователя для приложения
+2. Служба помещает запрос в очередь соединителя
+3. Соединитель обрабатывает запрос из очереди.
+4. Соединитель ожидает ответ.
+5. Служба передает пользователю поток данных.
 
 Чтобы узнать больше о том, что происходит на каждом из этих этапов, читайте эту статью дальше.
 

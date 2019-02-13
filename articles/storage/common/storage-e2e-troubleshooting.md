@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ce884b95daf8c02e51c79068c360ffe4a4fe0d07
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5a160ef767909814e363dbb692e58c30783aaf6f
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473210"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746318"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -98,10 +98,10 @@ ms.locfileid: "55473210"
 
 Чтобы начать работу с PowerShell для Azure, см. раздел [Как установить и настроить Azure PowerShell](/powershell/azure/overview).
 
-1. Выполните командлет [Add-AzureAccount](/powershell/module/servicemanagement/azure/add-azureaccount?view=azuresmps-3.7.0) в окне PowerShell, чтобы добавить свою учетную запись пользователя Azure.
+1. Выполните командлет [Add-AzAccount](/powershell/module/servicemanagement/azure/add-azureaccount) в окне PowerShell, чтобы добавить свою учетную запись пользователя Azure.
    
     ```powershell
-    Add-AzureAccount
+    Add-AzAccount
     ```
 
 2. В окне **Вход в Microsoft Azure** введите адрес электронной почты и пароль, связанный с вашей учетной записью. Azure выполняет проверку подлинности и сохраняет учетные данные, а затем закрывает окно.
@@ -110,7 +110,7 @@ ms.locfileid: "55473210"
     ```powershell
     $SubscriptionName = 'Your subscription name'
     $StorageAccountName = 'yourstorageaccount'
-    Set-AzureSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName
+    Set-AzSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName
     ```
 
 4. Включение ведения журнала хранилища для службы BLOB-объектов.

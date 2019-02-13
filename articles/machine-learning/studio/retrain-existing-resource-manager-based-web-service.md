@@ -1,8 +1,21 @@
 ---
-заголовок: Переобучение существующей прогнозной веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в Студии машинного обучения Azure.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 07.11.2017
+title: Переобучение имеющейся прогнозной веб-службы Студии
+titleSuffix: Azure Machine Learning Studio
+description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в Студии машинного обучения Azure.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
+ms.date: 11/07/2017
+ms.openlocfilehash: cb33b32be276c2deb61a1a718a609612c6a4989e
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55511961"
 ---
 # <a name="retrain-an-existing-predictive-azure-machine-learning-studio-web-service"></a>Переобучение имеющейся веб-службы Студии машинного обучения Azure
 

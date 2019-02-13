@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/07/2018
+ms.date: 02/05/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 2b9702dbae0414ba597b6e1f6080d9de86f624fc
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 2255f14d026d406dc41802c321d0a673ee2f2f23
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077087"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55766866"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство. Рекомендации по оптимизации затрат
 
@@ -29,7 +29,7 @@ ms.locfileid: "53077087"
 > * Проверьте результат, чтобы убедиться в том, что размер виртуальной машины успешно изменен
 
 ## <a name="prerequisites"></a>Предварительные требования
-Рекомендации доступны для всех клиентов [с Cоглашением Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям.
+Рекомендации доступны для различных типов учетной записи Azure, включая клиентов [Соглашения Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о расходах вы должны по крайней мере иметь доступ на чтение к одной или нескольким следующим областям.
 
 - Подписка
 - Группа ресурсов
@@ -53,7 +53,7 @@ ms.locfileid: "53077087"
 
 Помощник по Azure отслеживает использование вашей виртуальной машины на протяжении 14 дней, а затем определяет недостаточно нагруженные виртуальные машины. Виртуальные машины, у которых использование ресурсов ЦП составляет не больше 5 %, а использование ресурсов сети составляет не больше 7 МБ на протяжении 4 или более дней, будут считаться недостаточно нагруженными.
 
-Параметр использования ЦП на 5 % или меньше настроен по умолчанию, но вы можете его изменить. Дополнительные сведения об изменении параметра см. в статье [Настройка правила среднего показателя использования ЦП](../advisor/advisor-get-started.md#configure-the-average-cpu-utilization-rule-for-the-low-usage-virtual-machine-recommendation)[для виртуальной машины с низким уровнем использования](../advisor/advisor-get-started.md#configure-the-average-cpu-utilization-rule-for-the-low-usage-virtual-machine-recommendation).
+Параметр использования ЦП на 5 % или меньше настроен по умолчанию, но вы можете его изменить. Дополнительные сведения об изменении параметра см. в статье [Приступая к работе с Azure Advisor](../advisor/advisor-get-started.md#configure-low-usage-vm-recommendation).
 
 Хотя в некоторых сценариях низкая загрузка может возникать намеренно, часто затраты можно сократить, изменив размер виртуальных машин на более экономичный вариант. Фактическая экономия зависит от выбранного размера. Давайте рассмотрим пример изменения размера виртуальной машины.
 

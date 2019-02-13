@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 875240b779f05c1b13f71bf2133b9abfaa209239
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: f8861b581c0e02bb78d80817cb2242a38e8aac40
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223363"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55733473"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Получение пакета SDK для речевых устройств в Cognitive Services
 
@@ -46,7 +46,7 @@ Subject: You're invited to the Microsoft organization
 
 Чтобы привязать Azure AD к адресу электронной почты, который был указан при регистрации, выполните следующие шаги. Этот процесс предоставляет вам доступ к [сайту загрузки](https://shares.datatransfer.microsoft.com/) пакета SDK для речевых устройств.
 
-1. В полученном сообщении электронной почты выберите **Начало работы**. Если ваша организация уже является клиентом Office 365, вам будет предложено войти, и вы можете сразу перейти к шагу 8.
+1. В полученном сообщении электронной почты выберите **Начало работы**. Если ваша организация уже является клиентом Office 365, вам будет предложено войти, и вы можете сразу перейти к шагу 7.
 
 2. В открывшемся окне браузера выберите **Далее**.
 

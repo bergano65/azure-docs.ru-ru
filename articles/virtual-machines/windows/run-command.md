@@ -8,12 +8,12 @@ ms.author: gwallace
 ms.date: 10/25/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 3ba1f9afda1b4f7f227c996615cc17a8c604d5fb
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 33f96c67e7179104d1895cf62f834d3b592bee04
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138231"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55487631"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-with-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"
 
@@ -72,7 +72,7 @@ ms.locfileid: "50138231"
 
 ## <a name="powershell"></a>PowerShell
 
-Ниже приведен пример с использованием командлета [Invoke AzureRmVMRunCommand](/powershell/module/azurerm.compute/invoke-azurermvmruncommand) для выполнения сценария PowerShell на виртуальной машине Azure.
+Ниже приведен пример с использованием командлета [Invoke-AzureRmVMRunCommand](/powershell/module/azurerm.compute/invoke-azurermvmruncommand) для выполнения сценария PowerShell на виртуальной машине Azure. Этот командлет ожидает, что сценарий, указанный в переменной `ScriptPath`, расположен в локальной среде, в которой выполняется командлет.
 
 ```azurepowershell-interactive
 Invoke-AzureRmVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' -CommandId 'RunPowerShellScript' -ScriptPath '<pathToScript>' -Parameter @{"arg1" = "var1";"arg2" = "var2"}

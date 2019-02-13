@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/20/2018
 ms.author: tomfitz
-ms.openlocfilehash: aa3cd0305c1ac2db269dcc46243ec3da1232e6f6
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: ad8a01ecccd7af15686c449b17cd5f014450b015
+ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55079534"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55734442"
 ---
 # <a name="use-tags-to-organize-your-azure-resources"></a>Использование тегов для организации ресурсов в Azure
 
@@ -29,9 +29,15 @@ ms.locfileid: "55079534"
 
 [!INCLUDE [Handle personal data](../../includes/gdpr-intro-sentence.md)]
 
+## <a name="policies"></a>Политики
+
+Вы можете использовать службу [Политика Azure](../governance/policy/overview.md), чтобы принудительно применять правила и соглашения. Создавая политику, можно избежать сценария, в котором ресурсы развертываются в подписку, не соответствующую ожидаемым тегам вашей организации. Вместо ручного применения тегов или поиска ресурсов, которые не соответствуют требованиям, вы можете создать политику, которая автоматически применяет необходимые теги во время развертывания. В следующем разделе приведены примеры политик для тегов.
+
+[!INCLUDE [Tag policies](../../includes/azure-policy-samples-general-tags.md)]
+
 ## <a name="powershell"></a>PowerShell
 
-Для работы примеров в этой статье требуется Azure PowerShell 6.0 или более поздней версии. Если у вас установлена более старая версия, [обновите ее](/powershell/azure/install-az-ps) до версии 6.0 (или более поздней версии).
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
 
@@ -273,5 +279,4 @@ done
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
-* В подписку можно добавить ограничения и соглашения, используя настраиваемые политики. Некоторые политики могут требовать, чтобы для всех ресурсов было задано значение определенного тега. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"](../azure-policy/azure-policy-introduction.md).
 * Общие сведения об использовании портала см. в статье [Управление ресурсами Azure через портал](resource-group-portal.md).  

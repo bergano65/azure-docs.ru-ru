@@ -11,18 +11,18 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 02/05/2019
 ms.author: magoedte
-ms.openlocfilehash: f68e2d9c303b6df0d4a2a355dd9d41ac1616be9f
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 5af403b2d75a552719088daa17259f0771b77a94
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185976"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55765691"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
-Агент Azure Log Analytics (OMS), который ранее назывался агентом Microsoft Monitoring Agent (MMA) или агентом OMS для Linux, был разработан для обеспечения комплексного управления на компьютерах в локальной среде, компьютерах, отслеживаемых с помощью [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/), и виртуальных машинах в любом облаке. Агенты Windows и Linux присоединяются к рабочей области Log Analytics для сбора данных из различных источников, а также любых уникальных журналов или метрик, как определено в решении мониторинга. 
+Агент Azure Log Analytics, который ранее назывался агентом Microsoft Monitoring Agent (MMA) или агентом OMS для Linux, был разработан для обеспечения комплексного управления на компьютерах в локальной среде, компьютерах, отслеживаемых с помощью [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/), и виртуальных машинах в любом облаке. Агенты Windows и Linux присоединяются к рабочей области Log Analytics для сбора данных из различных источников, а также любых уникальных журналов или метрик, как определено в решении мониторинга. 
 
 В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.   
 
@@ -41,7 +41,7 @@ ms.locfileid: "53185976"
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
 
-* Windows Server 2008 с пакетом обновления 1 (SP1) или более поздней версии;
+* Windows Server 2008 R2 или более поздней версии
 * Windows 7 с пакетом обновления 1 и более поздней версии.
 
 ## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux

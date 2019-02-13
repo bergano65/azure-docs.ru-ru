@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: dc241612149de5c4ea5c1d2e698741e77d429fc7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: b882c31f40f177b81fc84eb7071f396bddeaa0dd
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51004890"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55658120"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
 
@@ -23,6 +23,8 @@ ms.locfileid: "51004890"
 - Поддерживать актуальность сведений об используемых устройствах.
 - Поддерживать актуальность метаданных устройства путем изменения значений, хранимых в свойствах устройства.
 - Управлять поведением устройств, обновляя параметр конкретного устройства на странице **Параметры**.
+
+[!INCLUDE [iot-central-experimental-note](../../includes/iot-central-experimental-note.md)]
 
 ## <a name="view-your-devices"></a>Просмотр устройств
 
@@ -116,7 +118,7 @@ ms.locfileid: "51004890"
 
     [![Успешное завершение экспорта](./media/howto-manage-devices/Export2.png)](./media/howto-manage-devices/Export2.png#lightbox)
 
-1. Экспортированный CSV-файл будет содержать следующие столбцы: **идентификатор устройства, имя устройства, первичный/вторичный ключи устройства и отпечаток основного/дополнительного сертификата**
+1. В экспортированном CSV-файле будут содержаться столбцы со следующей информацией: **идентификатор устройства, имя устройства, первичный или вторичный ключи устройства и первичный или вторичный отпечатки сертификатов**.
     *   IOTC_DEVICEID
     *   IOTC_DEVICENAME
     *   IOTC_SASKEY_PRIMARY

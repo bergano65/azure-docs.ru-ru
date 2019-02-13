@@ -4,21 +4,19 @@ description: Здесь описан раздел параметров в шаб
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/18/2018
+ms.date: 02/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: fd6fcff6ac556abe3b2d34c7e8b1b0290208f5b0
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: dc817302ab39d12ccd1d1a20d4dd72f94352c796
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53722148"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55695678"
 ---
 # <a name="parameters-section-of-azure-resource-manager-templates"></a>Раздел параметров в шаблонах Azure Resource Manager
 В разделе параметров шаблона указываются значения, которые вы можете вводить во время развертывания ресурсов. Значения этих параметров позволяют настраивать развертывание путем предоставления значений, предназначенных для конкретной среды (например, для среды разработки, тестирования и рабочей среды). Задавать параметры в шаблоне не обязательно, однако без них шаблон всегда будет развертывать одни и те же ресурсы с одинаковыми именами, расположениями и свойствами.
@@ -93,7 +91,7 @@ ms.locfileid: "53722148"
 | maxValue |Нет  |Максимальное значение для параметров типа int. Это включающее значение. |
 | minLength |Нет  |Минимальная длина (включительно) параметров типа string, secure string и array. |
 | maxLength |Нет  |Максимальная длина (включительно) параметров типа string, secure string и array. |
-| description |Нет  |Описание параметра, отображаемого для пользователей на портале. |
+| description |Нет  |Описание параметра, отображаемого для пользователей на портале. Дополнительные сведения см. в разделе [комментариев в шаблонах](resource-group-authoring-templates.md#comments). |
 
 ## <a name="template-functions-with-parameters"></a>Использование функций шаблонов с параметрами
 

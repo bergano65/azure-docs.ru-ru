@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 08/24/2018
 ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: b2daba1e20431edae5aacc8295fdc542d1e73d33
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: ed04774969f72f1d6037a350f019d81d812d73f6
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460511"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55809305"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Отправка большого количества задач в пакетное задание
 
@@ -37,8 +37,8 @@ ms.locfileid: "55460511"
 * Следующие API пакетной службы ограничивают коллекцию до **100 задач**. Предел может быть меньше в зависимости от размера задач. Например, если задачи включают большое количество файлов ресурсов или переменных среды.
 
     * [REST API](/rest/api/batchservice/task/addcollection)
-    * [API Python](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python#azure_batch_operations_TaskOperations_add_collection)
-    * [API Node.js](/javascript/api/azure-batch/task?view=azure-node-latest#addcollection)
+    * [API Python](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python)
+    * [API Node.js](/javascript/api/azure-batch/task?view=azure-node-latest)
 
   При использовании этих API-интерфейсов вам необходимо предоставить логику, чтобы разделить количество задач для соответствия ограничению коллекции, а также обработать ошибки и повторения в случае сбоя при добавлении задач. Если коллекция задач слишком велика для добавления, запрос сгенерирует ошибку. После этого нужно повторить попытку с меньшим количеством задач.
 
@@ -55,7 +55,7 @@ ms.locfileid: "55460511"
 
 * **Размер задачи**. Добавление больших задач занимает больше времени, чем добавление небольших. Чтобы уменьшить размер каждой задачи в коллекции, вы можете упростить командную строку задачи, уменьшить количество переменных среды или более эффективно выполнить требования к выполнению задачи. Например, вместо использования большого количества файлов ресурсов установите зависимости задачи с помощью [задачи запуска](batch-api-basics.md#start-task) в пуле или используйте [пакет приложения](batch-application-packages.md) либо [контейнер Docker](batch-docker-container-workloads.md).
 
-* **Количество параллельных операций**. В зависимости от API пакетной службы повысьте пропускную способность, увеличив максимальное количество параллельных операций, выполняемых клиентом пакетной службы. Настройте этот параметр с помощью свойства [BatchClientParallelOptions.MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в API .NET или параметра `threads` такого метода, как [TaskOperations.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python#add-collection), в расширении пакета SDK для Python в пакетной службе. (Это свойство недоступно в исходном пакете SDK для Python в пакетной службе.) По умолчанию для этого свойства установлено значение 1, но установите большее значение, чтобы повысить пропускную способность операций. Вы компенсируете увеличенную пропускную способность за счет использования пропускной способности сети и производительности ЦП. Пропускная способность задачи увеличивается в 100 раз по сравнению с `MaxDegreeOfParallelism` или `threads`. На практике вы должны установить количество параллельных операций ниже 100. 
+* **Количество параллельных операций**. В зависимости от API пакетной службы повысьте пропускную способность, увеличив максимальное количество параллельных операций, выполняемых клиентом пакетной службы. Настройте этот параметр с помощью свойства [BatchClientParallelOptions.MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в API .NET или параметра `threads` такого метода, как [TaskOperations.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python), в расширении пакета SDK для Python в пакетной службе. (Это свойство недоступно в исходном пакете SDK для Python в пакетной службе.) По умолчанию для этого свойства установлено значение 1, но установите большее значение, чтобы повысить пропускную способность операций. Вы компенсируете увеличенную пропускную способность за счет использования пропускной способности сети и производительности ЦП. Пропускная способность задачи увеличивается в 100 раз по сравнению с `MaxDegreeOfParallelism` или `threads`. На практике вы должны установить количество параллельных операций ниже 100. 
  
   Расширение CLI пакетной службы Azure с шаблонами пакетной службы автоматически увеличивает количество параллельных операций на основе количества доступных ядер, но это свойство не настраивается в CLI. 
 
@@ -155,7 +155,7 @@ tasks=list()
 
 ```
 
-Добавьте коллекцию задач с помощью [task.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python#add-collection). Настройте параметр `threads`, чтобы увеличить количество параллельных операций:
+Добавьте коллекцию задач с помощью [task.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python). Настройте параметр `threads`, чтобы увеличить количество параллельных операций:
 
 ```python
 try:
@@ -164,7 +164,7 @@ except Exception as e:
     raise e
 ```
 
-Расширение пакета SDK для Python в пакетной службе также поддерживает добавление параметров задачи в задание с помощью спецификации JSON для фабрики задач. Например, настройте параметры задания для параметрического анализа, аналогичного анализу в предыдущем примере [шаблона CLI пакетной службы](#example-batch-cli-template):
+Расширение пакета SDK для Python в пакетной службе также поддерживает добавление параметров задачи в задание с помощью спецификации JSON для фабрики задач. Например, настройте параметры задания для параметрического анализа, аналогичного анализу в предыдущем примере шаблона CLI пакетной службы:
 
 ```python
 parameter_sweep = {

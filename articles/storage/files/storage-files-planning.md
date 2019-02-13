@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: a9c37258d7c9631c6e5fe13007b78c4205a1c249
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 69ca9474c613752b98efa6bb236919508a2fe430
+ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473890"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55753696"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Планирование развертывания службы файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предлагает полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. Так как служба файлов Azure является полностью управляемой, ее развертывание в рабочих сценариях гораздо проще развертывания файлового сервера или устройства NAS и управления им. В этой статье рассматриваются аспекты, которые следует учитывать при развертывании файлового ресурса Azure для использования в рабочей среде организации.
@@ -34,7 +34,7 @@ ms.locfileid: "55473890"
 * **Формат URL-адреса**. В запросах к общей папке Azure, выполненных с помощью протокола REST службы файлов, к файлам можно обращаться, используя URL-адрес в следующем формате:
 
     ```
-    https://<storage account>.file.core.windows.net/<share>/<directory>/directories>/<file>
+    https://<storage account>.file.core.windows.net/<share>/<directory>/<file>
     ```
 
 ## <a name="data-access-method"></a>Метод доступа к данным
@@ -95,6 +95,9 @@ ms.locfileid: "55473890"
 [!INCLUDE [storage-common-redundancy-ZRS](../../../includes/storage-common-redundancy-ZRS.md)]
 
 ### <a name="geo-redundant-storage"></a>Геоизбыточное хранилище
+> [!Warning]  
+> Если вы используете общую папку Azure в качестве конечной точки облака в учетной записи хранения GRS, нет необходимости выполнять отработку отказа учетной записи хранения. Это приведет к прекращению синхронизации или даже к непредвиденной потере данных, если некоторые файлы недавно стали многоуровневыми. В случае потери региона Azure корпорация Майкрософт активирует отработку отказа учетной записи хранения способом, который совместим со службой "Синхронизация файлов Azure".
+
 [!INCLUDE [storage-common-redundancy-GRS](../../../includes/storage-common-redundancy-GRS.md)]
 
 ## <a name="data-growth-pattern"></a>Модель роста данных

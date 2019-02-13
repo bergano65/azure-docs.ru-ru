@@ -8,16 +8,16 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 12/3/2018
 ms.author: victorh
-ms.openlocfilehash: a93a3db3010fb9e9d2270414cadeae86b70bb8d0
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 5f5b389c66821282668f0b4fce9e0b67af028e9a
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157468"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55816957"
 ---
 # <a name="configure-ssl-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики SSL и комплектов шифров на шлюзе приложений
 
-Узнайте, как настроить версии политики SSL и комплекты шифров на шлюзе приложений. Можно воспользоваться [списком стандартных политик](#predefined-ssl-policies), в котором содержатся различные конфигурации версий политики SSL и разрешенные комплекты шифров. Также можно определить [пользовательскую политику SSL](#configure-a-custom-ssl-policy) в соответствии с требованиями.
+Узнайте, как настроить версии политики SSL и комплекты шифров на шлюзе приложений. Вы можете воспользоваться списком стандартных политик, в котором содержатся различные конфигурации версий политики SSL и разрешенные комплекты шифров. Также можно определить [пользовательскую политику SSL](#configure-a-custom-ssl-policy) в соответствии с требованиями.
 
 ## <a name="get-available-ssl-options"></a>Получение доступных параметров SSL
 

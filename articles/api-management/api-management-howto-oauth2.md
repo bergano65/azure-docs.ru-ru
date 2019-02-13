@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 87e5b6098ff9ee74ef8a4314362c30c436d5ad20
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b195271edeea6cd5ea527454ad1615ac85a32138
+ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52967935"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55746733"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -51,9 +51,9 @@ ms.locfileid: "52967935"
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-02.png)
 
-4. В следующем разделе формы содержатся параметры **Authorization code grant types** (Типы предоставления кода авторизации), **Authorization endpoint URL** (URL-адрес конечной точки авторизации) и **Authorization request method** (Метод запроса авторизации).
+4. В следующем разделе формы содержатся параметры **Типы предоставления авторизации**, **URL-адрес конечной точки авторизации** и **Метод запроса авторизации**.
 
-    Установите нужные флажки в разделе **Authorization code grant types** . **Authorization code** (Код авторизации).
+    Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
     Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет аналогичен следующему URL-адресу, где `<client_id>` заменяется идентификатором клиента, по которому сервер OAuth 2.0 опознает ваше приложение.
 
@@ -75,7 +75,7 @@ ms.locfileid: "52967935"
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-04.png)
 
-    Если параметр **Authorization code grant types** имеет значение **Resource owner password** (Пароль владельца ресурса), то в разделе **Resource owner password credentials** (Учетные данные владельца ресурса) нужно указать соответствующие учетные данные. В противном случае эти поля можно оставить пустыми.
+    Если для параметра **Типы предоставления авторизации** задано значение **Пароль владельца ресурса**, то в разделе **Учетные данные владельца ресурса** нужно указать соответствующие учетные данные. В противном случае эти поля можно оставить пустыми.
 
     После заполнения формы щелкните **Создать**, чтобы сохранить конфигурацию сервера авторизации OAuth 2.0 для службы API Management. Сохранив конфигурацию сервера, вы можете настроить интерфейсы API для ее использования, как описано в следующем разделе.
 

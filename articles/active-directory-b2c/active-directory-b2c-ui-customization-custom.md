@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 3c3b7d73de9a0e7e72351687af16b98b11f9581b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4cf7c0cdd066879edccf7869ae3c8de0191f1d2b
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188497"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818878"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -86,7 +86,7 @@ ms.locfileid: "55188497"
 5. Щелкните **$root**, чтобы открыть новый контейнер.
 6. Щелкните **Отправить**.
 7. Щелкните значок папки рядом с элементом **Выбор файла**.
-8. Перейдите к файлу **customize-ui.html**, созданному ранее в разделе [Настройка пользовательского интерфейса страницы](#the-page-ui-customization-feature).
+8. Перейдите к файлу **customize-ui.html**, созданному ранее в разделе "Настройка пользовательского интерфейса страницы".
 9. Щелкните **Отправить**.
 10. Выберите BLOB-объект customize-ui.html, который вы загрузили.
 11. Рядом с полем **URL-адрес** нажмите **Копировать**.
@@ -175,7 +175,7 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 | *unified.html* | Этот файл используется как шаблон для единой страницы регистрации или входа в систему. |
 | *updateprofile.html* | Этот файл используется как шаблон для страницы обновления профиля. |
 
-В разделе [Изменение настраиваемой политики регистрации или входа](#modify-your-sign-up-or-sign-in-custom-policy) мы настроили определение содержимого для `api.idpselections`. Полный набор идентификаторов для определения содержимого, распознаваемых в инфраструктуре Identity Experience Framework Azure AD B2C, а также их описания представлены в таблице ниже.
+В разделе "Изменение настраиваемой политики регистрации или входа" мы настроили определение содержимого для `api.idpselections`. Полный набор идентификаторов для определения содержимого, распознаваемых в инфраструктуре Identity Experience Framework Azure AD B2C, а также их описания представлены в таблице ниже.
 
 | Идентификатор для определения содержимого | ОПИСАНИЕ | 
 |-----------------------|-------------|

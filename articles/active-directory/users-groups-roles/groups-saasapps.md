@@ -1,27 +1,27 @@
 ---
-title: Использование группы для управления доступом к приложениям SaaS | Документация Майкрософт
-description: Использование групп в Azure Active Directory Premium или Basic для предоставления доступа к приложениям SaaS, интегрированным с Azure Active Directory.
+title: Использование группы для управления доступом к приложениям SaaS — Azure Active Directory | Документация Майкрософт
+description: Использование групп в Azure Active Directory для предоставления доступа к приложениям SaaS, интегрированным с Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: curtand
 manager: mtillman
-editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 03/14/2017
+ms.date: 01/31/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: a7e4a20905b390945c22557af044cf739bc17ce8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 26a726f200ea64895a7ebf289c030089c7de5555
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197217"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55506266"
 ---
 # <a name="using-a-group-to-manage-access-to-saas-applications"></a>Использование группы для управления доступом к приложениям SaaS
+
 В Azure Active Directory (Azure AD) с лицензией Azure AD Premium или Azure AD Basic можно использовать группы для предоставления доступа к приложению SaaS, интегрированному с Azure AD. Например, если вы хотите предоставить отделу маркетинга доступ к пяти разным приложениям SaaS, можно создать группу, содержащую пользователей из отдела маркетинга, и затем предоставить этой группе доступ к пяти приложениям SaaS, необходимым этому отделу. Таким образом можно сэкономить время, управляя членством пользователей отдела маркетинга в одном месте. Пользователи приложения назначаются при добавлении в группу маркетинга, и их назначения будут удалены из приложения, когда они будут удалены из группы. Эту возможность можно использовать для сотен приложений, которые можно добавлять из коллекции приложений Azure AD.
 
 > [!IMPORTANT]

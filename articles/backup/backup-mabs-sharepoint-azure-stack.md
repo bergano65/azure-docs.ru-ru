@@ -2,18 +2,18 @@
 title: Резервное копирование фермы SharePoint на Azure Stack
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server на Azure Stack. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 services: backup
-author: pvrk
+author: adigan
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
-ms.author: pullabhk
-ms.openlocfilehash: acb675d750eb54bdbdde8873f6994255a07eb229
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.author: adigan
+ms.openlocfilehash: b617ccee1826dfcc05ca7131d1eb04fd98b6b627
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605918"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811160"
 ---
 # <a name="back-up-a-sharepoint-farm-on-azure-stack"></a>Резервное копирование фермы SharePoint на Azure Stack
 Резервное копирование SharePoint на Azure Stack. в Microsoft Azure с помощью Microsoft Azure Backup Server (MABS) во многом напоминает резервное копирование других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. Также она позволяет сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
@@ -23,7 +23,7 @@ ms.locfileid: "45605918"
 
 | Рабочая нагрузка | Версия | Развертывание SharePoint | Защита и восстановление |
 | --- | --- | --- | --- |
-| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010 |SharePoint, развернутый как виртуальная машина Azure Stack <br> -------------- <br> SQL AlwaysOn | Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
+| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010 |SharePoint, развернутый как виртуальная машина Azure Stack <br> -------------- <br>  SQL AlwaysOn | Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
 
 ## <a name="before-you-start"></a>Перед началом работы
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
@@ -219,14 +219,14 @@ Azure Backup Server работает под учетной записью LocalS
 4. Щелкните объект SharePoint на вкладке MABS **Восстановление**, чтобы получить структуру базы данных контента. Щелкните элемент правой кнопкой мыши и выберите **Восстановить**.
 
     ![MABS SharePoint Protection13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
-5. Выполните [процедуру восстановления, описанную ранее в этой статье](#restore-a-sharepoint-item-from-disk-using-dpm) , чтобы восстановить базу данных контента SharePoint с диска.
+5. Выполните процедуру восстановления, описанную ранее в этой статье, чтобы восстановить базу данных содержимого SharePoint с диска.
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
-В. Можно ли восстановить элемент SharePoint в исходное расположение, если SharePoint настроен с использованием SQL AlwaysOn (с защитой на диске)?<br>
-О. Да, элемент можно восстановить на исходный сайт SharePoint.
+Вопрос. Можно ли восстановить элемент SharePoint в исходное расположение, если сайт SharePoint настроен с использованием SQL AlwaysOn (с защитой на диске)?<br>
+Ответ. Да, элемент можно восстановить на исходный сайт SharePoint.
 
-В. Можно ли восстановить базу данных SharePoint в исходное расположение, если SharePoint настроен с использованием SQL AlwaysOn?<br>
-О. Так как базы данных SharePoint настраиваются в SQL AlwaysOn, их нельзя изменить, не удалив группу доступности. В связи с этим сервер MABS не может восстанавливать базы данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
+Вопрос. Можно ли восстановить базу данных SharePoint в исходное расположение, если сайт SharePoint настроен с использованием SQL AlwaysOn?<br>
+Ответ. Так как базы данных SharePoint настраиваются в SQL AlwaysOn, их нельзя изменить, не удалив группу доступности. В связи с этим сервер MABS не может восстанавливать базы данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -16,12 +16,12 @@ ms.date: 01/24/2019
 ms.author: sethm
 ms.reviewer: justini
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 81501c79f00c2c0f8ef81532f3b8e7f61fc9eba0
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: a9cf502f169f4a9c4650545b1b37e11cc16a0a95
+ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250620"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55694386"
 ---
 # <a name="azure-stack-1809-update"></a>Обновление 1809 для Azure Stack
 
@@ -50,7 +50,7 @@ ms.locfileid: "55250620"
 
 - Теперь можно [перемещать ресурс регистрации](azure-stack-registration.md#move-a-registration-resource) в Azure между группами ресурсов без необходимости повторной регистрации. Поставщики облачных решений (CSP) также могут перемещать ресурсы регистрации между подписками при условии, что новая и старая подписки сопоставлены с одним и тем же идентификатором партнера CSP. Это не влияет на существующие сопоставления клиента. 
 
-- Добавлена поддержка назначение нескольких IP-адресов для каждого сетевого интерфейса.  Дополнительные сведения см. в статье [Назначение виртуальным машинам нескольких IP-адресов с помощью PowerShell](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-powershell).
+- Добавлена поддержка назначение нескольких IP-адресов для каждого сетевого интерфейса.  Дополнительные сведения см. в статье [Назначение виртуальным машинам нескольких IP-адресов с помощью PowerShell](https://docs.microsoft.com/azure/virtual-network/virtual-network-multiple-ip-addresses-powershell).
 
 ### <a name="fixed-issues"></a>Исправленные проблемы
 
@@ -135,7 +135,7 @@ ms.locfileid: "55250620"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Установите последнее исправление для Azure Stack версии 1808 перед применением версии 1809. Дополнительные сведения см. в статье базы знаний 4481066 [Azure Stack Hotfix 1.1808.9.117](https://support.microsoft.com/help/4481066/) (Исправление для Azure Stack версии 1.1808.9.117). Хотя корпорация Майкрософт рекомендует использовать последнее доступное исправление, для установки 1809 необходимо иметь версию не ниже 1.1808.5.110.
+- Установите последнее исправление для Azure Stack версии 1808 перед применением версии 1809. Дополнительные сведения см. в статье базы знаний 4481066 [Azure Stack Hotfix 1.1808.9.117](https://support.microsoft.com/help/4481066/) (Исправление для Azure Stack версии 1.1808.9.117). Хотя корпорация Майкрософт рекомендует использовать последнее доступное исправление, для установки сборки 1809 нужна версия не ниже 1.1808.5.110.
 
   > [!TIP]  
   > Подпишитесь на следующие *каналы RRS* или *Atom*, чтобы следить за исправлениями Azure Stack:

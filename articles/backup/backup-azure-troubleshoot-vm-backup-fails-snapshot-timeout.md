@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: e96c637e3c01ccfc27afa967d830c7d0254d11e7
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 5eecd750642610737d346c5c270349e285106e95
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104241"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55820442"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -64,7 +64,7 @@ ms.locfileid: "55104241"
 **Код ошибки** UserErrorKeyvaultPermissionsNotConfigured <br>
 **Сообщение об ошибке** Служба резервного копирования не имеет достаточных разрешений к хранилищу ключей для резервного копирования зашифрованных виртуальных машин. <br>
 
-Для выполнения операции резервного копирования зашифрованных виртуальных машин необходимы разрешения на доступ к хранилищу ключей. Это можно сделать с помощью [портала Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption#provide-permissions-to-backup) или [PowerShell](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#enable-protection).
+Для выполнения операции резервного копирования зашифрованных виртуальных машин необходимы разрешения на доступ к хранилищу ключей. Это можно сделать с помощью [портала Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption) или [PowerShell](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#enable-protection).
 
 ## <a name="ExtensionSnapshotFailedNoNetwork-snapshot-operation-failed-due-to-no-network-connectivity-on-the-virtual-machine"></a>ExtensionSnapshotFailedNoNetwork — сбой операции моментального снимка, отсутствует сетевое подключение у виртуальной машины
 
@@ -97,7 +97,7 @@ ms.locfileid: "55104241"
 **Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
 **Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**  
 **Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
-**Причина 5. [Служба Backup не имеет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов](#backup-service-does-not-have-permission-to-delete-the-old-restore-points-due-to-resource-group-lock)** <br>
+**Причина 5. У службы Backup нет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов** <br>
 **Причина 6. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
 ## <a name="usererrorunsupporteddisksize---currently-azure-backup-does-not-support-disk-sizes-greater-than-1023gb"></a>UserErrorUnsupportedDiskSize. Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ

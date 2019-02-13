@@ -16,12 +16,12 @@ ms.date: 10/23/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 7dd2b60a985291311328407b07ef290e962f147b
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 110397e8399d153356a574b00d34a4cb781ec1b5
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55080571"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55811568"
 ---
 # <a name="azure-active-directory-access-tokens"></a>Маркеры доступа в Azure Active Directory
 
@@ -239,6 +239,8 @@ https://login.microsoftonline.com/common/.well-known/openid-configuration
 > Вход без пароля означает, что пользователь не вводит пароль, чтобы войти. Например, он может использовать лицо в Windows Hello, ключ FIDO или ПИН-код. 
 >
 > Существует известная проблема с основным маркером обновления (PRT) Windows. Если этот маркер получен с помощью пароля, а затем пользователь выполняет вход через Hello, при этом не меняется источник маркера PRT, и он будет отменен, если пользователь изменит свой пароль.
+>
+> Маркеры обновления не аннулируются и не отзываются, если они используются для получения нового маркера доступа и маркера обновления.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 

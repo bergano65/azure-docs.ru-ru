@@ -1,5 +1,5 @@
 ---
-title: Самостоятельная или пробная регистрация в Azure Active Directory | Документация Майкрософт
+title: Добавление пользователей через самостоятельную или пробную регистрацию в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как использовать самостоятельную регистрацию в клиенте Azure Active Directory (Azure AD).
 services: active-directory
 documentationcenter: ''
@@ -10,18 +10,19 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 10/16/2018
+ms.date: 01/31/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 63ddff08b93ffa072add0e8f093e1d4e0f1aa01e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: f02a628a55969dfbb883f53f005733482499a42b
+ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55195823"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55506776"
 ---
 # <a name="what-is-self-service-signup-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
+
 В этой статье объясняется, что такое самостоятельная регистрация и как ее использовать в Azure Active Directory (Azure AD). Если требуется сменить доменное имя из неуправляемого клиента Azure AD, то см. статью [Смена неуправляемого каталога от имени администратора в Azure Active Directory](domains-admin-takeover.md).
 
 ## <a name="why-use-self-service-signup"></a>Зачем нужна самостоятельная регистрация?

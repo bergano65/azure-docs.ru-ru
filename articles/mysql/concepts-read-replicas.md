@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 1/23/2019
-ms.openlocfilehash: eca67cb70756dd1184bd3a66c2582743c8baa8fd
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.date: 1/30/2019
+ms.openlocfilehash: 03e0db822e38cc6823fc32aa915dc9283fa46cbe
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54903763"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55493054"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -86,6 +86,7 @@ ms.locfileid: "54903763"
 - Создание реплики реплики не поддерживается.
 - Таблицы в памяти могут вызывать рассинхронизацию реплик. Это ограничение технологии репликации MySQL. Дополнительные сведения см. в [справочной документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/replication-features-memory.html).
 - Настройка параметра [`innodb_file_per_table`](https://dev.mysql.com/doc/refman/5.7/en/innodb-multiple-tablespaces.html) на главном сервере после создания сервера-реплики может привести к рассинхронизации реплики. Сервер-реплика не учитывает разные табличные пространства.
+- Убедитесь, что у таблиц главного сервера есть первичные ключи. Отсутствие первичных ключей может привести к задержке репликации между главным сервером и репликами.
 - Полный список ограничений репликации MySQL см. в [документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html).
 
 

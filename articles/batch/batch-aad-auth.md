@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/18/2018
 ms.author: lahugh
-ms.openlocfilehash: 574a9ae1e283a3918e316d2daa84df727d729471
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5f6e0d2dece791ac4ece73acdf2e15e3c9be412f
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477609"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55812856"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
@@ -91,7 +91,7 @@ ms.locfileid: "55477609"
 
 Чтобы выполнить аутентификацию с помощью встроенной аутентификации, необходимо предоставить приложению разрешения на подключение к API пакетной службы. Это позволит ему выполнить аутентификацию вызовов к API пакетной службы с помощью Azure AD.
 
-Чтобы предоставить приложению доступ к пакетной службе, после [регистрации приложения](#register-your-application-with-an-azure-ad-tenant) выполните следующие действия на портале Azure:
+Чтобы предоставить приложению доступ к пакетной службе, после регистрации приложения выполните следующие действия на портале Azure:
 
 1. На портале Azure на панели навигации слева выберите **Все службы**. Щелкните **Регистрация приложений**.
 2. Найдите имя приложения в списке зарегистрированных приложений:

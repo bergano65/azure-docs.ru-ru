@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3b5425bd9f86bce289cc1f60c088febfd8f05ee3
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 8731857d133e60cad4ecdca21874916949e05ff3
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332631"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813523"
 ---
 # <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и обратно с помощью фабрики данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -240,8 +240,8 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | **folderPath** |Путь к контейнеру и папке в Data Lake Store. |Yes |
-| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если значение **fileName** не указано для выходного набора данных, а значение **preserveHierarchy** не указано в приемнике действия, имя созданного файла будет иметь формат Data._GUID_.txt. Например:  Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |Нет  |
-| **partitionedBy** |Свойство **partitionedBy** является необязательным. Его можно использовать, чтобы указать динамический путь к папке и имя файла для данных временного ряда. Например, путь к папке (**folderPath**) каждый час может быть другим. Дополнительные сведения и примеры см. в разделе [Свойство partitionedBy](#using-partitionedby-property). |Нет  |
+| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если значение **fileName** не указано для выходного набора данных, а значение **preserveHierarchy** не указано в приемнике действия, имя созданного файла будет иметь формат Data._GUID_.txt. Например:  Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. | Нет |
+| **partitionedBy** |Свойство **partitionedBy** является необязательным. Его можно использовать, чтобы указать динамический путь к папке и имя файла для данных временного ряда. Например, путь к папке (**folderPath**) каждый час может быть другим. Дополнительные сведения и примеры см. в разделе "Свойство partitionedBy". |Нет  |
 | **format** | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) статьи [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел `format` в определениях входного и выходного наборов данных. |Нет  |
 | **compression** | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 

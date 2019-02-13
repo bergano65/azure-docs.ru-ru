@@ -1,8 +1,21 @@
 ---
-заголовок: Создание множества моделей из одного эксперимента Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Используйте PowerShell для создания нескольких моделей машинного обучения и конечных точек веб-службы с одним алгоритмом, но разными наборами данных для обучения.
-services: machine-learning ms.service: machine-learning ms.subservice: studio ms.topic: article
-
-author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 04.04.2017
+title: Создание множества моделей из одного эксперимента Студии
+titleSuffix: Azure Machine Learning Studio
+description: Используйте PowerShell для создания нескольких моделей машинного обучения и конечных точек веб-службы с одним алгоритмом, но разными наборами данных для обучения.
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: studio
+ms.topic: article
+author: ericlicoding
+ms.author: amlstudiodocs
+ms.custom: seodec18
+ms.date: 04/04/2017
+ms.openlocfilehash: 43d16c291391a3ffd94f404755e644dac0daf3a9
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55492833"
 ---
 # <a name="use-powershell-to-create-studio-models-and-web-service-endpoints-from-one-experiment"></a>Создание моделей и конечных точек веб-службы из одного эксперимента с помощью PowerShell
 

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
-ms.openlocfilehash: 214f32c4dc35661480b96477caf0cdf6243c75a8
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 703b8a7a094d0ea6f5b5dedaf02a218b407269d3
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55094253"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55813812"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "55094253"
 
 Есть две версии основных инструментов службы "Функции Azure". Используемая версия зависит от локальной среды разработки, [выбора языка](supported-languages.md) и требуемого уровня поддержки:
 
-+ [Версия 1.x](#v1): поддерживает версию 1.x в среде выполнения. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm). В этой версии можно создавать функции на экспериментальных языках, которые не имеют официальной поддержки. Дополнительные сведения см. в разделе [Supported languages in Azure Functions](supported-languages.md) (Поддерживаемые языки службы "Функции Azure")
++ Версия 1.x: поддерживает версию 1.x в среде выполнения. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm). В этой версии можно создавать функции на экспериментальных языках, которые не имеют официальной поддержки. Дополнительные сведения см. в разделе [Supported languages in Azure Functions](supported-languages.md) (Поддерживаемые языки службы "Функции Azure")
 
 + [Версия 2.x](#v2): поддерживает версию [2.x среды выполнения](functions-versions.md). Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки.
 

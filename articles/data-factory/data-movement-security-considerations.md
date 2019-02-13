@@ -12,15 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: 0113fc3112fa0fa911d6609684357d01cd9adf30
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: d684ec56c7dfcc28d1057d0b20905db49bce9723
+ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015718"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55498079"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+>
 > * [Версия 1](v1/data-factory-data-movement-security-considerations.md)
 > * [Текущая версия](data-movement-security-considerations.md)
 
@@ -32,13 +33,19 @@ ms.locfileid: "54015718"
 
 Фабрика данных Azure не хранит никакие данные, за исключением учетных данных связанной службы для облачных хранилищ данных, которые зашифрованы с помощью сертификатов. Используя фабрику данных, можно создать управляемые данными рабочие процессы, чтобы организовать перемещение данных между [поддерживаемыми хранилищами данных](copy-activity-overview.md#supported-data-stores-and-formats) и обработку данных с помощью [служб вычислений](compute-linked-services.md) в других регионах или локальной среде. Кроме того, можно отслеживать рабочие процессы и управлять ими с помощью пакетов SDK и Azure Monitor.
 
-Перемещение данных с помощью фабрики данных было сертифицировано для:
--   [HIPAA/HITECH](https://www.microsoft.com/en-us/trustcenter/Compliance/HIPAA); 
--   [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27001);  
--   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018);
--   [CSA STAR](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification).
+Фабрика данных прошла такую сертификацию:
+| **[Сертификация CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)** |
+| :----------------------------------------------------------- |
+| **[ISO 20000-1:2011](https://www.microsoft.com/trustcenter/Compliance/ISO-20000-1)** |
+| **[ISO 22301:2012](https://www.microsoft.com/trustcenter/compliance/iso-22301)** |
+| **[ISO 27001:2013](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001)** |
+| **[ISO 27017:2015](https://www.microsoft.com/trustcenter/compliance/iso-iec-27017)** |
+| **[ISO 27018:2014](https://www.microsoft.com/trustcenter/compliance/iso-iec-27018)** |
+| **[ISO 9001:2015](https://www.microsoft.com/trustcenter/compliance/iso-9001)** |
+| **[SOC 1, 2, 3](https://www.microsoft.com/trustcenter/compliance/soc)** |
+| **[HIPAA BAA](https://www.microsoft.com/trustcenter/compliance/hipaa)** |
 
-Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx).
+Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx). Самый актуальный список всех предложений для соответствия требованиям Azure см. на странице http://aka.ms/AzureCompliance.
 
 В этой статье мы рассмотрим вопросы безопасности в следующих двух сценариях перемещения данных: 
 

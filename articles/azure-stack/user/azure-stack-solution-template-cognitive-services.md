@@ -15,12 +15,12 @@ ms.date: 12/11/2018
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: 331a71d4f807e1e596a91c1463064e3f6dcbd1e1
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 7d719ee6bdb8ce1f4131b474fe7602b492e69cd3
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247040"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55810683"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Развертывание Azure Cognitive Services в Azure Stack
 
@@ -144,7 +144,7 @@ spec:
 | ImageLocation | Указывает расположение образа контейнера определенной службы Cognitive Services в Реестре контейнеров Azure. Например, для Распознавания лиц: `aicpppe.azurecr.io/microsoft/cognitive-services-face`. |
 | BillingURL |URL-адрес конечной точки, который вы записали на шаге [Создание ресурса Azure](#create-azure-resources). |
 | ApiKey | Ключ подписки, который вы записали на шаге [Создание ресурса Azure](#create-azure-resources). |
-| SecretName | Имя секрета, которое вы записали на шаге [Создание секрета для доступа к частному реестру контейнеров](#create-secrete-to-access-the-private-container-registry). |
+| SecretName | Имя секрета, которое вы записали на шаге "Создание секрета для доступа к частному реестру контейнеров". |
 
 ## <a name="deploy-the-cognitive-service"></a>Развертывание службы Cognitive Services
 

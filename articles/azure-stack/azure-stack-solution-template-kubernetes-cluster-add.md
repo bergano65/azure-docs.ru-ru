@@ -11,23 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 01/30/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: b7e293018f2dc248fae8de8bd9e82943606f4ead
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 707cd7e72245ce47289c0a744d7103c713acecb9
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239508"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55765489"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии.
+> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме.
 
 Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
@@ -53,11 +53,11 @@ ms.locfileid: "55239508"
 
     a. Введите значение в поле **Отображаемое имя**.
 
-    b. Введите значение в поле **Пользователь**. Используйте учетную запись Azure AD, связанную с вашим клиентом.
+    б) Введите значение в поле **Пользователь**. Используйте учетную запись Azure AD, связанную с вашим клиентом.
 
     c. **Описание поставщика**
 
-    d. В поле **Клиент каталога** укажите клиент Azure AD для Azure Stack. 
+    4.3. В поле **Клиент каталога** укажите клиент Azure AD для Azure Stack. 
 
     д. Выберите **Предложение**. Выберите имя созданного предложения. Запишите идентификатор подписки.
 
@@ -74,7 +74,7 @@ ms.locfileid: "55239508"
        | Пароль | Пароль сертификата. |
        | Локальный путь к сертификату | Путь и имя файла сертификата. Например: `path\certfilename.pfx` |
        | Имя сертификата | Имя сертификата. |
-       | Расположение хранилища сертификатов |  Например, `Cert:\LocalMachine\My` |
+       | Расположение хранилища сертификатов |  Например `Cert:\LocalMachine\My`. |
 
     - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 

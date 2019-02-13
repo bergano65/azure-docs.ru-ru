@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/28/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f369eb6241a8eb3d44a0a38e243c533da47103e1
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: b741528b2770314be7e851f38817611d6908352b
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104620"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55814951"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -64,7 +64,7 @@ ms.locfileid: "55104620"
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
 |Free|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
-|Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Рекомендуется [защитить этот канал](#secure-channel).|Взаимодействие является односторонним (в сторону портала)|
+|Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Взаимодействие является односторонним (в сторону портала)|
 
 
 ## <a name="select-and-filter-your-metrics"></a>Выбор и фильтрация метрик

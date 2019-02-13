@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/11/2018
 ms.author: lakasa
 ms.subservice: common
-ms.openlocfilehash: c749a9dedef3970002c4f0672ffcc67aeaea422a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2990ce7a555fae54b8628f11cd90124860a5b983
+ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457434"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55656742"
 ---
 # <a name="storage-service-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование службы хранилища с помощью управляемых клиентом ключей в Azure Key Vault
 
@@ -40,14 +40,14 @@ Microsoft Azure прилагает все усилия, чтобы защити�
 
 ### <a name="step-2-enable-sse-for-blob-and-file-storage"></a>Шаг 2. Включение SSE для хранилища BLOB-объектов и хранилища файлов
 
-Чтобы включить SSE с помощью ключей, управляемых пользователем, в Azure Key Vault необходимо также активировать две функции защиты ключей: обратимого удаления и Do Not Purge (Не очищать). Эти параметры гарантируют, что ключи не будут случайно или намерено удалены. Максимальный срок хранения ключей составляет 90 дней. Пользователи защищены от злоумышленников и шантажистов.
+Чтобы включить SSE с помощью ключей, управляемых пользователем, в Azure Key Vault необходимо также активировать две функции защиты ключей: обратимого удаления и Do Not Purge (Не очищать). Эти параметры гарантируют, что ключи не будут случайно или намеренно удалены. Максимальный срок хранения ключей составляет 90 дней. Пользователи защищены от злоумышленников и шантажистов.
 
 Если вы хотите активировать ключи, управляемые клиентом, для SSE с помощью программных средств, вы можете использовать [REST API поставщика ресурсов службы хранилища Azure](https://docs.microsoft.com/rest/api/storagerp), [клиентскую библиотеку поставщика ресурсов хранилища для .NET](https://docs.microsoft.com/dotnet/api), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/azure/storage/storage-azure-cli).
 
 Чтобы использовать управляемые клиентом ключи с помощью SSE, необходимо назначить удостоверение учетной записи хранения. Чтобы настроить удостоверение, выполните следующую команду PowerShell или Azure CLI:
 
 ```powershell
-Set-AzStorageAccount -ResourceGroupName \$resourceGroup -Name \$accountName -AssignIdentity
+Set-AzStorageAccount -ResourceGroupName $resourceGroup -Name $accountName -AssignIdentity
 ```
 
 ```azurecli-interactive
@@ -60,16 +60,14 @@ az storage account \
 Чтобы включить функции обратимого удаления и Do Not Purge (Не очищать), выполните следующие команды PowerShell или Azure CLI:
 
 ```powershell
-($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName
-$vaultName).ResourceId).Properties | Add-Member -MemberType NoteProperty -Name
-enableSoftDelete -Value 'True'
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName $vaultName).ResourceId).Properties `
+    | Add-Member -MemberType NoteProperty -Name enableSoftDelete -Value 'True'
 
 Set-AzResource -resourceid $resource.ResourceId -Properties
 $resource.Properties
 
-($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName
-$vaultName).ResourceId).Properties | Add-Member -MemberType NoteProperty -Name
-enablePurgeProtection -Value 'True'
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName $vaultName).ResourceId).Properties `
+    | Add-Member -MemberType NoteProperty -Name enablePurgeProtection -Value 'True'
 
 Set-AzResource -resourceid $resource.ResourceId -Properties
 $resource.Properties
@@ -126,8 +124,16 @@ az resource update \
 $storageAccount = Get-AzStorageAccount -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount"
 $keyVault = Get-AzKeyVault -VaultName "mykeyvault"
 $key = Get-AzureKeyVaultKey -VaultName $keyVault.VaultName -Name "keytoencrypt"
-Set-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName -ObjectId $storageAccount.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
-Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName -AccountName $storageAccount.StorageAccountName -KeyvaultEncryption -KeyName $key.Name -KeyVersion $key.Version -KeyVaultUri $keyVault.VaultUri
+Set-AzKeyVaultAccessPolicy `
+    -VaultName $keyVault.VaultName `
+    -ObjectId $storageAccount.Identity.PrincipalId `
+    -PermissionsToKeys wrapkey,unwrapkey,get
+Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
+    -AccountName $storageAccount.StorageAccountName `
+    -KeyvaultEncryption `
+    -KeyName $key.Name `
+    -KeyVersion $key.Version `
+    -KeyVaultUri $keyVault.VaultUri
 ```
 
 ### <a name="step-5-copy-data-to-storage-account"></a>Шаг 5. Копирование данных в учетную запись хранения
@@ -174,7 +180,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName -Accou
 Это учетная запись хранения Azure Resource Manager? Классические учетные записи хранения не поддерживаются с управляемыми клиентом ключами. Функцию SSE с управляемыми клиентом ключами можно включить только в учетных записях хранения Resource Manager.
 
 **Что такое функция обратимого удаления и Do Not Purge (Не очищать)? Нужно ли включить этот параметр, чтобы использовать SSE с управляемыми клиентом ключами?**  
-Чтобы использовать SSE с управляемыми клиентом ключами, необходимо включить функцию обратимого удаления и Do Not Purge (Не очищать). Эти параметры гарантируют, что ключ не будет случайно или намерено удален. Максимальный срок хранения ключей составляет 90 дней. Пользователи защищены от злоумышленников и шантажистов. Этот параметр нельзя отключить.
+Чтобы использовать SSE с управляемыми клиентом ключами, необходимо включить функцию обратимого удаления и Do Not Purge (Не очищать). Эти параметры гарантируют, что ключ не будет случайно или намеренно удален. Максимальный срок хранения ключей составляет 90 дней. Пользователи защищены от злоумышленников и шантажистов. Этот параметр нельзя отключить.
 
 **Функция SSE с управляемыми клиентом ключами доступна только в определенных регионах?**  
 Функция SSE с управляемыми клиентом ключами доступна во всех регионах для хранилища BLOB-объектов Azure и службы файлов Azure.

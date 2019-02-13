@@ -11,12 +11,12 @@ ms.subservice: bing-image-search
 ms.topic: article
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: f0f3396852720bbbb31e46f7a9913d9d1bdc4a6c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 8798ecd15c673c26c5b1be0920887ff493cc6a85
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157250"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55818691"
 ---
 # <a name="get-image-insights-with-the-bing-image-search-api"></a>Получение аналитических сведений об изображениях с помощью API Bing для поиска изображений
 
@@ -221,7 +221,7 @@ Host: api.cognitive.microsoft.com
 -   По правому краю: 290 / 300 = 0,9667...  
 -   Снизу: 150 / 200 = 0,75  
 
-Вы можете использовать область, которую Bing возвращает при последующих вызовах аналитических сведений. Например, чтобы получить визуально похожие изображения распознанной сущности. Дополнительные сведения см. в разделе [Get insights about an image](#croppingimages) (Получение сведений об изображении). Ниже показано сопоставление полей области и параметров запроса, которые вы использовали для обрезки изображений.  
+Вы можете использовать область, которую Bing возвращает при последующих вызовах аналитических сведений. Например, чтобы получить визуально похожие изображения распознанной сущности. Дополнительные сведения см. в разделе "Обрезка изображений для использования с визуально похожими модулями распознавания сущности". Ниже показано сопоставление полей области и параметров запроса, которые вы использовали для обрезки изображений.  
 
 -   Сопоставление по левому краю [cal](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#cal)  
 -   Сопоставление по верхнему краю [cat](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#cat)  
