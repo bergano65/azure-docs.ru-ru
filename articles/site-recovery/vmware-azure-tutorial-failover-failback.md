@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: e17ddb45143e03023c30b69ed314270ed97dc039
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: e3687ac5941d4f4fda70f96fa9df1ec1904e102e
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53973181"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55822482"
 ---
 # <a name="fail-over-and-fail-back-vmware-vms-and-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "53973181"
 
 2. В области **Реплицированный элемент** находятся сводные данные о виртуальной машине, включая состояние работоспособности и последние доступные точки восстановления. Щелкните **Свойства**, чтобы просмотреть дополнительные сведения.
 
-3. В области **Вычисления и сеть** можно изменить имя Azure, группу ресурсов, целевой размер, [группу доступности](../virtual-machines/windows/tutorial-availability-sets.md) и [параметры управляемого диска](#managed-disk-considerations).
+3. В области **Вычисления и сеть** можно изменить имя Azure, группу ресурсов, целевой размер, [группу доступности](../virtual-machines/windows/tutorial-availability-sets.md) и параметры управляемого диска.
 
 4. Можно просмотреть или изменить параметры сети, включая сеть (или подсеть), в которой будет размещаться виртуальная машина Azure после отработки отказа, и IP-адрес, который будет ей назначен.
 
