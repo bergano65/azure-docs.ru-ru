@@ -5,7 +5,7 @@ items:
   items:
   - name: Общие сведения об Azure Monitor
     href: overview.md
-  - name: Изменения определений
+  - name: Изменения в терминологии
     href: azure-monitor-rebrand.md
 - name: Быстрое начало работы
   items:
@@ -64,6 +64,12 @@ items:
     href: azure-management.md
   - name: Непрерывный мониторинг
     href: continuous-monitoring.md
+  - name: Анализ данных журналов
+    items:
+    - name: Запросы журнала
+      href: log-query/log-query-overview.md
+    - name: Просмотр и анализ данных с помощью порталов
+      href: log-query/portals.md
   - name: Данные мониторинга
     items:
     - name: Метрики и журналы
@@ -106,18 +112,6 @@ items:
       href: insights/vminsights-overview.md
     - name: Решения для мониторинга
       href: insights/solutions-inventory.md
-  - name: Анализ данных
-    items:
-    - name: Log Analytics
-      href: log-query/log-query-overview.md
-    - name: Просмотр и анализ данных с помощью порталов
-      href: log-query/portals.md
-    - name: Переход на портал OMS
-      items:
-      - name: Обзор
-        href: platform/oms-portal-transition.md
-      - name: Часто задаваемые вопросы
-        href: platform/oms-portal-faq.md
   - name: Реагирование на инциденты
     items:
     - name: Оповещения
@@ -138,6 +132,12 @@ items:
     href: visualizations.md
   - name: Интеграция с партнерскими решениями
     href: platform/partners.md
+  - name: Переход на портал OMS
+    items:
+    - name: Обзор
+      href: platform/oms-portal-transition.md
+    - name: Часто задаваемые вопросы
+      href: platform/oms-portal-faq.md
   - name: Часто задаваемые вопросы
     items:
     - name: Log Analytics
@@ -1023,9 +1023,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 96f79397b16212fe0897e0d03f57ffb7248118c8
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: b1d837248f84eb3050788924f4bb0e0077845abe
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767130"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993577"

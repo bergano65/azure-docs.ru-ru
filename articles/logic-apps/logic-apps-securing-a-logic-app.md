@@ -9,13 +9,13 @@ ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.topic: article
-ms.date: 01/08/2019
-ms.openlocfilehash: a7d34b76eb6184e546c8217aa6b3723819be70be
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.date: 02/05/2019
+ms.openlocfilehash: c3057934d960efd0a846ef31c5fac5abd63a21f6
+ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189536"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55768481"
 ---
 # <a name="secure-access-in-azure-logic-apps"></a>Безопасный доступ к Azure Logic Apps
 
@@ -120,7 +120,7 @@ POST
 
 #### <a name="set-ip-ranges---logic-app-deployment-template"></a>Настройка диапазонов IP-адресов в шаблоне развертывания приложения логики
 
-При автоматизации развертывания приложений логики с помощью [шаблона развертывания Azure Resource Manager](logic-apps-create-deploy-template.md) в этом шаблоне можно задать диапазоны IP-адресов, например:
+При автоматизации развертывания приложений логики с помощью [шаблона развертывания Azure Resource Manager](../logic-apps/logic-apps-create-deploy-template.md) в этом шаблоне можно задать диапазоны IP-адресов, например:
 
 ``` json
 {
@@ -131,7 +131,7 @@ POST
          "triggers": {
             "allowedCallerIpAddresses": [
                {
-               "addressRange": "192.168.12.0/23"
+                  "addressRange": "192.168.12.0/23"
                },
                {
                   "addressRange": "2001:0db8::/64"
@@ -175,14 +175,15 @@ POST
 
 1. В меню приложения логики в разделе **Параметры** выберите **Параметры рабочего процесса**.
 
-1. В разделе **Конфигурация контроля доступа** > 
-**Разрешенные IP-адреса для входящего трафика** щелкните **Конкретные диапазоны IP-адресов**.
+1. В разделе **Конфигурация контроля доступа**> 
+   **Разрешенные IP-адреса для входящего трафика** щелкните **Конкретные диапазоны IP-адресов**.
 
-1. В разделе **Диапазоны IP-адресов для содержимого** укажите диапазоны, которые могут получать доступ к содержимому входных и выходных данных. Допустимый диапазон IP-адресов имеет формат *x.x.x.x/x* или *x.x.x.x-x.x.x.x*. 
+1. В разделе **Диапазоны IP-адресов для содержимого** укажите диапазоны, которые могут получать доступ к содержимому входных и выходных данных. 
+   Допустимый диапазон IP-адресов имеет формат *x.x.x.x/x* или *x.x.x.x-x.x.x.x*. 
 
 ### <a name="set-ip-ranges---logic-app-deployment-template"></a>Настройка диапазонов IP-адресов в шаблоне развертывания приложения логики
 
-При автоматизации развертывания приложений логики с помощью [шаблона развертывания Azure Resource Manager](logic-apps-create-deploy-template.md) в этом шаблоне можно задать диапазоны IP-адресов, например:
+При автоматизации развертывания приложений логики с помощью [шаблона развертывания Azure Resource Manager](../logic-apps/logic-apps-create-deploy-template.md) в этом шаблоне можно задать диапазоны IP-адресов, например:
 
 ``` json
 {
@@ -193,7 +194,7 @@ POST
          "contents": {
             "allowedCallerIpAddresses": [
                {
-               "addressRange": "192.168.12.0/23"
+                  "addressRange": "192.168.12.0/23"
                },
                {
                   "addressRange": "2001:0db8::/64"
@@ -210,44 +211,99 @@ POST
 
 ## <a name="secure-action-parameters-and-inputs"></a>Защита параметров действий и входных данных
 
-При развертывании в разных средах для определения рабочего процесса приложения логики может потребоваться задать некоторые параметры. Например, вы можете также указать параметры в [шаблоне развертывания Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md#parameters). Чтобы получить доступ к значению параметра ресурса во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs). 
+При развертывании в разных средах для определения рабочего процесса приложения логики вам необходимо параметризовать конкретные элементы. Таким образом, вы можете предоставлять входные данные по средах, которые вы используете, и защищать конфиденциальную информацию. Например, определите и защитите параметры, которые принимают идентификатор клиента и секрет клиента, при проверке подлинности действий HTTP с помощью [Azure Active Directory](../logic-apps/logic-apps-workflow-actions-triggers.md#connector-authentication). Для этих параметров определение приложения логики содержит свой собственный раздел `parameters`.
+Чтобы получить доступ к значениям параметра во время выполнения, можете использовать выражение `@parameters('parameterName')`, предоставленное [языком определения рабочего процесса](https://aka.ms/logicappsdocs). 
 
-Можно также защитить определенные параметры, которые не должны отображаться во время изменения рабочего процесса приложения логики, указав тип параметра `securestring`. Например, можно защитить такие параметры, как идентификатор и секрет клиента, используемые для аутентификации действия HTTP с помощью [Azure Active Directory](../connectors/connectors-native-http.md#authentication).
-Если указать тип параметра `securestring`, он не будет возвращен с остальной частью определения ресурса и не будет доступен при просмотре ресурса после развертывания. 
+Чтобы защитить параметры и значения, не отображая их при изменении приложения логики или просмотра журнала выполнения, можете определить параметры с помощью ввода `securestring` и использования кодирования при необходимости. Параметры этого типа не возвращаются с помощью определения ресурса и недоступны при просмотре ресурса после развертывания.
 
 > [!NOTE]
-> Если параметр используется в заголовках или тексте запроса, он может отображаться при доступе к журналу выполнения приложения логики или исходящему HTTP-запросу. Настройте политики доступа к содержимому соответствующим образом.
+> Если параметр используется в заголовках или тексте запроса, он может отображаться при доступе к журналу выполнения приложения логики или исходящему HTTP-запросу. Убедитесь, что вы настроили политику доступа к содержимому соответствующим образом.
 > Заголовки авторизации никогда не отображаются во входных и выходных данных. Таким образом, если используется секрет, то он не извлекается.
 
-В этом примере показан шаблон развертывания Azure Resource Manager, в котором используются несколько параметров среды выполнения с типом `securestring`. 
+Дополнительные сведения о защите параметров в определениях приложений логики см. в разделе [Защищенные параметры в определениях приложений логики](#secure-parameters-workflow) далее на этой странице.
 
-* `armTemplatePasswordParam`, который представляет собой входные данные для параметра `logicAppWfParam` в определении приложения логики.
+Если вы осуществляете автоматизацию развертываний с помощью [шаблонов развертывания Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md#parameters), то в этих шаблонах также можете использовать защищенные параметры. Например, вы можете использовать параметры для получения секретов KeyVault при создании приложения логики. Определение шаблона развертывания содержит свой собственный раздел `parameters`, отдельный от раздела `parameters` приложения логики. Дополнительные сведения о защите параметров в шаблонах развертывания см. в разделе [Защищенные параметры в шаблонах развертывания Azure Resource Manager](#secure-parameters-deployment-template) далее на этой странице.
+
+<a name="secure-parameters-workflow"></a>
+
+### <a name="secure-parameters-in-logic-app-definitions"></a>Защищенные параметры в определениях приложения логики
+
+Для защиты конфиденциальной информации в определении рабочего процесса приложения логики используйте защищенные параметры, чтобы информация не отображалась после сохранения приложения логики. Например, предположим, что в определении действий HTTP вы используете проверку подлинности `Basic`. Этот пример включает раздел `parameters`, который определяет параметры для определения действия, а также раздел `authentication`, который принимает значения параметров `username` и `password`. Чтобы предоставить значения для этих параметров, используйте отдельный файл с параметрами. Пример указан ниже.
+
+```json
+"definition": {
+   "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+   "actions": {
+      "HTTP": {
+         "type": "Http",
+         "inputs": {
+            "method": "GET",
+            "uri": "http://www.microsoft.com",
+            "authentication": {
+               "type": "Basic",
+               "username": "@parameters('usernameParam')",
+               "password": "@parameters('passwordParam')"
+            }
+         },
+         "runAfter": {}
+      }
+   },
+   "parameters": {
+      "passwordParam": {
+         "type": "securestring"
+      },
+      "userNameParam": {
+         "type": "securestring"
+      }
+   },
+   "triggers": {
+      "manual": {
+         "type": "Request",
+         "kind": "Http",
+         "inputs": {
+            "schema": {}
+         }
+      }
+   },
+   "contentVersion": "1.0.0.0",
+   "outputs": {}
+}
+```
+
+Если вы используете секреты, получите их во время развертывания с помощью [KeyVault Azure Resource Manager](../azure-resource-manager/resource-manager-keyvault-parameter.md).
+
+<a name="secure-parameters-deployment-template"></a>
+
+### <a name="secure-parameters-in-azure-resource-manager-deployment-templates"></a>Защищенные параметры в шаблонах развертывания Azure Resource Manager
+
+В этом примере показан шаблон развертывания Azure Resource Manager, в котором используется более одного параметра среды выполнения с типом `securestring`.
+
+* `armTemplatePasswordParam`, который представляет собой входные данные для параметра `logicAppWfParam` в определении приложения логики
 
 * `logicAppWfParam`, который представляет собой входные данные для действия HTTP с использованием обычной аутентификации.
 
-В отдельном файле параметров можно указать значение среды для параметра `armTemplatePasswordParam` или использовать [хранилище ключей Azure Resource Manager](../azure-resource-manager/resource-manager-keyvault-parameter.md) для получения секретов во время развертывания.
-Внутренний раздел `parameters` относится к определению рабочего процесса приложения логики, а внешний раздел `parameters` — к шаблону развертывания.
+Этот пример включает внутренний раздел `parameters`, который относится к определению рабочего процесса приложения логики, и внешний раздел `parameters`, который относится к шаблону развертывания. Чтобы указать значения среды для параметров, используйте отдельный файл с параметрами. 
 
 ```json
 {
    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
    "contentVersion": "1.0.0.0",
    "parameters": {
-      "logicAppName": {       
+      "logicAppName": {
          "type": "string",
          "minLength": 1,
          "maxLength": 80,
-         "metadata": {         
-            "description": "Name of the Logic App."       
-         }     
+         "metadata": {
+            "description": "Name of the Logic App."
+         }
       },
       "armTemplatePasswordParam": {
-         "type": "securestring"     
-      },     
-      "logicAppLocation": {       
+         "type": "securestring"
+      },
+      "logicAppLocation": {
          "type": "string",
          "defaultValue": "[resourceGroup().location]",
-         "allowedValues": [         
+         "allowedValues": [
             "[resourceGroup().location]",
             "eastasia",
             "southeastasia",
@@ -281,7 +337,7 @@ POST
    },
    "variables": {},
    "resources": [
-      {       
+      {
          "name": "[parameters('logicAppName')]",
          "type": "Microsoft.Logic/workflows",
          "location": "[parameters('logicAppLocation')]",
@@ -300,15 +356,18 @@ POST
                         "uri": "http://www.microsoft.com",
                         "authentication": {
                            "type": "Basic",
-                           "username": "username",
-                              "password": "@parameters('logicAppWfParam')"
+                           "username": "@parameters('usernameParam')",
+                           "password": "@parameters('logicAppWfParam')"
                         }
                      },
                   "runAfter": {}
                   }
                },
-               "parameters": { 
+               "parameters": {
                   "logicAppWfParam": {
+                     "type": "securestring"
+                  },
+                  "userNameParam": {
                      "type": "securestring"
                   }
                },
@@ -332,9 +391,11 @@ POST
          }
       }
    ],
-   "outputs": {} 
-}   
+   "outputs": {}
+}
 ```
+
+Если вы используете секреты, получите их во время развертывания с помощью [KeyVault Azure Resource Manager](../azure-resource-manager/resource-manager-keyvault-parameter.md).
 
 <a name="secure-requests"></a>
 
@@ -344,7 +405,7 @@ POST
 
 ### <a name="add-authentication-on-outbound-requests"></a>Добавление аутентификации при исходящих запросах
 
-При работе с HTTP, HTTP + Swagger (открытый API) или с действием веб-перехватчика можно добавить аутентификацию для запроса, отправляемого приложением логики. Например, это может быть обычная аутентификация, аутентификация на основе сертификата или аутентификация Azure Active Directory. Дополнительные сведения см. в разделах об [аутентификации триггеров или действий](logic-apps-workflow-actions-triggers.md#connector-authentication) и [действий HTTP](../connectors/connectors-native-http.md#authentication).
+При работе с HTTP, HTTP + Swagger (открытый API) или с действием веб-перехватчика можно добавить аутентификацию для запроса, отправляемого приложением логики. Например, это может быть обычная аутентификация, аутентификация на основе сертификата или аутентификация Azure Active Directory. Дополнительные сведения см. в разделе [Проверка подлинности триггеров или действий](../logic-apps/logic-apps-workflow-actions-triggers.md#connector-authentication).
 
 ### <a name="restrict-access-to-logic-app-ip-addresses"></a>Разрешение доступа для определенных IP-адресов приложения логики
 

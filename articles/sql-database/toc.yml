@@ -67,23 +67,23 @@ items:
   expanded: true
 - name: Учебники
   items:
-  - name: Создание базы данных SQL Azure
+  - name: Создание базы данных в Базе данных SQL
     items:
     - name: Создание базы данных с помощью SSMS
       href: sql-database-design-first-database.md
     - name: Создание базы данных с помощью .NET
       href: sql-database-design-first-database-csharp.md
-  - name: Миграция в Базу данных SQL Azure
+  - name: Переход на базу данных SQL
     items:
     - name: Миграция в отдельную базу данных или базу данных в составе пула с помощью DMS
       href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
     - name: Миграция в управляемый экземпляр с помощью DMS
       href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
-  - name: Защита данных в Базе данных SQL Azure
+  - name: Обеспечение безопасности данных в Базе данных SQL
     items:
-    - name: Защита отдельных баз данных
+    - name: Защита отдельных баз данных и баз данных в составе пула
       href: sql-database-security-tutorial.md
-    - name: Защита управляемого экземпляра с помощью имен для входа Azure AD
+    - name: Обеспечение защиты управляемого экземпляра
       href: sql-database-managed-instance-aad-security-tutorial.md
   - name: Реализация географически распределенной базы данных
     href: sql-database-implement-geo-distributed-database.md
@@ -104,10 +104,10 @@ items:
   - name: Модели приобретения
     items:
     - name: Обзор
-      href: sql-database-service-tiers.md
+      href: sql-database-purchase-models.md
     - name: Модель приобретения на основе виртуальных ядер
       href: sql-database-service-tiers-vcore.md
-    - name: Модель с DTU
+    - name: Выбор уровня службы на основе DTU
       href: sql-database-service-tiers-dtu.md
     - name: Предварительная оплата резервной мощности
       href: sql-database-reserved-capacity.md
@@ -351,8 +351,8 @@ items:
     items:
     - name: Обзор
       href: sql-database-howto-single-database.md
-    - name: Переход на базу данных SQL
-      href: sql-database-cloud-migrate.md
+    - name: Миграция в отдельную базу данных или базу данных в составе пула
+      href: sql-database-single-database-migrate.md
     - name: Управление базой данных SQL после переноса
       href: sql-database-manage-after-migration.md
     - name: Настройка репликации
@@ -421,7 +421,7 @@ items:
         href: sql-database-elastic-query-horizontal-partitioning.md
       - name: Запрос к таблицам с разными схемами
         href: sql-database-elastic-query-vertical-partitioning.md
-    - name: Задания обработки эластичных баз данных
+    - name: Задания обработки эластичных БД
       items:
       - name: Создание и управление (Powershell)
         href: elastic-jobs-powershell.md
@@ -605,9 +605,9 @@ items:
             href: saas-tenancy-cross-tenant-reporting.md
           - name: Аналитика клиента
             items:
-            - name: Использование базы данных SQL
+            - name: С помощью Базы данных SQL
               href: saas-tenancy-tenant-analytics.md
-            - name: Использование хранилища данных SQL
+            - name: С помощью Хранилища данных SQL
               href: saas-tenancy-tenant-analytics-adf.md
         - name: Аварийное восстановление с использованием георепликации
           href: saas-dbpertenant-dr-geo-restore.md
@@ -714,9 +714,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: 9b11a1bd8cc68aabc8881636d5fcdfe5cbaec034
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.openlocfilehash: bf8a32ede6ce782bc0ff5ac58cd12ba70283289e
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55960553"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100046"

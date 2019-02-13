@@ -55,22 +55,55 @@
 ### [Страница "Журнал аудита"](./cloud-partner-portal/portal-tour/cpp-history-page.md)
 ### [Страница "Аналитические сведения"](./cloud-partner-portal/portal-tour/cpp-insights-page.md)
 
+
 ## Управление на портале
 ### [Регистрация учетной записи центра разработчиков](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)
-### [Частные номера SKU](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md)
-### [Руководство по SEO](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)
 ### [Управление профилем издателя](./cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile.md)
 ### [Управление пользователями](./cloud-partner-portal-orig/cloud-partner-portal-manage-users.md)
+
+
+## Управление бизнесом
+### [Руководство по SEO](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)
 ### [Соответствие требованиям GDPR](./cloud-partner-portal-orig/cloud-partner-portal-gdpr.md)
+### [Частные номера SKU](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md)
+<!--  Under development: 
+### Pricing considerations
+#### Simplified currency pricing
+#### Information on taxes and price
+#### Export-import pricing
+-->
+
+### Управление потенциальными клиентами
+#### [Настройка получения сведений о потенциальных клиентах](./cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md)
+#### [Таблица Azure](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table.md)
+#### [Dynamics](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics.md)
+#### [Конечная точка HTTPS](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https.md)
+#### [Marketo](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo.md)
+#### [Salesforce](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce.md)
+
+### Seller Insights
+#### [Приступая к работе](./cloud-partner-portal-orig/si-getting-started.md)
+#### [Новые возможности](./cloud-partner-portal-orig/si-changes.md)
+#### [Веб-аналитика](./cloud-partner-portal-orig/web-analytics.md)
+#### [Определения](./cloud-partner-portal-orig/si-insights-definitions-v4.md)
+#### [Вопросы и ответы об аналитических сведениях](./cloud-partner-portal-orig/si-faqs.md)
+
 
 ## [Предложения Marketplace](./cloud-partner-portal/cpp-marketplace-offers.md)
-
 ### [Управление предложениями](./cloud-partner-portal/manage-offers/cpp-manage-offers.md)
 #### [Создание предложения](./cloud-partner-portal/manage-offers/cpp-create-offer.md)
 #### [Публикация предложения](./cloud-partner-portal/manage-offers/cpp-publish-offer.md) 
 #### [Просмотр сведений о состоянии предложения](./cloud-partner-portal/manage-offers/cpp-view-status-offer.md)
 #### [Обновление предложения](./cloud-partner-portal/manage-offers/cpp-update-offer.md)
 #### [Удаление предложения](./cloud-partner-portal/manage-offers/cpp-delete-offer.md) 
+
+### Тестовый выпуск
+#### [Что такое тестовый выпуск](./cloud-partner-portal-orig/what-is-test-drive.md)
+#### [Тестовый выпуск Azure Resource Manager](./cloud-partner-portal-orig/azure-resource-manager-test-drive.md)
+#### [Размещенный тестовый выпуск](./cloud-partner-portal-orig/hosted-test-drive.md)
+#### [Тестовый выпуск приложения логики](./cloud-partner-portal-orig/logic-app-test-drive.md)
+#### [Примеры преобразования для тестового выпуска](./cloud-partner-portal-orig/transforming-examples-for-test-drive.md)
+#### [Рекомендации по маркетингу](./cloud-partner-portal-orig/marketing-and-best-practices.md)
 
 ### [Предложение приложения Azure](./cloud-partner-portal/azure-applications/cpp-azure-app-offer.md)
 #### [Предварительные требования](./cloud-partner-portal/azure-applications/cpp-prerequisites.md)
@@ -82,6 +115,7 @@
 ##### [Вкладка "Поддержка"](./cloud-partner-portal/azure-applications/cpp-support-tab.md)
 #### [Создание технических средств](./cloud-partner-portal/azure-applications/cpp-create-technical-assets.md)
 #### [Публикация предложения приложения Azure](./cloud-partner-portal/azure-applications/cpp-publish-offer.md)
+#### [Обработка отзывов по результатам проверки](./cloud-partner-portal/azure-applications/cpp-handling-review-feedback.md)
 #### [Обновление имеющегося предложения](./cloud-partner-portal/azure-applications/cpp-update-existing-offer.md)
 
 ### [Консультационные услуги](./cloud-partner-portal/consulting-services/cloud-partner-portal-consulting-services-publishing-offer.md)
@@ -195,29 +229,6 @@
 #### [Публикация предложения виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-publish-offer.md)
 #### [Обновление имеющегося предложения](./cloud-partner-portal/virtual-machine/cpp-update-existing-offer.md)
 
-
-## Тестовый выпуск
-### [Что такое тестовый выпуск](./cloud-partner-portal-orig/what-is-test-drive.md)
-### [Тестовый выпуск Azure Resource Manager](./cloud-partner-portal-orig/azure-resource-manager-test-drive.md)
-### [Размещенный тестовый выпуск](./cloud-partner-portal-orig/hosted-test-drive.md)
-### [Тестовый выпуск приложения логики](./cloud-partner-portal-orig/logic-app-test-drive.md)
-### [Примеры преобразования для тестового выпуска](./cloud-partner-portal-orig/transforming-examples-for-test-drive.md)
-### [Рекомендации по маркетингу](./cloud-partner-portal-orig/marketing-and-best-practices.md)
-
-## Управление потенциальными клиентами
-### [Настройка получения сведений о потенциальных клиентах](./cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md)
-### [Таблица Azure](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table.md)
-### [Dynamics](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics.md)
-### [Конечная точка HTTPS](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https.md)
-### [Marketo](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo.md)
-### [Salesforce](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce.md)
-
-## Seller Insights
-### [Приступая к работе](./cloud-partner-portal-orig/si-getting-started.md)
-### [Новые возможности](./cloud-partner-portal-orig/si-changes.md)
-### [Веб-аналитика](./cloud-partner-portal-orig/web-analytics.md)
-### [Определения](./cloud-partner-portal-orig/si-insights-definitions-v4.md)
-### [Вопросы и ответы об аналитических сведениях](./cloud-partner-portal-orig/si-faqs.md)
 
 ## Справочник по API
 ### [Обзор](./cloud-partner-portal-orig/cloud-partner-portal-api-overview.md)
