@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
-ms.openlocfilehash: e316d08fd4e2a674b91a457a3e545f5aff3acbf8
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1e1d10996485246293e94a26f889f5c210207109
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54809384"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192920"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство. Интеграция Azure Active Directory с SAML SSO for Confluence by resolution GmbH
 
@@ -28,21 +29,21 @@ ms.locfileid: "54809384"
 
 * Вы можете управлять доступом пользователей Azure AD к SAML SSO for Confluence by resolution GmbH.
 * Вы можете включить автоматический вход пользователей в SAML SSO for Confluence by resolution GmbH (единый вход) с помощью учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для настройки интеграции Azure AD с SAML SSO for Confluence by resolution GmbH требуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка SAML SSO for Confluence by resolution GmbH с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * SAML SSO for Confluence by resolution GmbH поддерживает единый вход инициированного **пакета обновления** и **выдающей точки распространения**
 
@@ -54,7 +55,7 @@ ms.locfileid: "54809384"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -62,7 +63,7 @@ ms.locfileid: "54809384"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. Чтобы добавить приложение, в поле поиска введите **SAML SSO for Confluence by resolution GmbH**, затем на панели результатов выберите **SAML SSO for Confluence by resolution GmbH** и нажмите кнопку **Добавить**.
 
@@ -78,9 +79,9 @@ ms.locfileid: "54809384"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в SAML SSO for Confluence by resolution GmbH](#configure-saml-sso-for-confluence-by-resolution-gmbh-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя SAML SSO for Confluence by resolution GmbH](#create-saml-sso-for-confluence-by-resolution-gmbh-test-user)** требуется, чтобы создать в SAML SSO for Confluence by resolution GmbH пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -106,16 +107,16 @@ ms.locfileid: "54809384"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом пакетом обновления, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие.
 
     ![Информация о едином входе доменов и URL-адресов приложения SAML SSO for Confluence by resolution GmbH](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки SAML SSO for Confluence by resolution GmbH](https://www.resolution.de/go/support) для получения этих значений. Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки SAML SSO for Confluence by resolution GmbH](https://www.resolution.de/go/support) для получения этих значений. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -169,11 +170,11 @@ ms.locfileid: "54809384"
  
     a. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
-    b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
+    б) Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
     c. Добавьте **описание** поставщика удостоверений (например, Azure AD).
     
-    d. Щелкните **Далее**.
+    4.3. Щелкните **Далее**.
     
 12. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
 
@@ -185,11 +186,11 @@ ms.locfileid: "54809384"
 
     a. Нажмите кнопку **Load File** (Загрузить файл) и выберите XML-файл метаданных, который вы скачали на шаге 5.
 
-    b. Нажмите кнопку **Import** (Импортировать).
+    б) Нажмите кнопку **Import** (Импортировать).
     
     c. Дождитесь завершения импорта.
     
-    d. Нажмите кнопку **Next** (Далее).
+    4.3. Нажмите кнопку **Next** (Далее).
     
 14. На странице **User ID attribute and transformation** (Атрибут и преобразование идентификатора пользователя) нажмите кнопку **Next** (Далее).
 
@@ -209,9 +210,9 @@ ms.locfileid: "54809384"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -219,18 +220,18 @@ ms.locfileid: "54809384"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -277,11 +278,11 @@ ms.locfileid: "54809384"
 
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Britta Simon.
 
-    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    б) В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    d. В текстовом поле **Password** (Пароль) введите пароль пользователя Britta Simon.
+    4.3. В текстовом поле **Password** (Пароль) введите пароль пользователя Britta Simon.
 
     д. Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
     
@@ -291,7 +292,7 @@ ms.locfileid: "54809384"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "SAML SSO for Confluence by resolution GmbH" на панели доступа, вы должны автоматически войти в SAML SSO for Confluence by resolution GmbH, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент "SAML SSO for Confluence by resolution GmbH" на панели доступа, вы должны автоматически войти в SAML SSO for Confluence by resolution GmbH, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

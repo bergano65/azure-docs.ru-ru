@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/7/2018
 ms.author: jeedes
-ms.openlocfilehash: fe5007507a6ee669a5329b6e9800498aeaa365c3
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 405a5c12def3bfa25226037788fe55d4d5cb7dd9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54825380"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204888"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
 
@@ -28,21 +29,21 @@ ms.locfileid: "54825380"
 
 * С помощью Azure AD вы можете контролировать доступ к TargetProcess.
 * Можно включить автоматический вход пользователей в TargetProcess (единый вход) с помощью учетной записи Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением TargetProcess, вам потребуется следующее:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка TargetProcess с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * TargetProcess поддерживает единый вход, инициированный **поставщиком услуг**.
 * TargetProcess поддерживает **JIT**-подготовку пользователей.
@@ -55,7 +56,7 @@ ms.locfileid: "54825380"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -63,7 +64,7 @@ ms.locfileid: "54825380"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **TargetProcess**, выберите **TargetProcess** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -79,7 +80,7 @@ ms.locfileid: "54825380"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя TargetProcess](#create-targetprocess-test-user)** требуется для того, чтобы в TargetProcess существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -109,7 +110,7 @@ ms.locfileid: "54825380"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором.  Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TargetProcess](mailto:support@targetprocess.com).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором.  Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TargetProcess](mailto:support@targetprocess.com).
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -119,11 +120,11 @@ ms.locfileid: "54825380"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    a. URL-адрес входа.
+    а) URL-адрес входа.
 
-    b. Идентификатор Azure AD.
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
 7. Для автоматизации настройки в **TargetProcess** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
 
@@ -153,11 +154,11 @@ ms.locfileid: "54825380"
 
     a. Щелкните **Enable Single Sign-on**(Включить единый вход).
 
-    b. В текстовое поле **Sign-on URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    б) В текстовое поле **Sign-on URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Откройте скачанный сертификат в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **Certificate** (Сертификат).
 
-    d. Установите флажок **Enable JIT Provisioning**(Включить JIT-подготовку).
+    4.3. Установите флажок **Enable JIT Provisioning**(Включить JIT-подготовку).
 
     д. Выберите команду **Сохранить**.
 
@@ -166,9 +167,9 @@ ms.locfileid: "54825380"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -176,18 +177,18 @@ ms.locfileid: "54825380"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -226,7 +227,7 @@ ms.locfileid: "54825380"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку TargetProcess на панели доступа, вы автоматически войдете в приложение TargetProcess, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку TargetProcess на панели доступа, вы автоматически войдете в приложение TargetProcess, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

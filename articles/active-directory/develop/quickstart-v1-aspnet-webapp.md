@@ -15,12 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/24/2018
 ms.author: andret
-ms.openlocfilehash: d23110f341cdc76306c5cc4c78ab5d6afb5dd2b3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dcb235ab96ed8a85cbe44dd672dff004dd0a7310
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816277"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56185322"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -229,7 +230,7 @@ ms.locfileid: "55816277"
 Если требуется, чтобы приложение принимало операции входа только с использованием учетных записей, относящихся к определенному экземпляру Azure AD (включая *гостевые учетные записи* этого экземпляра), сделайте следующее:
 
 1. Замените значение параметра `Tenant` в файле *web.config* `Common` именем клиента организации, например *contoso.onmicrosoft.com*.
-1. После этого измените аргумент `ValidateIssuer` в [*классе Startup OWIN*](#configure-the-authentication-pipeline), задав для него значение `true`.
+1. После этого измените аргумент `ValidateIssuer` в [*классе Startup OWIN*](#step-4-configure-the-authentication-pipeline), задав для него значение `true`.
 
 Чтобы разрешить вход для пользователей из списка определенных организаций, сделайте следующее:
 

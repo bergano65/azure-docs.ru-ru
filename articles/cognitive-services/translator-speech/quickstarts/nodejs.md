@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
 author: v-jaswel
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-speech
 ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 8f2adf743760c85b8c2a75c0f398bc5b61fd1061
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: a76d3c3ed54b3b4d9d79cd778c75719dd12507d5
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754241"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55874028"
 ---
 # <a name="quickstart-translator-speech-api-with-nodejs"></a>Краткое руководство. API перевода речи с Node.js 
 <a name="HOLTop"></a>

@@ -13,14 +13,15 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: shlo
-ms.openlocfilehash: 49a2e16d198130d1c72d36377be1d914cbe3351b
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: fcef143f48bc9e7864fe69900e3c9002fd597fb5
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745254"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56001874"
 ---
-# <a name="create-a-data-factory-and-pipeline-using-python"></a>Создание фабрики данных и конвейера с помощью Python
+# <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью Python
+
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-python.md)
@@ -47,6 +48,7 @@ ms.locfileid: "55745254"
 2.  При помощи таких средств, как [обозреватель службы хранилища Azure](http://storageexplorer.com/), создайте контейнер **adfv2tutorial** с папкой **input**. Затем отправьте файл **input.txt** в папку **input**.
 
 ## <a name="install-the-python-package"></a>Установка пакета Python
+
 1. Откройте терминал или командную строку с правами администратора. 
 2. Сначала установите пакет Python для ресурсов управления Azure:
 
@@ -104,7 +106,6 @@ ms.locfileid: "55745254"
             print("\tCopy duration: {}".format(activity_run.output['copyDuration']))
         else:
             print("\tErrors: {}".format(activity_run.error['message']))
-
     ```
 3. Добавьте в метод **Main** приведенный ниже код, создающий экземпляр класса DataFactoryManagementClient. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера. Задайте переменную **subscription_id** для идентификатора вашей подписки Azure. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
@@ -165,9 +166,11 @@ ms.locfileid: "55745254"
     print_item(ls)
 ```
 ## <a name="create-datasets"></a>Создание наборов данных
+
 В этом разделе создайте два набора данных: для источника и приемника.
 
 ### <a name="create-a-dataset-for-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
+
 Добавьте следующий код, который создает набор данных большого двоичного объекта Azure, в метод Main. Дополнительные сведения о свойствах набора данных большого двоичного объекта Azure см. в [этом разделе](connector-azure-blob-storage.md#dataset-properties).
 
 Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге.
@@ -184,6 +187,7 @@ ms.locfileid: "55745254"
 ```
 
 ### <a name="create-a-dataset-for-sink-azure-blob"></a>Создание набора данных для большого двоичного объекта Azure приемника
+
 Добавьте следующий код, который создает набор данных большого двоичного объекта Azure, в метод Main. Дополнительные сведения о свойствах набора данных большого двоичного объекта Azure см. в [этом разделе](connector-azure-blob-storage.md#dataset-properties).
 
 Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге.
@@ -218,7 +222,6 @@ ms.locfileid: "55745254"
     print_item(p)
 ```
 
-
 ## <a name="create-a-pipeline-run"></a>Создание конвейера
 
 Добавьте в метод **Main** следующий код, **активирующий выполнение конвейера**.
@@ -232,6 +235,7 @@ ms.locfileid: "55745254"
 ```
 
 ## <a name="monitor-a-pipeline-run"></a>Мониторинг выполнения конвейера
+
 Для мониторинга работы конвейера добавьте следующий код в метод **Main**:
 
 ```python
@@ -251,6 +255,7 @@ main()
 ```
 
 ## <a name="full-script"></a>Полный сценарий
+
 Ниже приведен полный код Python:
 
 ```python
@@ -381,6 +386,7 @@ main()
 ```
 
 ## <a name="run-the-code"></a>Выполнение кода
+
 Создайте и запустите приложение, а затем проверьте выполнение конвейера.
 
 Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как [обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), чтобы проверить, скопирован ли большой двоичный объект в outputBlobPath из inputBlobPath, как указано в переменных.
@@ -417,8 +423,8 @@ Number of bytes written: 18
 Copy duration: 4
 ```
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
+
 Чтобы удалить фабрику данных, добавьте в программу следующий код:
 
 ```python
@@ -426,4 +432,5 @@ adf_client.factories.delete(rg_name,df_name)
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях.

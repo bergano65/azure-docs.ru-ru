@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов и Ruby.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 06/22/2018
+ms.date: 02/08/2019
 ms.author: erhopf
-ms.openlocfilehash: 07da6172b53b9904eb30a61d8b69b0f5b6693fdd
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: fb448498a9622d0e3b149e4e3d4041b3a7ca580c
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470116"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55975455"
 ---
 # <a name="quickstart-get-sentence-lengths-with-the-translator-text-rest-api-ruby"></a>Краткое руководство. Получение длины предложений с помощью REST API перевода текстов (Ruby)
 

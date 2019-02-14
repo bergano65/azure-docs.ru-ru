@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2019
 ms.author: jeedes
-ms.openlocfilehash: a06f0963c90da1d21f1ec0e5545ae45698e46e86
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 080c73dbc0d7621918f1b9d03423c80e2d93a58e
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692971"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56190387"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Руководство. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
+# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Руководство по Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
 
 В этом учебнике описано, как интегрировать портал управления облачными службами для Microsoft Azure с Azure Active Directory (Azure AD).
 Интеграция портала управления облачными службами для Microsoft Azure с Azure AD обеспечивает следующие преимущества.

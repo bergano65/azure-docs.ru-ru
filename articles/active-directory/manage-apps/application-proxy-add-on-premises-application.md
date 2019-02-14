@@ -2,21 +2,22 @@
 title: Добавление локального приложения — Application Proxy в Azure Active Directory | Документация Майкрософт
 description: Azure Active Directory (Azure AD) содержит службу прокси приложения, которая позволяет пользователям получать доступ к локальным приложениям при входе с использованием своей учетной записи Azure AD. В этом руководстве показано, как подготовить среду для использования прокси приложения, а затем с его помощью через портал Azure добавить локальное приложение в свой клиент Azure AD.
 services: active-directory
-author: barbkess
+author: CelesteDG
 manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/07/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: japere
-ms.openlocfilehash: 1f6962f0313b6b0ca187512185c990606789da6e
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f29b55b03d28728ad038f0071a7ba8a75a7acd2c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661961"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199448"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Руководство. Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory
 

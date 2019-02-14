@@ -16,14 +16,15 @@ ms.topic: tutorial
 ms.date: 01/08/2019
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 760a1db68021146720e0a8e5c872d74bd2c153da
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ca5d3f44c870314f5ea2dc236a52173caa821263
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101522"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193906"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
 Подобно пользователю, устройство становится еще одним удостоверением, которое необходимо защитить, а также использовать для защиты ваших ресурсов в любое время и в любом месте. Вы можете достичь этой цели, разместив удостоверения своих устройств в Azure AD с помощью одного из следующих вариантов:
 
@@ -125,7 +126,7 @@ ms.locfileid: "55101522"
 
     a. Выберите лес.
 
-    b. Выберите службу аутентификации. Необходимо выбрать сервер AD FS, если только ваша организация не использует исключительно клиенты Windows 10 либо простой единый вход и вы не настроили синхронизацию с компьютером или устройством.
+    б) Выберите службу аутентификации. Необходимо выбрать сервер AD FS, если только ваша организация не использует исключительно клиенты Windows 10 либо простой единый вход и вы не настроили синхронизацию с компьютером или устройством.
 
     c. Щелкните **Добавить**, чтобы ввести учетные данные администратора предприятия.
 

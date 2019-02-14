@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Служба "Речь" позволяет с помощью единого запроса получать аудио и возвращать объекты JSON для прогнозирования LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: df81c892df29b1ffd5fab2e93c82f664c7b613b7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: c247ef748628c14074c2b5ea37df251793840b16
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55216173"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55876043"
 ---
 # <a name="integrate-speech-service-with-your-language-understanding-app"></a>Интеграция службы "Речь" с приложением службы "Распознавание речи"
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 

@@ -4,21 +4,21 @@ titleSuffix: Azure Cognitive Services
 description: В этом руководстве создается приложение, демонстрирующее, как получить позитивные, негативные и нейтральные тональности из речевых фрагментов. Тональность определяется на основе всего высказывания.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: b9465e7965c5f1c62134cf309ef0efe914e14f8d
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9493e8b5d5e02f1408423334ceaa5c5c47ae6668
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215833"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55867755"
 ---
-# <a name="tutorial--get-sentiment-of-utterance"></a>Руководство.  Получение данных о тональности речевого фрагмента
+# <a name="tutorial--get-sentiment-of-utterance"></a>Руководство по  Получение данных о тональности речевого фрагмента
 
 В этом руководстве создается приложение, демонстрирующее, как определить позитивные, негативные и нейтральные тональности из речевых фрагментов. Тональность определяется на основе всего высказывания.
 

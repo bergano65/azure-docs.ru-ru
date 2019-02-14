@@ -10,14 +10,15 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 5143b59028b3894d3b9a10add594dd91743a4196
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dabe0ad1a556ee43f3e6cae0e1cd421db5cde0fd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55078888"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183213"
 ---
-# <a name="tutorial-enabling-password-writeback"></a>Руководство. Включение компонента обратной записи паролей
+# <a name="tutorial-enabling-password-writeback"></a>Руководство по Включение компонента обратной записи паролей
 
 Из этого руководства можно узнать, как включить компонент обратной записи паролей для гибридной среды. Компонент обратной записи паролей позволяет синхронизировать изменения паролей в Azure Active Directory (Azure AD) с локальной средой доменных служб Active Directory (AD DS). Компонент обратной записи паролей включается в рамках Azure AD Connect, чтобы обеспечить безопасный механизм отправки изменений паролей из Azure AD обратно к существующему локальному каталогу. Более подробные сведения о внутреннем устройстве компонента обратной записи паролей можно узнать из статьи [What is password writeback](concept-sspr-writeback.md) (Что такое обратная запись паролей).
 

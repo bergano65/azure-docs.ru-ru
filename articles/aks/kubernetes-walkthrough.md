@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/18/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: de11ebdc38ae5085fef274181084310ccc02a329
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 5e53a0658809cd278841b39b1015a6051cebf371
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54304012"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204650"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "54304012"
 
 Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположение сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если вы не указывали другой регион во время создания ресурса. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
-В следующем примере создается группа ресурсов *myAKSCluster* в расположении *eastus*.
+В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus

@@ -15,6 +15,7 @@
 ## [Миграция с MySQL в базу данных Azure для MySQL через Интернет](tutorial-mysql-azure-mysql-online.md)
 ## [Миграция с PostgreSQL в базу данных Azure для PostgreSQL через Интернет](tutorial-postgresql-azure-postgresql-online.md)
 ## [Миграция с MongoDB в Azure Cosmos DB Mongo API в автономном режиме](tutorial-mongodb-cosmos-db.md)
+## [Миграция с MongoDB в API Mongo для Azure Cosmos DB через интернет](tutorial-mongodb-cosmos-db-online.md)
 
 # Практические руководства
 ## [Перенос данных из SQL Server в базу данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-powershell.md)

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/09/2017
 ms.author: allclark
 ms.custom: mvc
-ms.openlocfilehash: 18bfdaaf75230cf91ea8f786188b9de9f7a6a5be
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 331bf57c415922a6686ba733b5fbcee24699a152
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696749"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56118264"
 ---
 # <a name="create-a-vm-with-a-virtual-hard-disk"></a>Создание виртуальной машины с помощью виртуального жесткого диска
 
@@ -62,7 +62,7 @@ az group delete -n az-cli-vhd
 | [az storage blob upload](https://docs.microsoft.com/cli/azure/storage/blob) | Создает BLOB-объект в контейнере путем отправки виртуального жесткого диска. |
 | [az vm list](https://docs.microsoft.com/cli/azure/vm) | Используется с `--query`, чтобы проверить, используется ли имя виртуальной машины. | 
 | [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set) | Создает виртуальные машины. |
-| [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm-ip-addresses) | Возвращает IP-адрес созданной виртуальной машины. |
+| [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az-vm-list-ip-addresses) | Возвращает IP-адрес созданной виртуальной машины. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

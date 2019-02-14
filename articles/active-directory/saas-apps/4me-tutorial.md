@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 8f02260ff7a13ffb2f07e6e272be1e70d5a1577f
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 30f111fb316e1bc58f684e6bd6dc3d8e4461473c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661587"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168873"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-4me"></a>Руководство. Интеграция Azure Active Directory с приложением 4me
+# <a name="tutorial-azure-active-directory-integration-with-4me"></a>Руководство по Интеграция Azure Active Directory с приложением 4me
 
 В этом руководстве описано, как интегрировать 4me с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением 4me обеспечивает следующие преимущества.

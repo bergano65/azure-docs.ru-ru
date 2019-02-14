@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: c84c217ee36de7e75b04fe5d0b700c939faa618a
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 18845c09ade4f891647d787be634b3484d39e22f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700338"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172932"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adp-globalview"></a>Руководство. Интеграция Azure Active Directory с ADP Globalview
+# <a name="tutorial-azure-active-directory-integration-with-adp-globalview"></a>Руководство по Интеграция Azure Active Directory с ADP Globalview
 
 В этом руководстве описано, как интегрировать ADP Globalview с Azure Active Directory (Azure AD).
 Интеграция Azure AD с ADP Globalview обеспечивает следующие преимущества:

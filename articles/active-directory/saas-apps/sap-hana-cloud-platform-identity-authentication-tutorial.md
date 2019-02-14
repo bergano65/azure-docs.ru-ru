@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
 description: Сведения о настройке единого входа в Azure Active Directory и SAP Cloud Platform Identity Authentication.
 services: active-directory
 documentationCenter: na
@@ -14,35 +14,36 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 6b5b664581a1f3da367f74318cfb6bf5564e5b39
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d8e14d54ca30c0e46d3bef0202784a35493663ef
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472887"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198190"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство по Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
 
 В этом руководстве описано, как интегрировать приложение SAP Cloud Platform Identity Authentication с Azure Active Directory (AAD).
 Интеграция приложения SAP Cloud Platform Identity Authentication с AAD обеспечивает следующие преимущества:
 
 * С помощью Azure AD вы можете контролировать доступ к SAP Cloud Platform Identity Authentication.
 * Вы можете включить автоматический вход пользователей в SAP Cloud Platform Identity Authentication (единый вход) с использованием учетной записи Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию AAD с приложением SAP Cloud Platform Identity Authentication, вам потребуются:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на SAP Cloud Platform Identity Authentication с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * SAP Cloud Platform Identity Authentication поддерживает единый вход, инициируемый **поставщиком услуг** и **поставщиком удостоверений**.
 
@@ -73,7 +74,7 @@ ms.locfileid: "55472887"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -81,7 +82,7 @@ ms.locfileid: "55472887"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **SAP Cloud Platform Identity Authentication**, выберите **SAP Cloud Platform Identity Authentication** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -97,9 +98,9 @@ ms.locfileid: "55472887"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в SAP Cloud Platform Identity Authentication](#configure-sap-cloud-platform-identity-authentication-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя SAP Cloud Platform Identity Authentication ](#create-sap-cloud-platform-identity-authentication-test-user)** требуется, чтобы создать в SAP Cloud Platform Identity Authentication пользователя Britta Simon, связанного представлением этого пользователя в AAD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -125,16 +126,16 @@ ms.locfileid: "55472887"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `<IAS-tenant-id>.accounts.ondemand.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<IAS-tenant-id>.accounts.ondemand.com/saml2/idp/acs/<IAS-tenant-id>.accounts.ondemand.com`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<IAS-tenant-id>.accounts.ondemand.com/saml2/idp/acs/<IAS-tenant-id>.accounts.ondemand.com`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь в [службу поддержки SAP Cloud Platform Identity Authentication Client](https://cloudplatform.sap.com/capabilities/security/trustcenter.html), чтобы узнать эти значения. Если вы не знаете, что такое значение идентификатора, изучите документацию по [настройке клиента SAML 2.0](https://help.hana.ondemand.com/cloud_identity/frameset.htm?e81a19b0067f4646982d7200a8dab3ca.html) для SAP Cloud Platform Identity Authentication.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь в [службу поддержки SAP Cloud Platform Identity Authentication Client](https://cloudplatform.sap.com/capabilities/security/trustcenter.html), чтобы узнать эти значения. Если вы не знаете, что такое значение идентификатора, изучите документацию по [настройке клиента SAML 2.0](https://help.hana.ondemand.com/cloud_identity/frameset.htm?e81a19b0067f4646982d7200a8dab3ca.html) для SAP Cloud Platform Identity Authentication.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения для единого входа в разделе "Домен и URL-адреса приложения SAP Cloud Platform Identity Authentication"](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `{YOUR BUSINESS APPLICATION URL}`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `{YOUR BUSINESS APPLICATION URL}`.
 
     > [!NOTE]
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Используйте свой URL-адрес входа для бизнес-приложения. Если у вас возникнут сомнения, обратитесь в [службу поддержки SAP Cloud Platform Identity Authentication Client](https://cloudplatform.sap.com/capabilities/security/trustcenter.html).
@@ -151,11 +152,11 @@ ms.locfileid: "55472887"
 
     ![изображение](common/new-attribute-details.png)
 
-    b. В текстовом поле **Имя** введите firstName.
+    б) В текстовом поле **Имя** введите firstName.
 
     c. Оставьте пустым поле **Пространство имен**.
 
-    d. В качестве источника выберите **Атрибут**.
+    4.3. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** выберите user.givenname.
 
@@ -171,11 +172,11 @@ ms.locfileid: "55472887"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    a. URL-адрес входа.
+    а) URL-адрес входа.
 
-    b. Идентификатор Azure AD.
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
 ### <a name="configure-sap-cloud-platform-identity-authentication-single-sign-on"></a>Настройка SAP Cloud Platform Identity Authentication с поддержкой единого входа
 
@@ -196,9 +197,9 @@ ms.locfileid: "55472887"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -206,18 +207,18 @@ ms.locfileid: "55472887"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -259,7 +260,7 @@ ms.locfileid: "55472887"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку SAP Cloud Platform Identity Authentication на панели доступа, вы автоматически войдете в это приложение, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку SAP Cloud Platform Identity Authentication на панели доступа, вы автоматически войдете в это приложение, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

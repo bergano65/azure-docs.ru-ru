@@ -12,12 +12,13 @@ ms.service: active-directory
 ms.workload: identity
 services: active-directory
 ms.custom: it-pro;seo-update-azuread-jan
-ms.openlocfilehash: d578794a258faa9ad0222207f73e108e11f3281f
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 65983a5c9273b0eb88dbb7f2e3a8779b326352b3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770458"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205398"
 ---
 # <a name="users-groups-licensing-and-roles-for-large-organizations"></a>Пользователи, группы, лицензирование и роли для крупных организаций
 
@@ -58,7 +59,7 @@ ms.locfileid: "55770458"
 
 ## <a name="assign-app-access"></a>Назначение доступа к приложению
 
-С помощью Azure AD можно назначить группе доступ к [корпоративным приложениям, развернутым в клиенте Azure AD](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups#assign-group?context=azure/active-directory/users-groups-roles/context/ugr-context). Если объединить динамические группы с назначением групп приложениям, можно автоматизировать назначения пользователям доступа к приложениям по мере роста организации. Для предоставления доступа к корпоративным приложениям вам потребуется лицензия Azure Active Directory Premium P1 или Premium P2.
+С помощью Azure AD можно назначить группе доступ к [корпоративным приложениям, развернутым в клиенте Azure AD](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups?context=azure/active-directory/users-groups-roles/context/ugr-context). Если объединить динамические группы с назначением групп приложениям, можно автоматизировать назначения пользователям доступа к приложениям по мере роста организации. Для предоставления доступа к корпоративным приложениям вам потребуется лицензия Azure Active Directory Premium P1 или Premium P2.
 
 Azure AD также обеспечивает детальный контроль данных, которые передаются между приложением и группами, к которым вы назначаете доступ. В [корпоративных приложениях](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) откройте приложение и выберите **Подготовка**, чтобы:
 
@@ -72,4 +73,4 @@ Azure AD также обеспечивает детальный контроль
 
 Если вы начинающий администратор Azure AD, ознакомьтесь с [основами Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/index).
 
-Или вы можете начать [создавать группы](/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context), [назначать лицензии](/azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context), [назначать доступ к приложению](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups#assign-group?context=azure/active-directory/users-groups-roles/context/ugr-context) или [назначать роли администратора](directory-assign-admin-roles.md).
+Или вы можете начать [создавать группы](/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context), [назначать лицензии](/azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context), [назначать доступ к приложению](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups?context=azure/active-directory/users-groups-roles/context/ugr-context) или [назначать роли администратора](directory-assign-admin-roles.md).

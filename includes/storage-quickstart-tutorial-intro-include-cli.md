@@ -4,16 +4,16 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: c5cb1c5a005265950f8dcd02c8e7675918751dab
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 82b3349afd10b585a10619229a2bc6d849d71524
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50166031"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247109"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов Azure с помощью команды [az group create](/cli/azure/group). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
 
 ```azurecli-interactive
 az group create \
@@ -23,7 +23,7 @@ az group create \
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения общего назначения с помощью команды [az storage account create](/cli/azure/storage/account#create). Эта учетная запись хранения может использоваться для всех четырех служб: больших двоичных объектов, файлов, таблиц и очередей. 
+Создайте учетную запись хранения общего назначения с помощью команды [az storage account create](/cli/azure/storage/account). Эта учетная запись хранения может использоваться для всех четырех служб: больших двоичных объектов, файлов, таблиц и очередей. 
 
 ```azurecli-interactive
 az storage account create \
@@ -38,7 +38,7 @@ az storage account create \
 
 Azure CLI требуются учетные данные учетной записи хранения для большинства команд в этом руководстве. Хотя для этого есть несколько вариантов, проще всего предоставить их, задав переменные среды `AZURE_STORAGE_ACCOUNT` и `AZURE_STORAGE_ACCESS_KEY`.
 
-Сначала отобразите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#list):
+Сначала отобразите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys):
 
 ```azurecli-interactive
 az storage account keys list \

@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/11/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: unknown
 ms.lastreviewed: 09/11/2018
 ms.custom: mvc
-ms.openlocfilehash: 59a113739734c5e1a29de7e5876f255906ef5323
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: a24b7314775ea7667ab992742586e5b5c8bbb369
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252291"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205166"
 ---
 # <a name="tutorial-make-virtual-machines-available-to-your-azure-stack-users"></a>Руководство. Предоставление доступа к виртуальным машинам для пользователей Azure Stack
 
@@ -115,7 +115,7 @@ ms.locfileid: "55252291"
 
    ![Получение подписки](media/azure-stack-tutorial-tenant-vm/image10.png)
 
-   b. В области **Получение подписки** введите имя подписки в поле **Отображаемое имя**. Щелкните **Предложение**, а затем выберите предложение в списке **Выбор предложения**. Нажмите кнопку **Создать**.
+   б) В области **Получение подписки** введите имя подписки в поле **Отображаемое имя**. Щелкните **Предложение**, а затем выберите предложение в списке **Выбор предложения**. Нажмите кнопку **Создать**.
 
    ![Создание предложения](media/azure-stack-tutorial-tenant-vm/image11.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "55252291"
       - В интегрированной системе URL-адрес зависит от региона оператора и внешнего доменного имени: https://portal.&lt;*регион*&gt;.&lt;*полное_доменное_имя*&gt;.
    - Если вы используете набор разработки Azure Stack, адрес портала https://portal.local.azurestack.external.
 
-   b.  На панели мониторинга последовательно выберите **+Create a resource** (+Создать ресурс)  > **Вычисления** > **Windows Server 2016 Datacenter Eval**, а затем **Создать**.
+   б)  На панели мониторинга последовательно выберите **+Create a resource** (+Создать ресурс)  > **Вычисления** > **Windows Server 2016 Datacenter Eval**, а затем **Создать**.
 
    c. В разделе **Основные сведения** введите следующие данные:
       - Введите **имя**.
@@ -142,7 +142,7 @@ ms.locfileid: "55252291"
       - Создайте новую **группу ресурсов** или выберите существующую. 
       - Нажмите кнопку **ОК**, чтобы сохранить эти сведения.
 
-   d. В области **Выбор размера** выберите **A1 Standard** и щелкните **Выбрать**.  
+   4.3. В области **Выбор размера** выберите **A1 Standard** и щелкните **Выбрать**.  
 
    д. В области **Параметры** выберите **Виртуальная сеть**.
 

@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 01/23/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 7ed8b96a528d56b28262936c4b200762b3e93b8e
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 09eaf9465ec3912dea6e1f3ee1693f6bfed50abc
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302250"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55985501"
 ---
 ## <a name="push-image-to-registry"></a>Отправка образа в реестр
 
 Чтобы отправить образ в реестр контейнеров Azure, сначала нужно получить этот образ. Если у вас еще нет образов локального контейнера, используйте следующую команду [docker pull][docker-pull], чтобы извлечь существующий образ из Docker Hub. Для этого примера извлеките образ `hello-world`.
 
-```Docker
+```
 docker pull hello-world
 ```
 
@@ -27,19 +27,19 @@ docker pull hello-world
 
 Присвойте образу тег с помощью команды [docker tag][docker-tag]. Замените значение `<acrLoginServer>` именем сервера входа для экземпляра ACR.
 
-```Docker
+```
 docker tag hello-world <acrLoginServer>/hello-world:v1
 ```
 
 Наконец, воспользуйтесь командой [docker push][docker-push] для принудительной отправки образа в экземпляр ACR. Замените значение `<acrLoginServer>` именем сервера входа для экземпляра ACR. В этом примере создается репозиторий **hello-world** с образом `hello-world:v1`.
 
-```Docker
+```
 docker push <acrLoginServer>/hello-world:v1
 ```
 
 После передачи образа в реестр контейнеров удалите образ `hello-world:v1` из локальной среды Docker. (Обратите внимание, что команда [docker rmi][docker-rmi] не приводит к удалению образа из репозитория **hello-world** в реестре контейнеров Azure.)
 
-```Docker
+```
 docker rmi <acrLoginServer>/hello-world:v1
 ```
 

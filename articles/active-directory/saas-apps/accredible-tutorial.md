@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Accredible | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Accredible | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Accredible.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 89cb00d4d0ee941dcd7e7a3ee3d200ff288ee679
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1d46de5f545e3685b1ba6f9a2cda2bac803258b5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55656250"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199369"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство. Интеграция Azure Active Directory с Accredible
 

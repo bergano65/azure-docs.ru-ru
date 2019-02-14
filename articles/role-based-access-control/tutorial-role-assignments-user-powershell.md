@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 27b48e1d6aabf9cde7152bfb0dbf3e58bc619107
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 7f5e67edd2a5300ae1898e2620ee8ace80ac6d92
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696784"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56109033"
 ---
 # <a name="tutorial-grant-access-for-a-user-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
 
@@ -111,7 +111,7 @@ ms.locfileid: "55696784"
 
 Чтобы предоставить доступ пользователю, воспользуйтесь командой [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) для назначения роли. Необходимо указать субъект безопасности, определение роли и область действия.
 
-1. Получите идентификатор подписки с помощью команды [Get-AzSubscription](/powershell/module/az.profile/get-azsubscription).
+1. Получите идентификатор подписки с помощью команды [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
     ```azurepowershell
     Get-AzSubscription
