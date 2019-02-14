@@ -8,19 +8,19 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/23/2018
-ms.openlocfilehash: df1efc1506fbbe51ba5afb03f147c51a57d9bbdb
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: f4541bb9516855c4391188fb57e5ab64bc03c76e
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727064"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55890490"
 ---
 # <a name="create-and-configure-azure-kubernetes-service-clusters-in-azure-using-ansible"></a>Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления службой Azure Kubernetes (AKS). В этой статье приводятся сведения об использовании Ansible для создания и настройки кластера службы Azure Kubernetes.
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- **Субъект-служба Azure**. При [создании субъекта-службы](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-the-service-principal) обратите внимание на следующие значения: **appId**, **displayName**, **password** и **tenant**.
+- **Субъект-служба Azure**. При [создании субъекта-службы](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) обратите внимание на следующие значения: **appId**, **displayName**, **password** и **tenant**.
 
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 

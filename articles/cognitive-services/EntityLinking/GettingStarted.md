@@ -1,23 +1,23 @@
 ---
-title: Руководство. Создание приложения для связывания сущностей с помощью C#
+title: Руководство по Создание приложения для связывания сущностей с помощью C#
 titlesuffix: Azure Cognitive Services
 description: Анализ текста и связывание именованных сущностей с соответствующими записями в базе знаний с помощью API связывания сущностей.
 services: cognitive-services
 author: DavidLiCIG
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: entity-linking-intelligence
 ms.topic: tutorial
 ms.date: 07/06/2016
 ms.author: davl
-ms.openlocfilehash: 883d566fd3a6089eb9e72498089f995697a318f1
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: c3e7d27fa0e62c1dcc92e7eac7ddb56a1de5ba49
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55216818"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55857824"
 ---
-# <a name="tutorial-build-an-entity-linking-app-with-c"></a>Руководство. Создание приложения для связывания сущностей с помощью C#
+# <a name="tutorial-build-an-entity-linking-app-with-c"></a>Руководство по Создание приложения для связывания сущностей с помощью C#
 
 API связывания сущностей Майкрософт — это инструмент обработки естественного языка, предназначенный для анализа текста и связывания именованных сущностей с соответствующими записями в базе знаний. 
 

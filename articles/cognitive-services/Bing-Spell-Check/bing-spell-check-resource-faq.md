@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Ответы на распространенные вопросы об API Bing для проверки орфографии в Azure.
 services: cognitive-services
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 07/26/2017
 ms.author: heidist
-ms.openlocfilehash: 90acc80b19058c2a7eb963f9e423883846519b2c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 552e6fb3375c04e2f157842b13f72151e122f17b
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164934"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55866344"
 ---
 # <a name="frequently-asked-questions-about-the-bing-spell-check-api"></a>Часто задаваемые вопросы об API Bing для проверки орфографии
 

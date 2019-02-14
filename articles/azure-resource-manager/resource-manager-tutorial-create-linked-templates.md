@@ -13,14 +13,16 @@ ms.devlang: na
 ms.date: 01/16/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5c193ce7966cdc303004c4b75871877074bf4711
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: c674c11f26d236e27852eb52bfc304aab12adcb5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55494040"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112150"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Узнайте, как создать связанные шаблоны Azure Resource Manager. Используя связанные шаблоны, можно одним шаблоном вызвать другой. Это отлично подходит для создания модулей шаблонов. В этом руководстве используется тот же шаблон, что и в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md), который создает виртуальную машину, виртуальную сеть и другие зависимые ресурсы, включая учетную запись хранения. Для создания ресурса учетной записи хранения можно использовать связанный шаблон.
 
@@ -192,17 +194,17 @@ $storageAccount = New-AzStorageAccount `
 $context = $storageAccount.Context
 
 # Create a container
-New-AzureStorageContainer -Name $containerName -Context $context
+New-AzStorageContainer -Name $containerName -Context $context
 
 # Upload the linked template
-Set-AzureStorageBlobContent `
+Set-AzStorageBlobContent `
     -Container $containerName `
     -File "$home/$fileName" `
     -Blob $fileName `
     -Context $context
 
 # Generate a SAS token
-$templateURI = New-AzureStorageBlobSASToken `
+$templateURI = New-AzStorageBlobSASToken `
     -Context $context `
     -Container $containerName `
     -Blob $fileName `

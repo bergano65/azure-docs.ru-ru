@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
-ms.openlocfilehash: a9d260f05923985456a1f702ad5afc52d045211a
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c633d32113efc4bce8f2ea0f17b20be6f2692492
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562969"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210566"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Руководство. Интеграция Azure Active Directory с CompetencyIQ
+# <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Руководство по Интеграция Azure Active Directory с CompetencyIQ
 
 В этом руководстве описано, как интегрировать CompetencyIQ с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением CompetencyIQ обеспечивает следующие преимущества:

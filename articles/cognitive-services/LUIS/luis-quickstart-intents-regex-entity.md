@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Извлечение согласованно отформатированных данных из высказывания с помощью сущности регулярного выражения.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 7ce8ba5d35d4c8f8def7b87e96f102c45d39a5d7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 5ebd8875f14eef9a5febaf5356f0d2fadb0828bd
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228089"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55869642"
 ---
 # <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство. Получение данных правильного формата из высказывания
 В этом руководстве создается приложение для извлечения согласованно отформатированных данных из фразы с помощью сущности **регулярного выражения**.

@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием Ruby.
 services: cognitive-services
 author: anrothMSFT
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: emotion-api
 ms.topic: quickstart
 ms.date: 05/23/2017
-ms.author: anroth
+ms.author: nitinme
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9ab0f4128e163ca887cf8f03425e33f3fbb6f01a
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: b1bddbffa3a58158b3a87c4681557ff8f10a6334
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55221986"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232679"
 ---
 # <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство. Создание приложения для распознавания эмоций лица на изображении
 

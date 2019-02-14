@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
-ms.openlocfilehash: 0e6ffb7f797746fed30520c1c99130ff585909a9
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a121ea3815ea9405615c3302b2f3566b79695fe6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697872"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183356"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloudpassage"></a>Руководство. Интеграция Azure Active Directory с CloudPassage
+# <a name="tutorial-azure-active-directory-integration-with-cloudpassage"></a>Руководство по Интеграция Azure Active Directory с CloudPassage
 
 В этом учебнике описано, как интегрировать приложение CloudPassage с Azure Active Directory (Azure AD).
 Интеграция приложения CloudPassage с Azure AD обеспечивает следующие преимущества.

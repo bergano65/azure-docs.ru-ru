@@ -8,12 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: 9e257c14c952a9458bf6652ec20ef9216bcaaea4
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: ef044d5ccba706ebc0c7102414cb1e2b42b537cb
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55091569"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242164"
 ---
 # <a name="apply-tag-and-its-default-value"></a>Применение тега и его значения по умолчанию
 
@@ -79,7 +79,7 @@ PowerShell также поддерживает `-PolicyParameterObject`, тре�
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
-[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ### <a name="deploy-with-azure-powershell"></a>Развертывание с помощью Azure PowerShell
 

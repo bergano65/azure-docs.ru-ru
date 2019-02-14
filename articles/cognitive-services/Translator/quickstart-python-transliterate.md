@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного письма в другое с помощью Python и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: dd875fe19bdf9d02fc7217b66c8fd442abef2d42
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 845ce074b503dc395ce3444734b16d4ab8224e89
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700270"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55876272"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-python"></a>Краткое руководство. Транслитерация текста с помощью Python и API перевода текстов
 

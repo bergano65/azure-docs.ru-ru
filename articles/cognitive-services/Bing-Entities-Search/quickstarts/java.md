@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска сущностей с помощью Java и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 5adf40648118f8eb6c33df80ba3e30208f1b2059
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: ba8d1fa44ca3eacf4c8feeede18b594dfe72ea37
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813404"
+ms.locfileid: "55884126"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-java"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Java
 
@@ -223,4 +223,4 @@ ms.locfileid: "55813404"
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
 * [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Bing Entity Search API v7 reference ](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference) (Справочник по версии 7 API Bing для поиска сущностей).
+* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)

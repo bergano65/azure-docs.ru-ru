@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 43305efc146151d131152e712869e283af65f0b2
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: ddf36c97a8aebd3cd7446dca07e77c7f743afcb9
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359771"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982953"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Что собой представляет SQL Server на виртуальных машинах Azure (Windows)
 
@@ -86,7 +86,7 @@ ms.locfileid: "54359771"
 С помощью PowerShell вы можете развернуть старую версию образа SQL Server, недоступного на портале Azure. Чтобы просмотреть все доступные образы с помощью PowerShell, воспользуйтесь приведенной ниже командой.
 
   ```PowerShell
-  Get-AzureRmVMImageOffer -Location $Location -Publisher 'MicrosoftSQLServer'
+  Get-AzVMImageOffer -Location $Location -Publisher 'MicrosoftSQLServer'
   ```
 
 Дополнительные сведения о том, как развернуть виртуальные машины SQL Server с помощью PowerShell, см. в статье [Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell](virtual-machines-windows-ps-sql-create.md).

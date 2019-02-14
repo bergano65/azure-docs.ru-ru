@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как отправлять запросы в REST API Поиска сущностей Bing с помощью C# и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 63890d916f80fbfac7173abd0df9e559bcd0b76b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: b61db97cec77fc724933c2b4e7d3fa7f7afc0ab6
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754937"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884959"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
 
@@ -170,4 +170,4 @@ ms.locfileid: "55754937"
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
 * [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Bing Entity Search API v7 reference](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference) (Справочник по API Поиска сущностей Bing версии 7)
+* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)

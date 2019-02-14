@@ -31,6 +31,8 @@ items:
     href: azure-maps-event-grid-integration.md
   - name: Выбор ценовой категории
     href: choose-pricing-tier.md
+  - name: Аутентификация в Azure Maps
+    href: azure-maps-authentication.md
   - name: Покрытие
     items:
     - name: Наличие информации о геокодировании
@@ -49,8 +51,10 @@ items:
   items:
   - name: Управление учетными записями службы "Карты"
     items:
-    - name: Управление учетными записями и ключами
+    - name: Управление учетными записями
       href: how-to-manage-account-keys.md
+    - name: Управление аутентификацией
+      href: how-to-manage-authentication.md
     - name: Управление ценовой категорией
       href: how-to-manage-pricing-tier.md
     - name: Просмотр метрик использования
@@ -59,6 +63,8 @@ items:
     items:
     - name: Поиск адреса
       href: how-to-search-for-address.md
+    - name: Отображение пользовательских данных на статической карте
+      href: how-to-render-custom-data.md
   - name: Создание карт JavaScript
     items:
     - name: Использование элемента управления картой
@@ -99,6 +105,10 @@ items:
       href: map-events.md
     - name: Доступные приложения карт
       href: map-accessibility.md
+  - name: Создание карт для Android
+    items:
+    - name: Как использовать элемент управления картой в Android
+      href: how-to-use-android-map-control-library.md
 - name: Справочные материалы
   items:
   - name: Расширения параметров и API
@@ -183,9 +193,9 @@ items:
     href: https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured
   - name: Видеоролики
     href: https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo
-ms.openlocfilehash: 0fb1d864dd18a781d0eeba4c8dea610e3ccb07f2
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 6a657596cb266db20404d7f2ec1074834d181772
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999459"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56111056"

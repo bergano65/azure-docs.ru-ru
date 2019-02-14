@@ -15,18 +15,18 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: fryu
-ms.openlocfilehash: 5e1505794097ac6d67997841cade46013686377f
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: f1e905b0b67048a10f6eb455d77275375a99dbd0
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53627765"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245411"
 ---
 # <a name="calculate-the-total-billing-size-of-a-blob-container"></a>Вычисление общего указываемого в счете размера контейнера больших двоичных объектов
 
 В этом скрипте вычисляется размер контейнера в хранилище BLOB-объектов Azure для оценки затрат при выставлении счетов. При помощи скрипта вычисляется суммарный размер больших двоичных объектов в контейнере.
 
-[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

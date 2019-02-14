@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: С помощью API Bing для поиска сущностей вы можете извлекать и искать сущности и места на основе поисковых запросов.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: overview
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: b1d46d125d390f8612c5708e1964e0626acde343
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: e78cc86a91e229b5d4d4aead5709da2f694ecac1
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55757795"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895369"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
 
@@ -174,7 +174,7 @@ ms.locfileid: "55757795"
 
 ## <a name="find-places"></a>Поиск мест
 
-Поле `places` является объектом [LocalEntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#localentityanswer), который содержит список объектов [Место](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#place) (дополнительные сведения см. в разделе [Типы сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types)). Список содержит одну или несколько локальных сущностей, которые соответствуют запросу.
+Поле `places` является объектом [LocalEntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference), который содержит список объектов [Место](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#place) (дополнительные сведения см. в разделе [Типы сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types)). Список содержит одну или несколько локальных сущностей, которые соответствуют запросу.
 
 Места включают рестораны, гостиницы или локальные организации. Поле [EntityPresentationInfo](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entitypresentationinfo) содержит указания, которые определяют тип локальной сущности. Список содержит перечисленные указания, например место, локальные организации, ресторан. Каждое последующее указание в массиве сужает тип сущности. Список возможных типов см. в разделе [Entity Types](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types) (Типы сущностей).
 

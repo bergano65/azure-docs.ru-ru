@@ -1,21 +1,21 @@
 ---
-title: Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+title: Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
 description: Это одностраничное приложение показывает, как можно использовать API Bing для поиска в Интернете, чтобы извлекать, анализировать и отображать актуальные результаты поиска в одностраничном приложении.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
 ms.date: 09/12/2018
 ms.author: aahi
-ms.openlocfilehash: 13040cf7f75b8bf2c0bf898dc4f3b16c99a80560
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 6c28b02d68239bac658954caf447b6ff738c1b65
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172483"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55881254"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 

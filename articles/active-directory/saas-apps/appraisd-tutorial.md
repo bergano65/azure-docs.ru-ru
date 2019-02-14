@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Appraisd.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 44d4988ff68d5ccca575fc29ec3f0b7dce0bf948
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8afd2201d55dfed94cf8f0dd34ca26870c0cc324
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765438"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56169366"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство. Интеграция Azure Active Directory с Appraisd
+# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство по Интеграция Azure Active Directory с Appraisd
 
 В этом руководстве описано, как интегрировать Appraisd с Azure Active Directory (Azure AD).
 Интеграция Appraisd с Azure AD обеспечивает следующие преимущества.

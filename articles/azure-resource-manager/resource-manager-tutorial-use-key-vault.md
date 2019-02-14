@@ -14,14 +14,16 @@ ms.date: 01/25/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 0e73177ca49a9a100b45712833b1310d54852680
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 979867e7630c21b0bd724967dbc79c5f8155ca5e
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498018"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237184"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Узнайте, как получить секреты из Azure Key Vault и передавать эти секреты в качестве параметров во время развертывания Resource Manager. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
@@ -166,6 +168,7 @@ ms.locfileid: "55498018"
         }
     },
     ```
+
     Замените **идентификатор** идентификатором ресурса вашего хранилища ключей, созданным на предыдущем этапе.  
 
     ![Интеграция Key Vault и файла параметров развертывания виртуальной машины шаблона Resource Manager](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-create-vm-parameters-file.png)
@@ -180,12 +183,11 @@ ms.locfileid: "55498018"
 За инструкциями по развертыванию шаблона обратитесь к [этому разделу](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Вам нужно отправить оба файла — **azuredeploy.json** и **azuredeploy.parameters.json** в Cloud Shell. После этого используйте следующий сценарий PowerShell для развертывания шаблона:
 
 ```azurepowershell
-$deploymentName = Read-Host -Prompt "Enter the name for this deployment"
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
 
 New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -Name $deploymentName `
+New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
     -TemplateFile azuredeploy.json `
     -TemplateParameterFile azuredeploy.parameters.json

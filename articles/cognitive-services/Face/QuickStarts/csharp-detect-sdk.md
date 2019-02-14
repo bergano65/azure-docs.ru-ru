@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определять лица на изображении с помощью пакета SDK распознавания лиц Azure и C#.
 services: cognitive-services
 author: PatrickFarley
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.author: pafarley
-ms.openlocfilehash: caaef0f7fdbfc3ad639deddb328c98334ad3e99d
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 4cad8a01ac70e1f75603d275c621b53cf5595577
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55213329"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55860666"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с использованием пакета SDK службы "Распознавание лиц" для .NET
 
@@ -97,4 +97,4 @@ Male 37   Female 56
 В этом кратком руководстве вы создали простое консольное приложение .NET, которое может использовать службу API распознавания лиц для распознавания лиц на локальных и удаленных изображениях. Перейдите к более подробному руководству, чтобы узнать, как можно интуитивно понятным образом предоставлять информацию о лицах пользователю.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)
+> [Руководство Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)

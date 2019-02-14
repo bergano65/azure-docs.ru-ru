@@ -1,24 +1,24 @@
 ---
-title: Руководство. Распознавание эмоций лица на изображении — API распознавания эмоций с использованием Python
+title: Руководство по Распознавание эмоций лица на изображении — API распознавания эмоций с использованием Python
 titlesuffix: Azure Cognitive Services
 description: Чтобы научиться использовать API распознавания эмоций с Python, используйте записную книжку Jupyter. Визуализируйте полученные результаты с помощью популярных библиотек.
 services: cognitive-services
 author: anrothMSFT
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: emotion-api
 ms.topic: tutorial
 ms.date: 05/23/2017
-ms.author: anroth
+ms.author: nitinme
 ROBOTS: NOINDEX
-ms.openlocfilehash: ea96495fb9fa453f7c7f9d6a870291329d2793b2
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9e03e5d534fa741def2010a21120edc3d7169964
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220541"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237473"
 ---
-# <a name="tutorial-use-the-emotion-api-with-a-jupyter-notebook--python"></a>Руководство. Использование API распознавания эмоций с помощью Jupyter Notebook и Python
+# <a name="tutorial-use-the-emotion-api-with-a-jupyter-notebook--python"></a>Руководство по Использование API распознавания эмоций с помощью Jupyter Notebook и Python
 
 > [!IMPORTANT]
 > 15 февраля 2019 г. API распознавания эмоций будет отмечен как нерекомендуемый. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/). 

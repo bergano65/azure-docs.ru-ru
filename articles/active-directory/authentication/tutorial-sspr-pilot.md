@@ -10,12 +10,13 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 7b84e36ae447adcf36fae90b61564bc06c3bae89
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0fe472a45d99f966c851934ea44a346326cb4201
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55081557"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175155"
 ---
 # <a name="tutorial-complete-an-azure-ad-self-service-password-reset-pilot-roll-out"></a>Руководство. Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD
 

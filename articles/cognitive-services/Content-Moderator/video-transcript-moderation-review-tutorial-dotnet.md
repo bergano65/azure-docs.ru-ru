@@ -1,21 +1,21 @@
 ---
-title: Руководство. Модерация видео и расшифровок речи с использованием .NET — Content Moderator
+title: Руководство по Модерация видео и расшифровок речи с использованием .NET — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: В этом руководстве содержатся сведения о создании решения модерации видео и расшифровок с использованием автоматизированной модерации и создания проверок человеком в процессе.
 services: cognitive-services
 author: sanjeev3
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 601c282e6b3339537c3ad419098f55116a40955f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: e3578c08b78894c2f9a858e97c7cbe2d260731c5
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55208880"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55878754"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство. Модерация видео и расшифровок речи
 

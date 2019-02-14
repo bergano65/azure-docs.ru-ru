@@ -5,18 +5,18 @@ description: Интеллектуальная служба распознава�
 services: cognitive-services
 author: diberry
 ms.custom: seodec18
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: diberry
-ms.openlocfilehash: 160721560b6cf311f146cd0f48ae719d95b30a0f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: ade09c7527e62112ac7225df21e25d4139d99e58
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206295"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55879008"
 ---
 # <a name="prebuilt-entities-to-recognize-common-data-types"></a>Предварительно созданные сущности для распознавания распространенных типов данных
 

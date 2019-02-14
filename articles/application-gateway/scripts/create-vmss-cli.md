@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: b2485b65c54bdd5dcd523226e17c180bf1eb86a6
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 99d0939b30d04fbd5c0eb7a287105bb4cf27e9f4
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734204"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116768"
 ---
 # <a name="manage-web-traffic-using-the-azure-cli"></a>Управление веб-трафиком с помощью Azure CLI
 
@@ -47,12 +47,12 @@ az group delete --name myResourceGroupAG --yes
 
 | Команда | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) | Создает виртуальную сеть. |
-| [az network vnet subnet create](https://docs.microsoft.com/cli/azure/network/vnet/subnetwork) | Создает подсеть в виртуальной сети. |
+| [az network vnet subnet create](https://docs.microsoft.com/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) | Создает подсеть в виртуальной сети. |
 | [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest) | Создает общедоступный IP-адрес для шлюза приложений. |
 | [az network application-gateway create](https://docs.microsoft.com/cli/azure/network/application-gateway?view=azure-cli-latest) | Создание шлюза приложений. |
-| [az vmss create](https://docs.microsoft.com/cli/azure/vmss#az-vmss-create) | Создает масштабируемый набор виртуальных машин. |
+| [az vmss create](https://docs.microsoft.com/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин. |
 | [az network public-ip show](https://docs.microsoft.com/cli/azure/network/public-ip) | Получает общедоступный IP-адрес для шлюза приложений. |
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и Node.js.
 services: cognitive-services
 author: PatrickFarley
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: 3b0eefb7471061e7e3547898b2edf02ed0f94ccf
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9b30e9da523e564f531ec8e9cebe5b16653e579f
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210086"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55858881"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 

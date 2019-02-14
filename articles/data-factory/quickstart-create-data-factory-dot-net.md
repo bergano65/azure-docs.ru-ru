@@ -13,19 +13,20 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 03/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 25a1913fba3e66e65b3c785eb6ce1738c5f00a26
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9846422405df491124a101a7898f356a1d9fb1d8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247931"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998677"
 ---
-# <a name="create-a-data-factory-and-pipeline-using-net-sdk"></a>Создание фабрики данных и конвейера с помощью пакета SDK .NET
+# <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
+
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-dot-net.md)
 
-В этом кратком руководстве описано создание фабрики данных Azure с помощью пакета SDK .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью фабрики данных Azure см. в [руководстве по преобразованию данных с помощью Spark](transform-data-using-spark.md). 
+В этом кратком руководстве описано создание фабрики данных Azure с помощью пакета SDK .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](transform-data-using-spark.md). 
 
 > [!NOTE]
 > Эта статья не содержит подробный обзор службы фабрики данных. Общие сведения о службе фабрики данных Azure см. в статье [Введение в фабрику данных Azure](introduction.md).
@@ -67,7 +68,6 @@ ms.locfileid: "51247931"
     Install-Package Microsoft.Azure.Management.DataFactory -Prerelease
     Install-Package Microsoft.Azure.Management.ResourceManager -Prerelease
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
-
     ```
 
 ## <a name="create-a-data-factory-client"></a>Создание клиента фабрики данных
@@ -85,7 +85,7 @@ ms.locfileid: "51247931"
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     ```
 
-2. Добавьте следующий код в метод **Main**, который задает следующие переменные. Замените заполнители своими собственными значениями. Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+2. Добавьте следующий код в метод **Main**, который задает следующие переменные. Замените заполнители своими собственными значениями. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
     ```csharp
     // Set variables
@@ -299,7 +299,8 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 
 Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как [обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), чтобы проверить, скопирован ли большой двоичный объект в outputBlobPath из inputBlobPath, как указано в переменных.
 
-### <a name="sample-output"></a>Пример выходных данных: 
+### <a name="sample-output"></a>Пример выходных данных
+
 ```json
 Creating data factory SPv2Factory0907...
 {

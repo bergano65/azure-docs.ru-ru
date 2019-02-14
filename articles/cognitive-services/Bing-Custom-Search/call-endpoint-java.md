@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Сведения из этого краткого руководства помогут вам приступить к выполнению запросов к результатам поиска из экземпляра службы "Пользовательский поиск Bing" на Java.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: aahi
-ms.openlocfilehash: f0f6981d899248877ca1cd1d580a004933815b96
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: ece4a8a7b0d311484f632b03ba12c71ce19190a2
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171836"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55868639"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-java"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Java
 

@@ -13,14 +13,15 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: ae3fcfe4e76988d2ff9b7686566941db01ceb08e
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 45f0cbc25028f3708c2f649287bc7fa8581e001f
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54426715"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005307"
 ---
-# <a name="create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Создание фабрики данных Azure и конвейера с помощью REST API
+# <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Краткое руководство. Создание фабрики данных Azure и конвейера с помощью REST API
+
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-rest-api.md)

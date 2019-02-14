@@ -5,20 +5,20 @@ description: Используйте шаблон для извлечения д�
 ms.custom: seodec18
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 18c02babe401ed995062e792fab6920a88379729
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 866e93c81e5c4f7ad38528ae937317fde3a3f45d
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212127"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55857062"
 ---
-# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство. Извлечение контекстуально связанных шаблонов с использованием ролей
+# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство по Извлечение контекстуально связанных шаблонов с использованием ролей
 
 В этом руководстве используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Высказывание шаблона использует простой объект и роли для извлечения связанных данных, таких как местоположение и место назначения.  При использовании шаблонов для намерения требуется меньшее количество примеров высказываний.
 

@@ -1,23 +1,23 @@
 ---
-title: Руководство. Получение результатов автозаполнения с помощью API автозаполнения Bing
+title: Руководство по Получение результатов автозаполнения с помощью API автозаполнения Bing
 titlesuffix: Azure Cognitive Services
 description: Исходный код для руководства по использованию API автозаполнения Bing в одностраничном веб-приложении.
 services: cognitive-services
 author: v-jaswel
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: tutorial
 ms.date: 10/04/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 6fdb72b92a444b889ddfafd0ceecbb4fab6570c8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: b1bd2d7065dea5efecddb82699a7dc474bac9b34
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171258"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55881062"
 ---
-# <a name="tutorial-single-page-web-app"></a>Руководство. Одностраничные веб-приложения
+# <a name="tutorial-single-page-web-app"></a>Руководство по Одностраничные веб-приложения
 
 Здесь приводится полный исходный код, описанный в [руководстве по одностраничным приложениям](autosuggest.md), для API автозаполнения Bing. Чтобы запустить приложение, скопируйте исходный код, вставьте его в текстовый редактор и сохраните файл как `autosuggest.html`. Затем откройте сохраненный файл в веб-браузере.
 

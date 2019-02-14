@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Понятия, связанные с определением торговых марок и логотипов с помощью API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 01/26/2019
 ms.author: pafarley
-ms.openlocfilehash: a8822eb773842df3ea6fd50cd2a6ba36c3c4cd88
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: a5cf4a2b0f5e2e2c83e9fe6aa9237c943fa23ed9
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55569366"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55864814"
 ---
 # <a name="brand-detection"></a>Обнаружение торговых марок
 
@@ -93,5 +93,5 @@ ms.locfileid: "55569366"
 ## <a name="use-the-api"></a>Использование API
 Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Получив полный ответ JSON, просто выполните анализ строки для поиска содержимого раздела `"brands"`.
 
-* [Краткое руководство. Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
-* [Краткое руководство. Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)
+* [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
+* [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)

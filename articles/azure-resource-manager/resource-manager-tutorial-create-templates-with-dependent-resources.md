@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5cfda4ddbf51f51d76b4ede2e44f768bd3261780
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 2dc9d72afd14547a091acf64cea2c8f0bad75914
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55491762"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234413"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -114,6 +114,8 @@ ms.locfileid: "55491762"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Существует множество методов по развертыванию шаблонов.  В этом руководстве используется Cloud Shell на портале Azure.
 
 1. Войдите в [Cloud Shell](https://shell.azure.com). 
@@ -140,7 +142,6 @@ ms.locfileid: "55491762"
 7. Выполните следующие команды PowerShell в командной строке Cloud Shell. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
 
     ```azurepowershell
-    $deploymentName = Read-Host -Prompt "Enter the name for this deployment"
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
     $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
     $adminUsername = Read-Host -Prompt "Enter the virtual machine admin username"
@@ -148,13 +149,14 @@ ms.locfileid: "55491762"
     $dnsLabelPrefix = Read-Host -Prompt "Enter the DNS label prefix"
 
     New-AzResourceGroup -Name $resourceGroupName -Location $location
-    New-AzResourceGroupDeployment -Name $deploymentName `
+    New-AzResourceGroupDeployment `
         -ResourceGroupName $resourceGroupName `
         -adminUsername $adminUsername `
         -adminPassword $adminPassword `
         -dnsLabelPrefix $dnsLabelPrefix `
         -TemplateFile azuredeploy.json
     ```
+
 8. Для отображения вновь созданной виртуальной машины выполните следующую команду PowerShell.
 
     ```azurepowershell

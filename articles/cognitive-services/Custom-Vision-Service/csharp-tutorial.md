@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с помощью .NET SDK и C#
 services: cognitive-services
 author: anrothMSFT
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 10/31/2018
 ms.author: anroth
-ms.openlocfilehash: 01c4da98bbc89a49007aa7064907abd9ed01cc0d
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: fd6ff54b490e3f389439d3831c7a249d4c928450
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227545"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884891"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
 

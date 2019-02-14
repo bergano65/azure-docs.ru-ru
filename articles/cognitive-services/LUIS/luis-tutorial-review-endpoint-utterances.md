@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Повышение точности прогнозирования приложения путем проверки или корректировки высказываний, полученных через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 30927f4a8213f3ca8b94a2c799e6204be003e2a7
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 88ac9f07fb8791ca3d64123663b0380a56220cdd
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55213214"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55865963"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство. Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого руководства вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя высказывания, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания необходимо проверять на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS. 

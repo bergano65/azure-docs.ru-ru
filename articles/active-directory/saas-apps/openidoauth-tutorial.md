@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/07/2019
 ms.author: jeedes
-ms.openlocfilehash: f2ed840065b4efd4b0e519333307388dca61827d
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0742a08e0169d47307f28ff08491b0f7c7c4a914
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54807020"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201522"
 ---
 # <a name="configure-an-openidoauth-application-from-the-azure-ad-app-gallery"></a>Настройка приложения OpenID или OAuth из коллекции приложений Azure AD
 
@@ -27,7 +28,7 @@ ms.locfileid: "54807020"
 
 1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png))
+    ![Кнопка Azure Active Directory](common/select-azuread.png))
 
 2. Выберите **Корпоративные приложения** > **Все приложения**.
 
@@ -35,7 +36,7 @@ ms.locfileid: "54807020"
 
 3. В верхней части диалогового окна выберите **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите имя приложения. Выберите нужное приложение на панели результатов и выполните его регистрацию.
 

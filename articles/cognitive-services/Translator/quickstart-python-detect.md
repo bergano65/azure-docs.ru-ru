@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и Python определить язык заданного текста.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 70b73fec4a6955bc1fcc91cb3895b07fd667ebca
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 5aee82695a5172f590f5e117058961187ef27a0d
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692768"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55856960"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-python"></a>Краткое руководство. Определение языка текста с помощью API перевода текстов и Python
 

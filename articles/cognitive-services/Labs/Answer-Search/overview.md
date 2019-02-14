@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Общие сведения о службе поиска ответов в проекте.
 services: cognitive-services
 author: mikedodaro
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: answer-search
 ms.topic: overview
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: cb02c9067e4d672b0aace4caf13e4c8f0d718afb
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 1898a4576b86d7abb302e325aef827bab6b9d7dd
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220201"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55877428"
 ---
 # <a name="what-is-project-answer-search"></a>Общие сведения о службе поиска ответов в проекте
 API службы поиска ответов в проекте возвращает ответы на вопросительные запросы с помощью конечной точки Bing версии 7. Вопросительный запрос, например "Какова окружность Земли?", возвращает ответ с фактическими данными.  Запрос сведений о человеке, месте или предмете возвращает информацию об определенной сущности. Этот сценарий можно использовать в приложениях, например в чат-ботах, приложениях обмена сообщениями, устройствах чтения и т. д.  

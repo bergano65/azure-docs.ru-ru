@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Управляйте настройками учетной записи пользователя и ключом разработки всех своих приложений с помощью веб-сайта LUIS.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 51b0d3f753ab89e5809e610f5754355d1c5090b0
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9fc1882a56c0e1bccdfbb658dac83e4c231ef261
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228633"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55879094"
 ---
 # <a name="manage-account-and-authoring-key"></a>Управление учетной записью и ключом разработки
 Чтобы использовать учетную запись LUIS необходимо иметь в наличии два таких ключевых элемента, как учетная запись пользователя и ключ разработки. Сведения для входа управляются с сайта [account.microsoft.com](https://account.microsoft.com). Ключ разработки управляется из веб-сайта [LUIS](luis-reference-regions.md) со страницы **Параметры**. 

@@ -1,26 +1,26 @@
 ---
 title: Краткое руководство по созданию приложения Python, в котором используется кэш Redis для Azure | Документация Майкрософт
 description: Из этого краткого руководства вы узнаете, как создать приложение Python, в котором используется кэша Redis для Azure.
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: v-lincan
 ms.assetid: f186202c-fdad-4398-af8c-aee91ec96ba3
 ms.service: cache
 ms.devlang: python
 ms.topic: quickstart
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 05/11/2018
-ms.author: wesmc
+ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: e9faf30d591cab513695ece1d68704e5bef4ce9c
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: f34021ee657626b3cf81e39ba01cafb3af5d1f50
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53018936"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238000"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-python"></a>Краткое руководство. Использование кэша Redis для Azure с приложениями Python
 
@@ -115,7 +115,7 @@ for c in result:
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
 
-![Delete](./media/cache-web-app-howto/cache-delete-resource-group.png)
+![Delete (Удалить)](./media/cache-web-app-howto/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 

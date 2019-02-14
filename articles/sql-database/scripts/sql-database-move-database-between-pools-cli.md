@@ -7,17 +7,17 @@ ms.subservice: elastic-pools
 ms.custom: ''
 ms.devlang: azurecli
 ms.topic: sample
-author: douglaslMS
-ms.author: douglasl
+author: CarlRabeler
+ms.author: carlrab
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: a70af29c07c532b43fdf25d0517ae880bfd3cff8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2c01c2f588ae0f26dc1cb2430ddadac30351b3d7
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476338"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56097991"
 ---
 # <a name="use-cli-to-move-an-azure-sql-database-in-a-sql-elastic-pool"></a>Перемещение базы данных Azure SQL в эластичном пуле SQL с помощью интерфейса командной строки
 

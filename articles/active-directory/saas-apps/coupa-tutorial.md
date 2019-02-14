@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c657f4662a0b57b1c2e9414d89d6618c4eefc527
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 558dc96f0bdd3aec12bf129f72b2ad067a130171
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765689"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172541"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство. Интеграция Azure Active Directory с Coupa
+# <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство по Интеграция Azure Active Directory с Coupa
 
 В этом руководстве описано, как интегрировать Coupa с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Coupa обеспечивает следующие преимущества.

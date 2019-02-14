@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: 0f36439cba4a946fb05466f2d961e537196f0095
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 60296400c40a1e79758dc53d60d2f1c61d79fd88
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818606"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108200"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы виртуальной сети
 
@@ -34,7 +34,7 @@ ms.locfileid: "55818606"
 - **[Сервер Базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия в регионах Azure, в которых доступна служба базы данных.
 - **[Сервер Базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия в регионах Azure, в которых доступна служба базы данных.
 - **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех общедоступных регионах Azure.
-- **[Azure Key Vault](https://blogs.technet.microsoft.com/kv/2018/06/25/announcing-virtual-network-service-endpoints-for-key-vault-preview/)**: общедоступная версия во всех общедоступных регионах Azure.
+- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)**: общедоступная версия во всех общедоступных регионах Azure.
 - **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех общедоступных регионах Azure.
 - **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех общедоступных регионах Azure.
 - **[Azure Data Lake Store 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.

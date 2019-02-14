@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 03ebdabf60882a73eb15cbd36481068591bbd3bc
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 234febe92727e5a47d4cfc5b836cd5593e99b5b5
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086289"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238374"
 ---
 # <a name="migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
@@ -36,6 +36,8 @@ ms.locfileid: "53086289"
 > * Проверка собранных данных в хранилище данных SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 - [Visual Studio 2017 версии 15.3.2 или более поздней](https://www.visualstudio.com/vs/). Вместе с программой нужно установить следующие рабочие нагрузки: разработка классических приложений .NET, разработка Azure, разработка ASP.NET и веб-разработка, разработка Node.js и Python.
 - Скачайте [пример Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). Пример решения состоит из следующих компонентов:
@@ -82,9 +84,9 @@ az group deployment create \
 Чтобы развернуть этот шаблон с помощью PowerShell, выполните следующие команды.
 
 ```powershell
-New-AzureRmResourceGroup -Name rgDataMigration -Location westcentralus
+New-AzResourceGroup -Name rgDataMigration -Location westcentralus
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName rgDataMigration -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json -eventHubNamespaceName <event-hub-namespace> -eventHubName hubdatamigration -sqlServerName <sql-server-name> -sqlServerUserName <user-name> -sqlServerDatabaseName <database-name> -storageName <unique-storage-name> -functionAppName <app-name>
+New-AzResourceGroupDeployment -ResourceGroupName rgDataMigration -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json -eventHubNamespaceName <event-hub-namespace> -eventHubName hubdatamigration -sqlServerName <sql-server-name> -sqlServerUserName <user-name> -sqlServerDatabaseName <database-name> -storageName <unique-storage-name> -functionAppName <app-name>
 ```
 
 

@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API анализа текста в Cognitive Services в Azure.
 services: cognitive-services
 author: noellelacharite
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: nolachar
-ms.openlocfilehash: fdca883e2637998222bfcc4cdc799fe4dec4ab13
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 0bf4e1f24d88b5fb1dbe92834dd7d78bc9b791d6
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223312"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55862111"
 ---
 # <a name="quickstart-using-java-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Java для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>

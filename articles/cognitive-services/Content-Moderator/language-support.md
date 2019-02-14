@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Список естественных языков, поддерживаемых API Content Moderator.
 services: cognitive-services
 author: sanjeev3
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 91fe93df29717519e6bf3fcdb39b97b8ffde02d1
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: cd3bea5cca741f03d292a685f85cad2be247cfbf
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55225191"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55865891"
 ---
 # <a name="language-support-for-content-moderator-api"></a>Поддержка языков в API Content Moderator
 

@@ -7,14 +7,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: tutorial
 ms.date: 02/01/2019
-ms.openlocfilehash: d87248f778c6c39cc64b1cc4725cd61d029ce040
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: e1a0dda4c13baf7fc2e5ba65d599db8c74591adb
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55664746"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893244"
 ---
-# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache HBase в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache HBase в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Apache HBase с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к различным семействам столбцов в таблице HBase.
 
@@ -45,7 +45,7 @@ ms.locfileid: "55664746"
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
 
-В статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds#create-a-domain-joined-hdinsight-cluster) можно узнать, как создать пользователей домена **sales_user1** и **marketing_user1**. В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
+В статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds) можно узнать, как создать пользователей домена **sales_user1** и **marketing_user1**. В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
 
 ## <a name="create-hbase-tables-and-import-sample-data"></a>Создание таблиц HBase и импорт примера данных
 

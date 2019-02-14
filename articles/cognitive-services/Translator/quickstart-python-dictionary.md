@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Python и REST API перевода текстов.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 4ca07416c615984b4eb6c7799ff17d9fbe43fa3b
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: a97b958e241b216440a470e5eca86ebdf02adbe2
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55691476"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55857317"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-python"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Python
 

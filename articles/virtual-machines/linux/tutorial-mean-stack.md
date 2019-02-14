@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 08/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 84860b5098e141bdfbd924d86836bc7b48b0ce8f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 97734ad6119e89c00634035b1646bc29ac6549bd
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754223"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237874"
 ---
-# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство. Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
+# <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство по Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
 
 В этом руководстве описано, как реализовать стек MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure. Созданный вами стек MEAN позволяет добавлять, удалять и перечислять книги в базе данных. Вы узнаете, как выполнять следующие задачи:
 
@@ -134,7 +134,7 @@ sudo apt-get install -y nodejs
 
 6. Создайте папку с именем *Books* и добавьте в нее файл с именем *server.js*, который содержит конфигурацию для веб-сервера.
 
-    ```node.js
+    ```javascript
     var express = require('express');
     var bodyParser = require('body-parser');
     var app = express();
@@ -159,7 +159,7 @@ sudo apt-get install -y nodejs
 
 2. В папке *Books* создайте папку с именем *apps* и добавьте файл с именем *routes.js* с заданными экспресс-маршрутами.
 
-    ```node.js
+    ```javascript
     var Book = require('./models/book');
     module.exports = function(app) {
       app.get('/book', function(req, res) {
@@ -201,7 +201,7 @@ sudo apt-get install -y nodejs
 
 3. В папке *apps* создайте папку с именем *models* и добавьте файл с именем *book.js* с заданной конфигурацией модели книги.  
 
-    ```node.js
+    ```javascript
     var mongoose = require('mongoose');
     var dbHost = 'mongodb://localhost:27017/test';
     mongoose.connect(dbHost);
@@ -223,7 +223,7 @@ sudo apt-get install -y nodejs
 
 1. Перейдите обратно в каталог *Books* (`cd ../..`), а затем создайте папку с именем *public* и добавьте файл с именем *script.js* с заданной конфигурацией контроллера.
 
-    ```node.js
+    ```javascript
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
       $http( {

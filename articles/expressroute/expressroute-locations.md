@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2018
 ms.author: pareshmu
-ms.openlocfilehash: f3b8ab2d40cf077d856b506a54ef98dbb5b699fe
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 913661b1d4360eba90d7e827d08d1b48bc7b4e71
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746546"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244408"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -82,7 +82,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **[Ascenty Data Centers](https://ascenty.com/servicos/cloud-connect/microsoft-expressroute/)** |Поддерживаются |Поддерживаются |Сан-Паулу |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживаются |Поддерживаются |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Сидней, Сингапур, Токио, Торонто, Чикаго |
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживаются |Поддерживаются |Квебек, Монреаль, Торонто |
-| **[British Telecom](https://globalservices.bt.com/en/solutions/products/bt-compute-for-microsoft-azure)** |Поддерживаются |Поддерживаются |Амстердам, Гонконг, Лондон, Сан-Паулу, Кремниевая долина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
+| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/bt-compute-for-microsoft-azure)** |Поддерживаются |Поддерживаются |Амстердам, Гонконг, Лондон, Сан-Паулу, Кремниевая долина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **C3ntro** |Скоро |Скоро |Майами |
 | **CDC** | Поддерживаются | Поддерживаются | Канберра, Канберра 2 |
 | **[CenturyLink Cloud Connect](http://www.centurylink.com/cloudconnect)** |Поддерживаются |Поддерживаются |Кремниевая долина, Лас-Вегас, Нью-Йорк, Сан-Антонио, Токио, Торонто |

@@ -15,18 +15,18 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 06/13/2017
 ms.author: tamram
-ms.openlocfilehash: b98b42be170c37710435d1aad61707a4ed01851f
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: e0c41ed1fc2cdb7559d36a7056ebb7b9a6ecc186
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54214426"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242776"
 ---
 # <a name="delete-containers-based-on-container-name-prefix"></a>Удаление контейнеров на основе префикса имени
 
 Приведенный в этой статье скрипт удаляет контейнеры в хранилище BLOB-объектов Azure на основе определенного префикса имени.
 
-[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

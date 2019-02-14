@@ -1,21 +1,21 @@
 ---
-title: Руководство. Создание одностраничного приложения для Поиска видео Bing
+title: Руководство по Создание одностраничного приложения для Поиска видео Bing
 titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как использовать API Bing для поиска видео в одностраничном веб-приложении.
 services: cognitive-services
 author: mikedodaro
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: rosh
-ms.openlocfilehash: f3a13bf15ed1ef1629cd17af43a0f71df80b1349
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 034ea49322f213971f549673a1d179a301585c96
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567542"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55875219"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство. Одностраничное приложение для поиска видео
 API Bing для поиска видео позволяет выполнять поиск в Интернете и получать результаты видео, относящиеся к поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска в Интернете для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.

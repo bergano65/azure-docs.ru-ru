@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 7b7a239d6c96d1d5b257828ebd49c25c5bafc827
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 2c80f988583571f3394a29747a6f452951cea878
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700814"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978040"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image-preview"></a>Создание функции в Linux из пользовательского образа (предварительная версия)
 
@@ -93,7 +93,7 @@ cd MyFunctionProj
 
 Просмотрите _Dockerfile_ в корневой папке проекта. В этом файле описана среда для запуска приложения-функции на платформе Linux. Следующий пример — Dockerfile. Он создает контейнер, который запускает приложение-функцию в среде выполнения рабочей роли JavaScript (Node.js): 
 
-```docker
+```Dockerfile
 FROM mcr.microsoft.com/azure-functions/node:2.0
 
 ENV AzureWebJobsScriptRoot=/home/site/wwwroot
@@ -232,7 +232,7 @@ az functionapp create --name <app_name> --storage-account  <storage_name>  --res
 В нашем случае `<storage_account>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 
 ```azurecli-interactive
-storageConnectionString=$(az storage account show-connection-string \
+$storageConnectionString=$(az storage account show-connection-string \
 --resource-group myResourceGroup --name <storage_account> \
 --query connectionString --output tsv)
 

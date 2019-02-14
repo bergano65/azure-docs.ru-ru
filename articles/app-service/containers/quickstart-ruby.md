@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 01/23/2019
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: e57142631668ba0b74573b2953e84f581023b24f
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: c5858aaf09cd832a5d60d32bb33aeeb51795b406
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660652"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55870441"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 
@@ -53,7 +53,7 @@ git clone https://github.com/Azure-Samples/ruby-docs-hello-world
 
 Первый этап — установка необходимых пакетов. Пример содержит `Gemfile`, поэтому вам не нужно указывать все пакеты для установки. Для этого мы будем использовать средство увязки в пакеты.
 
-```
+```bash
 bundle install
 ```
 

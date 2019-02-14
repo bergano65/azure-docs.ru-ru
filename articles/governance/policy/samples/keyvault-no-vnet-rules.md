@@ -8,12 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: 8269e06d3e2fd92e0d20fbc3dc84d0a1b6761cda
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: c9a5359303c1feecfbc905099a1bed2fc10fa52d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658442"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245802"
 ---
 # <a name="key-vault-vaults-with-no-virtual-network-endpoints"></a>Аудит хранилищ Key Vault для обнаружения экземпляров без конечных точек виртуальной сети
 
@@ -56,7 +56,7 @@ JSON определяет правила политики, используем�
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
-[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ### <a name="deploy-with-azure-powershell"></a>Развертывание с помощью Azure PowerShell
 

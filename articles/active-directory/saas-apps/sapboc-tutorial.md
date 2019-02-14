@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.openlocfilehash: ae2a28dea5fe240bbf216e8ec92f29c186c92255
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 927b1b963c97dc62e1776acbe0b2fa103928a32c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54825346"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193192"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Руководство. Интеграции Azure Active Directory с SAP Business Object Cloud
 
@@ -28,21 +29,21 @@ ms.locfileid: "54825346"
 
 * С помощью Azure AD вы можете контролировать доступ к приложению SAP Business Object Cloud.
 * Вы можете включить автоматический вход пользователей в SAP Business Object Cloud (единый вход) с использованием учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SAP Business Object Cloud, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка SAP Business Object Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * SAP Business Object Cloud поддерживает единый вход инициированного **пакета обновления**.
 
@@ -54,7 +55,7 @@ ms.locfileid: "54825346"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -62,7 +63,7 @@ ms.locfileid: "54825346"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **SAP Business Object Cloud**, выберите **SAP Business Object Cloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -78,9 +79,9 @@ ms.locfileid: "54825346"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в SAP Business Object Cloud](#configure-sap-business-object-cloud-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя SAP Business Object Cloud](#create-sap-business-object-cloud-test-user)** требуется для создания пользователя Britta Simon в SAP Business Object Cloud, связанного с соответствующим пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -110,7 +111,7 @@ ms.locfileid: "54825346"
     | `https://<sub-domain>.sapanalytics.cloud/` |
     | `https://<sub-domain>.sapbusinessobjects.cloud/` |
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     | |
     |-|-|
     | `<sub-domain>.sapbusinessobjects.cloud` |
@@ -161,9 +162,9 @@ ms.locfileid: "54825346"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -171,18 +172,18 @@ ms.locfileid: "54825346"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -230,11 +231,11 @@ ms.locfileid: "54825346"
 
     a. В поле **ИД пользователя** введите идентификатор пользователя, например **Britta**.
 
-    b. В текстовом поле **Имя** введите имя пользователя, например **Britta**.
+    б) В текстовом поле **Имя** введите имя пользователя, например **Britta**.
 
     c. В текстовом поле **Фамилия** введите фамилию пользователя, например **Simon**.
 
-    d. В текстовом поле **Отображаемое имя** введите полное имя пользователя, например **Britta Simon**.
+    4.3. В текстовом поле **Отображаемое имя** введите полное имя пользователя, например **Britta Simon**.
 
     д. В текстовом поле **Электронная почта** введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
@@ -248,7 +249,7 @@ ms.locfileid: "54825346"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "SAP Business Object Cloud" на панели доступа, вы автоматически войдете в приложение SAP Business Object Cloud, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку "SAP Business Object Cloud" на панели доступа, вы автоматически войдете в приложение SAP Business Object Cloud, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
