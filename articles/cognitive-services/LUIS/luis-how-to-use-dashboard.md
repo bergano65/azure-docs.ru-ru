@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Сведения о панели мониторинга приложений, визуализированном средстве создания отчетов, которое обеспечивает удобную среду отслеживания приложений.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 3f263e6e6b74c1d9392ec58f176962b0c37d70c5
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 8927213dc4f1cf01eccdd8f54a946f9dbbaaa04d
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210001"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55869965"
 ---
 # <a name="model-and-usage-statistics-in-the-dashboard"></a>Статистические сведения о модели и потреблении ресурсов на панели мониторинга
 Панель мониторинга приложений позволяет отслеживать приложения в одном расположении. **Панель мониторинга** отображается при открытии приложения: щелкните имя приложения на странице **Мои приложения** и выберите **Панель мониторинга** на верхней панели. 

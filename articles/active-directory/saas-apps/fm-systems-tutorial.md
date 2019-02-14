@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: a1d12784fb3f88889cd9ba0d622d1bc5d84374a8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 175b90318a3f66c1a30ee3c4002d863582767b34
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55165342"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56170029"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство. Интеграция Azure Active Directory с FM:Systems
 
@@ -131,7 +132,7 @@ ms.locfileid: "55165342"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -155,11 +156,11 @@ ms.locfileid: "55165342"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-an-fmsystems-test-user"></a>Создание тестового пользователя FM:Systems
 
@@ -179,7 +180,7 @@ ms.locfileid: "55165342"
    
     a. В текстовых полях **Имя пользователя**, **Пароль**, **Подтверждение пароля**, **Адрес электронной почты** и **Идентификатор сотрудника** введите соответствующие данные для действующей учетной записи Azure Active Directory, которую хотите подготовить.
    
-    b. Щелкните **Далее**.
+    б) Щелкните **Далее**.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

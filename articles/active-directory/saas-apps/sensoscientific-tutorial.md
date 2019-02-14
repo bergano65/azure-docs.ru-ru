@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeedes
-ms.openlocfilehash: f0549fa20427e3d27f4638bdf9463d1ed46bd226
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 33a625e82f41bee1b8e3980192076d24a7471953
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189448"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183417"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство. Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
 
@@ -134,11 +135,11 @@ ms.locfileid: "55189448"
  
     a. В качестве **имени издателя** выберите Azure AD.
     
-    b. Вставьте **идентификатор сущности SAML**, скопированный на портале Azure, в текстовое поле Issuer URL (URL-адрес издателя).
+    б) Вставьте **идентификатор сущности SAML**, скопированный на портале Azure, в текстовое поле Issuer URL (URL-адрес издателя).
     
     c. Вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure, в текстовое поле Single Sign-On Service URL (URL-адрес службы единого входа).
 
-    d. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле Single Sign-Out Service URL (URL-адрес службы единого входа).
+    4.3. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле Single Sign-Out Service URL (URL-адрес службы единого входа).
 
     д. Перейдите к сертификату, скачанному на портале Azure, и загрузите его сюда.
     
@@ -148,7 +149,7 @@ ms.locfileid: "55189448"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory](https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -172,11 +173,11 @@ ms.locfileid: "55189448"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-sensoscientific-wireless-temperature-monitoring-system-test-user"></a>Создание текстового пользователя беспроводной системы мониторинга температуры SensoScientific
 

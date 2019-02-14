@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: jeedes
-ms.openlocfilehash: 9bf1cbd093e5261da08ea2a09289036de8f54eb7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ed9a9a7118a79def9d61f17fa5ba22ebe6d4720a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189754"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56176532"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yardi-elearning"></a>Руководство. Интеграция Azure Active Directory с Yardi eLearning
+# <a name="tutorial-azure-active-directory-integration-with-yardi-elearning"></a>Руководство по Интеграция Azure Active Directory с Yardi eLearning
 
 Это руководство описывает интеграцию Azure Active Directory (Azure AD) с приложением Yardi Learning.
 
@@ -117,7 +118,7 @@ ms.locfileid: "55189754"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.yardielearning.com/trust`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Yardi eLearning](mailto:elearning@yardi.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Yardi eLearning](mailto:elearning@yardi.com). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -134,7 +135,7 @@ ms.locfileid: "55189754"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -158,11 +159,11 @@ ms.locfileid: "55189754"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-yardi-elearning-test-user"></a>Создание тестового пользователя Yardi eLearning
 

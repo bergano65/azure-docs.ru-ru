@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграции Azure Active Directory с BetterWorks | Документация Майкрософт
+title: Руководство по Интеграции Azure Active Directory с BetterWorks | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BetterWorks.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 797dc9685c1dc0059396d7f7dbf56f68faf98e3f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8490a91a261d26069aca474a891a5a7ce27c71bd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190876"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56197867"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-betterworks"></a>Руководство. Интеграция Azure Active Directory с BetterWorks
 
@@ -114,7 +115,7 @@ ms.locfileid: "55190876"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://app.betterworks.com/saml2/metadata/`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.betterworks.com/saml2/acs/`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.betterworks.com/saml2/acs/`.
 
 1. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, то в разделе **Домены и URL-адреса приложения BetterWorks** выполните следующие действия.
     
@@ -122,7 +123,7 @@ ms.locfileid: "55190876"
 
     a. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://app.betterworks.com`.
+    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://app.betterworks.com`.
 
     > [!NOTE] 
     > Значения, указанные выше, приведены в качестве примера. Вместо них необходимо указать фактические значения URL-адреса ответа, идентификатора и URL-адреса для входа. Чтобы получить эти значения, обратитесь к [группе поддержки BetterWorks](mailto:support@betterworks.com).
@@ -147,11 +148,11 @@ ms.locfileid: "55190876"
 
     ![Настройка единого входа](./media/betterworks-tutorial/tutorial_officespace_05.png)
 
-   b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки. 
+   б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки. 
 
    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-   d. Нажмите кнопку **ОК**.
+   4.3. Нажмите кнопку **ОК**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -165,7 +166,7 @@ ms.locfileid: "55190876"
  
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -189,11 +190,11 @@ ms.locfileid: "55190876"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-betterworks-test-user"></a>Создание тестового пользователя BetterWorks
 

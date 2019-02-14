@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/24/2017
 ms.author: jeedes
-ms.openlocfilehash: 7d77d72264580e4cde83f6cbb9f83bf7030d941e
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e932fd59fb888d73fb2ad9aee3f440b4aca3e662
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820051"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56180579"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство. Интеграция Azure Active Directory с HR2day by Merces
 
@@ -92,7 +93,7 @@ ms.locfileid: "55820051"
 1. Создание тестового пользователя Azure AD. Проверьте работу единого входа Azure AD с помощью пользователя Britta Simon.
 1. Создание тестового пользователя HR2day by Merces. требуется для создания пользователя Britta Simon в HR2day by Merces, связанного с соответствующим представлением в Azure AD.
 1. Назначение тестового пользователя Azure AD. Разрешите пользователю Britta Simon использовать единый вход Azure AD.
-1. Проверка единого входа. Она необходима, чтобы убедиться в корректной работе конфигурации.
+1. Проверка единого входа. необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 

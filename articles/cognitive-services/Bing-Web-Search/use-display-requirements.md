@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Требования к отображению результатов поиска из интерфейсов API Bing для поиска в ваших приложениях.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: aahi
-ms.openlocfilehash: 088d4ba763e8f2996dfbed1dbcc11c8eeaad3a06
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 25636cad514df18a289c9c81ea95bc53e6ec203c
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55513104"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55861329"
 ---
 # <a name="bing-search-api-use-and-display-requirements"></a>Требования к использованию и отображению API-интерфейсов поиска Bing
 
@@ -37,7 +37,7 @@ ms.locfileid: "55513104"
 |Термин  |ОПИСАНИЕ  |
 |---------|---------|
 |Ответ     | Категория результатов, возвращенных в отклике. Например, отклик API Bing для поиска в Интернете может включать в себя ответы в категории, такой как результаты веб-страницы, изображения, видео, визуальные элементы и новости. |
-|Отклик     | Все ответы и связанные с ними данные, полученные в ответ на один вызов API поиска. |
+|Ответ     | Все ответы и связанные с ними данные, полученные в ответ на один вызов API поиска. |
 |Результат    | Элемент данных в ответе. Например, набор данных, связанный с одной новостной статьей, является результатом в ответе по новостям. |
 |Интерфейсы API для поиска    | К ним относятся API пользовательского поиска Bing, API Bing для поиска сущностей, API Bing для поиска изображений, API Bing для поиска новостей, API Bing для поиска видео, API Bing для визуального поиска, API локального бизнес-поиска Bing и API Bing для поиска в Интернете. |
 

@@ -3,8 +3,8 @@ title: Пользователи для приложения в коллекци�
 description: В этой статье описаны способы решения распространенных проблем, когда пользователи, для которых настроена подготовка в Azure AD, не появляются в приложении в коллекции Azure AD.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/20/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: asteen
-ms.openlocfilehash: 181f8488255bca67131ed32474bb05a9d6d082aa
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a6e74ad04f10865a830d27c1814be10eeff3ad59
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55154989"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182975"
 ---
 # <a name="no-users-are-being-provisioned-to-an-azure-ad-gallery-application"></a>Пользователи для приложения в коллекции Azure AD не подготавливаются
 После настройки автоматической подготовки для приложения (в том числе проверки действительности учетных данных, с помощью которых Azure AD подключается к приложению) пользователи и (или) группы подготавливаются для приложения. Подготовка определяется следующими данными:

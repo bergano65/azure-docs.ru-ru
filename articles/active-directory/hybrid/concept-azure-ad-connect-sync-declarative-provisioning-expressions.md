@@ -15,12 +15,13 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: a18b80677a67960a0b0c323280264bff2ffa8371
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cdc7c9dba49bf37db1f039d43b0450c65884c74b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55489484"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56181989"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning-expressions"></a>Синхронизация Azure AD Connect: Знакомство с выражениями декларативной подготовки.
 Служба синхронизации Azure AD Connect основана на принципах декларативной подготовки, впервые представленной в Forefront Identity Manager 2010. Эта функция позволяет реализовать бизнес-логику интеграции идентификации без необходимости написания компилируемого кода.

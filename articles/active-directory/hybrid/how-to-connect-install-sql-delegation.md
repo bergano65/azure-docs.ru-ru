@@ -15,12 +15,13 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 89d5c9c4e553ac82b604c1d3a20eb67b4055e6c4
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 38ad75d22d21a141d48e9664ae580dfb5577a389
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492901"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184930"
 ---
 # <a name="install-azure-ad-connect-using-sql-delegated-administrator-permissions"></a>Установка Azure AD Connect с использованием делегированных разрешений администратора SQL
 До последней сборки Azure AD Connect административное делегирование при развертывании конфигураций, для которых требовался SQL, не поддерживалось.  Пользователям, которые хотят установить Azure AD Connect, необходимо иметь разрешения администратора сервера на сервере SQL.
@@ -54,10 +55,7 @@ ms.locfileid: "55492901"
 ## <a name="additional-information"></a>Дополнительная информация
 После подготовки базы данных администратор Azure AD Connect может для удобства установить и настроить службу локальной синхронизации.  
 
-Флаг **/UseExistingDatabase** является обязательным при использовании предварительно созданной базы данных.  Он используется не только при восстановлении.
-
-Помимо поддержки новых установок Azure AD Connect эта функция также позволяет выполнить делегирование любых сценариев, связанных с флагом **/UseExistingDatabase**.  Дополнительные сведения об установке Azure AD Connect с помощью имеющейся базы данных ADSync см. в [этой статье](how-to-connect-install-existing-database.md).
-
+Дополнительные сведения об установке Azure AD Connect с помощью имеющейся базы данных ADSync см. в [этой статье](how-to-connect-install-existing-database.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yonyx Interactive Guides.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 7585950da518072abc7202e0139d2d36b6695a83
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d08b1f3889136fadee68b3aa95d879b0495bddb1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151045"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198423"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yonyx-interactive-guides"></a>Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides
 
@@ -70,7 +71,7 @@ ms.locfileid: "55151045"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Yonyx Interactive Guides**, выберите **Yonyx Interactive Guides** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55151045"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Yonyx Interactive Guides](#create-a-yonyx-interactive-guides-test-user)**. Требуется для создания в Yonyx Interactive Guides пользователя Britta Simon, связанного с соответствующим представлением пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -115,7 +116,7 @@ ms.locfileid: "55151045"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company name>.yonyx.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Yonyx Interactive Guides](mailto:support@yonyx.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Yonyx Interactive Guides](mailto:support@yonyx.com). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -145,7 +146,7 @@ ms.locfileid: "55151045"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/yonyx-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/yonyx-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -161,11 +162,11 @@ ms.locfileid: "55151045"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-yonyx-interactive-guides-test-user"></a>Создание тестового пользователя Yonyx Interactive Guides
 
@@ -212,7 +213,7 @@ ms.locfileid: "55151045"
 
 Щелкнув элемент Yonyx Interactive Guides на панели доступа, вы автоматически войдете в приложение Yonyx Interactive Guides.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

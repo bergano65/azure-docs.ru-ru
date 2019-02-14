@@ -4,7 +4,7 @@ description: 'На этой странице сообщества служб м�
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 0df020f4-8297-4f31-92bf-de098283e997
 ms.service: media-services
@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/29/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: dc6a1259eb3bb15793d0b48a883d4bbfb69e48c3
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 641218e6a9a366d8c3b0d269223a98c08b860bdb
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782703"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56001159"
 ---
-# <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure
+# <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
+
 На этой странице сообщества служб мультимедиа Azure (AMS) описаны разные способы получения новых сведений об AMS. Вы можете просматривать видео и прослушивать подкасты, а также задавать вопросы и отправлять отзывы.   
 
 ## <a name="videos-and-podcasts"></a>Видео и подкасты

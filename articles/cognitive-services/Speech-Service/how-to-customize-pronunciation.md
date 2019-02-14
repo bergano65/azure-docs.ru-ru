@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Узнайте, как настроить произношение с помощью службы распознавания речи. Используя пользовательское произношение, вы можете определить фонетическую и отображаемую форму слова или термина. Это удобно для обработки настраиваемых терминов, например имен продуктов или аббревиатур. Все, что требуется для начала работы — это файл с записями произношения (простой TXT-файл).
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 11680176ea8f9d89adfd0981c13712e73f110352
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 0a3dfce10fc8ea76bc8f99e2459295bc637017dc
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55209916"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55878414"
 ---
 # <a name="enable-custom-pronunciation"></a>Создание пользовательского произношения
 

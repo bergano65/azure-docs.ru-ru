@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Central Desktop.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: jeedes
-ms.openlocfilehash: bc8aec25d6493d87393a45549fb89f978c469912
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d389a9675f7d4de56a03026c0d392b9988f6b0da
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55179163"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201692"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство. Интеграция Azure Active Directory с Central Desktop
+# <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство по Интеграция Azure Active Directory с Central Desktop
 
 В этом руководстве описано, как интегрировать Central Desktop с Azure Active Directory (Azure AD).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55179163"
     
 1. Чтобы добавить новые приложения, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Central Desktop**. Чтобы добавить приложение, на панели результатов выберите **Central Desktop** и нажмите кнопку **Добавить**.
 
@@ -112,7 +113,7 @@ ms.locfileid: "55179163"
 
     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.centraldesktop.com`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате:
+    б) В поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<companyname>.centraldesktop.com/saml2-metadata.php`|
@@ -121,7 +122,7 @@ ms.locfileid: "55179163"
     c. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.centraldesktop.com/saml2-assertion.php`    
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Central Desktop](https://imeetcentral.com/contact-us). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Central Desktop](https://imeetcentral.com/contact-us). 
 
 1. В разделе **Сертификат подписи SAML** выберите **Сертификат**. Затем сохраните файл сертификата на своем компьютере.
 
@@ -147,21 +148,21 @@ ms.locfileid: "55179163"
     
     a. Установите флажок **Разрешить единый вход SAML версии 2**.
     
-    b. В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
+    б) В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
     
     c. В поле **SSO Login URL** (URL-адрес единого входа) вставьте значение **URL-адреса единого входа SAML**, скопированное на портале Azure.
     
-    d. В поле **SSO Logout URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    4.3. В поле **SSO Logout URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
 1. В разделе **Message Signature Verification Method** (Метод проверки подписей в сообщениях) сделайте следующее:
 
     ![Метод проверки подписей в сообщениях](./media/central-desktop-tutorial/ic769565.png "Метод проверки подписей в сообщениях"). А. Выберите **Сертификат**.
     
-    b. В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
+    б) В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
     
     c. Откройте скачанный сертификат в Блокноте. Затем скопируйте содержимое сертификата и вставьте его в поле **SSO Certificate** (Сертификат единого входа).
         
-    d. Установите флажок **Отображать ссылку на страницу входа SAML версии 2**.
+    4.3. Установите флажок **Отображать ссылку на страницу входа SAML версии 2**.
     
     д. Нажмите кнопку **Обновить**.
 
@@ -178,7 +179,7 @@ ms.locfileid: "55179163"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/central-desktop-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/central-desktop-tutorial/create_aaduser_01.png)
 
 1. Чтобы отобразился список пользователей, выберите элемент **Пользователи и группы**. Затем выберите **Все пользователи**.
 

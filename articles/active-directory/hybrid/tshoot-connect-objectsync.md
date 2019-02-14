@@ -14,12 +14,13 @@ ms.topic: article
 ms.date: 05/15/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 0a740a2e26e0f2dd6e4f6d8ea039b107dce65066
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 82139178d4c1db4774d539180e41e49699d8ee12
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158117"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56174220"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
 В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок. Ознакомиться с устранением неполадок в Azure Active Directory Connect (Azure AD) можно [в этом коротком видео](https://aka.ms/AADCTSVideo).

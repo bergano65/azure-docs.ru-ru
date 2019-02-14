@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2018
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: ba5e3fae04c47420d90aa1bc800a3dbd0e5ba984
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: ff198bc5e921f1c78e2d7cb7c80bfe0615fc91bc
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364437"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56003267"
 ---
-# <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища
+# <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища 
 
 Мы настоятельно рекомендуем шифровать содержимое локально, используя 256-битное шифрование AES, а затем передавать его в службу хранилища Azure, где оно будет храниться в зашифрованном виде.
 

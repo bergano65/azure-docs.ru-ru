@@ -12,22 +12,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: nitinme
-ms.openlocfilehash: 4bdebe415bcd86867bebeb7f03dc6dafa8480169
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 3f37b996caa60a54c18388cb1f65873bf0aa4ed9
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54259790"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55877700"
 ---
 # <a name="comparing-azure-data-lake-storage-gen1-and-azure-blob-storage"></a>Сравнение Azure Data Lake Storage 1-го поколения и хранилища BLOB-объектов Azure
-  >[!NOTE] 
-    >Недавно мы объявили о выходе [Azure Data Lake Storage 2-го поколения (предварительная версия)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction). Data Lake Storage 2-го поколения (предварительная версия) — результат объединения возможностей двух существующих служб хранения: хранилища BLOB-объектов Azure и [Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/index). Функции Azure Data Lake Storage 1-го поколения, например семантика файловой системы, защита на уровне файлов и масштабирование, объединены с экономичностью, многоуровневостью, высокой доступностью и аварийным восстановлением [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction). <br> Мы настоятельно рекомендуем начать использовать Azure Data Lake Storage 2-го поколения (предварительная версия) как основу для создания корпоративных хранилищ данных и получить при этом основные преимущества хранилища BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения.
+
+[!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)] 
 
 В таблице ниже приведены различия между Azure Data Lake Storage 1-го поколения и хранилищем BLOB-объектов Azure, а также некоторые ключевые аспекты обработки больших данных. Хранилище BLOB-объектов Azure является универсальным масштабируемым хранилищем объектов, предназначенным для разнообразных сценариев хранения. Azure Data Lake Storage 1-го поколения — это гипермасштабируемый репозиторий, оптимизированный для рабочих нагрузок, относящихся к аналитике больших данных.
-
-
-
-
 
 |  | Хранилище Azure Data Lake Gen1 | Хранилище больших двоичных объектов Azure |
 | --- | --- | --- |

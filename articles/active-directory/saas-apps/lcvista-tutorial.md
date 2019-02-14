@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 6265af8e013674d33d0f3db8c3e08b5779911742
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a511e17785898f7c52d942c057a67914e6fdfbca
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190367"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56174237"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lcvista"></a>Руководство. Интеграция Azure Active Directory с LCVista
 
@@ -139,11 +140,11 @@ ms.locfileid: "55190367"
 
     a. Вставьте **URL-адрес издателя**, скопированный из Azure AD в раздел **Идентификатор сущности**. 
 
-    b. Вставьте **URL-адрес службы единого входа**, скопированный из Azure AD в раздел **URL-адрес**.
+    б) Вставьте **URL-адрес службы единого входа**, скопированный из Azure AD в раздел **URL-адрес**.
 
     c. Из метаданных (XML), которые вы скачали на портале Azure, скопируйте значение **X509Certificate** и вставьте его в раздел **x509 Certificate** (Сертификат x509).
 
-    d. В текстовом поле **First name attribute** (Атрибут имени) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    4.3. В текстовом поле **First name attribute** (Атрибут имени) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
     д. В текстовом поле **Last name attribute** (Атрибут фамилии) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
@@ -158,7 +159,7 @@ ms.locfileid: "55190367"
  
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -182,11 +183,11 @@ ms.locfileid: "55190367"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-lcvista-test-user"></a>Создание тестового пользователя LCVista
 

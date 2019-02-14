@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/24/2017
 ms.author: jeedes
-ms.openlocfilehash: c59bacb9559239c572925ee73303bbb6a0a06353
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 217c8e9eed9e3e1edf2a6080afdf244ddc3fae94
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188836"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56208101"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wizergos-productivity-software"></a>Руководство. Интеграция Azure Active Directory с Wizergos Productivity Software
 
@@ -30,7 +31,7 @@ ms.locfileid: "55188836"
 
 - С помощью Azure AD можно контролировать доступ к Wizergos Productivity Software.
 - Вы можете включить автоматический вход пользователей в Wizergos Productivity Software (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55188836"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Wizergos Productivity Software**, выберите **Wizergos Productivity Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55188836"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Wizergos Productivity Software](#create-a-wizergos-productivity-software-test-user)** требуется для создания пользователя Britta Simon в Wizergos Productivity Software, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -140,11 +141,11 @@ ms.locfileid: "55188836"
     
     a. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **UPLOAD** (Отправить).
     
-    b. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    б) В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
     
     c. В текстовое поле **Single Sign-On URL** (URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
     
-    d. В текстовое поле **Single Sign-Out URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
+    4.3. В текстовое поле **Single Sign-Out URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
     
     д. Нажмите кнопку **Сохранить**.
 
@@ -162,7 +163,7 @@ ms.locfileid: "55188836"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/wizergosproductivitysoftware-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/wizergosproductivitysoftware-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -182,7 +183,7 @@ ms.locfileid: "55188836"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-wizergos-productivity-software-test-user"></a>Создание тестового пользователя Wizergos Productivity Software
 

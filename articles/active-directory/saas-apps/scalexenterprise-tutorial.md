@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2017
 ms.author: jeedes
-ms.openlocfilehash: c1847d268d7776fba2892257bf0992d0e17a727f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 64edf2aa47211c1d2a598417a7b2edc00f260075
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152065"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56208577"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-scalex-enterprise"></a>Руководство. Интеграция Azure Active Directory со ScaleX Enterprise
 
@@ -114,7 +115,7 @@ ms.locfileid: "55152065"
 
     a. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://platform.rescale.com/saml2/<company id>/`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.rescale.com/saml2/<company id>/acs/`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.rescale.com/saml2/<company id>/acs/`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -133,7 +134,7 @@ ms.locfileid: "55152065"
 
     ![Настройка единого входа](./media/scalexenterprise-tutorial/delete_attribute_name.png)
 
-    b. Щелкните атрибут **emailaddress**, чтобы открыть окно "Изменить атрибут". Измените его значение с **user.mail** на **user.userprincipalname** и нажмите кнопку "ОК".
+    б) Щелкните атрибут **emailaddress**, чтобы открыть окно "Изменить атрибут". Измените его значение с **user.mail** на **user.userprincipalname** и нажмите кнопку "ОК".
 
     ![Настройка единого входа](./media/scalexenterprise-tutorial/edit_email_attribute.png) 
     
@@ -168,11 +169,11 @@ ms.locfileid: "55152065"
     
     a. Выберите **Create any user who can authenticate with SSO** (Создание любого пользователя, который может выполнить проверку подлинности с помощью единого входа).
 
-    b. **Service Provider SAML** (Поставщик услуг SAML). Вставьте значение ***urn:oasis:names:tc:SAML:2.0:nameid-format:persistent***.
+    б) **Service Provider SAML** (Поставщик услуг SAML). Вставьте значение ***urn:oasis:names:tc:SAML:2.0:nameid-format:persistent***.
 
     c. **Name of Identity Provider email field in ACS response** (Имя поля электронного адреса поставщика удостоверений в ответе ACS). Вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    d. **Identity Provider EntityDescriptor Entity ID** (Идентификатор сущности EntityDescriptor поставщика удостоверений). Вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
+    4.3. **Identity Provider EntityDescriptor Entity ID** (Идентификатор сущности EntityDescriptor поставщика удостоверений). Вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
     д. **Identity Provider SingleSignOnService URL** (URL-адрес SingleSignOnService поставщика удостоверений). Вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
@@ -187,7 +188,7 @@ ms.locfileid: "55152065"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -211,11 +212,11 @@ ms.locfileid: "55152065"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-scalex-enterprise-test-user"></a>Создание тестового пользователя ScaleX Enterprise
 
@@ -255,7 +256,7 @@ ms.locfileid: "55152065"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку ScaleX Enterprise на панели доступа, вы автоматически войдете в приложение ScaleX Enterprise. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку ScaleX Enterprise на панели доступа, вы автоматически войдете в приложение ScaleX Enterprise. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

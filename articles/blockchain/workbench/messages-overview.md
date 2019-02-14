@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 48e7de2798d9c34942df281febcc1d4ec443010d
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: fd723304e2219c457e982cbe54529d00afe526f4
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662234"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55896015"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
@@ -568,7 +568,7 @@ Blockchain Workbench возвращает ответ со следующими �
 | contractLedgerIdentifier    | Уникальный идентификатор контракта в реестре |
 | functionName                | Имя функции |
 | parameters                  | [Сведения о параметрах](#parameter-information) |
-| transaction                 | [Сведения о транзакциях](#eventmessage-transaction-information) |
+| transaction                 | Сведения о транзакциях |
 | inTransactionSequenceNumber | Порядковый номер транзакции в блоке |
 | connectionId                | Уникальный идентификатор подключения |
 | messageSchemaVersion        | Версия схемы службы сообщений |

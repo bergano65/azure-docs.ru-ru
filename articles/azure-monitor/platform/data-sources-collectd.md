@@ -1,6 +1,6 @@
 ---
-title: Сбор данных CollectD в Log Analytics | Документация Майкрософт
-description: CollectD — управляющая программа Linux с открытым исходным кодом, которая периодически собирает данные приложений и системные данные.  В этой статье приведены сведения о сборе данных CollectD в OMS Log Analytics.
+title: Сбор данных CollectD в Azure Monitor| Документация Майкрософт
+description: CollectD — управляющая программа Linux с открытым исходным кодом, которая периодически собирает данные приложений и системные данные.  В этой статье приведены сведения о сборе данных CollectD в Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
-ms.openlocfilehash: 3ccb307eb028170f2dc65fd7cf90edf3115ae9a7
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: b6785dc06107424344f0a6af775abe9b1c956f70
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54102692"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999323"
 ---
-# <a name="collect-data-from-collectd-on-linux-agents-in-log-analytics"></a>Сбор данных CollectD с помощью агентов Linux в Log Analytics
-[CollectD](https://collectd.org/) — управляющая программа Linux с открытым исходным кодом, которая периодически собирает метрики производительности приложений и системные данные. К примерам таких приложений относятся виртуальная машина Java (JVM), сервер MySQL и Nginx. В этой статье приводятся сведения о сборе данных производительности CollectD в Log Analytics.
+# <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Сбор данных CollectD с помощью агентов Linux в Azure Monitor
+[CollectD](https://collectd.org/) — управляющая программа Linux с открытым исходным кодом, которая периодически собирает метрики производительности приложений и системные данные. К примерам таких приложений относятся виртуальная машина Java (JVM), сервер MySQL и Nginx. В этой статье приводятся сведения о сборе данных производительности CollectD в Azure Monitor.
 
 Полный список доступных подключаемых модулей можно найти в [таблице подключаемых модулей](https://collectd.org/wiki/index.php/Table_of_Plugins).
 
@@ -57,7 +57,7 @@ ms.locfileid: "54102692"
 > [!NOTE]
 > При желании номер порта можно изменить.
 
-Агент Log Analytics для Linux также прослушивает порт 26000 для сбора метрик CollectD, а затем преобразует эти метрики в метрики схемы Log Analytics. Ниже приведена конфигурация агента Log Analytics для Linux `collectd.conf`.
+Агент Log Analytics для Linux также ожидает передачи данных с порта 26000 для сбора метрик CollectD, а затем преобразует эти метрики в метрики схемы Azure Monitor. Ниже приведена конфигурация агента Log Analytics для Linux `collectd.conf`.
 
     <source>
       type http
@@ -71,12 +71,12 @@ ms.locfileid: "54102692"
 
 
 ## <a name="versions-supported"></a>Поддерживаемые версии
-- Log Analytics сейчас поддерживает CollectD версии 4.8 и более поздней версии.
+- Azure Monitor сейчас поддерживает CollectD версии 4.8 и более поздней.
 - Для сбора метрик CollectD необходим агент Log Analytics для Linux версии 1.1.0-217 или более поздней.
 
 
 ## <a name="configuration"></a>Параметр Configuration
-Ниже приведены основные шаги по настройке сбора данных CollectD в Log Analytics.
+Ниже приведены основные шаги по настройке сбора данных CollectD в Azure Monitor.
 
 1. Настройте отправку данных CollectD в агент Log Analytics для Linux с помощью подключаемого модуля write_http.  
 2. Настройте агент Log Analytics для Linux для прослушивания данных CollectD на соответствующем порте.
@@ -107,10 +107,10 @@ ms.locfileid: "54102692"
 
     sudo service collectd restart  sudo /opt/microsoft/omsagent/bin/service_control restart
 
-## <a name="collectd-metrics-to-log-analytics-schema-conversion"></a>Метрики CollectD для преобразования схемы Log Analytics
+## <a name="collectd-metrics-to-azure-monitor-schema-conversion"></a>Метрики CollectD для преобразования в метрики схемы Azure Monitor
 Для сохранения знакомой модели между метриками инфраструктуры, уже собранными агентом Log Analytics для Linux, и новыми метриками, собранными CollectD, используется следующая схема сопоставления.
 
-| Поле метрики CollectD | Поле Log Analytics |
+| Поле метрики CollectD | Поле Azure Monitor |
 |:--|:--|
 | host | Компьютер |
 | plugin | Нет |
@@ -122,5 +122,5 @@ ms.locfileid: "54102692"
 | values[] | CounterValue |
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте больше о [запросах журнала](../../log-analytics/log-analytics-queries.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
-* Используйте [настраиваемые поля](../../log-analytics/log-analytics-custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.
+* Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Используйте [настраиваемые поля](custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.

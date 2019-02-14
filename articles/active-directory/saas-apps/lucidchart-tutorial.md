@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Lucidchart | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Lucidchart | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Lucidchart.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2017
 ms.author: jeedes
-ms.openlocfilehash: eccb6efc95b274545a4d74bbd1ace7ab5629214f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 26b9fc0fa194b9e2be97eb3bb8471b61e7fb3b8f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55169048"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202763"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lucidchart"></a>Руководство. Интеграция Azure Active Directory с Lucidchart
 
@@ -138,7 +139,7 @@ ms.locfileid: "55169048"
 
     ![SAML Authentication Settings](./media/lucidchart-tutorial/ic791192.png "SAML Authentication Settings") (Параметры аутентификации SAML)
  
-    b. В текстовом поле **Domain** (Домен) введите свой домен и нажмите кнопку **Change Certificate** (Изменить сертификат).
+    б) В текстовом поле **Domain** (Домен) введите свой домен и нажмите кнопку **Change Certificate** (Изменить сертификат).
 
     ![Change Certificate](./media/lucidchart-tutorial/ic791193.png "Change Certificate") (Изменить сертификат)
  
@@ -146,7 +147,7 @@ ms.locfileid: "55169048"
 
     ![Upload Metadata](./media/lucidchart-tutorial/ic791194.png "Upload Metadata") (Передача метаданных)
  
-    d. Установите флажок **Автоматически добавлять новых пользователей в группу**, а затем нажмите кнопку **Сохранить изменения**.
+    4.3. Установите флажок **Автоматически добавлять новых пользователей в группу**, а затем нажмите кнопку **Сохранить изменения**.
 
     ![Сохранение изменений](./media/lucidchart-tutorial/ic791195.png "Сохранение изменений")
 
@@ -154,7 +155,7 @@ ms.locfileid: "55169048"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -178,11 +179,11 @@ ms.locfileid: "55169048"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-lucidchart-test-user"></a>Создание тестового пользователя Lucidchart
 
@@ -225,7 +226,7 @@ ms.locfileid: "55169048"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Lucidchart на панели доступа, вы автоматически войдете в приложение Lucidchart.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

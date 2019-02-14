@@ -1,25 +1,25 @@
 ---
 title: Настройка постоянного хранения данных для кэша Redis для Azure ценовой категории "Премиум"
 description: Узнайте, как настроить постоянное хранение и управлять им для экземпляров кэша Redis для Azure ценовой категории "Премиум"
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: ''
 ms.assetid: b01cf279-60a0-4711-8c5f-af22d9540d38
 ms.service: cache
 ms.workload: tbd
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
 ms.date: 08/24/2017
-ms.author: wesmc
-ms.openlocfilehash: 903fd465ce2a88e94b821c9a1b4c6c531083180a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.author: yegu
+ms.openlocfilehash: de0b2e3ef7b0268540ef4896ade132a297ee88ff
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819065"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233989"
 ---
 # <a name="how-to-configure-data-persistence-for-a-premium-azure-cache-for-redis"></a>Настройка постоянного хранения данных для кэша Redis для Azure ценовой категории "Премиум"
 Кэш Redis для Azure предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции уровня "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. В этой статье описано, как настроить постоянное хранение данных в экземпляре кэша Redis для Azure ценовой категории "Премиум".

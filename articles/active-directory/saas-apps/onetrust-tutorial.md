@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: jeedes
-ms.openlocfilehash: 46480119579513839024d89e7657661e12e5509c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d907ec5cc40bcf9127fc20fbbc8e2e0aca476c3b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55167298"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56195861"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство. Интеграция Azure Active Directory с OneTrust Privacy Management Software
 
@@ -30,7 +31,7 @@ ms.locfileid: "55167298"
 
 - С помощью Azure AD можно контролировать доступ к OneTrust Privacy Management Software.
 - Вы можете включить автоматический вход пользователей в OneTrust Privacy Management Software (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55167298"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **OneTrust Privacy Management Software**, выберите **OneTrust Privacy Management Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55167298"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя OneTrust Privacy Management Software](#create-a-onetrust-privacy-management-software-test-user)** требуется для создания пользователя Britta Simon в OneTrust Privacy Management Software, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55167298"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.onetrust.com/saml2`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.onetrust.com/auth/consumerservice`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.onetrust.com/auth/consumerservice`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -121,7 +122,7 @@ ms.locfileid: "55167298"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.onetrust.com/auth/login`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки клиентов OneTrust Privacy Management Software](mailto:support@onetrust.com), чтобы получить эти значения. 
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки клиентов OneTrust Privacy Management Software](mailto:support@onetrust.com), чтобы получить эти значения. 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,7 +147,7 @@ ms.locfileid: "55167298"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/onetrust-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/onetrust-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -166,7 +167,7 @@ ms.locfileid: "55167298"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-onetrust-privacy-management-software-test-user"></a>Создание тестового пользователя OneTrust Privacy Management Software
 

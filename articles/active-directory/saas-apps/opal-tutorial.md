@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Opal | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Opal | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Opal.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2018
 ms.author: jeedes
-ms.openlocfilehash: cacfa736a91d47abb91b40b1c549aba884d16ec0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9878e120a3456383812cca44e054a48759f683a3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168963"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202848"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-opal"></a>Руководство. Интеграция Azure Active Directory с Opal
+# <a name="tutorial-azure-active-directory-integration-with-opal"></a>Руководство по Интеграция Azure Active Directory с Opal
 
 В этом руководстве описано, как интегрировать Opal с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55168963"
 
 - С помощью Azure AD вы можете контролировать доступ к Opal.
 - Вы можете включить автоматический вход пользователей в Opal (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55168963"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Opal**, выберите **Opal** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55168963"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Opal](#create-an-opal-test-user)** требуется для того, чтобы в Opal существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55168963"
 
     a. В текстовом поле **Идентификатор** введите значение: `Opal`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.ouropal.com/auth/saml/callback`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.ouropal.com/auth/saml/callback`.
 
     > [!NOTE] 
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки Opal](mailto:support@workwithopal.com).
@@ -134,11 +135,11 @@ ms.locfileid: "55168963"
 
     ![Добавление атрибута для настройки единого входа](./media/opal-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте пустым поле **Пространство имен**.
+    4.3. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
  
@@ -165,7 +166,7 @@ ms.locfileid: "55168963"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/opal-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/opal-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -185,7 +186,7 @@ ms.locfileid: "55168963"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-an-opal-test-user"></a>Создание тестового пользователя Opal
 

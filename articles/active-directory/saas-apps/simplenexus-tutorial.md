@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SimpleNexus | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SimpleNexus | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SimpleNexus.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 26bf83630e9d0b44216c0572f911fb553806908e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c0f3ab1e9091038edcf7b893bdee1972489772ef
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178378"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56191458"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-simplenexus"></a>Руководство. Интеграция Azure Active Directory с SimpleNexus
 
@@ -117,7 +118,7 @@ ms.locfileid: "55178378"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://simplenexus.com/<companyname>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов SimpleNexus](https://simplenexus.com/sn/contact-us/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов SimpleNexus](https://simplenexus.com/sn/contact-us/). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -134,7 +135,7 @@ ms.locfileid: "55178378"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -158,11 +159,11 @@ ms.locfileid: "55178378"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-simplenexus-test-user"></a>Создание тестового пользователя SimpleNexus
 

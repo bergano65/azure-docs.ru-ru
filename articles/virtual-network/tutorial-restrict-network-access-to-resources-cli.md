@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 31d583456f2ca0a2804c2215906965c2241af52d
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: e4f8b99cfeaa35644ed51fd8ad712fe4744c0226
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751503"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55890949"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек службы виртуальной сети с помощью Azure CLI
 
@@ -72,7 +72,7 @@ az network vnet list-endpoint-services \
   --out table
 ``` 
 
-Создайте дополнительную подсеть в виртуальной сети командой [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create). В этом примере в подсети создается конечная точка службы для службы *Microsoft.Storage*. 
+Создайте дополнительную подсеть в виртуальной сети командой [az network vnet subnet create](/cli/azure/network/vnet/subnet). В этом примере в подсети создается конечная точка службы для службы *Microsoft.Storage*. 
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -85,7 +85,7 @@ az network vnet subnet create \
 
 ## <a name="restrict-network-access-for-a-subnet"></a>Ограничение сетевого доступа для подсети
 
-Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create). В следующем примере создается группа безопасности сети *myNsgPrivate*.
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети *myNsgPrivate*.
 
 ```azurecli-interactive
 az network nsg create \
@@ -93,7 +93,7 @@ az network nsg create \
   --name myNsgPrivate
 ```
 
-Чтобы привязать подсеть *Private* к этой группе безопасности сети, выполните команду [az network vnet subnet update](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update). В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
+Чтобы привязать подсеть *Private* к этой группе безопасности сети, выполните команду [az network vnet subnet update](/cli/azure/network/vnet/subnet). В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -156,7 +156,7 @@ az network nsg rule create \
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения Azure с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
+Создайте учетную запись хранения Azure с помощью команды [az storage account create](/cli/azure/storage/account). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
 
 ```azurecli-interactive
 storageAcctName="<replace-with-your-unique-storage-account-name>"
@@ -197,7 +197,7 @@ az storage share create \
 
 ### <a name="deny-all-network-access-to-a-storage-account"></a>Запрет любого сетевого доступа к учетной записи хранения
 
-По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ выбранными сетями, измените действие по умолчанию на *Запретить*, выполнив команду [az storage account update](/cli/azure/storage/account#az_storage_account_update). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
+По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ выбранными сетями, измените действие по умолчанию на *Запретить*, выполнив команду [az storage account update](/cli/azure/storage/account). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
 
 ```azurecli-interactive
 az storage account update \
@@ -208,7 +208,7 @@ az storage account update \
 
 ### <a name="enable-network-access-from-a-subnet"></a>Включение сетевого доступа из подсети
 
-Разрешите сетевой доступ к учетной записи хранения из подсети *Private*, выполнив команду [az storage account network-rule add](/cli/azure/storage/account/network-rule#az_storage_account_network_rule_add).
+Разрешите сетевой доступ к учетной записи хранения из подсети *Private*, выполнив команду [az storage account network-rule add](/cli/azure/storage/account/network-rule).
 
 ```azurecli-interactive
 az storage account network-rule add \
@@ -334,7 +334,7 @@ az storage share list \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure#az_group_delete).
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure).
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup --yes

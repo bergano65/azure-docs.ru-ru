@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.date: 12/18/2017
-ms.openlocfilehash: f445f13d3c2d63e8942864458064658d237aa763
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 83a8a7f927e78f3524128338d874334ebf0b3df1
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245964"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884007"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-azure-machine-learning-studio"></a>Памятка по алгоритмам машинного обучения для студии машинного обучения Azure
 
@@ -67,8 +67,6 @@ ms.locfileid: "55245964"
 * Список всех категорий алгоритмов, доступных в Студии машинного обучения, см. в разделе [Инициализация модели][initialize-model] в справке по алгоритмам и модулям Студии машинного обучения.
 
 * Полный список всех алгоритмов и модулей машинного обучения, доступных в Студии машинного обучения, расположенных в алфавитном порядке, см. в разделе [A-Z list of Machine Learning Studio][a-z-list] (Полный список модулей Студии машинного обучения) в справке по алгоритмам и модулям Студии машинного обучения.
-
-* Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).
 
 
 

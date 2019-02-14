@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2017
 ms.author: jeedes
-ms.openlocfilehash: aa995693f1b6b970c29c3c807667c7f730210fda
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3d7bbedef98e82ab87a081e010093d9f2e6b59be
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55173655"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56200655"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство. Интеграция Azure Active Directory с Bambu by Sprout Social
 
@@ -31,7 +32,7 @@ ms.locfileid: "55173655"
 - Вы можете включить автоматический вход пользователей в Bambu by Sprout Social (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -144,7 +145,7 @@ To ensure users can sign-in to Bambu by Sprout Social after it has been configur
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -168,11 +169,11 @@ To ensure users can sign-in to Bambu by Sprout Social after it has been configur
 
     a. В текстовом поле **Name** (Имя) введите **Britta Simon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-bambu-by-sprout-social-test-user"></a>Создание тестового пользователя для Bambu by Sprout Social
 

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 4bc522915b302c7875ca77213a39fce52f0736a1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f62e6e620dc88894b946ea9ce9e297be1b741841
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55162248"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство. Интеграция Azure Active Directory с Image Relay
 
@@ -117,7 +118,7 @@ ms.locfileid: "55162248"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/sso/metadata`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Image Relay](http://support.imagerelay.com/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Image Relay](http://support.imagerelay.com/). 
  
 
 
@@ -161,11 +162,11 @@ ms.locfileid: "55162248"
     
     a. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса службы единого входа**, скопированное на портале Azure.
 
-    b. В текстовом поле **URL-адрес выхода** вставьте значение **URL-адреса службы единого выхода**, скопированное на портале Azure.
+    б) В текстовом поле **URL-адрес выхода** вставьте значение **URL-адреса службы единого выхода**, скопированное на портале Azure.
 
     c. В поле **Name Id Format** (Формат ИД имени) выберите **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
 
-    d. В разделе **Binding Options for Requests from the Service Provider (Image Relay)** (Обязательные параметры для запросов от поставщика услуг (Image Relay)) выберите **POST Binding** (Привязка POST).
+    4.3. В разделе **Binding Options for Requests from the Service Provider (Image Relay)** (Обязательные параметры для запросов от поставщика услуг (Image Relay)) выберите **POST Binding** (Привязка POST).
 
     д. В разделе **Сертификат X.509** щелкните **Обновить сертификат**.
 
@@ -190,7 +191,7 @@ ms.locfileid: "55162248"
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -214,11 +215,11 @@ ms.locfileid: "55162248"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-an-image-relay-test-user"></a>Создание тестового пользователя Image Relay
 

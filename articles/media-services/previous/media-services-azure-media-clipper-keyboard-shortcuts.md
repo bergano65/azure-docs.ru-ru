@@ -6,17 +6,18 @@ keywords: clip;subclip;encoding;media
 author: dbgeorge
 manager: jasonsue
 ms.author: dwgeo
-ms.date: 11/10/2017
+ms.date: 02/08/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: d6fa463f71c00787c994b41d84bb349dce676de5
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 6d50c99b64442bf009707b7619ec19f3d40e604e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782583"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992506"
 ---
-# <a name="configure-azure-media-clipper-keyboard-shortcuts"></a>Настройка сочетаний клавиш для Azure Media Clipper
+# <a name="configure-azure-media-clipper-keyboard-shortcuts"></a>Настройка сочетаний клавиш для Azure Media Clipper 
+
 Azure Media Clipper поддерживает настройку стандартных сочетаний клавиш путем предоставления необязательного параметра JSON `keymap`.
 
 В следующем примере JSON показаны стандартные сочетания клавиш. Эти параметры можно настраивать, изменяя ключевые поля и передавая их в параметре при инициализации Clipper.

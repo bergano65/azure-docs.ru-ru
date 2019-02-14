@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Перед созданием базы знаний службы QnA Maker необходимо настроить эту службу в Azure. Настроить службу QnA Maker может любой пользователь с правами на создание ресурсов в подписке.
 services: cognitive-services
 author: tulasim88
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 01/14/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 1fa66c5fb5cdace556154816d1a1fa5a1811be68
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: f90c4cb1e98fe7ac43b21cd8ff01733f1d15cc50
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55214608"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55862231"
 ---
 # <a name="create-a-qna-maker-service"></a>Создание службы QnA Maker
 

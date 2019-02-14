@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
-ms.openlocfilehash: 94ba73f932cd0eaae463bd08712cfe617be04768
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c8008f96e00b0d9a4366832110c696c67a9c7257
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55184399"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56165422"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
 
@@ -115,10 +116,10 @@ ms.locfileid: "55184399"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://dashboard.panorama9.com/saml/access/3262`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Panorama9](https://support.panorama9.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Panorama9](https://support.panorama9.com). 
  
 1. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток**.
 
@@ -146,7 +147,7 @@ ms.locfileid: "55184399"
    
     a. В текстовое поле **Identity provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
    
-    b. В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.    
+    б) В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.    
          
 1. Выберите команду **Сохранить**.
 
@@ -155,7 +156,7 @@ ms.locfileid: "55184399"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -179,11 +180,11 @@ ms.locfileid: "55184399"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-panorama9-test-user"></a>Создание тестового пользователя Panorama9
 
@@ -245,7 +246,7 @@ ms.locfileid: "55184399"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Panorama9" на панели доступа, вы автоматически войдете в приложение Panorama9.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

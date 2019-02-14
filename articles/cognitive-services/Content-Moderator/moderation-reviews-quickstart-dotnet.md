@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Как создавать проверки с помощью пакета SDK Azure Content Moderator для .NET.
 services: cognitive-services
 author: sanjeev3
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 318d80049caf1328aac1cc4423b0de10df7a8c58
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: d6563441285380d0fea468caaacb0130cb259976
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211514"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884364"
 ---
 # <a name="quickstart-create-reviews-using-net"></a>Краткое руководство. Создание проверок с помощью .NET
 

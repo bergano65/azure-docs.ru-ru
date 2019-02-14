@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SugarCRM | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SugarCRM | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SugarCRM.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: jeedes
-ms.openlocfilehash: 857dc07239610ff460f8b43a951633062b690ab9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9a00c9cb0ce1bd8a6f36070e81df1185ef23a307
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171190"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201777"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sugar-crm"></a>Руководство. Интеграция Azure Active Directory с SugarCRM
+# <a name="tutorial-azure-active-directory-integration-with-sugar-crm"></a>Руководство по Интеграция Azure Active Directory с SugarCRM
 
 В этом руководстве описано, как интегрировать SugarCRM с Azure Active Directory (Azure AD).
 
@@ -153,18 +154,18 @@ ms.locfileid: "55171190"
  
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
   
-    b. В текстовое поле **SLO URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    б) В текстовое поле **SLO URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
   
     c. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена и вставьте весь сертификат в текстовое поле **Сертификат X.509** .
   
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -188,11 +189,11 @@ ms.locfileid: "55171190"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-sugar-crm-test-user"></a>Создание тестового пользователя SugarCRM
 
@@ -230,7 +231,7 @@ ms.locfileid: "55171190"
 
     a. Введите пароль в соответствующее текстовое поле.
 
-    b. Выберите команду **Сохранить**.
+    б) Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователей SugarCRM или API, предоставляемые SugarCRM для подготовки учетных записей пользователей AAD. 

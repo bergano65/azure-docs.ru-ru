@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением iProva | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением iProva | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iProva.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
-ms.openlocfilehash: e07f893296ec20e8c722fc977f93a38a797fe5c9
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6576366df214304bb30c46fa65a4bc8bc783cedf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55490062"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182108"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство. Интеграция Azure Active Directory с iProva
+# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство по Интеграция Azure Active Directory с iProva
 
 В этом руководстве описано, как интегрировать iProva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением iProva обеспечивает следующие преимущества.
@@ -37,7 +38,7 @@ ms.locfileid: "55490062"
 
 Чтобы настроить интеграцию Azure AD с iProva, вам потребуется:
 
-* Подписка Azure AD. Если у вас нет среды Azure Active Directory, вы можете получить бесплатную пробную версию на один месяц на [веб-сайте Microsoft Azure](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD Если у вас нет среды Azure Active Directory, вы можете получить бесплатную пробную версию на один месяц на [веб-сайте Microsoft Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Подписка на iProva с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария

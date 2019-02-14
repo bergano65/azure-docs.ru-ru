@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Контейнер LUIS загружает обученное или опубликованное приложение в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/22/2019
+ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 97f11523c0418caaee66930c87a7de64570097d6
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: a8251881b114d7b102481476d3e77923b34d34c7
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55296908"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982392"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -60,7 +60,7 @@ ms.locfileid: "55296908"
 
 Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера из репозитория `mcr.microsoft.com/azure-cognitive-services/luis`.
 
-```Docker
+```
 docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 ```
 
@@ -252,7 +252,7 @@ ApiKey={ENDPOINT_KEY}
 
 Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. Конечные точки для опубликованных (промежуточных или рабочих) приложений имеют _другой_ маршрут, чем конечные точки для обученных приложений. 
 
-Используйте узел https://localhost:5000 для API контейнера. 
+Используйте узел `https://localhost:5000` для API контейнера. 
 
 |Тип пакета|Метод|Маршрутизация|Параметры запроса|
 |--|--|--|--|
@@ -324,18 +324,7 @@ curl -X GET \
 
 Контейнер LUIS отправляет в Azure данные для выставления счетов, используя соответствующий ресурс _Интеллектуальной службы распознавания речи_ в учетной записи Azure. 
 
-Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют данные заказчика (фразу) в корпорацию Майкрософт. 
-
-В команде `docker run` используются следующие аргументы для выставления счетов:
-
-| Параметр | ОПИСАНИЕ |
-|--------|-------------|
-| `ApiKey` | Ключ API ресурса _Интеллектуальной службы распознавания речи_, используемый для отслеживания информации о выставлении счетов.<br/>Этому параметру следует присвоить значение ключа API для подготовленного ресурса LUIS в Azure, который можно получить в `Billing`. |
-| `Billing` | Конечная точка ресурса _Интеллектуальной службы распознавания речи_, используемая для отслеживания информации о выставлении счетов.<br/>Этому параметру следует присвоить URI конечной точки подготовленного ресурса LUIS в Azure.|
-| `Eula` | Указывает, что вы приняли условия лицензии для контейнера.<br/>Для этого параметра следует задать значение `accept`. |
-
-> [!IMPORTANT]
-> Для всех трех параметров необходимо задать допустимые значения. В противном случае контейнер не запустится.
+[!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](luis-container-configuration.md).
 

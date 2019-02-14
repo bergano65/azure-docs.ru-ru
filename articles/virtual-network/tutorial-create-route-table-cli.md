@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 8bfa4178baae0d92f7efb5ea156cfd35a8b32b1b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 08189522f4f73e996ed98f3996f87da8d93b5d2a
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157471"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895641"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов и Azure CLI
 
@@ -44,7 +44,7 @@ ms.locfileid: "55157471"
 
 ## <a name="create-a-route-table"></a>Создание таблицы маршрутов
 
-Перед созданием таблицы маршрутов создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create) для всех ресурсов, созданных в рамках этой статьи. 
+Перед созданием таблицы маршрутов создайте группу ресурсов с помощью команды [az group create](/cli/azure/group) для всех ресурсов, созданных в рамках этой статьи. 
 
 ```azurecli-interactive
 # Create a resource group.
@@ -78,7 +78,7 @@ az network route-table route create \
 
 ## <a name="associate-a-route-table-to-a-subnet"></a>Связывание таблицы маршрутов с подсетью
 
-Чтобы связать таблицу маршрутов с подсетью, необходимо создать виртуальную сеть и подсеть. Создайте виртуальную сеть с одной подсетью при помощи команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create).
+Чтобы связать таблицу маршрутов с подсетью, необходимо создать виртуальную сеть и подсеть. Создайте виртуальную сеть с одной подсетью при помощи команды [az network vnet create](/cli/azure/network/vnet).
 
 ```azurecli-interactive
 az network vnet create \
@@ -107,7 +107,7 @@ az network vnet subnet create \
   --address-prefix 10.0.2.0/24
 ```
 
-Свяжите таблицу маршрутов *myRouteTablePublic* с подсетью *Public* при помощи команды [az network vnet subnet update](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update).
+Свяжите таблицу маршрутов *myRouteTablePublic* с подсетью *Public* при помощи команды [az network vnet subnet update](/cli/azure/network/vnet/subnet).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -136,7 +136,7 @@ az vm create \
 
 Создание виртуальной машины занимает несколько минут. Переходите к следующему шагу только после того, как Azure завершит создание виртуальной машины и вернет выходные данные о ней. 
 
-В сетевом интерфейсе должна быть включена IP-пересылка, чтобы он мог перенаправлять отправленный ему сетевой трафик, который не предназначен для его собственного IP-адреса. Включите IP-пересылку для сетевого интерфейса с помощью команды [az network nic update](/cli/azure/network/nic#az_network_nic_update).
+В сетевом интерфейсе должна быть включена IP-пересылка, чтобы он мог перенаправлять отправленный ему сетевой трафик, который не предназначен для его собственного IP-адреса. Включите IP-пересылку для сетевого интерфейса с помощью команды [az network nic update](/cli/azure/network/nic).
 
 ```azurecli-interactive
 az network nic update \
@@ -145,7 +145,7 @@ az network nic update \
   --ip-forwarding true
 ```
 
-Операционная система или приложение, работающие на виртуальной машине, также должны уметь перенаправлять сетевой трафик. Чтобы включить IP-пересылку в операционной системе виртуальной машины, используйте [az vm extension set](/cli/azure/vm/extension#az_vm_extension_set):
+Операционная система или приложение, работающие на виртуальной машине, также должны уметь перенаправлять сетевой трафик. Чтобы включить IP-пересылку в операционной системе виртуальной машины, используйте [az vm extension set](/cli/azure/vm/extension):
 
 ```azurecli-interactive
 az vm extension set \
@@ -268,7 +268,7 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure/group#az_group_delete).
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure/group).
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup --yes

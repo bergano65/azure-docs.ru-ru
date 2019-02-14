@@ -3,8 +3,8 @@ title: Назначенное приложение не отображается
 description: Устранение неполадки с отображением приложения на панели доступа
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/09/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviwer: japere
-ms.openlocfilehash: 3a63f506b2b2072c385759044cd3a0c581a54185
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 21ed169003caded8ef80689ceec61f6d2fc4305c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55177718"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56178997"
 ---
 # <a name="an-assigned-application-is-not-appearing-on-the-access-panel"></a>Назначенное приложение не отображается на панели доступа
 
@@ -203,13 +204,13 @@ ms.locfileid: "55177718"
 
 Чтобы настроить приложение не из коллекции, вам потребуется Azure AD Premium, а приложение должно поддерживать SAML 2.0. Дополнительные сведения о версиях Azure AD см. в разделе [Цены на Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
 
--   [Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)](#configuring-single-sign-on)
+-   [Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)](#configure-single-sign-on-for-an-application-from-the-azure-ad-gallery)
 
 -   [Выбор идентификатора пользователя и добавление атрибутов пользователей, которые будут отправлены в приложение](#select-user-identifier-and-add-user-attributes-to-be-sent-to-the-application)
 
 -   [Получение метаданных Azure AD и сертификата](#download-the-azure-ad-metadata-or-certificate)
 
--   [Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)](#configuring-single-sign-on)
+-   [Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)](#configure-the-application-for-password-single-sign-on-1)
 
 #### <a name="configure-the-applications-metadata-values-in-azure-ad-sign-on-url-identifier-reply-url"></a>Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)
 

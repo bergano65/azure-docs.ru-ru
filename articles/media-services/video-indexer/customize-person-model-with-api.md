@@ -7,14 +7,14 @@ author: anikaz
 manager: johndeu
 ms.service: media-services
 ms.topic: article
-ms.date: 12/10/2018
+ms.date: 02/10/2019
 ms.author: anzaman
-ms.openlocfilehash: 2b035243e577adbbefa866acbae6243a9e7e9a31
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 6fe4f391b5337929efc3f6190a925fd1e967cf1c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53283310"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999357"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
 
@@ -56,7 +56,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. на странице [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |name|строка|Yes|Имя для модели пользователя|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
@@ -101,7 +101,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. на странице [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |id|строка|Yes|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
@@ -138,7 +138,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. на странице [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
@@ -193,7 +193,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. на странице [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |videoId|строка|Yes|Идентификатор для видео, в которых присутствует лицо, информацию о котором вы желаете обновить. Оно создается во время отправки и индексации.|
 |faceId|целое число|Yes|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|

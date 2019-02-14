@@ -2,20 +2,21 @@
 title: Настройка единого входа по паролю для приложения не из коллекции | Документация Майкрософт
 description: Как настроить пользовательское приложение для защищенного единого входа по паролю, если оно не отображается в коллекции приложений Azure AD
 services: active-directory
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.author: barbkess
-ms.openlocfilehash: 934996f1573520a6fba92ce09f8a14fc4795de6c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.author: celested
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8eefc02eccb2c90f3173ec096a79a913a2dede04
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812490"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211178"
 ---
 # <a name="how-to-configure-password-single-sign-on-for-a-non-gallery-application"></a>Настройка единого входа по паролю для приложения не из коллекции
 

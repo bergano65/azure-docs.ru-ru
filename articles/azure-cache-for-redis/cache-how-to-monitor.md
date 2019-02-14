@@ -1,25 +1,25 @@
 ---
 title: Отслеживание кэша Azure для Redis | Документация Майкрософт
 description: Узнайте, как отслеживать работоспособность и производительность экземпляров кэша Azure для Redis
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: ''
 ms.assetid: 7e70b153-9c87-4290-85af-2228f31df118
 ms.service: cache
 ms.workload: tbd
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
-ms.author: wesmc
-ms.openlocfilehash: b6264d47c7627d72b8746c79e7e050fd468171de
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.author: yegu
+ms.openlocfilehash: 0ac6dd63d125f436f3f3f8c1174cdcce27ac2161
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54105123"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237660"
 ---
 # <a name="how-to-monitor-azure-cache-for-redis"></a>Как отслеживать кэш Azure для Redis
 В кэше Azure для Redis используется [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) для обеспечения нескольких параметров мониторинга экземпляров кэша. Вы можете просматривать метрики, закреплять диаграммы метрик на начальной панели, настраивать диапазоны дат и времени для диаграмм мониторинга, добавлять и удалять метрики в диаграммах, а также настраивать отправку оповещений при выполнении определенных условий. Эти инструменты позволяют наблюдать за работоспособностью экземпляров кэша Azure для Redis и помогают управлять кэшируемыми приложениями.

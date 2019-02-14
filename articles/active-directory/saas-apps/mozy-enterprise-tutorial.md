@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 5bbaa90554e09d27a3c521d4a13eda44021721c8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9637212d97438d58a003ecf8d840ed887c7f5e35
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176902"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198610"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство. Интеграция Azure Active Directory с Mozy Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство по Интеграция Azure Active Directory с Mozy Enterprise
 
 В этом руководстве описано, как интегрировать Mozy Enterprise с Azure Active Directory (Azure AD).
 
@@ -141,11 +142,11 @@ ms.locfileid: "55176902"
    
    a. Для параметра **Поставщик** выберите значение **Служба каталогов**.
    
-   b. Выберите **Использовать LDAP для отправки**.
+   б) Выберите **Использовать LDAP для отправки**.
    
    c. Щелкните вкладку **Проверка подлинности SAML** .
    
-   d. В текстовое поле **URL-адрес входа** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+   4.3. В текстовое поле **URL-адрес входа** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
    
    д. В текстовое поле **SAML Endpoint** (Конечная точка SAML) вставьте значение **SAML Endpoint** (Идентификатор сущности SAML), скопированное на портале Azure.
    
@@ -160,7 +161,7 @@ ms.locfileid: "55176902"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -184,11 +185,11 @@ ms.locfileid: "55176902"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-mozy-enterprise-test-user"></a>Создание тестового пользователя Mozy Enterprise
 
@@ -214,11 +215,11 @@ ms.locfileid: "55176902"
    
    a. В списке **Выберите группу** выберите группу.
    
-   b. В списке **Тип пользователя** выберите тип.
+   б) В списке **Тип пользователя** выберите тип.
    
    c. В текстовом поле **Имя пользователя** введите имя пользователя Azure AD.
    
-   d. В текстовом поле **Электронная почта** введите адрес электронной почты пользователя Azure AD.
+   4.3. В текстовом поле **Электронная почта** введите адрес электронной почты пользователя Azure AD.
    
    д. Выберите **Отправить пользователю электронное сообщение с указаниями**.
    
@@ -262,7 +263,7 @@ ms.locfileid: "55176902"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы щелкните элемент Mozy Enterprise на панели доступа, появится страница входа в приложения Mozy Enterprise.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/25/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 983ea87a7387c4ce6bb0c1c67bf46d81c717e69a
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 5048a4ab4db6d4cb168d2a643a412f89273658b4
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993092"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984262"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-in-hdinsight"></a>Использовании Apache Oozie с Apache Hadoop для определения и выполнения рабочего процесса в HDInsight
 [!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
@@ -123,26 +123,23 @@ Apache Oozie — это система рабочих процессов и ко
 
 RunHiveScript имеет несколько переменных. Вы передадите эти значения при отправке задания Oozie с рабочей станции с помощью Azure PowerShell.
 
-<table border = "1">
-<tr><th>Переменные рабочего процесса</th><th>ОПИСАНИЕ</th></tr>
-<tr><td>${jobTracker}</td><td>Задает URL-адрес средства отслеживания заданий Hadoop. Используйте <strong>jobtrackerhost:9010</strong> в версиях 3.0 и 2.1 HDInsight.</td></tr>
-<tr><td>${nameNode}</td><td>Задает URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы, например <i>wasbs://&lt;имя_контейнера&gt;@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net</i>.</td></tr>
-<tr><td>${queueName}</td><td>Указывает имя очереди, в которую отправляется задание. Используйте <strong>значение по умолчанию</strong>.</td></tr>
-</table>
+|Переменные рабочего процесса|ОПИСАНИЕ|
+|---|---|
+|${jobTracker}|Задает URL-адрес средства отслеживания заданий Hadoop. Используйте **jobtrackerhost:9010** в версиях 3.0 и 2.1 HDInsight.|
+|${nameNode}|Задает URL-адрес узла имен заданий Hadoop. Используйте стандартный адрес для файловой системы, например *wasbs://&lt;имя_контейнера&gt;@&lt;имя_учетной_записи_хранения&gt;.blob.core.windows.net*.|
+|${queueName}|Указывает имя очереди, в которую отправляется задание. Используйте **значение по умолчанию**.|
 
-<table border = "1">
-<tr><th>Переменная действия Hive</th><th>ОПИСАНИЕ</th></tr>
-<tr><td>${hiveDataFolder}</td><td>Задает исходный каталог для команды создания таблицы Hive.</td></tr>
-<tr><td>${hiveOutputFolder}</td><td>Задает папку выходных данных для оператора INSERT OVERWRITE.</td></tr>
-<tr><td>${hiveTableName}</td><td>Задает имя таблицы Hive, ссылающейся на файлы данных log4j.</td></tr>
-</table>
+|Переменная действия Hive|ОПИСАНИЕ|
+|---|---|
+|${hiveDataFolder}|Задает исходный каталог для команды создания таблицы Hive.|
+|${hiveOutputFolder}|Задает папку выходных данных для оператора INSERT OVERWRITE.|
+|${hiveTableName}|Задает имя таблицы Hive, ссылающейся на файлы данных log4j.|
 
-<table border = "1">
-<tr><th>Переменная действия Sqoop</th><th>ОПИСАНИЕ</th></tr>
-<tr><td>${sqlDatabaseConnectionString}</td><td>Определяет строку подключения для базы данных SQL Azure.</td></tr>
-<tr><td>${sqlDatabaseTableName}</td><td>Задает таблицу базы данных SQL Azure, в которую экспортируются данные.</td></tr>
-<tr><td>${hiveOutputFolder}</td><td>Задает папку выходных данных для оператора INSERT OVERWRITE Hive. Это та же папка, что и каталог для экспорта Sqoop (export-dir).</td></tr>
-</table>
+|Переменная действия Sqoop|ОПИСАНИЕ|
+|---|---|
+|${sqlDatabaseConnectionString}|Определяет строку подключения для базы данных SQL Azure.|
+|${sqlDatabaseTableName}|Задает таблицу базы данных SQL Azure, в которую экспортируются данные.|
+|${hiveOutputFolder}|Задает папку выходных данных для оператора INSERT OVERWRITE Hive. Это та же папка, что и каталог для экспорта Sqoop (export-dir).|
 
 Дополнительные сведения о рабочем процессе Oozie и использовании его действий см. в [документации по Apache Oozie 4.0][apache-oozie-400] (для HDInsight версии 3.0) или [документации по Apache Oozie 3.3.2][apache-oozie-332] (для HDInsight версии 2.1).
 

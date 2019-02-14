@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 7a49e69b2e27a38b1a89fedbd6bbd70066b37dc2
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: f0f6bbf5f235d6ae3e86114e583d55c502296470
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54451227"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895403"
 ---
 # <a name="saas-application-technical-info-tab"></a>Вкладка технической информации для приложения SaaS
 
@@ -42,7 +42,7 @@ ms.locfileid: "54451227"
 Для создания этой возможности необходимо выполнить следующие настройки:
 
 - Подключите веб-сайт службы SaaS к API-интерфейсам SaaS корпорации Майкрософт. Создание такого подключения описано в статье [Продажа SaaS с помощью Azure. API-интерфейсы](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis).
-- Включите функцию продажи через Azure на Портале Cloud Partner в форме технической конфигурации и предоставьте необходимые сведения. Дополнительные сведения об этой модели выставления счетов и ее реализации см. в статье [Продажа SaaS с помощью Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions#overview).
+- Включите функцию продажи через Azure на Портале Cloud Partner в форме технической конфигурации и предоставьте необходимые сведения. Дополнительные сведения об этой модели выставления счетов и ее реализации см. в статье [Продажа SaaS с помощью Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions).
 
  ![Форма продажи через корпорацию Майкрософт](./media/saas-techinfo-sellthrough-ms.png)
 

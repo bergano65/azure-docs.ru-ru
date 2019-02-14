@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Узнайте, как с помощью API Bing для поиска видео искать в Интернете видео, набирающие популярность.
 services: cognitive-services
 author: swhite-msft
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: 55f29a31a9574c7c32e6708565e961950520593f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 2aa3c0cd9112f2de9ccda818e74b0b2c377133bf
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55566109"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55869370"
 ---
 # <a name="get-trending-videos-with-the-bing-video-search-api"></a>Поиск видео, набирающего популярность, с помощью API Bing для поиска видео 
 

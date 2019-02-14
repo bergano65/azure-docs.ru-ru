@@ -16,12 +16,13 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser
 ms.reviewer: asmalser
-ms.openlocfilehash: 11ab8bd5f5967f886d8bf1e03df4c9d88bf36b33
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f35de1865f2e02331b8455bbdce92e8fe2f9a1b6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156366"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210481"
 ---
 # <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство. Настройка Asana для автоматической подготовки пользователей
 
@@ -73,11 +74,11 @@ ms.locfileid: "55156366"
 
     a. Войдите в [Asana](https://app.asana.com) с помощью учетной записи администратора.
 
-    b. Щелкните фотографию профиля на верхней панели и выберите текущие параметры для названия организации.
+    б) Щелкните фотографию профиля на верхней панели и выберите текущие параметры для названия организации.
 
     c. Перейдите на вкладку **Service Accounts** (Учетные записи служб).
 
-    d. Выберите **Add Service Account** (Добавить учетную запись службы).
+    4.3. Выберите **Add Service Account** (Добавить учетную запись службы).
 
     д. При необходимости обновите значения в полях **Name** (Имя) и **About** (О себе), а также фотографию профиля. Скопируйте токен в поле **Token** (Токен) и нажмите кнопку **Save Changes** (Сохранить изменения).
 

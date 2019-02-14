@@ -16,14 +16,15 @@ ms.topic: article
 ms.date: 10/19/2017
 ms.author: asmalser
 ms.reviewer: asmalser
-ms.openlocfilehash: 4daf52318fc707de2ae365a6c12b676226ef7fcd
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e36d0985aee53f2a7f701f9bf7887ae26a426b68
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188411"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203749"
 ---
-# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство. Настройка Pingboard для автоматической подготовки пользователей
+# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по Настройка Pingboard для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure Active Directory (Azure AD) в Pingboard.
 
@@ -73,11 +74,11 @@ ms.locfileid: "55188411"
 
     a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
-    b. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
+    б) Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
     c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 
-    d. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
+    4.3. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
 
     д. Скопируйте маркер из поля **OAuth Bearer Token** (Токен носителя OAuth) и введите его в поле **Secret Token** (Токен секрета).
 

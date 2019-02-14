@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 007f7fe95be77a2b1661cd6c82118eb875401f24
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5c4d16ff85972bc4b608e6ce2006912fb27d49d2
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472581"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895437"
 ---
 # <a name="refine-a-group-using-group-dependency-mapping"></a>Уточнение группы с помощью сопоставления зависимостей группы
 
@@ -104,7 +104,7 @@ ms.locfileid: "55472581"
 3. Чтобы просмотреть более подробные сведения о зависимостях, щелкните диапазон времени, чтобы изменить его. По умолчанию диапазон равен одному часу. Можно изменить диапазон времени или указать даты начала и окончания и длительность.
 
     > [!NOTE]
-      Сейчас пользовательский интерфейс визуализации зависимостей не поддерживает выбор диапазона времени, превышающего час. Используйте Log Analytics для [запроса данных зависимостей](https://docs.microsoft.com/azure/migrate/how-to-create-a-group#query-dependency-data-from-log-analytics) на более длительный срок.
+      Сейчас пользовательский интерфейс визуализации зависимостей не поддерживает выбор диапазона времени, превышающего час. Используйте Log Analytics для [запроса данных зависимостей](https://docs.microsoft.com/azure/migrate/how-to-create-a-group) на более длительный срок.
 
 4. Проверьте зависимые компьютеры, процесс, выполняющийся внутри каждого компьютера, и определите компьютеры, которые следует добавить в группу или удалить из нее.
 5. Чтобы выбрать несколько компьютеров на карте для их добавления или удаления, щелкните их, удерживая клавишу CTRL.

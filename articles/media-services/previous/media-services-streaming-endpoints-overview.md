@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/16/2019
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 6b4acf2a8effaef6d9572a4ca36b29af19f2970d
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: b40a2bbfa7bbab7ffbdd4c47684eda7c954e7b77
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359993"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55996963"
 ---
-# <a name="streaming-endpoints-overview"></a>Общие сведения о конечных точках потоковой передачи 
+# <a name="streaming-endpoints-overview"></a>Общие сведения о конечных точках потоковой передачи  
 
 ## <a name="overview"></a>Обзор
 

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: ed43f6cbdfdb3fffe88fa8193290845a50273ca4
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4d30b03d9be8aad932c97695adbfd9360df27a4f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193579"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56180323"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pantheon"></a>Руководство. Интеграция Azure Active Directory с Pantheon
 
@@ -114,10 +115,10 @@ ms.locfileid: "55193579"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:pantheon:<orgname>-SSO`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Pantheon](https://pantheon.io/docs/getting-support/).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Pantheon](https://pantheon.io/docs/getting-support/).
 
 1. Приложение Pantheon ожидает получить утверждение SAML в определенном формате. Для этого формата потребуется указать адрес электронной почты пользователя в качестве значения атрибута UserIdentifier. По умолчанию Azure AD использует для этого атрибута значение UserPrincipalName. Для успешной интеграции это значение следует изменить так, чтобы оно совпадало с адресом электронной почты пользователя. Интеграция будет работать только после выполнения правильного сопоставления.
 
@@ -145,7 +146,7 @@ ms.locfileid: "55193579"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -169,11 +170,11 @@ ms.locfileid: "55193579"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-pantheon-test-user"></a>Создание тестового пользователя Pantheon
 
@@ -231,7 +232,7 @@ ms.locfileid: "55193579"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Pantheon на панели доступа, вы автоматически войдете в приложение Pantheon.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

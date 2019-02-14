@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2017
 ms.author: jeedes
-ms.openlocfilehash: ec37ea10e1318fb707a656587c5f91637ed1cf55
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 42d31f2dd62868713d48a9f6095de160c4b06ffe
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55173837"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205738"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство. Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC)
 
@@ -30,7 +31,7 @@ ms.locfileid: "55173837"
 
 - С помощью Azure AD вы можете контролировать доступ к Mercer BenefitsCentral (MBC).
 - Вы можете включить автоматический вход пользователей в Mercer BenefitsCentral (MBC) (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55173837"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Mercer BenefitsCentral (MBC)**, выберите **Mercer BenefitsCentral (MBC)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55173837"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения Mercer BenefitsCentral (MBC)](#create-a-mercer-benefitscentral-mbc-test-user)** требуется для того, чтобы в Mercer BenefitsCentral (MBC) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55173837"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `stg.mercerhrs.com/saml2.0`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
 
     > [!NOTE] 
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь к [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы получить это значение.
@@ -144,7 +145,7 @@ ms.locfileid: "55173837"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/mercerhrs-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/mercerhrs-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -164,7 +165,7 @@ ms.locfileid: "55173837"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-mercer-benefitscentral-mbc-test-user"></a>Создание тестового пользователя Mercer BenefitsCentral (MBC)
 

@@ -9,16 +9,16 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 09/24/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 93222129b80592ef5b4e1ed2e1420d975fe9f108
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: b4d760d8520f43b223665f17c85d3932761ebe17
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190738"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56003114"
 ---
-# <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта 
+# <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта  
 
 Media Encoder Standard можно использовать для создания эскиза спрайта, который представляет собой JPEG-файл, содержащий несколько эскизов разрешений небольшого размера, объединенных в одно (большое) изображение вместе с VTT-файлом. Этот VTT-файл указывает диапазон времени во входных видеоданных, которые представляет каждый эскиз, а также размер и координаты этого эскиза в большом JPEG-файле. Видеопроигрыватели используют VTT-файл и изображение спрайта, чтобы показать "визуальную" панель поиска, предоставляя читателю визуальную обратную связь при очистке назад и вперед по временной шкале видео.
 

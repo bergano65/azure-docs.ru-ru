@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: a3807dc792c2e56c3e7c1b74f7d3e8f73ac0f4b0
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: 7fb382c6c57972484eff80c0d7355319a1f9178a
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705095"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893557"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -202,7 +202,7 @@ ms.locfileid: "51705095"
         endPoint.geometry.coordinates[0];
     ```
 
-3. Чтобы получить маршрут, добавьте в скрипт приведенный ниже блок кода. В этом коде с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.route?view=azure-iot-typescript-latest#getroutedirections) создается запрос к службе построения маршрутов Azure Maps, а затем с помощью метода [getGeoJsonRoutes](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.geojson.geojsonroutedirectionsresponse?view=azure-iot-typescript-latest#getgeojsonroutes) анализируется ответ в формате GeoJSON. Затем линия маршрута добавляется в ответ к источнику данных, который автоматически отображает ее на карте.
+3. Чтобы получить маршрут, добавьте в скрипт приведенный ниже блок кода. В этом коде с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.route?view=azure-iot-typescript-latest) создается запрос к службе построения маршрутов Azure Maps, а затем с помощью метода [getGeoJsonRoutes](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.geojson.geojsonroutedirectionsresponse?view=azure-iot-typescript-latest) анализируется ответ в формате GeoJSON. Затем линия маршрута добавляется в ответ к источнику данных, который автоматически отображает ее на карте.
 
     ```JavaScript
     //Execute the car route query then add the route to the map once a response is received.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Tangoe Command Premium Mobile.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: ea272a6d7d045a01c72a7c88c048340b8d11ba83
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 986afa1239ad0efd9ccb936252ead37c8379b447
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152303"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192903"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile
+# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile
 
 В этом учебнике описано, как интегрировать Tangoe Command Premium Mobile с Azure Active Directory (Azure AD).
 
@@ -88,7 +89,7 @@ ms.locfileid: "55152303"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Tangoe Command Premium Mobile](#create-a-tangoe-command-premium-mobile-test-user)** требуется для того, чтобы в Tangoe Command Premium Mobile существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -111,10 +112,10 @@ ms.locfileid: "55152303"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/startSSO.ping?PartnerIdpId=<tenant issuer>&TARGET=<target page url>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/ACS.saml2`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/ACS.saml2`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/). 
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -164,11 +165,11 @@ ms.locfileid: "55152303"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-tangoe-command-premium-mobile-test-user"></a>Создание тестового пользователя Tangoe Command Premium Mobile
 

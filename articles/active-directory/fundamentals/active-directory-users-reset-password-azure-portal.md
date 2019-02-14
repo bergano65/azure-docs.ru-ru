@@ -13,12 +13,13 @@ ms.date: 09/05/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 61e66d8630d5e93a343640ad7793a975c6e1510b
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ce76fa7fecb8a82f76d40827bfa868061a0ed584
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092277"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204905"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
 Если пользователь забыл пароль, был заблокирован на устройстве или никогда не получал пароля, то администратор может сбросить его пароль.

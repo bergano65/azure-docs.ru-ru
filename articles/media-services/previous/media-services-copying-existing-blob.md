@@ -4,21 +4,21 @@ description: В этом разделе показано, как копиров�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 12/09/2017
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 9305b3cb810af9f0653d980328c46e41a540bf1a
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: f34f7fe4fcdb79c6c01422f3248144fb000c2575
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783393"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998306"
 ---
 # <a name="copying-existing-blobs-into-a-media-services-asset"></a>Копирование существующих BLOB-объектов в файл служб мультимедиа
 В этой статье демонстрируется, как копировать большие двоичные объекты из учетной записи хранения в новый ресурс Служб мультимедиа Azure (AMS) с помощью [расширений пакета SDK служб мультимедиа Azure для .NET](https://github.com/Azure/azure-sdk-for-media-services-extensions/).
@@ -40,7 +40,7 @@ ms.locfileid: "33783393"
 
 ## <a name="copy-blobs-between-two-ams-accounts"></a>Копирование больших двоичных объектов между двумя учетными записями AMS  
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Две учетные записи служб мультимедиа. См. дополнительные сведения о [создании учетной записи Служб мультимедиа Azure](media-services-portal-create-account.md).
 
@@ -158,7 +158,7 @@ namespace CopyExistingBlobsIntoAsset
 
 ## <a name="copy-blobs-from-a-storage-account-into-an-ams-account"></a>Копирование больших двоичных объектов из учетной записи хранения в учетную запись AMS 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 - Одна учетная запись хранения, из которой вы будете копировать BLOB-объекты.
 - Одна учетная запись AMS, в которую вы будете копировать BLOB-объекты.

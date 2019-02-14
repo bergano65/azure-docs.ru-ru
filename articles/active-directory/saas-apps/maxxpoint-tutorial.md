@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с MaxxPoint | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с MaxxPoint | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в MaxxPoint
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/13/2017
 ms.author: jeedes
-ms.openlocfilehash: bc83c67a2f5cbe0f0ccaaabb0c5fafd60828fd45
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 23801a796473d7985c17ffcf8a9f1350c1b0e8e9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55192865"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56187769"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство. Интеграция Azure Active Directory с MaxxPoint
+# <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство по Интеграция Azure Active Directory с MaxxPoint
 
 В этом руководстве описано, как интегрировать MaxxPoint с Azure Active Directory (Azure AD).
 
@@ -119,7 +120,7 @@ ms.locfileid: "55192865"
 
     a. Выберите параметр **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://maxxpoint.westipc.com/default/sso/login/entity/<customer-id>-azure`.
+    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://maxxpoint.westipc.com/default/sso/login/entity/<customer-id>-azure`.
 
     > [!NOTE] 
     > Обратите внимание, что это значение используется только в качестве примера. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, позвоните в службу поддержки MaxxPoint по номеру **888-728-0950**.
@@ -138,7 +139,7 @@ ms.locfileid: "55192865"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55192865"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 ### <a name="creating-a-maxxpoint-test-user"></a>Создание тестового пользователя MaxxPoint
 

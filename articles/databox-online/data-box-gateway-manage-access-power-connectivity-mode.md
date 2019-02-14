@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 11/09/2018
+ms.date: 02/07/2019
 ms.author: alkohli
-ms.openlocfilehash: 8f9172418f15b129a71242038efd4cdb7683bbf7
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: 0ad94799320e25d88f616117f1bfcf9f0513aadf
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51516544"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55873025"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway-preview"></a>Управление доступом, питанием и режимом подключения к Шлюзу Azure Data Box (предварительная версия)
 
@@ -22,9 +22,9 @@ ms.locfileid: "51516544"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * управление доступом к устройству;
+> * Управление доступом к устройству
 > * управление режимом подключения;
-> * управление питанием.
+> * Управление питанием
 
 > [!IMPORTANT]
 > Шлюз Data Box доступен в качестве предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
@@ -35,7 +35,7 @@ ms.locfileid: "51516544"
 
 ### <a name="change-device-administrator-password"></a>Изменение пароля администратора устройства
 
-Если вы забыли пароль, его можно изменить. Выполните следующие шаги в локальном интерфейсе, чтобы изменить пароль администратора устройства.
+Выполните следующие шаги в локальном интерфейсе, чтобы изменить пароль администратора устройства.
 
 1. В локальном пользовательском веб-интерфейсе перейдите в раздел **Обслуживания > Изменение пароля**.
 2. Введите текущий пароль, а затем — новый. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Подтвердите новый пароль.

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 3906b59e6b00d5ba2e735a044ec3f935f4086aab
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 712cc5ce62225987f8cc3ea13b5e4fd10a7d5eaf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55155057"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172728"
 ---
 # <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство. Настройка Salesforce для автоматической подготовки пользователей
 
@@ -77,7 +78,7 @@ ms.locfileid: "55155057"
 
     a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
 
-    b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    б) В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 6. Для получения маркера безопасности Salesforce откройте новую вкладку и выполните вход с этой учетной записью администратора Salesforce. В правом верхнем углу страницы щелкните свое имя и выберите **Параметры**.
 

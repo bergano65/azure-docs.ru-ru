@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: 'В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе по созданию проверок видео с помощью пакета SDK Content Moderator для C#. Вы научитесь выполнять такие задачи:'
 services: cognitive-services
 author: sanjeev3
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 86f629538db30719bc4793bfae16cf2fb8530097
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: f05233755f5e32182ee6c8dafdc24a40b2e8d682
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55210187"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55883888"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 

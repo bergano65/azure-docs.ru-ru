@@ -15,12 +15,13 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1b2f82b4feea94c5c0ed732ff84856c96f46afc0
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 60a648b24ad16c1b5ea404b5ad9f1f18fd5041da
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498086"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193855"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-architecture"></a>Синхронизация Azure AD Connect: Understanding the architecture (Основные сведения об архитектуре)
 В этой статье описана базовая архитектура для синхронизации Azure AD Connect. Она во многом похожа на своих предшественниц MIIS 2003, ILM 2007 и FIM 2010. Синхронизация Azure AD Connect представляет собой следующую ступень развития этих технологий. Если вы знакомы с любой из этих более ранних технологий, содержимое этой статьи будет вам также знакомо. Если вы не знакомы с синхронизацией, вы найдете здесь все необходимые сведения. Тем не менее, чтобы успешно настроить синхронизацию Azure AD Connect (называемую здесь модулем синхронизации), не обязательно знать все подробности, содержащиеся в этой статье.

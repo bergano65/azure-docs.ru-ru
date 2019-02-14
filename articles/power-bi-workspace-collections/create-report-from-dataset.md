@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 38be6d0212f4676add76abacf9f18f0a73eb44be
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 78834f1f12d2c748cb885e437496f2acf11b69ee
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170425"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232791"
 ---
 # <a name="create-a-new-report-from-a-dataset-in-power-bi-workspace-collections"></a>Создание отчета из набора данных в коллекциях рабочих областей Power BI
 
@@ -40,13 +40,13 @@ ms.locfileid: "55170425"
 
 **Установка пакета NuGet**
 
-```
+```powershell
 Install-Package Microsoft.PowerBI.Core
 ```
 
 **Код C#**
 
-```
+```csharp
 using Microsoft.PowerBI.Security;
 
 // rlsUsername and roles are optional
@@ -65,15 +65,16 @@ var token = embedToken.Generate("{access key}");
 
 **Установка пакета NuGet**
 
-```
+```powershell
 Install-Package Microsoft.PowerBI.JavaScript
 ```
 
 **Код JavaScript**
 
-```
+```html
 <div id="reportContainer"></div>
-  
+
+<script>
 var embedCreateConfiguration = {
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
         embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
@@ -85,6 +86,7 @@ var embedCreateConfiguration = {
 
     // Create report
     var report = powerbi.createReport(reportContainer, embedCreateConfiguration);
+</script>
 ```
 
 Вызов *powerbi.createReport()* приводит к тому, что пустой холст в режиме правки отобразится в элементе *div*.
@@ -95,7 +97,7 @@ var embedCreateConfiguration = {
 
 Отчет не будет создан, пока вы не вызовите операцию **Сохранить как**. Это можно сделать, используя меню "Файл" или JavaScript.
 
-```
+```javascript
  // Get a reference to the embedded report.
     report = powerbi.get(reportContainer);
     
@@ -116,9 +118,9 @@ var embedCreateConfiguration = {
 
 Для взаимодействия с новым отчетом необходимо внедрить его таким же образом, как приложение внедряет обычный отчет. Таким образом, специально для нового отчета должен быть выдан новый маркер, а затем вызван метод embed.
 
-```
+```html
 <div id="reportContainer"></div>
-  
+<script>
 var embedConfiguration = {
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MJ',
         embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
@@ -130,13 +132,14 @@ var embedConfiguration = {
 
     // Embed report
     var report = powerbi.embed(reportContainer, embedConfiguration);
+</script>
 ```
 
 ## <a name="automate-save-and-load-of-a-new-report-using-the-saved-event"></a>Автоматизация сохранения и загрузки нового отчета с помощью "сохраненного" события
 
 Чтобы автоматизировать процесс "Сохранить как", а затем загрузить новый отчет, можно воспользоваться "сохраненным" событием. Это событие срабатывает, когда операция сохранения завершена и возвращает объект JSON, содержащий новый идентификатор reportId, имя отчета, старый идентификатор reportId (если он был), а также сведения об операции ("Сохранить как" или "Сохранить").
 
-```
+```json
 {
   "reportObjectId": "5dac7a4a-4452-46b3-99f6-a25915e0fe54",
   "reportName": "newReport",
@@ -147,9 +150,9 @@ var embedConfiguration = {
 
 Для автоматизации процесса дождитесь передачи "сохраненного" события, возьмите из него новый идентификатор reportId, создайте маркер и внедрите новый отчет с этим маркером.
 
-```
+```html
 <div id="reportContainer"></div>
-  
+<script>
 var embedCreateConfiguration = {
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
         embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
@@ -192,6 +195,7 @@ var embedCreateConfiguration = {
    // report.off removes a given event handler if it exists.
    report.off("saved");
     });
+</script>
 ```
 
 ## <a name="see-also"></a>См. также

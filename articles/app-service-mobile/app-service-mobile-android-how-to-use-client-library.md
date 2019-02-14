@@ -13,12 +13,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: crdun
-ms.openlocfilehash: c0e6aa34b80389689e49ac6ad3566a3a109a96e1
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 803c9af7b6c40f7deee2b81fb7ff0ae82ef6778a
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158168"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55965160"
 ---
 # <a name="how-to-use-the-azure-mobile-apps-sdk-for-android"></a>Как использовать пакет SDK для мобильных приложений Azure в клиенте Android
 
@@ -55,7 +55,7 @@ ms.locfileid: "54158168"
 
 1. Добавьте следующий код в файл *build.gradle* уровня **Project** внутри тега *buildscript*.
 
-    ```text
+    ```gradle
     buildscript {
         repositories {
             jcenter()
@@ -65,7 +65,7 @@ ms.locfileid: "54158168"
 
 2. Добавьте следующий код в файл *build.gradle* уровня **Module app** внутри тега *dependencies*.
 
-    ```text
+    ```gradle
     compile 'com.microsoft.azure:azure-mobile-android:3.4.0@aar'
     ```
 
@@ -496,7 +496,7 @@ List<ToDoItem> results = mToDoTable
 
 В приведенном выше коде атрибут *listitem* указывает идентификатор макета для отдельной строки в списке. Этот код задает флажок и связанный с ним текст, при этом экземпляры создаются для каждого элемента в списке. В этом макете поле **id** не отображается. В более сложном макете указываются дополнительные поля на экране. Этот код находится в файле **row_list_to_do.xml**.
 
-```java
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -520,7 +520,7 @@ public class ToDoItemAdapter extends ArrayAdapter<ToDoItem> {
 
 Переопределите метод **getView** адаптера. Например: 
 
-```
+```java
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
@@ -959,7 +959,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 Добавьте параметр **redirectUriScheme** в файл `build.gradle` приложения:
 
-```text
+```gradle
 android {
     buildTypes {
         release {
@@ -976,7 +976,7 @@ android {
 
 Наконец, добавьте `com.android.support:customtabs:23.0.1` в список зависимостей в файле `build.gradle`:
 
-```text
+```gradle
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.google.code.gson:gson:2.3'
@@ -1076,7 +1076,7 @@ MobileServiceUser user = mClient
 1. Настройте серверную часть мобильного приложения для входа с помощью AAD, следуя указаниям в руководстве [Настройка приложения службы приложений для использования службы входа Azure Active Directory][22]. Обязательно выполните дополнительный этап регистрации собственного клиентского приложения.
 2. Установите ADAL, добавив в файл build.gradle следующие определения.
 
-    ```
+    ```gradle
     repositories {
         mavenCentral()
         flatDir {

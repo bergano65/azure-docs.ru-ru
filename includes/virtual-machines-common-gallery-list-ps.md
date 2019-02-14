@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/07/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: f7539ed5083a386ef05134bea36426f4a360afad
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: a55653c0f23be594fe65e7a322c11edc37ee1ce6
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54192763"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984998"
 ---
 ## <a name="shared-image-management"></a>Управление общими образами 
 
@@ -22,28 +22,28 @@ ms.locfileid: "54192763"
 Перечислите все коллекции по имени.
 
 ```azurepowershell-interactive
-$galleries = Get-AzureRMResource -ResourceType Microsoft.Compute/galleries
+$galleries = Get-AzResource -ResourceType Microsoft.Compute/galleries
 $galleries.Name
 ```
 
 Перечислите все определения образов по имени.
 
 ```azurepowershell-interactive
-$imageDefinitions = Get-AzureRMResource -ResourceType Microsoft.Compute/galleries/images
+$imageDefinitions = Get-AzResource -ResourceType Microsoft.Compute/galleries/images
 $imageDefinitions.Name
 ```
 
 Перечислите все версии образов по имени.
 
 ```azurepowershell-interactive
-$imageVersions = Get-AzureRMResource -ResourceType Microsoft.Compute/galleries/images/versions
+$imageVersions = Get-AzResource -ResourceType Microsoft.Compute/galleries/images/versions
 $imageVersions.Name
 ```
 
 Удалите версию образа. В этом примере удаляется версия образа с именем *1.0.0*.
 
 ```azurepowershell-interactive
-Remove-AzureRmGalleryImageVersion `
+Remove-AzGalleryImageVersion `
    -GalleryImageDefinitionName myImageDefinition `
    -GalleryName myGallery `
    -Name 1.0.0 `

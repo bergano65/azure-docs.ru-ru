@@ -4,23 +4,23 @@ description: Сведения о лицензировании пакета дл�
 services: media-services
 documentationcenter: ''
 author: willzhan
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/15/2018
+ms.date: 02/08/2019
 ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: c19b43f652b490ceb86606633f543f4e455b6116
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 94baa1235388ce99d013f8267f8410dcc206a51d
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189309"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998354"
 ---
-# <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure
+# <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure 
 
 ## <a name="overview"></a>Обзор
 
@@ -106,7 +106,7 @@ ms.locfileid: "54189309"
 
 * видеосодержимое MBR;
 * Ключ содержимого
-* URL-адреса для приобретения лицензии;
+* URL-адреса для приобретения лицензии.
 
 Во время воспроизведения поток верхнего уровня включает:
 

@@ -13,12 +13,13 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: lizross
-ms.openlocfilehash: 9fd7a3c03c72a63f4163f85ac41248e200397206
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0749e1acba9f13f9e0e95dfc66f9cf818c752cff
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770726"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56165626"
 ---
 # <a name="set-up-my-account-for-two-step-verification"></a>Настройка учетной записи для двухфакторной проверки подлинности
 Двухфакторная проверка подлинности — это этап дополнительного обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа. Если вы читаете эту статью, скорее всего, вы получили по электронной почте уведомление о многофакторной проверке подлинности от администратора вашей организации или учебного заведения. Или, возможно, вы попытались выполнить вход и получили сообщение с просьбой настроить дополнительную проверку безопасности. В этом случае **вы не сможете войти в учетную запись, пока не завершите процесс автоматической регистрации**.

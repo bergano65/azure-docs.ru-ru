@@ -16,12 +16,13 @@ ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: d3ded429e960679b6bb252bdcec67c5a1d833ac1
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 21558c4eccf0cd1f4e9e1d630f0e89dbb6f01c51
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55496012"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201709"
 ---
 # <a name="determine-directory-synchronization-requirements"></a>Определение требований к синхронизации каталога
 Синхронизация предназначена для предоставления пользователям идентификации в облаке на основе их локальной идентификации. Независимо от того, используют ли они синхронизированную учетную запись для проверки подлинности или федеративной проверки подлинности, пользователям по-прежнему будет нужно идентифицироваться в облаке.  Эту идентификацию будет необходимо поддерживать и периодически обновлять.  Обновления могут принимать различные формы от изменения заголовка до изменения пароля.  

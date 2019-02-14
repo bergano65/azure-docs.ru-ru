@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TimeOffManager | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с TimeOffManager | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TimeOffManager.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: fc114d59ae97813c0ce8f70a6ad58f0faf02a47c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8d80312acfa90690a0b0fe7b212a614945e1e5b1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157624"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56200400"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-timeoffmanager"></a>Руководство. Интеграция Azure Active Directory с TimeOffManager
+# <a name="tutorial-azure-active-directory-integration-with-timeoffmanager"></a>Руководство по Интеграция Azure Active Directory с TimeOffManager
 
 В этом руководстве описано, как интегрировать TimeOffManager с Azure Active Directory (Azure AD).
 
@@ -88,7 +89,7 @@ ms.locfileid: "55157624"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя TimeOffManager](#create-a-timeoffmanager-test-user)** требуется для того, чтобы в TimeOffManager существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -136,11 +137,11 @@ ms.locfileid: "55157624"
     
     ![Атрибуты токена SAML](./media/timeoffmanager-tutorial/tutorial_timeoffmanager_addattrb1.png "Атрибуты токена SAML")
     
-    b.  В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
+    б)  В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
     
     c.  В текстовом поле **Значение атрибута** выберите значение атрибута, отображаемое для этой строки.
     
-    d.  Нажмите кнопку **ОК**.
+    4.3.  Нажмите кнопку **ОК**.
     
 1. Нажмите кнопку **Сохранить** .
 
@@ -161,11 +162,11 @@ ms.locfileid: "55157624"
    
    a. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена и вставьте весь сертификат в текстовое поле **Сертификат X.509** .
    
-   b. В текстовое поле **Idp Issuer** (Издатель IdP) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
+   б) В текстовое поле **Idp Issuer** (Издатель IdP) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
    
    c. В текстовое поле **IdP Endpoint URL** (URL-адрес конечной точки IdP) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
    
-   d. Для параметра **Enforce SAML** (Применить SAML) выберите значение **No** (Нет).
+   4.3. Для параметра **Enforce SAML** (Применить SAML) выберите значение **No** (Нет).
    
    д. Для параметра **Auto-Create Users** (Автосоздание пользователей) выберите значение **Yes** (Да).
    
@@ -206,11 +207,11 @@ ms.locfileid: "55157624"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-timeoffmanager-test-user"></a>Создание тестового пользователя TimeOffManager
 

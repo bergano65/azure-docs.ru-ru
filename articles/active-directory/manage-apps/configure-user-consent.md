@@ -2,21 +2,22 @@
 title: Настройка согласия пользователя для приложения (Azure Active Directory) | Документация Майкрософт
 description: Сведения о том, как управлять методами получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD).
 services: active-directory
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/22/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: arvindh
-ms.openlocfilehash: 8f2d1580cfbf23bd54498243a8bfac43c32973ea
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d35f8b440fe748f91c9e01003fe83a3a5343c8df
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55183022"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203732"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 

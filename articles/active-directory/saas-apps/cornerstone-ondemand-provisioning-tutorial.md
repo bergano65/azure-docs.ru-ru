@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Cornerstone OnDemand для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Cornerstone OnDemand для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Cornerstone OnDemand.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: v-ant
-ms.openlocfilehash: 9f18fcb38e6e0855a00ffb454211273dfb2041a6
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a24945cae273e072d3be314a66248674e25fe287
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168504"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198870"
 ---
 # <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство. Настройка Cornerstone OnDemand для автоматической подготовки пользователей
 
@@ -50,7 +51,7 @@ ms.locfileid: "55168504"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
 
@@ -58,7 +59,7 @@ ms.locfileid: "55168504"
     
 3. Чтобы добавить Cornerstone OnDemand, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Cornerstone OnDemand**.
 

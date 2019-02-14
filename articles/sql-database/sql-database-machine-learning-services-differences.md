@@ -12,12 +12,12 @@ ms.author: davidph
 ms.reviewer: carlrab
 manager: cgronlun
 ms.date: 01/31/2019
-ms.openlocfilehash: adc303e9b375aaa6f37e9e79ea5434675c75523d
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 4350fb0e75f140e120ba6cd2f074ffa1816a8fce
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825031"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237490"
 ---
 # <a name="key-differences-between-machine-learning-services-in-azure-sql-database-and-sql-server"></a>Основные различия между Службами машинного обучения в Базе данных SQL Azure и SQL Server
 
@@ -25,7 +25,7 @@ ms.locfileid: "55825031"
 
 ## <a name="language-support"></a>Поддержка языков
 
-SQL Server обеспечивает поддержку R и Python через [платформу расширения](https://docs.microsoft.com/en-us/sql/advanced-analytics/concepts/extensibility-framework). База данных SQL не поддерживает оба языка. Ниже описаны основные различия.
+SQL Server обеспечивает поддержку R и Python через [платформу расширения](https://docs.microsoft.com/sql/advanced-analytics/concepts/extensibility-framework). База данных SQL не поддерживает оба языка. Ниже описаны основные различия.
 
 - R — единственный поддерживаемый язык в Базе данных SQL. В настоящее время Python не поддерживается.
 - Версия R — 3.4.4.

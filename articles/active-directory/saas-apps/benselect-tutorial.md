@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 163541bb1473d73e840c604833b177721a8cdff8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 699afd4703efc5e8f63bb13fe1dd753a0c72594d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55162231"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209444"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-benselect"></a>Руководство. Интеграция Azure Active Directory с BenSelect
+# <a name="tutorial-azure-active-directory-integration-with-benselect"></a>Руководство по Интеграция Azure Active Directory с BenSelect
 
 В этом руководстве описано, как интегрировать BenSelect с Azure Active Directory (Azure AD).
 
@@ -129,7 +130,7 @@ ms.locfileid: "55162231"
 
     a. Из раскрывающегося списка **Идентификатор пользователя** выберите **ExtractMailPrefix**.
 
-    b. Из раскрывающегося списка **Электронная почта** выберите **user.userprincipalname**.
+    б) Из раскрывающегося списка **Электронная почта** выберите **user.userprincipalname**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -148,7 +149,7 @@ ms.locfileid: "55162231"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -172,11 +173,11 @@ ms.locfileid: "55162231"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-benselect-test-user"></a>Создание тестового пользователя BenSelect
 

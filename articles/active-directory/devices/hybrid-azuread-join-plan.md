@@ -16,12 +16,13 @@ ms.topic: article
 ms.date: 02/03/2019
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: be66f24ec6532b93c4554568b0a58d467a09c600
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 17b7f7fa4889742989a61f8cc076224d46f8eac2
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746427"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234108"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -145,7 +146,7 @@ ms.locfileid: "55746427"
 - [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](hybrid-azuread-join-managed-domains.md)
 
 
- Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-manual). 
+ Если установка нужной версии Azure AD Connect для вас не подходит, перейдите к [руководству по настройке гибридного присоединения устройств к Azure AD вручную](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-manual). 
 
 
 ## <a name="on-premises-ad-upn-support-in-hybrid-azure-ad-join"></a>Поддержка имени участника-пользователя локальной службы AD при присоединении к гибридной Azure Active Directory

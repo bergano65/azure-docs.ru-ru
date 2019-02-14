@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Ziflow | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Ziflow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Ziflow.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/07/2018
 ms.author: jeedes
-ms.openlocfilehash: ca687f15187d4dd485d2c59e3c46fa3158802ff4
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 175e678365016bafd3d18f590a5434c32ac9fadd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180008"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56176481"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
 
@@ -30,7 +31,7 @@ ms.locfileid: "55180008"
 
 - С помощью Azure AD вы можете контролировать доступ к Ziflow.
 - Вы можете включить автоматический вход пользователей в Ziflow (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55180008"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Ziflow**, выберите **Ziflow** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55180008"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Ziflow](#create-a-ziflow-test-user)** требуется для того, чтобы в Ziflow существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55180008"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ziflow-production.auth0.com/login/callback?connection=<UniqueID>`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`
 
     > [!NOTE]
     > Приведенные выше значения используются только для примера. Замените их на уникальные значения идентификатора и URL-адреса входа, которые описываются далее в этом руководстве.
@@ -143,11 +144,11 @@ ms.locfileid: "55180008"
 
     a. Выберите в качестве **типа** значение **SAML2.0**.
 
-    b. В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    б) В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Отправьте сертификат в кодировке Base64, который был скачан с портала Azure, в поле **X509 Signing Certificate** (Сертификат для подписи X509).
 
-    d. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    4.3. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
     д. В разделе **Configuration Settings for your Identifier Provider** (Параметры конфигурации для поставщика удостоверений) скопируйте выделенное значение уникального идентификатора и добавьте его к идентификатору и URL-адрес для входа в разделе **Домены и URL-адреса приложения Ziflow** на портале Azure.
 
@@ -161,7 +162,7 @@ ms.locfileid: "55180008"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/ziflow-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/ziflow-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -181,7 +182,7 @@ ms.locfileid: "55180008"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-ziflow-test-user"></a>Создание тестового пользователя Ziflow
 
@@ -205,11 +206,11 @@ ms.locfileid: "55180008"
 
     a. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
-    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
-    d. Укажите свою роль Ziflow.
+    4.3. Укажите свою роль Ziflow.
 
     д. Нажмите кнопку **Add 1 user** (Добавить 1 пользователя).
 

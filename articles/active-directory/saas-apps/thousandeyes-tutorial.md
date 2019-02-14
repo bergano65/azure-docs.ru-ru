@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 06de55fd2bd1064e93e38fe0ff0cfb13fdc1463a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 43aa43d37099d69441a5dde47327e784d67fa9ac
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55175440"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56189452"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Руководство. Интеграция Azure Active Directory с ThousandEyes
 
@@ -146,18 +147,18 @@ ms.locfileid: "55175440"
 
     a. Выберите пункт **Включить единый вход**.
 
-    b. В текстовое поле **Login Page URL** (URL-адрес страницы входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    б) В текстовое поле **Login Page URL** (URL-адрес страницы входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Logout Page URL** (URL-адрес выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
-    d. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    4.3. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     д. В разделе **Verification Certificate** (Сертификат проверки) нажмите кнопку **Choose file** (Выбрать файл) и передайте сертификат, скачанный с портала Azure.
 
     Е. Выберите команду **Сохранить**.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -181,11 +182,11 @@ ms.locfileid: "55175440"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-thousandeyes-test-user"></a>Создание тестового пользователя ThousandEyes
 
@@ -213,9 +214,9 @@ ms.locfileid: "55175440"
 
     a. В текстовое поле **Name** (Имя) введите имя пользователя, например **Britta Simon**.
 
-    b. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например **brittasimon@contoso.com**.
+    б) В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например **brittasimon@contoso.com**.
 
-    b. Щелкните **Добавить нового пользователя к учетной записи**.
+    б) Щелкните **Добавить нового пользователя к учетной записи**.
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения и активации учетной записи.
@@ -259,7 +260,7 @@ ms.locfileid: "55175440"
 
 Щелкнув элемент "ThousandEyes" на панели доступа, вы автоматически войдете в приложение ThousandEyes.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

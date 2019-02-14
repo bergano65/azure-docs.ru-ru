@@ -1,23 +1,23 @@
 ---
 title: 'Документация по кэшу Azure для Redis: руководства и справочник по API | Документация Майкрософт'
 description: Узнайте, как использовать кэш Azure для Redis — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает быстрый доступ приложений к данным. Руководства, справочники по API и другие документы.
-services: azure-cache-for-redis
-author: czeumault
-manager: carolz
+services: cache
+author: yegu-ms
+manager: jubbard
 layout: LandingPage
 ms.assetid: ''
-ms.service: azure-cache-for-redis
+ms.service: cache
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
-ms.author: carolz
-ms.openlocfilehash: cd7cb65f6f76987eb891759bb50f4bb92b2e6234
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.author: yegu
+ms.openlocfilehash: c5de77f3862f3ca315c586e1ec1cbfc7b5b453a1
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098824"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234855"
 ---
 # <a name="azure-cache-for-redis-documentation"></a>Документация по кэшу Azure для Redis
 

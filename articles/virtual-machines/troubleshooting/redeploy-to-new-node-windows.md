@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: c0bf4d1684ca5a0921173dc90f51fec9fb052efc
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: b10c0be91a4b12af72d48124b225dac777c4d936
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993263"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982664"
 ---
 # <a name="redeploy-windows-virtual-machine-to-new-azure-node"></a>Повторное развертывание виртуальной машины Windows на новом узле Azure
 Если вам не удается подключиться к удаленному рабочему столу или получить доступ к приложению на виртуальной машине Windows Azure, можно попробовать повторно развернуть виртуальную машину. При повторном развертывании работа виртуальной машины в Azure завершается и она перемещается на новый узел в рамках инфраструктуры Azure. Там она снова включается с сохранением всех параметров конфигурации и связанных ресурсов. В этой статье показано, как повторно развернуть виртуальную машину с помощью Azure PowerShell или портала Azure.
@@ -34,7 +34,7 @@ ms.locfileid: "52993263"
 В следующем примере развертывается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`.
 
 ```powershell
-Set-AzureRmVM -Redeploy -ResourceGroupName "myResourceGroup" -Name "myVM"
+Set-AzVM -Redeploy -ResourceGroupName "myResourceGroup" -Name "myVM"
 ```
 
 [!INCLUDE [virtual-machines-common-redeploy-to-new-node](../../../includes/virtual-machines-common-redeploy-to-new-node.md)]

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a6ae388107e527b399dc758abccbefcec955a60d
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 9682b9b832a8fd7374cb84e8cc6faad69df15945
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661638"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55979077"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
@@ -60,7 +60,7 @@ az acr login --name <acrName>
 
 Вы можете также выполнить вход напрямую с помощью субъекта-службы. При запуске следующей команды, когда появляется запрос в интерактивном режиме, укажите идентификатор приложения (имя пользователя) и пароль субъекта-службы. Рекомендации по управлению учетными данными см. в справочнике по команде [docker login](https://docs.docker.com/engine/reference/commandline/login/).
 
-```Docker
+```
 docker login myregistry.azurecr.io
 ```
 
@@ -80,7 +80,7 @@ docker login myregistry.azurecr.io
 
 Учетной записи администратора предоставляются два пароля, каждый из которых можно создать повторно. Благодаря этому вы можете подключаться к реестру, используя один пароль, пока второй создается повторно. Если учетная запись администратора включена, вы можете указать в команде `docker login` имя пользователя и пароль, когда будет предложено выполнить базовую аутентификацию в реестре. Например: 
 
-```Docker
+```
 docker login myregistry.azurecr.io 
 ```
 

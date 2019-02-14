@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2018
 ms.author: manayar
-ms.openlocfilehash: 8f85ded20470ecc5a7868c094e88a149c88b7f39
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 6aeba722a0661979664f8d61efdb9b2bf47ad801
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55749573"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55981661"
 ---
 # <a name="understand-instance-ids-for-azure-vm-scale-set-vms"></a>Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 В этой статье описаны идентификаторы экземпляров для масштабируемых наборов и связанные с ними возможности.
@@ -31,7 +31,7 @@ ms.locfileid: "55749573"
 
 REST API: `POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/reimage?api-version={apiVersion}` (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/reimage)).
 
-PowerShell: `Set-AzureRmVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName} -InstanceId {instanceId} -Reimage` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmssvm)).
+PowerShell: `Set-AzVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName} -InstanceId {instanceId} -Reimage` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmssvm)).
 
 CLI: `az vmss reimage -g {resourceGroupName} -n {vmScaleSetName} --instance-id {instanceId}` (дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
 
@@ -39,7 +39,7 @@ CLI: `az vmss reimage -g {resourceGroupName} -n {vmScaleSetName} --instance-id {
 
 REST API: `GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualMachines?api-version={apiVersion}` (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesetvms/list)).
 
-PowerShell: `Get-AzureRmVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName}` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmssvm)).
+PowerShell: `Get-AzVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName}` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/az.compute/get-azvmssvm)).
 
 CLI: `az vmss list-instances -g {resourceGroupName} -n {vmScaleSetName}` (дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
 

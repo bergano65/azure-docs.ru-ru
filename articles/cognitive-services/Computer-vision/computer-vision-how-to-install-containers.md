@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: article
-ms.date: 01/29/2019
+ms.date: 02/08/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 1e7f62d35e9850202b7d55c3c3440ff88413931d
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 58a22253efb6928c87937e4aba852dd93a3e4422
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473499"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978550"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -72,7 +72,7 @@ ms.locfileid: "55473499"
 
 ### <a name="docker-pull-for-the-recognize-text-container"></a>docker pull для контейнера Распознавания текста
 
-```Docker
+```
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-rocognize-text:latest
 ```
 
@@ -146,18 +146,7 @@ ApiKey={BILLING_KEY}
 
 Контейнеры Распознавания текста отправляют данные для выставления счетов в Azure с помощью ресурса _Распознавание текста_ в учетной записи Azure. 
 
-Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют данные клиента в корпорацию Майкрософт. 
-
-В команде `docker run` используются следующие аргументы для выставления счетов.
-
-| Параметр | ОПИСАНИЕ |
-|--------|-------------|
-| `ApiKey` | Ключ API ресурса _Распознавание текста_ используется для отслеживания информации о выставлении счетов. |
-| `Billing` | Конечная точка ресурса _Распознавание текста_ используется для отслеживания информации о выставлении счетов.|
-| `Eula` | Указывает, что вы приняли условия лицензии для контейнера.<br/>Для этого параметра следует задать значение `accept`. |
-
-> [!IMPORTANT]
-> Для всех трех параметров необходимо задать допустимые значения. В противном случае контейнер не запустится.
+[!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](./computer-vision-resource-container-config.md).
 

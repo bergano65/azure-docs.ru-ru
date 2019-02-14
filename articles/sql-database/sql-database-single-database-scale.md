@@ -11,17 +11,20 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: b3ee256072e5c0b5b92daac07eae5b41b194ae8a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/07/2019
+ms.openlocfilehash: 7afdcc402840aede1fe9678bf5f4012213edf9fa
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55475964"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55961352"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
 В этой статье описано масштабирование вычислительных ресурсов и ресурсов хранилища, предоставляемых отдельной базе данных в Базе данных SQL Azure.
+
+> [!IMPORTANT]
+> Плата взимается за каждый час существования базы данных с учетом самого высокого уровня служб и объема вычислительных ресурсов, которые использовались в течение этого часа, даже если база данных использовалась или была активна менее часа. Например, если вы создадите отдельную базу данных и через 5 минут удалите ее, вам будет выставлен счет за 1 час использования базы данных.
 
 ## <a name="vcore-based-purchasing-model-change-storage-size"></a>Модель покупки на основе числа виртуальных ядер — Изменение размера хранилища
 

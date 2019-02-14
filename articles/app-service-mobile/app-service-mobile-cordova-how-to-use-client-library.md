@@ -14,12 +14,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: 358e8cd92fe250741adbbb9208b5e149a5f60216
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: cddb3769cfc5a2ba002e19036d986f4165670dc1
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52959739"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55962457"
 ---
 # <a name="how-to-use-apache-cordova-client-library-for-azure-mobile-apps"></a>Как использовать клиентскую библиотеку Apache Cordova для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -55,7 +55,7 @@ ionic plugin add cordova-plugin-ms-azure-mobile-apps
 
 Добавьте следующие строки в `app.component.ts`, чтобы создать клиентский объект:
 
-```
+```typescript
 declare var WindowsAzure: any;
 var client = new WindowsAzure.MobileServiceClient("https://yoursite.azurewebsites.net");
 ```
@@ -126,7 +126,7 @@ ionic run browser
 ## <a name="register-for-push"></a>Практическое руководство. Регистрация для получения push-уведомлений
 Для обработки push-уведомлений установите [phonegap-plugin-push] .  Этот подключаемый модуль можно легко добавить, введя команду `cordova plugin add` в командной строке или воспользовавшись установщиком подключаемых модулей Git в Visual Studio.  Следующий код в приложении Apache Cordova регистрирует устройство для получения push-уведомлений.
 
-```
+```javascript
 var pushOptions = {
     android: {
         senderId: '<from-gcm-console>'

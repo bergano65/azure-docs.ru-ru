@@ -16,12 +16,13 @@ ms.date: 05/30/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 1c4ee3cb4ed8c710f1d1e7a429c9e1de40b1890b
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 73d64cac3812d8daf8ac34b93c91338e1dfab88a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55491508"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193495"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
 В этой статье вы определяете стратегию внедрения гибридной идентификации для гибридных решений идентификации, которая соответствует бизнес-требованиям, выработанным вами с помощью таких статей:

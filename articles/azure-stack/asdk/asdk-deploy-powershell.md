@@ -13,16 +13,16 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.custom: ''
-ms.date: 09/10/2018
+ms.date: 02/08/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.lastreviewed: 09/10/2018
-ms.openlocfilehash: 2513f397457c4866229605487149aa1fe03a2c68
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 02/08/2019
+ms.openlocfilehash: 0fb3e9cd193e570a965d6bbd3e16c86dc39de350
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247737"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984279"
 ---
 # <a name="deploy-the-asdk-from-the-command-line"></a>Развертывание ASDK из командной строки
 ASDK — это среда тестирования и разработки, которую можно развернуть для оценки и демонстрации функций и служб Azure Stack. Для ее установки и запуска необходимо подготовить аппаратную часть среды и выполнить ряд скриптов (это займет несколько часов). После этого вы сможете войти на портал администратора и портал пользователя, чтобы приступить к работе с Azure Stack.
@@ -134,7 +134,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 Если в вашей среде отключен протокол DHCP, в один из предоставленных примеров использования необходимо включить приведенные ниже дополнительные параметры. 
 
 ```powershell
-.\InstallAzureStackPOC.ps1 -AdminPassword $adminpass.Password -InfraAzureDirectoryTenantAdminCredential $aadcred -NatIPv4Subnet 10.10.10.0/24 -NatIPv4Address 10.10.10.3 -NatIPv4DefaultGateway 10.10.10.1 -TimeServer 10.222.112.26
+.\InstallAzureStackPOC.ps1 -AdminPassword $adminpass.Password -InfraAzureDirectoryTenantAdminCredential $aadcred -TimeServer 10.222.112.26
 ```
 
 ### <a name="asdk-installazurestackpocps1-optional-parameters"></a>Необязательные параметры ASDK InstallAzureStackPOC.ps1
@@ -146,9 +146,6 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 |InfraAzureDirectoryTenantAdminCredential|Необязательно|Задает имя пользователя и пароль Azure Active Directory. В качестве этих учетных данных Azure следует использовать идентификатор организации.|
 |InfraAzureEnvironment|Необязательно|Выберите среду Azure, в которой вы хотите зарегистрировать это развертывание Azure Stack. Допустимые значения: Общедоступная служба Azure, Azure — Китай, Azure — US Government.|
 |DNSForwarder|Необязательно|DNS-сервер, созданный в ходе развертывания Azure Stack. Чтобы разрешить компьютерам в решении разрешать имена, расположенные за пределами метки, укажите имеющийся DNS-сервер инфраструктуры. DNS-сервер, расположенный в этой метке, перенаправляет неизвестные запросы на сопоставление имен на этот DNS-сервер.|
-|NatIPv4Address|Требуется для поддержки преобразования сетевых адресов (NAT) DHCP|Задает статический IP-адрес для MAS-BGPNAT01. Используйте этот параметр только в том случае, если DHCP не удается назначить допустимый IP-адрес для доступа в Интернет.|
-|NatIPv4Subnet|Требуется для поддержки преобразования сетевых адресов (NAT) DHCP|Префикс IP-подсети, используемый для обеспечения поддержки DHCP через преобразование сетевых адресов. Используйте этот параметр только в том случае, если DHCP не удается назначить допустимый IP-адрес для доступа в Интернет.|
-|PublicVlanId|Необязательно|Задает идентификатор виртуальной локальной сети. Используйте этот параметр, только если на узле и MAS-BGPNAT01 необходимо настроить идентификатор виртуальной сети для доступа к физической сети (и Интернету). Например, .\InstallAzureStackPOC.ps1 -Verbose -PublicVLan 305|
 |Rerun|Необязательно|Этот флажок используется для повторного выполнения развертывания. Используются все предыдущие входные данные. Повторный ввод ранее предоставленных данных не поддерживается, так как для развертывания создаются и используются несколько уникальных значений.|
 
 

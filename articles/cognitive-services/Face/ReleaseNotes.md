@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Заметки о выпуске для службы API распознавания лиц содержат историю изменений для разных версий.
 services: cognitive-services
 author: SteveMSFT
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: 270b7bde0ece86b7d4c1673f26b2482dc63ac52b
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 1af699a4b28309e7b004ed1eedf339e142065e50
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661876"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55878465"
 ---
 # <a name="face-api-release-notes"></a>Заметки о выпуске для API распознавания лиц
 

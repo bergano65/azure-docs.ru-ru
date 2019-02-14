@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Voyance | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Voyance | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Voyance.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 6dba73a26bdb7ad7fa724918c3a3c8059353d1b4
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1771fe1d94eb64cf1e5227953bdc5defa488e85f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55192440"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56208458"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-voyance"></a>Руководство. Интеграция Azure Active Directory с Voyance
+# <a name="tutorial-azure-active-directory-integration-with-voyance"></a>Руководство по Интеграция Azure Active Directory с Voyance
 
 В этом руководстве описано, как интегрировать Voyance с Azure Active Directory (Azure AD).
 
@@ -89,7 +90,7 @@ ms.locfileid: "55192440"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Voyance](#create-a-voyance-test-user)** требуется для того, чтобы в Voyance существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55192440"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.nyansa.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.nyansa.com/saml/create/`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.nyansa.com/saml/create/`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -121,7 +122,7 @@ ms.locfileid: "55192440"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.nyansa.com/`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Voyance](mailto:support@nyansa.com). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Voyance](mailto:support@nyansa.com). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -159,11 +160,11 @@ ms.locfileid: "55192440"
     
     a. Щелкните **Включено**.
     
-    b. В текстовое поле **IdP Login URL** (URL-адрес входа IdP) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле **IdP Login URL** (URL-адрес входа IdP) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. Откройте скачанный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **IdP Cert** (Сертификат IdP).
     
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -179,7 +180,7 @@ ms.locfileid: "55192440"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/voyance-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/voyance-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -195,11 +196,11 @@ ms.locfileid: "55192440"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-voyance-test-user"></a>Создание тестового пользователя Voyance
 

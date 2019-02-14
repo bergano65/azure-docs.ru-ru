@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: e4963ebae73bdd81246433fe43206139caa1661c
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: c27af57ce4fa80a4ae167ce1e27018d049923a3f
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55295786"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982851"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
@@ -37,7 +37,7 @@ az acr login --name myregistry
 
 Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Например, [назначение субъекта-службы](container-registry-authentication.md#service-principal) для реестра позволяет автоматизировать некоторые сценарии. При запуске следующей команды, когда появляется запрос в интерактивном режиме, укажите идентификатор приложения (имя пользователя) и пароль субъекта-службы. Рекомендации по управлению учетными данными см. в справочнике по команде [docker login](https://docs.docker.com/engine/reference/commandline/login/).
 
-```Docker
+```
 docker login myregistry.azurecr.io
 ```
 
@@ -50,7 +50,7 @@ docker login myregistry.azurecr.io
 
 Сначала общедоступный образ Nginx нужно отправить на локальный компьютер.
 
-```Docker
+```
 docker pull nginx
 ```
 
@@ -58,7 +58,7 @@ docker pull nginx
 
 Выполните указанную ниже команду [docker run](https://docs.docker.com/engine/reference/run/), чтобы запустить локальный экземпляр контейнера Nginx в интерактивном режиме (`-it`) на порте 8080. Аргумент `--rm` указывает, что контейнер следует удалить, когда вы его остановите.
 
-```Docker
+```
 docker run -it --rm -p 8080:80 nginx
 ```
 
@@ -74,7 +74,7 @@ docker run -it --rm -p 8080:80 nginx
 
 Выполните команду [docker tag](https://docs.docker.com/engine/reference/commandline/tag/), чтобы создать псевдоним образа с полным путем к вашему реестру. Чтобы избежать беспорядка в корне реестра, эта команда указывает пространство имен `samples`.
 
-```Docker
+```
 docker tag nginx myregistry.azurecr.io/samples/nginx
 ```
 
@@ -84,7 +84,7 @@ docker tag nginx myregistry.azurecr.io/samples/nginx
 
 Теперь, когда вы отметили образ с абсолютным путем к частному реестру тегами, его можно отправить в реестр, выполнив команду [docker push](https://docs.docker.com/engine/reference/commandline/push/).
 
-```Docker
+```
 docker push myregistry.azurecr.io/samples/nginx
 ```
 
@@ -92,7 +92,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 Выполните команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы извлечь образ из реестра:
 
-```Docker
+```
 docker pull myregistry.azurecr.io/samples/nginx
 ```
 
@@ -100,7 +100,7 @@ docker pull myregistry.azurecr.io/samples/nginx
 
 Выполните команду [docker run](https://docs.docker.com/engine/reference/run/), чтобы запустить образ, извлеченный из реестра:
 
-```Docker
+```
 docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 ```
 
@@ -112,7 +112,7 @@ docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 
 Если вам больше не нужен образ Nginx, можно удалить его локально, выполнив команду [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/).
 
-```Docker
+```
 docker rmi myregistry.azurecr.io/samples/nginx
 ```
 

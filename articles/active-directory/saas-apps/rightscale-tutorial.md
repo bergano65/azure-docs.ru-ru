@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 190dd93bbd8c9a1261aadb80ff8efcc2661cafec
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 301199667d2307bc81da7ef42f3e4f7daa750ee2
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176224"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199710"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rightscale"></a>Руководство. Интеграция Azure Active Directory с Rightscale
 
@@ -118,7 +119,7 @@ ms.locfileid: "55176224"
 
     a. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовое поле **URL-адрес для входа** введите URL-адрес `https://login.rightscale.com/`.
+    б) В текстовое поле **URL-адрес для входа** введите URL-адрес `https://login.rightscale.com/`.
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "55176224"
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_001.png) 
 
-    b. Нажмите кнопку **Новый** и добавьте свои поставщики удостоверений SAML в области **Your SAML Identity Providers** (Ваши поставщики удостоверений SAML).
+    б) Нажмите кнопку **Новый** и добавьте свои поставщики удостоверений SAML в области **Your SAML Identity Providers** (Ваши поставщики удостоверений SAML).
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_002.png) 
  
@@ -146,7 +147,7 @@ ms.locfileid: "55176224"
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_003.png)
  
-    d. Выберите **Allow RightScale-initiated SSO using a discovery hint** (Разрешить единый вход, инициированный RightScale, с использованием подсказки обнаружения) и в приведенном ниже текстовом поле введите **имя домена**.
+    4.3. Выберите **Allow RightScale-initiated SSO using a discovery hint** (Разрешить единый вход, инициированный RightScale, с использованием подсказки обнаружения) и в приведенном ниже текстовом поле введите **имя домена**.
    
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_004.png)
 
@@ -169,7 +170,7 @@ ms.locfileid: "55176224"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -193,11 +194,11 @@ ms.locfileid: "55176224"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-rightscale-test-user"></a>Создание тестового пользователя Rightscale
 

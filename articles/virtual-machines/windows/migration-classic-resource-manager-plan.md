@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: 1960cac28b74980d17f37b4e06e79604e156381e
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 540abeed3587959af5ca229f59343774b824547b
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55566243"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982902"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
@@ -131,23 +131,25 @@ ms.locfileid: "55566243"
     - таблицы маршрутов;
 
     Используйте команды ниже с помощью последней версии Azure PowerShell, чтобы проверить текущие квоты Azure Resource Manager.
+    
+    [!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
     **Вычисления** *(ядра, группы доступности)*
 
     ```powershell
-    Get-AzureRmVMUsage -Location <azure-region>
+    Get-AzVMUsage -Location <azure-region>
     ```
 
     **Сети** *(виртуальные сети, статические общедоступные IP-адреса, общедоступные IP-адреса, группы безопасности сети, сетевые интерфейсы, подсистемы балансировки нагрузки, таблицы маршрутов)*
 
     ```powershell
-    Get-AzureRmUsage /subscriptions/<subscription-id>/providers/Microsoft.Network/locations/<azure-region> -ApiVersion 2016-03-30 | Format-Table
+    Get-AzUsage /subscriptions/<subscription-id>/providers/Microsoft.Network/locations/<azure-region> -ApiVersion 2016-03-30 | Format-Table
     ```
 
     **Хранилище** *(учетная запись хранения)*
 
     ```powershell
-    Get-AzureRmStorageUsage
+    Get-AzStorageUsage
     ```
 
 - **Ограничения регулирования API Azure Resource Manager**. Если среда достаточно большая (например, более 400 виртуальных машин в виртуальной сети), вы можете достигнуть ограничения регулирования по умолчанию API для операций записи (в этом случае это `1200 writes/hour` операций) в Azure Resource Manager. Перед началом переноса создайте запрос в службу поддержки, чтобы увеличить это ограничение для подписки.

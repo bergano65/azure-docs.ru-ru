@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с EverBridge | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с EverBridge | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в EverBridge.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: jeedes
-ms.openlocfilehash: 40645db589409ac80c69f1e7595e20869b08f5d0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 95465fdc17131c996fa242d028addbab4191628c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194684"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56191118"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Руководство. Интеграция Azure Active Directory с Everbridge
+# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Руководство по Интеграция Azure Active Directory с Everbridge
 
 В этом руководстве описано, как интегрировать EverBridge с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55194684"
 
 - Вы можете управлять доступом к EverBridge в Azure AD.
 - Вы можете включить автоматический вход пользователей в EverBridge (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55194684"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **EverBridge**, выберите **EverBridge** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -119,10 +120,10 @@ ms.locfileid: "55194684"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
 
 5. Чтобы настроить приложение **EverBridge** в качестве **портала участника EverBridge** в разделе **Базовая конфигурация SAML** сделайте следующее:
 
@@ -134,14 +135,14 @@ ms.locfileid: "55194684"
 
         * В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`.
 
-    * Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+    * Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
         ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url2.png)
 
         * В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
 
 6. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **XML метаданных федерации**, а затем сохраните метаданные на компьютере.
 
@@ -153,7 +154,7 @@ ms.locfileid: "55194684"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Конфигурация EverBridge](common/configuresection.png)
 
@@ -167,11 +168,11 @@ ms.locfileid: "55194684"
    
     a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
    
-    b. В текстовом поле **API Name** (Имя API) введите имя API.
+    б) В текстовом поле **API Name** (Имя API) введите имя API.
    
     c. Чтобы отправить файл метаданных, скачанный на портале Azure, нажмите кнопку **Выбрать файл**.
    
-    d. В поле "Расположение удостоверения SAML" выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
+    4.3. В поле "Расположение удостоверения SAML" выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
    
     д. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
    
@@ -183,9 +184,9 @@ ms.locfileid: "55194684"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

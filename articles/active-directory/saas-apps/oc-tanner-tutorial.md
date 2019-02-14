@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 3a9b11b5d5e70e72a90683d4952b7d34f0303960
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 57838d5f5a49045138ce9adbdcf7855aeab783e8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163608"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172121"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-oc-tanner---appreciatehub"></a>Руководство. Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub
 
@@ -117,11 +118,11 @@ ms.locfileid: "55163608"
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь в [службу поддержки O.C. Tanner — AppreciateHub](mailto:sso@octanner.com), чтобы получить это значение.
 
-    b. Откройте файл метаданных, используя следующую ссылку: [https://fed.appreciatehub.com/fed/sp/metadata](https://fed.appreciatehub.com/fed/sp/metadata).
+    б) Откройте файл метаданных, используя следующую ссылку: [https://fed.appreciatehub.com/fed/sp/metadata](https://fed.appreciatehub.com/fed/sp/metadata).
    
     c. Найдите узел **md:AssertionConsumerService** . 
    
-    d. Скопируйте значение атрибута **Location**. 
+    4.3. Скопируйте значение атрибута **Location**. 
    
     ![Настройка параметров приложения][12]
    
@@ -142,7 +143,7 @@ ms.locfileid: "55163608"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -166,11 +167,11 @@ ms.locfileid: "55163608"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-oc-tanner---appreciatehub-test-user"></a>Создание тестового пользователя O.C. Tanner — AppreciateHub
 

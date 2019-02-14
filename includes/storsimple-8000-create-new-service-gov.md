@@ -4,16 +4,13 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: cbccab219e7b610c9ff51013a2d79764c2243e26
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 6939553206fe223d8166368d2963f03b32d2629e
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55736268"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55889079"
 ---
-<!--author=SharS last changed: 9/17/15-->
-
-
 #### <a name="to-create-a-new-service"></a>Создание новой службы
 1. Войдите на [портал Microsoft Azure для государственных организаций](https://portal.azure.us/) с данными своей учетной записи Майкрософт.
 2. На портале для государственных организаций щелкните **+**, а затем в Marketplace выберите **Просмотреть все**. Найдите _физическое устройство StorSimple_. Выберите **Серия физического устройства StorSimple** и щелкните **Создать**. Либо на портале для государственных организаций щелкните **+**, а затем в разделе **Хранилище** выберите **Серия физического устройства StorSimple**.

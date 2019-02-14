@@ -4,12 +4,12 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
-ms.openlocfilehash: 488fbb2acbf43ac092a7834fc25f433ef09d2b00
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 5fe9fe8ced675f68161f0df9f2665b47f9d47ac5
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52973244"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55905107"
 ---
 ### <a name="server-auth"></a>Практическое руководство. Проверка подлинности с помощью поставщика (серверный поток)
 Чтобы мобильные приложения могли выполнять процесс проверки подлинности в вашем приложении, необходимо зарегистрировать приложение у поставщика удостоверений. Затем в службе приложений Azure необходимо настроить код приложения и секретный код, предоставленный поставщиком.
@@ -17,7 +17,7 @@ ms.locfileid: "52973244"
 
 После регистрации у поставщика удостоверений вызовите метод `.login()` с указанием имени вашего поставщика. Например, для входа в систему через Facebook используйте следующий код.
 
-```
+```javascript
 client.login("facebook").done(function (results) {
      alert("You are now signed in as: " + results.userId);
 }, function (err) {
@@ -40,7 +40,7 @@ client.login("facebook").done(function (results) {
 
 В этом примере используется пакет SDK для клиента Facebook для проверки подлинности:
 
-```
+```javascript
 client.login(
      "facebook",
      {"access_token": token})
@@ -57,7 +57,7 @@ client.login(
 
 Сведения о проверке подлинности можно получить из конечной точки `/.auth/me`, выполнив вызов HTTP с помощью любой библиотеки AJAX.  Обязательно настройте заголовок `X-ZUMO-AUTH` для маркера аутентификации.  Маркер аутентификации хранится в `client.currentUser.mobileServiceAuthenticationToken`.  Например, чтобы использовать API выборки:
 
-```
+```javascript
 var url = client.applicationUrl + '/.auth/me';
 var headers = new Headers();
 headers.append('X-ZUMO-AUTH', client.currentUser.mobileServiceAuthenticationToken);

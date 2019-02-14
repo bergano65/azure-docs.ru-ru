@@ -4,19 +4,19 @@ titleSuffix: Azure
 description: Сведения о создании приложения LUIS программным образом из существующих данных в формате CSV с помощью API разработки LUIS.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: e4b1e9bcdedd802b1937aad25027a1ab8546f674
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 314d121e8964ba1cdbb457260826d85bf8505fbc
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55495502"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55883259"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 

@@ -1,25 +1,17 @@
 ---
 title: Настройка оповещений о работоспособности ресурсов Azure с помощью шаблонов Resource Manager | Документация Майкрософт
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
-author: shawntabrizi
-manager: scotthit
-editor: ''
-services: service-health
-documentationcenter: service-health
-ms.assetid: ''
+author: stephbaron
+ms.author: stbaron
+ms.topic: conceptual
 ms.service: service-health
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
 ms.date: 9/4/2018
-ms.author: shtabriz
-ms.openlocfilehash: ee5712915e552168c0268a44af60ea58e069fc11
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 7bfd94cb4940c33cb72a39827f67d04a5540ccdb
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54429539"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55859697"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 

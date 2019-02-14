@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2018
 ms.author: jeedes
-ms.openlocfilehash: efb905364e5ae4736b058472e66b3a8850a99fe3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a36b87f0a440bb2bf8d8d75cf0d29dbd521ff43f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55167847"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175002"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-borrowbox"></a>Руководство. Интеграция Azure Active Directory с BorrowBox
 
@@ -30,7 +31,7 @@ ms.locfileid: "55167847"
 
 - С помощью Azure AD вы можете контролировать доступ к BorrowBox.
 - Вы можете включить автоматический вход пользователей в BorrowBox (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -87,7 +88,7 @@ ms.locfileid: "55167847"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя BorrowBox](#create-a-borrowbox-test-user)** требуется для того, чтобы в BorrowBox существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "55167847"
 
     a. Щелкните **Задать дополнительные URL-адреса**.
 
-    b. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://fe.bolindadigital.com/wldcs_bol_fo/b2i/mainPage.html?b2bSite=<ID>`.
+    б) В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://fe.bolindadigital.com/wldcs_bol_fo/b2i/mainPage.html?b2bSite=<ID>`.
 
     ![изображение](./media/borrowbox-tutorial/tutorial_borrowbox_url1.png)
 
@@ -133,7 +134,7 @@ ms.locfileid: "55167847"
 
     ![изображение](./media/borrowbox-tutorial/i3-attribute.png)
 
-    b. Из списка **Атрибут источника** выберите **user.mail**.
+    б) Из списка **Атрибут источника** выберите **user.mail**.
 
     c. Выберите команду **Сохранить**. 
 
@@ -145,9 +146,9 @@ ms.locfileid: "55167847"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./common/d_users_and_groups.png)
 
@@ -155,14 +156,14 @@ ms.locfileid: "55167847"
 
     ![изображение](./common/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./common/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

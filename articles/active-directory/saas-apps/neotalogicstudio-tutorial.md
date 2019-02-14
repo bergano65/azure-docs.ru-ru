@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Neota Logic Studio | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Neota Logic Studio | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Neota Logic Studio.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2017
 ms.author: jeedes
-ms.openlocfilehash: 4de968949e9c043d4a005f23b5bfa86dd87f5b70
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 66a51fda8ae9a5520189231e12fc574030209dc9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170256"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199584"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-neota-logic-studio"></a>Руководство. Интеграция Azure Active Directory с Neota Logic Studio
 
@@ -136,7 +137,7 @@ ms.locfileid: "55170256"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -160,11 +161,11 @@ ms.locfileid: "55170256"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-neota-logic-studio-test-user"></a>Создание тестового пользователя Neota Logic Studio
 

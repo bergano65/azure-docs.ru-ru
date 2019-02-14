@@ -4,23 +4,23 @@ description: В этой статье приведено определение 
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/15/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: ea88d6a85fb0b22d12c9d30baf23c33074666568
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 98c687b620aea484a4ced1385d7a2301db55ce79
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33786383"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998456"
 ---
-# <a name="import-a-postman-collection-with-live-streaming-operations"></a>Импорт коллекции Postman с помощью операций потоковой трансляции
+# <a name="import-a-postman-collection-with-live-streaming-operations"></a>Импорт коллекции Postman с помощью операций потоковой трансляции 
 
 Эта статья содержит определение коллекции **Postman**, содержащей сгруппированные HTTP-запросы для вызова REST API Служб мультимедиа **потоковой трансляции** Azure. Дополнительные сведения о настройке **Postman** для вызова API REST Служб мультимедиа см. в [этой статье](media-rest-apis-with-postman.md).
 

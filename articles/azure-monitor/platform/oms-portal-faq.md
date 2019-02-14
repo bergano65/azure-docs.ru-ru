@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
-ms.openlocfilehash: c4fab22513e42013a9dacf0b24b2d4b322ae09b6
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 8947d235894ffc021243a64244b4904c5ca7f128
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54883404"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55990434"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -105,7 +105,7 @@ ms.locfileid: "54883404"
 Управляйте решениями в меню **Решения** для рабочей области. 
 
 ## <a name="how-do-i-install-and-remove-management-solutions"></a>Как можно устанавливать и удалять решения по управлению?
-На портале OMS решения для управлению устанавливаются из коллекции решений, а удаляются в разделе **Параметры**. На портале Azure [решения по управлению можно установить](../insights/solutions.md#install-a-management-solution) из Azure Marketplace. [Удаление решений](../insights/solutions.md#remove-a-management-solution) выполняется через список установленных решений.
+На портале OMS решения для управлению устанавливаются из коллекции решений, а удаляются в разделе **Параметры**. На портале Azure [решения по управлению можно установить](../insights/solutions.md#install-a-monitoring-solution) из Azure Marketplace. [Удаление решений](../insights/solutions.md#remove-a-monitoring-solution) выполняется через список установленных решений.
 
 ## <a name="how-do-i-create-and-manage-alerts"></a>Как создавать оповещения и управлять ими?
 Для управления правилами генерации оповещений на основе запросов Log Analytics теперь используется [единый интерфейс оповещений](../../azure-monitor/platform/alerts-metric.md). В статье [Как расширить (копировать) оповещения с портала OMS в Azure](../../azure-monitor/platform/alerts-extend-tool.md) приводятся подробные сведения о настройке и использовании оповещений на портале Azure.

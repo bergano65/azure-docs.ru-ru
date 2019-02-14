@@ -12,12 +12,13 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: lizross
 ms.reviewer: jairoc
-ms.openlocfilehash: ff36c4c9becd797d98de401606a45c05525d0faf
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b433d8556377206ea53ece2764e251dcb266eb95
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190526"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192359"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.

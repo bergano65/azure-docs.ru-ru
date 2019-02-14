@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/25/2016
 ms.author: glenga
-ms.openlocfilehash: a0d697438c1265b8c4e6802dc2dad62a33f51855
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 8d99a52b500377e02af339588fe7155e26cf588c
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548601"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233396"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 Функции Azure упрощают развертывание приложения-функции за счет непрерывной интеграции службы приложений. Функции интегрируются с BitBucket, Dropbox, GitHub и Azure DevOps. Это позволяет организовать работу так, чтобы изменения кода функций, вносимые одной из интегрированных служб, активировали развертывание в Azure. Если вы еще не работали с Функциями Azure, начните с [обзора](functions-overview.md).
@@ -29,7 +29,7 @@ ms.locfileid: "53548601"
 * [Локальный репозиторий Git](../app-service/deploy-local-git.md)
 * [GitHub](https://github.com)
 * [OneDrive](https://onedrive.live.com/)
-* [Azure DevOps Services](https://www.visualstudio.com/team-services/)
+* [Azure DevOps](https://azure.microsoft.com/services/devops/)
 
 Развертывания настраиваются на основе приложения-функции. После включения непрерывного развертывания доступ к коду функции на портале предоставляется *только для чтения*.
 
@@ -93,9 +93,9 @@ ms.locfileid: "53548601"
 > [!NOTE]
 > После настройки непрерывной интеграции исходные файлы больше нельзя изменять на портале функций.
 
-- [Практическое руководство. Настройка учетных данных развертывания](#credentials)
-- [Практическое руководство. Скачивание файлов с помощью FTP](#downftp)
-- [Практическое руководство. Скачивание файлов с помощью локального репозитория Git](#downgit)
+- [How to: Настройка учетных данных развертывания](#credentials)
+- [How to: Скачивание файлов с помощью FTP](#downftp)
+- [How to: Скачивание файлов с помощью локального репозитория Git](#downgit)
 
 <a name="credentials"></a>
 #### <a name="how-to-configure-deployment-credentials"></a>Практическое руководство: Настройка учетных данных развертывания

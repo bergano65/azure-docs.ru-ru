@@ -8,15 +8,15 @@ ms.topic: include
 ms.date: 06/22/2018
 ms.author: twooley
 ms.custom: include file
-ms.openlocfilehash: 3a6679f2cc599d2ec9aff5e31422be799140b7ff
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: f5c395bd03fab2613a28aa35c9975ec71ffa34eb
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37032152"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55885146"
 ---
 > [!NOTE]
-> Служба Azure Data Lake Store переименована в Azure Data Lake Storage Gen1. Если вы хотите узнать о предварительной версии Azure Data Lake Storage Gen2, см. [страницу продукта](https://aka.ms/adlsgen2-product).
+> Платформа Azure Data Lake Storage 2-го поколения теперь общедоступна. Мы рекомендуем приступить к ее использованию уже сегодня. См. дополнительные сведения на [странице продукта](https://aka.ms/adlsgen2-product).
 > 
 
 

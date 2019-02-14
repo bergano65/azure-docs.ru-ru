@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 272f4b6b3a54a006947b6a4ef6480a9168e047c0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5739c878812c09a8f2646320df4b1069dfa8810e
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55169660"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56189061"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство. Интеграция Azure Active Directory с Zscaler Three
 
@@ -30,7 +31,7 @@ ms.locfileid: "55169660"
 
 - С помощью Azure AD вы можете контролировать доступ к Zscaler Three.
 - Вы можете включить автоматический вход пользователей в Zscaler Three (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55169660"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Zscaler Three**, выберите **Zscaler Three** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -90,7 +91,7 @@ ms.locfileid: "55169660"
 2. **[Настройка единого входа в Zscaler Three](#configure-zscaler-three-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Создание тестового пользователя Zscaler Three](#create-zscaler-three-test-user)** требуется для того, чтобы существовал аналог пользователя Britta Simon в Cisco Umbrella, связанный с представлением этого же пользователя в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -133,11 +134,11 @@ ms.locfileid: "55169660"
     
     ![изображение](./common/new_attribute_details.png)
 
-    b. В списке **Источник атрибута** выберите значение атрибута.
+    б) В списке **Источник атрибута** выберите значение атрибута.
 
     c. Нажмите кнопку **ОК**.
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -152,7 +153,7 @@ ms.locfileid: "55169660"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Конфигурация Zscaler Three](common/configuresection.png)
 
@@ -166,7 +167,7 @@ ms.locfileid: "55169660"
 
     a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
+    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
@@ -174,11 +175,11 @@ ms.locfileid: "55169660"
     
     a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
+    б) В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
     c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+    4.3. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
     д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
@@ -194,7 +195,7 @@ ms.locfileid: "55169660"
 
     a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать**.
+    б) Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -217,11 +218,11 @@ ms.locfileid: "55169660"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    b. В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
+    б) В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
-    d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
+    4.3. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
@@ -229,9 +230,9 @@ ms.locfileid: "55169660"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

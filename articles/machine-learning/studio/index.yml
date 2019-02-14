@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 52ac3f12fac5de3bbb772d943ea1bada5c18c1eb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: b8ce62533af1cf8f921a8a8eafb8e781821c2604
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453456"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233818"
 documentType: LandingData
 title: Документация по Студии машинного обучения
 metadata:
@@ -40,7 +40,7 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="walkthrough-develop-predictive-solution">Создание и развертывание решения для прогнозирования</a>
+    - html: <a href="tutorial-part1-credit-risk">Создание и развертывание решения для прогнозирования</a>
     - html: <a href="azure-ml-customer-churn-scenario">Пример оттока клиентов</a>
 - title: Справочные материалы
   items:

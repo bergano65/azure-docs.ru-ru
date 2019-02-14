@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 7ee4894a96bc6d923bcb86529acf36ef4e27e6c8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 20a3144f2a8727420803034426106a29a7924727
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152161"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56167309"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-liquidfiles"></a>Руководство. Интеграция Azure Active Directory с LiquidFiles
 
@@ -116,10 +117,10 @@ ms.locfileid: "55152161"
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<YOUR_SERVER_URL>`
 
-    c. b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<YOUR_SERVER_URL>/saml/consume`.
+    c. б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<YOUR_SERVER_URL>/saml/consume`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов LiquidFiles](https://www.liquidfiles.com/support.html). 
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов LiquidFiles](https://www.liquidfiles.com/support.html). 
  
 1. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток**.
 
@@ -143,11 +144,11 @@ ms.locfileid: "55152161"
 
     a. Для параметра **Single Sign On Method** (Метод единого входа) выберите значение **SAML 2**.
 
-    b. В текстовое поле **IDP Login URL** (URL-адрес входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    б) В текстовое поле **IDP Login URL** (URL-адрес входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **IDP Logout URL** (URL-адрес выхода IdP) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    d. В текстовое поле **IDP Cert Fingerprint** (Отпечаток сертификата IdP) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
+    4.3. В текстовое поле **IDP Cert Fingerprint** (Отпечаток сертификата IdP) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
 
     д. В текстовое поле "Name Identifier Format" (Формат идентификатора имени) введите значение **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
 
@@ -160,7 +161,7 @@ ms.locfileid: "55152161"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -184,11 +185,11 @@ ms.locfileid: "55152161"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-liquidfiles-test-user"></a>Создание тестового пользователя LiquidFiles
 

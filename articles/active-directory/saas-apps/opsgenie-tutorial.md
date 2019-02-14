@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с OpsGenie | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с OpsGenie | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OpsGenie.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 52d976761ad5962f09f40565cfa04ae78386d1ca
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f9858fc38698ae2c5bd272a3494bcf02bce2d8e9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55192398"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56194603"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство. Интеграция Azure Active Directory с OpsGenie
+# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство по Интеграция Azure Active Directory с OpsGenie
 
 В этом руководстве описано, как интегрировать OpsGenie с Azure Active Directory (Azure AD).
 
@@ -146,12 +147,12 @@ ms.locfileid: "55192398"
     
     a. Вставьте **URL-адрес службы единого входа**, который вы скопировали с портала Azure, в текстовое поле **SAML 2.0 Endpoint** (Конечная точка SAML 2.0).
     
-    b. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
+    б) В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
     
     c. Нажмите кнопку **Сохранить изменения**.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -175,11 +176,11 @@ ms.locfileid: "55192398"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-opsgenie-test-user"></a>Создание тестового пользователя OpsGenie
 
@@ -199,7 +200,7 @@ ms.locfileid: "55192398"
    
    a. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon в Azure Active Directory.
    
-   b. В текстовом поле **Full Name** (Полное имя) введите **Britta Simon**.
+   б) В текстовом поле **Full Name** (Полное имя) введите **Britta Simon**.
    
    c. Выберите команду **Сохранить**. 
 

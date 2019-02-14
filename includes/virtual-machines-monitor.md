@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
-ms.openlocfilehash: a13ce8d3dc71be83e05fae5bd07f30f413ce59f2
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 2978da7f2e7ec27ded6b5994570fa50a9032d0d2
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55148039"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55985496"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -23,7 +23,7 @@ ms.locfileid: "55148039"
 
     Когда виртуальные машины загружаются, агент системы диагностики записывает выходные данные загрузки и сохраняет их в хранилище Azure. Эти данные можно использовать для устранения неполадок загрузки виртуальной машины. Если вы создаете виртуальную машину с помощью программ командной строки, диагностика загрузки не включается автоматически. Перед включением диагностики загрузки необходимо создать учетную запись хранения для хранения журналов загрузки. Если включить диагностику загрузки на портале Azure, учетная запись хранения создается автоматически.
 
-    Если при создании виртуальной машины вы не включили диагностику загрузки, вы сможете включить ее позже с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/vm/boot-diagnostics), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmbootdiagnostics) или [шаблона Azure Resource Manager](../articles/virtual-machines/windows/extensions-diagnostics-template.md).
+    Если при создании виртуальной машины вы не включили диагностику загрузки, вы сможете включить ее позже с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/vm/boot-diagnostics), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmbootdiagnostics) или [шаблона Azure Resource Manager](../articles/virtual-machines/windows/extensions-diagnostics-template.md).
 
 - **Включить сбор данных диагностики гостевой ОС.** Когда вы создаете виртуальную машину, можно включить диагностику гостевой ОС на экране параметров. Если включить сбор данных диагностики, в виртуальную машину добавляется [расширение IaaSDiagnostics для Linux](../articles/virtual-machines/linux/diagnostic-extension.md) или [расширение IaaSDiagnostics для Windows](../articles/virtual-machines/windows/ps-extensions-diagnostics.md). Это позволяет собирать дополнительные данные диска, ЦП и памяти.
 

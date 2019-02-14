@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 7f90fccd062826493b7add1a90406fa9244e00b2
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 5e9104f59173c3d39ef2f2232ed2a9c6864cf84f
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53002049"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55892564"
 ---
 # <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
 | Продукт или служба | Статья |
@@ -349,7 +349,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, Xamarin  |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Создание политики конфигурации](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies#create-a-configuration-policy), [сведения об обслуживании цепочки ключей](https://components.xamarin.com/view/square.valet) |
+| **Справочные материалы**              | [Создание политики конфигурации](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies), [сведения об обслуживании цепочки ключей](https://components.xamarin.com/view/square.valet) |
 | **Действия** | <p>Перед записью в локальную файловую систему персональные данные пользователя (электронная почта, номер телефона, имя, фамилия, параметры и т. д.), которые приложение записывает в файловую систему мобильного устройства, должны быть зашифрованы. Если приложение является корпоративным, рассмотрите возможности публикации приложения с помощью Windows Intune.</p>|
 
 ### <a name="example"></a>Пример

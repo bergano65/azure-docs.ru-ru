@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 31b9f07d3699881bd98fff05582d5dce6dab925e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a6a037bf945dd6d30df0272a595babeffa2fb7d2
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55162109"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56178062"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-chromeriver"></a>Руководство. Интеграция Azure Active Directory с Chromeriver
 
@@ -114,10 +115,10 @@ ms.locfileid: "55162109"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.chromeriver.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.chromeriver.com/login/sso/saml/consume?customerId=<uniqueid>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.chromeriver.com/login/sso/saml/consume?customerId=<uniqueid>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Chromeriver](https://www.chromeriver.com/services/support).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Chromeriver](https://www.chromeriver.com/services/support).
  
 
 
@@ -136,7 +137,7 @@ ms.locfileid: "55162109"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -160,11 +161,11 @@ ms.locfileid: "55162109"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-chromeriver-test-user"></a>Создание тестового пользователя Chromeriver
 

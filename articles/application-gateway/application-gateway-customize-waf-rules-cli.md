@@ -14,19 +14,19 @@ ms.custom: ''
 ms.workload: infrastructure-services
 ms.date: 07/26/2017
 ms.author: victorh
-ms.openlocfilehash: c02e4edabdcb73bc14c64b42788cddc98d78498c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 95eb0ef48f3e0cb6e835dc0582cc652f06315d44
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46964127"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992863"
 ---
 # <a name="customize-web-application-firewall-rules-through-the-azure-cli"></a>Настройка правил брандмауэра веб-приложения с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [портала Azure](application-gateway-customize-waf-rules-portal.md)
+> * [портал Azure](application-gateway-customize-waf-rules-portal.md)
 > * [PowerShell](application-gateway-customize-waf-rules-powershell.md)
-> * [интерфейс командной строки Azure](application-gateway-customize-waf-rules-cli.md)
+> * [Интерфейс командной строки Azure](application-gateway-customize-waf-rules-cli.md)
 
 Брандмауэр веб-приложения (WAF) шлюза приложений Azure обеспечивает защиту веб-приложений с помощью основного набора правил (CRS) открытого проекта безопасности веб-приложений (OWASP). Некоторые правила могут приводить к ложным срабатываниям и блокировке реального трафика. Поэтому шлюз приложений предоставляет возможность настроить правила и группы правил. Дополнительные сведения о конкретных правилах и группах правил см. в статье [Список групп правил и правил CRS брандмауэра веб-приложения](application-gateway-crs-rulegroups-rules.md).
 
@@ -44,7 +44,7 @@ az network application-gateway waf-config list-rule-sets --type OWASP
 
 В результатах далее представлен сокращенный ответ из предыдущего примера.
 
-```
+```json
 [
   {
     "id": "/subscriptions//resourceGroups//providers/Microsoft.Network/applicationGatewayAvailableWafRuleSets/",
@@ -97,7 +97,7 @@ az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP
 
 В результатах далее представлен сокращенный ответ из предыдущего примера.
 
-```
+```json
 [
   {
     "id": "/subscriptions//resourceGroups//providers/Microsoft.Network/applicationGatewayAvailableWafRuleSets/",

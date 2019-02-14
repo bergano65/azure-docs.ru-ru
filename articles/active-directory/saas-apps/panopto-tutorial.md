@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 703b8a7c5a39ee38d5f365474f9338d490b7b980
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ed15b8532e73b3e3c081172b3f74ab62098b5753
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55179537"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184774"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panopto"></a>Руководство. Интеграция Azure Active Directory с Panopto
 
@@ -145,11 +146,11 @@ ms.locfileid: "55179537"
     
     a. В списке **Provider Type** (Тип поставщика) выберите пункт **SAML20**.    
     
-    b. В текстовом поле **Имя экземпляра** введите имя экземпляра.
+    б) В текстовом поле **Имя экземпляра** введите имя экземпляра.
 
     c. В текстовом поле **Понятное описание** введите понятное описание.
     
-    d. В текстовое поле **Bounce Page Url** (URL-адрес страницы возврата) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    4.3. В текстовое поле **Bounce Page Url** (URL-адрес страницы возврата) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     д. В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
@@ -163,7 +164,7 @@ ms.locfileid: "55179537"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -187,11 +188,11 @@ ms.locfileid: "55179537"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-panopto-test-user"></a>Создание тестового пользователя приложения Panopto
 
@@ -240,7 +241,7 @@ ms.locfileid: "55179537"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Panopto на панели доступа, вы автоматически войдете в приложение Panopto.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

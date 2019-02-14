@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: jeedes
-ms.openlocfilehash: 71274bd49a2e1950e5b171f964630d399c8992c6
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8caad0a3c75ab269aa2be93e3b338695dd29caa6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151589"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209376"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Руководство. Интеграция Azure Active Directory со SkyDesk Email
 
@@ -133,7 +134,7 @@ ms.locfileid: "55151589"
 
     a. Войдите в учетную запись SkyDesk Email от имени администратора.
 
-    b. В меню в верхней части страницы щелкните **Setup** (Настройка) и выберите **Org** (Организация). 
+    б) В меню в верхней части страницы щелкните **Setup** (Настройка) и выберите **Org** (Организация). 
     
       ![Настройка единого входа](./media/skydeskemail-tutorial/tutorial_skydeskemail_51.png)
   
@@ -141,7 +142,7 @@ ms.locfileid: "55151589"
     
       ![Настройка единого входа](./media/skydeskemail-tutorial/tutorial_skydeskemail_53.png)
 
-    d. Щелкните **Add Domain** (Добавить домен).
+    4.3. Щелкните **Add Domain** (Добавить домен).
     
       ![Настройка единого входа](./media/skydeskemail-tutorial/tutorial_skydeskemail_54.png)
 
@@ -166,11 +167,11 @@ ms.locfileid: "55151589"
 
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
-    b. В текстовое поле **Logout** (Выход) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    б) В текстовое поле **Logout** (Выход) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
     c. **Изменить URL-адрес пароля** является необязательным, поэтому оставьте его пустым.
 
-    d. Щелкните **Get Key From File** (Получить ключ из файла), чтобы выбрать сертификат, скачанный с портала Azure, затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
+    4.3. Щелкните **Get Key From File** (Получить ключ из файла), чтобы выбрать сертификат, скачанный с портала Azure, затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
 
     д. В поле **Алгоритм** задайте значение **RSA**.
 
@@ -181,7 +182,7 @@ ms.locfileid: "55151589"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -205,11 +206,11 @@ ms.locfileid: "55151589"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-skydesk-email-test-user"></a>Создание тестового пользователя SkyDesk Email
 

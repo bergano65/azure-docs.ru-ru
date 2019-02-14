@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 1fe0db2f0c7fea4b24cc23aaa52deb16376012b2
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a556b38ca4947b71555ba7b023607b392900bdaf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53092015"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210396"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-the-cloud-security-fabric"></a>Руководство. Интеграция Azure Active Directory с The Cloud Security Fabric
 
@@ -29,7 +30,7 @@ ms.locfileid: "53092015"
 
 - С помощью Azure AD вы можете контролировать доступ к The Cloud Security Fabric.
 - Вы можете включить автоматический вход пользователей в The Cloud Security Fabric (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "53092015"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **The Cloud Security Fabric**, выберите **The Cloud Security Fabric** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "53092015"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя The Cloud Security Fabric](#create-a-the-cloud-security-fabric-test-user)** требуется для того, чтобы в The Cloud Security Fabric существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "53092015"
     | `https://platform.cloudlock.com` |
     | `https://app.cloudlock.com` |
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     
     | |
     |--|
@@ -144,7 +145,7 @@ ms.locfileid: "53092015"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/ciscocloudlock-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/ciscocloudlock-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -164,7 +165,7 @@ ms.locfileid: "53092015"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-the-cloud-security-fabric-test-user"></a>Создание тестового пользователя The Cloud Security Fabric
 

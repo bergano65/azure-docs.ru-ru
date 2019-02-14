@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6511eb7a4651f0b95b7821e1959ba7e4130c2d6e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: c84aedbdb306bbd7432c3c0b611e6e58243624e2
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54105803"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999374"
 ---
 # <a name="creating-a-management-solution-file-in-azure-preview"></a>Создание файла решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -53,7 +53,7 @@ ms.locfileid: "54105803"
 ## <a name="parameters"></a>Параметры
 [Параметры](../../azure-resource-manager/resource-group-authoring-templates.md#parameters) — это значения, которые пользователь указывает при установке решения для управления.  Существуют стандартные параметры для всех решений. При необходимости можно добавить дополнительные параметры для конкретного решения.  Каким образом пользователи будут указывать значения параметров при установке решения, будет зависеть от конкретного параметра и способа установки решения.
 
-Если пользователь [устанавливает решение по управлению](solutions.md#install-a-management-solution) с помощью Azure Marketplace или шаблонов быстрого запуска Azure, ему будет предложено выбрать [рабочую область Log Analytics и учетную запись службы автоматизации](solutions.md#log-analytics-workspace-and-automation-account).  Их используют для заполнения значений для каждого из стандартных параметров.  Здесь пользователю совсем не обязательно указывать значения для всех стандартных параметров, а только для дополнительных.
+Если пользователь [устанавливает решение по управлению](solutions.md#install-a-monitoring-solution) с помощью Azure Marketplace или шаблонов быстрого запуска Azure, ему будет предложено выбрать [рабочую область Log Analytics и учетную запись службы автоматизации](solutions.md#log-analytics-workspace-and-automation-account).  Их используют для заполнения значений для каждого из стандартных параметров.  Здесь пользователю совсем не обязательно указывать значения для всех стандартных параметров, а только для дополнительных.
 
 
 Ниже приведен пример параметра.  

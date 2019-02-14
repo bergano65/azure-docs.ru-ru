@@ -4,16 +4,13 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 8e6db54853efcba4d648c1d3bc793a9d1ce57441
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 9b9922602218280d58331a755ed0dfed7df96f40
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165175"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55888888"
 ---
-<!--author=alkohli last changed: 9/16/15-->
-
-
 #### <a name="to-cable-your-device-for-power"></a>Подключение питания к устройству
 > [!NOTE]
 > Оба корпусах устройстве StorSimple имеют резервные блоки PCM. Их необходимо установить и подключить к разным источникам питания, чтобы обеспечить высокий уровень доступности.

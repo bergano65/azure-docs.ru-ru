@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: c9a9b6f0127bba4efda6e691a2b7126935d81c0d
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: d6141c3184c8915c36f22d010db39aef2460dd1c
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817705"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233546"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mariadb"></a>Резервное копирование и восстановление в службе "База данных Azure для MariaDB"
 
@@ -52,7 +52,7 @@ ms.locfileid: "55817705"
 Предполагаемое время восстановления будет зависеть от нескольких факторов, включая размер базы данных, размер журнала транзакций, пропускную способность сети и общее количество баз данных, восстанавливаемых в том же регионе и в то же время. Обычно время восстановления составляет менее 12 часов.
 
 > [!IMPORTANT]
-> Удаленные серверы **нельзя** восстановить. Если вы удалите сервер, все базы данных, принадлежащие серверу, также удаляются без возможности восстановления. Чтобы защитить ресурсы сервера после развертывания от случайного удаления или непредвиденных изменений, администраторы могут использовать [блокировки управления](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources).
+> Удаленные серверы **нельзя** восстановить. Если вы удалите сервер, все базы данных, принадлежащие серверу, также удаляются без возможности восстановления. Чтобы защитить ресурсы сервера после развертывания от случайного удаления или непредвиденных изменений, администраторы могут использовать [блокировки управления](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-lock-resources).
 
 ### <a name="point-in-time-restore"></a>Восстановление до точки во времени
 

@@ -16,12 +16,13 @@ ms.workload: Identity
 ms.date: 08/10/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: be145e89becc7c03ba705c29436c3572365ee4ff
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 57c4f0595fdea3d266a56d125d6d86cba8b4f651
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55489042"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56195538"
 ---
 # <a name="azure-ad-connect-design-concepts"></a>Azure AD Connect выполняет следующие функции: Принципы проектирования
 В этом документе приведено описание факторов, которые должны учитываться при проектировании реализации Azure AD Connect. Здесь подробно рассмотрены некоторые области, и часть из них вкратце рассмотрена в других документах.

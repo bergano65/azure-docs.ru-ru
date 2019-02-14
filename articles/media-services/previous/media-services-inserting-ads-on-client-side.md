@@ -4,7 +4,7 @@ description: В этом разделе показано, как вставля�
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 65c9c747-128e-497e-afe0-3f92d2bf7972
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2016
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: de084b2139bcc3ddef09b4438f8774df177b6f3c
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: cc5f3f729acca1f7aa23a7714300c1b581c6f7f8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53315944"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993900"
 ---
 # <a name="inserting-ads-on-the-client-side"></a>Вставка рекламы на стороне клиента
 В этой статье описано, как использовать разные типы рекламы на стороне клиента.

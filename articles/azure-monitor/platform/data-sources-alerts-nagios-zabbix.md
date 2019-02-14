@@ -1,6 +1,6 @@
 ---
-title: Сбор оповещений Nagios и Zabbix в Log Analytics | Документация Майкрософт
-description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+title: Сбор оповещений Nagios и Zabbix в Azure Monitor | Документация Майкрософт
+description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
-ms.openlocfilehash: 1ae719237cb1afee6d2340e1734d008799da8a86
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: ac8e214df6b6990e2b27b5897350c85e0a944e0c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107537"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997963"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения этих инструментов мониторинга можно собирать в Log Analytics для анализа вместе с данными журнала из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с данными журнала из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
 
 
 > [!NOTE]
-> [Созданные Azure Monitor оповещения](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) хранятся отдельно от данных журнала и недоступны запросам по журналу.
+> [Созданные Azure Monitor оповещения](alerts-overview.md) хранятся отдельно от данных журнала и недоступны запросам по журналу.
 
  
 ## <a name="prerequisites"></a>Предварительные требования
@@ -84,7 +84,7 @@ ms.locfileid: "54107537"
 
 
 ## <a name="alert-records"></a>Записи оповещений
-Записи оповещений из Nagios и Zabbix можно получить с помощью [запросов к журналам](../log-query/log-query-overview.md) в Log Analytics.
+Записи оповещений из Nagios и Zabbix можно получить с помощью [запросов по журналам](../log-query/log-query-overview.md) в Azure Monitor.
 
 ### <a name="nagios-alert-records"></a>Записи оповещений Nagios
 
@@ -122,5 +122,5 @@ ms.locfileid: "54107537"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Подробнее об [оповещениях](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) в Azure Monitor.
+* Подробнее об [оповещениях](alerts-overview.md) в Azure Monitor.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

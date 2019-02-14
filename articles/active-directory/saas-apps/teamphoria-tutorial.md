@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Teamphoria | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Teamphoria | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Teamphoria.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2018
 ms.author: jeedes
-ms.openlocfilehash: d7a0523a1e436a086be90896da4d16fab55ce9ab
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0f32a4ebd5a28c1054c19c578f3ba82e3b4951a9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174454"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184114"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-teamphoria"></a>Руководство. Интеграция Azure Active Directory с Teamphoria
+# <a name="tutorial-azure-active-directory-integration-with-teamphoria"></a>Руководство по Интеграция Azure Active Directory с Teamphoria
 
 В этом руководстве описано, как интегрировать приложение Teamphoria с Azure Active Directory (Azure AD).
 
@@ -31,7 +32,7 @@ ms.locfileid: "55174454"
 - Вы можете включить автоматический вход пользователей в Teamphoria (единый вход) с применением учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -144,11 +145,11 @@ ms.locfileid: "55174454"
 
     a. **Отображаемое имя**. Введите отображаемое имя подключаемого модуля на странице администрирования.
 
-    b. **BUTTON NAME** (Имя кнопки). Имя вкладки, которая будет отображаться на странице входа при едином входе.
+    б) **BUTTON NAME** (Имя кнопки). Имя вкладки, которая будет отображаться на странице входа при едином входе.
 
     c. **CERTIFICATE** (Сертификат). Откройте в Блокноте сертификат, скачанный ранее с портала Azure, скопируйте его содержимое и вставьте в это поле.
 
-    d. **ENTRY POINT** (Точка входа). Вставьте **URL-адрес службы единого входа SAML**, скопированный ранее на портале Azure.
+    4.3. **ENTRY POINT** (Точка входа). Вставьте **URL-адрес службы единого входа SAML**, скопированный ранее на портале Azure.
 
     д. Установите переключатель в положение **Вкл.** и нажмите кнопку **Сохранить**.
 
@@ -177,11 +178,11 @@ ms.locfileid: "55174454"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-teamphoria-test-user"></a>Создание тестового пользователя Teamphoria
 
@@ -205,11 +206,11 @@ ms.locfileid: "55174454"
 
     a. В текстовом поле **Адрес электронной почты** находится **электронный адрес** пользователя Britta Simon.
 
-    b. В текстовом поле **Имя** введите **Britta**.
+    б) В текстовом поле **Имя** введите **Britta**.
 
     c. В текстовом поле **Фамилия** введите **Simon**.
 
-    d. Нажмите кнопку **INVITE 1 USER** (Пригласить одного пользователя). Пользователь должен принять приглашение, чтобы его создали в системе.
+    4.3. Нажмите кнопку **INVITE 1 USER** (Пригласить одного пользователя). Пользователь должен принять приглашение, чтобы его создали в системе.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -245,7 +246,7 @@ ms.locfileid: "55174454"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Если вы хотите проверить параметры единого входа, откройте панель доступа. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

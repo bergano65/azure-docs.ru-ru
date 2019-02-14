@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2017
 ms.author: jeedes
-ms.openlocfilehash: 027f5a9f02a0580fce61091e8be9ece9069fb34f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5353cc921d4fc07770737bb70d02361fa0e5f438
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156188"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198445"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bamboo-by-resolution-gmbh"></a>Руководство. Интеграция Azure Active Directory с SAML SSO for Bamboo by resolution GmbH
+# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bamboo-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Bamboo by resolution GmbH
 
 В этом руководстве описано, как интегрировать SAML SSO for Bamboo by resolution GmbH с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55156188"
 
 - Можно управлять доступом пользователей Azure AD к SAML SSO for Bamboo by resolution GmbH.
 - Можно включить автоматический вход пользователей в SAML SSO for Bamboo by resolution GmbH (единый вход) с учетными записями Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55156188"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. Чтобы добавить приложение, в поле поиска введите **SAML SSO for Bamboo by resolution GmbH**, затем на панели результатов выберите **SAML SSO for Bamboo by resolution GmbH** и нажмите кнопку **Добавить**.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55156188"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя SAML SSO for Bamboo by resolution GmbH](#create-a-saml-sso-for-bamboo-by-resolution-gmbh-test-user)** требуется, чтобы создать в SAML SSO for Bamboo by resolution GmbH пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55156188"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -121,7 +122,7 @@ ms.locfileid: "55156188"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки SAML SSO for Bamboo by resolution GmbH](https://marketplace.atlassian.com/plugins/com.resolution.atlasplugins.samlsso-bamboo/server/support) для получения этих значений. 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки SAML SSO for Bamboo by resolution GmbH](https://marketplace.atlassian.com/plugins/com.resolution.atlasplugins.samlsso-bamboo/server/support) для получения этих значений. 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -151,11 +152,11 @@ ms.locfileid: "55156188"
 
     a. Выберите **Azure AD** в качестве **типа поставщика удостоверений**.
 
-    b. В текстовом поле **Имя** введите имя.
+    б) В текстовом поле **Имя** введите имя.
 
     c. В текстовом поле **Описание** введите описание.
 
-    d. Щелкните **Далее**.
+    4.3. Щелкните **Далее**.
 
 1. На странице **Identity provider configuration page** (Настройка поставщика удостоверений) нажмите кнопку **Далее**.
 
@@ -184,7 +185,7 @@ ms.locfileid: "55156188"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/bamboo-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/bamboo-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -204,7 +205,7 @@ ms.locfileid: "55156188"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-saml-sso-for-bamboo-by-resolution-gmbh-test-user"></a>Создание тестового пользователя в SAML SSO for Bamboo by resolution GmbH
 

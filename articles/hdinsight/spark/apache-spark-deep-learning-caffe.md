@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: 451ccff9747988ee019f2be9e0cccec12c9c1ef9
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: c79f840becce43c47287ef38bd39ed3ac9168b73
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118240"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55891085"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 
@@ -64,7 +64,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 Второй этап — скачивание, компиляция и установка ProtoBuf 2.5.0 для Caffe во время выполнения. ProtoBuf 2.5.0 — это [обязательный](https://github.com/yahoo/CaffeOnSpark/issues/87) элемент, но эта версия недоступна в виде пакета для Ubuntu 16. Поэтому вам нужно ее скомпилировать из исходного кода. В Интернете можно также найти несколько ресурсов по компиляции этой версии. Дополнительные сведения см. [здесь](https://jugnu-life.blogspot.com/2013/09/install-protobuf-25-on-ubuntu.html).
 
-Чтобы приступить к работе, вы можете выполнить это действие сценария в кластере для всех рабочих и головных узлов (для HDInsight 3.5). Можно выполнить действия сценария в существующем кластере или использовать их во время создания кластера. Дополнительные сведения о действиях сценария см. в [этой документации](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#view-history-promote-and-demote-script-actions).
+Чтобы приступить к работе, вы можете выполнить это действие сценария в кластере для всех рабочих и головных узлов (для HDInsight 3.5). Можно выполнить действия сценария в существующем кластере или использовать их во время создания кластера. Дополнительные сведения о действиях сценария см. в [этой документации](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
 ![Действия скриптов для установки зависимостей](./media/apache-spark-deep-learning-caffe/Script-Action-1.png)
 

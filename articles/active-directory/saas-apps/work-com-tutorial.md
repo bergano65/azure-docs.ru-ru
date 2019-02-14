@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 836c9e0dd15da9b117c26cd05fc723607141b059
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1e5d097afa3af111a7de8341b90d8c6c05ac0347
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194718"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205755"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workcom"></a>Руководство. Интеграция Azure Active Directory с Work.com
 
@@ -88,7 +89,7 @@ ms.locfileid: "55194718"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Work.com](#create-a-workcom-test-user)** требуется для того, чтобы в Work.com существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -158,7 +159,7 @@ ms.locfileid: "55194718"
     
     a. Установите флажок **SAML включен**.
     
-    b. Нажмите кнопку **Создать**.
+    б) Нажмите кнопку **Создать**.
 
 1. В разделе **Параметры единого входа SAML** сделайте следующее:
     
@@ -169,11 +170,11 @@ ms.locfileid: "55194718"
     > [!NOTE]
     > При вводе значения в поле **Имя** текстовое поле **Имя API** заполняется автоматически.
     
-    b. В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    б) В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
     
     c. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **Browse** (Обзор).
     
-    d. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-work.com`.
+    4.3. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-work.com`.
     
     д. В поле **SAML Identity Type** (Тип удостоверения SAML) выберите значение **Assertion contains the Federation ID from the User object** (Проверочное утверждение содержит идентификатор федерации из объекта User).
     
@@ -228,11 +229,11 @@ ms.locfileid: "55194718"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-workcom-test-user"></a>Создание тестового пользователя Work.com
 Чтобы пользователи Azure Active Directory могли входить систему, их необходимо подготовить для Work.com. В случае с Work.com подготовка выполняется вручную.
@@ -257,11 +258,11 @@ ms.locfileid: "55194718"
    
     a. В текстовое поле **First Name** (Имя) введите **имя пользователя** (**Britta**).
     
-    b. В текстовое поле **Last Name** (Фамилия) введите **фамилию** (**Simon**).
+    б) В текстовое поле **Last Name** (Фамилия) введите **фамилию** (**Simon**).
     
     c. В текстовое поле **Alias** (Альтернативное имя) введите **имя** пользователя (**BrittaS**).
     
-    d. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты пользователя** (**Brittasimon@contoso.com**).
+    4.3. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты пользователя** (**Brittasimon@contoso.com**).
     
     д. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя (**Brittasimon@contoso.com**).
     
@@ -311,7 +312,7 @@ ms.locfileid: "55194718"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Work.com на панели доступа, вы автоматически войдете в приложение Work.com.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

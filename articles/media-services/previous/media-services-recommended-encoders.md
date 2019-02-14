@@ -6,15 +6,15 @@ keywords: encoding;encoders;media
 author: dbgeorge
 manager: johndeu
 ms.author: johndeu
-ms.date: 09/13/2018
+ms.date: 02/09/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: c90d6a5784fe9d80df4fab304b6122d3fa24d0b5
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: f07b2d128bd770854b7c240fd3c964d880029d3c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605170"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999017"
 ---
 # <a name="recommended-on-premises-encoders"></a>Рекомендуемые локальные кодировщики
 При потоковой трансляции с помощью служб мультимедиа Azure можно указать, как ваш канал должен принимать входной поток. Если вы выбрали использование локального кодировщика с каналом кодирования в реальном времени, кодировщик должен передавать на выход высококачественный поток с единой скоростью передачи. Если выбран локальный кодировщик со сквозным каналом, кодировщик должен передавать на выход поток с несколькими скоростями, соответствующими всем нужным настройкам качества. Дополнительные сведения см. в статье [Потоковая трансляция с помощью локальных кодировщиков, создающих потоки с разными скоростями](media-services-live-streaming-with-onprem-encoders.md).
