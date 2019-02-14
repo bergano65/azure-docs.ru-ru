@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: ae136c9aa0e21b2a5dabf06b050727871bddf03b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8ed0912e8d4705b6cbefa9eb8f7a712a37d8b0be
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191981"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183186"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство. Интеграция Azure Active Directory с TINFOIL SECURITY
+# <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство по Интеграция Azure Active Directory с TINFOIL SECURITY
 
 В этом руководстве описано, как интегрировать TINFOIL SECURITY с Azure Active Directory (Azure AD).
 
@@ -88,7 +89,7 @@ ms.locfileid: "55191981"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя TINFOIL SECURITY](#create-a-tinfoil-security-test-user)** требуется для того, чтобы в TINFOIL SECURITY существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -128,11 +129,11 @@ ms.locfileid: "55191981"
     
     ![Добавление атрибута](./media/tinfoil-security-tutorial/tutorial_tinfoil-security_addatt.png "Атрибуты")
     
-    b. В текстовом поле **Имя атрибута** введите **accountid**.
+    б) В текстовом поле **Имя атрибута** введите **accountid**.
     
     c. В текстовое поле **Значение атрибута** следует вставить идентификатор учетной записи, который вы получите позже при работе с этим руководством.
     
-    d. Нажмите кнопку **ОК**.    
+    4.3. Нажмите кнопку **ОК**.    
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -158,11 +159,11 @@ ms.locfileid: "55191981"
    
     a. Выберите **Включить SAML**.
    
-    b. Щелкните **Настроить вручную**.
+    б) Щелкните **Настроить вручную**.
    
     c. В текстовое поле **SAML Post URL** (URL-адрес POST SAML) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
-    d. В текстовое поле **SAML Certificate Fingerprint** (Отпечаток сертификата SAML) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**.
+    4.3. В текстовое поле **SAML Certificate Fingerprint** (Отпечаток сертификата SAML) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**.
   
     д. Скопируйте значение **Your Account ID** (Ваш идентификатор учетной записи) и вставьте его в текстовое поле **Значение атрибута** в разделе **Добавление атрибута** на портале Azure.
    
@@ -197,11 +198,11 @@ ms.locfileid: "55191981"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-tinfoil-security-test-user"></a>Создание тестового пользователя TINFOIL SECURITY
 
@@ -252,7 +253,7 @@ ms.locfileid: "55191981"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "TINFOIL SECURITY" на панели доступа, вы автоматически войдете в приложение TINFOIL SECURITY. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент "TINFOIL SECURITY" на панели доступа, вы автоматически войдете в приложение TINFOIL SECURITY. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

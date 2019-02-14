@@ -13,20 +13,20 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 02/01/2019
 ms.author: juliako
-ms.openlocfilehash: db7d47005b2855ffe3e28c43086a2bfa6b22c8f3
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: cce3ea06ebd7d3469dad14e491124f81567610ea
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659523"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55894068"
 ---
 # <a name="live-events-and-live-outputs"></a>События и выходные данные прямой трансляции
 
 Службы мультимедиа Azure дают возможность предоставлять клиентам события прямой трансляции в облаке Azure. Чтобы настроить события потоковой трансляции в Службах мультимедиа Azure версии 3, вам потребуется изучить следующие понятия, описанные в этой статье:
 
 * [события потоковой трансляции](#live-events);
-* [типы событий потоковой трансляции](#live-vent-types);
-* [сравнение типов событий потоковой трансляции](#live-event-types-comparison);
+* Типы событий потоковой трансляции
+* Сравнение типов событий потоковой трансляции
 * [параметры создания событий потоковой трансляции](#live-event-creation-options);
 * [URL-адреса приема событий потоковой трансляции](#live-event-ingest-urls);
 * [URL-адрес для предварительного просмотра событий потоковой трансляции](#live-event-preview-url);

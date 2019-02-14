@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2017
 ms.author: jeedes
-ms.openlocfilehash: 622c548dbbc42d171c1c10d314e3dd9871f6ad88
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dd30791ca3876ce776aff45d8bcdfbb37e963f77
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187510"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56200706"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Руководство. Интеграция Azure Active Directory с OnTrack
+# <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Руководство по Интеграция Azure Active Directory с OnTrack
 
 В этом руководстве описано, как интегрировать OnTrack с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55187510"
 
 - С помощью Azure AD вы можете контролировать доступ к OnTrack.
 - Вы можете включить автоматический вход пользователей в OnTrack (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55187510"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **OnTrack**, выберите **OnTrack** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55187510"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения OnTrack](#create-an-ontrack-test-user)** требуется для создания в OnTrack пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -116,7 +117,7 @@ ms.locfileid: "55187510"
 
     Для рабочей среды введите URL-адрес: `https://oeaccessories.com/sso`
 
-    b. В текстовое поле **URL-адрес ответа**:
+    б) В текстовое поле **URL-адрес ответа**:
     
     Для тестовой среды введите URL-адрес: `https://indie.staging.insigniagroup.com/sso/autonation.aspx`
 
@@ -146,11 +147,11 @@ ms.locfileid: "55187510"
 
     ![Настройка единого входа](./media/ontrack-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    d. Нажмите кнопку **ОК**.
+    4.3. Нажмите кнопку **ОК**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -172,7 +173,7 @@ ms.locfileid: "55187510"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/ontrack-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/ontrack-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -192,7 +193,7 @@ ms.locfileid: "55187510"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-ontrack-test-user"></a>Создание тестового пользователя OnTrack
 

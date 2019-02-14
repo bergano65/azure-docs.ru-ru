@@ -10,14 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2018
+ms.date: 02/11/2019
 ms.author: spelluru
-ms.openlocfilehash: 5b4a52327227ecd650ee38d60f6bdfcc6bf20056
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.reviewer: christianreddington,anthdela,juselph
+ms.openlocfilehash: f16bdb8b89c2ce72c2a31a320d2dedbc4df09c81
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250859"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242793"
 ---
 # <a name="set-up-azure-devtest-labs-infrastructure-in-your-enterprise"></a>Настройка инфраструктуры DevTest Labs Azure на предприятии
 Быстрое внедрение облака в предприятие происходит из-за его преимуществ в динамичности, гибкости и экономической перспективе. Обычно первым шагом перехода в облако является разработка и тестирование рабочих нагрузок. При переходе рабочих нагрузок в облако существует набор общих проблем. Примеры рабочих нагрузок приведены далее. 

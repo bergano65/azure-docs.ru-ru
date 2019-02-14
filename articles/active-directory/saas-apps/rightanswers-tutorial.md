@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с RightAnswers | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с RightAnswers | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении RightAnswers.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 3424f5238e10385b53f7b76ef9a211cf02076ba9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7a4f7fef8a1f73bb7c3e19ae32756d13273ddf2d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55167688"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56208543"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство. Интеграция Azure Active Directory с RightAnswers
 
@@ -117,7 +118,7 @@ ms.locfileid: "55167688"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.rightanswers.com:<identifier>/portal`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://www.rightanswers.com/contact-us/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://www.rightanswers.com/contact-us/). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -137,7 +138,7 @@ ms.locfileid: "55167688"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -161,11 +162,11 @@ ms.locfileid: "55167688"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-rightanswers-test-user"></a>Создание тестового пользователя RightAnswers
 
@@ -208,7 +209,7 @@ ms.locfileid: "55167688"
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Если вы хотите проверить параметры единого входа, откройте панель доступа. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)

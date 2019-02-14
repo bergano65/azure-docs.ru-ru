@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: d31423d71e20c298ddfb8837101b77da1b155954
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a375b60acbb6636cdc651a41d65bc232b50946b6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170340"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198938"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Руководство. Интеграция Azure Active Directory с Reward Gateway
 
@@ -120,7 +121,7 @@ ms.locfileid: "55170340"
     | `https://<companyname>.rewardgateway.co.nz/` |
     | `https://<companyname>.rewardgateway.com.au/` |
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |--|
     |  `https://<companyname>.rewardgateway.com/Authentication/EndLogin?idp=<Unique Id>` |
@@ -129,7 +130,7 @@ ms.locfileid: "55170340"
     | `https://<companyname>.rewardgateway.com.au/Authentication/EndLogin?idp=<Unique Id>` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,7 +147,7 @@ ms.locfileid: "55170340"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -170,11 +171,11 @@ ms.locfileid: "55170340"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-reward-gateway-test-user"></a>Создание тестового пользователя Reward Gateway
 

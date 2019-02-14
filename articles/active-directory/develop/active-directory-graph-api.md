@@ -16,19 +16,20 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: ce1940d0b83e0713ce41d84e8d4bfeff6cb75954
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1b26c8a0d040ab91c53e04593280885ef7fd13eb
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55075862"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56173765"
 ---
 # <a name="azure-active-directory-graph-api"></a>API Graph Azure Active Directory
 
 > [!IMPORTANT]
 > Мы настоятельно рекомендуем использовать для доступа к ресурсам Azure Active Directory [Microsoft Graph](https://developer.microsoft.com/graph/) вместо API Azure AD Graph. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует совсем немного сценариев, в которых по-прежнему можно использовать API Azure AD Graph. Дополнительные сведения см. в записи блога [Microsoft Graph or the Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) (Microsoft Graph или Azure AD Graph) в Центре разработчика Office.
 
-В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/use_the_api). 
+В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](https://docs.microsoft.com/graph/use-the-api). 
 
 API Graph Azure Active Directory обеспечивает программный доступ к Azure AD через конечные точки API-интерфейса Rest Azure AD. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, API Azure AD Graph поддерживает следующие операции для объекта-пользователя.
 

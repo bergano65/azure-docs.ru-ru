@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 671d3c9954321bf19d0fd56057d05d8b4475d8d2
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b50bf623046094509170b5b5efc091013499b51b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55166073"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56169842"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moveit-transfer---azure-ad-integration"></a>Руководство. Интеграция Azure Active Directory с MOVEit Transfer — Azure AD integration
+# <a name="tutorial-azure-active-directory-integration-with-moveit-transfer---azure-ad-integration"></a>Руководство по Интеграция Azure Active Directory с MOVEit Transfer — Azure AD integration
 
 В этом руководстве, вы узнаете, как интегрировать приложение MOVEit Transfer - Azure AD integration с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55166073"
 
 - С помощью Azure AD вы можете контролировать доступ к MOVEit Transfer - Azure AD integration.
 - Вы можете включить автоматический вход пользователей в MOVEit Transfer - Azure AD integration (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55166073"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **MOVEit Transfer - Azure AD integration**, выберите **MOVEit Transfer - Azure AD integration** на панели результатов и щелкните **Добавить**, чтобы добавить приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55166073"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя MOVEit Transfer - Azure AD integration](#create-a-moveit-transfer---azure-ad-integration-test-user)** требуется для создания в MOVEit Transfer - Azure AD integration пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -117,7 +118,7 @@ ms.locfileid: "55166073"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://contoso.com/<tenatid>/SAML/SSO/HTTP-Post`.    
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Вы можете просмотреть эти значения позже в разделе **URL-адреса метаданных поставщика службы** или обратиться в [службу поддержки клиентов MOVEit Transfer - Azure AD integration](https://community.ipswitch.com/s/support) для получения этих значений.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Вы можете просмотреть эти значения позже в разделе **URL-адреса метаданных поставщика службы** или обратиться в [службу поддержки клиентов MOVEit Transfer - Azure AD integration](https://community.ipswitch.com/s/support) для получения этих значений.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -164,11 +165,11 @@ ms.locfileid: "55166073"
     
     a. Выберите значение **SAML NameID** для параметра **Login name** (Имя для входа).
     
-    b. Выберите **Other** (Другое) в качестве **полного имени** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.microsoft.com/identity/claims/displayname`.
+    б) Выберите **Other** (Другое) в качестве **полного имени** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.microsoft.com/identity/claims/displayname`.
     
     c. Выберите **Other** (Другое) в качестве **электронной почты** и в тестовом поле **Attribute name** (Имя атрибута) введите значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
     
-    d. Выберите значение **Yes** (Да) для параметра **Auto-create account on signon** (Автоматическое создание учетной записи при первом входе).
+    4.3. Выберите значение **Yes** (Да) для параметра **Auto-create account on signon** (Автоматическое создание учетной записи при первом входе).
     
     д. Нажмите кнопку **Сохранить**.
 
@@ -185,7 +186,7 @@ ms.locfileid: "55166073"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/moveittransfer-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/moveittransfer-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -205,7 +206,7 @@ ms.locfileid: "55166073"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-moveit-transfer---azure-ad-integration-test-user"></a>Создание тестового пользователя MOVEit Transfer - Azure AD integration
 

@@ -4,7 +4,7 @@ description: В этой статье описано, как использов�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: mbaldwin
+manager: barbkess
 editor: ''
 ms.assetid: 5662e312-e8c2-4736-974e-576eeb333484
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 90cf57e22c4bb86ed9a784731480bc3fb8d3025d
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: ba5ab7ce85933545a41f23e2ecd913acbb7e72d1
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52619968"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112739"
 ---
 # <a name="azure-security-center-threat-intelligence-report"></a>Отчет об анализе угроз, предоставляемый центром безопасности Azure
 Здесь содержатся сведения о том, как отчет центра безопасности Azure об анализе угроз позволяет получить подробные сведения касательно угрозы, из-за которой было создано оповещение системы безопасности.

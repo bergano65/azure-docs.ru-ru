@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/16/2018
 ms.author: ryanwi
-ms.openlocfilehash: f83f7afa4173316f127c76f20967054bf13c9a6b
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 91e7fdd215d246156f601d3b5e6e05b7f8f71f59
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55097917"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116462"
 ---
 # <a name="service-fabric-application-and-service-security"></a>Безопасность приложений и служб Service Fabric
 Архитектура микрослужб может обеспечить [множество преимуществ](service-fabric-overview-microservices.md). Тем не менее управление безопасностью микрослужб является непростой задачей и отличается от управления безопасностью традиционных неделимых приложений. 
@@ -110,7 +110,7 @@ TO DO: Encrypt disks on Linux clusters?-->
 * [Дополнительные сведения о безопасности кластеров](service-fabric-cluster-security.md)
 
 <!-- Links -->
-[key-vault-get-started]:../key-vault/key-vault-get-started.md
+[key-vault-get-started]:../key-vault/key-vault-overview.md
 [config-package]: service-fabric-application-and-service-manifests.md
 [service-fabric-cluster-creation-via-arm]: service-fabric-cluster-creation-via-arm.md
 

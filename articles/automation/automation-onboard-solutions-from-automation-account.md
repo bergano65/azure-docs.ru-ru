@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: d274642c8e35374dee2d584e6285165a15cd3128
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 0d67571024c9ace3618f7ae6172122ac48b57faa
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55747039"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106733"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -49,7 +49,6 @@ ms.locfileid: "55747039"
 |UKSouth|UKSouth|
 |USGovVirginia|USGovVirginia|
 |EastUS2EUAP|CentralUSEUAP|
-|Западный регион США 2|Западный регион США 2|
 
 Решение для отслеживания изменений и инвентаризации позволяет [отслеживать изменения](automation-vm-change-tracking.md) и [выполнять инвентаризацию](automation-vm-inventory.md) на виртуальных машинах. На этом этапе нужно включить решение на виртуальной машине.
 

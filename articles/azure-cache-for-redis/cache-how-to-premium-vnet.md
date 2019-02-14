@@ -1,25 +1,25 @@
 ---
 title: Настройка виртуальной сети для кэша Azure для Redis ценовой категории "Премиум" | Документация Майкрософт
 description: Узнайте, как настроить поддержку виртуальной сети и управлять ей для экземпляров кэша Azure для Redis ценовой категории "Премиум"
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: ''
 ms.assetid: 8b1e43a0-a70e-41e6-8994-0ac246d8bf7f
 ms.service: cache
 ms.workload: tbd
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2017
-ms.author: wesmc
-ms.openlocfilehash: e71d92b2cf7888fd9e3c560beb6e0e7f18e7add0
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.author: yegu
+ms.openlocfilehash: dafa9f09b6aed1f61facf3737c7e03c81b2a0e7d
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822652"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238255"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".

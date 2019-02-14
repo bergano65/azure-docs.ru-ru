@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Создание и настройка приложений на веб-странице службы "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 3c35bb96c3ba5dbf1c3302836b2c73cf15128937
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: f9cf5e723484196125548b9e6d3956e909e9c9b0
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215186"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55874959"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале [LUIS](https://www.luis.ai) или с помощью [API-интерфейсов](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) разработки LUIS.

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b4485344f0bb85cb5dd2a2d621833d0fed15a8e0
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: c2364715bfeaea473db292baff2eb1e1cce3203b
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022484"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233020"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -27,7 +27,6 @@ ms.locfileid: "54022484"
 
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Salesforce в службе "Фабрика данных Azure" версии 2](../connector-salesforce.md).
-
 
 В этой статье описано, как переместить данные из Salesforce в любое хранилище данных, указанное в таблице [поддерживаемых хранилищ данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) (столбец "Приемник"), с использованием действия копирования в фабрике данных Azure. Эта статья основана на статье о [действиях перемещения данных](data-factory-data-movement-activities.md) , в которой приведены общие сведения о перемещении данных с помощью действия копирования и поддерживаемых сочетаниях хранилищ данных.
 
@@ -51,19 +50,19 @@ ms.locfileid: "54022484"
 ## <a name="getting-started"></a>Приступая к работе
 Вы можете создать конвейер с действием копирования, который перемещает данные из Salesforce, с помощью разных инструментов и интерфейсов API.
 
-Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведены краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных.
+Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
-Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги: 
+Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
 1. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных.
-2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. 
-3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. 
+2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования.
+3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных из Salesforce, доступен в разделе [Пример JSON. Копирование данных из Salesforce в большой двоичный объект Azure](#json-example-copy-data-from-salesforce-to-azure-blob) этой статьи. 
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON. Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных из Salesforce, доступен в разделе [Пример JSON. Копирование данных из Salesforce в большой двоичный объект Azure](#json-example-copy-data-from-salesforce-to-azure-blob) этой статьи.
 
-Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, относящихся к Salesforce. 
+Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, относящихся к Salesforce.
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Salesforce.
@@ -99,7 +98,7 @@ ms.locfileid: "54022484"
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Пример: `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
+| query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Например, `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
 > [!IMPORTANT]
 > Имя API для любых настраиваемых объектов должно содержать приставку __c.
@@ -125,7 +124,7 @@ ms.locfileid: "54022484"
 * Чтобы запросить все записи, включая существующие и удаленные, укажите select * from MyTable__c **where IsDeleted = 0 or IsDeleted = 1**
 
 ## <a name="json-example-copy-data-from-salesforce-to-azure-blob"></a>Пример JSON. Копирование данных из Salesforce в большой двоичный объект Azure
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Salesforce в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.   
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Salesforce в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
 
 Ниже приведены артефакты фабрики данных, которые необходимо создать для реализации сценария. В разделах после списка приведены подробные сведения об этих действиях.
 
@@ -137,7 +136,7 @@ ms.locfileid: "54022484"
 
 **Связанная служба SalesForce**
 
-В этом примере используется связанная служба **Salesforce**. Список свойств, поддерживаемых этой связанной службой, приведен в разделе [Свойства связанной службы Salesforce](#linked-service-properties).  Инструкции по получению и сбросу маркера безопасности см. в статье [Get security token](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) (Получение маркера безопасности).
+В этом примере используется связанная служба **Salesforce**. Список свойств, поддерживаемых этой связанной службой, приведен в разделе [Свойства связанной службы Salesforce](#linked-service-properties). Инструкции по получению и сбросу маркера безопасности см. в статье [Get security token](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) (Получение маркера безопасности).
 
 ```json
 {
@@ -160,10 +159,10 @@ ms.locfileid: "54022484"
 {
     "name": "AzureStorageLinkedService",
     "properties": {
-    "type": "AzureStorage",
-    "typeProperties": {
-        "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
-    }
+        "type": "AzureStorage",
+        "typeProperties": {
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
+        }
     }
 }
 ```
@@ -176,7 +175,7 @@ ms.locfileid: "54022484"
         "linkedServiceName": "SalesforceLinkedService",
         "type": "RelationalTable",
         "typeProperties": {
-            "tableName": "AllDataType__c"  
+            "tableName": "AllDataType__c"
         },
         "availability": {
             "frequency": "Hour",
@@ -232,13 +231,13 @@ ms.locfileid: "54022484"
 Список свойств, поддерживаемых RelationalSource, см. в разделе [Свойства типа RelationalSource](#copy-activity-properties).
 
 ```json
-{  
+{
     "name":"SamplePipeline",
-    "properties":{  
+    "properties":{
         "start":"2016-06-01T18:00:00",
         "end":"2016-06-01T19:00:00",
         "description":"pipeline with copy activity",
-        "activities":[  
+        "activities":[
         {
             "name": "SalesforceToAzureBlob",
             "description": "Copy from Salesforce to an Azure blob",
@@ -256,7 +255,7 @@ ms.locfileid: "54022484"
             "typeProperties": {
                 "source": {
                     "type": "RelationalSource",
-                    "query": "SELECT Id, Col_AutoNumber__c, Col_Checkbox__c, Col_Currency__c, Col_Date__c, Col_DateTime__c, Col_Email__c, Col_Number__c, Col_Percent__c, Col_Phone__c, Col_Picklist__c, Col_Picklist_MultiSelect__c, Col_Text__c, Col_Text_Area__c, Col_Text_AreaLong__c, Col_Text_AreaRich__c, Col_URL__c, Col_Text_Encrypt__c, Col_Lookup__c FROM AllDataType__c"                
+                    "query": "SELECT Id, Col_AutoNumber__c, Col_Checkbox__c, Col_Currency__c, Col_Date__c, Col_DateTime__c, Col_Email__c, Col_Number__c, Col_Percent__c, Col_Phone__c, Col_Picklist__c, Col_Picklist_MultiSelect__c, Col_Text__c, Col_Text_Area__c, Col_Text_AreaLong__c, Col_Text_AreaRich__c, Col_URL__c, Col_Text_Encrypt__c, Col_Lookup__c FROM AllDataType__c"
                 },
                 "sink": {
                     "type": "BlobSink"
@@ -289,8 +288,8 @@ ms.locfileid: "54022484"
 | Автонумерация |Строка |
 | Флажок |Логическое |
 | Валюта |Decimal |
-| Дата |Datetime |
-| Дата и время |Datetime |
+| Дата |DateTime |
+| Дата и время |DateTime |
 | Email |Строка |
 | Идентификатор |Строка |
 | Связь для подстановки |Строка |

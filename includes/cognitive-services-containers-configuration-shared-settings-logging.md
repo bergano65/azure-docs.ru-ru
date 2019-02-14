@@ -4,12 +4,12 @@ ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/02/2019
-ms.openlocfilehash: c8235fa65a3be91956ffad731d47488a852e42a2
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: aa93fb9779e6cda41df52f7979e42348948544ea
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53977382"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247121"
 ---
 Параметры `Logging` управляют поддержкой ведения журнала ASP.NET Core для контейнера. Вы можете использовать для контейнера те же параметры конфигурации и значения, что и для приложения ASP.NET Core. 
 
@@ -30,4 +30,4 @@ ms.locfileid: "53977382"
 | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить регистратор, необходимо указать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
 | `MaxFileSize` | Целое число  | Максимальный размер файла журнала в мегабайтах (МБ). Когда размер текущего файла журнала достигает этого значения или превышает его, поставщик ведения журнала создает файл журнала. Если задано значение –1, то размер файла журнала ограничивается только максимальным размером файла (если он задан) для выходного подключения. Значение по умолчанию — 1. |
 
-Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Настройка файла параметров](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#settings-file-configuration).
+Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Настройка файла параметров](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1).

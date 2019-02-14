@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
-ms.openlocfilehash: 78402299aa0abc9b51b2995ffe6d2fc9b55c02aa
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: bfd6e715e907925a1ba3db3b60c0d3eccb637930
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241430"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55866106"
 ---
 # <a name="performance-tuning-guidance-for-spark-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 2-го поколения
 
@@ -23,7 +23,7 @@ ms.locfileid: "55241430"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. Убедитесь, что вы включили удаленный рабочий стол для кластера. 
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Работающий кластер Spark в Data Lake Storage 2-го поколения.**  Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-use-with-data-lake-store).
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md) 
 

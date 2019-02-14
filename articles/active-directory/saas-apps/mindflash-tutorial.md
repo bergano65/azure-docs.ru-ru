@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: f86e33a429ce011edd7398cdb0a27a17dc466993
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 53730b6a479255f702c09ce2bc319ce819fa88da
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193902"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56200621"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство. Интеграция Azure Active Directory с Mindflash
+# <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
 
 В этом руководстве описано, как интегрировать Mindflash с Azure Active Directory (Azure AD).
 
@@ -117,7 +118,7 @@ ms.locfileid: "55193902"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Mindflash](https://www.mindflash.com/contact/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Mindflash](https://www.mindflash.com/contact/). 
  
 
 
@@ -136,7 +137,7 @@ ms.locfileid: "55193902"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -160,11 +161,11 @@ ms.locfileid: "55193902"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-mindflash-test-user"></a>Создание тестового пользователя Mindflash
 
@@ -186,11 +187,11 @@ ms.locfileid: "55193902"
    
     a. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
 
-    b. В текстовое поле **Last Name** (Фамилия) введите **фамилию**, например **Simon**.
+    б) В текстовое поле **Last Name** (Фамилия) введите **фамилию**, например **Simon**.
     
     c. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon@contoso.com**.
 
-    b. Щелкните **Добавить**.
+    б) Щелкните **Добавить**.
 
 >[!NOTE]
 >Для подготовки учетных записей пользователей AAD можно использовать любые другие средства создания учетных записей Mindflash или API, предоставляемое Mindflash. 
@@ -231,7 +232,7 @@ ms.locfileid: "55193902"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы щелкните элемент Mindflash на панели доступа, должна появиться страница входа в приложение Mindflash.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

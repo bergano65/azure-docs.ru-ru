@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: QnA Maker состоит из компонентов, размещенных в учетной записи Azure пользователя. Для отладки пользователям может потребоваться оперировать ресурсами Azure для QnA Maker или предоставить группе поддержки QnA Maker дополнительные сведения об их конфигурации.
 services: cognitive-services
 author: tulasim88
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 01/14/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: e607ca75f12cf81ac8ca177083ba8678aed02207
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 6a84ecff04381b6dcc9706105df92ecc96dc8b1c
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223805"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55882103"
 ---
 # <a name="troubleshooting-tips-to-support-the-qna-maker-service-and-runtime"></a>Советы по устранению неполадок для поддержки службы и среды выполнения QnA Maker
 QnA Maker состоит из компонентов, размещенных в учетной записи Azure пользователя. Для отладки пользователям может потребоваться оперировать ресурсами Azure для QnA Maker или предоставить группе поддержки QnA Maker дополнительные сведения об их конфигурации.

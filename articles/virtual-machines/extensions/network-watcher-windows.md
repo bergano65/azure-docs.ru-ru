@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: 2f07107ad63ddd04e67528bf4f409dabf4a4d0c0
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 6e02f5a5b42da9c99a08782903cdc05ee32ec9d4
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144557"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55976932"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Windows
 
@@ -79,10 +79,10 @@ ms.locfileid: "42144557"
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-Чтобы развернуть расширения виртуальной машины агента службы "Наблюдатель за сетями" на существующей виртуальной машине, выполните команду `Set-AzureRmVMExtension`:
+Чтобы развернуть расширения виртуальной машины агента службы "Наблюдатель за сетями" на существующей виртуальной машине, выполните команду `Set-AzVMExtension`:
 
 ```powershell
-Set-AzureRmVMExtension `
+Set-AzVMExtension `
   -ResourceGroupName "myResourceGroup1" `
   -Location "WestUS" `
   -VMName "myVM1" `
@@ -99,7 +99,7 @@ Set-AzureRmVMExtension `
 Сведения о состоянии развертывания расширения можно получить на портале Azure и при помощи PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в модуле Azure PowerShell:
 
 ```powershell
-Get-AzureRmVMExtension -ResourceGroupName myResourceGroup1 -VMName myVM1 -Name networkWatcherAgent
+Get-AzVMExtension -ResourceGroupName myResourceGroup1 -VMName myVM1 -Name networkWatcherAgent
 ```
 
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующем каталоге:

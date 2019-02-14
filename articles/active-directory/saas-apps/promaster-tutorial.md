@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 871abffc07ee29df388205395110e89a85dd7344
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 218f0c8a49d99c611219a43cc4b51214e4087012
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53017660"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205245"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promaster-by-inlogik"></a>Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik)
 
@@ -29,7 +30,7 @@ ms.locfileid: "53017660"
 
 - С помощью Azure AD вы можете контролировать доступ к ProMaster (от Inlogik).
 - Вы можете включить автоматический вход пользователей (единый вход) в ProMaster (от Inlogik) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "53017660"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **ProMaster (от Inlogik)**, выберите **ProMaster (от Inlogik)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "53017660"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя ProMaster (от Inlogik)](#create-a-promaster-by-inlogik-test-user)** требуется для создания в ProMaster (от Inlogik) пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -118,7 +119,7 @@ ms.locfileid: "53017660"
     | `https://<CUSTOMDOMAIN>/SAMLBASE`|
     | |
 
-    b. В текстовом поле **URL-адрес ответа** введите один из следующих шаблонов URL-адреса:
+    б) В текстовом поле **URL-адрес ответа** введите один из следующих шаблонов URL-адреса:
 
     | |
     | - |-|
@@ -139,7 +140,7 @@ ms.locfileid: "53017660"
     | |
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ProMaster (от Inlogik)](mailto:michael.boldiston@inlogik.com).
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ProMaster (от Inlogik)](mailto:michael.boldiston@inlogik.com).
 
 5. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
@@ -161,7 +162,7 @@ ms.locfileid: "53017660"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/promaster-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/promaster-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -181,7 +182,7 @@ ms.locfileid: "53017660"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-promaster-by-inlogik-test-user"></a>Создание тестового пользователя в ProMaster (от Inlogik)
 
@@ -222,7 +223,7 @@ ms.locfileid: "53017660"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент ProMaster (от Inlogik) на панели доступа, вы автоматически войдете в приложение ProMaster (от Inlogik).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

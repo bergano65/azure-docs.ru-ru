@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
-ms.openlocfilehash: 14ae26b05bc51a1e6488acf5ed6225697a7bcaed
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4bc5121f6604fae9a28b52db1bfb308d7cdb968d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176392"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205092"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство. Интеграция Azure Active Directory с LockPath Keylight
+# <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по Интеграция Azure Active Directory с LockPath Keylight
 
 В этом руководстве описано, как интегрировать LockPath Keylight с Azure Active Directory (Azure AD).
 
@@ -119,7 +120,7 @@ ms.locfileid: "55176392"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.keylightgrc.com/Login.aspx`.
     
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов LockPath Keylight](https://www.lockpath.com/contact/). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов LockPath Keylight](https://www.lockpath.com/contact/). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (необработанный)**, а затем сохраните файл сертификата на компьютер.
 
@@ -137,7 +138,7 @@ ms.locfileid: "55176392"
    
     a. Войдите в учетную запись LockPath Keylight в качестве администратора.
     
-    b. В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
+    б) В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
    
     ![Настройка единого входа](./media/keylight-tutorial/401.png) 
 
@@ -145,7 +146,7 @@ ms.locfileid: "55176392"
    
     ![Настройка единого входа](./media/keylight-tutorial/402.png) 
 
-    d. В диалоговом окне **SAML Settings** (Параметры SAML) нажмите кнопку **Edit** (Изменить).
+    4.3. В диалоговом окне **SAML Settings** (Параметры SAML) нажмите кнопку **Edit** (Изменить).
    
     ![Настройка единого входа](./media/keylight-tutorial/404.png) 
 
@@ -155,11 +156,11 @@ ms.locfileid: "55176392"
    
     a. Задайте для параметра **SAML authentication** (Аутентификация SAML) значение **Active** (Активно).
 
-    b. Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure, в текстовое поле **Identity Provider Login URL** (URL-адрес входа поставщика удостоверений).
+    б) Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure, в текстовое поле **Identity Provider Login URL** (URL-адрес входа поставщика удостоверений).
 
     c. Вставьте значение **URL-адрес службы единого выхода**, скопированное на портале Azure, в текстовое поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений).
 
-    d. Щелкните **Choose File** (Выбрать файл), чтобы выбрать скачанный сертификат LockPath Keylight, а затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
+    4.3. Щелкните **Choose File** (Выбрать файл), чтобы выбрать скачанный сертификат LockPath Keylight, а затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
 
     д. В поле **SAML User Id location** (Расположение идентификатора пользователя SAML) выберите значение **NameIdentifier element of the subject statement** (Элемент NameIdentifier оператора Subject).
     
@@ -185,7 +186,7 @@ ms.locfileid: "55176392"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -209,11 +210,11 @@ ms.locfileid: "55176392"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-lockpath-keylight-test-user"></a>Создание тестового пользователя LockPath Keylight
 

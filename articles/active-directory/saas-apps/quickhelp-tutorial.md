@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2017
 ms.author: jeedes
-ms.openlocfilehash: a4b528e912fe267d5988080fb15b85db0c87fdfd
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 013504fefd927d2e970c5b07a0e9c61afc715d7c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193749"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56186919"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-quickhelp"></a>Руководство. Интеграция Azure Active Directory с QuickHelp
 
@@ -114,7 +115,7 @@ ms.locfileid: "55193749"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://quickhelp.com/<ROUTEURL>`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес: `https://auth.quickhelp.com`
+    б) В текстовом поле **Идентификатор** введите URL-адрес: `https://auth.quickhelp.com`
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к администратору QuickHelp вашей организации или менеджеру по работе с клиентами BrainStorm, чтобы получить это значение.
@@ -145,18 +146,18 @@ ms.locfileid: "55193749"
    
     a. Для параметра **SSO Type** (Тип SSO) выберите значение **WSFederation**.
    
-    b. Чтобы передать скачанный файл метаданных Azure, нажмите кнопку **Browse** (Обзор), перейдите к файлу и щелкните **Upload Metadata** (Передать метаданные).
+    б) Чтобы передать скачанный файл метаданных Azure, нажмите кнопку **Browse** (Обзор), перейдите к файлу и щелкните **Upload Metadata** (Передать метаданные).
    
     c. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
    
-    d. В текстовое поле **First Name** (Имя) введите `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    4.3. В текстовое поле **First Name** (Имя) введите `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
    
     д. В текстовое поле **Last Name** (Фамилия) введите `type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
    
     Е. На **панели действий** щелкните **Save** (Сохранить).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -180,11 +181,11 @@ ms.locfileid: "55193749"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-quickhelp-test-user"></a>Создание тестового пользователя QuickHelp
 

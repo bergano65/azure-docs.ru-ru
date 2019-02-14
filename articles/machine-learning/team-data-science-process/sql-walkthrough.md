@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 2e71cf90c6e894946a2f3a1c8bfce2179f214a29
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 953f2cdac41dcd610afbde39a318c0237b0b9099
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453660"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56114745"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Процесс обработки и анализа данных группы на практике: использование SQL Server
 В этом руководстве представлено пошаговое руководство по процессу создания и развертывания модели машинного обучения с помощью SQL Server и общедоступного набора данных [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/). Процедура соответствует стандартному рабочему процессу обработки и аналитики данных: прием и анализ данных, разработка функций для упрощения обучения, а затем сборка и развертывание модели.
@@ -624,7 +624,7 @@ ms.locfileid: "55453660"
 ### <a name="references"></a>Ссылки
 •    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/)  
 •    [Получение данных о поездках такси Нью-Йорка на основании FOIL (Chris Whong)](http://chriswhong.com/open-data/foil_nyc_taxi/)   
-•    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](http://www.nyc.gov/html/tlc/html/technology/aggregated_data.shtml)
+•    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 [1]: ./media/sql-walkthrough/sql-walkthrough_26_1.png
 [2]: ./media/sql-walkthrough/sql-walkthrough_28_1.png

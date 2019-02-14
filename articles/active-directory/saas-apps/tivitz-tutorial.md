@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: jeedes
-ms.openlocfilehash: 90ed29081774f1048deb1e545017d64169878ba5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: fe1168eb9ea1ba886bb49b1ea2a24e66ff8ae94e
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164747"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56187890"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tivitz"></a>Руководство. Интеграция Azure Active Directory с TiViTz
+# <a name="tutorial-azure-active-directory-integration-with-tivitz"></a>Руководство по Интеграция Azure Active Directory с TiViTz
 
 В этом руководстве описано, как интегрировать приложение TiViTz с Azure Active Directory (Azure AD).
 
@@ -117,7 +118,7 @@ ms.locfileid: "55164747"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.o365.tivitz.com/`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TiViTz](mailto:info@tivitz.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TiViTz](mailto:info@tivitz.com). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -134,7 +135,7 @@ ms.locfileid: "55164747"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -158,11 +159,11 @@ ms.locfileid: "55164747"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-tivitz-test-user"></a>Создание тестового пользователя TiViTz
 

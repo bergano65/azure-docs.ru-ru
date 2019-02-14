@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: d79e423dd617a498aee09cff6b774bbe90eeaa83
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 79f0e58ea11d8bdb8c30ca1e50fae2635f719681
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55701647"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56118026"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
 
@@ -154,7 +154,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 **Будет ли взиматься дополнительная плата за использование входных эталонных данных SQL в Azure Stream Analytics?**
 
-В задании Stream Analytics нет дополнительных [затрат за единицу потоковой передачи](https://azure.microsoft.com/pricing/details/stream-analytics/). Однако задание Stream Analytics должно иметь связанную учетную запись хранения Azure. Задание Stream Analytics запрашивает базу данных SQL (во время запуска задания и интервала обновления), чтобы получить набор эталонных данных, и сохраняет моментальный снимок в учетной записи хранения. За хранение этих моментальных снимков будет взиматься дополнительная плата, указанная на [странице цен](https://azure.microsoft.compricing/details/storage/) на учетную запись хранения Azure.
+В задании Stream Analytics нет дополнительных [затрат за единицу потоковой передачи](https://azure.microsoft.com/pricing/details/stream-analytics/). Однако задание Stream Analytics должно иметь связанную учетную запись хранения Azure. Задание Stream Analytics запрашивает базу данных SQL (во время запуска задания и интервала обновления), чтобы получить набор эталонных данных, и сохраняет моментальный снимок в учетной записи хранения. За хранение этих моментальных снимков будет взиматься дополнительная плата, указанная на [странице цен](https://azure.microsoft.com/pricing/details/storage/) на учетную запись хранения Azure.
 
 **Как узнать, что моментальный снимок эталонных данных запрашивается из базы данных SQL и используется в задании Azure Stream Analytics?**
 

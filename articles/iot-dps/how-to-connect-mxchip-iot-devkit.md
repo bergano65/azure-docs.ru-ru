@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: 513d4e51ced798f5fe49e2e1e59fcc8ec02d9c2c
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 07614147189732223f972c1f66bb6562280d3f39
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699199"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56118366"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -30,7 +30,7 @@ ms.locfileid: "55699199"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Подготовьте DevKit по инструкциям из статьи [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md).
+* Подготовьте DevKit по инструкциям из статьи [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started).
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
 

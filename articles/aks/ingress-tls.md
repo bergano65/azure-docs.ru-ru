@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/30/2018
 ms.author: iainfou
-ms.openlocfilehash: 4039cc7cc13f378438f2bb23c56db844267588cd
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: cb441aeab8f6f2cfbaa099ee17a3af9e767fc218
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731671"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235705"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -91,21 +91,33 @@ az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
 Чтобы установить контроллер cert-manager в кластере с поддержкой RBAC, используйте следующую команду `helm install`:
 
 ```console
+kubectl label namespace kube-system certmanager.k8s.io/disable-validation=true
+
+kubectl apply \
+    -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
+    
 helm install stable/cert-manager \
     --namespace kube-system \
     --set ingressShim.defaultIssuerName=letsencrypt-staging \
-    --set ingressShim.defaultIssuerKind=ClusterIssuer
+    --set ingressShim.defaultIssuerKind=ClusterIssuer \
+    --version v0.6.0
 ```
 
 Если кластер не поддерживает RBAC, используйте следующую команду:
 
 ```console
+kubectl label namespace kube-system certmanager.k8s.io/disable-validation=true
+
+kubectl apply \
+    -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
+    
 helm install stable/cert-manager \
     --namespace kube-system \
     --set ingressShim.defaultIssuerName=letsencrypt-staging \
     --set ingressShim.defaultIssuerKind=ClusterIssuer \
     --set rbac.create=false \
-    --set serviceAccount.create=false
+    --set serviceAccount.create=false \
+    --version v0.6.0
 ```
 
 Дополнительные сведения о конфигурации cert-manager см. в описании [проекта cert-manager][cert-manager].

@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Описание процесса поиска по пользовательскому представлению в Интернете.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: conceptual
-ms.date: 09/28/2017
+ms.date: 02/12/2019
 ms.author: maheshb
-ms.openlocfilehash: c2fb387026f077ac2b111f2d482cc6c5226642aa
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: e0c1ec55a7f21ad223629d6d478cbd97c7974abb
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55198186"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237983"
 ---
 # <a name="call-your-bing-custom-search-instance-from-the-portal"></a>Вызов экземпляра API пользовательского поиска Bing с портала
 

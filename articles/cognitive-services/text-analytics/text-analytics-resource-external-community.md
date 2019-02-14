@@ -3,19 +3,19 @@ title: Внешнее содержимое и материалы сообщес�
 titleSuffix: Azure Cognitive Services
 description: Блоги партнеров, видео на YouTube, учебные материалы по API анализа текста Microsoft Cognitive Services в Azure.
 services: cognitive-services
-author: HeidiSteen
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 01/14/2019
-ms.author: heidist
-ms.openlocfilehash: 04846ab2f1ade6f22898f88ac82bb36b42c5a1e1
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: 751b8b72683d9c7e779191511cb2824d34997c32
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55207196"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244321"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 

@@ -4,7 +4,7 @@ description: " Эта статья поможет вам разобраться 
 services: security
 documentationcenter: na
 author: TomShinder
-manager: MBaldwin
+manager: barbkess
 editor: TomSh
 ms.assetid: 4f2d9386-bda3-4ec8-8b1a-cd0c11242ffc
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/14/2019
 ms.author: terrylan
-ms.openlocfilehash: 78746324c240e0a1bfab81ca1e45f231909328c0
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 76f5627a28c2c0ab326197893a9b9739628af0fb
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661196"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108082"
 ---
 # <a name="application-architecture-on-azure"></a>Архитектура приложения в Azure
 Для защиты облачных решений на платформе Microsoft Azure крайне важно иметь надежную архитектурную основу. Глубокое понимание архитектуры приложений и служб обеспечит серьезные преимущества архитекторам, проектировщикам и разработчикам программного обеспечения. Эти базовые знания помогут вам понять все компоненты облачных решений и упростить интеграцию решений по обеспечению безопасности на всех этапах разработки и реализации.

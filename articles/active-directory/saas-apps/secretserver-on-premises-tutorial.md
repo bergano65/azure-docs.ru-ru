@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Secret Server (On-Premises) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Secret Server (On-Premises) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Secret Server (On-Premises).
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 447307c0c27fda9e7719e74e529f21d767c9f58d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5e18c58aafd4aa56a27f5e4a97c9dcc9dcd0fdbd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152371"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199788"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Руководство. Интеграция Azure Active Directory с Secret Server (On-Premises)
+# <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Руководство по Интеграция Azure Active Directory с Secret Server (On-Premises)
 
 В этом руководстве описано, как интегрировать Secret Server (On-Premises) с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55152371"
 
 - С помощью Azure AD вы можете контролировать доступ к Secret Server (On-Premises).
 - Вы можете включить автоматический вход (единый вход) пользователей в Secret Server (On-Premises) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55152371"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Secret Server (On-Premises)**, выберите **Secret Server (On-Premises)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55152371"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя в Secret Server (On-Premises)](#create-a-secret-server-on-premises-test-user)** требуется для создания в Secret Server (On-Premises) пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55152371"
 
     a. В текстовом поле **Идентификатор** укажите пользовательское значение, например: `https://secretserveronpremises.azure`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx `.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx `.
 
     > [!NOTE]
     > Представленный выше идентификатор сущности используется только для примера. Вы можете выбрать любое уникальное значение для представления экземпляра Secret Server в AAD. Этот идентификатор сущности следует отправить в [группу поддержки приложения Secret Server (On-Premises)](https://thycotic.force.com/support/s/), чтобы они выполнили настройки со своей стороны. Дополнительные сведения см. в [этой статье](https://thycotic.force.com/support/s/article/Configuring-SAML-in-Secret-Server).
@@ -122,7 +123,7 @@ ms.locfileid: "55152371"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/login.aspx`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Secret Server (On-Premises)](https://thycotic.force.com/support/s/).
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Secret Server (On-Premises)](https://thycotic.force.com/support/s/).
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -152,7 +153,7 @@ ms.locfileid: "55152371"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/secretserver-on-premises-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/secretserver-on-premises-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -172,7 +173,7 @@ ms.locfileid: "55152371"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-secret-server-on-premises-test-user"></a>Создание тестового пользователя в Secret Server (On-Premises)
 

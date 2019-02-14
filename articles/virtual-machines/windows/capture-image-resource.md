@@ -15,16 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: ff2352005470755c8ca0f472c4a790a820fea6b6
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 48aa634ad28236564223c1a78a2e190cd2a0e668
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754393"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56107470"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
 Ресурс управляемого образа можно создать из универсальной виртуальной машины, которая хранится в виде управляемого диска или неуправляемых дисков в учетной записи хранения. Затем образ можно использовать для создания нескольких виртуальных машин. Сведения о выставлении счетов за управляемые образы см. в статье [Цены на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/). 
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="generalize-the-windows-vm-using-sysprep"></a>Подготовка виртуальной машины Windows к использованию с помощью Sysprep
 
@@ -85,11 +87,11 @@ Sysprep удаляет все сведения о вашей учетной за
 Создание образа непосредственно из виртуальной машины гарантирует, что он будет содержать все ее диски, включая диск ОС и диски данных. В этом примере показано, как создать управляемый образ из виртуальной машины,которая использует управляемые диски.
 
 
-Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute (5.7.0 или более поздняя). Выполните `Get-Module -ListAvailable AzureRM.Compute` в PowerShell, чтобы узнать версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, выполните командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute (5.7.0 или более поздняя). Выполните `Get-Module -ListAvailable AzureRM.Compute` в PowerShell, чтобы узнать версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 
 > [!NOTE]
-> Перед сохранением образа в хранилище, избыточном между зонами, его необходимо создать в регионе, который поддерживает [зоны доступности](../../availability-zones/az-overview.md) и в котором конфигурация образа содержит параметр `-ZoneResilient` (команды `New-AzureRmImageConfig`).
+> Перед сохранением образа в хранилище, избыточном между зонами, его необходимо создать в регионе, который поддерживает [зоны доступности](../../availability-zones/az-overview.md) и в котором конфигурация образа содержит параметр `-ZoneResilient` (команды `New-AzImageConfig`).
 
 Чтобы создать образ виртуальной машины, выполните следующие действия.
 
@@ -104,30 +106,30 @@ Sysprep удаляет все сведения о вашей учетной за
 2. Убедитесь, что виртуальная машина была освобождена.
 
     ```azurepowershell-interactive
-    Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName -Force
+    Stop-AzVM -ResourceGroupName $rgName -Name $vmName -Force
     ```
     
 3. Теперь задайте для виртуальной машины состояние **Generalized**(Универсальная). 
    
     ```azurepowershell-interactive
-    Set-AzureRmVm -ResourceGroupName $rgName -Name $vmName -Generalized
+    Set-AzVm -ResourceGroupName $rgName -Name $vmName -Generalized
     ```
     
 4. Получите виртуальную машину. 
 
     ```azurepowershell-interactive
-    $vm = Get-AzureRmVM -Name $vmName -ResourceGroupName $rgName
+    $vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
     ```
 
 5. Создайте конфигурацию образа.
 
     ```azurepowershell-interactive
-    $image = New-AzureRmImageConfig -Location $location -SourceVirtualMachineId $vm.Id 
+    $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.Id 
     ```
 6. Создайте образ.
 
     ```azurepowershell-interactive
-    New-AzureRmImage -Image $image -ImageName $imageName -ResourceGroupName $rgName
+    New-AzImage -Image $image -ImageName $imageName -ResourceGroupName $rgName
     ``` 
 
 ## <a name="create-an-image-from-a-managed-disk-using-powershell"></a>Создание образа из управляемого диска с помощью PowerShell
@@ -148,7 +150,7 @@ Sysprep удаляет все сведения о вашей учетной за
 2. Получите виртуальную машину.
 
    ```azurepowershell-interactive
-   $vm = Get-AzureRmVm -Name $vmName -ResourceGroupName $rgName
+   $vm = Get-AzVm -Name $vmName -ResourceGroupName $rgName
    ```
 
 3. Получите идентификатор управляемого диска.
@@ -160,14 +162,14 @@ Sysprep удаляет все сведения о вашей учетной за
 3. Создайте конфигурацию образа.
 
     ```azurepowershell-interactive
-    $imageConfig = New-AzureRmImageConfig -Location $location
-    $imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsState Generalized -OsType Windows -ManagedDiskId $diskID
+    $imageConfig = New-AzImageConfig -Location $location
+    $imageConfig = Set-AzImageOsDisk -Image $imageConfig -OsState Generalized -OsType Windows -ManagedDiskId $diskID
     ```
     
 4. Создайте образ.
 
     ```azurepowershell-interactive
-    New-AzureRmImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
+    New-AzImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
     ``` 
 
 
@@ -188,19 +190,19 @@ Sysprep удаляет все сведения о вашей учетной за
 2. Получите моментальный снимок.
 
    ```azurepowershell-interactive
-   $snapshot = Get-AzureRmSnapshot -ResourceGroupName $rgName -SnapshotName $snapshotName
+   $snapshot = Get-AzSnapshot -ResourceGroupName $rgName -SnapshotName $snapshotName
    ```
    
 3. Создайте конфигурацию образа.
 
     ```azurepowershell-interactive
-    $imageConfig = New-AzureRmImageConfig -Location $location
-    $imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsState Generalized -OsType Windows -SnapshotId $snapshot.Id
+    $imageConfig = New-AzImageConfig -Location $location
+    $imageConfig = Set-AzImageOsDisk -Image $imageConfig -OsState Generalized -OsType Windows -SnapshotId $snapshot.Id
     ```
 4. Создайте образ.
 
     ```azurepowershell-interactive
-    New-AzureRmImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
+    New-AzImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
     ``` 
 
 
@@ -221,20 +223,20 @@ Sysprep удаляет все сведения о вашей учетной за
 2. Остановите виртуальную машину и отмените ее выделение.
 
     ```azurepowershell-interactive
-    Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName -Force
+    Stop-AzVM -ResourceGroupName $rgName -Name $vmName -Force
     ```
     
 3. Пометьте виртуальную машину как универсальную.
 
     ```azurepowershell-interactive
-    Set-AzureRmVm -ResourceGroupName $rgName -Name $vmName -Generalized 
+    Set-AzVm -ResourceGroupName $rgName -Name $vmName -Generalized  
     ```
 4.  Создайте образ с помощью универсального виртуального жесткого диска ОС.
 
     ```azurepowershell-interactive
-    $imageConfig = New-AzureRmImageConfig -Location $location
-    $imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsType Windows -OsState Generalized -BlobUri $osVhdUri
-    $image = New-AzureRmImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
+    $imageConfig = New-AzImageConfig -Location $location
+    $imageConfig = Set-AzImageOsDisk -Image $imageConfig -OsType Windows -OsState Generalized -BlobUri $osVhdUri
+    $image = New-AzImage -ImageName $imageName -ResourceGroupName $rgName -Image $imageConfig
     ```
 
     

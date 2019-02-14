@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 14f74c26822ac1dc9e781ada82809bf3a4166f18
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 88051c45f21bdf11807ffcc63d8248cba81ae70b
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190907"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56118451"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -244,7 +244,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 1. Создайте файл settings.job.
 2. Включите в этом файле JSON свойство расписания при помощи выражения Cron: 
-    ```
+    ```json
     { "schedule": "{second}
     {minute} {hour} {day}
     {month} {day of the week}" }
@@ -262,6 +262,8 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 ## <a name="my-app-service-certificate-is-flagged-for-fraud-how-do-i-resolve-this"></a>Мой сертификат службы приложений помечен как мошеннический. Как решить эту проблему?
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 При проверке домена после покупки сертификата службы приложений может появиться следующее сообщение:
 
 "Сертификат помечен как возможно мошеннический. Запрос находится на рассмотрении. Если сертификат не станет доступным для использования в течение 24 часов, обратитесь в службу поддержки Azure"
@@ -270,13 +272,13 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 Если для сертификата службы приложений через 24 часа по-прежнему отображается это сообщение, запустите сценарий PowerShell ниже. Сценарий напрямую связывается с [поставщиком сертификата](https://www.godaddy.com/) для устранения проблемы.
 
-```
-Connect-AzureRmAccount
-Set-AzureRmContext -SubscriptionId <subId>
+```powershell
+Connect-AzAccount
+Set-AzContext -SubscriptionId <subId>
 $actionProperties = @{
     "Name"= "<Customer Email Address>"
     };
-Invoke-AzureRmResourceAction -ResourceGroupName "<App Service Certificate Resource Group Name>" -ResourceType Microsoft.CertificateRegistration/certificateOrders -ResourceName "<App Service Certificate Resource Name>" -Action resendRequestEmails -Parameters $actionProperties -ApiVersion 2015-08-01 -Force   
+Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Group Name>" -ResourceType Microsoft.CertificateRegistration/certificateOrders -ResourceName "<App Service Certificate Resource Name>" -Action resendRequestEmails -Parameters $actionProperties -ApiVersion 2015-08-01 -Force   
 ```
 
 ## <a name="how-do-authentication-and-authorization-work-in-app-service"></a>Как в службе приложений выполняется проверка подлинности и авторизация?
@@ -312,10 +314,10 @@ Invoke-AzureRmResourceAction -ResourceGroupName "<App Service Certificate Resour
 
 Чтобы включить сжатие для статических и динамических типов содержимого, добавьте следующий код в файл web.config на уровне приложения:
 
-```
+```xml
 <system.webServer>
-<urlCompression doStaticCompression="true" doDynamicCompression="true" />
-< /system.webServer>
+    <urlCompression doStaticCompression="true" doDynamicCompression="true" />
+</system.webServer>
 ```
 
 Также можно указать определенные динамические и статические типы MIME для сжатия. Дополнительные сведения см. в разделе ответов на вопросы на форуме [httpCompression settings on a simple Azure website](https://social.msdn.microsoft.com/Forums/azure/890b6d25-f7dd-4272-8970-da7798bcf25d/httpcompression-settings-on-a-simple-azure-website?forum=windowsazurewebsitespreview) (Параметры httpCompression для простого веб-сайта Azure).

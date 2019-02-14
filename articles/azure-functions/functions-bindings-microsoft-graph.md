@@ -9,12 +9,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
-ms.openlocfilehash: db1bdeed75264e32d5a96800096b6b433c62c44a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: eb05d1b28b80cb7bf48bc1160c251936423763e6
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822635"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100804"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -982,7 +982,7 @@ module.exports = function (context, req) {
 - [Входная привязка подписок на веб-перехватчики Microsoft Graph](#webhook-input) — позволяет вывести список существующих подписок и при необходимости обновить их.
 - [Выходная привязка подписок на веб-перехватчики Microsoft Graph](#webhook-output) — позволяет создавать и удалять подписки на веб-перехватчики.
 
-Самим привязкам не требуются разрешения Azure AD, но вам необходимо запросить разрешения в соответствии с типом ресурса, на действия которого необходимо реагировать. Список необходимых разрешений для каждого типа ресурса см. в разделе [о разрешениях для подписок](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/subscription_post_subscriptions).
+Самим привязкам не требуются разрешения Azure AD, но вам необходимо запросить разрешения в соответствии с типом ресурса, на действия которого необходимо реагировать. Список необходимых разрешений для каждого типа ресурса см. в разделе [о разрешениях для подписок](https://docs.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0).
 
 Дополнительные сведения о веб-перехватчиках см. в статье [Работа с веб-перехватчиками в Microsoft Graph].
 

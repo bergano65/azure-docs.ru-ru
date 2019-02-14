@@ -14,12 +14,13 @@ ms.subservice: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 1e2bdeeb8f2b59d69e761303176c36b26f47d4c8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3d81dc65274600359c3d886203b067b3a90b60cf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55165495"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56160798"
 ---
 # <a name="complete-an-access-review-for-azure-resource-roles-in-pim"></a>Выполнение проверки доступа для ролей ресурсов Azure в PIM
 После [запуска проверки доступа](pim-resource-roles-start-access-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Компонент управления привилегированными пользователями (PIM) для ресурсов Azure автоматически отправляет пользователям электронное письмо с предложением проверить доступ. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-resource-roles-perform-access-review.md).

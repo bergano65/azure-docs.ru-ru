@@ -3,8 +3,8 @@ title: Проблема при добавлении приложения не и
 description: Сведения об общих проблемах, возникающих при добавлении пользовательских приложений не из коллекции
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.author: barbkess
-ms.openlocfilehash: 65a6eee2be0dfdd75370c153c8c8e5010c24d096
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.author: celested
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6a07ca553aee2a6267af5a33836e85b2a12d8ae3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55160875"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182295"
 ---
 # <a name="problem-adding-a-non-gallery-application"></a>Проблема при добавлении приложения не из коллекции
 

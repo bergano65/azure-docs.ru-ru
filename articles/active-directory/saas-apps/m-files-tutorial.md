@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 41c31a987e766551682b2c90c00473ea44215dd5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4c169f8d84ca5654af29f359bf8af20f2b8b58b5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150179"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193804"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Руководство. Интеграция Azure Active Directory с M-Files
 
@@ -117,7 +118,7 @@ ms.locfileid: "55150179"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов M-Files](mailto:support@m-files.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов M-Files](mailto:support@m-files.com). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,11 +147,11 @@ ms.locfileid: "55150179"
 
     a. В поле **Name** (Имя) введите `<tenant-name>.cloudvault.m-files.com`. 
  
-    b. В поле **Port Number** (Номер порта) введите **4466**. 
+    б) В поле **Port Number** (Номер порта) введите **4466**. 
 
     c. Для параметра **Protocol** (Протокол) выберите **HTTPS**. 
 
-    d. В поле **Authentication** (Аутентификация) выберите **Specific Windows user** (Определенный пользователь Windows). Затем отобразится страница подписи. Введите свои учетные данные Azure AD. 
+    4.3. В поле **Authentication** (Аутентификация) выберите **Specific Windows user** (Определенный пользователь Windows). Затем отобразится страница подписи. Введите свои учетные данные Azure AD. 
 
     д. Для параметра **Vault on Server** (Хранилище на сервере) выберите соответствующее хранилище на сервере.
  
@@ -161,7 +162,7 @@ ms.locfileid: "55150179"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -185,11 +186,11 @@ ms.locfileid: "55150179"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-m-files-test-user"></a>Создание тестового пользователя M-Files
 

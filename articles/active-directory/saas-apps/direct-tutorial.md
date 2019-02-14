@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: jeedes
-ms.openlocfilehash: f45e3c5a3416c28ebe16fcf0ba1f016478c46c7c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 576a79c79d7c3990140b93543bc30f833207a6ba
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176239"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172524"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-direct"></a>Руководство. Интеграция Azure Active Directory с direct
+# <a name="tutorial-azure-active-directory-integration-with-direct"></a>Руководство по Интеграция Azure Active Directory с direct
 
 В этом руководстве описано, как интегрировать direct с Azure Active Directory (Azure AD).
 
@@ -132,7 +133,7 @@ ms.locfileid: "55176239"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -156,11 +157,11 @@ ms.locfileid: "55176239"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-direct-test-user"></a>Создание тестового пользователя direct
 
@@ -208,7 +209,7 @@ ms.locfileid: "55176239"
 
     a. Щелкните элемент **direct** на панели доступа, и вы будете перенаправлены на страницу входа приложения.
 
-    b. Введите свой `subdomain` в отображаемом текстовом поле и нажмите клавишу "次へ (Далее)"; вы автоматически войдете в приложение **direct**.
+    б) Введите свой `subdomain` в отображаемом текстовом поле и нажмите клавишу "次へ (Далее)"; вы автоматически войдете в приложение **direct**.
 
 Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 

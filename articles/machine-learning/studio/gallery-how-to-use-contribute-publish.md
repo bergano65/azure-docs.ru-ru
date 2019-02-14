@@ -10,16 +10,16 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: b5a460f3449785721ac360ba398bc47d1945b954
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 48bb9b24901cd07891f3d52bcd916f95bc2801f4
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55497709"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244230"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
 
-**[Коллекция решений ИИ Azure](http://gallery.cortanaintelligence.com)** — это управляемый сообществом сайт для поиска и обмена решениями, созданными с помощью ИИ Azure.
+**[Коллекция решений ИИ Azure](http://gallery.azure.ai)** — это управляемый сообществом сайт для поиска и обмена решениями, созданными с помощью ИИ Azure.
 В коллекции есть множество ресурсов, которые вы можете использовать для разработки собственных аналитических решений.
 
 ## <a name="what-can-i-find-in-the-gallery"></a>Ресурсы, содержащиеся в коллекции

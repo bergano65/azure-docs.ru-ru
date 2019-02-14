@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: cb2d3bc128a3508f85ac349242d9a33f2a88424e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 73cba950a159bd1f70fc231f0923e55332af0199
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022756"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108812"
 ---
 # <a name="move-data-from-a-odata-source-using-azure-data-factory"></a>Перемещение данных из источника OData с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -31,7 +31,7 @@ ms.locfileid: "54022756"
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из источника OData. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
-Данные из источника OData можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из источника OData в другие хранилища данных, но не наоборот. 
+Данные из источника OData можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из источника OData в другие хранилища данных, но не наоборот.
 
 ## <a name="supported-versions-and-authentication-types"></a>Поддерживаемые версии и типы аутентификации
 Этот соединитель OData поддерживает OData версии 3.0 и 4.0 и может копировать данные как из облачных, так и из локальных источников OData. Для копирования из локальных источников необходимо установить шлюз управления данными. Сведения о шлюзе управления данными см. в статье [Перемещение данных между локальными источниками и облаком](data-factory-move-data-between-onprem-and-cloud.md).
@@ -46,15 +46,15 @@ ms.locfileid: "54022756"
 
 Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
-Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги: 
+Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
 1. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных.
-2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. 
-3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. 
+2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования.
+3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных из источника OData, доступен в разделе [Пример JSON. Копирование данных из источника OData в BLOB-объект Azure](#json-example-copy-data-from-odata-source-to-azure-blob) этой статьи. 
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных из источника OData, доступен в разделе [Пример JSON. Копирование данных из источника OData в BLOB-объект Azure](#json-example-copy-data-from-odata-source-to-azure-blob) этой статьи.
 
 Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, относящихся к источнику OData.
 
@@ -78,7 +78,7 @@ ms.locfileid: "54022756"
     "properties":
     {
         "type": "OData",
-            "typeProperties":
+        "typeProperties":
         {
             "url": "http://services.odata.org/OData/OData.svc",
             "authenticationType": "Basic",
@@ -93,7 +93,7 @@ ms.locfileid: "54022756"
 ```json
 {
     "name": "ODataLinkedService",
-        "properties":
+    "properties":
     {
         "type": "OData",
         "typeProperties":
@@ -112,7 +112,7 @@ ms.locfileid: "54022756"
     "properties":
     {
         "type": "OData",
-            "typeProperties":
+        "typeProperties":
         {
             "url": "<endpoint of on-premises OData source e.g. Dynamics CRM>",
             "authenticationType": "Windows",
@@ -174,7 +174,7 @@ ms.locfileid: "54022756"
 | Edm.Binary |Byte[] |
 | Edm.Boolean |Bool |
 | Edm.Byte |Byte[] |
-| Edm.DateTime |Datetime |
+| Edm.DateTime |DateTime |
 | Edm.Decimal |Decimal |
 | Edm.Double |Double |
 | Edm.Single |Single |
@@ -183,8 +183,8 @@ ms.locfileid: "54022756"
 | Edm.Int32 |Int32 |
 | Edm.Int64 |Int64 |
 | Edm.SByte |Int16 |
-| Edm.String |Строка |
-| Edm.Time |Интервал времени |
+| Edm.String |String |
+| Edm.Time |TimeSpan |
 | Edm.DateTimeOffset |DateTimeOffset |
 
 > [!Note]
@@ -206,15 +206,15 @@ ms.locfileid: "54022756"
 ```json
 {
     "name": "ODataLinkedService",
-        "properties":
+    "properties":
     {
         "type": "OData",
-            "typeProperties":
+        "typeProperties":
         {
             "url": "http://services.odata.org/OData/OData.svc",
             "authenticationType": "Anonymous"
-            }
         }
+    }
 }
 ```
 
@@ -222,13 +222,13 @@ ms.locfileid: "54022756"
 
 ```json
 {
-        "name": "AzureStorageLinkedService",
+    "name": "AzureStorageLinkedService",
     "properties": {
         "type": "AzureStorage",
         "typeProperties": {
             "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
         }
-        }
+    }
 }
 ```
 
@@ -244,7 +244,7 @@ ms.locfileid: "54022756"
         "type": "ODataResource",
         "typeProperties":
         {
-                "path": "Products"
+            "path": "Products"
         },
         "linkedServiceName": "ODataLinkedService",
         "structure": [],
@@ -256,7 +256,7 @@ ms.locfileid: "54022756"
         "policy": {
             "retryInterval": "00:01:00",
             "retryTimeout": "00:10:00",
-            "maximumRetry": 3                
+            "maximumRetry": 3
         }
     }
 }
@@ -324,7 +324,6 @@ ms.locfileid: "54022756"
 }
 ```
 
-
 **Действие копирования в конвейере с OData в качестве источника и большим двоичным объектом в качестве приемника**
 
 Конвейер содержит действие копирования, которое использует входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** установлено значение **RelationalSource**, а для типа **sink** — значение **BlobSink**. SQL-запрос, заданный для свойства **query** , выбирает самые последние (новейшие) данные из источника OData.
@@ -376,7 +375,6 @@ ms.locfileid: "54022756"
 ```
 
 Указывать **query** в определении конвейера необязательно. **URL-адрес**, который служба "Фабрика данных" использует для извлечения данных, имеет следующий вид: URL-адрес, указанный в связанной службе (обязательно) + путь, указанный в наборе данных (необязательно) + запрос в конвейере (необязательно).
-
 
 ### <a name="type-mapping-for-odata"></a>Сопоставление типов для OData
 Как упоминалось в статье о [действиях перемещения данных](data-factory-data-movement-activities.md), во время копирования типы источников автоматически преобразовываются в типы приемников. Такое преобразование выполняется в два этапа.

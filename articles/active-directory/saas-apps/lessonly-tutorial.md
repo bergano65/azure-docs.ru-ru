@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Lessonly.com | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Lessonly.com | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Lessonly.com.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 1e5b23269c8c9d5aecd7ef8ba58100f17cc7973c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 47977281a55f3a106facb5dc57a7d849f1e07ade
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809425"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56195368"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство. Интеграция Azure Active Directory с Lessonly.com
+# <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство по Интеграция Azure Active Directory с Lessonly.com
 
 В этом руководстве описано, как выполнять интеграцию Lessonly.com с Azure Active Directory (Azure AD).
 

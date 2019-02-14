@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Сведения о различных способах распознавания речи (из файла, с микрофона, с помощью настроенной модели, а также непрерывное или однократное распознавание) с помощью пакета SDK службы "Речь" для C++.
 services: cognitive-services
 author: wolfma61
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: bab79fcb9033d179973e10c6356664ee295961b0
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 05c94689ef2ca1ecc0051a4b502e03f980c68c87
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226356"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884284"
 ---
 # <a name="recognize-speech-by-using-the-speech-sdk-for-c"></a>Распознавание речи с помощью пакета SDK службы "Речь" для C++
 

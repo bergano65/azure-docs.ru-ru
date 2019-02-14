@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 1cd82188ef9f5a4e0078a8ea21882f99bb8b8f44
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d72f4ac39ac992d0386b3971cd4d3bc6616f0a28
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55171292"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56186461"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-procore-sso"></a>Руководство. Интеграция Azure Active Directory с Procore SSO
 
@@ -30,7 +31,7 @@ ms.locfileid: "55171292"
 
 - С помощью AAD вы можете контролировать доступ к Procore SSO.
 - Вы можете включить автоматический вход пользователей в Procore SSO (единый вход) с помощью учетных записей AAD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55171292"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Procore SSO**, выберите **Procore SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -124,7 +125,7 @@ ms.locfileid: "55171292"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Настройка Procore SSO](common/configuresection.png)
 
@@ -140,7 +141,7 @@ ms.locfileid: "55171292"
 
     a. В текстовое поле **URL-адреса издателя единого входа** вставьте значение **идентификатора AAD**, скопированное на портале Azure.
 
-    b. В поле **целевого URL-адреса входа SAML** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    б) В поле **целевого URL-адреса входа SAML** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     c. Теперь откройте **XML-файл метаданных федерации**, который вы ранее скачали с портала Azure, и скопируйте из него сертификат, расположенный в теге с именем **X509Certificate**. Вставьте это значение в поле **Single Sign On x509 Certificate** (Сертификат x509 для единого входа).
 
@@ -162,9 +163,9 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 
@@ -201,11 +202,11 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
-    d. Для параметра **Permission Template** (Шаблон разрешений) выберите значение **Apply Permission Template Later** (Применить шаблон разрешений позже).
+    4.3. Для параметра **Permission Template** (Шаблон разрешений) выберите значение **Apply Permission Template Later** (Применить шаблон разрешений позже).
 
     д. Нажмите кнопку **Создать**.
 

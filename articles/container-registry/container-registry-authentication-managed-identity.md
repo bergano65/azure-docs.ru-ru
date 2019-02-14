@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 01/16/2019
 ms.author: danlep
-ms.openlocfilehash: 46965842831673d25d636e0cfbfa3d0097b82f99
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: fdba8969ad326565834625fe1ca7ece5e089a904
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857367"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984211"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Аутентификация в реестре контейнеров Azure с помощью управляемого удостоверения Azure 
 
@@ -178,7 +178,7 @@ az acr login --name myContainerRegistry
 
 Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [docker pull][docker-pull], чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера для входа в реестр. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
 
-```docker
+```
 docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
 ```
 
@@ -230,7 +230,7 @@ az acr login --name myContainerRegistry
 
 Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [docker pull][docker-pull], чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера для входа в реестр. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
 
-```docker
+```
 docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
 ```
 

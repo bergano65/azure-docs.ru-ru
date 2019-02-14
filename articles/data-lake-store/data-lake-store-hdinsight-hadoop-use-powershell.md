@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 3de675adf7364e8281a03a46c5eeeaa1b74249b5
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 4187557ef9a38f55465547f83d7bc4c3bcad9ba7
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969290"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236943"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
@@ -50,6 +50,9 @@ ms.locfileid: "53969290"
 * выполнение тестового задания в кластере.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -65,25 +68,25 @@ ms.locfileid: "53969290"
 1. На своем компьютере откройте новое окно Azure PowerShell и введите следующий фрагмент кода. Когда вам будет предложено войти, введите учетные данные администратора или владельца подписки:
 
         # Log in to your Azure account
-        Connect-AzureRmAccount
+        Connect-AzAccount
 
         # List all the subscriptions associated to your account
-        Get-AzureRmSubscription
+        Get-AzSubscription
 
         # Select a subscription
-        Set-AzureRmContext -SubscriptionId <subscription ID>
+        Set-AzContext -SubscriptionId <subscription ID>
 
         # Register for Data Lake Storage Gen1
-        Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
+        Register-AzResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
 
    > [!NOTE]
-   > Если при регистрации поставщика ресурсов Data Lake Storage 1-го поколения появляется сообщение об ошибке, похожее на `Register-AzureRmResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid`, это может означать, что ваша подписка отсутствует в списке разрешений для Data Lake Storage 1-го поколения. Убедитесь, что подписка Azure для Data Lake Storage 1-го поколения включена, выполнив указанные [инструкции](data-lake-store-get-started-portal.md).
+   > Если при регистрации поставщика ресурсов Data Lake Storage 1-го поколения появляется сообщение об ошибке, похожее на `Register-AzResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid`, это может означать, что ваша подписка отсутствует в списке разрешений для Data Lake Storage 1-го поколения. Убедитесь, что подписка Azure для Data Lake Storage 1-го поколения включена, выполнив указанные [инструкции](data-lake-store-get-started-portal.md).
    >
    >
 2. Учетная запись Data Lake Storage 1-го поколения связывается с группой ресурсов Azure. Для начала создайте группу ресурсов Azure.
 
         $resourceGroupName = "<your new resource group name>"
-        New-AzureRmResourceGroup -Name $resourceGroupName -Location "East US 2"
+        New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
 
     Вы должны увидеть подобные выходные данные:
 
@@ -96,7 +99,7 @@ ms.locfileid: "53969290"
 3. Создайте учетную запись Data Lake Storage 1-го поколения. Имя новой учетной записи должно содержать только строчные буквы и цифры.
 
         $dataLakeStorageGen1Name = "<your new Data Lake Storage Gen1 account name>"
-        New-AzureRmDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStorageGen1Name -Location "East US 2"
+        New-AzDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStorageGen1Name -Location "East US 2"
 
     Вы должны увидеть подобные выходные данные:
 
@@ -118,7 +121,7 @@ ms.locfileid: "53969290"
 5. Отправьте пример данных в Data Lake Storage 1-го поколения. Позже мы проверим, доступны ли эти данные из кластера HDInsight. Если у вас нет под рукой подходящих для этих целей данных, передайте папку **Ambulance Data** из [репозитория Git для озера данных Azure](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData).
 
         $myrootdir = "/"
-        Import-AzureRmDataLakeStoreItem -AccountName $dataLakeStorageGen1Name -Path "C:\<path to data>\vehicle1_09142014.csv" -Destination $myrootdir\vehicle1_09142014.csv
+        Import-AzDataLakeStoreItem -AccountName $dataLakeStorageGen1Name -Path "C:\<path to data>\vehicle1_09142014.csv" -Destination $myrootdir\vehicle1_09142014.csv
 
 
 ## <a name="set-up-authentication-for-role-based-access-to-data-lake-storage-gen1"></a>Настройка проверки подлинности для доступа к Data Lake Storage 1-го поколения на основе ролей
@@ -164,7 +167,7 @@ ms.locfileid: "53969290"
 
         $credential = [System.Convert]::ToBase64String($rawCertificateData)
 
-        $application = New-AzureRmADApplication `
+        $application = New-AzADApplication `
             -DisplayName "HDIADL" `
             -HomePage "https://contoso.com" `
             -IdentifierUris "https://mycontoso.com" `
@@ -175,13 +178,13 @@ ms.locfileid: "53969290"
         $applicationId = $application.ApplicationId
 2. С помощью идентификатора приложения создайте субъект-службу.
 
-        $servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId $applicationId
+        $servicePrincipal = New-AzADServicePrincipal -ApplicationId $applicationId
 
         $objectId = $servicePrincipal.Id
 3. Предоставьте субъекту-службе доступ к файлу и папке Data Lake Storage 1-го поколения, к которым будете обращаться из кластера HDInsight. Приведенный ниже фрагмент предоставляет доступ к корню учетной записи Data Lake Storage 1-го поколения (в который вы скопировали пример файла данных) и к самому файлу.
 
-        Set-AzureRmDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
-        Set-AzureRmDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /vehicle1_09142014.csv -AceType User -Id $objectId -Permissions All
+        Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
+        Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /vehicle1_09142014.csv -AceType User -Id $objectId -Permissions All
 
 ## <a name="create-an-hdinsight-linux-cluster-with-data-lake-storage-gen1-as-additional-storage"></a>Создание кластера HDInsight на платформе Linux с Data Lake Storage 1-го поколения в качестве дополнительного хранилища
 
@@ -189,20 +192,20 @@ ms.locfileid: "53969290"
 
 1. Сначала получите идентификатор клиента подписки. Позже он вам понадобится.
 
-        $tenantID = (Get-AzureRmContext).Tenant.TenantId
+        $tenantID = (Get-AzContext).Tenant.TenantId
 2. В этом выпуске в кластере Hadoop Data Lake Storage 1-го поколения может использоваться только как дополнительное хранилище кластера. Хранилищем по умолчанию по-прежнему будут BLOB-объекты хранилища Azure (WASB). Поэтому мы сначала создадим учетную запись хранения и контейнеры хранилища, необходимые для кластера.
 
         # Create an Azure storage account
         $location = "East US 2"
         $storageAccountName = "<StorageAccountName>"   # Provide a Storage account name
 
-        New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -StorageAccountName $storageAccountName -Location $location -Type Standard_GRS
+        New-AzStorageAccount -ResourceGroupName $resourceGroupName -StorageAccountName $storageAccountName -Location $location -Type Standard_GRS
 
         # Create an Azure Blob Storage container
         $containerName = "<ContainerName>"              # Provide a container name
-        $storageAccountKey = (Get-AzureRmStorageAccountKey -Name $storageAccountName -ResourceGroupName $resourceGroupName)[0].Value
-        $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
-        New-AzureStorageContainer -Name $containerName -Context $destContext
+        $storageAccountKey = (Get-AzStorageAccountKey -Name $storageAccountName -ResourceGroupName $resourceGroupName)[0].Value
+        $destContext = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+        New-AzStorageContainer -Name $containerName -Context $destContext
 3. Создайте кластер HDInsight, выполнив следующие командлеты.
 
         # Set these variables
@@ -211,7 +214,7 @@ ms.locfileid: "53969290"
         $httpCredentials = Get-Credential
         $sshCredentials = Get-Credential
 
-        New-AzureRmHDInsightCluster -ClusterName $clusterName -ResourceGroupName $resourceGroupName -HttpCredential $httpCredentials -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainer $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop -Version "3.4" -OSType Linux -SshCredential $sshCredentials -ObjectID $objectId -AadTenantId $tenantID -CertificateFilePath $certificateFilePath -CertificatePassword $password
+        New-AzHDInsightCluster -ClusterName $clusterName -ResourceGroupName $resourceGroupName -HttpCredential $httpCredentials -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainer $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop -Version "3.4" -OSType Linux -SshCredential $sshCredentials -ObjectID $objectId -AadTenantId $tenantID -CertificateFilePath $certificateFilePath -CertificatePassword $password
 
     В случае успешного выполнения командлета должен отобразиться список сведений о кластере.
 

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: a3c67fe6e6ed706d3e06a618ded9070f9f69ba19
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f67b24ca0008a03474b54a1bf226261c3f395fec
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180251"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183230"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ibm-kenexa-survey-enterprise"></a>Руководство. Интеграция Azure Active Directory с IBM Kenexa Survey Enterprise
 
@@ -61,7 +62,7 @@ ms.locfileid: "55180251"
 
 1. На [портале Azure](https://portal.azure.com) в левой области нажмите кнопку **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -69,7 +70,7 @@ ms.locfileid: "55180251"
     
 1. Чтобы добавить приложение, нажмите кнопку **Новое приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **IBM Kenexa Survey Enterprise**.
 
@@ -106,7 +107,7 @@ ms.locfileid: "55180251"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://surveys.kenexa.com/<companycode>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://surveys.kenexa.com/<companycode>/tools/sso.asp`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://surveys.kenexa.com/<companycode>/tools/sso.asp`.
 
     > [!NOTE] 
     > Приведенные выше значения используются только для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить фактические значения, обратитесь к [группе поддержки IBM Kenexa Survey Enterprise](https://www.ibm.com/support/home/?lnk=fcw).
@@ -146,7 +147,7 @@ ms.locfileid: "55180251"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/kenexasurvey-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/kenexasurvey-tutorial/create_aaduser_01.png) 
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -166,7 +167,7 @@ ms.locfileid: "55180251"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-ibm-kenexa-survey-enterprise-test-user"></a>Создание тестового пользователя IBM Kenexa Survey Enterprise
 

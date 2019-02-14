@@ -3,8 +3,8 @@ title: Как настроить единый вход по паролю для 
 description: Как настроить приложение для защищенного единого входа на основе паролей, если оно указано в коллекции приложений Azure AD
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2017
-ms.author: barbkess
-ms.openlocfilehash: 236ba7e2a76e95f3a78457fbdb0b49fd82e20b36
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.author: celested
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bc06583b73bc9ec21aca6d8ff1a1fe191f59dadd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55815410"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56161971"
 ---
 # <a name="how-to-configure-password-single-sign-on-for-an-azure-ad-gallery-application"></a>Настройка единого входа по паролю для приложения из коллекции Azure AD
 

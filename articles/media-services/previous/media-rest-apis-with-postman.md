@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: ee7f87a9c358f2b6ee655d13b74297a96b25cfcc
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 71f96420fe99ec230c9b25936fb6af4c993f615c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233792"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56000999"
 ---
-# <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа
+# <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа  
 
 В этом руководстве описано, как настроить **Postman** для вызова REST API служб мультимедиа Azure (AMS). В руководстве также показано, как импортировать файлы среды и коллекции в **Postman**. Коллекция содержит сгруппированные определения HTTP-запросов, которые вызывают REST API служб мультимедиа Azure (AMS). Файл среды содержит переменные, которые используются коллекцией.
 
@@ -30,7 +30,7 @@ ms.locfileid: "50233792"
 
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
-    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают: **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
 
 ## <a name="configure-the-environment"></a>Настройка среды 
 

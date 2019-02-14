@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: bfba86ba453c40a7612c28aa2f84365f03b9e3a6
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4c507635894ab7712fe61a97b666daebb23f61c8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174318"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56176379"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство. Интеграция Azure Active Directory со SmarterU
+# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство по Интеграция Azure Active Directory со SmarterU
 
 В этом учебнике описано, как интегрировать SmarterU с Azure Active Directory (Azure AD).
 
@@ -134,11 +135,11 @@ ms.locfileid: "55174318"
  
       a. Установите флажок **Включить внешнюю авторизацию**.
   
-      b. В разделе **Master Login Control** (Управление универсальным именем для входа) щелкните вкладку **SmarterU**.
+      б) В разделе **Master Login Control** (Управление универсальным именем для входа) щелкните вкладку **SmarterU**.
   
       c. В разделе **User Default Login** (Имя для входа пользователей по умолчанию) щелкните вкладку **SmarterU**.
   
-      d. Выберите **Включить SAML**.
+      4.3. Выберите **Включить SAML**.
   
       д. Скопируйте содержимое скачанного файла метаданных и вставьте его в текстовое поле **IdP Metadata** (Метаданные IdP).
       
@@ -151,7 +152,7 @@ ms.locfileid: "55174318"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -175,11 +176,11 @@ ms.locfileid: "55174318"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-smarteru-test-user"></a>Создание тестового пользователя SmarterU
 
@@ -199,11 +200,11 @@ ms.locfileid: "55174318"
 
     a. Щелкните **+ Пользователь**.
     
-    b. Введите значения атрибутов, связанные с учетной записью пользователя Azure Active Directory, в следующие текстовые поля: **Primary Email** (Основной адрес электронной почты), **Employee ID** (Идентификатор сотрудника), **Password** (Пароль), **Verify Password** (Проверьте пароль), **Given Name** (Заданное имя), **Surname** (Фамилия).
+    б) Введите значения атрибутов, связанные с учетной записью пользователя Azure Active Directory, в следующие текстовые поля: **Primary Email** (Основной адрес электронной почты), **Employee ID** (Идентификатор сотрудника), **Password** (Пароль), **Verify Password** (Проверьте пароль), **Given Name** (Заданное имя), **Surname** (Фамилия).
     
     c. Нажмите **Активный**. 
     
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователей SmarterU или API, предоставляемые SmarterU для подготовки учетных записей пользователей AAD.
@@ -244,7 +245,7 @@ ms.locfileid: "55174318"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
  
 Щелкнув плитку SmarterU на панели доступа, вы автоматически войдете в приложение SmarterU.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

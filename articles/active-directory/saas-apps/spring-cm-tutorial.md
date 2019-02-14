@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2017
 ms.author: jeedes
-ms.openlocfilehash: c1cae958aba6b17e890bf51119516505372a0d28
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2187d0e986a173e1b8dc37fd0abdfa3bfd9e9505
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194803"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168994"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
 
@@ -141,11 +142,11 @@ ms.locfileid: "55194803"
     
     a. Чтобы отправить загруженный сертификат Azure Active Directory, щелкните **Select Issuer Certificate** (Выбрать сертификат издателя) или **Change Issuer Certificate** (Изменить сертификат издателя).
     
-    b. Вставьте значение **Идентификатор сущности SAML**, скопированное с портала Azure, в поле **Issuer** (Издатель).
+    б) Вставьте значение **Идентификатор сущности SAML**, скопированное с портала Azure, в поле **Issuer** (Издатель).
     
     c. Вставьте значение **URL-адрес службы единого входа SAML**, скопированное с портала Azure, в текстовое поле **Service Provider (SP) Initiated Endpoint** (Предоставленная поставщиком услуг конечная точка).
             
-    d. Для параметра **SAML Enabled** (SAML включен) установите значение **Enabled** (Включено).
+    4.3. Для параметра **SAML Enabled** (SAML включен) установите значение **Enabled** (Включено).
 
     д. Выберите команду **Сохранить**.
  
@@ -154,7 +155,7 @@ ms.locfileid: "55194803"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -178,11 +179,11 @@ ms.locfileid: "55194803"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-springcm-test-user"></a>Создание тестового пользователя SpringCM
 
@@ -251,7 +252,7 @@ ms.locfileid: "55194803"
  
 Щелкнув плитку SpringCM на панели доступа, вы автоматически войдете в приложение SpringCM.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

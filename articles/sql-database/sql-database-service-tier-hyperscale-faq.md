@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/06/2019
-ms.openlocfilehash: 3ee952f10cebe374767e0db4a592695eeb1b4417
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 16d536ff5bd1f7d9a3427877a93036d9f711564e
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810071"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56099789"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -243,7 +243,7 @@ Yes
 
 ### <a name="what-is-the-oldest-sql-server-version-will-sql-database-hyperscale-support-migration-from"></a>Какова самая старая версия SQL Server, поддерживающая миграция на уровень "Гипермасштабирование" Базы данных SQL
 
-SQL Server 2005. Дополнительные сведения см. в разделе [Перенос в отдельную базу данных или базу данных в составе пула](sql-database-cloud-migrate.md#migrate-to-a-single-database-or-a-pooled-database). Дополнительные сведения см. в разделе [Устранение проблем совместимости при миграции базы данных](sql-database-cloud-migrate.md#resolving-database-migration-compatibility-issues).
+SQL Server 2005. Дополнительные сведения см. в разделе [Перенос в отдельную базу данных или базу данных в составе пула](sql-database-single-database-migrate.md#migrate-to-a-single-database-or-a-pooled-database). Дополнительные сведения см. в разделе [Устранение проблем совместимости при миграции базы данных](sql-database-single-database-migrate.md#resolving-database-migration-compatibility-issues).
 
 ### <a name="does-sql-database-hyperscale-support-migration-from-other-data-sources-such-as-aurora-mysql-oracle-db2-and-other-database-platforms"></a>Поддерживается ли на уровне "Гипермасштабирование" Базы данных SQL миграция из других источников данных, таких как Aurora, MySQL, Oracle, DB2 и прочих платформ баз данных
 

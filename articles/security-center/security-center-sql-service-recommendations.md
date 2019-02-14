@@ -4,7 +4,7 @@ description: В этом документе рассматриваются ре�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: bcae6987-05d0-4208-bca8-6a6ce7c9a1e3
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/15/2019
 ms.author: rkarlin
-ms.openlocfilehash: f6267bd2d97dabd71c007bcb8112936093124f74
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: d6121a0255b809deccb3c70d56585bab76935900
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267034"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56110359"
 ---
 # <a name="protecting-azure-sql-service-and-data-in-azure-security-center"></a>Защита службы SQL Azure и данных в центре безопасности Azure
 Центр безопасности Azure анализирует состояние безопасности ресурсов Azure. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления.  Рекомендации относятся к следующим типам ресурсов Azure: виртуальные машины, сети, служба SQL и данные, приложения.

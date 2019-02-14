@@ -11,12 +11,13 @@ ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
-ms.openlocfilehash: 734e337ba8dff996e9b9cecd7602115bf97b4810
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c3fc8ae7eac8d54e332d43925ede6ad690ae1dde
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55772896"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56167836"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
 
@@ -83,7 +84,7 @@ ms.locfileid: "55772896"
     ![Приложение Microsoft Authenticator на странице сканирования QR-кода](./media/user-help-auth-app-backup-recovery/backup-and-recovery-scan-qr-code.png)
 
     >[!NOTE]
-    >Дополнительные сведения о получении QR-кода см. в разделе [Добавление учетной записи в приложение](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install#add-accounts-to-the-app) или [Использование приложения Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app#to-use-the-microsoft-authenticator-app) (в зависимости от того, включил ли администратор сведения о безопасности).
+    >Дополнительные сведения о получении QR-кода см. в разделе [Добавление учетной записи в приложение](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install) или [Использование приложения Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app#to-use-the-microsoft-authenticator-app) (в зависимости от того, включил ли администратор сведения о безопасности).
 
 ## <a name="troubleshooting-backup-and-recovery-problems"></a>Устранение неполадок с резервным копированием и восстановлением
 Есть несколько причин, по которым резервные копии могут оказаться недоступны.

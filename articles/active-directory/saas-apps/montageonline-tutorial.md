@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 52b89fd830d18c595e29549432514fd60bbc6df9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 27a7a792c297d45f81efbda406761f3f4467be9d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158712"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205806"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-montage-online"></a>Руководство. Интеграция Azure Active Directory с Montage Online
 
@@ -30,7 +31,7 @@ ms.locfileid: "55158712"
 
 - С помощью Azure AD вы можете контролировать доступ к Montage Online.
 - Вы можете включить автоматический вход пользователей в Montage Online (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55158712"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Montage Online**, выберите **Montage Online** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55158712"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Montage Online](#create-a-montage-online-test-user)** нужно для того, чтобы в Montage Online также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "55158712"
 
     Для тестовой среды: `https://build-<subdomain>.montageonline.co.nz/`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес:
+    б) В текстовом поле **Идентификатор** введите URL-адрес:
 
     Для рабочей среды: `MOL_Azure`
 
@@ -147,7 +148,7 @@ ms.locfileid: "55158712"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/montageonline-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/montageonline-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -167,7 +168,7 @@ ms.locfileid: "55158712"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-montage-online-test-user"></a>Создание тестового пользователя Montage Online
 

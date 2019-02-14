@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/17/2016
 ms.author: keikhara
 ms.custom: mvc
-ms.openlocfilehash: b5c1596066b02d5ad4f59ed553408d263acc825c
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 1278c788c0d36b2cadf860e379791ecd823a510b
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993571"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113855"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>(УСТАРЕЛО) Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
 
@@ -34,7 +34,7 @@ Log Analytics — это облачное решение Майкрософт д
 ### <a name="pre-requisite"></a>Предварительные требования
 - [Подписка Microsoft Azure](https://azure.microsoft.com/free/) — ее можно получить бесплатно.  
 - Настройка рабочей области Log Analytics (см. раздел "Шаг 3" ниже).
-- Установленный [интерфейс командной строки DC/OS](https://dcos.io/docs/1.8/usage/cli/install/).
+- Установленный [интерфейс командной строки DC/OS](http://docs.mesosphere.com/1.12/cli).
 
 1. На панели мониторинга DC/OS щелкните "Вселенная" и выполните поиск по запросу "OMS", как показано ниже.
 

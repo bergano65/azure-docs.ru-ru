@@ -4,7 +4,7 @@ description: " Узнайте, как работать с оценкой над�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: e88198f8-2e16-409d-a0b0-a62e68c2f999
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/23/2018
 ms.author: rkarlin
-ms.openlocfilehash: 18b7b1b3d2a74b6e3aeb671154de48bd7b7f1e00
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 67442a5861514eadfebfc877d91e735e05f6f63d
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47218060"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56117551"
 ---
 # <a name="alert-confidence-score"></a>Оценка надежности предупреждения 
 

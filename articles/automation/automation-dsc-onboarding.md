@@ -9,12 +9,12 @@ ms.author: robreed
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: 1a3cfb51cc75c89c5a4580b1b7721eb763078980
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: f9a1076ddfb840ba845718c5ca0deea8c5788e7d
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55096710"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100335"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -24,7 +24,8 @@ ms.locfileid: "55096710"
 
 Службу "Настройка состояния службы автоматизации Azure" можно использовать для управления разными компьютерами. Их типы перечислены ниже.
 
-- Виртуальные машины Azure (развернутые в классической модели развертывания и модели Azure Resource Manager).
+- Виртуальные машины Azure
+- Виртуальные машины Azure (классические).
 - Экземпляры EC2 Amazon Web Services (AWS).
 - физические или виртуальные машины под управлением Windows, расположенные локально или в облачной службе, отличной от Azure или AWS;
 - Физические или виртуальные машины под управлением Linux, расположенные локально, в Azure или облачной службе, отличной от Azure.
@@ -35,6 +36,31 @@ ms.locfileid: "55096710"
 > За управление виртуальными машинами Azure с помощью State Configuration не взимается дополнительная плата, если установлена версия расширения виртуальной машины DSC выше, чем 2.70. Дополнительные сведения см. на странице [**цен на службу автоматизации**](https://azure.microsoft.com/pricing/details/automation/).
 
 В следующих разделах описываются способы подключения каждого типа компьютеров к службе "Настройка состояния службы автоматизации Azure".
+
+## <a name="azure-virtual-machines"></a>Виртуальные машины Azure
+
+Служба "Настройка состояния службы автоматизации Azure" позволяет легко подключать виртуальные машины Azure для управления конфигурацией с помощью портала Azure, шаблонов Azure Resource Manager или PowerShell. В процессе работы расширение DSC регистрирует виртуальную машину в службе "Настройка состояния службы автоматизации Azure", исключая необходимость выполнения администратором удаленного входа на виртуальную машину.
+Так как с виртуальными машинами Azure расширение DSC работает асинхронно, можно воспользоваться алгоритмом отслеживания хода выполнения и устранения неполадок, который приведен ниже в разделе [**Устранение неполадок при подключении виртуальной машины Azure**](#troubleshooting-azure-virtual-machine-onboarding).
+
+### <a name="azure-portal"></a>Портал Azure
+
+На [портале Azure](https://portal.azure.com/)перейдите к учетной записи службы автоматизации Azure, чтобы подключить виртуальные машины. На странице State Configuration на вкладке **Узлы** щелкните **+ Добавить**.
+
+Выберите виртуальную машину Azure для подключения.
+
+Если на компьютере не установлено требуемое расширение состояний PowerShell и состояние питания запущено, щелкните **Подключиться**.
+
+В разделе **Регистрация** введите необходимые вам [значения локального диспетчера конфигураций DSC PowerShell](/powershell/dsc/metaconfig4). Кроме того, можно ввести конфигурацию узла, которая будет назначена виртуальной машине.
+
+![Подключение](./media/automation-dsc-onboarding/DSC_Onboarding_6.png)
+
+### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
+
+Виртуальные машины Azure можно развернуть и подключить к службе "Настройка состояния службы автоматизации Azure" с помощью шаблонов Azure Resource Manager. Пример шаблона, который подключает существующую виртуальную машину к службе "Настройка состояния службы автоматизации Azure", см. в статье [Configure a VM via DSC extension and Azure Automation DSC](https://azure.microsoft.com/documentation/templates/dsc-extension-azure-automation-pullserver/) (Настройка виртуальной машины с помощью расширения DSC и Azure Automation DSC). Расположение ключа и URL-адреса регистрации, которые шаблон принимает в качестве входных данных, см. в приведенном ниже разделе [**Безопасная регистрация**](#secure-registration).
+
+### <a name="powershell"></a>PowerShell
+
+На портале Azure виртуальные машины можно подключать с помощью командлета [Register-AzureRmAutomationDscNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode) в PowerShell.
 
 ## <a name="azure-virtual-machines-classic"></a>Виртуальные машины Azure (классические).
 
@@ -116,31 +142,6 @@ $VM | Update-AzureVM
 
 > [!NOTE]
 > Имена конфигурации узла State Configuration чувствительны к регистру на портале. Если регистр не соответствует, узел не будет отображаться на вкладке **Узлы**.
-
-## <a name="azure-virtual-machines"></a>Виртуальные машины Azure
-
-Служба "Настройка состояния службы автоматизации Azure" позволяет легко подключать виртуальные машины Azure для управления конфигурацией с помощью портала Azure, шаблонов Azure Resource Manager или PowerShell. В процессе работы расширение DSC регистрирует виртуальную машину в службе "Настройка состояния службы автоматизации Azure", исключая необходимость выполнения администратором удаленного входа на виртуальную машину.
-Так как с виртуальными машинами Azure расширение DSC работает асинхронно, можно воспользоваться алгоритмом отслеживания хода выполнения и устранения неполадок, который приведен ниже в разделе [**Устранение неполадок при подключении виртуальной машины Azure**](#troubleshooting-azure-virtual-machine-onboarding).
-
-### <a name="azure-portal"></a>Портал Azure
-
-На [портале Azure](https://portal.azure.com/)перейдите к учетной записи службы автоматизации Azure, чтобы подключить виртуальные машины. На странице State Configuration на вкладке **Узлы** щелкните **+ Добавить**.
-
-Выберите виртуальную машину Azure для подключения.
-
-Если на компьютере не установлено требуемое расширение состояний PowerShell и состояние питания запущено, щелкните **Подключиться**.
-
-В разделе **Регистрация** введите необходимые вам [значения локального диспетчера конфигураций DSC PowerShell](/powershell/dsc/metaconfig4). Кроме того, можно ввести конфигурацию узла, которая будет назначена виртуальной машине.
-
-![Подключение](./media/automation-dsc-onboarding/DSC_Onboarding_6.png)
-
-### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
-
-Виртуальные машины Azure можно развернуть и подключить к службе "Настройка состояния службы автоматизации Azure" с помощью шаблонов Azure Resource Manager. Пример шаблона, который подключает существующую виртуальную машину к службе "Настройка состояния службы автоматизации Azure", см. в статье [Configure a VM via DSC extension and Azure Automation DSC](https://azure.microsoft.com/documentation/templates/dsc-extension-azure-automation-pullserver/) (Настройка виртуальной машины с помощью расширения DSC и Azure Automation DSC). Расположение ключа и URL-адреса регистрации, которые шаблон принимает в качестве входных данных, см. в приведенном ниже разделе [**Безопасная регистрация**](#secure-registration).
-
-### <a name="powershell"></a>PowerShell
-
-На портале Azure виртуальные машины можно подключать с помощью командлета [Register-AzureRmAutomationDscNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode) в PowerShell.
 
 ## <a name="amazon-web-services-aws-virtual-machines"></a>виртуальные машины Amazon Web Services (AWS);
 

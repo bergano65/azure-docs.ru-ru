@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с InsideView | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с InsideView | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении InsideView.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
-ms.openlocfilehash: 38749d9d920a3243c5fe63912c08cafa5834350c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: aa0885a469877d0ea9f52f6191b4cd894ddbbce5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55154157"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56162027"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство. Интеграция Azure Active Directory с InsideView
 
@@ -141,11 +142,11 @@ ms.locfileid: "55154157"
    
     a. В текстовом поле **Имя службы токенов безопасности** введите имя конфигурации.
 
-    b. В текстовое поле  **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле  **SamlP/WS-Fed Unsolicited EndPoint** (Незапрашиваемая конечная точка WS-Fed/SamlP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
     
     c. Откройте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **STS Certificate** (Сертификат STS).
 
-    d. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    4.3. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
         
     д. В **Crm Email Mapping** (Сопоставление адресов электронной почты CRM) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
@@ -160,7 +161,7 @@ ms.locfileid: "55154157"
 > 
  
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -184,11 +185,11 @@ ms.locfileid: "55154157"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-insideview-test-user"></a>Создание тестового пользователя InsideView
 

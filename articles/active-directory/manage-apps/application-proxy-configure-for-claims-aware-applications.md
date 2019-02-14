@@ -3,8 +3,8 @@ title: 'Приложения с поддержкой утверждений: п�
 description: Как публиковать локальные приложения ASP.NET, принимающие утверждения ADFS для защиты удаленного доступа пользователей.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/08/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: japere
-ms.openlocfilehash: efab95e926e72397f15a5b6a79e63833e19f0676
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dc5be2f5bbeb901888edc1e69953fdeb8de566c0
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153476"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56187140"
 ---
 # <a name="working-with-claims-aware-apps-in-application-proxy"></a>Работа с приложениями, поддерживающими утверждения, в прокси приложения
 [Приложения, поддерживающие утверждения](https://msdn.microsoft.com/library/windows/desktop/bb736227.aspx), выполняют перенаправление к службе токенов безопасности (STS). Служба токенов безопасности запрашивает учетные данные у пользователя в обмен на токен, после чего перенаправляет пользователя в приложение. Существует несколько способов настроить прокси приложения для работы с таким перенаправлением. В этой статье описывается настройка развертывания для приложений, поддерживающих утверждения. 

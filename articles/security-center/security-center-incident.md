@@ -4,7 +4,7 @@ description: В документе описываются возможности
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: mbaldwin
+manager: barbkess
 editor: ''
 ms.assetid: e8feb669-8f30-49eb-ba38-046edf3f9656
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: 40e46ed99684877e829068c209ab318913b79e2a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 68bcd2b1916ccdf68eaa31ed251661a6b7e1bca0
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633934"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106789"
 ---
 # <a name="handling-security-incidents-in-azure-security-center"></a>Обработка инцидентов в центре безопасности Azure
 Рассмотрение и исследование оповещений системы безопасности может занять много времени даже у самых опытных аналитиков в сфере безопасности, а многие пользователи даже не знают, с чего начать. Используя [аналитику](security-center-detection-capabilities.md) для связывания данных из разных [оповещений системы безопасности](security-center-managing-and-responding-alerts.md), центр безопасности может предоставить общую картину кампании атак и все соответствующие оповещения. Это позволит вам быстро понять, какие действия выполнил злоумышленник и какие ресурсы затронуты.

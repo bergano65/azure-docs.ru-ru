@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2017
 ms.author: jeedes
-ms.openlocfilehash: 73b382d41a072eb5f59ad6e32323930f1336c316
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1b58e1d2fc13543c80899c61c8532ab8a93a3b63
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172363"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56207166"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-novatus"></a>Руководство. Интеграция Azure Active Directory с Novatus
 
@@ -138,7 +139,7 @@ ms.locfileid: "55172363"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55172363"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-novatus-test-user"></a>Создание тестового пользователя Novatus
 
@@ -212,7 +213,7 @@ ms.locfileid: "55172363"
 
 Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Novatus на панели доступа, вы автоматически войдете в приложение Novatus. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку Novatus на панели доступа, вы автоматически войдете в приложение Novatus. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

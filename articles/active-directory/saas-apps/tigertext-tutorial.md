@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/21/2017
 ms.author: jeedes
-ms.openlocfilehash: a3d03690107ca28ce961383c53e7e80468005de1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 20bb003fbb8c6e7c1592618a8742f9b88882e358
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152915"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184148"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство. Интеграция Azure Active Directory с TigerText Secure Messenger
+# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по Интеграция Azure Active Directory с TigerText Secure Messenger
 
 В этом руководстве описано, как интегрировать приложение TigerText Secure Messenger с Azure Active Directory (Azure AD).
 
@@ -87,7 +88,7 @@ ms.locfileid: "55152915"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя TigerText Secure Messenger](#create-a-tigertext-secure-messenger-test-user)** требуется для того, чтобы в TigerText Secure Messenger существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55152915"
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в формате `https://home.tigertext.com`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://saml-lb.tigertext.me/v1/organization/<instance Id>`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://saml-lb.tigertext.me/v1/organization/<instance Id>`
 
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь к [группе поддержки клиентов TigerText Secure Messenger](mailTo:prosupport@tigertext.com). 
@@ -154,11 +155,11 @@ ms.locfileid: "55152915"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-tigertext-secure-messenger-test-user"></a>Создание тестового пользователя TigerText Secure Messenger
 
@@ -198,7 +199,7 @@ ms.locfileid: "55152915"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент TigerText на панели доступа, вы автоматически войдете в приложение TigerText. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент TigerText на панели доступа, вы автоматически войдете в приложение TigerText. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

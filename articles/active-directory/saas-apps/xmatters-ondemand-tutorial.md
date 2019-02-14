@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 5eab595c12fda25768a3bf8a04650870e1c4f57e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e947b71fe6bb9e6bd884b8b2dd0397a63bea2a95
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153553"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203647"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство. Интеграция Azure Active Directory с xMatters OnDemand
 
@@ -121,7 +122,7 @@ ms.locfileid: "55153553"
     | `https://www.xmatters.com`|
     | `https://<companyname>.xmatters.com.au/`|
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<companyname>.au1.xmatters.com.au`|
@@ -130,7 +131,7 @@ ms.locfileid: "55153553"
     | `https://<companyname>.au1.xmatters.com.au/<instancename>`|
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки xMatters OnDemand](https://www.xmatters.com/company/contact-us/).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки xMatters OnDemand](https://www.xmatters.com/company/contact-us/).
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на локальном компьютере как **c:\\XMatters OnDemand.cer**.
 
@@ -159,18 +160,18 @@ ms.locfileid: "55153553"
 
     a. Выберите **Включить SAML**.
 
-    b. В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    б) В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Single Sign on URL** (URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    d. В текстовое поле **Single Logout URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
+    4.3. В текстовое поле **Single Logout URL** (URL-адрес единого выхода) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
     д. В верхней части страницы «Информация о компании» нажмите кнопку **Сохранить изменения**.
 
     ![Сведения о компании](./media/xmatters-ondemand-tutorial/IC776797.png "Сведения о компании")
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -194,11 +195,11 @@ ms.locfileid: "55153553"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-xmatters-ondemand-test-user"></a>Создание тестового пользователя xMatters OnDemand
 
@@ -218,11 +219,11 @@ ms.locfileid: "55153553"
 
     a. Установите флажок **Активно**.
 
-    b. В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
+    б) В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
-    d. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+    4.3. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
     д. В текстовое поле **Site** (Сайт) введите действительный сайт учетной записи Azure AD, которую необходимо подготовить.
 
@@ -263,7 +264,7 @@ ms.locfileid: "55153553"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "xMatters OnDemand" на панели доступа, вы автоматически войдете в приложение xMatters OnDemand.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

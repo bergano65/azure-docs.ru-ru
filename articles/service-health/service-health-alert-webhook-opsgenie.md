@@ -1,25 +1,18 @@
 ---
 title: Настройка оповещений о работоспособности служб Azure для OpsGenie | Документация Майкрософт
 description: Передача в экземпляр OpsGenie персонализированных уведомлений о событиях работоспособности служб.
-author: shawntabrizi
-manager: scotthit
-editor: ''
-services: service-health
-documentationcenter: service-health
-ms.assetid: ''
-ms.service: service-health
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: stephbaron
+ms.author: stbaron
 ms.topic: article
+ms.service: service-health
+ms.workload: Supportability
 ms.date: 11/14/2017
-ms.author: shtabriz
-ms.openlocfilehash: e406c80e408ddcf4d1d53f4e49925bded43b650f
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 79a77fff206831c0f9b3bb73ad33f951d99e2c81
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53579487"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55858845"
 ---
 # <a name="configure-service-health-alerts-with-opsgenie"></a>Настройка оповещений о работоспособности служб для OpsGenie
 
@@ -54,7 +47,7 @@ ms.locfileid: "53579487"
 
     a. **Тип действия:** *webhook*
 
-    b. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    б) **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -71,7 +64,7 @@ ms.locfileid: "53579487"
 
     a. **Тип действия:** *webhook*
 
-    b. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    б) **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 

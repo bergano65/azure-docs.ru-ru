@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с PagerDuty | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с PagerDuty | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PagerDuty.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 703bc11ec7b0de0e8b0cfe3b99b7516afe8cac0b
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5c68fdadcf115f57ba524b1b4dc8a2c800cbfaf8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54810029"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56177926"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство. Интеграция Azure Active Directory с PagerDuty
 
@@ -69,7 +70,7 @@ ms.locfileid: "54810029"
 
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **PagerDuty**, выберите **PagerDuty** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "54810029"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя PagerDuty](#create-a-pagerduty-test-user)** требуется для того, чтобы в PagerDuty существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "54810029"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/).
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -144,11 +145,11 @@ ms.locfileid: "54810029"
 
     a. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
   
-    b. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
   
     c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    d. Установите флажок **Allow username/password login** (Разрешить вход по имени пользователя и паролю).
+    4.3. Установите флажок **Allow username/password login** (Разрешить вход по имени пользователя и паролю).
 
     д. Установите флажок **Require EXACT authentication context comparison** (Требовать точное сравнение контекста аутентификации).
 
@@ -164,7 +165,7 @@ ms.locfileid: "54810029"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/pagerduty-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/pagerduty-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -180,11 +181,11 @@ ms.locfileid: "54810029"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-pagerduty-test-user"></a>Создание тестового пользователя PagerDuty
 
@@ -210,7 +211,7 @@ ms.locfileid: "54810029"
 
     a. В текстовое поле **First and Last Name** (Имя и фамилия) введите сведения о пользователе, например **Britta Simon**. 
    
-    b. Введите **Email** (Адрес электронной почты) для пользователя, например: **brittasimon@contoso.com**.
+    б) Введите **Email** (Адрес электронной почты) для пользователя, например: **brittasimon@contoso.com**.
    
     c. Нажмите **Add** (Добавить), затем нажмите **Send Invites** (Отправить приглашения).
    
@@ -253,7 +254,7 @@ ms.locfileid: "54810029"
 
 Щелкнув элемент PagerDuty на панели доступа, вы автоматически войдете в приложение PagerDuty.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

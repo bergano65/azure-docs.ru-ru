@@ -2,24 +2,20 @@
 title: 'Azure Monitor для виртуальных машин (предварительная версия): часто задаваемые вопросы | Документация Майкрософт'
 description: Azure Monitor для виртуальных машин — это решение в Azure, которое отслеживает работоспособность и производительность ОС виртуальных машин Azure, автоматически обнаруживает компоненты приложений и их зависимости от других ресурсов, а также строит схему каналов связи между ними. В этой статье приведены ответы на распространенные вопросы.
 services: azure-monitor
-documentationcenter: ''
 author: mgoedtel
 manager: carmonm
 editor: tysonn
-ms.assetid: ''
 ms.service: azure-monitor
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/09/2018
 ms.author: magoedte
-ms.openlocfilehash: f553a938c6329e21388ca68dea480b008e4e1363
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 32f2833b4c1ba77564d5388bc080a7cb32d90201
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191570"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243779"
 ---
 # <a name="azure-monitor-for-vms-preview-frequently-asked-questions"></a>Azure Monitor для виртуальных машин (предварительная версия): часто задаваемые вопросы
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.

@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Описание способа создания сайта и служб вертикального поиска
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: conceptual
-ms.date: 09/28/2017
+ms.date: 02/12/2019
 ms.author: aahi
-ms.openlocfilehash: 58830e3391cb6f794cfd8911e97b0c6dbb3cd2c1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: c4cb93e39a67e13646a339af6ac999a8fd96b383
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193647"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234821"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Настройка режима пользовательского поиска Bing
 
@@ -28,7 +28,7 @@ ms.locfileid: "55193647"
 | Имя среза | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Домен     | Доменный срез включает в себя все содержимое, найденное в Интернет-домене. Например, `www.microsoft.com`. Если опустить `www.`, Bing будет также выполнять поиск по поддоменам домена. Например, если указать  `microsoft.com`, Bing также возвращает результаты из  `support.microsoft.com` или `technet.microsoft.com`. |
-| Вложенная страница    | Срез подстраниц включает в себя все содержимое вложенной страницы и их пути. Вы можете указать более двух подстраниц в пути. Например, `www.microsoft.com/en-us/windows/`                                                                                                                       |
+| Вложенная страница    | Срез подстраниц включает в себя все содержимое вложенной страницы и их пути. Вы можете указать более двух подстраниц в пути. Например `www.microsoft.com/en-us/windows/`.                                                                                                                       |
 | Веб-страница    | Срез веб-страниц может содержать только веб-страницы пользовательского поиска. При необходимости можно указать, следует ли включать подстраницы.                                                                                                                                                                                  |
 
 > [!IMPORTANT]

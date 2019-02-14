@@ -10,12 +10,13 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: ed6cf5cff5ed2c132031a48606c8f5125fd93ba4
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bfe77602d138224c848cc915bbba5a7084c29650
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55079432"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56170064"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -244,7 +245,7 @@ ms.locfileid: "55079432"
 
     a. В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
 
-    b. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
+    б) В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
 
     c. В поле **Время ожидания (с)** выберите значение от **30** до **60**.  
     Это необходимо, чтобы предоставить достаточно времени для второго фактора аутентификации.

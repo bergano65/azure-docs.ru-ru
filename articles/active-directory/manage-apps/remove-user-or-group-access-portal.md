@@ -3,9 +3,8 @@ title: Удаление назначения доступа к корпорат�
 description: Узнайте, как удалить назначение доступа к корпоративному приложению для пользователя или группы в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
-editor: ''
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -13,15 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/14/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: asteen
 ms.custom: it-pro
-ms.openlocfilehash: 709489a1e96691a677261bfb2c7b5c29158e62c9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7c622b95572a078d3f5a3e4791f959fd264eddc3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55162453"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182176"
 ---
 # <a name="remove-a-user-or-group-assignment-from-an-enterprise-app-in-azure-active-directory"></a>Удаление назначения доступа к корпоративному приложению для пользователя или группы в Azure Active Directory
 Вы можете легко удалить назначение доступа к корпоративному приложению для пользователя или группы в Azure Active Directory (Azure AD). Необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.

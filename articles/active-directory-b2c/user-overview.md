@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: a901072875d6810711cb0b23d17555d9492c240a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 9d4bcc66cfd82fee13ce57d096e061ddd8706720
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157981"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100131"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
@@ -47,21 +47,21 @@ ms.locfileid: "55157981"
 Для создания новой рабочей учетной записи перейдите по следующим ссылкам:
 
 - [портал Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
-- [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_users)
+- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0)
 
 ### <a name="update-a-user-profile"></a>Обновление профиля пользователя
 
 Чтобы обновить профиль пользователя, перейдите по следующим ссылкам:
 
 - [портал Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
-- [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_update)
+- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
 
 ### <a name="reset-a-password-for-a-user"></a>Сброс пароля для пользователя
 
 Чтобы сбросить пароль пользователя, перейдите по следующим ссылкам: 
 
 - [портал Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
-- [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_update)
+- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
 
 ## <a name="guest-user"></a>Гостевой пользователь
 
@@ -69,7 +69,7 @@ ms.locfileid: "55157981"
 
 Приглашая гостевого пользователя в клиент, необходимо предоставить адрес электронной почты получателя и сообщение, описывающее приглашение. Ссылка для приглашения перенаправляет пользователя на страницу предоставления согласия, где он может нажать кнопку **Начать работу** и принять разрешения. Если папка "Входящие" не подключена к адресу электронной почты, пользователь может перейти на страницу предоставления согласия, открыв страницу Майкрософт, используя учетные данные из приглашения. Затем пользователь вынужден активировать приглашение так же, как щелкнуть ссылку в сообщении электронной почты. Например, `https://myapps.microsoft.com/B2CTENANTNAME`.
 
-[API Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/invitation_post) также можно использовать, чтобы приглашать гостевых пользователей.
+[API Microsoft Graph](https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-beta) также можно использовать, чтобы приглашать гостевых пользователей.
 
 ## <a name="consumer-user"></a>Потребитель
 

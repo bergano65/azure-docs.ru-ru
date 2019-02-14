@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Pingboard | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Pingboard | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Pingboard.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 2011458183944d9e645ec0f08327a38b545df343
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 084a921123badb786503ce6696eb4ace14dd59b8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170289"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56170488"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство. Интеграция Azure Active Directory с Pingboard
 
@@ -70,7 +71,7 @@ ms.locfileid: "55170289"
 
 1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Pingboard**, выберите **Pingboard** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55170289"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Pingboard](#create-a-pingboard-test-user)** требуется для того, чтобы в Pingboard существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55170289"
 
     a. В текстовом поле **Идентификатор** введите значение `http://app.pingboard.com/sp`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<entity-id>.pingboard.com/auth/saml/consume`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<entity-id>.pingboard.com/auth/saml/consume`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -161,7 +162,7 @@ ms.locfileid: "55170289"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/pingboard-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/pingboard-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -177,11 +178,11 @@ ms.locfileid: "55170289"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-pingboard-test-user"></a>Создание тестового пользователя Pingboard
 
@@ -201,11 +202,11 @@ ms.locfileid: "55170289"
 
     a. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**.
 
-    b. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    б) В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
     c. В текстовом поле **Job Title** (Должность) введите должность пользователя Britta Simon.
 
-    d. Из раскрывающегося списка **Location** (Расположение) выберите расположение пользователя Britta Simon.
+    4.3. Из раскрывающегося списка **Location** (Расположение) выберите расположение пользователя Britta Simon.
 
     д. Щелкните **Добавить**.
 
@@ -249,7 +250,7 @@ ms.locfileid: "55170289"
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 Щелкнув элемент Pingboard на панели доступа, вы автоматически войдете в приложение Pingboard.
 

@@ -3,8 +3,8 @@ title: Использование самостоятельного доступ�
 description: Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: japere,asteen
-ms.openlocfilehash: 525fe45359902c6e5b962b87df4ed53e6071a4c9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 82c7c7236b54ef44b0cc8602c0dce531c09f7d29
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55182495"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56169604"
 ---
 # <a name="how-to-use-self-service-application-access"></a>Использование самостоятельного доступа к приложениям
 

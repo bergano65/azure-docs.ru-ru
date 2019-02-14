@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Moxtra | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Moxtra | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Moxtra.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
-ms.openlocfilehash: e0674c0bd3e5244b76d35e05057aee3b75249703
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0f613c7768b92ce97dcc16a757a066dd5796879b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197115"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56180606"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Руководство. Интеграция Azure Active Directory с Moxtra
+# <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Руководство по Интеграция Azure Active Directory с Moxtra
 
 В этом руководстве описано, как интегрировать Moxtra с Azure Active Directory (Azure AD).
 
@@ -133,13 +134,13 @@ ms.locfileid: "55197115"
 
     ![Настройка единого входа](./media/moxtra-tutorial/tutorial_attribute_04.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     ![Настройка единого входа](./media/moxtra-tutorial/tutorial_attribute_05.png)
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Нажмите кнопку **ОК**.
+    4.3. Нажмите кнопку **ОК**.
     
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -165,11 +166,11 @@ ms.locfileid: "55197115"
  
     a. В текстовом поле **Имя** введите имя конфигурации (например *SAML*). 
   
-    b. В текстовое поле **Идентификатор сущности поставщика удостоверений** вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
+    б) В текстовое поле **Идентификатор сущности поставщика удостоверений** вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
  
     c. В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure. 
  
-    d. В текстовом поле **AuthnContextClassRef** введите **urn:oasis:names:tc:SAML:2.0:ac:classes:Password**. 
+    4.3. В текстовом поле **AuthnContextClassRef** введите **urn:oasis:names:tc:SAML:2.0:ac:classes:Password**. 
  
     д. В текстовом поле **NameID format** (Формат идентификатора имени) введите **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**. 
  
@@ -186,7 +187,7 @@ ms.locfileid: "55197115"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -210,11 +211,11 @@ ms.locfileid: "55197115"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-moxtra-test-user"></a>Создание тестового пользователя Moxtra
 
@@ -232,11 +233,11 @@ ms.locfileid: "55197115"
   
     a. В текстовом поле **Имя** введите **Britta**.
   
-    b. В текстовом поле **Фамилия** введите **Simon**.
+    б) В текстовом поле **Фамилия** введите **Simon**.
   
     c. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon, такой же как на портале Azure.
   
-    d. В текстовом поле **Подразделение** введите **Dev**.
+    4.3. В текстовом поле **Подразделение** введите **Dev**.
   
     д. В поле **Отдел** введите **IT**.
   
@@ -279,7 +280,7 @@ ms.locfileid: "55197115"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Moxtra на панели доступа, вы автоматически войдете в приложение Moxtra.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

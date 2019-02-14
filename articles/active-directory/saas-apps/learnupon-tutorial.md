@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LearnUpon | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LearnUpon | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LearnUpon.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 66953eaa4c42b419a5146ccc396fddda15a31c35
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 70d4e507087e645c9bfd41e7ef6b90098079ab1d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811365"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство. Интеграция Azure Active Directory с LearnUpon
 

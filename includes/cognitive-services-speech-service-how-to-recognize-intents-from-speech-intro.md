@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 88cb9f18002f15ea926fe5ded3a5ac9af7a99cbe
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 80bf9247bbb07fa61b7153e321b1991b82a9d616
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51716263"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247117"
 ---
 <!-- N.B. no header, language-agnostic -->
 
@@ -28,4 +28,4 @@ ms.locfileid: "51716263"
 Для сценариев распознавания намерений, которые используют пакет SDK для службы "Речь", ознакомьтесь со следующими фрагментами кода. Замените значения в примере своим собственным ключом подписки LUIS (ключом конечной точки), [регионом подписки](~/articles/cognitive-services/speech-service/regions.md#intent-recognition) и идентификатором **AppId** для модели намерений.
 
 > [!NOTE]
-> В отличие от других служб, поддерживаемых пакетом SDK для службы "Речь", распознавание намерений требует наличия конкретного ключа подписки (ключа конечной точки LUIS). Сведения о технологии распознавания намерений см. на [веб-сайте LUIS](https://www.luis.ai). Сведения о том, как получить **ключ конечной точки**, см. в разделе [Создание ключа конечной точки LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-azure-subscription#create-luis-endpoint-key).
+> В отличие от других служб, поддерживаемых пакетом SDK для службы "Речь", распознавание намерений требует наличия конкретного ключа подписки (ключа конечной точки LUIS). Сведения о технологии распознавания намерений см. на [веб-сайте LUIS](https://www.luis.ai). Сведения о том, как получить **ключ конечной точки**, см. в разделе [Создание ключа конечной точки LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-azure-subscription).

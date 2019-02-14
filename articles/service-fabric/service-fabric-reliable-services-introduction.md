@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 3/9/2018
 ms.author: masnider
-ms.openlocfilehash: 37f956606075cb21075d6f50bb53e04075936997
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: bc4e4c9137003dad9cfd96772b7ebe231cd6eace
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999039"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56171729"
 ---
 # <a name="reliable-services-overview"></a>Обзор надежных служб
 Платформа Azure Service Fabric упрощает написание надежных служб с отслеживанием и без отслеживания состояния и управление такими службами. В этой статье рассматриваются следующие вопросы.
@@ -45,12 +45,6 @@ Service Fabric управляет временем существования с
 * Простая модель для выполнения собственного кода, которая похожа на привычные модели программирования: у создаваемого кода четко определенная точка входа и простой в управлении жизненный цикл.
 * Модель взаимодействия со службами Транспорт может быть любым, включая HTTP с [веб-API](service-fabric-reliable-services-communication-webapi.md), протоколы WebSocket, пользовательские протоколы TCP и т. п. Надежные службы позволяют использовать ряд отличных готовых вариантов или задействовать собственный.
 * Для служб с отслеживанием состояния модель программирования Reliable Services позволяет согласованно и надежно хранить состояние прямо в службе с помощью коллекций [Reliable Collections](service-fabric-reliable-services-reliable-collections.md). Reliable Collections — это простой набор классов коллекций с высокой доступностью и надежностью, которые будут знакомы всем, кто использовал коллекции C#. Обычно для надежного управления состоянием службам требовались внешние системы. Коллекции Reliable Collections обеспечивают хранение состояния вместе с вычислениями при таком же уровне доступности и надежности, как и в высокодоступных внешних хранилищах. Такая модель также сокращает задержку, потому что необходимые для работы данные состояния и вычисления хранятся рядом.
-
-Посмотрите это видео от Microsoft Virtual Academy, которое содержит обзор служб Reliable Services: <center>
-<a target="_blank" href="https://mva.microsoft.com/en-US/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=HhD9566yC_4106218965">
-<img src="./media/service-fabric-reliable-services-introduction/ReliableServicesVid.png" WIDTH="360" HEIGHT="244" />
-</a>
-</center>
 
 ## <a name="what-makes-reliable-services-different"></a>Чем отличаются надежные службы
 Надежные службы в Service Fabric отличаются от служб, которые вы могли создавать ранее. Service Fabric обеспечивает надежность, доступность, согласованность и масштабируемость.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с CA PPM | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с CA PPM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и CA PPM.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: f7d91dec828f9f10f9f127a8619c9796975788c1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 516f903d72a759fc38cac49abaa1a3f1968837d9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181067"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56217961"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Руководство. Интеграция Azure Active Directory с CA PPM
 
@@ -114,7 +115,7 @@ ms.locfileid: "55181067"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://ca.ondemand.saml.20.post.<companyname>`
     
-    b. В текстовом поле **URL-адрес ответа** введите `https://fedsso.ondemand.ca.com/affwebservices/public/saml2assertionconsumer`.
+    б) В текстовом поле **URL-адрес ответа** введите `https://fedsso.ondemand.ca.com/affwebservices/public/saml2assertionconsumer`.
 
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь к [группе поддержки CA PPM](mailto:catechnicalsupport@ca.com).
@@ -138,7 +139,7 @@ ms.locfileid: "55181067"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55181067"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-ca-ppm-test-user"></a>Создание тестового пользователя CA PPM
 

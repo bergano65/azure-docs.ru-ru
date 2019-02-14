@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: fdc9b67ef7f2becbeffe10261b3f2a96a225b5db
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 613d222b04d5e79b863ca9ce70db287e5e937efe
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55159103"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56177858"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
 
@@ -115,7 +116,7 @@ ms.locfileid: "55159103"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://hackerone.com/<company name>/authentication`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в формате:`https://hackerone.com/users/saml/metadata`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в формате:`https://hackerone.com/users/saml/metadata`
     
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить его, обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com). 
@@ -148,11 +149,11 @@ ms.locfileid: "55159103"
 
     a. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
 
-    b. В текстовое поле   **URL-адрес для единого входа** вставьте значение  **URL-адреса службы единого входа SAML** , скопированное на портале Azure.
+    б) В текстовое поле   **URL-адрес для единого входа** вставьте значение  **URL-адреса службы единого входа SAML** , скопированное на портале Azure.
 
     c. Откройте в блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле  **Сертификат X.509**.
     
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
 1. В диалоговом окне "Authentication Settings" (Параметры аутентификации) выполните следующие действия.
    
@@ -160,14 +161,14 @@ ms.locfileid: "55159103"
 
     a. Щелкните **Run test**(Выполнить проверку).
 
-    b. Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
+    б) Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -191,11 +192,11 @@ ms.locfileid: "55159103"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-hackerone-test-user"></a>Создание тестового пользователя HackerOne
 

@@ -4,7 +4,7 @@ description: В этой статье объясняется, как выпол�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: aa372492-ecdb-4368-8fdd-d8ed31e216ee
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: a4072e71d1e4ee54c4cffc3d16aa7c9b8e265cb8
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: a17bc3cf8c8f1ffbb2a91e17944bfc1c203f439d
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337672"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56111872"
 ---
 # <a name="update-os-version-in-azure-security-center"></a>Обновление версии ОС в центре безопасности Azure
 Для виртуальных машин (ВМ) в облачных службах центр безопасности Azure порекомендует обновить версию операционной системы (ОС) на более новую, если она есть.  Мониторинг выполняется только для облачных служб и рабочих ролей, запущенных в слотах рабочей среды.

@@ -4,7 +4,7 @@ description: " Узнайте, как включить мониторинг це
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: rkarlin
-ms.openlocfilehash: b7e2a075df7d0d7f6bb68163414fab525aad25a8
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 50f2c174f21243a70c830c1c30127e0629c81972
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55093455"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56110257"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.

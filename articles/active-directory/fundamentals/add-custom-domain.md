@@ -12,12 +12,13 @@ ms.date: 09/18/2018
 ms.author: lizross
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: aae0a71684f91b98b5f7f137738d5a5fefd40dbc
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 68655efaf9d6020489b7bc05ed1855ac181cd22f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55092720"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211943"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавив имена личных доменов, вы сможете создать привычные для пользователей имена пользователей, например *alain@contoso.com*.

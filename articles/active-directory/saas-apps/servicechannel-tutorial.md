@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/3/2017
 ms.author: jeedes
-ms.openlocfilehash: 4fb0d0d91dbdbb437bedd0ea58d95e08694dcaab
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e7d8f42b49fe3dbdecec163ab47579346b71f0bf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55154259"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56190506"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicechannel"></a>Руководство. Интеграция Azure Active Directory с ServiceChannel
 
@@ -31,7 +32,7 @@ ms.locfileid: "55154259"
 - Вы можете включить автоматический вход пользователей в ServiceChannel (единый вход) с учетной записью Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -114,7 +115,7 @@ ms.locfileid: "55154259"
 
     a. В текстовом поле **Идентификатор** введите значение `http://adfs.<domain>.com/adfs/service/trust`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer domain>.servicechannel.com/saml/acs`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer domain>.servicechannel.com/saml/acs`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки ServiceChannel](https://servicechannel.zendesk.com/hc/en-us).
@@ -140,11 +141,11 @@ ms.locfileid: "55154259"
 
     ![Настройка единого входа](./media/servicechannel-tutorial/tutorial_servicechannel_05.png)
     
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    d. Нажмите кнопку **ОК**.
+    4.3. Нажмите кнопку **ОК**.
     
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -183,11 +184,11 @@ ms.locfileid: "55154259"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 ### <a name="creating-a-servicechannel-test-user"></a>Создание тестового пользователя ServiceChannel
 

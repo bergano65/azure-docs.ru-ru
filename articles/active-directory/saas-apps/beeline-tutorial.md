@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с BeeLine | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с BeeLine | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BeeLine.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 7b6410067426f65627c22536cd598ed318ae0c81
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2f9e80cd682b87e4503ca61b43208e5e5705f953
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55161625"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182040"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-beeline"></a>Руководство. Интеграция Azure Active Directory с Beeline
+# <a name="tutorial-azure-active-directory-integration-with-beeline"></a>Руководство по Интеграция Azure Active Directory с Beeline
 
 В этом руководстве описано, как интегрировать BeeLine с Azure Active Directory (Azure AD).
 
@@ -114,14 +115,14 @@ ms.locfileid: "55161625"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://projects.beeline.net/<instancename>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://projects.beeline.net/<instancename>/SSO_External.ashx`|
     | `https://projects.beeline.net/<companyname>/SSO_External.ashx` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки BeeLine](https://www.beeline.com/contact-us/).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки BeeLine](https://www.beeline.com/contact-us/).
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,7 +147,7 @@ ms.locfileid: "55161625"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -170,11 +171,11 @@ ms.locfileid: "55161625"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-beeline-test-user"></a>Создание тестового пользователя BeeLine
 

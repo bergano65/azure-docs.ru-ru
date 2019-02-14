@@ -3,8 +3,8 @@ title: Приложения с подстановочным знаком в пр
 description: Узнайте, как использовать приложения с подстановочным знаком в прокси приложения Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,15 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/06/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 0130e0ea32253de8be5eb9f36e15a08e15625a46
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5fb57052cc550a659dcd8a514fbb71ad0f7d8df5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55192814"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192410"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory 
 

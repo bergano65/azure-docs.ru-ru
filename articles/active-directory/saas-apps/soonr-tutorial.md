@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/11/2017
 ms.author: jeedes
-ms.openlocfilehash: 334e1efd805e484f686cab9e88ab594cee8a6229
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e81ff0f1d92fcf644287fd0cf417a245581bfeb7
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187374"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210940"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-soonr-workplace"></a>Руководство. Интеграция Azure Active Directory с Soonr Workplace
 
@@ -114,7 +115,7 @@ ms.locfileid: "55187374"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<servername>.soonr.com/singlesignon/saml/metadata`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<servername>.soonr.com/singlesignon/saml/SSO`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<servername>.soonr.com/singlesignon/saml/SSO`.
 
 1. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, то в разделе **Домены и URL-адреса приложения Soonr Workplace**:
     
@@ -122,10 +123,10 @@ ms.locfileid: "55187374"
 
     a. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<servername>.soonr.com/singlesignon/saml/SSO`.
+    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<servername>.soonr.com/singlesignon/saml/SSO`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса входа и ответа. Чтобы получить это значение, обратитесь в [службу поддержки Soonr Workplace](https://awp.autotask.net/help/).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса входа и ответа. Чтобы получить это значение, обратитесь в [службу поддержки Soonr Workplace](https://awp.autotask.net/help/).
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -149,7 +150,7 @@ ms.locfileid: "55187374"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -173,11 +174,11 @@ ms.locfileid: "55187374"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-soonr-workplace-test-user"></a>Создание тестового пользователя Soonr Workplace
 

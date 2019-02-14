@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: jeedes
-ms.openlocfilehash: c3e094fedae0a395df6862feceec0e60c66ee042
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 096f251c776f87a2ab119ce394aa4825e77ee65c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55196235"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56189588"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-the-funding-portal"></a>Руководство. Интеграция Azure Active Directory с The Funding Portal
+# <a name="tutorial-azure-active-directory-integration-with-the-funding-portal"></a>Руководство по Интеграция Azure Active Directory с The Funding Portal
 
 В этом руководстве описано, как интегрировать The Funding Portal с Azure Active Directory (Azure AD).
 
@@ -117,7 +118,7 @@ ms.locfileid: "55196235"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.regenteducation.net`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов The Funding Portal](mailto:info@regenteducation.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов The Funding Portal](mailto:info@regenteducation.com). 
 
 1. Приложение The Funding Portal ожидает, что утверждения SAML должны содержать атрибут externalId1. Значение externalId1 должно быть распознаваемым значением studentID. Настройте утверждение externalId1 для этого приложения. Управлять значениями этих атрибутов можно на вкладке **Атрибуты пользователя** приложения. На следующем снимке экрана приведен пример.
 
@@ -135,11 +136,11 @@ ms.locfileid: "55196235"
 
     ![Настройка единого входа](./media/thefundingportal-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение атрибута** выберите атрибут для реализации. Например, если значение studentID сохранено в ExtensionAttribute1, выберите атрибут user.extensionattribute1.
     
-    d. Нажмите кнопку **ОК**.
+    4.3. Нажмите кнопку **ОК**.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -156,7 +157,7 @@ ms.locfileid: "55196235"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -180,11 +181,11 @@ ms.locfileid: "55196235"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-the-funding-portal-test-user"></a>Создание тестового пользователя The Funding Portal
 

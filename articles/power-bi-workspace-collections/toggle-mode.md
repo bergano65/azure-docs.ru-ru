@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 9a12940f08a11b66a0d09937d5ab8fab7304734f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 892ea129a57e77c59f37b305b96b42aa85dba32b
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754342"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232713"
 ---
 # <a name="toggle-between-view-and-edit-mode-for-reports-in-power-bi-workspace-collections"></a>Переключение между режимами просмотра и правки отчетов в коллекциях рабочих областей Power BI
 
@@ -30,7 +30,7 @@ ms.locfileid: "55754342"
 > [!NOTE]
 > Это позволяет изменить существующий отчет и сохранить изменения. Если вам также требуется функция поддержки команды **Сохранить как**, необходимо предоставить дополнительные разрешения. Дополнительные сведения см. в разделе [Области](app-token-flow.md#scopes).
 
-```
+```csharp
 using Microsoft.PowerBI.Security;
 
 // rlsUsername and roles are optional
@@ -46,9 +46,10 @@ var token = embedToken.Generate("{access key}");
 
 Например, в JavaScript:
 
-```
+```html
    <div id="reportContainer"></div>
 
+    <script>
     // Get models. Models, it contains enums that can be used.
     var models = window['powerbi-client'].models;
 
@@ -74,6 +75,7 @@ var token = embedToken.Generate("{access key}");
 
     // Embed the report and display it within the div container.
     var report = powerbi.embed(reportContainer, config);
+    </script>
 ```
 
 Таким образом указывается внедрение отчета в режиме просмотра (параметру **viewMode** задается значение **models.ViewMode.View**).
@@ -82,7 +84,7 @@ var token = embedToken.Generate("{access key}");
 
 Если вы находитесь в режиме правки, то переключиться в режим просмотра можно с помощью следующего кода JavaScript:
 
-```
+```javascript
 // Get a reference to the embedded report HTML element
 var reportContainer = $('#reportContainer')[0];
 
@@ -98,7 +100,7 @@ report.switchMode("view");
 
 Если вы находитесь в режиме просмотра, то переключиться в режим правки можно с помощью следующего кода JavaScript:
 
-```
+```javascript
 // Get a reference to the embedded report HTML element
 var reportContainer = $('#reportContainer')[0];
 

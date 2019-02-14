@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 02/10/2019
 ms.author: juliako;johndeu
-ms.openlocfilehash: 7ea2a84daaa22e0fc7ff4dc90ca41dd906b808c8
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: e0011d36ccff7b9d621679f15776bbdb15d0cbe4
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159746"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005460"
 ---
-# <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа
+# <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа 
 [!INCLUDE [media-services-selector-setup](../../../includes/media-services-selector-setup.md)]
 
 **REST API операций Служб мультимедиа** позволяет создавать задания, ресурсы, динамические каналы и другие компоненты в учетной записи Служб мультимедиа. Дополнительные сведения см. в статье [Media Services Operations REST API Reference](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference) (Справочник по REST API операций служб мультимедиа).

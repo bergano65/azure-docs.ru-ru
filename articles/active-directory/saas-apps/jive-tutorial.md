@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 1f2b9d59e85593047feb8d243c7c874786864b4d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3f6155f348a8e5698c9c7792f45536c94f6ead81
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191641"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203953"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jive"></a>Руководство. Интеграция Azure Active Directory с Jive
 
@@ -142,7 +143,7 @@ ms.locfileid: "55191641"
 
     a. Скопируйте содержимое скачанного XML-файла с метаданными и вставьте его в текстовое поле **Identity Provider (IDP) Metadata** (Метаданные поставщика удостоверений).
 
-    b. Нажмите кнопку**Save all saml settings**(Сохранить все параметры SAML).
+    б) Нажмите кнопку**Save all saml settings**(Сохранить все параметры SAML).
 
 1. Перейдите на вкладку**User Attribute Mapping**(Сопоставление атрибутов пользователей).
 
@@ -150,12 +151,12 @@ ms.locfileid: "55191641"
 
     a. В текстовом поле **Email** (Электронная почта) скопируйте и вставьте имя атрибута значения **mail**.
 
-    b. В текстовом поле **First Name** (Имя) скопируйте и вставьте имя атрибута значения **givenname**.
+    б) В текстовом поле **First Name** (Имя) скопируйте и вставьте имя атрибута значения **givenname**.
 
     c. В текстовом поле **Last Name** (Фамилия) скопируйте и вставьте имя атрибута значения **surname**.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -179,11 +180,11 @@ ms.locfileid: "55191641"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-jive-test-user"></a>Создание тестового пользователя приложения Jive
 

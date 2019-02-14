@@ -3,21 +3,21 @@ title: Профилирование приложений в рабочей ср�
 description: Определите критический путь в коде веб-сервера с помощью профилировщика небольшого размера.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: cweining
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.reviewer: cawa
+ms.reviewer: mbullwin
 ms.date: 08/06/2018
-ms.author: mbullwin
-ms.openlocfilehash: 7f212d7dafb4aaf88fc226f702b068a3711f81b6
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.author: cweining
+ms.openlocfilehash: 2a2c2667ae3180fd4f7b114ce6cef05ac7a1080c
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359516"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55859731"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler
 ## <a name="enable-application-insights-profiler-for-your-application"></a>Включение Application Insights Profiler для приложений

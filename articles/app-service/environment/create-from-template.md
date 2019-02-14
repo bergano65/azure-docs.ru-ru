@@ -14,16 +14,19 @@ ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 9056abdd57640026d04779a3c5c3a201095ea045
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: bdf722ffa7a7c499ff256392886e0f229f27c7a5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53277477"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56109900"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Создание среды ASE с помощью шаблона Azure Resource Manager
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Среды службы приложений Azure (ASE) создаются с помощью конечной точки с доступом к Интернету или конечной точки с внутренним адресом в виртуальной сети Azure. Если при создании внутренней конечной точки эта конечная точка предоставляется компонентом Azure, она называется внутренним балансировщиком нагрузки. ASE с внутренним IP-адресом называется ASE с внутренним балансировщиком нагрузки. ASE с общедоступной конечной точкой называется внешним ASE. 
 
 ASE можно создать на портале Azure или с помощью шаблона Azure Resource Manager. В этой статье описаны действия и синтаксис, необходимые для создания внешнего ASE или ASE с внутренним балансировщиком нагрузки с помощью шаблонов Resource Manager. Дополнительные сведения о создании ASE на портале Azure см. в статьях [Создание внешней среды службы приложений][MakeExternalASE] или [Создание и использование внутренней подсистемы балансировки нагрузки со средой службы приложений][MakeILBASE].
@@ -60,7 +63,7 @@ ASE можно создать на портале Azure или с помощью
 $templatePath="PATH\azuredeploy.json"
 $parameterPath="PATH\azuredeploy.parameters.json"
 
-New-AzureRmResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
+New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
 ```
 
 Для создания ASE потребуется около часа. Созданная ASE появится на портале в списке сред службы приложений для подписки, использованной для развертывания.
@@ -146,7 +149,7 @@ $fileContentEncoded | set-content ($fileName + ".b64")
 $templatePath="PATH\azuredeploy.json"
 $parameterPath="PATH\azuredeploy.parameters.json"
 
-New-AzureRmResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
+New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
 ```
 
 Применение изменений для одного внешнего интерфейса ASE занимает примерно 40 минут. Например, для среды ASE с размером по умолчанию, содержащей два внешних интерфейса, реализация шаблона займет примерно один час и двадцать минут. Во время выполнения шаблона нельзя масштабировать среду ASE.  

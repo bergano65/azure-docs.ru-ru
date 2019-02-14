@@ -3,21 +3,21 @@ title: Устранение неполадок в Azure с помощью Applic
 description: В этой статье содержатся инструкции по устранению неполадок и сведения, помогающие разработчикам в решении проблем с включением или использованием Application Insights Profiler.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: cweining
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.reviewer: cawa
+ms.reviewer: mbullwin
 ms.date: 08/06/2018
-ms.author: mbullwin
-ms.openlocfilehash: 404fe07b5e3c1f4322ec683f37b08942abfd6fcc
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.author: cweining
+ms.openlocfilehash: b6a7fe2c12b2f1f5bcc0ba8cccd1a51ee39c4a6f
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54358853"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55882096"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Устранение неполадок по включению и просмотру Application Insights Profiler
 

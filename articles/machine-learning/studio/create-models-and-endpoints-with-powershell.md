@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 04/04/2017
-ms.openlocfilehash: 43d16c291391a3ffd94f404755e644dac0daf3a9
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 280538c16f5a464f759eca74cce8ff6a97bfa4b2
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492833"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244304"
 ---
 # <a name="use-powershell-to-create-studio-models-and-web-service-endpoints-from-one-experiment"></a>Создание моделей и конечных точек веб-службы из одного эксперимента с помощью PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "55492833"
 > 
 
 ## <a name="set-up-the-training-experiment"></a>настройка обучающего эксперимента
-[Обучающий эксперимент](https://gallery.cortanaintelligence.com/Experiment/Bike-Rental-Training-Experiment-1) для этого примера представлен в [Cortana Intelligence Gallery](http://gallery.cortanaintelligence.com). Откройте этот эксперимент в рабочей области [Студии машинного обучения Azure](https://studio.azureml.net) .
+[Обучающий эксперимент](https://gallery.azure.ai/Experiment/Bike-Rental-Training-Experiment-1) для этого примера представлен в [Cortana Intelligence Gallery](http://gallery.azure.ai). Откройте этот эксперимент в рабочей области [Студии машинного обучения Azure](https://studio.azureml.net) .
 
 > [!NOTE]
 > Для работы с этим примером рекомендуется использовать стандартную рабочую область, а не бесплатную. Вы создадите по одной конечной точке для каждого заказчика (всего 10 точек), поэтому вам потребуется стандартная рабочая область. Бесплатная рабочая область поддерживает только 3 конечные точки. Если у вас есть только бесплатная рабочая область, уменьшите число расположений в приведенных ниже скриптах до трех.
@@ -63,7 +63,7 @@ ms.locfileid: "55492833"
 Для этого нажмите под холстом кнопку **Set Up Web Service** (Настройка веб-службы) и выберите **Predictive Web Service** (Прогнозная веб-служба). При этом создается оценивающий эксперимент.
 Чтобы он работал как веб-служба, осталось внести лишь небольшие изменения. Удалите из входных данных столбец меток "cnt" и сократите выходные данных, оставив только идентификатор экземпляра и прогнозируемое значение.
 
-Чтобы не выполнять это самостоятельно, откройте уже подготовленный [прогнозный эксперимент](https://gallery.cortanaintelligence.com/Experiment/Bike-Rental-Predicative-Experiment-1) из коллекции.
+Чтобы не выполнять это самостоятельно, откройте уже подготовленный [прогнозный эксперимент](https://gallery.azure.ai/Experiment/Bike-Rental-Predicative-Experiment-1) из коллекции.
 
 Чтобы развернуть веб-службы, запустите прогнозный эксперимент, а затем щелкните **Deploy Web Service** (Развертывание веб-службы) внизу холста. Присвойте оценивающей веб-службе имя Bike Rental Scoring (Оценка для аренды велосипедов).
 

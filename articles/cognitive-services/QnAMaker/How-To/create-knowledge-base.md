@@ -4,19 +4,19 @@ titleSuffix: QnA Maker - Azure Cognitive Services
 description: Используйте портал QnA Maker, чтобы добавить или создать базу знаний с беседой. Ваше приложение станет более привлекательным. Добавьте в базу знаний заранее заданный набор самых интересных бесед. Он может стать основой для бесед бота, а также сэкономить время и затраты на их создание.
 services: cognitive-services
 author: tulasim88
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 12/11/2018
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: cb62be34f7f294bda83920f95c9f7c7bd63cfbda
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 4ba744c3d8cc3a785c04bbbb1b476a857859e244
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219691"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55876885"
 ---
 # <a name="quickstart-create-a-knowledge-base-using-the-qna-maker-portal"></a>Краткое руководство. Создание базы знаний с помощью портала QnA Maker
 

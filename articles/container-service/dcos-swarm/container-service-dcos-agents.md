@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/04/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: ee1a2a75d6a003a6bc53c5216dd01d379193ea77
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 03cacda1aa405cb2d0ded579c8ddb5f6011ce3bb
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994942"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113793"
 ---
 # <a name="deprecated-dcos-agent-pools-for-azure-container-service"></a>(УСТАРЕЛО) Пулы агентов DC/OS для службы контейнеров Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "52994942"
 
 * **Общедоступные агенты**. Общедоступные узлы агентов выполняют приложения и службы DC/OS в общедоступной сети. 
 
-Дополнительные сведения о сетевой безопасности DC/OS см. в [документации по DC/OS](https://dcos.io/docs/1.8/administration/securing-your-cluster/).
+Дополнительные сведения о сетевой безопасности DC/OS см. в [документации по DC/OS](https://docs.mesosphere.com/).
 
 ## <a name="deploy-agent-pools"></a>Развертывание пулов агента
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: b76b64ddf854b32c51b8b319479a35331e0f72f3
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b8f8d0a089a74334a908e3dad65c63231bbe5975
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52957441"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098941"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
 
@@ -83,7 +83,7 @@ ms.locfileid: "52957441"
 
 Если вы используете самозаверяющие сертификаты, вам потребуется отключить проверку цепочки сертификатов, чтобы служба управления API могла взаимодействовать с серверной системой. В противном случае будет возвращена ошибка с кодом 500. Для этого используйте командлеты PowerShell [`New-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/new-azurermapimanagementbackend) (для новой серверной части) или [`Set-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/set-azurermapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
 
-```
+```powershell
 $context = New-AzureRmApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'
 New-AzureRmApiManagementBackend -Context  $context -Url 'https://contoso.com/myapi' -Protocol http -SkipCertificateChainValidation $true
 ```

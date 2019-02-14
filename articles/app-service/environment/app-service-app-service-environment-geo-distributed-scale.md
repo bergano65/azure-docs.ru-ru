@@ -15,15 +15,18 @@ ms.topic: article
 ms.date: 09/07/2016
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: aa9eb0b624df29f6fb86402c06436ed7349fa662
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 2a2fafb5da50dbd26786284592cd330df7f5557a
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273873"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113708"
 ---
 # <a name="geo-distributed-scale-with-app-service-environments"></a>Географически распределенное масштабирование с использованием сред службы приложений
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 В некоторых сценариях для корректной работы приложения требуется значительно больше вычислительных ресурсов, чем может обеспечить один развернутый экземпляр. Как следствие, необходимо обеспечить высокий уровень масштабируемости.  К примерам таких сценариев относятся проведение голосования, организация спортивных событий и телевизионных трансляций. Высокого уровня масштабируемости можно добиться за счет горизонтального масштабирования, при котором несколько приложений развертываются в одном или нескольких регионах.
 
 Идеальной платформой для горизонтального масштабирования являются среды службы приложений.  После того как будет выбрана основная конфигурация сред службы приложений, поддерживающая определенную частоту запросов, разработчики могут при необходимости развернуть дополнительные среды службы приложений, чтобы обеспечить эффективную работу при пиковых нагрузках.
@@ -68,13 +71,13 @@ ms.locfileid: "53273873"
 
 После создания профиля каждый экземпляр приложения добавляется в профиль как собственная конечная точка Azure.  Приведенный ниже код получает ссылку на каждое интерфейсное веб-приложение, а затем добавляет каждое приложение как конечную точку диспетчера трафика с помощью параметра *TargetResourceId* .
 
-    $webapp1 = Get-AzureRMWebApp -Name webfrontend1
+    $webapp1 = Get-AzWebApp -Name webfrontend1
     Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend1 –TrafficManagerProfile $profile –Type AzureEndpoints -TargetResourceId $webapp1.Id –EndpointStatus Enabled –Weight 10
 
-    $webapp2 = Get-AzureRMWebApp -Name webfrontend2
+    $webapp2 = Get-AzWebApp -Name webfrontend2
     Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend2 –TrafficManagerProfile $profile –Type AzureEndpoints -TargetResourceId $webapp2.Id –EndpointStatus Enabled –Weight 10
 
-    $webapp3 = Get-AzureRMWebApp -Name webfrontend3
+    $webapp3 = Get-AzWebApp -Name webfrontend3
     Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend3 –TrafficManagerProfile $profile –Type AzureEndpoints -TargetResourceId $webapp3.Id –EndpointStatus Enabled –Weight 10
 
     Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile

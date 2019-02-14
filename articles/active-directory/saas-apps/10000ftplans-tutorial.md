@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: jeedes
-ms.openlocfilehash: a9cb621598c198780916929681ab76b199e6ebb3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bb6f0645f1a12566f05b5f44688e4f86ab1b9725
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170748"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56178266"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-10000ft-plans"></a>Руководство. Интеграция Azure Active Directory с 10,000ft Plans
 
@@ -114,7 +115,7 @@ ms.locfileid: "55170748"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://app.10000ft.com`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес `https://app.10000ft.com/saml/metadata`.
+    б) В текстовом поле **Идентификатор** введите URL-адрес `https://app.10000ft.com/saml/metadata`.
 
     > [!NOTE] 
     > Значение для **идентификатора** отличается, если у вас есть личный домен. Чтобы получить это значение, обратитесь в [службу поддержки 10,000ft Plans](https://www.10000ft.com/plans/support). 
@@ -137,7 +138,7 @@ ms.locfileid: "55170748"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -161,11 +162,11 @@ ms.locfileid: "55170748"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-10000ft-plans-test-user"></a>Создание тестового пользователя 10,000ft Plans
 

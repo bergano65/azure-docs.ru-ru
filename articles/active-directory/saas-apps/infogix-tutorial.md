@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Infogix Data3Sixty Govern | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Infogix Data3Sixty Govern.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: 5e9b805786346abd6dfe830c9ce6ae4cc341c9e7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1346ce0526a6b45b6bca0f15c2b5e71afc4ae381
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194276"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204645"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство. Интеграция Azure Active Directory с Infogix Data3Sixty Govern
+# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Infogix Data3Sixty Govern.
 
@@ -30,7 +31,7 @@ ms.locfileid: "55194276"
 
 - С помощью Azure AD вы можете контролировать доступ к Infogix Data3Sixty Govern.
 - Вы можете включить автоматический вход пользователей в Infogix Data3Sixty Govern (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55194276"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Infogix Data3Sixty Govern**, выберите **Infogix Data3Sixty Govern** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55194276"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения Infogix Data3Sixty Govern](#create-an-infogix-data3sixty-govern-test-user)** требуется для создания в Infogix Data3Sixty Govern пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55194276"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://data3sixty.com/ui`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.data3sixty.com/sso/acs`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.data3sixty.com/sso/acs`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -119,7 +120,7 @@ ms.locfileid: "55194276"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.data3sixty.com`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки Infogix Data3Sixty Govern](mailto:data3sixtysupport@infogix.com).
 
 1. Приложение Infogix Data3Sixty Govern ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
     
@@ -139,11 +140,11 @@ ms.locfileid: "55194276"
 
     ![Добавление атрибута для настройки единого входа](./media/infogix-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте пустым поле **Пространство имен**.
+    4.3. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -171,7 +172,7 @@ ms.locfileid: "55194276"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/infogix-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/infogix-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -191,7 +192,7 @@ ms.locfileid: "55194276"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-infogix-data3sixty-govern-test-user"></a>Создание тестового пользователя Infogix Data3Sixty Govern
 

@@ -17,20 +17,21 @@ ms.date: 01/25/2019
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: 4ee2f0387ee3c56dda7cd1a89f5c808f55699856
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 36a2fc9d1ab364d44bd5dd6e7930e5d8ae3fb78d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658629"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204752"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
 Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Существует три API, которые предоставляют информацию о пользователях и входах в систему, связанных с рискованными действиями. Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. Эта статья знакомит вас с [подключением к Microsoft Graph](#Connect-to-Microsoft-Graph) и [запросами к этим API-интерфейсам](#Query-the-APIs). Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/) или по следующим ссылкам на документацию по API-интерфейсам:
 
-* [API identityRiskEvents](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/identityriskevent)
-* [API riskyUsers](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/riskyuser)
-* [API signIn](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/signin)
+* [API identityRiskEvents](https://docs.microsoft.com/graph/api/resources/identityriskevent?view=graph-rest-beta)
+* [API riskyUsers](https://docs.microsoft.com/graph/api/resources/riskyuser?view=graph-rest-beta)
+* [API signIn](https://docs.microsoft.com/graph/api/resources/signin?view=graph-rest-beta)
 
 
 ## <a name="connect-to-microsoft-graph"></a>Подключение к Microsoft Graph
@@ -217,7 +218,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 ## <a name="query-the-apis"></a>Запросы к API-интерфейсам
 
-Эти три API-интерфейса предоставляют множество возможностей для получения информации о пользователях и входах в вашу организацию, связанных с рискованными действиями. Ниже приведены некоторые варианты использования этих API и связанные примеры запросов. Вы можете выполнить эти запросы, используя приведенный выше пример кода или [песочницу Graph](https://developer.microsoft.com/en-us/graph/graph-explorer).
+Эти три API-интерфейса предоставляют множество возможностей для получения информации о пользователях и входах в вашу организацию, связанных с рискованными действиями. Ниже приведены некоторые варианты использования этих API и связанные примеры запросов. Вы можете выполнить эти запросы, используя приведенный выше пример кода или [песочницу Graph](https://developer.microsoft.com/graph/graph-explorer).
 
 ### <a name="get-the-high-risk-and-medium-risk-events-identityriskevents-api"></a>Получение списка событий риска высокого и среднего уровня (API identityRiskEvents)
 
@@ -251,7 +252,7 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.
 
 
-Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/en-us/graph). 
+Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/graph). 
 
 
 Связанные сведения:

@@ -12,12 +12,13 @@ ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: lizross
 ms.reviewer: jairoc
-ms.openlocfilehash: 668d69921fd2001cd52bc864e5ee272d179a7bbc
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a7cd67a9a7027e8567e470acab006fd09748de54
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770475"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56181717"
 ---
 # <a name="potential-reasons-for-the-you-cant-get-there-from-here-error-message"></a>Возможные причины сообщения об отказе в доступе
 При попытке доступа к внутренним веб-приложениям или службам организации вы можете получить сообщение об **отказе в доступе**. Это сообщение означает, что организация применила политику, которая препятствует доступу вашего устройства к ресурсам организации. Хотя вам может понадобиться обратиться в службу поддержки, чтобы исправить эту проблему, можно попробовать сначала выполнить некоторые действия.

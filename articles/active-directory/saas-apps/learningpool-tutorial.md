@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Learningpool Act | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Learningpool Act | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Learningpool Act.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 1bb9990e966952123d763597018f5277f82064e7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9bd7dd3b2cc69770ea92f1ed1f442c49cf4140dd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174403"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56164555"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство. Интеграция Azure Active Directory с Learningpool Act
+# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство по Интеграция Azure Active Directory с Learningpool Act
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Learningpool Act.
 
@@ -114,14 +115,14 @@ ms.locfileid: "55174403"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<subdomain>.Learningpool.com/shibboleth` |
     | `https://<subdomain>.preview.Learningpool.com/shibboleth` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Learningpool Act](https://www.Learningpool.com/support). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Learningpool Act](https://www.Learningpool.com/support). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,11 +147,11 @@ ms.locfileid: "55174403"
 
     ![Настройка единого входа](./media/learningpool-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте пустым поле **Пространство имен**.
+    4.3. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -165,7 +166,7 @@ ms.locfileid: "55174403"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -189,11 +190,11 @@ ms.locfileid: "55174403"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-learningpool-act-test-user"></a>Создание тестового пользователя Learningpool Act
 

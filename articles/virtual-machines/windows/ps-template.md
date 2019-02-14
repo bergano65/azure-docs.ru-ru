@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d467310d45801edb68551696ca4b44ac0bef4d8f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 893ef999907c7f807fdf3a82b2372ece9c9a6a39
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421733"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112434"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Создание виртуальной машины Windows с использованием шаблона Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "54421733"
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.3 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.3 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -42,13 +42,13 @@ ms.locfileid: "54421733"
 1. Получите список доступных расположений, где можно создавать ресурсы.
    
     ```powershell   
-    Get-AzureRmLocation | sort-object DisplayName | Select DisplayName
+    Get-AzLocation | sort-object DisplayName | Select DisplayName
     ```
 
 2. Создайте группу ресурсов в выбранном расположении. В этом примере показано, как создать группу ресурсов с именем **myResourceGroup** в расположении **West US**.
 
     ```powershell   
-    New-AzureRmResourceGroup -Name "myResourceGroup" -Location "West US"
+    New-AzResourceGroup -Name "myResourceGroup" -Location "West US"
     ```
 
 ## <a name="create-the-files"></a>Создание файлов
@@ -177,8 +177,8 @@ ms.locfileid: "54421733"
 
     ```powershell
     $storageName = "st" + (Get-Random)
-    New-AzureRmStorageAccount -ResourceGroupName "myResourceGroup" -AccountName $storageName -Location "West US" -SkuName "Standard_LRS" -Kind Storage
-    $accountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName myResourceGroup -Name $storageName).Value[0]
+    New-AzStorageAccount -ResourceGroupName "myResourceGroup" -AccountName $storageName -Location "West US" -SkuName "Standard_LRS" -Kind Storage
+    $accountKey = (Get-AzStorageAccountKey -ResourceGroupName myResourceGroup -Name $storageName).Value[0]
     $context = New-AzureStorageContext -StorageAccountName $storageName -StorageAccountKey $accountKey 
     New-AzureStorageContainer -Name "templates" -Context $context -Permission Container
     ```
@@ -199,7 +199,7 @@ ms.locfileid: "54421733"
 ```powershell
 $templatePath = "https://" + $storageName + ".blob.core.windows.net/templates/CreateVMTemplate.json"
 $parametersPath = "https://" + $storageName + ".blob.core.windows.net/templates/Parameters.json"
-New-AzureRmResourceGroupDeployment -ResourceGroupName "myResourceGroup" -Name "myDeployment" -TemplateUri $templatePath -TemplateParameterUri $parametersPath 
+New-AzResourceGroupDeployment -ResourceGroupName "myResourceGroup" -Name "myDeployment" -TemplateUri $templatePath -TemplateParameterUri $parametersPath 
 ```
 
 > [!NOTE]

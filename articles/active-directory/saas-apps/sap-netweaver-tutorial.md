@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP NetWeaver.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 2a5817c428fb9ff87c2125427978c9c7ac3ff6bf
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 66ad6ea26535190d2fc5798e1223c2196d3d5a5d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54822338"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211144"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
 
@@ -28,22 +29,22 @@ ms.locfileid: "54822338"
 
 * С помощью Azure AD вы можете контролировать доступ к приложению SAP NetWeaver.
 * Вы можете включить автоматический вход пользователей в SAP NetWeaver (единый вход) с помощью учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SAP NetWeaver, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на SAP NetWeaver с поддержкой единого входа;
 * по меньшей мере SAP NetWeaver 7.20.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * SAP NetWeaver поддерживает инициированный единый вход **пакета обновления**.
 
@@ -55,7 +56,7 @@ ms.locfileid: "54822338"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -63,7 +64,7 @@ ms.locfileid: "54822338"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **SAP NetWeaver**, выберите **SAP NetWeaver** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -79,9 +80,9 @@ ms.locfileid: "54822338"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в SAP NetWeaver](#configure-sap-netweaver-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя SAP NetWeaver](#create-sap-netweaver-test-user)** требуется для создания пользователя Britta Simon в SAP NetWeaver, связанного с соответствующим пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -110,13 +111,13 @@ ms.locfileid: "54822338"
     >[!NOTE]
     > Настройте эти параметры в соответствии с требованиями вашей организации. Упомянутые выше параметры приведены здесь только для иллюстрации.
 
-    b. При необходимости настройте параметры в экземпляре / профиле по умолчанию системы SAP и перезапустите систему SAP.
+    б) При необходимости настройте параметры в экземпляре / профиле по умолчанию системы SAP и перезапустите систему SAP.
 
     c. Дважды щелкните соответствующего клиента, чтобы включить сеанс безопасности HTTP.
 
     ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_profileparameter.png)
 
-    d. Активируйте ниже службы SICF:
+    4.3. Активируйте ниже службы SICF:
     ```
     /sap/public/bc/sec/saml2
     /sap/public/bc/sec/cdc_ext_service
@@ -144,7 +145,7 @@ ms.locfileid: "54822338"
 
     a. Перейдите на вкладку **Локальный поставщик**.
 
-    b. Щелкните **Метаданные**.
+    б) Щелкните **Метаданные**.
 
     c. Сохраните созданный **файл XML метаданных** на компьютере и передайте его в раздел **Базовая конфигурация SAML**, чтобы автоматически заполнить значения **Идентификатор** и **URL-адрес ответа** на портале Azure.
 
@@ -166,7 +167,7 @@ ms.locfileid: "54822338"
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
-    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Выбор файла метаданных](common/browse-upload-metadata.png)
 
@@ -188,11 +189,11 @@ ms.locfileid: "54822338"
 
     ![изображение](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
-    b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
+    б) Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 
     c. Из списка **Параметр 1** выберите **user.userprinicipalname**.
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
 14. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -202,11 +203,11 @@ ms.locfileid: "54822338"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    a. URL-адрес входа.
+    а) URL-адрес входа.
 
-    b. Идентификатор Azure AD.
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
 ### <a name="configure-sap-netweaver-single-sign-on"></a>Настройка единого входа SAP NetWeaver
 
@@ -268,7 +269,7 @@ ms.locfileid: "54822338"
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/nameiddetails.png)
 
-    b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
+    б) Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad1.png)
 
@@ -278,7 +279,7 @@ ms.locfileid: "54822338"
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameiddetails1.png)
 
-    b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
+    б) Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad2.png)
 
@@ -292,9 +293,9 @@ ms.locfileid: "54822338"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -302,18 +303,18 @@ ms.locfileid: "54822338"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

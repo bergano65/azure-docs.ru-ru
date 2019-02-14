@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2018
 ms.author: jeedes
-ms.openlocfilehash: ace619e5eba8d5f1b4f1740f2c88fbce7bc83790
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ae9481f6d8b4b54bd90ad0dd54a29b43c9e20531
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150521"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184093"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdpartytrust"></a>Руководство. Интеграция Azure Active Directory с ThirdPartyTrust
 
@@ -30,7 +31,7 @@ ms.locfileid: "55150521"
 
 - C помощью Azure AD вы можете контролировать доступ к ThirdPartyTrust.
 - Вы можете включить автоматический вход пользователей в ThirdPartyTrust (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55150521"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **ThirdPartyTrust**, выберите **ThirdPartyTrust** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55150521"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя ThirdPartyTrust](#create-a-thirdpartytrust-test-user)** требуется для того, чтобы в ThirdPartyTrust существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -139,7 +140,7 @@ ms.locfileid: "55150521"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/thirdpartytrust-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/thirdpartytrust-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -159,7 +160,7 @@ ms.locfileid: "55150521"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-thirdpartytrust-test-user"></a>Создание тестового пользователя ThirdPartyTrust
 

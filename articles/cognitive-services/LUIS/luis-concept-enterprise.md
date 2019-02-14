@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Принципы разработки больших приложений LUIS или нескольких приложений, использующих LUIS и QnA Maker.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: d757ea45ab1aec3d9babd5f7cf570d73257bfd40
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 27217b1bdf49f5d2b22ac23a092270be42df9abf
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55223074"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55861041"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Корпоративные стратегии для разработки приложения LUIS
 Ознакомьтесь с этими стратегиями разработки корпоративных приложений.

@@ -10,14 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2018
+ms.date: 02/11/2019
 ms.author: spelluru
-ms.openlocfilehash: 47f3e8ab14ecd50e958c57ba4c8f9f098fd5bb7b
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.reviewer: christianreddington,anthdela,juselph
+ms.openlocfilehash: 7832691812d8f10342dc7df20a7cfab7265f2d9d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52868367"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243524"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение
 Затраты и владение являются основными сложностями при создании собственных сред разработки и тестирования. В этом разделе приведены сведения, которые помогут оптимизировать затраты и согласовать владельца в средах.

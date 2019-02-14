@@ -11,13 +11,13 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 24feef28edac73f625de1c1b7dfd9a4aaf9883af
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/07/2019
+ms.openlocfilehash: f6874b1d97c36d22e60606ad8c8a356baec53b85
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734629"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893602"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -65,14 +65,14 @@ ms.locfileid: "55734629"
 
 | Мониторинг телеметрии для баз данных | Поддержка отдельной базы данных и базы данных в составе пула | Поддержка Управляемого экземпляра |
 | :------------------- | ------------------- | ------------------- |
-| [Все метрики.](sql-database-metrics-diag-logging.md#all-metrics) Сведения о проценте использования DTU и ЦП, ограничении DTU и ЦП, проценте чтения физических данных, проценте записей в журнал, проценте успешных, неудачных или заблокированных подключений брандмауэра, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища и проценте хранилища XTP. | Yes | Нет  |
-| [QueryStoreRuntimeStatistics.](sql-database-metrics-diag-logging.md#query-store-runtime-statistics) Сведения о статистике выполнения запросов, такие как данные об использовании ЦП и длительность запросов. | Yes | Yes |
-| [QueryStoreWaitStatistics.](sql-database-metrics-diag-logging.md#query-store-wait-statistics) Сведения о статистике ожидания (чего ожидали запросы), например CPU (ЦП), LOG (журнал) и LOCKING (блокировка). | Yes | Yes |
-| [Ошибки.](sql-database-metrics-diag-logging.md#errors-dataset) Сведения об ошибках SQL в базе данных. | Yes | Yes |
-| [DatabaseWaitStatistics.](sql-database-metrics-diag-logging.md#database-wait-statistics-dataset) Содержит статистику по значениям времени ожидания различных типов для базы данных. | Yes | Нет  |
-| [Время ожидания.](sql-database-metrics-diag-logging.md#time-outs-dataset) Содержит сведения о превышении времени ожидания в базе данных. | Yes | Нет  |
-| [Блоки.](sql-database-metrics-diag-logging.md#blockings-dataset) Содержит сведения о событиях блокировки в базе данных. | Yes | Нет  |
-| [SQLInsights.](sql-database-metrics-diag-logging.md#intelligent-insights-dataset) Содержит сведения Intelligent Insights о производительности. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Yes | Yes |
+| [Все метрики.](#all-metrics) Сведения о проценте использования DTU и ЦП, ограничении DTU и ЦП, проценте чтения физических данных, проценте записей в журнал, проценте успешных, неудачных или заблокированных подключений брандмауэра, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища и проценте хранилища XTP. | Yes | Нет  |
+| [QueryStoreRuntimeStatistics.](#query-store-runtime-statistics) Сведения о статистике выполнения запросов, такие как данные об использовании ЦП и длительность запросов. | Yes | Yes |
+| [QueryStoreWaitStatistics.](#query-store-wait-statistics) Сведения о статистике ожидания (чего ожидали запросы), например CPU (ЦП), LOG (журнал) и LOCKING (блокировка). | Yes | Yes |
+| [Ошибки.](#errors-dataset) Сведения об ошибках SQL в базе данных. | Yes | Yes |
+| [DatabaseWaitStatistics.](#database-wait-statistics-dataset) Содержит статистику по значениям времени ожидания различных типов для базы данных. | Yes | Нет  |
+| [Время ожидания.](#time-outs-dataset) Содержит сведения о превышении времени ожидания в базе данных. | Yes | Нет  |
+| [Блоки.](#blockings-dataset) Содержит сведения о событиях блокировки в базе данных. | Yes | Нет  |
+| [SQLInsights.](#intelligent-insights-dataset) Содержит сведения Intelligent Insights о производительности. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Yes | Yes |
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -169,7 +169,7 @@ ms.locfileid: "55734629"
 
 | Ресурс | Мониторинг телеметрии |
 | :------------------- | ------------------- |
-| **Управляемый экземпляр** | [ResourceUsageStats](sql-database-metrics-diag-logging.md#logs-for-managed-instance) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
+| **Управляемый экземпляр** | [ResourceUsageStats](#logs-for-managed-instances) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
 
 Чтобы включить потоковую передачу диагностических данных телеметрии для ресурса управляемого экземпляра, сделайте следующее:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Marketo | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Marketo | Документация Майкрософт
 description: Узнайте, как настроить единый вход в Marketo через Azure Active Directory.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/09/2017
 ms.author: jeedes
-ms.openlocfilehash: dbdf66c71bf007b27751191d3818f8002a8c2614
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: abab9f6e38fcf69dcb04bfea0f84d883dc5267b7
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172567"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199669"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство. Интеграция Azure Active Directory с Marketo
 
@@ -114,10 +115,10 @@ ms.locfileid: "55172567"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://saml.marketo.com/sp`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://login.marketo.com/saml/assertion/\<munchkinid\>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://login.marketo.com/saml/assertion/\<munchkinid\>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Marketo](http://investors.marketo.com/contactus.cfm).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Marketo](http://investors.marketo.com/contactus.cfm).
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -135,7 +136,7 @@ ms.locfileid: "55172567"
    
     a. Войдите в приложение Marketo, используя учетные данные администратора.
    
-    b. Нажмите кнопку **Администратор** в области навигации вверху.
+    б) Нажмите кнопку **Администратор** в области навигации вверху.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
@@ -143,7 +144,7 @@ ms.locfileid: "55172567"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_11.png)
    
-    d. Скопируйте идентификатор Munchkin, показанный на экране, и введите URL-адрес ответа в мастере настройки Azure AD.
+    4.3. Скопируйте идентификатор Munchkin, показанный на экране, и введите URL-адрес ответа в мастере настройки Azure AD.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_12.png) 
 
@@ -151,7 +152,7 @@ ms.locfileid: "55172567"
    
     a. Войдите в приложение Marketo, используя учетные данные администратора.
    
-    b. Нажмите кнопку **Администратор** в области навигации вверху.
+    б) Нажмите кнопку **Администратор** в области навигации вверху.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
@@ -159,7 +160,7 @@ ms.locfileid: "55172567"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_07.png) 
    
-    d. Чтобы включить параметры SAML, нажмите кнопку **Изменить**.
+    4.3. Чтобы включить параметры SAML, нажмите кнопку **Изменить**.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_08.png) 
    
@@ -192,7 +193,7 @@ ms.locfileid: "55172567"
    
     a. Войдите в приложение Marketo, используя учетные данные администратора.
    
-    b. Нажмите кнопку **Администратор** в области навигации вверху.
+    б) Нажмите кнопку **Администратор** в области навигации вверху.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_06.png) 
    
@@ -200,7 +201,7 @@ ms.locfileid: "55172567"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_13.png)
    
-    d. Установите флажок **Требовать единый вход** и **сохраните** параметры.
+    4.3. Установите флажок **Требовать единый вход** и **сохраните** параметры.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_14.png)
 
@@ -209,7 +210,7 @@ ms.locfileid: "55172567"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -233,11 +234,11 @@ ms.locfileid: "55172567"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-marketo-test-user"></a>Создание тестового пользователя Marketo
 
@@ -263,11 +264,11 @@ ms.locfileid: "55172567"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_16.png)
    
-    b. Введите **имя** .
+    б) Введите **имя** .
    
     c. Введите **фамилию**.
    
-    d. Щелкните **Далее**
+    4.3. Щелкните **Далее**
 
 1. На вкладке **Разрешения** выберите **роли пользователя** и нажмите кнопку **Далее**.
    

@@ -14,16 +14,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 34b70b1a6a77a20a034a7822d9c4961c36cdd51c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 2e30f3bb40e23e5b0b1951759bdff3a9f02cc9d5
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55663967"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236069"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
-
-## <a name="overview"></a>Обзор
 
 Desired State Configuration (DSC) — это платформа, которая позволяет управлять инфраструктурой ИТ и разработки, используя конфигурацию как код.
 
@@ -36,11 +34,13 @@ Desired State Configuration (DSC) — это платформа, которая 
 - установка пользовательских модулей DSC на виртуальную машину Linux (Install ExtensionAction);
 - удаление пользовательских модулей DSC с виртуальной машины Linux (Remove ExtensionAction).
 
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
+Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
 | Дистрибутив | Version (версия) |
 |---|---|
@@ -366,7 +366,7 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
 Вы можете войти в учетную запись Azure (режим Azure Resource Manager) с помощью команды:
 
 ```powershell>
-Login-AzureRmAccount
+Login-AzAccount
 ```
 
 Дополнительную информацию об использовании Azure PowerShell с Azure Resource Manager см. [**здесь**](../../azure-resource-manager/powershell-azure-resource-manager.md).
@@ -398,7 +398,7 @@ $publicConfig = '{
 ```
 
 ```
-Set-AzureRmVMExtension -ResourceGroupName $rgName -VMName $vmName -Location $location `
+Set-AzVMExtension -ResourceGroupName $rgName -VMName $vmName -Location $location `
   -Name $extensionName -Publisher $publisher -ExtensionType $extensionName `
   -TypeHandlerVersion $version -SettingString $publicConfig -ProtectedSettingString $privateConfig
 ```

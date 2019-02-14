@@ -3,8 +3,8 @@ title: Устранение неполадок, связанных с расши
 description: Как применить групповую политику для развертывания надстройки Internet Explorer для работы с порталом «Мои приложения».
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.devlang: na
@@ -12,15 +12,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/11/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cfff06c193ea4dd77c40201a59673428e60b9fac
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ace2482e51454458977452f0aa610dd43a94e8a7
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188768"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211195"
 ---
 # <a name="troubleshooting-the-access-panel-extension-for-internet-explorer"></a>Устранение неполадок, связанных с расширением панели доступа для Internet Explorer
 Эта статья поможет устранить следующие проблемы.

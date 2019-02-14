@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: fa46db38511f54b0ddae2b9897c6c821abc42dc9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cfb4c84c5ed621d9dc3bc0becbad102f889dff97
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180795"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168635"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thoughtworks-mingle"></a>Руководство. Интеграция Azure Active Directory с Thoughtworks Mingle
 
@@ -70,7 +71,7 @@ ms.locfileid: "55180795"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Thoughtworks Mingle**, выберите **Thoughtworks Mingle** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "55180795"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Thoughtworks Mingle](#create-a-thoughtworks-mingle-test-user)** требуется для того, чтобы в Thoughtworks Mingle существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -134,7 +135,7 @@ ms.locfileid: "55180795"
     
     a. Чтобы отправить файл метаданных, нажмите кнопку **Выбрать файл**. 
 
-    b. Нажмите кнопку **Сохранить изменения**.
+    б) Нажмите кнопку **Сохранить изменения**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -149,7 +150,7 @@ ms.locfileid: "55180795"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/thoughtworks-mingle-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/thoughtworks-mingle-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -165,11 +166,11 @@ ms.locfileid: "55180795"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-thoughtworks-mingle-test-user"></a>Создание тестового пользователя Thoughtworks Mingle
 
@@ -197,7 +198,7 @@ ms.locfileid: "55180795"
  
     a. Введите в текстовые поля **Sign-in name** (Учетное имя), **Display name** (Отображаемое имя), **Choose password** (Выберите пароль) и **Confirm password** (Подтвердите пароль) соответствующие данные действующей учетной записи Azure AD, которую вы хотите подготовить. 
 
-    b. В поле **User type** (Тип пользователя) выберите значение **Full user** (С полным доступом).
+    б) В поле **User type** (Тип пользователя) выберите значение **Full user** (С полным доступом).
 
     c. Щелкните **Создать этот профиль**.
 

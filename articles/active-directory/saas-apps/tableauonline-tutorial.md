@@ -1,5 +1,5 @@
 ---
-title: Руководство. по интеграции Azure Active Directory с Tableau Online | Документация Майкрософт
+title: Руководство по по интеграции Azure Active Directory с Tableau Online | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Tableau Online.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 6849787d0051d40e77b952da77eb61a7c7372751
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: eee7adb7c4c0efc8a455d8dc74bc723644d006f3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55186932"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56169027"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство. по интеграции Azure Active Directory с Tableau Online
 
@@ -114,7 +115,7 @@ ms.locfileid: "55186932"
     
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid> `.
+    б) В текстовом поле **Идентификатор** введите URL-адрес `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid> `.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -140,7 +141,7 @@ ms.locfileid: "55186932"
   
     a. Перейдите на страницу интеграции с приложением **Tableau Online** портала Azure.
     
-    b. В разделе атрибутов установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты. 
+    б) В разделе атрибутов установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты. 
     
    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection.png)
       
@@ -148,7 +149,7 @@ ms.locfileid: "55186932"
 
    ![единого входа Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_10.png)
     
-    d. Щелкните значение **user.givenname**. 
+    4.3. Щелкните значение **user.givenname**. 
     
     д. Скопируйте значение из текстового поля **Пространство имен**.
 
@@ -164,7 +165,7 @@ ms.locfileid: "55186932"
    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_14.png)
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -188,11 +189,11 @@ ms.locfileid: "55186932"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-tableau-online-test-user"></a>Создание тестового пользователя Tableau Online
 

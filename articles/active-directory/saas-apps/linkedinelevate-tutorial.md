@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 0bff0e4b6f8da54ed1c9c18a6e989d13500b615c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6ca8e537f261b59fb4e069d47d24e21abbdeca46
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168980"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202016"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство. Интеграция Azure Active Directory с LinkedIn Elevate
+# <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Elevate
 
 В этом руководстве описано, как интегрировать приложение LinkedIn Elevate с Azure Active Directory (Azure AD).
 
@@ -31,7 +32,7 @@ ms.locfileid: "55168980"
 - Вы можете включить автоматический вход пользователей в LinkedIn Elevate (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -121,7 +122,7 @@ ms.locfileid: "55168980"
 
     a. В текстовом поле **Идентификатор** введите **идентификатор сущности**, скопированный с портала LinkedIn. 
 
-    b. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
+    б) В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
 
 1. Если вы хотите настроить единый вход в режиме, **инициированном поставщиком услуг**, то установите флажок "Показать дополнительные параметры URL-адресов" в разделе настроек и настройте URL-адрес входа в таком формате:
 
@@ -145,7 +146,7 @@ ms.locfileid: "55168980"
 
       ![Создание тестового пользователя Azure AD](./media/linkedinelevate-tutorial/adduserattribute.png)
 
-      b. Нажмите кнопку **ОК**, чтобы сохранить атрибут.
+      б) Нажмите кнопку **ОК**, чтобы сохранить атрибут.
 
       c. Измените имя атрибута **emailaddress** на **email**.
 
@@ -190,11 +191,11 @@ ms.locfileid: "55168980"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-linkedin-elevate-test-user"></a>Создание тестового пользователя LinkedIn Elevate
 

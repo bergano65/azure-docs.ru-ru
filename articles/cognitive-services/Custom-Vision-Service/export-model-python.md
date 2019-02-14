@@ -4,20 +4,20 @@ titlesuffix: Azure Cognitive Services
 description: Запуск модели TensorFlow в среде Python.
 services: cognitive-services
 author: areddish
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 05/17/2018
 ms.author: areddish
-ms.openlocfilehash: 8b86214513d12655958038037abf486a6a1a4d88
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: b0f437ab42de89358af5901349100bc32aa7c2d6
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55209610"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55872600"
 ---
-# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство. Запуск модели TensorFlow в среде Python
+# <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по Запуск модели TensorFlow в среде Python
 
 После того, как вы [экспортировали модель TensorFlow](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model) из Пользовательской службы визуального распознавания, с помощью этого краткого руководства вы сможете узнать, как использовать эту модель локально для классификации изображений.
 

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: jeedes
-ms.openlocfilehash: 09d0c92703c13baba2555245f7c71a3d48b4ee9d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b61aece1b569e0e1022b9d239f2fe55a75c766d7
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174981"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56161760"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство. Интеграция Azure Active Directory с Infor CloudSuite
 
@@ -30,7 +31,7 @@ ms.locfileid: "55174981"
 
 - С помощью Azure AD вы можете контролировать доступ к Infor CloudSuite.
 - Вы можете включить автоматический вход пользователей в Infor CloudSuite (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55174981"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Infor CloudSuite**, выберите **Infor CloudSuite** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -124,7 +125,7 @@ ms.locfileid: "55174981"
     | `http://mingle-sso.se2.inforcloudsuite.com`|
     | |
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
 
     | | |
     |-|-|
@@ -134,7 +135,7 @@ ms.locfileid: "55174981"
     | `https://mingle-sso.eu1.inforcloudsuite.com:443/sp/ACS.saml2`|
     | |
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения Infor CloudSuite](./media/inforcloudsuite-tutorial/tutorial-inforcloudsuite-url2.png)
 
@@ -158,9 +159,9 @@ ms.locfileid: "55174981"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

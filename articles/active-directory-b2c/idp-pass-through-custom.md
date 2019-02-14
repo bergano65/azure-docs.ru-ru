@@ -10,20 +10,17 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: b291c8e15b771163d7986f78695bc74ef3084162
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: f21f835ea50563497b73fb6e4505f60411029406
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150807"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55883004"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
 > [!NOTE]
 > Эта функция сейчас доступна в виде общедоступной предварительной версии.
-
-> [!Important]
-> Эта предварительная версия функции временно недоступна.
 
 [Пользовательская политика](active-directory-b2c-get-started-custom.md) в Azure Active Directory (Azure AD) B2C предоставляет пользователям вашего приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C. 
 

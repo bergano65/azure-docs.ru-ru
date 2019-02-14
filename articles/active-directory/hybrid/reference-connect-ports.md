@@ -15,12 +15,13 @@ ms.topic: reference
 ms.date: 08/02/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: b9384ae328bf4c1e155d559e888931a7155aff26
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 48d2ef0de9ae59e63cd9957200c46c788e2d785f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55485999"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184094"
 ---
 # <a name="hybrid-identity-required-ports-and-protocols"></a>Порты и протоколы, необходимые для гибридной идентификации
 Следующий документ представляет собой технический справочник по портам и протоколам, которые необходимы для реализации решения для гибридной идентификации. Используйте приведенный ниже рисунок и соответствующую таблицу.

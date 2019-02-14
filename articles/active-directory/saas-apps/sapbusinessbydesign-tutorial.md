@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP Business ByDesign | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP Business ByDesign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Business ByDesign.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/25/2017
 ms.author: jeedes
-ms.openlocfilehash: 62a448c5a0994dc549d06808c6ece520eabefc3e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9846fe8078403d064f226c121383fc191397d321
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55193324"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201879"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-business-bydesign"></a>Руководство. Интеграция Azure Active Directory с SAP Business ByDesign
 
@@ -70,7 +71,7 @@ ms.locfileid: "55193324"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **SAP Business ByDesign**, выберите **SAP Business ByDesign** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55193324"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя SAP Business ByDesign](#create-an-sap-business-bydesign-test-user)** требуется для того, чтобы в SAP Business ByDesign существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -115,7 +116,7 @@ ms.locfileid: "55193324"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<servername>.sapbydesign.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SAP Business ByDesign](https://www.sap.com/products/cloud-analytics.support.html).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SAP Business ByDesign](https://www.sap.com/products/cloud-analytics.support.html).
 
 1. В разделе **Атрибуты пользователя** выполните следующие действия.
 
@@ -123,7 +124,7 @@ ms.locfileid: "55193324"
     
     a. Из списка **Идентификатор пользователя** выберите функцию **ExtractMailPrefix**.
     
-    b. В списке **Почта** выберите атрибут пользователя, который вы хотите использовать в своей реализации. Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.     
+    б) В списке **Почта** выберите атрибут пользователя, который вы хотите использовать в своей реализации. Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.     
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -141,13 +142,13 @@ ms.locfileid: "55193324"
    
     a. Войдите на портал SAP Business ByDesign с правами администратора.
    
-    b. Перейдите к элементу **Application and User Management Common Task** (Общие задачи управления приложением и пользователем) и откройте вкладку **Identity Provider** (Поставщик удостоверений).
+    б) Перейдите к элементу **Application and User Management Common Task** (Общие задачи управления приложением и пользователем) и откройте вкладку **Identity Provider** (Поставщик удостоверений).
    
     c. Щелкните **New Identity Provider** (Новый поставщик удостоверений) и выберите XML-файл метаданных, скачанный с портала Azure. Импортируя метаданные, система автоматически отправляет требуемые сертификаты подписи и шифрования.
    
     ![Настройка единого входа](./media/sapbusinessbydesign-tutorial/tutorial_sapbusinessbydesign_54.png)
    
-    d. Чтобы включить **URL-адрес службы обработчика утверждений** в запрос SAML, выберите **Include Assertion Consumer Service URL** (Включить URL-адрес службы обработчика утверждений).
+    4.3. Чтобы включить **URL-адрес службы обработчика утверждений** в запрос SAML, выберите **Include Assertion Consumer Service URL** (Включить URL-адрес службы обработчика утверждений).
    
     д. Щелкните **Activate Single Sign-On**(Активировать единый вход).
    
@@ -194,7 +195,7 @@ ms.locfileid: "55193324"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/sapbusinessbydesign-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/sapbusinessbydesign-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -214,7 +215,7 @@ ms.locfileid: "55193324"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-sap-business-bydesign-test-user"></a>Создание тестового пользователя SAP Business ByDesign
 

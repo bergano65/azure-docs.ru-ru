@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 8a4e901e-9656-4a60-90d0-d78ff2f00656
 ms.topic: conceptual
 ms.date: 05/04/2017
-ms.openlocfilehash: 4b4fa05164db402122efc745302dffe8c130b97b
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 2d1f5cc4883ce17da76eea815b42833b84031549
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048074"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56231830"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-powershell"></a>Начало работы с Azure Data Lake Analytics с помощью Azure PowerShell
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -22,6 +22,8 @@ ms.locfileid: "43048074"
 Узнайте, как использовать Azure PowerShell для создания учетных записей Azure Data Lake Analytics, а затем отправлять и выполнять задания U-SQL. Дополнительные сведения о Data Lake Analytics см. в [обзоре Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Перед началом работы с этим руководством необходимо иметь следующую информацию:
 
@@ -35,13 +37,13 @@ ms.locfileid: "43048074"
 Вход в систему с использованием имени подписки:
 
 ```
-Connect-AzureRmAccount -SubscriptionName "ContosoSubscription"
+Connect-AzAccount -SubscriptionName "ContosoSubscription"
 ```
 
 Вместо имени подписки для входа можно использовать ее идентификатор:
 
 ```
-Connect-AzureRmAccount -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+Connect-AzAccount -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
 При успешном выполнении этой команды выходные данные будут выглядеть так:

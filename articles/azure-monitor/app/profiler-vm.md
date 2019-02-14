@@ -3,21 +3,21 @@ title: Профилирование веб-приложений, работаю�
 description: Профилируйте веб-приложения на виртуальной машине Azure с использованием Application Insights Profiler.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: cweining
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.reviewer: cawa
+ms.reviewer: mbullwin
 ms.date: 08/06/2018
-ms.author: mbullwin
-ms.openlocfilehash: 4dfe4140fbc4238af014d838d31aae167cdd1c16
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.author: cweining
+ms.openlocfilehash: 01d57a10189f9281736e628a83465c96d282af70
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438768"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55860156"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
@@ -75,7 +75,7 @@ ms.locfileid: "54438768"
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   b. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   б) Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"

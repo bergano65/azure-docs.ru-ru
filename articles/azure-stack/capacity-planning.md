@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: prchint
 ms.lastreviewed: 09/18/2018
-ms.openlocfilehash: 10a333e8521c781a223c767660ae6acaa1286929
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b8bd57953845278aa75e8cbdf41ae28300edad58
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251832"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56184913"
 ---
 # <a name="azure-stack-capacity-planning"></a>Планирование емкости для Azure Stack
 При оценке решения Azure Stack необходимо выбрать конфигурацию оборудования, которая непосредственно влияет на общую емкость облака Azure Stack. Можно выбирать среди классических вариантов ЦП, плотности памяти, конфигурации хранилища и общего масштаба решения или числа серверов. В отличие от традиционных решений виртуализации, простой подсчет этих компонентов для определения емкости не сработает. Первая причина в том, что решение Azure Stack спроектировано для размещения компонентов инфраструктуры и управления в пределах самого решения. Вторая причина в том, что часть ресурсов решений резервируется для поддержки устойчивости. Устойчивость — это обновление программного обеспечения, при котором перерыв в рабочих нагрузках клиентов сводится к минимуму.

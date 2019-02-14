@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с vxMaintain | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с vxMaintain | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и vxMaintain.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: d4dba956ecd88683b124d4faf997a5fde6603727
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1d0e8f8526d866c308be8684546397f282dcce51
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55184787"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56194110"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Руководство. Интеграция Azure Active Directory с vxMaintain
 
@@ -63,7 +64,7 @@ ms.locfileid: "55184787"
 
 1. На [портале Azure](https://portal.azure.com) в области слева нажмите кнопку **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 1. Щелкните **Корпоративные приложения** > **Все приложения**.
 
@@ -108,7 +109,7 @@ ms.locfileid: "55184787"
 
     a. В поле **Идентификатор** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com`.
 
-    b. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
+    б) В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
 
     > [!NOTE] 
     > Приведенные выше значения используются только для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact).
@@ -153,11 +154,11 @@ ms.locfileid: "55184787"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    б) В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, созданное в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-vxmaintain-test-user"></a>Создание тестового пользователя vxMaintain
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 32b72444c620b542262db322c5af94e69c49521e
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: bfc80318eb43992e292159a0cd99a9b2f4a3c041
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048679"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233108"
 ---
 # <a name="interact-with-power-bi-reports-using-the-javascript-api"></a>Взаимодействие с отчетами Power BI с помощью интерфейса API JavaScript
 
@@ -63,7 +63,7 @@ ms.locfileid: "43048679"
 #### <a name="basic-filters"></a>Базовые фильтры
 Базовый фильтр размещается на уровне столбца или иерархии и содержит ряд значений, которые нужно добавить или исключить.
 
-```
+```typescript
 const basicFilter: pbi.models.IBasicFilter = {
   $schema: "http://powerbi.com/product/schema#basic",
   target: {
@@ -78,7 +78,7 @@ const basicFilter: pbi.models.IBasicFilter = {
 #### <a name="advanced-filters"></a>Расширенные фильтры
 Расширенные фильтры используют логические операторы И и ИЛИ и могут принимать одно или два условия, в каждом из которых есть свой оператор и значение. Поддерживаются такие условия:
 
-* None
+* Нет
 * LessThan;
 * LessThanOrEqual;
 * GreaterThan
@@ -92,7 +92,7 @@ const basicFilter: pbi.models.IBasicFilter = {
 * IsBlank;
 * IsNotBlank.
 
-```
+```typescript
 const advancedFilter: pbi.models.IAdvancedFilter = {
   $schema: "http://powerbi.com/product/schema#advanced",
   target: {

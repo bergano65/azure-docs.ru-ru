@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Следуйте этому руководству по настройке учетных записей хранения и учетной записи пакетной службы Azure, необходимых для работы с акустикой.
 services: cognitive-services
 author: ashtat
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: kegodin
-ms.openlocfilehash: 638ea3e707352a95cb1fb407add365a83d11faa7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: b8735c0c5d05f2ee4bd17dc41fc90d1f5aa5128a
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55148648"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55876697"
 ---
 # <a name="create-an-azure-batch-account"></a>Создание учетной записи пакетной службы Azure
 Следуйте этому руководству по настройке учетных записей хранения и учетной записи пакетной службы Azure, необходимых для работы с акустикой. Сведения о подключаемом модуле Unity, который разработан как часть Project Acoustics, см. в [этой статье](what-is-acoustics.md). Сведения о том, как внедрить акустику в проект Unity, см. в разделе по [началу работы](getting-started.md).  

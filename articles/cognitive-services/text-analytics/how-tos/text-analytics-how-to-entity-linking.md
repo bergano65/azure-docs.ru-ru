@@ -3,19 +3,19 @@ title: Использование распознавания сущностей 
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как извлечь сущности, используя REST API анализа текста.
 services: cognitive-services
-author: ashmaka
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 10/01/2018
-ms.author: ashmaka
-ms.openlocfilehash: 3f56bd4efafe506a95d46524713ebe49e3250f63
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: b2330d322c6939ba6d9581c125c512fcea9f924b
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220398"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242759"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ThirdLight | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ThirdLight | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении ThirdLight.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 86da2438b7b8f35f2bcf988c30fefe261535f4cb
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f01c870316a4e7c9424bd63766fec0fed1dce7a3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176766"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56167190"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Руководство. Интеграция Azure Active Directory с ThirdLight
 
@@ -31,7 +32,7 @@ ms.locfileid: "55176766"
 - Вы можете включить автоматический вход пользователей в ThirdLight (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -117,7 +118,7 @@ ms.locfileid: "55176766"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.thirdlight.com/saml/sp`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов ThirdLight](https://www.thirdlight.com/support). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов ThirdLight](https://www.thirdlight.com/support). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните XML-файл на компьютере.
 
@@ -139,17 +140,17 @@ ms.locfileid: "55176766"
 
      a. Выберите параметр **Разрешить единый вход SAML2**.
  
-     b. В качестве **источника для метаданных IdP** выберите **Load IdP Metadata from XML** (Загрузить метаданные IdP из XML).
+     б) В качестве **источника для метаданных IdP** выберите **Load IdP Metadata from XML** (Загрузить метаданные IdP из XML).
  
      c. Откройте скачанный файл метаданных, скопируйте его содержимое и вставьте его в текстовое поле **XML с метаданными IdP** . 
      
-     d. Щелкните **Сохранить параметры SAML2**.
+     4.3. Щелкните **Сохранить параметры SAML2**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -173,11 +174,11 @@ ms.locfileid: "55176766"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-thirdlight-test-user"></a>Создание тестового пользователя ThirdLight
 
@@ -236,7 +237,7 @@ ms.locfileid: "55176766"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент ThirdLight на панели доступа, вы автоматически войдете в приложение ThirdLight.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

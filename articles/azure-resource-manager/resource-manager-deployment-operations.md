@@ -13,14 +13,16 @@ ms.tgt_pltfrm: vm-multiple
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: 37f6ad26fd0ad4a1ac6c3fd6c6707b5b9aaef331
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: fbf94d0430685ea5791aaaa83669a730986e665c
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770220"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56111311"
 ---
 # <a name="view-deployment-operations-with-azure-resource-manager"></a>Просмотр операций развертывания с помощью Azure Resource Manager
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Вы можете просматривать операции развертывания на портале Azure. Чаще всего необходимость просмотреть операции возникает, если во время развертывания произошла ошибка. Таким образом, эта статья посвящена просмотру операций, которые завершились с ошибкой. Портал Azure предоставляет интерфейс, который позволяет легко находить ошибки и определять возможные действия по их устранению.
 
@@ -68,13 +70,13 @@ ms.locfileid: "55770220"
   Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
   ```
    
-1. Чтобы получить идентификатор корреляции, используйте:
+2. Чтобы получить идентификатор корреляции, используйте:
 
   ```powershell
   (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
   ```
 
-1. Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get-AzResourceGroupDeploymentOperation**.
+3. Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get-AzResourceGroupDeploymentOperation**.
 
   ```powershell 
   Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName vmDeployment
@@ -92,7 +94,7 @@ ms.locfileid: "55770220"
                    serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
   ```
 
-1. Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
+4. Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
 
   ```powershell
   (Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
@@ -115,7 +117,7 @@ ms.locfileid: "55770220"
   ```
 
     Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. trackingId понадобится вам на следующем шаге, чтобы рассмотреть конкретную операцию.
-1. Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
+5. Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
 
   ```powershell
   ((Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
@@ -128,7 +130,7 @@ ms.locfileid: "55770220"
   ----           -------                                                                        -------
   DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
   ```
-1. Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Содержимое запроса — это данные, отправляемые в Azure во время развертывания (например, создание виртуальной машины, диск операционной системы и другие ресурсы). Содержимое ответа — это данные, отправляемые Azure из запроса на развертывание. Во время развертывания можно воспользоваться параметром **DeploymentDebugLogLevel**, чтобы указать необходимость сохранения запроса или ответа в журнале. 
+6. Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Содержимое запроса — это данные, отправляемые в Azure во время развертывания (например, создание виртуальной машины, диск операционной системы и другие ресурсы). Содержимое ответа — это данные, отправляемые Azure из запроса на развертывание. Во время развертывания можно воспользоваться параметром **DeploymentDebugLogLevel**, чтобы указать необходимость сохранения запроса или ответа в журнале. 
 
   Получить эту информацию из журнала и сохранить ее локально можно с помощью следующих команд PowerShell:
 
@@ -146,13 +148,13 @@ ms.locfileid: "55770220"
   az group deployment show -g ExampleGroup -n ExampleDeployment
   ```
   
-1. Одно из возвращаемых значений — **correlationId**. Это значение используется для отслеживания связанных событий и может быть полезно при взаимодействии со службой технической поддержки для устранения проблемы развертывания.
+2. Одно из возвращаемых значений — **correlationId**. Это значение используется для отслеживания связанных событий и может быть полезно при взаимодействии со службой технической поддержки для устранения проблемы развертывания.
 
   ```azurecli
   az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
   ```
 
-1. Чтобы просмотреть операции развертывания, используйте следующую команду:
+3. Чтобы просмотреть операции развертывания, используйте следующую команду:
 
   ```azurecli
   az group deployment operation list -g ExampleGroup -n ExampleDeployment

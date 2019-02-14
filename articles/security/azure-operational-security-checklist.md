@@ -4,7 +4,7 @@ description: В этой статье представлен контрольн�
 services: security
 documentationcenter: na
 author: unifycloud
-manager: mbaldwin
+manager: barbkess
 editor: tomsh
 ms.assetid: ''
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: aa68bb0cb2e404072ef359591ce9309f8c27b631
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 7895093eeb97857764530b52486c99b451dfc303
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49403991"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56105915"
 ---
 # <a name="azure-operational-security-checklist"></a>Контрольный список для обеспечения операционной безопасности Azure
 Развертывание приложения в Azure — быстрое, удобное и экономичное. Перед развертыванием облачного приложения в рабочей среде удобно иметь под рукой контрольный список, содержащий важные и рекомендуемые действия по операционной безопасности, который помогает оценить приложение.

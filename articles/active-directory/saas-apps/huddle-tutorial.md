@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Huddle | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Huddle | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Huddle.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 3ec78c7dc3ac3ce9747a09218e1e35068c60b894
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 73beb4ba039db65c20886566f887db39fd233164
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187731"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182669"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-huddle"></a>Руководство. Интеграция Azure Active Directory с Huddle
 
@@ -128,7 +129,7 @@ ms.locfileid: "55187731"
     | `https://login.huddle.com`|
     | |
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
 
     | | |
     |--|--|
@@ -137,7 +138,7 @@ ms.locfileid: "55187731"
     | `https://login.huddle.com/saml/idp-initiated-sso`|
     | |
 
-    c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+    c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения Huddle](./media/huddle-tutorial/tutorial_huddle_url1.png)
 
@@ -167,9 +168,9 @@ ms.locfileid: "55187731"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 
@@ -183,8 +184,8 @@ ms.locfileid: "55187731"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -210,7 +211,7 @@ ms.locfileid: "55187731"
   
     a. В списке **Choose a team to invite people to join** (Выберите группу, в которую следует пригласить пользователей) выберите **группу**.
 
-    b. Введите **адрес электронной почты** действительной учетной записи Azure AD, которую вы хотите подготовить, в текстовом поле **Enter email address for people you'd like to invite** (Введите адреса электронной почты пользователей, которых вы хотите пригласить).
+    б) Введите **адрес электронной почты** действительной учетной записи Azure AD, которую вы хотите подготовить, в текстовом поле **Enter email address for people you'd like to invite** (Введите адреса электронной почты пользователей, которых вы хотите пригласить).
 
     c. Нажмите кнопку **Пригласить**.
 
@@ -249,7 +250,7 @@ ms.locfileid: "55187731"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Huddle на панели доступа, вы автоматически войдете в приложение Huddle.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

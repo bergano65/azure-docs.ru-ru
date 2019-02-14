@@ -16,12 +16,13 @@ ms.date: 05/30/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 856b392c1d17f0cd8f08a550703e4159801dcb71
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ec0842daa9ca8e0f64d0ca7d2610b6116c2bd5b8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55487288"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56202831"
 ---
 # <a name="determine-hybrid-identity-lifecycle-adoption-strategy"></a>Определение стратегии выбора жизненного цикла гибридной идентификации
 В этом упражнении вы определите стратегию управления идентификацией для решений гибридной идентификации в соответствии с бизнес-требованиями, определенными в разделе [Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md).

@@ -4,17 +4,17 @@ titleSuffix: Cognitive Services - Azure
 description: 'Существует три способа проверки подлинности запроса к ресурсу Azure Cognitive Services: ключ подписки, маркер носителя и подписка на несколько служб. В этой статье вы получите информацию о всех этих методах и узнаете, как выполнить запрос.'
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: erhopf
-ms.openlocfilehash: 81a902c6cf6b9b3491933e4bc14dc1e774185869
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: f724bba5acdda20d31d067b850634178a0650cf7
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305457"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55859751"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 

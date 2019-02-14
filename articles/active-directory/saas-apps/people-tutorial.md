@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/06/2017
 ms.author: jeedes
-ms.openlocfilehash: c33f7fc23865169d50de73d27a0c45bb8a9aba0a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1cb01dde4ddfe26351c6e1147fcf3d1cbbd49ad5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176834"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193056"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-people"></a>Руководство. Интеграция Azure Active Directory с приложением "Люди"
 
@@ -114,12 +115,12 @@ ms.locfileid: "55176834"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес `https://www.peoplehr.com`.
+    б) В текстовом поле **Идентификатор** введите URL-адрес `https://www.peoplehr.com`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`.
     
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки People](mailto:customerservices@peoplehr.com). 
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки People](mailto:customerservices@peoplehr.com). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -148,7 +149,7 @@ ms.locfileid: "55176834"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -172,11 +173,11 @@ ms.locfileid: "55176834"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-people-test-user"></a>Создание тестового пользователя приложения "Люди"
 

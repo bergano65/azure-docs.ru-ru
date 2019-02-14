@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: c68a5e054167635059b869ace10e8f62ec1bd65b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e5d83ab0c14da772551a8f33704e0e776be5ebb6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190859"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56171389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-icertis-contract-management-platform"></a>Руководство. Интеграция Azure Active Directory с приложением Icertis Contract Management Platform
 
@@ -117,7 +118,7 @@ ms.locfileid: "55190859"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company name>.icertis.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Icertis Contract Management Platform](https://www.icertis.com/company/contact/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Icertis Contract Management Platform](https://www.icertis.com/company/contact/). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "55190859"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55190859"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-an-icertis-contract-management-platform-test-user"></a>Создание тестового пользователя Icertis Contract Management Platform
 

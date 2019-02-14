@@ -4,12 +4,12 @@ ms.service: cloud-shell
 ms.topic: persist-storage
 ms.date: 9/7/2018
 ms.author: juluk
-ms.openlocfilehash: a66f5ca9501d09f2ef89f421191f617c177e10eb
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: e175f603e97ccf51e1e13d9c2fc42ba7ed1a475f
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52886189"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247110"
 ---
 # <a name="persist-files-in-azure-cloud-shell"></a>Сохранение файлов в Azure Cloud Shell
 Azure Cloud Shell использует хранилище файлов Azure, чтобы хранить файлы между сеансами. При первом запуске Azure Cloud Shell предлагает привязать новый или существующий файловый ресурс, чтобы сохранять файлы между сеансами.
@@ -40,7 +40,7 @@ Azure Cloud Shell использует хранилище файлов Azure, ч
 Когда появится запрос на настройку хранилища, щелкните **Показать дополнительные настройки**, чтобы просмотреть дополнительные параметры. Заданные параметры хранилища будут отфильтрованы по локально избыточному хранилищу (LRS), геоизбыточному хранилищу (GRS) и хранилищу, избыточному между зонами (ZRS). 
 
 > [!NOTE]
-> Учетные записи хранения GRS или ZRS рекомендуется использовать для повышения устойчивости резервного файлового ресурса. Выбор типа избыточности зависит от ваших целей и ценовых предпочтений. [Дополнительные сведения о вариантах репликации для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy#choosing-a-replication-option).
+> Учетные записи хранения GRS или ZRS рекомендуется использовать для повышения устойчивости резервного файлового ресурса. Выбор типа избыточности зависит от ваших целей и ценовых предпочтений. [Дополнительные сведения о вариантах репликации для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy).
 
 ![Настройка группы ресурсов](../articles/cloud-shell/media/persisting-shell-storage/advanced-storage.png)
 

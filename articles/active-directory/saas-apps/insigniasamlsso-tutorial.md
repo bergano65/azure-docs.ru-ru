@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/28/2017
 ms.author: jeedes
-ms.openlocfilehash: d6d1df2d4a1cf07c5fd2f689595965dc9473bdb4
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5cb0822380fd375c111f8acb8b28132727a7c048
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150897"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56188313"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство. Интеграция Azure Active Directory с Insignia SAML SSO
 
@@ -30,7 +31,7 @@ ms.locfileid: "55150897"
 
 - С помощью Azure AD вы можете контролировать доступ к Insignia SAML SSO.
 - Вы можете включить автоматический вход пользователей в Insignia SAML SSO (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55150897"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Insignia SAML SSO**, выберите **Insignia SAML SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55150897"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Insignia SAML SSO](#create-an-insignia-saml-sso-test-user)** требуется для того, чтобы в Insignia SAML SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -117,10 +118,10 @@ ms.locfileid: "55150897"
     | `https://<customername>.insigniails.com/` |
     | `https://<customername>.insigniailsusa.com/ ` |
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). 
  
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
@@ -151,7 +152,7 @@ ms.locfileid: "55150897"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/insigniasamlsso-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/insigniasamlsso-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -171,7 +172,7 @@ ms.locfileid: "55150897"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-insignia-saml-sso-test-user"></a>Создание тестового пользователя Insignia SAML SSO
 

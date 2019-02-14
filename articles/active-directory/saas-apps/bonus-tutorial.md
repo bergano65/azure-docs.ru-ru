@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Bonusly | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Bonusly | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bonusly.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 37feab857f5a8c95b2e47491256c290020615d2d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 62927e78b8f1a771de74c0f9215a7bd946a46672
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55177990"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199601"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство. Интеграция Azure Active Directory с Bonusly
 
@@ -70,7 +71,7 @@ ms.locfileid: "55177990"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Bonusly**, выберите **Bonusly** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "55177990"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Bonusly](#create-a-bonusly-test-user)** требуется для того, чтобы в Bonusly существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -139,11 +140,11 @@ ms.locfileid: "55177990"
    
     a. В текстовое поле **IdP SSO target URL** (Целевой URL-адрес единого входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
-    b. В текстовое поле **IdP Issuer** (Издатель IdP) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
+    б) В текстовое поле **IdP Issuer** (Издатель IdP) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
     c. В текстовое поле **IdP Login URL** (URL-адрес входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    d. Вставьте значение  **Отпечаток**  с портала Azure в текстовое поле **Cert Fingerprint** (Отпечаток сертификата).
+    4.3. Вставьте значение  **Отпечаток**  с портала Azure в текстовое поле **Cert Fingerprint** (Отпечаток сертификата).
    
 1. Выберите команду **Сохранить**.
 
@@ -160,7 +161,7 @@ ms.locfileid: "55177990"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/bonus-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/bonus-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -176,11 +177,11 @@ ms.locfileid: "55177990"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-bonusly-test-user"></a>Создание тестового пользователя приложения Bonusly
 
@@ -216,11 +217,11 @@ ms.locfileid: "55177990"
 
     a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
-    b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    б) В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
  
     c. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
    
      >[!NOTE]
      >Владелец учетной записи Azure AD получит сообщение электронной почты со ссылкой для подтверждения учетной записи перед ее активацией.

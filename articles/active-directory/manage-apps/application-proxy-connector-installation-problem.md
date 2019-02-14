@@ -3,8 +3,8 @@ title: Проблема при установке соединителя аге�
 description: Устранение проблем при установке соединителя агента прокси приложения
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/21/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: japere
-ms.openlocfilehash: c383bde930f9de21b3f2a532ef3f440e72445ddc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 75570cb289af7c7b718414974e5770f692233758
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164509"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210872"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
 

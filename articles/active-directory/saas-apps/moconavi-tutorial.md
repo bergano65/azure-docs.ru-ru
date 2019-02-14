@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 3009cb42ac477b18d45ab5968d6f5793ce1cd36c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 76d1621834c5096743f6d37dad94754ec8b259a4
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55165903"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56196252"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Руководство. Интеграция Azure Active Directory с moconavi
 
@@ -30,7 +31,7 @@ ms.locfileid: "55165903"
 
 - С помощью Azure AD вы можете контролировать доступ к moconavi.
 - Вы можете включить автоматический вход пользователей в moconavi (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -71,7 +72,7 @@ ms.locfileid: "55165903"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **moconavi**, выберите **moconavi** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "55165903"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя moconavi](#create-a-moconavi-test-user)** требуется для того, чтобы в moconavi существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -116,7 +117,7 @@ ms.locfileid: "55165903"
     C. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2/saml/SSO`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов moconavi](mailto:support@recomot.co.jp).
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов moconavi](mailto:support@recomot.co.jp).
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "55165903"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/moconavi-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/moconavi-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -158,7 +159,7 @@ ms.locfileid: "55165903"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-moconavi-test-user"></a>Создание тестового пользователя moconavi
 
@@ -214,7 +215,7 @@ ms.locfileid: "55165903"
 
     a. Введите **ключ аутентификации** `azureAD` в текстовое поле **Input Authentication Key** (Ввод ключа аутентификации).
 
-    b. Введите **идентификатор пользователя** `your ad account` в текстовое поле **Input User ID** (Ввод идентификатора пользователя).
+    б) Введите **идентификатор пользователя** `your ad account` в текстовое поле **Input User ID** (Ввод идентификатора пользователя).
 
     c. Нажмите кнопку **LOGIN** (Войти).
 

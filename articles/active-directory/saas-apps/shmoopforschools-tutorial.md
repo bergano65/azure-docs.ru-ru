@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: 90d4cb3c5da37e8de63a95e65670cfd9e3098453
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 095aff293b23f4589dce9f71890b5e9bfd8636d4
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178432"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201862"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство. Интеграция Azure Active Directory с Shmoop For Schools
+# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство по Интеграция Azure Active Directory с Shmoop For Schools
 
 В этом руководстве описано, как интегрировать Shmoop For Schools с Azure Active Directory (Azure AD).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55178432"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Shmoop For Schools**. В результатах выберите **Shmoop For Schools** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -110,10 +111,10 @@ ms.locfileid: "55178432"
 
     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://schools.shmoop.com/public-api/saml2/start/<uniqueid>`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://schools.shmoop.com/<uniqueid>`.
+    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://schools.shmoop.com/<uniqueid>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Shmoop For Schools](mailto:support@shmoop.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Shmoop For Schools](mailto:support@shmoop.com). 
  
 4. Приложение Shmoop For Schools ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Значениями этих атрибутов можно управлять в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана показано, как настроить утверждения:
 
@@ -134,11 +135,11 @@ ms.locfileid: "55178432"
     
     ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_attribute_05.png)
     
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. Из списка **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте пустым поле **Пространство имен**.
+    4.3. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -162,7 +163,7 @@ ms.locfileid: "55178432"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/shmoopforschools-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/shmoopforschools-tutorial/create_aaduser_01.png)
 
 2. Чтобы отобразился список пользователей, выберите элемент **Пользователи и группы**. Затем выберите **Все пользователи**.
 

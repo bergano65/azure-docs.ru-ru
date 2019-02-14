@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 7342849af63ef2f153a89418fbf87f60bd4c4833
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 82483d8d84349a929ef4892d5e9571ea65b9a88a
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55183294"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56104844"
 ---
 # <a name="azure-ad-b2c-single-page-app-sign-in-by-using-oauth-20-implicit-flow"></a>Azure AD B2C. Вход в одностраничные приложения с помощью неявного потока OAuth 2.0
 
@@ -30,7 +30,7 @@ ms.locfileid: "55183294"
 В Azure AD B2C стандартный неявный поток OAuth 2.0 выходит за рамки простой аутентификации и авторизации. В Azure AD B2C вводится [параметр политики](active-directory-b2c-reference-policies.md). Он позволяет использовать OAuth 2.0 для добавления в приложение политик (потоков пользователей), таких как регистрация, вход и управление профилями. В этой статье демонстрируется, как с помощью неявного потока и Azure AD реализовать каждую из этих функций в одностраничных приложениях. Просмотрите примеры для [Node.js](https://github.com/Azure-Samples/active-directory-b2c-javascript-singlepageapp-nodejs-webapi) и [Microsoft .NET](https://github.com/Azure-Samples/active-directory-b2c-javascript-singlepageapp-dotnet-webapi), которые помогут вам приступить к работе.
 
 В приведенных в этой статье запросах HTTP используется наш пример каталога Azure AD B2C **fabrikamb2c.onmicrosoft.com**, Мы также будем использовать собственный пример приложения и наши потоки пользователей. Вы можете пробовать выполнять запросы с этими значениями или заменить их собственными.
-Узнайте, как [получить собственный каталог Azure AD B2C, приложение и потоки пользователей](#use-your-own-b2c-tenant).
+Узнайте, как [получить собственный каталог Azure AD B2C, приложение и потоки пользователей](#use-your-own-azure-ad-b2c-tenant).
 
 
 ## <a name="protocol-diagram"></a>Схема протокола

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/09/2018
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: c65fb1f0f635e79d594a7f080124827e3218f612
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: f8122f35ac6d604908fc31dcece7dfb53dd50286
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54193464"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55985495"
 ---
 Коллекция общих образов — это служба, которая позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Используя коллекцию общих образов, вы можете делиться своими образами с другими пользователями, участниками службы или группами конструктора приложений в вашей организации. Общие образы можно реплицировать в несколько регионов для более быстрого масштабирования развертываний.
 
@@ -120,8 +120,8 @@ az provider register --name Microsoft.Compute
 **PowerShell**: 
 
 ```powershell
-Register-AzureRmProviderFeature -FeatureName GalleryPreview -ProviderNamespace Microsoft.Compute
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
+Register-AzProviderFeature -FeatureName GalleryPreview -ProviderNamespace Microsoft.Compute
+Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 ```
 
 **Вопрос.** Как создать список всех ресурсов коллекции общих образов в разных подписках? 

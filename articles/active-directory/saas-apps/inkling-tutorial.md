@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 83412b180c71b3c4deb67db4d76c277be312b7ab
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a89ef8f6cba049f606f78c1d41a4005a708ae62a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55175202"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56166731"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-inkling"></a>Руководство. Интеграция Azure Active Directory с Inkling
 
@@ -31,7 +32,7 @@ ms.locfileid: "55175202"
 - Вы можете включить автоматический вход пользователей в Inkling (единый вход) с учетной записью Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -119,7 +120,7 @@ ms.locfileid: "55175202"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.inkling.com/saml/v2/metadata/<user-id>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.inkling.com/saml/v2/acs/<user-id>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.inkling.com/saml/v2/acs/<user-id>`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Inkling](mailto:press@inkling.com).
@@ -172,11 +173,11 @@ ms.locfileid: "55175202"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 
 

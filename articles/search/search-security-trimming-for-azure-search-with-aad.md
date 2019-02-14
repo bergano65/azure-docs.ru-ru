@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/07/2017
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 1cd862c59154f9da766b5df1ab8fb8d61e15d054
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 3f55b3b099cc22fda2bebf0dcb8d3e9c1a580f02
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53628295"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56099707"
 ---
 # <a name="security-filters-for-trimming-azure-search-results-using-active-directory-identities"></a>Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory
 
@@ -64,7 +64,7 @@ Microsoft Graph предоставляет API, который обеспечи�
 
 Назначение пользователей и членство в группе может быть очень гибким, особенно в крупных организациях. Код, который создает удостоверения пользователей и групп, должен выполняться достаточно часто для учета изменений в членстве организации. Индекс службы "Поиск Azure" требует аналогичного расписания обновления, чтобы отражать текущее состояние разрешенных пользователей и ресурсов.
 
-### <a name="step-1-create-aad-grouphttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apigrouppostgroups"></a>Шаг 1. Создание [группы AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/group_post_groups) 
+### <a name="step-1-create-aad-grouphttpsdocsmicrosoftcomgraphapigroup-post-groupsviewgraph-rest-10"></a>Шаг 1. Создание [группы AAD](https://docs.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0) 
 ```csharp
 // Instantiate graph client 
 GraphServiceClient graph = new GraphServiceClient(new DelegateAuthenticationProvider(...));
@@ -78,7 +78,7 @@ Group group = new Group()
 Group newGroup = await graph.Groups.Request().AddAsync(group);
 ```
    
-### <a name="step-2-create-aad-userhttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apiuserpostusers"></a>Шаг 2. Создание [пользователя AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_users) 
+### <a name="step-2-create-aad-userhttpsdocsmicrosoftcomgraphapiuser-post-usersviewgraph-rest-10"></a>Шаг 2. Создание [пользователя AAD](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0)
 ```csharp
 User user = new User()
 {
@@ -139,7 +139,7 @@ _indexClient.Documents.Index(batch);
 
 ### <a name="step-1-retrieve-users-group-identifiers"></a>Шаг 1. Получение идентификаторов групп пользователя
 
-Если группы пользователя не кэшированы или истек срок действия кэша, отправьте запрос [групп](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/directoryobject_getmembergroups).
+Если группы пользователя не кэшированы или истек срок действия кэша, отправьте запрос [групп](https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0).
 ```csharp
 private static void RefreshCacheIfRequired(string user)
 {

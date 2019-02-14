@@ -12,12 +12,13 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: cc14f170a748f91289bbc644d5a9bef10697ce34
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cd57eadc2c42c17343eee6d813072866e8ea09e3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427375"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56196218"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 

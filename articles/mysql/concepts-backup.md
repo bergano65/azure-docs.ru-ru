@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: cefb0c5f578f109a8cce2555dd896f81d2f0f627
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 6fe5aea9b8fa87efdfa7cc57716cf548a52e076b
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821122"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237915"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Резервное копирование и восстановление в службе "База данных Azure для MySQL"
 
@@ -50,7 +50,7 @@ ms.locfileid: "55821122"
 Предполагаемое время восстановления будет зависеть от нескольких факторов, включая размер базы данных, размер журнала транзакций, пропускную способность сети и общее количество баз данных, восстанавливаемых в том же регионе и в то же время. Обычно время восстановления составляет менее 12 часов.
 
 > [!IMPORTANT]
-> Удаленные серверы **нельзя** восстановить. Если вы удалите сервер, все связанные с ним базы данных также будут удалены без возможности восстановления. Чтобы защитить ресурсы сервера после развертывания от случайного удаления или внесения непредвиденных изменений, администраторы могут использовать [блокировки управления](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources).
+> Удаленные серверы **нельзя** восстановить. Если вы удалите сервер, все связанные с ним базы данных также будут удалены без возможности восстановления. Чтобы защитить ресурсы сервера после развертывания от случайного удаления или внесения непредвиденных изменений, администраторы могут использовать [блокировки управления](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-lock-resources).
 
 ### <a name="point-in-time-restore"></a>Восстановление до точки во времени
 

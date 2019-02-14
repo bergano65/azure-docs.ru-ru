@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 2db359f6aba800e3fb6ea0826ae0e49c43dd4a88
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e037ee527c327028fec7abe988583fd5144995ec
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55167739"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210583"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-icims"></a>Руководство. Интеграция Azure Active Directory с ICIMS
 
@@ -70,7 +71,7 @@ ms.locfileid: "55167739"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **ICIMS**, выберите **ICIMS** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "55167739"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя ICIMS](#create-an-icims-test-user)** требуется для создания в ICIMS пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "55167739"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenant name>.icims.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ICIMS](https://www.icims.com/contact-us). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ICIMS](https://www.icims.com/contact-us). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -143,7 +144,7 @@ ms.locfileid: "55167739"
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/icims-tutorial/create_aaduser_01.png) 
+    ![Кнопка Azure Active Directory](./media/icims-tutorial/create_aaduser_01.png) 
 
 1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -159,11 +160,11 @@ ms.locfileid: "55167739"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-icims-test-user"></a>Создание тестового пользователя ICIMS
 

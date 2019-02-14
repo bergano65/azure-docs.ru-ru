@@ -2,8 +2,8 @@
 title: Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей в прокси приложения Azure AD | Документация Майкрософт
 description: Этот раздел описывает создание групп соединителей в прокси приложения Azure AD и управление ими.
 services: active-directory
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,14 +11,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/08/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: japere
-ms.openlocfilehash: 8905ea028668f00d92f18bf7d8412e29ffc8283f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e57a953f99a5e0259c346836c156a0e4fe3e4c03
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153595"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56170896"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 

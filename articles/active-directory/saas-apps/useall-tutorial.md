@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Useall | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Useall | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Useall.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 393494410b14bd54f1878cc372e76ad8a7ee3c7d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d2752588ded56962b3d49785f44c128136090b48
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164764"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211654"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-useall"></a>Руководство. Интеграция Azure Active Directory с Useall
 
@@ -30,7 +31,7 @@ ms.locfileid: "55164764"
 
 - С помощью Azure AD вы можете контролировать доступ к Useall.
 - Вы можете включить автоматический вход пользователей в Useall (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55164764"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Useall**, выберите **Useall** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -116,10 +117,10 @@ ms.locfileid: "55164764"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/useall`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/apiuseall/saml2`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/apiuseall/saml2`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Useall](mailto:luizotavio@useall.com.br).
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Useall](mailto:luizotavio@useall.com.br).
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -129,9 +130,9 @@ ms.locfileid: "55164764"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

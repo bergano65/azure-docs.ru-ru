@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/02/2017
 ms.author: jeedes
-ms.openlocfilehash: 2263a75ca5e3e4e0130dccd58b1fe2202f35bbd1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e09693d17f5eca1b5e4597c522903c3f9148bc74
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197285"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56178895"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lecorpio"></a>Руководство. Интеграция Azure Active Directory с Lecorpio
 
@@ -31,7 +32,7 @@ ms.locfileid: "55197285"
 - Вы можете включить автоматический вход пользователей в Lecorpio (единый вход) с учетной записью Azure AD
 - Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -114,7 +115,7 @@ ms.locfileid: "55197285"
 
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://<instance name>.lecorpio.com/<customer name>`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instance name>.lecorpio.com/<customer name>`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instance name>.lecorpio.com/<customer name>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить их, обратитесь в [службу поддержки клиентов Lecorpio](mailto:info@lecorpio.com). 
@@ -133,7 +134,7 @@ ms.locfileid: "55197285"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -157,11 +158,11 @@ ms.locfileid: "55197285"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-lecorpio-test-user"></a>Создание тестового пользователя Lecorpio
 

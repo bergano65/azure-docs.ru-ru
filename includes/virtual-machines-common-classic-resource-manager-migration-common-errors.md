@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 912d5ec399ac59d81a7d9da9b494d8ee50e720e1
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 72aadcb5d1459518cda41f1d4dcafc670fa393c5
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55736020"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55985493"
 ---
 # <a name="common-errors-during-classic-to-azure-resource-manager-migration"></a>Распространенные ошибки при миграции из классической модели в модель Azure Resource Manager
 В этой статье перечислены самые распространенные ошибки при переносе ресурсов IaaS из классической модели развертывания Azure в стек Azure Resource Manager, а также способы их устранения.
@@ -163,9 +163,9 @@ Update-AzureVM       b0ad3d4c-4v68-45vb-xxc1-134fd010d0f8 Succeeded
 
 #### <a name="powershell"></a>PowerShell
 ```powershell
-$vm = Get-AzureRmVM -ResourceGroupName "MyRG" -Name "MyVM"
-Remove-AzureRmVMSecret -VM $vm
-Update-AzureRmVM -ResourceGroupName "MyRG" -VM $vm
+$vm = Get-AzVM -ResourceGroupName "MyRG" -Name "MyVM"
+Remove-AzVMSecret -VM $vm
+Update-AzVM -ResourceGroupName "MyRG" -VM $vm
 ```
 #### <a name="azure-cli"></a>Инфраструктура CLI Azure
 

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2018
 ms.author: jeedes
-ms.openlocfilehash: b04e4a83862cdec26e0432eb7d8b3419e36d5a7a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: feb6cebca0fe165315215813eb939dc2d5d120cf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176426"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56177353"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Руководство. Интеграция Azure Active Directory с песочницей Salesforce
 
@@ -33,7 +34,7 @@ ms.locfileid: "55176426"
 
 - С помощью Azure AD можно управлять доступом к Salesforce Sandbox.
 - Вы можете включить автоматический вход пользователей в Salesforce Sandbox (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -75,7 +76,7 @@ ms.locfileid: "55176426"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Salesforce Sandbox**, выберите **Salesforce Sandbox** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -94,7 +95,7 @@ ms.locfileid: "55176426"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Salesforce Sandbox](#create-a-salesforce-sandbox-test-user)** требуется для создания в Salesforce Sandbox пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -125,7 +126,7 @@ ms.locfileid: "55176426"
 
     ![Передача файла метаданных](./media/salesforce-sandbox-tutorial/upload_metadata.png)
 
-    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Выбор файла метаданных](./media/salesforce-sandbox-tutorial/browse_upload_metadata.png)
 
@@ -178,7 +179,7 @@ ms.locfileid: "55176426"
 
     a. Вам необходимо получить проверенный домен.
 
-    b. Необходимо настроить и включить домен в Salesforce Sandbox. Дальнейшие действия объясняются далее в этом руководстве.
+    б) Необходимо настроить и включить домен в Salesforce Sandbox. Дальнейшие действия объясняются далее в этом руководстве.
 
     c. На портале Azure в разделе **Базовая конфигурация SAML** щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
   
@@ -242,9 +243,9 @@ ms.locfileid: "55176426"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 
@@ -258,8 +259,8 @@ ms.locfileid: "55176426"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -304,7 +305,7 @@ ms.locfileid: "55176426"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Salesforce Sandbox на панели доступа, вы автоматически войдете в приложение Salesforce Sandbox.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

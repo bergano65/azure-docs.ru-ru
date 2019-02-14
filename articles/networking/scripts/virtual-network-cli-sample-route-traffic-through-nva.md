@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: jdial
-ms.openlocfilehash: 110e8c6a57cd2cdfedec808e073f04b70a55362d
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: f077080793ef595019667028188a2a98dcbd2c0c
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54465587"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895709"
 ---
 # <a name="route-traffic-through-a-network-virtual-appliance"></a>Маршрутизация трафика через виртуальный сетевой модуль
 
@@ -50,18 +50,18 @@ az group delete --name MyResourceGroup --yes
 
 | Команда | Примечания |
 |---|---|
-| [az group create](/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть Azure и интерфейсную подсеть. |
-| [az network subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) | Создает внутреннюю подсеть и подсеть DMZ. |
-| [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create) | Создает общедоступный IP-адрес для доступа к виртуальной машине из Интернета. |
+| [az network subnet create](/cli/azure/network/vnet/subnet) | Создает внутреннюю подсеть и подсеть DMZ. |
+| [az network public-ip create](/cli/azure/network/public-ip) | Создает общедоступный IP-адрес для доступа к виртуальной машине из Интернета. |
 | [az network nic create](/cli/azure/network/nic) | Создает виртуальный сетевой интерфейс и включает IP-пересылку для него. |
-| [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create) | Создает группу безопасности сети (NSG). |
-| [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create) | Создает правила группы безопасности сети, которые разрешают входящий трафик по портам HTTP и HTTPS к виртуальной машине. |
-| [az network vnet subnet update](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update)| Связывает группы безопасности сети и таблицы маршрутов с подсетями. |
+| [az network nsg create](/cli/azure/network/nsg) | Создает группу безопасности сети (NSG). |
+| [az network nsg rule create](/cli/azure/network/nsg/rule) | Создает правила группы безопасности сети, которые разрешают входящий трафик по портам HTTP и HTTPS к виртуальной машине. |
+| [az network vnet subnet update](/cli/azure/network/vnet/subnet)| Связывает группы безопасности сети и таблицы маршрутов с подсетями. |
 | [az network route-table create](/cli/azure/network/route-table#az-network-route-table-create)| Создает таблицу маршрутов для всех маршрутов. |
 | [az network route-table route create](/cli/azure/network/route-table/route#az-network-route-table-route-create)| Создает маршруты для маршрутизации трафика между подсетями и Интернетом через виртуальную машину. |
-| [az vm create](/cli/azure/vm#az_vm_create) | Создает виртуальную машину и присоединяет к ней сетевой адаптер. Эта команда также указывает образ виртуальной машины и учетные данные администратора. |
-| [az group delete](/cli/azure/group#az_group_delete) | Удаляет группу ресурсов и все содержащиеся в ней ресурсы. |
+| [az vm create](/cli/azure/vm) | Создает виртуальную машину и присоединяет к ней сетевой адаптер. Эта команда также указывает образ виртуальной машины и учетные данные администратора. |
+| [az group delete](/cli/azure/group) | Удаляет группу ресурсов и все содержащиеся в ней ресурсы. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

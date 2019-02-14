@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/03/2017
 ms.author: jeedes
-ms.openlocfilehash: 77e9bc8be6b85cdd49a3ca675c360f868f582f6e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 97e294a8b0e34e1fac24d0cbe01791e2eb290a43
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55155414"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56162584"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство. Интеграция Azure Active Directory с T&E Express
 
@@ -31,7 +32,7 @@ ms.locfileid: "55155414"
 - Вы можете включить автоматический вход пользователей в T&E Express (единый вход) с применением учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -114,7 +115,7 @@ ms.locfileid: "55155414"
 
     a. В текстовом поле **Идентификатор** введите значение `https://<domain>.tyeexpress.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки T&E Express](http://www.tyeexpress.com/contacto.aspx).
@@ -165,11 +166,11 @@ ms.locfileid: "55155414"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-te-express-test-user"></a>Создание тестового пользователя T&E Express
 

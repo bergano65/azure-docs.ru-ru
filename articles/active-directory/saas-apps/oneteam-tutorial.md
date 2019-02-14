@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Oneteam.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: ed076c5f6d50136d4b5d639edb83caaae3409716
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ede20d0fc0afa1e957d5469a097cba91db14f546
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197591"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56186205"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство. Интеграция Azure Active Directory с Oneteam
+# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
 
 В этом руководстве описано, как интегрировать Oneteam с Azure Active Directory (Azure AD).
 
@@ -114,7 +115,7 @@ ms.locfileid: "55197591"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -123,7 +124,7 @@ ms.locfileid: "55197591"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<team name>.one-team.io/`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Oneteam](https://support.one-team.com/hc/requests/new). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Oneteam](https://support.one-team.com/hc/requests/new). 
 
 
 
@@ -142,7 +143,7 @@ ms.locfileid: "55197591"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -166,11 +167,11 @@ ms.locfileid: "55197591"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-oneteam-test-user"></a>Создание тестового пользователя Oneteam
 

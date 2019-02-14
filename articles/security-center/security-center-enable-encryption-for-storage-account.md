@@ -4,7 +4,7 @@ description: В этом документе объясняется, как вы�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: ''
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 727e0cc7f0dac18a6ac9e97b3c6edae3ba8f62d6
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 9f8679e988513eecd778970ac796264b274a8088
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338028"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56111668"
 ---
 # <a name="enable-encryption-for-azure-storage-account-in-azure-security-center"></a>Включение шифрования данных для учетной записи хранения Azure в центре безопасности Azure
 Центр безопасности Azure может рекомендовать включить шифрование службы хранилища Azure для неактивных данных.

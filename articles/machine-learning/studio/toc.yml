@@ -145,10 +145,6 @@ items:
     items:
     - name: Обзор
       href: retrain-machine-learning-model.md
-    - name: Повторное обучение программным образом
-      href: retrain-models-programmatically.md
-    - name: Повторное обучение с помощью PowerShell
-      href: retrain-new-web-service-using-powershell.md
     - name: Повторное обучение существующей веб-службы
       href: retrain-existing-resource-manager-based-web-service.md
     - name: Устранение неполадок
@@ -203,9 +199,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/machine-learning/
   - name: Пользовательские нейронные сети (Net#)
     href: azure-ml-netsharp-reference-guide.md
-ms.openlocfilehash: ac8621773366d7e6dff26f053172e2831fa2d2a1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 982f2794d22f830c967607108b31fbfe0d0de359
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211484"
+ms.locfileid: "56238442"

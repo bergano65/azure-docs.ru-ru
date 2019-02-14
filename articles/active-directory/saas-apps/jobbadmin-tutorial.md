@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jobbadmin | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jobbadmin | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Jobbadmin.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2017
 ms.author: jeedes
-ms.openlocfilehash: 2c4f17a1c7c899d5f66ab2ba8c0cf06c412890da
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ad6989fc088e98b039781e387f397d115d11b893
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151079"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56206435"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jobbadmin"></a>Руководство. Интеграция Azure Active Directory с Jobbadmin
+# <a name="tutorial-azure-active-directory-integration-with-jobbadmin"></a>Руководство по Интеграция Azure Active Directory с Jobbadmin
 
 В этом руководстве описано, как интегрировать Jobbadmin с Azure Active Directory (Azure AD).
 
@@ -119,7 +120,7 @@ ms.locfileid: "55151079"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Jobbadmin](https://www.jobbnorge.no/om-oss/kontakt-oss). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Jobbadmin](https://www.jobbnorge.no/om-oss/kontakt-oss). 
  
 
 
@@ -138,7 +139,7 @@ ms.locfileid: "55151079"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55151079"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-jobbadmin-test-user"></a>Создание тестового пользователя Jobbadmin
 
@@ -209,7 +210,7 @@ ms.locfileid: "55151079"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы нажмете значок Jobbadmin на панели доступа, должна появиться страница входа в приложение Jobbadmin.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

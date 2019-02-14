@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jostle | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jostle | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Jostle.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 0722cb2e583ae94b7c5dc8591e0c14ea1d359fe9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 214cd2ac20207e32d862086f82f6e3c775d88721
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55183175"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210447"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство. Интеграция Azure Active Directory с Jostle
 
@@ -115,11 +116,11 @@ ms.locfileid: "55183175"
 
     a. В текстовом поле **URL-адрес входа** введите `https://login-prod.jostle.us`
 
-    b. В текстовом поле **Идентификатор** введите `https://jostle.us`
+    б) В текстовом поле **Идентификатор** введите `https://jostle.us`
 
     c. Поставьте флажок **Показать дополнительные параметры URL-адресов**
 
-    d. В текстовом поле **URL-адрес ответа** введите `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
+    4.3. В текстовом поле **URL-адрес ответа** введите `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
 
 1. В разделе **Атрибуты пользователя** в поле **Идентификатор пользователя** введите `user.userprincipalname`
 
@@ -138,7 +139,7 @@ ms.locfileid: "55183175"
 >
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55183175"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-jostle-test-user"></a>Создание тестового пользователя Jostle
 
@@ -210,7 +211,7 @@ ms.locfileid: "55183175"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Jostle на панели доступа, вы автоматически войдете в приложение Jostle.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

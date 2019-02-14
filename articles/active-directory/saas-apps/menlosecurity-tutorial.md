@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Menlo Security | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Menlo Security | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Menlo Security.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2017
 ms.author: jeedes
-ms.openlocfilehash: fb4a82d1ae34c81df535e606a39eaf091f7df0da
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e779e4fab06802212514af94cafc1b016b737ca4
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158066"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183910"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство. Интеграция Azure Active Directory с Menlo Security
 
@@ -139,11 +140,11 @@ ms.locfileid: "55158066"
 
     a. Установите флажок **Enable user authentication using SAML** (Включить проверку подлинности пользователя с помощью SAML).
 
-    b. Задайте для параметра **Allow External Access** (Разрешить внешний доступ) значение **Да**.
+    б) Задайте для параметра **Allow External Access** (Разрешить внешний доступ) значение **Да**.
 
     c. В разделе **SAML Provider** (Поставщик SAML) выберите **Azure Active Directory**.
 
-    d. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
+    4.3. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
 
     д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
@@ -156,7 +157,7 @@ ms.locfileid: "55158066"
  
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -180,11 +181,11 @@ ms.locfileid: "55158066"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-menlo-security-test-user"></a>Создание тестового пользователя Menlo Security
  

@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Узнайте, какие виды данные можно извлекать из службы "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: 256eb258a4f689f768919f2cac41367493baf747
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 385e0065123b86f8f8b7c8503fe6de6daa7c6562
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55224281"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55874130"
 ---
 # <a name="data-extraction-from-intents-and-entities"></a>Извлечение данных из намерений и сущностей
 Служба LUIS дает возможность получать информацию из высказываний на естественном языке пользователя. Информация извлекается таким образом, который позволяет использовать ее программой, приложением или чат-ботом для выполнения определенных действий. В следующих разделах содержатся сведения о данных, возвращаемых из намерений и сущностей, с примерами JSON.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с XaitPorter | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с XaitPorter | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в XaitPorter.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2017
 ms.author: jeedes
-ms.openlocfilehash: fe89b64fb5f188591ce123e8ed7ed410d3c5ab48
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6cd4f9e561a55c010273b48fb4232348baad3582
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170051"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56200944"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство. Интеграция Azure Active Directory с XaitPorter
 
@@ -30,7 +31,7 @@ ms.locfileid: "55170051"
 
 - С помощью Azure AD вы можете контролировать доступ к XaitPorter.
 - Вы можете включить автоматический вход пользователей в XaitPorter (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55170051"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **XaitPorter**, выберите **XaitPorter** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55170051"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя XaitPorter](#create-a-xaitporter-test-user)** требуется для того, чтобы в XaitPorter существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -115,7 +116,7 @@ ms.locfileid: "55170051"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.xaitporter.com`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов XaitPorter](https://www.xait.com/support/).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов XaitPorter](https://www.xait.com/support/).
      
 1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот. 
 
@@ -143,11 +144,11 @@ ms.locfileid: "55170051"
 
     a. Выберите **Enable Single Sign-On Authentication** (Включить аутентификацию с помощью единого входа).
 
-    b. В текстовое поле **Параметры поставщика удостоверений** вставьте **URL-адрес метаданных федерации приложений**, скопированный на портале Azure, и нажмите кнопку **Fetch** (Получить).
+    б) В текстовое поле **Параметры поставщика удостоверений** вставьте **URL-адрес метаданных федерации приложений**, скопированный на портале Azure, и нажмите кнопку **Fetch** (Получить).
 
     c. Выберите **Enable Autocreation of Users** (Включить автоматическое создание пользователей).
 
-    d. Последовательно выберите **ОК**.
+    4.3. Последовательно выберите **ОК**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -159,7 +160,7 @@ ms.locfileid: "55170051"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/xaitporter-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/xaitporter-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -179,7 +180,7 @@ ms.locfileid: "55170051"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-xaitporter-test-user"></a>Создание тестового пользователя XaitPorter
 

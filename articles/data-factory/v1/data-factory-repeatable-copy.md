@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 450e6a180b104d8f384fd08cc7c4cafcd53b4453
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: fa08e6da6b87de5878f099709563fb90e8669e77
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021345"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237609"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -114,7 +114,7 @@ ID    Product        Quantity    ModifiedDate
 1. Определите в целевой таблице SQL столбец двоичного типа (**binary (32)**). Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
 
 
-    Исходная таблица:
+Исходная таблица:
 
     ```sql
     CREATE TABLE [dbo].[Student](
@@ -123,7 +123,7 @@ ID    Product        Quantity    ModifiedDate
     )
     ```
 
-    Целевая таблица: 
+Целевая таблица: 
 
     ```sql
     CREATE TABLE [dbo].[Student](

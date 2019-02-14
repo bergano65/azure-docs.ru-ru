@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cisco Cloud | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cisco Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Cloud.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2018
 ms.author: jeedes
-ms.openlocfilehash: c5809426da95e2295c5bf318b6f17345002f536d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d2f4d379f01d072bbfdcd95cd5bb19ccc0f9546d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55197948"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56166374"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Руководство. Интеграция Azure Active Directory с Cisco Cloud
+# <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Руководство по Интеграция Azure Active Directory с Cisco Cloud
 
 В этом руководстве описано, как интегрировать Cisco Cloud с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55197948"
 
 - С помощью Azure AD вы можете контролировать доступ к Cisco Cloud.
 - Вы можете включить автоматический вход пользователей в Cisco Cloud (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55197948"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Cisco Cloud**, выберите **Cisco Cloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55197948"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Cisco Cloud](#create-a-cisco-cloud-test-user)** нужно для того, чтобы в Cisco Cloud также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55197948"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `<subdomain>.cisco.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.cisco.com/sp/ACS.saml2`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.cisco.com/sp/ACS.saml2`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -119,7 +120,7 @@ ms.locfileid: "55197948"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://<subdomain>.cloudapps.cisco.com`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Cisco Cloud](mailto:cpr-ops@cisco.com).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Cisco Cloud](mailto:cpr-ops@cisco.com).
 
 1. Приложение Cisco Cloud ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения.
  На следующем снимке экрана показан пример.
@@ -139,11 +140,11 @@ ms.locfileid: "55197948"
 
     ![Настройка единого входа](./media/ciscocloud-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте значение **пространства имен** пустым.
+    4.3. Оставьте значение **пространства имен** пустым.
 
     д. Нажмите кнопку **ОК**.
 
@@ -167,7 +168,7 @@ ms.locfileid: "55197948"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/ciscocloud-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/ciscocloud-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -187,7 +188,7 @@ ms.locfileid: "55197948"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-cisco-cloud-test-user"></a>Создание тестового пользователя Cisco Cloud
 

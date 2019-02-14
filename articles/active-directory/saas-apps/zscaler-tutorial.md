@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Zscaler | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Zscaler | Документация Майкрософт
 description: Вы можете узнать, как настроить единый вход Azure Active Directory в Zscaler.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 4051d870cdecb4a7359458e009c49e416cd22974
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 74c1465169ccbd2e6a6901566d8eb4fafb7d5c09
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170142"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182771"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler"></a>Руководство. Интеграция Azure Active Directory с Zscaler
+# <a name="tutorial-azure-active-directory-integration-with-zscaler"></a>Руководство по Интеграция Azure Active Directory с Zscaler
 
 Это руководство описывает, как интегрировать Zscaler с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55170142"
 
 - С помощью Azure AD вы можете контролировать доступ к Zscaler.
 - Вы можете включить автоматический вход пользователей в Zscaler (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55170142"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Zscaler**, выберите **Zscaler** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -135,11 +136,11 @@ ms.locfileid: "55170142"
     
     ![изображение](./common/new_attribute_details.png)
 
-    b. В списке **Источник атрибута** выберите значение атрибута.
+    б) В списке **Источник атрибута** выберите значение атрибута.
 
     c. Нажмите кнопку **ОК**.
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -154,7 +155,7 @@ ms.locfileid: "55170142"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Конфигурация Zscaler](common/configuresection.png)
 
@@ -166,7 +167,7 @@ ms.locfileid: "55170142"
 
     a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
+    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
@@ -174,11 +175,11 @@ ms.locfileid: "55170142"
     
     a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
+    б) В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
     c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+    4.3. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
     д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
@@ -194,7 +195,7 @@ ms.locfileid: "55170142"
 
     a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать**.
+    б) Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -217,11 +218,11 @@ ms.locfileid: "55170142"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    b. В текстовом поле "Адрес" введите **gateway.zscaler.net**.
+    б) В текстовом поле "Адрес" введите **gateway.zscaler.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
-    d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
+    4.3. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
@@ -229,9 +230,9 @@ ms.locfileid: "55170142"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

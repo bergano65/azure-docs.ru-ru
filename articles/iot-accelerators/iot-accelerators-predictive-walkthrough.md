@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 10/26/2018
+ms.date: 02/08/2019
 ms.author: dobett
-ms.openlocfilehash: e9ad55c62ae4b53241d366a85f54851fc193f10b
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: bdb9b48549d24565fdafb9ac1c3215029445793c
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631045"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100518"
 ---
 # <a name="predictive-maintenance-solution-accelerator-overview"></a>Обзор акселератора решений для прогнозного обслуживания
 
@@ -53,7 +53,7 @@ ms.locfileid: "53631045"
 
 Виртуальные устройства могут обрабатывать следующие команды, отправляемые из Центра Интернета вещей в решение:
 
-| Get-Help | ОПИСАНИЕ |
+| Команда | ОПИСАНИЕ |
 | --- | --- |
 | StartTelemetry |Управляет состоянием моделирования.<br/>Запускает отправку данных телеметрии с устройства. |
 | StopTelemetry |Управляет состоянием моделирования.<br/>Останавливает отправку данных телеметрии с устройства. |

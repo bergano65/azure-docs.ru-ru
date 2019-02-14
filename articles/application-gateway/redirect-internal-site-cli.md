@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
-ms.openlocfilehash: 499ecc37150bd9b5335c54f2e99812121fe4b1bc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 574394000c45ca2c12c309c4536a6649bd3fcb76
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729682"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56104055"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
@@ -50,7 +50,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов 
 
-Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутреннего пула серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ipwork_public_ip_create).
+Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутреннего пула серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create).
 
 ```azurecli-interactive
 az network vnet create \
@@ -103,7 +103,7 @@ az network application-gateway create \
 
 Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www.contoso.com* и *www.contoso.org*.
 
-Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gatewaywork_application_gateway_http_listener_create).
+Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
 
 ```azurecli-interactive
 az network application-gateway http-listener create \
@@ -124,7 +124,7 @@ az network application-gateway http-listener create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая позволяет отправлять трафик с *www.consoto.org* на прослушиватель для *www.consoto.org* в шлюзе приложения с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway/redirect-configwork_application_gateway_redirect_config_create).
+Добавьте конфигурацию перенаправления, которая позволяет отправлять трафик с *www.consoto.org* на прослушиватель для *www.consoto.org* в шлюзе приложения с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -141,7 +141,7 @@ az network application-gateway redirect-config create \
 
 Правила обрабатываются в порядке их создания. Трафик направляется при помощи первого правила, которое соответствует URL-адресу, отправленному в шлюз приложений. Например, если для одного порта имеется правило с базовым прослушивателем и правило с многосайтовым прослушивателем, для обеспечения правильной работы правило с многосайтовым прослушивателем должно быть указано перед правилом с базовым прослушивателем. 
 
-В этом примере создаются два правила и удаляется созданное правило по умолчанию.  Вы можете добавить правило с помощью команды [az network application-gateway rule create](/cli/azure/network/application-gatewaywork_application_gateway_rule_create).
+В этом примере создаются два правила и удаляется созданное правило по умолчанию.  Вы можете добавить правило с помощью команды [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
 
 ```azurecli-interactive
 az network application-gateway rule create \
@@ -201,7 +201,7 @@ az vmss extension set \
 
 ## <a name="create-cname-record-in-your-domain"></a>Создание записи CNAME в домене
 
-После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ipwork_public_ip_show) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
+После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
 
 ```azurecli-interactive
 az network public-ip show \

@@ -11,7 +11,7 @@ items:
   expanded: true
 - name: Быстрое начало работы
   items:
-  - name: Отправка поисковых запросов с помощью REST API
+  - name: REST API
     items:
     - name: Использование C#
       href: quickstarts/csharp.md
@@ -25,7 +25,7 @@ items:
       href: quickstarts/python.md
     - name: Использование Ruby
       href: quickstarts/ruby.md
-  - name: Поиск изображений с использованием пакета SDK
+  - name: SDK
     items:
     - name: Использование C#
       href: image-search-sdk-quickstart.md
@@ -116,9 +116,9 @@ items:
     href: language-support.md
   - name: Аналитика для API Bing для поиска изображений
     href: bing-image-stats.md
-ms.openlocfilehash: 0dce6494fb86f32e86e280d7e9faf701d532cf32
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: d75e08e7430b3474fc5e3a354d3c4a559899957a
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509734"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237224"

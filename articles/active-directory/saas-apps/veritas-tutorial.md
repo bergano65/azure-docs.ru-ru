@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2017
 ms.author: jeedes
-ms.openlocfilehash: 0b2d4acb3a717f51d0ff15868dea917806b5b604
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 70adbcd8c25b3acb4408447070d3b0397d258847
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181968"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56167462"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-veritas-enterprise-vaultcloud-sso"></a>Руководство. Интеграция Azure Active Directory с Veritas Enterprise Vault.cloud SSO
 
@@ -114,7 +115,7 @@ ms.locfileid: "55181968"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://personal.ap.archive.veritas.com/CID=<CUSTOMERID>`
 
-    b. В поле **Идентификатор** введите URL-адрес соответствующего центра обработки данных.
+    б) В поле **Идентификатор** введите URL-адрес соответствующего центра обработки данных.
 
     | Центр обработки данных| URL-адрес |
     |----------|----|
@@ -152,7 +153,7 @@ ms.locfileid: "55181968"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -176,11 +177,11 @@ ms.locfileid: "55181968"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-veritas-enterprise-vaultcloud-sso-test-user"></a>Создание тестового пользователя Veritas Enterprise Vault.cloud SSO
 

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: f9b290af13b45f58af4deb5be9a8ce1a85609970
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 95f8ca4332fb3bae1ced01111cd33c5890848b2b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55177571"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56162430"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-ordering"></a>Руководство. Интеграция Azure Active Directory с Predictix Ordering
 
@@ -30,7 +31,7 @@ ms.locfileid: "55177571"
 
 - С помощью Azure AD вы можете контролировать доступ к Predictix Ordering.
 - Вы можете включить автоматический вход пользователей в Predictix Ordering (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55177571"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Predictix Ordering**, выберите **Predictix Ordering** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55177571"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Predictix Ordering](#create-a-predictix-ordering-test-user)** требуется для создания в Predictix Ordering пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55177571"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname-pricing>.ordering.predictix.com/sso/request`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     
     | |
     |--|
@@ -120,7 +121,7 @@ ms.locfileid: "55177571"
     | `https://<companyname-pricing>.ordering.predictix.com` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Predictix Ordering](https://www.predix.io/support/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Predictix Ordering](https://www.predix.io/support/). 
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -149,7 +150,7 @@ ms.locfileid: "55177571"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/predictixordering-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/predictixordering-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -169,7 +170,7 @@ ms.locfileid: "55177571"
 
    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-   d. Нажмите кнопку **Создать**.
+   4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-predictix-ordering-test-user"></a>Создание тестового пользователя в Predictix Ordering
 

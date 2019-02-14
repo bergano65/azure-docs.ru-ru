@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с FilesAnywhere | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с FilesAnywhere | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FilesAnywhere.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/17/2017
 ms.author: jeedes
-ms.openlocfilehash: a6cc65feb49052a00fed94fb318570182dd9a49b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 54cbcb19e400f08e1e1d8e97afaa2e2e1cff133c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55154632"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205840"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-filesanywhere"></a>Руководство. Интеграция Azure Active Directory с FilesAnywhere
+# <a name="tutorial-azure-active-directory-integration-with-filesanywhere"></a>Руководство по Интеграция Azure Active Directory с FilesAnywhere
 
 В этом руководстве описано, как интегрировать приложение FilesAnywhere с Azure Active Directory (Azure AD).
 
@@ -31,7 +32,7 @@ ms.locfileid: "55154632"
 - Вы можете включить автоматический вход пользователей в FilesAnywhere (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -127,7 +128,7 @@ ms.locfileid: "55154632"
 
     a. Щелкните параметр **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub domain>.filesanywhere.com/`.
+    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub domain>.filesanywhere.com/`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения на фактические URL-адреса для входа и ответа. Чтобы получить эти значения, обратитесь в [службу поддержки FilesAnywhere](mailto:support@FilesAnywhere.com). 
@@ -153,11 +154,11 @@ ms.locfileid: "55154632"
 
     ![Настройка единого входа](./media/filesanywhere-tutorial/tutorial_FilesAnywhere_05.png)
     
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    d. Нажмите кнопку **ОК**.
+    4.3. Нажмите кнопку **ОК**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -200,11 +201,11 @@ ms.locfileid: "55154632"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: tomfitz
-ms.openlocfilehash: 70f6f8a7837b9e87b2720a866f14983356d23691
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 0bc53edb00ea13fdfcab3cfc398e122e6ecd7632
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55487682"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106330"
 ---
 # <a name="view-activity-logs-to-audit-actions-on-resources"></a>Просмотр журналов действий для аудита действий с ресурсами
 
@@ -73,6 +73,8 @@ ms.locfileid: "55487682"
     ![Отображение фильтра на панели мониторинга](./media/resource-group-audit/show-dashboard.png)
 
 ## <a name="powershell"></a>PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * Чтобы получить записи журнала, выполните команду **Get-AzLog**. Укажите дополнительные параметры, чтобы отфильтровать список записей. Если не указать время начала и окончания, возвращаются записи за последние семь дней.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 5952c602a90568a9ce9e71dfa2c0dd383aed4e16
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: dc798dc78ed0cdbf11bbe3bc2dd805433b127a4d
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915377"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55976929"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -62,10 +62,10 @@ if($adminAccount.Disabled)
 
 
 ## <a name="deploying-windows-10-with-multitenant-hosting-rights"></a>Развертывание Windows 10 с правами на мультитенантное размещение
-Убедитесь, что у вас [установлена и настроена последняя версия Azure PowerShell](/powershell/azure/overview). Чтобы передать подготовленный виртуальный жесткий диск в учетную запись хранения Azure, выполните командлет `Add-AzureRmVhd` со следующими параметрами:
+Убедитесь, что у вас [установлена и настроена последняя версия Azure PowerShell](/powershell/azure/overview). Чтобы передать подготовленный виртуальный жесткий диск в учетную запись хранения Azure, выполните командлет `Add-AzVhd` со следующими параметрами:
 
 ```powershell
-Add-AzureRmVhd -ResourceGroupName "myResourceGroup" -LocalFilePath "C:\Path\To\myvhd.vhd" `
+Add-AzVhd -ResourceGroupName "myResourceGroup" -LocalFilePath "C:\Path\To\myvhd.vhd" `
     -Destination "https://mystorageaccount.blob.core.windows.net/vhds/myvhd.vhd"
 ```
 
@@ -79,15 +79,15 @@ Add-AzureRmVhd -ResourceGroupName "myResourceGroup" -LocalFilePath "C:\Path\To\m
    }
 ```
 
-**Развертывание через PowerShell** При развертывании виртуальной машины Windows Server с помощью PowerShell доступен дополнительный параметр для `-LicenseType`. После передачи виртуального жесткого диска в Azure необходимо создать новую виртуальную машину с помощью командлета `New-AzureRmVM` и указать тип лицензирования следующим образом.
+**Развертывание через PowerShell** При развертывании виртуальной машины Windows Server с помощью PowerShell доступен дополнительный параметр для `-LicenseType`. После передачи виртуального жесткого диска в Azure необходимо создать новую виртуальную машину с помощью командлета `New-AzVM` и указать тип лицензирования следующим образом.
 ```powershell
-New-AzureRmVM -ResourceGroupName "myResourceGroup" -Location "West US" -VM $vm -LicenseType "Windows_Client"
+New-AzVM -ResourceGroupName "myResourceGroup" -Location "West US" -VM $vm -LicenseType "Windows_Client"
 ```
 
 ## <a name="verify-your-vm-is-utilizing-the-licensing-benefit"></a>Проверка наличия льготы на гибридное использование Azure для Windows Server
-После развертывания виртуальной машины с помощью Resource Manager или PowerShell проверьте тип лицензии с помощью командлета `Get-AzureRmVM` следующим образом.
+После развертывания виртуальной машины с помощью Resource Manager или PowerShell проверьте тип лицензии с помощью командлета `Get-AzVM` следующим образом.
 ```powershell
-Get-AzureRmVM -ResourceGroup "myResourceGroup" -Name "myVM"
+Get-AzVM -ResourceGroup "myResourceGroup" -Name "myVM"
 ```
 
 Выходные данные аналогичны приведенному ниже примеру для Windows 10 с правильным типом лицензии:

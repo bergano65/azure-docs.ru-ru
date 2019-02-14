@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/24/2018
 ms.author: victorh
-ms.openlocfilehash: 1a9cbb14bc6d6df25dbc627bba5a3e72db5350a6
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: bf3061509e08648aa63b843a4b1d7b8968f3e88e
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727336"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56114643"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure CLI
 
@@ -93,7 +93,7 @@ az network application-gateway create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая позволяет отправлять трафик из шлюза приложения на сайт *bing.com*, с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway/redirect-configwork_application_gateway_redirect_config_create).
+Добавьте конфигурацию перенаправления, которая позволяет отправлять трафик из шлюза приложения на сайт *bing.com*, с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -106,7 +106,7 @@ az network application-gateway redirect-config create \
 
 ### <a name="add-a-listener-and-routing-rule"></a>Добавление прослушивателя и правила маршрутизации
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик. Создайте прослушиватель, используя команду [az network application-gateway http-listener create](/cli/azure/network/application-gateway), с интерфейсным портом. Чтобы создать порт, используйте команду [az network application-gateway frontend-port create](/cli/azure/network/application-gateway). Правило требуется для того, чтобы указать прослушивателю, куда отправлять входящий трафик. Создайте базовое правило *redirectRule*, используя команду [az network application-gateway rule create](/cli/azure/network/application-gateway#az-network_application_gateway_rule_create) и конфигурацию перенаправления.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик. Создайте прослушиватель, используя команду [az network application-gateway http-listener create](/cli/azure/network/application-gateway), с интерфейсным портом. Чтобы создать порт, используйте команду [az network application-gateway frontend-port create](/cli/azure/network/application-gateway). Правило требуется для того, чтобы указать прослушивателю, куда отправлять входящий трафик. Создайте базовое правило *redirectRule*, используя команду [az network application-gateway rule create](/cli/azure/network/application-gateway) и конфигурацию перенаправления.
 
 ```azurecli-interactive
 az network application-gateway frontend-port create \

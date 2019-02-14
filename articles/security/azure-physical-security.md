@@ -4,7 +4,7 @@ description: В статье описаны центры данных Azure, в 
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: MBaldwin
+manager: barbkess
 editor: TomSh
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
-ms.openlocfilehash: 69a54640ae3b4e71d7782712ad1764babab7104a
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 5f8378de18796fd679354c88880942df83399ad5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39170683"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112050"
 ---
 # <a name="azure-facilities-premises-and-physical-security"></a>Объекты, локальная среда и физическая безопасность в Azure
 Azure состоит из [инфраструктуры глобально распределенных центров обработки данных](https://azure.microsoft.com/global-infrastructure/), которая поддерживает тысячи веб-служб и охватывает более чем 100 высокобезопасных площадок по всему миру.

@@ -1,25 +1,25 @@
 ---
 title: Кэширование поставщика кэша вывода ASP.NET
 description: Информация о том, как выходные данные страницы ASP.NET кэшируются с помощью кэша Azure для Redis
-services: azure-cache-for-redis
+services: cache
 documentationcenter: na
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: tysonn
 ms.assetid: 78469a66-0829-484f-8660-b2598ec60fbf
 ms.service: cache
 ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 02/14/2017
-ms.author: wesmc
-ms.openlocfilehash: 376140ad820bc05caf2c8f00b7af1e31090261c5
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.author: yegu
+ms.openlocfilehash: 3aa2e9e773eb0c07b5f10a57dabf1138b9f3f288
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022022"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232915"
 ---
 # <a name="aspnet-output-cache-provider-for-azure-cache-for-redis"></a>Поставщик кэша вывода ASP.NET для кэша Azure для Redis
 Поставщик кэша вывода Redis представляет собой механизм внепроцессного хранения для выходных данных кэширования. Эти данные предназначены специально для полных HTTP-ответов (кэширование вывода страниц). Поставщик подключается к новой точке расширения поставщика вывода кэша, которая появилась в ASP.NET 4.

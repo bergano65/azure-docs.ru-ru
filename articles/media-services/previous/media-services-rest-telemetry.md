@@ -4,7 +4,7 @@ description: В этой статье показано, как использо�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: e1a314fb-cc05-4a82-a41b-d1c9888aab09
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/09/2017
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: ceb2eafdb3df0d24a98d0d3b4afc7d1d9424b4de
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 4b2028b16c395b770e935fdba47dc0e965284fc2
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785843"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993680"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
 

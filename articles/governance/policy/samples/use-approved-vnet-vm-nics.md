@@ -8,12 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: d536804535bf81c3bbbcb96d9863ba21a8176c47
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 812ba3e5b8be19230f0a51820b28b279ede4a064
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54847600"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243167"
 ---
 # <a name="use-approved-vnet-for-vm-network-interfaces"></a>Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
 
@@ -33,7 +33,7 @@ ms.locfileid: "54847600"
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 
-[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh.md)]
+[!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ```azurepowershell-interactive
 $definition = New-AzPolicyDefinition -Name "vm-creation-in-approved-vnet" -DisplayName "Use approved vNet for VM network interfaces" -description "This policy enforces VM network interfaces to use vNet." -Policy 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/vm-creation-in-approved-vnet/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/vm-creation-in-approved-vnet/azurepolicy.parameters.json' -Mode All

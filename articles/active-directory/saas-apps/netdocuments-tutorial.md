@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: f85fb6a628692fc5c0054ac6047980a5ea66cbe3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9af1198ed302eba9761c70fef621f15dfd67bc09
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152508"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56185083"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство. Интеграция Azure Active Directory с NetDocuments
+# <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство по Интеграция Azure Active Directory с NetDocuments
 
 В этом руководстве описано, как интегрировать приложение NetDocuments с Azure Active Directory (Azure AD).
 
@@ -114,10 +115,10 @@ ms.locfileid: "55152508"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Обратитесь к [службе поддержки NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения.
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Обратитесь к [службе поддержки NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -145,7 +146,7 @@ ms.locfileid: "55152508"
    
     a. Для параметра **Federated identity server type** (Тип сервера федеративных удостоверений) выберите **Службы федерации Active Directory**.
    
-    b. Щелкните **Выбрать файл**, чтобы отправить скачанный файл метаданных, который вы скачали с портала Azure.
+    б) Щелкните **Выбрать файл**, чтобы отправить скачанный файл метаданных, который вы скачали с портала Azure.
    
     c. Последовательно выберите **ОК**.
 
@@ -153,7 +154,7 @@ ms.locfileid: "55152508"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -177,11 +178,11 @@ ms.locfileid: "55152508"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-netdocuments-test-user"></a>Создание тестового пользователя NetDocuments
 

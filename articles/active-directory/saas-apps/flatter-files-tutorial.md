@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2017
 ms.author: jeedes
-ms.openlocfilehash: fe15a1aa0d284913c77d62e254b8827d9d60c850
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 744d18b39ffc696d0973628c60687c6b70fbcaad
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188241"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168686"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
+# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
 
 В этом руководстве описано, как интегрировать приложение Flatter Files с Azure Active Directory (Azure AD).
 
@@ -136,7 +137,7 @@ ms.locfileid: "55188241"
     
     a. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
     
-    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
+    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 1. В диалоговом окне **SAML Configuration** (Настройка SAML) выполните следующие действия. 
    
@@ -147,18 +148,18 @@ ms.locfileid: "55188241"
     >[!NOTE]
     >Если у вас нет зарегистрированного домена, обратитесь в службу поддержки Flatter Files по адресу [support@flatterfiles.com](mailto:support@flatterfiles.com). 
     
-    b. В текстовое поле **URL-адрес поставщика удостоверений** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле **URL-адрес поставщика удостоверений** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
    
     c.  Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
-    d. Нажмите кнопку **Обновить**.
+    4.3. Нажмите кнопку **Обновить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -182,11 +183,11 @@ ms.locfileid: "55188241"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-flatter-files-test-user"></a>Создание тестового пользователя Flatter Files
 
@@ -208,11 +209,11 @@ ms.locfileid: "55188241"
 
     a. В текстовом поле **Имя** введите **Britta**.
    
-    b. В текстовом поле **Фамилия** введите **Simon**. 
+    б) В текстовом поле **Фамилия** введите **Simon**. 
    
     c. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon на портале Azure.
    
-    d. Нажмите кнопку **Submit**(Отправить).   
+    4.3. Нажмите кнопку **Submit**(Отправить).   
 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
@@ -250,7 +251,7 @@ ms.locfileid: "55188241"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните элемент Flatter Files на панели доступа, чтобы автоматически войти в приложение Flatter Files.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

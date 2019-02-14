@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 8e2a5c0091c4dee5ee548b8572e02724c8ce0643
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c7a89319875d3685daed7abfa3c810671ca0615d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203629"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168113"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pacific-timesheet"></a>Руководство. Интеграция Azure Active Directory с Pacific Timesheet
 
@@ -114,10 +115,10 @@ ms.locfileid: "55203629"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Pacific Timesheet](https://www.pacifictimesheet.com/support).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Pacific Timesheet](https://www.pacifictimesheet.com/support).
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "55203629"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55203629"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-pacific-timesheet-test-user"></a>Создание тестового пользователя Pacific Timesheet
 

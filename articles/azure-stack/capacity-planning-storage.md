@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: prchint
 ms.lastreviewed: 09/18/2018
-ms.openlocfilehash: 5d9d01a482483d030569a4dcad03c9ecef7cffc0
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 29244c20bb4bbad8077788abbc29e6267f701d2e
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55245156"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56176362"
 ---
 # <a name="azure-stack-storage-capacity-planning"></a>Планирование емкости хранилища для Azure Stack
 В следующих разделах приводятся сведения о планировании емкости хранилища для Azure Stack, которые помогут спланировать потребности решения в ресурсах хранения.
@@ -48,9 +48,6 @@ ms.locfileid: "55245156"
 - В каждой файловой системе ReFS включена функция BitLocker для шифрования неактивных данных. 
 
 Виртуальные диски создаются автоматически и имеют следующую емкость:
-
-
-
 
 |ИМЯ|Расчет емкости|ОПИСАНИЕ|
 |-----|-----|-----|

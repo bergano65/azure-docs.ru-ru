@@ -15,18 +15,20 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 34278e02c62bda18a4b4d2f404417e8844dd5fc4
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 35e0dc5dabaf1602b87ec6a8be86ed609f3ea12f
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156686"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56107384"
 ---
 # <a name="how-to-create-an-ilb-ase-using-azure-resource-manager-templates"></a>Создание среды службы приложений с внутренним балансировщиком нагрузки с помощью шаблонов Azure Resource Manager
 
 > [!NOTE] 
 > Эта статья посвящена среде службы приложений версии 1. Имеется более новая версия среды службы приложений, которая проще в использовании и которая работает на более мощной инфраструктуре. Чтобы узнать больше о новой версии, начните с изучения статьи [Введение в среду службы приложения](intro.md).
 >
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="overview"></a>Обзор
 Вместо общедоступного виртуального IP-адреса для создания среды службы приложений (ASE) можно использовать внутренний адрес виртуальной сети.  Этот внутренний адрес принадлежит компоненту Azure, который называется внутренним балансировщиком нагрузки.  Среду ASE с внутренним балансировщиком нагрузки можно создать на портале Azure.  Ее также можно создать автоматически с помощью шаблонов Azure Resource Manager.  В этой статье описаны действия и синтаксис, необходимые для создания ASE с внутренним балансировщиком нагрузки с помощью шаблонов Azure Resource Manager.
@@ -51,7 +53,7 @@ ms.locfileid: "54156686"
     $templatePath="PATH\azuredeploy.json"
     $parameterPath="PATH\azuredeploy.parameters.json"
 
-    New-AzureRmResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
+    New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
 
 После отправки шаблона Azure Resource Manager для создания ASE с внутренним балансировщиком нагрузки потребуется несколько часов.  Созданная ASE с внутренним балансировщиком нагрузки появится на портале в списке сред службы приложений для подписки, использованной для развертывания.
 
@@ -124,7 +126,7 @@ ms.locfileid: "54156686"
     $templatePath="PATH\azuredeploy.json"
     $parameterPath="PATH\azuredeploy.parameters.json"
 
-    New-AzureRmResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
+    New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
 
 Когда шаблон Azure Resource Manager будет отправлен, применение изменений для одного внешнего интерфейса ASE займет примерно сорок минут.  Например, для среды ASE с размером по умолчанию, содержащей два внешних интерфейса, реализация шаблона займет примерно один час и двадцать минут.  Во время выполнения шаблона нельзя масштабировать среду ASE.  
 

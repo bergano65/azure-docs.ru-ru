@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
-ms.openlocfilehash: d227f051b3a754d95f1a4f0276625f27417ad983
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7476783ec5d58979ec055b4e4d991c69fce59465
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55175148"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209716"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-projectplace"></a>Руководство. Интеграция Azure Active Directory с Projectplace
+# <a name="tutorial-azure-active-directory-integration-with-projectplace"></a>Руководство по Интеграция Azure Active Directory с Projectplace
 
 В данном руководстве описано, как интегрировать Projectplace с Azure Active Directory (Azure AD).
 
@@ -134,7 +135,7 @@ ms.locfileid: "55175148"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -158,11 +159,11 @@ ms.locfileid: "55175148"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-projectplace-test-user"></a>Создание тестового пользователя Projectplace
 
@@ -186,7 +187,7 @@ ms.locfileid: "55175148"
    
     a. В разделе **Новые участники** введите электронный адрес действующей учетной записи AAD, которую вы хотите подготовить, в соответствующее текстовое поле.
    
-    b. Нажмите кнопку **Отправить**.
+    б) Нажмите кнопку **Отправить**.
 
    Владельцу учетной записи Azure Active Directory будет отправлено электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией.
 
@@ -228,7 +229,7 @@ ms.locfileid: "55175148"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Projectplace на панели доступа, вы автоматически войдете в приложение Projectplace.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

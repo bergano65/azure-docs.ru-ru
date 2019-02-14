@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: b59efe3faa00a172e5948f18b06337eedd2a1f6b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 286af8b927f488acaf2877e753f6e4689c4b000f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55184807"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199465"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство. Интеграция Azure Active Directory с QPrism
+# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство по Интеграция Azure Active Directory с QPrism
 
 В этом руководстве описано, как интегрировать QPrism с Azure Active Directory (Azure AD).
 
@@ -59,7 +60,7 @@ ms.locfileid: "55184807"
 
 1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 1. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
 
@@ -67,7 +68,7 @@ ms.locfileid: "55184807"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна выберите **Новое приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **QPrism** и выберите **QPrism** на панели результатов. Нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -107,10 +108,10 @@ ms.locfileid: "55184807"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/login`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/metadata.php`.
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/metadata.php`.
          
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим идентификатором и URL-адресом для входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов QPrism](mailto:qsupport-ce@quatrro.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим идентификатором и URL-адресом для входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов QPrism](mailto:qsupport-ce@quatrro.com). 
 
 1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
 
@@ -132,7 +133,7 @@ ms.locfileid: "55184807"
 
 1. На портале Azure в области слева щелкните **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/qprism-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/qprism-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 

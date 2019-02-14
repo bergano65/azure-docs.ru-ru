@@ -4,7 +4,7 @@ description: В этой статье приводятся проверенны�
 services: azure-security
 documentationcenter: na
 author: TomShinder
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: ''
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2018
 ms.author: tomsh
-ms.openlocfilehash: 4bf99fb103850582ded56604d3f65ecd030cb167
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 01688c120a8302da4903302ab8bcd2d1fa4ab351
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410042"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113419"
 ---
 # <a name="azure-security-white-papers"></a>Технические документы по обеспечению безопасности в Azure
 | | |

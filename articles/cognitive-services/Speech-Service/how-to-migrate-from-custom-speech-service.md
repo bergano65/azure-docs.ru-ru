@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Пользовательская служба распознавания речи теперь входит в состав службы "Речь". Перейдите в службу "Речь", чтобы воспользоваться преимуществами повышенных уровней качества и обновленных компонентов.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 594233b9e345f9578c218b042a64ea167d50addb
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 698962aa0e3d72b204c4e990aa1384b44bf3896f
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211038"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55856902"
 ---
 # <a name="migrate-from-the-custom-speech-service-to-the-speech-service"></a>Переход с Пользовательской службы распознавания речи на службу "Речь"
 
@@ -40,12 +40,6 @@ ms.locfileid: "55211038"
 3. Следуйте кратким руководствам и примерам пакета SDK, чтобы использовать правильные интерфейсы API. Если вы используете интерфейсы REST API, необходимо также использовать правильные конечные точки и ключи ресурсов.
 
 4. Обновите клиентское приложение для использования интерфейсов API и службы "Речь".
-
-> [!NOTE]
-> * Если вы включили распознавание речи в Интеллектуальной службе распознавания речи (LUIS), для нее будет работать один ресурс LUIS в том же регионе, а также все службы распознавания речи. Для получения дополнительных сведений обратитесь к разделу [Распознавание намерений из речи](how-to-recognize-intents-from-speech-csharp.md).
-> * Преобразование текста в текст не является частью службы "Речь". Эта функция требует собственной подписки на ресурсы Azure.
- 
-
 
 ## <a name="migration-for-existing-customers"></a>Миграция для имеющихся клиентов
 

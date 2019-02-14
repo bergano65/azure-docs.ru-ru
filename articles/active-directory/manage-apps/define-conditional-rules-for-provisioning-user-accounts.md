@@ -3,8 +3,8 @@ title: Подготовка приложений с использованием
 description: Узнайте, как использовать фильтры области, чтобы предотвратить подготовку объектов в приложениях, которые поддерживают автоматическую подготовку пользователей, если эти объекты не отвечают требованиям компании.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.author: barbkess
+ms.author: celested
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3ed3fef4f4f74939d503d5e6c8434d66f1d2a576
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6ebc6c1e8a264c5570f3100885c4fca7d0d0d90d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55176953"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56208387"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Подготовка приложений на основе атрибутов с использованием фильтров области
 В этой статье объясняется, как с помощью фильтров области задать правила на основе атрибутов, которые управляют подготовкой пользователей для работы с приложением.
@@ -80,11 +81,11 @@ ms.locfileid: "55176953"
 
    a. **EQUALS**. Предложение возвращает значение true, если оцениваемый атрибут точно совпадает со значением входной строки (с учетом регистра).
 
-   b. **NOT EQUALS**. Предложение возвращает значение true, если оцениваемый атрибут не совпадает со значением входной строки (с учетом регистра).
+   б) **NOT EQUALS**. Предложение возвращает значение true, если оцениваемый атрибут не совпадает со значением входной строки (с учетом регистра).
 
    c. **IS TRUE**. Предложение возвращает значение true, если вычисленный атрибут содержит логическое значение true.
 
-   d. **IS FALSE**. Предложение возвращает значение true, если вычисленный атрибут содержит логическое значение false.
+   4.3. **IS FALSE**. Предложение возвращает значение true, если вычисленный атрибут содержит логическое значение false.
 
    д. **IS NULL**. Предложение возвращает значение true, если вычисленный атрибут имеет пустое значение.
 

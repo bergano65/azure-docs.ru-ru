@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hosted Graphite.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: ee6e393064b3dd2fbb9a27530acffb12fb5c086e
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ce0ae55fdc43704670f1d74e52b55db91a20cceb
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152082"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56179252"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Руководство. Интеграция Azure Active Directory с Hosted Graphite
+# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Руководство по Интеграция Azure Active Directory с Hosted Graphite
 
 В этом руководстве описано, как интегрировать Hosted Graphite с Azure Active Directory (Azure AD).
 
@@ -114,7 +115,7 @@ ms.locfileid: "55152082"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.hostedgraphite.com/metadata/<user id>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.hostedgraphite.com/complete/saml/<user id>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.hostedgraphite.com/complete/saml/<user id>`.
 
 1. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, то в разделе **Домены и URL-адреса Hosted Graphite** сделайте следующее:
    
@@ -122,7 +123,7 @@ ms.locfileid: "55152082"
   
     a. Щелкните параметр **Показать дополнительные параметры URL-адресов**.
 
-    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.hostedgraphite.com/login/saml/<user id>/`.   
+    б) В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.hostedgraphite.com/login/saml/<user id>/`.   
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо указать фактические значения идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, на стороне приложения перейдите в раздел "Доступ" -> "Настройка SAML" или обратитесь в [службу поддержки Hosted Graphite](mailto:help@hostedgraphite.com).
@@ -170,7 +171,7 @@ ms.locfileid: "55152082"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -194,11 +195,11 @@ ms.locfileid: "55152082"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-hosted-graphite-test-user"></a>Создание тестового пользователя Hosted Graphite
 

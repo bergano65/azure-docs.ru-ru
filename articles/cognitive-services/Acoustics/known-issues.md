@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: При использовании Designer Preview для Project Acoustics вы можете столкнуться со следующими известными проблемами.
 services: cognitive-services
 author: kylestorck
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: kylestorck
-ms.openlocfilehash: 02f56306110e904f41c1b94346c58b33ce0b575c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 2f7f7db31debd7663be44b79c42ab151a96ae7e5
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156196"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55869056"
 ---
 # <a name="known-issues"></a>Известные проблемы
 При использовании Designer Preview для Project Acoustics вы можете столкнуться со следующими известными проблемами.

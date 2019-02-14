@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в LINE WORKS.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 3ebb8917ffadf11ecf8e2e89a67508be3dee7ef5
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d649877796160957b9314fba4c5c92b052ec744a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150349"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182363"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство. Интеграция Azure Active Directory с LINE WORKS
 
@@ -30,7 +31,7 @@ ms.locfileid: "55150349"
 
 - С помощью Azure AD вы можете контролировать доступ к LINE WORKS.
 - Вы можете включить автоматический вход пользователей в LINE WORKS (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55150349"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **LINE WORKS**, выберите **LINE WORKS** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -116,7 +117,7 @@ ms.locfileid: "55150349"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.worksmobile.com/d/login/<domain>/`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес: `worksmobile.com`
+    б) В текстовом поле **Идентификатор** введите URL-адрес: `worksmobile.com`
 
 5. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (необработанный)**, а затем сохраните файл сертификата на компьютере.
 
@@ -128,7 +129,7 @@ ms.locfileid: "55150349"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Настройка LINE WORKS](common/configuresection.png)
 
@@ -139,9 +140,9 @@ ms.locfileid: "55150349"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 
