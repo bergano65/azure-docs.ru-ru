@@ -14,35 +14,36 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 9ad9be1d1573bd3c57a3462f1f6ab53152a4469d
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5a99f4bebec45b8cd59f6fa867f7d18a51c121da
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54809740"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56196881"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство. Интеграция Azure Active Directory с консолью администрирования Mimecast
+# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast
 
 В этом руководстве описано, как интегрировать консоль администрирования Mimecast с Azure Active Directory (Azure AD).
 Интеграция Azure AD с консолью администрирования Mimecast обеспечивает следующие преимущества:
 
 * С помощью Azure AD вы можете контролировать доступ к консоли администрирования Mimecast.
 * Вы можете включить автоматический вход пользователей в консоль администрирования Mimecast (единый вход) с использованием учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с консолью администрирования Mimecast, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка на консоль администрирования Mimecast с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Консоль администрирования Mimecast поддерживает единый вход инициированного **пакета обновления**.
 
@@ -54,7 +55,7 @@ ms.locfileid: "54809740"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -62,7 +63,7 @@ ms.locfileid: "54809740"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Консоль администрирования Mimecast**, выберите **Консоль администрирования Mimecast** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -78,9 +79,9 @@ ms.locfileid: "54809740"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в консоль администрирования Mimecast](#configure-mimecast-admin-console-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя консоли администрирования Mimecast](#create-mimecast-admin-console-test-user)** требуется для того, чтобы в консоли администрирования Mimecast существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -121,11 +122,11 @@ ms.locfileid: "54809740"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    a. URL-адрес входа.
+    а) URL-адрес входа.
 
-    b. Идентификатор Azure AD.
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
 ### <a name="configure-mimecast-admin-console-single-sign-on"></a>Настройка консоли администрирования Mimecast с поддержкой единого входа
 
@@ -149,11 +150,11 @@ ms.locfileid: "54809740"
     
     a. В текстовом поле **Описание** введите имя конфигурации.
     
-    b. Выберите **Обязательное использование проверки подлинности SAML для консоли администрирования Mimecast**.
+    б) Выберите **Обязательное использование проверки подлинности SAML для консоли администрирования Mimecast**.
     
     c. В поле **Provider** (Поставщик) выберите **Azure Active Directory**.
     
-    d. В текстовое поле **URL-адрес издателя** вставьте значение **Идентификатор Azure AD**, скопированное с портала Azure.
+    4.3. В текстовое поле **URL-адрес издателя** вставьте значение **Идентификатор Azure AD**, скопированное с портала Azure.
     
     д. В текстовое поле **URL-адрес входа** вставьте **URL-адрес входа**, скопированный с портала Azure.
 
@@ -170,9 +171,9 @@ ms.locfileid: "54809740"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -180,18 +181,18 @@ ms.locfileid: "54809740"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -247,7 +248,7 @@ ms.locfileid: "54809740"
    
     a. В соответствующие текстовые поля введите атрибуты **Email Address** (Адрес электронной почты), **Global Name** (Глобальное имя), **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) действительной учетной записи Azure AD, которую вы хотите подготовить.
 
-    b. Выберите команду **Сохранить**.
+    б) Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетных записей консоли администрирования Mimecast или API, предоставляемые консолью администрирования Mimecast для подготовки учетных записей пользователей Azure AD. 
@@ -256,7 +257,7 @@ ms.locfileid: "54809740"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Mimecast Admin Console" (Консоль администрирования Mimecast) на панели доступа, вы автоматически войдете в приложение консоли администрирования Mimecast, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку "Mimecast Admin Console" (Консоль администрирования Mimecast) на панели доступа, вы автоматически войдете в приложение консоли администрирования Mimecast, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

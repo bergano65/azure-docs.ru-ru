@@ -14,14 +14,15 @@ ms.date: 01/28/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
-ms.openlocfilehash: bf625b45fa47d4fa681521eb992bd2b07cc08946
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3883ddcad1c41e131d52016e4fa94a3e668adcd1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55296253"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209733"
 ---
-# <a name="tutorial-add-or-remove-group-members-automatically"></a>Руководство. Автоматическое добавление или удаление участников группы
+# <a name="tutorial-add-or-remove-group-members-automatically"></a>Руководство по Автоматическое добавление или удаление участников группы
 
 В Azure Active Directory (Azure AD) можно автоматически добавлять или удалять пользователей в группах безопасности или Office 365, поэтому не обязательно всегда делать это вручную. Всякий раз, когда какие-либо свойства пользователя или устройства меняются, Azure AD оценивает все динамические групповые правила в клиенте, чтобы узнать, следует ли добавлять или удалять участников.
 

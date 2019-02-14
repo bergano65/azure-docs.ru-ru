@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 01/14/2019
+ms.date: 01/22/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7536913817e10fbc2b46eadd1cebdfb98079c759
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 97cdae49b4676500e29ac25b12712c94e575e5f8
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819524"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55960571"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -91,7 +91,7 @@ ms.locfileid: "55819524"
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 2. Выберите **Все службы** > **Хранилище**, чтобы открыть список общих файловых ресурсов, в котором можно просмотреть сведения об использовании. 
 
-  ![Пример: общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
+    ![Пример: общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
 
   - **Всего**. Это общее место в байтах, доступное в общем ресурсе. Это пространство используется для данных и метаданных, обрабатываемых службами хранения.
   - **Используется**. Это объем данных в байтах, используемый всеми экстентами из файлов, в которых хранятся данные клиента и связанные метаданные.

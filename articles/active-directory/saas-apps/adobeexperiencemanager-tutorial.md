@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 53d1bf57a4a6471fa224de5296484857ed388486
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7b24d1040c75e93bf26639e33aa46001b4e9c008
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54821555"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56170658"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
@@ -28,21 +29,21 @@ ms.locfileid: "54821555"
 
 * С помощью Azure AD вы можете контролировать доступ к Adobe Experience Manager.
 * Вы можете включить автоматический вход пользователей в Adobe Experience Manager (единый вход) с использованием учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Experience Manager, вам потребуется следующее:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Adobe Experience Manager с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Adobe Experience Manager поддерживает единый вход инициированного **пакета обновления и выдающей точки распространения**.
 
@@ -56,7 +57,7 @@ ms.locfileid: "54821555"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -64,7 +65,7 @@ ms.locfileid: "54821555"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Adobe Experience Manager** и выберите **Adobe Experience Manager** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -80,9 +81,9 @@ ms.locfileid: "54821555"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа Adobe Experience Manager](#configure-adobe-experience-manager-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя Adobe Experience Manager](#create-adobe-experience-manager-test-user)** требуется для того, чтобы в Adobe Experience Manager существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -102,18 +103,18 @@ ms.locfileid: "54821555"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если вы хотите настроить приложение в режиме, инициируемом **IDP**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Adobe Experience Manager](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<AEM Server Url>/saml_login`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<AEM Server Url>/saml_login`.
 
     > [!NOTE]
-    > Значение URL-адреса ответа приведено для примера. Обновите значение URL-адреса ответа актуальным значением. Чтобы его получить, свяжитесь с [группой поддержки клиента Adobe Experience Manager Client](https://helpx.adobe.com/support/experience-manager.html). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение URL-адреса ответа приведено для примера. Обновите значение URL-адреса ответа актуальным значением. Чтобы его получить, свяжитесь с [группой поддержки клиента Adobe Experience Manager Client](https://helpx.adobe.com/support/experience-manager.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Adobe Experience Manager](common/metadata-upload-additional-signon.png)
 
@@ -127,11 +128,11 @@ ms.locfileid: "54821555"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    a. URL-адрес входа.
+    а) URL-адрес входа.
 
-    b. Идентификатор Azure AD.
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
 ### <a name="configure-adobe-experience-manager-single-sign-on"></a>Настройка единого входа Adobe Experience Manager
 
@@ -183,11 +184,11 @@ ms.locfileid: "54821555"
 
     a. В текстовом поле **Path** (Путь) введите **/**.
 
-    b. В поле **IDP URL** (URL-адрес IDP) вставьте значение **Login URL** (URL-адрес входа), скопированное на портале Azure.
+    б) В поле **IDP URL** (URL-адрес IDP) вставьте значение **Login URL** (URL-адрес входа), скопированное на портале Azure.
 
     c. В поле **IDP Certificate Alias** (Псевдоним сертификата IdP) введите значение **Certificate Alias** (Псевдоним сертификата), которое вы добавили в TrustStore.
 
-    d. В поле **Security Provided Entity ID** (Идентификатор сущности системы безопасности) введите уникальное значение **Azure Ad Identifier** (Идентификатор Azure AD), настроенное на портале Azure.
+    4.3. В поле **Security Provided Entity ID** (Идентификатор сущности системы безопасности) введите уникальное значение **Azure Ad Identifier** (Идентификатор Azure AD), настроенное на портале Azure.
 
     д. В поле **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) введите значение **URL-адрес ответа**, настроенное на портале Azure.
 
@@ -203,9 +204,9 @@ ms.locfileid: "54821555"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -213,18 +214,18 @@ ms.locfileid: "54821555"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -262,7 +263,7 @@ ms.locfileid: "54821555"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Adobe Experience Manager" на панели доступа, вы автоматически войдете в приложение Adobe Experience Manager, для которого был настроен единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку "Adobe Experience Manager" на панели доступа, вы автоматически войдете в приложение Adobe Experience Manager, для которого был настроен единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

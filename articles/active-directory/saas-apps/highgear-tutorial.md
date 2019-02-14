@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
+title: Руководство по Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и HighGear.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 71e95e0c4197ba53eaf641259858d3229036ee0c
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a8e91af71b4c3358d416fe5f6f7a62c9268944ac
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54808772"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201811"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-highgear"></a>Руководство. Интеграция Azure Active Directory с HighGear
 
@@ -28,16 +29,16 @@ ms.locfileid: "54808772"
 
 * С помощью Azure AD вы можете контролировать доступ к HighGear.
 * Вы можете включить автоматический вход пользователей в HighGear (единый вход) с помощью учетной записи Azure AD.
-* Вы можете управлять учетными записями централизованно — на портале Azure.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HighGear, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 * Система HighGear с лицензией "Корпоративный" или "Без ограничений".
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -54,7 +55,7 @@ ms.locfileid: "54808772"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
 2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
@@ -62,7 +63,7 @@ ms.locfileid: "54808772"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
-    ![Кнопка "Новое приложение"](common/add-new-app.png)
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **HighGear**, выберите **HighGear** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -78,9 +79,9 @@ ms.locfileid: "54808772"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в HighGear](#configure-highgear-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения HighGear.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя HighGear](#create-highgear-test-user)** требуется, чтобы в HighGear существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD. 
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -113,11 +114,11 @@ ms.locfileid: "54808772"
     
     ![Пункт меню Single Sign-On Settings (Параметры единого входа)](media/highgear-tutorial/single-sign-on-settings-menu-item.png)
 
-    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)**, которое находится на странице параметров единого входа в систему HighGear.
+    б) В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)**, которое находится на странице параметров единого входа в систему HighGear.
 
     ![Поле с URL-адресом ответа службы обработчика утверждений (ACS)](media/highgear-tutorial/assertion-consumer-service-url-field.png)
 
-    c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+    c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
      ![Сведения о домене и URL-адресах единого входа для приложения HighGear](common/metadata-upload-additional-signon.png)
 
@@ -126,7 +127,7 @@ ms.locfileid: "54808772"
     ![Поле идентификатора сущности поставщика услуг](media/highgear-tutorial/service-provider-entity-id-field.png)
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическими идентификатором, URL-адресом ответа и URL-адресом единого входа, которые находятся на странице **Single Sign-On Settings** (Параметры единого входа) в системе HighGear. Если вам нужна помощь, обратитесь к [группе поддержки HighGear](mailto:support@highgear.com).
+    > Эти значения приведены для примера. Замените эти значения фактическими идентификатором, URL-адресом ответа и URL-адресом единого входа, которые находятся на странице **Single Sign-On Settings** (Параметры единого входа) в системе HighGear. Если вам нужна помощь, обратитесь к [группе поддержки HighGear](mailto:support@highgear.com).
 
 4. На странице **Настройка единого входа с помощью SAML** откройте раздел **Сертификат подписи SAML** и щелкните ссылку **Скачать** рядом с пунктом **Сертификат (Base64)**, затем сохраните этот сертификат на компьютере. Он понадобится вам в дальнейшем для конфигурации единого входа.
 
@@ -138,7 +139,7 @@ ms.locfileid: "54808772"
 
     a. "URL-адрес входа". Это значение понадобится вам на шаге 2 в разделе **Настройка единого входа HighGear** ниже.
 
-    b. "Идентификатор Azure AD". Это значение понадобится вам на шаге 3 в разделе **Настройка единого входа HighGear** ниже.
+    б) "Идентификатор Azure AD". Это значение понадобится вам на шаге 3 в разделе **Настройка единого входа HighGear** ниже.
 
     c. "URL-адрес выхода". Это значение понадобится вам на шаге 4 в разделе **Настройка единого входа HighGear** ниже.
 
@@ -164,9 +165,9 @@ ms.locfileid: "54808772"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -174,18 +175,18 @@ ms.locfileid: "54808772"
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -249,7 +250,7 @@ ms.locfileid: "54808772"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку HighGear на панели доступа, вы автоматически войдете в приложение HighGear, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку HighGear на панели доступа, вы автоматически войдете в приложение HighGear, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
-ms.openlocfilehash: def9d44c31ed50a859bf42aa148fb7e6a36764fd
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e377cf749119c23d37bb4db8ab78abb1ce8c82ae
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751095"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199754"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws"></a>Руководство. Интеграция Azure Active Directory с Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция Azure Active Directory с Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать приложение Amazon Web Services (AWS) с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Amazon Web Services обеспечивает следующие преимущества.
@@ -447,7 +448,7 @@ c. Вы можете назначить владельца приложения 
 
  * В разделе **Подготовка** подраздел **Сопоставление** будет отображать сообщение "Идет загрузка..." и никогда не отображать сопоставления атрибутов. Единственный рабочий процесс подготовки, поддерживаемый сегодня, — импорт ролей из AWS в Azure AD для выбора во время назначения пользователя или группы. Сопоставления атрибутов для этого определены заранее и не настраиваются.
  
- * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство appRoles [объекта servicePrincipal](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/serviceprincipal) Azure AD для клиента AWS. Из коллекции для подготовки в Azure AD можете добавить множество клиентов AWS (представленных объектами servicePrincipal), однако существует проблема с невозможностью автоматического записывания всех импортированных ролей из многих объектов servicePrincipal AWS, используемых для подготовки единого servicePrincipal для единого входа. Чтобы избежать этого, [API Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/serviceprincipal) может использоваться для извлечения всех appRoles, импортированных в каждый объект servicePrincipal AWS, где настроена подготовка. Эти строки ролей впоследствии могут добавляться к servicePrincipal AWS, где настроен единый вход.
+ * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство appRoles [объекта servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS. Из коллекции для подготовки в Azure AD можете добавить множество клиентов AWS (представленных объектами servicePrincipal), однако существует проблема с невозможностью автоматического записывания всех импортированных ролей из многих объектов servicePrincipal AWS, используемых для подготовки единого servicePrincipal для единого входа. Чтобы избежать этого, [API Microsoft Graph](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) может использоваться для извлечения всех appRoles, импортированных в каждый объект servicePrincipal AWS, где настроена подготовка. Эти строки ролей впоследствии могут добавляться к servicePrincipal AWS, где настроен единый вход.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

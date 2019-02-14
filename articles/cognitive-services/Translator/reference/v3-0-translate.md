@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Использование метода Translate в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 800c6d3441e75f428f58fe76ea653f04353064bb
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 47496be907726ca8cd0e235775cdb1a8493310d0
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699726"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55879111"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 

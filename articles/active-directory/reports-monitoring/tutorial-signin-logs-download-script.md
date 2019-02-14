@@ -16,14 +16,15 @@ ms.subservice: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ca3b25929a21e844b6350a79a3713d8e1b7ef0f8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b134482e571b235b462c027a6d4ae8967fc77413
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168657"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175478"
 ---
-# <a name="tutorial-how-to-download-and-use-a-script-to-access-sign-in-logs"></a>Руководство. Скачивание и использование скрипта для доступа к журналам входа
+# <a name="tutorial-how-to-download-and-use-a-script-to-access-sign-in-logs"></a>Руководство по Скачивание и использование скрипта для доступа к журналам входа
 
 Данные о действиях входа можно скачать, если вам нужно работать с ними за пределами портала Azure. Если нажать на портале Azure кнопку **Скачать**, будет создан CSV-файл, содержащий последние 5000 записей. Если вам требуется больше возможностей, например скачать более 5000 записей за раз или скачивать журналы по расписанию, можно использовать кнопку **Скрипт**. Она позволяет создать скрипт PowerShell для скачивания ваших данных.
 

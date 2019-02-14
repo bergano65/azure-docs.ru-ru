@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: Используйте это краткое руководство для поиска сущностей с помощью пакета SDK для Поиска сущностей Bing для Java.
 services: cognitive-services
 author: mikedodaro
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: v-gedod
-ms.openlocfilehash: 5911719e0277d0ac842b285aebc03369aa82621f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 1534b2a85067867800c147c86ee7d82374de8794
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55757878"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55866201"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-java"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK для Поиска сущностей Bing для Java
 
@@ -106,7 +106,7 @@ ms.locfileid: "55757878"
         ///...
         ```
 
-    3. В рамках функции `intercept` создайте переменные для вашего запроса. Используйте `Request.Builder()` для создания запроса. Добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key` и верните `chain.proceed()` в объекте запроса.
+    3. В рамках функции `intercept` создайте переменные для вашего запроса. Используйте `Request.Builder()`, чтобы создать запрос. Добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key` и верните `chain.proceed()` в объекте запроса.
             
         ```java
         //...

@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: API Bing для поиска в Интернете — это служба RESTful, которая мгновенно отвечает на запросы пользователей. Результаты поиска можно легко настроить таким образом, чтобы они содержали веб-страницы, изображения, видео, новости, переводы и прочее. Результаты предоставляются в формате JSON и основаны на релевантности поиска и подписках API Bing для поиска в Интернете.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: overview
 ms.date: 08/14/2018
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 46d79b1ac6c56ba953eb0908e46338387b69ff1f
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 2cf135cc984ce032113de65bead210bd4c5e95ce
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55768277"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55861805"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 

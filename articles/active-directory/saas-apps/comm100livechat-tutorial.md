@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Comm100 Live Chat | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Comm100 Live Chat | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Comm100 Live Chat.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 1e0fbf7678ddac76d1a31c4bde4d75545b429add
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 85cd76288b6d744a201008aadde98ac5bb31ff86
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700706"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56166799"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-comm100-live-chat"></a>Руководство. Интеграция Azure Active Directory с Comm100 Live Chat
 

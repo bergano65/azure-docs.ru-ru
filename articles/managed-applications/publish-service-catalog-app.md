@@ -9,14 +9,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: 7e9db85fb91dd0c9a33cc8205bdb30a648dfd38a
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: dc86943924cd0c47c465e9d3bac4ca91b73a3ff5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54438751"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112790"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Вы можете создавать и публиковать [управляемые приложения Azure](overview.md), предназначенные для членов вашей организации. Например, отдел ИТ может публиковать управляемые приложения, которые соответствуют стандартам организации. Эти управляемые приложения доступны в каталоге служб, а не в Azure Marketplace.
 
@@ -30,7 +32,7 @@ ms.locfileid: "54438751"
 
 Используемое в этой статье управляемое приложение имеет только учетную запись хранения. В этом руководстве мы покажем, как опубликовать управляемое приложение. Полные примеры приведены в статье [Примеры проектов для управляемых приложений Azure](sample-projects.md).
 
-Для работы примеров PowerShell в этой статье требуется Azure PowerShell 6.2 или более поздняя версия. [Обновите свою версию](/powershell/azure/azurerm/install-azurerm-ps), если необходимо.
+Для работы примеров PowerShell в этой статье требуется Azure PowerShell 6.2 или более поздняя версия. [Обновите свою версию](/powershell/azure/install-Az-ps), если необходимо.
 
 ## <a name="create-the-resource-template"></a>Создание шаблона ресурсов
 
@@ -149,8 +151,8 @@ ms.locfileid: "54438751"
 Передайте пакет в доступное расположение, из которого его можно будет использовать. 
 
 ```powershell
-New-AzureRmResourceGroup -Name storageGroup -Location eastus
-$storageAccount = New-AzureRmStorageAccount -ResourceGroupName storageGroup `
+New-AzResourceGroup -Name storageGroup -Location eastus
+$storageAccount = New-AzStorageAccount -ResourceGroupName storageGroup `
   -Name "mystorageaccount" `
   -Location eastus `
   -SkuName Standard_LRS `
@@ -158,9 +160,9 @@ $storageAccount = New-AzureRmStorageAccount -ResourceGroupName storageGroup `
 
 $ctx = $storageAccount.Context
 
-New-AzureStorageContainer -Name appcontainer -Context $ctx -Permission blob
+New-AzStorageContainer -Name appcontainer -Context $ctx -Permission blob
 
-Set-AzureStorageBlobContent -File "D:\myapplications\app.zip" `
+Set-AzStorageBlobContent -File "D:\myapplications\app.zip" `
   -Container appcontainer `
   -Blob "app.zip" `
   -Context $ctx 
@@ -175,7 +177,7 @@ Set-AzureStorageBlobContent -File "D:\myapplications\app.zip" `
 Требуется идентификатор объекта группы пользователей для управления ресурсами. 
 
 ```powershell
-$groupID=(Get-AzureRmADGroup -DisplayName mygroup).Id
+$groupID=(Get-AzADGroup -DisplayName mygroup).Id
 ```
 
 ### <a name="get-the-role-definition-id"></a>Получение идентификатора определения роли
@@ -183,7 +185,7 @@ $groupID=(Get-AzureRmADGroup -DisplayName mygroup).Id
 Далее необходимо получить идентификатор определения встроенной роли RBAC, к которой вы хотите предоставить доступ пользователю, группе пользователей или приложению. Обычно это роль "Владелец", "Участник" или "Читатель". Следующая команда позволяет получить идентификатор определения роли "Владелец".
 
 ```powershell
-$ownerID=(Get-AzureRmRoleDefinition -Name Owner).Id
+$ownerID=(Get-AzRoleDefinition -Name Owner).Id
 ```
 
 ### <a name="create-the-managed-application-definition"></a>Создание определения управляемого приложения
@@ -191,15 +193,15 @@ $ownerID=(Get-AzureRmRoleDefinition -Name Owner).Id
 Если у вас еще нет группы ресурсов для хранения определения управляемого приложения, создайте ее.
 
 ```powershell
-New-AzureRmResourceGroup -Name appDefinitionGroup -Location westcentralus
+New-AzResourceGroup -Name appDefinitionGroup -Location westcentralus
 ```
 
 Теперь создайте ресурс определения управляемого приложения.
 
 ```powershell
-$blob = Get-AzureStorageBlob -Container appcontainer -Blob app.zip -Context $ctx
+$blob = Get-AzStorageBlob -Container appcontainer -Blob app.zip -Context $ctx
 
-New-AzureRmManagedApplicationDefinition `
+New-AzManagedApplicationDefinition `
   -Name "ManagedStorage" `
   -Location "westcentralus" `
   -ResourceGroupName appDefinitionGroup `

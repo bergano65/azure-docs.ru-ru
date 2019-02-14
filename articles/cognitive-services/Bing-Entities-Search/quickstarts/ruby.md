@@ -4,18 +4,18 @@ titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как отправлять запросы в REST API Поиска сущностей Bing с помощью Ruby и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: ed8b590d5f31daebb0cffb270f72ae156acab778
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 44dad6d0a6f11b84c4cd2a4470e9a286e1a9ea36
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753152"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55866089"
 ---
 # <a name="quickstart-for-bing-entity-search-api-with-ruby"></a>Краткое руководство по API Bing для поиска сущностей (Ruby)
 

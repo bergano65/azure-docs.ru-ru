@@ -16,12 +16,13 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: 34d0c4054273babcc56516d290857c4ddb554bf7
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e705bbbd08882f56020192a3b42c311e05bfa399
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819099"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56191741"
 ---
 # <a name="quickstart-update-an-application-in-azure-active-directory"></a>Краткое руководство. Обновление приложения в Azure Active Directory
 
@@ -144,7 +145,7 @@ ms.locfileid: "55819099"
 
 Как упоминалось ранее, наряду с предоставлением доступа к API в приложениях можно зарегистрировать клиентское приложение для доступа к API, которые предоставляются ресурсами Майкрософт. Microsoft Graph API, называемый "Microsoft Graph" в списке ресурсов и API на портале, доступно всем приложениям, зарегистрированным в Azure AD. При регистрации клиентского приложения в клиенте, который содержит учетные записи, зарегистрированные в подписке Office 365, можно получить доступ к областям, предоставляемым различными ресурсами Office 365.
 
-Полное описание областей, предоставляемых API Microsoft Graph, приведено в статье [Справочник по разрешениям Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).
+Полное описание областей, предоставляемых API Microsoft Graph, приведено в статье [Справочник по разрешениям Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
 
 > [!NOTE]
 > Из-за имеющихся в данный момент ограничений собственные клиентские приложения могут вызывать API Graph Azure AD только при использовании разрешения Access your organization's directory (Доступ к каталогу организации). Это ограничение не распространяется на веб-приложения.

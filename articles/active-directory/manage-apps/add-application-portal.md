@@ -2,20 +2,21 @@
 title: Добавление приложение в клиент Azure Active Directory | Документация Майкрософт
 description: В этом кратком руководстве используется портал Azure для добавления приложения коллекции в клиент Azure Active Directory (Azure AD).
 services: active-directory
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/24/2018
-ms.author: barbkess
-ms.openlocfilehash: c38af719e48165853899f7918ee1f9f1c1e1ddc6
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.author: celested
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 27456f672e2fa67928b43e80bef384a14e9c1d62
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55182104"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56166969"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-tenant"></a>Краткое руководство. Добавление приложения в клиент Azure Active Directory
 

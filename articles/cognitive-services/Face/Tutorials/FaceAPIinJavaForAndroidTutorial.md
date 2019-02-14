@@ -1,21 +1,21 @@
 ---
-title: Руководство. Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
+title: Руководство по Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
 titleSuffix: Azure Cognitive Services
 description: С помощью этого руководства вы создадите простое приложение Android, которое использует API распознавания лиц для определения и выделения лиц на изображении.
 services: cognitive-services
 author: PatrickFarley
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
 ms.date: 11/12/2018
 ms.author: pafarley
-ms.openlocfilehash: 2c28aa58e64253d5a25dbdfc8f1473e0e462af57
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 18e7323f16970b5ab365688b2af896b2c90b9099
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220014"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55858711"
 ---
 # <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
 

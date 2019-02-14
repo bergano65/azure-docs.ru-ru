@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 4ba25da1f356f6164137dead467bd8bc948ce3d7
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 6c97289cd1ad406769613621afdc16c8096f4aeb
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037843"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116173"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "54037843"
 - Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера. 
 - Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.
 - [Агент виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) управляет взаимодействием виртуальной машины с контроллером Azure Fabric. Это обязательно для некоторых служб Azure, таких как Azure Backup, Site Recovery и служба безопасности Azure.
-    - При переносе компьютеров и физических серверов VMware установщик Mobility Service устанавливает доступный агент виртуальной машины Azure на компьютерах Windows. Мы рекомендуем установить агент на виртуальных машинах Linux после отработки отказа. a
+    - При переносе компьютеров и физических серверов VMware установщик Mobility Service устанавливает доступный агент виртуальной машины Azure на компьютерах Windows. Мы рекомендуем установить агент на виртуальных машинах Linux после отработки отказа.
     - Если вы переносите виртуальные машины Azure в дополнительный регион, агент виртуальной машины Azure нужно подготовить к работе на виртуальной машине перед миграцией.
     - Если вы переносите виртуальные машины Hyper-V в Azure, установите агент виртуальной машины Azure на виртуальной машине Azure после миграции.
 - Вручную удалите поставщик или агент Site Recovery с виртуальной машины. Если выполняется миграция виртуальных машин или физических серверов VMware, [удалите Mobility Service][vmware-azure-install-mobility-service.md#uninstall-mobility-service-on-a-windows-server-computer] с виртуальной машины Azure.

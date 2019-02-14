@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/11/2018
 ms.author: rogarana
-ms.openlocfilehash: f85d404df37d34f7363114fbbf34ceec3bbe7c0f
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 4a8c3a1291faad6b952b5fddacde1ded1f4be7ca
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54042807"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098074"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-azure-powershell"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure PowerShell
 
@@ -33,30 +33,30 @@ ms.locfileid: "54042807"
 
 Большие двоичные объекты всегда отправляются в контейнер. Вы можете упорядочивать группы больших двоичных объектов аналогично организации файлов в папках на компьютере.
 
-Задайте имя контейнера, а затем создайте контейнер с помощью команды [New-AzureStorageContainer](/powershell/module/azure.storage/new-azurestoragecontainer). Задайте разрешения `blob`, чтобы предоставить открытый доступ к файлам. В этом примере контейнеру присвоено имя *quickstartblobs*.
+Задайте имя контейнера, а затем создайте контейнер с помощью командлета [New-AzStorageContainer](/powershell/module/az.storage/new-AzStoragecontainer). Задайте разрешения `blob`, чтобы предоставить открытый доступ к файлам. В этом примере контейнеру присвоено имя *quickstartblobs*.
 
 ```powershell
 $containerName = "quickstartblobs"
-new-azurestoragecontainer -Name $containerName -Context $ctx -Permission blob
+new-AzStoragecontainer -Name $containerName -Context $ctx -Permission blob
 ```
 
 ## <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. VHD-файлы, поддерживаемые для резервных виртуальных машин IaaS, являются страничными BLOB-объектами. Используйте добавочные большие двоичные объекты для ведения журнала, например, если требуется выполнять запись в файл и добавлять дополнительные сведения. Большинство файлов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты. 
 
-Для передачи файла в блочный BLOB-объект получите ссылку на контейнер, а затем получите ссылку на блочный BLOB-объект в этом контейнере. При наличии ссылки на большой двоичный объект вы можете отправлять в него данные с помощью командлета [set-azurestorageblobcontent](/powershell/module/azure.storage/set-azurestorageblobcontent). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет имеющийся.
+Для передачи файла в блочный BLOB-объект получите ссылку на контейнер, а затем получите ссылку на блочный BLOB-объект в этом контейнере. При наличии ссылки на большой двоичный объект вы можете отправлять в него данные с помощью командлета [Set-AzStorageBlobContent](/powershell/module/az.storage/set-AzStorageblobcontent). Эта операция создает большой двоичный объект, если он еще не существует, или заменяет имеющийся.
 
 В следующих примерах показана отправка файлов *Image001.jpg* и *Image002.png* из папки *D:\\_TestImages* на локальном диске в созданный контейнер.
 
 ```powershell
 # upload a file
-set-azurestorageblobcontent -File "D:\_TestImages\Image001.jpg" `
+set-AzStorageblobcontent -File "D:\_TestImages\Image001.jpg" `
   -Container $containerName `
   -Blob "Image001.jpg" `
   -Context $ctx 
 
 # upload another file
-set-azurestorageblobcontent -File "D:\_TestImages\Image002.png" `
+set-AzStorageblobcontent -File "D:\_TestImages\Image002.png" `
   -Container $containerName `
   -Blob "Image002.png" `
   -Context $ctx
@@ -66,27 +66,27 @@ set-azurestorageblobcontent -File "D:\_TestImages\Image002.png" `
 
 ## <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Получите список больших двоичных объектов в контейнере с помощью командлета [get-azurestorageblob](/powershell/module/azure.storage/get-azurestorageblob). В этом примере показаны только имена отправленных BLOB-объектов.
+Получите список больших двоичных объектов в контейнере с помощью командлета [Get-AzStorageBlob](/powershell/module/az.storage/get-AzStorageblob). В этом примере показаны только имена отправленных BLOB-объектов.
 
 ```powershell
-get-azurestorageblob -Container $ContainerName -Context $ctx | select Name
+Get-AzStorageBlob -Container $ContainerName -Context $ctx | select Name
 ```
 
 ## <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Скачайте большие двоичные объекты на локальный диск. Для каждого скачиваемого большого двоичного объекта задайте имя и вызовите командлет [get-azurestorageblobcontent](/powershell/module/azure.storage/get-azurestorageblobcontent).
+Скачайте большие двоичные объекты на локальный диск. Для каждого скачиваемого большого двоичного объекта задайте имя и вызовите командлет [Get-AzStorageBlobContent](/powershell/module/az.storage/get-AzStorageblobcontent).
 
 В этом примере показано скачивание больших двоичных объектов на локальный диск *D:\\_TestImages\Downloads*. 
 
 ```powershell
 # download first blob
-get-azurestorageblobcontent -Blob "Image001.jpg" `
+Get-AzStorageblobcontent -Blob "Image001.jpg" `
   -Container $containerName `
   -Destination "D:\_TestImages\Downloads\" `
   -Context $ctx 
 
 # download another blob
-get-azurestorageblobcontent -Blob "Image002.png" `
+Get-AzStorageblobcontent -Blob "Image002.png" `
   -Container $containerName `
   -Destination "D:\_TestImages\Downloads\" `
   -Context $ctx
@@ -111,7 +111,7 @@ get-azurestorageblobcontent -Blob "Image002.png" `
 Удалите все созданные ресурсы. Самым простым способом удалить ресурсы является удаление группы ресурсов. Удаление группы ресурсов также приведет к удалению всех ресурсов, которые она содержит. В следующем примере при удалении группы ресурсов удаляется учетная запись хранения и сама группа ресурсов.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $resourceGroup
+Remove-AzResourceGroup -Name $resourceGroup
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

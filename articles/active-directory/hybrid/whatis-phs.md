@@ -10,12 +10,13 @@ ms.topic: overview
 ms.date: 12/05/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: d5c0ce69b1c4dfdf5f688ae672f75350b6d1fddd
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f588115e38ded07b79568c91b8d166949b34a886
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55490368"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56179184"
 ---
 # <a name="what-is-password-hash-synchronization-with-azure-ad"></a>Синхронизация хэша паролей с Azure Active Directory
 Синхронизация хэша паролей является одним из методов входа, используемым для реализации гибридной идентификации. Azure AD Connect синхронизирует хэш пользовательских паролей между локальным экземпляром службы Active Directory и облачным экземпляром службы Azure AD.

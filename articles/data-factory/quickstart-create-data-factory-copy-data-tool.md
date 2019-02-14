@@ -11,15 +11,16 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: a4e41408a3af2e6bb68c14f2e34bf1141bf349c1
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 6ff264c079ef5ee18258c3cd136cf441dc33e299
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48017813"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992761"
 ---
-# <a name="use-the-copy-data-tool-to-copy-data"></a>Копирование данных с помощью средства копирования данных 
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+# <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Краткое руководство. Копирование данных с помощью средства копирования данных
+
+> [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-copy-data-tool.md)
 
@@ -74,7 +75,7 @@ ms.locfileid: "48017813"
 
     ![Страница "Исходное хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/new-source-linked-service.png)
 
-    b. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
+    б) В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
 
     ![Выбор хранилища BLOB-объектов из коллекции](./media/quickstart-create-data-factory-copy-data-tool/select-blob-source.png)
 
@@ -82,7 +83,7 @@ ms.locfileid: "48017813"
 
    ![Настройка учетной записи хранилища BLOB-объектов Azure](./media/quickstart-create-data-factory-copy-data-tool/configure-blob-storage.png)
 
-   d. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
+   4.3. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
 
    ![Выбор исходной связанной службы](./media/quickstart-create-data-factory-copy-data-tool/select-source-linked-service.png)
 
@@ -93,7 +94,7 @@ ms.locfileid: "48017813"
 
    ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/configure-source-path.png)
 
-   d. Установите флажок **Двоичное копирование**, чтобы скопировать файл как есть, и нажмите кнопку **Далее**. 
+   4.3. Установите флажок **Двоичное копирование**, чтобы скопировать файл как есть, и нажмите кнопку **Далее**. 
 
    ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/select-binary-copy.png)
 
