@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
-ms.openlocfilehash: 89a54d99aa47af273e5955c2103ec696a985737e
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 8e9d41131228c2399277e59a6d0edd78efda307b
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55493751"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999119"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Развертывание веб-службы Студии машинного обучения Azure
 Машинное обучение Azure позволяет создавать, тестировать и развертывать решения для прогнозной аналитики.
@@ -34,7 +34,7 @@ ms.locfileid: "55493751"
 Процесс создания обучающих экспериментов и управления ими рассматривается более подробно в других материалах. Дополнительные сведения вы найдете в следующих статьях:
 
 * [Создание простого эксперимента в Студии машинного обучения Azure](create-experiment.md)
-* [Разработка прогнозирующего решения с помощью машинного обучения Azure](walkthrough-develop-predictive-solution.md)
+* [Разработка прогнозирующего решения с помощью машинного обучения Azure](tutorial-part1-credit-risk.md)
 * [Импорт обучающих данных в Студию машинного обучения Azure](import-data.md)
 * [Управление итерациями экспериментов в Студии машинного обучения Azure](manage-experiment-iterations.md)
 

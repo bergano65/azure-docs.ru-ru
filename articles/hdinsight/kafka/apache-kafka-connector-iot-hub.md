@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: ff96204d53d31940846d2ec74db57caf69d4329e
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: bd7254a9ec1ce5671aa5271ca26c678b20ef48cb
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608636"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978074"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -127,7 +127,7 @@ API Kafka Connect позволяет реализовать соединител
 
     * Замените строки `key.converter=` и `value.converter=` следующими значениями:
 
-        ```text
+        ```ini
         key.converter=org.apache.kafka.connect.storage.StringConverter
         value.converter=org.apache.kafka.connect.storage.StringConverter
         ```
@@ -189,7 +189,7 @@ API Kafka Connect позволяет реализовать соединител
 
         Замените переменную `myhubname` именем Центра Интернета вещей. В ответ вы получите примерно такой текст:
 
-        ```text
+        ```json
         "EventHubCompatibleEndpoint": "sb://ihsuprodbnres006dednamespace.servicebus.windows.net/",
         "EventHubCompatibleName": "iothub-ehub-myhub08-207673-d44b2a856e",
         "Partitions": 2
@@ -239,14 +239,14 @@ API Kafka Connect позволяет реализовать соединител
 
     В редакторе найдите и измените следующие записи:
 
-    * `Kafka.Topic=PLACEHOLDER`: Замените `PLACEHOLDER` на `iotin`. Сообщения, полученные из Центра Интернета вещей, размещаются в разделе `iotin`.
+    * `Kafka.Topic=PLACEHOLDER`: Замените  на `iotin`. Сообщения, полученные из Центра Интернета вещей, размещаются в разделе `iotin`.
     * `IotHub.EventHubCompatibleName=PLACEHOLDER`: замените `PLACEHOLDER` именем, совместимым с Центрами событий.
     * `IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`: замените `PLACEHOLDER` конечной точкой, совместимой с Центрами событий.
     * `IotHub.Partitions=PLACEHOLDER`: замените `PLACEHOLDER` на количество секций из предыдущего шага.
-    * `IotHub.AccessKeyName=PLACEHOLDER`: Замените `PLACEHOLDER` на `service`.
+    * `IotHub.AccessKeyName=PLACEHOLDER`: Замените  на `service`.
     * `IotHub.AccessKeyValue=PLACEHOLDER`: замените `PLACEHOLDER` первичным ключом политики `service`.
     * `IotHub.StartType=PLACEHOLDER`: замените `PLACEHOLDER` датой в формате UTC. Это время и дата, когда соединитель начинает проверку на наличие сообщений. Формат даты — `yyyy-mm-ddThh:mm:ssZ`.
-    * `BatchSize=100`: Замените `100` на `5`. В таком случае соединитель считывает сообщения в Kafka, когда в Центре Интернета вещей появилось пять новых сообщений.
+    * `BatchSize=100`: Замените  на `5`. В таком случае соединитель считывает сообщения в Kafka, когда в Центре Интернета вещей появилось пять новых сообщений.
 
     Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
 
@@ -272,7 +272,7 @@ API Kafka Connect позволяет реализовать соединител
 
     В редакторе найдите и измените следующие записи:
 
-    * `topics=PLACEHOLDER`: Замените `PLACEHOLDER` на `iotout`. Сообщение, записанные в раздел `iotout`, переадресовываются в Центр Интернета вещей.
+    * `topics=PLACEHOLDER`: Замените  на `iotout`. Сообщение, записанные в раздел `iotout`, переадресовываются в Центр Интернета вещей.
     * `IotHub.ConnectionString=PLACEHOLDER`: замените `PLACEHOLDER` строкой подключения политики `service`.
 
     Пример конфигурации см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
@@ -349,7 +349,7 @@ t.runtime.WorkerSinkTask:262)
     > [!IMPORTANT]  
     > Для записи `"deviceId"` необходимо задать идентификатор устройства. В следующем примере устройство называется `fakepi`:
 
-    ```text
+    ```json
     {"messageId":"msg1","message":"Turn On","deviceId":"fakepi"}
     ```
 

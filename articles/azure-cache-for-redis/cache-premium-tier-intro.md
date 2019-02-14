@@ -1,25 +1,25 @@
 ---
 title: Общие сведения о кэше Azure для Redis уровня "Премиум" | Документация Майкрософт
 description: Узнайте, как создать сохраняемость Redis, кластеризацию Redis и поддержку виртуальных сетей и управлять ими для экземпляров кэша Azure для Redis уровня "Премиум"
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: ''
 ms.assetid: 30f46f9f-e6ec-4c38-a8cc-f9d4444856e5
 ms.service: cache
 ms.workload: tbd
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
-ms.author: wesmc
-ms.openlocfilehash: 906ab6c433df7cf452d1f5ab4660abce8d4674fc
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.author: yegu
+ms.openlocfilehash: 6757a038a945bf153cb62662bee8c715c87baf19
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107520"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237746"
 ---
 # <a name="introduction-to-the-azure-cache-for-redis-premium-tier"></a>Общие сведения о кэше Azure для Redis уровня "Премиум"
 Кэш Azure для Redis – это распределенный управляемый кэш, который позволяет создавать быстрые приложения с высокой степенью масштабируемости благодаря тому, что обеспечивается сверхбыстрый доступ к данным. 

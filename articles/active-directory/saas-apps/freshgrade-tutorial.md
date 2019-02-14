@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: 1861dfb23d105fa6b403095b5fc36d1f2a894fe9
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8f1b14fb88d72e1cb816498dbccf7b0e595f1637
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152561"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203868"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство. Интеграция Azure Active Directory с FreshGrade
 
@@ -118,14 +119,14 @@ ms.locfileid: "55152561"
       | `https://<subdomain>.freshgrade.com/login` |
       | `https://<subdomain>.onboarding.freshgrade.com/login` |
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
       | |
       |--|
       | `https://login.onboarding.freshgrade.com:443/saml/metadata/alias/<instancename>` |
       | `https://login.freshgrade.com:443/saml/metadata/alias/<instancename>` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов FreshGrade](mailTo:support@freshgrade.com).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов FreshGrade](mailTo:support@freshgrade.com).
 
 1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
     
@@ -142,7 +143,7 @@ ms.locfileid: "55152561"
 1. Чтобы настроить единый вход на стороне **FreshGrade**, нужно отправить скачанный **URL-адрес метаданных федерации приложений** и **URL-адрес службы единого входа SAML** в [службу поддержки FreshGrade](mailTo:support@freshgrade.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -166,11 +167,11 @@ ms.locfileid: "55152561"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-freshgrade-test-user"></a>Создание тестового пользователя FreshGrade
 
@@ -211,7 +212,7 @@ ms.locfileid: "55152561"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент FreshGrade на панели доступа, вы автоматически войдете в приложение FreshGrade.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

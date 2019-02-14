@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/06/2018
 ms.author: jeedes
-ms.openlocfilehash: ccb2e6be481c27661543ff0dc19e5b60b2aa8d8a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ce28f3667689134a2de177ed5c0dfae810dc1889
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178296"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56173578"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gaggleamp"></a>Руководство. Интеграция Azure Active Directory с GaggleAMP
+# <a name="tutorial-azure-active-directory-integration-with-gaggleamp"></a>Руководство по Интеграция Azure Active Directory с GaggleAMP
 
 В этом руководстве описано, как интегрировать GaggleAMP с Azure Active Directory (Azure AD).
 
@@ -143,16 +144,16 @@ ms.locfileid: "55178296"
 
     a. Выберите **Other** (Другое) из раскрывающегося списка **SAML Identity Provider** (Поставщик удостоверений SAML).
     
-    b. В текстовое поле **Издатель поставщика удостоверений** вставьте значение **URL-адреса издателя**, скопированное на портале Azure.
+    б) В текстовое поле **Издатель поставщика удостоверений** вставьте значение **URL-адреса издателя**, скопированное на портале Azure.
     
     c. В текстовое поле **URL-адрес единого входа поставщика удостоверений** вставьте значение **URL-адреса службы единого входа**, скопированное на портале Azure.
     
-    d. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Certificate X.509** (Сертификат X.509).
+    4.3. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Certificate X.509** (Сертификат X.509).
     
     д. Выберите команду **Сохранить**.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -176,11 +177,11 @@ ms.locfileid: "55178296"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-gaggleamp-test-user"></a>Создание тестового пользователя GaggleAMP
 

@@ -3,8 +3,8 @@ title: Проблемы при входе в приложение Майкрос
 description: Устранение распространенных проблем, возникающих при входе в приложения Майкрософт с помощью Azure AD (например, Office 365)
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/10/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: asteen
-ms.openlocfilehash: f67633ec62b28f54a97cccd0f27b43bdb626ee58
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3bc5143803c7d031071cccbb9c6c3842bbdacd9c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822771"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56177195"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Проблемы при входе в приложение Майкрософт
 
@@ -204,7 +205,7 @@ ms.locfileid: "55822771"
 
 9.  Выберите его из списка пользователей и по своему усмотрению **включите**, **отключите** или **примените** Многофакторную Идентификацию.
 
-  * **Примечание**. Если пользователь находится в состоянии **Принудительно**, можно временно задать состояние **Отключено**, чтобы разрешить ему вернуться в свою учетную запись. После этого можно снова изменить состояние на **Включено**, чтобы при следующем входе пользователь повторно зарегистрировал контактные данные. Кроме того, можно выполнить действия, описанные в разделе [Проверка контактной информации для проверки подлинности](#check-a-users-authentication-contact-info), чтобы проверить или задать эти данные для пользователя.
+  * **Примечание**. Если пользователь находится в состоянии Принудительно, можно временно задать состояние **Отключено**, чтобы разрешить ему вернуться в свою учетную запись. После этого можно снова изменить состояние на **Включено**, чтобы при следующем входе пользователь повторно зарегистрировал контактные данные. Кроме того, можно выполнить действия, описанные в разделе [Проверка контактной информации для проверки подлинности](#check-a-users-authentication-contact-info), чтобы проверить или задать эти данные для пользователя.
 
 ### <a name="check-a-users-authentication-contact-info"></a>Проверка контактной информации для проверки подлинности
 

@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: 062c83c7e1d621a80a5e81cdaf6b070eb446453c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ee936d174aa3e221bbeb0823ba1503c7cb64a9d6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55180540"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56185168"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство. Интеграция Azure Active Directory c IQNavigator VMS
+# <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство по Интеграция Azure Active Directory c IQNavigator VMS
 
 В этом руководстве описано, как интегрировать IQNavigator VMS с Azure Active Directory (Azure AD).
 
@@ -114,7 +115,7 @@ ms.locfileid: "55180540"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `iqn.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`.
 
 1. Установите флажок **Показывать дополнительные параметры URL-адреса** и выполните следующие действия:
 
@@ -123,7 +124,7 @@ ms.locfileid: "55180540"
     В текстовое поле **Состояние ретранслятора** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/).
+    > Эти значения приведены для примера. Замените эти значения фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/).
 
 1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать  **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
     
@@ -144,7 +145,7 @@ ms.locfileid: "55180540"
 1. Чтобы настроить единый вход на стороне **IQNavigator VMS**, нужно отправить **URL-адрес метаданных федерации приложений**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [группу поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -168,11 +169,11 @@ ms.locfileid: "55180540"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-iqnavigator-vms-test-user"></a>Создание тестового пользователя IQNavigator VMS
 
@@ -213,7 +214,7 @@ ms.locfileid: "55180540"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "IQNavigator VMS" на панели доступа, вы автоматически войдете в приложение IQNavigator VMS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

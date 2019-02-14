@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: jeedes
-ms.openlocfilehash: 3e316f0bf81d2ccc9ecdf86baceb641faacf074d
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f2d2fc7e79e92f3a1c9e069a652b2a3c21183bf1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178449"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56190115"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство. Интеграция Azure Active Directory с SmartRecruiters
 
@@ -30,7 +31,7 @@ ms.locfileid: "55178449"
 
 - C помощью Azure AD вы можете контролировать доступ к SmartRecruiters.
 - Вы можете включить автоматический вход пользователей в SmartRecruiters (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55178449"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **SmartRecruiters**, выберите **SmartRecruiters** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55178449"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создав тестового пользователя SmartRecruiters](#create-a-smartrecruiters-test-user)** Britta Simon, мы сможем связать его с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55178449"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -121,7 +122,7 @@ ms.locfileid: "55178449"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/login`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните сертификат на локальном компьютере.
 
@@ -155,7 +156,7 @@ ms.locfileid: "55178449"
 
     a. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
-    b. Откройте **сертификат (Base64)**, который вы скачали с портала Azure, и вставьте его содержимое в текстовое поле **Identity Provider certificate** (Сертификат поставщика удостоверений).
+    б) Откройте **сертификат (Base64)**, который вы скачали с портала Azure, и вставьте его содержимое в текстовое поле **Identity Provider certificate** (Сертификат поставщика удостоверений).
 
 1. Щелкните **Save Web SSO configuration** (Сохранить конфигурацию единого входа через Интернет).
 
@@ -172,7 +173,7 @@ ms.locfileid: "55178449"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/smartrecruiters-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/smartrecruiters-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -192,7 +193,7 @@ ms.locfileid: "55178449"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-smartrecruiters-test-user"></a>Создание тестового пользователя SmartRecruiters
 

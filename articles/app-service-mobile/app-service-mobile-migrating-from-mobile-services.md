@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2016
 ms.author: crdun
-ms.openlocfilehash: 1c519c658db29152f7ecafa8ac244c922cf4cd9f
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: dfc5e2923215b1669b0a3300653ad0cae7379655
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118998"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55960749"
 ---
 # <a name="article-top"></a>Перенос существующей мобильной службы Azure в службу приложений Azure
 Благодаря [Общедоступная версия службы приложений Azure]сайты мобильных служб Azure можно легко переносить на месте, что позволяет пользоваться преимуществами всех компонентов службы приложений Azure.  В этом документе объясняется, что происходит во время переноса сайта из мобильных служб Azure в службу приложений Azure.
@@ -321,7 +321,7 @@ ms.locfileid: "54118998"
 3. Нажмите кнопку **Средства**.
 4. В меню «Наблюдение» выберите пункт **Поток журнала** .
 
-Создаваемые журналы будут отображаться в окне.  Кроме того, вы можете скачать журналы для последующего анализа с помощью учетных данных развертывания. Дополнительные сведения см. в документации по [ведению журналов].
+Создаваемые журналы будут отображаться в окне.  Кроме того, вы можете скачать журналы для последующего анализа с помощью учетных данных развертывания. Дополнительные сведения см. в документации по [Logging].
 
 ## <a name="known-issues"></a>Известные проблемы
 ### <a name="deleting-a-migrated-mobile-app-clone-causes-a-site-outage"></a>Удаление перенесенного клона мобильного приложения приводит к недоступности сайта
@@ -332,7 +332,7 @@ ms.locfileid: "54118998"
 ### <a name="changing-webconfig-does-not-work"></a>Изменение Web.config не поддерживается
 При наличии сайта ASP.NET изменить файл `Web.config` нельзя.  Во время запуска служба приложений Azure создает подходящий файл `Web.config` для поддержки среды выполнения мобильных служб.  Некоторые параметры (например, пользовательские заголовки) можно переопределить с помощью файла преобразования XML.  Создайте файл с именем `applicationHost.xdt`; он должен располагаться в каталоге `D:\home\site` службы Azure.  Загрузите файл `applicationHost.xdt`, используя пользовательский скрипт развертывания, или непосредственно с помощью Kudu.  Ниже приведен пример документа.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <system.webServer>
@@ -388,7 +388,7 @@ ms.locfileid: "54118998"
 [Fiddler]: https://www.telerik.com/fiddler
 [Общедоступная версия службы приложений Azure]: https://azure.microsoft.com/blog/announcing-general-availability-of-app-service-mobile-apps/
 [Hybrid Connections]: ../app-service/app-service-hybrid-connections.md
-[ведению журналов]: ../app-service/troubleshoot-diagnostic-logs.md
+[Logging]: ../app-service/troubleshoot-diagnostic-logs.md
 [пакет SDK Node.js для мобильных приложений]: https://github.com/azure/azure-mobile-apps-node
 [Сравнение мобильных служб и службы приложений]: app-service-mobile-value-prop-migration-from-mobile-services.md
 [Центры уведомлений]: ../notification-hubs/notification-hubs-push-notification-overview.md

@@ -16,12 +16,13 @@ ms.date: 07/23/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 19199d25b960d768f844d725616220fb78e7d983
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cdbde6eda2bd532b1a26a58e4ca82c9b5fab4e6c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55094059"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56188602"
 ---
 # <a name="authorize-access-to-azure-active-directory-web-applications-using-the-oauth-20-code-grant-flow"></a>Авторизация доступа к веб-приложениям Azure Active Directory с помощью потока предоставления кода OAuth 2.0
 

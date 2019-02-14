@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением SpaceIQ | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением SpaceIQ | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SpaceIQ.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: jeedes
-ms.openlocfilehash: e0f52a33f0213af7d361af77f4b2dcd1ab0fcd3c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6695fe4854c6d91d3d2ba671104d1b481721356c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55154207"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56162277"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-spaceiq"></a>Руководство. Интеграция Azure Active Directory со SpaceIQ
+# <a name="tutorial-azure-active-directory-integration-with-spaceiq"></a>Руководство по Интеграция Azure Active Directory со SpaceIQ
 
 В этом руководстве описано, как интегрировать SpaceIQ с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55154207"
 
 - С помощью Azure AD вы можете контролировать доступ к SpaceIQ.
 - Вы можете включить автоматический вход пользователей в SpaceIQ (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55154207"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **SpaceIQ**, выберите **SpaceIQ** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55154207"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения SpaceIQ](#create-a-spaceiq-test-user)** требуется для того, чтобы в SpaceIQ существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55154207"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://api.spaceiq.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.spaceiq.com/saml/<instanceid>/callback`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.spaceiq.com/saml/<instanceid>/callback`.
 
     > [!NOTE] 
     > Замените эти значения фактическими URL-адресом ответа и идентификатором, как описано позже в этом руководстве.
@@ -145,11 +146,11 @@ ms.locfileid: "55154207"
 
     a. В текстовом поле **SAML Issuer URL** (URL-адрес издателя SAML) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML) из окна настройки приложения Azure AD.
     
-    b. Скопируйте значение **SAML CallBack Endpoint URL (read-only)** (URL-адрес конечной точки обратного вызова SAML (только для чтения)) и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
+    б) Скопируйте значение **SAML CallBack Endpoint URL (read-only)** (URL-адрес конечной точки обратного вызова SAML (только для чтения)) и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
     
     c. Скопируйте значение **SAML Audience URI (read-only)** (URI аудитории SAML (только для чтения)) и вставьте его в поле **Идентификатор** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
 
-    d. Откройте загруженный сертификат в блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Сертификат X.509**.
+    4.3. Откройте загруженный сертификат в блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Сертификат X.509**.
     
     д. Выберите команду **Сохранить**.
 
@@ -166,7 +167,7 @@ ms.locfileid: "55154207"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/spaceiq-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/spaceiq-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -186,7 +187,7 @@ ms.locfileid: "55154207"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-spaceiq-test-user"></a>Создание тестового пользователя SpaceIQ
 

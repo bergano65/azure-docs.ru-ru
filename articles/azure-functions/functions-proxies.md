@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: alkarche
-ms.openlocfilehash: 4bfe4f9f97587b6791e73c2f04055b2dcf5d0f0d
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: da46d33e05a6f76687d3b8982855d477cbabfe86
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55766220"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895624"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 
@@ -94,7 +94,7 @@ ms.locfileid: "55766220"
 
 ### <a name="use-appsettings"></a>Ссылки на параметры приложения
 
-Вы также можете ссылаться на [параметры приложения, определенные для приложения-функции](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#develop), поставив знаки процента (%) перед именем параметра и после него.
+Вы также можете ссылаться на [параметры приложения, определенные для приложения-функции](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings), поставив знаки процента (%) перед именем параметра и после него.
 
 Например, в URL-адресе внутреннего сервера *https://%ORDER_PROCESSING_HOST%/api/orders* %ORDER_PROCESSING_HOST% будет заменено значением параметра ORDER_PROCESSING_HOST.
 
