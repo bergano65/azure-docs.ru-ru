@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Узнайте, как API лингвистического анализа обеспечивает доступ к средствам обработки естественного языка (NLP), которые определяют структуру текста.
 services: cognitive-services
 author: RichardSunMS
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: linguistic-analysis
 ms.topic: overview
 ms.date: 10/10/2016
 ms.author: lesun
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3051f8d25c3591d40d012f2c9041dd0e65c03d12
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: c9a645a16a618ae075b9a0947f394e6833a14fb6
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226976"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55883174"
 ---
 # <a name="what-is-the-linguistic-analysis-api-preview"></a>Что такое API лингвистического анализа?  (предварительная версия)
 

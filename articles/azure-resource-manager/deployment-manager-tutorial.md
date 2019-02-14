@@ -13,14 +13,16 @@ ms.devlang: na
 ms.date: 11/27/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 66e913f6d461d2671bd217745a9d128e24c1a60c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 5c88bf00ed1f68e4ddab6175e86a46560c802744
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820935"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238221"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Узнайте, как использовать [диспетчер развертывания Azure](./deployment-manager-overview.md) для развертывания приложений в нескольких регионах. Чтобы использовать диспетчер развертывания, необходимо создать два шаблона:
 
@@ -274,7 +276,7 @@ ms.locfileid: "55820935"
 2. Укажите значения параметров.
 
     - **namePrefix**. Введите строку из 4–5 символов. Этот префикс используется для создания уникальных имен ресурсов Аzure.
-    - **azureResourceLocation**. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе **Центральная часть США** или **Восточная часть США 2**.
+    - **azureResourceLocation**. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе Центральная часть США или **Восточная часть США 2**.
     - **artifactSourceSASLocation**. Введите URI SAS в корневой каталог (контейнер больших двоичных объектов), где хранятся файлы параметров и шаблон модулей службы для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
     - **binaryArtifactRoot**. Если вы не изменяли структуру папок артефактов, используйте **binaries/1.0.0.0** в этом руководстве.
     - **managedIdentityID**. Введите управляемое удостоверение, назначенное пользователем. Дополнительные сведения см. в разделе [Создание управляемого удостоверения, назначаемого пользователем](#create-the-user-assigned-managed-identity). Синтаксис:
@@ -293,17 +295,15 @@ Azure PowerShell можно использовать для развертыва
 1. Запустите сценарий для развертывания топологии службы.
 
     ```azurepowershell-interactive
-    $deploymentName = "<Enter a Deployment Name>"
     $resourceGroupName = "<Enter a Resource Group Name>"
     $location = "Central US"  
     $filePath = "<Enter the File Path to the Downloaded Tutorial Files>"
     
     # Create a resource group
-    New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
     
     # Create the service topology
-    New-AzureRmResourceGroupDeployment `
-        -Name $deploymentName `
+    New-AzResourceGroupDeployment `
         -ResourceGroupName $resourceGroupName `
         -TemplateFile "$filePath\ADMTemplates\CreateADMServiceTopology.json" `
         -TemplateParameterFile "$filePath\ADMTemplates\CreateADMServiceTopology.Parameters.json"
@@ -319,8 +319,7 @@ Azure PowerShell можно использовать для развертыва
 
     ```azurepowershell-interactive
     # Create the rollout
-    New-AzureRmResourceGroupDeployment `
-        -Name $deploymentName `
+    New-AzResourceGroupDeployment `
         -ResourceGroupName $resourceGroupName `
         -TemplateFile "$filePath\ADMTemplates\CreateADMRollout.json" `
         -TemplateParameterFile "$filePath\ADMTemplates\CreateADMRollout.Parameters.json"
