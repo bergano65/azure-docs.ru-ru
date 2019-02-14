@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 7a125ea70a891d8db0ec652844a99153f19253bd
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c8859c0363a738c744f5c9b496cf77f5aaf1ba61
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150297"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56203511"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство. Интеграция Azure Active Directory с Ivanti Service Manager (ISM)
+# <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство по Интеграция Azure Active Directory с Ivanti Service Manager (ISM)
 
 В этом руководстве описано, как интегрировать Ivanti Service Manager (ISM) с Azure Active Directory (AAD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55150297"
 
 - С помощью AAD вы можете контролировать доступ к Ivanti Service Manager (ISM).
 - Вы можете включить автоматический вход пользователей в Ivanti Service Manager (ISM) (единый вход) с использованием учетной записи AAD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55150297"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Ivanti Service Manager (ISM)** и выберите **Ivanti Service Manager (ISM)** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -121,16 +122,16 @@ ms.locfileid: "55150297"
     | `https://<customer>.saasiteu.com/` |
     | `https://<customer>.saasitau.com/` |
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer>/handlers/sso/SamlAssertionConsumerHandler.ashx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer>/handlers/sso/SamlAssertionConsumerHandler.ashx`.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Ivanti Service Manager (ISM)](./media/ivanti-service-manager-tutorial/tutorial-ivanti-service-manager-url1.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer>.saasit.com/`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Ivanti Service Manager (ISM)](https://www.ivanti.com/support/contact).
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Ivanti Service Manager (ISM)](https://www.ivanti.com/support/contact).
 
 6. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (необработанный)**, а затем сохраните файл сертификата на компьютере.
 
@@ -142,7 +143,7 @@ ms.locfileid: "55150297"
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![Настройка Ivanti Service Manager (ISM)](common/configuresection.png)
 
@@ -150,9 +151,9 @@ ms.locfileid: "55150297"
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

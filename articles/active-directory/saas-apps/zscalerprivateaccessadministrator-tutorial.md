@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 6eca534f933742e4797ca164637e7d536d194ba3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5ba2bde039cec65a1afe33efac58752d26f22c2b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181509"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56171899"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Private Access Administrator
 
@@ -30,7 +31,7 @@ ms.locfileid: "55181509"
 
 - С помощью Azure AD вы можете контролировать доступ к Zscaler Private Access Administrator.
 - Вы можете включить автоматический вход пользователей в Zscaler Private Access Administrator (единый вход) с их учетными записями Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55181509"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Zscaler Private Access Administrator**, выберите **Zscaler Private Access Administrator** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55181509"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Zscaler Private Access Administrator](#create-a-zscaler-private-access-administrator-test-user)** требуется для того, чтобы в Zscaler Private Access Administrator существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,18 +111,18 @@ ms.locfileid: "55181509"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/metadata`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
 
     c. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
-    d. В текстовом поле **RelayState** введите значение `idpadminsso`.
+    4.3. В текстовом поле **RelayState** введите значение `idpadminsso`.
 
 1.  Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, выполните следующие действия.
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки Zscaler Private Access Administrator](https://help.zscaler.com/zpa-submit-ticket), чтобы получить эти значения.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки Zscaler Private Access Administrator](https://help.zscaler.com/zpa-submit-ticket), чтобы получить эти значения.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -147,13 +148,13 @@ ms.locfileid: "55181509"
 
     a. Щелкните **Select File** (Выбрать файл), чтобы передать скачанный файл метаданных из Azure AD и указать его в поле **IdP Metadata File Upload** (Передача файла метаданных IdP).
 
-    b. Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
+    б) Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
 
     ![Конфигурация IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/idpconfig.png)
 
     c. Для параметра **Single Sign On** (Единый вход) выберите значение **Administrator** (Администратор).
 
-    d. Выберите домен в поле **Domains** (Домены).
+    4.3. Выберите домен в поле **Domains** (Домены).
     
     д. Выберите команду **Сохранить**.
 
@@ -170,7 +171,7 @@ ms.locfileid: "55181509"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -190,7 +191,7 @@ ms.locfileid: "55181509"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-zscaler-private-access-administrator-test-user"></a>Создание тестового пользователя Zscaler Private Access Administrator
 
@@ -218,11 +219,11 @@ ms.locfileid: "55181509"
 
     a. В текстовом поле **Username** (Имя пользователя) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
-    b. В текстовом поле **Password** (Пароль) введите пароль.
+    б) В текстовом поле **Password** (Пароль) введите пароль.
 
     c. В текстовом поле **Confirm Password** (Подтверждение пароля) повторно введите пароль.
 
-    d. Для параметра **Role** (Роль) выберите значение **Zscaler Private Access Administrator**.
+    4.3. Для параметра **Role** (Роль) выберите значение **Zscaler Private Access Administrator**.
 
     д. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 4060e385fabe10490c6ccfe77a4f67e705a1d0d0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dfef1371b7ac61712c0f70efd48c0e791c4c729d
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55158797"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56162685"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-runmyprocess"></a>Руководство. Интеграция Azure Active Directory с RunMyProcess
 
@@ -141,11 +142,11 @@ ms.locfileid: "55158797"
 
     a. Для параметра **Method** (Метод) выберите значение **SSO with Samlv2** (Единый вход с помощью SAML версии 2). 
 
-    b. В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    б) В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Logout redirect** (Перенаправление для выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    d. В текстовое поле **Name Id Format** (Формат идентификатора имени) введите следующий **формат**: **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
+    4.3. В текстовое поле **Name Id Format** (Формат идентификатора имени) введите следующий **формат**: **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
 
     д. Скопируйте содержимое скачанного файла сертификата и вставьте его в **соответствующее** текстовое поле. 
  
@@ -156,7 +157,7 @@ ms.locfileid: "55158797"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -180,11 +181,11 @@ ms.locfileid: "55158797"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-runmyprocess-test-user"></a>Создание тестового пользователя RunMyProcess
 
@@ -204,11 +205,11 @@ ms.locfileid: "55158797"
   
     a. Заполните текстовые поля **Name** (Имя) и **E-mail** (Электронная почта) данными действительной учетной записи Azure AD, которую необходимо подготовить. 
 
-    b. Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
+    б) Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
 
     c. Установите флажок **Отправить сообщение о создании учетной записи**. 
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
    
     >[!NOTE]
     >Вы можете использовать любые другие инструменты создания учетных записей пользователя RunMyProcess или API, предоставляемые RunMyProcess для подготовки учетных записей пользователя AAD. 

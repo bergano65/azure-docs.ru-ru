@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с 23 Video | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с 23 Video | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и платформы 23 Video.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 5534122c53f811e3913e72b67a706c1e2260a26f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ec0cfaaf0d4ae692581d63c7745660ffeacfb11f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55156995"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175750"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство. Интеграция Azure Active Directory с 23 Video
 
@@ -117,7 +118,7 @@ ms.locfileid: "55156995"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.23video.com/saml/trust/<uniqueid>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов 23 Video](mailto:support@23company.com). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов 23 Video](mailto:support@23company.com). 
  
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "55156995"
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -162,11 +163,11 @@ ms.locfileid: "55156995"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-23-video-test-user"></a>Создание тестового пользователя 23 Video
 
@@ -192,7 +193,7 @@ ms.locfileid: "55156995"
 
     a. В текстовом поле **E-mail addresses** (Адреса электронной почты) введите адрес электронной почты пользователя Britta Simon в Azure AD.  
  
-    b. Щелкните **Add the user**(Добавить пользователя).   
+    б) Щелкните **Add the user**(Добавить пользователя).   
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

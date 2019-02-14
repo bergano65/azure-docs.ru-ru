@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Land Gorilla Client | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Land Gorilla Client | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Land Gorilla.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2017
 ms.author: jeedes
-ms.openlocfilehash: f8f62736c803ec58c473d563728f68cfc729b974
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b2e1288885476aeeba01f966b615c23c5fe51081
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55179197"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199516"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Руководство. Интеграция Azure Active Directory с Land Gorilla Client
+# <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Руководство по Интеграция Azure Active Directory с Land Gorilla Client
 
 В этом руководстве описано, как интегрировать приложение Land Gorilla Client с Azure Active Directory (Azure AD).
 
@@ -31,7 +32,7 @@ ms.locfileid: "55179197"
 - Вы можете включить автоматический вход пользователей в Land Gorilla Client (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -124,7 +125,7 @@ ms.locfileid: "55179197"
     
     `https://www.<customer domain>.landgorilla.com`
 
-    b. В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
+    б) В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
 
     `https://<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php`
 
@@ -173,11 +174,11 @@ ms.locfileid: "55179197"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 ### <a name="creating-a-land-gorilla-test-user"></a>Создание тестового пользователя Land Gorilla
 

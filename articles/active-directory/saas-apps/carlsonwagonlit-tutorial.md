@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Carlson Wagonlit Travel | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Carlson Wagonlit Travel.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 564f78b28be96209012542fd0d2e4de94872e583
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: beec63eaba78302fd795fb757f9bee48bab60c3c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188082"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168941"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel
+# <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Руководство по Интеграция Azure Active Directory с Carlson Wagonlit Travel
 
 В этом руководстве описано, как интегрировать Carlson Wagonlit Travel с Azure Active Directory (Azure AD).
 
@@ -30,7 +31,7 @@ ms.locfileid: "55188082"
 
 - С помощью Azure AD вы можете контролировать доступ к Carlson Wagonlit Travel.
 - Вы можете включить автоматический вход пользователей в Carlson Wagonlit Travel (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55188082"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Carlson Wagonlit Travel**, а затем выберите **Carlson Wagonlit Travel** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55188082"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения Carlson Wagonlit Travel](#create-a-carlson-wagonlit-travel-test-user)** требуется для того, чтобы в Carlson Wagonlit Travel существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -136,7 +137,7 @@ ms.locfileid: "55188082"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/carlsonwagonlit-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/carlsonwagonlit-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -156,7 +157,7 @@ ms.locfileid: "55188082"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-carlson-wagonlit-travel-test-user"></a>Создание тестового пользователя Carlson Wagonlit Travel
 

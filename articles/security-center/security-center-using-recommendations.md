@@ -4,7 +4,7 @@ description: " Использование политик безопасност�
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: ''
 ms.service: security-center
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/2/2019
 ms.author: rkarlin
-ms.openlocfilehash: b973bb0e5cd9504725be385ab8505adbb140c950
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 5ff59a9ed7dc44bb7a4176f7a174be1e7d0ec9b6
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261865"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56104912"
 ---
 # <a name="use-azure-security-center-recommendations-to-enhance-security"></a>Использование рекомендаций центра безопасности Azure для повышения уровня безопасности
 У вас есть возможность снизить вероятность серьезных нарушений безопасности, настроив политику безопасности и применяя рекомендации, предоставляемые центром безопасности Azure. Эта статья покажет, как следует использовать политики безопасности и рекомендации центра безопасности для уменьшения рисков нарушения безопасности.

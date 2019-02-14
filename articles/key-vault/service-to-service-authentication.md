@@ -3,7 +3,7 @@ title: Проверка подлинности с взаимодействием
 description: Использование библиотеки Microsoft.Azure.Services.AppAuthentication для выполнения проверки подлинности в Azure Key Vault с помощью .NET.
 keywords: локальные учетные данные проверки подлинности azure key vault
 author: bryanla
-manager: mbaldwin
+manager: barbkess
 services: key-vault
 ms.author: bryanla
 ms.date: 01/04/2019
@@ -12,12 +12,12 @@ ms.prod: ''
 ms.service: key-vault
 ms.technology: ''
 ms.assetid: 4be434c4-0c99-4800-b775-c9713c973ee9
-ms.openlocfilehash: f740e6b16426f34adf391af37d365e0d6d672dfe
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 3b9f401a4fbbbf6cc6a66e257b0186e33966c321
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755107"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116445"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 

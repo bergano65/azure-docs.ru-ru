@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: jeedes
-ms.openlocfilehash: 4d8cfcb2b42c21218d30e708217074d63e42bdcf
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ebad54fa93379cc3c445de660df4e86b997014c5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204054"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193362"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство. Интеграция Azure Active Directory с Fuze
+# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по Интеграция Azure Active Directory с Fuze
 
 В этом руководстве описано, как интегрировать приложение Fuze с Azure Active Directory (Azure AD).
 
@@ -31,7 +32,7 @@ ms.locfileid: "55204054"
 - Вы можете включить автоматический вход пользователей в Fuze (единый вход) с использованием учетной записи Azure AD.
 - Вы можете управлять учетными записями централизованно — через портал управления Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -155,11 +156,11 @@ ms.locfileid: "55204054"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**. 
+    4.3. Нажмите кнопку **Создать**. 
 
 
 ### <a name="creating-a-fuze-test-user"></a>Создание тестового пользователя Fuze

@@ -4,7 +4,7 @@ description: В статье описаны уровни избыточност�
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: MBaldwin
+manager: barbkess
 editor: TomSh
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/06/2018
 ms.author: terrylan
-ms.openlocfilehash: 3679361522105d1f3c55eae6b1f33c1c6baa1d55
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: a9a55f61f032512be032897d5f21ece405844634
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171499"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56105881"
 ---
 # <a name="azure-infrastructure-availability"></a>Доступность инфраструктуры Azure
 Azure предоставляет высокую доступность на основе обширной избыточности, достигаемой с помощью технологии виртуализации. Azure предоставляет различные уровни избыточности для максимальной доступности данных клиентов.

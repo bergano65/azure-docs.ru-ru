@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: jeedes
-ms.openlocfilehash: f0e2c499619df938bd6f4b05757ba607a9edf244
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 14cd7bea6707e6f724829a28b57604553e7405c0
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55183362"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199771"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-myworkdrive"></a>Руководство. Интеграция Azure Active Directory с MyWorkDrive
 
@@ -30,7 +31,7 @@ ms.locfileid: "55183362"
 
 - C помощью Azure AD вы можете контролировать доступ к MyWorkDrive.
 - Вы можете включить автоматический вход пользователей в MyWorkDrive (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -72,7 +73,7 @@ ms.locfileid: "55183362"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **MyWorkDrive**, выберите **MyWorkDrive** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -116,14 +117,14 @@ ms.locfileid: "55183362"
 
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SERVER.DOMAIN.COM>/SAML/AssertionConsumerService.aspx`.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения MyWorkDrive](./media/myworkdrive-tutorial/tutorial_myworkdrive_url1.png)
 
      В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SERVER.DOMAIN.COM>/Account/Login-saml` 
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа.  Введите имя узла корпоративного сервера MyWorkDrive, например так:
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа.  Введите имя узла корпоративного сервера MyWorkDrive, например так:
     > 
     > URL-адрес ответа: `https://yourserver.yourdomain.com/SAML/AssertionConsumerService.aspx`.
     > 
@@ -143,20 +144,20 @@ ms.locfileid: "55183362"
 
     a. Включите **SAML/ADFS SSO** (единый вход в SAML и распределенную файловую систему Azure).
 
-    b. Выберите **SAML – Azure AD**
+    б) Выберите **SAML – Azure AD**
 
     c. В текстовое поле **Azure App Federation Metadata Url** (URL-адрес метаданных федерации приложения Azure) вставьте **URL-адрес метаданных федерации приложения**, скопированный на портале Azure.
 
-    d. Нажмите кнопку **Сохранить**
+    4.3. Нажмите кнопку **Сохранить**
 
     >[!NOTE]
     >Дополнительные сведения см. в справочной статье об [интеграции MyWorkDrive с Azure AD](https://www.myworkdrive.com/support/saml-single-sign-on-azure-ad/).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 4df4338cddaf7c80f6fc1ad817773778bcee2087
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8199f106c234e216a0982dc9e51413ccf30ae93a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194089"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199533"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Руководство. Интеграция Azure Active Directory с Jobscience
 
@@ -153,7 +154,7 @@ ms.locfileid: "55194089"
     
     a. Установите флажок **SAML включен**.
 
-    b. Нажмите кнопку **Создать**.
+    б) Нажмите кнопку **Создать**.
 
 1. В диалоговом окне **Изменение параметров единого входа SAML** выполните следующие действия.
     
@@ -161,11 +162,11 @@ ms.locfileid: "55194089"
     
     a. В текстовом поле **Имя** введите имя конфигурации.
 
-    b. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    б) В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-jobscience.com`.
 
-    d. Чтобы отправить сертификат Azure AD, нажмите кнопку **Обзор** .
+    4.3. Чтобы отправить сертификат Azure AD, нажмите кнопку **Обзор** .
 
     д. В поле **SAML Identity Type** (Тип удостоверения SAML) выберите значение **Assertion contains the Federation ID from the User object** (Проверочное утверждение содержит идентификатор федерации из объекта User).
 
@@ -200,7 +201,7 @@ ms.locfileid: "55194089"
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
 ![Создание пользователя Azure AD][100]
 
@@ -224,11 +225,11 @@ ms.locfileid: "55194089"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-jobscience-test-user"></a>Создание тестового пользователя Jobscience
 
@@ -257,11 +258,11 @@ ms.locfileid: "55194089"
    
    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
    
-   b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+   б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
    
    c. В текстовое поле **Alias** (Псевдоним) введите имя пользователя, например brittas.
 
-   d. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+   4.3. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
    д. В текстовом поле **User Name** (Имя пользователя) укажите имя пользователя, например Brittasimon@contoso.com.
 
@@ -308,7 +309,7 @@ ms.locfileid: "55194089"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Jobscience" на панели доступа, вы автоматически войдете в приложение Jobscience.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

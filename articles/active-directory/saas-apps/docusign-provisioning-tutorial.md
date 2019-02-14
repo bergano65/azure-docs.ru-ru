@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка DocuSign для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка DocuSign для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и DocuSign.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: a4fecf760f60f9e81385d9e11387cf8d38c29a03
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 121d147a3f8c91f17e955120b2c14f7dbd3da592
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55198237"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56191849"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство. Настройка DocuSign для автоматической подготовки пользователей
 
@@ -75,7 +76,7 @@ ms.locfileid: "55198237"
    
     a. В текстовом поле **Имя пользователя администратора** введите имя учетной записи DocuSign, для которой в DocuSign.com назначен профиль **Системный администратор**.
    
-    b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    б) В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению DocuSign.
 

@@ -12,17 +12,17 @@ ms.author: jovanpop
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: ca907e145067043b41dd6000248d44ecc1e3434f
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 2f18b51a07bb58f13673427f0acadb6b80d7a1c8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510448"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005324"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Уровень "Критически важный для бизнеса" для Базы данных SQL Azure
 
 > [!NOTE]
-> Уровень "Критически важный для бизнеса" называется уровнем "Премиум" в модели приобретения DTU. Сравнение модели приобретения на основе виртуальных ядер и DTU см. в статье [Ресурсы и модели приобретения для базы данных SQL Azure](sql-database-service-tiers.md).
+> Уровень "Критически важный для бизнеса" называется уровнем "Премиум" в модели приобретения DTU. Сравнение модели приобретения на основе виртуальных ядер и DTU см. в статье [Ресурсы и модели приобретения для базы данных SQL Azure](sql-database-purchase-models.md).
 
 База данных SQL Azure основана на архитектуре ядра СУБД SQL Server, которая соответствует облачной среде, чтобы даже в случае сбоя инфраструктуры обеспечить доступность на уровне 99,99 %. Существует три модели архитектуры, которые используются в Базе данных SQL Azure:
 - уровни "Общего назначения" или "Стандартный"; 

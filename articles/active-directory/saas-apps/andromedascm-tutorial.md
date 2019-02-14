@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 6d280a7e0e10b00e4d8d8f631d0d5987f2fbecb4
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1fd26129a6ab8fb6082f9465be71eadcafa292db
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157879"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56165203"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство. Интеграция Azure Active Directory с Andromeda
 
@@ -30,7 +31,7 @@ ms.locfileid: "55157879"
 
 - С помощью Azure AD вы можете контролировать доступ к Andromeda.
 - Вы можете включить автоматический вход пользователей в Andromeda (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55157879"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Andromeda**. На панели результатов выберите **Andromeda** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55157879"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Andromeda](#create-an-andromeda-test-user)** нужно для того, чтобы в Andromeda существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55157879"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -145,11 +146,11 @@ ms.locfileid: "55157879"
 
     ![Добавление атрибута для настройки единого входа](./media/andromedascm-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Оставьте пустым поле **Пространство имен**.
+    4.3. Оставьте пустым поле **Пространство имен**.
     
     д. Нажмите кнопку **ОК**.
 
@@ -181,11 +182,11 @@ ms.locfileid: "55157879"
 
     a. Установите флажок **Enable SSO with SAML** (Включить единый вход с помощью SAML).
 
-    b. В разделе **Andromeda Information** (Сведения о приложении Andromeda) скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в текстовое поле **Идентификатор** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
+    б) В разделе **Andromeda Information** (Сведения о приложении Andromeda) скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в текстовое поле **Идентификатор** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
 
     c. Скопируйте **URL-адрес объекта-получателя** и вставьте его в текстовое поле **URL-адрес ответа** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
 
-    d. Скопируйте **URL-адрес входа** и вставьте его в текстовое поле **Sign-on URL** (URL-адрес входа) раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
+    4.3. Скопируйте **URL-адрес входа** и вставьте его в текстовое поле **Sign-on URL** (URL-адрес входа) раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
 
     д. В разделе **SAML Identity Provider** (Поставщик удостоверений SAML) введите имя поставщика удостоверений.
 
@@ -212,7 +213,7 @@ ms.locfileid: "55157879"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/andromedascm-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/andromedascm-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -232,7 +233,7 @@ ms.locfileid: "55157879"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-andromeda-test-user"></a>Создание тестового пользователя Andromeda
 
@@ -276,7 +277,7 @@ ms.locfileid: "55157879"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Andromeda на панели доступа, вы автоматически войдете в приложение Andromeda.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

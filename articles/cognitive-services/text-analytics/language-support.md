@@ -3,19 +3,19 @@ title: Поддержка языков — API анализа текста
 titleSuffix: Azure Cognitive Services
 description: 'Список естественных языков, поддерживаемых API анализа текста. В этой статье описано, какие языки поддерживаются для каждой из таких операций: анализ тональности, извлечение ключевых фраз, распознавание языка и сущности.'
 services: cognitive-services
-author: ashmaka
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/01/2018
-ms.author: ashmaka
-ms.openlocfilehash: ec1858256c942fd50818a214de426fd00c3c2c88
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: a9f48c8cef8d977469bb6c583d0bc363e334f693
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55216937"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245326"
 ---
 # <a name="language-and-region-support-for-the-text-analytics-api"></a>Поддержка языков и регионов в API анализа текста
 

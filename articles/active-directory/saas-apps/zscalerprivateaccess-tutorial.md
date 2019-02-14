@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Zscaler Private Access (ZPA) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Zscaler Private Access (ZPA) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Zscaler Private Access (ZPA).
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 8be5e94886237129824204ea166a2663e2f3110e
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2b6471b6bd634c7fe3053fc7748eb925c049c17c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814460"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56179572"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-zpa"></a>Руководство. Интеграция Azure Active Directory с Zscaler Private Access (ZPA)
 

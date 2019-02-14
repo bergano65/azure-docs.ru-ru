@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LoginRadius | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LoginRadius | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и LoginRadius.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 90fda216fc1e4bd4e96714c625aaa9c01d11a70c
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cddd239bba7d9b0f0a90e23f146263777806b187
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55160171"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192308"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Руководство. Интеграция Azure Active Directory с LoginRadius
 
@@ -30,7 +31,7 @@ ms.locfileid: "55160171"
 
 - С помощью Azure AD вы можете контролировать доступ к LoginRadius.
 - Вы можете включить автоматический вход пользователей в LoginRadius (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55160171"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **LoginRadius**, выберите **LoginRadius** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -87,7 +88,7 @@ ms.locfileid: "55160171"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя LoginRadius](#create-a-loginradius-test-user)** требуется для того, чтобы в LoginRadius существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +111,7 @@ ms.locfileid: "55160171"
 
     a.  В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.loginradius.com/login`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
+    б) В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
      
     > [!NOTE] 
     > Откройте страницу "URL-адрес входа". Откройте вкладку **Единый вход** и введите **имя подключаемого модуля**, предоставленное [группой поддержки LoginRadius](mailto:support@loginradius.com). Затем нажмите кнопку **Войти**, чтобы перейти к странице Azure AD для входа. 
@@ -138,7 +139,7 @@ ms.locfileid: "55160171"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/lr-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/lr-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -158,7 +159,7 @@ ms.locfileid: "55160171"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-loginradius-test-user"></a>Создание тестового пользователя LoginRadius
 

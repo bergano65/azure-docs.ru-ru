@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 8afaf7eec11aef672bc815a509f8cd399c1e24aa
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b9e208f899ff26135d3ce26bfa18096210513381
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174233"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56192053"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -30,7 +31,7 @@ ms.locfileid: "55174233"
 
 - С помощью Azure AD вы можете контролировать доступ к Perception United States (Non-UltiPro).
 - Вы можете включить автоматический вход пользователей в Perception United States (Non-UltiPro) (единый вход) с использованием их учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -70,7 +71,7 @@ ms.locfileid: "55174233"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Perception United States (Non-UltiPro)**, выберите **Perception United States (Non-UltiPro)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -89,7 +90,7 @@ ms.locfileid: "55174233"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Perception United States (Non-UltiPro)](#create-a-perception-united-states-non-ultipro-test-user)** требуется для создания пользователя Britta Simon в Perception United States (Non-UltiPro), связанного с соответствующим представлением пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "55174233"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://perception.kanjoya.com/sp`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике.
@@ -129,7 +130,7 @@ ms.locfileid: "55174233"
 
     a. Приложению **Perception United States (Non-UltiPro)** необходимо значение **идентификатора сущности SAML**, которое вы скопировали, чтобы закодировать в формате URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
 
-    b. Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
+    б) Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
 
     `https://perception.kanjoya.com/sso?idp=<URI encooded entity_id>`
     
@@ -149,11 +150,11 @@ ms.locfileid: "55174233"
 
     a. В текстовом поле **Company Name** (Название компании) введите название **компании**.
     
-    b. В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
+    б) В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
 
     c. В текстовом поле **Default Reply-To Email** (Электронная почта ответа по умолчанию) введите допустимый адрес **электронной почты**.
 
-    d. Выберите для параметра **SSO Identity Provider** (Поставщик удостоверений единого входа) значение **SAML 2.0**.
+    4.3. Выберите для параметра **SSO Identity Provider** (Поставщик удостоверений единого входа) значение **SAML 2.0**.
 
 1. На странице **настройки единого входа** сделайте следующее:
 
@@ -161,11 +162,11 @@ ms.locfileid: "55174233"
 
     a. Выберите для параметра **SAML NameID Type** (Тип NameID SAML) значение **EMAIL** (Электронная почта).
 
-    b. В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
+    б) В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
     
     c. В текстовое поле **Identity Provider Name** (Имя поставщика удостоверений) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
-    d. В **текстовое поле домена SAML** введите домен, например **@contoso.com**.
+    4.3. В **текстовое поле домена SAML** введите домен, например **@contoso.com**.
 
     д. Нажмите кнопку **Upload Again** (Отправить еще раз), чтобы передать **XML-файл метаданных**.
 
@@ -185,7 +186,7 @@ ms.locfileid: "55174233"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/perceptionunitedstates-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/perceptionunitedstates-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -205,7 +206,7 @@ ms.locfileid: "55174233"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-perception-united-states-non-ultipro-test-user"></a>Создание тестового пользователя Perception United States (Non-UltiPro)
 
