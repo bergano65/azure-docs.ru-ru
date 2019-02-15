@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: f45fad91c94b35de512c0c995ef4e3a6311a25ad
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 684e6a798c690c65f70c2f6224ac8f11256ce6eb
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767424"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270136"
 documentType: LandingData
 title: Документация по службе "Карты Azure"
 metadata:
@@ -16,7 +16,7 @@ metadata:
   ms.service: azure-maps
   services: azure-maps
   ms.topic: landing-page
-  ms.date: 02/04/2019
+  ms.date: 02/14/2019
   ms.author: philmea
 abstract:
   description: Служба Azure Maps предоставляет разработчикам всех направлений мощные геопространственные функции, дополненные актуальными картографическими данными для предоставления географического контекста веб-приложениям и мобильным приложениям. Azure Maps — это совместимый с API Azure One набор интерфейсов REST API для служб Maps, а также решений, использующих поиск, маршрутизацию, трафик, часовые пояса, геозоны, данные карт и пространственные операции с поддержкой веб-пакетов SDK и пакетов SDK для Android. Это решение обеспечивает простоту и гибкость разработки, а также возможность переноса на разные платформы.
@@ -35,13 +35,15 @@ sections:
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Создайте геопространственное веб-приложение для поиска достопримечательностей и построения маршрутов к различным точкам с помощью службы "Карты Azure".
+    text: Создайте геопространственное веб-приложение для поиска достопримечательностей, построения маршрутов к различным точкам и отслеживания устройств с помощью геозон в службе Azure Maps.
   - type: list
     style: ordered
     items:
     - html: <a href="/azure/azure-maps/tutorial-search-location">Поиск достопримечательностей</a>
     - html: <a href="/azure/azure-maps/tutorial-route-location">Построение маршрута к достопримечательности</a>
     - html: <a href="/azure/azure-maps/tutorial-prioritized-routes">Маршруты по видам транспорта</a>
+    - html: <a href="/azure/azure-maps/tutorial-create-store-locator">Создание указателя магазинов</a>
+    - html: <a href="/azure/azure-maps/tutorial-geofence">Настройка геозоны</a>
 - title: Справочные материалы
   items:
   - type: list
@@ -51,4 +53,4 @@ sections:
     - title: JavaScript
       html: <p><a href="https://docs.microsoft.com/javascript/api/azure-maps-javascript/">Управление картами</a></p>
     - title: REST
-      html: <p><a href="https://docs.microsoft.com/rest/api/maps/render">Служба отрисовки</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/route">Служба построения маршрутов</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/search">Служба поиска</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/timezone">Служба часового пояса</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/traffic">Служба отслеживания дорожного движения</a></p><p><a href="https://docs.microsoft.com/rest/api/maps-management/">Управление учетными записями службы Maps</a></p>
+      html: <p><a href="https://docs.microsoft.com/rest/api/maps/data">Служба данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/geolocation">Служба геолокации</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/render">Служба отрисовки</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/route">Служба построения маршрутов</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/search">Служба поиска</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/spatial">Служба пространственных данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/timezone">Служба часового пояса</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/traffic">Служба отслеживания дорожного движения</a></p>

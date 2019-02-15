@@ -25,6 +25,8 @@ items:
     href: quickstart-create-data-factory-rest-api.md
   - name: Создание фабрики данных с помощью шаблона Resource Manager
     href: quickstart-create-data-factory-resource-manager-template.md
+  - name: Создание потока данных
+    href: data-flow-create.md
   expanded: true
 - name: Учебники
   items:
@@ -408,6 +410,42 @@ items:
       href: control-flow-wait-activity.md
     - name: Веб-действие
       href: control-flow-web-activity.md
+  - name: Преобразования потока данных
+    items:
+    - name: Статистическое выражение
+      href: data-flow-aggregate.md
+    - name: Условное разбиение
+      href: data-flow-conditional-split.md
+    - name: Производный столбец
+      href: data-flow-derived-column.md
+    - name: Exists
+      href: data-flow-exists.md
+    - name: Фильтр
+      href: data-flow-filter.md
+    - name: Объединение
+      href: data-flow-join.md
+    - name: Поиск
+      href: data-flow-lookup.md
+    - name: Новая ветвь
+      href: data-flow-new-branch.md
+    - name: Сведение
+      href: data-flow-pivot.md
+    - name: Выберите пункт
+      href: data-flow-select.md
+    - name: Приемник
+      href: data-flow-sink.md
+    - name: Сортировать
+      href: data-flow-sort.md
+    - name: Источник
+      href: data-flow-source.md
+    - name: Суррогатный ключ
+      href: data-flow-surrogate-key.md
+    - name: Объединение множеств
+      href: data-flow-union.md
+    - name: Отмена сведения
+      href: data-flow-unpivot.md
+    - name: Окно
+      href: data-flow-window.md
   - name: Параметризация
     items:
     - name: Параметризация связанных служб
@@ -528,9 +566,9 @@ items:
     href: https://azure.microsoft.com/global-infrastructure/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: 535abc50cd27693da90aaaddcfdf8950d6abc59d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 7ee5cd120a8f1ecb8a1f685c1fa2332a9d9c5dd1
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174424"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270425"

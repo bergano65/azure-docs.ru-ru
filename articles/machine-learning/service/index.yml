@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 9c337f147eaebc376c7953e7f585b5b9f6a10f94
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: f4b66f79e415be8f9598a0e6f5c875d8a2597514
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471690"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56300029"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure"
 metadata:
@@ -22,12 +22,17 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
 abstract:
-  description: Служба машинного обучения предоставляет облачную среду, которую можно использовать для разработки, обучения, тестирования, развертывания и отслеживания моделей машинного обучения, а также управления такими моделями. Эта служба полностью поддерживает технологии с открытым кодом, такие как Scikit-learn, Tensorflow, Pytorch или любая другая платформа на базе Python. Узнайте из наших руководств, как использовать эту службу в рабочих процессах машинного обучения.
+  description: Служба машинного обучения Azure предоставляет облачную среду, которую можно использовать для быстрого создания, обучения и развертывания моделей машинного обучения. Используйте автоматическое машинное обучение, позволяющее быстрее определять алгоритмы и настраивать гиперпараметры. Используйте автомасштабируемые вычисления и средства Azure DevOps для машинного обучения, чтобы повысить эффективность работы и сократить затраты. Эти возможности доступны в среде Python. Кроме того, вы можете использовать платформы с открытым кодом, например PyTorch, TensorFlow и scikit-learn, а также пакеты SDK для служб. Чтобы узнать, как это делать, ознакомьтесь с нашими руководствами.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Начните с создания рабочей области и ресурсов службы <a href="quickstart-get-started">на портале Azure</a> или <a href="quickstart-create-workspace-with-python">с помощью Python</a>.
+    text: 'Для использования этой службы требуется рабочая область и связанные с ней ресурсы.  Приступая к работе:'
+  - type: list
+    style: unordered
+    items:
+    - html: Чтобы создать рабочую область и запустить эксперимент, не устанавливая программное обеспечение, <a href="quickstart-get-started">изучите краткое руководство по работе с порталом Azure</a>.
+    - html: Чтобы установить основной пакет SDK, создать рабочую область и запустить эксперимент на локальном сервере записных книжек, <a href="quickstart-create-workspace-with-python">изучите краткое руководство по работе с Python</a>.
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -35,7 +40,7 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).<br>&nbsp;
+    - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).
     - html: <a href="tutorial-data-prep">Подготовка данных</a> и <a href="tutorial-auto-train-models">использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).
 - title: Примеры
   items:
