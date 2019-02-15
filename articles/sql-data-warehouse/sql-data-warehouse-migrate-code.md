@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: f36ee3ce6a8d678cdd846474576fc049df0b4f88
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 14b3d62235cfcc8bbc8a929757a16cf99b860753
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472309"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55815767"
 ---
 # <a name="migrate-your-sql-code-to-sql-data-warehouse"></a>Перенос кода SQL в хранилище данных SQL
 В этой статье поясняются изменения кода, которые, вероятно, потребуется внести при переносе кода в хранилище данных SQL из другой базы данных. Некоторые функции хранилища данных SQL могут значительно повысить производительность, так как они предназначены для работы в распределенной форме. Однако для обеспечения производительности и масштабирования некоторые функции недоступны.
@@ -32,8 +32,8 @@ ms.locfileid: "55472309"
 * предложение output
 * встроенные функции, определяемые пользователем
 * функции с несколькими инструкциями
-* [обобщенные табличные выражения](#Common-table-expressions)
-* [рекурсивные обобщенные табличные выражения (CTE)](#Recursive-common-table-expressions-(CTE)
+* обобщенные табличные выражения
+* [рекурсивные обобщенные табличные выражения (CTE)](#Recursive-common-table-expressions-(CTE))
 * функции и процедуры среды CLR
 * функция $partition
 * переменные таблицы
