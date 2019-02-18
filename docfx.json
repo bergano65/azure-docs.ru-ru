@@ -1,5 +1,6 @@
 {
   "build": {
+    "markdownEngineName": "dfm",
     "content": [
       {
         "files": [
@@ -64,7 +65,6 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "bilingual_type": "hover over",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/azure-docs.ru-ru",
       "feedback_product_url": "https://feedback.azure.com/forums/34192--general-feedback",
