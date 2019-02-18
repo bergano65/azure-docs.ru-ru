@@ -5,6 +5,12 @@ items:
   items:
   - name: Сведения о Центрах уведомлений
     href: notification-hubs-push-notification-overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Создание центра уведомлений на портале Azure
+    href: create-notification-hub-portal.md
+  - name: Настройка центра уведомлений на портале Azure
+    href: configure-notification-hub-portal-pns-settings.md
 - name: Учебники
   items:
   - name: 1. Отправка push-уведомлений на все зарегистрированные устройства.
@@ -138,9 +144,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: 55dc84493eca49cce1abe9184daec2687d3e5d56
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: 9035ed7f81639770b1c962e4cf254e18fd3b46bd
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301525"
+ms.locfileid: "56311006"

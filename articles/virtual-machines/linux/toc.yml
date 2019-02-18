@@ -99,20 +99,13 @@ items:
   - name: Обслуживание и обновления
     href: maintenance-and-updates.md
   - name: Дисковый накопитель
-    href: about-disks-and-vhds.md
     items:
-    - name: Управляемые диски
+    - name: Общие сведения об управляемых дисках
       href: managed-disks-overview.md
-    - name: SSD (цен. категория "Премиум")
-      href: premium-storage.md
-    - name: Диски SSD категории "Стандартный"
-      href: disks-standard-ssd.md
-    - name: Диски SSD категории Ultra
-      href: disks-ultra-ssd.md
-    - name: Производительность хранилища класса Premium
+    - name: Выбор типа диска для виртуальных машин IaaS
+      href: disks-types.md
+    - name: Проектирование для обеспечения высокой производительности
       href: premium-storage-performance.md
-    - name: Хранилище уровня "Стандартный"
-      href: standard-storage.md
     - name: Целевые показатели масштабируемости для дисков
       href: disk-scalability-targets.md
     - name: Резервное копирование и аварийное восстановление дисков
@@ -426,6 +419,8 @@ items:
         href: add-disk.md
       - name: Портал Azure
         href: attach-disk-portal.md
+    - name: Тест производительности диска
+      href: disks-benchmarks.md
     - name: Отсоединение диска
       href: detach-disk.md
     - name: Изменение размера диска
@@ -450,7 +445,7 @@ items:
       href: using-managed-disks-template-deployments.md
     - name: Использование ускорителя записи
       href: how-to-enable-write-accelerator.md
-    - name: Включение диска SSD категории Ultra
+    - name: Включение дисков категории Ultra
       href: disks-enable-ultra-ssd.md
     - name: Оптимизация производительности
       href: optimization.md
@@ -562,9 +557,9 @@ items:
     href: faq.md
 - name: Устранение неполадок
   href: ../troubleshooting/index.md
-ms.openlocfilehash: 5a154ba0022a73b8acf9ded071ccfb13e62b7509
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 3c7ef0b41167e396828063950a63574ad5b3a7c9
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55299152"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56330806"
