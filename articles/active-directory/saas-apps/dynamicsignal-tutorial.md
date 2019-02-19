@@ -4,227 +4,205 @@ description: Сведения о настройке единого входа м
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 863f7340-b065-4f59-b092-daa67da6f703
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/10/2018
+ms.topic: tutorial
+ms.date: 02/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 2588511ac3892575b5decadd5ddca474e29a0abc
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6ffd97c84af7e0efbdabc79b02c4ebd5cbdae9df
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170850"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175172"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dynamic-signal"></a>Руководство. Интеграция Azure Active Directory с Dynamic Signal
+# <a name="tutorial-azure-active-directory-integration-with-dynamic-signal"></a>Руководство по Интеграция Azure Active Directory с Dynamic Signal
 
 В этом руководстве описано, как интегрировать Dynamic Signal с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Dynamic Signal обеспечивает следующие преимущества.
 
-- C помощью Azure AD вы можете контролировать доступ к Dynamic Signal.
-- Вы можете включить автоматический вход пользователей в Dynamic Signal (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* C помощью Azure AD вы можете контролировать доступ к Dynamic Signal.
+* Можно включить автоматический вход пользователей (единый вход) в Dynamic Signal с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Dynamic Signal, вам потребуется:
 
-- подписка Azure AD;
-- подписка на Dynamic Signal с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Dynamic Signal с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Dynamic Signal из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Dynamic Signal поддерживает единый вход, инициированный **поставщиком услуг**.
+
+* Dynamic Signal поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-dynamic-signal-from-the-gallery"></a>Добавление Dynamic Signal из коллекции.
+
 Чтобы настроить интеграцию Dynamic Signal с Azure AD, необходимо добавить приложение Dynamic Signal из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Dynamic Signal из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Новое приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Dynamic Signal**, выберите **Dynamic Signal** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Dynamic Signal в списке результатов](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_addfromgallery.png)
+4. В поле поиска введите **Dynamic Signal**, выберите **Dynamic Signal** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Dynamic Signal в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описаны настройка и проверка единого входа Azure AD в Dynamic Signal с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Dynamic Signal соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Dynamic Signal.
+В этом разделе описаны настройка и проверка единого входа Azure AD в Dynamic Signal с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Dynamic Signal.
 
 Чтобы настроить и проверить единый вход Azure AD в Dynamic Signal, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Dynamic Signal](#create-a-dynamic-signal-test-user)** требуется для того, чтобы в Dynamic Signal существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Dynamic Signal](#configure-dynamic-signal-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Dynamic Signal](#create-dynamic-signal-test-user)** требуется для того, чтобы в Dynamic Signal существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Dynamic Signal.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Dynamic Signal, выполните следующие действия:**
+Чтобы настроить единый вход Azure AD в Dynamic Signal, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Dynamic Signal** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Dynamic Signal** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Dynamic Signal** выполните следующие действия:
- 
-    ![Сведения о домене и URL-адресах единого входа приложения Dynamic Signal](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_url.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.voicestorm.com`
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.voicestorm.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.voicestorm.com/User/SsoResponse`.
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Dynamic Signal](mailto:support@dynamicsignal.com). 
+    ![Сведения о домене и URL-адресах единого входа приложения Dynamic Signal](common/sp-identifier-reply.png)
 
-1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.voicestorm.com`.
 
-    ![Ссылка для скачивания сертификата](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_certificate.png) 
+    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.voicestorm.com`.
 
-1. Нажмите кнопку **Сохранить** .
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.voicestorm.com/User/SsoResponse`.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/dynamicsignal-tutorial/tutorial_general_400.png)
-    
-1. В разделе **Настройка Dynamic Signal** щелкните **Настроить Dynamic Signal**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    > [!NOTE]
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Dynamic Signal](mailto:support@dynamicsignal.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка Dynamic Signal](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_configure.png) 
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-1. Чтобы настроить единый вход на стороне **Dynamic Signal**, нужно отправить скачанный **сертификат (Base64), URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Dynamic Signal**.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-   ![Создание тестового пользователя Azure AD][100]
+    а) URL-адрес входа.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    б) Идентификатор Azure AD.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+    в) URL-адрес выхода.
 
-    ![Кнопка "Azure Active Directory"](./media/dynamicsignal-tutorial/create_aaduser_01.png)
+### <a name="configure-dynamic-signal-single-sign-on"></a>Настройка единого входа в Dynamic Signal
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+Чтобы настроить единый вход на стороне **Dynamic Signal**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/dynamicsignal-tutorial/create_aaduser_02.png)
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-    ![Кнопка "Добавить"](./media/dynamicsignal-tutorial/create_aaduser_03.png)
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    ![Диалоговое окно "Пользователь"](./media/dynamicsignal-tutorial/create_aaduser_04.png)
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+3. В разделе свойств пользователя сделайте следующее:
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-dynamic-signal-test-user"></a>Создание тестового пользователя Dynamic Signal
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Dynamic Signal. Приложение Dynamic Signal поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Dynamic Signal (если он еще не создан).
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
->[!Note]
->Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com).
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Dynamic Signal.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Dynamic Signal**.
 
-**Чтобы назначить пользователя Britta Simon в Dynamic Signal, выполните указанные ниже действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Dynamic Signal**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Dynamic Signal в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Dynamic Signal**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Dynamic Signal в списке приложений](./media/dynamicsignal-tutorial/tutorial_dynamicsignal_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-dynamic-signal-test-user"></a>Создание тестового пользователя в Dynamic Signal
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе вы создадите в Dynamic Signal пользователя Britta Simon. Приложение Dynamic Signal поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Dynamic Signal, он создается после проверки подлинности.
+
+>[!Note]
+>Чтобы создать пользователя вручную, обратитесь к [группе поддержки Dynamic Signal](mailto:support@dynamicsignal.com).
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Dynamic Signal на панели доступа, вы автоматически войдете в приложение Dynamic Signal.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Dynamic Signal на Панели доступа, вы автоматически войдете в приложение Dynamic Signal, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/dynamicsignal-tutorial/tutorial_general_01.png
-[2]: ./media/dynamicsignal-tutorial/tutorial_general_02.png
-[3]: ./media/dynamicsignal-tutorial/tutorial_general_03.png
-[4]: ./media/dynamicsignal-tutorial/tutorial_general_04.png
-
-[100]: ./media/dynamicsignal-tutorial/tutorial_general_100.png
-
-[200]: ./media/dynamicsignal-tutorial/tutorial_general_200.png
-[201]: ./media/dynamicsignal-tutorial/tutorial_general_201.png
-[202]: ./media/dynamicsignal-tutorial/tutorial_general_202.png
-[203]: ./media/dynamicsignal-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

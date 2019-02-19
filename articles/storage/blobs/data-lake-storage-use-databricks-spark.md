@@ -1,5 +1,5 @@
 ---
-title: Руководство. Доступ к данным предварительной версии Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark | Документация Майкрософт
+title: Руководство. Доступ к данным Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark | Документация Майкрософт
 description: В этом руководстве показано, как выполнять запросы Spark на кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 services: storage
 author: dineshmurthy
@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: tutorial
 ms.date: 01/29/2019
 ms.author: dineshm
-ms.openlocfilehash: 533665ebfa3d35ed5f03326cf5614e37056b7713
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: e448ef0de9ef5560c1b4ea0df5c02e8efd8c0ea9
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813608"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55891663"
 ---
-# <a name="tutorial-access-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
+# <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство. Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
-В этом руководстве показано, как подключить кластер Azure Databricks к данным, хранящимся в учетной записи хранения Azure с поддержкой предварительной версии Azure Data Lake Storage 2-го поколения. Благодаря этому подключению запросы и аналитику можно изначально выполнять из кластера в данных.
+В этом руководстве показано, как подключить кластер Azure Databricks к данным, хранящимся в учетной записи хранения Azure с поддержкой Azure Data Lake Storage 2-го поколения. Благодаря этому подключению запросы и аналитику можно изначально выполнять из кластера в данных.
 
 Изучив данный учебник, вы научитесь:
 
@@ -145,7 +145,7 @@ ms.locfileid: "55813608"
     mount_point = "/mnt/flightdata",
     extra_configs = configs)
     ```
-18. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах [Отдельная настройка учетной записи хранения](#config) и [Создание субъекта-службы](#service-principal) этой статьи. Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
+18. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах "Отдельная настройка учетной записи хранения" и [Создание субъекта-службы](#service-principal) этой статьи. Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
 
 19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке. 
 

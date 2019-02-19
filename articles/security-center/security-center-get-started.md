@@ -4,7 +4,7 @@ description: В этом кратком руководстве показано,
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
 ms.author: rkarlin
-ms.openlocfilehash: 8a0467a383e2c8e3efab685187c5a37d1549f664
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 3442ced47e50485da1ffdd475d9649243b1c8583
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838171"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116700"
 ---
-# <a name="quickstart-onboard-your-azure-subscription-to-security-center-standard"></a>Краткое руководство. Переход подписки Azure на ценовую категорию центра безопасности "Стандартный"
+# <a name="quickstart-onboard-your-azure-subscription-to-security-center-standard"></a>Краткое руководство. Переход подписки Azure в ценовую категорию "Стандартный" Центра безопасности Azure
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и защиту от угроз для гибридных облачных рабочих нагрузок. Уровень "Бесплатный" предлагает ограниченные возможности безопасности только для ресурсов Azure, тогда как уровень "Стандартный" расширяет эти возможности на локальную среду и другие облака. Ценовая категория "Стандартный" центра безопасности помогает находить и исправлять уязвимости системы безопасности, применять средства управления доступом и приложениями для блокировки вредоносных действий, обнаруживать угрозы с помощью аналитики и интеллектуальных средств и быстро реагировать на атаки. Вы можете бесплатно опробовать центр безопасности ценовой категории "Стандартный". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
 
 В этой статье ценовая категория повышается до уровня "Стандартный" для дополнительной безопасности, а на виртуальных машинах устанавливается агент Microsoft Monitoring Agent для отслеживания угроз и уязвимостей системы безопасности.
@@ -107,7 +107,7 @@ ms.locfileid: "52838171"
 В этом кратком руководстве вы повысили ценовую категорию до уровня "Стандартный" и подготовили агент Microsoft Monitoring Agent для унифицированного управления безопасностью и защиты от угроз в различных гибридных облачных рабочих нагрузках. Для получения дополнительных сведений об использовании центра безопасности перейдите к краткому руководству по подключению компьютеров Windows, находящихся в локальных средах и в других облаках.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Подключение компьютеров Windows к центру безопасности Azure](quick-onboard-windows-computer.md)
+> [Краткое руководство Подключение компьютеров Windows к Центру безопасности Azure](quick-onboard-windows-computer.md)
 
 <!--Image references-->
 [2]: ./media/security-center-get-started/overview.png

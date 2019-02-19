@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 01/02/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 786dbb258fa4299f80f7ff9d24a1c129a9506bb7
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 7245fd60af91833dab26772e2aac08f675b14e6c
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43663751"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55982460"
 ---
 # <a name="sample-script-to-upload-a-vhd-to-azure-and-create-a-new-vm"></a>Пример сценария для отправки VHD в Azure и создания виртуальной машины
 
@@ -30,6 +30,8 @@ ms.locfileid: "43663751"
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -60,53 +62,53 @@ $vmSize = 'Standard_DS1_v2'
 $cred = Get-Credential
 
 # Upload the VHD
-New-AzureRmResourceGroup -Name $resourceGroup -Location $location
-New-AzureRmStorageAccount -ResourceGroupName $resourceGroup -Name $storageAccount -Location $location `
+New-AzResourceGroup -Name $resourceGroup -Location $location
+New-AzStorageAccount -ResourceGroupName $resourceGroup -Name $storageAccount -Location $location `
     -SkuName $storageType -Kind "Storage"
 $urlOfUploadedImageVhd = ('https://' + $storageaccount + '.blob.core.windows.net/' + $containername + '/' + $vhdName)
-Add-AzureRmVhd -ResourceGroupName $resourceGroup -Destination $urlOfUploadedImageVhd `
+Add-AzVhd -ResourceGroupName $resourceGroup -Destination $urlOfUploadedImageVhd `
     -LocalFilePath $localPath
 
 # Note: Uploading the VHD may take awhile!
 
 # Create a managed image from the uploaded VHD 
-$imageConfig = New-AzureRmImageConfig -Location $location
-$imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsType Windows -OsState Generalized `
+$imageConfig = New-AzImageConfig -Location $location
+$imageConfig = Set-AzImageOsDisk -Image $imageConfig -OsType Windows -OsState Generalized `
     -BlobUri $urlOfUploadedImageVhd
-$image = New-AzureRmImage -ImageName $imageName -ResourceGroupName $resourceGroup -Image $imageConfig
+$image = New-AzImage -ImageName $imageName -ResourceGroupName $resourceGroup -Image $imageConfig
  
 # Create the networking resources
-$singleSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix 10.0.0.0/24
-$vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup -Location $location `
+$singleSubnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix 10.0.0.0/24
+$vnet = New-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup -Location $location `
     -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
-$pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $resourceGroup -Location $location `
+$pip = New-AzPublicIpAddress -Name $ipName -ResourceGroupName $resourceGroup -Location $location `
     -AllocationMethod Dynamic
-$rdpRule = New-AzureRmNetworkSecurityRuleConfig -Name $ruleName -Description 'Allow RDP' -Access Allow `
+$rdpRule = New-AzNetworkSecurityRuleConfig -Name $ruleName -Description 'Allow RDP' -Access Allow `
     -Protocol Tcp -Direction Inbound -Priority 110 -SourceAddressPrefix Internet -SourcePortRange * `
     -DestinationAddressPrefix * -DestinationPortRange 3389
-$nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
+$nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
     -Name $nsgName -SecurityRules $rdpRule
-$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $resourceGroup -Location $location `
+$nic = New-AzNetworkInterface -Name $nicName -ResourceGroupName $resourceGroup -Location $location `
     -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
-$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName $resourceGroup -Name $vnetName
+$vnet = Get-AzVirtualNetwork -ResourceGroupName $resourceGroup -Name $vnetName
 
 # Start building the VM configuration
-$vm = New-AzureRmVMConfig -VMName $vmName -VMSize $vmSize
+$vm = New-AzVMConfig -VMName $vmName -VMSize $vmSize
 
 # Set the VM image as source image for the new VM
-$vm = Set-AzureRmVMSourceImage -VM $vm -Id $image.Id
+$vm = Set-AzVMSourceImage -VM $vm -Id $image.Id
 
 # Finish the VM configuration and add the NIC.
-$vm = Set-AzureRmVMOSDisk -VM $vm  -DiskSizeInGB $diskSizeGB -CreateOption FromImage -Caching ReadWrite
-$vm = Set-AzureRmVMOperatingSystem -VM $vm -Windows -ComputerName $computerName -Credential $cred `
+$vm = Set-AzVMOSDisk -VM $vm  -DiskSizeInGB $diskSizeGB -CreateOption FromImage -Caching ReadWrite
+$vm = Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName $computerName -Credential $cred `
     -ProvisionVMAgent -EnableAutoUpdate
-$vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
+$vm = Add-AzVMNetworkInterface -VM $vm -Id $nic.Id
 
 # Create the VM
-New-AzureRmVM -VM $vm -ResourceGroupName $resourceGroup -Location $location
+New-AzVM -VM $vm -ResourceGroupName $resourceGroup -Location $location
 
 # Verify that the VM was created
-$vmList = Get-AzureRmVM -ResourceGroupName $resourceGroup
+$vmList = Get-AzVM -ResourceGroupName $resourceGroup
 $vmList.Name
 
 
@@ -121,35 +123,35 @@ $vmList.Name
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $resourceGroup
+Remove-AzResourceGroup -Name $resourceGroup
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help                                                                                                             | Примечания                                                                                                                                                                                |
+| Команда                                                                                                             | Примечания                                                                                                                                                                                |
 |---------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)                           | Создает группу ресурсов, в которой хранятся все ресурсы.                                                                                                                          |
-| [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount)                         | Создание учетной записи хранения.                                                                                                                                                           |
-| [Add-AzureRmVhd](/powershell/module/azurerm.compute/add-azurermvhd)                                               | Передает виртуальный жесткий диск из локальной виртуальной машины в большой двоичный объект в облачной учетной записи хранения в Azure.                                                                       |
-| [New-AzureRmImageConfig](/powershell/module/azurerm.compute/new-azurermimageconfig)                               | Создает настраиваемый объект образа.                                                                                                                                                 |
-| [Set-AzureRmImageOsDisk](/powershell/module/azurerm.compute/set-azurermimageosdisk)                               | Задает свойства диска операционной системы для объекта образа.                                                                                                                        |
-| [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage)                                           | Создает образ.                                                                                                                                                                 |
-| [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети.                                                                                |
-| [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork)                         | Создает виртуальную сеть.                                                                                                                                                           |
-| [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress)                       | Создает общедоступный IP-адрес.                                                                                                                                                         |
-| [New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface)                     | Создает сетевой интерфейс.                                                                                                                                                         |
-| [New-AzureRmNetworkSecurityRuleConfig](/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig)   | Создает конфигурацию правил группы безопасности сети. Эта конфигурация используется для создания правила NSG при создании этой NSG.                                                       |
-| [New-AzureRmNetworkSecurityGroup](/powershell/module/azurerm.network/new-azurermnetworksecuritygroup)             | Создает группу безопасности сети.                                                                                                                                                    |
-| [Get-AzureRmVirtualNetwork](/powershell/module/azurerm.network/get-azurermvirtualnetwork)                         | Получает виртуальную сеть в группе ресурсов.                                                                                                                                          |
-| [New-AzureRmVMConfig](/powershell/module/azurerm.compute/new-azurermvmconfig)                                     | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
-| [Set-AzureRmVMSourceImage](/powershell/module/azurerm.compute/set-azurermvmsourceimage)                           | Указывает образ для виртуальной машины.                                                                                                                                            |
-| [Set-AzureRmVMOSDisk](/powershell/module/azurerm.compute/set-azurermvmosdisk)                                     | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
-| [Set-AzureRmVMOperatingSystem](/powershell/module/azurerm.compute/set-azurermvmoperatingsystem)                   | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
-| [Add-AzureRmVMNetworkInterface](https://docs.microsoft.com/powershell/module/azurerm.compute/add-azurermvmnetworkinterface?view=azurermps-6.8.1)                 | Добавляет сетевой интерфейс для виртуальной машины.                                                                                                                                       |
-| [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm)                                                 | Создайте виртуальную машину.                                                                                                                                                            |
-| [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup)                     | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней.                                                                                                                         |
+| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)                           | Создает группу ресурсов, в которой хранятся все ресурсы.                                                                                                                          |
+| [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)                         | Создание учетной записи хранения.                                                                                                                                                           |
+| [Add-AzVhd](https://docs.microsoft.com/powershell/module/az.compute/add-azvhd)                                               | Передает виртуальный жесткий диск из локальной виртуальной машины в большой двоичный объект в облачной учетной записи хранения в Azure.                                                                       |
+| [New-AzImageConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azimageconfig)                               | Создает настраиваемый объект образа.                                                                                                                                                 |
+| [Set-AzImageOsDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azimageosdisk)                               | Задает свойства диска операционной системы для объекта образа.                                                                                                                        |
+| [New-AzImage](https://docs.microsoft.com/powershell/module/az.compute/new-azimage)                                           | Создает образ.                                                                                                                                                                 |
+| [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети.                                                                                |
+| [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork)                         | Создает виртуальную сеть.                                                                                                                                                           |
+| [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress)                       | Создает общедоступный IP-адрес.                                                                                                                                                         |
+| [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface)                     | Создает сетевой интерфейс.                                                                                                                                                         |
+| [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig)   | Создает конфигурацию правил группы безопасности сети. Эта конфигурация используется для создания правила NSG при создании этой NSG.                                                       |
+| [New-AzNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup)             | Создает группу безопасности сети.                                                                                                                                                    |
+| [Get-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork)                         | Получает виртуальную сеть в группе ресурсов.                                                                                                                                          |
+| [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig)                                     | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
+| [Set-AzVMSourceImage](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage)                           | Указывает образ для виртуальной машины.                                                                                                                                            |
+| [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk)                                     | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
+| [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem)                   | Задает свойства диска операционной системы для виртуальной машины.                                                                                                                      |
+| [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface?view=azurermps-6.8.1)                 | Добавляет сетевой интерфейс для виртуальной машины.                                                                                                                                       |
+| [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm)                                                 | Создайте виртуальную машину.                                                                                                                                                            |
+| [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup)                     | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней.                                                                                                                         |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/12/2017
 ms.author: cynthn
-ms.openlocfilehash: e23a1d7d1a90065aa2f6fe954bb2b7406e2db498
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: d36f6a4b0e4672f19002fe1e0356a54c427b583a
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54883965"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978278"
 ---
 # <a name="create-an-iis-vm-with-powershell"></a>Создание виртуальной машины IIS с помощью PowerShell
 
@@ -29,6 +29,8 @@ ms.locfileid: "54883965"
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -39,7 +41,7 @@ ms.locfileid: "54883965"
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup
+Remove-AzResourceGroup -Name myResourceGroup
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
@@ -48,10 +50,10 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 | Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также открывает порт 80 и задает учетные данные администратора. |
-| [Set-AzureRmVMExtension](/powershell/module/azurerm.compute/set-azurermvmextension) | Добавляет в виртуальную машину расширение виртуальной машины. В этом примере для установки IIS используется расширение DSC. |
-|[Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
+| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также открывает порт 80 и задает учетные данные администратора. |
+| [Set-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) | Добавляет в виртуальную машину расширение виртуальной машины. В этом примере для установки IIS используется расширение DSC. |
+|[Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

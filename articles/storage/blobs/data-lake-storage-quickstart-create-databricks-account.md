@@ -8,16 +8,16 @@ ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
 ms.date: 01/24/2019
-ms.openlocfilehash: e5a1a17e60d73a041bf7850875287c753aeda16f
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 0ec682ea852f3c6da6248f3c16b539725ca18c0f
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55694173"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895811"
 ---
 # <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
-В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для выполнения аналитики хранимых данных в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения (предварительная версия).
+В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для выполнения аналитики хранимых данных в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения.
 
 В рамках задания Spark показано, как анализировать данные подписки на радиоканал, чтобы получить сведения о бесплатном или оплачиваемом использовании на основе демографических данных.
 

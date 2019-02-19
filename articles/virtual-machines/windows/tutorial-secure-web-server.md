@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 02/09/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e21352baa45cb5d19df26760bdab2e8fafff8bce
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: c6f51164904ca51e66b9ce112cf9aec4324812c9
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54886396"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113961"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-windows-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство. Защита веб-сервера на виртуальной машине Windows в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 
@@ -35,7 +35,11 @@ ms.locfileid: "54886396"
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
+
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
+
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 
 ## <a name="overview"></a>Обзор
@@ -45,26 +49,26 @@ Azure Key Vault защищает криптографические ключи �
 
 
 ## <a name="create-an-azure-key-vault"></a>Создание Azure Key Vault
-Прежде чем создать Key Vault и сертификаты, выполните командлет [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup), чтобы создать группу ресурсов. В следующем примере создается имя группы ресурсов *myResourceGroupSecureWeb* в расположении *восточная часть США*:
+Прежде чем создать хранилище ключей и сертификаты, выполните командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup), чтобы создать группу ресурсов. В следующем примере создается имя группы ресурсов *myResourceGroupSecureWeb* в расположении *восточная часть США*:
 
 ```azurepowershell-interactive
 $resourceGroup = "myResourceGroupSecureWeb"
 $location = "East US"
-New-AzureRmResourceGroup -ResourceGroupName $resourceGroup -Location $location
+New-AzResourceGroup -ResourceGroupName $resourceGroup -Location $location
 ```
 
-Чтобы создать Key Vault, используйте командлет [New-AzureRmKeyVault](/powershell/module/azurerm.keyvault/new-azurermkeyvault). У каждого Key Vault должно быть уникальное имя в нижнем регистре. Замените `mykeyvault` в следующем примере собственным уникальным именем Key Vault.
+Чтобы создать Key Vault, используйте командлет [New-AzureRmKeyVault](https://docs.microsoft.com/powershell/module/az.keyvault/new-azkeyvault). У каждого Key Vault должно быть уникальное имя в нижнем регистре. Замените `mykeyvault` в следующем примере собственным уникальным именем Key Vault.
 
 ```azurepowershell-interactive
 $keyvaultName="mykeyvault"
-New-AzureRmKeyVault -VaultName $keyvaultName `
+New-AzKeyVault -VaultName $keyvaultName `
     -ResourceGroup $resourceGroup `
     -Location $location `
     -EnabledForDeployment
 ```
 
 ## <a name="generate-a-certificate-and-store-in-key-vault"></a>Создание сертификата и его сохранение в Key Vault
-Для использования в рабочей среде импортируйте действительный сертификат, подписанный доверенным поставщиком, выполнив командлет [Import-AzureKeyVaultCertificate](/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate). В следующем примере показано, как с помощью командлета [Add-AzureKeyVaultCertificate](/powershell/module/azurerm.keyvault/add-azurekeyvaultcertificate) создать самозаверяющий сертификат, использующий политику сертификата из [New-AzureKeyVaultCertificatePolicy](/powershell/module/azurerm.keyvault/new-azurekeyvaultcertificatepolicy). 
+Для использования в рабочей среде импортируйте действительный сертификат, подписанный доверенным поставщиком, выполнив командлет [Import-AzureKeyVaultCertificate](https://docs.microsoft.com/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate). В следующем примере показано, как с помощью командлета [Add-AzureKeyVaultCertificate](https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultcertificate) создать самозаверяющий сертификат, использующий политику сертификата из [New-AzureKeyVaultCertificatePolicy](https://docs.microsoft.com/powershell/module/azurerm.keyvault/new-azurekeyvaultcertificatepolicy). 
 
 ```azurepowershell-interactive
 $policy = New-AzureKeyVaultCertificatePolicy `
@@ -87,11 +91,11 @@ Add-AzureKeyVaultCertificate `
 $cred = Get-Credential
 ```
 
-Теперь вы можете создать виртуальную машину с помощью командлета [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm). В следующем примере создается виртуальная машина с именем *myVM* в расположении *EastUS*. Если они еще не существуют, создаются поддерживающие сетевые ресурсы. Чтобы разрешить безопасный веб-трафик, командлет также открывает порт *443*.
+Теперь вы можете создать виртуальную машину с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина с именем *myVM* в расположении *EastUS*. Если они еще не существуют, создаются поддерживающие сетевые ресурсы. Чтобы разрешить безопасный веб-трафик, командлет также открывает порт *443*.
 
 ```azurepowershell-interactive
 # Create a VM
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName $resourceGroup `
     -Name "myVM" `
     -Location $location `
@@ -103,7 +107,7 @@ New-AzureRmVm `
     -OpenPorts 443
 
 # Use the Custom Script Extension to install IIS
-Set-AzureRmVMExtension -ResourceGroupName $resourceGroup `
+Set-AzVMExtension -ResourceGroupName $resourceGroup `
     -ExtensionName "IIS" `
     -VMName "myVM" `
     -Location $location `
@@ -113,25 +117,25 @@ Set-AzureRmVMExtension -ResourceGroupName $resourceGroup `
     -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server -IncludeManagementTools"}'
 ```
 
-Создание виртуальной машины может занять несколько минут. На последнем шаге с помощью расширения пользовательских сценариев Azure устанавливается веб-сервер IIS. Для этого используется командлет [Set-AzureRmVmExtension](/powershell/module/azurerm.compute/set-azurermvmextension).
+Создание виртуальной машины может занять несколько минут. На последнем шаге с помощью расширения пользовательских сценариев Azure устанавливается веб-сервер IIS. Для этого используется командлет [Set-AzVmExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension).
 
 
 ## <a name="add-a-certificate-to-vm-from-key-vault"></a>Добавление сертификата на виртуальную машину из Key Vault
-Чтобы добавить сертификат из Key Vault на виртуальную машину, получите идентификатор сертификата с помощью командлета [Get-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret). Добавьте сертификат на виртуальную машину с помощью командлета [Add-AzureRmVMSecret](/powershell/module/azurerm.compute/add-azurermvmsecret):
+Чтобы добавить сертификат из Key Vault на виртуальную машину, получите идентификатор сертификата с помощью командлета [Get-AzureKeyVaultSecret](https://docs.microsoft.com/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret). Добавьте сертификат на виртуальную машину с помощью командлета [Add-AzVMSecret](https://docs.microsoft.com/powershell/module/az.compute/add-azvmsecret):
 
 ```azurepowershell-interactive
 $certURL=(Get-AzureKeyVaultSecret -VaultName $keyvaultName -Name "mycert").id
 
-$vm=Get-AzureRmVM -ResourceGroupName $resourceGroup -Name "myVM"
-$vaultId=(Get-AzureRmKeyVault -ResourceGroupName $resourceGroup -VaultName $keyVaultName).ResourceId
-$vm = Add-AzureRmVMSecret -VM $vm -SourceVaultId $vaultId -CertificateStore "My" -CertificateUrl $certURL
+$vm=Get-AzVM -ResourceGroupName $resourceGroup -Name "myVM"
+$vaultId=(Get-AzKeyVault -ResourceGroupName $resourceGroup -VaultName $keyVaultName).ResourceId
+$vm = Add-AzVMSecret -VM $vm -SourceVaultId $vaultId -CertificateStore "My" -CertificateUrl $certURL
 
-Update-AzureRmVM -ResourceGroupName $resourceGroup -VM $vm
+Update-AzVM -ResourceGroupName $resourceGroup -VM $vm
 ```
 
 
 ## <a name="configure-iis-to-use-the-certificate"></a>Настройка IIS для использования сертификата
-Обновите конфигурацию IIS с помощью расширения пользовательских сценариев и командлета [Set-AzureRmVMExtension](/powershell/module/azurerm.compute/set-azurermvmextension). Это обновление применяет внедренный из Key Vault в IIS сертификат и настраивает веб-привязку:
+Обновите конфигурацию IIS с помощью расширения пользовательских сценариев и командлета [Set-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension). Это обновление применяет внедренный из Key Vault в IIS сертификат и настраивает веб-привязку:
 
 ```azurepowershell-interactive
 $PublicSettings = '{
@@ -139,7 +143,7 @@ $PublicSettings = '{
     "commandToExecute":"powershell -ExecutionPolicy Unrestricted -File secure-iis.ps1"
 }'
 
-Set-AzureRmVMExtension -ResourceGroupName $resourceGroup `
+Set-AzVMExtension -ResourceGroupName $resourceGroup `
     -ExtensionName "IIS" `
     -VMName "myVM" `
     -Location $location `
@@ -151,10 +155,10 @@ Set-AzureRmVMExtension -ResourceGroupName $resourceGroup `
 
 
 ### <a name="test-the-secure-web-app"></a>Тестирование защищенного веб-приложения
-Получите общедоступный IP-адрес своей виртуальной машины с помощью командлета [Get-AzureRmPublicIPAddress](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее `myPublicIP`.
+Получите общедоступный IP-адрес своей виртуальной машины с помощью командлета [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее `myPublicIP`.
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIPAddress -ResourceGroupName $resourceGroup -Name "myPublicIPAddress" | select "IpAddress"
+Get-AzPublicIPAddress -ResourceGroupName $resourceGroup -Name "myPublicIPAddress" | select "IpAddress"
 ```
 
 Теперь можно открыть веб-браузер и ввести в адресной строке `https://<myPublicIP>`. Чтобы принять предупреждение системы безопасности, если используется самозаверяющий сертификат безопасности, выберите **Сведения**, а затем — **Перейти на веб-страницу**:

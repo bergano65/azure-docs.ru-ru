@@ -11,24 +11,27 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 10/15/2018
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: c3d9b0660ab7803fc0c2696ded7bbffa90e07a5a
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 8a839d33d66ed434fe04b2c0df742606c11dff2c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50211610"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56217944"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
-> [!div class="op_single_selector" title1="Выберите версию Media Services, которую вы используете:"]
-> * [Версия 2](media-services-overview.md)
+> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
 > * [Версия 3](../latest/media-services-overview.md)
+> * [Версия 2](media-services-overview.md)
 
 Службы мультимедиа Azure (AMS) — это расширяемая облачная платформа, которая позволяет разработчикам создавать масштабируемые приложения для управления и доставки файлов мультимедиа. С помощью служб мультимедиа Azure можно безопасно передавать, сохранять, кодировать и упаковывать видео- или аудиосодержимое для потоковой трансляции разным клиентам (например, на ТВ, ПК и мобильные устройства) или для трансляции по требованию.
 
 Можно создавать сквозные рабочие процессы, полностью использующие службы мультимедиа. Также можно использовать сторонние компоненты в качестве некоторых частей рабочего процесса. Например, можно выполнять кодирование с помощью стороннего кодировщика. А затем отправить, защитить, упаковать и доставить содержимое с использованием служб мультимедиа. Вы можете выполнить потоковую передачу содержимого динамически или доставить содержимое по запросу. 
+
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -61,7 +64,7 @@ ms.locfileid: "50211610"
 
 ## <a name="code-samples"></a>Примеры кода
 
-Найдите несколько примеров кода в коллекции **образцов кода Azure**: [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
+Разнообразные примеры кода в коллекции **образцов кода Azure** — [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
 
 ## <a name="concepts"></a>Основные понятия
 

@@ -16,20 +16,22 @@ ms.workload: web
 ms.date: 03/20/2017
 ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: 4edb708005b7a12a03f2a2fec85a7dcb02a67610
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 46e5a6bc0e7d4ff615b3adda878b9b31bfe200f0
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53586984"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116955"
 ---
 # <a name="scale-a-web-app-worldwide-with-a-high-availability-architecture"></a>Глобальное масштабирование веб-приложения с помощью высокодоступной архитектуры
 
 В этом сценарии вы создадите группу ресурсов, два плана службы приложений, два веб-приложения, профиль и две конечные точки диспетчера трафика. Завершив его, вы получите высокодоступную архитектуру, обеспечивающую глобальную доступность веб-приложения на основе минимальной задержки сети.
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/scale-geographic/scale-geographic.ps1 "Scale a web app worldwide with a high-availability architecture")]
 
@@ -38,20 +40,20 @@ ms.locfileid: "53586984"
 Выполнив пример сценария, вы можете удалить группу ресурсов, веб-приложение и все связанные ресурсы, используя следующую команду.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRMTrafficManagerProfile](/powershell/module/azurerm.trafficmanager/new-azurermtrafficmanagerprofile) | Создает профиль диспетчера трафика. |
-| [New-AzureRmAppServicePlan](/powershell/module/azurerm.websites/new-azurermappserviceplan) | Создает план службы приложений. |
-| [New-AzureRmWebApp](/powershell/module/azurerm.websites/new-azurermwebapp) | Создает веб-приложение. |
-| [New-AzureRMTrafficManagerEndpoint](/powershell/module/azurerm.trafficmanager/new-azurermtrafficmanagerendpoint) | Создает конечную точку в профиле диспетчера трафика Azure. |
+| [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzTrafficManagerProfile](/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile) | Создает профиль диспетчера трафика. |
+| [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
+| [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
+| [New-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) | Создает конечную точку в профиле диспетчера трафика Azure. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

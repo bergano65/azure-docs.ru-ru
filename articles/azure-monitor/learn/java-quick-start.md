@@ -11,12 +11,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: c79f25eff553c359d969cd80a10eabbaaf50067d
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 25335081e594c64b8d8cee02eebec6119e609618
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54080981"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55891504"
 ---
 # <a name="start-monitoring-your-java-web-application"></a>Запуск мониторинга веб-приложения Java
 
@@ -82,6 +82,8 @@ ms.locfileid: "54080981"
 4. Установите флажок **Enable telemetry with Application Insights** (Включить телеметрию с помощью Application Insights). Выберите ресурс App Insights и связанный **ключ инструментирования**, которые необходимо связать с приложением Java.
 
    ![Меню "Конфигурация Azure для Eclipse"](./media/java-quick-start/0007-j.png)
+
+5. После настройки подключаемого модуля Application Insights необходимо [впервые или повторно опубликовать](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java#publish-the-web-app-to-azure) приложение перед тем, как оно сможет отправлять данные телеметрии.
 
 > [!NOTE]
 > Пакет SDK Application Insights для Java может собирать и визуализировать динамические метрики, но после включения сборки данных телеметрии впервые они могут появиться на портале через несколько минут. Если это тестовое приложение со сниженным трафиком, следует помнить, что большинство метрик собираются только при наличии активных запросов или операций.

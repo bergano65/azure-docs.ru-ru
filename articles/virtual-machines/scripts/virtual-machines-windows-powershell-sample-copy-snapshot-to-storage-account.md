@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 06/05/2017
 ms.author: ramankum
-ms.openlocfilehash: be21a891121df1d645b430d87b572cde6c945d61
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8406119da75932da288d9a95cef3a9b1d26e9a9f
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23116482"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984150"
 ---
 # <a name="exportcopy-managed-snapshots-as-vhd-to-a-storage-account-in-different-region-with-powershell"></a>Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell
 
@@ -29,6 +29,8 @@ ms.locfileid: "23116482"
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -39,11 +41,11 @@ ms.locfileid: "23116482"
 
 Этот сценарий выполняет приведенные ниже команды для создания универсального кода ресурса (URI) SAS для управляемого моментального снимка и копирует моментальный снимок в учетную запись хранения, используя созданный универсальный код ресурса (URI) SAS. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
-| [Grant-AzureRmSnapshotAccess](/powershell/module/azurerm.compute/New-AzureRmDisk) | Создает универсальный код ресурса (URI) SAS для моментального снимка, который используется для копирования моментального снимка в учетную запись хранения. |
-| [New-AzureStorageContext](/powershell/module/azure.storage/New-AzureStorageContext) | Создает контекст учетной записи хранения с помощью имени учетной записи и ключа. Этот контекст можно использовать для выполнения операций чтения и записи с учетной записью хранения. |
-| [Start-AzureStorageBlobCopy](/powershell/module/azure.storage/Start-AzureStorageBlobCopy) | Копирует базовый VHD моментального снимка в учетную запись хранения. |
+| [Grant-AzSnapshotAccess](https://docs.microsoft.com/powershell/module/az.compute/New-AzDisk) | Создает универсальный код ресурса (URI) SAS для моментального снимка, который используется для копирования моментального снимка в учетную запись хранения. |
+| [New-AzureStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/New-AzureStorageContext) | Создает контекст учетной записи хранения с помощью имени учетной записи и ключа. Этот контекст можно использовать для выполнения операций чтения и записи с учетной записью хранения. |
+| [Start-AzureStorageBlobCopy](https://docs.microsoft.com/powershell/module/azure.storage/Start-AzureStorageBlobCopy) | Копирует базовый VHD моментального снимка в учетную запись хранения. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

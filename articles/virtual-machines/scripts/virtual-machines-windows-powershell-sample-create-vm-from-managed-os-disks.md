@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 4e1695eb85988b74bf968ebe08602164c94f01dd
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 92a4560f35abe0a6da0ffd6f0536413f22d7289e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696070"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55989584"
 ---
 # <a name="create-a-virtual-machine-using-an-existing-managed-os-disk-with-powershell"></a>Создание виртуальной машины с помощью существующего управляемого диска ОС с использованием PowerShell
 
@@ -30,9 +30,9 @@ ms.locfileid: "55696070"
 * создание виртуальной машины из существующего управляемого диска, который был создан из специального файла VHD; 
 * создание виртуальной машины из существующего управляемого диска ОС, который был создан из моментального снимка. 
 
-[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
-
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -43,7 +43,7 @@ ms.locfileid: "55696070"
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup
+Remove-AzResourceGroup -Name myResourceGroup
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
@@ -52,17 +52,18 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 | Команда | Примечания |
 |---|---|
-| [Get-AzureRmDisk](/powershell/module/azurerm.compute/Get-AzureRmDisk) | Возвращает объект диска на основе имени и группы ресурсов диска. Свойство идентификатора возвращенного объекта диска используется для подключения диска к новой виртуальной машине. |
-| [New-AzureRmVMConfig](/powershell/module/azurerm.compute/new-azurermvmconfig) | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
-| [Set-AzureRmVMOSDisk](/powershell/module/azurerm.compute/set-azurermvmosdisk) | Подключает управляемый диск, используя свойство идентификатора диска как диск ОС для новой виртуальной машины. |
-| [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress) | Создает общедоступный IP-адрес. |
-| [New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface) | Создает сетевой интерфейс. |
-| [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm) | Создайте виртуальную машину. |
-|[Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
+| [Get-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/Get-AzDisk) | Возвращает объект диска на основе имени и группы ресурсов диска. Свойство идентификатора возвращенного объекта диска используется для подключения диска к новой виртуальной машине. |
+| [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig) | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
+| [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk) | Подключает управляемый диск, используя свойство идентификатора диска как диск ОС для новой виртуальной машины. |
+| [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress) | Создает общедоступный IP-адрес. |
+| [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) | Создает сетевой интерфейс. |
+| [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) | Создайте виртуальную машину. |
+|[Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
-Для образов из marketplace используйте [Set-AzureRmVMPlan](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmplan?view=azurermps-6.7.0), чтобы задать сведения о плане
+Для образов из marketplace используйте [Set-AzVMPlan](https://docs.microsoft.com/powershell/module/az.compute/set-azvmplan?view=azurermps-6.7.0), чтобы задать сведения о плане.
+
 ```powershell
-Set-AzureRmVMPlan -VM $VirtualMachine -Publisher $Publisher -Product $Product -Name $Name
+Set-AzVMPlan -VM $VirtualMachine -Publisher $Publisher -Product $Product -Name $Bame
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

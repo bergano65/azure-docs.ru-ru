@@ -4,31 +4,28 @@ titleSuffix: Azure Cognitive Services
 description: API Bing для поиска изображений позволяет использовать возможности когнитивного поиска изображений Bing в своем приложении. Отправляя пользовательские поисковые запросы с помощью API, можно получить и отобразить соответствующие и высококачественные изображения, которые аналогичны изображениям Bing.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.assetid: 1446AD8B-A685-4F5F-B4AA-74C8E9A40BE9
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: overview
-ms.date: 10/11/2017
+ms.date: 02/06/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 4ae9c0c1fb6cd341e812f9e8b35eaff789637561
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: fa1e2e6ac6e85c431a759d8eb1c22923e86e40d4
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765652"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237320"
 ---
 # <a name="what-is-the-bing-image-search-api"></a>Знакомство с API Bing для поиска изображений
 
-API Bing для поиска изображений позволяет использовать возможности когнитивного поиска изображений Bing в своем приложении. Отправляя пользовательские поисковые запросы с помощью API, можно получить и отобразить соответствующие и высококачественные изображения, которые аналогичны [изображениям Bing](https://www.bing.com/images).
+API Bing для поиска изображений позволяет использовать возможности поиска изображений Bing в своем приложении. Отправляя поисковые запросы в API, вы сможете получать высококачественные изображения, как и при использовании [bing.com/images](https://www.bing.com/images).
 
-Имейте в виду, что API Bing для поиска изображений предоставляет только результаты поиска изображений. Используйте [API Bing для поиска в Интернете](../bing-web-search/search-the-web.md), [API для поиска видео](https://docs.microsoft.com/azure/cognitive-services/Bing-Video-Search) и [API Bing для поиска новостей](https://review.docs.microsoft.com/azure/cognitive-services/bing-news-search) для других типов веб-содержимого.
+API-интерфейс Bing для поиска изображений предоставляет только результаты поиска изображений, но вы можете использовать вместе с ним (или отдельно) другие доступные [API-интерфейсы поиска Bing](../bing-web-search/bing-api-comparison.md) для поиска различных типов содержимого в Интернете.
 
 ## <a name="bing-image-search-features"></a>Возможности API Bing для поиска изображений
-
-Хотя API Bing для поиска изображений в основном находит и возвращает соответствующие изображения на основе поискового запроса, эта служба также предоставляет несколько дополнительных функций для интеллектуального и специализированного извлечения изображений в Интернете.
-
 
 | Функция                                                                                                                                                                                 | ОПИСАНИЕ                                                                                                                                                            |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,7 +48,7 @@ API Bing для поиска изображений является веб-сл
 Сначала попробуйте [интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) API Bing для поиска изображений.
 В этой демонстрации показано, как можно быстро настроить поисковый запрос и найти изображение в Интернете.
 
-Когда будете готовы вызвать API, создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+Когда вы будете готовы вызвать API, создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 
 Чтобы быстро начать работу со своим первым запросом API, научитесь:
 
@@ -60,7 +57,9 @@ API Bing для поиска изображений является веб-сл
 
 ## <a name="see-also"></a>См. также
 
-* Раздел справочника по [API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference) содержит определения и сведения о конечных точках, заголовках, ответах API и параметрах запроса, которые можно использовать для запроса результатов поиска на основе изображения.
+* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API-интерфейсы Поиска Bing. 
+
+* В справочнике по [API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference) содержатся сведения о конечных точках API, заголовках, ответах API и параметрах запросов.
 
 * В статье [Требования к использованию и отображению API поиска Bing](./useanddisplayrequirements.md) рассматриваются приемлемые варианты использования содержимого и информации, получаемой с помощью API Bing для поиска.
 

@@ -1,5 +1,5 @@
 ---
-title: Создание универсальной платформы Windows (UWP) для использования в мобильных приложениях | Документация Майкрософт
+title: Создание универсальной платформы Windows (UWP) для использования мобильных приложений Azure | Документация Майкрософт
 description: Следуйте указаниям этого руководства, чтобы начать работу с серверной частью мобильных приложений Azure для разработки приложений универсальной платформы Windows (UWP) на C#, Visual Basic или JavaScript.
 services: app-service\mobile
 documentationcenter: windows
@@ -14,14 +14,14 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/17/2018
 ms.author: crdun
-ms.openlocfilehash: c8bd6430b362fde81c3133c2c16cf369aa050103
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 00b635853d0dfad73a258ddc8ef9b168559fc5df
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52999378"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098431"
 ---
-# <a name="create-a-windows-app"></a>Создание приложения Windows
+# <a name="create-a-windows-app-with-an-azure-backend"></a>Создание приложения Windows с серверной частью Azure
 
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
@@ -38,7 +38,9 @@ ms.locfileid: "52999378"
 Для работы с этим учебником требуется:
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, можно зарегистрироваться для получения бесплатной пробной версии Azure и получить до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Windows 10;
 * [Visual Studio Community 2017].
+* Знакомство с разработкой приложений UWP. Ознакомьтесь с [документацией по UWP](https://docs.microsoft.com/windows/uwp/), чтобы получить инструкции по [настройке](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) для создания приложений UWP.
 
 ## <a name="create-a-new-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
 

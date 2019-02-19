@@ -11,17 +11,17 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 2374707d3fdf4d389a7c96c18767d3c52a9efb2f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/11/2019
+ms.openlocfilehash: f708e5a3cd5bc0f11f8b0cfe79a791347c7a7a2b
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55757233"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108965"
 ---
-# <a name="quickstart-create-a-server-level-firewall-rule-in-azure-sql-database-using-the-azure-portal"></a>Краткое руководство. Создание правила брандмауэра на уровне сервера для Базы данных SQL Azure с помощью портала Azure
+# <a name="quickstart-create-a-server-level-firewall-rule-for-single-and-pooled-databases-using-the-azure-portal"></a>Краткое руководство. Создание правила брандмауэра на уровне сервера для отдельной базы данных или базы данных в составе пула с помощью портала Azure
 
-В этом кратком руководстве описано создание на портале Azure правила брандмауэра на уровне сервера для Базы данных SQL Azure, чтобы получить возможность подключаться к ней с локального ресурса.
+В этом кратком руководстве описано, как создать на портале Azure [правило брандмауэра на уровне сервера](sql-database-firewall-configure.md) для отдельной базы данных или базы данных в составе пула, чтобы получить возможность подключаться к серверам баз данных и отдельным базам данных, а также эластичным пулам и входящим в их состав базам данных. При подключении из других ресурсов Azure и из локальных ресурсов нужно настроить правило брандмауэра.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

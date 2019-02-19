@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/30/2019
+ms.date: 02/08/2019
 ms.author: jdial
-ms.openlocfilehash: 5472878542078e2a2dbb900965b59844d6e3b4b3
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: e145642a12db941d52c55081032e247b6d65d38b
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55488100"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997335"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "55488100"
 Общедоступные IP-адреса с номерами SKU "Стандартный":
 
 - Всегда используют статический метод выделения.
-- Имеют настраиваемое время ожидания в случае простоя входящего и исходящего потока 4–66 минут (значение по умолчанию — 4 минуты).
+- Имеют настраиваемое время ожидания в случае простоя входящего и исходящего потока 4–30 минут (значение по умолчанию — 4 минуты).
 - Защищены по умолчанию и закрыты для входящего трафика. Весь допустимый входящий трафик необходимо явным образом включить в белый список [сетевой группы безопасности](security-overview.md#network-security-groups).
 - Назначаются сетевым интерфейсам, общедоступным стандартным подсистемам балансировки нагрузки, Шлюзам приложений или VPN-шлюзам. Дополнительные сведения об Load Balancer (цен. категория "Стандартный") см. в [этой статье](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Геоизбыточные в пределах зоны по умолчанию и при необходимости зональные (могут создаваться зональные и гарантированные в определенной зоне доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

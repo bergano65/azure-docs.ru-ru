@@ -16,12 +16,12 @@ ms.topic: get-started-article
 ms.date: 10/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f08ef19e6829fc1563eced54ade1e4f59c0c33be
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 37bb0dcc2b9848d3fd3d49c78b52adbcd2dcc046
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55728577"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106410"
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Обзор виртуальных машин Windows в Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "55728577"
 | Метод | ОПИСАНИЕ |
 | --- | --- |
 | Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
-| Azure PowerShell |Используйте команду [Get-AzureRmLocation](/powershell/module/azurerm.resources/get-azurermlocation). |
+| Azure PowerShell |Используйте команду [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
 | REST API |Используйте операцию [вывода списка расположений](https://docs.microsoft.com/rest/api/resources/subscriptions). |
 | Инфраструктура CLI Azure |Используйте операцию [az account list-locations](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest). |
 
@@ -83,7 +83,7 @@ Azure предоставляет множество [образов из Marketp
 | Метод | ОПИСАНИЕ |
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
-| Azure PowerShell |[Get-AzureRMVMImagePublisher](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimagepublisher). Параметр *-Location* указывает расположение.<BR>[Get-AzureRMVMImageOffer](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimageoffer). Параметр *-Location* указывает расположение, а *-PublisherName* — имя издателя.<BR>[Get-AzureRMVMImageSku](/powershell/module/azurerm.compute/get-azurermvmimagesku). Параметр *-Location* указывает расположение, *-PublisherName* — имя издателя, а *-Offer* — имя предложение. |
+| Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
 | Интерфейсы API REST |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
 | Инфраструктура CLI Azure |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 

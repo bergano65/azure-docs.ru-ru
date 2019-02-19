@@ -9,12 +9,12 @@ ms.date: 11/28/2018
 ms.topic: tutorial
 ms.service: event-hubs-messaging
 ms.custom: mvc
-ms.openlocfilehash: bd76d8a7f3f41a8aa6b2e614d37f361a98ac4efd
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: e47c2af353a7f365534ba4cf9ce574c16a0ea4ca
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53281318"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233145"
 ---
 # <a name="tutorial-enable-virtual-networks-integration-and-firewalls-on-event-hubs-namespace"></a>Руководство. Включение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
 
@@ -30,9 +30,9 @@ ms.locfileid: "53281318"
 > * Настройка брандмауэра (фильтрация IP) с пространством имен Центров событий.
 
 >[!WARNING]
-> Реализация интеграции виртуальных сетей может препятствовать взаимодействию других служб Azure со служебной шиной.
+> Реализация интеграции виртуальных сетей может препятствовать взаимодействию других служб Azure с Центрами событий.
 >
-> Собственные интеграции не поддерживаются, когда включены виртуальные сети, но они станут доступны в ближайшее время.
+> Собственные интеграции не поддерживаются, когда включены виртуальные сети.
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями:
 > * система диагностики Azure и ведение журнала;
 > * Azure Stream Analytics

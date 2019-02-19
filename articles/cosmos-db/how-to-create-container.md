@@ -6,107 +6,107 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: 183f596c213f833a2ca633398d1102e86f328912
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 445d9f220a215eb17436d52f637b57bd3492aaae
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55468858"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55864780"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
-В этой статье описываются различные способы создания контейнеров (коллекции, таблицы, диаграммы). Контейнер можно создать с помощью портала Azure, интерфейса командной строки Azure или поддерживаемых пакетов SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
+В этой статье описываются различные способы создания контейнеров (коллекции, таблицы или графы). Для этого можно использовать портал Azure, Azure CLI или поддерживаемые пакеты SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
 
-## <a name="create-a-container-using-azure-portal"></a>Создание контейнера с помощью портала Azure
+## <a name="create-a-container-by-using-azure-portal"></a>Создание контейнера с помощью портала Azure
 
 ### <a id="portal-sql"></a>API SQL
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
 
-   * Создайте новую базу данных или используйте существующую.
+   * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Введите идентификатор коллекции.
    * Введите ключ секции.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![SQL API создает коллекцию](./media/how-to-create-container/partitioned-collection-create-sql.png)
+![Снимок экрана панели обозревателя данных с выделенным элементом "Новая коллекция"](./media/how-to-create-container/partitioned-collection-create-sql.png)
 
 ### <a id="portal-mongodb"></a>API Azure Cosmos DB для MongoDB
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-mongodb-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-mongodb-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
 
-   * Создайте новую базу данных или используйте существующую.
+   * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Введите идентификатор коллекции.
    * Выберите емкость **Без ограничений**.
    * Введите ключ сегмента.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![Создание коллекции с использованием API Azure Cosmos DB для MongoDB](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
+![Снимок экрана API Azure Cosmos DB для MongoDB, диалоговое окно добавления коллекции](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
 
 ### <a id="portal-cassandra"></a>API Cassandra
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-cassandra-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-cassandra-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая таблица**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **New Table** (Новая таблица). После этого предоставьте следующие сведения.
 
-   * Создайте новое пространство ключей или используйте существующее.
+   * Укажите, создаете ли вы новое пространство ключей или используете существующее.
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![API Cassandra создает коллекцию](./media/how-to-create-container/partitioned-collection-create-cassandra.png)
+![Снимок экрана API Cassandra, диалоговое окно добавления таблицы](./media/how-to-create-container/partitioned-collection-create-cassandra.png)
 
 > [!NOTE]
 > Для API Cassandra первичный ключ используется в качестве ключа секции.
 
 ### <a id="portal-gremlin"></a>API Gremlin
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-graph-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-graph-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новый граф**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **New Graph** (Новый граф). После этого предоставьте следующие сведения.
 
-   * Создайте новую базу данных или используйте существующую.
+   * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Введите идентификатор графа.
    * Выберите емкость **Без ограничений**.
    * Введите ключ секции для вершин.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![API Gremlin создает коллекцию](./media/how-to-create-container/partitioned-collection-create-gremlin.png)
+![Снимок экрана API Gremlin, диалоговое окно добавления графа](./media/how-to-create-container/partitioned-collection-create-gremlin.png)
 
 ### <a id="portal-table"></a>API таблиц
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-table-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-table-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая таблица**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **New Table** (Новая таблица). После этого предоставьте следующие сведения.
 
    * Введите идентификатор таблицы.
    * Выберите емкость **Без ограничений**.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![API таблиц создает коллекцию](./media/how-to-create-container/partitioned-collection-create-table.png)
+![Снимок экрана API таблиц, диалоговое окно добавления таблицы](./media/how-to-create-container/partitioned-collection-create-table.png)
 
 > [!Note]
 > Для API таблиц ключ секции указывается каждый раз при добавлении новой строки.
 
-## <a name="create-a-container-using-azure-cli"></a>Создание контейнера с помощью интерфейса командной строки Azure
+## <a name="create-a-container-by-using-azure-cli"></a>Создание контейнера с помощью Azure CLI
 
 ### <a id="cli-sql"></a>API SQL
 
@@ -174,7 +174,7 @@ az cosmosdb collection create \
     --throughput 1000
 ```
 
-## <a name="create-a-container-using-net-sdk"></a>Создайте контейнер с помощью .NET SDK
+## <a name="create-a-container-by-using-net-sdk"></a>Создание контейнера с помощью пакета SDK для .NET
 
 ### <a id="dotnet-sql-graph"></a>API SQL и API Gremlin
 
@@ -198,7 +198,7 @@ db.runCommand( { shardCollection: "myDatabase.myCollection", key: { myShardKey: 
 ```
 
 > [!Note]
-Сетевой протокол MongoDB не поддерживает понятие единицы запросов. Чтобы создать новую коллекцию с пропускной способностью, используйте портал Azure или API SQL, как показано в предыдущих примерах.
+Сетевой протокол MongoDB не поддерживает единицы запросов. Чтобы создать новую коллекцию с пропускной способностью, используйте портал Azure или API SQL.
 
 ### <a id="dotnet-cassandra"></a>API Cassandra
 
@@ -211,7 +211,5 @@ session.Execute(CREATE TABLE myKeySpace.myTable(
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Чтобы узнать о секционировании в Cosmos DB, ознакомьтесь со следующими статьями:
 
 - [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)

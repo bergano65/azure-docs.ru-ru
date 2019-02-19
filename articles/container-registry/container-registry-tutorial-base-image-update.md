@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: c89a239cd3abbdd59813626f4b64596ee8a1fd7e
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: e2dd02ada2c22fa8d6c2d79387ea01f3ec97dd7e
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756807"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108132"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
 
@@ -78,6 +78,8 @@ GIT_PAT=<personal-access-token> # The PAT you generated in the second tutorial
 [Dockerfile-base][dockerfile-base]: образ, который приложение `Dockerfile-app` определяет как основной. Сам он основан на образе [узла][base-node] и включает переменную среды `NODE_VERSION`.
 
 В следующих разделах вы создадите задачу, обновите значение `NODE_VERSION` в файле Docker базового образа, а затем используете решение "Задачи ACR" для создания базового образа. Когда задача ACR принудительно отправит новый базовый образ в реестр, он автоматически запустит сборку образа приложения. При желании можно запустить образ контейнера приложения локально, чтобы увидеть различные строки версии в созданных образах.
+
+В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md) (сейчас в предварительной версии), используя файл YAML для определения действий по созданию, отправке и тестированию при необходимости нескольких контейнеров.
 
 ## <a name="build-the-base-image"></a>создание базового образа;
 
@@ -257,7 +259,7 @@ az ad sp delete --id http://$ACR_NAME-pull
 [azure-cli]: /cli/azure/install-azure-cli
 [az-acr-build]: /cli/azure/acr#az-acr-build-run
 [az-acr-task-create]: /cli/azure/acr
-[az-acr-task-run]: /cli/azure/acr-run
+[az-acr-task-run]: /cli/azure/acr#az-acr-run
 [az-acr-login]: /cli/azure/acr#az-acr-login
 [az-acr-task-list-runs]: /cli/azure/acr
 [az-acr-task]: /cli/azure/acr

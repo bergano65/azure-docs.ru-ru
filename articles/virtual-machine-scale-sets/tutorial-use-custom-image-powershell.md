@@ -16,14 +16,15 @@ ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bca92b5079b5ef21c954b46bfbeab9b973828fc8
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: a3b0f9b2b158bd36259ee96633682e1777333499
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427446"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55981049"
 ---
 # <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство. Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
+
 Создавая масштабируемый набор, вы указываете образ для использования при развертывании экземпляров виртуальных машин. Чтобы сократить количество задач после развертывания экземпляров виртуальных машин, можно использовать пользовательский образ виртуальной машины. Этот образ содержит все необходимые установки или конфигурации приложения. Все экземпляры виртуальных машин, созданные в масштабируемом наборе, используют пользовательский образ виртуальной машины и готовы обслуживать трафик приложения. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
@@ -34,9 +35,9 @@ ms.locfileid: "54427446"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [updated-for-az-vm.md](../../includes/updated-for-az-vm.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
+[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
 
 ## <a name="create-and-configure-a-source-vm"></a>Создание и настройка исходной виртуальной машины
@@ -44,24 +45,24 @@ ms.locfileid: "54427446"
 >[!NOTE]
 > В этом руководстве приведены пошаговые инструкции по созданию и использованию универсального образа виртуальной машины. Создание масштабируемого набора на основе специализированного образа VHD не поддерживается.
 
-Сначала создайте группу ресурсов, выполнив командлет [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup), а затем создайте виртуальную машину с помощью командлета [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm). Позже эта виртуальная машина будет использована в качестве источника для пользовательского образа. В следующем примере создается виртуальная машина с именем *myCustomVM* в группе ресурсов *myResourceGroup*. При появлении запроса введите имя пользователя и пароль в качестве учетных данных для входа на виртуальную машину:
+Сначала создайте группу ресурсов, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup), а затем создайте виртуальную машину с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). Позже эта виртуальная машина будет использована в качестве источника для пользовательского образа. В следующем примере создается виртуальная машина с именем *myCustomVM* в группе ресурсов *myResourceGroup*. При появлении запроса введите имя пользователя и пароль в качестве учетных данных для входа на виртуальную машину:
 
 ```azurepowershell-interactive
 # Create a resource a group
-New-AzureRmResourceGroup -Name "myResourceGroup" -Location "EastUS"
+New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 
 # Create a Windows Server 2016 Datacenter VM
-New-AzureRmVm `
+New-AzVm `
   -ResourceGroupName "myResourceGroup" `
   -Name "myCustomVM" `
   -ImageName "Win2016Datacenter" `
   -OpenPorts 3389
 ```
 
-Чтобы подключиться к виртуальной машине, получите общедоступный IP-адрес с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress), как показано ниже.
+Чтобы подключиться к виртуальной машине, получите общедоступный IP-адрес с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress), как показано ниже.
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
+Get-AzPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 ```
 
 Создайте удаленное подключение к виртуальной машине. Если вы используете Azure Cloud Shell, выполните этот шаг с помощью локальной командной строки PowerShell или клиента удаленного рабочего стола. Укажите собственный IP-адрес из предыдущей команды. При появлении запроса введите учетные данные, использованные при создании виртуальной машины на первом шаге.
@@ -90,34 +91,34 @@ C:\Windows\system32\sysprep\sysprep.exe /oobe /generalize /shutdown
 ## <a name="create-a-custom-vm-image-from-the-source-vm"></a>Создание пользовательского образа виртуальной машины из исходной виртуальной машины
 Теперь на исходной виртуальной машине установлен веб-сервер IIS и она настроена. Создайте пользовательский образ виртуальной машины для использования с масштабируемым набором.
 
-Чтобы создать образ, нужно отменить выделение виртуальной машины. Освободите виртуальную машину с помощью командлета [Stop-AzureRmVm](/powershell/module/azurerm.compute/stop-azurermvm). Затем с помощью командлета [Set-AzureRmVm](/powershell/module/azurerm.compute/set-azurermvm) измените состояние виртуальной машины на "Generalized" (Готова к использованию), чтобы платформа Azure знала, что виртуальная машина готова к использованию пользовательского образа. Создать образ можно только из подготовленной виртуальной машины.
+Чтобы создать образ, нужно отменить выделение виртуальной машины. Освободите виртуальную машину с помощью командлета [Stop-AzVm](/powershell/module/az.compute/stop-azvm). Затем с помощью командлета [Set-AzVm](/powershell/module/az.compute/set-azvm) измените состояние виртуальной машины на Generalized (Готова к использованию), чтобы указать платформе Azure о том, что виртуальная машина готова к применению пользовательского образа. Создать образ можно только из подготовленной виртуальной машины.
 
 ```azurepowershell-interactive
-Stop-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myCustomVM" -Force
-Set-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myCustomVM" -Generalized
+Stop-AzVM -ResourceGroupName "myResourceGroup" -Name "myCustomVM" -Force
+Set-AzVM -ResourceGroupName "myResourceGroup" -Name "myCustomVM" -Generalized
 ```
 
 Освобождение и подготовка виртуальной машины к использованию может занять несколько минут.
 
-Теперь создайте образ виртуальной машины с помощью командлетов [New-AzureRmImageConfig](/powershell/module/azurerm.compute/new-azurermimageconfig) и [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage). В следующем примере создается образ *myImage* из виртуальной машины.
+Теперь создайте образ виртуальной машины с помощью командлетов [New-AzImageConfig](/powershell/module/az.compute/new-azimageconfig) и [New-AzImage](/powershell/module/az.compute/new-azimage). В следующем примере создается образ *myImage* из виртуальной машины.
 
 ```azurepowershell-interactive
 # Get VM object
-$vm = Get-AzureRmVM -Name "myCustomVM" -ResourceGroupName "myResourceGroup"
+$vm = Get-AzVM -Name "myCustomVM" -ResourceGroupName "myResourceGroup"
 
 # Create the VM image configuration based on the source VM
-$image = New-AzureRmImageConfig -Location "EastUS" -SourceVirtualMachineId $vm.ID 
+$image = New-AzImageConfig -Location "EastUS" -SourceVirtualMachineId $vm.ID 
 
 # Create the custom VM image
-New-AzureRmImage -Image $image -ImageName "myImage" -ResourceGroupName "myResourceGroup"
+New-AzImage -Image $image -ImageName "myImage" -ResourceGroupName "myResourceGroup"
 ```
 
 
 ## <a name="create-a-scale-set-from-the-custom-vm-image"></a>Создание масштабируемого набора на основе пользовательского образа виртуальной машины
-Теперь создайте масштабируемый набор с помощью командлета [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss), который использует параметр `-ImageName` для определения пользовательского образа виртуальной машины, созданного на предыдущем шаге. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
+Теперь создайте масштабируемый набор с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss), который использует параметр `-ImageName` для определения пользовательского образа виртуальной машины, созданного на предыдущем шаге. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
   -VMScaleSetName "myScaleSet" `
@@ -133,10 +134,11 @@ New-AzureRmVmss `
 
 
 ## <a name="test-your-scale-set"></a>Проверка масштабируемого набора
-Чтобы изучить работу масштабируемого набора, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/AzureRM.Network/Get-AzureRmPublicIpAddress), как показано ниже.
+Чтобы изучить работу масштабируемого набора, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress), как показано ниже.
+
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress `
+Get-AzPublicIpAddress `
   -ResourceGroupName "myResourceGroup" `
   -Name "myPublicIPAddress" | Select IpAddress
 ```
@@ -147,10 +149,10 @@ Get-AzureRmPublicIpAddress `
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
+Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
+Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 

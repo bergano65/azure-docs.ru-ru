@@ -13,17 +13,17 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: ''
 ms.topic: tutorial
-ms.date: 11/07/2018
+ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f4641125d15f159c6f50d2889e13b06ba954401b
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 90c4db4ac481f3853ca4e8256ce8fdb4c4ae9bd4
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54886827"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55983269"
 ---
-# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-windows-with-azure-powershell"></a>Руководство. Создание масштабируемого набора виртуальных машин и развертывание в Windows приложения высокого уровня доступности с помощью Azure PowerShell
+# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-windows-with-azure-powershell"></a>Руководство по Создание масштабируемого набора виртуальных машин и развертывание в Windows приложения высокого уровня доступности с помощью Azure PowerShell
 Масштабируемый набор виртуальных машин позволяет развернуть набор одинаковых виртуальных машин с возможностью автомасштабирования и управлять этим набором. Количество виртуальных машин в масштабируемом наборе можно изменять вручную. Также можно задавать правила автомасштабирования на основе использования ресурсов, например ЦП, памяти или сетевого трафика. В этом руководстве вы развернете масштабируемый набор виртуальных машин в Azure и научитесь выполнять следующие операции:
 
 > [!div class="checklist"]
@@ -33,10 +33,11 @@ ms.locfileid: "54886827"
 > * Увеличение или уменьшение количества экземпляров в масштабируемом наборе
 > * Создание правил автомасштабирования
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
 
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 ## <a name="scale-set-overview"></a>Обзор масштабируемого набора
 Масштабируемый набор виртуальных машин позволяет развернуть набор одинаковых виртуальных машин с возможностью автомасштабирования и управлять этим набором. Виртуальные машины распределяются по логическим доменам сбоя и обновления в одной или нескольких *группах размещения*. Группы размещения — это группы одинаковым образом настроенных виртуальных машин, аналогичные [группам доступности](tutorial-availability-sets.md).
@@ -47,10 +48,10 @@ ms.locfileid: "54886827"
 
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
-Создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss). В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий образ платформы *Windows Server 2016 Datacenter*. Сетевые ресурсы Azure для виртуальной сети, общедоступный IP-адрес и подсистема балансировки нагрузки создаются автоматически. При появлении запроса можно задать собственные административные учетные данные для экземпляров виртуальных машин в масштабируемом наборе:
+Создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/new-azvmss). В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий образ платформы *Windows Server 2016 Datacenter*. Сетевые ресурсы Azure для виртуальной сети, общедоступный IP-адрес и подсистема балансировки нагрузки создаются автоматически. При появлении запроса можно задать собственные административные учетные данные для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroupScaleSet" `
   -Location "EastUS" `
   -VMScaleSetName "myScaleSet" `
@@ -77,37 +78,37 @@ $publicSettings = @{
 }
 
 # Get information about the scale set
-$vmss = Get-AzureRmVmss `
-            -ResourceGroupName "myResourceGroupScaleSet" `
-            -VMScaleSetName "myScaleSet"
+$vmss = Get-AzVmss `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -VMScaleSetName "myScaleSet"
 
 # Use Custom Script Extension to install IIS and configure basic website
-Add-AzureRmVmssExtension -VirtualMachineScaleSet $vmss `
-    -Name "customScript" `
-    -Publisher "Microsoft.Compute" `
-    -Type "CustomScriptExtension" `
-    -TypeHandlerVersion 1.8 `
-    -Setting $publicSettings
+Add-AzVmssExtension -VirtualMachineScaleSet $vmss `
+  -Name "customScript" `
+  -Publisher "Microsoft.Compute" `
+  -Type "CustomScriptExtension" `
+  -TypeHandlerVersion 1.8 `
+  -Setting $publicSettings
 
 # Update the scale set and apply the Custom Script Extension to the VM instances
-Update-AzureRmVmss `
-    -ResourceGroupName "myResourceGroupScaleSet" `
-    -Name "myScaleSet" `
-    -VirtualMachineScaleSet $vmss
+Update-AzVmss `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -Name "myScaleSet" `
+  -VirtualMachineScaleSet $vmss
 ```
 
 ## <a name="allow-traffic-to-application"></a>Разрешение передачи трафика в приложение
 
-Чтобы разрешить доступ к базовому веб-приложению, создайте сетевую группу безопасности с помощью командлетов [New-AzureRmNetworkSecurityRuleConfig](/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig) и [New-AzureRmNetworkSecurityGroup](/powershell/module/azurerm.network/new-azurermnetworksecuritygroup). Дополнительные сведения см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md).
+Чтобы разрешить доступ к базовому веб-приложению, создайте сетевую группу безопасности с помощью командлетов [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig) и [New-AzNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup). Дополнительные сведения см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md).
 
 ```azurepowershell-interactive
 # Get information about the scale set
-$vmss = Get-AzureRmVmss `
-            -ResourceGroupName "myResourceGroupScaleSet" `
-            -VMScaleSetName "myScaleSet"
+$vmss = Get-AzVmss `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -VMScaleSetName "myScaleSet"
 
 #Create a rule to allow traffic over port 80
-$nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
+$nsgFrontendRule = New-AzNetworkSecurityRuleConfig `
   -Name myFrontendNSGRule `
   -Protocol Tcp `
   -Direction Inbound `
@@ -119,40 +120,40 @@ $nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
   -Access Allow
 
 #Create a network security group and associate it with the rule
-$nsgFrontend = New-AzureRmNetworkSecurityGroup `
+$nsgFrontend = New-AzNetworkSecurityGroup `
   -ResourceGroupName  "myResourceGroupScaleSet" `
   -Location EastUS `
   -Name myFrontendNSG `
   -SecurityRules $nsgFrontendRule
 
-$vnet = Get-AzureRmVirtualNetwork `
+$vnet = Get-AzVirtualNetwork `
   -ResourceGroupName  "myResourceGroupScaleSet" `
   -Name myVnet
 
 $frontendSubnet = $vnet.Subnets[0]
 
-$frontendSubnetConfig = Set-AzureRmVirtualNetworkSubnetConfig `
+$frontendSubnetConfig = Set-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $vnet `
   -Name mySubnet `
   -AddressPrefix $frontendSubnet.AddressPrefix `
   -NetworkSecurityGroup $nsgFrontend
 
-Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
+Set-AzVirtualNetwork -VirtualNetwork $vnet
 
 # Update the scale set and apply the Custom Script Extension to the VM instances
-Update-AzureRmVmss `
-    -ResourceGroupName "myResourceGroupScaleSet" `
-    -Name "myScaleSet" `
-    -VirtualMachineScaleSet $vmss
+Update-AzVmss `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -Name "myScaleSet" `
+  -VirtualMachineScaleSet $vmss
 ```
 
 ## <a name="test-your-scale-set"></a>Проверка масштабируемого набора
-Чтобы изучить работу масштабируемого набора, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress). Следующий пример отображает IP-адрес элемента *myPublicIP*, созданного ранее вместе с масштабируемым набором:
+Чтобы проверить работу масштабируемого набора, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress). Следующий пример отображает IP-адрес элемента *myPublicIP*, созданного ранее вместе с масштабируемым набором:
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIPAddress `
-    -ResourceGroupName "myResourceGroupScaleSet" `
-    -Name "myPublicIPAddress" | select IpAddress
+Get-AzPublicIPAddress `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -Name "myPublicIPAddress" | select IpAddress
 ```
 
 Введите общедоступный IP-адрес в веб-браузер. Отобразится веб-приложение, а также имя узла виртуальной машины, на которую подсистема балансировки нагрузки направила трафик.
@@ -166,10 +167,12 @@ Get-AzureRmPublicIPAddress `
 На протяжении жизненного цикла масштабируемого набора может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. Azure PowerShell позволяет быстро выполнять эти задачи. Ниже приведено несколько распространенных задач.
 
 ### <a name="view-vms-in-a-scale-set"></a>Просмотр виртуальных машин в масштабируемом наборе
-Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm), как показано ниже.
+Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzVmssVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvmssvm), как показано ниже.
 
 ```azurepowershell-interactive
-Get-AzureRmVmssVM -ResourceGroupName "myResourceGroupScaleSet" -VMScaleSetName "myScaleSet"
+Get-AzVmssVM `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -VMScaleSetName "myScaleSet"
 ```
 
 В следующем примере выходных данных показано два экземпляра виртуальной машины в масштабируемом наборе.
@@ -181,33 +184,36 @@ MYRESOURCEGROUPSCALESET   myScaleSet_0   eastus Standard_DS1_v2          0      
 MYRESOURCEGROUPSCALESET   myScaleSet_1   eastus Standard_DS1_v2          1         Succeeded
 ```
 
-Чтобы просмотреть дополнительные сведения о конкретном экземпляре виртуальной машины, добавьте параметр `-InstanceId` в командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm). Следующий пример возвращает сведения об экземпляре виртуальной машины *1*.
+Чтобы просмотреть дополнительные сведения о конкретном экземпляре виртуальной машины, добавьте параметр `-InstanceId` в командлет [Get-AzVmssVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvmssvm). Следующий пример возвращает сведения об экземпляре виртуальной машины *1*.
 
 ```azurepowershell-interactive
-Get-AzureRmVmssVM -ResourceGroupName "myResourceGroupScaleSet" -VMScaleSetName "myScaleSet" -InstanceId "1"
+Get-AzVmssVM `
+  -ResourceGroupName "myResourceGroupScaleSet" `
+  -VMScaleSetName "myScaleSet" `
+  -InstanceId "1"
 ```
 
 
 ### <a name="increase-or-decrease-vm-instances"></a>Увеличение или уменьшение числа экземпляров виртуальной машины
-Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, выполните командлет [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss) и отправьте запрос для *sku.capacity*.
+Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, выполните командлет [Get-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss) и отправьте запрос для *sku.capacity*.
 
 ```azurepowershell-interactive
-Get-AzureRmVmss -ResourceGroupName "myResourceGroupScaleSet" `
-    -VMScaleSetName "myScaleSet" | `
-    Select -ExpandProperty Sku
+Get-AzVmss -ResourceGroupName "myResourceGroupScaleSet" `
+  -VMScaleSetName "myScaleSet" | `
+  Select -ExpandProperty Sku
 ```
 
-После этого можно вручную увеличить или уменьшить число виртуальных машин в масштабируемом наборе, выполнив командлет [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss). В следующем примере число виртуальных машин в масштабируемом наборе определяется равным *3*:
+После этого можно вручную увеличить или уменьшить число виртуальных машин в масштабируемом наборе, выполнив командлет [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss). В следующем примере число виртуальных машин в масштабируемом наборе определяется равным *3*:
 
 ```azurepowershell-interactive
 # Get current scale set
-$scaleset = Get-AzureRmVmss `
+$scaleset = Get-AzVmss `
   -ResourceGroupName "myResourceGroupScaleSet" `
   -VMScaleSetName "myScaleSet"
 
 # Set and update the capacity of your scale set
 $scaleset.sku.capacity = 3
-Update-AzureRmVmss -ResourceGroupName "myResourceGroupScaleSet" `
+Update-AzVmss -ResourceGroupName "myResourceGroupScaleSet" `
     -Name "myScaleSet" `
     -VirtualMachineScaleSet $scaleset
 ```
@@ -220,14 +226,14 @@ Update-AzureRmVmss -ResourceGroupName "myResourceGroupScaleSet" `
 
 ```azurepowershell-interactive
 # Define your scale set information
-$mySubscriptionId = (Get-AzureRmSubscription)[0].Id
+$mySubscriptionId = (Get-AzSubscription)[0].Id
 $myResourceGroup = "myResourceGroupScaleSet"
 $myScaleSet = "myScaleSet"
 $myLocation = "East US"
-$myScaleSetId = (Get-AzureRmVmss -ResourceGroupName $myResourceGroup -VMScaleSetName $myScaleSet).Id 
+$myScaleSetId = (Get-AzVmss -ResourceGroupName $myResourceGroup -VMScaleSetName $myScaleSet).Id 
 
 # Create a scale up rule to increase the number instances after 60% average CPU usage exceeded for a 5-minute period
-$myRuleScaleUp = New-AzureRmAutoscaleRule `
+$myRuleScaleUp = New-AzAutoscaleRule `
   -MetricName "Percentage CPU" `
   -MetricResourceId $myScaleSetId `
   -Operator GreaterThan `
@@ -240,7 +246,7 @@ $myRuleScaleUp = New-AzureRmAutoscaleRule `
   -ScaleActionValue 1
 
 # Create a scale down rule to decrease the number of instances after 30% average CPU usage over a 5-minute period
-$myRuleScaleDown = New-AzureRmAutoscaleRule `
+$myRuleScaleDown = New-AzAutoscaleRule `
   -MetricName "Percentage CPU" `
   -MetricResourceId $myScaleSetId `
   -Operator LessThan `
@@ -253,7 +259,7 @@ $myRuleScaleDown = New-AzureRmAutoscaleRule `
   -ScaleActionValue 1
 
 # Create a scale profile with your scale up and scale down rules
-$myScaleProfile = New-AzureRmAutoscaleProfile `
+$myScaleProfile = New-AzAutoscaleProfile `
   -DefaultCapacity 2  `
   -MaximumCapacity 10 `
   -MinimumCapacity 2 `
@@ -261,7 +267,7 @@ $myScaleProfile = New-AzureRmAutoscaleProfile `
   -Name "autoprofile"
 
 # Apply the autoscale rules
-Add-AzureRmAutoscaleSetting `
+Add-AzAutoscaleSetting `
   -Location $myLocation `
   -Name "autosetting" `
   -ResourceGroup $myResourceGroup `

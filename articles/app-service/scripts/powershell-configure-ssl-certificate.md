@@ -15,24 +15,26 @@ ms.topic: sample
 ms.date: 03/20/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c13feb22cc02d1a444de412e75e5555645f35b88
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 5de9890369b6f99cec3b271117fd4d0cfe70001d
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53586924"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56104106"
 ---
 # <a name="bind-a-custom-ssl-certificate-to-a-web-app-using-powershell"></a>Привязка SSL-сертификата к веб-приложению с помощью PowerShell
 
 Этот сценарий создает в службе приложений веб-приложение со связанными ресурсами, а затем привязывает к нему SSL-сертификат имени личного домена. 
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure. Кроме того, убедитесь в следующем.
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure. Кроме того, убедитесь в следующем.
 
 - Подключение к Azure установлено с помощью команды `az login`.
 - У вас есть доступ к странице конфигурации DNS вашего регистратора доменных имен.
 - У вас есть допустимый PFX-файл и пароль для SSL-сертификата, который требуется передать и привязать.
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom SSL certificate to a web app")]
 
@@ -41,21 +43,21 @@ ms.locfileid: "53586924"
 Выполнив пример сценария, вы можете удалить группу ресурсов, веб-приложение и все связанные ресурсы, используя следующую команду.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmAppServicePlan](/powershell/module/azurerm.websites/new-azurermappserviceplan) | Создает план службы приложений. |
-| [New-AzureRmWebApp](/powershell/module/azurerm.websites/new-azurermwebapp) | Создает веб-приложение. |
-| [Set-AzureRmAppServicePlan](/powershell/module/azurerm.websites/set-azurermappserviceplan) | Обновляет план службы приложений для изменения ценовой категории. |
-| [Set-AzureRmWebApp](/powershell/module/azurerm.websites/set-azurermwebapp) | Изменяет конфигурацию веб-приложения. |
-| [New-AzureRmWebAppSSLBinding](/powershell/module/azurerm.websites/new-azurermwebappsslbinding) | Создает привязку SSL-сертификата к веб-приложению. |
+| [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
+| [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
+| [Set-AzAppServicePlan](/powershell/module/az.websites/set-azappserviceplan) | Обновляет план службы приложений для изменения ценовой категории. |
+| [Set-AzWebApp](/powershell/module/az.websites/set-azwebapp) | Изменяет конфигурацию веб-приложения. |
+| [New-AzWebAppSSLBinding](/powershell/module/az.websites/new-azwebappsslbinding) | Создает привязку SSL-сертификата к веб-приложению. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

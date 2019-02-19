@@ -1,6 +1,6 @@
 ---
 title: Руководство. Добавление автозаполнения в поле поиска в Поиске Azure
-description: Примеры того, как улучшить опыт взаимодействия пользователя с дата-центрированными приложениями с помощью функции автозаполнения Поиска Azure и вариантов API.
+description: Примеры того, как улучшить опыт взаимодействия пользователя с дата-центрированными приложениями с помощью API автозаполнения и предложений службы "Поиск Azure".
 manager: pablocas
 author: mrcarter8
 services: search
@@ -10,16 +10,21 @@ ms.topic: tutorial
 ms.date: 07/11/2018
 ms.author: mcarter
 ms.custom: seodec2018
-ms.openlocfilehash: a0b4301177fa1307244a784031ec890b9a20f01a
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: de48f3129beba31f80f5bd4d0c131b28f2b1c91a
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55099114"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997172"
 ---
-# <a name="tutorial-add-auto-complete-to-your-search-box-using-azure-search"></a>Руководство. Руководство. Добавление автозаполнения в поле поиска в Поиске Azure
+# <a name="tutorial-add-autocomplete-to-your-search-box-using-azure-search"></a>Руководство. Добавление автозаполнения в поле поиска в Поиске Azure
 
-В этом руководстве вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions), [автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) и [аспекты](search-faceted-navigation.md) в [REST API Поиска Azure](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions?view=azure-dotnet), чтобы создать эффективное поле поиска. *Предложения* дают рекомендации по результатам по мере ввода поискового запроса. *Автоматическое заполнение*, [новая функция предварительного просмотра](search-api-preview.md) в Поиске Azure, предоставляет термины из индекса, чтобы завершить текст, который вводит пользователь. Мы сравним несколько способов повысить производительность и легко и быстро находить желаемое, применяя широкие возможности функций поиска в процессе набора текста.
+В этом руководстве вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions), [автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) и [аспекты](search-faceted-navigation.md) в [REST API Поиска Azure](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions?view=azure-dotnet), чтобы создать эффективное поле поиска. 
+
++ *Предложения* дают рекомендации по результатам по мере ввода поискового запроса. 
++ *Автоматическое заполнение*, [новая функция предварительного просмотра](search-api-preview.md) в Поиске Azure, предоставляет термины из индекса, чтобы завершить текст, который вводит пользователь. 
+
+Мы сравним несколько способов повысить эффективность работы пользователя, применяя широкие возможности функций поиска в процессе набора текста.
 
 В этом руководстве мы рассмотрим приложение на основе ASP.NET MVC, в котором используется C# для вызова [клиентских библиотек .NET Поиска Azure](https://aka.ms/search-sdk) и JavaScript для прямого вызова REST API Поиска Azure. Приложение в этом руководстве нацелено на индекс, заполняющий демонстрационные данные [NYCJobs](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs). Можно использовать индекс, который уже настроен в демонстрации NYCJobs, или заполнить свой индекс с помощью загрузчика данных в примере решения NYCJobs. В примере используются [пользовательский интерфейс jQuery](https://jqueryui.com/autocomplete/) и библиотеки JavaScript [XDSoft](https://xdsoft.net/jqplugins/autocomplete/) для создания поля поиска, которое поддерживает автозаполнение. Используя эти компоненты, а также Поиск Azure, вы увидите несколько примеров того, как поддержать автозаполнение с упреждением ввода в поле поиска.
 
@@ -210,7 +215,7 @@ $(function () {
 
 В этом руководстве показаны основные шаги по созданию поля поиска, которое поддерживает автозаполнение и предложения.  Вы узнали, как можно создать приложение ASP.NET MVC и использовать REST API или пакет SDK для .NET службы поиска Azure для получения предложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Интегрируйте возможности предложений и автозаполнения в функцию поиска.  Подумайте, как использовать широкие возможности поиска Azure через пакет SDK для .NET или REST API напрямую, чтобы повысить эффективность ввода поисковых запросов.
 

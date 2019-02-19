@@ -4,7 +4,7 @@ description: В этом руководстве описываются дейс�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 3ad3dcea-95be-4711-9aae-a455a32434f6
 ms.service: media-services
@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/07/2017
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 36e1f797263e367a73fde140d979243f96e83948
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 7730d15b0d3be9c0ffc7c7fbafe40fece713afbd
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33780557"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55976798"
 ---
-# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Отправка файлов в учетную запись служб мультимедиа на портале Azure
+# <a name="upload-files-to-a-media-services-account-in-the-azure-portal-legacy"></a>Отправка файлов в учетную запись Служб мультимедиа на портале Azure (для прежних версий)
+
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-upload-files.md)
 > * [.NET](media-services-dotnet-upload-files.md)
@@ -63,6 +64,6 @@ ms.locfileid: "33780557"
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте, как [закодировать отправленные ресурсы](media-services-portal-encode.md).
 
-* Вы также можете использовать службу "Функции Azure", чтобы активировать задание кодирования, когда файл поступит в настроенный контейнер. Дополнительные сведения см. в примере в статье [Media Services: Integrating Azure Media Services with Azure Functions and Logic Apps](https://azure.microsoft.com/resources/samples/media-services-dotnet-functions-integration/) (Службы мультимедиа: интеграция служб мультимедиа Azure со службой "Функции Azure" и Azure Logic Apps).
+* Вы также можете использовать службу "Функции Azure", чтобы активировать задание кодирования, когда файл поступит в настроенный контейнер. Дополнительные сведения см. в статье [Media Services: Integrating Azure Media Services with Azure Functions and Logic Apps](https://azure.microsoft.com/resources/samples/media-services-dotnet-functions-integration/) (Cлужбы мультимедиа. Интеграция Служб мультимедиа Azure со Службой "Функции Azure" и Logic Apps).
 
 

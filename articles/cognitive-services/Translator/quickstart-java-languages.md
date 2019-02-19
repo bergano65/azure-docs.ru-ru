@@ -4,30 +4,27 @@ titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 12/03/2018
+ms.date: 02/07/2019
 ms.author: erhopf
-ms.openlocfilehash: 937fd58b28a3e64f7f4f9fc4bf52e8280af81136
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 88347076888b68459747757d655759d3f83d19a7
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226984"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55964565"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-java"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Java и API перевода текстов
 
 Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK 7 или более поздней версии](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Gradle](https://gradle.org/install/)
-* ключ подписки Azure для API перевода текстов.
 
 ## <a name="initialize-a-project-with-gradle"></a>Инициализация проекта с помощью Gradle
 
@@ -50,7 +47,7 @@ gradle init --type basic
 
 Найдите файл `build.gradle.kts` и откройте его с помощью любой интегрированной среды разработки или текстового редактора. Затем скопируйте и вставьте в файл эту конфигурацию сборки:
 
-```
+```java
 plugins {
     java
     application
@@ -104,7 +101,6 @@ public class GetLanguages {
 Добавьте эти строки в класс `GetLanguages`:
 
 ```java
-String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 String url = "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0";
 ```
 
@@ -117,14 +113,13 @@ String url = "https://api.cognitive.microsofttranslator.com/languages?api-versio
 OkHttpClient client = new OkHttpClient();
 ```
 
-Затем создайте запрос GET.
+Затем создайте запрос `GET`.
 
 ```java
 // This function performs a GET request.
 public String Get() throws IOException {
     Request request = new Request.Builder()
             .url(url).get()
-            .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey)
             .addHeader("Content-type", "application/json").build();
     Response response = client.newCall(request).execute();
     return response.body().string();
@@ -167,6 +162,12 @@ public static void main(String[] args) {
 
 ```console
 gradle build
+```
+
+По завершении сборки выполните следующую команду.
+
+```console
+gradle run
 ```
 
 ## <a name="sample-response"></a>Пример ответа

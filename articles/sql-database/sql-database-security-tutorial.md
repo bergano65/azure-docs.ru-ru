@@ -1,6 +1,6 @@
 ---
-title: Защита изолированной базы данных или базы данных в составе пула в Базе данных SQL Azure | Документация Майкрософт
-description: Узнайте о методах и функциях, используемых для защиты изолированной базы данных или базы данных в составе пула в Базе данных SQL Azure.
+title: Защита отдельной базы данных или базы данных в составе пула в Базе данных SQL Azure | Документация Майкрософт
+description: Узнайте о методах и функциях, используемых для защиты отдельной базы данных или базы данных в составе пула в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -9,17 +9,17 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/30/2019
-ms.openlocfilehash: 2ea87b36d8b489abf59ac4550121369a2ddf540f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/08/2019
+ms.openlocfilehash: b9141fcef8bda181cd7b679f58d22d4ba2895b14
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752523"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56004603"
 ---
-# <a name="tutorial-secure-a-standalone-or-pooled-database"></a>Руководство. Защита изолированной базы данных или базы данных в составе пула
+# <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство. Защита отдельной базы данных или базы данных в составе пула
 
-База данных SQL Azure защищает данные в изолированной базе данных или базе данных в составе пула, предоставляя возможность:
+База данных SQL Azure защищает данные в отдельной базе данных или базе данных в составе пула, предоставляя возможность:
 
 - ограничить доступ с помощью правил брандмауэра;
 - использовать механизмы аутентификации, требующие учетных данных;

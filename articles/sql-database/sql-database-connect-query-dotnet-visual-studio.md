@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 12/11/2018
-ms.openlocfilehash: 93249b7d274ce9d7928dfa46eb339da68c92b785
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.date: 02/12/2019
+ms.openlocfilehash: c6b23038ad68492e1965e1ebf7ce5e7cf1d788f7
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163302"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236640"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET и C# в Visual Studio для подключения и создания запросов к базе данных SQL Azure
 
@@ -27,13 +27,33 @@ ms.locfileid: "55163302"
 
 Для работы с этим кратким руководством вам понадобится:
 
-[!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
-  
+- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+
+  || Отдельная база данных | Управляемый экземпляр |
+  |:--- |:--- |:---|
+  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
+  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/) |
+  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
+  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
+  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
+  |||
+
+  > [!IMPORTANT]
+  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
+
 - [Visual Studio 2017](https://www.visualstudio.com/downloads/) — выпуски Community, Professional или Enterprise.
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
-[!INCLUDE [prerequisites-server-connection-info](../../includes/sql-database-connect-query-prerequisites-server-connection-info-includes.md)]
+Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для отдельной базы данных или полное имя сервера рядом с полем **Узел** для управляемого экземпляра. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**. 
 
 ## <a name="create-code-to-query-the-sql-database"></a>Создание кода для запроса базы данных SQL
 

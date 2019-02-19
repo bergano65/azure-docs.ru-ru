@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: df6f99bfe9f1ae7b79f0f382fdee4fe4f1578bad
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 46ab5cae7514adfc4ec31ad88f5445a09e3c0e6a
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407543"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55975302"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Linux в Azure с помощью PowerShell
 
@@ -34,8 +34,6 @@ ms.locfileid: "49407543"
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
 
 Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
-
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-ssh-key-pair"></a>Создание пары ключей SSH
 
@@ -53,10 +51,10 @@ ssh-keygen -t rsa -b 2048
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -Name "myResourceGroup" -Location "EastUS"
+New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 ```
 
 ## <a name="create-virtual-network-resources"></a>Создание ресурсов виртуальной сети
@@ -65,12 +63,12 @@ New-AzureRmResourceGroup -Name "myResourceGroup" -Location "EastUS"
 
 ```azurepowershell-interactive
 # Create a subnet configuration
-$subnetConfig = New-AzureRmVirtualNetworkSubnetConfig `
+$subnetConfig = New-AzVirtualNetworkSubnetConfig `
   -Name "mySubnet" `
   -AddressPrefix 192.168.1.0/24
 
 # Create a virtual network
-$vnet = New-AzureRmVirtualNetwork `
+$vnet = New-AzVirtualNetwork `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
   -Name "myVNET" `
@@ -78,7 +76,7 @@ $vnet = New-AzureRmVirtualNetwork `
   -Subnet $subnetConfig
 
 # Create a public IP address and specify a DNS name
-$pip = New-AzureRmPublicIpAddress `
+$pip = New-AzPublicIpAddress `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
   -AllocationMethod Static `
@@ -90,7 +88,7 @@ $pip = New-AzureRmPublicIpAddress `
 
 ```azurepowershell-interactive
 # Create an inbound network security group rule for port 22
-$nsgRuleSSH = New-AzureRmNetworkSecurityRuleConfig `
+$nsgRuleSSH = New-AzNetworkSecurityRuleConfig `
   -Name "myNetworkSecurityGroupRuleSSH"  `
   -Protocol "Tcp" `
   -Direction "Inbound" `
@@ -102,7 +100,7 @@ $nsgRuleSSH = New-AzureRmNetworkSecurityRuleConfig `
   -Access "Allow"
 
 # Create an inbound network security group rule for port 80
-$nsgRuleWeb = New-AzureRmNetworkSecurityRuleConfig `
+$nsgRuleWeb = New-AzNetworkSecurityRuleConfig `
   -Name "myNetworkSecurityGroupRuleWWW"  `
   -Protocol "Tcp" `
   -Direction "Inbound" `
@@ -114,18 +112,18 @@ $nsgRuleWeb = New-AzureRmNetworkSecurityRuleConfig `
   -Access "Allow"
 
 # Create a network security group
-$nsg = New-AzureRmNetworkSecurityGroup `
+$nsg = New-AzNetworkSecurityGroup `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
   -Name "myNetworkSecurityGroup" `
   -SecurityRules $nsgRuleSSH,$nsgRuleWeb
 ```
 
-Создайте виртуальный сетевой адаптер с помощью командлета [New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface): Виртуальный сетевой адаптер подключает виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
+Создайте виртуальный сетевой адаптер с помощью командлета [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface). Виртуальный сетевой адаптер подключает виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
 
 ```azurepowershell-interactive
 # Create a virtual network card and associate with public IP address and NSG
-$nic = New-AzureRmNetworkInterface `
+$nic = New-AzNetworkInterface `
   -Name "myNic" `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
@@ -146,34 +144,34 @@ $securePassword = ConvertTo-SecureString ' ' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $securePassword)
 
 # Create a virtual machine configuration
-$vmConfig = New-AzureRmVMConfig `
+$vmConfig = New-AzVMConfig `
   -VMName "myVM" `
   -VMSize "Standard_D1" | `
-Set-AzureRmVMOperatingSystem `
+Set-AzVMOperatingSystem `
   -Linux `
   -ComputerName "myVM" `
   -Credential $cred `
   -DisablePasswordAuthentication | `
-Set-AzureRmVMSourceImage `
+Set-AzVMSourceImage `
   -PublisherName "Canonical" `
   -Offer "UbuntuServer" `
   -Skus "16.04-LTS" `
   -Version "latest" | `
-Add-AzureRmVMNetworkInterface `
+Add-AzVMNetworkInterface `
   -Id $nic.Id
 
 # Configure the SSH key
 $sshPublicKey = cat ~/.ssh/id_rsa.pub
-Add-AzureRmVMSshPublicKey `
+Add-AzVMSshPublicKey `
   -VM $vmconfig `
   -KeyData $sshPublicKey `
   -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
-Теперь объедините описанные выше определения конфигурации в командлете создания [New AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm):
+Теперь объедините описанные выше определения конфигурации в командлете создания [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm):
 
 ```azurepowershell-interactive
-New-AzureRmVM `
+New-AzVM `
   -ResourceGroupName "myResourceGroup" `
   -Location eastus -VM $vmConfig
 ```
@@ -182,10 +180,10 @@ New-AzureRmVM `
 
 ## <a name="connect-to-the-vm"></a>Подключение к виртуальной машине
 
-Установите SSH-подключение к виртуальной машине, используя общедоступный IP-адрес. Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress):
+Установите SSH-подключение к виртуальной машине, используя общедоступный IP-адрес. Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress):
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
+Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
 ```
 
 В той же оболочке bash, в которой вы создали пару ключей SSH (например, [Azure Cloud Shell](https://shell.azure.com/bash) или оболочка bash на локальном компьютере), вставьте команду подключения в оболочку, чтобы создать сеанс SSH.
@@ -217,10 +215,10 @@ sudo apt-get -y install nginx
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда группа ресурсов, виртуальная машина и все связанные с ней ресурсы станут ненужны, их можно удалить с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup).
+Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup"
+Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

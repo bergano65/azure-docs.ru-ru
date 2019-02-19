@@ -16,21 +16,20 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/27/18
 ms.author: cynthn
-ms.openlocfilehash: 809c2b2fb58be77bb86443e096a58110f9c5279c
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 13f55876b25acf974880eaebf15bd5f398f21f93
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54887927"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55977598"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-scale-set-with-an-azure-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Windows с помощью шаблона Azure
+
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. С помощью этого краткого руководства вы создадите масштабируемый набор виртуальных машин и развернете пример приложения с помощью шаблона Azure Resource Manager.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
-
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.5.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
 
 ## <a name="define-a-scale-set-in-a-template"></a>Определение масштабируемого набора в шаблоне
@@ -141,19 +140,19 @@ ms.locfileid: "54887927"
 
 [![Развертывание шаблона в Azure](media/virtual-machine-scale-sets-create-template/deploy-button.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-windows-webapp-dsc-autoscale%2Fazuredeploy.json)
 
-Приложение ASP.NET в Windows можно также установить с помощью Azure PowerShell, используя командлет [New AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment), следующим образом:
+Приложение ASP.NET в Windows можно также установить с помощью Azure PowerShell, используя командлет [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment), следующим образом:
 
 ```azurepowershell-interactive
 # Create a resource group
-New-AzureRmResourceGroup -Name myResourceGroup -Location EastUS
+New-AzResourceGroup -Name myResourceGroup -Location EastUS
 
 # Deploy template into resource group
-New-AzureRmResourceGroupDeployment `
+New-AzResourceGroupDeployment `
     -ResourceGroupName myResourceGroup `
     -TemplateFile https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-windows-webapp-dsc-autoscale/azuredeploy.json
 
 # Update the scale set and apply the extension
-Update-AzureRmVmss `
+Update-AzVmss `
     -ResourceGroupName myResourceGroup `
     -VmScaleSetName myVMSS `
     -VirtualMachineScaleSet $vmssConfig
@@ -163,10 +162,10 @@ Update-AzureRmVmss `
 
 
 ## <a name="test-your-scale-set"></a>Проверка масштабируемого набора
-Чтобы увидеть, как работает масштабируемый набор, откройте пример веб-приложения в браузере. Получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress), как показано ниже:
+Чтобы увидеть, как работает масштабируемый набор, откройте пример веб-приложения в браузере. Получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress), как показано ниже:
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
+Get-AzPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 ```
 
 Введите в браузер общедоступный IP-адрес подсистемы балансировки нагрузки в формате *http://publicIpAddress/MyApp*. Подсистема балансировки нагрузки передаст запрос на один из экземпляров виртуальной машины, как показано в следующем примере:
@@ -175,10 +174,10 @@ Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Вы можете удалить ненужную группу ресурсов и масштабируемый набор с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
+Вы можете удалить ненужную группу ресурсов и масштабируемый набор с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
+Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 

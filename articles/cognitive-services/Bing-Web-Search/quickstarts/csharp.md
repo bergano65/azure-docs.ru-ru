@@ -4,27 +4,24 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью C# и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 8/16/2018
+ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: bca5ff84dee08d7681939b55ccb344f9507ccb38
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 08e2ef1b219ed66a39d38c08be80df89814afbaf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55178024"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56180493"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
-Используйте это краткое руководство, чтобы вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.  
 
-[!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение C# отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством вам потребуется следующее:
@@ -34,6 +31,9 @@ ms.locfileid: "55178024"
 * ключ подписки;
 
 В этом примере программы используются только классы .NET Core.
+
+
+[!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
 
 ## <a name="create-a-project-and-declare-dependencies"></a>Создание проекта и объявление зависимостей
 

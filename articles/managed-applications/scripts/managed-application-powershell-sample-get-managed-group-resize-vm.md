@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/27/2017
 ms.author: tomfitz
-ms.openlocfilehash: baad12379c01ac955f1b0e036398e5889f3681b2
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 9e8930c95495673c0082a82757ed6d8137900b6f
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203204"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56110903"
 ---
 # <a name="get-resources-in-a-managed-resource-group-and-resize-vms-with-powershell"></a>Получение ресурсов из управляемой группы ресурсов и изменение размера виртуальных машин с помощью Azure PowerShell
 
@@ -26,6 +26,8 @@ ms.locfileid: "55203204"
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-powershell[main](../../../powershell_scripts/managed-applications/get-application/get-application.ps1 "Get application")]
 
@@ -36,9 +38,9 @@ ms.locfileid: "55203204"
 
 | Команда | Примечания |
 |---|---|
-| [Get-AzureRmManagedApplication](https://docs.microsoft.com/powershell/module/azurerm.resources/get-azurermmanagedapplication) | Перечисление управляемых приложений Azure. Укажите имя группы ресурсов, чтобы отфильтровать результаты. |
-| [Get-AzureRmResource](https://docs.microsoft.com/powershell/module/azurerm.resources/get-azurermresource) | Перечисление ресурсов. Укажите группу и тип ресурсов, чтобы отфильтровать результаты. |
-| [Update-AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/update-azurermvm) | Обновление размера виртуальной машины. |
+| [Get-AzManagedApplication](https://docs.microsoft.com/powershell/module/az.resources/get-azmanagedapplication) | Перечисление управляемых приложений Azure. Укажите имя группы ресурсов, чтобы отфильтровать результаты. |
+| [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource) | Перечисление ресурсов. Укажите группу и тип ресурсов, чтобы отфильтровать результаты. |
+| [Update-AzVM](https://docs.microsoft.com/powershell/module/az.compute/update-azvm) | Обновление размера виртуальной машины. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

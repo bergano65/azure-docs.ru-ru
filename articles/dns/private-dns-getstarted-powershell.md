@@ -7,16 +7,18 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 7/24/2018
 ms.author: victorh
-ms.openlocfilehash: 872227e0521bd54e6bf7fdbe3626dfca34170863
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 73b8dfd741543560cd6ebf26178618a70bdae5f6
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39257731"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992778"
 ---
 # <a name="tutorial-create-an-azure-dns-private-zone-using-azure-powershell"></a>Руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 
 Это руководство поможет создать первую частную зону и запись DNS с помощью Azure PowerShell.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 [!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
 
@@ -46,25 +48,25 @@ These instructions assume you have already installed and signed in to Azure Powe
 Сначала нужно создать группу ресурсов, которая будет включать зону DNS. 
 
 ```azurepowershell
-New-AzureRMResourceGroup -name MyAzureResourceGroup -location "eastus"
+New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 ```
 
 ## <a name="create-a-dns-private-zone"></a>Создание частной зоны DNS
 
-Зона DNS создается с помощью командлета `New-AzureRmDnsZone` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети под названием **MyAzureVnet**.
+Зона DNS создается с помощью командлета `New-AzDnsZone` со значением *Private* для параметра **ZoneType**. В следующем примере создается зона DNS под именем **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Эта зона становится доступной для виртуальной сети под названием **MyAzureVnet**.
 
 Если опустить параметр **ZoneType**, созданная зона будет общедоступной, поэтому требуется создать частную зону. 
 
 ```azurepowershell
-$backendSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name backendSubnet -AddressPrefix "10.2.0.0/24"
-$vnet = New-AzureRmVirtualNetwork `
+$backendSubnet = New-AzVirtualNetworkSubnetConfig -Name backendSubnet -AddressPrefix "10.2.0.0/24"
+$vnet = New-AzVirtualNetwork `
   -ResourceGroupName MyAzureResourceGroup `
   -Location eastus `
   -Name myAzureVNet `
   -AddressPrefix 10.2.0.0/16 `
   -Subnet $backendSubnet
 
-New-AzureRmDnsZone -Name contoso.local -ResourceGroupName MyAzureResourceGroup `
+New-AzDnsZone -Name contoso.local -ResourceGroupName MyAzureResourceGroup `
    -ZoneType Private `
    -RegistrationVirtualNetworkId @($vnet.Id)
 ```
@@ -76,16 +78,16 @@ New-AzureRmDnsZone -Name contoso.local -ResourceGroupName MyAzureResourceGroup `
 
 ### <a name="list-dns-private-zones"></a>Список частных зон DNS
 
-Если опустить имя зоны в командлете `Get-AzureRmDnsZone`, можно получить список всех зон в группе ресурсов. Эта операция возвращает массив объектов зоны.
+Если опустить имя зоны в командлете `Get-AzDnsZone`, можно получить список всех зон в группе ресурсов. Эта операция возвращает массив объектов зоны.
 
 ```azurepowershell
-Get-AzureRmDnsZone -ResourceGroupName MyAzureResourceGroup
+Get-AzDnsZone -ResourceGroupName MyAzureResourceGroup
 ```
 
-Если опустить имя зоны и имя группы ресурсов в командлете `Get-AzureRmDnsZone`, то можно получить список всех зон в подписке Azure.
+Если опустить имя зоны и имя группы ресурсов в командлете `Get-AzDnsZone`, то можно получить список всех зон в подписке Azure.
 
 ```azurepowershell
-Get-AzureRmDnsZone
+Get-AzDnsZone
 ```
 
 ## <a name="create-the-test-virtual-machines"></a>Создание тестовых виртуальных машин
@@ -93,7 +95,7 @@ Get-AzureRmDnsZone
 Теперь создайте две виртуальные машины, чтобы иметь возможность проверить частную зону DNS.
 
 ```azurepowershell
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName "myAzureResourceGroup" `
     -Name "myVM01" `
     -Location "East US" `
@@ -102,7 +104,7 @@ New-AzureRmVm `
     -addressprefix 10.2.0.0/24 `
     -OpenPorts 3389
 
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName "myAzureResourceGroup" `
     -Name "myVM02" `
     -Location "East US" `
@@ -116,12 +118,12 @@ New-AzureRmVm `
 
 ## <a name="create-an-additional-dns-record"></a>Создание дополнительной записи DNS
 
-Для создания наборов записей используется командлет `New-AzureRmDnsRecordSet`. В следующем примере создается запись с относительным именем **db** в зоне DNS **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.contoso.local**. Тип записи — "A", IP-адрес — "10.2.0.4", а срок жизни составляет 3600 секунд.
+Для создания наборов записей используется командлет `New-AzDnsRecordSet`. В следующем примере создается запись с относительным именем **db** в зоне DNS **contoso.local** в группе ресурсов **MyAzureResourceGroup**. Полное доменное имя набора записей — **db.contoso.local**. Тип записи — "A", IP-адрес — "10.2.0.4", а срок жизни составляет 3600 секунд.
 
 ```azurepowershell
-New-AzureRmDnsRecordSet -Name db -RecordType A -ZoneName contoso.local `
+New-AzDnsRecordSet -Name db -RecordType A -ZoneName contoso.local `
    -ResourceGroupName MyAzureResourceGroup -Ttl 3600 `
-   -DnsRecords (New-AzureRmDnsRecordConfig -IPv4Address "10.2.0.4")
+   -DnsRecords (New-AzDnsRecordConfig -IPv4Address "10.2.0.4")
 ```
 
 ### <a name="view-dns-records"></a>Просмотр записей DNS
@@ -129,7 +131,7 @@ New-AzureRmDnsRecordSet -Name db -RecordType A -ZoneName contoso.local `
 Чтобы просмотреть список записей DNS в зоне, используйте следующую команду:
 
 ```azurepowershell
-Get-AzureRmDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResourceGroup
+Get-AzDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResourceGroup
 ```
 Помните, что увидеть автоматически созданные записи А для двух тестовых виртуальных машин нельзя.
 
@@ -198,7 +200,7 @@ Get-AzureRmDnsRecordSet -ZoneName contoso.local -ResourceGroupName MyAzureResour
 Удалите группу ресурсов **MyAzureResourceGroup**, если ресурсы, созданные в этом руководстве, больше не нужны.
 
 ```azurepowershell
-Remove-AzureRMResourceGroup -Name MyAzureResourceGroup
+Remove-AzResourceGroup -Name MyAzureResourceGroup
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

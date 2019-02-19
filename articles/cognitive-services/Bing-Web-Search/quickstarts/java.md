@@ -4,27 +4,23 @@ titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью Java и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 8/16/2018
+ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: a8844e339f439de4e5446e00f8e40e9a0fd1a3de
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 0d20d147bc77698e97630ad3bd5e58348db45f5b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172142"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56187480"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-java"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Java
 
-Используйте это краткое руководство, чтобы вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.  
-
-[!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Java отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством вам потребуется следующее:
@@ -32,6 +28,8 @@ ms.locfileid: "55172142"
 * [пакет JDK 7 или 8](https://aka.ms/azure-jdks);
 * [библиотека Gson](https://github.com/google/gson);
 * ключ подписки;
+
+[!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
 
 ## <a name="create-a-project-and-import-dependencies"></a>Создание проекта и импорт зависимостей
 

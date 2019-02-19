@@ -4,7 +4,7 @@ description: В этом кратком руководстве показано,
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
 ms.author: rkarlin
-ms.openlocfilehash: 48a04bbe77a6fe836c282556709e13bb9cd9a337
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: e6d2404e6f509c03d2d3965f34d8229de25df4b7
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52848198"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56114628"
 ---
-# <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство: подключение компьютеров Linux к центру безопасности Azure
+# <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Linux к Центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов под управлением Linux, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Linux.
 
 В этом кратком руководстве показано, как установить агент Linux на компьютер под управлением Linux.
@@ -85,7 +85,7 @@ ms.locfileid: "52848198"
 В этом кратком руководстве вы подготовили агент на компьютере Linux. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство: определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [1]: ./media/quick-onboard-linux-computer/portal.png

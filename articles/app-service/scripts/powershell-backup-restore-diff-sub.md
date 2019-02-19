@@ -15,20 +15,22 @@ ms.topic: sample
 ms.date: 11/21/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 9e27585d44214a2826ca2c4ac705eb6bb803344a
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 845d47af75495a158e56312126c8e246b43f789f
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53587043"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112779"
 ---
 # <a name="restore-a-web-app-from-a-backup-in-another-subscription-using-powershell"></a>Восстановление веб-приложения из резервной копии в других подписках с помощью PowerShell
 
 Этот пример скрипта позволяет извлечь ранее созданную резервную копию из существующего веб-приложения и восстановить ее для веб-приложения в другой подписке. 
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure. 
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/backup-restore-diff-sub/backup-restore-diff-sub.ps1?highlight=1-6 "Restore a web app from a backup in another subscription")]
 
@@ -37,19 +39,19 @@ ms.locfileid: "53587043"
 Вы можете удалить ставшие ненужными группу ресурсов, веб-приложение и все связанные с ним ресурсы, используя следующую команду:
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $resourceGroupName -Force
+Remove-AzResourceGroup -Name $resourceGroupName -Force
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [Add-AzureRmAccount](/powershell/module/azurerm.profile/add-azurermaccount) | Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к Azure Resource Manager.  |
-| [Get-AzureRmWebAppBackupList](/powershell/module/azurerm.websites/get-azurermwebappbackuplist) | Получение списка резервных копий веб-приложения. |
-| [New-AzureRmWebApp](/powershell/module/azurerm.websites/new-azurermwebapp) | Создает веб-приложение. |
-| [Restore-AzureRmWebAppBackup](/powershell/module/azurerm.websites/restore-azurermwebappbackup) | Восстановление веб-приложения из ранее созданной резервной копии. |
+| [Add-AzAccount](/powershell/module/az.profile/add-azaccount) | Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к Azure Resource Manager.  |
+| [Get-AzWebAppBackupList](/powershell/module/az.websites/get-azwebappbackuplist) | Получение списка резервных копий веб-приложения. |
+| [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
+| [Restore-AzWebAppBackup](/powershell/module/az.websites/restore-azwebappbackup) | Восстановление веб-приложения из ранее созданной резервной копии. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

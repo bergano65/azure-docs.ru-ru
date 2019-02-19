@@ -15,20 +15,22 @@ ms.topic: sample
 ms.date: 03/20/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 6483e8ed66a502a4bca2e4a401ff40512ed34969
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: b78955336226276b7a2cf7e4867be51267e2527f
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53587026"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112348"
 ---
 # <a name="assign-a-custom-domain-to-a-web-app-using-powershell"></a>Назначение пользовательского домена веб-приложению с помощью PowerShell
 
 Этот пример скрипта создает веб-приложение в службе приложений со связанными ресурсами, а затем сопоставляет с ним `www.<yourdomain>`. 
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure. Кроме того, нужен доступ к странице конфигурации DNS вашего регистратора доменных имен.
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure. Кроме того, нужен доступ к странице конфигурации DNS вашего регистратора доменных имен.
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/map-custom-domain/map-custom-domain.ps1?highlight=1 "Assign a custom domain to a web app")]
 
@@ -37,20 +39,20 @@ ms.locfileid: "53587026"
 Выполнив пример сценария, вы можете удалить группу ресурсов, веб-приложение и все связанные ресурсы, используя следующую команду.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmAppServicePlan](/powershell/module/azurerm.websites/new-azurermappserviceplan) | Создает план службы приложений. |
-| [New-AzureRmWebApp](/powershell/module/azurerm.websites/new-azurermwebapp) | Создает веб-приложение. |
-| [Set-AzureRmAppServicePlan](/powershell/module/azurerm.websites/set-azurermappserviceplan) | Обновляет план службы приложений для изменения ценовой категории. |
-| [Set-AzureRmWebApp](/powershell/module/azurerm.websites/set-azurermwebapp) | Изменяет конфигурацию веб-приложения. |
+| [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
+| [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
+| [Set-AzAppServicePlan](/powershell/module/az.websites/set-azappserviceplan) | Обновляет план службы приложений для изменения ценовой категории. |
+| [Set-AzWebApp](/powershell/module/az.websites/set-azwebapp) | Изменяет конфигурацию веб-приложения. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

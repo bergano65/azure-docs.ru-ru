@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 06/05/2017
 ms.author: ramankum
-ms.openlocfilehash: 9f9523381c6e5b684572080e340f67fabd4e200f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: f2bad16a983dc8159a10c5770b60d0c070965778
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427820"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978449"
 ---
 # <a name="create-a-managed-disk-from-a-snapshot-with-powershell"></a>Создание управляемого диска из моментального снимка с помощью PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "54427820"
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, для работы с этим руководством вам понадобится модуль Azure PowerShell 4.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью об [установке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -43,9 +43,9 @@ ms.locfileid: "54427820"
 
 | Команда | Примечания |
 |---|---|
-| [Get-AzureRmSnapshot](/powershell/module/azurerm.compute/Get-AzureRmSnapshot) | Возвращает свойства моментального снимка.  |
-| [New-AzureRmDiskConfig](/powershell/module/azurerm.compute/New-AzureRmDiskConfig) | Создает конфигурацию диска, которая используется для создания диска. Она содержит идентификатор ресурса родительского моментального снимка, расположение, которое совпадает с расположением родительского моментального снимка, и тип хранилища.  |
-| [New-AzureRmDisk](/powershell/module/azurerm.compute/New-AzureRmDisk) | Создает диск с помощью конфигурации диска, имени диска и имени группы ресурсов, которые передаются в качестве параметров. |
+| [Get-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/Get-AzSnapshot) | Возвращает свойства моментального снимка.  |
+| [New-AzDiskConfig](https://docs.microsoft.com/powershell/module/az.compute/New-AzDiskConfig) | Создает конфигурацию диска, которая используется для создания диска. Она содержит идентификатор ресурса родительского моментального снимка, расположение, которое совпадает с расположением родительского моментального снимка, и тип хранилища.  |
+| [New-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/New-AzDisk) | Создает диск с помощью конфигурации диска, имени диска и имени группы ресурсов, которые передаются в качестве параметров. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

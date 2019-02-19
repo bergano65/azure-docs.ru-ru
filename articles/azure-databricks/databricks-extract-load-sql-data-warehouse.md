@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.workload: Active
 ms.date: 01/24/2019
-ms.openlocfilehash: c8b97ed5a1e1131e073783300a233ef72ef34110
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 57de2d9c63a4185997ac86056b9e3189ad66e478
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818657"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893142"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -153,7 +153,7 @@ ms.locfileid: "55818657"
    spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    ```
 
-6. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах статьи [Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](#config). Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
+6. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id` и `tenant-id` значениями, полученными после завершения действий в разделах статьи "Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks". Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
 
 7. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

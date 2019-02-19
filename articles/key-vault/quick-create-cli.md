@@ -3,7 +3,7 @@ title: Краткое руководство Azure. Настройка и пол
 description: Краткое руководство по настройке и получению секрета из Azure Key Vault с помощью Azure CLI
 services: key-vault
 author: barclayn
-manager: mbaldwin
+manager: barbkess
 tags: azure-resource-manager
 ms.assetid: 4acc894f-fee0-4c2f-988e-bc0eceea5eda
 ms.service: key-vault
@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/08/2019
 ms.author: barclayn
-ms.openlocfilehash: a78cc79031a8dc9b0c98beddf759fbc8674c6dd1
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 8065f670da6614db8c3524fd351a31ad095f8257
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168266"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113045"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
@@ -67,12 +67,12 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 
 ## <a name="add-a-secret-to-key-vault"></a>Добавление секрета в Key Vault
 
-Чтобы добавить секрет в хранилище, вам просто нужно выполнить несколько дополнительных шагов. Этот пароль может использоваться приложением. Пароль будет называться **ExamplePassword** и в нем будет храниться значение **Pa$$w0rd**.
+Чтобы добавить секрет в хранилище, вам просто нужно выполнить несколько дополнительных шагов. Этот пароль может использоваться приложением. Пароль будет называться **ExamplePassword** и в нем будет храниться значение **hVFkk965BuUv**.
 
-Затем введите команды ниже, чтобы создать секрет в Key Vault с именем **ExamplePassword** и значением **Pa$$w0rd**:
+Затем введите следующие команды, чтобы создать секрет в Key Vault с именем **ExamplePassword** и значением **hVFkk965BuUv**.
 
 ```azurecli
-az keyvault secret set --vault-name "Contoso-Vault2" --name "ExamplePassword" --value "Pa$$w0rd"
+az keyvault secret set --vault-name "Contoso-Vault2" --name "ExamplePassword" --value "hVFkk965BuUv"
 ```
 
 Теперь пароль, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://ContosoVault.vault.azure.net/secrets/ExamplePassword**, чтобы получить текущую версию. 

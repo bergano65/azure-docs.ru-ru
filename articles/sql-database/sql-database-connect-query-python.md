@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/28/2019
-ms.openlocfilehash: b611eb02203c872e3497b5b7c12acddd9eab14c0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.date: 02/12/2019
+ms.openlocfilehash: d0dcfa3d5e387b03fe76eff34e32860ae5b17e76
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188394"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235382"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
@@ -27,20 +27,40 @@ ms.locfileid: "55188394"
 
 Ниже указаны требования для работы с этим кратким руководством.
 
-[!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
+- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+
+  || Отдельная база данных | Управляемый экземпляр |
+  |:--- |:--- |:---|
+  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
+  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/) |
+  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
+  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
+  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
+  |||
+
+  > [!IMPORTANT]
+  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
   
 - Python и связанное программное обеспечение для используемой операционной системы:
   
   - **macOS**. Установите Homebrew, Python, драйвер ODBC и SQLCMD, а затем драйвер Python для SQL Server. См. шаги в разделе 1.2, 1.3 и 2.1 в статье о [создании приложений Python с помощью SQL Server в macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/). Дополнительные сведения см. в разделе об [установке драйвера Microsoft ODBC в Linux и macOS](https://docs.microsoft.com/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server).
-    
+
   - **Ubuntu**: Установите Python и другие необходимые пакеты с помощью `sudo apt-get install python python-pip gcc g++ build-essential`. Скачайте и установите драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux).
-    
+
   - **Windows**: Установите Python, драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows).
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
-[!INCLUDE [prerequisites-server-connection-info](../../includes/sql-database-connect-query-prerequisites-server-connection-info-includes.md)]
-    
+Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для отдельной базы данных или полное имя сервера рядом с полем **Узел** для управляемого экземпляра. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+
 ## <a name="create-code-to-query-your-sql-database"></a>Создание кода для запроса базы данных SQL 
 
 1. Создайте файл *sqltest.py* в текстовом редакторе.  

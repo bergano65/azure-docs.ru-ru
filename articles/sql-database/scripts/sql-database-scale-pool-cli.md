@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 444c93ea8c25e9f1ca9d906fd6d8fc69169163ae
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/08/2019
+ms.openlocfilehash: d492259a114d6574c4a81d1f9b97a0dcfcd8c5d3
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452028"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56004049"
 ---
 # <a name="use-cli-to-scale-an-elastic-pool-in-azure-sql-database"></a>Масштабирование эластичного пула в Базе данных SQL Azure с помощью интерфейса командной строки
 

@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 02/27/2018
+ms.date: 12/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1d07990abcceace81f718bcbac28ff372a784172
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 568631705b590bb2ee312b9519164be17c8443ab
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54427718"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984245"
 ---
-# <a name="tutorial-create-and-manage-azure-virtual-networks-for-windows-virtual-machines-with-azure-powershell"></a>Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows с помощью Azure PowerShell
+# <a name="tutorial-create-and-manage-azure-virtual-networks-for-windows-virtual-machines-with-azure-powershell"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows с помощью Azure PowerShell
 
 Виртуальные машины Azure осуществляют внутреннее и внешнее взаимодействие через сеть Azure. В этом руководстве содержатся сведения о развертывании двух виртуальных машин и настройке для них сети Azure. Примеры, описанные в этом руководстве, предполагают, что на виртуальных машинах размещается веб-приложение с сервером базы данных, но здесь не описывается развертывание самого приложения. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -34,9 +34,6 @@ ms.locfileid: "54427718"
 > * защищают сетевой трафик;
 > * Создание внутренней виртуальной машины
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
-
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
 ## <a name="vm-networking-overview"></a>Обзор сети виртуальной машины
 
@@ -57,22 +54,27 @@ ms.locfileid: "54427718"
 - *myBackendVM.* Виртуальная машина, использующая порт 1433 для взаимодействия с *myFrontendVM*.
 
 
-## <a name="create-a-virtual-network-and-subnet"></a>Создание виртуальной сети и подсети
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
+
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
+
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
+
+
+## <a name="create-subnet"></a>Создание подсети 
 
 В этом руководстве создается виртуальная сеть с двумя подсетями: интерфейсная подсеть для размещения веб-приложения и внутренняя подсеть для размещения сервера базы данных.
 
-Прежде чем создать виртуальную машину, выполните командлет [az group create](/powershell/module/azurerm.resources/new-azurermresourcegroup) для создания группы ресурсов. Следующий пример позволяет создать группу ресурсов *myRGNetwork* в расположении *EastUS*.
+Прежде чем создать виртуальную машину, выполните командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) для создания группы ресурсов. Следующий пример позволяет создать группу ресурсов *myRGNetwork* в расположении *EastUS*.
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -ResourceGroupName myRGNetwork -Location EastUS
+New-AzResourceGroup -ResourceGroupName myRGNetwork -Location EastUS
 ```
 
-### <a name="create-subnet-configurations"></a>Создание конфигураций подсети
-
-Создайте конфигурацию подсети с именем *myFrontendSubnet*, выполнив командлет [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig).
+Создайте конфигурацию подсети с именем *myFrontendSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig).
 
 ```azurepowershell-interactive
-$frontendSubnet = New-AzureRmVirtualNetworkSubnetConfig `
+$frontendSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name myFrontendSubnet `
   -AddressPrefix 10.0.0.0/24
 ```
@@ -80,17 +82,17 @@ $frontendSubnet = New-AzureRmVirtualNetworkSubnetConfig `
 И создайте конфигурацию подсети с именем *myBackendSubnet*.
 
 ```azurepowershell-interactive
-$backendSubnet = New-AzureRmVirtualNetworkSubnetConfig `
+$backendSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name myBackendSubnet `
   -AddressPrefix 10.0.1.0/24
 ```
 
-### <a name="create-virtual-network"></a>Создание виртуальной сети
+## <a name="create-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть *myVNet*, использующую *myFrontendSubnet*, и *myBackendSubnet*, выполнив командлет [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork).
+Создайте виртуальную сеть *myVNet*, использующую *myFrontendSubnet* и *myBackendSubnet*, выполнив командлет [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork).
 
 ```azurepowershell-interactive
-$vnet = New-AzureRmVirtualNetwork `
+$vnet = New-AzVirtualNetwork `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -Name myVNet `
@@ -106,10 +108,10 @@ $vnet = New-AzureRmVirtualNetwork `
 
 При использовании статического метода выделения IP-адрес остается назначенным виртуальной машине, даже если она в освобожденном состоянии. В этом случае вы не сможете указать IP-адрес. Он выделяется из пула доступных адресов.
 
-Создайте общедоступный IP-адрес с именем *myPublicIPAddress*, выполнив командлет [New AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress).
+Создайте общедоступный IP-адрес с именем *myPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress).
 
 ```azurepowershell-interactive
-$pip = New-AzureRmPublicIpAddress `
+$pip = New-AzPublicIpAddress `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -AllocationMethod Dynamic `
@@ -120,10 +122,10 @@ $pip = New-AzureRmPublicIpAddress `
 
 ## <a name="create-a-front-end-vm"></a>Создание интерфейсной виртуальной машины
 
-Для взаимодействия в виртуальной сети виртуальной машине требуется виртуальный сетевой адаптер. Создайте сетевой адаптер, выполнив командлет [New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface).
+Для взаимодействия в виртуальной сети виртуальной машине требуется виртуальный сетевой адаптер. Создайте сетевой адаптер, выполнив командлет [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface).
 
 ```azurepowershell-interactive
-$frontendNic = New-AzureRmNetworkInterface `
+$frontendNic = New-AzNetworkInterface `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -Name myFrontend `
@@ -137,10 +139,10 @@ $frontendNic = New-AzureRmNetworkInterface `
 $cred = Get-Credential
 ```
 
-Создайте виртуальные машины с помощью [New AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm).
+Создайте виртуальные машины с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm).
 
 ```azurepowershell-interactive
-New-AzureRmVM `
+New-AzVM `
    -Credential $cred `
    -Name myFrontend `
    -PublicIpAddressName myPublicIPAddress `
@@ -159,7 +161,7 @@ New-AzureRmVM `
 
 Правила группы безопасности сети определяют сетевые порты, через которые разрешен или запрещен трафик. Эти правила также могут включать исходные и целевые диапазоны IP-адресов, что позволяет контролировать трафик между определенными системами и подсетями. Правилам также присваивается приоритет (от 1 до 4096), и они оцениваются в порядке приоритета. Правило с приоритетом 100 оценивается перед правилом с приоритетом 200.
 
-Все группы NSG содержат набор правил по умолчанию. Эти правила нельзя удалить, но у них самый низкий приоритет, поэтому их можно переопределить, создав другие правила.
+Все группы NSG содержат набор правил по умолчанию. Эти правила нельзя удалить, но, поскольку у них самый низкий приоритет, их можно переопределить, создав другие правила.
 
 - **Виртуальная сеть.** Входящий и исходящий трафик виртуальной сети разрешен в обоих направлениях.
 - **Интернет.** Исходящий трафик разрешен, но входящий трафик заблокирован.
@@ -167,10 +169,10 @@ New-AzureRmVM `
 
 ### <a name="create-network-security-groups"></a>Создание групп безопасности сети
 
-Создайте правило входящих подключений с именем *myFrontendNSGRule*, чтобы разрешить входящий веб-трафик в *myFrontendVM*, выполнив командлет [New-AzureRmNetworkSecurityRuleConfig](/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig).
+Создайте правило входящих подключений с именем *myFrontendNSGRule*, чтобы разрешить входящий веб-трафик в *myFrontendVM*, выполнив командлет [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
-$nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
+$nsgFrontendRule = New-AzNetworkSecurityRuleConfig `
   -Name myFrontendNSGRule `
   -Protocol Tcp `
   -Direction Inbound `
@@ -185,7 +187,7 @@ $nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
 Можно ограничить внутренний трафик для *myBackendVM* и разрешить только трафик из *myFrontendVM*, создав NSG для внутренней подсети. В следующем примере создается правило группы безопасности сети с именем *myBackendNSGRule*.
 
 ```azurepowershell-interactive
-$nsgBackendRule = New-AzureRmNetworkSecurityRuleConfig `
+$nsgBackendRule = New-AzNetworkSecurityRuleConfig `
   -Name myBackendNSGRule `
   -Protocol Tcp `
   -Direction Inbound `
@@ -197,20 +199,20 @@ $nsgBackendRule = New-AzureRmNetworkSecurityRuleConfig `
   -Access Allow
 ```
 
-Добавьте группу безопасности сети *myFrontendNSG* с помощью командлета [New-AzureRmNetworkSecurityGroup](/powershell/module/azurerm.network/new-azurermnetworksecuritygroup).
+Добавьте группу безопасности сети *myFrontendNSG* с помощью командлета [New-AzNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup).
 
 ```azurepowershell-interactive
-$nsgFrontend = New-AzureRmNetworkSecurityGroup `
+$nsgFrontend = New-AzNetworkSecurityGroup `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -Name myFrontendNSG `
   -SecurityRules $nsgFrontendRule
 ```
 
-Теперь добавьте группу безопасности сети *myBackendNSG* с помощью командлета New-AzureRmNetworkSecurityGroup.
+Теперь добавьте группу безопасности сети *myBackendNSG* с помощью командлета New-AzNetworkSecurityGroup.
 
 ```azurepowershell-interactive
-$nsgBackend = New-AzureRmNetworkSecurityGroup `
+$nsgBackend = New-AzNetworkSecurityGroup `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -Name myBackendNSG `
@@ -220,22 +222,22 @@ $nsgBackend = New-AzureRmNetworkSecurityGroup `
 Добавьте группы безопасности сети к подсетям:
 
 ```azurepowershell-interactive
-$vnet = Get-AzureRmVirtualNetwork `
+$vnet = Get-AzVirtualNetwork `
   -ResourceGroupName myRGNetwork `
   -Name myVNet
 $frontendSubnet = $vnet.Subnets[0]
 $backendSubnet = $vnet.Subnets[1]
-$frontendSubnetConfig = Set-AzureRmVirtualNetworkSubnetConfig `
+$frontendSubnetConfig = Set-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $vnet `
   -Name myFrontendSubnet `
   -AddressPrefix $frontendSubnet.AddressPrefix `
   -NetworkSecurityGroup $nsgFrontend
-$backendSubnetConfig = Set-AzureRmVirtualNetworkSubnetConfig `
+$backendSubnetConfig = Set-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $vnet `
   -Name myBackendSubnet `
   -AddressPrefix $backendSubnet.AddressPrefix `
   -NetworkSecurityGroup $nsgBackend
-Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
+Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
 
 ## <a name="create-a-back-end-vm"></a>Создание внутренней виртуальной машины
@@ -245,7 +247,7 @@ Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 Создайте *myBackendNic*.
 
 ```azurepowershell-interactive
-$backendNic = New-AzureRmNetworkInterface `
+$backendNic = New-AzNetworkInterface `
   -ResourceGroupName myRGNetwork `
   -Location EastUS `
   -Name myBackend `
@@ -261,7 +263,7 @@ $cred = Get-Credential
 Создайте *myBackendVM*.
 
 ```azurepowershell-interactive
-New-AzureRmVM `
+New-AzVM `
    -Credential $cred `
    -Name myBackend `
    -ImageName "MicrosoftSQLServer:SQL2016SP1-WS2016:Enterprise:latest" `
@@ -271,7 +273,7 @@ New-AzureRmVM `
    -VirtualNetworkName myVNet
 ```
 
-В рассматриваемом образе система SQL Server установлена, однако в данном руководстве она не используется. Она показывает, как можно настроить виртуальную машину для обработки веб-трафика, а также для обработки операций управления базой данных.
+В образе в этом примере система SQL Server установлена, однако в данном руководстве она не используется. Она показывает, как можно настроить виртуальную машину для обработки веб-трафика, а также для обработки операций управления базой данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

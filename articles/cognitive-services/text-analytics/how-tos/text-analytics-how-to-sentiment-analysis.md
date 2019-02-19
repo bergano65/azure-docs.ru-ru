@@ -1,22 +1,22 @@
 ---
-title: Инструкции по анализу тональности в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
-description: Инструкции по обнаружению тональности с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
+title: Анализ тональности с помощью Анализа текста в Cognitive Services | Документация Майкрософт
+description: Узнайте, как определить тональность с помощью REST API анализа текста.
 services: cognitive-services
-author: HeidiSteen
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 09/12/2018
-ms.author: heidist
-ms.openlocfilehash: e5ceb6208229baf3e07e4030992d5de85309789c
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: add284a3a001d5bc2e756f9ad4a2a3b9550b212c
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212500"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242141"
 ---
-# <a name="example-how-to-detect-sentiment-in-text-analytics"></a>Пример: Как определить тональность в службе "Анализ текста"
+# <a name="example-how-to-detect-sentiment-with-text-analytics"></a>Пример: как определить тональность в службе "Анализ текста"
 
 [API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) вычисляет ввод текста и возвращает оценку тональности для каждого документа в диапазоне от 0 (отрицательное значение) до 1 (положительное значение).
 

@@ -11,13 +11,13 @@ author: David-Engel
 ms.author: v-daveng
 ms.reviewer: MightyPen
 manager: craigg
-ms.date: 12/21/2018
-ms.openlocfilehash: 6e2465927f748e5538935a87aaadc84b5c2b4d1f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.date: 02/12/2019
+ms.openlocfilehash: 597a870f98d8218d86fa601fe83d524f3a370f05
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561942"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236522"
 ---
 # <a name="quickstart-use-golang-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Golang для создания запросов к базе данных SQL Azure
 
@@ -27,17 +27,37 @@ ms.locfileid: "55561942"
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-[!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
+- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+
+  || Отдельная база данных | Управляемый экземпляр |
+  |:--- |:--- |:---|
+  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
+  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/) |
+  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
+  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
+  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
+  |||
+
+  > [!IMPORTANT]
+  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
 
 - Golang и связанное программное обеспечение для используемой операционной системы:
 
-    - **macOS**. Установите Homebrew и Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/mac/).
-    - **Ubuntu**:  Установите Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/ubuntu/).
-    - **Windows**: Установите Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/windows/).    
+  - **macOS**. Установите Homebrew и Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/mac/).
+  - **Ubuntu**:  Установите Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/ubuntu/).
+  - **Windows**: Установите Golang. Ознакомьтесь с [шагом 1.2](https://www.microsoft.com/sql-server/developer-get-started/go/windows/).
 
-## <a name="sql-server-connection-information"></a>Сведения о подключении SQL Server
+## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
-[!INCLUDE [prerequisites-server-connection-info](../../includes/sql-database-connect-query-prerequisites-server-connection-info-includes.md)]
+Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для отдельной базы данных или полное имя сервера рядом с полем **Узел** для управляемого экземпляра. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
 
 ## <a name="create-golang-project-and-dependencies"></a>Создание проекта Golang и зависимостей
 

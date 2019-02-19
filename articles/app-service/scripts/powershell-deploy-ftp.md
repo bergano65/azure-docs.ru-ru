@@ -15,20 +15,22 @@ ms.topic: sample
 ms.date: 03/20/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: e4a3f693426a444a68777861281f4f1c7f3721c5
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: ea5403c118c765d9da6d925886d4cf38b86f43ec
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53587056"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56107146"
 ---
 # <a name="upload-files-to-a-web-app-using-ftp"></a>Передача файлов в веб-приложение с помощью протокола FTP
 
 Этот пример сценария создает веб-приложение со связанными ресурсами в службе приложений, а затем развертывает код веб-приложения с помощью протокола FTP (посредством [WebClient.UploadFile()](https://msdn.microsoft.com/library/ms144229.aspx)).
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sample-script"></a>Пример скрипта
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/deploy-ftp/deploy-ftp.ps1?highlight=1 "Upload files to a web app using FTP")]
 
@@ -37,19 +39,19 @@ ms.locfileid: "53587056"
 Выполнив пример сценария, вы можете удалить группу ресурсов, веб-приложение и все связанные ресурсы, используя следующую команду.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $webappname -Force
+Remove-AzResourceGroup -Name $webappname -Force
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzureRmAppServicePlan](/powershell/module/azurerm.websites/new-azurermappserviceplan) | Создает план службы приложений. |
-| [New-AzureRmWebApp](/powershell/module/azurerm.websites/new-azurermwebapp) | Создает веб-приложение. |
-| [Get-AzureRmWebAppPublishingProfile](/powershell/module/azurerm.websites/get-azurermwebapppublishingprofile) | Получает профиль публикации веб-приложения. |
+| [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
+| [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
+| [Get-AzWebAppPublishingProfile](/powershell/module/az.websites/get-azwebapppublishingprofile) | Получает профиль публикации веб-приложения. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

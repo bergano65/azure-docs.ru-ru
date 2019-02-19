@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/18/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: f75b14ce2ca860ee894fe0a2ef501066b91f8e8a
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: c9fb24cd6bcfae273c5430eee8d1fa8df58c6202
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755651"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236317"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Руководство. Настройка протокола HTTPS для личного домена в Azure CDN
 
@@ -45,6 +45,8 @@ Azure CDN по умолчанию поддерживает HTTPS в имени �
 > - отключение протокола HTTPS в личном домене.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)] 
 
 Прежде чем перейти к выполнению шагов в этом руководстве, сначала создайте профиль и как минимум одну конечную точку CDN. Дополнительные сведения см. в [кратком руководстве по созданию профиля и конечной точки Azure CDN](cdn-create-new-endpoint.md).
 
@@ -103,11 +105,11 @@ Azure CDN по умолчанию поддерживает HTTPS в имени �
 
 Зарегистрируйте Azure CDN как приложение в Azure Active Directory с помощью PowerShell.
 
-1. При необходимости установите [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM/6.0.0) в PowerShell на локальном компьютере.
+1. При необходимости установите [Azure PowerShell](/powershell/azure/install-az-ps) на локальном компьютере.
 
 2. Выполните следующую команду в PowerShell:
 
-     `New-AzureRmADServicePrincipal -ApplicationId "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8"`
+     `New-AzADServicePrincipal -ApplicationId "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8"`
 
     ![Регистрация Azure CDN в PowerShell](./media/cdn-custom-ssl/cdn-register-powershell.png)
               

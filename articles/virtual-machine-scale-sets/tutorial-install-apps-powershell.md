@@ -16,14 +16,15 @@ ms.topic: tutorial
 ms.date: 11/08/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e70e392ef137dac8087a0a76ed17d93f7d7a6d0b
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: f2097532284373763fcac21ecee00477527d6018
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54886869"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55979587"
 ---
 # <a name="tutorial-install-applications-in-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство. Установка приложений в масштабируемые наборы виртуальных машин с помощью Azure PowerShell
+
 Для запуска приложений в экземплярах виртуальных машин в масштабируемом наборе необходимо сначала установить компоненты и необходимые файлы этих приложений. Из предыдущего руководства вы узнали, как создать и использовать настраиваемый образ виртуальной машины для развертывания экземпляров виртуальных машин. Этот настраиваемый образ включал ручную установку и конфигурацию приложения. Также можно автоматизировать установку приложений в масштабируемом наборе после развертывания каждого экземпляра виртуальной машины или обновить приложение, которое уже выполняется в масштабируемом наборе. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
@@ -33,9 +34,9 @@ ms.locfileid: "54886869"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [updated-for-az-vm.md](../../includes/updated-for-az-vm.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
+[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
 
 ## <a name="what-is-the-azure-custom-script-extension"></a>Что такое расширение пользовательских скриптов Azure?
@@ -47,10 +48,10 @@ ms.locfileid: "54886869"
 
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
-Теперь создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss). Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки включает правила для распределения трафика через TCP-порт 80. Она также разрешает трафик с удаленного рабочего стола через TCP-порт 3389 и удаленное взаимодействие с PowerShell через TCP-порт 5985. При появлении запроса можно задать собственные административные учетные данные для экземпляров виртуальных машин в масштабируемом наборе:
+Теперь создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss). Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки включает правила для распределения трафика через TCP-порт 80. Она также разрешает трафик с удаленного рабочего стола через TCP-порт 3389 и удаленное взаимодействие с PowerShell через TCP-порт 5985. При появлении запроса можно задать собственные административные учетные данные для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -VMScaleSetName "myScaleSet" `
   -Location "EastUS" `
@@ -74,16 +75,18 @@ $customConfig = @{
 }
 ```
 
-Теперь примените расширение пользовательских скриптов с помощью командлета [Add-AzureRmVmssExtension](/powershell/module/AzureRM.Compute/Add-AzureRmVmssExtension). Ранее определенный объект конфигурации передается расширению. Обновите и запустите расширение на экземплярах виртуальных машин с помощью командлета [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss).
+
+Теперь примените расширение пользовательских скриптов с помощью командлета [Add-AzVmssExtension](/powershell/module/az.Compute/Add-azVmssExtension). Ранее определенный объект конфигурации передается расширению. Обновите и запустите расширение на экземплярах виртуальных машин с помощью командлета [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
+
 
 ```azurepowershell-interactive
 # Get information about the scale set
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
           -ResourceGroupName "myResourceGroup" `
           -VMScaleSetName "myScaleSet"
 
 # Add the Custom Script Extension to install IIS and configure basic website
-$vmss = Add-AzureRmVmssExtension `
+$vmss = Add-AzVmssExtension `
   -VirtualMachineScaleSet $vmss `
   -Name "customScript" `
   -Publisher "Microsoft.Compute" `
@@ -92,7 +95,7 @@ $vmss = Add-AzureRmVmssExtension `
   -Setting $customConfig
 
 # Update the scale set and apply the Custom Script Extension to the VM instances
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Name "myScaleSet" `
   -VirtualMachineScaleSet $vmss
@@ -103,16 +106,16 @@ Update-AzureRmVmss `
 
 ## <a name="allow-traffic-to-application"></a>Разрешение передачи трафика в приложение
 
-Чтобы разрешить доступ к базовому веб-приложению, создайте сетевую группу безопасности с помощью командлетов [New-AzureRmNetworkSecurityRuleConfig](/powershell/module/azurerm.network/new-azurermnetworksecurityruleconfig) и [New-AzureRmNetworkSecurityGroup](/powershell/module/azurerm.network/new-azurermnetworksecuritygroup). Дополнительные сведения см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](virtual-machine-scale-sets-networking.md).
+Чтобы разрешить доступ к базовому веб-приложению, создайте сетевую группу безопасности с помощью командлетов [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig) и [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). Дополнительные сведения см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](virtual-machine-scale-sets-networking.md).
 
 ```azurepowershell-interactive
 # Get information about the scale set
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
             -ResourceGroupName "myResourceGroup" `
             -VMScaleSetName "myScaleSet"
 
 #Create a rule to allow traffic over port 80
-$nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
+$nsgFrontendRule = New-AzNetworkSecurityRuleConfig `
   -Name myFrontendNSGRule `
   -Protocol Tcp `
   -Direction Inbound `
@@ -124,28 +127,28 @@ $nsgFrontendRule = New-AzureRmNetworkSecurityRuleConfig `
   -Access Allow
 
 #Create a network security group and associate it with the rule
-$nsgFrontend = New-AzureRmNetworkSecurityGroup `
+$nsgFrontend = New-AzNetworkSecurityGroup `
   -ResourceGroupName  "myResourceGroup" `
   -Location EastUS `
   -Name myFrontendNSG `
   -SecurityRules $nsgFrontendRule
 
-$vnet = Get-AzureRmVirtualNetwork `
+$vnet = Get-AzVirtualNetwork `
   -ResourceGroupName  "myResourceGroup" `
   -Name myVnet
 
 $frontendSubnet = $vnet.Subnets[0]
 
-$frontendSubnetConfig = Set-AzureRmVirtualNetworkSubnetConfig `
+$frontendSubnetConfig = Set-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $vnet `
   -Name mySubnet `
   -AddressPrefix $frontendSubnet.AddressPrefix `
   -NetworkSecurityGroup $nsgFrontend
 
-Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
+Set-AzVirtualNetwork -VirtualNetwork $vnet
 
 # Update the scale set and apply the Custom Script Extension to the VM instances
-Update-AzureRmVmss `
+Update-AzVmss `
     -ResourceGroupName "myResourceGroup" `
     -Name "myScaleSet" `
     -VirtualMachineScaleSet $vmss
@@ -154,10 +157,10 @@ Update-AzureRmVmss `
 
 
 ## <a name="test-your-scale-set"></a>Проверка масштабируемого набора
-Чтобы проверить работу веб-сервера, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress). Следующий пример кода отображает IP-адрес, созданный в группе ресурсов *myResourceGroup*:
+Чтобы проверить работу веб-сервера, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress). Следующий пример кода отображает IP-адрес, созданный в группе ресурсов *myResourceGroup*:
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress -ResourceGroupName "myResourceGroup" | Select IpAddress
+Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select IpAddress
 ```
 
 Введите в браузере общедоступный IP-адрес подсистемы балансировки нагрузки. Подсистема балансировки нагрузки передаст запрос на один из экземпляров виртуальной машины, как показано в следующем примере:
@@ -182,13 +185,13 @@ $customConfigv2 = @{
 Обновите конфигурацию расширения настраиваемых скриптов к экземплярам виртуальных машин в своем масштабируемом наборе. Определение *customConfigv2* используется для применения обновленной версии приложения.
 
 ```azurepowershell-interactive
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
           -ResourceGroupName "myResourceGroup" `
           -VMScaleSetName "myScaleSet"
  
 $vmss.VirtualMachineProfile.ExtensionProfile[0].Extensions[0].Settings = $customConfigv2
  
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Name "myScaleSet" `
   -VirtualMachineScaleSet $vmss
@@ -200,10 +203,10 @@ Update-AzureRmVmss `
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
+Чтобы удалить масштабируемый набор и дополнительные ресурсы, удалите группу ресурсов и все входящие в нее ресурсы с помощью команды [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
+Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 

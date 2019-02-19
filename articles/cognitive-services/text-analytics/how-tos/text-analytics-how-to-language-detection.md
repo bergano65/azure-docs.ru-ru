@@ -1,22 +1,22 @@
 ---
-title: Инструкции по распознаванию языка в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
-description: Инструкции по распознаванию языка с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
+title: Определение языка с помощью REST API "Анализ текста" | Документация Майкрософт
+description: Узнайте, как определить язык с помощью REST API "Анализ текста" из Azure Cognitive Services.
 services: cognitive-services
-author: HeidiSteen
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 09/12/2018
-ms.author: heidist
-ms.openlocfilehash: e613652511a18f2234c82cce47f0beeb2d3bbdd6
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: 549ef0d073a740edf700c54d02a0d9ef247db0b7
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211956"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245094"
 ---
-# <a name="example-how-to-detect-language-in-text-analytics"></a>Пример: Как распознать язык в службе "Анализ текста"
+# <a name="example-how-to-detect-language-with-text-analytics"></a>Пример: Как определить язык с помощью API "Анализ текста"
 
 [API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) оценивает текст входных данных каждого документа и возвращает идентификаторы языка с оценкой, указывающая степень анализа. Анализ текста распознает до 120 языков.
 

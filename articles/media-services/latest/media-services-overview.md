@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 02/05/2019
+ms.date: 02/07/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 31bf120b590ad8de3263e2d3a553f1d5fcfcd7f9
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 1911b851e4e219ec4c6d2d4872b75e9c18706feb
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756892"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893329"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -78,7 +78,7 @@ ms.locfileid: "55756892"
 
 Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API Служб мультимедиа версии 3 основан на [спецификации OpenAPI](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media) (ранее известной как Swagger).
 
-[Обозреватель Служб мультимедиа Azure](https://github.com/Azure/Azure-Media-Services-Explorer) (AMSE) — это инструмент, доступный для клиентов Windows, которые хотят узнать о Службах мультимедиа. AMSE — это приложение Winforms или C#, которое отправляет, скачивает, кодирует, транслирует видео по запросу и в режиме реального времени с помощью Служб мультимедиа. Инструмент AMSE предназначен для клиентов, которые хотят протестировать Службы мультимедиа без написания кода. Код приложения AMSE предназначен для клиентов, которым необходимо вести разработки с использованием Служб мультимедиа и которые хотят видеть код рабочего уровня.
+[Обозреватель Служб мультимедиа Azure](https://github.com/Azure/Azure-Media-Services-Explorer) (AMSE) — это инструмент, доступный для клиентов Windows, которые хотят узнать о Службах мультимедиа. AMSE — это приложение Winforms или C#, которое отправляет, скачивает, кодирует, транслирует видео по запросу и в режиме реального времени с помощью Служб мультимедиа. Инструмент AMSE предназначен для клиентов, которые хотят протестировать Службы мультимедиа без написания кода. Код AMSE предоставляется как ресурс для клиентов, которым необходима разработка с помощью Служб мультимедиа.
 
 AMSE — это проект с открытым кодом, поддержка которого предоставляется сообществом (о проблемах можно сообщать по ссылке https://github.com/Azure/Azure-Media-Services-Explorer/issues). Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения см. в [вопросах и ответах по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу opencode@microsoft.com.
  

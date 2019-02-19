@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: get-started-article
-ms.date: 09/18/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 6581c389cb7b1aa9c6ce6b9e84b56017264822f4
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 7ef7216b2d3adf99b0c1fd9ace84991169106529
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232959"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55976271"
 ---
-# <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure
+# <a name="get-started-with-the-java-client-sdk-for-azure-media-services-legacy"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure (прежняя версия)
+
 [!INCLUDE [media-services-selector-get-started](../../../includes/media-services-selector-get-started.md)]
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
@@ -58,10 +59,10 @@ ms.locfileid: "50232959"
 Для использования этого кода настройте учетную запись служб мультимедиа. Сведения о настройке учетной записи см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 
 Код подключается к API служб мультимедиа Azure, используя проверку подлинности субъекта-службы Azure AD. Создайте приложение Azure AD и укажите в коде значения для следующих переменных:
-* `tenant`. Домен клиента Azure AD, в котором размещается приложение Azure AD.
-* `clientId`. Идентификатор клиента приложения Azure AD.
-* `clientKey`. Ключ клиента приложения Azure AD.
-* `restApiEndpoint`. Конечная точка REST API учетной записи служб мультимедиа Azure.
+* `tenant`: домен клиента Azure AD, в котором размещается приложение Azure AD;
+* `clientId`: идентификатор клиента приложения Azure AD;
+* `clientKey`: ключ клиента приложения Azure AD;
+* `restApiEndpoint`: конечная точка REST API учетной записи служб мультимедиа Azure.
 
 Вы можете создать приложение Azure AD и получить предыдущие значения конфигурации на портале Azure. Дополнительные сведения см. в разделе **Проверка подлинности субъекта-службы** статьи [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](https://docs.microsoft.com/azure/media-services/media-services-portal-get-started-with-aad).
 

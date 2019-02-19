@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 7/20/2018
 ms.author: victorh
-ms.openlocfilehash: 2abe6c11b2a6fe9a9146f5c5689597fe3e29fa82
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 638d6c5740f999af2f1dac7cbc51e0b6aeb38c0b
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41920068"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55996361"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -45,6 +45,8 @@ ms.locfileid: "41920068"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 - [Создайте приложение службы приложений](../app-service/app-service-web-get-started-html.md) или используйте приложение, созданное для работы с другим руководством.
 
 - Создайте зону DNS в Azure DNS и делегируйте ее в регистраторе Azure DNS.
@@ -71,9 +73,9 @@ ms.locfileid: "41920068"
 ### <a name="create-the-a-record"></a>Создание записи A
 
 ```powershell
-New-AzureRMDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" `
+New-AzDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" `
  -ResourceGroupName "MyAzureResourceGroup" -Ttl 600 `
- -DnsRecords (New-AzureRmDnsRecordConfig -IPv4Address "<your web app IP address>")
+ -DnsRecords (New-AzDnsRecordConfig -IPv4Address "<your web app IP address>")
 ```
 
 ### <a name="create-the-txt-record"></a>Создание записи TXT
@@ -81,9 +83,9 @@ New-AzureRMDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" `
 Службы приложений используют эту запись только во время настройки, чтобы убедиться, что вы являетесь владельцем личного домена. После проверки и настройки личного домена в службе приложений эту запись TXT можно удалить.
 
 ```powershell
-New-AzureRMDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup `
+New-AzDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup `
  -Name `"@" -RecordType "txt" -Ttl 600 `
- -DnsRecords (New-AzureRmDnsRecordConfig -Value  "contoso.azurewebsites.net")
+ -DnsRecords (New-AzDnsRecordConfig -Value  "contoso.azurewebsites.net")
 ```
 
 ## <a name="create-the-cname-record"></a>Создание записи CNAME
@@ -95,9 +97,9 @@ New-AzureRMDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResource
 ### <a name="create-the-record"></a>Создание записи
 
 ```powershell
-New-AzureRMDnsRecordSet -ZoneName contoso.com -ResourceGroupName "MyAzureResourceGroup" `
+New-AzDnsRecordSet -ZoneName contoso.com -ResourceGroupName "MyAzureResourceGroup" `
  -Name "www" -RecordType "CNAME" -Ttl 600 `
- -DnsRecords (New-AzureRmDnsRecordConfig -cname "contoso.azurewebsites.net")
+ -DnsRecords (New-AzDnsRecordConfig -cname "contoso.azurewebsites.net")
 ```
 
 Ниже приведен пример ответа.
@@ -157,7 +159,7 @@ contoso.com text =
 Теперь можно добавить пользовательские имена узлов для веб-приложения.
 
 ```powershell
-set-AzureRmWebApp `
+set-AzWebApp `
  -Name contoso `
  -ResourceGroupName MyAzureResourceGroup `
  -HostNames @("contoso.com","www.contoso.com","contoso.azurewebsites.net")

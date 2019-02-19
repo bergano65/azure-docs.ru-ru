@@ -12,12 +12,12 @@ ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/04/2019
-ms.openlocfilehash: 016ad5f97c0c9ebbdd3dbc1156c38b4cc842fe9e
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 66640bd60f6ba8c2f612a6bc9b88a07b13012997
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55757245"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55990040"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью портала Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "55757245"
 
 ## <a name="create-a-single-database"></a>Создание отдельной базы данных
 
-Отдельная база данных содержит определенный набор ресурсов вычислений, памяти, операций ввода-вывода и хранения, используя одну из двух [моделей приобретения (sql-database-service-tiers.md). При создании отдельной базы данных можете также определить [Сервер Базы данных SQL](sql-database-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в указанном регионе.
+Отдельная база данных содержит определенный набор ресурсов вычислений, памяти, операций ввода-вывода и хранения, используя одну из двух [моделей приобретения (sql-database-purchase-models.md). При создании отдельной базы данных можете также определить [Сервер Базы данных SQL](sql-database-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в указанном регионе.
 
 Чтобы создать базу данных, содержащую образец данных AdventureWorksLT, выполните следующие действия.
 

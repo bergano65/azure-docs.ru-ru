@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 11/14/2018
+ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f8585023b01de55acb6c1b43b45e27af914a0a96
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 192ecf0cf4f97a709808fa04f676035e8a672b79
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54884424"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55976952"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
-Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки конфигураций, например при предварительной загрузке приложений, конфигураций приложений и других конфигураций операционной системы. В рамках этого руководства вы создадите собственный пользовательский образ виртуальной машины Azure. Вы узнаете, как выполнять следующие задачи:
+Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки развертываний и обеспечения согласованности между несколькими виртуальными машинами. В рамках этого руководства вы создадите собственный пользовательский образ виртуальной машины Azure с помощью PowerShell. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Подготовка виртуальной машины к использованию с помощью Sysprep
@@ -40,13 +40,15 @@ ms.locfileid: "54884424"
 
 Для выполнения примера в этом руководстве требуется виртуальная машина. Этот [пример сценария](../scripts/virtual-machines-windows-powershell-sample-create-vm.md) позволяет создать ее при необходимости. При работе с примером по мере необходимости заменяйте имена групп ресурсов и виртуальных машин.
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
-Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится модуль AzureRM 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
+
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 ## <a name="prepare-vm"></a>Подготовка виртуальной машины
 
-Чтобы создать образ виртуальной машины, нужно подготовить ее к использованию, отозвав и пометив исходную виртуальную машину как универсальную в Azure.
+Чтобы создать образ виртуальной машины, нужно подготовить исходную виртуальную машину к использованию, отменив ее распределение и пометив ее как универсальную в Azure.
 
 ### <a name="generalize-the-windows-vm-using-sysprep"></a>Подготовка виртуальной машины Windows к использованию с помощью Sysprep
 
@@ -54,60 +56,71 @@ ms.locfileid: "54884424"
 
 
 1. Подключитесь к виртуальной машине.
-2. Откройте окно командной строки с правами администратора. Измените каталог на *%windir%\system32\sysprep* и запустите файл *sysprep.exe*.
-3. В диалоговом окне **Программа подготовки системы** выберите *Переход в окно приветствия системы (OOBE)* и убедитесь, что установлен флажок *Подготовка к использованию*.
-4. В разделе **Параметры завершения работы** выберите *Завершение работы* и нажмите кнопку **ОК**.
+2. Откройте окно командной строки с правами администратора. Измените каталог на *%windir%\system32\sysprep* и запустите файл `sysprep.exe`.
+3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
+4. В разделе **Параметры завершения работы** выберите **Завершение работы** и нажмите кнопку **ОК**.
 5. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. **Не перезапускайте виртуальную машину.**
 
 ### <a name="deallocate-and-mark-the-vm-as-generalized"></a>Отмена выделения и пометка виртуальной машины как обобщенной
 
 Чтобы создать образ виртуальной машины, необходимо отменить ее выделение и пометить ее как универсальную в Azure.
 
-Отмените выделение виртуальной машины с помощью командлета [Stop-AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm).
+Отмените распределение виртуальной машины с помощью командлета [Stop-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm).
 
 ```azurepowershell-interactive
-Stop-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM -Force
+Stop-AzVM `
+   -ResourceGroupName myResourceGroup `
+   -Name myVM -Force
 ```
 
-Теперь задайте для виртуальной машины состояние `-Generalized`, выполнив командлет [Set-AzureRmVm](/powershell/module/azurerm.compute/set-azurermvm). 
+Задайте для виртуальной машины состояние `-Generalized`, выполнив командлет [Set-AzVm](https://docs.microsoft.com/powershell/module/az.compute/set-azvm). 
    
 ```azurepowershell-interactive
-Set-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM -Generalized
+Set-AzVM `
+   -ResourceGroupName myResourceGroup `
+   -Name myVM -Generalized
 ```
 
 
 ## <a name="create-the-image"></a>Создание образа
 
-Теперь можно создать образ виртуальной машины с помощью командлетов [New-AzureRmImageConfig](/powershell/module/azurerm.compute/new-azurermimageconfig) и [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage). В следующем примере создается образ *myImage* из виртуальной машины *myVM*.
+Теперь можно создать образ виртуальной машины с помощью командлетов [New-AzImageConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azimageconfig) и [New-AzImage](https://docs.microsoft.com/powershell/module/az.compute/new-azimage). В следующем примере создается образ *myImage* из виртуальной машины *myVM*.
 
 Получите виртуальную машину. 
 
 ```azurepowershell-interactive
-$vm = Get-AzureRmVM -Name myVM -ResourceGroupName myResourceGroup
+$vm = Get-AzVM `
+   -Name myVM `
+   -ResourceGroupName myResourceGroup
 ```
 
 Создайте конфигурацию образа.
 
 ```azurepowershell-interactive
-$image = New-AzureRmImageConfig -Location EastUS -SourceVirtualMachineId $vm.ID 
+$image = New-AzImageConfig `
+   -Location EastUS `
+   -SourceVirtualMachineId $vm.ID 
 ```
 
 Создайте образ.
 
 ```azurepowershell-interactive
-New-AzureRmImage -Image $image -ImageName myImage -ResourceGroupName myResourceGroup
+New-AzImage `
+   -Image $image `
+   -ImageName myImage `
+   -ResourceGroupName myResourceGroup
 ``` 
 
  
 ## <a name="create-vms-from-the-image"></a>Создание виртуальных машин из образа
 
-Теперь, когда образ готов, из него можно создать одну или несколько виртуальных машин. Создание виртуальной машины из образа похоже на создание виртуальной машины с помощью образа Marketplace. При использовании образа Marketplace требуется указать сведения об образе, его поставщике, предложении, номере SKU и версии. С помощью упрощенного набора параметров для командлета [New AzureRMVM](/powershell/module/azurerm.compute/new-azurermvm) укажите имя настраиваемого образа, поскольку он находится в той же группе ресурсов. 
+Теперь, когда образ готов, из него можно создать одну или несколько виртуальных машин. Создание виртуальной машины из образа похоже на создание виртуальной машины с помощью образа Marketplace. При использовании образа Marketplace требуется указать сведения об образе, его поставщике, предложении, номере SKU и версии. С помощью упрощенного набора параметров для командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) укажите имя настраиваемого образа, так как он находится в той же группе ресурсов. 
 
 В этом примере создается виртуальная машина *myVMfromImage* из образа *myImage* в группе ресурсов *myResourceGroup*.
 
 
 ```azurepowershell-interactive
-New-AzureRmVm `
+New-AzVm `
     -ResourceGroupName "myResourceGroup" `
     -Name "myVMfromImage" `
     -ImageName "myImage" `
@@ -126,14 +139,14 @@ New-AzureRmVm `
 Вывод списка всех образов по имени.
 
 ```azurepowershell-interactive
-$images = Get-AzureRMResource -ResourceType Microsoft.Compute/images 
+$images = Get-AzResource -ResourceType Microsoft.Compute/images 
 $images.name
 ```
 
 Удаление образа. В этом примере из *myResourceGroup* удаляется образ с именем *myImage*.
 
 ```azurepowershell-interactive
-Remove-AzureRmImage `
+Remove-AzImage `
     -ImageName myImage `
     -ResourceGroupName myResourceGroup
 ```

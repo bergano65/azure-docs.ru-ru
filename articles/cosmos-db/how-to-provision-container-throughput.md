@@ -6,34 +6,34 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: 550201e692bb79197d50c2f44017c43ab9ea2016
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 4df8a12581b5d71a76964ca1e3d40c6c53185f67
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477341"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55860326"
 ---
 # <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
-В этой статье описывается, как подготовить пропускную способность для контейнера (коллекции, диаграммы, таблицы) в Azure Cosmos DB. Можно подготовить пропускную способность для одного контейнера или [для базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ между контейнерами. Пропускную способность контейнера можно подготовить с помощью портала Azure, интерфейса командной строки Azure или пакетов SDK CosmosDB.
+В этой статье описывается, как подготовить пропускную способность для контейнера (коллекции, графы или таблицы) в Azure Cosmos DB. Вы можете подготовить пропускную способность для одного контейнера или [для базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ между контейнерами. Пропускную способность контейнера можно подготовить с помощью портала Azure, интерфейса командной строки Azure или пакетов SDK Azure Cosmos DB.
 
-## <a name="provision-throughput-using-azure-portal"></a>Подготовка пропускной способности с помощью портала Azure
+## <a name="provision-throughput-by-using-azure-portal"></a>Подготовка пропускной способности с помощью портала Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. Далее заполните форму следующими данными:
+1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
 
-   * Создайте новую базу данных или используйте существующую.
-   * Введите идентификатор коллекции (или таблицы, графика).
-   * Введите значение ключа раздела, например `/userid`.
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Укажите, создаете ли вы новую базу данных или используете существующую.
+   * Введите идентификатор коллекции (таблицы или графа).
+   * Введите значение ключа секции (например, `/userid`).
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![Пропускная способность контейнера API SQL](./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png)
+![Снимок экрана обозревателя данных с выделенным элементом "Новая коллекция"](./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png)
 
-## <a name="provision-throughput-using-azure-cli"></a>Подготовка пропускной способности с помощью портала Azure CLI
+## <a name="provision-throughput-by-using-azure-cli"></a>Подготовка пропускной способности с помощью Azure CLI
 
 ```azurecli-interactive
 # Create a container with a partition key and provision throughput of 1000 RU/s
@@ -46,9 +46,9 @@ az cosmosdb collection create \
     --throughput 1000
 ```
 
-При подготовке пропускной способности для учетной записи Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, используйте /myShardKey для пути к ключу раздела, а при подготовке пропускной способности для учетной записи Cosmos, настроенной для API Cassandra, используйте /myPrimaryKey для пути к ключу секции.
+При подготовке пропускной способности для учетной записи Azure Cosmos DB, настроенной с API Azure Cosmos DB для MongoDB, используйте `/myShardKey` для пути к ключу секции. При подготовке пропускной способности для учетной записи Azure Cosmos DB, настроенной с API Cassandra, используйте `/myPrimaryKey` для пути к ключу секции.
 
-## <a name="provision-throughput-using-net-sdk"></a>Подготовка пропускной способности с помощью пакета SDK для .NET
+## <a name="provision-throughput-by-using-net-sdk"></a>Подготовка пропускной способности с помощью пакета SDK для .NET
 
 > [!Note]
 > Используйте SQL API для подготовки пропускной способности для всех API, за исключением API Cassandra.
