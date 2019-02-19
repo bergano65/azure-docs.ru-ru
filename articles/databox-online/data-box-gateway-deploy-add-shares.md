@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 02/04/2019
 ms.author: alkohli
-ms.openlocfilehash: fa31397e0ecffbd245557a824bdd770724bbc91c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 0ceff87cd3075d517ee1c0027e19dbf423e44f5c
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249886"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108761"
 ---
-# <a name="tutorial-transfer-data-with-azure-data-box-gateway-preview"></a>Руководство по передаче данных с помощью службы "Шлюз Azure Data Box"
+# <a name="tutorial-transfer-data-with-azure-data-box-gateway-preview"></a>Руководство по передаче данных с помощью службы "Шлюз Azure Data Box" (предварительная версия)
 
 
 ## <a name="introduction"></a>Введение
@@ -121,13 +121,13 @@ ms.locfileid: "51249886"
 
 2. После установки NFS-клиента используйте следующую команду, чтобы подключить общую папку типа NFS, созданную на устройстве Шлюза Data Box:
 
-   `sudo mount <device IP>:/<NFS share on device> /home/username/<Folder on local Linux computer>`
+   `sudo mount -t nfs -o sec=sys,resvport <device IP>:/<NFS shares on device> /home/username/<Folder on local Linux computer>`
 
     Прежде чем настроить подключение, убедитесь, что каталоги, которые будут выступать в качестве точки подключения на локальном компьютере, уже созданы и не содержат файлов и вложенных папок.
 
     В следующем примере показано, как выполнить подключение к папке на устройстве шлюза через NFS. IP-адрес виртуального устройства — `10.10.10.60`, общая папка `mylinuxshare2` подключена на виртуальной машине под управлением Ubuntu, точка подключения — `/home/databoxubuntuhost/gateway`.
 
-    `sudo mount -t nfs 10.10.10.60:/mylinuxshare2 /home/databoxubuntuhost/gateway`
+    `sudo mount -t nfs -o sec=sys,resvport 10.10.10.60:/mylinuxshare2 /home/databoxubuntuhost/gateway`
 
 > [!NOTE] 
 > В предварительной версии действуют следующие факторы:

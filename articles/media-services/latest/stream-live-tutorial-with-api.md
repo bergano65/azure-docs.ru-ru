@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: 49598eb8579e20dd20ca63d11529ba106a510102
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 71ddf1d70953b721911a7315ab6875dd41a9a4db
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55170527"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55894179"
 ---
 # <a name="tutorial-stream-live-with-media-services-v3-using-net"></a>Руководство. Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET
 
@@ -166,7 +166,7 @@ foreach (StreamingPath path in paths.StreamingPaths)
 
 ## <a name="watch-the-event"></a>Просмотр события
 
-Чтобы просмотреть событие, скопируйте URL-адрес потоковой передачи, полученный при выполнении кода в разделе [Создание указателя потоковой передачи](#create-a-streaminglocator), и вставьте его в любой проигрыватель. Для проверки потока на сайте http://ampdemo.azureedge.net можно использовать [Проигрыватель мультимедиа Azure](http://amp.azure.net/libs/amp/latest/docs/index.html). 
+Чтобы просмотреть событие, скопируйте URL-адрес потоковой передачи, полученный при выполнении кода в разделе "Создание указателя потоковой передачи", и вставьте его в любой проигрыватель. Для проверки потока на сайте http://ampdemo.azureedge.net можно использовать [Проигрыватель мультимедиа Azure](http://amp.azure.net/libs/amp/latest/docs/index.html). 
 
 После остановки событие потоковой трансляции автоматически преобразуется в содержимое по требованию. Даже после остановки и удаления события пользователи смогут запрашивать потоковую передачу архивированного видеосодержимого, пока не удален соответствующий ресурс. Ресурс невозможно удалить, пока он используется каким-либо событием: сначала нужно удалить это событие. 
 

@@ -16,14 +16,15 @@ ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9abfd410e9137a897753fcf04ee113bd04749a7a
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: f3b49efa5e28eab2168c9a85d17e39ca7f0fce4a
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54881687"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984789"
 ---
-# <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
+# <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство по Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
+
 В масштабируемых наборах виртуальных машин на дисках хранится операционная система, приложения и данные. Для создания масштабируемого набора и управления им важно выбрать размер диска и конфигурацию в соответствии с ожидаемой рабочей нагрузкой. В этом руководстве объясняется, как создать диски виртуальной машины и управлять ими. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
@@ -35,9 +36,9 @@ ms.locfileid: "54881687"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [updated-for-az-vm.md](../../includes/updated-for-az-vm.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
+[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
 
 ## <a name="default-azure-disks"></a>Диски Azure по умолчанию
@@ -95,12 +96,12 @@ ms.locfileid: "54881687"
 Диски можно создать и присоединить к создаваемому или существующему масштабируемому набору.
 
 ### <a name="attach-disks-at-scale-set-creation"></a>Присоединение дисков при создании масштабируемого набора
-Создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss). Когда отобразится запрос, введите имя и пароль для экземпляров виртуальных машин. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985.
+Создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss). Когда отобразится запрос, введите имя и пароль для экземпляров виртуальных машин. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985.
 
 Создаются два диска с параметром `-DataDiskSizeGb`. Размер первого диска — *64* ГБ, а второго — *128* ГБ. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS" `
   -VMScaleSetName "myScaleSet" `
@@ -115,23 +116,23 @@ New-AzureRmVmss `
 Создание и настройка всех ресурсов и экземпляров виртуальных машин масштабируемого набора занимает несколько минут.
 
 ### <a name="attach-a-disk-to-existing-scale-set"></a>Присоединение диска к существующему масштабируемому набору
-Вы также можете присоединить диски к существующему масштабируемому набору. Используйте созданный на предыдущем шаге масштабируемый набор, чтобы добавить другой диск, выполнив командлет [Add-AzureRmVmssDataDisk](/powershell/module/azurerm.compute/add-azurermvmssdatadisk). В следующем примере к имеющемуся масштабируемому набору подключается дополнительный диск размером *128* ГБ.
+Вы также можете присоединить диски к существующему масштабируемому набору. Используйте созданный на предыдущем шаге масштабируемый набор, чтобы добавить другой диск, выполнив командлет [Add-AzVmssDataDisk](/powershell/module/az.compute/add-azvmssdatadisk). В следующем примере к имеющемуся масштабируемому набору подключается дополнительный диск размером *128* ГБ.
 
 ```azurepowershell-interactive
 # Get scale set object
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
           -ResourceGroupName "myResourceGroup" `
           -VMScaleSetName "myScaleSet"
 
 # Attach a 128 GB data disk to LUN 2
-Add-AzureRmVmssDataDisk `
+Add-AzVmssDataDisk `
   -VirtualMachineScaleSet $vmss `
   -CreateOption Empty `
   -Lun 2 `
   -DiskSizeGB 128
 
 # Update the scale set to apply the change
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Name "myScaleSet" `
   -VirtualMachineScaleSet $vmss
@@ -143,11 +144,13 @@ Update-AzureRmVmss `
 
 Чтобы автоматизировать процесс на нескольких экземплярах виртуальных машин в масштабируемом наборе, можно использовать расширение пользовательских скриптов Azure. Это расширение может выполнять скрипты локально на каждом экземпляре виртуальной машины, например, чтобы подготовить подключенные диски данных. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](../virtual-machines/windows/extensions-customscript.md).
 
-В следующем примере на каждом экземпляре виртуальной машины выполняется скрипт из репозитория GitHub с помощью командлета [Add-AzureRmVmssExtension](/powershell/module/AzureRM.Compute/Add-AzureRmVmssExtension), который подготавливает все подключенные диски данных в формате RAW.
+
+В следующем примере на каждом экземпляре виртуальной машины выполняется скрипт из примера репозитория GitHub с помощью командлета [Add-AzVmssExtension](/powershell/module/az.compute/Add-AzVmssExtension), который подготавливает все подключенные диски данных в формате RAW.
+
 
 ```azurepowershell-interactive
 # Get scale set object
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
           -ResourceGroupName "myResourceGroup" `
           -VMScaleSetName "myScaleSet"
 
@@ -158,7 +161,7 @@ $publicSettings = @{
 }
 
 # Use Custom Script Extension to prepare the attached data disks
-Add-AzureRmVmssExtension -VirtualMachineScaleSet $vmss `
+Add-AzVmssExtension -VirtualMachineScaleSet $vmss `
   -Name "customScript" `
   -Publisher "Microsoft.Compute" `
   -Type "CustomScriptExtension" `
@@ -166,7 +169,7 @@ Add-AzureRmVmssExtension -VirtualMachineScaleSet $vmss `
   -Setting $publicSettings
 
 # Update the scale set and apply the Custom Script Extension to the VM instances
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Name "myScaleSet" `
   -VirtualMachineScaleSet $vmss
@@ -174,17 +177,18 @@ Update-AzureRmVmss `
 
 Чтобы убедиться, что диски подготовлены правильно, подключитесь с помощью RDP к одному из экземпляров виртуальных машин. 
 
-Сначала получите объект подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmLoadBalancer](/powershell/module/AzureRM.Network/Get-AzureRmLoadBalancer). Затем просмотрите правила преобразования сетевых адресов для входящих подключений с помощью командлета [Get-AzureRmLoadBalancerInboundNatRuleConfig](/powershell/module/AzureRM.Network/Get-AzureRmLoadBalancerInboundNatRuleConfig). Эти правила содержат сведения о портах *FrontendPort* каждого экземпляра виртуальной машины, которые прослушивает RDP. Наконец, получите общедоступный IP-адрес своей подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/AzureRM.Network/Get-AzureRmPublicIpAddress).
+Сначала получите объект подсистемы балансировки нагрузки с помощью командлета [Get-AzLoadBalancer](/powershell/module/az.network/Get-AzLoadBalancer). Затем просмотрите правила NAT для входящего трафика с помощью командлета [Get-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/Get-AzLoadBalancerInboundNatRuleConfig). Эти правила содержат сведения о портах *FrontendPort* каждого экземпляра виртуальной машины, которые прослушивает RDP. Наконец, получите общедоступный IP-адрес подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress).
+
 
 ```azurepowershell-interactive
 # Get the load balancer object
-$lb = Get-AzureRmLoadBalancer -ResourceGroupName "myResourceGroup" -Name "myLoadBalancer"
+$lb = Get-AzLoadBalancer -ResourceGroupName "myResourceGroup" -Name "myLoadBalancer"
 
 # View the list of inbound NAT rules
-Get-AzureRmLoadBalancerInboundNatRuleConfig -LoadBalancer $lb | Select-Object Name,Protocol,FrontEndPort,BackEndPort
+Get-AzLoadBalancerInboundNatRuleConfig -LoadBalancer $lb | Select-Object Name,Protocol,FrontEndPort,BackEndPort
 
 # View the public IP address of the load balancer
-Get-AzureRmPublicIpAddress -ResourceGroupName "myResourceGroup" -Name myPublicIPAddress | Select IpAddress
+Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" -Name myPublicIPAddress | Select IpAddress
 ```
 
 Чтобы подключиться к виртуальной машине, укажите собственный общедоступный IP-адрес и номер порта требуемого экземпляра виртуальной машины, как показано в предыдущих командах. При появлении запроса введите учетные данные, использованные при создании масштабируемого набора. Если вы используете Azure Cloud Shell, выполните этот шаг с помощью локальной командной строки PowerShell или клиента удаленного рабочего стола. В следующем примере устанавливается подключение к экземпляру виртуальной машины *1*.
@@ -245,10 +249,10 @@ PartitionNumber  DriveLetter  Offset   Size   Type
 
 
 ## <a name="list-attached-disks"></a>Отображение списка подключенных дисков
-Чтобы просмотреть информацию о дисках, подключенных к масштабируемому набору, выполните командлет [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss), как показано ниже.
+Чтобы просмотреть информацию о дисках, подключенных к масштабируемому набору, выполните командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss), как показано ниже.
 
 ```azurepowershell-interactive
-Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet"
+Get-AzVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet"
 ```
 
 В разделе свойства *VirtualMachineProfile.StorageProfile* отображается список дисков данных (*DataDisks*). В нем содержится информация о размере диска, уровне хранилища и LUN (логическом номере устройства). В следующем примере выходных данных содержатся сведения о трех дисках данных, подключенных к масштабируемому набору.
@@ -279,21 +283,21 @@ DataDisks[2]                            :
 
 
 ## <a name="detach-a-disk"></a>Отсоединение диска
-Если конкретный диск больше не нужен, его можно отключить от масштабируемого набора. Диск удаляется из всех экземпляров виртуальных машин в масштабируемом наборе. Чтобы отключить диск от масштабируемого набора, используйте командлет [Remove-AzureRmVmssDataDisk](/powershell/module/azurerm.compute/remove-azurermvmssdatadisk) и укажите номер LUN диска. Эти номера отображаются в выходных данных, полученных с помощью командлета [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss) в предыдущем разделе. В следующем примере диск с LUN *3* отключается от масштабируемого набора.
+Если конкретный диск больше не нужен, его можно отключить от масштабируемого набора. Диск удаляется из всех экземпляров виртуальных машин в масштабируемом наборе. Чтобы отключить диск от масштабируемого набора, используйте командлет [Remove-AzVmssDataDisk](/powershell/module/az.compute/remove-azvmssdatadisk) и укажите номер LUN диска. Эти номера отображаются в выходных данных, полученных с помощью командлета [Get-AzVmss](/powershell/module/az.compute/get-azvmss) в предыдущем разделе. В следующем примере диск с LUN *3* отключается от масштабируемого набора.
 
 ```azurepowershell-interactive
 # Get scale set object
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
           -ResourceGroupName "myResourceGroup" `
           -VMScaleSetName "myScaleSet"
 
 # Detach a disk from the scale set
-Remove-AzureRmVmssDataDisk `
+Remove-AzVmssDataDisk `
   -VirtualMachineScaleSet $vmss `
   -Lun 2
 
 # Update the scale set and detach the disk from the VM instances
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Name "myScaleSet" `
   -VirtualMachineScaleSet $vmss
@@ -301,10 +305,10 @@ Update-AzureRmVmss `
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Чтобы удалить масштабируемый набор и диски, удалите группу ресурсов и все ее ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
+Чтобы удалить масштабируемый набор и диски, удалите группу ресурсов и все ее ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
+Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 

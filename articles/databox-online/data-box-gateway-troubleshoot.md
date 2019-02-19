@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: overview
 ms.date: 10/09/2018
 ms.author: alkohli
-ms.openlocfilehash: b542ca2876149b9a60e5c5b9e3fa17284477864f
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: d94e2db66c8c5dac2b4d8551ae34a07cd68fd635
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50241606"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106993"
 ---
 # <a name="troubleshoot-your-azure-data-box-gateway-issues"></a>Устранение неполадок в Шлюзе Azure Data Box 
 
@@ -103,6 +103,7 @@ ms.locfileid: "50241606"
     |    2006            |    ERROR_CLOUD_ACCOUNT_DISABLED                            |    Не удалось отправить данные в учетную запись, так как учетная запись или общая папка отключена.                                                                                                                                                            |
     |    2007            |    ERROR_CLOUD_ACCOUNT_PERMISSIONS                         |    Не удалось подключиться к контейнеру, так как разрешения учетной записи неправильные или устаревшие. Проверьте доступ.                                                                                                               |
     |    2008            |    ERROR_CLOUD_CONTAINER_SIZE_LIMIT_REACHED                |    Не удалось добавить новые данные, так как контейнер заполнен. Проверьте спецификации Azure для поддерживаемых размеров контейнера в зависимости от типа. Например, максимальный размер файла, который поддерживает файл Azure, составляет всего 5 ТБ.                                     |
+    |    2997            |    ERROR_ITEM_CANCELED                                     |    Произошла непредвиденная ошибка. Это временная ошибка, которая будет устранена автоматически.                                                                           |
     |    2998            |    ERROR_UNMAPPED_FAILURE                                  |    Произошла непредвиденная ошибка. Ошибка может устранится самостоятельно, но если она не исчезает более 24 часов, обратитесь в службу поддержки Майкрософт.                                                                                                     |
     |    16000           |    RefreshException                                        |    Не удалось закрыть этот файл.                                                                                                                                                                                                        |
     |    16001           |    RefreshAlreadyExistsException                           |    Не удалось закрыть этот файл, так как он уже существует в локальной системе.                                                                                                                                                         |

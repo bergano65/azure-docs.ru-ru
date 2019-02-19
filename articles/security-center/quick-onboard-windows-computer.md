@@ -4,7 +4,7 @@ description: В этом кратком руководстве показано,
 services: security-center
 documentationcenter: na
 author: rkarlin
-manager: MBaldwin
+manager: barbkess
 editor: ''
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
 ms.author: rkarlin
-ms.openlocfilehash: 57560a035f4d0468625e4c8f3ad6b7a7e516590f
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 3cc6cdb84b2c77b15b79c7d6a04cc7c6ae0721e5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52850686"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56115867"
 ---
-# <a name="quickstart-onboard-windows-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Windows к центру безопасности Azure
+# <a name="quickstart-onboard-windows-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Windows к Центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Microsoft Monitoring Agent.
 
 В этом кратком руководстве показано, как установить агент Microsoft Monitoring Agent на компьютере Windows.
@@ -100,7 +100,7 @@ ms.locfileid: "52850686"
 В этом кратком руководстве мы выполнили подготовку агента Microsoft Monitoring Agent на компьютере Windows. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство: определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [2]: ./media/quick-onboard-windows-computer/overview.png

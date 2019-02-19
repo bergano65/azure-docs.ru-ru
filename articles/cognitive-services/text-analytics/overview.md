@@ -3,25 +3,25 @@ title: Что такое API анализа текста?
 titleSuffix: Azure Cognitive Services
 description: API анализа текста в Azure Cognitive Services для анализа тональности, извлечения ключевых фраз, распознавания языка и связывания сущностей.
 services: cognitive-services
-author: ashmaka
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 10/01/2018
-ms.author: ashmaka
-ms.openlocfilehash: 73505064bf5cde4e97cd210698e21883cc9f5e38
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: 0de4e0d750d8ae3061ed0b80d706dec545338a90
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227885"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242946"
 ---
 # <a name="what-is-text-analytics"></a>Что такое API анализа текста?
 
 API анализа текста — это облачная служба, которая предоставляет расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, определение языка и связывание сущностей.
 
-API поддерживается ресурсами в [Microsoft Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/), коллекции алгоритмов машинного обучения и ИИ в облаке, готовых к использованию в проектах по разработке.
+API — это компонент [Microsoft Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке.
 
 ## <a name="capabilities-in-text-analytics"></a>Возможности Анализа текста
 

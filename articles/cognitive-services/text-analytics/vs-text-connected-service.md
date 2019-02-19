@@ -1,23 +1,23 @@
 ---
-title: Руководство. API анализа текста с использованием C#
+title: Руководство. Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
 titleSuffix: Azure Cognitive Services
-description: Подключение к службе "Анализ текста" из веб-приложения ASP.NET Core.
+description: Узнайте, как подключиться к службе "Анализ текста" из веб-приложения ASP.NET Core.
 services: cognitive-services
-author: ghogen
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: tutorial
-ms.date: 09/12/2018
-ms.author: ghogen
-ms.openlocfilehash: 6527e053f685fd7947e123d15c0d33399d07e61f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: a37ea5fdad941e1559e470ccb22303a8e3c7ca3d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227256"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243898"
 ---
-# <a name="tutorial-connect-to-the-text-analytics-cognitive-service-by-using-connected-services-in-visual-studio"></a>Руководство. Подключение к службе "Анализ текста" в Cognitive Services с помощью Подключенных службы в Visual Studio
+# <a name="tutorial-connect-to-the-text-analytics-service-with-connected-services-in-visual-studio"></a>Руководство. Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
 
 С помощью службы "Анализ текста" можно извлекать из изображений ценные сведения для классификации и обработки визуальных данных, а функция машинной модерации изображений обеспечит необходимый контроль за вашими службами.
 

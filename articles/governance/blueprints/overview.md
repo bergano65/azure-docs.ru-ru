@@ -4,17 +4,17 @@ description: Azure Blueprint — это служба в Azure, с помощью
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 02/01/2019
+ms.date: 02/08/2019
 ms.topic: overview
 ms.service: blueprints
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 7803ed99a61a9b4ad819da882daf38cbfd6fffe9
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 29670b94450e9f145a96b737ef96970db40aeed8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563377"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998558"
 ---
 # <a name="what-is-azure-blueprints"></a>Что такое Azure Blueprint?
 
@@ -112,6 +112,12 @@ ms.locfileid: "55563377"
 
 > [!NOTE]
 > Субъекту-службе для Azure Blueprint требуется роль **владельца** в назначенной подписке, чтобы развертывание было разрешено. При использовании портала эта роль автоматически предоставляется для развертывания и отменяется после завершения развертывания. При использовании REST API эту роль необходимо предоставлять вручную, но она тоже автоматически отменяется после завершения развертывания.
+
+## <a name="video-overview"></a>Видеообзор
+
+Обзор Azure Blueprint из цикла видеоматериалов "Пятницы с Azure". См. видеообзор [Azure Blueprint из цикла видеоматериалов "Пятницы с Azure"](https://channel9.msdn.com/Shows/Azure-Friday/An-overview-of-Azure-Blueprints) на канале Channel 9.
+
+> [!VIDEO https://www.youtube.com/embed/cQ9D-d6KkMY]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

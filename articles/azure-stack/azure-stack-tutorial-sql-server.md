@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/05/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: quying
 ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: 983e8b279261d3ff8e5d24c8e3a6f61c5a787e5b
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: aba9014e74b8ba0cd1b528cf570d3651950c6d5f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240817"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56207064"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности баз данных SQL для пользователей Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "55240817"
 
 ## <a name="deploy-the-sql-server-resource-provider"></a>Развертывание поставщика ресурсов SQL Server.
 
-Процесс развертывания подробно описан в статье [Использование баз данных SQL в Microsoft Azure Stack](azure-stack-sql-resource-provider-deploy.md) и состоит из следующих основных шагов.
+Процесс развертывания подробно описан в статье [Использование баз данных SQL в Microsoft Azure Stack](azure-stack-sql-resource-provider-deploy.md) и состоит из следующих основных шагов:
 
 1. [Развертывание поставщика ресурсов SQL](azure-stack-sql-resource-provider-deploy.md).
 2. [Проверка развертывания](azure-stack-sql-resource-provider-deploy.md#verify-the-deployment-using-the-azure-stack-portal).

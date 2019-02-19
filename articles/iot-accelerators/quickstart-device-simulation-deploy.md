@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/28/2018
 ms.author: troyhop
-ms.openlocfilehash: 12f993f606fc1ef44280142d5acfa2687cd4e043
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 84b232b175d45a12bb6e0f8b462849282144c19b
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53601599"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56097582"
 ---
 # <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство. Развертывание и запуск имитации устройств Интернета вещей в Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "53601599"
 
 Установите флажок, чтобы развернуть Центр Интернета вещей и использовать его с решением "Симулятор устройств". Вы в любой момент можете выбрать другой Центр Интернета вещей для симулятора.
 
-Щелкните **Создать решение**, чтобы начать подготовку решения. Этот процесс занимает по крайней мере пять минут:
+Щелкните **Создать**, чтобы начать подготовку решения. Этот процесс занимает по крайней мере пять минут:
 
 ![Сведения о симуляторе устройств](./media/quickstart-device-simulation-deploy/createform.png)
 

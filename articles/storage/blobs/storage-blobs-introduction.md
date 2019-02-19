@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 01/03/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 761d5fe52222331a26f85cdb2787a50a89504021
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 093f749ac29dc2bd341712d87b404de769d0b7bc
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240953"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55865579"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Общие сведения о хранилище BLOB-объектов Azure
 
@@ -56,7 +56,7 @@ http://mystorageaccount.blob.core.windows.net
 
 * **Блочные BLOB-объекты** хранят текст и двоичные данные объемом до 4,7 ТБ. Блочные большие двоичные объекты состоят из блоков данных, которыми можно управлять отдельно.
 * **Добавочные BLOB-объекты** состоят из блоков, как и блочные, но оптимизированы для операций добавления. Добавочные большие двоичные объекты идеально подходят для таких сценариев, как сбор данных журналов из виртуальных машин.
-* **Страничные BLOB-объекты** используются для хранения файлов произвольного доступа объемом до 8 ТБ. Страничные BLOB-объекты хранят файлы виртуального жесткого диска в качестве дисков для виртуальных машин Azure. Дополнительные сведения о страничных BLOB-объектах см. в статье [Уникальные возможности страничных BLOB-объектов Azure](storage-blob-pageblob-overview.md).
+* **Страничные BLOB-объекты** используются для хранения файлов произвольного доступа объемом до 8 ТБ. Страничные BLOB-объекты хранят файлы виртуального жесткого диска в качестве дисков для виртуальных машин Azure. Дополнительные сведения о страничных BLOB-объектах см. в статье [Общие сведения о страничных BLOB-объектах Azure](storage-blob-pageblob-overview.md).
 
 Дополнительные сведения о различных больших двоичных объектах см. в статье [Understanding Block Blobs, Append Blobs, and Page Blobs](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) (Основные сведения о блочных, добавочных и страничных BLOB-объектах).
 

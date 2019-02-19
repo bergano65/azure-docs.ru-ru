@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: be4549b8b9cca3f4aa48a21fb9377dbd203dde69
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 82e80b9dd4d20709fc8598e0fed3323046c21cfa
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751129"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56189418"
 ---
-# <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
+# <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство по Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
 
 Чтобы автоматизировать этапы создания и тестирования приложения, вы можете использовать конвейер непрерывной интеграции и развертывания (CI/CD). В этом учебнике мы создадим конвейер CI/CD на виртуальной машине Azure, включая следующие задачи:
 
@@ -59,7 +59,7 @@ write_files:
         "hosts": ["fd://","tcp://127.0.0.1:2375"]
       }
 runcmd:
-  - apt install default-jre -y
+  - apt install openjdk-8-jre-headless -y
   - wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
   - sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
   - apt-get update && apt-get install jenkins -y
@@ -109,6 +109,21 @@ az vm show --resource-group myResourceGroupJenkins --name myVM -d --query [publi
 ssh azureuser@<publicIps>
 ```
 
+С помощью команды `service` проверьте, запущен ли сервер Jenkins:
+
+```bash
+$ service jenkins status
+● jenkins.service - LSB: Start Jenkins at boot time
+   Loaded: loaded (/etc/init.d/jenkins; generated)
+   Active: active (exited) since Tue 2019-02-12 16:16:11 UTC; 55s ago
+     Docs: man:systemd-sysv-generator(8)
+    Tasks: 0 (limit: 4103)
+   CGroup: /system.slice/jenkins.service
+
+Feb 12 16:16:10 myVM systemd[1]: Starting LSB: Start Jenkins at boot time...
+...
+```
+
 Просмотрите `initialAdminPassword` для установки Jenkins и скопируйте его:
 
 ```bash
@@ -125,7 +140,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 - Выберите **Сохранить и завершить**.
 - Когда настройка Jenkins будет завершена, щелкните **Start using Jenkins** (Начать работу с Jenkins).
   - Если веб-браузере отображает пустую страницу при запуске Jenkins, перезапустите службу Jenkins. В сеансе SSH введите `sudo service jenkins restart`, а затем обновите веб-браузера.
-- Войдите в Jenkins, введя созданные имя пользователя и пароль.
+- При необходимости войдите в Jenkins, введя созданные имя пользователя и пароль.
 
 
 ## <a name="create-github-webhook"></a>Создание объекта webhook GitHub
@@ -133,11 +148,13 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 Создание объекта webhook в созданном разветвлении
 
-- Щелкните **Settings** (Параметры), а затем выберите **Integrations & services** (Интеграция и службы) слева.
-- Нажмите кнопку **Add service** (Добавить службу) и в поле фильтра введите *Jenkins*.
-- Выберите *Jenkins (GitHub plugin)* (подключаемый модуль GitHub Jenkins).
-- В поле **Jenkins hook URL** (URL-адрес перехватчика Jenkins) введите `http://<publicIps>:8080/github-webhook/`. Убедитесь, что адрес содержит завершающую косую черту (/).
-- Выберите **Add service** (Добавить службу).
+- Щелкните **Settings** (Параметры), а затем выберите **Webhooks** (Веб-перехватчики).
+- Нажмите кнопку **Add webhook** (Добавить веб-перехватчик) и в поле фильтра введите *Jenkins*.
+- В поле **URL-адреса полезных данных** введите `http://<publicIps>:8080/github-webhook/`. Убедитесь, что адрес содержит завершающую косую черту (/).
+- В поле **типа содержимого** выберите *application/x-www-form-urlencoded*.
+- Для параметра **Which events would you like to trigger this webhook?** (Какие события должен активировать этот веб-перехватчик?) выберите *Just the push event* (Только событие отправки).
+- Установите флажок **Active** (Активно).
+- Щелкните **Add webhook** (Добавить веб-перехватчик).
 
 ![Добавление объекта webhook GitHub в разветвление репозитория](media/tutorial-jenkins-github-docker-cicd/github_webhook.png)
 
@@ -166,7 +183,7 @@ response.end("Hello World!");
 
 Чтобы зафиксировать изменения, нажмите кнопку **Commit changes** (Зафиксировать изменения) внизу.
 
-В Jenkins запускается новая сборка в разделе **Build history** (Журнал сборок) в левом нижнем углу страницы задания. Щелкните ссылку с номером сборки и выберите **Console output** (Вывод консоли) слева. Вы можете просмотреть действия, выполняемые Jenkins по мере получения кода из GitHub и вывода действием сборки сообщения `Testing` на консоли. Каждый раз, когда в GitHub выполняется фиксация, веб-перехватчик достигает Jenkins и активирует новый процесс сборки.
+В Jenkins запускается новая сборка в разделе **Build history** (Журнал сборок) в левом нижнем углу страницы задания. Щелкните ссылку с номером сборки и выберите **Console output** (Вывод консоли) слева. Вы можете просмотреть действия, выполняемые Jenkins по мере получения кода из GitHub и вывода действием сборки сообщения `Test` на консоли. Каждый раз, когда в GitHub выполняется фиксация, веб-перехватчик достигает Jenkins и активирует новый процесс сборки.
 
 
 ## <a name="define-docker-build-image"></a>Определение образа сборки Docker

@@ -16,14 +16,15 @@ ms.topic: tutorial
 ms.date: 05/18/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0aa4b8fd606c45f2dea702140c34fc93bcd4c5a4
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 10fc55886e4c91a2d468704d13d3b206f4a9cf51
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885377"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55980260"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell
+
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
@@ -35,16 +36,17 @@ ms.locfileid: "54885377"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+[!INCLUDE [updated-for-az-vm.md](../../includes/updated-for-az-vm.md)]
+
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure. 
 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов следует создать до создания масштабируемого набора виртуальных машин. Создайте группу ресурсов с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). В примере создается группа ресурсов под названием *myResourceGroup* в регионе *EastUS*. 
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов следует создать до создания масштабируемого набора виртуальных машин. Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В примере создается группа ресурсов под названием *myResourceGroup* в регионе *EastUS*. 
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -ResourceGroupName "myResourceGroup" -Location "EastUS"
+New-AzResourceGroup -ResourceGroupName "myResourceGroup" -Location "EastUS"
 ```
 Имя группы ресурсов указывается при создании или изменении масштабируемого набора в этом руководстве.
 
@@ -56,10 +58,10 @@ New-AzureRmResourceGroup -ResourceGroupName "myResourceGroup" -Location "EastUS"
 $cred = Get-Credential
 ```
 
-Теперь создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzureRmVmss](/powershell/module/azurerm.compute/new-azurermvmss). Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985:
+Теперь создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss). Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985:
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -VMScaleSetName "myScaleSet" `
   -Location "EastUS" `
@@ -74,10 +76,10 @@ New-AzureRmVmss `
 
 
 ## <a name="view-the-vm-instances-in-a-scale-set"></a>Просмотр экземпляров виртуальных машин в масштабируемом наборе
-Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm), как показано ниже.
+Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm), как показано ниже.
 
 ```azurepowershell-interactive
-Get-AzureRmVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
+Get-AzVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
 ```
 
 В следующем примере выходных данных показано два экземпляра виртуальной машины в масштабируемом наборе.
@@ -89,24 +91,25 @@ MYRESOURCEGROUP   myScaleSet_0   eastus Standard_DS1_v2          0         Succe
 MYRESOURCEGROUP   myScaleSet_1   eastus Standard_DS1_v2          1         Succeeded
 ```
 
-Чтобы просмотреть дополнительные сведения о конкретном экземпляре виртуальной машины, добавьте параметр `-InstanceId` в командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm). Следующий пример возвращает сведения об экземпляре виртуальной машины *1*.
+Чтобы просмотреть дополнительные сведения о конкретном экземпляре виртуальной машины, добавьте параметр `-InstanceId` в командлет [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm). Следующий пример возвращает сведения об экземпляре виртуальной машины *1*.
 
 ```azurepowershell-interactive
-Get-AzureRmVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
+Get-AzVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
 ```
 
 
 ## <a name="list-connection-information"></a>Вывод списка со сведениями о подключении
 Общедоступный IP-адрес назначен подсистеме балансировки нагрузки, перенаправляющей трафик к отдельным экземплярам виртуальных машин. По умолчанию правила преобразования сетевых адресов (NAT) добавляются в подсистему балансировки нагрузки Azure для переадресации трафика удаленного подключения на каждую виртуальную машину на определенном порте. Чтобы подключиться к экземплярам виртуальных машин в масштабируемом наборе, необходимо создать удаленное подключение по назначенному общедоступному IP адресу и номеру порта.
 
-Чтобы получить список портов NAT для подключения к экземплярам виртуальных машин в масштабируемом наборе, сначала получите объект подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmLoadBalancer](/powershell/module/AzureRM.Network/Get-AzureRmLoadBalancer). Затем просмотрите правила преобразования сетевых адресов для входящих подключений с помощью командлета [Get-AzureRmLoadBalancerInboundNatRuleConfig](/powershell/module/AzureRM.Network/Get-AzureRmLoadBalancerInboundNatRuleConfig).
+Чтобы получить список портов NAT для подключения к экземплярам виртуальных машин в масштабируемом наборе, сначала получите объект подсистемы балансировки нагрузки с помощью командлета [Get-AzLoadBalancer](/powershell/module/az.network/Get-AzLoadBalancer). Затем просмотрите правила NAT для входящего трафика с помощью командлета [Get-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/Get-AzLoadBalancerInboundNatRuleConfig).
+
 
 ```azurepowershell-interactive
 # Get the load balancer object
-$lb = Get-AzureRmLoadBalancer -ResourceGroupName "myResourceGroup" -Name "myLoadBalancer"
+$lb = Get-AzLoadBalancer -ResourceGroupName "myResourceGroup" -Name "myLoadBalancer"
 
 # View the list of inbound NAT rules
-Get-AzureRmLoadBalancerInboundNatRuleConfig -LoadBalancer $lb | Select-Object Name,Protocol,FrontEndPort,BackEndPort
+Get-AzLoadBalancerInboundNatRuleConfig -LoadBalancer $lb | Select-Object Name,Protocol,FrontEndPort,BackEndPort
 ```
 
 В следующем примере выходных данных показано имя экземпляра, общедоступный IP-адрес подсистемы балансировки нагрузки и номер порта, в который правила преобразования сетевых адресов перенаправляют трафик.
@@ -120,12 +123,13 @@ myScaleSet3389.1 Tcp             50002        3389
 myScaleSet5985.1 Tcp             51002        5985
 ```
 
-Как показано с помощью предыдущей команды [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm), *имя* правила соответствует имени экземпляра виртуальной машины. Например, чтобы подключиться к экземпляру виртуальной машины *0*, используйте *myScaleSet3389.0* и подключитесь к порту *50001*. Для подключения к экземпляру виртуальной машины *1* используйте значение из *myScaleSet3389.1* и подключитесь к порту *50002*. Для осуществления удаленного подключения с помощью PowerShell подключитесь к правилу соответствующего экземпляра виртуальной машины по *TCP*-порту *5985*.
+Как показано в результатах выполнения предыдущего командлета [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm), *имя* правила выравнивается по имени экземпляра виртуальной машины. Например, чтобы подключиться к экземпляру виртуальной машины *0*, используйте *myScaleSet3389.0* и подключитесь к порту *50001*. Для подключения к экземпляру виртуальной машины *1* используйте значение из *myScaleSet3389.1* и подключитесь к порту *50002*. Для осуществления удаленного подключения с помощью PowerShell подключитесь к правилу соответствующего экземпляра виртуальной машины по *TCP*-порту *5985*.
 
-Получите сведения об общедоступном IP-адресе подсистемы балансировки нагрузки с помощью командлета [Get-AzureRmPublicIpAddress](/powershell/module/AzureRM.Network/Get-AzureRmPublicIpAddress).
+Получите сведения об общедоступном IP-адресе подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress).
+
 
 ```azurepowershell-interactive
-Get-AzureRmPublicIpAddress -ResourceGroupName "myResourceGroup" -Name "myPublicIPAddress" | Select IpAddress
+Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" -Name "myPublicIPAddress" | Select IpAddress
 ```
 
 Выходные данные примера:
@@ -146,16 +150,16 @@ mstsc /v 52.168.121.216:50001
 
 
 ## <a name="understand-vm-instance-images"></a>Описание образов экземпляра виртуальной машины
-Azure Marketplace содержит множество образов, которые можно использовать для создания экземпляров виртуальных машин. Для просмотра списка доступных издателей используйте командлет [Get-AzureRmVMImagePublisher](/powershell/module/azurerm.compute/get-azurermvmimagepublisher).
+Azure Marketplace содержит множество образов, которые можно использовать для создания экземпляров виртуальных машин. Для просмотра списка доступных издателей используйте командлет [Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher).
 
 ```azurepowershell-interactive
-Get-AzureRmVMImagePublisher -Location "EastUS"
+Get-AzVMImagePublisher -Location "EastUS"
 ```
 
-Для просмотра списка образов, доступных для данного издателя, воспользуйтесь командлетом [Get-AzureRmVMImageSku](/powershell/module/azurerm.compute/get-azurermvmimagesku). Кроме того, список образов можно отфильтровать по издателю или предложению с помощью аргумента `-PublisherName` или `–Offer` соответственно. В следующем примере список всех образов фильтруется по имени издателя *MicrosoftWindowsServer* и предложению *WindowsServer*.
+Для просмотра списка образов, доступных для данного издателя, воспользуйтесь командлетом [Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku). Кроме того, список образов можно отфильтровать по издателю или предложению с помощью аргумента `-PublisherName` или `–Offer` соответственно. В следующем примере список всех образов фильтруется по имени издателя *MicrosoftWindowsServer* и предложению *WindowsServer*.
 
 ```azurepowershell-interactive
-Get-AzureRmVMImageSku -Location "EastUS" -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer"
+Get-AzVMImageSku -Location "EastUS" -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer"
 ```
 
 В следующем примере выходных данных показаны все доступные образы Windows Server.
@@ -178,10 +182,10 @@ Skus                                  Offer         PublisherName          Locat
 2016-Nano-Server                      WindowsServer MicrosoftWindowsServer eastus
 ```
 
-При создании масштабируемого набора в начале руководства для экземпляров виртуальных машин использовался предлагаемый по умолчанию образ виртуальной машины *Windows Server 2016 DataCenter*. Вы можете указать другой образ виртуальной машины на основе выходных данных командлета [Get-AzureRmVMImageSku](/powershell/module/azurerm.compute/get-azurermvmimagesku). В следующем примере создается масштабируемый набор с использованием параметра `-ImageName` для указания образа виртуальной машины *MicrosoftWindowsServer:WindowsServer:2016-Datacenter-with-Containers:latest*. Так как создание и настройка всех ресурсов и экземпляров виртуальных машин масштабируемого набора занимает несколько минут, вам не нужно развертывать следующий масштабируемый набор.
+При создании масштабируемого набора в начале руководства для экземпляров виртуальных машин использовался предлагаемый по умолчанию образ виртуальной машины *Windows Server 2016 DataCenter*. Вы можете указать другой образ виртуальной машины на основе выходных данных командлета [Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku). В следующем примере создается масштабируемый набор с использованием параметра `-ImageName` для указания образа виртуальной машины *MicrosoftWindowsServer:WindowsServer:2016-Datacenter-with-Containers:latest*. Так как создание и настройка всех ресурсов и экземпляров виртуальных машин масштабируемого набора занимает несколько минут, вам не нужно развертывать следующий масштабируемый набор.
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup2" `
   -Location "EastUS" `
   -VMScaleSetName "myScaleSet2" `
@@ -211,10 +215,10 @@ New-AzureRmVmss `
 | [Высокопроизводительные](../virtual-machines/windows/sizes-hpc.md) | H, A8–A11          | Виртуальные машины с самыми мощными ЦП, для которых можно настроить сетевые интерфейсы с высокой пропускной способностью (RDMA). 
 
 ### <a name="find-available-vm-instance-sizes"></a>Поиск доступных размеров экземпляров виртуальной машины
-Чтобы просмотреть список доступных размеров экземпляров виртуальных машин в определенном регионе, используйте команду [Get-AzureRmVMSize](/powershell/module/azurerm.compute/get-azurermvmsize). 
+Чтобы просмотреть список доступных размеров экземпляров виртуальных машин в определенном регионе, используйте команду [Get-AzVMSize](/powershell/module/az.compute/get-azvmsize). 
 
 ```azurepowershell-interactive
-Get-AzureRmVMSize -Location "EastUS"
+Get-AzVMSize -Location "EastUS"
 ```
 
 Вывод команды будет примерно таким, как в следующем сокращенном примере, в котором показаны ресурсы, назначенные каждому размеру виртуальной машины:
@@ -235,10 +239,10 @@ Standard_NV6                       6      57344               24        1047552 
 Standard_NV12                     12     114688               48        1047552               696320
 ```
 
-При создании масштабируемого набора в начале этого руководства для экземпляров виртуальной машины был указан стандартный номер SKU виртуальной машины *Standard_DS1_v2*. Вы можете указать другой размер экземпляра виртуальной машины на основе выходных данных командлета [Get-AzureRmVMSize](/powershell/module/azurerm.compute/get-azurermvmsize). В указанном ниже примере будет создан масштабируемый набор с использованием параметра `-VmSize`, который позволяет указать размер экземпляра виртуальной машины *Standard_F1*. Так как создание и настройка всех ресурсов и экземпляров виртуальных машин масштабируемого набора занимает несколько минут, вам не нужно развертывать следующий масштабируемый набор.
+При создании масштабируемого набора в начале этого руководства для экземпляров виртуальной машины был указан стандартный номер SKU виртуальной машины *Standard_DS1_v2*. Вы можете указать другой размер экземпляра виртуальной машины на основе выходных данных командлета [Get-AzVMSize](/powershell/module/az.compute/get-azvmsize). В указанном ниже примере будет создан масштабируемый набор с использованием параметра `-VmSize`, который позволяет указать размер экземпляра виртуальной машины *Standard_F1*. Так как создание и настройка всех ресурсов и экземпляров виртуальных машин масштабируемого набора занимает несколько минут, вам не нужно развертывать следующий масштабируемый набор.
 
 ```azurepowershell-interactive
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup3" `
   -Location "EastUS" `
   -VMScaleSetName "myScaleSet3" `
@@ -255,21 +259,21 @@ New-AzureRmVmss `
 ## <a name="change-the-capacity-of-a-scale-set"></a>Изменение емкости масштабируемого набора
 При создании масштабируемого набора вы запросили два экземпляра виртуальных машин. Чтобы увеличить или уменьшить число экземпляров виртуальных машин в масштабируемом наборе, можно изменить его емкость вручную. Масштабируемый набор создает или удаляет необходимое количество экземпляров виртуальной машины, а затем настраивает подсистему балансировки нагрузки для распределения трафика.
 
-Сначала создайте объект масштабируемого набора с помощью командлета [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss), затем укажите новое значение `sku.capacity`. Чтобы применить изменение емкости, используйте командлет [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss). В следующем примере число экземпляров виртуальных машин в масштабируемом наборе определяется равным *3*:
+Сначала создайте объект масштабируемого набора с помощью командлета [Get-AzVmss](/powershell/module/az.compute/get-azvmss), затем укажите новое значение для `sku.capacity`. Чтобы применить изменение емкости, используйте командлет [Update-AzVmss](/powershell/module/az.compute/update-azvmss). В следующем примере число экземпляров виртуальных машин в масштабируемом наборе определяется равным *3*:
 
 ```azurepowershell-interactive
 # Get current scale set
-$vmss = Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
+$vmss = Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
 
 # Set and update the capacity of your scale set
 $vmss.sku.capacity = 3
-Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -VirtualMachineScaleSet $vmss 
+Update-AzVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -VirtualMachineScaleSet $vmss 
 ```
 
-На обновление емкости масштабируемого набора требуется несколько минут. Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, выполните командлет [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss).
+На обновление емкости масштабируемого набора требуется несколько минут. Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, выполните командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss).
 
 ```azurepowershell-interactive
-Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
+Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
 ```
 
 В следующем примере выходных данных показано, что емкость масштабируемого набора равна *3*.
@@ -286,26 +290,26 @@ Sku        :
 Теперь вы можете создать масштабируемый набор, вывести сведения о подключениях и подключиться к экземплярам виртуальных машин. Вы узнали, как использовать разные образы операционной системы для экземпляров виртуальных машин, выбирать разные размеры виртуальной машины и изменять количество экземпляров вручную. В рамках повседневных задач по управлению вам может понадобиться остановить, запустить или перезапустить экземпляры виртуальных машин в масштабируемом наборе.
 
 ### <a name="stop-and-deallocate-vm-instances-in-a-scale-set"></a>Остановка и освобождение экземпляров виртуальных машин в масштабируемом наборе
-Чтобы остановить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Stop-AzureRmVmss](/powershell/module/azurerm.compute/stop-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно остановить. Если не указать идентификатор экземпляра, останавливаются все виртуальные машины в масштабируемом наборе. Следующий пример останавливает экземпляр *1*.
+Чтобы остановить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Stop-AzVmss](/powershell/module/az.compute/stop-azvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно остановить. Если не указать идентификатор экземпляра, останавливаются все виртуальные машины в масштабируемом наборе. Следующий пример останавливает экземпляр *1*.
 
 ```azurepowershell-interactive
-Stop-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
+Stop-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
 ```
 
 По умолчанию остановленные виртуальные машины освобождаются, и за них не взимается плата за вычислительные операции. Если требуется, чтобы остановленная виртуальная машина осталась в подготовленном состоянии, добавьте параметр `-StayProvisioned` в предыдущую команду. За остановленные виртуальные машины, которые остаются в подготовленном состоянии, взимается плата за вычислительные операции по стандартной ставке.
 
 ### <a name="start-vm-instances-in-a-scale-set"></a>Запуск экземпляров виртуальных машин в масштабируемом наборе
-Чтобы запустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Start-AzureRmVmss](/powershell/module/azurerm.compute/start-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно запустить. Если не указать идентификатор экземпляра, запускаются все виртуальные машины в масштабируемом наборе. Следующий пример запускает экземпляр *1*.
+Чтобы запустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Start-AzVmss](/powershell/module/az.compute/start-azvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно запустить. Если не указать идентификатор экземпляра, запускаются все виртуальные машины в масштабируемом наборе. Следующий пример запускает экземпляр *1*.
 
 ```azurepowershell-interactive
-Start-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
+Start-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
 ```
 
 ### <a name="restart-vm-instances-in-a-scale-set"></a>Перезапуск экземпляров виртуальных машин в масштабируемом наборе
-Чтобы перезапустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Retart-AzureRmVmss](/powershell/module/azurerm.compute/restart-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно перезапустить. Если не указать идентификатор экземпляра, перезапускаются все виртуальные машины в масштабируемом наборе. Следующий пример перезапускает экземпляр *1*.
+Чтобы перезапустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Retart-AzVmss](/powershell/module/az.compute/restart-azvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно перезапустить. Если не указать идентификатор экземпляра, перезапускаются все виртуальные машины в масштабируемом наборе. Следующий пример перезапускает экземпляр *1*.
 
 ```azurepowershell-interactive
-Restart-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
+Restart-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "1"
 ```
 
 
@@ -313,7 +317,7 @@ Restart-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScal
 При удалении группы ресурсов будут также удалены все содержащиеся в ней ресурсы: экземпляры виртуальной машины, виртуальная сеть и диски. Параметр `-Force` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса. При использовании параметра `-AsJob` управление возвращается в командную строку без ожидания завершения операции.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
+Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 

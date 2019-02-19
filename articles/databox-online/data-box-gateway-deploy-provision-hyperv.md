@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 09/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 3187c516ef22a97d2af89e08d5b99ad7a00d875d
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: cf47919ead890f0ad0e89646dde26276ebfb1127
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166463"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56109747"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-hyper-v-preview"></a>Руководство. Подготовка к работе Шлюза Azure Data Box в Hyper-V (предварительная версия)
 
@@ -66,7 +66,7 @@ ms.locfileid: "49166463"
 
 Перед началом работы
 
-- Изучите сетевые требования к развертыванию шлюза Data Box и настройте сеть центра обработки данных в соответствии с требованиями. Дополнительные сведения см. в разделе [Azure Data Box Gateway system requirements (Preview)](data-box-gateway-system-requirements.md#networking-requirements) (Системные требования Шлюза Azure Data Box (предварительная версия)).
+- Изучите сетевые требования к развертыванию шлюза Data Box и настройте сеть центра обработки данных в соответствии с требованиями. Дополнительные сведения см. в разделе [Azure Data Box Gateway system requirements (Preview)](data-box-gateway-system-requirements.md#networking-port-requirements) (Системные требования Шлюза Azure Data Box (предварительная версия)).
 - Убедитесь, что минимальная пропускная способность интернет-канала, необходимая для оптимальной работы устройства, составляет 20 Мбит/с.
 
 

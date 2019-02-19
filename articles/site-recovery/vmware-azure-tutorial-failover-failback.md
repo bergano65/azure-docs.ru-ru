@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: e3687ac5941d4f4fda70f96fa9df1ec1904e102e
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 783f8006ba19622761beef0ff931bcbb80edde46
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822482"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56115901"
 ---
 # <a name="fail-over-and-fail-back-vmware-vms-and-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "55822482"
 > [!IMPORTANT]
 > При наличии подключения через VPN между локальной средой и Azure необходимо настроить виртуальную машину Azure в качестве сервера обработки для восстановления защиты и размещения. Чтобы настроить сервер обработки в Azure, следуйте инструкциям в [этой статье](vmware-azure-set-up-process-server-azure.md).
 
-Дополнительные сведения о восстановлении защиты и размещения см. в этом [разделе](vmware-azure-reprotect.md##before-you-begin). 
+Дополнительные сведения о восстановлении защиты и размещения см. в [этом разделе](vmware-azure-reprotect.md##before-you-begin). 
 
 ### <a name="configure-the-master-target-server"></a>Настройка главного целевого сервера
 

@@ -6,35 +6,35 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: c648522e689c64de8e7e09b85ca3b6eb26b6945b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 759adf95604e66209cf3ec5083246d16e952114a
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477205"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884194"
 ---
-# <a name="provision-throughput-on-an-azure-cosmos-database"></a>Подготовка пропускной способности для базы данных Azure Cosmos
+# <a name="provision-throughput-for-a-database-in-azure-cosmos-db"></a>Подготовка пропускной способности для базы данных в Azure Cosmos DB
 
-В этой статье объясняется, как подготовить пропускную способность для базы данных в Azure Cosmos DB. Вы можете подготовить пропускную способность для [одного](how-to-provision-container-throughput.md) контейнера или для базы данных и разделить ее между контейнерами внутри базы данных. Вы можете подготовить пропускную способность уровня базы данных с помощью портала Azure или пакетов SDK Cosmos DB.
+В этой статье объясняется, как подготовить пропускную способность для базы данных в Azure Cosmos DB. Вы можете подготовить пропускную способность для [одного](how-to-provision-container-throughput.md) контейнера или для базы данных и разделить ее между контейнерами внутри базы данных. Вы можете подготовить пропускную способность уровня базы данных с помощью портала Azure или пакетов SDK для Azure Cosmos DB.
 
-## <a name="provision-throughput-using-azure-portal"></a>Подготовка пропускной способности с помощью портала Azure
+## <a name="provision-throughput-by-using-azure-portal"></a>Подготовка пропускной способности с помощью портала Azure
 
 ### <a id="portal-sql"></a>API SQL (Core)
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. [Создайте новую учетную запись Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
+1. [Создайте новую учетную запись Azure Cosmos DB](create-sql-api-dotnet.md#create-a-database-account) или выберите имеющуюся.
 
-1. Откройте панель **обозревателя данных** и выберите **Новая база данных**. Далее заполните форму следующими данными:
+1. Откройте панель **обозревателя данных** и выберите **Новая база данных**. Укажите следующие сведения:
 
    * Введите идентификатор базы данных. 
-   * Выберите "Подготовить пропускную способность".
-   * Введите пропускную способность, например 1000 ЕЗ.
+   * Выберите **Подготовить пропускную способность**.
+   * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![Подготовка пропускной способности базы данных с помощью API SQL](./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png)
+![Снимок экрана: диалоговое окно "Новая база данных"](./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png)
 
-## <a name="provision-throughput-using-net-sdk"></a>Подготовка пропускной способности с помощью пакета SDK для .NET
+## <a name="provision-throughput-by-using-net-sdk"></a>Подготовка пропускной способности с помощью пакета SDK для .NET
 
 > [!Note]
 > Используйте API SQL, чтобы подготовить пропускную способность для всех интерфейсов API. При необходимости также можно использовать указанный ниже пример для API Cassandra.
@@ -63,7 +63,7 @@ session.Execute(CREATE KEYSPACE IF NOT EXISTS myKeySpace WITH cosmosdb_provision
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы узнать о подготовке пропускной способности в Cosmos DB, обратитесь к следующим статьям:
+Чтобы узнать о подготовке пропускной способности в Azure Cosmos DB, ознакомьтесь со следующими статьями:
 
 * [Provision throughput for an Azure Cosmos DB container](how-to-provision-container-throughput.md) (Подготовка пропускной способности для контейнера Azure Cosmos DB)
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)
