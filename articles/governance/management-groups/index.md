@@ -1,6 +1,6 @@
 ---
-title: Упорядочение ресурсов с помощью групп управления Azure
-description: Дополнительные сведения о группах управления и способах их использования.
+title: Упорядочивание ресурсов с помощью групп управления Azure — Azure Governance
+description: Сведения о группах управления и способах их использования, а также о том, как работают разрешения.
 author: rthorn17
 manager: rithorn
 ms.assetid: 482191ac-147e-4eb6-9655-c40c13846672
@@ -11,12 +11,12 @@ ms.workload: na
 ms.date: 11/20/2018
 ms.author: rithorn
 ms.topic: overview
-ms.openlocfilehash: ea34296e170d18a1d5636c50e7cae316b1d97948
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 9d606a46bd08ce3e999806bed2357968e5ffd914
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584612"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339293"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочение ресурсов с помощью групп управления Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "52584612"
 
 В следующей таблице приводится список ролей и доступных действий в группах управления.
 
-| Роль RBAC             | Создание | Переименование | Move | Delete | Назначение доступа | Назначение политики | чтение  |
+| Роль RBAC             | Создание | Rename (Переименовать) | Move (Переместить) | Delete (Удалить) | Назначение доступа | Назначение политики | чтение  |
 |:-------------------------- |:------:|:------:|:----:|:------:|:-------------:| :------------:|:-----:|
 |Владелец.                       | X      | X      | X    | X      | X             | X             | X     |
 |участник;                 | X      | X      | X    | X      |               |               | X     |
@@ -105,7 +105,7 @@ ms.locfileid: "52584612"
 |Участник политики ресурсов |        |        |      |        |               | X             |       |
 |Администратор доступа пользователей   |        |        |      |        | X             |               |       |
 
-*Роли участника и читателя группы управления позволяют выполнять указанные выше действия только в области действия группы управления.  
+* Роли участника и читателя группы управления позволяют выполнять указанные выше действия только в области действия группы управления.  
 
 ### <a name="custom-rbac-role-definition-and-assignment"></a>Пользовательское определение и назначение роли RBAC
 
@@ -116,9 +116,9 @@ ms.locfileid: "52584612"
 Для отслеживания групп управления с помощью этого API, используйте [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs). Сейчас для отслеживания действий группы управления нельзя использовать PowerShell, интерфейс командной строки или портал Azure.
 
 1. В качестве администратора клиента Azure AD [повысьте права доступа](../../role-based-access-control/elevate-access-global-admin.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`.
-1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий группы управления. Вам нужно будет выполнить фильтрацию с использованием **Microsoft.Management** поставщикам ресурсов для всех действий группы управления.  Пример:
+1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий группы управления. Вам нужно будет выполнить фильтрацию с использованием **Microsoft.Management** по поставщикам ресурсов для всех действий группы управления.  Пример:
 
-```
+```http
 GET "/providers/Microsoft.Insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '{greaterThanTimeStamp}' and eventTimestamp le '{lessThanTimestamp}' and eventChannels eq 'Operation' and resourceProvider eq 'Microsoft.Management'"
 ```
 

@@ -59,7 +59,11 @@ items:
 - name: Практические руководства
   items:
   - name: Управление рабочими областями
-    href: how-to-manage-workspace.md
+    items:
+    - name: Использование портала для управления рабочими областями
+      href: how-to-manage-workspace.md
+    - name: Использование шаблона Resource Manager
+      href: how-to-create-workspace-template.md
   - name: Настройка среды разработки 
     items:
     - name: Настройка сред разработки
@@ -119,8 +123,6 @@ items:
       href: how-to-deploy-fpga-web-service.md
     - name: Устранение неполадок
       href: how-to-troubleshoot-deployment.md
-    - name: Защита веб-служб с помощью SSL
-      href: how-to-secure-web-service.md
   - name: Использование веб-служб
     items:
     - name: Использование в режиме реального времени
@@ -136,25 +138,27 @@ items:
       href: how-to-enable-data-collection.md
     - name: Мониторинг с помощью Application Insights
       href: how-to-enable-app-insights.md
+  - name: Безопасность
+    items:
+    - name: Использование виртуальных сетей
+      displayName: vnet
+      href: how-to-enable-virtual-network.md
+    - name: Защита веб-служб с помощью SSL
+      href: how-to-secure-web-service.md
   - name: Создание первого конвейера
     href: how-to-create-your-first-pipeline.md
+  - name: Включение ведения журналов
+    displayName: logging
+    href: how-to-enable-logging.md
   - name: Управление квотами ресурсов
     displayName: limits
     href: how-to-manage-quotas.md
-  - name: Обеспечение безопасности при использовании виртуальных сетей
-    displayName: vnet
-    href: how-to-enable-virtual-network.md
   - name: Использование интерфейса командной строки службы "Машинное обучение"
     displayName: cli extension command line command-line az ci/cd automate automated
     href: reference-azure-machine-learning-cli.md
   - name: Экспорт и удаление данных
     displayName: gdpr
     href: how-to-export-delete-data.md
-  - name: Использование шаблона Resource Manager
-    href: how-to-create-workspace-template.md
-  - name: Включение ведения журналов
-    displayName: logging
-    href: how-to-enable-logging.md
 - name: Справочные материалы
   items:
   - name: Пакет SDK для Машинного обучения
@@ -166,8 +170,6 @@ items:
   - name: Пакет SDK для мониторинга
     displayName: api package python monitor
     href: https://aka.ms/aml-monitoring-sdk
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.machinelearningservices/allversions
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -183,9 +185,9 @@ items:
     href: support-for-aml-services.md
   - name: Сравнить наши продукты Машинного обучения
     href: overview-more-machine-learning.md
-ms.openlocfilehash: eb803b44bbe72b80f4414a4de66bce519591dea7
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 041a4b0f3ebecdaedb041ceb25f426a6e1825292
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268827"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338099"

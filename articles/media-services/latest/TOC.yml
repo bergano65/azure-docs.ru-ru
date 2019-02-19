@@ -15,12 +15,15 @@ items:
 - name: Учебники
   items:
   - name: Кодирование удаленных файлов и потокового видео — REST
+    displayName: encoding, job, transform
     href: stream-files-tutorial-with-rest.md
   - name: Кодирование отправленных файлов и потокового видео — .NET
+    displayName: encode, encoding, job, transform
     href: stream-files-tutorial-with-api.md
   - name: Потоковая передача в реальном времени — .NET
     href: stream-live-tutorial-with-api.md
   - name: Анализ видео — .NET
+    displayName: job, transform
     href: analyze-videos-tutorial-with-api.md
   expanded: true
 - name: Примеры
@@ -31,32 +34,54 @@ items:
     href: cli-samples.md
 - name: Основные понятия
   items:
-  - name: Прием
+  - name: Передача в облако и хранение
+    href: storage-account-concept.md
     items:
     - name: Активы
       href: assets-concept.md
   - name: Кодирование
-    href: encoding-concept.md
     items:
+    - name: Обзор
+      displayName: Presets
+      href: encoding-concept.md
     - name: Преобразования и задания
       href: transforms-jobs-concept.md
     - name: Форматы Media Encoder Standard
       href: media-encoder-standard-formats.md
     - name: Автоматическое создание схемы передачи с переменной скоростью
       href: autogen-bitrate-ladder.md
-  - name: Анализ
-    href: analyzing-video-audio-files-concept.md
+  - name: Аналитика мультимедиа
     items:
+    - name: Обзор
+      displayName: Presets
+      href: analyzing-video-audio-files-concept.md
     - name: Преобразования и задания
       href: transforms-jobs-concept.md
-  - name: Поток
+  - name: Упаковка, доставка и защита
     items:
+    - name: Упаковка
+      items:
+      - name: Динамическая упаковка
+        href: dynamic-packaging-overview.md
+      - name: Фильтры
+        href: filters-concept.md
+      - name: Динамические манифесты
+        href: filters-dynamic-manifest-overview.md
+    - name: Защита содержимого
+      href: content-protection-overview.md
+      items:
+      - name: Система с несколькими DRM и управлением доступом
+        href: design-multi-drm-system-with-access-control.md
     - name: Конечные точки потоковой передачи
+      displayName: Origins
       href: streaming-endpoint-concept.md
     - name: Указатели потоковой передачи
+      displayName: URLs
       href: streaming-locators-concept.md
     - name: Политики потоковой передачи
       href: streaming-policy-concept.md
+    - name: Политики ключа содержимого
+      href: content-key-policy-concept.md
   - name: Потоковая передача в реальном времени
     href: live-streaming-overview.md
     items:
@@ -72,36 +97,19 @@ items:
       href: live-event-states-billing.md
     - name: Latency
       href: live-event-latency.md
-  - name: Доставка
-    items:
-    - name: Фильтры и динамические манифесты
-      href: filters-dynamic-manifest-overview.md
   - name: Мониторинг
     items:
-    - name: Сетка событий Azure
+    - name: События в Сетке событий
       href: reacting-to-media-services-events.md
-  - name: Защита
-    href: content-protection-overview.md
+  - name: Клиенты в Проигрывателе
     items:
-    - name: Политики ключа содержимого
-      href: content-key-policy-concept.md
-    - name: Политики потоковой передачи
-      href: streaming-policy-concept.md
-    - name: Указатели потоковой передачи
-      href: streaming-locators-concept.md
-    - name: Система с несколькими DRM и управлением доступом
-      href: design-multi-drm-system-with-access-control.md
-  - name: Воспроизведение
-    href: use-azure-media-player.md
-  - name: учетные записи;
+    - name: Проигрыватель мультимедиа Azure
+      href: use-azure-media-player.md
+  - name: Сущности в Службах мультимедиа
     items:
-    - name: Квоты и ограничения
-      href: limits-quotas-constraints.md
-    - name: учетные записи хранения;
-      href: storage-account-concept.md
-  - name: Фильтры, порядок, сущности страниц
-    href: entities-overview.md
-  - name: Миграция из версии 2 в версию 3
+    - name: Сортировка, фильтрация и постраничный просмотр сущностей
+      href: entities-overview.md
+  - name: Руководство по миграции из версии 2 в версию 3
     href: migrate-from-v2-to-v3.md
 - name: Практические руководства
   items:
@@ -113,19 +121,34 @@ items:
       href: access-api-cli-how-to.md
     - name: 'Масштабирование зарезервированных единиц мультимедиа: CLI'
       href: media-reserved-units-cli-how-to.md
-  - name: Настройка Postman
-    href: media-rest-apis-with-postman.md
+    - name: Начало разработки
+      href: developers-guide.md
+    - name: Настройка Postman
+      href: media-rest-apis-with-postman.md
   - name: Передача содержимого
     items:
-    - name: HTTP(s) — .NET
+    - name: HTTPS — .NET
+      displayName: upload
       href: job-input-from-http-how-to.md
     - name: Локальный файл — .NET
+      displayName: upload
       href: job-input-from-local-file-how-to.md
     - name: Локальный файл — REST
+      displayName: upload
       href: upload-files-rest-how-to.md
   - name: Кодирование контента
     items:
-    - name: Настройка предустановок преобразования — .NET
+    - name: URL-адрес HTTPS в качестве входных данных для задания — .NET
+      displayName: encode, encoding
+      href: job-input-from-http-how-to.md
+    - name: Локальный файл в качестве входных данных для задания — .NET
+      displayName: encode, encoding
+      href: job-input-from-local-file-how-to.md
+    - name: Локальный файл в качестве входных данных для задания — REST
+      displayName: encode
+      href: upload-files-rest-how-to.md
+    - name: Использование пользовательского преобразования — .NET
+      displayName: encode, encoding, tranform
       href: customize-encoder-presets-how-to.md
   - name: Использование Сетки событий
     items:
@@ -215,13 +238,15 @@ items:
     href: https://github.com/Azure/Azure-Media-Services-Explorer
   - name: Заметки о выпуске
     href: release-notes.md
+  - name: Квоты и ограничения
+    href: limits-quotas-constraints.md
   - name: Часто задаваемые вопросы
     href: frequently-asked-questions.md
   - name: Облака и регионы Azure
     href: azure-clouds-regions.md
-ms.openlocfilehash: 0ca98ea27a77418ee5a111a67bd013ab6ad40e55
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: 05b20d905a5848cfcfd0f9c6d20e4addb5c776fc
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330024"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340439"

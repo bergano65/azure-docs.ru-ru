@@ -1,5 +1,5 @@
 items:
-- name: Документация по управлению доступом на основе ролей
+- name: Документация по RBAC для ресурсов в Azure
   href: index.yml
 - name: Обзор
   items:
@@ -9,15 +9,15 @@ items:
     href: rbac-and-directory-admin-roles.md
 - name: Быстрое начало работы
   items:
-  - name: Просмотр ролей пользователя
+  - name: Просмотр разрешений на доступ пользователя
     href: check-access.md
 - name: Учебники
   items:
-  - name: Предоставление доступа пользователям с помощью портала
+  - name: Предоставление доступа пользователю — портал
     href: quickstart-assign-role-user-portal.md
-  - name: Предоставление доступа пользователям с помощью PowerShell
+  - name: Предоставление доступа пользователю — PowerShell
     href: tutorial-role-assignments-user-powershell.md
-  - name: Предоставление доступа группе с помощью PowerShell
+  - name: Предоставление доступа группе — PowerShell
     href: tutorial-role-assignments-group-powershell.md
   - name: Создание настраиваемой роли с помощью PowerShell
     href: tutorial-custom-role-powershell.md
@@ -29,7 +29,7 @@ items:
     href: role-definitions.md
   - name: Описание запретов назначений
     href: deny-assignments.md
-  - name: Управление привилегированными пользователями (PIM) для RBAC
+  - name: PIM для ресурсов Azure
     href: pim-azure-resource.md
   - name: Условный доступ для управления Azure
     href: conditional-access-azure-management.md
@@ -96,9 +96,9 @@ items:
   items:
   - name: Развитие навыков с помощью Microsoft Learn
     href: /learn/browse/?products=azure-active-directory
-ms.openlocfilehash: 46ff0e024e2c7dc466120054b4a8e69fa47c14cd
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.openlocfilehash: 20500ad90e710b2c0e4359832a24a352c14ea0b2
+ms.sourcegitcommit: 4bf542eeb2dcdf60dcdccb331e0a336a39ce7ab3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56099213"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56408771"
