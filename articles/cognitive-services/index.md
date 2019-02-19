@@ -7,14 +7,14 @@ author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.author: nitinme
-ms.date: 10/23/2018
+ms.date: 02/15/2019
 ms.topic: hub-page
-ms.openlocfilehash: ceb5bb59f65e0f01d04d1aa9726b2494384b4a67
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 12957121d386afdc911bb0be954c0066d580e83e
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998959"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338042"
 ---
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
@@ -133,7 +133,7 @@ ms.locfileid: "55998959"
                         <p><a href="/azure/cognitive-services/Computer-vision/quickstarts-sdk/csharp-analyze-sdk">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/bing-visual-search/quickstarts/java">С использованием Java</a></p>
                         <p><a href="/azure/cognitive-services/Computer-vision/Quickstarts/node-analyze">Использование Node.js</a></p>
-                        <p><a href="/azure/cognitive-services/Computer-vision/Quickstarts/python-analyze">Использование Python</a></p>
+                        <p><a href="/azure/cognitive-services/Computer-vision/quickstarts-sdk/python-sdk#analyze-an-image">Использование Python</a></p>
                     </div>
                 </div>
             </div>
@@ -301,7 +301,6 @@ ms.locfileid: "55998959"
                         <p><a href="/azure/cognitive-services/Custom-Vision-Service/"><span>Пользовательская служба визуального распознавания&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/face/">API распознавания лиц</a></p>
                         <p><a href="/azure/cognitive-services/video-indexer/video-indexer-overview">Индексатор видео</a></p>
-                        <p><a href="/azure/cognitive-services/emotion/home"><span>API распознавания эмоций&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                     </div>
                 </div>
             </div>

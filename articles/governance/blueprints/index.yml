@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ab56a5b1634d11d21597dbfdba8bc7a8d6f9b18b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7d0947450352907eb90af748e8ced4a8bea67471
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957852"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337891"
 documentType: LandingData
 title: Документация по Azure Blueprint
 metadata:
@@ -15,10 +15,10 @@ metadata:
   manager: carmonm
   ms.service: blueprints
   ms.topic: landing-page
-  ms.date: 09/18/2018
+  ms.date: 10/30/2018
   ms.author: dacoulte
 abstract:
-  description: Служба Azure Blueprint позволяет управлять ИТ-задачами и предотвращать проблемы с помощью определений политик, которые применяют правила и действия к ресурсам. Использование службы "Политика Azure" обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания. Узнайте, как создавать и назначать определения политик и управлять ими, используя наши краткие инструкции, примеры и руководства.
+  description: Azure Blueprint позволяет развертывать и обновлять воспроизводимые облачные среды с помощью составных артефактов, таких как политики, управление доступом на основе ролей и шаблоны Azure Resource Manager.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
@@ -28,10 +28,20 @@ sections:
     style: icon48
     items:
     - image:
+        alt: Портал Azure
         src: ./media/portal.svg
       text: Портал Azure
       href: create-blueprint-portal.md
     - image:
+        alt: REST API
         src: ./media/rest.svg
       text: REST API
       href: create-blueprint-rest-api.md
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: REST API
+      html: <p><a href="/rest/api/blueprints/">Схемы</a></p>

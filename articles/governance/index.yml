@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d99fcc9a8bb69926da7538edc06ae2b7533c86be
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 985f620caaa329b48b00d6ce586e7dcefbf5869d
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55507432"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341239"
 documentType: LandingData
 title: Управление Azure. Система управления
 metadata:
@@ -39,21 +39,25 @@ sections:
     - href: ./management-groups/overview
       html: <p>Узнайте о группировании и организации подписок в логическую иерархию с поддержкой структурированного развертывания других служб управления.<br /></p>
       image:
+        alt: Группы управления
         src: ./media/management-groups-illustration.svg
       title: Группы управления
     - href: ./resource-graph/
       html: <p>Используйте мощное средство командной строки (поддерживает Azure CLI и Azure PowerShell) для быстрого получения комплексных сведений о ресурсах Azure. Находите и предоставляйте сведения, для получения которых раньше требовались сложные итеративные скрипты, чтобы определять эти ресурсы по мере необходимости.</p>
       image:
+        alt: Resource Graph
         src: ./media/resource-graph-illustration.svg
       title: Resource Graph
     - href: ./policy/
       html: <p>Определяйте и применяйте стандарты к ресурсам в вашей среде. Предотвращайте создание нежелательных ресурсов, улучшайте новые ресурсы с помощью дополнительных элементов, а также выполняйте аудит и оптимизируйте ресурсы в своей среде.</p>
       image:
+        alt: Политика
         src: ./media/policy-illustration.svg
       title: Политика
     - href: ./blueprints/
       html: <p>Создайте собственный пакет <i>артефактов</i> Azure (группы ресурсов, политики, назначения ролей, шаблоны Resource Manager и многое другое), которые можно динамически развертывать в подписках для создания согласованных и воспроизводимых сред.</p>
       image:
+        alt: Схемы
         src: ./media/blueprints-illustration.svg
       title: Схемы
 - title: Варианты реализации решения
