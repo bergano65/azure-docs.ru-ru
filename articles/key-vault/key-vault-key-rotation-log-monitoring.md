@@ -1,29 +1,30 @@
 ---
-title: Настройка полной смены ключей и аудита в хранилище ключей Azure | Документация Майкрософт
+title: Настройка полной смены ключей и аудита в хранилище ключей Azure — Azure Key Vault | Документация Майкрософт
 description: Узнайте, как настроить смену ключей и отслеживание журналов хранилища ключей.
 services: key-vault
 documentationcenter: ''
 author: barclayn
-manager: mbaldwin
+manager: barbkess
 tags: ''
 ms.assetid: 9cd7e15e-23b8-41c0-a10a-06e6207ed157
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/12/2018
+ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: bf3aba431e7b417b2213bc3410fd7722d7888d15
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: deb50a71b179c3cb03d5da22e336c42b26fe0bfa
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44302023"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106126"
 ---
 # <a name="set-up-azure-key-vault-with-key-rotation-and-auditing"></a>Настройка смены ключей и аудита в Azure Key Vault
 
 ## <a name="introduction"></a>Введение
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Получив хранилище ключей, вы можете использовать его для хранения ключей и секретов. В приложениях больше не нужно сохранять ключи и секреты. При необходимости их можно получить из хранилища. Это позволяет обновлять и администрировать ключи и секреты, не оказывая влияние на поведение приложения.
 
@@ -37,7 +38,7 @@ ms.locfileid: "44302023"
 - В этой статье показано, как выполнять мониторинг журналов аудита для хранилища ключей и настройку оповещений о непредвиденных запросах.
 
 > [!NOTE]
-> В этом руководстве не рассматривается первоначальная настройка хранилища ключей. Соответствующие сведения см. в статье [Приступая к работе с хранилищем ключей Azure](key-vault-get-started.md). Инструкции по кроссплатформенному интерфейсу командной строки см. в статье [Управление хранилищем ключей с помощью CLI](key-vault-manage-with-cli2.md).
+> В этом руководстве не рассматривается первоначальная настройка хранилища ключей. Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](key-vault-overview.md) Инструкции по кроссплатформенному интерфейсу командной строки см. в статье [Управление хранилищем ключей с помощью CLI](key-vault-manage-with-cli2.md).
 >
 >
 
@@ -46,7 +47,7 @@ ms.locfileid: "44302023"
 Чтобы приложение могло получить секрет из хранилища ключей, секрет нужно создать и передать в хранилище. Для этого запустите сеанс Azure PowerShell и войдите в учетную запись Azure, используя следующую команду:
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 Во всплывающем окне браузера введите имя пользователя и пароль учетной записи Azure. PowerShell получит все подписки, связанные с этой учетной записью. По умолчанию PowerShell будет использовать первую из них.
@@ -54,19 +55,19 @@ Connect-AzureRmAccount
 Если у вас есть несколько подписок, вы можете указать ту, с помощью которой вы создали хранилище ключей Azure. Чтобы просмотреть подписки для своей учетной записи, введите следующую команду:
 
 ```powershell
-Get-AzureRmSubscription
+Get-AzSubscription
 ```
 
 Затем укажите подписку, связанную с хранилищем ключей, данные которого будут регистрироваться. Для этого выполните следующую команду:
 
 ```powershell
-Set-AzureRmContext -SubscriptionId <subscriptionID>
+Set-AzContext -SubscriptionId <subscriptionID>
 ```
 
 Так как в этой статье в качестве секрета используется ключ учетной записи хранения, вам необходимо получить его.
 
 ```powershell
-Get-AzureRmStorageAccountKey -ResourceGroupName <resourceGroupName> -Name <storageAccountName>
+Get-AzStorageAccountKey -ResourceGroupName <resourceGroupName> -Name <storageAccountName>
 ```
 
 Преобразуйте полученный секрет (ключ учетной записи хранения) в защищенную строку, а затем создайте секрет с этим значением в хранилище ключей.
@@ -74,13 +75,13 @@ Get-AzureRmStorageAccountKey -ResourceGroupName <resourceGroupName> -Name <stora
 ```powershell
 $secretvalue = ConvertTo-SecureString <storageAccountKey> -AsPlainText -Force
 
-Set-AzureKeyVaultSecret -VaultName <vaultName> -Name <secretName> -SecretValue $secretvalue
+Set-AzKeyVaultSecret -VaultName <vaultName> -Name <secretName> -SecretValue $secretvalue
 ```
 
 После этого получите URI секрета, который вы создали. Это значение в дальнейшем позволит получить секрет из хранилища ключей. Выполните следующую команду PowerShell и запишите значение идентификатора, которое используется в качестве URI секрета.
 
 ```powershell
-Get-AzureKeyVaultSecret –VaultName <vaultName>
+Get-AzKeyVaultSecret –VaultName <vaultName>
 ```
 
 ## <a name="set-up-the-application"></a>Настройка приложения
@@ -111,7 +112,7 @@ Get-AzureKeyVaultSecret –VaultName <vaultName>
 Прежде чем отправлять вызовы из приложения в хранилище ключей, необходимо предоставить сведения о приложении и его разрешениях. Выполните следующую команду, указав имя хранилища и идентификатор приложения для приложения Azure Active Directory, чтобы предоставить приложению разрешение на получение данных (**Get**) из хранилища ключей.
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName <vaultName> -ServicePrincipalName <clientIDfromAzureAD> -PermissionsToSecrets Get
+Set-AzKeyVaultAccessPolicy -VaultName <vaultName> -ServicePrincipalName <clientIDfromAzureAD> -PermissionsToSecrets Get
 ```
 
 Теперь можно создавать код для вызовов из приложения. Установите в приложении пакеты NuGet, необходимые для взаимодействия с хранилищем ключей Azure и Azure Active Directory. Для этого введите приведенные ниже команды в консоли диспетчера пакетов Visual Studio. На момент написания этой статьи версия самого свежего пакета Active Directory — 3.10.305231913. Узнайте последнюю версию пакета и при необходимости выполните соответствующие обновления.
@@ -189,7 +190,7 @@ var sec = kv.GetSecretAsync(<SecretID>).Result.Value;
 Когда вы получите идентификатор приложения для подключения к службе автоматизации Azure, предоставьте приложению право обновлять секреты в хранилище ключей. Для этого нужно выполнить следующую команду PowerShell.
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName <vaultName> -ServicePrincipalName <applicationIDfromAzureAutomation> -PermissionsToSecrets Set
+Set-AzKeyVaultAccessPolicy -VaultName <vaultName> -ServicePrincipalName <applicationIDfromAzureAutomation> -PermissionsToSecrets Set
 ```
 
 В экземпляре службы автоматизации Azure выберите пункт **Модули Runbook**, а затем — **Добавить Runbook**. Выберите **Быстрое создание**. Введите имя модуля Runbook и выберите значение **PowerShell** в качестве типа модуля Runbook. Вы можете также добавить описание (необязательно). Наконец, нажмите кнопку **Создать**.
@@ -206,7 +207,7 @@ try
     $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
 
     "Logging in to Azure..."
-    Connect-AzureRmAccount `
+    Connect-AzAccount `
         -ServicePrincipal `
         -TenantId $servicePrincipalConnection.TenantId `
         -ApplicationId $servicePrincipalConnection.ApplicationId `
@@ -231,12 +232,12 @@ $VaultName = <keyVaultName>
 $SecretName = <keyVaultSecretName>
 
 #Key name. For example key1 or key2 for the storage account
-New-AzureRmStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName -KeyName "key2" -Verbose
-$SAKeys = Get-AzureRmStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName
+New-AzStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName -KeyName "key2" -Verbose
+$SAKeys = Get-AzStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName
 
 $secretvalue = ConvertTo-SecureString $SAKeys[1].Value -AsPlainText -Force
 
-$secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretvalue
+$secret = Set-AzKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretvalue
 ```
 
 В области редактора выберите **Область тестирования**, чтобы выполнить тестирование сценария. Когда скрипт будет работать без ошибок, выберите параметр **Публикация** и на панели конфигурации для модуля Runbook настройте его расписание.
@@ -247,9 +248,9 @@ $secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName -Secre
 Сначала нужно включить ведение журнала в хранилище ключей. Это можно сделать с помощью следующих команд PowerShell (процесс описан в статье [Ведение журнала хранилища ключей Azure](key-vault-logging.md)).
 
 ```powershell
-$sa = New-AzureRmStorageAccount -ResourceGroupName <resourceGroupName> -Name <storageAccountName> -Type Standard\_LRS -Location 'East US'
-$kv = Get-AzureRmKeyVault -VaultName '<vaultName>'
-Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories AuditEvent
+$sa = New-AzStorageAccount -ResourceGroupName <resourceGroupName> -Name <storageAccountName> -Type Standard\_LRS -Location 'East US'
+$kv = Get-AzKeyVault -VaultName '<vaultName>'
+Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent
 ```
 
 Включенные журналы аудита начнут сбор данных в назначенную учетную запись хранения. В этих журналах содержатся сведения о том, кто, как и когда осуществлял доступ к хранилищам ключей.
@@ -414,7 +415,7 @@ static string GetContainerSasUri(CloudBlockBlob blob)
 
 Когда вы **сохраните** изменения, функции Azure скачают необходимые двоичные файлы.
 
-Перейдите на вкладку **Интеграция** и введите для параметра "Таймер" понятное имя, которое будет использоваться в функции. В приведенном выше коде ожидается, что таймеру будет присвоено имя *myTimer*. Укажите [выражение CRON](../app-service/web-sites-create-web-jobs.md#CreateScheduledCRON) для таймера, который инициирует запуск функции каждую минуту, следующим образом: 0 \* \* \* \* \*.
+Перейдите на вкладку **Интеграция** и введите для параметра "Таймер" понятное имя, которое будет использоваться в функции. В приведенном выше коде ожидается, что таймеру будет присвоено имя *myTimer*. Укажите [выражение CRON](../app-service/webjobs-create.md#CreateScheduledCRON) следующим образом: для таймера, который инициирует запуск функции каждую минуту, — 0 \* \* \* \* \*.
 
 На вкладке **Интеграция** добавьте входной параметр типа **Хранилище BLOB-объектов Azure**. Он указывает на файл sync.txt, содержащий метку времени для последнего события, просмотренного функцией. В коде функции можно получить эту информацию по имени параметра. В приведенном выше коде ожидается, что параметру входного хранилища BLOB-объектов Azure будет присвоено имя *inputBlob*. Выберите учетную запись хранилища, в которой будет находиться файл sync.txt (это может быть та же или другая учетная запись хранения). В соответствующем поле укажите путь размещения файла в формате {имя_контейнера}/путь_к_файлу/sync.txt.
 

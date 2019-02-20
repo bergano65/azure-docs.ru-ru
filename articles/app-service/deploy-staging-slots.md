@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cephalin
-ms.openlocfilehash: 1d0f89285095e7edd67883a2bad1411f6e8942d2
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 7c12b34f6d735579326d4ccdd95e7831fbb777d6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107204"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56181428"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -163,7 +163,7 @@ ms.locfileid: "54107204"
 
 4. Завершив операцию, закройте диалоговое окно, нажав кнопку **Закрыть**.
 
-Чтобы автоматизировать многофазное переключение, см. руководство [Автоматизация с помощью PowerShell](#automate-with-azure-powershell).
+Чтобы автоматизировать многофазное переключение, см. раздел "Автоматизация с помощью PowerShell".
 
 <a name="Rollback"></a>
 
@@ -204,6 +204,11 @@ ms.locfileid: "54107204"
             <add initializationPage="/Home/About" hostName="[app hostname]" />
         </applicationInitialization>
     </system.webServer>
+
+Вы также можете настроить реакцию на событие прогрева с одним или несколькими из следующих [параметров приложения](https://github.com/MicrosoftDocs/azure-docs-pr/pull/web-sites-configure.md).
+
+- `WEBSITE_SWAP_WARMUP_PING_PATH`: Путь проверки связи для прогрева вашего сайта. Добавьте этот параметр приложения, указав настраиваемый путь, который начинается с косой черты в качестве значения. Например, `/statuscheck`. По умолчанию используется значение `/`. 
+- `WEBSITE_SWAP_WARMUP_PING_STATUSES`: Допустимые коды ответов HTTP для операции прогрева. Добавьте этот параметр приложения со списком кодов HTTP, разделенным запятыми. Например, `200,202`. Если возвращаемый код состояния не находится в списке, операции прогрева и замены будут остановлены. По умолчанию все коды ответов являются допустимыми.
 
 ## <a name="monitor-swap"></a>Мониторинг переключения
 
@@ -263,6 +268,8 @@ ms.locfileid: "54107204"
 
 ## <a name="automate-with-powershell"></a>Автоматизация с помощью PowerShell
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Azure PowerShell — это модуль, который предоставляет командлеты для управления Azure с помощью Windows PowerShell, а также поддерживает управление слотами развертывания в службе приложений Azure.
 
 Сведения об установке и настройке Azure PowerShell и об аутентификации Azure PowerShell с использованием подписки Azure см. в разделе [Установка и настройка Microsoft Azure PowerShell](/powershell/azure/overview).  
@@ -270,44 +277,44 @@ Azure PowerShell — это модуль, который предоставля
 - - -
 ### <a name="create-web-app"></a>Создание веб-приложения
 ```PowerShell
-New-AzureRmWebApp -ResourceGroupName [resource group name] -Name [app name] -Location [location] -AppServicePlan [app service plan name]
+New-AzWebApp -ResourceGroupName [resource group name] -Name [app name] -Location [location] -AppServicePlan [app service plan name]
 ```
 
 - - -
 ### <a name="create-slot"></a>Создание слота
 ```PowerShell
-New-AzureRmWebAppSlot -ResourceGroupName [resource group name] -Name [app name] -Slot [deployment slot name] -AppServicePlan [app service plan name]
+New-AzWebAppSlot -ResourceGroupName [resource group name] -Name [app name] -Slot [deployment slot name] -AppServicePlan [app service plan name]
 ```
 
 - - -
 ### <a name="initiate-swap-with-preview-multi-phase-swap-and-apply-destination-slot-configuration-to-source-slot"></a>Запуск переключения с предварительным просмотром (многофазное переключение) и применение конфигурации целевого слота к исходному слоту
 ```PowerShell
 $ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}
-Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01
+Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01
 ```
 
 - - -
 ### <a name="cancel-pending-swap-swap-with-review-and-restore-source-slot-configuration"></a>Отмена промежуточного переключения (переключения с предварительным просмотром) и восстановление конфигурации исходного слота
 ```PowerShell
-Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01
+Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01
 ```
 
 - - -
 ### <a name="swap-deployment-slots"></a>Переключение слотов развертывания
 ```PowerShell
 $ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}
-Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01
+Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01
 ```
 
 ### <a name="monitor-swap-events-in-the-activity-log"></a>Просмотр событий переключения в журнале действий
 ```PowerShell
-Get-AzureRmLog -ResourceGroup [resource group name] -StartTime 2018-03-07 -Caller SlotSwapJobProcessor  
+Get-AzLog -ResourceGroup [resource group name] -StartTime 2018-03-07 -Caller SlotSwapJobProcessor  
 ```
 
 - - -
 ### <a name="delete-slot"></a>Удаление слота
-```
-Remove-AzureRmResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [app name]/[slot name] -ApiVersion 2015-07-01
+```powershell
+Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [app name]/[slot name] -ApiVersion 2015-07-01
 ```
 
 - - -

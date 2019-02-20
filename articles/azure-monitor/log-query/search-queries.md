@@ -1,6 +1,6 @@
 ---
-title: Поисковые запросы в Log Analytics | Документация Майкрософт
-description: В этой статье содержится руководство по написанию поисковых запросов в Log Analytics.
+title: Запросы поиска в журналах Azure Monitor | Документация Майкрософт
+description: В этой статье содержится руководство по началу работы с помощью поиска в запросах журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
-ms.openlocfilehash: 1f3131585a8f6581690eda777b8ffc96768b3cc6
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: cda66b91a0e829ec3bc84a82c190b9d856827ad3
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885303"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56004457"
 ---
-# <a name="search-queries-in-log-analytics"></a>Поисковые запросы в Log Analytics
+# <a name="search-queries-in-azure-monitor-logs"></a>Запросы поиска в журналах Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступать к этому уроку, необходимо ознакомиться с руководством по [использованию запросов в Azure Log Analytics](get-started-queries.md).
+> Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Начало работы с запросами журналов Azure Monitor](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-Запросы Azure Log Analytics могут начинаться с имени таблицы или команды search. В этом руководстве рассматриваются запросы на основе поиска. У каждого метода есть свои преимущества.
+Запросы журнала в Azure Monitor могут начинаться с имени таблицы или команды search. В этом руководстве рассматриваются запросы на основе поиска. У каждого метода есть свои преимущества.
 
 Запросы на основе таблиц начинаются с определения области запроса и, следовательно, обычно более эффективны, чем поисковые запросы. Поисковые запросы менее структурированы, поэтому они являются лучшим выбором при поиске определенного значения в пределах столбцов и таблиц. Команда **search** может сканировать все столбцы в данной таблице или во всех таблицах в поисках указанного значения. Объем обрабатываемых данных может быть огромным, поэтому выполнение этих запросов может занять больше времени и могут возвращаться очень большие результирующие наборы.
 
@@ -144,4 +144,4 @@ search in (Event) "win"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные руководства см. на [сайте языка запросов Log Analytics](https://aka.ms/LogAnalyticsLanguage)
+- Дополнительные руководства по сайту языка запроса Data Explorer см. в [этой статье](/azure/kusto/query/).
