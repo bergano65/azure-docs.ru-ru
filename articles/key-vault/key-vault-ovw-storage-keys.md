@@ -1,20 +1,20 @@
 ---
 ms.assetid: ''
 title: Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
-description: Ключи учетной записи хранения обеспечивают простую интеграцию между Azure Key Vault и доступом по ключу к учетной записи хранения Azure.
+description: Ключи учетной записи хранения обеспечивают простую интеграцию с Azure Key Vault с возможностью доступа на основе ключа к учетной записи службы хранилища Azure.
 ms.topic: conceptual
 services: key-vault
 ms.service: key-vault
 author: prashanthyv
 ms.author: pryerram
-manager: mbaldwin
+manager: barbkess
 ms.date: 10/03/2018
-ms.openlocfilehash: 152e1e5892e3a72286205c2f5bf4e18b2a2bcbf7
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 9b1a4e23ed0da0637b44ac52dd4d1baeb22cd6ce
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814849"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56118060"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
@@ -44,6 +44,12 @@ ms.locfileid: "55814849"
       
 <a name="step-by-step-instructions-on-how-to-use-key-vault-to-manage-storage-account-keys"></a>Пошаговые инструкции по использованию Key Vault для управления ключами учетной записи хранения
 --------------------------------------------------------------------------------
+В целом выполняются такие этапы:
+- Получение учетной записи хранения (уже существующей).
+- Получение хранилища ключей (уже существующего).
+- Добавление в хранилище управляемой Key Vault учетной записи хранения с активным ключом Key1 и периодом повторного создания 180 дней.
+- Настройка контекста хранилища для указанной учетной записи хранения с использованием Key1.
+
 В приведенных ниже инструкциях мы назначаем Key Vault в качестве службы, чтобы у учетной записи хранения были разрешения оператора.
 
 > [!NOTE]
@@ -62,7 +68,7 @@ ms.locfileid: "55814849"
     az ad sp show --id cfa8b339-82a2-471a-a3c9-0fc0be7a4093
     ```
     
-    После успешного завершения этой команды найдите идентификатор объекта в результате.
+    После успешного завершения этой команды найдите идентификатор объекта в полученном результате.
     ```console
         {
             ...
@@ -85,9 +91,41 @@ ms.locfileid: "55814849"
     ```
     Если пользователь не создал учетную запись хранения и не имеет разрешений для доступа к ней, выполнив описанные ниже действия, можно установить разрешения для учетной записи, чтобы обеспечить возможность управления всеми разрешениями хранилища в Key Vault.
     
+
+<a name="step-by-step-instructions-on-how-to-use-key-vault-to-create-and-generate-sas-tokens"></a>Пошаговые инструкции по созданию маркеров SAS с помощью Key Vault
+--------------------------------------------------------------------------------
+Key Vault также может создавать маркеры SAS. Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. С помощью SAS можно предоставить клиентам доступ к ресурсам в учетной записи хранения, не предоставляя общий доступ к ключам учетной записи. Это ключевой момент использования подписанного URL-адреса в приложениях — SAS представляет собой безопасный способ предоставления общего доступа к ресурсам хранилища без ущерба для ключей учетной записи.
+
+Выполнив описанные выше этапы, можно запустить следующие команды, чтобы служба Key Vault создала маркеры SAS. 
+
+Служба выполнит такие задачи:
+- Задаст определение SAS учетной записи с именем <YourSASDefinitionName> в управляемой Key Vault учетной записи хранения <YourStorageAccountName> в вашем хранилище <VaultName>. 
+- Создаст маркер SAS учетной записи для служб "Большой двоичный объект", "Файл", "Таблица" и "Очередь", для типов ресурсов "Служба", "Контейнер" и "Объект" со всеми разрешениями, по протоколу HTTP и с указанными датами начала и окончания.
+- Задаст в хранилище определение SAS для управляемого KeyVault хранилища с URI шаблона в виде созданного выше маркера SAS, с типом SAS account и сроком действия N дней.
+- Получит фактический маркер доступа от секрета KeyVault, который соответствует определению SAS.
+
+1. На этом этапе мы создадим определение SAS. После создания этого определения SAS Key Vault сможет создать дополнительные маркеры SAS. Для этой операции необходимо разрешение storage/setsas.
+
+```
+$sastoken = az storage account generate-sas --expiry 2020-01-01 --permissions rw --resource-types sco --services bfqt --https-only --account-name storageacct --account-key 00000000
+```
+См. [дополнительные сведения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-generate-sas).
+
+После успешного выполнения этой операции отобразится приблизительно такой результат. Скопируйте его.
+
+```console
+   "se=2020-01-01&sp=***"
+```
+
+2. На этом этапе мы создадим определение SAS с помощью полученных выходных данных ($sasToken). См. [дополнительные сведения](https://docs.microsoft.com/cli/azure/keyvault/storage/sas-definition?view=azure-cli-latest#required-parameters).   
+
+```
+az keyvault storage sas-definition create --vault-name <YourVaultName> --account-name <YourStorageAccountName> -n <NameOfSasDefinitionYouWantToGive> --validity-period P2D --sas-type account --template-uri $sastoken
+```
+                        
+
  > [!NOTE] 
  > Если пользователь не имеет разрешений для учетной записи хранения, мы сначала получим идентификатор объекта пользователя.
-
 
     ```
     az ad user show --upn-or-object-id "developer@contoso.com"
@@ -96,11 +134,11 @@ ms.locfileid: "55814849"
     
     ```
     
-## <a name="how-to-access-your-storage-account-with-sas-tokens"></a>Как получить доступ к учетной записи хранения с помощью маркеров SAS
+## <a name="fetch-sas-tokens-in-code"></a>Получение маркеров SAS в коде
 
 В этом разделе мы обсудим выполнение операций с вашей учетной записью хранения путем получения [маркеров SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) из Key Vault.
 
-Ниже показано, как получить ключ учетной записи хранения, который находится в Key Vault, и использовать его для создания определения SAS для вашей учетной записи хранения.
+В разделе ниже продемонстрировано, как получить маркеры SAS после создания определения SAS, как описано ранее.
 
 > [!NOTE] 
   Существует 3 способа аутентификации в Key Vault (с которыми можно ознакомиться в разделе об [основных понятиях](key-vault-whatis.md#basic-concepts)):
@@ -132,19 +170,9 @@ sasToken = await kv.GetSecretAsync("SecretUri");
 accountSasCredential.UpdateSASToken(sasToken);
 ```
 
+### <a name="relevant-azure-cli-commands"></a>Соответствующие команды Azure CLI
 
-### <a name="relavant-azure-cli-cmdlets"></a>Соответствующие командлеты Azure CLI
-[Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest)
-
-### <a name="relevant-powershell-cmdlets"></a>Соответствующие командлеты PowerShell
-
-- [Get-AzureKeyVaultManagedStorageAccount](https://docs.microsoft.com/powershell/module/azurerm.keyvault/get-azurekeyvaultmanagedstorageaccount)
-- [Add-AzureKeyVaultManagedStorageAccount](https://docs.microsoft.com/powershell/module/AzureRM.KeyVault/Add-AzureKeyVaultManagedStorageAccount)
-- [Get-AzureKeyVaultManagedStorageSasDefinition](https://docs.microsoft.com/powershell/module/AzureRM.KeyVault/Get-AzureKeyVaultManagedStorageSasDefinition)
-- [Update-AzureKeyVaultManagedStorageAccountKey](https://docs.microsoft.com/powershell/module/AzureRM.KeyVault/Update-AzureKeyVaultManagedStorageAccountKey)
-- [Remove-AzureKeyVaultManagedStorageAccount](https://docs.microsoft.com/powershell/module/azurerm.keyvault/remove-azurekeyvaultmanagedstorageaccount)
-- [Remove-AzureKeyVaultManagedStorageSasDefinition](https://docs.microsoft.com/powershell/module/AzureRM.KeyVault/Remove-AzureKeyVaultManagedStorageSasDefinition)
-- [Set-AzureKeyVaultManagedStorageSasDefinition](https://docs.microsoft.com/powershell/module/AzureRM.KeyVault/Set-AzureKeyVaultManagedStorageSasDefinition)
+[Команды хранилища Azure CLI](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest)
 
 ## <a name="see-also"></a>См. также
 

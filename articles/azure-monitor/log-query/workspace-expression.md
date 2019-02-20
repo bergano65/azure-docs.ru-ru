@@ -1,6 +1,6 @@
 ---
-title: Выражение workspace() в запросах Azure Log Analytics | Документация Майкрософт
-description: Выражение workspace() используется в запросах Azure Log для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке.
+title: Выражение workspace() в запросе журнала Azure Monitor | Документация Майкрософт
+description: Выражение workspace используется в запросе журнала Azure Monitor для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: bwren
-ms.openlocfilehash: 24a737a728b0a249fda76cbff481bea284ac24aa
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 1d1bb3c99c82683dde9247da86e80d800fe06631
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53182950"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993003"
 ---
-# <a name="workspace-expression-in-log-analytics-query"></a>Выражение workspace() в запросах Log Analytics
+# <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
 
-Выражение `workspace` используется в запросах Azure Log для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке. Оно используется для включения данных журнала в запрос Application Insights и получения данных из нескольких рабочих областей.
+Выражение `workspace` используется в запросе Azure Monitor для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке. Оно используется для включения данных журнала в запрос Application Insights и получения данных из нескольких рабочих областей.
 
 
 ## <a name="syntax"></a>Синтаксис
@@ -71,5 +71,6 @@ union
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. описание [выражения app](workspace-expression.md) для обращения к на приложениям Application Insights.
-- См. дополнительные сведения о [хранении данных Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+- Дополнительные сведения см. в статье [Выражение app() в запросах Log Analytics](app-expression.md).
+- Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](log-query-overview.md).
+- Ознакомьтесь с полной документацией по языку запросов Data Explorer [здесь](/azure/kusto/query/).

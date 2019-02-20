@@ -11,13 +11,13 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 395bf57b967ebeefe0a4168b53a4341c304e3d4f
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/08/2019
+ms.openlocfilehash: 5f20fc6ac19e2c9d304f4ab429e485fedaa29f64
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729512"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56001891"
 ---
 # <a name="azure-sql-database-threat-detection"></a>Обнаружение угроз Базы данных SQL Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "55729512"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения об обнаружении угроз в отдельной базе данных и в базе данных в составе пула см. [здесь](sql-database-threat-detection.md).
+- Дополнительные сведения об [обнаружении угроз в отдельной базе данных и базе данных в составе пула](sql-database-threat-detection.md).
 - Дополнительные сведения об [обнаружении угроз в управляемом экземпляре](sql-database-managed-instance-threat-detection.md).
 - Дополнительные сведения о [расширенной защите данных](sql-database-advanced-data-security.md).
 - Узнайте больше об аудите Базы данных SQL Azure [здесь](sql-database-auditing.md).

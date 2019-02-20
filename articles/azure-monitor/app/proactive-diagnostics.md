@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/31/2016
+ms.date: 02/07/2019
 ms.author: mbullwin
-ms.openlocfilehash: c284236af64c3981a5d15570bcd2705bb7d6a99b
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: edbd7000001ae6927078e2f1bb9e348cc78f9efa
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121060"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55962117"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](../../azure-monitor/app/app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -46,6 +46,14 @@ ms.locfileid: "54121060"
 * [Интеллектуальное обнаружение. Неполадки облачной службы Azure.](https://azure.microsoft.com/blog/proactive-notifications-on-cloud-service-issues-with-azure-diagnostics-and-application-insights/) Вы получаете оповещения в том случае, если приложение размещено в облачных службах Azure и в экземпляре роли происходят сбои при запуске, частый перезапуск или сбои среды выполнения.
 
 (Каждое уведомление содержит ссылки на материалы соответствующих статей.)
+
+## <a name="smart-detection-email-notifications"></a>Уведомления по электронной почте об интеллектуальном обнаружении
+
+Все правила интеллектуального обнаружения, за исключением помеченных как "предварительная версия", по умолчанию настроены на отправку уведомлений по электронной почте при наличии обнаружений.
+
+Настройку уведомлений по электронной почте для определенного правила интеллектуального обнаружения можно выполнить, открыв колонку **Настройки** и выбрав правило, которое откроет колонку **Изменить правило**.
+
+Кроме того, вы можете изменить настройку с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-monitor/app/proactive-arm-config).
 
 ## <a name="video"></a>Видео
 

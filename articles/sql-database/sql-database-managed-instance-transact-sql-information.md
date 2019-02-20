@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: f1adcca48882ca3a149046cbc0729612666363cc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/07/2019
+ms.openlocfilehash: 59599686b2a9ccee7250e33f0786d4c7af816983
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734612"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55894315"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -27,7 +27,7 @@ ms.locfileid: "55734612"
 
 Так как в синтаксисе и поведении все еще есть некоторые различия, они перечислены и описаны в этой статье. <a name="Differences"></a>
 - [Доступность](#availability), включая различия в [Always-On](#always-on-availability) и [Azure Backup](#backup).
-- [Безопасность](#security), включая различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credentials), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins--users), [ключе службы и главном ключе службы](#service-key-and-service-master-key).
+- [Безопасность](#security), включая различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins--users), [ключе службы и главном ключе службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration), включая различия в [расширении буферного пула](#buffer-pool-extension), [параметрах сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении базы данных](#database-mirroring), [параметрах базы данных](#database-options), [агенте SQL Server](#sql-server-agent), [параметрах таблицы](#tables).
 - [Функциональные возможности](#functionalities), включая [BULK INSERT или OPENROWSET](#bulk-insert--openrowset), [среды CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [файловый поток и FileTable](#filestream-and-filetable), [полнотекстовый семантический поиск](#full-text-semantic-search), [связанные службы](#linked-servers), [PolyBase](#polybase), [репликацию](#replication), [инструкцию RESTORE](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-triggers).
 - [Функции с другим поведением в управляемых экземплярах](#Changes).
@@ -72,13 +72,13 @@ ms.locfileid: "55734612"
 
 ### <a name="auditing"></a>Аудит
 
-Ниже перечислены основные различия между аудитом в базах данных в Базе данных SQL Azure и базах данных в SQL Server.
+Ниже перечислены основные различия между аудитом в базах данных Базы данных SQL Azure и SQL Server.
 
-- С помощью параметра развертывания управляемого экземпляра в Базе данных SQL Azure аудит выполняется на уровне сервера и сохраняет файлы журнала `.xel` в учетной записи хранилища BLOB-объектов Azure.
-- С помощью параметров развертывания единой базы данных и эластичного пула в Базе данных SQL Azure аудит работает на уровне базы данных.
-- В SQL Server на локальном компьютере или виртуальной машине аудит выполняется на уровне сервера, но события сохраняются в журналы событий файловой системы или журналы событий Windows.
+- При использовании варианта развертывания в виде управляемого экземпляра в Базе данных SQL Azure аудит выполняется на уровне сервера и сохраняет файлы журнала `.xel` в хранилище BLOB-объектов Azure.
+- При использовании варианта развертывания в виде отдельной базы данных и эластичного пула в Базе данных SQL Azure аудит работает на уровне базы данных.
+- В SQL Server на локальном компьютере или виртуальной машине аудит выполняется на уровне сервера, но события сохраняются в журналы событий файловой системы или Windows.
   
-Аудит XEvent в управляемом экземпляре поддерживает цели хранилища BLOB-объектов Azure. Журналы файлов и Windows не поддерживаются.
+Аудит XEvent в управляемом экземпляре поддерживает целевые объекты хранилища BLOB-объектов Azure. Журналы файлов и Windows не поддерживаются.
 
 Основные различия в синтаксисе `CREATE AUDIT` для аудита в хранилище BLOB-объектов Azure:
 
@@ -170,7 +170,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - Объекты в памяти не поддерживаются на уровне службы общего назначения.  
 - Для одного экземпляра действует ограничение в 280 файлов. Это значит, что в каждой базе данных может быть не больше 280 файлов. Это ограничение распространяется на файлы данных и файлы журнала.  
 - База данных не может содержать файловые группы, содержащие данные файлового потока.  Восстановление завершится со сбоем, если BAK-файл содержит данные `FILESTREAM`.  
-- Каждый файл помещается в хранилище Azure класса Premium. Количество операций ввода-вывода и пропускная способность для каждого файла зависят от размера каждого файла, также как и для дисков хранилища Azure класса Premium. См. раздел [Размеры диска хранилища класса "Премиум"](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes).  
+- Каждый файл помещается в хранилище BLOB-объектов Azure. Операции ввода-вывода и пропускная способность каждого файла зависят от размера каждого файла.  
 
 #### <a name="create-database-statement"></a>Инструкция CREATE DATABASE
 
@@ -305,7 +305,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Некоторые из целевых объектов Windows для XEvents не поддерживаются:
 
-- `etw_classic_sync target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект etw_classic_sync_target](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#etwclassicsynctarget-target).
+- `etw_classic_sync target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект etw_classic_sync_target](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#etw_classic_sync_target-target).
 - `event_file target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект event_file](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#event_file-target).
 
 ### <a name="external-libraries"></a>Внешние библиотеки
@@ -365,7 +365,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - `RESTORE LOG ONLY`
   - `RESTORE REWINDONLY ONLY`
 - Источник  
-  - `FROM URL` (хранилище BLOB-объектов) — единственный поддерживаемый параметр.
+  - `FROM URL` (хранилище BLOB-объектов) — единственный поддерживаемый параметр.
   - `FROM DISK`/`TAPE`/устройство резервного копирования не поддерживается.
   - Резервные наборы данных не поддерживаются.
 - Параметры `WITH` не поддерживаются (не `DIFFERENTIAL`, `STATS` и т. д.).

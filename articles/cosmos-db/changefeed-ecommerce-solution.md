@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/12/2018
 ms.author: sngun
-ms.openlocfilehash: 3f42e149b88c2405a37366c3c7b886c7a8613e00
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 90f9a13882e370d6d0c67826750b3edd27603ede
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382551"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55862298"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
 
@@ -165,7 +165,7 @@ ms.locfileid: "54382551"
 
 1. Перейдите в репозиторий в проводнике и щелкните правой кнопкой мыши **ChangeFeedFunction.sln**, чтобы открыть его снова в новом окне Visual Studio.  
 
-2. Перейдите к файлу **App.config**. В блоке <appSettings> добавьте URI и уникальный **ПЕРВИЧНЫЙ КЛЮЧ** вашей учетной записи Azure Cosmos DB, который вы получили ранее.  
+2. Перейдите к файлу **App.config**. В блоке <appSettings> добавьте конечную точку и уникальный **ПЕРВИЧНЫЙ КЛЮЧ** вашей учетной записи Azure Cosmos DB, который вы получили ранее.  
 
 3. Добавьте имена **коллекции** и **базы данных**. (Эти имена должны быть **changefeedlabcollection** и **changefeedlabdatabase**, если вы не решите назвать их по-другому.)
 
@@ -255,7 +255,7 @@ Power BI — набор средств бизнес-аналитики для а
 7. Теперь, если вы хотите визуализировать больше метрики, можете вернуться к **streamjob1** и создать еще три набора выходных данных со следующими полями.
 
    a. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
-   b. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
+   б) **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
    Затем выберите **Изменить запрос** и вставьте следующие запросы **над** уже написанными.

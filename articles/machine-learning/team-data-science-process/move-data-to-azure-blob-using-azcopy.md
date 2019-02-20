@@ -1,6 +1,6 @@
 ---
-title: Перемещение данных хранилища больших двоичных объектов с помощью AzCopy — командный процесс обработки и анализа данных
-description: Перемещение данных в хранилище больших двоичных объектов Azure и из него с помощью AzCopy
+title: Копирование данных хранилища BLOB-объектов с помощью AzCopy — командный процесс обработки и анализа данных
+description: Копирование данных в хранилище BLOB-объектов Azure и из него с помощью AzCopy
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -11,14 +11,14 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 3165aad326ad476eb5064f0b99acd8c3f5a036d8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 6c0951eb6ad3b7651da97e1a49c5edf5ab55a199
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474706"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209580"
 ---
-# <a name="move-data-to-and-from-azure-blob-storage-using-azcopy"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью AzCopy
+# <a name="copy-data-to-and-from-azure-blob-storage-using-azcopy"></a>Копирование данных в хранилище BLOB-объектов Azure и из него с помощью AzCopy
 AzCopy — это служебная программа командной строки, разработанная для отправки, скачивания и копирования данных из хранилищ BLOB-объектов, файлов и таблиц Microsoft Azure.
 
 Инструкции по установке программы AzCopy и дополнительные сведения о ее использовании с платформой Azure см. в статье [Приступая к работе со служебной программой командной строки AzCopy](../../storage/common/storage-use-azcopy.md).
@@ -65,10 +65,10 @@ AzCopy — это служебная программа командной ст�
     AzCopy /Source:https://<your_account_name>.blob.core.windows.net/<your_container_name>/<your_sub_directory_at_blob>  /Dest:<your_local_directory> /SourceKey:<your_account_key> /Pattern:<file_pattern> /S
 
 
-## <a name="transfer-blobs-between-azure-containers"></a>Передача больших двоичных объектов между контейнерами Azure
-Для передачи больших двоичных объектов между контейнерами Azure используйте следующую команду:
+## <a name="copy-blobs-between-azure-containers"></a>Копирование больших двоичных объектов между контейнерами Azure
+Для копирования больших двоичных объектов между контейнерами Azure используйте следующую команду:
 
-    # Transferring blobs between Azure containers
+    # Copying blobs between Azure containers
     AzCopy /Source:https://<your_account_name1>.blob.core.windows.net/<your_container_name1>/<your_sub_directory_at_blob1> /Dest:https://<your_account_name2>.blob.core.windows.net/<your_container_name2>/<your_sub_directory_at_blob2> /SourceKey:<your_account_key1> /DestKey:<your_account_key2> /Pattern:<file_pattern> /S
 
     <your_account_name>: your storage account name
@@ -76,7 +76,7 @@ AzCopy — это служебная программа командной ст�
     <your_container_name>: your container name
     <your_sub_directory_at_blob>: the sub directory in the container
     <your_local_directory>: directory of local file system where files to be uploaded from or the directory of local file system files to be downloaded to
-    <file_pattern>: pattern of file names to be transferred. The standard wildcards are supported
+    <file_pattern>: pattern of file names to be copied. The standard wildcards are supported
 
 
 ## <a name="tips-for-using-azcopy"></a>Советы по использованию AzCopy

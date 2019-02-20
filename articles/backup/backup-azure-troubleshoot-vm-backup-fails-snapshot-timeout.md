@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: 5eecd750642610737d346c5c270349e285106e95
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: a73dab8a0df642e439e8519c404423c6689418f5
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820442"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236980"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -253,3 +253,6 @@ ms.locfileid: "55820442"
 
 5. Щелкните **Удалить**, чтобы очистить коллекцию точек восстановления.
 6. Повторите операцию резервного копирования.
+
+> [!NOTE]
+ >Если ресурс (коллекция для защиты репликации) обладает большим количеством точек восстановления, то его удаление с портала может завершиться временем ожидания и ошибкой. Данная ошибка, более известная как CRP, когда все точки восстановления не удаляются в оговоренное время, а время ожидания для операции истекает. Тем не менее операция удаления обычно завершается успешно после 2 или 3 повторных попыток.

@@ -1,6 +1,6 @@
 ---
-title: Использование HDFS CLI в предварительной версии хранилища Azure Data Lake Storage Gen2
-description: Общие сведения о HDFS CLI в хранилище Azure Data Lake Storage Gen2 (предварительная версия)
+title: Использование HDFS CLI в хранилище Azure Data Lake Storage 2-го поколения
+description: Общие сведения о HDFS CLI в хранилище Data Lake Storage 2-го поколения
 services: storage
 author: artemuwka
 ms.service: storage
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: artek
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 2691346433b3cc29b22446152ea797cefb02a380
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 649fe5ebadf69a90b4794fcaf4519ea5bcc0c4a2
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241276"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55874195"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Предварительная версия хранилища Azure Data Lake Storage Gen2 позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в учетной записи хранения Azure, вы можете использовать интерфейс командной строки для извлечения и обработки загруженных данных.
+Хранилище Azure Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в учетной записи хранения Azure, вы можете использовать интерфейс командной строки для извлечения и обработки загруженных данных.
 
 ## <a name="hdfs-cli-with-hdinsight"></a>Использование HDFS CLI в HDInsight
 

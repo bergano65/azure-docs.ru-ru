@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 07/11/2016
+ms.date: 02/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: bf999e15c04a64f717bcd7bac87e357d5ccc92e6
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: ecf0638aa999208331603ac30ccf4eb17b3c4500
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189938"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55960689"
 ---
 # <a name="troubleshoot-analytics-in-application-insights"></a>Устранение неполадок аналитики в Application Insights
 Возникли проблемы с [аналитикой Application Insights](analytics.md)? Начните отсюда. Аналитика — мощный инструмент поиска Azure Application Insights.
@@ -36,7 +36,7 @@ ms.locfileid: "54189938"
 
 Произошла внутренняя ошибка во время выполнения портала — необработанное исключение.
 
-* Очистите кэш браузера. 
+* Очистите кэш браузера.
 
 ## <a name="e-b"></a>403… попробуйте перезагрузить
 ![403... Попробуйте перезагрузить](media/analytics-troubleshooting/020.png)
@@ -71,7 +71,7 @@ ms.locfileid: "54189938"
 ## <a name="e-d"></a>404 ... Ресурс не найден
 ![404... Ресурс не найден](media/analytics-troubleshooting/040.png)
 
-Ресурс приложения был удален из Application Insights и больше не доступен. Это может произойти, если сохранить URL-адрес на странице аналитики.
+Application resource was deleted from Application Insights and isn't available anymore (Ресурс приложения был удален из Application Insights и больше недоступен). Это может произойти, если сохранить URL-адрес на странице аналитики.
 
 ## <a name="e-e"></a>403... Нет авторизации
 ![403... Нет авторизации](media/analytics-troubleshooting/050.png)

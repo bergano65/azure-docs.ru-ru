@@ -10,18 +10,21 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 637cdb338496764e64c18a887673808ef4e8415a
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: fa48d3825b5b942497b1eabd19a1eeb7e0141058
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203459"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56003148"
 ---
 # <a name="select-a-page-contract-in-azure-active-directory-b2c-using-custom-policies"></a>Выбор контракта страницы в Azure Active Directory B2C с помощью настраиваемых политик
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Контракт страницы можно выбрать в Azure Active Directory (Azure AD) B2C, настроив его в [настраиваемых политиках](active-directory-b2c-overview-custom.md). Контракт страницы — ассоциация элементов, предоставляемых Azure AD B2C, и содержимое, предоставляемое вами. Если вы планируете использовать [JavaScript](javascript-samples.md), нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
+Вы можете включить код JavaScript на стороне клиента в политиках Azure Active Directory (Azure AD) B2C, независимо от того, используете ли вы потоки или настаиваемые политики пользователя. В этой статье рассматривается, как можно выбрать контракт страницы в Azure AD B2C, настроив его в [настраиваемой политике](active-directory-b2c-overview-custom.md). Контракт страницы — это ассоциация элементов, предоставляемых Azure AD B2C, и содержимое, предоставляемое вами. Если вы планируете использовать [JavaScript](javascript-samples.md), нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
+
+> [!NOTE]
+> Если необходимо включить JavaScript для пользователя потоков, см. статью [Использование JavaScript и страницы "Версии контракта" в потоке пользователя](user-flow-javascript-overview.md).
 
 ## <a name="replace-datauri-values"></a>Замена значений DataUri
 

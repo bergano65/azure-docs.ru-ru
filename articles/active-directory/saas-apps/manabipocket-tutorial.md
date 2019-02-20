@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Manabi Pocket | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Manabi Pocket | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Manabi Pocket.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 0116cac7d0e44efee0112d57aedd4f5ee02833b3
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3f5dd7012d280580dca76e50290bc2de4322d55c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39430721"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198427"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство. Интеграция Azure Active Directory с Manabi Pocket
 
@@ -29,7 +30,7 @@ ms.locfileid: "39430721"
 
 - C помощью Azure AD вы можете контролировать доступ к Manabi Pocket.
 - Вы можете включить автоматический вход пользователей в Manabi Pocket (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39430721"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Manabi Pocket**, выберите **Manabi Pocket** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39430721"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Manabi Pocket](#create-a-manabi-pocket-test-user)** требуется для того, чтобы в Manabi Pocket существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -109,7 +110,7 @@ ms.locfileid: "39430721"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://ed-cl.com/`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
+    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Измените это значение на фактический идентификатор. Чтобы получить значение идентификатора, обратитесь в [службу поддержки клиентов Manabi Pocket](mailto:info-ed-cl@ntt.com).
@@ -134,7 +135,7 @@ ms.locfileid: "39430721"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/manabipocket-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/manabipocket-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -154,11 +155,11 @@ ms.locfileid: "39430721"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-manabi-pocket-test-user"></a>Создание тестового пользователя Manabi Pocket
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Manabi Pocket. Обратитесь к [службу поддержки Manabi Pocket](mailto:info-ed-cl@ntt.com), чтобы добавить пользователей на платформу Manabi Pocket. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Manabi Pocket. Чтобы добавить пользователей на платформу Manabi Pocket, обратитесь в [службу поддержки Manabi Pocket](mailto:info-ed-cl@ntt.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -195,7 +196,7 @@ ms.locfileid: "39430721"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Manabi Pocket на панели доступа, вы автоматически войдете в приложение Manabi Pocket.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

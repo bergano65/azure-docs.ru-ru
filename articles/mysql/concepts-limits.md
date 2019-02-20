@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/6/2018
-ms.openlocfilehash: 19fc20f21a57c2325254581c642b75c92c221fd9
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 55106f855d1f2cab82b751b306a3a289bd740e9e
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536096"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895352"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Ограничения в службе "База данных Azure для MySQL"
 В следующих разделах приводятся ограничения, касающиеся емкости, поддерживаемых подсистем хранилища, поддерживаемых разрешений, поддерживаемых инструкций языка обработки данных и функциональных возможностей в службе базы данных. Кроме того, ознакомьтесь с [общими ограничениями](https://dev.mysql.com/doc/mysql-reslimits-excerpt/5.6/en/limits.html), применимыми к ядру СУБД базы данных MySQL.
@@ -55,6 +55,7 @@ ms.locfileid: "53536096"
 ### <a name="unsupported"></a>Не поддерживается
 - Роль DBA. Большое количество параметров и настроек может случайно снизить производительность сервера или отключить свойства ACID СУБД. Поэтому, чтобы обеспечить целостность данных службы и соблюсти соглашение об уровне обслуживания на уровне продукта, мы не предоставляем роль DBA. Учетная запись по умолчанию, которая создается при создании экземпляра базы данных, позволяет пользователям выполнять большинство инструкций языка описания данных (DDL) и языка обработки данных (DML) в управляемом экземпляре базы данных. 
 - Разрешение SUPER. Аналогичным образом ограничено и [разрешение SUPER](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_super).
+- DEFINER. Ограничено, требуется разрешение SUPER. Если импортируются данные с помощью резервной копии, удалите команды `CREATE DEFINER` вручную или с помощью команды `--skip-definer` при выполнении mysqldump.
 
 ## <a name="data-manipulation-statement-support"></a>Поддержка инструкций языка обработки данных
 

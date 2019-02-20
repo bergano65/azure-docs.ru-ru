@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 02/06/2019
 ms.author: juliako
-ms.openlocfilehash: 9c8bff5a0a4f1599a3d23e0c7b07a1caca536a9b
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 9d62ef2295abbb8f8fc6f45ffc0c7ab1ce9616e4
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153969"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55878363"
 ---
 # <a name="live-event-types-comparison"></a>Сравнение типов событий потоковой трансляции
 
@@ -45,7 +45,7 @@ ms.locfileid: "55153969"
 | Максимальное разрешение выходного видео|Так же, как и для входных данных|720p (30 кадров в секунду)|
 | Протоколы входных данных|RTMP, фрагментированный MP4 (Smooth Streaming)|RTMP, фрагментированный MP4 (Smooth Streaming)|
 | Цена|Откройте [страницу цен](https://azure.microsoft.com/pricing/details/media-services/) и выберите вкладку Live Video|Откройте [страницу цен](https://azure.microsoft.com/pricing/details/media-services/) и выберите вкладку Live Video|
-| Максимальное время выполнения|24x365 (линейная потоковая передача)|24x7|
+| Максимальное время выполнения| 24 часа, 365 дней, потоковый линейный режим | До 24 часов|
 | Возможность передавать внедренные субтитры в формате CEA 608 или 708.|Yes|Yes|
 | Поддержка вставки баннеров|Нет |Нет |
 | Поддержка сигнализации о рекламе через API-интерфейс| Нет |Нет |

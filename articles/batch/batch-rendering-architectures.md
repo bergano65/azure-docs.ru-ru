@@ -5,15 +5,15 @@ services: batch
 author: davefellows
 manager: jeconnoc
 ms.author: lahugh
-ms.date: 08/13/2018
+ms.date: 02/07/2019
 ms.topic: conceptual
 ms.custom: seodec18
-ms.openlocfilehash: d5102ba94e2b7808a457df00a87b35ef7022c454
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: b8813466b9c0f74a608c0150c037dfec3db08dbc
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543501"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893822"
 ---
 # <a name="reference-architectures-for-azure-rendering"></a>Эталонные архитектуры для рендеринга в Azure
 
@@ -27,9 +27,9 @@ ms.locfileid: "53543501"
 
 * **Сеть** — локальная сеть: Azure ExpressRoute или VPN. Azure Виртуальная сеть Azure.
 
-* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync.
+* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync. Еще один вариант: использование Avere VFXT с входными или выходными файлами на локальных запоминающих устройствах, подключаемых к сети, с помощью NFS.
 
-  ![Выход в облако — гибридное развертывание с NFS или CFS](./media/batch-rendering-architectures/hybrid-nfs-cfs.png)
+  ![Выход в облако — гибридное развертывание с NFS или CFS](./media/batch-rendering-architectures/hybrid-nfs-cfs-avere.png)
 
 ## <a name="hybrid-with-blobfuse"></a>Гибридное развертывание с Blobfuse
 
@@ -51,9 +51,9 @@ ms.locfileid: "53543501"
 
 * **Сеть** — локальная сеть: Azure ExpressRoute или VPN. Azure Виртуальная сеть Azure.
 
-* **Хранилище** — между локальными средами: Avere vFXT. Опционально можно архивировать локальные файлы через Azure Data Box в хранилище BLOB-объектов.
+* **Хранилище** — между локальными средами: Avere vFXT. Необязательная архивация локальных файлов через Azure Data Box в хранилище BLOB-объектов или использование локального экземпляра Avere FXT для ускорения запоминающего устройства, подключаемого к сети.
 
-  ![Выход в облако — гибридное развертывание служб вычислений и хранения](./media/batch-rendering-architectures/hybrid-compute-storage.png)
+  ![Выход в облако — гибридное развертывание служб вычислений и хранения](./media/batch-rendering-architectures/hybrid-compute-storage-avere.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

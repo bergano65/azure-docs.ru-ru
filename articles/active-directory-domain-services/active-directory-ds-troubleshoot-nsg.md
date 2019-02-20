@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: ergreenl
-ms.openlocfilehash: 2f66c6956c803979ee6717f7327379c7bc9e97bb
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 503e52266c1c6be71e60a751c40ef0a54f0d9b12
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181900"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112502"
 ---
 # <a name="troubleshoot-invalid-networking-configuration-for-your-managed-domain"></a>Устранение неполадок недопустимой конфигурации сети для управляемого домена
 Эта статья поможет вам определить и устранить ошибки конфигурации сети, которые приводят к появлению следующего оповещения.
@@ -36,7 +36,7 @@ ms.locfileid: "55181900"
 2. В таблице выберите NSG, связанную с подсетью, в которой включен управляемый домен.
 3. На панели слева в разделе **Параметры** щелкните **Правила безопасности для входящего трафика**.
 4. Проверьте настроенные правила и определите, какие правила блокируют доступ к [этим портам](active-directory-ds-networking.md#ports-required-for-azure-ad-domain-services)
-5. Измените NSG, чтобы обеспечить соответствие требованиям, удалив правило, добавив правило или создав NSG. Шаги по [добавлению правила](#add-a-rule-to-a-network-security-group-using-the-azure-portal) или [созданию соответствующей требованиям группы безопасности сети](#create-a-nsg-for-azure-ad-domain-services-using-powershell) представлены ниже
+5. Измените NSG, чтобы обеспечить соответствие требованиям, удалив правило, добавив правило или создав NSG. Далее описаны шаги по [добавлению правила](#add-a-rule-to-a-network-security-group-using-the-azure-portal) или созданию группы безопасности сети,соответствующей требованиям.
 
 ## <a name="sample-nsg"></a>Пример NSG
 В следующей таблице описывается пример NSG, который будет обеспечивать защиту управляемого домена, что позволит корпорации Майкрософт отслеживать и обновлять сведения, а также управлять ими.

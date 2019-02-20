@@ -5,22 +5,54 @@ services: notification-hubs
 author: spelluru
 ms.service: notification-hubs
 ms.topic: include
-ms.date: 04/05/2018
+ms.date: 02/05/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 4dc67175f2ccc569ab6dfe5338607fa6bebe3882
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e6b949824ec5da60c5e2485be830e61d156a11ff
+ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33814702"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55830693"
 ---
 1. Войдите в [консоль Firebase](https://firebase.google.com/console/). Создайте проект Firebase, если его еще нет.
-2. После создания проекта выберите **Add Firebase to your Android app** (Добавить Firebase в приложение Android). и следуйте инструкциям. Скачайте файл **google services.json**. 
+2. После создания проекта выберите **Add Firebase to your Android app** (Добавить Firebase в приложение Android). 
 
     ![Добавление Firebase в приложение Android](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-add-firebase-to-android-app.png)
-3. В консоли Firebase щелкните значок шестеренки возле имени проекта. Выберите пункт **Project Settings** (Параметры проекта).
+3. Выполните следующие действия на странице **Add Firebase to your Android app** (Добавление Firebase в приложение Android). 
+    1. Для **Имя пакета Android** скопируйте свое значение **applicationId** в файл приложения **build.gradle**. В нашем примере он выглядит следующим образом: `com.fabrikam.fcmtutorial1app`. 
+
+        ![Указание имени пакета.](./media/notification-hubs-enable-firebase-cloud-messaging/specify-package-name-fcm-settings.png)
+    2. Выберите **Регистрация приложения**. 
+4. Выберите **Download google-services.json** (Загрузить google-services.json), сохраните файл в папку **приложения** проекта, а затем выберите **Далее**. 
+
+    ![Загрузка файла google-services.json.](./media/notification-hubs-enable-firebase-cloud-messaging/download-google-service-button.png)
+5. Внесите следующие **изменения конфигурации** в проект в Android Studio. 
+    1.  В файл **build.gradle уровня проекта** (&lt;project&gt;/build.gradle) добавьте следующий текст в раздел **зависимости**. 
+
+        ```
+        classpath 'com.google.gms:google-services:4.0.1'
+        ```
+    2. В файл **build.gradle уровня приложения** (&lt;project&gt;/&lt;app-module&gt;/build.gradle) добавьте следующий текст в раздел **зависимости**. 
+
+        ```
+        implementation 'com.google.firebase:firebase-core:16.0.1'
+        ```
+
+    3. Добавьте следующую строку в конец файла **app-level build.gradle** после раздела "Зависимости". 
+
+        ```
+        apply plugin: 'com.google.gms.google-services'
+        ```        
+ 
+        ![Изменения конфигурации build.gradle.](./media/notification-hubs-enable-firebase-cloud-messaging/build-gradle-configurations.png)
+6. Выберите **Далее** на странице. 
+7. Выберите **Пропустить этот шаг** на странице. 
+
+    ![Пропуск последнего шага.](./media/notification-hubs-enable-firebase-cloud-messaging/skip-this-step.png)1. 
+8. В консоли Firebase щелкните значок шестеренки возле имени проекта. Выберите пункт **Project Settings** (Параметры проекта).
 
     ![Выбор параметров проекта](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-firebase-console-project-settings.png)
-4. Выберите вкладку **General** (Общие) в окне параметров проекта. Затем скачайте файл **google-services.json**, содержащий ключ API сервера и идентификатор клиента.
-5. В окне параметров проекта щелкните вкладку **Cloud Messaging** (Обмен сообщениями в облаке) и скопируйте значение параметра **Legacy server key** (Старый ключ сервера). Это значение будет использоваться для настройки политики доступа концентратора уведомлений.
+4. Если файл **google-services.json** не был загружен в папку **приложения** проекта Android Studio, это можно сделать на данной странице. 
+5. Переключитесь на вкладку **Обмен сообщениями в облаке** в верхней части. 
+6. Скопируйте и сохраните **Ключ сервера** для последующего использования. Это значение будет использоваться для настройки концентратора уведомлений.

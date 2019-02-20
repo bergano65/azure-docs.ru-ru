@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 06/02/2017
-ms.openlocfilehash: c3f10e268101cfa5aff6506a64aab98b07fb948a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 4af7af6616b5415cd13abacd6aca13bd412d4ad8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464387"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998115"
 ---
 # <a name="how-to-consume-an-azure-machine-learning-studio-web-service"></a>Как использовать веб-службу Студии машинного обучения Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "55464387"
 ## <a id="connect"></a>Подключение к веб-службе машинного обучения
 К веб-службе машинного обучения можно подключиться, используя любой язык программирования, поддерживающий HTTP-запрос и HTTP-ответ. Примеры на языках C#, Python и R можно просмотреть на странице справки веб-службы машинного обучения.
 
-**Справка по API машинного обучения.** Страница справки по API машинного обучения Azure создается при развертывании веб-службы. См. статью [Шаг 5. Развертывание веб-службы машинного обучения Azure](walkthrough-5-publish-web-service.md).
+**Справка по API машинного обучения.** Страница справки по API машинного обучения Azure создается при развертывании веб-службы. См. [Руководство 3: Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md).
 Справка по API машинного обучения содержит сведения о веб-службе прогнозирования.
 
 1. Выберите веб-службу, с которой вы работаете.

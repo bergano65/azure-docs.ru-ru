@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory со Skills Base | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Skills Base | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Skills Base.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2018
 ms.author: jeedes
-ms.openlocfilehash: e11ba8ca9c4ad17b2ade909bb474ad2d1fcf4410
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8bc0353453cf5fe689eec398f6a7d73fb356b178
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205380"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56190846"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-base"></a>Руководство. Интеграция Azure Active Directory со Skills Base
 
@@ -29,7 +30,7 @@ ms.locfileid: "39205380"
 
 - С помощью Azure AD можно контролировать доступ к Skills Base.
 - Вы можете включить автоматический вход пользователей в Skills Base (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39205380"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Skills Base** и выберите **Skills Base** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39205380"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Skills Base](#create-a-skills-base-test-user)** требуется для того, чтобы в Skills Base существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -139,7 +140,7 @@ ms.locfileid: "39205380"
     > [!Note]
     > Метаданные поставщика удостоверений можно также проверить с помощью средства **проверки метаданных**, как показано на снимке экрана выше.
 
-    b. Выберите команду **Сохранить**.
+    б) Выберите команду **Сохранить**.
     
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -151,7 +152,7 @@ ms.locfileid: "39205380"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/skillsbase-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/skillsbase-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -171,7 +172,7 @@ ms.locfileid: "39205380"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-skills-base-test-user"></a>Создание тестового пользователя Skills Base
 
@@ -215,7 +216,7 @@ ms.locfileid: "39205380"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Skills Base на панели доступа, вы автоматически войдете в приложение Skills Base.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

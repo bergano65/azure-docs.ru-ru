@@ -4,17 +4,15 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 77fc95c53ba89c3905ebd1aec785e22f42339369
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 8cc5dbb907c342b766cebe6da36cf580ddac5e2c
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164820"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55889175"
 ---
-<!--author=SharS last changed: 9/17/15-->
-
 #### <a name="to-install-regular-hotfixes-via-windows-powershell-for-storsimple"></a>Установка обычных исправлений с помощью Windows PowerShell для StorSimple
-1. Подключитесь к последовательной консоли устройства. Дополнительные сведения см. в разделе [Шаг 1. Подключение к последовательной консоли](../articles/storsimple/storsimple-update-device.md#step1).
+1. Подключитесь к последовательной консоли устройства. Дополнительные сведения см. в разделе [Step 1: Connect to the serial console](../articles/storsimple/storsimple-update-device.md#step1) (Шаг 1. Подключение к последовательной консоли).
 2. В меню последовательной консоли выберите вариант 1 **Войти с полным доступом**. Введите пароль. Пароль по умолчанию — **Password1**.
 3. В командной строке выполните следующую команду:
    

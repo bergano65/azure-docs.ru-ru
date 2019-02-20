@@ -16,12 +16,12 @@ ms.date: 01/29/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/29/2019
-ms.openlocfilehash: c9f6ad48f6c2e3b2ed60833f0cba111cc96a8a54
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 924befd2ec1949973123acc9b7c7d1b89e707e3e
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240766"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245632"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -89,7 +89,7 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![Container Linux от CoreOS](media/azure-stack-marketplace-azure-items/coreos.png) | [Container Linux от CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | Container Linux — это современный компактный дистрибутив Linux, обеспечивающий простую работу с контейнерами, удобное управление кластерами и беспроблемное обновление серверов, что очень важно для вычислений промышленного масштаба. | CoreOS |
 | ![Сервер Ubuntu](media/azure-stack-marketplace-azure-items/ubuntu.png) | [Сервер Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer) | Ubuntu Server является самой популярной в мире системой Linux для облачных сред. | Canonical |
 | ![Debian 8 "Jessie"](media/azure-stack-marketplace-azure-items/debian8.png) | [Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.Debian) | Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux. | credativ |
-| ![Версия 6.9 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 6.9 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased69) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic)  |
+| ![Версия 6.8 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 6.8 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased68HPC) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic)  |
 | ![Версия 6.10 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 6.10 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased610) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic)  |
 | ![Версия 7.3 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 7.3 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased73HPC) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic) |
 | ![Версия 7.5 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 7.5 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased75) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic) |

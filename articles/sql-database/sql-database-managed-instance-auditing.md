@@ -13,13 +13,13 @@ author: vainolo
 ms.author: arib
 ms.reviewer: vanto
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: f82c96b972baa161658f4a864572bfcb791939ed
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/07/2019
+ms.openlocfilehash: 452811cae74253570591e5ffe2c58708fe632b39
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729003"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55894400"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
@@ -154,7 +154,7 @@ ms.locfileid: "55729003"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Различия между аудитом отдельных баз данных, эластичных пулов и управляемых экземпляров в Базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-managed-instance-azure-sql-database-and-sql-server)
+- [Различия между аудитом отдельных баз данных, эластичных пулов и управляемых экземпляров в Базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
 - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
@@ -223,7 +223,7 @@ Log Analytics предоставляет аналитические данные
 
 Ниже перечислены основные различия между аудитом в базах данных Базы данных SQL Azure и SQL Server.
 
-- При использовании варианта развертывания в виде управляемого экземпляра в Базе данных SQL Azure аудит выполняется на уровне сервера и сохраняет файлы журнала `.xel` в учетной записи хранилища BLOB-объектов Azure.
+- При использовании варианта развертывания в виде управляемого экземпляра в базе данных SQL Azure аудит выполняется на уровне сервера и сохраняет файлы журнала `.xel` в хранилище BLOB-объектов Azure.
 - При использовании варианта развертывания в виде отдельной базы данных и эластичного пула в Базе данных SQL Azure аудит работает на уровне базы данных.
 - В SQL Server на локальном компьютере или виртуальной машине аудит выполняется на уровне сервера, но события сохраняются в журналы событий файловой системы или Windows.
 

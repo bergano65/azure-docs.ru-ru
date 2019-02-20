@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 02/12/2019
 ms.author: juliako
-ms.openlocfilehash: 5f111fea8fa1ef9f6e07c01f507e487c992729d5
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 36350f8f359c6ad5cc5637ce0ce38838698cd68b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233537"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56177450"
 ---
-# <a name="media-services-development-with-net"></a>Разработка служб мультимедиа с помощью .NET
+# <a name="media-services-development-with-net"></a>Разработка служб мультимедиа с помощью .NET 
 [!INCLUDE [media-services-selector-setup](../../../includes/media-services-selector-setup.md)]
 
 В этой статье описано, как приступить к разработке приложений Служб мультимедиа с помощью .NET.
@@ -30,7 +30,7 @@ ms.locfileid: "50233537"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Учетная запись служб мультимедиа в новой или существующей подписке Azure. См. дополнительные сведения о [создании учетной записи Служб мультимедиа Azure](media-services-portal-create-account.md).
-* Операционные системы: Windows 10, Windows 7, Windows 2008 R2 или Windows 8.
+* Операционные системы. Windows 10, Windows 7, Windows 2008 R2 или Windows 8.
 * .NET Framework 4.5 или более поздней версии.
 * приведенному.
 

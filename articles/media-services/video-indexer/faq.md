@@ -7,14 +7,14 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 84f2b4d68bf95d18a63401f796e2ffca682c808f
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: bc52c4eaf77b9441683eea8e5f899c6ef34d62e8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567287"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56002363"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -66,7 +66,7 @@ ms.locfileid: "55567287"
 
 ### <a name="how-long-does-it-take-video-indexer-to-extract-insights-from-media"></a>Сколько времени требуется Индексатору видео для извлечения аналитических сведений из мультимедиа?
 
-Время, необходимое для индексации аудио- или видеофайла с помощью API Индексатора видео или веб-интерфейса Индексатора видео, зависит от нескольких параметров, таких как длина и качество файла, объем аналитических данных в файле, количество [зарезервированных единиц](https://docs.microsoft.com/azure/media-services/previous/media-services-scale-media-processing-overview) и наличие включенной [конечной точки потоковой передачи](https://docs.microsoft.com/azure/media-services/previous/media-services-streaming-endpoints-overview). Для большинства типов содержимого, исходя из наличия 10 зарезервированных единиц типа S3, мы прогнозируем длительность индексирования от трети до половины фактической длительности аудио- или видеофайла (иными словами, обработка 10-минутного видео занимает от 3,5 до 5 минут). Однако чтобы получить более точное представление, рекомендуется запустить несколько тестовых файлов со своим собственным содержимым и вычислить среднее значение.
+Время, необходимое для индексации аудио- или видеофайла с помощью API Индексатора видео или веб-интерфейса Индексатора видео, зависит от нескольких параметров, таких как длина и качество файла, объем аналитических данных в файле, количество [зарезервированных единиц](https://docs.microsoft.com/azure/media-services/previous/media-services-scale-media-processing-overview) и наличие включенной [конечной точки потоковой передачи](https://docs.microsoft.com/azure/media-services/previous/media-services-streaming-endpoints-overview). Однако чтобы получить более точное представление, мы рекомендуем вам запустить несколько тестовых файлов со своим собственным содержимым и вычислить среднее значение.
 
 ### <a name="can-i-create-customized-workflows-to-automate-processes-with-video-indexer"></a>Могу ли я создавать настраиваемые рабочие процессы для автоматизации процессов с помощью Индексатора видео?
 

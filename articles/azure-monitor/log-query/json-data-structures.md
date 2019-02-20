@@ -1,6 +1,6 @@
 ---
-title: Работа со строками в запросах Azure Log Analytics | Документация Майкрософт
-description: В этой статье содержатся сведения об использовании портала аналитики для записи запросов в Log Analytics.
+title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
+description: В этой статье приведено руководство по использованию Log Analytics Azure Monitor на портале Azure для создания запросов и анализа данных журнала в Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 24f22d659ccfb6923ad2a038e12454716b2c5445
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: dda7ef2e4e974ea053f030a3ebe71a16872612b0
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54263889"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993730"
 ---
-# <a name="working-with-json-and-data-structures-in-log-analytics-queries"></a>Работа с JSON и структурой данных в запросах Log Analytics
+# <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
+> Прежде чем приступать к этому уроку, необходимо ознакомиться со статьями [Начало работы со службой Log Analytics в Azure Monitor](get-started-portal.md) и [Начало работы с запросами журналов Azure Monitor](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -131,7 +131,7 @@ print hosts_object
 ![Создание схемы](media/json-data-structures/buildschema.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)

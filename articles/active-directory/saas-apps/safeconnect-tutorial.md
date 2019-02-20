@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SafeConnect | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SafeConnect | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и SafeConnect.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: jeedes
-ms.openlocfilehash: f011b9ef7229ba1e588e488be8b4fc5b098ee5ac
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cbb94c28d56b0492fe3488d7c9e2e1257a8b9388
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40024796"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56183808"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-safeconnect"></a>Руководство по интеграции Azure Active Directory с SafeConnect
+# <a name="tutorial-azure-active-directory-integration-with-safeconnect"></a>Руководство. Интеграция Azure Active Directory с SafeConnect
 
 В этом руководстве описано, как интегрировать SafeConnect с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "40024796"
 
 - С помощью Azure AD вы можете контролировать, кто имеет доступ к SafeConnect.
 - Вы можете включить автоматический вход пользователей в SafeConnect (единый вход) с помощью учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "40024796"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **SafeConnect**, выберите **SafeConnect** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "40024796"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя SafeConnect](#create-a-safeconnect-test-user)** требуется для того, чтобы в SafeConnect существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -129,7 +130,7 @@ ms.locfileid: "40024796"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/safeconnect-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/safeconnect-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -149,11 +150,11 @@ ms.locfileid: "40024796"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-safeconnect-test-user"></a>Создание тестового пользователя SafeConnect
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении SafeConnect. Обратитесь в [службу поддержки SafeConnect ](mailto:support@impulse.com), чтобы добавить пользователей на платформу SafeConnect. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении SafeConnect. Обратитесь в  [группу поддержки SafeConnect ](mailto:support@impulse.com), чтобы добавить пользователей на платформу SafeConnect. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -190,7 +191,7 @@ ms.locfileid: "40024796"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SafeConnect на панели доступа, вы должны автоматически войти в приложение.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -11,19 +11,19 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: ea7f32a08a6a183bac21436e7d58afe10c4d7b20
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/08/2019
+ms.openlocfilehash: db82c109e6ae807addafd4d188a24609c4066cd9
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756654"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100701"
 ---
 # <a name="azure-sql-database-servers-and-their-management"></a>Серверы Базы данных SQL Azure и управление ими
 
 ## <a name="what-is-an-azure-sql-database-server"></a>Что являет собою сервер Базы данных SQL Azure?
 
-Сервер Базы данных SQL является логической конструкцией, которая выступает в качестве точки центра администрирования нескольких отдельных баз данных или баз данных в составе [пула](sql-database-elastic-pool.md), [имен для входа](sql-database-manage-logins.md), [правил брандмауэра](sql-database-firewall-configure.md), [правил аудита](sql-database-auditing.md), [политик обнаружения угроз](sql-database-threat-detection.md) и [групп отработки отказа](sql-database-auto-failover-group.md). Он может не располагаться в том же регионе, что и группа ресурсов. Сервер Базы данных SQL должен существовать еще до создания базы данных SQL Azure. Все базы данных, управляемые сервером Базы данных SQL, создаются в том же регионе, что и сервер.
+Сервер базы данных SQL — это логическая конструкция, которая выступает в качестве точки центра администрирования нескольких отдельных баз данных или баз данных в составе [пула](sql-database-elastic-pool.md), [имен для входа](sql-database-manage-logins.md), [правил брандмауэра](sql-database-firewall-configure.md), [правил аудита](sql-database-auditing.md), [политик обнаружения угроз](sql-database-threat-detection.md) и [групп отработки отказа](sql-database-auto-failover-group.md). Он может не располагаться в том же регионе, что и группа ресурсов. Сервер Базы данных SQL должен существовать еще до создания базы данных SQL Azure. Все базы данных, управляемые сервером Базы данных SQL, создаются в том же регионе, что и сервер.
 
 Сервер Базы данных SQL отличается от экземпляра SQL Server, с которым вы могли работать в локальной среде. В частности, служба Базы данных SQL не дает никаких гарантий, связанных с расположением баз данных относительно сервера, который управляет ими, а также не предоставляет доступ или возможности на уровне экземпляра. В противоположность этому базы данных экземпляра в управляемом экземпляре размещены совместно таким же образом, что и SQL Server в локальной среде.
 
@@ -189,5 +189,5 @@ ms.locfileid: "55756654"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
+- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).

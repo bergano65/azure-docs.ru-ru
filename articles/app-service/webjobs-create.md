@@ -15,17 +15,20 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: glenga;msangapu;david.ebbo;suwatch;pbatum;naren.soni;
 ms.custom: seodec18
-ms.openlocfilehash: d21d588660b67da024491151fe4f4376cebba46f
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 43ec22836cb32c21953b9eb6871b9efe300cbf9e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730276"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56001176"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
 
 ## <a name="overview"></a>Обзор
 [Веб-задания](https://docs.microsoft.com/azure/app-service/) — это функция службы приложений Azure, которая позволяет запускать программу или сценарий в том же контексте, что и веб-приложение, приложение API или мобильное приложение. Для использования веб-заданий дополнительные затраты не требуются.
+
+> [!IMPORTANT]
+> Веб-задания пока не поддерживаются Службой приложений в Linux.
 
 В этой статье показано, как развертывать веб-задания с помощью [портала Azure](https://portal.azure.com) для отправки исполняемого файла или сценария. Дополнительные сведения о том, как разрабатывать и развертывать веб-задания с помощью Visual Studio см. в статье [Develop and deploy WebJobs using Visual Studio - Azure App Service](webjobs-dotnet-deploy-vs.md) (Разработка и развертывание веб-заданий с помощью Visual Studio в службе приложений Azure).
 

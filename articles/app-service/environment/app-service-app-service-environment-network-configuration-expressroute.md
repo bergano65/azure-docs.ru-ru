@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/14/2016
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 23faf3b88584f8031b4a2fdbc6d94ac2ae861431
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: e0fa87facec73efdfff1a9908dcba92838215425
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104460"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113385"
 ---
 # <a name="network-configuration-details-for-app-service-environment-for-powerapps-with-azure-expressroute"></a>Сведения о конфигурации сети для Среды службы приложений для PowerApps с Azure ExpressRoute
 
@@ -59,9 +59,9 @@ ms.locfileid: "54104460"
 
 * Необходимо предоставить разрешения для входящих сетевых подключений на нужных портах для Среды службы приложений. Дополнительные сведения см. в статье [Как управлять входящим трафиком в Среде службы приложений][requiredports].
 
-Чтобы выполнить требования DNS, убедитесь в создании допустимой инфраструктуры DNS и ее поддержании для виртуальной сети. Если после создания Среды службы приложений меняется конфигурация DNS, разработчики могут принудительно задать выбор новой конфигурации DNS в Среде службы приложений. Вы можете перезапустить скользящую среду, используя значок **Перезапуск** в разделе "Управление Средой службы приложений" на [портале Azure][NewPortal]. Перезагрузка заставляет среду выбрать новую конфигурацию DNS.
+Чтобы выполнить требования DNS, убедитесь в создании допустимой инфраструктуры DNS и ее поддержании для виртуальной сети. Если после создания Среды службы приложений меняется конфигурация DNS, разработчики могут принудительно задать выбор новой конфигурации DNS в Среде службы приложений. Вы можете активировать перезагрузку скользящей среды, используя значок **Перезапуск** в разделе "Управление Средой службы приложений" на [портале Azure][NewPortal]. Перезагрузка заставляет среду выбрать новую конфигурацию DNS.
 
-Чтобы выполнить требования к входящему сетевому доступу, настройте [группу безопасности сети (NSG)][networksecuritygroups] в подсети Среды службы приложений. Группа безопасности сети обеспечивает требуемый доступ [для управления входящим трафиком в Среду служб приложений ][requiredports].
+Чтобы выполнить требования к входящему сетевому доступу, настройте [группу безопасности сети (NSG)][NetworkSecurityGroups] в подсети Среды службы приложений. Группа безопасности сети обеспечивает требуемый доступ [для управления входящим трафиком в Среду служб приложений ][requiredports].
 
 ## <a name="outbound-network-connectivity"></a>Исходящие сетевые подключения
 
@@ -95,7 +95,7 @@ ms.locfileid: "54104460"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте Azure PowerShell со страницы [Загрузки][AzureDownloads]. Выберите загрузку с датой июнь 2015 г. или позже. В **программе командной строки** > **Windows PowerShell** выберите **Установить**, чтобы установить последние командлеты PowerShell.
+* Скачайте Azure PowerShell со страницы Azure [Загрузки][AzureDownloads]. Выберите загрузку с датой июнь 2015 г. или позже. В **программе командной строки** > **Windows PowerShell** выберите **Установить**, чтобы установить последние командлеты PowerShell.
 
 * Создайте уникальную подсеть для исключительного использования Средой службы приложений. Эта уникальная подсеть гарантирует, что маршруты UDR, используемые в подсети, открывают только исходящий трафик для Среды службы приложений.
 
@@ -148,16 +148,23 @@ ms.locfileid: "54104460"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы начать работу со Средой службы приложений для PowerApps, см. статью [Введение в Среду службы приложения версии 1][IntroToAppServiceEnvironment].
+Сведения о том, как начать работу со средами службы приложений для PowerApps, см. в статье [Введение в среду службы приложения версии 1][IntroToAppServiceEnvironment].
 
 <!-- LINKS -->
-[virtualnetwork]: https://azure.microsoft.com/services/virtual-network/
-[ExpressRoute]: https://azure.microsoft.com/services/expressroute/
-[requiredports]: app-service-app-service-environment-control-inbound-traffic.md
-[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
-[UDROverview]: https://azure.microsoft.com/documentation/articles/virtual-networks-udr-overview/
-<!-- Old link -- [UDRHowTo]: https://azure.microsoft.com/documentation/articles/virtual-networks-udr-how-to/ --> [UDRHowTo]: https://docs.microsoft.com/azure/virtual-network/tutorial-create-route-table-powershell [HowToCreateAnAppServiceEnvironment]: app-service-web-how-to-create-an-app-service-environment.md [AzureDownloads]: https://azure.microsoft.com/downloads/ [DownloadCenterAddressRanges]: https://www.microsoft.com/download/details.aspx?id=41653  
-[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/ [IntroToAppServiceEnvironment]:  app-service-app-service-environment-intro.md [NewPortal]:  https://portal.azure.com
+[virtualnetwork]: https://azure.microsoft.com/services/virtual-network/ 
+[ExpressRoute]: https://azure.microsoft.com/services/expressroute/ 
+[requiredports]: app-service-app-service-environment-control-inbound-traffic.md 
+[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/ 
+[UDROverview]: https://azure.microsoft.com/documentation/articles/virtual-networks-udr-overview/ 
+<!-- Old link -- [UDRHowTo]: https://azure.microsoft.com/documentation/articles/virtual-networks-udr-how-to/ -->
+
+[UDRHowTo]: https://docs.microsoft.com/azure/virtual-network/tutorial-create-route-table-powershell 
+[HowToCreateAnAppServiceEnvironment]: app-service-web-how-to-create-an-app-service-environment.md 
+[AzureDownloads]: https://azure.microsoft.com/downloads/ 
+[DownloadCenterAddressRanges]: https://www.microsoft.com/download/details.aspx?id=41653 
+[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/ 
+[IntroToAppServiceEnvironment]:  app-service-app-service-environment-intro.md 
+[NewPortal]:  https://portal.azure.com 
 
 
 <!-- IMAGES -->

@@ -11,15 +11,15 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/01/2019
-ms.openlocfilehash: cb4d3c4d15dded3c7f90a1e3cf118ca10371dcb1
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.date: 02/072019
+ms.openlocfilehash: 4f025680c1c637f8b8475be2d5784d08e9e2343b
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55701001"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55962015"
 ---
-# <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-elastic-pools"></a>Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер
+# <a name="resource-limits-for-elastic-pools-using-the-vcore-based-purchasing-model-limits"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе виртуальных ядер
 
 Эта статья содержит подробные сведения об ограничениях для эластичных пулов и базах данных в пулах в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер.
 
@@ -259,6 +259,9 @@ ms.locfileid: "55701001"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
-- Сведения об ограничениях на уровнях сервера и подписки см. в статье [SQL Database resource limits for Azure SQL Database server](sql-database-resource-limits-database-server.md) (Ограничения ресурсов Базы данных SQL для сервера Базы данных SQL).
+- Дополнительные сведения см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md).
+- [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](sql-database-dtu-resource-limits-single-databases.md).
+- [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md).
+- [Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Ограничения ресурсов для сервера Базы данных SQL Azure](sql-database-resource-limits-database-server.md).

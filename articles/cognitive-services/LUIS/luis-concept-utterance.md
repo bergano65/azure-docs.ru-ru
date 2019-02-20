@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Фразы — это входные данные, поступившие от пользователя, которые расшифровываются приложением. Соберите фразы, которые вы ожидаете от ваших пользователей. Включите высказывания с одинаковым смыслом, но разным составом, количеством и расположением слов.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: a1d71bb992276cb37c73a7ba27b427ccb617f688
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: ae3a2788a0d5451736433a6338a71eda3d0ad9ca
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55216104"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984364"
 ---
 # <a name="understand-what-good-utterances-are-for-your-luis-app"></a>Выясните, какие фразы лучше подходят для вашего приложения LUIS
 
@@ -39,7 +39,7 @@ ms.locfileid: "55216104"
 
 ### <a name="utterances-arent-always-well-formed"></a>Высказывания не всегда оформляются правильно
 
-Это может быть предложение, например "забронировать мне билет в Париж", или фрагмент предложения, например "бронирование" или "рейс в Париж".  Пользователи часто допускают ошибки. При планировании приложения следует отдельно рассмотреть необходимость [проверки орфографии Bing]\(luis-tutorial-bing-spellcheck) перед передачей входных данных от пользователя в LUIS. 
+Это может быть предложение, например "забронировать мне билет в Париж", или фрагмент предложения, например "бронирование" или "рейс в Париж".  Пользователи часто допускают ошибки. При планировании приложения следует отдельно рассмотреть необходимость использования [Проверки орфографии Bing](luis-tutorial-bing-spellcheck.md) для исправления текста перед передачей входных данных от пользователя в LUIS. 
 
 Если вы не применяете поверку орфографии для высказываний пользователя, необходимо обучать LUIS по высказываниям с типичными опечатками и ошибками.
 

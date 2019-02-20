@@ -4,7 +4,7 @@ description: Из этой статьи вы узнаете об автомат�
 services: key-vault
 documentationcenter: ''
 author: barclayn
-manager: mbaldwin
+manager: barbkess
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: key-vault
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: barclayn
-ms.openlocfilehash: 11ace1b5cce742579256d08ecfe9d9a7412d3d7c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 1679fbe0dedc88ca3e8293512f9a79bb7da69790
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822499"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56115629"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -145,18 +145,18 @@ az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGro
 az keyvault key create --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --protection software
 ```
 
-Если у вас уже есть ключ в PEM-файле, его можно загрузить в Azure Key Vault. Вы можете защитить ключ с помощью программного обеспечения или HSM. Используйте следующую команду для импорта ключа из PEM-файла и его защиты с помощью программного обеспечения:
+Если у вас уже есть ключ в PEM-файле, его можно загрузить в Azure Key Vault. Вы можете защитить ключ с помощью программного обеспечения или HSM. В этом примере ключ импортируется из PEM-файла и защищается с помощью программного обеспечения и пароля hVFkk965BuUv:
 
 ```azurecli
-az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "Pa$$w0rd" --protection software
+az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "hVFkk965BuUv" --protection software
 ```
 
 Теперь для доступа к ключу, созданному или загруженному в хранилище ключей Azure, вы сможете использовать его URI. **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** всегда предоставляет актуальную версию. https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**). 
 
-Добавьте в Azure Key Vault секрет, который представляет собой пароль с именем SQLPassword и значением Pa$$w0rd. 
+Добавьте в Azure Key Vault секрет, который представляет собой пароль с именем SQLPassword и значением Pa$$hVFkk965BuUv. 
 
 ```azurecli
-az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --value "Pa$$w0rd"
+az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --value "hVFkk965BuUv "
 ```
 
 Ссылайтесь на этот пароль с помощью URI. **https://ContosoVault.vault.azure.net/secrets/SQLPassword** всегда предоставляет актуальную версию, а https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**).
@@ -164,7 +164,7 @@ az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --val
 Импортируйте сертификат в хранилище с помощью PEM- или PFX-файла.
 
 ```azurecli
-az keyvault certificate import --vault-name "ContosoKeyVault" --file "c:\cert\cert.pfx" --name "ContosoCert" --password "Pa$$w0rd"
+az keyvault certificate import --vault-name "ContosoKeyVault" --file "c:\cert\cert.pfx" --name "ContosoCert" --password "hVFkk965BuUv"
 ```
 
 Давайте посмотрим на созданный вами ключ, секрет или сертификат:
@@ -203,7 +203,7 @@ az keyvault certificate list --vault-name "ContosoKeyVault"
 Чтобы зарегистрировать приложение в Azure Active Directory:
 
 ```azurecli
-az ad sp create-for-rbac -n "MyApp" --password "Pa$$w0rd" --skip-assignment
+az ad sp create-for-rbac -n "MyApp" --password "hVFkk965BuUv" --skip-assignment
 # If you don't specify a password, one will be created for you.
 ```
 

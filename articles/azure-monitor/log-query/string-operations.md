@@ -1,6 +1,6 @@
 ---
-title: Работа со строками в запросах Azure Log Analytics | Документация Майкрософт
-description: В этой статье содержатся сведения об использовании портала аналитики для записи запросов в Log Analytics.
+title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
+description: Описано редактирование, сравнение, выполнение поиска и многие другие операции со строками в запросах журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,22 +13,22 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 729d98dda1ae0a1410a15ee1e40c670ca211d864
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 9748cd2c37775a47eb630797dd09981c38f8f7e1
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186248"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55995413"
 ---
-# <a name="working-with-strings-in-log-analytics-queries"></a>Работа со строками в запросах Log Analytics
+# <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
 
 > [!NOTE]
-> Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
+> Прежде чем приступать к этому руководству, изучите статьи [Начало работы с Log Analytics на портале Azure](get-started-portal.md) и [Начало работы с запросами в Log Analytics](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этой статье описывается, как редактировать, сравнивать, выполнять поиск и многие другие операции со строками. 
+В этой статье описывается, как редактировать, сравнивать, выполнять поиск и многие другие операции со строками.
 
 Каждый символ в строке имеет номер индекса в соответствии с его расположением. Первый символ имеет индекс 0, следующий — 1 и т. д. Различные строковые функции используют номера индексов по-разному, как показано в следующих разделах. Во многих приведенных примерах используется команда **print** для демонстрации работы со строками без использования определенного источника данных.
 

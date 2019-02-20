@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 320afdb1e4f71150680e9bed6a4c1c9955c99936
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: b846e1fe4552c6cec356a7e7828135b0e1fdf315
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230630"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55994107"
 ---
-# <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD
+# <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD  
  
 API служб мультимедиа Azure — это REST API. Его можно использовать для выполнения операций с ресурсами мультимедиа с помощью REST API или доступных клиентских пакетов SDK. Службы мультимедиа Azure предлагают клиентский пакет SDK служб мультимедиа для Microsoft .NET. Чтобы получить разрешение для доступа к ресурсам служб мультимедиа и API служб мультимедиа, вы должны пройти аутентификацию. 
 
@@ -138,9 +138,9 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Исключение: "Удаленный сервер возвратил ошибку: 401 - Не санкционировано"
+Исключение: "Удаленный сервер возвратил ошибку: (401) не санкционировано."
 
-Решение: чтобы запрос REST служб мультимедиа был успешно выполнен, у вызывающего пользователя должна быть роль владельца или участника для учетной записи служб мультимедиа, к которой он пытается получить доступ. Дополнительные сведения см. в разделе [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control).
+Решение. Чтобы запрос REST Служб мультимедиа был успешно выполнен, у вызывающего пользователя должна быть роль владельца или участника для учетной записи Служб мультимедиа, к которой он пытается получить доступ. Дополнительные сведения см. в разделе [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control).
 
 ## <a name="resources"></a>Ресурсы
 

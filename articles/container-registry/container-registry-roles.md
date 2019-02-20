@@ -7,18 +7,18 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: danlep
-ms.openlocfilehash: e2ec1b7ad6d1489836937d30b89d0f0f681a9bfa
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: a4b9b382755e73b6218432624c471346e9698752
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819592"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193396"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
 Служба реестра контейнеров Azure поддерживает ряд Azure-ролей, которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [управление доступом Azure на основе ролей (RBAC)](../role-based-access-control/index.yml), чтобы назначать пользователям или субъектам-службам, которые должны взаимодействовать с реестром, особые разрешения.
 
-| Роль или разрешение       | Доступ к Resource Manager| Создание и удаление реестра | [Отправка образа](#push-image) | [Получение образа](#pull-image) | Изменение политик |   [Подписывание образов](#sign-images)  |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager)| [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- |
 | Владелец. | X | X | X | X | X |  |  
 | участник; | X | X | X | X | X |  |  
@@ -45,19 +45,19 @@ ms.locfileid: "55819592"
 
 ## <a name="access-resource-manager"></a>Доступ к Resource Manager
 
-Доступ к Azure Resource Manager является обязательным для портала Azure и [Azure CLI](/cli/azure/). Это набор разрешений потребуется, например, чтобы получить список реестров с помощью команды `az acr list`. 
+Доступ к Azure Resource Manager является обязательным для управления порталом Azure и реестром с помощью [Azure CLI](/cli/azure/). Это набор разрешений потребуется, например, чтобы получить список реестров с помощью команды `az acr list`. 
 
-## <a name="createdelete-registry"></a>Создание и удаление реестра
+## <a name="create-and-delete-registry"></a>Создание и удаление реестра
 
 Возможность создавать и удалять реестры контейнеров Azure.
 
 ## <a name="push-image"></a>Отправка образа
 
-Возможность `docker push` образа или отправки другого поддерживаемого артефакта в реестр. Требуется [проверка подлинности](container-registry-authentication.md) в реестре с помощью авторизованного удостоверения. 
+Возможность `docker push` образа или отправки другого [поддерживаемого артефакта](container-registry-image-formats.md), например диаграммы Helm, в реестр. Требуется [проверка подлинности](container-registry-authentication.md) в реестре с помощью авторизованного удостоверения. 
 
 ## <a name="pull-image"></a>Получение образа
 
-Возможность `docker pull` образа, не находящегося на карантине, или получения другого поддерживаемого артефакта из реестра. Требуется [проверка подлинности](container-registry-authentication.md) в реестре с помощью авторизованного удостоверения.
+Возможность `docker pull` образа, не находящегося на карантине, или получения другого [поддерживаемого артефакта](container-registry-image-formats.md), например диаграммы Helm, из реестра. Требуется [проверка подлинности](container-registry-authentication.md) в реестре с помощью авторизованного удостоверения.
 
 ## <a name="change-policies"></a>Изменение политик
 

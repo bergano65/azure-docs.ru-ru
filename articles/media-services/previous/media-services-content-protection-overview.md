@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 89e28a9b70d078c3fe385225af305252ececefce
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 3ac07b06e1cf7b5b24956c10e202f9baeab60b2b
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50249938"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992252"
 ---
-# <a name="content-protection-overview"></a>Обзор системы защиты содержимого
+# <a name="content-protection-overview"></a>Обзор системы защиты содержимого 
+
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки, а также доставлять в режиме реального времени и по требованию содержимое, зашифрованное динамически с помощью Advanced Encryption Standard (AES-128) или трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. 
 
 На следующем рисунке показан рабочий процесс защиты содержимого Служб мультимедиа: 
@@ -33,10 +34,10 @@ ms.locfileid: "50249938"
 ## <a name="dynamic-encryption"></a>Динамическое шифрование
  Службы мультимедиа Azure доставляют содержимое, динамически зашифрованное с помощью незащищенного ключа AES или шифрования DRM путем использования PlayReady, Widevine или FairPlay. Сейчас поддерживается шифрование в форматах HTTP Live Streaming (HLS), MPEG DASH и Smooth Streaming. Шифрование при поэтапной загрузке не поддерживается. Каждый метод шифрования поддерживает следующие протоколы потоковой передачи:
 
-- AES: MPEG-DASH, Smooth Streaming и HLS.
-- PlayReady: MPEG-DASH, Smooth Streaming и HLS.
-- Widevine: MPEG-DASH.
-- FairPlay: HLS.
+- AES: MPEG-DASH, Smooth Streaming и HLS
+- PlayReady: MPEG-DASH, Smooth Streaming и HLS
+- Widevine: MPEG-DASH
+- FairPlay: HLS
 
 Чтобы выполнить шифрование ресурса, необходимо связать ключ шифрования содержимого с ресурсом, а также настроить политику авторизации для ключа. Ключи содержимого можно указать или они автоматически создаются службами мультимедиа.
 
@@ -80,9 +81,9 @@ PlayReady и Widevine используют общее шифрование (ре
 * Если к ресурсу был применен только один тип шифрования, то в URL-адресе тип шифрования можно не указывать.
 * Тип шифрования вводится без учета регистра.
 * Можно указать следующие типы шифрования:
-  * **cenc**: PlayReady или Widevine (общее шифрование).
-  * **cbcs aapl**: для FairPlay (шифрование AES CBC).
-  * **cbc**: шифрование конверта AES.
+  * **cenc**: для PlayReady или Widevine (общее шифрование).
+  * **cbcs-aapl**: для FairPlay (шифрование AES CBC).
+  * **cbc**: для конвертного шифрования AES.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В следующих статьях описываются дальнейшие действия, которые помогут вам приступить к работе по защите содержимого:

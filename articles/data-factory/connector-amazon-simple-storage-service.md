@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: jingwang
-ms.openlocfilehash: cd07343e056493369d2093651ecf7c466595f412
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 16d0002ec8e42eec92895aaf582a8c2b3df2c3a6
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55656589"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895267"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -57,7 +57,7 @@ ms.locfileid: "55656589"
 | Тип | Для свойства типа необходимо задать значение **AmazonS3**. | Yes |
 | accessKeyId | Идентификатор секретного ключа доступа. |Yes |
 | secretAccessKey | Сам секретный ключ доступа. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
-| serviceUrl | Укажите настраиваемую конечную точку S3, если вы копируете данные из поставщика хранилища, совместимого с S3, но отличного от официальной службы Amazon S3. Например, для [копирования данных из Google Cloud Storage](#copy-from-google-cloud-storage) укажите `https://storage.googleapis.com`. | Нет  |
+| serviceUrl | Укажите настраиваемую конечную точку S3, если вы копируете данные из поставщика хранилища, совместимого с S3, но отличного от официальной службы Amazon S3. Например, для копирования данных из Google Cloud Storage укажите `https://storage.googleapis.com`. | Нет  |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
 >[!TIP]

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 02/04/2019
 ms.author: alkohli
-ms.openlocfilehash: 81df0a776cd22490342230567deacb23097cd12e
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: be51e6c829c5f12d17c6302bb951039711f12075
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55094195"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113232"
 ---
 # <a name="azure-data-box-gateway-system-requirements-preview"></a>Системные требования для шлюза Azure Data Box (предварительная версия)
 
@@ -42,22 +42,11 @@ ms.locfileid: "55094195"
 
 ## <a name="supported-os-for-clients-connected-to-device"></a>Поддерживаемая ОС для клиентов, подключенных к устройству
 
-Ниже приведен список поддерживаемых операционных систем для клиентов или узлов, подключенных к шлюзу Data Box.
-
-| **Операционная система и (или) платформа** | **Версии** |
-| --- | --- |
-| Windows Server |2012 R2 <br> 2016 <br> 2019 |
-|  Windows |8, 10 |
-| SUSE Linux |Enterprise Server 12 (x86_64)|
-| Ubuntu |16.04.3 LTS|
-| CentOS | 7.0 |
+[!INCLUDE [Supported OS for clients connected to device](../../includes/data-box-edge-gateway-supported-client-os.md)]
 
 ## <a name="supported-protocols-for-clients-accessing-device"></a>Поддерживаемые протоколы для клиентов, обращающихся к устройству
 
-|**Протокол** |**Версии**   |**Примечания**  |
-|---------|---------|---------|
-|SMB    | 2.x, 3.x      | SMB 1 не поддерживается.|
-|NFS     | Версии 3 и 4        |         |
+[!INCLUDE [Supported protocols for clients accessing device](../../includes/data-box-edge-gateway-supported-client-protocols.md)]
 
 ## <a name="supported-virtualization-platforms-for-device"></a>Поддерживаемые платформы виртуализации для устройства
 
@@ -69,49 +58,22 @@ ms.locfileid: "55094195"
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 
-Ниже приведен список поддерживаемых учетных записей хранения для шлюза Data Box
-
-| **Учетная запись хранения** | **Примечания** |
-| --- | --- |
-| Классический | Стандартная |
-| Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
+[!INCLUDE [Supported storage accounts](../../includes/data-box-edge-gateway-supported-storage-accounts.md)]
 
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
 
-Ниже приведен список поддерживаемых типов хранилищ для шлюза Data Box.
-
-| **Формат файлов** | **Примечания** |
-| --- | --- |
-| Блочный BLOB-объект Azure | |
-| Страничный BLOB-объект Azure  | |
-| Файлы Azure | |
+[!INCLUDE [Supported storage types](../../includes/data-box-edge-gateway-supported-storage-types.md)]
 
 ## <a name="supported-browsers-for-local-web-ui"></a>Поддерживаемые браузеры для локального пользовательского веб-интерфейса
 
-Ниже приведен список поддерживаемых браузеров для локального пользовательского веб-интерфейса виртуального устройства.
+[!INCLUDE [Supported browsers for local web UI](../../includes/data-box-edge-gateway-supported-browsers.md)]
 
-|"Обзор"  |Версии  |Дополнительные требования и примечания  |
-|---------|---------|---------|
-|Google Chrome   |Последняя версия         |         |
-|Microsoft Edge    | Последняя версия        |         |
-|Internet Explorer     | Последняя версия        |         |
-|FireFox    |Последняя версия         |         |
-
-
-## <a name="networking-requirements"></a>Требования к сети
+## <a name="networking-port-requirements"></a>Обязательные сетевые порты
 
 В таблице ниже приведены порты, которые должны быть открытыми в брандмауэре для разрешения использования SMB, облака или управления трафиком. В этой таблице значение *в* или *входящий* относится к направлению, из которого клиент запрашивает доступ к вашему устройству. Значение *исходящий* указывает на *направление*, в котором устройство шлюза Data Box отправляет данные за пределами развертывания, например в Интернет.
 
-| Порт №| Входящий или исходящий | Область порта| Обязательно|   Примечания                                                             |                                                                                     |
-|--------|---------|----------|--------------|----------------------|---------------|
-| TCP 80 (HTTP)|Исходящий|WAN |Нет |Исходящий порт используется для доступа к Интернету и извлечения обновлений. <br>Пользователи могут настраивать исходящий веб-прокси. |                          
-| TCP 443 (HTTPS)|Исходящий|WAN|Yes|Исходящий порт используется для доступа к данным в облаке.<br>Пользователи могут настраивать исходящий веб-прокси.|   
-| UDP 53 (DNS)|Исходящий|WAN|В некоторых случаях<br>См. примечания|Этот порт требуется, только если вы используете веб-DNS-сервер.<br>Мы рекомендуем использовать локальный DNS-сервер. |
-| UDP 123 (NTP)|Исходящий|WAN|В некоторых случаях<br>См. примечания|Этот порт требуется, только если вы используете веб-NTP-сервер.  |
-| UDP 67 (DHCP)|Исходящий|WAN|В некоторых случаях<br>См. примечания|Этот порт требуется, только если вы используете DHCP-сервер.  |
-| TCP 80 (HTTP)|В|Локальная сеть|Yes|Этот входящий порт для локального пользовательского интерфейса на устройстве используется для локального управления. <br>Запрос доступа к локальному пользовательскому интерфейсу по протоколу HTTP будет автоматически перенаправлен на HTTPS.  | 
-| TCP 443 (HTTPS)|В|Локальная сеть|Yes|Этот входящий порт для локального пользовательского интерфейса на устройстве используется для локального управления. | 
+[!INCLUDE [Port configuration for device](../../includes/data-box-edge-gateway-port-config.md)]
 
 ## <a name="url-patterns-for-firewall-rules"></a>Шаблоны URL-адресов для правил брандмауэра
 
@@ -121,28 +83,13 @@ ms.locfileid: "55094195"
 
 > [!NOTE]
 > - В качестве IP-адресов устройств (источников) всегда должны устанавливаться все сетевые интерфейсы с поддержкой облака.
-> - В качестве IP-адресов назначения должны быть заданы [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653).
+> - В качестве IP-адресов назначения должны устанавливаться [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653).
 
-|     Шаблон URL-адреса                                                                                                                                                                                                                                                                                                                                                                                                                                       |     Компонент или функция                                                                             |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-|    https://*.databoxedge.azure.com/*<br>https://*.servicebus.windows.net/*<br>https://login.windows.net                                                                                                                                                                                                                                                                                                        |    Служба шлюза Data Box<br>Azure Service Bus<br>Служба проверки подлинности    |
-|    http://*.backup.windowsazure.com                                                                                                                                                                                                                                                                                                                                                                                                                   |    Активация устройства                                                                                    |
-|    http://crl.microsoft.com/pki/*   http://www.microsoft.com/pki/*                                                                                                                                                                                                                                                                                                                                                                                    |    Отзыв сертификатов                                                                               |
-|    https://*.core.windows.net/* https://*.data.microsoft.com http://*.msftncsi.com                                                                                                                                                                                                                                                                                                                                                                |    Учетные записи хранения Azure и мониторинг                                                                |
-|    http://windowsupdate.microsoft.com<br>http://*.windowsupdate.microsoft.com<br>https://*.windowsupdate.microsoft.com<br>http://*.update.microsoft.com<br>https://*.update.microsoft.com<br>http://*.windowsupdate.com<br>http://download.microsoft.com<br>http://*.download.windowsupdate.com<br>http://wustat.windows.com<br>http://ntservicepack.microsoft.com<br>http://*.ws.microsoft.com<br>https://*.ws.microsoft.com<br>http://*.mp.microsoft.com        |    Серверы Центра обновления Майкрософт                                                                             |
-|    http://*.deploy.akamaitechnologies.com                                                                                                                                                                                                                                                                                                                                                                                                             |    CDN Akamai                                                                                           |
-|    https://*.partners.extranet.microsoft.com/*                                                                                                                                                                                                                                                                                                                                                                                                        |    Вспомогательный пакет                                                                                      |
-|    http://*.data.microsoft.com                                                                                                                                                                                                                                                                                                                                                                                                                        |    Подробнее о службе телеметрии в Windows см. на странице описания обновления для улучшения качества программного обеспечения и диагностики телеметрии      |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                         |
-
-
+[!INCLUDE [URL patterns for firewall](../../includes/data-box-edge-gateway-url-patterns-firewall.md)]
 
 ## <a name="internet-bandwidth"></a>Пропускная способность Интернета
 
-Следующие требования применяются к минимальной пропускной способности Интернета, доступной для ваших устройств шлюза Data Box.
-
-- Шлюз Data Box всегда подключен к выделенному интернет-каналу с пропускной способностью не менее 20 Мбит/с. Эту пропускную способность не следует использовать совместно с другими приложениями. 
-- При использовании регулирования сети шлюз Data Box подключается к выделенному интернет-каналу с пропускной способностью не менее 32 Мбит/с.
+[!INCLUDE [Internet bandwidth](../../includes/data-box-edge-gateway-internet-bandwidth.md)]
 
 ## <a name="next-step"></a>Дальнейшие действия
 

@@ -1,6 +1,6 @@
 ---
-title: Примеры запросов в Log Analytics Azure Monitor | Документация Майкрософт
-description: Примеры запросов в Log Analytics на языке Kusto.
+title: Примеры запроса журнала Azure Monitor | Документация Майкрософт
+description: Примеры запросов журнала в Azure Monitor, выполненных с помощью языка запросов Data Explorer.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: bwren
-ms.openlocfilehash: d5cad3869e74f33a2d1a56352c658bb9c8f23db6
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 81852590ec714c458ebf2ba2b714d0b20f0b873c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885812"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993203"
 ---
-# <a name="log-analytics-query-examples"></a>Примеры запросов Log Analytics
-Эта статья содержит несколько примеров [запросов](../../azure-monitor/log-query/log-query-overview.md), составленных на [языке Kusto](https://docs.microsoft.com/azure/kusto/query/) для получения данных разных типов из Log Analytics. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
+# <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
+Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запроса Data Explorer](https://docs.microsoft.com/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
 
-Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Пройдите [урок по созданию запросов](get-started-queries.md), если вы еще не работали с Log Analytics.
+Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
 
 ## <a name="events"></a>События
 
@@ -440,4 +440,4 @@ Update
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о языке можно получить в [справочнике по языку Kusto](/azure/kusto/query).
-- Изучите урок по [написанию запросов в Log Analytics](get-started-queries.md).
+- Ознакомьтесь со статьей [Начало работы с запросами журнала Azure Monitor](get-started-queries.md).

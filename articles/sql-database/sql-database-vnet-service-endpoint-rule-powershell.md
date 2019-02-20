@@ -1,5 +1,5 @@
 ---
-title: Создание конечных точек службы и правил виртуальной сети в SQL Azure с помощью PowerShell | Документация Майкрософт
+title: PowerShell для конечных точек и правил виртуальной сети для отдельных баз данных и баз данных в составе пула в SQL Azure | Документация Майкрософт
 description: Сценарии PowerShell для создания конечных точек службы виртуальной сети Базы данных SQL Azure и хранилища данных SQL и управления ими.
 services: sql-database
 ms.service: sql-database
@@ -11,20 +11,20 @@ author: oslake
 ms.author: moslake
 ms.reviewer: genemi, vanto
 manager: craigg
-ms.date: 10/23/2018
-ms.openlocfilehash: ae29fcfe39b5844ab948eb55ca314ae51dcae174
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.date: 02/11/2019
+ms.openlocfilehash: b30240620e3a8d3dea1849e895ec021c96fc11c6
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55566301"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56117618"
 ---
 # <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell:  создание конечной точки виртуальной службы и правила виртуальной сети для SQL
 
-[База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают конечные точки виртуальной службы.
+*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая контролирует то, обеспечивает ли сервер отдельной базы данных и эластичного пула в [Базе данных SQL](sql-database-technical-overview.md) Azure или базы данных в [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обмен данными с определенными подсетями в виртуальных сетях.
 
-> [!NOTE]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к **Управляемому экземпляру базы данных SQL Azure**, так как у вас нет конечной точки службы, связанной с подсетью Управляемого экземпляра.
+> [!IMPORTANT]
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
 
 В этой статье предлагается и описывается сценарий PowerShell, который выполняет следующие действия:
 

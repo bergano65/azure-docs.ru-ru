@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: bwren
-ms.openlocfilehash: fdccb4e94d9b9fd8b698575c890efad56a115a3e
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 1b86bc015b187fe75e79ba04df60a6bc5257a9b8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452825"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55994029"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -64,7 +64,7 @@ ms.locfileid: "54452825"
 
 - Используйте [Azure Pipelines](/azure/devops/pipelines) для реализации непрерывного развертывания и автоматизации всего процесса от фиксации кода до производства на основе ваших тестов CI/CD.
 - Используйте [Quality Gates](/azure/devops/pipelines/release/approvals/gates), чтобы интегрировать мониторинг в предварительное развертывание или после развертывания. Это гарантирует, что вы соответствуете ключевым показателям работоспособности или производительности (КПЭ) по мере того, как ваши приложения переходят от разработки к производству, и любые различия в инфраструктуре или масштабах инфраструктуры не оказывают негативного влияния на ваши ключевые показатели эффективности.
-- [Поддерживайте отдельные экземпляры мониторинга](../azure-monitor/app/separate-resources.md) между различными средами развертывания, такими как Dev, Test, Canary и Prod. Это гарантирует, что собранные данные актуальны для всех связанных приложений и инфраструктуры. Если вам необходимо сопоставить данные в разных средах, вы можете использовать [мультиресурсные диаграммы в обозревателе метрик](../azure-monitor/platform/metrics-charts.md) или создать [междуресурсные запросы в Log Analytics](log-query/cross-workspace-query.md).
+- [Поддерживайте отдельные экземпляры мониторинга](../azure-monitor/app/separate-resources.md) между различными средами развертывания, такими как Dev, Test, Canary и Prod. Это гарантирует, что собранные данные актуальны для всех связанных приложений и инфраструктуры. Если вам необходимо сопоставить данные в разных средах, вы можете использовать [мультиресурсные диаграммы в обозревателе метрик](../azure-monitor/platform/metrics-charts.md) или создать [междуресурсные запросы в Azure Monitor](log-query/cross-workspace-query.md).
 
 
 ## <a name="create-actionable-alerts-with-actions"></a>Создайте функциональные оповещения с действиями

@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 2/4/2019
+ms.date: 2/8/2019
 ms.author: moderakh
-ms.openlocfilehash: 31683159f96dd87fe4e7ceea050d5e1d213decba
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 88fcfec903dac9d939d658e5d06a51ab8ff1aba9
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770356"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55979179"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -43,6 +43,12 @@ ms.locfileid: "55770356"
 | **Минимальная поддерживаемая среда выполнения**|[JDK 8](https://aka.ms/azure-jdks) | 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
+* Возможность подключения в прямом режиме в общедоступной версии.
+* Добавлена поддержка QueryMetrics.
+* Изменены API, принимающие java.util.Collection, для которых важен порядок принятия java.util.List.
+  Теперь ConnectionPolicy#getPreferredLocations(), JsonSerialization и PartitionKey(.) принимают список.
 
 ### <a name="a-name240-beta-1240-beta-1"></a><a name="2.4.0-beta-1"/>2.4.0-beta-1
 * Добавлена поддержка для Direct.
@@ -130,6 +136,7 @@ ms.locfileid: "55770356"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.4.0](#2.4.0) |8 февраля 2019 г.|--- |
 | [2.4.0-beta-1](#2.4.0-beta-1) |4 февраля 2019 г.|--- |
 | [2.3.1](#2.3.1) |15 января 2019 г.|--- |
 | [2.3.0](#2.3.0) |29 ноября 2018 г.|--- |

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: mbullwin
-ms.openlocfilehash: f41d54f97861a4df7d50cb3b4f0f99970de354cc
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 4a1ea364180d389ffdbfc7cedd740a0e493070b3
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121504"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999000"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -104,7 +104,7 @@ ms.locfileid: "54121504"
 ## <a name="step-4-publish-your-app"></a>Шаг 4. Публикация приложения
 Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](../../azure-monitor/app/metrics-explorer.md#live-metrics-stream), чтобы убедиться в бесперебойной работе приложения.
 
-Телеметрия создается на портале Application Insights, где можно отслеживать метрики, выполнять поиск данных телеметрии и настраивать [панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md). Можно также использовать эффективный [язык запросов Log Analytics](https://aka.ms/LogAnalyticsLanguage) для анализа использования и производительности или поиска определенных событий.
+Телеметрия создается на портале Application Insights, где можно отслеживать метрики, выполнять поиск данных телеметрии и настраивать [панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md). Вы также можете использовать многофункциональный [язык запросов Data Explorer](https://aka.ms/LogAnalyticsLanguage) для анализа использования и производительности или поиска определенных событий.
 
 Кроме того, можно продолжить анализировать телеметрию в [Visual Studio](../../azure-monitor/app/visual-studio.md) с помощью таких средств, как поиск по журналу диагностики и [тренды](../../azure-monitor/app/visual-studio-trends.md).
 

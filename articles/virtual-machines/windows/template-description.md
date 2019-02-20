@@ -15,18 +15,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: e32e2833edc7027a984bb27b34608e4b1b898113
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 6821c2000efa4a03f803871d9b33272175f1265c
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767090"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113249"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
 В этой статье описываются аспекты шаблона Azure Resource Manager, которые относятся к виртуальным машинам. Здесь не описывается полный шаблон для создания виртуальной машины. Для этого требуются определения ресурсов для учетных записей хранения, сетевых интерфейсов, общедоступных IP-адресов и виртуальных сетей. Дополнительные сведения о том, как эти ресурсы могут быть определены вместе, см. в статье [Пошаговое руководство по созданию шаблона Resource Manager](../../azure-resource-manager/resource-manager-template-walkthrough.md).
 
 [В коллекции есть много шаблонов](https://azure.microsoft.com/documentation/templates/?term=VM), которые включают в себя ресурс виртуальной машины. Здесь описываются не все элементы, которые могут быть включены в шаблон.
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 В этом примере показан типичный раздел ресурсов шаблона для создания указанного числа виртуальных машин.
 
@@ -163,8 +165,9 @@ ms.locfileid: "55767090"
 Последние доступные версии API для разных типов ресурсов можно узнать следующим образом.
 
 - Для REST API выполните операцию [вывода списка всех поставщиков ресурсов](https://docs.microsoft.com/rest/api/resources/providers).
-- В PowerShell используйте командлет [Get-AzureRmResourceProvider](/powershell/module/azurerm.resources/get-azurermresourceprovider).
+- PowerShell: [Get-AzResourceProvider](https://docs.microsoft.com/powershell/module/az.resources/get-azresourceprovider)
 - Azure CLI: [az provider show](https://docs.microsoft.com/cli/azure/provider)
+
 
 ## <a name="parameters-and-variables"></a>Параметры и переменные
 
@@ -442,7 +445,7 @@ Resource Manager параллельно развертывает все ресу
 
 ![Получение состояния расширения](./media/template-description/virtual-machines-show-extensions.png)
 
-Сведения о расширении также можно получить с помощью команды PowerShell **Get AzureRmVMExtension**, команды Azure CLI **vm extension get** или команды REST API **Get extension information**.
+Сведения о расширении также можно получить с помощью команды PowerShell **Get-AzVMExtension**, команды Azure CLI **vm extension get** или команды REST API **Get extension information**.
 
 ## <a name="deployments"></a>Развернутые приложения
 

@@ -11,17 +11,17 @@ author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: ce7892401b2b04565a00c33c5301b9c0cd05d5f5
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/11/2019
+ms.openlocfilehash: 1460b595e8887fc932d5be335ae51b07a000b9fb
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732759"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098364"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
 
-В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md).
+В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md). Дополнительные сведения см. в разделе о [миграции в отдельную базу данных или эластичный пул](sql-database-cloud-migrate.md). Сведения о миграции из других платформ см. [здесь](https://datamigration.microsoft.com/).
 
 В общем процесс переноса базы данных выглядит примерно так:
 
@@ -34,7 +34,7 @@ ms.locfileid: "55732759"
 - [Мониторинг приложений](#monitor-applications)
 
 > [!NOTE]
-> Сведения о переносе отдельной базы данных в базу данных или эластичный пул см. в статье [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-cloud-migrate.md).
+> Сведения о переносе отдельной базы данных в базу данных или эластичный пул см. в статье [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-single-database-migrate.md).
 
 ## <a name="assess-managed-instance-compatibility"></a>Оценка совместимости управляемого экземпляра
 
@@ -47,7 +47,7 @@ ms.locfileid: "55732759"
 - Если вам необходим прямой доступ к ОС или файловой системе, например, для установки сторонних или настраиваемых агентов на одной и той же виртуальной машине с SQL Server.
 - Если у вас есть строгая зависимость от функций, которые все еще не поддерживаются, например FileStream или FileTable, PolyBase и транзакции между несколькими экземплярами.
 - Если вам необходимо использовать только определенную версию SQL Server (например, 2012).
-- Если ваши требования к вычислению намного ниже предлагаемых управляемым экземпляром в общедоступной предварительной версии (например, одно виртуальное ядро), а консолидация базы данных неприемлема.
+- Если ваши требования к вычислению намного ниже предлагаемых управляемым экземпляром (например, одно виртуальное ядро), а консолидация базы данных неприемлема.
 
 ## <a name="deploy-to-an-optimally-sized-managed-instance"></a>Развертывание в управляемый экземпляр оптимального размера
 

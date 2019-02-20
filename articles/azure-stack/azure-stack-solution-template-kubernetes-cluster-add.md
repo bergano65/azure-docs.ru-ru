@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 02/09/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 707cd7e72245ce47289c0a744d7103c713acecb9
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: d0051f081f005d61a1eed43d177a11781b2b3fa8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765489"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997108"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
@@ -65,15 +65,15 @@ ms.locfileid: "55765489"
 
 Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes.
 
-1. Создайте и экспортируйте сертификат, используемый для создания субъекта-службы. В следующем фрагменте кода показано, как создать самозаверяющий сертификат. 
+1. Создайте и экспортируйте самозаверяющий сертификат, используемый для создания субъекта-службы. 
 
     - Вам понадобятся следующие сведения:
 
        | Значение | ОПИСАНИЕ |
        | ---   | ---         |
-       | Пароль | Пароль сертификата. |
-       | Локальный путь к сертификату | Путь и имя файла сертификата. Например: `path\certfilename.pfx` |
-       | Имя сертификата | Имя сертификата. |
+       | Пароль | Введите новый пароль для сертификата. |
+       | Локальный путь к сертификату | Введите путь и имя файла сертификата. Например: `c:\certfilename.pfx` |
+       | Имя сертификата | Введите имя сертификата. |
        | Расположение хранилища сертификатов |  Например `Cert:\LocalMachine\My`. |
 
     - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
@@ -82,8 +82,7 @@ ms.locfileid: "55765489"
         # Creates a new self signed certificate 
         $passwordString = "<password>"
         $certlocation = "<local certificate path>.pfx"
-        $certificateName = "<certificate name>"
-        #certificate store location. Eg. Cert:\LocalMachine\My
+        $certificateName = "CN=<certificate name>"
         $certStoreLocation="<certificate store location>"
         
         $params = @{
@@ -105,24 +104,33 @@ ms.locfileid: "55765489"
         Export-PfxCertificate -cert $cert -FilePath $certlocation -Password $pwd
         ```
 
-2. Создайте субъект-службу с помощью сертификата.
+2.  Запишите новый идентификатор сертификата, отображаемый в сеансе PowerShell, `1C2ED76081405F14747DC3B5F76BB1D83227D824`. Идентификатор будет использоваться при создании субъекта-службы.
+
+    ```PowerShell  
+    VERBOSE: Generated new certificate 'CN=<certificate name>' (1C2ED76081405F14747DC3B5F76BB1D83227D824).
+    ```
+
+3. Создайте субъект-службу с помощью сертификата.
 
     - Вам понадобятся следующие сведения:
 
        | Значение | ОПИСАНИЕ                     |
        | ---   | ---                             |
        | IP-адрес ERCS | В ASDK привилегированная конечная точка — это, как правило, `AzS-ERCS01`. |
-       | имя приложения; | Простое имя субъекта-службы приложения. |
-       | Расположение хранилища сертификатов | Путь на компьютере, где был сохранен сертификат. Например: `Cert:\LocalMachine\My\<someuid>` |
+       | имя приложения; | Введите простое имя субъекта-службы приложения. |
+       | Расположение хранилища сертификатов | Путь на компьютере, где был сохранен сертификат. На это указывает местоположение хранилища и идентификатор сертификата, сформированный на первом этапе. Например: `Cert:\LocalMachine\My\1C2ED76081405F14747DC3B5F76BB1D83227D824` |
 
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+       При появлении запроса используйте следующие учетные данные для подключения к конечной точке привилегии. 
+        - Имя пользователя. Укажите учетную запись CloudAdmin в формате <Azure Stack domain>\cloudadmin. (При использовании ASDK имя пользователя — azurestack\cloudadmin.)
+        - Пароль: Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
+
+    - Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
         ```PowerShell  
         #Create service principal using the certificate
         $privilegedendpoint="<ERCS IP>"
         $applicationName="<application name>"
-        #certificate store location. Eg. Cert:\LocalMachine\My
-        $certStoreLocation="<certificate store location>"
+        $certStoreLocation="<certificate location>"
         
         # Get certificate information
         $cert = Get-Item $certStoreLocation
@@ -189,7 +197,7 @@ ms.locfileid: "55765489"
 
 1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-1. Укажите `UbuntuServer`.
+1. Укажите `Ubuntu Server`.
 
 1. Выберите последнюю версию сервера. Проверьте полный номер версии и убедитесь, что вы используете последнюю версию:
     - **Издатель**: Canonical

@@ -6,17 +6,18 @@ keywords: clip;subclip;encoding;media
 author: dbgeorge
 manager: jasonsue
 ms.author: dwgeo
-ms.date: 11/10/2017
+ms.date: 02/08/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 1deca68cd6a61ede7536c4d5544036a10c54209b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 510176331a1b79a1069b42afabb63b6b326951cc
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782793"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55992326"
 ---
-# <a name="create-clips-with-azure-media-clipper-in-the-portal"></a>Создание клипов на портале с помощью Azure Media Clipper
+# <a name="create-clips-with-azure-media-clipper-in-the-portal"></a>Создание клипов на портале с помощью Azure Media Clipper  
+
 С помощью средства Azure Media Clipper вы можете создавать на портале клипы из ресурсов, сохраненных в учетных записях служб мультимедиа. Чтобы начать работу, найдите на портале учетную запись служб мультимедиа. Выберите для нее вкладку **Субклип**.
 
 На вкладке **Субклип** вы можете начать составление клипа. Средство Clipper на портале загружает MP4-файлы с одной скоростью или с несколькими скоростями, а также динамические архивы, которые публикуются с допустимым указателем потоковой передачи. Неопубликованные ресурсы не загружаются.
@@ -35,7 +36,7 @@ Clipper сейчас предоставляется в режиме общедо
 
 Чтобы создать фильтр динамического манифеста, перейдите на вкладку **Ресурсы** и выберите нужный ресурс. Нажмите кнопку **Субклип** в верхнем меню. В меню дополнительных параметров выберите режим обрезки "Фильтр динамического манифеста". Затем, чтобы создать фильтр, примените ту же процедуру, что и для создания клипа, преобразованного для просмотра. Фильтры можно создавать только из одного ресурса.
 
-На следующем изображении показано средство Clipper в режиме "Фильтр динамического манифеста" на портале Azure. ![Azure Media Clipper в режиме "Фильтр динамического манифеста" на портале Azure](media/media-services-azure-media-clipper-portal/media-services-azure-media-clipper-filter.PNG)
+На следующем изображении показан Clipper в режиме фильтрации динамического манифеста на портале Azure. ![Azure Media Clipper в режиме фильтрации динамического манифеста на портале Azure](media/media-services-azure-media-clipper-portal/media-services-azure-media-clipper-filter.PNG)
 
 ## <a name="submitting-clipping-jobs"></a>Отправка заданий обрезки
 Когда вы закончите составление клипа, нажмите кнопку отправки задания, которая запускает соответствующее задание обрезки или вызывает динамический манифест.

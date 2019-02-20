@@ -14,12 +14,12 @@ ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 607356bb59550626c9fe5f71d4609b9c3e2b2fe0
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 77493782802eeb29313b57d11442535f1734c12e
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251305"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56097391"
 ---
 # <a name="backup-and-data-recovery-for-azure-stack-with-the-infrastructure-backup-service"></a>Резервное копирование и восстановление данных для Azure Stack с помощью службы резервного копирования инфраструктуры
 
@@ -52,12 +52,16 @@ ms.locfileid: "55251305"
   Требуется общий файловый ресурс, который доступен из Azure Stack и может содержать семь резервных копий. Размер каждой резервной копии составляет около 10 ГБ. В вашем общем ресурсе должно быть пространство для хранения резервных копий объемом 140 ГБ. Дополнительные сведения о выборе места хранения для службы резервного копирования инфраструктуры Azure Stack см. в разделе с [требованиями для контроллера резервного копирования](azure-stack-backup-reference.md#backup-controller-requirements).
 - **Учетные данные**  
   Требуются учетная запись и учетные данные пользователя домена. Например, вы можете использовать учетные данные администратора Azure Stack.
-- **Ключ шифрования**  
-  С помощью этого ключа шифруются резервные копии. Обязательно храните его в безопасном расположении. После первой установки этого ключа или его смены в будущем он не будет отображаться в этом интерфейсе. Инструкции по созданию общего ключа см. в скриптах в руководстве по [включению резервного копирования для Azure Stack с помощью PowerShell](azure-stack-backup-enable-backup-powershell.md).
+- **Сертификат шифрования**  
+  Файлы резервных копий шифруются с помощью открытого ключа в сертификате. Обязательно храните этот сертификат в безопасном расположении. 
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте, как [включить резервное копирование для Azure Stack на портале администрирования](azure-stack-backup-enable-backup-console.md).
-- Узнайте, как [включить резервное копирование для Azure Stack с помощью PowerShell](azure-stack-backup-enable-backup-powershell.md).
-- Узнайте, как [выполнить резервное копирование для Azure Stack](azure-stack-backup-back-up-azure-stack.md ).
-- Узнайте, как [выполнить восстановление после катастрофической потери данных](azure-stack-backup-recover-data.md).
+Узнайте, как [включить резервное копирование для Azure Stack на портале администрирования](azure-stack-backup-enable-backup-console.md).
+
+Узнайте, как [включить резервное копирование для Azure Stack с помощью PowerShell](azure-stack-backup-enable-backup-powershell.md).
+
+Узнайте, как [выполнить резервное копирование для Azure Stack](azure-stack-backup-back-up-azure-stack.md ).
+
+Узнайте, как [выполнить восстановление после катастрофической потери данных](azure-stack-backup-recover-data.md).

@@ -11,13 +11,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: e4b217ada2aae159680b113b6ddcb41c9d121f24
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/07/2019
+ms.openlocfilehash: dcd0c7073f2126e001a65e2142ea54a229553ebd
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753067"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55894706"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов служб "База данных SQL Azure" и "Хранилище данных SQL"
 
@@ -92,7 +92,7 @@ ms.locfileid: "55753067"
 > [!TIP]
 > Чтобы провести аудит изменений брандмауэра уровня сервера и уровня базы данных, можно использовать [аудит базы данных SQL](sql-database-auditing.md).
 
-## <a name="manage-ip-firewall-rules-using-the-azure-portal"></a>Управление правилами брандмауэра для IP-адресов с помощью портала Azure
+## <a name="manage-server-level-ip-firewall-rules-using-the-azure-portal"></a>Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure
 
 Чтобы задать правило брандмауэра для IP-адресов на уровне сервера на портале Azure, перейдите на страницу "Обзор" базы данных SQL Azure или сервера Базы данных SQL.
 
@@ -196,7 +196,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 | [Удаление правила брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/delete) |сервер; |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
 | [Получение правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/get) | сервер; | Возвращает правила брандмауэра для IP-адресов на уровне сервера |
 
-## <a name="server-level-ip-firewall-rule-versus-a-database-level-ip-firewall-rule"></a>Сравнение правила брандмауэра для IP-адресов на уровне сервера и правила брандмауэра для IP-адресов на уровне базы данных
+## <a name="server-level-versus-database-level-ip-firewall-rules"></a>Правила брандмауэра уровня сервера и уровня базы данных
 
 В. Необходимо ли полностью изолировать пользователей одной базы данных от пользователей другой базы данных ?
 Если да, то предоставьте доступ с помощью правил брандмауэра для IP-адресов на уровне базы данных. Это позволяет избежать использования правил брандмауэра для IP-адресов на уровне сервера, которые предоставляют доступ через брандмауэр ко всем базам данных, уменьшая тем самым глубину защиты.

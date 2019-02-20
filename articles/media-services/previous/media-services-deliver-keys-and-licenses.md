@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2018
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 300673ffd62324de1207a29551694f12dd84ea93
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: bb64aff27aaacc3523552beb9eada12bdeb37ca8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46366375"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55995719"
 ---
-# <a name="use-azure-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Использование служб мультимедиа Azure для доставки лицензий DRM или ключей AES
+# <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Доставка лицензий DRM или ключей AES с помощью Служб мультимедиа 
 
 Службы мультимедиа Azure позволяют принимать и кодировать содержимое, добавлять функции защиты, а также выполнять его потоковую передачу. Дополнительные сведения см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md). Некоторые клиенты с помощью Служб мультимедиа только доставляют лицензии и (или) ключи, а также выполняют кодирование, шифрование и потоковую передачу содержимого на локальных серверах. В этой статье описано, как с помощью Служб мультимедиа доставлять лицензии PlayReady и (или) Widevine, а также как выполнять другие задачи на локальных серверах. 
 

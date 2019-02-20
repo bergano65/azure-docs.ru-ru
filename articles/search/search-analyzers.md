@@ -9,12 +9,12 @@ ms.author: heidist
 manager: cgronlun
 author: HeidiSteen
 ms.custom: seodec2018
-ms.openlocfilehash: 868658062a6407dce901b455cc92f95008df798c
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 008a24fe9822ca51b81e1f6979a3731d794a8867
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631949"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55964344"
 ---
 # <a name="analyzers-for-text-processing-in-azure-search"></a>Анализаторы для обработки текста в службе "Поиск Azure"
 
@@ -92,7 +92,7 @@ ms.locfileid: "53631949"
 * Анализаторы являются свойством класса поля для поля, поддерживающего поиск.
 * Пользовательский анализатор входит в определение индекса. Он может быть незначительно настроенным (например, настройка одного параметра в одном фильтре) или настроенным в нескольких местах.
 * В таком случае пользовательский анализатор "my_analyzer" в свою очередь использует настроенный стандартный лексический анализатор "my_standard_tokenizer" и два фильтра маркеров: с нижним регистром и настроенный фильтр типа asciifolding — "my_asciifolding".
-* Он также определяет настраиваемый фильтр char "map_dash", чтобы заменить все дефисы знаками подчеркивания перед разметкой (стандартный лексический анализатор останавливается на дефисе, а не знаках подчеркивания).
+* Он также определяет 2 пользовательских фильтра char: "map_dash" и "remove_whitespace". Первый заменяет все тире символом подчеркивания, в то время как второй удаляет все пробелы. В соответствии с правилами сопоставления, все пробелы должны быть закодированы в формате UTF-8. Фильтры символов применяются перед разметкой и будут влиять на полученные маркеры (стандартная разметка делится на тире и пробелы, но не на подчеркивания).
 
 ~~~~
   {
@@ -116,7 +116,8 @@ ms.locfileid: "53631949"
            "name":"my_analyzer",
            "@odata.type":"#Microsoft.Azure.Search.CustomAnalyzer",
            "charFilters":[
-              "map_dash"
+              "map_dash",
+              "remove_whitespace"
            ],
            "tokenizer":"my_standard_tokenizer",
            "tokenFilters":[
@@ -130,6 +131,11 @@ ms.locfileid: "53631949"
            "name":"map_dash",
            "@odata.type":"#Microsoft.Azure.Search.MappingCharFilter",
            "mappings":["-=>_"]
+        },
+        {
+           "name":"remove_whitespace",
+           "@odata.type":"#Microsoft.Azure.Search.MappingCharFilter",
+           "mappings":["\\u0020=>"]
         }
      ],
      "tokenizers":[

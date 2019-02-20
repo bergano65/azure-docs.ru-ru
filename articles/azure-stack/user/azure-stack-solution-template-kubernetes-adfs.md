@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/05/2019
+ms.date: 02/11/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: df84562c3ff95ac6fef65ea7c9911d5e12e558ef
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.lastreviewed: 02/11/2019
+ms.openlocfilehash: c2ef0d34897171e04d0982405909183634ebb696
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55744969"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56115408"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory
 
@@ -43,13 +43,19 @@ ms.locfileid: "55744969"
 
     Кластер не может быть развернут в подписке **администратора** Azure Stack. Необходимо использовать подписку **пользователя**. 
 
-1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack.
+1. В подписке Azure Stack вам необходима служба Key Vault.
+
+1. В Marketplace вам потребуется кластер Kubernetes. 
+
+Если у вас отсутствует элемент Marketplace службы Key Vault и кластера Kubernetes, обратитесь к администратору Azure Stack.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
 При использовании AD FS в качестве решения для удостоверений необходимо совместно с администратором Azure Stack настроить субъект-службу. Субъект-служба предоставляет приложению доступ к ресурсам Azure Stack.
 
-1. Администратор Azure Stack предоставляет сертификат и данные для субъекта-службы. Эта информация должна выглядеть так:
+1. Администратор Azure Stack предоставляет сертификат и данные для субъекта-службы.
+
+    - Данные субъекта-службы должны выглядеть следующим образом.
 
     ```Text  
         ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
@@ -60,9 +66,11 @@ ms.locfileid: "55744969"
         RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
     ```
 
-2. Назначьте новому субъекту-службе роль в качестве участника в вашей подписке. Инструкции см. в статье [Предоставление приложениям доступа к Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-create-service-principals#assign-role-to-service-principal#assign-role-to-service-principal).
+    - Сертификат —это файл с расширением `.pfx`. Сертификат будет храниться в хранилище ключей как секрет.
 
-3. Создайте хранилище ключей для сохранения сертификата для развертывания.
+2. Назначьте новому субъекту-службе роль в качестве участника в вашей подписке. Инструкции см. в статье [Предоставление приложениям доступа к Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-create-service-principals).
+
+3. Создайте хранилище ключей для сохранения сертификата для развертывания. Используйте следующие скрипты PowerShell вместо портала.
 
     - Вам понадобятся следующие сведения:
 
@@ -70,12 +78,12 @@ ms.locfileid: "55744969"
         | ---   | ---         |
         | Конечная точка Azure Resource Manager | Microsoft Azure Resource Manager — это платформа управления, которая позволяет администраторам развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.<br>Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
         | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
-        | Имя пользователя | Ваше имя пользователя. |
+        | Имя пользователя | Используйте только имя пользователя, а не доменное имя и имя пользователя, например `username` вместо `azurestack\username`. |
         | Имя группы ресурсов.  | Имя новой группы ресурсов; вы также можете выбрать имеющуюся. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
         | Имя хранилища ключей | Имя хранилища.<br> Шаблон регулярного выражения: `^[a-zA-Z0-9-]{3,24}$` |
         | Расположение группы ресурсов | Расположение группы ресурсов. Это регион, выбранный для установки Azure Stack. |
 
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+    - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
     ```PowerShell  
         $armEndpoint="<Azure Resource Manager Endpoint>"
@@ -111,12 +119,12 @@ ms.locfileid: "55744969"
         | ---   | ---         |
         | Путь к сертификату | Полное доменное имя или путь файла к сертификату. |
         | Пароль сертификата | Пароль сертификата. |
-        | Имя секрета | Секрет, созданный на предыдущем шаге. |
-        | Имя хранилища ключей | Имя хранилища ключей, созданного на предыдущем шаге. |
+        | Имя секрета | Имя секрета, которое используется для ссылки на сертификат, хранимый в хранилище. |
+        | Имя хранилища ключей | Имя хранилища ключей, созданного в предыдущем шаге. |
         | Конечная точка Azure Resource Manager | Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
         | Идентификатор подписки | [Идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack. |
 
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+    - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
     ```PowerShell  
         
@@ -124,7 +132,7 @@ ms.locfileid: "55744969"
     $tempPFXFilePath = "<certificate path>"
     $password = "<certificate password>"
     $keyVaultSecretName = "<secret name>"
-    $keyVaultName = "<keyvault name>"
+    $keyVaultName = "<key vault name>"
     $armEndpoint="<Azure Resource Manager Endpoint>"
     $subscriptionId="<Your Subscription ID>"
     # Login Azure Stack Environment
@@ -194,11 +202,11 @@ ms.locfileid: "55744969"
 
 1. Введите **идентификатор клиента субъекта-службы**. Он используется поставщиком облачных служб Azure для Kubernetes. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack создает субъект-службу.
 
-1. Введите **группу ресурсов Key Vault**. 
+1. Введите **группу ресурсов Key Vault**, в которой находится хранилище ключей, содержащее сертификат.
 
-1. Введите **имя Key Vault**.
+1. Введите **имя Key Vault**, имя хранилища ключей, которое содержит сертификат как секрет. 
 
-1. Введите **секрет Key Vault**.
+1. Введите **секрет Key Vault**. Имя секрета, которое ссылается на ваш сертификат.
 
 1. Введите **версию поставщика облачных служб Azure для Kubernetes**. Это версия поставщика Azure для Kubernetes. Azure Stack выпускает специальную сборку Kubernetes для каждой версии Azure Stack.
 

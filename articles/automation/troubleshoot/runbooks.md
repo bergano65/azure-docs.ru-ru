@@ -4,16 +4,16 @@ description: Подробные сведения об устранении ош�
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 01/17/2019
+ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 1500fc5826b50e97e7fd51d18e672933275a9533
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: cdcf7f466e65cffd36bdcc816a9808ecac2ae242
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468205"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55991299"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -172,6 +172,32 @@ while((IsJobTerminalState $job.Status) -eq $false -and $waitTime -lt $maxTimeout
 
 $jobResults | Get-AzureRmAutomationJobOutput | Get-AzureRmAutomationJobOutputRecord | Select-Object -ExpandProperty Value
 ```
+
+### <a name="get-serializationsettings"></a>Сценарий. Появляется сообщение об ошибке в потоках задания о методе get_SerializationSettings
+
+#### <a name="issue"></a>Проблема
+
+Вы видите ошибку в потоках задания модуля runbook со следующим сообщением.
+
+```
+Connect-AzureRMAccount : Method 'get_SerializationSettings' in type 
+'Microsoft.Azure.Management.Internal.Resources.ResourceManagementClient' from assembly 
+'Microsoft.Azure.Commands.ResourceManager.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' 
+does not have an implementation.
+At line:16 char:1
++ Connect-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -Appl ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Connect-AzureRmAccount], TypeLoadException
+    + FullyQualifiedErrorId : System.TypeLoadException,Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка возникла вследствие одновременного использования командлетов AzureRM и Az в модуле runbook. Она возникает при импортировании `Az` перед импортированием `AzureRM`.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Командлеты Az и AzureRM невозможно импортировать и использовать одновременно в одном и том же модуле runbook. Больше сведений о поддержке Az в службе автоматизации Azure см. в статье [Поддержка модуля Az в службе автоматизации Azure](../az-modules.md).
 
 ### <a name="task-was-cancelled"></a>Сценарий. выполнение модуля Runbook завершилось ошибкой. Задача была отменена
 

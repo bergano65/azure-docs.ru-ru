@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: 88618e5b9de9cb8ac46b9b167e6fa6dbccd73687
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 717b895696ca93444744955937c6de23626c7835
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732317"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234754"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -133,7 +133,7 @@ POA — это приложение Azure Service Fabric, которое поз
 
 3. Обновите манифест кластера, добавив эти изменения с помощью манифеста обновления кластера [Создание кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-for-windows-server) или [Обновление конфигурации кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-upgrade-windows-server). Как только кластер запустится с обновленным манифестом, вы увидите, что системная служба Repair Manager выполняется в кластере, который называется `fabric:/System/RepairManagerService`, в разделе системных служб в Service Fabric Explorer.
 
-### <a name="disable-automatic-windows-update-on-all-nodes"></a>Отключение автоматического обновления Windows на всех узлах
+### <a name="configure-windows-updates-for-all-nodes"></a>Настройка обновлений Windows для всех узлов
 
 Автоматическое обновление Windows может привести к потере доступности из-за одновременного перезапуска нескольких узлов кластера. Приложение для управления исправлениями по умолчанию попытается выключить автоматическое обновление Windows на каждом узле кластера. Но если параметры задаются администратором или групповой политикой, советуем явно настроить для политики обновления Windows параметр уведомления о скачивании.
 

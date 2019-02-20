@@ -12,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 01/10/2019
+ms.date: 02/09/2019
 ms.author: rolyon
-ms.openlocfilehash: 2b8836525e085b41cc8d011087c4fc71afe453cb
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 987b2b1ca028b816ed6909781f56c0b5174541bd
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822516"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56163773"
 ---
 # <a name="azure-active-directory-terms-of-use-feature"></a>Функция "Условия использования Azure Active Directory"
 Функция "Условия использования Azure AD" — это простой способ, которым организации могут предоставлять сведения своим пользователям. Благодаря этой презентации пользователи видят соответствующие заявления об отказе согласно юридическим требованиям и для соответствия стандартам. В этой статье описывается, как приступить к работе с условиями использования.
@@ -333,6 +334,9 @@ ms.locfileid: "55822516"
 Можно настроить политику условного доступа для приложения для регистрации Microsoft Intune и требовать принятия условий использования перед регистрацией устройства в Intune. Дополнительные сведения см. в записи блога о [выборе правильного решения условий использования для организации](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
 ![Облачное приложение Microsoft Intune](./media/active-directory-tou/cloud-app-intune.png)
+
+> [!NOTE]
+> Приложение для регистрации Intune не поддерживается [отдельными условиями использования для каждого устройства](#per-device-terms-of-use).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

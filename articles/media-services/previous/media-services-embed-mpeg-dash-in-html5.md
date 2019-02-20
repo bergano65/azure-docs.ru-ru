@@ -2,7 +2,7 @@
 title: Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js | Документация Майкрософт
 description: В этом разделе демонстрируется встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2016
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 2b0e6bf643f55e1809b29def7766c58b59f4bb50
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 2c8e71a058b2c770741c38f07c6c440fea90f2b2
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783383"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998439"
 ---
-# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js
+# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs-legacy"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js (для прежних версий)
+
 ## <a name="overview"></a>Обзор
 MPEG-DASH — это стандарт ISO для адаптивной потоковой передачи видеосодержимого, обеспечивающий значительные преимущества для разработчиков, которым требуется высококачественный адаптивный потоковый вывод видео. С MPEG-DASH поток видео автоматически сжимается до более низкой четкости, если сеть перегружена. Это снижает вероятность того, что зритель увидит видео "на паузе", в то время как проигрыватель будет загружать следующие несколько секунд для воспроизведения (т. н. буферизация). Когда нагрузка на сеть снизится, видеопроигрыватель вернется к потоку более высокого качества. Такая возможность адаптировать требуемую пропускную способность также способствует ускорению запуска видео. Это означает, что первые несколько секунд можно воспроизвести в виде быстро загружаемого сегмента низкого качества, а затем перейти к более высокому качеству, как только достаточный объем содержимого будет загружен в буфер.
 

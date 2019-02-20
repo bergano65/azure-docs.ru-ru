@@ -5,17 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/23/2017
+ms.date: 02/06/2019
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: 57ba4b35cf470eff040d4a2dca42c60820fa9d9e
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6eaab50360269ac1231db2696ba095b6d8841f74
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55079976"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56163008"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
 
@@ -66,6 +67,14 @@ ms.locfileid: "55079976"
 
   ![когда получателю не нужно активировать приглашение](media/invitation-email-elements/when-recipient-doesnt-redeem.png)
 
+## <a name="how-the-language-is-determined"></a>Определение языка
+Язык, представляемый гостю в электронном письме с приглашением, определяется следующими параметрами. Эти параметры перечислены в порядке приоритета. Если параметр не настроен, язык определит следующий в списке параметр. 
+- Свойство **messageLanguage** объекта [InviteUserMessageInfo](https://docs.microsoft.com/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0), если используется API создания приглашений.
+-   Свойство **preferredLanguage**, указанное в [объекте user](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0) гостя.
+-   **Язык уведомлений** устанавливается в свойствах домашнего клиента гостевого пользователя (только для клиентов Azure AD).
+-   **Язык уведомлений** задается в свойствах ресурса клиента.
+
+Если ни один из этих параметров не настроен, по умолчанию выбирается английский язык (США).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

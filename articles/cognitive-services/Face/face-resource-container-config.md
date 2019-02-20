@@ -4,19 +4,19 @@ titlesuffix: Face - Azure Cognitive Services
 description: Параметры конфигурации контейнеров.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 01/29/2019
+ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 218343db4d8ac7e35f58951ee177f5c288aed3d9
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: a70c200f0260d87d35eae8728ed1f908e7061f32
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476423"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55979111"
 ---
 # <a name="configure-face-docker-containers"></a>Настройка контейнеров Docker распознавания лиц
 
@@ -45,7 +45,7 @@ ms.locfileid: "55476423"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр `Billing` определяет URI конечной точки ресурса _Распознавания лиц_ в Azure. Этот параметр используется для контроля данных, связанных с контейнером, для выставления счетов. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _Распознавания лиц_ в Azure.
+Параметр `Billing` определяет URI конечной точки ресурса _Распознавания лиц_ в Azure. Этот параметр используется для контроля данных, связанных с контейнером, для выставления счетов. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _Распознавания лиц_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
@@ -112,7 +112,7 @@ ms.locfileid: "55476423"
 
 ### <a name="basic-example"></a>Простой пример 
 
-  ```Docker
+  ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-face \
   Eula=accept \
@@ -122,7 +122,7 @@ ms.locfileid: "55476423"
 
 ### <a name="logging-example-with-command-line-arguments"></a>Пример настройки ведения журнала через аргументы командной строки
 
-  ```Docker
+  ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-face \
   Eula=accept \
   Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} \
@@ -131,7 +131,7 @@ ms.locfileid: "55476423"
 
 ### <a name="logging-example-with-environment-variable"></a>Пример настройки ведения журнала с помощью переменной среды
 
-  ```Docker
+  ```
   SET Logging:Console:LogLevel=Information
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-face \
   Eula=accept \

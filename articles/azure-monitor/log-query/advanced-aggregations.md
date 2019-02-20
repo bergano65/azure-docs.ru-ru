@@ -1,6 +1,6 @@
 ---
-title: Расширенные статистические функции в запросах Azure Log Analytics | Документация Майкрософт
-description: В этой статье описываются некоторые более сложные параметры статистической обработки, доступные для запросов Log Analytics.
+title: Расширенное агрегирование в запросах журнала Azure Monitor | Документация Майкрософт
+description: В этой статье описываются некоторые более расширенные параметры агрегирования, доступные для запросов журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 1116d03fc9c2328365b0bde29cf9ea900e58b7ed
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 5e2152397a4a965e6d62f8fafc2a59bf318b4a5e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186367"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005426"
 ---
-# <a name="advanced-aggregations-in-log-analytics-queries"></a>Расширенные статистические функции в запросах Log Analytics
+# <a name="advanced-aggregations-in-azure-monitor-log-queries"></a>Расширенное агрегирование в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступать к работе с этой статьей, ознакомьтесь со статьей, посвященной [статистическим функциям в запросах Log Analytics](./aggregations.md).
+> Прежде чем приступать к работе с этим руководством, ознакомьтесь со статьей [Aggregations in Azure Monitor log queries](./aggregations.md) (Агрегирование в запросах журнала Azure Monitor).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этой статье описываются некоторые более сложные параметры статистической обработки, доступные для запросов Log Analytics.
+В этой статье описываются некоторые более сложные параметры агрегирования, доступные для запросов Azure Monitor.
 
 ## <a name="generating-lists-and-sets"></a>Создание списков и наборов
 Вы можете использовать `makelist`, чтобы свести данные по порядку значений в отдельном столбце. Например, вы можете изучить наиболее распространенные события на компьютерах по порядку. Вы можете сводить данные по порядку идентификаторов событий на каждом компьютере. 
@@ -181,7 +181,7 @@ WindowsFirewall
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с другими статьями по использованию [языка запросов Data Explorer](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)

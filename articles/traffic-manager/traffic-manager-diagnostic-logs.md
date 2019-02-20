@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: kumud
-ms.openlocfilehash: abdc50d6d3d27ab7611994089345a997afc72cae
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: a7d6893c42028790ec565961f2a2cb54035aefa1
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55082646"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106467"
 ---
 # <a name="enable-diagnostic-logging-in-azure-traffic-manager"></a>Включение журнала ведения диагностики диспетчера трафика Azure
 
@@ -26,29 +26,31 @@ ms.locfileid: "55082646"
 
 ## <a name="enable-diagnostic-logging"></a>Включение ведения журналов диагностики
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль PowerShell *AzureRM* 6.13.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы войти в Azure.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль Azure PowerShell 1.0.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы войти в Azure.
 
 1. **Извлечение профиля диспетчера трафика.**
 
-    Чтобы включить журнал ведения диагностики, требуется идентификатор профиля диспетчера трафика. Извлеките профиль диспетчера трафика, для которого необходимо включить журнал ведения диагностики, используя командлет [Get-AzureRmTrafficManagerProfile](/powershell/module/AzureRM.TrafficManager/Get-AzureRmTrafficManagerProfile). Выходные данные содержат сведения об идентификаторе профиля диспетчера трафика.
+    Чтобы включить журнал ведения диагностики, требуется идентификатор профиля диспетчера трафика. Извлеките профиль диспетчера трафика, для которого необходимо включить журнал ведения диагностики, используя командлет [Get-AzTrafficManagerProfile](/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile). Выходные данные содержат сведения об идентификаторе профиля диспетчера трафика.
 
     ```azurepowershell-interactive
-    Get-AzureRmTrafficManagerProfile -Name <TrafficManagerprofilename> -ResourceGroupName <resourcegroupname>
+    Get-AzTrafficManagerProfile -Name <TrafficManagerprofilename> -ResourceGroupName <resourcegroupname>
     ```
 
 2. **Включение журнала ведения диагностики для профиля диспетчера трафика.**
 
-    Включите журнал ведения диагностики для профиля диспетчера трафика с помощью идентификатора, полученного на предыдущем шаге, используя командлет [Set-AzureRmDiagnosticSetting](https://docs.microsoft.com/powershell/module/azurerm.insights/set-azurermdiagnosticsetting?view=latest). Следующая команда позволяет сохранить журналы подробных сведений профиля диспетчера трафика для указанной учетной записи службы хранилища Azure. 
+    Включите журнал ведения диагностики для профиля диспетчера трафика с помощью идентификатора, полученного на предыдущем шаге, используя командлет [Set-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting?view=latest). Следующая команда позволяет сохранить журналы подробных сведений профиля диспетчера трафика для указанной учетной записи службы хранилища Azure. 
 
       ```azurepowershell-interactive
-    Set-AzureRmDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId> -StorageAccountId <storageAccountId> -Enabled $true
+    Set-AzDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId> -StorageAccountId <storageAccountId> -Enabled $true
       ``` 
 3. **Проверка параметров диагностики.**
 
-      Проверьте параметры диагностики для профиля диспетчера трафика с помощью командлета [Get-AzureRmDiagnosticSetting](https://docs.microsoft.com/powershell/module/azurerm.insights/get-azurermdiagnosticsetting?view=latest). Следующая команда позволяет просмотреть категории, зарегистрированные для ресурса.
+      Проверьте параметры диагностики для профиля диспетчера трафика с помощью командлета [Get-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/get-azdiagnosticsetting?view=latest). Следующая команда позволяет просмотреть категории, зарегистрированные для ресурса.
 
      ```azurepowershell-interactive
-     Get-AzureRmDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId>
+     Get-AzDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId>
      ```  
       Убедитесь, что все категории журнала, связанные с ресурсом профиля диспетчера трафика, отображаются как включенные. Проверьте также, правильно ли настроена учетная запись хранения.
 

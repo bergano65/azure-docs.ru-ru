@@ -12,16 +12,17 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 11/05/2018
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 5ddee0ca94535688a0634ef8575f3aedad649a43
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: a863915ceef437957170d87ac4cc452d651a8dab
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037504"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55994959"
 ---
-# <a name="use-azure-queue-storage-to-monitor-media-services-job-notifications-with-net"></a>Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET
+# <a name="use-azure-queue-storage-to-monitor-media-services-job-notifications-with-net-legacy"></a>Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET (для прежних версий)
+
 При выполнении заданий кодирования часто требуется способ отслеживания их хода выполнения. Можно настроить службы мультимедиа для доставки уведомлений в [хранилище очередей Azure](../../storage/storage-dotnet-how-to-use-queues.md). Вы можете отслеживать ход выполнения задания, получая уведомления из хранилища очередей. 
 
 Доступ к сообщениям, доставленным в хранилище очередей, можно получить в любой точке мира. Хранилище очередей предоставляет надежную и высокомасштабируемую архитектуру обмена сообщениями. Рекомендуется опрашивать хранилище очередей для получения сообщений, а не использовать другие методы.
@@ -338,7 +339,7 @@ namespace JobNotification
 }
 ```
 
-Приведенный выше пример формирует указанные ниже выходные данные. Фактические значения могут отличаться.
+Приведенный выше пример формирует такие выходные данные. Фактические значения могут отличаться.
 
     Created assetFile BigBuckBunny.mp4
     Upload BigBuckBunny.mp4

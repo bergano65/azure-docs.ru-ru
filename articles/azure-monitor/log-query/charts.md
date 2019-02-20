@@ -1,6 +1,6 @@
 ---
-title: Создание графиков и диаграмм из запросов Azure Log Analytics | Документация Майкрософт
-description: Описывает различные визуализации в Azure Log Analytics для разных способов отображения данных.
+title: Создание диаграмм и схем из запросов журнала Azure Monitor | Документация Майкрософт
+description: В статье описаны различные визуализации в Azure Monitor для разных способов отображения данных журнала.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 049e50f5800194c4126003f7e5ff7ae60b3de768
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 381e8361d31660d90eaee3f7a500139af1ef2a82
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186231"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993004"
 ---
-# <a name="creating-charts-and-diagrams-from-log-analytics-queries"></a>Создание графиков и диаграмм из запросов Log Analytics
+# <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
 
 > [!NOTE]
-> Следует изучить статью [Advanced aggregations in Log Analytics queries](advanced-aggregations.md) (Расширенный статистический анализ в запросах Log Analytics), перед тем как приступать к этому уроку.
+> Перед тем как приступать к этому уроку, следует изучить статью [Расширенные статистические функции в запросах Log Analytics](advanced-aggregations.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этой статье описаны различные визуализации в Azure Log Analytics для разных способов отображения данных.
+В этой статье описаны различные визуализации в Azure Monitor для разных способов отображения данных журнала.
 
 ## <a name="charting-the-results"></a>Отображение результатов
 Начните с изучения того, сколько компьютеров работают в операционной системе за последний час.
@@ -93,7 +93,7 @@ SecurityEvent
 ![Гистограмма AccountType](media/charts/charts-and-diagrams-multiDimension2.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с другими статьями по использованию [языка запросов Data Explorer](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)

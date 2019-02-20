@@ -1,26 +1,26 @@
 ---
-title: Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight
-description: Узнайте, как запрашивать данные из хранилища Azure Data Lake Storage Gen2 (предварительная версия) и сохранять результаты анализа.
+title: Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
+description: Узнайте, как запрашивать данные из хранилища Azure Data Lake Storage 2-го поколения и сохранять результаты анализа.
 author: jamesbak
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
-ms.openlocfilehash: 739076289a1324cb47f0c980f0d21b153c7b5edc
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: df65c29b39921eda6ba2bd682e5938f58a9e4de7
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662964"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55964583"
 ---
-# <a name="use-azure-data-lake-storage-gen2-preview-with-azure-hdinsight-clusters"></a>Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight
+# <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
-Для анализа данных в кластере HDInsight можно хранить данные либо в хранилище BLOB-объектов Azure, либо в хранилище BLOB-объектов Azure с Azure Data Lake Storage 2-го поколения (доступна предварительная версия), либо в Azure Data Lake Storage 1-го поколения. Все варианты хранилищ позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
+Чтобы анализировать данные в кластере HDInsight, вы можете хранить данные либо в хранилище BLOB-объектов Azure (хранилище BLOB-объектов Azure с включенным Azure Data Lake Storage 2-го поколения), либо в Azure Data Lake Storage 1-го поколения. Все варианты хранилищ позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
 
 В Hadoop поддерживается концепция файловой системы по умолчанию. Файловая система по умолчанию подразумевает использование центра сертификации и схемы по умолчанию. Она также может использоваться для разрешения относительных путей. При создании кластера HDInsight в качестве файловой системы по умолчанию можно указать контейнер больших двоичных объектов в службе хранилища Azure или в иерархическом пространстве имен, предложенным Data Lake Storage 2-го поколения в качестве файловой системы по умолчанию. При использовании HDInsight 3.5 в качестве файловой системы по умолчанию с новыми исключениями можно выбрать контейнер или иерархическое пространство имен.
 
-Из этой статьи вы узнаете, как Data Lake Storage 2-го поколения работает с кластерами HDInsight. Дополнительные сведения о создании кластера HDInsight см. в [кратком руководстве по настройке кластеров в HDInsight](data-lake-storage-quickstart-create-connect-hdi-cluster.md).
+Из этой статьи вы узнаете, как Data Lake Storage 2-го поколения работает с кластерами HDInsight. Дополнительные сведения о создании кластера HDInsight см. в [кратком руководстве по настройке кластеров в HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
 
 Служба хранилища Azure — это надежное, универсальное решение, которое полностью интегрируется с HDInsight. HDInsight может использовать хранилище Azure Data Lake Storage в качестве файловой системы по умолчанию для кластера. С помощью интерфейса распределенной файловой системы Hadoop (HDFS) все компоненты HDInsight могут напрямую взаимодействовать с файлами в хранилище Azure Data Lake Storage.
 
@@ -154,7 +154,7 @@ az storage account create \
 ```
 
 > [!NOTE]
-> На этапе общедоступной предварительной версии Data Lake Storage Gen2 поддерживается только `--sku Standard_LRS`.
+> На этапе общедоступной версии Data Lake Storage 2-го поколения поддерживается только `--sku Standard_LRS`.
 
 Вам будет предложено указать географический регион, в котором будет создана учетная запись хранения. Создайте учетную запись хранения в том же регионе, в котором планируется создание кластера HDInsight.
 
@@ -209,7 +209,6 @@ az storage account create \
 
 * [Сведения о драйвере файловой системы ABFS Hadoop для Azure Data Lake Storage Gen2](data-lake-storage-abfs-driver.md)
 * [Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-introduction.md)
-* [Краткое руководство по установке кластеров в HDInsight](data-lake-storage-quickstart-create-connect-hdi-cluster.md)
 * [Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и хранилищем Data Lake поколения 2 (предварительная версия)](data-lake-storage-use-distcp.md)
 
 [powershell-install]: /powershell/azure/install-az-ps

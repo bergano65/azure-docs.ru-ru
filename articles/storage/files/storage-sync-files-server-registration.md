@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: cec6da78ae47b509e2bb5f8ba0007208545062e7
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 493f6f3380dee4ed70bb6e0bc9bba24f93071097
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478072"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56165337"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -165,7 +165,10 @@ Get-AzureRmStorageSyncGroup -StorageSyncServiceName $StorageSyncService | ForEac
 > Если лимит будет слишком низким, пострадает производительность синхронизации и восстановления данных службой "Синхронизация файлов Azure".
 
 ### <a name="set-azure-file-sync-network-limits"></a>Настройка сетевых ограничений для службы "Синхронизация файлов Azure"
-Можно регулировать использование сети службой "Синхронизация файлов Azure" с помощью командлетов `StorageSyncNetworkLimit`. 
+Можно регулировать использование сети службой "Синхронизация файлов Azure" с помощью командлетов `StorageSyncNetworkLimit`.
+
+> [!Note]  
+> Сетевые ограничения не применяются при доступе к файлу, размещенному на разных уровнях, или при использовании командлета Invoke-StorageSyncFileRecall.
 
 Например, вы можете создать новое ограничение регулирования, не позволяющее службе "Синхронизация файлов Azure" использовать скорость выше 10 Мбит/с в период с 9:00 по 17:00 в рабочие дни. 
 

@@ -1,6 +1,6 @@
 ---
-title: Копирование данных в Azure Data Lake Storage 2-го поколения (предварительная версия) с помощью DistCp | Документация Майкрософт
-description: Использование средства DistCp для копирования данных из Azure Data Lake Storage 2-го поколения (предварительная версия) и обратно
+title: Копирование данных в Azure Data Lake Storage 2-го поколения с помощью DistCp | Документация Майкрософт
+description: Использование средства DistCp для копирования данных из Azure Data Lake Storage 2-го поколения и обратно
 services: storage
 author: seguler
 ms.subservice: data-lake-storage-gen2
@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: seguler
-ms.openlocfilehash: 9c12f96399de218241c8aa7ed686113c17a7410c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 8328ea5afb66bbecdafbb06dcbf6700194d62f9e
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244153"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55864066"
 ---
-# <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2-preview"></a>Копирование данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения (предварительная версия)
+# <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
 [DistCp](https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html) можно использовать для копирования данных между учетной записью хранения общего назначения версии 2 и такой же учетной записью с включенным иерархическим пространством имен. В этой статье содержатся инструкции по использованию средства DistCp.
 
@@ -24,8 +24,8 @@ DistCp предоставляет различные параметры кома
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Существующая учетная запись хранения Azure без включенных функций предварительной версии Data Lake Storage 2-го поколения (иерархическое пространство имен)**.
-* **Учетная запись службы хранилища Azure с включенной функцией хранилища Data Lake Storage 2-го поколения (предварительная версия)**. Сведения по созданию учетной записи хранения Azure Data Lake Storage 2-го поколения (предварительная версия) см. [здесь](data-lake-storage-quickstart-create-account.md).
+* **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)**.
+* **Учетная запись службы хранилища Azure с включенной функцией хранилища Data Lake Storage 2-го поколения**. Сведения по созданию учетной записи см. в статье [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 * **Файловая система**, созданная в учетной записи хранения с включенным иерархическим пространством имен.
 * **Кластер Azure HDInsight** с доступом к учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](data-lake-storage-use-hdi-cluster.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 

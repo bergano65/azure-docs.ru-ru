@@ -12,14 +12,16 @@ ms.workload: na
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: 5e9d2746c223c679d30c31b3bd6f1e5cbfafbe1d
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 4d5c7f8a91bb63cdd80a6f70603e34f8130b92ef
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498103"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106687"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком
+
+[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
 Основным преимуществом Azure является согласованность. Вложения в разработку для одного расположения можно повторно использовать для другого. Шаблон обеспечивает согласованность и воспроизводимость развертываний в различных средах, включая глобальную платформу Azure, национальные облака Azure и Azure Stack. Для повторного использования шаблонов в разных облачных средах, тем не менее, необходимо учитывать зависимости, присущие конкретным средам, о которых рассказывается в этом руководстве.
 
@@ -61,14 +63,14 @@ ms.locfileid: "55498103"
 
 1. Создав локальный клон репозитория, подключитесь к целевому экземпляру Azure Resource Manager с помощью PowerShell.
 
-1. Импортируйте модуль psm1 и выполните командлет Test-AzTemplateFunctions:
+1. Импортируйте модуль psm1 и выполните командлет Test-AzureRmureRmTemplateFunctions:
 
   ```powershell
   # Import the module
   Import-module <path to local clone>\AzTemplateFunctions.psm1
 
-  # Execute the Test-AzTemplateFunctions cmdlet
-  Test-AzTemplateFunctions -path <path to local clone>
+  # Execute the Test-AzureRmTemplateFunctions cmdlet
+  Test-AzureRmTemplateFunctions -path <path to local clone>
   ```
 
 Сценарий выполнит развертывание нескольких шаблонов с минимальными возможностями, каждый из которых будет содержать только уникальные функции шаблона. Выходные данные сценария будут содержать поддерживаемые и недоступные функции шаблонов.
@@ -211,7 +213,7 @@ Resource Manager извлекает вложенные шаблоны во вр�
 }
 ```
 
-При таком подходе все артефакты развертывания, включая сценарии конфигурации, могут храниться в одном расположении вместе с шаблоном. Чтобы изменить расположение всех ссылок, необходимо только указать другой базовый URL-адрес для параметров _artifactsLocation.
+При таком подходе все артефакты развертывания, включая сценарии конфигурации, могут храниться в одном расположении вместе с шаблоном. Чтобы изменить расположение всех ссылок, необходимо только указать другой базовый URL-адрес для параметров _artifactsLocation_.
 
 ## <a name="factor-in-differing-regional-capabilities"></a>Факторы, определяющие различие возможностей регионов
 
@@ -232,7 +234,7 @@ az provider list --query "[].{Provider:namespace, Status:registrationState}" --o
 Для просмотра доступных поставщиков ресурсов можно также использовать следующий командлет PowerShell:
 
 ```azurepowershell-interactive
-Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
+Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
 ```
 
 ### <a name="verify-the-version-of-all-resource-types"></a>Проверка версии всех типов ресурсов
@@ -250,7 +252,7 @@ az provider list --query "[].{namespace:namespace, resourceType:resourceType[]}"
 Вы также можете воспользоваться следующим командлетом PowerShell:
 
 ```azurepowershell-interactive
-Get-AzResourceProvider | select-object ProviderNamespace -ExpandProperty ResourceTypes | ft ProviderNamespace, ResourceTypeName, ApiVersions
+Get-AzureRmResourceProvider | select-object ProviderNamespace -ExpandProperty ResourceTypes | ft ProviderNamespace, ResourceTypeName, ApiVersions
 ```
 
 ### <a name="refer-to-resource-locations-with-a-parameter"></a>Ссылка на расположения ресурсов с помощью параметра
@@ -493,10 +495,10 @@ Azure предоставляет широкий выбор образов вир
 az vm image list -all
 ```
 
-Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например: 
+Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например: 
 
 ```azurepowershell-interactive
-Get-AzVMImagePublisher -Location "West Europe" | Get-AzVMImageOffer | Get-AzVMImageSku | Get-AzureRMVMImage
+Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
 ```
 
 Эта команда выполняется несколько минут и возвращает все доступные образы в регионе "Западная Европа" глобального облака Azure.
@@ -529,7 +531,7 @@ az vm list-sizes --location "West Europe"
 Для Azure PowerShell:
 
 ```azurepowershell-interactive
-Get-AzVMSize -Location "West Europe"
+Get-AzureRmVMSize -Location "West Europe"
 ```
 
 Полный список доступных служб см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?cdn=disable).
@@ -596,10 +598,10 @@ Get-AzVMSize -Location "West Europe"
 az vm extension image list --location myLocation
 ```
 
-Вы также можете выполнить командлет Azure PowerShell [Get-AzVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например: 
+Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например: 
 
 ```azurepowershell-interactive
-Get-AzVmImagePublisher -Location myLocation | Get-AzVMExtensionImageType | Get-AzVMExtensionImage | Select Type, Version
+Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version
 ```
 
 #### <a name="ensure-that-versions-are-available"></a>Проверка доступности версий
@@ -617,16 +619,16 @@ Get-AzVmImagePublisher -Location myLocation | Get-AzVMExtensionImageType | Get-A
 
 Версия API ресурса расширения виртуальной машины должна присутствовать во всех планируемых целевых расположениях шаблона. Зависимость расположений действует аналогично доступности версии API поставщика ресурсов, о которой говорилось выше в разделе "Проверка версии всех типов ресурсов".
 
-Чтобы получить список доступных версий API для ресурса расширения виртуальной машины, используйте командлет [Get-AzResourceProvider](/powershell/module/az.resources/get-azresourceprovider) с поставщиком ресурсов **Microsoft.Compute**, как показано ниже:
+Чтобы получить список доступных версий API для ресурса расширения виртуальной машины, используйте командлет [Get-AzureRmResourceProvider](/powershell/module/az.resources/get-azresourceprovider) с поставщиком ресурсов **Microsoft.Compute**, как показано ниже:
 
 ```azurepowershell-interactive
-Get-AzResourceProvider -ProviderNamespace "Microsoft.Compute" | Select-Object -ExpandProperty ResourceTypes | Select ResourceTypeName, Locations, ApiVersions | where {$_.ResourceTypeName -eq "virtualMachines/extensions"}
+Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Compute" | Select-Object -ExpandProperty ResourceTypes | Select ResourceTypeName, Locations, ApiVersions | where {$_.ResourceTypeName -eq "virtualMachines/extensions"}
 ```
 
 Расширения виртуальной машины также можно использовать в масштабируемых наборах виртуальных машин. Применяются такие же условия расположения. При разработке шаблона для обеспечения согласованности с облаком убедитесь, что версии API доступны во всех расположениях, в которых планируется развертывание. Чтобы получить список версий API ресурса расширения виртуальной машины для масштабируемых наборов, используйте тот же командлет, что и выше, но укажите следующий тип ресурса для масштабируемых наборов виртуальных машин:
 
 ```azurepowershell-interactive
-Get-AzResourceProvider -ProviderNamespace "Microsoft.Compute" | Select-Object -ExpandProperty ResourceTypes | Select ResourceTypeName, Locations, ApiVersions | where {$_.ResourceTypeName -eq "virtualMachineScaleSets/extensions"}
+Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.Compute" | Select-Object -ExpandProperty ResourceTypes | Select ResourceTypeName, Locations, ApiVersions | where {$_.ResourceTypeName -eq "virtualMachineScaleSets/extensions"}
 ```
 
 Каждому конкретному расширению также назначается версия. Эта версия отображается в свойстве `typeHandlerVersion` расширения виртуальной машины. Убедитесь, что версия, указанная в элементе `typeHandlerVersion` расширений виртуальной машины в шаблоне, доступна в расположениях, где планируется развернуть шаблон. Например, следующий код указывает версию 1.7:
@@ -647,13 +649,13 @@ Get-AzResourceProvider -ProviderNamespace "Microsoft.Compute" | Select-Object -E
         ...   
 ```
 
-Чтобы получить список доступных версий для определенного расширения виртуальной машины, используйте командлет [Get-AzVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage). Следующий пример получает доступные версии расширения виртуальной машины PowerShell DSC (Desired State Configuration) из **myLocation**:
+Чтобы получить список доступных версий для определенного расширения виртуальной машины, используйте командлет [Get-AzureRmVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage). Следующий пример получает доступные версии расширения виртуальной машины PowerShell DSC (Desired State Configuration) из **myLocation**:
 
 ```azurepowershell-interactive
-Get-AzVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerShell -Type DSC | FT
+Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerShell -Type DSC | FT
 ```
 
-Для получения списка издателей используйте командлет [Get-AzVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher). Чтобы запросить тип, используйте командлет [Get-AzVMExtensionImageType](/powershell/module/az.compute/get-azvmextensionimagetype).
+Для получения списка издателей используйте командлет [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher). Чтобы запросить тип, используйте командлет [Get-AzureRmVMExtensionImageType](/powershell/module/az.compute/get-azvmextensionimagetype).
 
 ## <a name="tips-for-testing-and-automation"></a>Советы по тестированию и автоматизации
 

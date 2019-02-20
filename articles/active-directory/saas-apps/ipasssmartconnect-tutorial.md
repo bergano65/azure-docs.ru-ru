@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с iPass SmartConnect | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с iPass SmartConnect | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iPass SmartConnect.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: ecfdd3fae1d394e3b57fcd325f44cad0d1a98534
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 91a68a208496904fcc8bfe13a227c61bf313214f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444900"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56198173"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Учебник. Интеграция Azure Active Directory с iPass SmartConnect
+# <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Руководство по интеграции Azure Active Directory с iPass SmartConnect
 
 В этом руководстве описано, как интегрировать iPass SmartConnect с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39444900"
 
 - Вы можете контролировать доступ к iPass SmartConnect с помощью Azure AD.
 - Вы можете включить автоматический вход пользователей в iPass SmartConnect (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39444900"
 
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **iPass SmartConnect**, выберите **iPass SmartConnect** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39444900"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя iPass SmartConnect](#create-an-ipass-smartconnect-test-user)** требуется для того, чтобы в iPass SmartConnect существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -132,11 +133,11 @@ ms.locfileid: "39444900"
 
     ![Настройка единого входа](./media/ipasssmartconnect-tutorial/tutorial_attribute_05.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    d. Параметр "Пространство имен" для этой строки оставьте пустым.
+    4.3. Параметр "Пространство имен" для этой строки оставьте пустым.
 
     д. Нажмите кнопку **ОК**.
 
@@ -160,7 +161,7 @@ ms.locfileid: "39444900"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/ipasssmartconnect-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/ipasssmartconnect-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -180,11 +181,11 @@ ms.locfileid: "39444900"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-an-ipass-smartconnect-test-user"></a>Создание тестового пользователя iPass SmartConnect
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении iPass SmartConnect. Обратитесь в [группу поддержки iPass SmartConnect](mailto:help@ipass.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе iPass SmartConnect. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы iPass SmartConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении iPass SmartConnect. Обратитесь в  [службу поддержки iPass SmartConnect](mailto:help@ipass.com) , чтобы добавить домен или пользователей на платформу iPass SmartConnect. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы iPass SmartConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -226,13 +227,13 @@ a. Скачайте клиент iPass SmartConnect [здесь](https://om-acti
 
 ![Ссылка iPass SmartConnect в списке "Приложения"](./media/ipasssmartconnect-tutorial/testing3.png)
 
-b. Установите и запустите клиент.
+б) Установите и запустите клиент.
 
 c. Нажмите кнопку **Начать работу**.
 
 ![Ссылка iPass SmartConnect в списке "Приложения"](./media/ipasssmartconnect-tutorial/testing1.png) 
 
-d. Введите имя пользователя в Azure с доменом. Нажмите кнопку **Продолжить**. Вы перейдете на страницу входа в Azure.
+4.3. Введите имя пользователя в Azure с доменом. Нажмите кнопку **Продолжить**. Вы перейдете на страницу входа в Azure.
 
 ![Ссылка iPass SmartConnect в списке "Приложения"](./media/ipasssmartconnect-tutorial/testing2.png) 
 
@@ -242,13 +243,13 @@ d. Введите имя пользователя в Azure с доменом. Н
 
 a. Войдите в [https://myapps.microsoft.com](https://myapps.microsoft.com).
 
-b. Щелкните приложение iPass SmartConnect.
+б) Щелкните приложение iPass SmartConnect.
 
 c. Будет открыта страница SSA. Нажмите кнопку **Скачать приложение для Windows**, чтобы установить клиент iPass SmartConnect.
 
 ![Ссылка iPass SmartConnect в списке "Приложения"](./media/ipasssmartconnect-tutorial/testing4.png)
 
-d. При первом запуске клиента активация будет запущена автоматически после принятия условий использования.
+4.3. При первом запуске клиента активация будет запущена автоматически после принятия условий использования.
 
 д. Если активация не запускается, нажмите кнопку "Активировать" на странице SSA, чтобы начать активацию.
 

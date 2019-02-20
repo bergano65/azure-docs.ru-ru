@@ -10,18 +10,18 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/26/2018
+ms.date: 02/06/2019
 ms.author: magoedte
-ms.openlocfilehash: 344b049c46243c06c32ed061410f48f71bc70f54
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 4d336f657baef99d97568ba722e64a1f4440367f
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53580949"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984585"
 ---
-# <a name="collect-azure-activity-logs-into-log-analytics-across-subscriptions"></a>Получение журналов действий Azure в службе Log Analytics в разных подписках
+# <a name="collect-azure-activity-logs-into-log-analytics-across-subscriptions-in-different-azure-active-directory-tenants"></a>Сбор журналов действий Azure с подписок в разных арендаторах Azure Active Directory и их передача в службу Log Analytics
 
-В этой статье описывается метод сбора журналов действий Azure в рабочем пространстве Log Analytics с использованием соединителя сборщика данных Azure Log Analytics для Logic Apps. Следуйте приведенной здесь процедуре, когда вам нужно отправить журналы в рабочее пространство другого клиента Azure Active Directory. Например, если вы являетесь поставщиком управляемых служб, вы можете собирать журналы действий из подписки клиента и хранить их в рабочей области Log Analytics в своей собственной подписке.
+В этой статье описывается метод сбора журналов действий Azure в рабочем пространстве Log Analytics с использованием соединителя сборщика данных Azure Log Analytics для Logic Apps. Следуйте приведенной здесь процедуре, когда вам нужно отправить журналы в рабочее пространство другого арендатора Azure Active Directory. Например, если вы являетесь поставщиком управляемых служб, вы можете собирать журналы действий из подписки клиента и хранить их в рабочей области Log Analytics в своей собственной подписке.
 
 Если рабочее пространство Log Analytics находится в одной и той же подписке Azure или в другой подписке, но в том же клиенте Azure Active Directory, следуйте шагам в статье [Просмотр журналов действий Azure](collect-activity-logs.md), чтобы собрать журналы действий Azure.
 

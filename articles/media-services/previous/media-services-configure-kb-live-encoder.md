@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 11/04/2018
+ms.date: 02/08/2019
 ms.author: juliako;dbgeorge
-ms.openlocfilehash: f6d4fcf5e6ec8029bb0e7c303849fdceef5bace7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 1672eb2ef0db36c9b30ca444fa4224eb1afbe828
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51012094"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998490"
 ---
-# <a name="use-the-haivision-kb-live-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока
+# <a name="use-the-haivision-kb-live-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
 > * [FMLE](media-services-configure-fmle-live-encoder.md)
 > * [Haivision](media-services-configure-kb-live-encoder.md)
@@ -45,7 +45,7 @@ ms.locfileid: "51012094"
 * При использовании программных кодировщиков закройте все ненужные программы.
 
 ## <a name="create-a-channel"></a>Создание канала
-1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
+1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 [Haivision](./media/media-services-configure-kb-live-encoder/channel.png)
 2. Укажите имя канала, поле описания является необязательным. В разделе Channel Settings ("Параметры каналов") для параметра Live Encoding ("Кодирование в реальном времени") установите значение **Standard** ("Стандартное"), а для параметра Input Protocol ("Входной протокол") — значение **RTMP**. Остальные параметры можно оставить без изменений. Убедитесь, что флажок **Start the new channel now** (Сразу запустить новый канал) установлен.
 3. Щелкните **Создать канал**.
@@ -72,17 +72,17 @@ ms.locfileid: "51012094"
 ## <a name="configuration-steps"></a>Этапы настройки
 1.  Войдите в пользовательский интерфейс кодировщика Haivision KB.
 2.  Нажмите **кнопку меню** в центре управления каналами и выберите **Add Channel** (Добавить канал).  
-    ![Снимок экрана 2017-08-14 в 9:15:09 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step2.png)
+    ![Снимок экрана от 14.08.2017 г., 9:15:09](./media/media-services-configure-kb-live-encoder/step2.png)
 3.  Введите **имя канала** в поле "Имя" и нажмите кнопку "Далее".  
-    ![Снимок экрана 2017-08-14 в 9:19:07 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step3.png)
+    ![Снимок экрана 14.08.2017 г., 9:19:07](./media/media-services-configure-kb-live-encoder/step3.png)
 4.  Выберите пункт **Channel Input Source** (Источник входных данных канала) из раскрывающегося меню **Input Source** (Источник входных данных ) и нажмите кнопку "Далее".
-    ![Снимок экрана 2017-08-14 в 9:20:44 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step4.png)
+    ![Снимок экрана от 14.08.2017 г., 9:20:44](./media/media-services-configure-kb-live-encoder/step4.png)
 5.  Из раскрывающегося меню **Encoder Template** (Шаблон кодировки) выберите шаблон **H264-720-AAC-192** и нажмите кнопку "Далее".
-    ![Снимок экрана 2017-08-14 в 9:23:15 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step5.png)
+    ![Снимок экрана от 14.08.2017 г., 9:23:15](./media/media-services-configure-kb-live-encoder/step5.png)
 6.  Из раскрывающегося меню **Select New Output** (Выбор новых выходных данных) выберите протокол **RTMP** и нажмите кнопку "Далее".  
-    ![Снимок экрана 2017-08-14 в 9:27:51 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step6.png)
+    ![Снимок экрана от 14.08.2017 г., 9:27:51](./media/media-services-configure-kb-live-encoder/step6.png)
 7.  Укажите сведения об аудиопотоке Azure из окна **Channel Output** (Вывод канала). Вставьте ссылку **RTMP** из начальной настройки канала в поле **Сервер**. Введите имя канала в поле **Output Name** (Имя выходных данных). Для названия потока в поле Stream Name Template (Шаблон имени потока) используйте шаблон RTMPStreamName_%video_bitrate%.
-    ![Снимок экрана 2017-08-14 в 9:33:17 (PNG-файл)](./media/media-services-configure-kb-live-encoder/step7.png)
+    ![Снимок экрана от 14.08.2017 г., 9:33:17](./media/media-services-configure-kb-live-encoder/step7.png)
 8.  Нажмите кнопку "Далее", а затем — кнопку "Готово".
 9.  Чтобы начать кодировать канал, нажмите **кнопку воспроизведения**.  
     ![Haivision KB (PNG-файл)](./media/media-services-configure-kb-live-encoder/step9.png)

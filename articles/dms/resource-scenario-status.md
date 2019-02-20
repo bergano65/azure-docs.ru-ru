@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 01/15/2019
-ms.openlocfilehash: edc6e651c3ec352115e360e50f98a3e36cd287c0
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.date: 02/11/2019
+ms.openlocfilehash: 39a7f7ce6660016f00e36c5f6619eba2fa461023
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54904086"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993169"
 ---
 # <a name="status-of-migration-scenarios-supported-by-the-azure-database-migration-service"></a>Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service
 Azure Database Migration Service предназначена для поддержки различных сценариев миграции (пар исходных и целевых объектов): автономной (однократной) и с подключением к сети (непрерывная синхронизация). Сценарии использования, предоставляемые Azure Database Migration Service, расширяются со временем. Регулярно добавляются новые сценарии. В этой статье перечислены сценарии миграции, которые в настоящее время поддерживаются службой Azure Database Migration Service, и состояние каждого сценария (закрытая [или ограниченная] предварительная версия, общедоступная предварительная версия, общедоступная версия).

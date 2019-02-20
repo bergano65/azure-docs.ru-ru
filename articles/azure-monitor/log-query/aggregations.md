@@ -1,6 +1,6 @@
 ---
-title: Агрегирование в запросах Azure Log Analytics | Документация Майкрософт
-description: Описываются функции агрегирования в запросах Log Analytics, которые предлагают эффективные способы анализа данных.
+title: Агрегирование в запросах к журналам Azure Monitor | Документация Майкрософт
+description: Здесь описаны функции агрегирования в запросах к журналам Azure Monitor, предоставляющие эффективные способы анализа данных.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: f5ecd68c1538fb9e21345221aa22c28217002271
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 31ff0435487592577915e526abcb97197f591449
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185755"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56000853"
 ---
-# <a name="aggregations-in-log-analytics-queries"></a>Агрегирование в запросах Log Analytics
+# <a name="aggregations-in-azure-monitor-log-queries"></a>Агрегирование в запросах к журналам Azure Monitor
 
 > [!NOTE]
 > Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этой статье описываются функции агрегирования в запросах Log Analytics, которые предлагают эффективные способы анализа данных. Все эти функции работают с помощью оператора `summarize`, который выдает таблицу с агрегированными результатами из входной таблицы.
+В этой статье описаны функции агрегирования в запросах к журналам Azure Monitor, предоставляющие эффективные способы анализа данных. Все эти функции работают с помощью оператора `summarize`, который выдает таблицу с агрегированными результатами из входной таблицы.
 
 ## <a name="counts"></a>Подсчеты
 
@@ -147,7 +147,7 @@ Perf
 | summarize stdev(CounterValue), percentiles(CounterValue, 50) by Computer
 ```
 
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с другими статьями по использованию [языка запросов Data Explorer](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 80208c83c96ba78db052017c2baa3bc0db63953f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f8a5c12bb57a8f59960320c6227174b240bcbc3d
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258856"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55892241"
 ---
 # <a name="row-level-security-with-power-bi-workspace-collections"></a>Безопасность уровня строк в коллекциях рабочих областей Power BI
 
@@ -94,7 +94,7 @@ ms.locfileid: "51258856"
 * **username** (необязательно) — используется с безопасностью на уровне строк. Это строка, с помощью которой можно идентифицировать пользователя при применении правил безопасности на уровне строк. См. статью Using Row Level Security with Power BI Embedded (Использование безопасности на уровне строк в Power BI Embedded).
 * **roles** — строка, содержащая роли, которые выбираются при применении правил безопасности на уровне строк. При выборе нескольких ролей их нужно передавать в виде массива строк.
 
-Вы создадите маркер с помощью метода [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#Microsoft_PowerBI_Security_PowerBIToken_CreateReportEmbedToken_System_String_System_String_System_String_System_DateTime_System_String_System_Collections_Generic_IEnumerable_System_String__). Если задано свойство username, необходимо также передать по крайней мере одно значение для свойства roles.
+Вы создадите маркер с помощью метода [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN). Если задано свойство username, необходимо также передать по крайней мере одно значение для свойства roles.
 
 Например, можно изменить EmbedSample. Строку 55 DashboardController можно изменить с
 

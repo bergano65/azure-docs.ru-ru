@@ -12,13 +12,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 81ec99c5de94736d68392cc7cf0bc3e305e0ce7d
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/07/2019
+ms.openlocfilehash: 34c7d431815ae7a9452bb0703cde18050d38bdb7
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754024"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56164623"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -37,11 +37,14 @@ ms.locfileid: "55754024"
 
 - **Администратор сервера**
 
-При создании сервера Azure SQL Server необходимо назначить **имя для входа администратора сервера**. SQL Server создает эту учетную запись в качестве имени для входа в базе данных master. Эта учетная запись подключается с использованием проверки подлинности SQL Server (с предоставлением имени пользователя и пароля). Может существовать только одна такая учетная запись.   
+  При создании сервера Azure SQL Server необходимо назначить **имя для входа администратора сервера**. SQL Server создает эту учетную запись в качестве имени для входа в базе данных master. Эта учетная запись подключается с использованием проверки подлинности SQL Server (с предоставлением имени пользователя и пароля). Может существовать только одна такая учетная запись.
 
-- **Администратор Azure Active Directory**   
+  > [!NOTE]
+  > Чтобы сбросить пароль администратора сервера, на [портале Azure](https://portal.azure.com) щелкните **Серверы SQL**, выберите в списке сервер и щелкните **Сбросить пароль**.
 
-Одной отдельной учетной записи или учетной записи группы безопасности Azure Active Directory также можно предоставить права администратора. В целом проводить настройку администратора Azure AD необязательно, но если вы хотите использовать учетные записи Azure AD для подключения к базе данных SQL, администратор Azure AD **обязательно** должен быть настроен. Дополнительные сведения о настройке доступа Azure Active Directory см. в статьях [Подключение к базе данных SQL или хранилищу данных SQL c использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md) и [Поддержка SSMS в Azure AD MFA для базы данных SQL и хранилища данных SQL](sql-database-ssms-mfa-authentication.md).
+- **Администратор Azure Active Directory**
+
+  Одной отдельной учетной записи или учетной записи группы безопасности Azure Active Directory также можно предоставить права администратора. В целом проводить настройку администратора Azure AD необязательно, но если вы хотите использовать учетные записи Azure AD для подключения к базе данных SQL, администратор Azure AD **обязательно** должен быть настроен. Дополнительные сведения о настройке доступа Azure Active Directory см. в статьях [Подключение к базе данных SQL или хранилищу данных SQL c использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md) и [Поддержка SSMS в Azure AD MFA для базы данных SQL и хранилища данных SQL](sql-database-ssms-mfa-authentication.md).
 
 Учетные записи **администратора сервера** и **администратора Azure AD** имеют следующие характеристики:
 
@@ -72,7 +75,6 @@ ms.locfileid: "55754024"
 > [!IMPORTANT]
 > Чтобы обеспечить синхронизацию с обновлениями Microsoft Azure и Базой данных SQL, рекомендуется всегда использовать последнюю версию Management Studio. [Обновите среду SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
 
-
 ## <a name="additional-server-level-administrative-roles"></a>Дополнительные административные роли на уровне сервера
 
 >[!IMPORTANT]
@@ -85,7 +87,7 @@ ms.locfileid: "55754024"
 Одной из этих административных ролей является роль **dbmanager**. Участники этой роли могут создавать базы данных. Чтобы использовать эту роль, создайте пользователя в базе данных `master`, а затем добавьте его к роли базы данных **dbmanager**. Создавать базу данных могут лица, использующие для входа в базу данных master идентификатор SQL Server, или пользователи автономной базы данных, использующие идентификатор пользователя Azure Active Directory.
 
 1. Используя учетную запись администратора, подключитесь к базе данных master.
-2. Необязательный шаг. Создайте имя для входа при проверке подлинности SQL Server с помощью инструкции [CREATE LOGIN](https://msdn.microsoft.com/library/ms189751.aspx). Пример инструкции:
+2. Создайте имя для входа при проверке подлинности SQL Server с помощью инструкции [CREATE LOGIN](https://msdn.microsoft.com/library/ms189751.aspx). Пример инструкции:
 
    ```sql
    CREATE LOGIN Mary WITH PASSWORD = '<strong_password>';

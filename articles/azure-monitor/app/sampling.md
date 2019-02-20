@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/02/2018
+ms.date: 02/07/2019
 ms.reviewer: vitalyg
 ms.author: mbullwin
-ms.openlocfilehash: 0b56451231f1fda4e5bd156d0aded6e84c9c0162
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 8e9cb570f69eb29887f4f904ba7b2b35548f3771
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117458"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55965364"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -195,6 +195,63 @@ ms.locfileid: "54117458"
 В качестве процента выборки выберите значение в процентах, близкое к 100/N, где N — это целое число.  В настоящее время выборка не поддерживает другие значения.
 
 Если вы также включите выборку с фиксированной частотой на сервере, выборка будет синхронизироваться между клиентом и сервером. Благодаря этому вы сможете перемещаться между связанными представлениями страниц и запросами в службе поиска.
+
+## <a name="aspnet-core-sampling"></a>Выборка для ASP.NET Core
+
+Адаптивная выборка включена для всех приложений ASP.NET Core по умолчанию. Вы можете отключить или настроить поведение выборки.
+
+### <a name="turning-off-adaptive-sampling"></a>Отключение адаптивной выборки
+
+Функция выборки по умолчанию может быть отключена, когда мы добавим службу Application Insights в методе ```ConfigureServices```, используя ```ApplicationInsightsServiceOptions```.
+
+``` c#
+public void ConfigureServices(IServiceCollection services)
+{
+// ...
+
+var aiOptions = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+aiOptions.EnableAdaptiveSampling = false;
+services.AddApplicationInsightsTelemetry(aiOptions);
+
+//...
+}
+```
+
+Указанный выше код отключит функцию выборки. Чтобы добавить выборку с дополнительными параметрами настройки, выполните следующие действия.
+
+### <a name="configure-sampling-settings"></a>Настройка параметров выборки
+
+Чтобы настроить поведение выборки, используйте методы расширения ```TelemetryProcessorChainBuilder```, как показано ниже.
+
+> [!IMPORTANT]
+> Если вы используете этот метод для настройки выборки, убедитесь, что вы используете параметры aiOptions.EnableAdaptiveSampling = false; с помощью AddApplicationInsightsTelemetry().
+
+``` c#
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+var configuration = app.ApplicationServices.GetService<TelemetryConfiguration>();
+
+var builder = configuration .TelemetryProcessorChainBuilder;
+// version 2.5.0-beta2 and above should use the following line instead of above. (https://github.com/Microsoft/ApplicationInsights-aspnetcore/blob/develop/CHANGELOG.md#version-250-beta2)
+// var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
+
+// Using adaptive sampling
+builder.UseAdaptiveSampling(maxTelemetryItemsPerSecond:10);
+ 
+// OR Using fixed rate sampling   
+double fixedSamplingPercentage = 50;
+builder.UseSampling(fixedSamplingPercentage);
+
+builder.Build();
+
+// ...
+}
+
+```
+
+**Если используется указанный выше метод для настройки выборки, убедитесь, что применяются параметры ```aiOptions.EnableAdaptiveSampling = false;``` с помощью AddApplicationInsightsTelemetry().**
+
+Без этого в цепочке TelemetryProcessor будет несколько процессоров выборки, что приведет к непредвиденным последствиям.
 
 ## <a name="fixed-rate-sampling-for-aspnet-and-java-web-sites"></a>Выборка с фиксированной частотой для веб-сайтов ASP.NET и Java
 Выборка с фиксированной частотой уменьшает объем трафика, отправляемого с веб-сервера и веб-браузеров. В отличие от адаптивной выборки объем данных уменьшается в фиксированном, заданном вами размере. Выборки клиента и сервера синхронизируются, а связанные элементы сохраняются. Например, просматривая представление страницы в поиске, вы всегда сможете найти соответствующий ему запрос.

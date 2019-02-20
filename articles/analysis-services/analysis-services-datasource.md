@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/29/2019
+ms.date: 02/07/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 92c2d59ffe8c144bea6e7f8676880c866e234885
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: c7b3695e5cb43a9c8f659a3ac1baddab51526b2d
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55299050"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893737"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -28,14 +28,15 @@ ms.locfileid: "55299050"
 |Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Yes       |    Нет       |
 |Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Yes       |    Нет       |
 |Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Yes        |  Нет         |
-|Azure Data Lake Store<sup>[1](#tab1400a)</sup>     |   Yes       |    Нет       |
+|Azure Data Lake Store (1-го поколения)<sup>[1](#tab1400a)</sup>, <sup>[4](#gen2)</sup>      |   Yes       |    Нет       |
 |Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     Yes     |   Нет        |
 |Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   Yes       |   Нет        |
 ||||
 
 <a name="tab1400a">1</a> Только табличная модель 1400 и более поздние.   
 <a name="azsqlmanaged">2</a> Поддерживается Управляемый экземпляр Базы данных SQL Azure. Так как управляемый экземпляр работает в виртуальной сети Azure с частным IP-адресом, требуется локальный шлюз данных.   
-<a name="databricks">3</a> Экземпляр Azure Databricks, использующий соединитель Spark, в настоящее время не поддерживается.
+<a name="databricks">3</a> Экземпляр Azure Databricks, использующий соединитель Spark, в настоящее время не поддерживается.   
+<a name="gen2">4</a> ADLS 2-го поколения в настоящее время не поддерживается.
 
 
 **Поставщик**   

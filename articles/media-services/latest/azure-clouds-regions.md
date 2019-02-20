@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/11/2019
+ms.date: 02/07/2019
 ms.author: juliako
-ms.openlocfilehash: d176152429ecac1ed4e570533f1bc0426cc7655f
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: a5a4205c97e4db25d5d0a92472610364d912b278
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767458"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55963443"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -40,7 +40,7 @@ ms.locfileid: "55767458"
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 
-## <a name="region-code-name"></a>Кодовое имя региона 
+### <a name="region-code-name"></a>Кодовое имя региона 
 
 Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения кодового имени региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
@@ -62,6 +62,42 @@ az account list-locations
       "subscriptionId": null
     }
 ```
+
+## <a name="endpoints"></a>Конечные точки  
+
+При подключении к Службам мультимедиа из облака Azure другой страны необходимо знать следующие конечные точки.
+
+### <a name="global-azure"></a>Глобальная среда Azure
+
+|Конечные точки ||
+| --- | --- | 
+| Azure Resource Manager |  `https://management.azure.com/` |
+| Authentication | `https://login.microsoftonline.com/` | 
+| Аудитория токена | `https://management.core.windows.net/` |
+
+### <a name="azure-government"></a>Azure Government
+
+|Конечные точки||
+| --- | --- | 
+| Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
+| Authentication | `https://login.microsoftonline.us/` | 
+| Аудитория токена | `https://management.core.usgovcloudapi.net/` |
+
+### <a name="azure-germany"></a>Azure для Германии
+
+| Конечные точки ||
+| --- | --- |  
+| Azure Resource Manager | `https://management.cloudapi.de/` |
+| Authentication | `https://login.microsoftonline.de/` |
+| Аудитория токена | `https://management.core.cloudapi.de/`|
+
+### <a name="azure-china-21vianet"></a>Azure China 21Vianet
+
+|Конечные точки||
+| --- | --- | 
+| Azure Resource Manager | `https://management.chinacloudapi.cn/` |
+| Authentication | `https://login.chinacloudapi.cn/` |
+| Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

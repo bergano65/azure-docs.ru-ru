@@ -8,12 +8,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 12/31/2018
 ms.author: raynew
-ms.openlocfilehash: 34b38f979fcab765a35d8aa6f0714ce85beec6fe
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 0cc9c8dc214589e03e5a6a5405c07c9f6b3e53e6
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54105191"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55895845"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-vmware-virtual-machines-or-physical-servers-to-a-secondary-site"></a>Настройка аварийного восстановления виртуальных машин VMware и физических серверов в дополнительном расположении
 
@@ -146,7 +146,7 @@ Azure Site Recovery продолжает внедрять инновации, п
 Обновлено: 31 декабря 2018 г. Скачайте [обновление 7 для Scout](https://aka.ms/asr-scout-update7).
 Обновление 7 для Scout — это полный установщик, который может использоваться для новой установки, а также для обновления существующих агентов или главных целевых серверов с установленными предыдущими обновлениями (от обновления 1 до обновления 6). Оно содержит все исправления, выпущенные с обновления 1 по обновление 6, а также новые исправления и улучшения, описанные ниже.
  
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Соответствие требованиям PCI.
 * Поддержка TLS версии 1.2.
 
@@ -218,7 +218,7 @@ Azure Site Recovery продолжает внедрять инновации, п
 
 #### <a name="new-platform-support"></a>Поддержка новых платформ
 * Пакет обновления 4 (SP4) для SUSE Linux Enterprise Server 11
-* SLES 11 с пакетом обновления 4 (SP4) **InMage_UA_8.0.1.0_SLES11-SP4-64_GA_13Apr2017_release.tar.gz** для 64-разрядных версий включен в базовый общедоступный пакет Scout (**InMage_Scout_Standard_8.0.1 GA.zip**). Загрузите пакет общедоступной версии на портале, как описано в разделе о [создании хранилища](#create-a-vault).
+* SLES 11 с пакетом обновления 4 (SP4) **InMage_UA_8.0.1.0_SLES11-SP4-64_GA_13Apr2017_release.tar.gz** для 64-разрядных версий включен в базовый общедоступный пакет Scout (**InMage_Scout_Standard_8.0.1 GA.zip**). Загрузите пакет общедоступной версии на портале, как описано в разделе о создании хранилища.
 
 
 #### <a name="bug-fixes-and-enhancements"></a>Исправления ошибок и улучшения
@@ -252,7 +252,7 @@ Azure Site Recovery продолжает внедрять инновации, п
   * CentOS 6.8.
 
 > [!NOTE]
-> Файл **InMage_UA_8.0.1.0_RHEL7-64_GA_06Oct2016_release.tar.gz** для 64-разрядных версий RHEL и CentOS 7 включен в базовый общедоступный пакет Scout, **InMage_Scout_Standard_8.0.1 GA.zip**. Загрузите пакет общедоступной версии Scout на портале, как описано в разделе о [создании хранилища](#create-a-vault).
+> Файл **InMage_UA_8.0.1.0_RHEL7-64_GA_06Oct2016_release.tar.gz** для 64-разрядных версий RHEL и CentOS 7 включен в базовый общедоступный пакет Scout, **InMage_Scout_Standard_8.0.1 GA.zip**. Загрузите пакет общедоступной версии Scout на портале, как описано в разделе о создании хранилища.
 
 #### <a name="bug-fixes-and-enhancements"></a>Исправления ошибок и улучшения
 

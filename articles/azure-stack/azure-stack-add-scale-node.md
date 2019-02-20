@@ -12,23 +12,20 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: d35d3bb32f9afabb0e2b02f0d93fc60e0121e9ce
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4c9c4bce0b63bd6d45522e2e069d1ae884916e09
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247652"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172405"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Добавление дополнительных узлов единиц масштабирования в Azure Stack
 
 Операторы Azure Stack могут увеличить общую емкость существующей единицы масштабирования, добавив дополнительный физический компьютер. Физический компьютер также называется узлом единицы масштабирования. Каждый новый добавляемый узел единицы масштабирования должен быть однородным по типу процессора, памяти, номеру и размеру диска для узлов, которые уже присутствуют в единице масштабирования.
-
-> [!NOTE]  
-Чтобы добавить дополнительные узлы единицы масштабирования, необходимо запустить Azure Stack 1807 или более поздней версии.
 
 Чтобы добавить узел единицы масштабирования, войдите в Azure Stack и запустите средства от изготовителя оборудования (OEM). Инструментарий OEM работает на узле жизненного цикла оборудования (HLH), чтобы убедиться, что новый физический компьютер соответствует тому же уровню встроенного ПО, что и существующие узлы.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory со Screencast-O-Matic | Документы Майкрософт
+title: Руководство по Интеграция Azure Active Directory со Screencast-O-Matic | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Screencast-O-Matic.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: jeedes
-ms.openlocfilehash: 20c0acebde232bd50e6e5befed0facc96ee11b4d
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 51daf3b9553babb5fc627c02d79914c68c318145
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39040955"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56190829"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-screencast-o-matic"></a>Руководство по интеграции Azure Active Directory со Screencast-O-Matic
+# <a name="tutorial-azure-active-directory-integration-with-screencast-o-matic"></a>Руководство. Интеграция Azure Active Directory со Screencast-O-Matic
 
 В этом руководстве описано, как интегрировать Screencast-O-Matic с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39040955"
 
 - С помощью Azure AD вы можете контролировать доступ к Screencast-O-Matic.
 - Вы можете включить автоматический вход пользователей в Screencast-O-Matic (единый вход) с использованием их учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39040955"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Screencast-O-Matic**, выберите **Screencast-O-Matic** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39040955"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Screencast-O-Matic](#create-a-screencast-o-matic-test-user)** требуется для того, чтобы в Screencast-O-Matic существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -154,7 +155,7 @@ ms.locfileid: "39040955"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/screencast-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/screencast-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -174,14 +175,14 @@ ms.locfileid: "39040955"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-screencast-o-matic-test-user"></a>Создание тестового пользователя Screencast-O-Matic
 
 Цель этого раздела — создать в приложении Screencast-O-Matic пользователя с именем Britta Simon. Приложение Screencast-O-Matic поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Screencast-O-Matic (если он еще не создан).
 
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки Screencast-O-Matic](mailto:support@screencast-o-matic.com).
+>Чтобы создать учетную запись пользователя вручную, обратитесь в  [группу поддержки Screencast-O-Matic](mailto:support@screencast-o-matic.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -218,7 +219,7 @@ ms.locfileid: "39040955"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Screencast-O-Matic на панели доступа, вы автоматически войдете в приложение Screencast-O-Matic.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

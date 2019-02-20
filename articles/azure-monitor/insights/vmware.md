@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
-ms.openlocfilehash: c14267f6fc7f8c6be9199b9f25b6430b5f1aa5dd
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 9f5bdc3686e35f09b461bd5c2df695218b48ede3
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54887416"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993373"
 ---
 # <a name="vmware-monitoring-preview-solution-in-log-analytics"></a>Решение для мониторинга VMware (предварительная версия) в Log Analytics | Microsoft Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "54887416"
 ## <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Для установки и настройки решений используйте указанные ниже данные.
 
-* Добавьте решение для мониторинга VMware в подписку, используя процесс, описанный в разделе [Установка решения по управлению](../insights/solutions.md#install-a-management-solution).
+* Добавьте решение для мониторинга VMware в подписку, используя процесс, описанный в разделе [Установка решения по мониторингу](../insights/solutions.md#install-a-monitoring-solution).
 
 #### <a name="supported-vmware-esxi-hosts"></a>Поддерживаемые узлы VMware ESXi
 vSphere ESXi Host версий 5.5, 6.0 и 6.5
@@ -197,11 +197,11 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
     a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду ` sudo /opt/microsoft/omsagent/bin/service_control start`
 
-    b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
+    б) Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
     c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
-    d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
+    4.3. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.

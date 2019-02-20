@@ -3,20 +3,20 @@ title: Увеличение квоты конечной точки
 titleSuffix: Azure Cognitive Services
 description: Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**.
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 802a5cc629a467527c916c5a41a9c00d06e85600
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 89778375c6362007a81eab72663f56492f4fe206
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55491728"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997912"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
@@ -362,6 +362,9 @@ dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {
 ## <a name="use-the-traffic-manager-parent-profile"></a>Использование родительского профиля диспетчера трафика
 Чтобы управлять трафиком между конечными точками, необходимо добавить вызов DNS диспетчера трафика для поиска конечной точки LUIS. Этот вызов выполняется для каждого запроса LUIS к конечной точке и должен имитировать географическое расположение пользователя клиентского приложения LUIS. Добавьте код ответа DNS между клиентским приложением LUIS и запросом к LUIS для определения конечной точки. 
 
+## <a name="resolving-a-degraded-state"></a>Разрешение состояния пониженной функциональности
+
+Включите [журналы диагностики](../../traffic-manager/traffic-manager-diagnostic-logs.md) для диспетчера трафика, чтобы узнать, почему конечная точка находится в состоянии пониженной функциональности.
 
 ## <a name="clean-up"></a>Очистка
 Удалите два ключа конечной точки LUIS, три профиля диспетчера трафика и группу ресурсов, содержащую эти пять ресурсов. Это необходимо сделать на портале Azure. Удалите пять ресурсов из списка ресурсов. Затем удалите группу ресурсов. 

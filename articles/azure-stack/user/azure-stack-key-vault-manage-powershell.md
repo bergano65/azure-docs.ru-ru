@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/16/2019
 ms.author: sethm
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: ddf08c69b5ef06d6243230230bcfdb56965aef4d
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4ec662cd60e2ca8e5db76a3fda4c68df6f3164e4
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239950"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55893689"
 ---
 # <a name="manage-key-vault-in-azure-stack-using-powershell"></a>Управление Key Vault в Azure Stack с помощью PowerShell
 
@@ -65,7 +65,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault
 
 Если регистрация прошла успешно, возвращается следующий результат:
 
-![Регистрация](media/azure-stack-key-vault-manage-powershell/image2.png) При вызове команд хранилища ключей могут появляться ошибки, например "Подписка не зарегистрирована для использования пространства имен Microsoft.KeyVault". При появлении такой ошибки убедитесь, что вы [включили поставщик ресурсов Key Vault](#enable-your-tenant-subscription-for-vault-operations), как описано выше.
+![Регистрация](media/azure-stack-key-vault-manage-powershell/image2.png) При вызове команд хранилища ключей могут появляться ошибки, например "Подписка не зарегистрирована для использования пространства имен Microsoft.KeyVault". При появлении такой ошибки убедитесь, что вы включили поставщик ресурсов Key Vault, как описано выше.
 
 ## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
 

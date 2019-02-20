@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 208526b745a117c9ee14bab21f8a5ce05accd1fe
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 252aacfeb85f23699c6a2e2ac1f457f9e2b59b0e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382240"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997191"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---docker"></a>Локальное развертывание акселератора решений для удаленного мониторинга Docker
 
@@ -54,6 +54,8 @@ set PCS
 В результате выполнения команды появятся переменные среды, установленные сценарием **start.cmd**.
 
 Убедитесь, что Docker запущен на локальном компьютере.
+> [!NOTE]
+> Docker должен работать с [контейнерами Linux](https://docs.docker.com/docker-for-windows/), если он выполняется под управлением Windows.
 
 Микрослужбам, работающим в локальных контейнерах Docker, необходим доступ к облачным службам Azure. Вы можете протестировать подключение среды Docker к Интернету, используя следующую команду, которая проверит адреса в Интернете, находящиеся внутри контейнера.
 
@@ -66,6 +68,9 @@ docker run --rm -ti library/alpine ping google.com
 ```cmd/sh
 docker-compose up
 ```
+
+> [!NOTE] 
+> Перед запуском `docker-compose up` убедитесь, что для Docker обеспечен [общий доступ к локальному диску](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/issues/115).
 
 При первом выполнении этой команды Docker скачивает образы микрослужб из центра Docker для локальной сборки контейнеров. При последующих выполнениях Docker запускает контейнеры немедленно.
 

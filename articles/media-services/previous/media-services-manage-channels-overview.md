@@ -4,7 +4,7 @@ description: В этой статье приводятся общие сведе
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: fb63502e-914d-4c1f-853c-4a7831bb08e8
 ms.service: media-services
@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 08/20/2018
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 3814041359884fc2862b0e90a58aabd1ad26c4cb
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 318ec5a4f9aceaf02048768cbf630eff08feff6b
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382141"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998014"
 ---
-# <a name="overview-of-live-streaming-using-azure-media-services"></a>Общие сведения о потоковой трансляции с использованием служб мультимедиа Azure
+# <a name="overview-of-live-streaming-using-media-services"></a>Общие сведения о потоковой трансляции с использованием Служб мультимедиа
 
 > [!NOTE]
 > С 12 мая 2018 г. динамические каналы больше не будут поддерживать протокол приема транспортного потока RTP/MPEG-2. Выполните миграцию из RTP/MPEG-2 в протокол приема RTMP или фрагментированный протокол MP4 (Smooth Streaming).

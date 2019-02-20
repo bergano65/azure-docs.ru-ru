@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
-ms.openlocfilehash: 2b90457ed939999b5163078750650c92a3516cca
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: c88fe7051519440056fe85e7ff9172ae0239bd41
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816583"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234243"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -203,20 +203,28 @@ ms.locfileid: "55816583"
 [API оповещений журнала действий Azure Monitor](https://docs.microsoft.com/rest/api/monitor/activitylogalerts) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
 
 ## <a name="powershell"></a>PowerShell
-Ниже показано использование командлета PowerShell для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleActivityLogAlert.json) в разделе шаблонов ресурсов.
-```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActivityLogAlert.json -TemplateParameterFile sampleActivityLogAlert.parameters.json
-```
-Причем в sampleActivityLogAlert.parameters.json указаны значения для параметров, необходимых для создания правила генерации оповещений.
+
+Для оповещений журнала действий предусмотрены специальные командлеты PowerShell.
+
+- [Set-AzureRmActivityLogAlert](https://docs.microsoft.com/powershell/module/azurerm.insights/set-azurermactivitylogalert). Для создания нового или обновления существующего ресурса правила генерации оповещений для журнала действий.
+- [Get-AzureRmActivityLogAlert](https://docs.microsoft.com/powershell/module/azurerm.insights/get-azurermactivitylogalert) Для получения одного или нескольких ресурсов правила генерации оповещений для журнала действий.
+- [Remove-AzureRmActivityLogAlert](https://docs.microsoft.com/powershell/module/azurerm.insights/remove-azurermactivitylogalert). Для удаления ресурса правила генерации оповещений для журнала действий с подтверждением пользователя.
+- [Enable-AzureRmActivityLogAlert](https://docs.microsoft.com/powershell/module/azurerm.insights/enable-azurermactivitylogalert). Для включения правила генерации оповещений для существующего журнала действий.
+- [Disable-AzureRmActivityLogAlert](https://docs.microsoft.com/powershell/module/azurerm.insights/disable-azurermactivitylogalert). Для отключения правила генерации оповещений существующего журнала действий.
 
 ## <a name="cli"></a>Интерфейс командной строки
-Ниже показано использование команды Azure CLI для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleActivityLogAlert.json) в разделе шаблонов ресурсов.
 
-```azurecli
-az group deployment create --resource-group myRG --template-file sampleActivityLogAlert.json --parameters @sampleActivityLogAlert.parameters.json
-```
-В файле *sampleActivityLogAlert.parameters.json* указаны значения для параметров, необходимых для создания правила генерации оповещений.
+Команды Azure CLI, представленные в наборе [az monitor activity-log alert](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert), доступны для управления правилами генерации оповещений для журнала действий.
 
+Чтобы создать новое правило генерации оповещений для журнала действий, вы можете выполнить действия в следующем порядке.
+
+1. [az monitor activity-log alert create](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-create). Создание нового ресурса правила генерации оповещений для журнала действий.
+1. [az monitor activity-log alert scope](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert/scope). Добавление области для созданного правила генерации оповещений для журнала действий.
+1. [az monitor activity-log alert action-group](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert/action-group). Добавление группы действий для правила генерации оповещений для журнала действий.
+
+Для получения одного ресурса правила генерации оповещений для журнала действий, можете использовать команду Azure CLI [az monitor activity-log alert show](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-show
+). Чтобы просмотреть все ресурсы правила генерации оповещений для журнала активности в группе ресурсов используйте команду [az monitor activity-log alert list](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list).
+Для удаления ресурсов правила генерации оповещений для журнала действий, можете использовать команду Azure CLI [az monitor activity-log alert delete](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-delete).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

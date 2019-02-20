@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 08/08/2018
 ms.reviewer: mbullwin
 ms.author: Evgeny.Ternovsky
-ms.openlocfilehash: d034bf130440fdb5b783db41161ab5a21a306478
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: b7814ce2ae94216da691b9a54049d20a03aafdd9
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103118"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55994822"
 ---
 # <a name="correlating-application-insights-data-with-custom-data-sources"></a>Корреляция данных Application Insights с пользовательскими источниками данных
 
@@ -28,19 +28,19 @@ Application Insights собирает несколько разных типов
 
 - Таблицы обогащения данных или поиска. Например, дополните имя сервера именем владельца сервера и местом расположения задания, в котором оно может быть найдено. 
 - Корреляция с источниками данных, не относящихся к Application Insights. Например, сопоставьте данные о покупке в интернет-магазине с информацией из службы выполненных покупок, чтобы определить, насколько точны оценки времени доставки. 
-- Полностью настраиваемые данные. Большинство клиентов любят язык запросов и производительность платформы данных Log Analytics, которая поддерживает Application Insights, и хотят использовать ее для запроса данных, которые совсем не связаны с Application Insights. Например, для отслеживания производительности солнечных батарей как части интеллектуальной домашней установки, описанной [здесь]( https://blogs.catapultsystems.com/cfuller/archive/2017/10/04/using-log-analytics-and-a-special-guest-to-forecast-electricity-generation/).
+- Полностью настраиваемые данные. Большинство клиентов любят язык запросов и производительность платформы журнала Azure Monitor, которая поддерживает Application Insights, и хотят использовать ее для запроса данных, которые совсем не связаны с Application Insights. Например, для отслеживания производительности солнечных батарей как части интеллектуальной домашней установки, описанной [здесь]( https://blogs.catapultsystems.com/cfuller/archive/2017/10/04/using-log-analytics-and-a-special-guest-to-forecast-electricity-generation/).
 
 ## <a name="how-to-correlate-custom-data-with-application-insights-data"></a>Корреляция пользовательских данных с данными Application Insights 
 
-Поскольку Application Insights поддерживается мощной платформой данных Log Analytics, для приема данных Log Analytics можно использовать на полную силу. Используя оператор "join", мы напишем запросы, которые будут коррелировать пользовательские данные с данными, доступными в Log Analytics. 
+Поскольку Application Insights поддерживается мощной платформой журнала Azure Monitor, для приема данных можно использовать Azure Monitor на полную силу. Используя оператор "join", мы напишем запросы, которые будут коррелировать пользовательские данные с данными, доступными в журналах Azure Monitor. 
 
 ## <a name="ingesting-data"></a>Прием данных
 
-В этом разделе мы рассмотрим, как получить данные в Log Analytics.
+В этом разделе мы рассмотрим, как получить данные в журналах Azure Monitor.
 
-Подготовьте новое рабочее пространство Log Analytics, если у вас его еще нет, следуя [этим инструкциям]( https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-collect-azurevm), которые включают шаг "создание рабочего пространства".
+Подготовьте новое рабочее пространство Log Analytics, если у вас его еще нет, следуя [этим инструкциям](../learn/quick-collect-azurevm.md), которые включают шаг "создание рабочего пространства".
 
-Начало отправки данных в Log Analytics. Существует несколько вариантов.
+Начните отправку данных журнала Azure Monitor. Существует несколько вариантов.
 
 - Для синхронного механизма можно напрямую вызвать [API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api) или использовать соединитель Logic App, для этого просто найдите "Azure Log Analytics" и выберите вариант "Отправить данные".
 
@@ -50,9 +50,9 @@ Application Insights собирает несколько разных типов
 
 ## <a name="correlating-data"></a>Корреляция данных
 
-Служба Application Insights основана на платформе данных Log Analytics. Поэтому можно использовать [межресурсные соединения](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search), чтобы сопоставить любые данные, которые были внесены в Log Analytics с ваших данных Application Insights.
+Служба Application Insights основана на платформе журнала Azure Monitor. Поэтому можете использовать [межресурсные соединения](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search), чтобы сопоставить любые данные, которые мы приняли в Azure Monitor, с вашими данными Application Insights.
 
-Например, можно принимать реестр заданий и местоположения в таблице под названием LabLocations_CL в рабочем пространстве Log Analytics под названием myLA. Чтобы просмотреть запросы, отслеживаемые в приложении Application Insights, называемое myAI, и сопоставить имена машин, которые обслуживали запросы в местах расположения этих машин, хранящиеся в ранее упомянутой пользовательской таблице, нужно запустить следующий запрос из Application Insights или контекста Log Analytics.
+Например, можно принимать реестр заданий и местоположения в таблице под названием LabLocations_CL в рабочем пространстве Log Analytics под названием myLA. Чтобы просмотреть запросы, отслеживаемые в приложении Application Insights, называемом myAI, и сопоставить имена машин, которые обслуживали запросы в местах расположения этих машин, хранящиеся в ранее упомянутой пользовательской таблице, нужно запустить следующий запрос из Application Insights или контекста Azure Monitor.
 
 ```
 app('myAI').requests

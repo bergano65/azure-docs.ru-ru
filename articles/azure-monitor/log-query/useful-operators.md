@@ -1,6 +1,6 @@
 ---
-title: Полезные операторы в запросах Azure Log Analytics | Документация Майкрософт
-description: Общие функции для различных сценариев в запросах Log Analytics.
+title: Полезные операторы в запросах журнала Azure Monitor | Документация Майкрософт
+description: Общие функции для различных сценариев в запросах журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
-ms.openlocfilehash: 060b1e469a31c335f062ccd332157d13e64f9318
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: d11445c3f31f9aced6fdb9783575d10a026de1f0
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53183988"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56000154"
 ---
-# <a name="useful-operators-in-log-analytics-queries"></a>Полезные операторы в запросах Log Analytics
+# <a name="useful-operators-in-azure-monitor-log-queries"></a>Полезные операторы в запросах журнала Azure Monitor
 
-В приведенной ниже таблице приведены некоторые общие функции, которые можно использовать для разных сценариев в запросах Log Analytics.
+В таблице ниже приведены некоторые общие функции, которые можно использовать для разных сценариев в запросах Azure Monitor.
 
 ## <a name="useful-operators"></a>Полезные операторы
 
@@ -46,4 +46,4 @@ ms.locfileid: "53183988"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Пройдите урок по [написанию запросов в Log Analytics](get-started-queries.md).
+- Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Настройка различных параметров для контейнеров распознавания текста в функции компьютерного зрения.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 01/29/2019
+ms.date: 02/08/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: f29bb4ec8154c1d17eef18310037c42426d1522f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: b6aaf7f7eaeb6d011fc29457a1b58584d6af8ec9
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458658"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984568"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
@@ -45,7 +45,7 @@ ms.locfileid: "55458658"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр `Billing` задает URI конечной точки для ресурса _Компьютерное зрение_ в Azure, с помощью которого измеряются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _API компьютерного зрения_ в Azure.
+Параметр `Billing` задает URI конечной точки для ресурса _Компьютерное зрение_ в Azure, с помощью которого измеряются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _API компьютерного зрения_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
@@ -112,7 +112,7 @@ ms.locfileid: "55458658"
 
 ### <a name="basic-example"></a>Простой пример 
 
-  ```Docker
+  ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
   Eula=accept \
@@ -122,7 +122,7 @@ ms.locfileid: "55458658"
 
 ### <a name="logging-example-with-command-line-arguments"></a>Пример настройки ведения журнала через аргументы командной строки
 
-  ```Docker
+  ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
   Eula=accept \
@@ -133,7 +133,7 @@ ms.locfileid: "55458658"
 
 ### <a name="logging-example-with-environment-variable"></a>Пример настройки ведения журнала с помощью переменной среды
 
-  ```Docker
+  ```
   SET Logging:Console:LogLevel=Information
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \

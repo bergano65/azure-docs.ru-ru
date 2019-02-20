@@ -11,18 +11,40 @@ ms.author: haining
 ms.reviewer: j-martens
 ms.date: 12/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: cea5f2a3eaa7bddb523d95936fbe0a50e0fd16ed
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 4e7cc1340a85e1d00c2f64abeb35a99052184c52
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564346"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100182"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
 В статье рассказывается о выпусках службы "Машинное обучения Azure".  Для просмотра полного описания каждого пакета SDK см. следующие ссылки на документы:
 + [**Основной пакет SDK для Python**](https://aka.ms/aml-sdk) Машинного обучения Azure.
 + [**Пакет SDK для подготовки данных**](https://aka.ms/data-prep-sdk) Машинного обучения Azure.
+
+## <a name="2019-02-11"></a>11.02.2019
+
+### <a name="azure-machine-learning-sdk-for-python-v1015"></a>Пакет SDK Машинного обучения Azure для Python версии 1.0.15
+
++ **Новые функции**
+  + Pipelines Машинного обучения Azure добавила AzureBatchStep (см. [здесь](https://aka.ms/pl-azbatch)), HyperDriveStep (см. [здесь](https://aka.ms/pl-hyperdrive)) и функцию планирования на основе времени (см. [здесь](https://aka.ms/pl-schedule)).
+  +  DataTranferStep, обновленный для работы с сервером Azure SQL и базой данных Azure для PostgreSQL (см. [здесь](https://aka.ms/pl-data-trans)).
+
++ **Изменения**
+  + Вместо `PublishedPipeline.get_published_pipeline` теперь используется `PublishedPipeline.get`.
+  + Вместо `Schedule.get_schedule` теперь используется `Schedule.get`.
+
+### <a name="azure-machine-learning-data-prep-sdk-v1012"></a>Пакет SDK Машинного обучения Azure для подготовки данных версии 1.0.12
+
++ **Новые функции**
+  + Подготовка данных теперь поддерживает чтение из базы данных SQL Azure с использованием хранилища данных.
+ 
++ **Изменения**
+  + Значительно повышена производительность памяти определенных операций при больших объемах данных.
+  + Параметр `read_pandas_dataframe()` теперь требует указания `temp_folder`.
+  + Свойство `name` в `ColumnProfile` устарело, поэтому вместо него следует использовать свойство `column_name`.
 
 ## <a name="2019-01-28"></a>28.01.2019
 

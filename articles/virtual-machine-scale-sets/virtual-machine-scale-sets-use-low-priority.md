@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: memccror
-ms.openlocfilehash: 85b974e954fd99f6f10426f1961ea9f4a5343c59
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 861c68ae8163e0ba8c2af2a3d96153ac3e84855f
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811109"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55978142"
 ---
 # <a name="low-priority-vms-on-scale-sets-preview"></a>Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)
 
@@ -69,10 +69,10 @@ az vmss create \
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
 Процесс создания масштабируемого набора с низкоприоритетными виртуальными машинами такой же, как описано в [статье о начале работы](quick-create-powershell.md).
-Просто добавьте параметр "-Priority" в командлет [New-AzureRmVmssConfig](/powershell/module/azurerm.compute/new-azurermvmssconfig) и установите для него значение *Low*, как показано в примере ниже.
+Просто добавьте параметр "-Priority" в командлет [New-AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig) и установите для него значение *Low*, как показано в примере ниже.
 
 ```powershell
-$vmssConfig = New-AzureRmVmssConfig `
+$vmssConfig = New-AzVmssConfig `
     -Location "East US 2" `
     -SkuCapacity 2 `
     -SkuName "Standard_DS2" `

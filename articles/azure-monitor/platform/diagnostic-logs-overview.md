@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 55c1bc18422bc2be5172aebcd46b76ac6051a8a4
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: e9fcf36d6ece441c73e7d1224bd5918d2e74bf84
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885853"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56002012"
 ---
 # <a name="collect-and-consume-log-data-from-your-azure-resources"></a>Сбор и использование данных журнала из ресурсов Azure
 
@@ -40,7 +40,9 @@ ms.locfileid: "54885853"
 
 * Сохранение журналов в [**учетную запись хранения**](../../azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В **параметрах диагностики ресурсов** можно задать время хранения (в днях).
 * [Потоковая передача журналов в **Центры событий**](diagnostic-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
-* Анализируйте журналы с помощью [Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md), так как данные сразу записываются в Log Analytics, поэтому их не нужно сначала записывать в хранилище.  
+* Анализируйте журналы с помощью [Azure Monitor](../../azure-monitor/platform/collect-azure-metrics-logs.md), так как данные сразу записываются в Azure Monitor, поэтому их не нужно сначала записывать в хранилище.  
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 Вы можете использовать учетную запись хранения или пространство имен Центров событий, не входящее в подписку, в которой создаются журналы. Пользователю, который настраивает этот параметр, должен быть предоставлен соответствующий уровень доступа RBAC к обеим подпискам.
 
@@ -56,7 +58,7 @@ ms.locfileid: "54885853"
 
 Журналы диагностики для всех ресурсов настраиваются с помощью параметров диагностики ресурсов. Журналы диагностики клиентов настраиваются с помощью параметров диагностики клиента. **Параметры диагностики** для службы определяют следующие настройки.
 
-* Куда отправляются журналы диагностики и метрики (учетная запись хранения, Центры событий и (или) Log Analytics).
+* Куда отправляются журналы диагностики и метрики (учетная запись хранения, Центры событий и (или) Azure Monitor).
 * Какие категории журнала отправляются и следует ли отправлять данные метрики.
 * Как долго должны храниться журналы каждой категории в учетной записи хранения.
     - Срок хранения 0 дней означает, что журналы хранятся неограниченно долго. В противном случае укажите количество дней в диапазоне от 1 до 2 147 483 647.
@@ -235,5 +237,4 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 * [Потоковая передача журналов диагностики Azure в **Центры событий**](diagnostic-logs-stream-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://docs.microsoft.com/rest/api/monitor/)
-* [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)
-
+* [Анализ журналов из службы хранилища Azure с помощью Azure Monitor](collect-azure-metrics-logs.md)

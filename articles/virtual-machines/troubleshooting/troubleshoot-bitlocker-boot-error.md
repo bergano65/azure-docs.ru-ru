@@ -13,19 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/31/2018
 ms.author: genli
-ms.openlocfilehash: b5f851fe5c8aebba441903ccc004b7dbd0029ba3
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 3a615beeec45871aab1e98ad338ffa053ddbec92
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47412033"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984772"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
  В этой статье описаны ошибки BitLocker, которые могут возникнуть при запуске виртуальной машины Windows в Microsoft Azure.
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания на основе диспетчера ресурсов. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
  ## <a name="symptom"></a>Симптом
 
@@ -33,7 +32,7 @@ ms.locfileid: "47412033"
 
 - Подключение USB-драйвера с ключом BitLocker
 
-- Вы заблокированы. Введите ключ восстановления чтобы снова начать работу (макет клавиатуры: США). Неправильные входные данные вводились много раз, поэтому ваш компьютер был заблокирован для защиты вашей конфиденциальной информации. Чтобы получить ключ восстановления, перейдите в раздел http://windows.microsoft.com/recoverykeyfaq с другого компьютера или мобильного устройства. В случае необходимости ключ ID — XXXXXXX. Или можно вернуть компьютер в исходное состояние.
+- Вы заблокированы. Введите ключ восстановления, чтобы продолжить работу (раскладка клавиатуры: США). Неправильные входные данные вводились много раз, поэтому ваш компьютер был заблокирован для защиты вашей конфиденциальной информации. Чтобы получить ключ восстановления, перейдите в раздел http://windows.microsoft.com/recoverykeyfaq с другого компьютера или мобильного устройства. В случае необходимости ключ ID — XXXXXXX. Или можно вернуть компьютер в исходное состояние.
 
 - Введите пароль для разблокировки этого диска [ ]. Нажмите клавишу Insert для просмотра пароля при вводе.
 - Введите ключ восстановления. Загрузите ключ восстановления с USB-устройства.
@@ -57,17 +56,17 @@ ms.locfileid: "47412033"
     $rgName = "myResourceGroup"
     $osDiskName = "ProblemOsDisk"
 
-    New-AzureRmDiskUpdateConfig -EncryptionSettingsEnabled $false |Update-AzureRmDisk -diskName $osDiskName -ResourceGroupName $rgName
+    New-AzDiskUpdateConfig -EncryptionSettingsEnabled $false |Update-AzDisk -diskName $osDiskName -ResourceGroupName $rgName
 
     $recoveryVMName = "myRecoveryVM" 
     $recoveryVMRG = "RecoveryVMRG" 
-    $OSDisk = Get-AzureRmDisk -ResourceGroupName $rgName -DiskName $osDiskName;
+    $OSDisk = Get-AzDisk -ResourceGroupName $rgName -DiskName $osDiskName;
 
-    $vm = get-AzureRMVM -ResourceGroupName $recoveryVMRG -Name $recoveryVMName 
+    $vm = get-AzVM -ResourceGroupName $recoveryVMRG -Name $recoveryVMName 
 
-    Add-AzureRmVMDataDisk -VM $vm -Name $osDiskName -ManagedDiskId $osDisk.Id -Caching None -Lun 3 -CreateOption Attach 
+    Add-AzVMDataDisk -VM $vm -Name $osDiskName -ManagedDiskId $osDisk.Id -Caching None -Lun 3 -CreateOption Attach 
 
-    Update-AzureRMVM -VM $vm -ResourceGroupName $recoveryVMRG
+    Update-AzVM -VM $vm -ResourceGroupName $recoveryVMRG
     ```
      Вы не можете подключить управляемый диск к виртуальной машине, которая была восстановлена из BLOB-объекта образа.
 
@@ -76,7 +75,7 @@ ms.locfileid: "47412033"
 4. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните приведенные ниже команды, чтобы войти в подписку Azure.
 
     ```Powershell
-    Add-AzureRMAccount -SubscriptionID [SubscriptionID]
+    Add-AzAccount -SubscriptionID [SubscriptionID]
     ```
 
 5. Выполните следующий сценарий, чтобы проверить имя BEK-файла.

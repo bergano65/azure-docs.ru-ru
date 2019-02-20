@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/08/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 34902016578d92847bd83a7dede8ef73bb640b3e
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: da3c90579dafebf1b5b362c7129e681663a0a7ab
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55301583"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55891884"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -174,7 +174,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 В коде клиента (например, мобильного приложения или JavaScript в браузере) отправьте HTTP-запрос `GET` к `/.auth/me`. В возвращаемом JSON-файле будут содержаться предоставляемые поставщиком токены.
 
 > [!NOTE]
-> Токены доступа предназначены для получения доступа к ресурсам поставщика, поэтому они заданы, только если настройка поставщика осуществляется с помощью секрета клиента. Дополнительные сведения о том, как получить токены обновления, см. в разделе об [обновлении токенов доступа](#refresh-access-tokens).
+> Токены доступа предназначены для получения доступа к ресурсам поставщика, поэтому они заданы, только если настройка поставщика осуществляется с помощью секрета клиента. Дополнительные сведения о том, как получить токены обновления, см. в разделе об обновлении маркеров доступа.
 
 ## <a name="refresh-identity-provider-tokens"></a>Обновление маркеров поставщика удостоверений
 

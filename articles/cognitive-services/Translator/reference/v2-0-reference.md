@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: Справочная документация для API перевода текстов версии 2.0.
 services: cognitive-services
 author: Jann-Skotdal
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 05/15/2018
 ms.author: v-jansko
-ms.openlocfilehash: 9491550aae8f88621d947572741f492adcf9cdd0
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: f8d57723f6e51fb392e4fdbfb2b2a445d48635e3
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463231"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55861720"
 ---
 # <a name="translator-text-api-v20"></a>API перевода текстов версии 2.0
 
@@ -327,7 +327,7 @@ binary;
 |текст|(пусто)   |Обязательный элемент. Строка, содержащая предложение или предложения на указанном языке, которые необходимо произнести для создания потока формата WAVE. Размер устного текста не должен превышать 2000 знаков.|query|строка|
 |Язык|(пусто)   |Обязательный элемент. Строка, представляющая код языка, на котором произносится текст. Код должен присутствовать в списке кодов, возвращаемых методом `GetLanguagesForSpeak`.|query|строка|
 |свойства|(пусто)|Необязательный элемент. Строка, задающая идентификатор типа содержимого. В настоящее время доступны `audio/wav` и `audio/mp3`. По умолчанию используется значение `audio/wav`.|query|строка|
-|options|(пусто)    |<ul><li>Необязательный элемент. Строка, указывающая свойства синтезированной речи:<li>`MaxQuality` и `MinSize` доступны для указания качества звуковых сигналов. С `MaxQuality` вы можете получить голоса высочайшего качества, а с `MinSize` — голоса с наименьшим размером. Значение по умолчанию — `MinSize`.</li><li>`female` и `male` доступны для указания голоса нужного пола. Значение по умолчанию — `female`. Используйте вертикальную линию `|` to include multiple options. For example  `MaxQuality|Male`.</li></li></ul> |query|строка|
+|options|(пусто)    |<ul><li>Необязательный элемент. Строка, указывающая свойства синтезированной речи:<li>`MaxQuality` и `MinSize` доступны для указания качества звуковых сигналов. С `MaxQuality` вы можете получить голоса высочайшего качества, а с `MinSize` — голоса с наименьшим размером. Значение по умолчанию — `MinSize`.</li><li>`female` и `male` доступны для указания голоса нужного пола. Значение по умолчанию — `female`. Используйте вертикальную черту `|` для добавления нескольких вариантов. Например `MaxQuality|Male`.</li></li></ul> |query|строка|
 |Авторизация|(пусто)|Требуется, если поле `appid` или заголовок `Ocp-Apim-Subscription-Key` не указаны. Маркер авторизации: `"Bearer" + " " + "access_token"`.|Верхний колонтитул|строка|
 |Ocp-Apim-Subscription-Key|(пусто)  |Требуется, если поле `appid` или заголовок `Authorization` не указаны.|Верхний колонтитул|строка|
 

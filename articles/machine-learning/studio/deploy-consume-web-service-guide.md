@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 04/19/2017
-ms.openlocfilehash: 64276047410280f8e818cf695f1fbb0c80fdd693
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: e2add42e56f939dbfeb33ac2774d404411b1fefb
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55497678"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997257"
 ---
 # <a name="azure-machine-learning-studio-web-services-deployment-and-consumption"></a>Веб-службы Студии машинного обучения Azure: развертывание и использование
 Служба "Машинное обучение Azure" позволяет развертывать рабочие процессы и модели машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме. Так как это веб-службы RESTful, их можно вызывать, используя различные языки программирования и платформы, например .NET и Java, а также приложения, например Microsoft Excel.
@@ -31,10 +31,10 @@ ms.locfileid: "55497678"
 
 * Общие сведения о развертывании новой веб-службы на основе Azure Resource Manager см. в статье [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md).
 * Пошаговое руководство по развертыванию веб-службы см. в статье [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md).
-* Полное пошаговое руководство по созданию и развертыванию веб-службы см. в статье [Шаг 1. Создание рабочей области машинного обучения](walkthrough-1-create-ml-workspace.md).
+* Полное пошаговое руководство по созданию и развертыванию веб-службы см. в статье [Руководство 1. Прогнозирование кредитного риска](tutorial-part1-credit-risk.md).
 * Конкретные примеры развертывания веб-службы см. в следующих статьях:
 
-  * [Шаг 5. Развертывание веб-службы Машинного обучения Azure](walkthrough-5-publish-web-service.md)
+  * [Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md).
   * [Развертывание веб-службы в нескольких регионах](how-to-deploy-to-multiple-regions.md)
 
 ### <a name="with-web-services-resource-provider-apis-azure-resource-manager-apis"></a>С помощью интерфейсов API поставщика ресурсов веб-служб (интерфейсов API Azure Resource Manager)
@@ -84,7 +84,7 @@ ms.locfileid: "55497678"
 
 * [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md)
 * [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md)
-* [Шаг 5. Развертывание веб-службы Машинного обучения Azure](walkthrough-5-publish-web-service.md)
+* [Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md).
 
 ### <a name="from-excel"></a>Из Excel
 Вы можете скачать шаблон Excel, который использует веб-службу:

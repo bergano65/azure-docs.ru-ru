@@ -11,13 +11,13 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, vanto
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 2e2bf4f0f7ba4546c2f8609ee3ec7efc072024ae
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/07/2019
+ms.openlocfilehash: d8959e25280a9d1dd62549c698f7b2b6b98d6154
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751554"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55964157"
 ---
 # <a name="use-sql-database-advanced-data-security-with-virtual-networks-and-near-100-compatibility"></a>Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью
 
@@ -93,8 +93,8 @@ ms.locfileid: "55751554"
 Ниже перечислены ключевые характеристики уровня служб общего назначения.
 
 - Предназначен для большинства бизнес-приложений с обычными требованиями к производительности.
-- Высокопроизводительное хранилище Azure класса Premium (8 ТБ).
-- Встроенный [высокий уровень доступности](sql-database-high-availability.md#basic-standard-and-general-purpose-service-tier-availability) на основе надежной службы хранилища Azure ценовой категории "Премиум" и [Azure Service Fabric](../service-fabric/service-fabric-overview.md).
+- Высокопроизводительное хранилище BLOB-объектов Azure (8 ТБ).
+- Встроенный [высокий уровень доступности](sql-database-high-availability.md#basic-standard-and-general-purpose-service-tier-availability) на основе надежного хранилища BLOB-объектов Azure и [Azure Service Fabric](../service-fabric/service-fabric-overview.md).
 
 Дополнительные сведения см. в статье об [уровне хранилища в ценовой категории "Общего назначения"](https://medium.com/azure-sqldb-managed-instance/file-layout-in-general-purpose-azure-sql-managed-instance-cf21fff9c76c), а также в статье с [рекомендациями по оптимизации производительности хранилища и вопросами, касающимися управляемых экземпляров (общего назначения)](https://blogs.msdn.microsoft.com/sqlcat/2018/07/20/storage-performance-best-practices-and-considerations-for-azure-sql-db-managed-instance-general-purpose/).
 
@@ -107,9 +107,9 @@ ms.locfileid: "55751554"
 Ниже приведены основные характеристики уровня служб "Критически важный для бизнеса".
 
 - Предназначен для бизнес-приложений с наибольшей производительностью и требованиями к высокой доступности
-- поставляется со сверхбыстрым SSD-хранилищем (до 1 ТБ при использовании поколения 4 и до 4 ТБ при использовании поколения 5);
-- Встроенный [высокий уровень доступности](sql-database-high-availability.md#premium-and-business-critical-service-tier-availability) на основе [групп доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) и [Azure Service Fabric](../service-fabric/service-fabric-overview.md).
-- Встроенная дополнительная [реплика базы данных только для чтения](sql-database-read-scale-out.md), которую можно использовать для задач отчетности и других рабочих нагрузок только для чтения.
+- поставляется со сверхбыстрым локальным SSD-хранилищем (до 1 ТБ при использовании поколения 4 и до 4 ТБ при использовании поколения 5);
+- встроенный [высокий уровень доступности](sql-database-high-availability.md#premium-and-business-critical-service-tier-availability) на основе [групп доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) и [Azure Service Fabric](../service-fabric/service-fabric-overview.md);
+- встроенная дополнительная [реплика базы данных только для чтения](sql-database-read-scale-out.md), которую можно использовать для задач отчетности и других рабочих нагрузок только для чтения;
 - [Выполняющаяся в памяти OLTP](sql-database-in-memory.md), которую можно использовать для рабочей нагрузки с требованиями высокой производительности.  
 
 Дополнительные сведения о различиях между уровнями служб см. в разделе [Характеристики уровней служб](sql-database-managed-instance-resource-limits.md#service-tier-characteristics).

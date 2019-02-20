@@ -4,23 +4,23 @@ description: В этой статье описана функция скрыти
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 12/09/2017
+ms.date: 02/09/2019
 ms.author: juliako;
-ms.openlocfilehash: 910cc246aa19e19b109fc660682c6b2dc239cbb7
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 7fa1bec1b6f83b18684f6139bf6ac8db1ae9daec
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "33784453"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56004899"
 ---
-# <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure
+# <a name="redact-faces-with-azure-media-analytics-legacy"></a>Скрытие лиц с помощью Аналитики мультимедиа Azure (для прежних версий)
 ## <a name="overview"></a>Обзор
 **Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-redactor/).
 
@@ -135,7 +135,7 @@ ms.locfileid: "33784453"
 
 ## <a name="blur-types"></a>Типы размытия
 
-В режиме **Combined** (Объединенный) или **Redact** (Скрытие) существует 5 различных режимов размытия, которые можно выбирать с помощью входной конфигурации JSON: **Low** (Низкий), **Med** (Средний), **High** (Высокий), **Box** (Рамка) и **Black** (Черный). По умолчанию используется режим **Med** (Средний).
+В режиме **Combined** (Объединенный) или **Redact** (Скрытие) существует 5 различных режимов размытия, которые можно выбирать с помощью входной конфигурации JSON: **Low** (Слабо), **Med** (Средне), **High** (Сильно), **Box** (Рамка) и **Black** (Затемнение). По умолчанию используется режим **Med** (Средний).
 
 Примеры типов размытия можно просмотреть ниже.
 

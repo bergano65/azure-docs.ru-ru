@@ -1,22 +1,21 @@
 ---
-title: Общие сведения о хранилище очередей Azure | Документация Майкрософт
-description: Общие сведения о хранилище очередей Azure
+title: Общие сведения о службе "Очереди Azure" | Документация Майкрософт
+description: Общие сведения о службе "Очереди Azure"
 services: storage
 author: tamram
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 08/07/2017
+ms.date: 02/06/2019
 ms.author: tamram
 ms.subservice: queues
-ms.openlocfilehash: b173934db17b8c3ac5a48e599b75478fb214c240
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2ae0d3993df54e1c9e5a9bf93619e8f9faa8a917
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458403"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55873603"
 ---
-# <a name="introduction-to-queues"></a>Общие сведения об очередях
+# <a name="what-are-azure-queues"></a>Что такое очереди Azure?
 
 Хранилище очередей Azure — это служба для хранения большого количества сообщений, к которым можно получить доступ практически из любой точки мира с помощью вызовов с проверкой подлинности по протоколам HTTP или HTTPS. Одно сообщение очереди может быть размером до 64 КБ, а очередь может содержать миллионы сообщений до общего ограничения емкости учетной записи хранения.
 

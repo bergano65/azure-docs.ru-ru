@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 01/15/2019
+ms.date: 02/05/2019
 ms.author: alkohli
-ms.openlocfilehash: acf455bff739666712917008dc8090c6a95c6dc4
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: f785e9e540af01b74678cf75159775cd2888e09e
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55815658"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55959584"
 ---
 # <a name="azure-data-box-gateway-limits-preview"></a>Ограничения для шлюза Azure Data Box (предварительная версия)
 
@@ -26,8 +26,7 @@ ms.locfileid: "55815658"
 
 ## <a name="data-box-gateway-service-limits"></a>Ограничения службы шлюза Data Box
 
-- В этом выпуске служба доступна только в определенных регионах США, Европы и Азиатско-Тихоокеанского региона. Дополнительные сведения см. в разделе о доступности по регионам. Учетная запись хранения должна быть физически ближе всего к региону, где развернуто устройство (может отличаться от географического размещения службы).
-- Перемещение ресурса шлюза Data Box в другую группу ресурсов или подписку не поддерживается. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
+[!INCLUDE [data-box-edge-gateway-service-limits](../../includes/data-box-edge-gateway-service-limits.md)]
 
 ## <a name="data-box-gateway-device-limits"></a>Ограничение устройства шлюза Data Box
 
@@ -37,48 +36,24 @@ ms.locfileid: "55815658"
 |---|---|
 |№ файлов на каждом устройстве |100 млн <br> Ограничение составляет ~25 миллионов файлов на каждые 2 ТБ места на диске с максимальным ограничением 100 миллионов |
 |№ общих папок на каждом устройстве |24 |
+|№ общих папок в каждом контейнере |1 |
 |Максимальный размер файла, записанного в общую папку|Для виртуального устройства объемом в 2 ТБ максимальный размер файла составляет 500 ГБ. <br> Максимальный размер файла пропорционально увеличивается в соответствии с размером диска данных, пока не достигнет 5 ТБ. |
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 
-Этот раздел описывает ограничения для службы хранилища Azure и требуемые соглашения об именовании для файлов Azure, блочных и страничных BLOB-объектов Azure, применимых к службе шлюза Data Box или Data Box Edge. Тщательно изучите ограничения хранилища и следуйте всем рекомендациям.
-
-Актуальные сведения об ограничениях службы хранилища Azure и рекомендациях по именованию общих папок, контейнеров и файлов см. в следующих статьях:
-
-- [Именование контейнеров и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata)
-- [Именование общих папок и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)
-- [Соглашения по блочным и страничным BLOB-объектам](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
-
-> [!IMPORTANT]
-> Если файлы или каталоги превышают ограничения службы хранилища Azure или не соответствуют соглашениям об именовании файлов и BLOB-объектов Azure, они не направляются в службу хранилища Azure через службу шлюза Data Box или Data Box Edge.
+[!INCLUDE [data-box-edge-gateway-storage-limits](../../includes/data-box-edge-gateway-storage-limits.md)]
 
 ## <a name="data-upload-caveats"></a>Предупреждения, связанные с передачей данных
 
-Следующие предостережения относятся к данным во время перемещения в Azure.
-
-- Мы советуем избегать ситуации, когда в один и тот же контейнер запись производит более одного устройства.
-- При наличии объекта Azure (например, BLOB-объекта или файла) в облаке с тем же именем, что и у копируемого объекта, устройство перезапишет файл в облаке.
-- Пустая иерархия каталогов (без файлов), созданная в общих папках, не передается в контейнеры больших двоичных объектов.
-- Если вы копируете файлы, размер которых превышает размер устройства, рекомендуется использовать *Robocopy* или *rsync* во избежание сбоев.
+[!INCLUDE [data-box-edge-gateway-storage-data-upload-caveats](../../includes/data-box-edge-gateway-storage-data-upload-caveats.md)]
 
 ## <a name="azure-storage-account-size-and-object-size-limits"></a>Ограничения размера для объектов и учетной записи хранения Azure
 
-Ниже приведены ограничения для размера данных, копируемых в учетную запись хранения. Убедитесь, что отправляемые данные соответствуют этим ограничениям. Наиболее актуальные сведения об этих ограничениях см. в статьях [Целевые показатели масштабируемости хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets#azure-blob-storage-scale-targets) и [Целевые показатели масштабируемости службы файлов Azure](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets#azure-files-scale-targets).
-
-| Размер данных, копируемых в учетную запись хранения Azure                      | Ограничение по умолчанию          |
-|---------------------------------------------------------------------|------------------------|
-| Блочный BLOB-объект и страничный BLOB-объект                                            | 500 ТБ на учетную запись хранения|
-
+[!INCLUDE [data-box-edge-gateway-storage-acct-limits](../../includes/data-box-edge-gateway-storage-acct-limits.md)]
 
 ## <a name="azure-object-size-limits"></a>Ограничения размера для объектов Azure
 
-Ниже приведены размеры объектов Azure, которые могут быть записаны. Убедитесь, что все передаваемые файлы соответствуют этим ограничениям.
-
-| Тип объекта Azure | Ограничение по умолчанию                                             |
-|-------------------|-----------------------------------------------------------|
-| Блочный BLOB-объект        | ~ 8 ТБ                                                 |
-| Страничный BLOB-объект         | 1 TБ <br> Каждый файл, отправляемый в формате страничного BLOB-объекта, должен быть выровнен по размеру 512 байт (целое кратное). В противном случае произойдет сбой передачи. <br> VHD и VHDX выровнены по размеру 512 байт. |
-
+[!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

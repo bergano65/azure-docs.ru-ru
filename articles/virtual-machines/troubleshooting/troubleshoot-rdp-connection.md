@@ -15,17 +15,19 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/23/2018
 ms.author: roiyz
-ms.openlocfilehash: 2613584e336243128067a76ce424e640ebdf94e0
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: a4fb31721da679b21fa311340269cf07f93cd903
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817341"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55981270"
 ---
 # <a name="troubleshoot-remote-desktop-connections-to-an-azure-virtual-machine"></a>Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол
 Подключение протокола удаленного рабочего стола (RDP) к виртуальной машине Azure под управлением Windows может завершиться неудачно по нескольким причинам. В этом случае доступ к виртуальной машине будет невозможен. Эта проблема может быть вызвана службой удаленного рабочего стола на виртуальной машине, сетевым подключением или клиентом удаленного рабочего стола на главном компьютере. В этой статье описываются некоторые из наиболее распространенных методов устранения проблем подключения по протоколу RDP. 
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 <a id="quickfixrdp"></a>
 
@@ -107,7 +109,7 @@ ms.locfileid: "55817341"
 В следующих примерах используются переменные, такие как `myResourceGroup`, `myVM` и `myVMAccessExtension`. Замените имена этих переменных и расположения собственными значениями.
 
 > [!NOTE]
-> Для сброса учетных данных пользователей и конфигурации удаленного рабочего стола используется командлет PowerShell [Set-AzureRmVMAccessExtension](/powershell/module/azurerm.compute/set-azurermvmaccessextension) . В следующих примерах `myVMAccessExtension` — это имя, которое указывается в ходе процесса. Если вы уже работали с агентом VMAccessAgent, то можете получить имя существующего расширения с помощью командлета `Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVM"`, который возвращает свойства виртуальной машины. Просмотреть это имя можно в разделе "Extensions" в выходных данных.
+> Для сброса учетных данных пользователей и конфигурации удаленного рабочего стола используется командлет PowerShell [Set-AzVMAccessExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmaccessextension). В следующих примерах `myVMAccessExtension` — это имя, которое указывается в ходе процесса. Если вы уже работали с агентом VMAccessAgent, то можете получить имя существующего расширения с помощью командлета `Get-AzVM -ResourceGroupName "myResourceGroup" -Name "myVM"`, который возвращает свойства виртуальной машины. Просмотреть это имя можно в разделе "Extensions" в выходных данных.
 
 После выполнения каждого шага устранения неполадок попробуйте подключиться к виртуальной машине еще раз. Если все еще не удается подключиться, то попробуйте выполнить следующее действие.
 
@@ -116,7 +118,7 @@ ms.locfileid: "55817341"
     В следующем примере выполняется сброс подключения RDP к виртуальной машине `myVM` в расположении `WestUS` и в группе ресурсов `myResourceGroup`:
    
     ```powershell
-    Set-AzureRmVMAccessExtension -ResourceGroupName "myResourceGroup" `
+    Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" `
         -VMName "myVM" -Location Westus -Name "myVMAccessExtension"
     ```
 2. **Проверьте правила группы безопасности сети**. Это действие проверяет наличие в группе безопасности сети правила, разрешающего трафик RDP. По умолчанию в качестве порта RDP используется TCP-порт 3389. Правило, разрешающее трафик RDP, может не создаваться автоматически при создании виртуальной машины.
@@ -124,7 +126,7 @@ ms.locfileid: "55817341"
     Во-первых, назначьте переменной `$rules` все данные конфигурации для своей группы безопасности сети. В следующем примере извлекаются сведения о группе безопасности сети `myNetworkSecurityGroup` в группе ресурсов `myResourceGroup`:
    
     ```powershell
-    $rules = Get-AzureRmNetworkSecurityGroup -ResourceGroupName "myResourceGroup" `
+    $rules = Get-AzNetworkSecurityGroup -ResourceGroupName "myResourceGroup" `
         -Name "myNetworkSecurityGroup"
     ```
    
@@ -164,7 +166,7 @@ ms.locfileid: "55817341"
     Теперь обновите учетные данные на виртуальной машине. В следующем примере обновляются учетные данные на виртуальной машине `myVM` в расположении `WestUS` и в группе ресурсов `myResourceGroup`:
    
     ```powershell
-    Set-AzureRmVMAccessExtension -ResourceGroupName "myResourceGroup" `
+    Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" `
         -VMName "myVM" -Location WestUS -Name "myVMAccessExtension" `
         -UserName $cred.GetNetworkCredential().Username `
         -Password $cred.GetNetworkCredential().Password
@@ -174,14 +176,14 @@ ms.locfileid: "55817341"
     В следующем примере перезапускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`:
    
     ```powershell
-    Restart-AzureRmVM -ResourceGroup "myResourceGroup" -Name "myVM"
+    Restart-AzVM -ResourceGroup "myResourceGroup" -Name "myVM"
     ```
 5. **Заново разверните виртуальную машину**. Это действие выполняет повторное развертывание виртуальной машины на другом узле Azure для исправления каких-либо внутренних неполадок в работе платформы или сети.
    
     В следующем примере повторно развертывается виртуальная машина `myVM` в расположении `WestUS` и в группе ресурсов `myResourceGroup`:
    
     ```powershell
-    Set-AzureRmVM -Redeploy -ResourceGroupName "myResourceGroup" -Name "myVM"
+    Set-AzVM -Redeploy -ResourceGroupName "myResourceGroup" -Name "myVM"
     ```
 
 6. **Проверьте маршрутизацию**. Убедитесь, что маршрут не препятствуют маршрутизации трафика на виртуальную машину или с нее, воспользовавшись возможностью [Следующий прыжок](../../network-watcher/network-watcher-check-next-hop-portal.md) в службе "Наблюдатель за сетями". Кроме того, вы можете просмотреть фактические маршруты для сетевого интерфейса. Дополнительные сведения см. в статье об [использовании фактических маршрутов для устранения проблем с потоком трафика на виртуальной машине](../../virtual-network/diagnose-network-routing-problem.md).

@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 01/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 9db6736813b6d99efad687581f19d23023e1593a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 093fa1414ec624f66bc7cb4559fa8c0535834c10
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814543"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55981933"
 ---
 # <a name="create-wsfc-listener-and-configure-ilb-for-an-always-on-availability-group-on-a-sql-server-vm-with-azure-quickstart-template"></a>Создание WSFC и прослушивателя, а также настройка ILB для группы доступности Always On с помощью шаблона быстрого запуска Azure.
 В этой статье объясняется, как использовать шаблоны быстрого запуска Azure для частично автоматизированного развертывания в Azure конфигурации с группой доступности Always On для виртуальных машин SQL Server. В этом процессе используются два шаблона быстрого запуска Azure. 
@@ -153,8 +153,8 @@ ms.locfileid: "55814543"
 
 ```PowerShell
 # Remove the AG listener
-# example: Remove-AzureRmResource -ResourceId '/subscriptions/a1a11a11-1a1a-aa11-aa11-1aa1a11aa11a/resourceGroups/SQLAG-RG/providers/Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/Cluster/availabilitygrouplisteners/aglistener' -Force
-Remove-AzureRmResource -ResourceId '/subscriptions/<SubscriptionID>/resourceGroups/<resource-group-name>/providers/Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/<cluster-name>/availabilitygrouplisteners/<listener-name>' -Force
+# example: Remove-AzResource -ResourceId '/subscriptions/a1a11a11-1a1a-aa11-aa11-1aa1a11aa11a/resourceGroups/SQLAG-RG/providers/Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/Cluster/availabilitygrouplisteners/aglistener' -Force
+Remove-AzResource -ResourceId '/subscriptions/<SubscriptionID>/resourceGroups/<resource-group-name>/providers/Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/<cluster-name>/availabilitygrouplisteners/<listener-name>' -Force
 ```
  
 ## <a name="common-errors"></a>Распространенные ошибки
@@ -166,7 +166,7 @@ Remove-AzureRmResource -ResourceId '/subscriptions/<SubscriptionID>/resourceGrou
 ### <a name="connection-only-works-from-primary-replica"></a>Подключение работает только из первичной реплики
 Такое поведение чаще всего связано с неудачным развертыванием шаблона **101-sql-vm-aglistener-setup**, которое привело к несогласованности конфигурации ILB. Убедитесь, что в серверном пуле отображается группа доступности, и что есть правила для зонда работоспособности и для балансировки нагрузки. Если что-либо из этого отсутствует, значит, конфигурация ILB находится в несогласованном состоянии. 
 
-Чтобы решить эту проблему, удалите прослушиватель с помощью [PowerShell](#remove-availability-group-listener), затем удалите внутренний ресурс Load Balancer на портале Azure и повторите процесс, начиная с [шага 3](#step-3---manually-create-the-internal-load-balanced-ilb). 
+Чтобы решить эту проблему, удалите прослушиватель с помощью [PowerShell](#remove-availability-group-listener), затем удалите внутренний ресурс Load Balancer на портале Azure и повторите процесс, начиная с шага 3. 
 
 ### <a name="badrequest---only-sql-virtual-machine-list-can-be-updated"></a>Неправильный запрос — можно обновить только список виртуальных машин SQL
 Такая ошибка может возникать при развертывании шаблона **101-sql-vm-aglistener-setup**, если прослушиватель был удален с помощью SQL Server Management Studio (SSMS), но не был удален из поставщика ресурсов виртуальной машины SQL. При удалении прослушивателя через SSMS метаданные прослушивателя не удаляются из поставщика ресурсов виртуальной машины SQL. Для их удаления следует использовать [PowerShell](#remove-availability-group-listener). 

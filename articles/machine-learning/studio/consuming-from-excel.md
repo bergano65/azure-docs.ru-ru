@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 95206d0e3cb7bdb619524237ca1e466414c5acf5
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 2ac140e40ec1c70bf04c35512c28e84f59522bb8
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492891"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55989429"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-web-service-from-excel"></a>Использование веб-службы Студии машинного обучения Azure в Excel
 
@@ -26,7 +26,7 @@ ms.locfileid: "55492891"
 
 
 ## <a name="steps"></a>Действия
-Опубликуйте веб-службу. [этой странице](walkthrough-5-publish-web-service.md) объясняется, как это сделать. В настоящее время функция книги Excel поддерживается только для служб обработки запросов и ответов с один выходом (то есть с одной меткой оценки). 
+Опубликуйте веб-службу. В статье [Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md) объясняется, как это сделать. В настоящее время функция книги Excel поддерживается только для служб обработки запросов и ответов с один выходом (то есть с одной меткой оценки). 
 
 После создания веб-службы щелкните раздел **ВЕБ-СЛУЖБЫ** в левой части студии, а затем выберите веб-службу, которую нужно использовать в Excel.
 

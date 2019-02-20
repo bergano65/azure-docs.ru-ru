@@ -1,6 +1,6 @@
 ---
-title: Работа со значениями даты и времени в запросах Azure Log Analytics | Документация Майкрософт
-description: В этой статье описывается работа с данными даты и времени в запросах Log Analytics.
+title: Работа со значениями даты и времени в запросах журнала Azure Monitor | Документация Майкрософт
+description: В этой статье описывается работа с данными даты и времени в запросах журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,25 +13,25 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 15767107a5c535cfda98da2a5177e15ca221f35d
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: 2465fdcc3bf7128d4813fa5f682ffda8f504f2b6
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54214700"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999255"
 ---
-# <a name="working-with-date-time-values-in-log-analytics-queries"></a>Работа со значениями даты и времени в запросах Log Analytics
+# <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
 > [!NOTE]
 > Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
-В этой статье описывается работа с данными даты и времени в запросах Log Analytics.
+В этой статье описывается работа с данными даты и времени в запросах журнала Azure Monitor.
 
 
 ## <a name="date-time-basics"></a>Основные сведения о дате и времени
-Язык запросов Log Analytics содержит два основных типа данных, связанных с датами и временем: дата и время (datetime) и интервал времени (timespan). Все даты задаются в формате UTC. Хотя поддерживаются несколько форматов даты и времени, рекомендуется использовать формат ISO8601. 
+Язык запросов Data Explorer содержит два основных типа данных, связанных с датами и временем: datetime и timespan. Все даты задаются в формате UTC. Хотя поддерживаются несколько форматов даты и времени, рекомендуется использовать формат ISO8601. 
 
 Интервалы времени выражаются как десятичное число, за которым следует единица времени:
 
@@ -161,7 +161,7 @@ Event
 | Получение даты относительно к значению  | [endofday](/azure/kusto/query/endofdayfunction) [endofweek](/azure/kusto/query/endofweekfunction) [endofmonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [startofday](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [startofmonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с другими статьями по использованию [языка запросов Data Explorer](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Статистические функции в запросах Log Analytics](aggregations.md)

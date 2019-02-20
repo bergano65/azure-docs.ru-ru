@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/05/2016
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: e11ef458fad11f04ce159d5e79c4152d2bd7e4c6
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 6f67ad04fed2018ba71dd39ed03c24e6aebecf90
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746799"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984738"
 ---
 # <a name="customize-windows-based-hdinsight-clusters-using-script-action"></a>Настройка кластеров HDInsight под управлением Windows с помощью действия сценария
 **действий сценария** можно вызывать [пользовательские сценарии](hdinsight-hadoop-script-actions.md) во время создания кластера для установки в нем дополнительного программного обеспечения.
@@ -62,17 +62,12 @@ HDInsight предоставляет несколько скриптов для 
 
     ![Использование действия сценария для настройки кластера](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "Использование действия сценария для настройки кластера")
 
-    <table border='1'>
-        <tr><th>Свойство</th><th>Значение</th></tr>
-        <tr><td>ИМЯ</td>
-            <td>Укажите имя для действия сценария.</td></tr>
-        <tr><td>URI-адрес сценария</td>
-            <td>Укажите URI для сценария, который вызывается для настройки кластера. s</td></tr>
-        <tr><td>Головной/рабочий</td>
-            <td>Укажите узлы (**Головной** или **Рабочий**), на которых выполняется скрипт настройки</b>.
-        <tr><td>Параметры</td>
-            <td>Укажите параметры, если они требуются для сценария.</td></tr>
-    </table>
+      |Свойство|Значение|  
+      |---|---|
+      |ИМЯ|Укажите имя для действия сценария.|
+      |URI-адрес сценария|Укажите URI для скрипта, который вызывается для настройки кластеров.|
+      |Головной/рабочий|Укажите узлы (**Головной** или **Рабочий**), на которых выполняется скрипт настройки.|
+      |Параметры|Укажите параметры, если они требуются для сценария.|
 
     Нажмите клавишу ВВОД, чтобы добавить несколько действий сценария для установки нескольких компонентов в кластере.
 3. Щелкните **Выбрать** , чтобы сохранить конфигурацию действия сценария и продолжить создание кластера.
@@ -80,7 +75,7 @@ HDInsight предоставляет несколько скриптов для 
 ## <a name="call-scripts-using-azure-powershell"></a>Вызов сценариев с помощью Azure PowerShell
 Этот сценарий PowerShell показывает, как установить Spark в кластере HDInsight под управлением Windows.  
 
-    ```powershell
+```powershell  
     # Provide values for these variables
     $subscriptionID = "<Azure Subscription ID>" # After "Connect-AzureRmAccount", use "Get-AzureRmSubscription" to list IDs.
 
@@ -159,7 +154,7 @@ HDInsight предоставляет несколько скриптов для 
             -OSType Windows `
             -DefaultStorageContainer $defaultBlobContainerName `
             -Config $config
-    ```
+```
 
 Чтобы установить другое программное обеспечение, необходимо заменить файл скрипта в сценарии:
 
@@ -172,12 +167,14 @@ HDInsight предоставляет несколько скриптов для 
 
 1. Создайте в Visual Studio консольное приложение C#.
 2. Введите следующую команду в окне консоли диспетчера пакетов NuGet.
-    ```powershell
+
+    ```powershell  
         Install-Package Microsoft.Rest.ClientRuntime.Azure.Authentication -Pre
         Install-Package Microsoft.Azure.Management.ResourceManager -Pre
         Install-Package Microsoft.Azure.Management.HDInsight
     ```
-3. Используйте следующие инструкции using в файле Program.cs:
+
+1. Используйте следующие инструкции using в файле Program.cs:
 
     ```csharp
         using System;

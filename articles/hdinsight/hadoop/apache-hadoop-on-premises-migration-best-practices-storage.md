@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 8f22885d67537194342115f07e4d04bc4b5c66da
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: 3e1d5ed05b7acc8f7e0fcc772a4124984c6cba45
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54911750"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55884544"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---storage-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию хранилища
 
@@ -50,7 +50,7 @@ ms.locfileid: "54911750"
 Можно создавать [моментальные снимки больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/creating-a-snapshot-of-a-blob). Моментальный снимок — это версия большого двоичного объекта только для чтения, сделанная в определенный момент времени, которая обеспечивает способ резервного копирования этого объекта. После создания моментального снимка его можно читать, копировать или удалять, но нельзя изменять.
 
 > [!Note]
-> Для более старой версии локальных дистрибутивов Hadoop, у которых нет сертификата wasbs, этот сертификат необходимо импортировать в доверенное хранилище Java.
+> Для более старых версий локальных дистрибутивов Hadoop, у которых нет сертификата wasbs, этот сертификат необходимо импортировать в доверенное хранилище Java.
 
 Для импорта сертификатов в доверенное хранилище Java могут использоваться следующие методы.
 

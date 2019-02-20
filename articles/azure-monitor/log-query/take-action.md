@@ -13,16 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/06/2019
 ms.author: magoedte
-ms.openlocfilehash: 61d0f74f59b4d6f59b3fbc87556b260751d33baa
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 9194d5fe6553607ac5a0bb4e133da97f53790984
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809640"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005358"
 ---
 # <a name="take-action-with-an-automation-runbook-from-a-log-analytics-log-search-result"></a>Выполнение действия с Runbook службы автоматизации на основе результатов поиска Log Analytics
 
-В результатах поиска по журналам в Azure Log Analytics теперь можно выбрать пункт **Выполнить действие** для запуска модуля runbook службы автоматизации. Runbook может использоваться для устранения проблемы или выполнения некоторых других действий, таких как сбор диагностических сведений, отправка сообщения электронной почты или создание запроса на обслуживание. 
+> [!NOTE]
+> Запуск модуля runbook из результатов поиска — это функция классического портала Log Search, которая будет считаться устаревшей с 15 февраля 2019 г. Вы можете настроить группу действий, которая запустит runbook, а также другие действия из [правила генерации оповещений](../platform/alerts-log.md) в Azure Monitor.
+
+В результатах поиска по журналам в Azure Log Analytics теперь можно выбрать пункт **Выполнить действие** для запуска модуля runbook службы автоматизации.  Runbook может использоваться для устранения проблемы или выполнения некоторых других действий, таких как сбор диагностических сведений, отправка сообщения электронной почты или создание запроса на обслуживание. 
+
 
 ## <a name="components-and-features-used"></a>Используемые компоненты и функции
 * [Учетная запись службы автоматизации Azure](../../automation/automation-quickstart-create-account.md)

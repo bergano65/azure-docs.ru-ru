@@ -1,6 +1,6 @@
 ---
-title: Стандартные свойства записей Log Analytics в Azure Monitor | Документация Майкрософт
-description: Описание свойств, общих для многих типов данных Log Analytics в Azure Monitor.
+title: Стандартные свойства в записях журнала Azure Monitor | Документация Майкрософт
+description: Описание свойств, общих для многих типов данных в журналах Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/14/2019
 ms.author: bwren
-ms.openlocfilehash: 27c732a2ddd21401ffbefa727cbb8001ec288293
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 2309e7762ad36f59e0833e675e7012ee3c459e3e
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54381953"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997045"
 ---
-# <a name="standard-properties-in-log-analytics-records"></a>Стандартные свойства в записях Log Analytics
-Данные в [Log Analytics](../log-query/log-query-overview.md) хранятся в виде набора записей. Каждый набор имеет определенный тип данных с уникальным набором свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
+# <a name="standard-properties-in-azure-monitor-log-records"></a>Стандартные свойства в записях журнала Azure Monitor
+Данные журнала Azure Monitor [хранятся в виде набора записей](../log-query/log-query-overview.md), каждая из которых содержит определенный тип данных с уникальным набором свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
 
 Некоторые из этих свойств еще находятся в процессе реализации, поэтому они могут отображаться только для отдельных типов данных.
 
@@ -151,6 +151,6 @@ union withsource = tt *
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о [хранении данных Log Analytics](../log-query/log-query-overview.md).
-- Пройдите урок по [написанию запросов в Log Analytics](../../azure-monitor/log-query/get-started-queries.md).
-- Пройдите урок по [объединению таблиц в запросах Log Analytics](../../azure-monitor/log-query/joins.md).
+- Дополнительные сведения см. в статье [Анализ данных журнала в Azure Monitor](../log-query/log-query-overview.md).
+- Изучите статью [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md).
+- См. статью [Объединения в запросах журнала Azure Monitor](../../azure-monitor/log-query/joins.md).

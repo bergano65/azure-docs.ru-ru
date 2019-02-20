@@ -11,13 +11,13 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 6c4cd4e698630c06ab8e7ba144791800f091abfa
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/07/2019
+ms.openlocfilehash: 7ce752fcee99b3f85099d83ab11451c427dea91e
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458947"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55964021"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
@@ -126,12 +126,11 @@ ms.locfileid: "55458947"
 | Максимальный размер хранилища на базу данных |Максимальный размер базы данных, установленный пользователем для базы данных в пуле. Для баз данных в пуле используется общее выделенное хранилище пула. Даже если общий максимальный объем хранилища *на базу данных* превышает общий доступный *объем хранилища пула*, общий объем пространства, фактически используемого всеми базами данных, не сможет превысить ограничение доступного пространства в пуле. Максимальный размер базы данных означает максимальный размер файлов данных и не включает пространство, используемое файлами журнала. |
 |||
  
-
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
-- Сведения об ограничениях на уровнях сервера и подписки см. в статье [SQL Database resource limits for Azure SQL Database server](sql-database-resource-limits-database-server.md) (Ограничения ресурсов Базы данных SQL для сервера Базы данных SQL).
+- Дополнительные сведения см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md).
+- [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](sql-database-dtu-resource-limits-single-databases.md).
+- [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md).
+- [Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
-- Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-service-tiers.md#dtu-based-purchasing-model).
-- Сведения об ограничениях на размер базы данных tempdb см. здесь: https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database.
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Ограничения ресурсов для сервера Базы данных SQL Azure](sql-database-resource-limits-database-server.md).

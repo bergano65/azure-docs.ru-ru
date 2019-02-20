@@ -10,22 +10,22 @@ ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: fc4d09b59e568a693b7f7951e9e716d04a5a2a49
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: d664c33c4535d25ec93fd1f36c990f2764a4e071
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729274"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56000819"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. В этой статье объясняется, как изменить [настраиваемые политики](active-directory-b2c-overview-custom.md), чтобы разрешить выполнение сценариев.
+К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. В этой статье объясняется, как изменить [поток пользователя](user-flow-javascript-overview.md) или [настраиваемые политики](active-directory-b2c-overview-custom.md), чтобы разрешить выполнение скриптов.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Выберите [контракт страницы](page-contract.md) для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
+Выберите [контракт страницы](page-contract.md) для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, нужно определить версию контракта страницы для всех определений содержимого в потоке пользователя или настраиваемой политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 

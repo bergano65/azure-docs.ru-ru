@@ -11,17 +11,17 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: a2500988b174e49870f4da7087b3fa4c81f3c77a
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/08/2019
+ms.openlocfilehash: e8af73c955305c54efc478290608e627acb431ea
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754988"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56099332"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Основные сведения об отдельной базе данных в Базе данных SQL Azure
 
-Вариант развертывания в виде отдельной базы данных создает в Базе данных SQL Azure изолированную базу данных с собственным набором ресурсов, управление которой осуществляется через сервер Базы данных SQL. Каждая отдельная база данных изолирована от других и является переносимой — с собственным уровнем служб в рамках моделей приобретения (на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md)) и гарантированным объемом вычислительных ресурсов.
+Вариант развертывания в виде отдельной базы данных создает в базе данных SQL Azure базу данных с собственным набором ресурсов, управление которой осуществляется через сервер базы данных SQL. Каждая отдельная база данных изолирована от других и является переносимой — с собственным уровнем служб в рамках моделей приобретения (на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md)) и гарантированным объемом вычислительных ресурсов.
 
 > [!IMPORTANT]
 > Отдельная база данных — это один из трех вариантов развертывания Базы данных SQL Azure. Два других — [пул эластичных баз данных](sql-database-elastic-pool.md) и [управляемый экземпляр](sql-database-managed-instance.md).
@@ -58,5 +58,5 @@ ms.locfileid: "55754988"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы приступить к работе с отдельной базы данных, ознакомьтесь с [этим кратким руководством](sql-database-single-database-quickstart-guide.md).
-- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
+- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).
