@@ -1,226 +1,199 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boxcryptor.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: c46aa523-b58c-4a95-a800-db2e5e01c542
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 02/22/2018
+ms.topic: tutorial
+ms.date: 02/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 43b761897d3db49da88bdb88f6ff01821bff8e58
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 176638e845fe267839c99de434dece24ec56b911
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55181101"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56167666"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство. Интеграция Azure Active Directory с Boxcryptor
+# <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство по Интеграция Azure Active Directory с Boxcryptor
 
 В этом руководстве описано, как интегрировать Boxcryptor с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Boxcryptor обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Boxcryptor.
-- Вы можете включить автоматический вход пользователей в Boxcryptor (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Boxcryptor.
+* Можно включить автоматический вход пользователей (единый вход) в Boxcryptor с помощью учетных записей Azure Active Directory.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Boxcryptor, вам потребуются:
 
-- подписка Azure AD;
-- подписка Boxcryptor с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Boxcryptor с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Boxcryptor из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Boxcryptor поддерживает единый вход, инициированный **поставщиком услуг**.
+* Boxcryptor поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-boxcryptor-from-the-gallery"></a>Добавление Boxcryptor из коллекции.
+
 Чтобы настроить интеграцию Boxcryptor с Azure AD, необходимо добавить Boxcryptor из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Boxcryptor из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Новое приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Boxcryptor**, выберите **Boxcryptor** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Boxcryptor в списке результатов](./media/boxcryptor-tutorial/tutorial_boxcryptor_addfromgallery.png)
+4. В поле поиска введите **Boxcryptor**, выберите **Boxcryptor** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Boxcryptor в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Boxcryptor с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Boxcryptor соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и его представлением в Boxcryptor.
+В этом разделе описана настройка и проверка единого входа Azure Active Directory в Boxcryptor с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем в Boxcryptor.
 
 Чтобы настроить и проверить единый вход Azure AD в Boxcryptor, выполните следующие стандартные действия.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Boxcryptor](#create-a-boxcryptor-test-user)** требуется для того, чтобы в Boxcryptor существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Boxcryptor](#configure-boxcryptor-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Boxcryptor](#create-boxcryptor-test-user)** требуется для того, чтобы в Boxcryptor существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure Active Directory.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Boxcryptor.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Boxcryptor, выполните следующие действия.**
+Чтобы настроить единый вход Azure Active Directory в Boxcryptor, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Boxcryptor** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Boxcryptor** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/boxcryptor-tutorial/tutorial_boxcryptor_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Boxcryptor** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Boxcryptor](./media/boxcryptor-tutorial/tutorial_boxcryptor_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://www.boxcryptor.com/app`.
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите значение: `boxcryptor`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
+    ![Сведения о домене и URL-адресах единого входа для приложения Boxcryptor](common/sp-identifier.png)
 
-    ![Ссылка для скачивания сертификата](./media/boxcryptor-tutorial/tutorial_boxcryptor_certificate.png) 
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.boxcryptor.com/app`.
 
-1. Нажмите кнопку **Сохранить** .
+    б) В текстовом поле **Идентификатор (сущности)** введите значение: `boxcryptor`
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/boxcryptor-tutorial/tutorial_general_400.png)
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-1. В разделе **Настройка Boxcryptor** щелкните **Настроить Boxcryptor**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** из раздела **Quick Reference** (Краткий справочник).
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-    ![Настройка Andromeda SCM](./media/boxcryptor-tutorial/tutorial_boxcryptor_configure.png)
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Boxcryptor**.
 
-1. Чтобы настроить единый вход на стороне **Boxcryptor**, нужно отправить скачанный **сертификат в кодировке Base64**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки Boxcryptor](mailto:support@boxcryptor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+    а) URL-адрес входа.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    б) Идентификатор Azure AD.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    в) URL-адрес выхода.
 
-   ![Создание тестового пользователя Azure AD][100]
+### <a name="configure-boxcryptor-single-sign-on"></a>Настройка единого входа в Boxcryptor
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+Чтобы настроить единый вход на стороне **Boxcryptor**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Boxcryptor](mailto:support@boxcryptor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-    ![Кнопка "Azure Active Directory"](./media/boxcryptor-tutorial/create_aaduser_01.png)
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/boxcryptor-tutorial/create_aaduser_02.png)
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Добавить"](./media/boxcryptor-tutorial/create_aaduser_03.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Диалоговое окно "Пользователь"](./media/boxcryptor-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-boxcryptor-test-user"></a>Создание тестового пользователя Boxcryptor
-
-В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь к  [группе поддержки Boxcryptor](mailto:support@boxcryptor.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Boxcryptor.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Boxcryptor**.
 
-**Чтобы назначить пользователя Britta Simon приложению Boxcryptor, выполните следующие действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Boxcryptor**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Boxcryptor в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **Boxcryptor**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Boxcryptor в списке "Приложения"](./media/boxcryptor-tutorial/tutorial_boxcryptor_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-boxcryptor-test-user"></a>Создание тестового пользователя в Boxcryptor
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь к  [группе поддержки Boxcryptor](mailto:support@boxcryptor.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Boxcryptor на панели доступа, вы автоматически войдете в приложение Boxcryptor.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку "Boxcryptor" на Панели доступа, вы автоматически войдете в приложение Boxcryptor, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/boxcryptor-tutorial/tutorial_general_01.png
-[2]: ./media/boxcryptor-tutorial/tutorial_general_02.png
-[3]: ./media/boxcryptor-tutorial/tutorial_general_03.png
-[4]: ./media/boxcryptor-tutorial/tutorial_general_04.png
-
-[100]: ./media/boxcryptor-tutorial/tutorial_general_100.png
-
-[200]: ./media/boxcryptor-tutorial/tutorial_general_200.png
-[201]: ./media/boxcryptor-tutorial/tutorial_general_201.png
-[202]: ./media/boxcryptor-tutorial/tutorial_general_202.png
-[203]: ./media/boxcryptor-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
