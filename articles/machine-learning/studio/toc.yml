@@ -64,7 +64,7 @@ items:
     - name: Использование данных с локального сервера SQL
       displayName: on-premises
       href: use-data-from-an-on-premises-sql-server.md
-  - name: Создание и обучение моделей
+  - name: Обучение моделей
     items:
     - name: Управление жизненным циклом эксперимента
       href: version-control.md
@@ -87,6 +87,12 @@ items:
         href: interpret-model-results.md
       - name: Отладка
         href: debug-models.md
+    - name: Повторное обучение моделей
+      items:
+      - name: Новые веб-службы
+        href: retrain-machine-learning-model.md
+      - name: Классические веб-службы
+        href: retrain-classic-web-service.md
     - name: Использование R и Python
       items:
       - name: Начало работы с R
@@ -132,12 +138,6 @@ items:
     - name: Создание конечных точек
       displayName: scale, scaling
       href: create-endpoint.md
-  - name: Повторное обучение моделей
-    items:
-    - name: Повторное обучение и развертывание новой веб-службы
-      href: retrain-machine-learning-model.md
-    - name: Повторное обучение и развертывание классической веб-службы
-      href: retrain-classic-web-service.md
   - name: Использование моделей
     items:
     - name: Обзор
@@ -146,11 +146,9 @@ items:
       href: consuming-from-excel.md
     - name: Использование надстройки Excel
       href: excel-add-in-for-web-services.md
-    - name: Использование шаблона веб-приложений
-      href: consume-web-service-with-web-app-template.md
     - name: Использование пула пакетной службы
       href: dedicated-capacity-for-bes-jobs.md
-  - name: Примеры
+  - name: Варианты использования
     items:
     - name: Отток клиентов
       href: azure-ml-customer-churn-scenario.md
@@ -158,12 +156,14 @@ items:
       href: text-analytics-module-tutorial.md
     - name: Перенос аналитики из Excel в Студию
       href: linear-regression-in-azure.md
-  - name: Просмотр и удаление данных Студии
-    displayName: export
-    href: export-delete-personal-data-dsr.md
-  - name: Просмотр и удаление данных коллекции
-    displayName: export
-    href: ai-gallery-control-personal-data-dsr.md
+  - name: Удаление и экспортирование данных клиента
+    items:
+    - name: Данные в Студии
+      displayName: export
+      href: export-delete-personal-data-dsr.md
+    - name: Данные в Коллекции решений
+      displayName: export
+      href: ai-gallery-control-personal-data-dsr.md
 - name: Справочные материалы
   items:
   - name: Справочник по алгоритмам и модулям
@@ -188,9 +188,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/machine-learning/
   - name: Пользовательские нейронные сети (Net#)
     href: azure-ml-netsharp-reference-guide.md
-ms.openlocfilehash: c6d072a6e032fb4059b422d0778eb78b01d3706e
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: 6649d1c39bdb0a66018feff73f9e9d2b39064155
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327686"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430239"
