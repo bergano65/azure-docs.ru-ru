@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 471bb1b3fb17adc9e06dba591663ee20dd9d8baf
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: c1718c5a2acfe49fba4974bcf7e580c45553113d
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53721569"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56108744"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Вопросы и ответы о производительности приложений в веб-приложениях Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "53721569"
 
 ## <a name="how-do-i-automate-app-service-web-apps-by-using-powershell"></a>Как автоматизировать задачи веб-приложений службы приложений с помощью PowerShell?
 
-Настроить веб-приложения службы приложений и управлять ими можно с помощью командлетов PowerShell. В записи блога [Automate web apps hosted in Azure App Service by using PowerShell](https://blogs.msdn.microsoft.com/puneetgupta/2016/03/21/automating-webapps-hosted-in-azure-app-service-through-powershell-arm-way/) (Автоматизация веб-приложений, размещенных в службе приложений Azure с помощью PowerShell) описана процедура автоматизации стандартных задач с помощью командлетов PowerShell на основе Azure Resource Manager. Кроме того, в этой записи блога приведен пример кода для различных задач управления веб-приложениями. Описание и синтаксис всех командлетов веб-приложений службы приложений см. в [этой статье](https://docs.microsoft.com/powershell/module/azurerm.websites/?view=azurermps-4.0.0).
+Настроить веб-приложения службы приложений и управлять ими можно с помощью командлетов PowerShell. В записи блога [Automate web apps hosted in Azure App Service by using PowerShell](https://blogs.msdn.microsoft.com/puneetgupta/2016/03/21/automating-webapps-hosted-in-azure-app-service-through-powershell-arm-way/) (Автоматизация веб-приложений, размещенных в службе приложений Azure с помощью PowerShell) описана процедура автоматизации стандартных задач с помощью командлетов PowerShell на основе Azure Resource Manager. Кроме того, в этой записи блога приведен пример кода для различных задач управления веб-приложениями. Описание и синтаксис всех командлетов веб-приложений службы приложений см. в статье [о командах Az.Websites](/powershell/module/az.websites).
 
 ## <a name="how-do-i-view-my-web-apps-event-logs"></a>Как просмотреть журналы событий веб-приложения?
 

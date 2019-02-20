@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 64e353bbb83c7696960fc1d2e478478afbc94241
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 0a8cb1178ec70d4e50f2a45834f9592c4708c5af
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50249243"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998643"
 ---
-# <a name="how-to-get-a-media-processor-instance"></a>Получение экземпляра процессора мультимедиа
+# <a name="how-to-get-a-media-processor-instance"></a>Практическое руководство: как получить экземпляр обработчика мультимедиа
 > [!div class="op_single_selector"]
 > * [.NET](media-services-get-media-processor.md)
 > * [REST](media-services-rest-get-media-processor.md)
@@ -40,7 +40,7 @@ ms.locfileid: "50249243"
 
 ## <a name="get-media-processor"></a>Получение обработчика мультимедиа
 
-Приведенные ниже методы показывают, как получить экземпляр обработчика мультимедиа. В примере кода предполагается использование переменной уровня модуля с именем **_context** для ссылки на контекст сервера (см. статью [Подключение к учетной записи служб мультимедиа с помощью пакета SDK служб мультимедиа для .NET](media-services-use-aad-auth-to-access-ams-api.md)).
+Приведенные ниже методы показывают, как получить экземпляр обработчика мультимедиа. В примере кода предполагается использование переменной уровня модуля с именем **_context** для ссылки на контекст сервера, как описано в статье [ Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
 
     private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
     {

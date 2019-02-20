@@ -4,19 +4,19 @@ titlesuffix: Azure Cognitive Services
 description: Используйте эти рекомендации, чтобы улучшить базу знаний и предоставлять лучшие результаты пользователям приложения или чат-бота.
 services: cognitive-services
 author: tulasim88
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 12/18/2018
+ms.date: 02/13/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 4adadf4951ffbb31a354284340a3716b194d864d
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 9ea62d731cf0c16c17f3c2e4f3e1954661289934
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219283"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245547"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Рекомендации по использованию базы знаний QnA Maker
 Руководства по [жизненному циклу разработки базы знаний](../Concepts/development-lifecycle-knowledge-base.md) помогут полостью управлять базой знаний. Используйте эти рекомендации, чтобы улучшить базу знаний и предоставлять лучшие результаты пользователям приложения или чат-бота.
@@ -74,7 +74,7 @@ ms.locfileid: "55219283"
 [Метаданные](../How-To/edit-knowledge-base.md) добавляют возможность уточнить результаты запроса пользователя на основе тегов. Ответ базы знаний на один и тот же запрос может различаться в зависимости от тега метаданных. Например, на вопрос *"Где находится стоянка?"* может быть несколько разных ответов, если рестораны одной сети находятся в разных городах. То есть это могут быть метаданные вида *Расположение: Сиэтл* или *Расположение: Редмонд*.
 
 ### <a name="use-synonyms"></a>Использование синонимов
-Хотя определенная поддержка синонимов реализована для английского языка, следует использовать [альтернативные слова](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd), чтобы добавить синонимы к ключевым словам, принимающим разную форму. Синонимы следует добавить на уровне службы QnA Maker и совместно использовать во всех базах знаний в службе.
+Хотя определенная поддержка синонимов реализована для английского языка, используйте [альтернативные слов](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd) без учета регистра, чтобы добавить синонимы к ключевым словам, принимающим разную форму. Синонимы следует добавить на уровне службы QnA Maker и совместно использовать во всех базах знаний в службе.
 
 |Исходное слово|синонимы;|
 |--|--|

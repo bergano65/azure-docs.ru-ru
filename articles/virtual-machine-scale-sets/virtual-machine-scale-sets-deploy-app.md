@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2018
 ms.author: cynthn
-ms.openlocfilehash: 4b977a2fe9dadfe42e02063fa4fa291b9be484ac
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 09145612821cb669e26e3ccb8d15611112eca700
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733150"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55980080"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Развертывание приложения в масштабируемых наборах виртуальных машин
+
 Для запуска приложений в экземплярах виртуальных машин в масштабируемом наборе необходимо сначала установить компоненты и необходимые файлы этих приложений. В этой статье описано, как создать настраиваемый образ виртуальной машины для экземпляров в масштабируемом наборе или автоматически запустить сценарии установки на существующих экземплярах виртуальных машин. Вы также узнаете, как управлять приложением или обновлениями ОС в масштабируемом наборе.
 
 
@@ -50,8 +51,8 @@ ms.locfileid: "55733150"
 
 - Указывает, что экземпляры виртуальной машины должны загрузить пакет DSC с GitHub: *https://github.com/Azure-Samples/compute-automation-configurations/raw/master/dsc.zip*
 - Настраивает расширение для запуска сценария установки: `configure-http.ps1`.
-- Возвращает сведения о масштабируемом наборе с помощью командлета [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss).
-- Применяет расширение к экземплярам виртуальных машин с помощью командлета [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss).
+- Получает сведения о масштабируемом наборе с помощью командлета [Get-AzVmss](/powershell/module/az.compute/get-azvmss).
+- Применяет расширение к экземплярам виртуальных машин с помощью командлета [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
 
 Расширение DSC применяется к экземплярам виртуальных машин набора *myScaleSet* в группе ресурсов *myResourceGroup*. Введите свои имена следующим образом.
 
@@ -67,12 +68,12 @@ $dscConfig = @{
 }
 
 # Get information about the scale set
-$vmss = Get-AzureRmVmss `
+$vmss = Get-AzVmss `
                 -ResourceGroupName "myResourceGroup" `
                 -VMScaleSetName "myScaleSet"
 
 # Add the Desired State Configuration extension to install IIS and configure basic website
-$vmss = Add-AzureRmVmssExtension `
+$vmss = Add-AzVmssExtension `
     -VirtualMachineScaleSet $vmss `
     -Publisher Microsoft.Powershell `
     -Type DSC `
@@ -81,13 +82,13 @@ $vmss = Add-AzureRmVmssExtension `
     -Setting $dscConfig
 
 # Update the scale set and apply the Desired State Configuration extension to the VM instances
-Update-AzureRmVmss `
+Update-AzVmss `
     -ResourceGroupName "myResourceGroup" `
     -Name "myScaleSet"  `
     -VirtualMachineScaleSet $vmss
 ```
 
-Если для масштабируемого набора задана политика обновления *вручную*, обновите экземпляры виртуальных машин с помощью командлета [Update-AzureRmVmssInstance](/powershell/module/azurerm.compute/update-azurermvmssinstance). Этот командлет применит обновленную конфигурацию масштабируемого набора к экземплярам виртуальных машин и установит ваше приложение.
+Если для масштабируемого набора задана политика обновления *вручную*, обновите экземпляры виртуальных машин с помощью командлета [Update-AzVmssInstance](/powershell/module/az.compute/update-azvmssinstance). Этот командлет применит обновленную конфигурацию масштабируемого набора к экземплярам виртуальных машин и установит ваше приложение.
 
 
 ## <a name="install-an-app-to-a-linux-vm-with-cloud-init"></a>Установка приложения на виртуальную машину Linux с помощью cloud-init

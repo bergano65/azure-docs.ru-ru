@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Workteam | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Workteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Workteam.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2018
 ms.author: jeedes
-ms.openlocfilehash: 8d6ca6395e4f5e1aca361c56e21afc4e6bd1fc0c
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6a1022ce74fd5514b274f498a4d4f764393e6428
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43132617"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56185780"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workteam"></a>Руководство по интеграции Azure Active Directory с Workteam
+# <a name="tutorial-azure-active-directory-integration-with-workteam"></a>Руководство. Интеграция Azure Active Directory с Workteam
 
 В этом руководстве описано, как интегрировать Workteam с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "43132617"
 
 - С помощью Azure AD вы можете контролировать доступ к Workteam.
 - Вы можете включить автоматический вход пользователей в Workteam (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "43132617"
 1. добавление Workteam из коллекции;
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-workteam-from-the-gallery"></a>Добавление Workteam из коллекции
+## <a name="adding-workteam-from-the-gallery"></a>добавление Workteam из коллекции;
 Чтобы настроить интеграцию Workteam с Azure AD, необходимо добавить Workteam из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Workteam из коллекции, выполните следующие действия:**
@@ -69,7 +70,7 @@ ms.locfileid: "43132617"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Workteam**, выберите **Workteam** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "43132617"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Workteam](#create-a-workteam-test-user)** требуется для того, чтобы в Workteam существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -141,11 +142,11 @@ ms.locfileid: "43132617"
 
     a. Укажите для параметра **SAML IdP** (Поставщик удостоверений SAML) значение **AD Azure**.
 
-    b. В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
     c. В текстовое поле **SAML Entity ID** (Идентификатор сущности SAML) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
-    d. В Блокноте откройте скачанный с портала Azure **сертификат в кодировке base-64**, скопируйте его содержимое, а затем вставьте его в поле **SAML Signing Certificate (Base64)** (Сертификат для подписи SAML (Base64)).
+    4.3. В Блокноте откройте скачанный с портала Azure **сертификат в кодировке base-64**, скопируйте его содержимое, а затем вставьте его в поле **SAML Signing Certificate (Base64)** (Сертификат для подписи SAML (Base64)).
 
     д. Последовательно выберите **ОК**.
 
@@ -159,7 +160,7 @@ ms.locfileid: "43132617"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/workteam-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/workteam-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -179,7 +180,7 @@ ms.locfileid: "43132617"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-workteam-test-user"></a>Создание тестового пользователя Workteam
 
@@ -199,7 +200,7 @@ ms.locfileid: "43132617"
 
     a. В текстовое поле **Name** (Имя) введите имя пользователя, например **Brittasimon**.
 
-    b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    б) В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
 
     c. Последовательно выберите **ОК**.
 
@@ -238,7 +239,7 @@ ms.locfileid: "43132617"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Workteam на панели доступа, вы автоматически войдете в приложение Workteam.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

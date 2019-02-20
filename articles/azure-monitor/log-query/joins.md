@@ -1,6 +1,6 @@
 ---
-title: Объединения в запросах Azure Log Analytics | Документация Майкрософт
-description: Эта статья содержит урок по использованию объединений в языке запросов Log Analytics.
+title: Объединения в запросах журнала Azure Monitor | Документация Майкрософт
+description: Эта статья содержит урок по использованию объединений в запросах журнала Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: c1f578c11fff963ee4bec47bd3737cd224b14720
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 91ff85d8c32c0bcfa984cc690382d09765a068a2
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885423"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56004661"
 ---
-# <a name="joins-in-log-analytics-queries"></a>Объединения в запросах Log Analytics
+# <a name="joins-in-azure-monitor-log-queries"></a>Объединения в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
+> Прежде чем приступать к этому уроку, необходимо ознакомиться с руководствами [Начало работы с Log Analytics на портале Azure](get-started-portal.md) и [Начало работы с запросами в Log Analytics](get-started-queries.md).
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -105,7 +105,7 @@ SecurityEvent
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с дополнительными уроками об использовании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Статистические функции в запросах Log Analytics](aggregations.md)

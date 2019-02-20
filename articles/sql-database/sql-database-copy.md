@@ -7,19 +7,19 @@ ms.subservice: data-movement
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: douglaslMS
-ms.author: douglasl
+author: CarlRabeler
+ms.author: carlrab
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 6066ca586ce9923158026fbeaa405de16681de9b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/07/2019
+ms.openlocfilehash: 6e25c0970a48674e157dac5f51c9508596ff6ea1
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461345"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56097088"
 ---
-# <a name="copy-an-transactionally-consistent-copy-of-an-azure-sql-database"></a>Скопируйте транзакционную копию базы данных Azure SQL
+# <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
 База данных SQL Azure предоставляет несколько методов создания транзакционно согласованной копии имеющейся базы данных SQL Azure на том же или на другом сервере. Базу данных SQL можно копировать с помощью портала Azure, PowerShell или T-SQL. 
 
@@ -68,6 +68,7 @@ New-AzureRmSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 Начните копирование исходной базы данных с помощью инструкции [CREATE DATABASE](https://msdn.microsoft.com/library/ms176061.aspx) . Данный оператор запускает процесс копирования базы данных. Так как копирование базы данных — процесс асинхронный, оператор CREATE DATABASE возвращается до завершения копирования базы данных.
 
 ### <a name="copy-a-sql-database-to-the-same-server"></a>Копирование Базы данных SQL на тот же сервер
+
 Войдите в базу данных master под именем для входа субъекта на уровне сервера или под именем для входа, которое использовалось для создания копируемой базы данных. Для успешного копирования базы данных имена для входа, не принадлежащие субъектам уровня сервера, должны быть членами роли dbmanager.
 
 Эта команда копирует Database1 в новую базу данных с именем Database2 на том же сервере. Операция копирования может занять некоторое время в зависимости от размера базы данных.
@@ -86,6 +87,9 @@ New-AzureRmSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
     -- Start copying from Server1 to Server2
     CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
+## <a name="to-move-a-database-between-subscriptions"></a>Перенос базы данных из одной подписки в другую
+
+На [портале Azure](https://portal.azure.com)щелкните **Серверы SQL Server** и выберите из списка сервер, на котором размещена ваша база данных. Щелкните **Перенести**и выберите ресурсы, которые нужно перенести, а также подписку, в которую их нужно переместить.
 
 ### <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
@@ -96,7 +100,6 @@ New-AzureRmSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 > [!NOTE]
 > Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](https://msdn.microsoft.com/library/ms178613.aspx). Кроме того, процесс копирования отменяет также выполнение оператора DROP DATABASE в исходной базе данных.
-> 
 
 ## <a name="resolve-logins"></a>Разрешение имен для входа
 

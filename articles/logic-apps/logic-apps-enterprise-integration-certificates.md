@@ -11,12 +11,12 @@ ms.assetid: 4cbffd85-fe8d-4dde-aa5b-24108a7caa7d
 ms.suite: integration
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: 5ae69d365a183f7d2a219d853241e73c1e27212b
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 38bc1615c0849a33ddfa5790a66fc05d681ce339
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146984"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244935"
 ---
 # <a name="secure-b2b-messages-with-certificates"></a>Защита сообщений B2B с помощью сертификатов
 
@@ -30,6 +30,8 @@ ms.locfileid: "42146984"
 * [Открытые сертификаты](https://en.wikipedia.org/wiki/Public_key_certificate), которые необходимо приобрести в общедоступном через Интернет [центре сертификации (ЦС)](https://en.wikipedia.org/wiki/Certificate_authority), для которых не требуются ключи. 
 
 * Закрытые сертификаты или [ *самозаверяющие сертификаты*](https://en.wikipedia.org/wiki/Self-signed_certificate), которые можно создать и выдать самостоятельно. При этом для них требуются закрытые ключи. 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="upload-a-public-certificate"></a>Передача общего сертификата
 
@@ -67,11 +69,11 @@ ms.locfileid: "42146984"
 > [!NOTE]
 > Для закрытых сертификатов не забудьте добавить соответствующий открытый сертификат, который отображается в настройках **отправки и получения** [соглашения AS2](logic-apps-enterprise-integration-as2.md) для подписи и шифрования сообщений.
 
-1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/key-vault-get-started.md#add) и укажите **имя ключа**.
+1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
    
-2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzureRmKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/azurerm.keyvault/set-azurermkeyvaultaccesspolicy), например:
+2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy), например:
 
-   `Set-AzureRmKeyVaultAccessPolicy -VaultName 'TestcertKeyVault' -ServicePrincipalName 
+   `Set-AzKeyVaultAccessPolicy -VaultName 'TestcertKeyVault' -ServicePrincipalName 
    '7cd684f4-8a78-49b0-91ec-6a35d38739ba' -PermissionsToKeys decrypt, sign, get, list`
  
 3. Войдите на [портале Azure](https://portal.azure.com). В главном меню Azure выберите **All resources** (Все ресурсы). В поле поиска введите имя учетной записи интеграции и выберите ее, когда она появится.

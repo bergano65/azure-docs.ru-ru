@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: iainfou
-ms.openlocfilehash: 15b389e2158cb3a2070cc09b20f79f4274fde5d9
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 680e3990afa3ed08c69402e9e5403cb9a6f3266a
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699131"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175461"
 ---
 # <a name="best-practices-for-network-connectivity-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по подключению сетей и обеспечению безопасности в службе Azure Kubernetes (AKS)
 
@@ -120,6 +120,34 @@ spec:
 
 Подсистема балансировки нагрузки или ресурсы входящего трафика будут и работают в кластере AKS для более точного распределения трафика. Шлюзом приложений можно централизованно управлять как контроллером входящего трафика с определением ресурса. Для начала [создайте контроллер входящего трафика Шлюза приложений][app-gateway-ingress].
 
+## <a name="control-traffic-flow-with-network-policies"></a>Элемент управления потоком трафика с помощью политик сети
+
+**Рекомендации**. Политики сети, дают возможность разрешать или запрещать трафик для контейнеров pod. Весь трафик разрешен между контейнерами pod в кластере по умолчанию. В целях безопасности определите правила, ограничивающие связь pod.
+
+Политика сети — это функция Kubernetes, которая позволяет контролировать поток трафика между контейнерами pod. Вы можете разрешать или запрещать трафик в зависимости от параметров, например назначенных меток, пространства имен или порта трафика. Использование политик сети предоставляет наиболее подходящий облачный способ управления потоком трафика. Поскольку контейнеры pod динамически создаются в кластере AKS, необходимые политики сети могут применяться автоматически. Не используйте группы безопасности сети Azure для управления трафиком между pod, используйте политики сети.
+
+Чтобы использовать политики сети, необходимо включить эту функцию при создании кластера AKS. Вы не можете включить политику сети в существующем кластере AKS. Подготовьтесь заранее, чтобы убедиться, что вы включили политику сети на кластерах и можете использовать их по мере необходимости.
+
+Политика сети создается в качестве ресурса Kubernetes с помощью манифеста YAML. Политики применяются к определенным контейнерам pod, а затем правила входящего и исходящего трафика определяют, каким образом может происходить поток трафика. В следующем примере применяется политика сети к контейнерам pod с примененной к ним меткой  *app: backend*. Затем правило входящего трафика разрешает трафик только от pod с меткой *app: frontend*.
+
+```yaml
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: backend-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: backend
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+```
+
+Чтобы начать работу с политиками см. статью [Secure traffic between pods using network policies in Azure Kubernetes Service (AKS)][use-network-policies] (Защита трафика между контейнерами pod с использованием политик сети в Azure Kubernetes Service (AKS)).
+
 ## <a name="securely-connect-to-nodes-through-a-bastion-host"></a>Защищенное подключение к узлам через узел-бастион
 
 **Советы и рекомендации.** Не предоставляйте возможность удаленного подключения к узлам AKS. Создайте узел-бастион (jump box) в виртуальной сети управления. Используйте узел-бастион для защищенной маршрутизации трафика в кластер AKS для задач удаленного управления.
@@ -155,5 +183,6 @@ spec:
 [aks-ingress-tls]: ingress-tls.md
 [aks-ingress-own-tls]: ingress-own-tls.md
 [app-gateway]: ../application-gateway/overview.md
+[use-network-policies]: use-network-policies.md
 [advanced-networking]: configure-azure-cni.md
 [aks-configure-kubenet-networking]: configure-kubenet.md

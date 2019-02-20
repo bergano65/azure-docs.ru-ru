@@ -4,25 +4,27 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Это статья об известных ограничениях Интеллектуальной службы распознавания речи Azure (LUIS). У LUIS есть несколько областей границ. Граница модели управляет намерениями, сущностями и возможностями в LUIS. Предел квот основывается на типе ключа. Сочетание клавиш управляет веб-сайтом LUIS.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 02/12/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: c9c88a2d77aea203b4ef19d2e5188caa5c99b46c
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: df69cb5cc2e369a5e1f372d49a821616bf624db9
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55219147"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237558"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Границы модели LUIS и ключи
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
 
 
 ## <a name="model-boundaries"></a>Границы модели
+
+Если размеры вашего приложения превышают границы модели LUIS, попробуйте использовать приложение [диспетчера LUIS](luis-concept-enterprise.md#dispatch-tool-and-model) или [контейнер LUIS](luis-container-howto.md). 
 
 |Область|Ограничение|
 |--|:--|--|

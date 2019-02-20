@@ -2,25 +2,17 @@
 title: 'Планирование и проектирование распределенных подключений: VPN-шлюз Azure | Документация Майкрософт'
 description: Сведения о планировании и проектировании VPN-шлюза для подключений между организациями и между виртуальными сетями, а также гибридных подключений
 services: vpn-gateway
-documentationcenter: na
-author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-service-management,azure-resource-manager
-ms.assetid: d5aaab83-4e74-4484-8bf0-cc465811e757
+author: yushwang
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 07/27/2017
-ms.author: cherylmc
-ms.openlocfilehash: 0ebc3ef4a64432e993dd6ed69766bb64544fe433
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: yushwang
+ms.openlocfilehash: 7802061ba09a30ca34ed3804ace846118c5edb9b
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23125482"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235376"
 ---
 # <a name="planning-and-design-for-vpn-gateway"></a>Планирование и проектирование VPN-шлюза
 
@@ -30,7 +22,7 @@ ms.locfileid: "23125482"
 
 ### <a name="compare"></a>Возможности распределенного подключения
 
-Если вам требуется безопасное подключение локальных сайтов к виртуальной сети, доступны три варианта: подключение типа "сеть — сеть", подключение типа "точка — сеть" и канал ExpressRoute. Сравните различные доступные варианты подключений между организациями. На выбор влияют различные факторы, в том числе следующие.
+Если вам требуется безопасное подключение локальных сайтов к виртуальной сети, доступны три варианта: подключение типа "сеть — сеть", подключение типа "точка — сеть" и канал ExpressRoute. Сравните различные доступные варианты подключений между организациями. На выбор влияют различные факторы, в том числе следующие.
 
 * Какая пропускная способность требуется для решения?
 * Вы хотите обмениваться данными через общедоступный Интернет по безопасному VPN-подключению или через частное подключение?

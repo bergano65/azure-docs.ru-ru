@@ -14,12 +14,13 @@ ms.workload: na
 ms.date: 10/24/2018
 ms.author: celested
 ms.reviewer: tomfitz
-ms.openlocfilehash: 708ec047a1c9883e34f2e255cd7a0f1237ded2bf
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4a8311e359b5afa84020227de309e8b153a7ccda
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55096880"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238068"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство: Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -136,7 +137,7 @@ ms.locfileid: "55096880"
 
    ![Проверка регистрации приложений](./media/howto-create-service-principal-portal/view-app-registrations.png)
 
-Если для параметра регистрации приложений указано значение **Нет**, это значит, что только [глобальные администраторы](../users-groups-roles/directory-assign-admin-roles.md) могут регистрировать приложения. Если вашей учетной записи назначена роль пользователя, а параметр регистрации приложений разрешает регистрацию только администраторам, обратитесь к глобальному администратору с просьбой назначить вам роль администратора или предоставить пользователям возможность регистрировать приложения.
+Если для параметра регистрации приложений установлено значение **Нет**, регистрировать приложения такого типа могут только пользователи с ролью администратора. Дополнительные сведения о доступных ролях администратора и конкретных разрешениях в Azure AD, которые предоставляются каждой роли, см. в разделах [Доступные роли](../users-groups-roles/directory-assign-admin-roles.md#available-roles) и [Разрешения ролей](../users-groups-roles/directory-assign-admin-roles.md#role-permissions). Если вашей учетной записи назначена роль пользователя, а параметр регистрации приложений разрешает регистрацию только администраторам, обратитесь к администратору с просьбой назначить вам одну из ролей администратора, которая будет создавать регистрацию приложений и управлять всеми ее аспектами, или предоставить пользователям возможность регистрировать приложения.
 
 ### <a name="check-azure-subscription-permissions"></a>Проверка прав доступа к подпискам Azure
 

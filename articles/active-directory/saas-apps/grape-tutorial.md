@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением Gra-Pe | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Gra-Pe | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Gra-Pe.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 5e642cba3354f4f8589e44d975c0cecf5692c5b5
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 02df0a5d13aeb90049383f61d743e8a11e93fc79
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433545"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56188534"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gra-pe"></a>Руководство по интеграции Azure Active Directory с Gra-Pe
+# <a name="tutorial-azure-active-directory-integration-with-gra-pe"></a>Руководство по Интеграция Azure Active Directory с Gra-Pe
 
 В этом руководстве описано, как интегрировать Gra-Pe с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "49433545"
 
 - С помощью Azure AD вы можете контролировать доступ к Gra-Pe.
 - Вы можете включить автоматический вход пользователей в Gra-Pe (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "49433545"
 1. добавление Gra-Pe из коллекции;
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-gra-pe-from-the-gallery"></a>Добавление Gra-Pe из коллекции
+## <a name="adding-gra-pe-from-the-gallery"></a>добавление Gra-Pe из коллекции;
 Чтобы настроить интеграцию Gra-Pe с Azure AD, необходимо добавить Gra-Pe из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Gra-Pe из коллекции, сделайте следующее:**
@@ -86,7 +87,7 @@ ms.locfileid: "49433545"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения Gra-Pe](#create-a-gra-pe-test-user)** требуется для того, чтобы в Gra-Pe существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -119,11 +120,11 @@ ms.locfileid: "49433545"
 
 6. Требуемый URL-адрес можно скопировать из раздела **Set up Gra-Pe** (Настройка Gra-Pe).
 
-    a. URL-адрес входа
+    a. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
-    c. URL-адрес выхода
+    c. URL-адрес выхода.
 
     ![изображение](./media/grape-tutorial/d1_samlsonfigure.png) 
 
@@ -131,9 +132,9 @@ ms.locfileid: "49433545"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/grape-tutorial/d_users_and_groups.png)
 
@@ -141,14 +142,14 @@ ms.locfileid: "49433545"
 
     ![изображение](./media/grape-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/grape-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -156,7 +157,7 @@ ms.locfileid: "49433545"
  
 ### <a name="create-a-gra-pe-test-user"></a>Создание тестового пользователя Gra-Pe
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Gra-Pe. Обратитесь в [группу поддержки Gra-Pe](https://www.toppantravel.com/inquiry/), чтобы добавить пользователей на платформу Gra-Pe. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Gra-Pe. Обратитесь в  [группу поддержки Gra-Pe](https://www.toppantravel.com/inquiry/), чтобы добавить пользователей на платформу Gra-Pe. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -187,7 +188,7 @@ ms.locfileid: "49433545"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Gra-Pe на панели доступа, вы автоматически войдете в приложение Gra-Pe.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

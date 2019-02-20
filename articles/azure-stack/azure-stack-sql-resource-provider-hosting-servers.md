@@ -11,23 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: quying
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: f1b39601f0f6d254daadfafdd812549c6c95ed35
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 1cef0010464671982109b8dc4bc94e6925eaf825
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239474"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210532"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 
-Вы можете разместить экземпляр SQL на виртуальной машине [Azure Stack](azure-stack-poc.md) или на виртуальной машине за пределами среды Azure Stack при условии, что поставщик ресурсов SQL может подключаться к этому экземпляру.
+Вы можете создать серверы базы данных SQL Server на виртуальной машине [Azure Stack](azure-stack-poc.md) или на виртуальной машине за пределами среды Azure Stack при условии, что поставщик ресурсов SQL может подключаться к этому экземпляру.
 
 > [!NOTE]
-> Базы данных SQL следует создавать на сервере поставщика ресурсов SQL. Поставщик ресурсов SQL необходимо создать в подписке поставщика по умолчанию, а серверы размещения SQL — в оплачиваемой пользовательской подписке. Сервер поставщика ресурсов не следует использовать для размещения баз данных пользователя.
+> Поставщик ресурсов SQL необходимо создать в подписке поставщика по умолчанию, а серверы размещения SQL — в оплачиваемой пользовательской подписке. Сервер поставщика ресурсов не следует использовать для размещения баз данных пользователя.
 
 ## <a name="overview"></a>Обзор
 

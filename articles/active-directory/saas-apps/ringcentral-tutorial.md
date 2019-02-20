@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RingCentral | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с RingCentral | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RingCentral.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 35033e52fb54177428f8869ebcc462bd9465ad4c
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e01b06b2031da20ee9349588bd4a7ee757fbc22c
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48872502"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56173306"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ringcentral"></a>Руководство по интеграции Azure Active Directory с RingCentral
+# <a name="tutorial-azure-active-directory-integration-with-ringcentral"></a>Руководство. Интеграция Azure Active Directory с RingCentral
 
 В этом руководстве описано, как интегрировать RingCentral с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "48872502"
 
 - С помощью Azure AD вы можете контролировать доступ к RingCentral.
 - Вы можете включить автоматический вход пользователей в RingCentral (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "48872502"
 1. Добавление RingCentral из коллекции.
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-ringcentral-from-the-gallery"></a>Добавление RingCentral из коллекции
+## <a name="adding-ringcentral-from-the-gallery"></a>Добавление RingCentral из коллекции.
 Чтобы настроить интеграцию RingCentral с Azure AD, необходимо добавить RingCentral из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить RingCentral из коллекции, выполните следующие действия:**
@@ -86,7 +87,7 @@ ms.locfileid: "48872502"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя RingCentral](#create-a-ringcentral-test-user)** требуется для того, чтобы в RingCentral существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -125,7 +126,7 @@ ms.locfileid: "48872502"
 
     ![изображение](./media/ringcentral-tutorial/b21-domains_and_urls.png)
 
-    d. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес:
+    4.3. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес:
     | |
     |--|
     | `https://service.ringcentral.com` |
@@ -146,7 +147,7 @@ ms.locfileid: "48872502"
     | `https://service.ringcentral.co.uk` |
     | `https://service.ringcentral.eu` |
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес:
+    б) В текстовом поле **Идентификатор** введите URL-адрес:
     | |
     |--|
     |  `https://sso.ringcentral.com` |
@@ -184,11 +185,11 @@ ms.locfileid: "48872502"
 
     a. Затем щелкните **Browse** (Обзор), чтобы передать файл метаданных, скачанный с портала Azure.
 
-    b. После отправки метаданных значения автоматически заполняются в разделе **SSO General Information** (Общие сведения о едином входе).
+    б) После отправки метаданных значения автоматически заполняются в разделе **SSO General Information** (Общие сведения о едином входе).
 
     c. В разделе **Attribute Mapping** (Сопоставление атрибутов) укажите для параметра **Map Email Attribute to** (Сопоставить атрибут почты с) значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    d. Выберите команду **Сохранить**.
+    4.3. Выберите команду **Сохранить**.
 
     д. В **шаге 2** нажмите кнопку **Download** (Загрузить), чтобы скачать **файл метаданных поставщика служб** и отправить его в раздел **Базовая конфигурация SAML** для автоматического заполнения значений **идентификатора** и **URL-адреса ответа** на портале Azure.
 
@@ -200,15 +201,15 @@ ms.locfileid: "48872502"
 
     a. Выберите **Enable SSO Service** (Включить службу единого входа).
     
-    b. Выберите **Allow users to log in with SSO or RingCentral credential** (Разрешить пользователям входить в систему с помощью единого входа или учетных данных RingCentral).
+    б) Выберите **Allow users to log in with SSO or RingCentral credential** (Разрешить пользователям входить в систему с помощью единого входа или учетных данных RingCentral).
 
     c. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/ringcentral-tutorial/d_users_and_groups.png)
 
@@ -216,14 +217,14 @@ ms.locfileid: "48872502"
 
     ![изображение](./media/ringcentral-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/ringcentral-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -231,7 +232,7 @@ ms.locfileid: "48872502"
  
 ### <a name="create-a-ringcentral-test-user"></a>Создание тестового пользователя RingCentral
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении RingCentral. Обратитесь к [группе поддержки клиентов RingCentral](https://success.ringcentral.com/RCContactSupp), чтобы добавить пользователей на платформу RingCentral. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении RingCentral. Чтобы добавить пользователей на платформу RingCentral, обратитесь в  [службу поддержки RingCentral](https://success.ringcentral.com/RCContactSupp). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -262,7 +263,7 @@ ms.locfileid: "48872502"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент RingCentral на панели доступа, вы автоматически войдете в приложение RingCentral.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

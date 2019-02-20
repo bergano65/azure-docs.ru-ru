@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 9/27/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 0c7e0e539ca884739f5bf633946a4704d29b132b
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 9f8d6488d12b5550c3390699b9c34380b51b60f9
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448234"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56112603"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
-> Шаблон Resource Manager, указанный для оповещения метрики, не будет работать для типа ресурса Microsoft.OperationalInsights/workspaces, так как поддержка метрик в Log Analytics доступна в предварительной версии. Пользователи, заинтересованные в использовании функций предварительной версии с шаблоном ресурсов, могут связаться со [службой обратной связи по оповещениям Azure](mailto:azurealertsfeedback@microsoft.com)
+> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е.) `Microsoft.OperationalInsights/workspaces` требуется выполнить дополнительные шаги. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
 Основные этапы:
 

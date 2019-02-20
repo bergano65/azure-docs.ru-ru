@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: Supportability
-ms.date: 11/16/2018
+ms.date: 02/11/2019
 ms.author: stbaron
-ms.openlocfilehash: 7121087d9d9699a73b88e07599f70e0c7c40c1eb
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 6054b33e4068d36c5bfbb80120086a92a03525c8
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53308286"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56097514"
 ---
 # <a name="azure-status"></a>Состояние Azure
-[Состояние Azure](https://azure.microsoft.com/status/) — это глобальное представление работоспособности служб Azure. Просматривая состояние Azure, можно получать актуальную информацию о доступности служб. Просматривать состояние Azure, а также всех служб, сообщающих о своей работоспособности, могут все пользователи. 
+[Состояние Azure](https://azure.microsoft.com/status/) — это глобальное представление работоспособности служб и регионов Azure. Просматривая состояние Azure, можно получать актуальную информацию о доступности служб. Состояние Azure доступно всем. Оно позволяет просматривать все службы, которые сообщают о своей работоспособности, а также о происшествиях с широким спектром воздействия. Тем не менее, если вы являетесь текущим пользователем Azure, настоятельно рекомендуется использовать персонализированный подход в службе [Работоспособность служб Azure](https://aka.ms/azureservicehealth). Служба "Работоспособность служб Azure" включает в себя сбои, предстоящие действия планового обслуживания и рекомендации по обслуживанию.
 
 ![Страница состояния Azure](./media/azure-status-overview/azure-status.PNG)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Phraseanet | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Phraseanet | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Phraseanet.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/09/2018
 ms.author: jeedes
-ms.openlocfilehash: cfeadbf1d46d9e36f8619cafe29d9dd69aad6eec
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 49a311b74fbc48f414f530e962af39d17a346353
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49118326"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56175546"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-phraseanet"></a>Руководство по интеграции Azure Active Directory с Phraseanet
+# <a name="tutorial-azure-active-directory-integration-with-phraseanet"></a>Руководство. Интеграция Azure Active Directory с Phraseanet
 
 В этом руководстве описано, как интегрировать Phraseanet с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "49118326"
 
 - С помощью Azure AD вы можете контролировать доступ к Phraseanet.
 - Вы можете включить автоматический вход пользователей в Phraseanet (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -51,7 +52,7 @@ ms.locfileid: "49118326"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Phraseanet из коллекции.
+1. Добавление Phraseanet из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-phraseanet-from-the-gallery"></a>Добавление Phraseanet из коллекции
@@ -86,7 +87,7 @@ ms.locfileid: "49118326"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Phraseanet](#create-a-phraseanet-test-user)** требуется для того, чтобы в Phraseanet существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -103,20 +104,20 @@ ms.locfileid: "49118326"
 
     ![изображение](./media/phraseanet-tutorial/b1_b2_saml_sso.png)
 
-3. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![изображение](./media/phraseanet-tutorial/b1-domains_and_urlsedit.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://<SUBDOMAIN>.alchemyasp.com`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.alchemyasp.com`.
 
     ![изображение](./media/phraseanet-tutorial/tutorial_phraseanet_url.png)
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Phraseanet](mailto:support@alchemy.fr).
  
-5. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML), в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML-файл метаданных федерации** и сохранить его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации** и сохранить его на компьютере.
 
     ![изображение](./media/phraseanet-tutorial/tutorial_phraseanet_certificate.png) 
 
@@ -124,9 +125,9 @@ ms.locfileid: "49118326"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем выберите **All users** (Все пользователи).
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/phraseanet-tutorial/d_users_and_groups.png)
 
@@ -134,14 +135,14 @@ ms.locfileid: "49118326"
 
     ![изображение](./media/phraseanet-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/phraseanet-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -149,7 +150,7 @@ ms.locfileid: "49118326"
  
 ### <a name="create-a-phraseanet-test-user"></a>Создание тестового пользователя Phraseanet
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Phraseanet. Обратитесь к [группе поддержки Phraseanet](mailto:support@alchemy.fr), чтобы добавить пользователей на платформу Phraseanet. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Phraseanet. Обратитесь в  [группу поддержки Phraseanet](mailto:support@alchemy.fr), чтобы добавить пользователей на платформу Phraseanet. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -180,7 +181,7 @@ ms.locfileid: "49118326"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Phraseanet" на панели доступа, вы автоматически войдете в приложение Phraseanet.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

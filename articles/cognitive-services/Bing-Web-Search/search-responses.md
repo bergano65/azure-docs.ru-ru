@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Сведения о типах ответов и откликах, используемых API Bing для поиска в Интернете.
 services: cognitive-services
 author: aahill
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: conceptual
-ms.date: 8/13/2018
+ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: f76c9bfa5dc6a3542ace7025e0889ee64cd2e783
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 07fb655af25fe590effcb885e7b366346724b50a
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55188632"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232898"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
@@ -42,7 +42,7 @@ ms.locfileid: "55188632"
 
 ## <a name="webpages-answer"></a>Ответ с веб-страницами
 
-Ответ [webPages](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer) содержит список ссылок на веб-страницы, которые служба "Поиск в Интернете Bing" посчитала соответствующими запросу. Каждый объект [веб-страницы](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webpage) в списке содержит название, URL-адрес, отображаемый URL-адрес, краткое описание содержимого и дату обнаружения контента системой Bing.
+Ответ [webPages](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer) содержит список ссылок на веб-страницы, которые служба "Поиск в Интернете Bing" посчитала соответствующими запросу. Каждый объект [веб-страницы](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webpage) в списке будет содержать название, URL-адрес, отображаемый URL-адрес, краткое описание содержимого и дату обнаружения контента системой Bing.
 
 ```json
 {
@@ -91,7 +91,7 @@ The following shows an example of how you might display the webpage in a search 
 }, ...
 ```
 
-В зависимости от устройства пользователя, обычно отображаются некоторые из эскизов с возможностью просмотреть остальные изображения.
+В зависимости от устройства пользователя, обычно отображаются некоторые из эскизов с возможностью [пролистать](paging-webpages.md) остальные изображения.
 
 <!-- Remove until this can be replaced with a sanitized version.
 ![List of thumbnail images](./media/cognitive-services-bing-web-api/bing-web-image-thumbnails.PNG)
@@ -314,7 +314,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 |Знак|ОПИСАНИЕ|
 |------------|-----------------|
-|Sqrt|Квадратный корень|
+|Сортировать|Квадратный корень|
 |Sin[x], Cos[x], Tan[x]<br />Csc[x], Sec[x], Cot[x]|Тригонометрические функции (с аргументами в радианах)|
 |ArcSin[x], ArcCos[x], ArcTan[x]<br />ArcCsc[x], ArcSec[x], ArcCot[x]|Обратные тригонометрические функции (возвращающие результаты в радианах)|
 |Exp[x], E^x|Экспоненциальная функция|
@@ -428,6 +428,48 @@ Query: What time is it in the U.S.
     }]
 }, ...
 ```
+
+Ниже показано, как Bing использует предложения правописания.
+
+![Пример предложения правописания Bing](./media/cognitive-services-bing-web-api/bing-web-spellingsuggestion.GIF)  
+
+## <a name="response-headers"></a>Заголовки ответов
+
+Ответы от API Поиска в Интернете Bing могут содержать следующие заголовки:
+
+|||
+|-|-|
+|`X-MSEdge-ClientID`|Уникальный идентификатор, назначенный пользователю службой Bing.|
+|`BingAPIs-Market`|Рынок, использованный для выполнения запроса.|
+|`BingAPIs-TraceId`|Запись журнала на сервере API Bing для этого запроса (для службы поддержки).|
+
+Особенно важно сохранить идентификатор клиента и вернуть его с последующими запросами. При этом в процессе поиска будет использоваться прошлый контекст в ранжировании результатов поиска, обеспечивая согласованность пользовательского интерфейса.
+
+Тем не менее, при вызове API Bing для поиска в Интернете из JavaScript встроенные средства обеспечения безопасности браузера (CORS) могут блокировать доступ к значениям этих заголовков.
+
+Чтобы получить доступ к заголовкам, можно выполнить запрос API Bing для поиска в Интернете через прокси-сервер CORS. Ответ с такого прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
+
+Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-web-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала, если у вас не установлен компонент Node.js, [установите его](https://nodejs.org/en/download/). В командной строке введите следующую команду:
+
+    npm install -g cors-proxy-server
+
+Затем в HTML-файле измените конечную точку API Bing для поиска в Интернете на следующую.
+
+    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
+
+И наконец, запустите прокси-сервер CORS с помощью следующей команды.
+
+    cors-proxy-server
+
+Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
+
+## <a name="response-headers-in-production"></a>Заголовки ответов в рабочей среде
+
+Подход с использованием прокси-сервера CORS, описанный в предыдущем ответе, подходит для среды разработки, тестовой и учебной сред.
+
+В рабочей среде серверный сценарий необходимо размещать в одном домене с веб-страницей, которая использует API Поиска в Интернете Bing. Этот сценарий должен выполнять вызовы API по запросу от веб-страницы JavaScript и передавать все результаты, включая заголовки, обратно клиенту. Поскольку два ресурса (страница и скрипт) используют один источник, то CORS не задействуется и специальные заголовки доступны для JavaScript на веб-странице.
+
+Такой подход также защищает ключ API от общего доступа, так как он необходим только серверному сценарию. Чтобы обеспечить авторизацию запроса, сценарий может использовать другой метод.
 
 Ниже показано, как Bing использует предложения правописания.
 

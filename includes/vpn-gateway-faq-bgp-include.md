@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 01/14/2019
+ms.date: 02/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 894724b08876e96119bf72ce65e22c6ae884d8da
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 192a6f4841e9dc3a478da5e4b53594362955ca71
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54306885"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56247103"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>VPN-шлюзы Azure поддерживают BGP для всех классов SKU?
 Нет, BGP поддерживается в VPN-шлюзах Azure класса **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** и **HighPerformance**. **Basic** не поддерживается.
@@ -49,6 +49,9 @@ VPN-шлюз Azure объявляет следующие маршруты для
 * префиксы адресов вашей виртуальной сети;
 * префиксы адресов от каждого из локальных сетевых шлюзов, подключенных к VPN-шлюзу Azure;
 * маршруты, полученные от сеансов пиринга BGP с другими устройствами, подключенными к VPN-шлюзу Azure, **за исключением маршрутов по умолчанию и маршрутов, пересекающихся с префиксами любой виртуальной сети**.
+
+### <a name="how-many-prefixes-can-i-advertise-to-azure-vpn-gateway"></a>Сколько префиксов можно объявлять VPN-шлюзу Azure?
+Мы поддерживаем до 4000 префиксов. Если количество префиксов превысит лимит, сеанс BGP будет сброшен.
 
 ### <a name="can-i-advertise-default-route-00000-to-azure-vpn-gateways"></a>Можно ли объявить маршрут по умолчанию (0.0.0.0/0) к VPN-шлюзам Azure?
 Да.

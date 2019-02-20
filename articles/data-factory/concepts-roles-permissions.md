@@ -11,12 +11,12 @@ services: data-factory
 documentationcenter: ''
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.openlocfilehash: e296606d219623c29bedca4fb0906a955a394b30
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: ee35c7ae1b75c6fb4d656927d7e6e4384cd76836
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54013423"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56003947"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -78,7 +78,7 @@ ms.locfileid: "54013423"
   В этом сценарии требуется два назначения ролей.
 
   1. Назначьте встроенную роль **Участник** на уровне фабрики данных.
-  2. Создайте пользовательскую роль с разрешением *Microsoft.Resources/deployments/**. Назначьте ее для пользователя на уровне группы ресурсов.
+  2. Создайте пользовательскую роль с разрешением **Microsoft.Resources/deployments/**. Назначьте ее для пользователя на уровне группы ресурсов.
 
 - Дайте пользователю возможность обновлять фабрику данных с помощью PowerShell или пакета SDK, но не портала Azure.
 

@@ -11,19 +11,19 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 01/30/2019
-ms.openlocfilehash: 18e786ba45e476df2ab223a47f1b77ef6b778d7f
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.date: 02/13/2019
+ms.openlocfilehash: 4ddeef417490b5b928f46dce428acc3e5febe159
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657779"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245989"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
 В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в составе пула](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](http://portal.azure.com) и запустить отработку отказа.
 
-Сведения о группах автоматической отработки отказа с отдельными и объединенными базами данных см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
+Сведения о группах автоматической отработки отказа с отдельными и объединенными базами данных см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в разделе [Рекомендации по использованию групп отработки отказа с Управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

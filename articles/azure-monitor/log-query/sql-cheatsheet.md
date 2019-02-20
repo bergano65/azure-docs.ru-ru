@@ -1,6 +1,6 @@
 ---
-title: Таблица соответствия SQL и языка запросов Azure Log Analytics | Документация Майкрософт
-description: Общие функции для различных сценариев в запросах Log Analytics.
+title: Краткий справочник по запросу журнала SQL для Azure Monitor | Документация Майкрософт
+description: Дополнительные сведения для пользователей, которые знакомы с SQL, при написании запросов журнала в Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
-ms.openlocfilehash: 35438644842d5280bd789efa135805ba9943cb8b
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 121f9ff602907e64bba0c98342e38477109e9294
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53183053"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993674"
 ---
-# <a name="sql-to-log-analytics-query-language-cheat-sheet"></a>Таблица соответствия SQL и языка запросов Log Analytics 
+# <a name="sql-to-azure-monitor-log-query-cheat-sheet"></a>Краткий справочник по запросам журнала SQL для Azure Monitor 
 
-Нижеприведенная таблица поможет пользователям, знакомым с SQL, узнать о языке запросов Log Analytics. Взглянем на команды T-SQL для решения распространенных сценариев и эквивалентного использования Log Analytics.
+С помощью указанной ниже таблицы пользователи, знакомые с SQL, смогут изучать язык запросов Data Explorer для написания запросов журнала в Azure Monitor. Взглянем на команду T-SQL для решения распространенных сценариев и их эквиваленты в запросе журнала Azure Monitor.
 
-## <a name="sql-to-log-analytics"></a>Соответствие запросов SQL и Log Analytics
+## <a name="sql-to-azure-monitor"></a>SQL в Azure Monitor
 
-ОПИСАНИЕ                             |Запросы SQL                                                                                          |Запросы Azure Log Analytics
+ОПИСАНИЕ                             |Запросы SQL                                                                                          |Запросы журнала Azure Monitor
 ----------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------
 Выбор всех данных из таблицы            |`SELECT * FROM dependencies`                                                                       |<code>dependencies</code>
 Выбор определенных столбцов из таблицы    |`SELECT name, resultCode FROM dependencies`                                                        |<code>dependencies <br>&#124; project name, resultCode</code>
@@ -50,4 +50,4 @@ ms.locfileid: "53183053"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Пройдите урок по [написанию запросов в Log Analytics](get-started-queries.md).
+- Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

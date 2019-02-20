@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Uberflip | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Uberflip | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Uberflip.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/21/2018
 ms.author: jeedes
-ms.openlocfilehash: bb1f53895fcd91a9474302fcf8c9e0040fe91961
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 28add36dedcd942150a96d32508246ee03da60f1
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42920088"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56182584"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Руководство. Интеграция Azure Active Directory с Uberflip
+# <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Руководство по Интеграция Azure Active Directory с Uberflip
 
 В этом руководстве описано, как интегрировать Uberflip с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "42920088"
 
 - С помощью Azure AD вы можете контролировать доступ к приложению Uberflip.
 - Вы можете включить автоматический вход пользователей в Uberflip (единый вход) с использованием их учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -55,7 +56,7 @@ ms.locfileid: "42920088"
 1. добавление Uberflip из коллекции;
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-uberflip-from-the-gallery"></a>Добавление Uberflip из коллекции
+## <a name="adding-uberflip-from-the-gallery"></a>добавление Uberflip из коллекции;
 
 Чтобы настроить интеграцию Uberflip с Azure AD, необходимо добавить Uberflip из коллекции в список управляемых приложений SaaS.
 
@@ -71,7 +72,7 @@ ms.locfileid: "42920088"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Uberflip**, выберите **Uberflip** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "42920088"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создайте тестового пользователя в Uberflip](#create-an-uberflip-test-user)**. Это нужно для того, чтобы в Uberflip существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -140,7 +141,7 @@ ms.locfileid: "42920088"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/uberflip-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/uberflip-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -160,7 +161,7 @@ ms.locfileid: "42920088"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-an-uberflip-test-user"></a>Создание тестового пользователя в Uberflip
 
@@ -204,7 +205,7 @@ ms.locfileid: "42920088"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Uberflip на панели доступа, вы автоматически войдете в приложение Uberflip.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

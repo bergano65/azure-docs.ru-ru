@@ -12,16 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 01/23/2019
+ms.date: 02/13/2019
 ms.author: celested
 ms.reviewer: hirsin, justhu
 ms.custom: aaddev
-ms.openlocfilehash: 30d9cef89bed1c43fa1d058ff90fe2d9a52260f7
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d4ad41992b2ac0dfc98303601060ed299e75ddfc
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55096693"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234294"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -190,7 +191,7 @@ ms.locfileid: "55096693"
 | AADSTS90016 | MissingRequiredClaim: недопустимый маркер доступа. Отсутствует обязательное утверждение. |
 | AADSTS90019 | MissingTenantRealm — Azure AD не удалось определить идентификатор клиента из запроса. |
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat — неправильный формат имени субъекта или не соблюдается ожидаемый формат `name[/host][@realm]`. Имя субъекта является обязательным параметром, а узел и область — необязательные параметры. Их можно оставить пустыми (NULL). |
-| AADSTS90023 | InvalidRequest |
+| AADSTS90023 | InvalidRequest — недопустимый запрос службы проверки подлинности. |
 | AADSTS90024 | RequestBudgetExceededError: произошла случайная ошибка. Повторите попытку. |
 | AADSTS90033 | MsodsServiceUnavailable: служба каталогов Microsoft Online (MSODS) недоступна. |
 | AADSTS90036 | MsodsServiceUnretryableFailure: произошла непредвиденная, неповторяемая ошибка службы WCF, размещенной в MSODS. Чтобы получить дополнительные сведения об ошибке, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md). |

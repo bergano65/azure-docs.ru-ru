@@ -11,22 +11,58 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/18/2019
+ms.date: 02/11/2019
 ms.author: mabrigg
-ms.reviewer: wfayed
-ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 585fc4f1bbddb08d881414b581120b7bc14232ab
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.reviewer: justini
+ms.lastreviewed: 02/11/2019
+ms.openlocfilehash: 0c3f52c78bbfd3094324b74f3b66610fcebfa2f4
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729954"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56099298"
 ---
 # <a name="apply-updates-in-azure-stack"></a>Применение обновлений в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack*
 
-Вы можете применять пакеты обновлений Майкрософт или изготовителя оборудования для Azure Stack, используя плитку **обновления** на портале администратора. Для этого нужно скачать пакет обновления, импортировать файлы пакета в Azure Stack и установить этот пакет обновления.
+Вы можете применять пакеты обновлений Майкрософт или изготовителя оборудования для Azure Stack, используя плитку **обновления** на портале администратора.
+
+Если вы используете интегрированные системы версии 1807 или более ранней, скачайте пакет обновления, импортируйте файлы пакета в Azure Stack и установите этот пакет обновления. Для дальнейших инструкций см. раздел [Обновление Azure Stack с помощью скачивания пакета](#update-azure-stack-by-downloading-the-package).
+
+Эти инструкции по обновлению работают с интегрированными системами Azure Stack. Если вы используете систему разработки Azure Stack, скачайте пакет установки для текущей версии. Для дальнейших инструкций см. статью [Установка Пакета средств разработки Azure Stack (ASDK)](.\asdk\asdk-install.md).
+
+## <a name="update-azure-stack"></a>Обновление Azure Stack
+
+### <a name="select-and-apply-an-update-package"></a>Выбор и применение пакета обновления
+
+1. Откройте портал "Администрирование".
+
+2. Выберите **Панель мониторинга**. Выберите плитку **Обновление**.
+
+    ![Доступно обновление Azure Stack](media/azure-stack-apply-updates/azure-stack-updates-1901-dashboard.png)
+
+3. Запишите текущую версию Azure Stack. Вы можете обновить до следующей полной версии. Например, если вы используете Azure Stack 1811, следующая версия выпуска — 1901.
+
+    ![Применение обновления Azure Stack](media/azure-stack-apply-updates/azure-stack-updates-1901-updateavailable.png)
+
+4. Выберите следующую доступную версию из списка "Обновления". Если необходимо просмотреть изменения версии, чтобы открыть раздел заметок о выпуске для версии вы можете выбрать **Представление** в столбце заметок о выпуске.
+
+5. Нажмите "Обновить сейчас". Затем начнется обновление.
+
+### <a name="review-update-history"></a>Просмотр журнала обновлений
+
+1. Откройте портал "Администрирование".
+
+2. Выберите **Панель мониторинга**. Выберите плитку **Обновление**.
+
+3. Нажмите **Журнал обновлений**.
+
+![Журнал обновления Azure Stack](media/azure-stack-apply-updates/azure-stack-update-history.PNG)
+
+## <a name="update-azure-stack-by-downloading-the-package"></a>Обновление Azure Stack с помощью скачивания пакета
+
+Если вы используете интегрированные системы версии 1807 или более ранней, скачайте пакет обновления, импортируйте файлы пакета в Azure Stack и установите этот пакет обновления.
 
 ## <a name="download-the-update-package"></a>Скачивание пакета обновлений
 

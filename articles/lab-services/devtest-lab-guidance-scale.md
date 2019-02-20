@@ -10,14 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2018
+ms.date: 02/11/2019
 ms.author: spelluru
-ms.openlocfilehash: ed6c21762fed331e2f11378ec9b6d91cba9bec11
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.reviewer: christianreddington,anthdela,juselph
+ms.openlocfilehash: 781a897c99a28fbd1b695876f477b140521068e3
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250869"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244885"
 ---
 # <a name="scale-up-your-azure-devtest-labs-infrastructure"></a>Увеличение масштаба инфраструктуры Azure DevTest Labs
 Прежде чем реализовать DevTest Labs на корпоративном уровне, нужно решить некоторые важные вопросы. Общее понимание этих вопросов поможет организации принимать решения относительно проектирования в будущем. Но эти вопросы не должны мешать организации приступить к подтверждению концепции. Ниже приведены три основных аспекта, с которых нужно начать планирование увеличения масштаба:
@@ -66,4 +67,4 @@ ms.locfileid: "48250869"
 - **Пользователь DevTest Labs** может создавать и использовать виртуальные машины в лаборатории. Эти пользователи имеют минимальные права администрирования (запуск, приостановление, удаление и настройка виртуальных машин) для виртуальных машин, которые они создают. Они не могут управлять виртуальными машинами других пользователей.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь со следующей статье из этой серии: [Orchestrate the implementation of Azure DevTest Labs](devtest-lab-guidance-orchestrate-implementation.md) (Оркестрация внедрения службы Azure DevTest Labs).
+См. следующую статью в этом цикле: [Оркестрация внедрения службы Azure DevTest Labs](devtest-lab-guidance-orchestrate-implementation.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Rackspace SSO | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Rackspace SSO | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Rackspace SSO.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2018
 ms.author: jeedes
-ms.openlocfilehash: b825fb1d7f56aae923f6760c4fd6384e03274b7a
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 24864fd1e21efaf37f846fc95b9dae39ffb19e5f
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042063"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56186846"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по интеграции Azure Active Directory с Rackspace SSO
+# <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство. Интеграция Azure Active Directory с Rackspace SSO
 
 В этом руководстве описано, как интегрировать Rackspace SSO с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "47042063"
 
 - С помощью Azure AD вы можете контролировать доступ к Rackspace SSO.
 - Вы можете включить автоматический вход пользователей в Rackspace (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -71,7 +72,7 @@ ms.locfileid: "47042063"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Rackspace SSO**, выберите **Rackspace SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "47042063"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Rackspace SSO](#create-a-rackspace-sso-test-user)** требуется для того, чтобы в Rackspace SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -131,7 +132,7 @@ ms.locfileid: "47042063"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/rackspacesso-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/rackspacesso-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -151,7 +152,7 @@ ms.locfileid: "47042063"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-rackspace-sso-test-user"></a>Создание тестового пользователя Rackspace c единым входом
 
@@ -192,7 +193,7 @@ ms.locfileid: "47042063"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Rackspace SSO на панели доступа, вы автоматически войдете в приложение Rackspace SSO.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

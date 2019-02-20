@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: ec61b179627702af7f2c4bc0fc0989230f5eca84
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 02b4b2efb447e3ba8c45caa378268ec402b5c3e7
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885802"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56002011"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
 Данные мониторинга всей платформы Azure собираются в одном месте с помощью конвейера Azure Monitor, но пока, как показывает практика, в этом конвейере доступны не все данные мониторинга. В этой статье собраны различные способы программного доступа к данным мониторинга из служб Azure.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="options-for-data-consumption"></a>Варианты использования данных
 
@@ -40,7 +42,7 @@ ms.locfileid: "54885802"
 | Оповещения о метриках Azure Monitor | Уведомления | [Список доступен здесь](metrics-supported.md). | <ul><li>**Веб-перехватчик**: [оповещения о метриках Azure](alerts-webhooks.md)</li></ul> |
 | Оповещения журнала действий Azure Monitor | Уведомления | Все службы Azure. | <ul><li>**Веб-перехватчик**: оповещения журнала действий Azure</li></ul> |
 | Уведомления об автомасштабировании | Уведомления | [Список доступен здесь](autoscale-overview.md#supported-services-for-autoscale). | <ul><li>**Веб-перехватчик**: [схема полезных данных веб-перехватчика уведомлений автомасштабирования](autoscale-webhook-email.md#autoscale-notification-webhook-payload-schema)</li></ul> |
-| Оповещения о запросах поиска по журналам | Уведомления | Log Analytics | <ul><li>**Веб-перехватчик**: [действия веб-перехватчика для правил оповещений журнала](alerts-log-webhook.md)</li></ul> |
+| Оповещения о запросах поиска по журналам | Уведомления | Журналы Azure Monitor | <ul><li>**Веб-перехватчик**: [действия веб-перехватчика для правил оповещений журнала](alerts-log-webhook.md)</li></ul> |
 | Оповещения о метриках Application Insights | Уведомления | Application Insights | <ul><li>**Веб-перехватчик**: [оповещения Application Insights](../../azure-monitor/app/alerts.md)</li></ul> |
 | Веб-тесты Application Insights | Уведомления | Application Insights | <ul><li>**Веб-перехватчик**: [оповещения Application Insights](../../azure-monitor/app/alerts.md)</li></ul> |
 

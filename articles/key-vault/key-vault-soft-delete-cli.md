@@ -2,17 +2,17 @@
 title: Как использовать обратимое удаление в Azure Key Vault с помощью интерфейса командной строки
 description: Примеры использования обратимого удаления с фрагментами кода для интерфейса командной строки.
 author: bryanla
-manager: mbaldwin
+manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: bryanla
-ms.openlocfilehash: 242398eb0bb4d4ddd2764bd66c99a7f9603ea1b9
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: f0c1db2274eea6281bd4a350909b79d048ad21c4
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55663950"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116729"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -226,5 +226,5 @@ az keyvault purge --location westus --name ContosoVault
 ## <a name="other-resources"></a>Другие ресурсы:
 
 - Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](key-vault-ovw-soft-delete.md).
-- Общие сведения об использовании Azure Key Vault см. в разделе [Приступая к работе с хранилищем ключей Azure](key-vault-get-started.md).
+- Общие сведения об использовании Azure Key Vault см. в [этой статье](key-vault-overview.md).
 

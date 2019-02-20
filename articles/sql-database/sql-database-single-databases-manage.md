@@ -3,7 +3,7 @@ title: Создание серверов Базы данных SQL Azure и от
 description: Узнайте, как создавать серверы Базы данных SQL и отдельные базы данных и управлять ими.
 services: sql-database
 ms.service: sql-database
-ms.subservice: standalone-database
+ms.subservice: single-database
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 7d1f11abbe88bff5a7e16984aacd4953ad4f9e12
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.date: 02/08/2019
+ms.openlocfilehash: 0a43414ef446beb3f5d6c8e357390363a95ac31c
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751197"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56099349"
 ---
 # <a name="create-and-manage-sql-database-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов Базы данных SQL и отдельных баз данных в Базе данных SQL Azure и управление ими
 
@@ -57,7 +57,7 @@ ms.locfileid: "55751197"
 
 ## <a name="powershell-manage-sql-database-servers-and-single-databases"></a>PowerShell: Управление серверами Базы данных SQL и отдельными базами данных
 
-Чтобы создать серверы Базы данных SQL Azure, изолированные и включенные в пулы базы данных, а также брандмауэры серверов Базы данных SQL и управлять ими с помощью Azure PowerShell, используйте указанные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
+Чтобы создать серверы базы данных SQL Azure, отдельные и включенные в пулы базы данных, а также брандмауэры серверов базы данных SQL и управлять ими с помощью Azure PowerShell, используйте указанные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!TIP]
 > Примеры сценариев PowerShell см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md).
@@ -160,5 +160,5 @@ ms.locfileid: "55751197"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
+- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).

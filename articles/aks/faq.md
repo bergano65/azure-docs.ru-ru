@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/17/2018
 ms.author: iainfou
-ms.openlocfilehash: a7a7c8a6f16183d677aeb09ca62ac601cbd01289
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 2366bd5543a7c3ee4a45eff74f71232a9c60989f
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55694046"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098548"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -60,7 +60,7 @@ ms.locfileid: "55694046"
 
 ## <a name="can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-mc-resource-group"></a>Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов MC_*?
 
-Изменение и удаление тегов, созданных в Azure, и других свойств ресурсов в группе *MC_** может привести к непредвиденным результатам, таким как ошибки масштабирования и обновления. Поддерживается создание и изменение дополнительных настраиваемых тегов, например, для назначения бизнес-единицы или места возникновения затрат. Изменение ресурсов в группе *MC_** в кластере AKS прерывает единый выход.
+Изменение и удаление тегов, созданных в Azure, и других свойств ресурсов в группе *MC_** может привести к непредвиденным результатам, таким как ошибки масштабирования и обновления. Поддерживается создание и изменение дополнительных настраиваемых тегов, например, для назначения бизнес-единицы или места возникновения затрат. Изменение ресурсов в *MC_** в кластере AKS нарушает цель уровня обслуживания (SLO). Дополнительные сведения см. в разделе [AKS предлагает соглашение об уровне обслуживания?](#does-aks-offer-a-service-level-agreement)
 
 ## <a name="what-kubernetes-admission-controllers-does-aks-support-can-admission-controllers-be-added-or-removed"></a>Какие контроллеры допуска Kubernetes поддерживает AKS? Можно ли добавлять и удалять контроллеры допуска?
 

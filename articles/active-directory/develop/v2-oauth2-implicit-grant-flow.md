@@ -17,12 +17,13 @@ ms.date: 10/02/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: c569d1be9a301b2282ad1b4fd6e21130f7de2575
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ec47e6d52a3aef8533a3d16f0f81693b8f01f3cf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55103536"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56205058"
 ---
 # <a name="v20-protocols---spas-using-the-implicit-flow"></a>Протоколы приложений версии 2.0. Одностраничные приложения с использованием неявного потока
 
@@ -79,7 +80,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `client_id` | обязательно |Идентификатор приложения, назначенный приложению порталом регистрации ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList)). |
 | `response_type` | обязательно |Должен включать `id_token` для входа в OpenID Connect. Этот параметр также может содержать значение `token` параметра response_type (тип ответа). Использование `token` здесь позволяет приложению получать токен доступа непосредственно от конечной точки авторизации, при этом отправлять новый запрос на вход в эту конечную точку не требуется. При использовании типа ответа `token` параметр `scope` должен содержать область, определяющую ресурсы, для которых необходимо выдавать токен. |
 | `redirect_uri` | рекомендуется |URI перенаправления приложения, на который можно отправлять ответы проверки подлинности для их получения приложением. Он должен в точности соответствовать одному из URI перенаправления, зарегистрированных на портале, но иметь форму закодированного URL-адреса. |
-| `scope` | обязательно |Список областей с разделителями-пробелами. При использовании протокола OpenID Connect он должен содержать область `openid`, что преобразуется в разрешение "Вход" в пользовательском интерфейсе предоставления согласия. Если требуется доступ к дополнительным данным пользователя, можно также указать [области](v2-permissions-and-consent.md) `email` или `profile`. Этот запрос может также включать другие области в зависимости от ресурсов, к которым требуется получить доступ. |
+| `scope` | обязательно |Список [областей](v2-permissions-and-consent.md) с разделителями-пробелами. При использовании протокола OpenID Connect он должен содержать область `openid`, что преобразуется в разрешение "Вход" в пользовательском интерфейсе предоставления согласия. Если требуется доступ к дополнительным данным пользователя, вы также можете указать области `email` или `profile`. Этот запрос может также включать другие области в зависимости от ресурсов, к которым требуется получить доступ. |
 | `response_mode` | необязательный |Указывает метод, с помощью которого результирующий маркер будет отправлен приложению. По умолчанию для маркера доступа используется метод query, но если запрос включает маркер id_token, значением по умолчанию является fragment. |
 | `state` | рекомендуется |Значение, включенное в запрос, которое также возвращается в ответе маркера. Это может быть строка любого контента. Как правило, для [предотвращения подделки межсайтовых запросов](https://tools.ietf.org/html/rfc6749#section-10.12)используется генерируемое случайным образом уникальное значение. Параметр "state" также используется для кодирования информации о состоянии пользователя в приложении перед созданием запроса на проверку подлинности, например информации об открытой на тот момент странице или представлении. |
 | `nonce` | обязательно |Значение, включенное в запрос и созданное приложением, которое войдет в состав полученного токена "id_token" в качестве утверждения. Приложение может проверить это значение во избежание атак с использованием воспроизведения токена. Это значение обычно представляет собой случайную уникальную строку, которую можно использовать для определения источника запроса. Требуется только при запросе id_token. |
@@ -100,7 +101,7 @@ GET https://localhost/myapp/#
 access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 &token_type=Bearer
 &expires_in=3599
-&scope=https%3a%2f%2fgraph.microsoft.com%2fmail.read 
+&scope=https%3a%2f%2fgraph.microsoft.com%2fuser.read 
 &id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 &state=12345
 ```
@@ -156,7 +157,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &response_type=token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment
 &state=12345&nonce=678910
 &prompt=none
 &domain_hint=organizations
@@ -166,9 +167,9 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 Дополнительные сведения о параметрах запроса в URL-адресе см. в разделе [Отправка запроса на вход](#send-the-sign-in-request).
 
 > [!TIP]
-> Попробуйте скопировать и вставить запрос, показанный ниже, на вкладку браузера. (Не забудьте заменить значения `domain_hint` и `login_hint` на правильные значения для вашего пользователя.)
+> Попробуйте скопировать и вставить запрос, показанный ниже, на вкладку браузера. (Не забудьте заменить значения `login_hint` на правильное значение для вашего пользователя.)
 >
->`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&domain_hint=consumers-or-organizations&login_hint=your-username`
+>`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2user.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint=your-username`
 >
 
 Благодаря параметру `prompt=none` этот запрос успешно выполнится или немедленно завершится с ошибкой, и вы вернетесь к своему приложению. Успешный ответ будет отправлен в ваше приложение на указанный `redirect_uri` с помощью метода, заданного в параметре `response_mode`.

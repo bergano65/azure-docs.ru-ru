@@ -11,13 +11,13 @@ author: vainolo
 ms.author: vainolo
 ms.reviewer: vanto
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 0c79554d2db4c1dc17cfbdeed052c1ae16cd68c2
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.date: 02/07/2019
+ms.openlocfilehash: d092b4e8096b311ba9ca9d3fbceea8fb57bf4aa9
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55297690"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234668"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -41,9 +41,9 @@ ms.locfileid: "55297690"
 - **Анализировать** отчеты. Вы можете искать подозрительные события, необычную деятельность и тенденции.
 
 > [!IMPORTANT]
-> Журналы аудита записываются в **добавочные большие двоичные объекты** в хранилище BLOB-объектов Azure в подписке Azure.
+> Журналы аудита записываются в **Добавочные BLOB-объекты** в хранилище BLOB-объектов Azure в подписке Azure.
 >
-> - Поддержка добавочных больших двоичных объектов в **хранилище класса Premium** сейчас **не предоставляется**.
+> - Поддержка добавочных больших двоичных объектов в **хранилище класса Premium** сейчас **не поддерживается**.
 > - **Хранилище в виртуальной сети** в настоящее время **не поддерживается**.
 
 ## <a id="subheading-8"></a>Определение политики аудита уровня сервера и базы данных
@@ -125,6 +125,7 @@ ms.locfileid: "55297690"
 Если журналы аудита записываются в концентратор событий:
 
 - Чтобы работать с данными журналов аудита из концентратора событий, необходимо настроить потоковую передачу для получения событий и их записи в целевой объект. Дополнительные сведения см. в [документации по Центрам событий Azure](https://docs.microsoft.com/azure/event-hubs/).
+- Журналы аудита в концентраторе событий записываются в текст событий [Apache Avro](http://avro.apache.org/) и хранятся в формате JSON с типом кодировки UTF-8. Для чтения журналов аудита можете использовать [средства Avro](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview#use-avro-tools) или похожие средства, которые поддерживают данный формат.
 
 Если журналы аудита записываются в учетную запись хранения Azure, их можно просматривать несколькими способами:
 
@@ -251,7 +252,7 @@ ms.locfileid: "55297690"
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
-- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage)
+- [Deploy an Azure SQL Server with Auditing enabled to write audit logs to Azure Blob storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) (Развертывание Azure SQL Server с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure).
 - [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
 - [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
 

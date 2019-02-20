@@ -11,12 +11,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 2ad525ee0e10064d4d606dc1f899ef813fe92ab5
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 077202e65c9e63c8ca5ea1a555ccd70bf27028c6
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273511"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232609"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Использование конечных точек службы виртуальной сети с Центрами событий Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "53273511"
 >[!WARNING]
 > Реализация интеграции виртуальных сетей может препятствовать взаимодействию других служб Azure с Центрами событий.
 >
-> Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети. Их поддержка будет доступна в ближайшее время.
+> Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети.
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
 > - Azure Monitor

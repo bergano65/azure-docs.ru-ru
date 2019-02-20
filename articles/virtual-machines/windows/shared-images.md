@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/11/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: ecac7216582fa07e9c25492ddeb25e9f155da563
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 07912369179a1d1226c750a8e86837fdc6887922
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305176"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55984177"
 ---
 # <a name="preview-create-a-shared-image-gallery-with-azure-powershell"></a>Предварительный просмотр: Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -40,6 +40,7 @@ ms.locfileid: "54305176"
 | **Определение образа** | Образы определяются в пределах коллекции и содержат в себе сведения об образе и требования для его использования. Эти сведения включают в себя: определение, относится ли этот образ к Windows или к Linux, заметки о выпуске, а также минимальные и максимальные требования к памяти. Это определение типа образа. |
 | **Версия образа** | **Версия образа** используется для создания виртуальной машины с помощью коллекции. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. Так же как и управляемый образ при использовании **версии образа** для создания виртуальной машины, версия образа используется для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз. |
 
+[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -49,12 +50,12 @@ ms.locfileid: "54305176"
  
 ## <a name="create-vms-from-an-image"></a>Создание виртуальных машин из образа
 
-Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. При использовании упрощенного набора параметров для командлета [New-AzureRMVM](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermvm) вам просто нужно указать идентификатор версии образа. 
+Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. При использовании упрощенного набора параметров для командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) вам просто нужно указать идентификатор версии образа. 
 
 В этом примере создается виртуальная машина *myVMfromImage* в группе ресурсов *myResourceGroup* в регионе *Восточная часть США*.
 
 ```azurepowershell-interactive
-New-AzureRmVm `
+New-AzVm `
    -ResourceGroupName "myResourceGroup" `
    -Name "myVMfromImage" `
    -Image $imageVersion.Id `
@@ -70,10 +71,10 @@ New-AzureRmVm `
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда группа ресурсов, виртуальная машина и все связанные с ней ресурсы станут ненужны, их можно удалить с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup).
+Вы можете удалить ненужную группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myGalleryRG
+Remove-AzResourceGroup -Name myGalleryRG
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

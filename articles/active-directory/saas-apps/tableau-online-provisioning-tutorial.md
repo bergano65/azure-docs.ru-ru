@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Tableau Online.
 services: active-directory
 documentationcenter: ''
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/30/2018
 ms.author: v-wingf-msft
-ms.openlocfilehash: 4f6297fa8477ff4794bee589737e047993427c06
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a81754b9b95c7cc6e257707aec188abf1dab58c3
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44345868"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56194875"
 ---
 # <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
 
@@ -46,7 +47,7 @@ ms.locfileid: "44345868"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
 
@@ -54,7 +55,7 @@ ms.locfileid: "44345868"
 
 3. Чтобы добавить Tableau Online, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Tableau Online**.
 
@@ -117,7 +118,7 @@ ms.locfileid: "44345868"
 
     *   Скопировать **домен** для учетной записи Tableau Online можно из этой части URL-адреса: ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/DomainUrlPart.png)
 
-    *   Скопировать **URL-адрес содержимого** для учетной записи Tableau Online можно из этого раздела и во время ее настройки определить значение. В этом примере значением является contoso: ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
+    *   Скопировать **URL-адрес содержимого** для учетной записи Tableau Online можно из этого раздела и во время ее настройки определить значение. В этом примере используется значение "contoso": ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
 
         > [!NOTE]
         > Ваш **домен** может отличаться от приведенного здесь. 

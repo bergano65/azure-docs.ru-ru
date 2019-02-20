@@ -11,17 +11,17 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 64302a04050196b4299be45d910f7136f3ecaaa6
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/08/2019
+ms.openlocfilehash: 4e853b9edbd000d8b61b5e05f3ae65c07258d73f
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734272"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56002162"
 ---
-# <a name="azure-sql-database-threat-detection-for-standalone-or-pooled-databases"></a>Обнаружение угроз Базы данных SQL Azure для изолированной базы данных или базы данных в составе пула
+# <a name="azure-sql-database-threat-detection-for-single-or-pooled-databases"></a>Обнаружение угроз Базы данных SQL Azure для отдельной базы данных или базы данных в составе пула
 
-[Система обнаружения угроз](sql-database-threat-detection-overview.md) для изолированной базы данных или базы данных в составе пула выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться ими. Система обнаружения угроз может определить **потенциальную атаку путем внедрения кода SQL**, **доступ из необычного центра обработки данных или расположения**, **доступ из незнакомого субъекта или потенциально опасного приложения**, а также **подбор учетных данных SQL** (см. дополнительные сведения об [оповещениях системы обнаружения угроз](sql-database-threat-detection-overview.md#threat-detection-alerts)).
+[Система обнаружения угроз](sql-database-threat-detection-overview.md) для отдельной базы данных или базы данных в составе пула выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться ими. Система обнаружения угроз может определить **потенциальную атаку путем внедрения кода SQL**, **доступ из необычного центра обработки данных или расположения**, **доступ из незнакомого субъекта или потенциально опасного приложения**, а также **подбор учетных данных SQL** (см. дополнительные сведения об [оповещениях системы обнаружения угроз](sql-database-threat-detection-overview.md#threat-detection-alerts)).
 
 Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](sql-database-threat-detection-overview.md#explore-anomalous-database-activities-upon-detection-of-a-suspicious-event) или [портала Azure](sql-database-threat-detection-overview.md#explore-threat-detection-alerts-for-your-database-in-the-azure-portal)
 

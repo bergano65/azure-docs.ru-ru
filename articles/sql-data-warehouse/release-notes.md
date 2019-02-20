@@ -2,28 +2,27 @@
 title: Заметки о выпуске для Хранилища данных SQL Azure | Документация Майкрософт
 description: Заметки о выпуске для хранилища данных SQL Azure.
 services: sql-data-warehouse
-author: twounder
-manager: craigg
+author: mlee3gsd
+ms.author: anumjs
+ms.reviewer: jrasnick
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 11/11/2018
-ms.author: twounder
-ms.reviewer: twounder
-ms.openlocfilehash: 7a131429d8f70255e47efaac0c4b5fa99a6df7d6
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.date: 02/09/2019
+ms.openlocfilehash: 2ac60287c9d92ab6230e1dd6777504036e54492d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460817"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244680"
 ---
-# <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
+# <a name="azure-sql-data-warehouse-release-notes-and-documentation-updates"></a>Заметки о выпуске и обновление документации по Хранилищу данных SQL Azure
 
 Хранилище данных SQL Azure (SQL DW) — это облачное корпоративное хранилище данных, использующее массовую параллельную обработку (MPP) для быстрого выполнения сложных запросов к данным, объем которых исчисляется петабайтами. Используйте хранилище данных SQL как ключевой компонент решения для больших данных. Импортируйте большие данные в хранилище данных SQL с помощью простых запросов T-SQL PolyBase и используйте возможности MPP для выполнения высокопроизводительной аналитики. Во время интеграции и анализа хранилище данных станет единственным оптимальным и надежным вариантом получения аналитических сведений для вашей компании.
 
 Щелкните ссылки ниже, чтобы подробнее узнать о новых функциях и улучшениях в последней версии Хранилища данных SQL Azure. Получение этих служебных обновлений можно ожидать в течение указанного периода обслуживания.
 
-- [SQL DW версии 10.0.10106.0](./release-notes-10-0-10106-0.md)
+- [Версия 10.0.10106.0 (январь) Хранилища данных SQL](./release-notes-10-0-10106-0.md)
 - [Декабрь 2018 г.](./release-notes-december-2018.md)
 - [Октябрь 2018 г.](./release-notes-october-2018.md)
 - [Сентябрь 2018 г.](./release-notes-september-2018.md)

@@ -1,24 +1,24 @@
 ---
 title: Использование программы redis-cli с кэшем Redis для Azure | Документация Майкрософт
 description: Сведения об использовании программы redis-cli с кэшем Redis для Azure.
-services: azure-cache-for-redis
+services: cache
 documentationcenter: ''
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: ''
 ms.service: cache
 ms.workload: tbd
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2018
-ms.author: wesmc
-ms.openlocfilehash: 68c533235480ec49e3c561d99095d5722f6f69a4
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.author: yegu
+ms.openlocfilehash: 318d02f5da816ae8fe2fe199b9c87b3748d5d1fc
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106330"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237575"
 ---
 # <a name="how-to-use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Использование программы командной строки Redis с кэшем Redis для Azure
 
@@ -30,10 +30,12 @@ ms.locfileid: "54106330"
 
 ## <a name="gather-cache-access-information"></a>Сбор сведений для доступа к кэшу
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Существует три способа сбора сведений, необходимых для доступа к кэшу.
 
 1. С помощью Azure CLI и команды [az redis list-keys](https://docs.microsoft.com/cli/azure/redis?view=azure-cli-latest#az-redis-list-keys).
-2. С помощью Azure PowerShell и командлета [Get-AzureRmRedisCacheKey](https://docs.microsoft.com/powershell/module/azurerm.rediscache/Get-AzureRmRedisCacheKey?view=azurermps-4.4.1).
+2. С помощью Azure PowerShell и командлета [Get-AzRedisCacheKey](https://docs.microsoft.com/powershell/module/az.rediscache/Get-AzRedisCacheKey).
 3. С помощью портала Azure.
 
 В этом разделе вы будете получать ключи с портала Azure.

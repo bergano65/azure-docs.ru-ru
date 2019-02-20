@@ -1,6 +1,6 @@
 ---
-title: Функции в Azure Log Analytics | Документация Майкрософт
-description: В этой статье объясняется, как использовать функции для вызова запроса из другого запроса в Log Analytics.
+title: Функции в запросах журнала Azure Monitor | Документация Майкрософт
+description: В этой статье объясняется, как использовать функции для вызова запроса из другого запроса журнала в Azure Monitor.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: bwren
-ms.openlocfilehash: 8f2855ed56d298ec4c6abee02dd59ce9471f0d2e
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 6c6bd31961022957ec1a09fef6058ad32476e1c7
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885327"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005103"
 ---
-# <a name="using-functions-in-azure-monitor-log-analytics"></a>Использование функций в Azure Monitor Log Analytics
+# <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
 
 > [!NOTE]
 > Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
@@ -28,11 +28,11 @@ ms.locfileid: "52885327"
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
 
-Чтобы использовать запрос Log Analytics с другим запросом, можно сохранить его как функцию. Это позволяет упростить сложные запросы, разбивая их на части, и повторно использовать общий код с несколькими запросами.
+Чтобы использовать запрос журнала с другим запросом, сохраните его как функцию. Это позволяет упростить сложные запросы, разбивая их на части, и повторно использовать общий код с несколькими запросами.
 
 ## <a name="create-a-function"></a>Создание функции
 
-Создайте функцию на портале Azure. Для этого щелкните **Сохранить** и укажите сведения из приведенной ниже таблицы.
+Создайте функцию в Log Analytics на портале Azure. Для этого щелкните **Сохранить** и укажите сведения из указанной ниже таблицы.
 
 | Параметр | ОПИСАНИЕ |
 |:---|:---|
@@ -42,10 +42,10 @@ ms.locfileid: "52885327"
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
 
 > [!NOTE]
-> Функция в Log Analytics не может содержать другую функцию.
+> Функция в Azure Monitor не может содержать другую функцию.
 
 > [!NOTE]
-> Функции можно сохранять в запросах Log Analytics, но это пока недоступно для запросов Application Insights.
+> Функции можно сохранять в запросах Azure Monitor, но это пока недоступно для запросов Application Insights.
 
 
 
@@ -69,7 +69,7 @@ security_updates_last_day | where Title contains "SQL"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию языка запросов Log Analytics:
+Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)

@@ -9,22 +9,24 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 02/08/19
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 6fc85bd96294650eb2bbf9495642851ade7c7868
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 199c0e53fb9462a121072dbea8c90928c0d75abf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731518"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56178958"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
 С помощью Azure Active Directory (Azure AD) можно назначить несколько администраторов, которые будут выполнять различные функции. На портале Azure AD можно назначить администраторов для выполнения задач, таких как добавление или изменение пользователей, назначение административных ролей, сброс паролей пользователей, управление лицензиями пользователей и управление доменными именами.
 
-Глобальный администратор имеет доступ ко всем административным функциям. По умолчанию роль глобального администратора каталога назначается пользователю, зарегистрировавшему подписку Azure. Роли администратора могут делегировать только глобальные администраторы и администраторы привилегированных ролей.
+Глобальный администратор имеет доступ ко всем административным функциям. По умолчанию роль глобального администратора каталога назначается пользователю, зарегистрировавшему подписку Azure. Роли администратора могут делегировать только глобальные администраторы и администраторы привилегированных ролей. Чтобы снизить риск для вашего бизнеса, мы рекомендуем назначить эту роль только нескольким сотрудникам вашей компании.
+
 
 ## <a name="assign-or-remove-administrator-roles"></a>Назначение и удаление ролей администратора
 
@@ -86,6 +88,9 @@ ms.locfileid: "55731518"
   > [!NOTE]
   > Чтобы развернуть политику условного доступа Exchange ActiveSync в Azure, у пользователя должны быть права глобального администратора.
   
+* **[Лицо, утверждающее доступ к защищенному хранилищу](#customer-lockbox-access-approver)**. Управляет [запросами защищенного хранилища](https://docs.microsoft.com/office365/admin/manage/customer-lockbox-requests) в вашей организации. Для запросов защищенного хранилища они получают уведомления по электронной почте и могут утверждать и отклонять запросы из Центра администрирования Microsoft 365. Они могут также выключать функции защищенного хранилища. Только глобальные администраторы могут сбрасывать пароли пользователей, которым назначены эти роли.
+<!--  This was announced in August of 2018. https://techcommunity.microsoft.com/t5/Security-Privacy-and-Compliance/Customer-Lockbox-Approver-Role-Now-Available/ba-p/223393-->
+
 * **[Администраторы устройств](#device-administrators)**: эту роль можно назначить только в качестве роли дополнительного локального администратора в [параметрах устройства](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Пользователи с этой ролью становятся администраторами локальных компьютеров на всех устройствах с Windows 10, присоединенных к Azure Active Directory. Они не могут управлять объектами устройств в Azure Active Directory. 
 
 * **[Читатели каталогов](#directory-readers)**: это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
@@ -96,11 +101,12 @@ ms.locfileid: "55731518"
 
 * **[Администратор Dynamics 365 или администратор CRM](#crm-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
   > [!NOTE] 
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Dynamics 365". На [портале Azure](https://portal.azure.com) она называется "Администратор Dynamics 365".
+  > В API Microsoft Graph, API Graph Azure AD и Azure AD PowerShell эта роль определяется как "Администратор службы Dynamics 365". На [портале Azure](https://portal.azure.com) она называется "Администратор Dynamics 365".
 
-* **[Администратор Exchange](#exchange-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор Exchange](#exchange-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
   > [!NOTE]
-  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На [портале Azure](https://portal.azure.com) она называется "Администратор Exchange".
+  > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На [портале Azure](https://portal.azure.com) она называется "Администратор Exchange". Это "Администратор Exchange Online" в [Центре администрирования Exchange](https://go.microsoft.com/fwlink/p/?LinkID=529144). 
+
 
 * **[Глобальный администратор или администратор организации](#company-administrator)**: пользователи с этой ролью имеют доступ ко всем административным функциям в Azure Active Directory, а также к службам, использующим идентификаторы Azure Active Directory, например Центр безопасности Microsoft 365, Центр соответствия требованиям Microsoft 365, Exchange Online, SharePoint Online и Skype для бизнеса Online. Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. Только глобальные администраторы могут назначать другие административные роли. В компании может быть несколько глобальных администраторов. Глобальные администраторы могут сбросить пароль любого пользователя и администратора.
 
@@ -511,7 +517,7 @@ ms.locfileid: "55731518"
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
-### <a name="customer-lockbox-access-approver"></a>Лицо, утверждающее доступ клиентов к LockBox
+### <a name="customer-lockbox-access-approver"></a>Лицо, утверждающее доступ к защищенному хранилищу
 Может утверждать запросы в службу поддержки Майкрософт для получения доступа к данным организации клиента. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
   > [!NOTE]

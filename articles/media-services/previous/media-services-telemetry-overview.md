@@ -4,7 +4,7 @@ description: В этой статье приводится обзор телем
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 95c20ec4-c782-4063-8042-b79f95741d28
 ms.service: media-services
@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/29/2017
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 97df0876afd8b7258f985ab375b14f4aabde6e22
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 48b88aed833b0cd15f47195c67be80fe75fe153f
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33786143"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005188"
 ---
-# <a name="azure-media-services-telemetry"></a>Телеметрия служб мультимедиа Azure
+# <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
 Службы мультимедиа Azure (AMS) позволяют получить доступ к данным телеметрии и метрик для служб. Текущая версия AMS позволяет собирать данные телеметрии для работающих сущностей **Channel**, **StreamingEndpoint** и **Archive**. 
 
@@ -85,9 +85,9 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 
 Существуют три типа записей данных телеметрии для сущности, которые передаются со следующей частотой:
 
-- конечные точки потоковой передачи: каждые 30 секунд;
-- динамические каналы: каждую минуту;
-- динамический архив: каждую минуту.
+- Конечные точки потоковой передачи: каждые 30 секунд
+- Динамические каналы: каждую минуту
+- Динамический архив: каждую минуту
 
 **Конечная точка потоковой передачи**
 
@@ -159,7 +159,7 @@ Healthy|Значение True, если FragmentDiscardedCount = 0 и ArchiveAcq
 
 - пакет SDK для AMS;
 - Microsoft Azure Storage Explorer (поддерживает экспорт в файл данных с разделителями-запятыми и обработку в Excel).
-- ИНТЕРФЕЙС REST API
+- REST API
 
 ### <a name="how-to-find-average-bandwidth-consumption"></a>Как узнать среднее использование пропускной способности?
 

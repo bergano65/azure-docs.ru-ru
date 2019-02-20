@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Переместите базы знаний, созданные с помощью QnA Maker, в новую базу знаний.
 services: cognitive-services
 author: tulasim88
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/06/2019
+ms.date: 02/13/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 73f355a6e8c9373a5c31dd7cfebd4455aa324302
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: e91f41633bf6cf6581c237e7634150a5b92746a7
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809749"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245921"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -56,7 +56,7 @@ ms.locfileid: "55809749"
     На этом этапе все содержимое базы знаний, вопросы, ответы и метаданные, а также имена исходных файлов и URL-адреса будут импортированы в новую базу знаний. 
 
 ## <a name="chat-logs-and-alterations"></a>Журналы чатов и варианты
-Варианты (синонимы) не импортируются автоматически. Используйте [интерфейсы API версии 2](https://aka.ms/qnamaker-v2-apis), чтобы экспортировать варианты слов из старой базы знаний. Затем используйте [интерфейсы API версии 4](https://aka.ms/qnamaker-v4-apis), чтобы переместить эти варианты в новую базу знаний.
+Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [интерфейсы API версии 2](https://aka.ms/qnamaker-v2-apis), чтобы экспортировать варианты слов из старой базы знаний. Затем используйте [интерфейсы API версии 4](https://aka.ms/qnamaker-v4-apis), чтобы переместить эти варианты в новую базу знаний.
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights. 
 

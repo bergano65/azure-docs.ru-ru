@@ -5,14 +5,14 @@ services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/19/2019
+ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 44bd92568db3a762453e1d76a620e6c792cd8913
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: b6abb0048dcc722241a2cd87354224b0fd7fa2f9
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54476042"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234192"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 
@@ -131,6 +131,16 @@ ms.locfileid: "54476042"
 | [Шаблон Resource Manager. Создание учетной записи хранения BLOB-объектов и подписки](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-subscription-and-storage) | Развертывает учетную запись службы хранилища больших двоичных объектов Azure и создает подписку на события для этой учетной записи хранения. Он отправляет события в веб-перехватчик. |
 | [Реагирование на события хранилища BLOB-объектов](../storage/blobs/storage-blob-event-overview.md) | Общие сведения об интеграции хранилища BLOB-объектов со службой "Сетка событий". |
 | [Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов](event-schema-blob-storage.md) | Содержит сведения о полях в событиях хранилища BLOB-объектов. |
+
+## <a name="maps"></a>Карты
+Подпишитесь на события Azure Maps, чтобы реагировать на события геозоны. Например, приложение может делать уведомление на электронную почту каждый раз, когда устройство входит в геозону или выходит из нее.
+
+|Название  |ОПИСАНИЕ  |
+|---------|---------|
+| [Реагирование на события Azure Maps c помощью Сетки событий](../azure-maps/azure-maps-event-grid-integration.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Общие сведения об интеграции Azure Maps со службой "Сетка событий". |
+| [Руководство Настройка геозоны с использованием Azure Maps](../azure-maps/tutorial-geofence.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Это руководство поможет выполнить основные действия по настройке геозоны с помощью Azure Maps. Используйте Сетку событий Azure для выполнения потоковой передачи результатов геозоны и на их основе создавайте уведомления. |
+| [Схема событий службы "Сетка событий Azure" для подписок](event-schema-azure-maps.md) | Отображает поля в событиях службы Azure Maps. |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

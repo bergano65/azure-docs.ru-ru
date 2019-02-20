@@ -4,24 +4,24 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
-ms.openlocfilehash: 32d09722e8c396a64451018ac92fbc7bc072f461
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: ff7ba04271c150018f2c55b62e40542a686608cf
+ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50132822"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55905248"
 ---
 ## <a name="create-client"></a>Создание подключения клиента
 Создайте подключение клиента, создав объект `WindowsAzure.MobileServiceClient` .  Замените `appUrl` URL-адресом в своем мобильном приложении.
 
-```
+```javascript
 var client = WindowsAzure.MobileServiceClient(appUrl);
 ```
 
 ## <a name="table-reference"></a>Работа с таблицами
 Для доступа к данным или их обновления создайте ссылку на таблицу серверной части. Замените `tableName` именем таблицы.
 
-```
+```javascript
 var table = client.getTable(tableName);
 ```
 
@@ -39,7 +39,7 @@ var table = client.getTable(tableName);
 Ссылку на таблицу можно использовать для запроса данных на сервере.  Запросы осуществляются на языке типа LINQ.
 Чтобы вернуть все данные из таблицы, используйте следующий код:
 
-```
+```javascript
 /**
  * Process the results that are received by a call to table.read()
  *
@@ -72,7 +72,7 @@ table
 #### <a name="table-filter"></a>Фильтрация данных на сервере
 Используйте предложение `where` с ссылкой на таблицу.
 
-```
+```javascript
 table
     .where({ userId: user.userId, complete: false })
     .read()
@@ -81,7 +81,7 @@ table
 
 Также можно использовать функцию фильтрации объектов.  В этом случае переменная `this` присваивается текущему объекту фильтрации.  Представленный ниже код функционально эквивалентен предыдущему примеру:
 
-```
+```javascript
 function filterByUserId(currentUserId) {
     return this.userId === currentUserId && this.complete === false;
 }
@@ -95,7 +95,7 @@ table
 #### <a name="table-paging"></a>Разбиение данных по страницам
 Используйте методы `take()` и `skip()`.  Например, если вы хотите разбить на строки таблицу, содержащую 100 записей:
 
-```
+```javascript
 var totalCount = 0, pages = 0;
 
 // Step 1 - get the total number of records
@@ -123,7 +123,7 @@ function loadPage(pageNum) {
 #### <a name="sorting-data"></a>Практическое руководство. Возврат отсортированных данных
 Используйте методы запроса `.orderBy()` или `.orderByDescending()`:
 
-```
+```javascript
 table
     .orderBy('name')
     .read()
@@ -132,7 +132,7 @@ table
 
 Дополнительные сведения об объекте запроса см. в [документации по объектам запросов].
 
-### <a name="inserting"></a>Практическое руководство. Вставка данных
+### <a name="inserting"></a>Практическое руководство. Добавление данных
 Создайте объект JavaScript с соответствующей датой и асинхронно вызовите метод `table.insert()`:
 
 ```javascript
@@ -171,7 +171,7 @@ table
 ### <a name="deleting"></a>Практическое руководство. Удаление данных
 Для удаления записи вызовите метод `.del()`.  В ссылке на объект укажите идентификатор:
 
-```
+```javascript
 table
     .del({ id: '7163bc7a-70b2-4dde-98e9-8818969611bd' })
     .done(function () {

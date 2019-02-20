@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 01/28/2019
+ms.date: 02/13/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 94171da3c60de3efc4e2a234494816899c3d2f05
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 0afb8a09fa9780755bcfeef678b76e176f11b348
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55511859"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56246040"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -600,6 +600,13 @@ Update
 
 Развертывание обновлений на основе их классификации не поддерживается в CentOS без дополнительной настройки. Чтобы правильно развернуть обновления для CentOS, выберите все классификации для гарантированной установки обновлений. В SUSE выбор *только* "Другие обновления" в качестве классификации может привести к тому, что некоторые обновления безопасности также будут установлены, если сначала потребуются обновления безопасности, связанные с zypper (диспетчер пакетов) или его зависимостями. Это поведение является ограничением zypper. В некоторых случаях вам может потребоваться перезапустить развертывание обновлений. Для проверки обратитесь к журналу обновлений.
 
+## <a name="remove-a-vm-for-update-management"></a>Удаление виртуальной машины для Управления обновлениями
+
+Чтобы удалить виртуальную машину для Управления обновлениями, необходимо сделать следующее.
+
+* В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
+* Удалите [Microsoft Monitoring Agent](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или [Агент Log Analytics для Linux](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources).
+  
 ## <a name="troubleshoot"></a>Устранение неполадок
 
 Чтобы узнать, как устранить неполадки с решением управления обновлениями, ознакомьтесь с [этой статьей](troubleshoot/update-management.md).

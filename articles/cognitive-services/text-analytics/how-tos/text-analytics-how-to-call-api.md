@@ -3,19 +3,19 @@ title: Вызов API текстовой аналитики
 titlesuffix: Azure Cognitive Services
 description: Сведения о вызове REST API службы "Анализ текста".
 services: cognitive-services
-author: ashmaka
-manager: cgronlun
+author: aahill
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/01/2018
-ms.author: ashmaka
-ms.openlocfilehash: 579040c3a1466d431a9ae2105edbf02fa41570b6
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.date: 02/13/2019
+ms.author: aahi
+ms.openlocfilehash: 52c5cb640bfb861fb2da52ee711fe3955a169bcf
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55211594"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244034"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -30,9 +30,7 @@ ms.locfileid: "55211594"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API анализа текста**. 
-
-Вам необходима [конечная точка и ключ доступа](text-analytics-how-to-access-key.md), который автоматически создается при регистрации в Cognitive Services. 
+Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API Анализа текста, а также [конечную точку и ключ доступа](text-analytics-how-to-access-key.md), создаваемые автоматически при регистрации для использования Cognitive Services. 
 
 <a name="json-schema"></a>
 

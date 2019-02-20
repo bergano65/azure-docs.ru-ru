@@ -12,12 +12,13 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 04732d6541fd6132360d4c235b35979c70772922
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7f4946251cf72d7869ec5fc2f0fd844b9c06ac34
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42145932"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56161938"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
 
@@ -84,7 +85,7 @@ ms.locfileid: "42145932"
     </appSettings>
     ```
 
-- Только для Visual Studio 2017: в разделе `<appSettings>` добавлена следующая запись:
+- Только для Visual Studio 2017. В разделе `<appSettings>` добавлена следующая запись:
 
     ```xml
     <add key="ida:MetadataAddress" value="<domain URL + /federationmetadata/2007-06/federationmetadata.xml>" />

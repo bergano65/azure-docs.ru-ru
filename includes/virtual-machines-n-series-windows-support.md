@@ -5,15 +5,15 @@ services: virtual-machines-windows
 author: cynthn
 ms.service: virtual-machines-windows
 ms.topic: include
-ms.date: 11/27/2018
+ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 0276ccdec19e130da59cd215769d2ea17273f1c2
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 5fb92c95463a5c1766b543dfc7b08a49250beda7
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084044"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078630"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
@@ -36,5 +36,5 @@ ms.locfileid: "54084044"
 
 | ОС | Драйвер |
 | -------- |------------- |
-| Windows Server 2016<br/><br/>Windows 10 (до версии 1803) | [GRID 7 (411.81)](https://go.microsoft.com/fwlink/?linkid=874181) (EXE-файл) |
-| Windows Server 2012 R2 | [GRID 7 (411.81)](https://go.microsoft.com/fwlink/?linkid=874184) (EXE-файл)  |
+| Windows Server 2016<br/><br/>Windows 10 (до версии 1803) | [GRID 7.1 (412.16)](https://go.microsoft.com/fwlink/?linkid=874181) (EXE-файл) |
+| Windows Server 2012 R2 | [GRID 7.1 (412.16)](https://go.microsoft.com/fwlink/?linkid=874184) (EXE-файл)  |

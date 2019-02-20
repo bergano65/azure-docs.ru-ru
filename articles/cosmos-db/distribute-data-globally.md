@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/26/2018
-ms.openlocfilehash: 28c945223d225d7e91df1041bcbe02ee87b93c6a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 75940f9c3c8022c5445eb998b133a156dacde9b5
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55475063"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106874"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---overview"></a>Общие сведения о глобальном распределении данных с помощью Azure Cosmos DB
 
@@ -22,6 +22,8 @@ Azure Cosmos DB — это глобально распределенная сл
 Можно настраивать базы данных для глобального распределения и доступности в любом из регионов Azure. Чтобы уменьшить задержку, переместите данные ближе к расположению пользователя. Выбор необходимых регионов зависит от глобального охвата приложения и расположения пользователя. Azure Cosmos DB прозрачно реплицирует все данные в учетной записи во все регионы, связанные с этой учетной записью. Она предоставляет один образ системы глобально распределенной базы данных Azure Cosmos и контейнеров, что позволяет приложению использовать их для локальных операций чтения и записи. 
 
 С помощью Azure Cosmos DB можно в любое время добавлять или удалять регионы, связанные с учетной записью. Чтобы добавить или удалить регион, приложение не нужно приостанавливать или повторно развертывать. Оно все время высокодоступное благодаря возможностям множественной адресации, которые предоставляет служба.
+
+![Топология развертывания высокого уровня доступности](./media/distribute-data-globally/deployment-topology.png)
 
 ## <a name="key-benefits-of-global-distribution"></a>Ключевые преимущества глобального распределения
 
@@ -50,6 +52,7 @@ Azure Cosmos DB — это глобально распределенная сл
 Дополнительные сведения о глобальном распределении см. в следующих статьях.
 
 * [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
+* [Настройка нескольких источников в приложениях в Azure Cosmos DB](how-to-multi-master.md)
 * [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-clients-for-multi-homing)
 * [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 * [Создание настраиваемой политики разрешения конфликтов для учетных записей API SQL](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)

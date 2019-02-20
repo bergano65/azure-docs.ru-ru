@@ -11,19 +11,22 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 08/31/2018
+ms.date: 02/08/2019
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: b7b362cf711cc6424d1eb3daa19701ee22249741
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a458f62ec38503e401b3fb810dc7edc8059a7715
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55151521"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245581"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-pim"></a>Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM
 
-С помощью Azure Active Directory Privileged Identity Management (PIM) можно настроить роли, чтобы требовать утверждения при активации, а также выбрать одного или нескольких пользователей или групп в качестве делегированных утверждающих лиц. Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей ресурсов Azure.
+С помощью Azure Active Directory Privileged Identity Management (PIM) можно настроить роли, чтобы требовать утверждения при активации, а также выбрать одного или нескольких пользователей или групп в качестве делегированных утверждающих лиц. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
+
+Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей ресурсов Azure.
 
 ## <a name="view-pending-requests"></a>Просмотр ожидающих запросов
 

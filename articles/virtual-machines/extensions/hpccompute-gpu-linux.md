@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/09/2019
+ms.date: 02/11/2019
 ms.author: roiyz
-ms.openlocfilehash: 3e3d31f146fb49fdab8d955754572e4ea74dd3f6
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 9d9f634d494c3c88146ab1f243d17609cf30bbcd
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54198394"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100267"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -85,7 +85,7 @@ ms.locfileid: "54198394"
 | ИМЯ | ОПИСАНИЕ | По умолчанию | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | Логическое |
-| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: 410.71, 390.75, 390.57, 390.42.<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | строка |
+| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: 410.92, 410.71, 390.75, 390.57, 390.42.<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | строка |
 | installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | Да | true, false | Логическое |
 
 
@@ -123,7 +123,7 @@ ms.locfileid: "54198394"
 ### <a name="powershell"></a>PowerShell
 
 ```powershell
-Set-AzureRmVMExtension
+Set-AzVMExtension
     -ResourceGroupName "myResourceGroup" `
     -VMName "myVM" `
     -Location "southcentralus" `
@@ -159,7 +159,7 @@ az vm extension set `
 Сведения о состоянии развертывания расширения можно получить на портале Azure, а также с помощью Azure PowerShell или Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду.
 
 ```powershell
-Get-AzureRmVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
+Get-AzVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
 ```
 
 ```azurecli

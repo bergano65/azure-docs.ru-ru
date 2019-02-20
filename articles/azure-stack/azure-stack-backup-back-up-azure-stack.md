@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: 0fed6751d326c5da4431e953f7ded9c12688871f
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: c42490b7d46df77bffd13fdda02884704fb13b67
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250050"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210311"
 ---
 # <a name="back-up-azure-stack"></a>Резервное копирование для Azure Stack
 
@@ -121,4 +121,4 @@ ms.locfileid: "55250050"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-См. дополнительные сведения о рабочем процессе по восстановлению после потери данных. См. дополнительные сведения по [восстановлению после масштабной потери данных](azure-stack-backup-recover-data.md).
+Дополнительные сведения о рабочем процессе по [восстановлению после потери данных](azure-stack-backup-recover-data.md).

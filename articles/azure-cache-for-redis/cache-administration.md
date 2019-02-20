@@ -1,28 +1,30 @@
 ---
 title: Администрирование кэша Redis для Azure | Документация Майкрософт
 description: Узнайте, как выполнять задачи администрирования, такие как перезагрузка и планирование обновлений кэша Redis для Azure.
-services: azure-cache-for-redis
+services: cache
 documentationcenter: na
-author: wesmc7777
-manager: cfowler
+author: yegu-ms
+manager: jhubbard
 editor: tysonn
 ms.assetid: 8c915ae6-5322-4046-9938-8f7832403000
 ms.service: cache
 ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: azure-cache-for-redis
+ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 07/05/2017
-ms.author: wesmc
-ms.openlocfilehash: 0f86bd807bf7bf0d00ad659f86b6e1170f31074c
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.author: yegu
+ms.openlocfilehash: b75a2faa2030fc343cbabb17eb37b63c9ea34f70
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022059"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56232387"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="reboot"></a>Reboot
 Колонка **Перезагрузка** позволяет перезагрузить один или несколько узлов кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
@@ -92,7 +94,7 @@ ms.locfileid: "53022059"
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
-Минимальный период обслуживания по умолчанию для обновлений — пять часов. Это значение можно настроить на портале Azure, а также в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzureRmRedisCacheScheduleEntry](/powershell/module/azurerm.rediscache/new-azurermrediscachescheduleentry). Дополнительные сведения см. в разделе [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
+Минимальный период обслуживания по умолчанию для обновлений — пять часов. Это значение нельзя настроить на портале Azure, но вы можете сделать это в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry). Дополнительные сведения см. в разделе [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
 
 
 ## <a name="schedule-updates-faq"></a>Часто задаваемые вопросы о планировании обновлений
@@ -110,10 +112,10 @@ ms.locfileid: "53022059"
 ### <a name="can-i-managed-scheduled-updates-using-powershell-cli-or-other-management-tools"></a>Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других средств управления?
 Да, управлять запланированными обновлениями можно с помощью следующих командлетов PowerShell:
 
-* [Get-AzureRmRedisCachePatchSchedule](/powershell/module/azurerm.rediscache/get-azurermrediscachepatchschedule)
-* [New-AzureRmRedisCachePatchSchedule](/powershell/module/azurerm.rediscache/new-azurermrediscachepatchschedule)
-* [New-AzureRmRedisCacheScheduleEntry](/powershell/module/azurerm.rediscache/new-azurermrediscachescheduleentry)
-* [Remove-AzureRmRedisCachePatchSchedule](/powershell/module/azurerm.rediscache/remove-azurermrediscachepatchschedule)
+* [Get-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/get-azrediscachepatchschedule);
+* [New-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/new-azrediscachepatchschedule);
+* [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry);
+* [Remove-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/remove-azrediscachepatchschedule).
 
 ### <a name="what-pricing-tiers-can-use-the-schedule-updates-functionality"></a>Для каких ценовых категорий доступна функция планирования обновлений?
 Функция **планирования обновлений** доступна только в ценовой категории "Премиум".

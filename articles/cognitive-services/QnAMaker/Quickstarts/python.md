@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Сведения и примеры кода Python для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: ca0d8bcbf2d4b050560d1575ef690205eacca830
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: e732417daada836dc7de58fadf69e8edb4ebcb14
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55222173"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244646"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-python"></a>Использование REST API службы QnA Maker с Python
 <a name="HOLTop"></a>
@@ -35,8 +35,8 @@ ms.locfileid: "55222173"
 - [Удалять базу знаний.](#Delete)
 - [Получать текущие ключи конечной точки.](#GetKeys)
 - [Повторно создавать ключи текущей конечной точки.](#PutKeys)
-- [Получать текущий набор вариантов слов.](#GetAlterations)
-- [Заменять текущий набор вариантов слов.](#PutAlterations)
+- [Получать текущий набор вариантов слов без учета регистра.](#GetAlterations)
+- [Заменять текущий набор вариантов слов без учета регистра.](#PutAlterations)
 
 [!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-python-repo-note.md)]
 

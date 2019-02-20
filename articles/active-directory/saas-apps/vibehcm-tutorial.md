@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Vibe HCM| Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Vibe HCM| Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Vibe HCM.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 395f99c986e0a51e8dd2c440d258724e862f275c
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 79787045f0379e6b672350206740297000f298c5
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48020701"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56185576"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по интеграции Azure Active Directory с Vibe HCM
+# <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство. Интеграция Azure Active Directory с Vibe HCM
 
 В этом руководстве вы узнаете, как интегрировать Vibe HCM с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "48020701"
 
 - С помощью Azure AD вы можете контролировать доступ к Vibe HCM.
 - Вы можете включить автоматический вход пользователей в Vibe HCM (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "48020701"
 1. Добавление Vibe HCM из коллекции.
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-vibe-hcm-from-the-gallery"></a>Добавление Vibe HCM из коллекции
+## <a name="adding-vibe-hcm-from-the-gallery"></a>Добавление Vibe HCM из коллекции.
 Чтобы настроить интеграцию Vibe HCM с Azure AD, необходимо добавить Vibe HCM из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Vibe HCM из коллекции, выполните следующие действия:**
@@ -69,7 +70,7 @@ ms.locfileid: "48020701"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Vibe HCM**, выберите **Vibe HCM** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "48020701"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Vibe HCM](#create-a-vibe-hcm-test-user)** требуется для того, чтобы в Vibe HCM существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -136,7 +137,7 @@ ms.locfileid: "48020701"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/vibehcm-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/vibehcm-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -156,11 +157,11 @@ ms.locfileid: "48020701"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-vibe-hcm-test-user"></a>Создание тестового пользователя Vibe HCM
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Vibe HCM. Обратитесь в [службу поддержки Vibe HCM](mailto:support@vibehcm.com), чтобы добавить пользователей на платформу Vibe HCM. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Vibe HCM. Обратитесь в  [службу поддержки Vibe HCM](mailto:support@vibehcm.com), чтобы добавить пользователей на платформу Vibe HCM. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -197,7 +198,7 @@ ms.locfileid: "48020701"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Vibe HCM на панели доступа, вы автоматически войдете в приложение Vibe HCM.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

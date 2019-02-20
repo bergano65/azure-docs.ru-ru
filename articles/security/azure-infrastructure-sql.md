@@ -4,7 +4,7 @@ description: В этой статье представлено общее опи
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: MBaldwin
+manager: barbkess
 editor: TomSh
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
-ms.openlocfilehash: cce1ff1102c42bd1627caeba7b2c86432b228607
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: cd2ad16f910f5d2b3b801c8d54e9df7660751462
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39170860"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103954"
 ---
 # <a name="azure-sql-database-security-features"></a>Возможности безопасности Базы данных SQL Azure    
 База данных SQL Azure предоставляет службу реляционной базы данных в Azure. Чтобы защитить данные клиентов и обеспечить надежные функции безопасности, которые клиенты ожидают от службы реляционной базы данных, База данных SQL имеет свои собственные наборы возможностей обеспечения безопасности. Эти возможности основаны на элементах управления, которые унаследованы от Azure.

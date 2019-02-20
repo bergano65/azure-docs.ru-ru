@@ -1,6 +1,6 @@
 ---
-title: Выражение app() в запросах Azure Log Analytics | Документация Майкрософт
-description: Выражение app используется в запросах Log Analytics для получения данных из определенного приложения Application Insights, находящегося в той же или другой группе ресурсов либо в другой подписке.
+title: Выражение app() в запросах журнала Azure Monitor | Документация Майкрософт
+description: Выражение app используется в запросах журнала Azure Monitor для получения данных из определенного приложения Application Insights, находящегося в той же или другой группе ресурсов либо в другой подписке.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: bwren
-ms.openlocfilehash: 2d6f3517e988d6bd66ee9007e072ee87c71d1340
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: db92db315875348ff05ec3a34b1a9fa946479c27
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104666"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998541"
 ---
-# <a name="app-expression-in-log-analytics-query"></a>Выражение app() в запросах Log Analytics
+# <a name="app-expression-in-azure-monitor-query"></a>Выражение app() в запросах Azure Monitor
 
-Выражение `app` используется в запросах Log Analytics для получения данных из определенного приложения Application Insights, находящегося в той же или другой группе ресурсов либо в другой подписке. Его удобно использовать для добавления данных приложения в запрос Log Analytics и запрашивания данных из нескольких приложений с помощью запроса Application Insights.
+Выражение `app` используется в запросах Azure Monitor для получения данных из определенного приложения Application Insights, находящегося в той же или другой группе ресурсов либо в другой подписке. Его используют для добавления данных приложения в запрос журнала Azure Monitor и запрашивания данных из нескольких приложений с помощью запроса Application Insights.
 
 
 
@@ -78,5 +78,6 @@ union
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения см. в статье [об использовании выражения workspace](workspace-expression.md) для обозначения рабочей области Azure Log Analytics.
-- Дополнительные сведения о хранении [данных в Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+- Дополнительные сведения о рабочей области Log Analytics см. в статье [Выражение workspace() в запросах Log Analytics](workspace-expression.md).
+- Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+- Ознакомьтесь с полной документацией по языку запросов Data Explorer [здесь](/azure/kusto/query/).

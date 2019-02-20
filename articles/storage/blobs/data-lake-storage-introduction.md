@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 018171d4b2253c2cf7942f9f10424a9c695438b9
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 713905ac0c6dcd53f468fe7e9af7c565ee38ac66
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809442"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56106534"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
@@ -76,10 +76,10 @@ Data Lake Storage 2-го поколения — это дополнительн
 | платформа |  Поддерживаемые версии | Дополнительные сведения |
 | --- | --- | --- |
 | [HDInsight](https://azure.microsoft.com/services/hdinsight/) | 3.6+ | [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning?toc=%2Fen-us%2Fazure%2Fhdinsight%2Fstorm%2FTOC.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
-| [Hadoop](https://hadoop.apache.org/) | 2.7+ | [Архив выпусков Apache Hadoop](https://hadoop.apache.org/release.html) |
+| [Hadoop](https://hadoop.apache.org/) | 3.2+ | [Архив выпусков Apache Hadoop](https://hadoop.apache.org/release.html) |
 | [Cloudera](https://www.cloudera.com/) | 6.1+ | [Заметки о выпуске Cloudera Enterprise 6.x](https://www.cloudera.com/documentation/enterprise/6/release-notes/topics/rg_cdh_6_release_notes.html) |
-| [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 4.2+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
-|[Hortonworks](https://hortonworks.com/)| 2.6+ | [Документация по Hortonworks](https://docs.hortonworks.com/) |
+| [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 5.1+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
+|[Hortonworks](https://hortonworks.com/)| 3.1.x++ | [Настройка доступа к данным в облаке](https://docs.hortonworks.com/HDPDocuments/Cloudbreak/Cloudbreak-2.9.0/cloud-data-access/content/cb_configuring-access-to-adls2.html) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -87,5 +87,4 @@ Data Lake Storage 2-го поколения — это дополнительн
 
 -   [Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)
 -   [создать учетную запись хранения;](data-lake-storage-quickstart-create-account.md)
--   [Quickstart: Set up clusters in HDInsight](data-lake-storage-quickstart-create-connect-hdi-cluster.md) (Краткое руководство. Настройка кластеров HDInsight)
 -   [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](data-lake-storage-quickstart-create-databricks-account.md)

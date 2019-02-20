@@ -4,19 +4,19 @@ titleSuffix: Language Understanding - Azure Cognitive Services
 description: Среда выполнения контейнера LUIS настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 5437e81397182ede37ef98ad40b54c64f94e2092
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 281358e51ed8585e5deb407b2432ee3b7ee1537f
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55294729"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55983276"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -33,7 +33,7 @@ ms.locfileid: "55294729"
 |Да|[ApiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет |[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
 |Да|[Выставление счетов](#billing-setting)|Задает URI конечной точки для ресурса службы в Azure.|
-|Да|[Eula](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
+|Да|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |Нет |[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
 |Нет |[прокси-серверу HTTP](#http-proxy-credentials-settings)|Настраивает прокси-сервер HTTP для исходящих запросов.|
 |Нет |[Logging](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
@@ -59,7 +59,7 @@ ms.locfileid: "55294729"
 
 ## <a name="billing-setting"></a>Настройка выставления счетов
 
-Параметр `Billing` определяет URI конечной точки ресурса службы _Распознавание речи_ в Azure, который используется для контроля данных для выставления счетов для контейнера. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса службы _Распознавание речи_ в Azure.
+Параметр `Billing` определяет URI конечной точки ресурса службы _Распознавание речи_ в Azure, который используется для контроля данных для выставления счетов для контейнера. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса службы _Распознавание речи_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующих местах.
 

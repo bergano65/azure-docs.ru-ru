@@ -4,7 +4,7 @@ description: В этой статье показано, как с помощью
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 270b3272-7411-40a9-ad42-5acdbba31154
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/25/2017
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: c46faf2298ebaac4f40fb1d18cbfca83076e0d4f
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: dc5439c98b5abc69b6cb1ba144e015426bb887ce
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423558"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55996970"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -90,7 +90,7 @@ ms.locfileid: "39423558"
 ![Параметр "Активы"](./media/media-services-portal-content-protection/media-services-content-protection007.png)
 
 ### <a name="encrypt-with-aes-or-drm"></a>Шифрование с помощью AES или DRM
-При выборе для актива параметра **Шифровать** вы увидите два варианта шифрования: **AES** или **DRM**. 
+При выборе для актива параметра **Шифровать** доступны два варианта: **AES** и **DRM**. 
 
 #### <a name="aes"></a>AES
 Шифрование с помощью открытого ключа AES будет включено для всех протоколов потоковой передачи: Smooth Streaming, HLS и MPEG-DASH.
@@ -102,11 +102,11 @@ ms.locfileid: "39423558"
 
     a. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
-    b. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
+    б) **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
     c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 
-    d. **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
+    4.3. **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
     
     д. **FairPlay only with HLS** (FairPlay только с HLS): динамически шифрует поток HLS, используя FairPlay.
 

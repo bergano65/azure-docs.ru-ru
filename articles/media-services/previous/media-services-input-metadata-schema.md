@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/05/2018
+ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 3eea59eba9fc1fc79a6f72a61860ee7e66a7df5b
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 42e3464a190f296675b544e0087b664ff256f2fa
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994283"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56003250"
 ---
-# <a name="input-metadata"></a>Входные метаданные
+# <a name="input-metadata-legacy"></a>Входные метаданные (для прежних версий)
 
 Задание кодирования связано с входным ресурсом-контейнером (или ресурсами-контейнерами), в котором нужно выполнить эти задачи.  После выполнения задачи создается выходной ресурс-контейнер.  Выходной ресурс-контейнер содержит видео- и аудиофайлы, эскизы, манифест и т. д. Выходной актив также содержит файл с метаданными входного актива. Имя XML-файла метаданных имеет следующий формат: &lt;ИД_ресурса-контейнера&gt;_metadata.xml (например, 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml), где &lt;ИД_ресурса-контейнера&gt; — это значение AssetId для входного ресурса-контейнера.  
 

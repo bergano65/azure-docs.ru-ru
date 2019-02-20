@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ON24 Virtual Environment SAML Connection | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ON24 Virtual Environment SAML Connection.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 1ec18f0013a7fa640395a8b8bedd9df8b0924c3a
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0827895d58b0b7633ee4543495014c62b5394312
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49071117"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209495"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Руководство по интеграции Azure Active Directory с ON24 Virtual Environment SAML Connection
+# <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Руководство по Интеграция Azure Active Directory с ON24 Virtual Environment SAML Connection
 
 В этом руководстве описано, как интегрировать ON24 Virtual Environment SAML Connection с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "49071117"
 
 - С помощью Azure AD вы можете контролировать доступ к приложению ON24 Virtual Environment SAML Connection.
 - Вы можете включить автоматический вход пользователей в ON24 Virtual Environment SAML Connection (единый вход) под учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -51,7 +52,7 @@ ms.locfileid: "49071117"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление ON24 Virtual Environment SAML Connection из коллекции.
+1. Добавление ON24 Virtual Environment SAML Connection из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-on24-virtual-environment-saml-connection-from-the-gallery"></a>Добавление ON24 Virtual Environment SAML Connection из коллекции
@@ -86,7 +87,7 @@ ms.locfileid: "49071117"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя ON24 Virtual Environment SAML Connection](#create-an-on24-virtual-environment-saml-connection-test-user)** требуется для того, чтобы в ON24 Virtual Environment SAML Connection существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -111,7 +112,7 @@ ms.locfileid: "49071117"
 
     ![изображение](./media/on24-tutorial/b1-domains_and_urlsedit.png)
 
-5. Если вы хотите настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
+5. Чтобы настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
     ![изображение](./media/on24-tutorial/tutorial_on24_url.png)
 
@@ -133,7 +134,7 @@ ms.locfileid: "49071117"
 
     `SAMLQA-EliteAudience.on24.com`
  
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
     
      **URL-адрес рабочей среды**
     
@@ -157,7 +158,7 @@ ms.locfileid: "49071117"
 
     c. Щелкните **Задать дополнительные URL-адреса**. 
 
-    d. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://vshow.on24.com/vshow/ms_azure_saml_test?r=<ID>`
+    4.3. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://vshow.on24.com/vshow/ms_azure_saml_test?r=<ID>`
 
     д. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес: `https://vshow.on24.com/vshow/<INSTANCENAME>`
 
@@ -169,9 +170,9 @@ ms.locfileid: "49071117"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/on24-tutorial/d_users_and_groups.png)
 
@@ -179,14 +180,14 @@ ms.locfileid: "49071117"
 
     ![изображение](./media/on24-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/on24-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -194,7 +195,7 @@ ms.locfileid: "49071117"
  
 ### <a name="create-an-on24-virtual-environment-saml-connection-test-user"></a>Создание тестового пользователя в ON24 Virtual Environment SAML Connection
 
-В этом разделе вы создадите пользователя с именем Britta Simon в ON24 Virtual Environment SAML Connection. Обратитесь в [группу поддержки ON24 Virtual Environment SAML Connection](https://www.on24.com/about-us/support/), чтобы добавить пользователей на платформу ON24 Virtual Environment SAML Connection. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы создадите пользователя с именем Britta Simon в ON24 Virtual Environment SAML Connection. Обратитесь в  [техническую поддержку ON24 Virtual Environment SAML Connection](https://www.on24.com/about-us/support/), чтобы добавить пользователей на платформу ON24 Virtual Environment SAML Connection. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -225,7 +226,7 @@ ms.locfileid: "49071117"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку ON24 Virtual Environment SAML Connection на панели доступа, вы автоматически войдете в приложение ON24 Virtual Environment SAML Connection.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -13,18 +13,29 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 61bbc65c543801b0f783d01dfb803f47dbcf8a07
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 0d24fbe075316e492b638a2877439af270250d70
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215305"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234637"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
 Служба приложений Azure в Linux позволяет разработчикам быстро создавать, развертывать и масштабировать веб-приложения на основе пакетов Tomcat Java или Java Standard Edition (SE) в полностью управляемой службе под управлением Linux. Возможно развертывание приложений с подключаемыми модулями Maven из командной строки или в редакторах, например Visual Studio Code, Eclipse или IntelliJ.
 
 Это руководство содержит основные понятия и инструкции для разработчиков для Java, использующих службу приложений для Linux. Если вы раньше не использовали Службу приложений Azure для Linux, мы рекомендуем сначала ознакомиться с [кратким руководством по Java](quickstart-java.md). Ответы на общие вопросы об использовании службы приложений для Linux, не относящиеся к разработке для Java, можно найти в разделе [вопросов и ответов о службе приложений для Linux](app-service-linux-faq.md).
+
+## <a name="deploying-your-app"></a>Развертывание приложения
+
+Вы можете использовать модуль Maven для развертывания файлов JAR и WAR. Дополнительные сведения о модуле Maven см. в [Руководстве разработчика для Java для службы приложений в Linux](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?view=azure-java-stable). 
+
+Если вы не используете Maven, метод развертывания будет зависеть от типа вашего архива.
+
+- Чтобы развернуть файлы WAR в Tomcat, используйте конечную точку `/api/wardeploy/` для публикации файла архива. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#deploy-war-file).
+- Чтобы развернуть файлы JAR в образах Java SE, используйте конечную точку `/api/zipdeploy/` сайта Kudu. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#rest).
+
+Не развертывайте файлы WAR или JAR с помощью FTP. Средство FTP предназначено для передачи сценариев запуска, зависимостей или других файлов среды выполнения. Оно не является оптимальным решением для развертывания веб-приложений.
 
 ## <a name="logging-and-debugging-apps"></a>Ведение журнала и отладка приложений
 

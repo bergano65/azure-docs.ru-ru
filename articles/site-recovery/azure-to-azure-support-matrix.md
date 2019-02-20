@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 01/21/2019
 ms.author: raynew
-ms.openlocfilehash: 752be8270f3eb0bcc018cfcb7f87f30f5afbc60a
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 5f3d884720bce5777a358a27dc477eabd5263d0c
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753101"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245190"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 

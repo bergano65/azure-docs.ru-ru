@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/12/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6e0641f2d9427133f951ef63720b4efdac4defe5
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 60bed4786b61bc96b918511b63ae89daa1cba1c4
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409060"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56217434"
 ---
 # <a name="use-apache-hive-with-apache-hadoop-on-hdinsight-with-remote-desktop"></a>Использование Apache Hive с Apache Hadoop в HDInsight с помощью удаленного рабочего стола
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
@@ -103,10 +103,7 @@ ms.locfileid: "53409060"
 * [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
 * [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
 
-Если вы используете Tez с Hive, обратитесь к следующим документам для сведений об отладке:
-
-* [Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez](../hdinsight-debug-tez-ui.md)
-* [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md)
+Если вы используете Tez с Hive, сведения об отладке см. в статье [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md).
 
 [1]:apache-hadoop-visual-studio-tools-get-started.md
 

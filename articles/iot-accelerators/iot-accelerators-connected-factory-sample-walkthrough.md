@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 10/26/2018
 ms.author: dobett
-ms.openlocfilehash: 23b36fb647c2949dca1c5efe7f8194ec5a397965
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 19e340609e80998037938bdad59e9e6e74894bad
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140406"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56098312"
 ---
 # <a name="connected-factory-solution-accelerator-walkthrough"></a>Инструкция по работе с акселератором решений подключенной фабрики
 
@@ -46,7 +46,7 @@ ms.locfileid: "50140406"
 
 Решение использует [спецификацию публикации и подписки OPC UA](https://opcfoundation.org/news/opc-foundation-news/opc-foundation-announces-support-of-publish-subscribe-for-opc-ua/) для отправки данных телеметрии OPC UA в Центр Интернета вещей в формате JSON. В решении для этого используется модуль IoT Edge [издателя OPC](https://github.com/Azure/iot-edge-opc-publisher).
 
-Решение также содержит клиент OPC UA, интегрированный в веб-приложение, которое может устанавливать соединение с локальными серверами OPC UA. Клиент использует [обратный прокси-сервер](https://wikipedia.org/wiki/Reverse_proxy) и с помощью Центра Интернета вещей создает подключение без необходимости открывать порты в локальном брандмауэре. Эта модель связи называется [взаимодействием с поддержкой службы](https://blogs.msdn.microsoft.com/clemensv/2014/02/09/service-assisted-communication-for-connected-devices/). В решении для этого используется модуль IoT Edge [прокси OPC](https://github.com/Azure/iot-edge-opc-proxy/).
+Решение также содержит клиент OPC UA, интегрированный в веб-приложение, которое может устанавливать соединение с локальными серверами OPC UA. Клиент использует [обратный прокси-сервер](https://wikipedia.org/wiki/Reverse_proxy) и с помощью Центра Интернета вещей создает подключение без необходимости открывать порты в локальном брандмауэре. Эта модель связи называется взаимодействием с поддержкой службы. В решении для этого используется модуль IoT Edge [прокси OPC](https://github.com/Azure/iot-edge-opc-proxy/).
 
 
 ## <a name="simulation"></a>Моделирование

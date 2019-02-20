@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory со Shuccho Navi | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Shuccho Navi | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Shuccho Navi.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/12/2018
 ms.author: jeedes
-ms.openlocfilehash: f90af5b57fcb9ed7f02bba0a184dacb17570136b
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1709abdf1d5e90cb253e67b29c0e48f6aa29a712
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49312189"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209682"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-shuccho-navi"></a>Руководство по интеграции Azure Active Directory со Shuccho Navi
+# <a name="tutorial-azure-active-directory-integration-with-shuccho-navi"></a>Руководство. Интеграция Azure Active Directory со Shuccho Navi
 
 В этом руководстве описано, как интегрировать Shuccho Navi с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "49312189"
 
 - C помощью Azure AD вы можете контролировать доступ к Shuccho Navi.
 - Вы можете включить автоматический вход пользователей в Shuccho Navi (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -51,7 +52,7 @@ ms.locfileid: "49312189"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Shuccho Navi из коллекции.
+1. Добавление Shuccho Navi из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-shuccho-navi-from-the-gallery"></a>Добавление Shuccho Navi из коллекции
@@ -86,7 +87,7 @@ ms.locfileid: "49312189"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Shuccho Navi](#create-a-shuccho-navi-test-user)** требуется для создания пользователя Britta Simon в Shuccho Navi, связанного с соответствующим пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -103,7 +104,7 @@ ms.locfileid: "49312189"
 
     ![изображение](./media/shucchonavi-tutorial/b1_b2_saml_sso.png)
 
-3. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![изображение](./media/shucchonavi-tutorial/b1-domains_and_urlsedit.png)
 
@@ -116,7 +117,7 @@ ms.locfileid: "49312189"
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Shuccho Navi](mailto:sys_ntabtm@nta.co.jp).
  
-5. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML), в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML-файл метаданных федерации** и сохранить его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации** и сохранить его на компьютере.
 
     ![изображение](./media/shucchonavi-tutorial/tutorial_shucchonavi_certificate.png) 
 
@@ -124,9 +125,9 @@ ms.locfileid: "49312189"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем выберите **All users** (Все пользователи).
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/shucchonavi-tutorial/d_users_and_groups.png)
 
@@ -134,14 +135,14 @@ ms.locfileid: "49312189"
 
     ![изображение](./media/shucchonavi-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/shucchonavi-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -149,7 +150,7 @@ ms.locfileid: "49312189"
  
 ### <a name="create-a-shuccho-navi-test-user"></a>Создание тестового пользователя Shuccho Navi
 
-В этом разделе описано, как создать пользователя Britta Simon в Shuccho Navi. Обратитесь к [группе поддержки Shuccho Navi](mailto:sys_ntabtm@nta.co.jp), чтобы добавить пользователей на платформу Shuccho Navi. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Shuccho Navi. Обратитесь в  [службу поддержки Shuccho Navi](mailto:sys_ntabtm@nta.co.jp), чтобы добавить пользователей на платформу Shuccho Navi. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -180,7 +181,7 @@ ms.locfileid: "49312189"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Shuccho Navi" на панели доступа, вы автоматически войдете в приложение Shuccho Navi.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

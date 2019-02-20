@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 95dc004e1a4b34f1f3a3c547da4ea7cd35e8c753
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 851098840356c7d391c2b10fae1c18884f5dab02
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55821479"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236114"
 ---
 # <a name="manage-usage-and-costs-for-log-analytics"></a>Управление использованием и затратами для Log Analytics
 
@@ -116,6 +116,9 @@ ms.locfileid: "55821479"
 
 > [!NOTE]
 > Если рабочая область связана с учетной записью службы автоматизации, прежде чем вы сможете выбрать ценовую категорию *Автономная (за гигабайт)*, нужно удалить все решения **службы автоматизации и управления** и отменить привязку учетной записи автоматизации. В колонке рабочей области в разделе **Общие** щелкните **Решения**, чтобы просмотреть и удалить решения. Чтобы отменить привязку учетной записи службы автоматизации, щелкните ее имя в колонке **Ценовая категория**.
+
+> [!NOTE]
+> См. дополнительные сведения о (настройке ценовой категории с помощью ARM)[https://docs.microsoft.com/azure/azure-monitor/platform/template-workspace-configuration#create-a-log-analytics-workspace] и обеспечении успешного развертывания ARM для устаревшей и новой модели ценообразования. 
 
 
 ## <a name="troubleshooting-why-log-analytics-is-no-longer-collecting-data"></a>Почему Log Analytics больше не собирает данные

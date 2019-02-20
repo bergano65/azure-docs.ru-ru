@@ -12,24 +12,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: a9bf2240e6e60a3d2d80bf4829d74f1043024d7e
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 2c4a95bddea85d298ff9343bfd813d0b79b24b51
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239678"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56164028"
 ---
 # <a name="azure-stack-administration-basics"></a>Основы администрирования Azure Stack
-Если вы не знакомы с администрированием Azure Stack, вам необходимо знать несколько моментов. В этом руководстве представлен обзор роли оператора Azure Stack и сведения, которые необходимо сообщить пользователям, чтобы они сразу же начали продуктивно работать.
+Если вы не знакомы с администрированием Azure Stack, вам необходимо знать несколько моментов. В этой статье представлен обзор роли оператора Azure Stack и сведения, которые необходимо сообщить пользователям для повышения продуктивности их работы.
 
 ## <a name="understand-the-builds"></a>Сведения о сборках
 
 ### <a name="integrated-systems"></a>Интегрированные системы
 
-Для интегрированной системы Azure Stack обновленные версии Azure Stack распространяются через пакеты обновлений. Эти пакеты можно импортировать и применить, используя плитку "Обновления" на портале администрирования.
+Для интегрированной системы Azure Stack обновленные версии Azure Stack распространяются через пакеты обновлений. Эти пакеты можно импортировать и применить, используя плитку "Обновления" на портале администрирования. Обновление установки ASDK не поддерживается. 
  
 ### <a name="development-kit"></a>Комплект разработки
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 83e17d4988753e757d6e30299e648af083b0a1a5
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 07b29b05bc15f57d6fd3ec64ceaee812b912b0f6
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239168"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55977904"
 ---
 # <a name="track-experiments-and-training-metrics-in-azure-machine-learning"></a>Отслеживание экспериментов и метрик обучения в службе "Машинное обучение Azure"
 
@@ -31,7 +31,7 @@ ms.locfileid: "55239168"
 |----|:----|:----|
 |Скалярные значения |Функция:<br>`run.log(name, value, description='')`<br><br>Пример:<br>run.log("accuracy", 0.95) |Запишите числовое или строковое значение в выполнение с заданным именем. Запись метрики в выполнение приводит к тому, что метрика будет сохранена в записи о выполнении в эксперименте.  Одну и ту же метрику можно несколько раз записать в рамках выполнения. Результат будет считаться вектором этой метрики.|
 |Списки|Функция:<br>`run.log_list(name, value, description='')`<br><br>Пример:<br>run.log_list("accuracies", [0.6, 0.7, 0.87]) | Запишите список значений в выполнение с заданным именем.|
-|Строка|Функция:<br>`run.log_row(name, description=None, **kwargs)<br>Пример:<br>run.log_row("Y over X", x=1, y=0.4) | С помощью *log_row* создается метрика с несколькими столбцами, как описано в kwargs. Каждый именованный параметр создает столбец с указанным значением.  *log_row* можно вызвать один раз, чтобы записать произвольный кортеж, или несколько раз в цикле, чтобы создать полную таблицу.|
+|Строка|Функция:<br>`run.log_row(name, description=None, **kwargs)<br>Пример:<br>run.log_row("Y over X", x=1, y=0.4) |С помощью *log_row* создается метрика с несколькими столбцами, как описано в kwargs. Каждый именованный параметр создает столбец с указанным значением.  *log_row* можно вызвать один раз, чтобы записать произвольный кортеж, или несколько раз в цикле, чтобы создать полную таблицу.|
 |Таблица|Функция:<br>`run.log_table(name, value, description='')`<br><br>Пример:<br>run.log_table("Y over X", {"x":[1, 2, 3], "y":[0.6, 0.7, 0.89]}) | Запишите объект словаря в выполнение с заданным именем. |
 |Образы|Функция:<br>`run.log_image(name, path=None, plot=None)`<br><br>Пример:<br>run.log_image("ROC", plt) | Запишите изображение в запись о выполнении. Используйте log_image, чтобы записать файл изображения или график matplotlib в выполнение.  Эти изображения будут видимы, и их можно сравнить в записи о выполнении.|
 |Добавление тега к выполнению|Функция:<br>`run.tag(key, value=None)`<br><br>Пример:<br>run.tag("selected", "yes") | Добавление тега к выполнению с использованием строкового ключа и дополнительного значения строки.|
@@ -241,6 +241,12 @@ if r.get_status() not in ['Complete', 'Failed']:
     r.cancel()
 ```
 Обратите внимание, что в настоящее время только типы ScriptRun и PipelineRun поддерживают операцию отмены.
+
+Кроме того вы можете отменить выполнение в интерфейсе командной строки с помощью такой команды:
+```shell
+az ml run cancel -r <run_id> -p <project_path>
+```
+
 
 ## <a name="view-run-details"></a>Просмотр сведений о выполнении
 

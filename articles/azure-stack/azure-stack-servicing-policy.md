@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/11/2019
+ms.date: 02/09/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 1664e19f3a238b2986af4669c3853a54d7c7e328
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 6825524667c473496b62cecbce54f6e249742bae
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250829"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55977717"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -52,11 +52,10 @@ ms.locfileid: "55250829"
 Документацию по планированию обновлений и управлению ими, а также по определению текущей версии можно найти в разделе [Общие сведения об управлении обновлениями в Azure Stack](azure-stack-updates.md).
 
 Дополнительные сведения об определенном обновлении и инструкции по его скачиванию можно получить из заметок о выпуске этого обновления:
-
+- [Обновление 1901 для Azure Stack](azure-stack-update-1901.md)
 - [Обновление 1811 для Azure Stack](azure-stack-update-1811.md)
 - [Обновление 1809 для Azure Stack](azure-stack-update-1809.md)
 - [Обновление 1808 для Azure Stack](azure-stack-update-1808.md)
-- [Обновление 1807 для Azure Stack](azure-stack-update-1807.md)
 
 ## <a name="hotfixes"></a>Исправления
 

@@ -1,24 +1,24 @@
 ---
 title: Хранение ключей Azure Cosmos DB и получение доступа к ним в Key Vault
-description: Хранение строк подключения, ключей и универсальных кодов ресурса (URI) Azure Cosmos DB, а также получение доступа к ним в Key Vault.
-author: rafats
+description: Хранение строк подключения, ключей и конечных точек Azure Cosmos DB, а также получение доступа к ним в Azure Key Vault.
+author: rimman
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/21/2018
-ms.author: rafats
+ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 8a3863ff67549c77692f8629c2e7315aec94faf8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 36b0a2f18cf2917251a87405456980811af1bc3d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463316"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56242198"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 
-Используя Azure Cosmos DB для приложений, вы можете получать доступ к базе данных, коллекциям и документам с помощью URI конечной точки и ключа в файле конфигурации приложения.  Тем не менее помещать ключи и URI прямо в код приложения небезопасно, так как они доступны в текстовом формате всем пользователям. Нужно гарантировать, что URI и ключи доступны, но через защищенный механизм. Azure Key Vault может помочь в надежном хранении секретов приложения и в управлении ими.
+Используя Azure Cosmos DB для приложений, вы можете получать доступ к базе данных, коллекциям и документам с помощью конечной точки и ключа в файле конфигурации приложения.  Тем не менее помещать ключи и URI прямо в код приложения небезопасно, так как они доступны в текстовом формате всем пользователям. Нужно гарантировать доступность конечной точки и ключей через защищенный механизм. Azure Key Vault может помочь в надежном хранении секретов приложения и в управлении ими.
 
 Чтобы сохранить ключи доступа Azure Cosmos DB в Key Vault и читать их оттуда, требуются следующие шаги:
 

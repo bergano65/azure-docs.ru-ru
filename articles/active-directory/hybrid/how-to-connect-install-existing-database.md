@@ -16,12 +16,13 @@ ms.topic: conceptual
 ms.date: 08/30/2017
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: f863c4b115616ff709634f3c68955c3be3241707
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8254766568c54748ee3646dd627a102ffc86e743
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55494193"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56191356"
 ---
 # <a name="install-azure-ad-connect-using-an-existing-adsync-database"></a>Установка Azure AD Connect с помощью имеющейся базы данных ADSync
 Azure AD Connect требуется база данных SQL Server для хранения данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. Ранее при установке Azure AD Connect всегда создавалась база данных с именем ADSync. В Azure AD Connect версии 1.1.613.0 (или более поздней) имеется возможность установить Azure AD Connect, указав имеющуюся базу данных ADSync.
@@ -59,6 +60,10 @@ Azure AD Connect требуется база данных SQL Server для хр
 2.  По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
 ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db1.png)
 3.  Запустите новую командную строку или сеанс PowerShell. Перейдите к папке <drive>\Program Files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
+
+> [!NOTE]
+> Используйте параметр **/UseExistingDatabase**, только когда база данных уже содержит данные из предыдущей установки Azure AD Connect. Например, когда вы переходите с локальной базы данных на полную базу данных SQL Server или при перестройке сервера Azure AD Connect, если вы восстановили резервную копию SQL базы данных ADSync из более ранней установки Azure AD Connect. Если вы создали пустую базу данных и используете ее для установки, пропустите этот шаг.
+
 ![PowerShell](./media/how-to-connect-install-existing-database/db2.png)
 4.  Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
 ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db3.png)

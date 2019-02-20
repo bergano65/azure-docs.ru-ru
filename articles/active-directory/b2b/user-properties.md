@@ -5,17 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 12/5/2018
+ms.date: 02/12/2019
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: 7e12f6420238dc0d485f5d52324a0eca403a9d29
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d7ef27b1365078ea2c5a7b92338a6c10f8d05de0
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55074656"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209257"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -99,7 +100,7 @@ ms.locfileid: "55074656"
 ![Снятие ограничений для гостевых пользователей](media/user-properties/remove-guest-limitations.png)
 
 ## <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
-Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?** статьи [Гостевой доступ в группах Office 365](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6#PickTab=FAQ). 
+Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Can I make guest objects visible in the global address list?** (Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?) статьи [Manage guest access in Office 365 Groups](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?redirectSourcePath=%252fen-us%252farticle%252fmanage-guest-access-in-office-365-groups-9de497a9-2f5c-43d6-ae18-767f2e6fe6e0&view=o365-worldwide#faq) (Управление гостевым доступом в Группах Office 365). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

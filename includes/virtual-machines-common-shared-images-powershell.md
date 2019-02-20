@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/10/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 3ec5b9c6357f0d075ddd9b0fd5c8a88ee2846209
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 8770aaeff3e0d7b2d6a39f596aafebf15ed48b23
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54192774"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55985001"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -27,31 +27,31 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 Коллекция общих образов находится в предварительной версии, но прежде чем ее можно использовать, необходимо зарегистрировать компонент. Регистрация компонента коллекции общих образов происходит следующим образом.
 
 ```azurepowershell-interactive
-Register-AzureRmProviderFeature `
+Register-AzProviderFeature `
    -FeatureName GalleryPreview `
    -ProviderNamespace Microsoft.Compute
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
+Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 ```
 
 ## <a name="get-the-managed-image"></a>Получение управляемого образа
 
-Список образов, доступных в группе ресурсов, можно просмотреть с помощью команды [Get-AzureRmImage](/powershell/module/AzureRM.Compute/get-azurermimage). Зная имя образа и группу ресурсов, в которой он находится, можно снова выполнить команду `Get-AzureRmImage`, чтобы получить объект образа и сохранить его в переменной для последующего использования. Этот пример получает образ с именем *myImage* из группы ресурсов myResourceGroup и присваивает его переменной *$managedImage*. 
+Список образов, доступных в группе ресурсов, можно просмотреть с помощью команды [Get-AzImage](https://docs.microsoft.com/powershell/module/az.compute/get-azimage). Зная имя образа и группу ресурсов, в которой он находится, можно снова выполнить команду `Get-AzImage`, чтобы получить объект образа и сохранить его в переменной для последующего использования. Этот пример получает образ с именем *myImage* из группы ресурсов myResourceGroup и присваивает его переменной *$managedImage*. 
 
 ```azurepowershell-interactive
-$managedImage = Get-AzureRmImage `
+$managedImage = Get-AzImage `
    -ImageName myImage `
    -ResourceGroupName myResourceGroup
 ```
 
 ## <a name="create-an-image-gallery"></a>Создание коллекции образов 
 
-Коллекция образов является основным ресурсом, который позволяет обмен изображениями. Имена коллекций должны быть уникальным в пределах вашей подписки. Создайте коллекцию образов, используя команду [New-AzureRmGallery](/powershell/module/AzureRM.Compute/new-azurermgallery). В следующем примере показано, как создать коллекцию с именем *myGallery* в группе ресурсов *myGalleryRG*.
+Коллекция образов является основным ресурсом, который позволяет обмен изображениями. Имена коллекций должны быть уникальным в пределах вашей подписки. Создайте коллекцию образов, используя команду [New-AzGallery](https://docs.microsoft.com/powershell/module/az.compute/new-azgallery). В следующем примере показано, как создать коллекцию с именем *myGallery* в группе ресурсов *myGalleryRG*.
 
 ```azurepowershell-interactive
-$resourceGroup = New-AzureRMResourceGroup `
+$resourceGroup = New-AzResourceGroup `
    -Name 'myGalleryRG' `
    -Location 'West Central US'  
-$gallery = New-AzureRmGallery `
+$gallery = New-AzGallery `
    -GalleryName 'myGallery' `
    -ResourceGroupName $resourceGroup.ResourceGroupName `
    -Location $resourceGroup.Location `
@@ -60,10 +60,10 @@ $gallery = New-AzureRmGallery `
    
 ## <a name="create-an-image-definition"></a>Создание определения образа 
 
-Создайте определение образа коллекции с помощью команды [New-AzureRmGalleryImageDefinition](/powershell/module/azurerm.compute/new-azurermgalleryimageversion). В этом примере используется образ коллекции с именем *myGalleryImage*.
+Создайте определение образа коллекции с помощью команды [New-AzGalleryImageDefinition](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). В этом примере используется образ коллекции с именем *myGalleryImage*.
 
 ```azurepowershell-interactive
-$galleryImage = New-AzureRmGalleryImageDefinition `
+$galleryImage = New-AzGalleryImageDefinition `
    -GalleryName $gallery.Name `
    -ResourceGroupName $resourceGroup.ResourceGroupName `
    -Location $gallery.Location `
@@ -87,7 +87,7 @@ $galleryImage = New-AzureRmGalleryImageDefinition `
 
 ```powershell
 # The following should set the source image as myImage1 from the table above
-$vmConfig = Set-AzureRmVMSourceImage `
+$vmConfig = Set-AzVMSourceImage `
    -VM $vmConfig `
    -PublisherName myPublisher `
    -Offer myOffer `
@@ -98,14 +98,14 @@ $vmConfig = Set-AzureRmVMSourceImage `
 
 ##<a name="create-an-image-version"></a>Создание версии образа
 
-Создайте версию образа из управляемого образа с помощью команды [New-AzureRmGalleryImageVersion](/powershell/module/AzureRM.Compute/new-azurermgalleryimageversion). В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*.
+Создайте версию образа из управляемого образа с помощью команды [New-AzGalleryImageVersion](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*.
 
 
 ```azurepowershell-interactive
 $region1 = @{Name='South Central US';ReplicaCount=1}
 $region2 = @{Name='West Central US';ReplicaCount=2}
 $targetRegions = @($region1,$region2)
-$job = $imageVersion = New-AzureRmGalleryImageVersion `
+$job = $imageVersion = New-AzGalleryImageVersion `
    -GalleryImageDefinitionName $galleryImage.Name `
    -GalleryImageVersionName '1.0.0' `
    -GalleryName $gallery.Name `

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
 ms.author: daviste
-ms.openlocfilehash: 2b9aee39942562ec7f17c08c0fcf46143a7a25d3
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: d5c07e0d4aca8bda42ea9f78a1475ea7bb5861f0
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53587514"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55997029"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
 
@@ -93,9 +93,9 @@ ms.locfileid: "53587514"
 
 ![Снимок экрана, отображающий поля "Изменить"](./media/resource-group-insights/0009-failure-edit-graph.png)
 
-Отобразится базовый запрос Log Analytics, инициирующий визуализацию таблицы.
+Отобразится базовый запрос журнала, инициирующий визуализацию таблицы.
 
- ![Снимок экрана, отображающий окно запроса Log Analytics](./media/resource-group-insights/0010-failure-edit-query.png)
+ ![Снимок экрана с окном запроса журнала](./media/resource-group-insights/0010-failure-edit-query.png)
 
 Вы можете менять запрос напрямую или использовать его в качестве примера при создании собственной параметризованной книги.
 

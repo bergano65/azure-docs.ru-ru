@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: victorh
-ms.openlocfilehash: 37dd51a60d9ec6e018f58e2cfd593490d126670b
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 3dac11ac4409ddde5264307439533bd583d75a9d
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888657"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55993064"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI 
 
@@ -116,7 +116,7 @@ az network dns zone import -g <resource group> -n <zone name> -f <zone file name
     az network dns record-set list -g myresourcegroup -z contoso.com
     ```
 
-* Список записей можно вывести с помощью командлета PowerShell `Get-AzureRmDnsRecordSet`.
+* Список записей можно получить, используя команду Azure CLI `az network dns record-set ns list`.
 * С помощью `nslookup` можно проверить разрешение имен для записей. Так как зона еще не делегирована, нужно явно указать правильные серверы доменных имен Azure DNS. В примере ниже показано, как получить имена серверов доменных имен, назначенных зоне. В нем также показано, как запросить запись www с помощью команды `nslookup`.
 
     ```azurecli
@@ -188,6 +188,6 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 
 Чтобы экспортировать имеющуюся зону Azure DNS **contoso.com** (в группе ресурсов **myresourcegroup**) в файл **contoso.com.txt** (в текущей папке), выполните команду `azure network dns zone export`. Эта команда вызывает службу Azure DNS для перечисления наборов записей в зоне и экспорта результатов в файл зоны, совместимый с форматом BIND.
 
-    ```
-    az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
-    ```
+```
+az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
+```

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: reference
-ms.date: 12/24/2018
+ms.date: 02/11/2019
 ms.author: juliako
-ms.openlocfilehash: c5332cd2613bc64e3dda143381f37d27b54aa922
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: f9748d61b1aa336c5300dd414d53388f48a41368
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53789235"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243991"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -24,15 +24,13 @@ ms.locfileid: "53789235"
 
 Список примеров сценариев и руководства см. в статье [Источники событий в службе "Сетка событий Azure"](../../event-grid/event-sources.md#azure-subscriptions).
 
-## <a name="available-event-types"></a>Доступные типы событий
-
-### <a name="job-related-event-types"></a>Типы событий, связанных с заданием
+## <a name="job-related-event-types"></a>Типы событий, связанных с заданием
 
 Служба мультимедиа Microsoft Azure выдает следующие типы событий, связанных с **заданием**. Существует две категории событий, связанных с **заданиями**: Monitoring Job State Changes (Наблюдение за изменениями состояния задания) и Monitoring Job Output State Changes (Наблюдение за изменениями состояния выходных данных задания). 
 
 Вы можете зарегистрироваться на все события, подписавшись на событие JobStateChange. Или, вы можете подписаться на отдельные события (к примеру, такие конечные состояния как JobErrored, JobFinished и JobCanceled). 
 
-#### <a name="monitoring-job-state-changes"></a>Наблюдение за изменениями состояния задания
+### <a name="monitoring-job-state-changes"></a>Наблюдение за изменениями состояния задания
 
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
@@ -44,7 +42,9 @@ ms.locfileid: "53789235"
 | Microsoft.Media.JobCanceled| Получить событие, когда задание переходит в состояние отмененного. Это конечное состояние, которое включает в себя выходные данные задания.|
 | Microsoft.Media.JobErrored| Получить событие, когда задание переходит в состояние ошибки. Это конечное состояние, которое включает в себя выходные данные задания.|
 
-#### <a name="monitoring-job-output-state-changes"></a>Наблюдение за изменениями состояния выходных данных задания
+См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+
+### <a name="monitoring-job-output-state-changes"></a>Наблюдение за изменениями состояния выходных данных задания
 
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
@@ -56,11 +56,13 @@ ms.locfileid: "53789235"
 | Microsoft.Media.JobOutputCanceled| Получить событие, когда выходные данные задания переходят в состояние отмененных.|
 | Microsoft.Media.JobOutputErrored| Получить событие, когда выходные данные задания переходят в состояние ошибки.|
 
-### <a name="live-event-types"></a>Типы событий, связанных с прямой трансляцией
+См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+
+## <a name="live-event-types"></a>Типы событий, связанных с прямой трансляцией
 
 Служба мультимедиа также выдает следующие типы событий, связанных с **прямой трансляцией**. Существуют две категории для событий **прямой трансляции**: события уровня потока и события уровня дорожки. 
 
-#### <a name="stream-level-events"></a>События уровня потока
+### <a name="stream-level-events"></a>События уровня потока
 
 События уровня потока вызываются в потоке или подключении. Каждое событие имеет параметр `StreamId`, который идентифицирует подключение или поток. Каждый поток или подключение имеет одну или несколько дорожек разных типов. Например, одно подключение от кодировщика может иметь одну аудиодорожку и четыре видеодорожки. К типам событий потока относятся следующие:
 
@@ -70,7 +72,9 @@ ms.locfileid: "53789235"
 | Microsoft.Media.LiveEventEncoderConnected | Кодировщик устанавливает подключение с событием прямой трансляции. |
 | Microsoft.Media.LiveEventEncoderDisconnected | Отключение кодировщика. |
 
-#### <a name="track-level-events"></a>События уровня дорожки
+См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+
+### <a name="track-level-events"></a>События уровня дорожки
 
 События уровня дорожки вызываются в каждой дорожке. К типам событий дорожки относятся следующие:
 
@@ -83,7 +87,9 @@ ms.locfileid: "53789235"
 | Microsoft.Media.LiveEventIngestHeartbeat | Публикуется каждые 20 секунд для каждой дорожки, когда выполняется событие прямой трансляции. Предоставляет сводку работоспособности приема. |
 | Microsoft.Media.LiveEventTrackDiscontinuityDetected | Сервер мультимедиа обнаруживает разрыв во входящей дорожке. |
 
-## <a name="event-schemas-and-properties"></a>Схемы и свойства событий
+См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+
+## <a name="event-schema-examples"></a>Примеры схемы событий
 
 ### <a name="jobstatechange"></a>JobStateChange
 

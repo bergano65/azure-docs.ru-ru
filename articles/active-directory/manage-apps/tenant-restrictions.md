@@ -3,9 +3,8 @@ title: Управление доступом к облачным приложе�
 description: Как использовать ограничение клиентов для управления доступом пользователей к приложениям на основе их клиента Azure AD.
 services: active-directory
 documentationcenter: ''
-author: barbkess
-manager: daveba
-editor: yossib
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -13,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/15/2018
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: richagi
-ms.openlocfilehash: d6030c2bf169d74959279b9c05298db90138a94f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f2dc03b329ce8a4b42f44b958aee96654dafb098
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163098"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56197748"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использование ограничения клиентов для управления доступом к облачным приложениям SaaS
 
@@ -89,7 +89,7 @@ ms.locfileid: "55163098"
 
 ### <a name="end-user-experience"></a>Возможности для пользователей
 
-Например, пользователь находится в сети компании Contoso, но пытается получить доступ к экземпляру Fabrikam такого общего приложения SaaS, как Outlook в Интернете. Если Fabricam не является разрешенным клиентом для этого экземпляра Contoso, то пользователь увидит приведенную ниже страницу.
+Например, пользователь находится в сети компании Contoso, но пытается получить доступ к экземпляру Fabrikam такого общего приложения SaaS, как Outlook в Интернете. Если Fabrikam не является разрешенным клиентом для этого экземпляра Contoso, то пользователь увидит такую страницу.
 
 ![Страница "Доступ запрещен" для пользователей запрещенных клиентов](./media/tenant-restrictions/end-user-denied.png)
 

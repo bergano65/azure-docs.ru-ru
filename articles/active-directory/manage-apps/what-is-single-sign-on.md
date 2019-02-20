@@ -2,21 +2,22 @@
 title: Единый вход в приложения в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как выбрать способ единого входа при настройке приложений в Azure Active Directory (Azure AD). Используйте единый вход, чтобы пользователям не приходилось запоминать пароли для каждого приложения, а также чтобы упростить администрирование управления учетными записями.
 services: active-directory
-author: barbkess
-manager: daveba
+author: CelesteDG
+manager: mtillman
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/25/2019
-ms.author: barbkess
+ms.author: celested
 ms.reviewer: arvindh
-ms.openlocfilehash: 8216eb9c076111bfa70633b24f36ac97b0ee319a
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6984307dda58aeba840f2b6d08e84fb4f60cacc8
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55664035"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56163076"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 Единый вход обеспечивает безопасность и удобство при входе пользователей в приложения в Azure Active Directory (Azure AD). В этой статье описываются способы единого входа и представлены рекомендации, которые помогут выбрать наиболее подходящий метод единого входа при настройке приложений.
@@ -27,7 +28,7 @@ ms.locfileid: "55664035"
 
 ## <a name="choosing-a-single-sign-on-method"></a>Выбор способа единого входа
 
-Настроить приложение для единого входа можно несколькими способами. Выбор способа единого входа зависит от того, как приложение настраивается для аутентификации. 
+Настроить приложение для единого входа можно несколькими способами. Выбор способа единого входа зависит от того, как приложение настроено для аутентификации. 
 
 - В облачных приложениях может использоваться единый вход на основе OpenID Connect, OAuth, SAML или паролей либо связанный способ. Единый вход также можно отключить. 
 - В локальных приложениях можно использовать единый вход на основе паролей, встроенной проверки подлинности Windows или заголовков либо связанный способ, а также можно отключить единый вход. Локальные варианты работают в том случае, если настроен прокси приложения.
@@ -85,7 +86,7 @@ ms.locfileid: "55664035"
 Единый вход на основе пароля поддерживается для любого облачного приложения со страницей входа на базе HTML. Пользователь может использовать любой из следующих браузеров:
 
 - Internet Explorer 11 (в Windows 7 или более поздней версии);
-- Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии; 
+- Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии;
 - Chrome в Windows 7 или более поздней версии и в Mac OS X;
 - Firefox 26.0 или более поздней версии в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии.
 

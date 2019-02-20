@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: cb4b063d17555084f4065d7d7df931b96b95d9a4
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 29050be7587f88ce7a1f5370f50dcfa1ecd68306
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751486"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55990451"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -106,8 +106,7 @@ ms.locfileid: "55751486"
 
     Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
-Пользователи также могут завершить свой запрос аналитики на [странице Logs Analytics на портале Azure](../../azure-monitor/log-query/portals.md#log-analytics-page
-) и отправить его, чтобы создать оповещение с помощью кнопки "+ Новое правило генерации оповещений", а затем следовать инструкциям, начиная с шага 6, в приведенном выше руководстве.
+Пользователи также могут завершить свой запрос аналитики в [Log Analytics](../log-query/portals.md) и отправить его, чтобы создать оповещение с помощью кнопки "Задание оповещения", а затем следовать инструкциям, начиная с шага 6, в указанном выше руководстве.
 
  ![Настройка оповещения в Log Analytics](media/alerts-log/AlertsAnalyticsCreate.png)
 
@@ -317,12 +316,12 @@ ms.locfileid: "55751486"
 > Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
 
-В настоящее время в оповещениях журналов нет выделенных команд PowerShell или CLI, но, как показано ниже, можно использовать командлет PowerShell для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleScheduledQueryRule.json) в [разделе шаблонов ресурсов](#azure-resource-template-for-application-insights).
+Сейчас в оповещениях журналов нет выделенных команд PowerShell или CLI, но, как показано ниже, можно использовать командлет PowerShell для Azure Resource Manager в примере шаблона ресурсов, указанного выше (sampleScheduledQueryRule.json) в разделе "Шаблон ресурсов".
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName "contosoRG" -TemplateFile "D:\Azure\Templates\sampleScheduledQueryRule.json"
 ```
 
-Ниже показано использование команды Azure CLI для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleScheduledQueryRule.json) в [разделе шаблонов ресурсов](#azure-resource-template-for-application-insights).
+Ниже показано использование команды Azure CLI для Azure Resource Manager на примере шаблона ресурсов, указанного выше (sampleScheduledQueryRule.json) в разделе "Шаблон ресурсов".
 
 ```azurecli
 az group deployment create --resource-group contosoRG --template-file sampleScheduledQueryRule.json

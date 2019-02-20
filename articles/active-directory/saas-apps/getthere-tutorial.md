@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с GetThere | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с GetThere | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GetThere.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: jeedes
-ms.openlocfilehash: bcefa3966a6c854f02ce7b3a75306b3d1c888ecd
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b132da4a763490fa6c7a73c80f8e2e3a11b42e9b
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433108"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56173136"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-getthere"></a>Руководство по интеграции Azure Active Directory с GetThere
+# <a name="tutorial-azure-active-directory-integration-with-getthere"></a>Руководство. Интеграция Azure Active Directory с GetThere
 
 В этом руководстве описано, как интегрировать GetThere с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "49433108"
 
 - С помощью Azure AD вы можете контролировать доступ к GetThere.
 - Вы можете включить автоматический вход пользователей в GetThere (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "49433108"
 1. добавление GetThere из коллекции;
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-getthere-from-the-gallery"></a>Добавление GetThere из коллекции
+## <a name="adding-getthere-from-the-gallery"></a>добавление GetThere из коллекции;
 Чтобы настроить интеграцию GetThere с Azure AD, необходимо добавить GetThere из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить GetThere из коллекции, сделайте следующее:**
@@ -86,7 +87,7 @@ ms.locfileid: "49433108"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения GetThere](#create-a-getthere-test-user)** требуется для того, чтобы в GetThere существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -117,7 +118,7 @@ ms.locfileid: "49433108"
     | `getthere.com` |
     | `http://idp.getthere.com` |
 
-    b. В текстовом поле **URL-адрес ответа** введите любой из ниже перечисленных URL-адресов:
+    б) В текстовом поле **URL-адрес ответа** введите любой из ниже перечисленных URL-адресов:
     | |
     |--|
     | `https://wx1.getthere.net/login/saml/post.act` |
@@ -142,11 +143,11 @@ ms.locfileid: "49433108"
 
     ![изображение](./media/getthere-tutorial/i3-attribute.png)
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В текстовом поле **Пространство имен** введите пространство имен атрибута, показанное для этой строки.
 
-    d. В качестве источника выберите **Атрибут**.
+    4.3. В качестве источника выберите **Атрибут**.
 
     д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
@@ -160,11 +161,11 @@ ms.locfileid: "49433108"
 
     Обратите внимание, что URL-адрес может выглядеть следующим образом:
 
-    a. URL-адрес входа
+    a. URL-адрес входа.
 
-    b. Идентификатор Azure AD
+    б) Идентификатор Azure AD.
 
-    c. URL-адрес выхода
+    в) URL-адрес выхода.
 
     ![изображение](./media/getthere-tutorial/d1_samlsonfigure.png) 
 
@@ -172,9 +173,9 @@ ms.locfileid: "49433108"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/getthere-tutorial/d_users_and_groups.png)
 
@@ -182,14 +183,14 @@ ms.locfileid: "49433108"
 
     ![изображение](./media/getthere-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/getthere-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -197,7 +198,7 @@ ms.locfileid: "49433108"
  
 ### <a name="create-a-getthere-test-user"></a>Создание тестового пользователя GetThere
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении GetThere. Обратитесь в [службу поддержки клиентов GetThere](mailto:dataintegration@sabre.com), чтобы добавить пользователей на платформу GetThere. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении GetThere. Обратитесь в  [службу поддержки клиентов GetThere](mailto:dataintegration@sabre.com), чтобы добавить пользователей на платформу GetThere. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -228,7 +229,7 @@ ms.locfileid: "49433108"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент GetThere на панели доступа, вы автоматически войдете в приложение GetThere.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

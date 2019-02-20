@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать REST API преобразования речи в текст и текста в речь. Из этой статьи вы узнаете о вариантах авторизации, параметрах запроса, структуре запроса и получении ответа.
 services: cognitive-services
 author: erhopf
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: f369ab0ec8c460137f7e2b16a7f2696357d84c50
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 0ce33f20d44ac284655569ff66825533650b9d9c
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247448"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998962"
 ---
 # <a name="speech-service-rest-apis"></a>REST API службы "Речь"
 
@@ -66,7 +66,7 @@ Content-type: application/x-www-form-urlencoded
 Content-Length: 0
 ```
 
-Тело ответа содержит маркер доступа в формате JWT.
+Тело ответа содержит маркер доступа в формате JSON Web Token (JWT).
 
 #### <a name="powershell-sample"></a>Пример для PowerShell
 

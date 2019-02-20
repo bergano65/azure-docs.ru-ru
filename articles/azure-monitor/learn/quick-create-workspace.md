@@ -11,17 +11,17 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/23/2018
+ms.date: 02/07/2019
 ms.author: magoedte
-ms.openlocfilehash: dc68f00779d7b06b0498ffddbbee75a8396e952b
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: f5bc5edaccf07f4840a2db329fb5c3a0c51b7a6d
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186299"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55999442"
 ---
 # <a name="create-a-log-analytics-workspace-in-the-azure-portal"></a>Создание рабочей области Log Analytics на портале Azure
-На портале Azure вы можете настроить рабочую область Log Analytics — уникальную среду с собственными репозиторием данных, источниками данных и решениями.  Действия, описанные в этой статье, помогут вам настроить сбор данные из следующих источников:
+Используйте меню **Рабочие области Log Analytics**, чтобы создать рабочую область Log Analytics с помощью портала Azure. Рабочая область Log Analytics — это уникальная среда для данных журналов Azure Monitor. Каждая рабочая область имеет свои репозиторий данных и конфигурации, при этом источники данных и решения настроены для хранения данных в определенной рабочей области. Вам понадобится рабочая область Log Analytics, если вы собираете данные из следующих источников:
 
 * ресурсы Azure в подписке;
 * локальные компьютеры, которые отслеживает System Center Operations Manager;
@@ -30,8 +30,8 @@ ms.locfileid: "53186299"
 
 Сведения о других источниках, таких как виртуальные машины Azure и виртуальные машины Windows или Linux в вашей среде, см. в статьях ниже.
 
-*  [Сбор данных о виртуальных машинах Azure](../../azure-monitor/learn/quick-collect-azurevm.md) 
-*  [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../../azure-monitor/learn/quick-collect-linux-computer.md)
+*  [Сбор данных о виртуальных машинах Azure](../learn/quick-collect-azurevm.md) 
+*  [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../learn/quick-collect-linux-computer.md)
 *  [Настройка агента Log Analytics для компьютеров Windows в гибридной среде](quick-collect-windows-computer.md)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -40,11 +40,11 @@ ms.locfileid: "53186299"
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com). 
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
-1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
+1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
 
     ![Портал Azure](media/quick-create-workspace/azure-portal-01.png)
   
-2. Щелкните **Создать** и задайте следующие параметры:
+2. Щелкните **Добавить** и выберите параметры для следующих элементов:
 
   * Введите имя для новой **рабочей области Log Analytics**, например *DefaultLAWorkspace*. 
   * Выберите в раскрывающемся списке **подписку**, с которой нужно связать рабочую область, если выбранная по умолчанию не подходит.
@@ -61,7 +61,7 @@ ms.locfileid: "53186299"
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда рабочая область доступна, вы можете настроить сбор данных телеметрии для мониторинга, выполнять поиск по журналам для анализа этих данных, а также добавить решение по управлению для предоставления дополнительных данных и аналитических сведений. 
 
-* Сведения о том, как включить сбор данных из ресурсов Azure с помощью системы диагностики Azure или службы хранилища Azure, см. в статье [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md).  
-* Добавьте [System Center Operations Manager в качестве источника данных](../../azure-monitor/platform/om-agents.md), чтобы собирать данные с агентов, которые предоставляют отчеты группе управления Operations Manager, и хранить эти данные в рабочей области Log Analytics. 
-* Подключите [Configuration Manager](../../azure-monitor/platform/collect-sccm.md) для импорта данных с компьютеров, которые являются элементами коллекций в иерархии.  
-* Просмотрите список доступных [решений по управлению](https://docs.microsoft.com/azure/monitoring/monitoring-solutions-inventory?toc=%2fazure%2flog-analytics%2ftoc.json) и узнайте, как добавить решение в рабочую область или удалить его из нее.
+* Сведения о том, как включить сбор данных из ресурсов Azure с помощью системы диагностики Azure или службы хранилища Azure, см. в статье [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../platform/collect-azure-metrics-logs.md).  
+* Добавьте [System Center Operations Manager в качестве источника данных](../platform/om-agents.md), чтобы собирать данные с агентов, которые предоставляют отчеты группе управления Operations Manager, и хранить эти данные в рабочей области Log Analytics. 
+* Подключите [Configuration Manager](../platform/collect-sccm.md) для импорта данных с компьютеров, которые являются элементами коллекций в иерархии.  
+* Просмотрите список доступных [решений для мониторинга](../insights/solutions.md) и узнайте, как добавить решение в рабочую область или удалить его из нее.

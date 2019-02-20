@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 0b419343829e7e7bbbd31260b9cd0c8d93cd255d
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: fce3c2975e4b82583aa09a3862f704f05a363828
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54847821"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56210600"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
@@ -83,6 +83,9 @@ ms.locfileid: "54847821"
 Службы сообщений служебной шины (очереди, темы и подписки) позволяют приложениям отправлять сообщения размером до 256 КБ (ценовая категория "Стандартный") или до 1 МБ (ценовая категория "Премиум"). Если вы используете сообщения, размер которых превышает 1 МБ, используйте шаблон claim check (проверка требования), описанный в [этой записи блога](https://www.serverless360.com/blog/deal-with-large-service-bus-messages-using-claim-check-pattern).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
+### <a name="why-am-i-not-able-to-create-a-namespace-after-deleting-it-from-another-subscription"></a>Почему я не могу создать пространство имен после удаления его из другой подписки? 
+При удалении пространства имен из подписки подождите 4 часа, прежде чем создать его заново с тем же именем в другой подписке. Иначе можно получить сообщение об ошибке `Namespace already exists`. 
+
 ### <a name="what-are-some-of-the-exceptions-generated-by-azure-service-bus-apis-and-their-suggested-actions"></a>Какие исключения порождаются интерфейсами API служебной шины Azure? Какие действия можно предпринять в отношении этих исключений?
 Список возможных исключений служебной шины приведен в разделе [Общие сведения об исключениях][Exceptions overview].
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Meta Networks Connector | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Meta Networks Connector | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Meta Networks Connector.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: jeedes
-ms.openlocfilehash: a3f40624e51ef287d70bed547eba7ec9e0882b0e
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3c4d702a33742da5501be208154cbdd593fa0524
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43669201"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56199720"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство по интеграции Azure Active Directory с Meta Networks Connector
+# <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство. Интеграция Azure Active Directory с Meta Networks Connector
 
 В этом руководстве описано, как интегрировать Meta Networks Connector с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "43669201"
 
 - С помощью Azure AD вы можете контролировать доступ к Meta Networks Connector.
 - Вы можете включить автоматический вход пользователей в Meta Networks Connector (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "43669201"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
     
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
     
 1. В поле поиска введите **Meta Networks Connector**, выберите **Meta Networks Connector** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
     
@@ -86,7 +87,7 @@ ms.locfileid: "43669201"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя Meta Networks Connector](#create-a-meta-networks-connector-test-user)** требуется для того, чтобы в Meta Networks Connector существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -120,7 +121,7 @@ ms.locfileid: "43669201"
     1. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`.
     
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа, которые описываются далее в этом руководстве.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа, которые описываются далее в этом руководстве.
     
 1. Приложение Meta Networks Connector ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
     
@@ -213,7 +214,7 @@ ms.locfileid: "43669201"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
     
-    ![Кнопка "Azure Active Directory"](./media/metanetworksconnector-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/metanetworksconnector-tutorial/create_aaduser_01.png)
     
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
@@ -240,7 +241,7 @@ ms.locfileid: "43669201"
 Цель этого раздела — создать пользователя с именем Britta Simon в Meta Networks Connector. Приложение Meta Networks Connector поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Meta Networks Connector (если он еще не создан).
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки клиентов Meta Networks Connector](mailto:support@metanetworks.com).
+>Чтобы создать пользователя вручную, обратитесь в  [службу поддержки Meta Networks Connector](mailto:support@metanetworks.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -277,7 +278,7 @@ ms.locfileid: "43669201"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Meta Networks Connector" на панели доступа, вы автоматически войдете в приложение Meta Networks Connector.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

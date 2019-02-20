@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Fluxx Labs | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Fluxx Labs | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fluxx Labs.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 367310527619d4bdb5f84a80c567a9d83698846e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3c48e41318ff5ba189e4cc8b8529bb3b81911052
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433778"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56204395"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fluxx-labs"></a>Руководство по интеграции Azure Active Directory с Fluxx Labs
+# <a name="tutorial-azure-active-directory-integration-with-fluxx-labs"></a>Руководство. Интеграция Azure Active Directory с Fluxx Labs
 
 В этом руководстве описано, как интегрировать приложение Fluxx Labs с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39433778"
 
 - С помощью Azure AD вы можете контролировать доступ к Fluxx Labs.
 - Вы можете включить автоматический вход пользователей в Fluxx Labs (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39433778"
 
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Fluxx Labs**, выберите **Fluxx Labs** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "39433778"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения Fluxx Labs](#create-a-fluxx-labs-test-user)** требуется для того, чтобы во Fluxx Labs существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -116,7 +117,7 @@ ms.locfileid: "39433778"
     | Производство | `https://<subdomain>.fluxx.io` |
     | Предварительный этап | `https://<subdomain>.preprod.fluxxlabs.com`|
         
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
 
     | Среда | Шаблон URL-адреса|
     |-------------|------------|
@@ -124,7 +125,7 @@ ms.locfileid: "39433778"
     | Предварительный этап | `https://<subdomain>.preprod.fluxxlabs.com/auth/saml/callback`|
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Fluxx Labs](mailto:travis@fluxxlabs.com).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Fluxx Labs](mailto:travis@fluxxlabs.com).
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -154,11 +155,11 @@ ms.locfileid: "39433778"
 
     a. Установите флажок **SAML SSO** (Единый вход SAML).
 
-    b. В текстовом поле **Request Path** (Путь запроса) введите **/auth/saml**.
+    б) В текстовом поле **Request Path** (Путь запроса) введите **/auth/saml**.
 
     c. В текстовом поле **Callback Path** (Путь обратного вызова) введите **/auth/saml/callback**.
 
-    d. В поле **URL-адрес службы обработчика утверждений (URL-адрес единого входа)** введите значение **URL-адрес ответа**, указанное на портале Azure.
+    4.3. В поле **URL-адрес службы обработчика утверждений (URL-адрес единого входа)** введите значение **URL-адрес ответа**, указанное на портале Azure.
 
     д. В поле **Аудитория (идентификатор сущности поставщика удостоверений)** введите значение **Идентификатора**, указанное на портале Azure.
 
@@ -183,7 +184,7 @@ ms.locfileid: "39433778"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/fluxxlabs-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/fluxxlabs-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -203,7 +204,7 @@ ms.locfileid: "39433778"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-fluxx-labs-test-user"></a>Создание тестового пользователя Fluxx Labs
 
@@ -227,7 +228,7 @@ ms.locfileid: "39433778"
 
     a. Во Fluxx Labs в качестве уникального идентификатора для единого входа используется адрес электронной почты. Укажите в поле **SSO UID** (ИД пользователя для единого входа) адрес электронной почты пользователя, который используется в качестве имени для входа для единого входа.
 
-    b. Выберите команду **Сохранить**.
+    б) Выберите команду **Сохранить**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -264,7 +265,7 @@ ms.locfileid: "39433778"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Fluxx Labs" на панели доступа, вы автоматически войдете в приложение Fluxx Labs.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

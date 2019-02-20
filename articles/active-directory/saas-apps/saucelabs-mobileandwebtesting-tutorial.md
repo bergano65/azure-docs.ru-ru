@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Sauce Labs - Mobile and Web Testing | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Sauce Labs - Mobile and Web Testing.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: jeedes
-ms.openlocfilehash: 55d84256f408e80600308ede22dbaa903b070d90
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9c4e3d074ad241ec6add6fe43b77413ce283e389
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267245"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56207013"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sauce-labs---mobile-and-web-testing"></a>Руководство по интеграции Azure Active Directory с Sauce Labs - Mobile and Web Testing
+# <a name="tutorial-azure-active-directory-integration-with-sauce-labs---mobile-and-web-testing"></a>Руководство по Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing
 
 В этом руководстве описано, как интегрировать Sauce Labs - Mobile and Web Testing с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39267245"
 
 - С помощью Azure AD вы можете контролировать доступ к Sauce Labs - Mobile and Web Testing.
 - Вы можете настроить автоматический вход пользователей в Sauce Labs - Mobile and Web Testing (единый вход) под учетными записями Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39267245"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Sauce Labs - Mobile and Web Testing**, выберите **Sauce Labs - Mobile and Web Testing** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39267245"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя Sauce Labs - Mobile and Web Testing](#create-a-sauce-labs---mobile-and-web-testing-test-user)** требуется для того, чтобы в Sauce Labs - Mobile and Web Testing существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -135,7 +136,7 @@ ms.locfileid: "39267245"
 
     a. Нажмите кнопку **Browse** (Обзор) и передайте файл метаданных, скачанный из Azure AD.
 
-    b. Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
+    б) Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
 
     c. Щелкните **Save** (Сохранить).
 
@@ -149,7 +150,7 @@ ms.locfileid: "39267245"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -169,13 +170,13 @@ ms.locfileid: "39267245"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-sauce-labs---mobile-and-web-testing-test-user"></a>Создание тестового пользователя Sauce Labs - Mobile and Web Testing
 
 Цель этого раздела — создать в приложении Sauce Labs - Mobile and Web Testing пользователя с именем Britta Simon. Приложение Sauce Labs - Mobile and Web Testing поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь создается при попытке получить доступ к приложению Sauce Labs - Mobile and Web Testing (если он еще не создан).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки Sauce Labs - Mobile and Web Testing](mailto:support@saucelabs.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Sauce Labs - Mobile and Web Testing](mailto:support@saucelabs.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -212,7 +213,7 @@ ms.locfileid: "39267245"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Sauce Labs - Mobile and Web Testing" на панели доступа, вы автоматически войдете в приложение Sauce Labs - Mobile and Web Testing.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

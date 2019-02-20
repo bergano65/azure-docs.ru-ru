@@ -7,16 +7,16 @@ ms.date: 9/18/2018
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
-ms.openlocfilehash: 9689854d9a28debbfbcf908391806fffac6a2006
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 3c7feda32bf162499888720ce56edac55197abe4
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54450189"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005528"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
-Оповещения о метриках в Azure Monitor работают для основных многомерных метрик. Это могут быть метрики платформы, [пользовательские метрики](../../azure-monitor/platform/metrics-custom-overview.md), [популярные журналы из Log Analytics, преобразованные в метрики](../../azure-monitor/platform/alerts-metric-logs.md), стандартные метрики Application Insights. Для оповещений о метриках регулярно выполняется анализ, чтобы проверить соответствие условий одного временного ряда метрик или более. Если зафиксированы правильные значения, отправляется соответствующее уведомление. Функция оповещений о метриках работает с отслеживанием состояния, то есть уведомления отправляются только при изменении состояния.
+Оповещения о метриках в Azure Monitor работают для основных многомерных метрик. Это могут быть метрики платформы, [пользовательские метрики](../../azure-monitor/platform/metrics-custom-overview.md), [популярные журналы из Azure Monitor, преобразованные в метрики](../../azure-monitor/platform/alerts-metric-logs.md), стандартные метрики Application Insights. Для оповещений о метриках регулярно выполняется анализ, чтобы проверить соответствие условий одного временного ряда метрик или более. Если зафиксированы правильные значения, отправляется соответствующее уведомление. Функция оповещений о метриках работает с отслеживанием состояния, то есть уведомления отправляются только при изменении состояния.
 
 ## <a name="how-do-metric-alerts-work"></a>Как работают оповещения о метриках?
 

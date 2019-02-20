@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: twhitney, subramar
-ms.openlocfilehash: d49c16741f581b2ad09dc173e8380fdf77391dbe
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: deb8eacb1e9c55feba6b356eedc61ba57c3a6566
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51299067"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56110326"
 ---
 # <a name="import-a-certificate-file-into-a-container-running-on-service-fabric"></a>Импорт файла сертификата в контейнер под управлением Service Fabric
 
-Службы контейнеров можно защитить с помощью сертификата. Service Fabric предоставляет для служб в контейнере механизм, который обеспечивает доступ к сертификату, установленному на узлах кластера Windows или Linux (версии 5.7 или выше). Этот сертификат должен быть установлен в папку LocalMachine на всех узлах в кластере. Сведения о сертификате указываются в манифесте приложения после тега `ContainerHostPolicies`, как показано в следующем фрагменте кода:
+Службы контейнеров можно защитить с помощью сертификата. Service Fabric предоставляет для служб в контейнере механизм, который обеспечивает доступ к сертификату, установленному на узлах кластера Windows или Linux (версии 5.7 или выше). Этот сертификат необходимо установить в хранилище сертификатов LocalMachine на всех узлах кластера. Необходимо, чтобы закрытый ключ, соответствующий сертификату, был доступным и экспортируемым в Windows. Сведения о сертификате указываются в манифесте приложения после тега `ContainerHostPolicies`, как показано в следующем фрагменте кода:
 
 ```xml
   <ContainerHostPolicies CodePackageRef="NodeContainerService.Code">
@@ -31,7 +31,7 @@ ms.locfileid: "51299067"
     <CertificateRef Name="MyCert2" X509FindValue="[Thumbprint2]"/>
  ```
 
-В кластерах Windows при запуске приложения в среде выполнения считываются сертификаты, создается PFX-файл и пароль для каждого сертификата. Доступ к PFX-файлу и паролю в контейнере можно получить с помощью следующих переменных среды: 
+При запуске приложения для кластеров Windows среда выполнения экспортирует каждый указанный сертификат и соответствующий ему закрытый ключ в PFX-файл, защищенный случайно сгенерированным паролем. Доступ к PFX-файлу и паролю в контейнере можно получить с помощью следующих переменных среды: 
 
 * Certificates_ServicePackageName_CodePackageName_CertName_PFX
 * Certificates_ServicePackageName_CodePackageName_CertName_Password

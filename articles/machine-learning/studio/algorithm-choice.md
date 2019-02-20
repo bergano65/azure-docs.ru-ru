@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.date: 12/18/2017
-ms.openlocfilehash: 5edf301ffc87a17963c3c32c7ea1b559e0834cf7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 222891df5b54a8f2c3464fc3bddf9f6b32c28d36
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244476"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244799"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio"></a>Выбор алгоритмов студии машинного обучения Azure
 
@@ -41,12 +41,10 @@ ms.locfileid: "55244476"
 Иногда ни одна из ветвей алгоритма не подходит идеально. Эти рекомендации приближенные, поэтому не нужно беспокоиться о том, что они не являются точными.
 Некоторые специалисты по данным, с которыми я общался, говорили, что единственный надежный способ определить наилучший алгоритм — попробовать их все.
 
-Ниже приведен пример эксперимента из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com/), в котором используется несколько алгоритмов для одних и тех же данных, а затем сравниваются результаты: [Compare Multi-class Classifiers: Letter recognition](http://gallery.cortanaintelligence.com/Details/a635502fc98b402a890efe21cec65b92) (Сравнение многоклассовых классификаторов: распознавание букв).
+Ниже приведен пример эксперимента из [Коллекции решений ИИ Azure](http://gallery.azure.ai/), в котором используется несколько алгоритмов для одних и тех же данных, а затем сравниваются результаты: [Compare Multi-class Classifiers: Letter recognition](http://gallery.azure.ai/Details/a635502fc98b402a890efe21cec65b92) (Сравнение многоклассовых классификаторов: распознавание букв).
 
 > [!TIP]
-> Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).
-> 
-> 
+> Скачайте наглядную [инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами](basics-infographic-with-algorithm-examples.md), которые используются для ответа на распространенные вопросы о машинном обучении.
 
 ## <a name="flavors-of-machine-learning"></a>Разновидности машинного обучения
 
@@ -242,13 +240,11 @@ ms.locfileid: "55244476"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о скачиваемой инфографике с описанием алгоритмов и примерами см. в статье [Загружаемая инфографика по основам машинного обучения с примерами алгоритмов](basics-infographic-with-algorithm-examples.md).
+* Скачайте наглядную [инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами](basics-infographic-with-algorithm-examples.md), которые используются для ответа на распространенные вопросы о машинном обучении.
 
 * Список всех категорий алгоритмов, доступных в студии машинного обучения, см. в разделе [Инициализация модели](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/machine-learning-initialize-model) в справке по алгоритмам и модулям студии машинного обучения.
 
 * Полный список всех алгоритмов и модулей машинного обучения, доступных в студии машинного обучения, расположенных в алфавитном порядке, см. в разделе [Полный список модулей студии машинного обучения](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/a-z-module-list) в справке по алгоритмам и модулям студии машинного обучения.
-
-* Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).
 
 <!-- Media -->
 

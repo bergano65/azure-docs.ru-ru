@@ -11,16 +11,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2018
 ms.author: stewu
-ms.openlocfilehash: fff26406b036edeb48371b89f7e585160ddc58e0
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 318f2b550e19f4b7f56a7b8cc592d34644dca644
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123323"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235608"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
 
 В этой статье приведены свойства, настроив которые, можно повысить производительность при использовании PowerShell с Azure Data Lake Storage 1-го поколения.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="performance-related-properties"></a>Свойства, связанные с производительностью
 
@@ -33,13 +35,13 @@ ms.locfileid: "46123323"
 
 Эта команда скачивает файлы из Data Lake Storage 1-го поколения на локальный диск пользователя, используя 20 потоков на один файл и 100 одновременно скачиваемых файлов.
 
-    Export-AzureRmDataLakeStoreItem -AccountName <Data Lake Storage Gen1 account name> -PerFileThreadCount 20-ConcurrentFileCount 100 -Path /Powershell/100GB/ -Destination C:\Performance\ -Force -Recurse
+    Export-AzDataLakeStoreItem -AccountName <Data Lake Storage Gen1 account name> -PerFileThreadCount 20-ConcurrentFileCount 100 -Path /Powershell/100GB/ -Destination C:\Performance\ -Force -Recurse
 
 ## <a name="how-do-i-determine-the-value-for-these-properties"></a>Как определить значения этих свойств?
 
 Следующий вопрос, возможно, будет заключается в том, как определить, какое значение задать для свойств, связанных с производительностью. Ниже представлены некоторые полезные рекомендации.
 
-* **Шаг 1. Определение общего числа потоков.** Сначала нужно определить общее число потоков, которые следует использовать. Как правило, следует использовать 6 потоков для каждого физического ядра.
+* **Шаг 1. Определение общего числа потоков.** Сначала нужно определить общее количество потоков, которые следует использовать. Как правило, следует использовать 6 потоков для каждого физического ядра.
 
         Total thread count = total physical cores * 6
 
@@ -60,7 +62,7 @@ ms.locfileid: "46123323"
 
         PerFileThreadCount = 10 + ((10 GB - 2.5 GB) / 256 MB) = 40 threads
 
-* **Шаг 3. Вычисление значения параметра ConcurrentFilecount.** Используйте общее число потоков и значение параметра PerFileThreadCount, чтобы вычислить значение параметра ConcurrentFileCount по следующей формуле.
+* **Шаг 3. Вычисление значения параметра ConcurrentFilecount.** Используйте общее количество потоков и PerFileThreadCount, чтобы вычислить значение параметра ConcurrentFileCount по следующей формуле.
 
         Total thread count = PerFileThreadCount * ConcurrentFileCount
 
@@ -84,17 +86,17 @@ ms.locfileid: "46123323"
 
 ### <a name="limitation"></a>Ограничение
 
-* **Число файлов меньше, чем значение ConcurrentFileCount.** Если количество отправляемых файлов меньше вычисленного значения **ConcurrentFileCount**, следует уменьшить значение **ConcurrentFileCount** в соответствии с числом файлов. Все остальные потоки можно использовать для увеличения значения **PerFileThreadCount**.
+* **Число файлов меньше, чем значение параметра ConcurrentFileCount**. Если количество отправляемых файлов меньше вычисленного значения **ConcurrentFileCount**, следует уменьшить значение **ConcurrentFileCount** в соответствии с количеством файлов. Все остальные потоки можно использовать для увеличения значения **PerFileThreadCount**.
 
-* **Слишком много потоков.** Указав слишком большое число потоков, не увеличивая размер кластера, вы рискуете снизить производительность. При переключении контекста в ЦП могут возникнуть конфликты.
+* **Слишком много потоков**. Указав слишком большое количество потоков, не увеличивая размер кластера, вы рискуете снизить производительность. При переключении контекста в ЦП могут возникнуть конфликты.
 
-* **Недостаточный уровень параллелизма.** Если уровень параллелизма недостаточный, кластер может быть слишком мал. Вы можете увеличить количество узлов в кластере, что повысит уровень параллелизма.
+* **Недостаточный уровень параллелизма**. Если уровень параллелизма недостаточный, кластер может быть слишком мал. Вы можете увеличить количество узлов в кластере, что повысит уровень параллелизма.
 
-* **Ошибки регулирования.** При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
+* **Ошибки регулирования**. При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Использование Azure Data Lake Analytics с Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 

@@ -10,14 +10,14 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: dd517c4d-1701-4247-b83c-183c4d8d8aae
 ms.date: 09/08/2016
-ms.openlocfilehash: d37d5cb2b89b82bd9741dee0946b3a77d456b22a
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c9733346d091a6829bd5b42c80201df3a1357fe3
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405758"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56243116"
 ---
-# <a name="overview-b2b-enterprise-integration-scenarios-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обзор сценария интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
+# <a name="overview-b2b-enterprise-integration-scenarios-in-azure-logic-apps-with-enterprise-integration-pack"></a>Рассматриваемые действия: Сценарии интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 Для выполнения рабочих процессов "бизнес — бизнес" (B2B) и бесперебойного взаимодействия с Azure Logic Apps можно включить сценарии интеграции с помощью облачного решения корпорации Майкрософт, пакета интеграции Enterprise. Организации могут обмениваться электронными сообщениями, даже если они используют разные протоколы и форматы. Пакет преобразует разные форматы в единый формат, который корпоративные системы могут распознавать и обрабатывать. Организации могут обмениваться сообщениями с помощью стандартных протоколов, в том числе [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md) и [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md). Сообщения можно защитить с помощью шифрования и цифровой подписи.
 
@@ -33,7 +33,7 @@ ms.locfileid: "49405758"
 
 ## <a name="how-to-get-started-with-enterprise-integration"></a>Как приступить к работе с интеграцией Enterprise?
 
-Создавать приложения B2B и управлять ими с помощью пакета интеграции Enterprise можно в конструкторе приложений логики на **портале Azure**. Вы также можете управлять приложениями логики с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp "Разделы о PowerShell, посвященные приложениям логики").
+Создавать приложения B2B и управлять ими с помощью пакета интеграции Enterprise можно в конструкторе приложений логики на **портале Azure**. Вы также можете управлять приложениями логики с помощью [PowerShell](https://docs.microsoft.com/powershell/module/az.logicapp).
 
 Ниже описаны действия, которые необходимо выполнить перед созданием приложений на портале Azure.
 

@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 10/24/2018
+ms.date: 02/12/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: a948a40e638b5f6e042c62ab58c2b7b65a49cd4e
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 32032f729283cb3f2a786412b563fdee88ba4c8a
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741986"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56238573"
 ---
 Локально избыточное хранилище (LRS) обеспечивает устойчивость объектов как минимум на уровне 99,999999999 % (11 девяток) в течение заданного года. LRS обеспечивает эту устойчивость объектов с помощью репликации данных в единицу масштабирования хранилища. Единица масштабирования хранилища размещается в центре обработки данных, расположенном в регионе, в котором вы создали свою учетную запись хранения. Запрос на запись в учетную запись хранения LRS возвращается только после записи данных во все реплики. Каждая реплика хранится в отдельном домене сбоя и домене обновления в рамках одной единицы масштабирования хранилища.
 

@@ -15,12 +15,12 @@ ms.workload: multiple
 ms.date: 06/20/2017
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1bd9710edddde04f76c6373a7718519f8ede8a19
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: fdc2cd8f2218d50aa49d6b4eab2800eb6c92d9c9
+ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55730021"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55869098"
 ---
 # <a name="create-an-automatic-scaling-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы автоматического масштабирования для масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -376,7 +376,7 @@ await pool.CommitAsync();
 ```
 
 > [!IMPORTANT]
-> При создании пула с поддержкой автомасштабирования не указывайте параметр _targetDedicatedComputeNodes_ или _targetLowPriorityComputeNodes_ в вызове **CreatePool**. Вместо этого укажите свойства **AutoScaleEnabled** и **AutoScaleFormula** для пула. Значения этих свойств определяют целевое количество каждого типа узлов. Кроме того, чтобы вручную изменить размер пула с включенным автомасштабированием (например, с помощью [BatchClient.PoolOperations.ResizePoolAsync][net_poolops_resizepoolasync]), сначала **отключите** автомасштабирование пула, а затем измените его размер.
+> При создании пула с поддержкой автомасштабирования не указывайте параметр _targetDedicatedNodes_ или _targetLowPriorityNodes_ при вызове **CreatePool**. Вместо этого укажите свойства **AutoScaleEnabled** и **AutoScaleFormula** для пула. Значения этих свойств определяют целевое количество каждого типа узлов. Кроме того, чтобы вручную изменить размер пула с включенным автомасштабированием (например, с помощью [BatchClient.PoolOperations.ResizePoolAsync][net_poolops_resizepoolasync]), сначала **отключите** автомасштабирование пула, а затем измените его размер.
 >
 >
 
@@ -412,7 +412,7 @@ await pool.CommitAsync();
   * Если опустить формулу автомасштабирования или интервал оценки, в пакетной службе и далее будет использоваться текущее значение этого параметра.
 
 > [!NOTE]
-> Если во время создания пула в .NET было указано значение параметра *targetDedicatedComputeNodes* или *targetLowPriorityComputeNodes* метода **CreatePool** либо аналогичных параметров в другом языке, эти значения игнорируются во время вычисления формулы автомасштабирования.
+> Если во время создания пула в .NET было указано значение параметра *targetDedicatedNodes* или *targetLowPriorityNodes* метода **CreatePool** либо аналогичных параметров в другом языке, эти значения игнорируются во время вычисления формулы автомасштабирования.
 >
 >
 

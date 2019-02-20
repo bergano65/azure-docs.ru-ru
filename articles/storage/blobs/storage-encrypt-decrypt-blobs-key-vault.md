@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 09bb74ead0ff52cc7a70170357ddc54a91bf00d9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4552249e7d7dd79edbe885b3d615f5071aa694ee
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239413"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56116105"
 ---
 # <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault
 ## <a name="introduction"></a>Введение
@@ -43,7 +43,7 @@ ms.locfileid: "55239413"
 4. Зашифрованные данные затем передаются в службу хранилища Azure.
 
 ## <a name="set-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
-Для продолжения работы с этим учебником необходимо выполнить следующие действия, описанные в руководстве [Приступая к работе с хранилищем ключей Azure](../../key-vault/key-vault-get-started.md):
+Для продолжения работы с этим руководством необходимо выполнить следующие действия, описанные в руководстве по [работе с  Azure Key Vault](../../key-vault/key-vault-overview.md):
 
 * Создать хранилище ключей.
 * Добавить ключ или секрет в хранилище ключей.

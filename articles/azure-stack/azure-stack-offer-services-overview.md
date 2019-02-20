@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2018
+ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: unknown
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 20cddc74dd05e982cbd332a65f9a477559caece7
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4deb72eae7dffac6eabb34b18a9e879ac1fd8113
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244102"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56179966"
 ---
 # <a name="overview-of-offering-services-in-azure-stack"></a>Общие сведения о предложении служб в Azure Stack
 
@@ -42,7 +42,7 @@ ms.locfileid: "55244102"
 
 Можно даже комбинировать службы для интеграции и создания сложных решений для различных пользователей.
 
-Для доставки этих служб пользователям вам необходимо создавать [планы, предложения и квоты](azure-stack-plan-offer-quota-overview.md). Затем пользователи смогут подписываться на ваши предложения и использовать службы.
+Для доставки этих служб пользователям вам сперва необходимо создать [планы, предложения и квоты](azure-stack-plan-offer-quota-overview.md). Затем пользователи смогут подписываться на ваши предложения и использовать службы.
 
 ## <a name="plan-your-service-offers"></a>Планирование предложений служб
 

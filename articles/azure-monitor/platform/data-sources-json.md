@@ -1,6 +1,6 @@
 ---
 title: Сбор пользовательских данных JSON в Azure Monitor | Документация Майкрософт
-description: С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу Log Analytics.  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например curl, или один из более чем 300 подключаемых модулей FluentD. В этой статье описано, как настроить такой сбор данных.
+description: С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу Azure Monitor.  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например curl, или один из более чем 300 подключаемых модулей FluentD. В этой статье описано, как настроить такой сбор данных.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: magoedte
-ms.openlocfilehash: 36f914109d8d3879d23511cb37055d20db4d670c
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 8b03d6838e9d942da766e0c7aa4c2c2e161a6b14
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54105225"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55990127"
 ---
 # <a name="collecting-custom-json-data-sources-with-the-log-analytics-agent-for-linux-in-azure-monitor"></a>Сбор данных из пользовательских источников данных JSON с помощью агента Log Analytics для Linux в службу Azure Monitor
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-С помощью агента [Log Analytics](data-collection.md) для Linux можно собирать данные из пользовательских источников данных JSON в службу Log Analytics.  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например [curl](https://curl.haxx.se/), или один из более чем [300 подключаемых модулей FluentD](http://www.fluentd.org/plugins/all). В этой статье описано, как настроить такой сбор данных.
+С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу [Azure Monitor](data-collection.md).  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например [curl](https://curl.haxx.se/), или один из более чем [300 подключаемых модулей FluentD](http://www.fluentd.org/plugins/all). В этой статье описано, как настроить такой сбор данных.
 
 
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "54105225"
 
 ### <a name="configure-input-plugin"></a>Настройка входного подключаемого модуля
 
-Для сбора данных JSON в Log Analytics добавьте `oms.api.` в начало тега FluentD во входном подключаемом модуле.
+Для сбора данных JSON в Azure Monitor добавьте `oms.api.` в начало тега FluentD во входном подключаемом модуле.
 
 Например, ниже приведен отдельный файл конфигурации `exec-json.conf` в `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/`.  В нем используется подключаемый модуль FluentD `exec` для запуска команды curl каждые 30 секунд.  Выходные данные этой команды собираются с помощью выходного подключаемого модуля JSON.
 
@@ -87,9 +87,9 @@ ms.locfileid: "54105225"
     sudo /opt/microsoft/omsagent/bin/service_control restart 
 
 ## <a name="output"></a>Выходные данные
-Данные, собираемые в Log Analytics, будут иметь тип записи `<FLUENTD_TAG>_CL`.
+Данные, собираемые в Azure Monitor, будут иметь тип записи `<FLUENTD_TAG>_CL`.
 
-Например, пользовательский тег `tag oms.api.tomcat` в Log Analytics будет иметь тип записи `tomcat_CL`.  Для получения всех записей этого типа выполните следующий запрос журнала.
+Например, пользовательский тег `tag oms.api.tomcat` в Azure Monitor будет иметь тип записи `tomcat_CL`.  Для получения всех записей этого типа выполните следующий запрос журнала.
 
     Type=tomcat_CL
 
@@ -106,4 +106,4 @@ ms.locfileid: "54105225"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте больше о [запросах журнала](../../log-analytics/log-analytics-queries.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

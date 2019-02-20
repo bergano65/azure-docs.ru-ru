@@ -2,17 +2,17 @@
 title: Как использовать обратимое удаление в Azure Key Vault с помощью PowerShell
 description: Примеры использования обратимого удаления с фрагментами кода для PowerShell.
 author: bryanla
-manager: mbaldwin
+manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/01/2018
 ms.author: bryanla
-ms.openlocfilehash: c979d6eccd5c185d89252302b40fdd674e3c5916
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 70437403d3b78b7f8b9eef921c933a68793450da
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657507"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113589"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -23,14 +23,16 @@ ms.locfileid: "55657507"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Azure PowerShell 4.0.0 или более поздней версии. Если этот инструмент у вас не установлен, чтобы установить его и связать с подпиской Azure, прочитайте статью [Общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+- Azure PowerShell 1.0.0 или более поздней версии. Если этот инструмент у вас не установлен, чтобы установить его и связать с подпиской Azure, прочитайте [общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). 
 
 >[!NOTE]
 > В вашу среду вместо правильной версии **может** загрузиться устаревшая версия хранилища ключей выходных данных файла форматирования PowerShell. Мы планируем обновить версию PowerShell і добавить в нее нужные исправления выходных данных файла форматирования. После этого мы обновим эту статью. Чтобы устранить эту проблему сейчас, сделайте следующее:
-> - Если вы не видите, что свойство обратимого удаления (описанное в этом разделе) включено, используйте следующий запрос: `$vault = Get-AzureRmKeyVault -VaultName myvault; $vault.EnableSoftDelete`.
+> - Если вы не видите, что свойство обратимого удаления (описанное в этом разделе) включено, используйте следующий запрос: `$vault = Get-AzKeyVault -VaultName myvault; $vault.EnableSoftDelete`.
 
 
-Дополнительные сведения о Key Vault для PowerShell см. в [справочнике по PowerShell для Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/?view=azurermps-4.2.0).
+Дополнительные сведения о Key Vault для PowerShell см. в [справочнике по PowerShell для Azure Key Vault](/powershell/module/az.keyvault).
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -56,9 +58,9 @@ ms.locfileid: "55657507"
 Включите обратимое удаление для существующего хранилища ключей ContosoVault следующим образом. 
 
 ```powershell
-($resource = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -VaultName "ContosoVault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "ContosoVault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
 
-Set-AzureRmResource -resourceid $resource.ResourceId -Properties $resource.Properties
+Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 ```
 
 ### <a name="new-key-vault"></a>Новое хранилище ключей
@@ -66,7 +68,7 @@ Set-AzureRmResource -resourceid $resource.ResourceId -Properties $resource.Prope
 Обратимое удаление для нового хранилища ключей включается во время создания путем добавления флага --enable-soft-delete в команду create.
 
 ```powershell
-New-AzureRmKeyVault -Name "ContosoVault" -ResourceGroupName "ContosoRG" -Location "westus" -EnableSoftDelete
+New-AzKeyVault -Name "ContosoVault" -ResourceGroupName "ContosoRG" -Location "westus" -EnableSoftDelete
 ```
 
 ### <a name="verify-soft-delete-enablement"></a>Проверка включения обратимого удаления
@@ -74,10 +76,10 @@ New-AzureRmKeyVault -Name "ContosoVault" -ResourceGroupName "ContosoRG" -Locatio
 Чтобы проверить, включено ли обратимое удаление в хранилище ключей, выполните команду *show* и в выходных данных найдите атрибут "Soft Delete Enabled?" :
 
 ```powershell
-Get-AzureRmKeyVault -VaultName "ContosoVault"
+Get-AzKeyVault -VaultName "ContosoVault"
 ```
 
-## <a name="deleting-a-soft-delete-protected-key-vault"></a>Удаление обратимо удаленного защищенного хранилища ключей
+## <a name="deleting-a-soft-delete-protected-key-vault"></a>Удаление хранилища ключей, защищенного через обратимое удаление
 
 В зависимости от того, включено ли обратимое удаление, поведение команды для удаления хранилища ключей может изменяться.
 
@@ -85,7 +87,7 @@ Get-AzureRmKeyVault -VaultName "ContosoVault"
 >Если выполнить следующую команду для хранилища ключей, в котором не включено обратимое удаление, оно и его содержимое будут окончательно удалены без возможности восстановления.
 
 ```powershell
-Remove-AzureRmKeyVault -VaultName 'ContosoVault'
+Remove-AzKeyVault -VaultName 'ContosoVault'
 ```
 
 ### <a name="how-soft-delete-protects-your-key-vaults"></a>Как обратимое удаление защищает хранилище ключей
@@ -99,7 +101,7 @@ Remove-AzureRmKeyVault -VaultName 'ContosoVault'
 Чтобы просмотреть хранилища ключей в удаленном состоянии, связанные с вашей подпиской, можно выполнить следующую команду.
 
 ```powershell
-PS C:\> Get-AzureRmKeyVault -InRemovedState 
+PS C:\> Get-AzKeyVault -InRemovedState 
 ```
 
 - Поле *идентификатора* может использоваться для определения ресурса при восстановлении или очистке. 
@@ -111,7 +113,7 @@ PS C:\> Get-AzureRmKeyVault -InRemovedState
 Чтобы восстановить хранилище ключей, необходимо указать его имя, группу ресурсов и расположение. Запишите расположение и группу ресурсов удаленного хранилища ключей, так как их необходимо знать, чтобы осуществить восстановление.
 
 ```powershell
-Undo-AzureRmKeyVaultRemoval -VaultName ContosoVault -ResourceGroupName ContosoRG -Location westus
+Undo-AzKeyVaultRemoval -VaultName ContosoVault -ResourceGroupName ContosoRG -Location westus
 ```
 
 После восстановления хранилища ключей вы получите новый ресурс с исходным идентификатором ресурса хранилища ключей. Если исходная группа ресурсов удалена, то прежде чем выполнить восстановление, нужно создать группу ресурсов с тем же именем.
@@ -121,7 +123,7 @@ Undo-AzureRmKeyVaultRemoval -VaultName ContosoVault -ResourceGroupName ContosoRG
 Приведенная ниже команда удалит ключ ContosoFirstKey из хранилища ключей ContosoVault, в котором включено обратимое удаление:
 
 ```powershell
-Remove-AzureKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey
+Remove-AzKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey
 ```
 
 Если в хранилище ключей включено обратимое удаление, то удаленный ключ отображается как удаленный, пока вы явным образом не выведите список удаленных ключей. Большинство операций с ключом в удаленном состоянии завершится сбоем, кроме вывода списка удаленных ключей, их восстановления или удаления. 
@@ -129,7 +131,7 @@ Remove-AzureKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey
 Например, запросить список удаленных ключей в хранилище ключей можно с помощью следующей команды:
 
 ```powershell
-Get-AzureKeyVaultKey -VaultName ContosoVault -InRemovedState
+Get-AzKeyVaultKey -VaultName ContosoVault -InRemovedState
 ```
 
 ### <a name="transition-state"></a>Переходное состояние 
@@ -145,7 +147,7 @@ Get-AzureKeyVaultKey -VaultName ContosoVault -InRemovedState
 Чтобы восстановить обратимо удаленный ключ, выполните команду, указанную ниже:
 
 ```powershell
-Undo-AzureKeyVaultKeyRemoval -VaultName ContosoVault -Name ContosoFirstKey
+Undo-AzKeyVaultKeyRemoval -VaultName ContosoVault -Name ContosoFirstKey
 ```
 
 Чтобы удалить без возможности восстановления обратимо удаленный ключ, выполните команду, указанную ниже:
@@ -154,7 +156,7 @@ Undo-AzureKeyVaultKeyRemoval -VaultName ContosoVault -Name ContosoFirstKey
 > Очистка ключа приведет к его окончательному удалению, то есть восстановить его будет невозможно. 
 
 ```powershell
-Remove-AzureKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey -InRemovedState
+Remove-AzKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey -InRemovedState
 ```
 
 Для действий **восстановления** и **очистки** в политике доступа хранилища ключей заданы собственные разрешения. Чтобы пользователь или субъект-служба могли выполнить **восстановление** или **очистку**, они должны иметь соответствующее разрешение для этого ключа или секрета. По умолчанию разрешение на **очистку** не добавляется в политику доступа хранилища ключей, если для предоставления всех разрешений используется параметр "Все". Необходимо отдельно предоставить разрешение на **очистку**. 
@@ -164,7 +166,7 @@ Remove-AzureKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey -InRemoved
 Приведенная ниже команда предоставляет разрешение user@contoso.com на выполнение нескольких операций с ключами в *ContosoVault*, включая **очистку**.
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@contoso.com -PermissionsToKeys get,create,delete,list,update,import,backup,restore,recover,purge
+Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@contoso.com -PermissionsToKeys get,create,delete,list,update,import,backup,restore,recover,purge
 ```
 
 >[!NOTE] 
@@ -176,17 +178,17 @@ Set-AzureRmKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@
 
 - Удаление секрета SQLPassword. 
 ```powershell
-Remove-AzureKeyVaultSecret -VaultName ContosoVault -name SQLPassword
+Remove-AzKeyVaultSecret -VaultName ContosoVault -name SQLPassword
 ```
 
 - Вывод списка всех удаленных секретов в хранилище ключей. 
 ```powershell
-Get-AzureKeyVaultSecret -VaultName ContosoVault -InRemovedState
+Get-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState
 ```
 
 - Восстановление секрета в удаленном состоянии. 
 ```powershell
-Undo-AzureKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
+Undo-AzKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
 ```
 
 - Очистка секрета в удаленном состоянии. 
@@ -195,28 +197,28 @@ Undo-AzureKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
   > Очистка секрета приведет к его окончательному удалению, то есть восстановить его будет невозможно.
 
   ```powershell
-  Remove-AzureKeyVaultSecret -VaultName ContosoVault -InRemovedState -name SQLPassword
+  Remove-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState -name SQLPassword
   ```
 
-## <a name="purging-a-soft-delete-protected-key-vault"></a>Очистка обратимо удаленного защищенного хранилища ключей
+## <a name="purging-a-soft-delete-protected-key-vault"></a>Очистка хранилища ключей, защищенного через обратимое удаление
 
 > [!IMPORTANT]
 > Очистка хранилища ключей или одного из содержащихся в нем объектов приведет к его окончательному удалению, то есть восстановить его будет невозможно.
 
-Функция очистки используется, чтобы полностью удалить объект хранилища ключей или все хранилище ключей, которое было ранее обратимо удалено. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей с включенной функцией обратимого удаления, могут иметь несколько состояний:
-
+Функция очистки используется, чтобы полностью удалить объект хранилища ключей или все хранилище ключей, которое было ранее обратимо удалено. Как показано в предыдущем разделе, объекты, содержащиеся в хранилище ключей со включенной функцией обратимого удаления, могут быть в нескольких состояниях:
 - **Активные**: перед удалением.
 - **Обратимо удалены**: после удаления; можно отобразить в списке и вернуть обратно в активное состояние.
 - **Окончательно удалены**: после очистки; невозможно восстановить.
+
 
 То же самое относится и к хранилищу ключей. Чтобы окончательно удалить обратимо удаленное хранилище ключей и его содержимое, необходимо очистить само хранилище ключей.
 
 ### <a name="purging-a-key-vault"></a>Очистка хранилища ключей
 
-При очистке хранилища ключей все его содержимое, включая ключи, секреты и сертификаты, удаляется без возможности восстановления. Чтобы очистить обратимо удаленное хранилище ключей, используйте команду `Remove-AzureRmKeyVault` с параметром `-InRemovedState`, указав расположение удаленного хранилища ключей в аргументе `-Location location`. Расположение удаленного хранилища можно найти с помощью команды `Get-AzureRmKeyVault -InRemovedState`.
+При очистке хранилища ключей все его содержимое, включая ключи, секреты и сертификаты, удаляется без возможности восстановления. Чтобы очистить обратимо удаленное хранилище ключей, используйте команду `Remove-AzKeyVault` с параметром `-InRemovedState`, указав расположение удаленного хранилища ключей в аргументе `-Location location`. Расположение удаленного хранилища можно найти с помощью команды `Get-AzKeyVault -InRemovedState`.
 
 ```powershell
-Remove-AzureRmKeyVault -VaultName ContosoVault -InRemovedState -Location westus
+Remove-AzKeyVault -VaultName ContosoVault -InRemovedState -Location westus
 ```
 
 ### <a name="purge-permissions-required"></a>Необходимые разрешения на очистку
@@ -234,5 +236,5 @@ Remove-AzureRmKeyVault -VaultName ContosoVault -InRemovedState -Location westus
 ## <a name="other-resources"></a>Другие ресурсы:
 
 - Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](key-vault-ovw-soft-delete.md).
-- Общие сведения об использовании Azure Key Vault см. в разделе [Приступая к работе с хранилищем ключей Azure](key-vault-get-started.md).
+- Общие сведения об использовании Azure Key Vault см. в [этой статье](key-vault-overview.md).
 

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/06/2018
+ms.date: 02/08/2019
 ms.author: magoedte
-ms.openlocfilehash: f0f929e7caece9bea10dbe09e237bc987ad93d44
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 5a72c0539cabec3bf4168280c85a2afb92569b25
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54159661"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56234006"
 ---
 # <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера AKS с Azure Monitor для контейнеров 
 С помощью диаграмм производительности и состояния работоспособности в Azure Monitor для контейнеров вы можете наблюдать производительность кластеров Службы Azure Kubernetes (AKS) с двух перспектив: напрямую из кластера AKS или всех AKS кластеров в подписке из Azure Monitor. Просмотр Экземпляров контейнеров Azure (ACI) возможен также при мониторинге конкретного кластера AKS.
@@ -275,5 +275,5 @@ Log Analytics помогает выявлять тренды, диагности
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores" &#124; summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Ресурсы ЦП контейнера. | 
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes" &#124; summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Память контейнера |
 
-## <a name="alerting"></a>Оповещение
-Azure Monitor для контейнеров не содержит предопределенный набор оповещений, которые можно скопировать и изменить в соответствии со вспомогательными процессами и процедурами. Тем временем ознакомьтесь со статьей [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-log.md?toc=/azure/azure-monitor/toc.json) и узнайте, как создать собственный набор оповещений.  
+## <a name="next-steps"></a>Дополнительная информация
+Azure Monitor для контейнеров не содержит предопределенный набор оповещений, которые можно скопировать и изменить в соответствии со вспомогательными процессами и процедурами. Просмотрите статью о [создании оповещений производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md), чтобы научиться создавать рекомендуемые оповещения при высокой загрузке ЦП и памяти.  

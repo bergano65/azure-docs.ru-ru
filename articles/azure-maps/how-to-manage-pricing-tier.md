@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: f08f4cc74c37ccbbcab071b82f67f912e9fd9fd1
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: b87fa166f82e4302b5430064d41c293731c60470
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065330"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56107707"
 ---
 # <a name="manage-the-pricing-tier-of-your-azure-maps-account"></a>Управление ценовой категорией для учетной записи Azure Maps
 
@@ -34,7 +34,7 @@ ms.locfileid: "54065330"
 ![Изменение ценовой категории](./media/how-to-manage-pricing-tier/change-pricing-tier.png)
 
 > [!NOTE]
-> При повышении или понижении ценовой категории для учетной записи Azure Maps не требуется создавать новые ключи подписок.
+> При повышении или понижении ценовой категории для учетной записи Azure Maps не требуется создавать новые ключи подписок или идентификатор клиента (для проверки подлинности с помощью Azure Active Directory).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

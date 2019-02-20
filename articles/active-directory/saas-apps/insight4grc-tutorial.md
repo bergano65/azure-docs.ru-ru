@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Insight4GRC | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Insight4GRC | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insight4GRC.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2018
 ms.author: jeedes
-ms.openlocfilehash: 256550dc6aaa832599747f6fe39c2ca77ed3f8d7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 08913fc2e12026d70976ea8e2169c190378f4054
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441587"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56193736"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по интеграции Azure Active Directory с Insight4GRC
+# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по Интеграция Azure Active Directory с Insight4GRC
 
 В этом руководстве описано, как интегрировать Insight4GRC с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39441587"
 
 - С помощью Azure AD вы можете контролировать доступ к Insight4GRC.
 - Вы можете включить автоматический вход пользователей в Insight4GRC (единый вход) с использованием их учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39441587"
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 1. В поле поиска введите **Insight4GRC**, выберите **Insight4GRC** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39441587"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 1. **[Создание тестового пользователя приложения Insight4GRC](#create-an-insight4grc-test-user)** требуется для создания в Insight4GRC пользователя Britta Simon, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -109,7 +110,7 @@ ms.locfileid: "39441587"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.Insight4GRC.com/SAML`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -118,7 +119,7 @@ ms.locfileid: "39441587"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.Insight4GRC.com/Public/Login.aspx`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Insight4GRC](mailto:support.ss@rsmuk.com). 
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Insight4GRC](mailto:support.ss@rsmuk.com). 
 
 1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
@@ -140,7 +141,7 @@ ms.locfileid: "39441587"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/insight4grc-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/insight4grc-tutorial/create_aaduser_01.png)
 
 1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -160,14 +161,14 @@ ms.locfileid: "39441587"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-insight4grc-test-user"></a>Создание тестового пользователя Insight4GRC
 
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении Insight4GRC. Приложение Insight4GRC поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Insight4GRC (если он еще не создан).
 
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки клиентов Insight4GRC](mailto:support.ss@rsmuk.com).
+>Чтобы создать учетную запись пользователя вручную, обратитесь в  [группу поддержки клиентов Insight4GRC](mailto:support.ss@rsmuk.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +205,7 @@ ms.locfileid: "39441587"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Insight4GRC на панели доступа, вы автоматически войдете в приложение Insight4GRC.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

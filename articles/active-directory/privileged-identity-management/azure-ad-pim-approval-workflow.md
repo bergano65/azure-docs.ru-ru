@@ -12,19 +12,22 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 08/29/2018
+ms.date: 02/08/2019
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 1c4b3819494ecb4c0897edeb08e2ce45d867b626
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 68b0dba0280ce7875e797634a5dc2254cb889ad7
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55179078"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56244987"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-directory-roles-in-pim"></a>Подтверждение или отклонение запросов на роли каталога Azure AD в PIM
 
-С помощью Azure Active Directory Privileged Identity Management (PIM) можно настроить роли, чтобы требовать утверждения при активации, а также выбрать одного или нескольких пользователей или групп в качестве делегированных утверждающих лиц. Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей каталога Azure AD.
+С помощью Azure Active Directory Privileged Identity Management (PIM) можно настроить роли, чтобы требовать утверждения при активации, а также выбрать одного или нескольких пользователей или групп в качестве делегированных утверждающих лиц. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
+
+Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей каталога Azure AD.
 
 ## <a name="view-pending-requests"></a>Просмотр ожидающих запросов
 

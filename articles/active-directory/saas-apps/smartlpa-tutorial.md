@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SmartLPA | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory со SmartLPA | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SmartLPA.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jeedes
-ms.openlocfilehash: eedec7de74f3bdd7ae43d1b1eb0decd5fe83ebf6
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 01d8a52d18bb3b6317f843eb6c30061e730ee3ab
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075584"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56161090"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smartlpa"></a>Учебник. Интеграция Azure Active Directory с SmartLPA
+# <a name="tutorial-azure-active-directory-integration-with-smartlpa"></a>Руководство. Интеграция Azure Active Directory со SmartLPA
 
 В этом руководстве описано, как интегрировать SmartLPA с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "39075584"
 
 - С помощью Azure AD вы можете контролировать доступ к SmartLPA.
 - Вы можете включить автоматический вход пользователей в SmartLPA (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "39075584"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **SmartLPA**, выберите **SmartLPA** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39075584"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя SmartLPA](#create-a-smartlpa-test-user)** требуется для того, чтобы в SmartLPA существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "39075584"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<TENANTNAME>.smartlpa.com/<UNIQUE ID>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов SmartLPA](mailto:support@smartlpa.com).
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов SmartLPA](mailto:support@smartlpa.com).
 
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -138,7 +139,7 @@ ms.locfileid: "39075584"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/smartlpa-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/smartlpa-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -158,11 +159,11 @@ ms.locfileid: "39075584"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-smartlpa-test-user"></a>Создание тестового пользователя в SmartLPA
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении SmartLPA. Обратитесь в [службу поддержки SmartLPA](mailto:support@smartlpa.com), чтобы добавить пользователей на платформу SmartLPA. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении SmartLPA. Обратитесь в  [группу поддержки SmartLPA](mailto:support@smartlpa.com), чтобы добавить пользователей на платформу SmartLPA. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -199,7 +200,7 @@ ms.locfileid: "39075584"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент SmartLPA на панели доступа, вы автоматически войдете в приложение SmartLPA.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

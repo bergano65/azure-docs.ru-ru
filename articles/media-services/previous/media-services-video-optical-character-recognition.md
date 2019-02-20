@@ -4,7 +4,7 @@ description: Функция OCR (оптическое распознавание
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 307c196e-3a50-4f4b-b982-51585448ffc6
 ms.service: media-services
@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 12/09/2017
+ms.date: 02/08/2019
 ms.author: juliako
-ms.openlocfilehash: 4a7a31b4e0069d2c94a4f109248d7b02c0b03faa
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e0fa769c9071cac0dccaf43c312c80c7d097e345
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785903"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005137"
 ---
-# <a name="use-azure-media-analytics-to-convert-text-content-in-video-files-into-digital-text"></a>Преобразование текстового содержимого в видеофайлах в цифровой текст с помощью медиа-аналитики Azure
+# <a name="use-azure-media-analytics-to-convert-text-content-in-video-files-into-digital-text"></a>Преобразование текстового содержимого в видеофайлах в цифровой текст с помощью медиа-аналитики Azure  
 ## <a name="overview"></a>Обзор
 Если требуется извлечь текстовое содержимое из файлов видео и создать редактируемый и доступный для поиска цифровой текст, воспользуйтесь функцией OCR (оптическое распознавание символов) медиа-аналитики Azure. Этот обработчик мультимедиа Azure обнаруживает текстовое содержимое в видеофайлах и создает текстовые файлы, готовые к использованию. Функция OCR позволяет автоматически извлекать значимые метаданные из видеосигнала файлов мультимедиа.
 
@@ -32,7 +32,7 @@ ms.locfileid: "33785903"
 В этой статье приводятся сведения об **Azure Media OCR** и демонстрируется использование этого обработчика с пакетом SDK служб мультимедиа для .NET. Дополнительные сведения и примеры см. в [этом блоге](https://azure.microsoft.com/blog/announcing-video-ocr-public-preview-new-config/).
 
 ## <a name="ocr-input-files"></a>Входные файлы OCR
-Видеофайлы. Сейчас поддерживаются следующие форматы: MP4, MOV и WMV.
+Видеофайлы. В настоящее время поддерживаются следующие форматы: MP4, MOV и WMV.
 
 ## <a name="task-configuration"></a>Конфигурация задачи
 Конфигурация задачи (предустановка). При создании задачи с помощью **Azure Media OCR** необходимо указать предустановку конфигурации, используя JSON- или XML-файл. 
@@ -45,8 +45,8 @@ ms.locfileid: "33785903"
 | Имя атрибута | ОПИСАНИЕ |
 | --- | --- |
 |AdvancedOutput| Если для атрибута AdvancedOutput задано значение true, выходные данные JSON будут содержать данные о положении для каждого отдельного слова (помимо фраз и регионов). Если вы не хотите видеть эти сведения, установите значение false. По умолчанию для этого параметра используется значение false. Дополнительную информацию см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-ocr-simplified-output/).|
-| Язык |(необязательно) Описывает язык искомого текста. Возможные значения: AutoDetect (по умолчанию), Arabic, ChineseSimplified, ChineseTraditional, Czech Danish, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, SerbianCyrillic, SerbianLatin, Slovak, Spanish, Swedish, Turkish. |
-| TextOrientation |(необязательно) Описывает ориентацию искомого текста.  "Left" означает, что верхняя часть всех букв направлена влево.  По умолчанию текст (как, например, в книге) имеет ориентацию "Up", то есть буквы направлены вверх.  Возможные значения: AutoDetect (по умолчанию), Up, Right, Down, Left. |
+| Язык |(необязательно) Описывает язык искомого текста. Один из следующих типов: AutoDetect (по умолчанию), Arabic, ChineseSimplified, ChineseTraditional, Czech Danish, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, SerbianCyrillic, SerbianLatin, Slovak, Spanish, Swedish, Turkish. |
+| TextOrientation |(необязательно) Описывает ориентацию искомого текста.  "Left" означает, что верхняя часть всех букв направлена влево.  По умолчанию текст (как, например, в книге) имеет ориентацию "Up", то есть буквы направлены вверх.  Один из следующих типов: AutoDetect (по умолчанию), Up, Right, Down, Left. |
 | TimeInterval |(необязательно) Описывает частоту выборки.  Значение по умолчанию — каждые полсекунды.<br/>Формат JSON — ЧЧ:мм:сс.ССС (по умолчанию — 00:00:00.500)<br/>Формат XML: минимальная длительность W3C XSD (по умолчанию — PT0.5). |
 | DetectRegions |(необязательно) Массив объектов DetectRegion, указывающих области внутри видеокадра, в котором выполняется распознавание текста.<br/>Объект DetectRegion состоит из следующих четырех значений, которые являются целыми числами.<br/>Left — отступ в пикселях от левого края.<br/>Top — отступ в пикселях от верхнего края.<br/>Width — ширина области в пикселях.<br/>Height: высота области в пикселях. |
 

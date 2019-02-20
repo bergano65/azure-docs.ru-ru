@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 7445496154d9fc2ca59e19059a87a794a1361b14
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.date: 02/08/2019
+ms.openlocfilehash: c2a1cbd75bb3ff0b936d8dd801572e5783ab5260
+ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55747413"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56100930"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -35,7 +35,7 @@ ms.locfileid: "55747413"
 | **Функция SQL** | **Поддерживается в отдельных базах данных или эластичных пулах** | **В службе "База данных SQL Azure" / Управляемом экземпляре поддерживается** |
 | --- | --- | --- |
 | [Активная георепликация](sql-database-active-geo-replication.md) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Нет, см. статью [Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных](sql-database-auto-failover-group.md) |
-| [Группы автоматической отработки отказа](sql-database-auto-failover-group.md) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Да, см. статью [Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных](sql-database-auto-failover-group.md)|
+| [Группы автоматической отработки отказа](sql-database-auto-failover-group.md) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Да, [в общедоступной предварительной версии](sql-database-auto-failover-group.md)|
 | [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). |
 | [Группы доступности Always On](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [Присоединение базы данных](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database) | Нет  | Нет  |
@@ -52,7 +52,7 @@ ms.locfileid: "55747413"
 | [Запись измененных данных](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Нет  | Yes |
 | [отслеживание изменений;](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) | Yes |Yes |
 | [Параметры сортировки базы данных](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation) | Yes | Yes |
-| [Параметры сортировки сервера или экземпляра](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation) | Нет  | [Да (предварительная версия)](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
+| [Параметры сортировки сервера или экземпляра](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation) | Нет  | Да, [в общедоступной предварительной версии](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
 | [Индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) | Да, [в категориях "Премиум" и "Стандартный" (S3 и выше), а также в категориях "Общего назначения" и "Критически важный для бизнеса"](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview). |Yes |
 | [Среда CLR](https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts) | Нет  | Да. См. раздел [CLR](sql-database-managed-instance-transact-sql-information.md#clr) (Среда CLR). |
 | [автономные базы данных;](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | Yes | Yes |
@@ -110,7 +110,7 @@ ms.locfileid: "55747413"
 | [Управление на основе политик](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Нет  | Нет  |
 | [Предикаты](https://docs.microsoft.com/sql/t-sql/queries/predicates) | Yes | Yes |
 | [Уведомления о запросах](https://docs.microsoft.com/sql/relational-databases/native-client/features/working-with-query-notifications) | Нет  | Yes |
-| [Службы R](https://docs.microsoft.com/sql/advanced-analytics/r-services/sql-server-r-services) | Предварительная версия. Ознакомьтесь с разделом [Новые возможности службы обучения машины в SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services).  | Нет  |
+| [Службы R](https://docs.microsoft.com/sql/advanced-analytics/r-services/sql-server-r-services) | Да, [в общедоступной предварительной версии](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services)  | Нет  |
 | [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) | Нет  | Yes |
 | [Инструкции RESTORE](https://docs.microsoft.com/sql/t-sql/statements/restore-statements-for-restoring-recovering-and-managing-backups-transact-sql) | Нет  | Да. См. раздел [RESTORE statement](sql-database-managed-instance-transact-sql-information.md#restore-statement) (Инструкция RESTORE). |
 | [Восстановление базы данных из резервной копии](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases#restore-data-backups) | Только из создаваемых автоматически резервных копий. См. раздел [Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий](sql-database-recovery-using-backups.md). | Из создаваемых автоматически резервных копий (см. раздел [Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий](sql-database-recovery-using-backups.md)) и полных резервных копий (см. раздел [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование)). |
@@ -131,7 +131,7 @@ ms.locfileid: "55747413"
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Yes |
-| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Да (общедоступная предварительная версия) — [репликация с помощью управляемого экземпляра базы данных SQL](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
+| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-single-database-migrate.md) | Да, [в общедоступной предварительной версии](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
 | [SQL Server Reporting Services (SSRS)](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). |
 | [Хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) | Yes | Yes |
 | [Системные хранимые функции](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |

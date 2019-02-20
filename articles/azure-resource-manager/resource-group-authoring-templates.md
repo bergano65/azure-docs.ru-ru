@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/05/2019
+ms.date: 02/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 07f4d170ec6f9d71ea3ecdabd88f4438fb7c1c69
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 509c9cbe3a4c2f930c9fdfda186d78118dbe4b80
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745595"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56237855"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 
@@ -46,7 +46,7 @@ ms.locfileid: "55745595"
 | parameters |Нет  |Значения, которые предоставляются при выполнении развертывания для настройки развертывания ресурсов. |
 | variables |Нет  |Значения, используемые в виде фрагментов JSON в шаблоне для упрощения выражений на языке шаблона. |
 | functions |Нет  |Определяемые пользователем функции, доступные в шаблоне. |
-| ресурсов |Yes |Типы ресурсов, которые развертываются или обновляются в группе ресурсов. |
+| ресурсов |Yes |Типы ресурсов, которые развертываются или обновляются в группе ресурсов или подписке. |
 | outputs |Нет  |Значения, возвращаемые после развертывания. |
 
 Каждый элемент содержит свойства, которые можно задать. В следующем примере приведен полный синтаксис шаблона:
@@ -217,7 +217,7 @@ ms.locfileid: "55745595"
 При определении пользовательской функции есть несколько ограничений:
 
 * Функция не может обращаться к переменным.
-* Функция не может обращаться к параметрам шаблона. То есть [функция parameters](resource-group-template-functions-deployment.md#parameters) ограничена параметрами функции.
+* Функция может использовать только параметры, определенные в самой функции. При использовании функции [parameters](resource-group-template-functions-deployment.md#parameters) вместе с функцией, определенной пользователем, вы ограничены параметрами этой функции.
 * Функция не может вызывать другие функции, определяемые пользователем.
 * Для функции нельзя использовать [ссылочную функцию](resource-group-template-functions-resource.md#reference).
 * Для параметров этой функции нельзя задавать значения по умолчанию.
@@ -298,9 +298,23 @@ ms.locfileid: "55745595"
 
 Дополнительные сведения о выходных данных см. в описании [шаблонов Azure Resource Manager](resource-manager-templates-outputs.md).
 
-## <a name="comments"></a>Комментарии
+<a id="comments" />
 
-Есть несколько вариантов добавления комментариев к шаблону.
+## <a name="comments-and-metadata"></a>Комментарии и метаданные
+
+Есть несколько вариантов добавления комментариев и метаданных к шаблону.
+
+Вы можете добавить объект `metadata` практически в любом месте шаблона. Resource Manager игнорирует объект, но ваш редактор JSON может предупредить вас, что свойство недопустимо. Определите необходимые свойства в объекте.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "comments": "This template was developed for demonstration purposes.",
+        "author": "Example Name"
+    },
+```
 
 В разделе **параметров** добавьте объект `metadata` со свойством `description`.
 
@@ -342,18 +356,6 @@ ms.locfileid: "55745595"
     "properties": {}
   }
 ]
-```
-
-Вы можете добавить объект `metadata` практически в любом месте шаблона. Resource Manager игнорирует объект, но ваш редактор JSON может предупредить вас, что свойство недопустимо. Определите необходимые свойства в объекте.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "metadata": {
-        "comments": "This template was developed for demonstration purposes.",
-        "author": "Example Name"
-    },
 ```
 
 В разделе **выходных данных** добавьте объект метаданных в выходное значение.

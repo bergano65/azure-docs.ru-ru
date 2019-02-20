@@ -9,20 +9,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/24/2019
+ms.date: 02/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: c0875861a90080c649596880804fe6538c04bc51
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: f3ca140fd8606f60a07b71db32cf2d3987ed7860
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55497627"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233605"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
 При развертывании имеющихся ресурсов можно указать, что развертывание является добавочным или полным обновлением.  Основное различие между этими двумя режимами заключается в том, как Resource Manager обрабатывает ресурсы, имеющиеся в группе ресурсов, которых нет в шаблоне. По умолчанию используется пошаговый режим.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+Только шаблоны корневого уровня поддерживают режим полного развертывания. Для [связанных или вложенных шаблонов](resource-group-linked-templates.md) необходимо использовать добавочный режим. 
 
 ## <a name="incremental-and-complete-deployments"></a>Добавочные и полные развертывания
 
@@ -84,7 +84,7 @@ az group deployment create \
   --parameters storageAccountType=Standard_GRS
 ```
 
-При использовании [связанного или вложенного шаблона](resource-group-linked-templates.md) необходимо присвоить свойству `mode` значение `Incremental`. Только шаблоны корневого уровня поддерживают режим полного развертывания.
+В примере ниже показан связанный шаблон с добавочным режимом развертывания:
 
 ```json
 "resources": [

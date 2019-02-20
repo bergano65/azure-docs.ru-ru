@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: ad14d53c-fed4-478d-ab4b-6d2e14ff2097
 ms.topic: conceptual
 ms.date: 06/29/2018
-ms.openlocfilehash: 5bd8763234aa02d68b6e86b7259fcf10b4ef4ac5
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 4273828c9c2bdb75fcbc1de45da55c5a03dd615f
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684295"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56233588"
 ---
 # <a name="manage-azure-data-lake-analytics-using-azure-powershell"></a>Управление аналитикой озера данных Azure с помощью Azure PowerShell
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -23,13 +23,15 @@ ms.locfileid: "51684295"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Чтобы использовать PowerShell с Data Lake Analytics, получите следующие сведения: 
 
-* **Идентификатор подписки** — идентификатор подписки Azure, в которую входит ваша учетная запись Data Lake Analytics.
-* **Группа ресурсов** — имя группы ресурсов Azure, содержащей учетную запись Data Lake Analytics.
-* **Имя учетной записи** — имя вашей учетной записи Data Lake Analytics.
-* **Имя учетной записи Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
-* **Расположение** — расположение учетной записи Data Lake Analytics, например "Восточная часть США 2" или другое поддерживаемое расположение.
+* **Идентификатор подписки**: Идентификатор подписки Azure, в которую входит ваша учетная запись Data Lake Analytics.
+* **Группа ресурсов.** Имя группы ресурсов Azure, содержащей учетную запись Data Lake Analytics.
+* **Имя учетной записи Data Lake Analytics**. Имя учетной записи Data Lake Analytics.
+* **Имя учетной записи Data Lake Store по умолчанию**. Для каждой учетной записи Data Lake Analytics существует учетная запись Data Lake Store по умолчанию.
+* **Расположение.** Расположение учетной записи Data Lake Analytics, например "Восточная часть США 2" или другие поддерживаемые расположения.
 
 Во фрагментах кода PowerShell в этом руководстве для хранения такой информации используются следующие переменные:
 
@@ -49,22 +51,22 @@ $location = "<Location>"
 
 ```powershell
 # Using subscription id
-Connect-AzureRmAccount -SubscriptionId $subId
+Connect-AzAccount -SubscriptionId $subId
 
 # Using subscription name
-Connect-AzureRmAccount -SubscriptionName $subname 
+Connect-AzAccount -SubscriptionName $subname 
 ```
 
 ## <a name="saving-authentication-context"></a>Сохранение контекста аутентификации
 
-При использовании командлета `Connect-AzureRmAccount` всегда запрашиваются учетные данные. Избежать появления запроса можно с помощью следующих командлетов:
+При использовании командлета `Connect-AzAccount` всегда запрашиваются учетные данные. Избежать появления запроса можно с помощью следующих командлетов:
 
 ```powershell
 # Save login session information
-Save-AzureRmProfile -Path D:\profile.json  
+Save-AzAccounts -Path D:\profile.json  
 
 # Load login session information
-Select-AzureRmProfile -Path D:\profile.json 
+Select-AzAccounts -Path D:\profile.json 
 ```
 
 ### <a name="log-in-using-a-service-principal-identity-spi"></a>Вход с использованием удостоверения субъекта-службы (SPI)
@@ -76,7 +78,7 @@ $spi_appid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 $spi_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" 
 
 $pscredential = New-Object System.Management.Automation.PSCredential ($spi_appid, (ConvertTo-SecureString $spi_secret -AsPlainText -Force))
-Login-AzureRmAccount -ServicePrincipal -TenantId $tenantid -Credential $pscredential -Subscription $subid
+Login-AzAccount -ServicePrincipal -TenantId $tenantid -Credential $pscredential -Subscription $subid
 ```
 
 ## <a name="manage-accounts"></a>Управление учетными записями
@@ -336,7 +338,7 @@ $policies = Get-AdlAnalyticsComputePolicy -Account $adla
 Командлет `New-AdlAnalyticsComputePolicy` создает новую политику вычислений для учетной записи Data Lake Analytics. В этом примере для указанного пользователя устанавливается максимальное число единиц использования аналитики (50) и минимальный приоритет задания (250).
 
 ```powershell
-$userObjectId = (Get-AzureRmAdUser -SearchString "garymcdaniel@contoso.com").Id
+$userObjectId = (Get-AzAdUser -SearchString "garymcdaniel@contoso.com").Id
 
 New-AdlAnalyticsComputePolicy -Account $adla -Name "GaryMcDaniel" -ObjectId $objectId -ObjectType User -MaxDegreeOfParallelismPerJob 50 -MinPriorityPerJob 250
 ```
@@ -481,10 +483,10 @@ Set-AdlAnalyticsAccount -Name $adla -FirewallState Disabled
 
 ## <a name="working-with-azure"></a>Работа с Azure
 
-### <a name="get-details-of-azurerm-errors"></a>Получение сведений об ошибках AzureRm
+### <a name="get-error-details"></a>Получение сведений об ошибке
 
 ```powershell
-Resolve-AzureRmError -Last
+Resolve-AzError -Last
 ```
 
 ### <a name="verify-if-you-are-running-as-an-administrator-on-your-windows-machine"></a>Проверка того, что вход выполнен от имени администратора на компьютере Windows
@@ -505,7 +507,7 @@ function Test-Administrator
 ```powershell
 function Get-TenantIdFromSubscriptionName( [string] $subname )
 {
-    $sub = (Get-AzureRmSubscription -SubscriptionName $subname)
+    $sub = (Get-AzSubscription -SubscriptionName $subname)
     $sub.TenantId
 }
 
@@ -517,7 +519,7 @@ Get-TenantIdFromSubscriptionName "ADLTrainingMS"
 ```powershell
 function Get-TenantIdFromSubscriptionId( [string] $subid )
 {
-    $sub = (Get-AzureRmSubscription -SubscriptionId $subid)
+    $sub = (Get-AzSubscription -SubscriptionId $subid)
     $sub.TenantId
 }
 
@@ -541,7 +543,7 @@ Get-TenantIdFromDomain $domain
 ### <a name="list-all-your-subscriptions-and-tenant-ids"></a>Получение списка всех подписок и идентификаторов клиентов
 
 ```powershell
-$subs = Get-AzureRmSubscription
+$subs = Get-AzSubscription
 foreach ($sub in $subs)
 {
     Write-Host $sub.Name "("  $sub.Id ")"
@@ -551,7 +553,7 @@ foreach ($sub in $subs)
 
 ## <a name="create-a-data-lake-analytics-account-using-a-template"></a>Создание учетной записи Data Lake Analytics с помощью шаблона
 
-Вы также можете применить шаблон группы ресурсов Azure, используя следующий пример: [Create a Data Lake Analytics account using a template](https://github.com/Azure-Samples/data-lake-analytics-create-account-with-arm-template) (Создание учетной записи Data Lake Analytics с помощью шаблона).
+Вы также можете использовать шаблон группы ресурсов Azure с помощью следующего примера. [Создание учетной записи Data Lake Analytics с помощью шаблона](https://github.com/Azure-Samples/data-lake-analytics-create-account-with-arm-template)
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

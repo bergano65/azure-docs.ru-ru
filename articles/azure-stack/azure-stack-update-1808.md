@@ -16,12 +16,12 @@ ms.date: 01/24/2019
 ms.author: sethm
 ms.reviewer: justini
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: beb86284256d42c119e551a18d9900f0dad61b7f
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: d23aab91df2d69850e8c3b80a1c12f49f2e7fcaa
+ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247499"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55965177"
 ---
 # <a name="azure-stack-1808-update"></a>Обновление 1808 для Azure Stack
 
@@ -130,9 +130,9 @@ ms.locfileid: "55247499"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Прежде чем применить обновление 1808 для Azure Stack, установите [Обновление 1807](azure-stack-update-1807.md) для Azure Stack. 
+- Прежде чем применить обновление 1808 для Azure Stack, установите пакет обновления 1807 для Azure Stack. 
 
-- Установите последнюю доступную версию [обновления или исправления для версии 1807](azure-stack-update-1807.md#post-update-steps).  
+- Установите последнюю доступную версию обновления или исправления для версии 1807.  
   > [!TIP]  
   > Подпишитесь на следующие *каналы RRS* или *Atom*, чтобы следить за исправлениями Azure Stack:
   > - RRS: https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss … 

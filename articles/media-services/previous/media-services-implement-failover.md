@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2018
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 1477242e10918a9836ceea15d418fb462e193b1b
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: f367d6e1b1c545bcad0faf030a56fdec2ffafca2
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54811746"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55989071"
 ---
-# <a name="implement-failover-streaming-with-azure-media-services"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа Azure
+# <a name="implement-failover-streaming-with-media-services-legacy"></a>Реализация потоковой передачи отработки отказа с помощью Служб мультимедиа (для прежних версий)
 
 В этом пошаговом руководстве показано, как скопировать содержимое (большие двоичные объекты) из одного ресурса в другой для обработки избыточности потокового воспроизведения по запросу. В этом сценарии можно получить сведения о настройке сети доставки содержимого Azure для выполнения отработки отказа между двумя центрами обработки данных в случае сбоя в работе одного из них. В этом пошаговом руководстве пакет SDK и REST API служб мультимедиа Azure, а также пакет SDK службы хранилища Azure используются для демонстрации следующих задач:
 

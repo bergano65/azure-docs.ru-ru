@@ -4,17 +4,19 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 1/24/2019
+ms.date: 02/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: d9892b158eae1a83ab1f8eed6c14224e1d4bca15
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: add222c024b5adde1ce81d6ed7f725d0a691c232
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509921"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56246057"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md).
+
+Чтобы получить данные, идентичные значению файла с разделителями-запятыми, необходимо скачать [tag-support.csv](https://github.com/tfitzmac/resource-capabilities/blob/master/tag-support.csv).
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 | Тип ресурса | Поддержка тегов |
@@ -1123,13 +1125,14 @@ ms.locfileid: "55509921"
 | servers/communicationLinks | Нет  | 
 | servers/databases | Да (см. примечание ниже) | 
 | servers/encryptionProtector | Нет  | 
+| servers/firewallRules | Нет  | 
 | servers/keys | Нет  | 
 | servers/restorableDroppedDatabases | Нет  | 
 | servers/serviceobjectives | Нет  | 
 | servers/tdeCertificates | Нет  | 
 
 > [!NOTE]
-> База данных Master не поддерживает теги, но другие базы данных поддерживают их.
+> База данных Master не поддерживает теги, но другие базы данных, в том числе базы данных хранилища данных, поддерживают их.
 
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine

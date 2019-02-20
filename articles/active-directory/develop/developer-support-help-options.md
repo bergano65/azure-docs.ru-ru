@@ -1,6 +1,6 @@
 ---
-title: Возможности получения поддержки и справки для разработчиков служб удостоверений Azure | Документация Майкрософт
-description: Узнайте, как получить справку и поддержку по вопросам и проблемам разработки, возникающим при создании приложения, которое интегрируется со службами удостоверений Microsoft Azure (Azure Active Directory и MSA)
+title: Возможности получения поддержки и справки для разработчиков приложений Azure AD | Документация Майкрософт
+description: Узнайте, как получить справку и поддержку по вопросам и проблемам разработки, возникающим при создании приложения, которое интегрируется с удостоверениями Майкрософт (Azure Active Directory и учетной записью Майкрософт)
 services: active-directory
 documentationcenter: dev-center-name
 author: CelesteDG
@@ -13,94 +13,90 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/27/2017
+ms.date: 02/14/2019
 ms.author: celested
-ms.reviewer: andret
+ms.reviewer: jmprieur, dadobali
 ms.custom: aaddev
-ms.openlocfilehash: f8c5e5f598ab8566eacb594ff66b63ce3793f57f
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e9f3f041fa3b594b4b680d794c1c013e55b97da4
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55093204"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235195"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
-Независимо от задачи (начало интеграции с Azure Active Directory, службами удостоверений Майкрософт или API Microsoft Graph либо реализация в приложении новой функции) бывают случаи, когда разработчику требуется помощь сообщества или техническая поддержка. Эта статья поможет вам составить представление о том, как можно получить такую поддержку:
+Если вы только приступаете к интеграции с Azure Active Directory (Azure AD), удостоверениями Майкрософт или API Microsoft Graph либо реализуете в приложении новую возможность, бывают случаи, когда вам как разработчику требуется помощь сообщества или техническая поддержка. Эта статья поможет вам составить представление о том, как получить такую поддержку, в том числе:
 
 > [!div class="checklist"]
-> * Прежде всего нужно проверить, есть ли ответ на ваш вопрос в сообществе или документация по функции, которую вы намерены реализовать.
+> * Как узнать, есть ли ответ на ваш вопрос в сообществе, или найти документацию по возможности, которую вы намерены реализовать.
 > * В некоторых случаях для решения конкретной проблемы вам могут потребоваться наши средства технической поддержки.
-> * Если вам не удается найти нужный ответ, можно задать вопрос на сайте *Stack Overflow*.
+> * Если вам не удается найти нужный ответ, вы можете задать вопрос на сайте *Stack Overflow*.
 > * Если возникла проблема с одной из наших библиотек аутентификации, сообщите об этом на сайте *GitHub*.
 > * И, наконец, если вам требуется консультация, подайте запрос в службу поддержки.
 
-
 ## <a name="search"></a>поиска
 
-Если у вас есть вопрос по разработке, ответ на него можно найти в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
+Если у вас есть вопрос по разработке, вы можете найти ответ на него в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
 
 ### <a name="scoped-search"></a>Поиск в заданных областях
-Чтобы ускорить получение результатов, задайте области поиска, указав Stack Overflow, нашу документацию и примеры кода в [любой поисковой системе](https://bing.com) таким образом:
-```
-{Your Search Terms} (site:stackoverflow.com OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/en-us/graph)
-```
-*{Условия поиска}* — это ключевые слова для поиска.
-<br/>
 
-## <a name="use-our-development-support-tools"></a>Использование средств технической поддержки для разработки
+Чтобы получить результаты быстрее, задайте области поиска, указав Stack Overflow, нашу документацию и примеры кода в удобной для вас поисковой системе, используя следующий запрос:
 
-|Средство  |ОПИСАНИЕ  |
+```
+{Your Search Terms} (site:stackoverflow.com OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
+```
+
+*{Your Search Terms}*  — это ключевые слова для поиска.
+
+## <a name="use-the-development-support-tools"></a>Использование средств технической поддержки для разработки
+
+| Средство  | ОПИСАНИЕ  |
 |---------|---------|
-|[jwt.ms](https://jwt.ms)| Вставьте идентификатор или маркеры доступа, чтобы декодировать имена и значения утверждений |
-|[Анализатор кода ошибки](https://apps.dev.microsoft.com/portal/tools/errors)| Вставьте код ошибки, полученный во время входа или на страницах авторизации, чтобы определить возможные причины возникновения проблемы и пути ее решения |
-|[Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph.|
+| [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
+| [Анализатор кода ошибки](https://apps.dev.microsoft.com/portal/tools/errors)| Вставьте код ошибки, полученный во время входа или на страницах авторизации, чтобы определить возможные причины возникновения проблемы и пути ее решения. |
+| [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
 
-<br/>
-
-[![Stack Overflow](./media/developer-support-help-options/stackoverflow-logo.png)](https://www.stackoverflow.com)
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
 
-Stack Overflow — это предпочтительный канал для обработки вопросов по разработке. Здесь члены сообщества и команды Майкрософт напрямую помогут вам решить проблему.
+Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Здесь члены сообщества разработчиков и команды Майкрософт постараются помочь вам решить проблемы.
 
-Если не удается решить проблему при помощи функции поиска, отправьте вопрос в Stack Overflow. При этом используйте один из указанных ниже тегов. Он поможет сообществу своевременно определить ваш вопрос и ответить на него.
+Если вы не нашли ответ на свой вопрос через поиск, опубликуйте его на сайте Stack Overflow. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
 
-|Компонент или область  |Теги  |
+|Компонент/область  | Теги |
 |---------|---------|
-|Библиотека ADAL |[[adal]](https://stackoverflow.com/questions/tagged/adal)|
-|Библиотека MSAL     |[[msal]](https://stackoverflow.com/questions/tagged/msal)|
-|ПО промежуточного слоя OWIN  |[[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory)|
-|[Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  |[[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b)|
-|[Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  |[[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2b)|
-|[API Microsoft Graph](https://developer.microsoft.com/graph/) |[[microsoft-graph]](https://stackoverflow.com/questions/tagged/microsoft-graph)
-|Любая другая область, которая относится к аутентификации или авторизации |[[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory)
-<br/>
-> [!TIP]
-> Указанные ниже публикации на Stack Overflow содержат советы по постановке вопросов и добавлению исходного кода. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества оперативно оценят ваш вопрос и ответят на него.
-> - [How do I ask a good question](https://stackoverflow.com/help/how-to-ask) (Как правильно задать вопрос).
-> - [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример).
+| Библиотека ADAL | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
+| Библиотека MSAL     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |
+| ПО промежуточного слоя OWIN  | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
+| [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
+| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[microsoft-graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
+| Любая другая область, которая относится к аутентификации или авторизации | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 
-<br/>
+Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
 
+* [How do I ask a good question](https://stackoverflow.com/help/how-to-ask) (Как правильно задать вопрос).
+* [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример)
 
-[![Stack Overflow](./media/developer-support-help-options/github-logo.png)](https://www.github.com)
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
- Если возникла ошибка или проблема, связанная с нашими библиотеками, сообщите о ней на сайте GitHub. В наших библиотеках используется открытый код. Поэтому вы также можете отправить запрос на вытягивание. Список библиотек и соответствующих репозиториев GitHub можно найти в следующей статье:
+Если возникла ошибка или проблема, связанная с нашими библиотеками, сообщите о ней на сайте GitHub. Так как в наших библиотеках используется открытый код, вы также можете отправить запрос на вытягивание.
 
-- Библиотеки и репозитории GitHub [ADAL, MSAL и ПО промежуточного слоя OWIN](active-directory-authentication-libraries.md).
+Список библиотек и соответствующих репозиториев GitHub можно найти в следующих статьях:
 
-<br/>
+* Библиотеки и репозитории GitHub [ADAL](active-directory-authentication-libraries.md).
+* Библиотеки и репозитории GitHub [MSAL](reference-v2-libraries.md).
 
 ## <a name="open-a-support-request"></a>Подача запроса в службу поддержки
 
 Если вам требуется консультация, подайте запрос в службу поддержки. Для клиентов Azure предусмотрено несколько вариантов поддержки. Сравнить планы можно на [этой странице](https://azure.microsoft.com/support/plans/). Клиенты Azure также могут получить поддержку уровня Developer. Сведения о приобретении планов для поддержки уровня Developer см. на [этой странице](https://azure.microsoft.com/support/plans/developer/).
 
-- Если у вас уже есть план поддержки Azure, [подайте запрос в службу поддержки здесь](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+* Если у вас уже есть план поддержки Azure, [подайте запрос в службу поддержки здесь](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-- Если вы не являетесь клиентом Azure, можно подать запрос в корпорацию Майкрософт на странице [коммерческой поддержки](https://support.microsoft.com/en-us/gp/contactus81?Audience=Commercial).
+* Если вы не являетесь клиентом Azure, можно подать запрос в корпорацию Майкрософт на странице [коммерческой поддержки](https://support.microsoft.com/en-us/gp/contactus81?Audience=Commercial).
 
-Также можно получить поддержку или задать вопрос при помощи [нашего виртуального агента](https://support.microsoft.com/contactus/?ws=support).
+Также можно получить поддержку или задать вопрос при помощи [виртуального агента](https://support.microsoft.com/contactus/?ws=support).
 
 ### <a name="free-chat-support-for-a-limited-time"></a>Бесплатная техническая поддержка в формате чата
 

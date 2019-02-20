@@ -1,5 +1,5 @@
 ---
-title: Поиск по ресурсам с помощью Azure Log Analytics | Документация Майкрософт
+title: Запрос ресурсов с помощью Azure Monitor | Документация Майкрософт
 description: Из этой статьи вы узнаете, как выполнять запросы к ресурсам из нескольких рабочих областей и приложения App Insights в вашей подписке.
 services: log-analytics
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: magoedte
-ms.openlocfilehash: 42191b21faec7bb1929a12e6bc1a724d269acb1d
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: ccc9a74c4e238ebfcab0fc05a3bf825000917843
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55298880"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55998957"
 ---
-# <a name="perform-cross-resource-log-searches-in-log-analytics"></a>Выполнение поиска по журналам нескольких ресурсов в Log Analytics  
+# <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
-Ранее с помощью службы Azure Log Analytics можно было анализировать данные только в пределах текущей рабочей области. Это препятствовало выполнению запросов в нескольких рабочих областях, определенных вашей подпиской.  Кроме того, элементы телеметрии, полученные из веб-приложения с помощью Application Insights, можно было искать только непосредственно в Application Insights или из Visual Studio.  Это также усложняло встроенный совместный анализ операционных данных и данных приложения.   
+Ранее с помощью службы Azure Monitor вы могли анализировать данные только в пределах текущей рабочей области. Это препятствовало выполнению запросов в нескольких рабочих областях, определенных вашей подпиской.  Кроме того, элементы телеметрии, полученные из веб-приложения с помощью Application Insights, можно было искать только непосредственно в Application Insights или из Visual Studio.  Это также усложняло встроенный совместный анализ операционных данных и данных приложения.   
 
-Теперь вы можете выполнять запросы не только в нескольких рабочих областях Log Analytics, но также запрашивать данные из приложения Application Insights в той же или другой группе ресурсов или в другой подписке. Благодаря этому вы можете получить представление данных на уровне системы.  Запросы таких типов можно выполнять только в [Log Analytics](portals.md#log-analytics-page). Вы можете включить в один запрос не более 100 ресурсов (рабочие области Log Analytics и приложение Application Insights). 
+Теперь вы можете выполнять запросы не только в нескольких рабочих областях Log Analytics, но также запрашивать данные из приложения Application Insights в той же или другой группе ресурсов или в другой подписке. Благодаря этому вы можете получить представление данных на уровне системы.  Запросы таких типов можно выполнять только в [Log Analytics](portals.md). Вы можете включить в один запрос не более 100 ресурсов (рабочие области Log Analytics и приложение Application Insights). 
 
 ## <a name="querying-across-log-analytics-workspaces-and-from-application-insights"></a>Выполнение запросов в рабочих областях Log Analytics и запрос данных из приложения Application Insights
 Воспользуйтесь идентификатором [*рабочей области*](https://docs.microsoft.com/azure/log-analytics/query-language/workspace-expression) для обращения к другой рабочей области в запросе, а для Application Insights используйте идентификатор [*приложения*](https://docs.microsoft.com/azure/log-analytics/query-language/app-expression).  
@@ -101,9 +101,9 @@ union Update, workspace("contosoretail-it").Update, workspace("b459b4u5-912x-46d
 ```
 
 ## <a name="using-cross-resource-query-for-multiple-resources"></a>Использование запроса между ресурсами для нескольких ресурсов
-Если использовать запросы между ресурсами, чтобы коррелировать данные из нескольких ресурсов Log Analytics и Application Insights, это усложнит запрос и его будет трудно обработать. Поэтому следует использовать [функции Log Analytics](../../azure-monitor/log-query/functions.md), чтобы отделить логику запроса от области ресурсов запроса. Это, в свою очередь, упрощает структуру запроса. В приведенном ниже примере показано, как отслеживать несколько ресурсов Application Insights и визуализировать количество неудачных запросов по имени приложения. 
+Если использовать запросы между ресурсами, чтобы коррелировать данные из нескольких рабочих областей Log Analytics и ресурсов Application Insights, это усложнит запрос и его будет трудно обработать. Поэтому следует использовать [функции в запросах журнала Azure Monitor](functions.md), чтобы отделить логику запроса от его области ресурсов, благодаря чему структура запроса становится упрощенной. В приведенном ниже примере показано, как отслеживать несколько ресурсов Application Insights и визуализировать количество неудачных запросов по имени приложения. 
 
-Создайте запрос, как показано ниже, который ссылается на область ресурсов Application Insights. Команда `withsource= SourceApp` позволяет добавить столбец, который определяет имя приложения, отправившего журнал. [Сохраните запрос как функцию](../../azure-monitor/log-query/functions.md#create-a-function) с псевдонимом _applicationsScoping_.
+Создайте запрос, как показано ниже, который ссылается на область ресурсов Application Insights. Команда `withsource= SourceApp` позволяет добавить столбец, который определяет имя приложения, отправившего журнал. [Сохраните запрос как функцию](functions.md#create-a-function) с псевдонимом _applicationsScoping_.
 
 ```Kusto
 // crossResource function that scopes my Application Insights resources
@@ -131,4 +131,5 @@ applicationsScoping
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Полный набор вариантов синтаксиса запросов, доступных в службе Log Analytics, см. в статье [Query Language](https://docs.microsoft.com/azure/log-analytics/query-language/kusto) (Язык запросов).    
+- Просмотрите статью [Анализ данных журнала в Azure Monitor](log-query-overview.md), где описываются запросы журнала и структуры данных журнала Azure Monitor.
+- Сведения о всех ресурсах см. в статье [Azure Monitor log queries](query-language.md) (Запросы журнала Azure Monitor).

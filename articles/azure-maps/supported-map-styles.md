@@ -3,20 +3,20 @@ title: Поддерживаемые стили карт в службе Azure Ma
 description: Стили карт, поддерживаемые в службе Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 10/02/2018
+ms.date: 02/12/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 2f426ab85d9ab15dd080a487337b8d48358ed040
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 923b9fef75fa610ee817a86ce0b4d6b322153f01
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888466"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56113437"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
-Карты Azure поддерживает несколько различных встроенных стилей карт, как описано ниже.
+Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
 
 ## <a name="road"></a>дорога
 Карта **дороги** — это стандартная карта, которая отображает дороги, природные и искусственные объекты, а также ярлыки для этих объектов.
@@ -56,7 +56,16 @@ ms.locfileid: "52888466"
 ## <a name="night"></a>ночь
 **Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.
 
-![ночь](./media/supported-map-styles/night.PNG)
+![ночь](./media/supported-map-styles/night.png)
 
 **Применимые API:**
-* Элементы управления картой JS 
+* Элементы управления картой JS
+
+## <a name="roadshadedrelief"></a>road_shaded_relief
+**road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
+
+![shaded relief](./media/supported-map-styles/shaded-relief.png)
+
+**Применимые API:**
+* Элементы управления картой JS
+* [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)

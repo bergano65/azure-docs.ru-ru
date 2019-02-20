@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.openlocfilehash: 0fa487e1ecd419780243b04a273110f3cf43761c
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 03e15532d04a4c62796aad884c5e344688814672
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633969"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209240"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
@@ -204,11 +204,7 @@ SELECT t1, t2, t3, t4, t5, t6, t7
 
 Раздел [Документация по работе Apache Hive на Tez](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez) содержит дополнительные сведения о реализации этого решения и вариантах настроек.
 
-Для помощи в отладке заданий, запущенных с помощью Tez, HDInsight предоставляет следующие веб-интерфейсы, позволяющие просмотреть сведения о заданиях Tez:
-
-* [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md)
-
-* [Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez](../hdinsight-debug-tez-ui.md)
+Для помощи в отладке заданий, запущенных с помощью Tez, HDInsight предоставляет следующие веб-интерфейсы, позволяющие просмотреть сведения о заданиях Tez: [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md).
 
 ### <a name="low-latency-analytical-processing-llap"></a>Аналитическая обработка с низкой задержкой (LLAP)
 

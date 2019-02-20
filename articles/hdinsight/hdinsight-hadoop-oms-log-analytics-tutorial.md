@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 2af68c0b9deb9d5b065f5fae42cf4bf927f0c671
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: cd129ea68315223516ac1cd3e7577b5ee4bf92e5
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386460"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005120"
 ---
 # <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Использование Azure Log Analytics для мониторинга кластеров HDInsight
 
@@ -46,9 +46,19 @@ ms.locfileid: "53386460"
 
 В этом разделе мы настроим существующий кластер HDInsight Hadoop, чтобы использовать рабочую область Azure Log Analytics для мониторинга заданий, журналов отладки и пр.
 
-1. Откройте кластер HDInsight на портале Azure.
-2. В левой области щелкните **Мониторинг**.
-3. В области справа щелкните **Включить** и выберите имеющуюся рабочую область Log Analytics. Затем нажмите кнопку **Сохранить**.
+1. Войдите на [портале Azure](https://portal.azure.com).
+
+2. В меню слева выберите **Все службы**.
+
+3. В разделе **АНАЛИТИКА** выберите **Кластеры HDInsight**.
+
+4. Слева в разделе **Мониторинг** выберите **Operations Management Suite**.
+
+5. В главном представлении в разделе **Мониторинг OMS** щелкните **Включить**.
+
+6. В раскрывающемся списке **Выберите рабочую область** выберите существующую рабочую область Log Analytics.
+
+7. Щелкните **Сохранить**.
 
     ![Включение мониторинга кластеров HDInsight](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring.png "Включение мониторинга кластеров HDInsight")
 
@@ -91,7 +101,7 @@ HDInsight предоставляет решения по управлению д
 * Мониторинг HDInsight Spark
 * Мониторинг HDInsight Storm
 
-Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-management-solution) разделе. Чтобы поэкспериментировать, установите решение мониторинга HDInsight Hadoop. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
+Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-monitoring-solution) разделе. Чтобы поэкспериментировать, установите решение мониторинга HDInsight Hadoop. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
 
 ![Решение HDInsight для мониторинга](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
 

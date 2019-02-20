@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с JDA Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с JDA Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и JDA Cloud.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/31/2018
 ms.author: jeedes
-ms.openlocfilehash: 371ff15121e3da0bec5be6159fea9c6764b0aeda
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 86f2dfaf281130115ff04ff84b413e224f54cfcf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43703497"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56168346"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство по интеграции Azure Active Directory с JDA Cloud
+# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство. Интеграция Azure Active Directory с JDA Cloud
 
 В этом руководстве описано, как интегрировать приложение JDA Cloud с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "43703497"
 
 - С помощью Azure AD вы можете контролировать доступ к JDA Cloud.
 - Вы можете включить автоматический вход пользователей в JDA Cloud (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -52,7 +53,7 @@ ms.locfileid: "43703497"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление JDA Cloud из коллекции.
+1. Добавление JDA Cloud из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-jda-cloud-from-the-gallery"></a>Добавление JDA Cloud из коллекции
@@ -71,7 +72,7 @@ ms.locfileid: "43703497"
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **JDA Cloud**, выберите **JDA Cloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -88,7 +89,7 @@ ms.locfileid: "43703497"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя JDA Cloud](#create-a-jda-cloud-test-user)** требуется для того, чтобы в JDA Cloud существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -111,7 +112,7 @@ ms.locfileid: "43703497"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -120,7 +121,7 @@ ms.locfileid: "43703497"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ssonp-dl2.jdadelivers.com/sp/startSSO.ping?PartnerIdpId=<SAML Entity ID>`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значение **SAML Entity ID** (Идентификатор сущности SAML) вы получите из области **Краткий справочник** в разделе **Конфигурация JDA Cloud**. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов JDA Cloud](https://support.jda.com/).
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значение **SAML Entity ID** (Идентификатор сущности SAML) вы получите из области **Краткий справочник** в разделе **Конфигурация JDA Cloud**. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов JDA Cloud](https://support.jda.com/).
 
 5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -146,7 +147,7 @@ ms.locfileid: "43703497"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/jdacloud-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/jdacloud-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -166,11 +167,11 @@ ms.locfileid: "43703497"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-jda-cloud-test-user"></a>Создание тестового пользователя JDA Cloud
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении JDA. Обратитесь к [группе поддержки JDA Cloud](https://support.jda.com/) для добавления пользователей на платформу JDA Cloud. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении JDA. Чтобы добавить пользователей на платформу JDA Cloud, обратитесь в [службу поддержки JDA Cloud](https://support.jda.com/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -207,7 +208,7 @@ ms.locfileid: "43703497"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "JDA Cloud" на панели доступа, вы автоматически войдете в приложение JDA Cloud.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

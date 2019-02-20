@@ -5,14 +5,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 01/14/2019
+ms.date: 02/13/2019
 ms.author: ramamill
-ms.openlocfilehash: 0eebfd8b75f428d3b8f6024ed6ee71c18c1309f6
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: ab72091c58420459620352c8169773111149316d
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54435980"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245734"
 ---
 # <a name="troubleshoot-configuration-server-issues"></a>Устранение неполадок, связанных с сервером конфигурации
 
@@ -60,7 +60,7 @@ ms.locfileid: "54435980"
 
 ## <a name="vcenter-discovery-failures"></a>Сбои обнаружения vCenter
 
-Чтобы устранить ошибки обнаружения vCenter, убедитесь, что сервер vCenter добавлен в настройки прокси-сервера списка byPass. Чтобы выполнить это действие,
+Чтобы устранить ошибки обнаружения vCenter, добавьте сервер vCenter в список byPass в параметрах прокси-сервера. 
 
 - загрузите средство PsExec из [этой статьи](https://aka.ms/PsExec) для доступа к содержимому пользователя системы.
 - Откройте Internet Explorer в системном пользовательском контенте, выполнив следующую командную строку psexec -s -i "% programfiles%\Internet Explorer\iexplore.exe"
@@ -80,6 +80,11 @@ ms.locfileid: "54435980"
 
 Не удалось создать сертификат, необходимый для аутентификации Site Recovery. Программу установки следует повторно запустить от имени локального администратора.
 
+## <a name="failure-to-activate-windows-licence-from-server-standard-evaluation-to-server-standard"></a>Сбой активации лицензии Windows при переходе с ознакомительной лицензии Server ценовой категории "Стандартный" на Server ценовой категории "Стандартный"
+
+1. В рамках развертывания сервера конфигурации через OVF используется ознакомительная лицензия, которая действует 180 дней. Необходимо активировать эту лицензию до истечения ее срока действия. В противном случае это может привести к частым отключениям сервера конфигурации, что, в свою очередь, приведет к помехам во время репликации.
+2. Если не удается активировать лицензию Windows, обратитесь к [группе поддержки Windows](https://aka.ms/Windows_Support), чтобы решить эту проблему.
+
 ## <a name="register-source-machine-with-configuration-server"></a>Регистрация исходного компьютера на сервере конфигурации
 
 ### <a name="if-the-source-machine-runs-windows"></a>Если исходный компьютер работает на платформе Windows
@@ -89,7 +94,7 @@ ms.locfileid: "54435980"
 ```
   cd C:\Program Files (x86)\Microsoft Azure Site Recovery\agent
   UnifiedAgentConfigurator.exe  /CSEndPoint <configuration server IP address> /PassphraseFilePath <passphrase file path>
-  ```
+```
 
 Параметр | Сведения
 --- | ---
@@ -112,3 +117,140 @@ ms.locfileid: "54435980"
 -i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
 -P |  (Обязательный параметр.) Полный путь к файлу, в котором хранится парольная фраза. Используйте любую допустимую папку.
 
+## <a name="unable-to-configure-the-configuration-server"></a>Ошибка настройки сервера конфигурации
+
+Если вы установите на виртуальную машину приложения, отличные от сервера конфигурации, настройка главного целевого объекта может оказаться невозможной. 
+
+Сервер конфигурации должен быть выделенным сервером, и его использование в качестве общего сервера не поддерживается. 
+
+Дополнительные сведения о конфигурации см. в разделе часто задаваемых вопросов в статье [Развертывание сервера конфигурации.](vmware-azure-deploy-configuration-server.md#faq) 
+
+## <a name="remove-the-stale-entries-for-protected-items-from-the-configuration-server-database"></a>Удаление устаревших записей для защищенных элементов из базы данных сервера конфигурации 
+
+Чтобы удалить устаревший защищенный компьютер из сервера конфигурации, выполните следующие шаги. 
+ 
+1. Чтобы определить исходный компьютер и IP-адрес устаревшей записи: 
+
+    1. откройте командную строку MySQL в режиме администратора; 
+    2. выполните следующие команды. 
+   
+        ```
+        mysql> use svsdb1;
+        mysql> select id as hostid, name, ipaddress, ostype as operatingsystem, from_unixtime(lasthostupdatetime) as heartbeat from hosts where name!='InMageProfiler'\G;
+        ```
+
+        Это возвратит список зарегистрированных компьютеров вместе с их IP-адресами и последним пакетом пульса. Найдите узел с устаревшими парами репликации.
+
+2. Откройте командную строку с повышенными привилегиями и перейдите в расположение C:\ProgramData\ASR\home\svsystems\bin. 
+4. Чтобы удалить сведения о зарегистрированных узлах и информацию об устаревших записях с сервера конфигурации, выполните следующую команду, используя исходный компьютер и IP-адрес устаревшей записи. 
+   
+    `Syntax: Unregister-ASRComponent.pl -IPAddress <IP_ADDRESS_OF_MACHINE_TO_UNREGISTER> -Component <Source/ PS / MT>`
+ 
+    Если у вас есть запись исходного сервера "OnPrem-VM01" с IP-адресом 10.0.0.4, вместо предыдущей команды выполните следующую.
+ 
+    `perl Unregister-ASRComponent.pl -IPAddress 10.0.0.4 -Component Source`
+ 
+5. Чтобы повторно зарегистрироваться на сервере конфигурации, перезапустите на исходном компьютере следующие службы: 
+ 
+    - служба приложений InMage Scout;
+    - InMage Scout VX Agent — Sentinel/Outpost.
+
+## <a name="upgrade-fails-when-the-services-fail-to-stop"></a>Ошибка обновления при сбое прекращения работы служб
+
+Обновление сервера конфигурации завершается ошибкой, если определенные службы не прекращают работу. 
+
+Чтобы определить проблему, перейдите к каталогу C:\ProgramData\ASRSetupLogs\CX_TP_InstallLogFile на сервере конфигурации. Выполните приведенные ниже шаги для решения проблемы, если вы обнаружили следующие ошибки. 
+
+    2018-06-28 14:28:12.943   Successfully copied php.ini to C:\Temp from C:\thirdparty\php5nts
+    2018-06-28 14:28:12.943   svagents service status - SERVICE_RUNNING
+    2018-06-28 14:28:12.944   Stopping svagents service.
+    2018-06-28 14:31:32.949   Unable to stop svagents service.
+    2018-06-28 14:31:32.949   Stopping svagents service.
+    2018-06-28 14:34:52.960   Unable to stop svagents service.
+    2018-06-28 14:34:52.960   Stopping svagents service.
+    2018-06-28 14:38:12.971   Unable to stop svagents service.
+    2018-06-28 14:38:12.971   Rolling back the install changes.
+    2018-06-28 14:38:12.971   Upgrade has failed.
+
+Чтобы устранить проблему:
+
+вручную остановите следующие службы:
+
+- cxprocessserver;
+- InMage Scout VX Agent — Sentinel/Outpost; 
+- агент Служб восстановления Microsoft Azure; 
+- служба Microsoft Azure Site Recovery; 
+- tmansvc.
+  
+Чтобы обновить сервер конфигурации, снова выполните [единую установку](service-updates-how-to.md#links-to-currently-supported-update-rollups).
+
+## <a name="azure-active-directory-application-creation-failure"></a>Ошибка создания приложения Azure Active Directory
+
+У вас недостаточно разрешений для создания приложения в Azure Active Directory (AAD) с помощью шаблона [Open Virtualization Application (OVA)](vmware-azure-deploy-configuration-server.md#deployment-of-configuration-server-through-ova-template
+).
+
+Чтобы устранить эту проблему, войдите на портал Azure и выполните одно из следующих действий.
+
+- Запросите роль разработчика приложения в AAD. Дополнительные сведения о роли разработчика приложения см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
+- Убедитесь, что в AAD параметр **User can create application** (Пользователь может создавать приложение) имеет значение *true*. Дополнительные сведения см. в разделе [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+
+## <a name="process-servermaster-target-are-unable-to-communicate-with-the-configuration-server"></a>Сервер обработки и главный целевой объект не могут обмениваться данными с сервером конфигурации 
+
+Модули сервера обработки (СО) и главного целевого объекта (ГЦО) не могут обмениваться данными с сервером конфигурации (СК), и их состояние показывает, что они не подключены к порталу Azure.
+
+Как правило, это из-за ошибки с портом 443. Следуйте инструкциям ниже, чтобы разблокировать порт и повторно установить связь с СК.
+
+**Убедитесь, что агент MARS вызывается агентом главного целевого объекта**
+
+Чтобы убедиться, что агент главного целевого объекта может создать сеанс TCP для IP-адреса сервера конфигурации, найдите в журналах агента главного целевого объекта трассировку, аналогичную следующей:
+
+TCP <Replace IP with CS IP here>:52739 <Replace IP with CS IP here>:443 SYN_SENT 
+
+TCP    192.168.1.40:52739     192.168.1.40:443      SYN_SENT  // В этой трассировке IP-адрес замените IP-адресом СК
+
+Если в журналах агента ГЦО обнаружены трассировки, похожие на приведенные ниже, агент ГЦО сообщает об ошибках с портом 443:
+
+    #~> (11-20-2018 20:31:51):   ERROR  2508 8408 313 FAILED : PostToSVServer with error [at curlwrapper.cpp:CurlWrapper::processCurlResponse:212]   failed to post request: (7) - Couldn't connect to server
+    #~> (11-20-2018 20:31:54):   ERROR  2508 8408 314 FAILED : PostToSVServer with error [at curlwrapper.cpp:CurlWrapper::processCurlResponse:212]   failed to post request: (7) - Couldn't connect to server
+ 
+Эта ошибка может возникать, если другие приложения также используют порт 443 или из-за настроек брандмауэра, блокирующих порт.
+
+Чтобы устранить проблему:
+
+- Убедитесь, что порт 443 не блокируется брандмауэром.
+- Если порт недоступен из-за другого приложения, использующего его, остановите и удалите это приложение.
+  - Если остановка приложения нецелесообразна, установите новый сервер конфигурации.
+- Перезапустите сервер конфигурации.
+- Перезапустите службу IIS.
+
+### <a name="configuration-server-is-not-connected-due-to-incorrect-uuid-entries"></a>Сервер конфигурации не подключен из-за неправильных значений UUID
+
+Эта ошибка может возникать, если в базе данных есть несколько записей UUID экземпляра сервера конфигурации (СК). Эта проблема часто возникает при клонировании виртуальной машины сервера конфигурации.
+
+Чтобы устранить проблему:
+
+1. Удалите устаревшую виртуальную машину СК из vCenter (дополнительные сведения см. в статье [Удаление серверов и отключение защиты](site-recovery-manage-registration-and-protection.md)).
+2. Войдите на виртуальную машину сервера конфигурации и подключитесь к базе данных MySQL svsdb1. 
+3. Выполните следующий запрос:
+
+    > [!IMPORTANT]
+    >
+    > Введите сведения об UUID клонированного сервера конфигурации или устаревшей записи сервера конфигурации, который больше не будет использоваться для защиты виртуальных машин. Ввод неправильного значения UUID приведет к потере информации для всех существующих защищенных элементов.
+   
+    ```
+        MySQL> use svsdb1;
+        MySQL> delete from infrastructurevms where infrastructurevmid='<Stale CS VM UUID>';
+        MySQL> commit; 
+    ```
+4. Обновите страницу портала.
+
+## <a name="an-infinite-sign-in-loop-occurs-when-entering-your-credentials"></a>При вводе учетных данных происходит бесконечный цикл входа
+
+После ввода правильного имени пользователя и пароля в шаблоне OVF сервера конфигурации вход в Azure все еще продолжает запрашивать ввести правильные учетные данные.
+
+Эта проблема может возникать, если в системе установлено неправильное время.
+
+Чтобы устранить проблему:
+
+установите на компьютере правильное время и повторите попытку входа. 
+ 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Silverback | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Silverback | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Silverback.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: jeedes
-ms.openlocfilehash: e7cb3049f680f81026e09388066001413922600a
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b5614c061586c39e44f04f3542285e55e07f14d9
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123863"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56172722"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство: интеграция Azure Active Directory с Silverback
+# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство. Интеграция Azure Active Directory с Silverback
 
 В этом руководстве описано, как интегрировать Silverback с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "46123863"
 
 - С помощью Azure AD вы можете контролировать доступ к Silverback.
 - Вы можете включить автоматический вход пользователей в Silverback (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -69,7 +70,7 @@ ms.locfileid: "46123863"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Silverback**, выберите **Silverback** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "46123863"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения Silverback](#create-a-silverback-test-user)** требуется для того, чтобы в Silverback существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -114,7 +115,7 @@ ms.locfileid: "46123863"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/sts/authorize/login`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Silverback](mailto:helpdesk@matrix42.com). 
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Silverback](mailto:helpdesk@matrix42.com). 
 
 4. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
@@ -128,13 +129,13 @@ ms.locfileid: "46123863"
 
     a.  Перейдите к разделу **Admin** > **Authentication Provider** (Администрирование > Поставщик проверки подлинности).
 
-    b. На странице **Authentication Provider Settings** (Параметры поставщика проверки подлинности) выполните следующие действия:
+    б) На странице **Authentication Provider Settings** (Параметры поставщика проверки подлинности) выполните следующие действия:
 
     ![Администратор ](./media/silverback-tutorial/tutorial_silverback_admin.png)
 
     c.  Выберите **Import from URL** (Импорт из URL-адреса).
     
-    d.  Вставьте скопированный URL-адрес метаданных и нажмите кнопку **ОК**.
+    4.3.  Вставьте скопированный URL-адрес метаданных и нажмите кнопку **ОК**.
     
     д.  После того как значения заполнятся автоматически, нажмите **ОК** для подтверждения.
     
@@ -160,7 +161,7 @@ ms.locfileid: "46123863"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/silverback-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/silverback-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -180,7 +181,7 @@ ms.locfileid: "46123863"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-silverback-test-user"></a>Создание тестового пользователя Silverback
 
@@ -198,11 +199,11 @@ ms.locfileid: "46123863"
 
     a. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
 
-    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    d. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    4.3. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
 
     д. Введите пароль в поле **Password** (Пароль).
     
@@ -248,7 +249,7 @@ ms.locfileid: "46123863"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Silverback на панели доступа, вы автоматически войдете в приложение Silverback.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

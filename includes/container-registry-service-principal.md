@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/14/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 1a8a31b34981b0e2b68caf3f5c4952d0ee59ac8e
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: fe0a4c51c4f762d866d572e0cdbd84d9e1c626b7
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53784454"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247111"
 ---
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
@@ -21,7 +21,7 @@ ms.locfileid: "53784454"
 
 Перед выполнением сценария обновите переменную `ACR_NAME` с именем реестра контейнеров. Значение `SERVICE_PRINCIPAL_NAME` должно быть уникальным в клиенте Azure Active Directory. Если вы получаете ошибку "`'http://acr-service-principal' already exists.`", укажите другое имя для субъекта-службы.
 
-Можно изменять значение `--role` в команде [az ad sp create-for-rbac][az-ad-sp-create-for-rbac], если необходимо предоставить другие разрешения. Полный список ролей см. в разделе [Роли и разрешения реестра контейнеров Azure](https://github.com/Azure/acr/blob/master/docs/roles-and-permissions.md).
+При необходимости вы можете изменять значение `--role` в команде [az ad sp create-for-rbac][/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac], чтобы предоставить другие разрешения. Полный список ролей см. в разделе [Роли и разрешения реестра контейнеров Azure](https://github.com/Azure/acr/blob/master/docs/roles-and-permissions.md).
 
 После запуска скрипта запишите **идентификатор** и **пароль** субъекта-службы. Сохранив эти учетные данные, вы можете настроить приложения и службы для аутентификации в качестве субъектов-служб в реестре контейнеров.
 
@@ -31,11 +31,11 @@ ms.locfileid: "53784454"
 
 Чтобы предоставить субъекту-службе доступ к реестру, нужно назначить новую роль субъекту-службе. Как и при создании субъекта-службы, вы, помимо прочего, можете предоставить разрешения на извлечение данных, отправку и извлечение данных, а также разрешения владельца.
 
-В следующем скрипте используется команда [az role assignment create][az-role-assignment-create], чтобы предоставить разрешения на *извлечение* субъекту-службе, указанному в переменной `SERVICE_PRINCIPAL_ID`. Измените значение `--role`, если нужно предоставить другой уровень доступа.
+В следующем скрипте используется команда [az role assignment create][/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create], чтобы предоставить субъекту-службе, указанному в переменной `SERVICE_PRINCIPAL_ID`, разрешения на *извлечение*. Измените значение `--role`, если нужно предоставить другой уровень доступа.
 
 
 <!-- https://github.com/Azure-Samples/azure-cli-samples/blob/master/container-registry/service-principal-assign-role/service-principal-assign-role.sh --> [!code-azurecli-interactive[acr-sp-role-assign](~/cli_scripts/container-registry/service-principal-assign-role/service-principal-assign-role.sh)]
 
 <!-- LINKS - Internal -->
-[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp#az_ad_sp_create_for_rbac
-[az-role-assignment-create]: /cli/azure/role/assignment#az_role_assignment_create
+[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac
+[az-role-assignment-create]: /cli/azure/role/assignment

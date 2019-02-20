@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2018
+ms.date: 02/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: ac07b5af28dc869b6aa05c269c9225d546d651a0
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 92e5fb782eed3344a55178d6ba74dfd6d7b8cafd
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55490436"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56235920"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -31,7 +31,9 @@ ms.locfileid: "55490436"
 
 Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./resource-manager-tutorial-create-linked-templates.md).
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!NOTE]
+> Для связанных и вложенных шаблонов можно использовать только [добавочный](deployment-modes.md) режим развертывания.
+>
 
 ## <a name="link-or-nest-a-template"></a>Связывание или вложение шаблона
 
@@ -52,8 +54,6 @@ ms.locfileid: "55490436"
 ```
 
 Свойства, указанные для ресурса развертывания зависят от того, создаете ли вы связь с внешним шаблоном или вкладываете встроенный шаблон в основной.
-
-Для обоих связанных и вложенных шаблонов можно использовать только [инкрементный](deployment-modes.md) режим развертывания.
 
 ### <a name="nested-template"></a>Вложенный шаблон
 
@@ -467,8 +467,8 @@ done
 
 ```azurepowershell-interactive
 Set-AzCurrentStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates
-$token = New-AzureStorageContainerSASToken -Name templates -Permission r -ExpiryTime (Get-Date).AddMinutes(30.0)
-$url = (Get-AzureStorageBlob -Container templates -Blob parent.json).ICloudBlob.uri.AbsoluteUri
+$token = New-AzStorageContainerSASToken -Name templates -Permission r -ExpiryTime (Get-Date).AddMinutes(30.0)
+$url = (Get-AzStorageBlob -Container templates -Blob parent.json).ICloudBlob.uri.AbsoluteUri
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateUri ($url + $token) -containerSasToken $token
 ```
 

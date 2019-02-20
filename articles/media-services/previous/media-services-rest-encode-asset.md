@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: ada3210a59e0c3044551bee54b0a705b4b513594
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: e51fa086b26e5692d8dd572654b7c1ec50c641c5
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51254440"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "56005154"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Как закодировать ресурс с помощью Media Encoder Standard
 > [!div class="op_single_selector"]
@@ -30,6 +30,7 @@ ms.locfileid: "51254440"
 >
 
 ## <a name="overview"></a>Обзор
+
 Для поставки цифрового видео по Интернету необходимо сжатие мультимедиа. Размер цифровых видеофайлов достаточно велик и может быть слишком большим для доставки через Интернет или правильного отображения на устройствах клиентов. Кодирование — это процесс сжатия аудио- и видеофайлов, чтобы их могли просматривать клиенты.
 
 Задания кодирования — одни из самых распространенных операций обработки в службах мультимедиа Azure. Они создаются для преобразования файлов мультимедиа из одного формата кодирования в другой. При кодировании можно использовать встроенный кодировщик служб мультимедиа (стандартный кодировщик мультимедиа). Можно также использовать кодировщик, предоставленный партнером служб мультимедиа. Кодировщики сторонних производителей доступны в магазине Azure. Информацию о задачах кодировки можно указать с помощью строк предустановок, заданных для кодировщика, или файлов конфигурации. Типы доступных предустановок см. в разделе [Task Presets for Media Encoder Standard](https://msdn.microsoft.com/library/mt269960) (Предустановки задач для Media Encoder Standard).
@@ -54,12 +55,13 @@ ms.locfileid: "51254440"
 Сведения о подключении к API AMS см. в разделе [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
 ## <a name="create-a-job-with-a-single-encoding-task"></a>Создание задания с одной задачей кодирования
+
 > [!NOTE]
 > При работе с REST API служб мультимедиа следует руководствоваться следующими рекомендациями.
 >
 > При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md).
 >
-> Если вы используете JSON и указали ключевое слово **__metadata** в запросе (например, для ссылки на связанный объект), вам НЕОБХОДИМО задать для заголовка **Accept** [подробный формат JSON](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/): Accept: application/json;odata=verbose.
+> Если вы используете JSON и указываете в запросе ключевое слово **__metadata** (например, для ссылки на связанный объект), вы должны задать для заголовка **Accept** [подробный (Verbose) формат JSON](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/): Accept: application/json;odata=verbose.
 >
 >
 

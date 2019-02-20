@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Hornbill | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Hornbill | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hornbill.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 30fdb55758d5fbac41452236ebaa9f96ab9bba6b
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 86f23a1520175827f775553e1ba949c62567cf83
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39163771"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56201930"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство по интеграции Azure Active Directory с Hornbill
+# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство по Интеграция Azure Active Directory с Hornbill
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением Hornbill.
 
@@ -29,7 +30,7 @@ ms.locfileid: "39163771"
 
 - С помощью Azure AD вы можете контролировать доступ к Hornbill.
 - Вы можете включить автоматический вход пользователей в Hornbill (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -51,7 +52,7 @@ ms.locfileid: "39163771"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Hornbill из коллекции.
+1. Добавление Hornbill из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-hornbill-from-the-gallery"></a>Добавление Hornbill из коллекции
@@ -69,7 +70,7 @@ ms.locfileid: "39163771"
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Hornbill**, выберите **Hornbill** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -86,7 +87,7 @@ ms.locfileid: "39163771"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения Hornbill](#create-a-hornbill-test-user)** требуется для того, чтобы в Hornbill существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -112,7 +113,7 @@ ms.locfileid: "39163771"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.hornbill.com/<INSTANCE_NAME>/lib/saml/auth/simplesaml/module.php/saml/sp/metadata.php/saml`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь к [группе поддержки клиентов Hornbill](https://www.hornbill.com/support/?request/). 
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь к [группе поддержки клиентов Hornbill](https://www.hornbill.com/support/?request/). 
 
 4. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
@@ -128,7 +129,7 @@ ms.locfileid: "39163771"
 
     ![Hornbill: система](./media/hornbill-tutorial/tutorial_hornbill_system.png)
 
-8. Перейдите в раздел **Security** (Безопасность).
+8. Перейдите в раздел **Безопасность**.
 
     ![Hornbill: безопасность](./media/hornbill-tutorial/tutorial_hornbill_security.png)
 
@@ -168,7 +169,7 @@ ms.locfileid: "39163771"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/hornbill-tutorial/create_aaduser_01.png)
+    ![Кнопка Azure Active Directory](./media/hornbill-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
@@ -188,14 +189,14 @@ ms.locfileid: "39163771"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    4.3. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-hornbill-test-user"></a>Создание тестового пользователя Hornbill
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Hornbill. Приложение Hornbill поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Hornbill создается учетная запись пользователя (если она еще не создана).
 
 > [!Note]
-> Чтобы создать пользователя вручную, обратитесь к [группе поддержки Hornbill](https://www.hornbill.com/support/?request/).
+> Чтобы создать пользователя вручную, обратитесь в  [группу поддержки клиентов Hornbill](https://www.hornbill.com/support/?request/).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -232,7 +233,7 @@ ms.locfileid: "39163771"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Hornbill" на панели доступа, вы автоматически войдете в приложение Hornbill.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

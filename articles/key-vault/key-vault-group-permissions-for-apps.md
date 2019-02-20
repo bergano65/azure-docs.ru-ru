@@ -4,7 +4,7 @@ description: Узнайте, как нескольким приложениям 
 services: key-vault
 documentationcenter: ''
 author: amitbapat
-manager: mbaldwin
+manager: barbkess
 tags: azure-resource-manager
 ms.assetid: 785d4e40-fb7b-485a-8cbc-d9c8c87708e6
 ms.service: key-vault
@@ -13,14 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: cd680f24eafe61bc73fa6eb91df4b4dfa5f5399b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 187d455003cf8b1c9402e24755c5f15b703cd9ad
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54073435"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56114405"
 ---
 # <a name="grant-several-applications-access-to-a-key-vault"></a>Предоставление нескольким приложениям доступа к хранилищу ключей
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Для предоставления нескольким приложениям доступа к хранилищу ключей можно использовать политики управления доступом. Политика управления доступом может поддерживать до 1024 приложений и настроена следующим образом:
 
@@ -28,12 +30,16 @@ ms.locfileid: "54073435"
 2. Добавьте все приложения, связанные с субъекты-службами в группу безопасности.
 3. Предоставьте доступ к группе безопасности к вашему хранилищу ключей.
 
-Необходимые компоненты для установки:
-* [Установка модуля PowerShell V2 для Azure Active Directory](https://www.powershellgallery.com/packages/AzureAD).
-* [Установка Azure PowerShell](/powershell/azure/overview).
-* Чтобы выполнить следующие команды, необходимо получить разрешение на создание и изменение групп в клиенте Azure Active Directory. Если у вас нет разрешений, обратитесь к администратору Azure Active Directory. Ознакомиться со сведениями о разрешениях политики доступа Key Vault можно в статье [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md).
+## <a name="prerequisites"></a>Предварительные требования
 
-Теперь в PowerShell выполните следующие команды.
+Выполните следующее:
+* [Установите Azure PowerShell](/powershell/azure/overview).
+* [Установите модуль PowerShell для Azure Active Directory версии 2](https://www.powershellgallery.com/packages/AzureAD).
+* Получите разрешения на создание и изменение групп в клиенте Azure Active Directory. Если у вас нет разрешений, обратитесь к администратору Azure Active Directory. Ознакомиться со сведениями о разрешениях политики доступа Key Vault можно в статье [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md).
+
+## <a name="granting-key-vault-access-to-applications"></a>Предоставление Key Vault доступа к приложениям
+
+В PowerShell выполните следующие команды:
 
 ```powershell
 # Connect to Azure AD 
@@ -49,7 +55,7 @@ Add-AzureADGroupMember –ObjectId $aadGroup.ObjectId -RefObjectId $spn.ObjectId
 # You can add several members to this group, in this fashion. 
  
 # Set the Key Vault ACLs 
-Set-AzureRmKeyVaultAccessPolicy –VaultName ContosoVault –ObjectId $aadGroup.ObjectId `
+Set-AzKeyVaultAccessPolicy –VaultName ContosoVault –ObjectId $aadGroup.ObjectId `
 -PermissionsToKeys decrypt,encrypt,unwrapKey,wrapKey,verify,sign,get,list,update,create,import,delete,backup,restore,recover,purge `
 –PermissionsToSecrets get,list,set,delete,backup,restore,recover,purge `
 –PermissionsToCertificates get,list,delete,create,import,update,managecontacts,getissuers,listissuers,setissuers,deleteissuers,manageissuers,recover,purge,backup,restore `

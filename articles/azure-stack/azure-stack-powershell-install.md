@@ -3,7 +3,7 @@ title: Установка PowerShell для Azure Stack | Документаци
 description: Узнайте, как установить PowerShell для Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 01/17/2018
-ms.author: sethm
+ms.date: 02/08/2019
+ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 01/17/2018
-ms.openlocfilehash: 7909fd3c7eba4ada9dc74e2eada019327d054fee
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 02/08/2019
+ms.openlocfilehash: 72c4bfc4151e8120f8641c743c0da3896bd71fe1
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240512"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55995036"
 ---
 # <a name="install-powershell-for-azure-stack"></a>Установка PowerShell для Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "55240512"
 
 Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack. Совместимость обеспечивается с помощью функции *профилей API*.
 
-Профили API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей Azure Resource Manager PowerShell с определенными версиями API. Каждая облачная платформа имеет набор поддерживаемых профилей версий API. К примеру, Azure Stack поддерживает версию профиля на определенную дату, например **2018-03-01-hybrid**. При установке профиля устанавливается набор модулей Azure Resource Manager PowerShell, которые соответствуют выбранному профилю.
+Профили API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей Azure Resource Manager PowerShell с определенными версиями API. Каждая облачная платформа имеет набор поддерживаемых профилей версий API. К примеру, Azure Stack поддерживает определенную версию профиля, например **2018-03-01-hybrid**. При установке профиля устанавливается набор модулей Azure Resource Manager PowerShell, которые соответствуют выбранному профилю.
 
 Вы можете установить совместимые модули PowerShell для Azure Stack в подключенном, частично подключенном к Интернету или в сценарии без подключения. Из этой статьи можно узнать подробные инструкции по установке PowerShell для Azure Stack в приведенных ниже случаях.
 
@@ -51,7 +51,7 @@ ms.locfileid: "55240512"
 
 Проверьте, зарегистрирована ли коллекция PSGallery в качестве репозитория.
 
-> [!Note]
+> [!Note]  
 > На этом шаге необходим доступ к Интернету.
 
 Откройте командную строку PowerShell с повышенными привилегиями и выполните следующие командлеты:
@@ -87,41 +87,28 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 Для работы с Azure Stack 1808 или более поздней версии требуется профиль версии API **2018-03-01-hybrid**. Чтобы получить доступ к профилю, необходимо установить модуль **AzureRM.Bootstrapper**. В дополнение к модулям AzureRM нужно установить модули PowerShell, предназначенные для Azure Stack. Требуемый профиль версии API и модули PowerShell Azure Stack будут зависеть от выполняемой версии Azure Stack.
 
+Установка происходит в три этапа.
+
+1. Установка PowerShell для Azure Stack в зависимости от версии Azure Stack
+2. Включение дополнительных возможностей хранилища
+3. Подтверждение установки PowerShell
+
+### <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
+
 Выполните следующий скрипт PowerShell, чтобы установить эти модули на рабочей станции разработки:
 
-- Azure Stack 1811 или более поздней версии.
+- Azure Stack 1901 или более поздняя версия.
 
     ```PowerShell
-    # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
-    Install-Module -Name AzureRm.BootStrapper
-
     # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-    Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
-
-    Install-Module -Name AzureStack -RequiredVersion 1.6.0
+    Install-Module AzureRM -RequiredVersion 2.4.0
+    Install-Module -Name AzureStack -RequiredVersion 1.7.0
     ```
 
-    Чтобы использовать дополнительные компоненты хранилища (упомянутые в разделе "С подключением"), также загрузите и установите следующие пакеты.
+    > [!Note]  
+    > Модуль Azure Stack версии 1.7.0 является критическим изменением. Чтобы выполнить миграцию из Azure Stack 1.6.0, см. руководство по миграции, указанное [здесь](https://aka.ms/azspshmigration170).
 
-    ```PowerShell
-    # Install the Azure.Storage module version 4.5.0
-    Install-Module -Name Azure.Storage -RequiredVersion 4.5.0 -Force -AllowClobber
-
-    # Install the AzureRm.Storage module version 5.0.4
-    Install-Module -Name AzureRM.Storage -RequiredVersion 5.0.4 -Force -AllowClobber
-
-    # Remove incompatible storage module installed by AzureRM.Storage
-    Uninstall-Module Azure.Storage -RequiredVersion 4.6.1 -Force
-
-    # Load the modules explicitly specifying the versions
-    Import-Module -Name Azure.Storage -RequiredVersion 4.5.0
-    Import-Module -Name AzureRM.Storage -RequiredVersion 5.0.4
-    ```
-
-> [!Note]
-> Чтобы обновить Azure PowerShell из версии **2017-03-09-profile** до версии **2018-03-01-hybrid**, см. статью[Migration guide](https://github.com/azure/azure-powershell/blob/AzureRM/documentation/migration-guides/Stack/migration-guide.2.3.0.md) (Руководство по миграции).
-
-- Azure Stack 1811 или более поздней версии.
+- Azure Stack 1811 или более ранней версии.
 
     ```PowerShell
     # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
@@ -145,6 +132,30 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
     Install-Module -Name AzureStack -RequiredVersion 1.5.0
     ```
 
+> [!Note]  
+> Чтобы обновить Azure PowerShell с версии **2017-03-09-profile** до версии **2018-03-01-hybrid**, см. руководство по миграции [здесь](https://github.com/azure/azure-powershell/blob/AzureRM/documentation/migration-guides/Stack/migration-guide.2.3.0.md).
+
+### <a name="enable-additional-storage-features"></a>Включение дополнительных возможностей хранилища
+
+Чтобы использовать дополнительные компоненты хранилища (упомянутые в разделе "С подключением"), также загрузите и установите следующие пакеты.
+
+```PowerShell
+# Install the Azure.Storage module version 4.5.0
+Install-Module -Name Azure.Storage -RequiredVersion 4.5.0 -Force -AllowClobber
+
+# Install the AzureRm.Storage module version 5.0.4
+Install-Module -Name AzureRM.Storage -RequiredVersion 5.0.4 -Force -AllowClobber
+
+# Remove incompatible storage module installed by AzureRM.Storage
+Uninstall-Module Azure.Storage -RequiredVersion 4.6.1 -Force
+
+# Load the modules explicitly specifying the versions
+Import-Module -Name Azure.Storage -RequiredVersion 4.5.0
+Import-Module -Name AzureRM.Storage -RequiredVersion 5.0.4
+```
+
+### <a name="confirm-the-installation-of-powershell"></a>Подтверждение установки PowerShell
+
 Подтвердите установку, выполнив следующую команду:
 
 ```PowerShell
@@ -160,26 +171,32 @@ Get-Module -Name "Azs*" -ListAvailable
 
 Войдите на компьютер с подключением к Интернету и выполните следующие сценарии для скачивания пакетов Azure Resource Manager и AzureStack в зависимости от используемой версии Azure Stack.
 
-  - Azure Stack 1811 или более поздней версии.
+Установка состоит из четырех шагов.
+
+1. Установка PowerShell для Azure Stack, подключенной к компьютеру
+2. Включение дополнительных возможностей хранилища
+3. Транспортировка пакетов PowerShell для отключенной рабочей станции
+4. Подтверждение установки PowerShell
+
+
+### <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
+
+- Azure Stack 1901 или более поздняя версия.
 
     ```PowerShell
     Import-Module -Name PowerShellGet -ErrorAction Stop
     Import-Module -Name PackageManagement -ErrorAction Stop
 
     $Path = "<Path that is used to save the packages>"
-    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.3.0
-    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.6.0
+    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.4.0
+    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.7.0
     ```
 
-    Чтобы использовать дополнительные компоненты хранилища (упомянутые в разделе "С подключением"), также загрузите и установите следующие пакеты.
+    > [!Note]  
+    > Модуль Azure Stack версии 1.7.0 является критическим изменением. Чтобы выполнить миграцию из Azure Stack 1.6.0, см. руководство по миграции [здесь](https://github.com/Azure/azure-powershell/tree/AzureRM/documentation/migration-guides/Stack).
 
-    ```PowerShell
-    $Path = "<Path that is used to save the packages>"
-    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Azure.Storage -Path $Path -Force -RequiredVersion 4.5.0
-    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRm.Storage -Path $Path -Force -RequiredVersion 5.0.4
-    ```
 
-  - Azure Stack 1811 или более поздней версии.
+  - Azure Stack 1811 или более ранней версии.
 
     ```PowerShell
     Import-Module -Name PowerShellGet -ErrorAction Stop
@@ -201,11 +218,23 @@ Get-Module -Name "Azs*" -ListAvailable
     Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.5.0
     ```
 
-2. Скопируйте скачанные пакеты на USB-устройство.
+### <a name="enable-additional-storage-features"></a>Включение дополнительных возможностей хранилища
 
-3. Войдите на рабочую станцию и скопируйте пакеты с USB-устройства в нужное расположение на ней.
+Чтобы использовать дополнительные компоненты хранилища (упомянутые в разделе "С подключением"), также загрузите и установите следующие пакеты.
 
-4. Теперь зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и AzureStack:
+```PowerShell
+$Path = "<Path that is used to save the packages>"
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Azure.Storage -Path $Path -Force -RequiredVersion 4.5.0
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRm.Storage -Path $Path -Force -RequiredVersion 5.0.4
+```
+
+### <a name="add-your-packages-to-your-workstation"></a>Добавление пакетов на рабочую станцию
+
+1. Скопируйте скачанные пакеты на USB-устройство.
+
+2. Войдите на отключенную рабочую станцию и скопируйте пакеты с USB-устройства в нужное расположение на ней.
+
+3. Теперь зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и AzureStack:
 
    ```PowerShell
    #requires -Version 5
@@ -222,6 +251,15 @@ Get-Module -Name "Azs*" -ListAvailable
 
    Install-Module -Name AzureStack -Repository $RepoName
    ```
+
+### <a name="confirm-the-installation-of-powershell"></a>Подтверждение установки PowerShell
+
+Подтвердите установку, выполнив следующую команду:
+
+```PowerShell
+Get-Module -Name "Azure*" -ListAvailable
+Get-Module -Name "Azs*" -ListAvailable
+```
 
 ## <a name="6-configure-powershell-to-use-a-proxy-server"></a>6. Настройка PowerShell для использования прокси-сервера
 

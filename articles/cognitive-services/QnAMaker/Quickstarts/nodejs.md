@@ -4,19 +4,19 @@ titleSuffix: Azure Cognitive Services
 description: Сведения и примеры кода для REST Node.js для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
-manager: cgronlun
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 7e7e362a2536f7adf2a7d68b096ab76d73f15a61
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: ba4af5d3b6612614dee54db7fdb1287ff7136321
+ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55496233"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56245768"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-nodejs"></a>Использование REST API службы QnA Maker с Node.js 
 <a name="HOLTop"></a>
@@ -35,8 +35,8 @@ ms.locfileid: "55496233"
 - [Удалять базу знаний.](#Delete)
 - [Получать текущие ключи конечной точки.](#GetKeys)
 - [Повторно создавать ключи текущей конечной точки.](#PutKeys)
-- [Получать текущий набор вариантов слов.](#GetAlterations)
-- [Заменять текущий набор вариантов слов.](#PutAlterations)
+- [Получать текущий набор вариантов слов без учета регистра.](#GetAlterations)
+- [Заменять текущий набор вариантов слов без учета регистра.](#PutAlterations)
 
 [!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
 

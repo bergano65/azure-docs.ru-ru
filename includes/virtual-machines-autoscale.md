@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 0ccb502cd5ae21468e52bdc4d56202a595cd19ef
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 3c008e77116a9b42a2ea137069529c5e241adddd
+ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53594290"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56213177"
 ---
 Вы можете легко [автоматически масштабировать](../articles/azure-monitor/platform/autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/azure-monitor/platform/autoscale-overview.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
@@ -57,11 +57,11 @@ ms.locfileid: "53594290"
 
 Можно добавлять или удалять виртуальные машины, изменяя емкость масштабируемого набора. На портале Azure можно уменьшить или увеличить число виртуальных машин (показано как **число экземпляров**) в масштабируемом наборе, передвигая ползунок в строке состояния переопределения на экране масштабирования влево или вправо.
 
-Если вы используете Azure PowerShell, необходимо получить объект масштабируемого набора с помощью [Get AzureRmVmss](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmss). Затем установите свойство **sku.capacity** для нужного числа виртуальных машин и обновите масштабируемый набор, добавив [Update-AzureRmVmss](https://docs.microsoft.com/powershell/module/azurerm.compute/update-azurermvmss). С помощью Azure CLI замените значение производительности параметром **--new-capacity** для команды [az vmss scale](https://docs.microsoft.com/cli/azure/vmss#az_vmss_scale).
+Если вы используете Azure PowerShell, необходимо получить объект масштабируемого набора с помощью [Get-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss). Затем установите свойство **sku.capacity** для нужного числа виртуальных машин и обновите масштабируемый набор, добавив [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss). С помощью Azure CLI замените значение производительности параметром **--new-capacity** для команды [az vmss scale](/cli/azure/vmss?view=azure-cli-latest#az-vmss-scale).
 
 ### <a name="vertical"></a>Vertical
 
-Можно вручную изменить размер виртуальных машин на портале Azure в окне размера для масштабируемого набора. Вы можете использовать Azure PowerShell с AzureRmVmss Get, задав свойство номера SKU для ссылки на образ, а затем использовав [Update-AzureRmVmss](https://docs.microsoft.com/powershell/module/azurerm.compute/update-azurermvmss) и [Update-AzureRmVmssInstance](https://docs.microsoft.com/powershell/module/azurerm.compute/update-azurermvmssinstance).
+Можно вручную изменить размер виртуальных машин на портале Azure в окне размера для масштабируемого набора. Вы можете использовать Azure PowerShell с Get-AzVmss, задав свойство номера SKU для ссылки на образ, а затем использовав [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss) и [Update-AzVmssInstance](https://docs.microsoft.com/powershell/module/az.compute/update-azvmssinstance).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -13,14 +13,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/01/2017
+ms.date: 02/10/2019
 ms.author: willzhan, dwgeo
-ms.openlocfilehash: 7d4094abacb46c5e2b525766d61cb0ede7fc20ba
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 710ec72e9867ad180afcae8273a093f48933112a
+ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251838"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55991520"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
  Службы мультимедиа Azure предоставляют набор хорошо спроектированных [служб системы защиты содержимого](https://azure.microsoft.com/services/media-services/content-protection/), которые охватывают:
@@ -115,14 +115,14 @@ if (objDRMSettings.EnableOfflineMode)
 ## <a name="sample-ios-player"></a>Пример проигрывателя iOS
 Поддержка режима автономной работы FPS доступна только в iOS 10 и более поздних версиях. Пакет SDK сервера FPS (версии 3.0 или более поздней) содержит документ и пример автономного режима FPS. В частности, пакет SDK сервера FPS (версии 3.0 или более поздней версии) содержит следующие два элемента, связанные с автономным режимом:
 
-* Документ: автономное воспроизведение с помощью потоковой передачи FairPlay и HTTP Live Streaming. Apple, 14 сентября 2016 г. В версии 4.0 пакета SDK сервера FPS этот документ объединяется с основным документом FPS.
+* Документ, посвященный автономному воспроизведению с помощью потоковой передачи FairPlay и HTTP Live Streaming. Apple, 14 сентября 2016 г. В версии 4.0 пакета SDK сервера FPS этот документ объединяется с основным документом FPS.
 * Пример кода: образец HLSCatalog для автономного режима FPS в \FairPlay Streaming Server SDK version 3.1\Development\Client\HLSCatalog_With_FPS\HLSCatalog\. В примере приложения HLSCatalog следующие файлы кода, которые используются для реализации функций автономного режима:
 
-    - Файл кода AssetPersistenceManager.swift: AssetPersistenceManager — это основной класс в этом примере, демонстрирующий:
+    - Файл кода AssetPersistenceManager.swift: AssetPersistenceManager — это основной класс в этом примере, демонстрирующий:
 
         - Как управлять загрузкой потоков HLS, таких как API, используемые для запуска и отмены загрузки, а также для удаления имеющихся ресурсов с устройств.
         - Как отслеживать ход выполнения скачивания.
-    - AssetListTableViewController.swift и AssetListTableViewCell.swift файлов с кодом: AssetListTableViewController — это основной интерфейс этого примера. Он предоставляет список ресурсов, которые пример может использовать для воспроизведения, скачивания, удаления и отмены загрузки. 
+    - Файлы кода AssetListTableViewController.swift и AssetListTableViewCell.swift: Assetlisttableviewcontroller — это основной интерфейс этого примера. Он предоставляет список ресурсов, которые пример может использовать для воспроизведения, скачивания, удаления и отмены загрузки. 
 
 С помощью этих шагов можно настроить работающий проигрыватель iOS. Предположим, что вы начинаете с образца HLSCatalog в версии 4.0.1 пакета SDK сервера FPS. Выполните следующие изменения кода:
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 32679e37062fbf77ce6ab03b6ea708c0d5eeea30
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: dbf614f9749039b054e1134df31334a6248e2b78
+ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816243"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55981406"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -117,12 +117,12 @@ az vmss create \
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
-Чтобы использовать зоны доступности, необходимо создать масштабируемый набор в поддерживаемом регионе Azure. Добавьте параметр `-Zone` в команду [New-AzureRmVmssConfig](/powershell/module/azurerm.compute/new-azurermvmssconfig) и укажите требуемую зону (например, *1*, *2* или *3*).
+Чтобы использовать зоны доступности, необходимо создать масштабируемый набор в поддерживаемом регионе Azure. Добавьте параметр `-Zone` в команду [New-AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig) и укажите требуемую зону (например, *1*, *2* или *3*).
 
 В следующем примере создается однозонный масштабируемый набор с именем *myScaleSet* в зоне *1* региона *Восточная часть США 2*. Сетевые ресурсы Azure для виртуальной сети, общедоступный IP-адрес и подсистема балансировки нагрузки создаются автоматически. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```powershell
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS2" `
   -VMScaleSetName "myScaleSet" `
@@ -139,7 +139,7 @@ New-AzureRmVmss `
 Чтобы создать масштабируемый набор, избыточный между зонами, укажите несколько зон с помощью параметра `-Zone`. В следующем примере создается масштабируемый набор, избыточный между зонами, с именем *myScaleSet* в зонах *1, 2 и 3* региона *Восточная часть США 2*. Сетевые ресурсы Azure, избыточные между зонами, для виртуальной сети, общедоступный IP-адрес и подсистема балансировки нагрузки создаются автоматически. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
 
 ```powershell
-New-AzureRmVmss `
+New-AzVmss `
   -ResourceGroupName "myResourceGroup" `
   -Location "EastUS2" `
   -VMScaleSetName "myScaleSet" `

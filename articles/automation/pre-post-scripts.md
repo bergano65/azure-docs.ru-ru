@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 09/18/2018
+ms.date: 02/12/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4c34c6c6e0a3f618cbd9337993aa6d176962fe6b
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 90616544b1fddb8b6def04c30202035bec04d599
+ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54428245"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56236011"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
@@ -52,7 +52,9 @@ ms.locfileid: "54428245"
 
 ## <a name="passing-parameters"></a>Передача параметров
 
-Настроив сценарии предварительного и последующего выполнения, вы можете передавать в них параметры, как в обычные модули Runbook. Параметры определяются при создании развертывания обновлений. Помимо стандартных параметров модулей Runbook, у вас есть еще один дополнительный параметр — **SoftwareUpdateConfigurationRunContext**. Этот параметр представляет собой строку JSON. Если он настроен для сценария предварительного или последующего выполнения, строка автоматически передается при развертывании обновлений. Параметр содержит сведения о развертывании обновлений, отбираемые из выходных данных [API-интерфейса SoftwareUpdateconfigurations](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). Доступные в этой переменной свойства представлены в таблице ниже.
+Настроив сценарии предварительного и последующего выполнения, вы можете передавать в них параметры, как в обычные модули Runbook. Параметры определяются при создании развертывания обновлений. Параметры скриптов предварительного и последующего выполнения должны иметь тип `String`. Если вам нужен другой тип объекта, вы можете привести его к другому типу, используя `[System.Convert]`, или обработать его с помощью собственной логики.
+
+Помимо стандартных параметров модуля Runbook, у вас есть еще один дополнительный параметр. **SoftwareUpdateConfigurationRunContext**. Этот параметр представляет собой строку JSON. Если он настроен для сценария предварительного или последующего выполнения, строка автоматически передается при развертывании обновлений. Параметр содержит сведения о развертывании обновлений, отбираемые из выходных данных [API SoftwareUpdateconfigurations](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). Доступные в этой переменной свойства представлены в таблице ниже.
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
@@ -70,7 +72,7 @@ ms.locfileid: "54428245"
 |azureVirtualMachines     | Список идентификаторов ресурсов для виртуальных машин Azure, включенных в развертывание обновлений        |
 |nonAzureComputerNames|Список полных доменных имен компьютеров, не связанных с Azure, включенных в развертывание обновлений|
 
-Вот пример строки JSON, передаваемой в параметре **SoftwareUpdateConfigurationRunContext**:
+В следующем примере приведена строка JSON, передаваемая в параметре **SoftwareUpdateConfigurationRunContext**.
 
 ```json
 "SoftwareUpdateConfigurationRunContext":{
@@ -174,7 +176,7 @@ $variable = Get-AutomationVariable -Name $runId
 
 ## <a name="interacting-with-non-azure-machines"></a>Взаимодействие с компьютерами, не входящими в Azure
 
-Задачи предварительного и последующего выполнения работают в контексте Azure и не имеют доступа к компьютерам в других средах. Чтобы взаимодействовать с другими компьютерами вам потребуется следующее:
+Задачи предварительного и последующего выполнения работают в контексте Azure и не имеют доступ к компьютерам в других средах. Чтобы взаимодействовать с компьютерами, не входящими в Azure, вам потребуется следующее:
 
 * учетная запись запуска от имени;
 * установленная на компьютере гибридная рабочая роль Runbook;

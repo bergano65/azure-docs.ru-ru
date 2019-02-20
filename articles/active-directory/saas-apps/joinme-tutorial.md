@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с join.me | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с join.me | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и join.me.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: jeedes
-ms.openlocfilehash: dc393b8701bd72ea7f9de543de33116ea3cb5653
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f61520994bdeeab75b6d26731dee9af15b4ccda6
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48872479"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56209546"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-joinme"></a>Руководство по интеграции Azure Active Directory с join.me
+# <a name="tutorial-azure-active-directory-integration-with-joinme"></a>Руководство. Интеграция Azure Active Directory с join.me
 
 В этом руководстве описано, как интегрировать join.me с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "48872479"
 
 - С помощью Azure AD вы можете контролировать доступ к join.me.
 - Вы можете включить автоматический вход пользователей в join.me (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+- Вы можете управлять учетными записями централизованно на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -54,7 +55,7 @@ ms.locfileid: "48872479"
 1. Добавление join.me из коллекции.
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-joinme-from-the-gallery"></a>Добавление join.me из коллекции
+## <a name="adding-joinme-from-the-gallery"></a>Добавление join.me из коллекции.
 Чтобы настроить интеграцию join.me с Azure AD, необходимо добавить join.me из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить join.me из коллекции, сделайте следующее:**
@@ -86,7 +87,7 @@ ms.locfileid: "48872479"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 3. **[Создание тестового пользователя приложения join.me](#create-a-joinme-test-user)** требуется для того, чтобы в join.me существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -123,9 +124,9 @@ ms.locfileid: "48872479"
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/joinme-tutorial/d_users_and_groups.png)
 
@@ -133,14 +134,14 @@ ms.locfileid: "48872479"
 
     ![изображение](./media/joinme-tutorial/d_adduser.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
     ![изображение](./media/joinme-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -148,7 +149,7 @@ ms.locfileid: "48872479"
   
 ### <a name="create-a-joinme-test-user"></a>Создание тестового пользователя join.me
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении join.me. Обратитесь в [службу поддержки join.me](https://help.join.me/s/?language), чтобы добавить пользователей на платформу join.me. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении join.me. Обратитесь в  [группу поддержки join.me](https://help.join.me/s/?language), чтобы добавить пользователей на платформу join.me. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -179,7 +180,7 @@ ms.locfileid: "48872479"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент join.me на панели доступа, вы автоматически войдете в приложение join.me.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

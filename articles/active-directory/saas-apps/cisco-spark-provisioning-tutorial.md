@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: В этой статье описано, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Cisco Spark.
 services: active-directory
 documentationcenter: ''
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: v-wingf
-ms.openlocfilehash: aafbde6907e59be3b0ff1d5807ffe4a7d2fffaa4
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 03c45a19c8f6bbce2ffdfff0758eb3e57203b7cf
+ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346111"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56211212"
 ---
-# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство. Настройка Cisco Spark для автоматической подготовки пользователей
+# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство по Настройка Cisco Spark для автоматической подготовки пользователей
 
 
 В этом руководстве описаны шаги, которые нужно выполнить в Cisco Spark и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отмены подготовки пользователей.
@@ -49,7 +50,7 @@ ms.locfileid: "44346111"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory][1]
 
 2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
 
@@ -57,7 +58,7 @@ ms.locfileid: "44346111"
 
 3. Чтобы добавить Cisco Spark, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Создать приложение"][3]
 
 4. В поле поиска введите **Cisco Spark**.
 
