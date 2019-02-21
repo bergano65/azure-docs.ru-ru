@@ -13,16 +13,14 @@ ms.devlang: na
 ms.date: 12/19/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 99d4f3b6cf42ee21c34809b5604c4603da784e7b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: cf1894a218af35459e0d0dc432c5813169856cca
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107826"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267706"
 ---
 # <a name="tutorial-move-azure-resources-to-another-resource-group-or-subscription"></a>Руководство по Перемещение ресурсов Azure в другую группу ресурсов или подписку
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 В этом разделе показано, как перемещать ресурсы из одной группы ресурсов в другую. Вы также можете переместить ресурсы Azure из одной подписки Azure в другую подписку. В этом руководстве используется шаблон Resource Manager для развертывания двух групп ресурсов и одной учетной записи хранения. Затем переместите учетную запись хранения из одной группы ресурсов в другую.
 
@@ -37,8 +35,6 @@ ms.locfileid: "56107826"
 > * Очистка ресурсов.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prepare-the-resources"></a>Подготовка ресурсов
 
@@ -98,6 +94,8 @@ New-AzDeployment `
 ## <a name="move-the-resource"></a>Перемещение ресурсов
 
 Учетная запись хранения находится внутри исходной группы ресурсов (rg1). Запустите следующий скрипт PowerShell, чтобы переместить ресурс в целевую группу ресурсов (rg2). Убедитесь, что имя проекта совпадает с именем, использованным при развертывании ресурсов.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ```azurepowershell-interactive
 $projectName = Read-Host -prompt "Enter a project name"

@@ -4,14 +4,14 @@ description: Из этой статьи вы узнаете, как исполь
 author: deborahc
 ms.service: cosmos-db
 ms.topic: tutorial
-ms.date: 11/15/2018
+ms.date: 02/19/2019
 ms.author: dech
-ms.openlocfilehash: 82c34f3dcc606ccf7103b557518cd7a54a153183
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 972602bb6c5fc80433c2479516f8d0a5d885e4dd
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034126"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446942"
 ---
 # <a name="use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Использование средства переноса данных для переноса данных в Azure Cosmos DB
 
@@ -58,7 +58,7 @@ ms.locfileid: "54034126"
 
 ## <a id="Install"></a>Установка
 
-Исходный код средства миграции можно найти в [этом репозитории](https://github.com/azure/azure-documentdb-datamigrationtool) GitHub. Вы можете скачать решение и скомпилировать его локально, или [скачать предварительно скомпилированный двоичный файл](https://cosmosdbportalstorage.blob.core.windows.net/datamigrationtool/2018.02.28-1.8.1/dt-1.8.1.zip), а затем запустить одну из версий:
+Исходный код средства миграции можно найти в [этом репозитории](https://github.com/azure/azure-documentdb-datamigrationtool) GitHub. Вы можете скачать решение и скомпилировать его локально, или [скачать предварительно скомпилированный двоичный файл](https://cosmosdbtools.blob.core.windows.net/datamigrationtool/2019.02.19-1.8.2/dt-1.8.2.zip), а затем запустить одну из версий:
 
 * **Dtui.exe**. Версия средства с графическим интерфейсом.
 * **Dt.exe**. Версия средства с командной строкой.

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/28/2018
+ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 94a20c679f68d06a5953c5b446a6111124d8a61a
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 5bfd1c2af5b5dfc651674e44e623eea761730697
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875116"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313019"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и Python
 
@@ -169,10 +169,6 @@ plt.show()
   }
 }
 ```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Удалите файл, если он больше не нужен.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

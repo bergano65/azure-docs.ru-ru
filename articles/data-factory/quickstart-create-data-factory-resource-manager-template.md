@@ -10,16 +10,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: quickstart
-ms.date: 11/28/2018
+ms.date: 02/20/2019
 ms.author: douglasl
-ms.openlocfilehash: bb6c3281ffc434bd31f901b2b7f6e540f893ca76
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: c3a9864a901d44d0c84c6946c55e5dc2c700cbac
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001908"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447605"
 ---
-# <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
+# <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство по Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-build-your-first-pipeline-using-arm.md)
@@ -135,7 +135,7 @@ ms.locfileid: "56001908"
     },
     "resources": [{
         "name": "[parameters('dataFactoryName')]",
-        "apiVersion": "2017-09-01-preview",
+        "apiVersion": "2018-06-01",
         "type": "Microsoft.DataFactory/factories",
         "location": "[parameters('dataFactoryLocation')]",
         "identity": {
@@ -147,7 +147,7 @@ ms.locfileid: "56001908"
                 "dependsOn": [
                     "[parameters('dataFactoryName')]"
                 ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "type": "AzureStorage",
                     "description": "Azure Storage linked service",
@@ -166,7 +166,7 @@ ms.locfileid: "56001908"
                     "[parameters('dataFactoryName')]",
                     "[variables('azureStorageLinkedServiceName')]"
                 ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "type": "AzureBlob",
                     "typeProperties": {
@@ -186,7 +186,7 @@ ms.locfileid: "56001908"
                     "[parameters('dataFactoryName')]",
                     "[variables('azureStorageLinkedServiceName')]"
                 ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "type": "AzureBlob",
                     "typeProperties": {
@@ -208,7 +208,7 @@ ms.locfileid: "56001908"
                     "[variables('inputDatasetName')]",
                     "[variables('outputDatasetName')]"
                 ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "activities": [{
                         "type": "Copy",
@@ -242,7 +242,7 @@ ms.locfileid: "56001908"
                     "[variables('outputDatasetName')]",
                     "[variables('pipelineName')]"
                 ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "type": "ScheduleTrigger",
                     "typeProperties": {
@@ -492,7 +492,7 @@ DeploymentDebugLogLevel :
     "dependsOn": [
         "[parameters('dataFactoryName')]"
     ],
-    "apiVersion": "2017-09-01-preview",
+    "apiVersion": "2018-06-01",
     "properties": {
         "type": "AzureStorage",
         "description": "Azure Storage linked service",
@@ -520,7 +520,7 @@ DeploymentDebugLogLevel :
         "[parameters('dataFactoryName')]",
         "[variables('azureStorageLinkedServiceName')]"
     ],
-    "apiVersion": "2017-09-01-preview",
+    "apiVersion": "2018-06-01",
     "properties": {
         "type": "AzureBlob",
         "typeProperties": {
@@ -547,7 +547,7 @@ DeploymentDebugLogLevel :
         "[parameters('dataFactoryName')]",
         "[variables('azureStorageLinkedServiceName')]"
     ],
-    "apiVersion": "2017-09-01-preview",
+    "apiVersion": "2018-06-01",
     "properties": {
         "type": "AzureBlob",
         "typeProperties": {
@@ -576,7 +576,7 @@ DeploymentDebugLogLevel :
         "[variables('inputDatasetName')]",
         "[variables('outputDatasetName')]"
     ],
-    "apiVersion": "2017-09-01-preview",
+    "apiVersion": "2018-06-01",
     "properties": {
         "activities": [{
             "type": "Copy",
@@ -617,7 +617,7 @@ DeploymentDebugLogLevel :
         "[variables('outputDatasetName')]",
         "[variables('pipelineName')]"
     ],
-    "apiVersion": "2017-09-01-preview",
+    "apiVersion": "2018-06-01",
     "properties": {
         "type": "ScheduleTrigger",
         "typeProperties": {

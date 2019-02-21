@@ -3,19 +3,19 @@ title: Передача, скачивание, составление списк
 description: Создание, передача и удаление больших двоичных объектов и контейнеров в Node.js с помощью службы хранилища Azure
 services: storage
 author: tamram
-ms.custom: mvc
 ms.service: storage
+ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: tamram
-ms.openlocfilehash: 431f75143a118d369ac45fa273f8f16d17bf6785
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: f5f6e6dc1e8c0df88d69f9edbbdaf6e3421548df
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55695429"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428948"
 ---
-# <a name="quickstart-upload-download-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascript-preview"></a>Краткое руководство. Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript (предварительная версия)
+# <a name="quickstart-upload-download-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascript"></a>Краткое руководство. Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript
 
 Из этого краткого руководства вы узнаете, как использовать [пакет SDK версии 10 службы хранилища Azure для JavaScript](https://github.com/Azure/azure-storage-js) в Node.js для передачи, загрузки, составления списков и удаления больших двоичных объектов и управления контейнерами.
 

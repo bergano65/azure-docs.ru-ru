@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 01/02/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 953615a9c6b716db1db0c7bfb993f3d47aefd7a9
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: d84fe768170cffd433b18a1a3dacb1a9c2be7e9f
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55507779"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56329990"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -169,7 +169,7 @@ SSE автоматически шифрует данные на всех уро�
 * [Клиентская библиотека перемещения хранилища данных для .NET](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.datamovement)
 
 ### <a name="tools-and-utilities"></a>Средства и служебные программы
-* [Командлеты Azure PowerShell для службы хранилища](https://docs.microsoft.com/powershell/module/azure.storage)
+* [Командлеты Azure PowerShell для службы хранилища](https://docs.microsoft.com/powershell/module/az.storage)
 * [Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/storage)
 * [Служебная программа командной строки AzCopy](https://aka.ms/downloadazcopy)
 * [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
