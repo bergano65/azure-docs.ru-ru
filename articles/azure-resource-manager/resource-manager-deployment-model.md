@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: tomfitz
-ms.openlocfilehash: e7d271ce37209a49e1c75d6114ed07b11558df44
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: c8aafa2dc2798aee5576dab4781b42d4aa67ddd9
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104998"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56269269"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
 
@@ -48,8 +48,6 @@ ms.locfileid: "56104998"
 При появлении диспетчера ресурсов все ресурсы были добавлены в группы ресурсов по умолчанию. Теперь при классическом развертывании ресурсы будут автоматически создаваться в группе ресурсов, заданной для этой службы по умолчанию. Указывать ее не нужно. Однако только принадлежность к группе ресурсов не означает, что ресурс был преобразован в модель диспетчера ресурсов.
 
 ## <a name="understand-support-for-the-models"></a>Общие сведения о поддержке моделей развертывания
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Существуют три сценария, о которых важно знать:
 
