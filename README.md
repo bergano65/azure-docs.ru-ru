@@ -1,5 +1,7 @@
 # <a name="microsoft-azure-documentation"></a>Документация по Microsoft Azure
 
+> В период с 5 по 9 марта 2019 г. будет выполняться перенос репозитория MicrosoftDocs/azure-docs с текущего обработчика Markdown в обработчик [Markdig](https://github.com/lunet-io/markdig). Чтобы обеспечить успешное выполнение миграции, в течение этого времени будет отключена возможность приостанавливать слияние открытых запросов на вытягивание.
+
 Добро пожаловать на сайт [документации](https://docs.microsoft.com/azure) по [Microsoft Azure](https://azure.microsoft.com), содержащей открытый исходный код. Просмотрите этот файл README, чтобы узнать, как вы можете дополнить нашу документацию по Microsoft Azure.
 
 ## <a name="getting-started"></a>Приступая к работе
