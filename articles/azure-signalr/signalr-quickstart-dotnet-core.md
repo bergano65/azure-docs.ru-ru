@@ -7,12 +7,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: e1eced2d00737a950ed441bd83614d9d6d0b9230
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 1bfe0026e52107c85bf2c7e66414e937ad27f715
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731280"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267756"
 ---
 # <a name="quickstart-create-a-chat-room-with-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -79,7 +79,7 @@ Azure SignalR — это служба Azure, которая помогает р�
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.SignalR`, выполнив следующую команду:
 
-        dotnet add package Microsoft.Azure.SignalR -v 1.0.0-*
+        dotnet add package Microsoft.Azure.SignalR
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта.
 
@@ -92,7 +92,7 @@ Azure SignalR — это служба Azure, которая помогает р�
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 
     ```
-    dotnet user-secrets set Azure:SignalR:ConnectionString "Endpoint=<Your endpoint>;AccessKey=<Your access key>;"    
+    dotnet user-secrets set Azure:SignalR:ConnectionString "<Your connection string>"    
     ```
 
     Диспетчер секретов будет использоваться только для тестирования веб-приложения во время его локального размещения. В следующем руководстве вы развернете веб-приложение чата в Azure. После развертывания веб-приложения в Azure вы используете параметр приложения вместо сохранения строки подключения с помощью диспетчера секретов.
