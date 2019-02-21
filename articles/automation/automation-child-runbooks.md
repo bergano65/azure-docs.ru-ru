@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 01/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 37cf44e2c9d28b1aac8f2ab80ba29d126fb8651f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: f52c9731b0289563037cbf065f3e22d652b40e74
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54422974"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417437"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "54422974"
 
 При публикации Runbook все дочерние Runbook, которые он вызывает, уже должны быть опубликованы. Это связано с тем, что служба автоматизации Azure создает связь с любыми дочерними Runbook при компиляции Runbook. В противном случае родительский Runbook будет отображаться как доступный для публикации, но будет выдавать исключение при запуске. В этом случае можно повторно опубликовать родительский Runbook, чтобы исправить ссылки на дочерние Runbook. Не надо повторно публиковать родительский Runbook, если были изменены все дочерние Runbook, так как связь уже создана.
 
-Параметры дочернего Runbook, который вызывается с помощью встроенного вызова, могут быть любого типа данных, включая сложные объекты. Отсутствует [сериализация JSON](automation-starting-a-runbook.md#runbook-parameters), как при запуске Runbook с помощью портала Azure или командлета Start-AzureRmAutomationRunbook.
+Параметры дочернего Runbook, который вызывается с помощью встроенного вызова, могут быть любого типа данных, включая сложные объекты. Отсутствует [сериализация JSON](start-runbooks.md#runbook-parameters), как при запуске Runbook с помощью портала Azure или командлета Start-AzureRmAutomationRunbook.
 
 ### <a name="runbook-types"></a>Типы Runbook
 
@@ -65,7 +65,7 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 > [!IMPORTANT]
 > Если вызвать дочерний Runbook с помощью командлета `Start-AzureRmAutomationRunbook` с параметрами `-Wait`, а результатами этого модуля будет объект, могут возникнуть ошибки. Чтобы устранить ошибку, перейдите к разделу о [дочерних Runbook с выходными данными объекта](troubleshoot/runbooks.md#child-runbook-object), чтобы узнать, как реализовать логику для опроса результатов и использовать [Get-AzureRmAutomationJobOutputRecord](/powershell/module/azurerm.automation/get-azurermautomationjoboutputrecord).
 
-Чтобы запустить модуль Runbook, можно воспользоваться командлетом [Start-AzureRmAutomationRunbook](/powershell/module/AzureRM.Automation/Start-AzureRmAutomationRunbook), как описано в разделе [Запуск модуля Runbook с помощью Windows PowerShell](automation-starting-a-runbook.md#starting-a-runbook-with-windows-powershell). Этот командлет можно использовать в двух режимах.  В одном режиме командлет возвращает идентификатор задания при создании дочернего задания для дочернего Runbook.  В другом режиме, который можно включить, указав параметр **-wait**, командлет ожидает завершения дочернего задания и возвращает выходные данные из дочернего Runbook.
+Чтобы запустить модуль Runbook, можно воспользоваться командлетом [Start-AzureRmAutomationRunbook](/powershell/module/AzureRM.Automation/Start-AzureRmAutomationRunbook), как описано в разделе [Запуск модуля Runbook с помощью Windows PowerShell](start-runbooks.md#start-a-runbook-with-powershell). Этот командлет можно использовать в двух режимах.  В одном режиме командлет возвращает идентификатор задания при создании дочернего задания для дочернего Runbook.  В другом режиме, который можно включить, указав параметр **-wait**, командлет ожидает завершения дочернего задания и возвращает выходные данные из дочернего Runbook.
 
 Задание дочернего Runbook, запущенного с помощью командлета, будет выполняться отдельно от задания родительского Runbook. Это поведение порождает больше заданий, чем при встроенном вызове Runbook, и усложняет их отслеживание. Родительский Runbook может запустить несколько дочерних Runbook асинхронно, не ожидая завершения каждого из них. Для такого параллельного выполнения дочерних Runbook с помощью встроенного вызова в родительском Runbook потребуется использовать [ключевое слово parallel](automation-powershell-workflow.md#parallel-processing).
 
@@ -73,7 +73,7 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 
 Если вы не хотите блокировать родительский Runbook во время ожидания, можно запустить дочерний Runbook с помощью командлета `Start-AzureRmAutomationRunbook` без параметра `-Wait`. Затем вам придется использовать `Get-AzureRmAutomationJob` для ожидания завершения задания, а также `Get-AzureRmAutomationJobOutput` и `Get-AzureRmAutomationJobOutputRecord` для получения результатов.
 
-Параметры дочернего Runbook, запускаемого с помощью командлета, предоставляются в виде хэш-таблицы, как описано в статье [Параметры Runbook](automation-starting-a-runbook.md#runbook-parameters). Можно использовать только простые типы данных. Если у Runbook есть параметр со сложным типом данных, то для него необходимо использовать встроенный вызов.
+Параметры дочернего Runbook, запускаемого с помощью командлета, предоставляются в виде хэш-таблицы, как описано в статье [Параметры Runbook](start-runbooks.md#runbook-parameters). Можно использовать только простые типы данных. Если у Runbook есть параметр со сложным типом данных, то для него необходимо использовать встроенный вызов.
 
 Контекст подписки может быть потерян при запуске дочерних Runbook в качестве отдельных заданий. Чтобы дочерний Runbook вызывал командлеты Azure RM в определенной подписке Azure, он должен выполнить проверку подлинности для этой подписки независимо от родительского Runbook.
 
@@ -120,6 +120,6 @@ Start-AzureRmAutomationRunbook `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md)
+* [Запуск модуля Runbook в службе автоматизации Azure](start-runbooks.md)
 * [Выходные данные и сообщения Runbook в службе автоматизации Azure](automation-runbook-output-and-messages.md)
 

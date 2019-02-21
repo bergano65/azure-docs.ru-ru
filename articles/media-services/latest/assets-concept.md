@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/03/2019
+ms.date: 02/19/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 72229a723247d6f0d68341771b073d0626ab2edb
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 2ec2ddbac5d0368aaf1b46208c9ebb44bf12a622
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746002"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447316"
 ---
 # <a name="assets"></a>Активы
 
@@ -48,8 +48,7 @@ ms.locfileid: "55746002"
 4. Используйте API Служб мультимедиа версии 3, чтобы создать преобразование и задание для обработки входного ресурса. Дополнительные сведения см. в статье [Преобразования и задания](transform-concept.md).
 5. Потоковая передача содержимого из выходного ресурса.
 
-> [!TIP]
-> Полный пример .NET, в котором показано, как создать ресурс, получить доступный для записи URL-адрес SAS для контейнера ресурса в хранилище, отправить файл в контейнер в хранилище с помощью URL-адреса SAS, см. в разделе [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md).
+Полный пример .NET, в котором показано, как создать ресурс, получить доступный для записи URL-адрес SAS для контейнера ресурса в хранилище, отправить файл в контейнер в хранилище с помощью URL-адреса SAS, см. в разделе [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md).
 
 ### <a name="create-a-new-asset"></a>Создание ресурса
 

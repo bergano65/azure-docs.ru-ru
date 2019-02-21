@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 62d6dce4ccb5d4badbcf9b02cbbcda576ee63212
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: add526d8c09d2aa557ddd645e9016cb9c3b225a3
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869257"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328203"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
@@ -30,7 +30,7 @@ ms.locfileid: "55869257"
 - Содержимое учетных записей пользователей, собранное при регистрации.
 - Учебные данные, необходимые для построения моделей (т. е. намерения и сущности).
 - Запросы пользователей, записанные в журнал во время выполнения для помощи в улучшении пользовательских моделей.
-  - Пользователи могут отключить ведение журнала запросов, добавив `&log=false` к запросу. Дополнительные сведения см. [здесь](luis-resources-faq.md#how-can-i-disable-the-logging-of-utterances).
+  - Пользователи могут отключить ведение журнала запросов, добавив `&log=false` к запросу. Дополнительные сведения см. [здесь](troubleshooting.md#how-can-i-disable-the-logging-of-utterances).
 
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
 Пользователи LUIS могут полностью контролировать удаление любого пользовательского содержимого либо через веб-портал LUIS, либо с помощью программных API-интерфейсов LUIS. В следующей таблице представлены ссылки, помогающие освоить оба способа:

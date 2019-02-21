@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/17/2018
 ms.author: cherylmc
-ms.openlocfilehash: 4d2edeaf7423d3a46becf386294d2dd8c46e9ab7
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 9779885869666ffd1198afcda944823b99d52e5b
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55508340"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417979"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -30,6 +30,8 @@ ms.locfileid: "55508340"
 Если у вас нет шлюза виртуальной сети и вы не хотите его создавать, то вместо этого можно подключить виртуальные сети с помощью пиринга виртуальных сетей. При пиринговой связи между виртуальными сетями VPN-шлюз не используется. Дополнительную информацию см. в статье [Пиринговая связь между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
 
 ### <a name="before"></a>Перед началом работы
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * Предполагается, что обе виртуальные сети уже созданы. Если вы используете эту статью в качестве упражнения и у вас нет виртуальных сетей, в шагах есть ссылки, которые помогут вам их создать.
 * Убедитесь, что диапазоны адресов для виртуальных сетей не перекрываются между собой или с другими диапазонами подключений, к которым могут быть подключены шлюзы.
@@ -226,19 +228,19 @@ ms.locfileid: "55508340"
 Запустите консоль PowerShell с повышенными правами и войдите в свою учетную запись Azure. После выполнения входа он скачивает параметры учетной записи, чтобы они были доступны в Azure PowerShell. Следующий командлет запрашивает учетные данные входа для вашей учетной записи Azure для модели развертывания с помощью Resource Manager.
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 Получите список подписок Azure.
 
 ```powershell
-Get-AzureRmSubscription
+Get-AzSubscription
 ```
 
 При наличии нескольких подписок укажите подписку, которую вы хотите использовать.
 
 ```powershell
-Select-AzureRmSubscription -SubscriptionName "Name of subscription"
+Select-AzSubscription -SubscriptionName "Name of subscription"
 ```
 
 Затем войдите, чтобы использовать классические командлеты PowerShell (управление службами). Используйте следующую команду, чтобы добавить учетную запись Azure для классической модели развертывания.

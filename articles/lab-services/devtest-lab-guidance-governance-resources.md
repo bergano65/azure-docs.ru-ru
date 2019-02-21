@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: aff57e58ffd247bcc697908f2f25cbf17ff9b91a
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: c5514a43602106cf045b575d289e02b591468359
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244136"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338467"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---resources"></a>Система управления инфраструктурой Azure DevTest Labs — ресурсы
 В этой статье рассматриваются процессы согласования и управления для ресурсов DevTest Labs в вашей организации. 
@@ -56,7 +56,7 @@ ms.locfileid: "56244136"
 ### <a name="answer"></a>Ответ
 Вы можете расширить существующие корпоративные соглашения об именовании на операции в среде Azure и поддерживать их единообразие для всей среды DevTest Labs.
 
-Мы рекомендуем вам создать четкие начальные политики сразу же при развертывании DevTest Labs. Для обеспечения согласованности эти политики развертываются с помощью централизованного скрипта и шаблонов JSON. Политики наименования также можно реализовать в политиках Azure, применяемых на уровне подписки. Примеры кода JSON для службы "Политика Azure" вы найдете в статье [Примеры для Политики Azure](../azure-policy/json-samples.md).
+Мы рекомендуем вам создать четкие начальные политики сразу же при развертывании DevTest Labs. Для обеспечения согласованности эти политики развертываются с помощью централизованного скрипта и шаблонов JSON. Политики наименования также можно реализовать в политиках Azure, применяемых на уровне подписки. Примеры кода JSON для службы "Политика Azure" вы найдете в статье [Примеры для Политики Azure](../governance/policy/samples/index.md).
 
 ## <a name="number-of-users-per-lab-and-labs-per-organization"></a>Количество пользователей в лаборатории и количество лабораторий в организации
 

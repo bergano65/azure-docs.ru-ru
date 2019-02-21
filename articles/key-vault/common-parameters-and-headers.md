@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: bryanla
-ms.openlocfilehash: 3fb11ad74e3d1628cbf3f00e2aae648be3eea437
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 1ac0f54aa4dfdc9db4724629c4dbfe7a4982838f
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107690"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301236"
 ---
 # <a name="common-parameters-and-headers"></a>Распространенные параметры и заголовки
 
@@ -34,12 +34,14 @@ ms.locfileid: "56107690"
 ## <a name="common-error-response"></a>Распространенное сообщение об ошибке
 Служба будет использовать коды состояния HTTP для указания успеха или сбоя. Кроме того, ошибки содержат ответ в следующем формате:
 
+```
    {  
      "error": {  
      "code": "BadRequest",  
-     "message": "The key vault sku is invalid." (Недопустимый номер SKU для Key Vault).  
+     "message": "The key vault sku is invalid."  
      }  
    }  
+```
 
 |Имя элемента | type | ОПИСАНИЕ |
 |---|---|---|

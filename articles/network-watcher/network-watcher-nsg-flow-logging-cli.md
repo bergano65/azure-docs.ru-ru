@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 3e7a03f1235dab7eefd63b6611890897285d86ea
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 61674cc5551fb0d1be184de0ff0ed659cc56bbbe
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332342"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340252"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-azure-cli"></a>Настройка журналов потоков для групп безопасности сети с помощью Azure CLI
 
@@ -32,9 +32,6 @@ ms.locfileid: "54332342"
 Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
 
 Для выполнения действий, описанных в этой статье, требуется [установить Azure CLI для Mac, Linux и Windows](/cli/azure/install-azure-cli).
-
-> [!NOTE] 
-> Журналы потоков версии 2 доступны только в центрально-западной части США. Если включить ведение журналов для версии 2 в неподдерживаемом регионе, в учетной записи хранения будут сохраняться журналы версии 1.
 
 ## <a name="register-insights-provider"></a>Регистрация поставщика Microsoft Insights
 

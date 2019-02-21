@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 92bbcf1285449ac21cd038e1a6d27d2e3d43430b
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 55a9e373893f6f46e6c109dde947b25a36ee93ed
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54259739"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343006"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-powershell"></a>Настройка журналов потоков для групп безопасности сети с помощью PowerShell
 
@@ -30,9 +30,6 @@ ms.locfileid: "54259739"
 > - [REST API](network-watcher-nsg-flow-logging-rest.md)
 
 Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
-
-> [!NOTE] 
-> Журналы потоков версии 2 доступны только в центрально-западной части США. Если включить ведение журналов для версии 2 в неподдерживаемом регионе, в учетной записи хранения будут сохраняться журналы версии 1.
 
 ## <a name="register-insights-provider"></a>Регистрация поставщика Microsoft Insights
 

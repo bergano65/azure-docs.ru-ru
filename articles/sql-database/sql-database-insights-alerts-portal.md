@@ -12,12 +12,12 @@ ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 11/02/2018
-ms.openlocfilehash: 64e743010b3ae615817639d9b2531b2f99979498
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: e53d77c4faea5b9461395a0098261866bdf6252f
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156908"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430440"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-data-warehouse-using-azure-portal"></a>Создание оповещений для Базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -106,7 +106,6 @@ ms.locfileid: "54156908"
 ||||||               
 | Хранилище данных SQL | cpu_percent | Процент использования ЦП | Средняя | 10 минут |
 | Хранилище данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 10 минут |
-| Хранилище данных SQL | storage | Total database size | Максимальная | 10 минут |
 | Хранилище данных SQL | connection_successful | Успешные подключения | Всего | 10 минут |
 | Хранилище данных SQL | connection_failed | Неудачные подключения | Всего | 10 минут |
 | Хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Всего | 10 минут |

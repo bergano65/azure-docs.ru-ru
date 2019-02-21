@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: 92cd927b2cac9c30a5552d632468763de91c54db
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 62a3169257001f64e3103cc079e544449ac59663
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861669"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328390"
 ---
 # <a name="luis-bot-in-nodejs-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на Node.js с помощью Bot Framework 3.x и бота веб-приложения Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "55861669"
 
     ![Выбор бота веб-приложения для начала процесса создания ресурса](./media/luis-tutorial-node-bot/bot-service-selection.png)
 
-3. В колонке **Служба ботов** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](luis-resources-faq.md#what-luis-regions-support-bot-framework-speech-priming). 
+3. В колонке **Служба ботов** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](troubleshooting.md#what-luis-regions-support-bot-framework-speech-priming). 
     * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
     * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
     * В поле **Шаблон бота** выберите:

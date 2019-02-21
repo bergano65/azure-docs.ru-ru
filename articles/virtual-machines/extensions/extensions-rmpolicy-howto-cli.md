@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: roiyz;cynthn
-ms.openlocfilehash: 536239a9ff98c76badfc042a2d59d19b8fb6f04a
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 1f71276c25e3ec1e5791d9b35f89aa95190c6afd
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770590"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341970"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Ограничение установки расширений на виртуальных машинах Linux с помощью службы "Политика Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "55770590"
 
 ## <a name="create-a-rules-file"></a>Создание файла правил
 
-Чтобы ограничить допустимые для установки расширения, вам потребуется [правило](/azure/azure-policy/policy-definition#policy-rule) с логикой определения расширений.
+Чтобы ограничить допустимые для установки расширения, вам потребуется [правило](../../governance/policy/concepts/definition-structure.md#policy-rule) с логикой определения расширений.
 
 В этом примере показано, как можно запретить установку расширений, опубликованных издателем Microsoft.OSTCExtensions, создав файл правил в Azure Cloud Shell. Если вы работаете с локальным интерфейсом командной строки, можете создать локальный файл и заменить путь ~/clouddrive фактическим расположением файла на компьютере.
 
@@ -69,7 +69,7 @@ vim ~/clouddrive/azurepolicy.rules.json
 
 ## <a name="create-a-parameters-file"></a>Создание файла параметров
 
-Вам понадобится также файл [параметров](/azure/azure-policy/policy-definition#parameters), который позволяет создать структуру для передачи списка блокируемых расширений. 
+Вам понадобится также файл [параметров](../../governance/policy/concepts/definition-structure.md#parameters), который позволяет создать структуру для передачи списка блокируемых расширений. 
 
 Этот пример демонстрирует, как создать в Cloud Shell файл параметров для виртуальных машин Linux. Если вы работаете с локальным интерфейсом командной строки, можете создать локальный файл и заменить путь ~/clouddrive фактическим расположением файла на компьютере.
 
@@ -171,6 +171,6 @@ az policy assignment delete --name 'not-allowed-vmextension-linux' --resource-gr
 az policy definition delete --name 'not-allowed-vmextension-linux'
 ```
 
-
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../azure-policy/azure-policy-introduction.md)
+
+Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

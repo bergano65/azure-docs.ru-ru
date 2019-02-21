@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6a54dc6a1068a9f7908760fb70fea45ef34f5b60
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 3465a891d91bc54bfe39b9501a7ad0e970932860
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981440"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56309630"
 ---
 # <a name="create-a-vm-from-a-specialized-vhd-in-a-storage-account"></a>Создание виртуальной машины на основе специализированного VHD в учетной записи хранения
 
@@ -29,7 +29,7 @@ ms.locfileid: "55981440"
 
 Существует два варианта.
 * [Передача VHD](sa-create-vm-specialized.md#option-1-upload-a-specialized-vhd)
-* [Копирование VHD, имеющейся виртуальной машины Azure](sa-create-vm-specialized.md#option-2-copy-an-existing-azure-vm).
+* [Копирование VHD, имеющейся виртуальной машины Azure](sa-create-vm-specialized.md#option-2-copy-the-vhd-from-an-existing-azure-vm).
 
 [!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 

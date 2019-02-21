@@ -7,17 +7,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/26/2018
+ms.date: 02/20/2019
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 29e32177c899e8f42ee892be12a61c6633b23bdc
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: a6bd0097bacaa988c9c9f03c2ce827c42769aa99
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55567338"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447384"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure-SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения интеграции в Azure.
@@ -546,7 +546,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
         "variables": {},
         "resources": [{
             "name": "<Specify a name for your data factory>",
-            "apiVersion": "2017-09-01-preview",
+            "apiVersion": "2018-06-01",
             "type": "Microsoft.DataFactory/factories",
             "location": "East US",
             "properties": {},
@@ -554,7 +554,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
                 "type": "integrationruntimes",
                 "name": "<Specify a name for your Azure-SSIS IR>",
                 "dependsOn": [ "<The name of the data factory you specified at the beginning>" ],
-                "apiVersion": "2017-09-01-preview",
+                "apiVersion": "2018-06-01",
                 "properties": {
                     "type": "Managed",
                     "typeProperties": {

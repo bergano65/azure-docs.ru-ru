@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: iainfou
-ms.openlocfilehash: f464b6411e1375fa005980454a9b61d2d6c05b0b
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 7cd6af1dc6b947abd91c9d25a4b102e52da9d24d
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819116"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56456730"
 ---
 # <a name="scaling-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)
 
@@ -23,7 +23,7 @@ ms.locfileid: "55819116"
 - [масштабирование вручную](#manually-scale-pods-or-nodes);
 - [средство горизонтального автомасштабирования pod (HPA)](#horizontal-pod-autoscaler);
 - [средство автомасштабирования кластера](#cluster-autoscaler);
-- Интеграция экземпляра контейнера Azure (ACI) с AKS
+- [интеграция Экземпляров контейнеров Azure (ACI) с AKS](#burst-to-azure-container-instances).
 
 ## <a name="manually-scale-pods-or-nodes"></a>Масштабирование элементов pod или узлов вручную
 

@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/05/2019
+ms.date: 02/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 5af403b2d75a552719088daa17259f0771b77a94
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 0140cb4fd1721e1d13840fe27db223c0ebec7d8a
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765691"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301899"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
@@ -78,10 +78,10 @@ ms.locfileid: "55765691"
 
 |Ресурс агента|порты; |Направление |Обход проверки HTTPS|
 |------|---------|--------|--------|   
-|*.ods.opinsights.azure.com |Порт 443 |Исходящий и входящий|Yes |  
-|*.oms.opinsights.azure.com |Порт 443 |Исходящий и входящий|Yes |  
-|*.blob.core.windows.net |Порт 443 |Исходящий и входящий|Yes |  
-|*.azure-automation.net |Порт 443 |Исходящий и входящий|Yes |  
+|*.ods.opinsights.azure.com |Порт 443 |Исходящие|Yes |  
+|*.oms.opinsights.azure.com |Порт 443 |Исходящие|Yes |  
+|*.blob.core.windows.net |Порт 443 |Исходящие|Yes |  
+|*.azure-automation.net |Порт 443 |Исходящие|Yes |  
 
 
 Если планируется использование Azure Automation Hybrid Runbook Worker для подключения к службе автоматизации и регистрации в ней, чтобы применить runbook в вашей среде, они должны иметь доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 

@@ -3,21 +3,21 @@ title: Формат данных GeoJSON для геозон в Azure Maps | Д�
 description: Сведения о формате данных GeoJSON для геозон в Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/08/2018
+ms.date: 02/15/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: aa39661c8ecc4b594478def7d0cc9be3006294c4
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 5a654b7fdae341da62d94499830a5e1202dff921
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007492"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339640"
 ---
 # <a name="geofencing-geojson-data"></a>Данные GeoJSON для геозон
 
-В Azure Maps API-интерфейсы [GET Geofence](https://docs.microsoft.com/rest/api/map/spatial/getgeofencepreview) и [POST Geofence](https://docs.microsoft.com/rest/api/map/spatial/postgeofencepreview) позволяют получить сведения о близости координат относительно предоставленных геозон или набора границ. В этой статье подробно описано, как подготовить данные для геозон, применимые в API-интерфейсах GET и POST в Azure Maps.
+В Azure Maps API-интерфейсы [GET Geofence](https://docs.microsoft.com/rest/api/maps/spatial/getgeofencepreview) и [POST Geofence](https://docs.microsoft.com/rest/api/maps/spatial/postgeofencepreview) позволяют получить сведения о близости координат относительно предоставленных геозон или набора границ. В этой статье подробно описано, как подготовить данные для геозон, применимые в API-интерфейсах GET и POST в Azure Maps.
 
 Данные для геозон или набор геозон представляются объектами `Feature` и `FeatureCollection` в формате `GeoJSON`, который определен в стандарте [RFC7946](https://tools.ietf.org/html/rfc7946). В дополнение к этому:
 

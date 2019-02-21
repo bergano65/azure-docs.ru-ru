@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: raynew
-ms.openlocfilehash: ee7ebb151653b611c652c072b8cb4c07754d9b68
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 5e5a6f32eeac674a6527d333b981bbdac20a9958
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269708"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56309767"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -39,7 +39,7 @@ ms.locfileid: "53269708"
 
 ### <a name="before-you-start"></a>Перед началом работы
 
-- Если вы не хотите использовать протокол HTTPS, [отключите параметр по умолчанию](backup-azure-backup-server-vmware.md#disable-secure-communication-protocol).
+- Если вы не хотите использовать протокол HTTPS, [отключите параметр по умолчанию](backup-azure-backup-server-vmware.md).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. Соединение не защищено, когда делаете это в первый раз, и отобразится следующее.
 - Важно понимать, как Azure Backup Server обрабатывает резервные копии.
     - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно убедиться, что хранилище имеет достаточный объем для создания локальной резервной копии данных виртуальной машины VMware.

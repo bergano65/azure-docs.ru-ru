@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2017
 ms.author: yegu
-ms.openlocfilehash: dafa9f09b6aed1f61facf3737c7e03c81b2a0e7d
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 15b7bae6116d05e7bf4cd76a1ba1b93bb127fef8
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238255"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313098"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
@@ -85,7 +85,7 @@ ms.locfileid: "56238255"
 
 * Каковы распространенные ошибки в конфигурации кэша Azure для Redis и виртуальных сетей?
 * [Как проверить, что кэш работает в виртуальной сети?](#how-can-i-verify-that-my-cache-is-working-in-a-vnet)
-* [Почему при попытке подключения к моему кэшу Azure для Redis в виртуальной сети происходит ошибка и появляется сообщение о том, что удаленный сертификат недействителен?](#when-trying-to-connect-to-my-redis-cache-in-a-vnet-why-am-i-getting-an-error-stating-the-remote-certificate-is-invalid)
+* Почему при попытке подключения к моему кэшу Azure для Redis в виртуальной сети происходит ошибка и появляется сообщение о том, что удаленный сертификат недействителен?
 * [Можно ли использовать виртуальные сети в кэше уровня "Стандартный" или "Базовый"?](#can-i-use-vnets-with-a-standard-or-basic-cache)
 * Почему в одних подсетях не удается создать кэш Azure для Redis, а в других удается?
 * [Каковы требования к адресному пространству подсети?](#what-are-the-subnet-address-space-requirements)

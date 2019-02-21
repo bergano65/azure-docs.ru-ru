@@ -13,18 +13,16 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 8eea14703a7a4ed6fad56dc0bed981b84266e2db
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: d05ec1835bc04be0ca0fc12f41322c14b5420213
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112620"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337822"
 ---
 # <a name="requestdisallowedbypolicy-error-with-azure-resource-policy"></a>Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure
 
 В этой статье описывается причина ошибки RequestDisallowedByPolicy, а также предлагается решение для ее устранения.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="symptom"></a>Симптом
 
@@ -68,5 +66,5 @@ az policy definition show --name regionPolicyAssignment
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Что такое служба "Политика Azure"?](../azure-policy/azure-policy-introduction.md)
-- [Создание политик и управление ими для обеспечения соответствия](../azure-policy/create-manage-policy.md)
+- [Что такое служба "Политика Azure"?](../governance/policy/overview.md)
+- [Создание политик и управление ими для обеспечения соответствия](../governance/policy/tutorials/create-and-manage.md)

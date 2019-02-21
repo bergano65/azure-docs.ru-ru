@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 03/20/2017
-ms.openlocfilehash: 503a93064b81e0db35c0477a11f2ee525680c854
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: e41a669e3dcd14952077cbd21e7387184546de80
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55488451"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454312"
 ---
 # <a name="manage-experiment-iterations-in-azure-machine-learning-studio"></a>Управление итерациями экспериментов в Студии машинного обучения Azure
 Разработка модели прогнозной аналитики идет по итерациям — по мере изменения разных функций и параметров экспериментов выполняется сведение результатов, пока не будет получена обученная эффективная модель. Ключ к этому процессу — отслеживание различных итераций параметров и конфигураций эксперимента.
@@ -48,7 +48,7 @@ ms.locfileid: "55488451"
 
 Если щелкнуть **ПРОСМОТРЕТЬ ЖУРНАЛ ВЫПОЛНЕНИЯ**, вы увидите список всех выполнений:
 
-![Пример журнала выполнения][runhistory]
+![Пример журнала выполнения](./media/manage-experiment-iterations/viewrunhistory.jpg)
 
 Щелкните любое из этих выполнений, чтобы просмотреть моментальный снимок эксперимента на момент его выполнения. Сохраняется все — конфигурация, значения параметров, комментарии и результаты, чтобы предоставить вам полную запись выполнения эксперимента.
 
@@ -73,10 +73,6 @@ ms.locfileid: "55488451"
 5. Щелкните **Выполнить**.
 
 Теперь можно продолжить изменение и выполнение данной версии эксперимента, создавая новый журнал выполнения для записи вашей работы.
-
-<!-- Images -->
-[runhistory]:./media/manage-experiment-iterations/viewrunhistory.jpg
-
 
 <!-- Module References -->
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/

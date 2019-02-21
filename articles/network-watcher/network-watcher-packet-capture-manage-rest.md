@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: a429bfae001cad044da9ef729c021c8128cbfefe
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: c773aae4fa4e530b563c1ae084bf05b8b5c5c12f
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090016"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56299825"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-azure-rest-api"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure и Azure REST API
 
 > [!div class="op_single_selector"]
 > - [портал Azure](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
-> - [интерфейс командной строки Azure](network-watcher-packet-capture-manage-cli.md)
+> - [Интерфейс командной строки Azure](network-watcher-packet-capture-manage-cli.md)
 > - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
 
 Возможность записи пакетов Наблюдателя за сетями позволяет создавать сеансы записи для отслеживания входящего и исходящего трафика виртуальной машины. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Записи пакетов помогают выявить аномалии в работе сети по факту или заранее. Они также помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку передачи данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную. К тому же она сразу выполняется на требуемой виртуальной машине, что также позволяет сэкономить ценное время.
@@ -210,11 +210,12 @@ armclient get "https://management.azure.com/subscriptions/${subscriptionId}/Reso
 
 ```json
 {
-    "name": "vm1PacketCapture",     "id": "/subscriptions/{guid}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatche rName}/packetCaptures/{packetCaptureName}",
-   "captureStartTime" : "9/7/2016 12:35:24PM",
-   "packetCaptureStatus" : "Stopped",
-   "stopReason" : "TimeExceeded"
-   "packetCaptureError" : [ ]
+    "name": "vm1PacketCapture",
+    "id": "/subscriptions/{guid}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/packetCaptures/{packetCaptureName}",
+    "captureStartTime" : "9/7/2016 12:35:24PM",
+    "packetCaptureStatus" : "Stopped",
+    "stopReason" : "TimeExceeded",
+    "packetCaptureError" : [ ]
 }
 ```
 
@@ -300,9 +301,9 @@ armclient delete "https://management.azure.com/subscriptions/${subscriptionId}/R
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. на [этой странице](http://storageexplorer.com/).
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об Обозревателе службы хранилища см. по этой ссылке: [Обозреватель хранилища](http://storageexplorer.com/)
 
-Узнайте, как автоматизировать запись пакетов, используя оповещения на виртуальной машине, в статье [Использование записи пакетов для упреждающего мониторинга сети с помощью Функций Azure](network-watcher-alert-triggered-packet-capture.md).
+Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 
 
 

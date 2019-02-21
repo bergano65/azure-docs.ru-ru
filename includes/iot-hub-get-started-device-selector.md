@@ -1,15 +1,15 @@
 ---
-author: dominicbetts
+author: robinsh
 ms.service: iot-hub
 ms.topic: include
-ms.date: 10/26/2018
-ms.author: dobett
-ms.openlocfilehash: 3cd97c521fa11a0c9f214274fe31229e48f53baf
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.date: 02/14/2019
+ms.author: robinsh
+ms.openlocfilehash: ed001c74d0a351bc1fb687810177cfcd76178b31
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164599"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56334001"
 ---
 > [!div class="op_single_selector"]
 > * [Веб-симулятор Raspberry Pi](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md)   
@@ -19,11 +19,6 @@ ms.locfileid: "50164599"
 > * [Подключение виртуального устройства к центру Интернета вещей с помощью Python](../articles/iot-hub/quickstart-send-telemetry-python.md)
 > * [Connect IoT DevKit AZ3166 to Azure IoT Hub in the cloud](../articles/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md) (Подключение набора для разработки решений Интернета вещей AZ3166 к Центру Интернета вещей Azure в облаке)
 > * [Приступая к работе с Raspberry Pi 3 (Node.JS)](../articles/iot-hub/iot-hub-raspberry-pi-kit-node-get-started.md)
-> * [Raspberry Pi с Python](../articles/iot-hub/iot-hub-raspberry-pi-kit-python-get-started.md)
 > * [Подключение устройства Raspberry Pi 3 к Центру Интернета вещей с помощью C](../articles/iot-hub/iot-hub-raspberry-pi-kit-c-get-started.md)
-> * [Подключение устройства Intel Edison к Центру Интернета вещей с помощью Node.js](../articles/iot-hub/iot-hub-intel-edison-kit-node-get-started.md)
-> * [Подключение устройства Intel Edison к Центру Интернета вещей с помощью C](../articles/iot-hub/iot-hub-intel-edison-kit-c-get-started.md)
 > * [Подключение Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке](../articles/iot-hub/iot-hub-arduino-huzzah-esp8266-get-started.md)
-> * [Подключение Sparkfun ESP8266 Thing Dev к Центру Интернета вещей в облаке Azure](../articles/iot-hub/iot-hub-sparkfun-esp8266-thing-dev-get-started.md)
-> * [Adafruit Feather M0 с Arduino IDE](../articles/iot-hub/iot-hub-adafruit-feather-m0-wifi-kit-arduino-get-started.md)
 > * [iOS с Swift](../articles/iot-hub/quickstart-send-telemetry-ios.md)

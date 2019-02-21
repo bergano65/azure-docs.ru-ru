@@ -6,12 +6,12 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/07/2018
-ms.openlocfilehash: 25d2b9fac65525c56912e5daa7e5bcb4aa2cd5f4
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 255182fe5e6c5576077dc97831628e4a13dfc026
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036007"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453534"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
 
@@ -38,7 +38,7 @@ ms.locfileid: "54036007"
 |![Coeo][7]     |   инновация приложений (существующие приложения), <br/> разработка новых приложений. |    Соединенное Королевство     |  [Веб-сайт](http://www.coeo.com/)       |
 | ![Cognizant][15] | Миграция NoSQL |США, Канада, Соединенное Королевство, Дания, Нидерланды, Швейцария, Австралия, Япония | [Веб-сайт](https://www.cognizant.com/)|
 |![Infosys][8]     |  Миграция NoSQL       |    Глобальные     |  [Веб-сайт](http://www.infosys.com/)       |
-| ![Lagash][16] | Миграция NoSQL, <br/> разработка новых приложений. | Аргентина, Чили, Колумбия, Мексика| [Веб-сайт](https://lagash.com/)|
+| ![Lagash][16] | Миграция NoSQL, <br/> разработка новых приложений. | Аргентина, Чили, Колумбия, Мексика| [Веб-сайт](https://www.lagash.com/)|
 | ![Lambda3 Informatics][17] | Миграция NoSQL, <br/> разработка новых приложений. | Бразилия| [Веб-сайт](https://www.lambda3.com.br/)|
 |![Neal Analytics][9]     |     Разработка приложений (новых)    |    США     |  [Веб-сайт](http://www.nealanalytics.com/)       |
 |![Pragmatic Works Software Inc.][10]    |   Миграция NoSQL      |   США      |  [Веб-сайт](http://www.pragmaticworks.com/)       |

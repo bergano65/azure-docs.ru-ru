@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 02/14/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 0073427028d20ab969b8d0135b1c831d7fdf8c73
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b821c5cfa0dd9ea605d0d0a73e0b98a64a7502b7
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191977"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268657"
 ---
 # <a name="start-and-stop-the-azure-stack-development-kit-asdk"></a>Запуск и остановка пакета средств разработки Azure Stack (ASDK)
 Не рекомендуется обычный перезапуск главного компьютера ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье. 
@@ -29,7 +29,7 @@ ms.locfileid: "56191977"
 ## <a name="stop-azure-stack"></a>Остановка Azure Stack 
 Чтобы правильно завершить работу служб Azure Stack и главного компьютера ASDK, используйте следующие команды PowerShell:
 
-1. Войдите на узел управления с именем AzureStack\CloudAdmin.
+1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
 2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды: 
 
@@ -49,7 +49,7 @@ ms.locfileid: "56191977"
 Независимо от того, каким образом была завершена работа ASDK, после включения главного компьютера необходимо выполнить шаги ниже, чтобы убедиться, что все службы Azure Stack запущены и полностью работоспособны: 
 
 1. Включите главный компьютер ASDK. 
-2. Войдите на узел управления с именем AzureStack\CloudAdmin.
+2. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
 3. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 4. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды:
 
@@ -68,7 +68,7 @@ ms.locfileid: "56191977"
 ## <a name="troubleshoot-startup-and-shutdown"></a>Устранение неполадок при запуске и завершении работы 
 Выполните эти шаги, если службы Azure Stack не запускаются в течение двух часов после включения главного компьютера ASDK:
 
-1. Войдите на узел управления с именем AzureStack\CloudAdmin.
+1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
 2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды:
 

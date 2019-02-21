@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: ff3c1e51bcf0b7d730019fad66ed8b0c3fe17a20
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.openlocfilehash: d9d87e0e6427c0a0d4b16947fd0427e1c79d8f0c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56097654"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341051"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -72,8 +72,6 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
                     * **Bytes sent - Destination to source - Version 2 Only** — общее количество байт пакетов TCP или UDP, отправленных из места назначения в источник (с момента последнего обновления). Байты пакетов включают в себя заголовок пакета и полезные данные.
 
 ## <a name="nsg-flow-logs-version-2"></a>Журналы потоков версии 2
-> [!NOTE] 
-> Журналы потоков версии 2 доступны только в центрально-западной части США. Если включить ведение журналов для версии 2 в неподдерживаемом регионе, в учетной записи хранения будут сохраняться журналы версии 1.
 
 В версии 2 журналов введено состояние потока. Вы можете указать, какая версия журналов потоков будет сохраняться. Чтобы узнать, как включить журналы потока, см. статью [Руководство по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure](network-watcher-nsg-flow-logging-portal.md).
 

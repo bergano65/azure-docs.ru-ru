@@ -9,12 +9,12 @@ ms.topic: article
 author: ericlicoding
 ms.author: amlstudiodocs
 ms.date: 03/28/2017
-ms.openlocfilehash: 22cfdd22a8d2adacb5a5a5c817a628fe2c072755
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 1d07ad7e60e1ee9ff3216767fcfc77405d557f44
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001703"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56455115"
 ---
 # <a name="how-to-prepare-your-model-for-deployment-in-azure-machine-learning-studio"></a>Как подготовить модель к развертыванию в студии машинного обучения Azure
 
@@ -50,11 +50,11 @@ ms.locfileid: "56001703"
 
 Например, следующий эксперимент предусматривает обучение модели двухклассового увеличивающегося дерева принятия решений с использованием примера данных переписи:
 
-![эксперимент по обучению][figure1]
+![эксперимент по обучению](./media/convert-training-experiment-to-scoring-experiment/figure1.png)
 
 Модули в этом эксперименте в сущности выполняют четыре разные функции:
 
-![Функции модуля][figure2]
+![Функции модуля](./media/convert-training-experiment-to-scoring-experiment/figure2.png)
 
 Когда вы преобразуете этот обучающий эксперимент в прогнозный, некоторые из этих модулей станут ненужными или будут переназначены для других задач.
 
@@ -70,7 +70,7 @@ ms.locfileid: "56001703"
 
 После нажатия кнопки **Настроить веб-службу**наш пример выглядит следующим образом:
 
-![Преобразованный прогностический эксперимент][figure3]
+![Преобразованный прогностический эксперимент](./media/convert-training-experiment-to-scoring-experiment/figure3.png)
 
 Вполне возможно, что действие **Set Up Web Service** (Настройка веб-службы) автоматически выполнит все необходимое для подготовки эксперимента к развертыванию в качестве веб-службы. Однако в зависимости от эксперимента могут потребоваться дополнительные действия.
 
@@ -79,7 +79,7 @@ ms.locfileid: "56001703"
 
 Например, действие **Set Up Web Service** (Настройка веб-службы) по умолчанию размещает модуль **Web service input** (Входные данные веб-службы) в верхней части потока данных, как показано на рисунке выше. Но мы можем вручную переместить **Web service input** (Входные данные веб-службы) ниже и разместить его после модулей обработки данных.
 
-![Перемещение входных данных веб-службы][figure4]
+![Перемещение входных данных веб-службы](./media/convert-training-experiment-to-scoring-experiment/figure4.png)
 
 Теперь входные данные, предоставленные через веб-службу, будут передаваться непосредственно в модуль «Оценка модели» без предварительной обработки.
 
@@ -88,14 +88,14 @@ ms.locfileid: "56001703"
 
 Например, если нужно возвращать только результаты оценки без вектора входных данных, можно добавить модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных), чтобы исключить все столбцы, кроме результатов оценки. Затем подключите модуль **Web service output** (Выходные данные веб-службы) к выходу модуля [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных). Измененный эксперимент будет выглядеть так:
 
-![Перемещение выходных данных веб-службы][figure5]
+![Перемещение выходных данных веб-службы](./media/convert-training-experiment-to-scoring-experiment/figure5.png)
 
 ### <a name="add-or-remove-additional-data-processing-modules"></a>Добавление и удаление дополнительных модулей обработки данных
 Если вам известно, что в эксперименте есть модули, которые не будут нужны при оценке, их можно удалить. Теперь, когда мы поместили модуль **Web service input** (Входные данные веб-службы) ниже модулей обработки данных, из прогнозного эксперимента можно удалить модуль [Clean Missing Data][clean-missing-data] (Очистка недостающих данных).
 
 Теперь наш прогностический эксперимент выглядит следующим образом:
 
-![Удаление дополнительного модуля][figure6]
+![Удаление дополнительного модуля](./media/convert-training-experiment-to-scoring-experiment/figure6.png)
 
 
 ### <a name="add-optional-web-service-parameters"></a>Добавление дополнительных параметров веб-службы
@@ -116,16 +116,6 @@ ms.locfileid: "56001703"
 Дополнительные сведения обо всем процессе развертывания см. в статье [Развертывание веб-службы машинного обучения Azure][deploy].
 
 [deploy]: publish-a-machine-learning-web-service.md
-
-
-<!-- Images -->
-[figure1]:./media/convert-training-experiment-to-scoring-experiment/figure1.png
-[figure2]:./media/convert-training-experiment-to-scoring-experiment/figure2.png
-[figure3]:./media/convert-training-experiment-to-scoring-experiment/figure3.png
-[figure4]:./media/convert-training-experiment-to-scoring-experiment/figure4.png
-[figure5]:./media/convert-training-experiment-to-scoring-experiment/figure5.png
-[figure6]:./media/convert-training-experiment-to-scoring-experiment/figure6.png
-
 
 <!-- Module References -->
 [clean-missing-data]: https://msdn.microsoft.com/library/azure/d2c5ca2f-7323-41a3-9b7e-da917c99f0c4/

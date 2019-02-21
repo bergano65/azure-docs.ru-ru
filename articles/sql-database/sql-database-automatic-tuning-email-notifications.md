@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 1b58401a6697cdc80acc9badaf018923c5a9a980
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: cdd709fa446ffe769c8c57aeb44fe592b12e92d4
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660295"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416122"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
@@ -73,7 +73,7 @@ ms.locfileid: "55660295"
 Выполните приведенные ниже действия, чтобы создать runbook службы автоматизации Azure
 
 - Перейдите к учетной записи службы автоматизации Azure, созданной на предыдущем шаге.
-- В области этой учетной записи службы автоматизации щелкните пункт меню **Модули Runbook** слева, чтобы создать runbook службы автоматизации Azure со сценарием PowerShell. Чтобы узнать больше о создании модулей runbook службы автоматизации, ознакомьтесь с разделом [Создание или импорт модуля Runbook в службе автоматизации Azure](../automation/automation-creating-importing-runbook.md).
+- В области этой учетной записи службы автоматизации щелкните пункт меню **Модули Runbook** слева, чтобы создать runbook службы автоматизации Azure со сценарием PowerShell. Чтобы узнать больше о создании модулей runbook службы автоматизации, ознакомьтесь с разделом [Создание или импорт модуля Runbook в службе автоматизации Azure](../automation/manage-runbooks.md#create-a-runbook).
 - Чтобы добавить новый runbook, щелкните пункт меню **+ Добавить Runbook**, а затем щелкните **Быстрое создание — создать новый Runbook**.
 - В области Runbook введите имя runbook (в данном примере это **AutomaticTuningEmailAutomation**), выберите тип runbook — **PowerShell**, а затем введите описание этого runbook, чтобы пояснить его назначение.
 - Нажмите кнопку **Создать**, чтобы завершить создание runbook.

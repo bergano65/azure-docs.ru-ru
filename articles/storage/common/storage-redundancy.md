@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/18/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 0ba36042d02d0b4101f1e80c63af232717bcf4ca
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: ea6d94ff1ee8c27c1642f24660a6ab4f276137a8
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55506793"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56330789"
 ---
 # <a name="azure-storage-redundancy"></a>Избыточность хранилища Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "55506793"
 Сведения о гарантиях службы хранилища Azure в вопросах устойчивости и доступности см. в [Соглашении об уровне обслуживания службы хранилища Azure](https://azure.microsoft.com/support/legal/sla/storage/).
 
 > [!NOTE]
-> Хранилище класса Premium поддерживает только локально избыточное хранилище (LRS). Сведения о хранилище класса Premium см. в статье [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](../../virtual-machines/windows/premium-storage.md).
+> Хранилище класса Premium поддерживает только локально избыточное хранилище (LRS).
 
 ## <a name="changing-replication-strategy"></a>Изменение стратегии репликации
 Изменять стратегию репликации учетной записи хранения можно с помощью [портала Azure](https://portal.azure.com/), [Azure Powershell](storage-powershell-guide-full.md), [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) или одной из [клиентских библиотек Azure](https://docs.microsoft.com/azure/index?view=azure-dotnet#pivot=sdkstools). При изменении типа репликации для учетной записи хранения простоя не будет.

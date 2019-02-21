@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 09/11/2018
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e3f60c3b0578647e68109a21ba7d57b083bea11
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ae93cce7a26666383b609ac898a25fb84caee517
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184539"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301644"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workday"></a>Руководство по интеграции Azure Active Directory с Workday
 
@@ -113,7 +113,7 @@ ms.locfileid: "56184539"
 
     ![Сведения о домене и URL-адресах для единого входа для приложения Workday](./media/workday-tutorial/tutorial_workday_url.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://impl.workday.com/<tenant>/login-saml2.htmld`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://impl.workday.com/<tenant>/login-saml2.flex`
 
     б) В текстовом поле **Идентификатор** введите URL-адрес: `https://www.workday.com`
 
@@ -166,7 +166,7 @@ ms.locfileid: "56184539"
 
     >[!NOTE]
     > Значение атрибута "Среда" привязано к значению URL-адреса клиента.  
-    >Если URL-адрес имени домена клиента Workday начинается с impl (например: *https://impl.workday.com/\<tenant\>/login-saml2.htmld*), атрибуту **Environment** нужно присвоить значение Implementation.  
+    >Если URL-адрес имени домена клиента Workday начинается с impl (например: *https://impl.workday.com/\<tenant\>/login-saml2.flex*), атрибуту **Environment** нужно присвоить значение Implementation.  
     >Если имя домена начинается с другого значения, следует обратиться к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html), чтобы получить соответствующее значение атрибута **Environment**.
 
 12. В разделе **Настройка SAML** выполните следующие действия.

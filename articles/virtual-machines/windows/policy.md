@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: kasing
-ms.openlocfilehash: 42b62c819fd3d26c6ea944f968e0d5956a7f055e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 654c23474ebc96a6873f82f51f969da5c7d2d20c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987464"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343261"
 ---
 # <a name="apply-policies-to-windows-vms-with-azure-resource-manager"></a>Применение политик к виртуальным машинам Windows с помощью Azure Resource Manager
 С помощью политик организация может обеспечить выполнение различных норм и правил во всей организации. Обязательные для выполнения стандарты поведения помогают снизить риск, что способствует успешной деятельности организации. В этой статье описано, как определить требуемое поведение для виртуальных машин вашей организации с помощью политик Azure Resource Manager.
 
-Общие сведения о политиках см. в статье [Что такое служба "Политика Azure"](../../azure-policy/azure-policy-introduction.md).
+Общие сведения о политиках см. в статье [Что такое служба "Политика Azure"](../../governance/policy/overview.md).
 
 ## <a name="permitted-virtual-machines"></a>Разрешенные виртуальные машины
 Чтобы обеспечить совместимость виртуальных машин вашей организации с приложением, вы можете ограничить допустимые операционные системы. В этом примере политики вы разрешите только создание виртуальных машин на основе Windows Server 2012 R2 Datacenter:
@@ -251,6 +251,6 @@ ms.locfileid: "46987464"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* После определения правила политики (как показано в приведенных выше примерах) необходимо создать определение политики и назначить ей область. Областью может быть подписка, группа ресурсов или ресурс. Чтобы узнать, как назначать политики, изучите статью о [назначении политик ресурсов и управлении ими с помощью портала Azure](../../azure-policy/assign-policy-definition.md), о [назначении политик с помощью PowerShell](../../azure-policy/assign-policy-definition-ps.md) или [назначении политик с помощью Azure CLI](../../azure-policy/assign-policy-definition-cli.md).
-* Общие сведения о политиках ресурсов см. в статье [Что такое служба "Политика Azure"](../../azure-policy/azure-policy-introduction.md).
+* После определения правила политики (как показано в приведенных выше примерах) необходимо создать определение политики и назначить ей область. Областью может быть подписка, группа ресурсов или ресурс. Чтобы узнать, как назначать политики, изучите статью о [назначении политик ресурсов и управлении ими с помощью портала Azure](../../governance/policy/assign-policy-portal.md), о [назначении политик с помощью PowerShell](../../governance/policy/assign-policy-powershell.md) или [назначении политик с помощью Azure CLI](../../governance/policy/assign-policy-azurecli.md).
+* Общие сведения о политиках ресурсов см. в статье [Что такое служба "Политика Azure"](../../governance/policy/overview.md).
 * Инструкции по использованию Resource Manager для эффективного управления подписками в организациях см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance).

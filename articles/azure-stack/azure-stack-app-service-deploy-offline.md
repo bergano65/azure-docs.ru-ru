@@ -3,8 +3,8 @@ title: Развертывание службы приложений в авто�
 description: Подробные инструкции по развертыванию службы приложений в автономной среде Azure Stack, защищенной с помощью службы федерации Active Directory (AD FS).
 services: azure-stack
 documentationcenter: ''
-author: apwestgarth
-manager: stefsch
+author: jeffgilb
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
-ms.author: anwestg
+ms.author: jeffgilb
+ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 267c3c2d8430d769b5d42de33796da8b57504516
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 315a96680674636f7cab9d93b362febcb25f9922
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238794"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447071"
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Добавление поставщика ресурсов службы приложений в автономную среду Azure Stack, защищенную с помощью службы федерации Active Directory (AD FS)
 

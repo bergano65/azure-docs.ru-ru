@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
-ms.openlocfilehash: fca4b7cc59bf191094400892a37addf1023e2f85
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 2e17ab5cfe51f3772148cc730c982671d602a79a
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472955"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340490"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики. 
@@ -47,7 +47,7 @@ ms.locfileid: "55472955"
 * [Мониторинг](https://docs.microsoft.com/azure/virtual-machines/windows/monitor) и [управление](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
 * [Ведение журналов и аудит](https://docs.microsoft.com/azure/security/azure-log-audit)
 * [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview)
-* [Настройка и применение политик](https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction)
+* [Настройка и применение политик](../../governance/policy/overview.md)
 * [Защита от вредоносных программ](https://docs.microsoft.com/azure/security/azure-security-antimalware)
 * [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/encrypt-disks)
 * [Обнаружение данных и управление ими](https://docs.microsoft.com/azure/data-catalog/)

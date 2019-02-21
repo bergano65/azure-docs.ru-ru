@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 2/5/2019
 ms.author: victorh
-ms.openlocfilehash: 880a6fc9d5636ff0ac67d24d0ef66c8f48ae22fb
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: bc1176ea97d1c2d4fc17487c0589fb4235163b46
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55743656"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446517"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-public-preview"></a>Автоматическое масштабирование и шлюз приложений, избыточный между зонами (общедоступная предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "55743656"
 |Проблема|Сведения|
 |--|--|
 |Сертификат аутентификации|Не поддерживается.<br>Дополнительные сведения см. в статье [Обзор сквозного режима связи SSL в Шлюзе приложений](ssl-overview.md#end-to-end-ssl-with-the-v2-sku).|
-|Смешанное использование Standard_v2 и Шлюза приложений (цен. категория "Стандартный") в той же подсети|Не поддерживается.<br>Кроме того, если автомасштабирование включено, одна подсеть может иметь только один шлюз приложений.|
+|Смешанное использование Standard_v2 и Шлюза приложений (цен. категория "Стандартный") в той же подсети|Не поддерживается|
 |Маршрут, определяемый пользователем в подсети Шлюза приложений|Не поддерживается|
 |NSG для диапазона портов входящего трафика| – 65200 до 65535 для SKU Standard_v2.<br>– 65503 до 65534 для SKU (цен. категория "Стандартный").<br>Дополнительные сведения см. в разделе [Часто задаваемые вопросы](application-gateway-faq.md#are-network-security-groups-supported-on-the-application-gateway-subnet).|
 |Журналы производительности в системе диагностики Azure|Не поддерживается.<br>Следует использовать метрики Azure.|

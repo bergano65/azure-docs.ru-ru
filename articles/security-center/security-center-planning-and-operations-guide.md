@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 1532c863a7906e7f3c1e0bc98d2080513263b9f8
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 7419baf99e4c508806361b408968dbf851a7f76c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105100"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343329"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых планируют использовать центр безопасности Azure.
@@ -126,7 +126,7 @@ ms.locfileid: "56105100"
 
 Политики центра безопасности содержат следующие компоненты:
 - [Сбор данных](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection): настройки подготовки агента и сбора данных.
-- [Политика безопасности](https://docs.microsoft.com/azure/security-center/security-center-policies): [политика Azure](https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction), которая определяет, какие элементы управления контролируются и рекомендуются центром безопасности, или использует службу "Политика Azure" для создания определений, определения дополнительных политик и назначения политик в группах управления.
+- [Политика безопасности](https://docs.microsoft.com/azure/security-center/security-center-policies): [политика Azure](../governance/policy/overview.md), которая определяет, какие элементы управления контролируются и рекомендуются центром безопасности, или использует службу "Политика Azure" для создания определений, определения дополнительных политик и назначения политик в группах управления.
 - [Уведомления по электронной почте](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details): контакты безопасности и параметры уведомлений.
 - [Ценовая категория](https://docs.microsoft.com/azure/security-center/security-center-pricing): выбор бесплатной или стандартной ценовой категории, который определяет, какие функции центра безопасности доступны для ресурсов в области (может быть указана для подписки, групп ресурсов и рабочих областей).
 

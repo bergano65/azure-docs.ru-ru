@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: raynew
-ms.openlocfilehash: d514074e56ff37cc7af6a97ea86aa9e02e3763e0
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: d15e3773a9b6e3dceb0799d206070730675c211d
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492289"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310972"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Удаление хранилища служб восстановления
 
@@ -31,7 +31,7 @@ ms.locfileid: "55492289"
 
    ![Создание хранилища служб восстановления — шаг 1](./media/backup-azure-delete-vault/open-recovery-services-vault.png) <br/>
 
-   После этого отобразится список хранилищ служб восстановления. 
+   После этого отобразится список хранилищ служб восстановления.
 
    ![выберите хранилище в списке](./media/backup-azure-delete-vault/choose-vault-to-delete-.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "55492289"
 
 ## <a name="delete-the-recovery-services-vault-by-force"></a>Принудительное удаление хранилища служб восстановления
 
-Чтобы удалить хранилище служб восстановления принудительно, используйте PowerShell. Принудительное удаление означает, что вы навсегда удаляете хранилище служб восстановления и все данные резервного копирования. 
+Чтобы удалить хранилище служб восстановления принудительно, используйте PowerShell. Принудительное удаление означает, что вы навсегда удаляете хранилище служб восстановления и все данные резервного копирования.
 
 > [!Warning]
 > Если вы удаляете хранилище служб восстановления с помощью PowerShell, вы должны быть уверены, что хотите навсегда удалить все данные резервного копирования в хранилище.
@@ -95,7 +95,7 @@ ms.locfileid: "55492289"
    ```powershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
    ```
-   
+
 1. Войдите в подписку на портале Azure и проверьте, что хранилище удалено.
 
 
@@ -106,7 +106,6 @@ ms.locfileid: "55492289"
 * Резервные копии Azure Storage (файлы Azure)
 * Резервные копии SQL Server на виртуальной машине Azure
 * Резервные копии виртуальных машин Azure
-* Резервные копии агента служб восстановления Microsoft Azure
 
 Используйте меню **Инфраструктура резервного копирования** (см. рисунок) для следующих элементов:
 
@@ -125,7 +124,7 @@ ms.locfileid: "55492289"
 
 1. Нажмите правой кнопкой мыши на элемент в списке и в контекстном меню выберите **Остановить резервное копирование**.
 
-    ![выбор типа резервной копии](./media/backup-azure-delete-vault/stop-backup-item.png) 
+    ![выбор типа резервной копии](./media/backup-azure-delete-vault/stop-backup-item.png)
 
     Откроется меню Stop Backup (Остановка архивации).
 
@@ -154,9 +153,9 @@ ms.locfileid: "55492289"
 
 ## <a name="removing-azure-backup-server-or-dpm"></a>Удаление Azure Backup Server или DPM
 
-1. На панели мониторинга хранилища прокрутите вниз до раздела "Управление" и нажмите **Инфраструктура резервного копирования**. 
+1. На панели мониторинга хранилища прокрутите вниз до раздела "Управление" и нажмите **Инфраструктура резервного копирования**.
 
-1. В подменю щелкните **Серверы управления резервным копированием** для просмотра серверов Azure Backup Server и System Center DPM. вы можете останавливать и удалять файловые серверы Azure, серверы SQL Server в виртуальных машинах Azure и виртуальные машины Azure. 
+1. В подменю щелкните **Серверы управления резервным копированием** для просмотра серверов Azure Backup Server и System Center DPM. вы можете останавливать и удалять файловые серверы Azure, серверы SQL Server в виртуальных машинах Azure и виртуальные машины Azure.
 
     ![выберите хранилище, чтобы открыть его панель мониторинга](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
 

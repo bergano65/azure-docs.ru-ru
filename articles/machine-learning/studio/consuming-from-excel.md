@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 2ac140e40ec1c70bf04c35512c28e84f59522bb8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 1e8bb6deeb66b506e1342fceb725b1563b822dff
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989429"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453126"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-web-service-from-excel"></a>Использование веб-службы Студии машинного обучения Azure в Excel
 
@@ -34,7 +34,7 @@ ms.locfileid: "55989429"
 
 1. На вкладке **Панель мониторинга** веб-службы есть строка для службы обработки **Запрос — ответ**. Если бы в этой службе был один выход, в строке отобразилась бы ссылка **Загрузить книгу Excel** .
    
-    ![][1]
+    ![](./media/consuming-from-excel/excellink.png)
 2. Щелкните **Download Excel Workbook**(Скачать книгу Excel).
 
 **Новая веб-служба**
@@ -47,13 +47,13 @@ ms.locfileid: "55989429"
 1. Откройте книгу.
 2. Отобразится предупреждение системы безопасности. Нажмите кнопку **Разрешить изменение**.
    
-    ![][2]
+    ![](./media/consuming-from-excel/enableeditting.png)
 3. Отобразится предупреждение системы безопасности. Нажмите кнопку **Включить содержимое** , чтобы запустить макросы в электронной таблице.
    
-    ![][3]
+    ![](./media/consuming-from-excel/enablecontent.png)
 4. После включения макросов будет создана таблица. Синие столбцы представляют собой входные данные, или **ПАРАМЕТРЫ**, для веб-службы RRS. Обратите внимание на выходные данные службы RRS ( **ПРОГНОЗИРУЕМЫЕ ЗНАЧЕНИЯ** ), отмеченные зеленым цветом. После заполнения всех столбцов для указанной строки книга автоматически вызывает API оценки и отображает результаты оценки.
    
-    ![][4]
+    ![](./media/consuming-from-excel/sampletable.png)
 5. Чтобы оценить несколько строк, заполните вторую строку данными, и вы получите прогнозируемые значения. Можно даже вставить несколько строк одновременно.
 
 Для лучшей визуализации данных к прогнозируемым значениям можно применять все функции Excel (графики, Power Map, условное форматирование и пр.).    
@@ -66,8 +66,3 @@ ms.locfileid: "55989429"
 
 1. когда впервые встречается строка, содержащая значения во всех столбцах **ПАРАМЕТРЫ**
 2. в любое время при изменении значения в любом столбце **Параметры** в строке, содержащей значения во всех столбцах **Параметры**.
-
-[1]: ./media/consuming-from-excel/excellink.png
-[2]: ./media/consuming-from-excel/enableeditting.png
-[3]: ./media/consuming-from-excel/enablecontent.png
-[4]: ./media/consuming-from-excel/sampletable.png

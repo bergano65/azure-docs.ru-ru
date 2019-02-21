@@ -2,25 +2,17 @@
 title: 'Создание и установка файлов конфигурации VPN-клиента для подключениях RADIUS типа "точка — сеть" PowerShell: Azure | Документация Майкрософт'
 description: Создание файлов конфигурации VPN-клиента Windows, Mac OS X и Linux для подключений, использующих аутентификацию RADIUS.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 06/07/2018
+ms.date: 02/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: 8fc2c487a374a34cd9a7642a45fd59c04061b398
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 8881582eac47e31b20e9eb96effea254b821ba34
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817824"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417301"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>Создание и установка файлов конфигурации VPN-клиента для аутентификации при подключениях типа "точка — сеть" с использованием RADIUS
 
@@ -46,6 +38,8 @@ ms.locfileid: "55817824"
 
 Чтобы использовать разделы этой статьи, сначала решите, какой тип аутентификации вы хотите использовать: по имени пользователя и паролю, на основе сертификата или другие типы аутентификации. В каждом разделе есть инструкции для Windows, Mac OS X и Linux (сейчас доступны ограниченные инструкции).
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="adeap"></a>Проверка имени пользователя и пароля
 
 Вы можете настроить проверку подлинности по имени пользователя и паролю с или без Active Directory. При любом сценарии убедитесь, что у всех пользователей есть учетные данные (имя пользователя и пароль), которые могут использоваться при аутентификации RADIUS.
@@ -57,7 +51,7 @@ ms.locfileid: "55817824"
 Создайте файлы конфигурации VPN-клиента для аутентификации имени пользователя и пароля. Вы можете создать файлы конфигурации VPN-клиента с помощью следующей команды:
 
 ```powershell 
-New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapMSChapv2"
+New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapMSChapv2"
 ```
  
 Выполненная команда возвращает ссылку. Скопируйте и вставьте ссылку в веб-браузер, чтобы скачать файл **VpnClientConfiguration.zip**. Распакуйте файл. Отобразятся следующие папки: 
@@ -66,12 +60,12 @@ New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -A
 * **Generic**. Эта папка содержит общие сведения для создания конфигурации VPN-клиента. Эта папка не требуется, чтобы настроить проверку подлинности по имени пользователя и пароля.
 * **Mac**. Если при создании шлюза виртуальной сети настроен протокол IKEv2, отобразится папка с именем **Mac**, которая содержит файл **mobileconfig**. Этот файл используется для настройки клиентов Mac.
 
-Если вы уже создали файлы конфигурации клиента, получить их можно с помощью командлета `Get-AzureRmVpnClientConfiguration`. Но если изменить конфигурацию VPN-подключения "точка — сеть", например изменить тип VPN-протокола или проверки подлинности, конфигурация не обновится автоматически. Вам нужно выполнить командлет  `New-AzureRmVpnClientConfiguration`, чтобы создать скачиваемый файл конфигурации.
+Если вы уже создали файлы конфигурации клиента, получить их можно с помощью командлета `Get-AzVpnClientConfiguration`. Но если изменить конфигурацию VPN-подключения "точка — сеть", например изменить тип VPN-протокола или проверки подлинности, конфигурация не обновится автоматически. Вам нужно выполнить командлет  `New-AzVpnClientConfiguration`, чтобы создать скачиваемый файл конфигурации.
 
 Чтобы получить созданные файлы конфигурации, используйте следующую команду:
 
 ```powershell
-Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
+Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 ```
 
 ### <a name="setupusername"></a> 2. Настройка VPN-клиентов
@@ -101,7 +95,8 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
    ![Расположение файла mobileconfig](./media/point-to-site-vpn-client-configuration-radius/admobileconfigfile.png)
 
 3. (Необязательно.) Если вы хотите указать пользовательскую службу DNS, добавьте следующие строки в файл **mobileconfig**:
-```xml
+
+  ```xml
     <key>DNS</key>
     <dict>
       <key>ServerAddresses</key>
@@ -113,7 +108,7 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
             <string>TestDomain.com</string>
         </array>
     </dict> 
-```
+  ```
 4. Дважды щелкните профиль, чтобы установить его, и нажмите кнопку **Continue** (Продолжить). Имя профиля совпадает с именем виртуальной сети.
 
    ![Сообщение об установке](./media/point-to-site-vpn-client-configuration-radius/adinstall.png)
@@ -137,7 +132,7 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
    ![Подробные сведения о VPN-подключении](./media/point-to-site-vpn-client-configuration-radius/adconnection.png)
 11. Выберите **Authentication Settings** (Параметры проверки подлинности). В списке выберите **Username** (Имя пользователя) и введите свои учетные данные. Если учетные данные введены ранее, **имя пользователя** будет выбрано автоматически. Имя пользователя и пароль подставляются предварительно. Нажмите кнопку **ОК**, чтобы сохранить настройки.
 
-    ![Параметры проверки подлинности](./media/point-to-site-vpn-client-configuration-radius/adauthentication.png)
+   ![Параметры проверки подлинности](./media/point-to-site-vpn-client-configuration-radius/adauthentication.png)
 12. Вернитесь в диалоговое окно **Network** (Сеть) и выберите **Apply** (Применить), чтобы сохранить изменения. Чтобы инициировать подключение, выберите **Connect** (Подключиться).
 
 #### <a name="adlinuxcli"></a>Установка VPN-клиента Linux с помощью strongSwan
@@ -188,7 +183,7 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 Вы можете создать файлы конфигурации VPN-клиента для аутентификации на основе сертификата. Вы можете создать файлы конфигурации VPN-клиента с помощью следующей команды:
  
 ```powershell
-New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapTls" -RadiusRootCert <full path name of .cer file containing the RADIUS root> -ClientRootCert <full path name of .cer file containing the client root> | fl
+New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -AuthenticationMethod "EapTls" -RadiusRootCert <full path name of .cer file containing the RADIUS root> -ClientRootCert <full path name of .cer file containing the client root> | fl
 ```
 
 Выполненная команда возвращает ссылку. Скопируйте и вставьте ссылку в веб-браузер, чтобы скачать файл VpnClientConfiguration.zip. Распакуйте файл. Отобразятся следующие папки:
@@ -196,12 +191,12 @@ New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -A
 * **WindowsAmd64** и **WindowsX86**. Эти папки содержат пакеты установщика Windows 64- и 32-разрядной версий. 
 * **GenericDevice**. Эта папка содержит общие сведения, которые используются для создания конфигурации VPN-клиента.
 
-Если вы уже создали файлы конфигурации клиента, получить их можно с помощью командлета `Get-AzureRmVpnClientConfiguration`. Но если изменить конфигурацию VPN-подключения "точка — сеть", например изменить тип VPN-протокола или проверки подлинности, конфигурация не обновится автоматически. Вам нужно выполнить командлет  `New-AzureRmVpnClientConfiguration`, чтобы создать скачиваемый файл конфигурации.
+Если вы уже создали файлы конфигурации клиента, получить их можно с помощью командлета `Get-AzVpnClientConfiguration`. Но если изменить конфигурацию VPN-подключения "точка — сеть", например изменить тип VPN-протокола или проверки подлинности, конфигурация не обновится автоматически. Вам нужно выполнить командлет  `New-AzVpnClientConfiguration`, чтобы создать скачиваемый файл конфигурации.
 
 Чтобы получить созданные файлы конфигурации, используйте следующую команду:
 
 ```powershell
-Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
+Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
 ```
  
 ### <a name="setupusername"></a> 2. Настройка VPN-клиентов
@@ -260,7 +255,7 @@ Get-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | 
 
 Чтобы использовать другой тип проверки подлинности (например, OTP) либо же другой протокол проверки подлинности (например, протокол PEAP-MSCHAPv2, а не EAP-MSCHAPv2), создайте собственный профиль конфигурации VPN-клиента. Чтобы создать профиль, требуются следующие данные: IP-адрес шлюза виртуальной сети, тип туннеля и сведения о маршрутах с разделенный туннелем. Эти данные можно получить, сделав следующее:
 
-1. Выполните командлет `Get-AzureRmVpnClientConfiguration`, чтобы создать конфигурацию VPN-клиента для EapMSChapv2. Инструкции см. в соответствующем разделе статьи.
+1. Выполните командлет `Get-AzVpnClientConfiguration`, чтобы создать конфигурацию VPN-клиента для EapMSChapv2.
 
 2. Распакуйте файл VpnClientConfiguration.zip и найдите папку **GenericDevice**. Не используйте папки с установщиками Windows для 64- и 32-разрядной архитектур.
  

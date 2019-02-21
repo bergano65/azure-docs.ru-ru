@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: roiyz;cynthn
-ms.openlocfilehash: 68a652fe16162d96d4ec07e6690f10f0bd34f2c0
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 4dc68127f2d19426c372be027634bb2563dbfa6c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980879"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341663"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-windows-vms"></a>Ограничение установки расширений на виртуальных машинах Windows с помощью службы "Политика Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "55980879"
 
 ## <a name="create-a-rules-file"></a>Создание файла правил
 
-Чтобы ограничить допустимые для установки расширения, вам потребуется [правило](/azure/azure-policy/policy-definition#policy-rule) с логикой определения расширений.
+Чтобы ограничить допустимые для установки расширения, вам потребуется [правило](../../governance/policy/concepts/definition-structure.md#policy-rule) с логикой определения расширений.
 
 В этом примере показано, как можно запретить расширения, опубликованные издателем Microsoft.Compute, создав файл правил в Azure Cloud Shell. Если вы используете PowerShell локально, можете создать локальный файл и заменить путь $home/clouddrive фактическим расположением файла на компьютере.
 
@@ -70,7 +70,7 @@ nano $home/clouddrive/rules.json
 
 ## <a name="create-a-parameters-file"></a>Создание файла параметров
 
-Вам понадобится также файл [параметров](/azure/azure-policy/policy-definition#parameters), который позволяет создать структуру для передачи списка блокируемых расширений. 
+Вам понадобится также файл [параметров](../../governance/policy/concepts/definition-structure.md#parameters), который позволяет создать структуру для передачи списка блокируемых расширений. 
 
 В этом примере показано, как создать в Cloud Shell файл параметров для виртуальных машин Windows. Если вы используете PowerShell локально, можете создать локальный файл и заменить путь $home/clouddrive фактическим расположением файла на компьютере.
 
@@ -166,4 +166,4 @@ Remove-AzPolicyDefinition -Name not-allowed-vmextension-windows
 ```
     
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../azure-policy/azure-policy-introduction.md)
+Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

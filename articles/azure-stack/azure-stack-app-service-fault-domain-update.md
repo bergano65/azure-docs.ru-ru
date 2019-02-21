@@ -3,8 +3,8 @@ title: 'Служба приложений в Azure Stack: обновление �
 description: Распространение Службы приложений Azure в доменах сбоя Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: apwestgarth
-manager: stefsch
+author: jeffgilb
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
-ms.author: anwestg
+ms.author: jeffgilb
+ms.reviewer: anwestg
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: 249e4b466e9be567111aaa22b40ca3e5dadb6cac
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: c8c81d95a1179efff3bfdab49c2bc63cb074f73b
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55246387"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447894"
 ---
 # <a name="how-to-redistribute-azure-app-service-on-azure-stack-across-fault-domains"></a>Распространение Службы приложений Azure в доменах сбоя Azure Stack
 

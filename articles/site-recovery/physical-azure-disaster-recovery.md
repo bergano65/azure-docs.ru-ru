@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 12/31/2018
 ms.author: raynew
-ms.openlocfilehash: 9c5f998470d3bf2a66d7de43bd54d5da4db57608
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: a6be2fbbf946f13213f95b8876cfdddfa2ffbe67
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55221758"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56329223"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -78,9 +78,6 @@ ms.locfileid: "55221758"
 
 - Служба Site Recovery реплицирует локальные машины в службе хранилища Azure. Виртуальные машины Azure создаются из хранилища после отработки отказа.
 - Учетная запись хранения должна быть создана в том же регионе, что и хранилище служб восстановления.
-- Учетная запись хранения может быть уровня "Стандартный" или [Премиум](../virtual-machines/windows/premium-storage.md).
-- Если вы настроите учетную запись уровня "Премиум", вам также понадобится дополнительная учетная запись уровня "Стандартный" для данных журнала.
-
 
 
 ### <a name="prepare-an-account-for-mobility-service-installation"></a>Подготовка учетной записи к установке службы Mobility Service

@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 53ebb8ce51527adbd67310b19dccd6c7cbabf37f
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 5ed1e393c78f0f8d74ad6ae8096fb8b3e384e6e0
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55977540"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56308831"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -27,11 +27,11 @@ ms.locfileid: "55977540"
 [!INCLUDE [Container shared configuration settings table](../../../includes/cognitive-services-containers-configuration-shared-settings-table.md)]
 
 > [!IMPORTANT]
-> Параметры [`ApiKey`](#apikey-setting), [`Billing`](#billing-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
+> Параметры [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
 
 ## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
-Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Анализ текста_, который определяется в параметре конфигурации [`Billing`](#billing-setting).
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Анализ текста_, который определяется в параметре конфигурации [`Billing`](#billing-configuration-setting).
 
 Этот параметр можно найти в следующем месте.
 

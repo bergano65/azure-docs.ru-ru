@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: cf30d5dd8648a2b1da3f4a40399376182bf342c4
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 8a784bb4e37caa28c89939bdcec5139648164b1a
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562306"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340863"
 ---
-# <a name="understand-policy-effects"></a>Сведения о действии политики
+# <a name="understand-azure-policy-effects"></a>Сведения о действии политик Azure
 
 Каждое определение политики в Azure имеет один эффект. Этот эффект определяет, что происходит при вычислении правила политики при сопоставлении. Действия по-разному влияют на новые, обновленные и имеющиеся ресурсы.
 

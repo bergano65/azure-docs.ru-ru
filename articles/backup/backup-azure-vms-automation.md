@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/20/2018
 ms.author: raynew
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fa53a7e598b42e93e86eb059c36ff89f38bb7093
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: b9c3dadb328bb49f3cb1897bb64390ed75620b3d
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300597"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311891"
 ---
 # <a name="use-powershell-to-back-up-and-restore-virtual-machines"></a>Использование PowerShell для резервного копирования и восстановления виртуальных машин
 
@@ -79,7 +79,7 @@ ms.locfileid: "55300597"
 
 * [создание хранилища служб восстановления](backup-azure-vms-automation.md#create-a-recovery-services-vault);
 * [Резервное копирование виртуальных машин Azure](backup-azure-vms-automation.md#back-up-azure-vms)
-* [активация задания резервного копирования](backup-azure-vms-automation.md#trigger-a-backup-job);
+* [активация задания резервного копирования](backup-azure-vms-automation.md#trigger-a-backup);
 * [наблюдение за выполнением задания резервного копирования](backup-azure-vms-automation.md#monitoring-a-backup-job);
 * [Восстановление виртуальной машины Azure](backup-azure-vms-automation.md#restore-an-azure-vm)
 

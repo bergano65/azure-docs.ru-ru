@@ -8,12 +8,12 @@ ms.date: 01/25/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 78e78bc019ab5f8be1cfd3448220b97b89cde6a5
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: ac11b1a2b625d1fc7b62130580d1f188ead21051
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55228786"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342734"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
 
@@ -73,7 +73,7 @@ The solution cannot be enabled due to missing permissions for the virtual machin
   * повторно примените политику к конкретному ресурсу (например, к конкретной учетной записи службы автоматизации);
   * пересмотрите набор ресурсов, к которым политика запрещает доступ.
 
-Проверьте уведомления в правом верхнем углу портала Azure или перейдите к группе ресурсов, которая содержит выбранную учетную запись автоматизации, и нажмите **Развертывания** в разделе **Параметры**, чтобы изучить проблемное развертывание. Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../../azure-policy/azure-policy-introduction.md?toc=%2fazure%2fautomation%2ftoc.json)
+Проверьте уведомления в правом верхнем углу портала Azure или перейдите к группе ресурсов, которая содержит выбранную учетную запись автоматизации, и нажмите **Развертывания** в разделе **Параметры**, чтобы изучить проблемное развертывание. Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md?toc=%2fazure%2fautomation%2ftoc.json)
 
 ## <a name="mma-extension-failures"></a>Устранение неполадок расширения MMA
 

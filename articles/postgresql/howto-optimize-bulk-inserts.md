@@ -6,12 +6,12 @@ ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/22/2018
-ms.openlocfilehash: fba109e04369c05f98e863b7dd0fa3d51f40d0ad
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: a82984ce4c2a2e44306abaa63265e0c25cc6ace4
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810247"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310297"
 ---
 # <a name="optimize-bulk-inserts-and-use-transient-data-on-an-azure-database-for-postgresql-server"></a>Оптимизация операций массовой вставки и использование временных данных на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается оптимизация операций массовой вставки и использование временных данных на сервере службы "База данных Azure для PostgreSQL".
@@ -25,9 +25,9 @@ ms.locfileid: "55810247"
 
 Создайте нерегистрируемую таблицу, используя следующие параметры:
 - создайте нерегистрируемую таблицу с помощью синтаксиса `CREATE UNLOGGED TABLE <tableName>`;
-- преобразуйте существующую регистрируемую таблицу в нерегистрируемую с помощью синтаксиса `ALTER <tableName> SET UNLOGGED`.  
+- преобразуйте существующую регистрируемую таблицу в нерегистрируемую с помощью синтаксиса `ALTER TABLE <tableName> SET UNLOGGED`.  
 
-Чтобы отменить процесс, используйте синтаксис `ALTER <tableName> SET LOGGED`.
+Чтобы отменить процесс, используйте синтаксис `ALTER TABLE <tableName> SET LOGGED`.
 
 ## <a name="unlogged-table-tradeoff"></a>Недостатки нерегистрируемой таблицы
 Нерегистрируемые таблицы неустойчивы к сбоям. Нерегистрируемая таблица автоматически усекается после сбоя, и ее данные могут быть потеряны в случае некорректного завершения работы. Содержимое нерегистрируемой таблицы не реплицируется на резервные серверы. Любые индексы в нерегистрируемой таблице также не регистрируются автоматически. После завершения операции вставки преобразуйте таблицу в регистрируемую, чтобы операция вставки была устойчивой.

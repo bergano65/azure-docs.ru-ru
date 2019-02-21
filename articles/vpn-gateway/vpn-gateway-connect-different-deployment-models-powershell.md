@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/17/2018
 ms.author: cherylmc
-ms.openlocfilehash: d515363e1413634d8222e043fff0b91aa464002c
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: b569a021dab5e6008dc61af3af8168585c5edc1b
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509327"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416247"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-powershell"></a>Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell
 
@@ -165,6 +165,8 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
 
 ## <a name="creatermgw"></a>Раздел 2. Настройка шлюза виртуальной сети RM
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 В качестве предварительных требований предполагается, что вы уже создали виртуальную сеть RM. На этом шаге мы создадим VPN-шлюз для виртуальной сети RM. Не приступайте к выполнению этих действий до получения общедоступного IP-адреса шлюза классической виртуальной сети. 
 
 1. В консоли PowerShell войдите в свою учетную запись Azure. Следующий командлет запрашивает учетные данные входа для вашей учетной записи Azure. После выполнения входа он скачивает параметры учетной записи, чтобы они были доступны в Azure PowerShell. При необходимости можно использовать функцию "Попробовать" для запуска Azure Cloud Shell в браузере.
@@ -172,18 +174,18 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
   Если вы используете Azure Cloud Shell, пропустите выполнение следующего командлета:
 
   ```azurepowershell
-  Connect-AzureRmAccount
+  Connect-AzAccount
   ``` 
   Чтобы убедиться, что вы используете подходящую подписку, выполните следующий командлет:  
 
   ```azurepowershell-interactive
-  Get-AzureRmSubscription
+  Get-AzSubscription
   ```
    
   При наличии нескольких подписок укажите подписку, которую вы хотите использовать.
 
   ```azurepowershell-interactive
-  Select-AzureRmSubscription -SubscriptionName "Name of subscription"
+  Select-AzSubscription -SubscriptionName "Name of subscription"
   ```
 2. Создайте локальный сетевой шлюз. В виртуальной сети термин "шлюз локальной сети" обычно означает локальное расположение. В этом случае термин "шлюз локальной сети" указывает на классическую виртуальную сеть. Присвойте этому расположению имя, с помощью которого служба Azure сможет ссылаться на него, а также укажите префикс адресного пространства. С помощью указанного префикса IP-адреса служба Azure может определить, какой трафик отправлять в локальное расположение. Если позже понадобится изменить эти сведения, перед созданием шлюза можно изменить значения и снова запустить пример.
    
@@ -192,7 +194,7 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
    **-GatewayIpAddress** — это общедоступный IP-адрес шлюза классической виртуальной сети. Не забудьте заменить шаблон "n.n.n.n" на действительный IP-адрес.<br>
 
   ```azurepowershell-interactive
-  New-AzureRmLocalNetworkGateway -Name ClassicVNetLocal `
+  New-AzLocalNetworkGateway -Name ClassicVNetLocal `
   -Location "West US" -AddressPrefix "10.0.0.0/24" `
   -GatewayIpAddress "n.n.n.n" -ResourceGroupName RG1
   ```
@@ -201,7 +203,7 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
   На этом этапе также задается переменная, которая будет использоваться позже.
 
   ```azurepowershell-interactive
-  $ipaddress = New-AzureRmPublicIpAddress -Name gwpip `
+  $ipaddress = New-AzPublicIpAddress -Name gwpip `
   -ResourceGroupName RG1 -Location 'EastUS' `
   -AllocationMethod Dynamic
   ```
@@ -213,8 +215,8 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
    **-ResourceGroupName** — это группа ресурсов, с которой связана виртуальная сеть. Подсеть шлюза для этой виртуальной сети уже должна существовать и иметь имя *GatewaySubnet* .<br>
 
   ```azurepowershell-interactive
-  $subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name GatewaySubnet `
-  -VirtualNetwork (Get-AzureRmVirtualNetwork -Name RMVNet -ResourceGroupName RG1)
+  $subnet = Get-AzVirtualNetworkSubnetConfig -Name GatewaySubnet `
+  -VirtualNetwork (Get-AzVirtualNetwork -Name RMVNet -ResourceGroupName RG1)
   ``` 
 
 6. Создайте конфигурацию IP-адресации шлюза. Конфигурация шлюза определяет используемые подсеть и общедоступный IP-адрес. Используйте следующий пример, чтобы создать конфигурацию шлюза.
@@ -222,14 +224,14 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
   В параметры **-SubnetId** и **-PublicIpAddressId** должны передаваться объекты свойства идентификатора из подсети и IP-адреса соответственно. Нельзя использовать простую строку. Эти переменные задаются на этапе запроса общедоступного IP-адреса и этапе получения подсети.
 
   ```azurepowershell-interactive
-  $gwipconfig = New-AzureRmVirtualNetworkGatewayIpConfig `
+  $gwipconfig = New-AzVirtualNetworkGatewayIpConfig `
   -Name gwipconfig -SubnetId $subnet.id `
   -PublicIpAddressId $ipaddress.id
   ```
 7. Создайте шлюз виртуальной сети Resource Manager, выполнив приведенную ниже команду. `-VpnType` должен иметь значение *RouteBased*. Для создания шлюза потребуется 45 минут или больше.
 
   ```azurepowershell-interactive
-  New-AzureRmVirtualNetworkGateway -Name RMGateway -ResourceGroupName RG1 `
+  New-AzVirtualNetworkGateway -Name RMGateway -ResourceGroupName RG1 `
   -Location "EastUS" -GatewaySKU Standard -GatewayType Vpn `
   -IpConfigurations $gwipconfig `
   -EnableBgp $false -VpnType RouteBased
@@ -237,7 +239,7 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
 8. После создания VPN-шлюза скопируйте общедоступный IP-адрес. Он понадобится при настройке параметров локальной сети для классической виртуальной сети. Для получения общедоступного IP-адреса можно использовать следующий командлет. В возврате должен быть указан общедоступный IP-адрес *IpAddress*.
 
   ```azurepowershell-interactive
-  Get-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName RG1
+  Get-AzPublicIpAddress -Name gwpip -ResourceGroupName RG1
   ```
 
 ## <a name="localsite"></a>Раздел 3. Изменение параметров локального сайта виртуальной сети
@@ -274,14 +276,14 @@ New-AzureVNetGateway -VNetName ClassicVNet -GatewayType DynamicRouting
   Задайте переменные.
 
   ```azurepowershell-interactive
-  $vnet01gateway = Get-AzureRmLocalNetworkGateway -Name ClassicVNetLocal -ResourceGroupName RG1
-  $vnet02gateway = Get-AzureRmVirtualNetworkGateway -Name RMGateway -ResourceGroupName RG1
+  $vnet01gateway = Get-AzLocalNetworkGateway -Name ClassicVNetLocal -ResourceGroupName RG1
+  $vnet02gateway = Get-AzVirtualNetworkGateway -Name RMGateway -ResourceGroupName RG1
   ```
    
   Создайте подключение. Обратите внимание, что для параметра **-ConnectionType** используется значение IPsec, а не Vnet2Vnet.
 
   ```azurepowershell-interactive
-  New-AzureRmVirtualNetworkGatewayConnection -Name RM-Classic -ResourceGroupName RG1 `
+  New-AzVirtualNetworkGatewayConnection -Name RM-Classic -ResourceGroupName RG1 `
   -Location "East US" -VirtualNetworkGateway1 `
   $vnet02gateway -LocalNetworkGateway2 `
   $vnet01gateway -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'

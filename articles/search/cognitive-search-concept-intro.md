@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: eb344d6da15a8faf8f05720ae9b1fd49bd42db2f
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: d2086f02cc981ad944c030ad40083d153c520359
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54808210"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447333"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 
@@ -96,18 +96,24 @@ ms.locfileid: "54808210"
 
 + Западно-центральная часть США
 + Центрально-южная часть США
++ Центрально-северная часть США
 + Восточная часть США
 + Восток США 2
 + Запад США
 + Западный регион США 2
++ Центральный регион США
 + Центральная Канада
 + Западная Европа
-+ Южная часть Великобритании
 + Северная Европа
++ Южная часть Великобритании
++ Центральная Франция
 + Южная часть Бразилии
 + Восточная Азия
 + Юго-Восточная Азия
 + Центральная Индия
++ Западная часть Японии
++ Восточная часть Японии
++ Центральная Корея
 + Восточная часть Австралии
 
 **Шаг 2. Практический опыт для овладения рабочим процессом**

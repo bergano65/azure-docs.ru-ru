@@ -9,17 +9,17 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.author: saurse
-ms.openlocfilehash: a28e3fb18f2c0b65557034e388d08918c622b8f4
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 14de0f632584ff5fb1a6b4395298e9cecfe455e6
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255870"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268729"
 ---
 # <a name="back-up-windows-system-state-in-resource-manager-deployment"></a>Резервное копирование состояния системы Windows с использованием модели развертывания Resource Manager
 В этой статье описано, как выполнить резервное копирование состояния системы Windows Server в Azure. В этом руководстве приведены общие сведения,
 
-Дополнительные сведения о службе архивации Azure см. в этом [обзоре](backup-introduction-to-azure-backup.md).
+Дополнительные сведения о службе архивации Azure см. в этом [обзоре](backup-overview.md).
 
 Если у вас нет подписки Azure, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/), предоставляющую доступ ко всем службам Azure.
 
@@ -131,7 +131,7 @@ ms.locfileid: "51255870"
 
     ![Загрузка учетных данных хранилища завершена](./media/backup-try-azure-backup-in-10-mins/vault-credentials-downloaded.png)
 > [!NOTE]
-> Учетные данные хранилища необходимо сохранить только в локальном для Windows Server расположении, где вы собираетесь использовать агент. 
+> Учетные данные хранилища необходимо сохранить только в локальном для Windows Server расположении, где вы собираетесь использовать агент.
 >
 
 [!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
@@ -163,7 +163,7 @@ ms.locfileid: "51255870"
 
 Теперь, когда агент установлен и компьютер зарегистрирован в хранилище, вы можете настроить параметры резервного копирования, в том числе расписание.
 
-## <a name="back-up-windows-server-system-state"></a>Резервное копирование состояния системы Windows Server 
+## <a name="back-up-windows-server-system-state"></a>Резервное копирование состояния системы Windows Server
 Начальная архивация включает в себя две задачи:
 
 * Планирование архивации
@@ -194,7 +194,7 @@ ms.locfileid: "51255870"
 
 6. Щелкните **Далее**.
 
-7. Выберите нужную частоту резервного копирования и политику хранения для резервного копирования состояния системы на последующих страницах. 
+7. Выберите нужную частоту резервного копирования и политику хранения для резервного копирования состояния системы на последующих страницах.
 
 8. Проверьте сведения на странице подтверждения и нажмите кнопку **Готово**.
 

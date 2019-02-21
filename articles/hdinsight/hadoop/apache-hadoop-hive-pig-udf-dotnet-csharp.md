@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/27/2018
+ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: e45c5a37c4ba12d93ff7f78bb465cb650a7faffb
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 139fe946b013b1c86404bdef6ed06314af349c89
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435095"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343142"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-streaming-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight
 
@@ -193,8 +193,10 @@ Hive и Pig могут передавать данные во внешние п�
     ```hiveql
     -- Uncomment the following if you are using Azure Storage
     -- add file wasb:///HiveCSharp.exe;
-    -- Uncomment the following if you are using Azure Data Lake Storage
+    -- Uncomment the following if you are using Azure Data Lake Storage Gen1
     -- add file adl:///HiveCSharp.exe;
+    -- Uncomment the following if you are using Azure Data Lake Storage Gen2
+    -- add file abfs:///HiveCSharp.exe;
 
     SELECT TRANSFORM (clientid, devicemake, devicemodel)
     USING 'HiveCSharp.exe' AS

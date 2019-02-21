@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 02/12/2019
-ms.openlocfilehash: 8d7fc6d8f581c3ad0e0f3266ea615acadcb7bc25
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.date: 02/15/2019
+ms.openlocfilehash: d67bc99a63242dd56d65d6bdac0448c7742a6b9d
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176209"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311908"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -67,9 +67,10 @@ ms.locfileid: "56176209"
 | Поток данных в Azure Logic Apps <br>Поток данных из Azure Logic Apps | Входящий трафик <br>Исходящие | * <br>80 и 443 | ИНТЕРНЕТ <br>VIRTUAL_NETWORK |
 | Azure Active Directory | Исходящие | * <br>80 и 443 | VIRTUAL_NETWORK <br>AzureActiveDirectory |
 | Зависимость от службы хранилища Azure | Исходящие | * <br>80 и 443 | VIRTUAL_NETWORK <br>Хранилище |
+| Журнал выполнений приложения логики | Входящий трафик | * <br>443 | ИНТЕРНЕТ <br>VIRTUAL_NETWORK |
 | Управление соединениями | Исходящие | * <br>443 | VIRTUAL_NETWORK <br>ИНТЕРНЕТ |
 | Публикация журналов диагностики и метрик | Исходящие | * <br>443 | VIRTUAL_NETWORK <br>AzureMonitor |
-| Конструктор Logic Apps — динамические свойства <br>Журнал выполнений приложения логики <br>Развертывание соединителя <br>Конечная точка триггера запроса | Входящий трафик | * <br>454 | ИНТЕРНЕТ <br>VIRTUAL_NETWORK |
+| Конструктор Logic Apps — динамические свойства <br>Развертывание соединителя <br>Конечная точка триггера запроса | Входящий трафик | * <br>454 | ИНТЕРНЕТ <br>VIRTUAL_NETWORK |
 | Зависимость от управления службой приложений | Входящий трафик | * <br>454 и 455 | AppServiceManagement <br>VIRTUAL_NETWORK |
 | Управление API — конечная точка управления | Входящий трафик | * <br>3443 | APIManagement <br>VIRTUAL_NETWORK |
 | Зависимость от политики передачи журнала в концентратор событий и от агента мониторинга | Исходящие | * <br>5672 | VIRTUAL_NETWORK <br>концентратор событий. |

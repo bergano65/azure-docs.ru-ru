@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: 12c82d440613078e9f0593ddb9fb6c7fe7b8c362
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 5db8c4be9317706fcc8a31b916cff72fd13596d6
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55488362"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453310"
 ---
 # <a name="migrate-analytics-from-excel-to-azure-machine-learning-studio"></a>Перенос аналитики из Excel в Студию машинного обучения Azure
 
@@ -102,11 +102,11 @@ ms.locfileid: "55488362"
 
 В разделе *Web Services Dashboard* (Панель мониторинга веб-служб) содержится книга Excel, которую можно скачать. Эта книга предварительно отформатирована с помощью API веб-службы, и в нее внедрена информация о схемах. Чтобы скачать книгу, щелкните *Download Excel Workbook* (Скачать книгу Excel). Она откроется, и ее можно будет сохранить на локальном компьютере. 
 
-![][1]
+![](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-1.png)
 
 Пока книга открыта, скопируйте предопределенные параметры в синий раздел «Параметры», показанный ниже. После ввода параметров Excel вызовет веб-службу машинного обучения, а в зеленом разделе "Спрогнозированные значения" отобразятся спрогнозированные оцененные метки. Книга продолжит создавать спрогнозированные значения параметров для всех элементов строк, введенных в разделе «Параметры», на основе обученной модели. Дополнительные сведения об использовании этой функции см. в статье [Использование веб-службы Машинного обучения Azure в Excel](consuming-from-excel.md). 
 
-![][2]
+![](./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-2.png)
 
 ### <a name="optimization-and-further-experiments"></a>Оптимизация и дальнейшие эксперименты
 Определив необходимую модель Excel, мы приступили к оптимизации модели линейной регрессии машинного обучения. Мы использовали модуль [Filter-Based Feature Selection][filter-based-feature-selection] (Выбор признаков на основе фильтра), чтобы усовершенствовать выбор исходных элементов данных, и это помогло нам добиться повышения производительности — коэффициент средней абсолютной погрешности достиг отметки 4,6 %. Мы будем использовать эту функцию в будущих проектах, что позволит нам сэкономить несколько недель выполнения итерации атрибутов данных для поиска правильного набора признаков, которые будут использоваться для моделирования. 

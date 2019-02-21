@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 7f73e71677a700ba8047246addb2d27799c5a616
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: a963db0b0b1a20c110f90bacdae092846f7bdd8b
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55890905"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342547"
 ---
 # <a name="azure-application-skus-tab"></a>Вкладка номеров SKU для приложения Azure
 
@@ -139,7 +139,7 @@ ms.locfileid: "55890905"
 
 #### <a name="policy-settings"></a>Параметры политики
 
-Добавьте политики, которым соответствует управляемое приложение. Дополнительные сведения о политиках для ресурсов Azure см. в статье [Что такое служба "Политика Azure"?](https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction) 
+Добавьте политики, которым соответствует управляемое приложение. Дополнительные сведения о политиках для ресурсов Azure см. в статье [Что такое служба "Политика Azure"?](../../../governance/policy/overview.md)
 
 
    ![Параметры политики и авторизации для управляемого приложения](./media/azureapp-sku-details-managedapp-auth-policy.png)

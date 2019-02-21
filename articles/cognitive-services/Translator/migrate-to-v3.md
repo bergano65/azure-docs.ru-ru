@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 98d2d3a54ff2f0c4ef326f8aae26e5ba8845d603
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 04d7bfcf0527b490bc18f6d85977d899823d5e69
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55882358"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301882"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -41,19 +41,19 @@ ms.locfileid: "55882358"
 
 | Метод API версии 2   | Совместимость API версии 3 |
 |:----------- |:-------------|
-| Translate     | [Translate](reference/v3-0-translate.md)          |
-| TranslateArray      | [Translate](reference/v3-0-translate.md)        |
-| GetLanguageNames      | [Языки](reference/v3-0-languages.md)         |
-| GetLanguagesForTranslate     | [Языки](reference/v3-0-languages.md)       |
-| GetLanguagesForSpeak      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
-| Speak     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
-| Detect     | [Detect](reference/v3-0-detect.md)         |
-| DetectArray     | [Detect](reference/v3-0-detect.md)         |
-| AddTranslation     | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)         |
-| AddTranslationArray    | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)          |
-| BreakSentences      | [BreakSentence](reference/v3-0-break-sentence.md)       |
-| GetTranslations      | Компонент больше не поддерживается.         |
-| GetTranslationsArray      | Компонент больше не поддерживается.         |
+| `Translate`     | [Translate](reference/v3-0-translate.md)          |
+| `TranslateArray`      | [Translate](reference/v3-0-translate.md)        |
+| `GetLanguageNames`      | [Языки](reference/v3-0-languages.md)         |
+| `GetLanguagesForTranslate`     | [Языки](reference/v3-0-languages.md)       |
+| `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
+| `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
+| `Detect`     | [Detect](reference/v3-0-detect.md)         |
+| `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
+| `AddTranslation`     | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)         |
+| `AddTranslationArray`    | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)          |
+| `BreakSentences`      | [BreakSentence](reference/v3-0-break-sentence.md)       |
+| `GetTranslations`      | Компонент больше не поддерживается.         |
+| `GetTranslationsArray`      | Компонент больше не поддерживается.         |
 
 ## <a name="move-to-json-format"></a>Переход на формат JSON
 
@@ -75,12 +75,12 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 | Метод версии 3   | Символы, учитываемые при выставлении счетов |
 |:----------- |:-------------|
-| Languages     | Если символы не отправляются, плата не взимается.          |
-| Translate     | Подсчет выполняется на основе отправляемого количества символов для перевода и количества языков перевода. Если оправляется 50 символов на 5 языках, получается 250 символов (50 x 5).           |
-| Transliterate     | Количество символов, переданных для транслитерации, подсчитывается.         |
-| Dictionary lookup &amp; example     | Количество символов, отправленных для поиска по словарю и в примерах, подсчитывается.         |
-| BreakSentence     | Плата не взимается.       |
-| Detect     | Плата не взимается.      |
+| `Languages`     | Если символы не отправляются, плата не взимается.          |
+| `Translate`     | Подсчет выполняется на основе отправляемого количества символов для перевода и количества языков перевода. Если оправляется 50 символов на 5 языках, получается 250 символов (50 x 5).           |
+| `Transliterate`     | Количество символов, переданных для транслитерации, подсчитывается.         |
+| `Dictionary lookup & example`     | Количество символов, отправленных для поиска по словарю и в примерах, подсчитывается.         |
+| `BreakSentence`     | Плата не взимается.       |
+| `Detect`     | Плата не взимается.      |
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
@@ -88,22 +88,21 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 * api.cognitive.microsofttranslator.com
 
-
 ## <a name="v3-api-text-translations-methods"></a>Методы перевода текста API версии 3
 
-[Языки](reference/v3-0-languages.md)
+[`Languages`](reference/v3-0-languages.md)
 
-[Translate](reference/v3-0-translate.md)
+[`Translate`](reference/v3-0-translate.md)
 
-[Transliterate](reference/v3-0-transliterate.md)
+[`Transliterate`](reference/v3-0-transliterate.md)
 
-[BreakSentence](reference/v3-0-break-sentence.md)
+[`BreakSentence`](reference/v3-0-break-sentence.md)
 
-[Detect](reference/v3-0-detect.md)
+[`Detect`](reference/v3-0-detect.md)
 
-[Dictionary/lookup](reference/v3-0-dictionary-lookup.md)
+[`Dictionary/lookup`](reference/v3-0-dictionary-lookup.md)
 
-[Dictionary/example](reference/v3-0-dictionary-examples.md)
+[`Dictionary/example`](reference/v3-0-dictionary-examples.md)
 
 ## <a name="compatibility-and-customization"></a>Совместимость и настройки
 
@@ -132,7 +131,6 @@ Microsoft Translator V3 имеет такую же модель ценообра
 * Если вы используете конечную точку api.microsofttranslator.com, значит, вы работаете с API перевода текстов версии 2.
 
 Ни одна из версий Translator API не создает записи ваших переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](http://www.aka.ms/NoTrace).
-
 
 ## <a name="links"></a>Ссылки
 

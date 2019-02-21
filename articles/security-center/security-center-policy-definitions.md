@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/15/2019
 ms.author: rkarlin
-ms.openlocfilehash: cbc9fa5586b848de79c52142f75b22b744fdae38
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: e83ff9f3bf02a134919d497662744028e1b9acda
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105956"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343023"
 ---
 # <a name="azure-security-policies-monitored-by-azure-security-center"></a>Политики безопасности Azure, отслеживаемые в центре безопасности Azure
 В этой статье содержится список определений службы "Политика Azure", которые можно отслеживать в центре безопасности. Дополнительные сведения об использовании политик безопасности см. в статье [Использование политик безопасности](tutorial-security-policy.md).
@@ -96,4 +96,4 @@ ms.locfileid: "56105956"
 * [Вопросы и ответы касательно Центра безопасности Azure.](security-center-faq.md) Ознакомьтесь с ответами на часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure.](http://blogs.msdn.com/b/azuresecurity/) Записи блога, посвященные безопасности и соответствию требованиям в Azure.
 
-Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../azure-policy/azure-policy-introduction.md)
+Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../governance/policy/overview.md)

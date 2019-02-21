@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/12/2017
-ms.openlocfilehash: 337e7a848b6aa141ecf4f96cd4f8f391be35a619
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 5b216242b5c1c093c5f508adce04ef7b4bec4d1e
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55475539"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453194"
 ---
 # <a name="use-azure-machine-learning-studio-web-service-parameters"></a>Использование параметров веб-службы Студии машинного обучения Azure
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
@@ -57,7 +57,7 @@ ms.locfileid: "55475539"
 
 3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Это выглядит следующим образом.
    
-   ![Значок параметра веб-службы][icon]
+   ![Значок параметра веб-службы](./media/web-service-parameters/icon.png)
    
    Выберите "Установить как параметр веб-службы".
    
@@ -65,7 +65,7 @@ ms.locfileid: "55475539"
 4. Чтобы переименовать параметр веб-службы, щелкните имя, введите "Путь к BLOB-объекту", после чего нажмите клавишу **ВВОД** . 
 5. Чтобы предоставить значение по умолчанию для параметра веб-службы, щелкните значок справа от имени, выберите "Предоставить значение по умолчанию", введите значение (например, "контейнер1/выход1.csv"), после чего нажмите клавишу **ВВОД** .
    
-   ![Параметр веб-службы][parameter]
+   ![Параметр веб-службы](./media/web-service-parameters/parameter.png)
 6. Щелкните **Выполнить**. 
 7. Щелкните **Deploy Web Service** (Развернуть веб-службу) и выберите **Deploy Web Service [Classic]** (Развернуть веб-службу [классическую]) или **Deploy Web Service [New]** (Развернуть веб-службу [новую]), чтобы развернуть ее.
 
@@ -78,11 +78,6 @@ ms.locfileid: "55475539"
 Более подробный пример см. в публикации [AzureML Web Service Parameters](http://blogs.technet.com/b/machinelearning/archive/2014/11/25/azureml-web-service-parameters.aspx) (Параметры веб-службы AzureML) [блога, посвященного машинному обучению](http://blogs.technet.com/b/machinelearning/archive/2014/11/25/azureml-web-service-parameters.aspx).
 
 Дополнительные сведения о доступе к веб-службе машинного обучения см. в статье [Как использовать веб-службу машинного обучения Azure](consume-web-services.md).
-
-<!-- Images -->
-[icon]: ./media/web-service-parameters/icon.png
-[parameter]: ./media/web-service-parameters/parameter.png
-
 
 <!-- Module References -->
 [feature-hashing]: https://msdn.microsoft.com/library/azure/c9a82660-2d9c-411d-8122-4d9e0b3ce92a/

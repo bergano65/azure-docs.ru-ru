@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: 540abeed3587959af5ca229f59343774b824547b
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 76059c587a6378ccfe16c0a633bea0c6c7a8a57d
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982902"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340099"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
@@ -207,7 +207,7 @@ ms.locfileid: "55982902"
 - [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/resource-group-overview.md#template-deployment).
 - [Теги](../../azure-resource-manager/resource-group-using-tags.md).
 - [Управление действиями](../../azure-resource-manager/resource-group-audit.md).
-- [Политики Azure](../../azure-policy/azure-policy-introduction.md).
+- [Политики Azure](../../governance/policy/overview.md).
 
 ### <a name="pitfalls-to-avoid"></a>Типичные недочеты
 

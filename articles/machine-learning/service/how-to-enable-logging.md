@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
-ms.date: 02/11/2019
-ms.openlocfilehash: bff0feab7ce062c9e2515fa038d249838a809591
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.date: 02/20/2019
+ms.openlocfilehash: 08e83cdcadabdcf7234d0bbd0fb7e6d103c8369c
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56101438"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447537"
 ---
 # <a name="enable-logging-in-azure-machine-learning-service"></a>Настройка функции ведения журналов для Службы машинного обучения
 
@@ -112,7 +112,7 @@ logs = service.get_logs()
 Кроме того, вы можете сохранять пользовательскую трассировку стека веб-службы, включив Application Insights. Это позволит отслеживать время запроса и отклика, частоту сбоев и исключения. Вызовите функцию `update()` для существующей веб-службы, чтобы включить Application Insights.
 
 ```python
-service..update(enable_app_insights=True)
+service.update(enable_app_insights=True)
 ```
 
 В [этом руководстве](how-to-enable-app-insights.md#enable-and-disable-in-the-portal) вы найдете дополнительные сведения о работе с Application Insights на портале Azure.

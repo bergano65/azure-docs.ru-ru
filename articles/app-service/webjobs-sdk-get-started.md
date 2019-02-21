@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/15/2019
 ms.author: glenga
-ms.openlocfilehash: 9e85dbe21b98ce936ede09e741e83f59a865b73e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: b39c8c19b494422d34bae7145d69e8e95cb16846
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999391"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416826"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -431,7 +431,7 @@ public static void Run(
 
 1. Если у вас еще нет доступного ресурса Application Insights, [создайте его](../azure-monitor/app/create-new-resource.md ). Установите для параметра **Тип приложения** значение **Общий** и пропустите разделы, следующие за разделом **Copy the instrumentation key** (Копировать ключ инструментирования).
 
-1. При наличии ресурса Application Insights, который вы собираетесь использовать, [скопируйте ключ инструментирования](../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key).
+1. При наличии ресурса Application Insights, который вы собираетесь использовать, [скопируйте ключ инструментирования](../azure-monitor/app/create-new-resource.md#copy-the-instrumentation-key).
 
 ### <a name="configure-app-settings"></a>Настройка параметров приложения 
 
