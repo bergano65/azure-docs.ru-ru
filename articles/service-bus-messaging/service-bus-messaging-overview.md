@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: aschhab
-ms.openlocfilehash: ab1b68b8ca8339389a27d1c09aa8752cfdaec0d5
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 1c99c680371d9d9601637ebeb52d9299de71b0ec
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54851799"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338819"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -128,4 +128,4 @@ ms.locfileid: "54851799"
 * [Сравнение служб обмена сообщениями Azure](../event-grid/compare-messaging-services.md?toc=%2fazure%2fservice-bus-messaging%2ftoc.json&bc=%2fazure%2fservice-bus-messaging%2fbreadcrumb%2ftoc.json).
 * Сведения о Служебной шине Azure [категории "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/service-bus/) и цены на нее.
 * [Performance and Latency of Azure Service Bus Premium tier](https://blogs.msdn.microsoft.com/servicebus/2016/07/18/premium-messaging-how-fast-is-it/) (Производительность и задержки для Служебной шины Azure категории "Премиум").
-* Также вы можете изучить краткие руководства для [.NET](service-bus-quickstart-powershell.md), [Java](service-bus-quickstart-powershell.md) или [JMS](service-bus-quickstart-powershell.md).
+* Также вы можете изучить краткие руководства для [.NET](service-bus-dotnet-get-started-with-queues.md), [Java](service-bus-java-how-to-use-queues.md) или [JMS](service-bus-java-how-to-use-jms-api-amqp.md).

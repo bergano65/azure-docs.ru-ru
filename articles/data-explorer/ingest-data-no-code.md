@@ -8,14 +8,14 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 2/5/2019
-ms.openlocfilehash: 39019c4b11d055aa8f550928bd677e4ce33d6252
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 145a56bee857debdbf028834a3ed378efd8671c8
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55885348"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447503"
 ---
-# <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство. Прием данных в Azure Data Explorer без необходимости писать код
+# <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство по Прием данных в Azure Data Explorer без необходимости писать код
 
 Из этого руководства вы узнаете, как принимать данные журнала диагностики и действий в кластер Azure Data Explorer без необходимости писать код. Этот простой метод приема позволяет вам оперативно начать отправку запросов в Azure Data Explorer для анализа данных.
 
@@ -173,16 +173,7 @@ ms.locfileid: "55885348"
 Используйте следующий запрос, чтобы сопоставить данные с таблицей:
 
 ```kusto
-.create table DiagnosticLogsRecords ingestion json mapping 'DiagnosticLogsRecordsMapping' '[
-{"column":"Timestamp","path":"$.time"},
-{"column":"ResourceId","path":"$.resourceId"},
-{"column":"MetricName","path":"$.metricName"},
-{"column":"Count","path":"$.count"},
-{"column":"Total","path":"$.total"},
-{"column":"Minimum","path":"$.minimum"},
-{"column":"Maximum","path":"$.maximum"},
-{"column":"Average","path":"$.average"},
-{"column":"TimeGrain","path":"$.timeGrain"}]'
+.create table DiagnosticLogsRecords ingestion json mapping 'DiagnosticLogsRecordsMapping' '[{"column":"Timestamp","path":"$.time"},{"column":"ResourceId","path":"$.resourceId"},{"column":"MetricName","path":"$.metricName"},{"column":"Count","path":"$.count"},{"column":"Total","path":"$.total"},{"column":"Minimum","path":"$.minimum"},{"column":"Maximum","path":"$.maximum"},{"column":"Average","path":"$.average"},{"column":"TimeGrain","path":"$.timeGrain"}]'
 ```
 
 #### <a name="activity-logs-table-mapping"></a>Сопоставление таблиц журналов действий
@@ -190,8 +181,7 @@ ms.locfileid: "55885348"
 Используйте следующий запрос, чтобы сопоставить данные с таблицей:
 
 ```kusto
-.create table ActivityLogsRawRecords ingestion json mapping 'ActivityLogsRawRecordsMapping' '[
-{"column":"Records","path":"$.records"}]'
+.create table ActivityLogsRawRecords ingestion json mapping 'ActivityLogsRawRecordsMapping' '[{"column":"Records","path":"$.records"}]'
 ```
 
 ### <a name="create-update-policy"></a>Создание политики обновления
@@ -210,8 +200,8 @@ ms.locfileid: "55885348"
             ResultType = tostring(events["resultType"]),
             ResultSignature = tostring(events["resultSignature"]),
             DurationMs = toint(events["durationMs"]),
-            IdentityAuthorization = events["identity.authorization"],
-            IdentityClaims = events["identity.claims"],
+            IdentityAuthorization = events.identity.authorization,
+            IdentityClaims = events.identity.claims,
             Location = tostring(events["location"]),
             Level = tostring(events["level"])
     }
@@ -220,7 +210,7 @@ ms.locfileid: "55885348"
 2. Добавьте [политику обновления](/azure/kusto/concepts/updatepolicy) в целевую таблицу. Она будет автоматически выполнять запрос для новых принятых данных в промежуточной таблице данных *ActivityLogsRawRecords* и вставлять его результаты в таблицу *ActivityLogsRecords*:
 
     ```kusto
-    .alter table ActivityLogRecords policy update @'[{"Source": "ActivityLogsRawRecords", "Query": "ActivityLogRecordsExpand()", "IsEnabled": "True"}]'
+    .alter table ActivityLogsRecords policy update @'[{"Source": "ActivityLogsRawRecords", "Query": "ActivityLogRecordsExpand()", "IsEnabled": "True"}]'
     ```
 
 ## <a name="create-an-event-hub-namespace"></a>Создание пространства имен концентратора событий
@@ -272,9 +262,9 @@ ms.locfileid: "55885348"
     1. **Выберите пространство имен концентратора событий** *AzureMonitoringData* в раскрывающемся списке.
     1. **Выберите пространство имен концентратора событий** *diagnosticlogsdata* в раскрывающемся списке.
     1. **Выберите имя политики концентратора событий** в раскрывающемся списке.
-    1. Щелкните **ОК**.
+    1. Последовательно выберите **ОК**.
 
-1. Нажмите кнопку **Сохранить**. Пространство имен концентратора событий, имя и имя политики отобразятся в окне.
+1. Выберите команду **Сохранить**. Пространство имен концентратора событий, имя и имя политики отобразятся в окне.
 
     ![Сохранение параметров диагностики](media/ingest-data-no-code/save-diagnostic-settings.png)
 
@@ -294,7 +284,7 @@ ms.locfileid: "55885348"
     1. Установите флажок **Экспорт в концентратор событий**.
     1. Щелкните **Выбрать пространство имен служебной шины**, чтобы открыть панель **Выбор концентратора событий**.
     1. На панели **Выбор концентратора событий** выберите следующие элементы в раскрывающихся списках: подписку, пространство имен событий *AzureMonitoringData* и имя политики концентратора событий по умолчанию.
-    1. Щелкните **ОК**.
+    1. Последовательно выберите **ОК**.
     1. Нажмите кнопку **Сохранить** в правой верхней части окна. Будет создан концентратор событий с именем *insights-operational-logs*.
 
 ### <a name="see-data-flowing-to-your-event-hubs"></a>Просмотр потока данных к вашим концентраторам событий

@@ -3,19 +3,19 @@ title: Краткое руководство. Вызов API анализа те
 titleSuffix: Azure Cognitive Services
 description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API анализа текста в Cognitive Services в Azure.
 services: cognitive-services
-author: noellelacharite
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 10/01/2018
-ms.author: nolachar
-ms.openlocfilehash: 6255052430acff142e3e2c7e686e1516741b6ebc
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.date: 02/15/2019
+ms.author: aahi
+ms.openlocfilehash: db8fa1d16081c841a6d5c5c0bfdfa2bb099f6221
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863396"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326636"
 ---
 # <a name="quickstart-using-ruby-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Ruby для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>

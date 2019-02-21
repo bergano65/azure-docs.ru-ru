@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/18/2018
+ms.date: 2/20/2019
 ms.author: fmegen
-ms.openlocfilehash: 87360d49892698458a021287d88240d98ba2ee19
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 83d6c430d0973d4b45fcfc40bbb93ae283d1133d
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55881515"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447588"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Java
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как создать консольное приложение Java, используя [пакет SDK для службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (4.8) на 64-разрядной версии Windows или Ubuntu Linux 16.04 или 18.04. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (4.8) на 64-разрядной версии Windows или Ubuntu Linux 16.04 или 18.04. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 > [!NOTE]
 > Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](speech-devices-sdk.md).
@@ -39,7 +39,7 @@ ms.locfileid: "55881515"
 
 ```console
 sudo apt-get update
-sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2 wget
+sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ```
 
 Если вы используете Windows (64-разрядная версия) убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
