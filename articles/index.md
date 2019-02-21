@@ -2,16 +2,10 @@
 layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
-description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.
+description: 'Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.'
 ms.topic: hub-page
 featureFlags:
-- clicktale
-ms.openlocfilehash: 4ae03eedb96ecd1b460b06df3a80a7349c04e099
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330721"
+  - clicktale
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -195,6 +189,7 @@ Go</a>
                                                 <h4>Реляционные базы данных</h4>
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="/azure/sql-database/">База данных SQL как услуга</a></li>
+                                                    <li><a class="barLink" href="/azure/virtual-machines/windows/sql/">SQL Server на виртуальной машине Azure</a></li>
                                                     <li><a class="barLink" href="/azure/sql-data-warehouse/">Хранилище данных SQL Azure как услуга</a></li>
                                                     <li><a class="barLink" href="/azure/postgresql/">База данных PostgreSQL как услуга</a></li>
                                                     <li><a class="barLink" href="/azure/mysql/">База данных MySQL как услуга</a></li>

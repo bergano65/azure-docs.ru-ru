@@ -1,24 +1,19 @@
 ---
 layout: LandingPage
 title: Документация по выставлению счетов и управлению затратами в Azure
-description: Узнайте, как расшифровывать счета Azure, отслеживать и контролировать использование и расходы, а также управлять учетными записями и подписками.
+description: 'Узнайте, как расшифровывать счета Azure, отслеживать и контролировать использование и расходы, а также управлять учетными записями и подписками.'
 services: billing
 author: cwatson-cat
 manager: dougeby
-ms.assetid: ''
+ms.assetid: null
 ms.service: billing
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
-ms.date: 05/24/2018
-ms.author: cwatson
-ms.openlocfilehash: ed792b03a79d2dcbb77142a51ae2641c8d0bd3ad
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53583336"
+ms.date: 02/19/2019
+ms.author: banders
 ---
+
 # <a name="azure-billing-and-cost-management-documentation"></a>Документация по выставлению счетов и управлению затратами в Azure
 
 Узнайте, как расшифровывать счета Azure, отслеживать использование и расходы, а также управлять учетными записями и подписками.
@@ -50,9 +45,9 @@ ms.locfileid: "53583336"
                         <p>
                         <a href="/azure/billing/billing-getting-started">Предотвращение непредвиденных расходов</a><br/>
                         <a href="/azure/azure-resource-manager/resource-group-using-tags?toc=/azure/billing/TOC.json">Использование тегов ресурсов</a><br/>
-                        <a href="/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json">Анализ затрат (только для клиентов с Соглашением Enterprise)</a><br/>
-                        <a href="/azure/cost-management/tutorial-acm-create-budgets?toc=/azure/billing/TOC.json">Создание и администрирование бюджета (только для клиентов с Соглашением Enterprise)</a><br/>
-                        <a href="/azure/cost-management/tutorial-acm-opt-recommendations?toc=/azure/billing/TOC.json">Рекомендации по оптимизации (только для клиентов с Соглашением Enterprise)</a>
+                        <a href="/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json">Начало анализа затрат</a><br/>
+                        <a href="/azure/cost-management/tutorial-acm-create-budgets?toc=/azure/billing/TOC.json">Создание бюджетов и управление ими</a><br/>
+                        <a href="/azure/cost-management/tutorial-acm-opt-recommendations?toc=/azure/billing/TOC.json">Рекомендации по оптимизации</a>
                         </p>
                     </div>
                 </div>
@@ -184,5 +179,5 @@ ms.locfileid: "53583336"
             </div>
         </div>
     </li>
-    
+
 </ul>

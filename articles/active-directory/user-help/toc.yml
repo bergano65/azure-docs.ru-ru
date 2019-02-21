@@ -23,26 +23,6 @@ items:
     href: active-directory-passwords-reset-register.md
   - name: Сброс пароля
     href: user-help-reset-password.md
-- name: Справка по сведениям для защиты (предварительная версия)
-  items:
-  - name: Обзор
-    href: user-help-security-info-overview.md
-  - name: Настройка приложения Authenticator
-    href: security-info-setup-auth-app.md
-  - name: Настройка обмена текстовыми сообщениями
-    href: security-info-setup-text-msg.md
-  - name: Настройка телефонных звонков
-    href: security-info-setup-phone-number.md
-  - name: Настройка адреса электронной почты
-    href: security-info-setup-email.md
-  - name: Настройка контрольных вопросов
-    href: security-info-setup-questions.md
-  - name: Управление паролями приложений
-    href: security-info-app-passwords.md
-  - name: Управление сведениями для защиты
-    href: security-info-manage-settings.md
-  - name: Вход
-    href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по приложению Microsoft Authenticator
   items:
   - name: Обзор
@@ -60,21 +40,49 @@ items:
       href: user-help-auth-app-add-non-ms-account.md
     - name: Добавление учетной записи вручную
       href: user-help-auth-app-add-account-manual.md
-    expanded: true
   - name: Вход с помощью приложения Microsoft Authenticator
     href: user-help-auth-app-sign-in.md
   - name: Резервное копирование и восстановление учетных записей
     href: user-help-auth-app-backup-recovery.md
   - name: Часто задаваемые вопросы
     href: user-help-auth-app-faq.md
-- name: Справка по порталу "Мои приложения"
+- name: Справка по предварительной версии параметра "Мой профиль" на портале
   items:
   - name: Обзор
-    href: user-help-my-apps-overview.md
-  - name: Что такое портал "Мои приложения"?
-    href: active-directory-saas-access-panel-introduction.md
-  - name: Устранение неполадок
-    href: active-directory-saas-access-panel-user-help.md
+    href: myprofile-portal-overview.md
+  - name: Управление сведениями для защиты
+    href: user-help-security-info-overview.md
+  - name: Просмотр действий при входе
+    href: myprofile-portal-recent-activity-page.md
+  - name: Управление организациями
+    href: myprofile-portal-organizations-page.md
+  - name: Управление подключенными устройствами
+    href: myprofile-portal-devices-page.md
+  - name: Просмотр сведений, связанных с конфиденциальностью
+    href: myprofile-portal-privacy-page.md
+- name: Справка по сведениям для защиты (предварительная версия)
+  items:
+  - name: Обзор
+    href: user-help-security-info-overview.md
+  - name: Добавление сведений для защиты при входе в систему
+    href: security-info-setup-signin.md
+  - name: Обзор методов добавления или обновления сведений для защиты
+    href: security-info-add-update-methods-overview.md
+    items:
+    - name: Настройка приложения Authenticator
+      href: security-info-setup-auth-app.md
+    - name: Настройка обмена текстовыми сообщениями
+      href: security-info-setup-text-msg.md
+    - name: Настройка телефонных звонков
+      href: security-info-setup-phone-number.md
+    - name: Настройка адреса электронной почты
+      href: security-info-setup-email.md
+    - name: Настройка контрольных вопросов
+      href: security-info-setup-questions.md
+  - name: Управление паролями приложений
+    href: security-info-app-passwords.md
+  - name: Вход
+    href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по управлению устройствами
   items:
   - name: Обзор
@@ -85,9 +93,17 @@ items:
     href: user-help-register-device-on-network.md
   - name: Устранение проблемы с доступом
     href: user-help-device-remediation.md
-ms.openlocfilehash: 604b2c204f893bf0abaaec86f85e2159c17a8656
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+- name: Справка по порталу "Мои приложения"
+  items:
+  - name: Обзор
+    href: user-help-my-apps-overview.md
+  - name: Что такое портал "Мои приложения"?
+    href: active-directory-saas-access-panel-introduction.md
+  - name: Устранение неполадок
+    href: active-directory-saas-access-panel-user-help.md
+ms.openlocfilehash: b7d8c297559736c9f22b118d50423f980302018d
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816056"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56452580"
