@@ -53,6 +53,7 @@ items:
       - name: Xamarin
         href: mobile-apps-with-xamarin.md
   - name: 2. Перенос данных
+    displayName: import
     href: import-data.md
   - name: 3. Запрос данных
     href: tutorial-query-sql-api.md
@@ -76,15 +77,16 @@ items:
     href: cli-samples.md
 - name: Основные понятия
   items:
-  - name: Данные документов модели
-    href: modeling-data.md
   - name: Глобальное распределение
     items:
     - name: Обзор
+      displayName: replication, replicate, geo distribution
       href: distribute-data-globally.md
     - name: Уровни согласованности
+      displayName: session, consistency prefix, strong, eventual, bounded staleness
       href: consistency-levels.md
     - name: Выбор правильного уровня согласованности
+      displayName: session, consistency prefix, strong, eventual, bounded staleness
       href: consistency-levels-choosing.md
     - name: Уровни согласованности и API для Azure Cosmos DB
       href: consistency-levels-across-apis.md
@@ -93,8 +95,10 @@ items:
     - name: высокую доступность;
       href: high-availability.md
     - name: Глобальное масштабирование подготовленной пропускной способности
+      displayName: request units, RUs, RU
       href: scaling-throughput.md
     - name: Типы конфликтов и политики их устранения
+      displayName: last write wins, custom
       href: conflict-resolution-policies.md
     - name: Глобальное распределение (взгляд изнутри)
       href: global-dist-under-the-hood.md
@@ -111,26 +115,36 @@ items:
   - name: Подготовленная пропускная способность
     items:
     - name: Единиц запросов
+      displayName: RUs, RU
       href: request-units.md
     - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
+      displayName: request units, RUs, RU, limits, database throughput, shared throughput, container throughput
       href: set-throughput.md
   - name: Работа с учетной записью Azure Cosmos
     href: account-overview.md
   - name: Контейнеры и элементы
     items:
     - name: Работа с базами данных, контейнерами и элементами
+      displayName: collection, document
       href: databases-containers-items.md
     - name: Справочник по языку SQL
+      displayName: collection, document
       href: sql-api-query-reference.md
     - name: Примеры запросов SQL
+      displayName: collection, document, order by, where, top, value, aggregate, between, scalar, join, count, contains
       href: how-to-sql-query.md
+    - name: Данные документов модели
+      displayName: document
+      href: modeling-data.md
     - name: Индексация
       items:
       - name: Обзор
         href: index-overview.md
       - name: Политика индексирования
+        displayName: consistent, none
         href: index-policy.md
       - name: Типы индексов
+        displayName: hash, range, spatial
         href: index-types.md
       - name: Пути индекса
         href: index-paths.md
@@ -143,8 +157,10 @@ items:
       - name: Обработчик канала изменений
         href: change-feed-processor.md
       - name: Активация Функций Azure
+        displayName: change feed
         href: change-feed-functions.md
     - name: Срок жизни
+      displayName: delete, delete data, ttl
       href: time-to-live.md
     - name: Ограничения уникальных ключей
       href: unique-keys.md
@@ -165,6 +181,7 @@ items:
     - name: Интерпретация счета
       href: understand-your-bill.md
     - name: Оптимизация затрат на подготовленную пропускную способность
+      displayName: request units, RUs, RU
       href: optimize-cost-throughput.md
     - name: Оптимизация затрат на выполнение запросов
       href: optimize-cost-queries.md
@@ -185,6 +202,7 @@ items:
     - name: Шифрование данных
       href: database-encryption-at-rest.md
     - name: Безопасный доступ к данным
+      displayName: master key, resource token, users, roles
       href: secure-access-to-data.md
     - name: Брандмауэр IP-адресов
       href: firewall-support.md
@@ -241,6 +259,7 @@ items:
         - name: Приложение Node.js и React
           href: tutorial-develop-mongodb-react.md
       - name: 2. Перенос данных
+        displayName: import
         href: https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json
       - name: 3. Запрос данных
         href: tutorial-query-mongodb.md
@@ -257,6 +276,7 @@ items:
       - name: Подключение с помощью Mongoose
         href: mongodb-mongoose.md
       - name: Глобальное распределение операций чтения
+        displayName: read preference
         href: mongodb-readpreference.md
       - name: Срок жизни — MongoDB
         href: mongodb-time-to-live.md
@@ -266,6 +286,7 @@ items:
         href: /java/azure/spring-framework/configure-spring-data-mongodb-with-cosmos-db
         maintainContext: true
   - name: API Gremlin
+    displayName: graph, graph database
     items:
     - name: Введение
       href: graph-introduction.md
@@ -323,6 +344,7 @@ items:
       - name: 3. Запрос данных
         href: cassandra-api-query-data.md
       - name: 4. Перенос данных
+        displayName: import
         href: cassandra-import-data.md
     - name: Практические руководства
       items:
@@ -370,6 +392,7 @@ items:
       - name: 1. Создание учетной записи
         href: tutorial-develop-table-dotnet.md
       - name: 2. Перенос данных
+        displayName: import
         href: table-import.md
       - name: 3. Запрос данных
         href: tutorial-query-table.md
@@ -423,6 +446,7 @@ items:
     - name: Настройка нескольких источников
       href: how-to-multi-master.md
     - name: Управление уровнями согласованности
+      displayName: session, consistency prefix, strong, eventual, bounded staleness
       href: how-to-manage-consistency.md
     - name: Реализация пользовательской синхронизации
       href: how-to-custom-synchronization.md
@@ -431,8 +455,10 @@ items:
   - name: Подготовленная пропускная способность
     items:
     - name: Подготовка пропускной способности для контейнера
+      displayName: request units, RUs, RU, collection level
       href: how-to-provision-container-throughput.md
     - name: Подготовка пропускной способности для базы данных
+      displayName: request units, RUs, RU, shared throughput, database level
       href: how-to-provision-database-throughput.md
   - name: Работа с контейнерами и элементами
     items:
@@ -441,6 +467,7 @@ items:
     - name: Запрашивание контейнера
       href: how-to-query-container.md
     - name: Настройка срока жизни
+      displayName: delete, delete data, ttl
       href: how-to-time-to-live.md
     - name: Работа с данными с помощью Обозревателя службы хранилища Azure
       href: storage-explorer.md
@@ -627,9 +654,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: f2f061aebd996f62f793ba515f574c8a3748b87f
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.openlocfilehash: f1f36d86466f93c0acac30364ba648391fb03095
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429123"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56652524"

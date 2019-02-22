@@ -11,12 +11,6 @@ ms.devlang: devops
 ms.topic: landing-page
 ms.date: 06/19/2017
 ms.author: carolz
-ms.openlocfilehash: fa2cce2314b3df0d9d32d9d8d6ede5a70520a7d4
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49647254"
 ---
 <div class="content">
    <h1>Docker в Azure</h1>   
@@ -28,7 +22,7 @@ Docker — это популярная платформа управления �
     </div>
 <h2>5-минутные руководства по началу работы</h2>
 <p>Дополнительные сведения о развертывании Docker в Azure:</p>
-<a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/CanonicalandMSOpenTech.DockerOnUbuntuServer1404LTS">Шаблон быстрого запуска: развертывание Docker в Ubuntu</a><br/>
+<a href="https://azure.microsoft.com/resources/templates/docker-simple-on-ubuntu/">Шаблон быстрого запуска: развертывание Docker в Ubuntu</a><br/>
 <h2>Пошаговые руководства</h2>
 <p>Дополнительные сведения об использовании Docker в приложении и в качестве части конвейера CI/CD:</p>
 <ol>
