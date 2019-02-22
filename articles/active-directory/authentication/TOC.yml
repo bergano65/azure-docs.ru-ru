@@ -25,8 +25,8 @@ items:
   items:
   - name: Методы проверки подлинности
     href: concept-authentication-methods.md
-  - name: Конвергентная регистрация
-    href: concept-registration-mfa-sspr-converged.md
+  - name: Объединенная регистрация
+    href: concept-registration-mfa-sspr-combined.md
   - name: Сброс паролей
     items:
     - name: Принцип действия сброса пароля
@@ -104,6 +104,12 @@ items:
         href: howto-mfa-nps-extension-rdg.md
       - name: Виртуальная частная сеть
         href: howto-mfa-nps-extension-vpn.md
+  - name: Объединенная регистрация
+    items:
+    - name: Включение объединенной регистрации
+      href: howto-registration-mfa-sspr-combined.md
+    - name: Устранение неполадок при объединенной регистрации
+      href: howto-registration-mfa-sspr-combined-troubleshoot.md
   - name: Защита паролей Azure AD
     items:
     - name: Настройка списка запрещенных паролей
@@ -191,8 +197,6 @@ items:
         href: howto-mfa-nps-extension-errors.md
   - name: Устранение неполадок
     items:
-    - name: Отключение конвергентной регистрации
-      href: howto-registration-mfa-sspr-converged-troubleshoot.md
     - name: Устранение неполадок с SSPR
       href: active-directory-passwords-troubleshoot.md
     - name: 'SSPR: часто задаваемые вопросы'
@@ -225,9 +229,9 @@ items:
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: d834bcd12f4f8af44c467233230744571dd9b23c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 99d21cd59b7281dbb6a34c2e3cdc9026c9955622
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660057"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56585990"
