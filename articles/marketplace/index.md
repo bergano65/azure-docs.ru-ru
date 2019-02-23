@@ -1,25 +1,20 @@
 ---
-title: Документация по Azure Marketplace | Документация Майкрософт
+title: "Документация по Azure Marketplace\_| Документация Майкрософт"
 description: Сведения об Azure Marketplace
-services: Azure, marketplace
+services: 'Azure, marketplace'
 author: jm-aditi-ms
 manager: pabutler
-editor: ''
+editor: null
 layout: LandingPage
-ms.assetid: ''
+ms.assetid: null
 ms.service: marketplace
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 06/04/2018
 ms.author: ellacroi
-ms.openlocfilehash: e93d1b926b78a352e65a68fc71b07f7631d0b1af
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48830028"
 ---
+
 # <a name="azure-marketplace-documentation"></a>Документация по Azure Marketplace
 
 Ознакомьтесь с Azure Marketplace — интернет-магазином приложений и служб, который позволяет независимым поставщикам программного обеспечения — от разработчиков, чьи проекты находятся на начальном этапе развития, до целых предприятий, — предлагать свои решения клиентам по всему миру.
