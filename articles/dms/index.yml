@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 8762449fbc9254bd3dc6548e74234e1f34c00355
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 086a425be743772b6419a9473ad497a310d94842
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770339"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56671953"
 documentType: LandingData
 title: Документация по Azure Database Migration Service
 metadata:
@@ -53,9 +53,11 @@ sections:
     - html: <a href="/azure/dms/tutorial-sql-server-azure-sql-online">Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети</a>
     - html: <a href="/azure/dms/tutorial-sql-server-to-managed-instance">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
     - html: <a href="/azure/dms/tutorial-sql-server-managed-instance-online">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
+    - html: <a href="/azure/dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online">Перенос баз данных RDS SQL Server в Базу данных SQL Azure или управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS</a>
     - html: <a href="/azure/dms/tutorial-mysql-azure-mysql-online">Интерактивный перенос баз данных MySQL в Базу данных Azure для MySQL с помощью DMS</a>
     - html: <a href="/azure/dms/tutorial-postgresql-azure-postgresql-online">Перенос баз данных PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью DMS</a>
     - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db">Перенос MongoDB в API Mongo Azure Cosmos DB в автономном режиме с помощью DMS</a>
+    - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db-online">Перенос баз данных MongoDB в API Mongo Azure Cosmos DB по сети с помощью DMS</a>
 - title: Примеры
   items:
   - type: list
