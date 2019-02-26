@@ -5,16 +5,12 @@ items:
   items:
   - name: Сведения о службах лабораторий
     href: lab-services-overview.md
-  - name: Сравнение типов лабораторий
-    href: compare-lab-types.md
+  - name: О лабораториях для аудитории
+    href: classroom-labs/classroom-labs-overview.md
+  - name: О DevTest Labs
+    href: devtest-lab-overview.md
 - name: Учебники
   items:
-  - name: DevTest Labs
-    items:
-    - name: 1. Настройка лаборатории
-      href: tutorial-create-custom-lab.md
-    - name: 2. Доступ к лаборатории
-      href: tutorial-use-custom-lab.md
   - name: Лаборатории для аудитории
     items:
     - name: 1. Настройка учетной записи лаборатории
@@ -25,6 +21,12 @@ items:
       href: classroom-labs/tutorial-connect-virtual-machine-classroom-lab.md
     - name: 4. Отслеживание использования лаборатории для аудитории
       href: classroom-labs/tutorial-track-usage.md
+  - name: DevTest Labs
+    items:
+    - name: 1. Настройка лаборатории
+      href: tutorial-create-custom-lab.md
+    - name: 2. Доступ к лаборатории
+      href: tutorial-use-custom-lab.md
 - name: Примеры
   items:
   - name: DevTest Labs
@@ -37,17 +39,26 @@ items:
       href: samples-cli.md
 - name: Основные понятия
   items:
-  - name: DevTest Labs
-    href: devtest-lab-concepts.md
+  - name: Лаборатории для аудитории
     items:
-    - name: Использование лабораторий для разработчиков
-      href: devtest-lab-developer-lab.md
-    - name: Использование лабораторий для тестовых сред
-      href: devtest-lab-test-env.md
-    - name: Использование лабораторий для обучения
-      href: devtest-lab-training-lab.md
-    - name: Общие сведения об Azure DevTest Labs
-      href: devtest-lab-overview.md
+    - name: Основные понятия, используемые при работе с лабораториями для аудитории
+      href: classroom-labs/classroom-labs-concepts.md
+    - name: Сценарии
+      items:
+      - name: Использование лабораторий для проведения учебных занятий
+        href: classroom-labs/classroom-labs-scenarios.md
+  - name: DevTest Labs
+    items:
+    - name: Основные понятия DevTest Labs
+      href: devtest-lab-concepts.md
+    - name: Сценарии
+      items:
+      - name: Использование лабораторий для разработчиков
+        href: devtest-lab-developer-lab.md
+      - name: Использование лабораторий для тестовых сред
+        href: devtest-lab-test-env.md
+      - name: Использование лабораторий для обучения
+        href: devtest-lab-training-lab.md
 - name: Практические руководства
   items:
   - name: Лаборатории для аудитории
@@ -197,37 +208,47 @@ items:
       href: devtest-lab-use-arm-and-powershell-for-lab-resources.md
 - name: Справочные материалы
   items:
-  - name: Интерфейс командной строки
-    href: /cli/azure/lab
-  - name: PowerShell
-    href: /powershell/module/az.devtestlabs/#devtest_labs
-  - name: REST API
-    href: https://docs.microsoft.com/rest/api/dtl/
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.devtestlab/allversions
+  - name: Лаборатории для аудитории
+    items:
+    - name: REST API
+      href: https://docs.microsoft.com/rest/api/labservices/
+  - name: DevTest Labs
+    items:
+    - name: Интерфейс командной строки
+      href: /cli/azure/lab
+    - name: PowerShell
+      href: /powershell/module/azurerm.devtestlabs/#devtest_labs
+    - name: REST API
+      href: https://docs.microsoft.com/rest/api/dtl/
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.devtestlab/allversions
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=developer-tools
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: DevTest Labs — вопросы и ответы
-    href: devtest-lab-faq.md
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=devtest-lab
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/home?forum=AzureDevTestLabs
-  - name: Блог группы разработчиков
-    href: https://blogs.msdn.microsoft.com/devtestlab/
-  - name: Переполнение стека
-    href: http://stackoverflow.com/questions/tagged/azure-devtest-labs
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=devtest-lab
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/devtest-lab/
-ms.openlocfilehash: 61d83d7d3e56abbb16e4d47dc1a7693707663c73
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+  - name: Лаборатории для аудитории
+    items:
+    - name: Обновления Azure
+      href: https://azure.microsoft.com/updates/?product=lab-services
+    - name: Цены
+      href: https://azure.microsoft.com/pricing/details/lab-services/
+    - name: Переполнение стека
+      href: https://stackoverflow.com/questions/tagged/azure-lab-services
+  - name: DevTest Labs
+    items:
+    - name: Обновления Azure
+      href: https://azure.microsoft.com/updates/?product=devtest-lab
+    - name: Цены
+      href: https://azure.microsoft.com/pricing/details/devtest-lab/
+    - name: Форум MSDN
+      href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDevTestLabs
+    - name: Переполнение стека
+      href: https://stackoverflow.com/questions/tagged/azure-devtest-labs
+    - name: Видеоролики
+      href: https://azure.microsoft.com/resources/videos/index/?services=devtest-lab
+    - name: Часто задаваемые вопросы
+      href: devtest-lab-faq.md
+ms.openlocfilehash: f4a7e26be0bbb15631fd44bf38506d564d27f331
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56736751"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56805695"

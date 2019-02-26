@@ -35,13 +35,16 @@
 ## Настройка высокой доступности
 ### [Использование службы хранилища Azure для резервного копирования и восстановления](virtual-machines-windows-use-storage-sql-server-backup-restore.md)
 ### Группа доступности AlwaysOn
-#### [Использование шаблона с портала Azure](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
-#### [Использование шаблонов быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md)
-#### [Вручную — предварительные требования](virtual-machines-windows-portal-sql-availability-group-prereq.md)
-#### [Вручную — руководство](virtual-machines-windows-portal-sql-availability-group-tutorial.md)
-#### [Управление подсистемой балансировки нагрузки с помощью портала Azure](virtual-machines-windows-portal-sql-alwayson-int-listener.md)
-#### [Управление подсистемой балансировки нагрузки с помощью Azure PowerShell](virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md)
+#### [Интерфейс командной строки виртуальной машины с SQL в Azure](virtual-machines-windows-sql-availability-group-cli.md)
+#### [Шаблон на портале Azure](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
+#### [шаблонов быстрого запуска Azure](virtual-machines-windows-sql-availability-group-quickstart-template.md)
 #### [Различные регионы](virtual-machines-windows-portal-sql-availability-group-dr.md)
+#### Настройка вручную    
+##### [Предварительные требования](virtual-machines-windows-portal-sql-availability-group-prereq.md)
+##### [Руководство](virtual-machines-windows-portal-sql-availability-group-tutorial.md)
+##### [Управление подсистемой балансировки нагрузки с помощью портала Azure](virtual-machines-windows-portal-sql-alwayson-int-listener.md)
+##### [Управление подсистемой балансировки нагрузки с помощью Azure PowerShell](virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md)
+
 ### Экземпляр отказоустойчивого кластера
 #### [Настройка](virtual-machines-windows-portal-sql-create-failover-cluster.md)
 
