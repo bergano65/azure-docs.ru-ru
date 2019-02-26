@@ -11,7 +11,7 @@
 ### [Аварийное восстановление с помощью Azure DNS и диспетчера трафика](disaster-recovery-dns-traffic-manager.md)
 ## Планирование и проектирование
 ### [Виртуальные сети](../virtual-network/virtual-network-vnet-plan-design-arm.md?toc=%2fazure%2fnetworking%2ftoc.json)
-### [Возможность распределенного подключения через VPN](../vpn-gateway/vpn-gateway-plan-design.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Возможность распределенного подключения через VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Возможность распределенного подключения по выделенному частному каналу](../expressroute/expressroute-workflows.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### Взаимодействие компонентов при подключении к серверной части
 #### [Вводная часть и сведения о настройке теста](connectivty-interoperability-preface.md?toc=%2fazure%2fnetworking%2ftoc.json)
