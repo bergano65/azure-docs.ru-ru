@@ -10,20 +10,20 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2019
+ms.date: 02/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: fbfbb4e452032073d92e7c2b93f78669da0ceaf5
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 1d576b24e96d6c4c88d6fbef86cb1c6cf7f7c61a
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55691563"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268139"
 ---
 # <a name="azure-resource-manager-overview"></a>Общие сведения о диспетчере ресурсов Azure
 
 Azure Resource Manager — это служба развертывания и управления для Azure. Она обеспечивает уровень согласованного управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления доступом, аудита и добавления тегов, чтобы защитить и упорядочить ресурсы после развертывания.
 
-При выполнении действий с помощью портала, PowerShell, интерфейса командной строки Azure, REST API или клиентских пакетов SDK ваш запрос обрабатывается с помощью API Azure Resource Manager. Так как все запросы обрабатываются через один API, результаты и возможности будут согласованы в различных средствах.
+При выполнении действий с помощью портала, PowerShell, интерфейса командной строки Azure, REST API или клиентских пакетов SDK ваш запрос обрабатывается с помощью API Azure Resource Manager. Так как все запросы обрабатываются через один API, результаты и возможности будут согласованы в различных средствах. Все доступные на портале возможности также доступны в PowerShell, Azure CLI, REST API и клиентских пакетах SDK. Функции, предоставленные через API, будут представлены на портале в течение 180 дней после выпуска.
 
 На приведенном ниже рисунке показано, как эти средства взаимодействуют с API Azure Resource Manager. API передает запросы в службу Resource Manager, где они проходят проверку подлинности и авторизацию. Потом Resource Manager перенаправляет запросы к соответствующей службе.
 

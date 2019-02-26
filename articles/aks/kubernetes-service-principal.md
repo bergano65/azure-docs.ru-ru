@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: get-started-article
 ms.date: 09/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 2bc0579d3dd60d66a23a29dabff7e43ca8dfee76
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: b8cbeacda98aec639724f30fe3a7e94346f05ba4
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435401"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56308760"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -128,11 +128,10 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - На главной виртуальной машине и виртуальной машине узла в кластере Kubernetes учетные данные субъект-службы хранятся в файле `/etc/kubernetes/azure.json`.
 - При использовании команды [az aks create][az-aks-create] для автоматического создания субъект-службы учетные данные субъект-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, с которого выполняется команда.
 - При удалении кластера AKS, созданного с помощью команды [az aks create][az-aks-create], автоматически созданная субъект-служба не удаляется.
-    - Чтобы удалить субъект-службу, сначала нужно получить идентификатор для службы участника с помощью команды [az ad app list][az-ad-app-list]. Следующий пример выполняет запрос к кластеру с именем *myAKSCluster*, а затем удаляет идентификатор приложения с помощью команды [az ad app delete][az-ad-app-delete]. Замените эти имена своими значениями:
+    - Чтобы удалить субъект-службу, выполните запрос для кластера *servicePrincipalProfile.clientId*, а затем удалите субъект-службу с помощью команды [az ad app delete][az-ad-app-delete]. Замените имена группы ресурсов и кластера собственными значениями.
 
         ```azurecli
-        az ad app list --query "[?displayName=='myAKSCluster'].{Name:displayName,Id:appId}" --output table
-        az ad app delete --id <appId>
+        az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
 ## <a name="next-steps"></a>Дополнительная информация

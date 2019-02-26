@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/20/2018
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49412731823cb906e77835e2b915f7915b18dea2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ed94b7571acb0ced124644dafc59d805d5112e8a
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203800"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268572"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к API Graph в Azure AD
 
@@ -39,6 +39,7 @@ ms.locfileid: "56203800"
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
 
 - Чтобы предоставить удостоверению виртуальной машины доступ к Azure AD Graph, необходимо назначить вашей учетной записи роль **глобального администратора** в Azure AD.
+- Установите последнюю версию модуля [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2), если он не установлен. 
 
 ## <a name="connect-to-azure-ad"></a>Подключение к Azure AD
 

@@ -1,6 +1,6 @@
 ---
 title: 'Пример: применение тега и его значения по умолчанию'
-description: Этот пример политики добавляет имя и значение указанного тега (если этот тег не предоставлен).
+description: В этом примере определения политики добавляется имя и значение указанного тега, если этот тег не предоставлен.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: ef044d5ccba706ebc0c7102414cb1e2b42b537cb
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 989d09b3e4b576fa21156ec71485c54422c643b7
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242164"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338230"
 ---
-# <a name="apply-tag-and-its-default-value"></a>Применение тега и его значения по умолчанию
+# <a name="sample---apply-tag-and-its-default-value"></a>Пример: применение тега и его значения по умолчанию
 
 Эта политика добавляет имя и значение указанного тега (если этот тег не предоставлен). Вы можете указать имя и значение применяемого тега.
 

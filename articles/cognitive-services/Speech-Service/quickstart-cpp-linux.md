@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Распознавание речи с помощью C++ (Linux) в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в C++ на Linux, используя пакет SDK для службы "Речь"
+description: Узнайте, как распознавать речь в Linux, используя C++ и пакет SDK службы "Речь"
 services: cognitive-services
 author: wolfma61
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/18/2018
+ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: fbd962d7a19969c88f539b0e21848fb01c6e88e4
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 9e1844320786fe8a2a856b06b3a8093ca49568eb
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874759"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446364"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 
@@ -31,7 +31,7 @@ ms.locfileid: "55874759"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.2.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.3.0`.
 
 Пакет SDK для службы "Речь" может использоваться для создания как 64-разрядных, так и 32-разрядных приложений. Необходимые библиотеки и файлы заголовков можно скачать в виде TAR-файла по ссылке: https://aka.ms/csspeech/linuxbinary.
 
@@ -41,7 +41,7 @@ ms.locfileid: "55874759"
 
    ```sh
    sudo apt-get update
-   sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2 wget
+   sudo apt-get install build-essential libssl1.0.0 libasound2 wget
    ```
 
 1. Выберите каталог, в который должны быть извлечены файлы пакета SDK для службы "Речь", и задайте переменную среды `SPEECHSDK_ROOT`, чтобы она указывала на этот каталог. Эта переменная упрощает подключение к каталогу в будущих командах. Например, если вы хотите использовать каталог `speechsdk` в домашнем каталоге, используйте следующую команду.
@@ -91,13 +91,13 @@ ms.locfileid: "55874759"
 * В системе **x64** (64-разрядная) выполните сборку приложения с помощью следующей команды.
 
   ```sh
-  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x64" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
+  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x64" -l:libssl.so.1.0.0 -l:libasound.so.2
   ```
 
 * В системе **x86** (32-разрядная) выполните сборку приложения с помощью следующей команды.
 
   ```sh
-  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x86" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
+  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x86" -l:libssl.so.1.0.0 -l:libasound.so.2
   ```
 
 ## <a name="run-the-app"></a>Запуск приложения

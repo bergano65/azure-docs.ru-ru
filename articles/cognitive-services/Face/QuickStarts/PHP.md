@@ -8,47 +8,42 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 05/30/2018
+ms.date: 02/07/2019
 ms.author: pafarley
-ms.openlocfilehash: c75745452ee819dbda75f7420c93a5629cef4e08
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 93e3d9fa67cfb941abf97476e03f44a4b16e94e7
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860396"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313166"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 
-Из этого краткого руководства вы узнаете, как определять лица людей на изображениях с помощью API распознавания лиц.
+В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API распознавания лиц Azure и PHP.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 
-## <a name="face---detect-request"></a>Запрос на определение лица
+## <a name="initialize-the-html-file"></a>Инициализация HTML-файла
 
-Используйте метод [определения лица](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), чтобы распознать лица на изображении и вернуть их атрибуты, в том числе:
+Создайте файл HTML с именем *detectFaces.html*и добавьте в него следующий код.
 
-* Идентификатор лица: уникальный идентификатор, используемый в различных сценариях API распознавания лиц.
-* Границы лица: отступ слева, сверху, а также ширина и высота лица, определяющие его место на изображении.
-* Ориентиры: массив из 27-точечных ориентиров, указывающий на важные позиции компонентов лица.
-* Атрибуты лица, в т. ч. возраст, пол, интенсивность улыбки, положение головы и наличие усов и бороды.
+```html
+<html>
+    <head>
+        <title>Face Detect Sample</title>
+    </head>
+    <body></body>
+</html>
+```
 
-Чтобы выполнить наш пример, сделайте следующее:
+## <a name="write-the-php-script"></a>Написание скрипта PHP
 
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. Вместо `uriBase` укажите расположение, в котором вы получили ключи подписки, если нужно.
-1. При необходимости укажите в параметре `imageUrl` изображение для анализа.
-1. Сохраните файл с расширением `.php`.
-1. Откройте файл в окне браузера с поддержкой PHP.
+Добавьте следующий код в элемент `body` документа. Он создаст основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
 
 ```php
-<html>
-<head>
-    <title>Face Detect Sample</title>
-</head>
-<body>
 <?php
 // Replace <Subscription Key> with a valid subscription key.
 $ocpApimSubscriptionKey = '<Subscription Key>';
@@ -102,13 +97,13 @@ catch (HttpException $ex)
     echo "<pre>" . $ex . "</pre>";
 }
 ?>
-</body>
-</html>
 ```
 
-## <a name="face---detect-response"></a>Результат распознавания лица
+Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и изменить строку `uriBase`, чтобы она содержала идентификатор правильного региона (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Поле `returnFaceAttributes` определяет извлекаемые атрибуты лица. Эту строку вы можете изменить в зависимости от предполагаемого применения.
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+## <a name="run-the-script"></a>Запуск сценария
+
+Откройте файл в веб-браузере с поддержкой PHP. Вы должны получить такого вида строку JSON с данными распознавания лица.
 
 ```json
 [

@@ -1,6 +1,6 @@
 ---
 title: Создание схемы с помощью REST API
-description: Схемы Azure позволяют создавать, определять и развертывать артефакты.
+description: Служба Azure Blueprints позволяет создавать, определять и развертывать артефакты с помощью REST API.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: d7b2e6848c88d9c3ac61f2eaf059e0836dc19903
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 634b175ec0b5771e3ff2fa061532106eb124ea4e
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989972"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338433"
 ---
 # <a name="define-and-assign-an-azure-blueprint-with-rest-api"></a>Определение и назначение схемы Azure с помощью REST API
 

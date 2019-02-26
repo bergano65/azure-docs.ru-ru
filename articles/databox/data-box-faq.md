@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 01/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 6c7dd6ebaf7eebefcdcfa50bbd77ad80f4cda907
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: b3d79f106554bf4a80df835ac880fbb7a72c8bfe
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55077461"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268402"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -70,7 +70,7 @@ ms.locfileid: "55077461"
 ### <a name="q-i-was-not-able-to-create-a-data-box-order-in-the-azure-portal-why-would-this-be"></a>В. Я не могу создать заказ Data Box на портале Azure. С чем это связано?
 О. Если вам не удалось создать заказ Data Box, значит проблема связана с вашей подпиской или типом доступа. 
 
-Сначала проверьте подписку. Data Box доступен только для подписок с Соглашением Enterprise (EA), поставщика облачных решений (CSP) и с оплатой по мере использования. Если вы используете подписку другого типа, обратитесь в службу поддержки Майкрософт и обновите подписку.
+Сначала проверьте подписку. Data Box доступен только для подписок с Соглашением Enterprise (EA) и поставщика облачных решений (CSP). Если вы используете подписку другого типа, обратитесь в службу поддержки Майкрософт и обновите подписку.
 
 Если же подписка уже относится к поддерживаемому типу, проверьте уровень доступа для подписки. Чтобы создать заказ, нужно иметь роль участника или владельца для подписки.
 
@@ -101,7 +101,7 @@ ms.locfileid: "55077461"
 О. Да. К одному Data Box можно подключить несколько компьютеров для передачи данных, также можно параллельно выполнять несколько заданий копирования. Дополнительные сведения см. в статье [Руководство. Копирование данных в Azure Data Box через SMB](data-box-deploy-copy-data.md)
 
 ### <a name="q-can-i-connect-to-both-the-10-gbe-interfaces-on-the-data-box-to-transfer-data"></a>В. Можно ли подключиться к обоим интерфейсам 10-GbE на устройств Data Box для передачи данных?
-О. Да. Оба интерфейса 10 GbE можно подключить на устройстве Data Box для одновременного копирования данных. См. дополнительные сведения в [руководстве по копированию данных в Azure Data Box через SMB](data-box-deploy-copy-data.md).
+О. Да. Оба интерфейса 10 GbE можно подключить на устройстве Data Box для одновременного копирования данных. См. дополнительные сведения в [руководстве по Копирование данных в Azure Data Box через SMB](data-box-deploy-copy-data.md)
 
 <!--### Q. The network interface on my Data Box is not working. What should I do? 
 A. 

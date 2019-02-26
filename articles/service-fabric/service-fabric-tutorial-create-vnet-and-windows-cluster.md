@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/27/2018
+ms.date: 02/19/2019
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 76281113c0d1e7b3943e137accf7aa93c2863fe6
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 590e1e5853ccf4a525477f194c78f1fd8ce679ed
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54435385"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453075"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -33,6 +33,7 @@ ms.locfileid: "54435385"
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
 > * создание хранилища ключей и передача сертификата;
+> * настройка проверки подлинности Azure Active Directory;
 > * создание защищенного кластера Service Fabric в Azure с помощью PowerShell;
 > * Защита кластера с помощью сертификата X.509
 > * Подключение к кластеру с помощью PowerShell
@@ -52,30 +53,9 @@ ms.locfileid: "54435385"
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md)
 * Установите модуль [Azure PowerShell версии 4.1 или более поздней](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps)
+* Просмотрите основные понятия [кластеров Azure](service-fabric-azure-clusters-overview.md)
 
-Ниже приведены процедуры для создания кластера Service Fabric с пятью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
-
-## <a name="key-concepts"></a>Основные понятия
-
-[Кластер Service Fabric](service-fabric-deploy-anywhere.md) — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Кластеры можно масштабировать до нескольких тысяч машин. Узлом называется компьютер или виртуальная машина, которая входит в состав кластера. Каждому узлу назначается имя (строка). Узлы имеют свои характеристики, в частности свойства размещения.
-
-Тип узла определяет размер, количество и свойства набора виртуальных машин в кластере. Каждый определенный тип узлов настраивается как [масштабируемый набор виртуальных машин](/azure/virtual-machine-scale-sets/), т. е. как вычислительный ресурс Azure, который можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла поддерживает возможность независимого масштабирования, имеет разные наборы открытых портов и собственные метрики емкости. Типы узлов используются для определения ролей набора узлов кластера, например "интерфейсная часть" или "серверная часть".  В кластере могут быть узлы нескольких типов. Тип основных узлов должен включать не менее пяти виртуальных машин для производственных кластеров и не менее трех виртуальных машин для тестовых кластеров.  [Системные службы Service Fabric](service-fabric-technical-overview.md#system-services) размещаются на узлах основного типа.
-
-Кластер защищен сертификатом кластера. Сертификат кластера — это сертификат X.509, используемый для защиты обмена данными между узлами и для аутентификации конечных точек управления кластера в клиенте управления.  Этот сертификат кластера также предоставляет SSL для API управления HTTPS и Service Fabric Explorer по протоколу HTTPS. Самозаверяющие сертификаты используются для тестовых кластеров.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС).
-
-Сертификат кластера должен:
-
-* Содержать закрытый ключ.
-* Быть создан для обмена ключами, которые можно экспортировать в файл обмена личной информацией (PFX-файл).
-* Иметь имя субъекта, совпадающее с доменным именем, которое используется для обращения к кластеру Service Fabric. Это необходимо, чтобы предоставить SSL-протокол конечным точкам управления HTTPS в кластере и Service Fabric Explorer. Не удается получить SSL-сертификат от центра сертификации (ЦС) в домене .cloudapp.azure.com. Необходимо получить имя личного домена для кластера. При запросе сертификата из ЦС имя субъекта сертификата должно совпадать с именем личного домена, используемого для кластера.
-
-Хранилище ключей Azure используется для управления сертификатами кластеров Service Fabric в Azure.  При развертывании кластера в Azure поставщик ресурсов Azure, ответственный за создание кластеров Service Fabric, извлекает сертификаты из хранилища ключей и устанавливает их на виртуальные машины кластера.
-
-В этом руководстве рассматривается кластер с пятью узлами одного типа. Однако при развертывании любого рабочего кластера важно правильно [спланировать его загрузку](service-fabric-cluster-capacity.md). Вот несколько моментов, которые необходимо учесть:
-
-* Количество узлов и их типов для создания кластера.
-* Свойства каждого типа узлов (например, размер, основной тип, возможность подключения из Интернета, количество виртуальных машин и др.).
-* Надежность и устойчивость характеристик кластера.
+Ниже приведены процедуры для создания кластера Service Fabric с семью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
 
 ## <a name="download-and-explore-the-template"></a>Скачивание и изучение шаблона
 
@@ -84,14 +64,14 @@ ms.locfileid: "54435385"
 * [azuredeploy.json][template]
 * [azuredeploy.parameters.json][parameters]
 
-Этот шаблон развертывает в виртуальной сети и группе безопасности сети защищенный кластер с пятью виртуальными машинами и одним типом узла.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates).  Файл [azuredeploy.json][template] развертывает ряд ресурсов, включая следующие.
+Этот шаблон развертывает в виртуальной сети и группе безопасности сети защищенный кластер с семью виртуальными машинами и тремя типами узлов.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates).  Файл [azuredeploy.json][template] развертывает ряд ресурсов, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
 В ресурсе **Microsoft.ServiceFabric/clusters** кластер Windows настроен со следующими характеристиками:
 
-* один тип узла;
-* пять узлов на первичном типе узла (можно настроить в параметрах шаблона);
+* три типа узлов;
+* пять узлов на первичном типе узла (можно настроить в параметрах шаблона), каждый узел в двух других типах узлов;
 * ОС: Windows Server 2016 Datacenter с контейнерами (можно настроить в параметрах шаблона);
 * защищенный сертификат (можно настроить в параметрах шаблона);
 * включенный [обратный прокси-сервер](service-fabric-reverseproxy.md);
@@ -133,6 +113,35 @@ ms.locfileid: "54435385"
 
 Если нужны другие порты приложений, нужно настроить ресурсы **Microsoft.Network/loadBalancers** и **Microsoft.Network/networkSecurityGroups**, чтобы разрешить входящий трафик.
 
+### <a name="windows-defender"></a>Защитник Windows
+По умолчанию [Антивирусная программа "Защитник Windows"](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016) установлена и работает на Windows Server 2016. Пользовательский интерфейс установлен по умолчанию на некоторых номерах SKU, но не является обязательным.  Для каждого типа узла или масштабируемого набора виртуальной машины, объявленного в шаблоне, используется [расширение антивредоносного ПО для виртуальных машин Azure](/azure/virtual-machines/extensions/iaas-antimalware-windows) для исключения каталогов и процессов Service Fabric:
+
+```json
+{
+"name": "[concat('VMIaaSAntimalware','_vmNodeType0Name')]",
+"properties": {
+        "publisher": "Microsoft.Azure.Security",
+        "type": "IaaSAntimalware",
+        "typeHandlerVersion": "1.5",
+        "settings": {
+        "AntimalwareEnabled": "true",
+        "Exclusions": {
+                "Paths": "D:\\SvcFab;D:\\SvcFab\\Log;C:\\Program Files\\Microsoft Service Fabric",
+                "Processes": "Fabric.exe;FabricHost.exe;FabricInstallerService.exe;FabricSetup.exe;FabricDeployer.exe;ImageBuilder.exe;FabricGateway.exe;FabricDCA.exe;FabricFAS.exe;FabricUOS.exe;FabricRM.exe;FileStoreService.exe"
+        },
+        "RealtimeProtectionEnabled": "true",
+        "ScheduledScanSettings": {
+                "isEnabled": "true",
+                "scanType": "Quick",
+                "day": "7",
+                "time": "120"
+        }
+        },
+        "protectedSettings": null
+}
+}
+```
+
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 
 В файле параметров [azuredeploy.parameters.json][parameters] объявляются многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
@@ -147,11 +156,123 @@ ms.locfileid: "54435385"
 |certificateUrlValue|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым. </p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите URL-адрес сертификата. Например, https://mykeyvault.vault.azure.net:443/secrets/mycertificate/02bea722c9ef4009a76c5052bcbf8346.</p>|
 |sourceVaultValue||<p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите сведения об исходном хранилище. Например, /subscriptions/333cc2c84-12fa-5778-bd71-c71c07bf873f/resourceGroups/MyTestRG/providers/Microsoft.KeyVault/vaults/MYKEYVAULT.</p>|
 
+## <a name="set-up-azure-active-directory-client-authentication"></a>Настройка проверки подлинности клиента Azure Active Directory
+Для кластеров Service Fabric, развернутых в общедоступной сети, размещенной в Azure, для взаимной проверки подлинности между клиентом и узлом рекомендуется:
+* Использование Azure Active Directory для удостоверения клиента.
+* Сертификат для удостоверения сервера и SSL-шифрования HTTP-подключений.
+
+Настройку Azure AD для проверки подлинности клиентов для кластера Service Fabric нужно сделать перед [созданием кластера](#createvaultandcert).  Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. 
+
+Кластеры Service Fabric предлагают несколько точек входа для управления функциями кластеров, включая веб-интерфейс [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) и [Visual Studio](service-fabric-manage-application-in-visual-studio.md). В итоге вы создаете два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение.  Создав приложения, сопоставьте пользователей с ролями, разрешающими доступ только для чтения и администрирования.
+
+> [!NOTE]
+> Перед созданием кластера необходимо выполнить следующие действия. Поскольку в сценариях предварительно заданы имена кластеров и конечные точки, эти имена нужно выбрать заблаговременно, при этом они должны отличаться от созданных ранее имен.
+
+В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Краткое руководство. Настройка среды разработки](../active-directory/develop/quickstart-create-new-tenant.md).
+
+Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell. [Скачайте сценарии](https://github.com/robotechredmond/Azure-PowerShell-Snippets/tree/master/MicrosoftAzureServiceFabric-AADHelpers/AADTool) на компьютер.
+
+### <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
+Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md) и разрешающие доступ на чтение и администрирование.
+
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Кроме того, укажите имена пользователей и пароли для пользователей.  Например: 
+
+```PowerShell
+$Configobj = .\SetupApplications.ps1 -TenantId '<MyTenantID>' -ClusterName 'mysftestcluster' -WebApplicationReplyUrl 'https://mysftestcluster.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
+.\SetupUser.ps1 -ConfigObj $Configobj -UserName 'TestUser' -Password 'P@ssword!123'
+.\SetupUser.ps1 -ConfigObj $Configobj -UserName 'TestAdmin' -Password 'P@ssword!123' -IsAdmin
+```
+
+> [!NOTE]
+> Для национальных облаков (например, Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо указать параметр `-Location`.
+
+*TenantId* или идентификатор каталога вы можете найти на [портале Azure](https://portal.azure.com). Выберите **Azure Active Directory -> Свойства** и скопируйте значение **идентификатора каталога**.
+
+Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых скриптом. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
+
+*WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Эту конечную точку следует назначить конечной точкой Service Fabric Explorer для кластера, по умолчанию это:
+
+https://&lt;cluster_domain&gt;:19080/Explorer
+
+Вам будет предложено войти в учетную запись с правами администратора для клиента Azure AD. После входа сценарий начнет создавать веб-приложение и собственное приложение для представления кластера Service Fabric. Если посмотреть на список приложений клиента на [портале Azure](https://portal.azure.com), вы увидите две новые записи:
+
+   * *имя_кластера*\_Кластер
+   * *имя_кластера*\_Клиент
+
+Этот скрипт выводит код JSON, требуемый для шаблона Azure Resource Manager для создания кластера. Рекомендуем не закрывать пока окно PowerShell.
+
+```json
+"azureActiveDirectory": {
+  "tenantId":"<guid>",
+  "clusterApplication":"<guid>",
+  "clientApplication":"<guid>"
+},
+```
+
+### <a name="add-azure-ad-configuration-to-use-azure-ad-for-client-access"></a>Добавление конфигурации Azure AD для клиентского доступа через Azure AD
+В [azuredeploy.json][template] настройте Azure AD в разделе **Microsoft.ServiceFabric/clusters**.  Добавьте параметры для идентификатора клиента, идентификатора приложения кластера и идентификатора клиентского приложения.  
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    ...
+
+    "aadTenantId": {
+      "type": "string",
+      "defaultValue": "0e3d2646-78b3-4711-b8be-74a381d9890c"
+    },
+    "aadClusterApplicationId": {
+      "type": "string",
+      "defaultValue": "cb147d34-b0b9-4e77-81d6-420fef0c4180"
+    },
+    "aadClientApplicationId": {
+      "type": "string",
+      "defaultValue": "7a8f3b37-cc40-45cc-9b8f-57b8919ea461"
+    }
+  },
+
+...
+
+{
+  "apiVersion": "2018-02-01",
+  "type": "Microsoft.ServiceFabric/clusters",
+  "name": "[parameters('clusterName')]",
+  ...
+  "properties": {
+    ...
+    "azureActiveDirectory": {
+      "tenantId": "[parameters('aadTenantId')]",
+      "clusterApplication": "[parameters('aadClusterApplicationId')]",
+      "clientApplication": "[parameters('aadClientApplicationId')]"
+    },
+    ...
+  }
+}
+```
+
+Добавьте значения параметров в файл параметров [azuredeploy.parameters.json][parameters].  Например: 
+
+```json
+"aadTenantId": {
+"value": "0e3d2646-78b3-4711-b8be-74a381d9890c"
+},
+"aadClusterApplicationId": {
+"value": "cb147d34-b0b9-4e77-81d6-420fef0c4180"
+},
+"aadClientApplicationId": {
+"value": "7a8f3b37-cc40-45cc-9b8f-57b8919ea461"
+}
+```
+
 <a id="createvaultandcert" name="createvaultandcert_anchor"></a>
 
 ## <a name="deploy-the-virtual-network-and-cluster"></a>Развертывание кластера и виртуальной сети
 
 Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [azuredeploy.json][template] создает виртуальную сеть, а также подсеть и группу безопасности сети (NSG) для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
+
+Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Сведения о том, как обновить кластер для использования общих имен сертификата для управления сертификатами, см. в статье [Переход с отпечатка на общее имя сертификата для кластера](service-fabric-cluster-change-cert-thumbprint-to-cn.md).
 
 ### <a name="create-a-cluster-using-an-existing-certificate"></a>Создание кластера с помощью имеющегося сертификата
 
@@ -230,6 +351,15 @@ Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
 
 Модуль PowerShell **Service Fabric** предоставляет многие командлеты для управления кластерами, приложениями и службами Service Fabric.  Для подключения к безопасному кластеру используйте командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster). Сведения об отпечатке SHA1 сертификата и конечной точке подключения можно найти в выходных данных из предыдущего шага.
 
+Если ранее вы настроили проверку подлинности клиента AAD, используйте следующую команду: 
+```powershell
+Connect-ServiceFabricCluster -ConnectionEndpoint mysfcluster123.southcentralus.cloudapp.azure.com:19000 `
+        -KeepAliveIntervalInSec 10 `
+        -AzureActiveDirectory `
+        -ServerCertThumbprint C4C1E541AD512B8065280292A8BA6079C3F26F10
+```
+
+Если вы не настроили проверку подлинности клиента AAD, используйте следующую команду:
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint mysfcluster123.southcentralus.cloudapp.azure.com:19000 `
           -KeepAliveIntervalInSec 10 `
@@ -255,6 +385,7 @@ Get-ServiceFabricClusterHealth
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
 > * создание хранилища ключей и передача сертификата;
+> * настройка проверки подлинности Azure Active Directory;
 > * Создание защищенного кластера Service Fabric в Azure с помощью PowerShell
 > * Защита кластера с помощью сертификата X.509
 > * Подключение к кластеру с помощью PowerShell
@@ -264,5 +395,5 @@ Get-ServiceFabricClusterHealth
 > [!div class="nextstepaction"]
 > [Scale a Service Fabric cluster](service-fabric-tutorial-scale-cluster.md) (Масштабирование кластера Service Fabric)
 
-[template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Windows-1-NodeTypes-Secure-NSG/azuredeploy.json
-[parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Windows-1-NodeTypes-Secure-NSG/azuredeploy.parameters.json
+[template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Windows-3-NodeTypes-Secure-NSG/AzureDeploy.json
+[parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Windows-3-NodeTypes-Secure-NSG/AzureDeploy.Parameters.json

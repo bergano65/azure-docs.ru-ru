@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 09/10/2018
+ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 8e974852c0394eb7fd9e3e13eb8cde42a23977a6
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 40145ee0e284f90dc1cf231db01d02219a58eeda
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55862094"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313149"
 ---
-# <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-c35-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API компьютерного зрения и C#
+# <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-c-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API компьютерного зрения и C#
 
-Из этого краткого руководства вы узнаете, как анализировать локальное изображение с помощью REST API в службе "Компьютерное зрение", чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
+Из этого краткого руководства вы узнаете, как анализировать локальное изображение, извлекши визуальные признаки с помощью REST API компьютерного зрения. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь сведения о визуальных признаках из содержимого изображения.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
@@ -253,7 +253,7 @@ namespace CSHttpClientSample
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица.
 
 > [!div class="nextstepaction"]
-> [Руководство по API компьютерного зрения для C&#35;](../Tutorials/CSharpTutorial.md)
+> [Руководство. Создание приложения для обработки изображений — C#](../Tutorials/CSharpTutorial.md)

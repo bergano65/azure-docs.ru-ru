@@ -8,12 +8,12 @@ ms.date: 02/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 6b3bad4e4619f8909f5c6d71111b4fad9ddb3098
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 31b9405b7d4141890d786ab3d1cb70d11ef0c1b3
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813285"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267960"
 ---
 # <a name="what-is-azure-resource-graph"></a>Что такое Azure Resource Graph
 
@@ -38,7 +38,7 @@ Azure Resource Graph дает вам доступ к свойствам, воз�
 
 Теперь, когда вы разобрались, что такое Azure Resource Graph, рассмотрим порядок создания запросов.
 
-Важно понимать, что язык запросов Azure Resource Graph похож на [язык запросов Azure Data Explorer](../../data-explorer/data-explorer-overview.md).
+Важно понимать, что язык запросов Azure Resource Graph похож на [язык запросов Kusto](../../data-explorer/data-explorer-overview.md), используемый в Azure Data Explorer.
 
 Сведения об операциях и функциях, которые можно использовать с Azure Resource Graph, см. в статье [Язык запросов Resource Graph](./concepts/query-language.md). Информацию о ресурсах см. в статье о [просмотре ресурсов](./concepts/explore-resources.md).
 

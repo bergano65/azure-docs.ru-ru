@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP NetWeaver.
 services: active-directory
 documentationCenter: na
@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/07/2019
+ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66ad6ea26535190d2fc5798e1223c2196d3d5a5d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 1fde586563c142690078a693970a9a24bd5cacb4
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211144"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56302001"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
 
@@ -175,7 +175,14 @@ ms.locfileid: "56211144"
 
     ![Сведение о домене и URL-адресах единого входа для приложения SAP NetWeaver](common/sp-identifier-reply.png)
 
-    В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your company instance of SAP NetWeaver>`.
+    4.3. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your company instance of SAP NetWeaver>`.
+
+    > [!NOTE]
+    > Нам известно, что некоторые клиенты получают сообщение об ошибке, связанной с неправильным URL-адресом ответа, указанным для их экземпляра. Если у вас появляется такая ошибка, устраните проблему с помощью следующего скрипта PowerShell, чтобы указать правильный URL-адрес ответа для своего экземпляра.
+    ```
+    Set-AzureADServicePrincipal -ObjectId $ServicePrincipalObjectId -ReplyUrls "<Your Correct Reply URL(s)>"
+    ``` 
+    > Сначала нужно самому задать идентификатор объекта субъекта-службы. Вы также можете передать его здесь.
 
 12. Приложение SAP NetWeaver ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
@@ -374,4 +381,3 @@ ms.locfileid: "56211144"
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

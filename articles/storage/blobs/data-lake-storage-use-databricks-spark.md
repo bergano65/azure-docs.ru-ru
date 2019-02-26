@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: tutorial
 ms.date: 01/29/2019
 ms.author: dineshm
-ms.openlocfilehash: e448ef0de9ef5560c1b4ea0df5c02e8efd8c0ea9
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: b5d7be25ba18e256352d8793689bcb63a013e20b
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55891663"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56452614"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство. Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
@@ -38,6 +38,17 @@ ms.locfileid: "55891663"
 
 * Установите AzCopy v10. Дополнительные сведения см. в статье [Передача данных с помощью AzCopy версии 10 (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
+*  Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+
+   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
+
+   :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+
+   > [!IMPORTANT]
+   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
+
+   :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
+
 ### <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
 Чтобы продемонстрировать, как выполнять операции по извлечению, преобразованию и загрузке, в этом руководстве используются данные о рейсах из бюро транспортной статистики. Эти данные для работы с руководством необходимо скачать.
@@ -50,25 +61,7 @@ ms.locfileid: "55891663"
 
 4. Распакуйте содержимое ZIP-файла и запомните имя файла и путь к файлу. Они понадобятся для выполнения последующего шага.
 
-## <a name="get-your-storage-account-name"></a>Получение имени учетной записи хранения
-
-Вам потребуется имя учетной записи хранения. Чтобы получить его, войдите на [портал Azure](https://portal.azure.com/), выберите **Все службы** и выполните фильтрацию по термину *хранилище*. Затем выберите **Учетные записи хранения** и перейдите к учетной записи хранения.
-
-Вставьте имя в текстовый файл. Он скоро вам понадобится.
-
-<a id="service-principal"/>
-
-## <a name="create-a-service-principal"></a>Создание субъекта-службы
-
-Создайте субъект-службу, следуя инструкциям в статье [How to: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
-
-При изучении этой статьи необходимо выполнить несколько действий.
-
-:heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить приложению **роль участника хранилища BLOB-объектов**.
-
-:heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
-
-## <a name="create-an-azure-databricks-service"></a>Создание службы Azure Databricks
+## <a name="create-an-azure-databricks-service"></a>Создание службы Azure Databricks.
 
 В этом разделе вы создадите службу Azure Databricks с помощью портала Azure.
 
@@ -112,7 +105,7 @@ ms.locfileid: "55891663"
 
     * В рамках этой статьи создайте кластер со средой выполнения **5.1**.
 
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через __ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
     * Выберите **Create cluster** (Создать кластер). Когда кластер будет выполняться, можно присоединить к нему записные книжки и запустить на нем задания Spark.
 
@@ -145,9 +138,16 @@ ms.locfileid: "55891663"
     mount_point = "/mnt/flightdata",
     extra_configs = configs)
     ```
-18. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах "Отдельная настройка учетной записи хранения" и [Создание субъекта-службы](#service-principal) этой статьи. Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
 
-19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке. 
+18. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id`, `tenant-id` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `file-system-name` замените на имя файловой системы.
+
+   * `application-id` и `authentication-id` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
+
+   * Значение `tenant-id` берется из подписки.
+
+   * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
+
+19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
     Оставьте открытой эту записную книжку, так как позже вы добавите к ней команды.
 

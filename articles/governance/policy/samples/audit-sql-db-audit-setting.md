@@ -1,6 +1,6 @@
 ---
 title: 'Пример: аудит параметров аудита уровня базы данных SQL'
-description: Пример политики проверяет, соответствуют ли параметры аудита базы данных SQL указанному значению.
+description: В этом примере определения политики выполняется проверка параметров аудита базы данных SQL, если эти параметры не соответствуют заданным.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: e9eae6d2b9768436eb838945af32df63be160bb8
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: e319886333a0270bc9535607a40d73944d1e78f7
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242708"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338202"
 ---
-# <a name="audit-sql-db-level-audit-setting"></a>Аудит параметров аудита уровня базы данных SQL
+# <a name="sample---audit-sql-db-level-audit-setting"></a>Пример проверки параметров аудита базы данных SQL
 
 Эта политика проверяет, соответствуют ли заданной настройке параметры аудита базы данных SQL. Задайте значение, указывающее, должны ли быть включены параметры аудита.
 

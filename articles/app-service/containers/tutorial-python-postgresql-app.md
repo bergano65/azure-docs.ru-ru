@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: beverst;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 161778c921026547c532b05474a60dd0d3e9fa7a
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 11918ecf741ef31354cb281d3e439585506683f4
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237806"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417233"
 ---
 # <a name="build-a-python-and-postgresql-app-in-azure-app-service"></a>Создание приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "56237806"
 > * Управление приложением на портале Azure.
 
 > [!NOTE]
-> Прежде чем создавать базу данных Azure для PostgreSQL, проверьте на [этой странице](https://docs.microsoft.com/en-us/azure/postgresql/concepts-pricing-tiers#compute-generations-and-vcores) поколения вычислительных ресурсов, доступные в вашем регионе.
+> Прежде чем создавать базу данных Azure для PostgreSQL, проверьте [поколения вычислительных ресурсов, доступные в вашем регионе](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#compute-generations-and-vcores).
 
 Следуйте инструкциям в этой статье о macOS. Инструкции для Linux и Windows в большей степени совпадают, но различия не описаны в этом руководстве.
 

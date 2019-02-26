@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 01/29/2019
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: b3ddaf7667baf98d9d5daa93a3106e457d0aeacb
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 0bd602ff6c6d42730439dac2b898899b07dcb2cc
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756875"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301457"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство. Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -27,7 +27,19 @@ ms.locfileid: "55756875"
 
 Для добавления возможностей изменения размера в существующее приложение для передачи изображений можно использовать Azure CLI и портал Azure.
 
-![Опубликованное веб-приложение в браузере Microsoft Edge](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
+# <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
+
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
+
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
+
+---
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -46,10 +58,6 @@ ms.locfileid: "55756875"
 
 Зарегистрируйте поставщик ресурсов службы "Сетка событий" в подписке, если вы еще не сделали это.
 
-```azurepowershell-interactive
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.EventGrid
-```
-
 ```azurecli-interactive
 az provider register --namespace Microsoft.EventGrid
 ```
@@ -62,33 +70,30 @@ az provider register --namespace Microsoft.EventGrid
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Для службы "Функции Azure" требуется общая учетная запись хранения. Создайте отдельную общую учетную запись хранения в группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az-storage-account-create).
-
-Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. 
-
-В следующей команде замените `<general_storage_account>` глобально уникальным именем общей учетной записи хранения везде, где встречается этот заполнитель. 
+Для службы "Функции Azure" требуется общая учетная запись хранения. Кроме учетной записи хранения BLOB-объектов, созданной в рамках предыдущего руководства, создайте отдельно общую учетную запись хранения в группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. 
 
 1. Задайте переменную для хранения имени группы ресурсов, созданную при работе с предыдущим руководством. 
 
     ```azurecli-interactive
-    resourceGroupName=<Name of the resource group that you created in the previous tutorial>
+    resourceGroupName=myResourceGroup
     ```
-2. Задайте переменную для имени учетной записи хранения, которая требуется для функции Azure. 
+2. Задайте переменную имени новой учетной записи хранения, которая требуется для приложения-функции Azure. 
 
     ```azurecli-interactive
-    functionstorage=<name of the storage account to be used by function>
+    functionstorage=<name of the storage account to be used by the function>
     ```
-3. Создайте учетную запись хранения для функции Azure. Это не хранилище, которое содержит образы. 
+3. Создайте учетную запись хранения для функции Azure. 
 
     ```azurecli-interactive
-    az storage account create --name $functionstorage --location eastus --resource-group $resourceGroupName --sku Standard_LRS --kind storage
+    az storage account create --name $functionstorage --location southeastasia \
+    --resource-group $resourceGroupName --sku Standard_LRS --kind storage
     ```
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции  
 
-Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create). 
+Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp). 
 
-В следующей команде замените `<function_app>` уникальным именем своего приложения-функции везде, где встречается этот заполнитель. Имя приложения-функции используется по умолчанию в качестве его домена DNS. Поэтому оно должно быть уникальным среди всех приложений в Azure. Для `<general_storage_account>` замените имя созданной общей учетной записи хранения.
+В следующей команде укажите уникальное название приложения-функции. Имя приложения-функции используется по умолчанию в качестве его домена DNS. Поэтому оно должно быть уникальным среди всех приложений в Azure. 
 
 1. Укажите имя для создаваемого приложения-функции. 
 
@@ -98,29 +103,62 @@ az provider register --namespace Microsoft.EventGrid
 2. Создайте функцию Azure. 
 
     ```azurecli-interactive
-    az functionapp create --name $functionapp --storage-account  $functionstorage --resource-group $resourceGroupName --consumption-plan-location eastus
+    az functionapp create --name $functionapp --storage-account $functionstorage \
+    --resource-group $resourceGroupName --consumption-plan-location southeastasia
     ```
 
 Теперь необходимо настроить приложение функцию для подключения к учетной записи хранения, созданной в предыдущем [руководстве][previous-tutorial].
 
 ## <a name="configure-the-function-app"></a>Настройка приложения-функции
 
-Чтобы подключиться к учетной записи хранилища BLOB-объектов, функции требуется строка подключения. Код функции, который вы развернули в Azure, ищет строку подключения в параметрах приложения myblobstorage_STORAGE, а также имя контейнера эскизов в параметрах приложения myContainerName. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Задайте параметры приложения с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings).
+Чтобы обеспечить работу приложения-функции, введите данные входа в учетную запись хранения BLOB-объектов, добавив эти данные в настройки приложения-функции с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings).
 
-В следующих командах CLI `<blob_storage_account>` — это имя учетной записи хранилища BLOB-объектов, созданной при изучении предыдущего руководства.
+# <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 
-1. Получите строку подключения учетной записи хранения, которая содержит образы. 
+```azurecli-interactive
+blobStorageAccount=<name of the Blob storage account you created in the previous tutorial>
+storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName \
+--name $blobStorageAccount --query connectionString --output tsv)
 
-    ```azurecli-interactive
-    storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName --name $blobStorageAccount --query connectionString --output tsv)
-    ```
-2. Настройте приложение-функцию. 
+az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName \
+--settings AzureWebJobsStorage=$storageConnectionString THUMBNAIL_CONTAINER_NAME=thumbnails \
+THUMBNAIL_WIDTH=100 FUNCTIONS_EXTENSION_VERSION=~2
+```
 
-    ```azurecli-interactive
-    az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName --settings AzureWebJobsStorage=$storageConnectionString THUMBNAIL_CONTAINER_NAME=thumbnails THUMBNAIL_WIDTH=100 FUNCTIONS_EXTENSION_VERSION=~2
-    ```
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
 
-    Параметр `FUNCTIONS_EXTENSION_VERSION=~2` позволяет запустить приложение-функцию в версии 2 среды выполнения решения "Функции Azure".
+```azurecli-interactive
+blobStorageAccount=<name of the Blob storage account you created in the previous tutorial>
+
+storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName \
+--name $blobStorageAccount --query connectionString --output tsv)
+
+az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName \
+--settings AZURE_STORAGE_CONNECTION_STRING=$storageConnectionString \
+THUMBNAIL_WIDTH=100 FUNCTIONS_EXTENSION_VERSION=~2
+```
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+```azurecli-interactive
+blobStorageAccount=<name of the Blob storage account you created in the previous tutorial>
+
+blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
+-n $blobStorageAccount --query [0].value --output tsv)
+
+storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName \
+--name $blobStorageAccount --query connectionString --output tsv)
+
+az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName \
+--settings FUNCTIONS_EXTENSION_VERSION=~2 BLOB_CONTAINER_NAME=thumbnails \
+AZURE_STORAGE_ACCOUNT_NAME=$blobStorageAccount \
+AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey \
+AZURE_STORAGE_CONNECTION_STRING=$storageConnectionString
+```
+
+---
+
+Параметр `FUNCTIONS_EXTENSION_VERSION=~2` позволяет запустить приложение-функцию в версии 2 среды выполнения решения "Функции Azure".
 
 Теперь можно развернуть проект кода функции в этом приложении-функции.
 
@@ -128,23 +166,30 @@ az provider register --namespace Microsoft.EventGrid
 
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 
-Пример скрипта C# (CSX) для изменения размера можно найти в [GitHub](https://github.com/Azure-Samples/function-image-upload-resize). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source). 
-
-В следующей команде `<function_app>` — это имя приложения-функции, созданной ранее.
+Пример функции изменения размера на C# см. на [GitHub](https://github.com/Azure-Samples/function-image-upload-resize). Разверните этот код в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source). 
 
 ```azurecli-interactive
 az functionapp deployment source config --name $functionapp --resource-group $resourceGroupName --branch master --manual-integration --repo-url https://github.com/Azure-Samples/function-image-upload-resize
 ```
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
 Пример функции изменения размера на Node.js можно найти в [GitHub](https://github.com/Azure-Samples/storage-blob-resize-function-node). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source).
 
-В следующей команде `<function_app>` — это имя приложения-функции, созданной ранее.
+```azurecli-interactive
+az functionapp deployment source config --name $functionapp \
+--resource-group $resourceGroupName --branch master --manual-integration \
+--repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node
+```
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+Пример функции изменения размера на Node.js можно найти в [GitHub](https://github.com/Azure-Samples/storage-blob-resize-function-node-v10). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source).
 
 ```azurecli-interactive
-az functionapp deployment source config --name <function_app> \
---resource-group myResourceGroup --branch master --manual-integration \
---repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node
+az functionapp deployment source config --name $functionapp \
+--resource-group $resourceGroupName --branch master --manual-integration \
+--repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node-v10
 ```
 ---
 
@@ -152,10 +197,22 @@ az functionapp deployment source config --name <function_app> \
 
 Данные, передаваемые в функцию из уведомления службы "Сетка событий", содержат URL-адрес большого двоичного объекта. Этот URL-адрес передается входной привязке, что позволяет получить отправленный образ из хранилища BLOB-объектов. Функция создает эскиз и записывает результирующий поток в отдельный контейнер в хранилище BLOB-объектов. 
 
-Этот проект использует `EventGridTrigger` как тип триггера. Рекомендуется использовать триггер Сетки событий, а не универсальные триггеры HTTP. Сетка событий автоматически проверяет триггеры функций Сетки событий. При использовании универсальных триггеров HTTP вам нужно реализовать [ответ проверки](security-authentication.md#webhook-event-delivery).
+Этот проект использует `EventGridTrigger` как тип триггера. Рекомендуется использовать триггер Сетки событий, а не универсальные триггеры HTTP. Сетка событий автоматически проверяет триггеры функций Сетки событий. При использовании универсальных триггеров HTTP вам нужно реализовать [ответ проверки](security-authentication.md).
 
-Дополнительные сведения об этой функции см. в [файлах function.json и run.csx](https://github.com/Azure-Samples/function-image-upload-resize/tree/master/imageresizerfunc).
- 
+# <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
+
+Дополнительные сведения об этой функции см. в [файлах function.json и run.csx](https://github.com/Azure-Samples/function-image-upload-resize/tree/master/ImageFunctions).
+
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
+См. дополнительные сведения об этой функции в [файлах function.json и index.js](https://github.com/Azure-Samples/storage-blob-resize-function-node/tree/master/Thumbnail).
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+См. дополнительные сведения об этой функции в [файлах function.json и index.js](https://github.com/Azure-Samples/storage-blob-resize-function-node-v10/tree/master/Thumbnail).
+
+---
+
 Код проекта функция развертывается непосредственно из общедоступного примера репозитория. Чтобы узнать больше о параметрах развертывания службы "Функции Azure", ознакомьтесь с разделом [Непрерывное развертывание для Функций Azure](../azure-functions/functions-continuous-deployment.md).
 
 ## <a name="create-an-event-subscription"></a>Создание подписки на событие
@@ -197,11 +254,25 @@ az functionapp deployment source config --name <function_app> \
 
 Чтобы проверить изменение размера изображений в веб-приложении, перейдите на URL-адрес опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.
 
+# <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
+
 Щелкните область **Upload photos** (Передача фотографий), чтобы выбрать и передать файл. Можно также перетащить фотографию в эту область. 
 
 Обратите внимание, что после того, как переданное изображение исчезнет, его копия появится в карусели **Generated thumbnails** (Созданные эскизы). С помощью функции размер этого образа был изменен, после чего он был добавлен в контейнер *эскизов* и скачан веб-клиентом.
 
-![Опубликованное веб-приложение в браузере Microsoft Edge](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png) 
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
+
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
+Чтобы выбрать файл, щелкните **Выбрать файл**, а затем — **Загрузить изображение**. Если изображение загрузилось, браузер направит вас к странице успешной загрузки. Щелкните ссылку, чтобы вернуться к начальной странице. Копия отправленного изображения отображается в области **Generated thumbnails** (Созданные эскизы). (Если изображение не появилось сразу, попробуйте перезагрузить страницу.) С помощью функции размер этого образа был изменен, после чего он был добавлен в контейнер *эскизов* и скачан веб-клиентом.
+
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+Чтобы выбрать файл, щелкните **Выбрать файл**, а затем — **Загрузить изображение**. Если изображение загрузилось, браузер направит вас к странице успешной загрузки. Щелкните ссылку, чтобы вернуться к начальной странице. Копия отправленного изображения отображается в области **Generated thumbnails** (Созданные эскизы). (Если изображение не появилось сразу, попробуйте перезагрузить страницу.) С помощью функции размер этого образа был изменен, после чего он был добавлен в контейнер *эскизов* и скачан веб-клиентом.
+
+![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

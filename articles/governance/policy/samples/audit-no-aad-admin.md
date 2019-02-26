@@ -1,6 +1,6 @@
 ---
 title: 'Пример: проверка назначения роли администратора Azure AD'
-description: Этот пример политики проверяет, назначена ли роль администратора Azure Active Directory в настройках сервера SQL.
+description: В этом примере определения политики проверяется, назначена ли роль администратора Azure Active Directory в настройках SQL Server.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 96d659547a61969385b85591d79addf1c274b787
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 6e793c44598a6acb7827936cbd4ed91dadf76596
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243405"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339657"
 ---
-# <a name="audit-no-azure-active-directory-administrator"></a>Проверка назначения роли администратора Azure Active Directory
+# <a name="sample---audit-no-azure-active-directory-administrator"></a>Пример проверки назначения роли администратора Azure Active Directory
 
 Выполняется проверка, назначена ли роль администратора Azure Active Directory в настройках сервера SQL.
 

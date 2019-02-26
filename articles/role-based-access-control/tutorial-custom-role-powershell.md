@@ -1,6 +1,6 @@
 ---
-title: Руководство. Создание пользовательских ролей с помощью Azure PowerShell | Документация Майкрософт
-description: Создание пользовательских ролей с помощью Azure PowerShell.
+title: Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell | Документация Майкрософт
+description: Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell.
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 9dddef43e1ac5f3bcedcc08b313eea300436ea61
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 23ee8aef4ab9b7ea54dae0587e2caaafbf08e5b2
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106435"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339164"
 ---
-# <a name="tutorial-create-a-custom-role-using-azure-powershell"></a>Руководство. Создание пользовательских ролей с помощью Azure PowerShell
+# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
 
-Если [встроенные роли](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 

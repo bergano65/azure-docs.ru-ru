@@ -9,17 +9,17 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 01/28/2019
+ms.date: 02/18/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 191a6c9dc1cc5a24c1a46af21c5b63e3ff27a290
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 9dbe641c5e22129f7db3d3f3b886fea4501300b0
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55150399"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416145"
 ---
-# <a name="tutorial-analyze-videos-with-media-services-v3-using-net"></a>Руководство. Анализ видео с помощью Служб мультимедиа версии 3 и .NET
+# <a name="tutorial-analyze-videos-with-media-services-v3-using-net"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3 и .NET
 
 Это руководство содержит сведения об анализе видео с помощью Служб мультимедиа Azure. Имеется множество сценариев, в которых может потребоваться получить подробные сведения о видео- и аудиозаписях. Например, чтобы повысить удовлетворенность клиентов, организации могут выполнить преобразование речи в текст. Таким образом можно сделать записи клиентов доступным для поиска каталогом с индексами и панелями мониторинга. Затем они могут получить информативные бизнес-сведения, например список распространенных жалоб, источники этих жалоб и другую полезную информацию.
 
@@ -125,6 +125,11 @@ ms.locfileid: "55150399"
 Для **задания** обычно последовательно устанавливаются следующие состояния: **Запланировано**, **В очереди**, **Идет обработка**, **Завершено** (конечное состояние). Если в задании обнаружена ошибка, вы получите состояние **Ошибка**. Если задание находится в процессе отмены, вы получите состояние **Выполнение отмены** и **Отменено** по завершении.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#WaitForJobToFinish)]
+
+
+### <a name="job-error-codes"></a>Коды ошибок задания
+
+См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
 ### <a name="download-the-result-of-the-job"></a>Скачивание результатов задания
 

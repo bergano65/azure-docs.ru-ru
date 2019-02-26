@@ -1,6 +1,6 @@
 ---
 title: 'Пример: инициатива политики тегов для выставления счетов'
-description: Этот пример политики требует указать значения тега для обозначения места возникновения затрат и имени продукта.
+description: В этом примере определения политики требуется указать значения тега для обозначения места возникновения затрат и имени продукта.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 4592ac63561a59bfc0e4351cc5ad83f138955370
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: b659d6f681b980b956992f0d488995fd1a55de93
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242861"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337611"
 ---
-# <a name="billing-tags-policy-initiative"></a>Инициатива политики тегов для выставления счетов
+# <a name="sample---billing-tags-policy-initiative"></a>Пример: инициатива политики тегов для выставления счетов
 
 Эта политика требует указать значения тега для обозначения места возникновения затрат и имени продукта. Используются встроенные политики для применения и принудительного назначения требуемых тегов. Вы можете указать необходимые значения тегов.
 

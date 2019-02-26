@@ -1,6 +1,6 @@
 ---
 title: 'Пример: допустимые номера SKU подсистемы балансировки нагрузки'
-description: Этот пример политики требует, чтобы подсистемы балансировки нагрузки использовали утвержденный номер SKU.
+description: В этом примере определения политики требуется, чтобы подсистемы балансировки нагрузки использовали утвержденный номер SKU.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 6adebea6a6cce1844e413e460a06fd1a7eeb3a2a
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: b65761d0c325f46a54fc64d39c20f9d1e10ec412
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56241960"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341885"
 ---
-# <a name="allowed-load-balancer-skus"></a>Допустимые номера SKU подсистемы балансировки нагрузки
+# <a name="sample---allowed-load-balancer-skus"></a>Пример: допустимые номера SKU подсистемы балансировки нагрузки
 
 Эта политика требует, чтобы подсистемы балансировки нагрузки использовали утвержденный номер SKU. Вы можете указать массив допустимых номеров SKU.
 

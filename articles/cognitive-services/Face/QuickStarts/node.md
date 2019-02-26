@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 11/09/2018
+ms.date: 02/06/2019
 ms.author: pafarley
-ms.openlocfilehash: 9b30e9da523e564f531ec8e9cebe5b16653e579f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: bbb5cf9a043f8f4ab4202b6113d1c1b915f3b8a0
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858881"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56312776"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 
@@ -26,12 +26,21 @@ ms.locfileid: "55858881"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 
-## <a name="create-the-nodejs-script"></a>Создание скрипта Node.js
+## <a name="set-up-the-node-environment"></a>Настройка среды Node
 
-Следующий код вызовет API распознавания лиц и получит данные об атрибутах лиц из изображения. Сначала скопируйте код в текстовый редактор. Вам потребуется внести изменения в код перед запуском.
+В папке, где вы хотите создать проект, создайте файл *facedetection.js*. Затем установите в этот проект модуль `requests`. Он позволит вашим скриптам отправлять HTTP-запросы.
 
-```nodejs
+```shell
+npm install request --save
+```
+
+## <a name="write-the-nodejs-script"></a>Запись скрипта Node.js
+
+Вставьте следующий код в *facedetection.js*. Эти поля указывают, как подключиться к службе распознавания лиц и где получить входные данные. Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и изменить строку `uriBase`, чтобы она содержала идентификатор правильного региона (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Вам может потребоваться изменить поле `imageUrl`, чтобы указать свое входное изображение.
+
+```javascript
 'use strict';
 
 const request = require('request');
@@ -46,7 +55,12 @@ const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/det
 
 const imageUrl =
     'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+```
 
+Затем добавьте следующий код, чтобы вызвать API распознавания лиц и получить данные об атрибутах лиц из входного изображения. Поле `returnFaceAttributes` определяет атрибуты лица, которые нужно получить. Вы можете изменить эту строку в зависимости от предполагаемого использования.
+
+
+```javascript
 // Request parameters.
 const params = {
     'returnFaceId': 'true',
@@ -76,26 +90,12 @@ request.post(options, (error, response, body) => {
 });
 ```
 
-### <a name="subscription-key"></a>Ключ подписки
-Замените `<Subscription Key>` действительным ключом подписки API распознавания лиц.
-
-### <a name="face-endpoint-url"></a>URL-адрес конечной точки API распознавания лиц
-
-URL-адрес `https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect` определяет конечную точку API распознавания лиц Azure, которая будет запрашиваться. Первую часть этого URL-адреса нужно будет изменить, указав регион, соответствующий ключу подписки (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
-
-### <a name="url-query-string"></a>Строка запроса URL-адреса
-
-Поле `returnFaceAttributes` определяет атрибуты лица, которые нужно получить. Вы можете изменить эту строку в зависимости от предполагаемого использования.
-
-### <a name="image-source-url"></a>URL-адрес источника изображения
-Поле `imageUrl` определяет изображение, используемое в качестве входных данных. Вы можете изменить значение в этом поле, указав URL-адрес любого изображения, которое нужно проанализировать.
-
 ## <a name="save-and-run-the-script"></a>Сохранение и запуск скрипта
 
-После внесения изменений сохраните файл как скрипт JavaScript (JS). Затем откройте командную строку и запустите файл с помощью команды `node`.
+После внесения изменений откройте командную строку и запустите файл с помощью команды `node`.
 
 ```
-node myfile.js
+node facedetection.js
 ```
 
 В окне консоли должна появиться информация о лицах в виде данных JSON. Например: 
@@ -281,7 +281,7 @@ node myfile.js
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы написали команду cURL, которая вызывает API распознавания лиц Azure для определения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
+В этом кратком руководстве вы написали скрипт Node.js, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
 > [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

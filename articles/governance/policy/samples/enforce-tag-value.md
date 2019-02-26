@@ -1,6 +1,6 @@
 ---
 title: 'Пример: принудительное применение тега и его значения'
-description: Этот пример политики требует имя и значение указанного тега.
+description: В этом примере определения политики необходимо, чтобы имя и значение тега были заданы в качестве параметров.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 952f932d850806553b6e7e2f9efad2643a2ecdf3
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 0524c0e9e67cd477b8aa8ba8005cf8ebcce3f1da
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242640"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337864"
 ---
-# <a name="enforce-tag-and-its-value"></a>принудительно применять тег и его значение;
+# <a name="sample---enforce-tag-and-its-value"></a>Пример: принудительное применение тега и его значения
 
 Эта политика требует имя и значение указанного тега. Вы можете указать имя и значение тега для принудительного применения.
 

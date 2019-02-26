@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: f7536b5d0815351d2e6cb67705060d2e1046c970
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 445ddb3c580218e21410c961c614a8a9e29d21a0
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857878"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328339"
 ---
 # <a name="query-an-azure-cosmos-container"></a>Запрос контейнера Azure Cosmos
 
@@ -31,6 +31,8 @@ IQueryable<DeviceReading> query = client.CreateDocumentQuery<DeviceReading>(
 ## <a name="cross-partition-query"></a>Запрос между секциями
 
 Следующий запрос не имеет фильтра ключа секции (`DeviceId`) и "прочесывает" все секции, где он выполняется с использованием индекса секции. Чтобы выполнить запрос ко всем секциям, задайте для `EnableCrossPartitionQuery` значение true (или `x-ms-documentdb-query-enablecrosspartition` в REST API).
+
+Свойство EnablecrossPartitionQuery принимает логическое значение. Если задано значение true и запрос не содержит ключ секции, Azure Cosmos DB распространяет запрос по всем секциям. При таком распространении отдельные запросы направляются по всем секциям. Чтобы считать результаты запроса, клиентские приложения должны получить результаты из FeedResponse и проверить свойство ContinuationToken. Чтобы считывать все результаты, выполняйте итерацию данных, пока ContinuationToken не будет иметь значение null. 
 
 ```csharp
 // Query across partition keys into a class called, DeviceReading

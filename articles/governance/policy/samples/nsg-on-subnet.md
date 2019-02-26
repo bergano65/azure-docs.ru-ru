@@ -1,6 +1,6 @@
 ---
 title: 'Пример: конкретная группа безопасности сети для каждой подсети.'
-description: Этот пример политики требует, чтобы определенная группа безопасности сети использовалась для каждой виртуальной подсети.
+description: В этом примере определения политики необходимо, чтобы определенная группа безопасности сети использовалась для каждой виртуальной подсети.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: bf02e0df860b677ed1766e083834f894251f6b63
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 1183a403c81dd71f123406991755157a4a4a1d26
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242844"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338552"
 ---
-# <a name="nsg-x-on-every-subnet"></a>NSG x для каждой подсети
+# <a name="sample---network-security-group-x-on-every-subnet"></a>Пример группы безопасности сети в каждой подсети
 
 Эта политика требует, чтобы определенная группа безопасности сети использовалась для каждой виртуальной подсети. Вы можете указать идентификатор требуемой группы безопасности сети.
 

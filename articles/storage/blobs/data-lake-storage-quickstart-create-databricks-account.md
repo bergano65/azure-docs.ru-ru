@@ -7,13 +7,13 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 01/24/2019
-ms.openlocfilehash: 0ec682ea852f3c6da6248f3c16b539725ca18c0f
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.date: 02/15/2019
+ms.openlocfilehash: 9d00819143d9a8fc38bfc09844d55f088e732b46
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895811"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453032"
 ---
 # <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
@@ -25,27 +25,20 @@ ms.locfileid: "55895811"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создание учетной записи хранения с поддержкой Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md)
+* Создайте учетную запись Azure Data Lake Storage 2-го поколения. См. [Краткое руководство. учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 
-<a id="config"/>
+  Скопируйте имя учетной записи хранения в текстовый файл. Оно скоро вам понадобится.
 
-## <a name="get-the-name-of-your-storage-account"></a>Получение имени учетной записи хранения
+*  Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
-Чтобы получить имя учетной записи хранения на портале Azure, выберите **Все службы** и выполните фильтрацию по термину *хранилище*. Затем выберите **Учетные записи хранения** и перейдите к учетной записи хранения.
+   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-Вставьте это имя в текстовый файл. Оно скоро вам понадобится.
+   :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
-<a id="service-principal"/>
+   > [!IMPORTANT]
+   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-## <a name="create-a-service-principal"></a>Создание субъекта-службы
-
-Создайте субъект-службу, следуя инструкциям в статье [How to: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
-
-Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
-
-:heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить приложению **роль участника хранилища BLOB-объектов**.
-
-:heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
+   :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -126,11 +119,11 @@ ms.locfileid: "55895811"
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
 
    ```
- 
+
     > [!NOTE]
     > Этот блок кода напрямую обращается к конечной точке Data Lake 2-го поколения с помощью OAuth, но есть и другие способы подключения рабочей области Databricks к вашей учетной записи Data Lake Storage 2-го поколения. Например, вы можете вставить файловую систему с помощью OAuth или использовать прямой доступ с общим ключом. <br>Примеры таких подходов см. в статье [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
-5. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах [Получение имени учетной записи хранения](#config) и [Создание субъекта-службы](#service-principal) этой статьи.  Задайте значение заполнителя `file-system-name` имени файловой системы.
+5. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, полученными в ходе создания субъекта-службы. Задайте значение заполнителя `file-system-name` имени файловой системы.
 
 6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

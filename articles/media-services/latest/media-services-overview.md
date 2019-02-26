@@ -16,12 +16,12 @@ ms.workload: media
 ms.date: 02/07/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 1911b851e4e219ec4c6d2d4872b75e9c18706feb
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 0f4fd963ce3649c901a76f6677be059ba5be25af
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893329"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337567"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -62,7 +62,7 @@ ms.locfileid: "55893329"
 
 Дополнительные сведения об именовании в Azure Resource Manager см. в статье [о требованиях к именованию](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md#arguments-for-crud-on-resource) и статье [Соглашения об именовании для ресурсов Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
 
-## <a name="media-services-v3-api-design-principles"></a>Принципы проектирования API Служб мультимедиа версии 3
+## <a name="v3-api-design-principles"></a>Принципы проектирования API версии 3
 
 Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API версии 3 не возвращает секреты или учетные данные в **Get** или в операции **List**. Ключи всегда являются NULL, пустыми или исключенными из ответа. Необходимо вызвать отдельный метод действий для получения секретов или учетных данных. Отдельные действия позволяют устанавливать разные разрешения безопасности RBAC в случае, если некоторые API извлекают или отображают секреты, в то время как другие API этого не делают. Сведения о том, как управлять доступом с помощью RBAC, см. в разделе [Управление доступом с помощью RBAC и REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest).
 
@@ -76,25 +76,20 @@ ms.locfileid: "55893329"
 
 ## <a name="how-can-i-get-started-with-v3"></a>Как начать работу с версией 3?
 
-Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API Служб мультимедиа версии 3 основан на [спецификации OpenAPI](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media) (ранее известной как Swagger).
+Чтобы узнать, как начать разработку в API Служб мультимедиа версии 3 с использованием различных инструментов и пакетов SDK, см. [эту статью о начале работы](developers-guide.md).
 
-[Обозреватель Служб мультимедиа Azure](https://github.com/Azure/Azure-Media-Services-Explorer) (AMSE) — это инструмент, доступный для клиентов Windows, которые хотят узнать о Службах мультимедиа. AMSE — это приложение Winforms или C#, которое отправляет, скачивает, кодирует, транслирует видео по запросу и в режиме реального времени с помощью Служб мультимедиа. Инструмент AMSE предназначен для клиентов, которые хотят протестировать Службы мультимедиа без написания кода. Код AMSE предоставляется как ресурс для клиентов, которым необходима разработка с помощью Служб мультимедиа.
+## <a name="v3-content-map"></a>Карта содержимого версии 3
 
-AMSE — это проект с открытым кодом, поддержка которого предоставляется сообществом (о проблемах можно сообщать по ссылке https://github.com/Azure/Azure-Media-Services-Explorer/issues). Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения см. в [вопросах и ответах по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу opencode@microsoft.com.
- 
-Службы мультимедиа Azure поддерживают следующие клиентские библиотеки. 
+Содержимое Служб мультимедиа версии 3 упорядочено в соответствии со следующей структурой (это также отражено в оглавлении).
 
-|Справочники по API|Пакеты SDK и инструменты|Примеры|
-|---|---|---|---|
-|[Справочник по REST](https://aka.ms/ams-v3-rest-ref)|[Пакет SDK для REST](https://aka.ms/ams-v3-rest-sdk)|[Примеры REST Postman](https://github.com/Azure-Samples/media-services-v3-rest-postman)<br/>[REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)|
-|[Справочник по Azure CLI](https://aka.ms/ams-v3-cli-ref)|[Интерфейс командной строки Azure](https://aka.ms/ams-v3-cli)|[Примеры использования интерфейса командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)||
-|[Справочник по .NET](https://aka.ms/ams-v3-dotnet-ref)|[ПАКЕТ SDK .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Примеры .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)||
-||[Пакет SDK для .NET Core](https://aka.ms/ams-v3-dotnet-sdk) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)||
-|[Справочник по Java](https://aka.ms/ams-v3-java-ref)|[пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)||
-|[Справочник по Node.js](https://aka.ms/ams-v3-nodejs-ref)|[Пакет SDK для Node.js](https://aka.ms/ams-v3-nodejs-sdk)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)||
-|[Справочник по Python](https://aka.ms/ams-v3-python-ref)|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)||
-|[Справочник по Go](https://aka.ms/ams-v3-go-ref)|[Пакет SDK для GO](https://aka.ms/ams-v3-go-sdk)||
-|Ruby|[Пакет SDK для Ruby](https://aka.ms/ams-v3-ruby-sdk)||
+|Разделы| ОПИСАНИЕ|
+|---|---|
+| Обзор | Поясняет функции и возможности Служб мультимедиа.|
+| Быстрое начало работы | Дает основные инструкции для новых клиентов, чтобы помочь им быстро приступить к работе со Службами мультимедиа.|
+| Учебники | Содержат описание процедур на основе сценариев для выполнения наиболее распространенных заданий Служб мультимедиа.|
+| Примеры | Ссылки на примеры кодов. |
+| Основные понятия | Содержат подробные пояснения функций Служб мультимедиа версии 3 и диаграммы. Прежде чем приступать к разработке, необходимо ознакомиться со следующими основными понятиями.<br/><br/>* Передача в облако и хранение<br/>* Кодирование<br/>* Аналитика мультимедиа<br/>* Упаковка, доставка и защита<br/>* Потоковая трансляция<br/>* Непрерывный мониторинг<br/>* Клиенты Проигрывателя<br/><br/>другое. |
+| Практические руководства | Демонстрируют выполнение задания.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

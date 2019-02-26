@@ -1,6 +1,6 @@
 ---
-title: Руководство. Создание пользовательских ролей с помощью Azure CLI | Документация Майкрософт
-description: Создание пользовательских ролей с помощью Azure CLI.
+title: Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI | Документация Майкрософт
+description: Создание пользовательской роли для ресурсов Azure с помощью Azure CLI.
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 06/12/2018
 ms.author: rolyon
-ms.openlocfilehash: d2b34fa12836416f68d57f0147dd0364a1501c13
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 9cd736272fce71f08006d32a169b88d092a48231
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55698025"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340218"
 ---
-# <a name="tutorial-create-a-custom-role-using-azure-cli"></a>Руководство. Создание пользовательских ролей с помощью Azure CLI
+# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-cli"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI
 
-Если [встроенные роли](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -269,4 +269,4 @@ ms.locfileid: "55698025"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание пользовательских ролей с помощью Azure CLI](custom-roles-cli.md)
+> [Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles-cli.md)

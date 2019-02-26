@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: db95ec05d7c2a61a75c0051b65d9c9c9943b732c
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 3ce40c2e0726094113253258d3b3f0bf6d876f6f
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753662"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56452648"
 ---
 # <a name="tutorial-enable-web-application-firewall-using-the-azure-cli"></a>Руководство. Включение брандмауэра веб-приложения с помощью Azure CLI
 
@@ -140,7 +140,7 @@ az vmss extension set \
 
 ## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики.
 
-В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать Log Analytics или концентратор событий. 
+В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий. 
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 

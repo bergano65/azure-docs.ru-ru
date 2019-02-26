@@ -2,28 +2,20 @@
 title: Создание VPN-подключений Azure S2S и управление ими с помощью PowerShell | Документация Майкрософт
 description: Руководство по созданию VPN-подключений Azure S2S и управлению ими с помощью модуля Azure PowerShell
 services: vpn-gateway
-documentationcenter: na
 author: yushwang
-manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: infrastructure
-ms.date: 05/08/2018
+ms.date: 02/11/2019
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: 0c71062bded65f8aa7c259c0678ee6675e2dab38
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: a9ca626ecf026736617ba495422ed957d03b2b37
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509479"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56414606"
 ---
-# <a name="create-and-manage-s2s-vpn-connections-with-the-azure-powershell-module"></a>Создание VPN-подключений Azure S2S и управление ими с помощью модуля Azure PowerShell
+# <a name="tutorial-create-and-manage-s2s-vpn-connections-using-powershell"></a>Руководство. Создание и администрирование VPN-подключений S2S с помощью PowerShell
 
 VPN-подключения Azure S2S предоставляют безопасное распределенное подключение между локальными сетями клиента и Azure. Это пошаговое руководство по жизненным циклам VPN-подключений Azure S2S, таким как создание VPN-подключения Azure S2S и управление им. Вы узнаете, как выполнять следующие задачи:
 
@@ -33,13 +25,13 @@ VPN-подключения Azure S2S предоставляют безопасн
 > * Добавление дополнительных VPN-подключений.
 > * Удаление VPN-подключения.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 На следующей схеме показана топология для этого руководства:
 
 ![Схема по VPN-подключению типа "сеть — сеть"](./media/vpn-gateway-tutorial-vpnconnection-powershell/site-to-site-diagram.png)
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
-
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.3 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
 
 ## <a name="requirements"></a>Требования
 
@@ -48,7 +40,11 @@ VPN-подключения Azure S2S предоставляют безопасн
 1. группа ресурсов (TestRG1), виртуальная сеть (VNet1) и подсеть шлюза.
 2. VPN-шлюз (VNet1GW).
 
-Ниже перечислены значения параметров виртуальной сети. Запишите дополнительные значения шлюза локальной сети, представляющие локальную сеть. Измените значения на основе настроек среды и сети.
+Ниже перечислены значения параметров виртуальной сети. Запишите дополнительные значения шлюза локальной сети, представляющие локальную сеть. Измените приведенные ниже значения на основе настроек среды и сети, затем скопируйте и вставьте их, чтобы указать переменные для работы с этим руководством. Если время сеанса Cloud Shell истечет или вам потребуется использовать другое окно PowerShell, скопируйте и вставьте переменные в новый сеанс, чтобы продолжить работу с этим руководством.
+
+>[!NOTE]
+> Если вы используете эти инструкции для создания подключения, измените значения в соответствии со своей локальной сетью. Если же вы выполняете этапы этого руководства только с целью обучения, изменения вносить не нужно, но подключение при этом работать не будет.
+>
 
 ```azurepowershell-interactive
 # Virtual network
@@ -59,11 +55,11 @@ $VNet1Prefix = "10.1.0.0/16"
 $VNet1ASN    = 65010
 $Gw1         = "VNet1GW"
 
-# On-premises network
+# On-premises network - LNGIP1 is the VPN device public IP address
 $LNG1        = "VPNsite1"
 $LNGprefix1  = "10.101.0.0/24"
 $LNGprefix2  = "10.101.1.0/24"
-$LNGIP1      = "YourDevicePublicIP"
+$LNGIP1      = "5.4.3.2"
 
 # Optional - on-premises BGP properties
 $LNGASN1     = 65011
@@ -86,22 +82,22 @@ $Connection1 = "VNet1ToSite1"
 * локальное адресное пространство;
 * атрибуты BGP: IP-адрес партнера BGP и номер AS (необязательно).
 
-Создайте шлюз локальной сети с помощью команды [New-AzureRmLocalNetworkGateway](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermlocalnetworkgateway?view=azurermps-6.8.1).
+Создайте шлюз локальной сети с помощью команды [New-AzLocalNetworkGateway](https://docs.microsoft.com/powershell/module/az.network/new-azlocalnetworkgateway?view=azurermps-6.8.1).
 
 ```azurepowershell-interactive
-New-AzureRmLocalNetworkGateway -Name $LNG1 -ResourceGroupName $RG1 `
+New-AzLocalNetworkGateway -Name $LNG1 -ResourceGroupName $RG1 `
   -Location 'East US' -GatewayIpAddress $LNGIP1 -AddressPrefix $LNGprefix1,$LNGprefix2
 ```
 
 ## <a name="create-a-s2s-vpn-connection"></a>Создание VPN-подключения Azure S2S
 
-Далее вам нужно создать VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и VPN-устройством с помощью [New-AzureRmVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayconnection?view=azurermps-6.8.1). Обратите внимание, что для VPN-подключения типа "сеть — сеть" параметр -ConnectionType имеет значение *IPsec*.
+Далее создайте VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и VPN-устройством с помощью команды [New-AzVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?view=azurermps-6.8.1). Обратите внимание, что для VPN-подключения типа "сеть — сеть" параметр -ConnectionType имеет значение *IPsec*.
 
 ```azurepowershell-interactive
-$vng1 = Get-AzureRmVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
-$lng1 = Get-AzureRmLocalNetworkGateway   -Name $LNG1 -ResourceGroupName $RG1
+$vng1 = Get-AzVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
+$lng1 = Get-AzLocalNetworkGateway   -Name $LNG1 -ResourceGroupName $RG1
 
-New-AzureRmVirtualNetworkGatewayConnection -Name $Connection1 -ResourceGroupName $RG1 `
+New-AzVirtualNetworkGatewayConnection -Name $Connection1 -ResourceGroupName $RG1 `
   -Location $Location1 -VirtualNetworkGateway1 $vng1 -LocalNetworkGateway2 $lng1 `
   -ConnectionType IPsec -SharedKey "Azure@!b2C3"
 ```
@@ -112,7 +108,7 @@ New-AzureRmVirtualNetworkGatewayConnection -Name $Connection1 -ResourceGroupName
 
 ### <a name="view-and-update-your-pre-shared-key"></a>Просмотр общего ключа и его обновление
 
-VPN-подключение Azure S2S использует общий ключ (секрет) для проверки подлинности между локальным VPN-устройством и VPN-шлюзом Azure. Вы можете просмотреть и обновить общий ключ подключения с помощью [Get-AzureRmVirtualNetworkGatewayConnectionSharedKey](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermvirtualnetworkgatewayconnectionsharedkey?view=azurermps-6.8.1) и [Set-AzureRmVirtualNetworkGatewayConnectionSharedKey](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnectionsharedkey?view=azurermps-6.8.1).
+VPN-подключение Azure S2S использует общий ключ (секрет) для проверки подлинности между локальным VPN-устройством и VPN-шлюзом Azure. Вы можете просмотреть и обновить общий ключ подключения с помощью команд [Get-AzVirtualNetworkGatewayConnectionSharedKey](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetworkgatewayconnectionsharedkey?view=azurermps-6.8.1) и [Set-AzVirtualNetworkGatewayConnectionSharedKey](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetworkgatewayconnectionsharedkey?view=azurermps-6.8.1).
 
 > [!IMPORTANT]
 > Общий ключ — это строка **печатных символов ASCII** длиной не более 128 символов.
@@ -120,14 +116,14 @@ VPN-подключение Azure S2S использует общий ключ (�
 Эта команда показывает общий ключ для подключения:
 
 ```azurepowershell-interactive
-Get-AzureRmVirtualNetworkGatewayConnectionSharedKey `
+Get-AzVirtualNetworkGatewayConnectionSharedKey `
   -Name $Connection1 -ResourceGroupName $RG1
 ```
 
 В результате вы получите строку с **Azure@!b2C3** после строк, приведенных в примере выше. Используйте команду ниже, чтобы изменить значение общего ключа на **Azure@!_b2=C3**:
 
 ```azurepowershell-interactive
-Set-AzureRmVirtualNetworkGatewayConnectionSharedKey `
+Set-AzVirtualNetworkGatewayConnectionSharedKey `
   -Name $Connection1 -ResourceGroupName $RG1 `
   -Value "Azure@!_b2=C3"
 ```
@@ -140,24 +136,26 @@ VPN-шлюз Azure поддерживает протокол динамичес�
 * ASN шлюза локальной сети;
 * IP-адреса для узла BGP шлюза локальной сети.
 
-Если вы не настроили свойства BGP, используйте следующие команды для добавления этих свойств в VPN-шлюз и шлюз локальной сети: [Set-AzureRmVirtualNetworkGateway](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway?view=azurermps-6.8.1) и [Set-AzureRmLocalNetworkGateway](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermlocalnetworkgateway?view=azurermps-6.8.1).
+Если вы не настроили свойства BGP, используйте следующие команды для добавления этих свойств в VPN-шлюз и шлюз локальной сети: [Set-AzVirtualNetworkGateway](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetworkgateway?view=azurermps-6.8.1) и [Set-AzLocalNetworkGateway](https://docs.microsoft.com/powershell/module/az.network/set-azlocalnetworkgateway?view=azurermps-6.8.1).
+
+Используйте пример ниже, чтобы настроить свойства BGP.
 
 ```azurepowershell-interactive
-$vng1 = Get-AzureRmVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
-Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $vng1 -Asn $VNet1ASN
+$vng1 = Get-AzVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
+Set-AzVirtualNetworkGateway -VirtualNetworkGateway $vng1 -Asn $VNet1ASN
 
-$lng1 = Get-AzureRmLocalNetworkGateway   -Name $LNG1 -ResourceGroupName $RG1
-Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $lng1 `
+$lng1 = Get-AzLocalNetworkGateway   -Name $LNG1 -ResourceGroupName $RG1
+Set-AzLocalNetworkGateway -LocalNetworkGateway $lng1 `
   -Asn $LNGASN1 -BgpPeeringAddress $BGPPeerIP1
 ```
 
-Включение BGP с помощью [Set-AzureRmVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnection?view=azurermps-6.8.1).
+Включите BGP с помощью команды [Set-AzVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetworkgatewayconnection?view=azurermps-6.8.1).
 
 ```azurepowershell-interactive
-$connection = Get-AzureRmVirtualNetworkGatewayConnection `
+$connection = Get-AzVirtualNetworkGatewayConnection `
   -Name $Connection1 -ResourceGroupName $RG1
 
-Set-AzureRmVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection `
+Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection `
   -EnableBGP $True
 ```
 
@@ -171,14 +169,14 @@ BGP можно отключить, изменив значение свойст�
 * IPsec: AES128, SHA1, PFS14; время существования SA — 14 400 секунд и 102 400 000 КБ.
 
 ```azurepowershell-interactive
-$connection = Get-AzureRmVirtualNetworkGatewayConnection -Name $Connection1 `
+$connection = Get-AzVirtualNetworkGatewayConnection -Name $Connection1 `
                 -ResourceGroupName $RG1
-$newpolicy  = New-AzureRmIpsecPolicy `
+$newpolicy  = New-AzIpsecPolicy `
                 -IkeEncryption AES256 -IkeIntegrity SHA256 -DhGroup DHGroup14 `
                 -IpsecEncryption AES128 -IpsecIntegrity SHA1 -PfsGroup PFS2048 `
                 -SALifeTimeSeconds 14400 -SADataSizeKilobytes 102400000
 
-Set-AzureRmVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection `
+Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection `
   -IpsecPolicies $newpolicy
 ```
 
@@ -186,24 +184,24 @@ Set-AzureRmVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $con
 
 ## <a name="add-another-s2s-vpn-connection"></a>Добавление другого VPN-подключения S2S
 
-Чтобы добавить дополнительное VPN-подключение S2S в тот же VPN-шлюз, создайте другой шлюз локальной сети и подключение между новым сетевым локальным шлюзом и VPN-шлюзом. Ниже приведен пример для этой статьи.
+Чтобы добавить VPN-подключение S2S в тот же VPN-шлюз, создайте другой шлюз локальной сети и подключение между новым шлюзом локальной сети и VPN-шлюзом. Используйте примеры ниже, изменив значения переменных в соответствии с конфигурацией своей сети.
 
 ```azurepowershell-interactive
-# On-premises network
+# On-premises network - LNGIP2 is the VPN device public IP address
 $LNG2        = "VPNsite2"
 $Location2   = "West US"
 $LNGprefix21 = "10.102.0.0/24"
 $LNGprefix22 = "10.102.1.0/24"
-$LNGIP2      = "YourDevicePublicIP"
+$LNGIP2      = "4.3.2.1"
 $Connection2 = "VNet1ToSite2"
 
-New-AzureRmLocalNetworkGateway -Name $LNG2 -ResourceGroupName $RG1 `
+New-AzLocalNetworkGateway -Name $LNG2 -ResourceGroupName $RG1 `
   -Location $Location2 -GatewayIpAddress $LNGIP2 -AddressPrefix $LNGprefix21,$LNGprefix22
 
-$vng1 = Get-AzureRmVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
-$lng2 = Get-AzureRmLocalNetworkGateway   -Name $LNG2 -ResourceGroupName $RG1
+$vng1 = Get-AzVirtualNetworkGateway -Name $GW1  -ResourceGroupName $RG1
+$lng2 = Get-AzLocalNetworkGateway   -Name $LNG2 -ResourceGroupName $RG1
 
-New-AzureRmVirtualNetworkGatewayConnection -Name $Connection2 -ResourceGroupName $RG1 `
+New-AzVirtualNetworkGatewayConnection -Name $Connection2 -ResourceGroupName $RG1 `
   -Location $Location1 -VirtualNetworkGateway1 $vng1 -LocalNetworkGateway2 $lng2 `
   -ConnectionType IPsec -SharedKey "AzureA1%b2_C3+"
 ```
@@ -214,16 +212,24 @@ New-AzureRmVirtualNetworkGatewayConnection -Name $Connection2 -ResourceGroupName
 
 ## <a name="delete-a-s2s-vpn-connection"></a>Удаление VPN-подключения Azure S2S
 
-Удалите VPN-подключение S2S с помощью [Remove-AzureRmVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/azurerm.network/remove-azurermvirtualnetworkgatewayconnection?view=azurermps-6.8.1).
+Удалите VPN-подключение S2S с помощью команды [Remove-AzVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualnetworkgatewayconnection?view=azurermps-6.8.1).
 
 ```azurepowershell-interactive
-Remove-AzureRmVirtualNetworkGatewayConnection -Name $Connection2 -ResourceGroupName $RG1
+Remove-AzVirtualNetworkGatewayConnection -Name $Connection2 -ResourceGroupName $RG1
 ```
 
 Удалите шлюз локальной сети, если он вам больше не требуется. Шлюз локальной сети нельзя удалить, если с ним связаны другие подключения.
 
 ```azurepowershell-interactive
-Remove-AzureRmVirtualNetworkGatewayConnection -Name $LNG2 -ResourceGroupName $RG1
+Remove-AzVirtualNetworkGatewayConnection -Name $LNG2 -ResourceGroupName $RG1
+```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если конфигурация является частью прототипа, теста или развертывания для подтверждения концепции, вы можете использовать команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup), чтобы удалить группу ресурсов, VPN-шлюз и все связанные ресурсы.
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name $RG1
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

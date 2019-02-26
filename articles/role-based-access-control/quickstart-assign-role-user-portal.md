@@ -1,6 +1,6 @@
 ---
-title: Руководство по предоставлению доступа пользователю с помощью RBAC и портала Azure | Документация Майкрософт
-description: Используйте управление доступом на основе ролей (RBAC), чтобы предоставить пользователю разрешения путем присвоения роли на портале Azure.
+title: Руководство. Предоставление доступа пользователям с помощью RBAC и портала Azure | Документация Майкрософт
+description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и портала Azure.
 services: role-based-access-control
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 11/30/2018
 ms.author: rolyon
-ms.openlocfilehash: 8caa5c3b33ac1b483429251e0c1256636c4ece1a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 41f1c6dc8904f167f34ea72aeb9b3866504b7087
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634478"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341306"
 ---
-# <a name="tutorial-grant-access-for-a-user-using-rbac-and-the-azure-portal"></a>Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -113,5 +113,5 @@ ms.locfileid: "52634478"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по предоставлению доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
+> [Руководство Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
 

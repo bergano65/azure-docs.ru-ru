@@ -10,12 +10,12 @@ author: garyericson
 ms.author: garye
 ms.custom: seodec18
 ms.date: 02/06/2019
-ms.openlocfilehash: f5b24b21c4511b535509421aaa35ba3498e9f6a8
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 803a52994536d2d6f39a064f97af7831af0cebb6
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56246023"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453177"
 ---
 # <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio"></a>Краткое руководство. Создание первого эксперимента по обработке и анализу данных в студии машинного обучения Azure
 
@@ -57,15 +57,15 @@ ms.locfileid: "56246023"
 
 1. Эксперименту будет присвоено имя по умолчанию, которое отображается в верхней части холста. Щелкните этот текст и измените его на любое удобное для вас имя, например **Прогнозирование цен на автомобили**. Имя не должно быть уникальным.
 
-    ![Переименование эксперимента][rename-experiment]
+    ![Переименование эксперимента](./media/create-experiment/rename-experiment.png)
 
 1. В левой части области эксперимента расположена выборка данных и модулей. Введите значение **автомобили** в поле поиска в верхней части палитры и найдите набор данных с названием **Данные о ценах на автомобили (необработанные)**. Перетащите набор данных на холст эксперимента.
 
-    ![Выберите набор данных об автомобилях и перенесите его на холст эксперимента][type-automobile]
+    ![Выберите набор данных об автомобилях и перенесите его на холст эксперимента](./media/create-experiment/type-automobile.png)
 
 Чтобы просмотреть, как выглядят эти данные, щелкните порт вывода в нижней части набора данных об автомобилях и выберите **Visualize** (Визуализировать).
 
-![Щелкните выходной порт и выберите Visualize (Визуализировать)][select-visualize]
+![Щелкните выходной порт и выберите Visualize (Визуализировать)](./media/create-experiment/select-visualize.png)
 
 > [!TIP]
 > У наборов данных и модулей есть входные и выходные порты, представленные маленькими кружками. Входные порты всегда расположены вверху, а выходные — внизу.
@@ -74,7 +74,7 @@ ms.locfileid: "56246023"
 
 В этом наборе данных каждая строка представляет автомобиль, а переменные, обозначающие их характеристики, представлены в виде столбцов. Мы спрогнозируем цену автомобиля по представленным характеристикам и отобразим ее в крайнем правом столбце (столбец 26 с названием price (Цена)).
 
-![Просмотр данных об автомобилях в окне визуализации данных][visualize-auto-data]
+![Просмотр данных об автомобилях в окне визуализации данных](./media/create-experiment/visualize-auto-data.png)
 
 Закройте окно визуализации, нажав «**x**» в правом верхнем углу.
 
@@ -89,9 +89,9 @@ ms.locfileid: "56246023"
 
 1. Введите **select column** в поле поиска в верхней части палитры модулей, чтобы найти модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных). Перетащите этот модуль на холст эксперимента. Этот модуль позволяет выбрать, какие столбцы данных нужно включить в модель или исключить из нее.
 
-1. Соедините выходной порт набора данных **Automobile price data (Raw)** (Данные о ценах на автомобили (необработанные)) с входным портом модуля [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных).
+1. Соедините выходной порт набора данных **Automobile price data (Raw)** (Данные о ценах на автомобили (необработанные) с входным портом модуля Select Columns in Dataset (Выбор столбцов в наборе данных).
 
-    ![Перетащите модуль Select Columns in Dataset (Выбор столбцов в наборе данных) на холст эксперимента и подключите его][type-select-columns]
+    ![Перетащите модуль Select Columns in Dataset (Выбор столбцов в наборе данных) на холст эксперимента и подключите его](./media/create-experiment/type-select-columns.png)
 
 1. Выберите модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных) и в области **Свойства** щелкните **Launch column selector** (Запустить средство выбора столбцов).
 
@@ -100,26 +100,26 @@ ms.locfileid: "56246023"
     - В раскрывающихся списках выберите **Исключить** и **Имена столбцов**, а затем щелкните внутри текстового поля. Отобразится список столбцов. Выберите элемент **normalized-losses** (нормированные потери), чтобы добавить его в текстовое поле.
     - Нажмите кнопку ОК (с зеленым флажком) внизу справа, чтобы закрыть средство выбора столбцов.
 
-    ![Откройте средство выбора столбцов и исключите столбец normalized-losses (Нормированные потери)][launch-column-selector]
+    ![Откройте средство выбора столбцов и исключите столбец normalized-losses (Нормированные потери)](./media/create-experiment/launch-column-selector.png)
 
     Теперь область свойств модуля **Select Columns in Dataset** (Выбор столбцов в наборе данных) показывает, что модуль будет передавать все столбцы набора данных, за исключением столбца **normalized-losses**.
 
-    ![На панели свойств мы видим, что столбец normalized-losses (Нормированные потери) исключен][showing-excluded-column]
+    ![На панели свойств мы видим, что столбец normalized-losses (Нормированные потери) исключен](./media/create-experiment/showing-excluded-column.png)
 
     > [!TIP] 
     > Дважды щелкните модуль и введите текст, чтобы добавить комментарий. Это поможет вам увидеть описание модуля и его действие в рамках эксперимента. В этом случае дважды щелкните модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных) и введите комментарий об исключении столбца нормированных потерь.
 
-    ![Дважды щелкните модуль, чтобы добавить комментарий][add-comment]
+    ![Дважды щелкните модуль, чтобы добавить комментарий](./media/create-experiment/add-comment.png)
 
 1. Перетащите на холст эксперимента модуль [Clean Missing Data][clean-missing-data] (Очистка недостающих данных) и подключите его к модулю [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных). В панели **Properties** (Свойства) выберите значение **Remove entire row** (Удалить всю строку) для параметра **Cleaning mode** (Режим очистки). Этот параметр указывает модулю [Clean Missing Data][clean-missing-data] (Очистка недостающих данных) полностью удалять те строки, в которых есть пустые значения. Дважды щелкните модуль и введите комментарий "Удаление строк с недостающими значениями".
 
-    ![Установите режим Remove entire row (Удалить всю строку) для модуля Clean Missing Data (Очистка недостающих данных)][set-remove-entire-row]
+    ![Установите режим Remove entire row (Удалить всю строку) для модуля Clean Missing Data (Очистка недостающих данных)](./media/create-experiment/set-remove-entire-row.png)
 
 1. Запустите эксперимент, щелкнув кнопку **запуска** в нижней части страницы.
 
     После завершения эксперимента у всех модулей должен появиться зеленый флажок, означающий успешное выполнение. Обратите также внимание на состояние **Работа завершена** в правом верхнем углу.
 
-    ![После выполнения эксперимент должен выглядеть примерно так][early-experiment-run]
+    ![После выполнения эксперимент должен выглядеть примерно так](./media/create-experiment/early-experiment-run.png)
 
 > [!TIP]
 > Для чего мы сейчас запускаем эксперимент? После запуска эксперимента все определения столбцов из нашего набора данных передаются в модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных) и проходят через него к модулю [Clean Missing Data][clean-missing-data] (Очистка недостающих данных). Теперь все модули, которые мы подключим к модулю [Clean Missing Data][clean-missing-data] (Очистка недостающих данных), смогут получить эту информацию.
@@ -140,7 +140,7 @@ ms.locfileid: "56246023"
 
 1. Перетащите на холст эксперимента еще один модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных). Подключите левый выходной порт модуля [Clean Missing Data][clean-missing-data] (Очистка недостающих данных) к входу модуля [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных).
 
-    ![Соедините модуль Select Columns in Dataset (Выбор столбцов в наборе данных) с модулем Clean Missing Data (Очистка недостающих данных)][connect-clean-to-select]
+    ![Соедините модуль Select Columns in Dataset (Выбор столбцов в наборе данных) с модулем Clean Missing Data (Очистка недостающих данных)](./media/create-experiment/connect-clean-to-select.png)
 
 1. Дважды щелкните модуль и введите: "Выбор признаков для прогнозирования".
 
@@ -152,7 +152,7 @@ ms.locfileid: "56246023"
 
 1. Щелкните значок с изображением флажка (кнопка "ОК").
 
-    ![Выберите столбцы (признаки) для включения в прогноз][select-columns-to-include]
+    ![Выберите столбцы (признаки) для включения в прогноз](./media/create-experiment/select-columns-to-include.png)
 
 В результате мы получим отфильтрованный набор данных, содержащий только те признаки, которые мы хотим передать в обучающий алгоритм на следующем шаге. Позже вы сможете вернуться назад и заново попробовать выбрать другой набор признаков.
 
@@ -174,7 +174,7 @@ ms.locfileid: "56246023"
 
 1. Щелчком выберите модуль [Split Data][split] (Разделение данных). В панели **Properties** (Свойства) справа от холста найдите параметр **Fraction of rows in the first output dataset** (Доля строк в первом выходном наборе данных) и установите для него значение 0,75. Таким образом, мы используем 75 процентов данных для обучения модели и оставим 25 процентов для тестирования.
 
-    ![Установите значение 0,75 в качестве доли разбиения в модуле Split Data (Разбиение данных)][set-split-data-percentage]
+    ![Установите значение 0,75 в качестве доли разбиения в модуле Split Data (Разбиение данных)](./media/create-experiment/set-split-data-percentage.png)
 
     > [!TIP]
     > Изменяя параметр **Псевдослучайные числа**, вы можете создавать различные случайные выборки для обучения и тестирования. Этот параметр задает начальное значение для генератора псевдослучайных чисел.
@@ -185,19 +185,19 @@ ms.locfileid: "56246023"
 
 1. Найдите и переместите модуль [Train Model][train-model] (Обучение модели) на холст эксперимента. Соедините выход модуля [Linear Regression][linear-regression] (Линейная регрессия) с левым входом модуля [Train Model][train-model] (Обучение модели), затем соедините выход (левый порт) модуля [Split Data][split] (Разделение данных) с правым входом модуля [Train Model][train-model] (Обучение модели).
 
-    ![Подключите модуль Train Model (Обучение модели) к модулям Linear Regression (Линейная регрессия) и Split Data (Разбиение данных)][connect-train-model]
+    ![Подключите модуль Train Model (Обучение модели) к модулям Linear Regression (Линейная регрессия) и Split Data (Разбиение данных)](./media/create-experiment/connect-train-model.png)
 
 1. Выберите модуль [Train Model][train-model] (Обучение модели), щелкните **Launch column selector** (Запустить средство выбора столбцов) в области **Свойства** и выберите столбец **цена**. **Price** (Цена) — это значение, которое спрогнозирует наша модель.
 
     Чтобы выбрать столбец **price** (Цена) в средстве выбора столбцов, переместите его из списка **Available columns** (Доступные столбцы) в список **Selected columns** (Выбранные столбцы).
 
-    ![Выберите столбец цены для модуля Train Model (Обучение модели)][select-price-column]
+    ![Выберите столбец цены для модуля Train Model (Обучение модели)](./media/create-experiment/select-price-column.png)
 
 1. Запустите эксперимент.
 
 Теперь у нас есть обученная регрессионная модель, которую можно использовать для оценки новых данных об автомобилях с целью прогнозирования цен.
 
-![После выполнения эксперимент должен выглядеть примерно так][second-experiment-run]
+![После выполнения эксперимент должен выглядеть примерно так](./media/create-experiment/second-experiment-run.png)
 
 ## <a name="predict-new-automobile-prices"></a>Прогнозирование цен на новые автомобили
 
@@ -205,21 +205,21 @@ ms.locfileid: "56246023"
 
 1. Найдите модуль [Score Model][score-model] (Оценка модели) и перетащите его на холст эксперимента. Соедините выход модуля [Train Model][train-model] (Обучение модели) с левым входным портом модуля [Score Model][score-model] (Оценка модели). Подключите вывод тестовых данных (правый порт) модуля [Split Data][split] (Разделение данных) к правому порту ввода [Score Model][score-model] (Оценка модели).
 
-    ![Подключите модуль Score Model (Оценка модели) к модулям Train Model (Обучение модели) и Split Data (Разбиение данных)][connect-score-model]
+    ![Подключите модуль Score Model (Оценка модели) к модулям Train Model (Обучение модели) и Split Data (Разбиение данных)](./media/create-experiment/connect-score-model.png)
 
 1. Запустите эксперимент и проверьте выходные данные модуля [Score Model][score-model] (Оценка модели), щелкнув порт вывода модуля [Score Model][score-model] (Оценка модели) и выбрав **Visualize** (Визуализировать). На порту вывода будут показаны прогнозируемые значения цены вместе с известными значениями проверочных данных.  
 
-    ![Выходные данные модуля Score Model (Оценка модели)][score-model-output]
+    ![Выходные данные модуля Score Model (Оценка модели)](./media/create-experiment/score-model-output.png)
 
 1. Теперь мы готовы проверить качество результатов. Выберите модуль [Evaluate Model][evaluate-model] (Анализ модели) и перетащите его на холст эксперимента, а затем соедините выход модуля [Score Model][score-model] (Оценка модели) с левым входом модуля [Evaluate Model][evaluate-model] (Анализ модели). Окончательная схема нашего эксперимента должна выглядеть следующим образом:
 
-    ![Итоговый вид эксперимента][complete-linear-regression-experiment]
+    ![Итоговый вид эксперимента](./media/create-experiment/complete-linear-regression-experiment.png)
 
 1. Запустите эксперимент.
 
 Чтобы проверить выходные данные модуля [Evaluate Model][evaluate-model] (Анализ модели), щелкните порт вывода и выберите элемент **Visualize** (Визуализировать).
 
-![Оценка результатов эксперимента][evaluation-results]
+![Оценка результатов эксперимента](./media/create-experiment/evaluation-results.png)
 
 Для нашей модели будет выведена следующая статистика.
 
@@ -240,36 +240,7 @@ ms.locfileid: "56246023"
 В этом кратком руководстве описано, как создать простой эксперимент с использованием примера набора данных. Чтобы узнать больше о создании и развертывании модели, перейдите к руководству по прогнозному решению.
 
 > [!div class="nextstepaction"]
-> [Руководство. Разработка прогнозного решения в студии](tutorial-part1-credit-risk.md)
-
-<!-- Images -->
-[sign-in-to-studio]: ./media/create-experiment/sign-in-to-studio.png
-[rename-experiment]: ./media/create-experiment/rename-experiment.png
-[visualize-auto-data]:./media/create-experiment/visualize-auto-data.png
-[select-visualize]: ./media/create-experiment/select-visualize.png
-[showing-excluded-column]:./media/create-experiment/showing-excluded-column.png
-[set-remove-entire-row]:./media/create-experiment/set-remove-entire-row.png
-[early-experiment-run]:./media/create-experiment/early-experiment-run.png
-[select-columns-to-include]:./media/create-experiment/select-columns-to-include.png
-[second-experiment-run]:./media/create-experiment/second-experiment-run.png
-[connect-score-model]:./media/create-experiment/connect-score-model.png
-[evaluation-results]:./media/create-experiment/evaluation-results.png
-[complete-linear-regression-experiment]:./media/create-experiment/complete-linear-regression-experiment.png
-
-<!-- temporarily switching GIFs to PNGs to remove animation -->
-[type-automobile]:./media/create-experiment/type-automobile.png
-[type-select-columns]:./media/create-experiment/type-select-columns.png
-[launch-column-selector]:./media/create-experiment/launch-column-selector.png
-[add-comment]:./media/create-experiment/add-comment.png
-[connect-clean-to-select]:./media/create-experiment/connect-clean-to-select.png
-
-[set-split-data-percentage]:./media/create-experiment/set-split-data-percentage.png
-
-<!-- temporarily switching GIFs to PNGs to remove animation -->
-[connect-train-model]:./media/create-experiment/connect-train-model.png
-[select-price-column]:./media/create-experiment/select-price-column.png
-
-[score-model-output]:./media/create-experiment/score-model-output.png
+> [Руководство Разработка прогнозного решения в студии](tutorial-part1-credit-risk.md)
 
 <!-- Module References -->
 [evaluate-model]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/

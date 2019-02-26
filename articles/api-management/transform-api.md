@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: eab00663918eadea485aed17a91ce01e5718c36e
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 4aa4c69857bfd1ab99945cb0f5f748e60cff9978
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413678"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417336"
 ---
 # <a name="transform-and-protect-your-api"></a>Преобразование и защита API 
 
@@ -41,12 +41,12 @@ ms.locfileid: "50413678"
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
 + Ознакомьтесь с [концепцией использования политик в службе управления API в Azure](api-management-howto-policies.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Кроме того, выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="transform-an-api-to-strip-response-headers"></a>Преобразование API для удаления заголовков ответа
+## <a name="transform-an-api-to-strip-response-headers"></a>преобразование API для удаления заголовков ответа;
 
 В этом разделе показано, как скрыть заголовки HTTP, которые вы не хотите показывать пользователям. В этом примере из HTTP-ответов удаляются следующие заголовки:
 
@@ -126,9 +126,10 @@ ms.locfileid: "50413678"
 1. Выберите **Demo Conference API**.
 2. Выберите **Все операции**.
 3. В верхней части экрана выберите вкладку **Конструктор**.
-4. В разделе **Обработка входящих запросов** щелкните значок **</>**.5. Поместите курсор на **&lt;входящий&gt;** элемент.
-5. На правой панели в разделе **Политики ограничения доступа** щелкните **Ограничить частоту вызовов для одного ключа**.
-6. Замените код **rate-limit-by-key** (в элементе **\<inbound\>**) следующим фрагментом:
+4. В разделе **Обработка входящих запросов** щелкните значок **</>**.
+5. Поместите курсор на **&lt;входящий&gt;** элемент.
+6. На правой панели в разделе **Политики ограничения доступа** щелкните **Ограничить частоту вызовов для одного ключа**.
+7. Замените код **rate-limit-by-key** (в элементе **\<inbound\>**) следующим фрагментом:
 
         <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
 

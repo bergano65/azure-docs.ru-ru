@@ -1,6 +1,6 @@
 ---
-title: 'Пример: аудит хранилищ Key Vault для обнаружения экземпляров без конечных точек виртуальной сети'
-description: Этот пример политики выполняет аудит хранилищ Key Vault, чтобы обнаружить экземпляры без конечных точек службы виртуальной сети.
+title: Пример — выявление хранилищ Key Vault без конечных точек виртуальной сети
+description: В этом примере определения политики выполняется проверка хранилищ Key Vault с целью обнаружить экземпляры без конечных точек службы виртуальной сети.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: c9a5359303c1feecfbc905099a1bed2fc10fa52d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 6b53c94787cfcabae1072f9879f14e0d890e967c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245802"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341536"
 ---
-# <a name="key-vault-vaults-with-no-virtual-network-endpoints"></a>Аудит хранилищ Key Vault для обнаружения экземпляров без конечных точек виртуальной сети
+# <a name="sample---key-vault-vaults-with-no-virtual-network-endpoints"></a>Пример — хранилища Key Vault без конечных точек виртуальной сети
 
 Эта политика проверяет хранилища Key Vault для обнаружения экземпляров без конечных точек виртуальной сети. Используйте эту политику, чтобы обеспечить соблюдение требований к безопасности. Дополнительные сведения см. в статье [Конечные точки службы виртуальной сети для Azure Key Vault](../../../key-vault/key-vault-overview-vnet-service-endpoints.md).
 

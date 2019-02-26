@@ -10,25 +10,21 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 01/11/2019
+ms.date: 02/14/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: c2684c7373d9ee4536b248650c7012c261166b81
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 37d84206246e60ed16244d6172a5e22ca18524c9
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235399"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270255"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 См. дополнительные сведения об использовании Visual Studio Code и расширения средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Основные понятия, связанные с развертыванием и управлением решений Azure, см. в [обзоре Azure Resource Manager](resource-group-overview.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -54,6 +50,7 @@ ms.locfileid: "56235399"
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**.
 4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл в качестве **azuredeploy.json** на локальном компьютере.
 
@@ -94,6 +91,9 @@ ms.locfileid: "56235399"
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Существует множество методов по развертыванию шаблонов.  В этом кратком руководстве используется Azure Cloud Shell. Cloud Shell — это веб-приложение, которое не нужно настраивать. Оно поддерживает как Azure CLI, так и Azure PowerShell.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 
 1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
@@ -148,7 +148,10 @@ ms.locfileid: "56235399"
     
     ---
 
-    Обновите имя файла шаблона, если вы сохраняете файл с именем, отличающимся от **azuredeploy.json**.
+    > [!NOTE]
+    > Существует проблема с вводом-выводом файла при использовании Azure PowerShell в Cloud Shell.  Отображается сообщение об ошибке: *Cannot retrieve the dynamic parameters for the cmdlet. Cannot find path 'Azure:/azuredeploy.json' because it does not exist* (Не удалось получить динамические параметры командлета. Не удалось найти путь Azure:/azuredeploy.json, так как он не существует).  Временное решение — не добавлять параметр **-TemplateFile** в команду `New-AzResourceGroupDeploy`. Команда предложит ввести имя файла.
+
+    Обновите имя файла шаблона, если вы сохраняете файл с именем, отличающимся от **azuredeploy.json**. 
 
     На следующем снимке экрана показан пример развертывания.
 

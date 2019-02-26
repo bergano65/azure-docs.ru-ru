@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 1/18/2019
+ms.date: 2/19/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: dce158e600d3bf5dbcc552aff82959208d7b47f8
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 0319445f946a53ace5718dce1ad593d0a8225ecc
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249067"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428522"
 ---
 # <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В Azure Stack вы можете разместить образы виртуальных машин, сделав их доступными для пользователей. На эти образы можно ссылаться с помощью шаблонов Azure Resource Manager или добавлять к пользовательскому интерфейсу Azure Marketplace в качестве элемента Marketplace. Вы можете использовать образ из глобального магазина Azure Marketplace или добавить собственный образ. Виртуальную машину можно добавить с помощью портала или Windows PowerShell.
+В Azure Stack вы можете разместить образы виртуальных машин, сделав их доступными для пользователей. Эти образы можно использовать в шаблонах Azure Resource Manager. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ. Образ можно добавить с помощью портала или Windows PowerShell.
 
 ## <a name="add-a-vm-image-through-the-portal"></a>Добавление образа виртуальной машины через портал
 

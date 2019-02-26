@@ -1,5 +1,5 @@
 ---
-title: Создание политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure PowerShell
+title: Создание политики для несоответствующих требованиям ресурсов с помощью Azure PowerShell
 description: Создание назначения в службе "Политика Azure", позволяющего определить ресурсы, которые не соответствуют требованиям, с помощью Azure PowerShell.
 services: azure-policy
 author: DCtheGeek
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b5f4306fc1627e679f8f59a92bae4124a48cbd42
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: de8192ee0f0dad1ccc385aa28892a3ef4f5c4a86
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856474"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338739"
 ---
 # <a name="create-a-policy-assignment-to-identify-non-compliant-resources-using-azure-powershell"></a>Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure PowerShell
 
@@ -72,7 +72,7 @@ $policyAssignment.PolicyAssignmentId
 
 Теперь выполните следующую команду, чтобы вывести идентификаторы несовместимых ресурсов в JSON-файле:
 
-```
+```console
 armclient post "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2017-12-12-preview&$filter=IsCompliant eq false and PolicyAssignmentId eq '<policyAssignmentID>'&$apply=groupby((ResourceId))" > <json file to direct the output with the resource IDs into>
 ```
 

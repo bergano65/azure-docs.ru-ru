@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/28/2019
 ms.author: juliako
-ms.openlocfilehash: 50c17e6ce953b601cc4ac0a406f443a54b9db3e7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: d50bb6ca67d7d09525013b65d0635e8e16b4cb4e
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55162724"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417284"
 ---
 # <a name="quickstart-stream-video-files---net"></a>Краткое руководство. Потоковая передача видеофайлов с помощью .NET
 
@@ -81,6 +81,8 @@ ms.locfileid: "55162724"
 
 1. Откройте браузер и перейдите по ссылке [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
 2. В поле **URL:** (URL-адрес:) вставьте одно из значений URL-адресов потоковой передачи, полученных при работе приложения. 
+ 
+     URL-адрес можно указать в формате HLS, Dash или Smooth, а Проигрыватель мультимедиа Azure автоматически выберет соответствующий протокол потоковой передачи для воспроизведения на устройстве.
 3. Щелкните **Update Player** (Обновить проигрыватель).
 
 Проигрыватель мультимедиа Azure можно использовать для тестирования, но его нельзя применять в рабочей среде. 
@@ -100,6 +102,10 @@ az group delete --name amsResourceGroup
 Чтобы получить сведения о назначении всех функций в образце, ознакомьтесь с кодом и просмотрите комментарии в [этом исходном файле](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/Program.cs).
 
 В руководстве по [передаче, кодированию и потоковой передаче файлов](stream-files-tutorial-with-api.md) представлен более сложный пример потоковой передачи и подробные пояснения. 
+
+### <a name="job-error-codes"></a>Коды ошибок задания
+
+См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
 ## <a name="multithreading"></a>Многопоточность
 

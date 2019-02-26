@@ -1,6 +1,6 @@
 ---
 title: 'Пример: запрет пиринга сетей для сети ExpressRoute'
-description: Этот пример политики запрещает привязку пиринга сетей к сети в указанной группе ресурсов.
+description: В этом примере определения политики налагается запрет на привязку пиринга к сети в указанной группе ресурсов.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: dbd7494b5104482624448fc0525a58d68138a833
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: c06e750c19227d245fcf8eaeb077691ef2c8a675
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245649"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337617"
 ---
-# <a name="no-network-peering-to-express-route-network"></a>Запрет пиринга сетей для сети ExpressRoute
+# <a name="sample---no-network-peering-to-express-route-network"></a>Пример: запрет пиринга сетей для сети ExpressRoute
 
 Эта политика запрещает привязку пиринга сетей к сети в указанной группе ресурсов. Используется, чтобы предотвратить подключение к центральной управляемой сетевой инфраструктуре. Вы можете указать имя группы ресурсов, привязку к которой нужно запретить.
 

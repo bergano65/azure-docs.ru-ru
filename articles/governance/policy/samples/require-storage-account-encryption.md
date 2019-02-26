@@ -1,6 +1,6 @@
 ---
 title: 'Пример: требование шифрования учетной записи хранения'
-description: Этот пример политики требует, чтобы в учетной записи хранения использовалось шифрование больших двоичных объектов.
+description: В этом примере определения политики необходимо, чтобы в учетной записи хранения использовалось шифрование больших двоичных объектов.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 067fab9baa2890aa2630c513fd4e6319bd40f709
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: b1afa4ce154153d97a9d7401765cd9c129009ceb
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244663"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342700"
 ---
-# <a name="require-storage-account-encryption"></a>Require storage account encryption.
+# <a name="sample---require-storage-account-encryption"></a>Пример: требование шифрования учетной записи хранения
 
 Эта политика требует, чтобы в учетной записи хранения использовалось шифрование больших двоичных объектов.
 

@@ -6,20 +6,20 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 2/12/2019
 ms.author: mjbrown
-ms.openlocfilehash: effe6fa942ce0cabace08e72dba90baf8646680e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 84c8e2921602bb653c0b1ef0adffd3d89e91bd78
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118862"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56312146"
 ---
-# <a name="how-to-configure-multi-master-in-your-applications-in-azure-cosmos-db"></a>Настройка нескольких источников в приложениях в Azure Cosmos DB
+# <a name="how-to-configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
-Чтобы настроить возможности использования нескольких источников в своих приложениях, нужно включить выполнение операций записи в нескольких регионах и настроить возможность множественной адресации, указав текущий регион, в котором развернуто приложение.
+Чтобы использовать несколько источников в своих приложениях, нужно включить выполнение операций записи в нескольких регионах и настроить множественную адресацию. Для настройки множественной адресации нужно указать текущий регион, в котором развертывается приложение.
 
 ## <a id="netv2"></a>Пакет SDK для .NET версии 2
 
-Чтобы включить несколько источников в своем приложении, укажите для параметра `UseMultipleWriteLocations` значение true, а для параметра `SetCurrentLocation` — регион, в котором развертывается приложение и реплицируется Cosmos DB.
+Чтобы включить несколько источников в своем приложении, укажите для параметра `UseMultipleWriteLocations` значение true, а для параметра `SetCurrentLocation` — регион, в котором развертывается приложение и реплицируется Azure Cosmos DB.
 
 ```csharp
 ConnectionPolicy policy = new ConnectionPolicy

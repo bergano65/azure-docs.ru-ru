@@ -8,56 +8,71 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 05/10/2018
+ms.date: 02/07/2019
 ms.author: pafarley
-ms.openlocfilehash: 07868fd70c1b2601fa676f7069f2508468e2be0e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 588faa3c59c4e6b3ea704d953c20c4319ef4b01e
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866956"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56312129"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и JavaScript
 
-В этом кратком руководстве вы узнаете, как определять лица на изображении с помощью API распознавания лиц.
+В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API распознавания лиц Azure и JavaScript.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 
-## <a name="detect-faces-in-an-image"></a>определение лиц на изображении.
+## <a name="initialize-the-html-file"></a>Инициализация HTML-файла
 
-Используйте метод [определения лица](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), чтобы распознать лица на изображении и вернуть их атрибуты, в том числе:
-
-* Идентификатор лица: уникальный идентификатор, используемый в различных сценариях API распознавания лиц.
-* Границы лица: отступ слева, сверху, а также ширина и высота лица, определяющие его место на изображении.
-* Ориентиры: массив из 27-точечных ориентиров, указывающий на важные позиции компонентов лица.
-* Атрибуты лица, в т. ч. возраст, пол, интенсивность улыбки, положение головы и наличие усов и бороды.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте следующий код и сохраните его в файл, например `detectFaces.html`.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости измените значение `uriBase`, чтобы использовать расположение, в котором вы получили ключи подписки (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
-1. Перетащите файл в браузер.
-1. Нажмите кнопку `Analyze faces`.
-
-### <a name="face---detect-request"></a>Запрос на определение лица
+Создайте файл HTML с именем *detectFaces.html*и добавьте в него следующий код.
 
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Detect Faces Sample</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-</head>
-<body>
+    <head>
+        <title>Detect Faces Sample</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    </head>
+    <body></body>
+</html>
+```
 
+Добавьте следующий код в элемент `body` документа. Он создаст основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
+
+```html
+<h1>Detect Faces:</h1>
+Enter the URL to an image that includes a face or faces, then click
+the <strong>Analyze face</strong> button.<br><br>
+Image to analyze: <input type="text" name="inputImage" id="inputImage"
+    value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+<button onclick="processImage()">Analyze face</button><br><br>
+<div id="wrapper" style="width:1020px; display:table;">
+    <div id="jsonOutput" style="width:600px; display:table-cell;">
+        Response:<br><br>
+        <textarea id="responseTextArea" class="UIInput"
+            style="width:580px; height:400px;"></textarea>
+    </div>
+    <div id="imageDiv" style="width:420px; display:table-cell;">
+        Source image:<br><br>
+        <img id="sourceImage" width="400" />
+    </div>
+</div>
+```
+
+## <a name="write-the-javascript-script"></a>Написание скрипта JavaScript
+
+Добавьте следующий код непосредственно перед элементом `h1` документа. Этот код JavaScript предназначен для вызова API распознавания лиц.
+
+```html
 <script type="text/javascript">
     function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
         var subscriptionKey = "<Subscription Key>";
-
+    
         // NOTE: You must use the same region in your REST call as you used to
         // obtain your subscription keys. For example, if you obtained your
         // subscription keys from westus, replace "westcentralus" in the URL
@@ -68,7 +83,7 @@ ms.locfileid: "55866956"
         // this region.
         var uriBase =
             "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
-
+    
         // Request parameters.
         var params = {
             "returnFaceId": "true",
@@ -77,32 +92,32 @@ ms.locfileid: "55866956"
                 "age,gender,headPose,smile,facialHair,glasses,emotion," +
                 "hair,makeup,occlusion,accessories,blur,exposure,noise"
         };
-
+    
         // Display the image.
         var sourceImageUrl = document.getElementById("inputImage").value;
         document.querySelector("#sourceImage").src = sourceImageUrl;
-
+    
         // Perform the REST API call.
         $.ajax({
             url: uriBase + "?" + $.param(params),
-
+    
             // Request headers.
             beforeSend: function(xhrObj){
                 xhrObj.setRequestHeader("Content-Type","application/json");
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
             },
-
+    
             type: "POST",
-
+    
             // Request body.
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
-
+    
         .done(function(data) {
             // Show formatted JSON on webpage.
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
         })
-
+    
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
             var errorString = (errorThrown === "") ?
@@ -115,40 +130,17 @@ ms.locfileid: "55866956"
         });
     };
 </script>
-
-<h1>Detect Faces:</h1>
-Enter the URL to an image that includes a face or faces, then click
-the <strong>Analyze face</strong> button.<br><br>
-
-Image to analyze: <input type="text" name="inputImage" id="inputImage"
-value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-
-<button onclick="processImage()">Analyze face</button><br><br>
-
-<div id="wrapper" style="width:1020px; display:table;">
-    <div id="jsonOutput" style="width:600px; display:table-cell;">
-        Response:<br><br>
-
-        <textarea id="responseTextArea" class="UIInput"
-                  style="width:580px; height:400px;"></textarea>
-    </div>
-    <div id="imageDiv" style="width:420px; display:table-cell;">
-        Source image:<br><br>
-
-        <img id="sourceImage" width="400" />
-    </div>
-</div>
-</body>
-</html>
 ```
 
-### <a name="face---detect-response"></a>Результат распознавания лица
+Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и изменить строку `uriBase`, чтобы она содержала идентификатор правильного региона (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Поле `returnFaceAttributes` определяет извлекаемые атрибуты лица. Эту строку вы можете изменить в зависимости от предполагаемого применения.
 
-Успешный ответ будет возвращен в формате JSON.
+## <a name="run-the-script"></a>Запуск сценария
+
+Откройте файл *detectFaces.html* в браузере. При нажатии кнопки **анализа лиц** приложение должно отобразить изображение, находящееся по заданному URL-адресу, и возвратить строку JSON с данными распознавания лица.
 
 ![GettingStartCSharpScreenshot](../Images/face-detect-javascript.png)
 
-Ниже приведен пример ответа при успешном выполнении.
+Ниже приведен пример ответа в формате JSON при успешном выполнении операции.
 
 ```json
 [
@@ -244,7 +236,7 @@ value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gis
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами распознавания лиц, которые используются для обнаружения лиц, обозначения их границ и возврата таких атрибутов, как возраст и пол.
+В этом кратком руководстве вы написали скрипт JavaScript, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API-интерфейсы распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

@@ -15,12 +15,12 @@ ms.date: 01/18/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 5719d5c49d3061acd167f51f74aac109dc22ec49
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.openlocfilehash: e38612e0d4e0707525b313c79143018c74c4c77b
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55961409"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326516"
 ---
 # <a name="create-virtual-machine-disk-storage-in-azure-stack"></a>Создание хранилища для дисков виртуальных машин в Azure Stack
 
@@ -32,9 +32,9 @@ ms.locfileid: "55961409"
 
 Начиная с версии 1808, Azure Stack поддерживает использование на виртуальных машинах управляемых и неуправляемых дисков в качестве дисков операционной системы и дисков данных. До выпуска версии 1808 поддерживались только неуправляемые диски. 
 
-**[Управляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/about-disks-and-vhds#managed-disks)** упрощают управление дисками виртуальных машин Azure IaaS. Они управляют учетными записями хранения, связанными с этими дисками. Вам нужно только выбрать размер диска, а Azure Stack самостоятельно создаст диск и будет управлять им.
+**[Управляемые диски](../../virtual-machines/windows/managed-disks-overview.md)** упрощают управление дисками виртуальных машин Azure IaaS. Они управляют учетными записями хранения, связанными с этими дисками. Вам нужно только выбрать размер диска, а Azure Stack самостоятельно создаст диск и будет управлять им.
 
-**[Неуправляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/about-disks-and-vhds#unmanaged-disks)** требуют создания [учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account) для их хранения. Созданные диски называются дисками виртуальной машины и хранятся в контейнерах в учетной записи хранения.
+Неуправляемые диски требуют создания учетной записи хранения для их хранения. Созданные диски называются дисками виртуальной машины и хранятся в контейнерах в учетной записи хранения.
 
 ### <a name="best-practice-guidelines"></a>Рекомендации
 

@@ -1,6 +1,6 @@
 ---
 title: 'Пример: аудит параметров аудита уровня SQL Server'
-description: Образец политики выполняет аудит параметров уровня SQL server, если эти параметры не соответствуют указанному.
+description: В этом примере определения политики выполняется проверка параметров аудита SQL Server, если эти параметры не соответствуют заданным.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: f23fd349a5e7c1016cc18f79cff408aefaa3fd35
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 90f91e46db9d25571bc34256ab1db737445ce3e6
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244170"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337481"
 ---
-# <a name="audit-sql-server-level-audit-setting"></a>Аудит параметров аудита уровня SQL Server
+# <a name="sample---audit-sql-server-level-audit-setting"></a>Пример: аудит параметров аудита уровня SQL Server
 
 Эта политика проверяет, соответствуют ли параметры аудита SQL Server указанному значению. Задайте значение, указывающее, должны ли быть включены параметры аудита.
 

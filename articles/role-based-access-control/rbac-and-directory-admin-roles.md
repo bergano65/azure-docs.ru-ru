@@ -15,12 +15,12 @@ ms.date: 11/30/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 9fce35f811a4d2440ba73e4f305ede6891928069
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 00b96b5bfa88a6c1c31d3415027ce1d4eda11e6b
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633288"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339096"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -73,7 +73,7 @@ RBAC Azure — это система авторизации на основе [
 | [Читатель](built-in-roles.md#reader) | <ul><li>Просмотр ресурсов Azure</li></ul> | Применяется ко всем типам ресурсов. |
 | [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) | <ul><li>Управление доступом пользователей к ресурсам Azure</li></ul> |  |
 
-Остальные встроенные роли разрешают управление определенными ресурсами Azure. Например, роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) позволяет пользователю создавать виртуальные машины и управлять ими. Полный список встроенных ролей см. в разделе [Встроенные роли](built-in-roles.md).
+Остальные встроенные роли разрешают управление определенными ресурсами Azure. Например, роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) позволяет пользователю создавать виртуальные машины и управлять ими. Полный список встроенных ролей см. в статье [Встроенные роли для ресурсов Azure](built-in-roles.md).
 
 Модель RBAC поддерживается только порталом Azure и API-интерфейсами Azure Resource Manager. Пользователи, группы и приложения, которым назначены роли RBAC, не могут использовать [API классической модели развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md).
 
@@ -95,7 +95,7 @@ RBAC Azure — это система авторизации на основе [
 | [Администратор пользователей](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-account-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
 | [Администратор выставления счетов](../active-directory/users-groups-roles/directory-assign-admin-roles.md#billing-administrator) | <ul><li>Совершение покупок</li><li>Управление подписками</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности службы</li></ul> |  |
 
-Полный список ролей администратора Azure AD см. в разделе [Назначение ролей администратора в Azure Active Directory](/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
+Полный список ролей администратора Azure AD см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 Список ролей администратора Azure AD можно просмотреть в колонке **Роли и администраторы** на портале Azure.
 
@@ -123,5 +123,5 @@ RBAC Azure — это система авторизации на основе [
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Что такое управление доступом на основе ролей (RBAC)?](overview.md)
-- [Назначение ролей администратора в Azure Active Directory](/azure/active-directory/active-directory-assign-admin-roles-azure-portal)
-- [Добавление или изменение администраторов подписки Azure](/azure/billing/billing-add-change-azure-subscription-administrator)
+- [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
+- [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md)

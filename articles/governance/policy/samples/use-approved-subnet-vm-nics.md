@@ -1,6 +1,6 @@
 ---
 title: 'Пример: использование утвержденной подсети для сетевых интерфейсов виртуальной машины'
-description: Этот пример политики требует, чтобы сетевые интерфейсы использовали утвержденную подсеть.
+description: В этом примере определения политики требуется, чтобы сетевые интерфейсы использовали утвержденную подсеть.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: d4f27b98581f7ea2adbbb69d6041e6ad190cc0e7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 854dbb6d3743c0e8af8a267a425286624453b688
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242750"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341119"
 ---
-# <a name="use-approved-subnet-for-vm-network-interfaces"></a>Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
+# <a name="sample---use-approved-subnet-for-vm-network-interfaces"></a>Пример: использование утвержденной подсети для сетевых интерфейсов виртуальной машины
 
 Эта политика требует, чтобы сетевые интерфейсы использовали утвержденную подсеть. Вы можете указать идентификатор утвержденной подсети.
 

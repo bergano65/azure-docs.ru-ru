@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: overview
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: a7fbd9eb70c50f3bbd154726bdaa807c2bc41818
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: f56893f830720c57c66eb4c17bb2771efbb73f6f
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863964"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267178"
 ---
 # <a name="what-is-the-bing-video-search-api"></a>Что такое API Bing для поиска видео?
 
@@ -29,7 +29,7 @@ API Bing для поиска видео позволяет легко добав
 | [Фильтрация и ограничение результатов поиска видео](concepts/get-videos.md#filtering-videos)                      | Отфильтруйте возвращаемые видео путем изменения параметров запроса.                                                                                                       |
 | [Обрезка, изменения размера и отображение эскизов](resize-and-crop-thumbnails.md)                                                | Изменяйте и отображайте предварительные версии видео, возвращаемых API Bing для поиска видео.                                                                                      |
 | [Получение видео, набирающих популярность](trending-videos.md) | Поиск видео, набирающих популярность, со всего мира.                                                                                                          |
-| [Получение полезных сведений о видео](video-insights.md) | Настройте поиск популярных изображений со всего мира.                                                                                                          |
+| [Получение полезных сведений о видео](video-insights.md) | Настройте поиск популярных видео со всего мира.                                                                                                          |
 
 ## <a name="workflow"></a>Рабочий процесс
 

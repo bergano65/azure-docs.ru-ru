@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 01/04/2019
+ms.date: 02/15/2019
 ms.author: sethm
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 62a0e763913ea1ca27edf88d7560c9400043bf27
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 7bf7034d30a8aac187fb2eeae6569f2f495e4439
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251373"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327260"
 ---
 # <a name="about-vpn-gateway-for-azure-stack"></a>Сведения о VPN-шлюзе для Azure Stack
 
@@ -74,7 +74,7 @@ VPN-шлюз — это тип шлюза виртуальной сети, ко
 
 ### <a name="site-to-site"></a>Подключение типа "сайт — сайт"
 
-Подключение типа *сеть — сеть* (S2S) через VPN-шлюз — это подключение через туннель VPN по протоколу IPsec/IKE (IKEv1 или IKEv2). Для этого типа подключения требуется локальное VPN-устройство, которому назначен общедоступный IP-адрес. Это устройство не может располагаться вне преобразования сетевых адресов (NAT). Подключения типа "сеть — сеть" можно использовать для распределенных и гибридных конфигураций.
+Подключение типа *сеть — сеть* (S2S) через VPN-шлюз — это подключение через туннель VPN по протоколу IPsec/IKE (IKEv2). Для этого типа подключения требуется локальное VPN-устройство, которому назначен общедоступный IP-адрес. Это устройство не может располагаться вне преобразования сетевых адресов (NAT). Подключения типа "сеть — сеть" можно использовать для распределенных и гибридных конфигураций.
 
 ![Пример конфигурации VPN-подключения "сеть — сеть"](media/azure-stack-vpn-gateway-about-vpn-gateways/vpngateway-site-to-site-connection-diagram.png)
 

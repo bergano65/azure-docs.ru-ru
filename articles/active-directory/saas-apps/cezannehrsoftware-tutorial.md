@@ -1,314 +1,280 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cezanne HR Software.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 62b42e15-c282-492d-823a-a7c1c539f2cc
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/28/2017
+ms.topic: tutorial
+ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb6fb443440ce9af26a3152f7dcc536c4e881cd9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ac777eebeece7cd67126a639c45e5cf6665f7a9b
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165440"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313064"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство. Интеграция Azure Active Directory с Cezanne HR Software
 
 В этом руководстве описано, как интегрировать Cezanne HR Software с Azure Active Directory (Azure AD).
-
 Интеграция Cezanne HR Software с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD можно контролировать доступ к Cezanne HR Software.
-- Вы можете включить автоматический вход пользователей в Cezanne HR Software (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD можно контролировать доступ к Cezanne HR Software.
+* Учетные записи Azure AD позволяют включить автоматический вход пользователей в Cezanne HR Software (единый вход).
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cezanne HR Software, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка на Cezanne HR Software с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка на Cezanne HR Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Cezanne HR Software из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* В Cezanne HR Software поддерживается единый вход, инициированный **поставщиком услуг**
 
 ## <a name="adding-cezanne-hr-software-from-the-gallery"></a>Добавление Cezanne HR Software из коллекции.
+
 Чтобы настроить интеграцию Cezanne HR Software с Azure AD, вам потребуется добавить Cezanne HR Software из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Cezanne HR Software из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Cezanne HR Software**, выберите **Cezanne HR Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Cezanne HR Software в списке результатов](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_addfromgallery.png)
+4. В поле поиска введите **Cezanne HR Software**, выберите **Cezanne HR Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+    ![Cezanne HR Software в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Cezanne HR Software с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Cezanne HR Software соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Cezanne HR Software.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Cezanne HR Software.
+В рамках этого раздела вы настроите и проверите единый вход Azure AD в Cezanne HR Software с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить единый вход, свяжите пользователя Azure AD с соответствующим пользователем в Cezanne HR Software.
 
 Чтобы настроить и проверить единый вход в Azure AD в Cezanne HR Software, вам потребуется выполнить действия в следующих блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **Создание тестового пользователя Cezanne HR Software** требуется для создания пользователя Britta Simon в Cezanne HR Software, связанного с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Cezanne HR Software](#configure-cezanne-hr-software-single-sign-on)** требуется, чтобы определить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Cezanne HR Software](#create-cezanne-hr-software-test-user)** требуется, чтобы в Cezanne HR Software существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Cezanne HR Software.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Cezanne HR Software, сделайте следующее:**
+Чтобы настроить единый вход Azure AD в Cezanne HR Software, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Cezanne HR Software** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Cezanne HR Software** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Cezanne HR Software** выполните указанные ниже действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Cezanne HR Software](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес `https://w3.cezanneondemand.com/CezanneOnDemand/`.
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://w3.cezanneondemand.com:443/cezanneondemand/-/<tenantidentifier>/Saml/samlp`.
+    ![Сведения о домене и URL-адресах единого входа для приложения Cezanne HR Software](common/sp-identifier-reply.png)
+
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`.
+
+    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/`.
+
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com:443/cezanneondemand/-/<tenantidentifier>/Saml/samlp`.
     
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Cezanne HR Software](https://cezannehr.com/services/support/).
 
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Нажмите кнопку **Сохранить** .
+6. Требуемые URL-адреса можно скопировать из раздела **настройки Cezanne HR Software**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/cezannehrsoftware-tutorial/tutorial_general_400.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-1. В разделе **Cezanne HR Software Configuration** (Конфигурация Cezanne HR Software) щелкните **Configure Cezanne HR Software** (Настройка Cezanne HR Software), чтобы открыть окно **Настройка единого входа**.
+    а) URL-адрес входа.
 
-    ![Раздел "Конфигурация Cezanne HR Software"](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_configure.png)
+    б) Идентификатор Azure AD.
 
-1. Прокрутите вниз до раздела **Краткий справочник**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    в) URL-адрес выхода.
 
-    ![Раздел "Конфигурация Cezanne HR Software"](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_configure1.png)
+### <a name="configure-cezanne-hr-software-single-sign-on"></a>Настройка единого входа Cezanne HR Software
 
 1. В другом окне веб-браузера войдите на веб-сайт Cezanne HR Software своей компании в качестве администратора.
 
-1. В левой панели навигации щелкните **System Setup**(Настройка системы). Выберите пункт **Параметры безопасности**. Далее перейдите к пункту **Конфигурация единого входа**.
+2. В левой панели навигации щелкните **System Setup**(Настройка системы). Выберите пункт **Параметры безопасности**. Далее перейдите к пункту **Конфигурация единого входа**.
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_000.png)
 
-1. На панели **Allow users to log in using the following Single Sign-On (SSO) Service** (Разрешить пользователям вход с использованием следующей службы единого входа) установите флажок **SAML 2.0** и выберите параметр **Расширенная конфигурация**.
+3. На панели **Allow users to log in using the following Single Sign-On (SSO) Service** (Разрешить пользователям вход с использованием следующей службы единого входа) установите флажок **SAML 2.0** и выберите параметр **Расширенная конфигурация**.
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_001.png)
 
-1. Нажмите кнопку **Добавить** .
+4. Нажмите кнопку **Добавить** .
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_002.png)
 
-1. В разделе **SAML 2.0 Identity providers** (Поставщики удостоверений SAML) выполните следующие действия.
+5. В разделе **SAML 2.0 Identity providers** (Поставщики удостоверений SAML) выполните следующие действия.
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_003.png)
-    
+
     a. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
 
-    б) В текстовое поле **Entity Identifier** (Идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure. 
+    б) В текстовое поле **Идентификатор сущности** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В поле **SAML Binding** (Привязка SAML) укажите значение POST.
 
-    4.3. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    4.3. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
 
     д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
-    
-    Е. Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
-    
-    ж. Нажмите кнопку **ОК** . 
 
-1. Нажмите кнопку **Сохранить** .
+    Е. Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
+
+    ж. Нажмите кнопку **ОК** .
+
+6. Нажмите кнопку **Сохранить** .
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_004.png)
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
-
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка Azure Active Directory](./media/cezannehrsoftware-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/cezannehrsoftware-tutorial/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    ![Кнопка "Добавить"](./media/cezannehrsoftware-tutorial/create_aaduser_03.png)
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/cezannehrsoftware-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-cezanne-hr-software-test-user"></a>Создание тестового пользователя в Cezanne HR Software
-
-Чтобы разрешить пользователям Azure AD вход в Cezanne HR Software, их необходимо подготовить для Cezanne HR Software. В случае с Cezanne HR Software подготовка выполняется вручную.
-
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
-
-1.  Войдите на корпоративный сайт Cezanne HR Software в качестве администратора.
-
-1.  В левой панели навигации щелкните **System Setup**(Настройка системы). Перейдите в раздел **Управление пользователями**. Выберите **Добавить нового пользователя**.
-
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_005.png "Новый пользователь")
-
-1.  В разделе **Person Details** (Личные данные) выполните следующие действия.
-
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_006.png "Новый пользователь")
-    
-    a. Установите для параметра **Внутренний пользователь** значение "Выкл.".
-    
-    б) В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
- 
-    c. В текстовом поле **Last name** (Фамилия) введите фамилию, например **Simon**.
-    
-    4.3. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
-
-1.  В разделе **Account Information** (Сведения об учетной записи) выполните следующие действия.
-
-    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_007.png "Новый пользователь")
-    
-    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
-    
-    б) В текстовом поле **Password** (Пароль) введите пароль пользователя.
-    
-    c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
-    
-    4.3. Последовательно выберите **ОК**.
-
-1. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)**.
-
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
-
-1. Выберите значение в списке **Поставщик удостоверений** и в текстовом поле **Идентификатор пользователя** введите адрес электронной почты учетной записи Britta Simon.
-
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
-    
-1. Нажмите кнопку **Сохранить** .
-
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Cezanne HR Software.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения** и **Cezanne HR Software**.
 
-**Чтобы назначить Britta Simon в Cezanne HR Software, сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Cezanne HR Software**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Cezanne HR Software в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Cezanne HR Software**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Cezanne HR Software в списке приложений](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-cezanne-hr-software-test-user"></a>Создание тестового пользователя Cezanne HR Software
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+Чтобы разрешить пользователям Azure AD вход в Cezanne HR Software, их необходимо подготовить для Cezanne HR Software. В случае с Cezanne HR Software подготовка выполняется вручную.
+
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+
+1. Войдите на корпоративный сайт Cezanne HR Software в качестве администратора.
+
+2. В левой панели навигации щелкните **System Setup**(Настройка системы). Перейдите в раздел **Управление пользователями**. Выберите **Добавить нового пользователя**.
+
+    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_005.png "Новый пользователь")
+
+3. В разделе **PERSON DETAILS** (Личные данные) выполните следующие действия:
+
+    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_006.png "Новый пользователь")
+
+    a. Установите для параметра **Внутренний пользователь** значение "Выкл.".
+
+    б) В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
+
+    c. В текстовом поле **Last name** (Фамилия) введите фамилию, например **Simon**.
+
+    4.3. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+
+4. В разделе **Account Information** (Сведения об учетной записи) выполните следующие действия.
+
+    ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_007.png "Новый пользователь")
+
+    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
+
+    б) В текстовом поле **Password** (Пароль) введите пароль пользователя.
+
+    c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
+
+    4.3. Последовательно выберите **ОК**.
+
+5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)**.
+
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
+
+6. Выберите значение в списке **Поставщик удостоверений** и в текстовом поле **Идентификатор пользователя** введите адрес электронной почты учетной записи Britta Simon.
+
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
+
+7. Нажмите кнопку **Сохранить** .
+
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Cezanne HR Software на панели доступа, вы автоматически войдете в приложение Cezanne HR Software.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Cezanne HR Software на Панели доступа вы автоматически войдете в приложение Cezanne HR Software, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/cezannehrsoftware-tutorial/tutorial_general_01.png
-[2]: ./media/cezannehrsoftware-tutorial/tutorial_general_02.png
-[3]: ./media/cezannehrsoftware-tutorial/tutorial_general_03.png
-[4]: ./media/cezannehrsoftware-tutorial/tutorial_general_04.png
-
-[100]: ./media/cezannehrsoftware-tutorial/tutorial_general_100.png
-
-[200]: ./media/cezannehrsoftware-tutorial/tutorial_general_200.png
-[201]: ./media/cezannehrsoftware-tutorial/tutorial_general_201.png
-[202]: ./media/cezannehrsoftware-tutorial/tutorial_general_202.png
-[203]: ./media/cezannehrsoftware-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

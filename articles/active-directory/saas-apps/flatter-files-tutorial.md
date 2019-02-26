@@ -1,137 +1,132 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Flatter Files.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: f86fe5e3-0e91-40d6-869c-3df6912d27ea
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/21/2017
+ms.topic: tutorial
+ms.date: 02/15/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 744d18b39ffc696d0973628c60687c6b70fbcaad
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e086975f52a40eabcbec1fa4e7aedf1d717bde89
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168686"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56455557"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
 
 В этом руководстве описано, как интегрировать приложение Flatter Files с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с Flatter Files обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Flatter Files.
-- Вы можете включить автоматический вход пользователей в Flatter Files (единый вход) с помощью учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Flatter Files.
+* Учетные записи Azure AD позволяют включить автоматический вход для пользователей в приложение Flatter Files (единый вход).
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Flatter Files, вам потребуется:
 
-- подписка Azure AD;
-- подписка с поддержкой единого входа в Flatter Files.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Flatter Files с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Flatter Files из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* В приложении Flatter Files поддерживается единый вход, инициированный **поставщиком удостоверений**.
 
 ## <a name="adding-flatter-files-from-the-gallery"></a>Добавление Flatter Files из коллекции
+
 Чтобы настроить интеграцию Flatter Files с Azure AD, необходимо добавить Flatter Files из коллекции в список управляемых приложений SaaS.
 
 **Как добавить Flatter Files из коллекции**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Flatter Files**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/tutorial_flatterfiles_search.png)
+4. В поле поиска введите **Flatter Files**, выберите **Flatter Files** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Flatter Files** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+     ![Flatter Files в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/tutorial_flatterfiles_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Flatter Files с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Flatter Files соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Flatter Files.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Flatter Files.
+В рамках этого раздела вы настроите и проверите единый вход Azure AD в Flatter Files с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить единый вход, свяжите пользователя Azure AD с соответствующим пользователем в приложении Flatter Files.
 
 Чтобы настроить и проверить единый вход Azure AD в Flatter Files, вам потребуется выполнить следующие действия.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Flatter Files](#creating-a-flatter-files-test-user)** требуется для создания во Flatter Files пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в приложение Flatter Files](#configure-flatter-files-single-sign-on)** требуется, чтобы определить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Flatter Files](#create-flatter-files-test-user)** требуется, чтобы в приложении Flatter Files существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Flatter Files.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Как настроить единый вход Azure AD в Flatter Files**
+Чтобы настроить единый вход Azure AD в приложение Flatter Files, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Flatter Files** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Flatter Files** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatterfiles_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домен и URL-адреса Flatter Files** не нужно выполнять никаких действий, поскольку приложение уже предварительно интегрировано с Azure.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatterfiles_url.png)
- 
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatterfiles_certificate.png) 
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. Нажмите кнопку **Сохранить** .
+4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_general_400.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения Flatter Files](common/preintegrated.png)
 
-1. В разделе **Конфигурация Flatter Files** щелкните **Настроить Flatter Files**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatterfiles_configure.png) 
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+
+6. Требуемые URL-адреса можно скопировать из раздела **настройки Flatter Files**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    б) Идентификатор Azure AD.
+
+    в) URL-адрес выхода.
+
+### <a name="configure-flatter-files-single-sign-on"></a>Настройка единого входа в приложении Flatter Files
 
 1. Войдите в приложение Flatter Files с правами администратора.
 
-1. Щелкните **Панель мониторинга**. 
+2. Щелкните **Панель мониторинга**. 
    
     ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_05.png)  
 
-1. Выберите элемент **Settings** (Параметры), а затем выполните следующие действия на вкладке **Company** (Компания). 
+3. Выберите элемент **Settings** (Параметры), а затем выполните следующие действия на вкладке **Company** (Компания). 
    
     ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_06.png)  
     
@@ -139,7 +134,7 @@ ms.locfileid: "56168686"
     
     б) Нажмите кнопку **Configure SAML** (Настроить SAML).
 
-1. В диалоговом окне **SAML Configuration** (Настройка SAML) выполните следующие действия. 
+4. В диалоговом окне **SAML Configuration** (Настройка SAML) выполните следующие действия. 
    
     ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_08.png)  
    
@@ -148,48 +143,64 @@ ms.locfileid: "56168686"
     >[!NOTE]
     >Если у вас нет зарегистрированного домена, обратитесь в службу поддержки Flatter Files по адресу [support@flatterfiles.com](mailto:support@flatterfiles.com). 
     
-    б) В текстовое поле **URL-адрес поставщика удостоверений** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    б) В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте **URL-адрес для входа**, скопированный на портале Azure.
    
     c.  Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
     4.3. Нажмите кнопку **Обновить**.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/flatter-files-tutorial/create_aaduser_04.png) 
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    г) Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-flatter-files-test-user"></a>Создание тестового пользователя Flatter Files
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Flatter Files.
+
+1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения** и **Flatter Files**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **Flatter Files**.
+
+    ![Ссылка на Flatter Files в списке приложений](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-flatter-files-test-user"></a>Создание тестового пользователя Flatter Files
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Flatter Files.
 
@@ -197,13 +208,13 @@ ms.locfileid: "56168686"
 
 1. Войдите на сайт своей компании в службе **Flatter Files** с правами администратора.
 
-1. В области навигации слева щелкните **Settings** (Параметры), а затем выберите вкладку **Users** (Пользователи).
+2. В области навигации слева щелкните **Settings** (Параметры), а затем выберите вкладку **Users** (Пользователи).
    
     ![Создание пользователя Flatter Files](./media/flatter-files-tutorial/tutorial_flatter_files_09.png)
 
-1. Нажмите кнопку **Add User**(Добавить пользователя). 
+3. Нажмите кнопку **Add User**(Добавить пользователя). 
 
-1. На странице **Добавление пользователя** выполните следующие действия.
+4. На странице **Добавление пользователя** выполните следующие действия.
    
     ![Создание пользователя Flatter Files](./media/flatter-files-tutorial/tutorial_flatter_files_10.png)
 
@@ -216,61 +227,17 @@ ms.locfileid: "56168686"
     4.3. Нажмите кнопку **Submit**(Отправить).   
 
 
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Flatter Files.
-
-![Назначение пользователя][200] 
-
-**Как назначить пользователя Britta Simon в Flatter Files**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-1. В списке приложений выберите **Flatter Files**.
-
-    ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatterfiles_app.png) 
-
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][202] 
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][203]
-
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкните элемент Flatter Files на панели доступа, чтобы автоматически войти в приложение Flatter Files.
-См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув плитку Flatter Files на Панели доступа, вы автоматически войдете в приложение Flatter Files, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/flatter-files-tutorial/tutorial_general_01.png
-[2]: ./media/flatter-files-tutorial/tutorial_general_02.png
-[3]: ./media/flatter-files-tutorial/tutorial_general_03.png
-[4]: ./media/flatter-files-tutorial/tutorial_general_04.png
-
-[100]: ./media/flatter-files-tutorial/tutorial_general_100.png
-
-[200]: ./media/flatter-files-tutorial/tutorial_general_200.png
-[201]: ./media/flatter-files-tutorial/tutorial_general_201.png
-[202]: ./media/flatter-files-tutorial/tutorial_general_202.png
-[203]: ./media/flatter-files-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 09/10/2018
+ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 160d42725abdb91af4f83696c2bceae38bbab67d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: dd9429ade750810138335c522d68df5cd595f320
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869336"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310989"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-c35-in-computer-vision"></a>Краткое руководство. Извлечению рукописного текста с помощью REST API компьютерного зрения и C#
+# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-c-in-computer-vision"></a>Краткое руководство. Извлечению рукописного текста с помощью REST API компьютерного зрения и C#
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинного чтения.
 
 > [!IMPORTANT]
 > В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Recognize Text возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201), чтобы проверить статус и вернуть результаты вызова метода распознавания текста.
@@ -425,7 +425,7 @@ namespace CSHttpClientSample
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с простым приложением Windows, которое использует Компьютерное зрение для выполнения оптического распознавания символов (OCR). Создавайте эскизы с примененной интеллектуальной обрезкой. Обнаруживайте и классифицируйте визуальные признаки (включая лица) на изображениях и добавляйте теги и описания для этих признаков.
 
 > [!div class="nextstepaction"]
-> [Руководство по API компьютерного зрения для C&#35;](../Tutorials/CSharpTutorial.md)
+> [Руководство. Создание приложения для обработки изображений — C#](../Tutorials/CSharpTutorial.md)

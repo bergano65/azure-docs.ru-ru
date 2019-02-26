@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения для обработки изображений — C#
+title: 'Пример: изучение приложения для обработки изображений на C#'
 titleSuffix: Computer Vision - Cognitive Services - Azure
 description: Изучите базовое приложение Windows, в котором используется API компьютерного зрения в Microsoft Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
@@ -7,18 +7,18 @@ author: PatrickFarley
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: computer-vision
-ms.topic: article
-ms.date: 08/28/2018
+ms.topic: sample
+ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: b944325287593a028d28545731370dc9ea6a5ac2
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: a23e45cb1e75305f41c81077c90282352327b72d
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55224927"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310955"
 ---
-# <a name="tutorial-build-an-image-processing-app---c35"></a>Руководство. Создание приложения для обработки изображений — C&#35;
+# <a name="sample-explore-an-image-processing-app-with-c"></a>Пример: изучение приложения для обработки изображений с использованием C#
 
 Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Приведенный ниже пример позволяет отправить URL-адрес изображения или локально хранящийся файл. Вы можете использовать этот пример с открытым кодом в качестве шаблона для создания собственного приложения для Windows с использованием API компьютерного зрения и Windows Presentation Foundation (WPF), входящего в состав .NET Framework.
 

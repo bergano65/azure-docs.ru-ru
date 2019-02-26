@@ -1,6 +1,6 @@
 ---
 title: 'Пример: конкретная группа безопасности сети на каждой сетевой карте'
-description: Этот пример политики требует, чтобы определенная группа безопасности сети использовалась для каждого виртуального сетевого интерфейса.
+description: В этом примере определения политики необходимо, чтобы использовалась определенная группа безопасности сети для каждого виртуального сетевого интерфейса.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 37701a2240f5b017efdbd051972952c9f0449d69
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: d297d296f8b33122ce2b8079c5ee6c79705bcc55
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245972"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342564"
 ---
-# <a name="nsg-x-on-every-nic"></a>Конкретная группа безопасности сети на каждой сетевой карте
+# <a name="sample---network-security-group-x-on-every-nic"></a>Пример группы безопасности сети на каждой сетевой карте
 
 Эта политика требует, чтобы определенная группа безопасности сети использовалась для каждого виртуального сетевого интерфейса. Вы можете указать идентификатор требуемой группы безопасности сети.
 

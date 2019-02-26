@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: a9ba02478b17b29343236a91fe637357c1414717
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: ebc0f93055a014888d01fa9bffc7702b99380234
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015328"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417471"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -93,7 +93,7 @@ ms.locfileid: "54015328"
     
     a. Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
 
-    b. Выберите **Создать новую**и укажите имя группы ресурсов.
+    б) Выберите **Создать новую**и укажите имя группы ресурсов.
     
     Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
 
@@ -123,7 +123,7 @@ ms.locfileid: "54015328"
 
     ![Новая связанная служба-источник](./media/tutorial-copy-data-tool/new-source-linked-service.png)
 
-    b. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
+    б) В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
 
     ![Выбор источника больших двоичных объектов](./media/tutorial-copy-data-tool/select-blob-source.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "54015328"
 
     ![Настройка хранилища Azure](./media/tutorial-copy-data-tool/configure-azure-storage.png)
 
-    d. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
+    4.3. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
 
     ![Выбор исходной связанной службы](./media/tutorial-copy-data-tool/select-source-linked-service.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "54015328"
 
     ![Выбор файла или папки входных данных](./media/tutorial-copy-data-tool/specify-source-path.png)
 
-    b. Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
+    б) Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
 1. На странице **File format settings** (Параметры формата файла) убедитесь, что средство правильно автоматически определило разделители столбцов и строк. Щелкните **Далее**. Кроме того, на этой странице вы можете просмотреть данные и схему входных данных.
 
@@ -152,7 +152,7 @@ ms.locfileid: "54015328"
 
     ![Новая связанная служба-приемник](./media/tutorial-copy-data-tool/new-sink-linked-service.png)
 
-    b. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
+    б) В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Далее**.
 
     ![Выбор Базы данных SQL Azure](./media/tutorial-copy-data-tool/select-azure-sql-db.png)
 
@@ -160,7 +160,7 @@ ms.locfileid: "54015328"
 
     ![Настройка Базы данных SQL Azure](./media/tutorial-copy-data-tool/config-azure-sql-db.png)
 
-    d. Выберите созданную связанную службу в качестве приемника, а затем нажмите кнопку **Далее**.
+    4.3. Выберите созданную связанную службу в качестве приемника, а затем нажмите кнопку **Далее**.
 
     ![Выбор связанной службы-приемника](./media/tutorial-copy-data-tool/select-sink-linked-service.png)
 

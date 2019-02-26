@@ -2,33 +2,26 @@
 title: Создание VPN-шлюза Azure и управление им с помощью PowerShell | Документация Майкрософт
 description: Руководство по созданию VPN-шлюза и управлению им с помощью модуля Azure PowerShell
 services: vpn-gateway
-documentationcenter: na
 author: yushwang
-manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: infrastructure
-ms.date: 05/14/2018
+ms.date: 02/11/2019
 ms.author: yushwang
 ms.custom: mvc
-ms.openlocfilehash: 17c8a55c27a276fa1e2e04ebb9f748fa6d59a9dc
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: afe71953e9917ccf274742124d59cb790f15521b
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55505977"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56414139"
 ---
-# <a name="create-and-manage-vpn-gateway-with-the-azure-powershell-module"></a>Создание VPN-шлюза и управление им с помощью модуля Azure PowerShell
+# <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Руководство. Создание VPN-шлюза и управление им с помощью PowerShell
 
 VPN-шлюзы Azure предоставляют распределенное подключение между локальными сетями клиента и Azure. В этом руководстве приведены основные этапы развертывания VPN-шлюза Azure, такие как создание VPN-шлюза и управление им. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание VPN-шлюза
+> * Просмотр общедоступного IP-адреса
 > * Изменение размера VPN-шлюза.
 > * Сброс VPN-шлюза
 
@@ -38,13 +31,13 @@ VPN-шлюзы Azure предоставляют распределенное п�
 
 ### <a name="azure-cloud-shell-and-azure-powershell"></a>Azure PowerShell в Azure Cloud Shell
 
-[!INCLUDE [working with cloudshell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.3 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure. 
+[!INCLUDE [working with cloud shell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
 
 ## <a name="common-network-parameter-values"></a>Значения общих параметров сети
 
-Измените следующие значения на основе настроек среды и сети.
+Измените приведенные ниже значения на основе настроек среды и сети, затем скопируйте и вставьте их, чтобы указать переменные для работы с этим руководством. Если время сеанса Cloud Shell истечет или вам потребуется использовать другое окно PowerShell, скопируйте и вставьте переменные в новый сеанс, чтобы продолжить работу с этим руководством.
 
 ```azurepowershell-interactive
 $RG1         = "TestRG1"
@@ -64,23 +57,23 @@ $GwIP1       = "VNet1GWIP"
 $GwIPConf1   = "gwipconf1"
 ```
 
-## <a name="create-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Сначала необходимо создать группу ресурсов. В следующем примере группа ресурсов с именем *TestRG1* создается в регионе *восточная часть США*.
+Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Сначала необходимо создать группу ресурсов. В следующем примере группа ресурсов с именем *TestRG1* создается в регионе *восточная часть США*.
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -ResourceGroupName $RG1 -Location $Location1
+New-AzResourceGroup -ResourceGroupName $RG1 -Location $Location1
 ```
 
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-VPN-шлюз Azure предоставляет распределенное подключение и функциональные возможности сервера VPN-подключения типа "точка — сеть" для виртуальной сети. Добавьте VPN-шлюз в имеющуюся виртуальную сеть или создайте виртуальную сеть и шлюз. В этом примере создается виртуальная сеть с тремя подсетями (внутренняя, серверная и подсеть шлюза) с помощью команд [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig) и [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork):
+VPN-шлюз Azure предоставляет распределенное подключение и функциональные возможности сервера VPN-подключения типа "точка — сеть" для виртуальной сети. Добавьте VPN-шлюз в имеющуюся виртуальную сеть или создайте виртуальную сеть и шлюз. В этом примере создается виртуальная сеть с тремя подсетями (внутренняя, серверная подсеть и подсеть шлюза) с помощью команд [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) и [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork):
 
 ```azurepowershell-interactive
-$fesub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubnet1 -AddressPrefix $FEPrefix1
-$besub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubnet1 -AddressPrefix $BEPrefix1
-$gwsub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $GWSubnet1 -AddressPrefix $GwPrefix1
-$vnet   = New-AzureRmVirtualNetwork `
+$fesub1 = New-AzVirtualNetworkSubnetConfig -Name $FESubnet1 -AddressPrefix $FEPrefix1
+$besub1 = New-AzVirtualNetworkSubnetConfig -Name $BESubnet1 -AddressPrefix $BEPrefix1
+$gwsub1 = New-AzVirtualNetworkSubnetConfig -Name $GWSubnet1 -AddressPrefix $GwPrefix1
+$vnet   = New-AzVirtualNetwork `
             -Name $VNet1 `
             -ResourceGroupName $RG1 `
             -Location $Location1 `
@@ -90,26 +83,26 @@ $vnet   = New-AzureRmVirtualNetwork `
 
 ## <a name="request-a-public-ip-address-for-the-vpn-gateway"></a>Запрос общедоступного IP-адреса для VPN-шлюза
 
-VPN-шлюзы Azure взаимодействуют с локальными VPN-устройствами через Интернет, чтобы выполнять согласование по протоколу IKE и устанавливать туннели IPsec. Создайте и назначьте общедоступный IP-адрес VPN-шлюза, как показано в приведенном ниже примере, используя команды [New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress) и [New-AzureRmVirtualNetworkGatewayIpConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayipconfig):
+VPN-шлюзы Azure взаимодействуют с локальными VPN-устройствами через Интернет, чтобы выполнять согласование по протоколу IKE и устанавливать туннели IPsec. Создайте и назначьте общедоступный IP-адрес VPN-шлюза, как показано в приведенном ниже примере, используя команды [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) и [New-AzVirtualNetworkGatewayIpConfig](/powershell/module/az.network/new-azvirtualnetworkgatewayipconfig):
 
 > [!IMPORTANT]
 > Сейчас для шлюза можно использовать только динамический общедоступный IP-адрес. Статический IP-адрес не поддерживается в VPN-шлюзах Azure.
 
 ```azurepowershell-interactive
-$gwpip    = New-AzureRmPublicIpAddress -Name $GwIP1 -ResourceGroupName $RG1 `
+$gwpip    = New-AzPublicIpAddress -Name $GwIP1 -ResourceGroupName $RG1 `
               -Location $Location1 -AllocationMethod Dynamic
-$subnet   = Get-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
+$subnet   = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
               -VirtualNetwork $vnet
-$gwipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GwIPConf1 `
+$gwipconf = New-AzVirtualNetworkGatewayIpConfig -Name $GwIPConf1 `
               -Subnet $subnet -PublicIpAddress $gwpip
 ```
 
-## <a name="create-vpn-gateway"></a>Создание VPN-шлюза
+## <a name="create-a-vpn-gateway"></a>Создание VPN-шлюза
 
-Для создания VPN-шлюза требуется не менее 45 минут. Когда шлюз будет готов, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением. Создайте VPN-шлюз с помощью командлета [New-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/New-AzureRmVirtualNetworkGateway).
+Для создания VPN-шлюза требуется не менее 45 минут. Когда шлюз будет готов, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением. Создайте VPN-шлюз с помощью командлета [New-AzVirtualNetworkGateway](/powershell/module/az.network/New-azVirtualNetworkGateway).
 
 ```azurepowershell-interactive
-New-AzureRmVirtualNetworkGateway -Name $Gw1 -ResourceGroupName $RG1 `
+New-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroupName $RG1 `
   -Location $Location1 -IpConfigurations $gwipconf -GatewayType Vpn `
   -VpnType RouteBased -GatewaySku VpnGw1
 ```
@@ -119,47 +112,51 @@ New-AzureRmVirtualNetworkGateway -Name $Gw1 -ResourceGroupName $RG1 `
 * VpnType. Используйте **RouteBased** для взаимодействия с более широким диапазоном VPN-устройств и получения доступа к дополнительным возможностям маршрутизации.
 * GatewaySku. Значение по умолчанию — **VpnGw1**. Измените его на VpnGw2 или VpnGw3, если требуется более высокая пропускная способность или дополнительные подключения. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 
+Если вы используете функцию "Попробовать", время сеанса может истечь. Это не страшно. Вы по-прежнему сможете создать шлюз.
+
 Когда шлюз будет готов, можно создать подключение между вашей и другой виртуальной сетью или между виртуальной сетью и локальным расположением. Вы также можете настроить подключение P2S к вашей виртуальной сети с клиентского компьютера.
 
-## <a name="resize-vpn-gateway"></a>Изменение размера VPN-шлюза
+## <a name="view-the-gateway-public-ip-address"></a>Просмотр общедоступного IP-адреса шлюза
 
-Номер SKU VPN-шлюза можно изменить после создания шлюза. Разные номера SKU шлюза поддерживают различные спецификации (например, пропускная способность, число подключений и т. д.). В следующем примере используется команда [Resize-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/Resize-AzureRmVirtualNetworkGateway) для изменения размера шлюза с VpnGw1 на VpnGw2. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
+Если вам известно имя общедоступного IP-адреса, используйте команду [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azurermps-6.8.1), чтобы просмотреть общедоступный IP-адрес, назначенный шлюзу.
+
+Если время сеанса истекло, скопируйте общие параметры сети, указанные в начале этого руководства, в новый сеанс и продолжите работу.
 
 ```azurepowershell-interactive
-$gateway = Get-AzureRmVirtualNetworkGateway -Name $Gw1 -ResourceGroup $RG1
-Resize-AzureRmVirtualNetworkGateway -GatewaySku VpnGw2 -VirtualNetworkGateway $gateway
+$myGwIp = Get-AzPublicIpAddress -Name $GwIP1 -ResourceGroup $RG1
+$myGwIp.IpAddress
+```
+
+## <a name="resize-a-gateway"></a>Изменение размера шлюза
+
+Номер SKU VPN-шлюза можно изменить после создания шлюза. Разные номера SKU шлюза поддерживают различные спецификации (например, пропускная способность, число подключений и т. д.). В следующем примере используется команда [Resize-AzVirtualNetworkGateway](/powershell/module/az.network/Resize-azVirtualNetworkGateway) для изменения размера шлюза с VpnGw1 на VpnGw2. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
+
+```azurepowershell-interactive
+$gateway = Get-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroup $RG1
+Resize-AzVirtualNetworkGateway -GatewaySku VpnGw2 -VirtualNetworkGateway $gateway
 ```
 
 Изменение размера VPN-шлюза также занимает около 30–45 минут. Эта операция **не** будет прерывать или удалять имеющиеся подключения и конфигурации.
 
-## <a name="reset-vpn-gateway"></a>Сброс VPN-шлюза
+## <a name="reset-a-gateway"></a>Сброс параметров шлюза
 
-В рамках выполнения шагов по устранению неполадок вы можете сбросить VPN-шлюз Azure, чтобы выполнить принудительный перезапуск конфигураций туннеля IPsec/IKE. Используйте команду [Reset-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/Reset-AzureRmVirtualNetworkGateway), чтобы сбросить шлюз.
+В рамках выполнения шагов по устранению неполадок вы можете сбросить VPN-шлюз Azure, чтобы выполнить принудительный перезапуск конфигураций туннеля IPsec/IKE. Используйте команду [Reset-AzVirtualNetworkGateway](/powershell/module/az.network/Reset-azVirtualNetworkGateway), чтобы сбросить параметры шлюза.
 
 ```azurepowershell-interactive
-$gateway = Get-AzureRmVirtualNetworkGateway -Name $Gw1 -ResourceGroup $RG1
-Reset-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gateway
+$gateway = Get-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroup $RG1
+Reset-AzVirtualNetworkGateway -VirtualNetworkGateway $gateway
 ```
 
 Дополнительные сведения см. в статье [Сброс VPN-шлюза](vpn-gateway-resetgw-classic.md).
 
-## <a name="get-the-gateway-public-ip-address"></a>Получение общедоступного IP-адреса шлюза
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам известно имя общедоступного IP-адреса, используйте команду [Get-AzureRmPublicIpAddress](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermpublicipaddress?view=azurermps-6.8.1), чтобы просмотреть общедоступный IP-адрес, назначенный шлюзу.
+При переходе к [следующему руководству](vpn-gateway-tutorial-vpnconnection-powershell.md) сохраните эти ресурсы, так как они являются обязательными.
 
-```azurepowershell-interactive
-$myGwIp = Get-AzureRmPublicIpAddress -Name $GwIP1 -ResourceGroup $RG1
-$myGwIp.IpAddress
-```
-
-## <a name="delete-vpn-gateway"></a>Удаление VPN-шлюза
-
-Для завершения настройки распределенного подключения и подключения типа "виртуальная сеть — виртуальная сеть" требуется несколько типов ресурсов, а также VPN-шлюз. Удалите подключения, связанные с VPN-шлюзом перед удалением самого шлюза. После удаления шлюза можно удалить назначенные для него общедоступные IP-адреса. Подробные сведения см. в статье [Delete a virtual network gateway using PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md) (Удаление шлюза виртуальной сети с помощью PowerShell).
-
-Если шлюз является частью прототипа развертывания или развертывания для подтверждения концепции, вы можете использовать команду [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup), чтобы удалить группу ресурсов, VPN-шлюз и все связанные ресурсы.
+Но если шлюз является частью прототипа, теста или развертывания для подтверждения концепции, вы можете использовать команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup), чтобы удалить группу ресурсов, VPN-шлюз и все связанные ресурсы.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name $RG1
+Remove-AzResourceGroup -Name $RG1
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -168,6 +165,7 @@ Remove-AzureRmResourceGroup -Name $RG1
 
 > [!div class="checklist"]
 > * Создание VPN-шлюза
+> * Просмотр общедоступного IP-адреса
 > * Изменение размера VPN-шлюза.
 > * Сброс VPN-шлюза
 

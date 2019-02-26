@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 8b95c311cd91ab6db84fb6640be5b6c1a6c0a9a5
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 3501284be2430941863bbae90f044df8ba5e7a2a
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443123"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454810"
 ---
 # <a name="monitor-published-apis"></a>Мониторинг опубликованных API-интерфейсов
 
@@ -40,8 +40,8 @@ ms.locfileid: "52443123"
 ## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
++ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -124,7 +124,7 @@ ms.locfileid: "52443123"
 
     ![Журналы диагностики](./media/api-management-azure-monitor/api-management-diagnostic-logs-blade.png)
 
-3. Щелкните **Включить диагностику**. Вы можете архивировать журналы диагностики и метрики в учетную запись хранения, передать их потоком в концентратор событий или отправить в Log Analytics. 
+3. Щелкните **Включить диагностику**. Вы можете архивировать журналы диагностики и метрики в учетную запись хранения, передать их потоком в концентратор событий или отправить в журналы Azure Monitor. 
 
 Сейчас в службе управления API предоставляются журналы диагностики (выполняемые в пакетном режиме каждый час) отдельных запросов API со следующей схемой каждой записи:
 

@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/14/2018
+ms.date: 02/14/2019
 ms.author: markvi
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c41771db4ff674b2f0df941286358d3154034ea1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 5e6f1174351f0907ce2bef21324c7ba81c81498b
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194365"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56266719"
 ---
 # <a name="what-is-conditional-access-in-azure-active-directory"></a>Что представляет собой условный доступ в Azure Active Directory?
 
@@ -109,11 +109,7 @@ ms.locfileid: "56194365"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы хотите получить дополнительные сведения об:
-    - условиях, ознакомьтесь с разделом [Условия в условном доступе Azure Active Directory](conditions.md);
+Сведения о реализации условного доступа см.в статье [Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory](plan-conditional-access.md).
 
-    - элементах управления доступом, ознакомьтесь с разделом [Элементы управления условным доступом в Azure Active Directory](controls.md).
 
-- Если вы хотите получить опыт настройки политик условного доступа, ознакомьтесь со статьей [Quickstart: Require MFA for specific apps with Azure Active Directory conditional access](app-based-mfa.md) (Краткое руководство: требование выполнения Многофакторной идентификации в определенных приложениях с помощью условного доступа Azure Active Directory).
 
-- Поэтапный план развертывания с использованием рекомендуемых политик условного доступа можжно найти [здесь](https://aka.ms/conditionalaccessdeploymentplan)

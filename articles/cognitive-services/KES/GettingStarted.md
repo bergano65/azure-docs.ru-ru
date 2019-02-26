@@ -10,12 +10,12 @@ ms.subservice: knowledge-exploration
 ms.topic: sample
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: c9c336b9aed06095849f33060ff6969e8b7bfcaf
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 815147abba444f0a55a8455c0a818aa048271b92
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55881712"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56309647"
 ---
 # <a name="get-started-with-the-knowledge-exploration-service"></a>Начало работы со Службой поиска и распознавания данных
 
@@ -228,7 +228,7 @@ ms.locfileid: "55881712"
 
 Чтобы разрешить `kes.exe` доступ к учетной записи Azure, [загрузите файл параметров публикации Azure](https://portal.azure.com/#blade/Microsoft_Azure_ClassicResources/PublishingProfileBlade) с портала Azure. Если будет предложено, войдите с требуемой учетной записи Azure. Сохраните файл как *AzurePublishSettings.xml* в рабочей папке, в которой запускаете `kes.exe`.
 
-Существует два способа создания и размещения больших индексов. Первый — подготовить схему и файл данных на виртуальной машине Windows в Azure. Затем запустите [`kes.exe build_index`](#building-index) для локального построения индекса на виртуальной машине, без каких-либо ограничений размера. Результирующий индекс может размещаться локально на виртуальной машине, используя [`kes.exe host_service`](#hosting-service) для быстрого создания прототипов, опять же без каких-либо ограничений. Подробные инструкции см. в статье [Краткое руководство. Создание виртуальной машины под управлением Windows на портале Azure](../../../articles/virtual-machines/windows/quick-create-portal.md).
+Существует два способа создания и размещения больших индексов. Первый — подготовить схему и файл данных на виртуальной машине Windows в Azure. Затем запустите `kes.exe build_index` для локального построения индекса на виртуальной машине без каких-либо ограничений размера. Результирующий индекс может размещаться локально на виртуальной машине, а его прототип быстро создаваться с помощью `kes.exe host_service` опять же без каких-либо ограничений. Подробные инструкции см. в статье [Краткое руководство. Создание виртуальной машины под управлением Windows на портале Azure](../../../articles/virtual-machines/windows/quick-create-portal.md).
 
 Второй метод предусматривает выполнение удаленной сборки Azure с помощью [`kes.exe build_index`](CommandLine.md#build_index-command) с параметром `--remote`. Указывается размер виртуальной машины Azure. Если указан параметр `--remote`, команда создает временную виртуальную машину Azure указанного размера. Затем строит индекс на виртуальной машине, передает индекс в целевое хранилище BLOB-объектов и удаляет виртуальную машину после завершения. Подписка Azure оплачивается по стоимости виртуальной машины во время создания индекса.
 

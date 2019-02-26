@@ -1,6 +1,6 @@
 ---
 title: 'Пример: применение шаблона соответствия тегов'
-description: В этом примере политики требуется, чтобы ресурсы соответствовали шаблону значению тега.
+description: В этом примере определения политики требуется, чтобы ресурсы соответствовали шаблону значения тега.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: f3e4246141a9d9de1a7d6451422e1e55a4c3545f
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 9510bb147a8eb9687e074191e8fcc404c847dc0a
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244425"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342666"
 ---
-# <a name="enforce-tag-match-pattern-for-tag-values"></a>Принудительное применение шаблона соответствия тегов для значений тегов
+# <a name="sample---enforce-tag-match-pattern-for-tag-values"></a>Пример принудительного применения шаблона соответствия тегов для значений тегов
 
 Значение тега должно соответствовать шаблону MATCH. Укажите допустимый шаблон в правиле политики.
 

@@ -2,14 +2,14 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 12/12/2018
+ms.date: 2/20/2019
 ms.author: erhopf
-ms.openlocfilehash: d7c3328c104cd6084f92d7dd3f7708463a9109ba
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 758577f91766d621220d7efdd72e7c2705ccff7f
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53729396"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56448251"
 ---
 1. Запустите Eclipse.
 
@@ -45,7 +45,7 @@ ms.locfileid: "53729396"
 
      [!code-xml[POM Repositories](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#repositories)]
 
-   * Также добавьте элемент `dependencies`, указав пакет SDK службы "Речь" версии 1.2.0 в виде зависимости.
+   * Также добавьте элемент `dependencies`, указав пакет SDK службы "Речь" версии 1.3.0 в виде зависимости.
 
      [!code-xml[POM Dependencies](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#dependencies)]
 

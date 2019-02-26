@@ -1,6 +1,6 @@
 ---
-title: Руководство по предоставлению доступа пользователям с помощью RBAC и Azure PowerShell | Документация Майкрософт
-description: Используйте контроль доступа на основе ролей (RBAC), чтобы предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
+title: Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell | Документация Microsoft
+description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 7f5e67edd2a5300ae1898e2620ee8ace80ac6d92
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: b9aefc8eae733d9f43d1f5399c1464b40367f09e
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109033"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343482"
 ---
-# <a name="tutorial-grant-access-for-a-user-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -279,4 +279,4 @@ ms.locfileid: "56109033"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Управление доступом с помощью RBAC и PowerShell](role-assignments-powershell.md)
+> [Управление доступом с помощью RBAC и Azure PowerShell](role-assignments-powershell.md)

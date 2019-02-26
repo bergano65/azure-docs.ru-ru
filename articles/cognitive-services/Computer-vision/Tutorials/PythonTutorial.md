@@ -1,5 +1,5 @@
 ---
-title: Руководство. Выполнение операций с изображениями — Python
+title: Руководство по Выполнение операций с изображениями — Python
 titlesuffix: Azure Cognitive Services
 description: Узнайте о том, как использовать API компьютерного зрения с Python с помощью записных книжек Jupyter. Визуализируйте результаты с помощью популярных библиотек.
 services: cognitive-services
@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 11/06/2018
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: afb937f1be780c35ef44023acfedeb38a6b6a877
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: b55b1fdf3b93d3865bdb115e43ff8583af61b45d
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875076"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326431"
 ---
-# <a name="tutorial-computer-vision-api-python"></a>Руководство. API компьютерного зрения с Python
+# <a name="tutorial-computer-vision-api-python"></a>Руководство по API компьютерного зрения с Python
 
-В этом руководстве показано, как использовать API компьютерного зрения в Python и как визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Чтобы узнать, как приступить к работе с интерактивными записными книжками Jupyter Notebook, обратитесь к [документации по Jupyter](https://jupyter.readthedocs.io/en/latest/index.html).
+В этом руководстве показано, как использовать API компьютерного зрения в Python и как визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Сведения о том, как приступить к работе с интерактивными записными книжками Jupyter Notebook, см. в [документации по Jupyter](https://jupyter.readthedocs.io/en/latest/index.html).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

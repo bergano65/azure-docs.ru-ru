@@ -14,16 +14,14 @@ ms.date: 01/25/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 979867e7630c21b0bd724967dbc79c5f8155ca5e
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 7371808db8d40948f501b051692172fd6a84e2ac
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237184"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270221"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Узнайте, как получить секреты из Azure Key Vault и передавать эти секреты в качестве параметров во время развертывания Resource Manager. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
@@ -192,6 +190,9 @@ New-AzResourceGroupDeployment `
     -TemplateFile azuredeploy.json `
     -TemplateParameterFile azuredeploy.parameters.json
 ```
+
+> [!NOTE]
+> Существует проблема с вводом-выводом файла при использовании Azure PowerShell в Cloud Shell.  Отображается сообщение об ошибке: *Cannot retrieve the dynamic parameters for the cmdlet. Cannot find path 'Azure:/azuredeploy.json' because it does not exist* (Не удалось получить динамические параметры командлета. Не удалось найти путь Azure:/azuredeploy.json, так как он не существует).  Временное решение — не добавлять параметры **-TemplateFile** и **TemplateParameterFile** в команду `New-AzResourceGroupDeploy`. Команда предложит ввести имя файла.
 
 При развертывании шаблона используйте ту же группу ресурсов, что и для хранилища ключей. Это упрощает очистку ресурсов. Вам нужно удалить одну группу ресурсов вместо двух.
 

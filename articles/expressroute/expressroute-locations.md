@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/25/2018
+ms.date: 02/20/2019
 ms.author: pareshmu
-ms.openlocfilehash: 913661b1d4360eba90d7e827d08d1b48bc7b4e71
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: c80477eee18eda2bb3f6e273fdab760d27531310
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244408"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56456441"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -112,14 +112,14 @@ ExpressRoute поддерживается во всех регионах и ра
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Поддерживаются |Поддерживаются |Кейптаун, Йоханнесбург |
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживаются |Поддерживаются |Амстердам, Атланта, Вашингтон (округ Колумбия), Гонконг, Даллас, Денвер, Дублин, Квебек, Кремниевая долина, Лас-Вегас, Лондон, Лос-Анджелес, Майами, Мельбурн, Нью-Йорк, Сан-Антонио, Сидней, Сингапур, Сингапур 2, Сиэтл, Торонто, Чикаго |
 | **[MTN](http://www.mtnbusiness.com/en/enterprise/Pages/microsoft-express-route.aspx)** |Поддерживаются |Поддерживаются |Лондон |
-| **[Neutrona Networks](http://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживаются |Поддерживаются |Даллас, Майами, Сан-Паулу |
+| **[Neutrona Networks](http://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживаются |Поддерживаются |Даллас, Лос-Анджелес, Майами, Сан-Паулу |
 | **[Next Generation Data](http://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживаются |Поддерживаются |Ньюпорт (Уэльс) |
 | **[NEXTDC](https://www.nextdc.com/services/axon-ethernet/microsoft-expressroute)** |Поддерживаются |Поддерживаются |Мельбурн, Перт, Сидней |
 | **[NTT Communications](http://www.ntt.com/en/services/network/virtual-private-network.html)** |Поддерживаются |Поддерживаются |Амстердам, Специальный административный регион Гонконг, Лондон, Лос-Анджелес, Осака, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[NTT EAST](https://flets.com/cloudgateway/crossconnect/)** |Поддерживаются |Поддерживаются |Токио |
 | **[NTT SmartConnect](http://cloud.nttsmc.com/cxc/azure.html)** |Поддерживаются |Поддерживаются |Осака |
 | **[Optus](https://www.optus.com.au/enterprise/networking/network-connectivity/express-link)** |Поддерживаются |Поддерживаются |Мельбурн, Сидней |
-| **[Orange](http://www.orange-business.com/en/products/business-vpn-galerie)** |Поддерживаются |Поддерживаются |Амстердам, Гонконг, Лондон, Париж, Сан-Паулу, Кремниевая долина, Сингапур, Сидней, Вашингтон (округ Колумбия) |
+| **[Orange](http://www.orange-business.com/en/products/business-vpn-galerie)** |Поддерживаются |Поддерживаются |Амстердам, Гонконг, Лондон, Париж, Сан-Паулу, Кремниевая долина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[PacketFabric](https://www.packetfabric.com/packetcor/microsoft-azure/)** |Поддерживаются |Поддерживаются |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживаются |Поддерживаются |Чикаго, Гонконг, Лондон |
 | **[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Поддерживаются |Поддерживаются |Сеул |

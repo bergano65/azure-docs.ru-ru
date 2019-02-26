@@ -1,6 +1,6 @@
 ---
 title: 'Пример: аудит параметра обнаружения угроз на уровне сервера'
-description: Этот пример политики проверяет, имеют ли политики оповещения системы безопасности для базы данных SQL указанное состояние.
+description: В этом примере определения политики проверяется, имеют ли политики оповещения системы безопасности для SQL Server указанное состояние.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,16 +8,16 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 9e0ea3b65a4c442358c357e9603d607d8464c21b
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: ba694618bf86ef8e97241c955a40790960be2f0c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242181"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341374"
 ---
-# <a name="audit-server-level-threat-detection-setting"></a>Аудит параметра обнаружения угроз на уровне сервера
+# <a name="sample---audit-server-level-threat-detection-setting"></a>Пример: аудит параметра обнаружения угроз на уровне сервера
 
-Эта политика проверяет, имеют ли политики оповещения системы безопасности для базы данных SQL указанное состояние. Задайте значение, указывающее состояние обнаружения угроз (включено или отключено).
+Эта политика проверяет, имеют ли политики оповещения системы безопасности для SQL Server указанное состояние. Задайте значение, указывающее состояние обнаружения угроз (включено или отключено).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 

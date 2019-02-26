@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/12/2018
+ms.date: 02/13/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 10/12/2018
-ms.openlocfilehash: 76a26cf46ea95dca31be37f60aa3af32b1a22232
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: fba5c66f3006de6b65b2db27187449201d40250e
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978313"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56269711"
 ---
 # <a name="plan-offer-quota-and-subscription-overview"></a>Обзор планов, предложений, квот и подписок
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-[Azure Stack](azure-stack-poc.md) позволяет предоставлять широкий набор служб, например виртуальные машины, базы данных SQL Server, SharePoint, Exchange и даже [элементы Azure Marketplace](azure-stack-marketplace-azure-items.md). Оператор среды Azure Stack отвечает за настройку и предоставление таких служб в Azure Stack на основе планов, предложений и квот.
+[Azure Stack](azure-stack-poc.md) позволяет предоставлять широкий набор служб, таких как виртуальные машины, базы данных SQL Server, SharePoint, Exchange и даже [элементы Azure Marketplace](azure-stack-marketplace-azure-items.md). Оператор среды Azure Stack отвечает за настройку и предоставление таких служб в Azure Stack на основе планов, предложений и квот.
 
 Предложения содержат один или несколько планов, а каждый план содержит одну или несколько служб. Создавая планы и объединяя их в различные предложения, вы можете управлять следующими аспектами:
 

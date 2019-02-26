@@ -1,6 +1,6 @@
 ---
 title: 'Пример: запрет использования определенных расширений виртуальной машины'
-description: Этот пример политики запрещает использование заданных расширений.
+description: В этом примере определения политики налагается запрет на использование заданных расширений.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 3c92acb72603812797b77a378cdd747147b942eb
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: c600b6d91260b892f9d2c09a21b14fe1b3f38886
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245343"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341446"
 ---
-# <a name="not-allowed-vm-extensions"></a>Запрет использования определенных расширений виртуальной машины
+# <a name="sample---not-allowed-vm-extensions"></a>Пример: запрет использования определенных расширений виртуальной машины
 
 Запрещает использование заданных расширений. Вы можете указать массив, содержащий типы запрещенных расширений.
 

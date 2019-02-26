@@ -4,220 +4,197 @@ description: Сведения о настройке единого входа м
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 98ba0174-be02-408a-8634-c8113b12dedb
-ms.service: active-directory
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/21/2018
+ms.topic: tutorial
+ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d85e8dbac47bd41c759e9c225df5544c659cc05
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: fe717a37b576b6cd49a26ef4d7fca1a74aa76962
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205534"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56300683"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-certain-admin-sso"></a>Руководство по Интеграция Azure Active Directory с Certain Admin SSO
+# <a name="tutorial-azure-active-directory-integration-with-certain-admin-sso"></a>Руководство. Интеграция Azure Active Directory с Certain Admin SSO
 
 В этом руководстве описано, как интегрировать Certain Admin SSO с Azure Active Directory (Azure AD).
-
 Интеграция Certain Admin SSO с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Certain Admin SSO.
-- Вы можете включить автоматический вход пользователей в Certain Admin SSO (единый вход) с помощью учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Certain Admin SSO.
+* Вы можете включить автоматический вход пользователей в Certain Admin SSO (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Certain Admin SSO, вам потребуется:
 
-- подписка Azure AD;
-- подписка Certain Admin SSO с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Certain Admin SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Certain Admin SSO из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* В Certain Admin SSO поддерживается единый вход, инициированный **поставщиком услуг**.
 
 ## <a name="adding-certain-admin-sso-from-the-gallery"></a>Добавление Certain Admin SSO из коллекции
+
 Чтобы настроить интеграцию Certain Admin SSO с Azure AD, необходимо добавить Certain Admin SSO из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить приложение Certain Admin SSO из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Certain Admin SSO**, выберите **Certain Admin SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Certain Admin SSO в списке результатов](./media/certainadminsso-tutorial/tutorial_certainadminsso_addfromgallery.png)
+4. В поле поиска введите **Certain Admin SSO**, выберите **Certain Admin SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Certain Admin SSO в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Certain Admin SSO с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Certain Admin SSO соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Certain Admin SSO.
+В этом разделе описывается настройка и проверка единого входа Azure AD в Certain Admin SSO с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить работу единого входа, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Certain Admin SSO.
 
 Чтобы настроить и проверить единый вход Azure AD в Certain Admin SSO, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Certain Admin SSO](#create-a-certain-admin-sso-test-user)** требуется для того, чтобы в Certain Admin SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Certain Admin SSO](#configure-certain-admin-sso-single-sign-on)** требуется для того, чтобы определить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Certain Admin SSO](#create-certain-admin-sso-test-user)** требуется для того, чтобы в Certain Admin SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Certain Admin SSO.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Certain Admin SSO, сделайте следующее:**
+Чтобы настроить единый вход Azure AD в Certain Admin SSO, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Certain Admin SSO** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Certain Admin SSO** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/certainadminsso-tutorial/tutorial_certainadminsso_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Certain Admin SSO** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Certain Admin SSO](./media/certainadminsso-tutorial/tutorial_certainadminsso_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOUR DOMAIN URL>/svcs/sso_admin_login/handleRequest/<ID>`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.certain.com`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Certain Admin SSO](mailto:integrations@certain.com). 
- 
-1. В разделе **Сертификат подписи SAML** щелкните **Certificate (Raw)** (Сертификат (необработанный)), а затем сохраните файл сертификата на компьютере.
+    ![Сведения о домене и URL-адресах единого входа для приложения Certain Admin SSO](common/sp-identifier.png)
 
-    ![Ссылка для скачивания сертификата](./media/certainadminsso-tutorial/tutorial_certainadminsso_certificate.png) 
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOUR DOMAIN URL>/svcs/sso_admin_login/handleRequest/<ID>`.
 
-1. Нажмите кнопку **Сохранить** .
+    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.certain.com`.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/certainadminsso-tutorial/tutorial_general_400.png)
+    > [!NOTE]
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Certain Admin SSO](mailto:integrations@certain.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. В разделе **Конфигурация Certain Admin SSO** щелкните **Настроить Certain Admin SSO**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (необработанный)** из предложенных вариантов и сохранить его на компьютере.
 
-    ![Настройка Certain Admin SSO](./media/certainadminsso-tutorial/tutorial_certainadminsso_configure.png) 
+    ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
-1. Чтобы настроить единый вход на стороне **Certain Admin SSO**, нужно отправить скачанный **сертификат (Raw)**, **URL-адрес выхода**, идентификатор сущности SAML и URL-адрес службы единого входа SAML[ в службу поддержки Certain Admin SSO](mailto:integrations@certain.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+6. Скопируйте требуемый URL-адрес в разделе **Настройка Certain Admin SSO**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    б) Идентификатор Azure AD.
+
+    в) URL-адрес выхода.
+
+### <a name="configure-certain-admin-sso-single-sign-on"></a>Настройка единого входа в Certain Admin SSO
+
+Чтобы настроить единый вход на стороне **Certain Admin SSO**, отправьте скачанный **сертификат (необработанный)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Certain Admin SSO](mailto:integrations@certain.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка Azure Active Directory](./media/certainadminsso-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/certainadminsso-tutorial/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    а) В поле **Имя** введите **BrittaSimon**.
+  
+    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    ![Кнопка "Добавить"](./media/certainadminsso-tutorial/create_aaduser_03.png)
+    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/certainadminsso-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-certain-admin-sso-test-user"></a>Создание тестового пользователя Certain Admin SSO
-
-В этом разделе описано, как создать пользователя Britta Simon в приложении Certain Admin SSO. Чтобы добавить пользователей на платформу Certain Admin SSO, обратитесь в  [службу поддержки Certain Admin SSO](mailto:integrations@certain.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+    г) Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к Certain Admin SSO, чтобы он мог использовать единый вход Azure.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure щелкните **Корпоративные приложения**, **Все приложения** и **Certain Admin SSO**.
 
-**Чтобы назначить пользователя Britta Simon в Certain Admin SSO, сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Certain Admin SSO**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Certain Admin SSO в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Certain Admin SSO**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Certain Admin SSO в списке приложений](./media/certainadminsso-tutorial/tutorial_certainadminsso_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-certain-admin-sso-test-user"></a>Создание тестового пользователя Certain Admin SSO
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+В этом разделе описано, как создать пользователя Britta Simon в приложении Certain Admin SSO. Чтобы добавить пользователей на платформу Certain Admin SSO, обратитесь в  [службу поддержки Certain Admin SSO](mailto:integrations@certain.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Certain Admin SSO на панели доступа, вы автоматически войдете в приложение Certain Admin SSO.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Certain Admin SSO на Панели доступа, вы автоматически войдете в приложение Certain Admin SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/certainadminsso-tutorial/tutorial_general_01.png
-[2]: ./media/certainadminsso-tutorial/tutorial_general_02.png
-[3]: ./media/certainadminsso-tutorial/tutorial_general_03.png
-[4]: ./media/certainadminsso-tutorial/tutorial_general_04.png
-
-[100]: ./media/certainadminsso-tutorial/tutorial_general_100.png
-
-[200]: ./media/certainadminsso-tutorial/tutorial_general_200.png
-[201]: ./media/certainadminsso-tutorial/tutorial_general_201.png
-[202]: ./media/certainadminsso-tutorial/tutorial_general_202.png
-[203]: ./media/certainadminsso-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

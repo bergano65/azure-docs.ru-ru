@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/21/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 54fcbe9adc8fbf4a8fba6eabbd7c2f8802fd933a
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 210254a4404a5280e326bf40057331a784ff6148
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53191116"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326745"
 ---
 # <a name="tutorial-deploy-a-container-application-to-azure-container-instances"></a>Руководство. Развертывание приложения-контейнера в службе "Экземпляры контейнеров Azure"
 
@@ -36,26 +36,20 @@ ms.locfileid: "53191116"
 
 ### <a name="get-registry-credentials"></a>Получение учетных данных реестра
 
-При развертывании образа, который размещен в частном реестре контейнеров, например созданному во [втором руководстве](container-instances-tutorial-prepare-acr.md), нужно предоставить учетные данные реестра.
+При развертывании образа, который размещен в частном реестре контейнеров, например созданного во [втором руководстве](container-instances-tutorial-prepare-acr.md), нужно предоставить учетные данные для доступа к реестру. Как показано в статье [Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure"](../container-registry/container-registry-auth-aci.md), для большинства случаев рекомендуется создать и настроить субъект-службу Azure Active Directory с разрешениями на *извлечение* из вашего реестра. Примеры скриптов для создания субъекта-службы с необходимыми разрешениями см. в указанной выше статье. Запишите идентификатор и пароль субъекта-службы. Эти учетные данные пригодятся во время развертывания контейнера.
 
-Сначала необходимо получить полное имя сервера для входа в реестр контейнеров (замените `<acrName>` именем реестра):
+Также необходимо получить полное имя сервера для входа в реестр контейнеров (замените `<acrName>` именем реестра):
 
 ```azurecli
 az acr show --name <acrName> --query loginServer
 ```
 
-Затем получите пароль для реестра контейнеров:
-
-```azurecli
-az acr credential show --name <acrName> --query "passwords[0].value"
-```
-
 ### <a name="deploy-container"></a>Развертывание контейнера
 
-Теперь разверните контейнер с помощью команды [az container create][az-container-create]. Замените `<acrLoginServer>` и `<acrPassword>` значениями, полученными посредством предыдущих двух команд. Замените `<acrName>` именем реестра контейнеров, а `<aciDnsLabel>` — требуемым DNS-именем.
+Теперь разверните контейнер с помощью команды [az container create][az-container-create]. Замените `<acrLoginServer>` значениями, полученными посредством предыдущих команд. Замените `<service-principal-ID>` и `<service-principal-password>` идентификатором и паролем субъекта-службы, который вы создали для доступа к реестру. Замените `<aciDnsLabel>` необходимым DNS-именем.
 
 ```azurecli
-az container create --resource-group myResourceGroup --name aci-tutorial-app --image <acrLoginServer>/aci-tutorial-app:v1 --cpu 1 --memory 1 --registry-login-server <acrLoginServer> --registry-username <acrName> --registry-password <acrPassword> --dns-name-label <aciDnsLabel> --ports 80
+az container create --resource-group myResourceGroup --name aci-tutorial-app --image <acrLoginServer>/aci-tutorial-app:v1 --cpu 1 --memory 1 --registry-login-server <acrLoginServer> --registry-username <service-principal-ID> --registry-password <service-principal-password> --dns-name-label <aciDnsLabel> --ports 80
 ```
 
 В течение нескольких секунд вы должны получить исходный ответ Azure. Значение `--dns-name-label` должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Если при выполнении команды появится сообщение об ошибке **Метка DNS-имени**, измените значение в предыдущей команде.

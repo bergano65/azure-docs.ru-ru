@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/26/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 7c32a572f1090783e5da53ae2b6103ac8c9a8b77
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 01404c89665ebfea62e7bda0e7566289bb15f2ae
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752557"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56300964"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
 
@@ -23,7 +23,10 @@ ms.locfileid: "55752557"
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 ![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
 ![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---
@@ -66,7 +69,9 @@ az group create --name myResourceGroup --location southeastasia
 В следующей команде замените глобально уникальное имя учетной записи хранения больших двоичных объектов там, где встречается заполнитель `<blob_storage_account>`.  
 
 ```azurecli-interactive
-az storage account create --name <blob_storage_account> \
+blobStorageAccount=<blob_storage_account>
+
+az storage account create --name $blobStorageAccount \
 --location southeastasia --resource-group myResourceGroup \
 --sku Standard_LRS --kind blobstorage --access-tier hot 
 ```
@@ -77,11 +82,9 @@ az storage account create --name <blob_storage_account> \
 
 Получите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys). Затем используйте этот ключ для создания двух контейнеров с помощью команды [az storage container create](/cli/azure/storage/container).  
 
-В данном случае `<blob_storage_account>` — это имя созданной учетной записи хранения больших двоичных объектов. Общему доступу к контейнеру *Изображения* присваивается значение `off`. Общему доступу к контейнеру *Эскизы* присваивается значение `container`. Параметр общего доступа `container` позволяет пользователям веб-страницы просматривать эскизы.
+Общему доступу к контейнеру *Изображения* присваивается значение `off`. Общему доступу к контейнеру *Эскизы* присваивается значение `container`. Параметр общего доступа `container` позволяет пользователям веб-страницы просматривать эскизы.
 
 ```azurecli-interactive
-blobStorageAccount=<blob_storage_account>
-
 blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
 -n $blobStorageAccount --query [0].value --output tsv)
 
@@ -116,50 +119,96 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 В следующей команде замените `<web_app>` уникальным именем. Допустимые символы: `a-z`, `0-9` и `-`. Если `<web_app>` не является уникальным, отобразится сообщение об ошибке: _Веб-сайт с именем `<web_app>` уже существует._ URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
 
 ```azurecli-interactive
-az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppServicePlan
+webapp=<web_app>
+
+az webapp create --name $webapp --resource-group myResourceGroup --plan myAppServicePlan
 ```
 
 ## <a name="deploy-the-sample-app-from-the-github-repository"></a>Развертывание примера приложения из репозитория GitHub
 
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 
-Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
+Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source).
 
 Пример проекта содержит приложение [ASP.NET MVC](https://www.asp.net/mvc). Оно принимает изображение, сохраняет его в учетную запись хранения и показывает изображения из контейнера эскизов. Веб-приложение использует пространства имен [Microsoft.WindowsAzure.Storage](/dotnet/api/microsoft.windowsazure.storage?view=azure-dotnet), [Microsoft.WindowsAzure.Storage.Blob](/dotnet/api/microsoft.windowsazure.storage.blob?view=azure-dotnet) и [Microsoft.WindowsAzure.Storage.Auth](/dotnet/api/microsoft.windowsazure.storage.auth?view=azure-dotnet) из клиентской библиотеки службы хранилища Azure для взаимодействия со службой хранилища Azure.
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
-Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
-
----
-
 ```azurecli-interactive
-az webapp deployment source config --name <web_app> \
+az webapp deployment source config --name $webapp \
 --resource-group myResourceGroup --branch master --manual-integration \
 --repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp
 ```
 
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source). 
+
+```azurecli-interactive
+az webapp deployment source config --name $webapp \
+--resource-group myResourceGroup --branch master --manual-integration \
+--repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node
+```
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v10). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source). 
+
+```azurecli-interactive
+az webapp deployment source config --name $webapp \
+--resource-group myResourceGroup --branch master --manual-integration \
+--repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v10
+```
+
+---
+
 ## <a name="configure-web-app-settings"></a>Настройка параметров веб-приложения
+
+# <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 
 В примере приложения [клиентская библиотека хранилища Azure](/dotnet/api/overview/azure/storage?view=azure-dotnet) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK службы хранилища, задаются в параметрах приложения для веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
 
-В следующей команде замените `<blob_storage_account>` именем учетной записи хранения больших двоичных объектов, а `<blob_storage_key>` — связанным ключом. Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
-
 ```azurecli-interactive
-az webapp config appsettings set --name <web_app> --resource-group myResourceGroup \
---settings AzureStorageConfig__AccountName=<blob_storage_account> \
+az webapp config appsettings set --name $webapp --resource-group myResourceGroup \
+--settings AzureStorageConfig__AccountName=$blobStorageAccount \
 AzureStorageConfig__ImageContainer=images  \
 AzureStorageConfig__ThumbnailContainer=thumbnails \
-AzureStorageConfig__AccountKey=<blob_storage_key>  
+AzureStorageConfig__AccountKey=$blobStorageAccountKey  
 ```
+
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
+В примере приложения [клиентская библиотека хранилища Azure](https://docs.microsoft.com/javascript/api/azure-storage) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK службы хранилища, задаются в параметрах приложения для веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
+
+```azurecli-interactive
+storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName \
+--name $blobStorageAccount --query connectionString --output tsv)
+
+az webapp config appsettings set --name $webapp --resource-group myResourceGroup \
+--settings AzureStorageConfig__ImageContainer=images  \
+AzureStorageConfig__ThumbnailContainer=thumbnails \
+AzureStorageConfig__AccountName=$blobStorageAccount \
+AzureStorageConfig__AccountKey=$blobStorageAccountKey \
+AZURE_STORAGE_CONNECTION_STRING=$storageConnectionString
+```
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+В примере приложения [клиентская библиотека хранилища Azure](https://github.com/Azure/azure-storage-js) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK службы хранилища, задаются в параметрах приложения для веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
+
+```azurecli-interactive
+az webapp config appsettings set --name $webapp --resource-group myResourceGroup \
+--settings AZURE_STORAGE_ACCOUNT_NAME=$blobStorageAccount \
+AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey
+```
+
+---
 
 После развертывания и настройки веб-приложения можно проверить возможность отправки изображений в приложении.
 
 ## <a name="upload-an-image"></a>Передача образа
 
 Чтобы проверить веб-приложение, перейдите по URL-адресу опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.
-Выберите область **Отправка фотографий**, чтобы выбрать и отправить файл, или перетащите файлы в нее. При успешной отправке изображение исчезнет.
 
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
+
+Выберите область **Отправка фотографий**, чтобы выбрать и отправить файл, или перетащите файлы в нее. При успешной отправке изображение исчезнет. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее.
 
 ![Приложение ImageResizer](media/storage-upload-process-images/figure1.png)
 
@@ -195,19 +244,21 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 |Класс  |Метод  |
 |---------|---------|
 |[StorageCredentials](/dotnet/api/microsoft.windowsazure.storage.auth.storagecredentials?view=azure-dotnet)     |         |
-|[CloudStorageAccount](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount?view=azure-dotnet)    |  [CreateCloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount.createcloudblobclient?view=azure-dotnet#Microsoft_WindowsAzure_Storage_CloudStorageAccount_CreateCloudBlobClient)       |
-|[CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient?view=azure-dotnet)     |[GetContainerReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient.getcontainerreference?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudBlobClient_GetContainerReference_System_String_)         |
-|[CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer?view=azure-dotnet)    | [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudBlobContainer_GetBlockBlobReference_System_String_)        |
+|[CloudStorageAccount](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount?view=azure-dotnet)    |  [CreateCloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount.createcloudblobclient?view=azure-dotnet)       |
+|[CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient?view=azure-dotnet)     |[GetContainerReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient.getcontainerreference?view=azure-dotnet)         |
+|[CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer?view=azure-dotnet)    | [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference?view=azure-dotnet)        |
 |[CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?view=azure-dotnet)     | [UploadFromStreamAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet)        |
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+
+Чтобы выбрать файл, нажмите кнопку **Выбрать файл**, а затем **Загрузить изображение**. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее. 
 
 ![Приложение для оправки изображений](media/storage-upload-process-images/upload-app-nodejs.png)
 
 В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
 
 - [multer](https://github.com/expressjs/multer) реализует стратегию отправки для обработчика маршрутов.
-- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как требует [createBlockBlobFromStream]. http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html#createBlockBlobFromStream)
+- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как требует [createBlockBlobFromStream]. http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html)
 
 Когда файл отправляется в маршрут, содержимое файла остается в памяти до тех пор, пока файл не будет загружен в контейнер BLOB-объектов.
 
@@ -261,6 +312,85 @@ router.post('/', uploadStrategy, (req, res) => {
     });
 });
 ```
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+
+Чтобы выбрать файл, нажмите кнопку **Выбрать файл**, а затем **Загрузить изображение**. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее. 
+
+![Приложение для оправки изображений](media/storage-upload-process-images/upload-app-nodejs.png)
+
+В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
+
+- [multer](https://github.com/expressjs/multer) реализует стратегию отправки для обработчика маршрутов.
+- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как того требует [createBlockBlobFromStream](http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html).
+
+Когда файл отправляется в маршрут, содержимое файла остается в памяти до тех пор, пока файл не будет загружен в контейнер BLOB-объектов.
+
+> [!IMPORTANT]
+> Загрузка очень больших файлов в память может негативно повлиять на производительность вашего веб-приложения. Если вы ожидаете, что пользователи опубликуют большие файлы, можете просмотреть промежуточные файлы в файловой системе веб-сервера, а затем планировать загрузку в хранилище BLOB-объектов. После того как файлы попадают в хранилище BLOB-объектов, вы можете удалить их из файловой системы сервера.
+
+```javascript
+const {
+  Aborter,
+  BlobURL,
+  BlockBlobURL,
+  ContainerURL,
+  ServiceURL,
+  StorageURL,
+  SharedKeyCredential,
+  uploadStreamToBlockBlob
+} = require('@azure/storage-blob');
+
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const inMemoryStorage = multer.memoryStorage();
+const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
+const getStream = require('into-stream');
+const containerName = 'images';
+const ONE_MEGABYTE = 1024 * 1024;
+const uploadOptions = { bufferSize: 4 * ONE_MEGABYTE, maxBuffers: 20 };
+const ONE_MINUTE = 60 * 1000;
+const aborter = Aborter.timeout(30 * ONE_MINUTE);
+
+const sharedKeyCredential = new SharedKeyCredential(
+  process.env.AZURE_STORAGE_ACCOUNT_NAME,
+  process.env.AZURE_STORAGE_ACCOUNT_ACCESS_KEY);
+const pipeline = StorageURL.newPipeline(sharedKeyCredential);
+const serviceURL = new ServiceURL(
+  `https://${process.env.AZURE_STORAGE_ACCOUNT_NAME}.blob.core.windows.net`,
+  pipeline
+);
+
+const getBlobName = originalName => {
+  // Use a random number to generate a unique file name, 
+  // removing "0." from the start of the string.
+  const identifier = Math.random().toString().replace(/0\./, ''); 
+  return `${identifier}-${originalName}`;
+};
+
+router.post('/', uploadStrategy, async (req, res) => {
+
+    const blobName = getBlobName(req.file.originalname);
+    const stream = getStream(req.file.buffer);
+    const containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);
+    const blobURL = BlobURL.fromContainerURL(containerURL, blobName);
+    const blockBlobURL = BlockBlobURL.fromBlobURL(blobURL);
+
+    try {
+      
+      await uploadStreamToBlockBlob(aborter, stream,
+        blockBlobURL, uploadOptions.bufferSize, uploadOptions.maxBuffers);
+
+      res.render('success', { message: 'File uploaded to Azure Blob storage.' });   
+
+    } catch (err) {
+
+      res.render('error', { message: 'Something went wrong.' });
+
+    }
+});
+```
 ---
 
 ## <a name="verify-the-image-is-shown-in-the-storage-account"></a>Проверка отображения изображения в учетной записи хранения
@@ -284,7 +414,10 @@ router.post('/', uploadStrategy, (req, res) => {
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
 ![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
 ![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---

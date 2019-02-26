@@ -1,6 +1,6 @@
 ---
 title: Пример допустимых расположений
-description: Этот пример политики требует, чтобы все ресурсы развертывались в допустимых расположениях.
+description: В этом примере определения политики необходимо, чтобы все ресурсы развертывались в допустимых расположениях.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: a13f181e90f0435f23e22a7c4db42976bd0afb44
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 70e1b2b20c4846626121dec190dff220a154b81b
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243558"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341357"
 ---
-# <a name="allowed-locations"></a>Allowed locations;
+# <a name="sample---allowed-region-locations"></a>Пример допустимых расположений
 
 Эта политика позволяет ограничить расположения, которые ваша организация может указать при развертывании ресурсов. Используется для соблюдения географических требований. Исключает группы ресурсов, каталоги Microsoft.AzureActiveDirectory/b2cDirectories и ресурсы, в которых используется "глобальный" регион. Вы можете указать массив допустимых расположений.
 

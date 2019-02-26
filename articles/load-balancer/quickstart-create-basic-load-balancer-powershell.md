@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/20/2018
 ms.author: kumud
 ms:custom: seodec18
-ms.openlocfilehash: c8c7d94e216f45551ed869b2ba921f3c79e6307a
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: d3f8ae94cd6896aba1db29a00f6f45c81995bbd1
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452689"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301270"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Базовый" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете две виртуальные машины с Windows Server и распределите между ними нагрузку веб-приложения.
@@ -72,7 +72,8 @@ $backendPool = New-AzureRmLoadBalancerBackendAddressPoolConfig -Name "myBackEndP
 
 В следующем примере создается проба TCP. Вы также можете создать настраиваемую пробу HTTP для более детальных проверок. При использовании настраиваемой пробы HTTP нужно создать страницу проверки работоспособности, например *healthcheck.aspx*. Чтобы обеспечить работоспособность узла, проба должна возвращать ответ **HTTP 200 OK** для балансировщика нагрузки.
 
-Чтобы создать пробу работоспособности TCP, используйте команду [Add-AzureRmLoadBalancerProbeConfig](/powershell/module/azurerm.network/add-azurermloadbalancerprobeconfig). В следующем примере создается проба работоспособности *myHealthProbe*, которая отслеживает каждую виртуальную машину через *HTTP*-порт *80*:
+Чтобы создать пробу работоспособности TCP, используйте команду [New-AzureRmLoadBalancerProbeConfig](/powershell/module/azurerm.network/new-azurermloadbalancerprobeconfig).
+В следующем примере создается проба работоспособности *myHealthProbe*, которая отслеживает каждую виртуальную машину через *HTTP*-порт *80*:
 
 ```azurepowershell-interactive
 $probe = New-AzureRmLoadBalancerProbeConfig `

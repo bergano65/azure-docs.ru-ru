@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 01/09/2019
+ms.date: 02/14/2019
 ms.author: alkohli
-ms.openlocfilehash: 68bc3302874849a69249a50dcecd46024ad939ef
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 007c63c163b6e972bd59189569c92c99d2718cbe
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448335"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301491"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -131,6 +131,9 @@ ms.locfileid: "54448335"
 Набор средств доступен для ОС Windows и Linux. Это средство вы можете скачать по ссылкам, приведенным далее.
  - [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
  - [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
+ 
+ ### <a name="q-can-i-use-data-box-disk-to-transfer-data-to-azure-files-and-then-use-the-data-with-azure-file-sync"></a>В. Можно ли использовать диск Data Box для передачи данных в службу "Файлы Azure", а затем использовать данные с помощью функции "Синхронизация файлов Azure"? 
+ О. Служба "Файлы Azure" не поддерживает диск Data Box. Метаданные также не сохраняются, если данные файла впоследствии используются функцией "Синхронизация файлов Azure".
 
 
 ## <a name="verify-and-upload"></a>Проверка и отправка данных
