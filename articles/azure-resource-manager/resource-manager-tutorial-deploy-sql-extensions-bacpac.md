@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 12/06/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 53a2f20254d2f206d014e6643c6fd883828a63db
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: c0aa88704f699334cacf12ec24284e61fca7d2bc
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238340"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267603"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
 
@@ -34,8 +34,6 @@ ms.locfileid: "56238340"
 > * Проверка развертывания
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -154,6 +152,9 @@ New-AzResourceGroupDeployment `
     -adminPassword $adminPassword `
     -TemplateFile azuredeploy.json
 ```
+
+> [!NOTE]
+> Существует проблема с вводом-выводом файла при использовании Azure PowerShell в Cloud Shell.  Отображается сообщение об ошибке *:* Cannot retrieve the dynamic parameters for the cmdlet. Cannot find path 'Azure:/azuredeploy.json' because it does not exist (Не удалось получить динамические параметры командлета. Не удалось найти путь Azure:/azuredeploy.json, так как он не существует). Временное решение — не добавлять параметр **-TemplateFile** в команду `New-AzResourceGroupDeploy`. Команда предложит ввести имя файла.
 
 Используйте сгенерированный пароль. См. раздел [Предварительные требования](#prerequisites).
 
