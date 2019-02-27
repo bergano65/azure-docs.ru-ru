@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f99fa8cbc211469185f2503718c84bc1b12db44c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 56c992b1cc0e8f1d9743ff8226ab48852afc1168
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178232"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313132"
 ---
 # <a name="how-to-configure-federated-single-sign-on-for-a-non-gallery-application"></a>Настройка федеративного единого входа для приложения не из коллекции
 
@@ -29,13 +29,13 @@ ms.locfileid: "56178232"
 ## <a name="overview-of-steps-required"></a>Обзор необходимых действий
 Ниже приведен общий обзор действий для настройки федеративного единого входа с помощью SAML 2.0 для приложения не из коллекции (например, пользовательского приложения).
 
--   [Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)](#_Configuring_single_sign-on)
+-   Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)
 
 -   [Выбор идентификатора пользователя и добавление атрибутов пользователей, которые будут отправлены в приложение](#select-user-identifier-and-add-user-attributes-to-be-sent-to-the-application)
 
 -   [Получение метаданных Azure AD и сертификата](#download-the-azure-ad-metadata-or-certificate)
 
--   [Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)](#_Configuring_single_sign-on)
+-   Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)
 
 -   Назначение пользователей для приложения
 

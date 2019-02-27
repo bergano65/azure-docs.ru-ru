@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: ce95406cbcb6d9514159d84d653a9ff361713aec
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: bdba294e1ee776d90b93f715e930ec26765abb7f
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55744404"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343040"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
 Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Но можете также создавать группы ресурсов Azure и создавать ресурсы Azure на уровне подписки. Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI и Azure PowerShell. Портал Azure не поддерживает развертывания на уровне подписки.
 
-Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите имя и расположение ресурса [**Microsoft.Resources/resourceGroups**](/azure/templates/microsoft.resources/allversions) для группы ресурсов. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне. Ресурсы, которые можно развернуть на уровне подписки: [Политики](../azure-policy/azure-policy-introduction.md) и [Управление доступом на основе ролей](../role-based-access-control/overview.md).
+Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите имя и расположение ресурса [**Microsoft.Resources/resourceGroups**](/azure/templates/microsoft.resources/allversions) для группы ресурсов. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне. Ресурсы, которые можно развернуть на уровне подписки: [Политики](../governance/policy/overview.md) и [Управление доступом на основе ролей](../role-based-access-control/overview.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -307,7 +307,7 @@ New-AzDeployment `
 
 ### <a name="define-and-assign-policy"></a>Определение и назначение политики
 
-Вы можете [определить](../azure-policy/policy-definition.md) и назначить политику в том же шаблоне.
+Вы можете [определить](../governance/policy/concepts/definition-structure.md) и назначить политику в том же шаблоне.
 
 ```json
 {

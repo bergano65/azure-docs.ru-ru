@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: iainfou
-ms.openlocfilehash: bfdea1d5380750ec23964cd8564db9b3a9539f15
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: f8804a157c21f3c90c667646689eec0968bc9027
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754651"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453007"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
 
@@ -27,7 +27,9 @@ ms.locfileid: "55754651"
 
 Для работы с этой статьей требуется Azure CLI 2.0.55 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-Кластерам AKS для поддержки средства автомасштабирования кластера необходимо использовать масштабируемые наборы виртуальных машин и Kubernetes *1.12.4* или более поздней версии. Поддержка этих масштабируемых наборов пока предоставляется в предварительной версии. Чтобы зарегистрироваться для ее использования и создать кластеры с масштабируемыми наборами, установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], как показано в следующем примере:
+### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
+
+Кластерам AKS для поддержки средства автомасштабирования кластера необходимо использовать масштабируемые наборы виртуальных машин и Kubernetes *1.12.4* или более поздней версии. Поддержка этих масштабируемых наборов пока предоставляется в предварительной версии. Чтобы зарегистрироваться для ее использования и создать кластеры с масштабируемыми наборами, сначала установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], как показано в следующем примере:
 
 ```azurecli-interactive
 az extension add --name aks-preview
@@ -35,6 +37,26 @@ az extension add --name aks-preview
 
 > [!NOTE]
 > После установки расширения *aks-preview* все созданные кластеры AKS будут использовать модель развертывания с масштабируемым набором предварительной версии. Чтобы отказаться от этой модели и создать обычные, полностью поддерживаемые кластеры, удалите это расширение с помощью `az extension remove --name aks-preview`.
+
+### <a name="register-scale-set-feature-provider"></a>Регистрация поставщика компонента масштабируемых наборов
+
+Чтобы создать службу AKS, которая использует масштабируемые наборы, необходимо также включить соответствующий флаг компонента в своей подписке. Чтобы зарегистрировать флаг компонента *VMSSPreview*, используйте команду [az feature register][az-feature-register], как показано в следующем примере.
+
+```azurecli-interactive
+az feature register --name VMSSPreview --namespace Microsoft.ContainerService
+```
+
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+
+```azurecli-interactive
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
+```
+
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerService
+```
 
 ## <a name="about-the-cluster-autoscaler"></a>Сведения о средстве автомасштабирования кластера
 
@@ -149,6 +171,9 @@ az aks update \
 [aks-scale-apps]: tutorial-kubernetes-scale.md
 [az-aks-create]: /cli/azure/aks#az-aks-create
 [az-aks-scale]: /cli/azure/aks#az-aks-scale
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register
 
 <!-- LINKS - external -->
 [az-aks-update]: https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview

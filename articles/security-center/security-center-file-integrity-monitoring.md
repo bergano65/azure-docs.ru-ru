@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: rkarlin
-ms.openlocfilehash: 50f2c174f21243a70c830c1c30127e0629c81972
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: c32dcbac8ebab5fb71839a4525163c0e6cf028ed
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56110257"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310746"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
@@ -88,7 +88,7 @@ FIM передает данные в рабочую область службы 
 4. Выберите **Применение мониторинга целостности файлов**, чтобы включить FIM.
 
 > [!NOTE]
-> Эти параметры вы можете изменить в любое время. Дополнительные сведения см. в разделе [Изменение списка отслеживаемых сущностей](security-center-file-integrity-monitoring.md#edit-monitored-items) далее в этой статье.
+> Эти параметры вы можете изменить в любое время. Дополнительные сведения см. в разделе "Изменение списка отслеживаемых сущностей" далее в этой статье.
 >
 >
 

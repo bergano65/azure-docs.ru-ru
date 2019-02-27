@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: f0326e6f05f44b5f2c4416a1c1db09bc5816a297
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 6f0002c6aa98aaaddf50e4aac8929e8ddd379fd8
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558317"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301678"
 ---
 # <a name="data-storage-and-ingress-in-azure-time-series-insights-preview"></a>Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)
 
@@ -189,7 +189,7 @@ Parquet – это столбцово-ориентированный форма
 
 ### <a name="scale"></a>Масштаб
 
-Аналитика временных рядов (предварительная версия) поддерживает начальный масштаб входящего трафика до 6 мегабит в секунду (Мбит/с) на среду. Текущей задачей является расширенная поддержка масштабирования. Мы планируем обновить документацию, чтобы показать эти улучшения.
+Аналитика временных рядов (предварительная версия) поддерживает начальный масштаб входящего трафика до 6 мегабит в секунду (Мбит/с) на среду. Текущей задачей является расширенная поддержка масштабирования. Мы планируем обновить документацию с учетом этих улучшений.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

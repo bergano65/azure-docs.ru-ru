@@ -11,14 +11,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 12/10/2018
+ms.date: 02/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: e87ff83470ac8d375b4eee3b69f8793e3e11c0f5
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 2f3db5e6260b065c83f0e337306d38dca6e5ff51
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55497423"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341408"
 ---
 # <a name="resolve-errors-for-resource-provider-registration"></a>Устранение ошибок регистрации поставщика ресурсов
 
@@ -45,13 +45,21 @@ Message: The subscription is not registered to use namespace {resource-provider-
 
 В сообщении об ошибке должны быть указаны поддерживаемые расположения и версии API. Вы можете изменить шаблон, используя одно из предложенных значений. Большинство поставщиков, но не все, регистрируются автоматически порталом Azure или интерфейсом командной строки, который вы используете. Если ранее вы не использовали конкретный поставщик ресурсов, возможно, потребуется зарегистрировать такой поставщик.
 
+Или при выключении автоматического завершения работы для виртуальных машин может появиться похожее сообщение об ошибке:
+
+```
+Code: AuthorizationFailed
+Message: The client '<identifier>' with object id '<identifier>' does not have authorization to perform action 'Microsoft.Compute/virtualMachines/read' over scope ...
+```
+
 ## <a name="cause"></a>Причина:
 
 Эти ошибки возникают по одной из следующих причин:
 
-* Для подписки не зарегистрирован поставщик ресурсов.
+* Для подписки не зарегистрирован необходимый поставщик ресурсов.
 * Версия API не поддерживается для выбранного типа ресурса.
 * Расположение не поддерживается для выбранного типа ресурса.
+* Для автоматического завершения работы виртуальных машин должен быть зарегистрирован поставщик ресурсов Microsoft.DevTestLab.
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 

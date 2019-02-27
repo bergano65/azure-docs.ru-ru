@@ -1,6 +1,6 @@
 ---
-title: Изменение, удаление групп управления и управление ими в Azure
-description: Узнайте, как сохранять и обновлять иерархию групп управления.
+title: Изменение, удаление групп управления и управление ими в Azure — система управления Azure
+description: Узнайте, как просматривать, сохранять, обновлять и удалять иерархию групп управления.
 author: rthorn17
 manager: rithorn
 ms.service: azure-resource-manager
@@ -10,12 +10,12 @@ ms.workload: na
 ms.date: 11/20/2018
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 10dfa9812a0546f3a8c57e28227851b6f72657fc
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: dbfb6ecb9f29a82a8871922982a64dbefc338969
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582423"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342603"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -39,11 +39,11 @@ ms.locfileid: "52582423"
 
 1. Выберите параметр **Переименовать группу** в верхней части страницы.
 
-   ![Переименование группы](./media/detail_action_small.png)
+   ![Параметр "Переименовать группу"](./media/detail_action_small.png)
 
 1. Когда откроется меню, введите новое имя.
 
-   ![Переименование группы](./media/rename_context.png)
+   ![Панель переименования группы](./media/rename_context.png)
 
 1. Щелкните **Сохранить**.
 
@@ -87,11 +87,11 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
    - Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину.
 
-   ![Удаление группы](./media/delete.png)
+   ![Параметр "Удалить группу"](./media/delete.png)
 
 1. Откроется окно, в котором нужно подтвердить удаление группы управления.
 
-   ![Удаление группы](./media/delete_confirm.png)
+   ![Окно подтверждения удаления группы](./media/delete_confirm.png)
 
 1. Выберите **Да**.
 
@@ -195,13 +195,13 @@ az account management-group show --name 'Contoso'
 
 1. Выберите многоточие в конце строки подписки в списке, которую требуется переместить.
 
-   ![Move](./media/move_small.png)
+   ![Параметр "Переместить"](./media/move_small.png)
 
 1. Выберите **Переместить**.
 
 1. В открывшемся меню выберите **родительскую группу управления**.
 
-   ![Move](./media/move_small_context.png)
+   ![Панель перемещения](./media/move_small_context.png)
 
 1. Щелкните **Сохранить**.
 

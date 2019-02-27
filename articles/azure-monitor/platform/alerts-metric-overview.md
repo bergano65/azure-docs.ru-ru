@@ -7,16 +7,16 @@ ms.date: 9/18/2018
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
-ms.openlocfilehash: 3c7feda32bf162499888720ce56edac55197abe4
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 59973d9530bf1c3ab3e77290b25e50860f9de0ca
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005528"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342989"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
-Оповещения о метриках в Azure Monitor работают для основных многомерных метрик. Это могут быть метрики платформы, [пользовательские метрики](../../azure-monitor/platform/metrics-custom-overview.md), [популярные журналы из Azure Monitor, преобразованные в метрики](../../azure-monitor/platform/alerts-metric-logs.md), стандартные метрики Application Insights. Для оповещений о метриках регулярно выполняется анализ, чтобы проверить соответствие условий одного временного ряда метрик или более. Если зафиксированы правильные значения, отправляется соответствующее уведомление. Функция оповещений о метриках работает с отслеживанием состояния, то есть уведомления отправляются только при изменении состояния.
+Оповещения о метриках в Azure Monitor работают для основных многомерных метрик. Это могут быть [метрики платформы](alerts-metric-near-real-time.md#metrics-and-dimensions-supported), [пользовательские метрики](../../azure-monitor/platform/metrics-custom-overview.md), [популярные журналы из Azure Monitor, преобразованные в метрики](../../azure-monitor/platform/alerts-metric-logs.md), метрики Application Insights. Для оповещений о метриках регулярно выполняется анализ, чтобы проверить соответствие условий одного временного ряда метрик или более. Если зафиксированы правильные значения, отправляется соответствующее уведомление. Функция оповещений о метриках работает с отслеживанием состояния, то есть уведомления отправляются только при изменении состояния.
 
 ## <a name="how-do-metric-alerts-work"></a>Как работают оповещения о метриках?
 
@@ -65,8 +65,6 @@ ms.locfileid: "56005528"
 Если позже показатели использования в ресурсе myVM вернутся к нормальному состоянию, значение будет ниже порога. Правило генерации оповещений отслеживает это условие еще два раза, чтобы отправить уведомление об устранении. Правило генерации оповещений отправляет сообщение об устранении или деактивации, когда условие оповещения не выполняется в течение трех последовательных периодов для сокращения отправки нежелательных оповещений в случае нестабильности условий.
 
 По мере того как уведомление об устранении отправляется через веб-перехватчик или электронную почту, на портале Azure также обновляется состояние экземпляра оповещения (называемое состоянием мониторинга) на "Разрешено".
-
-## <a name="monitoring-at-scale-using-metric-alerts-in-azure-monitor"></a>Мониторинг в масштабе с помощью оповещений о метриках в Azure Monitor
 
 ### <a name="using-dimensions"></a>Использование измерений
 
@@ -123,9 +121,9 @@ ms.locfileid: "56005528"
 
 При увеличении периодов просмотра и числа нарушений также можно выполнить фильтрацию только до оповещения о вашем определении значительного отклонения. [Дополнительные сведения о расширенных параметрах динамических пороговых значений](alerts-dynamic-thresholds.md#what-do-the-advanced-settings-in-dynamic-thresholds-mean).
 
-### <a name="monitoring-multiple-resources-using-metric-alerts"></a>Мониторинг нескольких ресурсов с помощью оповещений о метриках
+## <a name="monitoring-at-scale-using-metric-alerts-in-azure-monitor"></a>Мониторинг в масштабе с помощью оповещений о метриках в Azure Monitor
 
-Как видно из предыдущего раздела, можно настроить одно правило генерации оповещений о метрике, отслеживающее каждую отдельную комбинацию измерений (например, временные ряды метрик). Но ранее мониторинг можно было выполнять только для одного ресурса в определенный момент времени. Azure Monitor также поддерживает мониторинг нескольких ресурсов с одним правилом генерации оповещений о метриках. Эта функция сейчас реализована в предварительной версии и поддерживается только на виртуальных машинах. Кроме того, для одного оповещения о метрике ресурсы отслеживаются в одном регионе Azure.
+На данный момент вы узнали, как одно предупреждение метрики можно использовать для отслеживания одного или нескольких метрических временных рядов, связанных с одним ресурсом Azure. Во многих случаях вы можете захотеть, чтобы одно и то же правило генерации оповещений применялось ко многим ресурсам. Azure Monitor также поддерживает мониторинг нескольких ресурсов с одним правилом генерации оповещений о метриках. Эта функция сейчас поддерживается только на виртуальных машинах. Кроме того, для одного оповещения о метрике ресурсы отслеживаются в одном регионе Azure.
 
 Можно указать три следующие области мониторинга для одного оповещения:
 
@@ -133,7 +131,7 @@ ms.locfileid: "56005528"
 - все виртуальные машины (в одном регионе Azure) в одной или нескольких группах одной подписки;
 - все виртуальные машины (в одном регионе Azure) в одной подписке.
 
-Создание правил генерации оповещений о метрике, которые отслеживают несколько ресурсов, через портал Azure в настоящее время не поддерживается. Эти правила можно создать, используя [шаблоны Azure Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-metric-alert-that-monitors-multiple-resources). Для каждой виртуальны машины вы получите отдельное уведомление.
+Создание правил генерации оповещений метрики, которые отслеживают несколько ресурсов, аналогично созданию [любого другого оповещения метрики](alerts-metric.md), которое отслеживает один ресурс. Единственным отличием является то, что следует выбрать все ресурсы, которые вы хотите отслеживать. Эти правила также можно создать, используя [шаблоны Azure Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-metric-alert-that-monitors-multiple-resources). Для каждой виртуальны машины вы получите отдельное уведомление.
 
 ## <a name="typical-latency"></a>Обычная задержка
 
@@ -149,7 +147,7 @@ ms.locfileid: "56005528"
 |-------------------------------------------------|----------------------------|
 | Microsoft.ApiManagement/service | Yes |
 | Microsoft.Batch/batchAccounts| Yes|
-|Microsoft.Cache/redis| Yes
+|Microsoft.Cache/redis| Yes |
 |Microsoft.classicСompute/virtualMachines | Нет  |
 |Microsoft.ClassicCompute/domainNames/slots/roles | Нет |
 |Microsoft.CognitiveServices/accounts | Нет  |
@@ -160,7 +158,7 @@ ms.locfileid: "56005528"
 |Microsoft.DBforMySQL/servers| Yes|
 |Microsoft.DBforPostgreSQL/servers| Yes|
 |Microsoft.Devices/IotHubs | Нет |
-|Microsoft.DocumentDB/databaseAccounts| Нет |
+|Microsoft.DocumentDB/databaseAccounts| Yes|
 |Microsoft.EventHub/namespaces | Yes|
 |Microsoft.Logic/workflows | Yes|
 |Microsoft.Network/loadBalancers |Yes|
@@ -168,16 +166,16 @@ ms.locfileid: "56005528"
 |Microsoft.Network/applicationGateways| Yes|
 |Microsoft.Network/expressRouteCircuits| Yes|
 |Microsoft.Network/trafficManagerProfiles | Yes|
-|Microsoft.Search/searchServices | Нет |
-|Microsoft.ServiceBus/namespaces| Нет |
+|Microsoft.Search/searchServices | Yes|
+|Microsoft.ServiceBus/namespaces| Yes |
 |Microsoft.Storage/storageAccounts | Yes|
 |Microsoft.StreamAnalytics/streamingjobs| Yes|
 |Microsoft.TimeSeriesInsights/environments | Yes|
 |Microsoft. Web/serverfarms | Yes |
 |Microsoft. Web/sites (за исключением функций) | Yes|
 |Microsoft. Web/hostingEnvironments/multiRolePools | Нет |
-|Microsoft. Web/hostingEnvironments/workerPools| Нет 
-|Microsoft.SQL/Servers | Нет |
+|Microsoft. Web/hostingEnvironments/workerPools| Нет  |
+|Microsoft.SQL/Servers | Нет  |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

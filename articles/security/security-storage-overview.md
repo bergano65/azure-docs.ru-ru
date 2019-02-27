@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/01/2019
 ms.author: terrylan
-ms.openlocfilehash: 5d8c9ae52152df6a0e016c12234afe4ae780b251
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: ec0e8ae1bf657cda59f3d133db23106436e184e3
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115442"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326762"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
 
@@ -79,7 +79,7 @@ SAS — это URI, который в своих параметрах запро
 
 Дополнительные сведения о шифровании службы хранилища.
 
-* [Шифрование службы хранилища Azure](https://azure.microsoft.com/services/storage/) доступно для [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). Сведения о других типах хранилищ Azure приведены в описании хранилища [файлов](https://azure.microsoft.com/services/storage/files/), хранилища [дисков (хранилище уровня "Премиум")](https://azure.microsoft.com/services/storage/premium-storage/), хранилища [таблиц](https://azure.microsoft.com/services/storage/tables/) и хранилища [очередей](https://azure.microsoft.com/services/storage/queues/).
+* [Шифрование службы хранилища Azure](https://azure.microsoft.com/services/storage/) доступно для [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). Сведения о других типах хранилищ Azure приведены в описании таких хранилищ, как [Файлы Azure](https://azure.microsoft.com/services/storage/files/), [Хранилище таблиц](https://azure.microsoft.com/services/storage/tables/) и [Хранилище очередей](https://azure.microsoft.com/services/storage/queues/).
 * [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../storage/common/storage-service-encryption.md)
 
 ## <a name="azure-disk-encryption"></a>Дисковое шифрование Azure

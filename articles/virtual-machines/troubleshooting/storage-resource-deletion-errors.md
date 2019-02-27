@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 5ab0a9a92297c46a4090583d41f22f2035bd310c
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 19a0e7f3317a5c4a87b2622de170b0fc2cc137be
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816192"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326829"
 ---
 # <a name="troubleshoot-storage-resource-deletion-errors"></a>Устранение ошибок при удалении ресурсов хранилища
 
@@ -28,7 +28,7 @@ ms.locfileid: "55816192"
 
 >"**Failed to delete # out of # blobs:<br>BlobName.vhd:" (Не удалось удалить # из # больших двоичных объектов; BlobName.vhd:) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).**
 
-Виртуальные жесткие диски, используемые на виртуальных машинах Azure, — это VHD-файлы, хранящиеся как страничные BLOB-объекты в учетной записи хранения Azure (цен. категория "Стандартный" или "Премиум"). Дополнительные сведения о дисках Azure см. в разделе [Основные сведения о дисковых хранилищах для виртуальных машин Linux в Azure](../linux/about-disks-and-vhds.md). 
+Виртуальные жесткие диски, используемые на виртуальных машинах Azure, — это VHD-файлы, хранящиеся как страничные BLOB-объекты в учетной записи хранения Azure (цен. категория "Стандартный" или "Премиум"). Дополнительные сведения о дисках Azure см. в статье [Обзор компонента "Управляемые диски" Azure](../linux/managed-disks-overview.md).
 
 Среда Azure предотвращает удаление диска, подключенного к виртуальной машине, чтобы избежать повреждения. Она также препятствует удалению контейнеров и учетных записей хранения, содержащих страничный BLOB-объект, который подключен к виртуальной машине. 
 

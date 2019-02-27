@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/02/2019
 ms.author: mbullwin
-ms.openlocfilehash: c9392d910098e8a2dfadc4842dfcfe185f01fafc
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 4c3ecdd01106cc8d305764206bc75535fa4dac3a
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004525"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268606"
 ---
 # <a name="analytics-in-application-insights"></a>Аналитика в Application Insights
 Analytics — это мощный инструмент [Application Insights](app-insights-overview.md) для поиска и создания запросов. Analytics — это веб-инструмент, поэтому дополнительная настройка не требуется.
@@ -31,7 +31,7 @@ Analytics — это мощный инструмент [Application Insights](ap
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/123/player] 
 
 ## <a name="relation-to-azure-monitor-logs"></a>Отношение к журналам Azure Monitor
-Аналитика Application Insights основана на [Azure Data Explorer](/azure/data-explorer), как и журналы Azure Monitor, а также использует [язык запросов Data Explorer](/azure/kusto/query). Она использует тот же [портал Log Analytics](../log-query/get-started-portal.md), что и журналы Azure Monitor, несмотря на то что ее данные хранятся в отдельном разделе.
+Аналитика Application Insights основана на [Azure Data Explorer](/azure/data-explorer), как и журналы Azure Monitor, а также использует [язык запросов Kusto](/azure/kusto/query). Она использует тот же [портал Log Analytics](../log-query/get-started-portal.md), что и журналы Azure Monitor, несмотря на то что ее данные хранятся в отдельном разделе.
 
 Вы не можете получить прямой доступ к данным в рабочей области Log Analytics из аналитики Application Insights, а также не можете получить прямой доступ к данным приложения из Log Analytics. Чтобы запросить оба набора данных вместе, запишите [запрос в Log Analytics](../log-query/log-query-overview.md) и используйте выражение [app ()](../log-query/app-expression.md), чтобы получить доступ к данным приложения.
 

@@ -1,6 +1,6 @@
 ---
 title: Работа с большими наборами данных
-description: Узнайте, как получить большие наборы данных из Azure Resource Graph.
+description: Узнайте, как получать большие наборы данных и управлять ими в Azure Resource Graph.
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
@@ -8,12 +8,12 @@ ms.date: 01/31/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: ab24e2045dabf045f1879dd76e599f5ab344f07b
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 8808f42cdd6fb547b70695278993faa0f52cdb61
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55513199"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338399"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 

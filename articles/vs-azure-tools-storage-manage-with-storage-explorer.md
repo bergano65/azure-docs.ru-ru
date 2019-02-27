@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: 77763765e75500d994235bba0a5c0c3bb3e3be70
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 9917901146eb0a050531a66ab24fbd88c91c02c9
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756824"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311211"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -221,7 +221,7 @@ ms.locfileid: "55756824"
 
 3. Пользователь UserB использует Обозреватель службы хранилища, чтобы присоединить учетную запись, принадлежащую пользователю UserA, используя предоставленный SAS.
 
-### <a name="generate-a-sas-connection-string-for-the-account-you-want-to-share"></a>Создание строки подключения SAS для учетной записи, к которой нужно предоставить общий доступ
+### <a name="generate-a-sas-query-string-for-the-account-you-want-to-share"></a>Создание строки запроса SAS для учетной записи, к которой нужно предоставить общий доступ
 
 1. В Обозревателе службы хранилища щелкните правой кнопкой мыши учетную запись хранения, к которой необходимо предоставить доступ, а затем выберите **Get Shared Access Signature...** (Получить подписанный URL-адрес...).
 
@@ -231,7 +231,7 @@ ms.locfileid: "55756824"
 
     ![Диалоговое окно получения SAS][15]
 
-3. Выберите команду **Копировать** рядом с текстовым полем **Строка подключения**, чтобы скопировать его содержимое в буфер обмена, а затем щелкните **Закрыть**.
+3. Выберите команду **Копировать** рядом с текстовым полем **Строка запроса**, чтобы скопировать его содержимое в буфер обмена, а затем щелкните **Закрыть**.
 
 ### <a name="attach-to-a-storage-account-by-using-a-sas-connection-string"></a>Присоединение к учетной записи хранения с помощью строки подключения SAS
 

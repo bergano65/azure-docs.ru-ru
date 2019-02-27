@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 12/13/2018
 ms.author: genli
-ms.openlocfilehash: 74132c436670247f3eb84859216274d3e1363d07
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: b5e3e84ce8f8b4b364b2fa69dda0b0091db25b6d
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338708"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56329785"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 Перед тем как передать виртуальные машины Windows из локальной среды в Microsoft Azure, следует правильно подготовить виртуальный жесткий диск (VHD или VHDX). В Azure поддерживаются **только виртуальные машины первого поколения**, использующие формат файла VHD и фиксированный размер диска. Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ. Вы можете преобразовать виртуальную машину первого поколения, заменив файловую систему VHDX на VHD, а динамически расширяемый диск на диск фиксированного размера. Но вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [как выбрать поколение для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
@@ -406,6 +406,10 @@ Sysprep — это процесс, который можно выполнить
 5. Последовательно выберите **ОК**.
 6. После завершения работы Sysprep выключите виртуальную машину. Не используйте **перезапуск** для завершения работы виртуальной машины.
 7. Теперь диск VHD можно отправлять. Дополнительные сведения о создании виртуальной машины из универсального образа см. в статье [Отправка универсального виртуального жесткого диска в Azure для создания новой виртуальной машины](sa-upload-generalized.md).
+
+
+>[!NOTE]
+> Настраиваемый файл unattend.xml не поддерживается. Но поддерживается свойство additionalUnattendContent, обеспечивающее ограниченную поддержку для добавления параметров [microsoft-windows-shell-setup](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл unattend.xml, который используется агентом подготовки Azure. (например,  [additionalUnattendContent](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet) можно использовать для добавления FirstLogonCommands и LogonCommands. См. пример [additionalUnattendContent FirstLogonCommands](https://github.com/Azure/azure-quickstart-templates/issues/1407).
 
 
 ## <a name="complete-recommended-configurations"></a>Рекомендуемые настройки

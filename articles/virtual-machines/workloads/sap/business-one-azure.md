@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bb3c2a9cfc1bccf4656be83c6babbe9c7ec139fb
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: f0e96b87e46872bebe7563e08f0eb7a33b11015f
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745356"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56329854"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
 Этот документ содержит руководство для развертывания SAP Business One на виртуальных машинах Azure. Эта документация не заменяет документацию по установке Business One для SAP. Документация должна содержать основные принципы планирования и развертывания инфраструктуры Azure для запуска приложений Business One.
@@ -119,7 +119,7 @@ Business One — это двухуровневое приложение.
 
 Как правило необходимо сделать следующее.
 
-- Используйте [хранилище Azure класса Premium](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage) через [стандартное хранилище Azure](https://docs.microsoft.com/azure/virtual-machines/windows/standard-storage)
+- Использовать SSD (цен. категория "Премиум") вместо стандартных жестких дисков. Дополнительные сведения о типах доступных дисков см. в статье о [типах дисков, доступных в Azure](../../windows/disks-types.md).
 - Использование управляемых дисков Azure на неуправляемых дисках
 - Убедитесь, что операции ввода-вывода в секунду и пропускная способность ввода-вывода настроены для вашей конфигурации дисков
 - Объедините тома /hana/data и/hana/log, чтобы получить эффективную стоимость конфигурации хранения
@@ -138,7 +138,6 @@ Business One — это двухуровневое приложение.
 | до 150 | 32 | 128 ГБ | D32s_v3, E32s_v3 |
 
 Указанные варианты размеров должны дать представление о том, с чего начать. Возможно, для более легкой адаптации в Azure понадобится меньше или больше ресурсов. Переключение между типами виртуальных машин возможно с помощью перезапуска виртуальной машины.
-
 
 #### <a name="sap-hana-as-dbms"></a>SAP HANA в качестве СУБД
 Используя SAP HANA в качестве СУБД в следующих разделах, необходимо следовать указаниям в документе [Руководство по работе SAP HANA в Azure ](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations).

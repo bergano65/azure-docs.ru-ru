@@ -7,18 +7,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 01/23/2019
+ms.date: 02/15/2019
 ms.author: jingwang
-ms.openlocfilehash: 433718c19e0df5fac87273f2b46f8ae090ed7510
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: e1a928711a596c159ac920f11c123b73b72d3aa2
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888572"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313421"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
-*Эта статья применима к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [BLOB-объекты Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [файловая система](connector-file-system.md), [FTP](connector-ftp.md), [HDFS](connector-hdfs.md), [HTTP](connector-http.md) и [SFTP](connector-sftp.md).*
+*Эта статья применима к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [BLOB-объекты Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage;](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [HTTP](connector-http.md) и [SFTP](connector-sftp.md).*
 
 Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. Вам может понадобиться **анализировать или создавать файлы, имеющие определенный формат**. Фабрика данных Azure поддерживает следующие форматы файлов:
 
@@ -428,6 +428,13 @@ ms.locfileid: "54888572"
 - **Для использования JRE**. Для 64-разрядной версии среды выполнения интеграции требуется 64-разрядная версия JRE. Ее можно найти [здесь](https://go.microsoft.com/fwlink/?LinkId=808605).
 - **Для использования OpenJDK**: он поддерживается в среде выполнения интеграции, начиная с версии 3.13. Упакуйте jvm.dll со всеми другими необходимыми сборками OpenJDK на компьютере с локальной IR и соответственно установите системную переменную среды JAVA_HOME.
 
+>[!TIP]
+>Если вы копируете данные в формат Parquet или из формата Parquet с помощью локальной среди выполнения интеграции и возникает ошибка: "Ошибка при вызове Java, сообщение: **java.lang.OutOfMemoryError:Java heap space**", можно добавить переменную среды `_JAVA_OPTIONS` в компьютере, на котором размещена локальная среда выполнения интеграции для настройки минимального и максимального размера кучи для виртуальной машины Java, чтобы расширить возможности такой копии, а затем повторно запустить конвейер. 
+
+![Установка размера кучи виртуальной машины Java на локальной среде выполнения интеграции](./media/supported-file-formats-and-compression-codecs/set-jvm-heap-size-on-selfhosted-ir.png)
+
+Пример: установите переменную `_JAVA_OPTIONS` со значением `-Xms256m -Xmx16g`. Флаг `Xms` указывает начальный пул выделения памяти для виртуальной машины Java (JVM), а `Xmx` указывает максимальный пул выделения памяти. Это означает, что JVM будет запущена с объемом памяти `Xms` и сможет использовать не более `Xmx` объема памяти. По умолчанию ADF использует минимум 64 МБ и максимум 1 ГБ.
+
 ### <a name="data-type-mapping-for-parquet-files"></a>Сопоставление типов данных для файлов Parquet
 
 | Тип промежуточных данных фабрики данных | Тип-примитив Parquet | Исходный тип Parquet (десериализация) | Исходный тип Parquet (сериализация) |
@@ -486,8 +493,8 @@ ms.locfileid: "54888572"
 | SByte | Byte |
 | Byte | Сокращение |
 | Int16 | Сокращение |
-| UInt16 | int |
-| Int32 | int |
+| UInt16 | Int |
+| Int32 | Int |
 | UInt32 | длинное целое |
 | Int64 | длинное целое |
 | UInt64 | Строка |

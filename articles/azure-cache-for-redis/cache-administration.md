@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: b75a2faa2030fc343cbabb17eb37b63c9ea34f70
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: d36f2851f9c4f30725c8f8057d61970b6560009e
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56232387"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313217"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
@@ -94,7 +94,7 @@ ms.locfileid: "56232387"
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
-Минимальный период обслуживания по умолчанию для обновлений — пять часов. Это значение нельзя настроить на портале Azure, но вы можете сделать это в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry). Дополнительные сведения см. в разделе [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
+Минимальный период обслуживания по умолчанию для обновлений — пять часов. Это значение нельзя настроить на портале Azure, но вы можете сделать это в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry). Дополнительные сведения см. в разделе "Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?"
 
 
 ## <a name="schedule-updates-faq"></a>Часто задаваемые вопросы о планировании обновлений

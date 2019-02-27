@@ -2,17 +2,17 @@
 title: Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений Azure"
 description: В этой статье показано, как создавать пользовательские страницы ошибок с помощью службы "Шлюз приложений".
 services: application-gateway
-author: amitsriva
+author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 10/11/2018
+ms.date: 2/14/2019
 ms.author: victorh
-ms.openlocfilehash: 2f76347105743538e9fc1d7588ecb949f2675696
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: abfe33ff679bef125d9bf5b78e1790a1a4c64863
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49071098"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301610"
 ---
 # <a name="create-application-gateway-custom-error-pages"></a>Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений"
 
@@ -34,6 +34,7 @@ ms.locfileid: "49071098"
 - **Оба**. Пользовательская страница ошибки, определенная на уровне прослушивателя, переопределяет ту, которая была задана на глобальном уровне.
 
 Чтобы создать пользовательскую страницу ошибки, требуется:
+
 - код состояния ответа HTTP;
 - расположение соответствующей страницы ошибки; 
 - общедоступный большой двоичный объект хранилища Azure для расположения;
@@ -59,5 +60,19 @@ ms.locfileid: "49071098"
 4. Укажите URL-адрес общедоступного большого двоичного объекта для кода состояния данной ошибки и щелкните **Сохранить**. В службе "Шлюз приложений" теперь настроена пользовательская страница ошибки.
 
    ![Коды ошибок службы "Шлюз приложений"](media/custom-error/ag-error-codes.png)
+
+## <a name="azure-powershell-configuration"></a>Настройка Azure PowerShell
+
+Вы можете использовать Azure PowerShell для настройки страницы ошибки. Например, глобальная настраиваемая страница ошибки:
+
+`$updatedgateway = Add-AzApplicationGatewayCustomError -ApplicationGateway $appgw -StatusCode HttpStatus502 -CustomErrorPageUrl $customError502Url`
+
+Или страница ошибки уровня прослушивателя:
+
+`$updatedlistener = Add-AzApplicationGatewayHttpListenerCustomError -HttpListener $listener01 -StatusCode HttpStatus502 -CustomErrorPageUrl $customError502Url`
+
+Дополнительные сведения см. в статьях о командлетах [Add-AzApplicationGatewayCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaycustomerror?view=azps-1.2.0) и [Add-AzApplicationGatewayHttpListenerCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayhttplistenercustomerror?view=azps-1.3.0).
+
 ## <a name="next-steps"></a>Дополнительная информация
+
 Сведения о диагностике службы "Шлюз приложений" см. в статье [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).

@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 02/27/2018
+ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 02821abd8769a89fc1c7ad9d0dd5cf4e5a245e5f
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 130ca849b39336637f53b32043874b5d037a8f0d
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435316"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342929"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -175,7 +175,13 @@ namespace reducer
 
 2. Используйте одну из приведенных команд для запуска задания MapReduce.
 
-    * Если в качестве хранилища по умолчанию используется __Data Lake Storage__:
+    * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 2-го поколения__:
+
+        ```bash
+        yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files abfs:///mapper.exe,abfs:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
+        ```
+
+    * Если в качестве хранилища по умолчанию используется __Azure Data Lake Storage 1-го поколения__:
 
         ```bash
         yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files adl:///mapper.exe,adl:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
@@ -190,7 +196,7 @@ namespace reducer
     Ниже перечислены функции каждого из параметров.
 
     * `hadoop-streaming.jar`: JAR-файл, содержащий функции потоковой передачи MapReduce.
-    * `-files`: добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
+    * `-files`: добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `abfs:///`, `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
     * `-mapper`: задает файл, который реализует модуль сопоставления.
     * `-reducer`: задает файл, который реализует модуль редукции.
     * `-input`: входные данные.

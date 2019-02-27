@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: v-shysun
-ms.openlocfilehash: 53c22222682e2a017f55cbd5af89671edb3eddaf
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 46d51e787a388f0963788c6419a2d9e3af89bc4f
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55767345"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56456662"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -87,6 +87,9 @@ ms.locfileid: "55767345"
 1. **Можно ли настроить виртуальную машину для использования собственной лицензии SQL Server, если она была создана из одного из образов коллекции с оплатой по мере использования?**
 
    Да. Вы можете переключаться между двумя моделями лицензирования, если вы начали работу с образом из коллекции с оплатой по мере использования. Однако вы не сможете переключить модель лицензирования на PAYG, если вы начали работу с образом BYOL. Дополнительные сведения см. в разделе [Изменение модели лицензирования для виртуальной машины SQL Server в Azure](virtual-machines-windows-sql-ahb.md).
+
+   > [!Note]
+   > Сейчас эта возможность доступна только клиентам общедоступного облака.
 
 1. **Для создания новой виртуальной машины SQL необходимо использовать образ BYOL или поставщик ресурсов виртуальной машины SQL?**
 

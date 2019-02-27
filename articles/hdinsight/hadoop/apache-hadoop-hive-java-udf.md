@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/16/2018
+ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: a58c61287cfc7828fe0dc15beda9d54f02a694c3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 4a3da9e2ad4d5ab83c1e906b3ab43540e819b48c
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814152"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342017"
 ---
 # <a name="use-a-java-udf-with-apache-hive-in-hdinsight"></a>Использование определяемых пользователем функций Java с Apache Hive в HDInsight
 
@@ -213,7 +213,7 @@ ms.locfileid: "55814152"
     ```
 
     > [!NOTE]
-    > В этом примере предполагается, что служба хранилища Azure является хранилищем по умолчанию для кластера. Если же кластер использует Data Lake Storage, измените значение `wasb:///` на `adl:///`.
+    > В этом примере предполагается, что служба хранилища Azure является хранилищем по умолчанию для кластера. Если же кластер использует Azure Data Lake Storage 2-го поколения, измените значение `wasb:///` на `abfs:///`. Если же кластер использует Azure Data Lake Storage 1-го поколения, измените значение `wasb:///` на `adl:///`.
 
 3. Используйте определяемую пользователем функцию, чтобы преобразовать значения, полученные из таблицы, в строки нижнего регистра.
 

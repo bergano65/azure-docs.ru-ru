@@ -1,40 +1,40 @@
 ---
 title: Визуализируйте данные Azure IoT Central на панели мониторинга Power BI | Документация Майкрософт
-description: Используйте шаблон решения Azure IoT Central Analytics Power BI для визуализации и анализа данных IoT Central.
+description: Используйте решение Power BI для Azure IoT Central для визуализации и анализа данных IoT Central.
 ms.service: iot-central
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 07/16/2018
+ms.date: 02/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: a37eb68d135d156c25c58bf91489d5b50ac2c170
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 322be1e13662d92a3cb0a805a9ccaacd05928f7d
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54423126"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328101"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
 
 *Эта статья предназначена для администраторов.*
 
-![Конвейер шаблона решения Power BI](media/howto-connect-powerbi/iot-continuous-data-export.png)
+![Конвейер решения Power BI](media/howto-connect-powerbi/iot-continuous-data-export.png)
 
-Используйте шаблон решения Azure IoT Central Analytics Power BI для создания мощной панель мониторинга Power BI для мониторинга производительности устройств Интернета вещей. С помощью панели мониторинга Power BI можно выполнять следующие действия.
+Используйте решение Power BI для Azure IoT Central, чтобы создать мощную панель мониторинга Power BI для отслеживания производительности своих устройств Интернета вещей. С помощью панели мониторинга Power BI можно выполнять следующие действия.
 - Отслеживать количество данных, которые отправляют устройства за период времени
 - Сравнивать объем данных телеметрии, состояний и событий
 - Определять устройства, имеющие множество измерений
 - Наблюдать за историческими тенденциями измерений устройств
 - Определять проблемные устройства, которые отправляют множество важных событий
 
-Этот шаблон решения устанавливает конвейер, который принимает данные в учетной записи хранения больших двоичных объектов Azure из [непрерывного экспорта данных](howto-export-data.md). Этот поток данных проходит через функции Azure, фабрики данных Azure и базы данных SQL Azure для обработки и преобразования данных. Выходные данные можно визуализировать и проанализировать в отчете Power BI, который можно загрузить в виде PBIX-файла. Все эти ресурсы создаются в подписке Azure, поэтому можно настроить каждый компонент в соответствии с потребностями. Этот шаблон решения полностью открыт, поэтому можно получить дополнительные сведения об архитектуре и расширить решение, посетив [репозиторий GitHub](https://aka.ms/iotcentralgithubpowerbisolutiontemplate).
+Это решение устанавливает конвейер, который принимает данные в учетной записи хранилища BLOB-объектов Azure из [непрерывного экспорта данных](howto-export-data.md). Этот поток данных проходит через функции Azure, фабрики данных Azure и базы данных SQL Azure для обработки и преобразования данных. Выходные данные можно визуализировать и проанализировать в отчете Power BI, который можно загрузить в виде PBIX-файла. Все эти ресурсы создаются в подписке Azure, поэтому можно настроить каждый компонент в соответствии с потребностями.
 
-## <a name="get-the-azure-iot-central-analytics-solution-templatehttpsbpsolutiontemplatescomnamemicrosoft-iotcontinuousdataexporttemplate-from-microsoft-appsource"></a>Получите [шаблон решения аналитики Azure IoT Central Analytics](https://bpsolutiontemplates.com/?name=Microsoft-IoTContinuousDataExportTemplate) из Microsoft AppSource.
+## <a name="get-the-power-bi-solution-for-azure-iot-centralhttpsakamsiotcentralpowerbisolutiontemplate-from-microsoft-appsource"></a>Скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate) с Microsoft AppSource.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Для настройки шаблона требуется следующее.
+Для настройки решения требуется следующее:
 - Доступ к подписке Azure
-- Данные экспортированы с использованием [непрерывного экспорта данных](howto-export-data.md) из вашего приложения IoT Central. Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
+- Данные, экспортированные из вашего приложения IoT Central с использованием [непрерывного экспорта данных](howto-export-data.md). Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
 - Power BI Desktop (последняя версия)
 - Power BI Pro (если необходимо совместно использовать панели мониторинга с другими пользователями)
 
@@ -50,11 +50,48 @@ ms.locfileid: "54423126"
 
 ![Отчет Power BI страница 2](media/howto-connect-powerbi/template-page2-hasdata.PNG)
 
+## <a name="architecture"></a>Архитектура
+Доступ ко всем созданным ресурсам можно получить через портал Azure. Они будут находиться в одной группе ресурсов.
+
+![Представление группы ресурсов на портале Azure](media/howto-connect-powerbi/azure-deployment.PNG)
+
+Ниже описаны особенности и способ использования каждого ресурса.
+
+### <a name="azure-functions"></a>Функции Azure
+Приложение "Функции Azure" активируется каждый раз, когда в хранилище BLOB-объектов записывается новый файл. Оно извлекает поля из каждого файла измерений, устройств и шаблонов устройств и заполняет несколько промежуточных таблиц SQL для использования в Фабрике данных Azure.
+
+### <a name="azure-data-factory"></a>Фабрика данных Azure
+Фабрика данных Azure подключается к базе данных SQL как связанная служба. Она запускает операции хранимой процедуры, которые обрабатывают данные и сохраняют их в таблицах анализа.
+
+### <a name="azure-sql-database"></a>Базы данных SQL Azure
+Эти таблицы создаются автоматически для заполнения стандартных отчетов. Изучив эти схемы в Power BI, вы сможете создавать собственные визуализации этих данных.
+
+| Имя таблицы |
+|------------|
+|[analytics].[Measurements]|
+|[analytics].[Measurements]|
+|[stage].[Measurements]|
+|[analytics].[Properties]|
+|[analytics].[PropertyDefinitions]|
+|[analytics].[PropertyDefinitions]|
+|[analytics].[Devices]|
+|[analytics].[Devices]|
+|[dbo].[date]|
+|[dbo].[ChangeTracking]|
+
+## <a name="estimated-costs"></a>Расчетная стоимость
+
+Ниже приведена приблизительная стоимость служб Azure (Функции Azure, Фабрика данных, Azure SQL), которые используются в этом процессе. Все цены указаны в долларах США. Цены зависят от региона, поэтому всегда проверяйте наиболее актуальные цены для каждой службы, чтобы узнать фактическую стоимость.
+В шаблоне по умолчанию указаны следующие цены (их можно изменить после настройки).
+
+- Функции Azure: План Службы приложений, уровень S1, 74,40 долл. США в месяц.
+- Azure SQL, уровень S1, прибл. 30 долл. США в месяц.
+
+Рекомендуем ознакомиться с различными ценовыми категориями и подобрать оптимальный вариант.
+
 ## <a name="resources"></a>Ресурсы
 
-Посетите AppSource, чтобы получить [шаблон решения Azure IoT Central Analytics](https://bpsolutiontemplates.com/?name=Microsoft-IoTContinuousDataExportTemplate).
-
-Дополнительные сведения об архитектуре и расширении решения см. в [репозитории GitHub](https://aka.ms/iotcentralgithubpowerbisolutiontemplate).
+Перейдите в Microsoft AppSource и скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

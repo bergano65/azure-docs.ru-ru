@@ -10,12 +10,12 @@ author: garyericson
 ms.author: garye
 ms.custom: seodec18
 ms.date: 01/03/2018
-ms.openlocfilehash: f57f6bf93fce2526bdc478558551616ba1fa3c4c
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 4f474fd6ac2fa6a4f44aacf0eacb85a92fdf1de9
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55496029"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56456475"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих
@@ -100,7 +100,7 @@ ms.locfileid: "55496029"
 
 Если данные являются соответствующими, подключенными, точными и их объем достаточен, то они удовлетворяют всем критериям для качественного выполнения обработки и анализа данных.
 
-Обязательно ознакомьтесь с другими видео из цикла *Обработка и анализ данных для начинающих* курса по машинному обучению Microsoft Azure.
+Ознакомьтесь с другими четырьмя видео из цикла *Обработка и анализ данных для начинающих*, посвященного Студии машинного обучения Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)

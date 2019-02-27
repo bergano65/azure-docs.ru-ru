@@ -16,16 +16,16 @@ ms.topic: article
 ms.date: 10/04/2018
 ms.author: ramankum
 ms.subservice: disks
-ms.openlocfilehash: 94482666d0db3157b0c18c0b47f9937457172521
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 18258bf8ac9d241fd8a01957d903b1db882c2d36
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116003"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326880"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
-Управляемые диски Azure предлагают три варианта типа хранилища: [SSD (цен. категория "Премиум")](../windows/premium-storage.md), [SSD (цен. категория "Стандартный")](../windows/disks-standard-ssd.md) и [HDD (цен. категория "Стандартный")](../windows/standard-storage.md). Вы можете изменять типы хранилищ для управляемого диска с минимальным временем простоя, исходя из собственных потребностей в производительности. Такая возможность не поддерживается для неуправляемого диска. Однако вы можете легко [преобразовать неуправляемый диск в управляемый](convert-unmanaged-to-managed-disks.md).
+Доступны четыре типа управляемых дисков Azure: SSD (цен. категория "Ультра"), SSD (цен. категория "Премиум"), SSD (цен. категория "Стандартный") и стандартные жесткие диски (HDD). Вы можете изменять типы хранилищ для управляемого диска с минимальным временем простоя, исходя из собственных потребностей в производительности. Такая возможность не поддерживается для неуправляемого диска. Однако вы можете легко [преобразовать неуправляемый диск в управляемый](convert-unmanaged-to-managed-disks.md).
 
 [!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
 
@@ -35,6 +35,7 @@ ms.locfileid: "56116003"
 * Если вы используете неуправляемый диск, сначала [преобразуйте его в управляемый](convert-unmanaged-to-managed-disks.md), чтобы вы могли сменить тип хранилища для него. 
 * Для работы с примерами в этой статье требуется Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Выполните команду [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) для подключения к Azure.
 
+* Для работы с примерами в этой статье требуется Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Выполните команду [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount) для подключения к Azure.
 
 ## <a name="convert-all-the-managed-disks-of-a-vm-from-standard-to-premium"></a>Преобразование всех управляемых дисков на виртуальной машине с уровня "Стандартный" до уровня "Премиум"
 

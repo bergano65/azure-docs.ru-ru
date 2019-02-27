@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: celested
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a05efbe3feb81b11d547cd50d8ba3f87c2ff0e5b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 52f8e20cb66fb9c516435dd40ff7e362567bb338
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164725"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310871"
 ---
 # <a name="problems-signing-in-to-an-application-from-the-access-panel"></a>Проблемы при входе в приложение из панели доступа
 
@@ -250,13 +250,13 @@ ms.locfileid: "56164725"
 
 Чтобы настроить приложение не из коллекции, вам потребуется Azure AD Premium, а приложение должно поддерживать SAML 2.0. Дополнительные сведения о версиях Azure AD см. в разделе [Цены на Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
 
--   [Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)](#configuring-single-sign-on)
+-   Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)
 
 -   [Выбор идентификатора пользователя и добавление атрибутов пользователей, которые будут отправлены в приложение](#select-user-identifier-and-add-user-attributes-to-be-sent-to-the-application)
 
 -   [Получение метаданных Azure AD и сертификата](#download-the-azure-ad-metadata-or-certificate)
 
--   [Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)](#configuring-single-sign-on)
+-   Указание значений метаданных Azure AD в приложении (URL-адрес для входа, издатель, URL-адрес для выхода и сертификат)
 
 ### <a name="configure-the-applications-metadata-values-in-azure-ad-sign-on-url-identifier-reply-url"></a>Указание значений метаданных приложения в Azure AD (URL-адрес для входа, идентификатор, URL-адрес ответа)
 

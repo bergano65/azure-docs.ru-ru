@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: bwren
-ms.openlocfilehash: 9aff955a2ae0f40785036c2fee22804785e6526a
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 4c428372868e3d3fac58bc851de8c59ad01d1d8f
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002293"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56269966"
 ---
 # <a name="analyze-log-data-in-azure-monitor"></a>Анализ данных журнала в Azure Monitor
 
-Данные журнала, собранные Azure Monitor, хранятся в рабочей области Log Analytics, которая основана на [Azure Data Explorer](/azure/data-explorer). Azure Monitor собирает телеметрию из разных источников и использует [язык запросов из Data Explorer](/azure/kusto/query) для извлечения и анализа данных.
+Данные журнала, собранные Azure Monitor, хранятся в рабочей области Log Analytics, которая основана на [Azure Data Explorer](/azure/data-explorer). Azure Monitor собирает телеметрию из разных источников и использует [язык запросов Kusto](/azure/kusto/query), применяемый Data Explorer, для извлечения и анализа данных.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "56002293"
 ![Поиск по журналам](media/log-query-overview/queries-overview.png)
 
 ## <a name="write-a-query"></a>Напишите запрос
-Azure Monitor использует [версию языка запросов Data Explorer](get-started-queries.md) для извлечения и анализа данных журнала различными способами.  Обычно начинают с основных запросов, а затем переходят к использованию более усовершенствованных функций, так как требования становятся более сложными.
+Azure Monitor использует [версию языка запросов Kusto](get-started-queries.md) для извлечения и анализа данных журнала различными способами.  Обычно начинают с основных запросов, а затем переходят к использованию более усовершенствованных функций, так как требования становятся более сложными.
 
 Базовая структура запроса — это исходная таблица и ряд операторов, разделенных символом вертикальной черты `|`.  Вы можете объединить в цепочку несколько операторов для уточнения данных и выполнения расширенных функций.
 

@@ -1,6 +1,6 @@
 ---
-title: Потоковая передача журналов Azure Active Directory в Log Analytics с помощью Azure Monitor (предварительная версия) | Документация Майкрософт
-description: Узнайте, как выполнять интеграцию журналов Azure Active Directory c Log Analytics с помощью Azure Monitor (предварительная версия)
+title: Потоковая передача журналов Azure Active Directory в журналы Azure Monitor (предварительная версия) | Документация Майкрософт
+description: Узнайте, как интегрировать журналы Azure Active Directory с журналами Azure Monitor (предварительная версия)
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
@@ -17,30 +17,30 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51db96523a96015822f4507731bad2a398521530
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e2e9c1b2513f769b065883dc98b649a68d565ccc
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165847"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56456492"
 ---
-# <a name="integrate-azure-ad-logs-with-log-analytics-using-azure-monitor-preview"></a>Интеграция журналов Azure AD с Log Analytics с помощью Azure Monitor (предварительная версия)
+# <a name="integrate-azure-ad-logs-with-azure-monitor-logs-preview"></a>Интеграция журналов Azure AD с журналами Azure Monitor (предварительная версия)
 
-Log Analytics позволяет выполнить запрос данных для поиска определенных событий, анализа тенденций и корреляции между различными источниками данных. С помощью журнала действий Azure AD в Log Analytics можно выполнять следующие задачи:
+Журналы Azure Monitor позволяют запрашивать данные для поиска определенных событий, анализировать тенденции и выполнять корреляцию между различными источниками данных. С помощью интеграции журналов действий Azure AD в журналах Azure Monitor вы можете выполнять следующие задачи:
 
  * сравнивать журналы входа в Azure AD для журналов безопасности, опубликованных с помощью центра безопасности Azure;
 
  * устранять узкие места производительности на странице входа в приложение, сопоставляя данные о производительности приложений из Azure Application Insights.  
 
-Следующий видеоролик сеансов Ignite показывает преимущества использования Log Analytics для журналов Azure AD в практических сценариях пользователя.
+Следующий видеоролик сеансов Ignite показывает преимущества использования журналов Azure Monitor для журналов Azure AD в практических сценариях пользователя.
 
 > [!VIDEO https://www.youtube.com/embed/MP5IaCTwkQg?start=1894]
 
-В этой статье вы узнаете, как выполнять интеграцию журналов Azure Active Directory (Azure AD) с Log Analytics с помощью Azure Monitor.
+В этой статье вы узнаете, как интегрировать журналы Azure Active Directory (Azure AD) с Azure Monitor.
 
 ## <a name="supported-reports"></a>Поддерживаемые отчеты
 
-Для дальнейшего анализа можно маршрутизировать журналы аудита и активности входа в Log Analytics. 
+Для дальнейшего анализа вы можете маршрутизировать журналы действий аудита и входа в журналы Azure Monitor. 
 
 * **Журналы аудита**: [отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
 * **Журналы входов в систему**: [отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
@@ -58,13 +58,13 @@ Log Analytics позволяет выполнить запрос данных д
 * Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
 * Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 
-## <a name="send-logs-to-log-analytics"></a>Отправка журналов в Log Analytics
+## <a name="send-logs-to-azure-monitor-logs"></a>Отправка журналов в журналы Azure Monitor
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 
 2. Выберите **Azure Active Directory** > **Параметры диагностики** -> **Добавить параметры диагностики**. Чтобы получить доступ к странице конфигурации параметров диагностики, можно выбрать **Параметры экспорта** со страницы **Журналы аудита** или **Вход в систему**.  
     
-3. В меню **Параметры диагностики** установите флажок **Отправить в Log Analytics**, а затем выберите **Настройка**.
+3. В меню **Параметры диагностики** установите флажок **Send to Log Analytics workspace**(Отправить в рабочую область Log Analytics), а затем выберите **Настроить**.
 
 4. Выберите рабочую область Log Analytics, в которую хотите отправить журналы, или создайте новую рабочую область в предоставленном диалоговом окне.  
 
@@ -80,5 +80,5 @@ Log Analytics позволяет выполнить запрос данных д
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Анализ журналов действий Azure AD в Log Analytics](howto-analyze-activity-logs-log-analytics.md)
+* [Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)](howto-analyze-activity-logs-log-analytics.md)
 * [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

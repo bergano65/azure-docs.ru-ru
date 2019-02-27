@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/04/2019
+ms.date: 02/14/2019
 ms.author: tomfitz
-ms.openlocfilehash: aadc92c232d32d827644caa52b3c362d9c8d4c9b
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 92e5dd5190a76bd09e33ea4c40a5b5cc2d66bc7b
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55691037"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301145"
 ---
 # <a name="outputs-section-in-azure-resource-manager-templates"></a>Раздел выходных данных в шаблонах Azure Resource Manager
 
-В разделе выходных данных следует указать значения, которые возвращаются после развертывания. Например, можно возвращать URI для доступа к развернутому ресурсу.
+В разделе выходных данных следует указать значения, которые возвращаются после развертывания. Например, можно возвращать URI для доступа к развернутому ресурсу. Используйте необязательное свойство `condition`, чтобы указать, возвращается ли выходное значение.
 
 ## <a name="define-and-use-output-values"></a>Определение и использование выходных значений
 
@@ -31,6 +31,18 @@ ms.locfileid: "55691037"
 ```json
 "outputs": {
   "resourceID": {
+    "type": "string",
+    "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_name'))]"
+  }
+}
+```
+
+В следующем примере показано, как условно вернуть идентификатор ресурса для общедоступного IP-адреса на основе развертывания нового.
+
+```json
+"outputs": {
+  "resourceID": {
+    "condition": "[equals(parameters('publicIpNewOrExisting'), 'new')]",
     "type": "string",
     "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_name'))]"
   }
@@ -70,6 +82,7 @@ az group deployment show -g <resource-group-name> -n <deployment-name> --query p
 ```json
 "outputs": {
     "<outputName>" : {
+        "condition": "<boolean-value-whether-to-output-value>",
         "type" : "<type-of-output-value>",
         "value": "<output-value-expression>"
     }
@@ -79,6 +92,7 @@ az group deployment show -g <resource-group-name> -n <deployment-name> --query p
 | Имя элемента | Обязательно | ОПИСАНИЕ |
 |:--- |:--- |:--- |
 | outputName |Yes |Имя выходного значения. Должно быть допустимым идентификатором JavaScript. |
+| condition |Нет  | Логическое значение, которое указывает, возвращается ли выходное значение. Если установлено значение `true`, то при развертывании значение является частью выходных данных. Если установлено значение `false`, при развертывании выходное значение не создается. Когда не задано, по умолчанию используется значение `true`. |
 | Тип |Yes |Тип выходного значения. Выходные значения поддерживает те же типы, что и входные параметры шаблона. |
 | value |Yes |Выражение на языке шаблона, которое вычисляется и возвращается в качестве выходного значения. |
 

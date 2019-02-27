@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/07/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 976976bc3e1913c8c3edb55dfc268a8d93afcd9f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: d1f1ec45e1d4fc2fc6091a2f946caf6bc59441a9
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55185334"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417063"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 
@@ -62,7 +62,7 @@ ms.locfileid: "55185334"
 Теперь у вас есть приложение с разрешением на создание, чтение и обновление пользователей из клиента B2C.
 
 > [!NOTE]
-> Для полной обработки предоставления разрешений может потребоваться несколько минут.
+> Предоставление разрешений может занять несколько минут.
 > 
 > 
 

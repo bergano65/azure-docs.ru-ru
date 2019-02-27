@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2017
 ms.author: yegu
-ms.openlocfilehash: 5f448c1c66520a5941ad867eaf3c89c22693cc45
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 495fc031150d04f253279606baebb5d64d52bce7
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235578"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313438"
 ---
 # <a name="how-to-scale-azure-cache-for-redis"></a>Масштабирование кэша Azure для Redis
 Кэш Azure для Redis предлагается во множестве различных вариантов, отличающихся между собой размером и функциями. После создания кэша можно масштабировать его размер и ценовые категории при изменении требований приложения. В этой статье показано, как масштабировать кэш на портале Azure и с помощью инструментов, таких как Azure PowerShell и Azure CLI.
@@ -115,7 +115,7 @@ ms.locfileid: "56235578"
 * [Сохранятся ли данные кэша при масштабировании?](#will-i-lose-data-from-my-cache-during-scaling)
 * [Что происходит с пользовательским параметром databases при масштабировании?](#is-my-custom-databases-setting-affected-during-scaling)
 * [Будет ли кэш доступен во время масштабирования?](#will-my-cache-be-available-during-scaling)
-* [Почему мне не удается масштабировать кэш или изменить сегменты в кластере, когда настроена георепликация?](#scaling-limitations-with-geo-relication)
+* Почему мне не удается масштабировать кэш или изменить сегменты в кластере, когда настроена георепликация?
 * [Какие операции не поддерживаются?](#operations-that-are-not-supported)
 * [Сколько времени занимает масштабирование?](#how-long-does-scaling-take)
 * [Как узнать, когда масштабирование завершено?](#how-can-i-tell-when-scaling-is-complete)

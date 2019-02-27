@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: caleteet
 manager: femila
-ms.openlocfilehash: 884f6a81796341e274027095691585212d5a3749
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: acbd41b7203e458a5ed60382354c862748863053
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54829930"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328033"
 ---
 # <a name="hyperledger-fabric-consortium-network"></a>Сеть консорциума Hyperledger Fabric
 
@@ -113,7 +113,7 @@ ms.locfileid: "54829930"
 | Имя параметра | ОПИСАНИЕ | Допустимые значения |
 |---|---|---|
 **Тип масштабирования**|Тип развертывания одной виртуальной машины с несколькими контейнерами или нескольких виртуальных машин в модели горизонтального масштабирования.|Single VM (Одна виртуальная машина) или Multi VM (Несколько виртуальных машин) |
-**Тип диска виртуальной машины**|Тип хранилища, поддерживающий каждый из развернутых узлов. <br/> Дополнительные сведения о службе хранилища см. в статьях [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction) и [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage).|SSD (цен. категория "Стандартный") <br/> SSD (цен. категория "Премиум") |
+**Тип диска виртуальной машины**|Тип хранилища, поддерживающий каждый из развернутых узлов. <br/> Дополнительные сведения о типах доступных дисков см. в статье о [типах дисков, доступных в Azure](../../virtual-machines/windows/disks-types.md).|SSD (цен. категория "Стандартный") <br/> SSD (цен. категория "Премиум") |
 
 ### <a name="multiple-vm-deployment-additional-settings"></a>Развертывание нескольких виртуальных машин (дополнительные параметры)
 

@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
-ms.openlocfilehash: f2c4939436db5ae4c862cb311cc66a162ac716e3
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 01d452f97134093e9b40b6ec32f1c9fed41564aa
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989259"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343057"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
-Журналы Azure Monitor построены на базе Azure Data Explorer, поэтому для работы с журналом Azure Monitor используется такой же язык запросов. См. дополнительные сведения обо всех возможностях языка в [документации по языку запросов Azure Data Explorer](/azure/kusto/query) — основном источнике информации по созданию запросов к журналам в Azure Monitor. Эта страница содержит ссылки на другие ресурсы с информацией о создании запросов и описание отличий в разных вариантах реализации языка запросов для Azure Monitor.
+Журналы Azure Monitor построены на базе Azure Data Explorer, поэтому для работы с журналом Azure Monitor используется такой же язык запросов Kusto. См. дополнительные сведения обо всех возможностях языка в [документации по языку запросов Kusto](/azure/kusto/query) — основном источнике информации по созданию запросов к журналам в Azure Monitor. Эта страница содержит ссылки на другие ресурсы с информацией о создании запросов и описание отличий в разных вариантах реализации языка запросов для Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -36,8 +36,8 @@ ms.locfileid: "55989259"
 
 ## <a name="reference"></a>Справочные материалы
 
-- [Справочник по языку запросов](/azure/kusto/query) содержит подробную и полную информацию о языке запросов обозревателя данных.
-- В статье о [различиях в языках запросов к журналам Azure Monitor](data-explorer-difference.md) сравниваются разные версии языка запросов Azure Data Explorer.
+- [Справочник по языку запросов](/azure/kusto/query) содержит подробную и полную информацию о языке запросов Kusto.
+- В статье о [различиях в языках запросов к журналам Azure Monitor](data-explorer-difference.md) сравниваются разные версии языка запросов Kusto.
 - В статье о [стандартных свойствах в записях журналов Azure Monitor](../../azure-monitor/platform/log-standard-properties.md) описаны стандартные свойства для всех данных журналов Azure Monitor.
 - В статье о [выполнении запросов к журналам нескольких ресурсов в Azure Monitor](../../azure-monitor/log-query/cross-workspace-query.md) описано создание запросов с использованием данных из нескольких рабочих областей Log Analytics и приложений Application Insights.
 
@@ -65,4 +65,4 @@ ms.locfileid: "55989259"
  
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь с полной [справочной документацией по языку запросов обозревателя данных](/azure/kusto/query/).
+- Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

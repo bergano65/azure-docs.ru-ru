@@ -1,9 +1,9 @@
 ---
 title: API Graph Azure Active Directory | Документация Майкрософт
-description: Общие сведения и краткое руководство по API Azure AD Graph, который обеспечивает программный доступ к Azure AD через конечные точки REST API.
+description: Общие сведения и краткое руководство по API Graph Azure AD, который обеспечивает программный доступ к Azure AD с помощью конечных точек REST API.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
+author: lleonard-msft
 manager: mtillman
 ms.assetid: 5471ad74-20b3-44df-a2b5-43cde2c0a045
 ms.service: active-directory
@@ -13,21 +13,30 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: alleonar
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b26c8a0d040ab91c53e04593280885ef7fd13eb
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 567ea09a50edc043f2022a47d08576720550e750
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173765"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56448098"
 ---
 # <a name="azure-active-directory-graph-api"></a>API Graph Azure Active Directory
 
 > [!IMPORTANT]
-> Мы настоятельно рекомендуем использовать для доступа к ресурсам Azure Active Directory [Microsoft Graph](https://developer.microsoft.com/graph/) вместо API Azure AD Graph. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует совсем немного сценариев, в которых по-прежнему можно использовать API Azure AD Graph. Дополнительные сведения см. в записи блога [Microsoft Graph or the Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) (Microsoft Graph или Azure AD Graph) в Центре разработчика Office.
+>
+> API Graph Azure Active Directory по состоянию на февраль 2019 года заменяется на API Graph Microsoft.  
+>
+> Чтобы облегчить переход, более ранние версии API Graph Azure AD будут списаны прежде, чем более новые.  
+>
+> Дополнительные сведения, обновления и интервалы времени см. в записи блога в Office Dev Center под названием [Microsoft Graph or the Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) (Microsoft Graph или Azure AD Graph).
+>
+> Со временем программы должны использовать API Graph Microsoft. 
+
+
 
 В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](https://docs.microsoft.com/graph/use-the-api). 
 

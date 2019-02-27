@@ -11,21 +11,27 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/10/2019
+ms.date: 02/13/2019
 ms.author: magoedte
-ms.openlocfilehash: 3013d8997660df95fb12c8b18c1120f726eead04
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
+ms.openlocfilehash: 8b1504961254fefcaafc22008b4cc5adaf77e9c4
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55216026"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447877"
 ---
-# <a name="application-insights-connector-management-solution-preview"></a>Решение по управлению "Соединитель Application Insights" (предварительная версия)
+# <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
 ![Символ Application Insights](./media/app-insights-connector/app-insights-connector-symbol.png)
 
 >[!NOTE]
-> Реализована поддержка [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md) и [просмотра нескольких ресурсов Azure Monitor Application Insights](../log-query/unify-app-resource-data.md). Поэтому решение по управлению соединителем Application Insights больше не требуется. Соединитель Application Insights будет объявлен устаревшим и удален из Azure Marketplace, а портал OMS официально объявлен устаревшим 15 января 2019 года для коммерческого облака Azure и облака Azure для государственных организаций США, он будет официально удален 30 марта 2019 года. Существующие соединения будут работать до 30 июня 2019 года. В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Эта можно будет выполнить с помощью REST API, который будет доступен с января 2019 г. Соответствующее уведомление будет опубликовано в [обновлениях Azure](https://azure.microsoft.com/updates/). Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](../../azure-monitor/platform/oms-portal-transition.md).
+> Благодаря поддержке [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md) решение по управлению Соединителем Application Insights больше не требуется. Его было объявлено устаревшим и удалено из Azure Marketplace, а портал OMS официально объявлен устаревшим 15 января 2019 года для коммерческого облака Azure. Этот компонент будет выведен из эксплуатации 30 марта 2019 года для облака Azure для государственных организаций США.
+>
+>Существующие соединения будут работать до 30 июня 2019 года.  В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Чтобы получить сведения о сценарии для удаления существующих соединителей с помощью PowerShell см. раздел [Удаление соединителя с помощью PowerShell](#removing-the-connector-with-powershell) указанный ниже.
+>
+>Рекомендации по запросах журнала Application Insights для нескольких приложений см. в статье [Объединение нескольких ресурсов Azure Monitor Application Insights](../log-query/unify-app-resource-data.md). Дополнительные сведения об устаревании портала OMS см. в статье [Перемещение портала OMS в Azure](../../azure-monitor/platform/oms-portal-transition.md).
+>
+> 
 
 С помощью решения "Соединитель Application Insights" можно диагностировать проблемы с производительностью, а также узнать, какие действия пользователи выполняют в вашем приложении, которое отслеживается с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). В Log Analytics доступны представления данных телеметрии приложения, которые отображаются для разработчиков в Application Insights. Тем не менее при интеграции приложений Application Insights с Log Analytics видимость приложений увеличивается, так как данные операций и приложений находятся в одном месте. Наличие тех же представлений, что и у разработчиков, поможет вам сотрудничать с ними. Благодаря общим представлениям вы сможете быстрее обнаруживать проблемы с платформой и приложением, а также решать их.
 
@@ -262,6 +268,57 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 
 В этом решении нет примеров запросов поиска по журналам, отображаемых на панели мониторинга. Тем не менее пример запросов поиска по журналам с описаниями можно найти в разделе [Просмотр сведений о соединителе Application Insights](#view-application-insights-connector-information).
+
+## <a name="removing-the-connector-with-powershell"></a>Удаление соединителя с помощью PowerShell
+В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Вы можете удалить существующие соединители с помощью следующего сценария PowerShell. Чтобы выполнить эту операцию вы должны быть владельцем или участником рабочей области и читателем ресурса Application Insights.
+
+```PowerShell
+$Subscription_app = "App Subscription Name"
+$ResourceGroup_app = "App ResourceGroup"
+$Application = "Application Name"
+$Subscription_workspace = "Workspace Subscription Name"
+$ResourceGroup_workspace = "Workspace ResourceGroup"
+$Workspace = "Workspace Name"
+
+Connect-AzureRmAccount
+Set-AzureRmContext -SubscriptionId $Subscription_app
+$AIApp = Get-AzureRmApplicationInsights -ResourceGroupName $ResourceGroup_app -Name $Application 
+Set-AzureRmContext -SubscriptionId $Subscription_workspace
+Remove-AzureRmOperationalInsightsDataSource -WorkspaceName $Workspace -ResourceGroupName $ResourceGroup_workspace -Name $AIApp.Id
+```
+
+Благодаря использованию следующего скрипта PowerShell, который запускает вызов API REST, вы можете получить список приложений. 
+
+```PowerShell
+Connect-AzureRmAccount
+$Tenant = "TenantId"
+$Subscription_workspace = "Workspace Subscription Name"
+$ResourceGroup_workspace = "Workspace ResourceGroup"
+$Workspace = "Workspace Name"
+$AccessToken = "AAD Authentication Token" 
+
+Set-AzureRmContext -SubscriptionId $Subscription_workspace
+$LAWorkspace = Get-AzureRmOperationalInsightsWorkspace -ResourceGroupName $ResourceGroup_workspace -Name $Workspace
+
+$Headers = @{
+    "Authorization" = "Bearer $($AccessToken)"
+    "x-ms-client-tenant-id" = $Tenant
+}
+
+$Connections = Invoke-RestMethod -Method "GET" -Uri "https://management.azure.com$($LAWorkspace.ResourceId)/dataSources/?%24filter=kind%20eq%20'ApplicationInsights'&api-version=2015-11-01-preview" -Headers $Headers
+$ConnectionsJson = $Connections | ConvertTo-Json
+```
+Этот сценарий требует маркер проверки подлинности носителя, используемый в процессе проверки подлинности в Azure Active Directory. Одним из способов получения токена описан в статье [Data Sources — Create Or Update](https://docs.microsoft.com/rest/api/loganalytics/datasources/createorupdate) (Источники данных: создание или обновление). Щелкните **Попробовать** и войдите в свою подписку Azure. Вы можете скопировать маркер носителя из **предварительного запроса**, как показано на следующем рисунке.
+
+
+![Маркер носителя](media/app-insights-connector/bearer-token.png)
+
+
+С помощью следующего запроса журнала вы можете получить список приложений.
+
+```Kusto
+ApplicationInsights | summarize by ApplicationName
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

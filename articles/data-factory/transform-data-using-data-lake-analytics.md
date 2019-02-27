@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: abnarain
-ms.openlocfilehash: 1874473b3ad091ce1da0a48367548cd4432737a2
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 9918dd55181eb82257f23f8974159ed5e762fedd
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54016500"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268104"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -131,7 +131,7 @@ ms.locfileid: "54016500"
 | runtimeVersion      | Версия среды выполнения обработчика U-SQL, которую нужно использовать. | Нет        |
 | compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений. **Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности. **Full**: выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д. **SingleBox**: выполнение полной компиляции с параметром TargetType, заданным для SingleBox. Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. | Нет  |
 
-Определение скрипта, отправляемого фабрикой данных, см. в разделе [Пример скрипта U-SQL](#sample-u-sql-script). 
+Определение сценария см. в разделе [Пример скрипта U-SQL](#sample-u-sql-script). 
 
 ## <a name="sample-u-sql-script"></a>Пример скрипта U-SQL
 

@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: danlep
-ms.openlocfilehash: 73c61c62a84642b93ed96cdd80e258a1128fef6a
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 79ba32f85c608d98b29b235bf1417e74f7e2a4d4
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077477"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313489"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -35,6 +35,7 @@ ms.locfileid: "54077477"
 
 * Для развертывания группы контейнеров в подсети эта подсеть не должна содержать другие типы ресурсов. Удалите все существующие ресурсы из существующей подсети, прежде чем развернуть в ней группы контейнеров, или создайте новую подсеть.
 * Группы контейнеров, развернутых в виртуальной сети, сейчас не поддерживают общедоступные IP-адреса и метки DNS-имен.
+* Нельзя использовать [управляемое удостоверение](container-instances-managed-identity.md) в группе контейнеров, развернутой в виртуальной сети.
 * Из-за того, что задействуются дополнительные сетевые ресурсы, развертывание группы контейнеров в виртуальной сети обычно выполняется медленнее, чем развертывание стандартного экземпляра контейнера.
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии

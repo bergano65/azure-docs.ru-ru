@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 10/02/2018
 ms.author: hascipio; v-divte; v-miclar
-ms.openlocfilehash: 535a947f7a4b9c750d585ce854a14be80c4a135c
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 381f88c4641417bceca0f988d4b1a187aedaa642
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49639399"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327312"
 ---
 # <a name="common-issues-during-vhd-creation-faq"></a>Распространенные проблемы при создании виртуального жесткого диска. Вопросы и ответы
 
@@ -27,7 +27,7 @@ ms.locfileid: "49639399"
 
 ## <a name="how-do-you-create-a-vm-from-the-azure-portal-using-the-vhd-that-is-uploaded-to-premium-storage"></a>Как создать виртуальную машину на портале Azure с помощью виртуального жесткого диска, переданного в хранилище класса Premium?
 
-Azure Marketplace в настоящее время не поддерживает создание предложений виртуальных машин на основе образов, находящихся в управляемом хранилище или в хранилище Azure класса Premium.  Дополнительные сведения об этих вариантах хранения см. в статьях [Обзор компонента "Управляемые диски" Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview) и [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage).
+Azure Marketplace в настоящее время не поддерживает создание предложений виртуальных машин на основе образов, находящихся в управляемом хранилище или в хранилище Azure класса Premium.  Дополнительные сведения о возможностях хранения данных доступны в [Обзоре компонента "Управляемые диски" Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
 
 
 ## <a name="can-you-use-generation-2-vms-for-offers"></a>Можно ли использовать виртуальные машины 2-го поколения для предложений?
@@ -73,7 +73,7 @@ Azure Marketplace в настоящее время не поддерживает
 
 ## <a name="in-a-vm-how-do-you-manage-the-custom-script-extension-in-the-startup-task"></a>Как управлять расширением пользовательских скриптов в задаче запуска на виртуальной машине?
 
-Использование расширения пользовательских скриптов с помощью модуля Azure PowerShell, шаблонов Azure Resource Manager и сведения о действиях по устранению неполадок в системах Windows см. в статье [Расширение Custom Script в ОС Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/).
+В этой статье объясняется, как использовать расширение пользовательских сценариев с помощью модуля Azure PowerShell и шаблонов Azure Resource Manager, а также подробно описываются действия по устранению неполадок в системах Windows. [Расширение Custom Script в ОС Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/)
 
 
 ## <a name="are-32-bit-applications-or-services-supported-in-the-azure-marketplace"></a>Поддерживаются ли 32-разрядные приложения или службы в Azure Marketplace?

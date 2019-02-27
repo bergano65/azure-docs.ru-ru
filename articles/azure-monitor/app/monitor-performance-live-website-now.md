@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 3daa1c7b3594de227c43d7e722ee9c6cae0902f8
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: f7d7b7f470f43d8a7a1cd94b4b1ce79503f0dfca
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55301617"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301032"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -27,7 +27,7 @@ ms.locfileid: "55301617"
 
 - Если ваше приложение развернуто в службах приложений Azure, выполните [эти инструкции](azure-web-apps.md).
 - Если приложение развернуто на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure.
-- (См. статьи об инструментировании [динамических веб-приложений J2EE](java-live.md) и [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
+- (См. статьи об инструментировании [динамических веб-приложений Java EE](java-live.md) и [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
 
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/monitor-performance-live-website-now/overview-graphs.png)

@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 09/16/2018
+ms.date: 02/14/2018
 ms.author: mbullwin
-ms.openlocfilehash: 2b26261fdbae07bf3eea793efe6ff0755ca3f577
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 1383c59ca88400868f83d30d04d9b0e5f5401282
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895998"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56268963"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -400,7 +400,7 @@ TrackRequest используется в серверном пакете SDK, ч
 
 ## <a name="operation-context"></a>Контекст операции
 
-Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В [службе поиска](../../azure-monitor/app/diagnostic-search.md) и [службе аналитики](analytics.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
+Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В службе [Поиск](../../azure-monitor/app/diagnostic-search.md) и службе [Analytics](analytics.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
 
 Дополнительные сведения о корреляции см. в статье [Корреляция данных телеметрии в Application Insights](../../azure-monitor/app/correlation.md).
 
@@ -508,7 +508,7 @@ catch (ex)
 Пакеты SDK перехватывают многие исключения автоматически, поэтому не всегда нужно явно вызвать метод TrackException.
 
 * ASP.NET: [написание кода для перехвата исключений](../../azure-monitor/app/asp-net-exceptions.md).
-* J2EE: [исключения перехватываются автоматически](../../azure-monitor/app/java-get-started.md#exceptions-and-request-failures).
+* Java EE: [исключения перехватываются автоматически](../../azure-monitor/app/java-get-started.md#exceptions-and-request-failures).
 * JavaScript: исключения перехватываются автоматически. Если вы хотите отключить автоматический сбор, добавьте строку в фрагмент кода, который вставляется на веб-страницы.
 
 ```javascript
@@ -732,7 +732,7 @@ Thread.sleep(5000);
 telemetry.flush();
 ```
 
-Обратите внимание, что для [канала телеметрии сервера](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/) эта функция является асинхронной.
+Эта функция является асинхронной для [канала телеметрии сервера](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/).
 
 Желательно использовать в действии завершения работы для приложения метод flush().
 
@@ -1144,7 +1144,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 * **InstrumentationKey**: ресурс Application Insights в Azure, в котором отображается телеметрия. Обычно этот ресурс получают из файла ApplicationInsights.config.
 * **Location:** географическое расположение устройства.
 * **Operation:** текущий HTTP-запрос в веб-приложениях. В приложениях других типов для этого значения можно задать значение "Группировать события совместно".
-  * **Id:** созданное значение, которое сопоставляет различные события, чтобы при проверке любого события в поиске по журналу диагностики можно было найти связанные элементы.
+  * **ID:** созданное значение, которое сопоставляет различные события, чтобы при проверке любого события в поиске по журналу диагностики можно было найти связанные элементы.
   * **Name**: идентификатор, обычно URL-адрес HTTP-запроса.
   * **SyntheticSource**: если эта строка не пустая и не имеет значение NULL, она означает, что источник запроса был определен как бот или веб-тест. По умолчанию он исключается из вычислений в обозревателе метрик.
 * **Properties:** свойства, которые отправляются со всеми данными телеметрии. Это значение можно переопределить в отдельных вызовах Track*.

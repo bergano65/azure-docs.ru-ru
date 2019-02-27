@@ -10,12 +10,12 @@ ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: wamota
 ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: fee5db2cde4e4056a8cb1fca80e09511d0ca0b53
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: c3b27291fc413310393cd0270ec750de14a4985b
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117282"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270068"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -34,6 +34,9 @@ ms.locfileid: "56117282"
 
 > [!Note]  
 > Пользователям виртуальные IP-адреса предоставляются динамически, и они самостоятельно управляют этим процессом без согласования с оператором Azure Stack.
+
+> [!Note]
+> Начиная с обновления 1811, при добавлении [хост-процесса для расширений](azure-stack-extension-host-prepare.md) порты с 12495 по 30015 должны быть закрыты.
 
 |Конечная точка (виртуальный IP-адрес)|Запись A на узле DNS|Протокол|порты;|
 |---------|---------|---------|---------|

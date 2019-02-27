@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: d6010b7ff03689588251a9649eecb412bf9f3a8d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: eb1fe69a7fb99949ac95291c33e76c1a32bf5439
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38701926"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56310063"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
 
@@ -32,7 +32,7 @@ ms.locfileid: "38701926"
 > [!NOTE]
 > -  Портал Azure поддерживает устройства под управлением обновления 5.0 или более поздней версии. Если устройство не обновлено, немедленно установите обновление 5. Дополнительные сведения см. в статье [Установка обновления 5 на устройство StorSimple](storsimple-8000-install-update-5.md). 
 > - Если вы используете облачное устройстве StorSimple (8010/8020), то не сможете обновить его. Используйте последнюю версию программного обеспечения для создания облачного устройства с обновлением 5.0, а затем выполните отработку отказа в созданное облачное устройство. 
-> - Функциональность управления всеми устройствами с обновлением 4.0 или более ранней версии будет [ограничена](storsimple-8000-manage-service.md#supported-operations-on-devices-running-versions-prior-to-update-5.0). 
+> - Функциональность управления всеми устройствами с обновлением 4.0 или более ранней версии будет ограничена. 
 
 ## <a name="create-a-service"></a>создание службы;
 Чтобы создать службу диспетчера устройств StorSimple, необходимо иметь следующее:
@@ -93,7 +93,7 @@ ms.locfileid: "38701926"
 
 Сохраните ключ регистрации в безопасном расположении. Этот ключ, а также ключ шифрования данных службы потребуется для регистрации дополнительных устройств в службе. После получения ключа регистрации службы вам потребуется настроить устройство в интерфейсе Windows PowerShell для StorSimple.
 
-Дополнительные сведения о том, как использовать этот ключ регистрации см. в разделе [Шаг 3. Настройка и регистрация устройства в Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+Дополнительные сведения о том, как использовать этот ключ регистрации, см. в разделе [Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
 
 ## <a name="regenerate-the-service-registration-key"></a>повторное создание ключа регистрации службы.
 Если вам необходимо сменить ключ или при изменении списка администраторов службы потребуется повторно создать ключ регистрации службы. При повторном создании ключа новый ключ используется только для регистрации последующих устройств. Этот процесс не затронет уже зарегистрированные устройства.
@@ -143,7 +143,7 @@ ms.locfileid: "38701926"
 * Невозможно авторизовать устройство во время смены ключа шифрования данных службы.
 * Можно авторизовать устройство, если некоторые из зарегистрированных в службе устройств изменили шифрование, а другие — нет. 
 
-### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
+### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаг 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
 Этот шаг выполняется в интерфейсе Windows PowerShell для StorSimple на авторизованном устройстве StorSimple.
 
 > [!NOTE]
@@ -168,7 +168,7 @@ ms.locfileid: "38701926"
    
    Если в службе зарегистрировано одно устройство, процесс замены завершен, а следующий шаг можно пропустить. Если в службе зарегистрировано несколько устройств, перейдите к шагу 3.
 
-### <a name="step-3-update-the-service-data-encryption-key-on-other-storsimple-devices"></a>Шаг 3. Обновление ключа шифрования данных службы на других устройствах StorSimple
+### <a name="step-3-update-the-service-data-encryption-key-on-other-storsimple-devices"></a>Шаг 3. Обновление ключа шифрования данных службы на других устройствах StorSimple
 Эти действия необходимо выполнить в интерфейсе Windows PowerShell устройства StorSimple при наличии нескольких устройств, зарегистрированных в службе StorSimple Manager. Ключ, полученный на шаге 2, следует использовать для обновления остальных устройств StorSimple, зарегистрированных в службе StorSimple Manager.
 
 Выполните следующие действия для обновления шифрования данных службы на устройстве.
@@ -176,7 +176,7 @@ ms.locfileid: "38701926"
 #### <a name="to-update-the-service-data-encryption-key-on-physical-devices"></a>Обновление ключа шифрования данных службы на физических устройствах
 1. Используйте Windows PowerShell для StorSimple, чтобы подключиться к консоли. Выберите вариант 1, чтобы войти на устройство с правами на полный доступ.
 2. В командной строке введите следующий текст: `Invoke-HcsmServiceDataEncryptionKeyChange – ServiceDataEncryptionKey`.
-3. Укажите ключ шифрования данных службы, полученный на [Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы](#to-initiate-the-service-data-encryption-key-change).
+3. Укажите ключ шифрования данных службы, полученный на [Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы](#to-initiate-the-service-data-encryption-key-change).
 
 #### <a name="to-update-the-service-data-encryption-key-on-all-the-80108020-cloud-appliances"></a>Обновление ключа шифрования данных службы на всех облачных устройствах 8010/8020
 1. Скачайте и установите сценарий PowerShell [Update-CloudApplianceServiceEncryptionKey.ps1](https://github.com/anoobbacker/storsimpledevicemgmttools/blob/master/Update-CloudApplianceServiceEncryptionKey.ps1). 

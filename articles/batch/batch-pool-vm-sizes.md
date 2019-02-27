@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/25/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 921dfc12a7353725d3f9e05d7aa3245ec8ba6084
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 43094839c9da9b00c97d1dffd53f98a3acd119d5
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186012"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417148"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -44,14 +44,16 @@ ms.locfileid: "56186012"
 | Серия B | Все |
 | Серии DC | Все |
 | Максимально оптимизированные для операций в памяти | Все |
-| Серия HB<sup>1</sup> | Все |
-| Серия HC<sup>1</sup> | Все |
+| Серии Hb<sup>1, 2</sup> | Все |
+| Серии Hc<sup>1, 2</sup> | Все |
 | Серия Lsv2 | Все |
-| Серия NDv2<sup>1</sup> | Все |
-| Серия NVv2 | Все |
+| Серии NDv2<sup>1, 2</sup> | Все |
+| Серия NVv2<sup>1</sup> | Все |
 | SAP HANA | Все |
 
-<sup>1</sup> Может использоваться учетными записями пакетной службы в режиме пользовательской подписки, для которого предусмотрена квота на ядра. См. дополнительные сведения о [конфигурации для режима пользовательской подписки](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
+
+<sup>1</sup> Запланирована поддержка.  
+<sup>2</sup> Может использоваться учетными записями пакетной службы в режиме пользовательской подписки, для которого предусмотрена квота на ядра. См. дополнительные сведения о [конфигурации для режима пользовательской подписки](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
 
 Следующие размеры виртуальных машин поддерживаются только для узлов с низким приоритетом:
 

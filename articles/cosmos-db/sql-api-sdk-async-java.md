@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 2/8/2019
 ms.author: moderakh
-ms.openlocfilehash: 88fcfec903dac9d939d658e5d06a51ab8ff1aba9
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 1a86ceefdc5c3b60dc4bca5a1ac659534653aa66
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55979179"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416281"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -45,13 +45,12 @@ ms.locfileid: "55979179"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
-* Возможность подключения в прямом режиме в общедоступной версии.
+* Режим прямого подключения теперь доступен по умолчанию. Пример использования режима прямого подключения, см. в разделе [azure-cosmosdb-java](https://github.com/Azure/azure-cosmosdb-java) репозитория GitHub.
 * Добавлена поддержка QueryMetrics.
-* Изменены API, принимающие java.util.Collection, для которых важен порядок принятия java.util.List.
-  Теперь ConnectionPolicy#getPreferredLocations(), JsonSerialization и PartitionKey(.) принимают список.
+* Изменены API, принимающие java.util.Collection, для которых важен порядок принятия java.util.List. Теперь ConnectionPolicy#getPreferredLocations(), JsonSerialization и PartitionKey(.) принимают список.
 
 ### <a name="a-name240-beta-1240-beta-1"></a><a name="2.4.0-beta-1"/>2.4.0-beta-1
-* Добавлена поддержка для Direct.
+* Добавлена поддержка режима прямого подключения.
 * Изменены API, принимающие java.util.Collection, для которых важен порядок принятия java.util.List.
   Теперь ConnectionPolicy#getPreferredLocations(), JsonSerialization и PartitionKey(.) принимают список.
 * Исправлена ошибка сеанса для запроса документа в режиме шлюза.

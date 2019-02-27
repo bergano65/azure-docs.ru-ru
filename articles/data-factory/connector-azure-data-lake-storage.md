@@ -1,6 +1,6 @@
 ---
-title: Копирование данных в хранилище Azure Data Lake Gen2 (предварительная версия) или из нее с помощью фабрики данных (предварительная версия) | Документы Microsoft
-description: Узнайте, как с помощью хранилища Azure Data Lake Gen2 (предварительная версия) копировать данные в фабрику данных Azure и обратно.
+title: Копирование данных в хранилище Azure Data Lake Storage 2-го поколения и из него с помощью Фабрики данных | Документация Майкрософт
+description: В этой статье приведены сведения о том, как с помощью Фабрики данных Azure копировать данные в хранилище Azure Data Lake Storage 2-го поколения и обратно.
 services: data-factory
 author: linda33wj
 manager: craigg
@@ -8,18 +8,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 01/25/2019
+ms.date: 02/15/2019
 ms.author: jingwang
-ms.openlocfilehash: 5e8bc85a309a8c6755f1efae1ca702720cf01477
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 7a01b4baa9dafba4f0193c7a73dc1ae44214f501
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662319"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311592"
 ---
-# <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-preview-using-azure-data-factory-preview"></a>Копирование данных в хранилище Azure Data Lake Gen2 (предварительная версия) или из нее с помощью фабрики данных (предварительная версия)
+# <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-using-azure-data-factory"></a>Копирование данных в хранилище Azure Data Lake Storage 2-го поколения и из него с помощью Фабрики данных Azure
 
-Azure Data Lake Storage 2-го поколения (предварительная версия) — это набор возможностей аналитики больших данных, встроенных в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md). Она позволяет работать с данными с использованием как файловой системы, так и парадигмы хранения объектов.
+Azure Data Lake Storage 2-го поколения — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md). Она позволяет работать с данными с использованием как файловой системы, так и парадигмы хранения объектов.
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные в хранилище Data Lake Storage Gen2 и из него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

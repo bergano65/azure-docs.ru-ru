@@ -4,14 +4,14 @@ description: В этой статье рассматриваются часто 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 01/11/2019
+ms.date: 02/19/2019
 ms.author: snehaa
-ms.openlocfilehash: 1e60ee5060f5f292ed6d03cf0680d9801a0c04f4
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 9d1820215dd2b81edb694d71a1b9496237876d05
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746325"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416196"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -118,6 +118,10 @@ Azure Government | Правительство штата Вирджиния
 
 Чтобы визуализировать зависимости при установке агентов на виртуальные машины, собранные агентами зависимостей данные сохраняются в США в рабочей области Log Analytics, созданной в подписке пользователя. При удалении рабочей области Log Analytics из подписки эти данные удаляются. [Узнайте больше](https://docs.microsoft.com/azure/migrate/concepts-dependency-visualization).
 
+### <a name="what-is-the-volume-of-data-which-is-uploaded-by-azure-migrate-in-the-case-of-continuous-profiling"></a>Какой объем данных загружается с помощью Миграции Azure в случае непрерывного профилирования?
+
+Объем данных, отправляемых в Миграцию Azure, зависит от нескольких параметров. Чтобы предоставить ориентировочное число, проект, имеющий десять машин (каждый из которых имеет один диск и одну сетевую карту), будет отправлять около 50 МБ в день. Это приблизительное значение, которое будет меняться в зависимости от количества точек данных для сетевых карт и дисков (отправленные данные будут нелинейными, если число машин, сетевых карт или дисков увеличится). 
+
 ### <a name="is-the-data-encrypted-at-rest-and-while-in-transit"></a>Шифруются ли данные при хранении и во время передачи?
 
 Да, собранные данные шифруются как во время хранения, так и во время передачи. Собранные устройством метаданные передаются в службу "Миграция Azure" с поддержкой надлежащего уровня безопасности через Интернет по протоколу HTTPS. Собранные метаданные хранятся в базе данных [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest) и в [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) в подписке Майкрософт и шифруются при хранении.
@@ -130,7 +134,7 @@ Azure Government | Правительство штата Вирджиния
 
 ### <a name="can-i-connect-the-same-collector-appliance-to-multiple-vcenter-servers"></a>Можно ли подключить один модуль сборщика к нескольким серверам vCenter?
 
-Да, один модуль сборщика можно использовать для обнаружения нескольких vCenter, но не одновременно. Операции обнаружения следует выполнять поочередно.
+Да, один модуль сборщика можно использовать для обнаружения нескольких vCenter, но не одновременно. Операцию обнаружения следует выполнять поочередно.
 
 ### <a name="is-the-ova-template-used-by-site-recovery-integrated-with-the-ova-used-by-azure-migrate"></a>Можно ли интегрировать OVA-файл шаблона, используемый службой Site Recovery, с OVA-файлом, используемым службой "Миграция Azure"?
 

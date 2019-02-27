@@ -200,7 +200,7 @@
 #### [Обновление 3](storsimple-update3-release-notes.md)
 #### [Обновление 2.2](storsimple-update21-release-notes.md)
 #### [Обновление 2](storsimple-update2-release-notes.md)
-#### [Обновление 1](storsimple-update1-release-notes.md)
+#### [Обновление 1](storsimple-update1-release-notes.md)
 #### [Обновление 0.3](storsimple-february-2015-release-notes.md)
 #### [Обновление 0.2](storsimple-january-2015-release-notes.md)
 #### [Обновление 0.1](storsimple-october-2014-release-notes.md)

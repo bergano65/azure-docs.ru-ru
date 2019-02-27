@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: cf20c7dbfbf7cd3f09579b03b835148c1c295137
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5f75f656312c11a4668ca9ef9fe7b2a61a7d13e8
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34600635"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56301151"
 ---
 # <a name="consumption-model"></a>Модель потребления
 
@@ -30,7 +30,7 @@ ms.locfileid: "34600635"
 * Если параметры **accelerationEfficiency** и **decelerationEfficiency** указаны, сумма их значений не должна превышать 1 (для предотвращения вечного движения).
 * Параметры **uphillEfficiency** (эффективность подъема) и **downhillEfficiency** (эффективность спуска) всегда нужно указывать вместе (т. е. или оба, или ни одного).
 * Если **uphillEfficiency** и **downhillEfficiency** указаны, сумма их значений не должна превышать 1 (для предотвращения вечного движения).
-* Если пользователь указал параметры \***эффективности**, должен быть указан и **вес транспортного средства**. Если параметр **vehicleEngineType** имеет значение _combustion_, параметр **fuelEnergyDensityInMJoulesPerLiter** (энергетическая плотность топлива в джоулях на литр) также должен быть указан.
+* Если пользователь указал параметры \*__эффективности__, должен быть указан и **вес транспортного средства**. Если параметр **vehicleEngineType** имеет значение _combustion_, параметр **fuelEnergyDensityInMJoulesPerLiter** (энергетическая плотность топлива в джоулях на литр) также должен быть указан.
 * Параметры **maxChargeInkWh** (макс. заряд в кВт/ч) и **currentChargeInkWh** (текущий заряд в кВт/ч) всегда нужно указывать вместе (т. е. или оба, или ни одного).
 
 > [!NOTE]

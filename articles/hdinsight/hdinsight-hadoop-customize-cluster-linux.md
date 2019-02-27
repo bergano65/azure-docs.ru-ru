@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: ea83d061f7160db04c847be66e79da60da78634d
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: d325cfd679c2a8b878ae9a7b483431aba32b2a5a
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55662913"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313285"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -55,7 +55,7 @@ ms.locfileid: "55662913"
 
     * Учетная запись Azure Data Lake Storage, доступная из кластера HDInsight. Дополнительные сведения об использовании Azure Data Lake Storage с HDInsight см. в [кратком руководстве по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
-        URI для сценариев, находящихся в Data Lake Storage, имеет следующий формат: `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
+        URI для скриптов, находящихся в Data Lake Storage 1-го поколения, имеет формат `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
 
         > [!NOTE]  
         > Кластер HDInsight субъекта-службы с доступом к Data Lake Storage должен иметь доступ к сценарию с правами на чтение.

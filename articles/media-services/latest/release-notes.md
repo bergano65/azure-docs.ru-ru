@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: juliako
-ms.openlocfilehash: 8e2af866dcea3bd8ece29811b2cc8ccd4318ee54
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 8f549c20480e3866725717aa054af6653ab5a913
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242820"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56344001"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -38,11 +38,13 @@ ms.locfileid: "56242820"
 
 Службы мультимедиа версии 3 теперь поддерживаются в национальных облаках Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
 
+Событие [Microsoft.Media.JobOutputProgress](media-services-event-schemas.md#monitoring-job-output-progress) для Служб мультимедиа добавлено в Сетку событий Azure.
+
 ## <a name="january-2019"></a>Январь 2019 г.
 
 ### <a name="media-encoder-standard-and-mpi-files"></a>Файлы MPI и Media Encoder Standard 
 
-При кодировании с помощью Media Encoder Standard для создания файлов MP4 создается и добавляется в выходной ресурс новый MPI-файл. Этот MPI-файл предназначен для повышения производительности динамической упаковки и потоковой передачи.
+При кодировании с помощью Media Encoder Standard для создания файлов MP4 создается и добавляется в выходной ресурс новый MPI-файл. Этот MPI-файл предназначен для повышения производительности [динамической упаковки](dynamic-packaging-overview.md) и потоковой передачи.
 
 Не следует изменять или удалять MPI-файл, а также ваша служба не должна зависеть от существования (или отсутствия) такого файла.
 

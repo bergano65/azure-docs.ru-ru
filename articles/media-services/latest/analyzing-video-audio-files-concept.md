@@ -9,20 +9,20 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 11/17/2018
+ms.date: 02/13/2019
 ms.author: juliako
-ms.openlocfilehash: 9a96edbc70eeda8acee792a71d84b4a2c6c4fef8
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 247d72396d1737d568a89656c544bbe699f11e30
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745390"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342394"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Анализ видео- и аудиофайлов
 
 В Службах мультимедиа Azure версии 3 можно извлекать аналитические сведения из видео- и аудиофайлов с помощью средства "Индексатор видео", используя предустановки анализатора AMS версии 3 (описано в этой статье). Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео. Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится [сравнение](../video-indexer/compare-video-indexer-with-media-services-presets.md) этих инструментов.
 
-Для анализа содержимого с помощью предустановок Cлужб мультимедиа версии 3 создайте **Преобразование** и отправьте **Задание**, использующее одну из этих предустановок: **AudioAnalyzerPreset** или **VideoAnalyzerPreset**. В следующей статье демонстрируется использование **VideoAnalyzerPreset**: [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md).
+Для анализа содержимого с помощью предустановок Cлужб мультимедиа версии 3 создайте **Преобразование** и отправьте **Задание**, использующее одну из этих предустановок: [VideoAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#videoanalyzerpreset) или **AudioAnalyzerPreset**. В следующей статье демонстрируется использование **VideoAnalyzerPreset**: [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md).
 
 > [!NOTE]
 > Используя наборы настроек анализаторов, установите 10 зарезервированных единиц мультимедиа S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](../previous/media-services-scale-media-processing-overview.md).

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: crdun
-ms.openlocfilehash: 31e02cd931b3c9ab2cc55a540841969488c0c5f7
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 132909931291daf3aefddd5e1a44273050d98e06
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997530"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56326176"
 ---
 # <a name="add-authentication-to-your-xamarinios-app"></a>Добавление проверки подлинности в приложение Xamarin.iOS
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "52997530"
 
 Для безопасной аутентификации требуется определить новую схему URL-адресов для своего приложения. Это позволяет системе аутентификации выполнять перенаправление обратно в приложение после завершения процесса аутентификации. В этом руководстве мы повсеместно используем схему URL-адресов _appname_. Тем не менее можно использовать любую схему URL-адресов на свой выбор. Она должна быть уникальной для мобильного приложения. Вот как можно включить перенаправление на стороне сервера.
 
-1. На портале Azure выберите свою службу приложений.
+1. На [портале Azure](https://portal.azure.com/) выберите свою службу приложений.
 
 2. Выберите пункт меню **Аутентификация или авторизация**.
 
@@ -48,9 +48,9 @@ ms.locfileid: "52997530"
 ## <a name="restrict-permissions-to-authenticated-users"></a>Ограничение разрешений для пользователей, прошедших проверку подлинности
 [!INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-&nbsp;&nbsp;4. В Visual Studio или Xamarin Studio запустите клиентский проект на устройстве или в эмуляторе. Убедитесь, что после запуска приложения возникает необработанное исключение с кодом состояния 401 (неавторизованный). Ошибка записывается в консоль отладчика. Поэтому в Visual Studio вы увидите ошибку в окне вывода.
+* В Visual Studio или Xamarin Studio запустите клиентский проект на устройстве или в эмуляторе. Убедитесь, что после запуска приложения возникает необработанное исключение с кодом состояния 401 (неавторизованный). Ошибка записывается в консоль отладчика. Поэтому в Visual Studio вы увидите ошибку в окне вывода.
 
-&nbsp;&nbsp;Эта нештатная ошибка происходит потому, что приложение пытается получить доступ к серверной части мобильного приложения от имени не прошедшего проверку подлинности пользователя. Теперь для таблицы *TodoItem* требуется аутентификация.
+    Эта нештатная ошибка происходит потому, что приложение пытается получить доступ к серверной части мобильного приложения от имени не прошедшего проверку подлинности пользователя. Теперь для таблицы *TodoItem* требуется аутентификация.
 
 Далее вы обновите клиентское приложение для запроса ресурсов из серверной части мобильного приложения прошедшим аутентификацию пользователем.
 
@@ -58,67 +58,82 @@ ms.locfileid: "52997530"
 В этом разделе предстоит изменить приложение для отображения экрана входа до отображения данных. При запуске приложение не будет подключаться к Службе приложений и не будет отображать данные. После первого обновления пользователем появится экран входа; список задач появится после успешного входа.
 
 1. В проекте клиента откройте файл **QSTodoService.cs** и добавьте следующий оператор using и объект `MobileServiceUser` с методом доступа к классу QSTodoService:
- 
-        using UIKit;
-       
-        // Logged in user
-        private MobileServiceUser user;
-        public MobileServiceUser User { get { return user; } }
+
+    ```csharp
+    using UIKit;
+
+    // Logged in user
+    private MobileServiceUser user;
+    public MobileServiceUser User { get { return user; } }
+    ```
+
 2. Добавьте новый метод **Authenticate** в **QSTodoService** со следующим определением:
 
-        public async Task Authenticate(UIViewController view)
+    ```csharp
+    public async Task Authenticate(UIViewController view)
+    {
+        try
         {
-            try
-            {
-                AppDelegate.ResumeWithURL = url => url.Scheme == "zumoe2etestapp" && client.ResumeWithURL(url);
-                user = await client.LoginAsync(view, MobileServiceAuthenticationProvider.Facebook, "{url_scheme_of_your_app}");
-            }
-            catch (Exception ex)
-            {
-                Console.Error.WriteLine (@"ERROR - AUTHENTICATION FAILED {0}", ex.Message);
-            }
+            AppDelegate.ResumeWithURL = url => url.Scheme == "{url_scheme_of_your_app}" && client.ResumeWithURL(url);
+            user = await client.LoginAsync(view, MobileServiceAuthenticationProvider.Facebook, "{url_scheme_of_your_app}");
         }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine (@"ERROR - AUTHENTICATION FAILED {0}", ex.Message);
+        }
+    }
+    ```
 
-    >[AZURE.NOTE] Если ваш поставщик удостоверений не Facebook, замените значение, передаваемое в метод **LoginAsync** выше, одним из таких: _MicrosoftAccount_, _Twitter_, _Google_ или _WindowsAzureActiveDirectory_.
+    > [!NOTE]
+    > Если ваш поставщик удостоверений не Facebook, замените значение, передаваемое в метод **LoginAsync** выше, одним из таких: _MicrosoftAccount_, _Twitter_, _Google_ или _WindowsAzureActiveDirectory_.
 
 3. Откройте файл **QSTodoListViewController.cs**. Измените определение метода **ViewDidLoad**, удалив вызов **RefreshAsync()** в конце:
-   
-        public override async void ViewDidLoad ()
-        {
-            base.ViewDidLoad ();
-   
-            todoService = QSTodoService.DefaultService;
-            await todoService.InitializeStoreAsync();
-   
-            RefreshControl.ValueChanged += async (sender, e) => {
-                await RefreshAsync();
-            }
-   
-            // Comment out the call to RefreshAsync
-            // await RefreshAsync();
+
+    ```csharp
+    public override async void ViewDidLoad ()
+    {
+        base.ViewDidLoad ();
+
+        todoService = QSTodoService.DefaultService;
+        await todoService.InitializeStoreAsync();
+
+        RefreshControl.ValueChanged += async (sender, e) => {
+            await RefreshAsync();
         }
+
+        // Comment out the call to RefreshAsync
+        // await RefreshAsync();
+    }
+    ```
+
 4. Измените метод **RefreshAsync** для проверки подлинности, если для свойства **User** задано значение null. Добавьте следующий код в верхнюю часть определения метода:
-   
-        // start of RefreshAsync method
+
+    ```csharp
+    // start of RefreshAsync method
+    if (todoService.User == null) {
+        await QSTodoService.DefaultService.Authenticate(this);
         if (todoService.User == null) {
-            await QSTodoService.DefaultService.Authenticate(this);
-            if (todoService.User == null) {
-                Console.WriteLine("couldn't login!!");
-                return;
-            }
+            Console.WriteLine("couldn't login!!");
+            return;
         }
-        // rest of RefreshAsync method
+    }
+    // rest of RefreshAsync method
+    ```
+
 5. Откройте файл **AppDelegate.cs** и добавьте следующий метод:
 
-        public static Func<NSUrl, bool> ResumeWithURL;
+    ```csharp
+    public static Func<NSUrl, bool> ResumeWithURL;
 
-        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
-        {
-            return ResumeWithURL != null && ResumeWithURL(url);
-        }
+    public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+    {
+        return ResumeWithURL != null && ResumeWithURL(url);
+    }
+    ```
+
 6. Откройте файл **Info.plist** и перейдите к записи **Типы URL-адресов** в разделе **Дополнительно**. Теперь настройте **идентификатор** и **схемы URL-адресов** для типов URL-адресов, а затем щелкните **Добавить тип URL-адресов**. **Схемы URL-адресов** должны совпадать с {url_scheme_of_your_app}.
 7. В среде Visual Studio, подключенной к узлу Mac или Visual Studio для Mac, запустите клиентский проект, указав устройство или эмулятор. Убедитесь, что в приложении не отображаются данные.
-   
+
     Обновите, потянув вниз список элементов, чтобы появился экран входа. После успешного ввода допустимых учетных данных в приложении отобразится список элементов задач и вы сможете внести изменения в данные.
 
 <!-- URLs. -->

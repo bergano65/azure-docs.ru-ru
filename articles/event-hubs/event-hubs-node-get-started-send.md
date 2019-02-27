@@ -2,20 +2,20 @@
 title: Отправка событий в Центры событий Azure с помощью Node.js | Документация Майкрософт
 description: В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
-author: ShubhaVijayasarathy
+author: spelluru
 manager: kamalb
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
 ms.custom: seodec18
-ms.date: 12/06/2018
-ms.author: shvija
-ms.openlocfilehash: 7281e6bb2dda5dc3fddb5f39bf271293ebb88a73
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.date: 02/19/2019
+ms.author: spelluru
+ms.openlocfilehash: ec3182d11f1b2ffa31acd05fa1f2db695f3f2cf7
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732025"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447724"
 ---
 # <a name="send-events-to-azure-event-hubs-using-nodejs"></a>Отправка событий в Центры событий Azure с помощью Node.js
 
@@ -56,7 +56,7 @@ npm install @azure/event-hubs
 
 1. Откройте проект в Visual Studio Code. 
 2. Создайте файл с именем **.env** в папке **client**. Скопируйте и вставьте в него пример переменных среды из **sample.env** в корневой папке.
-3. Настройте строку подключения, имя концентратора событий и конечную точку хранилища. Вы можете скопировать строку подключения для концентратора событий из поля **Строка подключения — первичный ключ** в разделе **RootManageSharedAccessKey** на странице Центра событий на портале Azure. Подробные сведения см. в [этом разделе](event-hubs-create.md#create-an-event-hubs-namespace).
+3. Настройте строку подключения, имя концентратора событий и конечную точку хранилища. Инструкции по получению строки подключения для концентратора событий см. в разделе [Создание пространства имен в Центрах событий](event-hubs-create.md#create-an-event-hubs-namespace).
 4. В интерфейсе командной строки Azure перейдите по пути к папке **client**. Установите пакеты узла и создайте проект, выполнив следующие команды:
 
     ```shell
@@ -71,29 +71,39 @@ npm install @azure/event-hubs
 
 
 ## <a name="review-the-sample-code"></a>Просмотр примера кода 
-Ниже приведен пример кода для отправки событий в концентратор событий с помощью Node.js. Вы можете вручную создать файл sampleSender.js и запустить его, чтобы отправлять события в концентратор событий. 
-
+Просмотрите пример кода в файле simpleSender.js, чтобы отправить события в концентратор событий.
 
 ```javascript
-const { EventHubClient, EventPosition } = require('@azure/event-hubs');
-
-const client = EventHubClient.createFromConnectionString(process.env["EVENTHUB_CONNECTION_STRING"], process.env["EVENTHUB_NAME"]);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const lib_1 = require("../lib");
+const dotenv = require("dotenv");
+dotenv.config();
+const connectionString = "EVENTHUB_CONNECTION_STRING";
+const entityPath = "EVENTHUB_NAME";
+const str = process.env[connectionString] || "";
+const path = process.env[entityPath] || "";
 
 async function main() {
-    // NOTE: For receiving events from Azure Stream Analytics, please send Events to an EventHub where the body is a JSON object/array.
-    // const eventData = { body: { "message": "Hello World" } };
-    const data = { body: "Hello World 1" };
+    const client = lib_1.EventHubClient.createFromConnectionString(str, path);
+    const data = {
+        body: "Hello World!!"
+    };
     const delivery = await client.send(data);
-    console.log("message sent successfully.");
+    console.log(">>> Sent the message successfully: ", delivery.tag.toString());
+    console.log(delivery);
+    console.log("Calling rhea-promise sender close directly. This should result in sender getting reconnected.");
+    await Object.values(client._context.senders)[0]._sender.close();
+    // await client.close();
 }
 
 main().catch((err) => {
-    console.log(err);
+    console.log("error: ", err);
 });
 
 ```
 
-Прежде чем выполнять этот скрипт, не забудьте задать переменные среды. Вы можете настроить это в командной строке, как показано в следующем примере, или использовать [пакет dotenv](https://www.npmjs.com/package/dotenv#dotenv). 
+Прежде чем выполнять этот скрипт, не забудьте задать переменные среды. Вы можете настроить их в командной строке, как показано в следующем примере, или использовать [пакет dotenv](https://www.npmjs.com/package/dotenv#dotenv). 
 
 ```shell
 // For windows

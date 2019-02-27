@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 7b937158be39f9a1f7f9374611a150fd11837f02
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: 888cc9d894861c7d7b808500cd60bbed9faa05d7
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54910272"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56309123"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight
 
@@ -119,9 +119,9 @@ ms.locfileid: "54910272"
 
 Вы также можете добавить доступ кластера к одной учетной записи Data Lake Storage или нескольким после создания кластера. На портале Azure откройте запись Data Lake Storage и выберите пункты **Обозреватель данных > Доступ > Добавить**. 
 
-### <a name="how-to-access-data-lake-storage-from-ml-services-on-hdinsight"></a>Доступ к Data Lake Storage из служб машинного обучения в HDInsight
+### <a name="how-to-access-data-lake-storage-gen1-from-ml-services-on-hdinsight"></a>Доступ к Data Lake Storage 1-го поколения из служб машинного обучения в HDInsight
 
-Когда вы получите доступ к Data Lake Storage, вы сможете применить это хранилище для кластера служб машинного обучения в HDInsight так же, как дополнительную учетную запись хранения Azure. Единственное отличие состоит в том, что вместо префикса **wasb://** используется **adl://**.
+Когда вы получите доступ к Data Lake Storage 1-го поколения, вы сможете применить это хранилище для кластера Служб машинного обучения в HDInsight так же, как дополнительную учетную запись хранения Azure. Единственное отличие состоит в том, что вместо префикса **wasb://** используется **adl://**.
 
 
     # Point to the ADL Storage (e.g. ADLtest)
@@ -143,7 +143,7 @@ ms.locfileid: "54910272"
     # Specify the input file in HDFS to analyze
     inputFile <-file.path(bigDataDirRoot,"mysamplefile.csv")
 
-Приведенные ниже команды позволяют настроить учетную запись хранилища Data Lake Storage c каталогом RevoShare и добавить образец CSV-файла из предыдущего примера.
+Приведенные ниже команды позволяют настроить учетную запись хранилища Data Lake Storage 1-го поколения c каталогом RevoShare и добавить образец CSV-файла из предыдущего примера.
 
 
     hadoop fs -mkdir adl://rkadl1.azuredatalakestore.net/user

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ashishth
-ms.openlocfilehash: 04a923a8bc022aefb667489702c0e74493df94a8
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 5faea45a55d69cece56137d70862d80dfe335971
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652767"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342462"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
 
@@ -115,7 +115,7 @@ ms.locfileid: "53652767"
     org.apache.phoenix.mapreduce.CsvBulkLoadTool --table Customers --input /inputFolderBulkLoad/customers.csv –zookeeper ZookeeperQuorum:2181:/hbase-unsecure
     ```
 
-8. Чтобы использовать MapReduce с ADLS, найдите корневую папку ADLS, которая задана значением `hbase.rootdir` в файле `hbase-site.xml`. В следующей команде корневой каталог ADLS имеет значение `adl://hdinsightconf1.azuredatalakestore.net:443/hbase1`. Передайте при помощи этой команды входной и выходной каталоги ADLS в качестве параметров:
+8. Чтобы использовать MapReduce с Azure Data Lake Storage вы должны определить корневой каталог Data Lake Storage (значение `hbase.rootdir` в `hbase-site.xml`). В следующей команде корневой каталог Data Lake Storage имеет значение `adl://hdinsightconf1.azuredatalakestore.net:443/hbase1`. Передайте при помощи этой команды входной и выходной каталоги Data Lake Storage в качестве параметров.
 
     ```bash
     cd /usr/hdp/current/phoenix-client
@@ -127,7 +127,7 @@ ms.locfileid: "53652767"
 
 ## <a name="recommendations"></a>Рекомендации
 
-* Используйте одну среду хранения для входных и выходных папок WASB или ADLS. Чтобы передать данные из WASB в ADLS, можно использовать команду `distcp`:
+* Используйте одну среду хранения для входных и выходных папок Azure Storage (WASB) или Azure Data Lake Storage (ADL). Передать данные из службы хранилища Azure в Data Lake Storage можно с помощью команды `distcp`.
 
     ```bash
     hadoop distcp wasb://@.blob.core.windows.net/example/data/gutenberg adl://.azuredatalakestore.net:443/myfolder

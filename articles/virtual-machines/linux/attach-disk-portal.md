@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: d24dcc6f12347c66abc033f4c8b25c3b49870a44
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: d5dd916f7e4434640db6dae6f8c5a73d1ff2d3e0
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895777"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327965"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -29,8 +29,7 @@ ms.locfileid: "55895777"
 Прежде чем подключить диски к виртуальной машине, ознакомьтесь со следующими советами:
 
 * Размер виртуальной машины определяет, сколько дисков данных к ней можно подключить. Дополнительную информацию см. в статье [Размеры виртуальных машин](sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Для использования хранилища класса Premium вам необходимо будет использовать виртуальную машину серии DS или GS. Эти виртуальные машины позволяют использовать диски уровня "Премиум" и "Стандартный". Хранилище Premium доступно в определенных регионах. См. дополнительные сведения о [хранилище класса Premium, и управляемые диски для виртуальных машин Azure](../windows/premium-storage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* На самом деле диски, подключенные к виртуальным машинам, — это VHD-файлы, хранящиеся в Azure. Дополнительную информацию см. в статье [О дисках и виртуальных жестких дисках для виртуальных машин](about-disks-and-vhds.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+* На самом деле диски, подключенные к виртуальным машинам, — это VHD-файлы, хранящиеся в Azure. Дополнительные сведения см. в статье [Обзор компонента "Управляемые диски" Azure](managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * Подключив диск, необходимо [подключиться к виртуальной машине Linux для подключения нового диска](#connect-to-the-linux-vm-to-mount-the-new-disk).
 
 

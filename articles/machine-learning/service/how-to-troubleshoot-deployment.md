@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 83ee548befdc7ef0a4e7ed2d4b4e61b42a217f12
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 112fff011ebfedc1abf6981661da5fd4d97fc3d0
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247074"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56267155"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
 
@@ -196,12 +196,15 @@ $ docker run -p 8000:5001 <image_id>
 Часто в рамках функции `init()` в скрипте оценки вызывается функция `Model.get_model_path()`, чтобы найти файл модели или папку с файлами модели в контейнере. Это часто становится источником ошибок, если не удается найти файл модели или папку с файлами. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
 
 ```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
 from azureml.core.model import Model
 print(Model.get_model_path(model_name='my-best-model'))
 ```
 
 Он выводит локальный путь (относительно `/var/azureml-app`) в контейнер, где скрипт оценки ожидает найти файл модели или папку с файлами. Затем можно проверить, действительно ли файл или папка находится там, где нужно.
 
+При установке уровня ведения журнала DEBUG (для отладки) в журнале может регистрироваться дополнительная информация, которая может быть полезна для определения причины сбоя.
 
 ## <a name="function-fails-runinputdata"></a>Ошибка выполнения функции: run(input_data)
 Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например: 

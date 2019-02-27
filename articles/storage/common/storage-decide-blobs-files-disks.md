@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/28/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 77c4377afaff20e77e76c0a7389c79dfdce703ca
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 869d2105ccf635a46a21e9b7f382ddbef713d68b
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55509139"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327016"
 ---
 # <a name="deciding-when-to-use-azure-blobs-azure-files-or-azure-disks"></a>Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure
 Microsoft Azure предоставляет несколько функций в службе хранилища Azure, предназначенных для хранения данных в облаке и обращения к ним. В этой статье описываются служба файлов Azure, большие двоичные объекты Azure и диски Azure. Она поможет вам выбрать одну из этих функций.
@@ -67,4 +67,4 @@ Microsoft Azure предоставляет несколько функций в 
   
 Некоторые функции SMB не применяются к облаку. Дополнительные сведения см. в разделе [Features Not Supported By the Azure File Service](/rest/api/storageservices/features-not-supported-by-the-azure-file-service) (Возможности, не поддерживаемые службой файлов Azure).
   
-Дополнительные сведения о дисках см. в разделах [Сведения о дисках и виртуальных жестких дисках для виртуальных машин Azure под управлением Linux](../../virtual-machines/windows/about-disks-and-vhds.md) и [Подключение диска данных к виртуальной машине Windows, созданной с использованием классической модели развертывания](../../virtual-machines/windows/attach-managed-disk-portal.md).
+Дополнительные сведения о дисках см. в статье [Обзор компонента "Управляемые диски" Azure](../../virtual-machines/windows/managed-disks-overview.md) и [Подключение управляемого диска данных к виртуальной машине Windows с помощью портала Azure](../../virtual-machines/windows/attach-managed-disk-portal.md).

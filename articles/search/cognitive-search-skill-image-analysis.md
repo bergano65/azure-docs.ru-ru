@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/17/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: f658f6bb9e66eda13dbf4213e37dcd96b17f76e7
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: c70c3cc1818e85c03c78524d1e8571af6d686218
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411023"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56429066"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
@@ -45,7 +45,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 | Ввод имени      | ОПИСАНИЕ                                          |
 |---------------|------------------------------------------------------|
-| изображение         | Сложный тип. В настоящее время работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение ```generateNormalizedImages```. Дополнительные сведения см. в [этом примере](#sample-output).|
+| изображение         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 

@@ -6,17 +6,66 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 01/30/2019
+ms.date: 02/13/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ef2a782a19dd319de346f14d6189759d0a26686c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: d8ef70088d904720a81ac558206a3140d7bbecd6
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55665775"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270004"
 ---
 # <a name="troubleshoot-the-startstop-vms-during-off-hours-solution"></a>Устранение неполадок с решением запуска и остановки виртуальных машин в нерабочее время
+
+## <a name="deployment-failure"></a>Сценарий. Не удается правильно развернуть решение для запуска и остановки виртуальной машины
+
+### <a name="issue"></a>Проблема
+
+Развертывание [решения для запуска и остановки виртуальных машин в нерабочее время](../automation-solution-vm-management.md) приводит к одной из перечисленных ниже ошибок.
+
+```
+Account already exists in another resourcegroup in a subscription. ResourceGroupName: [MyResourceGroup].
+```
+
+```
+Resource 'StartStop_VM_Notification' was disallowed by policy. Policy identifiers: '[{\\\"policyAssignment\\\":{\\\"name\\\":\\\"[MyPolicyName]”.
+```
+
+```
+The subscription is not registered to use namespace 'Microsoft.OperationsManagement'.
+```
+
+```
+The subscription is not registered to use namespace 'Microsoft.Insights'.
+```
+
+```
+The scope '/subscriptions/000000000000-0000-0000-0000-00000000/resourcegroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>/views/StartStopVMView' cannot perform write operation because following scope(s) are locked: '/subscriptions/000000000000-0000-0000-0000-00000000/resourceGroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>/views/StartStopVMView'. Please remove the lock and try again
+```
+
+### <a name="cause"></a>Причина:
+
+Не удается выполнить развертывания по одной из следующих причин:
+
+1. В выбранном регионе уже существует учетная запись службы автоматизации с тем же именем.
+2. Местоположение политики запрещает развертывание решения для запуска и остановки виртуальных машин.
+3. Типы ресурсов `Microsoft.OperationsManagement`, `Microsoft.Insights` или `Microsoft.Automation` не регистрируются.
+4. Рабочая область Log Analytics имеет блокировку на них.
+
+### <a name="resolution"></a>Способы устранения:
+
+Ниже приведен список возможных решений для вашей проблемы и указано, где следует искать источник неполадки.
+
+1. Учетные записи службы автоматизации должны быть уникальными в пределах региона Azure, даже если они находятся в разных группах ресурсов. Проверьте существующие учетные записи службы автоматизации в целевом регионе.
+2. Существующая политика запрещает использование ресурса, необходимого для развертывания решения для запуска и остановки виртуальной машины. Перейдите к своим назначениям политики на портале Azure и проверьте, есть ли у вас назначение политики, запрещающее развертывание этого ресурса. Дополнительные сведения см. в статье [Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md).
+3. Чтобы развернуть решение для запуска и остановки виртуальной машины, ваша подписка должна быть зарегистрирована в указанных ниже пространствах имен ресурсов Azure.
+    * `Microsoft.OperationsManagement`
+    * `Microsoft.Insights`
+    * `Microsoft.Automation`
+
+   Дополнительные сведения об ошибках при регистрации поставщиков см. в статье [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/resource-manager-register-provider-errors.md).
+4. Если у вас есть блокировка в рабочем пространстве Log Analytics, перейдите в свое рабочее пространство на портале Azure и удалите все блокировки в ресурсе.
 
 ## <a name="all-vms-fail-to-startstop"></a>Сценарий. Не удается запустить или остановить все виртуальные машины
 
