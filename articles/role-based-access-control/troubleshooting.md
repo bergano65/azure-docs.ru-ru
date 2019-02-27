@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок RBAC в Azure | Документация Майкрософт
-description: Устранение неполадок с управлением доступом на основе ролей (RBAC) в Azure
+title: Устранение неполадок RBAC для ресурсов Azure | Документация Майкрософт
+description: Устранение неполадок с управлением доступом на основе ролей (RBAC) для ресурсов Azure.
 services: azure-portal
 documentationcenter: na
 author: rolyon
@@ -15,16 +15,16 @@ ms.date: 01/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: e204beea5bdf72c2ec5ebcf661d3c983a2e0e6b4
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: 7b27c811214def7f5646f886b955d035a50c0725
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411243"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342479"
 ---
-# <a name="troubleshoot-rbac-in-azure"></a>Устранение неполадок RBAC в Azure
+# <a name="troubleshoot-rbac-for-azure-resources"></a>Устранение неполадок RBAC в Azure
 
-В этой статье содержатся ответы на часто задаваемые вопросы об управлении доступом на основе ролей (RBAC). Вы узнаете, какие ситуации возможны при использовании ролей на портале Azure, а также сможете устранить неполадки, связанные с доступом.
+В этой статье содержатся ответы на часто задаваемые вопросы об управлении доступом на основе ролей (RBAC) для ресурсов Azure. Вы узнаете, какие ситуации возможны при использовании ролей на портале Azure, а также сможете устранить неполадки, связанные с доступом.
 
 ## <a name="problems-with-rbac-role-assignments"></a>Проблемы с назначениями ролей в RBAC
 
@@ -119,6 +119,6 @@ Azure Resource Manager иногда кэширует конфигурации и
 Пользователь с ролью читателя может щелкнуть вкладку **Функции платформы** и выбрать **Все параметры**, чтобы просмотреть некоторые параметры, связанные с приложением-функцией (так же, как для веб-приложения), но не может изменить эти параметры.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Управление доступом с помощью RBAC и портала Azure](role-assignments-portal.md)
-* [Просмотр журналов действий на предмет изменений в RBAC](change-history-report.md)
+* [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md)
+* [Просмотр журналов действий для изменений RBAC в ресурсах Azure](change-history-report.md)
 

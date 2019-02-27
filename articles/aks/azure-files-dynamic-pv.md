@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: iainfou
-ms.openlocfilehash: 841c65fd8420fdfe681cb99ee7054cb4edd5fcd3
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 2cf9a98a2f27c9088266a976118acdb56f8a65d7
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53968998"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56300828"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с файлами Azure в службе Azure Kubernetes (AKS)
 
@@ -26,32 +26,20 @@ ms.locfileid: "53968998"
 
 Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-class"></a>Создание класса хранения
 
-При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. В названии этой группы есть префикс *MC_*, который был создан при подготовке ресурсов кластера AKS. Получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show].
+Класс хранения используется для определения того, как создается файловый ресурс Azure. Для хранения файловых ресурсов Azure учетная запись хранения создается автоматически в группе ресурсов *_MC* для использования с классом хранилища. Выберите один из следующих [вариантов избыточности хранилища Azure][storage-skus] для *skuName*:
 
-```azurecli
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
-
-MC_myResourceGroup_myAKSCluster_eastus
-```
-
-С помощью команды [az storage account create][az-storage-account-create] создайте учетную запись хранения.
-
-Обновите `--resource-group` именем группы ресурсов, которая была получена на предыдущем шаге, а `--name` — любым именем. Укажите уникальное имя учетной записи хранения:
-
-```azurecli
-az storage account create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name mystorageaccount --sku Standard_LRS
-```
+* *Standard_LRS* — локально избыточное хранилище ценовой категории "Стандартный" (LRS);
+* *Standard_GRS* — геоизбыточное хранилище ценовой категории "Стандартный" (GRS);
+* *Standard_RAGRS* — геоизбыточное хранилище с доступом на чтение ценовой категории "Стандартный" (RA-GRS);
 
 > [!NOTE]
 > Сейчас служба файлов Azure поддерживает только хранилище ценовой категории "Стандартный". Вы не сможете подготовить том, если используете хранилище ценовой категории "Премиум".
 
-## <a name="create-a-storage-class"></a>Создание класса хранения
+Дополнительные сведения о классах хранения Kubernetes для файлов Azure см. в разделе о [классах хранения Kubernetes][kubernetes-storage-classes].
 
-Класс хранения используется для определения того, как создается файловый ресурс Azure. В классе можно указать учетную запись хранения. Если учетная запись хранения не указана, то требуется указать *skuName* и *location*, после чего все учетные записи хранения в связанной группе ресурсов будут проверены на соответствие. Дополнительные сведения о классах хранения Kubernetes для файлов Azure см. в разделе о [классах хранения Kubernetes][kubernetes-storage-classes].
-
-Создайте файл под названием `azure-file-sc.yaml` и скопируйте в него следующий пример манифеста. Укажите для параметра *storageAccount* имя вашей учетной записи хранения, созданной на предыдущем шаге. Дополнительные сведения о *mountOptions* см. в разделе [Параметры подключения][mount-options].
+Создайте файл под названием `azure-file-sc.yaml` и скопируйте в него следующий пример манифеста. Дополнительные сведения о *mountOptions* см. в разделе [Параметры подключения][mount-options].
 
 ```yaml
 kind: StorageClass
@@ -66,7 +54,6 @@ mountOptions:
   - gid=1000
 parameters:
   skuName: Standard_LRS
-  storageAccount: mystorageaccount
 ```
 
 Создайте класс хранения с помощью команды [kubectl apply][kubectl-apply]:
@@ -295,3 +282,4 @@ spec:
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [az-aks-show]: /cli/azure/aks#az-aks-show
+[storage-skus]: ../storage/common/storage-redundancy.md

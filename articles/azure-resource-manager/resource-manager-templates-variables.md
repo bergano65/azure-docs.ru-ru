@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/18/2018
+ms.date: 02/14/2019
 ms.author: tomfitz
-ms.openlocfilehash: f6c629182fdcce83c566869860480d9c70488797
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 50feca90d375d6afd3b04afe019ad9f9025f19dc
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53712752"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56308587"
 ---
 # <a name="variables-section-of-azure-resource-manager-templates"></a>Раздел Variables в шаблонах Azure Resource Manager
 В разделе переменных вы создаете значения, которые можно использовать в разных частях шаблона. Переменные определять не обязательно, однако они часто упрощают шаблон, снижая число сложных выражений.
@@ -58,9 +58,7 @@ ms.locfileid: "53712752"
             {
                 "name": "<name-of-array-property>",
                 "count": <number-of-iterations>,
-                "input": {
-                    <properties-to-repeat>
-                }
+                "input": <object-or-value-to-repeat>
             }
         ]
     },
@@ -68,9 +66,7 @@ ms.locfileid: "53712752"
         {
             "name": "<variable-array-name>",
             "count": <number-of-iterations>,
-            "input": {
-                <properties-to-repeat>
-            }
+            "input": <object-or-value-to-repeat>
         }
     ]
 }
@@ -117,38 +113,45 @@ ms.locfileid: "53712752"
 
 ## <a name="use-copy-element-in-variable-definition"></a>Использование элемента copy в определении переменной
 
-Можно использовать синтаксис **copy**, чтобы создать переменную с массивом из нескольких элементов. Укажите счетчик для числа элементов. Каждый элемент содержит свойства в объекте **input**. Можно использовать элемент copy в переменной или для создания переменной. Если вы определяете переменную и используете в ней элемент **copy**, создайте объект со свойством массива. Если вы используете элемент **copy** на верхнем уровне и определяете в нем одну или нескольких переменных, создайте один или несколько массивов. В следующем примере показаны оба подхода.
+Чтобы создать несколько экземпляров переменной, используйте свойство `copy` в разделе variables. Вы создадите массив элементов на основе значения в свойстве `input`. Вы можете использовать свойство `copy` в переменной или на верхнем уровне раздела variables. Если в итерации переменной используется `copyIndex`, необходимо указать имя итерации.
+
+Ниже представлен пример использования этой копии.
 
 ```json
 "variables": {
-    "disk-array-on-object": {
-        "copy": [
-            {
-                "name": "disks",
-                "count": 3,
-                "input": {
-                    "name": "[concat('myDataDisk', copyIndex('disks', 1))]",
-                    "diskSizeGB": "1",
-                    "diskIndex": "[copyIndex('disks')]"
-                }
-            }
-        ]
-    },
+  "disk-array-on-object": {
     "copy": [
-        {
-            "name": "disks-top-level-array",
-            "count": 3,
-            "input": {
-                "name": "[concat('myDataDisk', copyIndex('disks-top-level-array', 1))]",
-                "diskSizeGB": "1",
-                "diskIndex": "[copyIndex('disks-top-level-array')]"
-            }
+      {
+        "name": "disks",
+        "count": 3,
+        "input": {
+          "name": "[concat('myDataDisk', copyIndex('disks', 1))]",
+          "diskSizeGB": "1",
+          "diskIndex": "[copyIndex('disks')]"
         }
+      }
     ]
+  },
+  "copy": [
+    {
+      "name": "disks-top-level-array",
+      "count": 3,
+      "input": {
+        "name": "[concat('myDataDisk', copyIndex('disks-top-level-array', 1))]",
+        "diskSizeGB": "1",
+        "diskIndex": "[copyIndex('disks-top-level-array')]"
+      }
+    },
+    {
+      "name": "top-level-string-array",
+      "count": 5,
+      "input": "[concat('myDataDisk', copyIndex('top-level-string-array', 1))]"
+    }
+  ]
 },
 ```
 
-Переменная **disk-array-on-object** содержит следующий объект с массивом **disks**:
+После оценки выражения copy, переменная **disk-array-on-object** содержит следующий объект с массивом **disks**.
 
 ```json
 {
@@ -194,34 +197,19 @@ ms.locfileid: "53712752"
 ]
 ```
 
-При создании переменных с помощью синтаксиса copy можно указать несколько объектов. В примере ниже в качестве переменных определены два массива. Один называется **disks-top-level-array** и включает пять элементов. Второй называется **a-different-array** и содержит три элемента.
+Переменная **top-level-string-array** содержит следующий массив:
 
 ```json
-"variables": {
-    "copy": [
-        {
-            "name": "disks-top-level-array",
-            "count": 5,
-            "input": {
-                "name": "[concat('oneDataDisk', copyIndex('disks-top-level-array', 1))]",
-                "diskSizeGB": "1",
-                "diskIndex": "[copyIndex('disks-top-level-array')]"
-            }
-        },
-        {
-            "name": "a-different-array",
-            "count": 3,
-            "input": {
-                "name": "[concat('twoDataDisk', copyIndex('a-different-array', 1))]",
-                "diskSizeGB": "1",
-                "diskIndex": "[copyIndex('a-different-array')]"
-            }
-        }
-    ]
-},
+[
+  "myDataDisk1",
+  "myDataDisk2",
+  "myDataDisk3",
+  "myDataDisk4",
+  "myDataDisk5"
+]
 ```
 
-Такой подход полезен, когда необходимо принимать значения параметров и обеспечить их правильный формат для значения шаблона. В следующем примере значения параметров форматируются для использования при определении правил безопасности:
+Свойство copy используется, когда вам необходимо принимать значения параметров и сопоставить их со значениями ресурсов. В следующем примере значения параметров форматируются для использования при определении правил безопасности:
 
 ```json
 {

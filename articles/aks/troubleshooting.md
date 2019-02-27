@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: 17f6971cfa2dcd8c8988edc063c89859abec5367
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 8164e2db064523fe648ec9ef0c72754be846dff6
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55468841"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327567"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -34,7 +34,11 @@ ms.locfileid: "55468841"
 
 ## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что делать?
 
-В варианте пользовательской конфигурации виртуальной сети Azure, выбранном для сетей во время создания AKS, для IPAM используется Azure CNI. В кластере AKS может быть любое число узлов в диапазоне от 1 до 100. Исходя из вышесказанного, размер подсети должен быть больше произведения количества узлов и максимального числа модулей pod на узел: размер подсети > количество узлов в кластере * максимальное число модулей pod на узел.
+Если используется Azure CNI (расширенная сеть), AKS предварительно выделяет IP-адреса на основе настроенного максимального числа pod для каждого узла. В кластере AKS может быть любое число узлов в диапазоне от 1 до 110. На основе настроенного максимального числа модулей pod для каждого узла, размер подсети должен быть больше "произведения количества узлов и максимального числа модулей pod на узел". Следующее основное выражение описывает:
+
+Размер подсети > количество узлов в кластере (с учетом требований к масштабированию в будущем) * максимальное число модулей pod на узел.
+
+Дополнительные сведения см. в разделе [Планирование назначения IP-адресов для кластера](configure-azure-cni.md#plan-ip-addressing-for-your-cluster).
 
 ## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Мой модуль pod завис в режиме CrashLoopBackOff. Что делать?
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C | Документация Майкрософт
+title: Настройка регистрации и входа с учетной записью LinkedIn — Azure Active Directory B2C | Документация Майкрософт
 description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями LinkedIn, используя Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 8388baf88f5bb723e5b0e47bc93b100d5ce8e3e2
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 6c340d6b410a289f8beca156f85472cb729b786a
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55159806"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56427825"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
 ## <a name="create-a-linkedin-application"></a>Создание приложения LinkedIn
 
-Чтобы использовать учетную запись LinkedIn в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи LinkedIn, вы можете получить ее по адресу [https://www.linkedin.com/](https://www.linkedin.com/).
+Чтобы использовать учетную запись LinkedIn в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи LinkedIn, вы можете получить ее по адресу [https://www.linkedin.com/](https://www.linkedin.com/).
 
 1. Выполните вход на [сайт разработчиков LinkedIn](https://www.developer.linkedin.com/) с учетными данными для учетной записи LinkedIn.
 2. Выберите **My Apps** (Мои приложения) и щелкните **Create Application** (Создать приложение).

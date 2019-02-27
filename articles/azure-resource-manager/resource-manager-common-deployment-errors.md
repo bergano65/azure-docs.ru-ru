@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/16/2018
+ms.date: 02/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: 600b79ec0b34d6b79b1b56719dd800bbe8ec803a
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: a5c08536614476de38c7bfde524a12163162bed4
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55487155"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339269"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "55487155"
 | AccountPropertyCannotBeSet | Проверьте доступные свойства учетной записи хранения. | [Справочник по шаблонам Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
 | AllocationFailed | Кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины. Повторите запрос позже или укажите другой размер виртуальной машины. | Проблемы подготовки и распределения для [Linux](../virtual-machines/linux/troubleshoot-deployment-new-vm.md) и [Windows](../virtual-machines/windows/troubleshoot-deployment-new-vm.md), и [устранение ошибок выделения ресурсов](../virtual-machines/troubleshooting/allocation-failure.md)|
 | AnotherOperationInProgress | Дождитесь завершения параллельной операции. | |
-| AuthorizationFailed | Учетная запись или субъект-служба не имеют необходимых прав доступа для выполнения развертывания. Проверьте роль, к которой принадлежит учетная запись, и ее права доступа к области развертывания. | [Управление доступом на основе ролей в Azure](../role-based-access-control/role-assignments-portal.md) |
+| AuthorizationFailed | Учетная запись или субъект-служба не имеют необходимых прав доступа для выполнения развертывания. Проверьте роль, к которой принадлежит учетная запись, и ее права доступа к области развертывания.<br><br>Эта ошибка может возникнуть, если не зарегистрирован требуемый поставщик ресурсов. | [Управление доступом на основе ролей в Azure](../role-based-access-control/role-assignments-portal.md)<br><br>[Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
 | BadRequest | Отправленные значения развертывания не соответствуют значениям, ожидаемым Resource Manager. Проверьте внутреннее сообщение о состоянии. Оно поможет вам в устранении неполадки. | [Справочник по шаблону](/azure/templates/) и [поддерживаемые расположения](resource-manager-templates-resources.md#location) |
 | Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | DeploymentActive | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |

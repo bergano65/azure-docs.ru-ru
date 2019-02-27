@@ -8,13 +8,13 @@ ms.author: omidm
 ms.reviewer: mamccrea
 ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 0ab225d3579ed6a56c753f0c581709408c65f358
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.date: 02/15/2019
+ms.openlocfilehash: b0ec8bf52b0b41aef4ea4cc2bfb6ed8fdcd170ec
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436285"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343295"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -217,11 +217,12 @@ nano workflow.xml
        hiveOutputDirectory1=${nameNode}/user/${user.name}/hiveresult1
        hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
    ```
-  
-   a. Замените `domainuser` на свое имя пользователя для домена.  
-   b. Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https://*[пример ссылки]*), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
-   c. Замените `jdbcurlvalue` на URL-адрес JDBC из файла конфигурации Hive. Например, jdbc:hive2://headnodehost:10001/;transportMode=http.      
-   d. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
+
+   * Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов, укажите `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, укажите `abfs://home`.
+   * Замените `domainuser` на свое имя пользователя для домена.  
+   * Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https://*[пример ссылки]*), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
+   * Замените `jdbcurlvalue` на URL-адрес JDBC из файла конфигурации Hive. Например, jdbc:hive2://headnodehost:10001/;transportMode=http.      
+   * Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
 
    Этот файл свойств должен присутствовать локально при выполнении заданий Oozie.
 

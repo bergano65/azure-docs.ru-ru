@@ -1,6 +1,6 @@
 ---
-title: Управление доступом с помощью RBAC и REST API | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и REST API. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
+title: Управление доступом к ресурсам Azure с помощью RBAC и REST API в Azure | Документация Майкрософт
+description: Узнайте, как управлять доступом пользователей, групп и приложений к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и REST API. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -15,20 +15,20 @@ ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 859a410a4ff9204e8e52fbd2cc3b38823f4bb830
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: c2ef9b0070cc9ac190b773f023ffc18d1b251a41
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435224"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338416"
 ---
-# <a name="manage-access-using-rbac-and-the-rest-api"></a>Управление доступом с помощью RBAC и REST API
+# <a name="manage-access-to-azure-resources-using-rbac-and-the-rest-api"></a>Управление доступом к ресурсам Azure с помощью RBAC и REST API
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этой статье описывается, как управлять доступом пользователей, групп и приложений, используя RBAC и REST API.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. В этой статье описывается, как управлять доступом пользователей, групп и приложений, используя RBAC и REST API.
 
 ## <a name="list-access"></a>Вывод списка доступа
 
-При использовании RBAC, чтобы узнать, кому предоставлен доступ, вам нужно получить список назначений ролей. Чтобы перечислить назначения ролей, используйте один из REST API [Назначения ролей — список](/rest/api/authorization/roleassignments/list). Чтобы уточнить результаты, укажите область и дополнительный фильтр. Чтобы вызвать API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/read` в указанной области. Доступ к этой операции предоставляется нескольким [встроенным ролям](built-in-roles.md).
+При использовании RBAC, чтобы узнать, кому предоставлен доступ, вам нужно получить список назначений ролей. Чтобы перечислить назначения ролей, используйте один из REST API [Назначения ролей — список](/rest/api/authorization/roleassignments/list). Чтобы уточнить результаты, укажите область и дополнительный фильтр. Чтобы вызвать API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/read` в указанной области. Доступ к этой операции предоставляется нескольким [встроенным ролям для ресурсов Azure](built-in-roles.md).
 
 1. Можете начать со следующего запроса:
 
@@ -117,4 +117,4 @@ ms.locfileid: "37435224"
 
 - [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)
-- [Создание настраиваемых ролей с помощью REST API](custom-roles-rest.md)
+- [Создание пользовательских ролей для ресурсов Azure с помощью REST API](custom-roles-rest.md)

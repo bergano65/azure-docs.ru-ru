@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eba77f79ad4625319a9b6e3eae46bf8470f43607
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 67cb3d049cc2d2f26be6d62270e677a5cbcd39cc
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203783"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56455047"
 ---
 # <a name="add-your-personal-microsoft-accounts"></a>Добавление личных учетных записей Майкрософт
 Добавьте личные учетные записи Майкрософт, например Outlook.com и Xbox LIVE, в приложение Microsoft Authenticator как для стандартного двухфакторного процесса проверки подлинности, так и для входа в систему без пароля.

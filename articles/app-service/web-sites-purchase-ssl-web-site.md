@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 784cb5248dab2b9554c67347e1b9b848e1a9e985
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 29e6215358eaf544f32f585744ed36f30822d134
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54820790"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446755"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
-В этом руководстве описано, как защитить свои веб-приложения с помощью созданного (приобретенного) сертификата службы приложений в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis), а затем связать его с приложением службы приложений.
+В этом руководстве описано, как защитить свои [приложения службы приложений](https://docs.microsoft.com/azure/app-service/) или [приложения функций](https://docs.microsoft.com/azure/azure-functions/) с помощью созданного (приобретенного) сертификата службы приложений в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis), а затем связать его с приложением службы приложений.
 
 > [!TIP]
 > Сертификаты службы приложений можно использовать для любой службы Azure или сторонней службы, а не только в службах приложений. Для этого нужно создать локальную копию (PFX-файл) сертификата службы приложений, чтобы использовать ее с любой службой. Дополнительные сведения см. в записи блога о [создании локальной копии (PFX-файла) сертификата службы приложения](https://blogs.msdn.microsoft.com/appserviceteam/2017/02/24/creating-a-local-pfx-copy-of-app-service-certificate/).
@@ -35,7 +35,7 @@ ms.locfileid: "54820790"
 Ознакомьтесь со следующими статьями:
 
 - [Создано приложение службы приложений](/azure/app-service/).
-- [Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md) или [Приобретение имени личного домена для веб-приложений Azure](manage-custom-dns-buy-domain.md)
+- [Руководство. Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md) или [Приобретение личного доменного имени в Службе приложений Azure](manage-custom-dns-buy-domain.md).
 
 [!INCLUDE [Prepare your web app](../../includes/app-service-ssl-prepare-app.md)]
 

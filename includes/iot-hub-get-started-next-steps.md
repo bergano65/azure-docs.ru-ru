@@ -2,31 +2,31 @@
 title: включение файла
 description: включение файла
 services: iot-hub
-author: dominicbetts
+author: robinsh
 ms.service: iot-hub
 ms.topic: include
-ms.date: 09/07/2018
-ms.author: dobett
+ms.date: 02/14/2019
+ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: 0ea9c06763e2e01d2f28daa5bc688e65bff037b8
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 9f7f71f47fadd7cfe2364acf1a8505e1967a78e5
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54899378"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333847"
 ---
 Чтобы продолжить знакомство с Центром Интернета вещей Azure и изучить расширенные сценарии Центра Интернета вещей, см. следующие ресурсы:
 
 - [Управление обменом сообщениями между устройством и облаком с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
 
-- [Сохранение сообщений Центра Интернета вещей, содержащих такие сведения, как данные датчиков, в хранилище таблиц Azure](../articles/iot-hub/iot-hub-store-data-in-azure-table-storage.md)
+- [Управление устройствами с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)
+
+- [Руководство. Настройка маршрутизации сообщений с использованием Центра Интернета вещей](../articles/iot-hub/tutorial-routing.md)
 
 - [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI](../articles/iot-hub/iot-hub-live-data-visualization-in-power-bi.md)
 
 - [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений Azure](../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md)
 
 - [Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей](../articles/iot-hub/iot-hub-weather-forecast-machine-learning.md)
-
-- [Управление устройствами с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)
 
 - [Удаленный мониторинг и отправка уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком](../articles/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)

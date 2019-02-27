@@ -1,5 +1,5 @@
 ---
-title: Поток кода авторизации в Azure Active Directory B2C | Документация Майкрософт
+title: Поток кода авторизации — Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как создавать веб-приложения с использованием протокола аутентификации Azure AD B2C и OpenID Connect.
 services: active-directory-b2c
 author: davidmu1
@@ -7,17 +7,18 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 02/19/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f1f372cd8fc5ea1e64fbe195fd15790cd0535347
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 4ee67f07965036a71151d7b6a5092b9a76d94999
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55164033"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428692"
 ---
-# <a name="azure-active-directory-b2c-oauth-20-authorization-code-flow"></a>Azure Active Directory B2C. Поток кода авторизации OAuth 2.0
+# <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>Поток кода авторизации OAuth 2.0 в Azure Active Directory B2C
+
 Код авторизации OAuth 2.0 может использоваться в приложениях, установленных на устройстве, для получения доступа к защищенным ресурсам, таким как веб-API. С помощью реализации OAuth 2.0 в Azure Active Directory B2C можно добавить регистрацию, вход и другие задачи по управлению пользователями в мобильные и настольные приложения. Эта статья не зависит от языка. В ней описывается, как отправлять и получать сообщения HTTP, не используя ни одну из библиотек с открытым исходным кодом.
 
 Описание потока кода авторизации OAuth 2.0 см. в [разделе 4.1 спецификации OAuth 2.0](https://tools.ietf.org/html/rfc6749). Его можно использовать для аутентификации и авторизации в большинстве [типов приложений](active-directory-b2c-apps.md), в том числе в веб-приложениях и изначально установленных приложениях. Вы можете использовать поток кода авторизации OAuth 2.0, чтобы безопасно получать маркеры доступа и маркеры обновления для приложений, с помощью которых можно получить доступ к ресурсам, защищенным [сервером авторизации](active-directory-b2c-reference-protocols.md).  Маркер обновления позволяет клиенту получать новые маркеры доступа (и обновления) после истечения их срока действия (как правило, через час).
@@ -27,7 +28,7 @@ ms.locfileid: "55164033"
 > [!NOTE]
 > Чтобы добавить управление идентификацией в веб-приложение с помощью Azure AD B2C, используйте [OpenID Connect](active-directory-b2c-reference-oidc.md), а не OAuth 2.0.
 
-В Azure AD B2C стандартные потоки OAuth 2.0 выходят за рамки простой проверки подлинности и авторизации. Теперь в службе появился [параметр потока пользователя](active-directory-b2c-reference-policies.md). Потоки пользователей дают возможность использовать OAuth 2.0 для добавления в приложение различных действий пользователя, таких как регистрация, вход и управление профилями. В этой статье мы покажем, как с помощью OAuth 2.0 и потоков пользователей реализовать каждую из этих функций в собственных приложениях и получить маркеры доступа к веб-интерфейсам API.
+В Azure AD B2C стандартные потоки OAuth 2.0 выходят за рамки простой проверки подлинности и авторизации. Теперь в службе появился [параметр потока пользователя](active-directory-b2c-reference-policies.md). Потоки пользователей дают возможность использовать OAuth 2.0 для добавления в приложение различных действий пользователя, таких как регистрация, вход и управление профилями. Поставщики удостоверений, которые используют протокол OAuth 2.0: [Amazon](active-directory-b2c-setup-amzn-app.md), [Azure Active Directory](active-directory-b2c-setup-oidc-azure-active-directory.md), [Facebook](active-directory-b2c-setup-fb-app.md), [GitHub](active-directory-b2c-setup-github-app.md), [Google](active-directory-b2c-setup-goog-app.md) и [LinkedIn](active-directory-b2c-setup-li-app.md).
 
 В приведенных в этой статье запросах HTTP используется наш пример каталога Azure AD B2C **fabrikamb2c.onmicrosoft.com**, Мы также будем использовать собственный пример приложения и наши потоки пользователей. Вы можете пробовать выполнять запросы с этими значениями или заменить их собственными.
 Узнайте, как [получить собственный каталог Azure AD B2C, приложение и потоки пользователей](#use-your-own-azure-ad-b2c-directory).

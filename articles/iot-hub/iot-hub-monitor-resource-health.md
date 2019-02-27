@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: kgremban
-ms.openlocfilehash: 3b56097f8805b4c6d95256ae1753daf5ded266fb
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 86e690e5ff437d924b9c548c2d75afb1866b14aa
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888402"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446789"
 ---
 # <a name="monitor-the-health-of-azure-iot-hub-and-diagnose-problems-quickly"></a>Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок
 
@@ -302,12 +302,118 @@ Azure Monitor отслеживает различные операции, вып
             "category": "DirectMethods",
             "level": "Information",
             "durationMs": "1",
-            "properties": "{\"deviceId\":\"<deviceId>\", \"RequestSize\": 1, \"ResponseSize\": 1, \"sdkVersion\": \"2017-07-11\"}", 
+            "properties": "{\"deviceId\":<messageSize>, \"RequestSize\": 1, \"ResponseSize\": 1, \"sdkVersion\": \"2017-07-11\"}", 
             "location": "Resource location"
         }
     ]
 }
 ```
+
+#### <a name="distributed-tracing-preview"></a>Распределенная трассировка (предварительная версия)
+
+Категория распределенной трассировки позволяет отследить идентификаторы корреляции для сообщений, содержащих заголовок контекста трассировки. Чтобы полностью включить эти журналы, необходимо обновить код на стороне клиента, выполнив действия, описанные в статье о [комплексном анализе и диагностике приложений Интернета вещей с помощью распределенной трассировки в Центре Интернета вещей (предварительная версия)](iot-hub-distributed-tracing.md).
+
+Обратите внимание, что `correlationId` соответствует предложению [контекста трассировки W3C](https://github.com/w3c/trace-context), где содержится `trace-id` и `span-id`. 
+
+##### <a name="iot-hub-d2c-device-to-cloud-logs"></a>Журналы D2C (с устройства в облако) в Центре Интернета вещей
+
+В Центре Интернета вещей в этот журнал записывается информация при получении сообщения, содержащего допустимые свойства трассировки. 
+
+```json
+{
+    "records": 
+    [
+        {
+            "time": "UTC timestamp",
+            "resourceId": "Resource Id",
+            "operationName": "DiagnosticIoTHubD2C",
+            "category": "DistributedTracing",
+            "correlationId": "00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01",
+            "level": "Information",
+            "resultType": "Success",
+            "resultDescription":"Receive message success",
+            "durationMs": "",
+            "properties": "{\"messageSize\": 1, \"deviceId\":\"<deviceId>\", \"callerLocalTimeUtc\": : \"2017-02-22T03:27:28.633Z\", \"calleeLocalTimeUtc\": \"2017-02-22T03:27:28.687Z\"}", 
+            "location": "Resource location"
+        }
+    ]
+}
+```
+
+В этом случае `durationMs` не подсчитывается, так как часы Центра Интернета вещей могут быть не синхронизированы с часами устройства, из-за чего расчет длительности может давать ошибочные результаты. Рекомендуется создавать логику с использованием метки времени в разделе `properties`, чтобы записывать пики задержки соединения устройства с облаком.
+
+| Свойство | type | ОПИСАНИЕ |
+|--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
+| **messageSize** | Целое число  | Размер сообщения, поступающего с устройства в облако, в байтах |
+| **deviceId** | Строка 7-битовых букв и цифр ASCII | Удостоверение устройства |
+| **callerLocalTimeUtc** | Метка времени в формате UTC | Время создания сообщения, измеренное локальными часами устройства |
+| **calleeLocalTimeUtc** | Метка времени в формате UTC | Время поступления сообщения в шлюз Центра Интернета вещей, измеренное часами на стороне службы Центра Интернета вещей |
+
+##### <a name="iot-hub-ingress-logs"></a>Журналы входящего трафика Центра Интернета вещей
+
+В Центре Интернета вещей в этом журнале фиксируется информация, когда сообщение, содержащее допустимые свойства трассировки записывается во внутренний или встроенный концентратор событий.
+
+```json
+{
+    "records": 
+    [
+        {
+            "time": "UTC timestamp",
+            "resourceId": "Resource Id",
+            "operationName": "DiagnosticIoTHubIngress",
+            "category": "DistributedTracing",
+            "correlationId": "00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01",
+            "level": "Information",
+            "resultType": "Success",
+            "resultDescription":"Ingress message success",
+            "durationMs": "10",
+            "properties": "{\"isRoutingEnabled\": \"true\", \"parentSpanId\":\"0144d2590aacd909\"}", 
+            "location": "Resource location"
+        }
+    ]
+}
+```
+
+В разделе `properties` этот журнал содержит дополнительные сведения о сообщениях входящего трафика
+
+| Свойство | type | ОПИСАНИЕ |
+|--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
+| **isRoutingEnabled** | Строка | Значение true или false показывает, включена ли маршрутизация сообщений в Центре Интернета вещей |
+| **parentSpanId** | Строка | [Span-id](https://w3c.github.io/trace-context/#parent-id) родительского сообщения, которое в этом случае является трассировкой сообщения, передаваемого из устройства в облако (D2C) |
+
+##### <a name="iot-hub-egress-logs"></a>Журналы исходящего трафика Центра Интернета вещей
+
+В Центре Интернета вещей в этом журнале фиксируется информация, когда включена [маршрутизация](iot-hub-devguide-messages-d2c.md) и сообщение записывается для [конечной точки](iot-hub-devguide-endpoints.md). Если маршрутизация не включена, в Центре Интернета вещей не фиксируется информация в этом журнале.
+
+```json
+{
+    "records": 
+    [
+        {
+            "time": "UTC timestamp",
+            "resourceId": "Resource Id",
+            "operationName": "DiagnosticIoTHubEgress",
+            "category": "DistributedTracing",
+            "correlationId": "00-8cd869a412459a25f5b4f31311223344-98ac3578922acd26-01",
+            "level": "Information",
+            "resultType": "Success",
+            "resultDescription":"Egress message success",
+            "durationMs": "10",
+            "properties": "{\"endpointType\": \"EventHub\", \"endpointName\": \"myEventHub\", \"parentSpanId\":\"349810a9bbd28730\"}", 
+            "location": "Resource location"
+        }
+    ]
+}
+```
+
+В разделе `properties` этот журнал содержит дополнительные сведения о сообщениях входящего трафика
+
+| Свойство | type | ОПИСАНИЕ |
+|--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
+| **endpointName** | Строка | Имя конечной точки маршрутизации |
+| **endpointType** | Строка | Тип конечной точки маршрутизации |
+| **parentSpanId** | Строка | [Span-id](https://w3c.github.io/trace-context/#parent-id) родительского сообщения, которое в этом случае является трассировкой сообщения входящего трафика Центра Интернета вещей |
+
 
 ### <a name="read-logs-from-azure-event-hubs"></a>Чтение журналов из Центров событий Azure
 

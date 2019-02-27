@@ -1,26 +1,19 @@
 ---
-title: Руководство по устранению неполадок Azure Backup для виртуальных машин SQL Server | Документация Майкрософт
-description: Сведения об устранении неполадок при резервном копировании виртуальных машин SQL Server в Azure.
+title: Устранение неполадок, связанных с резервным копированием базы данных SQL Server с помощью Azure Backup | Документация Майкрософт
+description: Сведения об устранении неполадок резервного копирования баз данных SQL Server на виртуальных машинах Azure с помощью службы Azure Backup.
 services: backup
-documentationcenter: ''
-author: rayne-wiselman
-manager: carmonm
-editor: ''
-keywords: ''
-ms.assetid: ''
+author: anuragm
+manager: shivamg
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/19/2018
+ms.date: 02/19/2019
 ms.author: anuragm
-ms.custom: ''
-ms.openlocfilehash: 0d910269a16223c610e4606cdd6660cc5d43947f
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 0beb65d6ef7c036c8a294f53eeb3db327457ea84
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55296127"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428625"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
@@ -28,11 +21,11 @@ ms.locfileid: "55296127"
 
 ## <a name="public-preview-limitations"></a>Ограничения общедоступной предварительной версии
 
-Ограничения общедоступной предварительной версии см. в [этом разделе](backup-azure-sql-database.md#public-preview-limitations).
+Ограничения общедоступной предварительной версии см. в [этом разделе](backup-azure-sql-database.md#preview-limitations).
 
 ## <a name="sql-server-permissions"></a>Разрешения SQL Server
 
-Чтобы настроить защиту базы данных SQL Server на виртуальной машине, на этой виртуальной машине должно быть установлено расширение **AzureBackupWindowsWorkload**. Если вы получили сообщение об ошибке, **UserErrorSQLNoSysadminMembership**, это означает, что ваш экземпляр SQL не имеет необходимых разрешений на резервное копирование. Чтобы устранить эту ошибку, выполните действия, описанные в разделе [Установка разрешений для виртуальных машин SQL, не поддерживающих marketplace](backup-azure-sql-database.md#set-permissions-for-non-marketplace-sql-vms).
+Чтобы настроить защиту базы данных SQL Server на виртуальной машине, на этой виртуальной машине должно быть установлено расширение **AzureBackupWindowsWorkload**. Если вы получили сообщение об ошибке, **UserErrorSQLNoSysadminMembership**, это означает, что ваш экземпляр SQL не имеет необходимых разрешений на резервное копирование. Чтобы устранить эту ошибку, выполните действия, описанные в разделе [Установка разрешений для виртуальных машин SQL, не поддерживающих marketplace](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
 
 ## <a name="troubleshooting-errors"></a>Устранение ошибок
 
@@ -56,13 +49,13 @@ ms.locfileid: "55296127"
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Возникает, когда модель восстановления базы данных не разрешает запрашиваемый тип резервного копирования. Ошибка может произойти в следующих ситуациях: <br/><ul><li>База данных, использующая простую модель восстановления, не позволяет создавать резервные копии журналов.</li><li>Разностные резервные копии и резервные копии журналов не допускаются для базы данных Master.</li></ul>Дополнительные сведения см. в статье [Модели восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server). | Если резервная копия журнала базы данных завершилась сбоем в простой модели восстановления, попробуйте один из следующих вариантов:<ul><li>Если база данных находится в режиме простого восстановления, отключите резервные копии журналов.</li><li>Используйте [документацию SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server), чтобы изменить модель восстановления базы данных на модель с полным или не полным протоколированием. </li><li> Если вы не хотите изменять модель восстановления, и у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Полные и разностные резервные копии будут работать по расписанию. Резервные копии журналов будут пропущены, что ожидаемо в этом случае.</li></ul>Если это база данных Master, и вы настроили разностное резервное копирование или резервное копирование журналов, выполните одно из следующих действий:<ul><li>Используйте портал, чтобы изменить расписание политики резервного копирования для базы данных Master, на полное копирование.</li><li>Если у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Ваше полное резервное копирование будет работать по расписанию. Разностное резервное копирование или резервное копирование журналов не произойдет, что ожидаемо в этом случае.</li></ul> |
-| Operation canceled as a conflicting operation was already running on the same database. (Операция отменена, так как конфликтная операция уже выполняется в одной базе данных.) | См. [запись в блоге о резервных копиях и ограничениях восстановления](https://blogs.msdn.microsoft.com/arvindsh/2008/12/30/concurrency-of-full-differential-and-log-backups-on-the-same-database), которые запускаются одновременно.| [Используйте SQL Server Management Studio (SSMS) для мониторинга заданий резервного копирования.](backup-azure-sql-database.md#manage-azure-backup-operations-for-sql-on-azure-vms) Если конфликтная операция завершится сбоем, перезапустите ее.|
+| Operation canceled as a conflicting operation was already running on the same database. (Операция отменена, так как конфликтная операция уже выполняется в одной базе данных.) | См. [запись в блоге о резервных копиях и ограничениях восстановления](https://blogs.msdn.microsoft.com/arvindsh/2008/12/30/concurrency-of-full-differential-and-log-backups-on-the-same-database), которые запускаются одновременно.| [Используйте SQL Server Management Studio (SSMS) для мониторинга заданий резервного копирования.](manage-monitor-sql-database-backup.md) Если конфликтная операция завершится сбоем, перезапустите ее.|
 
 ### <a name="usererrorsqlpodoesnotexist"></a>UserErrorSQLPODoesNotExist
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
-| SQL database does not exist. (База данных SQL не существует.) | База данных была либо удалена, либо переименована. | <ul><li>Проверьте, не была ли база данных случайно удалена или переименована.</li><li>Если база данных была случайно удалена, чтобы продолжить резервное копирование, восстановите базу данных в ее исходном расположении.</li><li>Если вы удалили базу данных и не нуждаетесь в будущих резервных копиях, то в хранилище служб восстановления выберите [удалить или сохранить данные](backup-azure-sql-database.md#manage-azure-backup-operations-for-sql-on-azure-vms), чтобы остановить резервное копирование.</li>|
+| SQL database does not exist. (База данных SQL не существует.) | База данных была либо удалена, либо переименована. | Проверьте, не была ли база данных случайно удалена или переименована.<br/><br/> Если база данных была случайно удалена, чтобы продолжить резервное копирование, восстановите базу данных в ее исходном расположении.<br/><br/> Если вы удалили базу данных и не нуждаетесь в будущих резервных копиях, то в хранилище служб восстановления выберите [удалить или сохранить данные](manage-monitor-sql-database-backup.md), чтобы остановить резервное копирование.
 
 ### <a name="usererrorsqllsnvalidationfailure"></a>UserErrorSQLLSNValidationFailure
 

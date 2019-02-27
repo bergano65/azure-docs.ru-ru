@@ -12,19 +12,19 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 02/19/2019
 ms.author: jeffgilb
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: b8d13377b2fb1545ecf88645a5e19bf5eab24c74
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 6b14f5e8967567030ce854d05c53a8d26027e9a6
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238141"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428845"
 ---
 # <a name="start-and-stop-azure-stack"></a>Запуск и остановка Azure Stack
-Следуйте инструкциям по корректному завершению работы и перезапуску служб Azure Stack, приведенным в этой статье. Операция завершения работы физически отключает питание всей среды Azure Stack. Запуск включает все роли инфраструктуры и возвращает ресурсы клиента в состояние, в котором они находились до завершения работы.
+Следуйте инструкциям по корректному завершению работы и перезапуску служб Azure Stack, приведенным в этой статье. Операция завершения работы физически отключает питание всей среды Azure Stack. При запуске включаются все роли инфраструктуры, а ресурсы клиента возвращаются в состояние, в котором они находились до завершения работы.
 
 ## <a name="stop-azure-stack"></a>Остановка Azure Stack 
 

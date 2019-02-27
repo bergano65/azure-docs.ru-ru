@@ -7,12 +7,12 @@ manager: jhubbard
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/20/2018
-ms.openlocfilehash: af067cabf312ec3c2556b84dc4d739e41ec0aacc
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: aef55660d07c8923a82baf7f8b6320abf3ccdd1d
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53535290"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430222"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mysql"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для MySQL
 
@@ -24,6 +24,7 @@ ms.locfileid: "53535290"
 
 > [!NOTE]
 > Эта функция доступна во всех областях Azure, где База данных Azure для MySQL развернута для серверов общего назначения и оптимизирована для операций в памяти.
+> В случае пиринга между виртуальными сетями, если трафик проходит через общий шлюз виртуальной сети с конечными точками и должен попадать в кэширующий узел, создайте правило ACL или виртуальной сети, чтобы разрешить виртуальным машинам Azure в шлюзе виртуальной сети доступ к Базе данных Azure для сервера MySQL.
 
 <a name="anch-terminology-and-description-82f" />
 

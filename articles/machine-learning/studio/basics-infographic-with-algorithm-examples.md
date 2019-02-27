@@ -10,12 +10,12 @@ author: garyericson
 ms.author: garye
 ms.custom: seodc18
 ms.date: 12/18/2017
-ms.openlocfilehash: 2db14056b6b5ccf16c8009c21bfcff00954a7802
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 78daf4534334d56c962d97e7a9aac8a7910db34c
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242906"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453602"
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Скачиваемая инфографика по основам машинного обучения с примерами алгоритмов
 
@@ -33,7 +33,7 @@ ms.locfileid: "56242906"
 
 ## <a name="more-help-with-algorithms-for-beginners-and-advanced-users"></a>Дополнительная справка по алгоритмам для начинающих и продвинутых пользователей
 
-* Более глубокое обсуждение различных типов алгоритмов машинного обучения, их использования и выбора алгоритма, подходящего для решения, см. в статье [Выбор алгоритмов машинного обучения Microsoft Azure](algorithm-choice.md).
+* Подробное обсуждение различных типов алгоритмов машинного обучения, их использования и выбора алгоритма, подходящего для решения, см. в статье [Выбор алгоритмов студии машинного обучения Azure](algorithm-choice.md).
 * Список всех категорий алгоритмов, доступных в Студии машинного обучения, см. в разделе [Инициализация модели][initialize-model] в справке по алгоритмам и модулям Студии машинного обучения.
 * Полный список всех алгоритмов и модулей машинного обучения, доступных в Студии машинного обучения, расположенных в алфавитном порядке, см. в разделе [A-Z list of Machine Learning Studio][a-z-list] (Полный список модулей Студии машинного обучения) в справке по алгоритмам и модулям Студии машинного обучения.
 * Общие сведения о коллекции решений ИИ Azure и множестве доступных ресурсов, созданных участниками сообщества, см. в статье [Share and discover resources in the Azure AI Gallery](gallery-how-to-use-contribute-publish.md) (Совместное использование и поиск ресурсов в коллекции решений ИИ Azure).

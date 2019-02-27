@@ -8,12 +8,12 @@ ms.date: 12/05/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 01f72b8d41c1a973c7d187f519a43ce62929a23e
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: 0b92d36287646038d9195f7ba39352d8ced9a3b6
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359363"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270272"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -43,7 +43,11 @@ The components for the 'Update Management' solution have been enabled, and now t
 #### <a name="resolution"></a>Способы устранения:
 
 1. Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы управление обновлениями работало, см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md#network-planning).
-2. При использовании клонированного образа сначала выполните Sysprep образа, а потом установите агент MMA.
+2. Если используется клонированный образ:
+   1. В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
+   2. Запустите `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
+   3. Выполните `Restart-Service HealthService`, чтобы перезапустить `HealthService`. Будет повторно создан ключ, а также сгенерирован новый идентификатор UUID.
+   4. Если это не сработает, сначала выполните команду sysprep для образа, а потом установите агент MMA.
 
 ### <a name="multi-tenant"></a>Сценарий. Вы получаете ошибку связанной подписки при создании развертывания обновления для компьютеров в другом клиенте Azure.
 

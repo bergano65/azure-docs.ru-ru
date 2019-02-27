@@ -1,7 +1,7 @@
 ---
 title: Развертывание рабочего пространства Студии с помощью Azure Resource Manager
 titleSuffix: Azure Machine Learning Studio
-description: Развертывание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
+description: Как развертывать рабочую область для Студии машинного обучения Azure с помощью шаблона Azure Resource Manager
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -10,19 +10,19 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/05/2018
-ms.openlocfilehash: c7f75b2553ada469f4963531fc33f6e5105084b1
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 38cd41fecb98a008bbf5a93eddd0d6a346cf3ef7
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55487802"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453976"
 ---
 # <a name="deploy-azure-machine-learning-studio-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Студии машинного обучения с помощью Azure Resource Manager
 
-Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Чтобы настроить рабочие области Машинного обучения Azure, например, сначала необходимо настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Простой альтернативой является развертывание рабочей области машинного обучения Azure и всех ее зависимых компонентов с помощью шаблона Azure Resource Manager. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md).
+Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, чтобы настроить рабочие области Студии машинного обучения Azure, сначала необходимо настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Простой альтернативой является развертывание рабочей области Студии и всех ее зависимостей с помощью шаблона Azure Resource Manager. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md).
 
 ## <a name="step-by-step-create-a-machine-learning-workspace"></a>Пошаговое создание рабочей области машинного обучения
-Сначала мы создадим группу ресурсов Azure, а затем развернем новую учетную запись хранения Azure и рабочую область машинного обучения Azure с помощью шаблона Resource Manager. После завершения развертывания мы выведем важные сведения о созданных рабочих областях (первичный ключ, идентификатор и URL-адрес рабочей области).
+Сначала мы создадим группу ресурсов Azure, а затем развернем новую учетную запись хранения Azure и рабочую область Студии машинного обучения Azure с помощью шаблона Resource Manager. После завершения развертывания мы выведем важные сведения о созданных рабочих областях (первичный ключ, идентификатор и URL-адрес рабочей области).
 
 ### <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
 Рабочей области машинного обучения требуется учетная запись хранения Azure для хранения связанного с ней набора данных.
@@ -97,7 +97,7 @@ Connect-AzureRmAccount
 ```
 Этот шаг необходимо выполнять для каждого сеанса. После выполнения проверки подлинности должны отображаться сведения о подписке.
 
-![Учетная запись Azure][1]
+![Учетная запись Azure](./media/deploy-with-resource-manager-template/azuresubscription.png)
 
 Получив доступ к Azure, мы можем создать группу ресурсов.
 
@@ -111,7 +111,7 @@ $rg
 Убедитесь, что группа ресурсов должным образом подготовлена к работе. **ProvisioningState** должно отображаться состояние Succeeded.
 Шаблон использует имя группы ресурсов для создания имени учетной записи хранения. Имя учетной записи хранения должно содержать от 3 до 24 знаков и состоять только из цифр и букв нижнего регистра.
 
-![Группа ресурсов][2]
+![Группа ресурсов](./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png)
 
 * Разверните новую рабочую область машинного обучения с помощью развертывания группы ресурсов.
 
@@ -133,14 +133,12 @@ $rgd.Outputs.mlWorkspaceToken.Value
 # List the primary and secondary tokens of all workspaces
 Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |% { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}
 ```
-После подготовки рабочей области к работе можно автоматизировать многие задачи Студии машинного обучения Azure с помощью [модуля PowerShell для Машинного обучения Azure](https://aka.ms/amlps).
+После подготовки рабочей области к работе вы можете автоматизировать многие задачи Студии машинного обучения Azure с помощью [модуля PowerShell для Студии машинного обучения Azure](https://aka.ms/amlps).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 * Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39).
-* См. [информативную справку по шаблонам Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.machinelearning/allversions)
-<!--Image references--> [1]: ./media/deploy-with-resource-manager-template/azuresubscription.png [2]: ./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png
-
+* Подробные сведения см. в статье [Microsoft.MachineLearning resource types](https://docs.microsoft.com/azure/templates/microsoft.machinelearning/allversions) (Типы ресурсов Microsoft.MachineLearning)
 
 <!--Link references-->

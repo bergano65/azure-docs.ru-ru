@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 3f3b20ac21c0a871d3baad50098700b7cf3b3b9c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 55e8f536419f102f8f0fe69773ed486407c50cfb
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235400"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328866"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
 
 [!INCLUDE [devtest-lab-upload-vhd-selector](../../includes/devtest-lab-upload-vhd-selector.md)]
 
-В Azure DevTest Labs можно использовать VHD-файлы для создания пользовательских образов, которые используются при подготовке виртуальных машин. В этой статье описывается использование [обозревателя хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для передачи VHD-файла в учетную запись хранения лаборатории. Когда вы закончите скачивание VHD-файла, переходите к разделу [Дальнейшие действия](#next-steps), где перечислены несколько статей. В них описано, как создать пользовательский образ из скачанного VHD-файла. См. дополнительные сведения [о дисках и виртуальных жестких дисках для виртуальных машин Azure](../virtual-machines/linux/about-disks-and-vhds.md).
+В Azure DevTest Labs можно использовать VHD-файлы для создания пользовательских образов, которые используются при подготовке виртуальных машин. В этой статье описывается использование [обозревателя хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для передачи VHD-файла в учетную запись хранения лаборатории. После отправки VHD-файла переходите к разделу [Дальнейшие действия](#next-steps), где перечислены несколько статей, в которых описывается создание пользовательского образа из загруженного VHD-файла. Дополнительные сведения о дисках и VHD в Azure см. в статье [Обзор компонента "Управляемые диски" Azure](../virtual-machines/linux/managed-disks-overview.md).
 
 ## <a name="step-by-step-instructions"></a>Пошаговые инструкции
 

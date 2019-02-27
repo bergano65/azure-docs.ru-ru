@@ -10,18 +10,18 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: e62e5a1df2b5ad3099d2ef7e5dc33b0d11683988
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 221f78dbeb6bfb0c76ac12280511a8d5a5138c38
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245938"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453415"
 ---
 # <a name="create-azure-machine-learning-studio-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов Студии машинного обучения на основе рабочих примеров из Коллекции решений ИИ Azure
 
 Узнайте, как использовать примеры экспериментов машинного обучения из [коллекции решений Azure AI](https://gallery.azure.ai/), чтобы не создавать собственные решения с нуля. Эти примеры помогут вам создать решение машинного обучения.
 
-В коллекции содержатся примеры экспериментов, предоставленные как рабочей группой Машинного обучения Microsoft Azure, так и участниками сообщества машинного обучения. Также можно задавать вопросы и публиковать комментарии об экспериментах.
+В коллекции содержатся примеры экспериментов, созданные командой Студии машинного обучения Azure, а также участниками сообщества машинного обучения. Также можно задавать вопросы и публиковать комментарии об экспериментах.
 
 Чтобы узнать, как использовать коллекцию, просмотрите 3-минутное видео [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) из серии [Обработка и анализ данных для начинающих](data-science-for-beginners-the-5-questions-data-science-answers.md).
 

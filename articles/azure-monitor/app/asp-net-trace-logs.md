@@ -10,17 +10,18 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/03/2017
+ms.date: 02/19/2019
 ms.author: mbullwin
-ms.openlocfilehash: 5c809153b3b86a5460bd2c235d9f6226fb50a024
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: f89eca6fb8893210f4c65adc42598ab0e0b531f4
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118801"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454340"
 ---
-# <a name="explore-net-trace-logs-in-application-insights"></a>Просмотр журналов трассировки .NET в Application Insights
-Если вы используете NLog, log4Net или System.Diagnostics.Trace для диагностической трассировки в приложении ASP.NET, журналы трассировки можно передавать в [Azure Application Insights][start] для поиска и просмотра. Журналы будут объединены с другими данными телеметрии, поступающими из вашего приложения, давая возможность определять трассировки, связанные с обработкой каждого запроса пользователя, и сопоставлять их с другими событиями и отчетами об исключениях.
+# <a name="explore-netnet-core-trace-logs-in-application-insights"></a>Просмотр журналов трассировки .NET или .Net Core в Application Insights
+
+Если вы используете ILogger, NLog, log4Net или System.Diagnostics.Trace для диагностической трассировки в приложении ASP.NET или ASP.NET Core, можете передавать журналы трассировки в [Azure Application Insights][start] для поиска и просмотра. Журналы будут объединены с другими данными телеметрии, поступающими из вашего приложения, давая возможность определять трассировки, связанные с обработкой каждого запроса пользователя, и сопоставлять их с другими событиями и отчетами об исключениях.
 
 > [!NOTE]
 > Требуется модуль записи журнала? Это полезный адаптер для сторонних средств ведения журнала, но если вы еще не используете NLog, log4Net или System.Diagnostics.Trace, рассмотрите возможность вызова [Application Insights TrackTrace()](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) напрямую.
@@ -30,23 +31,18 @@ ms.locfileid: "54118801"
 ## <a name="install-logging-on-your-app"></a>Установка ведения журнала в приложении
 Установите выбранную платформу ведения журналов в своем проекте. При этом должна появиться запись в файлах app.config или web.config.
 
-Если вы используете System.Diagnostics.Trace, необходимо добавить запись в файл web.config:
-
 ```XML
-
     <configuration>
-     <system.diagnostics>
-       <trace autoflush="false" indentsize="4">
-         <listeners>
-           <add name="myListener"
-             type="System.Diagnostics.TextWriterTraceListener"
-             initializeData="TextWriterOutput.log" />
-           <remove name="Default" />
-         </listeners>
-       </trace>
-     </system.diagnostics>
+      <system.diagnostics>
+    <trace autoflush="true" indentsize="0">
+      <listeners>
+        <add name="myAppInsightsListener" type="Microsoft.ApplicationInsights.TraceListener.ApplicationInsightsTraceListener, Microsoft.ApplicationInsights.TraceListener" />
+      </listeners>
+    </trace>
+  </system.diagnostics>
    </configuration>
 ```
+
 ## <a name="configure-application-insights-to-collect-logs"></a>Настройка Application Insights для сбора журналов
 **[Добавьте Application Insights в свой проект](../../azure-monitor/app/asp-net.md)**, если вы еще этого не сделали. Вы увидите параметр для включения сборщика журналов.
 
@@ -60,15 +56,28 @@ ms.locfileid: "54118801"
 1. Если вы планируете использовать log4Net или NLog, установите его в свой проект.
 2. В обозревателе решений щелкните правой кнопкой мыши ваш проект и выберите **Управление пакетами NuGet**.
 3. Поиск Application Insights
-4. Выберите соответствующий пакет из списка.
+4. Выберите один из следующих пакетов.
 
-   * Microsoft.ApplicationInsights.TraceListener (для захвата вызовов System.Diagnostics.Trace)
-   * Microsoft.ApplicationInsights.EventSourceListener (для записи событий EventSource)
-   * Microsoft.ApplicationInsights.EtwCollector (для записи событий трассировки событий Windows)
-   * Microsoft.ApplicationInsights.NLogTarget
-   * Microsoft.ApplicationInsights.Log4NetAppender
+   - Для ILogger: [Microsoft.Extensions.Logging.ApplicationInsights](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.Extensions.Logging.ApplicationInsights.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
+   - Для NLog: [Microsoft.ApplicationInsights.NLogTarget](http://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.NLogTarget.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
+   - Для Log4Net: [Microsoft.ApplicationInsights.Log4NetAppender](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.Log4NetAppender.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
+   - Для System.Diagnostics: [Microsoft.ApplicationInsights.TraceListener](http://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.TraceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
+   - [Microsoft.ApplicationInsights.DiagnosticSourceListener](http://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.DiagnosticSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
+   - [Microsoft.ApplicationInsights.EtwCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EtwCollector.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
+   - [Microsoft.ApplicationInsights.EventSourceListener](http://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
+[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EventSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
 
-Пакет NuGet устанавливает необходимые сборки, а также вносит изменения в файл web.config или app.config.
+Пакет NuGet устанавливает необходимые сборки, а также вносит изменения в файл web.config или app.config (если применимо).
+
+## <a name="ilogger"></a>ILogger
+
+Примеры использования реализации ILogger для Application Insights с ASP.NET Core и консольными приложениями см. в этой [статье](ilogger.md).
 
 ## <a name="insert-diagnostic-log-calls"></a>Вставка вызовов журнала диагностики
 При использовании System.Diagnostics.Trace типичный вызов будет выглядеть следующим образом:

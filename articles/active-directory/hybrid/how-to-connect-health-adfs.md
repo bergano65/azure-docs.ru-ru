@@ -16,12 +16,12 @@ ms.date: 04/26/2018
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4714a4ee5f90194a3be47b1e5878dfa8e230f42b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 4d239d372a514b24a4e022f62ceec2dfee94d187
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173493"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430409"
 ---
 # <a name="monitor-ad-fs-using-azure-ad-connect-health"></a>Мониторинг AD FS с помощью Azure AD Connect Health
 Приведенная ниже информация относится к мониторингу инфраструктуры AD FS с помощью Azure AD Connect Health. Сведения о мониторинге синхронизации Azure AD Connect с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
@@ -199,7 +199,7 @@ Azure AD Connect Health для AD FS предоставляет отчет о 50
 Если вы видите IP-адреса подсистемы балансировки нагрузки, очень вероятно, что внешняя подсистема балансировки нагрузки не отправляет IP-адрес клиента при передаче запроса прокси-серверу веб-приложения. Для отправки IP-адреса клиента необходимо правильно настроить подсистему балансировки нагрузки. 
 
 3. Как блокировать IP-адреса?  <br />
-Следует добавить идентифицированный вредоносный IP-адрес в брандмауэр или заблокировать в Exchange.   <br />
+Следует добавить идентифицированный вредоносный IP-адрес в брандмауэр или заблокировать в Exchange. Для служб федерации Active Directory 2016 вы можете заблокировать IP-адрес непосредственно из запрещенных свойств IP-адреса. [Дополнительные сведения](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection#banned-ip-addresses)   <br />
 
 4. Почему в этом отчете ничего нет? <br />
    - Ошибки при действиях входа не превышают параметры пороговых значений. 

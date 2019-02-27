@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c85d405502890253bcdb80c652ed53f58546de9c
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 32c326ff7bef98f9d8f4f20664889109d291a6ea
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55747056"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56328849"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -68,10 +68,10 @@ ms.locfileid: "55747056"
 Вы также можете развернуть полностью установленную платформу SAP HANA в службы виртуальных машин Azure через [облачную платформу SAP](https://cal.sap.com/). Сведения о процессе установки см. в статье [Развертывание SAP S/4HANA или BW/4HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h), а сведения об автоматизации — на сайте [GitHub](https://github.com/AzureCAT-GSI/SAP-HANA-ARM).
 
 ### <a name="choose-azure-storage-type"></a>Выбор типа службы хранилища Azure
-Azure предоставляет два типа хранилища, подходящих для виртуальных машин Azure, работающих под управлением SAP HANA:
+Azure предоставляет два типа хранилища, подходящих для виртуальных машин Azure, работающих под управлением SAP HANA: Стандартные жесткие диски (HDD) и твердотельные накопители (SSD) класса Premium. Дополнительные сведения о типах дисков см. в статье о [типах дисков, доступных в Azure](../../windows/disks-types.md).
 
-- [Хранилище Azure уровня "Стандартный"](https://docs.microsoft.com/azure/virtual-machines/windows/standard-storage)
-- [Хранилище Azure Premium](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage)
+- Стандартные жесткие диски (HDD)
+- Твердотельные накопители (SSD) класса Premium
 
 Azure предлагает два метода развертывания виртуальных жестких дисков (VHD) в хранилище Azure класса "Стандартный" и хранилище Azure класса Premium. Рекомендуется использовать развертывания [управляемых дисков Azure](https://azure.microsoft.com/services/managed-disks/), если общий сценарий это допускает.
 
@@ -408,7 +408,7 @@ SAP HANA Dynamic Tiering 2.0 не поддерживается в SAP BW или 
 
 Необходимо присоединить к виртуальной машине для DT 2.0 несколько дисков Azure и создать программный RAID-массив (с чередованием) на уровне операционной системы, чтобы достичь необходимого уровня пропускной способности дисков для этой виртуальной машины. Один диск Azure не может обеспечить пропускную способность, соответствующую максимальному ограничению для виртуальной машины. Для работы DT 2.0 необходимо использовать хранилище Azure класса Premium. 
 
-- См. дополнительные сведения о [доступных типах дисков Azure](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage).
+- См. дополнительные сведения о [доступных типах дисков Azure](../../windows/disks-types.md).
 - См. дополнительные сведения о [создании программного RAID-массива с помощью средства mdadm](https://docs.microsoft.com/azure/virtual-machines/linux/configure-raid).
 - См. дополнительные сведения о [настройке диспетчера логических томов для создания чередующегося тома, позволяющего обеспечить максимальную пропускную способность](https://docs.microsoft.com/azure/virtual-machines/linux/configure-lvm).
 

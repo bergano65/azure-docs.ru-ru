@@ -4,14 +4,14 @@ description: Узнайте, как изменить делегирование 
 services: dns
 author: vhorne
 ms.service: dns
-ms.date: 1/22/2019
+ms.date: 2/19/2019
 ms.author: victorh
-ms.openlocfilehash: d1de1212280c6767862233f990c9fc5e0cf97473
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 85f7318ac584e324f58d2ad470dc896e79e416d5
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54461040"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417894"
 ---
 # <a name="delegation-of-dns-zones-with-azure-dns"></a>Делегирование зон DNS с помощью Azure DNS
 
@@ -27,7 +27,7 @@ Azure DNS позволяет размещать зону DNS и управлят
 
 **Регистратор доменных имен.** Регистратор доменных имен — это организация, которая может предоставлять доменные имена в Интернете. Она проверяет, доступен ли интернет-домен, который вы хотите использовать, и позволяет приобрести его. После регистрации имени домена вы станете законным владельцем доменного имени. Если у вас уже есть интернет-домен, вы будете использовать текущего регистратора доменных имен для делегирования в Azure DNS.
 
-Подробные сведения об определении владельца доменного имени и о том, как приобрести домен, см. в статье [Добавление имени личного домена в Azure Active Directory](https://msdn.microsoft.com/library/azure/hh969248.aspx).
+Дополнительные сведения об аккредитованных регистраторах см. [на этой странице](https://www.icann.org/registrar-reports/accredited-list.html).
 
 ### <a name="resolution-and-delegation"></a>Разрешение и делегирование
 

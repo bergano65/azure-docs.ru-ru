@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/26/2019
 ms.author: bwren
-ms.openlocfilehash: 4f92860ac128bdb6e4e2e059592745285779688d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 0ef11355d7a65bd2c9b7ddfb6c4db2ba02538062
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002000"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56270374"
 ---
 # <a name="azure-monitor-overview"></a>Общие сведения о службе Azure Monitor
 
@@ -42,7 +42,7 @@ ms.locfileid: "56002000"
 
 Данные журналов, собранные службой Azure Monitor, можно проанализировать с помощью [запросов](log-query/log-query-overview.md), которые быстро получают, консолидируют и анализируют собранные данные.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](log-query/portals.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](visualizations.md) или [правилами генерации оповещений](platform/alerts-overview.md).
 
-Azure Monitor использует версию [языка запросов Data Explorer](/azure/kusto/query/), который совместим с простыми запросами к журналу, но также включает и расширенную функциональность (например, функции агрегирования, объединения и интеллектуальную аналитику). Быстро изучить язык запросов можно с помощью [множества уроков](log-query/get-started-queries.md).  Для пользователей, которые уже знакомы с [SQL](log-query/sql-cheatsheet.md) и [Splunk](log-query/splunk-cheatsheet.md), предоставляются отдельные руководства.
+В Azure Monitor используется версия [языка запросов Kusto](/azure/kusto/query/), который используется в Azure Data Explorer и совместим с простыми запросами к журналу, но также включает и расширенную функциональность (например, функции агрегирования, объединения и интеллектуальную аналитику). Быстро изучить язык запросов можно с помощью [множества уроков](log-query/get-started-queries.md).  Для пользователей, которые уже знакомы с [SQL](log-query/sql-cheatsheet.md) и [Splunk](log-query/splunk-cheatsheet.md), предоставляются отдельные руководства.
 
 ![Журналы](media/overview/logs.png)
 

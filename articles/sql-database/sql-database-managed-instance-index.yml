@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c9d8b875d7e5a831af52eae8abc642632cb5f635
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 287e4d63ca60200340a88dd45d6b8912a62b74cd
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238391"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454704"
 documentType: LandingData
 title: Управляемый экземпляр Базы данных SQL Azure
 metadata:
@@ -75,7 +75,7 @@ sections:
     style: unordered
     items:
     - html: <a href="sql-database-managed-instance#business-critical-service-tier">Уровень служб "Критически важный для бизнеса"</a> теперь доступен в <a href="https://azure.microsoft.com/blog/migrate-mission-critical-sql-workloads-to-the-most-economical-cloud-destination/">общедоступной версии</a>.
-    - html: Создание <a href="https://aka.ms/managed-instance-aadlogins">имен для входа AAD на уровне экземпляра</a> с помощью операции <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени для входа из внешнего поставщика</a> (предварительная версия).
+    - html: Создание <a href="https://aka.ms/managed-instance-aadlogins">субъектов сервера AAD на уровне экземпляра (имен для входа) </a> с помощью операции <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени для входа из внешнего поставщика</a> (предварительная версия).
     - html: Создание экземпляров с помощью <a href="https://aka.ms/managed-instance-collation">предпочитаемых параметров сортировки уровня сервера</a> (предварительная версия).
     - html: <a href="https://aka.ms/managed-instance-configurable-backup-retention">Настройка периода хранения резервных копий (до 35 дней)</a> для восстановления на момент времени. Обратите внимание, что долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> в качестве альтернативы.
     - html: Использование <a href="https://aka.ms/managed-instance-failover-groups">географически распределенных групп отработки отказа</a> для сохранения копии экземпляра в другом регионе и обеспечение доступности данных даже в сценарии региональной аварии (предварительная версия).

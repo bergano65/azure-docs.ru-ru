@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a4a4b760652ce38e27e12e9eb73fbe7692eddbc
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e8d39b614c373c63cf1405c5db0f64581c481d1f
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204378"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417216"
 ---
 # <a name="preview-deploy-azure-ad-password-protection"></a>Предварительный просмотр: Развертывание защиты паролем Azure AD
 
@@ -53,15 +53,18 @@ ms.locfileid: "56204378"
     |`https://login.microsoftonline.com`|Запросы на аутентификацию|
     |`https://enterpriseregistration.windows.net`|Функция защиты паролем Azure AD|
 
+* Всем компьютерам, на которых размещена служба прокси-сервера для защиты паролем Azure AD, необходимо разрешить исходящий трафик по протоколам TLS 1.2 и HTTP.
 * Нужна учетная запись глобального администратора для регистрации леса и прокси-службы защиты паролем Azure AD в Azure AD.
 * Нужна учетная запись с привилегиями администратора домена Active Directory в корневом домене леса, чтобы зарегистрировать лес Windows Server Active Directory в Azure AD.
 * Все домены Active Directory, на которых работает программное обеспечение службы агента контроллера домена, должны использовать DFSR для репликации sysvol.
 
 ## <a name="single-forest-deployment"></a>Развертывание одного леса
 
-На следующей схеме показано, как основные компоненты защиты паролем Azure AD работают вместе в локальной среде Active Directory.  
+На следующей схеме показано, как основные компоненты защиты паролем Azure AD работают вместе в локальной среде Active Directory.
 
 ![Взаимодействие компонентов защиты паролем Azure AD](./media/concept-password-ban-bad-on-premises/azure-ad-password-protection.png)
+
+Перед развертыванием рекомендуется проверить работу программного обеспечения. См. статью [Предварительный просмотр: применение защиты паролем Azure AD для Windows Server Active Directory](concept-password-ban-bad-on-premises.md).
 
 ### <a name="download-the-software"></a>Скачивание ПО
 

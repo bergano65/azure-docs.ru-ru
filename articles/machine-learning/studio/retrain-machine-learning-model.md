@@ -1,7 +1,7 @@
 ---
-title: Переобучение модели Студии машинного обучения
+title: Повторное обучение и развертывание веб-службы
 titleSuffix: Azure Machine Learning Studio
-description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
+description: Сведения о переобучении модели машинного обучения и настройке этой модели для веб-службы с помощью Студии машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -9,84 +9,186 @@ ms.topic: article
 author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: seodec18
-ms.date: 04/19/2017
-ms.openlocfilehash: f7558876391d25d2f6f3dd1fede4cb0d13d72bf0
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.date: 02/14/2019
+ms.openlocfilehash: b57dd40c8610953563a3d5b8861e144d775b4eb7
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236266"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56330517"
 ---
-# <a name="retrain-an-azure-machine-learning-studio-model"></a>Переобучение модели Студии машинного обучения Azure
-В рамках процесса операционализации моделей машинного обучения в Машинном обучении Azure модель обучается и сохраняется. После этого она используется для создания прогнозной веб-службы. Созданная веб-служба может впоследствии использоваться на веб-сайтах, панелях мониторинга и в мобильных приложениях. 
+# <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
-Модели, создаваемые с помощью машинного обучения, обычно не статические. Если появляются новые данные или у пользователя API есть свои данные, модель нужно переобучить. 
+Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье описаны процессы повторного обучения и развертывания модели машинного обучения в качестве новой веб-службы с помощью Studio. Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
 
-Переобучение может требоваться достаточно часто. Интерфейс API программного переобучения позволяет программным путем переобучить модель с помощью API переобучения и обновить веб-службу, чтобы она использовала эту модель. 
+Для работы с этой статьей требуется развернутая прогнозная веб-служба. Если у вас еще нет прогнозной веб-службы, [изучите эти сведения о развертывании веб-службы Studio.](publish-a-machine-learning-web-service.md)
 
-В этом документе описана процедура переобучения и показано, как использовать интерфейсы API переобучения.
+Для повторного обучения и развертывания новой веб-службы машинного обучения вам потребуется выполнить следующие задачи:
 
-## <a name="why-retrain-defining-the-problem"></a>Зачем нужно повторное обучение: определение проблемы
-В рамках процесса машинного обучения модель обучается с использованием определенного набора данных. Модели, создаваемые с помощью машинного обучения, обычно не статические. Если появляются новые данные или у пользователя API есть свои данные, модель нужно переобучить.
+1. Развертывание **переобучающей веб-службы**.
+1. Обучение новой модели с помощью этой **переобучающей веб-службы**.
+1. Обновление существующего **прогнозного эксперимента** для использования новой модели.
 
-В этих сценариях программный API обеспечивает для вас или потребителя API удобный способ создания клиента, который может единовременно или регулярно переобучать модель при помощи собственных данных. После этого можно оценить результаты переобучения и обновить API веб-службы, чтобы использовать его с недавно обученной моделью.
+## <a name="deploy-the-retraining-web-service"></a>Разверните переобучающую веб-службу.
 
-> [!NOTE]
-> Если у вас есть обучающий эксперимент и новая веб-служба, возможно, вас заинтересует раздел, посвященный переобучению существующей прогнозной веб-службы, а не пошаговое руководство, упомянутое в следующем разделе.
-> 
-> 
+Переобучающая веб-служба позволяет повторно обучать модели с новым набором параметров, например с новыми данными, и сохранить ее для последующего использования. Вы подключаете модуль **Web Service Output** (Выходные данные веб-службы) к модулю **Train Model** (Обучение модели), и обучающий эксперимент создает новую модель для использования.
 
-## <a name="end-to-end-workflow"></a>Комплексный рабочий процесс
-Процесс включает в себя следующие элементы. Публикация обучающего и прогнозного экспериментов в виде веб-службы. Чтобы включить переобучение обученной модели, обучающий эксперимент необходимо опубликовать в виде веб-службы, выходные данные которой будут представлять собой обученную модель. Это позволит использовать API-доступ для переобучения модели. 
+Следуйте приведенным ниже инструкциям, чтобы развернуть переобучающую веб-службу:
 
-Следующие шаги применяются как к новым, так и к классическим веб-службам.
+1. Подключите модуль **Web Service Input** (Входные данные веб-службы) к нужному источнику данных. Вы, естественно, захотите убедиться, что входные данные будут обработаны так же, как исходный набор обучающих данных.
+1. Подключите модуль **Web Service Output** (Выходные данные веб-службы) к выходу **Train Model** (Обучение модели).
+1. Если у вас есть модуль **Evaluate Model** (Оценка модели), вы можете присоединить к нему **Web Service Output** (Выходные данные веб-службы), чтобы получить результаты оценки.
+1. Запустите эксперимент.
 
-Создание начальной прогнозной веб-службы:
+    После запуска эксперимента рабочий процесс должен выглядеть примерно так:
 
-* Создание обучающего эксперимента
-* Создайте прогнозный веб-эксперимент.
-* Разверните прогнозную веб-службу.
+    ![Итоговый рабочий процесс](media/retrain-existing-arm-web-service/machine-learning-retrain-models-programmatically-IMAGE04.png)
 
-Переобучение веб-службы:
+    Теперь разверните обучающий эксперимент в качестве обучающей веб-службы, которая выводит обученную модель и результаты ее оценки.
 
-* Обновите обучающий эксперимент, чтобы предусмотреть переобучение.
-* Разверните переобучающую веб-службу.
-* Используйте код службы пакетного выполнения, чтобы переобучить модель.
+1. В нижней части холста эксперимента щелкните **Set Up Web Service** (Настроить веб-службу).
+1. Выберите **Deploy Web Service [New]** (Развернуть веб-службу (новую)). Портал веб-служб Машинного обучения Azure откроется на странице **Deploy Web service** (Развертывание веб-службы).
+1. Введите имя веб-службы и выберите план платежей.
+1. Выберите **Развернуть**.
 
-> [!NOTE] 
-> Для развертывания новой веб-службы у вас должен быть достаточный уровень разрешений в подписке, в которую выполняется развертывание веб-службы. Дополнительные сведения см. в статье [Управление веб-службой с помощью портала веб-служб машинного обучения Azure](manage-new-webservice.md). 
+## <a name="retrain-the-model"></a>Повторное обучение модели
 
-Если развернута классическая веб-служба, выполните следующие действия.
+В этом примере для создания приложения переобучения используется код на языке C#. Кроме того, для этого можно использовать образцы кода на языке R или Python.
 
-* Создайте новую конечную точку в прогнозной веб-службе.
-* Получите URL-адрес и код исправления.
-* Используйте URL-адрес исправления, чтобы указать новую конечную точку на переобученной модели. 
+Следуйте приведенным ниже инструкциям, чтобы вызвать API переобучения:
 
-В случае возникновения трудностей при переобучении классической веб-службы см. раздел [Устранение неполадок при повторном обучении классической веб-службы машинного обучения Azure](troubleshooting-retraining-models.md).
+1. Создайте в Visual Studio консольное приложение C#. Выберите **Создать** > **Проект** > **Visual C#** > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework)**.
+1. Войдите на портал веб-служб Машинного обучения.
+1. Щелкните веб-службу, с которой работаете.
+1. Щелкните **Consume**(Использование).
+1. В нижней части страницы **Consume** (Использование) в разделе **Sample Code** (Пример кода) щелкните **Batch** (Пакет).
+1. Скопируйте пример кода на C# для пакетного выполнения и вставьте его в файл Program.cs. Убедитесь, что пространство имен не изменено.
 
-Если развернута новая веб-служба, необходимо выполнить следующие действия:
+Добавьте пакет NuGet Microsoft.AspNet.WebApi.Client, как указано в комментариях. Чтобы добавить ссылку на файл Microsoft.WindowsAzure.Storage.dll, возможно, потребуется установить [клиентскую библиотеку для служб хранилища Azure](https://www.nuget.org/packages/WindowsAzure.Storage).
 
-* Вход в учетную запись Azure Resource Manager
-* Получить определение веб-службы.
-* Экспортировать определение веб-службы в формате JSON.
-* Обновить ссылку на большой двоичный объект `ilearner` в JSON.
-* Импортировать JSON в определение веб-службы.
-* Обновить веб-службу с помощью нового определения веб-службы.
+На следующем снимке экрана показана станица **Consume** (Использование) на портале веб-служб Машинного обучения Azure.
 
-Процесс настройки переобучения для классической веб-службы включает в себя следующие шаги:
+![Страница Consume (Использование)](media/retrain-existing-arm-web-service/machine-learning-retrain-models-consume-page.png)
 
-![Обзор процесса переобучения][1]
+### <a name="update-the-apikey-declaration"></a>Обновление объявления apiKey
 
-Процесс настройки переобучения для новой веб-службы включает в себя следующие шаги:
+Найдите объявление **apiKey**:
 
-![Обзор процесса переобучения][7]
+    const string apiKey = "abc123"; // Replace this with the API key for the web service
 
-## <a name="other-resources"></a>Другие ресурсы
-* [Retraining and Updating Azure Machine Learning models with Azure Data Factory](https://azure.microsoft.com/blog/retraining-and-updating-azure-machine-learning-models-with-azure-data-factory/) (Переобучение и обновление моделей машинного обучения Azure с фабрикой данных Azure).
-* [Создание множества моделей машинного обучения и конечных точек веб-службы из одного эксперимента с помощью PowerShell](create-models-and-endpoints-with-powershell.md).
-* В видео [AML Retraining Models Using APIs](https://www.youtube.com/watch?v=wwjglA8xllg) (Переобучение моделей AML с помощью API-интерфейсов) показано, как переобучать модели машинного обучения, созданные в службе машинного обучения Azure, с использованием API-интерфейсов переобучения и PowerShell.
+В разделе **Basic consumption info** (Основные сведения об использовании) на странице **Consume** (Использование) найдите первичный ключ и скопируйте его в объявление **apiKey**.
 
-<!--image links-->
-[1]: ./media/retrain-machine-learning-model/machine-learning-retrain-models-programmatically-IMAGE01.png
-[7]: ./media/retrain-machine-learning-model/machine-learning-retrain-models-programmatically-IMAGE07.png
+### <a name="update-the-azure-storage-information"></a>Обновление сведений о службе хранилища Azure
 
+В этом примере кода BES файл с локального диска (например, C:\temp\CensusIpnput.csv) отправляется в службу хранилища Azure, где он обрабатывается. Затем результаты записываются обратно в службу хранилища Azure.
+
+1. Войдите на портал Azure.
+1. В столбце слева щелкните **More services** (Дополнительные службы), найдите параметр **Учетные записи хранения** и выберите его.
+1. Выберите в списке учетную запись хранения, которая будет использоваться для хранения переобученной модели.
+1. В левой области навигации щелкните **Ключи доступа**.
+1. Скопируйте и сохраните **первичный ключ доступа**.
+1. В левой области навигации щелкните **Контейнеры**.
+1. Выберите существующий контейнер или создайте другой, а затем сохраните его имя.
+
+Найдите объявления *StorageAccountName*, *StorageAccountKey* и *StorageContainerName*, а затем обновите их, используя значения с портала.
+
+    const string StorageAccountName = "mystorageacct"; // Replace this with your Azure storage account name
+    const string StorageAccountKey = "a_storage_account_key"; // Replace this with your Azure Storage key
+    const string StorageContainerName = "mycontainer"; // Replace this with your Azure Storage container name
+
+Кроме того, необходимо обеспечить доступность файла входных данных в расположении, указанном в коде.
+
+### <a name="specify-the-output-location"></a>Указание расположения выходных данных
+
+Указывая расположение выходных данных для полезных данных запроса, измените расширение файла, заданное в *RelativeLocation*, на `ilearner`.
+
+    Outputs = new Dictionary<string, AzureBlobDataReference>() {
+        {
+            "output1",
+            new AzureBlobDataReference()
+            {
+                ConnectionString = storageConnectionString,
+                RelativeLocation = string.Format("{0}/output1results.ilearner", StorageContainerName) /*Replace this with the location you want to use for your output file and a valid file extension (usually .csv for scoring results or .ilearner for trained models)*/
+            }
+        },
+
+Ниже приведен пример выходных данных переобучения:
+
+![Выходные данные переобучения](media/retrain-existing-arm-web-service/machine-learning-retrain-models-programmatically-IMAGE06.png)
+
+### <a name="evaluate-the-retraining-results"></a>Оценка результатов переобучения
+
+При выполнении приложения выходные данные содержат URL-адрес и подписанные URL-адреса, необходимые для доступа к результатам оценки.
+
+Чтобы увидеть результаты работы переобученной модели, введите в адресную строку браузера полный URL-адрес, составив его из значений параметров *BaseLocation*, *RelativeLocaiton* и *SasBlobToken*, содержащихся в выходных данных *output2*.
+
+Проанализируйте результаты и определите, можно ли только что обученную модель считать лучше предыдущей.
+
+Сохраните значения *BaseLocation*, *RelativeLocation* и *SasBlobToken* из полученных результатов.
+
+## <a name="update-the-predictive-experiment"></a>Обновление прогнозного эксперимента
+
+### <a name="sign-in-to-azure-resource-manager"></a>Вход в Azure Resource Manager
+
+Прежде всего войдите в учетную запись Azure, выполнив в среде PowerShell командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
+
+### <a name="get-the-web-service-definition-object"></a>Получение объекта определения веб-службы
+
+Теперь получите объект определения веб-службы, вызвав командлет [Get-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/get-azurermmlwebservice).
+
+    $wsd = Get-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
+
+Для определения имени группы ресурсов существующей веб-службы выполните командлет Get-AzureRmMlWebService без каких-либо параметров, чтобы отобразились веб-службы в подписке. Найдите необходимую веб-службу и посмотрите ее идентификатор. Имя группы ресурсов — это четвертый элемент в идентификаторе, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
+
+    Properties : Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebServicePropertiesForGraph
+    Id : /subscriptions/<subscription ID>/resourceGroups/Default-MachineLearning-SouthCentralUS/providers/Microsoft.MachineLearning/webServices/RetrainSamplePre.2016.8.17.0.3.51.237
+    Name : RetrainSamplePre.2016.8.17.0.3.51.237
+    Location : South Central US
+    Type : Microsoft.MachineLearning/webServices
+    Tags : {}
+
+Кроме того, чтобы определить имя группы ресурсов существующей веб-службы, можно войти на портал веб-служб Машинного обучения Azure. Затем выбрать веб-службу. Имя группы ресурсов — это пятый элемент в URL-адресе веб-службы, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
+
+    https://services.azureml.net/subscriptions/<subscription ID>/resourceGroups/Default-MachineLearning-SouthCentralUS/providers/Microsoft.MachineLearning/webServices/RetrainSamplePre.2016.8.17.0.3.51.237
+
+### <a name="export-the-web-service-definition-object-as-json"></a>Экспорт объекта определения веб-службы в формате JSON
+
+Чтобы изменить определение обученной модели для использования новой соответствующей модели, необходимо сначала выполнить командлет [Export-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/export-azurermmlwebservice). Это позволит экспортировать определение в JSON-файл.
+
+    Export-AzureRmMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
+
+### <a name="update-the-reference-to-the-ilearner-blob"></a>Обновление ссылки на большой двоичный объект ilearner
+
+В ресурсах-контейнерах найдите элемент [trained model], обновите значение *uri* в узле *locationInfo*, заменив его универсальным кодом ресурса (URI) BLOB-объекта ilearner. URI формируется в результате объединения параметров *BaseLocation* и *RelativeLocation* из выходных данных вызова переобучения BES.
+
+     "asset3": {
+        "name": "Retrain Sample [trained model]",
+        "type": "Resource",
+        "locationInfo": {
+          "uri": "https://mltestaccount.blob.core.windows.net/azuremlassetscontainer/baca7bca650f46218633552c0bcbba0e.ilearner"
+        },
+        "outputPorts": {
+          "Results dataset": {
+            "type": "Dataset"
+          }
+        }
+      },
+
+### <a name="import-the-json-into-a-web-service-definition-object"></a>Импорт JSON-файла в объект определения веб-службы
+
+Используйте командлет [Import-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/import-azurermmlwebservice), чтобы преобразовать измененный JSON-файл обратно в объект определения веб-службы, который можно использовать для обновления прогнозного эксперимента.
+
+    $wsd = Import-AzureRmMlWebService -InputFile "C:\temp\mlservice_export.json"
+
+### <a name="update-the-web-service"></a>Обновление веб-службы
+
+Наконец, используйте командлет [Update-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/update-azurermmlwebservice), чтобы обновить прогнозный эксперимент.
+
+    Update-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
+
+* [Обзор портала веб-служб](manage-new-webservice.md)
+* [Управление итерациями экспериментов](manage-experiment-iterations.md)

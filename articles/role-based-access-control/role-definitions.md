@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об определениях ролей в Azure RBAC | Документация Майкрософт
-description: Сведения об определениях ролей при управлении доступом на основе ролей (RBAC) для точного управления доступом к ресурсам в Azure.
+title: Общие сведения об определениях ролей в RBAC для ресурсов Azure | Документация Майкрософт
+description: Сведения об определениях ролей при управлении доступом на основе ролей (RBAC) для точного управления доступом к ресурсам Azure.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,16 +15,16 @@ ms.date: 02/09/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 8966eb337af07b90e7d9c697a4bfd14c543540aa
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: b7f4ce9508928ccc6ab766e7164c674511bcaa37
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55991367"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56342785"
 ---
-# <a name="understand-role-definitions"></a>Определения ролей
+# <a name="understand-role-definitions-for-azure-resources"></a>Общие сведения об определениях ролей для ресурсов Azure
 
-Чтобы составить представление о роли или создать собственную [пользовательскую роль](custom-roles.md), полезно узнать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
+Чтобы составить представление о роли или создать собственную [пользовательскую роль для ресурсов Azure](custom-roles.md), полезно узнать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
 
 ## <a name="role-definition-structure"></a>Структура определения роли
 
@@ -151,6 +151,8 @@ AssignableScopes []
 
 Разрешения Боба ограничены только `Actions` и `DataActions`, указанными в роли [Участник данных BLOB-объектов хранилища (предварительная версия)](built-in-roles.md#storage-blob-data-contributor-preview). На основе роли Боб может выполнять операции управления и операции с данными. Например, Боб может считывать, записывать и удалять контейнеры в указанной учетной записи хранения, а также выполнять те же операции с большими двоичными объектами.
 
+Дополнительные сведения об управлении и безопасности плоскости данных для хранилища см. в [руководстве по безопасности службы хранилища Azure](../storage/common/storage-security-guide.md).
+
 ### <a name="what-tools-support-using-rbac-for-data-operations"></a>Какие средства поддерживают использование RBAC для операций с данными?
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
@@ -225,10 +227,10 @@ AssignableScopes []
 | Роль доступна для назначения только в группе сетевых ресурсов | `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network"` |
 | Роль доступна для назначения во всех областях | `"/"` |
 
-Сведения о `AssignableScopes` для пользовательских ролей см. в разделе [Пользовательские роли](custom-roles.md).
+Для дополнительных сведений об `AssignableScopes` для пользовательских ролей см. статью [Пользовательские роли в Azure](custom-roles.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Встроенные роли](built-in-roles.md)
-* [Пользовательские роли](custom-roles.md)
+* [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)
+* [Пользовательские роли для ресурсов Azure](custom-roles.md)
 * [Операции поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md)

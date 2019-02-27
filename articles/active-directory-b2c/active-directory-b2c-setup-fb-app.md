@@ -1,5 +1,5 @@
 ---
-title: Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C | Документация Майкрософт
+title: Настройка регистрации и входа с учетной записью Facebook — Azure Active Directory B2C | Документация Майкрософт
 description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями Facebook, используя Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: ea1afb83c3e381c33b1c29c224d1ce0cc1d3d080
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 56534589c89fefb38f206f1c57da7996ae43e81d
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55163047"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428505"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
 ## <a name="create-a-facebook-application"></a>Создание приложения Facebook
 
-Чтобы использовать учетную запись Facebook в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи Facebook, вы можете получить ее по адресу [https://www.facebook.com/](https://www.facebook.com/).
+Чтобы использовать учетную запись Facebook в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи Facebook, вы можете получить ее по адресу [https://www.facebook.com/](https://www.facebook.com/).
 
 1. Выполните вход на [веб-сайт разработчиков Facebook](https://developers.facebook.com/) с учетными данными от учетной записи Facebook.
 2. Если вы этого еще не сделали, необходимо зарегистрироваться в качестве разработчика Facebook. Для этого выберите **Register** (Зарегистрироваться) в правом верхнем углу страницы, примите политики Facebook и завершите регистрацию.

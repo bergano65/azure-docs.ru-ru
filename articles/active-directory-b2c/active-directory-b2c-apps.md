@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 7ea179ff7e4b525e86003faadfb92e090476bd81
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 116abd259d11e66be2dc158d833c569f06aaa923
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172652"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446381"
 ---
 # <a name="applications-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, используемые в Azure Active Directory B2C
 
@@ -91,10 +91,10 @@ Accept: application/json
 Интерфейс веб-API может получать токены от всех типов клиентов, включая веб-приложения, классические и мобильные приложения, одностраничные приложения, серверные управляющие программы и даже другие интерфейсы веб-API. В качестве примера рассмотрим полный поток веб-приложения, который вызывает интерфейс веб-API.
 
 1. Веб-приложение выполняет политику, и пользователь завершает работу.
-2. Azure AD B2C возвращает в браузер маркер `access_token` и код авторизации.
-3. Браузер публикует маркер `access_token` и код авторизации в URI перенаправления.
-4. Веб-сервер проверяет маркер `access token` и задает файл cookie сеанса.
-5. Маркер `access_token` предоставляется Azure AD B2C с кодом авторизации, идентификатором клиента приложения и учетными данными.
+2. Azure AD B2C возвращает браузеру маркер `id_token` (OpenID Connect) и код авторизации.
+3. Браузер публикует маркер `id_token` и код авторизации в URI перенаправления.
+4. Веб-сервер проверяет маркер `id_token` и задает файл cookie сеанса.
+5. Веб-сервер запрашивает у Azure AD B2C маркер `access_token`, предоставляя код авторизации, идентификатор клиента приложения и учетные данные клиента.
 6. Маркеры `access_token` и `refresh_token` возвращаются на веб-сервер.
 7. В заголовке авторизации вызывается веб-API с маркером `access_token`.
 8. Веб-API проверяет маркер.

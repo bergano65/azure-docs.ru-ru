@@ -1,6 +1,6 @@
 ---
-title: Создание пользовательских ролей с помощью Azure CLI | Документы Майкрософт
-description: Узнайте, как создавать пользовательские роли для управления доступом на основе ролей (RBAC) с помощью Azure CLI. Здесь приводится описание процедур получения списка, создания, обновления и удаления пользовательских ролей.
+title: Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI | Документация Майкрософт
+description: В этой статье приведены сведения о том, как создавать пользовательские роли с управлением доступом на основе ролей (RBAC) для ресурсов Azure с помощью Azure CLI. Здесь приводится описание процедур получения списка, создания, обновления и удаления пользовательских ролей.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,18 +14,18 @@ ms.workload: identity
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 3b5d18a3e0bf846137dfdf68b8e5dd9e2db58792
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: b768f6e240c354369246a6d978ed3e8dd2f58f92
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437262"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338144"
 ---
-# <a name="create-custom-roles-using-azure-cli"></a>Создание пользовательских ролей с помощью Azure CLI
+# <a name="create-custom-roles-for-azure-resources-using-azure-cli"></a>Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI
 
-Если [встроенные роли](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. В этой статье описывается создание пользовательских ролей и управление ими с помощью Azure CLI.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. В этой статье описывается создание пользовательских ролей и управление ими с помощью Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для создания пользовательских ролей в Azure требуются:
 
@@ -162,6 +162,6 @@ az role definition delete --name "Virtual Machine Operator"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Руководство. Создание пользовательских ролей с помощью Azure CLI](tutorial-custom-role-cli.md)
-- [Пользовательские роли в Azure](custom-roles.md)
+- [Руководство Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Операции поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md)

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: rezas
-ms.openlocfilehash: 65de1279c47f5992dd82e9f4634b3de52925769c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 0cb3bc63f9c3d63c68edba0b4162970e18fca76d
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55568385"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56312707"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений
 
@@ -361,7 +361,7 @@ SELECT [TOP <max number>] <projection list>
     | max(<projection_element>)
 ```
 
-**Attribute_name** относится к любому свойству документа JSON в коллекции FROM. Некоторые примеры предложений SELECT можно найти в разделе [Начало работы с запросами двойника устройства](iot-hub-devguide-query-language.md#get-started-with-device-twin-queries).
+**Attribute_name** относится к любому свойству документа JSON в коллекции FROM. Некоторые примеры предложений SELECT можно найти в разделе о начале работы с запросами двойника устройства.
 
 В настоящее время предложения для осуществления выбора, отличные от **SELECT*** , поддерживаются только в статистических запросах к двойникам устройств.
 

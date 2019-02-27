@@ -6,16 +6,16 @@ ms.service: automation
 ms.subservice: change-inventory-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 01/29/2019
+ms.date: 02/19/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e40cc3ac0fe17cd030717253f6093bbf8d63a5a2
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 07fd8c41e7817e232513ed9a260c3722a1fdac11
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55487240"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56429270"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -180,6 +180,8 @@ ms.locfileid: "55487240"
 |Пакеты Linux|1250||
 |Службы|250||
 |Daemon|250||
+
+Средний показатель использования данных Log Analytics для компьютера, использующего решения "Отслеживание изменений" и "Инвентаризация — примерно 40 МБ в месяц. Это приблизительное значение, которое может отличаться в зависимости от среды. Мы рекомендуем вам провести мониторинг среды, чтобы узнать точные данные об использовании.
 
 ### <a name="windows-service-tracking"></a>Отслеживание служб Windows
 

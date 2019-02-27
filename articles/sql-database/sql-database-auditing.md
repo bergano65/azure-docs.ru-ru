@@ -8,16 +8,16 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: vainolo
-ms.author: vainolo
+ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: d092b4e8096b311ba9ca9d3fbceea8fb57bf4aa9
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 08c71ac1aba659a2e0fbb6655b6ee0a21576bf5d
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234668"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339793"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -43,8 +43,11 @@ ms.locfileid: "56234668"
 > [!IMPORTANT]
 > Журналы аудита записываются в **Добавочные BLOB-объекты** в хранилище BLOB-объектов Azure в подписке Azure.
 >
-> - Поддержка добавочных больших двоичных объектов в **хранилище класса Premium** сейчас **не поддерживается**.
+> - Поддерживаются все типы хранилища (v1, v2, BLOB-объектов).
+> - Поддерживаются все конфигурации репликации хранилища.
+> - **Хранилище класса "Премиум"** сейчас **не поддерживается**.
 > - **Хранилище в виртуальной сети** в настоящее время **не поддерживается**.
+> - **Хранилище с защитой брандмауэром** сейчас **не поддерживается**.
 
 ## <a id="subheading-8"></a>Определение политики аудита уровня сервера и базы данных
 

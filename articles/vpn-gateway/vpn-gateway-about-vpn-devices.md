@@ -3,17 +3,16 @@ title: VPN-устройства для распределенных подклю
 description: В этой статье описываются VPN-устройства и параметры IPsec для подключений типа "сеть — сеть" через VPN-шлюз, а также приводятся ссылки на примеры и инструкции по настройке.
 services: vpn-gateway
 author: yushwang
-manager: rossort
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 02/06/2019
+ms.date: 02/20/2019
 ms.author: yushwang
-ms.openlocfilehash: 3e3dff18bde1c02c3746aa200376b02e1fba9e05
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 7024849c796d7cef226fef1b20b0a6604f1344ba
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765370"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454311"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -48,7 +47,7 @@ ms.locfileid: "55765370"
 | Barracuda Networks, Inc. |Брандмауэр Barracuda NextGen серии Х |Barracuda Firewall 6.5 |[Руководство по настройке](https://techlib.barracuda.com/BFW/ConfigAzureVPNGateway) |Не совместимо |
 | Brocade            |Vyatta 5400 vRouter   |Virtual Router 6.6R3 GA|[Руководство по настройке](http://www1.brocade.com/downloads/documents/html_product_manuals/vyatta/vyatta_5400_manual/wwhelp/wwhimpl/js/html/wwhelp.htm#href=VPN_Site-to-Site%20IPsec%20VPN/Preface.1.1.html) |Не совместимо |
 | Check Point |Security Gateway |R80.10 |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
-| Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживаются |[Руководство по настройке*](vpn-gateway-3rdparty-device-config-cisco-asa.md) |
+| Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживаются |[Руководство по настройке*](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
 | Cisco |ASR |PolicyBased: iOS 15.1<br>RouteBased: iOS 15.2 |Поддерживаются |Поддерживаются |
 | Cisco |ISR |PolicyBased: iOS 15.0<br>RouteBased*: iOS 15.1 |Поддерживаются |Поддерживаются |
 | Cisco |Meraki |Недоступно |Не совместимо |Не совместимо |
@@ -66,7 +65,7 @@ ms.locfileid: "55765370"
 | Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |[Руководство по настройке](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
 | ShareTech | UTM нового поколения (серия NU) | 9.0.1.3 | Не совместимо | [Руководство по настройке](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
 | SonicWall |Серия TZ и NSA<br>Серия SuperMassive<br>Серия NSA класса E |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Не совместимо |[Руководство по настройке](https://www.sonicwall.com/support/knowledge-base/170505320011694) |
-| Sophos | Брандмауэр следующего поколения XG | XG версии 17 | | [Руководство по настройке](https://community.sophos.com/kb/127546) |
+| Sophos | Брандмауэр следующего поколения XG | XG версии 17 | | [Руководство по настройке](https://community.sophos.com/kb/127546)<br><br>[Руководство по настройке нескольких SA](https://community.sophos.com/kb/en-us/133154) |
 | Ubiquiti | EdgeRouter | EdgeOS v1.10 |  | [BGP через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012374708)<br><br>[VTI через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012305347)
 | WatchGuard |Все |Fireware XTM<br> PolicyBased: 11.11.x<br>RouteBased: 11.12.x |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
 

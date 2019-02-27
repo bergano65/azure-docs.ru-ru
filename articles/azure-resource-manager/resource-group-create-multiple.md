@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/02/2018
+ms.date: 02/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: e1edf0ed0c9efcb9f0c81718621706550bf3c4d7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: c343dfa3c0eac4aeabaa9244c6675b235fc95552
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51012009"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311722"
 ---
 # <a name="deploy-more-than-one-instance-of-a-resource-or-property-in-azure-resource-manager-templates"></a>Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager
 
@@ -27,32 +27,32 @@ ms.locfileid: "51012009"
 
 ## <a name="resource-iteration"></a>Итерация ресурса
 
-Чтобы во время развертывания создать один или несколько экземпляров ресурса, добавьте к типу ресурса элемент `copy`. В элементе копирования укажите число итераций и имя для этого цикла. Значение count должно быть положительным целым числом не больше 800. 
+Чтобы во время развертывания создать один или несколько экземпляров ресурса, добавьте к типу ресурса элемент `copy`. В элементе копирования укажите число итераций и имя для этого цикла. (значение count должно быть положительным целым числом не больше 800); 
 
 Для многократного создания ресурса используется следующий формат.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [
-        {
-            "apiVersion": "2016-01-01",
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "Standard_LRS"
-            },
-            "kind": "Storage",
-            "properties": {},
-            "copy": {
-                "name": "storagecopy",
-                "count": 3
-            }
-        }
-    ],
-    "outputs": {}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "apiVersion": "2016-01-01",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "Storage",
+      "properties": {},
+      "copy": {
+        "name": "storagecopy",
+        "count": 3
+      }
+    }
+  ],
+  "outputs": {}
 }
 ```
 
@@ -85,22 +85,22 @@ ms.locfileid: "51012009"
 ```json
 "parameters": { 
   "org": { 
-     "type": "array", 
-     "defaultValue": [ 
-         "contoso", 
-         "fabrikam", 
-         "coho" 
-      ] 
+    "type": "array", 
+    "defaultValue": [ 
+      "contoso", 
+      "fabrikam", 
+      "coho" 
+    ] 
   }
 }, 
 "resources": [ 
   { 
-      "name": "[concat('storage', parameters('org')[copyIndex()])]", 
-      "copy": { 
-         "name": "storagecopy", 
-         "count": "[length(parameters('org'))]" 
-      }, 
-      ...
+    "name": "[concat('storage', parameters('org')[copyIndex()])]", 
+    "copy": { 
+      "name": "storagecopy", 
+      "count": "[length(parameters('org'))]" 
+    }, 
+    ...
   } 
 ]
 ```
@@ -119,30 +119,30 @@ ms.locfileid: "51012009"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [
-        {
-            "apiVersion": "2016-01-01",
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "Standard_LRS"
-            },
-            "kind": "Storage",
-            "properties": {},
-            "copy": {
-                "name": "storagecopy",
-                "count": 4,
-                "mode": "serial",
-                "batchSize": 2
-            }
-        }
-    ],
-    "outputs": {}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "apiVersion": "2016-01-01",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "Storage",
+      "properties": {},
+      "copy": {
+        "name": "storagecopy",
+        "count": 4,
+        "mode": "serial",
+        "batchSize": 2
+      }
+    }
+  ],
+  "outputs": {}
 }
-``` 
+```
 
 Свойство mode также принимает значение **parallel**, которое является значением по умолчанию.
 
@@ -164,13 +164,13 @@ ms.locfileid: "51012009"
   "properties": {
     "storageProfile": {
       "copy": [{
-          "name": "dataDisks",
-          "count": 3,
-          "input": {
-              "lun": "[copyIndex('dataDisks')]",
-              "createOption": "Empty",
-              "diskSizeGB": "1023"
-          }
+        "name": "dataDisks",
+        "count": 3,
+        "input": {
+          "lun": "[copyIndex('dataDisks')]",
+          "createOption": "Empty",
+          "diskSizeGB": "1023"
+        }
       }],
       ...
 ```
@@ -187,22 +187,22 @@ ms.locfileid: "51012009"
   "properties": {
     "storageProfile": {
       "dataDisks": [
-          {
-              "lun": 0,
-              "createOption": "Empty",
-              "diskSizeGB": "1023"
-          },
-          {
-              "lun": 1,
-              "createOption": "Empty",
-              "diskSizeGB": "1023"
-          },
-          {
-              "lun": 2,
-              "createOption": "Empty",
-              "diskSizeGB": "1023"
-          }
-      }],
+        {
+          "lun": 0,
+          "createOption": "Empty",
+          "diskSizeGB": "1023"
+        },
+        {
+          "lun": 1,
+          "createOption": "Empty",
+          "diskSizeGB": "1023"
+        },
+        {
+          "lun": 2,
+          "createOption": "Empty",
+          "diskSizeGB": "1023"
+        }
+      ],
       ...
 ```
 
@@ -210,27 +210,27 @@ ms.locfileid: "51012009"
 
 ```json
 {
-    "name": "string",
-    "type": "Microsoft.Network/loadBalancers",
-    "apiVersion": "2017-10-01",
-    "properties": {
-        "copy": [
-          {
-              "name": "loadBalancingRules",
-              "count": "[length(parameters('loadBalancingRules'))]",
-              "input": {
-                ...
-              }
-          },
-          {
-              "name": "probes",
-              "count": "[length(parameters('loadBalancingRules'))]",
-              "input": {
-                ...
-              }
-          }
-        ]
-    }
+  "name": "string",
+  "type": "Microsoft.Network/loadBalancers",
+  "apiVersion": "2017-10-01",
+  "properties": {
+    "copy": [
+      {
+        "name": "loadBalancingRules",
+        "count": "[length(parameters('loadBalancingRules'))]",
+        "input": {
+          ...
+        }
+      },
+      {
+        "name": "probes",
+        "count": "[length(parameters('loadBalancingRules'))]",
+        "input": {
+          ...
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -238,39 +238,41 @@ ms.locfileid: "51012009"
 
 ```json
 {
-    "type": "Microsoft.Network/virtualNetworks",
-    "name": "[concat(parameters('vnetname'), copyIndex())]",
-    "apiVersion": "2018-04-01",
-    "copy":{
-        "count": 2,
-        "name": "vnetloop"
+  "type": "Microsoft.Network/virtualNetworks",
+  "name": "[concat(parameters('vnetname'), copyIndex())]",
+  "apiVersion": "2018-04-01",
+  "copy":{
+    "count": 2,
+    "name": "vnetloop"
+  },
+  "location": "[resourceGroup().location]",
+  "properties": {
+    "addressSpace": {
+      "addressPrefixes": [
+        "[parameters('addressPrefix')]"
+      ]
     },
-    "location": "[resourceGroup().location]",
-    "properties": {
-        "addressSpace": {
-            "addressPrefixes": [
-                "[parameters('addressPrefix')]"
-            ]
-        },
-        "copy": [
-            {
-                "name": "subnets",
-                "count": 2,
-                "input": {
-                    "name": "[concat('subnet-', copyIndex('subnets'))]",
-                    "properties": {
-                        "addressPrefix": "[variables('subnetAddressPrefix')[copyIndex('subnets')]]"
-                    }
-                }
-            }
-        ]
-    }
+    "copy": [
+      {
+        "name": "subnets",
+        "count": 2,
+        "input": {
+          "name": "[concat('subnet-', copyIndex('subnets'))]",
+          "properties": {
+            "addressPrefix": "[variables('subnetAddressPrefix')[copyIndex('subnets')]]"
+          }
+        }
+      }
+    ]
+  }
 }
 ```
 
 ## <a name="variable-iteration"></a>Итерация переменной
 
-Чтобы создать несколько экземпляров переменной, добавьте элемент `copy` в разделе variables. Вы можете создать несколько экземпляров объектов со связанными значениями, а затем задать эти значения экземплярам ресурса. Создать объект со свойством массива или типа array можно с помощью операции копирования. В следующем примере показаны оба подхода.
+Чтобы создать несколько экземпляров переменной, используйте свойство `copy` в разделе variables. Вы создадите массив элементов на основе значения в свойстве `input`. Вы можете использовать свойство `copy` в переменной или на верхнем уровне раздела variables. Если в итерации переменной используется `copyIndex`, необходимо указать имя итерации.
+
+В примере ниже показано несколько разных способов создания переменных массива с динамически создаваемыми элементами. Здесь показано использование копирования внутри переменной для создания массивов объектов и строк, а также на верхнем уровне — для создания массивов объектов, строк и целых чисел.
 
 ```json
 {
@@ -288,18 +290,33 @@ ms.locfileid: "51012009"
             "diskSizeGB": "1",
             "diskIndex": "[copyIndex('disks')]"
           }
+        },
+        {
+          "name": "diskNames",
+          "count": 5,
+          "input": "[concat('myDataDisk', copyIndex('diskNames', 1))]"
         }
       ]
     },
     "copy": [
       {
-        "name": "disks-top-level-array",
+        "name": "top-level-object-array",
         "count": 5,
         "input": {
-          "name": "[concat('myDataDisk', copyIndex('disks-top-level-array', 1))]",
+          "name": "[concat('myDataDisk', copyIndex('top-level-object-array', 1))]",
           "diskSizeGB": "1",
-          "diskIndex": "[copyIndex('disks-top-level-array')]"
+          "diskIndex": "[copyIndex('top-level-object-array')]"
         }
+      },
+      {
+        "name": "top-level-string-array",
+        "count": 5,
+        "input": "[concat('myDataDisk', copyIndex('top-level-string-array', 1))]"
+      },
+      {
+        "name": "top-level-integer-array",
+        "count": 5,
+        "input": "[copyIndex('top-level-integer-array')]"
       }
     ]
   },
@@ -313,68 +330,56 @@ ms.locfileid: "51012009"
       "value": "[variables('disk-array-on-object').disks]",
       "type" : "array"
     },
-    "exampleArray": {
-      "value": "[variables('disks-top-level-array')]",
+    "exampleObjectArray": {
+      "value": "[variables('top-level-object-array')]",
+      "type" : "array"
+    },
+    "exampleStringArray": {
+      "value": "[variables('top-level-string-array')]",
+      "type" : "array"
+    },
+    "exampleIntegerArray": {
+      "value": "[variables('top-level-integer-array')]",
       "type" : "array"
     }
   }
 }
 ```
 
-При любом подходе элемент копирования представляет собой массив, поэтому вы можете указать несколько переменных. Добавьте объект для каждой переменной для создания.
-
-```json
-"copy": [
-  {
-    "name": "first-variable",
-    "count": 5,
-    "input": {
-      "demoProperty": "[concat('myProperty', copyIndex('first-variable'))]",
-    }
-  },
-  {
-    "name": "second-variable",
-    "count": 3,
-    "input": {
-      "demoProperty": "[concat('myProperty', copyIndex('second-variable'))]",
-    }
-  },
-]
-```
-
 ## <a name="depend-on-resources-in-a-loop"></a>Зависимость от ресурсов в цикле
+
 С помощью элемента `dependsOn` можно определить последовательность развертывания ресурсов. Чтобы развернуть ресурс, который зависит от коллекции ресурсов в цикле, укажите имя цикла копирования в элементе dependsOn. В следующем примере показано, как развернуть три учетные записи хранения до развертывания виртуальной машины. Полное определение виртуальной машины не показано. Обратите внимание, что параметр name элемента copy имеет значение `storagecopy`, а элемент dependsOn для виртуальных машин имеет значение `storagecopy`.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "resources": [
-        {
-            "apiVersion": "2016-01-01",
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "Standard_LRS"
-            },
-            "kind": "Storage",
-            "properties": {},
-            "copy": {
-                "name": "storagecopy",
-                "count": 3
-            }
-        },
-        {
-            "apiVersion": "2015-06-15", 
-            "type": "Microsoft.Compute/virtualMachines", 
-            "name": "[concat('VM', uniqueString(resourceGroup().id))]",  
-            "dependsOn": ["storagecopy"],
-            ...
-        }
-    ],
-    "outputs": {}
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [
+    {
+      "apiVersion": "2016-01-01",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "Storage",
+      "properties": {},
+      "copy": {
+        "name": "storagecopy",
+        "count": 3
+      }
+    },
+    {
+      "apiVersion": "2015-06-15", 
+      "type": "Microsoft.Compute/virtualMachines", 
+      "name": "[concat('VM', uniqueString(resourceGroup().id))]",  
+      "dependsOn": ["storagecopy"],
+      ...
+    }
+  ],
+  "outputs": {}
 }
 ```
 
@@ -388,19 +393,19 @@ ms.locfileid: "51012009"
 ```json
 "resources": [
 {
-    "type": "Microsoft.DataFactory/datafactories",
-    "name": "exampleDataFactory",
-    ...
-    "resources": [
+  "type": "Microsoft.DataFactory/datafactories",
+  "name": "exampleDataFactory",
+  ...
+  "resources": [
     {
-        "type": "datasets",
-        "name": "exampleDataSet",
-        "dependsOn": [
-            "exampleDataFactory"
-        ],
-        ...
+      "type": "datasets",
+      "name": "exampleDataSet",
+      "dependsOn": [
+        "exampleDataFactory"
+      ],
+      ...
     }
-}]
+  ]
 ```
 
 Чтобы создать несколько наборов данных, переместите его за пределы фабрики данных. Набор данных должен находиться на том же уровне, что и фабрика данных, но при этом он должен быть дочерним ресурсом фабрики данных. Вы можете сохранить связь между набором данных и фабрикой данных с помощью свойств type и name. Так как тип нельзя определить по положению в шаблоне, укажите полное имя типа в следующем формате: `{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`.
@@ -412,21 +417,21 @@ ms.locfileid: "51012009"
 ```json
 "resources": [
 {
-    "type": "Microsoft.DataFactory/datafactories",
-    "name": "exampleDataFactory",
-    ...
+  "type": "Microsoft.DataFactory/datafactories",
+  "name": "exampleDataFactory",
+  ...
 },
 {
-    "type": "Microsoft.DataFactory/datafactories/datasets",
-    "name": "[concat('exampleDataFactory', '/', 'exampleDataSet', copyIndex())]",
-    "dependsOn": [
-        "exampleDataFactory"
-    ],
-    "copy": { 
-        "name": "datasetcopy", 
-        "count": "3" 
-    } 
-    ...
+  "type": "Microsoft.DataFactory/datafactories/datasets",
+  "name": "[concat('exampleDataFactory', '/', 'exampleDataSet', copyIndex())]",
+  "dependsOn": [
+    "exampleDataFactory"
+  ],
+  "copy": {
+    "name": "datasetcopy",
+    "count": "3"
+  },
+  ...
 }]
 ```
 

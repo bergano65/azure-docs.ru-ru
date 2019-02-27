@@ -1,6 +1,6 @@
 ---
-title: Управление доступом с помощью RBAC и Azure PowerShell | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
+title: Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell | Документация Майкрософт
+description: Узнайте, как управлять доступом пользователей, групп и приложений к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,16 +14,16 @@ ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 4e4a920c47dc7f75dc4b6714f101d6cbda715a3a
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 84fd4262d3b64b369d6307a6a875e8a459324aaa
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106177"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56343780"
 ---
-# <a name="manage-access-using-rbac-and-azure-powershell"></a>Управление доступом с помощью RBAC и Azure PowerShell
+# <a name="manage-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этой статье объясняется, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure PowerShell.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. В этой статье объясняется, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure PowerShell.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
@@ -326,6 +326,6 @@ PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionNam
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Руководство по предоставлению доступа для группы с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
-- [Руководство Создание пользовательских ролей с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Руководство Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
+- [Руководство Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/powershell-azure-resource-manager.md)

@@ -11,13 +11,13 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 12/03/2018
-ms.openlocfilehash: 87c3633bb3ed3537d1e258b9d8d50fd6d6356d81
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.date: 02/20/2019
+ms.openlocfilehash: ced83fc31e9e4944f7392169b703056dc5b4fd98
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52960036"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454843"
 ---
 # <a name="configure-and-manage-azure-active-directory-authentication-with-sql"></a>Настройка и администрирование аутентификации Azure Active Directory с помощью SQL
 
@@ -143,7 +143,7 @@ ms.locfileid: "52960036"
 
     Изменение администратора может занять несколько минут. После этого новый администратор появится в поле "Администратор Active Directory".
 
-После подготовки администратора Azure AD для Управляемого экземпляра вы сможете создавать имена для входа Azure AD (**общедоступная предварительная версия**) с синтаксисом <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN</a>. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration).
+После подготовки администратора Azure AD для Управляемого экземпляра вы сможете создавать имена для субъектов сервера (имен для входа) Azure AD (**общедоступная предварительная версия**) с синтаксисом <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN</a>. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration).
 
 > [!TIP]
 > Чтобы потом удалить учетную запись администратора, в верхней части страницы "Администратор Active Directory" щелкните **Удалить администратора**, а затем нажмите кнопку **Сохранить**.
@@ -238,7 +238,7 @@ Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23
 ### <a name="cli"></a>Интерфейс командной строки  
 
 Можно также подготовить администратора Azure AD с помощью следующих команд CLI:
-| Get-Help | ОПИСАНИЕ |
+| Команда | ОПИСАНИЕ |
 | --- | --- |
 |[az sql server ad-admin create](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (должен входить в текущую подписку). |
 |[az sql server ad-admin delete](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-delete) |Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
@@ -264,7 +264,7 @@ Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23
 ## <a name="create-contained-database-users-in-your-database-mapped-to-azure-ad-identities"></a>Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD
 
 >[!IMPORTANT]
->Управляемый экземпляр теперь поддерживает имена для входа Azure AD (**общедоступная предварительная версии**), благодаря чему вы можете создавать имена для входа для пользователей, групп или приложений Azure AD. Имена для входа Azure AD предоставляют возможность выполнить проверку подлинности в Управляемом экземпляре без необходимости создания пользователей базы данных в качестве пользователей автономной базы данных. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration). Сведения о синтаксисе для создания имен для входа Azure AD см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a>.
+>Управляемый экземпляр теперь поддерживает субъекты сервера (имена для входа) Azure AD (**общедоступная предварительная версии**), благодаря чему вы можете создавать имена для входа для пользователей, групп или приложений Azure AD. Субъекты сервера (имена для входа) Azure AD предоставляют возможность выполнить проверку подлинности в Управляемом экземпляре без необходимости создания пользователей базы данных в качестве пользователей автономной базы данных. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration). Сведения о синтаксисе для создания субъектов сервера (имен для входа) Azure AD см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a>.
 
 Для проверки подлинности Azure Active Directory необходимо, чтобы пользователи базы данных создавались как пользователи автономной базы данных. Пользователь автономной базы данных на основе удостоверения Azure AD —это пользователь, у которого нет имени для входа в базу данных master и который сопоставляется с удостоверением в каталоге Azure AD, связанном с базой данных. Удостоверение Azure AD может быть учетной записью отдельного пользователя или группы. Дополнительные сведения о пользователях автономной базы данных см. в статье [Пользователи автономной базы данных — создание переносимой базы данных](https://msdn.microsoft.com/library/ff929188.aspx).
 
@@ -323,14 +323,11 @@ CREATE USER [appName] FROM EXTERNAL PROVIDER;
 Вы можете подготовить пользователя автономной базы данных, использующей Azure AD (кроме администратора сервера, который является владельцем базы данных). Для этого подключитесь к базе данных с помощью удостоверения Azure AD, у которого есть доступ к базе данных.
 
 > [!IMPORTANT]
-> Проверку подлинности Azure Active Directory поддерживают [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools](https://msdn.microsoft.com/library/mt204009.aspx) для Visual Studio 2015. Выпуск SSMS за август 2016 года также включает в себя поддержку универсальной аутентификации Active Directory, что позволяет администраторам требовать прохождения многофакторной проверки подлинности с помощью телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Использование имен для входа и пользователей Azure AD (**общедоступная предварительная версия**) с SSDT в настоящее время не поддерживается.
+> Проверку подлинности Azure Active Directory поддерживают [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools](https://msdn.microsoft.com/library/mt204009.aspx) для Visual Studio 2015. Выпуск SSMS за август 2016 года также включает в себя поддержку универсальной аутентификации Active Directory, что позволяет администраторам требовать прохождения многофакторной проверки подлинности с помощью телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении.
 
 ## <a name="using-an-azure-ad-identity-to-connect-using-ssms-or-ssdt"></a>Использование удостоверения Azure AD для подключения с помощью SSMS или SSDT
 
 Ниже описаны действия по подключению к базе данных SQL с помощью удостоверения Azure AD с использованием SQL Server Management Studio или инструментов баз данных SQL Server.
-
->[!IMPORTANT]
->Использование имен для входа и пользователей Azure AD (**общедоступная предварительная версия**) с SSDT в настоящее время не поддерживается.
 
 ### <a name="active-directory-integrated-authentication"></a>Встроенная аутентификация Active Directory
 

@@ -10,12 +10,12 @@ author: garyericson
 ms.author: garye
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/03/2018
-ms.openlocfilehash: bddb97083bd1d1538b9f60ec3c0798cf1e964b1e
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 7134a22532622d7de25a23897f83dc453d8a4344
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498154"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454061"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих
@@ -89,7 +89,7 @@ ms.locfileid: "55498154"
 
 Мы обсудили некоторые основные принципы формирования вопроса, на который можно ответить с помощью данных.
 
-Обязательно ознакомьтесь с другими видео из цикла "Обработка и анализ данных для начинающих" курса по Машинному обучению Microsoft Azure.
+Ознакомьтесь с другими видео из цикла "Обработка и анализ данных для начинающих", посвященного Студии машинного обучения Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)

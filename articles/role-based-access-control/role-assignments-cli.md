@@ -1,6 +1,6 @@
 ---
-title: Управление доступом с помощью RBAC и Azure CLI | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure CLI. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
+title: Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI | Документация Майкрософт
+description: Узнайте, как управлять доступом пользователей, групп и приложений к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure CLI. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,23 +14,23 @@ ms.workload: identity
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6d1e64c7630f3fd35124e6671476174ddfc16bb6
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 751f582e2cfc39b62194ec55efa5cd8580c001e3
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437105"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341726"
 ---
-# <a name="manage-access-using-rbac-and-azure-cli"></a>Управление доступом с помощью RBAC и Azure CLI
+# <a name="manage-access-to-azure-resources-using-rbac-and-azure-cli"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. Из этой статьи вы узнаете, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure CLI.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. Из этой статьи вы узнаете, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для управления доступом необходим один из приведенных ниже инструментов:
 
 * [Bash в Azure Cloud Shell](/azure/cloud-shell/overview);
-* [интерфейс командной строки Azure](/cli/azure)
+* [Интерфейс командной строки Azure](/cli/azure)
 
 ## <a name="list-roles"></a>Вывод списка ролей
 
@@ -311,5 +311,5 @@ az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Руководство. Создание пользовательских ролей с помощью Azure CLI](tutorial-custom-role-cli.md)
-- [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/xplat-cli-azure-resource-manager.md)
+- [Руководство Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

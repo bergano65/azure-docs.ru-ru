@@ -1,6 +1,6 @@
 ---
-title: Управление доступом с помощью RBAC и шаблонов Azure Resource Manager | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и шаблонов Azure Resource Manager.
+title: Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager | Документация Майкрософт
+description: Узнайте, как управлять доступом к ресурсам Azure пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и шаблонов Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b8c6ac78447a4e4db79ed75100222eee8d528b58
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: 537ee35e96a41cd02605319e244d39c6567c3bf1
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696903"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56337209"
 ---
-# <a name="manage-access-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом с помощью RBAC и шаблонов Azure Resource Manager
+# <a name="manage-access-to-azure-resources-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В дополнение к использованию Azure PowerShell или Azure CLI доступом к ресурсам Azure можно управлять с помощью RBAC и [шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается, как управлять доступом с помощью RBAC и шаблонов.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. В дополнение к использованию Azure PowerShell или Azure CLI доступом к ресурсам Azure можно управлять с помощью RBAC и [шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается, как управлять доступом с помощью RBAC и шаблонов.
 
 ## <a name="example-template-to-create-a-role-assignment"></a>Пример шаблона для создания и назначения роли
 
@@ -251,6 +251,6 @@ ms.locfileid: "55696903"
     
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/resource-manager-create-first-template.md)
+- [Краткое руководство Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
 - [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
 - [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

@@ -1,6 +1,6 @@
 ---
-title: Анализ журналов действий Azure Active Directory с помощью Log Analytics (предварительная версия) | Документация Майкрософт
-description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью Log Analytics (предварительная версия)
+title: Анализ журналов действий Azure Active Directory с помощью журналов Azure Monitor (предварительная версия) | Документация Майкрософт
+description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor (предварительная версия)
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
@@ -17,16 +17,16 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ea13d08af924427b9e7dc5def72c19d560525b8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e2e565f5b9bcd9e3e79423c742b2c95c00abd97b
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188262"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454764"
 ---
-# <a name="analyze-azure-ad-activity-logs-with-log-analytics-preview"></a>Анализ журналов действий Azure Active Directory с помощью Log Analytics (предварительная версия)
+# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs-preview"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)
 
-После [интеграции журналов действий Azure AD с Log Analytics](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности Log Analytics, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления Log Analytics для журналов действий Azure AD ](howto-install-use-log-analytics-views.md), чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашу среду.
+После [интеграции журналов действий Azure AD с журналами Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности журналов Azure Monitor, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления Log Analytics для журналов действий Azure AD ](howto-install-use-log-analytics-views.md), чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашу среду.
 
 В этой статье вы узнаете, как анализировать журналы действий Azure AD в рабочей области Log Analytics. 
 
@@ -78,10 +78,12 @@ AuditLogs
 
 Можно также настроить оповещения по вашему запросу. Например, чтобы настроить оповещение, если на прошлой неделе было использовано более 10 приложений, выполните следующие действия.
 
-1. В рабочей области выберите **Задание оповещения**, чтобы открыть страницу **Создание правила**. 
-    ![Задание оповещения](./media/howto-analyze-activity-logs-log-analytics/setalert.png)
+1. В рабочей области выберите **Задание оповещения**, чтобы открыть страницу **Создание правила**.
 
-2. Выберите **Критерии оповещений** по умолчанию, созданные в оповещении, и обновите **Пороговое значение** в метрике по умолчанию до 10. 
+    ![задание оповещения;](./media/howto-analyze-activity-logs-log-analytics/setalert.png)
+
+2. Выберите **Критерии оповещений** по умолчанию, созданные в оповещении, и обновите **Пороговое значение** в метрике по умолчанию до 10.
+
     ![Критерии оповещений](./media/howto-analyze-activity-logs-log-analytics/alertcriteria.png)
 
 3. Введите имя и описание оповещения и выберите уровень серьезности. В нашем примере мы можем задать значение**Информационный**.
@@ -103,6 +105,6 @@ AuditLogs
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Начало работы с запросами в Log Analytics](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
+* [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
 * [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)
 * [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

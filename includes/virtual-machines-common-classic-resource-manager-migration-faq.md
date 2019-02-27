@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: jeconnoc
 ms.custom: include file
-ms.openlocfilehash: 15cbfb9babe38ba6acaf4312735ab839af3f2d99
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 74496cd3d4cd01be326baae870b075eb923983af
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34371309"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56443360"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
 
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
-Нет. Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
+№ Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
 
 ## <a name="what-happens-to-my-vms-if-i-dont-plan-on-migrating-in-the-near-future"></a>Что произойдет с моей виртуальной машиной, если я не планирую перенос в ближайшем будущем? 
 
@@ -43,7 +43,7 @@ ms.locfileid: "34371309"
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
-Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
+№ Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
 ## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
 
@@ -54,7 +54,7 @@ ms.locfileid: "34371309"
 <a name="vault">При</a> переключении виртуальной машины из классического режима в режим Resource Manager резервные копии, сделанные до переноса, не переносятся в перемещенную виртуальную машину Resource Manager. Тем не менее, если вы хотите хранить резервные копии классических виртуальных машин, выполните указанные ниже действия до переноса. 
 
 1. В хранилище служб восстановления на вкладке **Защищенные элементы** выберите нужную виртуальную машину. 
-2. Щелкните [Остановить защиту](../articles/backup/backup-azure-manage-vms.md#stop-protecting-virtual-machines). *Снимите* флажок **Удаление связанных архивируемых данных**.
+2. Щелкните "Остановить защиту". *Снимите* флажок **Удаление связанных архивируемых данных**.
 
 > [!NOTE]
 > Плата за экземпляр резервной копии взимается, пока вы храните данные. Резервные копии удаляются в соответствии с диапазоном хранения. Тем не менее последняя резервная копия хранится, пока вы явно не удалите данные резервных копий. Мы советуем проверить диапазон хранения виртуальной машины и триггер удаления резервных копий защищенного элемента в хранилище после окончания диапазона хранения. 

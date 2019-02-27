@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 2465fdcc3bf7128d4813fa5f682ffda8f504f2b6
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 8350524e51d8ced45586d085fe1b49274aa6db9d
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999255"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56269985"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -31,7 +31,7 @@ ms.locfileid: "55999255"
 
 
 ## <a name="date-time-basics"></a>Основные сведения о дате и времени
-Язык запросов Data Explorer содержит два основных типа данных, связанных с датами и временем: datetime и timespan. Все даты задаются в формате UTC. Хотя поддерживаются несколько форматов даты и времени, рекомендуется использовать формат ISO8601. 
+Язык запросов Kusto содержит два основных типа данных, связанных с датами и временем: datetime и timespan. Все даты задаются в формате UTC. Хотя поддерживаются несколько форматов даты и времени, рекомендуется использовать формат ISO8601. 
 
 Интервалы времени выражаются как десятичное число, за которым следует единица времени:
 
@@ -45,7 +45,7 @@ ms.locfileid: "55999255"
 |микросекунда | микросекунда  |
 |галочка        | наносекунда   |
 
-Значения даты и времени можно создать путем преобразования строки с помощью оператора `todatetime`. Например, чтобы просмотреть пульс виртуальной машины, отправленный в определенный период времени, можно использовать [оператор between](/azure/kusto/query/betweenoperator), с помощью которого удобнее указывать диапазон времени...
+Значения даты и времени можно создать путем преобразования строки с помощью оператора `todatetime`. Например, чтобы просмотреть пульс виртуальной машины, отправленный в определенный период времени, можно использовать оператор `between`, с помощью которого удобнее указывать диапазон времени.
 
 ```Kusto
 Heartbeat
@@ -82,7 +82,7 @@ Heartbeat
 ```
 
 ## <a name="converting-time-units"></a>Преобразование единиц измерения времени
-Может быть удобно выразить дату и время или интервал времени в единицах времени, отличных от значения по умолчанию. Предположим, вы просматриваете события ошибок за последние 30 минут и нуждаетесь в вычисляемом столбце, который показывает, как давно произошло событие:
+Понадобится выразить дату и время или интервал времени в единицах времени, отличных от значения по умолчанию. Предположим, вы просматриваете события ошибок за последние 30 минут и нуждаетесь в вычисляемом столбце, который показывает, как давно произошло событие.
 
 ```Kusto
 Event
@@ -91,7 +91,7 @@ Event
 | extend timeAgo = now() - TimeGenerated 
 ```
 
-Отобразится столбец _timeAgo_, содержащий такие значения, как 00:09:31.5118992, т. е. дату и время в формате чч:мм:сс.нснснснснснснс. Если вы хотите форматировать эти значения в _количество_ минут с времени начала, просто укажите timeAgo/1m:
+В столбце `timeAgo` содержатся следующие значения: "00:09:31.5118992", т. е. дата и время в формате hh:mm:ss.fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
 
 ```Kusto
 Event
@@ -131,7 +131,7 @@ Event
 | summarize events_count=count() by startofday(TimeGenerated) 
 ```
 
-Мы получим следующие результаты:
+Вы получите следующие результаты:
 
 | timestamp|count_|
 |--|--|
@@ -139,11 +139,11 @@ Event
 |2018-07-29T00:00:00.000|12,315|
 |2018-07-30T00:00:00.000|16,847|
 |2018-07-31T00:00:00.000|12,616|
-|2018-08-01T00:00:00.000|5,416  |
+|2018-08-01T00:00:00.000|5,416|
 
 
 ## <a name="time-zones"></a>Часовые пояса
-Так как все значения даты и времени выражены в формате UTC, зачастую полезно преобразовывать их в формат местного часового пояса. Например, используйте это вычисление для преобразования времени UTC в формат PST (тихоокеанское время):
+Поскольку все значения даты и времени выражены в формате UTC, возможно будет удобнее, если преобразовать эти значения в формат локального времени. Например, используйте это вычисление для преобразования времени UTC в формат PST (тихоокеанское время):
 
 ```Kusto
 Event
@@ -158,10 +158,10 @@ Event
 | Округление значения до размера ячейки | [bin](/azure/kusto/query/binfunction) |
 | Получение конкретной даты или времени | [ago](/azure/kusto/query/agofunction) [now](/azure/kusto/query/nowfunction)   |
 | Получение части значения | [datetime_part](/azure/kusto/query/datetime-partfunction) [getmonth](/azure/kusto/query/getmonthfunction) [monthofyear](/azure/kusto/query/monthofyearfunction) [getyear](/azure/kusto/query/getyearfunction) [dayofmonth](/azure/kusto/query/dayofmonthfunction) [dayofweek](/azure/kusto/query/dayofweekfunction) [dayofyear](/azure/kusto/query/dayofyearfunction) [weekofyear](/azure/kusto/query/weekofyearfunction) |
-| Получение даты относительно к значению  | [endofday](/azure/kusto/query/endofdayfunction) [endofweek](/azure/kusto/query/endofweekfunction) [endofmonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [startofday](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [startofmonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
+| Получение значения относительной даты  | [endofday](/azure/kusto/query/endofdayfunction) [endofweek](/azure/kusto/query/endofweekfunction) [endofmonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [startofday](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [startofmonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь с другими статьями по использованию [языка запросов Data Explorer](/azure/kusto/query/) с данными журналов Azure Monitor.
+Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Статистические функции в запросах Log Analytics](aggregations.md)

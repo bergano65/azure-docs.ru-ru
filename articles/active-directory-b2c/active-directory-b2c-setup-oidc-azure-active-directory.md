@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 9078cbfd14e61b2de0d513e513413ae3c79137e3
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 0da27c5ce872d1b4e1b4c63f6f4207bb5ca4d6ef
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55166226"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428080"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Настройка входа для определенной организации Azure Active Directory в Azure Active Directory B2C
 
 >[!NOTE]
 > Эта функция предоставляется в общедоступной предварительной версии. Ее не следует использовать в рабочих средах.
 
-В этой статье описывается включение входа для пользователей из определенной организации Azure Active Directory (Azure AD) с помощью потока пользователя в Azure Active Directory (Azure AD) B2C.
+Чтобы использовать Azure Active Directory (Azure AD) в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) для Azure AD B2C, необходимо создать приложение, которое будет представлять этого поставщика. В этой статье описывается, как включить вход для пользователей из определенной организации Azure AD с помощью потока пользователя в Azure AD B2C.
 
 ## <a name="create-an-azure-ad-app"></a>Создание приложения Azure AD
 

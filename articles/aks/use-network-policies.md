@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: iainfou
-ms.openlocfilehash: ade5a39273aa807f6c69f76342a0f715c7a96309
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 250c4fc6e51bacc68c965394b9fd430b1b75a52c
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56232180"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447180"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между контейнерами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
@@ -27,21 +27,7 @@ ms.locfileid: "56232180"
 
 Кроме того, вам необходимо установить и настроить службу Azure CLI версии 2.0.56 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
-## <a name="overview-of-network-policy"></a>Общие сведения о политике сети
-
-По умолчанию все контейнеры pod в кластере AKS могут отправлять и получать трафик без ограничений. Для повышения безопасности вы можете определить правила, управляющие потоком трафика. Например, серверные приложения часто предоставляются только необходимым внешним службам, или компоненты базы данных доступны только для уровней приложений, которые к ним подключаются.
-
-Политики сети — это ресурсы Kubernetes, которые позволяют контролировать поток трафика между контейнерами pod. Вы можете разрешать или запрещать трафик в зависимости от параметров, например назначенных меток, пространства имен или порта трафика. Политики сети определяются посредством YAML-файлов манифестов и могут быть включены в более глобальный манифест, который помимо политики сети создает развертывание или службу.
-
-Чтобы посмотреть, как действуют политики сети, давайте создадим и развернем политику, определяющую поток трафика следующим образом:
-
-* запрет любого трафика к pod;
-* разрешение трафика на основе меток pod;
-* разрешение трафика на основе пространства имен.
-
-## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Создание кластера AKS и включение политики сети
-
-Политику сети можно включить только при создании кластера. Вы не можете включить политику сети в существующем кластере AKS. Чтобы создать кластер AKS с политикой сети, необходимо сначала включить соответствующий флаг компонента в своей подписке. Чтобы зарегистрировать флаг компонента *EnableNetworkPolicy*, используйте команду [az feature register][az-feature-register], как показано в следующем примере.
+Чтобы создать кластер AKS с политикой сети, необходимо сначала включить соответствующий флаг компонента в своей подписке. Чтобы зарегистрировать флаг компонента *EnableNetworkPolicy*, используйте команду [az feature register][az-feature-register], как показано в следующем примере.
 
 ```azurecli-interactive
 az feature register --name EnableNetworkPolicy --namespace Microsoft.ContainerService
@@ -59,7 +45,25 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/E
 az provider register --namespace Microsoft.ContainerService
 ```
 
-Чтобы использовать политику сети для кластера AKS, необходимо использовать [подключаемый модуль Azure CNI][azure-cni], а также определить собственную виртуальную сеть и подсети. Более подробные сведения о том, как планировать необходимые диапазоны подсетей, см. в разделе [Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)][use-advanced-networking]. Ниже приведен пример сценария, который выполняет следующее:
+## <a name="overview-of-network-policy"></a>Общие сведения о политике сети
+
+По умолчанию все контейнеры pod в кластере AKS могут отправлять и получать трафик без ограничений. Для повышения безопасности вы можете определить правила, управляющие потоком трафика. Например, серверные приложения часто предоставляются только необходимым внешним службам, или компоненты базы данных доступны только для уровней приложений, которые к ним подключаются.
+
+Политики сети — это ресурсы Kubernetes, которые позволяют контролировать поток трафика между контейнерами pod. Вы можете разрешать или запрещать трафик в зависимости от параметров, например назначенных меток, пространства имен или порта трафика. Политики сети определяются посредством YAML-файлов манифестов и могут быть включены в более глобальный манифест, который помимо политики сети создает развертывание или службу.
+
+Чтобы посмотреть, как действуют политики сети, давайте создадим и развернем политику, определяющую поток трафика следующим образом:
+
+* запрет любого трафика к pod;
+* разрешение трафика на основе меток pod;
+* разрешение трафика на основе пространства имен.
+
+## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Создание кластера AKS и включение политики сети
+
+Политику сети можно включить только при создании кластера. Вы не можете включить политику сети в существующем кластере AKS. 
+
+Чтобы использовать политику сети для кластера AKS, необходимо использовать [подключаемый модуль Azure CNI][azure-cni], а также определить собственную виртуальную сеть и подсети. Более подробные сведения о том, как планировать необходимые диапазоны подсетей, см. в разделе [Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)][use-advanced-networking].
+
+Ниже приведен пример сценария, который выполняет следующее:
 
 * Создает виртуальную сеть и подсеть.
 * Создает субъект-службу Azure Active Directory (AD) для кластера AKS.
@@ -86,7 +90,7 @@ az network vnet create \
     --subnet-prefix 10.240.0.0/16
 
 # Create a service principal and read in the application ID
-read SP_ID <<< $(az ad sp create-for-rbac --password $SP_PASSWORD --skip-assignment --query [appId] -o tsv)
+SP_ID=$(az ad sp create-for-rbac --password $SP_PASSWORD --skip-assignment --query [appId] -o tsv)
 
 # Wait 15 seconds to make sure that service principal has propagated
 echo "Waiting for service principal to propagate..."
@@ -241,6 +245,9 @@ spec:
           app: webapp
           role: frontend
 ```
+
+> [!NOTE]
+> Эта политика сети использует элементы *namespaceSelector* и *podSelector* для правила входящего трафика. Синтаксис YAML важен, чтобы правила входящего трафика были аддитивными или нет. В этом примере оба элемента должны совпадать для применения правила входящего трафика. Версии Kubernetes, предшествующие *1.12* могут иметь некорректную интерпретацию этих элементов и, естественно, ограничить трафик. Дополнительные сведения см. в статье [Behavior of to and from selectors][policy-rules] (Поведение входных и исходных селекторов).
 
 Примените обновленную политику сети с помощью команды [kubectl apply][kubectl-apply] и укажите имя манифеста YAML.
 
@@ -442,6 +449,7 @@ kubectl delete namespace development
 [kubernetes-network-policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [azure-cni]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+[policy-rules]: https://kubernetes.io/docs/concepts/services-networking/network-policies/#behavior-of-to-and-from-selectors
 
 <!-- LINKS - internal -->
 [install-azure-cli]: /cli/azure/install-azure-cli

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: 79bc9310eb3f7c8dd2b295405cea70c514d343d3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 6eb759928d504bf1a3ccac4bc1aa983bb6a47979
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820878"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339372"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -255,7 +255,9 @@ $respObj.items.configurations.properties.'fs.defaultFS'
 
 * `wasb://CONTAINER@ACCOUNTNAME.blob.core.windows.net` — это значение указывает, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Значение `ACCOUNTNAME` — имя учетной записи хранилища. Часть `CONTAINER` — это имя контейнера больших двоичных объектов в учетной записи хранения. Контейнер является корнем совместимого хранилища HDFS для кластера.
 
-* `adl://home` — это значение указывает, что кластер использует Azure Data Lake Storage в качестве хранилища по умолчанию.
+* `abfs://CONTAINER@ACCOUNTNAME.dfs.core.windows.net` — это значение указывает, что кластер использует Azure Data Lake Storage 2-го поколения в качестве хранилища по умолчанию. Значения `ACCOUNTNAME` и `CONTAINER` те же, что и для службы хранилища Azure, как объяснялось выше.
+
+* `adl://home` — это значение указывает, что кластер использует Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию.
 
     Чтобы найти имя учетной записи Data Lake Storage, используйте следующие примеры.
 

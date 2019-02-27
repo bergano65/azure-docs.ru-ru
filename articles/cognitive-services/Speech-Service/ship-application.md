@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 2e35afe996ec80411d2e0e339fd4d49adecd1239
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 5c45918a2cdcdd0a848e392d125849953af976ea
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857946"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56445123"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -47,19 +47,19 @@ ms.locfileid: "55857946"
 
 ## <a name="linux"></a>Linux
 
+Сейчас пакет SDK для распознавания речи поддерживает дистрибутивы Ubuntu 16.04 и 18.04.
 Для собственных приложений необходимо доставить библиотеку пакета SDK для службы "Речь", `libMicrosoft.CognitiveServices.Speech.core.so`.
 Убедитесь, что выбрана правильная версия (x86, x64), соответствующая приложению. В зависимости от версии Linux может потребоваться включить следующие зависимости:
 
 * общие библиотеки в библиотеке GNU C (включая библиотеку программирования потоков POSIX `libpthreads`);
 * библиотеку OpenSSL (`libssl.so.1.0.0`);
-* библиотеку cURL (`libcurl.so.4`);
 * общую библиотеку для приложений ALSA (`libasound.so.2`)
 
-В Ubuntu 16.04 или 18.04, например, библиотеки GNU C должны быть уже установлены по умолчанию. Последние три библиотеки можно установить с помощью следующих команд:
+В Ubuntu библиотеки GNU C должны быть уже установлены по умолчанию. Последние три библиотеки можно установить с помощью следующих команд:
 
 ```sh
 sudo apt-get update
-sudo apt-get install libssl1.0.0 libcurl3 libasound2 wget
+sudo apt-get install libssl1.0.0 libasound2 wget
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

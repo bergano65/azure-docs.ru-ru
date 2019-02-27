@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/09/2018
-ms.openlocfilehash: 95d8825b8359b0ba8649c4c4e145ef488a486b21
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: c6763580a6693020c497c500342ff3ae4dc840d4
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54001929"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56339234"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -126,7 +126,15 @@ ms.locfileid: "54001929"
 
 * `wasb://<container-name>@<account-name>.blob.core.windows.net/`: при взаимодействии с учетной записью хранения, кроме используемой по умолчанию. Например, используется для дополнительной учетной записи хранения или при доступе к данным в общедоступной учетной записи хранения.
 
-При использовании __Data Lake Storage__ выберите одну из следующих схем URI.
+При использовании __Azure Data Lake Storage 2-го поколения__ выберите одну из следующих схем URI:
+
+* `abfs:///`: хранилище по умолчанию без шифрования обмена данными.
+
+* `abfss:///`: Хранилище по умолчанию с шифрованием обмена данными.  Схема abfss поддерживается только в HDInsight начиная с версии 3.6.
+
+* `abfs://<container-name>@<account-name>.dfs.core.windows.net/`: при взаимодействии с учетной записью хранения, кроме используемой по умолчанию. Например, используется для дополнительной учетной записи хранения или при доступе к данным в общедоступной учетной записи хранения.
+
+При использовании __Azure Data Lake Storage 1-го поколения__ выберите одну из следующих схем URI:
 
 * `adl:///`: доступ к хранилищу Data Lake Storage, используемому по умолчанию для кластера.
 

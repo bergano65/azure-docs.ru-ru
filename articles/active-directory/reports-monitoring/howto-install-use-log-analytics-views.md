@@ -1,5 +1,5 @@
 ---
-title: Как установить и использовать представления Log Analytics для Azure Active Directory (предварительная версия) | Документация Майкрософт
+title: Установка и использование представлений Log Analytics для Azure Active Directory (предварительная версия) | Документация Майкрософт
 description: Узнайте, как установить и использовать представления Log Analytics для Azure Active Directory (предварительная версия).
 services: active-directory
 documentationcenter: ''
@@ -17,16 +17,16 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de2aa262dff54f2b8e535aa646e9a8cac7719567
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 7220fc6b239d20e9f1fc81e7d18b4d7ca6f0ded5
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165269"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453636"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
-Представления Log Analytics в Azure Active Directory помогают анализировать и искать журналы действий Azure AD в клиенте Azure AD. Журналы действий Azure AD включает в себя следующие:
+Представления Log Analytics в Azure Active Directory позволяют анализировать и искать журналы действий Azure AD в клиенте Azure AD. Журналы действий Azure AD включает в себя следующие:
 
 * Журналы аудита: [отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
 * Журналы входов в систему: [отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
@@ -35,19 +35,19 @@ ms.locfileid: "56165269"
 
 Чтобы использовать представления Log Analytics, вам потребуется следующее:
 
-* рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+* Рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
 * Скачайте представления из [репозитория GitHub](https://aka.ms/AADLogAnalyticsviews) на локальный компьютер.
 
 ## <a name="install-the-log-analytics-views"></a>Установка представлений Log Analytics
 
-1. Перейдите в рабочую область Log Analytics. Для этого сначала перейдите на [портал Azure](https://portal.azure.com) и выберите **Все службы**. Введите **Log Analytics** в текстовом поле и выберите **Log Analytics**. Выберите рабочую область, в которую вы направили журналы действий при выполнении необходимых требований.
+1. Перейдите в рабочую область Log Analytics. Для этого сначала перейдите на [портал Azure](https://portal.azure.com) и выберите **Все службы**. Введите **Log Analytics** в текстовом поле и выберите **Рабочие области Log Analytics**. Выберите рабочую область, в которую вы направили журналы действий при выполнении необходимых требований.
 2. Выберите **Конструктор представлений**, щелкните **Импорт**, а затем щелкните **Выбрать файл**, чтобы импортировать представления с локального компьютера.
 3. Выберите представления, скачанные для выполнения необходимых требований, а затем щелкните **Сохранить**, чтобы сохранить импортированные элементы. Сделайте это для представлений **Azure AD Account Provisioning Events** (События подготовки учетных записей Azure AD) и **Sign-ins Events** (События входа в систему).
 
 ## <a name="use-the-views"></a>Использование представлений
 
-1. Перейдите в рабочую область Log Analytics. Для этого сначала перейдите на [портал Azure](https://portal.azure.com) и выберите **Все службы**. Введите **Log Analytics** в текстовом поле и выберите **Log Analytics**. Выберите рабочую область, в которую вы направили журналы действий при выполнении необходимых требований.
+1. Перейдите в рабочую область Log Analytics. Для этого сначала перейдите на [портал Azure](https://portal.azure.com) и выберите **Все службы**. Введите **Log Analytics** в текстовом поле и выберите **Рабочие области Log Analytics**. Выберите рабочую область, в которую вы направили журналы действий при выполнении необходимых требований.
 
 2. В рабочей области выберите **Сводка рабочей области**. Вы должны увидеть следующие три представления.
 
@@ -73,5 +73,5 @@ ms.locfileid: "56165269"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Как анализировать журналы действий в Log Analytics](howto-analyze-activity-logs-log-analytics.md)
-* [Приступая к работе с Log Analytics на портале Azure](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)
+* [Анализ журналов действий с помощью журналов Azure Monitor](howto-analyze-activity-logs-log-analytics.md)
+* [Начало работы с журналами Azure Monitor на портале Azure](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)

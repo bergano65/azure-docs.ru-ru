@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 10/22/2018
+ms.date: 02/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 3bf3dd325af48f99e109f651628883d8f946fdc8
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 24b08bb843b4f1a0eb9f2471cb17b81f2c8ac4d0
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55512488"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417539"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -20,13 +20,15 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 
 Подключение VPN-шлюза зависит от конфигурации нескольких ресурсов, каждый из которых содержит настраиваемые параметры. В разделах этой статьи рассматриваются ресурсы и параметры, относящиеся к VPN-шлюзу для виртуальной сети, созданной на основе модели развертывания с помощью Resource Manager. Описания и схемы топологий для каждого варианта подключения можно найти в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
 
->[!NOTE]
-> Значения в этой статье применяются к шлюзам VPN (шлюзам виртуальной сети, использующим -GatewayType Vpn). В этой статье рассматриваются не все типы шлюзов и избыточных в пределах зоны шлюзов.
->
->* Значения, которые применяются к -GatewayType ExpressRoute, см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](../expressroute/expressroute-about-virtual-network-gateways.md).
->* Сведения об избыточных в пределах зоны шлюзах см. в разделе [Избыточные в пределах зоны шлюзы](about-zone-redundant-vnet-gateways.md).
->* Сведения о виртуальной глобальной сети см. в разделе [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-about.md). 
->
+Значения в этой статье применяются к шлюзам VPN (шлюзам виртуальной сети, использующим -GatewayType Vpn). В этой статье рассматриваются не все типы шлюзов и избыточных в пределах зоны шлюзов.
+
+* Значения, которые применяются к -GatewayType ExpressRoute, см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](../expressroute/expressroute-about-virtual-network-gateways.md).
+
+* Сведения об избыточных в пределах зоны шлюзах см. в разделе [Избыточные в пределах зоны шлюзы](about-zone-redundant-vnet-gateways.md).
+
+* Сведения о виртуальной глобальной сети см. в разделе [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-about.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="gwtype"></a>Типы шлюзов
 
@@ -42,7 +44,7 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 Пример:
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn `
 -VpnType RouteBased
 ```
@@ -62,7 +64,7 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 В следующем примере PowerShell используется `-GatewaySku` со значением VpnGw1. Чтобы создать шлюз с помощью PowerShell, сначала создайте IP-конфигурацию, а затем для ссылки на нее используйте переменную. В этом примере переменная конфигурации — $gwipconfig.
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
+New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 -Location 'US East' -IpConfigurations $gwipconfig -GatewaySku VpnGw1 `
 -GatewayType Vpn -VpnType RouteBased
 ```
@@ -101,7 +103,7 @@ az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --r
 В следующем примере PowerShell создается подключение типа "сеть — сеть", для которого требуется тип *IPsec*.
 
 ```powershell
-New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
+New-AzVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
 -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
 -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 ```
@@ -119,7 +121,7 @@ New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName t
 В следующем примере PowerShell используется `-VpnType` со значением *RouteBased*. При создании шлюза необходимо убедиться, что в конфигурации указано правильное значение -VpnType.
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -Location 'West US' -IpConfigurations $gwipconfig `
 -GatewayType Vpn -VpnType RouteBased
 ```
@@ -141,21 +143,21 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 В примере PowerShell для Resource Manager ниже показана подсеть шлюза GatewaySubnet. Здесь приведена нотация CIDR, указывающая размер /27, при котором можно использовать достаточно IP-адресов для большинства существующих конфигураций.
 
 ```powershell
-Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
+Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
 ```
 
 [!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ## <a name="lng"></a>Локальные сетевые шлюзы
 
-При создании конфигурации VPN-шлюза нередко шлюз локальной сети представляет ваше локальное расположение. В классической модели развертывания шлюз локальной сети называется "локальным сайтом". 
+ Локальный сетевой шлюз отличается от шлюза виртуальной сети. При создании конфигурации VPN-шлюза обычно шлюз локальной сети представляет ваше локальное расположение. В классической модели развертывания шлюз локальной сети называется "локальным сайтом".
 
 Для локального сетевого шлюза следует задать имя и общий IP-адрес локального VPN-устройства, а также указать префиксы адресов, принадлежащие к локальному расположению. Azure проверяет наличие сетевого трафика по префиксам адресов назначения, учитывает конфигурацию, указанную для локального сетевого шлюза, и соответствующим образом направляет пакеты. Можно также указать шлюзы локальной сети для конфигураций типа "виртуальная сеть — виртуальная сеть", использующих подключение к VPN-шлюзу.
 
 Следующий пример PowerShell создает шлюз локальной сети.
 
 ```powershell
-New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
+New-AzLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 -Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
 ```
 
@@ -167,7 +169,7 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 
 | **Классический** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](/powershell/module/azurerm.network/#networking) |[PowerShell](/powershell/module/azurerm.network#vpn) |
+| [PowerShell](/powershell/module/azurerm.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
 | [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
 | Не поддерживается | [Интерфейс командной строки Azure](/cli/azure/network/vnet-gateway)|
 

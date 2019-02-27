@@ -12,44 +12,52 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/15/2018
+ms.date: 02/15/2019
 ms.author: aljo
-ms.openlocfilehash: 691995d0aa426766caed2f5e2458399b32332c9d
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: 15561969e27512c4882eccc10f75aa932bcf23df
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54903508"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338994"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
-Для кластеров, работающих в Azure, рекомендуется использовать Azure Active Directory (Azure AD), чтобы обеспечить безопасность доступа к конечным точкам управления.  В этой статье описывается, как настроить Azure AD для проверки подлинности клиентов для кластера Service Fabric и что нужно сделать перед [созданием кластера](service-fabric-cluster-creation-via-arm.md).  Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. Приложения можно разделить на две группы: те, в которых есть пользовательский веб-интерфейс входа в систему, и те, в которых вход выполняется с помощью собственного клиентского приложения. В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Как получить клиент Azure Active Directory][active-directory-howto-tenant].
+Для кластеров, работающих в Azure, рекомендуется использовать Azure Active Directory (Azure AD), чтобы обеспечить безопасность доступа к конечным точкам управления.  В этой статье описывается, как настроить Azure AD для проверки подлинности клиентов для кластера Service Fabric и что нужно сделать перед [созданием кластера](service-fabric-cluster-creation-via-arm.md).  Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. Приложения можно разделить на две группы: те, в которых есть пользовательский веб-интерфейс входа в систему, и те, в которых вход выполняется с помощью собственного клиентского приложения. 
 
-## <a name="create-azure-ad-applications"></a>Создание приложений Azure AD
 Кластеры Service Fabric предлагают несколько точек входа для управления функциями кластеров, включая веб-интерфейс [Service Fabric Explorer][service-fabric-visualizing-your-cluster] и [Visual Studio][service-fabric-manage-application-in-visual-studio]. В итоге вы создаете два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение.  Создав приложения, сопоставьте пользователей с ролями, разрешающими доступ только для чтения и администрирования.
-
-Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell.
 
 > [!NOTE]
 > Перед созданием кластера необходимо выполнить следующие действия. Поскольку в сценариях предварительно заданы имена кластеров и конечные точки, эти имена нужно выбрать заблаговременно, при этом они должны отличаться от созданных ранее имен.
 
+## <a name="prerequisites"></a>Предварительные требования
+В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Как получить клиент Azure Active Directory][active-directory-howto-tenant].
+
+Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell.
+
 1. [Скачайте сценарии](https://github.com/robotechredmond/Azure-PowerShell-Snippets/tree/master/MicrosoftAzureServiceFabric-AADHelpers/AADTool) на компьютер.
 2. Щелкните правой кнопкой мыши ZIP-файл, выберите **Свойства**, установите флажок **Разблокировать** и нажмите кнопку **Применить**.
 3. Извлеките ZIP-файл.
-4. Запустите `SetupApplications.ps1` и укажите TenantId (идентификатор клиента), ClusterName (имя кластера) и WebApplicationReplyUrl (URL-адрес ответа веб-приложения) в качестве параметров. Например: 
+
+## <a name="create-azure-ad-applications-and-asssign-users-to-roles"></a>Создание приложений Azure AD и назначение ролей пользователям
+Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md) и разрешающие доступ на чтение и администрирование.
+
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей.  Например: 
 
 ```PowerShell
-.\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.westus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
+$Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9890c' -ClusterName 'mysftestcluster' -WebApplicationReplyUrl 'https://mysftestcluster.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
+.\SetupUser.ps1 -ConfigObj $Configobj -UserName 'TestUser' -Password 'P@ssword!123'
+.\SetupUser.ps1 -ConfigObj $Configobj -UserName 'TestAdmin' -Password 'P@ssword!123' -IsAdmin
 ```
 
 > [!NOTE]
-> Для национальных облаков (Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо указать параметр `-Location`.
+> Для национальных облаков (например, Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо указать параметр `-Location`.
 
-Чтобы узнать TenantId, можно выполнить команду PowerShell `Get-AzureSubscription`. После выполнения этой команды для каждой подписки отображается TenantId.
+Чтобы узнать *TenantId*, можно выполнить команду PowerShell `Get-AzureSubscription`. После выполнения этой команды для каждой подписки отображается TenantId.
 
-Значение ClusterName используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
+Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
 
-WebApplicationReplyUrl является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Эту конечную точку следует назначить конечной точкой Service Fabric Explorer для кластера, по умолчанию это:
+*WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Эту конечную точку следует назначить конечной точкой Service Fabric Explorer для кластера, по умолчанию это:
 
 https://&lt;cluster_domain&gt;:19080/Explorer
 
@@ -58,7 +66,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
    * *имя_кластера*\_Кластер
    * *имя_кластера*\_Клиент
 
-Этот скрипт выводит код JSON для шаблона Azure Resource Manager, который вы будете использовать в следующем разделе для создания кластера. Рекомендуем не закрывать пока окно PowerShell.
+Этот сценарий выводит код JSON для шаблона Azure Resource Manager, который вы будете использовать в следующем разделе для [создания кластера](service-fabric-cluster-creation-create-template.md#add-azure-ad-configuration-to-use-azure-ad-for-client-access). Рекомендуем пока не закрывать окно PowerShell.
 
 ```json
 "azureActiveDirectory": {
@@ -67,31 +75,6 @@ https://&lt;cluster_domain&gt;:19080/Explorer
   "clientApplication":"<guid>"
 },
 ```
-
-<a name="assign-roles"></a>
-
-## <a name="assign-users-to-roles"></a>Назначение пользователей ролям
-Создав приложения, представляющие кластер, сопоставьте пользователей с ролями, поддерживаемыми Service Fabric и разрешающими доступ на чтение и администрирование. Роли можно назначить с помощью [портала Azure][azure-portal].
-
-1. На портале Azure выберите клиент в правом верхнем углу.
-
-    ![Кнопка выбора клиента][select-tenant-button]
-2. Выберите **Azure Active Directory** на левой вкладке, а затем выберите "Корпоративные приложения".
-3. Выберите "Все приложения", найдите и выберите веб-приложение с именем наподобие `myTestCluster_Cluster`.
-4. Откройте вкладку **Пользователи и группы**.
-
-    ![Вкладка "Пользователи и группы"][users-and-groups-tab]
-5. На новой странице нажмите кнопку **Добавить пользователя**, выберите пользователя и роль, которые нужно назначить, и нажмите кнопку **Выбрать** в нижней части страницы.
-
-    ![Страница назначения ролей пользователям][assign-users-to-roles-page]
-6. Нажмите кнопку **Назначить** в нижней части страницы.
-
-    ![Подтверждение о добавлении назначения][assign-users-to-roles-confirm]
-
-> [!NOTE]
-> Дополнительные сведения о ролях в Service Fabric см. в статье [Контроль доступа на основе ролей для клиентов Service Fabric](service-fabric-cluster-security-roles.md).
->
->
 
 ## <a name="troubleshooting-help-in-setting-up-azure-active-directory"></a>Устранение неполадок при настройке Azure Active Directory
 Настройка и использование Azure AD может оказаться сложной задачей, поэтому воспользуйтесь следующими советами для отладки проблемы.
@@ -159,10 +142,6 @@ FabricClient и FabricGateway выполняют взаимную аутенти
 [x509-certificates-and-service-fabric]: service-fabric-cluster-security.md#x509-certificates-and-service-fabric
 
 <!-- Images -->
-[select-tenant-button]: ./media/service-fabric-cluster-creation-setup-aad/select-tenant-button.png
-[users-and-groups-tab]: ./media/service-fabric-cluster-creation-setup-aad/users-and-groups-tab.png
-[assign-users-to-roles-page]: ./media/service-fabric-cluster-creation-setup-aad/assign-users-to-roles-page.png
-[assign-users-to-roles-confirm]: ./media/service-fabric-cluster-creation-setup-aad/assign-users-to-roles-confirm.png
 [sfx-select-certificate-dialog]: ./media/service-fabric-cluster-creation-setup-aad/sfx-select-certificate-dialog.png
 [sfx-reply-address-not-match]: ./media/service-fabric-cluster-creation-setup-aad/sfx-reply-address-not-match.png
 [web-application-reply-url]: ./media/service-fabric-cluster-creation-setup-aad/web-application-reply-url.png

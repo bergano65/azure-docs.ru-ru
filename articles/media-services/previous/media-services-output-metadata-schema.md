@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: ec4b03629b56c09973c1ecc5c55930c33c24990b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: cdcdcff8a5c016cfd3074a950ad6060e55b8b0fe
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997581"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56312588"
 ---
 # <a name="output-metadata"></a>Выходные метаданные
 ## <a name="overview"></a>Обзор
@@ -29,7 +29,7 @@ ms.locfileid: "55997581"
 
 Если вы хотите просмотреть файл метаданных, создайте указатель **SAS** и скачайте файл на локальный компьютер.  
 
-В этой статье рассматриваются элементы и типы XML-схемы, на основе которой создаются выходные метаданные (&lt;имя_исходного_файла&gt;_metadata.xml). Сведения о файле, который содержит метаданные входного контейнера-ресурса, см. в статье [Input Metadata](media-services-input-metadata-schema.md) (Входные метаданные).  
+В этой статье рассматриваются элементы и типы XML-схемы, на основе которой создаются выходные метаданные (&lt;имя_исходного_файла&gt;_metadata.xml). Сведения о файле, который содержит метаданные входного контейнера-ресурса, см. в статье "Входные метаданные".  
 
 В конце этой статьи вы найдете код полной схемы и пример XML-файла.  
 
@@ -39,10 +39,10 @@ ms.locfileid: "55997581"
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **AssetFile**<br/><br/> minOccurs="0" maxOccurs="1" |[Элемент AssetFile](media-services-output-metadata-schema.md), который является частью коллекции AssetFiles. |
+| **AssetFile**<br/><br/> minOccurs="0" maxOccurs="1" |Элемент AssetFile, который является частью коллекции AssetFiles. |
 
 ## <a name="AssetFile "></a> Элемент AssetFile
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -54,24 +54,24 @@ ms.locfileid: "55997581"
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **Источники** |Коллекция входных и исходных файлов мультимедиа, которая обрабатывалась для создания AssetFile. Дополнительные сведения см. в разделе [Элемент Source](media-services-output-metadata-schema.md). |
-| **VideoTracks**<br/><br/> minOccurs="0" maxOccurs="1" |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса-контейнера. Дополнительные сведения см. в разделе [Элемент VideoTracks](media-services-output-metadata-schema.md). |
-| **AudioTracks**<br/><br/> minOccurs="0" maxOccurs="1" |Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Это коллекция всех звуковых дорожек. Дополнительные сведения см. в разделе [Элемент AudioTracks](media-services-output-metadata-schema.md). |
+| **Источники** |Коллекция входных и исходных файлов мультимедиа, которая обрабатывалась для создания AssetFile. Дополнительные сведения см. в разделе "Элемент Source". |
+| **VideoTracks**<br/><br/> minOccurs="0" maxOccurs="1" |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса-контейнера. Дополнительные сведения см. в разделе "Элемент VideoTracks". |
+| **AudioTracks**<br/><br/> minOccurs="0" maxOccurs="1" |Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Это коллекция всех звуковых дорожек. Дополнительные сведения см. в разделе "Элемент AudioTracks". |
 
 ## <a name="Sources "></a> Элемент Sources
 Коллекция входных и исходных файлов мультимедиа, которая обрабатывалась для создания AssetFile.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **Источник**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Входной или исходный файл, используемый при создании этого ресурса. Дополнительные сведения см. в разделе [Элемент Source](media-services-output-metadata-schema.md). |
+| **Источник**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Входной или исходный файл, используемый при создании этого ресурса. Дополнительные сведения см. в разделе "Элемент Source". |
 
 ## <a name="Source "></a> Элемент Source
 Входной или исходный файл, используемый при создании этого ресурса.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -81,17 +81,17 @@ ms.locfileid: "55997581"
 ## <a name="VideoTracks "></a> Элемент VideoTracks
 Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса-контейнера. Элемент **VideoTracks** — это коллекция всех видеодорожек.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **VideoTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Конкретная видеодорожка в родительском элементе AssetFile. Дополнительные сведения см. в разделе [Элемент VideoTrack](media-services-output-metadata-schema.md#VideoTrack). |
+| **VideoTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Конкретная видеодорожка в родительском элементе AssetFile. Дополнительные сведения см. в разделе "Элемент VideoTrack". |
 
 ## <a name="VideoTrack"></a> Элемент VideoTrack
 Конкретная видеодорожка в родительском элементе AssetFile.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -113,17 +113,17 @@ ms.locfileid: "55997581"
 ## <a name="AudioTracks "></a> Элемент AudioTracks
 Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Элемент **AudioTracks** — это коллекция всех аудиодорожек.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **AudioTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Конкретная звуковая дорожка в родительском элементе AssetFile. Дополнительные сведения см. в разделе [Элемент AudioTrack](media-services-output-metadata-schema.md). |
+| **AudioTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |Конкретная звуковая дорожка в родительском элементе AssetFile. Дополнительные сведения см. в разделе "Элемент AudioTrack". |
 
 ## <a name="AudioTrack "></a> Элемент AudioTrack
 Конкретная звуковая дорожка в родительском элементе AssetFile.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -139,12 +139,12 @@ ms.locfileid: "55997581"
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| **LoudnessMeteringResultParameters**<br/><br/> minOccurs="0" maxOccurs="1" |Параметры результата измерения громкости. Дополнительные сведения см. в разделе [Элемент LoudnessMeteringResultParameter](media-services-output-metadata-schema.md). |
+| **LoudnessMeteringResultParameters**<br/><br/> minOccurs="0" maxOccurs="1" |Параметры результата измерения громкости. Дополнительные сведения см. в разделе "Элемент LoudnessMeteringResultParameter". |
 
 ## <a name="LoudnessMeteringResultParameters "></a> Элемент LoudnessMeteringResultParameters
 Параметры результата измерения громкости.  
 
-Пример XML-файла см. в [соответствующем разделе](media-services-output-metadata-schema.md#xml).  
+Пример XML-файла см. в [соответствующем разделе](#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |

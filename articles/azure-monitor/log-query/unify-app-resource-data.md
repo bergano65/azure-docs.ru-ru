@@ -10,14 +10,14 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/10/2019
+ms.date: 02/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 1dba84c686fbb873f044b4980990baa396a94c79
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 3f3de81197b05d4f025a3fd8638cffe4b07cecad
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237677"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56429522"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается выполнение запросов и централизованный просмотр всех данных журнала приложения Application Insights (в качестве замены устаревающему Соединителю Application Insights), даже если они находятся в разных подписках Azure. Вы можете включить в один запрос не более 100 ресурсов Application Insights.  
@@ -68,6 +68,9 @@ applicationsScoping
 
 ## <a name="query-across-application-insights-resources-and-workspace-data"></a>Запрос в ресурсах Application Insights и данных рабочей области 
 При остановке работы Соединителя и необходимости выполнения запросов за промежуток времени, который был усечен при хранении данных Application Insights (90 дней), вам необходимо выполнить [межресурсные запросы](../../azure-monitor/log-query/cross-workspace-query.md) по рабочей области и ресурсам Application Insights за промежуточный период. Это происходит до тех пор, пока данные приложений не будут накапливаться в соответствии с новым параметром хранения данных Application Insights, упомянутым выше. Запрос требует некоторых манипуляций, так как схемы в Application Insights и в рабочей области отличаются. Различия схемы описаны в указанной ниже таблице в этом разделе. 
+
+>[!NOTE]
+>[Запрос между разными ресурсами](../log-query/cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создать правила генерации оповещений журнала [запросов между разными ресурсами](../log-query/cross-workspace-query.md), не переключаясь, с помощью [шаблона ARM для API правил запросов по расписанию](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template), но этим правилом оповещения можно управлять с помощью [API правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules), а не с помощью портала Azure.
 
 Например, если соединитель перестал работать 2018-11-01, тогда при запросе журналов по ресурсам Application Insights и данным приложений в рабочей области ваш запрос будет построен следующим образом:
 

@@ -15,20 +15,22 @@ ms.date: 01/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: c49e521e9bf7e04eeda47c6b27c0b63cca653006
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: d730efe8b09f167aaba2a4aa8e33446d44171c53
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699269"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340859"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
-[Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
 
-Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
+[Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько встроенных ролей, которые можно назначить для пользователей, групп, субъектов-служб и управляемых удостоверений. Назначение ролей является способом управления доступом к ресурсам Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли для ресурсов Azure](custom-roles.md).
+
+В этой статье перечислены встроенные роли для ресурсов Azure, которые всегда развиваются. Чтобы получить последние роли, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list). Если вам нужен список ролей администратора Azure Active Directory, см. статью [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 ## <a name="built-in-role-descriptions"></a>Описание встроенных ролей
-В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли.
+
+В таблице ниже содержится краткое описание каждой из встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
 
 
 | Встроенные роли | ОПИСАНИЕ |
@@ -139,6 +141,12 @@ ms.locfileid: "55699269"
 > | **Id** | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | **Действия** |  |
 > | * | Создание ресурсов всех типов и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="contributor"></a>участник;
 > [!div class="mx-tableFixed"]
@@ -154,6 +162,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Authorization/elevateAccess/Action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
 > | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
 > | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="reader"></a>Читатель
 > [!div class="mx-tableFixed"]
@@ -163,6 +175,12 @@ ms.locfileid: "55699269"
 > | **Id** | acdd72a7-3385-48ef-bd42-f606fba81ae7 |
 > | **Действия** |  |
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="acrimagesigner"></a>AcrImageSigner
 > [!div class="mx-tableFixed"]
@@ -172,6 +190,12 @@ ms.locfileid: "55699269"
 > | **Id** | 6cef56e8-d556-48e5-a04f-b8e64114680f |
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/sign/write | Передача или извлечение метаданных доверия к содержимому для реестра контейнеров. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="acrpull"></a>AcrPull
 > [!div class="mx-tableFixed"]
@@ -181,6 +205,12 @@ ms.locfileid: "55699269"
 > | **Id** | 7f951dda-4ed3-4680-a7ca-43fe172d538d |
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/pull/read | Извлечение или получение образов из реестра контейнеров. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="acrpush"></a>AcrPush
 > [!div class="mx-tableFixed"]
@@ -191,6 +221,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/pull/read | Извлечение или получение образов из реестра контейнеров. |
 > | Microsoft.ContainerRegistry/registries/push/write | Передача или запись образов в реестр контейнеров. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="acrquarantinereader"></a>AcrQuarantineReader
 > [!div class="mx-tableFixed"]
@@ -200,6 +236,12 @@ ms.locfileid: "55699269"
 > | **Id** | cdda3590-29a3-44f6-95f2-9f980659eb04 |
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/quarantineRead/read | Извлечение или получение помещенных в карантин образов из реестра контейнеров. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="acrquarantinewriter"></a>AcrQuarantineWriter
 > [!div class="mx-tableFixed"]
@@ -210,6 +252,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.ContainerRegistry/registries/quarantineRead/read | Извлечение или получение помещенных в карантин образов из реестра контейнеров. |
 > | Microsoft.ContainerRegistry/registries/quarantineWrite/write | Запись и изменение состояния карантина образов, помещенных в карантин. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="api-management-service-contributor"></a>Участник службы управления API
 > [!div class="mx-tableFixed"]
@@ -225,6 +273,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="api-management-service-operator-role"></a>Роль оператора службы управления API
 > [!div class="mx-tableFixed"]
@@ -250,6 +304,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | Microsoft.ApiManagement/service/users/keys/read | Возвращает список ключей пользователя. |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="api-management-service-reader-role"></a>Роль читателя данных службы управления API
 > [!div class="mx-tableFixed"]
@@ -268,6 +326,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | Microsoft.ApiManagement/service/users/keys/read | Возвращает список ключей пользователя. |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="application-insights-component-contributor"></a>Участник компонента Application Insights
 > [!div class="mx-tableFixed"]
@@ -284,6 +346,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="application-insights-snapshot-debugger"></a>Отладчик моментальных снимков Application Insights
 > [!div class="mx-tableFixed"]
@@ -298,6 +366,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="automation-job-operator"></a>Оператор заданий службы автоматизации
 > [!div class="mx-tableFixed"]
@@ -319,6 +393,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="automation-operator"></a>Оператор службы автоматизации
 > [!div class="mx-tableFixed"]
@@ -348,6 +428,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Automation/automationAccounts/jobs/output/read | Возвращает выходные данные задания. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="automation-runbook-operator"></a>Оператор Runbook службы автоматизации
 > [!div class="mx-tableFixed"]
@@ -362,6 +448,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="azure-kubernetes-service-cluster-admin-role"></a>Роль администратора кластера в Службе Azure Kubernetes
 > [!div class="mx-tableFixed"]
@@ -371,6 +463,12 @@ ms.locfileid: "55699269"
 > | **Id** | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
 > | **Действия** |  |
 > | Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action | Перечисляет учетные данные clusterAdmin управляемого кластера. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="azure-kubernetes-service-cluster-user-role"></a>Роль пользователя кластера в Службе Azure Kubernetes
 > [!div class="mx-tableFixed"]
@@ -380,6 +478,12 @@ ms.locfileid: "55699269"
 > | **Id** | 4abbcc35-e782-43d8-92c5-2d3f1bd2253f |
 > | **Действия** |  |
 > | Microsoft.ContainerService/managedClusters/listClusterUserCredential/action | Перечисляет учетные данные clusterUser управляемого кластера. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="azure-stack-registration-owner"></a>Владелец регистрации Azure Stack
 > [!div class="mx-tableFixed"]
@@ -391,6 +495,12 @@ ms.locfileid: "55699269"
 > | Microsoft.AzureStack/registrations/products/listDetails/action | Возвращает подробные сведения о продукте из Azure Stack Marketplace. |
 > | Microsoft.AzureStack/registrations/products/read | Получает свойства продукта из Azure Stack Marketplace. |
 > | Microsoft.AzureStack/registrations/read | Получает свойства регистрации Azure Stack. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="backup-contributor"></a>Участник резервного копирования
 > [!div class="mx-tableFixed"]
@@ -442,6 +552,12 @@ ms.locfileid: "55699269"
 > | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
 > | Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read | Вывод списка всех целей защиты для резервного копирования. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="backup-operator"></a>Оператор резервного копирования
 > [!div class="mx-tableFixed"]
@@ -508,6 +624,12 @@ ms.locfileid: "55699269"
 > | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
 > | Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read | Вывод списка всех целей защиты для резервного копирования. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="backup-reader"></a>Читатель резервных копий
 > [!div class="mx-tableFixed"]
@@ -555,6 +677,12 @@ ms.locfileid: "55699269"
 > | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
 > | Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read | Вывод списка всех целей защиты для резервного копирования. |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="billing-reader"></a>Читатель счетов
 > [!div class="mx-tableFixed"]
@@ -570,6 +698,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
 > | Microsoft.CostManagement/*/read |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="biztalk-contributor"></a>Участник BizTalk
 > [!div class="mx-tableFixed"]
@@ -585,6 +719,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cdn-endpoint-contributor"></a>Участник конечных точек CDN
 > [!div class="mx-tableFixed"]
@@ -601,6 +741,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cdn-endpoint-reader"></a>Читатель конечной точки CDN
 > [!div class="mx-tableFixed"]
@@ -617,6 +763,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cdn-profile-contributor"></a>Участник профиля CDN
 > [!div class="mx-tableFixed"]
@@ -633,6 +785,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cdn-profile-reader"></a>Читатель данных профиля CDN
 > [!div class="mx-tableFixed"]
@@ -649,6 +807,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="classic-network-contributor"></a>Участник классической сети
 > [!div class="mx-tableFixed"]
@@ -664,6 +828,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="classic-storage-account-contributor"></a>Участник классической учетной записи хранения
 > [!div class="mx-tableFixed"]
@@ -679,6 +849,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="classic-storage-account-key-operator-service-role"></a>Роль службы оператора ключей классических учетных записей хранения
 > [!div class="mx-tableFixed"]
@@ -689,6 +865,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.ClassicStorage/storageAccounts/listkeys/action | Отображает ключи доступа для учетных записей хранения. |
 > | Microsoft.ClassicStorage/storageAccounts/regeneratekey/action | Повторно создает существующие ключи доступа для учетной записи хранения. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="classic-virtual-machine-contributor"></a>Участник классической виртуальной машины
 > [!div class="mx-tableFixed"]
@@ -714,6 +896,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cognitive-services-contributor"></a>Участник служб Cognitive Services
 > [!div class="mx-tableFixed"]
@@ -739,6 +927,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourcegroups/deployments/* |  |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cognitive-services-user"></a>Пользователь служб Cognitive Services
 > [!div class="mx-tableFixed"]
@@ -760,6 +954,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cosmos-db-account-reader-role"></a>Роль читателя учетных записей Cosmos DB
 > [!div class="mx-tableFixed"]
@@ -775,6 +975,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Insights/Metrics/read | Считывает метрики. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cosmosbackupoperator"></a>CosmosBackupOperator
 > [!div class="mx-tableFixed"]
@@ -785,6 +991,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.DocumentDB/databaseAccounts/backup/action | Отправка запроса на настройку резервного копирования |
 > | Microsoft.DocumentDB/databaseAccounts/restore/action | Отправка запроса восстановления |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cost-management-contributor"></a>Участник службы "Управление затратами"
 > [!div class="mx-tableFixed"]
@@ -799,6 +1011,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="cost-management-reader"></a>Читатель службы "Управление затратами"
 > [!div class="mx-tableFixed"]
@@ -813,6 +1031,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="data-box-contributor"></a>Участник Data Box
 > [!div class="mx-tableFixed"]
@@ -827,6 +1051,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Databox/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="data-box-reader"></a>Читатель Data Box
 > [!div class="mx-tableFixed"]
@@ -842,6 +1072,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Databox/locations/availableSkus/action | Этот метод возвращает список доступных номеров SKU. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="data-factory-contributor"></a>Участник фабрики данных
 > [!div class="mx-tableFixed"]
@@ -858,6 +1094,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="data-lake-analytics-developer"></a>Разработчик Data Lake Analytics
 > [!div class="mx-tableFixed"]
@@ -889,6 +1131,10 @@ ms.locfileid: "55699269"
 > | Microsoft.DataLakeAnalytics/accounts/firewallRules/Delete | Удаляет правило брандмауэра. |
 > | Microsoft.DataLakeAnalytics/accounts/computePolicies/Write | Создание или обновление политики вычислений. |
 > | Microsoft.DataLakeAnalytics/accounts/computePolicies/Delete | Удаление политики вычислений. |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="data-purger"></a>Средство очистки данных
 > [!div class="mx-tableFixed"]
@@ -901,6 +1147,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Insights/components/purge/action | Очистка данных Application Insights. |
 > | Microsoft.OperationalInsights/workspaces/*/read |  |
 > | Microsoft.OperationalInsights/workspaces/purge/action | Удаление указанных данных из рабочей области. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="devtest-labs-user"></a>Пользователь DevTest Labs
 > [!div class="mx-tableFixed"]
@@ -941,6 +1193,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | **NotActions** |  |
 > | Microsoft.Compute/virtualMachines/vmSizes/read | Выводит список доступных размеров для обновления виртуальной машины. |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="dns-zone-contributor"></a>Участник зоны DNS
 > [!div class="mx-tableFixed"]
@@ -956,6 +1212,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="documentdb-account-contributor"></a>Участник учетной записи DocumentDB
 > [!div class="mx-tableFixed"]
@@ -971,6 +1233,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="eventgrid-eventsubscription-contributor"></a>Участник EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
@@ -988,6 +1256,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="eventgrid-eventsubscription-reader"></a>Читатель EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
@@ -1002,6 +1276,12 @@ ms.locfileid: "55699269"
 > | Microsoft.EventGrid/locations/eventSubscriptions/read | Создание списка подписок на события в регионе |
 > | Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read | Создание списка подписок на события в регионе по типу темы |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="hdinsight-domain-services-contributor"></a>Участник доменных служб HDInsight
 > [!div class="mx-tableFixed"]
@@ -1013,6 +1293,12 @@ ms.locfileid: "55699269"
 > | Microsoft.AAD/*/read |  |
 > | Microsoft.AAD/domainServices/*/read |  |
 > | Microsoft.AAD/domainServices/oucontainer/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="intelligent-systems-account-contributor"></a>Участник учетной записи интеллектуальных систем
 > [!div class="mx-tableFixed"]
@@ -1028,6 +1314,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="key-vault-contributor"></a>Участник Key Vault
 > [!div class="mx-tableFixed"]
@@ -1045,6 +1337,10 @@ ms.locfileid: "55699269"
 > | **NotActions** |  |
 > | Microsoft.KeyVault/locations/deletedVaults/purge/action | Очищает обратимо удаленное хранилище Key Vault. |
 > | Microsoft.KeyVault/hsmPools/* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="lab-creator"></a>Создатель лаборатории
 > [!div class="mx-tableFixed"]
@@ -1060,6 +1356,12 @@ ms.locfileid: "55699269"
 > | Microsoft.LabServices/labAccounts/getRegionalAvailability/action | Позволяет получать сведения о доступности по регионам для каждой категории размеров, настроенной в учетной записи лаборатории. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="log-analytics-contributor"></a>участник Log Analytics.
 > [!div class="mx-tableFixed"]
@@ -1081,6 +1383,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourcegroups/deployments/* |  |
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="log-analytics-reader"></a>читатель Log Analytics;
 > [!div class="mx-tableFixed"]
@@ -1095,6 +1403,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | Microsoft.OperationalInsights/workspaces/sharedKeys/read | Извлекает открытые ключи для рабочей области. Эти ключи используются для подключения агентов Microsoft Operational Insights к рабочей области. |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="logic-app-contributor"></a>Создатель приложений логики
 > [!div class="mx-tableFixed"]
@@ -1123,6 +1435,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Web/serverFarms/join/action |  |
 > | Microsoft.Web/serverFarms/read | Возвращает свойства плана службы приложений. |
 > | Microsoft.Web/sites/functions/listSecrets/action | Выводит список секретов для функций веб-приложений. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="logic-app-operator"></a>Оператор приложений логики
 > [!div class="mx-tableFixed"]
@@ -1147,6 +1465,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Web/connections/*/read | Считывает подключения. |
 > | Microsoft.Web/customApis/*/read | Считывает настраиваемый API. |
 > | Microsoft.Web/serverFarms/read | Возвращает свойства плана службы приложений. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="managed-application-operator-role"></a>Роль оператора управляемого приложения
 > [!div class="mx-tableFixed"]
@@ -1157,6 +1481,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.Solutions/applications/read | Извлечение списка приложений. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="managed-applications-reader"></a>Читатель Управляемых приложений
 > [!div class="mx-tableFixed"]
@@ -1168,6 +1498,12 @@ ms.locfileid: "55699269"
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Solutions/jitRequests/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="managed-identity-contributor"></a>Участник управляемого удостоверения
 > [!div class="mx-tableFixed"]
@@ -1184,6 +1520,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="managed-identity-operator"></a>Оператор управляемого удостоверения
 > [!div class="mx-tableFixed"]
@@ -1199,6 +1541,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="management-group-contributor"></a>Участник группы управления
 > [!div class="mx-tableFixed"]
@@ -1212,6 +1560,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Management/managementGroups/subscriptions/delete | Отмена связывания подписки с группой управления. |
 > | Microsoft.Management/managementGroups/subscriptions/write | Связывание существующей подписки с группой управления. |
 > | Microsoft.Management/managementGroups/write | Создание или обновление группы управления. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="management-group-reader"></a>Читатель группы управления
 > [!div class="mx-tableFixed"]
@@ -1221,6 +1575,12 @@ ms.locfileid: "55699269"
 > | **Id** | ac63b705-f282-497d-ac71-919bf39d939d |
 > | **Действия** |  |
 > | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="monitoring-contributor"></a>Monitoring Contributor
 > [!div class="mx-tableFixed"]
@@ -1253,6 +1613,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.WorkloadMonitor/monitors/* |  |
 > | Microsoft.WorkloadMonitor/notificationSettings/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="monitoring-metrics-publisher"></a>Издатель метрик мониторинга
 > [!div class="mx-tableFixed"]
@@ -1264,8 +1630,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Insights/Register/Action | Регистрирует поставщик Microsoft Insights. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Insights/Metrics/Write | Запись метрик. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="monitoring-reader"></a>Роль Monitoring Reader
 > [!div class="mx-tableFixed"]
@@ -1277,6 +1647,12 @@ ms.locfileid: "55699269"
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.OperationalInsights/workspaces/search/action | Выполняет поисковый запрос. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="network-contributor"></a>Участник сети
 > [!div class="mx-tableFixed"]
@@ -1292,6 +1668,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="new-relic-apm-account-contributor"></a>Участник учетной записи New Relic APM
 > [!div class="mx-tableFixed"]
@@ -1307,6 +1689,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | NewRelic.APM/accounts/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="reader-and-data-access"></a>Модуль чтения и доступ к данным
 > [!div class="mx-tableFixed"]
@@ -1317,6 +1705,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="redis-cache-contributor"></a>Участник кэша Redis
 > [!div class="mx-tableFixed"]
@@ -1332,6 +1726,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="resource-policy-contributor-preview"></a>Участник политики ресурсов (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1346,6 +1746,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Authorization/policysetdefinitions/* | Создание наборов политик и управление ими |
 > | Microsoft.PolicyInsights/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="scheduler-job-collections-contributor"></a>Участник коллекции заданий планировщика
 > [!div class="mx-tableFixed"]
@@ -1361,6 +1767,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Scheduler/jobcollections/* | Создание коллекциями заданий и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="search-service-contributor"></a>Участник службы поиска
 > [!div class="mx-tableFixed"]
@@ -1376,6 +1788,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Search/searchServices/* | Создание служб поиска и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="security-admin"></a>администратор безопасности;
 > [!div class="mx-tableFixed"]
@@ -1405,6 +1823,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Security/securityContacts/write | Обновление контактного лица по вопросам безопасности. |
 > | Microsoft.Security/InformationProtectionPolicies/write | Обновление политик защиты сведений для ресурса |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="security-manager-legacy"></a>Диспетчер безопасности (устаревший)
 > [!div class="mx-tableFixed"]
@@ -1423,6 +1847,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Security/* | Создание компонентов и политик безопасности и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="security-reader"></a>Чтение данных безопасности
 > [!div class="mx-tableFixed"]
@@ -1439,6 +1869,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Security/*/read | Чтение компонентов и политик безопасности |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="site-recovery-contributor"></a>Участник Site Recovery
 > [!div class="mx-tableFixed"]
@@ -1474,6 +1910,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="site-recovery-operator"></a>Оператор Site Recovery
 > [!div class="mx-tableFixed"]
@@ -1539,6 +1981,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="site-recovery-reader"></a>Читатель Site Recovery
 > [!div class="mx-tableFixed"]
@@ -1578,6 +2026,12 @@ ms.locfileid: "55699269"
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/vaultTokens/read | Операцию получения маркера хранилища можно использовать, чтобы получить маркер хранилища для операций серверной части уровня хранилища. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="sql-db-contributor"></a>Участник БД SQL
 > [!div class="mx-tableFixed"]
@@ -1614,6 +2068,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="sql-security-manager"></a>Диспетчер безопасности SQL
 > [!div class="mx-tableFixed"]
@@ -1655,6 +2113,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Sql/servers/securityAlertPolicies/* | Создание политик оповещения системы безопасности SQL Server и управление ими |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="sql-server-contributor"></a>Участник SQL Server
 > [!div class="mx-tableFixed"]
@@ -1694,6 +2158,10 @@ ms.locfileid: "55699269"
 > | Microsoft.Sql/servers/extendedAuditingSettings/* |  |
 > | Microsoft.Sql/servers/securityAlertPolicies/* | Изменение политик оповещения системы безопасности SQL Server. |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-account-contributor"></a>Участник учетной записи хранения
 > [!div class="mx-tableFixed"]
@@ -1711,6 +2179,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Storage/storageAccounts/* | Создание учетных записей хранения и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-account-key-operator-service-role"></a>Роль службы оператора ключей учетных записей хранения
 > [!div class="mx-tableFixed"]
@@ -1721,6 +2195,12 @@ ms.locfileid: "55699269"
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/listkeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/regeneratekey/action | Повторно создает ключи доступа для указанной учетной записи хранения. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-blob-data-contributor-preview"></a>Участник данных больших двоичных объектов хранилища (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1732,10 +2212,14 @@ ms.locfileid: "55699269"
 > | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращает результат размещения контейнера больших двоичных объектов. |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-blob-data-owner-preview"></a>Владелец данных BLOB-объектов хранилища (предварительная версия).
 > [!div class="mx-tableFixed"]
@@ -1745,8 +2229,12 @@ ms.locfileid: "55699269"
 > | **Id** | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-blob-data-reader-preview"></a>Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1756,8 +2244,12 @@ ms.locfileid: "55699269"
 > | **Id** | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает список контейнеров. |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-queue-data-contributor-preview"></a>Участник данных очереди хранилища (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1769,10 +2261,14 @@ ms.locfileid: "55699269"
 > | Microsoft.Storage/storageAccounts/queueServices/queues/delete | Возвращение результата удаления очереди. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/write | Возвращение результата записи очереди. |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete | Возвращение результата, полученного при удалении сообщения. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/write | Возвращение результата, полученного при записи сообщения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="storage-queue-data-reader-preview"></a>Модуль чтения данных очереди хранилища (предварительная версия)
 > [!div class="mx-tableFixed"]
@@ -1782,8 +2278,12 @@ ms.locfileid: "55699269"
 > | **Id** | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="support-request-contributor"></a>Support Request Contributor (Участник с правом создавать запросы на поддержку)
 > [!div class="mx-tableFixed"]
@@ -1795,6 +2295,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Authorization/*/read | Авторизация на чтение |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="traffic-manager-contributor"></a>Участник диспетчера трафика
 > [!div class="mx-tableFixed"]
@@ -1810,6 +2316,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="user-access-administrator"></a>Администратор доступа пользователей
 > [!div class="mx-tableFixed"]
@@ -1821,6 +2333,12 @@ ms.locfileid: "55699269"
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.Authorization/* | Управление авторизацией |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="virtual-machine-administrator-login"></a>Администратор виртуальной машины
 > [!div class="mx-tableFixed"]
@@ -1834,9 +2352,13 @@ ms.locfileid: "55699269"
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
 > | Microsoft.Compute/virtualMachines/*/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Compute/virtualMachines/login/action | Вход в систему на виртуальной машине в качестве обычного пользователя. |
 > | Microsoft.Compute/virtualMachines/loginAsAdmin/action | Вход в систему на виртуальной машине с правами администратора Windows или привилегированного пользователя Linux. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="virtual-machine-contributor"></a>Участник виртуальной машины
 > [!div class="mx-tableFixed"]
@@ -1883,6 +2405,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="virtual-machine-user-login"></a>Пользователь виртуальной машины
 > [!div class="mx-tableFixed"]
@@ -1896,8 +2424,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
 > | Microsoft.Compute/virtualMachines/*/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Compute/virtualMachines/login/action | Вход в систему на виртуальной машине в качестве обычного пользователя. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="web-plan-contributor"></a>Участник веб-плана
 > [!div class="mx-tableFixed"]
@@ -1913,6 +2445,12 @@ ms.locfileid: "55699269"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Web/serverFarms/* | Создание ферм серверов и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="website-contributor"></a>Участник веб-сайта
 > [!div class="mx-tableFixed"]
@@ -1933,9 +2471,15 @@ ms.locfileid: "55699269"
 > | Microsoft.Web/serverFarms/join/action |  |
 > | Microsoft.Web/serverFarms/read | Возвращает свойства плана службы приложений. |
 > | Microsoft.Web/sites/* | Создание веб-сайтов и управление ими (создание сайта также требует разрешений на запись к связанному плану службы приложений). |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Пользовательские роли](custom-roles.md)
-- [Use Role-Based Access Control to manage access to your Azure subscription resources](role-assignments-portal.md) (Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure)
+- [Пользовательские роли для ресурсов Azure](custom-roles.md)
+- [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md)
 - [Разрешения в центре безопасности Azure](../security-center/security-center-permissions.md)

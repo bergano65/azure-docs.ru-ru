@@ -4,18 +4,18 @@ description: Использование портала Azure для развер
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 01/03/2019
+ms.date: 02/19/2019
 ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 8b7327796cf29c8c234c0a750c90e0689f508f7e
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 9d7729dce5419c5813de3c4dfce55c40098f5988
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969409"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430120"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -51,6 +51,7 @@ ms.locfileid: "53969409"
 
    * **Модуль IoT Edge Module** — предлагается по умолчанию.
    * **Модуль Azure Stream Analytics** — только для модулей, созданных в рабочей нагрузке Azure Stream Analytics.
+   * **Модуль машинного обучения Azure** — только для образов моделей, созданных в рабочей области машинного обучения Azure.
 
 1. Выберите **Модуль IoT Edge**.
 
@@ -82,6 +83,29 @@ ms.locfileid: "53969409"
 ## <a name="view-modules-on-your-device"></a>Просмотр модулей, установленных на устройстве
 
 Завершив развертывание модулей на устройстве, вы можете просмотреть их на странице портала **Сведения об устройствах**. Эта страница отображает имя каждого развернутого модуля и полезную информацию о нем, включая состояние развертывания и код завершения.
+
+## <a name="deploy-modules-from-azure-marketplace"></a>Развертывание модулей из Azure Marketplace
+
+Azure Marketplace — это интернет-магазин приложений и служб, где вы можете просматривать разнообразные корпоративные приложения и решения, сертифицированные и оптимизированные для работы в Azure, включая [модули IoT Edge](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules). Доступ к Azure Marketplace возможен также с помощью портала Azure в разделе **Создать ресурс**.
+
+Вы можете установить модуль IoT Edge из Azure Marketplace или портала Azure.
+
+1. Найдите модуль и начните процесс развертывания.
+
+   * Портал Azure: Найдите модуль и выберите **Создать**.
+
+   * Azure Marketplace:
+
+     1. Найдите модуль и выберите **Получить**.
+     1. Подтвердите условия использования и политику конфиденциальности поставщика, выбрав **Продолжить**.
+
+1. Выберите свою подписку и Центр Интернета вещей, к которому подключено целевое устройство.
+
+1. Выберите **Развертывание на устройстве**.
+
+1. Введите имя устройства или выберите **Найти устройство**, чтобы просмотреть устройства, зарегистрированные в центре.
+
+1. Выберите **Создать** для продолжения стандартного процесса настройки манифеста развертывания, при желании включая добавление других модулей. Сведения новых модулей, например URI образа, параметры создания или требуемые свойства, предопределены, но их можно изменить.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

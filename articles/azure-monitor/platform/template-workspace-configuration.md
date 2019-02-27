@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: magoedte
-ms.openlocfilehash: e948842a49e87df156eb59a7e25634772550d933
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 46be596cbd2641b9ecd3206f44a6e7de7beed255
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235501"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56417516"
 ---
 # <a name="manage-log-analytics-using-azure-resource-manager-templates"></a>Управление Log Analytics с помощью шаблонов Azure Resource Manager
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать, чтобы создавать и настраивать рабочие области Log Analytics. Примеры задач, которые можно выполнять с помощью шаблонов.
@@ -56,7 +56,7 @@ ms.locfileid: "56235501"
 
 > [!NOTE]
 >При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.  
->Если вам может понадобиться несколько подписок в (та же модель ценообразования, что и до апреля 2018 года) [https://docs.microsoft.com/azure/azure-monitor/platform/usage-estimated-costs#new-pricing-model], можете указать **автономный** уровень ценообразования, который будет успешно применен для обеих подписок с моделями ценообразования, идентичными тем, что были до апреля 2018 года, и для подписок в новых ценовых категориях. Ценовым категориям рабочих областей в подписках, для которых были применены новые модели ценообразования, будет задано **PerGB2018**. 
+>Если у вас есть подписки с [моделью ценообразования, предшествовавшей апрелю 2018 года](https://docs.microsoft.com/azure/azure-monitor/platform/usage-estimated-costs#new-pricing-model), можно выбрать ценовую категорию **Автономный**, которая будет успешно применена для подписки с моделью ценообразования, актуальной до апреля 2018 года, и подписок в новых ценовых категориях. Ценовым категориям рабочих областей в подписках, для которых были применены новые модели ценообразования, будет задано **PerGB2018**. 
 
 ### <a name="create-and-deploy-template"></a>Создание и развертывание шаблона
 

@@ -11,13 +11,13 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, vanto
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: d8959e25280a9d1dd62549c698f7b2b6b98d6154
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.date: 02/20/2019
+ms.openlocfilehash: d19dabb4e74e7a108ae769f55cd65ef108019fdc
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55964157"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56454747"
 ---
 # <a name="use-sql-database-advanced-data-security-with-virtual-networks-and-near-100-compatibility"></a>Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью
 
@@ -47,7 +47,7 @@ ms.locfileid: "55964157"
 | --- | --- |
 |Нет необходимости в приобретении оборудования и управления им <br>Отсутствие накладных расходов на управление базовой инфраструктурой <br>Быстрая подготовка и масштабирование службы <br>Автоматическое исправление и обновление версии <br>Интеграция с другими службами данных PaaS |Соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 %.  <br>Встроенный [высокий уровень доступности](sql-database-high-availability.md) <br>Данные защищены путем [автоматического создания резервных копий](sql-database-automated-backups.md) <br>Период хранения резервных копий настраивается пользователем <br>Инициируемые пользователем [резервные копии](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql?view=azuresqldb-mi-current) <br>Возможность [восстановления базы данных до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore) |
 |**Безопасность и соответствие требованиям** | **Управление**|
-|Изолированная среда ([интеграция виртуальной сети](sql-database-managed-instance-connectivity-architecture.md), клиентская служба, выделенные ресурсы вычисления и хранилище) <br>[Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Проверка подлинности Azure AD](sql-database-aad-authentication.md), поддержка единого входа <br> <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Имена для входа Azure AD</a> (**общедоступная предварительная версия**) <br>Соблюдение тех же стандартов соответствия, что и База данных SQL Azure <br>[Аудит SQL](sql-database-managed-instance-auditing.md) <br>[обнаружение угроз](sql-database-managed-instance-threat-detection.md) |Программный интерфейс Azure Resource Manager для автоматизации подготовки и масштабирования службы <br>Функциональные возможности портала Azure для подготовки и масштабирования службы вручную <br>Служба миграции данных
+|Изолированная среда ([интеграция виртуальной сети](sql-database-managed-instance-connectivity-architecture.md), клиентская служба, выделенные ресурсы вычисления и хранилище) <br>[Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Проверка подлинности Azure AD](sql-database-aad-authentication.md), поддержка единого входа <br> <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Субъекты сервера (имена для входа) Azure AD</a> (**общедоступная предварительная версия**) <br>Соблюдение тех же стандартов соответствия, что и База данных SQL Azure <br>[Аудит SQL](sql-database-managed-instance-auditing.md) <br>[обнаружение угроз](sql-database-managed-instance-threat-detection.md) |Программный интерфейс Azure Resource Manager для автоматизации подготовки и масштабирования службы <br>Функциональные возможности портала Azure для подготовки и масштабирования службы вручную <br>Служба миграции данных
 
 В следующей таблице показаны основные возможности управляемого экземпляра.
 
@@ -150,9 +150,9 @@ ms.locfileid: "55964157"
 
 ## <a name="azure-active-directory-integration"></a>Интеграция с Azure Active Directory
 
-Вариант развертывания в виде управляемого экземпляра поддерживает стандартный вход СУБД SQL Server и вход, интегрированный с Azure Active Directory (AAD). Имена для входа AAD (**предварительная версия**) представляют собой имена для входа (облачная версия Azure) локальной базы данных, которые вы используете в своей локальной среде. Имена для входа AAD позволяют указать пользователей и группы из вашего клиента Azure Active Directory как субъектов конкретных экземпляров, которые могут выполнять любые операции на уровне экземпляра, включая запросы между базами данных в одном и том же управляемом экземпляре.
+Вариант развертывания в виде управляемого экземпляра поддерживает стандартный вход СУБД SQL Server и вход, интегрированный с Azure Active Directory (AAD). Субъекты сервера (имена для входа) Azure AD (**предварительная версия**) представляют собой облачную версию Azure локальных имен для входа базы данных, которые вы используете в своей локальной среде. Субъекты сервера (имена для входа) Azure AD позволяют указать пользователей и группы из вашего клиента Azure Active Directory как субъектов области экземпляров, которые могут выполнять любые операции на уровне экземпляра, включая запросы между базами данных в одном и том же управляемом экземпляре.
 
-Появился новый синтаксис для создания имен входа AAD (**общедоступная предварительная версия**) — **FROM EXTERNAL PROVIDER**. Дополнительные сведения о синтаксисе см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a> и в статье [Подготовка администратора Azure Active Directory для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
+Появился новый синтаксис для создания субъектов сервера (имен для входа) Azure AD (**общедоступная предварительная версия**) — **FROM EXTERNAL PROVIDER**. Дополнительные сведения о синтаксисе см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a> и в статье [Подготовка администратора Azure Active Directory для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 
 ### <a name="azure-active-directory-integration-and-multi-factor-authentication"></a>Интеграция Azure Active Directory и Многофакторная идентификация
 

@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/10/2018
+ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: b0eae86a4927f716c974086411e1098f2e9a190d
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 6702bfabd27b56ce473fe8eb14aadc9dc6e8e7c9
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55498035"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338875"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -142,7 +142,7 @@ fi
 hdfs dfs -put /usr/hdp/current/giraph/giraph-examples.jar /example/jars/
 ```
 
-В этом примере команда `hdfs` прозрачно использует хранилище кластера по умолчанию. Для некоторых операций может потребоваться указать URI. Например, `adl:///example/jars` для Data Lake Storage или `wasb:///example/jars` для хранилища Azure.
+В этом примере команда `hdfs` прозрачно использует хранилище кластера по умолчанию. Для некоторых операций может потребоваться указать URI. Например `adl:///example/jars` для Azure Data Lake Storage 1-го поколения, `abfs:///example/jars` Azure Data Lake Storage 2-го поколения или `wasb:///example/jars` для службы хранилища Azure.
 
 ### <a name="bPS7"></a>Запись информации в STDOUT и STDERR
 

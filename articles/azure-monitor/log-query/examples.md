@@ -1,6 +1,6 @@
 ---
-title: Примеры запроса журнала Azure Monitor | Документация Майкрософт
-description: Примеры запросов журнала в Azure Monitor, выполненных с помощью языка запросов Data Explorer.
+title: Примеры запросов журнала Azure Monitor | Документация Майкрософт
+description: Примеры запросов журнала в Azure Monitor, выполненных с помощью языка запросов Kusto.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: bwren
-ms.openlocfilehash: 81852590ec714c458ebf2ba2b714d0b20f0b873c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 2c35bc4026c81cbc8b95225e688a3922bc320554
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993203"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416655"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
-Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запроса Data Explorer](https://docs.microsoft.com/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
+Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
 
 Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
 

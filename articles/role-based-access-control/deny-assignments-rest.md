@@ -1,6 +1,6 @@
 ---
-title: Вывод списка запретов назначений с помощью RBAC и REST API | Документация Майкрософт
-description: Сведения о создании списка запретов назначений для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и REST API.
+title: Вывод списка запретов назначений для ресурсов Azure с помощью REST API — Azure | Документация Майкрософт
+description: Сведения о создании списка запретов назначений для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure и REST API.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -15,14 +15,14 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 44c1d3b18bb9bdc63247379fe3f277cb6542f2da
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 29b8e0953109238b724cc8df9f456706f71a041e
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46975593"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341629"
 ---
-# <a name="list-deny-assignments-using-rbac-and-the-rest-api"></a>Вывод списка запретов назначений с помощью RBAC и REST API
+# <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Вывод списка запретов назначений для ресурсов Azure с помощью REST API
 
 Сейчас запреты назначений доступны **только для чтения** и настраиваются только в Azure. Несмотря на то что вы не можете создать свой собственный запрет назначений, можно составить список запретов назначений, так как они могут повлиять на эффективные разрешения. В этой статье описывается, как создать список запретов назначений с помощью RBAC и REST API.
 
@@ -95,6 +95,6 @@ ms.locfileid: "46975593"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Описание запретов назначений](deny-assignments.md)
+- [Запрет назначений для ресурсов Azure](deny-assignments.md)
 - [Повышение прав доступа глобального администратора в Azure Active Directory](elevate-access-global-admin.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

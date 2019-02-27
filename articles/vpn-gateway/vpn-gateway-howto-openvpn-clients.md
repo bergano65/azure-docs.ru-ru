@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 1/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: cd84948b5895a628fc94cc2946156d9fa2284369
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 73f8b1323f6cd22ef215fba4ec45714f099032f6
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55508680"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56415839"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway-preview"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure (предварительная версия)
 
@@ -24,12 +24,14 @@ ms.locfileid: "55508680"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Убедитесь, что шаги по настройке OpenVPN для вашего VPN-шлюза выполнены. Дополнительные сведения см. в разделе [Настройка OpenVPN для VPN-шлюза Azure](vpn-gateway-howto-openvpn.md).
 
 ## <a name="windows"></a>Клиенты Windows
 
 1. Загрузите и установите официальный клиент OpenVPN с [веб-сайта OpenVPN](https://openvpn.net/index.php/open-source/downloads.html).
-2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzureRmVpnClientConfiguration" в PowerShell.
+2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzVpnClientConfiguration" в PowerShell.
 3. Распакуйте профиль. Затем откройте файл конфигурации *vpnconfig.ovpn* из папки OpenVPN в Блокноте.
 4. [Экспортируйте](vpn-gateway-certificates-point-to-site.md#clientexport) сертификат клиента P2S, который вы создали и отправили в конфигурацию P2S на шлюзе.
 5. Извлеките закрытый ключ и отпечаток base64 из *PFX-файла*. Это можно сделать несколькими способами. Это можно сделать с помощью OpenSSL на компьютере. Файл *profileinfo.txt* содержит закрытый ключ, отпечаток для ЦС и сертификат клиента. Не забудьте использовать отпечаток сертификата клиента.
@@ -64,7 +66,7 @@ ms.locfileid: "55508680"
 ## <a name="mac"></a>Клиенты Mac
 
 1. Скачайте и установите клиент OpenVPN, например [TunnelBlik](https://tunnelblick.net/downloads.html). 
-2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzureRmVpnClientConfiguration" в PowerShell.
+2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с помощью "New-AzVpnClientConfiguration" в PowerShell.
 3. Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Блокноте.
 4. Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Дополнительные сведения о том, как экспортировать сертификат для получения закодированного открытого ключа, см. в разделе [Экспорт открытого ключа (CER)](vpn-gateway-certificates-point-to-site.md#cer).
 5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Дополнительные сведения о том, как извлечь закрытый ключ, см. в разделе [Экспорт закрытого ключа](https://openvpn.net/community-resources/how-to/#pki).

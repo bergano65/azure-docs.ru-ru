@@ -11,26 +11,26 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/10/2019
+ms.date: 02/19/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: f5049a5a829ce8e94b62409c9d3b1439e8431fb1
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
+ms.openlocfilehash: f4838f688210f9017d691bd6a463217a75fc90d4
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56101422"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56447520"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
-Корпорация Майкрософт рекомендует применять для управления доступом к ресурсам механизм управления доступом на основе ролей (RBAC). Но если вы все еще используете классическую модель развертывания, вам потребуются классические роли администраторов подписки: администратор служб и соадминистратор. Дополнительные сведения см. в статье [Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/resource-manager-deployment-model.md).
+Корпорация Майкрософт рекомендует применять для контроля доступа к ресурсам Azure механизм управления доступом на основе ролей (RBAC). Но если вы все еще используете классическую модель развертывания, вам потребуются классические роли администраторов подписки: администратор служб и соадминистратор. Дополнительные сведения см. в статье [Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/resource-manager-deployment-model.md).
 
 В этой статье объясняется, как добавить или изменить роли соадминистратора и администратора служб, а также как просмотреть сведения об администраторе учетной записи.
 
 ## <a name="add-a-co-administrator"></a>Добавление соадминистратора
 
 > [!TIP]
-> Соадминистратор нужен только в тех случаях, когда пользователю нужно управлять классическими развертываниями Azure. Для всех других целей мы рекомендуем использовать RBAC.
+> Соадминистратор необходим только в тех случаях, когда пользователю нужно управлять классическими развертываниями Azure с помощью [модуля PowerShell для управления службами Azure](https://docs.microsoft.com/en-us/powershell/module/servicemanagement/azure). Если пользователь управляет классическими ресурсами только с помощью портала Azure, добавлять классического администратора не требуется.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с правами администратора служб.
 
@@ -155,4 +155,4 @@ ms.locfileid: "56101422"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о различных ролях в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
-* [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)
+* [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)

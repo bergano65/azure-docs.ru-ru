@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: reference
-ms.date: 02/11/2019
+ms.date: 02/13/2019
 ms.author: juliako
-ms.openlocfilehash: f9748d61b1aa336c5300dd414d53388f48a41368
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 8ad0efffc89a3c11f412d94b922401c23e84a3e5
+ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243991"
+ms.locfileid: "56268793"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -42,7 +42,7 @@ ms.locfileid: "56243991"
 | Microsoft.Media.JobCanceled| Получить событие, когда задание переходит в состояние отмененного. Это конечное состояние, которое включает в себя выходные данные задания.|
 | Microsoft.Media.JobErrored| Получить событие, когда задание переходит в состояние ошибки. Это конечное состояние, которое включает в себя выходные данные задания.|
 
-См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+Ознакомьтесь с [примерами схемы событий](#event-schema-examples) приведенными ниже.
 
 ### <a name="monitoring-job-output-state-changes"></a>Наблюдение за изменениями состояния выходных данных задания
 
@@ -56,7 +56,15 @@ ms.locfileid: "56243991"
 | Microsoft.Media.JobOutputCanceled| Получить событие, когда выходные данные задания переходят в состояние отмененных.|
 | Microsoft.Media.JobOutputErrored| Получить событие, когда выходные данные задания переходят в состояние ошибки.|
 
-См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+Ознакомьтесь с [примерами схемы событий](#event-schema-examples) приведенными ниже.
+
+### <a name="monitoring-job-output-progress"></a>Наблюдение за изменениями состояния выходных данных
+
+| Тип события | ОПИСАНИЕ |
+| ---------- | ----------- |
+| Microsoft.Media.JobOutputProgress| Данное событие отображает ход выполнения задания, от 0 % до 100 %. Служба попытается отправить событие, когда ход выполнения задания увеличился на 5 % или более или прошло более 30 секунд с момента последнего события (пакета пульса). Значение хода выполнения не обязательно начинается с 0 %, достигает 100 %, а также не гарантируется его постоянное увеличение с течением времени. Это событие не должно быть использовано для определения завершения обработки. Вместо этого следует использовать события изменения состояния.|
+
+Ознакомьтесь с [примерами схемы событий](#event-schema-examples) приведенными ниже.
 
 ## <a name="live-event-types"></a>Типы событий, связанных с прямой трансляцией
 
@@ -72,7 +80,7 @@ ms.locfileid: "56243991"
 | Microsoft.Media.LiveEventEncoderConnected | Кодировщик устанавливает подключение с событием прямой трансляции. |
 | Microsoft.Media.LiveEventEncoderDisconnected | Отключение кодировщика. |
 
-См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+Ознакомьтесь с [примерами схемы событий](#event-schema-examples) приведенными ниже.
 
 ### <a name="track-level-events"></a>События уровня дорожки
 
@@ -87,7 +95,7 @@ ms.locfileid: "56243991"
 | Microsoft.Media.LiveEventIngestHeartbeat | Публикуется каждые 20 секунд для каждой дорожки, когда выполняется событие прямой трансляции. Предоставляет сводку работоспособности приема. |
 | Microsoft.Media.LiveEventTrackDiscontinuityDetected | Сервер мультимедиа обнаруживает разрыв во входящей дорожке. |
 
-См. [примеры схемы событий](#event-schema-examples) в следующем разделе.
+Ознакомьтесь с [примерами схемы событий](#event-schema-examples) приведенными ниже.
 
 ## <a name="event-schema-examples"></a>Примеры схемы событий
 
@@ -245,6 +253,29 @@ ms.locfileid: "56243991"
       "testKey1": "testValue1",
       "testKey2": "testValue2"
     }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+### <a name="joboutputprogress"></a>JobOutputProgress
+
+Схема, указанная в примере, должна соответствовать приведенной ниже.
+
+ ```json
+[{
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/belohGroup/providers/Microsoft.Media/mediaservices/<account-name>",
+  "subject": "transforms/VideoAnalyzerTransform/jobs/job-5AB6DE32",
+  "eventType": "Microsoft.Media.JobOutputProgress",
+  "eventTime": "2018-12-10T18:20:12.1514867",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "data": {
+    "jobCorrelationData": {
+      "TestKey1": "TestValue1",
+      "testKey2": "testValue2"
+    },
+    "label": "VideoAnalyzerPreset_0",
+    "progress": 86
   },
   "dataVersion": "1.0",
   "metadataVersion": "1"

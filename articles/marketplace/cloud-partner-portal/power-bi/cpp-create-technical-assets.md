@@ -14,23 +14,23 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pbutlerm
-ms.openlocfilehash: d0545d7285289c7081faf51c6e3ea09071f55a51
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: f3d6466ced6efdb4047f9531329b70477911bf21
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55665685"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56414770"
 ---
-# <a name="create-power-bi-app-technical-assets"></a>Создание технических ресурсов приложения Power BI
+# <a name="create-power-bi-app-offer-technical-assets"></a>Создание технических ресурсов предложения приложения Power BI
 
-Основной технический ресурс, необходимый для этого типа предложения, — приложение Power BI, которое является коллекцией из основного набора данных, отчета и (или) панели мониторинга, а также (необязательно) подключенных служб и внедренных наборов данных. (Приложения Power BI — это усовершенствованная версия типа ресурса, ранее известного как [пакеты содержимого](https://docs.microsoft.com/power-bi/service-organizational-content-pack-introduction).)  Полные сведения о разработке этих приложений см. в статье [Что такое Power BI?](https://go.microsoft.com/fwlink/?linkid=2028636).
+Основной технический ресурс, необходимый для этого типа предложения — приложение Power BI. Приложение Power BI является коллекцией из основного набора данных, отчетов и панелей мониторинга, а также дополнительных подключенных служб и внедренных наборов данных. Она была создана из типа ресурса, ранее известного как [пакет содержимого](https://docs.microsoft.com/power-bi/service-organizational-content-pack-introduction). Дополнительные сведения о разработке такого типа приложений см. в статье [Что такое приложения-шаблоны Power BI? (предварительная версия)](https://go.microsoft.com/fwlink/?linkid=2028636).
 
 
-## <a name="obtaining-an-installation-url"></a>Получение URL-адреса установки
+## <a name="obtain-an-installation-url"></a>Получение URL-адреса установки
 
-Создать приложение Power BI можно только в [службе Power BI](https://powerbi.microsoft.com/), и для этого требуется войти с использованием [лицензии Power BI Pro](https://docs.microsoft.com/power-bi/service-admin-purchasing-power-bi-pro). После создания и проверки приложения службы в Power BI сохраните URL-адрес установки приложения, генерируемый службой Power BI.  Этот адрес необходимо указать на [вкладке технических сведений](./cpp-technical-info-tab.md) в форме отправки на Портале Cloud Partner.
+Приложение Power BI можно создать только с помощью [службы Power BI](https://powerbi.microsoft.com/). Чтобы начать, вам необходимо выполнить вход с [лицензией Power BI Pro](https://docs.microsoft.com/power-bi/service-admin-purchasing-power-bi-pro). После создания и проверки приложения службы в Power BI сохраните созданный Power BI URL-адрес установки приложения. В конце этот адрес необходимо указать на [вкладке с техническими сведениями](./cpp-technical-info-tab.md) в форме отправки на Портале Cloud Partner.
  
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-После создания и проверки приложения Power BI, а также создания связанного предложения вы можете [опубликовать предложение приложения Power BI](./cpp-publish-offer.md).  
+После создания и проверки приложения Power BI, а также создания связанного предложения, вы можете [опубликовать предложение приложения Power BI](./cpp-publish-offer.md). 

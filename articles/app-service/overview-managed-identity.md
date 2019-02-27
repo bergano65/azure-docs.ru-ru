@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
-ms.openlocfilehash: 68f640f6962802c45ca369786c4e5d0d4f785fa6
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 3f064769728d5d081c4a110e6c981c4b36aad384
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105083"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56300590"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -280,8 +280,8 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 
 Приложение с управляемым удостоверением содержит две заданные переменные среды:
 
-- MSI_ENDPOINT;
-- MSI_SECRET.
+- MSI_ENDPOINT — URL-адрес локальной службы токенов.
+- MSI_SECRET — заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF). Это значение меняется платформой.
 
 **MSI_ENDPOINT** — это локальный URL-адрес, из которого приложение может запрашивать маркеры. Чтобы получить маркер для ресурса, отправьте запрос HTTP GET к этой конечной точке, задав следующие параметры:
 
@@ -289,7 +289,7 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 > |-----|-----|-----|
 > |resource|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-msi.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
 > |api-version|Запрос|Версия API маркеров, которая будет использоваться. Сейчас поддерживается только одна версия: 2017-09-01.|
-> |secret|Заголовок|Значение переменной среды MSI_SECRET.|
+> |secret|Заголовок|Значение переменной среды MSI_SECRET. Заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF).|
 > |clientid|Запрос|(Необязательно.) Идентификатор назначаемого пользователем удостоверения, который следует использовать. Если этот параметр опущен, используется назначаемое системой удостоверение.|
 
 Успешный ответ 200 — OK включает текст JSON со следующими свойствами:

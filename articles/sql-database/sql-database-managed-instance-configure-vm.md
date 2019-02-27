@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlrab, srbozovi, bonova
 manager: craigg
-ms.date: 12/13/2018
-ms.openlocfilehash: 79dbaf98f953a9cb72a7fa7cf9facc2b17fad504
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.date: 02/18/2019
+ms.openlocfilehash: 640182b50492ed21cd604423fe1cef7301095941
+ms.sourcegitcommit: 4bf542eeb2dcdf60dcdccb331e0a336a39ce7ab3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410071"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56408805"
 ---
 # <a name="quickstart-configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure
 
@@ -97,7 +97,8 @@ ms.locfileid: "53410071"
 4. Выберите **Приобрести**, чтобы развернуть виртуальную машину Azure в вашей сети.
 5. Щелкните значок **Уведомления**, чтобы просмотреть состояние развертывания.
 
-Подождите, пока создается виртуальная машина Azure. 
+> [!IMPORTANT]
+> После создания виртуальной машины подождите примерно 15 минут, прежде чем продолжить. Это время требуется, чтобы завершить установку SQL Server Management Studio с помощью скриптов, запускаемых после создания виртуальной машины.
 
 ## <a name="connect-to-virtual-machine"></a>Подключение к виртуальной машине
 

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: b322ca0c3a19f0a832fe50b6cfbaaad287205d5e
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 136a83c586b2f797269beff3cdd0afb9973cb7c8
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812911"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340524"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -357,6 +357,6 @@ Visual Studio Code — это кроссплатформенный редакт�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Обучение модели](tutorial-train-models-with-aml.md) в Машинном обучении Azure с помощью набора данных MNIST]
+- [Обучение модели](tutorial-train-models-with-aml.md) в Машинном обучении Azure с помощью набора данных MNIST
 - Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://aka.ms/aml-sdk) (Что такое пакет SDK для Машинного обучения Azure для Python?)
 - Узнайте о [пакете SDK подготовки данных Машинного обучения Azure для Python ](https://aka.ms/data-prep-sdk)

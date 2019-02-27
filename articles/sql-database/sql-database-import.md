@@ -11,17 +11,17 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 02/11/2019
-ms.openlocfilehash: 754f2845911307cdd698bff4aa3e891f5c1bcdbd
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.date: 02/18/2019
+ms.openlocfilehash: c5f90776cb0e8617f0e524bd6b1701f4bf20d0a1
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234795"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56415715"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. Импорт BACPAC-файла в Базу данных SQL Azure
 
-С помощью файла [BACPAC](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) вы можете импортировать базу данных SQL Server в Базу данных SQL Azure. Вы можете импортировать данные из файла `BACPAC`, которые хранятся в хранилище BLOB-объектов Azure (только цен. категория "Стандартный"), или из локального хранилища в локальное расположение. Чтобы развернуть скорость импорта, предоставив дополнительные ресурсы и ускоренную скорость доступа к ним, масштабируйте базу данных до более высокого уровня службы и вычислите размер во время процесса импорта. После завершения импорта эти значения можно уменьшить. 
+С помощью файла [BACPAC](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) вы можете импортировать базу данных SQL Server в Базу данных SQL Azure. Вы можете импортировать данные из файла `BACPAC`, которые хранятся в хранилище BLOB-объектов Azure (только цен. категория "Стандартный"), или из локального хранилища в локальное расположение. Чтобы развернуть скорость импорта, предоставив дополнительные ресурсы и ускоренную скорость доступа к ним, масштабируйте базу данных до более высокого уровня службы и вычислите размер во время процесса импорта. После завершения импорта эти значения можно уменьшить.
 
 > [!NOTE]
 > Уровень совместимости импортированной базы данных основан на уровне совместимости базы данных-источника.
@@ -30,22 +30,27 @@ ms.locfileid: "56234795"
 
 ## <a name="import-from-a-bacpac-file-in-the-azure-portal"></a>Импорт из BACPAC-файла с помощью портала Azure
 
-Этот раздел содержит указания по созданию на [портале Azure](https://portal.azure.com) базы данных SQL Azure из файла `BACPAC`, расположенного в хранилище BLOB-объектов Azure. Портал поддерживает *только* импорт BACPAC-файла из хранилища BLOB-объектов Azure.
+[Портал Azure](https://portal.azure.com) поддерживает создание *только* отдельной базы данных в Базе данных SQL Azure и *только* из файла BACPAC, который хранится в хранилище BLOB-объектов Azure.
 
 > [!NOTE]
-> Сейчас [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в базу данных экземпляра из файла `BACPAC` с помощью портала Azure.
+> Сейчас [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в базу данных экземпляра из файла BACPAC с помощью портала Azure. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
 
-Чтобы импортировать в отдельную базу данных с помощью портала Azure, откройте страницу для сервера базы данных для отдельной базы данных, а затем выберите **Импорт базы данных** на панели инструментов.  
+1. Чтобы импортировать из файла BACPAC в новую отдельную базу данных с помощью портала Azure, откройте требуемую страницу сервера базы данных, а затем выберите **Импорт базы данных** на панели инструментов.  
 
-   ![Импорт базы данных](./media/sql-database-import/import.png)
+   ![База данных import1](./media/sql-database-import/import1.png)
 
-Выберите учетную запись хранения, контейнер и файл `BACPAC`, который нужно импортировать. Укажите размер новой базы данных (обычно он такой же, как и у источника) и учетные данные для целевого сервера SQL Server. Список значений, доступных для новой базы данных SQL Azure, см. в статье [CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current).
+2. Сначала выберите учетную запись хранения и контейнер для файла BACPAC, а затем — сам файл BACPAC из которого необходимо выполнить импорт.
+3. Укажите размер новой базы данных (обычно он такой же, как и у источника) и учетные данные для целевого сервера SQL Server. Список значений, доступных для новой базы данных SQL Azure, см. в статье [CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current).
 
-### <a name="monitor-imports-progress"></a>Отслеживание хода выполнения импорта
+   ![База данных import2](./media/sql-database-import/import2.png)
 
-Чтобы отслеживать ход выполнения импорта, откройте страницу сервера базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
+4. Последовательно выберите **ОК**.
 
-Выберите **Базы данных SQL**, чтобы проверить активность базы данных на сервере базы данных, и убедитесь, что для новой базы данных задано состояние **В сети**.
+5. Чтобы отслеживать ход выполнения импорта, откройте страницу сервера базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
+
+   ![Состояние импорта базы данных](./media/sql-database-import/import-status.png)
+
+6. Выберите **Базы данных SQL**, чтобы проверить активность базы данных на сервере базы данных, и убедитесь, что для новой базы данных задано состояние **В сети**.
 
 ## <a name="import-from-a-bacpac-file-using-sqlpackage"></a>Импорт из BACPAC-файла с помощью SqlPackage
 
@@ -60,7 +65,7 @@ SqlPackage.exe /a:import /tcs:"Data Source=mynewserver20170403.database.windows.
 ```
 
 > [!IMPORTANT]
-> Чтобы подключиться к серверу Базы данных SQL, управляя отдельной базой данных при включенном корпоративном брандмауэре, необходимо открыть порт 1433 в брандмауэре. Чтобы подключиться к управляемому экземпляру, необходимо обладать [подключением типа "точка — сеть"](/sql-database-managed-instance-configure-p2s.md) или подключением Express Route.
+> Чтобы подключиться к серверу Базы данных SQL, управляя отдельной базой данных при включенном корпоративном брандмауэре, необходимо открыть порт 1433 в брандмауэре. Чтобы подключиться к управляемому экземпляру, необходимо обладать [подключением типа "точка — сеть"](sql-database-managed-instance-configure-p2s.md) или подключением Express Route.
 >
 
 В этом примере показано, как импортировать базу данных с помощью SqlPackage, используя универсальную проверку подлинности Active Directory.
@@ -69,12 +74,16 @@ SqlPackage.exe /a:import /tcs:"Data Source=mynewserver20170403.database.windows.
 SqlPackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.database.windows.net /ua:True /tid:"apptest.onmicrosoft.com"
 ```
 
-## <a name="import-from-a-bacpac-file-using-powershell"></a>Импорт из BACPAC-файла с помощью PowerShell
+## <a name="import-into-a-single-database-from-a-bacpac-file-using-powershell"></a>Импорт в отдельную базу данных из файла BACPAC с помощью PowerShell
+
+> [!NOTE]
+> Сейчас [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в базу данных экземпляра из файла BACPAC с помощью Azure PowerShell. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
+
 
 Используйте командлет [New-AzureRmSqlDatabaseImport](/powershell/module/azurerm.sql/new-azurermsqldatabaseimport), чтобы отправить запрос на импорт базы данных к службе Базы данных SQL Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
 
  ```powershell
- $importRequest = New-AzureRmSqlDatabaseImport 
+ $importRequest = New-AzureRmSqlDatabaseImport
     -ResourceGroupName "<your_resource_group>" `
     -ServerName "<your_server>" `
     -DatabaseName "<your_database>" `
@@ -121,6 +130,6 @@ $importStatus
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы научиться подключаться к импортированной Базе данных SQL и отправлять к ней запросы, ознакомьтесь со статьей [Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md).
-- Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
+- Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).
 - Описание процесса миграции базы данных SQL Server в базу данных SQL Azure, включая рекомендации по его использованию, см. в [этой статье](sql-database-single-database-migrate.md).
 - Чтобы узнать, как безопасно управлять ключами к хранилищу данных и подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide).

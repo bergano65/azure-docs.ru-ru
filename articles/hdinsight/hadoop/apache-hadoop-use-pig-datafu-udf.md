@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 982ed4533c34cd4a6613d289ef4712001977538f
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: d67c3e452da05c626721d4c3144e612e6f9e0af4
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436224"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338450"
 ---
 # <a name="use-apache-datafu-pig-with-apache-pig-on-hdinsight"></a>Использование Apache DataFu Pig с Apache Pig в HDInsight
 
@@ -90,7 +90,9 @@ DataFu можно скачать и установить из репозитор
 >
 > * Если ваш кластер использует службу хранилища Azure, используйте путь `wasb://`. Например, `register wasb:///example/jars/datafu-pig-1.4.0.jar`.
 >
-> * Если ваш кластер использует Azure Data Lake Store, используйте путь `adl://`. Например, `register adl://home/example/jars/datafu-pig-1.4.0.jar`.
+> * Если ваш кластер использует Azure Data Lake Storage 2-го поколения, используйте путь `abfs://`. Например, `register abfs://home/example/jars/datafu-pig-1.4.0.jar`.
+>
+> * Если ваш кластер использует Azure Data Lake Storage 1-го поколения, используйте путь `adl://`. Например, `register adl://home/example/jars/datafu-pig-1.4.0.jar`.
 
 Зачастую для функций DataFu определяется псевдоним. В следующем примере определяется псевдоним `SHA`:
 

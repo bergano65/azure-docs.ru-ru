@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbfffa94c76de2c7c4e9f4f2e67c9744e52f22c7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 39659df99951850ced07be14f81348ae9c1c1be5
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194195"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428608"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
@@ -96,7 +96,7 @@ ms.locfileid: "56194195"
 > Не забудьте сначала подключиться, используя **Connect-MsolService**
 
 
-PowerShell — удобный инструмент для массового включения пользователей. Создайте сценарий PowerShell, который обходит список пользователей и включает их.
+ В этом примере скрипта PowerShell включается многофакторная проверка подлинности для отдельного пользователя:
 
         Import-Module MSOnline
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
@@ -105,7 +105,7 @@ PowerShell — удобный инструмент для массового в�
         $sta = @($st)
         Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
 
-Следующий сценарий является примером.
+PowerShell — удобный инструмент для массового включения многофакторной проверки подлинности для пользователей. Например следующий скрипт обрабатывает список пользователей и включает многофакторную проверку подлинности для их учетных записей:
 
     $users = "bsimon@contoso.com","jsmith@contoso.com","ljacobson@contoso.com"
     foreach ($user in $users)
@@ -117,11 +117,11 @@ PowerShell — удобный инструмент для массового в�
         Set-MsolUser -UserPrincipalName $user -StrongAuthenticationRequirements $sta
     }
     
-Чтобы отключить MFA, используйте этот сценарий:
+Чтобы отключить многофакторную проверку подлинности, используйте следующий скрипт:
 
     Get-MsolUser -UserPrincipalName user@domain.com | Set-MsolUser -StrongAuthenticationRequirements @()
     
-или сокращенный вариант:
+Можете также использовать более короткий вариант скрипта:
 
     Set-MsolUser -UserPrincipalName user@domain.com -StrongAuthenticationRequirements @()
 

@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 05/25/2018
-ms.openlocfilehash: 096f310b7c82718ea836d1b2048ca665a1e1e2f4
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.openlocfilehash: 49f045e8da5094f583c01c514bf92f6bf3fe1c09
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55994964"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453372"
 ---
 # <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio"></a>Экспорт и удаление встроенных в продукт данных пользователей из Студии машинного обучения Azure
 
@@ -70,8 +70,8 @@ ms.locfileid: "55994964"
 ![Удаление бесплатной рабочей области в Студии машинного обучения](./media/export-delete-personal-data-dsr/delete-studio-data-workspace.png)
  
 ## <a name="export-studio-data-with-powershell"></a>Экспорт данных Студии с помощью PowerShell
-Экспортируйте все данные в формате PDF из службы "Студия машинного обучения Azure" с помощью команд PowerShell. Дополнительные сведения см. в статье о [модуле PowerShell для Машинного обучения Azure](powershell-module.md).
+Экспортируйте все данные в формате PDF из службы "Студия машинного обучения Azure" с помощью команд PowerShell. Дополнительные сведения см. в статье [Модули PowerShell для Студии машинного обучения Microsoft Azure](powershell-module.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Документацию о веб-службах и выставлении счетов плана предложения см. в статье [Azure Machine Learning Studio Management REST APIs](https://docs.microsoft.com/rest/api/machinelearning/) (REST API управления службой "Машинное обучение Azure"). 
+Документацию о веб-службах и выставлении счетов плана предложения см. в статье [Azure Machine Learning Studio Management REST APIs](https://docs.microsoft.com/rest/api/machinelearning/) (REST API управления Студии машинного обучения Azure). 

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 10c8c0043d04d99ad10e475f903979edb0ddcb70
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: fc63eb792e58d960ae67138b5e58e6b705945030
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54266907"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446398"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -70,7 +70,7 @@ ms.locfileid: "54266907"
 
 Начиная с SLES 12 с пакетом обновления 1 (SP1) и RHEL 7.2, эти параметры необходимо определить в файле конфигурации в каталоге /etc/sysctl.d. Например, в этом каталоге должен находиться файл конфигурации с именем 91-NetApp-HANA.conf. В предыдущих выпусках SLES и RHEL эти параметры необходимо задать в файле /etc/sysctl.conf.
 
-Для всех выпусков RHEL, начиная с SLES 12, необходимо учитывать следующее: 
+Для всех выпусков RHEL, начиная с RHEL 6.3, необходимо учитывать следующее: 
 - параметр sunrpc.tcp_slot_table_entries = 128 необходимо задать в файле in/etc/modprobe.d/sunrpc-local.conf. Если этот файл отсутствует, его необходимо создать, добавив следующую запись: 
     - options sunrpc tcp_max_slot_table_entries=128.
 

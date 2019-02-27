@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: bf807a4d24b72c948707ade28f06c4eb2a54c0a0
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 321dfaa1a58cc806394f4807c38cbdc599cfd7a0
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657031"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311569"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -27,6 +27,9 @@ ms.locfileid: "55657031"
 > * применение управляемого удостоверения для доступа к Key Vault из запущенного контейнера.
 
 Вы можете адаптировать эти примеры, чтобы применить собственные удостоверения в службе "Экземпляры контейнеров Azure" для доступа к другим службам Azure. Это интерактивные примеры. Но на практике для доступа к службам Azure в образах контейнеров будет выполняться код.
+
+> [!NOTE]
+> Сейчас нельзя использовать управляемое удостоверение в группе контейнеров, развернутой в виртуальной сети.
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 

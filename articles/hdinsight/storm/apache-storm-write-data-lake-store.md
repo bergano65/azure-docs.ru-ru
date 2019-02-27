@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.openlocfilehash: 53f81a06a0a10d4526816b5117eb12f01d75e25a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 301de81fc9b8bdb8b295700de33065d988379334
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55819167"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428800"
 ---
 # <a name="write-to-apache-hadoop-hdfs-from-apache-storm-on-hdinsight"></a>Запись данных в Apache Hadoop HDFS из Apache Storm в HDInsight
 
@@ -50,15 +50,18 @@ ms.locfileid: "55819167"
 HdfsBolt использует предоставленную схему файла, чтобы понять, как выполнять запись данных в HDFS. Для HDInsight используйте одну из следующих схем:
 
 * `wasb://`: используется с учетной записью хранения Azure.
-* `adl://`: используется с Azure Data Lake Storage.
+* `abfs://`: используется с Azure Data Lake Storage 2-го поколения.
+* `adl://`: используется с Azure Data Lake Storage 1-го поколения.
 
 Следующая таблица содержит примеры использования схемы файлов для разных сценариев.
 
 | Схема | Примечания |
 | ----- | ----- |
 | `wasb:///` | Учетная запись хранения по умолчанию — это контейнер больших двоичных объектов в учетной записи хранения Azure. |
-| `adl:///` | Учетная запись хранения по умолчанию представляет собой каталог в Azure Data Lake Storage. Во время создания кластера укажите каталог в Data Lake Storage, который является корнем системы HDFS кластера. Например, каталог `/clusters/myclustername/`. |
+| `abfs:///` | Учетная запись хранения по умолчанию представляет собой каталог в учетной записи Azure Data Lake Storage 2-го поколения. |
+| `adl:///` | Учетная запись хранения по умолчанию представляет собой каталог в Azure Data Lake Storage 1-го поколения. Во время создания кластера укажите каталог в Data Lake Storage, который является корнем системы HDFS кластера. Например, каталог `/clusters/myclustername/`. |
 | `wasb://CONTAINER@ACCOUNT.blob.core.windows.net/` | Учетная запись хранения Azure не по умолчанию (дополнительная), связанная с кластером. |
+| `abfs://CONTAINER@ACCOUNT.dfs.core.windows.net/` | Учетная запись хранения Azure не по умолчанию (дополнительная), связанная с кластером. |
 | `adl://STORENAME/` | Корень Data Lake Storage, используемый кластером. Эта схема позволяет получить доступ к данным, размещенным вне каталога, в котором содержится файловая система кластера. |
 
 Дополнительные сведения см. в [справочнике HdfsBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) на сайте Apache.org.
@@ -180,7 +183,7 @@ bolts:
         hdfs.url: wasb:///
 
     > [!IMPORTANT]  
-    > В этом примере предполагается, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Если ваш кластер использует Azure Data Lake Storage, используйте `hdfs.url: adl:///`.
+    > В этом примере предполагается, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Если ваш кластер использует Azure Data Lake Storage 2-го поколения, используйте `hdfs.url: abfs:///`. Если ваш кластер использует Azure Data Lake Storage 1-го поколения, используйте `hdfs.url: adl:///`.
     
     Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__, введите __Y__ и нажмите клавишу __ВВОД__. Значения в этом файле позволяют задать URL-адрес Data Lake Storage и имя каталога, в который записываются данные.
 

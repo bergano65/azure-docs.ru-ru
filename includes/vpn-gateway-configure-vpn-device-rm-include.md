@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 02/14/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b5aea9d7fe54402693be095350f7c095334fd4b5
-ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
+ms.openlocfilehash: 886fa6c088f2fbabb3d3ba1cd0b15bbc488784f3
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "30198117"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56418310"
 ---
 **Скачивание скриптов конфигурации VPN-устройства:**
 
@@ -27,7 +27,7 @@ ms.locfileid: "30198117"
 
 - См. дополнительные сведения о [проверенных VPN-устройствах](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#devicetable). Ссылки на инструкции по настройке устройств будут предоставляться по мере возможности. Актуальные сведения о конфигурации всегда лучше проверять у производителей устройств. В списке перечислены протестированные нами версии. Если вашей ОС нет в этом списке, эта версия все равно может быть совместимой. Обратитесь к изготовителю устройства, чтобы проверить совместимость версии ОС с вашим VPN-устройством.
 
-- Общие сведения о конфигурации устройства VPN см. в статье [Обзор конфигураций VPN-устройств сторонних производителей](../articles/vpn-gateway/vpn-gateway-3rdparty-device-config-overview.md).
+- Общие сведения о конфигурации устройства VPN см. в статье [Обзор конфигураций партнерских VPN-устройств](../articles/vpn-gateway/vpn-gateway-3rdparty-device-config-overview.md).
 
 - См. дополнительные сведения о [примерах изменения конфигурации устройств](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#editing).
 

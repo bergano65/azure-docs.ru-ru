@@ -10,12 +10,12 @@ author: ericlicoding
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: c682bca1f3d4f0e2659ed107a2b15e4e4e28b0d9
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 1bf9889f601795c1ba70abdd17f6e8c9a01785f1
+ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492493"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56453874"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Студии машинного обучения Azure
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
@@ -28,7 +28,8 @@ ms.locfileid: "55492493"
 * создавать, удалять или обновлять планы выставления счетов (только для новой версии);
 * добавлять и удалять конечные точки (только для классической версии).
 
-
+>[!NOTE]
+>Управлять классическими веб-службами в [Студии машинного обучения](http://studio.azureml.net) можно на вкладке **веб-служб**.
 
 ## <a name="permissions-to-manage-new-resources-manager-based-web-services"></a>Разрешения на управление новыми веб-службами на основе Resource Manager
 
@@ -38,7 +39,7 @@ ms.locfileid: "55492493"
 
 *Web Service deployment failed. This account does not have sufficient access to the Azure subscription that contains the Workspace. In order to deploy a Web Service to Azure, the same account must be invited to the Workspace and be given access to the Azure subscription that contains the Workspace.* (Не удалось развернуть веб-службу. У этой учетной записи нет необходимых прав на доступ к подписке Azure, которая содержит рабочую область. Чтобы развернуть веб-службу в Azure, эту учетную запись необходимо добавить в рабочую область и предоставить ей доступ к подписке Azure, содержащей рабочую область.)
 
-Дополнительные сведения о создании рабочей области см. в статье [Создание рабочей области машинного обучения Azure и предоставление к ней общего доступа](create-workspace.md).
+Дополнительные сведения о создании рабочей области см. в статье [Создание рабочей области Студии машинного обучения Azure и предоставление к ней общего доступа](create-workspace.md).
 
 Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
@@ -107,7 +108,7 @@ ms.locfileid: "55492493"
 
 ## <a name="manage-classic-web-services"></a>Управление классическими веб-службами
 > [!NOTE]
-> Процедуры, описанные в этом разделе, относятся к управлению классическими веб-службами на портале веб-служб машинного обучения Azure. Сведения об управлении классическими веб-службами с помощью студии машинного обучения и портала Azure см. в статье об [управлении рабочей областью машинного обучения Azure](manage-workspace.md).
+> Процедуры, описанные в этом разделе, относятся к управлению классическими веб-службами на портале веб-служб машинного обучения Azure. Сведения об управлении классическими веб-службами с помощью Студии машинного обучения и портала Azure см. в статье [Управление рабочей областью Студии машинного обучения Azure](manage-workspace.md).
 > 
 > 
 

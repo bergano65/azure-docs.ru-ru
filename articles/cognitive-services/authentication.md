@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: erhopf
-ms.openlocfilehash: f724bba5acdda20d31d067b850634178a0650cf7
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2f9b477e076b038a6a695952ee3f770b30ad179b
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859751"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56429474"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
@@ -58,7 +58,7 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 --data-raw '[{ "text": "How much for the cup of coffee?" }]' | json_pp
 ```
 
-В следующем видео показано использование ключа Cognitive Services. 
+В следующем видео показано использование ключа Cognitive Services.
 
 ## <a name="authenticate-with-a-multi-service-subscription-key"></a>Проверка подлинности по ключу подписки для нескольких служб
 
@@ -127,16 +127,15 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 ### <a name="sample-requests"></a>Примеры запросов
 
-Используйте этот URL-адрес для обмена ключа подписки для одной службы на маркер проверки подлинности: `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`.
+Используйте этот URL-адрес для обмена ключа подписки на маркер проверки подлинности: `https://YOUR-REGION.api.cognitive.microsoft.com/sts/v1.0/issueToken`.
 
 ```cURL
 curl -v -X POST \
-"https://api.cognitive.microsoft.com/sts/v1.0/issueToken" \
+"https://YOUR-REGION.api.cognitive.microsoft.com/sts/v1.0/issueToken" \
 -H "Content-type: application/x-www-form-urlencoded" \
+-H "Content-length: 0" \
 -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY"
 ```
-
-Если вы применяете ключ подписки для нескольких служб, для обмена маркерами следует использовать конечную точку для конкретного региона. Используйте этот URL-адрес для обмена ключа подписки для нескольких служб на маркер проверки подлинности: `https://YOUR-REGION.api.cognitive.microsoft.com/sts/v1.0/issueToken`.
 
 Обмен маркерами поддерживается в следующих регионах с несколькими службами:
 
@@ -147,13 +146,6 @@ curl -v -X POST \
 | `japaneast` | `northeurope` | `southcentralus` |
 | `southeastasia` | `uksouth` | `westcentralus` |
 | `westeurope` | `westus` | `westus2` |
-
-```cURL
-curl -v -X POST \
-"https://YOUR-REGION.api.cognitive.microsoft.com/sts/v1.0/issueToken" \
--H "Content-type: application/x-www-form-urlencoded" \
--H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY"
-```
 
 Получив маркер проверки подлинности, его следует включать в каждый запрос в заголовке `Authorization`. Вот пример вызова к API перевода текстов:
 

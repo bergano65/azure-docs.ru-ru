@@ -1,5 +1,5 @@
 ---
-title: Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C | Документация Майкрософт
+title: Настройка регистрации и входа с учетной записью Microsoft — Azure Active Directory B2C | Документация Майкрософт
 description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями Microsoft, используя Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 0565b9ec1e78a5ce1f40e4f2e1f46e84fbb53a94
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 13e199a56a3cdd4f8e5a21f162fe0397c6f397cd
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55172737"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428261"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
 ## <a name="create-a-microsoft-account-application"></a>Создание приложения для учетной записи Майкрософт
 
-Чтобы использовать учетную запись Microsoft в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
+Чтобы использовать учетную запись Microsoft в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
 
 1. Войдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) и войдите учетные данные от учетной записи Майкрософт.
 2. В правом верхнем углу выберите **Добавить приложение**.

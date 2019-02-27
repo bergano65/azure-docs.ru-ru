@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.prod: vs-devops-alm
-ms.date: 09/12/2018
+ms.date: 02/19/2019
 ms.author: phillee
 keywords: visualstudio
-ms.openlocfilehash: 1582cc7e48adcf895dc7c07e7ab485790650ac14
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
+ms.openlocfilehash: 7530545c3577a662ac0075b83b3eb7e4a8a40f89
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54911917"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428573"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
-Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=%22visual%20studio%202017%22&page=1).
+Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=visual%20studio&page=1).
 
 Впервые работаете с Azure? [Создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free).
 
@@ -34,8 +34,8 @@ ms.locfileid: "54911917"
 
 | Версия выпуска                                              | Выпуски                     |     Версия продукта      |
 |:------------------------------------------------------------:|:----------------------------:|:------------------------:|
-|    Visual Studio 2019: предварительная версия (предварительная версия 2)                   |           Enterprise         | Версия 16.0.0 — предварительная версия 2 |
-| Visual Studio 2017: последняя версия (15.9)                    |    Enterprise, Community     |      Версия 15.9.4      |
+|    Visual Studio 2019: предварительная версия 3                   |           Enterprise         | Версия 16.0.0 — предварительная версия 3 |
+| Visual Studio 2017: последняя версия (15.9)                    |    Enterprise, Community     |      Версия 15.9.7      |
 |         Visual Studio 2017: RTW                              |    Enterprise, Community     |      Версия 15.0.20     |
 |   Visual Studio 2015: последняя версия (обновление 3)                      |    Enterprise, Community     |  Версия 14.0.25431.01   |
 |         Visual Studio 2015: RTW                              |             Нет             | (Истек срок обслуживания)  |

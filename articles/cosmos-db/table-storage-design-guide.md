@@ -8,12 +8,12 @@ ms.date: 12/07/2018
 author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
-ms.openlocfilehash: 433f99d72feb7dc697050049817478a8c8b679e6
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 6495a4e4da9330cba562c7fd6530369c09d180da
+ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820969"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56302069"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Руководство по разработке таблиц хранилища Azure. Разработка масштабируемых и производительных таблиц
 
@@ -721,6 +721,9 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 ### <a name="log-tail-pattern"></a>Шаблон для заключительного фрагмента журнала
 Извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
+
+> [!NOTE]
+> Результаты запросов, возвращаемые API таблиц Azure в Azure Cosmos DB, не сортируются по ключу раздела или ключу строки. Поэтому этот шаблон подходит для Хранилища таблиц Azure, но не подходит для Azure Cosmos DB. Дополнительные сведения см. в ответе на вопрос [Чем API таблиц отличается от Хранилища таблиц Azure?](faq.md#where-is-table-api-not-identical-with-azure-table-storage-behavior).
 
 #### <a name="context-and-problem"></a>Контекст и проблема
 Общее требование заключается в необходимости иметь возможность извлекать последние созданные сущности. Например, десять последних заявок на возмещение сотрудникам. Табличные запросы поддерживают операцию запроса **$top** для возвращения первых *n* сущностей из набора. Аналогичная операция запроса для возвращения последних n сущностей в наборе отсутствует.  

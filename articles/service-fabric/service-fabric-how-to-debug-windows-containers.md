@@ -11,16 +11,16 @@ ms.devlang: dotNet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 05/14/2018
+ms.date: 02/14/2019
 ms.author: twhitney, mikhegn
-ms.openlocfilehash: b38946f813185a4821520b8591b7fd72a5f0cce0
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 9801db8a38a8c21aea26b42f4fe01bd4a43988c5
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300070"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56311228"
 ---
-# <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2017"></a>Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2017
+# <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2017"></a>Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2017
 
 С помощью Visual Studio 2017 с обновлением 7 (15.7) можно выполнять отладку приложений .NET в контейнерах, используемых в качестве служб Service Fabric. В этой статье показано, как настроить среду, а затем выполнить отладку приложения .NET в контейнере, выполняемом в локальном кластере Service Fabric.
 
@@ -37,10 +37,10 @@ ms.locfileid: "51300070"
 1. Чтобы обеспечить поддержку разрешения DNS между контейнерами, необходимо будет настроить локальный кластер разработки, используя имя компьютера. Также эти действия необходимо выполнить, если нужно обратиться к службам через обратный прокси-сервер.
     1. Откройте PowerShell от имени администратора.
     2. Откройте папку установки SDK кластера, как правило `C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup`.
-    3. Выполните сценарий `DevClusterSetup.ps1` с параметром `-UseMachineName`.
+    3. Запустите скрипт `DevClusterSetup.ps1`.
 
        ``` PowerShell
-         C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1 -UseMachineName
+         C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1
        ```
 
     > [!NOTE]
@@ -54,18 +54,18 @@ ms.locfileid: "51300070"
 Ниже приведен список известных ограничений отладки контейнеров в Service Fabric и возможные решения:
 
 * Использование localhost для ClusterFQDNorIP не будет поддерживать разрешение DNS в контейнерах.
-    * Решение. Настройка локального кластера с помощью имени компьютера (см. выше)
+    * Способы устранения. Настройка локального кластера с помощью имени компьютера (см. выше).
 * При выполнении Windows 10 на виртуальной машине контейнер не получит ответ DNS.
-    * Решение. Отключить разгрузку контрольной суммы UDP для протокола IPv4 на сетевом адаптере виртуальной машины.
+    * Способы устранения. Отключить разгрузку контрольной суммы UDP для протокола IPv4 на сетевом адаптере Виртуальных машин.
     * Учтите, что это может повлиять на производительность сети на компьютере.
     * https://github.com/Azure/service-fabric-issues/issues/1061
 * Разрешение служб того же приложения с помощью имени службы DNS не работает в Windows 10, если приложение было развернуто с помощью Docker Compose.
-    * Решение. Используйте servicename.applicationname для разрешения конечных точек службы.
+    * Способы устранения. Используйте servicename.applicationname для разрешения конечных точек службы.
     * https://github.com/Azure/service-fabric-issues/issues/1062
 * При использовании IP-адреса для ClusterFQDNorIP изменение основного IP-адреса на узле нарушит функциональность DNS.
-    * Решение. Повторно создайте кластер, использующий новый основной IP-адрес узла, или используйте имя компьютера. Это сделано специально.
+    * Способы устранения. Повторно создайте кластер с использованием нового основного IP-адреса узла или используйте имя компьютера. Это сделано специально.
 * Если кластер создан с помощью полного доменного имени, которое не разрешается в сети, DNS завершится с ошибкой.
-    * Решение. Повторно создайте локальный кластер с помощью основного IP-адреса узла. Это сделано специально.
+    * Способы устранения. Повторно создайте локальный кластер с использованием основного IP-адреса узла. Это сделано специально.
 * При отладке контейнера docker журналы будут доступны только в окне вывода Visual Studio, а не через API Service Fabric, включая Service Fabric Explorer.
 
 ## <a name="debug-a-net-application-running-in-docker-containers-on-service-fabric"></a>Отладка приложения .NET, работающего в контейнерах docker, в Service Fabric

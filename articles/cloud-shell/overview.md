@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: juluk
-ms.openlocfilehash: 1ad85a57762ae4fba30e1699b38eaa52d45ab26e
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 4195016bb029d2cf8f5042a853fa591609bd486e
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447213"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56428539"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 Azure Cloud Shell — это интерактивная доступная браузеру оболочка для управления ресурсами Azure.
@@ -53,7 +53,7 @@ Cloud Shell предоставляет доступ к браузерному и
 Просмотрите полный список [средств, установленных в Cloud Shell.](features.md#tools)
 
 ### <a name="integrated-cloud-shell-editor"></a>Интегрированный редактор Cloud Shell
-Cloud Shell предоставляет интегрированный графический текстовый редактор на основе редактора Monaco с открытым кодом. Просто создайте и измените файлы конфигурации, выполнив `code .` для простого развертывания с помощью Azure CLI 2.0 или Azure PowerShell.
+Cloud Shell предоставляет интегрированный графический текстовый редактор на основе редактора Monaco с открытым кодом. Просто создайте и измените файлы конфигурации, выполнив `code .` для размеренного развертывания с помощью Azure CLI 2.0 или Azure PowerShell.
 
 [Подробнее о редакторе Cloud Shell.](using-cloud-shell-editor.md)
 
@@ -68,7 +68,7 @@ Cloud Shell представляет собой гибкий инструмен�
 * [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 * [Документация по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
 * [мобильные приложения Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/);
-* [расширение VS Code для учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
+* [Расширение учетной записи Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 ### <a name="connect-your-microsoft-azure-files-storage"></a>Подключение хранилища файлов Microsoft Azure
 Компьютеры Cloud Shell временные и требуют подключения новой или существующей общей папки Azure в качестве `clouddrive` для хранения файлов.

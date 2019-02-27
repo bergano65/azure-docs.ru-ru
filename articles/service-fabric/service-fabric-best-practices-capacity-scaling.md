@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: d6f2ca53829642009adbc50061966c5a7e924f7e
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 9de6cc224c82bb07fee4d62cd5de1d1964001bab
+ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240409"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56446823"
 ---
 # <a name="capacity-planning-and-scaling"></a>Планирование ресурсов и масштабирование
 
@@ -40,7 +40,7 @@ ms.locfileid: "55240409"
 
 ## <a name="vertical-scaling-considerations"></a>Рекомендации по вертикальному масштабированию
 
-Для [вертикального масштабирования](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out#upgrade-the-size-and-operating-system-of-the-primary-node-type-vms) типа узла в Azure Service Fabric требуется выполнить несколько шагов и удовлетворить некоторые требования. Например.
+Для [вертикального масштабирования](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out#upgrade-the-size-and-operating-system-of-the-primary-node-type-vms) типа узла в Azure Service Fabric требуется выполнить несколько шагов и удовлетворить некоторые требования. Например: 
 * Масштабируемый кластер должен быть работоспособным. В противном случае вы еще больше дестабилизируете его работу.
 * **Уровень устойчивости Silver или выше** для всех типов узлов кластера Service Fabric, в котором размещены службы с отслеживанием состояния.
 
@@ -95,7 +95,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 
 ### <a name="scaling-in"></a>Уменьшение масштаба
 
-Уменьшение масштаба нужно выполнять осторожнее, чем увеличение. Например.
+Уменьшение масштаба нужно выполнять осторожнее, чем увеличение. Например: 
 * Системные службы Service Fabric запускаются в кластере на узле основного типа. Никогда не уменьшайте число экземпляров узлов для этого типа ниже значения, которое гарантирует соответствующий уровень надежности. 
 * Для службы с отслеживанием состояния определенное количество узлов должно постоянно работать, чтобы поддерживать доступность этой службы и сохранять ее состояние. Требуется как минимум количество узлов, равное количеству целевых наборов реплик секции или службы.
 

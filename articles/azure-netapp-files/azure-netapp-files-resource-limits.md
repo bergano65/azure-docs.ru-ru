@@ -1,6 +1,6 @@
 ---
 title: Ограничения ресурсов для службы Azure NetApp Files | Документация Майкрософт
-description: Описаны ограничения для ресурсов Azure NetApp Files, включая ограничения для пулов емкости, томов и делегированной подсети.
+description: Описаны ограничения для ресурсов Azure NetApp Files, включая ограничения для учетных записей NetApp, пулов емкости, томов, моментальных снимков и делегированной подсети.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -11,33 +11,29 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: reference
-ms.date: 01/03/2019
+ms.topic: concepts
+ms.date: 02/14/2019
 ms.author: b-juche
-ms.openlocfilehash: f34afb1df2ae38353f29a80bfb6798c16856dbeb
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 196d85917e0a9900e141d58bff171beeb8540409
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54056738"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56430019"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
+
 Понимание ограничений ресурсов для службы Azure NetApp Files помогает в управлении томами.
 
-## <a name="capacity_pools"></a>Пулы емкости
-
+- Каждая подписка Azure может включать до 10 учетных записей NetApp.
+- Каждая учетная запись NetApp может включать до 25 пулов емкости.
+- Каждый пул емкости может принадлежать только одной учетной записи NetApp.  
 - Минимальный размер одного пула емкости составляет 4 Тиб, а максимальный — 500 Тиб. 
-- Каждый пул емкости может принадлежать только одной учетной записи NetApp. Но в учетной записи NetApp может быть несколько пулов емкости.  
-
-## <a name="volumes"></a>Тома
-
+- Каждый пул емкости может включать до 500 томов.
 - Минимальный размер одного тома составляет 100 ГиБ, а максимальный размер — 92 Тиб.
-- Максимальное количество томов на одну подписку в регионе — 100.  
+- Каждый том может включать до 255 моментальных снимков.
+- Каждая виртуальная сеть Azure может обладать только одной подсетью делегированной в Azure NetApp Files.
 
-## <a name="delegated_subnet"></a>Делегированная подсеть 
-
-В каждой виртуальной сети Azure можно делегировать только одну подсеть для Azure NetApp Files.
-
-## <a name="next-steps"></a>Дополнительная информация
+**Дальнейшие действия**
 
 [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)

@@ -6,22 +6,23 @@ ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/23/2018
-ms.openlocfilehash: 6f16428b6e5eacedd32712c6ccb212c376e244e8
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 3f57f37ce8c0406e45eff68031bd084e5b22063a
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53537245"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56414589"
 ---
 # <a name="create-and-manage-azure-database-for-postgresql-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Создание правил и конечных точек службы виртуальной сети базы данных Azure для PostgreSQL и управление ими с помощью портала Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
 
 > [!NOTE]
 > Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
+> В случае пиринга между виртуальными сетями, если трафик проходит через общий шлюз виртуальной сети с конечными точками и должен попадать в кэширующий узел, создайте правило ACL или виртуальной сети, чтобы разрешить виртуальным машинам Azure в шлюзе виртуальной сети доступ к Базе данных Azure для сервера PostgreSQL.
 
 ## <a name="create-a-vnet-rule-and-enable-service-endpoints-in-the-azure-portal"></a>Создание правила виртуальной сети и включение конечных точек службы на портале Azure
 
-1. На странице сервера PostgreSQL в разделе "Параметры" щелкните **Connection security** (Безопасность подключения), чтобы открыть соответствующую страницу базы данных Azure для PostgreSQL. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. См. [Quickstart: Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md)
+1. На странице сервера PostgreSQL в разделе "Параметры" щелкните **Connection security** (Безопасность подключения), чтобы открыть соответствующую страницу базы данных Azure для PostgreSQL. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. См. [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md)
 
    ![Портал Azure: выбор пункта "Безопасность подключения"](./media/howto-manage-vnet-using-portal/1-connection-security.png)
 

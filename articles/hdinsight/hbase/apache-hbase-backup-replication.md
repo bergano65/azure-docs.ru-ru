@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: d7be248e49baf4e7fd10d6b37df1473e92ccfce7
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: d182d23bf4b3f4dc1ed42a737e8fe8b753c035ae
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651730"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56340744"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -75,7 +75,11 @@ HBase в HDInsight использует хранилище по умолчани
 
     wasbs://<containername>@<accountname>.blob.core.windows.net/<path>
 
-В Azure Data Lake Storage используется следующий синтаксис.
+В Azure Data Lake Storage 2-го поколения используется следующий синтаксис.
+
+    abfs://<containername>@<accountname>.dfs.core.windows.net/<path>
+
+В Azure Data Lake Storage 1-го поколения используется следующий синтаксис.
 
     adl://<accountName>.azuredatalakestore.net:443/<path>
 

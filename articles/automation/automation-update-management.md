@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 02/13/2019
+ms.date: 02/19/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0afb8a09fa9780755bcfeef678b76e176f11b348
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: df4ae4b0c3f230947e0b9a5885070049f32a4b2f
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56246040"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56429868"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -188,6 +188,8 @@ Heartbeat
 Каждые 3 часа выполняется проверка всех управляемых компьютеров Linux.
 
 Отображение обновленных данных с управляемых компьютеров на панели мониторинга может занять от 30 минут до 6 часов.
+
+Средний показатель использования данных Log Analytics для компьютера с управлением обновлениями — примерно 25 МБ в месяц. Это приблизительное значение, которое может отличаться в зависимости от среды. Мы рекомендуем вам провести мониторинг среды, чтобы узнать точные данные об использовании.
 
 ## <a name="viewing-update-assessments"></a>Просмотр оценок обновления
 

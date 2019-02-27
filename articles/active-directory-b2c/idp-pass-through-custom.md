@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/28/2018
+ms.date: 02/19/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f21f835ea50563497b73fb6e4505f60411029406
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: cd24d4ad026af7d8bce70902376c3a31d659a203
+ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883004"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56427877"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
@@ -24,11 +24,11 @@ ms.locfileid: "55883004"
 
 [Пользовательская политика](active-directory-b2c-get-started-custom.md) в Azure Active Directory (Azure AD) B2C предоставляет пользователям вашего приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C. 
 
-В настоящее время Azure AD B2C поддерживает только передачу маркера доступа поставщиков удостоверений [OAuth 2.0](active-directory-b2c-reference-oauth-code.md), в том числе Facebook и [Google](active-directory-b2c-custom-setup-goog-idp.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
+Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](active-directory-b2c-reference-oauth-code.md) и стандарту [Подключение OpenID](active-directory-b2c-reference-oidc.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ваша пользовательская политика настроена с поставщиком удостоверений OAuth 2.0.
+- Ваша пользовательская политика поддерживает поставщиков удостоверений OAuth 2.0 или Подключение OpenID.
 
 ## <a name="add-the-claim-elements"></a>Добавление элементов утверждения 
 

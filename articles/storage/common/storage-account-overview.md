@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/13/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 880ae672409704ddcd5597ae758f8c786c3c0720
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 430aa6e60efe63e6741436e53152126bc15798fc
+ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244493"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56327856"
 ---
 # <a name="azure-storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -78,7 +78,7 @@ ms.locfileid: "55244493"
 Учетные записи хранения общего назначения можно настроить для любого из следующих уровней производительности:
 
 * Уровень производительности "Стандартный" для хранения больших двоичных объектов, файлов, таблиц, очередей и дисков виртуальных машин Azure.
-* Уровень производительности "Премиум" для хранения только дисков виртуальных машин Azure. Подробный обзор хранилища класса Premium см. в статье [ Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](../../virtual-machines/windows/premium-storage.md).
+* Уровень производительности "Премиум" для хранения только неуправляемых дисков виртуальных машин.
 
 ## <a name="access-tiers-for-block-blob-data"></a>Уровни доступа для данных блочных BLOB-объектов
 

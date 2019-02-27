@@ -1,6 +1,6 @@
 ---
-title: Создание пользовательских ролей с помощью REST API — Azure | Документы Майкрософт
-description: Узнайте, как создавать пользовательские роли для управления доступом на основе ролей (RBAC) с помощью REST API. Здесь приводится описание процедур получения списка, создания, обновления и удаления пользовательских ролей.
+title: Создание пользовательских ролей для ресурсов Azure с помощью REST API в Azure | Документация Майкрософт
+description: Узнайте, как создавать пользовательские роли с управлением доступом на основе ролей (RBAC) для ресурсов Azure с помощью REST API. Здесь приводится описание процедур получения списка, создания, обновления и удаления пользовательских ролей.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8a1bbe8217e2d4a9846f56124e248e19cbe70b19
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: cfcb7ef2a4fc02932f9d03c277b105c4b1e0ff3a
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436068"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56338773"
 ---
-# <a name="create-custom-roles-using-the-rest-api"></a>Создание пользовательских ролей с помощью REST API
+# <a name="create-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание пользовательских ролей для ресурсов Azure с помощью REST API
 
-Если [встроенные роли](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. В этой статье описывается создание пользовательских ролей и управление ими с помощью REST API.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. В этой статье описывается создание пользовательских ролей и управление ими с помощью REST API.
 
 ## <a name="list-roles"></a>Вывод списка ролей
 
@@ -272,6 +272,6 @@ ms.locfileid: "37436068"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Пользовательские роли в Azure](custom-roles.md)
-- [Управление доступом с помощью RBAC и REST API](role-assignments-rest.md)
+- [Пользовательские роли для ресурсов Azure](custom-roles.md)
+- [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: e3f7579324e1218cc2e2c3594889db776da6e529
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 57cc585d621c71872a4b7658c74f581c8998b245
+ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56119145"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56341085"
 ---
 # <a name="how-to-use-azure-maps-android-sdk"></a>Использование пакета SDK для Android в Azure Maps
 
@@ -45,7 +45,7 @@ ms.locfileid: "56119145"
 
 ## <a name="set-up-a-virtual-device"></a>Настройка виртуального устройства
 
-Android Studio позволяет настроить виртуальное устройство Android на вашем компьютере. Это может помочь при тестировании приложения во время разработки. Чтобы настроить виртуальное устройство, щелкните значок диспетчера виртуальных устройств Android (AVD) в правом верхнем углу экрана проекта. Затем нажмите кнопку **Create Virtual Device** (Создать виртуальное устройство). Вы также можете перейти к диспетчеру с помощью панели инструментов, выбрав Tools > Android > AVD Manager (Инструменты > Android > Диспетчер AVD). В категории **Phones** (Телефоны) выберите **Nexus 5X** и щелкните **Next** (Далее).
+Android Studio позволяет настроить виртуальное устройство Android на вашем компьютере. Это может помочь при тестировании приложения во время разработки. Чтобы настроить виртуальное устройство, щелкните значок диспетчера виртуальных устройств Android (AVD) в правом верхнем углу экрана проекта. Затем нажмите кнопку **Create Virtual Device** (Создать виртуальное устройство). Вы также можете перейти к диспетчеру с помощью панели инструментов, выбрав **Tools > Android > AVD Manager** (Инструменты > Android > Диспетчер AVD). В категории **Phones** (Телефоны) выберите **Nexus 5X** и щелкните **Next** (Далее).
 
 Дополнительные сведения о настройке AVD см. в [документации по Android Studio](https://developer.android.com/studio/run/managing-avds).
 
@@ -55,7 +55,7 @@ Android Studio позволяет настроить виртуальное ус
 
 Прежде чем перейти к созданию приложения, выполните следующие действия, чтобы установить пакет SDK для Android в Azure Maps. 
 
-1. Добавьте следующий код в блок репозитория **allprojects** в файле **build.gradle**.
+1. Добавьте следующий код **всем проектам** в блоке репозитория в файле **build.gradle**.
 
     ```
     maven {
@@ -79,7 +79,7 @@ Android Studio позволяет настроить виртуальное ус
         implementation "com.microsoft.azure.maps:mapcontrol:0.1"
         ```
 
-3. Настройте разрешения, добавив следующее в AndroidManifest.xml:
+3. Настройте разрешения, добавив следующее к **AndroidManifest.xml**:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -90,7 +90,7 @@ Android Studio позволяет настроить виртуальное ус
     </manifest>
     ```
 
-4. Отредактируйте **res > layout > activity_main.xml**, чтобы он выглядел как следующий XML:
+4. Отредактируйте **res > layout > activity_main.xml**, чтобы он выглядел как следующий XML:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -128,7 +128,7 @@ Android Studio позволяет настроить виртуальное ус
 
     public class MainActivity extends AppCompatActivity {
         
-        static{
+        static {
             AzureMaps.setSubscriptionKey("{subscription-key}");
         }
 
@@ -187,7 +187,7 @@ Android Studio позволяет настроить виртуальное ус
 
 ## <a name="import-classes"></a>Импорт классов
 
-Выполнив описанные выше шаги, вы, скорее всего, получите предупреждения от Android Studio о части текста в коде. В этом случае необходимо импортировать некоторые классы, на которые есть ссылки в `MainActivity.java`.
+Выполнив описанные выше шаги, вы, скорее всего, получите предупреждения от Android Studio о части текста в коде. Чтобы устранить эти предупреждения, импортируйте классы, на которые ссылается `MainActivity.java`.
 
 Вы можете автоматически импортировать эти классы, нажав сочетание клавиш `Alt`+`Enter` (`Option`+`Return` на Mac). 
 

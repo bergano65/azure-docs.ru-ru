@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 02/15/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: b27dd1b9aec89f259649b313d3ba7f944ea647f1
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
+ms.openlocfilehash: 40973fbdd1965eb84776fc9365718c65fa0149a7
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55765727"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56416995"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -114,7 +114,12 @@ Write-Host "Python Cert store was updated to allow the Azure Stack CA root certi
 
 Для подключения к Azure Stack выполните следующие действия:
 
-1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
+1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды.
+
+   ```shell
+   set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
+   set ADAL_PYTHON_SSL_NO_VERIFY=1
+   ```
    
     a. Чтобы зарегистрировать среду *администратора облака*, используйте следующую команду:
 
@@ -200,7 +205,7 @@ Write-Host "Python Cert store was updated to allow the Azure Stack CA root certi
       ```
 
       > [!NOTE]
-      > Если в учетной записи пользователя используется многофакторная аутентификация, команду `az login command` можно выполнять без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
+      > Если в учетной записи пользователя используется многофакторная проверка подлинности, команду `az login` можно выполнять без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
    
       * Войдите в систему как *субъект-служба*. Для входа от имени субъекта-службы следует заранее [создать субъект-службу с помощью портала Azure](azure-stack-create-service-principals.md) или CLI, а также назначить ему роль. После этого выполните такую команду для входа:
 

@@ -9,12 +9,12 @@ ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: b6cc65d10fc8924686d01c02177a9cb76f7a9571
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 722a40dca0a64407a407ecad6d990d1651b0e998
+ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660924"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56415737"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -95,6 +95,10 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ## <a name="create-a-hdinsight-cluster-with-esp"></a>Создание кластера HDInsight с корпоративным пакетом безопасности
 
 После правильной настройки предыдущих шагов следующим шагом будет создание кластера HDInsight с поддержкой ESP. При создании кластера HDInsight вы можете включить Корпоративный пакет безопасности на **пользовательской** вкладке. Если необходимо применить шаблон Azure Resource Manager для развертывания, используйте интерфейс портала один раз и загрузите предварительно заполненный шаблон на последней странице "Итоги" для повторного пользования в будущем.
+
+> [!NOTE]  
+> Первые шесть символов имени кластера ESP должно быть уникальными в вашей среде. Например, если имеется несколько кластеров ESP в разных виртуальных сетях, следует использовать соглашение об именовании, гарантирующее, что первые шесть символов имени кластера будут уникальными.
+
 
 ![Проверка домена Azure HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-create-cluster-esp-domain-validate.png)
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: vamelech
-ms.openlocfilehash: 47f9dfea24dc3134e6a2f476affaaff7e60efe8c
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 3edd70d3012840bd66460219c32135666619a3bf
+ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260386"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56313574"
 ---
 # <a name="ethereum-proof-of-authority-consortium"></a>Консорциум PoA в Ethereum
 
@@ -180,7 +180,7 @@ ms.locfileid: "54260386"
 
 ### <a name="deploy-ethereum-proof-of-authority"></a>Развертывание сети PoA в Ethereum
 
-Ниже приведен пример последовательности развертывания с несколькими участниками.
+Ниже приведен пример процесса развертывания с несколькими участниками.
 
 1.  Три участника создают учетные записи Ethereum с помощью MetaMask.
 
@@ -359,7 +359,7 @@ Existing Log Analytics Primary Key (Первичный ключ имеющего
 
     -  выбрать такое же число узлов проверяющих элементов управления, что и остальные участники в сети, чтобы обеспечить справедливое распределение;
 
-    -  использовать адрес Ethereum, указанный на [предыдущем шаге](#step-1-add-the-new-admin);
+    -  использовать адрес Ethereum, полученный на предыдущем шаге;
 
     -  передать предоставленный *URL-адрес данных консорциума* на вкладке *Ethereum Settings* (Параметры Ethereum);
 
