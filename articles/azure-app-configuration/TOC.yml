@@ -1,0 +1,60 @@
+items:
+- name: Документация по службе "Конфигурация приложений Azure"
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Сведения о службе "Конфигурация приложений Azure"
+    href: overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Создание приложения ASP.NET Core
+    href: quickstart-aspnet-core-app.md
+  - name: Создание приложения .NET Core
+    href: quickstart-dotnet-core-app.md
+  - name: Создание приложения .NET Framework
+    href: quickstart-dotnet-app.md
+  - name: Создание функции Azure
+    href: quickstart-azure-function-csharp.md
+  - name: Создание приложения Java Spring
+    href: quickstart-java-spring-app.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Включение динамической конфигурации в ASP.NET Core
+    href: enable-dynamic-configuration-aspnet-core.md
+  - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
+    href: integrate-azure-managed-service-identity.md
+- name: Примеры
+  items:
+  - name: Примеры кода
+    href: https://github.com/Azure/AppConfiguration/samples
+  - name: Инфраструктура CLI Azure
+    href: cli-samples.md
+- name: Основные понятия
+  items:
+  - name: Хранилище ключ-значение
+    href: concept-key-value.md
+  - name: Моментальный снимок на определенный момент времени
+    href: concept-point-time-snapshot.md
+- name: Практические руководства
+  items:
+  - name: Импорт и экспорт данных конфигурации
+    href: howto-import-export-data.md
+  - name: Интеграция с конвейером CI/CD
+    href: howto-integrate-ci-cd-pipeline.md
+- name: Справочные материалы
+  items:
+  - name: Поставщик конфигурации .NET Core
+    href: https://go.microsoft.com/fwlink/?linkid=2074664
+  - name: Построитель конфигураций .NET Framework
+    href: https://go.microsoft.com/fwlink/?linkid=2074663
+  - name: Поставщик конфигурации Java Spring
+    href: https://go.microsoft.com/fwlink/?linkid=2074659
+  - name: REST
+    href: https://docs.microsoft.com/rest/api/azure-app-configuration
+ms.openlocfilehash: c35296a6923e464ca20a873de4165ea20c08278f
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56884140"

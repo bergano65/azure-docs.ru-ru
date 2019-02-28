@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 28172ed2309c1e97fe6dafa46cf055862a894cee
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: daf643a96195bc5f8f30652eaf1e7b071d63fa87
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730347"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56888242"
 documentType: LandingData
 title: Документация по API проверки орфографии Bing
 metadata:
@@ -12,18 +12,39 @@ metadata:
   title: Документация по API проверки орфографии Bing. Руководства и справочник по API — Azure Cognitive Services | Документация Майкрософт
   description: Узнайте, как использовать API проверки орфографии Bing, чтобы получить предлагаемые исправления текстовых документов. В руководствах описано, как создавать приложения, использующие API.
   services: cognitive-services
-  author: noellelacharite
-  manager: nolachar
+  author: aahill
+  manager: cgronlun
   ms.service: cognitive-services
   ms.subservice: bing-spell-check
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 05/09/2018
-  ms.author: nolachar
+  ms.date: 02/19/2019
+  ms.author: aahi
 abstract:
   description: API Bing для проверки орфографии позволяет выполнять контекстную проверку орфографии и грамматики. Для Bing разработано веб-средство проверки орфографии, которое использует машинное обучение и статистический машинный перевод для динамического обучения контекстно-зависимого и постоянно развивающегося алгоритма. Средство проверки орфографии создано на базе большого количества документации и запросов веб-поиска. Узнайте, как анализировать содержимое разными способами, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/bing-spell-check/overview
+      html: <p>Сведения об API "Проверка орфографии Bing".</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Что такое с API проверки орфографии Bing?
+    - href: /azure/cognitive-services/bing-spell-check/concepts/sending-requests
+      html: <p>Узнайте, как отправлять запросы на проверку орфографии к API "Проверка орфографии Bing".</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Запросы на проверку орфографии
+    - href: /azure/cognitive-services/bing-spell-check/concepts/using-spell-check
+      html: <p>Сведения об использовании различных режимов API проверки орфографии.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Ответ Поиска изображений
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
@@ -63,7 +84,6 @@ sections:
     style: unordered
     items:
     - html: <a href="tutorials/spellcheck.md">Одностраничные веб-приложения</a>
-    - html: <a href="tutorials/spellcheck-source.md">Одностраничные веб-приложения (исходный код)</a>
 - title: Примеры
   items:
   - type: paragraph

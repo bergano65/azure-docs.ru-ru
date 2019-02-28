@@ -234,12 +234,12 @@ items:
     - name: Подключение HDInsight к локальной сети
       href: ../connect-on-premises-network.md
       maintainContext: true
-  - name: Мониторинг с помощью Log Analytics
+  - name: Мониторинг с использованием журналов Azure Monitor
     items:
-    - name: Использование Azure Log Analytics
+    - name: Использование журналов Azure Monitor
       href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
       maintainContext: true
-    - name: Использование запросов в Log Analytics
+    - name: Использование запросов с журналами Azure Monitor
       href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
       maintainContext: true
     - name: Мониторинг производительности кластера
@@ -281,9 +281,9 @@ items:
   - name: Средства Windows для HDInsight
     href: ../hdinsight-hadoop-windows-tools.md
     maintainContext: true
-ms.openlocfilehash: c9524d96975a2eb443e3daec7122dc10ecc7e56d
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
+ms.openlocfilehash: 442093602bf9eb1acf79437bf0941908df7e2219
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55893636"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56887613"
