@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d492db8e50a9ff34da1940b01465fe0ca7f7c4b
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: e92d4b66a42592dd06773b3973165ecd064efb4d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56302018"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56866121"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Руководство. Интеграция Azure Active Directory с CA PPM
+# <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Руководство по Интеграция Azure Active Directory с CA PPM
 
 В этом учебнике описано, как интегрировать CA PPM с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением CA PPM обеспечивает следующие преимущества:
@@ -107,7 +107,7 @@ ms.locfileid: "56302018"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://ca.ondemand.saml.20.post.<companyname>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите такое значение: `https://fedsso.ondemand.ca.com/affwebservices/public/saml2assertionconsumer`.
+    b. В текстовом поле **URL-адрес ответа** введите такое значение: `https://fedsso.ondemand.ca.com/affwebservices/public/saml2assertionconsumer`.
 
     > [!NOTE]
     > Это значение приведено для справки. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь в [службу поддержки клиентов CA PPM](mailto:catechnicalsupport@ca.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,14 +146,14 @@ ms.locfileid: "56302018"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -193,8 +193,8 @@ ms.locfileid: "56302018"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

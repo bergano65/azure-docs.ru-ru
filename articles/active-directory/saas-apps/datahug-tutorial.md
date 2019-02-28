@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41f625846a53d4e1833820e9c2021da58a139701
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 27fa12f7c5c0a1c6b8a8b3bef9416a9dff69ae0e
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170275"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56881198"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство. Интеграция Azure Active Directory с Datahug
+# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство по Интеграция Azure Active Directory с Datahug
 
 В этом руководстве описано, как интегрировать приложение Datahug с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Datahug обеспечивает следующие преимущества:
@@ -128,7 +128,7 @@ ms.locfileid: "56170275"
 
     a. В поле **Вариант подписывания** выберите **Утверждение знака SAML**.
 
-    б) В поле **Алгоритм подписи** выберите **SHA-1**.
+    b. В поле **Алгоритм подписи** выберите **SHA-1**.
     
     c. Нажмите кнопку **Сохранить**
 
@@ -169,9 +169,9 @@ ms.locfileid: "56170275"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -232,9 +232,9 @@ ms.locfileid: "56170275"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

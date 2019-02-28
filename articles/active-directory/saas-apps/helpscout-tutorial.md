@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Help Scout | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Help Scout | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Help Scout.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 790176d6a9ad54357e90c0f68368038fb786bd0d
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 3650704cd3d01d1cce21a665f3731a00a2107ab7
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454537"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56865728"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство. Интеграция Azure Active Directory с Help Scout
 
@@ -108,7 +108,7 @@ ms.locfileid: "56454537"
 
     a. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
 
-    б) **URL-адрес ответа** — это **URL-адрес обратной отправки (URL-адрес службы обработчика утверждений)** из Help Scout, который начинается с `https://` 
+    b. **URL-адрес ответа** — это **URL-адрес обратной отправки (URL-адрес службы обработчика утверждений)** из Help Scout, который начинается с `https://` 
 
     > [!NOTE]
     > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическими URL-адресом ответа и идентификатором. Эти значения можно найти на вкладке **Single Sign-On** (Единый вход) в разделе Authentication (Аутентификация), как описано далее в этом руководстве.
@@ -151,7 +151,7 @@ ms.locfileid: "56454537"
 
     a. Скопируйте значение **URL-адреса обратной отправки (URL-адрес службы обработчика утверждений)** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
 
-    б) Скопируйте значение **URI аудитории** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
+    b. Скопируйте значение **URI аудитории** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
 
 5. Переключите параметр **Enable SAML** (Включить SAML) в положение "Вкл." и выполните следующие действия:
 
@@ -159,7 +159,7 @@ ms.locfileid: "56454537"
 
     a. В текстовое поле **URL-адрес для единого входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    б) Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)**, скачанный с портала Azure.
+    b. Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)**, скачанный с портала Azure.
 
     c. Введите домен электронной почты вашей организации, например `contoso.com`, в текстовом поле **Email Domains** (Почтовые домены). Несколько доменов можно разделять запятыми. Пользователь или администратор Help Scout, входящий в этот домен на [странице входа Help Scout](https://secure.helpscout.net/members/login/), будет перенаправлен к поставщику удостоверений для проверки подлинности учетных данных.
 
@@ -183,14 +183,14 @@ ms.locfileid: "56454537"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -230,8 +230,8 @@ ms.locfileid: "56454537"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

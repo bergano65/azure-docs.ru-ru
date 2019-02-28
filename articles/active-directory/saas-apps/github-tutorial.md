@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с GitHub | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с GitHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GitHub.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a648665f607234d585bb2bde8f6adc10ffbfea
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: abddd3f88e8e523b5856de0ff19998a0e07e7376
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56236411"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870590"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство. Интеграция Azure Active Directory с GitHub
+# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство по Интеграция Azure Active Directory с GitHub
 
 В этом руководстве описано, как интегрировать GitHub с Azure Active Directory (Azure AD).
 Интеграция Azure AD с GitHub обеспечивает следующие преимущества.
@@ -109,7 +109,7 @@ ms.locfileid: "56236411"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>/sso`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`.
 
     > [!NOTE]
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Перейдите в раздел администрирования GitHub, чтобы получить эти значения.
@@ -150,7 +150,7 @@ ms.locfileid: "56236411"
 
     a. В текстовое поле **Sign on URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    б) В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+    b. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
@@ -183,14 +183,14 @@ ms.locfileid: "56236411"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -240,7 +240,7 @@ ms.locfileid: "56236411"
 
     ![Приглашение участников](./media/github-tutorial/tutorial_github_config_github_10.png "приглашение участников")
 
-    б) Щелкните **Send Invitation** (Отправить приглашение).
+    b. Щелкните **Send Invitation** (Отправить приглашение).
 
     ![Приглашение участников](./media/github-tutorial/tutorial_github_config_github_11.png "приглашение участников")
 
@@ -255,8 +255,8 @@ ms.locfileid: "56236411"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

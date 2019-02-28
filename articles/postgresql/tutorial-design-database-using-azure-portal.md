@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
 ms.date: 03/20/2018
-ms.openlocfilehash: 441b56aa683ac01566d2fd2877b9b8b912194f3a
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 869bee8fcd0d1c2876ac7317fb239a1d5c61cb87
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536531"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56864555"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql-using-the-azure-portal"></a>Руководство. Разработка базы данных в службе "База данных Azure для PostgreSQL" с помощью портала Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "53536531"
 
 1.  По завершении развертывания щелкните **Все ресурсы** в меню слева и введите имя **mydemoserver**, чтобы найти созданный сервер. Щелкните имя сервера в результатах поиска. После этого откроется страница **обзора** сервера с параметрами для дальнейшей конфигурации.
 
-   ![База данных Azure для PostgreSQL. Поиск сервера ](./media/tutorial-design-database-using-azure-portal/4-locate.png)
+   ![База данных Azure для PostgreSQL. Поиск сервера](./media/tutorial-design-database-using-azure-portal/4-locate.png)
 
 2.  На странице сервера выберите **Безопасность подключения**. 
 
@@ -98,7 +98,7 @@ ms.locfileid: "53536531"
 
 1. На портале Azure в меню слева щелкните **Все ресурсы** и найдите только что созданный сервер.
 
-   ![База данных Azure для PostgreSQL. Поиск сервера ](./media/tutorial-design-database-using-azure-portal/4-locate.png)
+   ![База данных Azure для PostgreSQL. Поиск сервера](./media/tutorial-design-database-using-azure-portal/4-locate.png)
 
 2. Щелкните имя сервера **mydemoserver**.
 

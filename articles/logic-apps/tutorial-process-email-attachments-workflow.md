@@ -10,12 +10,12 @@ manager: jeconnoc
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 07/20/2018
-ms.openlocfilehash: 1d047e3dfe37929a02c141af675062abb9718786
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: aa534ca4fb29237de6377c7225a11f4758f39c55
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56448149"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588387"
 ---
 # <a name="tutorial-automate-handling-emails-and-attachments-with-azure-logic-apps"></a>Руководство. Обработка сообщений электронной почты и вложений с помощью Azure Logic Apps
 
@@ -100,7 +100,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
       ![Созданный контейнер хранилища Azure](./media/tutorial-process-email-attachments-workflow/created-storage-container.png)
 
-   Контейнер хранилища также можно создать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage/new-AzStoragecontainer) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create). 
+   Контейнер хранилища также можно создать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.storage/new-azstoragecontainer) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create). 
 
 Подключите Обозреватель службы хранилища к учетной записи.
 

@@ -8,14 +8,14 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 04/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 352444dcb3beace0e1618aadba50b56cdcd9d003
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 17a147b12d660e25bfba1e3b987f9c6ae219942d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53545796"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882592"
 ---
-# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для MySQL с помощью Azure CLI
+# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 
 База данных Azure для MySQL — это служба реляционной базы данных в Microsoft Cloud на основе ядра СУБД MySQL Community Edition. Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 
@@ -27,6 +27,8 @@ ms.locfileid: "53545796"
 > * Запрос данных
 > * Обновление данных
 > * восстановление данных.
+
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
 Вы можете использовать Azure Cloud Shell в браузере или [установить Azure CLI]( /cli/azure/install-azure-cli) на компьютере, чтобы запустить блоки кода в этом руководстве.
 

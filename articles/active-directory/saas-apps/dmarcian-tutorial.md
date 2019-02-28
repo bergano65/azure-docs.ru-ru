@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4768c38b2e76bfa8cdff3187c32c03fdaaf57bbf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a2c6b95d62f6210ecfdd560bc1c00a3e055be3ee
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207659"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880359"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dmarcian"></a>Руководство. Интеграция Azure Active Directory с dmarcian
 
@@ -112,7 +112,7 @@ ms.locfileid: "56207659"
     | `https://dmarcian-eu.com/sso/saml/<ACCOUNT_ID>/sp.xml` |
     | `https://dmarcian-ap.com/sso/saml/<ACCOUNT_ID>/sp.xml` |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
     | |
     |--|
     | `https://us.dmarcian.com/login/<ACCOUNT_ID>/handle/` |
@@ -143,15 +143,15 @@ ms.locfileid: "56207659"
 
 2. Щелкните **Profile** (Профиль) в верхнем правом углу, а затем выберите **Preferences** (Предпочтения).
 
-    ![Предпочтения ](./media/dmarcian-tutorial/tutorial_dmarcian_pref.png)
+    ![Предпочтения](./media/dmarcian-tutorial/tutorial_dmarcian_pref.png)
 
 3. Прокрутите вниз до раздела **Single Sign-On** (Единый вход) и нажмите кнопку **Configure** (Настроить).
 
-    ![Единый вход ](./media/dmarcian-tutorial/tutorial_dmarcian_sso.png)
+    ![Единый вход](./media/dmarcian-tutorial/tutorial_dmarcian_sso.png)
 
 4. На странице **SAML Single Sign-On** (Единый вход SAML) установите в поле **Status** (Состояние) значение **Enabled** (Включено) и выполните следующие действия:
 
-    ![Аутентификация ](./media/dmarcian-tutorial/tutorial_dmarcian_auth.png)
+    ![Аутентификация](./media/dmarcian-tutorial/tutorial_dmarcian_auth.png)
 
     * В разделе **Add dmarcian to your Identity Provider** (Добавление dmarcian к поставщику удостоверений) щелкните **COPY** (Копировать), чтобы скопировать **URL-адрес службы обработчика утверждений** для вашего экземпляра и вставить его в текстовое поле **URL-адреса ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -189,9 +189,9 @@ ms.locfileid: "56207659"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -229,19 +229,19 @@ ms.locfileid: "56207659"
 
 2. Щелкните **Profile** (Профиль) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
 
-    ![Пользователь ](./media/dmarcian-tutorial/tutorial_dmarcian_user.png)
+    ![Пользователь](./media/dmarcian-tutorial/tutorial_dmarcian_user.png)
 
 3. В правой части раздела **SSO Users** (Пользователи единого входа) щелкните **Add New User** (Добавить нового пользователя).
 
-    ![Добавление пользователя ](./media/dmarcian-tutorial/tutorial_dmarcian_addnewuser.png)
+    ![Добавление пользователя](./media/dmarcian-tutorial/tutorial_dmarcian_addnewuser.png)
 
 4. Во всплывающем меню **Add New User** (Добавление нового пользователя) сделайте следующее:
 
-    ![Новый пользователь ](./media/dmarcian-tutorial/tutorial_dmarcian_save.png)
+    ![Новый пользователь](./media/dmarcian-tutorial/tutorial_dmarcian_save.png)
 
     a. В текстовое поле **New User Email** (Новая электронная почта Пользователя) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
-    б) Если нужно предоставить пользователю права администратора, выберите **Make User an Admin** (Сделать пользователя администратором).
+    b. Если нужно предоставить пользователю права администратора, выберите **Make User an Admin** (Сделать пользователя администратором).
 
     c. Нажмите кнопку **Add User**(Добавить пользователя).
 
@@ -253,9 +253,9 @@ ms.locfileid: "56207659"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

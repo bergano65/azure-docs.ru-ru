@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a5cc26bbc3ea090d45eb0304885fb467fb2ce31
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: e5e69b5680edf4b633703eccdd68cd3752d989ec
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202457"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878520"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
 
@@ -107,7 +107,7 @@ ms.locfileid: "56202457"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.maps.arcgis.com`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<companyname>.maps.arcgis.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<companyname>.maps.arcgis.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [группу поддержки ArcGIS Online](https://support.esri.com/en/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -144,7 +144,7 @@ ms.locfileid: "56202457"
 
     a. В текстовое поле **Name** (Имя) введите название своей организации.
 
-    б) Для параметра **Metadata for the Enterprise Identity Provider will be supplied using** (В предоставлении метаданных для корпоративного поставщика удостоверений будет использоваться) выберите значение **Файл**.
+    b. Для параметра **Metadata for the Enterprise Identity Provider will be supplied using** (В предоставлении метаданных для корпоративного поставщика удостоверений будет использоваться) выберите значение **Файл**.
 
     c. Чтобы отправить загруженный файл метаданных, нажмите кнопку **Выбрать файл**.
 
@@ -166,14 +166,14 @@ ms.locfileid: "56202457"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -224,7 +224,7 @@ ms.locfileid: "56202457"
     
      a. Введите в поля **Email** (Адрес электронной почты), **First name** (Имя) и **Last name** (Фамилия) соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
   
-     б) Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
+     b. Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
 5. Просмотрите введенные данные и нажмите кнопку **ADD MEMBERS** (Добавить участников).
    
     ![Добавление участника](./media/arcgis-tutorial/ic784750.png "Добавление участника")
@@ -240,9 +240,9 @@ ms.locfileid: "56202457"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

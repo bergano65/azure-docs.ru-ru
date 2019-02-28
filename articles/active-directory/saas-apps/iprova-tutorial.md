@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением iProva | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением iProva | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iProva.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6576366df214304bb30c46fa65a4bc8bc783cedf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: c65f8e023e087c3ca49e0d53f5760fbcd9a5f4d9
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182108"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869213"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство по Интеграция Azure Active Directory с iProva
+# <a name="tutorial-azure-active-directory-integration-with-iprova"></a>Руководство. Интеграция Azure Active Directory с iProva
 
 В этом руководстве описано, как интегрировать iProva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением iProva обеспечивает следующие преимущества.
@@ -122,7 +122,7 @@ ms.locfileid: "56182108"
 
     a. В поле **Идентификатор** укажите значение, которое отображается под меткой **идентификатора сущности** на **странице сведений о SAML2 в iProva**. Эта страница, которую вы открывали в другой вкладке браузера.
 
-    б) В поле **URL-адрес ответа** укажите значение, которое отображается под меткой **URL-адреса ответа** на **странице сведений о SAML2 в iProva**. Эта страница, которую вы открывали в другой вкладке браузера.
+    b. В поле **URL-адрес ответа** укажите значение, которое отображается под меткой **URL-адреса ответа** на **странице сведений о SAML2 в iProva**. Эта страница, которую вы открывали в другой вкладке браузера.
 
     c. В поле **URL-адрес входа** укажите значение, которое отображается под меткой **URL-адреса входа** на **странице сведений о SAML2 в iProva**. Эта страница, которую вы открывали в другой вкладке браузера.
 
@@ -145,7 +145,7 @@ ms.locfileid: "56182108"
 
     ![Диалоговое окно "Управление утверждениями пользователя"](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой записи.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой записи.
 
     c. В списке **Пространство имен** введите значение пространства имен, отображаемое для этой строки.
 
@@ -221,7 +221,7 @@ ms.locfileid: "56182108"
 
     a. В поле **Имя** введите значение **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите *yourname@yourcompanydomain.extension*. 
+    b. В поле **Имя пользователя** введите *yourname@yourcompanydomain.extension*. 
     Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
@@ -286,7 +286,7 @@ ms.locfileid: "56182108"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 - [О настройке единого входа SAML2 для iProva](https://webshare.iprova.nl/0wqwm45yn09f5poh/Document.aspx)

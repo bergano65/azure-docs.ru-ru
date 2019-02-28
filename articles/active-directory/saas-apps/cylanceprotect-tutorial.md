@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffec8147cf3a2084ca7202e4bc58cf31546e2445
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: c0bdb8612294c07593abaf02e4c0e3ea02e72a00
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178436"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56868055"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cylanceprotect"></a>Руководство по Интеграция Azure Active Directory с CylancePROTECT
+# <a name="tutorial-azure-active-directory-integration-with-cylanceprotect"></a>Руководство. Интеграция Azure Active Directory с CylancePROTECT
 
 Из этого руководства вы узнаете, как интегрировать CylancePROTECT с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением CylancePROTECT обеспечивает следующие преимущества:
@@ -115,7 +115,7 @@ ms.locfileid: "56178436"
     | Северная Америка|`https://login.cylance.com/EnterpriseLogin/ConsumeSaml`|
     | Северная Америка (SAE1)|`https://login-sae1.cylance.com/EnterpriseLogin/ConsumeSaml`|
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес:
     
     | Регион | Значение URL-адреса |
     |----------|---------|
@@ -159,14 +159,14 @@ ms.locfileid: "56178436"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -206,9 +206,9 @@ ms.locfileid: "56178436"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

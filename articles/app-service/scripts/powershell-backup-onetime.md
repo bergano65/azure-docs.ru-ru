@@ -15,12 +15,12 @@ ms.topic: sample
 ms.date: 10/30/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 13d985b95d971ea28ec5345dbb86df7a3271b716
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: f1f08ca8517d01a6d72f1f8a18514ea3f851ff14
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115187"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56587911"
 ---
 # <a name="back-up-a-web-app-using-powershell"></a>Резервное копирование веб-приложения с помощью PowerShell
 
@@ -50,8 +50,8 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount) | Создает учетную запись хранения. |
-| [New-AzStorageContainer](/powershell/module/azure.storage/new-AzStoragecontainer) | Позволяет создать контейнер хранилища Azure. |
-| [New-AzStorageContainerSASToken](/powershell/module/azure.storage/new-AzStoragecontainersastoken) | Создание маркера SAS для контейнера хранилища Azure.  |
+| [New-AzStorageContainer](/powershell/module/az.storage/new-AzStoragecontainer) | Позволяет создать контейнер хранилища Azure. |
+| [New-AzStorageContainerSASToken](/powershell/module/az.storage/new-AzStoragecontainersastoken) | Создание маркера SAS для контейнера хранилища Azure.  |
 | [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
 | [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
 | [New-AzWebAppBackup](/powershell/module/az.websites/new-azwebappbackup) | Позволяет создать резервную копию для веб-приложения. |

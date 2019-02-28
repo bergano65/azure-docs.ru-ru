@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 535dd04efd9f150365b24ae175ee90fbb247305f
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: 28b15e950aa4ebbfcb1b04bfd495b3accf13528e
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54846682"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56586908"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
 
@@ -41,40 +41,11 @@ ms.locfileid: "54846682"
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Создание пространства имен с помощью портала Azure
-
-> [!NOTE] 
-> Вы также можете создать пространство имен служебной шины и сущности обмена сообщениями [с помощью PowerShell](/powershell/azure/get-started-azureps). Дополнительные сведения см. в статье [Управление ресурсами служебной шины с помощью модуля PowerShell](service-bus-manage-with-ps.md).
-
-Если пространство имен для обмена сообщениями служебной шины уже создано, перейдите к разделу [Создание раздела с помощью портала Azure](#2-create-a-topic-using-the-azure-portal).
-
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## <a name="2-create-a-topic-using-the-azure-portal"></a>2. Создание раздела с помощью портала Azure
+[!INCLUDE [service-bus-create-topics-subscriptions-portal](../../includes/service-bus-create-topics-subscriptions-portal.md)]
 
-1. Войдите на [портал Azure][azure-portal].
-2. В левой области навигации портала щелкните **Служебная шина**. Если элемент **Служебная шина** не отображается, щелкните **Все службы** или **All resources** (Все ресурсы). Щелкните пространство имен, в котором хотите создать раздел. 
-3. Откроется окно обзора пространства имен. Щелкните **Разделы**.
-   
-    ![Создание раздела][createtopic1]
-4. Нажмите кнопку **+ Раздел**.
-   
-    ![Выбор разделов][createtopic2]
-5. Введите имя раздела. Для других параметров оставьте значения по умолчанию.
-   
-    ![Нажмите кнопку "Создать"][createtopic3]
-6. Нажмите кнопку **Создать** в нижней части диалогового окна.
-
-## <a name="3-create-a-subscription-to-the-topic"></a>3. Создание подписки на раздел
-
-1. В области ресурсов на портале выберите пространство имен, созданное на шаге 1, выберите **Разделы** и щелкните имя раздела, созданное на шаге 2.
-2. В верхней части панели обзора щелкните **+ Подписка**, чтобы добавить подписку в этот раздел.
-
-    ![Создание подписки][createtopic4]
-
-3. Введите имя подписки. Для других параметров оставьте значения по умолчанию.
-
-## <a name="4-send-messages-to-the-topic"></a>4. Отправка сообщений в раздел
+## <a name="send-messages-to-the-topic"></a>Отправка сообщений в раздел
 
 Для отправки сообщений в раздел создайте консольное приложение C# с помощью Visual Studio.
 
@@ -231,7 +202,7 @@ ms.locfileid: "54846682"
    
       ![Размер сообщения][topic-message]
 
-## <a name="5-receive-messages-from-the-subscription"></a>5. Получение сообщений из подписки
+## <a name="receive-messages-from-the-subscription"></a>Получение сообщений из подписки
 
 Чтобы получить только что отправленные сообщения, создайте другое консольное приложение .NET Core и установите пакет NuGet **Microsoft.Azure.ServiceBus**, как для предыдущего приложения отправителя.
 

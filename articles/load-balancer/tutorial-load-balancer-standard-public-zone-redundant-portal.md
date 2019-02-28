@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 05/17/2018
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: d2e81e4f2eda730dc064699f42ba7bfb49648082
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: e83991f553d00af11cfc275137f8e73ebab2098c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54230838"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882643"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -177,7 +177,7 @@ ms.locfileid: "54230838"
 4. Щелкните **Добавить новый внутренний ресурс**, чтобы добавить каждую виртуальную машину (*myVM2* и *myVM3*) во внутренний пул подсистемы балансировки нагрузки.
 5. Щелкните **Добавить**.
 
-    ![Добавление в серверный пул адресов ](./media/load-balancer-standard-public-availability-zones-portal/add-backend-pool.png)
+    ![Добавление в серверный пул адресов](./media/load-balancer-standard-public-availability-zones-portal/add-backend-pool.png)
 
 3. Убедитесь, что в настройках внутреннего пула подсистемы балансировки нагрузки отображаются все три виртуальные машины (**myVM1**, **myVM2** и **myVM3**).
 

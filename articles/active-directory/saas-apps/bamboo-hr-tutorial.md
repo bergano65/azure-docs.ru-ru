@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 403ca71aee0a10b1934e095ce119f6706c0381b8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 52846cad3a0f60bc8ba9431b8927763c8695bf85
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188517"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879158"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Руководство по Интеграция Azure Active Directory с BambooHR
+# <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Руководство. Интеграция Azure Active Directory с BambooHR
 
 В этом руководстве описано, как интегрировать BambooHR с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением BambooHR обеспечивает следующие преимущества:
@@ -107,7 +107,7 @@ ms.locfileid: "56188517"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company>.bamboohr.com`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `BambooHR-SAML`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `BambooHR-SAML`.
 
     > [!NOTE]
     > Значение **URL-адреса входа** приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки BambooHR](https://www.bamboohr.com/contact.php). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -136,7 +136,7 @@ ms.locfileid: "56188517"
 
     a. Выберите **Apps** (Приложения).
    
-    б) На панели **Apps** (Приложения) выберите **Single Sign-On** (Единый вход).
+    b. На панели **Apps** (Приложения) выберите **Single Sign-On** (Единый вход).
    
     c. Выберите **SAML Single Sign-On** (Единый вход SAML).
 
@@ -146,7 +146,7 @@ ms.locfileid: "56188517"
    
     a. В поле **SSO Login URL** (URL-адрес для единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure на 6 шаге.
       
-    б) В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
+    b. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
    
     c. Щелкните **Сохранить**.
 
@@ -166,14 +166,14 @@ ms.locfileid: "56188517"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -230,9 +230,9 @@ ms.locfileid: "56188517"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением 4me | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением 4me | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и 4me.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f111fb316e1bc58f684e6bd6dc3d8e4461473c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 1d3a2995fa1dc0b0c77898b0fa76791bb76e18c0
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168873"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56883970"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-4me"></a>Руководство по Интеграция Azure Active Directory с приложением 4me
+# <a name="tutorial-azure-active-directory-integration-with-4me"></a>Руководство. Интеграция Azure Active Directory с приложением 4me
 
 В этом руководстве описано, как интегрировать 4me с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением 4me обеспечивает следующие преимущества.
@@ -114,7 +114,7 @@ ms.locfileid: "56168873"
     | QA| `https://<SUBDOMAIN>.4me.qa`|
     | | |
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
     | Среда| URL-адрес|
     |---|---|
@@ -143,7 +143,7 @@ ms.locfileid: "56168873"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -187,7 +187,7 @@ ms.locfileid: "56168873"
 
     a. Установите флажок **Enabled** (Включено).
 
-    б) В текстовое поле **URL-адрес удаленного выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес удаленного выхода** вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
     c. В разделе **SAML** в текстовое поле **URL-адрес единого входа SAML** вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -211,14 +211,14 @@ ms.locfileid: "56168873"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -261,8 +261,8 @@ ms.locfileid: "56168873"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с NetSuite | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с NetSuite | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в NetSuite.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58767438e7a1faf7e1e783fc95a33a35ece3774a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: f9c1b7b60069b4ea59828bc552c4dc1e6da6b001
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202627"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869060"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Руководство. Интеграция Azure Active Directory с NetSuite
+# <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Руководство по Интеграция Azure Active Directory с NetSuite
 
 В этом руководстве описано, как интегрировать NetSuite с Azure Active Directory (Azure AD).
 Интеграция Azure AD с NetSuite обеспечивает следующие преимущества:
@@ -140,7 +140,7 @@ ms.locfileid: "56202627"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -203,7 +203,7 @@ ms.locfileid: "56202627"
   
     a. Выберите **PRIMARY AUTHENTICATION METHOD** (Основной способ проверки подлинности).
 
-    б) В поле **SAMLV2 IDENTITY PROVIDER METADATA** (Метаданные поставщика удостоверений SAMLV2) выберите **UPLOAD IDP METADATA FILE** (Отправить файл метаданных поставщика удостоверений). Затем нажмите кнопку **Обзор**, чтобы добавить файл метаданных, скачанный с портала Azure.
+    b. В поле **SAMLV2 IDENTITY PROVIDER METADATA** (Метаданные поставщика удостоверений SAMLV2) выберите **UPLOAD IDP METADATA FILE** (Отправить файл метаданных поставщика удостоверений). Затем нажмите кнопку **Обзор**, чтобы добавить файл метаданных, скачанный с портала Azure.
 
     c. Нажмите кнопку **Submit**(Отправить).
 
@@ -213,7 +213,7 @@ ms.locfileid: "56202627"
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-account-id.png)
 
-    б) На странице **Сведения о компании** в правом столбце скопируйте **идентификатор учетной записи**.
+    b. На странице **Сведения о компании** в правом столбце скопируйте **идентификатор учетной записи**.
 
     c. Вставьте **идентификатор учетной записи**, скопированный из учетной записи NetSuite, в поле **Значение атрибута** в Azure AD. 
 
@@ -223,7 +223,7 @@ ms.locfileid: "56202627"
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-setup.png)
 
-    б) В меню навигации слева выберите **Users/Roles** (Пользователи и роли), а затем — **Manage Roles** (Управление ролями).
+    b. В меню навигации слева выберите **Users/Roles** (Пользователи и роли), а затем — **Manage Roles** (Управление ролями).
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-manage-roles.png)
 
@@ -277,14 +277,14 @@ ms.locfileid: "56202627"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -324,9 +324,9 @@ ms.locfileid: "56202627"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

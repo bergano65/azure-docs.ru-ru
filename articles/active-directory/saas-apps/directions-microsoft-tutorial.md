@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Directions on Microsoft | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Directions on Microsoft | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory с Directions on Microsoft.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b767854842faf7980c3d773d2700a9c08317b53b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 87b3ee979c39e80c771b49abb51358b75ff4df54
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172507"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875724"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-directions-on-microsoft"></a>Руководство по Интеграция Azure Active Directory с Directions on Microsoft
+# <a name="tutorial-azure-active-directory-integration-with-directions-on-microsoft"></a>Руководство. Интеграция Azure Active Directory с Directions on Microsoft
 
 В этом руководстве описано, как интегрировать Directions on Microsoft с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Directions on Microsoft обеспечивает следующие преимущества.
@@ -111,7 +111,7 @@ ms.locfileid: "56172507"
     | `https://www.directionsonmicrosoft.com/user/login` |
     | `https://<subdomain>.devcloud.acquia-sites.com/<companyname>` |
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     |  |
     | --- |
     | `https://rhelmdirectionsonmicrosoftcomtest.devcloud.acquia-sites.com/simplesaml/<companyname>` |
@@ -157,14 +157,14 @@ ms.locfileid: "56172507"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -206,9 +206,9 @@ ms.locfileid: "56172507"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

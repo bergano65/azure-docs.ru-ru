@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Boomi | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Boomi | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boomi.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 049c2ad008bfeda0969087a8c08a08cd00f38d5e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 15149cd172611bdb9b18d27c40cbfa44099330d3
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56160934"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56868992"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство. Интеграция Azure Active Directory с Boomi
+# <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство по Интеграция Azure Active Directory с Boomi
 
 В этом руководстве описано, как интегрировать Boomi с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Boomi обеспечивает следующие преимущества.
@@ -107,7 +107,7 @@ ms.locfileid: "56160934"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://platform.boomi.com/`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://platform.boomi.com/sso/<boomi-tenant>/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://platform.boomi.com/sso/<boomi-tenant>/saml`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Для получения этого значения обратитесь в [группу поддержки клиентов Boomi](https://boomi.com/company/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -128,7 +128,7 @@ ms.locfileid: "56160934"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "56160934"
 
     a. Установите флажок **Enable SAML Single Sign-On** (Разрешить единый вход SAML).
 
-    б) Щелкните **Import** (Импорт), чтобы передать сертификат, загруженный из Azure AD, в качестве **сертификата поставщика удостоверений**.
+    b. Щелкните **Import** (Импорт), чтобы передать сертификат, загруженный из Azure AD, в качестве **сертификата поставщика удостоверений**.
 
     c. В текстовое поле **URL-адрес для входа поставщика удостоверений** вставьте значение **URL-адрес входа** из окна конфигурации приложения Azure AD.
 
@@ -190,14 +190,14 @@ ms.locfileid: "56160934"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -245,7 +245,7 @@ ms.locfileid: "56160934"
 
     a. В текстовом поле **User e-mail address** (Адрес электронной почты пользователя) введите электронный адрес пользователя, например BrittaSimon@contoso.com.
 
-    б) В текстовом поле **First name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовом поле **First name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, предположим, Simon.
 
@@ -266,9 +266,9 @@ ms.locfileid: "56160934"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

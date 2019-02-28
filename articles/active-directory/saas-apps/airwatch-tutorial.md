@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d91f395f2fd7e65f66f1a885dbd09e725029858
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: f9bbf8e4ebf59e8084d0a831c55685238c053e13
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183961"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882711"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-airwatch"></a>Руководство. Интеграция Azure Active Directory с AirWatch
 
@@ -107,7 +107,7 @@ ms.locfileid: "56183961"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.awmdm.com/AirWatch/Login?gid=companycode`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `AirWatch`
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `AirWatch`
 
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес для входа. Для получения этого значения обратитесь в [службу поддержки клиентов AirWatch](https://www.air-watch.com/company/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -129,7 +129,7 @@ ms.locfileid: "56183961"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -181,7 +181,7 @@ ms.locfileid: "56183961"
 
     a. Для параметра **Directory Type** (Тип каталога) выберите значение **None** (Нет).
 
-    б) Установите флажок **Use SAML For Authentication**(Использовать SAML для проверки подлинности).
+    b. Установите флажок **Use SAML For Authentication**(Использовать SAML для проверки подлинности).
 
     c. Чтобы отправить скачанный сертификат, нажмите кнопку **Upload**(Отправить).
 
@@ -191,7 +191,7 @@ ms.locfileid: "56183961"
 
     a. Для параметра **Request Binding Type** (Тип привязки запроса) выберите значение **POST**.
 
-    б) На портале Azure на диалоговой странице **Configure single sign-on at Airwatch** (Настройка единого входа в AirWatch) скопируйте значение в поле **URL-адрес входа** и вставьте его в текстовое поле **Identity Provider Single Sign On URL** (URL-адрес единого входа для поставщика удостоверений).
+    b. На портале Azure на диалоговой странице **Configure single sign-on at Airwatch** (Настройка единого входа в AirWatch) скопируйте значение в поле **URL-адрес входа** и вставьте его в текстовое поле **Identity Provider Single Sign On URL** (URL-адрес единого входа для поставщика удостоверений).
 
     c. Для параметра **NameID Format** (Формат идентификатора имени) выберите значение **Email Address** (Адрес электронной почты).
 
@@ -207,7 +207,7 @@ ms.locfileid: "56183961"
 
     a. В текстовом поле **Object Identifier** (Идентификатор объекта) введите `http://schemas.microsoft.com/identity/claims/objectidentifier`.
 
-    б) В текстовом поле **Username** (Имя пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    b. В текстовом поле **Username** (Имя пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     c. В текстовом поле **Display Name** (Отображаемое имя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
@@ -235,14 +235,14 @@ ms.locfileid: "56183961"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -292,7 +292,7 @@ ms.locfileid: "56183961"
 
    a. В текстовых полях **Username** (Имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля), **First Name** (Имя), **Last Name** (Фамилия) и **Email Address** (Адрес электронной почты) введите соответствующие данные действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
-   б) Выберите команду **Сохранить**.
+   b. Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя AirWatch или API, предоставляемые AirWatch для подготовки учетных записей пользователя AAD.
@@ -305,8 +305,8 @@ ms.locfileid: "56183961"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

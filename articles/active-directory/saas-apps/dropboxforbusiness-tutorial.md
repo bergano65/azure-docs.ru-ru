@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/20/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 948121ad6b3a0f666fcc8fa64096bab91927b474
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ad1770584b7b84888b42d2ddb74d6eef6eef898c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186154"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882864"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство. Интеграция Azure Active Directory с Dropbox for Business
 
@@ -109,7 +109,7 @@ ms.locfileid: "56186154"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.dropbox.com/sso/<id>`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `Dropbox`.
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `Dropbox`.
 
     > [!NOTE]
     > Приведенное выше значение "URL-адрес для входа" используется только для примера. Вы замените это значение на фактический URL-адрес для входа, который описывается далее в этом руководстве.
@@ -156,7 +156,7 @@ ms.locfileid: "56186154"
 
     a. Выберите параметр **Обязательная** из раскрывающегося списка для **единого входа**.
 
-    б) Щелкните **Add sign-in URL** (Добавить URL-адреса единого входа) и в текстовое поле **Identity provider sign-in URL** (URL-адрес входа для поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure, а затем выберите **Готово**.
+    b. Щелкните **Add sign-in URL** (Добавить URL-адреса единого входа) и в текстовое поле **Identity provider sign-in URL** (URL-адрес входа для поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure, а затем выберите **Готово**.
 
     ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure6.png "Настройка единого входа")
 
@@ -182,14 +182,14 @@ ms.locfileid: "56186154"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -232,9 +232,9 @@ ms.locfileid: "56186154"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

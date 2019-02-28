@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91ef20398bc3e15b1ee47c6e7c28795f4d9bc08c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: da98268d0a6ee015c848e9fe91cb3deecf28c4f4
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190948"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875707"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dome9-arc"></a>Руководство по Интеграция Azure Active Directory с Dome9 Arc
+# <a name="tutorial-azure-active-directory-integration-with-dome9-arc"></a>Руководство. Интеграция Azure Active Directory с Dome9 Arc
 
 В этом руководстве описано, как интегрировать Dome9 Arc с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Dome9 Arc обеспечивает следующие преимущества.
@@ -137,7 +137,7 @@ ms.locfileid: "56190948"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -181,7 +181,7 @@ ms.locfileid: "56190948"
 
     a. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в URL-адресе ответа, как упоминалось в разделе о URL-адресе на портале Azure.
 
-    б) В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    b. В текстовое поле **Issuer** (Издатель) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В текстовое поле **Idp endpoint url** (URL-адрес конечной точки поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -205,14 +205,14 @@ ms.locfileid: "56190948"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -265,7 +265,7 @@ ms.locfileid: "56190948"
 
     a. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например Brittasimon@contoso.com.
 
-    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
@@ -281,9 +281,9 @@ ms.locfileid: "56190948"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

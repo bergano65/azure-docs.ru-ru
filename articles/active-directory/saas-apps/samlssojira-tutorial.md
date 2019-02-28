@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и SAML SSO for Jira by resolution GmbH.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9994232259231014c37beae81a5de007b142c732
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 434a22c56e0ac6476138ef258e7d83a2bfecb63f
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163093"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56871253"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство. Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -172,7 +172,7 @@ ms.locfileid: "56163093"
  
     a. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
-    б) Добавьте **имя** поставщика удостоверений (например, Azure AD).
+    b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
     c. Добавьте **описание** поставщика удостоверений (например, Azure AD).
     
@@ -188,7 +188,7 @@ ms.locfileid: "56163093"
 
     a. Нажмите кнопку **Load File** (Загрузить файл) и выберите XML-файл метаданных, который вы скачали на шаге 5.
 
-    б) Нажмите кнопку **Import** (Импортировать).
+    b. Нажмите кнопку **Import** (Импортировать).
     
     c. Дождитесь завершения импорта.
     
@@ -226,14 +226,14 @@ ms.locfileid: "56163093"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -288,7 +288,7 @@ ms.locfileid: "56163093"
 
     a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    б) В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
     c. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
@@ -304,9 +304,9 @@ ms.locfileid: "56163093"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

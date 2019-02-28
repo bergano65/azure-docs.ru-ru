@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Form.com | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Form.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Form.com.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 9cd15222ee7c86a6cfbe519a730d3724ca1ec0f6
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: d50cf28ebfc34d9b7deaff95c177f0eebd210be3
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455642"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879736"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство. Интеграция Azure Active Directory с Form.com
+# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по Интеграция Azure Active Directory с Form.com
 
 В этом руководстве описано, как интегрировать Form.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Form.com обеспечивает следующие преимущества.
@@ -106,7 +106,7 @@ ms.locfileid: "56455642"
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.wa-form.com`.
 
-    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
     | |
@@ -151,14 +151,14 @@ ms.locfileid: "56455642"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -198,9 +198,9 @@ ms.locfileid: "56455642"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

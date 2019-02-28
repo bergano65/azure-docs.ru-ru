@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba6a932a3446679bdbf7beea8bbbe95740515e15
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 23ba6e46d5f92e8b07077aaf82ad03f49dc2df7a
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217791"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56865218"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство. Интеграция Azure Active Directory с KnowBe4 Security Awareness Training
+# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство по Интеграция Azure Active Directory с KnowBe4 Security Awareness Training
 
 В этом руководстве вы узнаете, как интегрировать KnowBe4 Security Awareness Training с Azure Active Directory (Azure AD).
 Интеграция KnowBe4 Security Awareness Training с Azure AD предоставляет следующие преимущества:
@@ -112,7 +112,7 @@ ms.locfileid: "56217791"
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Вместо него необходимо указать фактический URL-адрес для входа. Обратитесь в [службу поддержки клиентов KnowBe4 Security Awareness Training](mailto:support@KnowBe4.com), чтобы получить это значение. Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите значение строки `KnowBe4`.
+    b. В текстовом поле **Идентификатор (сущности)** введите значение строки `KnowBe4`.
 
     > [!NOTE]
     > Это значение следует вводить с учетом регистра.
@@ -151,14 +151,14 @@ ms.locfileid: "56217791"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -203,8 +203,8 @@ ms.locfileid: "56217791"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

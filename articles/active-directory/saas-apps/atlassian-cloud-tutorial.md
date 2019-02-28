@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Atlassian Cloud | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Atlassian Cloud | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в приложении Atlassian Cloud.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3356d7425e692f248a3850e8bef7b80d4daba276
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 601f2dc69c7b390ea05cb66976dc7bbcc98d9502
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56179949"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880504"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-atlassian-cloud"></a>Руководство. Интеграция Azure Active Directory с Atlassian Cloud
 
@@ -160,7 +160,7 @@ ms.locfileid: "56179949"
 
     a. В поле **Identity provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте идентификатор сущности SAML, скопированный на портале Azure.
 
-    б) В поле **Identity provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный с портала Azure.
+    b. В поле **Identity provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный с портала Azure.
 
     c. Откройте сертификат, скачанный с портала Azure в TXT-файле, скопируйте значения (без строк *Begin Certificate* и *End Certificate*) и вставьте их в поле **Public X509 certificate** (Общий сертификат X509).
 
@@ -172,7 +172,7 @@ ms.locfileid: "56179949"
 
     a. В окне SAML скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в поле **Идентификатор** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**.
 
-    б) В окне SAML скопируйте **URL-адрес поставщика службы обработчика утверждений поставщика услуг** и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**. URL-адрес для входа является URL-адресом клиента приложения Atlassian Cloud.
+    b. В окне SAML скопируйте **URL-адрес поставщика службы обработчика утверждений поставщика услуг** и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**. URL-адрес для входа является URL-адресом клиента приложения Atlassian Cloud.
 
     > [!NOTE]
     > Если вы уже давно являетесь клиентом, после обновления значений **идентификатора удостоверений поставщика услуг** и **URL-адреса службы обработчика утверждений** на портале Azure выберите **Yes, update configuration** (Да, обновить конфигурацию). Если вы — новый клиент, этот шаг можно пропустить.
@@ -193,14 +193,14 @@ ms.locfileid: "56179949"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -257,9 +257,9 @@ ms.locfileid: "56179949"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
    

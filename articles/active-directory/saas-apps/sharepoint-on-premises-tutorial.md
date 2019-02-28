@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9491ecfe60e4e15fdf0d1e7b2c8ea05bc9eebf9
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: dbd824d843eafc23f35097bf580743a47c73b75b
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198790"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -107,7 +107,7 @@ ms.locfileid: "56198790"
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`.
 
-    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourSharePointServerURL>/_trust/default.aspx`.
 
@@ -165,7 +165,7 @@ ms.locfileid: "56198790"
 
     a. В центре администрирования перейдите в раздел **Управление веб-приложениями** и выберите веб-приложение, которое необходимо защитить с помощью Azure AD.
 
-    б) На ленте щелкните **Поставщики проверки подлинности** и выберите зону, которую нужно использовать.
+    b. На ленте щелкните **Поставщики проверки подлинности** и выберите зону, которую нужно использовать.
 
     c. Щелкните пункт **Доверенный поставщик удостоверений** и выберите поставщика, которого вы только что зарегистрировали под именем *AzureAD*.
 
@@ -194,14 +194,14 @@ ms.locfileid: "56198790"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="grant-access-to-sharepoint-on-premises-test-user"></a>Предоставление доступа для тестового пользователя в локальной версии SharePoint
 
@@ -302,8 +302,8 @@ ms.locfileid: "56198790"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

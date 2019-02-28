@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c633d32113efc4bce8f2ea0f17b20be6f2692492
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ecb4674139d789da8944437f6b28ba543e156df2
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210566"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867666"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Руководство по Интеграция Azure Active Directory с CompetencyIQ
+# <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Руководство. Интеграция Azure Active Directory с CompetencyIQ
 
 В этом руководстве описано, как интегрировать CompetencyIQ с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением CompetencyIQ обеспечивает следующие преимущества:
@@ -107,7 +107,7 @@ ms.locfileid: "56210566"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer>.competencyiq.com/`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://www.competencyiq.com/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://www.competencyiq.com/`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Для получения значения обратитесь в [техническую поддержку клиентов CompetencyIQ](https://www.competencyiq.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,14 +146,14 @@ ms.locfileid: "56210566"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -193,9 +193,9 @@ ms.locfileid: "56210566"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

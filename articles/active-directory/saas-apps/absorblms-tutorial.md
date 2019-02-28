@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Absorb LMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Absorb LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Absorb LMS.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43153edc3e10f15e0fd17e35fd98a7ddd11bdf6f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 998a46bc6255898ab4754de57a2570a77896cf85
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181258"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56876744"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство по Интеграция Azure Active Directory с Absorb LMS
 
@@ -156,7 +156,7 @@ ms.locfileid: "56181258"
 
     a. В текстовом поле **Имя** введите имя, например Azure AD Marketplace SSO.
 
-    б) Выберите **SAML**в качестве **метода**.
+    b. Выберите **SAML**в качестве **метода**.
 
     c. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**. Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
 
@@ -192,14 +192,14 @@ ms.locfileid: "56181258"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -249,7 +249,7 @@ ms.locfileid: "56181258"
 
     a. В текстовом поле **First Name** (Имя) введите имя, например **Britta**.
 
-    б) В текстовом поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
     c. В текстовом поле **Username** (Имя пользователя) введите полное имя, например **Britta Simon**.
 
@@ -274,8 +274,8 @@ ms.locfileid: "56181258"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

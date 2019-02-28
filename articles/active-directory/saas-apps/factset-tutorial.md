@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 220cf55151d26822d7c5098905fbc929657d2a19
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 39ae568560af32b42f3d92360bdf900a868f9654
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168421"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56883289"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-factset"></a>Руководство. Интеграция Azure Active Directory с FactSet
+# <a name="tutorial-azure-active-directory-integration-with-factset"></a>Руководство по Интеграция Azure Active Directory с FactSet
 
 В этом руководстве описано, как интегрировать FactSet с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением FactSet обеспечивает следующие преимущества.
@@ -107,7 +107,7 @@ ms.locfileid: "56168421"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://login.factset.com/services/auth-test?idpid=<GUID>`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://login.factset.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://login.factset.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов FactSet](mailto:support@factset.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -193,9 +193,9 @@ ms.locfileid: "56168421"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

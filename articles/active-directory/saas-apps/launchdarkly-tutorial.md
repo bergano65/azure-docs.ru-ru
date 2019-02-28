@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и LaunchDarkly.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2d59019d0e224691973baa3c45f46cddc5d878f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0c089e6f72af6fce7b97c0b3d467a9e1696cf87a
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168176"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56874347"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
 
@@ -108,7 +108,7 @@ ms.locfileid: "56168176"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `app.launchdarkly.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике. Если вы планируете использовать приложение в режиме **поставщика удостоверений**, необходимо оставить поле **URL-адрес для входа** пустым. В противном случае вы не сможете инициировать вход из **поставщика удостоверений**. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -155,7 +155,7 @@ ms.locfileid: "56168176"
 
     a. Скопируйте **SAML consumer service URL** (URL-адрес службы объекта-получателя SAML) для своего экземпляра и вставьте его в текстовое поле "URL-адрес ответа" в разделе **Домен и URL-адреса приложения LaunchDarkly** на портале Azure.
 
-    б) В текстовое поле **URL-адрес для входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     c. Откройте в Блокноте скачанный с портала Azure сертификат, скопируйте его содержимое и вставьте его в поле **Сертификат X.509**. Кроме того, можно отправить сертификат напрямую, выбрав **upload one** (Отправить).
 
@@ -177,14 +177,14 @@ ms.locfileid: "56168176"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -227,8 +227,8 @@ ms.locfileid: "56168176"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

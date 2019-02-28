@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cezanne HR Software.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac777eebeece7cd67126a639c45e5cf6665f7a9b
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: b3c4eff92fa0ca63eccf331f5a6ba9e43610fc7b
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313064"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56874071"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство. Интеграция Azure Active Directory с Cezanne HR Software
+# <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
 
 В этом руководстве описано, как интегрировать Cezanne HR Software с Azure Active Directory (Azure AD).
 Интеграция Cezanne HR Software с Azure AD обеспечивает следующие преимущества:
@@ -107,7 +107,7 @@ ms.locfileid: "56313064"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com:443/cezanneondemand/-/<tenantidentifier>/Saml/samlp`.
     
@@ -150,7 +150,7 @@ ms.locfileid: "56313064"
 
     a. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
 
-    б) В текстовое поле **Идентификатор сущности** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    b. В текстовое поле **Идентификатор сущности** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В поле **SAML Binding** (Привязка SAML) укажите значение POST.
 
@@ -182,14 +182,14 @@ ms.locfileid: "56313064"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -235,7 +235,7 @@ ms.locfileid: "56313064"
 
     a. Установите для параметра **Внутренний пользователь** значение "Выкл.".
 
-    б) В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
+    b. В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
 
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, например **Simon**.
 
@@ -247,7 +247,7 @@ ms.locfileid: "56313064"
 
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
-    б) В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
 
@@ -273,8 +273,8 @@ ms.locfileid: "56313064"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c839c6cfa15c9a2e0874939d05467050f7e4849
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 589aa227352a839e1d77a35412d2193fa05df420
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189231"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873459"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство. Интеграция Azure Active Directory с Brightidea
 
@@ -110,7 +110,7 @@ ms.locfileid: "56189231"
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Выбор файла метаданных](common/browse-upload-metadata.png)
 
@@ -159,7 +159,7 @@ ms.locfileid: "56189231"
 
     a. Щелкните **Download Metadata** (Скачать метаданные) и передайте файл в разделе **базовой конфигурации SAML** на портале Azure.
 
-    б) Нажмите кнопку **Добавить новый** в разделе **настройки поставщика удостоверений** и выполните следующие действия:
+    b. Нажмите кнопку **Добавить новый** в разделе **настройки поставщика удостоверений** и выполните следующие действия:
     
     ![Конфигурация Brightidea](./media/brightidea-tutorial/configure4.png)
     
@@ -197,9 +197,9 @@ ms.locfileid: "56189231"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -239,9 +239,9 @@ ms.locfileid: "56189231"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

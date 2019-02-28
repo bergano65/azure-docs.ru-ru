@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0bceda04a61125d44c5cef63df67acebec7ba6d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 74cc66119eeb82eeb5448a14f2f1762822a9bc80
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164011"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56876574"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство. Интеграция Azure Active Directory с ServiceNow
 
@@ -115,7 +115,7 @@ ms.locfileid: "56164011"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com/navpage.do`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо будет изменить эти значения, указав фактические URL-адрес для входа и идентификатор. Это описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -126,7 +126,7 @@ ms.locfileid: "56164011"
 
     a. Нажмите кнопку копирования, чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот, так как этот URL-адрес будет использоваться далее в этом руководстве.
 
-    б) Щелкните **Загрузить** чтобы скачать **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
+    b. Щелкните **Загрузить** чтобы скачать **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
 
 6. Скопируйте требуемый URL-адрес из раздела **Настройка ServiceNow**.
 
@@ -148,7 +148,7 @@ ms.locfileid: "56164011"
 
     ![Активация подключаемого модуля](./media/servicenow-tutorial/tutorial_servicenow_03.png "Activate plugin")
 
-    б) Найдите **Integration - Multiple Provider Single Sign-On Installer** (Интеграция — установщик единого входа для нескольких поставщиков).
+    b. Найдите **Integration - Multiple Provider Single Sign-On Installer** (Интеграция — установщик единого входа для нескольких поставщиков).
 
      ![Активация подключаемого модуля](./media/servicenow-tutorial/tutorial_servicenow_04.png "Activate plugin")
 
@@ -311,7 +311,7 @@ ms.locfileid: "56164011"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com/navpage.do`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instance-name>.service-now.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо будет изменить эти значения, указав фактические URL-адрес для входа и идентификатор. Это описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -342,7 +342,7 @@ ms.locfileid: "56164011"
 
     a. Передвиньте переключатель **Enable multiple provider SSO** (Включить единый вход для нескольких поставщиков) вправо.
 
-    б) Передвиньте переключатель **Enable debug logging for the multiple provider SSO integration** (Включить ведение журнала отладки для интеграции нескольких поставщиков единого входа) вправо.
+    b. Передвиньте переключатель **Enable debug logging for the multiple provider SSO integration** (Включить ведение журнала отладки для интеграции нескольких поставщиков единого входа) вправо.
 
     c. В текстовом поле **The field on the user table that...** (Поле в пользовательской таблице) введите значение **user_name**.
 
@@ -356,7 +356,7 @@ ms.locfileid: "56164011"
 
     a. В текстовое поле **Name** (Имя) введите имя конфигурации (например **TestSAML2.0**).
 
-    б) Установите флажок **Активно**.
+    b. Установите флажок **Активно**.
 
     c. В поле **Format** (Формат) выберите **PEM**.
 
@@ -376,7 +376,7 @@ ms.locfileid: "56164011"
 
     a. В текстовое поле **Name** (Имя) введите имя конфигурации (например **SAML 2.0**).
 
-    б) В поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение поля **Идентификатор поставщика удостоверений**, скопированное на портале Azure.
+    b. В поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение поля **Идентификатор поставщика удостоверений**, скопированное на портале Azure.
 
     c. В поле **Identity Provider's AuthnRequest** (Запрос на аутентификацию поставщика удостоверений) вставьте значение поля **URL-адрес запроса проверки подлинности**, скопированное на портале Azure.
 
@@ -390,7 +390,7 @@ ms.locfileid: "56164011"
 
     a. В текстовом поле **Protocol Binding for the IDP's SingleLogoutRequest** (Привязка протокола для запроса на единый выход поставщика удостоверений) введите **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
 
-    б) В текстовое поле **NameID Policy** (Политика идентификатора имени) введите **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified**.
+    b. В текстовое поле **NameID Policy** (Политика идентификатора имени) введите **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified**.
 
     c. В поле **AuthnContextClassRef Method** (Метод AuthnContextClassRef) введите `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`.
 
@@ -405,7 +405,7 @@ ms.locfileid: "56164011"
     > [!NOTE]
     > URL-адрес домашней страницы экземпляра ServiceNow состоит из **URL-адреса клиента ServiceNow** и **/navpage.do** (например: `https://fabrikam.service-now.com/navpage.do`).
 
-    б) В текстовое поле **Entity ID / Issuer** (Идентификатор сущности или издатель) введите URL-адрес клиента ServiceNow.
+    b. В текстовое поле **Entity ID / Issuer** (Идентификатор сущности или издатель) введите URL-адрес клиента ServiceNow.
 
     c. В текстовое поле **Audience URI** (URI аудитории) введите URL-адрес клиента ServiceNow.
 
@@ -434,14 +434,14 @@ ms.locfileid: "56164011"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -484,9 +484,9 @@ ms.locfileid: "56164011"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

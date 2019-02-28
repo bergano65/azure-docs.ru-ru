@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 222ac0b5dede45b9ae2b6fe9ba464e738ea48b94
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 4f51ade234c8792f235bd8c9218b3c6ef9f22de7
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194263"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870828"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-umbrella"></a>Руководство. Интеграция Azure Active Directory с Cisco Umbrella
 
@@ -107,7 +107,7 @@ ms.locfileid: "56194263"
 
     a. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, сделайте следующее:
 
-    б) Щелкните **Задать дополнительные URL-адреса**.
+    b. Щелкните **Задать дополнительные URL-адреса**.
 
     c. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://login.umbrella.com/sso`.
 
@@ -147,7 +147,7 @@ ms.locfileid: "56194263"
 
 6. В разделе **Option A: Upload XML file** (Вариант А. Отправка XML-файла) отправьте файл **XML метаданных федерации**, скачанный с портала Azure, после чего приведенные ниже значения заполнятся автоматически, а затем щелкните **Next** (Далее).
 
-    ![Выбор файла ](./media/cisco-umbrella-tutorial/tutorial_cisco-umbrella_choosefile.png)
+    ![Выбор файла](./media/cisco-umbrella-tutorial/tutorial_cisco-umbrella_choosefile.png)
 
 7. В разделе **Validate SAML Configuration** (Проверка конфигурации SAML) щелкните **Test your SAML configuration** (Тестирование конфигурации SAML).
 
@@ -171,14 +171,14 @@ ms.locfileid: "56194263"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -225,7 +225,7 @@ ms.locfileid: "56194263"
 
     a. В поле **First Name** (Имя) введите имя, например **Britta**.
 
-    б) В поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
+    b. В поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
     c. В разделе **Choose Delegated Admin Role** (Выбор делегированной роли администратора) выберите свою роль.
   
@@ -245,8 +245,8 @@ ms.locfileid: "56194263"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

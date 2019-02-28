@@ -12,12 +12,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 08903bcb15c69e3bc9a2b5435785d4a1ee8edb5c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: f345ff2e64670536771a639a7619c6e1d4d2d82d
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659054"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56823949"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core-and-visual-studio"></a>Начало работы в Azure Dev Spaces с .NET Core и Visual Studio
 
@@ -52,13 +52,6 @@ ms.locfileid: "55659054"
 1. Выберите нужный параметр для управления доступом на основе ролей (RBAC). Служба Azure Dev Spaces поддерживает кластеры как с включенным, так и с отключенным механизмом RBAC.
 
     ![Параметр RBAC](media/common/k8s-RBAC.PNG)
-
-1. Убедитесь, что маршрутизация приложений HTTP включена.
-
-   ![Включение маршрутизации приложений HTTP](media/common/Kubernetes-Create-Cluster-3.PNG)
-
-    > [!Note]
-    > Чтобы включить [маршрутизацию приложений HTTP](/azure/aks/http-application-routing) в существующем кластере, используйте эту команду: `az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing`
 
 1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).
 

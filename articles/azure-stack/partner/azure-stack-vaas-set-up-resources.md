@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 460edc7f092764cce3584c81371db4801fbd69bc
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: c866bb1ff5603f08377ed96ddd81eedf71e243bf
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240022"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593240"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Руководство. Настройка ресурсов для VaaS
 
@@ -92,7 +92,7 @@ ms.locfileid: "55240022"
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Во время выполнения теста VaaS выводит журналы диагностики в учетную запись службы хранилища Azure. Кроме журналов тестирования учетную запись хранения можно также использовать для передачи пакетов расширения OEM для рабочего процесса проверки решений.
+Во время выполнения теста VaaS выводит журналы диагностики в учетную запись службы хранилища Azure. Кроме журналов тестирования учетную запись хранения можно также использовать для передачи пакетов расширения OEM для рабочего процесса "Проверка пакета".
 
 Учетная запись службы хранилища Azure размещается в общедоступном облаке Azure, а не в среде Azure Stack.
 

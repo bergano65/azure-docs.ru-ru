@@ -3,7 +3,7 @@ title: Пример сценария для интерфейса командн�
 description: Пример сценария для интерфейса командной строки Service Fabric для вывода списка приложений, подготовленных в кластере Service Fabric.
 services: service-fabric
 documentationcenter: ''
-author: TylerMSFT
+author: aljo-microsoft
 manager: timlt
 editor: ''
 tags: ''
@@ -13,14 +13,14 @@ ms.workload: multiple
 ms.devlang: na
 ms.topic: sample
 ms.date: 04/13/2018
-ms.author: twhitney
+ms.author: aljo
 ms.custom: ''
-ms.openlocfilehash: bea88460ecaa093a0719d627e3608fd1d530727b
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 60cb5aaf93521a3e2f7c922949d112ad96a00180
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39070204"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56805643"
 ---
 # <a name="list-applications-running-in-a-service-fabric-cluster"></a>Вывод списка приложений, работающих в кластере Service Fabric
 

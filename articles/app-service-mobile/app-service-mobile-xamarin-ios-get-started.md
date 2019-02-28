@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 8b890630d352619da86c3017426e24f55ef016d9
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: d08ebc7c1e52022ec918020387264c464d1cd967
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307176"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56883425"
 ---
 # <a name="create-a-xamarinios-app"></a>Создание приложения Xamarin.iOS
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "38307176"
 
 Завершение этого учебника является необходимым условием для других учебников по Xamarin.iOS, посвященных использованию функции мобильных приложений в службе приложений Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, зарегистрируйтесь для получения бесплатной пробной версии Azure и получите до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -72,7 +72,7 @@ ms.locfileid: "38307176"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-ios-get-started-offline-data.md)
-* [Добавление проверки подлинности в приложение](app-service-mobile-xamarin-ios-get-started-users.md)
+* [Добавление аутентификации в приложение](app-service-mobile-xamarin-ios-get-started-users.md)
 * [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-ios-get-started-push.md)
 * [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 

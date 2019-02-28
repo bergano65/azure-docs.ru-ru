@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdf8b2caadf61b09a7405e595b488d535c3e220a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 67ea699a2082ec24d3ebe87dead9ddea6368b7ce
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56197605"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882762"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство. Интеграция Azure Active Directory с TOPdesk — Secure
+# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
 
 В этом руководстве описано, как интегрировать TOPdesk - Secure с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TOPdesk - Secure обеспечивает следующие преимущества.
@@ -107,7 +107,7 @@ ms.locfileid: "56197605"
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net`.
 
-    б) В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/secure/login/verify`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/secure/login/verify`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.topdesk.net/tas/public/login/saml`.
 
@@ -150,7 +150,7 @@ ms.locfileid: "56197605"
 
     a. Нажмите кнопку **Скачать** , чтобы скачать общедоступный файл метаданных, а затем сохраните его локально на компьютере.
 
-    б) Откройте файл метаданных и определите местоположение узла **AssertionConsumerService** .
+    b. Откройте файл метаданных и определите местоположение узла **AssertionConsumerService** .
 
     ![Служба обработчика утверждений](./media/topdesk-secure-tutorial/ic790856.png "Служба обработчика утверждений")
 
@@ -162,7 +162,7 @@ ms.locfileid: "56197605"
 
     a. Откройте скачанный файл метаданных на портале Azure.
 
-    б) Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
+    b. Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
 
     c. Скопируйте значение узла **X509Certificate** .
 
@@ -178,7 +178,7 @@ ms.locfileid: "56197605"
 
     a. Чтобы отправить скачанный файл метаданных через портал Azure, напротив пункта **Federation Metadata** (Метаданные федерации) нажмите кнопку **Browse** (Обзор).
 
-    б) Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
+    b. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
 
     c. Для **закрытого ключа (RSA, PKCS8, DER)** вы можете загрузить свой собственный закрытый ключ или связаться с [группой поддержки клиентов TOPdesk — Secure ](http://www.topdesk.com/us/support), чтобы получить закрытый ключ.
 
@@ -206,14 +206,14 @@ ms.locfileid: "56197605"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -260,7 +260,7 @@ ms.locfileid: "56197605"
 
     a. Перейдите на вкладку **General** (Общие).
 
-    б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. Выберите для этой учетной записи **Site** (Веб-сайт) в разделе **Location** (Расположение).
 
@@ -279,9 +279,9 @@ ms.locfileid: "56197605"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

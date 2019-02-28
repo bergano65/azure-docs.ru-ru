@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cce0543ac47b1abc4a37ca06a0ff73f6ad90999e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 6fd08de2711e8584b9f2bbe17716fe14400c8bf7
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189010"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56871389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mimecast-personal-portal"></a>Руководство. Интеграция Azure Active Directory с Mimecast Personal Portal
 
@@ -115,7 +115,7 @@ ms.locfileid: "56189010"
     | Австралия       | `https://au-api.mimecast.com/login/saml`|
     | Внешнее расположение        | `https://jer-api.mimecast.com/login/saml`|
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
 
     | Регион  |  Значение | 
     | --------------- | --------------- |
@@ -174,7 +174,7 @@ ms.locfileid: "56189010"
    
     a. В текстовом поле **Описание** введите имя конфигурации.
    
-    б) Выберите **Обязательное использование проверки подлинности SAML для личного портала Mimecast**.
+    b. Выберите **Обязательное использование проверки подлинности SAML для личного портала Mimecast**.
    
     c. В поле **Provider** (Поставщик) выберите **Azure Active Directory**.
    
@@ -206,14 +206,14 @@ ms.locfileid: "56189010"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -269,11 +269,11 @@ ms.locfileid: "56189010"
    
     a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon@contoso.com**.
     
-    б) В текстовое поле **Global Name** (Глобальное имя) введите **имя пользователя** **BrittaSimon**.
+    b. В текстовое поле **Global Name** (Глобальное имя) введите **имя пользователя** **BrittaSimon**.
 
     c. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя.
    
-    б) Выберите команду **Сохранить**.
+    b. Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователя Mimecast Personal Portal или API, предоставляемые Mimecast Personal Portal для подготовки учетных записей пользователя Azure Active Directory.
@@ -286,9 +286,9 @@ ms.locfileid: "56189010"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

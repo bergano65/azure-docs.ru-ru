@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 01/18/2019
 ms.author: alkohli
-ms.openlocfilehash: b43dac7f81b92ac504427dab164d23d9ebb1ec03
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: d0d5ee18e37436562f1e9e15571dc39fb0e00129
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54411413"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875044"
 ---
 # <a name="what-is-azure-data-box"></a>Что такое Azure Data Box?
 
@@ -76,7 +76,7 @@ Data Box идеально подходит для передачи данных,
 
 * **Устройство Data Box** — физическое устройство, которое выполняет функции основного хранилища, управляет взаимодействием с облачным хранилищем, а также обеспечивает безопасность и конфиденциальность всех данных, хранящихся на устройстве. Рабочий объем устройства Data Box составляет 80 ТБ. 
 
-    ![Data Box. Вид спереди и сзади ](media/data-box-overview/data-box-combined3.png)
+    ![Data Box. Вид спереди и сзади](media/data-box-overview/data-box-combined3.png)
 
     
 * **Служба Data Box** — расширение портала Azure, которое позволяет управлять устройством Data Box с помощью веб-интерфейса, где бы вы ни находились. Используйте службу Data Box для повседневного управления вашим устройством Data Box. Служба позволяет создавать заказы и управлять ими, просматривать оповещения и управлять ими, а также администрировать общие ресурсы.  

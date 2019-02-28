@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 0ac3522d4182ef7cbf35eb8505dede2aff233937
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: c56c03637e5a8eb7716673974292482a9fb75212
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56302521"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56877798"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-knowledge-anywhere-lms"></a>Руководство по интеграции Azure Active Directory с Knowledge Anywhere LMS
+# <a name="tutorial-azure-active-directory-integration-with-knowledge-anywhere-lms"></a>Руководство. интеграции Azure Active Directory с Knowledge Anywhere LMS
 
 В этом руководстве описано, как интегрировать приложение Knowledge Anywhere LMS с Azure Active Directory (Azure AD).
 Интеграция Knowledge Anywhere LMS с Azure AD обеспечивает следующие преимущества:
@@ -157,7 +157,7 @@ ms.locfileid: "56302521"
 
     a. Введите имя поставщика удостоверений в соответствии с вашей организацией. Например: `Azure`.
 
-    б) В текстовое поле **IDP Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    b. В текстовое поле **IDP Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В текстовое поле **IDP URL** (URL-адрес IDP) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -189,14 +189,14 @@ ms.locfileid: "56302521"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -236,8 +236,8 @@ ms.locfileid: "56302521"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85d9c56fa1f0da5bf4747693ebe2361205e83ba0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: f078ffd483a15954353bd14c73c8ad8c87759020
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56196745"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879141"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-elium"></a>Руководство. Интеграция Azure Active Directory с Elium
 
@@ -143,7 +143,7 @@ ms.locfileid: "56196745"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -190,7 +190,7 @@ ms.locfileid: "56196745"
     > [!NOTE]
     > После настройки единого входа всегда можно получить доступ к странице удаленного входа по умолчанию по следующему URL-адресу: `https://<platform_domain>/login/regular/login` 
 
-    б) Установите флажок **Enable SAML2 federation** (Включить федерацию SAML2).
+    b. Установите флажок **Enable SAML2 federation** (Включить федерацию SAML2).
 
     c. Установите флажок **JIT Provisioning** (JIT-подготовка).
 
@@ -229,9 +229,9 @@ ms.locfileid: "56196745"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -274,9 +274,9 @@ ms.locfileid: "56196745"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

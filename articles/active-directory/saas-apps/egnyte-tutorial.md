@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Egnyte | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Egnyte | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Egnyte.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 2/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b95c3dbbe08a152ed5d9265f04a5ec989e55275b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2cbc04791791510c6248fab0ae276bb360ce9747
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56167819"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56868052"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство по Интеграция Azure Active Directory с Egnyte
+# <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство. Интеграция Azure Active Directory с Egnyte
 
 В этом руководстве описано, как интегрировать Egnyte с Azure Active Directory (Azure AD).
 Интеграция Egnyte c Azure AD обеспечивает следующие преимущества:
@@ -146,7 +146,7 @@ ms.locfileid: "56167819"
     
     a. Выберите для параметра **Single sign-on authentication** (Аутентификация единого входа) значение **SAML 2.0**.
    
-    б) Выберите для параметра **Identity provider** (Поставщик удостоверений) значение **AzureAD**.
+    b. Выберите для параметра **Identity provider** (Поставщик удостоверений) значение **AzureAD**.
    
     c. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Identity provider login URL** (URL-адрес входа поставщика удостоверений).
    
@@ -176,14 +176,14 @@ ms.locfileid: "56167819"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -231,7 +231,7 @@ ms.locfileid: "56167819"
 
     a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
 
-    б) В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
+    b. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
 
     c. Выберите для параметра **Authentication Type** (Тип проверки подлинности) значение **Single Sign-On** (Единый вход).
    
@@ -253,9 +253,9 @@ ms.locfileid: "56167819"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

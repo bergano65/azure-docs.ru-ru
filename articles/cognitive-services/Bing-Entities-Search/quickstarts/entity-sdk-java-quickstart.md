@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: v-gedod
-ms.openlocfilehash: 1534b2a85067867800c147c86ee7d82374de8794
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: ea13ae5bc649ae3a803fb8446fa009fac94874a8
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866201"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673570"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-java"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK для Поиска сущностей Bing для Java
 
@@ -145,10 +145,11 @@ ms.locfileid: "55866201"
             }
         }
     }
+    ```
 
-## Next steps
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Build a single-page web app](../tutorial-bing-entities-search-single-page-app.md)
+> [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
-* [What is the Bing Entity Search API?](../overview.md )
+* [Основные сведения об API Bing для поиска сущностей](../overview.md )

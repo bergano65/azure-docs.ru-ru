@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b82efa4b14800eabbbcb4b977f256a5d885fc93b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 5aac1b32f420f4a028777d1a9b5dc6b31cab23a1
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211841"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872562"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-druva"></a>Руководство по Интеграция Azure Active Directory с Druva
+# <a name="tutorial-azure-active-directory-integration-with-druva"></a>Руководство. Интеграция Azure Active Directory с Druva
 
 В этом руководстве описано, как интегрировать Druva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Druva обеспечивает следующие преимущества.
@@ -129,7 +129,7 @@ ms.locfileid: "56211841"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -169,7 +169,7 @@ ms.locfileid: "56211841"
     
     a. В текстовое поле **ID Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
         
-    б) В текстовое поле **ID Provider Login URL** (URL-адрес для выхода поставщика удостоверений) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    b. В текстовое поле **ID Provider Login URL** (URL-адрес для выхода поставщика удостоверений) вставьте **URL-адрес выхода**, скопированный на портале Azure.
         
     c. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
      
@@ -185,7 +185,7 @@ ms.locfileid: "56211841"
     
     a. Нажмите кнопку **Копировать**, затем вставьте скопированное значение в текстовое поле **Значение** в разделе **Добавление атрибута** на портале Azure.
     
-    б) Нажмите кнопку **Закрыть**
+    b. Нажмите кнопку **Закрыть**
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -203,14 +203,14 @@ ms.locfileid: "56211841"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -260,7 +260,7 @@ ms.locfileid: "56211841"
    
     a. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
    
-    б) В текстовое поле **Name** (Имя) введите имя, например **BrittaSimon**.
+    b. В текстовое поле **Name** (Имя) введите имя, например **BrittaSimon**.
    
     c. Нажмите кнопку **Создать пользователя**.
 
@@ -275,9 +275,9 @@ ms.locfileid: "56211841"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

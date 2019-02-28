@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 389f8852aa9cc39e099d79aa531a5bb83f72c068
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 57a48bb1b50c73ef51b4a3cb744a80c3fc69f4a5
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200689"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56876353"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-etouches"></a>Руководство. Интеграция Azure Active Directory с etouches
 
@@ -107,7 +107,7 @@ ms.locfileid: "56200689"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.eiseverywhere.com/saml/accounts/?sso&accountid=<ACCOUNTID>`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.eiseverywhere.com/<instance name>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.eiseverywhere.com/<instance name>`.
 
     > [!NOTE] 
     > Эти значения приведены для примера. Их необходимо заменить на фактический URL-адрес входа и идентификатор, как описано далее в этом руководстве.
@@ -129,7 +129,7 @@ ms.locfileid: "56200689"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "56200689"
 
     a. Войдите в приложение **etouches** с правами администратора.
    
-    б) Перейдите к настройке **SAML**.
+    b. Перейдите к настройке **SAML**.
 
     c. Перейдите в раздел **General Settings** (Общие параметры), откройте в Блокноте скачанный с портала Azure сертификат, скопируйте его содержимое и вставьте в текстовое поле IDP metadata (Метаданные поставщика удостоверений). 
 
@@ -200,9 +200,9 @@ ms.locfileid: "56200689"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -242,9 +242,9 @@ ms.locfileid: "56200689"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

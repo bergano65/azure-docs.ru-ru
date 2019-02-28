@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Experience Manager.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b24d1040c75e93bf26639e33aa46001b4e9c008
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2ceab0ee0180a6888ef99a7aefb1e5d176ab6c05
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170658"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873174"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
@@ -109,7 +109,7 @@ ms.locfileid: "56170658"
 
     a. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<AEM Server Url>/saml_login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<AEM Server Url>/saml_login`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Обновите значение URL-адреса ответа актуальным значением. Чтобы его получить, свяжитесь с [группой поддержки клиента Adobe Experience Manager Client](https://helpx.adobe.com/support/experience-manager.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -184,7 +184,7 @@ ms.locfileid: "56170658"
 
     a. В текстовом поле **Path** (Путь) введите **/**.
 
-    б) В поле **IDP URL** (URL-адрес IDP) вставьте значение **Login URL** (URL-адрес входа), скопированное на портале Azure.
+    b. В поле **IDP URL** (URL-адрес IDP) вставьте значение **Login URL** (URL-адрес входа), скопированное на портале Azure.
 
     c. В поле **IDP Certificate Alias** (Псевдоним сертификата IdP) введите значение **Certificate Alias** (Псевдоним сертификата), которое вы добавили в TrustStore.
 
@@ -218,14 +218,14 @@ ms.locfileid: "56170658"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -267,8 +267,8 @@ ms.locfileid: "56170658"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

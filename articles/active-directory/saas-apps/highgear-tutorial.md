@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
+title: Руководство. Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и HighGear.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8e91af71b4c3358d416fe5f6f7a62c9268944ac
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 017664e29f1ecf7d35411a3bc941df932c195856
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201811"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880161"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-highgear"></a>Руководство. Интеграция Azure Active Directory с HighGear
 
@@ -114,7 +114,7 @@ ms.locfileid: "56201811"
     
     ![Пункт меню Single Sign-On Settings (Параметры единого входа)](media/highgear-tutorial/single-sign-on-settings-menu-item.png)
 
-    б) В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)**, которое находится на странице параметров единого входа в систему HighGear.
+    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)**, которое находится на странице параметров единого входа в систему HighGear.
 
     ![Поле с URL-адресом ответа службы обработчика утверждений (ACS)](media/highgear-tutorial/assertion-consumer-service-url-field.png)
 
@@ -139,7 +139,7 @@ ms.locfileid: "56201811"
 
     a. "URL-адрес входа". Это значение понадобится вам на шаге 2 в разделе **Настройка единого входа HighGear** ниже.
 
-    б) "Идентификатор Azure AD". Это значение понадобится вам на шаге 3 в разделе **Настройка единого входа HighGear** ниже.
+    b. "Идентификатор Azure AD". Это значение понадобится вам на шаге 3 в разделе **Настройка единого входа HighGear** ниже.
 
     c. "URL-адрес выхода". Это значение понадобится вам на шаге 4 в разделе **Настройка единого входа HighGear** ниже.
 
@@ -179,9 +179,9 @@ ms.locfileid: "56201811"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -254,9 +254,9 @@ ms.locfileid: "56201811"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

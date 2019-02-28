@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Appraisd | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Appraisd.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8afd2201d55dfed94cf8f0dd34ca26870c0cc324
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 1c92e76d1fd49121d09a56f986c39de52dbbde1c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169366"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56877730"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство по Интеграция Azure Active Directory с Appraisd
+# <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство. Интеграция Azure Active Directory с Appraisd
 
 В этом руководстве описано, как интегрировать Appraisd с Azure Active Directory (Azure AD).
 Интеграция Appraisd с Azure AD обеспечивает следующие преимущества.
@@ -107,7 +107,7 @@ ms.locfileid: "56169366"
 
     a. Щелкните **Задать дополнительные URL-адреса**.
 
-    б) В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `<TENANTCODE>`
+    b. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `<TENANTCODE>`
 
     c. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком услуг**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://app.appraisd.com/saml/<TENANTCODE>`
 
@@ -131,7 +131,7 @@ ms.locfileid: "56169366"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -175,7 +175,7 @@ ms.locfileid: "56169366"
 
     a. Скопируйте значение **Default Relay State** (Состояние ретрансляции по умолчанию) и вставьте его в текстовое поле  **Состояние ретранслятора** в разделе  **Базовая конфигурация SAML** на портале Azure.
 
-    б) Скопируйте значение **Service-initiated login URL** (URL-адрес входа, инициируемого службой) и вставьте его в текстовое поле  **URL-адрес для входа** в разделе  **Базовая конфигурация SAML** на портале Azure.
+    b. Скопируйте значение **Service-initiated login URL** (URL-адрес входа, инициируемого службой) и вставьте его в текстовое поле  **URL-адрес для входа** в разделе  **Базовая конфигурация SAML** на портале Azure.
 
 5. Прокрутите эту страницу вниз до раздела **Идентификация пользователей** и выполните следующие действия.
 
@@ -183,7 +183,7 @@ ms.locfileid: "56169366"
 
     a. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure. Нажмите кнопку **Save** (Сохранить).
 
-    б) В текстовое поле **Identity Provider Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. Нажмите кнопку **Save** (Сохранить).
+    b. В текстовое поле **Identity Provider Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. Нажмите кнопку **Save** (Сохранить).
 
     c. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле  **Сертификат X.509**  и щелкните **Сохранить**.
 
@@ -208,9 +208,9 @@ ms.locfileid: "56169366"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -260,7 +260,7 @@ ms.locfileid: "56169366"
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
 
@@ -274,8 +274,8 @@ ms.locfileid: "56169366"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

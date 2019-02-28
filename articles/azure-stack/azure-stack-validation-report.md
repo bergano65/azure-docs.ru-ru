@@ -16,17 +16,17 @@ ms.date: 10/23/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 1545fa3c1c94edc98e53b3579e5617a6bf16461c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 0f6230dd3fe59e2aa34e358bfa9133f736d17f36
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238863"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732455"
 ---
 # <a name="azure-stack-validation-report"></a>Отчет о проверке Azure Stack
 Используйте средство проверки готовности Azure Stack, чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack.  
 
- ## <a name="where-to-find-the-report"></a>Где найти отчет
+## <a name="where-to-find-the-report"></a>Где найти отчет
 При работе средства результаты сохраняются в файле **AzsReadinessCheckerReport.json**. Также создается файл журнала с именем **AzsReadinessChecker.log**. Расположение этих файлов указывается в PowerShell вместе с результатами проверки.
 
 ![Запуск проверки](./media/azure-stack-validation-report/validation.png)

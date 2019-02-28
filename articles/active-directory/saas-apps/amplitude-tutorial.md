@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c96d78bf797365ef1336211753d9fffcaa227781
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ba92047d282ab86b6cd1f72017996f7de92088c2
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56196321"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56874925"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-amplitude"></a>Руководство по Интеграция Azure Active Directory с Amplitude
+# <a name="tutorial-azure-active-directory-integration-with-amplitude"></a>Руководство. Интеграция Azure Active Directory с Amplitude
 
 В этом руководстве описано, как интегрировать Amplitude с Azure Active Directory (Azure AD).
 Интеграция Amplitude с Azure AD обеспечивает следующие преимущества:
@@ -108,7 +108,7 @@ ms.locfileid: "56196321"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://amplitude.com/saml/sso/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://analytics.amplitude.com/saml/sso/<uniqueid>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://analytics.amplitude.com/saml/sso/<uniqueid>`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Далее в этом руководстве объясняется, как получить значение URL-адреса ответа.
@@ -151,7 +151,7 @@ ms.locfileid: "56196321"
 
     a. Откройте в Блокноте **XML-файл метаданных**, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Microsoft Azure Active Directory Metadata** (Метаданные Microsoft Azure Active Directory).
 
-    б) Скопируйте значение **Reply URL (ACS)** (URL-адрес ответа (ACS) и вставьте его в текстовое поле **URL-адрес ответа** раздела **Базовая конфигурация SAML** на портале Azure.
+    b. Скопируйте значение **Reply URL (ACS)** (URL-адрес ответа (ACS) и вставьте его в текстовое поле **URL-адрес ответа** раздела **Базовая конфигурация SAML** на портале Azure.
 
     c. Нажмите кнопку **Сохранить**
 
@@ -171,14 +171,14 @@ ms.locfileid: "56196321"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -221,8 +221,8 @@ ms.locfileid: "56196321"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

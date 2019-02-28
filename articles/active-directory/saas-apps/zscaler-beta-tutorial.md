@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39fc807e54e92a504c0bac730cd59c0223fde4b6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b7f8a336adbd156e5035f1169152b64952f0e26f
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56164198"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882524"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство. Интеграция Azure Active Directory с Zscaler Beta
 
@@ -127,7 +127,7 @@ ms.locfileid: "56164198"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "56164198"
 
     a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
+    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 3. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
@@ -174,7 +174,7 @@ ms.locfileid: "56164198"
     
     a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    б) В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
+    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
     c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
@@ -194,7 +194,7 @@ ms.locfileid: "56164198"
 
     a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    б) Щелкните **Активировать**.
+    b. Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -217,7 +217,7 @@ ms.locfileid: "56164198"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    б) В текстовом поле "Адрес" введите **gateway.Zscaler Beta.net**.
+    b. В текстовом поле "Адрес" введите **gateway.Zscaler Beta.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
@@ -243,14 +243,14 @@ ms.locfileid: "56164198"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -299,9 +299,9 @@ ms.locfileid: "56164198"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

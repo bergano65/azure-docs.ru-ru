@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53a1d00c4e61df3a160b4f96b6b285d824410bb7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 5d336e7408b31b433338a1e3d5e46f0b4b1b2d9c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165286"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56870437"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-databasics"></a>Руководство. Интеграция Azure Active Directory с DATABASICS
+# <a name="tutorial-azure-active-directory-integration-with-databasics"></a>Руководство по Интеграция Azure Active Directory с DATABASICS
 
 В этом руководстве описано, как интегрировать DATABASICS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением DATABASICS обеспечивает следующие преимущества.
@@ -107,7 +107,7 @@ ms.locfileid: "56165286"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sitenumber>.data-basics.net/<clientname>/saml_sso.jsp`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `DATA-BASICS_SP`.
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `DATA-BASICS_SP`.
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов DATABASICS](https://www.data-basics.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,14 +146,14 @@ ms.locfileid: "56165286"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -193,9 +193,9 @@ ms.locfileid: "56165286"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

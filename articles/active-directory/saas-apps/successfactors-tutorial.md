@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SuccessFactors | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SuccessFactors | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SuccessFactors.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/3/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37130d71c3d8dfc9ad4cba68ce24fddf82c05959
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: c964d4e070bafc6e8e66535c3963d82803d3cd1e
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162771"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56865779"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство по Интеграция Azure Active Directory с SuccessFactors
 
@@ -113,7 +113,7 @@ ms.locfileid: "56162771"
     | `https://<companyname>.successfactors.eu/<companyname>`|
     | `https://<companyname>.sapsf.eu`|
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://www.successfactors.com/<companyname>`|
@@ -176,7 +176,7 @@ ms.locfileid: "56162771"
   
     a. Установите переключатель **SAML v2 SSO** (Единый вход SAML версии 2).
   
-    б) Задайте **имя утверждающей стороны SAML** (например, "Издатель SAML + название компании").
+    b. Задайте **имя утверждающей стороны SAML** (например, "Издатель SAML + название компании").
 
     c. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -201,7 +201,7 @@ ms.locfileid: "56162771"
 
     a. Выберите значение **Yes** (Да) для параметра **Support SP-initiated Global Logout** (Поддержка глобального выхода, инициированного SP).
 
-    б) В текстовое поле **Global Logout Service URL (LogoutRequest destination)** (URL-адрес службы глобального выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
+    b. В текстовое поле **Global Logout Service URL (LogoutRequest destination)** (URL-адрес службы глобального выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
     c. Выберите значение **No** (Нет) для параметра **Require sp must encrypt all NameID element** (Требуется шифрование всех элементов NameID на стороне SP).
 
@@ -217,7 +217,7 @@ ms.locfileid: "56162771"
 
     a. Найдите в нижней части экрана раздел **Company Settings**(Параметры компании).
 
-    б) Установите флажок **Enable Non-Case-Sensitive Username** (Разрешить имя пользователя без учета регистра).
+    b. Установите флажок **Enable Non-Case-Sensitive Username** (Разрешить имя пользователя без учета регистра).
 
     c. Выберите команду **Сохранить**.
 
@@ -240,14 +240,14 @@ ms.locfileid: "56162771"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -289,9 +289,9 @@ ms.locfileid: "56162771"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

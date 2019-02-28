@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с M-Files | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с M-Files | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в M-Files.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 5664711287a54f64e2bdece7191821ba00b2da18
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 13c3b74c50c8417d8d410f8a1975a8c50eb9fdd9
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456407"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875537"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Руководство по Интеграция Azure Active Directory с M-Files
+# <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Руководство. Интеграция Azure Active Directory с M-Files
 
 В этом учебнике описано, как интегрировать приложение M-Files с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением M-Files обеспечивает следующие преимущества:
@@ -106,7 +106,7 @@ ms.locfileid: "56456407"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com/authentication/MFiles.AuthenticationProviders.Core/sso`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов M-Files](mailto:support@m-files.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,7 +146,7 @@ ms.locfileid: "56456407"
 
     a. В поле **Name** (Имя) введите `<tenant-name>.cloudvault.m-files.com`. 
  
-    б) В поле **Port Number** (Номер порта) введите **4466**. 
+    b. В поле **Port Number** (Номер порта) введите **4466**. 
 
     c. Для параметра **Protocol** (Протокол) выберите **HTTPS**. 
 
@@ -172,14 +172,14 @@ ms.locfileid: "56456407"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -219,9 +219,9 @@ ms.locfileid: "56456407"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

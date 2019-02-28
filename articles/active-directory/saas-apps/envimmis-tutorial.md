@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eeac36ae28d3d780e1a1e190a0cc0cccda81382f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ad35d8d3ff04de7e3d99976d637c4fad47c0cd6c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166935"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869009"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство по Интеграция Azure Active Directory с Envi MMIS
+# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
 
 В этом руководстве описано, как интегрировать приложение Envi MMIS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Envi MMIS обеспечивает следующие преимущества:
@@ -158,7 +158,7 @@ ms.locfileid: "56166935"
 
     a. Выберите вариант **File** (Файл) из раскрывающегося списка **Upload From** (Отправить из).
 
-    б) Чтобы отправить файл метаданных, загруженный с портала Azure, выберите значок **выбора файла**.
+    b. Чтобы отправить файл метаданных, загруженный с портала Azure, выберите значок **выбора файла**.
 
     c. Нажмите кнопку **ОК**.
 
@@ -187,9 +187,9 @@ ms.locfileid: "56166935"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -239,7 +239,7 @@ ms.locfileid: "56166935"
 
     a. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon@contoso.com**.
     
-    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
@@ -259,9 +259,9 @@ ms.locfileid: "56166935"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

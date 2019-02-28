@@ -10,12 +10,13 @@ ms.subservice: translator-speech
 ms.topic: quickstart
 ms.date: 07/17/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 34d397412a6d461325465ccc5dd41a62d91c6fc5
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 9a6afc4dfb25a2a5f6e778fbda877a93269a96eb
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55872056"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673281"
 ---
 # <a name="quickstart-translator-speech-api-with-python"></a>Краткое руководство. API перевода речи с Python
 <a name="HOLTop"></a>
@@ -30,7 +31,7 @@ ms.locfileid: "55872056"
 
 Также потребуется установить [пакет websocket-client](https://pypi.python.org/pypi/websocket-client) для Python.
 
-Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно. 
+Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно.
 
 Необходимо иметь [учетную запись Cognitive Services API](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **Microsoft Translator Speech API**. Вам понадобится платный ключ подписки, доступный из [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
 
@@ -132,7 +133,7 @@ client.run_forever()
 > [!div class="nextstepaction"]
 > [Учебник перевода речи](../tutorial-translator-speech-csharp.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
 [Microsoft Translator Speech API](../overview.md) (API перевода речи Microsoft)
 [API Reference](https://docs.microsoft.com/azure/cognitive-services/translator-speech/reference) (Ссылка на API)

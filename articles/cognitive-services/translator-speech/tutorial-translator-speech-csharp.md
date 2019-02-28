@@ -10,12 +10,13 @@ ms.subservice: translator-speech
 ms.topic: tutorial
 ms.date: 3/5/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 383e17e0a9e60b52a63420af19c2bca4337083d4
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: a3ed13cfe764c4f94dfa50fd096cfc7a8ac7656d
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55876918"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673757"
 ---
 # <a name="tutorial-translator-speech-application-in-c"></a>Руководство. Приложение API перевода речи на C#
 
@@ -33,7 +34,7 @@ ms.locfileid: "55876918"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством необходим любой выпуск Visual Studio 2017, включая Community Edition. 
+Для работы с этим руководством необходим любой выпуск Visual Studio 2017, включая Community Edition.
 
 Решение Visual Studio также создает установщик для приложения. Требуется [набор инструментов WiX](http://wixtoolset.org/) и [расширение Visual Studio для набора инструментов WiX](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension), чтобы поддерживать эту функцию.
 
@@ -63,7 +64,7 @@ ms.locfileid: "55876918"
 
 Другими словами, для перевода речи исходный язык должен быть одним из поддерживаемых языков для транскрибирования. Выходной язык может быть любым из языков, поддерживаемых для перевода текста, если вам нужен текстовый результат. Если требуется вывод речи, то вы можете переводить только на язык, поддерживаемый для преобразования текста в речь.
 
-Корпорация Майкрософт может время от времени добавлять поддержку новых языков. По этой причине не следует в приложении жестко задавать набор знаний поддерживаемых языков. Теперь API перевода речи предоставляет конечную точку языков, что позволяет получить поддерживаемые языки в среде выполнения. Вы можете получить один или несколько списков языков: 
+Корпорация Майкрософт может время от времени добавлять поддержку новых языков. По этой причине не следует в приложении жестко задавать набор знаний поддерживаемых языков. Теперь API перевода речи предоставляет конечную точку языков, что позволяет получить поддерживаемые языки в среде выполнения. Вы можете получить один или несколько списков языков:
 
 | | |
 |-|-|
@@ -73,7 +74,7 @@ ms.locfileid: "55876918"
 
 Конечная точка языков не требует ключ подписки, и ее использование не учитывается в квоте. URI — `https://dev.microsofttranslator.com/languages`, возвращающий результаты в формате JSON.
 
-Метод `UpdateLanguageSettingsAsync()` в `MainWindow.xaml.cs`, показанный здесь, вызывает конечную точку языков, чтобы получить список поддерживаемых языков. 
+Метод `UpdateLanguageSettingsAsync()` в `MainWindow.xaml.cs`, показанный здесь, вызывает конечную точку языков, чтобы получить список поддерживаемых языков.
 
 ```csharp
 private async Task UpdateLanguageSettingsAsync()
@@ -193,9 +194,9 @@ private async Task UpdateLanguageSettingsAsync()
 
 Конечная точка языков использует заголовок запроса `Accept-Languages`, чтобы определить язык, на котором представлены названия языков. Например, язык, известный англоговорящим как German, называется Deutsch на немецком и Alemán на испанском языке. В списке языков отражаются эти различия. Для этого заголовка используется язык системы по умолчанию.
 
-После отправки запроса и получения ответа JSON ответ анализируется во внутренних структурах данных. Эти структуры затем используются для создания меню исходного и целевого языков. 
+После отправки запроса и получения ответа JSON ответ анализируется во внутренних структурах данных. Эти структуры затем используются для создания меню исходного и целевого языков.
 
-Невозможно настроить меню голоса, так как доступные голоса зависят от исходного языка, выбранного пользователем. Доступные голоса для каждого языка хранятся для последующего использования. Обработчик `ToLanguage_SelectionChanged` (в том же исходном файле) позже обновляет меню голоса путем вызова `UpdateVoiceComboBox()` при выборе пользователем целевого языка. 
+Невозможно настроить меню голоса, так как доступные голоса зависят от исходного языка, выбранного пользователем. Доступные голоса для каждого языка хранятся для последующего использования. Обработчик `ToLanguage_SelectionChanged` (в том же исходном файле) позже обновляет меню голоса путем вызова `UpdateVoiceComboBox()` при выборе пользователем целевого языка.
 
 Целевой язык выбирается случайным образом, если пользователь не запускал приложение раньше. (Параметры меню сохраняются между сеансами.)
 
@@ -281,7 +282,7 @@ private void Connect()
         TranslateTo = ((ComboBoxItem)this.ToLanguage.SelectedItem).Tag.ToString(),
         Voice = voicename,
     };
-    
+
     options.Hostname = baseUrl;
     options.AuthHeaderKey = "Authorization";
     options.AuthHeaderValue = ""; // set later in ConnectAsync.
@@ -368,11 +369,11 @@ private void Connect()
 private async Task ConnectAsync(SpeechClientOptions options, bool suspendInputAudioDuringTTS)
 {
     await ADMAuthenticate(options);
-    
+
     TextMessageDecoder textDecoder;
-    
+
     s2smtClient = new SpeechClient((SpeechTranslateClientOptions)options, CancellationToken.None);
-    
+
     s2smtClient.OnBinaryData += (c, a) => { AddSamplesToPlay(a, suspendInputAudioDuringTTS); };
     s2smtClient.OnEndOfBinaryData += (c, a) => { AddSamplesToPlay(a, suspendInputAudioDuringTTS); };
     s2smtClient.OnTextData += (c, a) => { textDecoder.AppendData(a); lastReceivedPacketTick = DateTime.Now.Ticks; };
@@ -410,7 +411,7 @@ private async Task ConnectAsync(SpeechClientOptions options, bool suspendInputAu
     {
         SafeInvoke(() =>
         {
-            // We only care to react to server disconnect when our state is Connected. 
+            // We only care to react to server disconnect when our state is Connected.
             if (currentState == UiState.Connected)
             {
                 Log("E: Connection has been lost.");

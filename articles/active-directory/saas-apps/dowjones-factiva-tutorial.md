@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Dow Jones Factiva.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3a46e5a3e28ad36e13885ebad16874530cb0142
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9aa10274d3e153e40ad0e13abe0924c4619f6e7d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182636"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873905"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Руководство. Интеграция Azure Active Directory с Dow Jones Factiva
+# <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Руководство по Интеграция Azure Active Directory с Dow Jones Factiva
 
 В этом руководстве описано, как интегрировать Dow Jones Factiva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Dow Jones Factiva обеспечивает следующие преимущества.
@@ -139,14 +139,14 @@ ms.locfileid: "56182636"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -186,9 +186,9 @@ ms.locfileid: "56182636"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

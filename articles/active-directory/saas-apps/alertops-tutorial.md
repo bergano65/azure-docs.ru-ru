@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением AlertOps | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением AlertOps | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и AlertOps.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 939a6443fb0993592d9640c83b985ce761f0fa61
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 1874950e733df1cf14fba2f53fdb49d478cb6f8a
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168680"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56866051"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-alertops"></a>Руководство. Интеграция Azure Active Directory с AlertOps
+# <a name="tutorial-azure-active-directory-integration-with-alertops"></a>Руководство по Интеграция Azure Active Directory с AlertOps
 
 В этом руководстве описано, как интегрировать приложение AlertOps с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением AlertOps обеспечивает следующие преимущества.
@@ -146,7 +146,7 @@ ms.locfileid: "56168680"
 
     a. Установите флажок **Use Single Sign-On(SSO)** (Использовать единый вход).
 
-    б) Из раскрывающегося списка выберите **Azure Active Directory** в качестве **поставщика единого входа**.
+    b. Из раскрывающегося списка выберите **Azure Active Directory** в качестве **поставщика единого входа**.
 
     c. В текстовом поле **Issuer URL** (URL-адрес издателя) введите значение идентификатора, которое вы использовали в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -174,14 +174,14 @@ ms.locfileid: "56168680"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -227,7 +227,7 @@ ms.locfileid: "56168680"
 
     a. В текстовом поле **Login User Name** (Имя пользователя для входа) введите имя пользователя, например **BrittaSimon**.
 
-    б) В текстовом поле **Official Email** (Официальная электронная почта) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
+    b. В текстовом поле **Official Email** (Официальная электронная почта) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com**.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -247,8 +247,8 @@ ms.locfileid: "56168680"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

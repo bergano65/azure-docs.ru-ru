@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/01/2018
 ms.author: dech
-ms.openlocfilehash: 4e6d981ef1ac7985e9f230cfbbda440a765e20ea
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: cc8c62113a9a7a12525f1ba7e59c68831a322cfe
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55695491"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56959193"
 ---
 # <a name="build-a-net-core-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account-sdk-version-3-preview"></a>Создание консольного приложения .NET Core для управления данными в учетной записи SQL API Azure Cosmos DB (предварительный выпуск пакета SDK версия 3)
 
@@ -131,7 +131,7 @@ ms.locfileid: "55695491"
 
    Скопируйте универсальный код ресурса (URI) с портала и вставьте его в параметр `<your endpoint URL>` в файле `Program.cs`. Скопируйте на портале значение поля "Первичный ключ" и вставьте его в параметр `<your primary key>`.
 
-   ![Сделайте снимок экрана, чтобы получить ключи Azure Cosmso DB на портале Azure](./media/sql-api-get-started/dotnet-tutorial-portal-keys.png)
+   ![Снимок экрана получения ключей Azure Cosmos DB на портале Azure](./media/sql-api-get-started/dotnet-tutorial-portal-keys.png)
 
 1. Далее мы создадим новый экземпляр `CosmosClient` и настроим формирование шаблонов для нашей программы.
 

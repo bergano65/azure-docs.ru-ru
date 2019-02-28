@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f1381fa16880dc06a1672626d2279456c2c33e1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 78949ad5eeae9b497d9703b5a79616d755f12c6d
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186849"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56881045"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство. Интеграция Azure Active Directory с Jamf Pro
 
@@ -148,7 +148,7 @@ ms.locfileid: "56186849"
 
     a. Выберите **Jamf Pro Server** (Сервер Jamf Pro), чтобы разрешить доступ с использованием единого входа.
 
-    б) Если выбрать **Allow bypass for all users** (Разрешить обход проверки для всех пользователей), пользователи не будут перенаправляться на страницу входа поставщика удостоверений для аутентификации. Вместо этого они смогут войти в Jamf Pro напрямую. Когда пользователь пытается получить доступ к Jamf Pro через поставщик удостоверений, происходит аутентификация и авторизация с использованием единого входа, инициированного поставщиком удостоверений.
+    b. Если выбрать **Allow bypass for all users** (Разрешить обход проверки для всех пользователей), пользователи не будут перенаправляться на страницу входа поставщика удостоверений для аутентификации. Вместо этого они смогут войти в Jamf Pro напрямую. Когда пользователь пытается получить доступ к Jamf Pro через поставщик удостоверений, происходит аутентификация и авторизация с использованием единого входа, инициированного поставщиком удостоверений.
 
     c. Выберите значение **NameID** (Идентификатор имени) для параметра **USER MAPPING: SAML** (Сопоставление пользователей: SAML). По умолчанию для этого параметра задано значение **NameID**, но можно определить настраиваемый атрибут.
 
@@ -162,7 +162,7 @@ ms.locfileid: "56186849"
 
     a. Выберите пункт **Другой** в раскрывающемся списке **IDENTITY PROVIDER** (Поставщик удостоверений).
 
-    б) В текстовом поле **OTHER PROVIDER** (Другой поставщик) введите **Azure AD**.
+    b. В текстовом поле **OTHER PROVIDER** (Другой поставщик) введите **Azure AD**.
 
     c. Выберите элемент **URL-адрес метаданных** в раскрывающемся списке **IDENTITY PROVIDER METADATA SOURCE** (Источник метаданных поставщика удостоверений) и затем в следующем текстовом поле вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
@@ -189,14 +189,14 @@ ms.locfileid: "56186849"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -254,7 +254,7 @@ ms.locfileid: "56186849"
 
     a. В текстовом поле **USERNAME** (Имя пользователя) введите полное имя пользователя BrittaSimon.
 
-    б) Выберите соответствующие значения для параметров **ACCESS LEVEL** (Уровень доступа), **PRIVILEGE SET** (Набор привилегий) и **ACCESS STATUS** (Состояние доступа).
+    b. Выберите соответствующие значения для параметров **ACCESS LEVEL** (Уровень доступа), **PRIVILEGE SET** (Набор привилегий) и **ACCESS STATUS** (Состояние доступа).
 
     c. В текстовом поле **FULL NAME** (Полное имя) введите полное имя пользователя Britta Simon.
 
@@ -274,8 +274,8 @@ ms.locfileid: "56186849"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

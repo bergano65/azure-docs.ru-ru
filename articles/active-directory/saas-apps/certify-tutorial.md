@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Certify | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Certify | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Certify.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1e6eaf6f590238447ec5074b07cda770286ba83
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: c60adff56a5c7fe0400ca6fc818b8d501be40166
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308559"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878937"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-certify"></a>Руководство. Интеграция Azure Active Directory с Certify
+# <a name="tutorial-azure-active-directory-integration-with-certify"></a>Руководство по Интеграция Azure Active Directory с Certify
 
 В этом руководстве описано, как интегрировать Certify с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Certify обеспечивает следующие преимущества.
@@ -142,14 +142,14 @@ ms.locfileid: "56308559"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -192,9 +192,9 @@ ms.locfileid: "56308559"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
