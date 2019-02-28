@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf3f06db3586d15e5bf87ecdcae7110277864b55
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a7bf8dc576565e344626354d99712ed17cd937ac
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207608"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56871814"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство. Интеграция Azure Active Directory с Agiloft
 
@@ -114,7 +114,7 @@ ms.locfileid: "56207608"
     | `https://<subdomain>.agiloft.com/project/<KB_NAME>` |
     | |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
     | |
     |-|-|
@@ -169,7 +169,7 @@ ms.locfileid: "56207608"
 
     a. В текстовое поле  **IdP Entity Id / Issuer**  (Идентификатор сущности поставщика удостоверений / издатель) вставьте значение  **Идентификатора Azure AD**, скопированное на портале Azure.
 
-    б) В текстовое поле  **IdP Login URL** (URL-адрес входа поставщика удостоверений)  вставьте значение  **URL-адреса входа**, скопированное на портале Azure.
+    b. В текстовое поле  **IdP Login URL** (URL-адрес входа поставщика удостоверений)  вставьте значение  **URL-адреса входа**, скопированное на портале Azure.
 
     c. В текстовое поле  **IdP Logout URL**  (URL-адрес выхода поставщика удостоверений) вставьте значение  **URL-адреса выхода**, скопированное на портале Azure.
 
@@ -193,14 +193,14 @@ ms.locfileid: "56207608"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -240,8 +240,8 @@ ms.locfileid: "56207608"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

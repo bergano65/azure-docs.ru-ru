@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 581f0883757444a29a1d941305d055204167701a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: b62bfca7c78e05269e6717f09cc597f09f027829
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208424"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56865711"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство. Интеграция Azure Active Directory с Clarizen
 
@@ -107,7 +107,7 @@ ms.locfileid: "56208424"
 
     a. В текстовом поле **Идентификатор** введите значение: `Clarizen`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://.clarizen.com/Clarizen/Pages/Integrations/SAML/SamlResponse.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://.clarizen.com/Clarizen/Pages/Integrations/SAML/SamlResponse.aspx`.
 
     > [!NOTE]
     > Значения, указанные выше, приведены в качестве примера. Используйте фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить фактические значения, обратитесь в [техническую поддержку Clarizen](https://success.clarizen.com/hc/en-us/requests/new).
@@ -144,7 +144,7 @@ ms.locfileid: "56208424"
 
     a. Выберите **Enable Federated Authentication** (Включить федеративную проверку подлинности).
 
-    б) Чтобы отправить загруженный сертификат, нажмите кнопку **Отправить** .
+    b. Чтобы отправить загруженный сертификат, нажмите кнопку **Отправить** .
 
     c. В текстовом поле **URL-адрес входа** введите значение **URL-адреса входа** из окна настройки приложения Azure AD.
 
@@ -170,14 +170,14 @@ ms.locfileid: "56208424"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -229,7 +229,7 @@ ms.locfileid: "56208424"
 
     a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon.
 
-    б) Нажмите кнопку **Пригласить**.
+    b. Нажмите кнопку **Пригласить**.
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
@@ -243,8 +243,8 @@ ms.locfileid: "56208424"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
