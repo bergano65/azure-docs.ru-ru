@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1460fba4d6897dfcc6bf40b6e02ab856ffe8456
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 4ef0638afd162dc179a2a7dec54b60bfb1f89144
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340484"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869774"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-webex"></a>Руководство. Интеграция Azure Active Directory с Cisco Webex
 
@@ -107,7 +107,7 @@ ms.locfileid: "56340484"
 
     a. В текстовом поле **Sign on URL** (URL-адрес входа) введите URL-адрес в формате: `https://web.ciscospark.com/#/signin`
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://idbroker.webex.com/<Org Id>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://idbroker.webex.com/<Org Id>`.
 
     > [!NOTE]
     > Значение идентификатора не является реальным. Вместо него нужно указать фактический идентификатор. Если у вас есть файл метаданных поставщика услуг, отправьте его в разделе **Базовая конфигурация SAML** и значение параметра **Идентификатор (сущности)** заполнится автоматически.
@@ -128,7 +128,7 @@ ms.locfileid: "56340484"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -188,14 +188,14 @@ ms.locfileid: "56340484"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -241,7 +241,7 @@ ms.locfileid: "56340484"
 
     a. В текстовом поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    б) В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **britta.simon@contoso.com**.
 
@@ -257,8 +257,8 @@ ms.locfileid: "56340484"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ArcGIS Enterprise | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ArcGIS Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory и ArcGIS Enterprise.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff18a5c0eec79a48a828abdca43b4a4f43e96ebf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 63e4769a0089259ee337931e2dbc0e8bcc9290c5
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56161699"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56869026"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство по Интеграция Azure Active Directory с ArcGIS Enterprise
 
 В этом руководстве описано, как интегрировать ArcGIS Enterprise с Azure Active Directory (Azure AD).
 Интеграция ArcGIS Enterprise с Azure AD обеспечивает следующие преимущества:
@@ -148,7 +148,7 @@ ms.locfileid: "56161699"
 
     a. В текстовом поле **Имя** укажите имя, например **Azure Active Directory Test**.
 
-    б) В текстовое поле **URL** (URL-адрес) вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
+    b. В текстовое поле **URL** (URL-адрес) вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
 
     c. Щелкните ссылку **Show advanced settings** (Показать дополнительные параметры), скопируйте значение **идентификатора сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения ArcGIS Enterprise** на портале Azure.
     
@@ -172,14 +172,14 @@ ms.locfileid: "56161699"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -222,9 +222,9 @@ ms.locfileid: "56161699"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

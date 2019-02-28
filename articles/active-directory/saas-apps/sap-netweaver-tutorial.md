@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fde586563c142690078a693970a9a24bd5cacb4
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: 3aa3bbfc0a79e4923f66cc73817ecae1723621eb
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56302001"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872766"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
+# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство по Интеграция Azure Active Directory с SAP NetWeaver
 
 В этом руководстве описано, как интегрировать SAP NetWeaver с Azure Active Directory.
 Интеграция SAP NetWeaver с Azure AD обеспечивает следующие преимущества:
@@ -111,7 +111,7 @@ ms.locfileid: "56302001"
     >[!NOTE]
     > Настройте эти параметры в соответствии с требованиями вашей организации. Упомянутые выше параметры приведены здесь только для иллюстрации.
 
-    б) При необходимости настройте параметры в экземпляре / профиле по умолчанию системы SAP и перезапустите систему SAP.
+    b. При необходимости настройте параметры в экземпляре / профиле по умолчанию системы SAP и перезапустите систему SAP.
 
     c. Дважды щелкните соответствующего клиента, чтобы включить сеанс безопасности HTTP.
 
@@ -145,7 +145,7 @@ ms.locfileid: "56302001"
 
     a. Перейдите на вкладку **Локальный поставщик**.
 
-    б) Щелкните **Метаданные**.
+    b. Щелкните **Метаданные**.
 
     c. Сохраните созданный **файл XML метаданных** на компьютере и передайте его в раздел **Базовая конфигурация SAML**, чтобы автоматически заполнить значения **Идентификатор** и **URL-адрес ответа** на портале Azure.
 
@@ -167,7 +167,7 @@ ms.locfileid: "56302001"
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Выбор файла метаданных](common/browse-upload-metadata.png)
 
@@ -196,7 +196,7 @@ ms.locfileid: "56302001"
 
     ![изображение](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
-    б) Из списка **Преобразование** выберите **ExtractMailPrefix()**.
+    b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 
     c. Из списка **Параметр 1** выберите **user.userprinicipalname**.
 
@@ -276,7 +276,7 @@ ms.locfileid: "56302001"
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/nameiddetails.png)
 
-    б) Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
+    b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad1.png)
 
@@ -286,7 +286,7 @@ ms.locfileid: "56302001"
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameiddetails1.png)
 
-    б) Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
+    b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad2.png)
 
@@ -314,14 +314,14 @@ ms.locfileid: "56302001"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -376,8 +376,8 @@ ms.locfileid: "56302001"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

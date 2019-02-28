@@ -8,12 +8,12 @@ ms.reviewer: orspod
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 1/30/2019
-ms.openlocfilehash: 343baedb77eb5c8a250e2ab967332dc0905f5112
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: 6dac6fb18f221ddb45e5b5b7e325868915732368
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55743691"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56804656"
 ---
 # <a name="quickstart-ingest-azure-blobs-into-azure-data-explorer-by-subscribing-to-event-grid-notifications"></a>Краткое руководство. Прием больших двоичных объектов Azure в Azure Data Explorer благодаря подписке на уведомления службы "Сетка событий Azure"
 
@@ -58,7 +58,7 @@ ms.locfileid: "55743691"
 
 1. На портале Azure, в своем кластере, выберите **Запрос**.
 
-    ![Ссылка приложения запроса](media/ingest-data-event-hub/query-explorer-link.png)
+    ![Ссылка приложения запроса](media/ingest-data-event-grid/query-explorer-link.png)
 
 1. Скопируйте следующую команду в окно и выберите **Выполнить**, чтобы создать таблицу (TestTable), которая будет принимать входящие данные.
 
@@ -82,11 +82,11 @@ ms.locfileid: "55743691"
 
 1. В созданном кластере выберите **Базы данных**, затем **TestDatabase**.
 
-    ![Выбор тестовой базы данных](media/ingest-data-event-hub/select-test-database.png)
+    ![Выбор тестовой базы данных](media/ingest-data-event-grid/select-test-database.png)
 
 1. Выберите **Прием данных**, затем **Добавить подключение к данным**.
 
-    ![Прием данных](media/ingest-data-event-hub/data-ingestion-create.png)
+    ![Прием данных](media/ingest-data-event-grid/data-ingestion-create.png)
 
 1. Выберите тип подключения: **Хранилище больших двоичных объектов**.
 
@@ -185,9 +185,9 @@ ms.locfileid: "55743691"
 
 1. На портале Azure выберите **Группа ресурсов** слева, а затем выберите созданную группу ресурсов.  
 
-    Если левое меню свернуто, нажмите ![кнопку "Развернуть",](media/ingest-data-event-hub/expand.png) чтобы развернуть его.
+    Если левое меню свернуто, нажмите ![кнопку "Развернуть",](media/ingest-data-event-grid/expand.png) чтобы развернуть его.
 
-   ![Выбор удаляемой группы ресурсов](media/ingest-data-event-hub/delete-resources-select.png)
+   ![Выбор удаляемой группы ресурсов](media/ingest-data-event-grid/delete-resources-select.png)
 
 1. В разделе **test-resource-group** выберите **Удалить группу ресурсов**.
 

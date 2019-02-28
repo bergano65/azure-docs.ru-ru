@@ -10,16 +10,16 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 01/25/2019
+ms.date: 02/26/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 7371808db8d40948f501b051692172fd6a84e2ac
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 1390a3be20dd1fc66bb04939f9ce41139db3cb2e
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56270221"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873276"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager
 
@@ -66,15 +66,23 @@ ms.locfileid: "56270221"
 
 1. Выполните следующую команду в интерфейсе командной строки Azure или Azure PowerShell.  
 
+    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
     ```azurecli-interactive
     echo "Enter your email address that is associated with your Azure subscription):" &&
     read upn &&
     az ad user show --upn-or-object-id $upn --query "objectId" &&
-    ```
+    ```   
+    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
     ```azurepowershell-interactive
-    $upn = Read-Host -Prompt "Input your user principal name (email address) used to sign in to Azure"
+    $upn = Read-Host -Prompt "Enter your user principal name (email address) used to sign in to Azure"
     (Get-AzADUser -UserPrincipalName $upn).Id
     ```
+    или
+    ```azurepowershell-interactive
+    $displayName = Read-Host -Prompt "Enter your user display name (i.e. John Dole, see the upper right corner of the Azure portal)"
+    (Get-AzADUser -DisplayName $displayName).Id
+    ```
+    ---
 2. Запишите идентификатор объекта. Он понадобится в дальнейшем при работе с этим руководством.
 
 Чтобы создать хранилище ключей, сделайте следующее:
@@ -187,12 +195,9 @@ $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
-    -TemplateFile azuredeploy.json `
-    -TemplateParameterFile azuredeploy.parameters.json
+    -TemplateFile "$HOME/azuredeploy.json" `
+    -TemplateParameterFile "$HOME/azuredeploy.parameters.json"
 ```
-
-> [!NOTE]
-> Существует проблема с вводом-выводом файла при использовании Azure PowerShell в Cloud Shell.  Отображается сообщение об ошибке: *Cannot retrieve the dynamic parameters for the cmdlet. Cannot find path 'Azure:/azuredeploy.json' because it does not exist* (Не удалось получить динамические параметры командлета. Не удалось найти путь Azure:/azuredeploy.json, так как он не существует).  Временное решение — не добавлять параметры **-TemplateFile** и **TemplateParameterFile** в команду `New-AzResourceGroupDeploy`. Команда предложит ввести имя файла.
 
 При развертывании шаблона используйте ту же группу ресурсов, что и для хранилища ключей. Это упрощает очистку ресурсов. Вам нужно удалить одну группу ресурсов вместо двух.
 

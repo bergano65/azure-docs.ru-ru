@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory со Snowflake | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Snowflake | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Snowflake.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7bc6b57122072c2fe0c063c1278cf11d97469b6
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 0e86ede90a19d829e87b47d49fa4a12a17fe1d5c
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191323"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867054"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство по Интеграция Azure Active Directory со Snowflake
+# <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство. Интеграция Azure Active Directory со Snowflake
 
 В этом руководстве описано, как интегрировать Snowflake с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Snowflake обеспечивает следующие преимущества.
@@ -141,7 +141,7 @@ ms.locfileid: "56191323"
     > [!NOTE]
     > Это не относится к контексту, выбранному в правом верхнем углу под именем пользователя
     
-    ![Администратор Snowflake ](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
+    ![Администратор Snowflake](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
 
 10. Откройте в блокноте **скачанный сертификат Base 64**. Скопируйте значение между "---BEGIN CERTIFICATE---" и "---END CERTIFICATE---" и вставьте его в кавычки рядом с полем **Сертификат** ниже. В текстовое поле **ssoUrl** вставьте значение **URL-адрес входа**, скопированное на портале Azure. Выберите **Все запросы** и нажмите **Запустить**.
 
@@ -174,14 +174,14 @@ ms.locfileid: "56191323"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -219,11 +219,11 @@ ms.locfileid: "56191323"
 
 2. Щелкните **профиль** в правой верхней части страницы, выберите **Switch Role** (Переключение ролей) и затем **ACCOUNTADMIN**.  
 
-    ![Администратор Snowflake ](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
+    ![Администратор Snowflake](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
 
 3. Для создания пользователя выполните в рабочей области приведенный ниже SQL-запрос, указав в качестве LOGIN_NAME имя пользователя Azure AD.
 
-    ![Snowflake adminsql ](./media/snowflake-tutorial/tutorial_snowflake_usersql.png)
+    ![Snowflake adminsql](./media/snowflake-tutorial/tutorial_snowflake_usersql.png)
 
     ```
     use role accountadmin;
@@ -238,9 +238,9 @@ ms.locfileid: "56191323"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

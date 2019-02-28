@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Cloud Platform.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2a68c6b3e71e066c6bee8f1398e20b5fdcca844
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 4a7fa71f2cb9d2c5326eea75af40e1ab6b986eb9
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174713"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56864878"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство. Интеграция Azure Active Directory с SAP Cloud Platform
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud Platform
 
 В этом руководстве описано, как интегрировать SAP Cloud Platform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с SAP Cloud Platform обеспечивает следующие преимущества:
@@ -122,7 +122,7 @@ ms.locfileid: "56174713"
     | `https://<subdomain>.hanatrial.ondemand.com/<instancename>` |
     | `https://<subdomain>.hana.ondemand.com/<instancename>` |
 
-    б) В текстовом поле **Идентификатор** укажите URL-адрес SAP Cloud Platform в одном из следующих форматов: 
+    b. В текстовом поле **Идентификатор** укажите URL-адрес SAP Cloud Platform в одном из следующих форматов: 
 
     | |
     |--|
@@ -164,7 +164,7 @@ ms.locfileid: "56174713"
    
     a. Нажмите кнопку **Изменить**.
 
-    б) Для параметра **Configuration Type** (Тип конфигурации) выберите значение **Custom** (Настраиваемая).
+    b. Для параметра **Configuration Type** (Тип конфигурации) выберите значение **Custom** (Настраиваемая).
 
     c. В поле **Имя поставщика локальных служб**оставьте значение по умолчанию. Скопируйте это значение и вставьте его в поле **Идентификатор** в конфигурации Azure AD для SAP Cloud Platform.
 
@@ -182,7 +182,7 @@ ms.locfileid: "56174713"
 
     a. Скачайте файл метаданных SAP Cloud Platform, щелкнув ссылку **Get Metadata** (Получить метаданные).
 
-    б) Откройте скачанный XML-файл метаданных SAP Cloud Platform, а затем найдите тег **ns3:AssertionConsumerService**.
+    b. Откройте скачанный XML-файл метаданных SAP Cloud Platform, а затем найдите тег **ns3:AssertionConsumerService**.
  
     c. Скопируйте значение атрибута **Location** и вставьте его в текстовое поле **URL-адрес ответа** в конфигурации Azure AD для SAP Cloud Platform.
 
@@ -221,7 +221,7 @@ ms.locfileid: "56174713"
      >Конфигурация атрибутов зависит от способа разработки приложений в SCP, т. е. какие атрибуты предполагается использовать в ответе SAML и какое имя (атрибут субъекта) используется для доступа к этому атрибуту в коде.
      > 
     
-    б) **Атрибут по умолчанию** на снимке экрана предоставляется только для примера. Он не требуется для того, чтобы сценарий работал.  
+    b. **Атрибут по умолчанию** на снимке экрана предоставляется только для примера. Он не требуется для того, чтобы сценарий работал.  
  
     c. Имена и значения для **атрибута субъекта** , показанные на снимке экрана, зависят от способа разработки приложения. Возможно, приложению требуются другие сопоставления.
 
@@ -251,14 +251,14 @@ ms.locfileid: "56174713"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -300,7 +300,7 @@ ms.locfileid: "56174713"
    
     a. Щелкните **Авторизация**.
 
-    б) Откройте вкладку **Пользователи** .
+    b. Откройте вкладку **Пользователи** .
 
     c. В тестовом поле **Пользователь** введите электронный адрес пользователя.
 
@@ -316,9 +316,9 @@ ms.locfileid: "56174713"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

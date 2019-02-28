@@ -4,18 +4,19 @@ description: Из этого краткого руководства для яз
 titleSuffix: Language Understanding - Microsoft Cognitive Services
 author: diberry
 manager: nitinme
+services: cognitive-services
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 4bc76f67b2d8908abe601aa1fcdfd1962678c548
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 60594137306bfe58024877947959f2865fffe019
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865657"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961811"
 ---
 # <a name="quickstart-change-model-using-go"></a>Краткое руководство. Изменение модели с помощью Go
 
@@ -45,7 +46,7 @@ ms.locfileid: "55865657"
 
 3. Добавьте универсальную функцию HTTP-запроса с ключом разработки в заголовке. 
 
-   [!code-go[Add HTTP request function which includes passing authoring key in header. ](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=12-36 "Add HTTP request function, which includes passing authoring key in header. ")]
+   [!code-go[Add HTTP request function which includes passing authoring key in header.](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=12-36 "Add HTTP request function, which includes passing authoring key in header. ")]
 
 4. Добавьте примеры высказываний из файла JSON.
 
@@ -53,15 +54,15 @@ ms.locfileid: "55865657"
 
 5. Выполните запрос на обучение. Запрос использует вспомогательную функцию, чтобы задать VERB для того же маршрута, что и в состоянии обучения. 
 
-   [!code-go[Request training. ](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=77-86 "Request training. ")]
+   [!code-go[Request training.](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=77-86 "Request training. ")]
 
 6. Выполните запрос на состояние обучения. Запрос использует вспомогательную функцию, чтобы задать VERB для того же маршрута, что и в запросе на обучение. 
 
-   [!code-go[Request training status. ](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=87-90 "Request training status. ")]
+   [!code-go[Request training status.](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=87-90 "Request training status. ")]
 
 7. Добавьте функцию main, чтобы обрабатывать анализ командной строки.
 
-   [!code-go[Add main function to handle command line parsing. ](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=38-60 "Add main function to handle command-line parsing.")]
+   [!code-go[Add main function to handle command line parsing.](~/samples-luis/documentation-samples/quickstarts/change-model/go/add-utterances.go?range=38-60 "Add main function to handle command-line parsing.")]
 
 ## <a name="add-an-utterance-from-the-command-line-train-and-get-status"></a>Добавление фразы из командной строки, обучение и получение состояния
 

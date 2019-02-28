@@ -3,7 +3,7 @@ title: Краткое руководство по созданию и разве
 description: В этом кратком руководстве показано, как создать веб-сайт ASP.NET Core и опубликовать его в службе "Сетка Azure Service Fabric" с помощью Visual Studio.
 services: service-fabric-mesh
 documentationcenter: .net
-author: tylermsft
+author: dkkapur
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/17/2018
-ms.author: twhitney
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 35ce19d796a9889d734bd5dde20a7c56485656f1
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: b30676e0c5782a95c629571cadead7bf58211789
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888551"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56804923"
 ---
-# <a name="quickstart-create-and-deploy-a-web-app-to-azure-service-fabric-mesh"></a>Краткое руководство по созданию и развертыванию веб-приложения в службе "Сетка Azure Service Fabric"
+# <a name="quickstart-create-and-deploy-a-web-app-to-azure-service-fabric-mesh"></a>Краткое руководство. Создание и развертывание веб-приложения в Сетке Azure Service Fabric
 
 Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать приложения для микрослужб без управления виртуальными машинами, хранилищем или сетями.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9b592a58c2153ca7066d30b4ee05a423639f178
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 3c1da22eaf32699ef7afee35cbe7264fe9ae9883
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343984"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879991"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
 
@@ -108,7 +108,7 @@ ms.locfileid: "56343984"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://hackerone.com/<company name>/authentication`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://hackerone.com/users/saml/metadata`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://hackerone.com/users/saml/metadata`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить его, обратитесь в [службу поддержки клиентов HackerOne](mailto:support@hackerone.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -145,7 +145,7 @@ ms.locfileid: "56343984"
 
     a. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
 
-    б) В текстовые поля   **URL-адресов для единого входа** вставьте значение **URL-адреса для входа**, скопированное на портале Azure.
+    b. В текстовые поля   **URL-адресов для единого входа** вставьте значение **URL-адреса для входа**, скопированное на портале Azure.
 
     c. Откройте в Блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X509 Certificate** (Сертификат X509).
 
@@ -157,7 +157,7 @@ ms.locfileid: "56343984"
 
     a. Щелкните **Run test**(Выполнить проверку).
 
-    б) Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
+    b. Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -175,14 +175,14 @@ ms.locfileid: "56343984"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -222,8 +222,8 @@ ms.locfileid: "56343984"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

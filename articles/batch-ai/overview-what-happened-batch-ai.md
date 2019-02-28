@@ -7,12 +7,12 @@ ms.service: batch-ai
 ms.topic: overview
 ms.date: 2/14/2019
 ms.author: garye
-ms.openlocfilehash: 87dcf18a2517561e3166726f8f1f1a70c2ec7713
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: fb1114e94c227ce6787532c6059186399d0f57f0
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447809"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56961367"
 ---
 # <a name="whats-happening-to-azure-batch-ai"></a>Что происходит с Azure Batch AI
 
@@ -282,7 +282,7 @@ ds = ws.get_default_datastore()
 print(ds.datastore_type, ds.account_name, ds.container_name)
 ```
 
-Дополнительные сведения о регистрации дополнительных учетных записей хранения или получении ссылки на другое зарегистрированное хранилище данных см. в [документации по Службе машинного обучения Azure](../machine-learning/service/how-to-access-data.md#create-a-datastore).
+Дополнительные сведения о регистрации дополнительных учетных записей хранения или получении ссылки на другое зарегистрированное хранилище данных см. в [документации по Службе машинного обучения Azure](../machine-learning/service/how-to-access-data.md#access).
 
 
 #### <a name="downloading-and-uploading-data"></a>Отправка и скачивание файлов 
@@ -434,7 +434,7 @@ estimator = TensorFlow(source_directory=project_folder,
                        use_gpu=True)
 ```
 
-Полные сведения для этого фрагмента кода для обучения (в том числе файл mnist_replica.py) можно найти в [репозитории GitHub примера записной книжки службы "Машинное обучение Azure"](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/distributed-tensorflow-with-parameter-server). Само хранилище данных можно установить на отдельных узлах, или же данные для обучения можно скачать на сам узел. Дополнительные сведения о ссылках на хранилище данных механизма оценки см. в [документации службы "Машинное обучение Azure"](../machine-learning/service/how-to-access-data.md#access-datastores-for-training). 
+Полные сведения для этого фрагмента кода для обучения (в том числе файл mnist_replica.py) можно найти в [репозитории GitHub примера записной книжки службы "Машинное обучение Azure"](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/distributed-tensorflow-with-parameter-server). Само хранилище данных можно установить на отдельных узлах, или же данные для обучения можно скачать на сам узел. Дополнительные сведения о ссылках на хранилище данных механизма оценки см. в [документации службы "Машинное обучение Azure"](../machine-learning/service/how-to-access-data.md#access). 
 
 Отправка выполнения в службе "Машинное обучение Azure" выполняется с помощью функции отправки.
 

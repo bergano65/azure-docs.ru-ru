@@ -8,14 +8,14 @@ ms.devlang: json
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.custom: mvc
-ms.openlocfilehash: fa8091011575822907915b67cf48bffaf5e7e728
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: bb7a48b08fde07380276d33393225c3f5220b93f
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657082"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880705"
 ---
-# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство. Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
+# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство по Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 
 [REST API Базы данных Azure для MySQL](https://docs.microsoft.com/rest/api/mysql/) позволяет инженерам DevOps автоматизировать и интегрировать процессы подготовки, настройки и эксплуатации управляемых серверов MySQL и баз данных в Azure.  Этот интерфейс API позволяет создавать, перечислять, настраивать и удалять серверы MySQL и базы данных в службе Базы данных Azure для MySQL.
 
@@ -29,6 +29,8 @@ Azure Resource Manager с помощью базового REST API объявл�
 > * Загрузка примера данных
 > * Запрос данных
 > * Обновление данных
+
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
 ## <a name="create-an-azure-database-for-mysql-server-with-vnet-service-endpoint-using-azure-resource-manager-template"></a>Создание Базы данных Azure для сервера MySQL с конечной точкой службы в виртуальной сети с помощью шаблона Azure Resource Manager
 

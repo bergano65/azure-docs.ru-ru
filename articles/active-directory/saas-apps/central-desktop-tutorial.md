@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Central Desktop.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa1771366efba82fc00886581dac77295e68f9f7
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 50ef84c9795065d4186fae9542c18d4df06c85c2
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342156"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56880382"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство. Интеграция Azure Active Directory с Central Desktop
 
@@ -107,7 +107,7 @@ ms.locfileid: "56342156"
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.centraldesktop.com`.
 
-    б) В поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<companyname>.centraldesktop.com/saml2-metadata.php`|
@@ -147,7 +147,7 @@ ms.locfileid: "56342156"
 
     a. Установите флажок **Разрешить единый вход SAML версии 2**.
 
-    б) В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    b. В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В поле **SSO Login URL** (URL-адрес для единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -159,7 +159,7 @@ ms.locfileid: "56342156"
     
     a. Выберите **Сертификат**.
 
-    б) В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
+    b. В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
 
     c. Откройте скачанный сертификат в Блокноте. Затем скопируйте содержимое сертификата и вставьте его в поле **SSO Certificate** (Сертификат единого входа).
 
@@ -183,14 +183,14 @@ ms.locfileid: "56342156"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -252,8 +252,8 @@ ms.locfileid: "56342156"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

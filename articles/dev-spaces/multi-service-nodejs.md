@@ -10,16 +10,16 @@ ms.date: 11/21/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: f3dbe8c62cb1fcc0585b5abccc51a620ea713543
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 8d305e051bd6708977926e3a4de47c15a784c7b6
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55664772"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56818822"
 ---
-# <a name="multi-service-development-with-azure-dev-spaces"></a>Мультисервисная разработка в Azure Dev Spaces
+# <a name="multi-service-development-with-azure-dev-spaces"></a>Разработка с использованием нескольких служб с помощью Azure Dev Spaces
 
-В этом руководстве вы узнаете, как разрабатывать мультисервисные приложения в Azure Dev Spaces, а также о некоторых дополнительных преимуществах, предоставляемых Dev Spaces.
+Из этого руководства вы узнаете, как разрабатывать приложения на базе нескольких служб с помощью Azure Dev Spaces. Также здесь описываются некоторые дополнительные преимущества использования Dev Spaces.
 
 ## <a name="call-a-service-running-in-a-separate-container"></a>Вызов службы, запущенной в отдельном контейнере
 
@@ -73,10 +73,10 @@ ms.locfileid: "55664772"
 1. Откройте веб-приложение и выполните пошаговое прохождение кода в обеих службах. В веб-приложении должно отобразиться объединенное сообщение от двух служб: "Hello from webfrontend and Hello from mywebapi".
 
 ### <a name="automatic-tracing-for-http-messages"></a>Автоматическая трассировка сообщений HTTP
-Вы могли заметить, что, хотя *webfrontend* не содержит какого-либо кода для вывода HTTP-вызова, который он делает к *mywebapi*, можно увидеть сообщения трассировки HTTP в окне вывода:
+Вы могли заметить, что, хотя *webfrontend* не содержит код для вывода HTTP-вызова, выполняемого к *mywebapi*, можно увидеть сообщения трассировки HTTP в окне вывода:
 ```
 // The request from your browser
-webfrontend.<id>.<region>.aksapp.io --hyh-> webfrontend:
+default.webfrontend.856bb3af715744c6810b.eus.azds.io --hyh-> webfrontend:
    GET /api?_=1544485357627 HTTP/1.1
 
 // *webfrontend* reaching out to *mywebapi*
@@ -89,11 +89,11 @@ webfrontend <-1b1-- mywebapi:
    Hello from mywebapi
 
 // Response from *webfrontend* to your browser
-webfrontend.<id>.<region>.aksapp.io <-hyh-- webfrontend:
+default.webfrontend.856bb3af715744c6810b.eus.azds.io <-hyh-- webfrontend:
    HTTP/1.1 200 OK
    Hello from webfrontend and Hello from mywebapi
 ```
-Это одно из "бесплатных" преимуществ, которые вы получаете от инструментирования Dev Spaces. Мы вставляем компоненты для отслеживания HTTP-запросов по мере их прохождения через систему, чтобы вам было легче отслеживать сложные мультисервисные вызовы во время разработки.
+Это одно из "бесплатных" преимуществ инструментирования с помощью Dev Spaces. Мы вставляем компоненты для отслеживания HTTP-запросов по мере их прохождения через систему, чтобы вам было легче отслеживать сложные вызовы к нескольким службам во время разработки.
 
 ### <a name="well-done"></a>Все готово!
 Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
@@ -102,4 +102,4 @@ webfrontend.<id>.<region>.aksapp.io <-hyh-- webfrontend:
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Коллективная разработка с помощью Azure Dev Spaces](team-development-nodejs.md)
+> [Коллективная разработка с помощью Dev Spaces](team-development-nodejs.md)

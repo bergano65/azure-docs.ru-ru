@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf4d2d18971948e15cca2e1b91d9d55a73cefe4b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 6b546f4f5b2ed18e161826ff4bc3826488602439
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187922"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882558"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-symantec-web-security-service-wss"></a>Руководство. Интеграция Azure Active Directory с Symantec Web Security Service (WSS)
 
@@ -110,7 +110,7 @@ ms.locfileid: "56187922"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://saml.threatpulse.net:8443/saml/saml_realm`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес `https://saml.threatpulse.net:8443/saml/saml_realm/bcsamlpost`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://saml.threatpulse.net:8443/saml/saml_realm/bcsamlpost`
 
     > [!NOTE]
     > Если по какой-либо причине предложенные значения **Идентификатора** и **URL-адреса ответа** не работают, обратитесь в [группу поддержки Symantec Web Security Service (WSS)](https://www.symantec.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -139,14 +139,14 @@ ms.locfileid: "56187922"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -189,9 +189,9 @@ ms.locfileid: "56187922"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

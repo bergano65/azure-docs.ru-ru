@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Workplace by Facebook | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Workplace by Facebook | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e233de6f0909477e5033d2a0104f9165e86a9077
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: f7be803d229990359846bdc3c447a7d09c3143c8
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311041"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878648"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство. Интеграция Azure Active Directory с Workplace by Facebook
 
@@ -120,7 +120,7 @@ ms.locfileid: "56311041"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.facebook.com`.
 
-    б) В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.facebook.com/company/<instanceID>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.facebook.com/company/<instanceID>`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Правильные значения для своего сообщества Workplace см. на странице аутентификации панели мониторинга компании Workplace.
@@ -156,7 +156,7 @@ ms.locfileid: "56311041"
 
     a. В текстовое поле **SAML URL** (URL-адрес SAML) вставьте **URL-адрес SAML**, скопированный на портале Azure.
 
-    б) В текстовое поле **SAML Issuer URL** (URI издателя SAML) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
+    b. В текстовое поле **SAML Issuer URL** (URI издателя SAML) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
     c. В текстовое поле **SAML Logout Redirect** (Перенаправление для выхода SAML) вставьте значение **URL-адреса выхода**, скопированное на портале Azure (необязательно).
 
@@ -203,14 +203,14 @@ ms.locfileid: "56311041"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -255,9 +255,9 @@ ms.locfileid: "56311041"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 5597f3c017ccf2dbb58b7b6b046720c8f49803c5
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 77c38089a4f9c6518d9736df7f3020c66ad17b3b
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312299"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56877050"
 ---
 # <a name="move-azure-vms-into-availability-zones"></a>Перенос виртуальных машин Azure в Зоны доступности
 Функция Зоны доступности в Azure защищает приложения и данные от сбоев на уровне центра обработки данных. Каждая зона доступности состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение зон доступности в пределах региона защищает приложения и данные от сбоев центров обработки данных. Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. Зоны доступности поддерживаются в выбранных регионах, как уже упоминалось [здесь](https://docs.microsoft.com/azure/availability-zones/az-overview#regions-that-support-availability-zones). 

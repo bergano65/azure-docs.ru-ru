@@ -15,12 +15,12 @@ ms.topic: sample
 ms.date: 11/21/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 845d47af75495a158e56312126c8e246b43f789f
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: e8879b67b79523cc35fb28a707a6c77f3efb75c0
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112779"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584985"
 ---
 # <a name="restore-a-web-app-from-a-backup-in-another-subscription-using-powershell"></a>Восстановление веб-приложения из резервной копии в других подписках с помощью PowerShell
 
@@ -48,7 +48,7 @@ Remove-AzResourceGroup -Name $resourceGroupName -Force
 
 | Команда | Примечания |
 |---|---|
-| [Add-AzAccount](/powershell/module/az.profile/add-azaccount) | Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к Azure Resource Manager.  |
+| [Add-AzAccount](/powershell/module/az.accounts/connect-azaccount) | Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к Azure Resource Manager.  |
 | [Get-AzWebAppBackupList](/powershell/module/az.websites/get-azwebappbackuplist) | Получение списка резервных копий веб-приложения. |
 | [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение. |
 | [Restore-AzWebAppBackup](/powershell/module/az.websites/restore-azwebappbackup) | Восстановление веб-приложения из ранее созданной резервной копии. |

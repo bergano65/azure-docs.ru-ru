@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с OpenAthens | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с OpenAthens | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OpenAthens.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1cda27ac27dc7ce76ffe525d002ec9443cb39aa
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d0e1c104380974c04309a7c2c80c976cfb2a099b
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176158"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867190"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-openathens"></a>Руководство. Интеграция Azure Active Directory с OpenAthens
 
@@ -109,7 +109,7 @@ ms.locfileid: "56176158"
 
     ![Отправка метаданных OpenAthens](common/upload-metadata.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     ![Обзор отправки метаданных OpenAthens](common/browse-upload-metadata.png)
 
@@ -143,7 +143,7 @@ ms.locfileid: "56176158"
 
     a. Из списка **Display name mapping** (Сопоставление отображаемого имени) выберите **Use Attribute** (Использовать атрибут).
 
-    б) В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
     
     c. Из списка **Unique user mapping** (Сопоставление уникального пользователя) выберите **Use Attribute** (Использовать атрибут).
 
@@ -175,14 +175,14 @@ ms.locfileid: "56176158"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -222,9 +222,9 @@ ms.locfileid: "56176158"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

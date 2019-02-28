@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 08/17/2018
-ms.openlocfilehash: 7798af5d667bcf70ba562bb7198f9af570f3005a
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 57ed02463555ce9e958aedd9c2b317f7a167567b
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044422"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56985892"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-net"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -36,7 +36,6 @@ ms.locfileid: "54044422"
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/). Обязательный пакет в предварительной версии, который поддерживается в рабочих средах. 
 * [Библиотека таблиц Microsoft Azure CosmosDB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Эта библиотека сейчас доступна только для .NET Standard, но не для .NET Core.
-* [Диспетчер конфигураций Azure для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
 * [Учетная запись хранения Azure](../storage/common/storage-quickstart-create-account.md)
 
 [!INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
@@ -77,14 +76,11 @@ ms.locfileid: "54044422"
 
 * [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Этот пакет предоставляет программный доступ к ресурсам данных в вашей учетной записи хранилища таблиц или API таблиц Azure Cosmos DB. Эта библиотека сейчас доступна только для .NET Standard, но не для .NET Core.
 
-* [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/). Этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
-
 Чтобы получить пакеты NuGet, сделайте следующее:
 
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
 2. Выполните поиск в Интернете по запросу Microsoft.Azure.Storage.Common, выберите версию <= 9.0.0.1 и щелкните **Установить**, чтобы установить общую библиотеку службы хранилища Azure для .NET (предварительная версия) и ее зависимости. Убедитесь, что установлен флажок **Включить предварительные выпуски**, так как используется предварительная версия пакета.
 3. Выполните поиск в Интернете по запросу "Microsoft.Azure.CosmosDB.Table" и выберите **Установить**, чтобы установить библиотеку таблиц Microsoft Azure Cosmos DB.
-4. Выполните поиск в Интернете по запросу "WindowsAzure.ConfigurationManager" и нажмите кнопку **Установить**, чтобы установить библиотеку диспетчера конфигураций Microsoft Azure.
 
 > [!NOTE]
 > Зависимости ODataLib в общей библиотеке хранилища для .NET разрешаются с помощью пакетов ODataLib, доступных в NuGet, а не в WCF Data Services. Библиотеки ODataLib можно скачать напрямую или указать на них ссылку в проекте через NuGet. К специальным пакетам ODataLib, используемым клиентскими библиотеками хранения, относятся [OData](https://nuget.org/packages/Microsoft.Data.OData/), [Edm](https://nuget.org/packages/Microsoft.Data.Edm/) и [Spatial](https://nuget.org/packages/System.Spatial/). Хотя эти библиотеки используются классами хранилища таблиц Azure, они являются обязательными зависимостями для программирования с использованием общей библиотеки хранилища.

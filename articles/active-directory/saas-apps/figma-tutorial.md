@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Figma | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Figma | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Figma.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fc9c2da1dd2f1ba98344d0f86dbb61365f99b71
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: ecfdd76e171ed237e3e87c98f6596634784faea1
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330007"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56865320"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-figma"></a>Руководство. Интеграция Azure Active Directory с Figma
 
@@ -142,7 +142,7 @@ ms.locfileid: "56330007"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -183,9 +183,9 @@ ms.locfileid: "56330007"
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -225,8 +225,8 @@ ms.locfileid: "56330007"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

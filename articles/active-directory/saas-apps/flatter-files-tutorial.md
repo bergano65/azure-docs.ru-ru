@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: e086975f52a40eabcbec1fa4e7aedf1d717bde89
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.openlocfilehash: 24fa4297701e5144ba58d6d0e8ec034a6cdda570
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455557"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872223"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
+# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
 
 В этом руководстве описано, как интегрировать приложение Flatter Files с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Flatter Files обеспечивает следующие преимущества.
@@ -132,7 +132,7 @@ ms.locfileid: "56455557"
     
     a. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
     
-    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
+    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 4. В диалоговом окне **SAML Configuration** (Настройка SAML) выполните следующие действия. 
    
@@ -143,7 +143,7 @@ ms.locfileid: "56455557"
     >[!NOTE]
     >Если у вас нет зарегистрированного домена, обратитесь в службу поддержки Flatter Files по адресу [support@flatterfiles.com](mailto:support@flatterfiles.com). 
     
-    б) В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте **URL-адрес для входа**, скопированный на портале Azure.
+    b. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте **URL-адрес для входа**, скопированный на портале Azure.
    
     c.  Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
@@ -165,14 +165,14 @@ ms.locfileid: "56455557"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -220,7 +220,7 @@ ms.locfileid: "56455557"
 
     a. В текстовом поле **Имя** введите **Britta**.
    
-    б) В текстовом поле **Фамилия** введите **Simon**. 
+    b. В текстовом поле **Фамилия** введите **Simon**. 
    
     c. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon на портале Azure.
    
@@ -235,9 +235,9 @@ ms.locfileid: "56455557"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

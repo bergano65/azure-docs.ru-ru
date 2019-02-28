@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Drift | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Drift | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Drift.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 116dc5acbfac6efd280b377602e932ed16b81ada
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9f31d4099d4a8a96a66bc59239a7401b61398e11
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171712"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879107"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-drift"></a>Руководство по Интеграция Azure Active Directory с Drift
+# <a name="tutorial-azure-active-directory-integration-with-drift"></a>Руководство. Интеграция Azure Active Directory с Drift
 
 В этом руководстве описано, как интегрировать Drift с Azure Active Directory (AAD).
 Интеграция Azure AD с приложением Drift обеспечивает следующие преимущества:
@@ -109,7 +109,7 @@ ms.locfileid: "56171712"
 
     a. Щелкните **Задать дополнительные URL-адреса**.
  
-    б) В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://app.drift.com` 
+    b. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `https://app.drift.com` 
 
     c. Если вы хотите настроить приложение в режиме, инициированном **поставщиком услуг**, сделайте следующее:
 
@@ -131,7 +131,7 @@ ms.locfileid: "56171712"
 
     ![изображение](common/new-attribute-details.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. Оставьте пустым поле **Пространство имен**.
 
@@ -167,7 +167,7 @@ ms.locfileid: "56171712"
 
     a. Отправьте **XML-файл с метаданными федерации**, который вы скачали с портала Azure, через текстовое поле **Upload Identity Provider metadata file** (Отправить файл метаданных поставщика удостоверений).
 
-    б) После отправки файла метаданных остальные значения на странице заполняются автоматически.
+    b. После отправки файла метаданных остальные значения на странице заполняются автоматически.
 
     c. Выберите команду **Enable SAML**(Включить SAML).
 
@@ -187,14 +187,14 @@ ms.locfileid: "56171712"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -237,9 +237,9 @@ ms.locfileid: "56171712"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

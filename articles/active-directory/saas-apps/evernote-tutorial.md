@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1875c198115c2d7c37eb48c3fde6c65d4ffe4d2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d374fd78d2307c7cc7688a308e24c32c7f4b3ad1
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171933"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875036"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство по Интеграция Azure Active Directory с Evernote
+# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство. Интеграция Azure Active Directory с Evernote
 
 В этом руководстве описано, как интегрировать Evernote с Azure Active Directory (Azure AD).
 Интеграция Evernote с Azure AD обеспечивает следующие преимущества:
@@ -145,7 +145,7 @@ ms.locfileid: "56171933"
     
     a.  **Включить единый вход**. Единый вход включен по умолчанию (щелкните **Отключить единый вход**, чтобы удалить требование единого входа).
 
-    б) Вставьте значение **URL-адреса входа**, скопированное на портале Azure, в текстовое поле **SAML HTTP Request URL** (URL-адрес HTTP-запроса SAML).
+    b. Вставьте значение **URL-адреса входа**, скопированное на портале Azure, в текстовое поле **SAML HTTP Request URL** (URL-адрес HTTP-запроса SAML).
 
     c. Откройте в Блокноте скачанный из Azure AD сертификат и скопируйте его содержимое, включая строки BEGIN CERTIFICATE и END CERTIFICATE, в текстовое поле **X.509 Certificate** (Сертификат X.509). 
 
@@ -167,14 +167,14 @@ ms.locfileid: "56171933"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а) В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например BrittaSimon@contoso.com.
 
-    в) Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    г) Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -233,9 +233,9 @@ ms.locfileid: "56171933"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
