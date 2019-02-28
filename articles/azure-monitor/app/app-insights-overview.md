@@ -13,12 +13,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 02/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: d1c7340038731ebde10a7ffcb0ef2adcde18e901
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 8648042c114c514df2218249719faa3ff19df5ec
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267501"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669828"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Application Insights — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга вашего работающего веб-приложения. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
@@ -107,7 +107,6 @@ Application Insights — одна из многих служб, размещен
 * **Во время выполнения — инструментирование веб-приложения на сервере.**  Не допускает обновление кода. Требуется административный доступ на сервер.
   * [**Локальные или размещенные на виртуальной машине службы IIS**](../../azure-monitor/app/monitor-performance-live-website-now.md);
   * [**веб-приложения или виртуальные машины Azure**](../../azure-monitor/app/monitor-performance-live-website-now.md);
-  * [**Java EE**](../../azure-monitor/app/java-live.md).
 * **Во время разработки — добавление Application Insights в код.**  Таким образом вы получаете возможность записывать пользовательскую телеметрию, а также инструментировать серверные и классические приложения.
   * [Visual Studio](../../azure-monitor/app/asp-net.md) 2013 с обновлением 2 или более поздняя версия.
   * [Java](../../azure-monitor/app/java-get-started.md)
@@ -117,12 +116,10 @@ Application Insights — одна из многих служб, размещен
 * **[Анализ данных использования мобильного приложения](../../azure-monitor/learn/mobile-center-quickstart.md)** с помощью интеграции с Visual Studio App Center.
 * **[Тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md)** с наших серверов для регулярной проверки связи с вашим веб-сайтом.
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 Приступите к работе во время выполнения с помощью:
 
 * [сервера IIS;](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [сервера Java EE](../../azure-monitor/app/java-live.md).
 
 Приступите к работе во время разработки с помощью:
 
