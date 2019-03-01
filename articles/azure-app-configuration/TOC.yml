@@ -1,5 +1,5 @@
 items:
-- name: Документация по службе "Конфигурация приложений Azure"
+- name: Документация по службе "Конфигурация приложений Azure" (предварительная версия)
   href: index.yml
 - name: Обзор
   items:
@@ -26,8 +26,6 @@ items:
     href: integrate-azure-managed-service-identity.md
 - name: Примеры
   items:
-  - name: Примеры кода
-    href: https://github.com/Azure/AppConfiguration/samples
   - name: Инфраструктура CLI Azure
     href: cli-samples.md
 - name: Основные понятия
@@ -51,10 +49,14 @@ items:
   - name: Поставщик конфигурации Java Spring
     href: https://go.microsoft.com/fwlink/?linkid=2074659
   - name: REST
-    href: https://docs.microsoft.com/rest/api/azure-app-configuration
-ms.openlocfilehash: c35296a6923e464ca20a873de4165ea20c08278f
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+    href: https://go.microsoft.com/fwlink/?linkid=2078296
+- name: Ресурсы
+  items:
+  - name: Отзыв о продукте
+    href: https://github.com/Azure/AppConfiguration
+ms.openlocfilehash: 6723ea35f6cc674c0e2776260c2077d781a5014c
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56884140"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56989778"

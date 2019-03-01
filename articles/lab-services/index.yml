@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 6b15db6bc4e5d868080cb2949e34b62fd8033854
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: eec0d8284163811354edd14b2b1b6b3ea8e12af4
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56726182"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56960128"
 documentType: LandingData
-title: Документация по Azure DevTest Labs и предварительной версии Служб лабораторий Azure
+title: Документация по Azure DevTest Labs и Службам лабораторий Azure
 metadata:
   title: Документация по Службам лабораторий Azure. Руководства и справочник по API | Документация Майкрософт
   description: Узнайте, как использовать Службы лабораторий Azure, чтобы быстро настроить лабораторию для разработки, тестирования, хакатона или аудитории для своей группы разработчиков или пользователей, проходящих курс обучения, в облаке. В руководствах, примерах и других документах материалах Azure объясняется, как создавать лаборатории, управлять ими и обеспечивать их безопасность.

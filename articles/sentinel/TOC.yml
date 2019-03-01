@@ -1,0 +1,94 @@
+items:
+- name: Документация по Azure Sentinel (предварительная версия)
+  href: index.yml
+- name: Обзор
+  href: overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Подключение к Azure Sentinel
+    href: quickstart-onboard.md
+  - name: Контроль с помощью оповещений
+    href: quickstart-get-visibility.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Обнаружение потенциальных угроз
+    href: tutorial-detect-threats.md
+  - name: Расследование инцидентов
+    href: tutorial-investigate-cases.md
+  - name: Реагирование на угрозы
+    href: tutorial-respond-threats-playbook.md
+- name: Практические руководства
+  items:
+  - name: Подключение источников данных
+    href: connect-data-sources.md
+    items:
+    - name: Подключение служб Майкрософт
+      items:
+      - name: Подключение Azure AD
+        href: connect-azure-active-directory.md
+      - name: Подключение Office 365
+        href: connect-office-365.md
+      - name: Подключение Cloud App Security
+        href: connect-cloud-app-security.md
+      - name: Подключение журнала действий Azure
+        href: connect-azure-activity.md
+      - name: Подключение службы защиты идентификации Azure AD
+        href: connect-azure-ad-identity-protection.md
+      - name: Подключение Azure Information Protection
+        href: connect-azure-information-protection.md
+      - name: Подключение Azure ATP
+        href: connect-azure-atp.md
+      - name: Подключение Центра безопасности Azure
+        href: connect-azure-security-center.md
+      - name: Подключение брандмауэра Windows
+        href: connect-windows-firewall.md
+      - name: Подключение событий безопасности Windows
+        href: connect-windows-security-events.md
+    - name: Подключение внешних решений
+      items:
+      - name: Подключение generic CEF
+        href: connect-common-event-format.md
+      - name: Подключение Barracuda
+        href: connect-barracuda.md
+      - name: Подключение Check Point
+        href: connect-checkpoint.md
+      - name: Подключение Palo Alto
+        href: connect-paloalto.md
+      - name: Подключение Fortinet
+        href: connect-fortinet.md
+      - name: Подключение F5
+        href: connect-f5.md
+      - name: Подключение Syslog
+        href: connect-syslog.md
+      - name: Подключение Cisco
+        href: connect-cisco.md
+    - name: Подключение анализа угроз
+      href: connect-threat-intelligence.md
+  - name: Аналитика пользователей
+    href: user-analytics.md
+  - name: Поиск
+    href: hunting.md
+    items:
+    - name: Поиск с помощью записных книжек
+      href: notebooks.md
+    - name: Поиск с помощью закладок
+      href: bookmarks.md
+  - name: Включение Fusion
+    href: connect-fusion.md
+- name: Ресурсы
+  items:
+  - name: Полезные ресурсы
+    href: resources.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=security-identity
+  - name: Блог по безопасности, конфиденциальности и соответствию нормам Azure
+    href: http://blogs.msdn.com/b/azuresecurity/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+ms.openlocfilehash: 50587fc6b2fca37ddbe5a9a1cbe4ff1914c809c9
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56993373"

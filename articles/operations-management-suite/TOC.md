@@ -2,7 +2,7 @@
 ## [Мониторинг с использованием агента](../monitoring/index.md)
 
 # Начало работы
-## [Служба Log Analytics](../log-analytics/log-analytics-get-started.md)
+## [Журналы Azure Monitor](../log-analytics/log-analytics-get-started.md)
 ## [Автоматизация](/azure/automation/)
 ## [Архивация](../backup/backup-introduction-to-azure-backup.md)
 ## [Site Recovery](../site-recovery/site-recovery-overview.md)
@@ -11,7 +11,7 @@
 # Практическое руководство
 
 ## Анализ
-### [Служба Log Analytics](../azure-monitor/log-query/log-query-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
+### [Журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ## Автоматизация
 ### [Обзор службы автоматизации Azure](../automation/automation-intro.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 

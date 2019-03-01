@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2105919e0c21ef57ae2cd19450110df384252e97
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 43d28cde7e4287b5394087000b5e730a94748713
+ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730942"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57010639"
 documentType: LandingData
 title: Документация по API автозаполнения Bing
 metadata:
@@ -12,18 +12,39 @@ metadata:
   title: Документация по API автозаполнения Bing. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
   description: Узнайте, как с помощью API автозаполнения Bing получать предлагаемые запросы на основе частичного запроса. В руководствах описано, как создавать приложения, использующие эту службу.
   services: cognitive-services
-  author: v-jaswel
-  manager: kamrani
+  author: aahill
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-autosuggest
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 10/10/2017
-  ms.author: v-jaswel
+  ms.date: 02/20/2019
+  ms.author: aahi
 abstract:
-  description: API автозаполнения Bing позволяет отправить частичный поисковый запрос и получить список предложений по запросам, которые другие пользователи вводили для поиска.  Например, по мере того, как пользователь вводит каждый символ слова для поиска, вызывается этот API и раскрывающийся список в поле поиска заполняется строками предложенных запросов. Узнайте, как использовать API автозаполнения Bing, изучив краткие инструкции, примеры и руководства.
+  description: API автозаполнения Bing позволяет отправить частичный поисковый запрос и получить список предложений по запросам, которые другие пользователи вводили для поиска.  Например, по мере того, как пользователь вводит каждый символ термина для поиска, вызывается этот API и раскрывающийся список в поле поиска заполняется предложениями. Узнайте, как использовать API автозаполнения Bing, изучив краткие инструкции, примеры и руководства.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/bing-autosuggest/overview
+      html: <p>Ознакомьтесь с API "Автозаполнение Bing"</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Что такое API "Автозаполнение Bing"?
+    - href: /azure/cognitive-services/bing-autosuggest/concepts/get-suggestions
+      html: <p>Узнайте, как получать предложения по поиску в реальном времени</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Получение предложений из API "Автозаполнение Bing"
+    - href: /azure/cognitive-services/bing-autosuggest/language-support
+      html: <p>Узнайте, какие языки поддерживает этот API.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Поддерживаемые языки
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
@@ -60,7 +81,7 @@ sections:
   - type: paragraph
     text: Инструкции по разработке приложений с использованием API автозаполнения Bing.
   - type: paragraph
-    text: <a href="tutorials/autosuggest.md">Одностраничное веб-приложение</a> | <a href="tutorials/autosuggest-source.md">Исходный код</a>
+    text: <a href="tutorials/autosuggest.md">Одностраничное веб-приложение</a>
 - title: Справочные материалы
   items:
   - type: list

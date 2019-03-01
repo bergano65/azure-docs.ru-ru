@@ -1,0 +1,56 @@
+items:
+- name: API Azure для FHIR
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Обзор API Azure для FHIR
+    href: overview.md
+  - name: Обзор FHIR Server для Azure
+    href: overview-open-source-server.md
+- name: Быстрое начало работы
+  items:
+  - name: Развертывание API Azure для FHIR — портал
+    href: fhir-paas-portal-quickstart.md
+  - name: Развертывание API Azure для FHIR — PowerShell
+    href: fhir-paas-powershell-quickstart.md
+  - name: Развертывание API Azure для FHIR — CLI
+    href: fhir-paas-cli-quickstart.md
+  - name: Развертывание FHIR Server для Azure — портал
+    href: fhir-oss-portal-quickstart.md
+  - name: Развертывание FHIR Server для Azure — PowerShell
+    href: fhir-oss-powershell-quickstart.md
+  - name: Развертывание FHIR Server для Azure — CLI
+    href: fhir-oss-cli-quickstart.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Получение доступа к API FHIR с помощью Postman
+    href: access-fhir-postman-tutorial.md
+  expanded: false
+- name: Практические руководства
+  items:
+  - name: Регистрация приложения-ресурса
+    href: register-resource-azure-ad-client-app.md
+  - name: Регистрация конфиденциального клиентского приложения
+    href: register-confidential-azure-ad-client-app.md
+  - name: Регистрация общедоступного клиентского приложения
+    href: register-public-azure-ad-client-app.md
+  - name: Регистрация клиентского приложения службы
+    href: register-service-azure-ad-client-app.md
+  - name: Получение маркера для API Azure для FHIR — CLI
+    href: get-healthcare-apis-access-token-cli.md
+  - name: Поиск идентификаторов объектов удостоверений
+    href: find-identity-object-ids.md
+  expanded: false
+- name: Ресурсы
+  items:
+  - name: Часто задаваемые вопросы
+    href: fhir-faq.md
+  - name: Поддерживаемые функции
+    href: fhir-features-supported.md
+ms.openlocfilehash: 60d0d4b8368a64b9ef66608de6824cec9876b8be
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56958122"

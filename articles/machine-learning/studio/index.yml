@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: b8ce62533af1cf8f921a8a8eafb8e781821c2604
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 4428bf710df5eae3b06c8abd38eb85d6128a574d
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233818"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56959431"
 documentType: LandingData
 title: Документация по Студии машинного обучения
 metadata:
@@ -18,21 +18,10 @@ metadata:
   ms.author: jmartens
   ms.tgt_pltfrm: na
   ms.devlang: na
-  ms.date: 01/24/2019
+  ms.date: 02/24/2019
 abstract:
   description: Студия машинного обучения Azure — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения.
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как приступить к использованию Студии машинного обучения:'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="create-experiment">Ознакомьтесь со сведениями о создании первого эксперимента в Студии.</a>
-    - html: <a href="algorithm-choice">Выбор оптимального алгоритма</a>
-    - html: <a href="deploy-consume-web-service-guide">Составьте представление о развертывании моделей в качестве веб-служб.</a>
-    - html: <a href="data-science-for-beginners-the-5-questions-data-science-answers">Прочтите статью об обработке и анализе данных для начинающих.</a>
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -40,8 +29,8 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="tutorial-part1-credit-risk">Создание и развертывание решения для прогнозирования</a>
-    - html: <a href="azure-ml-customer-churn-scenario">Пример оттока клиентов</a>
+    - html: <a href="create-experiment">Ознакомьтесь со сведениями о создании первого эксперимента в Студии.</a>
+    - html: <a href="tutorial-part1-credit-risk">Создание и развертывание решения для прогнозирования кредитного риска</a>
 - title: Справочные материалы
   items:
   - type: list
