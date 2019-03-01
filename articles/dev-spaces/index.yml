@@ -1,14 +1,14 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0a4295d71a5811750d1603eaf860833cdd5fcc9e
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 4ad9de80a77d054ef723d9ed5bd53e410c653baa
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658170"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57195087"
 documentType: LandingData
 title: Рабочие среды Azure для разработчиков
 metadata:
-  title: Azure Dev Spaces | Документация Майкрософт
+  title: Рабочие среды Azure для разработчиков
   meta.description: Rapid Kubernetes development with containers and microservices on Azure.
   services: azure-dev-spaces
   author: zr-msft
