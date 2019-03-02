@@ -59,22 +59,17 @@ items:
     - name: Параметры
       href: resource-manager-templates-parameters.md
     - name: Переменные
-      href: resource-manager-templates-variables.md
+      href: resource-group-authoring-templates.md#variables
     - name: Функции Azure
       href: resource-group-authoring-templates.md#functions
     - name: Ресурсы
       href: resource-manager-templates-resources.md
     - name: outputs
-      href: resource-manager-templates-outputs.md
-  - name: Руководство
-    items:
-    - name: Рекомендации по работе с шаблоном
-      href: template-best-practices.md
-    - name: Система управления подписками
-      href: /azure/architecture/cloud-adoption/appendix/azure-scaffold
-      maintainContext: true
-    - name: Шаблоны для обеспечения согласованности данных в облаке
-      href: templates-cloud-consistency.md
+      href: resource-group-authoring-templates.md#outputs
+  - name: Рекомендации по работе с шаблоном
+    href: template-best-practices.md
+  - name: Шаблоны для обеспечения согласованности данных в облаке
+    href: templates-cloud-consistency.md
   - name: Поставщики и типы ресурсов
     href: resource-manager-supported-services.md
   - name: Группы управления
@@ -265,9 +260,9 @@ items:
     href: resource-manager-personal-data.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager
-ms.openlocfilehash: 061f23dd0f25fccdbcfe459dc71f998319b06d58
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: cb2e9b6d12acfb6fff514fc5e2603d9531acd76f
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886695"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57241688"
