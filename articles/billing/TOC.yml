@@ -7,21 +7,35 @@ items:
     href: billing-understand-your-bill.md
   - name: Интерпретация счета EA
     href: billing-understand-your-bill-ea.md
-  - name: Получение счетов и сведений об использовании
-    href: billing-download-azure-invoice-daily-usage-date.md
+  - name: Пояснения к счету — только для клиентского соглашения Майкрософт
+    href: billing-mca-understand-your-bill.md
+  - name: Просмотр и скачивание счета Microsoft Azure
+    href: billing-download-azure-invoice.md
+  - name: Просмотр и скачивание сведений об использовании и расходах в Microsoft Azure
+    href: billing-download-azure-daily-usage.md
+  - name: Просмотр и скачивание налоговых документов по клиентскому соглашению Майкрософт
+    href: billing-mca-download-tax-document.md
   - name: Плата за использование ресурсов сторонних разработчиков
     href: billing-understand-your-azure-marketplace-charges.md
   - name: Сведения об условиях использования
     href: billing-understand-your-usage.md
+  - name: Пояснения к условиям использования — только для клиентского соглашения Майкрософт
+    href: billing-mca-understand-your-usage.md
   - name: Сведения о счетах
     href: billing-understand-your-invoice.md
+  - name: Пояснения к условиям оплаты счетов — только для клиентского соглашения Майкрософт
+    href: billing-mca-understand-your-invoice.md
+  - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+    href: billing-mca-overview.md
   expanded: true
 - name: Управление затратами
   items:
   - name: Предотвращение непредвиденных расходов
     href: billing-getting-started.md
-  - name: Просмотр цен для клиентов с Соглашением Enterprise
+  - name: Просмотр и скачивание сведений о ценах для вашей организации
     href: billing-ea-pricing.md
+  - name: Пояснения к условиям прейскуранта — только для клиентского соглашения Майкрософт
+    href: billing-mca-understand-pricesheet.md
   - name: Использование тегов ресурсов
     href: ../azure-resource-manager/resource-group-using-tags.md?toc=/azure/billing/TOC.json
   - name: Начало анализа затрат
@@ -30,6 +44,8 @@ items:
     href: ../cost-management/tutorial-acm-create-budgets.md?toc=/azure/billing/TOC.json
   - name: Рекомендации по оптимизации
     href: ../cost-management/tutorial-acm-opt-recommendations.md?toc=/azure/billing/TOC.json
+  - name: Отслеживание остатка на счете для клиентского соглашения Майкрософт
+    href: billing-mca-check-azure-credits-balance.md
   - name: Расчет цены
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Общие сведения о предельной сумме расходов
@@ -90,12 +106,20 @@ items:
     href: billing-manage-access.md
   - name: Роли EA в Azure
     href: billing-understand-ea-roles.md
+  - name: Роли для клиентского соглашения Майкрософт в Azure
+    href: billing-understand-mca-roles.md
   - name: Привязка идентификатора партнера
     href: billing-partner-admin-link-started.md
   - name: Просмотр учетных записей выставления счетов
     href: billing-view-all-accounts.md
+  - name: Упорядочение затрат с помощью разделов счетов
+    href: billing-mca-section-invoice.md
+  - name: Задачи EA в клиентском соглашении Майкрософт
+    href: billing-mca-enterprise-operations.md
   - name: Решение проблемы просроченных платежей
     href: billing-azure-subscription-past-due-balance.md
+  - name: Настройка учетных записей выставления счетов для клиентского соглашения Майкрософт
+    href: billing-mca-setup-account.md
   - name: Регистрация с помощью учетной записи Office 365
     href: billing-use-existing-office-365-account-azure-subscription.md
   - name: Оформление подписки на Office 365 с помощью учетной записи Azure
@@ -106,6 +130,8 @@ items:
     href: billing-subscription-become-disable.md
   - name: Передача владения
     href: billing-subscription-transfer.md
+  - name: Запрос прав владения — клиентское соглашение Майкрософт
+    href: billing-mca-request-billing-ownership.md
   - name: Отмена подписки
     href: billing-how-to-cancel-azure-subscription.md
   - name: Изменение кредитной карты
@@ -122,6 +148,8 @@ items:
     href: ../azure-resource-manager/resource-group-move-resources.md?toc=/azure/billing/TOC.json
   - name: Создание дополнительной подписки
     href: billing-create-subscription.md
+  - name: Создание дополнительной подписки — клиентское соглашение Майкрософт
+    href: billing-mca-create-subscription.md
   - name: Создание корпоративных подписок программными средствами
     href: ../azure-resource-manager/programmatically-create-subscription.md?toc=/azure/billing/TOC.json
   - name: Экспорт сведений о подписке
@@ -190,9 +218,9 @@ items:
     items:
     - name: REST API для корпоративной отчетности
       href: https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary
-ms.openlocfilehash: 156f9f2ebb293855d541c779c7a2e3ba83cffc07
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: 5d56504730be60d872c9d1345850925a645c664e
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447707"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57241652"
