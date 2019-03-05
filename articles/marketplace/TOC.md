@@ -199,7 +199,9 @@
 ##### [Вкладка "Контакты"](./cloud-partner-portal/saas-app/cpp-contacts-tab.md)
 #### [Публикация предложения](./cloud-partner-portal/saas-app/cpp-publish-offer.md)
 #### [Обновление имеющегося предложения](./cloud-partner-portal/saas-app/cpp-update-existing-offer.md)
-#### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
+#### [API исполнения SaaS](./cloud-partner-portal/saas-app/cpp-saas-fulfillment-apis.md)
+##### [API SaaS версии 1](./cloud-partner-portal/saas-app/cpp-saas-fulfillment-api-v1.md) 
+##### [API SaaS версии 2](./cloud-partner-portal/saas-app/cpp-saas-fulfillment-api-v2.md) 
 
 ### [Предложение "Виртуальная машина"](./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md)
 #### [Предварительные требования](./cloud-partner-portal/virtual-machine/cpp-prerequisites.md)

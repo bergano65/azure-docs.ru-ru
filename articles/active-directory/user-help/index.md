@@ -51,10 +51,9 @@ ms.collection: M365-identity-device-management
                         <p>
                         <a href="/azure/active-directory/user-help/myprofile-portal-overview">Обзор</a><br/>
                         <a href="/azure/active-directory/user-help/user-help-security-info-overview">Управление сведениями для защиты</a><br/>
-                        <a href="/azure/active-directory/user-help/myprofile-portal-recent-activity-page">Просмотр недавних действий входа в систему</a><br/>
                         <a href="/azure/active-directory/user-help/myprofile-portal-organizations-page">Управление организациями</a><br/>
                         <a href="/azure/active-directory/user-help/myprofile-portal-devices-page">Управление подключенными устройствами</a><br/>
-                        <a href="/azure/active-directory/user-help/myprofile-portal-privacy-page">Просмотр сведений, связанных с конфиденциальностью</a><br/>                       
+                        <a href="/azure/active-directory/user-help/myprofile-portal-privacy-page">Просмотр сведений, связанных с конфиденциальностью</a>
                         </p>
                     </div>
                 </div>

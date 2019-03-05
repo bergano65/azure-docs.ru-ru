@@ -1314,7 +1314,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/iot-fundamentals">
                                                 <img src="media/index/IoTHub.svg" alt="" />
-                                                <p>Принципы работы Интернета вещей</p>
+                                                <p>Интернет вещей Azure</p>
                                             </a>
                                         </li>
                                         <li>
@@ -3929,12 +3929,12 @@ Azure DevOps Projects </a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage">
-                                                        <img src="media/index/iothub.svg" alt="" />
+                                                        <img src="media/index/question-mark-grey.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Принципы работы Интернета вещей</h3>
-                                                    <p>Начало работы с подключением устройств</p>
+                                                    <h3>Впервые работаете с Интернетом вещей Azure?</h3>
+                                                    <p>Начните отсюда, чтобы узнать, какая служба соответствует вашим потребностям</p>
                                                 </div>
                                             </div>
                                         </div>
