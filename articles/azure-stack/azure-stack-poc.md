@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/25/2018
+ms.date: 02/25/2019
 ms.author: jeffgilb
 ms.reviewer: unknown
 ms.custom: mvc
-ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 9341eefdbe1eaa8e27394fd4b10f50b1a48bd4c6
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 02/25/2019
+ms.openlocfilehash: 65894ccd9514bce1d429b336f8bd5e6674048e65
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55247329"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820269"
 ---
 # <a name="what-is-azure-stack"></a>Что такое Azure Stack?
 
@@ -33,7 +33,7 @@ Azure Stack предлагается в двух вариантах развер
 
 ## <a name="azure-stack-development-kit"></a>Пакет средств разработки Azure Stack
 
-[Пакет средств разработки Azure Stack (ASDK)](./asdk/asdk-what-is.md) – это развертывание Azure Stack с одним узлом, удобное для оценки и изучения Azure Stack.  Также вы можете использовать ASDK как среду разработки, для разработки приложений с помощью API-интерфейсов и инструментов, совместимых с Azure.
+[Пакет средств разработки Azure Stack (ASDK)](./asdk/asdk-what-is.md) – это развертывание Azure Stack с одним узлом, удобное для оценки и изучения Azure Stack.  Вы также можете использовать ASDK как среду разработки для разработки приложений с помощью API и средств, совместимых с Azure.
 
 >[!Note]
 >ASDK не предназначен для использования в качестве рабочей среды.
@@ -41,7 +41,7 @@ Azure Stack предлагается в двух вариантах развер
 ASDK имеет такие ограничения:
 
 * ASDK связан с одним поставщиком удостоверений Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS). В этом каталоге можно создать несколько пользователей и назначить им подписки.
-* Так как компоненты Azure Stack развертываются на едином компьютере, для них доступны ограниченные физические ресурсы для клиентских ресурсов. Эта конфигурация не предназначена для оценки масштабируемости или производительности.
+* Так как компоненты Azure Stack развертываются на одном компьютере, для клиентских ресурсов доступны ограниченные физические ресурсы. Эта конфигурация не годится для масштабирования или оценки производительности.
 * Сценарии сети ограничены из-за одного узла и требований к развертыванию сетевой карты.
 
 ## <a name="azure-stack-integrated-systems"></a>Интегрированные системы Azure Stack

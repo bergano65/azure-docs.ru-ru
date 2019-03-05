@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 0de4e0d750d8ae3061ed0b80d706dec545338a90
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 7623f98b9fd6c4bad8a41050e39b6e0e8650dccc
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242946"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56889295"
 ---
 # <a name="what-is-text-analytics"></a>Что такое API анализа текста?
 
@@ -64,11 +64,11 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 ## <a name="data-limits"></a>Ограничения данных
 
-Все конечные точки API анализа текста принимают необработанные текстовые данные. Текущий предел составляет 5000 символов для каждого документа. Если необходимо проанализировать большие документы, их можно разбить на более мелкие части. Если вам требуется более высокий лимит, [свяжитесь с нами](https://azure.microsoft.com/overview/sales-number/), чтобы мы могли обсудить ваши требования.
+Все конечные точки API анализа текста принимают необработанные текстовые данные. Текущий предел составляет 5120 символов для одного документа. Если необходимо проанализировать документ большего размера, его можно разбить на части. Если вам требуется более высокий лимит, [свяжитесь с нами](https://azure.microsoft.com/overview/sales-number/), чтобы мы могли обсудить ваши требования.
 
 | Ограничение | Значение |
 |------------------------|---------------|
-| Максимальный размер одного документа | 5000 символов, измеренных методом [`StringInfo.LengthInTextElements`](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). |
+| Максимальный размер одного документа | 5120 символов, измеренных методом [`StringInfo.LengthInTextElements`](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). |
 | Максимальный размер всего запроса | 1 МБ |
 | Предельное число документов в запросе | 1000 документов |
 
@@ -80,7 +80,7 @@ API анализа текста использует кодировку Юник
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сначала попробуйте использовать[интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/text-analytics/). Вы можете вставить текст (максимум 5000 символов), чтобы определить язык (до 120), рассчитать оценку тональности или извлечь ключевые фразы. Регистрация не требуется.
+Сначала попробуйте использовать[интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/text-analytics/). Вы можете вставить текст (максимум 5120 символов), чтобы определить язык (до 120), рассчитать оценку тональности или извлечь ключевые фразы. Регистрация не требуется.
 
 Когда вы будете готовы напрямую вызывать API:
 

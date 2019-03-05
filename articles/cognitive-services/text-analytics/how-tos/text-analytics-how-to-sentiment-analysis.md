@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: add284a3a001d5bc2e756f9ad4a2a3b9550b212c
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 7287a9ddbd84960dcde790d813a6204e9e790094
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242141"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56887426"
 ---
 # <a name="example-how-to-detect-sentiment-with-text-analytics"></a>Пример: как определить тональность в службе "Анализ текста"
 
@@ -39,7 +39,7 @@ ms.locfileid: "56242141"
 
 Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык"
 
-Документ должен содержать менее 5000 символов и иметь до 1 000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для анализа тональности.
+Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для анализа тональности.
 
 ```
     {

@@ -1,74 +1,77 @@
 ---
-title: Краткое руководство. API Bing для проверки орфографии, Node.js
+title: Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Node.js
 titlesuffix: Azure Cognitive Services
-description: Информация и примеры кода, которые помогут вам приступить к работе с API Bing для проверки орфографии.
+description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 09/14/2017
+ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 0fea6f163e6d977f26e13c816c4eaa514eea676b
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 8e3379a086eb09745142f4e3997ed195eb4d1de5
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864899"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56885913"
 ---
-# <a name="quickstart-for-bing-spell-check-api-with-nodejs"></a>Краткое руководство. Использование API Bing для проверки орфографии с Node.js 
+# <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-nodejs"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Node.js
 
-В этой статье описано, как использовать [API Bing для проверки орфографии](https://azure.microsoft.com/services/cognitive-services/spell-check/) с Node.js. API проверки орфографии возвращает список нераспознанных слов вмсте с предлагаемыми вариантами для замены. Обычно сначала текст отправляется в API, а затем выполняются предложенные замены в тексте либо список замен отображается для пользователя приложения, который решает, нужно ли делать замены. В этой статье показано, как отправить запрос, который содержит текст "Hollo, wrld!". Для замены будут предложены варианты Hello и world.
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Этот простое приложение Python отправляет запрос к API и возвращает список нераспознанных слов вместе с предлагаемыми исправлениями. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingSpellCheckv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
+* [Node.js 6](https://nodejs.org/en/download/) или более поздней версии.
 
-Вам потребуется [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API Bing для проверки орфографии версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#lang). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+[!INCLUDE [cognitive-services-bing-spell-check-signup-requirements](../../../../includes/cognitive-services-bing-spell-check-signup-requirements.md)]
 
-## <a name="get-spell-check-results"></a>Получение результатов проверки орфографии
 
-1. Создайте проект на Node.js в используемой вами интегрированной среде разработки.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-```nodejs
-'use strict';
+1. Создайте файл JavaScript в используемой вами интегрированной среде разработки или редакторе. Установите степень строгости и добавьте требование использования протокола HTTPS. Затем создайте переменные для узла конечной точки API, пути и ключа подписки.
 
-let https = require ('https');
+    ```javascript
+    'use strict';
+    let https = require ('https');
+    
+    let host = 'api.cognitive.microsoft.com';
+    let path = '/bing/v7.0/spellcheck';
+    let key = 'ENTER KEY HERE';
+    ```
 
-let host = 'api.cognitive.microsoft.com';
-let path = '/bing/v7.0/spellcheck';
+2. Создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить. Затем создайте строку, содержащую параметр `?mkt=` со значением вашей отрасли и параметр `&mode=` со значением вашего режима.
 
-/* NOTE: Replace this example key with a valid subscription key (see the Prequisites section above). Also note v5 and v7 require separate subscription keys. */
-let key = 'ENTER KEY HERE';
+    ```javascript
+    let mkt = "en-US";
+    let mode = "proof";
+    let text = "Hollo, wrld!";
+    let query_string = "?mkt=" + mkt + "&mode=" + mode;
+    ```
 
-// These values are used for optional headers (see below).
-// let CLIENT_ID = "<Client ID from Previous Response Goes Here>";
-// let CLIENT_IP = "999.999.999.999";
-// let CLIENT_LOCATION = "+90.0000000000000;long: 00.0000000000000;re:100.000000000000";
+## <a name="create-the-request-parameters"></a>Создание параметров запроса
 
-let mkt = "en-US";
-let mode = "proof";
-let text = "Hollo, wrld!";
-let query_string = "?mkt=" + mkt + "&mode=" + mode;
+Создайте параметры запроса, создав новый объект с использованием метода `POST`. Укажите свой путь, объединив путь к конечной точке и строку запроса. Добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
 
+```javascript
 let request_params = {
-    method : 'POST',
-    hostname : host,
-    path : path + query_string,
-    headers : {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Content-Length' : text.length + 5,
-        'Ocp-Apim-Subscription-Key' : key,
-//        'X-Search-Location' : CLIENT_LOCATION,
-//        'X-MSEdge-ClientID' : CLIENT_ID,
-//        'X-MSEdge-ClientIP' : CLIENT_ID,
-    }
+   method : 'POST',
+   hostname : host,
+   path : path + query_string,
+   headers : {
+   'Content-Type' : 'application/x-www-form-urlencoded',
+   'Content-Length' : text.length + 5,
+      'Ocp-Apim-Subscription-Key' : key,
+   }
 };
+```
 
+## <a name="create-a-response-handler"></a>Создание обработчика ответов
+
+Создайте функцию с именем `response_handler`, чтобы вывести ответ JSON, полученный от API. Создайте переменную для текста ответа. Добавьте ответ при получении флага `data` с помощью `response.on()`. После получения флага `end` выведите текст JSON на консоль.
+
+```javascript
 let response_handler = function (response) {
     let body = '';
     response.on ('data', function (d) {
@@ -81,13 +84,19 @@ let response_handler = function (response) {
         console.log ('Error: ' + e.message);
     });
 };
+```
 
+## <a name="send-the-request"></a>Отправка запроса
+
+Вызовите API, используя `https.request()` с параметрами запроса и обработчик ответов. Запишите текст в API, а после завершите запрос.
+
+```javascript
 let req = https.request (request_params, response_handler);
 req.write ("text=" + text);
 req.end ();
 ```
 
-**Ответ**
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -132,9 +141,7 @@ req.end ();
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по API Bing для проверки орфографии](../tutorials/spellcheck.md)
+> [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
-## <a name="see-also"></a>См. также
-
-- [Общие сведения об API Bing для проверки орфографии](../proof-text.md)
+- [Что такое API проверки орфографии Bing?](../overview.md)
 - [Справочник по API проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference)

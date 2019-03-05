@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/08/2018
 ms.author: dobett
-ms.openlocfilehash: 3f30b46138fc7753a1a4282497cbb06b6a4defbc
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 60876cb95e6efe4fbde55bd8a224eab658b10d66
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608363"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56749993"
 ---
 # <a name="quickstart-try-a-cloud-based-remote-monitoring-solution"></a>Краткое руководство. Испытание облачного решения для удаленного мониторинга
 
@@ -45,7 +45,7 @@ ms.locfileid: "53608363"
 Выберите **подписку** и **регион**, которые необходимо использовать для развертывания акселератора решений. Вы можете выбрать ближайший к вам регион. В этом кратком руководстве мы используем регион **Восточная часть США**.
 Вы можете выбрать **Visual Studio Enterprise**, но для этого у вас должны быть права [глобального администратора или пользователя](iot-accelerators-permissions.md).
 
-Чтобы начать развертывание, щелкните **Создать решение**. Этот процесс занимает по крайней мере пять минут:
+Чтобы начать развертывание, щелкните **Создать**. Этот процесс занимает по крайней мере пять минут:
 
 ![Сведения о решении для удаленного мониторинга](./media/quickstart-remote-monitoring-deploy/createform.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "53608363"
 
 ![Выбор нового решения](./media/quickstart-remote-monitoring-deploy/choosenew.png)
 
-Вы можете просмотреть сведения об акселераторе решения для удаленного мониторинга на отобразившейся панели. Чтобы посмотреть акселератор решения для удаленного мониторинга, выберите **Панель мониторинга решения**:
+Вы можете просмотреть сведения об акселераторе решения для удаленного мониторинга на отобразившейся панели. Чтобы просмотреть акселератор решения для удаленного мониторинга, выберите **Go to your solution accelerator** (Перейти к акселератору решений).
 
 ![Панель решения](./media/quickstart-remote-monitoring-deploy/solutionpanel.png)
 
@@ -134,6 +134,9 @@ ms.locfileid: "53608363"
 Если акселератор решений больше не нужен, удалите его на странице [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard). Для этого выберите его, а затем щелкните **Удалить решение**:
 
 ![Удаление решения](media/quickstart-remote-monitoring-deploy/deletesolution.png)
+
+
+![Удаление решения](media/quickstart-remote-monitoring-deploy/deletesolution-page.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

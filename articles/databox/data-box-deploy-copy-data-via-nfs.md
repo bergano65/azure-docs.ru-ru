@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: alkohli
-ms.openlocfilehash: cec96871d379f9484bf8e08a9d511146a80d45c6
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: 35a041216bf24a4c6ab73f9d5c3e85dff38a4501
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55095608"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588115"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство. Копирование данных в Azure Data Box через NFS
 
@@ -71,6 +71,10 @@ ms.locfileid: "55095608"
     В примере ниже показано, как подключиться к общей папке Data Box по протоколу NFS. Устройство Data Box имеет IP-адрес `10.161.23.130`, общая папка `Mystoracct_Blob` подключена в виртуальной машине ubuntuVM, а точка подключения имеет название `/home/databoxubuntuhost/databox`.
 
     `sudo mount -t nfs 10.161.23.130:/Mystoracct_Blob /home/databoxubuntuhost/databox`
+    
+    Для клиентов Mac необходимо добавить дополнительный параметр следующим образом: 
+    
+    `sudo mount -t nfs -o sec=sys,resvport 10.161.23.130:/Mystoracct_Blob /home/databoxubuntuhost/databox`
 
     **Всегда создавайте отдельную папку для файлов, которые вы собираетесь скопировать в общую папку**. Папка, созданная в общих папках блочных и страничных BLOB-объектов, представляет собой контейнер, куда передаются данные в виде больших двоичных объектов. Вы не можете копировать файлы напрямую в *корневую* папку в учетной записи хранения.
 

@@ -12,53 +12,30 @@ ms.topic: quickstart
 ms.date: 08/10/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: dfbd8425048ddc5c96349bfd6a7462dcd32dc1d9
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: a72d6b180db35f3e0f0e0527e8ae0f544a585b25
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727762"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56822978"
 ---
-# <a name="create-your-first-function-with-java-and-maven-preview"></a>Создание первой функции с помощью Java и Maven (предварительная версия)
+# <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
 
-> [!NOTE] 
-> Сейчас доступна предварительная версия Java для Функций Azure.
-
-В этом кратком руководстве содержится информация о том, как создать проект функции [без сервера](https://azure.microsoft.com/solutions/serverless/) с помощью Maven, локально протестировать и развернуть его в Azure. По завершении проекта код функции на Java будет выполняться в облаке и может запускаться из HTTP-запроса.
-
-![Доступ к функции Hello World из командной строки с помощью cURL](media/functions-create-java-maven/hello-azure.png)
+В этой статье показано, как использовать средство командной строки Maven для создания и публикации функции Java в службе Функции Azure. После выполнения действий, описанных в этой статье, код функции будет выполняться в Azure в [Плане потребления](functions-scale.md#consumption-plan) и может запускаться с помощью HTTP-запроса.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
-Для разработки функций приложения с помощью Java, должны быть установлены следующие компоненты:
 
--  [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
--  [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
--  [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
-> [!IMPORTANT] 
+- [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8;
+- [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии;
+- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure);
+- [Azure Functions Core Tools](functions-run-local.md#v2) (требуется **пакет SDK для .NET Core 2.x**)
+
+> [!IMPORTANT]
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
-
-## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
-
-[Основные средства Функций Azure версии 2.0](https://www.npmjs.com/package/azure-functions-core-tools) предоставляют локальной среде разработки возможность записи, выполнения и отладки Функций Azure. 
-
-Для установки посетите раздел об [установке](https://github.com/azure/azure-functions-core-tools#installing) в проекте "Основные инструменты службы «Функции Azure»", чтобы найти конкретные инструкции для вашей операционной системы.
-
-Кроме того, можно установить средства вручную с помощью [npm](https://www.npmjs.com/) в составе [Node.js](https://nodejs.org/), установив следующие требуемые компоненты:
-
--  [.NET Core](https://www.microsoft.com/net/core) последней версии.
--  [Node.js ](https://nodejs.org/download/)версии 8.6 или выше.
-
-Чтобы продолжить установку при помощи npm, выполните следующую команду:
-
-```
-npm install -g azure-functions-core-tools
-```
-
-> [!NOTE]
-> Если возникли проблемы при установке основных средств Функций Azure версии 2.0, см. раздел [Среда выполнения версии 2.x](/azure/azure-functions/functions-run-local).
 
 ## <a name="generate-a-new-functions-project"></a>Создание нового проекта функций
 

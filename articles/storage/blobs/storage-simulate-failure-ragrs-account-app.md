@@ -7,14 +7,14 @@ ms.service: storage
 ms.topic: tutorial
 ms.date: 01/03/2019
 ms.author: tamram
-ms.openlocfilehash: 2d86c0c4838fb2ae9d839e64a067824019133d8b
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 0cbb4d2bc6449dc1cf12a374085b429743224995
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024439"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56872885"
 ---
-# <a name="tutorial-simulate-a-failure-in-accessing-read-access-redundant-storage"></a>Руководство. Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение
+# <a name="tutorial-simulate-a-failure-in-accessing-read-access-redundant-storage"></a>Руководство по Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение
 
 Это руководство представляет собой вторую часть цикла. В нем вы узнаете больше о преимуществах [геоизбыточного хранилища с доступом на чтение](../common/storage-redundancy-grs.md#read-access-geo-redundant-storage) (RA-GRS) с помощью имитации сбоя.
 
@@ -75,7 +75,7 @@ ms.locfileid: "54024439"
 
 ### <a name="interrupting-the-application"></a>Прерывание приложения
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Запустите приложение в интегрированной среде разработки или в оболочке.
 
@@ -83,7 +83,7 @@ ms.locfileid: "54024439"
 
 ![Приложение для сценария](media/storage-simulate-failure-ragrs-account-app/scenario.png)
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 Запустите приложение в интегрированной среде разработки или в оболочке.
 
@@ -113,7 +113,7 @@ ms.locfileid: "54024439"
          }
 ```
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Чтобы возобновить работу приложения, нажмите **любую клавишу**.
 
@@ -123,7 +123,7 @@ ms.locfileid: "54024439"
 
 ![Вставка настраиваемого правила](media/storage-simulate-failure-ragrs-account-app/figure3.png)
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 После того, как случился сбой, введите **G** для проверки сбоя.
 
@@ -133,7 +133,7 @@ ms.locfileid: "54024439"
 
 ### <a name="simulate-primary-endpoint-restoration"></a>имитация восстановления основной конечной точки.
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Пока в Fiddler настроен представленный выше набор правил, все запросы к основной конечной точке завершаются сбоем.
 
@@ -153,7 +153,7 @@ ms.locfileid: "54024439"
 
 ![Возобновление работы приложения](media/storage-simulate-failure-ragrs-account-app/figure4.png)
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 Пока в Fiddler настроен представленный выше набор правил, все запросы к основной конечной точке завершаются сбоем.
 
@@ -173,11 +173,11 @@ ms.locfileid: "54024439"
 
 ### <a name="start-and-pause-the-application"></a>Запуск и приостановка приложения
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Запустите приложение в интегрированной среде разработки или в оболочке. Когда приложение начнет чтение из основной конечной точки, нажмите **любую клавишу** в окне консоли, чтобы приостановить работу приложения.
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 Поскольку вы контролируете пример, вам не нужно прерывать его для проверки сбоя.
 
@@ -210,13 +210,13 @@ nslookup STORAGEACCOUNTNAME.blob.core.windows.net
 
 Замените `<destination_ip>` IP-адресом вашей учетной записи хранения, а `<gateway_ip>` — IP-адресом локального узла.
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Чтобы возобновить работу приложения, нажмите **любую клавишу**.
 
 Когда приложение продолжит работу, все запросы к основной конечной точке будут завершаться сбоем. Приложение выполнит пять попыток подключиться к основной конечной точке. Достигнув порогового значения (пять попыток), приложение запросит образ из вторичной конечной точки с доступом на чтение. После 20 успешных обращений для получения образа из вторичной конечной точки приложение снова попытается подключиться к основной конечной точке. Если основная конечная точка по-прежнему недоступна, приложение продолжит чтение из вторичной конечной точки. Этот алгоритм [прерывателя цепи](/azure/architecture/patterns/circuit-breaker) мы описывали в предыдущем руководстве.
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 После того, как случился сбой, введите **G** для проверки сбоя. Оно сообщит об использовании дополнительного, а не основного конвейера.
 
@@ -236,14 +236,14 @@ nslookup STORAGEACCOUNTNAME.blob.core.windows.net
 
 `route delete <destination_ip>`
 
-# <a name="net-python-and-java-v7-tabdotnet-python-java-v7"></a>[.NET, Python и Java v7] (#tab/dotnet-python-java-v7)
+# <a name="net-python-and-java-v7tabdotnet-python-java-v7"></a>[.NET, Python и Java версии 7](#tab/dotnet-python-java-v7)
 
 Чтобы возобновить работу приложения, нажмите **любую клавишу**. Приложение продолжит чтение из основной конечной точки, пока не выполнит 999 операций чтения.
 
 ![Возобновление работы приложения](media/storage-simulate-failure-ragrs-account-app/figure4.png)
 
 
-# <a name="java-v10-tabjava-v10"></a>[Java v10] (#tab/Java-v10)
+# <a name="java-v10tabjava-v10"></a>[Java версии 10](#tab/Java-v10)
 
 После завершения введите **G** для проверки загрузки. Приложение сообщит о том, что оно снова использует основной конвейер.
 

@@ -12,14 +12,14 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: b91fb86dfa8ca0d8e75be2c44f9821df84739790
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 6a9058d7f84b336b332ffdaf9b41abfb660433e6
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55664941"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56819860"
 ---
-# <a name="multi-service-development-with-azure-dev-spaces"></a>Мультисервисная разработка в Azure Dev Spaces
+# <a name="multi-service-development-with-azure-dev-spaces"></a>Разработка с использованием нескольких служб с помощью Azure Dev Spaces
 
 В этом руководстве вы узнаете, как разрабатывать мультисервисные приложения в Azure Dev Spaces, а также о некоторых дополнительных преимуществах, предоставляемых Dev Spaces.
 
@@ -35,7 +35,7 @@ ms.locfileid: "55664941"
 1. Откройте проект `mywebapi` в *отдельном окне Visual Studio*.
 1. Выберите **Azure Dev Spaces** в раскрывающемся списке параметров запуска, как вы это делали ранее для проекта `webfrontend`. Вместо того, чтобы создавать новый кластер AKS, в этот раз выберите уже созданный. Как и ранее, для поля "Пространство" оставьте значение по умолчанию (`default`) и нажмите кнопку **ОК**. В окне выходных данных можно заметить, что Visual Studio начинает подготавливать эту новую службу в пространстве разработки, чтобы ускорить процессы при запуске отладки.
 1. Нажмите клавишу F5 и подождите, пока выполнится сборка и развертывание службы. Вы узнаете, что служба готова, когда строка состояния Visual Studio станет оранжевой.
-1. Обратите внимание на URL-адрес конечной точки, отображаемый на панели **Azre Dev Spaces for AKS** (Azre Dev Spaces для AKS) в окне **Выходные данные**. Он должен иметь примерно следующий вид: http://localhost:\<portnumber\>. Может показаться, что контейнер работает локально, но на самом деле он выполняется в пространстве разработки в Azure.
+1. Обратите внимание на URL-адрес конечной точки, отображаемый на панели **Azure Dev Spaces for AKS** (Azure Dev Spaces для AKS) в окне **Выходные данные**. Он должен иметь примерно следующий вид: http://localhost:\<portnumber\>. Может показаться, что контейнер работает локально, но на самом деле он выполняется в пространстве разработки в Azure.
 2. Когда контейнер `mywebapi` готов, откройте в браузере адрес localhost и добавьте `/api/values` к URL-адресу, чтобы вызвать API GET по умолчанию для `ValuesController`. 
 3. Если все шаги были успешными, вы должны увидеть ответ от службы `mywebapi`, который выглядит так:
 
@@ -82,10 +82,10 @@ ms.locfileid: "55664941"
 Все готово! Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
 
 ### <a name="automatic-tracing-for-http-messages"></a>Автоматическая трассировка сообщений HTTP
-Вы могли заметить, что, хотя *webfrontend* не содержит какого-либо кода для вывода HTTP-вызова, который он делает к *mywebapi*, можно увидеть сообщения трассировки HTTP в окне вывода:
+Вы могли заметить, что, хотя *webfrontend* не содержит код для вывода HTTP-вызова, выполняемого к *mywebapi*, можно увидеть сообщения трассировки HTTP в окне вывода:
 ```
 // The request from your browser
-webfrontend.<id>.<region>.aksapp.io --gyk-> webfrontend-668b7ddb9f-n5rhj:
+default.webfrontend.856bb3af715744c6810b.eus.azds.io --gyk-> webfrontend:
    GET /Home/About HTTP/1.1
 
 // *webfrontend* reaching out to *mywebapi*
@@ -98,7 +98,7 @@ webfrontend-668b7ddb9f-n5rhj <-pu5-- mywebapi:
    Hello from mywebapi
 
 // Response from *webfrontend* to your browser
-webfrontend.<id>.<region>.aksapp.io <-gyk-- webfrontend-668b7ddb9f-n5rhj:
+default.webfrontend.856bb3af715744c6810b.eus.azds.io <-gyk-- webfrontend:
    HTTP/1.1 200 OK
    <!DOCTYPE html>
    <html>
@@ -106,7 +106,7 @@ webfrontend.<id>.<region>.aksapp.io <-gyk-- webfrontend-668b7ddb9f-n5rhj:
        <meta charset="utf-8" />
        <meta name="viewport" content="width=device-width, initial-sc...<[TRUNCATED]>
 ```
-Это одно из "бесплатных" преимуществ, которые вы получаете от инструментирования Dev Spaces. Мы вставляем компоненты для отслеживания HTTP-запросов по мере их прохождения через систему, чтобы вам было легче отслеживать сложные мультисервисные вызовы во время разработки.
+Это одно из "бесплатных" преимуществ инструментирования с помощью Dev Spaces. Мы вставляем компоненты для отслеживания HTTP-запросов по мере их прохождения через систему, чтобы вам было легче отслеживать сложные вызовы к нескольким службам во время разработки.
 
 ### <a name="well-done"></a>Все готово!
 Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
@@ -114,4 +114,4 @@ webfrontend.<id>.<region>.aksapp.io <-gyk-- webfrontend-668b7ddb9f-n5rhj:
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Коллективная разработка с помощью Azure Dev Spaces](team-development-netcore-visualstudio.md)
+> [Коллективная разработка с помощью Dev Spaces](team-development-netcore-visualstudio.md)

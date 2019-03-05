@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ebb1a3fba95ed5794b3737d75c4ec182163a32fb
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 4c54383df74d9cfd7941dc52d26856bc8da51457
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984432"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56594718"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-windows-virtual-machines"></a>Руководство. Использование центра безопасности Azure для мониторинга виртуальных машин Windows в Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "55984432"
 
 1. На панели мониторинга центра безопасности щелкните **Политика безопасности** и выберите свою подписку.
 2. В колонке **Политика безопасности** выберите **Политика безопасности**. 
-3. В колонке **Политика безопасности — политика безопасности** включите или отключите элементы политики, применяемые к подписке.
+3. В разделе политики безопасности колонки **Политика безопасности** включите или отключите элементы политики, применяемые к подписке.
 4. После завершения выбора параметров нажмите **Сохранить** вверху колонки. 
 
 

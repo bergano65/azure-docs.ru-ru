@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 11/15/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a2dc5653b7579d9c5db4667d84e6e5b5082abaab
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 869f6d2391632c77e01e4383c1457f88b9171c8b
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448080"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56651198"
 ---
 # <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство. Настройка устройств, подключенных к решению для мониторинга
 
@@ -36,7 +36,7 @@ ms.locfileid: "54448080"
 
 ## <a name="add-a-simulated-device"></a>Добавление имитированного устройства
 
-Откройте страницу **Устройства** в решении и щелкните **+ Новое устройство**.
+Откройте страницу **Device Explorer** в решении и щелкните **Добавить новое устройство**.
 
 [![Подготовка имитированного устройства](./media/iot-accelerators-remote-monitoring-manage/devicesprovision-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesprovision-expanded.png#lightbox)
 
@@ -46,7 +46,7 @@ ms.locfileid: "54448080"
 
 ## <a name="test-the-simulated-device"></a>Тестирование имитированного устройства
 
-Чтобы проверить, отправляет ли имитированное устройство "Двигатель"данные телеметрии и сообщает ли оно значения свойств, выберите его в списке устройств на странице **Устройства**. Актуальные сведения о двигателе отображаются на панели **Сведения об устройстве**.
+Чтобы проверить, отправляет ли имитированное устройство "Двигатель"данные телеметрии и сообщает ли оно значения свойств, выберите его в списке устройств на странице **Device Explorer**. Актуальные сведения о двигателе отображаются на панели **Сведения об устройстве**.
 
 [![Просмотр сведений об имитированном устройстве "Модуль"](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-expanded.png#lightbox)
 
@@ -60,7 +60,7 @@ ms.locfileid: "54448080"
 
 ## <a name="reconfigure-a-device"></a>Перенастройка устройства
 
-Чтобы проверить, можно ли изменить свойства конфигурации модуля, выберите его в списке устройств на странице **Устройства**. Затем щелкните **Задания** и выберите **Свойства**. На панели заданий отображаются значения свойств выбранного устройства, которые можно изменить:
+Чтобы проверить, можно ли изменить свойства конфигурации модуля, выберите его в списке устройств на странице **Device Explorer**. Затем щелкните **Задания** и выберите **Свойства**. На панели заданий отображаются значения свойств выбранного устройства, которые можно изменить:
 
 [![Перенастройка устройства](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigure-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigure-expanded.png#lightbox)
 
@@ -83,7 +83,7 @@ ms.locfileid: "54448080"
 * команда обслуживания автомобилей обслуживает грузовики и прототипы устройств.
 * команда обслуживания зданий управляет холодильниками, лифтами и двигателями;
 
-Чтобы отобразить все устройства, перейдите на страницу **Устройства** и выберите фильтр **Все устройства**:
+Чтобы отобразить все устройства, перейдите на страницу **Device Explorer** и выберите фильтр **Все устройства**:
 
 [![Показать все устройства](./media/iot-accelerators-remote-monitoring-manage/devicesalldevices-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesalldevices-expanded.png#lightbox)
 
@@ -103,7 +103,7 @@ ms.locfileid: "54448080"
 
 ### <a name="create-filters"></a>Создание фильтров
 
-Теперь значения тегов можно использовать для создания фильтров. На странице **Устройства** выберите **Управление группами устройств**:
+Теперь значения тегов можно использовать для создания фильтров. На странице **Device Explorer** выберите **Управление группами устройств**.
 
 [![Управление группами устройств](./media/iot-accelerators-remote-monitoring-manage/devicesmanagefilters-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesmanagefilters-expanded.png#lightbox)
 

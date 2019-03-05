@@ -7,16 +7,16 @@ ms.service: terraform
 ms.topic: quickstart
 ms.date: 02/04/2019
 ms.author: nepeters
-ms.openlocfilehash: 408e07e9b6214dbd223bd4ec7959b00ecc414f1e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: b3d872008c95d94a8401e6f38665c3c88616a168
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869183"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56736929"
 ---
 # <a name="create-a-terraform-configuration-for-azure"></a>Создание конфигурации Terraform для Azure
 
-В этом примере вы сможете создать конфигурацию Terraform и развернуть ее в Azure. По завершении будет развернут экземпляр Azure Cosmos DB, Экземпляры контейнеров Azure и приложение, работающее с этими двумя ресурсами. В этом документе предполагается, что все работы выполняются в Azure Cloud Shell, в которой предварительно установлен инструментарий Terraform. Если вы хотите работать с примером в собственной системе, Terraform можно установить с помощью инструкций, приведенных [здесь](../virtual-machines/linux/terraform-install-configure.md).
+В этом примере вы сможете создать конфигурацию Terraform и развернуть ее в Azure. По завершении будет развернут экземпляр Azure Cosmos DB, экземпляр контейнера Azure и приложение, работающее с этими двумя ресурсами. В этом документе предполагается, что все работы выполняются в Azure Cloud Shell, в которой предварительно установлен инструментарий Terraform. Если вы хотите работать с примером в собственной системе, Terraform можно установить с помощью инструкций, приведенных [здесь](../virtual-machines/linux/terraform-install-configure.md).
 
 ## <a name="create-first-configuration"></a>Создание первой конфигурации
 
@@ -30,7 +30,7 @@ code .
 
 Скопируйте и вставьте следующую конфигурацию Terraform.
 
-Эта конфигурация моделирует группу ресурсов Azure, случайное целое число и экземпляры базы данных Azure Cosmos DB. Случайное целое число используется в имени экземпляров базы данных Cosmos DB. Кроме того, настраивается несколько параметров Cosmos DB. Полный список конфигураций Terraform Cosmos DB см. в [справочных материалах по Terraform Cosmos DB](https://www.terraform.io/docs/providers/azurerm/r/cosmosdb_account.html).
+Эта конфигурация моделирует группу ресурсов Azure, случайное целое число и экземпляр базы данных Azure Cosmos DB. Случайное целое число используется в имени экземпляра базы данных Cosmos DB. Кроме того, настраивается несколько параметров Cosmos DB. Полный список конфигураций Terraform Cosmos DB см. в [справочных материалах по Terraform Cosmos DB](https://www.terraform.io/docs/providers/azurerm/r/cosmosdb_account.html).
 
 После завершения сохраните файл с именем `main.tf`. Эту операцию можно выполнить, щелкнув многоточие в верхней правой части редактора кода.
 

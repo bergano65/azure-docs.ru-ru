@@ -9,15 +9,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/21/2018
+ms.date: 02/22/2019
 ms.author: dobett
 ms.custom: mvc
-ms.openlocfilehash: 20891b0d73783c9b68a42ecfed130e377b6f8eab
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: c387a7c10b962cfd27a7563c00ce58f58e97b9d5
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729818"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56671834"
 ---
 # <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство. Реализация обновления встроенного ПО устройства
 
@@ -94,7 +94,8 @@ az iot hub device-identity show-connection-string --device-id MyFirmwareUpdateDe
 
 ```
 
-При запуске этих команд в командной строке Windows или Powershell ознакомьтесь со страницей [azure-iot-cli-extension tips](https://github.com/Azure/azure-iot-cli-extension/wiki/Tips
+> [!TIP]
+> При запуске этих команд в командной строке Windows или Powershell ознакомьтесь со страницей [azure-iot-cli-extension tips](https://github.com/Azure/azure-iot-cli-extension/wiki/Tips
 ), чтобы получить сведения о том, как взять в кавычки строки JSON.
 
 ## <a name="start-the-firmware-update"></a>Запуск обновления встроенного ПО

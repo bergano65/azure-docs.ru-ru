@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 02/19/2019
 ms.author: diberry
-ms.openlocfilehash: 9da2f8fa345ad3447d7c3344772458c451cf427e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: d333eb6baa41321fdf7daca3c545d5d5e3ed5fe4
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55867245"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732710"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство. Извлечение имен с использованием простой сущности и списка фраз
 
@@ -233,7 +233,9 @@ ms.locfileid: "55867245"
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Screenshot of create new phrase list dialog pop-up")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
 
-    Если вы хотите добавить в список фраз другие слова, просмотрите **Связанные значения** и добавьте те, что вам необходимы. 
+    Если вы хотите добавить в список фраз другие слова, выберите **Recommend** (Рекомендации), просмотрите новые варианты в разделе **Related Values** (Связанные значения) и добавьте те, что вам необходимы. 
+
+    Не снимайте флажок **These values are interchangeable** (Эти значения взаимозаменяемы), так как эти значения должны рассматриваться как синонимы для заданий. Подробнее о [концепциях взаимозаменяемых и невзаимозаменяемых списков фраз](luis-concept-feature.md#how-to-use-phrase-lists).
 
 1. Выберите **Сохранить**, чтобы активировать список фраз.
 

@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 6447061e79946abf8070daf29eeb57bad7b6fa55
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 8e926c3ff7c3d7abc9467291e9b1de77781f664e
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184973"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56805059"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
@@ -68,7 +68,7 @@ ms.locfileid: "53184973"
 ## <a name="create-a-device-enrollment-entry"></a>Создание записи о регистрации устройства
 
 1. Откройте окно командной строки. Клонируйте репозиторий GitHub для образцов кода пакета SDK для Java:
-    
+
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
     ```
@@ -77,11 +77,11 @@ ms.locfileid: "53184973"
 
     1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
 
-        1. Откройте службу подготовки на [портале Azure](https://portal.azure.com). 
+        1. Откройте службу подготовки на [портале Azure](https://portal.azure.com).
 
         1. Откройте раздел **Политики общего доступа** и выберите политику с разрешением *EnrollmentWrite*.
-    
-        1. Скопируйте **строку подключения первичного ключа**. 
+
+        1. Скопируйте **строку подключения первичного ключа**.
 
             ![Получение с портала строки подключения для подготовки](./media/tutorial-group-enrollments/provisioning-string.png)  
 
@@ -91,7 +91,9 @@ ms.locfileid: "53184973"
             private static final String PROVISIONING_CONNECTION_STRING = "[Provisioning Connection String]";
             ```
 
-    1. Откройте файл **_RootCA.pem_** в текстовом редакторе. Присвойте значение **корневого сертификата** параметру **PUBLIC_KEY_CERTIFICATE_STRING**, как показано ниже:
+    1. Откройте в текстовом редакторе файл промежуточного сертификата для подписи. Обновите значение `PUBLIC_KEY_CERTIFICATE_STRING` с помощью значения из вашего промежуточного сертификата для подписи.
+
+        Если вы создали сертификаты ваших устройств с помощью оболочки Bash, ключ промежуточного сертификата содержится в *./certs/azure-iot-test-only.intermediate.cert.pem*. Если ваши сертификаты были созданы с помощью PowerShell, то ваш файл промежуточного сертификата — *./Intermediate1.pem*.
 
         ```java
         private static final String PUBLIC_KEY_CERTIFICATE_STRING =
@@ -108,14 +110,14 @@ ms.locfileid: "53184973"
                 "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
                 "-----END CERTIFICATE-----\n";
         ```
- 
+
     1. На [портале Azure](https://portal.azure.com) откройте Центр Интернета вещей, связанный с используемой службой подготовки. Откройте для этого центра вкладку **Обзор** и скопируйте значение **Hostname**. Присвойте значение **Hostname** параметру *IOTHUB_HOST_NAME*.
 
         ```java
         private static final String IOTHUB_HOST_NAME = "[Host name].azure-devices.net";
         ```
 
-    1. Изучите пример кода. Этот код создает, обновляет, удаляет группу регистрации для устройств X.509 и выполняет запросы к ней. Чтобы проверить успешность регистрации на портале, временно закомментируйте в конце файла _ServiceEnrollmentGroupSample.java_ следующие строки кода:
+    1. Изучите пример кода. Этот код создает, обновляет и удаляет группу регистрации для устройств X.509. Чтобы проверить успешность регистрации на портале, временно закомментируйте в конце файла _ServiceEnrollmentGroupSample.java_ следующие строки кода:
 
         ```java
         // ************************************** Delete info of enrollmentGroup ***************************************
@@ -123,7 +125,7 @@ ms.locfileid: "53184973"
         provisioningServiceClient.deleteEnrollmentGroup(enrollmentGroupId);
         ```
 
-    1. Сохраните файл _ServiceEnrollmentGroupSample.java_. 
+    1. Сохраните файл _ServiceEnrollmentGroupSample.java_.
 
 1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_**.
 
@@ -144,8 +146,7 @@ ms.locfileid: "53184973"
 
     ![Регистрация прошла успешно](./media/tutorial-group-enrollments/enrollment.png) 
 
-1. Откройте службу подготовки на портале Azure. Щелкните **Управление регистрациями**. Убедитесь, что на вкладке **Группы регистрации** появилась группа устройств X.509 с автоматически созданным *именем группы*. 
-
+1. Откройте службу подготовки на портале Azure. Щелкните **Управление регистрациями**. Убедитесь, что на вкладке **Группы регистрации** появилась группа устройств X.509 с автоматически созданным *именем группы*.
 
 ## <a name="simulate-the-device"></a>Имитация устройства
 
@@ -159,36 +160,79 @@ ms.locfileid: "53184973"
     cd azure-iot-sdk-java/provisioning/provisioning-samples/provisioning-X509-sample
     ```
 
-1. Введите сведения о группе регистрации следующим образом:
+1. Измените `/src/main/java/samples/com/microsoft/azure/sdk/iot/ProvisioningX509Sample.java`, чтобы добавить ваши _область идентификатора_ и _глобальную конечную точку службы подготовки_, которые вы упоминали выше.
 
-    - Измените `/src/main/java/samples/com/microsoft/azure/sdk/iot/ProvisioningX509Sample.java`, добавив значения параметров _Область идентификатора_ и _Provisioning Service Global Endpoint_ (Глобальная конечная точка службы подготовки), как было указано ранее. Откройте файл **_{deviceName}-public.pem_** и внесите это значение как _сертификат клиента_. Откройте файл **_{deviceName}-all.pem_** и скопируйте текст от строки _-----BEGIN PRIVATE KEY-----_ по строку _-----END PRIVATE KEY-----_.  Используйте скопированный фрагмент в качестве _клиентского сертификата закрытого ключа_.
+    ```java
+    private static final String idScope = "[Your ID scope here]";
+    private static final String globalEndpoint = "[Your Provisioning Service Global Endpoint here]";
+    private static final ProvisioningDeviceClientTransportProtocol PROVISIONING_DEVICE_CLIENT_TRANSPORT_PROTOCOL = ProvisioningDeviceClientTransportProtocol.HTTPS;
+    private static final int MAX_TIME_TO_WAIT_FOR_REGISTRATION = 10000; // in milli seconds
+    private static final String leafPublicPem = "<Your Public PEM Certificate here>";
+    private static final String leafPrivateKey = "<Your Private PEM Key here>";
+    ```
 
-        ```java
-        private static final String idScope = "[Your ID scope here]";
-        private static final String globalEndpoint = "[Your Provisioning Service Global Endpoint here]";
-        private static final ProvisioningDeviceClientTransportProtocol PROVISIONING_DEVICE_CLIENT_TRANSPORT_PROTOCOL = ProvisioningDeviceClientTransportProtocol.HTTPS;
-        private static final String leafPublicPem = "<Your Public PEM Certificate here>";
-        private static final String leafPrivateKey = "<Your Private PEM Key here>";
-        ```
+1. Обновите переменные `leafPublicPem` и `leafPrivateKey`, используя открытый и закрытый сертификаты вашего устройства.
 
-        - Используйте для сертификата и ключа следующий формат:
-            
-            ```java
-            private static final String leafPublicPem = "-----BEGIN CERTIFICATE-----\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "-----END CERTIFICATE-----\n";
-            private static final String leafPrivateKey = "-----BEGIN PRIVATE KEY-----\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "XXXXXXXXXX\n" +
-                "-----END PRIVATE KEY-----\n";
-            ```
+    Если вы создали сертификаты вашего устройства с помощью PowerShell, файлы mydevice* содержат открытый ключ, закрытый ключ и PFX-файл для устройства.
 
-1. Выполните сборку примера. Перейдите к целевой папке и запустите созданный JAR-файл.
+    Если вы создали сертификаты вашего устройства с помощью оболочки Bash, то открытый ключ находится в ./certs/new-device.cert.pem. Закрытый ключ будет находиться в файле ./private/new-device.key.pem.
+
+    Откройте ваш файл с открытым ключом и обновите переменную `leafPublicPem`, используя это значение. Скопируйте текст от строки _-----BEGIN PRIVATE KEY-----_ по строку _-----END PRIVATE KEY-----_.
+
+    ```java
+    private static final String leafPublicPem = "-----BEGIN CERTIFICATE-----\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "-----END CERTIFICATE-----\n";
+    ```
+
+    Откройте ваш файл с закрытым ключом и обновите переменную `leafPrivatePem`, используя это значение. Скопируйте текст от строки _-----BEGIN RSA PRIVATE KEY-----_ по строку _-----END RSA PRIVATE KEY-----_.
+
+    ```java
+    private static final String leafPrivateKey = "-----BEGIN RSA PRIVATE KEY-----\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "-----END RSA PRIVATE KEY-----\n";
+    ```
+
+1. Для получения промежуточного сертификата добавьте новую переменную под `leafPrivateKey`. Назовите ее `intermediateKey`. Присвойте ей значение из вашего промежуточного сертификата для подписи.
+
+    Если вы создали сертификаты ваших устройств с помощью оболочки Bash, ключ промежуточного сертификата содержится в *./certs/azure-iot-test-only.intermediate.cert.pem*. Если ваши сертификаты были созданы с помощью PowerShell, то ваш файл промежуточного сертификата — *./Intermediate1.pem*.
+
+    ```java
+    private static final String intermediateKey = "-----BEGIN CERTIFICATE-----\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+        "-----END CERTIFICATE-----\n";
+    ```
+
+1. В функции `main` до инициализации `securityProviderX509` добавьте `intermediateKey` к коллекции `signerCertificates`.
+
+    ```java
+    public static void main(String[] args) throws Exception
+    {
+        ...
+
+        try
+        {
+            ProvisioningStatus provisioningStatus = new ProvisioningStatus();
+
+            // Add intermediate certificate as part of the certificate key chain.
+            signerCertificates.add(intermediateKey);
+
+            SecurityProvider securityProviderX509 = new SecurityProviderX509Cert(leafPublicPem, leafPrivateKey, signerCertificates);
+    ```
+
+1. Сохраните изменения и выполните сборку примера. Перейдите к целевой папке и запустите созданный JAR-файл.
 
     ```cmd/sh
     mvn clean install

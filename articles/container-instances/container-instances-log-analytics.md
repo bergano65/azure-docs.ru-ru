@@ -1,24 +1,26 @@
 ---
-title: Ведение журнала для экземпляров контейнеров с помощью Azure Log Analytics
-description: Узнайте, как отправить вывод из контейнера (STDOUT и STDERR) в Azure Log Analytics.
+title: Ведение журнала для экземпляров контейнеров с помощью Журналов Azure Monitor
+description: Узнайте, как отправить вывод из контейнера (STDOUT и STDERR) в Журналы Azure Monitor.
 services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: overview
 ms.date: 07/17/2018
 ms.author: danlep
-ms.openlocfilehash: 4dbcccc1a4b23ca37918495dc536df08a70cade7
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 13f1fa92365c284ed10bd7c0a1b2fdefef50b29e
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337892"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879719"
 ---
-# <a name="container-instance-logging-with-azure-log-analytics"></a>Ведение журнала для экземпляров контейнеров с помощью Azure Log Analytics
+# <a name="container-instance-logging-with-azure-monitor-logs"></a>Ведение журнала для экземпляров контейнеров с помощью Журналов Azure Monitor
 
-Рабочие области Log Analytics предоставляют централизованное расположение для хранения и данных журналов и обращения к ним не только для ресурсов Azure, но и для ресурсов в локальной среде и других облаках. Экземпляры контейнеров Azure поддерживают отправку данных в Log Analytics по умолчанию.
+Рабочие области Log Analytics предоставляют централизованное расположение для хранения и данных журналов и обращения к ним не только для ресурсов Azure, но и для ресурсов в локальной среде и других облаках. Экземпляры контейнеров Azure поддерживают отправку данных в Журналы Azure Monitor по умолчанию.
 
-Чтобы отправлять данные из экземпляра контейнера в Log Analytics, вам нужно создать группу контейнеров с помощью Azure CLI (или Cloud Shell) и файла YAML. В следующих разделах описано, как создать группу контейнеров с поддержкой ведения журналов и обращения к ним.
+Чтобы отправлять данные из экземпляра контейнера в Журналы Azure Monitor, вам нужно создать группу контейнеров с помощью Azure CLI (или Cloud Shell) и файла YAML. В следующих разделах описано, как создать группу контейнеров с поддержкой ведения журналов и обращения к ним.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -96,7 +98,7 @@ az container create --resource-group myResourceGroup --name mycontainergroup001 
 
 Вскоре после выполнения команды вы получите от Azure ответ с информацией о развертывании.
 
-## <a name="view-logs-in-log-analytics"></a>Просмотр журналов в Log Analytics
+## <a name="view-logs-in-azure-monitor-logs"></a>Просмотр журналов в Azure Monitor
 
 После развертывания группы контейнеров может потребоваться до 10 минут, чтобы на портале Azure появились первые записи журнала. Чтобы просмотреть журналы группы контейнеров, откройте рабочую область Log Analytics и сделайте следующее:
 
@@ -109,7 +111,7 @@ az container create --resource-group myResourceGroup --name mycontainergroup001 
 
 ## <a name="query-container-logs"></a>Запрос по журналам контейнера
 
-Log Analytics поддерживает расширенный [язык запросов][query_lang] для извлечения информации из выходных данных журналов, размер которых может достигать тысяч строк.
+Журналы Azure Monitor поддерживают расширенный [язык запросов][query_lang] для извлечения информации из выходных данных журналов, размер которых может достигать тысяч строк.
 
 Агент ведения журнала в Экземплярах контейнеров Azure отправляет записи в таблицу `ContainerInstanceLog_CL` в рабочей области Log Analytics. Базовая структура запроса включает имя таблицы с исходными данными (`ContainerInstanceLog_CL`) и ряд операторов, разделенных символом вертикальной черты (`|`). Вы можете объединить несколько операторов в цепочку, чтобы получить более точные результаты или применить более сложные функции.
 
@@ -130,11 +132,11 @@ ContainerInstanceLog_CL
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-### <a name="log-analytics"></a>Log Analytics
+### <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Дополнительные сведения о запросах по журналам и настройке предупреждений в Azure Log Analytics см. в следующих статьях:
+Дополнительные сведения о запросах по журналам и настройке предупреждений в Журналах Azure Monitor см. в следующих статьях:
 
-* [Основные сведения о поисках по журналам в Log Analytics](../log-analytics/log-analytics-log-search.md)
+* [Анализ данных журнала в Azure Monitor](../log-analytics/log-analytics-log-search.md)
 * [Новые возможности оповещений в Azure Monitor](../azure-monitor/platform/alerts-overview.md)
 
 

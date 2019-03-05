@@ -13,14 +13,14 @@ ms.date: 11/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5d42135c538ca3d0a63252805efb44cef7e8b0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 536edcf74bff6f89dade4a713c40c9bef12e18af
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190472"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56881810"
 ---
-# <a name="what-is-hybrid-identity"></a>Что собой представляет гибридная идентификация 
+# <a name="what-is-hybrid-identity"></a>Что собой представляет гибридная идентификация
 
 Сегодня предприятия и организации все чаще комбинируют локальные и облачные приложения.  Пользователям требуется доступ к этим приложениям как локально, так и в облаке. Удовлетворить это требование непросто. 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56190472"
 
 - **[синхронизация хэша паролей](whatis-phs.md)**;  
 - **[сквозная проверка подлинности](how-to-connect-pta.md)**;  
-- **[федерация](whatis-fed.md)**. 
+- **[федерация AD FS](whatis-fed.md)**. 
 
 Эти методы проверки подлинности также предоставляют возможности [единого входа](how-to-connect-sso.md).  Единый вход обеспечивает пользователям автоматический вход в систему, когда они работают на корпоративных устройствах, подключенных к корпоративной сети.
 
@@ -47,7 +47,7 @@ ms.locfileid: "56190472"
 |Разрешить моим пользователям выполнять вход и обращаться к облачным службам с помощью локального пароля.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
 |Реализовать единый вход с использованием учетных данных организации.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|  
 |Обеспечить хранение хэша паролей вне облака.| |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
-|Использовать облачные решения для многофакторной проверки подлинности.| |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
+|Использовать облачные решения для многофакторной проверки подлинности.|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
 |Использовать локальные решения для Многофакторной идентификации.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
 |Обеспечить поддержку проверки подлинности с использованием смарт-карт<sup>4</sup>.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 
 |Отображать уведомления об истечения срока действия пароля на портале Office и на рабочем столе Windows 10.| | |![Рекомендуется](./media/whatis-hybrid-identity/ic195031.png)| 

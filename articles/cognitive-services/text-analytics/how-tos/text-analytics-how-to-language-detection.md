@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 549ef0d073a740edf700c54d02a0d9ef247db0b7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 8197d091763709282c42379a7ca0ea802e5c6fdf
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245094"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56886797"
 ---
 # <a name="example-how-to-detect-language-with-text-analytics"></a>Пример: Как определить язык с помощью API "Анализ текста"
 
@@ -29,7 +29,7 @@ ms.locfileid: "56245094"
 
 Необходимо иметь документы JSON в следующем формате: "идентификатор" и"текст"
 
-Документ должен содержать менее 5000 символов и иметь до 1 000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для обнаружение языка.
+Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для обнаружение языка.
 
    ```
     {

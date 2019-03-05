@@ -3,8 +3,8 @@ title: Руководство по удалению ресурсов в служ
 description: Сведения об удалении ресурсов в Сетке Azure Service Fabric таким образом, чтобы с вас не взималась плата за неиспользуемые ресурсы.
 services: service-fabric-mesh
 documentationcenter: .net
-author: TylerMSFT
-manager: jeconnoc
+author: dkkapur
+manager: chakdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric-mesh
@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/18/2018
-ms.author: twhitney
+ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: fb7a444c54a57e7f2c38d941eb99f2fea7eebcef
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a60c42310f0698b8290e7ba6195eeed44fe0b95e
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993363"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56815796"
 ---
-# <a name="tutorial-remove-azure-resources"></a>Руководство по удалению ресурсов Azure
+# <a name="tutorial-remove-azure-resources"></a>Руководство. Удаление ресурсов Azure
 
 Это руководство является пятой частью серии руководств. Оно содержит сведения об удалении приложения и его ресурсов таким образом, чтобы не оплачивать их.
 
@@ -62,7 +62,7 @@ az group delete --resource-group sfmeshTutorial1RG
 Remove-AzureRmResourceGroup -Name sfmeshTutorial1RG
 ```
 
-Кроме того, можно удалить группу ресурсов **sfmeshTutorial1RG** [с портала](../azure-resource-manager/resource-group-portal.md#delete-resource-group-or-resources). 
+Кроме того, можно удалить группу ресурсов **sfmeshTutorial1RG** [с портала](../azure-resource-manager/manage-resource-groups-portal.md#delete-resource-groups). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

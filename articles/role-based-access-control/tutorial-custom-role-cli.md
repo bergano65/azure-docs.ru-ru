@@ -11,18 +11,18 @@ ms.devlang: ''
 ms.topic: tutorial
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 06/12/2018
+ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: 9cd736272fce71f08006d32a169b88d092a48231
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: de1805d91f48b5718ecf293c2b8672ba40fb81a9
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340218"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588166"
 ---
 # <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-cli"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -39,7 +39,7 @@ ms.locfileid: "56340218"
 Для работы с этим учебником требуется:
 
 - разрешения на создание пользовательских ролей, такие как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователя](built-in-roles.md#user-access-administrator);
-- локальная установка [Azure CLI](/cli/azure/install-azure-cli).
+- [Azure Cloud Shell](../cloud-shell/overview.md) или [Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
 
@@ -61,7 +61,7 @@ ms.locfileid: "56340218"
 
 1. Откройте роль ReaderSupportRole.json в редакторе и добавьте приведенный ниже код JSON.
 
-    См. дополнительные сведения о [различных свойствах пользовательских ролей](custom-roles.md).
+    Дополнительные сведения о свойствах см. в статье [Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles.md).
 
     ```json
     {

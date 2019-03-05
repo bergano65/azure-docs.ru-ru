@@ -8,13 +8,13 @@ ms.author: shvija
 ms.topic: tutorial
 ms.service: event-hubs
 ms.custom: seodec18
-ms.date: 12/06/2018
-ms.openlocfilehash: 5f9af39616e45983a7ec592f33c3f2ffd34ea34f
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.date: 02/26/2019
+ms.openlocfilehash: 4f72def4d81f51fcf1bedbeb83798b16ebb6eb32
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233410"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56888667"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Руководство по визуализации аномальных данных в событиях реального времени, отправляемых в Центры событий Azure
 
@@ -324,6 +324,8 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
     ![Снимок экрана с указанием заголовка и подзаголовка для плитки панели мониторинга.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-tile-details.png)
 
+    > [!IMPORTANT]
+    > Когда вы запускаете пример приложения и передаете поток данных в концентратор событий, цифра на этой плитке быстро меняется (каждую секунду). Это происходит потому, что запрос Stream Analytics фактически обновляет значение **каждую секунду**. Установите для запроса отображение "переворачивающегося" окна через 3 минуты, чтобы просматривать сумму за последние несколько минут. 
 11. Добавьте еще одну визуализацию. Повторите первые несколько шагов:
 
    * Щелкните **Добавить плитку**.

@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 88e55573e88a45d7733e12c3bb8751763a0ef901
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 0885671d777d79c6f8a9fc993aa1224312705bce
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113368"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56650909"
 ---
-# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
+# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как сопоставить имеющееся настраиваемое DNS-имя со Службой приложений Azure.
 
@@ -199,6 +199,15 @@ ms.locfileid: "56113368"
 | - | - | - |
 | A | `@` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
 | TXT | `@` | `<app_name>.azurewebsites.net` |
+
+> [!NOTE]
+> Чтобы добавить поддомен (например `www.contoso.com`) с помощью записи A вместо рекомендуемой [записи CNAME](#map-a-cname-record), запись A и запись TXT должны выглядеть так, как показано в следующей таблице.
+>
+> | Тип записи | Узел | Значение |
+> | - | - | - |
+> | A | `www` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
+> | TXT | `www` | `<app_name>.azurewebsites.net` |
+>
 
 После добавления этих записей страница управления записями DNS выглядит так:
 

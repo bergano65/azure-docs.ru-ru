@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 01/14/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4e6f5a17544c1419eb6101acdd6590f034ea4aa3
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b7fa03cdf52fc3218e9556c9664daafdc60243f3
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241464"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56593223"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Проверка обновлений программного обеспечения от корпорации Майкрософт
 
@@ -28,25 +28,35 @@ ms.locfileid: "55241464"
 
 Корпорация Майкрософт периодически выпускает обновления для программного обеспечения Azure Stack. Эти обновления предоставляются партнерам по совместной разработке Azure Stack. Обновления предоставляются до того, как они станут общедоступными. Вы можете проверить наличие обновлений для своего решения и отправить отзыв корпорации Майкрософт.
 
-[!INCLUDE [azure-stack-vaas-workflow-validation-completion](includes/azure-stack-vaas-workflow-validation-completion.md)]
+Обновления программного обеспечения Майкрософт для Azure Stack обозначены с использованием соглашения об именовании. Например, 1803 указывает на обновление за март 2018 г. Сведения о политике обновления, заметках о частоте и выпуске Azure Stack см. в разделе [Политика обслуживания Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-servicing-policy).
 
-## <a name="apply-monthly-update"></a>Применение ежемесячного обновления
+## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [azure-stack-vaas-workflow-section_update-azs](includes/azure-stack-vaas-workflow-section_update-azs.md)]
+Прежде чем выполнять ежемесячный процесс обновления в VaaS, необходимо ознакомиться со следующими темами:
 
-## <a name="create-a-workflow"></a>Создание рабочего процесса
+- [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Проверка как услуга: основные понятия)
+- [тестирование интерактивной проверки функций](azure-stack-vaas-interactive-feature-verification.md).
 
-Для проверки обновления используется тот же рабочий процесс, что и для **проверки решений**.
+## <a name="required-tests"></a>Обязательные тесты
 
-## <a name="run-tests"></a>Выполнение тестов
+Для ежемесячной проверки программного обеспечения приведенные ниже тесты необходимо выполнять в следующем порядке:
 
-1. Для проверки обновления используется тот же рабочий процесс, что и для **проверки решений**. 
+1. Monthly Azure Stack Update Verification;
+2. Cloud Simulation Engine (Механизм имитации в облаке).
 
-2. Следуйте инструкциям из раздела [о выполнении тестов для проверки решения](azure-stack-vaas-validate-oem-package.md#run-package-validation-tests). Выберите следующие тесты:
-    - Monthly Azure Stack Update Verification;
-    - Cloud Simulation Engine.
+## <a name="validating-software-updates"></a>Проверка обновлений программного обеспечения
 
-Для проверок обновления не нужно отправлять запрос на подписывание пакета.
+1. Создайте рабочий процесс **проверки пакетов**.
+1. Для перечисленных выше обязательных тестов выполните инструкции из раздела [Запуск тестов проверки пакета](azure-stack-vaas-validate-oem-package.md#run-package-validation-tests). Дополнительные инструкции о тесте **проверки ежемесячного обновления Azure Stack** см. в разделе ниже.
+
+### <a name="apply-the-monthly-update"></a>Применение ежемесячного обновления
+
+1. Выберите агент для выполнения тестов.
+1. Запланируйте **проверку ежемесячного обновления Azure Stack**.
+1. Укажите расположение пакета расширения OEM, в данный момент развернутого в метке, и расположение пакета расширения OEM, который будет применяться во время обновления. Сведения о настройке URL-адресов для этих пакетов см. в разделе об [управлении пакетами для проверки](azure-stack-vaas-validate-oem-package.md#managing-packages-for-validation).
+1. Выполните действия из выбранного агента в пользовательском интерфейсе.
+
+Если у вас есть вопросы или проблемы, обращайтесь в [службу поддержки VaaS](mailto:vaashelp@microsoft.com).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

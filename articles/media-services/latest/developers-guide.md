@@ -13,19 +13,19 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 02/16/2019
+ms.date: 02/22/2019
 ms.author: juliako
 ms.custom: ''
-ms.openlocfilehash: 2f0191bd181a8e10fa59f6d1d53da348e6440aba
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 97123ec795353073b912bd83e0abb45e23549a75
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343588"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56749806"
 ---
 # <a name="start-developing-with-media-services-v3-api-using-sdkstools"></a>Начало разработки с использованием API Служб мультимедиа версии 3 с помощью пакетов SDK и служб
 
-Как разработчик вы можете использовать [REST API](https://aka.ms/ams-v3-rest-sdk) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API Служб мультимедиа версии 3 основан на спецификации OpenAPI (ранее известной как Swagger).
+Как разработчик вы можете использовать [REST API](https://aka.ms/ams-v3-rest-ref) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API [Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk) основан на спецификации OpenAPI (ранее известной как Swagger).
 
 В этом разделе приведены ссылки на пакеты SDK, инструменты, документацию. Здесь также предоставлена некоторая полезная информация о различных ENV-файлах для разработки.
 
@@ -95,6 +95,7 @@ AMSE — это проект с открытым кодом, поддержка
 - [Использование динамического шифрования DRM и службы доставки лицензий с помощью .NET](protect-with-drm.md)
 - [Получение ключа подписи из имеющейся политики с помощью .NET](get-content-key-policy-dotnet-howto.md)
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
+- [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](http://aka.ms/ams3functions)
 
 ## <a name="java"></a>Java
 

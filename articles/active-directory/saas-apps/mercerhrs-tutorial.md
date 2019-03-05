@@ -1,229 +1,200 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mercer BenefitsCentral (MBC).
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 3788b28c-49aa-4208-9acd-630362008e89
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 09/21/2017
+ms.topic: tutorial
+ms.date: 02/20/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42d31f2dd62868713d48a9f6095de160c4b06ffe
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9dde23d0d860e5777239cb9c51e96a8d46e67841
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205738"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56983388"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство. Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC)
 
 В этом руководстве описано, как интегрировать Mercer BenefitsCentral (MBC) с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с Mercer BenefitsCentral (MBC) обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Mercer BenefitsCentral (MBC).
-- Вы можете включить автоматический вход пользователей в Mercer BenefitsCentral (MBC) (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Mercer BenefitsCentral (MBC).
+* Вы можете включить автоматический вход пользователей в Mercer BenefitsCentral (MBC) (единый вход) с использованием их учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mercer BenefitsCentral (MBC), вам потребуется:
 
-- подписка Azure AD;
-- подписка Mercer BenefitsCentral (MBC) с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Mercer BenefitsCentral (MBC) с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Mercer BenefitsCentral (MBC) из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Mercer BenefitsCentral (MBC) поддерживает инициированный единый вход **выдающей точки распространения**.
 
 ## <a name="adding-mercer-benefitscentral-mbc-from-the-gallery"></a>Добавление Mercer BenefitsCentral (MBC) из коллекции
+
 Чтобы настроить интеграцию Mercer BenefitsCentral (MBC) с Azure AD, необходимо добавить Mercer BenefitsCentral (MBC) из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Mercer BenefitsCentral (MBC) из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Mercer BenefitsCentral (MBC)**, выберите **Mercer BenefitsCentral (MBC)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Mercer BenefitsCentral (MBC) в списке результатов](./media/mercerhrs-tutorial/tutorial_mercerhrs_addfromgallery.png)
+4. В поле поиска введите **Mercer BenefitsCentral (MBC)**, выберите **Mercer BenefitsCentral (MBC)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Mercer BenefitsCentral (MBC) в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Mercer BenefitsCentral (MBC) с использованием тестового пользователя Britta Simon.
-
-Чтобы настроить единый вход в Azure AD, необходимо знать, какой пользователь в Mercer BenefitsCentral (MBC) соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Mercer BenefitsCentral (MBC).
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Mercer BenefitsCentral (MBC).
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение Mercer BenefitsCentral (MBC) с использованием тестового пользователя **Britta Simon**.
+Для работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Mercer BenefitsCentral (MBC).
 
 Чтобы настроить и проверить единый вход Azure AD в Mercer BenefitsCentral (MBC), требуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя приложения Mercer BenefitsCentral (MBC)](#create-a-mercer-benefitscentral-mbc-test-user)** требуется для того, чтобы в Mercer BenefitsCentral (MBC) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Mercer BenefitsCentral (MBC)](#configure-mercer-benefitscentral-mbc-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя приложения Mercer BenefitsCentral (MBC)](#create-mercer-benefitscentral-mbc-test-user)** требуется для того, чтобы в Mercer BenefitsCentral (MBC) существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Mercer BenefitsCentral (MBC).
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Mercer BenefitsCentral (MBC), сделайте следующее.**
+Чтобы настроить единый вход Azure AD в Mercer BenefitsCentral (MBC), выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Mercer BenefitsCentral (MBC)** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Mercer BenefitsCentral (MBC)** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/mercerhrs-tutorial/tutorial_mercerhrs_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Mercer BenefitsCentral (MBC)** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа приложения Mercer BenefitsCentral (MBC)](./media/mercerhrs-tutorial/tutorial_mercerhrs_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `stg.mercerhrs.com/saml2.0`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 
-    > [!NOTE] 
-    > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь к [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы получить это значение.
+    ![Сведения о домене и URL-адресах единого входа приложения Mercer BenefitsCentral (MBC)](common/idp-intiated.png)
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    a. В текстовом поле **Идентификатор** введите URL-адрес: `stg.mercerhrs.com/saml2.0`
 
-    ![Ссылка для скачивания сертификата](./media/mercerhrs-tutorial/tutorial_mercerhrs_certificate.png) 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
 
-1. Нажмите кнопку **Сохранить** .
+    > [!NOTE]
+    > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь в [группу поддержки клиентов Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы получить это значение. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/mercerhrs-tutorial/tutorial_general_400.png)
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-1. В разделе **Конфигурация Mercer BenefitsCentral (MBC)** щелкните **Настроить Mercer BenefitsCentral (MBC)**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-    ![Конфигурация Mercer BenefitsCentral (MBC)](./media/mercerhrs-tutorial/tutorial_mercerhrs_configure.png) 
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка Mercer BenefitsCentral (MBC)**.
 
-1. Чтобы настроить единый вход на стороне **Mercer BenefitsCentral (MBC)**, нужно отправить скачанный **XML-файл метаданных** и **URL-адрес службы единого входа SAML** [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+    а) URL-адрес входа.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    б) Идентификатор Azure AD.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    в) URL-адрес выхода.
 
-   ![Создание тестового пользователя Azure AD][100]
+### <a name="configure-mercer-benefitscentral-mbc-single-sign-on"></a>Настройка единого входа Mercer BenefitsCentral (MBC)
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+Чтобы настроить единый вход на стороне **Mercer BenefitsCentral (MBC)**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-    ![Кнопка Azure Active Directory](./media/mercerhrs-tutorial/create_aaduser_01.png)
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/mercerhrs-tutorial/create_aaduser_02.png)
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Добавить"](./media/mercerhrs-tutorial/create_aaduser_03.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. В диалоговом окне **Пользователь** сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Диалоговое окно "Пользователь"](./media/mercerhrs-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
-### <a name="create-a-mercer-benefitscentral-mbc-test-user"></a>Создание тестового пользователя Mercer BenefitsCentral (MBC)
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-В этом разделе описано, как создать пользователя Britta Simon в Mercer HRS. Обратитесь к [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы добавить пользователей на платформу Mercer HRS. Перед использованием единого входа необходимо создать и активировать пользователей.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Mercer BenefitsCentral (MBC).
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Mercer BenefitsCentral (MBC)**.
 
-**Чтобы назначить пользователя Britta Simon в Mercer BenefitsCentral (MBC), сделайте следующее.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. Из списка "Приложения" выберите **Mercer BenefitsCentral (MBC)**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Mercer BenefitsCentral (MBC) в списке "Приложения"](common/all-applications.png)
 
-1. Из списка "Приложения" выберите **Mercer BenefitsCentral (MBC)**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Mercer BenefitsCentral (MBC) в списке "Приложения"](./media/mercerhrs-tutorial/tutorial_mercerhrs_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-mercer-benefitscentral-mbc-test-user"></a>Создание тестового пользователя Mercer BenefitsCentral (MBC)
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в Mercer BenefitsCentral (MBC). Обратитесь к  [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы добавить пользователей на платформу Mercer BenefitsCentral (MBC). Перед использованием единого входа необходимо создать и активировать пользователей.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Если щелкнуть элемент "Mercer BenefitsCentral (MBC)" на панели доступа, вы автоматически войдете в приложение Mercer BenefitsCentral (MBC).
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку "Mercer BenefitsCentral (MBC)" на панели доступа, вы автоматически войдете в приложение Mercer BenefitsCentral (MBC), для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/mercerhrs-tutorial/tutorial_general_01.png
-[2]: ./media/mercerhrs-tutorial/tutorial_general_02.png
-[3]: ./media/mercerhrs-tutorial/tutorial_general_03.png
-[4]: ./media/mercerhrs-tutorial/tutorial_general_04.png
-
-[100]: ./media/mercerhrs-tutorial/tutorial_general_100.png
-
-[200]: ./media/mercerhrs-tutorial/tutorial_general_200.png
-[201]: ./media/mercerhrs-tutorial/tutorial_general_201.png
-[202]: ./media/mercerhrs-tutorial/tutorial_general_202.png
-[203]: ./media/mercerhrs-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 02/19/2019
 ms.author: diberry
-ms.openlocfilehash: dea623684454d4b14a370251df10599eb03bbb34
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: c17a74c81d9c9d2ac3f585ab17f0b7d2acc628f6
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55856926"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873930"
 ---
 # <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство. Извлечение из речевого фрагмента данных, связанных с контекстом
 
@@ -74,7 +74,7 @@ ms.locfileid: "55856926"
     |Отправить Стива Стандиша из Сан-Диего в Бельвю. |
     |Перебросить Таннера Томпсона из Канзас-Сити в Чикаго.|
 
-    [ ![Снимок экрана приложения LUIS с новыми фразами в намерении MoveEmployee](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png)](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png#lightbox)
+    [![Снимок экрана приложения LUIS с новыми фразами в намерении MoveEmployee](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png)](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png#lightbox)
 
 ## <a name="create-a-location-entity"></a>Создание сущности расположения
 Приложению LUIS необходимо определить расположение, отмечая исходное и целевое расположения во фразах. Если необходимо просмотреть фразу в представлении токенов (необработанном представлении), выберите переключатель в строке над фразой с меткой **Entities View** (Представление сущностей). Выбрав переключатель, вы увидите, что этот элемент управления обозначен **Tokens View** (Представление токенов).
@@ -91,7 +91,7 @@ move John W. Smith leaving Seattle headed to Dallas
 
 1. Во фразе `move John W. Smith leaving Seattle headed to Dallas` выберите слово `Seattle`. Появится раскрывающееся меню с текстовым полем в верхней области. Введите имя сущности `Location` в текстовом поле, а затем выберите в раскрывающемся меню **Create new entity** (Создать сущность). 
 
-    [![Снимок экрана создания новой сущности на странице намерения](media/luis-quickstart-intent-and-hier-entity/create-location-hierarchical-entity-from-example-utterance.png "Screenshot of creating new entity on intent page")](media/luis-quickstart-intent-and-hier-entity/create-location-hierarchical-entity-from-example-utterance.png#lightbox)
+    [![Снимок экрана создания новой сущности на странице намерения](media/luis-quickstart-intent-and-hier-entity/tutorial-hierarichical-entity-labeling-1.png "Screenshot of creating new entity on intent page")](media/luis-quickstart-intent-and-hier-entity/tutorial-hierarichical-entity-labeling-1.png#lightbox)
 
 1. Во всплывающем окне выберите **иерархический** тип сущности с `Origin` и `Destination` в качестве дочерних сущностей. Нажмите кнопку **Готово**.
 
@@ -99,7 +99,7 @@ move John W. Smith leaving Seattle headed to Dallas
 
 1. Метка для `Seattle` помечается как `Location`, так как LUIS не знает, это исходный город, город назначения или ни один из них. Выберите `Seattle`, затем выберите **Размещение**, а затем в меню справа выберите `Origin`.
 
-    [![Снимок экрана всплывающего диалогового окна обозначения сущности для изменения дочернего элемента сущности расположения](media/luis-quickstart-intent-and-hier-entity/choose-hierarchical-child-entity-from-example-utterance.png "Screenshot of entity labeling pop-up dialog to change locations entity child")](media/luis-quickstart-intent-and-hier-entity/choose-hierarchical-child-entity-from-example-utterance.png#lightbox)
+    [![Снимок экрана всплывающего диалогового окна обозначения сущности для изменения дочернего элемента сущности расположения](media/luis-quickstart-intent-and-hier-entity/tutorial-hierarichical-entity-labeling-2.png "Screenshot of entity labeling pop-up dialog to change locations entity child")](media/luis-quickstart-intent-and-hier-entity/tutorial-hierarichical-entity-labeling-2.png#lightbox)
 
 1. Обозначите другие расположения в оставшихся речевых фрагментах. Если все расположения помечены, речевые фрагменты выглядят как шаблон. 
 

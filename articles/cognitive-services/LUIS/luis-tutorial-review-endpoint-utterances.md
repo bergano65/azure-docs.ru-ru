@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 02/19/2019
 ms.author: diberry
-ms.openlocfilehash: 88ac9f07fb8791ca3d64123663b0380a56220cdd
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 25841971a2e7921c89c63032e8fd48bc528263aa
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865963"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878185"
 ---
-# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство. Исправление неточных прогнозов с помощью проверки высказываний конечной точки
+# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого руководства вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя высказывания, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания необходимо проверять на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS. 
 
 Этот процесс проверки — еще один способ обучить LUIS для использования вашего домена приложений. В LUIS выбираются те высказывания, которые отображаются в списке проверки. Этот список:
@@ -50,11 +50,13 @@ ms.locfileid: "55865963"
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json).
 
-2. Импортируйте JSON-файл в новое приложение.
+1. Импортируйте JSON-файл в новое приложение.
 
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+1. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
-    Если вы используете при работе с этим руководством новое импортированное приложение, для фрагментов речи нужно выполнить обучение и публикацию. Затем необходимо добавить фрагменты в конечную точку с помощью [скрипта](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/demo-upload-endpoint-utterances/endpoint.js) или из конечной точки в браузере. Фрагменты речи, которые нужно добавить:
+1. Обучите и опубликуйте новое приложение.
+
+1. Используйте конечную точку, чтобы добавить следующие фрагменты речи. Это можно сделать с помощью [скрипта](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/demo-upload-endpoint-utterances/endpoint.js) или из конечной точки в браузере. Фрагменты речи, которые нужно добавить:
 
    [!code-nodejs[Node.js code showing endpoint utterances to add](~/samples-luis/examples/demo-upload-endpoint-utterances/endpoint.js?range=15-26)]
 
@@ -64,13 +66,13 @@ ms.locfileid: "55865963"
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
-2. Выберите **Review endpoint utterances** (Проверить фрагменты речи конечной точки) на панели навигации слева. Список будет отфильтрован для намерения **ApplyForJob**. 
+1. Выберите **Review endpoint utterances** (Проверить фрагменты речи конечной точки) на панели навигации слева. Список будет отфильтрован для намерения **ApplyForJob**. 
 
-    [ ![Снимок экрана с кнопкой Review endpoint utterances (Проверить фрагменты речи конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png#lightbox)
+    [![Снимок экрана с кнопкой Review endpoint utterances (Проверить фрагменты речи конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png#lightbox)
 
-3. Переключите **представление сущностей**, чтобы просмотреть отмеченные сущности. 
+1. Переключите **представление сущностей**, чтобы просмотреть отмеченные сущности. 
     
-    [ ![Снимок экрана с элементом Review endpoint utterances (Проверить фрагменты речи конечной точки) и выделенным переключателем представления сущностей](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png#lightbox)
+    [![Снимок экрана с элементом Review endpoint utterances (Проверить фрагменты речи конечной точки) и выделенным переключателем представления сущностей](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png#lightbox)
 
     |Фраза|Правильное намерение|Отсутствующие сущности|
     |:--|:--|:--|
@@ -78,29 +80,29 @@ ms.locfileid: "55865963"
 
     Этот фрагмент речи не является правильным намерением. Его оценка составляет менее 50 %. Для намерения **ApplyForJob** используется 21 фрагмент речи, а для **GetJobInformation** — 7. Чтобы правильно упорядочить количество фрагментов речи конечной точки, для намерения **GetJobInformation** нужно добавить больше фрагментов речи. Вы можете сделать это самостоятельно, чтобы попрактиковаться. Для каждого намерения, кроме **None**, должно использоваться приблизительно одинаковое количество примеров фрагментов речи. Число фрагментов речи с намерением **None** должно составлять 10 % от общего числа фрагментов речи в приложении. 
 
-4. Для намерения `I'm looking for a job with Natual Language Processing` выберите правильное намерение **GetJobInformation** в столбце **Aligned intent** (Упорядоченное намерение). 
+1. Для намерения `I'm looking for a job with Natual Language Processing` выберите правильное намерение **GetJobInformation** в столбце **Aligned intent** (Упорядоченное намерение). 
 
-    [ ![Снимок экрана элемента Review endpoint utterances (Проверить фрагменты речи конечной точки) с упорядочиванием фрагмента речи для намерения](./media/luis-tutorial-review-endpoint-utterances/align-intent-1.png)](./media/luis-tutorial-review-endpoint-utterances/align-intent-1.png#lightbox)
+    [![Снимок экрана элемента Review endpoint utterances (Проверить фрагменты речи конечной точки) с упорядочиванием фрагмента речи для намерения](./media/luis-tutorial-review-endpoint-utterances/align-intent-1.png)](./media/luis-tutorial-review-endpoint-utterances/align-intent-1.png#lightbox)
 
-5. В том же фрагменте фрагмента речи сущностью для `Natural Language Processing` является keyPhrase. Вместо нее должна использоваться сущность **Job**. Выберите `Natural Language Processing`, а затем выберите в списке сущность **Job**.
+1. В том же фрагменте фрагмента речи сущностью для `Natural Language Processing` является keyPhrase. Вместо нее должна использоваться сущность **Job**. Выберите `Natural Language Processing`, а затем выберите в списке сущность **Job**.
 
-    [ ![Снимок экрана с элементом Review endpoint utterances (Проверить фрагменты речи конечной точки) и отмеченной сущностью для фрагмента речи](./media/luis-tutorial-review-endpoint-utterances/label-entity.png)](./media/luis-tutorial-review-endpoint-utterances/label-entity.png#lightbox)
+    [![Снимок экрана с элементом Review endpoint utterances (Проверить фрагменты речи конечной точки) и отмеченной сущностью для фрагмента речи](./media/luis-tutorial-review-endpoint-utterances/label-entity.png)](./media/luis-tutorial-review-endpoint-utterances/label-entity.png#lightbox)
 
-6. В той же строке выберите обведенный кружком флажок в столбце **Add to aligned intent** (Добавить в список упорядоченных намерений). 
+1. В той же строке выберите обведенный кружком флажок в столбце **Add to aligned intent** (Добавить в список упорядоченных намерений). 
 
-    [ ![Снимок экрана, демонстрирующий завершение упорядочивания фрагмента речи для намерения](./media/luis-tutorial-review-endpoint-utterances/align-utterance.png)](./media/luis-tutorial-review-endpoint-utterances/align-utterance.png#lightbox)
+    [![Снимок экрана, демонстрирующий завершение упорядочивания фрагмента речи для намерения](./media/luis-tutorial-review-endpoint-utterances/align-utterance.png)](./media/luis-tutorial-review-endpoint-utterances/align-utterance.png#lightbox)
 
     После этого фрагмент речи перемещается из списка **проверки фрагментов речи конечной точки** в намерение **GetJobInformation**. Фрагмент речи теперь является примером для этого намерения. 
 
-7. Просмотрите остальные фрагменты речи для этого намерения, отмечая их и при необходимости внося исправления в список **упорядоченных намерений**.
+1. Просмотрите остальные фрагменты речи для этого намерения, отмечая их и при необходимости внося исправления в список **упорядоченных намерений**.
 
-8. Если все фрагменты речи правильные, установите флажок для каждой строки, а затем выберите **Add selected** (Добавить выбранные), чтобы правильно упорядочить фрагменты речи. 
+1. Если все фрагменты речи правильные, установите флажок для каждой строки, а затем выберите **Add selected** (Добавить выбранные), чтобы правильно упорядочить фрагменты речи. 
 
-    [ ![Снимок экрана, демонстрирующий завершение упорядочения оставшихся фрагментов речи](./media/luis-tutorial-review-endpoint-utterances/finalize-utterance-alignment.png)](./media/luis-tutorial-review-endpoint-utterances/finalize-utterance-alignment.png#lightbox)
+    [![Снимок экрана, демонстрирующий завершение упорядочения оставшихся фрагментов речи](./media/luis-tutorial-review-endpoint-utterances/finalize-utterance-alignment.png)](./media/luis-tutorial-review-endpoint-utterances/finalize-utterance-alignment.png#lightbox)
 
-9. В списке больше не должны содержаться эти фрагменты речи. Если появляется больше высказываний, продолжайте работу по списку, исправляя намерения и отмечая любые отсутствующие сущности, пока этот список не опустеет. 
+1. В списке больше не должны содержаться эти фрагменты речи. Если появляется больше высказываний, продолжайте работу по списку, исправляя намерения и отмечая любые отсутствующие сущности, пока этот список не опустеет. 
 
-10. Выберите следующее намерение в списке фильтрации и продолжайте исправлять фрагменты речи и отмечать сущности. Помните, что на последнем этапе обработки каждого намерения нужно либо выбрать **Add to aligned intent** (Добавить в список упорядоченных намерений) в строке фрагмента речи, либо установить флажок для каждого намерения и выбрать команду **Добавить выбранные** над таблицей.
+1. Выберите следующее намерение в списке фильтрации и продолжайте исправлять фрагменты речи и отмечать сущности. Помните, что на последнем этапе обработки каждого намерения нужно либо выбрать **Add to aligned intent** (Добавить в список упорядоченных намерений) в строке фрагмента речи, либо установить флажок для каждого намерения и выбрать команду **Добавить выбранные** над таблицей.
 
     Продолжайте, пока список намерений и сущностей не опустеет. Это очень небольшое приложение. Проверка занимает несколько минут. 
 

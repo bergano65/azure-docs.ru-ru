@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание высокодоступного приложения с помощью хранилища BLOB-объектов — служба хранилища Azure
+title: Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов — служба хранилища Azure
 description: Использование геоизбыточного хранилища с доступом на чтение для обеспечения высокой доступности данных приложений
 services: storage
 author: tamram
@@ -9,12 +9,12 @@ ms.date: 01/03/2019
 ms.author: tamram
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: d2fef3a47cbcb4cfd8bce8978003eca1044d7de3
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: b031e7b772389aa81fd214d31365c20018cf48ae
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510639"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56874449"
 ---
 # <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>Руководство. Создание высокодоступного приложения с помощью хранилища BLOB-объектов
 
@@ -37,24 +37,24 @@ RA-GRS функционирует, реплицируя транзакции и�
 
 Для работы с этим руководством:
 
-# <a name="net-tabdotnet"></a>[.NET] (#tab/dotnet)
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 * Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
   - **разработка Azure.**
 
   ![Разработка Azure (в разделе Web & Cloud (Сеть и облако))](media/storage-create-geo-redundant-storage/workloads.png)
 
-# <a name="python-tabpython"></a>[Python] (#tab/python)
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 * установите [Python](https://www.python.org/downloads/);
 * Загрузите и установите [пакет SDK службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
 
-# <a name="java-v7-sdk--tabjava-v7"></a>[Пакет SDK для Java версии 7] (#tab/java-v7)
+# <a name="java-v7-sdk-tabjava-v7"></a>[Пакет SDK для Java версии 7](#tab/java-v7)
 
 * Установите и настройте [Maven](http://maven.apache.org/download.cgi) для работы из командной строки.
 * Установите и настройте [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-# <a name="java-v10-sdk-tabjava-v10"></a>[Пакет SDK для Java версии 10] (#tab/java-v10)
+# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
 
 * Установите и настройте [Maven](http://maven.apache.org/download.cgi) для работы из командной строки.
 * Установите и настройте [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).

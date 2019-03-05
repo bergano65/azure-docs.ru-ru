@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/09/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 97c33a5dc2eb43644081579b5d1c0172ce953906
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: 75a78e303991e5426c97b8ceb0eb1375e03be2a2
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449356"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56868193"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на Диск Microsoft Azure Data Box и проверка
 
@@ -178,20 +178,20 @@ ms.locfileid: "54449356"
 1. Скачайте инструмент Data Box Split Copy на компьютер с Windows и извлеките его в локальную папку. Этот инструмент был скачан при скачивании набора инструментов Диска Data Box для Windows.
 2. Откройте проводник. Запишите диск источника данных и буквы диска, назначенного Диску Data Box. 
 
-     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-1.png)
+     ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-1.png)
  
 3. Определите исходные данные для копирования. Так, в нашем примере:
     - Были определены следующие данные блочного BLOB-объекта.
 
-         ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-2.png)    
+         ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-2.png)    
 
     - Были определены следующие данные страничного BLOB-объекта.
 
-         ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-3.png)
+         ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-3.png)
  
 4. Перейдите в папку, в которой извлекается программное обеспечение. Найдите файл `SampleConfig.json` в каталоге. Это файл только для чтения, который можно изменить и сохранить.
 
-   ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-4.png)
+   ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-4.png)
  
 5. Измените файл `SampleConfig.json`.
  
@@ -200,11 +200,11 @@ ms.locfileid: "54449356"
     - Введите буквы дисков, соответствующие целевым дискам. Данные берутся из исходного пути и копируются на несколько дисков.
     - Укажите путь для файлов журналов. По умолчанию он отправляется в текущий каталог, в котором находится `.exe`.
 
-     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-5.png)
+     ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-5.png)
 
 6. Чтобы проверить формат этого файла, перейдите в `JSONlint`. Сохраните файл как `ConfigFile.json`. 
 
-     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-6.png)
+     ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-6.png)
  
 7. Откройте окно командной строки и 
 
@@ -212,24 +212,24 @@ ms.locfileid: "54449356"
 
     `DataBoxDiskSplitCopy.exe PrepImport /config:<Your-config-file-name.json>`
 
-     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-7.png)
+     ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-7.png)
  
 9. Чтобы продолжить выполнение сценария, введите следующее:
 
-    ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-8.png)
+    ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-8.png)
   
 10. Когда набор данных разделен и скопирован, отображается сводка инструмента Split Copy для сеанса копирования. Результат выполнения команды показан ниже.
 
-    ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-9.png)
+    ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-9.png)
  
 11. Убедитесь, что данные на целевых дисках разделены. 
  
     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-10.png)
-    ![Split copy data ](media/data-box-disk-deploy-copy-data/split-copy-11.png)
+    ![Split copy data](media/data-box-disk-deploy-copy-data/split-copy-11.png)
      
     Если вы изучите содержимое диска `n:`, вы увидите, что созданы две подпапки, соответствующие данным формата блочного и страничного BLOB-объектов.
     
-     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-12.png)
+     ![Разбиение и копирование данных](media/data-box-disk-deploy-copy-data/split-copy-12.png)
 
 12. Если сеанс копирования завершается ошибкой, для восстановления используйте следующую команду:
 

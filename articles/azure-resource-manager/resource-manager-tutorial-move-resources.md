@@ -13,14 +13,14 @@ ms.devlang: na
 ms.date: 12/19/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: cf1894a218af35459e0d0dc432c5813169856cca
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 5bc8a408ce247ad2980983c3eb32807074af599f
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267706"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820830"
 ---
-# <a name="tutorial-move-azure-resources-to-another-resource-group-or-subscription"></a>Руководство по Перемещение ресурсов Azure в другую группу ресурсов или подписку
+# <a name="tutorial-move-azure-resources-to-another-resource-group"></a>Руководство. Перемещение ресурсов Azure в другую группу ресурсов
 
 В этом разделе показано, как перемещать ресурсы из одной группы ресурсов в другую. Вы также можете переместить ресурсы Azure из одной подписки Azure в другую подписку. В этом руководстве используется шаблон Resource Manager для развертывания двух групп ресурсов и одной учетной записи хранения. Затем переместите учетную запись хранения из одной группы ресурсов в другую.
 

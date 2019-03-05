@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: e4e4c9ae764e1278251c01d41a0617ed2e88e439
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4ebc9b83c3aa135c90f18ff982621e862cb01d72
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242320"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56879619"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -60,7 +60,7 @@ ms.locfileid: "55242320"
 
 Панель мониторинга для рабочей области на портале поддерживается только в браузерах Microsoft Edge, Chrome и Firefox.
 
-[ ![Интернет-портал](./media/overview-what-happened-to-workbench/image001.png)] (./media/overview-what-happened-to-workbench/image001.png#lightbox)
+[![Интернет-портал](./media/overview-what-happened-to-workbench/image001.png)] (./media/overview-what-happened-to-workbench/image001.png#lightbox)
 
 Начните обучать свои модели и отслеживать журналы выполнения, используя новый интерфейс командной строки и новый пакет SDK. Чтобы узнать, как это делать, используйте [Руководство. Обучение моделей с помощью службы "Машинное обучение Azure"](tutorial-train-models-with-aml.md).
 
@@ -109,7 +109,7 @@ run = exp.submit(source_directory = script_folder, script = 'train.py', run_conf
 
 В этом последнем выпуске расширение было переименовано в Машинное обучение Azure для Visual Studio Code, в нем были реализованы доработки и улучшения, чтобы обеспечить работу с вышеописанными новыми функциями.
 
-[ ![Машинное обучение Azure для Visual Studio Code](./media/overview-what-happened-to-workbench/vscode.png)] (./media/overview-what-happened-to-workbench/vscode-big.png#lightbox)
+[![Машинное обучение Azure для Visual Studio Code](./media/overview-what-happened-to-workbench/vscode.png)] (./media/overview-what-happened-to-workbench/vscode-big.png#lightbox)
 
 ## <a name="what-about-domain-packages"></a>Что будет с пакетами домена?
 

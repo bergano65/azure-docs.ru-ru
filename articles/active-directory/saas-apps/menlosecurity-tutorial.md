@@ -4,247 +4,215 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 9e63fe6b-0ad0-405d-9e41-6a1a40a41df8
-ms.service: active-directory
-ms.subservice: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/08/2017
+ms.topic: tutorial
+ms.date: 02/20/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e779e4fab06802212514af94cafc1b016b737ca4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 2a83a72320a035bdb28ba0b52fd5ca1b3a17e7a9
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183910"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56873973"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство. Интеграция Azure Active Directory с Menlo Security
 
 В этом руководстве описано, как интегрировать Menlo Security с Azure Active Directory (Azure AD).
-
 Интеграция Menlo Security с Azure AD имеет следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать, у кого есть доступ к приложению Menlo Security.
-- Вы можете включить автоматический вход пользователей в Menlo Security (единый вход) с помощью учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать, у кого есть доступ к приложению Menlo Security.
+* Вы можете включить автоматический вход для пользователей в Menlo Security (единый вход) с помощью их учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Menlo Security, вам потребуется:
 
-- подписка Azure AD;
-- подписка Menlo Security с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Menlo Security с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Menlo Security из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Menlo Security поддерживает инициированный единый вход **пакета обновлений**.
 
 ## <a name="adding-menlo-security-from-the-gallery"></a>Добавление Menlo Security из коллекции
+
 Чтобы настроить интеграцию приложения Menlo Security с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
 **Добавление приложения Menlo Security из коллекции**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Menlo Security**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/tutorial_menlosecurity_search.png)
+4. В поле поиска введите **Menlo Security**, выберите **Menlo Security** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Menlo Security** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![Menlo Security в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/tutorial_menlosecurity_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Menlo Security с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа службе Azure AD нужно знать, какой пользователь в Menlo Security соответствует пользователю в Azure AD. Иными словами, нужно установить связь между пользователем Azure AD и соответствующим пользователем вMenlo Security.
-
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Menlo Security.
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение Menlo Security с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Menlo Security.
 
 Чтобы настроить и проверить единый вход Azure AD в Menlo Security, выполните следующие действия:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Menlo Security](#creating-a-menlo-security-test-user)** требуется для создания пользователя Britta Simon в Menlo Security, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Menlo Security](#configure-menlo-security-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Menlo Security](#create-menlo-security-test-user)** требуется для того, чтобы в Menlo Security существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе мы включим на портале Azure единый вход Azure AD и настроим его в приложении Menlo Security.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Настройка единого входа Azure AD в Menlo Security**
+Чтобы настроить единый вход Azure AD в Menlo Security, выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Menlo Security** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Menlo Security** выберите **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_menlosecurity_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Menlo Security** сделайте следующее:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_menlosecurity_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.menlosecurity.com/account/login`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.menlosecurity.com/safeview-auth-server/saml/metadata`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact). 
- 
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+    ![Сведения о домене и URL-адресах единого входа для приложения Menlo Security](common/sp-identifier.png)
 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_menlosecurity_certificate.png) 
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.menlosecurity.com/account/login`.
 
-1. Нажмите кнопку **Сохранить** .
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.menlosecurity.com/safeview-auth-server/saml/metadata`.
 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_general_400.png)
+    > [!NOTE]
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. В разделе **Настройка Menlo Security** щелкните **Настроить Menlo Security**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML** и **URL-адрес службы единого входа SAML** из раздела **Quick Reference** (Краткий справочник).
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_menlosecurity_configure.png) 
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Menlo Security**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-menlo-security-single-sign-on"></a>Настройка единого входа Menlo Security
 
 1. Чтобы настроить единый вход в приложении **Menlo Security**, войдите на соответствующий сайт **Menlo Security** в качестве администратора.
 
-1. В разделе **Параметры** выберите **Проверка подлинности** и выполните следующие действия:
+2. В разделе **Параметры** выберите **Проверка подлинности** и выполните следующие действия:
     
     ![Настройка единого входа](./media/menlosecurity-tutorial/menlo_user_setup.png)
 
     a. Установите флажок **Enable user authentication using SAML** (Включить проверку подлинности пользователя с помощью SAML).
 
-    б) Задайте для параметра **Allow External Access** (Разрешить внешний доступ) значение **Да**.
+    b. Задайте для параметра **Allow External Access** (Разрешить внешний доступ) значение **Да**.
 
     c. В разделе **SAML Provider** (Поставщик SAML) выберите **Azure Active Directory**.
 
-    4.3. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
+    4.3. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): Вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): Вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
     Е. **Сертификат X.509**: Откройте **Сертификат (Base64)**, скачанный на портале Azure, в Блокноте и вставьте его в это поле.
 
     ж. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
- 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/menlosecurity-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    d. Нажмите кнопку **Создать**.
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
-
-    4.3. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-menlo-security-test-user"></a>Создание тестового пользователя Menlo Security
- 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Menlo Security. Обратитесь в  [техническую поддержку клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact), чтобы добавить пользователей на платформу Menlo Security. Перед использованием единого входа необходимо создать и активировать пользователей. 
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе мы разрешим пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Menlo Security.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Menlo Security**.
 
-**Назначение пользователя Britta Simon приложению Menlo Security**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Menlo Security**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Menlo Security в списке "Приложения"](common/all-applications.png)
 
-1. В списке приложений выберите **Menlo Security**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/menlosecurity-tutorial/tutorial_menlosecurity_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-menlo-security-test-user"></a>Создание тестового пользователя Menlo Security
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в приложении Menlo Security. Обратитесь в [службу поддержки клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact), чтобы добавить пользователей на платформу Menlo Security. Перед использованием единого входа необходимо создать и активировать пользователей.
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD.
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
-Откройте браузер в режиме инкогнито или InPrivate, чтобы начать новый сеанс аутентификации.  В Internet Explorer нажмите клавиши CTRL+SHIFT+P.  В Chrome нажмите клавиши CTRL+SHIFT+N.  В режиме конфиденциального просмотра перейдите к защищенному ресурсу и войдите в Azure AD.  После успешного входа нужный сайт откроется в отдельном сеансе.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув плитку "Menlo Security" на панели доступа, вы автоматически войдете в приложение Menlo Security, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/menlosecurity-tutorial/tutorial_general_01.png
-[2]: ./media/menlosecurity-tutorial/tutorial_general_02.png
-[3]: ./media/menlosecurity-tutorial/tutorial_general_03.png
-[4]: ./media/menlosecurity-tutorial/tutorial_general_04.png
-
-[100]: ./media/menlosecurity-tutorial/tutorial_general_100.png
-
-[200]: ./media/menlosecurity-tutorial/tutorial_general_200.png
-[201]: ./media/menlosecurity-tutorial/tutorial_general_201.png
-[202]: ./media/menlosecurity-tutorial/tutorial_general_202.png
-[203]: ./media/menlosecurity-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

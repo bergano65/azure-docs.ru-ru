@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 11/30/2018
+ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 00b96b5bfa88a6c1c31d3415027ce1d4eda11e6b
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: c53b9f13c365a5ace227f792f5b0c80ae8fac6ff
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339096"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56807360"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -48,11 +48,15 @@ ms.locfileid: "56339096"
 | Администратор служб | Один на подписку Azure | <ul><li>Управление службами [на портале Azure](https://portal.azure.com)</li><li>Назначение роли соадминистратора пользователям</li></ul> | По умолчанию для новой подписки администратор учетных записей является также администратором службы.<br>Администратор служб имеет эквивалентные права доступа для пользователя, которому назначена роль владельца в области действия подписки.<br>Администратор служб имеет полный доступ к порталу Azure. |
 | Соадминистратор | 200 на подписку | <ul><li>Имеет те же права доступа, что и администратор службы, но не может менять связь подписок с каталогами Azure</li><li>Назначение роли соадминистратора пользователям без возможности изменения администратора служб</li></ul> | Соадминистратор имеет эквивалентные права доступа для пользователя, которому назначена роль владельца в области действия подписки. |
 
-Сведения об администраторах учетной записи и служб можно просмотреть на портале Azure в свойствах подписки.
+На вкладке **Классические администраторы** портала Azure вы можете управлять соадминистраторами или просмотреть данные об администраторах служб.
 
-![Администраторы учетной записи и служб на портале Azure](./media/rbac-and-directory-admin-roles/account-admin-service-admin.png)
+![Классические администраторы подписок Azure на портале Azure](./media/rbac-and-directory-admin-roles/classic-administrators.png)
 
-Дополнительные сведения о добавлении и изменении классических администраторов подписки см. в разделе [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md) в документации по выставлению счетов Azure.
+В колонке свойств подписки на портале Azure вы можете просмотреть и изменить администраторов служб или просмотреть администраторов учетной записи.
+
+![Администраторы учетной записи и служб на портале Azure](./media/rbac-and-directory-admin-roles/account-admin.png)
+
+Дополнительные сведения см. в статье [Классические администраторы подписок Azure](classic-administrators.md).
 
 ### <a name="azure-account-and-azure-subscriptions"></a>Учетная запись Azure и подписки Azure
 
@@ -81,9 +85,11 @@ RBAC Azure — это система авторизации на основе [
 
 ![Колонка "Управление доступом (IAM)" на портале Azure](./media/rbac-and-directory-admin-roles/access-control-role-assignments.png)
 
-При выборе параметра **Роли** появится список встроенных и пользовательских ролей.
+При выборе вкладки **Роли** отобразится список встроенных и пользовательских ролей.
 
 ![Встроенные роли на портале Azure](./media/rbac-and-directory-admin-roles/roles-list.png)
+
+Дополнительные сведения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md).
 
 ## <a name="azure-ad-administrator-roles"></a>Роли администратора в Azure AD
 
@@ -95,9 +101,7 @@ RBAC Azure — это система авторизации на основе [
 | [Администратор пользователей](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-account-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
 | [Администратор выставления счетов](../active-directory/users-groups-roles/directory-assign-admin-roles.md#billing-administrator) | <ul><li>Совершение покупок</li><li>Управление подписками</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности службы</li></ul> |  |
 
-Полный список ролей администратора Azure AD см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
-
-Список ролей администратора Azure AD можно просмотреть в колонке **Роли и администраторы** на портале Azure.
+Список ролей администратора Azure AD можно просмотреть в колонке **Роли и администраторы** на портале Azure. Полный список ролей администратора Azure AD см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 ![Роли администратора Azure AD на портале Azure](./media/rbac-and-directory-admin-roles/directory-admin-roles.png)
 
@@ -124,4 +128,4 @@ RBAC Azure — это система авторизации на основе [
 
 - [Что такое управление доступом на основе ролей (RBAC)?](overview.md)
 - [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
-- [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md)
+- [Классические администраторы подписок Azure](classic-administrators.md)

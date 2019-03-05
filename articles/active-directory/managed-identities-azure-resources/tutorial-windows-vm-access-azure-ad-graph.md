@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 08/20/2018
 ms.author: priyamo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed94b7571acb0ced124644dafc59d805d5112e8a
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.openlocfilehash: 10b74b85235cc47375f6289b52371bc588105ad9
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268572"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56890102"
 ---
-# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к API Graph в Azure AD
+# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к API Graph в Azure AD
 
 [!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice.md)]
 
@@ -43,10 +43,14 @@ ms.locfileid: "56268572"
 
 ## <a name="connect-to-azure-ad"></a>Подключение к Azure AD
 
-Необходимо подключиться к Azure AD, чтобы назначить виртуальную машину в группу, а также предоставить виртуальной машине разрешение на получение членства в группах.
+Необходимо подключиться к Azure AD, чтобы назначить виртуальную машину в группу, а также предоставить виртуальной машине разрешение на получение членства в группах. Можно использовать командлет Connect-AzureAD напрямую или с параметром TenantId, если у вас несколько клиентов.
 
 ```powershell
 Connect-AzureAD
+```
+Или
+```powershell
+Connect-AzureAD -TenantId "Object Id of the tenant"
 ```
 
 ## <a name="add-your-vm-identity-to-a-group-in-azure-ad"></a>Добавление удостоверения виртуальной машины в группу Azure AD
@@ -79,7 +83,13 @@ Azure AD Graph:
    ```powershell
    Connect-AzureAD
    ```
+   Чтобы подключиться к определенной Azure Active Directory, используйте параметр _TenantId_, как показано ниже.
 
+   ```PowerShell
+   Connect-AzureAD -TenantId "Object Id of the tenant"
+   ```
+
+   
 2. Выполните следующие команды PowerShell, чтобы назначить разрешение приложения ``Directory.Read.All`` субъекту-службе, представляющему удостоверение виртуальной машины.
 
    ```powershell

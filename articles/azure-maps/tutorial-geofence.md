@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 55dc0fa31398bcc04d9793c8cffc9258dc29e4c7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
+ms.openlocfilehash: 7bd4c261af4159429a91bd8b425180037eec8c23
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244459"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56670899"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
 
@@ -60,7 +60,7 @@ ms.locfileid: "56244459"
    
     ![Пары "ключ — значение" на вкладке параметров приложения Postman](./media/tutorial-geofence/postman-key-vals.png)
 
-4. Перейдите на вкладку **Body** (Текст) и выберите необработанный формат входных данных, а затем, в раскрывающемся списке — JSON в качестве формата входных данных. Введите следующие данные для отправки в формате JSON:
+4. Перейдите на вкладку **Body** (Текст) и выберите необработанный формат входных данных, а затем в раскрывающемся списке — JSON в качестве формата входных данных. Введите следующие данные для отправки в формате JSON:
 
    ```JSON
    {

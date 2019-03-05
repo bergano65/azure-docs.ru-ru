@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: bbede01844f20c0240b154fd319b818a43463131
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: efa8f4fc604440b8c1396aa654834ce83a41844e
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55824685"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56875826"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -25,9 +25,9 @@ ms.locfileid: "55824685"
 > * [Проверка предварительных требований](#verify-prerequisites).
 > * [Подготовка исходных виртуальных машин](#prepare-the-source-vms).
 > * [Подготовка целевого региона](#prepare-the-target-region).
-> * [Копирование данных в целевой регион](#copy-data-to-the-target-region).
-> * [Тестирование конфигурации](#test-the-configuration).
-> * [Выполнение перемещения](#perform-the-move-to-the-target-region-and-confirm).
+> * [Копирование данных в целевой регион.](#copy-data-to-the-target-region)
+> * [Тестирование конфигурации.](#test-the-configuration)
+> * [Выполнение перемещения.](#perform-the-move-to-the-target-region-and-confirm)
 > * [Отмена ресурса в исходном регионе](#discard-the-resource-in-the-source-region).
 
 > [!IMPORTANT]
@@ -48,7 +48,7 @@ ms.locfileid: "55824685"
 
     2. Кроме того, требуется разрешение на управление операциями Azure Site Recovery. Роль "Участник Site Recovery" имеет все разрешения, необходимые для управления операциями Azure Site Recovery в хранилище служб восстановления.
 
-## <a name="prepare-the-source-vms"></a>Подготовка исходных виртуальных машин
+## <a name="prepare-the-source-vms"></a>Подготовка исходных виртуальных машин.
 
 1. Убедитесь, что на виртуальных машинах Azure, которые следует перенести, установлены все новейшие корневые сертификаты. Если такие сертификаты отсутствуют, копирование данных в целевой регион невозможно включить из-за ограничений по соображениям безопасности.
 

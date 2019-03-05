@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/15/2019
 ms.author: rezas
-ms.openlocfilehash: edd3912b3674f3a80a81fd47ed490479f663852c
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
+ms.openlocfilehash: 7b3a8ac0500652b8c4250b4bc3b4f5514b62c4aa
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54830829"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816946"
 ---
 # <a name="quickstart-communicate-to-device-applications-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -39,8 +39,7 @@ ms.locfileid: "54830829"
 dotnet --version
 ```
 
-Скачайте пример проекта C# по ссылке https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив.
-
+Скачайте пример проекта C# по ссылке https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив. Он понадобится на стороне устройства и стороне службы.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -86,18 +85,17 @@ dotnet --version
     Запомните или запишите возвращаемое значение, которое выглядит следующим образом:
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
-    
 
 ## <a name="communicate-between-device-and-service-via-device-streams"></a>Обмен данными между устройством и службой через потоки устройств
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
-Перейдите к `device-streams-echo/service` в распакованной папке проекта. Вам понадобятся следующие сведения.
+Перейдите к `iot-hub/Quickstarts/device-streams-echo/service` в распакованной папке проекта. Вам понадобятся следующие сведения.
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `ServiceConnectionString` | Строка подключения к службе Центра Интернета вещей. |
-| `DeviceId` | Идентификатор устройства, созданного ранее. |
+| `ServiceConnectionString` | Предоставляет строку подключения к службе Центра Интернета вещей. |
+| `DeviceId` | Предоставляет идентификатор устройства, созданного ранее, например MyDevice. |
 
 Скомпилируйте и запустите код, как показано:
 
@@ -109,19 +107,22 @@ dotnet build
 
 # Run the application
 # In Linux/MacOS
-dotnet run $ServiceConnectionString MyDevice
+dotnet run "<ServiceConnectionString>" "<MyDevice>"
 
 # In Windows
-dotnet run %ServiceConnectionString% MyDevice
+dotnet run <ServiceConnectionString> <MyDevice>
 ```
+
+> [!NOTE]
+> Происходит превышение времени ожидания, если приложения на стороне устройства не отвечает вовремя.
 
 ### <a name="run-the-device-side-application"></a>Запуск приложения на стороне устройства
 
-Перейдите к каталогу `device-streams-echo/device` в распакованной папке проекта. Вам понадобятся следующие сведения.
+Перейдите к каталогу `iot-hub/Quickstarts/device-streams-echo/device` в распакованной папке проекта. Вам понадобятся следующие сведения.
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `DeviceConnectionString` | Строка подключения созданного ранее устройства. |
+| `DeviceConnectionString` | Предоставляет строку подключения к устройства к Центру Интернета вещей. |
 
 Скомпилируйте и запустите код, как показано:
 
@@ -133,28 +134,23 @@ dotnet build
 
 # Run the application
 # In Linux/MacOS
-dotnet run $DeviceConnectionString
+dotnet run "<DeviceConnectionString>"
 
 # In Windows
-dotnet run %DeviceConnectionString%
+dotnet run <DeviceConnectionString>
 ```
 
 После последнего шага программа на стороне службы инициирует поток к устройству и после установления соединения отправит службе через поток строковый буфер. В этом примере программа на стороне службы просто возвращает те же данные устройству, демонстрируя успешную двустороннюю связь между двумя приложениями. Смотрите рисунок, приведенный ниже.
 
 Выходные данные консоли на стороне устройства: ![замещающий текст](./media/quickstart-device-streams-echo-csharp/device-console-output.png "Выходные данные консоли на стороне устройства")
 
-
 Выходные данные консоли на стороне службы: ![замещающий текст](./media/quickstart-device-streams-echo-csharp/service-console-output.png "Выходные данные консоли на стороне службы")
 
-
-
 Трафик, передаваемый по потоку, будет туннелироваться через Центр Интернета вещей, а не напрямую. Это обеспечивает [такие преимущества](./iot-hub-device-streams-overview.md#benefits).
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 

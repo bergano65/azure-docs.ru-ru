@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 12/11/2018
-ms.openlocfilehash: b4f8d2bdbce20fc7a932280edc26cb3ddfbe6471
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 5fd3200ab787a26b11feb121b5db125e4a79365c
+ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247611"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56960391"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 С помощью Azure Database Migration Service можно выполнять автономную (однократную) миграцию баз данных из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
@@ -100,7 +100,7 @@ ms.locfileid: "54247611"
 ## <a name="specify-source-details"></a>Указание сведений об источнике
 1. На экране **Сведения об источнике** задайте сведения о подключении для исходного сервера MongoDB.
     
-   Вы можете также использовать режим строки подключения и указать расположение для контейнера файлов хранилища блога, где вы создали резервную копию данных коллекции, которую требуется перенести.
+   Вы можете также использовать режим строки подключения и указать расположение для контейнера файлов хранилища больших двоичных объектов, где вы создали резервную копию данных коллекции, которую требуется перенести.
 
    > [!NOTE]
    > Azure Database Migration Service может перенести документы BSON или JSON в коллекции API Azure Cosmos DB для MongoDB.

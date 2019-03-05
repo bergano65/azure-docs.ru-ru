@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 02/04/2019
+ms.date: 02/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 0ceff87cd3075d517ee1c0027e19dbf423e44f5c
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: f36e13ccf91c983c54897dcff7e1c02689fb055c
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56108761"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56592661"
 ---
-# <a name="tutorial-transfer-data-with-azure-data-box-gateway-preview"></a>Руководство по передаче данных с помощью службы "Шлюз Azure Data Box" (предварительная версия)
+# <a name="tutorial-transfer-data-with-azure-data-box-gateway-preview"></a>Руководство. передаче данных с помощью службы "Шлюз Azure Data Box" (предварительная версия)
 
 
 ## <a name="introduction"></a>Введение
@@ -133,6 +133,7 @@ ms.locfileid: "56108761"
 > В предварительной версии действуют следующие факторы:
 > - После создания файла в общих папках его невозможно переименовать. 
 > - Удаление файла из общей папки не приводит к удалению записи в учетной записи хранения.
+> - При использовании `rsync` для копирования данных параметр `rsync -a` не поддерживается.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/12/2019
-ms.openlocfilehash: 82b412d7fc9e54ca213fecde783a5e27f8ee93bc
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 6cc5d6a778f16b857d0596780a737df3358ac8c3
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233564"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56867360"
 ---
 # <a name="quickstart-use-net-core-c-to-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET Core (C#) для создания запросов к базе данных SQL Azure
 
@@ -196,5 +196,5 @@ namespace sqltest
 
 - [Начало работы с .NET Core в Windows, Linux и Mac OS с помощью командной строки](/dotnet/core/tutorials/using-with-xplat-cli).
 - Узнайте, как [подключиться и отправить запрос к базе данных SQL Azure с помощью .NET Framework и Visual Studio](sql-database-connect-query-dotnet-visual-studio.md).  
-- Узнайте, как [спроектировать первую базу данных SQL Azure с помощью SSMS](sql-database-design-first-database.md) или [спроектировать базу данных SQL Azure и выполнить подключение к C# и ADO.NET](sql-database-design-first-database-csharp.md).
+- Узнайте, как [спроектировать реляционную базу данных в службе "База данных SQL Azure" с помощью SSMS](sql-database-design-first-database.md) или [спроектировать базу данных в службе "База данных SQL Azure" на языке C# с помощью ADO.NET](sql-database-design-first-database-csharp.md).
 - Дополнительные сведения о .NET см. в [этой документации](https://docs.microsoft.com/dotnet/).

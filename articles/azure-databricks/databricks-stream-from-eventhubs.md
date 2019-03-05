@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий '
+title: 'Руководство по Потоковая передача данных в Azure Databricks при помощи Центров событий '
 description: Сведения об использовании Azure Databricks с помощью Центров событий для приема потоковой передачи данных из Twitter и чтения данных практически в реальном времени.
 services: azure-databricks
 author: lenadroid
@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: Active
 ms.date: 06/21/2018
 ms.author: alehall
-ms.openlocfilehash: 16095dabb0e5e3e303e82126c7f57cb4ff3fe8dd
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 006286b492b7431ca15b8a2dc9ac5b4116f7d1b1
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200930"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56876283"
 ---
 # <a name="tutorial-stream-data-into-azure-databricks-using-event-hubs"></a>Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий
 

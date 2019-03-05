@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/24/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 8738ac52eeaf1f27df5f9cc21ffb0c683a912195
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 0eb27e997d39ceb82098b63de607d3529ccc53b4
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427035"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56984412"
 ---
 # <a name="what-is-azure-network-watcher"></a>Наблюдатель за сетями Azure
 
@@ -97,7 +97,7 @@ ms.locfileid: "52427035"
 
 ### <a name="view-diagnostic-logs-for-network-resources"></a>Просмотр журналов диагностики для сетевых ресурсов
 
-Вы можете включить ведение журнала диагностики для сетевых ресурсов Azure, таких как группы безопасности сети, общедоступные IP-адреса, подсистемы балансировки нагрузки, шлюзы виртуальной сети и шлюзы приложений. Функция *Журналы диагностики* предоставляет единый интерфейс для включения и отключения журналов диагностики сетевых ресурсов для любого имеющегося сетевого ресурса, который создает журнал диагностики. Вы можете просматривать журналы диагностики с помощью таких инструментов, как Microsoft Power BI и Azure Log Analytics. Подробнее об анализе журналов диагностики сети Azure см. в статье [Azure networking monitoring solutions in Log Analytics](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) (Решения для мониторинга сетей Azure в Log Analytics).
+Вы можете включить ведение журнала диагностики для сетевых ресурсов Azure, таких как группы безопасности сети, общедоступные IP-адреса, подсистемы балансировки нагрузки, шлюзы виртуальной сети и шлюзы приложений. Функция *Журналы диагностики* предоставляет единый интерфейс для включения и отключения журналов диагностики сетевых ресурсов для любого имеющегося сетевого ресурса, который создает журнал диагностики. Вы можете просматривать журналы диагностики с помощью таких инструментов, как Microsoft Power BI и журналы Azure Monitor. Дополнительные сведения об анализе журналов диагностики сети Azure см. в статье [Решения для мониторинга сетей Azure в Log Analytics](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 
 ## <a name="network-watcher-automatic-enablement"></a>Автоматическое включение Наблюдателя за сетями
 При создании или обновлении виртуальной сети в подписке Наблюдатель за сетями включается автоматически в регионе, где расположена ваша виртуальная сеть. Автоматическое включение Наблюдателя за сетями не влияет на ваши ресурсы, и за него не взимается дополнительная плата. Дополнительные сведения см. в статье [Создание экземпляра Наблюдателя за сетями Azure](network-watcher-create.md).

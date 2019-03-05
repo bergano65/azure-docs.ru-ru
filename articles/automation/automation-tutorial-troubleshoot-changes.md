@@ -11,12 +11,12 @@ ms.date: 12/05/2018
 ms.topic: tutorial
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 9fa1e3ffd92b3c375837c7b9a4a0e7fd1a80893a
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 77dda5f113a10f0bfb59457b1059563c58db0dde
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54433685"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816951"
 ---
 # <a name="troubleshoot-changes-in-your-environment"></a>Устранение неполадок при изменениях в среде
 
@@ -62,12 +62,14 @@ ms.locfileid: "54433685"
 Этот агент позволяет взаимодействовать с виртуальной машиной и получать сведения об установленном программном обеспечении.
 
 Включение решения может занять до 15 минут. В это время не закрывайте окно браузера.
-Когда решение будет включено, сведения об установленном программном обеспечении и изменениях на виртуальной машине начнут передаваться в Log Analytics.
+Когда решение будет включено, сведения об установленном программном обеспечении и изменениях на виртуальной машине начнут передаваться в журналы Azure Monitor.
 На получение данных для анализа может уйти от 30 минут до 6 часов.
 
-## <a name="using-change-tracking-in-log-analytics"></a>Использование службы отслеживания изменений в Log Analytics
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Функция отслеживания изменений создает данные журнала, отправляемые в Log Analytics.
+## <a name="using-change-tracking-in-azure-monitor-logs"></a>Отслеживание изменений в журналах Azure Monitor
+
+Функция отслеживания изменений создает данные журнала, которые отправляются в журналы Azure Monitor.
 Чтобы найти журналы с помощью запросов, выберите **Log Analytics** в верхней части окна **Отслеживание изменений**.
 Данные об отслеживании изменений хранятся в типе **ConfigurationChange**.
 Следующий пример запроса к службе Log Analytics возвращает все остановленные службы Windows.
@@ -77,7 +79,7 @@ ConfigurationChange
 | where ConfigChangeType == "WindowsServices" and SvcState == "Stopped"
 ```
 
-Дополнительные сведения о поиске по файлам журналов в Log Analytics см. в статье [Что такое Log Analytics?](../azure-monitor/log-query/log-query-overview.md)
+Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="configure-change-tracking"></a>Настройка отслеживания изменений
 

@@ -8,24 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 ms.author: pafarley
-ms.openlocfilehash: 3043067f326f782c51be38382070ae0db0e90f4d
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: d14b9c88b447583eedc8b50f4f9acf80ae4e3c75
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56314178"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56889636"
 ---
 # <a name="azure-cognitive-services-computer-vision-sdk-for-python"></a>Пакет SDK Компьютерного зрения Cognitive Services Azure для Python
 
-Служба API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. Алгоритмы Компьютерного зрения анализируют содержимое изображений по-разному, в зависимости от интересующих вас визуальных компонентов. Например, Компьютерное зрение может определить, имеется ли на изображении содержимое для взрослых или непристойного характера, а также найти все лица на изображении или получить рукописный или печатный текст. Эта служба работает с популярными форматами изображений, такими как JPEG и PNG. 
+Служба API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. Алгоритмы Компьютерного зрения анализируют содержимое изображений по-разному, в зависимости от интересующих вас визуальных компонентов. 
 
-Компьютерное зрение в приложении может выполнять такие функции.
+* [Анализ изображения](#analyze-an-image)
+* [Получение списка предметных областей](#get-subject-domain-list).
+* [Анализ изображений по области](#analyze-an-image-by-domain).
+* [Получение текстового описания изображений](#get-text-description-of-an-image).
+* [Получение рукописных текстов изображений](#get-text-from-image).
+* [Создание эскизов](#generate-thumbnail).
 
-- Анализ изображений для получения полезных сведений
-- Извлечение текста из изображений
-- Создание эскизов
+Дополнительные сведения об этой службе см. в статье [Что собой представляет компьютерное зрение][computervision_docs].
 
 Ищете дополнительную документацию?
 
@@ -34,11 +37,21 @@ ms.locfileid: "56314178"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись][azure_sub].
-* [Ресурс Компьютерного зрения][computervision_resource] Azure
 * [Python 3.6+][python]
+* Бесплатный [ключ API компьютерного зрения][computervision_resource] и соответствующий регион. Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionAPI][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов. 
 
-При необходимости можно создать учетную запись API Компьютерного зрения с помощью следующей команды [Azure CLI][azure_cli]:
+### <a name="if-you-dont-have-an-azure-subscription"></a>Если у вас нет подписки Azure
+
+Создайте бесплатный ключ, действительный в течение 7 дней, с помощью **пробной версии**. Когда ключ будет создан, скопируйте его, а также имя региона. Они понадобятся вам, чтобы [создать клиент](#create-client).
+
+После создания ключа сохраните следующие значения:
+
+* Значение ключа: строка из 32 символов в формате `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`. 
+* Регион ключа: поддомен URL-адреса конечной точки (https://**westcentralus**.api.cognitive.microsoft.com).
+
+### <a name="if-you-have-an-azure-subscription"></a>Если у вас есть подписка Azure
+
+Если вам нужна учетная запись API компьютерного зрения, проще всего создать ее в подписке с помощью следующей команды [Azure CLI][azure_cli]. Вам нужно выбрать имя группы ресурсов, например, "my-cogserv-group", и название ресурса компьютерного зрения, такое как "my-computer-vision-resource". 
 
 ```Bash
 RES_REGION=westeurope 
@@ -54,18 +67,20 @@ az cognitiveservices account create \
     --yes
 ```
 
-## <a name="installation"></a>Установка
+<!--
+## Installation
 
-Установите пакет SDK Компьютерного зрения Cognitive Services Azure с помощью [pip][pip], дополнительно это можно установить в [виртуальной среде][venv].
+Install the Azure Cognitive Services Computer Vision SDK with [pip][pip], optionally within a [virtual environment][venv].
 
-### <a name="configure-a-virtual-environment-optional"></a>Настройка виртуальной среды (необязательно)
+### Configure a virtual environment (optional)
 
-Хотя это и не требуется, можно сохранять базовую систему и среды пакета SDK для Azure изолированными друг от друга при использовании [виртуальной среды][virtualenv]. Выполните следующие команды для настройки и введите расположение виртуальной среды с постфиксом [venv][venv], например`cogsrv-vision-env`:
+Although not required, you can keep your base system and Azure SDK environments isolated from one another if you use a [virtual environment][virtualenv]. Execute the following commands to configure and then enter a virtual environment with [venv][venv], such as `cogsrv-vision-env`:
 
 ```Bash
 python3 -m venv cogsrv-vision-env
 source cogsrv-vision-env/bin/activate
 ```
+-->
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
@@ -81,9 +96,20 @@ pip install azure-cognitiveservices-vision-computervision
 
 Используйте эти значения при создании экземпляра клиентского объекта [ComputerVisionAPI][ref_computervisionclient]. 
 
-### <a name="get-credentials"></a>Получение учетных данных
+<!--
 
-Используйте фрагмент приведенной ниже команды [Azure CLI][cloud_shell], чтобы заполнить две переменные среды **регионом** учетной записи Компьютерного зрения и одним из ее **ключей** (эти значения также можно найти на [портале Azure][azure_portal]). Фрагмент кода отформатирован для оболочки Bash.
+For example, use the Bash terminal to set the environment variables:
+
+```Bash
+ACCOUNT_REGION=<resourcegroup-name>
+ACCT_NAME=<computervision-account-name>
+```
+
+### For Azure subscription usrs, get credentials for key and region
+
+If you do not remember your region and key, you can use the following method to find them. If you need to create a key and region, you can use the method for [Azure subscription holders](#if-you-have-an-azure-subscription) or for [users without an Azure subscription](#if-you-dont-have-an-azure-subscription).
+
+Use the [Azure CLI][cloud_shell] snippet below to populate two environment variables with the Computer Vision account **region** and one of its **keys** (you can also find these values in the [Azure portal][azure_portal]). The snippet is formatted for the Bash shell.
 
 ```Bash
 RES_GROUP=<resourcegroup-name>
@@ -101,44 +127,25 @@ export ACCOUNT_KEY=$(az cognitiveservices account keys list \
     --query key1 \
     --output tsv)
 ```
+-->
 
 ### <a name="create-client"></a>Создание клиента
 
-После заполнения переменных среды `ACCOUNT_REGION` и `ACCOUNT_KEY` можно создать клиентский объект [ComputerVisionAPI][ref_computervisionclient].
+Создайте клиентский объект [ComputerVisionAPI][ref_computervisionclient]. Измените значения региона и ключа в следующем примере кода на собственные значения.
 
 ```Python
 from azure.cognitiveservices.vision.computervision import ComputerVisionAPI
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
-import os
-region = os.environ['ACCOUNT_REGION']
-key = os.environ['ACCOUNT_KEY']
+region = "westcentralus"
+key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 credentials = CognitiveServicesCredentials(key)
 client = ComputerVisionAPI(region, credentials)
 ```
 
-## <a name="usage"></a>Использование
-
-После инициализации клиентского объекта [ComputerVisionAPI][ref_computervisionclient] вы можете следующее.
-
-* Анализировать изображение. Это можно сделать по определенным особенностям, таким как лица, цвета, теги.   
-* Создавать эскизы. Создайте пользовательские изображения JPEG, чтобы использовать их в качестве эскиза исходного изображения.
-* Получать описание изображений. Получите описания изображений на основе предметной области. 
-
-Дополнительные сведения об этой службе см. в статье [Что собой представляет компьютерное зрение][computervision_docs].
-
-## <a name="examples"></a>Примеры
-
-В следующих разделах приведено несколько фрагментов кода, охватывающих наиболее распространенные задачи Компьютерного зрения.
-
-* [Анализ изображения](#analyze-an-image)
-* [Получение списка предметных областей](#get-subject-domain-list).
-* [Анализ изображений по области](#analyze-an-image-by-domain).
-* [Получение текстового описания изображений](#get-text-description-of-an-image).
-* [Получение рукописных текстов изображений](#get-text-from-image).
-* [Создание эскизов](#generate-thumbnail).
+Для любой из следующих задач требуется объект клиента [ComputerVisionAPI][ref_computervisionclient].
 
 ### <a name="analyze-an-image"></a>Анализ изображения
 
@@ -169,8 +176,13 @@ for x in models.models_property:
 Анализировать изображение по предметной области можно с помощью функции [`analyze_image_by_domain`][ref_computervisionclient_analyze_image_by_domain]. Получите [список поддерживаемых предметных областей](#get-subject-domain-list), чтобы использовать правильные имена областей.  
 
 ```Python
+# type of prediction
 domain = "landmarks"
-url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"
+
+# Public domain image of Eiffel tower
+url = "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg"
+
+# English language response
 language = "en"
 
 analysis = client.analyze_image_by_domain(domain, url, language)
@@ -202,6 +214,10 @@ for caption in analysis.captions:
 Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`recognize_text`][ref_computervisionclient_recognize_text] и [`get_text_operation_result`][ref_computervisionclient_get_text_operation_result]. Метод recognize_text выполняется асинхронно. Прежде чем извлекать текстовые данные, необходимо проверить результаты вызова get_text_operation_result на то, завершил ли выполнение [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста. 
 
 ```Python
+# import models
+from azure.cognitiveservices.vision.computervision.models import TextRecognitionMode
+from azure.cognitiveservices.vision.computervision.models import TextOperationStatusCodes
+
 url = "https://azurecomcdn.azureedge.net/cvt-1979217d3d0d31c5c87cbd991bccfee2d184b55eeb4081200012bdaf6a65601a/images/shared/cognitive-services-demos/read-text/read-1-thumbnail.png"
 mode = TextRecognitionMode.handwritten
 raw = True
@@ -231,10 +247,19 @@ if result.status == TextOperationStatusCodes.succeeded:
 
 Создать эскиз изображения (в формате JPG) можно с помощью [`generate_thumbnail`][ref_computervisionclient_generate_thumbnail]. Необязательно создавать эскиз в тех же пропорциях, что и исходное изображение. 
 
-В этом примере используется пакет [Pillow][pypi_pillow] для локального сохранения нового эскиза изображения.
+Чтобы использовать этот пример, установите **Pillow**.
+
+```bash
+pip install Pillow
+``` 
+
+После установки Pillow используйте этот пакет в следующем примере кода, чтобы создать эскиз.
 
 ```Python
+# Pillow package
 from PIL import Image
+
+# IO package to create local image
 import io
 
 width = 50
@@ -281,17 +306,16 @@ except HTTPFailure as e:
 
 При работе с клиентом [ComputerVisionAPI][ref_computervisionclient] вы можете столкнуться с временными сбоями, вызванными [ограничениями скорости][computervision_request_units], применяемыми службой, или другими временными проблемами, такими как отказ сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Шаблон повторов][azure_pattern_retry] в руководстве по конструктивным шаблонам облачных решений и соответствующим [шаблоном автоматического выключения][azure_pattern_circuit_breaker].
 
-## <a name="next-steps"></a>Дополнительная информация
-
 ### <a name="more-sample-code"></a>Больше примеров кода
 
 Несколько примеров кода пакета SDK Компьютерного зрения для Python доступны в репозитории GitHub. Это примеры кода для дополнительных сценариев, обычно встречающихся при работе с Компьютерным зрением:
 
 * [recognize_text][recognize-text].
 
-### <a name="additional-documentation"></a>Дополнительная документация
+## <a name="next-steps"></a>Дополнительная информация
 
-Более подробную документацию по службе "Компьютерное зрение" см. [здесь][computervision_docs] на сайте docs.microsoft.com.
+> [!div class="nextstepaction"]
+> [Применение тегов содержимого к изображениям](../concept-tagging-images.md)
 
 <!-- LINKS -->
 [pip]: https://pypi.org/project/pip/

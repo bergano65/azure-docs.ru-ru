@@ -6,14 +6,14 @@ author: cherylmc
 Customer intent: As someone with a basic network background, but is new to Azure, I want to understand the capabilities of Azure VPN Gateway so that I can securely connect to my Azure virtual networks.
 ms.service: vpn-gateway
 ms.topic: overview
-ms.date: 10/19/2018
+ms.date: 02/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: d35e7cfbf55d0dc53214bbb7b1153c3270c611c2
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 7b2b5c7201fe45fb52eb333b9e32b4996e00df9b
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471328"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56822929"
 ---
 # <a name="what-is-vpn-gateway"></a>Сведения о VPN-шлюзе
 
@@ -57,7 +57,7 @@ VPN-шлюз — это особый тип шлюза виртуальной с
 
 ## <a name="diagrams"></a>Схемы топологий подключения
 
-Важно знать, что существуют различные конфигурации подключения к VPN-шлюзу. Вам нужно определить, какая из конфигураций наилучшим образом соответствует вашим требованиям. Далее приведены сведения и топологии для разных типов подключения VPN-шлюза. Приведенные ниже разделы содержат таблицы со следующими сведениями:
+Важно знать, что существуют различные конфигурации подключения к VPN-шлюзу. Вам нужно определить, какая из конфигураций наилучшим образом соответствует вашим требованиям. Далее приводятся сведения и топологии для следующих типов подключения VPN-шлюза: Приведенные ниже разделы содержат таблицы со следующими сведениями:
 
 * доступная модель развертывания;
 * доступные средства настройки;
@@ -152,7 +152,6 @@ VPN типа "сеть — сеть" можно настроить как защ
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Составьте план конфигурации VPN-шлюза. См. статью [Планирование и проектирование VPN-шлюза](vpn-gateway-plan-design.md).
 - Дополнительные сведения см. в статье [VPN-шлюз: вопросы и ответы](vpn-gateway-vpn-faq.md).
 - См. дополнительные сведения об [ограничениях подписки и службы](../azure-subscription-service-limits.md#networking-limits).
 - Дополнительные сведения о некоторых других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.

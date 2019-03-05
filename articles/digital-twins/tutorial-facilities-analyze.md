@@ -1,5 +1,5 @@
 ---
-title: Руководство. Анализ событий экземпляра установки Azure Digital Twins | Документация Майкрософт
+title: Руководство по Анализ событий экземпляра установки Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как визуализировать и анализировать события из пространств Azure Digital Twins с помощью Аналитики временных рядов Azure.
 services: digital-twins
 author: dsk-2015
@@ -8,14 +8,14 @@ ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 12/18/2018
 ms.author: dkshir
-ms.openlocfilehash: 488b97074d74650ecf5602d25e2a90a1998e5585
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 8f8bdb4d601e35cf489c1c4c1db3574fb8c8f18f
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54883880"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56730791"
 ---
-# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство. Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
+# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство по Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
 
 После развертывания экземпляра Azure Digital Twins, подготовки пространств и реализации пользовательской функции для мониторинга определенных условий вы можете визуализировать события и данные, поступающие из ваших пространств, чтобы найти тенденции и аномалии.
 
@@ -90,13 +90,13 @@ ms.locfileid: "54883880"
       - UdfCustom
       connectionString: Primary_connection_string_for_your_event_hub
       secondaryConnectionString: Secondary_connection_string_for_your_event_hub
-      path: Name_of_your_Event_Hubs_namespace
+      path: Name_of_your_Event_Hub
     - type: EventHub
       eventTypes:
       - DeviceMessage
       connectionString: Primary_connection_string_for_your_event_hub
       secondaryConnectionString: Secondary_connection_string_for_your_event_hub
-      path: Name_of_your_Event_Hubs_namespace
+      path: Name_of_your_Event_Hub
     ```
 
 1. Замените заполнители `Primary_connection_string_for_your_event_hub` значением **Строка подключения — первичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом:
@@ -111,7 +111,7 @@ ms.locfileid: "54883880"
    Endpoint=sb://nameOfYourEventHubNamespace.servicebus.windows.net/;SharedAccessKeyName=ManageSend;SharedAccessKey=yourShareAccessKey2GUID;EntityPath=nameOfYourEventHub
    ```
 
-1. Замените заполнители `Name_of_your_Event_Hubs_namespace` именем пространства имен Центров событий.
+1. Замените заполнители `Name_of_your_Event_Hub` именем своего Концентратора событий.
 
     > [!IMPORTANT]
     > Введите все значения без кавычек. Убедитесь, что в файле YAML после двоеточия есть по крайней мере один пробел. Вы также можете проверить содержимое файла YAML с помощью любого средства проверки YAML в Интернете, например [этого](https://onlineyamltools.com/validate-yaml).

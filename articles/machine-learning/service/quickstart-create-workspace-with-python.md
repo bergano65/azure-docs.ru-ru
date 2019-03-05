@@ -11,12 +11,12 @@ author: hning86
 ms.author: haining
 ms.date: 01/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1962cef85c5e663de640f296a6e8e9efd5a1f4d6
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 513df9f68fdd54b5dc90e57bd8389688c46bf615
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310361"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56804252"
 ---
 # <a name="quickstart-use-the-python-sdk-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python
 
@@ -60,16 +60,18 @@ ms.locfileid: "56310361"
 
 Прежде чем устанавливать пакет SDK, сначала рекомендуется создать изолированную среду Python. Хотя в этой статье используется [Miniconda](https://docs.conda.io/en/latest/miniconda.html), также можно использовать полностью установленное средство [Anaconda](https://www.anaconda.com/) или [Python virtualenv](https://virtualenv.pypa.io/en/stable/).
 
+При выполнении инструкций этого быстрого начала будут установлены все пакеты, необходимые для выполнения заданий быстрого начала и записных книжек руководства.  Другие примеры записных книжек могут потребовать установки дополнительных компонентов.  Дополнительные сведения об этих компонентах см. в статье об [установке пакета SDK для Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install).
+
 ### <a name="install-miniconda"></a>Установка Miniconda
 
-[Скачайте и установите Miniconda](https://docs.conda.io/en/latest/miniconda.html). Выберите Python 3.7 или более поздней версии для установки. Не выбирайте версию Python 2.x.  
+[Скачайте и установите Miniconda](https://docs.conda.io/en/latest/miniconda.html). Выберите для установки Python версии 3.7 или более поздней. Не выбирайте версию Python 2.x.  
 
 ### <a name="create-an-isolated-python-environment"></a>Создание изолированной среды Python
 
-1. Откройте окно командной строки, а затем создайте среду conda с именем *myenv* и установите Python 3.6. Пакет SDK для Машинного обучения Azure будет работать с Python 3.5.2 или более поздней версии, но автоматические компоненты машинного обучения не полностью функциональны на Python 3.7.
+1. Откройте окно командной строки, а затем создайте среду Conda с именем *myenv* и установите Python 3.6.5. Пакет SDK для Машинного обучения Azure будет работать с Python 3.5.2 или более поздней версии, но автоматические компоненты машинного обучения не полностью функциональны на Python 3.7.  Скачивание компонентов и пакетов и последующее создание среды займет несколько минут.
 
     ```shell
-    conda create -n myenv -y Python=3.6
+    conda create -n myenv python=3.6.5
     ```
 
 1. Активируйте среду.
@@ -78,18 +80,24 @@ ms.locfileid: "56310361"
     conda activate myenv
     ```
 
+1. Включите ядра ipython для своей среды:
+
+    ```shell
+    conda install notebook ipykernel
+    ```
+
+    Затем создайте ядро:
+
+    ```shell
+    ipython kernel install --user
+    ```
+
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
 1. В активированной среде conda установите основные компоненты пакета SDK для Машинного обучения Azure с возможностями записной книжки Jupyter.  Установка занимает несколько минут в зависимости от конфигурации компьютера.
 
   ```shell
     pip install --upgrade azureml-sdk[notebooks]
-    ```
-
-1. Установите сервер Jupyter Notebook в среде conda.
-
-  ```shell
-    conda install -y nb_conda
     ```
 
 1. Чтобы использовать эту среду для учебников по Машинному обучению Azure, установите следующие пакеты.

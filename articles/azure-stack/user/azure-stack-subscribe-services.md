@@ -13,25 +13,25 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 11/13/2018
+ms.date: 02/21/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: 66c462dee3a2940a7a090101ffb9cec7e4ff1e7c
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 431c31b39103e5ef21cb83b388167cab57e0c129
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981297"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56649090"
 ---
 # <a name="tutorial-create-and-test-a-subscription"></a>Руководство. Создание и тестирование подписки
 
 В этом руководстве объясняется, как создать подписку, содержащую предложение, и протестировать ее. Для проверки войдите на портал пользователя Azure Stack как администратор облака, подпишитесь на предложение и создайте виртуальную машину.
 
 > [!TIP]
-> Для более подробной оценки [создайте подписку для конкретного пользователя](../azure-stack-subscribe-plan-provision-vm.md#create-a-subscription-as-a-cloud-operator), затем войдите от имени этого пользователя на портал пользователя. 
+> Для более подробной оценки [создайте подписку для конкретного пользователя](../azure-stack-subscribe-plan-provision-vm.md#create-a-subscription-as-a-cloud-operator), затем войдите от имени этого пользователя на портал пользователя.
 
-Из этого руководства можно узнать, как подписаться на предложение Azure Stack.
+В руководстве показано, как подписаться на предложение Azure Stack.
 
 Освещаются следующие темы:
 
@@ -60,10 +60,10 @@ ms.locfileid: "55981297"
 
 ## <a name="test-the-offer"></a>Тестирование предложения.
 
-После входа на портал пользователя можно протестировать предложение, подготовив виртуальную машину с использованием новых возможностей подписки. 
+После входа на портал пользователя можно протестировать предложение, подготовив виртуальную машину с использованием новых возможностей подписки.
 
 > [!NOTE]
-> Для этого теста требуется виртуальная машина Windows Server 2016 Datacenter, которая впервые была добавлена в Azure Stack Marketplace. 
+> Для этого теста требуется виртуальная машина Windows Server 2016 Datacenter, которая впервые была добавлена в Azure Stack Marketplace.
 
 1. Войдите на портал пользователя.
 
@@ -84,7 +84,6 @@ ms.locfileid: "55981297"
 > [!NOTE]
 > Развертывание виртуальной машины занимает несколько минут.
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнять:
@@ -92,7 +91,6 @@ ms.locfileid: "55981297"
 > [!div class="checklist"]
 > * Подписка на предложение 
 > * Тестирование предложения.
-
 
 > [!div class="nextstepaction"]
 > [Создание виртуальной машины на основе шаблона сообщества](azure-stack-create-vm-template.md)

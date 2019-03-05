@@ -11,12 +11,12 @@ ms.service: automation
 ms.subservice: change-inventory-management
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: ffa14e3fb3fd41d6a30e1cf30713b26d7ecd255a
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.openlocfilehash: 2cce925f4b3e1acc6c93019615b81983a5c95f6f
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436019"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56815898"
 ---
 # <a name="discover-what-software-is-installed-on-your-azure-and-non-azure-machines"></a>Получение данных об установленном программном обеспечении на виртуальных машинах Azure и других компьютерах
 
@@ -58,8 +58,10 @@ ms.locfileid: "54436019"
 Рабочая область [Log Analytics](../log-analytics/log-analytics-overview.md?toc=%2fazure%2fautomation%2ftoc.json) используется для сбора данных, созданных такими компонентами и службами, как "Инвентаризация".
 Рабочая область предоставляет единое расположение для проверки и анализа данных из нескольких источников.
 
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
 Включение решения может занять до 15 минут. В это время не закрывайте окно браузера.
-Когда решение будет включено, сведения об установленном программном обеспечении и изменениях на виртуальной машине начнут передаваться в Log Analytics.
+Когда решение будет включено, сведения об установленном программном обеспечении и изменениях на виртуальной машине начнут передаваться в журналы Azure Monitor.
 На получение данных для анализа может уйти от 30 минут до 6 часов.
 
 ## <a name="onboard-a-vm"></a>Подключение виртуальной машины
@@ -99,9 +101,9 @@ ms.locfileid: "54436019"
 
 Например, поиск по строке Contoso возвращает список программного обеспечения, у которого название, имя издателя или версия содержат подстроку Contoso.
 
-## <a name="search-inventory-logs-for-installed-software"></a>Поиск установленного программного обеспечения в журналах инвентаризации
+## <a name="search-inventory-logs-for-installed-software"></a>найти установленное программное обеспечение в журналах инвентаризации.
 
-Служба инвентаризации сохраняет данные в журнале и отправляет их в Log Analytics. Чтобы выполнить поиск по этим журналам, выберите **Log Analytics** в верхней части окна **Инвентаризация**.
+Функция инвентаризации создает данные журнала, которые передаются в журналы Azure Monitor. Чтобы выполнить поиск по этим журналам, выберите **Log Analytics** в верхней части окна **Инвентаризация**.
 
 Данные об инвентаризации хранятся в типе **ConfigurationData**.
 Следующий пример запроса Log Analytics возвращает результаты инвентаризации, где издателем является корпорация Майкрософт.
@@ -113,11 +115,11 @@ ConfigurationData
 | summarize arg_max(TimeGenerated, *) by SoftwareName, Computer
 ```
 
-Дополнительные сведения о поиске по файлам журналов в Log Analytics см. в статье [Что такое Log Analytics?](../azure-monitor/log-query/log-query-overview.md)
+Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
 ### <a name="single-machine-inventory"></a>Инвентаризация одного компьютера
 
-Чтобы просмотреть результаты инвентаризации программного обеспечения для одного компьютера, откройте на странице ресурсов виртуальной машины Azure сведения об инвентаризации или примените в Log Analytics фильтр по конкретному компьютеру.
+Чтобы просмотреть результаты инвентаризации программного обеспечения для одного компьютера, откройте на странице ресурсов виртуальной машины Azure сведения об инвентаризации или примените в журналах Azure Monitor фильтр по конкретному компьютеру.
 Ниже приводится пример запроса Log Analytics, который возвращает список программного обеспечения на компьютере с именем ContosoVM.
 
 ```loganalytics

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,mvc
 ms.topic: overview
 ms.date: 01/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: c08672b178a9327b39414ca1c0e71653f62d1d07
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 264faaf0168d1604668e3358b1d99bc169d7e2f0
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55295803"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56985178"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -38,7 +38,7 @@ Spark предоставляет примитивы для кластерных 
 | Поддержка Azure Data Lake Storage | Кластеры Spark в HDInsight могут использовать Azure Data Lake Storage как основное или дополнительное хранилище. Дополнительные сведения о Data Lake Storage см. в [обзоре Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md). |
 | Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для Центров событий Azure. Вы можете создавать приложения потоковой передачи с помощью Центров событий (в дополнение к системе [Apache Kafka](https://kafka.apache.org/), которая уже входит в состав Spark). |
 | Поддержка ML Server | Поддержка ML Server в HDInsight предоставляется в рамках типа кластера **Служб машинного обучения**. В кластере Служб машинного обучения можно настроить выполнение распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Начало работы с кластером R Server в Azure HDInsight](../r-server/r-server-get-started.md). |
-| Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. См. дополнительные сведения об [использовании Azure Toolkit for IntelliJ (IDEA)](apache-spark-intellij-tool-plugin.md), [использовании HDInsight для VSCode и [использовании Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md).|
+| Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. См. дополнительные сведения об [использовании Azure Toolkit for IntelliJ (IDEA)](apache-spark-intellij-tool-plugin.md), [использовании HDInsight для VSCode](../hdinsight-for-vscode.md) и [использовании Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md).|
 | Параллельные запросы |Кластеры Spark в HDInsight поддерживают параллельные запросы. Благодаря этому несколько запросов от одного пользователя или несколько запросов от разных пользователей и из различных приложений могут использовать одни и те же ресурсы кластера. |
 | Кэширование на накопители SSD |Можно выбрать кэширование данных в памяти или на накопители SSD, подключенные к узлам кластера. Кэширование в память обеспечивает наилучшую производительность запросов, однако может оказаться ресурсоемким. Кэширование на накопители SSD предоставляет возможность повысить производительность запросов без необходимости создания кластера такого размера, который необходим для размещения всего набора данных в памяти. |
 | Интеграция со средствами бизнес-аналитики |В состав кластеров Spark для HDInsight входят соединители для инструментов бизнес-аналитики, таких как [Power BI](https://www.powerbi.com/) для анализа данных. |
@@ -94,10 +94,10 @@ SparkContext подключается к главному узлу Spark и от
 Дополнительные сведения об Apache Spark в HDInsight см. в следующих руководствах:
 
 - [Краткое руководство. Создание кластера Apache Spark в HDInsight и выполнению интерактивных запросов с помощью Jupyter](./apache-spark-jupyter-spark-sql-use-portal.md)
-- [Руководство. Запуск заданий Apache Spark с помощью Jupyter](./apache-spark-load-data-run-query.md)
-- [Руководство. Анализ данных с помощью средств бизнес-аналитики](./apache-spark-use-bi-tools.md)
-- [Руководство. Использование машинного обучения с Apache Spark](./apache-spark-ipython-notebook-machine-learning.md)
-- [Руководство. Создание приложения Scala Maven с помощью IntelliJ](./apache-spark-create-standalone-application.md)
+- [Руководство Запуск заданий Apache Spark с помощью Jupyter](./apache-spark-load-data-run-query.md)
+- [Руководство Анализ данных с помощью средств бизнес-аналитики](./apache-spark-use-bi-tools.md)
+- [Руководство Использование машинного обучения с Apache Spark](./apache-spark-ipython-notebook-machine-learning.md)
+- [Руководство Создание приложения Scala Maven с помощью IntelliJ](./apache-spark-create-standalone-application.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

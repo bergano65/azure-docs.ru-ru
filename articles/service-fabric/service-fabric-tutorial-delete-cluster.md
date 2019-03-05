@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 09/26/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 5174bb696b456a66cfc0666ac5c475437e441d82
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
+ms.openlocfilehash: d4f530e38b6fd69d814765f4133201dd12a87f22
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54848858"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56668588"
 ---
-# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство. Удаление кластера Service Fabric, работающего в Azure
+# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство по Удаление кластера Service Fabric, работающего в Azure
 
 Это руководство из цикла руководств. В нем показано, как удалить кластер Service Fabric, выполняющийся в Azure. Чтобы полностью удалить кластер Service Fabric, нужно также удалить и все ресурсы, которые он использует. Вы можете сделать это одним из двух способов: удалить группу ресурсов, в которой находится кластер (при этом будет удален кластерный ресурс и другие ресурсы в группе ресурсов), или удалить ресурс кластера и связанные с ним ресурсы по отдельности (но не другие ресурсы в группе ресурсов).
 
@@ -34,7 +34,7 @@ ms.locfileid: "54848858"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
+> * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * Удаление кластера
@@ -45,7 +45,7 @@ ms.locfileid: "54848858"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) либо [Azure CLI](/cli/azure/install-azure-cli).
-* Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure.
+* Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
 
 ## <a name="delete-the-resource-group-containing-the-service-fabric-cluster"></a>Удаление группы ресурсов, содержащей кластер Service Fabric
 Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
@@ -115,5 +115,5 @@ az resource delete --name "<name of the Resource>" --resource-type "Microsoft.Se
 
 Теперь, завершив изучение данного руководства, попробуйте следующее.
 * Узнайте, как проверять кластер Service Fabric и управлять им с помощью [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
-* Узнайте, как [установить исправления операционной системы Windows](service-fabric-patch-orchestration-application.md) или [установить исправления операционной системы Linux](service-fabric-patch-orchestration-application-linux.md) на узлах кластера.
-* Узнайте, как агрегировать и собирать события [кластеров Windows](service-fabric-diagnostics-event-aggregation-wad.md) или [кластеров Linux](service-fabric-diagnostics-event-aggregation-lad.md), а также выполнять [настройку Log Analytics](service-fabric-diagnostics-oms-setup.md) для мониторинга событий кластера.
+* Узнайте, как [установить исправления операционной системы Windows](service-fabric-patch-orchestration-application.md) на узлах кластера.
+* Узнайте, как агрегировать и собирать события [кластеров Windows](service-fabric-diagnostics-event-aggregation-wad.md) и выполнять [настройку Log Analytics](service-fabric-diagnostics-oms-setup.md) для мониторинга событий кластера.

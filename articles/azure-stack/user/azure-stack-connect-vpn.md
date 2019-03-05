@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2018
+ms.date: 02/21/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2018
-ms.openlocfilehash: 882724c5f45cc2c5b3debb8fa80538239a98b749
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: aa467910cfa2dad84af3905db3592657cae85be9
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55240698"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56594361"
 ---
 # <a name="connect-azure-stack-to-azure-using-vpn"></a>Подключение Azure Stack к Azure с помощью VPN
 
@@ -34,7 +34,7 @@ ms.locfileid: "55240698"
 Чтобы выполнить конфигурацию подключения, перед началом работы убедитесь в наличии следующих компонентов:
 
 * Развертывание (с несколькими узлами) интегрированных систем Azure Stack с прямым подключением к Интернету. Доступ к внешнему общедоступному диапазону IP-адресов можно получить напрямую из общедоступного Интернета.
-* Действующая подписка Azure. Если у вас еще нет ее, создайте [бесплатную учетную запись здесь](https://azure.microsoft.com/free/?b=17.06).
+* Действующая подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?b=17.06).
 
 ### <a name="vpn-connection-diagram"></a>Схема VPN-подключения
 
@@ -305,4 +305,4 @@ ms.locfileid: "55240698"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Развертывание приложений в Azure и Azure Stack](azure-stack-solution-pipeline.md)
+* [Развертывание приложений в Azure и Azure Stack](azure-stack-solution-pipeline.md)

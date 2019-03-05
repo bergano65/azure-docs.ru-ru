@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 12/07/2018
-ms.openlocfilehash: 449d721683bd59646506db57d78b9535aa7d614d
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 6509db136524d90db11b83acb701bda71c541060
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100194"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882626"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
@@ -596,4 +596,4 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 Перейдите к следующему руководству, чтобы ознакомиться с выполнением задач машинного обучения с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
->[Decision Trees Example](https://docs.azuredatabricks.net/spark/latest/mllib/decision-trees.html) (Пример деревьев принятия решений)
+>[Decision Trees Examples](https://docs.azuredatabricks.net/spark/latest/mllib/decision-trees.html) (Примеры деревьев принятия решений)

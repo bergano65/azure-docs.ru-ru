@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 08/10/2017
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 35002ccfc294b59a13e6826b4ca75a1ab6c68b62
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 812f957ffe2a3f24ead4ef0fe66a25c3cfd17995
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870305"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56866918"
 ---
 # <a name="what-is-computer-vision-api-version-10"></a>Что собой представляет API компьютерного зрения версии 1.0?
 
@@ -29,7 +29,7 @@ ms.locfileid: "55870305"
 * Помечать тегами изображения на основе содержимого.
 * Классифицировать изображения.
 * Определять тип и качество изображений.
-* [Обнаруживать лица людей и возвращать их координаты. ](#Faces)
+* [Обнаруживать лица и получать их координаты](#Faces).
 * Распознавать содержимое, предназначенное для определенных сфер.
 * Создавать описания содержимого.
 * Использовать распознавание символов для идентификации напечатанного текста, найденного на изображениях.

@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: overview
 ms.date: 09/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 91814579675882ba969f5903ebeddcebbcbd6616
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
+ms.openlocfilehash: 45824ba93e86622b1bbd92aae01f18f89bee6adf
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301542"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673348"
 ---
 # <a name="overview-of-application-insights-for-devops"></a>Общие сведения о Application Insights для DevOps
 
@@ -230,6 +230,7 @@ TrackException используется для сообщения об искл�
 * [веб-приложение ASP.NET](../../azure-monitor/app/asp-net.md);
 * [веб-приложение Java](../../azure-monitor/app/java-get-started.md);
 * [веб-приложение Node.js](../../azure-monitor/app/nodejs.md);
-* уже развернутые приложения, размещенные в среде [IIS](../../azure-monitor/app/monitor-web-app-availability.md), [Java EE](../../azure-monitor/app/java-live.md) или [Azure](../../azure-monitor/app/app-insights-overview.md);
+* уже развернутые приложения, размещенные в среде [IIS](../../azure-monitor/app/monitor-web-app-availability.md)
+* [Azure](../../azure-monitor/app/app-insights-overview.md).
 * [веб-страницы](../../azure-monitor/app/javascript.md) (одностраничное приложение или обычная веб-страница) — можно использовать самостоятельное или в дополнение к любому варианту сервера;
 * [тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) для тестирования приложений из общедоступного Интернета.

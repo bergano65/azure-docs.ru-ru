@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: bee9d2f823fe46d81550ea5090222f491562d636
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: ea67c19beeb2fa52b77b04913aee1838569c4ac6
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700117"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56675030"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 
@@ -80,7 +80,7 @@ Site Recovery требуется доступ к серверам VMware, что
 3. Проверьте поддержку локальных [сетей](vmware-physical-azure-support-matrix.md#network) и [хранилищ](vmware-physical-azure-support-matrix.md#storage). 
 4. Проверьте возможности, которые поддерживаются для [сети Azure](vmware-physical-azure-support-matrix.md#azure-vm-network-after-failover), [хранилища](vmware-physical-azure-support-matrix.md#azure-storage) и [вычислительных ресурсов](vmware-physical-azure-support-matrix.md#azure-compute) после отработки отказа.
 5. Локальные виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям к виртуальным машинам Azure](vmware-physical-azure-support-matrix.md#azure-vm-requirements).
-6. На виртуальная машинах Linux имя устройства или точки подключения должно быть уникальным. Имена устройств или точек подключения не должны повторяться с изменением регистра. Например, нельзя называть два устройства на одной виртуальной машине как *device1* и *Device1*.
+6. На виртуальная машинах Linux имя устройства или точки подключения должно быть уникальным. Имена устройств или точек подключения не должны совпадать. Обратите внимание, что в написании имен регистр не учитывается. Например, двум устройствам на одной виртуальной машине нельзя задать имена _device1_ и _Device1_.
 
 
 ## <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Подготовка к подключению виртуальных машин Azure после отработки отказа

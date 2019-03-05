@@ -11,22 +11,20 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/02/2018
+ms.date: 02/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0b00bff2b32ac9dd16d4d38ee35be006c0247bb8
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: 246ee5f8360869c1b0f901ee54d56e017ac8aeb7
+ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55493487"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56649685"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 
 С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, можно определить веб-узел, веб-сайт и базу данных для приложения, а затем развернуть эту инфраструктуру вместе с кодом. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение и базу данных SQL.  
 
 В этой статье показано, как использовать [Visual Studio 2017 для разработки Azure и установленных рабочих нагрузок ASP.NET](/dotnet/azure/dotnet-tools). Использование Visual Studio 2015 с обновлением 2 и пакета Microsoft Azure SDK для .NET 2.9 или Visual Studio 2013 с Azure SDK 2.9 в основном ничем не отличается.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="create-azure-resource-group-project"></a>Создание проекта группы ресурсов Azure
 
@@ -148,7 +146,9 @@ ms.locfileid: "55493487"
 5. Щелкните кнопку **Развернуть** , чтобы развернуть проект в Azure. Консоль PowerShell откроется вне экземпляра Visual Studio. При появлении запроса в консоли PowerShell введите пароль администратора базы данных. **Консоль PowerShell может быть скрыта под другими элементами или свернута на панели задач.**  Откройте ее и введите пароль.
    
    > [!NOTE]
-   > В Visual Studio может отобразиться запрос на установку командлетов Azure PowerShell. Командлеты Azure PowerShell необходимы для успешного развертывания групп ресурсов. При появлении запроса установите их. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps).
+   > В Visual Studio может отобразиться запрос на установку командлетов Azure PowerShell. При появлении запроса установите их. Модули Azure PowerShell необходимы для успешного развертывания групп ресурсов. Скрипт PowerShell в проекте не работает с новым [модулем Azure PowerShell Az](/powershell/azure/new-azureps-module-az). 
+   >
+   > Дополнительные сведения см. в статье об [установке и настройке модулей Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
    > 
    > 
 6. Развертывание может занять несколько минут. Состояние развертывания отображается в окне **Выходные данные** . После успешного завершения развертывания появится примерно такое сообщение:
