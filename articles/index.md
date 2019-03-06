@@ -292,7 +292,7 @@ Azure DevOps Projects </a>
                                                 <h3>Развитие навыков с помощью Microsoft Learn</h3>
                                                 <ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="/learn/modules/tour-azure-services-and-features/">
+                                                        <a class="barLink" href="/learn/modules/tour-azure-portal/">
                                                             <img src="https://docs.microsoft.com/learn/achievements/tour-azure-services-and-features.svg" alt="">
 Обзор служб и функций Azure </a>
                                                     </li>
@@ -1021,6 +1021,21 @@ Azure DevOps Projects </a>
                                             <a href="/azure/migrate/migrate-overview">
                                                 <img src="media/index/azure-migrate.svg" alt="" />
                                                 <p>Служба "Миграция Azure"</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>Смешанная реальность</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="/azure/digital-twins/">
+                                                <img src="media/index/digital_twin.svg" alt="" />
+                                                <p>Azure Digital Twins</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/spatial-anchors/">
+                                                <img src="https://azure.microsoft.com/patterns/styles/glyphs-icons/hololens.svg" alt="" />
+                                                <p>Пространственные привязки Azure</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -2475,7 +2490,7 @@ Azure DevOps Projects </a>
                                 </a>
                             </li>
                             <li>
-                                <a href="/en-us/azure/databox-family/" data-linktype="absolute-path">
+                                <a href="/azure/databox-family/" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -2494,7 +2509,7 @@ Azure DevOps Projects </a>
                                 </a>
                             </li>
                             <li>
-                                <a href="/en-us/azure/avere-vfxt/" data-linktype="absolute-path">
+                                <a href="/azure/avere-vfxt/" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -5788,6 +5803,49 @@ Azure DevOps Projects </a>
                                                 <div class="cardText">
                                                     <h3>Microsoft Azure China 21Vianet</h3>
                                                     <p>Создавайте и размещайте приложения в соответствии с политиками и правилами обработки данных, установленными правительством Китая.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#mixed">Смешанная реальность</a>
+                        <ul id="mixed" class="cardsA">
+                            <li>
+                                <a href="/azure/digital-twins/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/digital_twin.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Azure Digital Twins</h3>
+                                                    <p>Создавайте решения пространственной аналитики нового поколения для Интернета вещей</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/azure/spatial-anchors/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="https://azure.microsoft.com/patterns/styles/glyphs-icons/hololens.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Пространственные привязки Azure</h3>
+                                                    <p>Создавайте многопользовательские решения смешанной реальности, учитывающие расположение в пространстве</p>
                                                 </div>
                                             </div>
                                         </div>

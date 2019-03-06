@@ -25,6 +25,9 @@
 #### [2. Разработка с использованием нескольких служб](multi-service-nodejs.md)
 #### [3. Командная разработка](team-development-nodejs.md)
 
+## Основные понятия
+### [Принцип работы Dev Spaces](how-dev-spaces-works.md)
+
 ## Практическое руководство
 ### [Создание кластера Kubernetes с помощью Azure Cloud Shell](how-to/create-cluster-cloud-shell.md)
 ### [Общий доступ к рабочим средам Azure для разработчиков](how-to/share-dev-spaces.md)
