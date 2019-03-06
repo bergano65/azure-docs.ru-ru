@@ -4,132 +4,130 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 4ae5f30d-113b-4261-b474-47ffbac08bf7
-ms.service: active-directory
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/26/2018
+ms.topic: tutorial
+ms.date: 02/21/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c4d702a33742da5501be208154cbdd593fa0524
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a510fcce6b004e8384ce888ad421802bc144e73f
+ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199720"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56985977"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство. Интеграция Azure Active Directory с Meta Networks Connector
 
 В этом руководстве описано, как интегрировать Meta Networks Connector с Azure Active Directory (Azure AD).
-
 Интеграция Meta Networks Connector с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Meta Networks Connector.
-- Вы можете включить автоматический вход пользователей в Meta Networks Connector (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Meta Networks Connector.
+* Вы можете включить автоматический вход пользователей в Meta Networks Connector (единый вход) с учетными записями Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Meta Networks Connector, вам потребуется:
 
-- подписка Azure AD;
-- подписка Meta Networks Connector с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Meta Networks Connector с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Meta Networks Connector из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Meta Networks Connector поддерживает инициированный единый вход **пакета обновлений** и **выдающей точки распространения**.
+ 
+* Meta Networks Connector поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-meta-networks-connector-from-the-gallery"></a>Добавление Meta Networks Connector из коллекции
+
 Чтобы настроить интеграцию Meta Networks Connector с Azure AD, нужно добавить Meta Networks Connector из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Meta Networks Connector из коллекции, сделайте следующее.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
-    
-    ![Кнопка "Azure Active Directory"][1]
-    
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
-    
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
-    
-    ![Кнопка "Создать приложение"][3]
-    
-1. В поле поиска введите **Meta Networks Connector**, выберите **Meta Networks Connector** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
-    
-    ![Meta Networks Connector в списке результатов](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_addfromgallery.png)
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
+
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
+
+4. В поле поиска введите **Meta Networks Connector**, выберите **Meta Networks Connector** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Meta Networks Connector в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Meta Networks Connector с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD нужно знать, какой пользователь в Meta Networks Connector соответствует пользователю в Azure AD. Иными словами, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Meta Networks Connector.
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение Meta Networks Connector с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Meta Networks Connector.
 
 Чтобы настроить и проверить единый вход Azure AD в Meta Networks Connector, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Meta Networks Connector](#create-a-meta-networks-connector-test-user)** требуется для того, чтобы в Meta Networks Connector существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Meta Networks Connector](#configure-meta-networks-connector-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Meta Networks Connector](#create-meta-networks-connector-test-user)** требуется для того, чтобы в Meta Networks Connector существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Meta Networks Connector.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Meta Networks Connector, сделайте следующее.**
+Чтобы настроить единый вход Azure AD в Meta Networks Connector, выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Meta Networks Connector** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Meta Networks Connector** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то в разделе **Домены и URL-адреса приложения Meta Networks Connector** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    1. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`
-    
-    1. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`.
-    
-1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_url1.png)
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    1. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`
-    
-    1. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`.
-    
+    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`.
+
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`.
+
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/both-advanced-urls.png)
+
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`.
+
+    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`.
+
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа, которые описываются далее в этом руководстве.
+
+6. Приложение Meta Networks Connector ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+
+    ![изображение](common/edit-attribute.png)
     
-1. Приложение Meta Networks Connector ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
+7. В дополнение к описанному выше приложение Meta Networks Connector ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_attribute.png)
-    
-1. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия:
-    
-    | Имя атрибута | Значение атрибута | NAMESPACE|
+    | ИМЯ | Атрибут источника | Пространство имен|
     | ---------------| --------------- | -------- |
     | firstname | user.givenname | |
     | lastname | user.surname | |
@@ -137,165 +135,150 @@ ms.locfileid: "56199720"
     | name | user.userprincipalname| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims` |
     | phone | user.telephonenumber | |
 
-    1. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-        ![Настройка единого входа](./media/metanetworksconnector-tutorial/tutorial_attribute_04.png)
-    
-        ![Настройка единого входа](./media/metanetworksconnector-tutorial/tutorial_attribute_05.png)   
-    
-    1. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
-    
-    1. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
-    
-    1. В текстовом поле **Пространство имен** введите значение пространства имен, показанное для этой строки.
-    
-    1. Нажмите кнопку **ОК**.
-    
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
-    
-    ![Ссылка для скачивания сертификата](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_certificate.png)
-    
-1. В разделе **Конфигурация Meta Networks Connector** щелкните **Настроить Meta Networks Connector**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
-    
-    ![Настройка единого входа](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_configure.png)
-    
-1. Нажмите кнопку **Сохранить** .
-    
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/metanetworksconnector-tutorial/tutorial_general_400.png)
-    
+    ![изображение](common/new-save-attribute.png)
+
+    ![изображение](common/new-attribute-details.png)
+
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+
+    c. Оставьте пустым поле **Пространство имен**.
+
+    4.3. В качестве источника выберите **Атрибут**.
+
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+
+    Е. Нажмите кнопку **ОК**.
+
+    ж. Выберите команду **Сохранить**.
+
+8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+
+9. Скопируйте требуемый URL-адрес из раздела **Настройка Meta Networks Connector**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-meta-networks-connector-single-sign-on"></a>Настройка единого входа в Meta Networks Connector
+
 1. Откройте новую вкладку в браузере и войдите в учетную запись администратора Meta Networks Connector.
     
     > [!NOTE]
     > Meta Networks Connector является безопасной системой. Поэтому перед переходом на портал этого приложения необходимо, чтобы ваш общедоступный IP-адрес был добавлен в список разрешений на его стороне. Чтобы получить свой общедоступный IP-адрес, перейдите по ссылке, указанной [здесь](https://whatismyipaddress.com/). Отправьте свой IP-адрес [группе поддержки клиентов Meta Networks Connector](mailto:support@metanetworks.com), чтобы он был добавлен в список разрешений.
     
-1. Выберите **Administrator** (Администратор) и щелкните **Settings** (Параметры).
+2. Выберите **Administrator** (Администратор) и щелкните **Settings** (Параметры).
     
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure3.png)
     
-1. Убедитесь, что параметры **Log Internet Traffic** (Ведение журнала трафика Интернета) и **Force VPN MFA** (Принудительная многофакторная проверка подлинности через VPN) отключены.
+3. Убедитесь, что параметры **Log Internet Traffic** (Ведение журнала трафика Интернета) и **Force VPN MFA** (Принудительная многофакторная проверка подлинности через VPN) отключены.
     
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure1.png)
     
-1. Выберите **Administrator** (Администратор) и щелкните **SAML**.
+4. Выберите **Administrator** (Администратор) и щелкните **SAML**.
     
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure4.png)
     
-1. Выполните следующие действия на странице **DETAILS** (Сведения).
+5. Выполните следующие действия на странице **DETAILS** (Сведения).
     
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure2.png)
     
-    1. Скопируйте значение **SSO URL** (URL-адрес единого входа) и вставьте его в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
+    a. Скопируйте значение **SSO URL** (URL-адрес единого входа) и вставьте его в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
-    1. Скопируйте значение **Recipient URL** (URL-адрес получателя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
+    b. Скопируйте значение **Recipient URL** (URL-адрес получателя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
-    1. Скопируйте значение **Audience URI (SP Entity ID)** (URI аудитории (Идентификатор сущности поставщика услуг)) и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
+    c. Скопируйте значение **Audience URI (SP Entity ID)** (URI аудитории (Идентификатор сущности поставщика услуг)) и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
-    1. Включение SAML
+    4.3. Включение SAML
     
-1. На вкладке **GENERAL** (Общие) выполните следующее.
+6. На вкладке **GENERAL** (Общие) выполните следующее.
 
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure5.png)
 
-    1. В текстовое поле **URL-адреса единого входа для поставщика удостоверений** вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    a. В поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    1. В текстовое поле **Издатель поставщика удостоверений** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В поле **Издатель поставщика удостоверений** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    1. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его в текстовое поле **Сертификат X.509**.
+    c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его в текстовое поле **Сертификат X.509**.
 
-    1. Включите **JIT-подготовку**.
+    4.3. Включите **JIT-подготовку**.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
-    
-![Создание тестового пользователя Azure AD][100]
-    
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
-    
-    ![Кнопка Azure Active Directory](./media/metanetworksconnector-tutorial/create_aaduser_01.png)
-    
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/metanetworksconnector-tutorial/create_aaduser_02.png)
-    
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-    
-    ![Кнопка "Добавить"](./media/metanetworksconnector-tutorial/create_aaduser_03.png)
-    
-1. В диалоговом окне **Пользователь** сделайте следующее.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Диалоговое окно "Пользователь"](./media/metanetworksconnector-tutorial/create_aaduser_04.png)
-    
-    1. В поле **Имя** введите **BrittaSimon**.
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-    1. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-    
-    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-    
-    1. Нажмите кнопку **Создать**.
-    
-### <a name="create-a-meta-networks-connector-test-user"></a>Создание тестового пользователя Meta Networks Connector
+2. В верхней части экрана выберите **Новый пользователь**.
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Meta Networks Connector. Приложение Meta Networks Connector поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Meta Networks Connector (если он еще не создан).
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
->[!Note]
->Чтобы создать пользователя вручную, обратитесь в  [службу поддержки Meta Networks Connector](mailto:support@metanetworks.com).
+3. В разделе свойств пользователя сделайте следующее:
+
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
+
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
+
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Meta Networks Connector.
 
-![Назначение роли пользователя][200]
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Meta Networks Connector**.
 
-**Чтобы назначить пользователя Britta Simon приложению Meta Networks Connector, сделайте следующее.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-    
-    ![Назначение пользователя][201]
-    
-1. Из списка приложений выберите **Meta Networks Connector**.
-    
-    ![Ссылка на Meta Networks Connector в списке "Приложения"](./media/metanetworksconnector-tutorial/tutorial_metanetworksconnector_app.png)  
-    
-1. В меню слева выберите **Пользователи и группы**.
-    
-    ![Ссылка "Пользователи и группы"][202]
-    
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-    
-    ![Область "Добавление назначения"][203]
-    
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-    
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-    
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+2. Из списка приложений выберите **Meta Networks Connector**.
+
+    ![Ссылка на Meta Networks Connector в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-meta-networks-connector-test-user"></a>Создание тестового пользователя Meta Networks Connector
+
+В этом разделе вы создадите в Meta Networks Connector пользователя Britta Simon. Приложение Meta Networks Connector поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Meta Networks Connector, он создается при попытке доступа к приложению Meta Networks Connector.
+
+>[!Note]
+>Чтобы создать пользователя вручную, обратитесь к [группе поддержки клиентов Meta Networks Connector](mailto:support@metanetworks.com).
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Meta Networks Connector" на панели доступа, вы автоматически войдете в приложение Meta Networks Connector.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку "Meta Networks Connector" на панели доступа, вы автоматически войдете в приложение Meta Networks Connector, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/metanetworksconnector-tutorial/tutorial_general_01.png
-[2]: ./media/metanetworksconnector-tutorial/tutorial_general_02.png
-[3]: ./media/metanetworksconnector-tutorial/tutorial_general_03.png
-[4]: ./media/metanetworksconnector-tutorial/tutorial_general_04.png
-
-[100]: ./media/metanetworksconnector-tutorial/tutorial_general_100.png
-
-[200]: ./media/metanetworksconnector-tutorial/tutorial_general_200.png
-[201]: ./media/metanetworksconnector-tutorial/tutorial_general_201.png
-[202]: ./media/metanetworksconnector-tutorial/tutorial_general_202.png
-[203]: ./media/metanetworksconnector-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
