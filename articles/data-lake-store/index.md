@@ -1,22 +1,16 @@
 ---
 title: Документация по Azure Data Lake Storage Gen1. Руководства и справочник по API | Документация Майкрософт
-description: Узнайте, как настраивать, администрировать и обращаться к гипермасштабируемому совместимому с Hadoop репозиторию Data Lake для анализа данных любого объема и типа с любой скоростью приема.
+description: 'Узнайте, как настраивать, администрировать и обращаться к гипермасштабируемому совместимому с Hadoop репозиторию Data Lake для анализа данных любого объема и типа с любой скоростью приема.'
 services: data-lake-store
 author: twooley
 manager: twooley
 layout: LandingPage
-ms.assetid: ''
+ms.assetid: null
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 68e4a7bd73b7fdd4b21140c912422b062f51c775
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55869200"
 ---
 # <a name="azure-data-lake-storage-gen1-documentation"></a>Документация по Azure Data Lake Storage Gen1
 
@@ -198,7 +192,7 @@ ms.locfileid: "55869200"
                         <p><a href="/java/api/overview/azure/datalake">Java</a></p>
                         <p><a href="https://www.npmjs.com/package/azure-arm-datalake-store">Node.js</a></p>
                         <p><a href="https://docs.microsoft.com/python/api/azure.mgmt.datalake.store?view=azure-python">Python (управление учетными записями)</a></p>
-                        <p><a href="http://azure-datalake-store.readthedocs.io/en/latest">Python (управление файловой системой)</a></p>
+                        <p><a href="https://azure-datalake-store.readthedocs.io/en/latest">Python (управление файловой системой)</a></p>
                     </div>
                 </div>
             </div>

@@ -31,5 +31,5 @@
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 ## [Заметки о выпуске](biztalk-release-notes.md)
 ## [Обновления службы](https://azure.microsoft.com/updates/?product=biztalk-services)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/biztalk-services)
+## [Stack Overflow](https://stackoverflow.com/questions/tagged/biztalk-services)
 ## [Видеоролики](https://azure.microsoft.com/documentation/videos/index/?services=biztalk-services)
