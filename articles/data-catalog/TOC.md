@@ -40,5 +40,5 @@
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 ## [Заметки о выпуске](../active-directory/fundamentals/whats-new.md)
 ## [Обновления службы](https://azure.microsoft.com/updates/?product=data-catalog)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-catalog)
+## [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-data-catalog)
 ## [Терминология](data-catalog-terminology.md)
