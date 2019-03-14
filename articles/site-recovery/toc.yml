@@ -20,8 +20,10 @@ items:
       href: azure-to-azure-tutorial-enable-replication.md
     - name: Выполнение отработки аварийного восстановления
       href: azure-to-azure-tutorial-dr-drill.md
-    - name: Выполнение отработки отказа и восстановления размещения
+    - name: Выполнение отработки отказа и повторное включение защиты
       href: azure-to-azure-tutorial-failover-failback.md
+    - name: Запуск восстановления размещения
+      href: azure-to-azure-tutorial-failback.md
   - name: Аварийное восстановление виртуальной машины VMware в Azure
     items:
     - name: Подготовка Azure
@@ -82,6 +84,8 @@ items:
       href: azure-vm-disaster-recovery-with-accelerated-networking.md
     - name: ExpressRoute и аварийное восстановление виртуальных машин Azure
       href: azure-vm-disaster-recovery-with-expressroute.md
+    - name: Аварийное восстановление виртуальной машины Azure и взаимодействие со службой Azure Backup
+      href: site-recovery-backup-interoperability.md
   - name: Сведения об аварийном восстановлении виртуальной машины VMware в Azure
     items:
     - name: Обзор аварийного восстановления VMware
@@ -464,9 +468,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: 04547a737cc05b3f1049d76e536366e608ee665a
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 749a7483167e3ddf3e1c15af17ee7aa9aa93fde0
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56866442"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57731008"

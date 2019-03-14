@@ -124,8 +124,6 @@ items:
     href: monitor.md
   - name: Архивация и восстановление
     href: backup-recovery.md
-  - name: Высокопроизводительные вычисления
-    href: high-performance-computing.md
   - name: Пример инфраструктуры
     href: infrastructure-example.md
 - name: Практические руководства
@@ -313,43 +311,46 @@ items:
         href: excel-cluster-hpcpack.md
   - name: Управление хранилищем
     items:
-    - name: Часто задаваемые вопросы о дисках
-      href: faq-for-disks.md
     - name: Добавление диска
       items:
       - name: Azure PowerShell
         href: attach-disk-ps.md
       - name: Портал Azure
         href: attach-managed-disk-portal.md
-    - name: Тест производительности диска
-      href: disks-benchmarks.md
     - name: Отсоединение диска
       href: detach-disk.md
+    - name: Развертывание дисков с помощью шаблона
+      href: using-managed-disks-template-deployments.md
     - name: Изменение размера диска
       href: expand-os-disk.md
     - name: Моментальный снимок диска
       href: snapshot-copy-managed-disk.md
     - name: Резервное копирование неуправляемых дисков
       href: incremental-snapshots.md
-    - name: Переход между хранилищами класса "Стандартный" и "Премиум" для дисков
-      href: convert-disk-storage.md
-    - name: Миграция в хранилище класса Premium с помощью Azure Site Recovery
-      href: migrate-to-premium-storage-using-azure-site-recovery.md
+    - name: Миграция и преобразование
+      items:
+      - name: Переход между хранилищами класса "Стандартный" и "Премиум" для дисков
+        href: convert-disk-storage.md
+      - name: Миграция в хранилище класса Premium с помощью Azure Site Recovery
+        href: migrate-to-premium-storage-using-azure-site-recovery.md
+      - name: Переход на управляемые диски
+        href: migrate-to-managed-disks.md
+      - name: Переключение виртуальной машины с неуправляемых дисков на управляемые
+        href: convert-unmanaged-to-managed-disks.md
+    - name: Производительность
+      items:
+      - name: Включение ускорителя записи
+        href: how-to-enable-write-accelerator.md
+      - name: Включение дисков SSD ценовой категории "Ультра"
+        href: disks-enable-ultra-ssd.md
+      - name: Тест производительности диска
+        href: disks-benchmarks.md
     - name: Обнаружение неприсоединенных дисков
       href: find-unattached-disks.md
     - name: Использование хранилища файлов
-      href: mount-azure-file-storage.md
-    - name: Развертывание дисков с помощью шаблона
-      href: using-managed-disks-template-deployments.md
-    - name: Включение ускорителя записи
-      href: how-to-enable-write-accelerator.md
-    - name: Включение дисков SSD ценовой категории "Ультра"
-      href: disks-enable-ultra-ssd.md
-    - name: Переход на управляемые диски
-      href: migrate-to-managed-disks.md
-      items:
-      - name: Переключение виртуальной машины с неуправляемых дисков на управляемые
-        href: convert-unmanaged-to-managed-disks.md
+      href: ../../storage/files/storage-files-quick-create-use-windows.md
+    - name: Часто задаваемые вопросы о дисках
+      href: faq-for-disks.md
   - name: Управление сетями
     href: ps-common-network-ref.md
     items:
@@ -461,9 +462,9 @@ items:
     href: https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines
   - name: Часто задаваемые вопросы
     href: faq.md
-ms.openlocfilehash: 3ddf84852fee0dc30aa9bc7e9d49f06493f6b0cc
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 78a321bbf5bbf3c970d7b6caef3409d55d33c808
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57448447"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57732514"

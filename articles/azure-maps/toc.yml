@@ -63,47 +63,49 @@ items:
       href: how-to-search-for-address.md
     - name: Отображение пользовательских данных на статической карте
       href: how-to-render-custom-data.md
-  - name: Создание карт JavaScript
+  - name: Разработка с помощью веб-пакета SDK
     items:
-    - name: Использование элемента управления картой
-      href: how-to-use-map-control.md
-    - name: Создание карты
-      href: map-create.md
-    - name: Выбор стиля карты
-      href: choose-map-style.md
-    - name: Добавление элемента управления картой
-      href: map-add-controls.md
-    - name: Добавление слоя символов
-      href: map-add-pin.md
-    - name: Добавление контекстного меню
-      href: map-add-popup.md
-    - name: Добавление слоя пузырьков
-      href: map-add-bubble-layer.md
-    - name: Добавление фигуры
-      href: map-add-shape.md
-    - name: Добавление слоя тепловой карты
-      href: map-add-heat-map-layer.md
-    - name: Добавление слоя изображений
-      href: map-add-image-layer.md
-    - name: Добавление слоя фрагментов
-      href: map-add-tile-layer.md
-    - name: Добавление маркеров HTML
-      href: map-add-custom-html.md
-    - name: Службы
+    - name: Управление картами
+      items:
+      - name: Использование элемента управления картой
+        href: how-to-use-map-control.md
+      - name: Создание карты
+        href: map-create.md
+      - name: Выбор стиля карты
+        href: choose-map-style.md
+      - name: Добавление элементов управления на карту
+        href: map-add-controls.md
+      - name: Добавление слоя символов
+        href: map-add-pin.md
+      - name: Добавление контекстного меню
+        href: map-add-popup.md
+      - name: Добавление слоя пузырьков
+        href: map-add-bubble-layer.md
+      - name: Добавление фигур
+        href: map-add-shape.md
+      - name: Добавление слоя тепловой карты
+        href: map-add-heat-map-layer.md
+      - name: Наложение изображения
+        href: map-add-image-layer.md
+      - name: Добавление слоев фрагмента карты
+        href: map-add-tile-layer.md
+      - name: HTML-метки
+        href: map-add-custom-html.md
+      - name: Отображение трафика
+        href: map-show-traffic.md
+      - name: Взаимодействие с событиями мыши
+        href: map-events.md
+      - name: Добавление специальных возможностей в приложение
+        href: map-accessibility.md
+    - name: Модуль служб
       items:
       - name: Показать результаты поиска
         href: map-search-location.md
       - name: Получение сведений из координат
         href: map-get-information-from-coordinate.md
-      - name: Отображение направлений от A до B
+      - name: Отображение направлений от точки А до точки Б
         href: map-route.md
-    - name: Отображение трафика
-      href: map-show-traffic.md
-    - name: Взаимодействие с событиями мыши
-      href: map-events.md
-    - name: Доступные приложения карт
-      href: map-accessibility.md
-  - name: Создание карт для Android
+  - name: Разработка с помощью пакета SDK для Android
     items:
     - name: Как использовать элемент управления картой в Android
       href: how-to-use-android-map-control-library.md
@@ -150,7 +152,7 @@ items:
 - name: Ресурсы
   items:
   - name: Условия использования Azure Maps
-    href: http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31.
+    href: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31.
   - name: Цены
     href: https://azure.microsoft.com/pricing/details/azure-maps
   - name: Калькулятор цен
@@ -197,9 +199,9 @@ items:
       href: /azure/iot-edge
     - name: Пакеты SDK для устройств IoT
       href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
-ms.openlocfilehash: b0584c77ed7d8b3ed6c6962d02b75e061a97bf14
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: 2d974c96dd953c7a2727bcd5b1bcc3b60ad807a0
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57336739"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57569235"

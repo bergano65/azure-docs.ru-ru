@@ -45,90 +45,106 @@ items:
       href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
 - name: Практические руководства
   items:
-  - name: Настройка подключений "сеть — сеть"
+  - name: Создание и администрирование VPN-шлюза
     items:
-    - name: Портал Azure
-      href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
-    - name: Azure PowerShell
-      href: vpn-gateway-create-site-to-site-rm-powershell.md
-    - name: Инфраструктура CLI Azure
-      href: vpn-gateway-howto-site-to-site-resource-manager-cli.md
-  - name: Скачивание скриптов конфигурации VPN-устройства
-    href: vpn-gateway-download-vpndevicescript.md
-  - name: Настройка подключений "точка — сеть". Собственная проверка подлинности Azure на основе сертификата
-    items:
-    - name: Настройка VPN для подключений "точка — сеть"
+    - name: Создание VPN-шлюза на основе маршрутов
       items:
       - name: Портал Azure
-        href: vpn-gateway-howto-point-to-site-resource-manager-portal.md
+        href: create-routebased-vpn-gateway-portal.md
       - name: Azure PowerShell
-        href: vpn-gateway-howto-point-to-site-rm-ps.md
-    - name: Сертификаты и клиенты P2S
+        href: create-routebased-vpn-gateway-powershell.md
+      - name: Инфраструктура CLI Azure
+        href: create-routebased-vpn-gateway-cli.md
+    - name: Проверка подключения VPN-шлюза
+      href: vpn-gateway-verify-connection-resource-manager.md
+    - name: Сброс VPN-шлюза
+      href: vpn-gateway-resetgw-classic.md
+    - name: Удаление VPN-шлюза
       items:
-      - name: Создание самозаверяющих сертификатов
-        items:
-        - name: Azure PowerShell
-          href: vpn-gateway-certificates-point-to-site.md
-        - name: Makecert
-          href: vpn-gateway-certificates-point-to-site-makecert.md
-        - name: Linux
-          href: vpn-gateway-certificates-point-to-site-linux.md
-    - name: Установка сертификатов клиента
-      href: point-to-site-how-to-vpn-client-install-azure-cert.md
-    - name: Создание и установка файлов конфигурации VPN-клиента
-      href: point-to-site-vpn-client-configuration-azure-cert.md
-  - name: Настройка подключений "точка — сеть". Проверка подлинности RADIUS
-    items:
-    - name: Настройка VPN для подключений "точка — сеть"
-      items:
+      - name: Портал Azure
+        href: vpn-gateway-delete-vnet-gateway-portal.md
       - name: Azure PowerShell
-        href: point-to-site-how-to-radius-ps.md
-    - name: Создание и установка файлов конфигурации VPN-клиента
-      href: point-to-site-vpn-client-configuration-radius.md
-    - name: Интеграция аутентификации P2S VPN RADIUS с использованием сервера NPS
-      href: vpn-gateway-radiuis-mfa-nsp.md
-  - name: Настройка OpenVPN
+        href: vpn-gateway-delete-vnet-gateway-powershell.md
+    - name: Управление устаревшими номерами SKU шлюза
+      href: vpn-gateway-about-skus-legacy.md
+  - name: Подключения типа "сеть-сеть"
     items:
-    - name: Настройка OpenVPN для подключений "точка — сеть"
-      href: vpn-gateway-howto-openvpn.md
-    - name: Настройка клиентов OpenVPN
-      href: vpn-gateway-howto-openvpn-clients.md
-  - name: Настройка подключений между виртуальными сетями
-    items:
-    - name: Портал Azure
-      href: vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
-    - name: Azure PowerShell
-      href: vpn-gateway-vnet-vnet-rm-ps.md
-    - name: Инфраструктура CLI Azure
-      href: vpn-gateway-howto-vnet-vnet-cli.md
-  - name: Настройка подключения между виртуальными сетями для разных моделей развертывания
-    items:
-    - name: Портал Azure
-      href: vpn-gateway-connect-different-deployment-models-portal.md
-    - name: Azure PowerShell
-      href: vpn-gateway-connect-different-deployment-models-powershell.md
-  - name: Настройка параллельных подключений "сеть —сеть" и ExpressRoute
-    items:
-    - name: Azure PowerShell
-      href: ../expressroute/expressroute-howto-coexist-resource-manager.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-  - name: Настройка нескольких подключений типа "сеть — сеть"
-    items:
-    - name: Портал Azure
+    - name: Настройка подключения "сеть — сеть"
+      items:
+      - name: Портал Azure
+        href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
+      - name: Azure PowerShell
+        href: vpn-gateway-create-site-to-site-rm-powershell.md
+      - name: Инфраструктура CLI Azure
+        href: vpn-gateway-howto-site-to-site-resource-manager-cli.md
+    - name: Настройка нескольких подключений типа "сеть — сеть"
       href: vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md
-  - name: Подключение нескольких VPN-устройств на основе политик
-    items:
-    - name: Azure PowerShell
+    - name: Подключение к нескольким VPN-устройствам на основе политик
       href: vpn-gateway-connect-multiple-policybased-rm-ps.md
-  - name: Настройка политик IPsec/IKE для подключений
+    - name: Параллельные подключения "сеть — сеть" и ExpressRoute
+      href: ../expressroute/expressroute-howto-coexist-resource-manager.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+  - name: Подключения типа "виртуальная сеть — виртуальная сеть"
     items:
-    - name: Azure PowerShell
-      href: vpn-gateway-ipsecikepolicy-rm-powershell.md
-  - name: Настройка высокодоступных подключений в режиме "активный — активный"
+    - name: Настройка подключений между виртуальными сетями
+      items:
+      - name: Портал Azure
+        href: vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
+      - name: Azure PowerShell
+        href: vpn-gateway-vnet-vnet-rm-ps.md
+      - name: Инфраструктура CLI Azure
+        href: vpn-gateway-howto-vnet-vnet-cli.md
+    - name: Настройка подключения между виртуальными сетями для разных моделей развертывания
+      items:
+      - name: Портал Azure
+        href: vpn-gateway-connect-different-deployment-models-portal.md
+      - name: Azure PowerShell
+        href: vpn-gateway-connect-different-deployment-models-powershell.md
+  - name: Подключения "точка-сеть"
     items:
-    - name: Azure PowerShell
-      href: vpn-gateway-activeactive-rm-powershell.md
+    - name: Аутентификация в Azure на основе сертификата
+      items:
+      - name: Настройка VPN для подключений "точка — сеть"
+        items:
+        - name: Портал Azure
+          href: vpn-gateway-howto-point-to-site-resource-manager-portal.md
+        - name: Azure PowerShell
+          href: vpn-gateway-howto-point-to-site-rm-ps.md
+      - name: Настройка сертификатов и клиентов P2S
+        items:
+        - name: Создание самозаверяющих сертификатов
+          items:
+          - name: Azure PowerShell
+            href: vpn-gateway-certificates-point-to-site.md
+          - name: Makecert
+            href: vpn-gateway-certificates-point-to-site-makecert.md
+          - name: Linux
+            href: vpn-gateway-certificates-point-to-site-linux.md
+      - name: Установка сертификатов клиента
+        href: point-to-site-how-to-vpn-client-install-azure-cert.md
+      - name: Создание и установка файлов конфигурации VPN-клиента
+        href: point-to-site-vpn-client-configuration-azure-cert.md
+    - name: Проверка подлинности RADIUS
+      items:
+      - name: Настройка VPN для подключений "точка — сеть"
+        href: point-to-site-how-to-radius-ps.md
+      - name: Создание и установка файлов конфигурации VPN-клиента
+        href: point-to-site-vpn-client-configuration-radius.md
+      - name: Интеграция аутентификации P2S VPN RADIUS с использованием сервера NPS
+        href: vpn-gateway-radiuis-mfa-nsp.md
+    - name: OpenVPN
+      items:
+      - name: Настройка OpenVPN для подключений "точка — сеть"
+        href: vpn-gateway-howto-openvpn.md
+      - name: Настройка клиентов OpenVPN
+        href: vpn-gateway-howto-openvpn-clients.md
+    - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
+      href: vpn-gateway-point-to-site-gateway-public-ca.md
   - name: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
     href: create-zone-redundant-vnet-gateway.md
+  - name: Настройка политик IPsec/IKE для подключений
+    href: vpn-gateway-ipsecikepolicy-rm-powershell.md
+  - name: Настройка подключений в режиме "активный — активный"
+    href: vpn-gateway-activeactive-rm-powershell.md
   - name: Маршрутизация, BGP и пиринг виртуальных сетей
     items:
     - name: Настройка BGP для VPN-шлюза
@@ -145,7 +161,7 @@ items:
         href: vpn-gateway-about-forced-tunneling.md
     - name: Настройка транзита шлюза для пиринга виртуальных сетей
       href: vpn-gateway-peering-gateway-transit.md
-  - name: Изменение настроек локального сетевого шлюза
+  - name: 'Изменение шлюза локальной сети '
     items:
     - name: Портал Azure
       href: vpn-gateway-modify-local-network-gateway-portal.md
@@ -153,34 +169,14 @@ items:
       href: vpn-gateway-modify-local-network-gateway.md
     - name: Инфраструктура CLI Azure
       href: vpn-gateway-modify-local-network-gateway-cli.md
-  - name: Создание VPN-шлюза на основе маршрутов
-    items:
-    - name: Портал Azure
-      href: create-routebased-vpn-gateway-portal.md
-    - name: Azure PowerShell
-      href: create-routebased-vpn-gateway-powershell.md
-    - name: Инфраструктура CLI Azure
-      href: create-routebased-vpn-gateway-cli.md
-  - name: Проверка подключения VPN-шлюза
-    href: vpn-gateway-verify-connection-resource-manager.md
-  - name: Сброс VPN-шлюза
-    href: vpn-gateway-resetgw-classic.md
-  - name: Удаление VPN-шлюза
-    items:
-    - name: Портал Azure
-      href: vpn-gateway-delete-vnet-gateway-portal.md
-    - name: Azure PowerShell
-      href: vpn-gateway-delete-vnet-gateway-powershell.md
-  - name: SKU шлюзов (устаревшая версия)
-    href: vpn-gateway-about-skus-legacy.md
   - name: Настройка устройств VPN
     items:
     - name: Общие сведения и конфигурация Azure
       href: vpn-gateway-3rdparty-device-config-overview.md
+    - name: Скачивание скриптов конфигурации VPN-устройства
+      href: vpn-gateway-download-vpndevicescript.md
     - name: 'Пример: Устройство Cisco ASA (IKEv2, без BGP)'
       href: vpn-gateway-3rdparty-device-config-cisco-asa.md
-  - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
-    href: vpn-gateway-point-to-site-gateway-public-ca.md
   - name: Устранение неполадок
     href: vpn-gateway-troubleshoot.md
     items:
@@ -252,9 +248,9 @@ items:
     href: https://azure.microsoft.com/support/legal/sla
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=vpn-gateway
-ms.openlocfilehash: af9469c41660e8f5d98e93a8bfea9af977396d04
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 84c6a8972109e8512e66a5fa6283125534b2e2e1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56817564"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57781295"
