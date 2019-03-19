@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 58bad793ba44ae91d75324257f55648cf3207cd0
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
-ms.translationtype: HT
+ms.openlocfilehash: 90ec06b01b11b5cbe119f41483eaf794af4e991b
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52291459"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243097"
 ---
 # <a name="monitoring-the-cluster"></a>Мониторинг кластера
 
@@ -90,13 +90,13 @@ Service Fabric предоставляет несколько событий ст
 Ниже приведены два простых способа настройки сбора данных производительности для кластера:
 
 * **Использование агента.**  
-Это предпочтительный способ сбора данных производительности на компьютере. У агентов обычно есть список возможных метрик производительности, которые можно собрать. Процесс их выбора или изменения достаточно прост. Дополнительные сведения о настройке агента Log Analytics (агент наблюдения, который может собирать данные производительности виртуальных машин кластера и развернутых контейнеров) см. в статьях о Log Analytics как о предложении Azure Monitor, посвященных [интеграции Log Analytics для Service Fabric](service-fabric-diagnostics-event-analysis-oms.md) и [настройке агента Log Analytics](../log-analytics/log-analytics-windows-agent.md).
+Это предпочтительный способ сбора данных производительности на компьютере. У агентов обычно есть список возможных метрик производительности, которые можно собрать. Процесс их выбора или изменения достаточно прост. Узнайте о Azure Monitor, предложение Azure Monitor регистрирует в Service Fabric [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) и [Настройка агента Log Analytics](../log-analytics/log-analytics-windows-agent.md) Дополнительные сведения об агенте Log Analytics, которой — Это агент наблюдения, сможет получить данные производительности для кластера виртуальных машин и контейнеров развертывания.
 
 * **Счетчики производительности в Хранилище таблиц Azure.**  
 Вы также можете отправлять метрики производительности в то же хранилище таблиц, что и события. Это требует изменения конфигурации системы диагностики Azure таким образом, чтобы выполнялся сбор соответствующих данных счетчиков производительности с виртуальных машин в кластере и статистики Docker при развертывании контейнеров. Дополнительные сведения о настройке счетчиков производительности в WAD и Service Fabric для настройки их сбора см. в [этой статье](service-fabric-diagnostics-event-aggregation-wad.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [интегрировать Log Analytics](service-fabric-diagnostics-event-analysis-oms.md) для Service Fabric, чтобы собирать данные диагностики кластера и создавать пользовательские запросы и оповещения.
+* Сведения о Service Fabric [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) для сбора диагностики кластера и создавать пользовательские запросы и оповещения
 * Ознакомьтесь со встроенными возможностями диагностики Service Fabric — [службой EventStore](service-fabric-diagnostics-eventstore.md).
 * Рассмотрите некоторые [распространенные сценарии диагностики](service-fabric-diagnostics-common-scenarios.md) в Service Fabric.

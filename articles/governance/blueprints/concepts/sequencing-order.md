@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: bd12aabf0ca8f82261e6b3c677d7306ee46c4171
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.openlocfilehash: b3adec799da582dc30ecd716a530ca6032f5c2e4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53308623"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57990571"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Сведения о последовательности развертывания в Azure Blueprint
 
@@ -110,10 +110,10 @@ Azure Blueprint использует **порядок последователь
 
 Если объявляется зависимость артефактов, которая не изменяет порядок последовательности по умолчанию, никакие изменения не вносятся. Например, это относится к группе ресурсов, которая зависит от политики уровня подписки. Другой пример — назначение дочерней политики standart-rg для группы ресурсов, которая зависит от назначения дочерней роли standard-rg для группы ресурсов. В обоих случаях `dependsOn` не изменяет порядок последовательности по умолчанию, и изменения не производятся.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [жизненным циклом схемы](lifecycle.md).
-- Узнайте, как использовать [статические и динамические параметры](parameters.md)
-- Узнайте, как применять [блокировку ресурсов схемы](resource-locking.md)
-- Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md)
-- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](../troubleshoot/general.md)
+- Дополнительные сведения о [схемы, в которой жизненным циклом](lifecycle.md).
+- Общие сведения об использовании [статических и динамических параметров](parameters.md).
+- Узнайте, как сделать использование [схемы, в которой блокировки ресурсов](resource-locking.md).
+- Узнайте, как [обновить существующие назначения](../how-to/update-existing-assignments.md).
+- Устранить проблемы во время назначения плана с [устранения общих неполадок](../troubleshoot/general.md).

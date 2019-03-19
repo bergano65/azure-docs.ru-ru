@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: maxluk
-ms.openlocfilehash: a22dd1114b6ad49695b1ce7cab2ff26f23b7e1be
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 8fa3cd79011ab31349ec44edf52b8fd9048d0d37
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447860"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58077978"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
 
@@ -24,10 +24,10 @@ ms.locfileid: "56447860"
 * получать доступ к ресурсам кластера Azure HDInsight Spark;
 * разрабатывать и запускать приложения Scala Spark в локальной среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-* [Комплект разработчика Oracle Java](https://www.azul.com/downloads/azure-only/zulu/).  В этом руководстве используется Java версии 8.0.202.
+* [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).  В этом руководстве используется Java версии 8.0.202.
 * IntelliJ IDEA. В этой статье используется среда [IntelliJ IDEA версии  2018.3.4](https://www.jetbrains.com/idea/download/).
 * Azure Toolkit for IntelliJ.  Дополнительные сведения см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij-installation?view=azure-java-stable).
 * WINUTILS.EXE.  Дополнительные сведения см. в статье [Problems running Hadoop on Windows](https://wiki.apache.org/hadoop/WindowsProblems) (Проблемы с запуском Hadoop в Windows).
@@ -57,10 +57,10 @@ ms.locfileid: "56447860"
 3. В главном окне выберите **Spark Project (Scala)** (Проект Spark (Scala)).
 
 4. Из раскрывающегося списка **Build tool** (Инструмент сборки) выберите один из следующих вариантов:
-      * **Maven** для поддержки мастера создания проекта Scala.
-      * **SBT** для управления зависимостями и создания проекта Scala.
+   * **Maven** для поддержки мастера создания проекта Scala.
+   * **SBT** для управления зависимостями и создания проекта Scala.
 
-    ![Диалоговое окно нового проекта](./media/apache-spark-intellij-tool-plugin/create-hdi-scala-app.png)
+     ![Диалоговое окно нового проекта](./media/apache-spark-intellij-tool-plugin/create-hdi-scala-app.png)
 
 5. Щелкните **Далее**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "56447860"
 
    a. В строке меню выберите **File** (Файл) > **Project Structure...** (Структура проекта…).
 
-   б) В окне **структуры проекта** щелкните **Artifacts** (Артефакты).  
+   2. В окне **структуры проекта** щелкните **Artifacts** (Артефакты).  
 
    c. После просмотра артефакта щелкните **Cancel** (Отменить).
 
@@ -91,7 +91,7 @@ ms.locfileid: "56447860"
 
     a. В иерархии проекта перейдите к **myApp** > **src** > **main** > **scala**.  
 
-    б) Щелкните правой кнопкой мыши папку **scala**, а затем выберите **New** (Новый) > **Scala Class** (Класс Scala).
+    2. Щелкните правой кнопкой мыши папку **scala**, а затем выберите **New** (Новый) > **Scala Class** (Класс Scala).
 
    ![Команды для создания класса Scala в проекте](./media/apache-spark-intellij-tool-plugin/hdi-spark-scala-code.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "56447860"
 
      ![Диалоговое окно создания класса Scala](./media/apache-spark-intellij-tool-plugin/hdi-spark-scala-code-object.png)
 
-   4.3. После этого файл **MyApp.scala** откроется в главном представлении. Замените код по умолчанию на приведенный ниже:  
+   d. После этого файл **MyApp.scala** откроется в главном представлении. Замените код по умолчанию на приведенный ниже:  
 
         import org.apache.spark.SparkConf
         import org.apache.spark.SparkContext
@@ -209,7 +209,7 @@ ms.locfileid: "56447860"
     |Spark clusters (Linux only) (Кластеры Spark (только для Linux))|Выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.|
     |Select an Artifact to submit (Выбор артефакта для запуска)|Оставьте параметр по умолчанию.|
     |Main class name (Имя основного класса)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.|
-    |Job configurations (Конфигурация заданий)|Вы можете изменить значения по умолчанию ключами или значениями. Дополнительные сведения см. в статье [Apache Livy REST API](http://livy.incubator.apache.org./docs/latest/rest-api.html).|
+    |Job configurations (Конфигурация заданий)|Вы можете изменить значения по умолчанию ключами или значениями. Дополнительные сведения см. в статье [Apache Livy REST API](https://livy.incubator.apache.org./docs/latest/rest-api.html).|
     |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
     |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения [Apache Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) (Сведения о конфигурации Spark).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|

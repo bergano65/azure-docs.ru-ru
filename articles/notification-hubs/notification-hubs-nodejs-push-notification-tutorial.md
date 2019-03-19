@@ -15,12 +15,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: da6be839f5e7c1bfd885015c9b0206945feb77d1
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: d90f23f52ca4c0cce3d853114acf673aa085d3c5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452791"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57889794"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 
@@ -31,7 +31,7 @@ ms.locfileid: "54452791"
 > [!IMPORTANT]
 > Для работы с этим учебником необходима активная учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут с использованием [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-nodejs-how-to-use-notification-hubs).
 
-В этом руководстве показано, как отправлять push-уведомления с помощью службы "Центры уведомлений Azure" непосредственно из приложения [Node.js](http://nodejs.org).
+В этом руководстве показано, как отправлять push-уведомления с помощью службы "Центры уведомлений Azure" непосредственно из приложения [Node.js](https://nodejs.org).
 
 Описанные сценарии включают отправку push-уведомлений в приложения на следующих платформах:
 
@@ -60,7 +60,7 @@ ms.locfileid: "54452791"
 4. В этой папке найдите пакет **azure** , который содержит библиотеки для доступа к центру уведомлений.
 
 > [!NOTE]
-> Дополнительные сведения об установке NPM доступны в официальном [блоге о NPM](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+> Дополнительные сведения об установке NPM доступны в официальном [блоге о NPM](https://blog.npmjs.org/post/85484771375/how-to-install-npm).
 
 ### <a name="import-the-module"></a>Импорт модуля
 
@@ -107,7 +107,7 @@ ms.locfileid: "54452791"
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных см. в разделе **Payload** (Полезные данные) документа [About GCM Connection Server](http://developer.android.com/google/gcm/server.html#payload) (О сервере подключений GCM).
+Дополнительные сведения о формате полезных данных см. в разделе **Payload** (Полезные данные) документа [About GCM Connection Server](https://developer.android.com/google/gcm/server.html#payload) (О сервере подключений GCM).
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
@@ -132,7 +132,7 @@ ms.locfileid: "54452791"
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных см. в разделе **Notification Payload** (Полезные данные уведомления) документа [Local and Push Notification Programming Guide](http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html) (Руководство по программированию локальных и push-уведомлений).
+Дополнительные сведения о формате полезных данных см. в разделе **Notification Payload** (Полезные данные уведомления) документа [Local and Push Notification Programming Guide](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html) (Руководство по программированию локальных и push-уведомлений).
 
 В следующем коде используется экземпляр `ApnsService`, предоставляемый `NotificationHubService`, для отправки оповещений всем клиентам:
 
@@ -194,7 +194,7 @@ ms.locfileid: "54452791"
     });
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Примеры фрагментов выше позволяют легко создать инфраструктуру службы для отправки push-уведомлений на широкий спектр устройств. Теперь, когда вы познакомились с основами использования центров уведомлений с Node.js, используйте следующие ссылки для получения дополнительных сведений о том, как можно дальше расширить эти возможности.
 
@@ -221,9 +221,9 @@ ms.locfileid: "54452791"
 [3]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-05.png
 [4]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-06.png
 [5]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-07.png
-[SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-[Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/library/windowsazure/jj927170.aspx
-[SqlFilter]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
+[SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
+[Azure Service Bus Notification Hubs]: https://msdn.microsoft.com/library/windowsazure/jj927170.aspx
+[SqlFilter]: https://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
 [Web Site with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
 [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
 [Previous Management Portal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png

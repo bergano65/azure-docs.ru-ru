@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 06430bf476c2e9f3af2102272fb54d201a3f1066
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
-ms.translationtype: HT
+ms.openlocfilehash: 862846c8ec544cf082d45cea650269b6518a016f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53790815"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58003530"
 ---
 # <a name="install-the-mobility-service-manually-on-vmware-vms-and-physical-servers"></a>Ручная установка службы Mobility Service на виртуальных машинах VMware и физических серверах
 
@@ -65,29 +65,30 @@ ms.locfileid: "53790815"
 
 1. Скопируйте установщик в локальную папку (например, C:\Temp) на сервере, который необходимо защитить. 
 
-  ```
-  cd C:\Temp
-  ren Microsoft-ASR_UA*Windows*release.exe MobilityServiceInstaller.exe
-  MobilityServiceInstaller.exe /q /x:C:\Temp\Extracted
-  cd C:\Temp\Extracted.
-  ```
+   ```
+   cd C:\Temp
+   ren Microsoft-ASR_UA*Windows*release.exe MobilityServiceInstaller.exe
+   MobilityServiceInstaller.exe /q /x:C:\Temp\Extracted
+   cd C:\Temp\Extracted.
+   ```
 2. Выполните установку следующим образом.
 
-  ```
-  UnifiedAgent.exe /Role "MS" /InstallLocation "C:\Program Files (x86)\Microsoft Azure Site Recovery" /Platform "VmWare" /Silent
-  ```
+   ```
+   UnifiedAgent.exe /Role "MS" /InstallLocation "C:\Program Files (x86)\Microsoft Azure Site Recovery" /Platform "VmWare" /Silent
+   ```
 
 3. Зарегистрируйте агент на сервере конфигурации.
 
-  ```
-  cd C:\Program Files (x86)\Microsoft Azure Site Recovery\agent
-  UnifiedAgentConfigurator.exe  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
-  ```
+   ```
+   cd C:\Program Files (x86)\Microsoft Azure Site Recovery\agent
+   UnifiedAgentConfigurator.exe  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
+   ```
 
 #### <a name="installation-settings"></a>Параметры установки
+
 **Параметр** | **Дополнительные сведения**
 --- | ---
-Использование | UnifiedAgent.exe /Role <MS|MT> /InstallLocation <Install Location> /Platform "VmWare" /Silent
+Использование | UnifiedAgent.exe/Role < MS\|MT > /InstallLocation  <Install Location> /silent «VmWare» / Platform
 журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
 /Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 /InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
@@ -95,6 +96,7 @@ ms.locfileid: "53790815"
 /Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
+
 **Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | UnifiedAgentConfigurator.exe  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
@@ -106,39 +108,42 @@ ms.locfileid: "53790815"
 ### <a name="on-a-linux-machine"></a>На компьютере с Linux
 
 1. Скопируйте установщик в локальную папку (например, /tmp) на сервере, который необходимо защитить. Выполните следующие команды в окне терминала.
-  ```
-  cd /tmp ;
+   ```
+   cd /tmp ;
 
-  tar -xvzf Microsoft-ASR_UA*release.tar.gz
-  ```
+   tar -xvzf Microsoft-ASR_UA*release.tar.gz
+   ```
 2. Выполните установку следующим образом.
 
-  ```
-  sudo ./install -d <Install Location> -r MS -v VmWare -q
-  ```
+   ```
+   sudo ./install -d <Install Location> -r MS -v VmWare -q
+   ```
 3. После завершения установки службу Mobility Service необходимо зарегистрировать на сервере конфигурации. Выполните следующую команду, чтобы зарегистрировать службу Mobility Service на сервере конфигурации.
 
-  ```
-  /usr/local/ASR/Vx/bin/UnifiedAgentConfigurator.sh -i <CSIP> -P /var/passphrase.txt
-  ```
+   ```
+   /usr/local/ASR/Vx/bin/UnifiedAgentConfigurator.sh -i <CSIP> -P /var/passphrase.txt
+   ```
 
 
 #### <a name="installation-settings"></a>Параметры установки
+
 **Параметр** | **Дополнительные сведения**
 --- | ---
-Использование | ./install -d <Install Location> -r <MS|MT> -v VmWare -q
+Использование | . / install -d <Install Location> - r < MS\|MT > - v, VmWare - q
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 -d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
 -v | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure. 
 -q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
+
 **Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i <CSIP> -P <PassphraseFilePath>
 -i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
 -P |  (Обязательный параметр.) Полный путь к файлу, в котором хранится парольная фраза. Используйте любую допустимую папку
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 - [Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware](vmware-azure-tutorial.md)
 - [Настройка аварийного восстановления в Azure для локальных физических серверов](physical-azure-disaster-recovery.md)

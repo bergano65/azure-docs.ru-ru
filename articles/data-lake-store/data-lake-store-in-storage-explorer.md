@@ -1,7 +1,7 @@
 ---
 title: Управление ресурсами Azure Data Lake Storage 1-го поколения в обозревателе службы хранилища Azure
 description: Сведения о доступе к данным и ресурсам Azure Data Lake Storage 1-го поколения, а также управление ими в обозревателе службы хранилища Azure
-Keywords: Azure Data Lake Store, Azure Storage Explorer
+Keywords: Store Озера данных Azure, обозревателя службы хранилища Azure
 services: Data Lake Store
 documentationcenter: ''
 author: jejiang
@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/05/2018
 ms.author: jejiang
-ms.openlocfilehash: 6cc4a5d5bfc2056f2517bcbcecb19b9f6b2f437a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.openlocfilehash: bf2af67bb9498d4814f63fa66fdd50171ce0b4a1
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52966268"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57534350"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
 
@@ -27,7 +27,7 @@ ms.locfileid: "52966268"
 
 Другое преимущество заключается в том, что вам не нужно разрешение в подписке для управления данными Data Lake Storage 1-го поколения. В обозревателе службы хранилища вы можете добавить путь Data Lake Storage 1-го поколения к узлу **Локальные и присоединенные**, пока действует соответствующее разрешение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 *   Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial).
@@ -110,7 +110,7 @@ ms.locfileid: "52966268"
 
 С помощью элементов ниже показано, как управлять ресурсами в учетной записи Data Lake Storage 1-го поколения. Следуйте приведенным ниже инструкциям, чтобы выполнить необходимую задачу.
 
-### <a name="upload-files"></a>Отправка файлов
+### <a name="upload-files"></a>Upload files
 
 1. На панели инструментов в главной области нажмите кнопку **Отправить**, а затем в раскрывающемся меню выберите **Отправить файлы**.
 
@@ -194,8 +194,8 @@ ms.locfileid: "52966268"
 ![Прямая ссылка в проводнике](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-deep-link.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
-* Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](http://www.storageexplorer.com).
+## <a name="next-steps"></a>Дальнейшие действия
+* Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
 * Сведения об управлении Azure DB Cosmos в Обозревателе службы хранилища Azure см. в [этой статье](https://docs.microsoft.com/azure/cosmos-db/storage-explorer).
 * [Приступая к работе с обозревателем службы хранилища (предварительная версия)](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 * [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview).

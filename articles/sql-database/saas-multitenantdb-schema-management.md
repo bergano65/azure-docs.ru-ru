@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: billgib, sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: b3855386f89eda71e145df6dd83d1b1e7e093735
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: c7c10608d90f7659b108d2d8c80038f59396de2d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563649"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57878080"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>Управление схемой в приложении SaaS, использующем сегментированные мультитенантные базы данных SQL
 
@@ -41,7 +41,7 @@ ms.locfileid: "55563649"
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Должно быть развернуто приложение SaaS Wingtip Tickets для мультитенантных баз данных.
     - Соответствующие инструкции представлены в первом руководстве по приложению SaaS Wingtip Tickets для мультитенантных баз данных.<br />[Deploy and explore a sharded multi-tenant application that uses Azure SQL Database](saas-multitenantdb-get-started-deploy.md) (Развертывание и изучение сегментированного мультитенантного приложения, использующего базу данных SQL Azure).
@@ -53,7 +53,7 @@ ms.locfileid: "55563649"
 - Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 
 > [!NOTE]
-> В этом руководстве используются функции службы базы данных SQL Azure в ограниченной предварительной версии ([Задания обработки эластичных баз данных](sql-database-elastic-database-client-library.md)). Если вы хотите пройти это руководство, отправьте идентификатор вашей подписки по адресу *SaaSFeedback@microsoft.com* с темой "Задания обработки эластичных баз данных (предварительная версия)". Получив подтверждение о включении подписки, [скачайте и установите предварительную версию командлетов заданий](https://github.com/jaredmoo/azure-powershell/releases). Это ограниченная предварительная версия, поэтому если у вас возникнут вопросы или необходимость получить поддержку, напишите по адресу *SaaSFeedback@microsoft.com*.
+> В этом руководстве используются функции службы базы данных SQL Azure в ограниченной предварительной версии ([Задания обработки эластичных баз данных](sql-database-elastic-database-client-library.md)). Если вы хотите пройти это руководство, отправьте идентификатор вашей подписки для *SaaSFeedback\@microsoft.com* с темой = предварительной версией гибкого заданий. Получив подтверждение о включении подписки, [скачайте и установите предварительную версию командлетов заданий](https://github.com/jaredmoo/azure-powershell/releases). Эта предварительная версия ограничено, поэтому обратитесь к *SaaSFeedback\@microsoft.com* вопросы и поддержка.
 
 ## <a name="introduction-to-saas-schema-management-patterns"></a>Общие сведения о шаблонах управления схемой SaaS
 
@@ -164,7 +164,7 @@ ms.locfileid: "55563649"
 * [Управление масштабируемыми облачными базами данных](sql-database-elastic-jobs-overview.md)
 * [Создание развернутых баз данных SQL Azure и управление ими с помощью заданий обработки эластичных БД (предварительная версия)](sql-database-elastic-jobs-create-and-manage.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 
@@ -173,5 +173,5 @@ ms.locfileid: "55563649"
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.
 
-После этого ознакомьтесь с [руководством по созданию отчетов Ad-hoc](saas-multitenantdb-adhoc-reporting.md), чтобы узнать о выполнении распределенных запросов в клиентских базах данных.
+Далее ознакомьтесь [автоматизированную систему отчетности руководстве](saas-multitenantdb-adhoc-reporting.md) чтобы узнать о выполнении распределенных запросов в клиентских базах данных.
 

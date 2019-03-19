@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/02/2019
+ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: 81684031ddaa1ca8fa63a6c7e512f3fe6769a639
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 98df1d9612d18e4ab5044bd92822b2df76286b12
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859816"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57340870"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,7 +30,7 @@ ms.locfileid: "55859816"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Предложения фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| Язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Фраза список рекомендаций | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
@@ -53,7 +53,7 @@ ms.locfileid: "55859816"
 
  - В языке и региональных параметрах `zh-cn` служба LUIS ожидает упрощенную кодировку китайского языка вместо традиционной кодировки.
  - Имена намерений, сущностей, свойств и регулярных выражений можно указывать китайскими или латинскими символами.
- - Сведения о поддерживаемых готовых предметных областях в языке и региональных параметрах `zh-cn` см. в [справочнике по готовым предметным областям](luis-reference-prebuilt-domains.md).
+ - См. в разделе [ссылку предварительно созданных доменов](luis-reference-prebuilt-domains.md) сведения, на котором предварительно созданных доменов поддерживаются в `zh-cn` языка и региональных параметров.
 <!--- When writing regular expressions in Chinese, do not insert whitespace between Chinese characters.-->
 
 ### <a name="japanese-support-notes"></a>* Примечания о поддержке японского языка

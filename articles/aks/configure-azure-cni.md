@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/11/2018
 ms.author: iainfou
-ms.openlocfilehash: 7d91366ee0fec2930484f7aaa7468e6d1d62f233
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 4bd934c710d6300e95c60742d5873f5b71bdae59
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55701641"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58002183"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "55701641"
 
 В этой статье показано, как использовать сеть *Azure CNI*, чтобы создавать и использовать подсеть виртуальной сети для кластера AKS. Дополнительные сведения о сетях см. в статье [Основные понятия сети в Службе Azure Kubernetes (AKS)][aks-network-concepts].
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Виртуальная сеть для кластера AKS должна разрешать исходящее подключение к Интернету.
 * Не создавайте больше одного кластера AKS в одной подсети.
@@ -143,7 +143,7 @@ az aks create \
 
 * *Можно ли настроить политики сети для каждого контейнера pod?*
 
-  № Политики сети для каждого контейнера pod сейчас не поддерживаются.
+  Политики сети Kubernetes в настоящее время доступна Предварительная версия функции в AKS. Чтобы приступить к работе, см. в разделе [защиты трафика между модулей с помощью политик сети в AKS][network-policy].
 
 * *Можно ли настроить максимальное число контейнеров pod, развертываемых на узел?*
 
@@ -159,7 +159,7 @@ az aks create \
 
   Не рекомендуется, но эта конфигурация возможна. Диапазон адресов службы — это набор виртуальных IP-адресов, которые Kubernetes присваивает внутренним службам в кластере. Сеть Azure не видит адреса в диапазоне IP-адресов службы кластера Kubernetes. Из-за этого позже возможно создать подсеть в виртуальной сети кластера, которая пересекается с диапазоном адресов службы. При возникновении такого пересекания Kubernetes может присвоить службе IP-адрес, который уже используется другим ресурсом в подсети, что приводит к непредсказуемому поведению или сбоям. Убедившись, что диапазон адресов используется за пределами виртуальной сети кластера, можно избежать такого риска пересечений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="networking-in-aks"></a>Сетевое взаимодействие в AKS
 
@@ -201,3 +201,4 @@ az aks create \
 [aks-ingress-static-tls]: ingress-static-ip.md
 [aks-http-app-routing]: http-application-routing.md
 [aks-ingress-internal]: ingress-internal-ip.md
+[network-policy]: use-network-policies.md

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: c7b9921d7eacb9b40e39f8e68d13357ce6bcfd78
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 5d7665cbfdf855e194f61910f0c8ee2bce5469b1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51241554"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57852497"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
 
@@ -30,7 +30,7 @@ ms.locfileid: "51241554"
 При создании виртуальной машины можно сохранить шаблон Resource Manager, при необходимости настроить его, а затем использовать для создания дополнительных виртуальных машин. Нужно создать собственный частный репозиторий для хранения настраиваемых шаблонов Resource Manager.  
 
 * Сведения о создании репозитория GitHub см. в [этой статье](https://help.github.com/categories/bootcamp/).
-* Дополнительные сведения о создании проекта Azure DevOps Services с репозиторием Git см. в статье о [подключении к Azure DevOps Services](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
+* Узнайте, как создать проект Azure DevOps Services с репозиторием Git, см. в разделе [подключение к службам Azure DevOps](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
 
 Вот как может выглядеть содержащий артефакты репозиторий в GitHub:  
 
@@ -78,22 +78,22 @@ ms.locfileid: "51241554"
 
     ![Кнопка добавления репозитория](./media/devtest-lab-add-repo/devtestlab-add-repo.png)
 5. На второй странице **Репозитории** укажите следующие сведения:
-  1. **Имя**. Введите имя репозитория.
-  2. **URL-адрес клона Git.** Введите URL-адрес клона HTTPS Git, скопированный ранее из GitHub или Azure DevOps Services.
-  3. **Ветвь.** Укажите ветвь для получения определений.
-  4. **Личный маркер доступа.** Укажите личный маркер доступа, полученный ранее из GitHub или Azure DevOps Services.
-  5. **Путь к папке.** Введите по меньшей мере один путь к папке относительно URL-адреса клона, содержащего определения артефактов или шаблонов Resource Manager. При указании подкаталога обязательно включите косую черту в путь к папке.
+   1. **Имя**. Введите имя репозитория.
+   2. **URL-адрес клона Git.** Введите URL-адрес клона HTTPS Git, скопированный ранее из GitHub или Azure DevOps Services.
+   3. **Ветвь.** Укажите ветвь для получения определений.
+   4. **Личный маркер доступа.** Укажите личный маркер доступа, полученный ранее из GitHub или Azure DevOps Services.
+   5. **Путь к папке.** Введите по меньшей мере один путь к папке относительно URL-адреса клона, содержащего определения артефактов или шаблонов Resource Manager. При указании подкаталога обязательно включите косую черту в путь к папке.
 
-     ![Область "Репозитории"](./media/devtest-lab-add-repo/devtestlab-repo-blade.png)
+      ![Область "Репозитории"](./media/devtest-lab-add-repo/devtestlab-repo-blade.png)
 6. Щелкните **Сохранить**.
 
 ### <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Диагностика сбоев артефактов в лаборатории](devtest-lab-troubleshoot-artifact-failure.md)
-* [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](http://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
+* [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После создания частного репозитория Git в зависимости от потребностей можно выполнить одно или оба из следующих действий:
 * Сохраните [пользовательские артефакты](devtest-lab-artifact-author.md). Их можно использовать позже для создания виртуальных машин.
 * [Создайте среды со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Resource Manager](devtest-lab-create-environment-from-arm.md). Затем шаблоны можно сохранить в частном репозитории.

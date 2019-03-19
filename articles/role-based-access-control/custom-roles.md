@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6307c57f32700c0c2dd2e5da15b98a2a54dbe9c4
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: f795571de275453738d23e80885f4d9006ca3a20
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339334"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56804456"
 ---
 # <a name="custom-roles-for-azure-resources"></a>Пользовательские роли для ресурсов Azure
 
@@ -43,6 +43,7 @@ ms.locfileid: "56339334"
     "Microsoft.Compute/virtualMachines/start/action",
     "Microsoft.Compute/virtualMachines/restart/action",
     "Microsoft.Authorization/*/read",
+    "Microsoft.ResourceHealth/availabilityStatuses/read",
     "Microsoft.Resources/subscriptions/resourceGroups/read",
     "Microsoft.Insights/alertRules/*",
     "Microsoft.Insights/diagnosticSettings/*",
@@ -65,16 +66,19 @@ ms.locfileid: "56339334"
 
 ## <a name="steps-to-create-a-custom-role"></a>Процедура создания пользовательской роли
 
+1. Как вы захотите создать пользовательскую роль
+
+    Можно создать пользовательские роли, используя [Azure PowerShell](custom-roles-powershell.md), [Azure CLI](custom-roles-cli.md), или [REST API](custom-roles-rest.md).
+
 1. Определение требуемых разрешений
 
-    При создании пользовательской роли вам нужно знать, какие операции поставщика ресурсов доступны, чтобы определить разрешения. Чтобы просмотреть список операций, используйте команду [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) или [az provider operation list](/cli/azure/provider/operation#az-provider-operation-list).
-    Чтобы указать разрешения для пользовательской роли, можно добавить операции в свойство `Actions` или `NotActions` [определения роли](role-definitions.md). При наличии операций с данными их можно добавить в свойство `DataActions` или `NotDataActions`.
+    При создании пользовательской роли вам нужно знать, какие операции поставщика ресурсов доступны, чтобы определить разрешения. Чтобы просмотреть список операций, см. в разделе [операции поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md). Вы добавите какие-либо операции, `Actions` или `NotActions` свойства [определения роли](role-definitions.md). Если у вас есть операции с данными, вы добавите их к `DataActions` или `NotDataActions` свойства.
 
-2. Создание настраиваемой роли
+1. Создание настраиваемой роли
 
-    Для создания пользовательской роли вы можете использовать Azure PowerShell или Azure CLI. В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. После этого можно воспользоваться командой [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition) или [az role definition create](/cli/azure/role/definition#az-role-definition-create) для создания настраиваемой роли. Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователей](built-in-roles.md#user-access-administrator).
+    В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. После этого можно воспользоваться командой [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition) или [az role definition create](/cli/azure/role/definition#az-role-definition-create) для создания настраиваемой роли. Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
-3. Проверка пользовательской роли
+1. Проверка пользовательской роли
 
     Создав пользовательскую роль, нужно проверить правильность ее работы. Если позже потребуется корректировка, вы можете обновить пользовательскую роль.
 
@@ -84,7 +88,7 @@ ms.locfileid: "56339334"
 
 Пользовательская роль имеет указанные ниже свойства.
 
-| Свойство | Обязательно | type | ОПИСАНИЕ |
+| Свойство | Обязательно для заполнения | type | ОПИСАНИЕ |
 | --- | --- | --- | --- |
 | `Name` | Да | Строка | Отображаемое имя пользовательской роли. Определение роли — это ресурс уровня подписки, который можно использовать в нескольких подписках, использующих один и тот же каталог Azure AD. Это отображаемое имя должно быть уникальным в рамках каталога Azure AD. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 128. |
 | `Id` | Yes | Строка | Уникальный идентификатор настраиваемой роли. Для Azure PowerShell и Azure CLI этот идентификатор формируется автоматически при создании роли. |
@@ -106,7 +110,7 @@ ms.locfileid: "56339334"
 | Обновление пользовательской роли | `Microsoft.Authorization/ roleDefinition/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут обновлять пользовательские роли в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
 | Просмотр пользовательской роли | `Microsoft.Authorization/ roleDefinition/read` | Пользователи с разрешением на эту операцию в определенной области могут просматривать пользовательские роли, которые доступны для назначения в этой области. Все встроенные роли обеспечивают доступность пользовательских ролей для назначения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell](custom-roles-powershell.md).
 - [Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles-cli.md).
 - [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md)

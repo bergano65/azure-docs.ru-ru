@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 6c3312b43ef8c0a72b505fb9bc21236f15a79052
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 663283c4dff16194dea78afbf5dd393f1fa833b1
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313200"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56823813"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -42,6 +42,7 @@ ms.locfileid: "56313200"
 * [C#](#c-example)
 * [Скрипт C# (CSX)](#c-script-example)
 * [JavaScript](#javascript-example)
+* [Java](#java-example)
 
 ### <a name="c-example"></a>Пример C#
 
@@ -161,6 +162,33 @@ public class Message
 }
 ```
 
+### <a name="java-example"></a>Пример Java
+
+В следующем примере используется `@SendGridOutput` заметки [Java функции библиотеки времени выполнения](/java/api/overview/azure/functions/runtime) отправить сообщение электронной почты, с помощью выходной привязки.
+
+```java
+@FunctionName("SendEmail")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
+            @SendGridOutput(
+                name = "email", dataType = "String", apiKey = "SendGridConnection", to = "test@example.com", from = "test@example.com",
+                subject= "Sending with SendGrid", text = "Hello from Azure Functions"
+                ) OutputBinding<String> email
+            )
+    {
+        String name = request.getBody().orElse("World");
+
+        final String emailBody = "{\"personalizations\":" +
+                                    "[{\"to\":[{\"email\":\"test@example.com\"}]," +
+                                    "\"subject\":\"Sending with SendGrid\"}]," +
+                                    "\"from\":{\"email\":\"test@example.com\"}," +
+                                    "\"content\":[{\"type\":\"text/plain\",\"value\": \"Hello" + name + "\"}]}";
+
+        email.setValue(emailBody);
+        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+    }
+```
+
 ### <a name="javascript-example"></a>Пример JavaScript
 
 В следующем примере показаны выходная привязка SendGrid в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку.
@@ -263,7 +291,7 @@ public static void Run(
 |from|Недоступно|Адрес электронной почты для всех функций.| 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

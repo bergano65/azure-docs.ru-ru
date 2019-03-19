@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0b1e784d4ca92f0da0e37d4afc1efcf09282cb4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6cc9b2b38ae0ba97e5a29d58d1605e5452224e4b
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162872"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57445761"
 ---
 # <a name="azure-active-directory-v20-and-oauth-20-on-behalf-of-flow"></a>Azure Active Directory версии 2.0 и поток On-Behalf-Of в OAuth 2.0
 
@@ -71,12 +71,12 @@ https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
 
 | Параметр |  | ОПИСАНИЕ |
 | --- | --- | --- |
-| `grant_type` | Обязательно | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
-| `client_id` | Обязательно | Идентификатор приложения (клиента), назначенный вашему приложению [порталом регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или новым [порталом регистрации приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview). |
-| `client_secret` | Обязательно | Секрет приложения, созданный для приложения на портале регистрации приложений и использованный для его регистрации. |
-| `assertion` | Обязательно | Значение токена, используемого в запросе. |
-| `scope` | Обязательно | Список областей для запроса токена, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md). |
-| `requested_token_use` | Обязательно | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
+| `grant_type` | Обязательно для заполнения | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `client_id` | Обязательно для заполнения | Идентификатор приложения (клиента), назначенный вашему приложению [порталом регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или новым [порталом регистрации приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview). |
+| `client_secret` | Обязательно для заполнения | Секрет приложения, созданный для приложения на портале регистрации приложений и использованный для его регистрации. |
+| `assertion` | Обязательно для заполнения | Значение токена, используемого в запросе. |
+| `scope` | Обязательно для заполнения | Список областей для запроса токена, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md). |
+| `requested_token_use` | Обязательно для заполнения | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
 
 #### <a name="example"></a>Пример
 
@@ -103,13 +103,13 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 
 | Параметр |  | ОПИСАНИЕ |
 | --- | --- | --- |
-| `grant_type` | Обязательно | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
-| `client_id` | Обязательно | Идентификатор приложения (клиента), назначенный вашему приложению [порталом регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или новым [порталом регистрации приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview). |
-| `client_assertion_type` | Обязательно | Значение должно быть равно `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
-| `client_assertion` | Обязательно | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения. |
-| `assertion` | Обязательно | Значение токена, используемого в запросе. |
-| `requested_token_use` | Обязательно | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
-| `scope` | Обязательно | Список областей для запроса маркера, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md).|
+| `grant_type` | Обязательно для заполнения | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `client_id` | Обязательно для заполнения | Идентификатор приложения (клиента), назначенный вашему приложению [порталом регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или новым [порталом регистрации приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview). |
+| `client_assertion_type` | Обязательно для заполнения | Значение должно быть равно `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
+| `client_assertion` | Обязательно для заполнения | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения. |
+| `assertion` | Обязательно для заполнения | Значение токена, используемого в запросе. |
+| `requested_token_use` | Обязательно для заполнения | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
+| `scope` | Обязательно для заполнения | Список областей для запроса маркера, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md).|
 
 Обратите внимание на то, что параметры являются почти такими же, как и при использовании запроса с помощью общего секрета, за исключением параметра `client_secret`, который заменяется двумя параметрами: `client_assertion_type` и `client_assertion`.
 
@@ -193,7 +193,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVG
 
 ## <a name="gaining-consent-for-the-middle-tier-application"></a>Получение согласия для приложения среднего уровня
 
-В зависимости от аудитории приложения можно использовать разные стратегии, обеспечивающие успешную работу потока OBO. Во всех случаях конечная цель — обеспечить предоставление соответствующего согласия. А как это происходит — зависит от пользователей, для которых предназначено ваше приложение. 
+В ряде аудитории для приложения могут использовать иные стратегии для обеспечения того, что поток OBO выполнена успешно. Во всех случаях конечная цель — обеспечить предоставление соответствующего согласия. А как это происходит — зависит от пользователей, для которых предназначено ваше приложение. 
 
 ### <a name="consent-for-azure-ad-only-applications"></a>Согласие для приложений Azure AD
 
@@ -223,7 +223,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVG
 
 Если клиент использует неявный поток для получения id_token, а его URL-адрес ответа содержит подстановочные знаки, то этот id_token не может использоваться для потока OBO.  Тем не менее, конфиденциальный клиент может активировать маркеры доступа, полученные с помощью потока неявного предоставления, даже если для инициирующего клиента зарегистрирован URL-адрес ответа с подстановочными знаками. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о протоколе OAuth 2.0 и другом способе проверки подлинности между службами с использованием учетных данных клиента.
 

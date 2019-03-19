@@ -9,17 +9,17 @@ editor: spelluru
 ms.assetid: 68a34c00-5600-43f6-bbcc-fea599d500da
 ms.service: service-bus-messaging
 ms.devlang: tbd
-ms.topic: hero-article
+ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 3cf43de73fd06da6965d0baf17878c5fb10d7caf
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
-ms.translationtype: HT
+ms.openlocfilehash: dfdea9f8d50c467bf0e4317c8d95135afefa765f
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56587180"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57778014"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 
@@ -32,7 +32,7 @@ ms.locfileid: "56587180"
 3. Написание консольного приложения .NET Core для отправки набора сообщений в очередь.
 4. Написание консольного приложения .NET Core для получения этих сообщений из очереди.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 1. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
 2. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
@@ -400,7 +400,7 @@ ms.locfileid: "56587180"
 
 Поздравляем! Теперь вы создали очередь, отправили в нее набор сообщений и получили сообщения из нее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples), демонстрирующими расширенные возможности обмена сообщениями служебной шины.
 

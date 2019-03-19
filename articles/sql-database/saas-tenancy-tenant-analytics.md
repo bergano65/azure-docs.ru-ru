@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: f7c482a0308d3c2b2583d99cf4079040065b80c0
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 9f88314bbf507dc3b4e282532acfa079c2a63cce
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561398"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57890548"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Межклиентская аналитика на основе извлеченных с однотенантного приложения данных
  
@@ -65,7 +65,7 @@ ms.locfileid: "55561398"
 
 ## <a name="setup"></a>Настройка
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -93,7 +93,7 @@ ms.locfileid: "55561398"
     - Чтобы использовать базу данных SQL с хранилищем столбцов, задайте **$DemoScenario** = **3**.  
 3. Нажмите клавишу **F5** для запуска демонстрационного сценария (который вызывает сценарий *Deploy-TenantAnalytics<XX>.ps1*), создающего хранилище аналитики клиента. 
 
-Теперь, когда вы развернули приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения серверов **tenants1-dpt-&lt;Пользователь&gt;** и **catalog-dpt-&lt;Пользователь&gt;**, используя имя для входа *developer* и пароль *P@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
+Теперь, развернутое приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-dpt -&lt;пользователя&gt;**  и **catalog-dpt -&lt;пользователя&gt;**  серверов с использованием имени входа = *разработчика*, пароль = *P\@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
 
 ![Обзор архитектуры](media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "55561398"
 
     ![Вход в Power BI](./media/saas-tenancy-tenant-analytics/powerBISignIn.PNG)
 
-5. В левой области выберите **База данных**, затем введите имя пользователя *developer* и пароль *P@ssword1*. Щелкните **Подключить**.  
+5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
 
     ![Вход в базу данных](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 
@@ -225,7 +225,7 @@ AverageTicketsSold = AVERAGEX( SUMMARIZE( TableName, TableName[Venue Name] ), CA
 
 Вы рассмотрели тенденции в данных клиентов из приложения WingTip. Вы можете ознакомиться с другими способами того, как приложение может помочь в принятии бизнес-решений поставщикам приложений SaaS. Поставщики могут улучшить удовлетворение потребностей клиентов. В этом руководстве вы узнали о средствах, необходимых для выполнения аналитики данных клиентов, чтобы помочь организации в принятии решений на основе данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

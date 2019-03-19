@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 06/27/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f01a32612b335003856a372ece15ef300b9d93db
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
-ms.translationtype: HT
+ms.openlocfilehash: c82c5c74fe13bad99528486be69089df5f477457
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37063280"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57436346"
 ---
 # <a name="os-backup-and-restore-for-type-ii-skus"></a>Резервное копирование и восстановление операционной системы для номеров SKU типа II
 
@@ -64,7 +64,7 @@ ms.locfileid: "37063280"
 >[!NOTE] 
 >Вам необходимо скопировать файл в нужное расположение после его восстановления из файла резервной копии.
 
-На снимке экрана ниже показано восстановление полной резервной копии:
+На следующем снимке экрана показано восстановление полной резервной копии:
 
 ![HowtoRestoreaBackup.PNG](media/HowToHLI/OSBackupTypeIISKUs/HowtoRestoreaBackup.PNG)
 
@@ -96,4 +96,4 @@ EXCLUDE_VG=( vgHANA-data-HC2 vgHANA-data-HC3 vgHANA-log-HC2 vgHANA-log-HC3 vgHAN
 BACKUP_PROG_EXCLUDE=("${BACKUP_PROG_EXCLUDE[@]}" '/media' '/var/tmp/*' '/var/crash' '/hana' '/usr/sap'  ‘/proc’)
 ```
 
-На снимке экрана ниже показано восстановление полной резервной копии: ![RearToolConfiguration.PNG](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)
+На следующем снимке экрана показано восстановление полной резервной копии: ![RearToolConfiguration.PNG](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)

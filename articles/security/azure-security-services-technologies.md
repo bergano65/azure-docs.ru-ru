@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: barclayn
-ms.openlocfilehash: 7577a05302dcf23cc68666685c1537c0eb31f831
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 13183282e5e607f0052194a474203f97e0160adb
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115578"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57246140"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "56115578"
 |--------|--------|
 |[Центр&nbsp;безопасности&nbsp;Azure](../security-center/security-center-intro.md)| Облачное решение защиты рабочих нагрузок обеспечивает управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.|
 |[Хранилище ключей Azure](../key-vault/key-vault-overview.md)| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
-|[Служба Log Analytics](../log-analytics/log-analytics-overview.md)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
+|[Журналы Azure Monitor](../log-analytics/log-analytics-overview.md)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
 |[Лаборатория для разработки и тестирования Azure](../devtest-lab/devtest-lab-overview.md)|Это служба, помогающая разработчикам и тест-инженерам быстро создавать среды в Azure при минимальных потерях и контроле издержек.  |
 
 <!---|[Azure&nbsp;Disk&nbsp;Encryption](azure-security-disk-encryption-overview.md)| THIS WILL GO TO THE NEW OVERVIEW TOPIC MEGHAN STEWART IS WRITING|--->

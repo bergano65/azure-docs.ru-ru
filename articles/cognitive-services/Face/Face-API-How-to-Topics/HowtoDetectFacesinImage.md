@@ -1,180 +1,148 @@
 ---
-title: 'Пример: Обнаружение лиц на изображениях с помощью API распознавания лиц'
+title: Обнаружение лиц на изображении - API распознавания лиц
 titleSuffix: Azure Cognitive Services
-description: Использование API распознавания лиц для обнаружения лиц на изображениях.
+description: Сведения об использовании различных данных, возвращаемых с помощью функции обнаружения лиц.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
-ms.topic: sample
-ms.date: 03/01/2018
+ms.topic: conceptual
+ms.date: 02/22/2019
 ms.author: sbowles
-ms.openlocfilehash: 30d5294defe02ca6c8cfd588648429859bdf19ad
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: bf3af8f5d1d2f063199a8275c2f49c70140e8732
+ms.sourcegitcommit: 89b5e63945d0c325c1bf9e70ba3d9be6888da681
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55856400"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57588777"
 ---
-# <a name="example-how-to-detect-faces-in-image"></a>Пример: Как обнаруживать лица на изображении
+# <a name="get-face-detection-data"></a>Получение данных обнаружения лиц
 
-В этом руководстве демонстрируется обнаружение лиц на изображении и извлечение таких атрибутов лица, как пол, возраст или положение. Примеры написаны на языке C# с помощью клиентской библиотеки API распознавания лиц. 
+В этом руководстве будет показано, как использовать обнаружение лиц для извлечения таких атрибутов, как пол, возраст или поза из данного изображения. Фрагменты кода в этом руководстве создаются на языке C# с помощью клиентской библиотеки API распознавания лиц, но те же функциональные возможности доступна через [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
-## <a name="concepts"></a>Основные понятия
+В этом руководстве показано, как для:
 
-Если вы не знакомы с какими либо понятиями в этом руководстве, ознакомьтесь с определениями в нашем [глоссарии](../Glossary.md) в любое время. 
+- Получение расположения и размеры сторон изображения.
+- Получите расположение различных позу (учеников, а нос — папы, рот и т. д.) в образ.
+- Думаю, пол, возраст и определение эмоций и другие атрибуты обнаруженного лица.
 
-- Обнаружение лиц
-- Ориентиры лица
-- Положение головы
-- Атрибуты лица
+## <a name="setup"></a>Настройка
 
-## <a name="preparation"></a>Подготовка
+В этом руководстве предполагается, что вы уже построены **[FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet)** объект, названный `faceClient`, лиц подписки ключа и конечной точки URL-адрес. На этой странице можно использовать функцию обнаружения лиц с помощью вызова **[DetectWithUrlAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet)** (используемые в данном руководстве) или **[DetectWithStreamAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet)**. См. в разделе [обнаружения лиц краткое руководство по C# ](../quickstarts/csharp-detect-sdk.md) инструкции о том, как выполнить такую настройку.
 
-В этом примере демонстрируются следующие возможности: 
+В этом руководстве основное внимание уделяется особенности вызова найти&mdash;какие аргументы можно передать и что делать с возвращенными данными. Рекомендуется, только запрашивая необходимых компонентов, так как каждая операция занимает больше времени для завершения.
 
-- Распознавание лиц на изображении и их выделение с помощью прямоугольной рамки.
-- Анализ расположения зрачков, носа или рта и их выделение на изображении.
-- Анализ положения головы, пола и возраста лица.
+## <a name="get-basic-face-data"></a>Получение данных основные лиц
 
-Для выполнения этих функций необходимо подготовить изображение по крайней мере с одним четким изображением лица. 
+Чтобы найти лиц и получить их позиций в изображение, вызовите метод с _returnFaceId_ параметру присвоить **true** (по умолчанию).
 
-## <a name="step-1-authorize-the-api-call"></a>Шаг 1. Авторизация вызова API
-
-Каждый вызов API распознавания лиц требует ключ подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса. Чтобы передать ключ подписки через строку запроса, обратитесь к URL-адресу запроса [Face-Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) в качестве примера.
-
-```
-https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes]
-&subscription-key=<Subscription Key>
+```csharp
+IList<DetectedFace> faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, true, false, null);
 ```
 
-Также можно указать ключ подписки в заголовке запроса HTTP: **ocp-apim-subscription-key: &lt;Ключ подписки&gt;**. При использовании клиентской библиотеки ключ подписки передается через конструктор класса FaceServiceClient. Например: 
-```CSharp
-faceServiceClient = new FaceServiceClient("<Subscription Key>");
-```
+Возвращенный **[DetectedFace](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)** объектов, которые могут запрашиваться для их уникальные идентификаторы и прямоугольник, который предоставляет координаты точки поверхности.
 
-## <a name="step-2-upload-an-image-to-the-service-and-execute-face-detection"></a>Шаг 2. Передача изображения в службу и выполнение обнаружения лиц
-
-Проще всего выполнить обнаружение лиц, передав изображение напрямую. Для этого нужно отправить запрос POST с типом содержимого application/octet-stream и считать данные из изображения в формате JPEG. Максимальный размер изображения составляет 4 МБ.
-
-При использовании клиентской библиотеки обнаружения лиц передается объект Stream. См. пример ниже.
-
-```CSharp
-using (Stream s = File.OpenRead(@"D:\MyPictures\image1.jpg"))
+```csharp
+foreach (var face in faces)
 {
-    var faces = await faceServiceClient.DetectAsync(s, true, true);
- 
-    foreach (var face in faces)
-    {
-        var rect = face.FaceRectangle;
-        var landmarks = face.FaceLandmarks;
-    }
+    string id = face.FaceId.ToString();
+    FaceRectangle rect = face.FaceRectangle;
 }
 ```
 
-Обратите внимание на то, что метод DetectAsync FaceServiceClient является асинхронным. Вызывающий метод должен быть помечен как асинхронный для использования предложения await.
-Если изображение уже размещено в Интернете и имеет URL-адрес, его также можно использовать для обнаружения лиц. В этом примере текстом запроса будет строка JSON, содержащая URL-адрес.
-Выполнить обнаружение лиц с помощью клиентской библиотеки, указав URL-адрес, довольно просто. Для этого следует использовать другую перегрузку метода DetectAsync.
+См. в разделе **[FaceRectangle](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.facerectangle?view=azure-dotnet)** сведения о том, как выполнить синтаксический анализ, расположение и размеры начертание шрифта. Как правило включает этот прямоугольник глаза, бровей, нос и рот; вверху head, уши и чэнь, обязательно не включаются. Если вы планируете использовать лицо в рамке обрезать полный head или среднего снимок Книжная (фото идентификатор типа образа), может потребоваться Растяните прямоугольник по определенные поля в каждом направлении.
 
-```CSharp
-string imageUrl = "http://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-var faces = await faceServiceClient.DetectAsync(imageUrl, true, true);
- 
+## <a name="get-face-landmarks"></a>Получить позу
+
+Позу: для поиска точек на грани например учеников, или кончика нос. Можно получить данные ориентиров лиц, задав _returnFaceLandmarks_ параметр **true**.
+
+```csharp
+IList<DetectedFace> faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, true, true, null);
+```
+
+По умолчанию используются 27 предопределенных точек ориентиров. На следующем рисунке показана все 27 точки:
+
+![Схема лиц с меткой все 27 ориентиров](../Images/landmarks.1.jpg)
+
+Возвращаемый моментов в единицах точек, так же, как кадр прямоугольник лиц. В следующем коде показано, как можно извлечь расположения нос и учеников:
+
+```csharp
 foreach (var face in faces)
 {
-    var rect = face.FaceRectangle;
     var landmarks = face.FaceLandmarks;
-}
-``` 
 
-Свойство FaceRectangle, возвращаемое вместе с определенными лицами, представляет собой расположения на лице в пикселях. Как правило, этот прямоугольник содержит глаза, брови, нос и рот. Верхняя часть головы, уши и подбородок не включаются. При обрезке всей головы или портрета (как на фотографии для документов) может потребоваться увеличить область прямоугольной рамки вокруг лица, так как область лица может быть слишком маленькой для некоторых приложений. Для более точного нахождения лица можно использовать ориентиры лица (механизмы поиска черт или направления лица), как описано в следующем разделе.
-
-## <a name="step-3-understanding-and-using-face-landmarks"></a>Шаг 3. Описание и использование ориентиров лица
-
-Ориентиры лица представляют собой ряд информативных точек на лице. Обычно они расположены на таких частях лица, как зрачки, угол глазной щели или нос. Ориентиры лица стороны являются необязательными атрибутами, которые могут быть проанализированы во время обнаружения лиц. Вы можете передать логическое значение true для параметра запроса returnFaceLandmarks при вызове [Face - Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) или использовать необязательный параметр returnFaceLandmarks для метода DetectAsync класса FaceServiceClient, чтобы включить ориентиры лиц в результаты обнаружения.
-
-По умолчанию используются 27 предопределенных точек ориентиров. На следующем рисунке показаны все точек 27.
-
-![HowToDetectFace](../Images/landmarks.1.jpg)
-
-Данные точек возвращаются в пикселях, как и прямоугольная рамка вокруг лица. Это упрощает пометку определенных точек интереса на изображении. В следующем коде показано получение расположений носа и зрачков.
-
-```CSharp
-var faces = await faceServiceClient.DetectAsync(imageUrl, returnFaceLandmarks:true);
- 
-foreach (var face in faces)
-{
-    var rect = face.FaceRectangle;
-    var landmarks = face.FaceLandmarks;
- 
     double noseX = landmarks.NoseTip.X;
     double noseY = landmarks.NoseTip.Y;
- 
+
     double leftPupilX = landmarks.PupilLeft.X;
     double leftPupilY = landmarks.PupilLeft.Y;
- 
+
     double rightPupilX = landmarks.PupilRight.X;
     double rightPupilY = landmarks.PupilRight.Y;
 }
-``` 
+```
 
-Помимо пометки черт лица на изображении, ориентиры лица могут также использоваться для точного вычисления направления лица. Например, можно определить направление лица как вектор, направленный от центра рта к центру глаз. Это подробно описано в приведенном ниже коде.
+Данные ориентиров лиц могут также использоваться для точного подсчета направление поверхности. Например можно определить поворот поверхности как вектор от центра рот относительно центральной части глаза. Приведенный ниже код вычисляет данного вектора:
 
-```CSharp
-var landmarks = face.FaceLandmarks;
- 
+```csharp
 var upperLipBottom = landmarks.UpperLipBottom;
 var underLipTop = landmarks.UnderLipTop;
- 
+
 var centerOfMouth = new Point(
     (upperLipBottom.X + underLipTop.X) / 2,
     (upperLipBottom.Y + underLipTop.Y) / 2);
- 
+
 var eyeLeftInner = landmarks.EyeLeftInner;
 var eyeRightInner = landmarks.EyeRightInner;
- 
+
 var centerOfTwoEyes = new Point(
     (eyeLeftInner.X + eyeRightInner.X) / 2,
     (eyeLeftInner.Y + eyeRightInner.Y) / 2);
- 
+
 Vector faceDirection = new Vector(
     centerOfTwoEyes.X - centerOfMouth.X,
     centerOfTwoEyes.Y - centerOfMouth.Y);
-``` 
+```
 
-Зная направление лица, можно повернуть прямоугольную рамку вокруг лица, чтобы совместить ее с лицом. Очевидно, что ориентиры лица могут обеспечить дополнительные сведения и возможности.
+Зная направление поверхности, можно повернуть кадр прямоугольный лиц и выровнять ее более должным образом. Если требуется обрезать лиц на изображении, можно программным образом Поворачивание изображения, фрагменты всегда отображаются вертикально.
 
-## <a name="step-4-using-other-face-attributes"></a>Шаг 4. Использование других атрибутов лица
+## <a name="get-face-attributes"></a>Получить черт лица
 
-Помимо ориентиров лица API Face - Detect может также анализировать несколько других атрибутов на лице. Они перечислены ниже:
+Помимо лицевым прямоугольникам и ориентиры API распознавания лиц можно анализировать несколько атрибутов концептуальной грани. в частности такие:
 
 - Age
 - пол;
 - интенсивность улыбки;
 - растительность на лице;
-- положение головы в трехмерном пространстве.
+- Очки
+- 3D головной поза
+- API распознавания эмоций
 
-Эти атрибуты прогнозируются с использованием статистических алгоритмов, которые не всегда могут быть точными на 100%. Тем не менее они удобны для классификации лиц по этим атрибутам. Дополнительные сведения о каждом из атрибутов см. в [глоссарии](../Glossary.md).
+> [!IMPORTANT]
+> Эти атрибуты по прогнозу алгоритмы, статистические и могут быть неточными. Будьте осторожны при принятии решений на основе данных атрибута.
+>
 
-Ниже приведен простой пример извлечения атрибутов лиц во время обнаружения лиц.
+Чтобы проанализировать черт лица, задайте _returnFaceAttributes_ параметр к списку **[перечисления FaceAttributeType](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet)** значения.
 
-```CSharp
+```csharp
 var requiredFaceAttributes = new FaceAttributeType[] {
-                FaceAttributeType.Age,
-                FaceAttributeType.Gender,
-                FaceAttributeType.Smile,
-                FaceAttributeType.FacialHair,
-                FaceAttributeType.HeadPose,
-                FaceAttributeType.Glasses
-            };
-var faces = await faceServiceClient.DetectAsync(imageUrl,
-    returnFaceLandmarks: true,
-    returnFaceAttributes: requiredFaceAttributes);
+    FaceAttributeType.Age,
+    FaceAttributeType.Gender,
+    FaceAttributeType.Smile,
+    FaceAttributeType.FacialHair,
+    FaceAttributeType.HeadPose,
+    FaceAttributeType.Glasses,
+    FaceAttributeType.Emotion
+};
+var faces = await faceClient.DetectWithUrlAsync(imageUrl, true, false, requiredFaceAttributes);
+```
 
+Затем получите ссылки на возвращаемые данные и выполнить более операций в соответствии с потребностями.
+
+```csharp
 foreach (var face in faces)
 {
-    var id = face.FaceId;
     var attributes = face.FaceAttributes;
     var age = attributes.Age;
     var gender = attributes.Gender;
@@ -182,15 +150,17 @@ foreach (var face in faces)
     var facialHair = attributes.FacialHair;
     var headPose = attributes.HeadPose;
     var glasses = attributes.Glasses;
+    var emotion = attributes.Emotion;
 }
-``` 
+```
 
-## <a name="summary"></a>Сводка
+Дополнительные сведения о каждом из атрибутов, см. [Глоссарий](../Glossary.md).
 
-В этом руководстве вы изучили функциональные возможности API [Face - Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) и узнали, как с его помощью определять лица на изображениях (переданных локально или из Интернета по URL-адресам), как он может определять лица, возвращая прямоугольные рамки вокруг лиц, и как с его помощью анализировать ориентиры лица, положение головы в трехмерном пространстве и другие атрибуты лица.
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об этом API вы можете найти в справочном руководстве по API [Face - Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+В этом руководстве вы узнали, как использовать различные функциональные возможности обнаружения лиц. Далее мы расскажем об [Глоссарий](../Glossary.md) для более подробно изучить полученные данные лиц.
 
 ## <a name="related-topics"></a>Связанные темы
 
-[Практическое руководство по идентификации лиц на изображении](HowtoIdentifyFacesinImage.md)
+- [Справочная документация (REST)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [Справочная документация (пакет SDK для .NET)](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/face?view=azure-dotnet)

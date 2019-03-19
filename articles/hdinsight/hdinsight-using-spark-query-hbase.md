@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.openlocfilehash: a2cd0d213be778624ae862d35f99f7fe960f0755
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0ba61dc266add48577c3a382465ecb2cec9d2a05
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093860"
+ms.locfileid: "58188039"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
@@ -77,7 +77,7 @@ ms.locfileid: "58093860"
 
 | Тип данных | Новое значение|
 |---|---|
-|[Схема URI](/hdinsight-hadoop-linux-information#URI-and-scheme.md) | Измените в соответствии с хранилищем.  В представленном ниже синтаксисе предназначен для хранилища BLOB-объектов с включенной безопасной передачей.|
+|[Схема URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Измените в соответствии с хранилищем.  В представленном ниже синтаксисе предназначен для хранилища BLOB-объектов с включенной безопасной передачей.|
 |`SPARK_STORAGE_CONTAINER`|Замените имя контейнера хранилища по умолчанию для кластера Spark.|
 |`SPARK_STORAGE_ACCOUNT`|Замените имя учетной записи хранения по умолчанию для кластера Spark.|
 

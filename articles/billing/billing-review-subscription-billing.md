@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: erikre
-ms.openlocfilehash: a4e5307a151439dde5ac41cb5b1bbb80f43ad71c
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 15725989ef786f94421eddf647f101e3e73633fb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112756"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57890769"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
 
-Интерфейсы API отчетов Azure позволяют проверять данные о расходах на Azure и управлять ими.  
+Интерфейсы API отчетов Azure позволяют проверять данные о расходах на Azure и управлять ими.
 
 С помощью фильтров вы можете настроить результаты в соответствии со своими требованиями.
 
@@ -31,26 +31,26 @@ ms.locfileid: "56112756"
 
 ``` http
 GET https://management.azure.com/subscriptions/${subscriptionID}/providers/Microsoft.Billing/billingPeriods/${billingPeriod}/providers/Microsoft.Consumption/usageDetails?$filter=properties/usageEnd ge '${startDate}' AND properties/usageEnd le '${endDate}'
-Content-Type: application/json   
+Content-Type: application/json
 Authorization: Bearer
 ```
 
-## <a name="build-the-request"></a>Создание запроса  
+## <a name="build-the-request"></a>Создание запроса
 
 `{subscriptionID}` — это обязательный параметр, который позволяет определить целевую подписку.
 
 `{billingPeriod}` — это обязательный параметр, который позволяет указать текущий [период выставления счетов](https://docs.microsoft.com/rest/api/billing/billingperiods/get#billingperiod).
 
-Параметры `${startDate}` и `${endDate}` являются обязательными в нашем примере, но не для конечной точки.  Они позволяют указать диапазон дат в строковом формате ГГГГ-ММ-ДД (например, `'20180501'` и `'20180615'`). 
+Параметры `${startDate}` и `${endDate}` являются обязательными в нашем примере, но не для конечной точки. Они позволяют указать диапазон дат в строковом формате ГГГГ-ММ-ДД (например, `'20180501'` и `'20180615'`).
 
-Ниже приведены обязательные заголовки. 
+Ниже приведены обязательные заголовки.
 
-|Заголовок запроса|ОПИСАНИЕ|  
-|--------------------|-----------------|  
-|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|Заголовок запроса|ОПИСАНИЕ|
+|--------------------|-----------------|
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|
+|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
-## <a name="response"></a>Ответ  
+## <a name="response"></a>Ответ
 
 Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список затрат с подробными сведениями для учетной записи.
 
@@ -67,47 +67,47 @@ Authorization: Bearer
         "usageStart": "${startDate}}",
         "usageEnd": "${endDate}",
         "currency": "USD",
-        "usageQuantity": ${usageQuantity},
-        "billableQuantity": ${billableQuantity},
-        "pretaxCost": ${cost},
+        "usageQuantity": "${usageQuantity}",
+        "billableQuantity": "${billableQuantity}",
+        "pretaxCost": "${cost}",
         "meterId": "${meterID}",
-        "meterDetails": ${meterDetails}
+        "meterDetails": "${meterDetails}"
       }
     }
-    ],
-    "nextLink": "${nextLinkURL}"
-} 
-```  
+  ],
+  "nextLink": "${nextLinkURL}"
+}
+```
 
 Каждый элемент в разделе **value** представляет сведения об использовании службы:
 
 |Свойство ответа|ОПИСАНИЕ|
 |----------------|----------|
-|**subscriptionGuid** | Глобальный уникальный идентификатор для подписки. | 
+|**subscriptionGuid** | Глобальный уникальный идентификатор для подписки. |
 |**startDate** | Дата начала использования. |
 |**endDate** | Дата окончания использования. |
-|**usageQuantity** | Использованный объем. | 
+|**usageQuantity** | Использованный объем. |
 |**billableQuantity** | Фактический объем, за который выставлен счет. |
-|**pretaxCost** | Стоимость, указанная в счете-фактуре, без учета применимых налогов. | 
+|**pretaxCost** | Стоимость, указанная в счете-фактуре, без учета применимых налогов. |
 |**meterDetails** | Подробные сведения об использовании. |
-|**nextLink**| Если этот параметр задан, в его значении указывается URL-адрес следующей страницы со сведениями. Если страница последняя, значение не указывается. |  
-||
-  
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа см. в разделе [сведений об использовании](https://docs.microsoft.com/rest/api/consumption/usagedetails/listbybillingperiod#usagedetailslistresult). 
+|**nextLink**| Если этот параметр задан, в его значении указывается URL-адрес следующей страницы со сведениями. Если страница последняя, значение не указывается. |
+
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа см. в разделе [сведений об использовании](https://docs.microsoft.com/rest/api/consumption/usagedetails/list#usagedetailslistforbillingperiod).
 
 Другие коды состояния означают состояния ошибки. В этих случаях объект ответа содержит описание с объяснением причины сбоя запроса.
 
 ``` json
-{  
-  "error": [  
-    { "code": "Error type." 
-      "message": "Error response describing why the operation failed."  
-    }  
-  ]  
-}  
-```  
+{
+  "error": [
+    {
+      "code": "Error type.",
+      "message": "Error response describing why the operation failed."
+    }
+  ]
+}
+```
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
-- Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)   
-- [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   
+- Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)
+- [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
 ms.author: msfussell
-ms.openlocfilehash: 434f0639baa45dc83ee2fae4ec8b67a80517db14
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
-ms.translationtype: HT
+ms.openlocfilehash: b49df76bc5b9c4d5f469e702b65ffd5762e49a39
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035936"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57455842"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
 Служба DNS является необязательной системной службой, которую можно включить в кластере для обнаружения других служб с помощью протокола DNS. 
@@ -53,7 +53,7 @@ ms.locfileid: "51035936"
 Если вы не используете портал для создания кластера или обновляете существующий кластер, необходимо включить службу DNS в шаблоне:
 
 - Чтобы развернуть кластер, вы можете использовать [примеры шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype) или создать свой шаблон Resource Manager. 
-- Чтобы обновить существующий кластер, можно перейти к его группе ресурсов на портале и щелкнуть **Сценарий автоматизации** для работы с шаблоном, который отражает текущее состояние кластера и других ресурсов в группе. Чтобы узнать больше, ознакомьтесь с разделом [Экспорт шаблона из группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template#export-the-template-from-resource-group).
+- Чтобы обновить существующий кластер, можно перейти к его группе ресурсов на портале и щелкнуть **Сценарий автоматизации** для работы с шаблоном, который отражает текущее состояние кластера и других ресурсов в группе. Чтобы узнать больше, ознакомьтесь с разделом [Экспорт шаблона из группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template).
 
 Получив шаблон, вы можете включить службу DNS следующим образом.
 
@@ -257,6 +257,6 @@ public class ValuesController : Controller
 
 * Служба DNS для служб Service Fabric пока что не поддерживается на платформе Linux. Служба DNS поддерживается для контейнеров в Linux. В качестве альтернативы можете выполнить разрешение вручную с помощью клиента Fabric или ServicePartitionResolver.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о взаимодействии служб в кластере см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними](service-fabric-connect-and-communicate-with-services.md).
 

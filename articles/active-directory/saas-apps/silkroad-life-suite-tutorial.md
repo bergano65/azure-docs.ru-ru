@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 729287cfcc557e167a70d6f69a5b2b34909df836
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d7f047d784796b9e7c59d95863aa74b3f72da324
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180986"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995625"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство. Интеграция Azure Active Directory с SilkRoad Life Suite
 
@@ -35,7 +35,7 @@ ms.locfileid: "56180986"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с SilkRoad Life Suite, вам потребуется следующее:
 
@@ -113,13 +113,15 @@ ms.locfileid: "56180986"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+
     | |
     |--|
     | `https://<subdomain>.silkroad-eng.com/Authentication/SP` |
     | `https://<subdomain>.silkroad.com/Authentication/SP` |
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    
     | |
     |--|
     | `https://<subdomain>.silkroad-eng.com/Authentication/` |
@@ -167,7 +169,7 @@ ms.locfileid: "56180986"
   
     a. В разделе **Option 2 - Metadata File** (Вариант 2 — файл метаданных) нажмите кнопку **Browse** (Обзор), чтобы отправить скачанный файл метаданных с портала Azure.
   
-    б) Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
+    2. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
 
 1. В разделе **Authentication Sources** (Источники проверки подлинности) нажмите кнопку **Edit** (Изменить). 
     
@@ -179,11 +181,11 @@ ms.locfileid: "56180986"
 
     a. В поле **Enabled** (Включено) выберите **Yes** (Да).
 
-    б) В текстовое поле **Идентификатор сущности** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    2. В текстовое поле **Идентификатор сущности** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
    
     c. В текстовом поле **IdP Description** (Описание IdP) введите описание своей конфигурации (например, *Azure AD SSO*).
 
-    4.3. В текстовом поле **Файл метаданных** передайте файл **метаданных**, загруженный с портала Azure.
+    d. В текстовом поле **Файл метаданных** передайте файл **метаданных**, загруженный с портала Azure.
   
     д. В текстовом поле **IdP Name** (Имя IdP) введите уникальное имя своей конфигурации (например, *Azure SP*).
   
@@ -230,7 +232,7 @@ ms.locfileid: "56180986"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-silkroad-life-suite-test-user"></a>Создание тестового пользователя SilkRoad Life Suite
 

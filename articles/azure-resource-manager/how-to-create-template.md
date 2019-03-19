@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: abfc7ce78e8676e9560621be1ec9a81717d958e5
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: b198f860c10bd207a191057e21a8a159c5ebde26
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994289"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57403521"
 ---
 # <a name="create-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
 
@@ -38,15 +38,15 @@ ms.locfileid: "53994289"
 
 Давайте рассмотрим части шаблона, чтобы понять, как работает шаблон. Ваш шаблон может иметь не все разделы. Ниже приведены разделы, на которых мы сосредоточимся.
 
-* Раздел [параметры](resource-manager-templates-parameters.md), в котором показаны значения, которые можно указать во время развертывания для настройки развертываемой инфраструктуры. 
+* Раздел [параметры](resource-group-authoring-templates.md#parameters), в котором показаны значения, которые можно указать во время развертывания для настройки развертываемой инфраструктуры. 
 
-* Раздел [переменные](resource-manager-templates-variables.md), в котором показаны значения, используемые в шаблоне.
+* Раздел [переменные](resource-group-authoring-templates.md#variables), в котором показаны значения, используемые в шаблоне.
 
 * Раздел [функции](resource-group-authoring-templates.md#functions), который показывает настроенные выражения шаблона, используемые в вашем шаблоне.
 
-* Раздел [ресурсы](resource-manager-templates-resources.md), в котором показаны ресурсы Azure, развернутые в вашей подписке.
+* Раздел [ресурсы](resource-group-authoring-templates.md#resources), в котором показаны ресурсы Azure, развернутые в вашей подписке.
 
-* Раздел [выходные данные](resource-manager-templates-outputs.md), в котором отображаются значения, возвращаемые после завершения развертывания.
+* Раздел [выходные данные](resource-group-authoring-templates.md#outputs), в котором отображаются значения, возвращаемые после завершения развертывания.
 
 ## <a name="look-for-similar-templates"></a>Поиск похожих шаблонов
 
@@ -98,7 +98,7 @@ ms.locfileid: "53994289"
 }
 ```
 
-Вы также можете динамически применять теги из параметров. Дополнительные сведения см. в разделе [Теги](resource-manager-templates-resources.md#tags).
+Вы также можете динамически применять теги из параметров. Дополнительные сведения см. в разделе [Теги](resource-group-using-tags.md#templates).
 
 ## <a name="review-template-functions"></a>Просмотр функций шаблона
 
@@ -176,7 +176,7 @@ ms.locfileid: "53994289"
 }
 ```
 
-Дополнительные сведения см. в разделе [Условие](resource-manager-templates-resources.md#condition).
+Дополнительные сведения см. в разделе [Условие](resource-group-authoring-templates.md#condition).
 
 ## <a name="review-dependencies"></a>Просмотр зависимостей
 
@@ -223,7 +223,7 @@ ms.locfileid: "53994289"
 
 Если вам нужно использовать шаблон в разных облачных средах Azure, см. статью [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы развернуть шаблон, см. статью [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](resource-group-template-deploy-cli.md) или [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).
 * Пошаговое руководство по созданию шаблона см. в статье [Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code](resource-manager-quickstart-create-templates-use-visual-studio-code.md).

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/21/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e39bdcde896bca094b60b87308127a6ea01f1dd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4aecb2850f80f0991c7466b388147ab4b21c4780
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56169741"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170706"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iriusrisk"></a>Руководство. Интеграция Azure Active Directory с IriusRisk
 
@@ -35,12 +35,12 @@ ms.locfileid: "56169741"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с IriusRisk, вам потребуется:
 
 - подписка Azure AD;
-- подписка IriusRisk с поддержкой единого входа.
+- IriusRisk единого входа — подписка с поддержкой
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -89,7 +89,7 @@ ms.locfileid: "56169741"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя приложения IriusRisk](#create-a-iriusrisk-test-user)** требуется для того, чтобы в IriusRisk существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя IriusRisk](#create-a-iriusrisk-test-user)**  — требуется для создания пользователя Britta Simon в IriusRisk, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -113,7 +113,7 @@ ms.locfileid: "56169741"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.iriusrisk.com/ui#!login`
 
-    б) В текстовом поле **Идентификатор** введите значение `iriusrisk-sp`.
+    2. В текстовом поле **Идентификатор** введите значение `iriusrisk-sp`.
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения данного значения обратитесь к [группе поддержки клиентов IriusRisk](mailto:info@continuumsecurity.net). 
@@ -162,9 +162,9 @@ ms.locfileid: "56169741"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
-### <a name="create-a-iriusrisk-test-user"></a>Создание тестового пользователя IriusRisk
+### <a name="create-an-iriusrisk-test-user"></a>Создание тестового пользователя IriusRisk
 
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении IriusRisk. Приложение IriusRisk поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к IriusRisk будет создан пользователь (если он еще не создан).
 

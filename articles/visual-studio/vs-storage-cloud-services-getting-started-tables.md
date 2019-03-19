@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: 44056ae1bca2595965abd3a47b4a2aa29d221623
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: cec8ab9d678ff559176580fa8eccc261f449f4c5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255239"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012884"
 ---
 # <a name="getting-started-with-azure-table-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Начало работы с табличным хранилищем Azure и подключенными службами Visual Studio (проектами облачных служб)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "51255239"
 * Дополнительные сведения о выполнении программных операций с таблицами см. в статье [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../storage/storage-dotnet-how-to-use-tables.md).
 * Общие сведения о службе хранилища Azure см. в [документации по службе хранилища](https://azure.microsoft.com/documentation/services/storage/).
 * Общие сведения об облачных службах Azure см. в [документации по облачным службам](https://azure.microsoft.com/documentation/services/cloud-services/).
-* Дополнительную информацию о программировании для ASP.NET см. в разделе [ASP.NET](http://www.asp.net).
+* Дополнительную информацию о программировании для ASP.NET см. в разделе [ASP.NET](https://www.asp.net).
 
 ## <a name="access-tables-in-code"></a>Доступ к таблицам в коде
 Для доступа к таблицам в проектах облачных служб необходимо включить следующие элементы во все файлы исходного кода C#, которые обращаются к табличному хранилищу Azure.
@@ -190,6 +190,6 @@ ms.locfileid: "51255239"
     else
        Console.WriteLine("Couldn't delete the entity.");
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 

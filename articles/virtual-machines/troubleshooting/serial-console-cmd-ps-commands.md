@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 6eb0ce9098b5cc5f66035851c6837e9e46fcf2df
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
-ms.translationtype: HT
+ms.openlocfilehash: 55b7e45bb9e600267e1dad0e36e9a97eca9a7d40
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47413201"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58075004"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
@@ -118,7 +118,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="disable-windows-firewall"></a>Отключение брандмауэра Windows
 `netsh advfirewall set allprofiles state off`
 
-Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующем перезапуске или когда вы включите его, используя приведенную ниже команду. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
+Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующем перезапуске или при включении его с помощью следующей команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
 ### <a name="enable-windows-firewall"></a>Включение брандмауэра Windows
 `netsh advfirewall set allprofiles state on`
 ## <a name="manage-users-and-groups"></a>Управление пользователями и группами
@@ -247,8 +247,8 @@ SAC позволяет подключаться к вашей операцион
 
 `powershell <enter>`
 
->[!CAUTION]
-Удалите модуль PSReadLine из сеанса PowerShell перед запуском каких-либо других команд PowerShell. Существует известная проблема, когда дополнительные символы могут быть введены в текст, вставленный из буфера обмена, если в сеансе PowerShell в SAC выполняется PSReadLine.
+> [!CAUTION]
+> Удалите модуль PSReadLine из сеанса PowerShell перед запуском каких-либо других команд PowerShell. Существует известная проблема, когда дополнительные символы могут быть введены в текст, вставленный из буфера обмена, если в сеансе PowerShell в SAC выполняется PSReadLine.
 
 Сначала проверьте, загружен ли PSReadLine. Он загружается по умолчанию в Windows Server 2016, Windows 10 и более поздних версиях Windows. В более ранних версиях Windows его потребуется установить вручную. 
 
@@ -475,7 +475,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="mac-address-instance-metadata"></a>MAC-адрес (метаданные экземпляра)
 `$im.network.interface.macAddress`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
 * См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).

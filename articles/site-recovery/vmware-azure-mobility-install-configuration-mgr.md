@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: cd50a957894c2c6c4944b0ba3768a00754abaa15
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: ca9e58dbae6952f7e432868c7ede7dc42741a87b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52835094"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58104256"
 ---
 # <a name="automate-mobility-service-installation-with-system-center-configuration-manager"></a>Автоматизация установки Mobility Service с помощью System Center Configuration Manager
 
@@ -24,9 +24,9 @@ ms.locfileid: "52835094"
 
 В этой статье демонстрируется развертывание на примере System Center Configuration Manager 2012 R2. В этой статье предполагается, что вы используете Mobility Service **9.9.4510.1** или более поздней версии.
 
-Кроме того, установку службы Mobility Service можно автоматизировать с помощью [Azure Automation DSC](vmware-azure-mobility-deploy-automation-dsc.md).
+Кроме того, вы можете автоматизировать установку Mobility Service с [DSC службы автоматизации Azure](vmware-azure-mobility-deploy-automation-dsc.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 1. Установленное в вашей среде средство развертывания программного обеспечения, например Configuration Manager.
 2. Необходимо создать две [коллекции устройств](https://technet.microsoft.com/library/gg682169.aspx) — одну для всех **серверов Windows** и другую для всех **серверов Linux**, для защиты которых вы будете применять Site Recovery.
@@ -162,25 +162,25 @@ IF NOT %ERRORLEVEL% EQU 0 (
 5. Установите флажок **Этот пакет содержит исходные файлы**.
 6. Щелкните **Обзор** и выберите общую сетевую папку, в которой хранится установщик (\\\ContosoSecureFS\MobilityServiceInstaller\MobSvcWindows).
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/create_sccm_package.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/create_sccm_package.png)
 
 7. На странице **Выберите тип создаваемой программы** выберите **Стандартная программа** и щелкните **Далее**.
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-standard-program.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-standard-program.png)
 
 8. На странице **Укажите сведения об этой стандартной программе** предоставьте следующие данные и щелкните **Далее**. (Для остальных параметров можно оставить значения по умолчанию.)
 
-  | **Имя параметра** | **Значение** |
-  |--|--|
-  | ИМЯ | Установка Microsoft Azure Mobility Service (Windows) |
-  | Команда | install.bat |
-  | Программа может запускаться | Независимо от входа пользователя в систему |
+   | **Имя параметра** | **Значение** |
+   |--|--|
+   | ИМЯ | Установка Microsoft Azure Mobility Service (Windows) |
+   | Команда | install.bat |
+   | Программа может запускаться | Независимо от входа пользователя в систему |
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties.png)
 
 9. На следующей странице выберите целевые операционные системы. Mobility Service можно устанавливать только на Windows Server 2012 R2, Windows Server 2012 и Windows Server 2008 R2.
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-page2.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-page2.png)
 
 10. Дважды щелкните **Далее**, чтобы завершить работу мастера.
 
@@ -190,19 +190,19 @@ IF NOT %ERRORLEVEL% EQU 0 (
 
 ### <a name="deploy-the-package"></a>Развертывание пакета
 1. В консоли Configuration Manager щелкните пакет правой кнопкой мыши и выберите команду **Распространить содержимое**.
-  ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
+   ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
 2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)**, на которые следует скопировать эти пакеты.
 3. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 4. Когда распространение пакета завершится, щелкните пакет правой кнопкой мыши и выберите **Развернуть**.
-  ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
+   ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
 5. Выберите коллекцию устройств Windows Server, созданную на этапе подготовки предварительных требований, в качестве целевой коллекции для развертывания.
 
-  ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-select-target-collection.png)
+   ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-select-target-collection.png)
 
 6. На странице **Укажите места распространения содержимого** выберите нужные **Точки распространения**.
 7. На странице **Укажите параметры управления процессом развертывания этого программного обеспечения** убедитесь, что выбрана цель **Обязательно**.
 
-  ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
+   ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
 
 8. Настройте расписание в разделе **Укажите расписание этого развертывания**. Дополнительные сведения см. в статье [Развертывание пакетов и программ в Configuration Manager](https://technet.microsoft.com/library/gg682178.aspx).
 9. Настройте свойства на странице **Точки распространения** в соответствии с потребностями вашего центра обработки данных. Теперь завершите работу мастера.
@@ -387,24 +387,24 @@ cd /tmp
 5. Установите флажок **Этот пакет содержит исходные файлы**.
 6. Щелкните **Обзор** и выберите общую сетевую папку, в которой хранится установщик (\\\ContosoSecureFS\MobilityServiceInstaller\MobSvcLinux).
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/create_sccm_package-linux.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/create_sccm_package-linux.png)
 
 7. На странице **Выберите тип создаваемой программы** выберите **Стандартная программа** и щелкните **Далее**.
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-standard-program.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-standard-program.png)
 
 8. На странице **Укажите сведения об этой стандартной программе** предоставьте следующие данные и щелкните **Далее**. (Для остальных параметров можно оставить значения по умолчанию.)
 
     | **Имя параметра** | **Значение** |
-  |--|--|
-  | ИМЯ | Установка Microsoft Azure Mobility Service (Linux) |
-  | Команда | ./install_linux.sh |
-  | Программа может запускаться | Независимо от входа пользователя в систему |
+   |--|--|
+   | ИМЯ | Установка Microsoft Azure Mobility Service (Linux) |
+   | Команда | ./install_linux.sh |
+   | Программа может запускаться | Независимо от входа пользователя в систему |
 
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-linux.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-linux.png)
 
 9. На следующей странице выберите **Эта программа может запускаться на любой платформе**.
-  ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-page2-linux.png)
+   ![Снимок экрана с мастером создания пакета и программы](./media/vmware-azure-mobility-install-configuration-mgr/sccm-program-properties-page2-linux.png)
 
 10. Дважды щелкните **Далее**, чтобы завершить работу мастера.
 
@@ -413,19 +413,19 @@ cd /tmp
 
 ### <a name="deploy-the-package"></a>Развертывание пакета
 1. В консоли Configuration Manager щелкните пакет правой кнопкой мыши и выберите команду **Распространить содержимое**.
-  ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
+   ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
 2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)**, на которые следует скопировать эти пакеты.
 3. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 4. Когда распространение пакета завершится, щелкните пакет правой кнопкой мыши и выберите **Развернуть**.
-  ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
+   ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
 5. Выберите коллекцию устройств Linux Server, созданную на этапе подготовки предварительных требований, в качестве целевой коллекции для развертывания.
 
-  ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-select-target-collection-linux.png)
+   ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-select-target-collection-linux.png)
 
 6. На странице **Укажите места распространения содержимого** выберите нужные **Точки распространения**.
 7. На странице **Укажите параметры управления процессом развертывания этого программного обеспечения** убедитесь, что выбрана цель **Обязательно**.
 
-  ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
+   ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
 
 8. Настройте расписание в разделе **Укажите расписание этого развертывания**. Дополнительные сведения см. в статье [Развертывание пакетов и программ в Configuration Manager](https://technet.microsoft.com/library/gg682178.aspx).
 9. Настройте свойства на странице **Точки распространения** в соответствии с потребностями вашего центра обработки данных. Теперь завершите работу мастера.
@@ -457,5 +457,5 @@ IF  %ERRORLEVEL% EQU 1 (GOTO :INSTALL) ELSE GOTO :UNINSTALL
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете [включить защиту](vmware-azure-enable-replication.md) для виртуальных машин.

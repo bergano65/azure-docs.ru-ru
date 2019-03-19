@@ -10,12 +10,12 @@ ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: df1fe833a5b0cb65372f8df73fb17231463d4d64
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: b2377466ba830eed9fed0e9a4033b3eca3d351c4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55466274"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834631"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
 В этом руководстве показано, как использовать Power BI для подключения к хранилищу данных SQL и создания нескольких базовых визуализаций.
@@ -24,7 +24,7 @@ ms.locfileid: "55466274"
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения этих действий необходимо иметь следующее:
 
 * Хранилище данных SQL, в которое предварительно загружена база данных AdventureWorksDW. Для подготовки хранилища данных см. статью [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но в нем нет демонстрационных данных, вы можете [загрузить WideWorldImportersDW](load-data-wideworldimportersdw.md).
@@ -92,5 +92,5 @@ ms.locfileid: "55466274"
 
 Эти ограничения и примечания могут измениться по мере улучшения работы продукта.
 
-## <a name="next-steps"></a>Дополнительная информация
-Теперь, когда вы разобрались с образцом данных, узнайте, как [разрабатывать хранилища данных](sql-data-warehouse-overview-develop.md), [загружать данные](design-elt-data-loading.md) и [переносить готовые решения](sql-data-warehouse-overview-migrate.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](http://www.powerbi.com/).
+## <a name="next-steps"></a>Дальнейшие действия
+Теперь, когда вы разобрались с образцом данных, узнайте, как [разрабатывать хранилища данных](sql-data-warehouse-overview-develop.md), [загружать данные](design-elt-data-loading.md) и [переносить готовые решения](sql-data-warehouse-overview-migrate.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](https://www.powerbi.com/).

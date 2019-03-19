@@ -7,12 +7,12 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/09/2018
-ms.openlocfilehash: 1a7f58960111b3fba6283830b262a9b901b8e2fd
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: a78167e9b143a4c8d424947b489043dd45dfe2db
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53546241"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57886428"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql"></a>Устранение неполадок подключения к Базе данных Azure для PostgreSQL
 
@@ -48,7 +48,7 @@ ms.locfileid: "53546241"
 
 * Конфигурация брандмауэра сервера. Убедитесь, что в брандмауэре сервера службы "База данных Azure для PostgreSQL" настроена возможность подключений из клиента, в том числе через прокси-серверы и шлюзы.
 * Конфигурация брандмауэра клиента. Брандмауэр клиента должен разрешать подключения к серверу базы данных. В некоторых брандмауэрах необходимо разрешить IP-адреса и порты сервера, к которым нельзя подключиться, а также приложения, например PostgreSQL.
-* Ошибка пользователя. К ним, например, относятся неправильно введенные параметры подключения (имя сервера в строке подключения или пропущенный суффикс *@servername* в имени пользователя).
+* Ошибка пользователя. Введены параметры подключения, например имя сервера в строке подключения или отсутствием  *\@servername* суффикса в имени пользователя.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
@@ -57,6 +57,6 @@ ms.locfileid: "53546241"
 3. Проверьте строку подключения и другие параметры подключения.
 4. Проверьте работоспособность службы на панели мониторинга. Если присутствует региональный сбой, см. статью [Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"](concepts-business-continuity.md), чтобы выполнить инструкции по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Handling of transient connectivity errors for Azure Database for PostgreSQL](concepts-connectivity.md) (Обработка временных ошибок подключения для Базы данных Azure для PostgreSQL)

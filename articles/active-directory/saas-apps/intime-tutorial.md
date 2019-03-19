@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 08/09/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 893113b5383cfc2904a053b49edee19cb39f443c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e82dd76c456f463666bc17bfda9664cf24012eed
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56166246"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170213"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intime"></a>Руководство. Интеграция Azure Active Directory с InTime
 
@@ -35,12 +35,12 @@ ms.locfileid: "56166246"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с InTime, вам потребуется:
 
 - подписка Azure AD;
-- подписка InTime с поддержкой единого входа.
+- InTime единого входа — подписка с поддержкой
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -89,7 +89,7 @@ ms.locfileid: "56166246"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя InTime](#create-a-intime-test-user)** требуется для того, чтобы в InTime существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя InTime](#create-a-intime-test-user)**  — требуется для создания пользователя Britta Simon в InTime, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
@@ -113,7 +113,7 @@ ms.locfileid: "56166246"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://intime6.intimesoft.com/mytime/login/login.xhtml`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес `https://auth.intimesoft.com/auth/realms/master`.
+    2. В текстовом поле **Идентификатор** введите URL-адрес `https://auth.intimesoft.com/auth/realms/master`.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -167,9 +167,9 @@ ms.locfileid: "56166246"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
-### <a name="create-a-intime-test-user"></a>Создание тестового пользователя InTime
+### <a name="create-an-intime-test-user"></a>Создание тестового пользователя InTime
 
 В этом разделе описано, как создать пользователя Britta Simon в приложении InTime. Обратитесь к [группе поддержки InTime](mailto:hdollard@intimesoft.com), чтобы добавить пользователей на платформу InTime. Перед использованием единого входа необходимо создать и активировать пользователей.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mbullwin
-ms.openlocfilehash: 810a4708974d18a4bba048e3e402a172868178f3
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 400583f50e898bfc750a387bf0ee83a3147e5006
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429695"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57905072"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -257,7 +257,7 @@ ms.locfileid: "56429695"
 
 Разрешите веб-серверу отправлять данные телеметрии в наши конечные точки. 
 
-### <a name="proxy-redirect"></a>Перенаправление прокси-сервера
+### <a name="gateway-redirect"></a>Шлюз перенаправления
 
 Маршрутизация трафика с сервера в шлюз интрасети выполняется путем перезаписи конечных точек в конфигурации.
 Если эти свойства "Конечная точка" отсутствуют в вашей конфигурации, эти классы будут использовать значения по умолчанию, показанные в примере ApplicationInsights.config, приведенном ниже. 
@@ -288,7 +288,19 @@ ms.locfileid: "56429695"
 
 _Примечание. ApplicationIdProvider доступен, начиная с версии 2.6.0_
 
+### <a name="proxy-passthrough"></a>Сквозной прокси-сервера
 
+Сквозной прокси-сервера может осуществляться путем настройки на уровне приложения или уровне компьютера прокси-сервера.
+Дополнительные сведения см. статье dotnet [DefaultProxy](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
+ 
+ Пример Web.config:
+ ```xml
+<system.net>
+    <defaultProxy>
+      <proxy proxyaddress="http://xx.xx.xx.xx:yyyy" bypassonlocal="true"/>
+    </defaultProxy>
+</system.net>
+```
  
 
 ## <a name="can-i-run-availability-web-tests-on-an-intranet-server"></a>Можно ли выполнять веб-тесты доступности на сервере в интрасети?

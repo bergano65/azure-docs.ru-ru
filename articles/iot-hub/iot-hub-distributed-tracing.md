@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: d97171003507ea0d7412c0706f9deea02fe06c0d
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 0553bd904cfaabaefce4e6ab3f7fbf5d356922d3
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56418462"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58100366"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56418462"
 
 В этой статье используется [пакет SDK для устройств Azure IoT для C](./iot-hub-device-sdk-c-intro.md) с функцией распределенной трассировки. Реализация поддержки функции распределенной трассировки все еще выполняется для других пакетов SDK.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Предварительная версия функции распределенной трассировки сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах:
 
@@ -214,7 +214,7 @@ ms.locfileid: "56418462"
 
     ![Обновление режима выборки](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-2.png)
 
-    ![Обновление частоты выборки ](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-3.png)
+    ![Обновление частоты выборки](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-3.png)
 
 ### <a name="bulk-update-for-multiple-devices"></a>Массовое обновление нескольких устройств
 
@@ -233,7 +233,7 @@ ms.locfileid: "56418462"
 }
 ```
 
-| Имя элемента | Обязательно | type | ОПИСАНИЕ |
+| Имя элемента | Обязательно для заполнения | type | ОПИСАНИЕ |
 |-----------------|----------|---------|-----------------------------------------------------|
 | `sampling_mode` | Yes | Целое число  | Для включения и отключения выборки в настоящее время поддерживается два режима. `1` — включен, а `2` — отключен. |
 | `sampling_rate` | Yes | Целое число  | Это значение является процентной долей. Разрешены только значения в диапазоне от `0` до `100` включительно.  |
@@ -269,7 +269,7 @@ AzureDiagnostics
 Чтобы визуализировать поток сообщений Интернета вещей, настройте пример приложения схемы приложений. Пример приложения отправляет журналы распределенной трассировки в [схему приложений](../application-insights/app-insights-app-map.md) с помощью функции Azure и концентратора событий.
 
 > [!div class="button"]
-<a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получить пример когда на GitHub</a>
+> <a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получить пример когда на GitHub</a>
 
 На изображении ниже показана распределенная трассировка в схеме приложений с тремя конечными точками маршрутизации:
 
@@ -309,7 +309,7 @@ AzureDiagnostics
 - Возможность переноса из облака на двойник устройства недоступна на [уровне "Базовый" Центра Интернета вещей](iot-hub-scaling.md#basic-and-standard-tiers). Тем не менее, Центр Интернета вещей все равно будет регистрироваться в Azure Monitor, если видит правильно составленный заголовок контекста трассировки.
 - Чтобы обеспечить эффективность операции, Центр Интернета вещей применит регулирование на основе частоты регистрации, которая может возникнуть как часть распределенной трассировки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об общем шаблоне распределенной трассировки в микрослужбах см. в [этой статье](https://microservices.io/patterns/observability/distributed-tracing.html).
 - Чтобы настроить конфигурацию для применения параметров распределенной трассировки на большое количество устройств, ознакомьтесь со статьей [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](iot-hub-auto-device-config.md).

@@ -1,26 +1,26 @@
 ---
 title: Публикация базы знаний
-titleSuffix: QnA Maker - Azure Cognitive Services
-description: Публикация базы знаний — это последний шаг в предоставлении базы знаний в качестве конечной точки ответа на вопрос. При публикации базы знаний содержимое раздела вопросов и ответов базы знаний переносится из тестового указателя в производственный указатель в службе поиска Azure.
+titleSuffix: QnA Maker API - Azure Cognitive Services
+description: Публикации в базе знаний со службой API службы QnA Maker соответствует последнему шагу для предоставления знаний как конечную точку ответа на вопрос. При публикации базы знаний содержимое раздела вопросов и ответов базы знаний переносится из тестового указателя в производственный указатель в службе поиска Azure.
 services: cognitive-services
 author: tulasim88
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 12/11/2018
+ms.date: 03/11/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 585e5f8f955a405b08bef42588ab5caff71c7bba
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: c65654e7d6b2e66a07116ea9555ed316ace88912
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865919"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58091959"
 ---
-# <a name="publish-a-knowledge-base-using-the-qna-maker-portal"></a>Публикация базы знаний с помощью портала QnA Maker
+# <a name="publish-a-knowledge-base-using-the-qna-maker-api-service-portal"></a>Публикация базы знаний с помощью портала службы API службы QnA Maker
 
-Публикация базы знаний — это последний шаг в предоставлении базы знаний в качестве конечной точки ответа на вопрос для клиентского приложения. 
+Публикации в базе знаний со службой API службы QnA Maker соответствует последнему шагу для предоставления знаний как конечную точку ответа на вопрос. 
 
 При публикации базы знаний ее содержимое раздела вопросов и ответов переносится из тестового индекса в рабочий индекс в службе "Поиск Azure".
 
@@ -42,7 +42,7 @@ ms.locfileid: "55865919"
 
 Когда вы закончите работу с базой знаний, удалите ее на портале QnA Maker.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Анализ базы знаний](./get-analytics-knowledge-base.md)

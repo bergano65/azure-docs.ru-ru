@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
-ms.openlocfilehash: 703b8a7a094d0ea6f5b5dedaf02a218b407269d3
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 9cfec02e2ea3496589474e61f583fb840a70f78d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813812"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881333"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -93,8 +93,8 @@ ms.locfileid: "55813812"
 
     | Дистрибутив Linux | Version (версия) |
     | --------------- | ----------- |
+    | Ubuntu 18.10    | `cosmic`    |
     | Ubuntu 18.04    | `bionic`    |
-    | Ubuntu 17.10    | `artful`    |
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
 
@@ -156,7 +156,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 [!INCLUDE [Register extensions](../../includes/functions-core-tools-install-extension.md)]
 
-Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md#register-binding-extensions).
+Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](./functions-bindings-expressions-patterns.md).
 
 ## <a name="local-settings-file"></a>Файл с локальными параметрами
 
@@ -183,22 +183,22 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 | Параметр      | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
-| **IsEncrypted** | Если задано значение **true**, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. Значение по умолчанию — **false**. |
-| **Значения** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Эти значения соответствуют параметрам приложения в приложении-функции в Azure, таким как **AzureWebJobsStorage** и **AzureWebJobsDashboard**. Многие триггеры и привязки имеют свойство, относящееся к строке подключения параметра приложения, например **Connection** для [триггера хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в массиве **Values**. <br/>**AzureWebJobsStorage** — это необходимый параметр приложения для триггеров, отличных от HTTP. При наличии [эмулятора хранилища Azure](../storage/common/storage-use-emulator.md), установленного локально, можно задать **AzureWebJobsStorage** для использования эмулятора `UseDevelopmentStorage=true` и Core Tools. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
-| **Host** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
-| **LocalHttpPort** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
-| **CORS** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
-| **ConnectionStrings** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только платформами, которые обычно получают строки подключений из раздела файла конфигурации **ConnectionStrings**, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения в коллекцию **Строки подключений** в настройках приложения-функции. Если вы создаете параметр [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции, следует сохранить значение строки подключения в **Параметрах приложения** с другими подключениями. |
+| **`IsEncrypted`** | Если задано значение `true`, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. По умолчанию имеет значение `false`. |
+| **`Values`** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Эти значения соответствуют параметры приложения в приложении-функции в Azure, такие как [ `AzureWebJobsStorage` ]. Многие триггеры и привязки имеют свойство, которое ссылается на параметр приложения строки подключения, например `Connection` для [триггер хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в `Values` массива. <br/>[`AzureWebJobsStorage`] Обязательное приложение устанавливает для триггеров, отличных от HTTP. <br/>Версии 2.x среды выполнения функций требует [ `FUNCTIONS_WORKER_RUNTIME` ] параметр, который создается для проекта, основными инструментами. <br/> При наличии [эмулятора хранения Azure](../storage/common/storage-use-emulator.md) установлены локально, можно задать [ `AzureWebJobsStorage` ] для `UseDevelopmentStorage=true` и основных инструментов используется эмулятор. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
+| **`Host`** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
+| **`LocalHttpPort`** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
+| **`CORS`** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
+| **`ConnectionStrings`** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только с платформ, которые обычно получают строк соединения из `ConnectionStrings` файл раздел конфигурации, такие как [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения для `Connection strings` коллекцию параметрах приложения-функции. Если вы создаете [ `SqlConnection` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции следует хранить значение строки подключения в **параметры приложения** на портале с другими подключениями. |
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
-+ [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
-+ [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
-+ [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
-+ [Java](functions-reference-java.md#environment-variables)
-+ [JavaScript](functions-reference-node.md#environment-variables)
+* [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
+* [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
+* [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
+* [Java](functions-reference-java.md#environment-variables)
+* [JavaScript](functions-reference-node.md#environment-variables)
 
-Если для **AzureWebJobsStorage** не задана допустимая строка подключения к хранилищу и не используется эмулятор, выводится следующее сообщение об ошибке:
+Если для задано не допустимую строку соединения хранения [ `AzureWebJobsStorage` ] и не используется эмулятор, отображается следующее сообщение об ошибке:
 
 > Отсутствует значение AzureWebJobsStorage в local.settings.json. This is required for all triggers other than HTTP. You can run 'func azure functionapp fetch-app-settings \<functionAppName\>' or specify a connection string in local.settings.json (Оно требуется для всех триггеров, отличных от HTTP. Выполните команду func azure functionapp fetch-app-settings <имя_приложения_функции> или укажите строку подключения в файле local.settings.json).
 
@@ -216,12 +216,12 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 + Используйте Core Tools для загрузки строки подключения из Azure при помощи одной из следующих команд:
 
-    + Загрузите все параметры из существующего приложения-функции:
+  + Загрузите все параметры из существующего приложения-функции:
 
     ```bash
     func azure functionapp fetch-app-settings <FunctionAppName>
     ```
-    + Получите строку подключения для указанной учетной записи хранения:
+  + Получите строку подключения для указанной учетной записи хранения:
 
     ```bash
     func azure storage fetch-connection-string <StorageAccountName>
@@ -471,7 +471,7 @@ func deploy
 | **`--min`**  | При необходимости задает минимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
 | **`--config`** | Задает дополнительный файл конфигурации развертывания. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Основные инструменты службы "Функции Azure" [имеют открытый код и размещаются на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).
@@ -481,3 +481,5 @@ func deploy
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
 [портале Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
+[«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
+[«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/28/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cb0822380fd375c111f8acb8b28132727a7c048
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8ee74c5caed04d2626fea27d3419d0b0d685d675
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188313"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840347"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство. Интеграция Azure Active Directory с Insignia SAML SSO
 
@@ -35,7 +35,7 @@ ms.locfileid: "56188313"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Insignia SAML SSO, вам потребуется:
 
@@ -112,13 +112,14 @@ ms.locfileid: "56188313"
     ![Сведения о домене и URL-адресах единого входа для приложения Insignia SAML SSO](./media/insigniasamlsso-tutorial/tutorial_insigniasamlsso_url.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<customername>.insigniails.com/ils` |
     | `https://<customername>.insigniails.com/` |
     | `https://<customername>.insigniailsusa.com/ ` |
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
 
     > [!NOTE] 
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). 
@@ -172,7 +173,7 @@ ms.locfileid: "56188313"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-an-insignia-saml-sso-test-user"></a>Создание тестового пользователя Insignia SAML SSO
 

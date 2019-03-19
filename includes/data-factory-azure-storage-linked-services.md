@@ -4,39 +4,39 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: e5f2afa4bc8a4b8eae523fde323d835c0c53fe8e
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
-ms.translationtype: HT
+ms.openlocfilehash: f7c189c59b5098ef22491a914a618afda2b5f51e
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572640"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57554765"
 ---
 ### <a name="azure-storage-linked-service"></a>Связанная служба хранилища Azure
 **Связанная служба хранилища Azure** позволяет связать учетную запись хранения Azure с фабрикой данных Azure с помощью **ключа учетной записи**, который предоставляет фабрике данных глобальный доступ к службе хранилища Azure. В таблице ниже приведено описание элементов JSON, которые относятся к связанной службе хранилища Azure.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип |Для свойства type необходимо задать значение **AzureStorage** |Yes |
+| Тип |Свойству type необходимо задать значение **AzureStorage** |Yes |
 | connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к службе хранилища Azure. |Yes |
 
-Сведения о просмотре или копировании ключа учетной записи для службы хранилища Azure см. в разделе [Ключи доступа](../articles/storage/common/storage-account-manage.md#access-keys).
+В следующем разделе для действия просмотре или копировании ключа учетной записи для службы хранилища Azure: [Ключи доступа](../articles/storage/common/storage-account-manage.md#access-keys).
 
 **Пример.**  
 
 ```json
-{  
-    "name": "StorageLinkedService",  
-    "properties": {  
-        "type": "AzureStorage",  
-        "typeProperties": {  
-            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"  
-        }  
-    }  
-}  
+{
+    "name": "StorageLinkedService",
+    "properties": {
+        "type": "AzureStorage",
+        "typeProperties": {
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
+        }
+    }
+}
 ```
 
 ### <a name="azure-storage-sas-linked-service"></a>Связанная служба SAS хранилища Azure
-Подписанный URL-адрес (SAS) обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Это позволяет предоставить клиенту ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период времени и с определенным набором разрешений, не сообщая ему ключи доступа к своей учетной записи. SAS — это URI, который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью SAS клиенту достаточно передать SAS в соответствующий конструктор или метод. Дополнительные сведения о подписанном URL-адресе см. в статье [Использование подписанных URL-адресов (SAS)](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Подписанный URL-адрес (SAS) обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Это позволяет предоставить клиенту ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период времени и с определенным набором разрешений, не сообщая ему ключи доступа к своей учетной записи. SAS — это URI, который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью SAS клиенту достаточно передать SAS в соответствующий конструктор или метод. Подробные сведения о SAS см. в разделе [подписей общего доступа: подписанных URL-адресов (SAS)](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md)
 
 > [!IMPORTANT]
 > Теперь фабрика данных Azure поддерживает только **SAS службы**, а не SAS учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). Обратите внимание: URL-адрес SAS, который можно создать на портале Azure или в обозревателе хранилищ, является учетной записью SAS, которая не поддерживается в фабрике данных.
@@ -47,23 +47,23 @@ ms.locfileid: "51572640"
 
 Связанная служба SAS хранилища Azure позволяет связать учетную запись хранения Azure с фабрикой данных Azure с помощью подписанного URL-адреса (SAS). В этом случае фабрика данных получает ограниченный или привязанный ко времени доступ ко всем или конкретным ресурсам (BLOB-объектам или контейнерам) в хранилище. В таблице ниже приведено описание элементов JSON, которые относятся к связанной службе SAS хранилища Azure. 
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип |Для свойства type необходимо задать значение **AzureStorageSas** |Yes |
+| Тип |Свойству type необходимо задать значение **AzureStorageSas** |Yes |
 | sasUri |Укажите URI подписанного URL-адреса к ресурсам хранилища Azure, например BLOB-объектам, контейнерам или таблицам.  |Yes |
 
 **Пример.**
 
 ```json
-{  
-    "name": "StorageSasLinkedService",  
-    "properties": {  
-        "type": "AzureStorageSas",  
-        "typeProperties": {  
-            "sasUri": "<Specify SAS URI of the Azure Storage resource>"   
-        }  
-    }  
-}  
+{
+    "name": "StorageSasLinkedService",
+    "properties": {
+        "type": "AzureStorageSas",
+        "typeProperties": {
+            "sasUri": "<Specify SAS URI of the Azure Storage resource>"
+        }
+    }
+}
 ```
 
 При создании **URI SAS**следует принять во внимание следующие моменты:  

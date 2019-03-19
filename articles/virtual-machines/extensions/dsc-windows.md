@@ -14,12 +14,12 @@ ms.tgt_pltfrm: windows
 ms.workload: ''
 ms.date: 03/26/2018
 ms.author: robreed
-ms.openlocfilehash: 1d65238115ca57a3fcc8047a27c8161aaa144ce4
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
-ms.translationtype: HT
+ms.openlocfilehash: 9f81e2b7537a5ecc6778baa93a1bab23dd30ff8a
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57451915"
 ---
 # <a name="powershell-dsc-extension"></a>Расширение PowerShell DSC
 
@@ -27,17 +27,17 @@ ms.locfileid: "49407713"
 
 Расширение DSC PowerShell для Windows публикуется и поддерживается корпорацией Майкрософт. Расширение отправляет и применяет конфигурацию DSC PowerShell к виртуальной машине Azure. Расширение DSC вызывает DSC PowerShell, чтобы применить полученную конфигурацию DSC к виртуальной машине. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины DSC для Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение DSC поддерживает следующие операционные системы:
 
-Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 2008 R2 с пакетом обновления 1 (SP1), Windows Client 7/8.1.
+Windows Server 2019 г., Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 с пакетом обновления 1, клиент Windows 7, 8.1, 10
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-Для расширения DSC для Windows требуется, чтобы целевая виртуальная машина была подключена к Интернету. 
+Расширение DSC для Windows требует, что целевая виртуальная машина может взаимодействовать с Azure и расположение пакета конфигурации (ZIP-файл), если они хранятся в месте за пределами Azure. 
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -47,12 +47,12 @@ Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 
 {
   "type": "Microsoft.Compute/virtualMachines/extensions",
   "name": "Microsoft.Powershell.DSC",
-  "apiVersion": "2015-06-15",
+  "apiVersion": "2018-10-01",
   "location": "<location>",
   "properties": {
     "publisher": "Microsoft.Powershell",
     "type": "DSC",
-    "typeHandlerVersion": "2.73",
+    "typeHandlerVersion": "2.77",
     "autoUpgradeMinorVersion": true,
     "settings": {
         "wmfVersion": "latest",
@@ -100,10 +100,10 @@ Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | дата |
+| версия_API | 2018-10-01 | дата |
 | publisher | Microsoft.Powershell.DSC | строка |
 | Тип | DSC | строка |
-| typeHandlerVersion | 2.73 | int |
+| typeHandlerVersion | 2.77 | int |
 
 ### <a name="settings-property-values"></a>Значения свойства параметров
 
@@ -116,7 +116,7 @@ Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 
 | settings.configurationArguments | Коллекция | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство не будет зашифровано.
 | settings.configurationData.url | строка | Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationDataUrlSasToken будет необходимо задать значение маркера SAS.
 | settings.privacy.dataEnabled | строка | Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: Enable, Disable, '' или $null. Если для этого свойства не задано значение или задано значение NULL, сбор данных телеметрии будет выполняться.
-| settings.advancedOptions.forcePullAndApply | Bool | Включает расширение DSC для обновления и применения конфигураций DSC, если установлен режим обновления Pull.
+| settings.advancedOptions.forcePullAndApply | Bool | Этот параметр предназначен для улучшения работы с расширением регистрацию узлов с помощью DSC службы автоматизации Azure.  Если значение равно `$true`, расширение будет ожидать первого выполнения конфигурации берется из службы перед возвратом об успехе или сбое.  Если значение задано значение $false, состояние, возвращаемое расширение будет ссылаться только на ли узел с помощью настройки состояния службы автоматизации Azure успешно зарегистрирован и конфигурации узла не будет выполнено во время регистрации.
 | settings.advancedOptions.downloadMappings | Коллекция | Определяет альтернативные расположения для скачивания зависимостей, таких как WMF и .NET.
 
 ### <a name="protected-settings-property-values"></a>Значения свойств защищенных параметров
@@ -130,26 +130,9 @@ Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания. Пример шаблона Resource Manager, включающего расширение виртуальной машины агента Log Analytics, можно найти в [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/052db5feeba11f85d57f170d8202123511f72044/dsc-extension-iis-server-windows-vm). 
-
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. 
-
-При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины. При размещении JSON расширения в корне шаблона имя ресурса содержит ссылку на родительскую виртуальную машину, а тип отражает вложенную конфигурацию.  
-
-
-## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
-
-Azure CLI можно использовать для развертывания расширения виртуальной машины агента Log Analytics на существующей виртуальной машине. Замените ключ и идентификатор Log Analytics ключом и ИД вашей рабочей области Log Analytics. 
-
-```azurecli
-az vm extension set \
-  --resource-group myResourceGroup \
-  --vm-name myVM \
-  --name Microsoft.Powershell.DSC \
-  --publisher Microsoft.Powershell \
-  --version 2.73 --protected-settings '{}' \
-  --settings '{}'
-```
+Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager.
+Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
+Пример шаблона Resource Manager, который включает в себя расширение DSC для Windows можно найти на [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
@@ -166,7 +149,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}
 ```
 
-Файл состояния расширения содержит коды ошибки или успеха для подсостояния и состояния, а также подробные сведения об ошибке и описание каждого запуска расширения.
+Файл состояния расширения содержит вложенное состояние и успех или ошибка коды состояния, а также подробные сведения об ошибке и описание для каждого выполнения расширения.
 ```
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}\Status\{0}.Status  -> {0} being the sequence number
 ```

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: eaf18cf7d7a5f150d3400e133bf0703bb03e7b8f
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: cba9a334ae014351b1156f34325e9f134b1592a9
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845983"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57439203"
 ---
 # <a name="set-up-public-ip-addresses-after-failover"></a>Настройка общедоступных IP-адресов после отработки отказа
 
@@ -44,7 +44,7 @@ ms.locfileid: "52845983"
 Диспетчер трафика Azure позволяет выполнять маршрутизацию на уровне DNS между конечными точками и может помочь [снизить целевое время восстановления](../site-recovery/concepts-traffic-manager-with-site-recovery.md#recovery-time-objective-rto-considerations) для сценария аварийного восстановления. 
 
 Дополнительные сведения о сценарии отработки отказа с помощью диспетчера трафика:
-1. [Отработка отказа из локальной среды в Azure](../site-recovery/concepts-traffic-manager-with-site-recovery.md#on-premises-to-azure-failover) с помощью диспетчера трафика. 
+1. [На локальной среды в Azure, отработку отказа](../site-recovery/concepts-traffic-manager-with-site-recovery.md#on-premises-to-azure-failover) с помощью диспетчера трафика 
 2. [Отработка отказа из Azure в Azure](../site-recovery/concepts-traffic-manager-with-site-recovery.md#azure-to-azure-failover) с помощью диспетчера трафика. 
 
 Конфигурация выглядит следующим образом:
@@ -53,7 +53,7 @@ ms.locfileid: "52845983"
 - **Первичная** конечная точка может быть [Azure](../traffic-manager/traffic-manager-endpoint-types.md#azure-endpoints) или [внешней](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints) в зависимости от расположения исходной среды (внутри или за пределами Azure).
 - Таким образом, **отказоустойчивая** конечная точка создается как конечная точка **Azure**. Используйте **статический общедоступный IP-адрес**, так как это будет внешняя конечная точка для диспетчера трафика при аварийном событии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Диспетчер трафика Microsoft Azure и Azure Site Recovery](../site-recovery/concepts-traffic-manager-with-site-recovery.md).
 - См. сведения в статье [Методы маршрутизации диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md).
 - См. сведения в статье [Создание плана восстановления с помощью Site Recovery](site-recovery-create-recovery-plans.md).

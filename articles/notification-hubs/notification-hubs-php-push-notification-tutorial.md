@@ -14,12 +14,12 @@ ms.devlang: php
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 7bd533e9319a265e935e32be15768ab3487db6da
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 054edaf321d90015840fd84e1697fca742fd7e1e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561354"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57838601"
 ---
 # <a name="how-to-use-notification-hubs-from-php"></a>Использование концентраторов уведомлений из PHP
 
@@ -278,7 +278,7 @@ ms.locfileid: "55561354"
 
 После выполнения кода PHP на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом разделе было показано, как создать простой клиент Java REST для службы "Центры уведомлений". На данном этапе можно сделать следующее.
 
@@ -289,4 +289,4 @@ ms.locfileid: "55561354"
 Дополнительную информацию можно найти также в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
 [Примере оболочки PHP REST]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[Учебника по началу работы]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[Учебника по началу работы]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 0b24c5d2f174c9a656e81d0c85e12b589d7d7799
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.openlocfilehash: cc06ddf2fce93bef27e7aaee85b47179608e192b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808064"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57837042"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
 
@@ -39,8 +39,8 @@ ms.locfileid: "48808064"
 
 Чтобы создать пакет для средства Package Deployer, выполните инструкции, перейдя по следующей ссылке: [https://msdn.microsoft.com/library/dn688182.aspx](https://msdn.microsoft.com/library/dn688182.aspx). По завершении создания ваш пакет будет состоять из следующих ресурсов:
 
-1. Папка пакета, которая содержит все решения, данные конфигурации, неструктурированные файлы и содержимое для вашего пакета. _Примечание. В следующем примере папка пакета называется PkgFolder_.
-2. Библиотека DLL. Сборка содержит пользовательский код для вашего пакета. _Примечание. В следующем примере этот файл называется MicrosoftSample.dll._
+1. Папка пакета, которая содержит все решения, данные конфигурации, неструктурированные файлы и содержимое для вашего пакета. _Примечание. В следующем примере предполагается, что пакет называется «PkgFolder»_
+2. Библиотека DLL: Сборка содержит пользовательский код для пакета. _Примечание. В следующем примере предполагается, что этот файл называется «MicrosoftSample.dll.»_
 
 Теперь вам нужно создать файл с именем **Content_Types.xml**. Этот файл будет содержать все расширения ресурсов, которые являются частью вашего пакета. Ниже приведен пример кода для файла.
 
@@ -71,15 +71,15 @@ ms.locfileid: "48808064"
 
 ![CRMScreenShot2](media/CRMScreenShot2.png)
 
-2. Выберите все элементы в папке, щелкните правой кнопкой мыши и выберите "Отправить в" > "Сжатая папка (ZIP-файл)".
+1. Выберите все элементы в папке, щелкните правой кнопкой мыши и выберите "Отправить в" > "Сжатая папка (ZIP-файл)".
 
 ![CRMScreenShot3](media/CRMScreenShot3.png)
 
-3. Измените имя на package.zip.
+1. Измените имя на package.zip.
 
 ![CRMScreenShot4](media/CRMScreenShot4.png)
 
-## <a name="b-create-an-appsource-package"></a>b. Создание пакета AppSource
+## <a name="b-create-an-appsource-package"></a>2. Создание пакета AppSource
 
 Для пакета AppSource требуется несколько дополнительных файлов.
 
@@ -97,7 +97,7 @@ ms.locfileid: "48808064"
         <StartDate>01/01/2016</StartDate>
         <EndDate>01/01/2021</EndDate>
         <SupportedCountries>US,CA</SupportedCountries>
-        <LearnMoreLink>http://www.microsoft.com</LearnMoreLink>
+        <LearnMoreLink>https://www.microsoft.com</LearnMoreLink>
         <Locales>
         <PackageLocale Code="1033" IsDefault="true">
         <Logo>logo32x32.png</Logo>
@@ -117,13 +117,13 @@ ms.locfileid: "48808064"
 |SolutionAnchorName |Имя ZIP-файла решения в Package Deployer, который используется для отображаемого имени и описания ресурсов решения.|
 | StartDate| Это день, когда пакет решения станет доступен. Формат — ММ/ДД/ГГГГ.|
 |EndDate|Это день, когда пакет решений станет недоступным. Формат — ММ/ДД/ГГГГ. |
-|SupportedCountries |Это список разделенных запятыми стран, в которых пакет будет доступен. За списком всех текущих кодов стран обратитесь к веб-службам. В настоящее время в списке представлены следующие коды: AE,AL,AM,AO,AR,AT,AU,AZ,BA,BB,BD,BE,BG,BH,BM,BN,BO,BR,BY,CA,CH,CI,CL,CM,CO,CR,CV,CW,CY,CZ,DE,DK,DO,DZ,EC,EE,EG,ES,FI,FR,GB,GE,GH,GR,GT,HK,HN,HR,HU,ID,IE,IL,IN,IQ,IS,IT,JM,JO,JP,KE,KG,KN,KR,KW,KY,KZ,LB,LK,LT,LU,LV,LY,MA,MC,MD,ME,MK,MN,MO,MT,MU,MX,MY,NG,NI,NL,NO,NZ,OM,PA,PE,PH,PK,PL,PR,PS,PT,PY,QA,RO,RS,RU,RW,SA,SE,SG,SI,SK,SN,SV,TH,TM,TN,TR,TT,TW,UA,US,UY,UZ,VE,VI,VN,ZA,ZW. |
+|SupportedCountries |Это список разделенных запятыми стран, в которых пакет будет доступен. За списком всех текущих кодов стран обратитесь к веб-службам. В то время написания этой статьи список был: AE, AL, AM, AO, АРГЕНТИНА, AT, AU, ШТАТ АРИЗОНА, BA, BB, BD, БЫТЬ, BG, BH, BM, BN, BO, BR ПО ЦС, CH, CI, CL, CM, ШТАТ КОЛОРАДО, CR, CV, CW, CY, CZ, DE, DK,, DZ, EC, EE, НАПРИМЕР, ES, FI, FR, ГБ, GE, GH, GR, GT, HK , HN, HR, ВЕНГРИЯ, КОД, IE, IL, IN, IQ, ЯВЛЯЕТСЯ, ОН, JM, ДЖО, JP, KE, КГ, KN, КОРЕЯ, КВТ, KY, KZ, БАЛАНСИРОВКИ НАГРУЗКИ, LK, LT, LU, LV, LY, ШТАТ МАССАЧУСЕТС, MC, MD, МНЕ, MK, MN, MO, MT, ЦЕНТРА ОБНОВЛЕНИЯ МАЙКРОСОФТ, MX, MY, NG, NI, NL, НЕТ, NZ, OM, PA, PE, PH , PK, PL, ЗАПРОС НА ВЫТЯГИВАНИЕ, PS, PT, PY, КОНТРОЛЯ КАЧЕСТВА, RO, RS, RU, RW, SA, SE, SG, SI, SK, SN, SV, TH, TM, TN, TR, TT, TW, UA, США, UY, UZ, VE, VI, VN, ZA, ZW |
 |LearnMoreLink | URL-адрес страницы с дополнительными сведениями для этого пакета. |
 |Locales|Один экземпляр этого узла для каждого языка пользовательского интерфейса, который должен поддерживаться в предпочтительном пользовательском интерфейсе решения. Этот узел содержит дочерние элементы, которые описывают языковой стандарт, логотип и термины каждого языка.|
-|Locales: PackageLocale.Code|Код языка для этого узла. Например, английский язык (US) — 1033.|
-|Locales: PackageLocale.IsDefault|Указывает, что это язык по умолчанию. Этот язык используется в качестве резервного языка, если выбранный клиентом язык пользовательского интерфейса недоступен.|
-|Locales: Logo|Это логотип, используемый для данного пакета. Размер значка — 32 x 32. Разрешены следующие форматы: PNG и JPG.|
-|Locales:Terms: PackageTerm.File|Это имя файла документа HTML, в котором содержатся условия лицензии.|
+|Языковые стандарты: PackageLocale.Code|Код языка для этого узла. Пример: Английский (США) — 1033|
+|Языковые стандарты: PackageLocale.IsDefault|Указывает, что это язык по умолчанию. Этот язык используется в качестве резервного языка, если выбранный клиентом язык пользовательского интерфейса недоступен.|
+|Языковые стандарты: Логотип|Это логотип, используемый для данного пакета. Размер значка — 32 x 32. Разрешены следующие форматы: PNG и JPG.|
+|Языковые стандарты: условия: PackageTerm.File|Это имя файла документа HTML, в котором содержатся условия лицензии.|
 
 Ниже приведен пример отображения логотипа:
 

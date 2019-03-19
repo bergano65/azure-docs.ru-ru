@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
-ms.openlocfilehash: 88efa6b16e33fe928ad9354b7283f7c651e6710c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: a4c256a6acd8e51986b40e28a6f658f1103ab337
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55881306"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877706"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
-Вы только начинаете изучать возможности службы "Речь"? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
+Вы только что начала изучение функций служб речи? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
 
 > [!div class="checklist"]
 > * Будьте в курсе последних разработок в *Azure Cognitive Services* и следите за последними новостями о *службе "Речь"*.
@@ -30,7 +30,7 @@ ms.locfileid: "55881306"
 
 ## <a name="stay-informed"></a>Следите за новостями
 
-Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние новости о службе "Речь" см. в [этом блоге](https://azure.microsoft.com/blog/tag/speech-service/).
+Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о службах речи отслеживания [служб речи блог](https://azure.microsoft.com/blog/tag/speech-service/).
 
 ## <a name="search"></a>поиска
 
@@ -61,11 +61,11 @@ Stack Overflow — это идеальное место для вопросов
 
 |Компонент или область  |Теги  |
 |---------|---------|
-|Распознавание речи |[[microsoft-cognitive+speech-to-text]](http://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
-|Синтез речи |[[microsoft-cognitive+text-to-speech]](http://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Перевод речи |[[microsoft-cognitive+translation]](http://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
-|Намерения говорящего |[[microsoft-cognitive+luis]](http://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
-|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](http://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
+|Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
+|Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
+|Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
+|Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
+|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

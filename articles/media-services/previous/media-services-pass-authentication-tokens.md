@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: dwgeo
-ms.openlocfilehash: b4bcc1bbed732e09f4c4d915342a422ce6c36901
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 6fc13010d5dd888f28b5634b1f70aaa3326e54cf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002082"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57837513"
 ---
 # <a name="learn-how-clients-pass-tokens-to-the-azure-media-services-key-delivery-service"></a>Сведения о том, как клиенты передают маркеры в службу доставки ключей Служб мультимедиа Azure
 Клиенты часто спрашивают, как проигрыватель может передать маркеры аутентификации в службу доставки ключей Служб мультимедиа Azure, чтобы получить ключ. Службы мультимедиа поддерживают форматы простого веб-маркера (SWT) и JSON Web Token (JWT). Аутентификация с использованием маркера применима к ключу любого типа, независимо от того, какое шифрование выполняется в системе: общее или шифрование конвертов AES.
@@ -29,7 +29,7 @@ ms.locfileid: "56002082"
 
 - С использованием заголовка авторизации HTTP.
     > [!NOTE]
-    > Для каждой спецификации OAuth 2.0. ожидается префикс Bearer. На [странице демоверсии](http://ampdemo.azureedge.net/) Проигрывателя мультимедиа Azure приведен пример проигрывателя с конфигурацией маркера. Выберите **AES (маркер JWT)** или **AES (маркер SWT)**, чтобы указать источник видео. Маркер передается через заголовок авторизации.
+    > Для каждой спецификации OAuth 2.0. ожидается префикс Bearer. На [странице демоверсии](https://ampdemo.azureedge.net/) Проигрывателя мультимедиа Azure приведен пример проигрывателя с конфигурацией маркера. Выберите **AES (маркер JWT)** или **AES (маркер SWT)**, чтобы указать источник видео. Маркер передается через заголовок авторизации.
 
 - Путем добавления параметра запроса URL-адреса со строкой token=tokenvalue.  
     > [!NOTE]
@@ -54,6 +54,6 @@ ms.locfileid: "56002082"
 
 - С использованием альтернативного списка воспроизведения HTTP Live Streaming (HLS). Если необходимо настроить маркер аутентификации для воспроизведения HLS с шифрованием AES в Safari или iOS, вы не сможете отправить маркер напрямую. Дополнительные сведения об изменении списка воспроизведения для реализации этого сценария см. в [этой записи блога](https://azure.microsoft.com/blog/2015/03/06/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

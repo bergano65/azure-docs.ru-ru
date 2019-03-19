@@ -14,12 +14,12 @@ ms.author: lizross
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a6f7eaa91faabfea7bb951eb9863ffecd2f5499
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: be7094db14f53af939ded2313823bf2749e59a46
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182380"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58183158"
 ---
 # <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензии групп в Azure Active Directory?
 
@@ -49,7 +49,7 @@ ms.locfileid: "56182380"
 
 - Поддерживаются все облачные службы Майкрософт, требующие лицензирования на уровне пользователя. Поддерживаются все продукты Office 365, Enterprise Mobility + Security и Dynamics 365.
 
-- Использование лицензий групп сейчас доступно только на [портале Azure](https://portal.azure.com). Если вы в основном пользуетесь другими порталами для управления пользователями и группами, например порталом Office 365, вы можете продолжить их использовать. Однако управлять лицензиями на уровне группы нужно с помощью портала Azure.
+- Механизм группового лицензирования сейчас доступна только через [портала Azure](https://portal.azure.com). Если вы в основном пользуетесь другими порталами для управления пользователями и группами, такие как [Центр администрирования Microsoft 365](https://admin.microsoft.com), вы можете сделать это. Однако управлять лицензиями на уровне группы нужно с помощью портала Azure.
 
 - Azure AD автоматически управляет изменениями лицензий, возникающими в результате изменений членства в группах. Как правило, изменение лицензий происходит через несколько минут после изменения членства.
 
@@ -61,7 +61,7 @@ ms.locfileid: "56182380"
 
 Если вы хотите оставить отзыв или запрос на создание функции, это можно сделать на [администраторском форуме Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=162510).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других сценариях управления лицензиями на основе группы см. в следующих статьях:
 

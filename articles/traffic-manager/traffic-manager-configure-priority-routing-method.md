@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: kumud
-ms.openlocfilehash: 52bfc73ad586bb3852e30a850d4ba50a113183d3
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
-ms.translationtype: HT
+ms.openlocfilehash: 66c5bd9390d6fe0f26af66e18aed22c07a7da3e4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140423"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58003107"
 ---
 # <a name="configure-priority-traffic-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
@@ -26,7 +26,7 @@ ms.locfileid: "50140423"
 
 ## <a name="to-configure-the-priority-traffic-routing-method"></a>Настройка метода маршрутизации трафика по приоритету
 
-1. В браузере войдите на [портал Azure](http://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
+1. В браузере войдите на [портал Azure](https://portal.azure.com). Если у вас нет учетной записи, вы можете зарегистрироваться для получения [бесплатной пробной версии на один месяц](https://azure.microsoft.com/free/). 
 2. На панели поиска портала выполните поиск **профилей диспетчера трафика** и щелкните имя профиля, для которого нужно настроить метод маршрутизации.
 3. В колонке **Профиль диспетчера трафика** убедитесь, что отображаются и облачные службы, и веб-сайты, которые требуется включить в конфигурацию.
 4. В разделе **Параметры** щелкните **Конфигурация** и в колонке **Конфигурация** сделайте следующее.
@@ -48,7 +48,7 @@ ms.locfileid: "50140423"
 
 ![Настройка метода маршрутизации трафика по приоритету с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).

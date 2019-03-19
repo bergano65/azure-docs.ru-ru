@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 01/31/2019
+ms.date: 03/14/2019
 ms.author: lagayhar
-ms.openlocfilehash: 7ad8b96efeef2a5bb5543ee08150376862abb27f
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: ece8b4ac3946f543c13975e40b1025bb3cc222f6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699334"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58013257"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Приступая к работе с Application Insights в веб-проекте Java
 
@@ -33,18 +33,15 @@ ms.locfileid: "55699334"
 * JRE версии 1.7 или 1.8;
 * подписка на [Microsoft Azure](https://azure.microsoft.com/).
 
-*Если у вас уже есть развернутое веб-приложение, воспользуйтесь альтернативным способом, который описан в статье о [добавлении пакета SDK на веб-сервер во время выполнения](java-live.md). В этом случае вам не нужно повторно компилировать код, но в то же время вы не сможете написать код для отслеживания действий пользователей.*
-
 Если вы предпочитаете платформу Spring, попробуйте [настроить Application Insights в приложении-инициализаторе Spring Boot](https://docs.microsoft.com/java/azure/spring-framework/configure-spring-boot-java-applicationinsights).
 
 ## <a name="1-get-an-application-insights-instrumentation-key"></a>1. Получение ключа инструментирования Application Insights
 1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
 2. Создайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
 
-    ![Введите имя, выберите веб-приложение Java и нажмите кнопку "Создать"](./media/java-get-started/02-create.png)
 3. Найдите ключ инструментирования нового ресурса. Далее будет необходимо вставить его в проект кода.
 
-    ![В обзоре нового ресурса щелкните "Свойства" и скопируйте ключ инструментирования](./media/java-get-started/03-key.png)
+    ![В обзоре нового ресурса щелкните "Свойства" и скопируйте ключ инструментирования](./media/java-get-started/instrumentation-key-001.png)
 
 ## <a name="2-add-the-application-insights-sdk-for-java-to-your-project"></a>2. Добавление в проект пакета SDK Application Insights для Java
 *Выберите подходящий метод для проекта.*
@@ -303,13 +300,13 @@ public class AppInsightsConfig {
 
 В колонке обзора появятся данные HTTP-запросов. (Если данные отсутствуют, подождите несколько секунд и нажмите кнопку обновления).
 
-![пример данных](./media/java-get-started/5-results.png)
+![Снимок экрана: обзор с примером данных](./media/java-get-started/overview-graphs.png)
 
 [Дополнительные сведения о метриках.][metrics]
 
 Щелкните любую диаграмму, чтобы увидеть более подробные агрегированные метрики.
 
-![](./media/java-get-started/6-barchart.png)
+![Панель ошибок Application Insights с диаграммами](./media/java-get-started/006-barcharts.png)
 
 > Служба Application Insights предполагает, что HTTP-запросы для приложений MVC имеют следующий формат: `VERB controller/action`. Например, `GET Home/Product/f9anuh81`, `GET Home/Product/2dffwrf5` и `GET Home/Product/sdf96vws` сгруппированы в `GET Home/Product`. Это позволяет осмысленно группировать запросы, получая, например, число запросов и среднее время выполнения запросов.
 >
@@ -318,16 +315,12 @@ public class AppInsightsConfig {
 ### <a name="instance-data"></a>Данные экземпляров
 Щелкните тип запроса, чтобы просмотреть отдельные экземпляры.
 
-В Application Insights отображаются два типа данных: 1) объединенные данные, хранимые и отображаемые как средние значения, количества и суммы; 2) данные экземпляров, например отдельные отчеты HTTP-запросов, исключения, число просмотров страниц или пользовательские события.
-
-При просмотре свойств запроса можно увидеть связанные с ним события телеметрии, например запросы и исключения.
-
-![](./media/java-get-started/7-instance.png)
+![Получить детализированное представление примеры](./media/java-get-started/007-instance.png)
 
 ### <a name="analytics-powerful-query-language"></a>Аналитика. Эффективный язык запросов
 По мере увеличения объема накопленных данных вы сможете использовать запросы для объедения данных и поиска отдельных экземпляров.  [Аналитика](../../azure-monitor/app/analytics.md) — это мощный инструмент, который не только позволяет изучать сведения о производительности и использовании, но и диагностировать возможные неполадки.
 
-![Пример аналитики](./media/java-get-started/025.png)
+![Пример аналитики](./media/java-get-started/0025.png)
 
 ## <a name="7-install-your-app-on-the-server"></a>7. Установка приложения на сервере
 Теперь опубликуйте приложение на сервере, откройте доступ для пользователей и изучайте телеметрию на портале.
@@ -345,11 +338,25 @@ public class AppInsightsConfig {
 
     (Сюда входят счетчики производительности).
 
+## <a name="azure-app-service-config-spring-boot"></a>Azure config службы приложений (Spring Boot)
+
+Приложения Spring Boot, работающие на Windows требуют дополнительной настройки для запуска в службах приложений Azure. Изменить **web.config** и добавьте следующий код:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <handlers>
+            <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified"/>
+        </handlers>
+        <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" arguments="-Djava.net.preferIPv4Stack=true -Dserver.port=%HTTP_PLATFORM_PORT% -jar &quot;%HOME%\site\wwwroot\AzureWebAppExample-0.0.1-SNAPSHOT.jar&quot;">
+        </httpPlatform>
+    </system.webServer>
+</configuration>
+```
 
 ## <a name="exceptions-and-request-failures"></a>Исключения и ошибки запросов
-Необработанные исключения автоматически фиксируются:
-
-![Последовательно выберите элементы "Параметры" и "Сбои".](./media/java-get-started/21-exceptions.png)
+Необработанные исключения автоматически фиксируются.
 
 Для сбора данных по другим исключениям доступны два варианта:
 
@@ -368,9 +375,9 @@ public class AppInsightsConfig {
 Конфигурация входящих параметров пакета средств разработки задана в файле [AI-Agent.xml](java-agent.md).
 
 ## <a name="performance-counters"></a>Счетчики производительности
-Чтобы отобразить диапазон счетчиков производительности, щелкните **Параметры**, **Серверы**.
+Откройте **исследовать**, **метрики**, чтобы отобразить диапазон счетчиков производительности.
 
-![](./media/java-get-started/11-perf-counters.png)
+![Снимок экрана: панель метрик с байтов исключительного пользования процесса выбран](./media/java-get-started/011-perf-counters.png)
 
 ### <a name="customize-performance-counter-collection"></a>Настройка сбора данных счетчиками производительности
 Чтобы отключить сбор данных стандартным набором счетчиков производительности, добавьте следующий фрагмент кода в корневой узел файла ApplicationInsights.xml:
@@ -420,10 +427,6 @@ public class AppInsightsConfig {
 * counterName — имя счетчика производительности.
 * instanceName — имя экземпляра категории счетчика производительности или пустая строка (""), если категория содержит единственный экземпляр. Если categoryName имеет значение "Process", и источником данных для счетчиков производительности является текущий процесс виртуальной машины Java, на которой выполняется ваше приложение, укажите `"__SELF__"`.
 
-Счетчики производительности отображаются как пользовательские метрики в [обозревателе метрик][metrics].
-
-![](./media/java-get-started/12-custom-perfs.png)
-
 ### <a name="unix-performance-counters"></a>Счетчики производительности Unix
 * [установите collectd с подключаемым модулем Application Insights](java-collectd.md) .
 
@@ -467,24 +470,14 @@ azure.application-insights.channel.local-forwarder.max-telemetry-buffer-capacity
 * [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
 
 ## <a name="availability-web-tests"></a>Доступность веб-тестов
-Application Insights может тестировать ваш веб-сайт через равные промежутки времени для проверки, работает ли он и правильно ли отвечает на запросы. [Чтобы выполнить настройку][availability], щелкните "Веб-тесты".
+Application Insights может тестировать ваш веб-сайт через равные промежутки времени для проверки, работает ли он и правильно ли отвечает на запросы.
 
-![Щелкните "Веб-тесты", а затем — "Добавить веб-тест".](./media/java-get-started/31-config-web-test.png)
-
-Если ваш сайт выйдет из строя, вы получите диаграмму значений времени ответа, а также уведомление по электронной почте.
-
-![Пример веб-теста](./media/java-get-started/appinsights-10webtestresult.png)
-
-[Дополнительные сведения о веб-тестах для определения доступности.][availability]
+[Дополнительные сведения о том, как настроить веб-тесты доступности.][availability]
 
 ## <a name="questions-problems"></a>Вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="video"></a>Видео
-
-> [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.

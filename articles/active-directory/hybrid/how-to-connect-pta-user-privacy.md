@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1f2b717043394634f437caf7dd57411260fd7be
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: f1a7b740a6b248a12fa3d95f85f602ef7a8b2fa5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191101"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58098065"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
 
@@ -105,6 +105,6 @@ Foreach ($file in $files) {
 
 Если включено ведение журнала аудита, этот продукт может создавать журналы безопасности для контроллеров домена. Дополнительные сведения о настройке политик аудита см. в [этой статье](https://technet.microsoft.com/library/dd277403.aspx).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр политики конфиденциальности корпорации Майкрософт в центре управления безопасностью](https://www.microsoft.com/trustcenter)
-- [**Устранение неполадок**](tshoot-connect-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
+* [**Устранение неполадок**](tshoot-connect-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.

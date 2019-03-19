@@ -16,28 +16,28 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac25473ecce86c2721eda9ede01b6d299c4b727b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 31f10ba0c04ccbd9f52b95c43fea7cc551fe64ee
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56179337"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56888021"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство. Настройка GitHub для автоматической подготовки пользователей
 
 
 Цель этого руководства — показать, как в GitHub и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в GitHub. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
 *   клиент Azure Active Directory;
-*   клиент GitHub с активированным [планом Business Cloud](https://help.github.com/articles/organization-billing-plans/#github-business-cloud) или лучше; 
-*   учетная запись пользователя в GitHub с разрешениями администратора. 
+*   Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
+*   Учетную запись пользователя в GitHub с разрешениями администратора в организации
 
 > [!NOTE]
-> Интеграция подготовки в Azure AD зависит от [API SCIM GitHub](https://developer.github.com/v3/scim/), доступного для команд GitHub, использующих план Business или выше.
+> Интеграция подготовки Azure AD зависит от [GitHub SCIM API](https://developer.github.com/v3/scim/), доступного для [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) клиенты, использующие [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations) .
 
 ## <a name="assigning-users-to-github"></a>Назначение пользователей в GitHub
 
@@ -107,6 +107,6 @@ ms.locfileid: "56179337"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

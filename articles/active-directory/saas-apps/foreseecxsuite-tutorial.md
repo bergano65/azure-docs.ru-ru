@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2364152cc897ac02c3fcdff68423c64737bb1a78
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 104caa001f773c48a708879f3f9b50b74190fc74
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57449229"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
 
@@ -35,7 +35,7 @@ ms.locfileid: "56187689"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ForeSee CX Suite, вам потребуется:
 
@@ -114,19 +114,19 @@ ms.locfileid: "56187689"
 
     ![Сведения о домене и URL-адресах единого входа приложения ForeSee CX Suite](./media/foreseecxsuite-tutorial/tutorial_foreseen_uploadconfig.png)
 
-    б) Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    2. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     c. После успешной передачи **файла метаданных поставщика службы** значение **Идентификатор** автоматически добавляется в соответствующее текстовое поле в разделе **Домены и URL-адреса приложения ForeSee CX Suite**, как показано ниже:
 
     ![Сведения о домене и URL-адресах единого входа приложения ForeSee CX Suite](./media/foreseecxsuite-tutorial/urlupload.png)
 
-1. Если у вас нет **файла метаданных поставщика службы**, выполните следующие действия:
+1. Если у вас нет **файл метаданных поставщика службы**, выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа приложения ForeSee CX Suite](./media/foreseecxsuite-tutorial/tutorial_foreseecxsuite_url.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://cxsuite.foresee.com/`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<UniqueID>`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<UniqueID>`
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Для получения этого значения обратитесь в [группу поддержки клиентов ForeSee CX Suite](mailto:support@foresee.com).
@@ -171,7 +171,7 @@ ms.locfileid: "56187689"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-foresee-cx-suite-test-user"></a>Создание тестового пользователя ForeSee CX Suite
 

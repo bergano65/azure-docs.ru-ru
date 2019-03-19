@@ -16,12 +16,12 @@ ms.date: 05/31/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3b503c7f0693a90d438fcec3ecae335fd349b3d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: cb44c64540cc461bca4e305f7783f7c6b612591b
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188007"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996343"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Параметры входа в Azure AD Connect
 Служба Azure Active Directory (Azure AD) Connect позволяет входить в облачные и локальные ресурсы, используя те же пароли. В этой статье рассматриваются основные сведения о каждой модели идентификации, с помощью которых вы можете выбрать удостоверение для входа в Azure AD.
@@ -75,7 +75,9 @@ Azure AD поддерживает следующие методы проверк
 ### <a name="federation-that-uses-a-new-or-existing-farm-with-ad-fs-in-windows-server-2012-r2"></a>Федерация, использующая новую или существующую ферму со службами AD FS в Windows Server 2012 R2
 С помощью федеративного входа ваши пользователи могут входить в службы Azure AD со своими локальными паролями, а в корпоративной сети — даже без необходимости повторного ввода паролей. Использование федерация AD FS позволяет развернуть новую или указать существующую ферму со службами AD FS в Windows Server 2012 R2. Если указать существующую ферму, то Azure AD Connect настроит доверие между фермой и Azure AD для возможности входа пользователей.
 
-<center>![Федерация с AD FS в Windows Server 2012 R2](./media/plan-connect-user-signin/federatedsignin.png)</center>
+<center>
+
+![Федерация с AD FS в Windows Server 2012 R2](./media/plan-connect-user-signin/federatedsignin.png)</center>
 
 #### <a name="deploy-federation-with-ad-fs-in-windows-server-2012-r2"></a>Развертывание федерации с AD FS в Windows Server 2012 R2
 
@@ -152,6 +154,7 @@ Azure AD поддерживает следующие методы проверк
 Предположим, что нас интересует суффикс имени участника-пользователя contoso.com, который используется в локальном каталоге как часть имени участника-пользователя, например user@contoso.com.
 
 ###### <a name="express-settingspassword-hash-synchronization"></a>Стандартные параметры/синхронизация хэша паролей
+
 | Состояние | Влияние на процесс входа пользователей в Azure |
 |:---:|:--- |
 | Не добавлено |В этом случае в каталог Azure AD не был добавлен ни один личный домен для contoso.com. Пользователи, имеющие локальное имя участника-пользователя с суффиксом @contoso.com, не смогут использовать его для входа в Azure. Вместо этого они должны будут использовать новое имя участника-пользователя, предоставленное им Azure AD путем добавления суффикса для каталога Azure AD по умолчанию. Например, если выполняется синхронизация пользователей c каталогом Azure AD azurecontoso.onmicrosoft.com, то локальному пользователю user@contoso.com будет присвоено имя участника-пользователя user@azurecontoso.onmicrosoft.com. |
@@ -187,6 +190,6 @@ Azure AD поддерживает следующие методы проверк
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).
 - Дополнительные сведения об принципах проектирования см. в статье [Azure AD Connect: принципы проектирования](plan-connect-design-concepts.md).

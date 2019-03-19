@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: jingwang
-ms.openlocfilehash: ed861aa914da999bdb2922bc309f05d1234ef416
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: eeab0311519d7e3410ddb625c1801101ad63ad18
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018489"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57550422"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "54018489"
 
 Для связанной службы OData поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства **type** необходимо задать значение **OData**. |Yes |
 | URL-адрес | Корневой URL-адрес службы OData. |Yes |
@@ -70,7 +70,7 @@ ms.locfileid: "54018489"
     "properties": {
         "type": "OData",
         "typeProperties": {
-            "url": "http://services.odata.org/OData/OData.svc",
+            "url": "https://services.odata.org/OData/OData.svc",
             "authenticationType": "Anonymous"
         },
         "connectVia": {
@@ -195,7 +195,7 @@ ms.locfileid: "54018489"
 
 Чтобы скопировать данные из OData, установите свойство **type** набора данных **ODataResource**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** для набора данных должно иметь значение **ODataResource**. | Yes |
 | path | Путь к ресурсу OData. | Yes |
@@ -230,10 +230,10 @@ ms.locfileid: "54018489"
 
 Чтобы копировать данные из OData, установите тип **источника** **RelationalSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** источника действия копирования должно иметь значение **RelationalSource**. | Yes |
-| query | Параметры запроса OData для фильтрации данных. Пример: `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание**. Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](http://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет  |
+| query | Параметры запроса OData для фильтрации данных. Пример: `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание**. Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет  |
 
 **Пример**
 
@@ -293,6 +293,6 @@ ms.locfileid: "54018489"
 > Сложные типы данных OData (например **объекты**), не поддерживаются.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

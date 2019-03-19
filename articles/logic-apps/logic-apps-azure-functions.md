@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: bb00ef0f76b71d0a4748a319c9f2a5d64dffa251
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.openlocfilehash: 2bec33a4a8540f9599cf1d479f1f59c4cde39bd2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233316"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57861593"
 ---
 # <a name="add-and-run-custom-code-snippets-in-azure-logic-apps-with-azure-functions"></a>Добавление и выполнение фрагментов пользовательского код для Azure Logic Apps с помощью службы "Функции Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "50233316"
 
 Также можно [вызывать приложения логики из функций](#call-logic-app).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этой статьей необходимы следующие компоненты:
 
@@ -44,7 +44,7 @@ ms.locfileid: "50233316"
     Этот шаблон триггера HTTP поддерживает содержимое приложения логики с типом `application/json`. 
     При добавлении функции Azure в приложение логики конструктор приложений логики отображает пользовательские функции, созданные из этого шаблона в вашей подписке Azure. 
 
-  * Ваша функция не использует пользовательские маршруты, если отсутствует [определение OpenAPI](../azure-functions/functions-openapi-definition.md), ранее известное как [файл Swagger](http://swagger.io/). 
+  * Ваша функция не использует пользовательские маршруты, если отсутствует [определение OpenAPI](../azure-functions/functions-openapi-definition.md), ранее известное как [файл Swagger](https://swagger.io/). 
   
   * Если оно присутствует, конструктор приложений логики предоставляет более широкие возможности для работы с параметрами функции. Прежде чем приложение логики сможет найти и получить доступ к функции с определениями OpenAPI, необходимо [настроить приложение-функцию, выполнив следующие действия](#function-swagger).
 
@@ -52,7 +52,7 @@ ms.locfileid: "50233316"
 
   Прежде чем добавлять действия для запуска функций, необходимо запустить приложение логики при помощи триггера.
 
-  Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+  Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 <a name="create-function-external"></a>
 
@@ -67,7 +67,7 @@ ms.locfileid: "50233316"
 
 <a name="function-swagger"></a>
 
-* Если для функции [создать определение API](../azure-functions/functions-openapi-definition.md), которое также известно как [файл Swagger](http://swagger.io/), то при необходимости можно получить широкие возможности при работе с параметрами функции в конструкторе Logic Apps. Чтобы настроить приложение-функцию, которое позволит приложению логики находить и использовать функции, которые обладают описанием Swagger, выполните следующие действия:
+* Если для функции [создать определение API](../azure-functions/functions-openapi-definition.md), которое также известно как [файл Swagger](https://swagger.io/), то при необходимости можно получить широкие возможности при работе с параметрами функции в конструкторе Logic Apps. Чтобы настроить приложение-функцию, которое позволит приложению логики находить и использовать функции, которые обладают описанием Swagger, выполните следующие действия:
 
   1. Убедитесь, что приложение-функция активно выполняется.
 
@@ -125,11 +125,11 @@ function convertToDateString(request, response){
    * Между имеющимися шагами в рабочем процессе приложения логики наведите указатель мыши на стрелку, выберите знак плюса (+), а затем выберите **Добавить действие**.
 
 3. В поле поиска введите "Функции Azure" в качестве условия фильтра.
-Из списка действий выберите **Функции Azure — Выберите функцию Azure**. 
+В списке действий выберите действие **Choose an Azure function — Azure Functions** (Выбор функции Azure — Функции Azure). 
 
    ![Поиск "Функции Azure"](./media/logic-apps-azure-functions/find-azure-functions-action.png)
 
-4. Выберите приложение-функцию из списка приложений-функций. После того как откроется список действий, выберите **Функции Azure — Выберите функцию Azure**
+4. Выберите приложение-функцию из списка приложений-функций. В открывшейся списке действий выберите это действие: **Функции Azure — Создание функции**
 
    ![Выбор приложения-функции](./media/logic-apps-azure-functions/select-function-app-create-function.png)
 
@@ -181,7 +181,7 @@ function convertToDateString(request, response){
 2. На шаге, в котором необходимо добавить функцию, последовательно выберите **Новый шаг** > **Add an action** (Добавить действие). 
 
 3. В поле поиска введите "Функции Azure" в качестве условия фильтра.
-Из списка действий выберите **Функции Azure — Выберите функцию Azure**. 
+В списке действий выберите действие **Choose an Azure function — Azure Functions** (Выбор функции Azure — Функции Azure). 
 
    ![Поиск "Функции Azure"](./media/logic-apps-azure-functions/find-azure-functions-action.png)
 
@@ -216,6 +216,6 @@ function convertToDateString(request, response){
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [соединителях Logic Apps](../connectors/apis-list.md).

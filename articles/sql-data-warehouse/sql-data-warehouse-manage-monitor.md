@@ -2,20 +2,20 @@
 title: Мониторинг рабочей нагрузки с помощью динамических административных представлений | Документация Майкрософт
 description: Узнайте о том, как организовать отслеживание рабочей нагрузки с помощью динамических административных представлений.
 services: sql-data-warehouse
-author: kevinvngo
+author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 04/17/2018
-ms.author: kevin
+ms.date: 03/18/2019
+ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 8cad10c401f92db7693508e5c0d8b2089606b565
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e2360b5587d204ec87fe82c029391c7252d27914
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58008778"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189552"
 ---
 # <a name="monitor-your-workload-using-dmvs"></a>Мониторинг рабочей нагрузки с помощью динамических административных представлений
 В этой статье объясняется, как отслеживать рабочую нагрузку с помощью динамических административных представлений (DMV). Она включает в себя анализ выполнения запросов в хранилище данных SQL Azure.
@@ -68,9 +68,9 @@ WHERE   [label] = 'My Query';
 
 **Запишите идентификатор запроса**, который вы хотите исследовать. Он указан в приведенных выше результатах запроса.
 
-Запросы в состоянии **Приостановлено** поставлены в очередь из-за ограничений параллелизма. Эти запросы также отображаются в результатах запроса Waits к sys.dm_pdw_waits с типом UserConcurrencyResourceType. Сведения об ограничениях параллелизма см. в статье об [уровнях производительности](performance-tiers.md) или [классах ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
+Запросы в **Suspended** могут быть поставлены в очередь состояния из-за большого числа активных рабочих запросов. Эти запросы также отображаются в [sys.dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) ожиданий запрос с типом UserConcurrencyResourceType. Сведения об ограничениях параллелизма см. в статье об [уровнях производительности](performance-tiers.md) или [классах ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
 
-Чтобы упростить поиск запроса в таблице sys.dm_pdw_exec_requests, используйте [LABEL][LABEL], чтобы добавить комментарий к запросу, который можно будет найти в представлении sys.dm_pdw_exec_requests.
+Чтобы упростить поиск запроса в [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) таблицы, используйте [МЕТКА] [ LABEL] Чтобы добавить комментарий к запросу, который можно найти в sys.dm_pdw_exec_ представления запросов.
 
 ```sql
 -- Query with Label

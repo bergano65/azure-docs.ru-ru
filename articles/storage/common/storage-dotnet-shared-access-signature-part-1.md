@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/18/2017
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 7b5f4db51fca97f79f2b43bfcd5ce8dead3ba50b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: e9e78d3226f90ef780a1ed2114ba256c293463dc
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470354"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58001579"
 ---
 # <a name="using-shared-access-signatures-sas"></a>Использование подписанных URL-адресов (SAS)
 
@@ -40,11 +40,11 @@ SAS можно использовать, когда доступ к ресурс
 
 1. Клиенты отправляют и скачивают данные с помощью службы интерфейсного прокси-сервера, выполняющей аутентификацию. Эта служба интерфейсного прокси-сервера позволяет проверять бизнес-правила, однако для больших объемов данных или крупных транзакций создание службы, поддерживающей масштабирование в соответствии с потребностями, может оказаться дорогостоящей или сложной задачей.
 
-  ![Схема сценария. Служба внешнего интерфейса прокси-сервера](./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png)   
+   ![Схема сценария. Служба внешнего интерфейса прокси-сервера](./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png)   
 
 1. Облегченная служба аутентифицирует клиент по мере необходимости, а затем создает SAS. Клиент, получив эту подпись общего доступа, может осуществлять прямой доступ к ресурсам учетной записи хранения с разрешениями, определенными в подписи, и в течение разрешенного подписью периода времени. Подпись общего доступа уменьшает потребность в маршрутизации всех данных через службу интерфейсного прокси-сервера.
 
-  ![Схема сценария. Служба поставщика SAS](./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png)   
+   ![Схема сценария. Служба поставщика SAS](./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png)   
 
 Многие реальные службы могут использовать сочетание этих двух подходов. Например, некоторые данные обрабатываются и проверяются через интерфейсный прокси-сервер, а другие данные сохраняются и (или) считываются непосредственно с помощью SAS.
 
@@ -230,8 +230,8 @@ catch (StorageException e)
 
 Для выполнения этих примеров C# необходимо ссылаться на следующие пакеты NuGet в своем проекте:
 
-* [Клиентская библиотека службы хранилища Azure для .NET](http://www.nuget.org/packages/WindowsAzure.Storage)версии 6.0 или более поздней (для использования учетной записи SAS).
-* [Диспетчер конфигураций Azure](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager)
+* [Клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage)версии 6.0 или более поздней (для использования учетной записи SAS).
+* [Диспетчер конфигураций Azure](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager)
 
 Дополнительные примеры, в которых показано, как создать и проверить SAS, см. в разделе [Примеры кода Azure для хранилища](https://azure.microsoft.com/documentation/samples/?service=storage).
 
@@ -329,7 +329,7 @@ private static async Task CreateSharedAccessPolicyAsync(CloudBlobContainer conta
 ```
 
 ### <a name="example-create-a-service-sas-on-a-container"></a>Пример: Создание SAS службы для контейнера
-Следующий код создает SAS для контейнера. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа не указана, код создает для контейнера временную SAS.
+Следующий код создает SAS для контейнера. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа, код создает нерегламентированной SAS для контейнера.
 
 ```csharp
 private static string GetContainerSasUri(CloudBlobContainer container, string storedPolicyName = null)
@@ -339,7 +339,7 @@ private static string GetContainerSasUri(CloudBlobContainer container, string st
     // If no stored policy is specified, create a new access policy and define its constraints.
     if (storedPolicyName == null)
     {
-        // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad-hoc SAS, and
+        // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad hoc SAS, and
         // to construct a shared access policy that is saved to the container's shared access policies.
         SharedAccessBlobPolicy adHocPolicy = new SharedAccessBlobPolicy()
         {
@@ -359,7 +359,7 @@ private static string GetContainerSasUri(CloudBlobContainer container, string st
     {
         // Generate the shared access signature on the container. In this case, all of the constraints for the
         // shared access signature are specified on the stored access policy, which is provided by name.
-        // It is also possible to specify some constraints on an ad-hoc SAS and others on the stored access policy.
+        // It is also possible to specify some constraints on an ad hoc SAS and others on the stored access policy.
         sasContainerToken = container.GetSharedAccessSignature(null, storedPolicyName);
 
         Console.WriteLine("SAS for blob container (stored access policy): {0}", sasContainerToken);
@@ -372,7 +372,7 @@ private static string GetContainerSasUri(CloudBlobContainer container, string st
 ```
 
 ### <a name="example-create-a-service-sas-on-a-blob"></a>Пример: Создание SAS службы для BLOB-объекта
-Следующий код создает SAS для BLOB-объекта. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа не указана, код создает для BLOB-объекта временную SAS.
+Следующий код создает SAS для BLOB-объекта. Если указано имя существующей хранимой политики доступа, то эта политика будет связана с SAS. Если хранимая политика доступа, код создает нерегламентированной SAS для большого двоичного объекта.
 
 ```csharp
 private static string GetBlobSasUri(CloudBlobContainer container, string blobName, string policyName = null)
@@ -386,7 +386,7 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
     if (policyName == null)
     {
         // Create a new access policy and define its constraints.
-        // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad-hoc SAS, and
+        // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad hoc SAS, and
         // to construct a shared access policy that is saved to the container's shared access policies.
         SharedAccessBlobPolicy adHocSAS = new SharedAccessBlobPolicy()
         {
@@ -420,7 +420,7 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
 ## <a name="conclusion"></a>Заключение
 Подписи общего доступа удобно применять в целях предоставления ограниченных разрешений для вашей учетной записи хранения тем клиентам, которые нельзя передавать ключ учетной записи. Таким образом, они являются важной частью модели обеспечения безопасности для любого приложения, использующего хранилище Azure. Если следовать указанным здесь рекомендациям, подписи общего доступа позволяют повысить гибкость доступа к ресурсам в вашей учетной записи хранения без ущерба для безопасности приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Подписанные URL-адреса. Часть 2: Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](../blobs/storage-dotnet-shared-access-signature-part-2.md)
 * [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md)
 * [Делегирование доступа с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/azure/ee395415.aspx)

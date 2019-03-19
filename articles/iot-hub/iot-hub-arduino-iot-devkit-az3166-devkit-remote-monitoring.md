@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: 954a57bb9253e4f18d61c3a699b6e721568da292
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: ae8dc263e08528c6e3b3bae8c779162c96d51f43
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157417"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58100791"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure
 
@@ -76,8 +76,8 @@ ms.locfileid: "54157417"
 
 3. Подключите DevKit на компьютере. VSCode автоматически обнаружит ваш DevKit и откроет следующие страницы:
 
-  * Страница введения в набор разработки.
-  * Примеры Arduino. Практические примеры по началу работы с набором разработки.
+   * Страница введения в набор разработки.
+   * Примеры Arduino. Практические примеры по началу работы с набором разработки.
 
 4. Разверните раздел **Arduino Examples** (Примеры Arduino) слева, перейдите в папку **Examples for MXCHIP AZ3166 (Примеры для MXCHIP AZ3166) > AzureIoT** и щелкните **RemoteMonitoring**. Откроется новое окно VSCode с папкой проекта.
 
@@ -126,10 +126,10 @@ ms.locfileid: "54157417"
 
 Если вы столкнулись с проблемами, ознакомьтесь с [вопросами и ответами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) об IoT DevKit или используйте один из следующих каналов связи:
 
-* [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
+* [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure и визуализировать данные датчиков. Мы предлагаем вам следующие шаги для дальнейшего обучения:
 

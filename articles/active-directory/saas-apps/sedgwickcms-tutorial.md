@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/09/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7783da2e3e5fe2ee79942b246e452ad7998e278
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4c42b7010a6586e4845d3a58b9a47b01143f5b1d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193328"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57904837"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство. Интеграция Azure Active Directory с Sedgwick CMS
 
@@ -35,7 +35,7 @@ ms.locfileid: "56193328"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Sedgwick CMS, вам потребуется:
 
@@ -112,12 +112,14 @@ ms.locfileid: "56193328"
     ![Сведения о домене и URL-адресах единого входа для приложения Sedgwick CMS](./media/sedgwickcms-tutorial/tutorial_sedgwickcms_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: 
+
     | |
     |--|
     | `expresspreview.sedgwickcms.net/voe/sso` |
     | `claimlookup.com/Voe/sso` |
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<subdomain>.sedgwickcms.net/voe/sso` |
@@ -170,7 +172,7 @@ ms.locfileid: "56193328"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-sedgwick-cms-test-user"></a>Создание тестового пользователя Sedgwick CMS
 

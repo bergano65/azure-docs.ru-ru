@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 12/04/2018
-ms.openlocfilehash: 1d350cae379c5ec790413775138225b60b9c5e32
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 2127c05d7e52b0103d91ecfac4fb5977a4815f31
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564941"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57901939"
 ---
 # <a name="moving-data-between-scaled-out-cloud-databases"></a>Перемещение данных между масштабируемыми облачными базами данных
 
@@ -29,7 +29,7 @@ ms.locfileid: "55564941"
 
 ## <a name="download"></a>Download (Скачать)
 
-[Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)
+[Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)
 
 ## <a name="documentation"></a>Документация
 
@@ -136,7 +136,7 @@ ms.locfileid: "55564941"
 
 - **Сопоставление сегментов**
 
- Следующий раздел параметров запроса описывает сопоставление сегментов и базу данных, в которой размещается сопоставление сегментов. В частности, необходимо указать имя сервера базы данных SQL Azure и базы данных, в которой размещается карта сегментов, данные для подключения к базе данных c картой сегментов и, наконец, имя карты. В настоящее время операция принимает только один набор учетных данных. Эти учетные данные должны иметь достаточные разрешения для изменения сопоставления сегментов, а также пользовательских данных в этих сегментах.
+  Следующий раздел параметров запроса описывает сопоставление сегментов и базу данных, в которой размещается сопоставление сегментов. В частности, необходимо указать имя сервера базы данных SQL Azure и базы данных, в которой размещается карта сегментов, данные для подключения к базе данных c картой сегментов и, наконец, имя карты. В настоящее время операция принимает только один набор учетных данных. Эти учетные данные должны иметь достаточные разрешения для изменения сопоставления сегментов, а также пользовательских данных в этих сегментах.
 
 - **Исходный диапазон (разделение и объединение)**
 
@@ -216,12 +216,16 @@ ms.locfileid: "55564941"
 
 ## <a name="deploy-diagnostics"></a>Развертывание диагностики
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+
 Чтобы включить наблюдение и диагностику с помощью конфигурации диагностики для веб- и рабочих ролей, предоставленных пакетом NuGet, выполните следующие команды с помощью Azure PowerShell:
 
 ```powershell
     $storage_name = "<YourAzureStorageAccount>"
     $key = "<YourAzureStorageAccountKey"
-    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key  
+    $storageContext = New-AzStorageContext -StorageAccountName $storage_name -StorageAccountKey $key  
     $config_path = "<YourFilePath>\SplitMergeWebContent.diagnostics.xml"
     $service_name = "<YourCloudServiceName>"
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Production -Role "SplitMergeWeb"

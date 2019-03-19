@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
 ms.date: 02/07/2019
 ms.author: lahugh
-ms.openlocfilehash: 734c16111ab859b55d87525cdc8a644c8114f6d2
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 9902f38ddfd3035adcce697c2eb5b77bdc1d8c9c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429049"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57874767"
 ---
 # <a name="azure-batch-compute-node-environment-variables"></a>Переменные среды вычислительного узла пакетной службы Azure
 
@@ -62,7 +62,6 @@ ms.locfileid: "56429049"
 | AZ_BATCH_TASK_DIR               | Полный путь к [каталогу задачи][files_dirs] на узле. Этот каталог содержит `stdout.txt` и `stderr.txt` для задачи, а также AZ_BATCH_TASK_WORKING_DIR. | Все задачи. | C:\user\tasks\workitems\batchjob001\job-1\task001 |
 | AZ_BATCH_TASK_ID                | Идентификатор текущей задачи. | Все задачи, кроме задачи запуска. | task001 |
 | AZ_BATCH_TASK_SHARED_DIR | Путь к каталогу, идентичный для основной задачи и всех подзадач [задачи с несколькими экземплярами][multi_instance]. Он существует на каждом узле, где выполняется задача с несколькими экземплярами, и доступен для чтения и записи командам, выполняющимся на этом узле (как [команде координации][coord_cmd], так и [команде приложения][app_cmd]). У подзадач или основной задачи, выполняемых на других узлах, нет удаленного доступа к этому каталогу (это не "общий" сетевой каталог). | Основные задачи и подзадачи с несколькими экземплярами. | C:\user\tasks\workitems\multiinstancesamplejob\job-1\multiinstancesampletask |
-| AZ_BATCH_TASK_SHARED_DIR        | Общий каталог для хранения данных, предназначенных для совместного использования задачами на узле. | Все задачи. | C:\user\tasks\shared |
 | AZ_BATCH_TASK_WORKING_DIR       | Полный путь к [рабочему каталогу задачи][files_dirs] на узле. Выполняемая задача имеет доступ на чтение и запись для этого каталога. | Все задачи. | C:\user\tasks\workitems\batchjob001\job-1\task001\wd |
 | CCP_NODES                       | Список узлов и число ядер на узел, выделяемых для [задачи с несколькими экземплярами][multi_instance]. Узлы и ядра указаны в формате `numNodes<space>node1IP<space>node1Cores<space>`<br/>`node2IP<space>node2Cores<space> ...`, где за числом узлов следует один или несколько IP-адресов узла, а также число ядер для каждого узла. |  Основные задачи и подзадачи с несколькими экземплярами. |`2 10.0.0.4 1 10.0.0.5 1` |
 

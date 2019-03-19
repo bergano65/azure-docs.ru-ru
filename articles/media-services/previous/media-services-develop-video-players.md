@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 6c57c8ad85ef83e8739bc2bf35b3bd0dc6d5a902
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: ba8d9fd54b8b29a3e58f170402a64f5899fec002
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004848"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57880693"
 ---
 # <a name="develop-video-player-applications"></a>Разработка приложений видеопроигрывателя
 ## <a name="overview"></a>Обзор
@@ -44,10 +44,10 @@ ms.locfileid: "56004848"
 ## <a name="other-tools-for-creating-player-applications"></a>Другие средства для создания приложений проигрывателя
 Также можно использовать любой из следующих пакетов SDK:
 
-* [клиентский пакет SDK Smooth Streaming;](http://www.iis.net/downloads/microsoft/smooth-streaming) 
+* [клиентский пакет SDK Smooth Streaming;](https://www.iis.net/downloads/microsoft/smooth-streaming) 
 * [приложение магазина Windows с потоковой передачей Smooth Streaming;](media-services-build-smooth-streaming-apps.md)
-* [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
-* [документация по платформе проигрывателя HTML5;](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
+* [Microsoft Media Platform: Player Framework](https://playerframework.codeplex.com/) 
+* [документация по платформе проигрывателя HTML5;](https://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 * [подключаемый модуль Microsoft Smooth Streaming для OSMF;](https://www.microsoft.com/download/details.aspx?id=36057) 
 * [Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming](https://aka.ms/sspk) 
 * [Разработка приложений для воспроизведения видео на XBOX](https://xbox.create.msdn.com/) 

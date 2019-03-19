@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 4eb4db9a4057d072f348de48bee2f746f77cbb84
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 6001d291581dc317da89cadbf3891e334362062b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53715347"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57897594"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
@@ -51,7 +51,7 @@ ms.locfileid: "53715347"
 
 * Учетная запись хранилища, содержащая библиотеку JAR-файлов, **должна** быть связана с кластером HDInsight во время создания. Это должна быть учетная запись хранения по умолчанию или учетная запись, добавленная с помощью колонки __Необязательная настройка__.
 
-* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR-файлы хранятся в контейнере **libs** в учетной записи хранения **mystorage**, то параметром будет **wasb://libs@mystorage.blob.core.windows.net/**.
+* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR-файлы хранятся в контейнере с именем **libs** на учетную запись хранения с именем **mystorage**, нужно указать параметр **wasb://libs\@ mystorage.BLOB.Core.Windows.NET/**.
 
   > [!NOTE]  
   > В этом документе предполагается, что вы уже создали учетную запись хранения и контейнер BLOB-объектов, а также отправили в него файлы.
@@ -79,7 +79,7 @@ ms.locfileid: "53715347"
 
    * **ZOOKEEPER:** Оставьте это поле пустым.
 
-   * **Параметры:** введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы (например, **wasb://libs@mystorage.blob.core.windows.net/**).
+   * **Параметры:** введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например **wasb://libs\@mystorage.blob.core.windows.net/**.
 
 3. В нижней части раздела **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию.
 
@@ -91,6 +91,6 @@ ms.locfileid: "53715347"
 
 После создания кластера вы сможете использовать JAR-файлы, добавленные с помощью этого сценария из Hive, без инструкции `ADD JAR`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе с Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).

@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 8449462f144590e4fe7048366a21090c95a303cb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 49686e407b2d733c04bad31706c6c4f315bf28bf
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455598"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58008667"
 ---
 # <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для развертывания
 Вы можете легко управлять существующими масштабируемыми сегментированными базами данных с помощью средств базы данных SQL Azure (таких как [клиентская библиотека для эластичных баз данных](sql-database-elastic-database-client-library.md)). Для использования [диспетчера сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) следует сначала преобразовать существующий набор баз данных. 
@@ -30,7 +30,7 @@ ms.locfileid: "55455598"
 3. Подготовка отдельных сегментов.  
 4. Добавление сопоставлений на карту сегментов.
 
-Эти методы можно реализовать с помощью [клиентской библиотеки .NET Framework](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) или сценариев PowerShell, которые можно найти на странице [Azure SQL DB — Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных). В приведенных здесь примерах используются скрипты PowerShell.
+Эти методы можно реализовать с помощью [клиентской библиотеки .NET Framework](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) или сценариев PowerShell, которые можно найти на странице [Azure SQL DB — Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных). В приведенных здесь примерах используются скрипты PowerShell.
 
 Чтобы больше узнать о ShardMapManager, ознакомьтесь с [управлением картами сегментов](sql-database-elastic-scale-shard-map-management.md). Общие сведения об инструментах эластичной базы данных см. в [обзоре возможностей эластичных баз данных](sql-database-elastic-scale-introduction.md).
 
@@ -151,7 +151,7 @@ ms.locfileid: "55455598"
 ## <a name="summary"></a>Резюме
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](sql-database-elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Скачайте сценарии PowerShell со страницы [Azure SQL DB-Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных).
 
 Средства также доступны на сайте GitHub: [Elastic database tools for Azure SQL Database](https://github.com/Azure/elastic-db-tools) (Средства эластичной базы данных для Базы данных SQL Azure).

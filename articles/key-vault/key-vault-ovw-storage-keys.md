@@ -8,13 +8,13 @@ ms.service: key-vault
 author: prashanthyv
 ms.author: pryerram
 manager: barbkess
-ms.date: 10/03/2018
-ms.openlocfilehash: 9b1a4e23ed0da0637b44ac52dd4d1baeb22cd6ce
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.date: 03/01/2019
+ms.openlocfilehash: c2107e501affd5e3dd22e0fbc83d078b51d414a5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118060"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57841146"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
@@ -24,18 +24,32 @@ ms.locfileid: "56118060"
 > - Использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения полностью устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 > - Для управления авторизацией, которая также поддерживается с помощью Key Vault, используйте управление доступом на основе ролей (RBAC).
 
-- Служба хранилища Azure Key Vault управляет ключами учетной записи хранения Azure (ASA).
-    - На внутреннем уровне Azure Key Vault может выводить список (синхронизировать) ключи с помощью учетной записи хранения Azure.    
-    - Azure Key Vault периодически повторно создает (сменяет) ключи.
-    - Значения ключей никогда не возвращаются в ответе вызывающему объекту.
-    - Azure Key Vault управляет ключами как учетных записей хранения, так и классических учетных записей хранения.
-    
+[Учетная запись хранения Azure](/azure/storage/storage-create-storage-account) использует учетные данные, которые состоят из имени учетной записи и ключа. Ключ генерируется автоматически и больше служит паролем, в отличие от криптографического ключа. Key Vault может управлять этими ключами учетных записей хранения, сохраняя их как [секреты Key Vault](/azure/key-vault/about-keys-secrets-and-certificates#key-vault-secrets). 
+
+## <a name="overview"></a>Обзор
+
+Функция управляемой учетной записи хранения Key Vault выполняет несколько функций управления от вашего имени:
+
+- Создает списки (выполняет синхронизацию) ключей для учетной записи хранения Azure.
+- Периодически повторно создает (сменяет) ключи.
+- Управляет ключами как для учетных записей хранения, так и для классических учетных записей хранения.
+- Значения ключей никогда не возвращаются в ответе вызывающему объекту.
+
+При использовании функции ключей для управляемой учетной записи хранения:
+
+- **Разрешайте только Key Vault управлять ключами учетной записи хранения**. Не пытайтесь управлять ими самостоятельно — это повлияет на процессы Key Vault.
+- **Не разрешайте управление ключами учетной записи хранения с помощью более чем одного объекта Key Vault**.
+- **Не создавайте повторно ключи своей учетной записи хранения вручную**. Рекомендуем повторно создавать их через Key Vault.
+- Запрос хранилища ключей для управления своей учетной записи хранения можно сделать, субъекта-пользователя сейчас, а не субъект-службу
+
+В следующем примере показано, как разрешить Key Vault управлять ключами учетной записи хранения.
+
 > [!IMPORTANT]
 > Арендатор Azure AD предоставляет каждому зарегистрированному приложению **[субъект-службу](/azure/active-directory/develop/developer-glossary#service-principal-object)**, который используется в качестве удостоверения приложения. Идентификатор приложения субъекта-службы используется при авторизации для доступа к другим ресурсам Azure, посредством управления доступом на основе ролей (RBAC). Key Vault — это приложение корпорации Майкрософт, поэтому оно предварительно зарегистрировано во всех арендаторах Azure AD под одним идентификатором приложения в каждом из следующих облаков Azure:
 > - Клиенты Azure AD в облаке Azure для государственных организаций используют идентификатор приложения `7e7c393b-45d0-48b1-a35e-2905ddf8183c`.
 > - Клиенты Azure AD в общедоступном облаке других облаках Azure используют идентификатор приложения `cfa8b339-82a2-471a-a3c9-0fc0be7a4093`.
 
-<a name="prerequisites"></a>Предварительные требования
+<a name="prerequisites"></a>Технические условия
 --------------
 1. Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).   
 2. [Создайте учетную запись хранения](https://azure.microsoft.com/services/storage/).
@@ -55,42 +69,36 @@ ms.locfileid: "56118060"
 > [!NOTE]
 > Обратите внимание, что после настройки ключей учетной записи хранения, которыми управляет Azure Key Vault, их можно изменить **только** через Key Vault. Под управляемыми ключами учетной записи подразумевается, что сменой ключей учетной записи хранения будет управлять Key Vault.
 
+> [!IMPORTANT]
+> Арендатор Azure AD предоставляет каждому зарегистрированному приложению **[субъект-службу](/azure/active-directory/develop/developer-glossary#service-principal-object)**, который используется в качестве удостоверения приложения. Идентификатор приложения субъекта-службы используется при авторизации для доступа к другим ресурсам Azure, посредством управления доступом на основе ролей (RBAC). Key Vault — это приложение корпорации Майкрософт, поэтому оно предварительно зарегистрировано во всех арендаторах Azure AD под одним идентификатором приложения в каждом из следующих облаков Azure:
+> - Клиенты Azure AD в облаке Azure для государственных организаций используют идентификатор приложения `7e7c393b-45d0-48b1-a35e-2905ddf8183c`.
+> - Клиенты Azure AD в общедоступном облаке других облаках Azure используют идентификатор приложения `cfa8b339-82a2-471a-a3c9-0fc0be7a4093`.
+
+
 1. После создания учетной записи хранения выполните следующую команду, чтобы получить идентификатор ресурса учетной записи хранения, которой требуется управлять.
 
     ```
     az storage account show -n storageaccountname 
     ```
-    Скопируйте поле идентификатора из результата приведенной выше команды.
-    
-2. Получите идентификатор объекта субъекта-службы Azure Key Vault, выполнив следующую команду.
-
+    Поле идентификатора копирования в результирующем выше команды, которое приведено ниже.
     ```
-    az ad sp show --id cfa8b339-82a2-471a-a3c9-0fc0be7a4093
+    /subscriptions/0xxxxxx-4310-48d9-b5ca-0xxxxxxxxxx/resourceGroups/ResourceGroup/providers/Microsoft.Storage/storageAccounts/StorageAccountName
     ```
-    
-    После успешного завершения этой команды найдите идентификатор объекта в полученном результате.
-    ```console
-        {
-            ...
             "objectId": "93c27d83-f79b-4cb2-8dd4-4aa716542e74"
-            ...
-        }
+    
+2. Назначение роли RBAC «Хранилища учетной записи роль службы оператора ключей» в хранилище ключей, ограничив область доступа к вашей учетной записи хранения. Для классической учетной записи хранения используйте «Классического хранилища учетной записи роль службы оператора ключей.»
+    ```
+    az role assignment create --role "Storage Account Key Operator Service Role"  --assignee-object-id <ObjectIdOfKeyVault> --scope 93c27d83-f79b-4cb2-8dd4-4aa716542e74
     ```
     
-3. Присвойте идентификатору Azure Key Vault роль оператора учетной записи хранения.
-
-    ```
-    az role assignment create --role "Storage Account Key Operator Service Role"  --assignee-object-id <ObjectIdOfKeyVault> --scope <IdOfStorageAccount>
-    ```
+    «93c27d83-f79b-4cb2-8dd4-4aa716542e74» — это идентификатор объекта для хранилища ключей в общедоступном облаке. Чтобы получить идентификатор объекта для хранилища ключей в национальных облаках см. в разделе важные предыдущем разделе
     
-4. Создайте управляемую учетную запись хранения в Key Vault.     <br /><br />
+3. Создайте управляемую учетную запись хранения в Key Vault.     <br /><br />
    Ниже мы указываем для повторного создания период в 90 дней. Через 90 дней хранилище ключей повторно создаст ключ key1 и установит его в качестве активного вместо key2. Теперь оно пометит Key1 как активный ключ. 
    
     ```
     az keyvault storage add --vault-name <YourVaultName> -n <StorageAccountName> --active-key-name key1 --auto-regenerate-key --regeneration-period P90D --resource-id <Id-of-storage-account>
     ```
-    Если пользователь не создал учетную запись хранения и не имеет разрешений для доступа к ней, выполнив описанные ниже действия, можно установить разрешения для учетной записи, чтобы обеспечить возможность управления всеми разрешениями хранилища в Key Vault.
-    
 
 <a name="step-by-step-instructions-on-how-to-use-key-vault-to-create-and-generate-sas-tokens"></a>Пошаговые инструкции по созданию маркеров SAS с помощью Key Vault
 --------------------------------------------------------------------------------
@@ -117,7 +125,7 @@ $sastoken = az storage account generate-sas --expiry 2020-01-01 --permissions rw
    "se=2020-01-01&sp=***"
 ```
 
-2. На этом этапе мы создадим определение SAS с помощью полученных выходных данных ($sasToken). См. [дополнительные сведения](https://docs.microsoft.com/cli/azure/keyvault/storage/sas-definition?view=azure-cli-latest#required-parameters).   
+1. На этом этапе мы создадим определение SAS с помощью полученных выходных данных ($sasToken). См. [дополнительные сведения](https://docs.microsoft.com/cli/azure/keyvault/storage/sas-definition?view=azure-cli-latest#required-parameters).   
 
 ```
 az keyvault storage sas-definition create --vault-name <YourVaultName> --account-name <YourStorageAccountName> -n <NameOfSasDefinitionYouWantToGive> --validity-period P2D --sas-type account --template-uri $sastoken
@@ -127,12 +135,11 @@ az keyvault storage sas-definition create --vault-name <YourVaultName> --account
  > [!NOTE] 
  > Если пользователь не имеет разрешений для учетной записи хранения, мы сначала получим идентификатор объекта пользователя.
 
-    ```
-    az ad user show --upn-or-object-id "developer@contoso.com"
+ ```
+ az ad user show --upn-or-object-id "developer@contoso.com"
 
-    az keyvault set-policy --name <YourVaultName> --object-id <ObjectId> --storage-permissions backup delete list regeneratekey recover     purge restore set setsas update
-    
-    ```
+ az keyvault set-policy --name <YourVaultName> --object-id <ObjectId> --storage-permissions backup delete list regeneratekey recover     purge restore set setsas update
+ ```
     
 ## <a name="fetch-sas-tokens-in-code"></a>Получение маркеров SAS в коде
 
@@ -140,8 +147,8 @@ az keyvault storage sas-definition create --vault-name <YourVaultName> --account
 
 В разделе ниже продемонстрировано, как получить маркеры SAS после создания определения SAS, как описано ранее.
 
-> [!NOTE] 
-  Существует 3 способа аутентификации в Key Vault (с которыми можно ознакомиться в разделе об [основных понятиях](key-vault-whatis.md#basic-concepts)):
+> [!NOTE]
+>   Существует 3 способа аутентификации в Key Vault (с которыми можно ознакомиться в разделе об [основных понятиях](key-vault-whatis.md#basic-concepts)):
 > - использование Управляемого удостоверения службы (настоятельно рекомендуется);
 > - использование субъекта-службы и сертификата; 
 > - использование субъекта-службы и пароля (не рекомендуется).

@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 10/26/2018
+ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: 19e340609e80998037938bdad59e9e6e74894bad
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: be9bde90684b46adef509532eb7b0cc236c5efb1
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098312"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58180608"
 ---
 # <a name="connected-factory-solution-accelerator-walkthrough"></a>Инструкция по работе с акселератором решений подключенной фабрики
 
@@ -225,11 +225,11 @@ TSI отправляет запрос к данным узла с использ
 > [!NOTE]
 > Для сервера OPC UA и стека OPC UA в веб-приложении подключенной фабрики реализован прозрачный обмен данными прокси-сервера OPC. Применяются все возможности обеспечения безопасности для аутентификации и шифрования в OPC UA.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об акселераторах решений Интернета вещей см. в следующих статьях:
 
-* [Разрешения на сайте azureiotsuite.com][lnk-permissions]
+* [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
 * [Развертывание шлюза Edge для предварительно настроенного решения подключенной фабрики в ОС Windows или Linux](iot-accelerators-connected-factory-gateway-deployment.md)
 * [OPC Publisher for Azure IoT Edge](https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md) (Издатель OPC для Azure IoT Edge)
 

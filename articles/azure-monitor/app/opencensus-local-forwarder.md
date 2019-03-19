@@ -1,5 +1,5 @@
 ---
-title: Локальный сервер пересылки распределенной трассировки OpenCensus в Azure Application Insights | Документация Майкрософт
+title: Azure Application Insights OpenCensus распределенная трассировка локального сервера пересылки (Предварительная версия) | Документация Майкрософт
 description: Пересылка распределенных трассировок и диапазонов OpenCensus из таких языков, как Python и Go, в Azure Application Insights
 services: application-insights
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.reviewer: nimolnar
 ms.author: mbullwin
-ms.openlocfilehash: f5f42ae5068440c3a90bf3b374238e18781b9770
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
-ms.translationtype: HT
+ms.openlocfilehash: a7efe663a75fa29a31e7157c5eab24c2973a3758
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54004685"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58002826"
 ---
-# <a name="local-forwarder"></a>Локальный сервер пересылки
+# <a name="local-forwarder-preview"></a>Локальный сервер пересылки (Предварительная версия)
 
 Локальный сервер пересылки — это агент, который собирает данные телеметрии Application Insights или [OpenCensus](https://opencensus.io/) из различных пакетов SDK и направляет их в Application Insights. Он может работать под управлением Windows и Linux. Также есть возможность запускать его в macOS, но официально в настоящее время это не поддерживается.
 
@@ -79,14 +79,14 @@ https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_sourc
 
 Для определенных вариантов использования, возможно, будет полезно запускать локальный сервер пересылки в качестве консольного приложения. Выпуск поставляется со следующими версиями исполняемого файла узла консоли:
 * Зависящий от платформы .NET Core двоичный файл */ConsoleHost/publish/Microsoft.LocalForwarder.ConsoleHost.dll*. Для запуска этого двоичного файла нужно установить среду выполнения .NET Core (дополнительные сведения см. на [странице](https://www.microsoft.com/net/download/dotnet-core/2.1) скачивания).
-```batchfile
-E:\uncdrop\ConsoleHost\publish>dotnet Microsoft.LocalForwarder.ConsoleHost.dll
-```
+  ```batchfile
+  E:\uncdrop\ConsoleHost\publish>dotnet Microsoft.LocalForwarder.ConsoleHost.dll
+  ```
 * Автономный набор двоичных файлов .NET Core для платформ x86 и x64. Для их запуска не требуется среда выполнения .NET Core. */ConsoleHost/win-x86/publish/Microsoft.LocalForwarder.ConsoleHost.exe*, */ConsoleHost/win-x64/publish/Microsoft.LocalForwarder.ConsoleHost.exe*.
-```batchfile
-E:\uncdrop\ConsoleHost\win-x86\publish>Microsoft.LocalForwarder.ConsoleHost.exe
-E:\uncdrop\ConsoleHost\win-x64\publish>Microsoft.LocalForwarder.ConsoleHost.exe
-```
+  ```batchfile
+  E:\uncdrop\ConsoleHost\win-x86\publish>Microsoft.LocalForwarder.ConsoleHost.exe
+  E:\uncdrop\ConsoleHost\win-x64\publish>Microsoft.LocalForwarder.ConsoleHost.exe
+  ```
 
 ### <a name="linux"></a>Linux
 
@@ -181,6 +181,6 @@ host.Stop();
 
 Если файл конфигурации не указан (что является настройкой по умолчанию), локальный сервер пересылки будет использовать конфигурацию по умолчанию, которую можно найти [здесь](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/blob/master/src/Common/NLog.config).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Open Census](https://opencensus.io/)

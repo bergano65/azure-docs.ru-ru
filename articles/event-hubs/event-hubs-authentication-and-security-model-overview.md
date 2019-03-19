@@ -15,12 +15,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 6f4abd9f826864914abee0b5d513d5b1c530d416
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 19b347423c28b4c615f90f325ead462b9d3e8e9e
+ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53104158"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56990040"
 ---
 # <a name="azure-event-hubs---authentication-and-security-model"></a>Проверка подлинности и модели безопасности в Центрах событий Azure
 
@@ -68,13 +68,13 @@ nm.CreateEventHub(ed);
 
 ### <a name="generate-tokens"></a>Создание маркеров
 
-Маркеры можно создать с помощью ключа SAS. Следует создавать только один маркер на клиент. Маркеры можно создать с помощью следующего метода. Все маркеры создаются с помощью ключа **EventHubSendKey** . Каждому маркеру назначается уникальный URI.
+Маркеры можно создать с помощью ключа SAS. Следует создавать только один маркер на клиент. Маркеры можно создать с помощью следующего метода. Все маркеры создаются с помощью ключа **EventHubSendKey** . Каждому маркеру назначается уникальный URI. Параметр «resource» соответствует URI конечной точки службы (концентратора событий в данном случае).
 
 ```csharp
 public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)
 ```
 
-При вызове этого метода URI должен быть указан как `//<NAMESPACE>.servicebus.windows.net/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`. URI идентичен для всех маркеров за исключением класса `PUBLISHER_NAME`, который должен быть уникальным для каждого маркера. В идеальном случае `PUBLISHER_NAME` представляет идентификатор клиента, который получает маркер.
+При вызове этого метода URI должен быть указан как `https://<NAMESPACE>.servicebus.windows.net/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`. URI идентичен для всех маркеров за исключением класса `PUBLISHER_NAME`, который должен быть уникальным для каждого маркера. В идеальном случае `PUBLISHER_NAME` представляет идентификатор клиента, который получает маркер.
 
 Этот метод создает маркер со следующей структурой:
 
@@ -108,7 +108,7 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 
 В отсутствие проверки подлинности SAS для отдельных групп потребителей можно использовать ключи SAS для защиты всех групп потребителей общим ключом. Такой подход позволяет приложению получать данные от любых групп потребителей концентратора событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о Центрах событий, посетите следующие разделы:
 

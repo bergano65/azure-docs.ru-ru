@@ -8,15 +8,15 @@ ms.author: jmartens
 ms.reviewer: mldocs
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: b10e434aece0ac214a0fd397ea94cbeccca4e44a
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.openlocfilehash: 5814e05aa65bf005a3156aa75e65747bbd46733c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746496"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58171063"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -45,29 +45,60 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 Если отображается `['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`, измените номер SKU для виртуальных машин, используемых в развертывании, на другой с большим объемом памяти.
 
 ## <a name="fpgas"></a>FPGA
+
 Вы не сможете развернуть модели на FPGA до тех пор, пока не будет запрошена и одобрена квота FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai
 
 ## <a name="databricks"></a>Databricks
 
 Ниже описаны проблемы, которые могут возникать в службе "Машинное обучение Azure" и Databricks.
 
-1. Сбой установки пакета SDK Машинного обучения Azure в Databricks в случае большего количества установленных пакетов.
+### <a name="failure-when-installing-packages"></a>Сбой при установке пакетов
 
-   Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, заморозив версию lib. Эта проблема связана с Databricks и не связана с пакетом SDK Службы машинного обучения Azure. Вы можете столкнуться с ней и при использовании других библиотек. Пример:
-   ```python
-   pstuil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
+Установка Azure Machine Learning SDK завершается сбоем в Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, фиксация версии библиотеки. Эта проблема связана с Databricks, а не пакет SDK для служб машинного обучения Azure. Эта проблема с другими библиотеками, могут возникнуть слишком. Пример:
+
+```python
+pstuil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
+```
+
+В качестве альтернативы можно использовать скрипты init, если вы сохранить столкнулись с проблемами установки библиотеки Python. Этот подход не поддерживается официально. Дополнительные сведения см. в разделе [скрипты уровня кластера init](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+
+### <a name="cancel-an-automated-machine-learning-run"></a>Отмена автоматического машинного обучения выполнения
+
+При использовании автоматизированные возможности машинного обучения в Azure Databricks, чтобы отменить выполнение и запустите новый эксперимент запуска, перезапустите кластер Azure Databricks.
+
+### <a name="10-iterations-for-automated-machine-learning"></a>> 10 итераций для автоматических машинного обучения
+
+В автоматических машины обучения параметры, при наличии более чем 10 итераций, задайте `show_output` для `False` при отправке запуска.
+
+### <a name="widget-for-the-azure-machine-learning-sdkautomated-machine-learning"></a>Мини-приложения для машинного обучения Azure SDK или автоматическая машинного обучения
+
+Мини-приложение пакет SDK для Azure Machine Learning не поддерживается в записную книжку Databricks, так как записные книжки не удается проанализировать мини-приложения HTML. Мини-приложения можно просмотреть на портале с помощью следующего кода Python в ячейке записной книжки Azure Databricks:
+
+```
+displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.get_portal_url(), local_run.id))
+```
+
+### <a name="import-error-no-module-named-pandascoreindexes"></a>Ошибка импорта: Модуль не с именем «pandas.core.indexes»
+
+Если эта ошибка возникает при использовании автоматической машинного обучения:
+
+1. Выполните следующую команду, чтобы установить два пакета в кластере Azure Databricks: 
+
    ```
-   В качестве альтернативы можно использовать сценарии инициализации, если проблемы при установке библиотек Python не исчезли. Этот подход не является официальным. Вы можете ознакомиться с этим [документом](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+   scikit-learn==0.19.1
+   pandas==0.22.0
+   ```
 
-2. Если при использовании автоматического машинного обучения в Databricks нужно отменить выполнение и запустить новый эксперимент, перезапустите кластер Azure Databricks.
+1. Отсоедините и заново присоедините кластер для записной книжки. 
 
-3. Если выполняется больше 10 итераций, в параметрах автоматического машинного обучения укажите для `show_output` значение `False` при отправке задачи на выполнение.
-
+Если это не решает проблему, попробуйте перезапустить кластера.
 
 ## <a name="azure-portal"></a>Портал Azure
+
 При переходе непосредственно к просмотру рабочей области с помощью ссылки для общего доступа из пакета SDK или на портале невозможно будет отобразить обычную страницу обзора со сведениями о подписке в расширении. Кроме того, вы не сможете переключиться на другую рабочую область. Если вам нужно просмотреть другую рабочую область, можно перейти непосредственно на [портал Azure](https://portal.azure.com) и выполнить поиск рабочей области по имени.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
+
 Иногда при обращении за помощью полезно предоставить диагностические сведения.
 Вот где расположены файлы журналов:
 

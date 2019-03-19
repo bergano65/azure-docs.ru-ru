@@ -16,24 +16,28 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: e5e134fa7dd08bad4220866dd4f5bd9b788e624e
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: ba5baa928e60729aa128ca5097646768cf5656e8
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980607"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57441924"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
 Агент виртуальной машины Azure и связанные расширения являются частью служб инфраструктуры Microsoft Azure. Расширения виртуальной машины — это программные компоненты, которые расширяют функциональные возможности виртуальной машины и упрощают различные операции управления ею.
 
-Основной вариант использования расширения Azure Desired State Configuration (DSC) — это начальная загрузка виртуальной машины в [службе Azure Automation DSC](../../automation/automation-dsc-overview.md). [Преимущества](/powershell/dsc/metaconfig#pull-service) этого включают регулярное управление конфигурацией виртуальной машины и интеграцию с другими рабочими инструментами, например со службой мониторинга Azure.
+Основной вариант использования расширения Azure Desired State Configuration (DSC) — изначально загрузить виртуальную Машину, чтобы [конфигурации состояния службы автоматизации Azure (DSC) службы](../../automation/automation-dsc-overview.md).
+Эта служба предоставляет [преимущества](/powershell/dsc/metaconfig#pull-service) этого включают регулярное управление конфигурацию виртуальной Машины и интеграцию с другими рабочими инструментами, например мониторинга Azure.
+С помощью расширения для регистрации Виртуальных машин к службе предоставляет гибкое решение, которое работает даже в подписках Azure.
 
-Расширение DSC можно использовать независимо от службы Automation DSC. Однако это отдельное действие, которое выполняется во время развертывания. Регулярная отправка отчетов или управление конфигурацией возможно на виртуальной машине только в локальной среде.
+Расширение DSC можно использовать независимо от службы Automation DSC.
+Тем не менее это будет только отправлять конфигурации виртуальной Машины.
+Регулярная отправка отчетов не доступна, отличных от локально на виртуальной Машине.
 
 В этой статье предоставлены сведения для двух сценариев — расширения DSC для подключения службы автоматизации и использования расширения DSC как инструмента для назначения конфигураций виртуальным машинам с помощью пакета SDK Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - **Локальный компьютер**. Для взаимодействия с расширением виртуальной машины Azure нужно использовать портал Azure или пакет SDK для Azure PowerShell.
 - **Гостевой агент**. Виртуальная машина Azure, настроенная с помощью конфигурации DSC, должна работать под управлением ОС, которая поддерживает Windows Management Framework (WMF) версии 4.0 или более поздней. Полный список поддерживаемых версий ОС см. в [журнале версий расширения DSC](/powershell/dsc/azuredscexthistory).
@@ -61,6 +65,25 @@ ms.locfileid: "55980607"
 ### <a name="default-configuration-script"></a>Скрипт конфигурации по умолчанию
 
 Расширение DSC Azure включает скрипт конфигурации по умолчанию, предназначенный для использования при подключении виртуальной машины к DSC службы автоматизации Azure. Параметры сценария сопоставляются с настраиваемыми свойствами [локального диспетчера конфигураций](/powershell/dsc/metaconfig). Параметры скрипта см. в разделе [Скрипт конфигурации по умолчанию](dsc-template.md#default-configuration-script) статьи [Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager](dsc-template.md). Полный скрипт см. в [шаблоне быстрого запуска Azure на GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip?raw=true).
+
+## <a name="information-for-registering-with-azure-automation-state-configuration-dsc-service"></a>Сведения для регистрации в службе Azure Automation состояние Configuration (DSC)
+
+При использовании расширения DSC для регистрации узла в службе настройки состояния, будет необходимо будет предоставить три значения.
+
+- RegistrationUrl - https-адрес учетной записи службы автоматизации Azure
+- RegistrationKey - общий секрет, используемый для регистрации в службе узлов
+- NodeConfigurationName - имя платформы узла конфигурации (MOF) для извлечения из службы для настройки роли сервера
+
+Эти сведения могут быть видны в [портала Azure](../../automation/automation-dsc-onboarding.md#azure-portal) или можно использовать PowerShell.
+
+```PowerShell
+(Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).Endpoint
+(Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).PrimaryKey
+```
+
+Имя конфигурации узла, убедитесь, что вы используете имя *конфигурации узла* и отсутствует конфигурация.
+Конфигурация определяется в скрипте, который используется [для компиляции конфигурации узла (MOF-файл)](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-compile).
+Всегда будет носить имя конфигурации, за которым следует `.` и либо `localhost` или имени конкретного компьютера.
 
 ## <a name="dsc-extension-in-resource-manager-templates"></a>Использование расширения DSC в шаблонах Resource Manager
 
@@ -122,6 +145,34 @@ Publish-AzVMDscConfiguration -ConfigurationPath .\iisInstall.ps1 -ResourceGroupN
 Set-AzVMDscExtension -Version '2.76' -ResourceGroupName $resourceGroup -VMName $vmName -ArchiveStorageAccountName $storageName -ArchiveBlobName 'iisInstall.ps1.zip' -AutoUpdate $true -ConfigurationName 'IISInstall'
 ```
 
+## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
+
+Azure CLI можно использовать для развертывания расширения DSC на существующей виртуальной машины.
+
+Для виртуальной машины под управлением Windows:
+
+```azurecli
+az vm extension set \
+  --resource-group myResourceGroup \
+  --vm-name myVM \
+  --name Microsoft.Powershell.DSC \
+  --publisher Microsoft.Powershell \
+  --version 2.77 --protected-settings '{}' \
+  --settings '{}'
+```
+
+Для виртуальной машины под управлением Linux:
+
+```azurecli
+az vm extension set \
+  --resource-group myResourceGroup \
+  --vm-name myVM \
+  --name DSCForLinux \
+  --publisher Microsoft.OSTCExtensions \
+  --version 2.7 --protected-settings '{}' \
+  --settings '{}'
+```
+
 ## <a name="azure-portal-functionality"></a>Использование портала Azure
 
 Для настройки DSC на портале:
@@ -153,7 +204,7 @@ Set-AzVMDscExtension -Version '2.76' -ResourceGroupName $resourceGroup -VMName $
 
 Журналы для расширения хранятся в следующем расположении: `C:\WindowsAzure\Logs\Plugins\Microsoft.Powershell.DSC\<version number>`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о DSC PowerShell можно найти в [центре документации PowerShell](/powershell/dsc/overview).
 - Изучите [шаблон Resource Manager для расширения DSC](dsc-template.md).

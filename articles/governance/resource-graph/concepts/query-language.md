@@ -1,6 +1,6 @@
 ---
 title: Основные сведения о языке запросов
-description: Сведения об использовании языка запросов Kusto в Azure Resource Graph.
+description: Описывает доступные операторы Kusto и функции, можно использовать с график ресурсов Azure.
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: cc792d27890b5d994b62784eaa511df990f9b5ec
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.openlocfilehash: 618445c5b792317d4de4b668e7ea1a186707007c
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339980"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57317923"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "56339980"
 - [tostring()](/azure/kusto/query/tostringfunction)
 - [zip()](/azure/kusto/query/zipfunction)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)
 - См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md)

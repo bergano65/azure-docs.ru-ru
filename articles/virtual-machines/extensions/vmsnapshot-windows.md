@@ -5,22 +5,22 @@ services: backup, virtual-machines-windows
 documentationcenter: ''
 author: trinadhk
 manager: jeconnoc
-ms.service: backup, virtual-machines-windows
+ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: trinadhk
-ms.openlocfilehash: c41f609786620c8b90d484813d675efcd667d1e1
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 0392a187bf40e1fe35053b493733c7e89aa6969e
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692636"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57783131"
 ---
 # <a name="vm-snapshot-windows-extension-for-azure-backup"></a>Расширение Windows "Моментальный снимок виртуальной машины" для службы Azure Backup
 
 Служба Azure Backup поддерживает резервное копирование рабочих нагрузок из локальной среды в облако и архивацию облачных ресурсов в хранилище служб восстановления. Служба Azure Backup использует расширение моментального снимка виртуальной машины для создания согласованной с приложением резервной копии виртуальной машины Azure без завершения работы виртуальной машины. Корпорация Майкрософт публикует и поддерживает расширение моментального снимка виртуальной машины в составе службы Azure Backup. Служба Azure Backup установит расширение в рамках первого запланированного задания резервного копирования, запущенного после включения резервного копирования. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения моментального снимка виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 Список поддерживаемых операционных систем см. в разделе об [операционных системах, поддерживаемых службой Azure Backup](../../backup/backup-azure-arm-vms-prepare.md#before-you-start).

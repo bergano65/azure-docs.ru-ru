@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb6e130b772afabe939516ffa37ae292e2db5859
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 2fda9df8e7781a9e0c45fb1aead9f8167f89a833
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178961"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57850876"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-docusign"></a>Руководство. Интеграция Azure Active Directory с DocuSign
 
@@ -35,7 +35,7 @@ ms.locfileid: "56178961"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с DocuSign, вам потребуется:
 
@@ -168,11 +168,11 @@ ms.locfileid: "56178961"
 
     a. В соответствующее текстовое поле введите уникальное **имя** конфигурации. Не используйте пробелы.
 
-    б) В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    2. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     c. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    4.3. В текстовое поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    d. В текстовое поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
     д. Выберите **Sign AuthN Request** (Подпись запроса авторизации).
 
@@ -227,8 +227,8 @@ ms.locfileid: "56178961"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

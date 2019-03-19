@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2019
 ms.author: juliako
-ms.openlocfilehash: 4b2028b16c395b770e935fdba47dc0e965284fc2
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 6be9c785e12f588addabbe14fb5d199ea9d4b256
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993680"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079969"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
 
@@ -125,8 +125,8 @@ ms.locfileid: "55993680"
         "EndPointType":2
     }
 
->[!NOTE]
->Обязательно измените значение https://telemetryvalidationstore.table.core.windows.net, указав вашу учетную запись хранения.
+> [!NOTE]
+> Обязательно измените значение https://telemetryvalidationstore.table.core.windows.net, указав вашу учетную запись хранения.
 
 ### <a name="response"></a>Ответ
 
@@ -237,7 +237,7 @@ ms.locfileid: "55993680"
 
 Сведения об использовании данных телеметрии см. в [этом](media-services-telemetry-overview.md) разделе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

@@ -15,23 +15,23 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
-ms.openlocfilehash: 584fca3df4fee24a4f1c7b93d5371c48be059f7b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: a6d8326afa3bcf13234ab072a2cd2909a864738b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257941"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58002849"
 ---
 # <a name="configure-the-always-on-availability-group-on-an-azure-vm-with-powershell"></a>Настройка группы доступности Always On на виртуальной машине Azure с помощью PowerShell
 > [!div class="op_single_selector"]
-> * [Классическая модель: пользовательский интерфейс](../classic/portal-sql-alwayson-availability-groups.md)
+> * [Классическая модель: ПОЛЬЗОВАТЕЛЬСКИЙ ИНТЕРФЕЙС](../classic/portal-sql-alwayson-availability-groups.md)
 > * [Классическая модель: PowerShell](../classic/ps-sql-alwayson-availability-groups.md)
 <br/>
 
 Прежде чем начать, учтите, что теперь можно выполнить эту задачу в модели Azure Resource Manager. Для новых развертываний мы советуем использовать модель Azure Resource Manager. См. сведения в статье [Введение в группы доступности Always On SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-portal-sql-availability-group-overview.md).
 
 > [!IMPORTANT]
-> Для большинства новых развертываний рекомендуется использовать модель Resource Manager. В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания.
+> Для большинства новых развертываний рекомендуется использовать модель Resource Manager. В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания.
 
 Виртуальные машины Azure могут помочь администраторам баз данных сократить затраты при реализации более высокого уровня доступности системы SQL Server. В этом руководстве описано, как реализовать группу доступности с помощью сквозного соединения SQL Server Always On в среде Azure. Когда вы завершите, решение SQL Server Always On в Azure будет состоять из следующих элементов:
 
@@ -103,7 +103,7 @@ ms.locfileid: "51257941"
 
     Файл конфигурации содержит следующий XML-документ. Вкратце, он определяет виртуальную сеть под названием **ContosoNET** в территориальной группе, которая называется **ContosoAG**. Она имеет адресное пространство **10.10.0.0/16** и две подсети **10.10.1.0/24** и **10.10.2.0/24**, которые являются интерфейсной и конечной подсетями соответственно. В интерфейсной подсети можно разместить клиентские приложения, например Microsoft SharePoint, а в конечной подсети размещаются виртуальные машины SQL Server. Если переменные **$affinityGroupName** и **$virtualNetworkName** были изменены, следует изменить и соответствующие имена, приведенные ниже.
 
-        <NetworkConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+        <NetworkConfiguration xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
           <VirtualNetworkConfiguration>
             <Dns />
             <VirtualNetworkSites>
@@ -239,7 +239,7 @@ ms.locfileid: "51257941"
         $acl.AddAccessRule($ace1)
         Set-Acl -Path "DC=corp,DC=contoso,DC=com" -AclObject $acl
 
-    Идентификатор GUID, указанный выше,— это GUID для типа объекта-компьютера. Для учетной записи **CORP\Install** требуются разрешения **Чтение всех свойств** и **Создание объектов компьютеров**. Они необходимы для создания объектов Active Directory для отказоустойчивого кластера. Разрешение **Чтение всех свойств** предоставлено учетной записи CORP\Install по умолчанию, поэтому предоставлять его явным образом не требуется. Дополнительные сведения о разрешениях, необходимых для создания отказоустойчивого кластера, см. в статье [Failover Cluster Step-by-Step Guide: Configuring Accounts in Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx) (Пошаговое руководство по отказоустойчивым кластерам. Настройка учетных записей в Active Directory).
+    Идентификатор GUID, указанный выше,— это GUID для типа объекта-компьютера. Для учетной записи **CORP\Install** требуются разрешения **Чтение всех свойств** и **Создание объектов компьютеров**. Они необходимы для создания объектов Active Directory для отказоустойчивого кластера. Разрешение **Чтение всех свойств** предоставлено учетной записи CORP\Install по умолчанию, поэтому предоставлять его явным образом не требуется. Дополнительные сведения о разрешениях, необходимых для создания отказоустойчивого кластера, см. в разделе [Пошаговое руководство по отказоустойчивому кластеру: Настройка учетных записей в Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx).
 
     После завершения настройки Active Directory и объектов пользователей нужно создать две виртуальные машины SQL Server и присоединить их к этому домену.
 
@@ -380,15 +380,15 @@ ms.locfileid: "51257941"
 ## <a name="initialize-the-failover-cluster-vms"></a>Инициализация виртуальных машин отказоустойчивого кластера
 В этом разделе вам необходимо изменить три сервера, которые будут использоваться в отказоустойчивом кластере и при установке SQL Server. В частности:
 
-* Все серверы. Необходимо установить компонент **отказоустойчивой кластеризации**.
-* Все серверы. Необходимо добавить учетную запись **CORP\Install** в качестве **администратора** виртуальной машины.
-* Только ContosoSQL1 и ContosoSQL2. Необходимо добавить учетную запись **CORP\Install** в качестве роли **sysadmin** в базе данных по умолчанию.
-* Только ContosoSQL1 и ContosoSQL2. Необходимо добавить учетную запись **NT AUTHORITY\System** в качестве имени входа со следующими разрешениями:
+* Все серверы: Необходимо установить **отказоустойчивой кластеризации** функции.
+* Все серверы: Необходимо добавить **CORP\Install** машина **администратора**.
+* Только ContosoSQL1 и ContosoSQL2: Необходимо добавить **CORP\Install** как **sysadmin** роли в базе данных по умолчанию.
+* Только ContosoSQL1 и ContosoSQL2: Необходимо добавить **NT AUTHORITY\System** как входа со следующими разрешениями:
 
   * Изменение любой группы доступности
   * Соединение SQL
   * Просмотр состояния сервера
-* Только ContosoSQL1 и ContosoSQL2. Протокол **TCP** уже включен на виртуальной машине SQL Server. Однако все еще требуется открыть брандмауэр для удаленного доступа к SQL Server.
+* Только ContosoSQL1 и ContosoSQL2: **TCP** протокол уже включен на виртуальной Машине SQL Server. Однако все еще требуется открыть брандмауэр для удаленного доступа к SQL Server.
 
 Теперь все готово к запуску. Выполните следующие шаги, начиная с **ContosoQuorum**.
 
@@ -565,7 +565,7 @@ ms.locfileid: "51257941"
              -Path "SQLSERVER:\SQL\$server2\Default\AvailabilityGroups\$ag" `
              -Database $db
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Решение SQL Server Always On на основе группы доступности в Azure успешно создано. Инструкции по настройке прослушивателя для этой группы доступности см. в статье [Настройка прослушивателя внутренней подсистемы балансировки нагрузки для группы доступности Always On в Azure](../classic/ps-sql-int-listener.md).
 
 Дополнительные сведения об использовании SQL Server в Azure см. в статье [Общие сведения об SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md).

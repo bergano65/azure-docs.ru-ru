@@ -3,17 +3,17 @@ title: Управление учетной записью Azure Maps | Доку
 description: Вы можете управлять учетной записью Azure Maps с помощью портала Azure.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 12/12/2018
+ms.date: 02/14/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 488167b4893c314af99b354a2422204ebbf34c5e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: d158e1869cb85752b9b24e76d5227a2f7167bfcf
+ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56113702"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57569473"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
@@ -41,7 +41,7 @@ ms.locfileid: "56113702"
 
 Откроется страница подтверждения. Вы можете подтвердить удаление вашей учетной записи, введя ее имя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об управлении ценовой категорией учетной записи Azure Maps см. здесь:
     > [!div class="nextstepaction"] 

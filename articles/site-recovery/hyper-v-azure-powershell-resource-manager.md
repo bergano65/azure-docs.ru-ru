@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sutalasi
-ms.openlocfilehash: f4e1b25133914a65f34e281c145d7db5969b0581
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 9039c1fd94bbc62f48ca5a6869f455aa41b740c9
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55208029"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56673944"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -54,15 +54,15 @@ Azure PowerShell предоставляет командлеты для упра
 
 3. Убедитесь, что в вашей подписке зарегистрированы поставщики Azure для служб восстановления и службы Site Recovery, используя команды, приведенные ниже:
 
-    `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices` `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.SiteRecovery`
+    `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices`
 
 4. Убедившись, что в выходных данных команд для параметра **RegistrationState** установлено значение **Registered**, можно перейти к шагу 2. В противном случае необходимо зарегистрировать отсутствующего поставщика в своей подписке, выполнив следующие команды:
 
-    `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.SiteRecovery` `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices`
+    `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices`
 
 5. Убедитесь, что поставщики успешно зарегистрированы, выполнив следующие команды:
 
-    `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices` `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.SiteRecovery`.
+    `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices`
 
 ## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
 
@@ -188,5 +188,5 @@ Azure PowerShell предоставляет командлеты для упра
 
         $TFjob = Start-AsrTestFailoverCleanupJob -ReplicationProtectedItem $rpi -Comment "TFO done"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте больше](https://docs.microsoft.com/powershell/module/azurerm.siterecovery) об использовании командлетов PowerShell инструмента Azure Resource Manager для службы Azure Site Recovery.

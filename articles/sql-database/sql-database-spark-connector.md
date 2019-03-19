@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 927b887dbe9214867c0a694a611ca9fd9dc647a2
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 8e531de34302ef8aee571c960955d33a4832aa11
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55565298"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58013696"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью базы данных SQL Azure и SQL Server
 
@@ -213,11 +213,11 @@ df.bulkCopyToSqlDB(bulkCopyConfig, bulkCopyMetadata)
 //df.bulkCopyToSqlDB(bulkCopyConfig) if no metadata is specified.
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если это еще не сделано, скачайте соединитель для базы данных SQL Azure и SQL Server из [репозитория GitHub azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
 
 -   [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).
 - [Пример сценариев (Scala)](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/scripts)
 
-Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](http://spark.apache.org/docs/latest/sql-programming-guide.html) и в [документации по Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
+Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html) и в [документации по Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
 

@@ -7,23 +7,17 @@ ms.author: mamccrea
 ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/27/2018
-ms.openlocfilehash: fa32aafa4f042351db7693ee684deafe9ed13fb0
-ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
-ms.translationtype: HT
+ms.date: 03/13/2019
+ms.openlocfilehash: 354f6014e3230b65a0c4f1cd7507e58ca94474dd
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50748329"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58188107"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
 
 В этой статье описывается архитектура аварийного восстановления, которую удобно использовать для кластеров Azure Databricks, а также действия, необходимые для реализации этой архитектуры.
-
-## <a name="azure-databricks-overview"></a>Обзор Azure Databricks
-
-Azure Databricks — это быстрая и удобная служба аналитики на базе Apache Spark с возможностью совместной работы. В конвейере больших данных эти данные (необработанные или структурированные) принимаются в Azure через Фабрику данных Azure в виде пакетов, либо выполняется их потоковая передача практически в реальном времени при помощи Kafka, концентратора событий или Центра Интернета вещей. Эти данные попадают в озеро данных для долгосрочного хранения в хранилище BLOB-объектов Azure или Azure Data Lake Storage. В рамках рабочего процесса аналитики вы можете использовать Azure Databricks для считывания данных из множества источников данных, таких как [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md), [Azure Data Lake Storage](../data-lake-store/index.md), [Azure Cosmos DB](../cosmos-db/index.yml) или [Хранилище данных SQL Azure](../sql-data-warehouse/index.md), и получать из них полезную статистику с помощью Spark.
-
-![Конвейер Databricks](media/howto-regional-disaster-recovery/databricks-pipeline.png)
 
 ## <a name="azure-databricks-architecture"></a>Архитектура Azure Databricks
 
@@ -37,7 +31,7 @@ Azure Databricks — это быстрая и удобная служба ана
 
 ## <a name="how-to-create-a-regional-disaster-recovery-topology"></a>Как создать топологию регионального аварийного восстановления
 
-Как вы могли заметить в представленном выше описании архитектуры, для конвейера больших данных с Azure Databricks используется ряд компонентов: служба хранилища Azure, База данных Azure и другие источники данных. Azure Databricks — это *вычислительная среда* для конвейера больших данных. По своей природе она *временна*, то есть несмотря на то что ваши данные по-прежнему доступны в службе хранилища Azure, работу *вычислительной среды* (кластера Azure Databricks) можно завершить, чтобы вам не пришлось платить за ее использование, когда в этом нет необходимости. *Вычислительная среда* (Azure Databricks) и источники хранения должны находиться в одном регионе во избежание высокой задержки при выполнении заданий.  
+Как было отмечено в предыдущем описании архитектуре, существует ряд компонентов, используемых для конвейера обработки больших данных с помощью Azure Databricks:  Служба хранилища Azure, база данных Azure и других источников данных. Azure Databricks — это *вычислительная среда* для конвейера больших данных. По своей природе она *временна*, то есть несмотря на то что ваши данные по-прежнему доступны в службе хранилища Azure, работу *вычислительной среды* (кластера Azure Databricks) можно завершить, чтобы вам не пришлось платить за ее использование, когда в этом нет необходимости. *Вычислительная среда* (Azure Databricks) и источники хранения должны находиться в одном регионе во избежание высокой задержки при выполнении заданий.  
 
 Создавая собственную топологию регионального аварийного восстановления, соблюдайте следующие требования:
 
@@ -269,9 +263,14 @@ Azure Databricks — это быстрая и удобная служба ана
 
 10. **Повторная настройка и применение управления доступом вручную**
 
-   Если имеющаяся основная рабочая область настроена на использование уровня (SKU) "Премиум", то наверняка используется [функция управления доступом](https://docs.azuredatabricks.net/administration-guide/admin-settings/index.html#manage-access-control).
+    Если имеющаяся основная рабочая область настроена на использование уровня (SKU) "Премиум", то наверняка используется [функция управления доступом](https://docs.azuredatabricks.net/administration-guide/admin-settings/index.html#manage-access-control).
 
-   Если функция управления доступом не используется, вручную примените управление доступом к ресурсам (записным книжкам, кластерам, заданиям, таблицам).
+    Если функция управления доступом не используется, вручную примените управление доступом к ресурсам (записным книжкам, кластерам, заданиям, таблицам).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="disaster-recovery-for-your-azure-ecosystem"></a>Аварийное восстановление для вашей экосистемы Azure
+
+При использовании других служб Azure, убедитесь, что слишком реализовать рекомендации по аварийного восстановления для этих служб. Например, если вы решили использовать экземпляр внешнего хранилища метаданных Hive, следует аварийное восстановление для [Azure SQL Server](../sql-database/sql-database-disaster-recovery.md), [Azure HDInsight](../hdinsight/hdinsight-high-availability-linux.md), и/или [база данных Azure для MySQL ](../mysql/concepts-business-continuity.md). Общие сведения об аварийном восстановлении см. в разделе [аварийного восстановления для приложений Azure](https://docs.microsoft.com/azure/architecture/resiliency/disaster-recovery-azure-applications).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные сведения см. в [документации по Azure Databricks](https://docs.azuredatabricks.net/user-guide/index.html).

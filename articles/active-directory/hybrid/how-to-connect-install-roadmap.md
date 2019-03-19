@@ -13,12 +13,12 @@ ms.date: 09/18/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1285a9262221dbd8e46d07e384697ddea853f9fc
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ee64fe8643362c6a75e288d78e163317fd8a44d8
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163059"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57193163"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
@@ -46,10 +46,10 @@ ms.locfileid: "56163059"
 |Установка с помощью стандартных параметров | [Экспресс-установка Azure AD Connect](./how-to-connect-install-express.md)|
 |Установка с помощью настроенных параметров | [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md)|
 |Обновление из DirSync | [Azure AD Connect: обновление DirSync](./how-to-dirsync-upgrade-get-started.md)|
-|После установки | [Проверка установки и назначение лицензий ](how-to-connect-post-installation.md)|
+|После установки | [Проверьте установку и назначение лицензий](how-to-connect-post-installation.md)|
 
 ### <a name="learn-more-about-install-azure-ad-connect"></a>Дополнительные сведения об установке Azure AD Connect
-Также требуется подготовиться к [рабочим](how-to-connect-sync-operations.md) вопросам. Может потребоваться наличие резервного сервера, на который можно будет легко перейти в случае [аварии](how-to-connect-sync-operations.md#disaster-recovery). Если планируется часто изменять конфигурацию, следует предусмотреть сервер для [промежуточного режима](how-to-connect-sync-operations.md#staging-mode) .
+Также требуется подготовиться к [рабочим](how-to-connect-sync-operations.md) вопросам. Может потребоваться наличие резервного сервера, на который можно будет легко перейти в случае [аварии](how-to-connect-sync-staging-server.md#disaster-recovery). Если планируется часто изменять конфигурацию, следует предусмотреть сервер для [промежуточного режима](how-to-connect-sync-staging-server.md) .
 
 |Раздел |Ссылка|  
 | --- | --- |
@@ -168,7 +168,7 @@ Azure AD Connect поставляется с несколькими функци
   - Запись **Параметры** содержит основные конфигурации используемых агентов. Параметр автоматического обновления позволяет автоматически обновлять агент Azure AD Connect Health до последней версии. Агент Azure AD Connect Health будет обновлен до последней версии, когда она станет доступна. Эта функция включена по умолчанию. Предоставление корпорации Майкрософт доступа к данным работоспособности каталога Azure AD только для устранения неполадок. Если эта функция включена, корпорации Майкрософт будут доступны те же данные, что видите вы. Эта информация может помочь при устранении неполадок и различных проблем. Эта функция отключена по умолчанию.
 * Раздел **Управление доступом на основе ролей (IAM)** предназначен для управления доступом к данным Connect Health с помощью ролей. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
 - [Стандартные параметры](how-to-connect-install-express.md)

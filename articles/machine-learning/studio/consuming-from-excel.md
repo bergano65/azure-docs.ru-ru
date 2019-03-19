@@ -5,17 +5,17 @@ description: Студия машинного обучения Azure упроща
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 1e8bb6deeb66b506e1342fceb725b1563b822dff
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: ef1d8f1a72c5936ff661636c4c51acf439a0a5ea
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453126"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57855203"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-web-service-from-excel"></a>Использование веб-службы Студии машинного обучения Azure в Excel
 
@@ -33,8 +33,8 @@ ms.locfileid: "56453126"
 **Классическая веб-служба**
 
 1. На вкладке **Панель мониторинга** веб-службы есть строка для службы обработки **Запрос — ответ**. Если бы в этой службе был один выход, в строке отобразилась бы ссылка **Загрузить книгу Excel** .
-   
-    ![](./media/consuming-from-excel/excellink.png)
+
+    ![Скачайте книгу Excel с помощью портала веб-служба студии](./media/consuming-from-excel/excellink.png)
 2. Щелкните **Download Excel Workbook**(Скачать книгу Excel).
 
 **Новая веб-служба**
@@ -46,17 +46,17 @@ ms.locfileid: "56453126"
 
 1. Откройте книгу.
 2. Отобразится предупреждение системы безопасности. Нажмите кнопку **Разрешить изменение**.
-   
-    ![](./media/consuming-from-excel/enableeditting.png)
+
+    ![Разрешить изменение устранить это предупреждение безопасности защищенный просмотр](./media/consuming-from-excel/enableeditting.png)
 3. Отобразится предупреждение системы безопасности. Нажмите кнопку **Включить содержимое** , чтобы запустить макросы в электронной таблице.
-   
-    ![](./media/consuming-from-excel/enablecontent.png)
+
+    ![Включить содержимое закрыть предупреждение системы безопасности, отключение макросы](./media/consuming-from-excel/enablecontent.png)
 4. После включения макросов будет создана таблица. Синие столбцы представляют собой входные данные, или **ПАРАМЕТРЫ**, для веб-службы RRS. Обратите внимание на выходные данные службы RRS ( **ПРОГНОЗИРУЕМЫЕ ЗНАЧЕНИЯ** ), отмеченные зеленым цветом. После заполнения всех столбцов для указанной строки книга автоматически вызывает API оценки и отображает результаты оценки.
-   
-    ![](./media/consuming-from-excel/sampletable.png)
+
+    ![Таблица для входными данными параметров, в результате чего прогнозируемые значения](./media/consuming-from-excel/sampletable.png)
 5. Чтобы оценить несколько строк, заполните вторую строку данными, и вы получите прогнозируемые значения. Можно даже вставить несколько строк одновременно.
 
-Для лучшей визуализации данных к прогнозируемым значениям можно применять все функции Excel (графики, Power Map, условное форматирование и пр.).    
+Для лучшей визуализации данных к прогнозируемым значениям можно применять все функции Excel (графики, Power Map, условное форматирование и пр.).
 
 ## <a name="sharing-your-workbook"></a>Предоставление общего доступа к книге
 Для выполнения макросов в электронную таблицу должен входить ключ API. Это означает, что общий доступ к книге нужно предоставлять только тем организациям и людям, которым вы доверяете.

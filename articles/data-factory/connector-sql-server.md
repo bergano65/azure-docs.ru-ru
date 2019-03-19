@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 03/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 10ec490a6fe2044e1845efca94762b4ae1a42752
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: 78d82f7604d86b50ee5e05e5c3b5b9802a9559e5
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55657371"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877944"
 ---
 # <a name="copy-data-to-and-from-sql-server-using-azure-data-factory"></a>Копирование данных в базу данных SQL Server и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -39,7 +39,7 @@ ms.locfileid: "55657371"
 
 SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) в настоящее время не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы скопировать данные из базы данных SQL Server, которая не является общедоступной, необходимо настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции предоставляет встроенный драйвер SQL Server, поэтому при копировании данных из SQL Server и обратно вам не потребуется устанавливать драйвер вручную.
 
@@ -53,7 +53,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 Для связанной службы SQL Server поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойству type необходимо задать значение **SqlServer** | Yes |
 | connectionString |Укажите сведения о параметре connectionString, необходимые для подключения к базе данных SQL Server с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить пароль в Azure Key Vault, и если это аутентификация SQL, извлеките конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
@@ -146,7 +146,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 Чтобы скопировать данные в базу данных SQL Server или из нее, задайте для свойства type набора данных значение **SqlServerTable**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Для свойства type набора данных необходимо задать следующее значение: **SqlServerTable**. | Yes |
 | tableName |Имя таблицы или представления экземпляра базы данных SQL Server, на который ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
@@ -178,7 +178,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 Чтобы скопировать данные из SQL Server, задайте тип источника **SqlSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойству type источника действия копирования необходимо задать значение **SqlSource**. | Yes |
 | SqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. |Нет  |
@@ -281,7 +281,7 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Server, установите тип приемника **SqlSink** в действии копирования. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | Тип | Свойство type приемника действия копирования должно иметь следующее значение: **SqlSink**. | Yes |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения writeBatchSize.<br/>Допустимые значения: целое число (количество строк). |Нет (по умолчанию 10 000) |
@@ -489,7 +489,7 @@ BEGIN
       UPDATE SET State = source.State
   WHEN NOT MATCHED THEN
       INSERT (ProfileID, State, Category)
-      VALUES (source.ProfileID, source.State, source.Category)
+      VALUES (source.ProfileID, source.State, source.Category);
 END
 ```
 
@@ -499,14 +499,11 @@ END
 CREATE TYPE [dbo].[MarketingType] AS TABLE(
     [ProfileID] [varchar](256) NOT NULL,
     [State] [varchar](256) NOT NULL，
-    [Category] [varchar](256) NOT NULL，
+    [Category] [varchar](256) NOT NULL
 )
 ```
 
 Функциональность хранимой процедуры использует преимущества [параметров с табличным значением](https://msdn.microsoft.com/library/bb675163.aspx).
-
->[!NOTE]
->Если запись в тип данных Money и Smallmoney осуществляется путем вызова хранимой процедуры, значения могут округляться. Чтобы избежать этого, в возвращающем табличное значение параметре вместо типов данных Money и Smallmoney укажите тип Decimal.
 
 ## <a name="data-type-mapping-for-sql-server"></a>Сопоставление типов SQL Server
 
@@ -569,5 +566,5 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт.  
 6. **Проверьте подключение**. Чтобы подключиться к SQL Server, используя полное имя, используйте SQL Server Management Studio с другого компьютера. Например, `"<machine>.<domain>.corp.<company>.com,1433"`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

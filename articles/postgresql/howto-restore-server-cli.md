@@ -7,19 +7,19 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.openlocfilehash: 357b22e4d4a6bf42ba165e49fc3cc01762268297
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 17f9acf6dcdc5a81c785bedc3649ee0258562b43
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756518"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57994153"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql-using-the-azure-cli"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI
 
 ## <a name="backup-happens-automatically"></a>Резервное копирование выполняется автоматически
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для PostgreSQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [сервер и база данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md);
 
@@ -47,7 +47,7 @@ ms.locfileid: "55756518"
 Вот как можно изменить срок хранения резервной копии сервера.
 
 ```azurecli-interactive
-az postgres server update --name mydemoserver --resource-group myresourcegroup --backup-retention-days 10
+az postgres server update --name mydemoserver --resource-group myresourcegroup --backup-retention 10
 ```
 
 В указанном выше примере период хранения резервных копий mydemoserver изменен на 10 дней.
@@ -68,6 +68,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 ```
 
 Для команды `az postgres server restore` обязательны указанные ниже параметры.
+
 | Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
@@ -107,6 +108,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 ```
 
 Для команды `az postgres server georestore` обязательны указанные ниже параметры.
+
 | Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
@@ -123,6 +125,6 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра, которые были настроены на сервере-источнике. Для этого нового сервера правила брандмауэра нужно настроить отдельно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о [резервном копировании](concepts-backup.md) в службе.
 - Подробнее о вариантах обеспечения [непрерывности бизнеса](concepts-business-continuity.md).

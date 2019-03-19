@@ -3,7 +3,7 @@ title: Использование редактора Azure Cloud Shell | Док�
 description: Общие сведения о том, как использовать редактор Azure Cloud Shell.
 services: azure
 documentationcenter: ''
-author: jluk
+author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
-ms.author: juluk
-ms.openlocfilehash: caf6e18a9a30654710f5445ed6ab957a5253d62e
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
-ms.translationtype: HT
+ms.author: damaerte
+ms.openlocfilehash: 7f597bb5cba1a12bdb93325fe2b877ffc644e3e4
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259677"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243165"
 ---
 # <a name="using-the-azure-cloud-shell-editor"></a>Использование редактора Azure Cloud Shell
 
@@ -51,6 +51,6 @@ Azure Cloud Shell включает в себя встроенный редакт
 
 Поддержка выделения кода в редакторе Cloud Shell реализуется с помощью функций верхнего уровня при использовании определений синтаксиса Monarch в [редакторе Monaco](https://github.com/Microsoft/monaco-editor). Чтобы узнать, как внести свой вклад, перейдите к этому [руководству по Monaco](https://github.com/Microsoft/monaco-editor/blob/master/CONTRIBUTING.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Краткое руководство по Bash в Azure Cloud Shell](quickstart.md)
 [Функции и средства для Azure Cloud Shell](features.md)

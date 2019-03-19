@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 1/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: 73f8b1323f6cd22ef215fba4ec45714f099032f6
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: f7288202eb6dd66aee0bb38bb3611e8b319b50f2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415839"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010538"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway-preview"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure (предварительная версия)
 
@@ -36,29 +36,29 @@ ms.locfileid: "56415839"
 4. [Экспортируйте](vpn-gateway-certificates-point-to-site.md#clientexport) сертификат клиента P2S, который вы создали и отправили в конфигурацию P2S на шлюзе.
 5. Извлеките закрытый ключ и отпечаток base64 из *PFX-файла*. Это можно сделать несколькими способами. Это можно сделать с помощью OpenSSL на компьютере. Файл *profileinfo.txt* содержит закрытый ключ, отпечаток для ЦС и сертификат клиента. Не забудьте использовать отпечаток сертификата клиента.
 
-  ```
-  openssl.exe pkcs12 -in "filename.pfx" -nodes -out "profileinfo.txt"
-  ```
+   ```
+   openssl pkcs12 -in "filename.pfx" -nodes -out "profileinfo.txt"
+   ```
 6. Откройте *profileinfo.txt* в Блокноте. Чтобы получить отпечаток сертификата клиента (дочерний), выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----" (включая эти строки) для дочернего сертификата и скопируйте его. Дочерний сертификат можно определить, просмотрев строку subject=/.
 7. Переключитесь на файл *vpnconfig.ovpn*, который вы открыли в Блокноте на шаге 3. Найдите раздел, указанный ниже, и замените весь код между cert и /cert.
 
-  ```
-  # P2S client certificate
-  # please fill this field with a PEM formatted cert
-  <cert>
-  $CLIENTCERTIFICATE
-  </cert>
-  ```
-8.  Откройте файл *profileinfo.txt* в Блокноте. Чтобы получить закрытый ключ, выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----" (включая эти строки) и скопируйте его.
-9.  Вернитесь к файлу vpnconfig.ovpn в Блокноте и найдите этот раздел. Вставьте закрытый ключ, заменив все между и key и /key.
+   ```
+   # P2S client certificate
+   # please fill this field with a PEM formatted cert
+   <cert>
+   $CLIENTCERTIFICATE
+   </cert>
+   ```
+8. Откройте файл *profileinfo.txt* в Блокноте. Чтобы получить закрытый ключ, выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----" (включая эти строки) и скопируйте его.
+9. Вернитесь к файлу vpnconfig.ovpn в Блокноте и найдите этот раздел. Вставьте закрытый ключ, заменив все между и key и /key.
 
-  ```
-  # P2S client root certificate private key
-  # please fill this field with a PEM formatted key
-  <key>
-  $PRIVATEKEY
-  </key>
-  ```
+   ```
+   # P2S client root certificate private key
+   # please fill this field with a PEM formatted key
+   <key>
+   $PRIVATEKEY
+   </key>
+   ```
 10. Не изменяйте остальные поля. Для подключения к VPN используйте заполненную конфигурацию на входе клиента.
 11. Скопируйте файл vpnconfig.ovpn в папку C:\Program Files\OpenVPN\config.
 12. Щелкните правой кнопкой мыши значок OpenVPN в области уведомлений и щелкните "Подключить".
@@ -84,58 +84,58 @@ ms.locfileid: "56415839"
 1. Запустите новый сеанс терминала. Новый сеанс можно начать, нажав CTRL+ALT+Т.
 2. Для установки необходимых компонентов введите следующую команду.
 
-  ```
-  sudo apt-get install openvpn
-  sudo apt-get -y install network-manager-openvpn
-  sudo service network-manager restart
-  ```
+   ```
+   sudo apt-get install openvpn
+   sudo apt-get -y install network-manager-openvpn
+   sudo service network-manager restart
+   ```
 3. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure.
-4.  [Экспортируйте](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-certificates-point-to-site#clientexport) сертификат клиента P2S, который вы создали и отправили в конфигурацию P2S на шлюзе. 
+4. [Экспортируйте](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-certificates-point-to-site#clientexport) сертификат клиента P2S, который вы создали и отправили в конфигурацию P2S на шлюзе. 
 5. Извлеките закрытый ключ и отпечаток base64 из PFX-файла. Это можно сделать несколькими способами. Это можно сделать с помощью OpenSSL на компьютере.
 
     ```
     openssl.exe pkcs12 -in "filename.pfx" -nodes -out "profileinfo.txt"
     ```
-  Файл *profileinfo.txt* содержит закрытый ключ, отпечаток для ЦС и сертификат клиента. Не забудьте использовать отпечаток сертификата клиента.
+   Файл *profileinfo.txt* содержит закрытый ключ, отпечаток для ЦС и сертификат клиента. Не забудьте использовать отпечаток сертификата клиента.
 
 6. Откройте файл *profileinfo.txt* в текстовом редакторе. Чтобы получить отпечаток сертификата клиента (дочерний), выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----", включая эти строки, для дочернего сертификата и скопируйте его. Дочерний сертификат можно определить, просмотрев строку subject=/.
 
-7.  Откройте файл *vpnconfig.ovpn* и найдите раздел, показанный ниже. Замените весь код между cert и /cert.
+7. Откройте файл *vpnconfig.ovpn* и найдите раздел, показанный ниже. Замените весь код между cert и /cert.
 
-    ```
-    # P2S client certificate
-    # please fill this field with a PEM formatted cert
-    <cert>
-    $CLIENTCERTIFICATE
-    </cert>
-    ```
-8.  Откройте файл profileinfo.txt в текстовом редакторе. Чтобы получить закрытый ключ, выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----", включая эти строки, и скопируйте его.
+   ```
+   # P2S client certificate
+   # please fill this field with a PEM formatted cert
+   <cert>
+   $CLIENTCERTIFICATE
+   </cert>
+   ```
+8. Откройте файл profileinfo.txt в текстовом редакторе. Чтобы получить закрытый ключ, выделите текст между "-----BEGIN CERTIFICATE-----" и "-----END CERTIFICATE-----", включая эти строки, и скопируйте его.
 
-9.  Откройте файл vpnconfig.ovpn в текстовом редакторе и найдите этот раздел. Вставьте закрытый ключ, заменив все между и key и /key.
+9. Откройте файл vpnconfig.ovpn в текстовом редакторе и найдите этот раздел. Вставьте закрытый ключ, заменив все между и key и /key.
 
-    ```
-    # P2S client root certificate private key
-    # please fill this field with a PEM formatted key
-    <key>
-    $PRIVATEKEY
-    </key>
-    ```
+   ```
+   # P2S client root certificate private key
+   # please fill this field with a PEM formatted key
+   <key>
+   $PRIVATEKEY
+   </key>
+   ```
 
 10. Не изменяйте остальные поля. Для подключения к VPN используйте заполненную конфигурацию на входе клиента.
 11. Чтобы подключиться с помощью командной строки, введите следующую команду:
   
-  ```
-  sudo openvpn –-config <name and path of your VPN profile file>
-  ```
+    ```
+    sudo openvpn –-config <name and path of your VPN profile file>
+    ```
 12. Чтобы подключиться с помощью графического пользовательского интерфейса, перейдите в параметры системы.
 13. Щелкните **+** для добавления нового подключения VPN.
 14. В разделе **Добавить VPN** выберите **Импорт из файла...**
 15. Просмотрите файл профиля и дважды щелкните или выберите **Открыть**.
 16. Щелкните **Добавить** в окне **Добавить VPN**.
   
-  ![Импорт из файла](./media/vpn-gateway-howto-openvpn-clients/importfromfile.png)
+    ![Импорт из файла](./media/vpn-gateway-howto-openvpn-clients/importfromfile.png)
 17. Вы можете подключиться, выбрав для VPN **Вкл.** на странице **Параметры сети** или под значком сети на панели задач.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите, чтобы клиенты VPN могли получить доступ к ресурсам в другой (рабочей) виртуальной сети, следуйте инструкциям в статье [о настройке подключения "виртуальная сеть — виртуальная сеть"](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md). Обязательно включите протокол BGP на шлюзах и соединениях, иначе трафик не будет считываться.

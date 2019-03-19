@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: billgib,andrela,stein
 manager: craigg
 ms.date: 09/24/2018
-ms.openlocfilehash: fd420e29387aedd3f04fdf7437a3ef27c5589fc8
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562901"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835787"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Подготовка новых клиентов и их каталогизация в приложении SaaS с помощью сегментированной мультитенантной базы данных SQL Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "55562901"
 > * подготавливать пакет клиентов в мультитенантной и однотенантной базе данных;
 > * регистрировать сопоставление баз данных и клиентов в каталоге.
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -237,7 +237,7 @@ ms.locfileid: "55562901"
 - Имя клиента хранится в таблице клиентов.
 - Имя базы данных хранится в таблицах управления сегментами.
 
-1. В SQL Server Management Studio (SSMS) подключитесь к серверу клиентов по адресу **catalog-mt.\<Пользователь\>.database.windows.net**, указав в качестве имени для входа **developer**, а в качестве пароля — **P@ssword1**.
+1. В SQL Server Management Studio (SSMS), подключение к серверу клиентов по адресу **catalog-mt.\<пользователя\>. database.windows.net**, с именем для входа = **разработчика**и пароль =  **P\@ssword1**
 
     ![Диалоговое окно подключения SSMS](media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 
@@ -268,7 +268,7 @@ ms.locfileid: "55562901"
 - [Отладка сценариев в интегрированной среде сценариев Windows PowerShell](https://msdn.microsoft.com/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

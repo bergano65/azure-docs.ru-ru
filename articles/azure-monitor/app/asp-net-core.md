@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: mbullwin
-ms.openlocfilehash: 24132fdb23ff89045f2b497327997d95e4ceecac
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 7f3b8101b633c977201b6c413ad12e4bbe55e9a7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054849"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58011778"
 ---
 # <a name="application-insights-for-aspnet-core"></a>Application Insights для ASP.NET Core
 
@@ -25,7 +25,7 @@ Azure Application Insights обеспечивает детализированн
 
 Эта статья содержит сведения о создании примера приложения [Razor Pages](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/?tabs=visual-studio) ASP.NET Core в Visual Studio и о том, как начать выполнять мониторинг с помощью Application Insights.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Пакет SDK для .NET Core 2.0.0 или более поздней версии.
 - [Visual Studio 2017](https://www.visualstudio.com/downloads/) версии 15.7.3 или выше с ASP.NET и рабочей нагрузкой веб-разработки.
@@ -88,15 +88,15 @@ Application Insights имеет низкие издержки. Чтобы про
 
 - Создан один файл:
 
-  -  _ConnectedService.json_
+  - _ConnectedService.json_
 
     ```json
     {
-      "ProviderId": "Microsoft.ApplicationInsights.ConnectedService.ConnectedServiceProvider",
-      "Version": "8.12.10405.1",
-      "GettingStartedDocument": {
-        "Uri": "https://go.microsoft.com/fwlink/?LinkID=798432"
-      }
+     "ProviderId": "Microsoft.ApplicationInsights.ConnectedService.ConnectedServiceProvider",
+     "Version": "8.12.10405.1",
+     "GettingStartedDocument": {
+       "Uri": "https://go.microsoft.com/fwlink/?LinkID=798432"
+     }
     }
     ```
 
@@ -180,6 +180,10 @@ Application Insights имеет низкие издержки. Чтобы про
           }
       }
       ```
+
+## <a name="send-ilogger-logs-to-application-insights"></a>Отправка журналов ILogger Application Insights
+
+Application Insights поддерживает записи журналов, отправляемых через ILogger. Настройка ведения журнала извлечения примеры кода [здесь](https://docs.microsoft.com/azure/azure-monitor/app/ilogger).
 
 ## <a name="synthetic-transactions-with-powershell"></a>Создание искусственных транзакций с помощью PowerShell
 
@@ -338,7 +342,7 @@ _Ненастроенная_ ссылка в каждом экземпляре �
 
 ![Снимок экрана схемы зависимостей NuGet для Microsoft.AspNETCore.all](./media/asp-net-core/013-dependency.png)
 
-За пределами Visual Studio, если вы редактировали проект ASP.NET Core с помощью VS Code или другого редактора, эти сборки не загружаются автоматически во время отладки, если вы еще явно не добавили в проект Application Insights.
+Вне Visual Studio Если вы редактировали проекта ASP.NET Core в VSCode или другом редакторе, эти сборки не загружаются автоматически во время отладки, если вы еще не добавлен явным образом не Application Insights в проект.
 
 Однако в Visual Studio эти локальные возможности Application Insights из внешних сборок реализуются с помощью [интерфейса IHostingStartup](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup?view=aspnetcore-2.1), который динамически добавляет Application Insights во время отладки.
 
@@ -403,7 +407,7 @@ CoreCLR будет по-прежнему загружать файлы _Microsof
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player] 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Изучите маршруты пользователей](../../azure-monitor/app/usage-flows.md), чтобы понять, как пользователи перемещаются через приложение.
 * [Настройте коллекцию моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger#configure-snapshot-collection-for-aspnet-core-20-applications) для отображения состояния исходного кода и переменных в момент создания исключения.
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.

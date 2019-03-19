@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: fcf18731bd5b9bbe91541931ac68effd9de6debf
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: c67369edec2f3c84ada14e6c2a3a3ab8056b3e0c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104700"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57870101"
 ---
 # <a name="connect-to-a-data-source"></a>Подключение к источнику данных
 
@@ -72,5 +72,5 @@ ms.locfileid: "55104700"
 * [Начало работы с коллекциями рабочих областей Microsoft Power BI](get-started.md)
 * [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)
 
-У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](http://community.powerbi.com/)
+У вас имеются и другие вопросы? [Попробуйте задать их в сообществе Power BI](https://community.powerbi.com/)
 

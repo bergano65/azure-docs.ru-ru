@@ -5,28 +5,28 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 03/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 68f99b71930b507501aa6fb8cf0d3529de2ede5d
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: bc8fae8f1278babd8c4c7402d86700ad78e3cb9d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310378"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57897424"
 ---
 # <a name="client-libraries-for-connecting-to-azure-analysis-services"></a>Клиентские библиотеки для подключения к службам Azure Analysis Services
 
-Клиентские библиотеки требуются клиентским приложениям и средствам для подключения к серверам служб Analysis Services. 
+Клиентские библиотеки требуются клиентским приложениям и средствам для подключения к серверам служб Analysis Services. Клиентские приложения Майкрософт, такие как Power BI Desktop, Excel, SQL Server Management Studio (SSMS) и SQL Server Data Tools (SSDT), устанавливают все три клиентские библиотеки и обновлять их, обновляя обычное приложение. В некоторых случаях может потребоваться установить более новые версии клиентских библиотек. Пользовательских клиентских приложений также требует, что установлены клиентские библиотеки.
 
 ## <a name="download-the-latest-client-libraries-windows-installer"></a>Скачивание последних версий клиентских библиотек (установщик Windows)  
 
 |Download (Скачать)  |Версия продукта  | 
 |---------|---------|
-|[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.0.8.19     |
-|[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |    15.0.8.19      |
-|[Объекты AMO](https://go.microsoft.com/fwlink/?linkid=829578)     |   15.14.1.0    |
-|[ADOMD](https://go.microsoft.com/fwlink/?linkid=829577)     |    15.14.1.0     |
+|[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.0.11.19    |
+|[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |    15.0.11.19      |
+|[Объекты AMO](https://go.microsoft.com/fwlink/?linkid=829578)     |   15.15.0.0    |
+|[ADOMD](https://go.microsoft.com/fwlink/?linkid=829577)     |    15.15.0.0     |
 
 ## <a name="amo-and-adomd-nuget-packages"></a>AMO и ADOMD (пакеты NuGet)
 
@@ -34,8 +34,8 @@ ms.locfileid: "56310378"
 
 |Package  | Версия продукта  | 
 |---------|---------|
-|[Объекты AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    15.14.1.0     |
-|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   15.14.1.0      |
+|[Объекты AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    15.15.0.0     |
+|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   15.15.0.0      |
 
 Сборки пакетов NuGet AssemblyVersion следуют семантической организации номера версии: "Главная.Второстепенная.Исправление". Ссылки на пакеты NuGet загружают ожидаемую версию, даже при наличии другой версии в глобальном кэше сборок (в результате установки MSI). Номер исправления увеличивается с каждым выпуском. Версии ADOMD и AMO синхронизируются.
 
@@ -91,6 +91,6 @@ ms.locfileid: "56310378"
 2. Щелкните правой кнопкой мыши **Microsoft.AnalysisServices.AdomdClient** > **Свойства** > **Сведения**.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение с помощью Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)

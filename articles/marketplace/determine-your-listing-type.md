@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: ellacroi
-ms.openlocfilehash: 4abed1718d77c93e864fe5bb1d39aba5e5272f10
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 2755232ea81f1551477431f4eb1f0aeab8b8bfe8
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074476"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56734047"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 Вариант публикации, выбранный для вашего предложения, определяется требованиями соответствия и преимуществами GTM в Marketplace. Что более важно, выбор варианта публикации и типа предложения на портале Cloud Partner определяет, каким образом пользователи будут взаимодействовать с вашим предложением в Marketplace.
@@ -73,7 +73,7 @@ ms.locfileid: "54074476"
 >[!Note]
 >Если вы используете вариант публикации Transact, перед выбором типа предложения и его созданием важно составить представление о ценах, выставлении счетов и оплате. Дополнительные сведения см. в статье о [выставлении счетов в Marketplace и основных коммерческих аспектах](./marketplace-commercial-transaction-capabilities-and-considerations.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 *   Выбрав вариант публикации, вы можете [выбрать тип предложения](./publisher-guide-by-offer-type.md), который будет использован для его представления.
 *   Ознакомьтесь с требованиями к соответствию для выбранного варианта публикации по типу предложения, чтобы завершить выбор и настройку предложения.

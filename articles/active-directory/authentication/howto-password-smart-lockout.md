@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e44b6a8232bcd0bc72c4faa0f7116d42cec79111
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 67f2af94f32d5439585ad4d727fd2b1bd80fc41b
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172422"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57431710"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -72,14 +72,14 @@ ms.locfileid: "56172422"
 
 ![Настройка политики смарт-блокировки Azure AD на портале Azure](./media/howto-password-smart-lockout/azure-active-directory-custom-smart-lockout-policy.png)
 
-## <a name="how-to-determine-if-the-smartlockout-feature-is-working-or-not"></a>Как определить, работает ли компонент Smartlockout
+## <a name="how-to-determine-if-the-smart-lockout-feature-is-working-or-not"></a>Как определить, работает ли функция смарт-блокировки
 
-При превышении порогового значения smartlockout учетная запись будет заблокирована и вы получите следующее сообщение:
+При активации пороговое значение смарт-блокировки, при блокировке учетной записи отобразится следующее сообщение:
 
 **Ваша учетная запись временно заблокирована, чтобы предотвратить ее несанкционированное использование. Повторите попытку позже. Если проблема не устранена, обратитесь к администратору.**
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
 

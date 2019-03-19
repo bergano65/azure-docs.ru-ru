@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/05/2019
-ms.openlocfilehash: 09f1bdfa4c9a7a179bddf9473b553924bfb58fb7
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: e4037e79812f0cf548ddfcc277c1b66332e0f1f7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55768568"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57902881"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -22,6 +22,10 @@ ms.locfileid: "55768568"
 ## <a name="public-previews"></a>Общедоступные предварительные версии
 
 В общедоступную предварительную версию входят следующие функции. Вы можете воспользоваться этими функциями уже сегодня, однако не используйте их в рабочей среде.
+
+### <a name="anomaly-detection"></a>Обнаружение аномалий
+
+Помимо обнаружения двунаправленных, медленно положительных и медленно негативных тенденций, Azure Stream Analytics вводит новые модели машинного обучения с поддержкой обнаружения *пиков* и *спадов*. Дополнительные сведения см. в статье [обнаружение аномалий в Azure Stream Analytics](stream-analytics-machine-learning-anomaly-detection.md).
 
 ### <a name="sql-database-reference-data"></a>Эталонные данные Базы данных SQL
 
@@ -47,10 +51,6 @@ Azure Stream Analytics поддерживает пользовательские
 
 В закрытую предварительную версию входят следующие функции.
 
-### <a name="anomaly-detection"></a>Обнаружение аномалий
-
-Помимо обнаружения двунаправленных, медленно положительных и медленно негативных тенденций, Azure Stream Analytics вводит новые модели машинного обучения с поддержкой обнаружения *пиков* и *спадов*.
-
 ### <a name="c-custom-deserializer-for-azure-stream-analytics-on-iot-edge"></a>Пользовательский десериализатор C# для Azure Stream Analytics в IoT Edge
 
 Теперь разработчики могут реализовывать пользовательские десериализаторы в C# для десериализации событий, полученных в Azure Stream Analytics. Примеры форматов, которые можно десериализировать, включают в себя Parquet, Protobuf, XML и любой двоичный формат.
@@ -61,9 +61,9 @@ Azure Stream Analytics поддерживает пользовательские
 
 ### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
 
-Задания Azure Stream Analytics можно создать в Visual Studio Code.
+Задания Azure Stream Analytics можно создать в Visual Studio Code. Для доступа к закрытым предварительным версиям функций средства, обратитесь к *ASAToolsfeedback\@microsoft.com*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Eight new features in Azure Stream Analytics](https://azure.microsoft.com/blog/eight-new-features-in-azure-stream-analytics/) (Восемь новых возможностей в службе Azure Stream Analytics)
 

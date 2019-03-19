@@ -11,16 +11,16 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: e5528cdfc2efa2d5c257732c8b6b6df117421839
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: a5ddc17f6200ba2d43d67fcd2e4bcc35c224e6cb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250033"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004054"
 ---
 # <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Обучение моделей PyTorch с помощью Службы машинного обучения Azure
 
-Для глубокого обучения нейронных сетей (DNN) с помощью PyTorch Машинное обучение Azure предоставляет пользовательский класс `PyTorch` средства оценки `Estimator`. Средство оценки `PyTorch` в пакете Azure SDK позволяет легко отправлять задания обучения PyTorch для одноузловых и распределенных запусков в вычислительных ресурсах Azure.
+Для обучения глубокой нейронной сети (DNN), с помощью PyTorch, машинного обучения Azure обеспечивает настраиваемый [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py) класс `Estimator`. Средство оценки `PyTorch` в пакете Azure SDK позволяет легко отправлять задания обучения PyTorch для одноузловых и распределенных запусков в вычислительных ресурсах Azure.
 
 ## <a name="single-node-training"></a>Одноузловое обучение
 Обучение с помощью средства оценки `PyTorch` похоже на использование [базового средства оценки`Estimator`](how-to-train-ml-models.md), поэтому сначала прочтите статью с практическим руководством и изучите изложенные понятия.
@@ -42,6 +42,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-proj',
 ```
 
 Укажем следующие параметры в конструкторе PyTorch.
+
 Параметр | ОПИСАНИЕ
 --|--
 `source_directory` |  Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
@@ -82,6 +83,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-project',
 ```
 
 В этом коде показаны следующие новые параметры конструктора PyTorch:
+
 Параметр | ОПИСАНИЕ | значение по умолчанию
 --|--|--
 `node_count` |  Количество узлов, которые будут использоваться для задания обучения. | `1`
@@ -108,7 +110,7 @@ run = exp.submit(pt_est)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/07/2018
+ms.date: 02/26/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38ad75d22d21a141d48e9664ae580dfb5577a389
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6269d00c9a6a8f827a4e31044d9d20efb0f8471b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184930"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58092588"
 ---
 # <a name="install-azure-ad-connect-using-sql-delegated-administrator-permissions"></a>Установка Azure AD Connect с использованием делегированных разрешений администратора SQL
 До последней сборки Azure AD Connect административное делегирование при развертывании конфигураций, для которых требовался SQL, не поддерживалось.  Пользователям, которые хотят установить Azure AD Connect, необходимо иметь разрешения администратора сервера на сервере SQL.
@@ -44,20 +44,26 @@ ms.locfileid: "56184930"
 >Хотя это не обязательно, **настоятельно рекомендуется** выбрать параметры сортировки Latin1_General_CI_AS при создании базы данных.
 
 
-1.  При помощи администратора SQL создайте базу данных ADSync с последовательностью параметров сортировки без учета регистра **(Latin1_General_CI_AS)**.  Имя базы данных должно быть **ADSync**.  Модель восстановления, уровень совместимости и тип вложения обновляются до правильных значений при установке Azure AD Connect.  Однако администратор SQL должен правильно настроить последовательность параметров сортировки. В противном случае Azure AD Connect заблокирует установку.  Чтобы восстановить установку, администратор сервера должен удалить и повторно создать базу данных.</br>
-![Параметры сортировки](./media/how-to-connect-install-sql-delegation/sql4.png)
-2.  Предоставьте администратору Azure AD Connect и учетной записи службы домена следующие разрешения:
-    - Имя для входа в SQL 
-    - Права **владельца базы данных (dbo)**.  </br>
-![Разрешения](./media/how-to-connect-install-sql-delegation/sql3a.png)
-3.  Отправьте электронное сообщение администратору Azure AD Connect, указав сервер и имя экземпляра SQL, которые должны использоваться при установке Azure AD Connect.
+1. При помощи администратора SQL создайте базу данных ADSync с последовательностью параметров сортировки без учета регистра **(Latin1_General_CI_AS)**.  Имя базы данных должно быть **ADSync**.  Модель восстановления, уровень совместимости и тип вложения обновляются до правильных значений при установке Azure AD Connect.  Однако администратор SQL должен правильно настроить последовательность параметров сортировки. В противном случае Azure AD Connect заблокирует установку.  Чтобы восстановить установку, администратор сервера должен удалить и повторно создать базу данных.
+ 
+   ![Collation](./media/how-to-connect-install-sql-delegation/sql4.png)
+2. Предоставьте администратору Azure AD Connect и учетной записи службы домена следующие разрешения:
+   - Имя для входа в SQL 
+   - Права **владельца базы данных (dbo)**.
+ 
+   ![Разрешения](./media/how-to-connect-install-sql-delegation/sql3a.png)
+
+   >[!NOTE]
+   >Azure AD Connect не поддерживает имена входа с помощью вложенного членства.  Это означает, что в вашей учетной записи администратора Azure AD Connect и учетной записи службы домена должны быть связаны с именем входа, предоставляются права dbo.  Просто она не может быть членом группы, присвоенный имени входа с правами dbo.
+
+3. Отправьте электронное сообщение администратору Azure AD Connect, указав сервер и имя экземпляра SQL, которые должны использоваться при установке Azure AD Connect.
 
 ## <a name="additional-information"></a>Дополнительная информация
-После подготовки базы данных администратор Azure AD Connect может для удобства установить и настроить службу локальной синхронизации.  
+После подготовки базы данных администратор Azure AD Connect может для удобства установить и настроить службу локальной синхронизации.
 
-Дополнительные сведения об установке Azure AD Connect с помощью имеющейся базы данных ADSync см. в [этой статье](how-to-connect-install-existing-database.md).
+В случае, если администратор SQL восстановит базу данных ADSync из предыдущей резервной копии Azure AD Connect, необходимо будет установить новый сервер Azure AD Connect с помощью существующей базы данных. Дополнительные сведения об установке Azure AD Connect с существующей базы данных см. в разделе [установке Azure AD Connect с использованием базы данных ADSync](how-to-connect-install-existing-database.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)  

@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ed4b581cb962c7db706a71ab995963a3c445af55
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a1b6fe38087975838d99ca4fe45ee0d0638c56c3
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998222"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58187750"
 ---
-# <a name="overview-and-comparison-of-azure-on-demand-media-encoders-legacy"></a>Обзор и сравнение кодировщиков мультимедиа Azure по запросу (для прежних версий)
+# <a name="overview-and-comparison-of-azure-on-demand-media-encoders"></a>Обзор и сравнение кодировщиков мультимедиа Azure по запросу 
 
 ## <a name="encoding-overview"></a>Общие сведения о Службе кодирования
 Службы мультимедиа Azure предоставляют несколько вариантов для кодирования мультимедиа в облаке.
@@ -95,4 +95,4 @@ ms.locfileid: "55998222"
 * [Квоты и ограничения](media-services-quotas-and-limitations.md)
 
 <!--Reference links in article-->
-[1]: http://azure.microsoft.com/pricing/details/media-services/
+[1]: https://azure.microsoft.com/pricing/details/media-services/

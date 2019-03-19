@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 01/31/2018
 ms.author: v-ant
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fb6108855cf3237af230f3356f0afb68e2b1ec4
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: f2e05e5e430760d16d5d494a6f27ef985aafc487
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56445548"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58097997"
 ---
 # <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство. Настройка Zendesk для автоматической подготовки пользователей
 
@@ -30,7 +30,7 @@ ms.locfileid: "56445548"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -111,12 +111,12 @@ ms.locfileid: "56445548"
 
 5. В разделе **Учетные данные администратора** введите **имя администратора**, **маркер секрета** и **домен** своей учетной записи Zendesk. Примеры этих значений:
 
-    *   В поле **Имя администратора** укажите имя учетной записи администратора в клиенте Zendesk. Пример: admin@contoso.com.
+   * В поле **Имя администратора** укажите имя учетной записи администратора в клиенте Zendesk. Пример: admin@contoso.com.
 
-    *   В поле **маркер секрета** введите маркер секрета, как описано в шаге 6.
+   * В поле **маркер секрета** введите маркер секрета, как описано в шаге 6.
 
-    *   В поле **Домен** введите поддомен вашего клиента Zendesk.
-    Пример: для учетной записи клиента с URL-адресом https://my-tenant.zendesk.com поддомен будет иметь значение **my-tenant**.
+   * В поле **Домен** введите поддомен вашего клиента Zendesk.
+     Пример: для учетной записи клиента с URL-адресом https://my-tenant.zendesk.com поддомен будет иметь значение **my-tenant**.
 
 6. **Маркер секрета** для учетной записи Zendesk можно найти в разделе **Администрирование > API > Параметры**.
    Параметру **Token Access** (Доступ по маркеру) должно быть задано состояние **Enabled** (Включено).
@@ -177,7 +177,7 @@ ms.locfileid: "56445548"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

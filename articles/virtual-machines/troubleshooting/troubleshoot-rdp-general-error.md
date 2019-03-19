@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 25e70b3a685f3b777a74c4cc6bf0e56dd37741a7
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
-ms.translationtype: HT
+ms.openlocfilehash: f290a7e16938c66d45fab9b78086f77bfdfe4839
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51821520"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58100417"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Устранение общей ошибки RDP на виртуальной машине Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "51821520"
 
 ### <a name="serial-console"></a>Серийная консоль
 
-#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Шаг 1. Открытие экземпляра CMD в Серийной консоли
+#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Шаг 1. Открыть экземпляр командной строки в последовательной консоли
 
 1. Откройте [последовательную консоль](serial-console-windows.md), выбрав **Поддержка и устранение неисправностей** > **Последовательная консоль (предварительная версия)**. Если эта функция включена на виртуальной машине, вы сможете успешно подключиться к виртуальной машине.
 
@@ -77,7 +77,7 @@ ms.locfileid: "51821520"
    ch -si 1
    ```
 
-#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Шаг 2. Проверка значений в разделах реестра протокола RDP
+#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Шаг 2. Проверьте значения разделов реестра протокола удаленного рабочего СТОЛА:
 
 1. Проверьте, не отключен ли протокол RDP политиками.
 
@@ -164,17 +164,17 @@ ms.locfileid: "51821520"
 
 Если эта проблема не исчезает, перейдите к шагу 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Службы удаленных рабочих столов
+#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включить службы удаленных рабочих столов
 
 Дополнительные сведения см. в статье [Службы удаленных рабочих столов не запускаются на виртуальной машине Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сброс прослушивателя RDP
+#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сбросьте RDP-прослушиватель
 
 Дополнительные сведения см. в статье [Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure](troubleshoot-rdp-intermittent-connectivity.md).
 
 ### <a name="offline-repair"></a>Автономные реплики
 
-#### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленного рабочего стола
+#### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленного рабочего стола
 
 1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
@@ -229,16 +229,16 @@ ms.locfileid: "51821520"
 
       Определения политик\Компоненты Windows\Службы удаленных рабочих столов\Узел сеансов удаленных рабочих столов\Подключения\Разрешить пользователям удаленное подключение с использованием служб удаленных рабочих столов
   
-7. Отсоедините диск от виртуальной машины спасения.
-8. [Создайте новую виртуальную машину, используя диск](../windows/create-vm-specialized.md).
+1. Отсоедините диск от виртуальной машины спасения.
+1. [Создайте новую виртуальную машину, используя диск](../windows/create-vm-specialized.md).
 
 Если эта проблема не исчезает, перейдите к шагу 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Службы удаленных рабочих столов
+#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включить службы удаленных рабочих столов
 
 Дополнительные сведения см. в статье [Службы удаленных рабочих столов не запускаются на виртуальной машине Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сброс прослушивателя RDP
+#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сбросьте RDP-прослушиватель
 
 Дополнительные сведения см. в статье [Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure](troubleshoot-rdp-intermittent-connectivity.md).
 

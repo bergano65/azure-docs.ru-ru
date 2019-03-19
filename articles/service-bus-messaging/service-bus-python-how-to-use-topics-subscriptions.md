@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 09/20/2018
 ms.author: aschhab
-ms.openlocfilehash: 280901c4b7af9cc65163ebc453a54fb7ec5d5111
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 476c51d1835a1be0178faf28e6dd8a3c95371929
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54849402"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57240972"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Как использовать разделы и подписки служебной шины с Python
 
@@ -32,12 +32,14 @@ ms.locfileid: "54849402"
 > [!NOTE] 
 > Если требуется установить Python или [пакет Azure для Python][Azure Python package], дополнительные сведения см. в [руководстве по установке Python](../python-how-to-install.md).
 
+[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+
 ## <a name="create-a-topic"></a>Создание раздела
 
 Объект **ServiceBusService** позволяет работать с разделами. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
 
 ```python
-from azure.servicebus import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
+from azure.servicebus.control_client import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
 ```
 
 Следующий код создает объект **ServiceBusService**. Замените `mynamespace`, `sharedaccesskeyname` и `sharedaccesskey` своим пространством имен, именем и значением ключа подписанного URL-адреса (SAS).
@@ -181,7 +183,7 @@ bus_service.delete_topic('mytopic')
 bus_service.delete_subscription('mytopic', 'HighMessages')
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 

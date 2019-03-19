@@ -3,7 +3,7 @@ title: Настройка сетевых режимов для службы ко
 description: Узнайте, как настроить разные сетевые режимы, которые поддерживаются в Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: TylerMSFT
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: d552c8cd-67d1-45e8-91dc-871853f44fc6
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
-ms.author: twhitney, subramar
-ms.openlocfilehash: 62812dd8f92bcace8f764a21aba608157815cec3
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.author: aljo, subramar
+ms.openlocfilehash: 01b1cfafab75acef918b001752837a4dc44ca909
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55093174"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57899049"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -30,7 +30,7 @@ ms.locfileid: "55093174"
 Когда служба контейнеров перезапускается или перемещается на другой узел в кластере, ее IP-адрес изменяется. По этой причине мы не рекомендуем использовать динамически назначаемый IP-адрес для обнаружения служб контейнеров. Для обнаружения служб следует использовать только службу именования Service Fabric или службу DNS. 
 
 >[!WARNING]
->Azure позволяет использовать для каждой виртуальной сети не более 4096 IP-адресов. Общее число узлов и экземпляров службы контейнеров (в открытом сетевом режиме) не может превышать 4096 в пределах одной виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT.
+>Azure позволяет в сумме не превышающие 65 356 IP-адреса каждой виртуальной сети. Общее количество узлов и число экземпляров службы контейнера (которые в открытом сетевом режиме) не может превышать не превышающие 65 356 IP-адресов в виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT. Кроме того, другие зависимости, такие как подсистемы балансировки нагрузки будет иметь другой [ограничения](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits) необходимо учитывать. В настоящее время до 50 IP-адресов на каждом узле были протестированы и проверенные стабильной. 
 >
 
 ## <a name="set-up-open-networking-mode"></a>Настройка открытого сетевого режима
@@ -55,15 +55,6 @@ ms.locfileid: "55093174"
                             "name": "IPProviderEnabled",
                             "value": "true"
                       }
-                    ]
-                },
-                {
-                    "name":  "Trace/Etw", 
-                    "parameters": [
-                    {
-                            "name": "Level",
-                            "value": "5"
-                    }
                     ]
                 },
                 {
@@ -223,7 +214,7 @@ ms.locfileid: "55093174"
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <ApplicationManifest ApplicationTypeName="NodeJsApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ApplicationManifest ApplicationTypeName="NodeJsApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
       <Description>Calculator Application</Description>
       <Parameters>
         <Parameter Name="ServiceInstanceCount" DefaultValue="3"></Parameter>
@@ -280,7 +271,7 @@ ms.locfileid: "55093174"
             ],          
  ``` 
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Моделирование приложения в Service Fabric](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-manifest-resources) для Service Fabric
 * [Развертывание контейнера Windows в Service Fabric на платформе Windows Server 2016](service-fabric-get-started-containers.md)

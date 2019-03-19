@@ -1,6 +1,6 @@
 ---
 title: Использование сообщений AS2 для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
-description: Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise.
+description: Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: c9b7e1a9-4791-474c-855f-988bd7bf4b7f
 ms.date: 06/08/2017
-ms.openlocfilehash: 2604cdd6bf758858328c2d30fc4cde535f0a7148
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: 3413b235d9202530eb1a3129637e3746bbe6585b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124668"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57872585"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -35,7 +35,7 @@ ms.locfileid: "43124668"
 
 ## <a name="create-an-as2-agreement"></a>Создание соглашения AS2
 
-1.  Войдите на [портал Azure](http://portal.azure.com "Портал Azure").  
+1.  Войдите на [портал Azure](https://portal.azure.com "Портал Azure").  
 
 2. В главном меню Azure выберите **Все службы**. Введите в поле поиска "интеграция" и выберите в результатах поиска **Учетные записи интеграции**.
 
@@ -173,5 +173,5 @@ ms.locfileid: "43124668"
 ## <a name="view-the-swagger"></a>Просмотр Swagger
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/as2/). 
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Обзор пакета интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")  
+## <a name="next-steps"></a>Дальнейшие действия
+* [Узнайте больше о пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте о пакете интеграции Enterprise.")  

@@ -7,21 +7,21 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 06/29/2018
+ms.date: 03/12/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: c49a6320b7ba37297a7c1c0775aef2c2d8c6c868
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: f3b4e6cd18a362775443bb296560a076aaa1497d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55104434"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57883633"
 ---
 # <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Пример: создание пользовательского навыка с помощью API перевода текста
 
 В этом примере вы можете узнать, как создать пользовательский навык веб-API, принимающий текст на любом языке и переводящий его на английский язык. Этот пример использует [Функцию Azure](https://azure.microsoft.com/services/functions/) для заключения [API перевода текста](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) в оболочку, чтобы он реализовывал интерфейс пользовательского навыка.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 + Вы можете прочитать статью об [интерфейсе пользовательского навыка](cognitive-search-custom-skill-interface.md), если не знакомы с интерфейсом ввода-вывода, который должен реализовывать пользовательский навык.
 
@@ -39,7 +39,7 @@ ms.locfileid: "55104434"
 
 1. В диалоговом окне "Новый проект" выберите **Установленные**, разверните узел **Visual C#** > **Облако**, выберите **Функции Azure**, укажите имя проекта и нажмите кнопку **ОК**. Имя приложения-функции должно быть допустимым в качестве пространства имен C#, поэтому не используйте символы подчеркивания, дефисы и другие символы, не являющиеся буквенно-цифровыми.
 
-1. Выберите **Функции Azure v2 (.NET Core)**. Это также можно сделать с помощью версии 1, но код, написанный ниже, основан на шаблоне версии 2.
+1. Выберите **функции Azure v2 (.NET Core)**. Это также можно сделать с помощью версии 1, но код, написанный ниже, основан на шаблоне версии 2.
 
 1. Выберите тип **Триггер HTTP**.
 

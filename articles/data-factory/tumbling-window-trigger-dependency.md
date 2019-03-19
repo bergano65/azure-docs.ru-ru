@@ -3,22 +3,21 @@ title: Создание зависимостей триггера "перево�
 description: Узнайте, как создать зависимость в триггере "переворачивающегося" окна в Фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.author: douglasl
-ms.openlocfilehash: c51c1056869cbd7741fae2ed1a554a7c794d1a39
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+author: nabhishek
+ms.author: abnarain
+manager: craigg
+ms.openlocfilehash: f3a547f5b953262d7263d1be0897161cf4091a1d
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55966855"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57574395"
 ---
 # <a name="create-a-tumbling-window-trigger-dependency"></a>Создание зависимости триггера, который запускает конвейер в "переворачивающемся" окне
 
@@ -157,6 +156,6 @@ ms.locfileid: "55966855"
 
 ![](media/tumbling-window-trigger-dependency/tumbling-window-dependency08.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со статьей [Создание триггера, который запускает конвейер в "переворачивающемся" окне](how-to-create-tumbling-window-trigger.md).

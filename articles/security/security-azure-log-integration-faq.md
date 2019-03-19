@@ -4,7 +4,7 @@ description: Эта статья содержит ответы на часто �
 services: security
 documentationcenter: na
 author: TomShinder
-manager: barbkess
+manager: MBaldwin
 editor: TerryLanfear
 ms.assetid: d06d1ac5-5c3b-49de-800e-4d54b3064c64
 ms.service: security
@@ -15,12 +15,12 @@ ms.workload8: na
 ms.date: 01/14/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: f1b809e52cc532d13be85776f73aba4465fa2140
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 4f6a724fe6c1e8668084f1c1cefbaa01cffba181
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114932"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58005851"
 ---
 # <a name="azure-log-integration-faq"></a>Часто задаваемые вопросы об интеграции журналов Azure
 
@@ -32,6 +32,8 @@ ms.locfileid: "56114932"
 Служба интеграции журналов Azure (служба ОС Windows) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными системами SIEM. Такая интеграция обеспечивает единую панель мониторинга для всех локальных и облачных ресурсов. Интеграция также позволяет выполнять статистическое вычисление, сопоставление и анализ, а также предупреждать о событиях безопасности, связанных с приложениями.
 
 Предпочтительным методом интеграции журналов Azure является использование соединителя Azure Monitor от поставщика SIEM и выполнение следующих [инструкций](../azure-monitor/platform/stream-monitoring-data-event-hubs.md). Тем не менее, если поставщик SIEM не предоставляет соединитель для Azure Monitor, в качестве временного решения можно использовать службу "Интеграция журналов данных Azure" (если она поддерживает вашу систему SIEM).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="is-the-azure-log-integration-software-free"></a>Предоставляется ли служба интеграции журналов Azure бесплатно?
 
@@ -97,7 +99,7 @@ XML-файл события содержит следующие метаданн
 
 Ошибка:
 
-  *"Warning creating Role Assignment - AuthorizationFailed" (Предупреждение при создании назначения роли — AuthorizationFailed): клиент "janedo@microsoft.com" с идентификатором объекта fe9e03e4-4dad-4328-910f-fd24a9660bd2 не авторизован для выполнения действия Microsoft.Authorization/roleAssignments/write с областью /subscriptions/70d95299-d689-4c97-b971-0d8ff0000000.*
+  *"Warning creating Role Assignment - AuthorizationFailed" (Предупреждение при создании назначения роли — AuthorizationFailed): Клиент janedo\@microsoft.com "с объектом идентификатор «fe9e03e4-4dad-4328-910f-fd24a9660bd2» не авторизован для выполнения действия «Microsoft.Authorization/roleAssignments/write» с областью" /subscriptions/ 70d 95299-d689-4c 97-b971-0d8ff0000000 ".*
 
 Команда **azlog authorize** назначает роль читателя субъекту-службе Azure AD (созданному с помощью команды **azlog createazureid**) для предоставленных подписок. Если учетные данные Azure не принадлежат соадминистратору или владельцу подписки, то команда завершается ошибкой и отображается сообщение "Сбой авторизации". Для выполнения этого действия используйте управление доступом на основе ролей (RBAC) в Azure, настроив роль соадминистратора или владельца.
 
@@ -118,8 +120,8 @@ XML-файл события содержит следующие метаданн
 
 В следующем примере показано получение конфигурации системы диагностики Azure:
 
-    -AzureRmVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient
-    $publicsettings = (Get-AzureRmVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient).PublicSettings
+    Get-AzVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient
+    $publicsettings = (Get-AzVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient).PublicSettings
     $encodedconfig = (ConvertFrom-Json -InputObject $publicsettings).xmlCfg
     $xmlconfig = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encodedconfig))
     Write-Host $xmlconfig
@@ -136,7 +138,7 @@ XML-файл события содержит следующие метаданн
 В следующем примере показан выбор конфигурации системы диагностики Azure:
 
     $diagnosticsconfig_path = "d:\WADConfig.xml"
-    Set-AzureRmVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName log3121 -StorageAccountKey <storage key>
+    Set-AzVMDiagnosticsExtension -ResourceGroupName AzLog-Integration -VMName AzlogClient -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName log3121 -StorageAccountKey <storage key>
 
 После внесения изменений проверьте учетную запись хранения, чтобы убедиться, что собираются именно необходимые события.
 

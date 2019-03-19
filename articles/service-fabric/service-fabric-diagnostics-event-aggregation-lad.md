@@ -3,7 +3,7 @@ title: Агрегирование событий Azure Service Fabric c помо
 description: Ознакомьтесь со сведениями об агрегировании и сборе событий с использованием LAD для мониторинга и диагностики кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: dkkapur
+author: srrengar
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/02/2017
-ms.author: dekapur
-ms.openlocfilehash: c7eb98eb2dbff05e67b6a60c413932ba51fdfdf7
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
-ms.translationtype: HT
+ms.date: 2/25/2019
+ms.author: srrengar
+ms.openlocfilehash: ca6be2b08c9a38813b2c98eef7e5696bd61fd074
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45573762"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57893039"
 ---
 # <a name="event-aggregation-and-collection-using-linux-azure-diagnostics"></a>Агрегирование и сбор событий с помощью системы диагностики Azure для Linux
 > [!div class="op_single_selector"]
@@ -30,12 +30,12 @@ ms.locfileid: "45573762"
 
 Во время работы кластера Azure Service Fabric рекомендуется централизованно собирать журналы со всех узлов. Централизованное хранение журналов упрощает анализ и устранение неполадок в кластере, а также в приложениях и службах, работающих в этом кластере.
 
-Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Azure для Linux (LAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или Центры событий. Вы также можете использовать внешний процесс, чтобы считывать события из хранилища и помещать их на платформу обработки, например в [Log Analytics](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
+Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Azure для Linux (LAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или Центры событий. Также можно использовать внешний процесс для чтения событий из хранилища и помещать их на платформу анализа, таких как [журналы Azure Monitor](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
 
 ## <a name="log-and-event-sources"></a>Источники журналов и событий
 
 ### <a name="service-fabric-platform-events"></a>События платформы Service Fabric
-Service Fabric создает несколько готовых журналов посредством [LTTng](http://lttng.org), включая журналы операционных событий и событий среды выполнения. Эти журналы хранятся в расположении, указанном в шаблоне Resource Manager кластера. Чтобы получить или задать сведения об учетной записи хранения, выполните поиск по тегу **AzureTableWinFabETWQueryable** и найдите **StoreConnectionString**.
+Service Fabric создает несколько готовых журналов посредством [LTTng](https://lttng.org), включая журналы операционных событий и событий среды выполнения. Эти журналы хранятся в расположении, указанном в шаблоне Resource Manager кластера. Чтобы получить или задать сведения об учетной записи хранения, выполните поиск по тегу **AzureTableWinFabETWQueryable** и найдите **StoreConnectionString**.
 
 ### <a name="application-events"></a>События приложения
  События, которые создаются кодом ваших приложений и служб согласно вашим указаниям во время инструментирования программного обеспечения. Вы можете использовать любое решение для ведения журналов, которое создает текстовые файлы журнала, например LTTng. Дополнительные сведения см. в описании трассировки вашего приложения в документации по LTTng.
@@ -50,7 +50,7 @@ Service Fabric создает несколько готовых журналов
 Это необходимо для того, чтобы настроить агент LAD для наблюдения за указанными файлами журнала. Каждый раз при добавлении новой стройки в файл он создает запись системного журнала, которая отправляется в указанное вами хранилище (таблицу).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-1. Дополнительные сведения о том, какие события нужно анализировать при устранении неполадок, см. в [документации по LTTng](http://lttng.org/docs) и статье [Использование диагностического расширения Linux для мониторинга данных о состоянии и производительности виртуальных машин под управлением Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux).
+1. Дополнительные сведения о том, какие события нужно анализировать при устранении неполадок, см. в [документации по LTTng](https://lttng.org/docs) и статье [Использование диагностического расширения Linux для мониторинга данных о состоянии и производительности виртуальных машин под управлением Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux).
 2. [Настройте агент Log Analytics](service-fabric-diagnostics-event-analysis-oms.md) для сбора метрик, мониторинга развернутых в кластере контейнеров и визуализации журналов. 

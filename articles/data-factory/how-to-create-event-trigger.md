@@ -3,20 +3,20 @@ title: Создание триггеров на основе событий в �
 description: Узнайте, как создать в Фабрике данных Azure триггер, который запускает конвейер в ответ на событие.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/18/2018
-ms.author: douglasl
-ms.openlocfilehash: fd7355c342a075f7b0c2e1173717c0345f1f94ba
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+author: sharonlo101
+ms.author: shlo
+manager: craigg
+ms.openlocfilehash: 94c9c3f997143d72262c1ba3d8dbfea90d6f920c
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428556"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57576622"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-an-event"></a>Создание триггера, запускающего конвейер в ответ на событие
 
@@ -91,5 +91,5 @@ ms.locfileid: "56428556"
 | **Большой двоичный объект оканчивается на** | `/containername/blobs/file.txt` | Получает события для большого двоичного объекта с именем `file.txt` в контейнере `containername`. |
 | **Большой двоичный объект оканчивается на** | `foldername/file.txt` | Получает события для большого двоичного объекта с именем `file.txt` в папке `foldername` в любом контейнере. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).

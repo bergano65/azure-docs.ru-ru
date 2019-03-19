@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 82396d3a2eadd0257bbe65f36a78cf4e7731ec16
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
-ms.translationtype: HT
+ms.openlocfilehash: cda0b1c0774ed33bf550e0edf329cc22a2807be3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34657559"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58009363"
 ---
 # <a name="utilize-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-an-sap-system"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP
 
@@ -42,7 +42,7 @@ ms.locfileid: "34657559"
 
 [deployment-guide]:deployment-guide.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 
@@ -211,7 +211,7 @@ ms.locfileid: "34657559"
 
 > Этот раздел касается:
 >
-> ![Windows][Logo_Windows] Windows и ![Linux][Logo_Linux] Linux
+> ![ Windows][Logo_Windows] Windows и ![Linux][Logo_Linux] Linux
 >
 
 Если вы решили не применять такие функции, как отказоустойчивый кластер Windows Server (WSFC) или Pacemaker в Linux (в настоящее время поддерживается только для SUSE Linux Enterprise Server (SLES) 12 или более поздней версии), используйте перезапуск виртуальной машины Azure. Это защищает системы SAP от запланированных и незапланированных простоев инфраструктуры физического сервера Azure и всей базовой платформы Azure.
@@ -278,10 +278,10 @@ ms.locfileid: "34657559"
 
   Дополнительные сведения о функции автозапуска для экземпляров SAP см. в следующих статьях.
 
-  * [Start/Stop SAP along with your Unix Server Start/Stop](http://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
+  * [Start/Stop SAP along with your Unix Server Start/Stop](https://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
   * [Starting and Stopping SAP NetWeaver Management Agents](https://help.sap.com/saphelp_nwpi711/helpdata/en/49/9a15525b20423ee10000000a421938/content.htm) (Запуск и остановка агентов управления SAP NetWeaver)
   * [How to enable auto Start of HANA Database](http://www.freehanatutorials.com/2012/10/how-to-enable-auto-start-of-hana.html) (Настройка автоматического запуска базы данных HANA)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Информацию обо всех возможностях по повышению доступности для SAP NetWeaver с учетом приложений см. в разделе [Высокая доступность приложений SAP в Azure IaaS][sap-high-availability-architecture-scenarios-sap-app-ha].

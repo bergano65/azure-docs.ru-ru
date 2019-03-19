@@ -1,21 +1,20 @@
 ---
-title: Использование kubectl с Azure Dev Spaces | Документация Майкрософт
+title: Как использовать kubectl с пробелами разработки Azure
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 author: zr-msft
 ms.author: zarhoads
 ms.date: 05/11/2018
-ms.topic: article
+ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: b0ceccc4f8b16c21e8a66a5f1b8cf0e7b6f47a4f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+keywords: 'Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры, Helm, слой взаимодействия между службами, служба маршрутизации сетки, kubectl, k8s '
+ms.openlocfilehash: 0dfe88966deeb4dcf0196aa1f1584a06794b36a7
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55469317"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57773271"
 ---
 # <a name="use-kubectl-with-an-azure-dev-space"></a>Использование kubectl с Azure Dev Spaces
 

@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94b027900a3be4a43d6524fa595a5b4dc2909fa7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7c34d8de3dfd06540dd50542ab19da0c1d9b1567
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56186222"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079747"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -53,8 +53,8 @@ ms.locfileid: "56186222"
 
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (`Alternate ID`). Оба варианта использования работают, так как служба простого единого входа использует утверждение `securityIdentifier` в билете Kerberos для поиска соответствующего объекта-пользователя в Azure AD.
 - Простой единый вход — ситуативно-обусловленная функция. Если в ней происходит сбой, процедура входа выполняется стандартно, то есть пользователь, как и прежде, должен просто ввести пароль на странице входа.
-- Если приложение (например, https://myapps.microsoft.com/contoso.com)) пересылает параметр `domain_hint` (OpenID Connect), параметр `whr` (SAML), определяющий клиент, или параметр `login_hint`, определяющий пользователя, в запросе на вход в Azure AD, то пользователи автоматически входят в систему, не вводя имена пользователей и пароли.
-- Пользователи могут использовать автоматический единый вход, если приложение (например, https://contoso.sharepoint.com)) отправляет запросы на вход на клиентские конечные точки Azure AD, то есть https://login.microsoftonline.com/contoso.com/<..> или https://login.microsoftonline.com/<tenant_ID>/<..>, вместо обычной конечной точки Azure AD (https://login.microsoftonline.com/common/<...>).
+- Если приложение (например, `https://myapps.microsoft.com/contoso.com`) пересылает `domain_hint` (OpenID Connect) или `whr` (SAML) параметр - определяющий клиент, или `login_hint` параметр - Идентификация пользователя, в его Azure AD в запросе на вход, пользователи не автоматически входить в, не вводя имена пользователей и пароли.
+- Пользователи также могут использовать автоматический вход при приложения (например, `https://contoso.sharepoint.com`) отправляет запросы на вход в конечные точки Azure AD настроить как клиенты — то есть `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>` , вместо Azure AD общую конечную точку — то есть `https://login.microsoftonline.com/common/<...>` .
 - Поддерживается выход. Это позволяет пользователям выбрать другую учетную запись Azure AD для входа вместо того, чтобы автоматически входить с помощью простого единого входа.
 - Для поддержки клиентов Office 365 для 32-разрядной версии Windows (Outlook, Word, Excel и другие) версии 16.0.8730.xxxx и выше используется неинтерактивная процедура. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
 - Функцию можно включить с помощью Azure AD Connect.
@@ -63,12 +63,12 @@ ms.locfileid: "56186222"
 
 | Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
-|Windows 10|Да\*|Нет |Yes|Да\*\*\*|Недоступно
-|Windows 8.1|Да\*|Недоступно|Yes|Да\*\*\*|Недоступно
-|Windows 8|Да\*|Недоступно|Yes|Да\*\*\*|Недоступно
-|Windows 7|Да\*|Недоступно|Yes|Да\*\*\*|Недоступно
-|Windows Server 2012 R2 или более поздней версии|Да\*\*|Недоступно|Yes|Да\*\*\*|Недоступно
-|Mac OS X|Недоступно|Недоступно|Да\*\*\*|Да\*\*\*|Да\*\*\*
+|Windows 10|Да\*|Нет |Yes|Да\*\*\*|Н/Д
+|Windows 8.1|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
+|Windows 8|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
+|Windows 7|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
+|Windows Server 2012 R2 или более поздней версии|Да\*\*|Н/Д|Yes|Да\*\*\*|Н/Д
+|Mac OS X|Н/Д|Н/Д|Да\*\*\*|Да\*\*\*|Да\*\*\*
 
 
 \*Требуется Internet Explorer версии 10 или более поздней.
@@ -80,7 +80,7 @@ ms.locfileid: "56186222"
 >[!NOTE]
 >Чтобы обеспечить максимальное удобство единого входа в Azure AD, мы рекомендуем использовать в Windows 10 функцию [присоединения к Azure AD](../active-directory-azureadjoin-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
 - [**План развертывания**](https://aka.ms/AuthenticationDeploymentPlan). Пошаговый план развертывания.

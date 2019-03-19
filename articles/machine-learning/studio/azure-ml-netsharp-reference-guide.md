@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: reference
-author: ericlicoding
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2018
-ms.openlocfilehash: 2051a14532f00f24be0c8cb0ca03a7b2b4078a45
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: d667dadeb2e7c9d0005ab8d1a565017973038aaa
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56457019"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57905160"
 ---
 # <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning-studio"></a>Руководство по языку спецификаций нейронных сетей Net# для Студии машинного обучения Azure
 
@@ -216,17 +216,16 @@ hidden ByCol[5, 20] from Pixels where (s,d) => abs(s[1] - d[1]) <= 1;
 + **UpperPad** и **LowerPad** (необязательно): позволяют более тонко управлять объемом заполнения. **Важно!** Эти атрибуты можно задавать тогда и только тогда, когда свойство **Padding** выше ***не*** определено. Значения должны быть кортежами с целыми значениями, длина которых представляет собой арность пакета. При задании этих атрибутов «пустые» узлы добавляются к нижнему и верхнему концам каждого измерения входного слоя. Число узлов, добавленных к нижнему и верхнему концам в каждом измерении, определяется атрибутами **LowerPad[i]** и **UpperPad[i]** соответственно.
 
     Чтобы обеспечить соответствие количества ядер только количеству «реальных», а не «пустых» узлов, должны выполняться следующие условия.
-      - Каждый компонент атрибута **LowerPad** должен быть строго меньше, чем `KernelShape[d]/2`.
-      - Каждый компонент атрибута **UpperPad** должен быть не больше, чем `KernelShape[d]/2`.
-      - Значение по умолчанию этих атрибутов: кортеж со всеми компонентами, равными 0.
+  - Каждый компонент атрибута **LowerPad** должен быть строго меньше, чем `KernelShape[d]/2`.
+  - Каждый компонент атрибута **UpperPad** должен быть не больше, чем `KernelShape[d]/2`.
+  - Значение по умолчанию этих атрибутов: кортеж со всеми компонентами, равными 0.
 
     Значение **Padding** = true позволяет осуществить заполнение, необходимое для сохранения центра ядра в пределах реального входа. Поэтому формула для вычисления выходного размера немного изменяется. Обычно выходной размер *D* вычисляется как `D = (I - K) / S + 1`, где `I` — входной размер, `K` — размер ядра, `S` — шаг и `/` — деление целого числа (с округлением до нуля). Если задать значение UpperPad = [1, 1], входной размер `I` будет равен 29, следовательно, `D = (29 - 5) / 2 + 1 = 13`. Но, если **Padding** = true, тогда `I` фактически вытесняется `K - 1`. Следовательно: `D = ((28 + 4) - 5) / 2 + 1 = 27 / 2 + 1 = 13 + 1 = 14`. Присвоив значения параметрам **UpperPad** и **LowerPad**, вы сможете более точно управлять заполнением, чем это позволяет сделать определение только одного параметра **Padding** = true.
 
 Дополнительную информацию о сверточных сетях и их приложениях см. в следующих статьях:
 
-+ [http://deeplearning.net/tutorial/lenet.html ](http://deeplearning.net/tutorial/lenet.html)
-+ [http://research.microsoft.com/pubs/68920/icdar03.pdf](https://research.microsoft.com/pubs/68920/icdar03.pdf)
-+ [http://people.csail.mit.edu/jvb/papers/cnn_tutorial.pdf](http://people.csail.mit.edu/jvb/papers/cnn_tutorial.pdf)
++ [http://deeplearning.net/tutorial/lenet.html](http://deeplearning.net/tutorial/lenet.html)
++ [https://research.microsoft.com/pubs/68920/icdar03.pdf](https://research.microsoft.com/pubs/68920/icdar03.pdf)
 
 ## <a name="pooling-bundles"></a>Группирующие пакеты
 
@@ -252,13 +251,13 @@ hidden P1 [5, 12, 12]
 
 Дополнительную информацию о группирующих слоях см. в статьях:
 
-+ [http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Раздел 3.4)
-+ [http://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf](http://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf)
-+ [http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf](http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf)
++ [https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf](https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Раздел 3.4)
++ [https://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf](https://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf)
++ [https://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf](https://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf)
 
 ## <a name="response-normalization-bundles"></a>Пакеты нормализации ответов
 
-**Нормализация ответов** — это локальная схема нормализации, которая впервые была предложена Джеффри Хинтоном (Geoffrey Hinton) и др. в статье [ImageNet Classiﬁcation with Deep Convolutional Neural Networks](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Классификация ImageNet с помощью глубоких сверточных нейронных сетей).
+**Нормализация ответов** — это локальная схема нормализации, которая впервые была предложена Джеффри Хинтоном (Geoffrey Hinton) и др. в статье [ImageNet Classiﬁcation with Deep Convolutional Neural Networks](https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Классификация ImageNet с помощью глубоких сверточных нейронных сетей).
 
 Нормализация ответов используется для облегчения обобщения в нейронных сетях. Когда один нейрон срабатывает при очень высоком уровне активации, локальный слой нормализации ответа подавляет уровень активации окружающих нейронов. Это выполняется с помощью трех параметров (`α`, `β` и `k`) и сверточной структуры (или формы окрестности). Каждый нейрон в слое назначения **y** соответствует нейрону **x** в слое источника. Уровень активации **y** задается следующей формулой, где `f` — уровень активации нейрона, `Nx` — ядро (или набор, содержащий нейроны в окрестности **x**), как определяется сверточной структурой:
 
@@ -463,4 +462,4 @@ output Digit [10] from Hid3 all;
 
 ## <a name="acknowledgements"></a>Благодарности
 
-Язык Net# для изменения архитектуры нейронных сетей был разработан в корпорации Майкрософт Шоном Катценбергером Shon Katzenberger (архитектор, машинное обучение) и Алексеем Каменевым (разработчик программного обеспечения, Microsoft Research). Он используется внутри компании для проектов машинного обучения и различных приложений от приложений распознавания образов до приложений анализа текста. Дополнительные сведения см. в статье [Neural Nets in Azure ML – Introduction to Net#](http://blogs.technet.com/b/machinelearning/archive/2015/02/16/neural-nets-in-azure-ml-introduction-to-net.aspx) (Нейронные сети в Студии машинного обучения Azure. Введение в Net#).
+Язык Net# для изменения архитектуры нейронных сетей был разработан в корпорации Майкрософт Шоном Катценбергером Shon Katzenberger (архитектор, машинное обучение) и Алексеем Каменевым (разработчик программного обеспечения, Microsoft Research). Он используется внутри компании для проектов машинного обучения и различных приложений от приложений распознавания образов до приложений анализа текста. Дополнительные сведения см. в статье [Neural Nets in Azure ML – Introduction to Net#](https://blogs.technet.com/b/machinelearning/archive/2015/02/16/neural-nets-in-azure-ml-introduction-to-net.aspx) (Нейронные сети в Студии машинного обучения Azure. Введение в Net#).

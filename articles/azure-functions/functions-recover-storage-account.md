@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: 861a4d4d64f970a13aba68f831d2148f8a354ef4
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: bddfccaf0749bbb5eaf206e5961c713efa5eea17
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732164"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57311905"
 ---
 # <a name="how-to-troubleshoot-functions-runtime-is-unreachable"></a>Способы устранения неполадок, связанных с недоступностью среды выполнения функций.
 
@@ -55,7 +55,7 @@ ms.locfileid: "55732164"
 
 ### <a name="required-application-settings"></a>Необходимые параметры приложения
 
-* Обязательно
+* Обязательно для заполнения
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Обязательные для Функций плана потребления:
     * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#websitecontentazurefileconnectionstring)
@@ -66,7 +66,7 @@ ms.locfileid: "55732164"
 ### <a name="guidance"></a>Руководство
 
 * Не устанавливайте флажок "Параметр слота" для любого из этих параметров. При переключении слотов развертывания Функция будет нарушена.
-* Не задавайте эти параметры при использовании автоматических развертываний.
+* Не изменяйте эти параметры в рамках автоматического развертывания.
 * Эти параметры должны быть указаны и допустимы во время создания. Если в автоматическом развертывании нет этих параметров, это приведет к неработоспособности приложения, даже если параметры будут добавлены позже.
 
 ## <a name="storage-account-credentials-invalid"></a>Недопустимые учетные данные учетной записи хранения
@@ -88,7 +88,7 @@ ms.locfileid: "55732164"
     * `The Function App has reached daily usage quota and has been stopped until the next 24 hours time frame.`
 * Удалите квоту и перезапустите приложение, чтобы устранить проблему.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда приложение-функция опять работоспособно, ознакомьтесь с нашими справочниками для разработчиков, чтобы продолжить работу приложения.
 

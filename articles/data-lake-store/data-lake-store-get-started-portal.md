@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: 91c069f845ef6291f867099e59e79fd059d8caf1
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.openlocfilehash: a99d8a265cdc72b6bd1dd45ab670f514d828f808
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320231"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58005704"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "54320231"
 
 Узнайте, как с помощью портала Azure создать учетную запись ADLS 1-го поколения и выполнять базовые операции, такие как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения см. в руководстве по [Azure Data Lake Storage Gen1](data-lake-store-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этим руководством необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -76,9 +76,9 @@ ms.locfileid: "54320231"
 
 > [!NOTE]
 > Вы можете также создать учетную запись ADLS 1-го поколения, используя шаблоны Azure Resource Manager. Эти шаблоны доступны на сайте [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=data+lake+store).
-    - Шаблон без шифрования данных: [развертывание учетной записи Azure Data Lake Storage 1-го поколения без шифрования данных](https://azure.microsoft.com/resources/templates/101-data-lake-store-no-encryption/).
-    - С шифрованием данных с помощью ADLS 1-го поколения: [развертывание учетной записи Data Lake Storage 1-го поколения с шифрованием данных (Data Lake)](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-adls/).
-    - С шифрованием данных с помощью Azure Key Vault: [развертывание учетной записи Data Lake Storage 1-го поколения с шифрованием данных (Key Vault)](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-key-vault/).
+> - Шаблон без шифрования данных: [развертывание учетной записи Azure Data Lake Storage 1-го поколения без шифрования данных](https://azure.microsoft.com/resources/templates/101-data-lake-store-no-encryption/).
+> - С шифрованием данных с помощью ADLS 1-го поколения: [развертывание учетной записи Data Lake Storage 1-го поколения с шифрованием данных (Data Lake)](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-adls/).
+> - С шифрованием данных с помощью Azure Key Vault: [развертывание учетной записи Data Lake Storage 1-го поколения с шифрованием данных (Key Vault)](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-key-vault/).
 > 
 > 
 
@@ -122,7 +122,7 @@ ms.locfileid: "54320231"
 
 ![Удаление учетной записи Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Delete.Account.png "Удаление учетной записи Data Lake Storage 1-го поколения")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

@@ -5,17 +5,17 @@ description: Узнайте, как с помощью модулей для пр
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 03/14/2018
-ms.openlocfilehash: e8e50aa49595addeab3369f74b618c31b7cf1625
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 08d62e7a6c9503d415fe144da57eee72ce3bfafd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56454384"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58088406"
 ---
 # <a name="create-a-sentiment-analysis-model-in-azure-machine-learning-studio"></a>Создание модели анализа тональности в Студии машинного обучения Azure
 
@@ -86,6 +86,6 @@ ms.locfileid: "56454384"
 
 Теперь у нас готов эксперимент, который можно опубликовать как веб-службу и вызывать с помощью интерфейсов API "запрос-ответ" или пакетного выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о модулях текстовой аналитики см. в [документации MSDN](https://msdn.microsoft.com/library/azure/dn905886.aspx).
 

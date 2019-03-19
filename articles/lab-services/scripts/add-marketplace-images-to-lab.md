@@ -12,20 +12,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
-ms.openlocfilehash: a3a007bf19a28e6f361837856f83a191a761ef9b
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
-ms.translationtype: HT
+ms.openlocfilehash: e099a29a198d43bf8d00487ab45e2648479aedbe
+ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247420"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57194783"
 ---
 # <a name="use-powershell-to-add-a-marketplace-image-to-a-lab-in-azure-devtest-labs"></a>Добавление образа marketplace в лабораторию в Azure DevTest Labs с помощью PowerShell
 
 В этом примере сценария PowerShell показано добавление образа marketplace в лабораторию в Azure DevTest Labs. 
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -36,14 +38,14 @@ ms.locfileid: "43247420"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [Find-AzureRmResource](/powershell/module/azurerm.resources/find-azurermresource) | Выполняет поиск ресурсов на основе указанных параметров. |
-| [Get-AzureRmResource](/powershell/module/azurerm.resources/get-azurermresource) | Получает ресурсы. |
-| [Set-AzureRmResource](/powershell/module/azurerm.resources/set-azurermresource) | Изменяет ресурс. |
-| [New-AzureRmResource](/powershell/module/azurerm.resources/new-azurermresource) | Создает ресурса. |
+| Find-AzResource | Выполняет поиск ресурсов на основе указанных параметров. |
+| [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
+| [Set-AzResource](/powershell/module/az.resources/set-azresource) | Изменяет ресурс. |
+| [Новый AzResource](/powershell/module/az.resources/new-azresource) | Создает ресурса. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

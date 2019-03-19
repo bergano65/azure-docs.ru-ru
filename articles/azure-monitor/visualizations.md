@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 1daae81f0f642275e1ded20eb29f1e3145463db8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 55aed5d1133756789c3ed8979f0a9599f465e5d9
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990178"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57315101"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -32,9 +32,9 @@ ms.locfileid: "55990178"
 ![панель мониторинга](media/visualizations/dashboard.png)
 
 ### <a name="advantages"></a>Преимущества
-- Глубокая интеграция в Azure. Визуализации можно закрепить на панелях мониторинга на нескольких страницах Azure, включая обозреватель метрик, Log Analytics и Application Insights.
+- Глубокая интеграция в Azure. Визуализации можно закрепить на панели мониторинга из нескольких страниц Azure, включая обозреватель метрик, Log Analytics и Application Insights.
 - Поддержка метрик и журналов.
-- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](platform/metrics-charts.md), [запросы Log Analytics](log-query/log-query-overview.md) и данные о [сопоставлениях](app/app-map.md) и [доступности]() в Application Insights.
+- Объединение данных из нескольких источников, включая выходные данные из [обозревателя метрик](platform/metrics-charts.md), [журнал запросов](log-query/log-query-overview.md), и [сопоставляет](app/app-map.md) и доступности в Application Insights.
 - Возможность использования личных или общих панелей мониторинга. Интеграция с [проверкой подлинности на основе ролей (RBAC)](../role-based-access-control/overview.md) Azure.
 - Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Обновление журналов за одну минуту.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.
@@ -71,9 +71,8 @@ ms.locfileid: "55990178"
 - Размер ответа запроса ограничен 8 МБ, а время выполнения запроса — 110 секундами.
 
 
-
-## <a name="application-insights-workbooks"></a>Книги Application Insights
-[Книги](../application-insights/app-insights-usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
+## <a name="workbooks"></a>Workbooks
+[Книги](../azure-monitor/app/usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
 ![Книга](media/visualizations/workbook.png)
 
@@ -122,7 +121,6 @@ ms.locfileid: "55990178"
 - Поддержка параметров.
 
 ### <a name="limitations"></a>Ограничения
-- Поддержка метрик, но не журналов.
 - Отсутствует интеграция с Azure. Отсутствует возможность управления панелями мониторинга и моделями с помощью Azure Resource Manager.
 - Расходы на поддержку дополнительной инфраструктуры Grafana или дополнительные расходы на облако Grafana.
 
@@ -138,10 +136,11 @@ ms.locfileid: "55990178"
 - Значительные инженерные работы.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-collection.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
 - Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
-- Дополнительные сведения о [книгах в Application Insights](app/usage-workbooks.md).
-- Дополнительные сведения об [импорте данных журналов в Power BI](platform/powerbi.md).
-- Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](platform/grafana-plugin.md).
+- Дополнительные сведения о [книг](../azure-monitor/app/usage-workbooks.md).
+- Дополнительные сведения об [импорте данных журналов в Power BI](../azure-monitor/platform/powerbi.md).
+- Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](../azure-monitor/platform/grafana-plugin.md).
+

@@ -7,17 +7,17 @@ ms.service: mysql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: e4aabaf2673f6211523653f9d0a0ecf1769f83a3
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 870910654101b4d6689b51464f8a29aef41bf9cb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53549009"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58103134"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера позволяют администраторам управлять доступом к серверу базы данных Azure для MySQL с помощью определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров базы данных Azure для MySQL приведен в разделе [Правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 * [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "53549009"
     ```azurecli
     az login
     ```
-Эта команда выведет код, который понадобится на следующем шаге.
+   Эта команда выведет код, который понадобится на следующем шаге.
 
 2. Откройте браузер, перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin), а затем введите код.
 
@@ -116,6 +116,6 @@ az mysql server firewall-rule delete --resource-group myresourcegroup --server-n
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
 - [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](./howto-manage-firewall-using-portal.md).

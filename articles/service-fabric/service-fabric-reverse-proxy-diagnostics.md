@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 08/08/2017
 ms.author: kavyako
-ms.openlocfilehash: 662fc124af71c1ce976037a3544f59e3cea54ef0
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
-ms.translationtype: HT
+ms.openlocfilehash: c9c8c649208cff95f4ee515d39cc8cca3e2c64bf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207637"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58121491"
 ---
 # <a name="monitor-and-diagnose-request-processing-at-the-reverse-proxy"></a>Мониторинг и диагностика обработки запросов на обратном прокси-сервере
 
@@ -32,83 +32,84 @@ ms.locfileid: "34207637"
 1. Обратный прокси-сервер возвращает код состояния ответа 504 (превышено время ожидания).
 
     Одной из причин может быть то, что службе не удается ответить в течение времени ожидания запроса.
-Для первого события ниже в журнал записаны сведения о запросе, полученном на обратном прокси-сервере. Второе событие указывает на сбой запроса во время переадресации к службе ("internal error = ERROR_WINHTTP_TIMEOUT"). 
+   Для первого события ниже в журнал записаны сведения о запросе, полученном на обратном прокси-сервере. 
+   Второе событие указывает на сбой запроса во время переадресации к службе ("internal error = ERROR_WINHTTP_TIMEOUT"). 
 
     Ниже приведены полезные данные.
 
-    *  **traceId**: этот идентификатор GUID можно использовать, чтобы сопоставить все события, соответствующие одному запросу. В приведенных ниже двух событиях traceId = **2f87b722-e254-4ac2-a802-fd315c1a0271**, то есть они относятся к одному и тому же запросу.
-    *  **requestUrl**: URL-адрес (URL-адрес обратного прокси-сервера), на который был отправлен запрос.
-    *  **verb**: HTTP-команда.
-    *  **remoteAddress**: адрес клиента, отправившего запрос.
-    *  **resolvedServiceUrl**: URL-адрес конечной точки службы, на которую был разрешен входящий запрос. 
-    *  **errorDetails**: дополнительные сведения об ошибке.
+   * **traceId**: Этот идентификатор GUID можно использовать для корреляции все события, соответствующие одному запросу. В приведенных ниже двух событиях traceId = **2f87b722-e254-4ac2-a802-fd315c1a0271**, то есть они относятся к одному и тому же запросу.
+   * **requestUrl**: URL (URL-адрес обратного прокси-сервера), к которому был отправлен запрос.
+   * **команда**: HTTP-команда.
+   * **remoteAddress**: Адрес клиента, отправившего запрос.
+   * **resolvedServiceUrl**: URL-адрес конечной точки службы, к которому был разрешен входящий запрос. 
+   * **errorDetails**: Дополнительные сведения о сбое.
 
-    ```
-    {
-      "Timestamp": "2017-07-20T15:57:59.9871163-07:00",
-      "ProviderName": "Microsoft-ServiceFabric",
-      "Id": 51477,
-      "Message": "2f87b722-e254-4ac2-a802-fd315c1a0271 Request url = https://localhost:19081/LocationApp/LocationFEService?zipcode=98052, verb = GET, remote (client) address = ::1, resolved service url = Https://localhost:8491/LocationApp/?zipcode=98052, request processing start time =     15:58:00.074114 (745,608.196 MSec) ",
-      "ProcessId": 57696,
-      "Level": "Informational",
-      "Keywords": "0x1000000000000021",
-      "EventName": "ReverseProxy",
-      "ActivityID": null,
-      "RelatedActivityID": null,
-      "Payload": {
-        "traceId": "2f87b722-e254-4ac2-a802-fd315c1a0271",
-        "requestUrl": "https://localhost:19081/LocationApp/LocationFEService?zipcode=98052",
-        "verb": "GET",
-        "remoteAddress": "::1",
-        "resolvedServiceUrl": "Https://localhost:8491/LocationApp/?zipcode=98052",
-        "requestStartTime": "2017-07-20T15:58:00.0741142-07:00"
-      }
-    }
+     ```
+     {
+     "Timestamp": "2017-07-20T15:57:59.9871163-07:00",
+     "ProviderName": "Microsoft-ServiceFabric",
+     "Id": 51477,
+     "Message": "2f87b722-e254-4ac2-a802-fd315c1a0271 Request url = https://localhost:19081/LocationApp/LocationFEService?zipcode=98052, verb = GET, remote (client) address = ::1, resolved service url = Https://localhost:8491/LocationApp/?zipcode=98052, request processing start time =     15:58:00.074114 (745,608.196 MSec) ",
+     "ProcessId": 57696,
+     "Level": "Informational",
+     "Keywords": "0x1000000000000021",
+     "EventName": "ReverseProxy",
+     "ActivityID": null,
+     "RelatedActivityID": null,
+     "Payload": {
+      "traceId": "2f87b722-e254-4ac2-a802-fd315c1a0271",
+      "requestUrl": "https://localhost:19081/LocationApp/LocationFEService?zipcode=98052",
+      "verb": "GET",
+      "remoteAddress": "::1",
+      "resolvedServiceUrl": "Https://localhost:8491/LocationApp/?zipcode=98052",
+      "requestStartTime": "2017-07-20T15:58:00.0741142-07:00"
+     }
+     }
 
-    {
-      "Timestamp": "2017-07-20T16:00:01.3173605-07:00",
-      ...
-      "Message": "2f87b722-e254-4ac2-a802-fd315c1a0271 Error while forwarding request to service: response status code = 504, description = Reverse proxy Timeout, phase = FinishSendRequest, internal error = ERROR_WINHTTP_TIMEOUT ",
-      ...
-      "Payload": {
-        "traceId": "2f87b722-e254-4ac2-a802-fd315c1a0271",
-        "statusCode": 504,
-        "description": "Reverse Proxy Timeout",
-        "sendRequestPhase": "FinishSendRequest",
-        "errorDetails": "internal error = ERROR_WINHTTP_TIMEOUT"
-      }
-    }
-    ```
+     {
+     "Timestamp": "2017-07-20T16:00:01.3173605-07:00",
+     ...
+     "Message": "2f87b722-e254-4ac2-a802-fd315c1a0271 Error while forwarding request to service: response status code = 504, description = Reverse proxy Timeout, phase = FinishSendRequest, internal error = ERROR_WINHTTP_TIMEOUT ",
+     ...
+     "Payload": {
+      "traceId": "2f87b722-e254-4ac2-a802-fd315c1a0271",
+      "statusCode": 504,
+      "description": "Reverse Proxy Timeout",
+      "sendRequestPhase": "FinishSendRequest",
+      "errorDetails": "internal error = ERROR_WINHTTP_TIMEOUT"
+     }
+     }
+     ```
 
 2. Обратный прокси-сервер возвращает код состояния ответа 404 (не найдено). 
     
     Ниже приведен пример события, в котором обратный прокси-сервер возвращает код 404, так как ему не удалось найти соответствующую конечную точку службы.
     Ниже приведены интересующие нас полезные данные операции.
-    *  **processRequestPhase**: указывает этап обработки запроса, на котором произошел сбой (***TryGetEndpoint***). Это произошло при попытке получить конечную точку службы для переадресации. 
-    *  **errorDetails**: отображает условия поиска конечной точки. Здесь можно увидеть, что указано значение listenerName = **FrontEndListener**, в то время как список конечных точек реплик содержит только прослушиватель с именем **OldListener**.
+   * **processRequestPhase**: Указывает на фазу, во время обработки запроса, когда произошел сбой, ***TryGetEndpoint*** т. е. Это произошло при попытке получить конечную точку службы для переадресации. 
+   * **errorDetails**: Перечисляет условия поиска конечной точки. Здесь можно увидеть, что указано значение listenerName = **FrontEndListener**, в то время как список конечных точек реплик содержит только прослушиватель с именем **OldListener**.
     
-    ```
-    {
+     ```
+     {
+     ...
+     "Message": "c1cca3b7-f85d-4fef-a162-88af23604343 Error while processing request, cannot forward to service: request url = https://localhost:19081/LocationApp/LocationFEService?ListenerName=FrontEndListener&zipcode=98052, verb = GET, remote (client) address = ::1, request processing start time = 16:43:02.686271 (3,448,220.353 MSec), error = FABRIC_E_ENDPOINT_NOT_FOUND, message = , phase = TryGetEndoint, SecureOnlyMode = false, gateway protocol = https, listenerName = FrontEndListener, replica endpoint = {\"Endpoints\":{\"\":\"Https:\/\/localhost:8491\/LocationApp\/\"}} ",
+     "ProcessId": 57696,
+     "Level": "Warning",
+     "EventName": "ReverseProxy",
+     "Payload": {
+      "traceId": "c1cca3b7-f85d-4fef-a162-88af23604343",
+      "requestUrl": "https://localhost:19081/LocationApp/LocationFEService?ListenerName=NewListener&zipcode=98052",
       ...
-      "Message": "c1cca3b7-f85d-4fef-a162-88af23604343 Error while processing request, cannot forward to service: request url = https://localhost:19081/LocationApp/LocationFEService?ListenerName=FrontEndListener&zipcode=98052, verb = GET, remote (client) address = ::1, request processing start time = 16:43:02.686271 (3,448,220.353 MSec), error = FABRIC_E_ENDPOINT_NOT_FOUND, message = , phase = TryGetEndoint, SecureOnlyMode = false, gateway protocol = https, listenerName = FrontEndListener, replica endpoint = {\"Endpoints\":{\"\":\"Https:\/\/localhost:8491\/LocationApp\/\"}} ",
-      "ProcessId": 57696,
-      "Level": "Warning",
-      "EventName": "ReverseProxy",
-      "Payload": {
-        "traceId": "c1cca3b7-f85d-4fef-a162-88af23604343",
-        "requestUrl": "https://localhost:19081/LocationApp/LocationFEService?ListenerName=NewListener&zipcode=98052",
-        ...
-        "processRequestPhase": "TryGetEndoint",
-        "errorDetails": "SecureOnlyMode = false, gateway protocol = https, listenerName = FrontEndListener, replica endpoint = {\"Endpoints\":{\"OldListener\":\"Https:\/\/localhost:8491\/LocationApp\/\"}}"
-      }
-    }
-    ```
-    Другой пример ситуации, в которой обратный прокси-сервер может вернуть код 404 (не найдено): параметру конфигурации ApplicationGateway\Http **SecureOnlyMode** присвоено значение true, а обратный прокси-сервер ожидает передачи данных по протоколу **HTTPS**, однако все конечные точки реплики являются небезопасными (ожидают передачи данных по протоколу HTTP).
-    Обратный прокси-сервер возвращает код 404, так как ему не удалось найти конечную точку, ожидающую передачу данных по протоколу HTTPS для переадресации запросов. Анализ параметров в полезных данных события помогает сузить область поиска проблемы.
+      "processRequestPhase": "TryGetEndoint",
+      "errorDetails": "SecureOnlyMode = false, gateway protocol = https, listenerName = FrontEndListener, replica endpoint = {\"Endpoints\":{\"OldListener\":\"Https:\/\/localhost:8491\/LocationApp\/\"}}"
+     }
+     }
+     ```
+     Еще один пример, где обратный прокси-сервер может вернуть код 404 не найдено: Параметру конфигурации ApplicationGateway\Http **SecureOnlyMode** присвоено значение true, обратный прокси-сервер прослушивает **HTTPS**, однако все конечные точки реплики являются небезопасными (ожидают передачи данных от HTTP).
+     Обратный прокси-сервер возвращает код 404, так как ему не удалось найти конечную точку, ожидающую передачу данных по протоколу HTTPS для переадресации запросов. Анализ параметров в полезных данных события помогает сузить область поиска проблемы.
     
-    ```
-        "errorDetails": "SecureOnlyMode = true, gateway protocol = https, listenerName = NewListener, replica endpoint = {\"Endpoints\":{\"OldListener\":\"Http:\/\/localhost:8491\/LocationApp\/\", \"NewListener\":\"Http:\/\/localhost:8492\/LocationApp\/\"}}"
-    ```
+     ```
+      "errorDetails": "SecureOnlyMode = true, gateway protocol = https, listenerName = NewListener, replica endpoint = {\"Endpoints\":{\"OldListener\":\"Http:\/\/localhost:8491\/LocationApp\/\", \"NewListener\":\"Http:\/\/localhost:8492\/LocationApp\/\"}}"
+     ```
 
 3. Запрос к обратному прокси-серверу приводит к ошибке времени ожидания. 
     Журналы событий содержат событие с подробными сведениями о полученном запросе (здесь не показано).
@@ -196,7 +197,7 @@ ms.locfileid: "34207637"
 > [!NOTE]
 > В настоящее время не регистрируются события, относящиеся к обработке запросов WebSocket. Эта возможность будет добавлена в следующем выпуске.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Статистическая обработка и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) для обеспечения сбора журналов в кластерах Azure.
 * Чтобы просмотреть события Service Fabric в Visual Studio, ознакомьтесь с разделом [Мониторинг и диагностика состояния служб в локальной среде разработки](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 * Примеры шаблонов Azure Resource Manager для настройки разных параметров проверки сертификата службы для защищенного обратного прокси-сервера см. в разделе [Configure reverse proxy to connect to secure services](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample#configure-reverse-proxy-to-connect-to-secure-services).

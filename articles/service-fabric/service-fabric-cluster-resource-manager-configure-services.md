@@ -7,19 +7,19 @@ author: masnider
 manager: timlt
 editor: ''
 ms.assetid: 16e135c1-a00a-4c6f-9302-6651a090571a
-ms.service: Service-Fabric
+ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: ea781b5dbbf09c0a21fbcf781ae129295d02dbad
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
-ms.translationtype: HT
+ms.openlocfilehash: 55d75bb0bae4bf3feb370b7fdf4d80dc43bdc0ca
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44054797"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56736895"
 ---
 # <a name="configuring-cluster-resource-manager-settings-for-service-fabric-services"></a>Настройка параметров Cluster Resource Manager для служб Service Fabric
 Диспетчер кластерных ресурсов Service Fabric позволяет точно управлять правилами, регулирующими работу отдельных именованных служб. Для каждой именованной службы можно указать правила ее выделения в кластере. Для каждой именованной службы можно также определить набор метрик, о которых она должна сообщать, включая их важность для данной службы. Настройка служб делится на три задачи:
@@ -41,7 +41,7 @@ ms.locfileid: "44054797"
 
 Другие правила размещения настраиваются с помощью корреляций или политик.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метриках и их настройке, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-metrics.md).
 - Сходство — один режимов, который можно настроить для служб. Этот режим редко используется; узнать о нем подробнее можно [здесь](service-fabric-cluster-resource-manager-advanced-placement-rules-affinity.md)
 - Существует много различных правил размещения, которые можно настроить для службы, чтобы реализовать дополнительные сценарии. Узнать о разных политиках размещения можно [здесь](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md)

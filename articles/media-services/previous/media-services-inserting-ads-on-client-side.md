@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: cc5f3f729acca1f7aa23a7714300c1b581c6f7f8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c3c2101576f9b0d0c7908e62bd5cc1d6e6eeb0b2
+ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993900"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58189807"
 ---
 # <a name="inserting-ads-on-the-client-side"></a>Вставка рекламы на стороне клиента
 В этой статье описано, как использовать разные типы рекламы на стороне клиента.
@@ -51,7 +51,7 @@ ms.locfileid: "55993900"
 VAST-файл определяет, какие рекламные ролики будут отображены. Следующий XML-код является примером VAST-файла для линейной рекламы:
 
 ```xml
-    <VAST version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
+    <VAST version="2.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
       <Ad id="115571748">
         <InLine>
           <AdSystem version="2.0 alpha">Atlas</AdSystem>
@@ -99,7 +99,7 @@ VAST-файл определяет, какие рекламные ролики �
 Линейную рекламу можно отображать в указанном порядке. Для этого добавьте в VAST-файл дополнительные элементы <Ad> и укажите порядок с помощью атрибута последовательности (sequence). Проиллюстрируем это на примере.
 
 ```xml
-    <VAST version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
+    <VAST version="2.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
       <Ad id="1" sequence="0">
         <InLine>
           <AdSystem version="2.0 alpha">Atlas</AdSystem>
@@ -180,7 +180,7 @@ VMAP-файл позволяет указать время рекламных п
       <vmap:AdBreak breakType="linear" breakId="mypre" timeOffset="start">
         <vmap:AdSource allowMultipleAds="true" followRedirects="true" id="1">
           <vmap:VASTData>
-            <VAST version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
+            <VAST version="2.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oxml.xsd">
               <Ad id="115571748">
                 <InLine>
                   <AdSystem version="2.0 alpha">Atlas</AdSystem>
@@ -188,7 +188,7 @@ VMAP-файл позволяет указать время рекламных п
                   <Description>Unknown</Description>
                   <Survey></Survey>
                   <Error></Error>
-                  <Impression id="Atlas"><![CDATA[http://view.atdmt.com/000/sview/115571748/direct;ai.201582527;vt.2/01/634364885739970673]]></Impression>
+                  <Impression id="Atlas"><![CDATA[https://view.atdmt.com/000/sview/115571748/direct;ai.201582527;vt.2/01/634364885739970673]]></Impression>
                   <Creatives>
                     <Creative id="video" sequence="0" AdID="">
                       <Linear>
@@ -282,7 +282,7 @@ VMAP-файл начинается с элемента <VMAP>, в котором
 MAST-файл позволяет указать триггеры, определяющие, когда будет отображаться реклама. Ниже приведен пример MAST-файла, содержащего триггеры для показа отдельных рекламных роликов до просмотра видео, в середине просмотра и после просмотра.
 
 ```xml
-    <MAST xsi:schemaLocation="http://openvideoplayer.sf.net/mast http://openvideoplayer.sf.net/mast/mast.xsd" xmlns="http://openvideoplayer.sf.net/mast" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <MAST xsi:schemaLocation="http://openvideoplayer.sf.net/mast http://openvideoplayer.sf.net/mast/mast.xsd" xmlns="http://openvideoplayer.sf.net/mast" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
       <triggers>
         <trigger id="preroll" description="preroll every item"  >
           <startConditions>
@@ -405,7 +405,7 @@ VPAID — это интерфейс API для включения исполн�
     </mmppf:MediaPlayer>
 ```
 
-Дополнительные сведения об AdSchedulerPlugin см. в разделе [Реклама на платформе проигрывателя в Windows 8 и Windows Phone 8](http://playerframework.codeplex.com/wikipage?title=Advertising&referringTitle=Windows%208%20Player%20Documentation).
+Дополнительные сведения об AdSchedulerPlugin см. в разделе [Реклама на платформе проигрывателя в Windows 8 и Windows Phone 8](https://playerframework.codeplex.com/wikipage?title=Advertising&referringTitle=Windows%208%20Player%20Documentation).
 
 ### <a name="adschedulingpage"></a>AdSchedulingPage
 В этом примере также используется подключаемый модуль AdSchedulerPlugin. Он планирует воспроизведение трех рекламных объявлений: до, во время и после показа видео. URI VAST-файла каждого из объявлений указывается в элементе <RemoteAdSource>.
@@ -595,7 +595,7 @@ VPAID — это интерфейс API для включения исполн�
     // How to schedule an Ad using VMAP.
     //First download the VMAP manifest
 
-    if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVMAP.xml"]])
+    if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"https://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVMAP.xml"]])
             {
                 [self logFrameworkError];
             }
@@ -619,7 +619,7 @@ VPAID — это интерфейс API для включения исполн�
     adLinearTime.startTime = 13;
     adLinearTime.duration = 0;
     // Specify the URI of the VAST file
-    NSString *vastAd1=@"http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml";
+    NSString *vastAd1=@"https://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml";
     // Create an AdInfo object
      AdInfo *vastAdInfo1 = [[[AdInfo alloc] init] autorelease];
     // set URL to VAST file
@@ -645,7 +645,7 @@ VPAID — это интерфейс API для включения исполн�
 ```csharp
     //Example:4 Schedule an early binding VAST ad
     //Download the VAST file
-    if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml"]])
+    if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"https://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml"]])
     {
         [self logFrameworkError];
     }

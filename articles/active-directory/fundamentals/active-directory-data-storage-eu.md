@@ -9,49 +9,37 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/17/2018
+ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3a2f243b1a8b891419de7e3ca949e7591f55879
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b21f82dc0a1eb8edf571da13e0d34fecae5f401b
+ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211365"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57337691"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
 Azure Active Directory (Azure AD) помогает управлять удостоверениями пользователей и создавать политики доступа на основе аналитики для защиты ресурсов организации. Данные удостоверений хранятся в расположении, которое основывается на адресе организации, указанном при оформлении подписки на службу. Например, при оформлении подписки на Office 365 или Azure. Определенные сведения о том, где хранятся данные удостоверений, можно найти в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-Хотя большинство связанных с Azure AD данных удостоверений европейских клиентов, остается в европейских центрах обработки данных, существуют пять связанных с пользователями атрибутов, которые обычно хранятся в центрах обработки данных в США. Этими атрибутами являются GivenName, Surname, userPrincipalName, Domain и PasswordHash. Атрибут PasswordHash может быть исключением и не хранится в США, если кто-то использует локально метод федеративной проверки подлинности, который блокирует синхронизацию значения PasswordHash с Azure AD. Кроме того, есть операционные данные определенных служб, которые требуются для нормальной работы Azure AD, хранятся в США и не содержат персональных данных.
+Наиболее Azure связанных с AD европейских идентификационных данных остается в европейских центрах обработки данных, но есть некоторые определенной службы, рабочие данные, необходимые для normal операции Azure AD, в которой хранятся в США и не содержит личных данных.
 
 ## <a name="data-stored-outside-of-european-datacenters-for-european-customers"></a>Данные европейских клиентов, хранящиеся за пределами европейских центров обработки данных
 
 Большинство связанных с Azure AD данных удостоверений европейских клиентов из организаций с европейскими адресами остается в европейских центрах обработки данных. Данные Azure AD, которые хранятся в европейских центрах обработки данных, а также реплицируются в центрах обработки данных США, включают в себя:
-
-- **Атрибуты, связанные с идентификаторами**
-
-    Следующие атрибуты, связанные с идентификаторами, будут реплицированы в США:
-
-    - GivenName
-    - Surname
-    - userPrincipalName
-    - Домен
-    - PasswordHash
-    - sourceAnchor
-    - AccountEnabled
-    - passwordPolicies
-    - StrongAuthenticationRequirement
-    - ApplicationPassword
-    - PUID
 
 - **Данные Многофакторной идентификации Microsoft Azure и самостоятельного сброса пароля Azure AD (SSPR)**
     
     MFA хранит все неактивные данные пользователей в европейских центрах обработки данных. Тем не менее, некоторые данные определенных служб MFA хранятся в США, а именно:
     
     - Данные двухфакторной проверки подлинности и связанные персональные данные могут храниться в США при использовании MFA или SSPR.
+
         - Все двухфакторные проверки подлинности с помощью телефонных звонков или SMS могут выполняться операторами из США.
+    
         - Push-уведомления, использующие приложение Microsoft Authenticator, требуют уведомлений от службы уведомлений разработчика (Apple или Google), которая может быть расположена за пределами Европы.
+    
         - OATH-коды всегда проверяются в США. 
+    
     - Некоторые журналы MFA и SSPR хранятся в США 30 дней, независимо от типа проверки подлинности.
 
 - **Microsoft Azure Active Directory B2C (Active Directory B2C)**
@@ -72,10 +60,14 @@ Azure Active Directory (Azure AD) помогает управлять удост
 
     Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
 - [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
+
 - [Самостоятельный сброс пароля в Azure AD для ИТ-специалистов](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-overview)
+
 - [Что такое Azure Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)
+
 - [Что такое служба совместной работы Azure AD B2B?](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)
+
 - [Доменные службы Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview)

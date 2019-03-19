@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 4761a50905f28c215a47d579b931ab5db9d7e424
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: b3ffc9794967f44708d8330d4dc5d5de11b794d6
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55468076"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079185"
 ---
 # <a name="how-to-create-a-support-ticket-for-sql-data-warehouse"></a>Создание запроса в службу поддержки для хранилища данных SQL
 Если у вас возникли проблемы с хранилищем данных SQL, создайте запрос в службу поддержки, чтобы получить помощь от нашей службы поддержки разработчиков.
@@ -35,8 +35,8 @@ ms.locfileid: "55468076"
      
      При наличии плана поддержки Premier можно также создавать отчеты по проблемам с хранилищем данных SQL на [портале Microsoft Premier][Microsoft Premier online portal].  Дополнительные сведения о доступной поддержке, включая области действия, время ответа, цены и т. д., см. на странице [планов поддержки Azure][Azure support plan].  Часто задаваемые вопросы о поддержке Azure см. на [этой странице][Azure support FAQs].  
         
-    ![Колонка "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_1.PNG)
-    ![колонка1 "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_2.PNG)
+     ![Колонка "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_1.PNG)
+     ![колонка1 "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_2.PNG)
 4. Заполните колонку **Проблема**.
     ![Problem_blade](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_3.PNG)
    
@@ -46,7 +46,7 @@ ms.locfileid: "55468076"
    > 
    
 5. Введите **контактные данные**.
-![Contact_information](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_4.PNG)
+   ![Contact_information](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_4.PNG)
 
     
 6. Щелкните **Создать** , чтобы отправить запрос в службу поддержки.

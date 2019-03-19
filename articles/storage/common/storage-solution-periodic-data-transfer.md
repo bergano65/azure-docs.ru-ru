@@ -4,16 +4,16 @@ description: Узнайте, как выбрать решение Azure для �
 services: storage
 author: alkohli
 ms.service: storage
-ms.subservice: blob
+ms.subservice: blobs
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: alkohli
-ms.openlocfilehash: 271be60bc26cf6bc9a64c459d030818d9e493a22
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.openlocfilehash: ba6d5e20f0d6a004fd85d7e9dc57584547d52ba3
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158454"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57772863"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -60,10 +60,10 @@ ms.locfileid: "54158454"
 | Формат данных                                   | Большие двоичные объекты Azure, Файлы Azure   | Большие двоичные объекты Azure, Файлы Azure | [Поддерживает более 70 соединителей данных для разных хранилищ и форматов](https://docs.microsoft.com/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats)|
 | Предварительная обработка данных                           | Нет                          | Да, с помощью пограничных вычислений    | Yes                                                           |
 | Локальный кэш<br>(хранение локальных данных)    | Yes                        | Да                      | Нет                                                             |
-| Перенос из других облаков                    | Нет                          | Нет                        | Yes                                                           |
+| Перенос из других облаков                    | Нет                          | Нет                       | Yes                                                           |
 | Цены                                       | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/gateway/)                    | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                  | [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                       |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Передача данных с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)
 - [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares)

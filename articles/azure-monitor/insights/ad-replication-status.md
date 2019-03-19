@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/24/2018
 ms.author: magoedte
-ms.openlocfilehash: 3b7aa932d24b7879ee3f46419afa2327ee48b403
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 100d33bbd888d00ed33a38680df5a777e12fd63e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001006"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58120811"
 ---
 # <a name="monitor-active-directory-replication-status-with-azure-monitor"></a>Мониторинг состояния репликации Active Directory с помощью Azure Monitor
 
@@ -45,8 +45,8 @@ Active Directory является ключевым компонентом в к�
 
    > [!NOTE]
    > Эти изменения не вступят в силу, пока вы не перезапустите службу Microsoft Monitoring Agent (HealthService.exe).
-### <a name="install-solution"></a>Установка решения
-Следуйте инструкциям в разделе об [установке решения для мониторинга](solutions.md#install-a-monitoring-solution), чтобы добавить решение **Состояние репликации Active Directory** в рабочую область Log Analytics. Дополнительная настройка не требуется.
+   > ### <a name="install-solution"></a>Установка решения
+   > Следуйте инструкциям в разделе об [установке решения для мониторинга](solutions.md#install-a-monitoring-solution), чтобы добавить решение **Состояние репликации Active Directory** в рабочую область Log Analytics. Дополнительная настройка не требуется.
 
 
 ## <a name="ad-replication-status-data-collection-details"></a>Сведения о сборе данных состояния репликации AD
@@ -154,5 +154,5 @@ Active Directory является ключевым компонентом в к�
 
 Если не требуется подключать контроллеры домена напрямую к Azure Monitor или System Center Operations Manager, см. дополнительные сведения в разделе [Включение контроллера вне домена](#enable-non-domain-controller).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Запросы к журналам Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) позволяют просматривать подробные сведения о состоянии репликации Active Directory.

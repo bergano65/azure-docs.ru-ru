@@ -6,23 +6,78 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: hning86
-ms.author: haining
-ms.reviewer: j-martens
-ms.date: 12/20/2018
+ms.author: larryfr
+author: Blackmist
+ms.date: 03/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: f02a44f41eba8cc4298b9fc730354799ca0aad0c
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 2a2817501628d55d7ccc84979700ea53e4114eed
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446772"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57860641"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
 В статье рассказывается о выпусках службы "Машинное обучения Azure".  Для просмотра полного описания каждого пакета SDK см. следующие ссылки на документы:
 + [**Основной пакет SDK для Python**](https://aka.ms/aml-sdk) Машинного обучения Azure.
 + [**Пакет SDK для подготовки данных**](https://aka.ms/data-prep-sdk) Машинного обучения Azure.
+
+## <a name="2019-03-11"></a>2019-03-11
+
+### <a name="azure-machine-learning-sdk-for-python-v1018"></a>Машинного обучения Azure SDK для Python v1.0.18
+
+ + **Изменения**
+   + Пакет azureml tensorboard заменяет azureml-contrib-tensorboard.
+   + В этом выпуске вы можете настроить учетную запись пользователя в управляемом вычислительном кластере (amlcompute), во время его создания. Это можно сделать, просто передав эти свойства в конфигурации подготовки. Дополнительные сведения см. в [справочная документация SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py#provisioning-configuration-vm-size-----vm-priority--dedicated---min-nodes-0--max-nodes-none--idle-seconds-before-scaledown-none--admin-username-none--admin-user-password-none--admin-user-ssh-key-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--tags-none--description-none-).
+
+### <a name="azure-machine-learning-data-prep-sdk-v1017"></a>Пакет SDK v1.0.17 подготовки данных машинного обучения Azure
+
++ **Новые функции**
+  + Теперь поддерживает добавление двух числовых столбцов, чтобы создать итоговый столбец с помощью языка выражений.
+
++ **Исправления ошибок и улучшения**
+  + Улучшена документация и проверка параметров для random_split.
+  
+## <a name="2019-02-27"></a>2019-02-27
+
+### <a name="azure-machine-learning-data-prep-sdk-v1016"></a>Пакет SDK v1.0.16 подготовки данных машинного обучения Azure
+
++ **Исправление ошибки**
+  + Исправлена проблема проверки подлинности, который был вызван субъект-службу изменений API.
+
+## <a name="2019-02-25"></a>2019-02-25
+
+### <a name="azure-machine-learning-sdk-for-python-v1017"></a>Машинного обучения Azure SDK для Python v1.0.17
+
++ **Новые функции**
+
+  + Машинное обучение Azure теперь предоставляет первоклассную поддержку для популярная платформа DNN формирователя цепочки. С помощью [ `Chainer` ](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) класс пользователям легко обучать и развертывать модели формирователя цепочки.
+    + Узнайте, как [запуска распределенного обучения с ChainerMN](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/distributed-chainer/distributed-chainer.ipynb)
+    + Узнайте, как [выполнения настройки гиперпараметров с помощью HyperDrive формирователя цепочки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb)
+  + Azure конвейеры машинного обучения добавлен триггер возможность выполнения конвейера на основании изменений в хранилище данных. Конвейер [записной книжки расписание](https://aka.ms/pl-schedule) обновляется, чтобы продемонстрировать эту функцию.
+
++ **Исправления ошибок и улучшения**
+  + Добавлена поддержка Azure конвейеры машинного обучения для задания этого свойства source_directory_data_store нужное хранилище данных (например, хранилище BLOB-объектов) на [RunConfigurations](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py) , будут заданы [ PythonScriptStep](https://docs.microsoft.com/en-us/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py). По умолчанию действия используют хранилище файлов Azure в резервное хранилище данных запускается в проблем регулирования, когда большое количество действия выполняются параллельно.
+
+### <a name="azure-portal"></a>Портал Azure
+
++ **Новые функции**
+  + Новые операции перетаскивания таблицы интерфейс редактора для отчетов. Пользователи смогут перетаскивать столбец из текущего набора вкладок, в область данных таблицы, где отображается предварительный просмотр таблицы. Можно переупорядочить столбцы.
+  + Новое средство просмотра файлов журналов
+  + Ссылки на поэкспериментировать запусков, вычислений, моделей, образов и развертывания на вкладке "действия"
+
+### <a name="azure-machine-learning-data-prep-sdk-v1015"></a>Пакет SDK v1.0.15 подготовки данных машинного обучения Azure
+
++ **Новые функции**
+  + Теперь поддерживает запись файла потоки в потоке данных, подготовки данных. Также предоставляет возможность управлять поток имена файлов для создания новых имен файлов.
+    + Руководство: [Работа с потоками файлов записной книжки](https://aka.ms/aml-data-prep-file-stream-nb)
+
++ **Исправления ошибок и улучшения**
+  + Повышена производительность t-Digest на больших наборах данных.
+  + Подготовка данных теперь поддерживает чтение данных из пути к данным.
+  + Одна кодировка "Горячий" теперь работает на логические и числовые столбцы.
+  + Исправление прочих ошибок.
 
 ## <a name="2019-02-11"></a>11.02.2019
 
@@ -85,7 +140,7 @@ ms.locfileid: "56446772"
 ### <a name="azure-machine-learning-data-prep-sdk-v107"></a>Пакет SDK службы "Машинное обучение Azure" для подготовки данных версии 1.0.7
 
 + **Новые функции**
-  + Улучшения хранилища данных (см. [практическое руководство по хранилищу данных](https://github.com/Microsoft/AMLDataPrepDocs/tree/master/how-to-guides/datastore.ipynb))
+  + Улучшения хранилища данных (см. [практическое руководство по хранилищу данных](https://aka.ms/aml-data-prep-datastore-nb))
     + Добавлена возможность чтения и записи для файлового хранилища Azure и хранилищ данных ADLS в вертикальном масштабировании.
     + Теперь при использовании хранилищ данных для подготовки данных можно применять проверку подлинности субъекта-службы вместо интерактивной проверки подлинности.
     + Добавлена поддержка URL-адресов WASB и WASBS.
@@ -342,6 +397,6 @@ ms.locfileid: "56446772"
 Новый, полностью обновленный выпуск Машинного обучения Azure: Дополнительные сведения об этом выпуске: https://azure.microsoft.com/blog/what-s-new-in-azure-machine-learning-service/
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](../service/overview-what-is-azure-ml.md).

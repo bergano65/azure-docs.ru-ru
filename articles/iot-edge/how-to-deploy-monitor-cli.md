@@ -11,10 +11,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f93d9eaefe18dd012a639cd26636b56b9eb09249
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
+ms.lasthandoff: 03/14/2019
 ms.locfileid: "56427642"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
@@ -212,6 +212,6 @@ az iot edge deployment delete --deployment-id [deployment id] --hub-name [hub na
 * **--deployment-id** — имя существующего развертывания в центре IoT.
 * **--hub-name** — имя концентратора IoT, в котором существует развертывание. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте подробнее в статье [Общие сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе](module-deployment-monitoring.md).

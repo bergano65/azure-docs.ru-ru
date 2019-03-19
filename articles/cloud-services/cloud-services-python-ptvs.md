@@ -11,21 +11,21 @@ ms.service: cloud-services
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: python
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: db540326ccdf1683394eda4e168a684e8e2ae3db
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: 2cfb8f922819802834d9833ae614f5bc5b4ff886
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605880"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57764478"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
 В этой статье представлен обзор способов использования веб-ролей и рабочих ролей Python с помощью [инструментов Python для Visual Studio][Python Tools for Visual Studio]. Узнайте, как с помощью Visual Studio создать и развернуть базовую облачную службу, которая использует Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Visual Studio 2013, 2015 или 2017](https://www.visualstudio.com/)
 * [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS)
 * [Инструменты пакета SDK для Azure для VS 2013][Azure SDK Tools for VS 2013] или  
@@ -330,7 +330,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 ### <a name="investigate-logs"></a>Изучение журналов
 После того как виртуальная машина в облачной службе запустится и установит Python, можно просмотреть журналы, чтобы найти сообщения о сбое. Эти журналы расположены в папке **C:\Resources\Directory\\{role}\LogFiles**. В файле **PrepPython.err.txt** содержится по крайней мере одна ошибка, которая возникает при попытке скрипта обнаружить, установлен ли язык Python. В файле **PipInstaller.err.txt** может быть сообщение о том, что существующая версия PIP устарела.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 С дополнительной информацией о работе с веб-ролями и рабочими ролями в средствах Python для Visual Studio можно ознакомиться в документации PTVS:
 
 * [Azure Cloud Service Projects for Python][Cloud Service Projects] (Проекты для облачной службы Azure для Python)
@@ -360,11 +360,11 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 
 <!--External Link references-->
 
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
-[Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
+[Python Tools for Visual Studio]: https://aka.ms/ptvs
+[Python Tools for Visual Studio Documentation]: https://aka.ms/ptvsdocs
 [Cloud Service Projects]: https://docs.microsoft.com/visualstudio/python/python-azure-cloud-service-project-template
-[Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=746482
-[Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=746481
-[Azure SDK Tools for VS 2017]: http://go.microsoft.com/fwlink/?LinkId=746483
+[Azure SDK Tools for VS 2013]: https://go.microsoft.com/fwlink/?LinkId=746482
+[Azure SDK Tools for VS 2015]: https://go.microsoft.com/fwlink/?LinkId=746481
+[Azure SDK Tools for VS 2017]: https://go.microsoft.com/fwlink/?LinkId=746483
 [Python 2.7 32-bit]: https://www.python.org/downloads/
 [Python 3.5 32-bit]: https://www.python.org/downloads/

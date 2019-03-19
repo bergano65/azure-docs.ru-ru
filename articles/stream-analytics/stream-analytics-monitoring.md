@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: f4dbfae4bada77cf882f7249353a17defebf312e
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: ce6fc0a90ad093a6bba5a4720777e409202c73ea
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55209355"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57439831"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Основные сведения о мониторинге заданий Stream Analytics и порядок мониторинга запросов
 
@@ -43,7 +43,7 @@ ms.locfileid: "55209355"
 | События позднего ввода      | События, полученные позже настроенного значения допустимого интервала поступления с задержкой. Сведения о рассмотрении порядка событий Azure Stream Analytics см. [здесь](stream-analytics-out-of-order-and-late-events.md). |
 | Неупорядоченные события    | Количество событий, полученных в неактуальное время, которые были удалены или получили откорректированную метку времени в соответствии с политикой упорядочения событий. Эта метрика может зависеть от настройки параметра «Интервал для событий, полученных в неправильном порядке». |
 | Выходные события          | Объем данных, отправляемых заданием Stream Analytics в место назначения выходных данных, измеряемый количеством событий. |
-| Ошибки среды выполнения         | Общее количество ошибок, связанных с обработкой запросов (без учета ошибок, обнаруженных при принятии событий или выводе результатов). |
+| Ошибки среды выполнения         | Общее количество ошибок, связанных с обработкой запросов (за исключением ошибки, обнаруженные во время приема событий или выводе результатов) |
 | Использование единиц потоковой передачи (%)       | Использование единиц потоковой передачи, назначенных заданию на вкладке «Масштаб» соответствующего задания. Как только этот индикатор достигнет 80 % и более существует высокая вероятность приостановки или отсрочки обработки события. |
 | Предельная задержка       | Предельная задержка для всех разделов выходных данных в задании. |
 
@@ -62,7 +62,7 @@ ms.locfileid: "55209355"
 ## <a name="get-help"></a>Получение справки
 Дополнительную помощь и поддержку вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)

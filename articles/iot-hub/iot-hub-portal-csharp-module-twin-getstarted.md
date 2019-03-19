@@ -1,20 +1,20 @@
 ---
 title: Приступая к работе с удостоверением и двойником модуля Центра Интернета вещей Azure (портал и .NET) | Документация Майкрософт
 description: Сведения о создании удостоверения модуля и обновлении двойника модуля с помощью портала и .NET.
-author: dominicbetts
-manager: timlt
+author: robinsh
+manager: philmea
+ms.author: robin.shahan
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 04/26/2018
-ms.author: dobett
-ms.openlocfilehash: 6048ddbcfed4ab929d521693175c456ad91f22e2
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: f323eb777d98a812ead8dd8ac78ee3d6b36a748a
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54447107"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57545826"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 
@@ -77,7 +77,7 @@ ms.locfileid: "54447107"
 
 ## <a name="get-your-module-connection-string"></a>Получение строки подключения модуля
 
-Войдите на [портал Azure][lnk-portal]. Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
+Войдите на [портал Azure][lnk-portal]. Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
 
   ![Сведения о модуле на портале Azure][15]
 
@@ -161,7 +161,7 @@ private static void ConnectionStatusChangeHandler(ConnectionStatus status, Conne
 
 Теперь все готово к запуску приложений. В обозревателе решений Visual Studio щелкните правой кнопкой мыши решение и выберите пункт **Назначить запускаемые проекты**. Выберите **Несколько запускаемых проектов**, а затем — **Запустить** в качестве действия для консольного приложения. Затем нажмите клавишу F5, чтобы запустить оба приложения. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 
@@ -177,7 +177,7 @@ private static void ConnectionStatusChangeHandler(ConnectionStatus status, Conne
 [15]: ./media/iot-hub-csharp-csharp-module-twin-getstarted/module-detail.JPG
 <!-- Links -->
 [lnk-hub-sdks]: iot-hub-devguide-sdks.md
-[lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[lnk-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 [lnk-portal]: https://portal.azure.com/
 
 [lnk-csharp-csharp-getstarted]: iot-hub-csharp-csharp-module-twin-getstarted.md

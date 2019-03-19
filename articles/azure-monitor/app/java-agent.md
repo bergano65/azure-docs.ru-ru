@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: b7710b081668bf07d40718baf1d84314246861f5
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
-ms.translationtype: HT
+ms.openlocfilehash: ce5f7ab1e6751a9ce68aa2d9c466a112c9cac182
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412409"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58004044"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -73,7 +73,6 @@ ms.locfileid: "54412409"
                reportCaughtExceptions="true"
                reportExecutionTime="true"
                />
-
            <!-- Report on the particular signature
                 void methodTwo(String, int) -->
            <Method name="methodTwo"
@@ -90,12 +89,26 @@ ms.locfileid: "54412409"
 
 По умолчанию `reportExecutionTime` имеет значение true, а `reportCaughtExceptions` — значение false.
 
-### <a name="spring-boot-agent-additional-config"></a>Дополнительная конфигурация агента Spring Boot
+## <a name="additional-config-spring-boot"></a>Дополнительные конфигурации (Spring Boot)
 
 `java -javaagent:/path/to/agent.jar -jar path/to/TestApp.jar`
 
+Для службы приложений выполните следующие действия.
+
+* Выберите элементы "Параметры > Параметры приложения".
+* В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
+
+Раздел: `JAVA_OPTS` Значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.3.1-SNAPSHOT.jar`
+
+Последнюю версию агента Java см. выпуски [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
+). 
+
+Агент должны быть упакованы как ресурс в своем проекте, таким образом, чтобы он оказывается в D:/home/site/wwwroot/directory. Убедитесь, что агент находится в правильный каталог службы приложений, выбрав **средства разработки** > **Дополнительные инструменты** > **консоли отладки**и изучение содержимого каталога узлов.    
+
+* Сохранить изменения и перезапустите приложение. (Эти шаги применяются только в службах приложений под управлением Windows.)
+
 > [!NOTE]
-> Файлы агента AI-Agent.xml и JAR-файл должны быть в одной папке. Они часто расположены вместе в папке `/resources` проекта. 
+> Файлы агента AI-Agent.xml и JAR-файл должны быть в одной папке. Они часто расположены вместе в папке `/resources` проекта.  
 
 ### <a name="spring-rest-template"></a>Шаблон Spring Rest
 

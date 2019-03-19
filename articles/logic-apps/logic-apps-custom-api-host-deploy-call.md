@@ -10,18 +10,18 @@ ms.reviewer: klam, stepsic, LADocs
 ms.topic: article
 ms.assetid: f113005d-0ba6-496b-8230-c1eadbd6dbb9
 ms.date: 05/26/2017
-ms.openlocfilehash: e95b20a12fafa9d1dbcbd641ce1c9f2674314489
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.openlocfilehash: a9049ba1fbd7d3bdce061d277f6a7a02d9b1e4b7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53606441"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880070"
 ---
 # <a name="deploy-and-call-custom-apis-from-workflows-in-azure-logic-apps"></a>Развертывание и вызов пользовательских API из рабочих процессов в Azure Logic Apps
 
 После [создания пользовательских API](./logic-apps-create-api-app.md) для использования в рабочих процессах приложений логики необходимо развернуть эти API, прежде чем их вызывать. API-интерфейсы можно развернуть в качестве [веб-приложений](../app-service/overview.md), но лучше их развернуть в качестве [приложений API](../app-service/app-service-web-tutorial-rest-api.md), что облегчит создание, размещение и использование API-интерфейсов как в облаке, так и в локальной среде. Не нужно изменять код в API-интерфейсах, просто разверните свой код в приложении API. API-интерфейсы можно разместить в [службе приложений Azure](../app-service/overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобное размещение API с высоким уровнем масштабирования.
 
-Хотя из приложения логики можно вызвать любой API, для получения наилучших результатов добавьте [метаданные OpenAPI (ранее — Swagger)](http://swagger.io/specification/), которые описывают операции и параметры вашего API. Этот файл OpenAPI позволяет упростить интеграцию API и улучшить его работу с приложениями логики.
+Хотя из приложения логики можно вызвать любой API, для получения наилучших результатов добавьте [метаданные OpenAPI (ранее — Swagger)](https://swagger.io/specification/), которые описывают операции и параметры вашего API. Этот файл OpenAPI позволяет упростить интеграцию API и улучшить его работу с приложениями логики.
 
 ## <a name="deploy-your-api-as-a-web-app-or-api-app"></a>Развертывание API в качестве веб-приложения или приложения API
 
@@ -53,6 +53,6 @@ ms.locfileid: "53606441"
 
 *  Чтобы вызвать любой API, даже тот, который не имеет документа OpenAPI или не предоставляет его, всегда можно создать запрос с помощью [действия HTTP](../connectors/connectors-native-http.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Custom connector overview](../logic-apps/custom-connector-overview.md) (Обзор настраиваемых соединителей)

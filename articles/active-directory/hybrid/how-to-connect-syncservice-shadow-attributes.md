@@ -16,12 +16,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 564a0948d09e4726800d19858b4c23924fc56973
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 10a4078f49abbdf431f42c6cde7cf882112e5848
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187344"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57839174"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Теневые атрибуты службы синхронизации Azure AD Connect
 Большинство атрибутов представляется в Azure AD так же, как и в локальной службе Active Directory. Однако некоторые атрибуты требуют особого обращения, их значение в Azure AD может отличаться от того, что синхронизирует Azure AD Connect.
@@ -58,7 +58,7 @@ ms.locfileid: "56187344"
 | proxyAddresses для локальной среды | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie.spencer@fabrikam.com</br>smtp:abbie@fabrikamonline.com |
 | proxyAddresses для Exchange Online | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie@fabrikamonline.com</br>SIP:abbie.spencer@fabrikamonline.com |
 
-В этом случае **smtp:abbie.spencer@fabrikam.com** был удален, так как этот домен не проверен. Но служба Exchange также добавила **SIP:abbie.spencer@fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
+В этом случае **smtp:abbie.spencer\@fabrikam.com** был удален, так как этот домен не проверен. Но Exchange также добавила **SIP:abbie.spencer\@fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
 
 Эта логика proxyAddresses называется **ProxyCalc**. ProxyCalc вызывается при каждом изменении пользователя, когда:
 

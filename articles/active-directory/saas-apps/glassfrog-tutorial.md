@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6bdc9f2214f8a23ffd1a126905faf00f2fc4264
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8287a9847632d078d3c724d06c3d581b7bed510c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199646"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57834835"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-glassfrog"></a>Руководство по Интеграция Azure Active Directory с GlassFrog
 
@@ -34,7 +34,7 @@ ms.locfileid: "56199646"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с GlassFrog, вам потребуется:
 
@@ -141,7 +141,7 @@ ms.locfileid: "56199646"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

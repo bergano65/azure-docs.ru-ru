@@ -11,14 +11,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/16/2018
+ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 0f5de24d42ccc930a4746251b9f466f241c3508e
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
-ms.translationtype: HT
+ms.openlocfilehash: f0bac9d50e73ed703905545261e86796ede214e2
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56806714"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58180846"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -193,6 +193,9 @@ ms.locfileid: "56806714"
 
 Дополнительные сведения о портах для SAP HANA см. в главе о [подключениях к базам данных клиентов](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) руководства по [базам данных клиентов SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в [примечании к SAP № 2388694][2388694].
 
+> [!IMPORTANT]
+> Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview).
+> Примечание к SAP [2382421](https://launchpad.support.sap.com/#/notes/2382421) сейчас оператором несовместимое значение, которое предлагает net.ipv4.tcp_timestamps присваивается значение 1. Для виртуальных машин Azure, размещенных за Azure Load balancer, задайте для параметра **net.ipv4.tcp_timestamps** для **0**. 
 
 ## <a name="create-a-pacemaker-cluster"></a>Создание кластера Pacemaker
 

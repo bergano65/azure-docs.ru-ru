@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: 07614147189732223f972c1f66bb6562280d3f39
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: a7131a66e9d722265282ac98b67b52db8de086e2
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118366"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57551906"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -128,10 +128,10 @@ ms.locfileid: "56118366"
 
 Если вы столкнулись с проблемами, ознакомьтесь с [часто задаваемыми вопросами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) об IoT DevKit или войдите в один из таких каналов, чтобы получить поддержку.
 
-* [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
+* [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как безопасно зарегистрировать устройство в Службе подготовки устройств с помощью обработчика композиций для удостоверения устройств, после чего устройство может автоматически зарегистрироваться в Центре Интернета вещей Azure. 
 

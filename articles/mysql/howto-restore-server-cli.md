@@ -7,19 +7,19 @@ ms.service: mysql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.openlocfilehash: 801f6dddfb3aaea850d76c80d43de93181c3d41c
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
-ms.translationtype: HT
+ms.openlocfilehash: f3850623f5918ea9405131edb1821b941019ac34
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54913484"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57532336"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MySQL" и восстановить его с помощью портала Azure
 
 ## <a name="backup-happens-automatically"></a>Резервное копирование выполняется автоматически
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для MySQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md)
 
@@ -94,14 +94,14 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 Для геовосстановления сервера в командной строке Azure CLI введите следующую команду.
 
 ```azurecli-interactive
-az mysql server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen4_8 
+az mysql server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8 
 ```
-С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения четвертого поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver*, которые также расположены в группе ресурсов *myresourcegroup*.
+С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver*, которые также расположены в группе ресурсов *myresourcegroup*.
 
 Если необходимо создать сервер в другой группе ресурсов с имеющегося сервера, в параметре `--source-server` необходимо определить имя сервера следующим образом.
 
 ```azurecli-interactive
-az mysql server georestore --resource-group newresourcegroup --name mydemoserver-georestored --source-server "/subscriptions/$<subscription ID>/resourceGroups/$<resource group ID>/providers/Microsoft.DBforMySQL/servers/mydemoserver" --location eastus --sku-name GP_Gen4_8
+az mysql server georestore --resource-group newresourcegroup --name mydemoserver-georestored --source-server "/subscriptions/$<subscription ID>/resourceGroups/$<resource group ID>/providers/Microsoft.DBforMySQL/servers/mydemoserver" --location eastus --sku-name GP_Gen5_8
 
 ```
 
@@ -113,7 +113,7 @@ az mysql server georestore --resource-group newresourcegroup --name mydemoserver
 |name | mydemoserver-georestored | Имя нового сервера. |
 |source-server | mydemoserver | Имя имеющегося сервера, геоизбыточные резервные копии которого используются. |
 |location | eastus | Расположение нового сервера. |
-|sku-name| GP_Gen4_8 | Этот параметр определяет ценовую категорию, поколение вычислительных ресурсов и количество виртуальных ядер нового сервера. GP_Gen4_8 сопоставляется с сервером общего назначения четвертого поколения с 8 виртуальными ядрами.|
+|sku-name| GP_Gen5_8 | Этот параметр определяет ценовую категорию, поколение вычислительных ресурсов и количество виртуальных ядер нового сервера. GP_Gen5_8 сопоставляется с сервером общего назначения 5-го поколения с 8 виртуальными ядрами.|
 
 
 >[!Important]
@@ -121,6 +121,6 @@ az mysql server georestore --resource-group newresourcegroup --name mydemoserver
 
 После завершения восстановления найдите новый сервер, чтобы убедиться, что данные были восстановлены, как и ожидалось.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о [резервном копировании](concepts-backup.md) в службе.
 - Подробнее о вариантах обеспечения [непрерывности бизнеса](concepts-business-continuity.md).

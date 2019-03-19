@@ -1,7 +1,7 @@
 ---
 title: Индексирование больших двоичных объектов в формате CSV с помощью индексатора в службе "Поиск Azure"
 description: Узнайте, как сканировать большие двоичные объекты в формате CSV в хранилище BLOB-объектов Azure для полнотекстового поиска с помощью индекса службы "Поиск Azure". Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
-ms.date: 10/17/2018
+ms.date: 03/01/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: eac0c1f2f7ded35cf09eec12f0406c754621f49c
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 0bbb131b5fb155443c8c3dc340185f3a6fa950a3
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54465468"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57312931"
 ---
 # <a name="indexing-csv-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure
 По умолчанию [индексатор BLOB-объектов службы поиска Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые BLOB-объекты (с разделителями) как один блок текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
@@ -26,9 +26,8 @@ ms.locfileid: "54465468"
 
 Из этой статьи вы узнаете, как анализировать большие двоичные объекты в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure. 
 
-> [!IMPORTANT]
-> Функция индексирования BLOB-объектов в формате CSV сейчас находится в общедоступной предварительной версии и не должна использоваться в рабочей среде. Дополнительные сведения см. в статье [REST api-version=2017-11-11-Preview](search-api-2017-11-11-preview.md) (REST API версии 2017-11-11-Preview). 
-> 
+> [!NOTE]
+> Следуйте рекомендациям по конфигурации индексатора в [один ко многим индексирования](search-howto-index-one-to-many-blobs.md) для вывода нескольких поиск документов из одного BLOB-объектов Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
 Чтобы индексировать BLOB-объекты в формате CSV, создайте или обновите определение индексатора с помощью режима анализа `delimitedText` .  

@@ -3,7 +3,7 @@ title: Использование управляемых удостоверен�
 description: Аутентификация кода с помощью управляемых удостоверений службы в Azure Cloud Shell
 services: azure
 documentationcenter: ''
-author: jluk
+author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2018
-ms.author: juluk
-ms.openlocfilehash: fe77deeedc34bf769065e34ac2f81d631b0004d6
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
-ms.translationtype: HT
+ms.author: damaerte
+ms.openlocfilehash: 7cadaaf67f9c6923ee9e9eb2596941aa8e1f0c9b
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352954"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244016"
 ---
 # <a name="use-managed-identities-for-azure-resources-in-azure-cloud-shell"></a>Использование управляемых удостоверений для ресурсов Azure в Azure Cloud Shell
 
@@ -49,6 +49,6 @@ echo The MSI access token is $access_token
 
 Сведения об обработке ошибок маркера см. [здесь](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token#error-handling).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Управляемое удостоверение службы (MSI) для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview)  
 [Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token)

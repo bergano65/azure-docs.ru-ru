@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Palo Alto Networks - Aperture | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Palo Alto Networks - Aperture | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks - Aperture.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61603ad5920b6242c3e36429173744125b9eb59e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 41c514706a671f755eb5b0efd5e3eefa5052c6e2
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450028"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---aperture"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks - Aperture
+# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---aperture"></a>Руководство. Интеграция Azure Active Directory с Palo Alto Networks - Aperture
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с Palo Alto Networks - Aperture.
 
@@ -35,7 +35,7 @@ ms.locfileid: "56206754"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Palo Alto Networks - Aperture, вам потребуется:
 
@@ -111,7 +111,7 @@ ms.locfileid: "56206754"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/metadata`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/auth`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/auth`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -149,13 +149,13 @@ ms.locfileid: "56206754"
     
     ![Вкладка "Authentication" (Аутентификация)](./media/paloaltonetworks-aperture-tutorial/tutorial_paloaltonetwork_singlesignon.png)
 
-    a. Установите флажок **Enable Single Sign-On (Supported SSP Providers are Okta, Onelogin)** (Включить единый вход (поддерживаемые поставщики SSP Providers: Okta, Onelogin)) в поле **Single Sign-On** (Единый вход).
+    a. Проверьте **Включить единый вход — On(Supported SSP Providers are Okta, One login)** из **единого входа** поля.
 
-    б) В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    2. В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Щелкните **Choose File** (Выбор файла), чтобы передать сертификат, скачанный из Azure AD, и указать его в поле **Identity Provider Certificate** (Сертификат поставщика удостоверений).
 
-    4.3. В текстовое поле **Identity Provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    d. В текстовое поле **Identity Provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     д. Просмотрите сведения о поставщике удостоверений в разделе **Aperture Info** (Сведения об Aperture) и скачайте сертификат из поля **Aperture Key** (Ключ Aperture).
 
@@ -194,7 +194,7 @@ ms.locfileid: "56206754"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-palo-alto-networks---aperture-test-user"></a>Создание тестового пользователя в Palo Alto Networks - Aperture
 

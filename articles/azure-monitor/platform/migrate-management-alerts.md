@@ -8,35 +8,34 @@ ms.topic: conceptual
 ms.date: 08/14/2017
 ms.author: johnkem
 ms.subservice: alerts
-ms.openlocfilehash: 55d0269aaa330f928a9d037eec6a3445825a5ed3
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 4d82cc59eb1098451a263957aa028b66996bb072
+ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54470347"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57307196"
 ---
 # <a name="migrate-azure-alerts-on-management-events-to-activity-log-alerts"></a>Перенос оповещений Azure о событиях управления в оповещения журнала действий
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!WARNING]
 > Оповещения о событиях управления будут отключены в течение или после 1 октября. Чтобы понять, есть ли у вас такие оповещения, и перенести их, если они имеются, следуйте приведенным ниже инструкциям.
->
-> 
 
 ## <a name="what-is-changing"></a>Изменения
 
 В Azure Monitor (прежнее название — Azure Insights) предоставлялась возможность создать оповещение, которое активировалось событиями управления и отправляло уведомления на URL-адрес веб-перехватчика или адреса электронной почты. Эти оповещения можно было создать одним из следующих способов:
 * На портале Azure для определенных типов ресурсов, выбрав "Мониторинг" > "Оповещения" > "Добавить оповещение" и задав для параметра "Оповещения включены" значение "События".
-* Выполнив командлет PowerShell Add-AzureRmLogAlertRule.
+* С помощью командлета PowerShell Add-AzLogAlertRule
 * Непосредственно, используя [REST API оповещений](https://docs.microsoft.com/rest/api/monitor/alertrules) с odata.type = "ManagementEventRuleCondition" и dataSource.odata.type = "RuleManagementEventDataSource".
  
 Следующий сценарий PowerShell возвращает список всех оповещений о событиях управления, имеющихся в подписке, а также условий, заданных для каждого оповещения.
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 $alerts = $null
-foreach ($rg in Get-AzureRmResourceGroup ) {
-  $alerts += Get-AzureRmAlertRule -ResourceGroup $rg.ResourceGroupName
+foreach ($rg in Get-AzResourceGroup ) {
+  $alerts += Get-AzAlertRule -ResourceGroup $rg.ResourceGroupName
 }
 foreach ($alert in $alerts) {
   if($alert.Properties.Condition.DataSource.GetType().Name.Equals("RuleManagementEventDataSource")) {
@@ -108,7 +107,7 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
 Оповещения о событиях управления, которые были созданы ранее, не будут автоматически перенесены в оповещения журнала действий. Необходимо использовать приведенный выше сценарий PowerShell, чтобы получить список оповещений о событиях управления, настроенных на текущий момент, и вручную воссоздать их в виде оповещений журнала действий. Это необходимо сделать до 1 октября, после чего оповещения о событиях управления больше не будут отображаться в вашей подписке Azure. Другие типы оповещений Azure, включая оповещения о метриках Azure Monitor, оповещения Application Insights и оповещения Log Analytics, это изменение не затрагивает. Если у вас возникли вопросы, добавьте их в комментариях ниже.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [журнале действий](../../azure-monitor/platform/activity-logs-overview.md).
 * Настройте [оповещения журнала действий на портале Azure](../../azure-monitor/platform/activity-log-alerts.md).

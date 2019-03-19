@@ -11,18 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/08/2017
 ms.custom: seodec18
-ms.openlocfilehash: 282a20beb11172aa3a1d2c7326dc38ce8a7acfcf
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.openlocfilehash: fe348daa4613e0b515244686e48ed63a41991d81
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54062661"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58009376"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Создание ресурсов службы "Аналитика временных рядов" с помощью шаблонов Resource Manager
 
 В этой статье описывается, как создать и развернуть ресурсы службы "Аналитика временных рядов" с помощью шаблонов Azure Resource Manager, PowerShell и поставщика ресурсов аналитики временных рядов.
 
 "Аналитика временных рядов" поддерживает такие ресурсы:
+
    | Ресурс | ОПИСАНИЕ |
    | --- | --- |
    | Среда | Среда "Аналитика временных рядов" является логической группой событий, которая считывается из брокеров событий, хранится и предоставляется для запроса. Дополнительные сведения см. в руководстве по [планированию среды "Аналитика временных рядов Azure"](time-series-insights-environment-planning.md). |
@@ -65,7 +66,7 @@ ms.locfileid: "54062661"
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
       "eventHubNamespaceName": {
@@ -116,7 +117,7 @@ ms.locfileid: "54062661"
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "eventHubNamespaceName": {
@@ -268,9 +269,9 @@ Outputs                 :
 Домашняя страница шаблона быстрого запуска на GitHub также содержит кнопку **Развертывание в Azure**. При нажатии на нее открывается страница "Настраиваемое развертывание" на портале Azure. На этой странице можно ввести или выбрать значения для каждого параметра из таблиц [обязательных](time-series-insights-manage-resources-using-azure-resource-manager-template.md#required-parameters) или [необязательных параметров](time-series-insights-manage-resources-using-azure-resource-manager-template.md#optional-parameters). Если нажать кнопку **Приобрести** после заполнения параметров, начнется развертывание шаблона.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-timeseriesinsights-environment-with-eventhub%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
+    <img src="https://azuredeploy.net/deploybutton.png"/>
 </a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о программном управлении ресурсами службы "Аналитика временных рядов" с помощью REST API см. в статье [Time Series Insights Management](https://docs.microsoft.com/rest/api/time-series-insights-management/) (Управление службой "Аналитика временных рядов").

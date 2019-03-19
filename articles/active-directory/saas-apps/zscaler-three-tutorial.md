@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 12/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5739c878812c09a8f2646320df4b1069dfa8810e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: eced1b92aba24c8083cbdc2ece099fab95567db7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189061"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877961"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство. Интеграция Azure Active Directory с Zscaler Three
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство по Интеграция Azure Active Directory с Zscaler Three
 
 Это руководство описывает, как интегрировать Zscaler Three с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56189061"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Zscaler Three, вам потребуется:
 
@@ -134,11 +134,11 @@ ms.locfileid: "56189061"
     
     ![изображение](./common/new_attribute_details.png)
 
-    б) В списке **Источник атрибута** выберите значение атрибута.
+    2. В списке **Источник атрибута** выберите значение атрибута.
 
     c. Нажмите кнопку **ОК**.
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -159,43 +159,43 @@ ms.locfileid: "56189061"
 
 ### <a name="configure-zscaler-three-single-sign-on"></a>Настройка единого входа для Zscaler Three
 
-9. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Three в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Three в качестве администратора.
 
-10. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
+1. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
    
-    ![Администрирование](./media/zscaler-three-tutorial/ic800206.png "Администрирование")
+   ![Администрирование](./media/zscaler-three-tutorial/ic800206.png "Администрирование")
 
-    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
+   a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    б) Нажмите кнопку **Configure SAML** (Настроить SAML).
+   2. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
-11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
+1. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
-    ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
+   ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
     
-    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+   a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    б) В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
+   2. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
-    c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
+   c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    4.3. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+   d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
-    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
+   д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
-    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
+   Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
 
-    ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
+   ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
 
-    i. Выберите команду **Сохранить**.
+   i. Выберите команду **Сохранить**.
 
-12. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
+1. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
 
-    ![Администрирование](./media/zscaler-three-tutorial/ic800207.png)
+   ![Администрирование](./media/zscaler-three-tutorial/ic800207.png)
 
-    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
+   a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    б) Щелкните **Активировать**.
+   2. Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -218,11 +218,11 @@ ms.locfileid: "56189061"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    б) В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
+    2. В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
-    4.3. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
+    d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
@@ -246,8 +246,8 @@ ms.locfileid: "56189061"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

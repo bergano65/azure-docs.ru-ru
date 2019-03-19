@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 02/28/2018
-ms.openlocfilehash: 13a1ed626e7741c90cf902c9ed01911985ca8424
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 5a0fc99052b18dc1fa837147aa914a473d27d832
+ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453449"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57730023"
 ---
 # <a name="configure-ssl-connectivity-in-azure-database-for-postgresql"></a>Настройка SSL-соединения в базе данных Azure для PostgreSQL
 База данных Azure для PostgreSQL предпочитает подключать клиентские приложения к службе PostgreSQL с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -50,65 +50,21 @@ az postgres server update --resource-group myresourcegroup --name mydemoserver -
 ### <a name="download-the-certificate-file-from-the-certificate-authority-ca"></a>Скачивание файла сертификата из центра сертификации 
 Сертификат, необходимый для подключения к серверу базы данных Azure для PostgreSQL по протоколу SSL, находится [здесь](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt). Скачайте файл сертификата и сохраните его локально.
 
-### <a name="download-and-install-openssl-on-your-machine"></a>Скачивание и установка OpenSSL на компьютер 
-Чтобы декодировать файл сертификата, необходимый для безопасного подключения приложения к серверу базы данных, установите на своем локальном компьютере OpenSSL.
+### <a name="install-a-cert-decoder-on-your-machine"></a>Установите средство декодирования сертификата на компьютере 
+Можно использовать [OpenSSL](https://github.com/openssl/openssl) декодировать файл сертификата, необходимый для приложения для безопасного подключения к серверу базы данных. Чтобы узнать, как установить OpenSSL, см. в разделе [инструкции по установке OpenSSL](https://github.com/openssl/openssl/blob/master/INSTALL). 
 
-#### <a name="for-linux-os-x-or-unix"></a>Для Linux, OS X или Unix
-Библиотеки OpenSSL предоставляются в виде исходного кода непосредственно от [OpenSSL Software Foundation](https://www.openssl.org). Приведенные ниже инструкции помогут вам установить OpenSSL на компьютер под управлением Linux. В этой статье используются команды, которые гарантированно поддерживают работу с Ubuntu 12.04 и более поздних версий.
-
-Откройте сеанс терминала и скачайте OpenSSL.
-```bash
-wget http://www.openssl.org/source/openssl-1.1.0e.tar.gz
-``` 
-Извлеките файлы из скачанного пакета.
-```bash
-tar -xvzf openssl-1.1.0e.tar.gz
-```
-Укажите каталог, в который были извлечены файлы. По умолчанию это должен быть каталог, показанный ниже.
-
-```bash
-cd openssl-1.1.0e
-```
-Настройте OpenSSL, выполнив приведенную ниже команду. Если вы хотите, чтобы файлы хранились в папке, отличной от /usr/local/openssl, то укажите соответствующее значение.
-
-```bash
-./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl
-```
-Теперь, когда библиотека OpenSSL настроена должным образом, необходимо скомпилировать ее для преобразования сертификата. Для выполнения компиляции выполните следующую команду.
-
-```bash
-make
-```
-После завершения компиляции можно установить OpenSSL как исполняемый файл, выполнив следующую команду.
-```bash
-make install
-```
-Чтобы убедиться, что компонент OpenSSL успешно установлен в системе, выполните приведенную ниже команду. Убедитесь, чтобы отображаются такие же выходные данные.
-
-```bash
-/usr/local/openssl/bin/openssl version
-```
-В случае успешного выполнения отобразится следующее сообщение:
-```bash
-OpenSSL 1.1.0e 7 Apr 2014
-```
-
-#### <a name="for-windows"></a>Для Windows
-Установить OpenSSL на компьютере Windows можно следующими способами:
-1. **(Рекомендуется.)** При использовании встроенных функций Bash для Windows в Windows 10 и более поздних версиях OpenSSL устанавливается по умолчанию. Инструкции по включению функций Bash для Windows в Windows 10 можно найти [здесь](https://msdn.microsoft.com/commandline/wsl/install_guide).
-2. Можно скачать приложение для Win32 или Win64, предоставляемое сообществом. Хотя OpenSSL Software Foundation не предоставляет и не одобряет какие-либо определенные установщики Windows, [здесь](https://wiki.openssl.org/index.php/Binaries) приводится список доступных установщиков.
 
 ### <a name="decode-your-certificate-file"></a>Декодируйте файл сертификата
 Файл из корневого центра сертификации скачивается в зашифрованном виде. Чтобы декодировать файл сертификата, воспользуйтесь OpenSSL. Для этого выполните следующую команду OpenSSL:
 
-```dos
+```
 openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out root.crt
 ```
 
 ### <a name="connecting-to-azure-database-for-postgresql-with-ssl-certificate-authentication"></a>Подключение к базе данных Azure для PostgreSQL с использованием проверки подлинности на основе SSL-сертификата
-Теперь, когда вы успешно декодировали сертификат, можно безопасно подключиться к серверу базы данных по протоколу SSL. Чтобы выполнить проверку сертификата сервера, необходимо поместить сертификат в файл ~/.postgresql/root.crt в основном каталоге пользователя. (В Microsoft Windows этот файл имеет имя %APPDATA%\postgresql\root.crt). Ниже приводятся инструкции по подключению к базе данных Azure для PostgreSQL.
+Теперь, когда вы успешно декодировали сертификат, можно безопасно подключиться к серверу базы данных по протоколу SSL. Чтобы выполнить проверку сертификата сервера, необходимо поместить сертификат в файл ~/.postgresql/root.crt в основном каталоге пользователя. (В Microsoft Windows этот файл имеет имя %APPDATA%\postgresql\root.crt). 
 
-#### <a name="using-psql-command-line-utility"></a>Использование служебной программы командной строки psql
+#### <a name="connect-using-psql"></a>Подключение с помощью psql
 В следующем примере показано, как подключиться к серверу PostgreSQL с помощью служебной программы командной строки psql, используя созданный файл `root.crt` и параметр `sslmode=verify-ca` или `sslmode=verify-full`.
 
 С помощью интерфейса командной строки PostgreSQL выполните следующую команду:
@@ -128,10 +84,5 @@ Type "help" for help.
 postgres=>
 ```
 
-#### <a name="using-pgadmin-gui-tool"></a>Использование инструмента графического пользовательского интерфейса pgAdmin
-Чтобы pgAdmin 4 мог безопасно подключаться по протоколу SSL, необходимо настроить параметр `SSL mode = Verify-CA` или `SSL mode = Verify-Full`, как показано ниже.
-
-![Снимок экрана pgAdmin: настройка параметра "SSL mode" (Режим SSL) на вкладке "Connection" (Подключение)](./media/concepts-ssl-connection-security/2-pgadmin-ssl.png)
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о вариантах подключения приложений см. в статье [Библиотеки подключений для базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

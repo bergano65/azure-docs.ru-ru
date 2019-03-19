@@ -1,5 +1,5 @@
 ---
-title: Регистрация личного устройства в сети организации — Azure Active Directory | Документация Майкрософт
+title: Регистрировать персональные устройства в корпоративной сети — Azure Active Directory | Документация Майкрософт
 description: Из этой статьи можно узнать, как зарегистрировать персональное устройство в сети организации и как с его помощью получить доступ к ее защищенным ресурсам.
 services: active-directory
 author: eross-msft
@@ -12,13 +12,14 @@ ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: lizross
 ms.reviewer: jairoc
+ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70cae464531dee86f7a4c9ec2396b90787825ec2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 041c8bb6b4de2bbe2cbeb4c1a89e452239ae57bd
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172303"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57439746"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Регистрация персонального устройства в сети организации
 Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации.
@@ -66,7 +67,7 @@ ms.locfileid: "56172303"
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-register-device-on-network/register-device-setup-verify.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После регистрации персонального устройства в сети организации доступ к большинству ресурсов будет открыт.
 
 - Если организации требуется, чтобы вы подключили рабочее устройство, см. статью [Join your work device to your organization's network](user-help-join-device-on-network.md) (Подключение рабочего устройства к сети организации).

@@ -12,19 +12,19 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 7939de5cf45535dc911c25ae8fa8c914a214fa3c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 5aff7e93dcfaa5320be0d6f7d427abcdc88c69e4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55458063"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995822"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Развертывание службы разбиения и объединения, чтобы перемещать данные между сегментированными базами данных
 
 Средство разбиения и объединения перемещает данные между сегментированными базами данных. См. статью [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).
 
 ## <a name="download-the-split-merge-packages"></a>Загрузка пакетов разбиения/объединения
-1. Скачайте последнюю версию NuGet с сайта [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget).
+1. Скачайте последнюю версию NuGet с сайта [NuGet](https://docs.nuget.org/docs/start-here/installing-nuget).
 2. Откройте командную строку и перейдите в каталог, куда вы загрузили nuget.exe. Скачиваемый файл включает команды PowerShell.
 3. Скачайте последний пакет разбиения и объединения в текущем каталоге с помощью приведенной ниже команды:
    ```
@@ -33,7 +33,7 @@ ms.locfileid: "55458063"
 
 Файлы находятся в каталоге **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** , где *x.x.xxx.x* отражает номер версии. Файлы службы разбиения и объединения находятся в подкаталоге **content\splitmerge\service**, а скрипты разбиения и объединения PowerShell (и необходимые библиотеки DLL клиентов) — в подкаталоге **content\splitmerge\powershell**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 1. Создайте базу данных SQL Azure, которая будет использоваться в качестве базы данных состояния разбиения и объединения. Перейдите на [портал Azure](https://portal.azure.com). Создайте новую **Базу данных SQL**. Присвойте базе данных имя и создайте администратор и пароль. Обязательно запишите имя и пароль для последующего использования.
 2. Убедитесь, что сервер баз данных SQL Azure позволяет службам Azure подключиться к нему. На портале в колонке **Параметры брандмауэра** задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.** Щелкните значок «Сохранить».
 3. Создайте учетную запись хранения Azure для вывода диагностических данных.

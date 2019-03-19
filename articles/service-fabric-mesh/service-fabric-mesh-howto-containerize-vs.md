@@ -6,15 +6,15 @@ keywords: контейнеризация сетки service fabric
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/08/2018
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chakdan
-ms.openlocfilehash: bb4aacafaa90f16370bc097b5feab7791def4006
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
-ms.translationtype: HT
+ms.openlocfilehash: cb4e327e1c8c0a653cb94233f568b4847494c439
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56806952"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57779884"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
 
@@ -25,7 +25,7 @@ ms.locfileid: "56806952"
 > [!NOTE]
 > Проекты .NET **Core** сейчас не поддерживаются.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -69,6 +69,6 @@ git clone https://github.com/MikkelHegn/ContainersSFLab.git
 
 Теперь можно опубликовать приложение в сетку Azure Service Fabric.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как опубликовать приложение в Сетке Service Fabric, см. в статье [Руководство. Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).

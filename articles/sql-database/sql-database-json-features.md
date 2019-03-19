@@ -12,15 +12,15 @@ ms.author: jovanpop
 ms.reviewer: ''
 manager: craigg
 ms.date: 01/15/2019
-ms.openlocfilehash: 7e688abbe1b8188cb85e5762086009522b5b7d39
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: 77f6125980c43817230b8a8d4beb32757f23e6c2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332087"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995486"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database"></a>Приступая к работе с функциями JSON в Базе данных SQL Azure
-База данных SQL Azure позволяет анализировать и запрашивать данные, представленные в формате [JSON](http://www.json.org/) (нотация объектов JavaScript), и экспортировать реляционные данные в виде текста JSON. В Базе данных SQL Azure доступны следующие сценарии использования JSON.
+База данных SQL Azure позволяет анализировать и запрашивать данные, представленные в формате [JSON](https://www.json.org/) (нотация объектов JavaScript), и экспортировать реляционные данные в виде текста JSON. В Базе данных SQL Azure доступны следующие сценарии использования JSON.
 - [Преобразование реляционных данных в формат JSON](#formatting-relational-data-in-json-format) с помощью предложения `FOR JSON`
 - [Работа с данными JSON](#working-with-json-data)
 - [Запрос данных JSON](#querying-json-data) с помощью скалярных функций JSON
@@ -187,10 +187,10 @@ END
 ```
 Набор заказов, отформатированный как массив JSON и указанный в качестве параметра хранимой процедуры, можно проанализировать и вставить в таблицу Orders.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как интегрировать JSON в приложение, ознакомьтесь с приведенным ниже материалами.
 
-* [Блог TechNet](https://blogs.technet.microsoft.com/dataplatforminsider/2016/01/05/json-in-sql-server-2016-part-1-of-4/)
+* [Блог TechNet](https://blogs.technet.microsoft.com/dataplatforminsider/20../../json-in-sql-server-2016-part-1-of-4/)
 * [Документация MSDN](https://msdn.microsoft.com/library/dn921897.aspx)
 * [Видео Channel 9](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-JSON-Support)
 

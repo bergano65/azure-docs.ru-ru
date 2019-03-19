@@ -10,12 +10,12 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: slivkins
-ms.openlocfilehash: 2feaa6fa87b6e788683ad543bfb7780b0e517506
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: be9966f5d8e8d94aa3f49aac91b35b105195b108
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55867347"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57552069"
 ---
 # <a name="api"></a>API
 
@@ -44,7 +44,7 @@ API ранжирования использует стандартный шаб�
 > Функцию обратного вызова следует определить перед вызовом API ранжирования.
 
 > [!TIP]
-> Чтобы сократить задержку, API ранжирования выполняется через HTTP, а не HTTPS, как в `http://ds.microsoft.com/api/v2/<appId>/rank/*`.
+> Чтобы сократить задержку, API ранжирования выполняется через HTTP, а не HTTPS, как в `https://ds.microsoft.com/api/v2/<appId>/rank/*`.
 > Тем не менее, конечная точка HTTPS должна использоваться, если первая страница обслуживается через HTTPS.
 
 Когда параметры не используются, ответ HTTP от API ранжирования — это строка в формате JSONP:

@@ -5,17 +5,17 @@ description: Управление доступом к рабочим облас�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: f792c2b23c8d36225b4c05cf7a334721bd08272a
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: a947f9a94dd4ceed624e6b04a671b21b8926d25e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269031"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58080749"
 ---
 # <a name="manage-an-azure-machine-learning-studio-workspace"></a>Управление рабочей областью Студии машинного обучения Azure
 
@@ -48,5 +48,5 @@ ms.locfileid: "56269031"
 > 
 >Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [развертывании машинного обучения с использованием шаблонов Azure Resource Manager](deploy-with-resource-manager-template.md). 

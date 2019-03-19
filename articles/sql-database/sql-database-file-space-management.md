@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, carlrab
 manager: craigg
-ms.date: 02/11/2019
-ms.openlocfilehash: 32cfb108964d67f865b1d03ffa745eb468feeea7
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 043ceb6c46155ed169c080d08f37688b47e3e4b9
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56110155"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57881169"
 ---
 # <a name="manage-file-space-for-single-and-pooled-databases-in-azure-sql-database"></a>Управление файловым пространством отдельной базы данных или базы данных в составе пула Базы данных SQL Azure
 
@@ -27,6 +27,10 @@ ms.locfileid: "56110155"
 > Эта статья не относится к параметру развертывания управляемого экземпляра Базы данных SQL Azure.
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 В отдельной базе данных или базе данных в составе пула Базы данных SQL Azure существуют шаблоны рабочей нагрузки, в которых распределение базовых файлов для баз данных может превысить объем используемых страниц данных. Это может произойти, когда используемое пространство увеличивается, а данные затем удаляются. Это объясняется тем, что выделенное файловое пространство автоматически не освобождается.
 
@@ -40,7 +44,7 @@ ms.locfileid: "56110155"
 
 Большинство метрик дискового пространства, отображаемых на портале Azure, и следующие API-интерфейсы измеряют только размер используемых страниц данных:
 
-- API метрик на основе Azure Resource Manager, включая PowerShell [get-metrics](https://docs.microsoft.com/powershell/module/azurerm.insights/get-azurermmetric).
+- API метрик на основе Azure Resource Manager, включая PowerShell [get-metrics](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetric).
 - T-SQL: [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database).
 
 Тем не менее следующие API-интерфейсы также измеряют размер пространства, выделяемого для баз данных и эластичных пулов:
@@ -162,7 +166,7 @@ $userName = "name"
 $password = "password"
 
 # Get list of databases in elastic pool
-$databasesInPool = Get-AzureRmSqlElasticPoolDatabase `
+$databasesInPool = Get-AzSqlElasticPoolDatabase `
     -ResourceGroupName $resourceGroupName `
     -ServerName $serverName `
     -ElasticPoolName $poolName
@@ -237,13 +241,13 @@ DBCC SHRINKDATABASE (N'db1')
 ALTER DATABASE [db1] SET AUTO_SHRINK ON
 ```
 
-Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=sql-server-2017). 
+Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current). 
 
 ### <a name="rebuild-indexes"></a>Перестроение индексов
 
 После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о максимальных размерах базы данных см. в статьях:
   - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)

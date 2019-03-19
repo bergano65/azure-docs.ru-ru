@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: b0cd20278287b41dd953c64044b705aa2dba7557
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
-ms.translationtype: HT
+ms.openlocfilehash: a8856bd46f516aa3c64965648d4f23b9ba665b1b
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52318983"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56820031"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "52318983"
 
 Если виртуальная машина подключена к сети и доступна для другой виртуальной машины в той же виртуальной сети, проблемы можно устранить с помощью второй виртуальной машины.
 
-#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Расширение пользовательских скриптов или функция "Выполнить команду"
+#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Пользовательские функции расширение скрипта или выполнить команду
 
 Если у вас есть работающий агент Azure, можно применить [расширение пользовательских скриптов](../extensions/custom-script-windows.md) или функцию [Выполнить команду](../windows/run-command.md) (только для виртуальных машин Resource Manager), чтобы удаленно выполнить следующие скрипты.
 
@@ -54,7 +54,7 @@ ms.locfileid: "52318983"
 >   ```
 >   Но сеанс удаленного подключения будет принудительно разорван, когда политика будет применена повторно. Постоянным решением этой проблемы является изменение политики, примененной к затронутому компьютеру.
 
-#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
+#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
 
 1.  Подключитесь к любой виртуальной машине, которая находится в той же виртуальной сети, что и виртуальная машина, к которой не удается создать RDP-подключение.
 
@@ -70,9 +70,9 @@ ms.locfileid: "52318983"
     ```
 
 > [!Note]
-> Если брандмауэр настроен через объект групповой политики, описанный метод может не работать, так как эта команда изменяет только записи в локальном реестре. Если настроена политика, она переопределит это изменение. 
+> Если брандмауэр задается с помощью объекта групповой политики, этот метод может не работать, так как эта команда изменяет только записи в локальном реестре. Если настроена политика, она переопределит это изменение. 
 
-#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
+#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
 
 1.  На виртуальной машине для устранения неполадок скачайте средство [PSTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
 
@@ -86,7 +86,7 @@ ms.locfileid: "52318983"
     psservice restart mpssvc
     ```
 
-#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр 
+#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр 
 
 Ниже приведены инструкции по использованию [удаленного реестра](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry).
 

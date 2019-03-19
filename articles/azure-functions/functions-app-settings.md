@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 8b364e2a51db8ee8d97fc981ac3df0d1fa5650ef
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: d49a6f88f3475359a74be74bf528fb5699dce632
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037078"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57860658"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -122,7 +122,7 @@ ms.locfileid: "54037078"
 
 ## <a name="functionsworkerruntime"></a>FUNCTIONS\_WORKER\_RUNTIME
 
-Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения: `dotnet` (C# или F#), `node` (JavaScript) и `java` (Java).
+Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения: `dotnet` (C#/F#), `node` (JavaScript/TypeScript), `java` (Java), и `python` (Python).
 
 |Ключ|Образец значения|
 |---|------------|
@@ -215,7 +215,7 @@ ms.locfileid: "54037078"
 |false|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте, как обновлять параметры приложения](functions-how-to-use-azure-function-app-settings.md#manage-app-service-settings)
 

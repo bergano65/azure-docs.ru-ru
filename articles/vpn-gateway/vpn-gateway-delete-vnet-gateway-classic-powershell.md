@@ -1,5 +1,5 @@
 ---
-title: Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель Azure) | Документация Майкрософт
+title: 'Удаление шлюза виртуальной сети. PowerShell: Классическая модель Azure | Документация Майкрософт'
 description: Удаление шлюза виртуальной сети с помощью PowerShell в классической модели развертывания.
 services: vpn-gateway
 documentationcenter: na
@@ -10,17 +10,17 @@ tags: azure-service-management
 ms.assetid: ''
 ms.service: vpn-gateway
 ms.devlang: na
-ms.topic: ''
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/11/2017
 ms.author: cherylmc
-ms.openlocfilehash: 2c92db96820b9796ba2c952affcb3b3eef5b985e
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
-ms.translationtype: HT
+ms.openlocfilehash: ca014e4f5fbc4a5695dbc5fedc85826c71a2a906
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49319852"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57767776"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
 
@@ -56,7 +56,7 @@ Add-AzureAccount
 Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ```
 
-Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя может выглядеть примерно следующим образом: Group ClassicRG1 ClassicVNet1. Имена виртуальных сетей перечислены как **VirtualNetworkSite name =**. При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
+Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя будет иметь следующий вид: «Группа ClassicRG1 ClassicVNet1.» Имена виртуальных сетей перечислены как **VirtualNetworkSite name =**. При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
 
 ## <a name="delete"></a>Шаг 3. Удаление шлюза виртуальной сети
 

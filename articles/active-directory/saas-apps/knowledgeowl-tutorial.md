@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 04/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32f53742de3242fb3b60a15d436ec6cd842aa429
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: c8c86ad6e4b11f21c648083fac35e15eec7658c1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184002"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57995512"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-knowledgeowl"></a>Руководство. Интеграция Azure Active Directory с KnowledgeOwl
 
@@ -35,7 +35,7 @@ ms.locfileid: "56184002"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с KnowledgeOwl, вам потребуется:
 
@@ -110,13 +110,15 @@ ms.locfileid: "56184002"
     ![Сведения о домене и URL-адресах единого входа для приложения KnowledgeOwl](./media/knowledgeowl-tutorial/tutorial_knowledgeowl_url.png)
 
     a. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате.
+
     |||
     |-|-|
     | `https://app.knowledgeowl.com/sp`|
     | `https://app.knowledgeowl.com/sp/id/<unique ID>`|
     |||
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+
     |||
     |-|-|
     | `https://subdomain.knowledgeowl.com/help/saml-login`|
@@ -132,6 +134,7 @@ ms.locfileid: "56184002"
     ![Сведения о домене и URL-адресах единого входа для приложения KnowledgeOwl](./media/knowledgeowl-tutorial/tutorial_knowledgeowl_url1.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     |||
     |-|-|
     | `https://subdomain.knowledgeowl.com/help/saml-login`|
@@ -161,7 +164,7 @@ ms.locfileid: "56184002"
 
     ![Настройка единого входа](./media/knowledgeowl-tutorial/tutorial_attribute_05.png)
 
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -185,29 +188,29 @@ ms.locfileid: "56184002"
 
 1. Выберите **Параметры** и затем **Безопасность**.
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure1.png)
+     ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure1.png)
 
 1. Прокрутите вниз до раздела **SAML SSO Integration** (Интеграция единого входа SAML) и выполните следующие действия:
     
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure2.png)
+     ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure2.png)
 
-    a. Выберите **Enable SAML SSO** (Включить единый вход SAML).
+     a. Выберите **Enable SAML SSO** (Включить единый вход SAML).
 
-    б) Скопируйте значение **SP Entity ID** (Идентификатор сущности SP) и вставьте его в поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
+     2. Скопируйте значение **SP Entity ID** (Идентификатор сущности SP) и вставьте его в поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
 
-    c. Скопируйте значение **SP Login URL** (URL-адрес входа SP) и вставьте его в текстовые поля **"URL-адрес для входа" и "URL-адрес ответа"** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
+     c. Скопируйте значение **SP Login URL** (URL-адрес входа SP) и вставьте его в текстовые поля **"URL-адрес для входа" и "URL-адрес ответа"** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
 
-    4.3. В текстовое поле **IdP entityID** (Идентификатор сущности для поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+     d. В текстовое поле **IdP entityID** (Идентификатор сущности для поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    д. В текстовое поле **IdP Login URL** (URL-адрес входа для поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+     д. В текстовое поле **IdP Login URL** (URL-адрес входа для поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    Е. В текстовое поле **IdP Logout URL** (URL-адрес выхода для поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+     Е. В текстовое поле **IdP Logout URL** (URL-адрес выхода для поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    ж. Отправьте скачанный сертификат с портала Azure, выбрав **Upload IdP Certificate** (Отправить сертификат поставщика удостоверений).
+     ж. Отправьте скачанный сертификат с портала Azure, выбрав **Upload IdP Certificate** (Отправить сертификат поставщика удостоверений).
 
-    h. Выберите **Map SAML Attributes** (Сопоставить атрибуты SAML), чтобы сопоставить атрибуты, и выполните следующие действия:
+     h. Выберите **Map SAML Attributes** (Сопоставить атрибуты SAML), чтобы сопоставить атрибуты, и выполните следующие действия:
     
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure3.png)
+     ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure3.png)
 
     * Введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ssoid` в текстовом поле **SSO ID** (Идентификатор единого входа).
     * Введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` в текстовом поле **Username/Email** (Имя пользователя/электронная почта).
@@ -215,9 +218,9 @@ ms.locfileid: "56184002"
     * Введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` в текстовом поле **Last Name** (Фамилия).
     * Нажмите кнопку **Сохранить**
 
-    i. В нижней части страницы нажмите кнопку **Сохранить** .
+      i. В нижней части страницы нажмите кнопку **Сохранить** .
 
-    ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure4.png)
+      ![Конфигурация KnowledgeOwl](./media/knowledgeowl-tutorial/configure4.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -249,7 +252,7 @@ ms.locfileid: "56184002"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-knowledgeowl-test-user"></a>Создание тестового пользователя KnowledgeOwl
 

@@ -10,12 +10,12 @@ ms.subservice: consume
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: c45c40f6244f76f15e98369b89d4c9a5b9e537aa
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 0e82c1887cb096c7c95ad7e1cbbc1d76962f7831
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473754"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58000440"
 ---
 # <a name="sql-data-warehouse-data-integration-partners"></a>Партнеры по интеграции данных хранилища данных SQL
 Для создания собственного решения для хранилища данных можно воспользоваться одним из широкого спектра лучших в отрасли инструментов. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают решения интеграции данных для хранилища данных SQL Azure.
@@ -26,12 +26,12 @@ ms.locfileid: "55473754"
 | ![Alteryx][1] |**Alteryx**<br>  Alteryx Designer предоставляет повторяемый рабочий процесс для самостоятельного анализа данных, который позволяет лучше понять данные за считанные часы, а не недели, как предлагают традиционные подходы. Alteryx Designer расширяет возможности аналитиков, объединяя подготовку, смешение и анализ данных (прогнозный, статистический и пространственный) с помощью интуитивно понятного пользовательского интерфейса. |[Marketplace][alteryx_marketplace]<br>[Веб-сайт][alteryx_designer_website]<br>[Технический документ][alteryx_whitepaper]<br>[Таблица][alteryx_designer_datasheet]<br>[Twitter][alteryx_designer_twitter]<br>[YouTube][alteryx_designer_youtube] |[![Видео об Alteryx](./media/sql-data-warehouse-partner-data-integration/alteryx_designer_video.jpg)](https://www.youtube.com/watch?v=CdqSDPyNDKc) |
 | ![Attunity][2] |**Attunity**<br>Attunity CloudBeam предлагает автоматическое и оптимизированное решение для загрузки данных в хранилище данных SQL. Решение упрощает и ускоряет загрузку пакетной службы, а также добавочную репликацию из разнородных универсальных баз данных, включая SQL Server, Oracle, DB2, Sybase и mySQL. |[Marketplace][attunity_marketplace]<br>[Быстрый запуск][attunity_quickstart]<br>[Веб-сайт][attunity_cloudbeam_website]<br>[Таблица][attunity_cloudbeam_datasheet]<br>[Twitter][attunity_cloudbeam_twitter]<br>[YouTube][attunity_cloudbeam_youtube] |[![Видео об Attunity](./media/sql-data-warehouse-partner-data-integration/attunity_video.jpg)](https://www.youtube.com/watch?v=w14zuSjMlok) |
 | ![Bryte Systems][3] |**Bryte Systems**<br>Bryte Systems автоматизирует перенос данных в хранилище данных SQL из разных баз данных и источников. Bryte Systems специализируется на переносе данных и технологиях интеграции. Компания создает облачные хранилища данных и пулы данных для анализа. |[Веб-сайт][bryte_systems_azure_website] | |
-| ![Informatica][4] |**Informatica Cloud Services for Azure – Pay-As-You-Go**<br> Оптимизируйте ценность служб Azure и получите практические сведения из всех своих гибридных наборов данных, воспользовавшись решением Informatica Cloud Services for Azure – Pay-As-You-Go. Informatica Cloud предлагает лучшее в своем классе решение для интеграции данных, облачной аналитики, интеграции приложений и управления данными. Благодаря возможности самостоятельно переносить, интегрировать данные и управлять ими, клиенты могут быстро и безопасно импортировать, экспортировать, синхронизировать и планировать в Azure петабайты данных из различных источников, в том числе приложений SaaS, озер данных на основе Hadoop и других локальных источников данных (Oracle, SAP). Informatica Cloud Services for Azure предоставляет собственные высокопроизводительные подключения к хранилищу данных SQL Azure, Базе данных SQL, хранилищу BLOB-объектов, Data Lake Store и Azure Cosmos DB. |[Marketplace][informatica_Cloud_Services_marketplace]<br>[Бесплатная пробная версия][informatica_cloud_free_trial]<br>[Руководство по настройке][informatica_cloud_services_config]<br>[Веб-сайт][informatica_Cloud_Services_website]<br>[Twitter][informatica_cloud_twitter]<br>[YouTube][informatica_cloud_youtube] | |
+| ![Informatica][4] |**Informatica Cloud Services for Azure – Pay-As-You-Go**<br> Оптимизируйте ценность служб Azure и получите практические сведения из всех своих гибридных наборов данных, воспользовавшись решением Informatica Cloud Services for Azure – Pay-As-You-Go. Informatica Cloud предлагает лучшее в своем классе решение для интеграции данных, облачной аналитики, интеграции приложений и управления данными. С переноса данных самообслуживания, интеграции и управления возможности клиенты могут быстро и надежно импортировать, экспортировать, синхронизировать и запланировать петабайт данных в Azure из различных источников, таких как приложения SaaS, озер данных на основе Hadoop и другие локальными источниками данных (Oracle, SAP). Informatica Cloud Services for Azure предоставляет собственные высокопроизводительные подключения к хранилищу данных SQL Azure, Базе данных SQL, хранилищу BLOB-объектов, Data Lake Store и Azure Cosmos DB. |[Marketplace][informatica_Cloud_Services_marketplace]<br>[Бесплатная пробная версия][informatica_cloud_free_trial]<br>[Руководство по настройке][informatica_cloud_services_config]<br>[Веб-сайт][informatica_Cloud_Services_website]<br>[Twitter][informatica_cloud_twitter]<br>[YouTube][informatica_cloud_youtube] | |
 | ![Informatica][4] |**Informatica PowerCenter**<br>Informatica — один из наиболее узнаваемых независимых поставщиков программного обеспечения для интеграции данных в мире. PowerCenter формирует фундамент для всех инициатив по интеграции данных. Используйте PowerCenter для аналитики и хранения данных, миграции приложений, консолидации или управления данными. |[Marketplace][informatica_PowerCenter_byol]<br>[Веб-сайт][informatica_PowerCenter_website]<br>[Таблица][informatica_powercenter_datasheet]<br>[Twitter][informatica_powercenter_twitter]<br>[YouTube][informatica_powercenter_youtube] | |
 | ![Redgate][5] |**Redgate Data Platform Studio (Preview)**<br>Data Platform Studio от Redgate предоставляет простой и надежный способ переноса локальных баз данных SQL в хранилище данных SQL Azure. Это решение разработано для принятия интеллектуальных решений по полной автоматизации миграции и может свободно использоваться для одноразовых миграций. |[Веб-сайт][redgate_website]<br>[Twitter][redgate_twitter]<br>[YouTube][redgate_youtube] |[![Видео о Redgate](./media/sql-data-warehouse-partner-data-integration/redgate_video.jpg)](https://www.youtube.com/watch?v=IR9HNvnU46s) |
 | ![SnapLogic][6] |**SnapLogic**<br>Платформа SnapLogic позволяет выполнять быстрый перенос данных в хранилище данных SQL Microsoft Azure и из него. SnapLogic обеспечивает возможность интеграции в одном решении сотен разных приложений, служб и сценариев IoT. Воспользуйтесь SnapLogic и делайте более точный и эффективный анализ в облаке, локально или в гибридной модели! |[Marketplace][snaplogic_marketplace]<br>[Веб-сайт][snaplogic_website]<br>[Таблица][snaplogic_datasheet]<br>[Twitter][snaplogic_twitter]<br>[YouTube][snaplogic_youtube] |[![Видео о SnapLogic](./media/sql-data-warehouse-partner-data-integration/snaplogic_video.jpg)](https://www.youtube.com/watch?v=YiJCwObOh5Y) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о других партнерах см. в статьях [Партнеры по бизнес-аналитике хранилища данных SQL][bi_partners] и [Партнеры по управлению данными хранилища данных SQL][dm_partners].
 
 <!--Image references-->
@@ -54,7 +54,7 @@ ms.locfileid: "55473754"
 [informatica_cloud_services_config]:https://kb.informatica.com/proddocs/Product%20Documentation/6/IC_Spring2017_MicrosoftAzure[SQL]DataWarehouseConnectorGuide_en.pdf
 
 <!--Datasheet Links-->
-[alteryx_designer_datasheet]:http://www.alteryx.com/sites/default/files/resources/files/alt-designer-ds.pdf
+[alteryx_designer_datasheet]:https://www.alteryx.com/sites/default/files/resources/files/alt-designer-ds.pdf
 [attunity_cloudbeam_datasheet]:http://www.attunity.com/sites/default/files/content/attunity-azure-solution-sheet.pdf
 
 <!--[bryte_systems_azure_datasheet]:-->
@@ -62,15 +62,15 @@ ms.locfileid: "55473754"
 <!--[informatica_cloud_datasheet]:https://www.informatica.com/content/dam/informatica-com/global/amer/us/collateral/data-sheet/cloud-integration-platform_data-sheet_2711.pdf-->
 
 [informatica_powercenter_datasheet]:https://www.informatica.com/content/dam/informatica-com/global/amer/us/collateral/brochure/powercenter_brochure_6659.pdf
-[snaplogic_datasheet]:http://campaigns.snaplogic.com/rs/055-FYJ-916/images/SnapLogic-for-Microsoft-Cortana.pdf
+[snaplogic_datasheet]:https://campaigns.snaplogic.com/rs/055-FYJ-916/images/SnapLogic-for-Microsoft-Cortana.pdf
 
 <!--Free Trial-->
 [informatica_cloud_free_trial]:https://www.informatica.com/products/cloud-integration/connectivity/microsoft-azure-connector.html
 
 <!--Website Links -->
-[alteryx_designer_website]:http://www.alteryx.com/partners/microsoft/
+[alteryx_designer_website]:https://www.alteryx.com/partners/microsoft/
 [attunity_cloudbeam_website]:http://www.attunity.com/attunity-cloudbeam-for-azure/
-[bryte_systems_azure_website]:http://www.bryteflow.com/
+[bryte_systems_azure_website]:https://www.bryteflow.com/
 [informatica_Cloud_Services_website]:https://www.informatica.com/products/cloud-integration.html
 [informatica_PowerCenter_website]:https://www.informatica.com/products/data-integration/powercenter.html
 [redgate_website]:http://dataplatformstudio.com/
@@ -101,7 +101,7 @@ ms.locfileid: "55473754"
 
 [alteryx_designer_press]:https://www.alteryx.com/press-releases/alteryx-now-enables-data-analysts-to-perform-in-database-blending-in-microsoft-azure 
 [attunity_cloudbeam_press]:http://www.attunity.com/news/attunity-launches-cloud-data-warehouse-solutions-microsoft-azure
-[bryte_systems_azure_press]:http://medianet.com.au/releases/release-details?id=837667
+[bryte_systems_azure_press]:https://medianet.com.au/releases/release-details?id=837667
 
 <!--[informatica_Cloud_Services_press]:-->
 <!--[informatica_PowerCenter_press]:-->
@@ -136,4 +136,4 @@ ms.locfileid: "55473754"
 
 <!--WhitePaper-->
 
-[alteryx_whitepaper]:http://pages.alteryx.com/Microsoft-Azure-InDB-WP?lsm=microsoft
+[alteryx_whitepaper]:https://pages.alteryx.com/Microsoft-Azure-InDB-WP?lsm=microsoft

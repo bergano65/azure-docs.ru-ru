@@ -6,14 +6,14 @@ manager: timlt
 ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 02/08/2019
+ms.date: 03/08/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9d15174bc777b20eb7f3988dc33be15c46b1cc43
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: 81efd9dc5d33ed23574b1cb66f26ccb444d5a3ff
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098142"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58180540"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
 
@@ -26,7 +26,7 @@ ms.locfileid: "56098142"
 
 [!INCLUDE [iot-solution-accelerators-create-device](../../includes/iot-solution-accelerators-create-device.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве показано, как создавать пользовательские типы имитированных устройств и проверять их, запустив микрослужбу имитации устройств в локальной среде.
 

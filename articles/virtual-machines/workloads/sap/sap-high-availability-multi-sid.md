@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05fda1b4f71f67714b4723e15533d3555d497249
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.openlocfilehash: e5d8357d17f8a6b463546789dd4627b74924a763
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321676"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58081004"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -55,7 +55,7 @@ ms.locfileid: "54321676"
 В этой статье основное внимание уделяется переходу от отдельной установки ASCS/SCS к конфигурации SAP с несколькими ИД безопасности с помощью установки дополнительных кластеризованных экземпляров SAP ASCS/SCS в существующем отказоустойчивом кластере Windows Server (WSFC). Выполнив эти действия, вы настроите кластер SAP с несколькими ИД безопасности.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Необходимо настроить кластер WSFC, используемый для одного экземпляра SAP ASCS/SCS, как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide] и как показано на этой диаграмме:
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -114,7 +114,7 @@ ms.locfileid: "54321676"
 Вы можете создать запись DNS для имени виртуального узла экземпляра ASCS/SCS с использованием следующих параметров.
 
 | Новое имя виртуального узла SAP ASCS/SCS | Связанный IP-адрес |
-| --- | --- | --- |
+| --- | --- |
 |pr5-sap-cl |10.0.0.50 |
 
 Новое имя узла и IP-адрес отображаются в диспетчере DNS, как показано на следующем снимке экрана:
@@ -267,7 +267,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 10. [Тестирование отработки отказа экземпляра SAP ASCS/SCS и репликации SIOS][sap-ha-guide-10].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

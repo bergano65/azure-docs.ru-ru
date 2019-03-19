@@ -8,12 +8,12 @@ ms.author: jejiang
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 11/22/2017
-ms.openlocfilehash: 53859f5a81cf1d797ec93e83d75df5a329590dce
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
-ms.translationtype: HT
+ms.openlocfilehash: 6c234ad6756f4e65e172bf0ffc0ae5a1d35d109b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051638"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58087488"
 ---
 # <a name="develop-u-sql-with-python-r-and-c-for-azure-data-lake-analytics-in-visual-studio-code"></a>Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
 Сведения об использовании Visual Studio Code (VSCode) для записи кода программной части Python, R и C# с помощью U-SQL и отправки заданий в службу Azure Data Lake. Дополнительные сведения об использовании Средств Azure Data Lake для VSCode см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
@@ -30,10 +30,10 @@ ms.locfileid: "43051638"
 3. Выберите **Установка расширений U-SQL**. 
 4. После установки расширений U-SQL отображается сообщение с подтверждением. 
 
-  ![Настройка среды для Python и R](./media/data-lake-analytics-data-lake-tools-for-vscode/setup-the-enrionment-for-python-and-r.png)
+   ![Настройка среды для Python и R](./media/data-lake-analytics-data-lake-tools-for-vscode/setup-the-enrionment-for-python-and-r.png)
 
-  > [!Note]
-  > Установите расширения VSCode для Python и R, чтобы получить все возможности при использовании языковых служб Python и R. 
+   > [!Note]
+   > Установите расширения VSCode для Python и R, чтобы получить все возможности при использовании языковых служб Python и R. 
 
 ## <a name="develop-python-file"></a>Разработка файла Python
 1. В рабочей области щелкните **Создать файл**.
@@ -58,7 +58,7 @@ ms.locfileid: "43051638"
         USING Outputters.Csv();
     ```
     
-3. Щелкните файл сценария правой кнопкой мыши и выберите параметр **ADL: Generate Python Code Behind File** (ADL: создать файл с выделенным кодом Python). 
+3. Щелкните правой кнопкой мыши файл скрипта, а затем выберите **ADL: Создать файл с выделенным кодом Python**. 
 4. В рабочей области будет создан файл **xxx.usql.py**. Запишите свой код в файл Python. Ниже приведен пример кода.
 
     ```Python
@@ -115,7 +115,7 @@ ms.locfileid: "43051638"
     TO @OutputFilePredictions
     USING Outputters.Tsv();
     ```
-3. Щелкните файл **USQL** правой кнопкой мыши и выберите **ADL: Generate CS Code Behind File** (ADL: создать файл с выделенным кодом R). 
+3. Щелкните правой кнопкой мыши в **USQL** файл, а затем выберите **ADL: Создать файл с выделенным кодом R**. 
 4. В рабочей области будет создан файл **xxx.usql.r**. Запишите свой код в файл R. Ниже приведен пример кода.
 
     ```R
@@ -125,7 +125,7 @@ ms.locfileid: "43051638"
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
 ## <a name="develop-c-file"></a>Разработка файла C#
-Файл с выделенным кодом является файлом C#, который связан с одним скриптом U-SQL. В файле с выделенным кодом можно определить скрипт, который относится к UDO, UDA, UDT и UDF. Все эти объекты можно будет напрямую использовать в скрипте, не регистрируя для них сборку. Файл с выделенным кодом помещается в ту же папку, что и связанный с ним файл скрипта U-SQL. Например, для скрипта с именем xxx.usql, файл Code Behind будет иметь имя xxx.usql.cs. Если вручную удалить файл с выделенным кодом, функция выделенного кода будет отключена для связанного с ним скрипта U-SQL. Дополнительные сведения о написании пользовательского кода для скриптов U-SQL можно найти в записи блога [Writing and Using Custom Code in U-SQL – User-Defined Functions]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/) (Написание и использование пользовательского кода в U-SQL — определяемые пользователем функции).
+Файл с выделенным кодом является файлом C#, который связан с одним скриптом U-SQL. В файле с выделенным кодом можно определить скрипт, который относится к UDO, UDA, UDT и UDF. Все эти объекты можно будет напрямую использовать в скрипте, не регистрируя для них сборку. Файл с выделенным кодом помещается в ту же папку, что и связанный с ним файл скрипта U-SQL. Например, для скрипта с именем xxx.usql, файл Code Behind будет иметь имя xxx.usql.cs. Если вручную удалить файл с выделенным кодом, функция выделенного кода будет отключена для связанного с ним скрипта U-SQL. Дополнительные сведения о написании пользовательского кода для скриптов U-SQL, см. в разделе [, записи и с помощью пользовательского кода в U-SQL: Определяемые пользователем функции]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/).
 
 1. В рабочей области щелкните **Создать файл**.
 2. Запишите свой код в файл U-SQL. Ниже приведен пример кода.
@@ -157,7 +157,7 @@ ms.locfileid: "43051638"
         TO @"/output/SearchLogtest.txt" 
         USING Outputters.Tsv();
     ```
-3. Щелкните файл **USQL** правой кнопкой мыши и выберите **ADL: Generate CS Code Behind File** (ADL: создать файл с выделенным кодом CS). 
+3. Щелкните правой кнопкой мыши в **USQL** файл, а затем выберите **ADL: Создать файл с выделенным кодом CS**. 
 4. В рабочей области будет создан файл **xxx.usql.cs**. Запишите свой код в файл CS. Ниже приведен пример кода.
 
     ```CS
@@ -178,7 +178,7 @@ ms.locfileid: "43051638"
     ```
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 * [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 * [Приступая к работе с аналитикой озера данных с помощью PowerShell](data-lake-analytics-get-started-powershell.md)

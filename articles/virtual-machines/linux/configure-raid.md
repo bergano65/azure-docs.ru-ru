@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/02/2017
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: 2bced71a7211907e0e517e47c4f5d301d4a56f56
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: e773fdcb031f0f8f896ea40d76231fd54a603dc4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457417"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58089035"
 ---
 # <a name="configure-software-raid-on-linux"></a>Настройка программного RAID-массива в Linux
 Это обычный сценарий для использования программного RAID-массива на виртуальных машинах Linux в Azure, который позволяет представить множество дисков данных в виде одного RAID-устройства. Обычно это делается для повышения производительности и обеспечения возможности увеличения пропускной способности по сравнению с использованием только одного диска.
@@ -31,20 +31,20 @@ ms.locfileid: "55457417"
 
 ## <a name="install-the-mdadm-utility"></a>Установка служебной программы mdadm
 * **Ubuntu**
-```bash
-sudo apt-get update
-sudo apt-get install mdadm
-```
+  ```bash
+  sudo apt-get update
+  sudo apt-get install mdadm
+  ```
 
 * **CentOS и Oracle Linux**
-```bash
-sudo yum install mdadm
-```
+  ```bash
+  sudo yum install mdadm
+  ```
 
 * **SLES и openSUSE**
-```bash  
-zypper install mdadm
-```
+  ```bash  
+  zypper install mdadm
+  ```
 
 ## <a name="create-the-disk-partitions"></a>Создание дисковых разделов
 В этом примере мы создаем один дисковый раздел в /dev/sdc. Новый дисковый раздел будет назван /dev/sdc1.
@@ -128,7 +128,7 @@ zypper install mdadm
     sudo mkfs -t ext4 /dev/md127
     ```
    
-    b. **SLES 11**
+    2. **SLES 11**
 
     ```bash
     sudo mkfs -t ext3 /dev/md127
