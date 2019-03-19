@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 97cdae49b4676500e29ac25b12712c94e575e5f8
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.openlocfilehash: 5e6a44018cde84067a4c16c9d3d62227733f6658
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55960571"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58075584"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -93,8 +93,8 @@ ms.locfileid: "55960571"
 
     ![Пример: общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
 
-  - **Всего**. Это общее место в байтах, доступное в общем ресурсе. Это пространство используется для данных и метаданных, обрабатываемых службами хранения.
-  - **Используется**. Это объем данных в байтах, используемый всеми экстентами из файлов, в которых хранятся данные клиента и связанные метаданные.
+   - **Всего**. Это общее место в байтах, доступное в общем ресурсе. Это пространство используется для данных и метаданных, обрабатываемых службами хранения.
+   - **Используется**. Это объем данных в байтах, используемый всеми экстентами из файлов, в которых хранятся данные клиента и связанные метаданные.
 
 ### <a name="storage-space-alerts"></a>Оповещения о дисковом пространстве
 При использовании портала администрирования можно получать оповещения об общих ресурсах, в которых мало места.
@@ -140,64 +140,64 @@ ms.locfileid: "55960571"
 
 #### <a name="to-migrate-containers-using-powershell"></a>Перенос контейнеров с помощью PowerShell
 1. Проверьте, [установлена и настроена ли среда Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/). Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](https://go.microsoft.com/fwlink/?LinkId=394767).
-2.  Изучите контейнер, чтобы понять, какие данные находятся в общем ресурсе, который планируется перенести. Чтобы определить наиболее подходящие для переноса контейнеры в томе, используйте командлет **Get-AzsStorageContainer**:
+2. Изучите контейнер, чтобы понять, какие данные находятся в общем ресурсе, который планируется перенести. Чтобы определить наиболее подходящие для переноса контейнеры в томе, используйте командлет **Get-AzsStorageContainer**:
 
-    ```PowerShell  
-    $farm_name = (Get-AzsStorageFarm)[0].name
-    $shares = Get-AzsStorageShare -FarmName $farm_name
-    $containers = Get-AzsStorageContainer -ShareName $shares[0].ShareName -FarmName $farm_name
-    ```
-    Затем проверьте значение $containers:
+   ```PowerShell  
+   $farm_name = (Get-AzsStorageFarm)[0].name
+   $shares = Get-AzsStorageShare -FarmName $farm_name
+   $containers = Get-AzsStorageContainer -ShareName $shares[0].ShareName -FarmName $farm_name
+   ```
+   Затем проверьте значение $containers:
 
-    ```PowerShell
-    $containers
-    ```
+   ```PowerShell
+   $containers
+   ```
 
-    ![Пример. $Containers](media/azure-stack-manage-storage-shares/containers.png)
+   ![Пример. $Containers](media/azure-stack-manage-storage-shares/containers.png)
 
-3.  Определите наиболее подходящие общие ресурсы назначения для хранения контейнера, который переносится:
+3. Определите наиболее подходящие общие ресурсы назначения для хранения контейнера, который переносится:
 
-    ```PowerShell
-    $destinationshares = Get-AzsStorageShare -SourceShareName
-    $shares[0].ShareName -Intent ContainerMigration
-    ```
+   ```PowerShell
+   $destinationshares = Get-AzsStorageShare -SourceShareName
+   $shares[0].ShareName -Intent ContainerMigration
+   ```
 
-    Затем проверьте значение $destinationshares:
+   Затем проверьте значение $destinationshares:
 
-    ```PowerShell 
-    $destinationshares
-    ```
+   ```PowerShell 
+   $destinationshares
+   ```
 
-    ![Пример. $destination shares](media/azure-stack-manage-storage-shares/examine-destinationshares.png)
+   ![Пример. $destination shares](media/azure-stack-manage-storage-shares/examine-destinationshares.png)
 
 4. Запустите перенос контейнера. Перенос выполняется асинхронно. Если вы начнете перенос дополнительных контейнеров до завершения первого переноса, используйте идентификатор задания, чтобы отслеживать состояние каждого задания.
 
-  ```PowerShell
-  $job_id = Start-AzsStorageContainerMigration -StorageAccountName $containers[0].Accountname -ContainerName $containers[0].Containername -ShareName $containers[0].Sharename -DestinationShareUncPath $destinationshares[0].UncPath -FarmName $farm_name
-  ```
+   ```PowerShell
+   $job_id = Start-AzsStorageContainerMigration -StorageAccountName $containers[0].Accountname -ContainerName $containers[0].Containername -ShareName $containers[0].Sharename -DestinationShareUncPath $destinationshares[0].UncPath -FarmName $farm_name
+   ```
 
-  Затем проверьте значение $jobId. В следующем примере замените *d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0* идентификатором задания, которое нужно просмотреть:
+   Затем проверьте значение $jobId. В следующем примере замените *d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0* идентификатором задания, которое нужно просмотреть:
 
-  ```PowerShell
-  $jobId
-  d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0
-  ```
+   ```PowerShell
+   $jobId
+   d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0
+   ```
 
 5. Используйте идентификатор задания, чтобы проверить состояние задания переноса. По завершении переноса параметру **MigrationStatus** присваивается значение **Complete**.
 
-  ```PowerShell 
-  Get-AzsStorageContainerMigrationStatus -JobId $job_id -FarmName $farm_name
-  ```
+   ```PowerShell 
+   Get-AzsStorageContainerMigrationStatus -JobId $job_id -FarmName $farm_name
+   ```
 
-  ![Пример: Состояние миграции](media/azure-stack-manage-storage-shares/migration-status1.png)
+   ![Пример: Состояние миграции](media/azure-stack-manage-storage-shares/migration-status1.png)
 
-6.  Вы можете отменить выполняющиеся задания переноса. Отмененные задания переноса обрабатываются асинхронно. Отслеживать отмену можно с помощью $jobid:
+6. Вы можете отменить выполняющиеся задания переноса. Отмененные задания переноса обрабатываются асинхронно. Отслеживать отмену можно с помощью $jobid:
 
-  ```PowerShell
-  Stop-AzsStorageContainerMigration -JobId $job_id -FarmName $farm_name
-  ```
+   ```PowerShell
+   Stop-AzsStorageContainerMigration -JobId $job_id -FarmName $farm_name
+   ```
 
-  ![Пример: Состояние отката](media/azure-stack-manage-storage-shares/rollback.png)
+   ![Пример: Состояние отката](media/azure-stack-manage-storage-shares/rollback.png)
 
 7. Вы можете выполнить команду из шага 6 еще раз, пока состояние задания переноса не получит значение **Canceled**:  
 
