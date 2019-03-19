@@ -15,17 +15,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: e2adae46e3124fcd407fa4d4677f02bdface0a6b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: cc74bfe9bf9e5f33b7cf05ebb19b44ab8b3bea43
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077646"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57864649"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
-Центры событий Azure позволяют автоматически записывать определенный объем потоковых данных из Центров событий в учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Storage](https://azure.microsoft.com/services/data-lake-store/) с указанным интервалом времени и размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-features.md#capacity) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
+Центры событий Azure позволяют автоматически записывать определенный объем потоковых данных из Центров событий в учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Storage](https://azure.microsoft.com/services/data-lake-store/) с указанным интервалом времени и размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-features.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
 
 Кроме того, функция "Сбор" в Центрах событий обеспечивает обработку конвейеров в режиме реального времени и на основе пакетов в одном потоке, благодаря чему вы можете создавать решения, масштабируемые по мере необходимости. Независимо от того, что вам нужно (создать системы на основе пакетов с учетом будущих потребностей в обработке данных в режиме реального времени или добавить эффективный холодный путь к имеющемуся решению для обработки в режиме реального времени), функция "Сбор" в Центрах событий упрощает работу с потоковыми данными.
+
+> [!NOTE]
+> В настоящее время функция записи концентраторов событий поддерживает только Gen 1 из Azure Data Lake Store, не Gen 2. 
 
 ## <a name="how-event-hubs-capture-works"></a>Как работает функция "Сбор" в Центрах событий
 
@@ -51,7 +54,7 @@ https://mystorageaccount.blob.core.windows.net/mycontainer/mynamespace/myeventhu
 
 ### <a name="scaling-to-throughput-units"></a>Масштабирование единиц пропускной способности
 
-Трафик Центров событий контролируется с помощью [единиц пропускной способности](event-hubs-features.md#capacity). Одна единица пропускной способности разрешает передачу до 1 МБ/с или 1000 событий/с для входящих данных или до 2 МБ/с или 2000 событий/с для исходящих данных. Для Центров событий (цен. категория "Стандартный") можно настроить от 1 до 20 единиц пропускной способности. Кроме того, можно отправить запрос на увеличение квоты в [службу поддержки][support request]. Использование единиц пропускной способности свыше приобретенного количества регулируется. Функция "Сбор" в Центрах событий копирует данные непосредственно из внутреннего хранилища Центров событий. При этом выполняется обход квоты на единицы пропускной способности для исходящего трафика, а этот трафик сохраняется для других средств обработки, например Stream Analytics или Spark.
+Трафик Центров событий контролируется с помощью [единиц пропускной способности](event-hubs-features.md#throughput-units). Одна единица пропускной способности разрешает передачу до 1 МБ/с или 1000 событий/с для входящих данных или до 2 МБ/с или 2000 событий/с для исходящих данных. Для Центров событий (цен. категория "Стандартный") можно настроить от 1 до 20 единиц пропускной способности. Кроме того, можно отправить запрос на увеличение квоты в [службу поддержки][support request]. Использование единиц пропускной способности свыше приобретенного количества регулируется. Функция "Сбор" в Центрах событий копирует данные непосредственно из внутреннего хранилища Центров событий. При этом выполняется обход квоты на единицы пропускной способности для исходящего трафика, а этот трафик сохраняется для других средств обработки, например Stream Analytics или Spark.
 
 После настройки функция "Сбор" в Центрах событий автоматически запускается при отправке первого события и продолжает работать. Чтобы позволить операции последующей обработки установить, что процесс выполняется, при отсутствии данных Центры событий записывают пустые файлы. Этот процесс обеспечивает прогнозируемую периодичность и позволяет получить маркер, необходимый для пакетных обработчиков.
 
@@ -137,7 +140,7 @@ Apache Avro предоставляет руководства по началу 
 
 Можно создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника. Сведения о том, как создать подписку на Сетку событий с помощью концентратора событий в качестве источника и приложения Функций Azure в качестве приемника, см. в руководстве [Обработка и перемещение записанных данных из концентраторов событий в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"](store-captured-data-data-warehouse.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Функция "Сбор" в Центрах событий — это самый быстрый способ передать данные в Azure. С помощью знакомых средств и платформ (Azure Data Lake, фабрики данных Azure и Azure HDInsight) можно выполнять необходимую пакетную обработку и другие операции анализа в любом масштабе.
 
@@ -146,15 +149,15 @@ Apache Avro предоставляет руководства по началу 
 * [Отправка событий в концентраторы событий Azure с помощью платформы .NET Framework](event-hubs-dotnet-framework-getstarted-send.md)
 * [Общие сведения о Центрах событий Azure][Event Hubs overview].
 
-[Apache Avro]: http://avro.apache.org/
+[Apache Avro]: https://avro.apache.org/
 [Apache Drill]: https://drill.apache.org/
 [Apache Spark]: https://spark.apache.org/
 [support request]: https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade
-[Azure Storage Explorer]: http://azurestorageexplorer.codeplex.com/
+[Azure Storage Explorer]: https://azurestorageexplorer.codeplex.com/
 [3]: ./media/event-hubs-capture-overview/event-hubs-capture3.png
-[Avro Tools]: http://www-us.apache.org/dist/avro/avro-1.8.2/java/avro-tools-1.8.2.jar
-[Java]: http://avro.apache.org/docs/current/gettingstartedjava.html
-[Python]: http://avro.apache.org/docs/current/gettingstartedpython.html
+[Avro Tools]: https://www-us.apache.org/dist/avro/avro-1.8.2/java/avro-tools-1.8.2.jar
+[Java]: https://avro.apache.org/docs/current/gettingstartedjava.html
+[Python]: https://avro.apache.org/docs/current/gettingstartedpython.html
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
 [HDInsight: Address files in Azure storage]:https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-blob-storage#address-files-in-azure-storage
 [Azure Databricks: Azure Blob Storage]:https://docs.databricks.com/spark/latest/data-sources/azure/azure-storage.html

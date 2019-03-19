@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
-ms.openlocfilehash: 0a746ace4806495b17462b506f030811247240e2
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.openlocfilehash: c81ff5ea330c4c0ba26a92a3b5399cfa961e4b2b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247197"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57856864"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-portal"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью портала Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "54247197"
 
 ## <a name="create-a-load-balancer-with-zonal-frontend-ip-address"></a>Создание подсистемы балансировки нагрузки с IP-адресом с зональным внешним интерфейсом
 
-1. В браузере откройте портал Azure [http://portal.azure.com](http://portal.azure.com) и выполните вход с помощью учетной записи Azure.
+1. В браузере откройте портал Azure [https://portal.azure.com](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 2. Вверху слева последовательно выберите **Создать ресурс** > **Сети** > **Load Balancer**.
 3. В окне **Создание подсистемы балансировки нагрузки** в поле **Имя** введите **myPublicLB**.
 4. В разделе **Тип** выберите **Общедоступный**.
@@ -46,13 +46,13 @@ ms.locfileid: "54247197"
 >[!NOTE] 
 > Общедоступный IP-адрес, созданный на этом шаге, имеет номер SKU категории "Стандартный" по умолчанию.
 
-7. В разделе **Группа ресурсов** щелкните **Создать**, а затем введите имя группы ресурсов — **myResourceGroupZLB**.
-8. В разделе **Расположение** выберите **Западная Европа** и нажмите кнопку **ОК**. После этого подсистема балансировки нагрузки начнет развертывание. Этот процесс может занять несколько минут.
+1. В разделе **Группа ресурсов** щелкните **Создать**, а затем введите имя группы ресурсов — **myResourceGroupZLB**.
+1. В разделе **Расположение** выберите **Западная Европа** и нажмите кнопку **ОК**. После этого подсистема балансировки нагрузки начнет развертывание. Этот процесс может занять несколько минут.
 
     ![Создание избыточного между зонами экземпляра Load Balancer (цен. категория "Стандартный") с помощью портала Azure](./media/load-balancer-get-started-internet-availability-zones-zonal-portal/load-balancer-zonal-frontend.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 

@@ -5,19 +5,19 @@ documentationcenter: ''
 author: bwren
 manager: carmonm
 editor: tysonn
-ms.service: monitoring
+ms.service: azure-monitor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/13/2018
 ms.author: bwren
-ms.openlocfilehash: 5896083c9159c30e6b66009f43073391eec936ed
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4ae8ae43d8c245270b64611bed0ac4930aa0ecc3
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003709"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57763433"
 ---
 # <a name="sources-of-data-in-azure-monitor"></a>Источники данных в Azure Monitor
 В этой статье описываются источники данных, собранные Azure Monitor для мониторинга работоспособности и производительности ваших ресурсов, а также выполняющихся на их базе приложений. Эти ресурсы могут находиться в Azure, в другом облаке или в локальной среде.  Подробную информацию о том, как эти данные хранятся и как вы можете их просматривать, см. в разделе [Сбор данных мониторинга в Azure](data-collection.md).
@@ -114,6 +114,6 @@ ms.locfileid: "56003709"
 ### <a name="data-collector-api"></a>API сборщика данных
 Azure Monitor может собирать данные журналов из любого клиента REST с помощью [API сборщика данных](../../azure-monitor/platform/data-collector-api.md). Это позволяет создавать пользовательские сценарии мониторинга и подвергать мониторингу ресурсы, которые не предоставляют данные телеметрии через другие источники.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о типах данных мониторинга, собранных Azure Monitor, и о том, как просматривать и анализировать эти данные, см. в статье [Сбор данных мониторинга в Azure](data-collection.md).

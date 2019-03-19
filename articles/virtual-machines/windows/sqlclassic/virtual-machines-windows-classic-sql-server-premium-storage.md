@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: b9a668a71b0fb7b2bb57f759cc54a8d1930a0f03
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: be96aaa69fc1d59bdfa8079eff99c13c1e92c736
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56329070"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57905126"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
 
@@ -140,17 +140,17 @@ New-AzureStorageAccount -StorageAccountName $newstorageaccountname -Location "We
 Get-AzureVM -ServiceName <servicename> -Name <vmname> | Get-AzureDataDisk
 ```
 
-2. Запишите имя диска и номер логического устройства.
+1. Обратите внимание на то, имя диска и LUN.
 
     ![DisknameAndLUN][2]
-3. Подключитесь к виртуальной машине с помощью удаленного рабочего стола. Затем перейдите к **Управление компьютером** | **Диспетчер устройств** | **Диски**. Просмотрите свойства каждого диска в «Виртуальных дисках Microsoft»
+1. Подключитесь к виртуальной машине с помощью удаленного рабочего стола. Затем перейдите к **Управление компьютером** | **Диспетчер устройств** | **Диски**. Просмотрите свойства каждого диска в «Виртуальных дисках Microsoft»
 
     ![VirtualDiskProperties][3]
-4. Номер логического устройства в данном случае — это номер логического устройства, указанный вами при присоединении виртуального жесткого диска к виртуальной машине.
-5. Чтобы перейти к разделу перехода к "Виртуальный диск (Майкрософт)", выберите вкладку **Сведения**, затем список **Свойства** и перейдите в раздел **Ключ драйвера**. В пункте **Значение** вы видите параметр **Смещение**, который на следующем снимке экрана равен 0002. 0002 обозначает PhysicalDisk2, с которым связан пул носителей.
+1. Номер логического устройства в данном случае — это номер логического устройства, указанный вами при присоединении виртуального жесткого диска к виртуальной машине.
+1. Чтобы перейти к разделу перехода к "Виртуальный диск (Майкрософт)", выберите вкладку **Сведения**, затем список **Свойства** и перейдите в раздел **Ключ драйвера**. В пункте **Значение** вы видите параметр **Смещение**, который на следующем снимке экрана равен 0002. 0002 обозначает PhysicalDisk2, с которым связан пул носителей.
 
     ![VirtualDiskPropertyDetails][4]
-6. Для каждого пула носителей выгрузите связанные диски:
+1. Для каждого пула носителей выгрузите связанные диски:
 
 ```powershell
 Get-StoragePool -FriendlyName AMS1pooldata | Get-PhysicalDisk
@@ -261,7 +261,7 @@ $ipaddr = "192.168.0.8"
 #Remember to change to DS series VM
 $newInstanceSize = "Standard_DS1"
 
-#create new Avaiability Set
+#create new Availability Set
 $availabilitySet = "cloudmigAVAMS"
 
 #Machine User Credentials
@@ -380,7 +380,7 @@ $destcloudsvc = "danregsvcamsxio2"
 #Use to DS Series VM
 $newInstanceSize = "Standard_DS1"
 
-#create new Avaiability Set
+#create new Availability Set
 $availabilitySet = "cloudmigAVAMS3"
 
 #Machine User Credentials
@@ -750,7 +750,7 @@ Get-ClusterResource $ListenerName| Set-ClusterParameter -Name "HostRecordTTL" 12
 
 ##### <a name="client-application-settings"></a>Параметры клиентского приложения
 
-Если клиентское приложение SQL поддерживает SQLClient .NET 4.5, то в этом случае можно использовать ключевое слово "MULTISUBNETFAILOVER=TRUE". Данное решение является предпочтительным, так как оно обеспечивает более быстрое соединение с группой доступности AlwaysOn SQL во время перехода на другой ресурс. Оно перечисляет все IP-адреса, параллельно связанные с прослушивателем AlwaysOn, и интенсивнее выполняет попытки повторного подключения TCP при отработке отказа.
+Если клиентское приложение SQL поддерживает .NET 4.5 SQLClient, то можно использовать "MULTISUBNETFAILOVER = TRUE" ключевое слово. Данное решение является предпочтительным, так как оно обеспечивает более быстрое соединение с группой доступности AlwaysOn SQL во время перехода на другой ресурс. Оно перечисляет все IP-адреса, параллельно связанные с прослушивателем AlwaysOn, и интенсивнее выполняет попытки повторного подключения TCP при отработке отказа.
 
 Дополнительные сведения о предыдущих параметрах см. в разделе [Ключевое слово и связанные функции MultiSubnetFailover](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Ознакомьтесь также со статьей [Поддержка SqlClient для высокого уровня доступности и аварийного восстановления](https://msdn.microsoft.com/library/hh205662\(v=vs.110\).aspx).
 
@@ -926,7 +926,7 @@ $ipaddr = "192.168.0.5"
 $newInstanceSize = "Standard_DS13"
 $subnet = "SQL"
 
-#Create new Avaiability Set
+#Create new Availability Set
 $availabilitySet = "cloudmigAVAMS"
 
 #build machine config into object
@@ -973,7 +973,7 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 
 #SET Azure ACLs or Network Security Groups & Windows FWs
 
-#http://msdn.microsoft.com/library/azure/dn495192.aspx
+#https://msdn.microsoft.com/library/azure/dn495192.aspx
 
 ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 ```
@@ -1125,7 +1125,7 @@ ForEach ($disk in $diskobjects)
 
 #Check for copy progress
 
-#check induvidual blob status
+#check individual blob status
 Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContext
 ```
 
@@ -1152,7 +1152,7 @@ ForEach ($disk in $diskobjects)
 Информация об отдельных больших двоичных объектах.
 
 ```powershell
-#Check induvidual blob status
+#Check individual blob status
 Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
 ```
 
@@ -1176,7 +1176,7 @@ Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageacco
 $ipaddr = "192.168.0.4"
 $newInstanceSize = "Standard_DS13"
 
-#Join to existing Avaiability Set
+#Join to existing Availability Set
 
 #Build machine config into object
 $vmConfig = New-AzureVMConfig -Name $vmNameToMigrate -InstanceSize $newInstanceSize -DiskName $xioDiskName -AvailabilitySetName $availabilitySet  ` | Add-AzureProvisioningConfig -Windows ` | Set-AzureSubnet -SubnetNames $subnet | Set-AzureStaticVNetIP -IPAddress $ipaddr
@@ -1218,12 +1218,12 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 
 #SET ACLs or Azure Network Security Groups & Windows FWs
 
-#http://msdn.microsoft.com/library/azure/dn495192.aspx
+#https://msdn.microsoft.com/library/azure/dn495192.aspx
 ```
 
 #### <a name="step-23-test-failover"></a>Шаг 23. Тестовая отработка отказа
 
-Дождитесь, пока перенесенный узел синхронизируется с локальным узлом Always On. Переведите его в режим синхронной репликации и подождите, пока он синхронизируется. Затем выполните переход с локального узла на первый перенесенный узел, который назначен AFP. После успешного выполнения этого действия измените последний перенесенный узел на AFP.
+Дождитесь, пока перенесенный узел синхронизируется с локальным узлом Always On. Переведите его в режим синхронной репликации и подождите, пока он синхронизируется. Затем отработку отказа из локальной среды к первому узлу миграции, который назначен AFP. После успешного выполнения этого действия измените последний перенесенный узел на AFP.
 
 Вам будет необходимо проверить переходы между всеми узлами и выполнить тесты на несоответствия для обеспечения правильной и своевременной работы переходов на другой ресурс.
 

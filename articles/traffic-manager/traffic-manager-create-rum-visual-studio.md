@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: eec13db8bdbe1f40a51df14077adb8740e977f5d
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
-ms.translationtype: HT
+ms.openlocfilehash: 1a5b883a8c9688d4545c0e98c00f78a2e982a611
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138418"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58079725"
 ---
 # <a name="how-to-send-real-user-measurements-to-traffic-manager-with-visual-studio-mobile-center"></a>Отправка измерений на стороне пользователей в диспетчер трафика с помощью Visual Studio Mobile Center
 
@@ -33,24 +33,24 @@ ms.locfileid: "50138418"
 Измерения, которые вы принимаете и отправляете в диспетчер трафика из клиентского приложения, идентифицируются службой с помощью уникальной строки, называемой ключом измерений на стороне пользователей (RUM). Ключ RUM можно получить с помощью портала Azure, REST API или интерфейсов PowerShell и/или CLI.
 
 Для получения ключа RUM с помощью портала Azure используйте следующую процедуру:
-   1. В браузере войдите на портал Azure. Если у вас еще нет учетной записи, вы можете зарегистрироваться для получения бесплатной пробной версии на один месяц.
-   2. На панели поиска портала выполните поиск по имени профиля диспетчера трафика, которое необходимо изменить, а затем щелкните профиль диспетчера трафика в отображаемых результатах.
-   3. На странице профиля диспетчера трафика в разделе **Параметры** щелкните **Real User Measurements** (Измерения на стороне пользователей).
-   4. Щелкните **Создать ключ**, чтобы создать ключ RUM.
+1. В браузере войдите на портал Azure. Если у вас еще нет учетной записи, вы можете зарегистрироваться для получения бесплатной пробной версии на один месяц.
+2. На панели поиска портала выполните поиск по имени профиля диспетчера трафика, которое необходимо изменить, а затем щелкните профиль диспетчера трафика в отображаемых результатах.
+3. На странице профиля диспетчера трафика в разделе **Параметры** щелкните **Real User Measurements** (Измерения на стороне пользователей).
+4. Щелкните **Создать ключ**, чтобы создать ключ RUM.
         
    ![Создание ключа измерений на стороне пользователей](./media/traffic-manager-create-rum-visual-studio/generate-rum-key.png)
 
-   **Рис. 1. Создание ключа измерений на стороне пользователей**
+   **Рис. 1. Реальные Создание ключа измерений на стороне пользователей**
 
-   5.   На этой странице отображается созданный ключ RUM и фрагмент кода JavaScript, который необходимо внедрить на страницу HTML.
+5. На этой странице отображается созданный ключ RUM и фрагмент кода JavaScript, который необходимо внедрить на страницу HTML.
  
    ![Код JavaScript ключа измерений на стороне пользователей](./media/traffic-manager-create-rum-visual-studio/rum-key.png)
 
    **Рис. 2. Ключ измерений на стороне пользователей и скрипт JavaScript измерений**
  
-   6. Нажмите кнопку **Копировать**, чтобы скопировать ключ RUM. 
+6. Нажмите кнопку **Копировать**, чтобы скопировать ключ RUM. 
 
-## <a name="step-2-instrument-your-app-with-the-rum-package-of-mobile-center-sdk"></a>Шаг 2. Инструментирование приложения с помощью пакета RUM пакета SDK Mobile Center
+## <a name="step-2-instrument-your-app-with-the-rum-package-of-mobile-center-sdk"></a>Шаг 2. Инструментирование приложения с помощью пакета RUM пакета SDK для Mobile Center
 
 Если вы не знакомы с Visual Studio Mobile Center, посетите его [веб-сайт](https://mobile.azure.com). Дополнительные сведения об интеграции пакета средств разработки см. в статье [Get Started with Android](https://docs.microsoft.com/mobile-center/sdk/getting-started/Android) (Начало работы с Android).
 
@@ -72,7 +72,7 @@ ms.locfileid: "50138418"
     В файле **app/build.gradle** добавьте следующие строки:
 
     ```groovy
-    dependencies {   
+    dependencies {
      
         def mobileCenterSdkVersion = '0.12.1-16+3fe5b08'
         compile "com.microsoft.azure.mobile:mobile-center-rum:${mobileCenterSdkVersion}"
@@ -95,7 +95,7 @@ ms.locfileid: "50138418"
     MobileCenter.start(getApplication(), "<Your Mobile Center AppSecret>", RealUserMeasurements.class);
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [измерениях на стороне пользователей](traffic-manager-rum-overview.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Дополнительные сведения о Mobile Center см. [здесь](https://docs.microsoft.com/mobile-center/).

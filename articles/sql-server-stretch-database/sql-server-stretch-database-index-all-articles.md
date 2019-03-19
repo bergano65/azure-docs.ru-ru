@@ -1,6 +1,6 @@
 ---
 title: Все статьи о службе SQL Server Stretch Database | Документация Майкрософт
-description: Таблица всех статей о службе Azure, которая называется SQL Server Stretch Database. Статьи находятся по адресу http://azure.microsoft.com/documentation/articles/. Заголовок и описание.
+description: Таблица всех статей о службе Azure, которая называется SQL Server Stretch Database. Статьи находятся по адресу https://azure.microsoft.com/documentation/articles/. Заголовок и описание.
 services: sql-server-stretch-database
 documentationcenter: ''
 author: DouglasL
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/05/2016
 ms.author: DouglasL
-ms.openlocfilehash: 82a8e6e6660bd7ee31a78ccc458d105d393610f4
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
-ms.translationtype: HT
+ms.openlocfilehash: 02089d69ec8e049b2d0d0daf1c76875a9ebab403
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53742717"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57992561"
 ---
 # <a name="all-topics-for-azure-sql-server-stretch-database-service"></a>Все статьи о службе SQL Server Stretch Database в Azure
 На этой странице перечислены все статьи, касающиеся непосредственно службы **SQL Server Stretch Database** в Azure. На этой веб-странице с помощью клавиш **Ctrl+F**можно искать интересующие вас разделы по ключевым словам.

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9804dee56e9f099654359e7c336f706cedbd1f7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d5d2e734ff9bd34a176d08e36019c826dac355bb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204871"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58003786"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zenqms"></a>Руководство. Интеграция Azure Active Directory с ZenQMS
 
@@ -34,7 +34,7 @@ ms.locfileid: "56204871"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ZenQMS, вам потребуется следующее:
 
@@ -113,13 +113,14 @@ ms.locfileid: "56204871"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:zenqms:<INSTANCE>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<INSTANCE>.zenqms.com/SAML/AssertionConsumerService`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<INSTANCE>.zenqms.com/SAML/AssertionConsumerService`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
     ![Сведения о домене и URL-адресах единого входа для приложения ZenQMS](./media/zenqms-tutorial/tutorial_zenqms_url1.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | |
     |-|-|
     | `https://<INSTANCE>.zenqms.com/<ID>`|
@@ -169,7 +170,7 @@ ms.locfileid: "56204871"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-zenqms-test-user"></a>Создание тестового пользователя ZenQMS
 

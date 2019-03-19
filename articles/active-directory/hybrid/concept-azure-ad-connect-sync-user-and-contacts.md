@@ -15,12 +15,12 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7605a8cee265822f133b3f72ce5de90add5fc0d0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 661747754369c17ca98ae69d477e04124b6a2942
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210549"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993371"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах
 Существует несколько разных причин, по которым нужно иметь несколько лесов Active Directory. Кроме того, существует несколько разных топологий развертывания. Распространенные модели включают развертывание ресурсов учетной записи и лесов с синхронизированным глобальным списком адресов после слияния и поглощения. Но даже при наличии чистых моделей гибридные модели не менее часто используются. Конфигурация по умолчанию в службе синхронизации Azure AD Connect не предполагает какой-то конкретной модели. Тем не менее, в зависимости от выбора сопоставления пользователей в руководстве по установке, можно наблюдать разное поведение.
@@ -51,9 +51,9 @@ ms.locfileid: "56210549"
     
       * Группа Active Directory, атрибут proxyAddress которой имеет значение *{"X500:/0=contoso.com/ou=users/cn=testgroup"}*, не будет поддерживать электронную почту в Azure AD. У нее нет SMTP-адреса.
       
-      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0=contoso.com/ou=users/cn=testgroup","SMTP:johndoe@contoso.com"}*, будет поддерживать электронную почту в Azure AD.
+      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0=contoso.com/ou=users/cn=testgroup","SMTP:johndoe\@contoso.com"}* будет поддерживать электронную почту в Azure AD.
       
-      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0=contoso.com/ou=users/cn=testgroup","smtp:johndoe@contoso.com"}*, также будет поддерживать электронную почту в Azure AD.
+      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{«X500:/0=contoso.com/ou=users/cn=testgroup"», «smtp:johndoe\@contoso.com"}* будет также поддерживать электронную почту в Azure AD.
 
 ## <a name="contacts"></a>Контакты
 Наличие контактов, представляющих пользователя в разных лесах, — распространенное явление. Это происходит после слияния и поглощения, когда решение GALSync связывает два и более леса Exchange. Контактный объект всегда присоединяется из пространства соединителя к метавселенной с помощью атрибута mail. Если контактный объект или объект-пользователь с тем же адресом электронной почты уже существует, такие объекты объединяются. Это настраивается в правиле **In from AD — Contact Join**. Также существует правило с именем **In from AD — Contact Common** с потоком атрибутов в атрибут метавселенной **sourceObjectType** с константой **Contact**. Это правило имеет очень низкий приоритет. Поэтому, если любой объект пользователя присоединен к тому же объекту метавселенной, то правило **In from AD — User Common** передаст значение User этому атрибуту. Благодаря этому правилу атрибут получит значение Contact, если пользователь не был присоединен, а также значение User, если был найден хотя бы один пользователь.

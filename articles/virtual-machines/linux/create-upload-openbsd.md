@@ -15,18 +15,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: huishao
-ms.openlocfilehash: 332382282c2b55b52bb23f278a25868c09360619
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: d8640881e83084dac7f4725115f48dcf7d29e787
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729359"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58007604"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Создание и передача образа жесткого диска OpenBSD в Azure
 В этой статье описывается, как создать и передать виртуальный жесткий диск, содержащий операционную систему OpenBSD. После передачи его можно использовать как свой собственный образ для создания виртуальной машины в Azure с помощью Azure CLI.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В данной статье предполагается, что у вас есть следующие элементы:
 
 * **Подписка Azure.** Если у вас нет учетной записи, то ее можно создать, что займет всего лишь несколько минут. Если у вас есть подписка MSDN, см. страницу [Ежемесячная сумма денег на счете в Azure для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). В противном случае узнайте, как [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).  
@@ -56,7 +56,7 @@ ms.locfileid: "55729359"
     echo "https://ftp.openbsd.org/pub/OpenBSD" > /etc/installurl
     ```
    
-4. По умолчанию пользователь `root` отключен в виртуальных машинах в Azure. Пользователи могут выполнять команды с повышенными привилегиями, используя команду `doas` на виртуальной машине OpenBSD. Doas включен по умолчанию. Дополнительные сведения см. на веб-сайте [doas.conf](http://man.openbsd.org/doas.conf.5). 
+4. По умолчанию пользователь `root` отключен в виртуальных машинах в Azure. Пользователи могут выполнять команды с повышенными привилегиями, используя команду `doas` на виртуальной машине OpenBSD. Doas включен по умолчанию. Дополнительные сведения см. на веб-сайте [doas.conf](https://man.openbsd.org/doas.conf.5). 
 
 5. Установите и настройте необходимые компоненты для агента Azure следующим образом:
 
@@ -174,7 +174,7 @@ ssh azureuser@<ip address>
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
-Если вы хотите получить дополнительные сведения о поддержке Hyper-V в OpenBSD 6.1, посетите веб-сайты [OpenBSD 6.1](https://www.openbsd.org/61.html) и [hyperv.4](http://man.openbsd.org/hyperv.4).
+## <a name="next-steps"></a>Дальнейшие действия
+Если вы хотите получить дополнительные сведения о поддержке Hyper-V в OpenBSD 6.1, посетите веб-сайты [OpenBSD 6.1](https://www.openbsd.org/61.html) и [hyperv.4](https://man.openbsd.org/hyperv.4).
 
 Если требуется создать виртуальную машину из управляемого диска см. статью [Управляемые диски - az disk](/cli/azure/disk). 

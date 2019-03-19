@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 10/18/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26fd70b80dd512b530d367d57cd9fc04ec28f27b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8bbb307654d4aaf753a4a3284875dee4f5707f2a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211705"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57901742"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство. Интеграция Azure Active Directory с HubSpot
+# <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство по Интеграция Azure Active Directory с HubSpot
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением HubSpot.
 
@@ -34,7 +34,7 @@ ms.locfileid: "56211705"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с HubSpot, вам потребуется:
 
@@ -120,7 +120,7 @@ ms.locfileid: "56211705"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.hubspot.com/login-api/v1/saml/login?portalId=<CUSTOMER ID>`.
 
-    б) В текстовое поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.hubspot.com/login-api/v1/saml/acs?portalId=<CUSTOMER ID>`.
+    2. В текстовое поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.hubspot.com/login-api/v1/saml/acs?portalId=<CUSTOMER ID>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическими URL-адресом ответа и идентификатором, как описано позже в этом руководстве. Чтобы получить их, обратитесь в [службу поддержки клиентов HubSpot](https://help.hubspot.com/).
@@ -159,11 +159,11 @@ ms.locfileid: "56211705"
 
     a. Нажмите кнопку **копирования**, чтобы скопировать значение **URL-адреса аудитории (идентификатор сущности поставщика службы)**, и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    б) Нажмите кнопку **копирования**, чтобы скопировать значение **URL-адреса входа, ACS, получателя или перенаправления**, и вставьте его в текстовое поле **URL-адреса ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    2. Нажмите кнопку **копирования**, чтобы скопировать значение **URL-адреса входа, ACS, получателя или перенаправления**, и вставьте его в текстовое поле **URL-адреса ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     c. В текстовое поле **Identity Provider Identifier or Issuer URL** (Идентификатор поставщика удостоверений или URL-адрес издателя) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    4.3. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа для поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    d. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа для поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     д. Откройте скачанный файл  **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле  **сертификата X.509**.
 
@@ -187,7 +187,7 @@ ms.locfileid: "56211705"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    б) В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -215,7 +215,7 @@ ms.locfileid: "56211705"
 
     ![Настройка единого входа](./media/hubspot-tutorial/user2.png)
 
-5. Введите адрес электронной почты пользователя, например **brittasimon@contoso.com** в текстовое поле **Add email addess(es)** (Добавить адреса электронной почты), и нажмите кнопку **Next** (Далее).
+5. Введите адрес электронной почты пользователя, например **brittasimon\@contoso.com** в **добавить адрес электронной почты addess(es)** текстовое поле и нажмите кнопку **Далее**.
 
     ![Настройка единого входа](./media/hubspot-tutorial/user3.png)
 

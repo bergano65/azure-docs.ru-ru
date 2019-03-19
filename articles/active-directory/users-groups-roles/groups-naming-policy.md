@@ -1,5 +1,5 @@
 ---
-title: Политика именования группы (предварительная версия) — Группы Office 365 — Azure Active Directory | Документация Майкрософт
+title: Применить политику именования группы — группы Office 365 — Azure Active Directory | Документация Майкрософт
 description: Применение политики именования для групп Office 365 в Azure Active Directory (предварительная версия)
 services: active-directory
 documentationcenter: ''
@@ -10,24 +10,24 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 03/13/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9ca7f457f74202735d3abdf7faaed4ee66745f2
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: bce8a9e4018f24022fcc45733d64ce47d07ba771
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191220"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57898777"
 ---
-# <a name="enforce-a-naming-policy-for-office-365-groups-in-azure-active-directory-preview"></a>Применение политики именования для групп Office 365 в Azure Active Directory (предварительная версия)
+# <a name="enforce-a-naming-policy-for-office-365-groups-in-azure-active-directory"></a>Применение политики именования групп Office 365 в Azure Active Directory
 
 Чтобы применить соответствующие соглашения об именовании групп Office 365, создаваемых или изменяемых пользователями, настройте политику именования групп для клиентов в Azure Active Directory (Azure AD). Например, политику именования можно использовать, чтобы указать функцию группы, членство, географический регион или создателя группы. Можно также использовать политику именования, чтобы классифицировать группы в адресной книге. Политику можно использовать для запрещения конкретных слов в именах и псевдонимах групп.
 
 > [!IMPORTANT]
-> Использование предварительной версии политик именования групп Office 365 требует наличия лицензии Azure Active Directory Premium P1 или Azure AD Basic EDU у каждого уникального пользователя, который является участником одной или нескольких групп Office 365.
+> Использование политик именования групп Office 365 требует лицензии Azure Active Directory Premium P1 или лицензии Azure AD Basic EDU для каждого уникального пользователя, который является членом одной или нескольких групп Office 365.
 
 Политика именования применяется при создании или изменении групп, созданных для рабочих нагрузок (например, Outlook, Microsoft Teams, SharePoint, Exchange или службы "Планировщик"). Она применяется к имени и псевдониму группы. Если настроить политику именования в Azure AD при наличии политики именования групп Exchange, то применяется политика именования Azure AD.
 
@@ -72,7 +72,7 @@ ms.locfileid: "56191220"
 - Глобальный администратор.
 - "Partner Tier 1 Support" (Поддержка для партнеров уровня 1);
 - "Partner Tier 2 Support" (Поддержка для партнеров уровня 2);
-- администратор учетных записей;
+- Администратор пользователей
 - создатели каталогов;
 
 ## <a name="install-powershell-cmdlets-to-configure-a-naming-policy"></a>Установка командлетов PowerShell для настройки политики именования
@@ -82,15 +82,15 @@ ms.locfileid: "56191220"
 1. Запустите приложение Windows PowerShell от имени администратора.
 2. Удалите все предыдущие версии AzureADPreview.
   
-  ```
-  Uninstall-Module AzureADPreview
-  ```
+   ```
+   Uninstall-Module AzureADPreview
+   ```
 3. Установите последнюю версию AzureADPreview.
   
-  ```
-  Install-Module AzureADPreview
-  ```
-При появлении запроса на доступ к ненадежному репозиторию введите **Y** (Да). Установка нового модуля может занять несколько минут.
+   ```
+   Install-Module AzureADPreview
+   ```
+   При появлении запроса на доступ к ненадежному репозиторию введите **Y** (Да). Установка нового модуля может занять несколько минут.
 
 ## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-ad-powershell"></a>Настройка политики именования групп для клиента с помощью PowerShell для Azure AD
 
@@ -98,11 +98,11 @@ ms.locfileid: "56191220"
 
 2. Выполните следующие команды, чтобы подготовить среду к выполнению командлетов.
   
-  ```
-  Import-Module AzureADPreview
-  Connect-AzureAD
-  ```
-  На открывшемся экране **Вход в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, затем выберите **Войти**.
+   ```
+   Import-Module AzureADPreview
+   Connect-AzureAD
+   ```
+   На открывшемся экране **Вход в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, затем выберите **Войти**.
 
 3. Чтобы создать параметры группы для этого клиента, выполните инструкции в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md).
 
@@ -110,35 +110,35 @@ ms.locfileid: "56191220"
 
 1. Получите текущую политику именования, чтобы просмотреть действующие настройки.
   
-  ```
-  $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-  ```
+   ```
+   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+   ```
   
 2. Отобразите на экране текущие параметры групп.
   
-  ```
-  $Setting.Values
-  ```
+   ```
+   $Setting.Values
+   ```
   
 ### <a name="set-the-naming-policy-and-custom-blocked-words"></a>Установка политики именования и настраиваемых запрещенных слов
 
 1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
   
-  ```
-  $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
-  ```
+   ```
+   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
+   ```
   
 2. Задайте настраиваемые запрещенные слова. В следующем примере показано, как можно добавить собственные настраиваемые слова.
   
-  ```
-  $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
-  ```
+   ```
+   $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
+   ```
   
 3. Сохраните параметры новой политики, чтобы она вступила в действие, как показано в следующем примере.
   
-  ```
-  Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-  ```
+   ```
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   ```
   
 Вот и все. Вы настроили политику именования и добавили запрещенные слова.
 
@@ -173,21 +173,21 @@ Set-AzureADDirectorySetting -Id $Settings.Id -DirectorySetting $Settings
 
 1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
   
-  ```
-  $Setting["PrefixSuffixNamingRequirement"] =""
-  ```
+   ```
+   $Setting["PrefixSuffixNamingRequirement"] =""
+   ```
   
 2. Удалите настраиваемые запрещенные слова 
   
-  ```
-  $Setting["CustomBlockedWordsList"]=""
-  ```
+   ```
+   $Setting["CustomBlockedWordsList"]=""
+   ```
   
 3. Сохраните параметры.
   
-  ```
-  Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-  ```
+   ```
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+   ```
 
 
 ## <a name="naming-policy-experiences-across-office-365-apps"></a>Использование политик именования в приложениях Office 365
@@ -218,9 +218,9 @@ StaffHub  | Команды StaffHub не соответствуют полити
 PowerShell для Exchange | Командлеты PowerShell для Exchange соответствуют требованиям политики именования. Пользователи видят соответствующие сообщения об ошибках, содержащие предлагаемые префиксы и суффиксы, а также настраиваемые запрещенные слова, если что-либо в имени или псевдониме группы (mailNickname) не соответствует политике именования.
 Командлеты PowerShell для Azure Active Directory | Командлеты PowerShell для Azure Active Directory соответствуют требованиям политики именования. Пользователи видят соответствующие сообщения об ошибках, содержащие предлагаемые префиксы и суффиксы, а также настраиваемые запрещенные слова, если не следуют соглашению об именовании в именах или псевдонимах групп.
 Центр администрирования Exchange | Центр администрирования Exchange соответствует требованиям политики именования. Пользователи видят соответствующие сообщения об ошибках, содержащие предлагаемые префиксы и суффиксы, а также настраиваемые запрещенные слова, если не следуют соглашению об именовании в имени или псевдониме группы.
-Центр администрирования Office 365 | Центр администрирования Office 365 соответствует требованиям политики именования. При пользователь создает или изменяет имена групп, политика именования применяется автоматически, и пользователи будут видеть соответствующие сообщения об ошибках при вводе настраиваемых запрещенных слов. Центр администрирования Office 365 еще не отображает предварительное имя в соответствии с политикой именования и не возвращает ошибки из-за настраиваемых запрещенных слов, когда пользователь вводит имя группы.
+Центр администрирования Microsoft 365 | Центр администрирования Microsoft 365 соответствует требованиям политики именования. При пользователь создает или изменяет имена групп, политика именования применяется автоматически, и пользователи будут видеть соответствующие сообщения об ошибках при вводе настраиваемых запрещенных слов. В центре администрирования Microsoft 365 еще не отображает окно предварительного просмотра политики именования и не возвращает ошибки настраиваемых запрещенных слов, когда пользователь вводит имя группы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях содержатся дополнительные сведения о группах Azure AD.
 
 * [Просмотр существующих групп](../fundamentals/active-directory-groups-view-azure-portal.md)

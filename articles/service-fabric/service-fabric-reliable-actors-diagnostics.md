@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/26/2017
 ms.author: abhisram
-ms.openlocfilehash: 61c01e8ea3b4cbe7b5f7ab83ab35383d74df3105
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 888f9e04e048e3da4c9809ac4f8570f020030335
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234942"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855841"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Диагностика и мониторинг производительности в Reliable Actors
 В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) и [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
@@ -27,7 +27,7 @@ ms.locfileid: "51234942"
 ## <a name="eventsource-events"></a>События EventSource
 Имя поставщика EventSource для среды выполнения Reliable Actors — Microsoft-ServiceFabric-Actors. События из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики) при [отладке приложения субъекта в Visual Studio](service-fabric-debugging-your-application.md).
 
-Для сбора и просмотра событий EventSource вы можете использовать такие инструменты и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md), [семантическое ведение журналов](https://msdn.microsoft.com/library/dn774980.aspx) и [библиотеки Microsoft TraceEvent](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
+Для сбора и просмотра событий EventSource вы можете использовать такие инструменты и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md), [семантическое ведение журналов](https://msdn.microsoft.com/library/dn774980.aspx) и [библиотеки Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ### <a name="keywords"></a>Ключевые слова
 Все события EventSource надежных субъектов связаны с одним или несколькими ключевыми словами. Это позволяет фильтровать собранные события. Определены указанные ниже биты ключевых слов.
@@ -168,7 +168,7 @@ ms.locfileid: "51234942"
 | Субъект Service Fabric |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса субъекта при получении его службой (мс) |
 | Субъект Service Fabric |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения субъекта в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование платформы Service Fabric надежными субъектами](service-fabric-reliable-actors-platform.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
 * [Пример кода](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)

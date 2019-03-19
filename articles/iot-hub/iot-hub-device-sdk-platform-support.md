@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: yizhon
-ms.openlocfilehash: 15548e801777a99dfb78de0067abb633a2587ee6
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 7bcc1bf6b734abe202c5fec5d515604f4bf8e4a7
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053199"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56669369"
 ---
 # <a name="azure-iot-sdks-platform-support"></a>Поддержка платформ пакетов SDK для устройств Azure IoT
 
@@ -67,7 +67,7 @@ ms.locfileid: "54053199"
 | Ubuntu 16.04 LTS    | X64  | .NET Core 2.1        | .NET standard 2.0 |
 | Windows Server 2016 | X64  | .NET Core 2.1        | .NET standard 2.0 |
 | Windows Server 2016 | X64  | .NET Framework 4.7   | .NET standard 2.0 |
-| Windows Server 2016 | X64  | .NET Framework 4.5.1 | Недоступно               |
+| Windows Server 2016 | X64  | .NET Framework 4.5.1 | Н/Д               |
 
 ### <a name="nodejs-sdk"></a>Пакет SDK для Node.js
 
@@ -83,6 +83,7 @@ ms.locfileid: "54053199"
 | Ubuntu 16.04 LTS    | X64  | Java 8       |
 | Windows Server 2016 | X64  | Java 8       |
 | API 28 для Android | X64  | Java 8       |
+| Android вещей | X64  | Java 8      |
 
 ## <a name="partner-supported-platforms"></a>Поддерживаемые платформы партнеров
 
@@ -95,7 +96,7 @@ ms.locfileid: "54053199"
 | ST Microelectronics | Серии STM32L4 <br/> Серии STM32F4 <br/>  Серии STM32F7 <br/>  Пакет обнаружения STM32L4 для узла Интернета вещей    | [X-CUBE-CLOUD](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-cloud.html) <br/> [X-CUBE-AZURE](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-azure.html) <br/> [P-NUCLEO AZURE](https://www.st.com/content/st_com/en/products/evaluation-tools/solution-evaluation-tools/communication-and-connectivity-solution-eval-boards/p-nucleo-azure1.html) <br/> [FP-CLD AZURE](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32-ode-function-pack-sw/fp-cld-azure1.html)            | [Поддержка](https://www.st.com/content/st_com/en/support/support-home.html)
 | Texas Instruments   | Панель запуска CC3220SF <br/> Панель запуска CC3220S <br/> Панель запуска MSP432E4      | [Run a simple C sample on a SimpleLink device](https://github.com/TexasInstruments/azure-iot-pal-simplelink) (Запуск простого примера C на устройстве SimpleLink) | [Форум TI E2E](https://e2e.ti.com) <br/> [Форум TI E2E для CC3220](https://e2e.ti.com/support/wireless_connectivity/simplelink_wifi_cc31xx_cc32xx/) <br/> [Форум TI E2E для MSP432E4](https://e2e.ti.com/support/microcontrollers/msp430/) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)

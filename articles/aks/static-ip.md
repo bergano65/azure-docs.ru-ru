@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 09/26/2018
+ms.date: 03/04/2019
 ms.author: iainfou
-ms.openlocfilehash: f1507bc2aebcd29feea7480761cd1b4949439583
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: d2e4314948eeda0c82c004414f894dafc4d4cff6
+ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994493"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57408689"
 ---
 # <a name="use-a-static-public-ip-address-with-the-azure-kubernetes-service-aks-load-balancer"></a>Использование статического общедоступного IP-адреса с подсистемой балансировки нагрузки Службы Azure Kubernetes (AKS)
 
@@ -24,17 +24,17 @@ ms.locfileid: "53994493"
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
-Сейчас поддерживается только IP-адрес с номером SKU "Базовый". Мы работаем над поддержкой IP-адресов категории "Стандартный".
+Сейчас только *SKU "базовый IP-адрес"* поддерживается. Идет выполнение для поддержки *стандартным IP-адресом* номера SKU ресурса. Дополнительные сведения см. в разделе [IP-адресов, типы и методы распределения в Azure][ip-sku].
 
 ## <a name="create-a-static-ip-address"></a>Создание статического IP-адреса
 
-Статический общедоступный IP-адрес для использования с AKS нужно создать в группе ресурсов **узла**. Сведения о том, как отделить ресурсы, см. в разделе [Использование статического IP-адреса, который не входит в группу ресурсов узла](#use-a-static-ip-address-outside-of-the-node-resource-group).
+Статический общедоступный IP-адрес для использования с AKS нужно создать в группе ресурсов **узла**. Если вы хотите разделить ресурсы, обратитесь к следующему разделу, чтобы [статический IP-адрес, не входящий в группу ресурсов узла](#use-a-static-ip-address-outside-of-the-node-resource-group).
 
-Получите имя группы ресурсов узла, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
+Во-первых, получите имя группы ресурсов узла с [az aks show] [ az-aks-show] команду и добавьте `--query nodeResourceGroup` параметр запроса. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
-```azurecli
+```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
 
 MC_myResourceGroup_myAKSCluster_eastus
@@ -42,14 +42,14 @@ MC_myResourceGroup_myAKSCluster_eastus
 
 Затем выполните команду [az network public-ip create][az-network-public-ip-create], чтобы создать статический общедоступный IP-адрес. Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса IP-адреса, например *myAKSPublicIP*:
 
-```azurecli
+```azurecli-interactive
 az network public-ip create \
     --resource-group MC_myResourceGroup_myAKSCluster_eastus \
     --name myAKSPublicIP \
     --allocation-method static
 ```
 
-Отобразится IP-адрес, как показано в следующем сжатом примере выходных данных:
+Отобразится IP-адрес, как показано в следующем сокращенном примере выходных данных.
 
 ```json
 {
@@ -61,11 +61,12 @@ az network public-ip create \
     "ipAddress": "40.121.183.52",
     [...]
   }
+}
 ```
 
 Позже можно получить общедоступный IP-адрес с помощью команды [az network public-ip list][az-network-public-ip-list]. Укажите имя группы ресурсов узла и созданный вами общедоступный IP-адрес, а затем запросите *ipAddress*, как показано в следующем примере:
 
-```azurecli
+```azurecli-interactive
 $ az network public-ip show --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP --query ipAddress --output tsv
 
 40.121.183.52
@@ -99,7 +100,7 @@ kubectl apply -f load-balancer-service.yaml
 
 С помощью Kubernetes 1.10 (или более поздней версии) можно использовать статический IP-адрес, который создается за пределами группы ресурсов узла. Субъекту-службе, используемой кластером AKS, необходимо делегированное разрешение для другой группы ресурсов, как показано в следующем примере.
 
-```azurecli
+```azurecli-interactive
 az role assignment create\
     --assignee <SP Client ID> \
     --role "Network Contributor" \
@@ -126,7 +127,7 @@ spec:
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-Если статический IP-адрес, определенный в свойстве *loadBalancerIP* манифеста службы Kubernetes, не существует или не был создан в группе ресурсов узла, создание службы подсистемы балансировки нагрузки завершится сбоем. Для устранения неполадок просмотрите события создания службы, выполнив команду [kubectl describe][kubectl-describe]. Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
+Если определен статический IP-адрес в *loadBalancerIP* свойства манифеста службы Kubernetes не существует или не был создан в группе ресурсов узла и без дополнительных делегирования настроен, служба балансировки нагрузки Создание завершается с ошибкой. Для устранения неполадок просмотрите события создания службы, выполнив команду [kubectl describe][kubectl-describe]. Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
 
 ```console
 kubectl describe service azure-load-balancer
@@ -156,7 +157,7 @@ Events:
   Warning  CreatingLoadBalancerFailed  6s (x2 over 12s)  service-controller  Error creating load balancer (will retry): Failed to create load balancer for service default/azure-load-balancer: user supplied IP Address 40.121.183.52 was not found
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для дополнительного управления входящим трафиком приложений можно [создать контроллер входящего трафика][aks-ingress-basic]. Вы также можете [создать контроллер входящего трафика со статическим общедоступным IP-адресом][aks-static-ingress].
 
@@ -173,3 +174,4 @@ Events:
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
+[ip-sku]: ../virtual-network/virtual-network-ip-addresses-overview-arm.md#sku
