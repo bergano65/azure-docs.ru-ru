@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: 5de707f3f2e6a82d880363eea91fb8ce644fb3aa
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
-ms.translationtype: HT
+ms.openlocfilehash: 340c08841b7bedc9f2453617aeff111beb810961
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47055054"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57888184"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  
@@ -66,7 +66,7 @@ ms.locfileid: "47055054"
 
 ## <a name="setup"></a>Настройка
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -94,7 +94,7 @@ ms.locfileid: "47055054"
     - Чтобы использовать базу данных SQL с columnstore, задайте **$DemoScenario** = **3**.  
 3. Нажмите клавишу **F5** для запуска демонстрационного сценария (который вызывает сценарий *Deploy-TenantAnalytics<XX>.ps1*), создающего хранилище аналитики клиента. 
 
-Теперь, когда вы развернули приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения серверов **tenants1-mt-\<Пользователь\>** and **catalog-mt-\<Пользователь\>**, используя имя для входа *developer* и пароль *P@ssword1*.
+Теперь, развернутое приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-mt -\<пользователя\>**  и **catalog-mt -\<пользователя\>**  серверов с использованием имени входа = *разработчика*, пароль = *P\@ssword1*.
 
 ![Обзор архитектуры](media/saas-multitenantdb-tenant-analytics/ssmsSignIn.png)
 
@@ -170,13 +170,13 @@ ms.locfileid: "47055054"
 Выполните шаги ниже, чтобы подключиться к Power BI, а также импортировать созданные ранее представления:
 
 1. Запустите Power BI Desktop.
-2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…**. в меню.
+2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…**.  в меню.
 3. В окне **получения данных** выберите базу данных SQL Azure.
 4. В окне входа в базу данных введите имя сервера (catalog-mt-\<Пользователь\>.database.windows.net). Выберите **Импорт** для **режима подключения к данным**, а затем нажмите кнопку "ОК". 
 
     ![powerBISignIn](media/saas-multitenantdb-tenant-analytics/powerBISignIn.PNG)
 
-5. В левой области выберите **База данных**, затем введите имя пользователя *developer* и пароль *P@ssword1*. Щелкните **Подключить**.  
+5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
 
     ![DatabaseSignIn](media/saas-multitenantdb-tenant-analytics/databaseSignIn.PNG)
 
@@ -226,7 +226,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 
 Вы рассмотрели тенденции в данных клиентов из мультитенантного приложения SaaS Wingtip Tickets для базы данных. Вы можете ознакомиться с другими способами того, как приложение может помочь в принятии бизнес-решений поставщикам приложений SaaS. Поставщики могут улучшить удовлетворение потребностей клиентов. В этом руководстве вы узнали о средствах, необходимых для выполнения аналитики данных клиентов, чтобы помочь организации в принятии решений на основе данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

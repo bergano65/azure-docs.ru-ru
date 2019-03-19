@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: a243ac45ce29ae824c8f38036d4387da3b1cff8f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 165df03ec06081fe9b2e1ab84ffe7579ac457758
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453218"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57855492"
 ---
 # <a name="data-exploration-and-visualization-tools-on-the-data-science-virtual-machine"></a>Средства исследования и визуализации данных на виртуальной машине для обработки и анализа данных
 
@@ -43,7 +43,7 @@ ms.locfileid: "55453218"
 | Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)     | Windows, Linux     |
 | Распространенные способы применения      | Общее средство машинного обучения     |
 | Запуск и использование      | В Windows выполните поиск Weka в меню "Пуск". В Linux войдите в систему с помощью X2Go, затем перейдите к "Приложения > Разработка > Weka". |
-| Ссылки на примеры      | [Примеры Weka](http://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
+| Ссылки на примеры      | [Примеры Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      |LightGBM, Rattle, XGBoost   |
 
 ## <a name="rattle"></a>Rattle;

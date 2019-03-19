@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 2/5/2019
+ms.date: 3/12/2019
 ms.author: raiye
-ms.openlocfilehash: 76009115f855a840c81e79d0c864187c8410aa23
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: c5fdee4e5b1b9d2a283ef55ce99dffab0cb25873
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751520"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57840857"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK
 В данном разделе предоставляются новейшие сведения о последних выпусках гостевых ОС Azure для облачных служб. Эта информация поможет вам спланировать обновление до того, как гостевая ОС будет отключена. Если роли настроены для *автоматического* обновления гостевой ОС, как описано в разделе [Параметры обновления гостевой ОС Azure][Azure Guest OS Update Settings], ознакомление с этой страницей необязательно.
@@ -43,6 +43,9 @@ ms.locfileid: "55751520"
 
 ## <a name="news-updates"></a>Новости по обновлениям
 
+###### <a name="march-12-2019"></a>**12 марта 2019 г.**
+Выпущена февральская гостевая ОС.
+
 ###### <a name="february-5-2019"></a>**5 февраля 2019 г.**
 Выпущена январская гостевая ОС.
 
@@ -64,9 +67,6 @@ ms.locfileid: "55751520"
 ###### <a name="september-12-2018"></a>**12 сентября 2018 г.**
 Выпущена августовская гостевая ОС.
 
-###### <a name="august-3-2018"></a>**3 августа 2018 г.**
-Выпущена версия гостевой ОС за июль.
-
 ## <a name="releases"></a>Выпуски
 
 ## <a name="family-6-releases"></a>Выпуски семейства 6
@@ -77,11 +77,21 @@ ms.locfileid: "55751520"
 > [!NOTE]
 > Пакет SDK Microsoft Azure для .NET 3.0 можно скачать [здесь][Windows Azure SDK].
 >
+>Действия по установке:
+>1. Удалите все более ранние версии MicrosoftAzureAuthoringTools*.msi
+>2. Установка [Azure SDK для .NET - 3.0][Windows Azure SDK]
+>3. Перезагрузите компьютер
+>4. Создание нового проекта облачной службы и добавление единственной рабочей роли
+>5. Измените семейство ОС на 6 и сборки пакета
+>6. Разверните пакет в Azure с помощью портала Azure или Visual Studio
+>
+
 
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
+| WA-ГОСТЬ-OS-6.4_201902-01 |12 марта 2019 г. |POST 6.6 |
 | WA-GUEST-OS-6.3_201901-01 |5 февраля 2019 г. |После 6.5 |
-| WA-GUEST-OS-6.2_201812-01 |24 января 2019 г. |После 6.4 |
+|~~WA-ГОСТЬ-OS-6.2_201812-01~~|24 января 2019 г. |12 марта 2019 г. |
 |~~WA-GUEST-OS-6.1_201811-01~~ |24 января 2019 г. |5 февраля 2019 г. |
 
 ## <a name="family-5-releases"></a>Выпуски семейства 5
@@ -93,15 +103,16 @@ ms.locfileid: "55751520"
 > Пароль RDP для семейства ОС 5 должен содержать не менее 10 знаков.
 >
 
+
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
+| WA-ГОСТЬ-OS-5.28_201902-01 |12 марта 2019 г. |POST 5.30 |
 | WA-GUEST-OS-5.27_201901-01 |5 февраля 2019 г. |После 5.29 |
-| WA-GUEST-OS-5.26_201812-01 |7 января 2019 г. |После 5.28 |
+|~~WA-ГОСТЬ-OS-5.26_201812-01~~|7 января 2019 г. |12 марта 2019 г. |
 |~~WA-GUEST-OS-5.25_201811-01~~ |14 декабря 2018 г. |5 февраля 2019 г. |
 |~~WA-GUEST-OS-5.24_201810-01~~ |8 ноября 2018 г. |7 января 2019 г. |
 |~~WA-GUEST-OS-5.23_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 |~~WA-GUEST-OS-5.22_201808-01~~ |12 сентября 2018 г. |8 ноября 2018 г. |
-|~~WA-GUEST-OS-5.21_201807-02~~ |3 августа 2018 г. |12 октября 2018 г. |
 
 ## <a name="family-4-releases"></a>Выпуски семейства 4
 **Windows Server 2012 R2**
@@ -110,13 +121,13 @@ ms.locfileid: "55751520"
 
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
+| WA-ГОСТЬ-OS-4.63_201902-01 |12 марта 2019 г. |POST 4,65 |
 | WA-GUEST-OS-4.62_201901-01 |5 февраля 2019 г. |После 4.64 |
-| WA-GUEST-OS-4.61_201812-01 |7 января 2019 г. |После 4.63 |
+|~~WA-ГОСТЬ-OS-4.61_201812-01~~|7 января 2019 г. |12 марта 2019 г. |
 |~~WA-GUEST-OS-4.60_201811-01~~ |14 декабря 2018 г. |5 февраля 2019 г. |
 |~~WA-GUEST-OS-4.59_201810-01~~ |8 ноября 2018 г. |7 января 2019 г. |
 |~~WA-GUEST-OS-4.58_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 |~~WA-GUEST-OS-4.57_201808-01~~ |12 сентября 2018 г. |8 ноября 2018 г. |
-|~~WA-GUEST-OS-4.56_201807-02~~ |3 августа 2018 г. |12 октября 2018 г. |
 
 ## <a name="family-3-releases"></a>Выпуски семейства 3
 **Windows Server 2012**
@@ -125,13 +136,13 @@ ms.locfileid: "55751520"
 
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
+| WA-ГОСТЬ-OS-3.70_201902-01 |12 марта 2019 г. |POST 3,72 |
 | WA-GUEST-OS-3.69_201901-01 |5 февраля 2019 г. |После 3.71 |
-| WA-GUEST-OS-3.68_201812-01 |7 января 2019 г. |После 3.70 |
+|~~WA-ГОСТЬ-OS-3.68_201812-01~~|7 января 2019 г. |12 марта 2019 г. |
 |~~WA-GUEST-OS-3.67_201811-01~~ |14 декабря 2018 г. |5 февраля 2019 г. |
 |~~WA-GUEST-OS-3.66_201810-01~~ |8 ноября 2018 г. |7 января 2019 г. |
 |~~WA-GUEST-OS-3.65_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 |~~WA-GUEST-OS-3.64_201808-01~~ |12 сентября 2018 г. |8 ноября 2018 г. |
-|~~WA-GUEST-OS-3.63_201807-02~~ |3 августа 2018 г. |12 октября 2018 г. |
 
 ## <a name="family-2-releases"></a>Выпуски семейства 2
 **Windows Server 2008 R2 с пакетом обновления 1**
@@ -140,14 +151,13 @@ ms.locfileid: "55751520"
 
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
+| WA-ГОСТЬ-OS-2.83_201902-01 |12 марта 2019 г. |POST 2,85 |
 | WA-GUEST-OS-2.82_201901-01 |5 февраля 2019 г. |После 2.84 |
-| WA-GUEST-OS-2.81_201812-01 |7 января 2019 г. |После 2.83 |
+|~~WA-GUEST-OS-2.81_201812-01~~ |7 января 2019 г. |12 марта 2019 г. |
 |~~WA-GUEST-OS-2.80_201811-01~~ |14 декабря 2018 г. |5 февраля 2019 г. |
 |~~WA-GUEST-OS-2.79_201810-01~~ |8 ноября 2018 г. |7 января 2019 г. |
 |~~WA-GUEST-OS-2.78_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 |~~WA-GUEST-OS-2.77_201808-01~~ |12 сентября 2018 г. |8 ноября 2018 г. |
-|~~WA-GUEST-OS-2.76_201807-02~~ |3 августа 2018 г. |12 октября 2018 г. |
-|~~WA-GUEST-OS-2.75_201806-01~~ |3 июля 2018 г. |12 сентября 2018 г. |
 
 ## <a name="msrc-patch-updates"></a>Обновление исправлений MSRC
 Список исправлений, включенных в ежемесячный выпуск гостевой ОС, доступен [здесь][patches].
@@ -209,19 +219,19 @@ ms.locfileid: "55751520"
 [RSS-канал обновлений гостевой ОС]: https://raw.githubusercontent.com/MicrosoftDocs/azure-cloud-services-files/master/GuestOS/GuestOSFeed.xml
 [Install .NET on a Cloud Service Role]: https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
 [Azure Guest OS Update Settings]: cloud-services-how-to-configure-portal.md
-[ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
+[ssl3 announcement]: https://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/library/security/3009008.aspx
-[ssl3-fixit]: http://go.microsoft.com/?linkid=9863266
+[ssl3-fixit]: https://go.microsoft.com/?linkid=9863266
 [MS14-066]: https://technet.microsoft.com/library/security/ms14-066.aspx
 [MS14-046]: https://technet.microsoft.com/library/security/ms14-046.aspx
 [retire policy sdk]: https://msdn.microsoft.com/library/dn479282.aspx
 [server and gos]: https://msdn.microsoft.com/library/dn775043.aspx
-[azuresupport]: http://azure.microsoft.com/support/options/
-[net install pkg]: http://www.microsoft.com/download/details.aspx?id=42643
+[azuresupport]: https://azure.microsoft.com/support/options/
+[net install pkg]: https://www.microsoft.com/download/details.aspx?id=42643
 [msrc]: https://technet.microsoft.com/security/dn440717.aspx
 [update guest os portal]: https://msdn.microsoft.com/library/gg433101.aspx
 [update guest os svc]: https://msdn.microsoft.com/library/gg456324.aspx
-[restarts]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
+[restarts]: https://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
 [patches]: cloud-services-guestos-msrc-releases.md
 [retirepolicy]: cloud-services-guestos-retirement-policy.md
 [fam1retire]: cloud-services-guestos-family1-retirement.md

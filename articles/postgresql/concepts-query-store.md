@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/01/2019
-ms.openlocfilehash: a6b31933f7170006046846c458e21efd8c54034c
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: db62c1ec03ae9005f33a09010486b04ac6976742
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660737"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58005906"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
@@ -32,12 +32,18 @@ ms.locfileid: "55660737"
 ### <a name="enable-query-store-using-the-azure-portal"></a>Включение хранилища запросов с помощью портала Azure
 1. Войдите на портал Azure и выберите сервер службы "База данных Azure для PostgreSQL".
 2. В разделе меню **Параметры** выберите **Параметры сервера**.
-3. Найдите параметр **pg_qs.query_capture_mode**.
-4. Замените значение NONE на TOP и сохраните.
+3. Найдите параметр `pg_qs.query_capture_mode`.
+4. Задайте значение `TOP` и **Сохранить**.
 
-Этот параметр также можно задать с помощью Azure CLI.
+Чтобы включить статистику времени ожидания в Store вашего запроса: 
+1. Найдите параметр `pgms_wait_sampling.query_capture_mode`.
+1. Задайте значение `ALL` и **Сохранить**.
+
+
+Также можно задать эти параметры, с помощью Azure CLI.
 ```azurecli-interactive
 az postgres server configuration set --name pg_qs.query_capture_mode --resource-group myresourcegroup --server mydemoserver --value TOP
+az postgres server configuration set --name pgms_wait_sampling.query_capture_mode --resource-group myresourcegroup --server mydemoserver --value ALL
 ```
 
 Подождите около 20 минут, пока первый набор данных сохранится в базе данных azure_sys.
@@ -81,6 +87,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 При включении хранилища запросов оно сохраняет данные с 15-минутным периодом агрегирования: не более 500 уникальных запросов на период. 
 
 Ниже приведены настраиваемые параметры для хранилища запросов.
+
 | **Параметр** | **Описание** | **По умолчанию** | **Range**|
 |---|---|---|---|
 | pg_qs.query_capture_mode | Задает, какие инструкции отслеживаются. | Нет | none, top, all |
@@ -89,6 +96,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 | pg_qs.track_utility | Задает, будут ли отслеживаться команды служебных программ. | on | on, off |
 
 Следующие параметры применяются исключительно к статистике ожидания.
+
 | **Параметр** | **Описание** | **По умолчанию** | **Range**|
 |---|---|---|---|
 | pgms_wait_sampling.query_capture_mode | Задает, какие инструкции отслеживаются для статистики ожидания. | Нет | none, all|
@@ -173,6 +181,6 @@ Query_store.staging_data_reset() returns void
 - Операции хранилища запросов могут быть прерваны при обнаружении длинных запросов в Юникоде (>= 6000 байт).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [ситуациях, в которых хранилище запросов может быть особенно полезным](concepts-query-store-scenarios.md).
 - Дополнительные сведения о [рекомендациях по работе с хранилищем запросов](concepts-query-store-best-practices.md).

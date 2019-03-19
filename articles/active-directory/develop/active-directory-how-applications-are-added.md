@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: elisol, lenalepa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82ccfe6a8d77926d2b908f84db600b0665565d51
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 257f7b66163b72141ceb6405768e912a263fb14b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173897"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58124224"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -133,8 +133,9 @@ ms.locfileid: "56173897"
 * Чтобы запретить пользователям предоставлять разрешения для приложений от собственного имени:
   1. На портале Azure перейдите к разделу [Параметры пользователя](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/) в разделе корпоративных приложений.
   2. Для параметра **Users can consent to apps accessing company data on their behalf** (Пользователи могут разрешать приложениям доступ к корпоративным данным от своего имени) задайте значение **Нет**. 
-      > [!NOTE]
-      > Если вы решили отключить возможность пользователя предоставлять разрешения, администратору потребуется самому предоставлять разрешения на любое новое приложение, которое пользователю необходимо использовать.    
+     
+     > [!NOTE]
+     > Если вы решили отключить возможность пользователя предоставлять разрешения, администратору потребуется самому предоставлять разрешения на любое новое приложение, которое пользователю необходимо использовать.    
 * Чтобы запретить пользователям регистрировать свои приложения:
   1. На портале Azure перейдите к разделу [Параметры пользователя](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UserSettings) в разделе Azure Active Directory.
   2. Для параметра **Users can register applications** (Пользователи могут регистрировать приложения) задайте значение **Нет**.

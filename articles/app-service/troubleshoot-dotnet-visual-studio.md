@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0d0e9c1c35236ce6449a9c9bf06ba291f46db472
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 03bafcdbf6890573d1d2855e2b47520d0111fe13
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730437"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996771"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -134,19 +134,19 @@ public ActionResult About()
 }
 ```
 
-4. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
+1. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
 
-5. В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Опубликовать**.
+1. В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Опубликовать**.
 
-6. Из раскрывающегося списка **Профиль** выберите профиль, который вы использовали при выполнении инструкций из статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md). Затем щелкните "Параметры".
+1. Из раскрывающегося списка **Профиль** выберите профиль, который вы использовали при выполнении инструкций из статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md). Затем щелкните "Параметры".
 
-7. В диалоговом окне **Публикация** щелкните вкладку **Параметры** и измените значение **Конфигурация** на **Отладка**, затем щелкните **Сохранить**.
+1. В диалоговом окне **Публикация** щелкните вкладку **Параметры** и измените значение **Конфигурация** на **Отладка**, затем щелкните **Сохранить**.
 
     ![Публикация в режиме отладки](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-publishdebug.png)
 
-8. Щелкните **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
+1. Щелкните **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
 
-9. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Подключить отладчик**.
+1. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Подключить отладчик**.
 
     ![Подключить отладчик](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png)
 
@@ -156,19 +156,19 @@ public ActionResult About()
     > При возникновении сложностей с запуском отладчика попробуйте сделать это с помощью **Cloud Explorer**, а не **обозревателя сервера**.
     >
 
-10. Выберите пункт **О программе** в меню.
+1. Выберите пункт **О программе** в меню.
 
-     Visual Studio прерывается в точке останова, при этом код выполняется в Azure, а не на локальном компьютере.
+    Visual Studio прерывается в точке останова, при этом код выполняется в Azure, а не на локальном компьютере.
 
-11. Наведите указатель мыши на переменную `currentTime` , чтобы просмотреть значение времени.
+1. Наведите указатель мыши на переменную `currentTime` , чтобы просмотреть значение времени.
 
-     ![Просмотр переменной в режиме отладки в Azure](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugviewinwa.png)
+    ![Просмотр переменной в режиме отладки в Azure](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugviewinwa.png)
 
-     Время, которое отображается здесь, является временем сервера Azure, который может находиться в другом часовом поясе, отличном от часового пояса локального компьютера.
+    Время, которое отображается здесь, является временем сервера Azure, который может находиться в другом часовом поясе, отличном от часового пояса локального компьютера.
 
-12. Введите новое значение переменной `currentTime` , например "Теперь выполняется в Azure".
+1. Введите новое значение переменной `currentTime` , например "Теперь выполняется в Azure".
 
-13. Нажмите клавишу F5, чтобы продолжить работу.
+1. Нажмите клавишу F5, чтобы продолжить работу.
 
      На странице "О программе" в Azure отображается новое значение, введенное в переменной currentTime.
 
@@ -311,7 +311,7 @@ public ActionResult Contact()
 }        
 ```
 
-2. Добавьте в начало файла инструкцию `using System.Diagnostics;` .
+1. Добавьте в начало файла инструкцию `using System.Diagnostics;` .
 
 ### <a name="view-the-tracing-output-locally"></a>Просмотр результатов трассировки локально
 1. Нажмите F5, чтобы выполнить приложение в режиме отладки.
@@ -339,15 +339,15 @@ public ActionResult Contact()
 ```
 
 `WebPageTraceListener` позволяет просматривать результаты трассировки, открыв `/trace.axd`.
-3. Добавьте <a href="https://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
+1. Добавьте <a href="https://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
 
 ``` xml
 <trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
 ```       
 
-4. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
-5. В адресной строке окна браузера добавьте *trace.axd* к URL-адресу и нажмите клавишу "ВВОД" (URL-адрес должен иметь вид http://localhost:53370/trace.axd)).
-6. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
+1. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
+1. В адресной строке окна браузера добавьте *trace.axd* URL-адрес, и нажмите клавишу ВВОД (URL-адрес аналогичен `http://localhost:53370/trace.axd`).
+1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
     ![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)
 
@@ -477,7 +477,7 @@ public ActionResult Contact()
    * Журналы веб-сервера хранятся в *LOG*-файлах в папке *LogFiles\http\RawLogs*. Можно использовать средство, аналогичное [Log Parser](https://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) для просмотра и обработки этих файлов.
    * Подробные журналы сообщений об ошибках хранятся в *HTML*-файлах в папке *LogFiles\DetailedErrors*.
 
-    (Папка *deployments* предназначена для файлов, созданных при публикации системы управления версиями; она никак не связана с публикациями Visual Studio. Папка *Git* предназначена для трассировок, относящихся к публикациям системы управления версиями и службы потоковой передачи файлов журналов.)  
+     (Папка *deployments* предназначена для файлов, созданных при публикации системы управления версиями; она никак не связана с публикациями Visual Studio. Папка *Git* предназначена для трассировок, относящихся к публикациям системы управления версиями и службы потоковой передачи файлов журналов.)  
 
 <!-- ## <a name="storagelogs"></a>View storage logs
 Application tracing logs can also be sent to an Azure storage account, and you can view them in Visual Studio. To do that you'll create a storage account, enable storage logs in the Azure portal, and view them in the **Logs** tab of the **Azure Web App** window.
@@ -685,7 +685,7 @@ catch (Exception ex)
 
 * [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
-* [Устранение неполадок, связанных с производительностью IIS, или ошибок приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
+* [Устранение проблем с производительностью IIS и приложений с помощью LogParser ошибок](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
    Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
 * [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)

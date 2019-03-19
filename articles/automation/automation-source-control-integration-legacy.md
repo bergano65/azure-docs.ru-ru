@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 8316e571e97fce65b3f8308709d3300bc585663f
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: edc38296374538fd708a74f575d5b0c77770c005
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54434875"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57901548"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -69,19 +69,19 @@ ms.locfileid: "54434875"
      | type |Строка |
      | Значение |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
 
-    * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  
+     * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  
 
-    |**Параметр**            |**Значение** |
-    |:---|:---|
-    | ИМЯ  | Microsoft.Azure.Automation.SourceControl.OAuthToken |
-    | type | Unknown(Encrypted) |
-    | Значение | <*Зашифрованное значение OAuthToken*> |  
+     |**Параметр**            |**Значение** |
+     |:---|:---|
+     | ИМЯ  | Microsoft.Azure.Automation.SourceControl.OAuthToken |
+     | type | Unknown(Encrypted) |
+     | Значение | <*Зашифрованное значение OAuthToken*> |  
 
-    ![Переменные](media/automation-source-control-integration-legacy/automation_04_Variables.png)  
+     ![Переменные](media/automation-source-control-integration-legacy/automation_04_Variables.png)  
 
-    * **Система управления версиями службы автоматизации** будет добавлена в вашу учетную запись GitHub в виде авторизованного приложения. Чтобы просмотреть приложение, на домашней странице GitHub последовательно выберите **Профиль** > **Параметры** > **Приложения**. Это приложение позволяет службе автоматизации Azure синхронизировать репозиторий GitHub с учетной записью службы автоматизации.  
+     * **Система управления версиями службы автоматизации** будет добавлена в вашу учетную запись GitHub в виде авторизованного приложения. Чтобы просмотреть приложение, на домашней странице GitHub последовательно выберите **Профиль** > **Параметры** > **Приложения**. Это приложение позволяет службе автоматизации Azure синхронизировать репозиторий GitHub с учетной записью службы автоматизации.  
 
-    ![Приложение Git](media/automation-source-control-integration-legacy/automation_05_GitApplication.png)
+     ![Приложение Git](media/automation-source-control-integration-legacy/automation_05_GitApplication.png)
 
 
 ## <a name="using-source-control-in-automation"></a>Использование системы управления версиями в службе автоматизации
@@ -125,10 +125,6 @@ ms.locfileid: "54434875"
     > [!NOTE] 
     > При синхронизации из системы управления версиями черновики модулей Runbook в учетной записи службы автоматизации будут заменены **ВСЕМИ** модулями Runbook из системы управления версиями. Инструкция командной строки для синхронизации, эквивалентная команде Git, выглядит следующим образом: **git pull**
 
-
-## <a name="troubleshooting-source-control-problems"></a>Устранение неполадок с системой управления версиями
-Для заданий возврата или синхронизации с ошибками будет отображаться состояние "Приостановлено". Дополнительные сведения об ошибке можно просмотреть на странице задания.  В области **Все журналы** можно просмотреть все потоки PowerShell, связанные с этим заданием. Это позволяет получить данные, необходимые для устранения проблем, которые связаны с возвратом или синхронизацией. Кроме того, здесь отображается последовательность действий, выполняемых при синхронизации или возврате модуля Runbook.  
-
 ![Образ AllLogs](media/automation-source-control-integration-legacy/automation_13_AllLogs.png)
 
 ## <a name="disconnecting-source-control"></a>Отключение системы управления версиями
@@ -136,7 +132,7 @@ ms.locfileid: "54434875"
 
   ![Кнопка "Отключить"](media/automation-source-control-integration-legacy/automation_12_Disconnect.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об интеграции системы управления версиями см. в следующих ресурсах:  
 
 * [Служба автоматизации Azure: Интеграция системы управления версиями и службы автоматизации Azure](https://azure.microsoft.com/blog/azure-automation-source-control-13/)  

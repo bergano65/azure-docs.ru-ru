@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/30/2019
+ms.date: 03/12/2019
 ms.author: markvi
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7687cb4eb6cacd604a05a820e04f71755e0b66b1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b475eae337b7e6a7e26b3e5a7518be0e461c9fa4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201420"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170621"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -51,25 +51,43 @@ ms.locfileid: "56201420"
 
 Политики условного доступа можно назначить для следующих облачных приложений от корпорации Майкрософт:
 
-- Azure Information Protection — [узнайте больше](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
 
-- Azure RemoteApp
-
-- [См. дополнительные сведения о Базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
-
-- Microsoft Dynamics 365
-
-- Microsoft Office 365 Yammer
-
-- Microsoft Office 365 Exchange Online
-
-- Microsoft Office 365 SharePoint Online (включая OneDrive для бизнеса и Project Online)
-
-- Microsoft Power BI 
-
+- Службы Azure Analysis Services
 - Azure DevOps
+- База данных SQL Azure и хранилище данных — [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
+- Dynamics CRM Online
+- Microsoft Application Insights Analytics
+- Microsoft Azure Information Protection — [Подробнее](https://docs.microsoft.com/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
+- Управление Microsoft Azure — [Подробнее](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+- Microsoft Azure RemoteApp
+- Управление подписками Microsoft Azure
+- Microsoft Cloud App Security
+- Microsoft Commerce средств портал контроля доступа
+- Служба проверки подлинности средства Microsoft Commerce
+- Microsoft Flow
+- Microsoft Forms
+- Microsoft Intune
+- Регистрация в Microsoft Intune
+- Планировщик (Майкрософт);
+- Microsoft Power BI
+- Microsoft PowerApps
+- Microsoft Search в Bing
+- Microsoft StaffHub
+- Microsoft Stream;
+- Microsoft Teams 
+- Office 365 Exchange Online
+- Office 365 SharePoint Online
+- Office 365 Yammer
+- Углубимся Office
+- Office Sway 
+- Outlook Groups
+- Project Online
+- Skype для бизнеса Online
+- Виртуальная частная сеть (VPN)
+- Центр приложений Visual Studio
+- ATP в Защитнике Windows
 
-- Microsoft Teams
+
 
 
 ### <a name="other-applications"></a>Другие приложения 
@@ -257,7 +275,7 @@ ms.locfileid: "56201420"
     - поддерживает только iOS и Android для [условия платформы устройства](#device-platform-condition);
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об условном доступе см. в статье [Условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md)
 - Если вы готовы к настройке политик условного доступа для своей среды, прочитайте статью [Рекомендации по работе с условным доступом в Azure Active Directory](best-practices.md).

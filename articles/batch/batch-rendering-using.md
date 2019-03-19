@@ -2,16 +2,17 @@
 title: Возможности рендеринга — пакетная служба Azure
 description: Использование возможностей рендеринга пакетной службы Azure
 services: batch
+ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2f423de63b7cec24d9d9c4541ddab0ac38b1076a
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 2dff44f0b5b4b02c39c4c63f23ff64d55ca9d833
+ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53542317"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57789642"
 ---
 # <a name="using-azure-batch-rendering"></a>Использование службы рендеринга пакетной службы Azure
 
@@ -61,7 +62,7 @@ ms.locfileid: "53542317"
 * [Autodesk 3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max)
 * [Autodesk Maya](https://github.com/Azure/azure-batch-maya)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры с применением рендеринга пакетной службы вы найдете в следующих руководствах:
 

@@ -1,19 +1,19 @@
 ---
 title: Схема Реестра контейнеров Сетки событий Azure
-description: В этой статье приведены свойства событий Реестра контейнеров, используемых со службой "Сетка событий Azure".
+description: Описывает свойства, предоставленные для события реестра контейнеров с помощью сетки событий Azure
 services: event-grid
 author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 01/13/2019
+ms.date: 03/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 6f00d4f249543ece0eb8db4a8e040300d55b2de8
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: c5998ff428c4b6f4c1f7a4087c6ccb27d93773eb
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54462850"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58084333"
 ---
 # <a name="azure-event-grid-event-schema-for-container-registry"></a>Схема событий службы "Сетка событий Azure" для Реестра контейнеров
 
@@ -21,12 +21,14 @@ ms.locfileid: "54462850"
 
 ## <a name="available-event-types"></a>Доступные типы событий
 
-Хранилище BLOB-объектов выдает следующие типы событий:
+Реестр контейнеров Azure выдает следующие типы событий:
 
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
 | Microsoft.ContainerRegistry.ImagePushed | Вызывается при отправке образа. |
 | Microsoft.ContainerRegistry.ImageDeleted | Вызывается при удалении образа. |
+| Microsoft.ContainerRegistry.ChartPushed | Вызывается, когда помещается чарт Helm. |
+| Microsoft.ContainerRegistry.ChartDeleted | Возникает при удалении чарт Helm. |
 
 ## <a name="example-event"></a>Пример события
 
@@ -93,6 +95,62 @@ ms.locfileid: "54462850"
 }]
 ```
 
+Схема для диаграммы помещается событий аналогична схеме для события из образа занесенный в стек, но она не включает объект запроса:
+
+```json
+[{
+  "id": "ea3a9c28-5b17-40f6-a500-3f02b6829277",
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerRegistry/registries/<name>",
+  "subject": "mychart:1.0.0",
+  "eventType": "Microsoft.ContainerRegistry.ChartPushed",
+  "eventTime": "2019-03-12T22:16:31.5164086Z",
+  "data": {
+    "id":"ea3a9c28-5b17-40f6-a500-3f02b682927",
+    "timestamp":"2019-03-12T22:16:31.0087496+00:00",
+    "action":"chart_push",
+    "target":{
+      "mediaType":"application/vnd.acr.helm.chart",
+      "size":25265,
+      "digest":"sha256:7f060075264b5ba7c14c23672698152ae6a3ebac1c47916e4efe19cd624d5fab",
+      "repository":"repo",
+      "tag":"mychart-1.0.0.tgz",
+      "name":"mychart",
+      "version":"1.0.0"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
+Схема события удаления диаграммы похож на схему для образа удаленные события, но она не включает объект запроса:
+
+```json
+[{
+  "id": "39136b3a-1a7e-416f-a09e-5c85d5402fca",
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerRegistry/registries/<name>",
+  "subject": "mychart:1.0.0",
+  "eventType": "Microsoft.ContainerRegistry.ChartDeleted",
+  "eventTime": "019-03-12T22:42:08.7034064Z",
+  "data": {
+    "id":"ea3a9c28-5b17-40f6-a500-3f02b682927",
+    "timestamp":"2019-03-12T22:42:08.3783775+00:00",
+    "action":"chart_delete",
+    "target":{
+      "mediaType":"application/vnd.acr.helm.chart",
+      "size":25265,
+      "digest":"sha256:7f060075264b5ba7c14c23672698152ae6a3ebac1c47916e4efe19cd624d5fab",
+      "repository":"repo",
+      "tag":"mychart-1.0.0.tgz",
+      "name":"mychart",
+      "version":"1.0.0"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
 ## <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
@@ -128,6 +186,8 @@ ms.locfileid: "54462850"
 | длина | целое число | Число байтов содержимого. Это значение совпадает со значением поля Size. |
 | repository | строка | Имя репозитория. |
 | tag | строка | Имя тега. |
+| name | строка | Имя диаграммы. |
+| версия | строка | Версия диаграммы. |
 
 Объект запроса имеет следующие свойства:
 
@@ -139,7 +199,7 @@ ms.locfileid: "54462850"
 | метод | строка | Метод запроса, который создал событие. |
 | useragent | строка | Заголовок user agent из запроса. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. общие сведения о [службе "Сетка событий Azure"](overview.md).
 * Дополнительные сведения о создании подписки на Сетку событий Azure см. в статье [Схема подписки для службы "Сетка событий"](subscription-creation-schema.md).

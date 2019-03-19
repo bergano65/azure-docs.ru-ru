@@ -14,12 +14,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: cddb3769cfc5a2ba002e19036d986f4165670dc1
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.openlocfilehash: 3c22aab20a9260bfd21869f0b327211e2f3d8894
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55962457"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58004218"
 ---
 # <a name="how-to-use-apache-cordova-client-library-for-azure-mobile-apps"></a>Как использовать клиентскую библиотеку Apache Cordova для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -106,7 +106,7 @@ ionic run browser
              "https://localhost:3000"
          ],
 
-    Замените URL-адреса на URL-адреса службы.  Примеры: http://localhost:3000 (для примера службы Node.js) или http://localhost:4400 (для службы Ripple).  Это только примеры URL-адресов. Ваша ситуация, включая упомянутые в приведенных примерах службы, может быть совершенно другой.
+    Замените URL-адреса на URL-адреса службы.  К ним относятся `http://localhost:3000` (для примера службы Node.js), или `http://localhost:4400` (для службы Ripple).  Это только примеры URL-адресов. Ваша ситуация, включая упомянутые в приведенных примерах службы, может быть совершенно другой.
 8. В правом верхнем углу экрана нажмите кнопку **Чтение и запись** .
 9. Нажмите зеленую кнопку **PUT** .
 
