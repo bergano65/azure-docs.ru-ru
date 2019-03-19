@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/17/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 64cbf8f8704dbb216a15247caf741ff43690496a
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: ca4bd3d3b40934323bab8036f3ce72e9281f1de4
+ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54457080"
+ms.lasthandoff: 02/24/2019
+ms.locfileid: "56751535"
 ---
 > [!div class="op_single_selector"]
 > * [C в Windows](../articles/iot-accelerators/iot-accelerators-connecting-devices.md)
@@ -58,9 +58,9 @@ ms.locfileid: "54457080"
 
 Чтобы устройство смогло подключиться к акселератору решений, оно должно пройти идентификацию в Центре Интернета вещей с использованием допустимых учетных данных. При добавлении устройства в решение есть возможность сохранить строку подключения устройства, содержащую эти учетные данные. Вы добавите эту строку подключения в клиентское приложение далее в этом руководстве.
 
-Чтобы добавить устройство в решение для удаленного мониторинга, выполните следующие действия на странице решения **Устройства**.
+Чтобы добавить устройства к решению удаленного мониторинга, выполните следующие действия на **Device Explorer** страницы в решении:
 
-1. Щелкните **+ Новое устройство**, а затем для параметра **Тип устройства** выберите значение **Физическое**:
+1. Выберите **+ новое устройство**, а затем выберите **реальных** как **тип устройства**:
 
     ![Добавление реального устройства](media/iot-suite-selector-connecting/devicesprovision.png)
 

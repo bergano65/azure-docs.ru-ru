@@ -10,18 +10,20 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
-ms.openlocfilehash: e06bf20a04c6a57ae5988d4cc334ec7a3cdd4bf1
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 80776f9284752e8554486cb458096ccc9319949e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543862"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58112319"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
 После [создания и запуска приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) можно проверить его журнал запусков, журнал триггеров, состояние и производительность. Для мониторинга событий в режиме реального времени и отладки можно настроить [ведение журнала диагностики](#azure-diagnostics) для приложения логики. Это позволит [выполнять поиск и просматривать события](#find-events), такие как события триггера, события выполнения и события действия. Также можно [использовать полученные диагностические данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и Центры событий Azure. 
 
 Чтобы получать уведомления о сбоях или других возможных проблемах, настройте [оповещения](#add-azure-alerts). Например, можно создать оповещение, которое обнаруживает "более пяти запусков в течение часа, которые завершились сбоем". Можно также настроить мониторинг, отслеживание и ведение журнала программными средствами с помощью [параметров и свойств событий системы диагностики Azure](#diagnostic-event-properties).
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="view-runs-and-trigger-history-for-your-logic-app"></a>Просмотр сведений о выполнении и журнале триггеров для приложения логики
 
@@ -72,13 +74,13 @@ ms.locfileid: "53543862"
 
 ## <a name="turn-on-diagnostics-logging-for-your-logic-app"></a>Включение ведения журнала диагностики для приложения логики
 
-Для отладки с использованием сведений о среде выполнения и событиях можно настроить ведение журнала диагностики с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Log Analytics — это служба в Azure, которая отслеживает облачные и локальные среды, помогая поддерживать уровень их доступности и производительности. 
+Для отладки с использованием сведения о времени выполнения и события, можно настроить ведение журнала с помощью диагностики [журналы Azure Monitor](../log-analytics/log-analytics-overview.md). Azure Monitor — это служба в Azure, которая отслеживает облачные и локальные среды, помогая поддерживать уровень их доступности и производительности. 
 
 Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите требуемое приложение логики. 
 
-2. В меню в колонке приложения логики в разделе **Мониторинг** выберите **Диагностика** > **Параметры диагностики**.
+2. В меню в колонке приложения логики в разделе **мониторинг**, выберите **диагностики** > **параметров диагностики**.
 
    ![Выберите "Мониторинг" > "Диагностика" > "Параметры диагностики"](media/logic-apps-monitor-your-logic-apps/logic-app-diagnostics.png)
 
@@ -91,8 +93,8 @@ ms.locfileid: "53543862"
    1. Установите флажок **Отправить в Log Analytics**. 
    2. В разделе **Log Analytics** выберите **Настройка**. 
    3. В разделе **Рабочие области OMS** выберите рабочую область для ведения журнала.
-   > [!NOTE]
-   > Рабочие области OMS теперь называются рабочими областями Log Analytics.
+      > [!NOTE]
+      > Рабочие области OMS теперь называются рабочими областями Log Analytics.
    4. В разделе **Журнал** выберите категорию **WorkflowRuntime**.
    5. Выберите интервал метрики.
    6. Когда все будет готово, нажмите **Сохранить**.
@@ -125,7 +127,7 @@ ms.locfileid: "53543862"
 
    ![Введите строку поиска](media/logic-apps-monitor-your-logic-apps/oms-start-query.png)
 
-   Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
+   Дополнительные сведения о [способах поиска данных в журналах Azure Monitor](../log-analytics/log-analytics-log-searches.md).
 
 5. На странице результатов выберите период времени, данные за который вы хотите просмотреть.
 Чтобы уточнить запрос, добавив фильтр, нажмите **+Добавить**.
@@ -153,7 +155,7 @@ ms.locfileid: "53543862"
 
 ## <a name="extend-how-and-where-you-use-diagnostic-data-with-other-services"></a>Расширение возможностей использования диагностических данных в других службах
 
-Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
+Вместе с Azure Monitor журналы можно расширить, как использовать приложение логики диагностических данных с другими службами Azure, например: 
 
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Потоковая передача журналов диагностики в Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
@@ -176,7 +178,7 @@ ms.locfileid: "53543862"
 
 Для отслеживания определенных метрик или превышений пороговых значений для приложения логики настройте [оповещения в Azure](../azure-monitor/platform/alerts-overview.md). Узнайте подробнее о [метриках в Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md). 
 
-Чтобы настроить оповещения без [Azure Log Analytics](../log-analytics/log-analytics-overview.md), выполните следующие действия. Для расширенных критериев оповещений и действий необходимо также [настроить Log Analytics](#azure-diagnostics).
+Чтобы настроить оповещения без [Azure Monitor регистрирует](../log-analytics/log-analytics-overview.md), выполните следующие действия. Для более сложных критериев оповещений и действий [настроить журналы Azure Monitor](#azure-diagnostics) слишком.
 
 1. В меню в колонке приложения логики в разделе **Мониторинг** выберите **Диагностика** > **Правила оповещений** > **Добавить оповещение**, как показано ниже:
 
@@ -269,7 +271,7 @@ ms.locfileid: "53543862"
   }
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание шаблонов для развертывания приложений логики и управления выпусками](../logic-apps/logic-apps-create-deploy-template.md)
 * [Сценарии B2B с пакетом интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

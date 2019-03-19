@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: 89cd8e85c9902bb1caeedd80240811f59ebec409
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: afc833775894a01e8061401fe7601267f09edded
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187442"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57243250"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure
 > [!div class="op_single_selector"]
@@ -30,9 +30,9 @@ ms.locfileid: "55187442"
 
 Во время работы кластера Azure Service Fabric рекомендуется централизованно собирать журналы со всех узлов. Централизованное хранение журналов упрощает анализ и устранение неполадок в кластере, а также в приложениях и службах, работающих в этом кластере.
 
-Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Microsoft Azure (WAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или Центры событий Azure. Вы также можете использовать внешний процесс, чтобы считывать события из хранилища и помещать их на платформу обработки, например в [Log Analytics](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
+Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Microsoft Azure (WAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или Центры событий Azure. Также можно использовать внешний процесс для чтения событий из хранилища и помещать их на платформу анализа, таких как [журналы Azure Monitor](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этом руководстве используются инструменты, представленные ниже.
 
 * [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
@@ -57,10 +57,12 @@ Service Fabric настраивает несколько [стандартных
 
 ![Шаблон кластера](media/service-fabric-diagnostics-event-aggregation-wad/download-cluster-template.png)
 
-Итак, вы настроили сбор данных о событиях в хранилище Azure. Теперь следует [настроить Log Analytics](service-fabric-diagnostics-oms-setup.md) для анализа данных и запроса информации с помощью портала Log Analytics.
+Теперь, когда вы настроили сбор данных о событиях в хранилище Azure, [настроить журналы Azure Monitor](service-fabric-diagnostics-oms-setup.md) для анализа данных и их запроса в Azure Monitor регистрирует портала
 
 >[!NOTE]
 >Сейчас не поддерживается возможность фильтрации или очистки событий, которые отправляются в таблицы. Если вы не реализуете метод для удаления событий из таблицы, она будет постоянно расти. По умолчанию действует ограничение в 50 ГБ. Вы можете изменить это ограничение, используя [инструкции, приведенные ниже в этой статье](service-fabric-diagnostics-event-aggregation-wad.md#update-storage-quota). Кроме того, там есть пример службы для очистки данных, выполняющийся в [примере модуля наблюдения](https://github.com/Azure-Samples/service-fabric-watchdog-service). Мы рекомендуем создать свою службу, если у вас нет веских причин хранить журналы дольше 30 или 90 дней.
+
+
 
 ## <a name="deploy-the-diagnostics-extension-through-azure-resource-manager"></a>Развертывание расширения системы диагностики с помощью Azure Resource Manager
 
@@ -292,15 +294,57 @@ Service Fabric настраивает несколько [стандартных
 
 ## <a name="send-logs-to-application-insights"></a>Отправка журналов в Application Insights
 
-Отправку данных мониторинга и диагностики в Application Insights можно выполнить в ходе настройки WAD. Дополнительные сведения об использовании Application Insights для анализа событий и визуализации см. в [этом разделе](service-fabric-diagnostics-event-analysis-appinsights.md#add-the-application-insights-sink-to-the-resource-manager-template).
+### <a name="configuring-application-insights-with-wad"></a>Настройка Application Insights с помощью WAD
 
-## <a name="next-steps"></a>Дополнительная информация
+>[!NOTE]
+>В настоящее время это распространяется только на кластеры Windows.
 
-Если вы правильно настроили диагностику Azure, данные из журнала трассировки событий Windows и журнала EventSource станут появляться в таблице хранилища. При использовании Log Analytics, Kibana или любой другой платформы для аналитики и визуализации, которая не настроена в шаблоне Resource Manager явным образом, убедитесь, что выбранная платформа настроена для чтения данных из таблиц хранилища. Сделать это для Log Analytics несложно. Дополнительные сведения см. в статье об [анализе событий и журналов](service-fabric-diagnostics-event-analysis-oms.md). В этом смысле Application Insights — это особый случай, так как это решение можно настроить при настройке расширения диагностики. Дополнительные сведения об Application Insights см. в [этой статье](service-fabric-diagnostics-event-analysis-appinsights.md).
+Существует два основных способа отправки данных из WAD в Azure Application Insights, который необходимо добавить приемник Application Insights в конфигурацию WAD, на портале Azure или с помощью шаблона Azure Resource Manager.
+
+#### <a name="add-an-application-insights-instrumentation-key-when-creating-a-cluster-in-azure-portal"></a>При создании кластера на портале Azure добавьте ключ инструментирования Application Insights.
+
+![Добавление AIKey](media/service-fabric-diagnostics-event-analysis-appinsights/azure-enable-diagnostics.png)
+
+Если при создании кластера диагностика включена, появляется дополнительное поле для ввода ключа инструментирования Application Insights. Если вставить сюда ключ Application Insights, в шаблоне Resource Manager, используемом для развертывания кластера, будет автоматически настроен приемник Application Insights.
+
+#### <a name="add-the-application-insights-sink-to-the-resource-manager-template"></a>Добавление приемника Application Insights в шаблон Resource Manager
+
+В разделе WadCfg шаблона Resource Manager добавьте приемник, внеся два указанных ниже изменения.
+
+1. Добавьте конфигурацию приемника сразу после объявления `DiagnosticMonitorConfiguration`:
+
+    ```json
+    "SinksConfig": {
+        "Sink": [
+            {
+                "name": "applicationInsights",
+                "ApplicationInsights": "***ADD INSTRUMENTATION KEY HERE***"
+            }
+        ]
+    }
+
+    ```
+
+2. Включите приемник в `DiagnosticMonitorConfiguration`, добавив следующую строку в `DiagnosticMonitorConfiguration` `WadCfg` (сразу перед объявлением `EtwProviders`):
+
+    ```json
+    "sinks": "applicationInsights"
+    ```
+
+В обоих приведенных выше фрагментах кода для указания приемника использовано имя applicationInsights. Это не является обязательным. Если имя приемника включено в элемент sinks, именем может быть любая строка.
+
+Сейчас журналы кластера отображаются в средстве просмотра журналов Application Insights как **трассировки**. Так как большинство трассировок, поступающих из платформы имеют уровень «Информационный», вы можете изменить конфигурацию приемника, чтобы отправлять только журналы типа «Предупреждение» или «Ошибка». Для этого в приемник можно добавить каналы, как показано в [этой статье](../azure-monitor/platform/diagnostics-extension-to-application-insights.md).
+
+>[!NOTE]
+>Если вы укажете на портале или в шаблоне Resource Manager неправильный ключ Application Insights, придется вручную заменить его, а затем обновить или повторно развернуть кластер.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Если вы правильно настроили диагностику Azure, данные из журнала трассировки событий Windows и журнала EventSource станут появляться в таблице хранилища. Если вы решили использовать журналы Azure Monitor, Kibana или любой другой аналитики и визуализации платформы, не настроена в шаблоне Resource Manager, убедитесь, что настройка платформы по своему усмотрению для считывания данных из таблиц хранилища. Таким образом, для журналов Azure Monitor сравнительно невелика, а также описан в [анализе событий и журналов](service-fabric-diagnostics-event-analysis-oms.md). В этом смысле Application Insights — это особый случай, так как это решение можно настроить при настройке расширения диагностики. Дополнительные сведения об Application Insights см. в [этой статье](service-fabric-diagnostics-event-analysis-appinsights.md).
 
 >[!NOTE]
 >Сегодня не существует способа фильтрации или очистки событий, которые отправляются в таблицу. Если не реализовать метод удаления событий из таблицы, она продолжит расти. Сейчас есть пример службы очистки данных, выполняющийся в [примере модуля наблюдения](https://github.com/Azure-Samples/service-fabric-watchdog-service). Мы также советуем написать собственный пример, если у вас нет веских причин для хранения журналов дольше 30 или 90 дней.
 
 * [Узнайте, как собирать данные счетчиков производительности или журналы, используя расширения системы диагностики.](../virtual-machines/windows/extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
-* [Анализ и визуализация событий с помощью Log Analytics](service-fabric-diagnostics-event-analysis-oms.md)
+* [Анализ и визуализация с помощью Azure Monitor журналов событий](service-fabric-diagnostics-event-analysis-oms.md)

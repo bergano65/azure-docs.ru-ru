@@ -8,22 +8,24 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/12/2019
+ms.date: 03/18/2019
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 2a948a75ce3f6c21d7e92e3e1ccb1ef98dbe2ea0
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 8e01ac4efa3c310b17e88351383861cbdccb68e6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56114389"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58171114"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия выполнения пакета SSIS в Фабрике данных Azure
 В этой статье описывается, как запустить пакет MSSQL Integration Services в конвейере Фабрики данных Azure (ADF), используя действие выполнения пакета SSIS. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Создайте среду выполнения интеграции Azure SSIS (IR), если у вас ее еще нет. Для этого выполните пошаговую инструкцию из статьи [Подготовка Integration Runtime Azure–SSIS в Фабрике данных Azure](tutorial-create-azure-ssis-runtime-portal.md).
 
@@ -49,19 +51,19 @@ ms.locfileid: "56114389"
 
    ![Настройка свойств на вкладке "Общие"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
 
-4. На вкладке **Параметры** для действия выполнения пакета SSIS выберите Azure-SSIS IR, связанную с базой данных SSISDB, в которой развернут пакет. Если для пакета требуется 32-разрядная среда выполнения, установите флажок **32-Bit runtime** (32-разрядная среда выполнения). Для **уровня ведения журнала** выберите предопределенную область ведения журнала для выполнения пакета. Установите флажок **Настроено**, если вы хотите ввести имя настраиваемого ведения журнала. Если Azure-SSIS IR запущена и флажок **Manual entries** (Записи вручную) снят, можно перейти и выбрать существующие папки, проекты, пакеты или среды из SSISDB. Нажмите кнопку **Обновить**, чтобы получить только что добавленные папки, проекты, пакеты или среды из SSISDB, и они станут доступны для просмотра и выбора. 
+4. На вкладке **Параметры** для действия выполнения пакета SSIS выберите Azure-SSIS IR, связанную с базой данных SSISDB, в которой развернут пакет. Если пакет использует проверку подлинности Windows для доступа к хранилищам данных, например SQL серверы и общие файлы на локальном компьютере, файлы Azure и др., проверьте **проверки подлинности Windows** флажок и введите имя домена/пользователя и пароль для пакета выполнение. Если для пакета требуется 32-разрядная среда выполнения, установите флажок **32-Bit runtime** (32-разрядная среда выполнения). Для **уровня ведения журнала** выберите предопределенную область ведения журнала для выполнения пакета. Установите флажок **Настроено**, если вы хотите ввести имя настраиваемого ведения журнала. Если Azure-SSIS IR запущена и флажок **Manual entries** (Записи вручную) снят, можно перейти и выбрать существующие папки, проекты, пакеты или среды из SSISDB. Нажмите кнопку **Обновить**, чтобы получить только что добавленные папки, проекты, пакеты или среды из SSISDB, и они станут доступны для просмотра и выбора. 
 
    ![Автоматическая установка свойств на вкладке "Параметры"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-settings.png)
 
-   Если Azure-SSIS IR не запущена или флажок **Manual entries** (Записи вручную) установлен, можно ввести пути к пакету и среде из SSISDB в следующих форматах: `<folder name>/<project name>/<package name>.dtsx` и `<folder name>/<environment name>`.
+   Когда IR Azure SSIS не выполняется или **вручную записей** флажок установлен, можно ввести путь пакета и среды из SSISDB непосредственно в следующих форматах: `<folder name>/<project name>/<package name>.dtsx` и `<folder name>/<environment name>`.
 
    ![Установка свойств на вкладке "Параметры" вручную](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-settings2.png)
 
-5. На вкладке **SSIS Parameters** (Параметры SSIS) для действия выполнения пакета SSIS, когда Azure-SSIS IR запущена и флажок **Manual entries** (Записи вручную) снят на вкладке **Параметры**, будут отображаться существующие параметры SSIS из выбранного проекта или пакета SSISDB, которым нужно присвоить значения. В противном случае можно ввести их по очереди, чтобы присвоить им значения вручную. Убедитесь, что они существуют и введены правильно для успешного выполнения пакета. Вы также можете добавить к значениям динамическое содержимое с помощью выражений, функций, системных переменных ADF и параметров или переменных конвейера ADF.
+5. На вкладке **SSIS Parameters** (Параметры SSIS) для действия выполнения пакета SSIS, когда Azure-SSIS IR запущена и флажок **Manual entries** (Записи вручную) снят на вкладке **Параметры**, будут отображаться существующие параметры SSIS из выбранного проекта или пакета SSISDB, которым нужно присвоить значения. В противном случае можно ввести их по очереди, чтобы присвоить им значения вручную. Убедитесь, что они существуют и введены правильно для успешного выполнения пакета. Динамическое содержимое можно добавить к значениям с помощью выражения, функции, системные переменные фабрики данных AZURE и конвейера ADF параметры или переменные. Кроме того можно использовать секреты, хранящиеся в ваш Azure Key Vault (AKV) в качестве их значения. Для этого нужно щелкнуть **AZURE KEY VAULT** флажок рядом с соответствующий параметр, select и изменение существующей службы связаны с хранилищем ключей AZURE или создайте новую, а затем выберите имя и версию секрета для значения параметра.  При Создание или изменение AKV связанной службы, select или изменить ваш существующий AKV или создайте новую, то можно предоставьте вашей AKV ADF управляемых идентификации доступ, если вы еще не сделали. Секреты можно также ввести непосредственно в следующем формате: `<AKV linked service name>/<secret name>/<secret version>`.
 
    ![Установка свойств на вкладке SSIS Parameters (Параметры SSIS)](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-ssis-parameters.png)
 
-6. На вкладке **Connection Managers** (Диспетчеры подключений) для действия выполнения пакета SSIS, когда Azure-SSIS IR запущена и флажок **Manual entries** (Записи вручную) снят на вкладке **Параметры**, будут отображаться существующие диспетчеры подключений из выбранного проекта или пакета SSISDB, которым нужно присвоить значения. В противном случае можно ввести их по очереди, чтобы присвоить им значения вручную. Убедитесь, что они существуют и введены правильно для успешного выполнения пакета. Вы также можете добавить к значениям динамическое содержимое с помощью выражений, функций, системных переменных ADF и параметров или переменных конвейера ADF.
+6. На **диспетчеры соединений** вкладку для действия, выполнение пакета служб SSIS, при запуске среды выполнения Интеграции Azure SSIS и **вручную записей** флажок на **параметры** вкладка флажок снят, существующие диспетчеры соединений в выбранный проект или пакет из SSISDB будет отображаться для для присвоения значения их свойств. В противном случае можно ввести их по одной для присвоения значений свойствам вручную – убедитесь, что они существуют и правильность ввода для успешного выполнения пакета. Динамическое содержимое можно добавить к значениям свойств, с помощью выражения, функции, системные переменные фабрики данных AZURE и конвейера ADF параметры или переменные. Кроме того можно использовать секреты, хранящиеся в вашей Azure Key Vault (AKV) как значения их свойств. Для этого нужно щелкнуть **AZURE KEY VAULT** флажок напротив соответствующего свойства, select и изменение существующей службы связаны с хранилищем ключей AZURE или создайте новую, а затем выберите имя и версию секрета для значения свойства.  При Создание или изменение AKV связанной службы, select или изменить ваш существующий AKV или создайте новую, то можно предоставьте вашей AKV ADF управляемых идентификации доступ, если вы еще не сделали. Секреты можно также ввести непосредственно в следующем формате: `<AKV linked service name>/<secret name>/<secret version>`.
 
    ![Установка свойств на вкладке Connection Managers (Диспетчеры подключений)](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-connection-managers.png)
 
@@ -111,7 +113,7 @@ ms.locfileid: "56114389"
 ## <a name="run-a-package-with-powershell"></a>Выполнение пакета с помощью PowerShell
 В этом разделе для создания конвейера ADF с действием выполнения пакета служб SSIS, которое запускает пакет SSIS, используется Azure PowerShell. 
 
-Чтобы установить модули Azure PowerShell, выполните пошаговые инструкции из [этой статьи](/powershell/azure/azurerm/install-azurerm-ps).
+Чтобы установить модули Azure PowerShell, выполните пошаговые инструкции из [этой статьи](/powershell/azure/install-az-ps).
 
 ### <a name="create-an-adf-with-azure-ssis-ir"></a>Создание ADF с Azure-SSIS IR
 Вы можете использовать существующий конвейер ADF, в котором уже подготовлена Azure-SSIS IR, или создать новый конвейер ADF с Azure-SSIS IR, выполнив пошаговые инструкции в статье [Подготовка среды выполнения интеграции Azure SSIS в Фабрике данных Azure с помощью PowerShell](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure-powershell).
@@ -137,6 +139,14 @@ ms.locfileid: "56114389"
                        "referenceName": "myAzureSSISIR",
                        "type": "IntegrationRuntimeReference"
                    },
+                   "executionCredential": {
+                       "domain": "MyDomain",
+                       "userName": "MyUsername",
+                       "password": {
+                           "type": "SecureString",
+                           "value": "**********"
+                       }
+                   },
                    "runtime": "x64",
                    "loggingLevel": "Basic",
                    "packageLocation": {
@@ -146,11 +156,27 @@ ms.locfileid: "56114389"
                    "projectParameters": {
                        "project_param_1": {
                            "value": "123"
+                       },
+                       "project_param_2": {
+                           "value": {
+                               "value": "@pipeline().parameters.MyPipelineParameter",
+                               "type": "Expression"
+                           }
                        }
                    },
                    "packageParameters": {
                        "package_param_1": {
                            "value": "345"
+                       },
+                       "package_param_2": {
+                           "value": {
+                               "type": "AzureKeyVaultSecret",
+                               "store": {
+                                   "referenceName": "myAKV",
+                                   "type": "LinkedServiceReference"
+                               },
+                               "secretName": "MySecret"
+                           }
                        }
                    },
                    "projectConnectionManagers": {
@@ -169,12 +195,20 @@ ms.locfileid: "56114389"
                    "packageConnectionManagers": {
                        "MyOledbCM": {
                            "userName": {
-                               "value": "sa"
+                               "value": {
+                                   "value": "@pipeline().parameters.MyUsername",
+                                   "type": "Expression"
+                               }
                            },
                            "passWord": {
                                "value": {
-                                   "type": "SecureString",
-                                   "value": "def"
+                                   "type": "AzureKeyVaultSecret",
+                                   "store": {
+                                       "referenceName": "myAKV",
+                                       "type": "LinkedServiceReference"
+                                   },
+                                   "secretName": "MyPassword",
+                                   "secretVersion": "3a1b74e361bf4ef4a00e47053b872149"
                                }
                            }
                        }
@@ -198,10 +232,10 @@ ms.locfileid: "56114389"
 
 2. В Azure PowerShell перейдите в папку `C:\ADF\RunSSISPackage`.
 
-3. Чтобы создать конвейер **RunSSISPackagePipeline**, выполните командлет **Set-AzureRmDataFactoryV2Pipeline**.
+3. Чтобы создать конвейер **RunSSISPackagePipeline**, запустите **AzDataFactoryV2Pipeline набора** командлета.
 
    ```powershell
-   $DFPipeLine = Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataFactoryName `
+   $DFPipeLine = Set-AzDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataFactoryName `
                                                   -ResourceGroupName $ResGrp.ResourceGroupName `
                                                   -Name "RunSSISPackagePipeline"
                                                   -DefinitionFile ".\RunSSISPackagePipeline.json"
@@ -218,10 +252,10 @@ ms.locfileid: "56114389"
    ```
 
 ### <a name="run-the-pipeline"></a>Запуск конвейера
-Используйте командлет **Invoke-AzureRmDataFactoryV2Pipeline** для запуска конвейера. Командлет позволяет получить идентификатор выполнения конвейера для дальнейшего мониторинга.
+Используйте **Invoke AzDataFactoryV2Pipeline** командлет для запуска конвейера. Командлет позволяет получить идентификатор выполнения конвейера для дальнейшего мониторинга.
 
 ```powershell
-$RunId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataFactoryName `
+$RunId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataFactoryName `
                                              -ResourceGroupName $ResGrp.ResourceGroupName `
                                              -PipelineName $DFPipeLine.Name
 ```
@@ -232,7 +266,7 @@ $RunId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataF
 
 ```powershell
 while ($True) {
-    $Run = Get-AzureRmDataFactoryV2PipelineRun -ResourceGroupName $ResGrp.ResourceGroupName `
+    $Run = Get-AzDataFactoryV2PipelineRun -ResourceGroupName $ResGrp.ResourceGroupName `
                                                -DataFactoryName $DataFactory.DataFactoryName `
                                                -PipelineRunId $RunId
 
@@ -280,31 +314,31 @@ while ($True) {
    }    
    ```
 2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage**.
-3. Выполните командлет **Set-AzureRmDataFactoryV2Trigger**, чтобы создать триггер. 
+3. Запустите **AzDataFactoryV2Trigger набора** командлета, который создает триггер. 
 
    ```powershell
-   Set-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResGrp.ResourceGroupName `
+   Set-AzDataFactoryV2Trigger -ResourceGroupName $ResGrp.ResourceGroupName `
                                    -DataFactoryName $DataFactory.DataFactoryName `
                                    -Name "MyTrigger" -DefinitionFile ".\MyTrigger.json"
    ```
-4. По умолчанию триггер находится в остановленном состоянии. Запустите триггер с помощью командлета **Start-AzureRmDataFactoryV2Trigger**. 
+4. По умолчанию триггер находится в остановленном состоянии. Запустите триггер с управлением **AzDataFactoryV2Trigger начала** командлета. 
 
    ```powershell
-   Start-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResGrp.ResourceGroupName `
+   Start-AzDataFactoryV2Trigger -ResourceGroupName $ResGrp.ResourceGroupName `
                                      -DataFactoryName $DataFactory.DataFactoryName `
                                      -Name "MyTrigger" 
    ```
-5. Убедитесь, что триггер запущен, с помощью командлета **Get-AzureRmDataFactoryV2Trigger**. 
+5. Убедитесь, что триггер запущен, выполнив **Get AzDataFactoryV2Trigger** командлета. 
 
    ```powershell
-   Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName `
+   Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName `
                                    -DataFactoryName $DataFactoryName `
                                    -Name "MyTrigger"     
    ```    
 6. Через час выполните следующую команду. Например, если текущее время 15:25 (UTC), запустите команду в 16:00 (UTC). 
     
    ```powershell
-   Get-AzureRmDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName `
+   Get-AzDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName `
                                       -DataFactoryName $DataFactoryName `
                                       -TriggerName "MyTrigger" `
                                       -TriggerRunStartedAfter "2017-12-06" `
@@ -317,6 +351,6 @@ while ($True) {
    select * from catalog.executions
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. в следующей записи блога:
 -   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://blogs.msdn.microsoft.com/ssis/2018/05/23/modernize-and-extend-your-etlelt-workflows-with-ssis-activities-in-adf-pipelines/)

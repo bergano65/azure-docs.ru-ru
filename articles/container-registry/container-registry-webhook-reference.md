@@ -5,18 +5,18 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 12/02/2017
+ms.date: 03/05/2019
 ms.author: danlep
-ms.openlocfilehash: 42790905509e2ea8bbba87587ed01b1929221db5
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 4c0845b9cf5194ecbd0ab813997e17e070840f44
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56329325"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099905"
 ---
 # <a name="azure-container-registry-webhook-reference"></a>Справочник по веб-перехватчику реестра контейнеров Azure
 
-Вы можете [настроить веб-перехватчики](container-registry-webhook.md) для реестра контейнеров, которые создают события при выполнении с ними определенных действий. Например, можно настроить веб-перехватчик, который срабатывает при операциях `push` и `delete` с образом контейнера. Когда срабатывает веб-перехватчик, реестр контейнеров Azure направляет на указанную вами конечную точку запрос HTTP или HTTPS с информацией об этом событии. Конечная точка может обработать данные от веб-перехватчика и выполнить необходимые действия.
+Вы можете [настроить веб-перехватчики](container-registry-webhook.md) для реестра контейнеров, которые создают события при выполнении с ними определенных действий. Например включите веб-перехватчики, который срабатывает при образ контейнера или диаграмму Helm помещены в реестр, либо удален. Когда срабатывает веб-перехватчик, реестр контейнеров Azure направляет на указанную вами конечную точку запрос HTTP или HTTPS с информацией об этом событии. Конечная точка может обработать данные от веб-перехватчика и выполнить необходимые действия.
 
 В следующих разделах подробно описана схема запросов веб-перехватчика, которые создаются для поддерживаемых событий. Раздел, посвященный событиям, описывает схему полезных данных схемы для типов событий, предоставляет пример полезных данных этого запроса и пару примеров команд, которые приводят к срабатыванию веб-перехватчика.
 
@@ -48,7 +48,7 @@ ms.locfileid: "56329325"
 |[target](#target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 |[request](#request)|Сложный тип|Запрос, который создал событие веб-перехватчика.|
 
-### <a name="target"></a>target
+### <a name="target"></a>Целевой объект
 
 |Элемент|type|ОПИСАНИЕ|
 |------------------|----------|-----------|
@@ -59,7 +59,7 @@ ms.locfileid: "56329325"
 |`repository`|Строка|Имя репозитория.|
 |`tag`|Строка|Имя тега образа.|
 
-### <a name="request"></a>запрос
+### <a name="request"></a>Запрос
 
 |Элемент|type|ОПИСАНИЕ|
 |------------------|----------|-----------|
@@ -68,23 +68,23 @@ ms.locfileid: "56329325"
 |`method`|Строка|Метод запроса, который создал событие.|
 |`useragent`|Строка|Заголовок user agent из запроса.|
 
-### <a name="payload-example-push-event"></a>Пример полезных данных для события Push
+### <a name="payload-example-image-push-event"></a>Пример полезных данных: события push образа
 
 ```JSON
 {
-  "id": "cb8c3971-9adc-488b-bdd8-43cbb4974ff5",
+  "id": "cb8c3971-9adc-488b-xxxx-43cbb4974ff5",
   "timestamp": "2017-11-17T16:52:01.343145347Z",
   "action": "push",
   "target": {
     "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
     "size": 524,
-    "digest": "sha256:80f0d5c8786bb9e621a45ece0db56d11cdc624ad20da9fe62e9d25490f331d7d",
+    "digest": "sha256:xxxxd5c8786bb9e621a45ece0dbxxxx1cdc624ad20da9fe62e9d25490f33xxxx",
     "length": 524,
     "repository": "hello-world",
     "tag": "v1"
   },
   "request": {
-    "id": "3cbb6949-7549-4fa1-86cd-a6d5451dffc7",
+    "id": "3cbb6949-7549-4fa1-xxxx-a6d5451dffc7",
     "host": "myregistry.azurecr.io",
     "method": "PUT",
     "useragent": "docker/17.09.0-ce go/go1.8.3 git-commit/afdb6d4 kernel/4.10.0-27-generic os/linux arch/amd64 UpstreamClient(Docker-Client/17.09.0-ce \\(linux\\))"
@@ -92,15 +92,65 @@ ms.locfileid: "56329325"
 }
 ```
 
-Пример команды [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/), которая запускает событие веб-перехватчика **Push**:
+Пример [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/) команду, которая запускает изображение **принудительной** веб-перехватчика событий:
 
 ```bash
 docker push myregistry.azurecr.io/hello-world:v1
 ```
 
+## <a name="chart-push-event"></a>Диаграмма события push
+
+Веб-перехватчика, вызываемое чарт Helm помещается в репозиторий.
+
+### <a name="chart-push-event-payload"></a>Полезные данные события push диаграммы
+
+|Элемент|type|ОПИСАНИЕ|
+|-------------|----------|-----------|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|DateTime|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
+|[target](#helm_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+
+### <a name="helm_target"></a>Целевой объект
+
+|Элемент|type|ОПИСАНИЕ|
+|------------------|----------|-----------|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
+|`size`|Int32|Число байтов содержимого.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`repository`|Строка|Имя репозитория.|
+|`tag`|Строка|Имя тега диаграммы.|
+|`name`|Строка|Имя диаграммы.|
+|`version`|Строка|Версия диаграммы.|
+
+### <a name="payload-example-chart-push-event"></a>Пример полезных данных: события push диаграммы
+
+```JSON
+{
+  "id": "6356e9e0-627f-4fed-xxxx-d9059b5143ac",
+  "timestamp": "2019-03-05T23:45:31.2614267Z",
+  "action": "chart_push",
+  "target": {
+    "mediaType": "application/vnd.acr.helm.chart",
+    "size": 25265,
+    "digest": "sha256:xxxx8075264b5ba7c14c23672xxxx52ae6a3ebac1c47916e4efe19cd624dxxxx",
+    "repository": "repo",
+    "tag": "wordpress-5.4.0.tgz",
+    "name": "wordpress",
+    "version": "5.4.0.tgz"
+  }
+}
+```
+
+Пример [Azure CLI](/cli/azure/acr) команду, которая запускает **chart_push** веб-перехватчика событий:
+
+```azurecli
+az acr helm push wordpress-5.4.0.tgz --name MyRegistry
+```
+
 ## <a name="delete-event"></a>Удаление события
 
-Веб-перехватчик срабатывает при удалении репозитория или манифеста. Событие не создается при удалении тега.
+Веб-перехватчик активируется при репозиторий образов или удалении манифест. Событие не создается при удалении тега.
 
 ### <a name="delete-event-payload"></a>Полезные данные события Delete
 
@@ -129,20 +179,20 @@ docker push myregistry.azurecr.io/hello-world:v1
 |`method`|Строка|Метод запроса, который создал событие.|
 |`useragent`|Строка|Заголовок user agent из запроса.|
 
-### <a name="payload-example-delete-event"></a>Пример полезных данных для события Delete
+### <a name="payload-example-image-delete-event"></a>Пример полезных данных: события удаления образа
 
 ```JSON
 {
-    "id": "afc359ce-df7f-4e32-bdde-1ff8aa80927b",
+    "id": "afc359ce-df7f-4e32-xxxx-1ff8aa80927b",
     "timestamp": "2017-11-17T16:54:53.657764628Z",
     "action": "delete",
     "target": {
       "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
-      "digest": "sha256:80f0d5c8786bb9e621a45ece0db56d11cdc624ad20da9fe62e9d25490f331d7d",
+      "digest": "sha256:xxxxd5c8786bb9e621a45ece0dbxxxx1cdc624ad20da9fe62e9d25490f33xxxx",
       "repository": "hello-world"
     },
     "request": {
-      "id": "3d78b540-ab61-4f75-807f-7ca9ecf559b3",
+      "id": "3d78b540-ab61-4f75-xxxx-7ca9ecf559b3",
       "host": "myregistry.azurecr.io",
       "method": "DELETE",
       "useragent": "python-requests/2.18.4"
@@ -160,6 +210,56 @@ az acr repository delete --name MyRegistry --repository MyRepository
 az acr repository delete --name MyRegistry --image MyRepository:MyTag
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="chart-delete-event"></a>Событие удаления диаграммы
+
+Веб-перехватчик активируется при чарт Helm или удалении репозитория. 
+
+### <a name="chart-delete-event-payload"></a>Полезные данные события delete диаграммы
+
+|Элемент|type|ОПИСАНИЕ|
+|-------------|----------|-----------|
+|`id`|Строка|Идентификатор события веб-перехватчика.|
+|`timestamp`|DateTime|Время создания события веб-перехватчика.|
+|`action`|Строка|Действие, которое привело к созданию события веб-перехватчика.|
+|[target](#chart_delete_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+
+### <a name="chart_delete_target"></a> target
+
+|Элемент|type|ОПИСАНИЕ|
+|------------------|----------|-----------|
+|`mediaType`|Строка|Тип MIME передаваемого объекта.|
+|`size`|Int32|Число байтов содержимого.|
+|`digest`|Строка|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
+|`repository`|Строка|Имя репозитория.|
+|`tag`|Строка|Имя тега диаграммы.|
+|`name`|Строка|Имя диаграммы.|
+|`version`|Строка|Версия диаграммы.|
+
+### <a name="payload-example-chart-delete-event"></a>Пример полезных данных: события удаления диаграммы
+
+```JSON
+{
+  "id": "338a3ef7-ad68-4128-xxxx-fdd3af8e8f67",
+  "timestamp": "2019-03-06T00:10:48.1270754Z",
+  "action": "chart_delete",
+  "target": {
+    "mediaType": "application/vnd.acr.helm.chart",
+    "size": 25265,
+    "digest": "sha256:xxxx8075264b5ba7c14c23672xxxx52ae6a3ebac1c47916e4efe19cd624dxxxx",
+    "repository": "repo",
+    "tag": "wordpress-5.4.0.tgz",
+    "name": "wordpress",
+    "version": "5.4.0.tgz"
+  }
+}
+```
+
+Пример [Azure CLI](/cli/azure/acr) команду, которая запускает **chart_delete** веб-перехватчика событий:
+
+```azurecli
+az acr helm delete wordpress --version 5.4.0 --name MyRegistry
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование веб-перехватчиков реестра контейнеров Azure](container-registry-webhook.md)

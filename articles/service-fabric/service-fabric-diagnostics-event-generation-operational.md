@@ -12,18 +12,18 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/23/2018
-ms.author: dekapur
-ms.openlocfilehash: e4537c789bfae0fb485e818bf68e87de27b88720
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.date: 2/25/2019
+ms.author: srrengar
+ms.openlocfilehash: 6aec4e4bbf0abcfb6201da50381b6697a47716fa
+ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55102058"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57244593"
 ---
 # <a name="list-of-service-fabric-events"></a>Список событий Service Fabric 
 
-Service Fabric предоставляет основной набор событий кластера, чтобы сообщать о состоянии кластеров в виде [событий Service Fabric](service-fabric-diagnostics-events.md). Они основаны на действиях, выполненных Service Fabric на узлах и в кластерах, или решениях по управлению, принятых владельцем или оператором кластера. Доступ к этим событиям можно получить, выполнив настройку разными способами, включая настройку [Log Analytics для кластера](service-fabric-diagnostics-oms-setup.md) или отправку запроса [EventStore](service-fabric-diagnostics-eventstore.md). На компьютерах Windows эти события направляются в EventLog, поэтому события Service Fabric можно просматривать в средстве "Просмотр событий". 
+Service Fabric предоставляет основной набор событий кластера, чтобы сообщать о состоянии кластеров в виде [событий Service Fabric](service-fabric-diagnostics-events.md). Они основаны на действиях, выполненных Service Fabric на узлах и в кластерах, или решениях по управлению, принятых владельцем или оператором кластера. Эти события могут быть доступны, настроив в ряд способов, включая настройку [журналы Azure Monitor с вашим кластером](service-fabric-diagnostics-oms-setup.md), или запрос [EventStore](service-fabric-diagnostics-eventstore.md). На компьютерах Windows эти события направляются в EventLog, поэтому события Service Fabric можно просматривать в средстве "Просмотр событий". 
 
 Ниже приведены некоторые характеристики таких событий.
 * Каждое событие привязывается к определенной сущности в кластере (например, к приложению, службе, узлу, реплике).
@@ -247,7 +247,7 @@ Service Fabric предоставляет основной набор событ
 | 18566 | ServiceCreated | FM | Информация |
 | 18567 | ServiceDeleted | FM | Информация |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите представление о [диагностике в Service Fabric](service-fabric-diagnostics-overview.md).
 * Дополнительные сведения о службе EventStore см. в [этой статье](service-fabric-diagnostics-eventstore.md).

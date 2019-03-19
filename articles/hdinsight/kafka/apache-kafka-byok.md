@@ -8,12 +8,12 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: a3b719f4b2a19f4ea399d6a0858719a1709adc93
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 26e4b921b4050efa5217e3b599b9dc942a003090
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109502"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58173929"
 ---
 # <a name="bring-your-own-key-for-apache-kafka-on-azure-hdinsight-preview"></a>Создание собственных ключей для Apache Kafka в Azure HDInsight (предварительная версия)
 
@@ -31,7 +31,7 @@ Azure HDInsight включает поддержку создания собст�
 
 1. Создайте управляемые удостоверения для ресурсов Azure.
 
-   Для проверки подлинности в Key Vault создайте назначаемое пользователем управляемое удостоверение с помощью [портала Azure](../../active-directory/managed-service-identity/how-to-manage-ua-identity-portal.md), [Azure PowerShell](../../active-directory/managed-service-identity/how-to-manage-ua-identity-powershell.md), [Azure Resource Manager](../../active-directory/managed-service-identity/how-to-manage-ua-identity-arm.md) или [Azure CLI](../../active-directory/managed-service-identity/how-to-manage-ua-identity-cli.md). Хотя Azure Active Directory требуется для использования управляемых удостоверений и BYOK в Kafka, корпоративный пакет безопасности (ESP) не является обязательным требованием. Не забудьте сохранить идентификатор ресурса управляемого удостоверения для его добавления в политику доступа Key Vault.
+   Для проверки подлинности в хранилище ключей, создание назначаемого пользователем управляемого удостоверения с помощью [портала Azure](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md), [Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md), [Azure Resource Manager](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md), или [ Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md). Дополнительные сведения об управляемых рабочих удостоверений в Azure HDInsight, см. в разделе [управляемые удостоверения в Azure HDInsight](../hdinsight-managed-identities.md). Хотя Azure Active Directory требуется для использования управляемых удостоверений и BYOK в Kafka, корпоративный пакет безопасности (ESP) не является обязательным требованием. Не забудьте сохранить идентификатор ресурса управляемого удостоверения для его добавления в политику доступа Key Vault.
 
    ![Создание назначаемого пользователем управляемого удостоверения на портале Azure](./media/apache-kafka-byok/user-managed-identity-portal.png)
 
@@ -117,7 +117,7 @@ Azure HDInsight включает поддержку создания собст�
 
    Функция создания собственных ключей для Kafka доступна во всех общедоступных облаках.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об Azure Key Vault см. в статье [Что такое Azure Key Vault?](../../key-vault/key-vault-whatis.md)
 * Чтобы приступить к работе с Azure Key Vault, см. инструкции по [началу работы с Azure Key Vault](../../key-vault/key-vault-overview.md).

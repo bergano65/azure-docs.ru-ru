@@ -14,12 +14,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 3ec1e2eef4990b16942022a83ba393eab94a91f3
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 074976ea1f889893b5daa21cea5c186ec77145c4
+ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856780"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588353"
 ---
 # <a name="how-to-use-service-bus-queues-with-ruby"></a>Как использовать очереди служебной шины с Ruby
 
@@ -29,6 +29,7 @@ ms.locfileid: "54856780"
 
 [!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
+## <a name="create-a-service-bus-namespace"></a>Создание пространства имен служебной шины
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
    
 [!INCLUDE [service-bus-ruby-setup](../../includes/service-bus-ruby-setup.md)]
@@ -91,7 +92,7 @@ azure_service_bus_service.delete_queue_message(message)
 
 Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `delete_queue_message()`, сообщение будет повторно доставлено в приложение после его перезапуска. Часто такой процесс называют *обработать хотя бы один раз*, т. е. каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может быть доставлено повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Как правило, это достигается с помощью свойства `message_id` сообщения, которое остается постоянным для различных попыток доставки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы узнали основные сведения об очередях служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
 * Обзор [очередей, разделов и подписок](service-bus-queues-topics-subscriptions.md).

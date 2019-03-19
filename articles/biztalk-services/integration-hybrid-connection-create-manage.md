@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2016
 ms.author: ccompy
-ms.openlocfilehash: 1c05a50f82f5c235c76ff234efe183172e0863bf
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 584b9d67808e75222d832f045e5d3f93fbb326ae
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232986"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105096"
 ---
 # <a name="create-and-manage-hybrid-connections"></a>Создание гибридных подключений и управление ими
 
 > [!IMPORTANT]
 > Гибридные подключения BizTalk больше не используются. Они заменены гибридными подключениями службы приложений. Дополнительную информацию, включая сведения об управлении существующими гибридными подключениями BizTalk, см. в статье [Гибридные подключения к службе приложений Azure](../app-service/app-service-hybrid-connections.md).
-
->[!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
+> 
+> [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 ## <a name="overview-of-the-steps"></a>Описание действий
 1. Создание гибридного подключения путем ввода **host name** или **FQDN** of the on-premises resource in your private netwилиk.
@@ -42,7 +42,7 @@ ms.locfileid: "51232986"
 > Например, вы задали **10.4.5.6** в качестве локального хоста (это псевдокод):
 > 
 > **Следующий сценарий будет работать:**  
-> `Application code -> GetHostByName("10.4.5.6") -> Resolves to 127.0.0.3 -> Connect("127.0.0.3") -> Hybrid Connection -> on-prem host`
+> `Application code -> GetHostByName("10.4.5.6") -> Resolves to 127.0.0.3 -> Connect("127.0.0.3") -> Hybrid Connection -> on premises host`
 > 
 > **Следующий сценарий не будет работать:**  
 > `Application code -> Connect("10.4.5.6") -> ?? -> No route to host`
@@ -55,8 +55,8 @@ ms.locfileid: "51232986"
 <!-- **To create Hybrid Connections using Web Apps**, see [Connect Azure Web Apps to an On-Premises Resource](../app-service-web/web-sites-hybrid-connection-get-started.md). You can also install the Hybrid Connection Manager (HCM) from your web app, which is the preferred method.  -->
 
 #### <a name="additional"></a>Дополнительно
-* Можно создать несколько гибридных подключений. См. число разрешенных подключений в статье [Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md). 
-* Каждое гибридное подключение создается с помощью пары строк подключения: ключи приложений, которые ОТПРАВЛЯЮТ и локальные ключи, которые ПРОСЛУШИВАЮТ. В каждой паре есть первичный и вторичный ключи. 
+* Можно создать несколько гибридных подключений. См. в разделе [службы BizTalk: Диаграмма выпусков](biztalk-editions-feature-chart.md) число разрешенных подключений. 
+* Каждое гибридное подключение создается с помощью пары строк подключения: Ключи приложения, которые ОТПРАВЛЯЮТ и ключи, которые ПРОСЛУШИВАЮТ на предприятии. В каждой паре есть первичный и вторичный ключи. 
 
 ## <a name="LinkWebSite"></a>Связывание веб-приложения службы приложений Azure или мобильного приложения
 Чтобы связать веб-приложение или мобильное приложение с существующим гибридным подключением, в колонке "Гибридные подключения" выберите элемент **Использовать существующее гибридное подключение**. 
@@ -119,9 +119,9 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 
 ## <a name="see-also"></a>См. также
 [REST API для управления службами BizTalk в Microsoft Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx)  
-[Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md)  
+[Службы BizTalk. Диаграмма выпусков](biztalk-editions-feature-chart.md)  
 [Создание службы BizTalk](biztalk-provision-services.md)  
-[Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](biztalk-dashboard-monitor-scale-tabs.md)
+[Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md)
 
 [HybridConnectionTab]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionTab.png
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png

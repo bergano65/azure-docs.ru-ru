@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Tangoe Command Premium Mobile.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 986afa1239ad0efd9ccb936252ead37c8379b447
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8c9f410fa890df7aac3c3bf4d89468b92e69ba38
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192903"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56883238"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile
+# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile
 
 В этом учебнике описано, как интегрировать Tangoe Command Premium Mobile с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56192903"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Tangoe Command Premium Mobile, вам потребуется следующее:
 
@@ -75,7 +75,7 @@ ms.locfileid: "56192903"
 
 1. В поле поиска введите **Tangoe Command Premium Mobile**, на панели результатов выберите **Tangoe Command Premium Mobile** и нажмите кнопку **Добавить**, чтобы добавить выбранное приложение.
 
-    ![Добавление Tangoe Command Premium Mobile из коллекции ](./media/tangoe-tutorial/tutorial_tangoe_addfromgallery.png)
+    ![Добавление Tangoe Command Premium Mobile из коллекции](./media/tangoe-tutorial/tutorial_tangoe_addfromgallery.png)
 
 ##  <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 В этом разделе описана настройка и проверка единого входа Azure AD в Tangoe Command Premium Mobile с использованием тестового пользователя Britta Simon.
@@ -112,7 +112,7 @@ ms.locfileid: "56192903"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/startSSO.ping?PartnerIdpId=<tenant issuer>&TARGET=<target page url>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/ACS.saml2`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/ACS.saml2`.
 
     > [!NOTE] 
     > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/). 
@@ -165,11 +165,11 @@ ms.locfileid: "56192903"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-tangoe-command-premium-mobile-test-user"></a>Создание тестового пользователя Tangoe Command Premium Mobile
 

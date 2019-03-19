@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: f69035202a3358af38ebaf8e94abdd3b030e633f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: e58a62761284e0671c0083d41f5dde4c13b32fe2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51256074"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58108262"
 ---
-# <a name="biztalk-services-troubleshoot-using-operation-logs"></a>Службы BizTalk: устранение неполадок с помощью журналов операций
+# <a name="biztalk-services-troubleshoot-using-operation-logs"></a>Службы BizTalk. устранение неполадок с помощью журналов операций
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
-
+> 
 > [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 ## <a name="what-are-the-operation-logs"></a>Что такое журналы операций
@@ -39,7 +39,7 @@ ms.locfileid: "51256074"
 ## <a name="view-biztalk-services-operation-logs"></a>Просмотр журналов операций служб BizTalk
 1. На портале Azure выберите **Службы управления**, а затем щелкните вкладку **Журналы операций**.
 2. Можно фильтровать журналы по различным параметрам, таким как подписки, диапазон дат, тип службы (например, службы BizTalk), имя службы или состояние операции (например, "Успешно", "Ошибка").
-3. Щелкните флажок, чтобы просмотреть отфильтрованный список. На следующем рисунке показаны действия, связанные с тестовой службой BizTalk: ![Просмотр журналов действий][ViewLogs] 
+3. Щелкните флажок, чтобы просмотреть отфильтрованный список. На следующем изображении показаны действия, связанные с testbiztalkservice:  ![Просмотр журналов операций][ViewLogs] 
 4. Чтобы узнать больше о конкретной операции, выберите строку и щелкните **Подробности** на панели задач в нижней части страницы.
 
 ## <a name="bizops"></a>Операции, отслеживаемые с помощью служб управления Azure
@@ -66,12 +66,12 @@ ms.locfileid: "51256074"
 ## <a name="see-also"></a>См. также
 * [Резервное копирование службы BizTalk](https://go.microsoft.com/fwlink/p/?LinkID=325584)
 * [Восстановление службы BizTalk из резервной копии](https://go.microsoft.com/fwlink/p/?LinkID=325582)
-* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](https://go.microsoft.com/fwlink/p/?LinkID=302279)
-* [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280)
-* [Службы BizTalk. Диаграмма состояния подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281)
-* [Службы BizTalk: регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)
-* [Службы BizTalk: имя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)
+* [Службы BizTalk. Developer, Basic, Standard и Premium диаграмма выпусков](https://go.microsoft.com/fwlink/p/?LinkID=302279)
+* [Службы BizTalk. Подготовка](https://go.microsoft.com/fwlink/p/?LinkID=302280)
+* [Службы BizTalk. Схема состояний подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)
+* [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](https://go.microsoft.com/fwlink/p/?LinkID=302281)
+* [Службы BizTalk. Регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)
+* [Службы BizTalk. Имя издателя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)
 * [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [ViewLogs]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png

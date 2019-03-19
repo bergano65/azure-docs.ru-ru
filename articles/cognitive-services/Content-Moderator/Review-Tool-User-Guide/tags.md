@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 942b30ab9949a28c42949913d90e7448c22b658f
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: fa3b7be6ac7cc398685bf5ad7d21173bcb072b69
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206287"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58118414"
 ---
 # <a name="create-and-use-moderation-tags"></a>Создание и использование тегов для модерации
 
@@ -23,15 +23,15 @@ ms.locfileid: "55206287"
 
 ## <a name="create-tags"></a>Создание тегов
 
-1.  Выберите "Tags" (Теги) на вкладке "Settings" (Параметры).
+1. Выберите "Tags" (Теги) на вкладке "Settings" (Параметры).
 
-  ![Теги модерации контента](images/tags-1.png)
+   ![Теги модерации контента](images/tags-1.png)
 
-2.  Введите двухбуквенный короткий код для тега.
-3.  Введите имя тега. Оно должно быть кратким и понятным. Например, **isbullying**.
-4.  Введите описание.
-5.  Нажмите Добавить.
-6.  Завершив создание тегов, нажмите кнопку "Save" (Сохранить).
+2. Введите двухбуквенный короткий код для тега.
+3. Введите имя тега. Оно должно быть кратким и понятным. Например, **isbullying**.
+4. Введите описание.
+5. Нажмите Добавить.
+6. Завершив создание тегов, нажмите кнопку "Save" (Сохранить).
 
 ![Определение тегов модерации контента](images/tags-2-define.png)
 
@@ -49,6 +49,6 @@ ms.locfileid: "55206287"
 
 ![Удаление тегов модерации контента](images/tags-5-delete.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как использовать теги для модерации изображений, ознакомьтесь со статьей [Проверка прошедших модерацию изображений](Review-Moderated-Images.md).

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 04/25/2017
 ms.author: erikre
-ms.openlocfilehash: 1319c44dab465ec2d1fa5ead99e7f3cba8965850
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.openlocfilehash: 52612419599ef69e7476c660b52f9e6e36946825
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54265640"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57535405"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
 Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые принадлежат к типу Enterprise, подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым приняли согласованные денежные обязательства, и получили доступ к пользовательским тарифам на ресурсы Azure.
@@ -34,7 +34,7 @@ ms.locfileid: "54265640"
 |Авторизация| Укажите значение в следующем формате: **bearer {API_KEY}** <br/> Пример: bearer eyr....09| 
 
 ## <a name="consumption-apis"></a>Интерфейсы API потребления
-[Здесь](https://consumption.azure.com/swagger/ui/index) вы можете найти конечную точку Swagger для интерфейсов API, описанных ниже. С ее помощью можно упростить самоанализ API и создать клиентские пакеты SDK, используя [AutoRest](https://github.com/Azure/AutoRest) или [Swagger CodeGen](http://swagger.io/swagger-codegen/). С 1 мая 2014 г. данные доступны через этот API. 
+[Здесь](https://consumption.azure.com/swagger/ui/index) вы можете найти конечную точку Swagger для интерфейсов API, описанных ниже. С ее помощью можно упростить самоанализ API и создать клиентские пакеты SDK, используя [AutoRest](https://github.com/Azure/AutoRest) или [Swagger CodeGen](https://swagger.io/swagger-codegen/). С 1 мая 2014 г. данные доступны через этот API. 
 
 * **Баланс и сводка**. [Интерфейс API для управления балансом и просмотра сводки](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary) отображает ежемесячную сводку о состоянии баланса, новых покупках, расходах на службу Azure Marketplace, корректировках и оплате за избыток.
 

@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/29/2017
+ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: acaf73c2d981761b0bc57cfccbbf6c6a48e5e0c2
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.openlocfilehash: d8cea95fbfb76f1dd1891045309a35aa1d0a8ab0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446522"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58099490"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -32,11 +32,11 @@ ms.locfileid: "52446522"
 
 * предоставлять третьим лицам защищенный доступ к API, размещенным в частном центре обработки данных, с помощью VPN-подключений типа "сеть — сеть" или Azure ExpressRoute;
 * создать гибридное облачное развертывание, предоставляя единый шлюз для облачных и локально размещенных API-интерфейсов;
-* управлять API-интерфейсами, размещенными в нескольких географических расположениях, через одну общую конечную точку шлюза. 
+* управлять API-интерфейсами, размещенными в нескольких географических расположениях, через одну общую конечную точку шлюза.
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -47,7 +47,7 @@ ms.locfileid: "52446522"
 + **Экземпляр Azure API Management.** Дополнительные сведения см. в статье о [создании экземпляра управления API Azure](get-started-create-service-instance.md).
 
 ## <a name="enable-vpn"> </a>Создание управления API во внутренней виртуальной сети
-Служба управления API во внутренней виртуальной сети размещается за внутренней подсистемой балансировки нагрузки (ILB).
+Служба управления API во внутренней виртуальной сети размещается за [внутренней подсистемы балансировки нагрузки (Классическая модель)](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это является единственным доступным параметром и не может быть изменено.
 
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Настройка подключения к виртуальной сети с помощью портала Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "52446522"
 
 4. Щелкните **Сохранить**.
 
-Завершив развертывание, вы увидите на панели мониторинга внутренний виртуальный IP-адрес вашей службы.
+После успешного завершения развертывания вы увидите **частного** виртуальный IP-адрес и **открытый** виртуальный IP-адрес службы управления API в колонке "Обзор". **Частного** виртуальный IP-адрес является нагрузки Сбалансированный IP-адрес из управления API делегированные подсети, по которому `gateway`, `portal`, `management` и `scm` доступных конечных точек. **Открытый** виртуальный IP-адрес используется **только** трафик плоскости управления `management` конечной точки отказа порт 3443 и могут быть заблокированы до [ApiManagement] [ ServiceTags] servicetag.
 
 ![Панель мониторинга службы управления API, демонстрирующая настроенную внутреннюю виртуальную сеть][api-management-internal-vnet-dashboard]
 
@@ -67,11 +67,14 @@ ms.locfileid: "52446522"
 > Консоль тестирования, доступная на портале Azure, не будет работать для **внутренней** развернутой службы виртуальной сети, так как URL-адрес шлюза не зарегистрирован в общедоступной службе DNS. Вместо этого следует использовать консоль тестирования, доступную на **портале разработчика**.
 
 ### <a name="enable-a-virtual-network-connection-by-using-powershell-cmdlets"></a>Настройка подключения к виртуальной сети с помощью командлетов PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Вы можете настроить подключение к виртуальной сети с помощью командлетов PowerShell.
 
-* Создание службы управления API в виртуальной сети. Чтобы создать в виртуальной сети службу управления API Azure и настроить для нее внутренний режим виртуальной сети, используйте командлет [New-AzureRmApiManagement](/powershell/module/azurerm.apimanagement/new-azurermapimanagement).
+* Создание службы управления API в виртуальной сети: Используйте командлет [New AzApiManagement](/powershell/module/az.apimanagement/new-azapimanagement) создайте службу управления API Azure в виртуальной сети и настроить его для использования типа внутренней виртуальной сети.
 
-* Развертывание существующей службы управления API в виртуальной сети. Чтобы переместить в виртуальную сеть существующую службу управления API Azure и настроить для нее внутренний режим виртуальной сети, используйте командлет [Update-AzureRmApiManagementDeployment](/powershell/module/azurerm.apimanagement/update-azurermapimanagementdeployment).
+* Обновление существующего развертывания службы управления API в виртуальной сети: Используйте командлет [AzApiManagementRegion обновления](/powershell/module/az.apimanagement/update-azapimanagementregion) переместить существующую службу управления API в виртуальной сети и настроить его для использования типа внутренней виртуальной сети.
 
 ## <a name="apim-dns-configuration"></a>Настройка DNS
 Если управление API настроено во внешнем режиме виртуальной сети, службой DNS управляет Azure. Чтобы использовать внутренний режим виртуальной сети, управлять маршрутизацией вы должны самостоятельно.
@@ -80,35 +83,36 @@ ms.locfileid: "52446522"
 > Служба управления API не прослушивает запросы, поступающие на IP-адреса. Она реагирует только на запросы к имени узла, которое настроено на конечных точках службы. К ним относятся шлюз, портал Azure и портал разработчика, конечная точка прямого управления и репозиторий Git.
 
 ### <a name="access-on-default-host-names"></a>Доступ по именам узлов по умолчанию
-Если вы создадите службу управления API, например с именем contoso, по умолчанию будут настроены следующие конечные точки службы:
+При создании службы управления API, например, с именем «contosointernalvnet» по умолчанию настроены следующие конечные точки службы:
 
-   * шлюз или прокси — contoso.azure api.net;
+   * Шлюз или прокси-сервера: contosointernalvnet.azure-api.net.
 
-   * портал Azure и портал разработчика — contoso.portal.azure api.net;
+   * На портале Azure и портала разработчика: contosointernalvnet.portal.azure-api.net.
 
-   * конечная точка прямого управления — contoso.management.azure api.net;
+   * Конечная точка прямого управления: contosointernalvnet.management.azure-api.net.
 
-   * репозиторий Git — contoso.scm.azure-api.net.
+   * Git: contosointernalvnet.scm.azure-api.net.
 
-Чтобы получить доступ к этим конечным точкам службы управления API, можно создать виртуальную машину в подсети, подключенной к виртуальной сети, в которой развернута служба управления API. Если для службы используется внутренний виртуальный IP-адрес 10.0.0.5, в файле hosts (расположен по адресу %системный_диск%\drivers\etc\hosts) можно задать следующие сопоставления:
+Чтобы получить доступ к этим конечным точкам службы управления API, можно создать виртуальную машину в подсети, подключенной к виртуальной сети, в которой развернута служба управления API. Если внутренний виртуальный IP-адрес для службы является 10.1.0.5, можно сопоставить файл hosts, % SystemDrive%\drivers\etc\hosts, следующим образом:
 
-   * 10.0.0.5     contoso.azure-api.net
+   * 10.1.0.5     contosointernalvnet.azure-api.net
 
-   * 10.0.0.5     contoso.portal.azure-api.net
+   * 10.1.0.5     contosointernalvnet.portal.azure-api.net
 
-   * 10.0.0.5     contoso.management.azure-api.net
+   * 10.1.0.5     contosointernalvnet.management.azure-api.net
 
-   * 10.0.0.5     contoso.scm.azure-api.net
+   * 10.1.0.5     contosointernalvnet.scm.azure-api.net
 
-Теперь вы сможете обращаться с этой виртуальной машины к любой из конечных точек службы. Если в вашей в виртуальной сети действует пользовательский DNS-сервер, вы можете создать на нем записи DNS типа A. Тогда доступ к конечным точкам будет возможен из любого расположения в пределах виртуальной сети. 
+Теперь вы сможете обращаться с этой виртуальной машины к любой из конечных точек службы.
+Если в вашей в виртуальной сети действует пользовательский DNS-сервер, вы можете создать на нем записи DNS типа A. Тогда доступ к конечным точкам будет возможен из любого расположения в пределах виртуальной сети.
 
 ### <a name="access-on-custom-domain-names"></a>Доступ по пользовательским доменным именам
 
-   1. Если для обращения к службе управления API вы не хотите использовать имена узлов по умолчанию, для всех конечных точек службы можно настроить пользовательские доменные имена, как указано ниже: 
+1. Если для обращения к службе управления API вы не хотите использовать имена узлов по умолчанию, для всех конечных точек службы можно настроить пользовательские доменные имена, как указано ниже:
 
    ![Настройка пользовательского домена для управления API][api-management-custom-domain-name]
 
-   2. После этого создайте на DNS-сервере записи типа A для обращения к конечным точкам, которые будут доступны только в пределах виртуальной сети.
+2. После этого создайте на DNS-сервере записи типа A для обращения к конечным точкам, которые будут доступны только в пределах виртуальной сети.
 
 ## <a name="routing"> </a> Маршрутизация
 + Частный виртуальный IP-адрес для подсистемы балансировки нагрузки из диапазона подсети резервируется и используется для доступа к конечным точкам службы управления API из виртуальной сети.
@@ -122,10 +126,12 @@ ms.locfileid: "52446522"
 * [Виртуальная сеть Azure: часто задаваемые вопросы](../virtual-network/virtual-networks-faq.md)
 * Инструкции по [созданию записей DNS типа A](https://msdn.microsoft.com/library/bb727018.aspx)
 
-[api-management-using-internal-vnet-menu]: ./media/api-management-using-with-internal-vnet/api-management-internal-vnet-menu.png
+[api-management-using-internal-vnet-menu]: ./media/api-management-using-with-internal-vnet/api-management-using-with-internal-vnet.png
 [api-management-internal-vnet-dashboard]: ./media/api-management-using-with-internal-vnet/api-management-internal-vnet-dashboard.png
 [api-management-custom-domain-name]: ./media/api-management-using-with-internal-vnet/api-management-custom-domain-name.png
 
 [Create API Management service]: get-started-create-service-instance.md
 [Common network configuration problems]: api-management-using-with-vnet.md#network-configuration-issues
+
+[ServiceTags]: ../virtual-network/security-overview.md#service-tags
 

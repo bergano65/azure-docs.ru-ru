@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/27/2018
 ms.author: ryanwi
-ms.openlocfilehash: 42a6430162f3bafd3ec3ce2a3c523f6f5755914a
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: 0e5cfa42eba5a2110ebf8879c771f2fef048ae03
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001384"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835719"
 ---
 # <a name="add-logging-to-your-service-fabric-application"></a>Добавление ведения журнала в приложение Service Fabric
 
@@ -132,7 +132,7 @@ internal sealed class ServiceEventSource : EventSource
 
 ### <a name="using-other-logging-providers"></a>Использование других поставщиков ведения журнала
 
-Некоторые сторонние поставщики, например [Serilog](https://serilog.net/), [NLog](http://nlog-project.org/) и [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), используют подход, описанный в предыдущем разделе. Вы можете подключить любой из них к подсистеме ведения журналов ASP.NET Core или использовать их отдельно. Serilog предоставляет возможность создавать дополнительные свойства для сообщений, отправляемых из средства ведения журнала. Эту функцию можно использовать для вывода информации об имени и типе службы, а также секционировании. Чтобы использовать эту возможность в инфраструктуре ASP.NET Core, сделайте следующее.
+Некоторые сторонние поставщики, например [Serilog](https://serilog.net/), [NLog](https://nlog-project.org/) и [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), используют подход, описанный в предыдущем разделе. Вы можете подключить любой из них к подсистеме ведения журналов ASP.NET Core или использовать их отдельно. Serilog предоставляет возможность создавать дополнительные свойства для сообщений, отправляемых из средства ведения журнала. Эту функцию можно использовать для вывода информации об имени и типе службы, а также секционировании. Чтобы использовать эту возможность в инфраструктуре ASP.NET Core, сделайте следующее.
 
 1. Добавьте в проект пакеты NuGet **Serilog**, **Serilog.Extensions.Logging**, **Serilog.Sinks.Literate** и **Serilog.Sinks.Observable**. 
 2. Создайте `LoggerConfiguration` и экземпляр средства ведения журнала.
@@ -172,7 +172,7 @@ internal sealed class ServiceEventSource : EventSource
    >[!NOTE]
    >Мы рекомендуем *не использовать* в предыдущем примере статический аргумент `Log.Logger`. Service Fabric позволяет разместить в одном процессе несколько экземпляров службы одного типа. Если вы примените статический аргумент `Log.Logger`, последний модуль записи дополнительных свойств будет содержать значения для всех запущенных экземпляров. Это одна из причин, по которой переменная _logger является частным членом класса службы. Кроме того, переменная `_logger` должна быть доступна в общем коде, который может использоваться несколькими службами.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [приложении наблюдения за Service Fabric](service-fabric-diagnostics-event-generation-app.md).
 - Изучите методы ведения журнала с использованием [EventFlow](service-fabric-diagnostics-event-aggregation-eventflow.md) и [системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md).

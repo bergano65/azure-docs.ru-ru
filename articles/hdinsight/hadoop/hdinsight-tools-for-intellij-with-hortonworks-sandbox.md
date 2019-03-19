@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: aaebad004e5d426ca1c593941b15a2515c4476de
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 98f22f531ca15bf88cd7d0a9add2851651e2eec7
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635669"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58118329"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
@@ -23,7 +23,7 @@ ms.locfileid: "53635669"
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) — это интегрированная среда разработки (IDE) Java для создания программного обеспечения для компьютеров. После разработки и тестирования приложений в песочнице Hortonworks их можно переместить в [Azure HDInsight](apache-hadoop-introduction.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы с этим руководством необходимо иметь следующее:
 
@@ -53,20 +53,20 @@ ms.locfileid: "53635669"
    1. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
    2. В списке **средств сборки** выберите один из следующих вариантов в зависимости от сценария:
 
-    * **Maven.** Для поддержки мастера создания проекта Scala.
-    * **SBT.** Для управления зависимостями и сборки проекта Scala.
+      * **Maven.** Для поддержки мастера создания проекта Scala.
+      * **SBT.** Для управления зависимостями и сборки проекта Scala.
 
    ![Диалоговое окно нового проекта](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
 
 2. Щелкните **Далее**.
 3. В диалоговом окне **New Project** (Новый проект) выполните следующие шаги:
 
-    1. В поле **Project name** (Имя проекта) введите имя проекта.
-    2. В поле **Project location** (Расположение проекта) введите расположение проекта.
-    3. Рядом с раскрывающимся списком **Project SDK** (Пакет SDK проекта) выберите **New** (Создать), а затем **JDK** и укажите папку пакета Java JDK версии 1.7 или более поздней. Выберите **Java 1.8** для кластера Spark 2.x. Для кластера Spark 1.x выберите **Java 1.7**. Расположение по умолчанию: C:\Program Files\Java\jdk1.8.x_xxx.
-    4. В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется Spark 1.6.2 (Scala 2.10.5). Убедитесь, что используется репозиторий, помеченный как **Scala 2.10.x**. Не используйте репозиторий, помеченный Scala 2.11.x.
+   1. В поле **Project name** (Имя проекта) введите имя проекта.
+   2. В поле **Project location** (Расположение проекта) введите расположение проекта.
+   3. Рядом с раскрывающимся списком **Project SDK** (Пакет SDK проекта) выберите **New** (Создать), а затем **JDK** и укажите папку пакета Java JDK версии 1.7 или более поздней. Выберите **Java 1.8** для кластера Spark 2.x. Для кластера Spark 1.x выберите **Java 1.7**. Расположение по умолчанию: C:\Program Files\Java\jdk1.8.x_xxx.
+   4. В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется Spark 1.6.2 (Scala 2.10.5). Убедитесь, что используется репозиторий, помеченный как **Scala 2.10.x**. Не используйте репозиторий, помеченный Scala 2.11.x.
     
-    ![Создание свойств проекта IntelliJ Scala](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project-properties.png)
+      ![Создание свойств проекта IntelliJ Scala](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project-properties.png)
 
 
 4. Выберите **Готово**.
@@ -147,7 +147,7 @@ ms.locfileid: "53635669"
 
 3. Нажмите кнопку **Submit** (Отправить). Журналы отправки заданий отображаются в окне инструмента отправки Spark.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создавать приложения Apache Spark для кластера HDInsight Spark на платформе Linux с помощью средств HDInsight в Azure Toolkit for IntelliJ](../spark/apache-spark-intellij-tool-plugin.md).
 

@@ -1,6 +1,6 @@
 ---
-title: Таблица ограничений для службы SignalR
-description: В таблице описаны системные ограничения для службы SignalR.
+title: Таблица ограничений служба Azure SignalR
+description: Описывает ограничения системы для службы Azure SignalR.
 services: signalr
 documentationcenter: signalr
 author: sffamily
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/24/2018
 ms.author: zhshang
-ms.openlocfilehash: 9283c106aa41bd5061dfd1761c840382a0bb3337
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
-ms.translationtype: HT
+ms.openlocfilehash: 236bb39125ec03a9652a57f9cd4aaa5da2695452
+ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47045256"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57554227"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение | 
 | --- | --- | --- |
-| Единицы службы SignalR на экземпляр, уровень "Бесплатный" |1 |1 |
-| Единицы службы SignalR на экземпляр, уровень "Стандартный" |100 |100 |
-| Единицы службы SignalR на подписку в регионе, уровень "Бесплатный"|5 |5 |
-| Общее количество единиц службы SignalR на подписку в регионе |50 |Без ограничений |
+| Единицы Azure служба SignalR на один экземпляр бесплатно уровня |1 |1 |
+| Единицы Azure служба SignalR на один экземпляр для уровня "стандартный" |100 |100 |
+| Бесплатный уровень единицы SignalR службы Azure на подписку в регионе|5 |5 |
+| Подсчитывает общего количества единиц служба Azure SignalR на подписку в регионе |50 |Без ограничений |
 | Подключения на единицу в день, уровень "Бесплатный" |20 |20 |
 | Подключения на единицу в день, уровень "Стандартный" |1000 |1000|
 | Включенные сообщения на единицу в день, уровень "Бесплатный"|20 000 |20 000 |

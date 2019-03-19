@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/30/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 5ade3ac7587d4ac5c5a6d8e174e76e76088e4e57
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: bc2e41fd5da4737ea1efe329b70964535daff54a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157947"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58105970"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "55157947"
 
 С помощью инфраструктуры процедур идентификации, лежащей в основе Azure Active Directory B2C (Azure AD B2C), можно выполнять интеграцию с RESTful API в пути взаимодействия пользователя. В этом пошаговом руководстве вы узнаете, как Azure AD B2C взаимодействует со службами RESTful (веб-API) .NET Framework.
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 Azure AD B2C позволяет добавлять собственную бизнес-логику в пути взаимодействия пользователя с помощью вызова службы RESTful. Инфраструктура процедур идентификации отправляет данные в службу RESTful в коллекции *входящих утверждений* и получает данные из RESTful в коллекции *исходящих утверждений*. Благодаря интеграции со службой RESTful вы можете:
 
 * **Проверять входные данные пользователя.** Это действие позволяет предотвратить сохранение в Azure AD неправильно сформированных данных. Если значение, полученное от пользователя, является недопустимым, служба RESTful возвращает сообщение об ошибке, которое инструктирует пользователя предоставить запись. Например, вы можете проверить, что адрес электронной почты, предоставленный пользователем, существует в базе данных ваших клиентов.
@@ -53,7 +53,7 @@ Azure AD B2C позволяет добавлять собственную биз
 * обратная отправка номера лояльности;
 * добавление номера лояльности в JSON Web Token (JWT).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="step-1-create-an-aspnet-web-api"></a>Шаг 1. Создание веб-API ASP.NET
@@ -249,10 +249,10 @@ Azure AD B2C позволяет добавлять собственную биз
 Следующий фрагмент XML-кода содержит узел поставщика утверждений с двумя техническими профилями:
 
 * **TechnicalProfile Id="REST-API-SignUp"**: определяет службу RESTful.
-   * `Proprietary` описан как протокол для поставщика на основе RESTful.
-   * `InputClaims` определяет утверждения, которые отправляются из Azure AD B2C в службу REST.
+  * `Proprietary` описан как протокол для поставщика на основе RESTful.
+  * `InputClaims` определяет утверждения, которые отправляются из Azure AD B2C в службу REST.
 
-   В этом примере содержимое утверждения `givenName` отправляется в службу REST в качестве `firstName`, содержимое утверждения `surname` отправляется в службу REST в качестве `lastName`, а `email` отправляется как есть. Элемент `OutputClaims` определяет утверждения, извлекаемые из службы RESTful обратно в Azure AD B2C.
+    В этом примере содержимое утверждения `givenName` отправляется в службу REST в качестве `firstName`, содержимое утверждения `surname` отправляется в службу REST в качестве `lastName`, а `email` отправляется как есть. Элемент `OutputClaims` определяет утверждения, извлекаемые из службы RESTful обратно в Azure AD B2C.
 
 * **TechnicalProfile Id="LocalAccountSignUpWithLogonEmail"**: добавляет технический профиль проверки в существующий технический профиль (определяемый в базовой политике). Во время регистрации технический профиль проверки вызывает предыдущий технический профиль. Если служба RESTful возвращает сообщение об ошибке HTTP 409 (ошибка из-за конфликта), сообщение об ошибке отображается пользователю.
 
@@ -382,6 +382,6 @@ Azure AD B2C позволяет добавлять собственную биз
 * После того как вы ознакомитесь с [пошаговым руководством по началу работы с пользовательскими политиками](active-directory-b2c-get-started-custom.md), рекомендуем создать свой сценарий, используя собственные файлы пользовательской политики. Для справки мы предоставили [образцы файлов политики](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-rest-api-netfw).
 * Вы можете загрузить полный код из примера решения Visual Studio [отсюда](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-rest-api-netfw/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Azure Active Directory B2C: Secure your RESTful services using HTTP basic authentication](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) (Azure Active Directory B2C: защита служб RESTful с использованием обычной проверки подлинности HTTP)
 * [Azure Active Directory B2C. Защита служб RESTful с помощью сертификатов клиента](active-directory-b2c-custom-rest-api-netfw-secure-cert.md)

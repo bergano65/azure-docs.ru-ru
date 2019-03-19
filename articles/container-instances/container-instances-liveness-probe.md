@@ -2,18 +2,18 @@
 title: Настройка проб активности в службе "Экземпляры контейнеров Azure"
 description: Подробные сведения о настройке проб активности для перезагрузки неработоспособных контейнеров в службе "Экземпляры контейнеров Azure"
 services: container-instances
-author: jluk
+author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
 ms.date: 06/08/2018
-ms.author: juluk
-ms.openlocfilehash: 1582f0d7ec688bc72cc9d1aa6ae0ddb0a6ad3a17
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
-ms.translationtype: HT
+ms.author: danlep
+ms.openlocfilehash: 89b76fc68c113b7931894c0cf003ffd846c646ab
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213077"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57899729"
 ---
 # <a name="configure-liveness-probes"></a>Настройка проб активности
 
@@ -99,7 +99,7 @@ az container create --resource-group myResourceGroup --name livenesstest -f live
 
 Политики перезагрузки заменяют поведение перезагрузки, активируемое пробами активности. Например, если задать `restartPolicy = Never` *и* пробу активности, группа контейнеров не будет перезагружаться в случае сбоя проверки активности. Вместо этого группа контейнеров будет соответствовать политике перезагрузки группы контейнеров `Never`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для выполнения сценариев на основе задачи может понадобиться, чтобы пробы активности включали функцию автоматической перезагрузки в случае, если необходимая функция не работает должным образом. Дополнительные сведения о запуске контейнеров на основе задач см. статье [Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"](container-instances-restart-policy.md).
 

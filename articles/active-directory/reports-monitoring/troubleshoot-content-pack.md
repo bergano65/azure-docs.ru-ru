@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be5220c5f28505bd83110705e08a6b1c7fb12529
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b2346c0631bb4540aef27623f82f72f4eabd0d23
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210702"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57433558"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Устранение ошибок пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory 
 
@@ -69,8 +69,8 @@ ms.locfileid: "56210702"
 | ---   | ---        |
 | В зависимости от размера клиента шаг может длиться от нескольких минут до получаса. | Если в течение часа сообщение не исчезнет и не отобразится панель мониторинга, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Установка пакета содержимого Power BI для Azure Active Directory](quickstart-install-power-bi-content-pack.md)
+* [Установить пакет содержимого Power BI для отчетов Azure AD](quickstart-install-power-bi-content-pack.md).
 * [Как использовать пакет содержимого Azure Active Directory Power BI](howto-power-bi-content-pack.md)
 * [Как получить поддержку для Azure Active Directory](../fundamentals/active-directory-troubleshooting-support-howto.md)

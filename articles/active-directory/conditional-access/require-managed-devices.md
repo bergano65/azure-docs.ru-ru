@@ -17,12 +17,12 @@ ms.date: 06/14/2018
 ms.author: markvi
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bec86ee095fb5011c80cd26efcb79efc639189ed
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 0c468f149a8005f2452ba49afbb447c3304c3d4b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192325"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58170536"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа
 
@@ -31,7 +31,7 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 В этой статье описано, как настроить политики условного доступа, которые позволяют разрешить доступ к определенным приложениям в своей среде только для управляемых устройств. 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ограничение доступа к облачному приложению с управляемых устройств объединяет возможности **условного доступа Azure AD** и **управления устройствами Azure AD**. Если вы не знакомы с одной из этих областей, ознакомьтесь со следующими статьями:
 
@@ -110,7 +110,7 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перед настройкой политики условного доступа на основе устройств в своей среде ознакомьтесь со статей [Рекомендации по работе с условным доступом в Azure Active Directory](best-practices.md).
 

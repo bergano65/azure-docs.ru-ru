@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 49c41b436e0d935d1f9fce5ba2de10e0f2d0c99d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 4db013b51657bb327c36d616a3743c46731cd19a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55991232"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57903799"
 ---
 # <a name="hyperscale-service-tier-preview-for-up-to-100-tb"></a>Уровень служб ценовой категории "Гипермасштабирование" (предварительная версия) до 100 ТБ
 
@@ -112,7 +112,7 @@ ms.locfileid: "55991232"
 
 ## <a name="create-a-hyperscale-database"></a>Создание базы данных ценовой категории "Гипермасштабирование"
 
-Базу данных ценовой категории "Гипермасштабирование" можно создать с использованием [портала Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqldatabase) или [интерфейса командной строки](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create). Базы данных ценовой категории "Гипермасштабирование"доступны только при использовании [модели приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md).
+Гипермасштабируемый базы данных могут создаваться с использованием [портала Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabase) или [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create). Базы данных ценовой категории "Гипермасштабирование"доступны только при использовании [модели приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md).
 
 Следующая команда T-SQL создает базу данных ценовой категории "Гипермасштабирование". Необходимо указать целевые выпуск и службу в инструкции `CREATE DATABASE`.
 
@@ -124,7 +124,7 @@ GO
 
 ## <a name="migrate-an-existing-azure-sql-database-to-the-hyperscale-service-tier"></a>Перенос имеющейся базы данных Azure SQL на уровень служб ценовой категории "Гипермасштабирование"
 
-Можно переместить существующие базы данных SQL Azure на уровень служб ценовой категории "Гипермасштабирование" с помощью [портала Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabase) или [интерфейса командной строки](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update). В общедоступной предварительной версии это односторонняя миграция. Невозможно переместить базы данных с уровня службы "Гипермасштабирование" на другой уровень службы. Мы рекомендуем сделать копию ваших рабочих баз данных и выполнить перенос на уровень "Гипермасштабирование" для подтверждения концепции.
+Можно переместить существующие базы данных Azure SQL с помощью Гипермасштабируемого [портала Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) или [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update). В общедоступной предварительной версии это односторонняя миграция. Невозможно переместить базы данных с уровня службы "Гипермасштабирование" на другой уровень службы. Мы рекомендуем сделать копию ваших рабочих баз данных и выполнить перенос на уровень "Гипермасштабирование" для подтверждения концепции.
 
 Следующие команды T-SQL перемещает базу данных на уровень служб ценовой категории "Гипермасштабирование". Необходимо указать целевые выпуск и службу в инструкции `ALTER DATABASE`.
 
@@ -145,7 +145,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 
 ## <a name="available-regions"></a>Доступные регионы
 
-Уровень службы "Гипермасштабирование" сейчас представлен в общедоступной предварительной версии и доступен в таких регионах Azure: EastUS1, EastUS2, WestUS2, CentralUS, NorthCentralUS, WestEurope, NorthEurope, UKWest, AustraliaEast, AustraliaSouthEast, SouthEastAsia, JapanEast, KoreaCentral
+Уровень службы "Гипермасштабирование" сейчас представлен в общедоступной предварительной версии и доступен в таких регионах Azure: Восточная часть США 1, восточная часть США 2, Западная часть США 2, Центральная часть США, Северная CentralU S, Западная Европа, Северная Европа, Восточная Австралия, Юго-Восточная Австралия, Юго-Восточная Азия, Восточная Япония и центральная Корея
 
 ## <a name="known-limitations"></a>Известные ограничения
 
@@ -159,7 +159,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 | Перенос баз данных с выполняющимися в памяти объектами в настоящее время не поддерживается. | Перед переносом базы данных на уровень служб ценовой категории "Гипермасштабирование" необходимо удалить выполняющиеся в памяти объекты и заново создать их как объекты, выполняющиеся не в памяти.|
 | Отслеживание изменений данных сейчас не поддерживается. | Вы не сможете использовать отслеживание изменений данных с гипермасштабируемыми базами данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вопросы и ответы о ценовой категории "Гипермасштабирование" приведены в разделе [часто задаваемых вопросов о ценовой категории "Гипермасштабирование"](sql-database-service-tier-hyperscale-faq.md).
 - Сведения об уровнях служб см. в статье [Ресурсы и модели приобретения для базы данных SQL Azure](sql-database-purchase-models.md).

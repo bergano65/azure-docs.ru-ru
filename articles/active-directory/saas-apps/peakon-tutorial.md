@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Peakon | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Peakon | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Peakon.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/13/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e32f0ac6fcc6839bad973c3d014436d08ae43896
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: b841cbe838156cd00876a9a13c7a9cbe1790ea80
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56211315"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57842217"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-peakon"></a>Руководство. Интеграция Azure Active Directory с Peakon
 
@@ -35,7 +35,7 @@ ms.locfileid: "56211315"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию AAD с Peakon, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "56211315"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://app.peakon.com/saml/<companyid>/metadata`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.peakon.com/saml/<companyid>/assert`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.peakon.com/saml/<companyid>/assert`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -162,11 +162,11 @@ ms.locfileid: "56211315"
 
     a. В текстовое поле **SSO Login URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    б) В текстовое поле **SSO Logout URL** (URL-адрес единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    2. В текстовое поле **SSO Logout URL** (URL-адрес единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
     c. Щелкните **Choose file** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, который был скачан с портала Azure.
 
-    4.3. Щелкните  **значок**, чтобы скопировать **идентификатор сущности**, и вставьте его в текстовое поле  **Идентификатор** в разделе  **Базовая конфигурации SAML**  на портале Azure.
+    d. Щелкните  **значок**, чтобы скопировать **идентификатор сущности**, и вставьте его в текстовое поле  **Идентификатор** в разделе  **Базовая конфигурации SAML**  на портале Azure.
 
     д. Щелкните  **значок**, чтобы скопировать **URL-адрес ответа (ACS)**, и вставьте его в текстовое поле  **URL-адрес ответа** в разделе  **Базовая конфигурации SAML**  на портале Azure.
 
@@ -190,8 +190,8 @@ ms.locfileid: "56211315"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например, BrittaSimon@contoso.com
+    2. В **имя пользователя** введите **brittasimon\@yourcompanydomain.extension**  
+    Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -220,7 +220,7 @@ ms.locfileid: "56211315"
 
     a. В текстовое поле **Name** (Имя) введите имя **Britta** и фамилию **Simon**.
 
-    б) В текстовое поле **Email** (Электронная почта) введите адрес электронной почты, например **Brittasimon@contoso.com**.
+    2. В **электронной почты** textbox, введите адрес электронной почты, например **Brittasimon\@contoso.com**.
 
     c. Щелкните **Create employee** (Создать сотрудника).
 

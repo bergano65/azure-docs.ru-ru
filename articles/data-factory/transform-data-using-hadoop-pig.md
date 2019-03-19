@@ -3,20 +3,20 @@ title: Преобразование данных с помощью действ�
 description: Узнайте, как с помощью действия Pig в фабрике данных Azure выполнять запросы Pig к собственному кластеру HDInsight или к кластеру HDInsight по требованию.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/16/2018
-ms.author: douglasl
-ms.openlocfilehash: a29bd64c6b18d41028c8952f531698bbfa9e01e2
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+author: nabhishek
+ms.author: abnarain
+manager: craigg
+ms.openlocfilehash: 914bc37552a80886df16ed69fba4e31b3f22ac22
+ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014715"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57574922"
 ---
 # <a name="transform-data-using-hadoop-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Pig в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -56,7 +56,7 @@ ms.locfileid: "54014715"
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство            | ОПИСАНИЕ                              | Обязательно |
+| Свойство            | ОПИСАНИЕ                              | Обязательно для заполнения |
 | ------------------- | ---------------------------------------- | -------- |
 | name                | Имя действия.                     | Yes      |
 | description         | Текст, описывающий, для чего используется действие | Нет        |
@@ -68,7 +68,7 @@ ms.locfileid: "54014715"
 | arguments           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет        |
 | defines             | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Pig. | Нет        |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами: 
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)

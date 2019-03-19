@@ -2,21 +2,21 @@
 title: Переход с SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Database Migration Service и PowerShell | Документация Майкрософт
 description: Сведения о переходе с локального сервера SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell.
 services: database-migration
-author: pochiraju
-ms.author: rajpo
+author: HJToland3
+ms.author: jtoland
 manager: craigg
-ms.reviewer: douglasl
+ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 01/15/2019
-ms.openlocfilehash: 93ab8b2aca49fcd0d2f27ec17f7fc519b19bf563
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 19fb53e73da40a65b074cb0c2f14f11bb130b586
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54305188"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58177625"
 ---
 # <a name="migrate-sql-server-on-premises-to-azure-sql-database-managed-instance-using-azure-powershell"></a>Переход с локального сервера SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell
 В этой статье мы перенесем базу данных **Adventureworks2012**, восстановленную на локальный экземпляр SQL Server 2005 (или более поздней версии), в Управляемый экземпляр Базы данных SQL Azure с помощью Microsoft Azure PowerShell. Базы данных из локального экземпляра SQL Server можно перенести в Управляемый экземпляр Базы данных SQL Azure с помощью модуля `AzureRM.DataMigration` в Microsoft Azure PowerShell.
@@ -28,7 +28,7 @@ ms.locfileid: "54305188"
 > * создание проекта миграции в экземпляре Azure Database Migration Service;
 > * выполнение миграции.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения этих действий вам потребуется следующее:
 
 - [SQL Server 2016 или более поздней версии](https://www.microsoft.com/sql-server/sql-server-downloads) (любой выпуск).
@@ -37,7 +37,7 @@ ms.locfileid: "54305188"
 - Экземпляр базы данных SQL Azure. Экземпляр базы данных SQL Azure можно создать, ознакомившись со сведениями в статье [Создание базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal).
 - [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) 3.3 или более поздней версии.
 - Создайте виртуальную сеть с помощью модели развертывания Azure Resource Manager, которая предоставляет Azure Database Migration Service возможность установки подключения типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
-- Выполните оценку миграции локальной базы данных и схемы с использованием Помощника по миграции данных, как описано в статье [Выполнение оценки миграции SQL Server с помощью Data Migration Assistant](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem).
+- Чтобы готовая оценка миграции локальной базы данных и схемы с помощью Data Migration Assistant, как описано в статье [выполнение оценки миграции SQL Server](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem)
 - Скачайте и установите модуль AzureRM.DataMigration из коллекции PowerShell с помощью [командлета PowerShell Install-Module](https://docs.microsoft.com/powershell/module/powershellget/Install-Module?view=powershell-5.1).
 - Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server, имеют разрешение [CONTROL SERVER](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql).
 - Убедитесь, что учетные данные, используемые для подключения к целевому экземпляру базы данных SQL Azure, имеют разрешение на управление базами данных в целевой Базе данных SQL Azure.
@@ -246,5 +246,5 @@ if (($mytask.ProjectTask.Properties.State -eq "Running") -or ($mytask.ProjectTas
 Remove-AzureRmDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

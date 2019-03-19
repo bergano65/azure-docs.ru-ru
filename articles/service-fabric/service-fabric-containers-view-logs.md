@@ -3,7 +3,7 @@ title: Просмотр журналов контейнеров в Azure Service
 description: Описывает способы просмотра журналов контейнеров в запущенных службах контейнеров Service Fabric с помощью Service Fabric Explorer.
 services: service-fabric
 documentationcenter: .net
-author: TylerMSFT
+author: aljo-microsoft
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/15/2018
-ms.author: twhitney
-ms.openlocfilehash: d66e27d860d18a37ffd9c6355b8d769116f26d73
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
+ms.author: aljo
+ms.openlocfilehash: 801d96dc154c1d7144217fe0f70c179c086690f0
+ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54391251"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56804507"
 ---
 # <a name="view-logs-for-a-service-fabric-container-service"></a>Просмотр журналов службы контейнеров Service Fabric
 Azure Service Fabric — это оркестратор контейнеров, который поддерживает [Linux-контейнеры и Windows-контейнеры](service-fabric-containers-overview.md).  В этой статье описывается, как просматривать журналы контейнеров работающей службы контейнеров или неработающих контейнеров, чтобы проводить диагностику и устранение проблем.
@@ -76,7 +76,7 @@ sfctl service get-container-logs --node-name _Node_0 --application-id SimpleHttp
 {   "content": "Exception encountered: System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).\r\n\tat System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()\r\n" }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с [Руководством по созданию контейнерных Linux-приложений](service-fabric-tutorial-create-container-images.md).
 - Узнать больше о [Service Fabric и контейнерах](service-fabric-containers-overview.md)
 

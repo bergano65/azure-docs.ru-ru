@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/25/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 74fdfed23d30dbf88b2faa6028039159010d9afc
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
-ms.translationtype: HT
+ms.openlocfilehash: 37de2de18656f0f8ba85495b3fd72315e0bd885b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53756350"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58113084"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -110,12 +110,12 @@ availabilityResults
     
     (Параметр AI_ для отчета о ресурсе Application Insights можно найти в разделе "Доступ через API". Если отсутствует ключ API Application Insights, то **создать ключ API** можно по другому.)
     
-    * AI_APP_ID = идентификатор приложения
-    * AI_APP_KEY = ключ API
-    * SendGridAPI = ключ API SendGrid
+   * AI_APP_ID = идентификатор приложения
+   * AI_APP_KEY = ключ API
+   * SendGridAPI = ключ API SendGrid
 
-    > [!NOTE]
-    > Если у вас нет учетной записи SendGrid, вы можете ее создать. Документация относительно функций Azure SendGrid находится [здесь](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid). В конце статьи приведено сокращенное объяснение о том, как установить SendGrid и создать ключ API. 
+     > [!NOTE]
+     > Если у вас нет учетной записи SendGrid, вы можете ее создать. Документация относительно функций Azure SendGrid находится [здесь](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid). В конце статьи приведено сокращенное объяснение о том, как установить SendGrid и создать ключ API. 
 
 9. Выберите **Интегрировать** и в разделе "Выходные данные" щелкните **SendGrid ($return)**.
 
@@ -157,7 +157,7 @@ availabilityResults
 
    ![Снимок экрана "Копирование ключа API"](./media/automate-custom-reports/function-app-17.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).

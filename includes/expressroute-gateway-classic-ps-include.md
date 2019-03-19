@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/13/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 2457ef2843b0d16359b7e47fc54c58e2ef5e6034
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.openlocfilehash: 70ac106995324c758bde942d12191a01e3457e6e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53430028"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58114987"
 ---
 > [!NOTE]
 > Эти примеры не применяются при одновременном использовании конфигураций S2S и ExpressRoute.
@@ -28,8 +28,8 @@ ms.locfileid: "53430028"
 1. Скачайте файл конфигурации сети, используя шаги, описанные в статье о [файле конфигурации сети](../articles/virtual-network/virtual-networks-using-network-configuration-file.md). Откройте файл в текстовом редакторе.
 2. Добавьте в файл локальный сетевой сайт. Можно использовать любой допустимый префикс адреса. Можно добавить любой допустимый IP-адрес для VPN-шлюза. Значения адресов в этом разделе не используются для операций с ExpressRoute, но необходимы для проверки файла. В примере "branch1" – это имя узла. Вы можете использовать другое имя, но обязательно укажите то же значение в разделе файла Gateway (Шлюз).
 
-  ```
-  <VirtualNetworkConfiguration>
+   ```
+   <VirtualNetworkConfiguration>
     <Dns />
     <LocalNetworkSites>
       <LocalNetworkSite name="branch1">
@@ -38,15 +38,15 @@ ms.locfileid: "53430028"
         </AddressSpace>
         <VPNGatewayAddress>3.2.1.4</VPNGatewayAddress>
     </LocalNetworkSite>
-  ```
+   ```
 3. Перейдите к VirtualNetworkSites и измените поля.
 
-  * Убедитесь, что подсеть шлюза существует для вашей виртуальной сети. Если ее нет, ее можно сразу добавить. Задайте имя "GatewaySubnet".
-  * Убедитесь, что в файле существует раздел Gateway (Шлюз). Если нет, добавьте его. Он необходим для связи виртуальной сети с локальным сетевым сайтом (представляющим сеть, к которой вы подключаетесь).
-  * Убедитесь, что тип подключения = Dedicated (Выделенный). Он необходим для подключения ExpressRoute.
+   * Убедитесь, что подсеть шлюза существует для вашей виртуальной сети. Если ее нет, ее можно сразу добавить. Задайте имя "GatewaySubnet".
+   * Убедитесь, что в файле существует раздел Gateway (Шлюз). Если нет, добавьте его. Он необходим для связи виртуальной сети с локальным сетевым сайтом (представляющим сеть, к которой вы подключаетесь).
+   * Убедитесь, что тип подключения = Dedicated (Выделенный). Он необходим для подключения ExpressRoute.
 
-  ```
-  </LocalNetworkSites>
+   ```
+   </LocalNetworkSites>
     <VirtualNetworkSites>
       <VirtualNetworkSite name="myAzureVNET" Location="East US">
         <AddressSpace>
@@ -69,9 +69,9 @@ ms.locfileid: "53430028"
         </Gateway>
       </VirtualNetworkSite>
     </VirtualNetworkSites>
-  </VirtualNetworkConfiguration>
-  </NetworkConfiguration>
-  ```
+   </VirtualNetworkConfiguration>
+   </NetworkConfiguration>
+   ```
 4. Сохраните и передайте файл в Azure.
 
 ### <a name="create-the-gateway"></a>Создание шлюза

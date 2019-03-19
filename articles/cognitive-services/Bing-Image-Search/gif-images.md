@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 04/24/2018
 ms.author: rosh
 ms.custom: seodec2018
-ms.openlocfilehash: a18aaceb4840ffc7e3e3dca4eeb8f5fd8e88049c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: e7b2c43e06c8fbc1f561defebf29fdd37bc8bfab
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55876408"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58100910"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
@@ -47,6 +47,7 @@ https://www.bing.com/images/search?q=interesting&qft=%20filterui%3Aphoto-animate
 - Параметр *AnimatedGifHttps* возвращает анимационные GIF-изображения только с HTTPS-адресов. В целях безопасности во многих приложениях для подключения к внешним веб-страницам требуется использовать протокол HTTPS. Например, в магазине Apple App Store для подключения к веб-службам требуется использовать протокол HTTPS, который защищает данные пользователя шифрованием в процессе передачи.
 
 <a name="gifExample" />
+
 ## <a name="example-search-for-animated-gif-using-java"></a>Пример поиска анимационного GIF-изображения с помощью Java
 
 Приведенный ниже URL-адрес выполняет поиск анимационных GIF-изображений: `q=interesting`
@@ -206,6 +207,6 @@ class SearchResults{
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Краткое руководство для C#](quickstarts/csharp.md)
 - [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)

@@ -10,18 +10,18 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: d5c18521f39b1b57b5f94a54bb3131e05abba745
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: ed8a829bd73a53dc94bf8b08648b3d6684f718f6
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53556651"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109769"
 ---
 # <a name="visualize-data-in-the-explorer-preview"></a>Визуализация данных в обозревателе (предварительная версия)
 
 В этой статье описаны функции и возможности, доступные в [веб-приложении обозревателя](https://insights.timeseries.azure.com/preview/samples) службы "Аналитика временных рядов Azure" (предварительная версия).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем использовать обозреватель службы "Аналитика временных рядов Azure" (предварительная версия), необходимо сделать следующее:
 
@@ -141,7 +141,7 @@ ms.locfileid: "53556651"
 
 1. **Веб-элемент управления началом и окончанием диапазона дат**. С помощью этого веб-элемента управления можно легко выбрать щелчком нужные диапазоны дат и времени. Также с его помощью можно переключаться между разными часовыми поясами. Чтобы применить внесенные изменения к текущей рабочей области, выберите **Сохранить**.
 
-  ![explorer-thirteen][13]
+   ![explorer-thirteen][13]
 
 ## <a name="time-series-insights-preview-navigation-panel"></a>Панель навигации службы "Аналитика временных рядов" (предварительная версия)
 
@@ -214,7 +214,7 @@ ms.locfileid: "53556651"
 
   ![explorer-twenty-one][21]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими статьями:
 * [Data storage and ingress in Azure Time Series Insights Preview](./time-series-insights-update-storage-ingress.md) (Хранилище данных и входящий трафик в службе "Аналитика временных рядов Azure" (предварительная версия))

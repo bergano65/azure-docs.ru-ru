@@ -14,12 +14,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 651950cfe6ab1b752c4bcf92c4e2f00591e9eb97
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 1773083a5d02f3bb988ac3e5cef6528a5d49b94e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252104"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58100400"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
@@ -66,25 +66,25 @@ grant_type=password
 
 Описание значений:
 
- - **grant_type**  
-    Тип схемы аутентификации, которую вы будете использовать. В этом примере используется значение `password`
+- **grant_type**  
+   Тип схемы аутентификации, которую вы будете использовать. В этом примере используется значение `password`
 
- - **resource**  
-    Ресурс, к которому маркер предоставляет доступ. Ресурс можно узнать с помощью запроса к конечной точке метаданных управления Azure Stack. Нужные данные содержатся в разделе **audiences**.
+- **resource**  
+   Ресурс, к которому маркер предоставляет доступ. Ресурс можно узнать с помощью запроса к конечной точке метаданных управления Azure Stack. Нужные данные содержатся в разделе **audiences**.
 
- - **Конечная точка управления Azure Stack**  
-    ```
-    https://management.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-01
-    ```
+- **Конечная точка управления Azure Stack**  
+   ```
+   https://management.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-01
+   ```
 
   > [!NOTE]  
   > Если вы являетесь администратором, пытающимся получить доступ к API клиента, необходимо использовать конечную точку клиента, например: `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`  
 
   Пример для конечной точки на основе Пакета средств разработки Azure Stack приведен ниже:
 
-    ```bash
-    curl 'https://management.local.azurestack.external/metadata/endpoints?api-version=2015-01-01'
-    ```
+   ```bash
+   curl 'https://management.local.azurestack.external/metadata/endpoints?api-version=2015-01-01'
+   ```
 
   Ответ:
 
@@ -94,9 +94,9 @@ grant_type=password
   "graphEndpoint":"https://graph.windows.net/",
   "portalEndpoint":"https://adminportal.local.azurestack.external/",
   "authentication":{
-      "loginEndpoint":"https://login.windows.net/",
-      "audiences":["https://contoso.onmicrosoft.com/4de154de-f8a8-4017-af41-df619da68155"]
-      }
+     "loginEndpoint":"https://login.windows.net/",
+     "audiences":["https://contoso.onmicrosoft.com/4de154de-f8a8-4017-af41-df619da68155"]
+     }
   }
   ```
 

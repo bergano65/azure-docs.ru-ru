@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: a4e5087e53d4505d54b5ff4b8d17ad6166c6174b
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
-ms.translationtype: HT
+ms.openlocfilehash: c0e953434e947703308ff8d796107838df8cc979
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002507"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57437320"
 ---
 # <a name="contoso-migration-rebuild-an-on-premises-app-to-azure"></a>Миграция Contoso. Повторное создание локального приложения в Azure
 
@@ -119,7 +119,7 @@ ms.locfileid: "54002507"
 [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/) | Хранит образы для всех типов развертываний контейнеров. | Стоимость зависит от функций, типа хранилища и длительности использования. [Узнайте больше](https://azure.microsoft.com/pricing/details/container-registry/).
 [службе приложений Azure](https://azure.microsoft.com/services/app-service/containers/) | Оперативно создавайте, развертывайте и масштабируйте веб-приложения, мобильные приложения и приложения API на любой платформе. | Плата за план службы приложений начисляется посекундно. [Узнайте больше](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже приведены действия компании Contoso, необходимые для этого сценария.
 
@@ -152,9 +152,9 @@ ms.locfileid: "54002507"
 - В инструкциях в этом разделе используется репозиторий **SmartHotel360-Azure-Backend**.
 - Репозиторий GitHub **SmartHotel360-Azure-backend** содержит все программное обеспечение для этой части развертывания.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
-1. Перед запуском администраторы Contoso проверяют, что все необходимое программное обеспечение установлено на компьютере разработки, где выполняется развертывание.
+1. Перед запуском, администраторы Contoso убедитесь, что все необходимое программное обеспечение в установлен на компьютере разработки, которые они используют для развертывания.
 2. С помощью **git clone https://github.com/Microsoft/SmartHotel360-Azure-backend.git** специалист компании клонирует репозиторий локально на компьютер разработки.
 
 

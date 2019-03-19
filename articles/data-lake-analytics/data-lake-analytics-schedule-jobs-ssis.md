@@ -10,18 +10,18 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/17/2018
-ms.openlocfilehash: 7d5630c082c044ac936f555965aec5a2a00f3544
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 5393e202c7b5005552f164c9c6f55da92fc82572
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54448726"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58104443"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
 
 Этот документ содержит сведения о координации и создании задания U-SQL с помощью службы Integration Service (SSIS). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Пакет дополнительных компонентов Azure для служб Integration Services](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017#scenario-managing-data-in-the-cloud) предоставляет [задачу Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017) и [диспетчер подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017), что позволяет подключиться к службе Azure Data Lake Analytics. Чтобы использовать эту задачу, убедитесь, что установлено следующее ПО.
 
@@ -93,16 +93,16 @@ ms.locfileid: "54448726"
     
     Создание файла подключения.
 
-    1. Выберите **<New Connection...>** в параметре FileConnection.
-    2. Задайте параметру **Тип использования** значение **Существующий файл**, а параметру **Файл** — любой путь к существующему файлу.
+   1. Выберите **<New Connection...>** в параметре FileConnection.
+   2. Задайте параметру **Тип использования** значение **Существующий файл**, а параметру **Файл** — любой путь к существующему файлу.
 
-        ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
+       ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
 
-    3. В представлении **Диспетчер подключений** щелкните правой кнопкой мыши недавно созданное подключение файла и выберите **Свойства**.
+   3. В представлении **Диспетчер подключений** щелкните правой кнопкой мыши недавно созданное подключение файла и выберите **Свойства**.
 
-    4. В окне **Свойства** разверните вкладку **Выражения** и задайте переменной **ConnectionString** значение, определенное в контейнере "Цикл по каждому элементу", например, `@[User::FileName]`.
+   4. В окне **Свойства** разверните вкладку **Выражения** и задайте переменной **ConnectionString** значение, определенное в контейнере "Цикл по каждому элементу", например, `@[User::FileName]`.
 
-        ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-property-for-foreach-loop-container.png)
+       ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-property-for-foreach-loop-container.png)
 
 3. Задайте параметру **AzureDataLakeAnalyticsConnection** учетную запись Azure Data Lake Analytics, в которую требуется отправлять задания. Дополнительные сведения о [диспетчере подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017).
 
@@ -166,7 +166,7 @@ ms.locfileid: "54448726"
 
 [Дополнительные сведения о настройке параметров для скрипта U-SQL](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017#parameter-mapping-page-configuration).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
 - [Пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017#scenario-managing-data-in-the-cloud)

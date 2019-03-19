@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: a8d29e7cae20c37adfeccaef01e1625b6ab3e0d0
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 52475a3976ef8897ffed07c499eb06e7476c0156
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54852686"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58136299"
 ---
 # <a name="use-firewall-rules"></a>Использование правил брандмауэра
 
@@ -60,7 +60,7 @@ ms.locfileid: "54852686"
 ### <a name="creating-a-virtual-network-and-firewall-rule-with-azure-resource-manager-templates"></a>Создание правил виртуальной сети и брандмауэра с использованием шаблонов Azure Resource Manager
 
 > [!IMPORTANT]
-> Виртуальные сети поддерживаются только в службе "Служебная шина" **ценовой категории "Премиум"**.
+> Брандмауэры и виртуальные сети, поддерживаются только в **уровня "премиум"** уровня служебной шины.
 
 Следующий шаблон Resource Manager позволяет добавить правило виртуальной сети в пространство имен существующей Служебной шины.
 
@@ -145,7 +145,7 @@ ms.locfileid: "54852686"
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по ограничению доступа к Служебной шине из виртуальных сетей Azure, см. по следующей ссылке:
 

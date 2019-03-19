@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.openlocfilehash: 15f280b16e362a4b39cb9fc0e4baaf67d0e31942
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.openlocfilehash: ce9804a4ecad4cd0f2e797038dc10c71b50de9bf
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661706"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58122727"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Настройка оповещений на основе метрик для Базы данных Azure для MariaDB на портале Azure
 
@@ -60,21 +60,21 @@ ms.locfileid: "55661706"
 
 10. Настройте тип действия **Электронная почта, SMS, push-уведомление, голосовой вызов**.
     
-   Выберите "Роль Azure Resource Manager по электронной почте", чтобы выбрать владельцев подписки, участников и читателей, которые будут получать уведомления.
+    Выберите "Роль Azure Resource Manager по электронной почте", чтобы выбрать владельцев подписки, участников и читателей, которые будут получать уведомления.
    
-   (Необязательно.) Укажите допустимый универсальный код ресурса (URI) в поле **Веб-перехватчик**, если его необходимо вызывать при срабатывании оповещения.
+    (Необязательно.) Укажите допустимый универсальный код ресурса (URI) в поле **Веб-перехватчик**, если его необходимо вызывать при срабатывании оповещения.
 
-   По завершении нажмите кнопку **ОК**.
+    По завершении нажмите кнопку **ОК**.
 
-   ![Группа действий](./media/howto-alert-metric/10-action-group-type.png)
+    ![Группа действий](./media/howto-alert-metric/10-action-group-type.png)
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-   ![Группа действий](./media/howto-alert-metric/11-name-description-severity.png) 
+    ![Группа действий](./media/howto-alert-metric/11-name-description-severity.png) 
 
 12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 
-   Через несколько минут оповещение включится и будет активироваться, как было описано выше.
+    Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
 ## <a name="manage-your-alerts"></a>Управление оповещениями
 После создания оповещение можно выбрать и сделать следующее:
@@ -84,6 +84,6 @@ ms.locfileid: "55661706"
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../monitoring-and-diagnostics/insights-webhooks-alerts.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

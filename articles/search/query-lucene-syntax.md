@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 59362b28390556f12cce8813635894c9f06b9a20
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: a2576a0489ad62aba0a85a45f110acb8ac220847
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007792"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58107191"
 ---
 # <a name="lucene-query-syntax-in-azure-search"></a>Синтаксис запросов Lucene в службе "Поиск Azure"
 Вы можете использовать расширенный синтаксис [средства синтаксического анализа запросов Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), чтобы написать специализированные формы запросов в службе "Поиск Azure", например запросы с подстановочными знаками, поиск нечетких соответствий, поиск с учетом расположения, запросы с регулярными выражениями и т. д. Большая часть синтаксиса средства синтаксического анализа запросов Lucene [реализована без изменений в Поиске Azure](search-lucene-query-architecture.md), за исключением *поисков по диапазону*, которые создаются в Поиске Azure с использованием выражений `$filter`. 
@@ -41,20 +41,20 @@ ms.locfileid: "56007792"
 
 Параметр `searchMode=all` подходит для данного примера. Когда операторы находятся в запросе, обычно следует установить параметр `searchMode=all`, чтобы убедиться, что *все* критерии будут удовлетворены.
 
-```  
-GET /indexes/hotels/docs?search=category:budget AND \"recently renovated\"^3&searchMode=all&api-version=2015-02-28&querytype=full  
-```  
+```
+GET /indexes/hotels/docs?search=category:budget AND \"recently renovated\"^3&searchMode=all&api-version=2015-02-28&querytype=full
+```
 
  Или используйте POST:  
 
-```  
-POST /indexes/hotels/docs/search?api-version=2015-02-28  
-{  
-  "search": "category:budget AND \"recently renovated\"^3",  
-  "queryType": "full",  
-  "searchMode": "all"  
-}  
-```  
+```
+POST /indexes/hotels/docs/search?api-version=2015-02-28
+{
+  "search": "category:budget AND \"recently renovated\"^3",
+  "queryType": "full",
+  "searchMode": "all"
+}
+```
 
 Дополнительные примеры см. в статье [Примеры синтаксиса запросов Lucene для создания расширенных запросов в Поиске Azure](search-query-lucene-examples.md). Дополнительные сведения об указании полного состава параметров запроса см. в статье [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure")).
 
@@ -65,13 +65,13 @@ POST /indexes/hotels/docs/search?api-version=2015-02-28
 ##  <a name="bkmk_fields"></a> Запросы по полям  
  Вы можете задать конструкцию `fieldname:searchterm`, чтобы определить операции запроса, относящегося к полю, где поле представляет собой одно слово, а условие поиска — одно слово или фразу, иногда с логическими операторами. Некоторые примеры:  
 
--   genre:jazz NOT history  
+- genre:jazz NOT history  
 
--   artists:("Miles Davis" "John Coltrane")
+- artists:("Miles Davis" "John Coltrane")
 
- Добавьте несколько строк в кавычках, если необходимо, чтобы обе строки считались одной сущностью, в приведенном случае поиска двух разных исполнителей в поле `artists`.  
+  Добавьте несколько строк в кавычках, если необходимо, чтобы обе строки считались одной сущностью, в приведенном случае поиска двух разных исполнителей в поле `artists`.  
 
- Поле, указанное в `fieldname:searchterm`, должно быть полем `searchable`.  Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).  
+  Поле, указанное в `fieldname:searchterm`, должно быть полем `searchable`.  Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).  
 
 ##  <a name="bkmk_fuzzy"></a> Поиск нечетких соответствий  
  Операция поиска нечетких соответствий позволяет найти совпадения в словах с аналогичной конструкцией. В [документации Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) поиск нечетких соответствий основан на [расстоянии Дамерау — Левенштейна](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance).  

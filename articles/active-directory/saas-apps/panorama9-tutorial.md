@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8008f96e00b0d9a4366832110c696c67a9c7257
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: dc3a42c280a344ef08fa23111df8652b6167cfb0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165422"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58109905"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
 
@@ -34,7 +34,7 @@ ms.locfileid: "56165422"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Panorama9, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "56165422"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://dashboard.panorama9.com/saml/access/3262`.
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
 
     > [!NOTE] 
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Panorama9](https://support.panorama9.com). 
@@ -147,7 +147,7 @@ ms.locfileid: "56165422"
    
     a. В текстовое поле **Identity provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
    
-    б) В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.    
+    2. В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.    
          
 1. Выберите команду **Сохранить**.
 
@@ -180,11 +180,11 @@ ms.locfileid: "56165422"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-panorama9-test-user"></a>Создание тестового пользователя Panorama9
 
@@ -198,18 +198,18 @@ ms.locfileid: "56165422"
 
 1. На панели инструментов вверху нажмите **Manage** (Управление), а затем **Users** (Пользователи).
    
-  ![Пользователи](./media/panorama9-tutorial/ic790027.png "Пользователи")
+   ![Пользователи](./media/panorama9-tutorial/ic790027.png "Пользователи")
 
 1. В разделе "Users" (Пользователи) щелкните **+**, чтобы добавить нового пользователя.
 
- ![Пользователи](./media/panorama9-tutorial/ic790028.png "Пользователи")
+   ![Пользователи](./media/panorama9-tutorial/ic790028.png "Пользователи")
 
 1. Перейдите в раздел "User data" (Данные пользователя) и в текстовое поле **Email** (Электронная почта) введите электронный адрес действительного пользователя Azure Active Directory, которого вы хотите подготовить.
 
 1. Перейдите в раздел "Users" (Пользователи) и нажмите кнопку **Save** (Сохранить).
    
 > [!NOTE]
-    > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
+> Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

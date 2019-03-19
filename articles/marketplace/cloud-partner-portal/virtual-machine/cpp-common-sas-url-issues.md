@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: pbutlerm
-ms.openlocfilehash: b20b1506dfcd32ea7d5bfca0847393d1652afb78
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
-ms.translationtype: HT
+ms.openlocfilehash: cdee17185b7051220f66ede3b9da50a333409e6d
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49639417"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119281"
 ---
 # <a name="common-sas-url-issues-and-fixes"></a>Распространенные проблемы с URL-адресом SAS и способы их устранения
 
@@ -27,7 +27,7 @@ ms.locfileid: "49639417"
 
 | **Проблема** | **Сообщение об ошибке** | **Исправление** | 
 | --------- | ------------------- | ------- | 
-| &emsp; *Ошибка при копировании образов* |  |  |  |
+| &emsp; *Ошибка при копировании образов* |  |  |
 | «?» не найден в URL-адресе SAS | `Failure: Copying Images. Not able to download blob using provided SAS Uri.` | Обновите URL-адрес SAS с помощью рекомендуемых средств. |
 | Параметры "st" и "se" не в URL-адресе SAS | `Failure: Copying Images. Not able to download blob using provided SAS Uri.` | Обновите URL-адрес SAS с соответствующими значениями **Дата начала** и **Дата окончания** в нем. | 
 | "sp=rl" не в URL-адресе SAS | `Failure: Copying Images. Not able to download blob using provided SAS Uri` | Обновите URL-адрес SAS, указав разрешения `Read` и `List`. | 

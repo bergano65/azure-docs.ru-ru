@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/09/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 962c1cff91a5ac3f52dc67c30bd2c7a4e2e22b9d
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: 8ec6a6a24629f72199d5f5afa86200acf53aba01
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631844"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58136552"
 ---
 # <a name="lucene-syntax-query-examples-for-building-advanced-queries-in-azure-search"></a>Примеры синтаксиса запросов Lucene для создания расширенных запросов в Поиске Azure
 При создании запросов для Поиска Azure можно заменить [стандартный синтаксический анализатор](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) по умолчанию на более экспансивное [Средство синтаксического анализа запросов Lucene в Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы сформулировать специализированные и расширенные определения запросов. 
@@ -202,11 +202,11 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 > Запросы с подстановочными знаками не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Попробуйте указать средство синтаксического анализа запросов Lucene в коде. Чтобы узнать о том, как настроить запросы поиска для .NET и REST API, воспользуйтесь приведенными ссылками. В этих ссылках используется простой синтаксис по умолчанию, поэтому потребуется применить полученные из этой статьи знания, чтобы задать **queryType**.
 
 * [Отправка запросов в индекс службы поиска Azure с помощью пакета SDK для .NET](search-query-dotnet.md)
-* [Отправка запросов в индекс службы поиска Azure с помощью REST API](search-query-rest-api.md)
+* [Отправка запросов в индекс службы поиска Azure с помощью REST API](search-create-index-rest-api.md)
 
 Дополнительные справочные материалы по синтаксису, архитектуре запросов и примеры можно найти по следующим ссылкам:
 

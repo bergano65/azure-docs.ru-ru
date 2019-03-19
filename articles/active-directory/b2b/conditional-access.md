@@ -1,5 +1,5 @@
 ---
-title: Условный доступ пользователей в службе совместной работы Azure Active Directory B2B | Документация Майкрософт
+title: Условный доступ для пользователей службы совместной работы B2B — Azure Active Directory | Документация Майкрософт
 description: Служба совместной работы Azure Active Directory B2B поддерживает Многофакторную идентификацию (MFA), которая позволяет предоставлять выборочный доступ к корпоративным приложениям.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 720f107b9a3908ebbc6dcbeca71b448c10cb8c6b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a5234443e234d232a9711274bea2f73427266f6e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199408"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58113492"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Условный доступ пользователей в службе совместной работы B2B
 
@@ -48,26 +48,26 @@ ms.locfileid: "56199408"
 
 1. Подключение к Azure AD
 
-  ```
-  $cred = Get-Credential
-  Connect-MsolService -Credential $cred
-  ```
+   ```
+   $cred = Get-Credential
+   Connect-MsolService -Credential $cred
+   ```
 2. Получение сведений о методах проверки для всех пользователей.
 
-  ```
-  Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
-  ```
-  Вот пример: 
+   ```
+   Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
+   ```
+   Вот пример: 
 
-  ```
-  Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
-  ```
+   ```
+   Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
+   ```
 
 3. Сброс метода многофакторной проверки подлинности для определенного пользователя, после которого пользователь службы совместной работы B2B должен заново задать методы проверки. Пример:
 
-  ```
-  Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
-  ```
+   ```
+   Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
+   ```
 
 ### <a name="why-do-we-perform-mfa-at-the-resource-tenancy"></a>Зачем выполнять MFA на уровне клиента ресурса?
 
@@ -101,7 +101,7 @@ ms.locfileid: "56199408"
 
 Сейчас политики выполнения входа на основе рисков не применяются к пользователям B2B, так как оценка рисков выполняется в домашней организации этих пользователей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 

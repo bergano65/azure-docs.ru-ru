@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 9740de34fe7cf7d06af1803cc6d77d7e89bbb73f
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
-ms.translationtype: HT
+ms.openlocfilehash: 5c3f393278d3d51dd3a53cd19335cd242c15c6d8
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391527"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58168713"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen1"></a>Копирование данных между Azure Storage Blobs и Azure Data Lake Storage 1-го поколения
 > [!div class="op_single_selector"]
@@ -28,14 +28,11 @@ ms.locfileid: "44391527"
 
 При наличии кластера HDInsight с доступом к Azure Data Lake Storage 1-го поколения с помощью таких средств экосистемы Hadoop, как DistCp, можно копировать данные **из системы хранения данных кластера HDInsight (WASB) в учетную запись Data Lake Storage 1-го поколения и обратно**. В этой статье содержатся инструкции по использованию средства DistCp.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-
-## <a name="do-you-learn-fast-with-videos"></a>Учитесь быстрее с помощью видео?
-[Просмотрите это видео](https://mix.office.com/watch/1liuojvdx6sie) о копировании данных между большими двоичными объектами службы хранилища Azure и Data Lake Storage 1-го поколения с помощью DistCp.
 
 ## <a name="use-distcp-from-an-hdinsight-linux-cluster"></a>Использование Distcp из кластера HDInsight на платформе Linux
 
@@ -79,7 +76,7 @@ ms.locfileid: "44391527"
 
 Ниже представлены некоторые полезные рекомендации.
 
-* **Шаг 1. Определение общего объема памяти YARN.** Первым шагом является определение объема памяти YARN, доступной для кластера, в котором выполняется задание DistCp. Эта информация доступна на портале Ambari, связанном с кластером. Перейдите к YARN и откройте вкладку конфигураций, чтобы определить объем памяти YARN. Чтобы определить общий объем памяти YARN, умножьте объем памяти YARN для одного узла на количество узлов в кластере.
+* **Шаг 1. Определить общий объем памяти YARN** -первым шагом является определение памяти YARN для кластера, где выполняется задание DistCp. Эта информация доступна на портале Ambari, связанном с кластером. Перейдите к YARN и откройте вкладку конфигураций, чтобы определить объем памяти YARN. Чтобы определить общий объем памяти YARN, умножьте объем памяти YARN для одного узла на количество узлов в кластере.
 
 * **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите к YARN и откройте вкладку конфигураций. Размер контейнера YARN отобразится в этом окне. Уравнение для получения количества модулей сопоставления (**m**):
 

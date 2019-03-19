@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: arjmands
-ms.openlocfilehash: eb5eecaca65cc8394bcc12fc5a475cf5e762f1c9
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: dc8c29b1c7d4e5056cb6aeee6335e32687fd547f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55729971"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58123680"
 ---
 # <a name="how-to-use-tools-provided-in-the-sdks-to-simplify-development-for-provisioning"></a>Упрощение разработки для процесса подготовки с использованием инструментов, предоставляемых в пакетах SDK
 Служба подготовки устройств к добавлению в Центр Интернета вещей упрощает процесс подготовки с помощью [автоматической JIT-подготовки](concepts-auto-provisioning.md), выполняемой безопасным и масштабируемым способом.  При этом требуется аттестация безопасности в виде сертификата X.509 или доверенного платформенного модуля (TPM).  Корпорация Майкрософт также сотрудничает с [другими партнерами-поставщиками оборудования безопасности](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/), чтобы повысить уровень безопасности развертывания решения Центра Интернета вещей. Требования к безопасности оборудования могут быть трудными для понимания. Чтобы разработчики могли использовать удобный уровень для написания клиентов, которые обращаются к службе подготовки, предоставляется набор пакетов SDK для службы подготовки устройств к добавлению в Центр Интернета вещей Azure. Пакеты SDK также содержат образцы общих сценариев и набор инструментов для упрощения аттестации безопасности при разработке.
@@ -23,9 +23,9 @@ ms.locfileid: "55729971"
 
 Ниже приведены шаги для использования симулятора TPM.
 1. [Подготовьте среду разработки](https://docs.microsoft.com/azure/iot-dps/quick-enroll-device-x509-java) и клонируйте репозиторий GitHub:
-```
-git clone https://github.com/Azure/azure-iot-sdk-java.git
-```
+   ```
+   git clone https://github.com/Azure/azure-iot-sdk-java.git
+   ```
 2. Перейдите в папку симулятора TPM в ```azure-iot-sdk-java/provisioning/provisioning-tool/tpm-simulator/```.
 3. Сначала запустите Simulator.exe, а затем любое клиентское приложение для устройства подготовки.
 4. Симулятор нужно оставить работать в фоновом режиме на протяжении всего процесса подготовки, чтобы получить идентификатор регистрации и ключ подтверждения.  Оба значения действительны только для одного экземпляра запуска.
@@ -47,18 +47,18 @@ git clone https://github.com/Azure/azure-iot-sdk-java.git
 
 Чтобы создать сертификат X.509 с помощью этого генератора, сделайте следующее:
 1. [Подготовьте среду разработки](https://docs.microsoft.com/azure/iot-dps/quick-enroll-device-x509-java) и клонируйте репозиторий GitHub:
-```
-git clone https://github.com/Azure/azure-iot-sdk-java.git
-```
+   ```
+   git clone https://github.com/Azure/azure-iot-sdk-java.git
+   ```
 2. Измените значение корневого расположения на azure-iot-sdk-java.
 3. Запустите ```mvn install -DskipTests=true```, чтобы загрузить все необходимые пакеты и скомпилировать пакет SDK.
 4. Перейдите к корневому расположению для генератора сертификатов X.509 в ```azure-iot-sdk-java/provisioning/provisioning-tools/provisioning-x509-cert-generator```.
 5. Выполните сборку с помощью ```mvn clean install```.
 6. Запустите средство с помощью таких команд:
-```
-cd target
-java -jar ./provisioning-x509-cert-generator-{version}-with-deps.jar
-```
+   ```
+   cd target
+   java -jar ./provisioning-x509-cert-generator-{version}-with-deps.jar
+   ```
 7. (Необязательно.) Введите _общее имя_ для сертификатов, когда появится соответствующий запрос.
 8. Это средство локально создает **клиентский сертификат**, **закрытый ключ сертификата клиента**, **промежуточный сертификат** и **корневой сертификат**.
 
@@ -66,5 +66,5 @@ java -jar ./provisioning-x509-cert-generator-{version}-with-deps.jar
 
 Корневой или промежуточный сертификат можно использовать для создания группы регистраций или индивидуальной регистрации [программным образом](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments-sdks) или с помощью [портала](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

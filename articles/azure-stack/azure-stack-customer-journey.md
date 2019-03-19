@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: asganesh
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: d5ed8da4ea527e350b1ff73d0bd188cdad2caf71
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: ad58b8f1034a0e2818d3aca53c023736da9370cb
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189222"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58119927"
 ---
 # <a name="azure-stack-datacenter-integration"></a>Интеграция центра обработки данных Azure Stack
 
@@ -116,32 +116,32 @@ ms.locfileid: "56189222"
 
 Партнеру OEM необходимо сделать следующее:
 
--   [выполнить команду test-azurestack](azure-stack-diagnostic-test.md#run-validation-tool-to-test-system-readiness-before-installing-update-or-hotfix);
+- [выполнить команду test-azurestack](azure-stack-diagnostic-test.md#run-validation-tool-to-test-system-readiness-before-installing-update-or-hotfix);
 
--   [выполнить регистрацию в Azure](azure-stack-registration.md);
+- [выполнить регистрацию в Azure](azure-stack-registration.md);
 
--   [выполнить синдикацию Marketplace](azure-stack-download-azure-marketplace-item.md#use-the-marketplace-syndication-tool-to-download-marketplace-items);
+- [выполнить синдикацию Marketplace](azure-stack-download-azure-marketplace-item.md#use-the-marketplace-syndication-tool-to-download-marketplace-items);
 
--   выполнить резервное копирование файлов конфигурации коммутатора и файлов конфигурации узла жизненного цикла оборудования;
+- выполнить резервное копирование файлов конфигурации коммутатора и файлов конфигурации узла жизненного цикла оборудования;
 
--   Удаление DVM
+- Удаление DVM
 
--   подготовить сводки по развертыванию для клиента;
+- подготовить сводки по развертыванию для клиента;
 
--   [проверить наличие обновлений, чтобы убедиться в том, что программное обеспечение решения обновлено до последней версии](.\azure-stack-updates.md).
+- [проверить наличие обновлений, чтобы убедиться в том, что программное обеспечение решения обновлено до последней версии](./azure-stack-updates.md).
 
 Есть несколько шагов, которые являются обязательными или необязательными в зависимости от типа установки.
 
--   Если развертывание выполнено с использованием [AD FS](azure-stack-integrate-identity.md), потребуется интегрировать метку Azure Stack в собственные службы AD FS клиента.
+- Если развертывание выполнено с использованием [AD FS](azure-stack-integrate-identity.md), потребуется интегрировать метку Azure Stack в собственные службы AD FS клиента.
 
   > [!NOTE]
   > Этот шаг выполняет клиент, хотя партнер может предложить такую услугу.
 
--   Интеграция с существующей системой мониторинга от соответствующего партнера.
+- Интеграция с существующей системой мониторинга от соответствующего партнера.
 
-    -   [Интеграция System Center Operations Manager](azure-stack-integrate-monitor.md) также поддерживает дополнительные возможности управления.
+  -   [Интеграция System Center Operations Manager](azure-stack-integrate-monitor.md) также поддерживает дополнительные возможности управления.
 
-    -   [Интеграция Nagios](azure-stack-integrate-monitor.md#integrate-with-nagios).
+  -   [Интеграция Nagios](azure-stack-integrate-monitor.md#integrate-with-nagios).
 
 ## <a name="overall-timeline"></a>Общая временная шкала
 

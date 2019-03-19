@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: govindk
-ms.openlocfilehash: 4511ef81ccfa7008cd21a22b09459fb122d46327
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: efe85e017d883ca82414fe5ff10b5c2932366e48
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452946"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58101131"
 ---
 # <a name="configure-access-from-virtual-networks-vnet"></a>Настройка доступа из виртуальных сетей (VNet)
 
@@ -49,8 +49,11 @@ ms.locfileid: "55452946"
 
 > [!NOTE]
 > Чтобы включить конечные точки службы виртуальной сети, потребуются следующие права доступа к подписке:
-  * подписка с виртуальной сетью — участник сетей;
-  * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
+>   * подписка с виртуальной сетью — участник сетей;
+>   * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
+>   * Если вашей виртуальной сети и учетной записи Azure Cosmos DB находятся в разных подписках, убедитесь, что также имеет подписку, которая включает виртуальную сеть `Microsoft.DocumentDB` зарегистрирован поставщик ресурсов. Чтобы зарегистрировать поставщик ресурсов, см. в разделе [поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md) статьи. 
+
+Ниже приведены инструкции по регистрации подписки в поставщике ресурсов.
 
 ### <a name="configure-a-service-endpoint-for-a-new-azure-virtual-network-and-subnet"></a>Настройка конечной точки службы для новой виртуальной сети и подсети Azure
 
@@ -295,6 +298,6 @@ ms.locfileid: "55452946"
 
 1. Удалите правило брандмауэра IP-адресов для подсети.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](firewall-support.md) для Azure Cosmos DB.

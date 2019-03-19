@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/7/2018
 ms.author: victorh
-ms.openlocfilehash: c27c31bc2f21cfae9036849973301a66a437de42
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 17eef2fc2608ca4ccbabff8179cd63798d275582
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54435249"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58119638"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью портала Azure
 
@@ -29,7 +29,9 @@ ms.locfileid: "54435249"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-В этом руководстве, чтобы создать сертификат и установить IIS, вам потребуется модуль Azure PowerShell 3.6 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Для выполнения команд в этом руководстве необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Этого руководства требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии для создания сертификата и установите службы IIS. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этом руководстве необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
@@ -70,20 +72,20 @@ Export-PfxCertificate `
 3. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 4. Введите следующие значения для шлюза приложений:
 
-    - *myAppGateway* — для имени шлюза приложений.
-    - *myResourceGroupAG* — для новой группы ресурсов.
+   - *myAppGateway* — для имени шлюза приложений.
+   - *myResourceGroupAG* — для новой группы ресурсов.
 
-    ![Создание шлюза приложений](./media/create-url-route-portal/application-gateway-create.png)
+     ![Создание шлюза приложений](./media/create-url-route-portal/application-gateway-create.png)
 
 5. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 6. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.1.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.1.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
 
 7. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 8. В разделе **Интерфейсная IP-конфигурация** убедитесь, что **тип IP-адреса** имеет значение **Общедоступный** и выбрано **Создать**. Введите имя *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -184,14 +186,14 @@ Export-PfxCertificate `
 ```azurepowershell
 $publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1"); 
   "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
-$vmss = Get-AzureRmVmss -ResourceGroupName myResourceGroupAG -VMScaleSetName myvmss
-Add-AzureRmVmssExtension -VirtualMachineScaleSet $vmss `
+$vmss = Get-AzVmss -ResourceGroupName myResourceGroupAG -VMScaleSetName myvmss
+Add-AzVmssExtension -VirtualMachineScaleSet $vmss `
   -Name "customScript" `
   -Publisher "Microsoft.Compute" `
   -Type "CustomScriptExtension" `
   -TypeHandlerVersion 1.8 `
   -Setting $publicSettings
-Update-AzureRmVmss `
+Update-AzVmss `
   -ResourceGroupName myResourceGroupAG `
   -Name myvmss `
   -VirtualMachineScaleSet $vmss
@@ -213,7 +215,7 @@ Update-AzureRmVmss `
 1. Выберите **myAppGateway**.
 2. На странице **Обзор** запишите IP-адрес в разделе **Общедоступный интерфейсный IP-адрес**.
 
-3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, http://52.170.203.149
+3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149.
 
    ![Предупреждение системы безопасности](./media/redirect-http-to-https-powershell/application-gateway-secure.png)
 
@@ -221,6 +223,6 @@ Update-AzureRmVmss `
 
    ![Тестирование базового URL-адреса в шлюзе приложений](./media/redirect-http-to-https-powershell/application-gateway-iistest.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать шлюз приложения с внутренним перенаправлением](redirect-internal-site-powershell.md).

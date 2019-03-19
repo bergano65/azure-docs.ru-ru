@@ -6,20 +6,20 @@ author: trinadhk
 manager: shreeshd
 ms.service: backup
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 12/09/2018
 ms.author: trinadhk
-ms.openlocfilehash: de7c00717349a1c814c5a13508adb11879aa10a5
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
-ms.translationtype: HT
+ms.openlocfilehash: e86595ceb940ebcfa702823e9c9b8ad3ef50bb45
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51704653"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56674639"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.
 
 > [!IMPORTANT]
-> Роли, предоставленные службой архивации Azure, ограничены действиями, которые можно выполнить на портале Azure или в командлетах PowerShell хранилища служб восстановления. Эти роли не управляют действиями, выполняемыми в пользовательском интерфейсе клиента агента службы Azure Backup, System Center Data Protection Manager или Azure Backup Server.
+> Роли, предоставленные службой архивации Azure — ограничены действиями, которые могут выполняться на портале Azure или через REST API или командлеты PowerShell или интерфейса командной строки хранилище служб восстановления. Эти роли не управляют действиями, выполняемыми в пользовательском интерфейсе клиента агента службы Azure Backup, System Center Data Protection Manager или Azure Backup Server.
 
 Служба архивации Azure предоставляет три встроенные роли для управления операциями управления резервным копированием. Дополнительные сведения см. в статье о [встроенных ролях RBAC в Azure](../role-based-access-control/built-in-roles.md).
 
@@ -62,8 +62,8 @@ ms.locfileid: "51704653"
 > [!IMPORTANT]
 > Если вы зададите роль участника виртуальной машины в пределах ресурса и выберете резервное копирование в ее параметрах, откроется экран "Включить резервное копирование", несмотря на то что оно уже выполнено. Причина в том, что вызов для проверки состояния резервного копирования работает только на уровне подписки. Чтобы избежать этой проблемы, перейдите к хранилищу и откройте представление элемента резервного копирования для виртуальной машины или назначьте роль участника виртуальной машины на уровне подписки. 
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Управление доступом на основе ролей.](../role-based-access-control/role-assignments-portal.md) Начало работы с RBAC на портале Azure.
+## <a name="next-steps"></a>Дальнейшие действия
+* [Управление доступом на основе ролей](../role-based-access-control/role-assignments-portal.md): Начало работы с RBAC на портале Azure.
 * Сведения об управлении доступом с помощью следующих средств:
   * [PowerShell](../role-based-access-control/role-assignments-powershell.md)
   * [Интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md)

@@ -4,16 +4,16 @@ ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/22/2019
-ms.openlocfilehash: 5228e4986993f792dceb7324bb6ba9f836f29aea
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: ed512c0f56d8da5cb8e47b20f2495054fdedf020
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56213179"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56741385"
 ---
 К контейнеру применяются следующие параметры конфигурации.
 
-|Обязательно|Параметр|Назначение|
+|Обязательно для заполнения|Параметр|Назначение|
 |--|--|--|
 |Да|[ApiKey](#apikey-configuration-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет |[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|

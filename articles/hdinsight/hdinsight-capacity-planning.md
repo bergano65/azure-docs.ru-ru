@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: hrasheed
-ms.openlocfilehash: 7eb18b5560e849796770ce9d24574d7a3d0db262
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: b35c5073f2b19523010528800c2a989d5de5b448
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53716146"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57848019"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Планирование загрузки кластеров HDInsight
 
@@ -109,13 +109,13 @@ ms.locfileid: "53716146"
 1. Щелкните **Справка и поддержка** в нижней части страницы.
 1. Нажмите **Новый запрос на поддержку**.
 1. В разделе **Новый запрос на поддержку** во вкладке **Основы** выберите следующие параметры:
-    - **Тип проблемы**. **Ограничения службы и подписки (квоты)**
-    - **Подписка**. Подписка, которую необходимо изменить.
-    - **Тип квоты**. **HDInsight**
+   - **Тип проблемы**. **Ограничения службы и подписки (квоты)**
+   - **Подписка**. Подписка, которую необходимо изменить.
+   - **Тип квоты**. **HDInsight**
     
-    ![Создание запроса в службу поддержки для увеличения квоты на ядра HDInsight](./media/hdinsight-capacity-planning/hdinsight-quota-support-request.png)
+     ![Создание запроса в службу поддержки для увеличения квоты на ядра HDInsight](./media/hdinsight-capacity-planning/hdinsight-quota-support-request.png)
 
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.
 1. На странице **Сведения** введите описание проблемы, выберите степень серьезности проблемы и предпочтительный способ контакта.
 1. Щелкните **Далее. Отзыв и создание**.
 1. На странице **Отзыв и создание** щелкните **Создать**.
@@ -125,9 +125,9 @@ ms.locfileid: "53716146"
 
 Вы можете [обратиться в службу поддержки, чтобы запросить увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request).
 
-Однако существуют некоторые фиксированные квоты, например, одна подписка Azure может содержать не более 10 000 ядер. Сведения об этих ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits#limits-and-the-azure-resource-manager).
+Однако существуют некоторые фиксированные квоты, например, одна подписка Azure может содержать не более 10 000 ядер. Сведения об этих ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md) Узнайте, как установить и настроить кластеры в HDInsight с использованием Hadoop, Spark, Kafka, кластера интерактивных запросов Hive, HBase, служб машинного обучения или Storm.
 * [Мониторинг производительности кластера](hdinsight-key-scenarios-to-monitor.md). Изучите основные сценарии, которые могут влиять на емкость кластера HDInsight и требуют его мониторинга.

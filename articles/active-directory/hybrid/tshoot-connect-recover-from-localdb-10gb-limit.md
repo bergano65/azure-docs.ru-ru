@@ -16,12 +16,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e0942f028752b1e3db89802ee889eac7157815d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 194f422c1567103e41f3b39f8510931b1f4762b5
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205619"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58105188"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect выполняет следующие функции: Восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.
@@ -81,13 +81,13 @@ Azure AD Connect требуется база данных SQL Server для хр
 ### <a name="delete-run-history-data"></a>Удаление данных журнала выполнения
 По умолчанию Azure AD Connect сохраняет данные журнала выполнения, накопленные за период до 7 дней. На этом этапе мы удалим данные журнала выполнения, чтобы освободить место в базе данных для повторного запуска службы синхронизации Azure AD Connect.
 
-1.  Запустите **Synchronization Service Manager**, выбрав "Запуск → Служба синхронизации".
+1. Запустите **Synchronization Service Manager**, выбрав "Запуск → Служба синхронизации".
 
-2.  Перейдите на вкладку **Операции**.
+2. Перейдите на вкладку **Операции**.
 
-3.  В разделе **Действия** выберите **Clear Runs** (Очистить выполнения).
+3. В разделе **Действия** выберите **Clear Runs** (Очистить выполнения).
 
-4.  Можно выбрать параметр **Clear all runs** (Очистить все выполнения) или **Clear runs before…<date>** (Очистить выполнения до...). Рекомендуется начать с очистки тех данных журнала выполнения, которым больше двух дней. Если вы продолжаете сталкиваться с проблемой размера базы данных, выберите параметр **Clear all runs** (Очистить все выполнения).
+4. Можно выбрать параметр **Clear all runs** (Очистить все выполнения) или **Clear runs before…<date>** (Очистить выполнения до...). Рекомендуется начать с очистки тех данных журнала выполнения, которым больше двух дней. Если вы продолжаете сталкиваться с проблемой размера базы данных, выберите параметр **Clear all runs** (Очистить все выполнения).
 
 ### <a name="shorten-retention-period-for-run-history-data"></a>Сокращение срока хранения данных журнала выполнения
 Этот шаг необходим для снижения вероятности возникновения проблемы нехватки дискового пространства после нескольких циклов синхронизации.
@@ -103,5 +103,5 @@ Azure AD Connect требуется база данных SQL Server для хр
 * Инструкции по настройке удаленного экземпляра SQL Server с Azure AD Connect см.в статье [Выборочная установка Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-custom).
 * Инструкции по выполнению обновления со сменой сервера для Azure AD Connect см. в статье [Azure AD Connect. Обновление до последней версии](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-upgrade-previous-version#swing-migration).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
