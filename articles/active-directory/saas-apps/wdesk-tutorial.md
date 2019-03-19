@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff88f25d4bf7fea09ea07673326e068840243b98
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 75d0e962169529ab8d17aeeeed8aab26e7b7e994
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176583"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57880880"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>Руководство по Интеграция Azure Active Directory с Wdesk
+# <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>Руководство. Интеграция Azure Active Directory с Wdesk
 
 В этом руководстве описано, как интегрировать Wdesk с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56176583"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Wdesk, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "56176583"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.wdesk.com/auth/saml/sp/metadata/<instancename>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
@@ -154,11 +154,11 @@ ms.locfileid: "56176583"
 
       a. Скопируйте значение **Login URL** (URL-адрес входа) и вставьте его в текстовое поле **URL-адрес входа** на портале Azure.
    
-      б) Скопируйте значение **Metadata Url** (URL-адрес метаданных) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
+      2. Скопируйте значение **Metadata Url** (URL-адрес метаданных) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
        
       c. Скопируйте значение **Consumer URL** (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
    
-      4.3. На портале Azure нажмите кнопку **Сохранить**, чтобы сохранить изменения.      
+      d. На портале Azure нажмите кнопку **Сохранить**, чтобы сохранить изменения.      
 
 1. Щелкните **Configure IdP Settings** (Настройка параметров поставщика удостоверений), чтобы открыть диалоговое окно **изменения параметров поставщика удостоверений**. Щелкните **Choose File** (Выбрать файл) и найдите файл **Metadata.xml**, который вы сохранили с портала Azure, а затем отправьте его.
     
@@ -196,11 +196,11 @@ ms.locfileid: "56176583"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-wdesk-test-user"></a>Создание тестового пользователя Wdesk
 
@@ -219,7 +219,7 @@ ms.locfileid: "56176583"
    
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser1.png)  
 
-1. В текстовое поле **User** (Пользователь) введите имя пользователя, например **brittasimon@contoso.com**, и нажмите кнопку **Continue** (Продолжить).
+1. В **пользователя** текстовом окне введите имя пользователя, например **brittasimon\@contoso.com** и нажмите кнопку **Продолжить** кнопку.
 
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser3.png)
 
@@ -227,9 +227,9 @@ ms.locfileid: "56176583"
   
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser4.png)
  
-    a. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    a. В **электронной почты** текста введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    2. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 

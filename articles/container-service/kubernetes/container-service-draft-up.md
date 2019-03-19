@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 09/14/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 36e765d439d616ec165a2b53d2044586e73cde76
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 48afb867a5455ffea10f8a74b1fff2c2b7f361ab
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809220"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57849760"
 ---
 # <a name="deprecated-use-draft-with-azure-container-service-and-azure-container-registry-to-build-and-deploy-an-application-to-kubernetes"></a>(УСТАРЕЛО) Использование Draft со Службой контейнеров Azure и Реестром контейнеров Azure для создания и развертывания приложения в Kubernetes
 
@@ -31,7 +31,7 @@ ms.locfileid: "55809220"
 ## <a name="create-an-azure-container-registry"></a>Создание реестра контейнеров Azure
 Вы можете легко [создать реестр контейнеров Azure](../../container-registry/container-registry-get-started-azure-cli.md). Для этого вам нужно выполнить следующее:
 
-1. Создайте группу ресурсов Azure, чтобы управлять реестром ACR и кластером Kubernetes в ACS.
+1. Создайте группу ресурсов Azure для управления реестром ACR и кластером Kubernetes в ACS.
       ```azurecli
       az group create --name draft --location eastus
       ```
@@ -106,11 +106,11 @@ waiting for AAD role to propagate.done
 1. Скачайте черновик для своей среды в https://github.com/Azure/draft/releases и установите его в пути, чтобы можно было использовать команду.
 2. Скачайте Helm для своей среды в https://github.com/kubernetes/helm/releases и [, установите ее в свой путь, чтобы можно было использовать команду ](https://github.com/kubernetes/helm/blob/master/docs/install.md#installing-the-helm-client).
 3. Настройте черновик, чтобы использовать реестр и создать поддомены для каждого чарта Helm, который он создает. Чтобы настроить черновик, вам потребуется следующее:
-  - имя реестра контейнеров Azure (в этом примере — `draftacsdemo`);
-  - раздел реестра или пароль, полученный из `az acr credential show -n <registry name> --output tsv --query "passwords[0].value"`;
+   - имя реестра контейнеров Azure (в этом примере — `draftacsdemo`);
+   - раздел реестра или пароль, полученный из `az acr credential show -n <registry name> --output tsv --query "passwords[0].value"`;
 
-  Вызовите `draft init`, и в процессе настройки вам будет предложено задать значения, указанные выше. Обратите внимание, что URL-адрес реестра состоит из имени реестра (в этом примере `draftacsdemo`) и `.azurecr.io`. Ваше имя пользователя является именем реестра. При первом запуске процесс будет выглядеть приблизительно так:
- ```bash
+   Вызовите `draft init`, и в процессе настройки вам будет предложено задать значения, указанные выше. Обратите внимание, что URL-адрес реестра состоит из имени реестра (в этом примере `draftacsdemo`) и `.azurecr.io`. Ваше имя пользователя является именем реестра. При первом запуске процесс будет выглядеть приблизительно так:
+   ```bash
     $ draft init
     Creating /home/ralph/.draft 
     Creating /home/ralph/.draft/plugins 
@@ -132,7 +132,7 @@ waiting for AAD role to propagate.done
     3. Enter your password: 
     Draft has been installed into your Kubernetes Cluster.
     Happy Sailing!
-```
+   ```
 
 Теперь все готово для развертывания приложения.
 
@@ -169,7 +169,7 @@ Connecting to your app...SUCCESS...Connect to your app on localhost:46143
 Starting log streaming...
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 == Spark has ignited ...
 >> Listening on 0.0.0.0:4567
 ```
@@ -224,7 +224,7 @@ kubernetes                    10.0.0.1       <none>          443/TCP            
     ```
 
 2. Создайте зону DNS для домена.
-Используйте команду [az network dns zone create](/cli/azure/network/dns/zone#az-network-dns-zone-create), чтобы получить имена серверов для делегирования элемента управления DNS службе Azure DNS для домена.
+   Используйте команду [az network dns zone create](/cli/azure/network/dns/zone#az-network-dns-zone-create), чтобы получить имена серверов для делегирования элемента управления DNS службе Azure DNS для домена.
     ```azurecli
     az network dns zone create --resource-group squillace.io --name squillace.io
     {
@@ -247,12 +247,12 @@ kubernetes                    10.0.0.1       <none>          443/TCP            
     ```
 3. Добавьте полученные DNS-серверы поставщику домена для домена развертывания, чтобы использовать Azure DNS для повторного указания домена. Способы выполнения зависят от домена, предоставленного пользователем. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md). 
 4. После делегирования домена в службу Azure DNS создайте запись набора записей A для домена развертывания, сопоставленного с IP-адресом `ingress` на шаге 2 в разделе выше.
-  ```azurecli
-  az network dns record-set a add-record --ipv4-address 13.64.108.240 --record-set-name '*.draft' -g squillace.io -z squillace.io
-  ```
-Результат будет выглядеть примерно так:
-  ```json
-  {
+   ```azurecli
+   az network dns record-set a add-record --ipv4-address 13.64.108.240 --record-set-name '*.draft' -g squillace.io -z squillace.io
+   ```
+   Результат будет выглядеть примерно так:
+   ```json
+   {
     "arecords": [
       {
         "ipv4Address": "13.64.108.240"
@@ -265,26 +265,26 @@ kubernetes                    10.0.0.1       <none>          443/TCP            
     "resourceGroup": "squillace.io",
     "ttl": 3600,
     "type": "Microsoft.Network/dnszones/A"
-  }
-  ```
+   }
+   ```
 5. Переустановите **черновик**.
 
    1. Удалите **draftd** из кластера, введя `helm delete --purge draft`. 
    2. Переустановите **черновик** с помощью той же команды `draft-init`, но с параметром `--ingress-enabled`:
-    ```bash
-    draft init --ingress-enabled
-    ```
-   Ответьте на запросы, как описано выше. Однако есть еще один вопрос, на который нужно ответить, используя полный путь домена, настроенный с помощью Azure DNS.
+      ```bash
+      draft init --ingress-enabled
+      ```
+      Ответьте на запросы, как описано выше. Однако есть еще один вопрос, на который нужно ответить, используя полный путь домена, настроенный с помощью Azure DNS.
 
 6. Введите домен верхнего уровня для входящих сообщений (например, draft.example.com): draft.squillace.io
 7. В этот раз при вызове `draft up` отобразится приложение (или `curl`) в URL-адресе в формате `<appname>.draft.<domain>.<top-level-domain>`. В этом случае `http://handy-labradoodle.draft.squillace.io`. 
-```bash
-curl -s http://handy-labradoodle.draft.squillace.io
-Hello World, I'm Java!
-```
+   ```bash
+   curl -s http://handy-labradoodle.draft.squillace.io
+   Hello World, I'm Java!
+   ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть кластер ACS Kubernetes, вы можете использовать [реестр контейнеров Azure](../../container-registry/container-registry-intro.md), чтобы создать больше различных развертываний этого сценария. Например, вы можете создать набор записей DNS домена draft._basedomain.toplevel_, с помощью которого можно отключать функции важного поддомена для определенных развертываний ACS.
 

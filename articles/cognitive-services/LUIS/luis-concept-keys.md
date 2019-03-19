@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: diberry
-ms.openlocfilehash: 1898d6e5119d3cbc2061aff8d4a7e673abd83198
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: 1f5aab607c5046df0dee4db5caf36b0b7de53c4d
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56097463"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57998743"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
 В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
@@ -60,7 +60,7 @@ ms.locfileid: "56097463"
 
 |Команда|Пример URL-адреса и расположение ключа|
 |--|--|
-|[GET](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78)|`https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=your-endpoint-key-here&verbose=true&timezoneOffset=0&q=turn%20on%20the%20lights`<br><br>значение строки запроса для `subscription-key`<br><br>Чтобы использовать квоту конечной точки LUIS, измените значение запроса конечной точки для `subscription-key` с ключа разработки (начального ключа) на новый ключ конечной точки. Если создать и назначать ключ, но не изменять значение запроса конечной точки для ключа подписки, вы не будете использовать квоту ключа конечной точки.|
+|[GET](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78)|`https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=your-endpoint-key-here&verbose=true&timezoneOffset=0&q=turn%20on%20the%20lights`<br><br>значение строки запроса для `subscription-key`<br><br>Чтобы использовать квоту конечной точки LUIS, измените значение запроса конечной точки для `subscription-key` с ключа разработки (начального ключа) на новый ключ конечной точки. Если создать и назначать ключ, но не изменять значение запроса конечной точки для `subscription-key`, вы не будете использовать квоту ключа конечной точки.|
 |[POST](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)| `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2`<br><br> значение заголовка для `Ocp-Apim-Subscription-Key`<br><br>Чтобы использовать квоту конечной точки LUIS, измените значение запроса конечной точки для `Ocp-Apim-Subscription-Key` с ключа разработки (начального ключа) на новый ключ конечной точки. Если создать и назначать ключ, но не изменять значение запроса конечной точки для `Ocp-Apim-Subscription-Key`, вы не будете использовать квоту ключа конечной точки.|
 
 Идентификатор приложения, используемый в предыдущих URL-адресах, `df67dcdb-c37d-46af-88e1-8b97951ca1c2`, является общедоступным приложением Интернета вещей, используемым для [интерактивной демонстрации](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/). 
@@ -83,6 +83,6 @@ API-интерфейсы LUIS используют заголовок `Ocp-Apim-
 Вы можете [назначить](luis-how-to-azure-subscription.md) ключ конечной точки на [портале LUIS](https://www.luis.ai) или с помощью соответствующих API. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с [понятиями](luis-how-to-azure-subscription.md), связанными с ключами разработки и конечных точек.

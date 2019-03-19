@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 21c10c4bf19d4bf72c4ec5005bb95353ed00c7aa
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 7bf064ff01693f7a65c756a99c435d7f1a39840e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51256958"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010136"
 ---
 # <a name="install-updates-on-your-storsimple-virtual-array---azure-portal"></a>Установка обновлений на виртуальный массив StorSimple с помощью портала Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "51256958"
 
 #### <a name="to-download-the-update-or-the-hotfix"></a>Загрузка обновления или исправления
 
-1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
+1. Запустите Internet Explorer и перейдите по адресу [https://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
 
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить** , когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 
@@ -107,7 +107,7 @@ ms.locfileid: "51256958"
 После окончания установки (об этом свидетельствует состояние задания "100 %") перейдите к службе диспетчера устройств StorSimple. Перейдите к **устройствам** и в списке устройств, подключенных к службе, выберите то, которое требуется обновить. В колонке **Параметры** щелкните **Управление** и выберите **Обновления устройства**. Отображаемая версия программного обеспечения должна быть следующей: **10.0.10288.0**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

@@ -10,23 +10,23 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: b313772fb2737c015a02cfc36cec87797c95f619
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 32d00a1c0daf383d41d6bbc7c9fe105b3a2a6ab1
+ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55251968"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57774921"
 ---
 # <a name="introducing-idns-for-azure-stack"></a>Общие сведения об iDNS для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-iDNS — это функция сетевого взаимодействия Azure Stack, которая позволяет сопоставлять внешние имена DNS (например, http://www.bing.com.)), а также регистрировать имена внутренних виртуальных сетей. Таким образом, можно разрешить виртуальные машины в одной и той же виртуальной сети по имени, а не по IP-адресу. Это избавляет от необходимости предоставлять пользовательские записи DNS-сервера. Общие сведения о DNS см. в [этой статье](https://docs.microsoft.com/azure/dns/dns-overview).
+iDNS — это функция сетевого взаимодействия Azure Stack, которая позволяет сопоставлять внешние имена DNS (например, https://www.bing.com.)), а также регистрировать имена внутренних виртуальных сетей. Таким образом, можно разрешить виртуальные машины в одной и той же виртуальной сети по имени, а не по IP-адресу. Это избавляет от необходимости предоставлять пользовательские записи DNS-сервера. Общие сведения о DNS см. в [этой статье](https://docs.microsoft.com/azure/dns/dns-overview).
 
 ## <a name="what-does-idns-do"></a>Возможности iDNS
 

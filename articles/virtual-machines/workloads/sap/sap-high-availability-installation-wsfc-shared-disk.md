@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d5d52653d68c6ebfca7e35a134da263eee99fd3e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
-ms.translationtype: HT
+ms.openlocfilehash: 0c87aca6c480d9ebc4add7943a341fe94d640a4c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34657083"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58001288"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "34657083"
 
 [deployment-guide]:deployment-guide.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 
@@ -149,11 +149,11 @@ ms.locfileid: "34657083"
 
 В этой статье описывается, как установить и настроить в Azure систему SAP высокого уровня доступности, используя отказоустойчивый кластер Windows Server и общий диск для кластеризации экземпляра SAP ASCS/SCS.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом установки изучите следующие документы:
 
-* [Кластеризация экземпляра SAP (A)SCS в отказоустойчивом кластере Windows с помощью общего диска кластера в Azure][sap-high-availability-guide-wsfc-shared-disk].
+* [Руководство по архитектуре: кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера][sap-high-availability-guide-wsfc-shared-disk]
 
 * [Подготовка инфраструктуры Azure для SAP высокого уровня доступности с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP (A)SCS][sap-high-availability-infrastructure-wsfc-shared-disk].
 
@@ -183,35 +183,35 @@ ms.locfileid: "34657083"
 
 ### <a name="a97ad604-9094-44fe-a364-f89cb39bf097"></a>Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS
 
-1.  В диспетчере DNS Windows создайте запись DNS для имени виртуального узла экземпляра ASCS/SCS.
+1. В диспетчере DNS Windows создайте запись DNS для имени виртуального узла экземпляра ASCS/SCS.
 
-  > [!IMPORTANT]
-  > IP-адрес, который вы назначите имени виртуального узла для экземпляра ASCS/SCS, должен совпадать с IP-адресом, назначенным для Azure Load Balancer (\<SID\>-lb-ascs).  
-  >
-  >
+   > [!IMPORTANT]
+   > IP-адрес, который вы назначите имени виртуального узла для экземпляра ASCS/SCS, должен совпадать с IP-адресом, назначенным для Azure Load Balancer (\<SID\>-lb-ascs).  
+   >
+   >
 
-  IP-адрес имени виртуального узла SAP ASCS/SCS (pr1 ascs sap) совпадает с IP-адресом Azure Load Balancer (pr1-lb-ascs).
+   IP-адрес имени виртуального узла SAP ASCS/SCS (pr1 ascs sap) совпадает с IP-адресом Azure Load Balancer (pr1-lb-ascs).
 
-  ![Рис. 1. Определение записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-3046]
+   ![Рис. 1. Настройка записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-3046]
 
-  _**Рис. 1.** Определение записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS_
+   _**Рис. 1.** Настройка записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS_
 
-2.  Чтобы определить IP-адрес, назначенный имени виртуального узла, выберите **Диспетчер DNS** > **Домен**.
+2. Чтобы определить IP-адрес, назначенный имени виртуального узла, выберите **Диспетчер DNS** > **Домен**.
 
-  ![Рис. 2. Новое виртуальное имя и TCP/IP-адрес для конфигурации кластера SAP ASCS/SCS][sap-ha-guide-figure-3047]
+   ![Рис. 2. Новое виртуальное имя и TCP/IP-адрес для конфигурации кластера SAP ASCS/SCS][sap-ha-guide-figure-3047]
 
-  _**Рис. 2.** Новое виртуальное имя и TCP/IP-адрес для конфигурации кластера SAP ASCS/SCS_
+   _**Рис. 2.** Новое виртуальное имя и TCP/IP-адрес для конфигурации кластера SAP ASCS/SCS_
 
 ### <a name="eb5af918-b42f-4803-bb50-eff41f84b0b0"></a> Установка первого узла кластера SAP
 
-1.  Выполните действие создания первого узла кластера на узле А. В нашем примере это узел pr1-ascs-0\*.
-2.  Чтобы сохранить порты по умолчанию для внутреннего балансировщика нагрузки Azure, выберите:
+1. Выполните действие создания первого узла кластера на узле А. В нашем примере это узел pr1-ascs-0\*.
+2. Чтобы сохранить порты по умолчанию для внутреннего балансировщика нагрузки Azure, выберите:
 
-  * для **системы ABAP** — экземпляр **ASCS** с номером **00**;
-  * для **системы Java** — экземпляр **SCS** с номером **01**;
-  * для **системы ABAP с Java** — экземпляр **ASCS** с номером **00** и экземпляр **SCS** с номером **01**.
+   * **Для системы ABAP**: экземпляр **ASCS** с номером **00**;
+   * **Для системы Java**: экземпляр **SCS** с номером **01**;
+   * **Для системы ABAP+Java**: экземпляр **ASCS** с номером **00** и экземпляр **SCS** с номером **01**.
 
-  Чтобы использовать номера экземпляра, отличные от стандартных (00 для экземпляра ABAP ASCS и 01 для экземпляра Java SCS), сначала следует изменить правила по умолчанию на внутренней подсистеме балансировки нагрузки Azure. Дополнительные сведения см. в разделе [Изменение правил балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure][sap-ha-guide-8.9].
+   Чтобы использовать номера экземпляра, отличные от стандартных (00 для экземпляра ABAP ASCS и 01 для экземпляра Java SCS), сначала следует изменить правила по умолчанию на внутренней подсистеме балансировки нагрузки Azure. Дополнительные сведения см. в разделе [Изменение правил балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure][sap-ha-guide-8.9].
 
 Следующие несколько заданий не описаны в обычной документации по установке SAP.
 
@@ -226,20 +226,20 @@ ms.locfileid: "34657083"
 
 Чтобы изменить профиль SAP экземпляра ASCS/SCS, сделайте следующее:
 
-1.  Добавьте этот параметр профиля в профиль экземпляра SAP ASCS/SCS:
+1. Добавьте этот параметр профиля в профиль экземпляра SAP ASCS/SCS:
 
-  ```
-  enque/encni/set_so_keepalive = true
-  ```
-  В нашем примере путь следующий:
+   ```
+   enque/encni/set_so_keepalive = true
+   ```
+   В нашем примере путь следующий:
 
-  `<ShareDisk>:\usr\sap\PR1\SYS\profile\PR1_ASCS00_pr1-ascs-sap`
+   `<ShareDisk>:\usr\sap\PR1\SYS\profile\PR1_ASCS00_pr1-ascs-sap`
 
-  Например, ниже приведен профиль экземпляра SAP SCS и соответствующий путь.
+   Например, ниже приведен профиль экземпляра SAP SCS и соответствующий путь.
 
-  `<ShareDisk>:\usr\sap\PR1\SYS\profile\PR1_SCS01_pr1-ascs-sap`
+   `<ShareDisk>:\usr\sap\PR1\SYS\profile\PR1_SCS01_pr1-ascs-sap`
 
-2.  Чтобы применить эти изменения, перезапустите экземпляр SAP ASCS/SCS.
+2. Чтобы применить эти изменения, перезапустите экземпляр SAP ASCS/SCS.
 
 ### <a name="10822f4f-32e7-4871-b63a-9b86c76ce761"></a> Добавление порта пробы
 
@@ -249,97 +249,97 @@ ms.locfileid: "34657083"
 
 Чтобы добавить порт пробы, сделайте следующее:
 
-1.  Проверьте текущее значение **ProbePort**, выполнив следующую команду PowerShell:
+1. Проверьте текущее значение **ProbePort**, выполнив следующую команду PowerShell:
 
-  ```PowerShell
-  $SAPSID = "PR1"     # SAP <SID>
+   ```PowerShell
+   $SAPSID = "PR1"     # SAP <SID>
 
-  $SAPNetworkIPClusterName = "SAP $SAPSID IP"
-  Get-ClusterResource $SAPNetworkIPClusterName | Get-ClusterParameter
-  ```
+   $SAPNetworkIPClusterName = "SAP $SAPSID IP"
+   Get-ClusterResource $SAPNetworkIPClusterName | Get-ClusterParameter
+   ```
 
    Эту команду следует выполнять на одной из виртуальных машин в конфигурации кластера.
 
-2.  Укажите порт пробы. По умолчанию для проб задан порт 0. В нашем примере мы используем порт пробы 62000.
+2. Укажите порт пробы. По умолчанию для проб задан порт 0. В нашем примере мы используем порт пробы 62000.
 
-  ![Рис. 3. По умолчанию в конфигурации кластера для проб используется порт 0][sap-ha-guide-figure-3048]
+   ![Рис. 3. По умолчанию в конфигурации кластера для проб указан порт 0][sap-ha-guide-figure-3048]
 
-  _**Рис. 3.** По умолчанию в конфигурации кластера для проб используется порт 0_
+   _**Рис. 3.** По умолчанию в конфигурации кластера для проб указан порт 0_
 
-  Номер порта определен в шаблонах Azure Resource Manager для SAP. Назначить номер порта можно в PowerShell.
+   Номер порта определен в шаблонах Azure Resource Manager для SAP. Назначить номер порта можно в PowerShell.
 
-  Чтобы задать новое значение ProbePort для кластерного ресурса SAP \<SID\> IP, выполните следующий скрипт PowerShell, который изменяет значение переменных среды PowerShell:
+   Чтобы задать новое значение ProbePort для кластерного ресурса SAP \<SID\> IP, выполните следующий скрипт PowerShell, который изменяет значение переменных среды PowerShell:
 
-  ```PowerShell
-  $SAPSID = "PR1"      # SAP <SID>
-  $ProbePort = 62000   # ProbePort of the Azure internal load balancer
+   ```PowerShell
+   $SAPSID = "PR1"      # SAP <SID>
+   $ProbePort = 62000   # ProbePort of the Azure internal load balancer
 
-  Clear-Host
-  $SAPClusterRoleName = "SAP $SAPSID"
-  $SAPIPresourceName = "SAP $SAPSID IP"
-  $SAPIPResourceClusterParameters =  Get-ClusterResource $SAPIPresourceName | Get-ClusterParameter
-  $IPAddress = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "Address" }).Value
-  $NetworkName = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "Network" }).Value
-  $SubnetMask = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "SubnetMask" }).Value
-  $OverrideAddressMatch = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "OverrideAddressMatch" }).Value
-  $EnableDhcp = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "EnableDhcp" }).Value
-  $OldProbePort = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "ProbePort" }).Value
+   Clear-Host
+   $SAPClusterRoleName = "SAP $SAPSID"
+   $SAPIPresourceName = "SAP $SAPSID IP"
+   $SAPIPResourceClusterParameters =  Get-ClusterResource $SAPIPresourceName | Get-ClusterParameter
+   $IPAddress = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "Address" }).Value
+   $NetworkName = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "Network" }).Value
+   $SubnetMask = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "SubnetMask" }).Value
+   $OverrideAddressMatch = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "OverrideAddressMatch" }).Value
+   $EnableDhcp = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "EnableDhcp" }).Value
+   $OldProbePort = ($SAPIPResourceClusterParameters | Where-Object {$_.Name -eq "ProbePort" }).Value
 
-  $var = Get-ClusterResource | Where-Object {  $_.name -eq $SAPIPresourceName  }
+   $var = Get-ClusterResource | Where-Object {  $_.name -eq $SAPIPresourceName  }
 
-  Write-Host "Current configuration parameters for SAP IP cluster resource '$SAPIPresourceName' are:" -ForegroundColor Cyan
-  Get-ClusterResource -Name $SAPIPresourceName | Get-ClusterParameter
+   Write-Host "Current configuration parameters for SAP IP cluster resource '$SAPIPresourceName' are:" -ForegroundColor Cyan
+   Get-ClusterResource -Name $SAPIPresourceName | Get-ClusterParameter
 
-  Write-Host
-  Write-Host "Current probe port property of the SAP cluster resource '$SAPIPresourceName' is '$OldProbePort'." -ForegroundColor Cyan
-  Write-Host
-  Write-Host "Setting the new probe port property of the SAP cluster resource '$SAPIPresourceName' to '$ProbePort' ..." -ForegroundColor Cyan
-  Write-Host
+   Write-Host
+   Write-Host "Current probe port property of the SAP cluster resource '$SAPIPresourceName' is '$OldProbePort'." -ForegroundColor Cyan
+   Write-Host
+   Write-Host "Setting the new probe port property of the SAP cluster resource '$SAPIPresourceName' to '$ProbePort' ..." -ForegroundColor Cyan
+   Write-Host
 
-  $var | Set-ClusterParameter -Multiple @{"Address"=$IPAddress;"ProbePort"=$ProbePort;"Subnetmask"=$SubnetMask;"Network"=$NetworkName;"OverrideAddressMatch"=$OverrideAddressMatch;"EnableDhcp"=$EnableDhcp}
+   $var | Set-ClusterParameter -Multiple @{"Address"=$IPAddress;"ProbePort"=$ProbePort;"Subnetmask"=$SubnetMask;"Network"=$NetworkName;"OverrideAddressMatch"=$OverrideAddressMatch;"EnableDhcp"=$EnableDhcp}
 
-  Write-Host
+   Write-Host
 
-  $ActivateChanges = Read-Host "Do you want to take restart SAP cluster role '$SAPClusterRoleName', to activate the changes (yes/no)?"
+   $ActivateChanges = Read-Host "Do you want to take restart SAP cluster role '$SAPClusterRoleName', to activate the changes (yes/no)?"
 
-  if($ActivateChanges -eq "yes"){
-  Write-Host
-  Write-Host "Activating changes..." -ForegroundColor Cyan
+   if($ActivateChanges -eq "yes"){
+   Write-Host
+   Write-Host "Activating changes..." -ForegroundColor Cyan
 
-  Write-Host
-  write-host "Taking SAP cluster IP resource '$SAPIPresourceName' offline ..." -ForegroundColor Cyan
-  Stop-ClusterResource -Name $SAPIPresourceName
-  sleep 5
+   Write-Host
+   write-host "Taking SAP cluster IP resource '$SAPIPresourceName' offline ..." -ForegroundColor Cyan
+   Stop-ClusterResource -Name $SAPIPresourceName
+   sleep 5
 
-  Write-Host "Starting SAP cluster role '$SAPClusterRoleName' ..." -ForegroundColor Cyan
-  Start-ClusterGroup -Name $SAPClusterRoleName
+   Write-Host "Starting SAP cluster role '$SAPClusterRoleName' ..." -ForegroundColor Cyan
+   Start-ClusterGroup -Name $SAPClusterRoleName
 
-  Write-Host "New ProbePort parameter is active." -ForegroundColor Green
-  Write-Host
+   Write-Host "New ProbePort parameter is active." -ForegroundColor Green
+   Write-Host
 
-  Write-Host "New configuration parameters for SAP IP cluster resource '$SAPIPresourceName':" -ForegroundColor Cyan
-  Write-Host
-  Get-ClusterResource -Name $SAPIPresourceName | Get-ClusterParameter
-  }else
-  {
-  Write-Host "Changes are not activated."
-  }
-  ```
+   Write-Host "New configuration parameters for SAP IP cluster resource '$SAPIPresourceName':" -ForegroundColor Cyan
+   Write-Host
+   Get-ClusterResource -Name $SAPIPresourceName | Get-ClusterParameter
+   }else
+   {
+   Write-Host "Changes are not activated."
+   }
+   ```
 
-  После подключения к сети роли кластера SAP \<SID\> убедитесь, что используется новое значение параметра **ProbePort**.
+   После подключения к сети роли кластера SAP \<SID\> убедитесь, что используется новое значение параметра **ProbePort**.
 
-  ```PowerShell
-  $SAPSID = "PR1"     # SAP <SID>
+   ```PowerShell
+   $SAPSID = "PR1"     # SAP <SID>
 
-  $SAPNetworkIPClusterName = "SAP $SAPSID IP"
-  Get-ClusterResource $SAPNetworkIPClusterName | Get-ClusterParameter
+   $SAPNetworkIPClusterName = "SAP $SAPSID IP"
+   Get-ClusterResource $SAPNetworkIPClusterName | Get-ClusterParameter
 
-  ```
-  После выполнения скрипта вам будет предложено перезапустить кластерную группу SAP, чтобы активировать изменения.
+   ```
+   После выполнения скрипта вам будет предложено перезапустить кластерную группу SAP, чтобы активировать изменения.
 
-  ![Рис. 4. Порт пробы кластера после изменения значения][sap-ha-guide-figure-3049]
+   ![Рис. 4. Проверка порта пробы кластера после изменения значения][sap-ha-guide-figure-3049]
 
-  _**Рис. 4.** Порт пробы кластера после изменения значения_
+   _**Рис. 4.** Проверка порта пробы кластера после изменения значения_
 
 ### <a name="4498c707-86c0-4cde-9c69-058a7ab8c3ac"></a> Открытие порта пробы в брандмауэре Windows
 
@@ -365,9 +365,9 @@ ms.locfileid: "34657083"
 
 На обоих узлах кластера измените тип запуска служб Windows SAP ERS на **Автоматически (отложенный запуск)**.
 
-![Рис. 5. Изменение типа службы для экземпляра SAP ERS на "Автоматически (отложенный запуск)"][sap-ha-guide-figure-3050]
+![Рис. 5. Изменение типа службы для экземпляра SAP ERS на "Автоматически (отложенный запуск)"][sap-ha-guide-figure-3050]
 
-_**Рис. 5.** Изменение типа службы для экземпляра SAP ERS на "Автоматически (отложенный запуск)"_
+_**Рис. 5.** Изменение типа службы для экземпляра SAP ERS на "Автоматически (отложенный запуск)"_
 
 ## <a name="2477e58f-c5a7-4a5d-9ae3-7b91022cafb5"></a> Установка основного сервера приложений SAP
 
@@ -389,41 +389,41 @@ _**Рис. 5.** Изменение типа службы для экземпля
 
 Кластерная группа SAP PR1 работает на узле A, в нашем примере это узел pr1-ascs-0. Присвойте узлу A общий диск S, который входит в кластерную группу SAP PR1. Экземпляр ASCS/SCS также использует этот диск S. 
 
-![Рис. 6. Диспетчер отказоустойчивости кластеров: кластерная группа SAP \<SID\> работает на узле A кластера][sap-ha-guide-figure-5000]
+![Рисунок 6. Диспетчер отказоустойчивости кластеров: SAP \<SID\> Кластерная группа работает на узле A кластера][sap-ha-guide-figure-5000]
 
-_**Рис. 6.** Диспетчер отказоустойчивости кластеров: кластерная группа SAP \<SID\> работает на узле A кластера_
+_**Рисунок 6.** Диспетчер отказоустойчивости кластеров: SAP \<SID\> Кластерная группа работает на узле A кластера_
 
 С помощью инструмента управления и настройки SIOS DataKeeper можно увидеть, что данные общего диска синхронно реплицируются с исходного дискового тома S на узле А кластера на целевой дисковый том S на узле B кластера (в нашем примере с pr1-ascs-0 [10.0.0.40] на pr1-ascs-1 [10.0.0.41]).
 
-![Рис. 7. SIOS DataKeeper: репликация локального тома с узла A на узел B кластера][sap-ha-guide-figure-5001]
+![Рисунок 7. SIOS DataKeeper: репликация локального тома с узла A в узел B кластера][sap-ha-guide-figure-5001]
 
-_**Рис. 7.** SIOS DataKeeper: репликация локального тома с узла A на узел B кластера_
+_**Рисунок 7.** SIOS DataKeeper: репликация локального тома с узла A в узел B кластера_
 
 ### <a name="5e959fa9-8fcd-49e5-a12c-37f6ba07b916"></a> Отработка отказа с узла A на узел B
 
-1.  Инициируйте отработку отказа кластерной группы SAP \<SID\> с узла A на узел B кластера одним из следующих способов:
-  - через диспетчер отказоустойчивости кластеров;  
-  - с помощью команд PowerShell для отказоустойчивого кластера.
+1. Инициируйте отработку отказа кластерной группы SAP \<SID\> с узла A на узел B кластера одним из следующих способов:
+   - через диспетчер отказоустойчивости кластеров;  
+   - с помощью команд PowerShell для отказоустойчивого кластера.
 
-  ```PowerShell
-  $SAPSID = "PR1"     # SAP <SID>
+   ```PowerShell
+   $SAPSID = "PR1"     # SAP <SID>
 
-  $SAPClusterGroup = "SAP $SAPSID"
-  Move-ClusterGroup -Name $SAPClusterGroup
+   $SAPClusterGroup = "SAP $SAPSID"
+   Move-ClusterGroup -Name $SAPClusterGroup
 
-  ```
-2.  Перезапустите узел A кластера из гостевой ОС Windows. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.  
-3.  Перезапустите узел A кластера с помощью портала Azure. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.  
-4.  Перезапустите узел A кластера с помощью Azure PowerShell. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.
+   ```
+2. Перезапустите узел A кластера из гостевой ОС Windows. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.  
+3. Перезапустите узел A кластера с помощью портала Azure. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.  
+4. Перезапустите узел A кластера с помощью Azure PowerShell. Это инициирует автоматический переход кластерной группы SAP \<SID\> на другой ресурс с узла A на узел B кластера.
 
-  После отработки отказа кластерная группа SAP \<SID\> будет выполняться на узле B кластера, в нашем примере это pr1-ascs-1.
+   После отработки отказа кластерная группа SAP \<SID\> будет выполняться на узле B кластера, в нашем примере это pr1-ascs-1.
 
-  ![Рис. 8. Диспетчер отказоустойчивости кластеров: кластерная группа SAP \<SID\> работает на узле B кластера][sap-ha-guide-figure-5002]
+   ![Рисунок 8. В диспетчере отказоустойчивости кластеров, SAP \<SID\> Кластерная группа работает на узле B кластера][sap-ha-guide-figure-5002]
 
-  _**Рис. 8.** Диспетчер отказоустойчивости кластеров: кластерная группа SAP \<SID\> работает на узле B кластера_
+   _**Рис. 8**: В диспетчере отказоустойчивости кластеров, SAP \<SID\> Кластерная группа работает на узле B кластера_
 
-  Теперь общий диск подключен к узлу B кластера, а SIOS DataKeeper реплицирует данные с исходного дискового тома S на узле B кластера на целевой дисковый том S на узле А кластера (в нашем примере с pr1-ascs-1 [10.0.0.41] на pr1-ascs-0 [10.0.0.40]).
+   Теперь общий диск подключен к узлу B кластера, а SIOS DataKeeper реплицирует данные с исходного дискового тома S на узле B кластера на целевой дисковый том S на узле А кластера (в нашем примере с pr1-ascs-1 [10.0.0.41] на pr1-ascs-0 [10.0.0.40]).
 
-  ![Рис. 9. SIOS DataKeeper: репликация локального тома с узла B на узел A кластера][sap-ha-guide-figure-5003]
+   ![Рисунок 9. SIOS DataKeeper: репликация локального тома с узла B в узел A кластера][sap-ha-guide-figure-5003]
 
-  _**Рис. 9.** SIOS DataKeeper: репликация локального тома с узла B на узел A кластера_
+   _**Рисунок 9.** SIOS DataKeeper: репликация локального тома с узла B в узел A кластера_
