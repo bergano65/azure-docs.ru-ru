@@ -32,7 +32,7 @@
 ## [Стратегия развития планировщика Azure](https://azure.microsoft.com/updates/?product=scheduler)
 ## [Стратегия развития Azure](https://azure.microsoft.com/updates/)
 ## [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?forum=azurescheduler)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-scheduler)
+## [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-scheduler)
 ## [Цены](https://azure.microsoft.com/pricing/details/scheduler/)
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 ## [Обновления службы](https://azure.microsoft.com/updates/?product=scheduler)
