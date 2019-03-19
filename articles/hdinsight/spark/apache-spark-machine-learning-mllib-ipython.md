@@ -8,21 +8,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 11/06/2018
+ms.date: 02/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 2a566312e70e0c1d5f85a540f30ecdf0adc0e7e7
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: bf29fd8d9b707636fb5965669ad800517a6cf58f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653719"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58075567"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
 Узнайте, как с помощью Apache Spark [MLlib](https://spark.apache.org/mllib/) создать приложение машинного обучения для проведения простого прогнозного анализа на основе открытого набора данных. В этом примере используется *классификация* посредством логистической регрессии на основе встроенных библиотек машинного обучения Spark. 
-
-> [!TIP]  
-> Этот пример также доступен в виде [записной книжки Jupyter](https://jupyter.org/) в кластере Spark (на платформе Linux), созданном в HDInsight. Фрагменты кода Python можно выполнять непосредственно в записной книжке. Для прохождения учебника в записной книжке создайте кластер Spark и запустите записную книжку Jupyter (`https://CLUSTERNAME.azurehdinsight.net/jupyter`). Затем запустите записную книжку **Машинное обучение Spark. Прогнозный анализ на основе данных контроля качества пищевых продуктов с использованием MLlib.ipynb** в папке **Python**.
 
 MLlib — это основная библиотека Spark, содержащая множество служебных программ, которые подходят для задач машинного обучения, в частности:
 
@@ -49,7 +46,7 @@ MLlib — это основная библиотека Spark, содержаща
 
 1. Создайте записную книжку Jupyter, используя ядро PySpark. Инструкции см. в разделе по [созданию записной книжки Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook).
 
-2. Импортируйте типы, необходимые для этого приложения. Скопируйте указанный ниже фрагмент кода, вставьте его в пустую ячейку и нажмите клавиши **SHIFT+ВВОД**.
+2. Импортируйте типы, необходимые для этого приложения. Скопируйте и вставьте следующий код в пустую ячейку и нажмите клавишу **SHIFT + ВВОД**.
 
     ```PySpark
     from pyspark.ml import Pipeline
@@ -173,7 +170,7 @@ MLlib — это основная библиотека Spark, содержаща
 
     ```PySpark
     %%sql -o countResultsdf
-    SELECT results, COUNT(results) AS cnt FROM CountResults GROUP BY results
+    SELECT COUNT(results) AS cnt, results FROM CountResults GROUP BY results
     ```
 
     Волшебное слово `%%sql`, за которым следует `-o countResultsdf`, гарантирует, что вывод запроса сохраняется локально на сервере Jupyter (обычно это головной узел кластера). Выходные данные сохраняются в кадре данных [Pandas](https://pandas.pydata.org/) с именем **countResultsdf**. Дополнительные сведения о команде magic `%%sql`, а также других командах magic, доступных в ядре PySpark, приведены в статье [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
@@ -201,26 +198,18 @@ MLlib — это основная библиотека Spark, содержаща
 
     ![Выходные данные приложения машинного обучения Spark — круговая диаграмма с пятью отдельными результатами проверки](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-1.png "Результаты машинного обучения Spark")
 
-    Проверка может вернуть один из следующих пяти результатов:
-
-    - Business not located;
-    - Fail;
-    - Pass;
-    - Pass w/ conditions;
-    - Out of Business.
-
     Чтобы спрогнозировать результат проверки пищевых продуктов, вам нужно разработать модель для анализа нарушений. Логистическая регрессия является методом двоичной классификации, а значит, данные целесообразно разделить на две категории: **Fail** и **Pass**.
 
-    - Pass;
-        - Pass;
-        - Pass w/ conditions;
-    - Fail;
-        - Fail;
-    - Игнорировать
-        - Business not located;
-        - Out of Business.
+   - Pass;
+       - Pass;
+       - Pass w/ conditions;
+   - Fail;
+       - Fail;
+   - Игнорировать
+       - Business not located;
+       - Out of Business.
 
-    Данные с другими результатами (Business not located или Out of Business) для нас бесполезны, и в любом случае их доля в общей выборке результатов крайне невелика.
+     Данные с другими результатами (Business not located или Out of Business) для нас бесполезны, и в любом случае их доля в общей выборке результатов крайне невелика.
 
 4. Выполните следующий код, чтобы преобразовать существующий кадр данных (`df`) в новый кадр данных, где каждая проверка будет представлена в виде пары "метка — нарушение". В нашем случае метка `0.0` обозначает неудачу, `1.0` — успех, а `-1.0` — все остальные результаты. 
 
@@ -272,7 +261,7 @@ model = pipeline.fit(labeledData)
 1. Выполните приведенный ниже фрагмент кода, чтобы создать кадр данных **predictionsDf** с прогнозами нашей модели. Фрагмент кода также создает временную таблицу **Predictions** на основе кадра данных.
 
     ```PySpark
-    testData = sc.textFile('wasb:///HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections2.csv')\
+    testData = sc.textFile('wasbs:///HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections2.csv')\
                 .map(csvParse) \
                 .map(lambda l: (int(l[0]), l[1], l[12], l[13]))
     testDf = spark.createDataFrame(testData, schema).where("results = 'Fail' OR results = 'Pass' OR results = 'Pass w/ Conditions'")
@@ -284,10 +273,6 @@ model = pipeline.fit(labeledData)
     Вы должны увидеть подобные выходные данные:
 
     ```
-    # -----------------
-    # THIS IS AN OUTPUT
-    # -----------------
-
     ['id',
         'name',
         'results',
@@ -321,10 +306,6 @@ model = pipeline.fit(labeledData)
     Данные результата выглядят следующим образом:
 
     ```
-    # -----------------
-    # THIS IS AN OUTPUT
-    # -----------------
-
     There were 9315 inspections and there were 8087 successful predictions
     This is a 86.8169618894% success rate
     ```
@@ -377,7 +358,7 @@ model = pipeline.fit(labeledData)
     На этой диаграмме «положительный» результат представляет собой непройденную проверку, а отрицательный — пройденную.
 
 ## <a name="shut-down-the-notebook"></a>Завершение работы записной книжки
-Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в записной книжке в меню **Файл** выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
+Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
 
 ## <a name="seealso"></a>Дополнительные материалы
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)

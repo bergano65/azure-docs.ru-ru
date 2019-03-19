@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 7c47e6df1e8b92d122dcc6bed55506f2fccf9e89
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 969821c8b83b8ef554c67f99e3a16e827b53e647
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877513"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57845126"
 ---
 # <a name="use-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Использование библиотеки .NET массового исполнителя для выполнения массовых операций в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "55877513"
 
 Сейчас библиотека массового исполнителя поддерживается только учетными записями API SQL Azure Cosmos DB и API Gremlin. В этой статье описывается, как использовать библиотеку массового исполнителя .NET с учетными записями API SQL. Дополнительные сведения об использовании библиотеки массового исполнителя .NET с помощью API Gremlin см. в разделе [Использование библиотеки BulkExecutor .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB](bulk-executor-graph-dotnet.md). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность разработки для Azure.
 
@@ -194,7 +194,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
       </listeners>
     </trace>
   </system.diagnostics>
-```
+  ```
 
-## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о пакете Nuget и заметки о выпуске библиотеки .NET массового исполнителя см. в статье [со сведениями о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-dot-net.md). 
+## <a name="next-steps"></a>Дальнейшие действия
+* Чтобы узнать о сведения о пакете Nuget и комментариях библиотеки .NET для массового исполнителя, см. в разделе[массового сведения о пакете SDK исполнителя](sql-api-sdk-bulk-executor-dot-net.md). 

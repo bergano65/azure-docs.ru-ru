@@ -1,6 +1,6 @@
 ---
 title: Установка SAP HANA на сервере SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт
-description: Как установить SAP HANA на сервер SAP HANA в Azure (крупные экземпляры).
+description: Инструкции по установке SAP HANA в SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
 author: hermanndms
@@ -11,15 +11,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/10/2018
+ms.date: 03/05/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fc63eb792e58d960ae67138b5e58e6b705945030
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+ms.openlocfilehash: 5b6c636366d494901a34078100290084298de686
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446398"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57999837"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56446398"
 Вы ответственны за установку SAP HANA. Установив подключение между виртуальными сетями Azure и единицами крупных экземпляров HANA, можно приступить к установке нового SAP HANA на сервере Azure (крупные экземпляры). 
 
 > [!Note]
-> Согласно политике SAP сертифицированный установщик SAP HANA (сдавший экзамен на установку SAP HANA в рамках сертификации технологического партнера SAP) или системный интегратор с сертификатом SAP должен выполнять установку SAP HANA.
+> Согласно политике SAP установку SAP HANA должен выполняться лицо, кто прошел Certified SAP технологии экзамен, сертификационный экзамен по установке SAP HANA, либо сертифицированными SAP системного интегратора (SI).
 
 Если вы планируете установить HANA 2.0, см. документ [SAP support note #2235581 — SAP HANA: Supported operating systems](https://launchpad.support.sap.com/#/notes/2235581/E) (Примечание по поддержке SAP №2235581. SAP HANA: поддерживаемые операционные системы), чтобы убедиться, что используемая ОС поддерживается выпуском SAP HANA, который вы устанавливаете. В поддерживаемой ОС для HANA 2.0 больше ограничений, чем в ОС для HANA 1.0. 
 
@@ -50,7 +50,7 @@ ms.locfileid: "56446398"
 
 К этому экземпляру SMT может подключаться единица крупного экземпляра HANA. (Дополнительные сведения см. в статье [Настройка сервера SMT для SUSE Linux](hana-setup-smt.md)). Операционную систему Red Hat также можно зарегистрировать в диспетчере подписок Red Hat, к которому нужно подключиться. Для получения дополнительных сведений см. комментарии в [Что такое SAP HANA в Azure (большие экземпляры)?](https://docs.microsoft.com/azure/virtual-machines/linux/sap-hana-overview-architecture?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
 
-Этот шаг также необходим для установки исправлений операционной системы, которая отвечает за клиента. Для SUSE на странице [установки SMT](https://www.suse.com/documentation/sles-12/book_smt/data/smt_installation.html) найдите документацию по установке и настройке SMT.
+Этот шаг является обязательным для установки исправлений операционной системы, который отвечает за клиента. Для SUSE на странице [установки SMT](https://www.suse.com/documentation/sles-12/book_smt/data/smt_installation.html) найдите документацию по установке и настройке SMT.
 
 **Второй шаг** заключается в проверке наличия новых обновлений и исправлений для определенного выпуска или версии операционной системы. Проверьте, что используется последняя версия крупного экземпляра HANA. Возможны варианты, которые не включают последние исправления. После получения единицы крупного экземпляра HANA проверьте, нужно ли применить исправления.
 
@@ -80,6 +80,7 @@ ms.locfileid: "56446398"
 
 **Пятый шаг** заключается в проверке etc/hosts. После передачи в колонках для разных целей назначены отдельные IP-адреса. Проверьте файл/etc/hosts. При добавлении единиц к существующему клиенту в файле etc/hosts новых систем могут быть неправильно настроены IP-адреса предыдущих систем. Вы как пользователь обязаны проверить правильность конфигурации. Это позволит новым экземплярам взаимодействовать с ранее развернутыми единицами в клиенте и разрешать их имена. 
 
+
 ## <a name="operating-system"></a>Операционная система
 
 > [!IMPORTANT] 
@@ -95,17 +96,17 @@ ms.locfileid: "56446398"
 
 - [SAP HANA на сайте SUSE Linux](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+SUSE).
 - [Best practices for SAP: Enqueue replication — SAP NetWeaver High Availability on SUSE Linux Enterprise 12](https://www.suse.com/docrepcontent/container.jsp?containerId=9113) (Рекомендации по SAP. Постановка репликации в очередь. Высокая доступность SAP NetWeaver в SUSE Linux Enterprise 12)
-- [ClamSAP — SLES Virus Protection for SAP](http://scn.sap.com/community/linux/blog/2014/04/14/clamsap--suse-linux-enterprise-server-integrates-virus-protection-for-sap) (ClamSAP — защита от вирусов на сервере SLES для SAP) (включая SLES 12 для приложений SAP).
+- [ClamSAP — SLES Virus Protection for SAP](https://scn.sap.com/community/linux/blog/2014/04/14/clamsap--suse-linux-enterprise-server-integrates-virus-protection-for-sap) (ClamSAP — защита от вирусов на сервере SLES для SAP) (включая SLES 12 для приложений SAP).
 
 Примечания по поддержке SAP, применимые к реализации SAP HANA на SLES 12, см. ниже.
 
-- [SAP Support Note #1944799 — SAP HANA Guidelines for SLES Operating System Installation](http://go.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html) (Примечание по поддержке SAP №1944799. Рекомендации по установке SAP HANA в ОС SLES).
+- [SAP Support Note #1944799 — SAP HANA Guidelines for SLES Operating System Installation](https://go.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html) (Примечание по поддержке SAP №1944799. Рекомендации по установке SAP HANA в ОС SLES).
 - [SAP Support Note #2205917 — SAP HANA DB Recommended OS Settings for SLES 12 for SAP Applications](https://launchpad.support.sap.com/#/notes/2205917/E) (Примечание по поддержке SAP №2205917. База данных SAP HANA: рекомендуемые параметры ОС для SLES 12 для приложений SAP).
 - [SAP Support Note #1984787 — SUSE Linux Enterprise Server 12: Installation Notes](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №1984787. Заметки об установке SUSE Linux Enterprise Server 12).
 - [SAP support note #171356 — SAP software on Linux:  General information](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №171356. Общие сведения о ПО SAP на платформе Linux)
 - [SAP Support Note #1391070 — Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
 
-[Red Hat Enterprise Linux для SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) — еще одно решение для запуска SAP HANA на крупных экземплярах HANA. Доступны выпуски RHEL 6.7 и 7.2. Виртуальные машины, принадлежащие Azure, поддерживают RHEL начиная с версии 7.2, тогда как крупные экземпляры HANA также поддерживают RHEL версии 6.7. Мы рекомендуем использовать выпуск RHEL 7.x.
+[Red Hat Enterprise Linux для SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) — еще одно решение для запуска SAP HANA на крупных экземплярах HANA. Доступны выпуски RHEL 6.7 и 7.2. Обратите внимание, в отличие от виртуальных машин Azure, где поддерживаются только RHEL 7.2 и более новыми версиями, крупные экземпляры HANA также поддерживают RHEL версии 6.7. Мы рекомендуем использовать выпуск RHEL 7.x.
 
 Дополнительные сведения и полезные ссылки по SAP в Red Hat приведены ниже.
 - [Сайт SAP HANA в Red Hat Linux](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+Red+Hat).
@@ -142,7 +143,7 @@ ms.locfileid: "56446398"
 
 ## <a name="storage"></a>Хранилище
 
-Структура хранения для SAP HANA в Azure (крупные экземпляры) настраивается с помощью классической модели развертывания с применением рекомендаций SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
+Структура хранения для SAP HANA в Azure (крупные экземпляры) настраивается с помощью классической модели развертывания с применением рекомендаций SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
 
 Приблизительные размеры разных томов с различными SKU крупных экземпляров HANA задокументированы в статье [Что такое SAP HANA в Azure (большие экземпляры)?](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
@@ -200,6 +201,17 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 Начиная с версии SAP HANA 1.0 и до SPS 12, эти параметры можно указать во время установки базы данных SAP HANA, как описано в [примечании к SAP 2267798](https://launchpad.support.sap.com/#/notes/2267798).
 
 С помощью средства hdbparam можно настроить эти параметры после установки базы данных SAP HANA. 
+
+Хранилище, используемое в крупных экземплярах HANA имеет ограничение размера файла. [Ограничение размера — 16 ТБ](https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-vsmg%2FGUID-AA1419CF-50AB-41FF-A73C-C401741C847C.html) каждого файла. В отличие от ограничений на размер файла в файловых системах EXT3, HANA не поддерживает неявно из хранилища ограничение, принудительно хранилища крупных экземпляров HANA. В результате HANA не будет автоматически создавать новый файл данных при достижении максимального размера файла 16 ТБ. Как HANA пытается роста файла 16 ТБ, HANA сообщит, что ошибки и сервер индекса будет завершаться со сбоем в конце.
+
+> [!IMPORTANT]
+> Во избежание HANA при попытке увеличения файлов данных за пределы максимального размера файла 16 ТБ хранилища крупных экземпляров HANA, необходимо задать следующие параметры в файле конфигурации global.ini SAP HANA
+> 
+> - datavolume_striping=true
+> - datavolume_striping_size_gb = 15000
+> - См. также SAP Примечание [#2400005](https://launchpad.support.sap.com/#/notes/2400005)
+> - Помните о примечании SAP [#2631285](https://launchpad.support.sap.com/#/notes/2631285)
+
 
 Это средство не поддерживается в системе SAP HANA 2.0. В таком случае эти параметры необходимо задать, используя команды SQL. Дополнительные сведения см. в [SAP note #2399079: Elimination of hdbparam in HANA 2](https://launchpad.support.sap.com/#/notes/2399079) (Примечание к SAP №2399079. Устранение hdbparam в HANA 2).
 

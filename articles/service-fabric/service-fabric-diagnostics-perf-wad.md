@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: a6941e28bdfd922a68ff484c57031326a9aa5c0b
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 0ab14d41c149ec6e0ce76d24afb0e88a6af53935
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452638"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57884563"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для системы диагностики Microsoft Azure
 
@@ -192,15 +192,15 @@ ms.locfileid: "54452638"
  >[!NOTE]
  >Несмотря на то что для указания групп счетчиков производительности с похожими именами можно использовать `*`, для отправки счетчиков через приемник (в Application Insights) требуется объявить их по отдельности. 
 
-4. Когда вы добавите соответствующие счетчики производительности, данные которых необходимо собрать, потребуется обновить ресурс кластера, чтобы эти изменения отразились в работающем кластере. Сохраните измененный файл `template.json` и откройте PowerShell. Обновление кластера можно выполнить с помощью `New-AzureRmResourceGroupDeployment`. Для вызова необходимо указать имя группы ресурсов, обновленный файл шаблона и файл параметров. Кроме того, вызов отправляет запрос в Resource Manager на внесение соответствующих изменений в обновленные ресурсы. После входа в учетную запись и правильную подписку используйте следующую команду для выполнения обновления:
+1. Когда вы добавите соответствующие счетчики производительности, данные которых необходимо собрать, потребуется обновить ресурс кластера, чтобы эти изменения отразились в работающем кластере. Сохраните измененный файл `template.json` и откройте PowerShell. Обновление кластера можно выполнить с помощью `New-AzureRmResourceGroupDeployment`. Для вызова необходимо указать имя группы ресурсов, обновленный файл шаблона и файл параметров. Кроме того, вызов отправляет запрос в Resource Manager на внесение соответствующих изменений в обновленные ресурсы. После входа в учетную запись и правильную подписку используйте следующую команду для выполнения обновления:
 
     ```sh
     New-AzureRmResourceGroupDeployment -ResourceGroupName <ResourceGroup> -TemplateFile <PathToTemplateFile> -TemplateParameterFile <PathToParametersFile> -Verbose
     ```
 
-5. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте данные счетчиков производительности в Application Insights, [добавив приемник AI в шаблон Resource Manager](service-fabric-diagnostics-event-analysis-appinsights.md#add-the-application-insights-sink-to-the-resource-manager-template).
+1. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте данные счетчиков производительности в Application Insights, [добавив приемник AI в шаблон Resource Manager](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Собирайте данные дополнительных счетчиков производительности для кластера. Список счетчиков, данные которых следует собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
 * [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
-* Перейдите на страницу [построителя WadCfg](http://azure.github.io/azure-diagnostics-tools/config-builder/), создайте шаблон с нуля и проверьте правильность синтаксиса.
+* Перейдите на страницу [построителя WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/), создайте шаблон с нуля и проверьте правильность синтаксиса.

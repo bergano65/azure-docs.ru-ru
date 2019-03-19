@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: raynew
-ms.openlocfilehash: 4e787ab134caee1a7f9a26e46f698f2fe9807d83
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: edb169d131aafd045fdf0f670e1dda87677d57ee
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813692"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57834683"
 ---
 # <a name="fail-over-and-fail-back-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения физических серверов, реплицированных в Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "55813692"
 Сервер обработки получает данные из виртуальных машин в Azure и отправляет их на локальный сайт. Между сервером обработки и защищенным компьютером должна быть настроена сеть с низкой задержкой.
 
 - При наличии подключения к Azure ExpressRoute для целей тестирования можно использовать локальный сервер обработки, который автоматически устанавливается на сервере конфигурации.
-- Если имеется VPN-подключение или восстановление размещения выполняется в рабочей среде, необходимо настроить виртуальную машину Azure как сервер обработки на основе Azure.
+- Если у вас есть VPN-подключение или если восстановление размещения выполняется в рабочей среде, необходимо настроить виртуальную машину Azure как сервер обработки на основе Azure.
 - Чтобы настроить сервер обработки в Azure, следуйте инструкциям в [этой статье](vmware-azure-set-up-process-server-azure.md).
 
 ## <a name="configure-the-master-target-server"></a>Настройка главного целевого сервера

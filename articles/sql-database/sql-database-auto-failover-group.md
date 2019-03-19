@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 02/08/2019
-ms.openlocfilehash: 0cffb4fdff4bddc33c6938e27425035c929808b7
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 7bfed1144ebfc69ed51b7bbc1adf78538ed28425
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301933"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57861083"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -129,6 +129,18 @@ ms.locfileid: "56301933"
 
   > [!IMPORTANT]
   > Управляемый экземпляр не поддерживает несколько групп отработки отказа.
+  
+## <a name="permissions"></a>Разрешения
+Разрешения для группы отработки отказа осуществляется через [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). [Участник SQL Server](../role-based-access-control/built-in-roles.md#sql-server-contributor) роль имеет все разрешения, необходимые для управления группами отработки отказа. 
+
+### <a name="create-failover-group"></a>Создание группы отработки отказа
+Чтобы создать группу отработки отказа, необходимо разрешение на запись RBAC для основного и дополнительного серверов и для всех баз данных в группе отработки отказа. Для управляемого экземпляра необходимо разрешение на запись RBAC обоих первичных и вторичных управляемому экземпляру, но разрешения для отдельных баз данных не учитываются, так как управляемого экземпляра базы данных невозможно добавить или удалить из группы отработки отказа. 
+
+### <a name="update-a-failover-group"></a>Обновление группы отработки отказа
+Чтобы обновить группу отработки отказа, вам потребуется RBAC доступ на запись в группу отработки отказа и все базы данных на текущего основного сервера или управляемого экземпляра.  
+
+### <a name="failover-a-failover-group"></a>Отработка отказа группы отработки отказа
+Чтобы выполнить отработку отказа группы отработки отказа, необходимо RBAC доступ на запись в группу отработки отказа на новом сервере-источнике или управляемого экземпляра. 
 
 ## <a name="best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools"></a>Рекомендации по использованию групп отработки отказа с отдельными базами данных и эластичными пулами
 
@@ -203,7 +215,7 @@ ms.locfileid: "56301933"
   > [!NOTE]
   > На некоторых уровнях База данных SQL Azure поддерживает использование [реплик только для чтения](sql-database-read-scale-out.md) для балансировки рабочих нагрузок запросов только для чтения, используя возможности одной реплики и параметра `ApplicationIntent=ReadOnly` в строке соединения. После настройки георепликации получателя вы можете использовать эту возможность для соединения с репликой только для чтения либо в основном расположении, либо в геореплицированном расположении.
   > - Для подключения к реплике только для чтения в основном расположении используйте `failover-group-name.zone_id.database.windows.net`.
-  > - Для подключения к реплике только для чтения в основном расположении используйте `failover-group-name.secondary.zone_id.database.windows.net`.
+  > - Чтобы подключиться к реплике только для чтения в дополнительном расположении, используйте `failover-group-name.secondary.zone_id.database.windows.net`.
 
 - **Будьте готовы к снижению производительности**
 
@@ -270,7 +282,9 @@ ms.locfileid: "56301933"
 
 ## <a name="upgrading-or-downgrading-a-primary-database"></a>Повышение или понижение уровня производительности базы данных-источника
 
-Вы можете повышать или понижать объем вычислительных ресурсов базы данных-источника (в рамках одного уровня служб, а не между уровнем общего назначения и критически важным для бизнеса) без отключения каких-либо баз данных-получателей. При повышении рекомендуется сначала повысить уровень производительности базы данных-получателя, а затем — уровень базы данных-источника. При понижении следует действовать в обратном порядке: сначала нужно понизить уровень производительности базы данных-источника, а после этого — базы данных-получателя. Когда вы повышаете или понижаете базу данных до следующего уровня службы, особенно важно выполнять рекомендацию выше.
+Вы можете повышать или понижать объем вычислительных ресурсов базы данных-источника (в рамках одного уровня служб, а не между уровнем общего назначения и критически важным для бизнеса) без отключения каких-либо баз данных-получателей. При обновлении, мы рекомендуем сначала выполнить обновление всех баз данных-получателей и затем обновить основной. При понижении следует действовать в обратном порядке: сначала понизить первичной и затем понизить все базы данных-получатели. Когда вы повышаете или понижаете базу данных до следующего уровня службы, особенно важно выполнять рекомендацию выше.
+
+Эта последовательность рекомендуется специально для того, чтобы избежать проблемы, где перегружается получатель в SKU более низкого УРОВНЯ и должны быть повторно заполнена процессе повышение или понижение уровня. Вы также избежать проблемы, сделав основной только для чтения, за счет влияния на всех рабочих нагрузок чтения и записи с базами. 
 
 > [!NOTE]
 > Если вы создали базу данных-получатель как часть конфигурации группы отработки отказа, понижение ее уровня не рекомендуется. Это необходимо, чтобы обеспечить достаточную емкость уровня данных для обработки регулярных рабочих нагрузок после активации отработки отказа.
@@ -294,12 +308,12 @@ ms.locfileid: "56301933"
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
-| [New-AzureRmSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabasefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
-| [Remove-AzureRmSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/remove-azurermsqldatabasefailovergroup) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
-| [Get-AzureRmSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/get-azurermsqldatabasefailovergroup) | Возвращает конфигурацию группы отработки отказа. |
-| [Set-AzureRmSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabasefailovergroup) |Изменяет конфигурацию группы отработки отказа. |
-| [Switch-AzureRMSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/switch-azurermsqldatabasefailovergroup) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
-| [Add-AzureRmSqlDatabaseToFailoverGroup](https://docs.microsoft.com/powershell/module/azurerm.sql/add-azurermsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа базы данных SQL Azure.|
+| [New-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| [Remove-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
+| [Get-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает конфигурацию группы отработки отказа. |
+| [Set-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Изменяет конфигурацию группы отработки отказа. |
+| [Switch-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
+| [Add-AzSqlDatabaseToFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа базы данных SQL Azure.|
 |  | |
 
 > [!IMPORTANT]
@@ -308,32 +322,32 @@ ms.locfileid: "56301933"
 
 ### <a name="powershell-managing-failover-groups-with-managed-instances-preview"></a>PowerShell: Управление группами отработки отказа с помощью Управляемого экземпляра (предварительная версия)
 
-#### <a name="install-the-newest-pre-release-version-of-powershell"></a>Установите последнюю предварительную версию PowerShell
+#### <a name="install-the-newest-pre-release-version-of-powershell"></a>Установить последнюю предварительную версию PowerShell
 
 1. Обновите модуль PowerShellGet до версии 1.6.5 (или до новой предварительной версии). См. [Сайт ознакомительной версии PowerShell](https://www.powershellgallery.com/packages/AzureRM.Sql/4.11.6-preview).
 
-   ```Powershell
+   ```PowerShell
       install-module PowerShellGet -MinimumVersion 1.6.5 -force
    ```
 
 2. В новом окне PowerShell выполните следующие команды.
 
-   ```Powershell
+   ```PowerShell
       import-module PowerShellGet
       get-module PowerShellGet #verify version is 1.6.5 (or newer)
       install-module azurerm.sql -RequiredVersion 4.5.0-preview -AllowPrerelease –Force
       import-module azurerm.sql
    ```
 
-#### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Командлеты Powershell для создания группы отработки отказа экземпляров
+#### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Командлеты PowerShell для создания экземпляра группы отработки отказа
 
 | API | ОПИСАНИЕ |
 | --- | --- |
-| New-AzureRmSqlDatabaseInstanceFailoverGroup |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
-| Set-AzureRmSqlDatabaseInstanceFailoverGroup |Изменяет конфигурацию группы отработки отказа.|
-| Get-AzureRmSqlDatabaseInstanceFailoverGroup |Возвращает конфигурацию группы отработки отказа.|
-| Switch-AzureRmSqlDatabaseInstanceFailoverGroup |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
-| Remove-AzureRmSqlDatabaseInstanceFailoverGroup | Удаляет группу отработки отказа.|
+| New-AzSqlDatabaseInstanceFailoverGroup |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| Set-AzSqlDatabaseInstanceFailoverGroup |Изменяет конфигурацию группы отработки отказа.|
+| Get-AzSqlDatabaseInstanceFailoverGroup |Возвращает конфигурацию группы отработки отказа.|
+| Switch-AzSqlDatabaseInstanceFailoverGroup |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
+| Remove-AzSqlDatabaseInstanceFailoverGroup | Удаляет группу отработки отказа.|
 
 ### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с отдельными базами данных или с базами данных в составе пула
 
@@ -359,7 +373,7 @@ ms.locfileid: "56301933"
 | [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/get) | Получает группу отработки отказа. |
 | [Перечисление групп отработки отказа – Перечисление по расположению](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/listbylocation) | Перечисляет группы отработки отказа в расположении. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с примерами скриптов в следующих статьях:
   - [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)

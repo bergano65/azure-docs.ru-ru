@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/06/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e56dc54c2c296ee17b04070ac8ee68d2180b7046
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7b458632ddb6e23ab1ddf642752aa0cbfc11f1ce
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183451"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57839074"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство. Интеграция Azure Active Directory с Picturepark
 
@@ -34,7 +34,7 @@ ms.locfileid: "56183451"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Picturepark, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "56183451"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     
     |  |
     |--|
@@ -155,11 +155,11 @@ ms.locfileid: "56183451"
    
     a. Щелкните **Добавить**.
   
-    б) Введите имя конфигурации.
+    2. Введите имя конфигурации.
    
     c. Выберите **По умолчанию**.
    
-    4.3. В текстовое поле **Issuer URI** (URI издателя) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    d. В текстовое поле **Issuer URI** (URI издателя) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
     д. В текстовое поле **Trusted Issuer Thumb Print** (Отпечаток доверенного издателя) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**. 
 
@@ -198,11 +198,11 @@ ms.locfileid: "56183451"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-picturepark-test-user"></a>Создание тестового пользователя Picturepark
 
@@ -224,13 +224,13 @@ ms.locfileid: "56183451"
    
     ![Создание пользователя](./media/picturepark-tutorial/ic795069.png "Создание пользователя")
    
-    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon@contoso.com**.  
+    a. В **адрес электронной почты** введите **адрес электронной почты** пользователя **BrittaSimon\@contoso.com**.  
    
-    б) В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
+    2. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
    
     c. В текстовое поле **First Name** (Имя) введите **имя пользователя**, **Britta**. 
    
-    4.3. В текстовое поле **Last Name** (Фамилия) введите **фамилию** пользователя, **Simon**.
+    d. В текстовое поле **Last Name** (Фамилия) введите **фамилию** пользователя, **Simon**.
    
     д. В текстовое поле **Company** (Компания) введите **название компании** пользователя. 
    

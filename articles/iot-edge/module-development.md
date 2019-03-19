@@ -4,17 +4,17 @@ description: Разработка пользовательских модуле�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 10/05/2017
+ms.date: 02/25/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 3dd5005312e1c59fa53a0d917951c89033374192
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.openlocfilehash: ea2d1dbcf991ce858f07905bc1bb41809f9bcdd8
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200638"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56882745"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -63,7 +63,11 @@ ms.locfileid: "54200638"
 Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-После разработки модуля узнайте, как [развертывать и отслеживать модули IoT Edge в нужном масштабе](how-to-deploy-monitor.md).
+[Подготовьте разработки и тестовой среды для IoT Edge](development-environment.md)
+
+[Используйте Visual Studio 2017 для разработки C# модули Edge Интернета вещей](how-to-visual-studio-develop-csharp-module.md)
+
+[Использование Visual Studio Code для разработки модулей IoT Edge](how-to-vs-code-develop-module.md)
 

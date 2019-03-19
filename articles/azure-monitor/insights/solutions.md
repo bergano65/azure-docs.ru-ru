@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: bwren
-ms.openlocfilehash: ff7d886d3f219d007f159167cacfed1b8ee13863
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: b66d9cf15aaeaca975b60f24601b8ad7f555f458
+ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001023"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56887562"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 Решения мониторинга используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке.
@@ -65,7 +65,7 @@ ms.locfileid: "56001023"
 ## <a name="install-a-monitoring-solution"></a>Установка решения мониторинга
 В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения мониторинга, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
 
-1. В [списке решений в вашей подписке](#list-installed-management-solutions) щелкните **Добавить**. 
+1. В [списке решений в вашей подписке](#list-installed-monitoring-solutions) щелкните **Добавить**. 
 1. Справа от элемента **Решения для управления** щелкните **More** (Дополнительные). 
 1. Найдите нужное решение мониторинга и прочитайте его описание.
 1. Нажмите кнопку **Создать**, чтобы запустить процесс установки.
@@ -109,7 +109,7 @@ ms.locfileid: "56001023"
 Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 

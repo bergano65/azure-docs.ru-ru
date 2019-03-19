@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 08/04/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba4f1d41497af8f57a343eacc92c5da7d2488d07
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: e7264792a123a8f8ce6c4a08a6c502de578d374c
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163705"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891966"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rally-software"></a>Руководство по Интеграция Azure Active Directory с Rally Software
+# <a name="tutorial-azure-active-directory-integration-with-rally-software"></a>Руководство. Интеграция Azure Active Directory с Rally Software
 
 В этом учебнике описано, как интегрировать Rally Software с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56163705"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Rally Software, вам потребуется следующее:
 
@@ -146,7 +146,7 @@ ms.locfileid: "56163705"
    
     a. Из раскрывающегося списка "Аутентификация" выберите пункт **Rally or SSO authentication** (Аутентификация Rally или путем единого входа).
 
-    б) В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure. 
+    2. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure. 
 
     c. В текстовое поле **SSO Logout** (Выход из службы единого входа) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
@@ -184,7 +184,7 @@ ms.locfileid: "56163705"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-rally-software-test-user"></a>Создание тестового пользователя Rally Software
 
@@ -206,11 +206,11 @@ ms.locfileid: "56163705"
 
     a. В текстовое поле **Имя пользователя** введите имя пользователя, например **Brittsimon**.
    
-    б) В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    2. В **адрес электронной почты** текстовом поле введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    4.3. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    d. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     д. Щелкните **Save & Close** (Сохранить и закрыть).
 

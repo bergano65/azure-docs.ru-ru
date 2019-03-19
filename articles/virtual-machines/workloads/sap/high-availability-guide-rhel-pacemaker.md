@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: 3c4f1be97308062adc28a0b49ee36c3492906d63
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 791c63b7b7fed55f95905ba7131d6a1d4bb414ff
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990222"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010496"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -183,7 +183,7 @@ ms.locfileid: "55990222"
    Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".
 1. Нажмите "Добавить"
-1. Введите имя, выберите тип приложения "Веб-приложение или API", введите URL-адрес входа (например, http://localhost)) и нажмите кнопку "Создать".
+1. Введите имя, выберите тип приложения «Веб-приложение или API», введите URL-адрес входа (например `http://localhost`) и нажмите кнопку Создать
 1. URL-адрес входа не используется и может быть любым допустимым URL-адресом.
 1. Выберите новое приложение и щелкните "Ключи" на вкладке "Параметры".
 1. Введите описание нового ключа, выберите "Срок действия не ограничен" и нажмите кнопку "Сохранить".
@@ -251,7 +251,7 @@ sudo pcs property set stonith-timeout=900
 <pre><code>sudo pcs property set stonith-enabled=true
 </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 77eaa6a642e02206eac319b76666bed8ae1fd165
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 72e93b99783441bda97c52ff295a89b0fcf4e629
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822431"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57995894"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
 > [!NOTE]
@@ -310,11 +310,11 @@ ms.locfileid: "55822431"
      {
          "name": "ADFTutorialPipelineOnPrem",
          "properties": {
-         "description": "This pipeline has one Copy activity that copies data from an on-prem SQL to Azure blob",
+         "description": "This pipeline has one Copy activity that copies data from an on premises SQL to Azure blob",
          "activities": [
            {
              "name": "CopyFromSQLtoBlob",
-             "description": "Copy data from on-prem SQL server to blob",
+             "description": "Copy data from on premises SQL server to blob",
              "type": "Copy",
              "inputs": [
                {
@@ -359,10 +359,10 @@ ms.locfileid: "55822431"
 
    * В разделе действий есть только действие, для параметра **type** которого задано значение **Copy**.
    * Для параметра действия **input** установлено значение **EmpOnPremSQLTable**, а для **output** — **OutputBlobTable**.
-   * В разделе **typeProperties** в качестве **типа источника** указано значение **SqlSink**, а в качестве **типа приемника** — **BlobSource**.
+   * В **typeProperties** разделе **SqlSource** указывается как **типа источника** и **BlobSink** указывается как **типа приемника**.
    * Для свойства **sqlReaderQuery** типа **SqlSource** задан тип SQL-запроса `select * from emp`.
 
-   Даты начала и окончания должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
+   Даты начала и окончания должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
 
    Если не указать значение свойства **end**, оно вычисляется по формуле "**время начала + 48 часов**". Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9/9/9999** в качестве значения свойства **end**.
 
@@ -407,10 +407,10 @@ ms.locfileid: "55822431"
 6. Закройте все страницы, щелкая значок **X**, пока
 7. не вернетесь к домашней странице **ADFTutorialOnPremDF**.
 8. (Необязательно.) Щелкните **Конвейеры**, а затем — **ADFTutorialOnPremDF** и просмотрите параметры входных таблиц (**Использовано**) или выходных наборов данных (**Выполнено**).
-9. Используйте инструменты, такие как [обозреватель хранилищ Microsoft](http://storageexplorer.com/), чтобы проверить, создается ли файл или большой двоичный объект каждый час.
+9. Используйте инструменты, такие как [обозреватель хранилищ Microsoft](https://storageexplorer.com/), чтобы проверить, создается ли файл или большой двоичный объект каждый час.
 
    ![обозреватель хранилищ Azure](./media/data-factory-move-data-between-onprem-and-cloud/OnPremAzureStorageExplorer.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Все дополнительные сведения о шлюзе управления данными см. в статье [Шлюз управления данными](data-factory-data-management-gateway.md).
 * Чтобы узнать, как перемещать данные из исходного хранилища данных в приемник данных с помощью действия копирования, ознакомьтесь со статьей [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) .

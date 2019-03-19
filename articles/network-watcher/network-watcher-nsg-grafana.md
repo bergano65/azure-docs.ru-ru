@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: mareat
-ms.openlocfilehash: 9e408b45f47cb86191628916124611735f374d9e
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
-ms.translationtype: HT
+ms.openlocfilehash: 73173c144f979d4a10b90a16aec783fe51a3f90e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51819040"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58000401"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
 
@@ -182,7 +182,7 @@ sudo dpkg -i grafana_4.5.1_amd64.deb
 sudo service grafana-server start
 ```
 
-Дополнительные сведения по установке см. на странице [Grafana Labs](http://docs.grafana.org/installation/debian/).
+Дополнительные сведения по установке см. на странице [Grafana Labs](https://docs.grafana.org/installation/debian/).
 
 #### <a name="add-the-elasticsearch-server-as-a-data-source"></a>Добавление сервера ElasticSearch в качестве источника данных
 
@@ -204,7 +204,7 @@ sudo service grafana-server start
 
 Интеграция наблюдателя за сетями с ElasticSearch и Grafana обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и другими данными, а также возможность их визуализации. Grafana располагает рядом других мощных графических возможностей, которые можно использовать для дальнейшего управления журналами потоков, а также анализа сетевого трафика. Теперь, когда вы настроили экземпляр Grafana и подключили его к Azure, можно продолжить изучение других функций, предлагаемых Grafana.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об использовании [наблюдателя за сетями](network-watcher-monitoring-overview.md).
 

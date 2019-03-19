@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: f84341d6d8ac3b5c7febaa4f659da84efcebb780
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: e8876306e4ffbd0fa9a8aafc6d5d757fd3c9c614
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473352"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57847371"
 ---
 # <a name="machine-learning-and-data-science-tools"></a>Средства машинного обучения и обработки и анализа данных
 Виртуальные машины для обработки и анализа данных Azure содержат большой набор средств и библиотек для машинного обучения, доступных на распространенных языках, таких как Python, R, Julia. 
@@ -71,7 +71,7 @@ ms.locfileid: "55473352"
 | Поддерживаемые выпуски     | Windows, Linux     |
 | Распространенные способы применения      | Общий инструмент машинного обучения     |
 | Запуск и использование      | В Windows выполните поиск Weka в меню "Пуск". В Linux войдите с помощью X2Go, а затем перейдите к **Applications** (Приложения) > **Development** (Разработка) > **Weka**. |
-| Ссылка на примеры      | [Примеры Weka](http://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
+| Ссылка на примеры      | [Примеры Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
 | Связанные инструменты      |LightGBM, Rattle, XGBoost   |
 
 ## <a name="rattle"></a>Rattle;

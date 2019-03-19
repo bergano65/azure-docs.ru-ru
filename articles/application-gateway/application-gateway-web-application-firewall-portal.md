@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 7a090a068984a71c917cf5c33761dd78ac1ad2c8
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: 510a243b9133fe0ef0fe33b4dccce97f9d65e301
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453262"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074970"
 ---
 # <a name="create-an-application-gateway-with-a-web-application-firewall-using-the-azure-portal"></a>Создание шлюза приложений с брандмауэром веб-приложения с помощью портала Azure
 
@@ -31,6 +31,8 @@ ms.locfileid: "56453262"
 
 ![Пример брандмауэра веб-приложений](./media/application-gateway-web-application-firewall-portal/scenario-waf.png)
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com)
@@ -43,21 +45,21 @@ ms.locfileid: "56453262"
 2. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 3. Введите следующие значения для шлюза приложений:
 
-    - *myAppGateway* — для имени шлюза приложений.
-    - *myResourceGroupAG* — новая группа ресурсов.
-    - Выберите значение *WAF* для уровня шлюза приложений.
+   - *myAppGateway* — для имени шлюза приложений.
+   - *myResourceGroupAG* — новая группа ресурсов.
+   - Выберите значение *WAF* для уровня шлюза приложений.
 
-    ![Создание шлюза приложений](./media/application-gateway-web-application-firewall-portal/application-gateway-create.png)
+     ![Создание шлюза приложений](./media/application-gateway-web-application-firewall-portal/application-gateway-create.png)
 
 4. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
 5. Щелкните **Выбрать виртуальную сеть**, выберите **Создать**, а затем введите следующие значения для виртуальной сети:
 
-    - *myVNet* — имя виртуальной сети;
-    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
-    - *myAGSubnet* — имя подсети;
-    - *10.0.0.0/24* — диапазон адресов подсети.
+   - *myVNet* — имя виртуальной сети;
+   - *10.0.0.0/16* — диапазон адресов виртуальной сети;
+   - *myAGSubnet* — имя подсети;
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
-    ![Создание виртуальной сети](./media/application-gateway-web-application-firewall-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/application-gateway-web-application-firewall-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -103,7 +105,7 @@ ms.locfileid: "56453262"
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды: 
 
     ```azurepowershell-interactive
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -ExtensionName IIS `
       -VMName myVM `
@@ -114,7 +116,7 @@ ms.locfileid: "56453262"
       -Location EastUS
     ```
 
-3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *myVM2* в качестве имени виртуальной машины и значения параметра VMName в команде Set-AzureRmVMExtension.
+3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *myVM2* для его имени и VMName в Set-AzVMExtension.
 
 ### <a name="add-backend-servers"></a>Добавление внутренних серверов
 
@@ -160,7 +162,7 @@ ms.locfileid: "56453262"
 
     ![Тестирование шлюза приложений](./media/application-gateway-web-application-firewall-portal/application-gateway-iistest.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

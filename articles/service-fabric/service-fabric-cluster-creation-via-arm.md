@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/16/2018
 ms.author: aljo
-ms.openlocfilehash: feebafdb87ec9f7b913d3c29340d378b20caa3ab
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 715b0f9c5a5a68bb1fc42ed4206ca81ad85b844f
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57450691"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -34,7 +34,7 @@ ms.locfileid: "56308814"
 
 Перед созданием рабочего кластера для запуска производственных рабочих нагрузок мы рекомендуем сначала ознакомиться с [контрольным списком готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 В этой статье для развертывания кластера используйте модули Azure CLI или Service Fabric RM для PowerShell:
 
 * [Azure PowerShell версии 4.1 и выше][azure-powershell].
@@ -286,7 +286,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
     --template-file $templateFilePath --parameter-file $parametersFilePath 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас есть защищенный кластер, работающий в Azure. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).
 
 Синтаксис и свойства JSON, используемые в шаблоне, доступны в справочнике по шаблону [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters).
@@ -295,4 +295,4 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 [azure-powershell]:https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps
 [azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
-[customize-your-cluster-template]: service-fabric-cluster-creation-via-arm.md
+[customize-your-cluster-template]: service-fabric-cluster-creation-create-template.md

@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: d15a5cbda2f0c2a363b40e94c38fed6631aa81b5
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
-ms.translationtype: HT
+ms.openlocfilehash: 80f01a926b94deebab59f8ef91bfc36a4600b5f0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "27928242"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57885056"
 ---
-# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
+# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK .NET
 
 ## <a name="overview"></a>Обзор
 
@@ -29,12 +29,12 @@ ms.locfileid: "27928242"
 
 Задание преобразования данных можно запустить двумя способами:
 
- - Использование пакета SDK для .NET
- - Использование модуля runbook службы автоматизации Azure.
+- Использование пакета SDK для .NET
+- Использование модуля runbook службы автоматизации Azure.
  
- В статье содержится подробная информация по созданию примера консольного приложения .NET для запуска задания преобразования данных и отслеживания его завершения. Дополнительные сведения о том, как запустить преобразование данных через службу автоматизации, можно узнать из статьи [Активация задания с помощью службы автоматизации Azure (закрытая предварительная версия)](storsimple-data-manager-job-using-automation.md).
+  В статье содержится подробная информация по созданию примера консольного приложения .NET для запуска задания преобразования данных и отслеживания его завершения. Дополнительные сведения о том, как запустить преобразование данных через службу автоматизации, можно узнать из статьи [Активация задания с помощью службы автоматизации Azure (закрытая предварительная версия)](storsimple-data-manager-job-using-automation.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 *   Компьютер с такими запущенными средами:
@@ -80,16 +80,16 @@ ms.locfileid: "27928242"
 
         ![Создание проекта 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-1.png)
 
-4.  Теперь добавьте все библиотеки DLL из папки [dlls](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/tree/master/Data_Manager_Job_Run/dlls) в качестве **ссылочных** в созданный проект. Чтобы добавить DLL-файлы, сделайте следующее:
+4. Теперь добавьте все библиотеки DLL из папки [dlls](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/tree/master/Data_Manager_Job_Run/dlls) в качестве **ссылочных** в созданный проект. Чтобы добавить DLL-файлы, сделайте следующее:
 
-    1. В Visual Studio выберите **Просмотр > Обозреватель решений**.
-    2. Щелкните стрелку слева от проекта приложения преобразования данных. Щелкните **Ссылки**, а затем щелкните этот элемент правой кнопкой мыши и выберите **Добавить ссылку**.
+   1. В Visual Studio выберите **Просмотр > Обозреватель решений**.
+   2. Щелкните стрелку слева от проекта приложения преобразования данных. Щелкните **Ссылки**, а затем щелкните этот элемент правой кнопкой мыши и выберите **Добавить ссылку**.
     
-        ![Добавление библиотек DLL 1](media/storsimple-data-manager-dotnet-jobs/create-new-project-4.png)
+       ![Добавление библиотек DLL 1](media/storsimple-data-manager-dotnet-jobs/create-new-project-4.png)
 
-    3. Перейдите в расположение папки с пакетами, выберите все библиотеки DLL, щелкните **Добавить**, а затем нажмите кнопку **ОК**.
+   3. Перейдите в расположение папки с пакетами, выберите все библиотеки DLL, щелкните **Добавить**, а затем нажмите кнопку **ОК**.
 
-        ![Добавление библиотек DLL 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-6.png)
+       ![Добавление библиотек DLL 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-6.png)
 
 5. Добавьте следующие операторы **using** в файл исходного кода (Program.cs) в проекте.
 
@@ -196,10 +196,10 @@ ms.locfileid: "27928242"
     Console.Read();
 
     ```
- Ниже приведен снимок экрана со всем примером кода, используемым для запуска задания с помощью .NET.
+    Ниже приведен снимок экрана со всем примером кода, используемым для запуска задания с помощью .NET.
 
- ![Полный фрагмент кода для запуска задания .NET](media/storsimple-data-manager-dotnet-jobs/start-dotnet-job-code-snippet.png)
+    ![Полный фрагмент кода для запуска задания .NET](media/storsimple-data-manager-dotnet-jobs/start-dotnet-job-code-snippet.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Преобразуйте данные с помощью пользовательского интерфейса диспетчера данных StorSimple](storsimple-data-manager-ui.md).

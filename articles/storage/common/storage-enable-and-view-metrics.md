@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 02/14/2017
 ms.author: rogarana
 ms.subservice: common
-ms.openlocfilehash: 8fc85f82e5b6290a0f7401581e57b77473a495ae
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 770a494e93a51fc018b2bfe803ac15ba543f35d4
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454017"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58011348"
 ---
 # <a name="enabling-azure-storage-metrics-and-viewing-metrics-data"></a>Включение метрик хранилища Azure и просмотр данных метрик
 [!INCLUDE [storage-selector-portal-enable-and-view-metrics](../../../includes/storage-selector-portal-enable-and-view-metrics.md)]
@@ -113,7 +113,7 @@ blobClient.SetServiceProperties(properties);
 Список доступных инструментов указан в разделе [Клиентские инструменты службы хранилища Azure](storage-explorers.md).
 
 > [!NOTE]
-> Начиная с [Microsoft Azure Storage Explorer](http://storageexplorer.com/) версии 0.8.0 можно просматривать и скачивать таблицы метрик аналитики.
+> Начиная с [Microsoft Azure Storage Explorer](https://storageexplorer.com/) версии 0.8.0 можно просматривать и скачивать таблицы метрик аналитики.
 >
 >
 
@@ -213,5 +213,5 @@ private static string MetricsString(MetricsEntity entity, OperationContext opCon
 * Если за каждый час служба использует каждый API в каждой службе, то каждый час в таблицах транзакций метрик сохраняется примерно 12 КБ данных, если сводка охватывает только уровень службы.
 * В таблице емкости больших двоичных объектов ежедневно добавляются две строки (если пользователь выбрал использование журналов). При этом размер этой таблицы ежедневно увеличивается примерно на 300 байтов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Включение ведения журнала и доступа к данным журнала хранилища](/rest/api/storageservices/Enabling-Storage-Logging-and-Accessing-Log-Data)

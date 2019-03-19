@@ -14,17 +14,17 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 519f0354f2a19e106ca1072170721b27357d173e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: dcc8b9fef75ba13b607d7fdda5bd55cc710165b9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849213"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57837020"
 ---
 <a name="private-skus-and-plans"></a>Частные номера SKU и планы
 ============
 
-Частные номера SKU являются доступными для конкретных клиентов. Когда номер SKU помечается как частный, он недоступен в любом общедоступном каталога, включая [Azure Marketplace](https://azuremarketplace.microsoft.com) и [портал Azure](http://portal.azure.com). На портале Azure его могут видеть только клиенты, имеющие доступ к нему. Кроме того, им будет предложено подтвердить, что у них есть доступ к частным предложениям.
+Частные номера SKU являются доступными для конкретных клиентов. Когда номер SKU помечается как частный, он недоступен в любом общедоступном каталога, включая [Azure Marketplace](https://azuremarketplace.microsoft.com) и [портал Azure](https://portal.azure.com). На портале Azure его могут видеть только клиенты, имеющие доступ к нему. Кроме того, им будет предложено подтвердить, что у них есть доступ к частным предложениям.
 
 >[!NOTE]
 >У частных номеров SKU должны быть новые уникальные идентификаторы SKU или плана во избежание конфликта с общедоступными SKU.

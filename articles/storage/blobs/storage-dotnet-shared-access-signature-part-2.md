@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.date: 05/15/2017
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 9c5f32bb1b4f335fab11f0fd865421f2eec5eee9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 5dcb9f16b589b8332d5fcf35c9d8b4cd914460f2
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55244918"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58012547"
 ---
 # <a name="shared-access-signatures-part-2-create-and-use-a-sas-with-blob-storage"></a>Подписанные URL-адреса. Часть 2. Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов
 
@@ -33,7 +33,7 @@ ms.locfileid: "55244918"
 **Приложение 2**. Клиентское приложение. Обращается к ресурсам контейнера и большого двоичного объекта с использованием подписанных URL-адресов, созданных с помощью первого приложения. Использует только подписанные URL-адреса для доступа к ресурсам контейнера и большого двоичного объекта. Оно *не* включает ключ доступа к учетной записи хранения.
 
 ## <a name="part-1-create-a-console-application-to-generate-shared-access-signatures"></a>Часть 1. Создание консольного приложения для создания подписанных URL-адресов
-Прежде всего убедитесь, что установлена библиотека клиента хранения Azure для .NET. Вы можете установить [пакет NuGet](http://nuget.org/packages/WindowsAzure.Storage/ "пакет NuGet"), содержащий самые новые сборки для клиентской библиотеки. Так вы будете получать все последние исправления. Клиентскую библиотеку также можно скачать в составе последней версии [пакета Azure SDK для .NET](https://azure.microsoft.com/downloads/).
+Прежде всего убедитесь, что установлена библиотека клиента хранения Azure для .NET. Вы можете установить [пакет NuGet](https://nuget.org/packages/WindowsAzure.Storage/ "пакет NuGet"), содержащий самые новые сборки для клиентской библиотеки. Так вы будете получать все последние исправления. Клиентскую библиотеку также можно скачать в составе последней версии [пакета Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
 В Visual Studio создайте новое консольное приложение Windows и назовите его **GenerateSharedAccessSignatures**. Добавьте ссылки на [Microsoft.WindowsAzure.ConfigurationManager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) и [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/), используя один из следующих методов.
 
@@ -587,7 +587,7 @@ Additional error information: The remote server returned an error: (403) Forbidd
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование подписанных URL-адресов (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 * [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](storage-manage-access-to-resources.md)

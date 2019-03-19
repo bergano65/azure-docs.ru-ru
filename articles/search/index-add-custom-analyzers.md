@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 957c8033efc386d8e8cb13cbed921c597af4f11b
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 8eb762e8a18ea5de25413681894f692628493a2f
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56302086"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57842861"
 ---
 # <a name="add-custom-analyzers-to-an-azure-search-index"></a>Добавление пользовательских анализаторов в индексы Поиска Azure
 
@@ -42,17 +42,17 @@ ms.locfileid: "56302086"
 
  Чаще всего пользовательские анализаторы используют для таких целей.  
 
--   Фонетический поиск. Добавьте фонетический фильтр, чтобы искать слова на основе их звучания, а не написания.  
+- Фонетический поиск. Добавьте фонетический фильтр, чтобы искать слова на основе их звучания, а не написания.  
 
--   Отключение лексического анализа. Используйте анализатор ключевых слов, чтобы создать поля с возможностью поиска, которые не анализируются.  
+- Отключение лексического анализа. Используйте анализатор ключевых слов, чтобы создать поля с возможностью поиска, которые не анализируются.  
 
--   Быстрый поиск по префиксам или суффиксам. Добавьте фильтр маркеров, создающий N-граммы с определенной стороны, чтобы индексировать префиксы слов для быстрого сопоставления. Объедините его с обратным фильтром маркеров, чтобы выполнить сопоставление суффиксов.  
+- Быстрый поиск по префиксам или суффиксам. Добавьте фильтр маркеров, создающий N-граммы с определенной стороны, чтобы индексировать префиксы слов для быстрого сопоставления. Объедините его с обратным фильтром маркеров, чтобы выполнить сопоставление суффиксов.  
 
--   Пользовательская разметка. Например, с помощью создателя маркеров пробелов можно разделить предложения на маркеры, используя пробел как разделитель.  
+- Пользовательская разметка. Например, с помощью создателя маркеров пробелов можно разделить предложения на маркеры, используя пробел как разделитель.  
 
--   Приведение к ASCII. Добавьте стандартный фильтр приведения к ASCII для нормализации диакритических знаков, таких как ö или ê, в условиях поиска.  
+- Приведение к ASCII. Добавьте стандартный фильтр приведения к ASCII для нормализации диакритических знаков, таких как ö или ê, в условиях поиска.  
 
- На этой странице представлен список поддерживаемых анализаторов, создателей маркеров, фильтров маркеров и фильтров знаков. Здесь также можно найти описание изменений в определении индекса с примером использования. Дополнительные сведения о базовой технологии, используемой в реализации Поиска Azure, см. на странице [сводки по пакету анализа (Lucene)](https://lucene.apache.org/core/4_10_0/core/org/apache/lucene/codecs/lucene410/package-summary.html). Примеры конфигураций анализаторов см. в статье [Анализаторы для обработки текста в службе "Поиск Azure"](search-analyzers.md#examples).
+  На этой странице представлен список поддерживаемых анализаторов, создателей маркеров, фильтров маркеров и фильтров знаков. Здесь также можно найти описание изменений в определении индекса с примером использования. Дополнительные сведения о базовой технологии, используемой в реализации Поиска Azure, см. на странице [сводки по пакету анализа (Lucene)](https://lucene.apache.org/core/4_10_0/core/org/apache/lucene/codecs/lucene410/package-summary.html). Примеры конфигураций анализаторов см. в статье [Анализаторы для обработки текста в службе "Поиск Azure"](search-analyzers.md#examples).
 
 ## <a name="validation-rules"></a>Правила проверки  
  Названия анализаторов, создателей маркеров, фильтров маркеров и фильтров знаков должны быть уникальным и не могут совпадать со стандартными эквивалентами этих объектов. Уже используемые имена см. разделе [Справочные данные по свойствам](#PropertyReference).
@@ -62,81 +62,81 @@ ms.locfileid: "56302086"
 
  Определение анализатора включает в себя название, тип, один или несколько фильтров знаков, максимум один создатель маркеров и один или несколько фильтров маркеров для обработки после создания маркера. Перед разметкой применяются фильтры знаков. Фильтры маркеров и фильтры знаков применяются слева направо.
 
- `tokenizer_name` — название создателя маркеров, `token_filter_name_1` и `token_filter_name_2` — имена фильтров маркеров, а `char_filter_name_1` и `char_filter_name_2` — имена фильтров знаков (допустимые значение см. в таблицах [Создатели маркеров](#Tokenizers), [Фильтры маркеров](#TokenFilters) и [Фильтры знаков](#CharFilters)).
+ `tokenizer_name` Имя создателя, `token_filter_name_1` и `token_filter_name_2` являются именами фильтров маркеров и `char_filter_name_1` и `char_filter_name_2` являются именами char фильтры (см. в разделе [Токенизаторов](#Tokenizers), [ Токен фильтры](#TokenFilters) и Char фильтров таблицы для допустимых значений).
 
 Определение анализатора является частью большого индекса. Дополнительные сведения см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
 
-```  
-"analyzers":(optional)[  
-   {  
-      "name":"name of analyzer",  
-      "@odata.type":"#Microsoft.Azure.Search.CustomAnalyzer",  
-      "charFilters":[  
-         "char_filter_name_1",  
-         "char_filter_name_2"  
-      ],  
-      "tokenizer":"tokenizer_name",  
-      "tokenFilters":[  
-         "token_filter_name_1",  
-         "token_filter_name_2"  
-      ]  
-   },  
-   {  
-      "name":"name of analyzer",  
-      "@odata.type":"#analyzer_type",  
-      "option1":value1,  
-      "option2":value2,  
-      ...  
-   }  
-],  
-"charFilters":(optional)[  
-   {  
-      "name":"char_filter_name",  
-      "@odata.type":"#char_filter_type",  
-      "option1":value1,  
-      "option2":value2,  
-      ...  
-   }  
-],  
-"tokenizers":(optional)[  
-   {  
-      "name":"tokenizer_name",  
-      "@odata.type":"#tokenizer_type",  
-      "option1":value1,  
-      "option2":value2,  
-      ...  
-   }  
-],  
-"tokenFilters":(optional)[  
-   {  
-      "name":"token_filter_name",  
-      "@odata.type":"#token_filter_type",  
-      "option1":value1,  
-      "option2":value2,  
-      ...  
-   }  
-]  
-```  
+```
+"analyzers":(optional)[
+   {
+      "name":"name of analyzer",
+      "@odata.type":"#Microsoft.Azure.Search.CustomAnalyzer",
+      "charFilters":[
+         "char_filter_name_1",
+         "char_filter_name_2"
+      ],
+      "tokenizer":"tokenizer_name",
+      "tokenFilters":[
+         "token_filter_name_1",
+         "token_filter_name_2"
+      ]
+   },
+   {
+      "name":"name of analyzer",
+      "@odata.type":"#analyzer_type",
+      "option1":value1,
+      "option2":value2,
+      ...
+   }
+],
+"charFilters":(optional)[
+   {
+      "name":"char_filter_name",
+      "@odata.type":"#char_filter_type",
+      "option1":value1,
+      "option2":value2,
+      ...
+   }
+],
+"tokenizers":(optional)[
+   {
+      "name":"tokenizer_name",
+      "@odata.type":"#tokenizer_type",
+      "option1":value1,
+      "option2":value2,
+      ...
+   }
+],
+"tokenFilters":(optional)[
+   {
+      "name":"token_filter_name",
+      "@odata.type":"#token_filter_type",
+      "option1":value1,
+      "option2":value2,
+      ...
+   }
+]
+```
 
 > [!NOTE]  
 >  Пользовательские анализаторы, которые вы создаете, не отображаются на портале Azure. Добавить пользовательский анализатор можно только через программный код, который вызывает API, на этапе определения индекса.  
 
  В определении индекса этот раздел можно разместить в любом месте текста запроса на создание индекса, но он обычно находится в конце.  
 
-```  
-{  
-  "name": "name_of_index",  
-  "fields": [ ],  
-  "suggesters": [ ],  
-  "scoringProfiles": [ ],  
-  "defaultScoringProfile": (optional) "...",  
-  "corsOptions": (optional) { },  
-  "analyzers":(optional)[ ],  
-  "charFilters":(optional)[ ],  
-  "tokenizers":(optional)[ ],  
-  "tokenFilters":(optional)[ ]  
-}  
-```  
+```
+{
+  "name": "name_of_index",
+  "fields": [ ],
+  "suggesters": [ ],
+  "scoringProfiles": [ ],
+  "defaultScoringProfile": (optional) "...",
+  "corsOptions": (optional) { },
+  "analyzers":(optional)[ ],
+  "charFilters":(optional)[ ],
+  "tokenizers":(optional)[ ],
+  "tokenFilters":(optional)[ ]
+}
+```
 
 Определения для фильтров знаков, создателей маркеров и фильтров маркеров добавляются в индекс только в том случае, если заданы пользовательские параметры. Чтобы использовать существующий фильтр или создатель маркеров "как есть", укажите его по имени в определении анализатора.
 
@@ -189,7 +189,7 @@ ms.locfileid: "56302086"
   }
 ```
 
- ## <a name="update-custom-analyzers"></a>Обновление пользовательских анализаторов
+## <a name="update-custom-analyzers"></a>Обновление пользовательских анализаторов
 
 После определения анализатора, создателя маркеров, фильтра маркеров или фильтра знаков его нельзя изменить. Добавить новые определения в существующий индекс можно только в том случае, если в запросе на обновление индекса для флага `allowIndexDowntime` установлено значение true.
 
@@ -205,7 +205,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 В таблицах ниже указаны свойства конфигурации для раздела анализаторов, создателей маркеров, фильтров маркеров и фильтра знаков в определении индекса. Структура анализатора, создателя маркеров или фильтра в индексе состоит из этих атрибутов. Сведения о присвоении значений см. в разделе [Справочные данные по свойствам](#PropertyReference).
 
- ### <a name="analyzers"></a>Анализаторы
+### <a name="analyzers"></a>Анализаторы
 
 Атрибуты индекса различаются в зависимости от того, какие анализаторы вы используете: стандартные или пользовательские.
 
@@ -229,7 +229,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 <a name="CharFilter"></a>
 
- ### <a name="char-filters"></a>Фильтры знаков
+### <a name="char-filters"></a>Фильтры знаков
 
  Фильтр знаков используется для подготовки входного текста перед его обработкой создателем маркеров. Например, фильтр может заменить определенные знаки или символы. Пользовательский анализатор может содержать несколько фильтров знаков. Фильтры знаков применяются в том порядке, в котором они указаны.  
 
@@ -239,7 +239,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |type|Тип фильтра знаков из списка поддерживаемых фильтров знаков. См. столбец **char_filter_type** в таблице [Фильтры знаков](#CharFilter), приведенной ниже.|  
 |Параметры|Это должны быть допустимые параметры заданного типа [фильтра знаков](#CharFilter).|  
 
- ### <a name="tokenizers"></a>Токенизаторы
+### <a name="tokenizers"></a>Токенизаторы
 
  Токенизатор разбивает непрерывный текст на последовательность токенов, например делит предложение на слова.  
 
@@ -252,7 +252,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |type|Название создателя маркеров из списка поддерживаемых создателей маркеров. См. столбец **tokenizer_type** в таблице [Создатели маркеров](#Tokenizers), приведенной ниже.|  
 |Параметры|Это должны быть допустимые параметры данного типа создателя маркеров, перечисленные в таблице [Создатели маркеров](#Tokenizers), приведенной ниже.|  
 
- ### <a name="token-filters"></a>Фильтры токенов
+### <a name="token-filters"></a>Фильтры токенов
 
  Фильтр токенов используется для фильтрации или изменения токенов, созданных токенизатором. Например, вы можете указать специальный фильтр, который преобразует все символы в нижний регистр.   
 Пользовательский анализатор может содержать несколько фильтров токенов. Фильтры токенов применяются в том порядке, в котором они указаны.  
@@ -344,7 +344,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |[dictionary_decompounder](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/compound/DictionaryCompoundWordTokenFilter.html)|DictionaryDecompounderTokenFilter|Разбивает составные слова, распространенные во многих германских языках.<br /><br /> **Варианты**<br /><br /> wordList (тип: массив строк) — список слов для сопоставления. Значение по умолчанию — пустой список. Обязательный элемент.<br /><br /> minWordSize (тип: целое число) — обрабатываются только слова длиннее этого значения. Значение по умолчанию — 5.<br /><br /> minSubwordSize (тип: целое число) — выводятся только подслова длиннее этого ограничения. Значение по умолчанию — 2<br /><br /> maxSubwordSize (тип: целое число) — выводятся только подслова короче этого ограничения. Значение по умолчанию — 15.<br /><br /> onlyLongestMatch (тип: логическое значение) — в выходные данные добавляется только самое длинное соответствующее подслово. Его значение по умолчанию — false.|  
 |[edgeNGram_v2](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/ngram/EdgeNGramTokenFilter.html)|EdgeNGramTokenFilterV2|Генерирует N-граммы заданного размера, начиная с начала или конца входного маркера.<br /><br /> **Варианты**<br /><br /> minGram (тип: целое число). Значение по умолчанию: 1. Максимальное значение: 300.<br /><br /> maxGram (тип: целое число). Значение по умолчанию: 2. Максимальное значение — 300. Значение должно превышать minGram.<br /><br /> side (тип: строка) — указывает, с какой стороны входных данных следует создавать N-грамму. Допустимые значения: "front", "back". |  
 |[elision](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/util/ElisionFilter.html)|ElisionTokenFilter|Удаляет элизии. Например "l'avion" ("самолет"; с артиклем) преобразуется в "avion" ("самолет"; без артикля).<br /><br /> **Варианты**<br /><br /> articles (тип: массив строк) — набор статей, которые следует удалить. Значение по умолчанию — пустой список. Если список статей не указан, по умолчанию удаляются все статьи на французском языке.|  
-|[german_normalization](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/de/GermanNormalizationFilter.html)|(тип применяется только при наличии параметров)  |Нормализует немецкие знаки в соответствии с эвристикой морфологического алгоритма [German2 snowball](https://snowball.tartarus.org/algorithms/german2/stemmer.html).|  
+|[german_normalization](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/de/GermanNormalizationFilter.html)|(тип применяется только при наличии параметров)  |Нормализует немецкие знаки в соответствии с эвристикой морфологического алгоритма [German2 snowball](https://snowballstem.org/algorithms/german2/stemmer.html).|  
 |[hindi_normalization](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/hi/HindiNormalizationFilter.html)|(тип применяется только при наличии параметров)  |Нормализует текст на хинди, чтобы удалить некоторые различия в орфографических вариациях. |  
 |[indic_normalization](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/in/IndicNormalizationFilter.html)|IndicNormalizationTokenFilter|Нормализует представление текста в Юникоде на индийских языках.
 |[keep](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/KeepWordFilter.html)|KeepTokenFilter|Фильтр маркеров, который сохраняет только маркеры с текстом, содержащимся в указанном списке слов.<br /><br /> **Варианты**<br /><br /> keepWords (тип: массив строк) — список слов, которые следует оставить. Значение по умолчанию — пустой список. Обязательный элемент.<br /><br /> keepWordsCase (тип: логическое значение) — если значение равно true, сначала все слова преобразуются в нижний регистр. Его значение по умолчанию — false.|  
@@ -366,7 +366,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |[shingle](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/shingle/ShingleFilter.html)|ShingleTokenFilter|Создает сочетания маркеров в виде одного маркера.<br /><br /> **Варианты**<br /><br /> maxShingleSize (тип: целое число). Значение по умолчанию: 2.<br /><br /> minShingleSize (тип: целое число). Значение по умолчанию: 2.<br /><br /> outputUnigrams (тип: логическое значение) — если значение равно true, выходной поток содержит входные маркеры (униграммы), а также объединения. Значение по умолчанию — true.<br /><br /> outputUnigramsIfNoShingles (тип: логическое значение) — если значение равно true, переопределяет поведение outputUnigrams. Значение false следует использовать, когда объединения недоступны. Его значение по умолчанию — false.<br /><br /> tokenSeparator (тип: строка) — строка, используемая при соединении соседних маркеров для формирования объединения. Значение по умолчанию — " ".<br /><br /> filterToken (тип: строка) — строка для вставки в каждую позицию, в которой нет маркера. Значение по умолчанию — "_".|  
 |[snowball](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/snowball/SnowballFilter.html)|SnowballTokenFilter|Фильтр маркера Snowball.<br /><br /> **Варианты**<br /><br /> language (тип: строка). Допустимые значения: "armenian", "basque", "catalan", "danish", "dutch", "english", "finnish", "french", "german", "german2", "hungarian", "italian", "kp", "lovins", "norwegian", "porter", "portuguese", "romanian", "russian", "spanish", "swedish" и "turkish".|  
 |[sorani_normalization](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/ckb/SoraniNormalizationFilter.html)|SoraniNormalizationTokenFilter|Нормализует представление текста в Юникоде на языке сорани.<br /><br /> **Варианты**<br /><br /> Отсутствует.|  
-|stemmer|StemmerTokenFilter|Языковой стемминговый фильтр.<br /><br /> **Варианты**<br /><br /> language (тип: строка). Допустимые значения: <br /> -   ["arabic"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/ar/ArabicStemmer.html)<br />-   ["armenian"](https://snowball.tartarus.org/algorithms/armenian/stemmer.html)<br />-   ["basque"](https://snowball.tartarus.org/algorithms/basque/stemmer.html)<br />-   ["brazilian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/br/BrazilianStemmer.html)<br />-   ["bulgarian"](https://members.unine.ch/jacques.savoy/Papers/BUIR.pdf)<br />-   ["catalan"](https://snowball.tartarus.org/algorithms/catalan/stemmer.html)<br />-   ["czech"](https://portal.acm.org/citation.cfm?id=1598600)<br />-   ["danish"](https://snowball.tartarus.org/algorithms/danish/stemmer.html)<br />-   ["dutch"](https://snowball.tartarus.org/algorithms/dutch/stemmer.html)<br />-   ["dutchKp"](https://snowball.tartarus.org/algorithms/kraaij_pohlmann/stemmer.html)<br />-   ["english"](https://snowball.tartarus.org/algorithms/porter/stemmer.html)<br />-   ["lightEnglish"](https://ciir.cs.umass.edu/pubfiles/ir-35.pdf)<br />-   ["minimalEnglish"](https://www.researchgate.net/publication/220433848_How_effective_is_suffixing)<br />-   ["possessiveEnglish"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/en/EnglishPossessiveFilter.html)<br />-   ["porter2"](https://snowball.tartarus.org/algorithms/english/stemmer.html)<br />-   ["lovins"](https://snowball.tartarus.org/algorithms/lovins/stemmer.html)<br />-   ["finnish"](https://snowball.tartarus.org/algorithms/finnish/stemmer.htm)<br />-   ["lightFinnish"](https://clef.isti.cnr.it/2003/WN_web/22.pdf)<br />-   ["french"](https://snowball.tartarus.org/algorithms/french/stemmer.html)<br />-   ["lightFrench"](https://dl.acm.org/citation.cfm?id=1141523)<br />-   ["minimalFrench"](https://dl.acm.org/citation.cfm?id=318984)<br />-   ["galician"](https://bvg.udc.es/recursos_lingua/stemming.jsp)<br />-   ["minimalGalician"](https://bvg.udc.es/recursos_lingua/stemming.jsp)<br />-   ["german"](https://snowball.tartarus.org/algorithms/german/stemmer.html)<br />-   ["german2"](https://snowball.tartarus.org/algorithms/german2/stemmer.html)<br />-   ["lightGerman"](https://dl.acm.org/citation.cfm?id=1141523)<br />-   ["minimalGerman"](https://members.unine.ch/jacques.savoy/clef/morpho.pdf)<br />-   ["greek"](https://sais.se/mthprize/2007/ntais2007.pdf)<br />-   ["hindi"](https://computing.open.ac.uk/Sites/EACLSouthAsia/Papers/p6-Ramanathan.pdf)<br />-   ["hungarian"](https://snowball.tartarus.org/algorithms/hungarian/stemmer.html)<br />-   ["lightHungarian"](https://dl.acm.org/citation.cfm?id=1141523&dl=ACM&coll=DL&CFID=179095584&CFTOKEN=80067181)<br />-   ["indonesian"](https://www.illc.uva.nl/Publications/ResearchReports/MoL-2003-02.text.pdf)<br />-   ["irish"](https://snowball.tartarus.org/otherapps/oregan/intro.html)<br />-   ["italian"](https://snowball.tartarus.org/algorithms/italian/stemmer.html)<br />-   ["lightItalian"](https://www.ercim.eu/publication/ws-proceedings/CLEF2/savoy.pdf)<br />-   ["sorani"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/ckb/SoraniStemmer.html)<br />-   ["latvian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/lv/LatvianStemmer.html)<br />-   ["norwegian"](https://snowball.tartarus.org/algorithms/norwegian/stemmer.html)<br />-   ["lightNorwegian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianLightStemmer.html)<br />-   ["minimalNorwegian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianMinimalStemmer.html)<br />-   ["lightNynorsk"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianLightStemmer.html)<br />-   ["minimalNynorsk"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianMinimalStemmer.html)<br />-   ["portuguese"](https://snowball.tartarus.org/algorithms/portuguese/stemmer.html)<br />-   ["lightPortuguese"](https://dl.acm.org/citation.cfm?id=1141523&dl=ACM&coll=DL&CFID=179095584&CFTOKEN=80067181)<br />-   ["minimalPortuguese"](https://www.inf.ufrgs.br/~buriol/papers/Orengo_CLEF07.pdf)<br />-   ["portugueseRslp"](https://www.inf.ufrgs.br//~viviane/rslp/index.htm)<br />-   ["romanian"](https://snowball.tartarus.org/algorithms/romanian/stemmer.html)<br />-   ["russian"](https://snowball.tartarus.org/algorithms/russian/stemmer.html)<br />-   ["lightRussian"](https://doc.rero.ch/lm.php?url=1000%2C43%2C4%2C20091209094227-CA%2FDolamic_Ljiljana_-_Indexing_and_Searching_Strategies_for_the_Russian_20091209.pdf)<br />-   ["spanish"](https://snowball.tartarus.org/algorithms/spanish/stemmer.html)<br />-   ["lightSpanish"](https://www.ercim.eu/publication/ws-proceedings/CLEF2/savoy.pdf)<br />-   ["swedish"](https://snowball.tartarus.org/algorithms/swedish/stemmer.html)<br />-   ["lightSwedish"](https://clef.isti.cnr.it/2003/WN_web/22.pdf)<br />-   ["turkish"](https://snowball.tartarus.org/algorithms/turkish/stemmer.html)|  
+|stemmer|StemmerTokenFilter|Языковой стемминговый фильтр.<br /><br /> **Варианты**<br /><br /> language (тип: строка). Допустимые значения: <br /> -   ["arabic"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/ar/ArabicStemmer.html)<br />-   ["armenian"](https://snowballstem.org/algorithms/armenian/stemmer.html)<br />-   ["basque"](https://snowballstem.org/algorithms/basque/stemmer.html)<br />-   ["brazilian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/br/BrazilianStemmer.html)<br />-«болгарский»<br />-   ["catalan"](https://snowballstem.org/algorithms/catalan/stemmer.html)<br />-   ["czech"](https://portal.acm.org/citation.cfm?id=1598600)<br />-   ["danish"](https://snowballstem.org/algorithms/danish/stemmer.html)<br />-   ["dutch"](https://snowballstem.org/algorithms/dutch/stemmer.html)<br />-   ["dutchKp"](https://snowballstem.org/algorithms/kraaij_pohlmann/stemmer.html)<br />-   ["english"](https://snowballstem.org/algorithms/porter/stemmer.html)<br />-   ["lightEnglish"](https://ciir.cs.umass.edu/pubfiles/ir-35.pdf)<br />-   ["minimalEnglish"](https://www.researchgate.net/publication/220433848_How_effective_is_suffixing)<br />-   ["possessiveEnglish"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/en/EnglishPossessiveFilter.html)<br />-   ["porter2"](https://snowballstem.org/algorithms/english/stemmer.html)<br />-   ["lovins"](https://snowballstem.org/algorithms/lovins/stemmer.html)<br />-   ["finnish"](https://snowballstem.org/algorithms/finnish/stemmer.html)<br />-«lightFinnish»<br />-   ["french"](https://snowballstem.org/algorithms/french/stemmer.html)<br />-   ["lightFrench"](https://dl.acm.org/citation.cfm?id=1141523)<br />-   ["minimalFrench"](https://dl.acm.org/citation.cfm?id=318984)<br />-«Галисийский»<br />-«minimalGalician»<br />-   ["german"](https://snowballstem.org/algorithms/german/stemmer.html)<br />-   ["german2"](https://snowballstem.org/algorithms/german2/stemmer.html)<br />-   ["lightGerman"](https://dl.acm.org/citation.cfm?id=1141523)<br />-«minimalGerman»<br />-   ["greek"](https://sais.se/mthprize/2007/ntais2007.pdf)<br />-«хинди»<br />-   ["hungarian"](https://snowballstem.org/algorithms/hungarian/stemmer.html)<br />-   ["lightHungarian"](https://dl.acm.org/citation.cfm?id=1141523&dl=ACM&coll=DL&CFID=179095584&CFTOKEN=80067181)<br />-   ["indonesian"](https://www.illc.uva.nl/Publications/ResearchReports/MoL-2003-02.text.pdf)<br />-   ["irish"](https://snowballstem.org/otherapps/oregan/)<br />-   ["italian"](https://snowballstem.org/algorithms/italian/stemmer.html)<br />-   ["lightItalian"](https://www.ercim.eu/publication/ws-proceedings/CLEF2/savoy.pdf)<br />-   ["sorani"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/ckb/SoraniStemmer.html)<br />-   ["latvian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/lv/LatvianStemmer.html)<br />-   ["norwegian"](https://snowballstem.org/algorithms/norwegian/stemmer.html)<br />-   ["lightNorwegian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianLightStemmer.html)<br />-   ["minimalNorwegian"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianMinimalStemmer.html)<br />-   ["lightNynorsk"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianLightStemmer.html)<br />-   ["minimalNynorsk"](https://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/no/NorwegianMinimalStemmer.html)<br />-   ["portuguese"](https://snowballstem.org/algorithms/portuguese/stemmer.html)<br />-   ["lightPortuguese"](https://dl.acm.org/citation.cfm?id=1141523&dl=ACM&coll=DL&CFID=179095584&CFTOKEN=80067181)<br />-   ["minimalPortuguese"](https://www.inf.ufrgs.br/~buriol/papers/Orengo_CLEF07.pdf)<br />-   ["portugueseRslp"](https://www.inf.ufrgs.br//~viviane/rslp/index.htm)<br />-   ["romanian"](https://snowballstem.org/otherapps/romanian/)<br />-   ["russian"](https://snowballstem.org/algorithms/russian/stemmer.html)<br />-   ["lightRussian"](https://doc.rero.ch/lm.php?url=1000%2C43%2C4%2C20091209094227-CA%2FDolamic_Ljiljana_-_Indexing_and_Searching_Strategies_for_the_Russian_20091209.pdf)<br />-   ["spanish"](https://snowballstem.org/algorithms/spanish/stemmer.html)<br />-   ["lightSpanish"](https://www.ercim.eu/publication/ws-proceedings/CLEF2/savoy.pdf)<br />-   ["swedish"](https://snowballstem.org/algorithms/swedish/stemmer.html)<br />-«lightSwedish»<br />-   ["turkish"](https://snowballstem.org/algorithms/turkish/stemmer.html)|  
 |[stemmer_override](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/StemmerOverrideFilter.html)|StemmerOverrideTokenFilter|Любые словарные однокоренные термины помечаются как ключевые слова, что предотвращает морфологический поиск по цепочке. Необходимо поместить перед всеми стемминговыми фильтрами.<br /><br /> **Варианты**<br /><br /> rules (тип: массив строк) — правила поиска корней в следующем формате "слово => корень", например "бегать => бежать". Значение по умолчанию — пустой список.  Обязательный элемент.|  
 |[stopwords](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/core/StopFilter.html)|StopwordsTokenFilter|Удаляет стоп-слова из потока маркеров. По умолчанию фильтр использует стандартный список стоп-слов для английского языка.<br /><br /> **Варианты**<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Не указывается, если указан параметр stopwordsList.<br /><br /> stopwordsList (тип: строка) — стандартный список стоп-слов. Не указывается, если заданы стоп-слова. Допустимые значения: "arabic", "armenian", "basque", "brazilian", "bulgarian", "catalan", "czech", "danish", "dutch", "english", "finnish", "french", "galician", "german", "greek", "hindi", "hungarian", "indonesian", "irish", "italian", "latvian", "norwegian", "persian", "portuguese", "romanian", "russian", "sorani", "spanish", "swedish", "thai" и "turkish". Значение по умолчанию: "english". Не указывается, если заданы стоп-слова. <br /><br /> ignoreCase (тип: логическое значение) — если значение равно true, сначала слова преобразуются в нижний регистр. Его значение по умолчанию — false.<br /><br /> removeTrailing (тип: логическое значение) — если значение равно true, последний поисковый термин игнорируется, если это стоп-слово. Значение по умолчанию — true.
 |[synonym](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/synonym/SynonymFilter.html)|SynonymTokenFilter|Сопоставляет одно-или многословные синонимы в потоке маркеров.<br /><br /> **Варианты**<br /><br /> synonyms (тип: массив строк) — обязательный параметр. Список синонимов в одном из следующих двух форматов.<br /><br /> "incredible, unbelievable, fabulous => amazing" — все термины c левой стороны знака => заменяются всеми терминами с правой стороны.<br /><br /> "incredible, unbelievable, fabulous, amazing" — список эквивалентных слов, разделенных запятыми. Установите параметр expand, чтобы изменить способ интерпретации этого списка.<br /><br /> ignoreCase (тип: логическое значение) — меняет регистр входных данных для сопоставления. Его значение по умолчанию — false.<br /><br /> expand (тип: логическое значение) — если значение равно true, то все слова в списке синонимов (если нотация =>не используется) сопоставляются друг с другом. <br />Список "incredible, unbelievable, fabulous, amazing" равен списку "incredible, unbelievable, fabulous, amazing => incredible, unbelievable, fabulous, amazing".<br /><br />Если значение равно false, список "incredible, unbelievable, fabulous, amazing" равен списку "incredible, unbelievable, fabulous, amazing => incredible".|  

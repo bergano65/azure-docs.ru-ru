@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
-ms.openlocfilehash: 4518011fbeaefbb32403f5b37e434e7315beffa0
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: 1982f974acd1e9d5e8cae91201f6503eb2ae678a
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45734930"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57898811"
 ---
 # <a name="use-a-u-sql-database-project-to-develop-a-u-sql-database-for-azure-data-lake"></a>Использование проекта базы данных U-SQL в разработке базы данных U-SQL для Azure Data Lake
 
@@ -57,7 +57,7 @@ ms.locfileid: "45734930"
 
 Выходные данные сборки для проекта базы данных U-SQL представляют собой пакет развертывания базы данных U-SQL с суффиксом `.usqldbpack`. Пакет `.usqldbpack` — это ZIP-файл, который объединяет все инструкции DDL в единый сценарий U-SQL в папке **DDL**, а также все библиотеки DLL и дополнительные файлы для сборок в папке **Temp**.
 
-Дополнительные сведения см. в разделе [Создание проекта базы данных U-SQL с помощью командной строки MSBuild и задачи сборки Azure DevOps Services](data-lake-analytics-cicd-overview.md).
+Дополнительные сведения о [о том, как выполнить сборку проекта базы данных U-SQL с помощью MSBuild командной строки и служб Azure DevOps построения задачи](data-lake-analytics-cicd-overview.md).
 
 ## <a name="deploy-a-u-sql-database"></a>Развертывание базы данных U-SQL
 
@@ -100,8 +100,8 @@ ms.locfileid: "45734930"
 
 Проект U-SQL может ссылаться на проект базы данных U-SQL. Ссылка влияет на две рабочие нагрузки:
 
-- *Сборка проекта*. Перед созданием сценариев U-SQL настройте связанные среды баз данных. 
-- *Локальная учетная запись (локальный проект)*. Связанные среды баз данных развертываются в (локальном проекте) до выполнения сценария U-SQL. Дополнительные сведения см. в разделе [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
+- *Построение проекта*: Настройка сред связанной базе данных перед созданием скриптов U-SQL. 
+- *Локальная учетная запись выполнения (local-проекте)*: Которых также развертываются среды указанной базы данных (в локальной-проект) учетной записи перед выполнением скрипта U-SQL. Дополнительные сведения см. в разделе [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
 
 ### <a name="how-to-add-a-u-sql-database-reference"></a>Добавление ссылки на базу данных U-SQL
 
@@ -114,7 +114,7 @@ ms.locfileid: "45734930"
 
     ![Мастер добавления ссылки на проект базы данных с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-data-lake-tools-develop-usql-database/data-lake-tools-add-database-project-reference-wizard.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 01/21/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: de009d1dbc979a534b0fed8cee2afc867c5b79d4
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 37f5040585681a53743fb3426b7f7ffac36de51c
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54426919"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58008688"
 ---
 # <a name="high-availability-architecture-and-scenarios-for-sap-netweaver"></a>Высокодоступная архитектура и сценарии для SAP NetWeaver
 
@@ -45,7 +45,7 @@ ms.locfileid: "54426919"
 
 [deployment-guide]:deployment-guide.md
 
-[dr-guide-classic]:http://go.microsoft.com/fwlink/?LinkID=521971
+[dr-guide-classic]:https://go.microsoft.com/fwlink/?LinkID=521971
 
 [getting-started]:get-started.md
 
@@ -59,6 +59,7 @@ ms.locfileid: "54426919"
 [sap-ascs-ha-multi-sid-wsfc-shared-disk]:sap-ascs-ha-multi-sid-wsfc-shared-disk.md
 [sap-hana-ha]:sap-hana-high-availability.md
 [sap-suse-ascs-ha]:high-availability-guide-suse.md
+[sap-suse-ascs-ha-anf]:high-availability-guide-suse-netapp-files.md
 [sap-higher-availability]:sap-higher-availability-architecture-scenarios.md
 
 [planning-guide]:planning-guide.md  
@@ -92,11 +93,11 @@ ms.locfileid: "54426919"
 [virtual-machines-windows-portal-sql-alwayson-availability-groups-manual]:../../windows/sql/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md
 [virtual-machines-windows-portal-sql-alwayson-int-listener]:../../windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md
 
-[sap-ha-bc-virtual-env-hyperv-vmware-white-paper]:http://scn.sap.com/docs/DOC-44415
-[sap-ha-partner-information]:http://scn.sap.com/docs/DOC-8541
+[sap-ha-bc-virtual-env-hyperv-vmware-white-paper]:https://scn.sap.com/docs/DOC-44415
+[sap-ha-partner-information]:https://scn.sap.com/docs/DOC-8541
 [azure-sla]:https://azure.microsoft.com/support/legal/sla/
-[azure-virtual-machines-manage-availability]:http://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability
-[azure-storage-redundancy]:http://azure.microsoft.com/documentation/articles/storage-redundancy/
+[azure-virtual-machines-manage-availability]:https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability
+[azure-storage-redundancy]:https://azure.microsoft.com/documentation/articles/storage-redundancy/
 [azure-storage-managed-disks-overview]:https://docs.microsoft.com/azure/storage/storage-managed-disks-overview
 
 [planning-guide-figure-100]:media/virtual-machines-shared-sap-planning-guide/100-single-vm-in-azure.png
@@ -394,8 +395,8 @@ _**Рис. 2.** Высокий уровень доступности серве
 ### <a name="high-availability-architecture-for-an-sap-ascsscs-instance-on-linux"></a>Архитектура высокой доступности для экземпляра SAP ASCS/SCS на Linux
 
 > ![Linux][Logo_Linux] Linux
->
-Дополнительные сведения о кластеризации экземпляра SAP ASCS/SCS с помощью платформы кластера SLES см. в статье [Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP][sap-suse-ascs-ha].
+> 
+> Дополнительные сведения о кластеризации экземпляра SAP ASCS/SCS с помощью платформы кластера SLES см. в статье [Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP][sap-suse-ascs-ha]. Для альтернативная архитектура высокого уровня ДОСТУПНОСТИ в SLES, который не требует высокой доступных NFS см. в разделе [руководство высокого уровня доступности для SAP NetWeaver на SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP] [ sap-suse-ascs-ha-anf].
 
 Дополнительные сведения о кластеризации экземпляра SAP ASCS/SCS с помощью платформы кластера Red Hat см. в статье [Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel).
 
@@ -403,10 +404,10 @@ _**Рис. 2.** Высокий уровень доступности серве
 ### <a name="sap-netweaver-multi-sid-configuration-for-a-clustered-sap-ascsscs-instance"></a>Конфигурации SAP NetWeaver с несколькими идентификаторами безопасности для кластеризованного экземпляра SAP ASCS/SCS
 
 > ![ Windows][Logo_Windows]  Windows
->
+> 
 > В настоящее время использование нескольких идентификаторов безопасности поддерживается только в WSFC. Несколько идентификаторов безопасности поддерживается при использовании файлового ресурса и общего диска.
->
-Дополнительные сведения об использовании архитектуры высокого уровня доступности с несколькими идентификаторами безопасности см. в следующих статьях:
+> 
+> Дополнительные сведения об использовании архитектуры высокого уровня доступности с несколькими идентификаторами безопасности см. в следующих статьях:
 
 * [Обеспечение высокого уровня доступности экземпляра SAP (A)SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и файлового ресурса в Azure][sap-ascs-ha-multi-sid-wsfc-file-share]
 

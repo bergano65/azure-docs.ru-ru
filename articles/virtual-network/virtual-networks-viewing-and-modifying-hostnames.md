@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: afd5361774af3379dc0d4054509e318e8263dcc5
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 3fdb0f566789382a1606b19e4fac179f9ecf40cd
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51250192"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57887465"
 ---
 # <a name="viewing-and-modifying-hostnames"></a>Просмотр и изменение имен узлов
 Чтобы позволить ссылаться на экземпляры ролей по имени узла, необходимо задать значение имени узла в файле конфигурации службы для каждой роли. Для этого добавьте имя нужного узла в атрибут **vmName** элемента **Role**. Значение атрибута **vmName** используется в качестве основы для имени узла каждого экземпляра роли. Например, если **vmName** имеет значение *webrole* и этот экземпляр имеет три роли, имена узлов экземпляров будут следующими: *webrole0*, *webrole1* и *webrole2*. Вам не нужно указывать имя узла для виртуальных машин в файле конфигурации, так как имя узла виртуальной машины заполняется на основе ее имени. Дополнительные сведения о настройке службы Microsoft Azure см. в статье, посвященной [схеме конфигурации службы Azure (файл CSCFG)](https://msdn.microsoft.com/library/azure/ee758710.aspx).
@@ -40,9 +40,9 @@ ms.locfileid: "51250192"
 ### <a name="azure-service-management-rest-api"></a>Интерфейс API REST управления службой Azure
 В клиенте REST выполните следующие действия:
 
-1. Убедитесь, что у вас есть сертификат клиента для подключения к порталу Azure. Чтобы получить сертификат клиента, выполните действия, описанные в разделе [Пошаговое руководство. Скачивание и импорт параметров публикации и информации о подписке](https://msdn.microsoft.com/library/dn385850.aspx). 
+1. Убедитесь, что у вас есть сертификат клиента для подключения к порталу Azure. Чтобы получить сертификат клиента, выполните действия, описанные в [как: Скачайте и импортируйте параметры публикации и сведений о подписке](https://msdn.microsoft.com/library/dn385850.aspx). 
 2. Задайте запись заголовка с именем x-ms-version и значением 2013-11-01.
-3. Отправьте запрос в следующем формате: https://management.core.windows.net/\<subscrition-id\>/services/hostedservices/\<service-name\>?embed-detail=true
+3. Отправьте запрос в следующем формате: https:\//management.core.windows.net/\<subscrition-id\>/services/hostedservices/\<имя_службы\>? внедрения сведений = true
 4. Найдите элемент **HostName** для каждого элемента **RoleInstance**.
 
 > [!WARNING]
@@ -53,7 +53,7 @@ ms.locfileid: "51250192"
 ## <a name="modifying-a-hostname"></a>Изменение имени узла
 Вы можете изменить имя узла для любой виртуальной машины или экземпляра роли, отправив измененный файл конфигурации службы или переименовав компьютер из сеанса удаленного рабочего стола.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Разрешение имен (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
 [Схема конфигурации службы Azure (CSCFG-файл)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)

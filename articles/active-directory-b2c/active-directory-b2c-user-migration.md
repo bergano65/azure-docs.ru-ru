@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/04/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 5a168ca3aafc171e4ed9b9f7572ee60b2ac7c350
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 0ca35c5d7a882a67bdce5e006b94d1f16daf9130
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55182274"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57893210"
 ---
 # <a name="azure-active-directory-b2c-user-migration"></a>Azure Active Directory B2C Миграция пользователей
 При миграции поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C) также может потребоваться перенести учетную запись пользователя. В этой статье описывается процедура переноса имеющихся учетных записей пользователей из любого поставщика удостоверений в Azure AD B2C. Эта статья не является предписанием, а скорее описывает два из нескольких сценариев. За пригодность каждого подхода отвечает разработчик.
@@ -63,7 +63,7 @@ Azure AD B2C позволяет переносить пользователей 
 1. Создайте приложение, сделав следующее:
    - В качестве **имени** используйте **B2CUserMigration** или любое другое.
    - Для параметра **Тип приложения** используйте значение **Веб-приложение/API**.
-   - В качестве **URL-адреса входа** используйте **https://localhost** (так как это не относится к этому приложению).
+   - Для **URL-адрес входа**, использовать `https://localhost` (так как это не относится к этому приложению).
    - Нажмите кнопку **Создать**.
    
 1. По завершении создания в списке **приложений** выберите только что созданное приложение **B2CUserMigration**.
@@ -94,7 +94,7 @@ Azure AD B2C позволяет переносить пользователей 
 Чтение и запись данных каталога *не* предусматривают возможность удаления пользователей. Чтобы предоставить приложению эту возможность (для очистки среды), необходимо выполнить дополнительный шаг. Этот шаг заключается в запуске PowerShell для установки разрешений администратора учетной записи пользователя. В противном случае можно перейти к следующему разделу.
 
 > [!IMPORTANT]
-> Необходимо использовать учетную запись администратора клиента B2C, которая является *локальной* по отношению к клиенту B2C. Синтаксис имени учетной записи выглядит следующим образом: *admin@contosob2c.onmicrosoft.com*.
+> Необходимо использовать учетную запись администратора клиента B2C, которая является *локальной* по отношению к клиенту B2C. Синтаксис имени учетной записи *администратора\@contosob2c.onmicrosoft.com*.
 
 >[!NOTE]
 > Для сценария PowerShell требуется [Azure Active Directory PowerShell версии 2][AD-Powershell].
@@ -370,4 +370,4 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 [B2C-GraphQuickStart]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet
 [B2C-NavContext]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-navigate-to-b2c-context
 [Portal]: https://portal.azure.com/
-[UserMigrationSample]: https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-user-migration
+[UserMigrationSample]: https://github.com/yoelhor/Azure-AD-B2C-UserMigration

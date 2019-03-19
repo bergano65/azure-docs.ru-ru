@@ -1,5 +1,5 @@
 ---
-title: Вход с помощью Azure MFA и двухфакторной проверки подлинности | Документация Майкрософт
+title: Azure MFA входа в систему с помощью двухфакторной проверки подлинности — Azure Active Directory | Документация Майкрософт
 description: На этой странице предоставлены рекомендации по использованию разных методов входа с помощью Azure MFA.
 keywords: проверка подлинности пользователя, вход в систему, вход с помощью мобильного телефона, вход с помощью рабочего телефона
 services: active-directory
@@ -13,13 +13,14 @@ ms.topic: conceptual
 ms.date: 04/02/2017
 ms.author: lizross
 ms.reviewer: librown
+ms.custom: end-user, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2545e85ff466ed7455161eb725b824da465457bd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 1350b2d86e18f213d99f1c27d64e371451f5f9b7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177338"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57840886"
 ---
 # <a name="the-sign-in-experience-with-azure-multi-factor-authentication"></a>Варианты входа с помощью Многофакторной идентификации Azure
 > [!NOTE]
@@ -32,7 +33,7 @@ ms.locfileid: "56177338"
 | --- |
 | [С помощью звонка на мобильный или рабочий телефон](#signing-in-with-a-phone-call) |
 | [С помощью текстового сообщения на мобильный телефон](#signing-in-with-a-text-message)
-| С помощью уведомлений из приложения Microsoft Authenticator |
+| [Вход с помощью уведомлений Microsoft Authenticator](#to-sign-in-with-a-notification-from-the-microsoft-authenticator-app) |
 | С помощью кодов проверки приложения Microsoft Authenticator |
 | [С помощью другого метода, так как я не могу использовать прямо сейчас основной вариант](#signing-in-with-an-alternate-method) |
 
@@ -57,7 +58,7 @@ ms.locfileid: "56177338"
 1. Войдите в приложение или службу, например Office 365, используя имя пользователя и пароль.
 2. Корпорация Майкрософт отправляет push-уведомление в приложение Microsoft Authenticator на ваше устройство.
 
-  ![Майкрософт отправляет уведомление](./media/multi-factor-authentication-end-user-signin/notify.png)
+   ![Майкрософт отправляет уведомление](./media/multi-factor-authentication-end-user-signin/notify.png)
 
 3. Откройте уведомление на телефоне и нажмите клавишу **Подтвердить**. Если компания требует ввода ПИН-кода, укажите его.
 4. После этого вы войдете в систему.
@@ -69,7 +70,7 @@ ms.locfileid: "56177338"
 1. Войдите в приложение или службу, например Office 365, используя имя пользователя и пароль.
 2. Вам будет предложено ввести код проверки.
 
-  ![Введите код проверки](./media/multi-factor-authentication-end-user-signin/verify3.png)
+   ![Введите код проверки](./media/multi-factor-authentication-end-user-signin/verify3.png)
 
 3. Откройте приложение Microsoft Authenticator на телефоне и введите код в поле для входа.
 
@@ -80,12 +81,11 @@ ms.locfileid: "56177338"
 2. Выберите **Использовать другой вариант проверки**. Вы увидите другие варианты проверки, число которых зависит от ваших настроек.
 3. Выберите альтернативный метод и войдите.
 
-  ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
+   ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+- Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
 
-Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
+- Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).
 
-Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).
-
-Узнайте, как [начать работу с приложением Microsoft Authenticator](user-help-auth-app-download-install.md), чтобы вместо использоваться для входа уведомления вместо текстовых сообщений и звонков.
+- Узнайте, как [начать работу с приложением Microsoft Authenticator](user-help-auth-app-download-install.md), чтобы вместо использоваться для входа уведомления вместо текстовых сообщений и звонков.

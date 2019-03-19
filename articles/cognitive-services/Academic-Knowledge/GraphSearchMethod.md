@@ -10,12 +10,12 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
-ms.openlocfilehash: f6c2fbe5daeb114d6a5ea77c9823f1fa5bfe8425
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 5d47b938560fb1bd15adfe1a1c2d35b7359d47a3
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864474"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57977417"
 ---
 # <a name="graph-search-method"></a>Метод поиска с помощью графа
 
@@ -29,6 +29,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/graph/search?
 <br>
 
 ## <a name="request-parameters"></a>Параметры запроса  
+
 ИМЯ     | Значение | Обязательный?  | ОПИСАНИЕ
 -----------|-----------|---------|--------
 **режим**       | Текстовая строка | Yes | Имя режима, который необходимо использовать. Значение равно *json* или *lambda*.
@@ -45,7 +46,9 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/graph/search?
 Для *лямбда*-поиска текст POST является строкой простого текста. Текст POST является строкой лямбда-запроса LINQ, которая представляет собой единый оператор C# (см. [Lambda Search Syntax](LambdaSearchSyntax.md) (Синтаксис лямбда-поиска) для *лямбда*-поиска). 
 
 <br>
+
 ## <a name="response-json"></a>Ответ (JSON)
+
 ИМЯ | ОПИСАНИЕ
 -------|-----   
 **результаты** | Массив из 0 или более сущностей, которые соответствуют выражению запроса. Каждая сущность содержит значения запрашиваемых атрибутов. Это поле присутствует в том случае, если запрос был успешно обработан.
@@ -55,6 +58,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/graph/search?
 Если запрос не может быть обработан за _800 мс_, будет возвращена ошибка превышения _времени ожидания_. 
 
 <br>
+
 #### <a name="example"></a>Пример:
 
 ##### <a name="json-search"></a>Поиск JSON

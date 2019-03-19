@@ -3,20 +3,20 @@ title: Создание прогнозирующих конвейеров дан
 description: Узнайте, как создать прогнозирующий конвейер с помощью действия выполнения пакета службы "Машинное обучение Azure" в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.author: douglasl
-ms.openlocfilehash: a5ba45b8a7bd507552b49b6a18582c393ad07ff5
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
-ms.translationtype: HT
+author: nabhishek
+ms.author: abnarain
+manager: craigg
+ms.openlocfilehash: aaf1d72a0c9c56e7d140fb615caf014507ebf263
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56446041"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57840568"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -30,7 +30,7 @@ ms.locfileid: "56446041"
 3. **Развертывание эксперимента в виде веб-службы**. Оценивающий эксперимент можно опубликовать в виде веб-службы Azure. С помощью конечной точки этой веб-службы вы можете отправлять данные в свою модель и получать из нее результаты прогнозов.
 
 ### <a name="data-factory-and-machine-learning-together"></a>Фабрика данных и машинное обучение вместе
-Фабрика данных Azure позволяет легко создавать конвейеры, в которых для прогнозной аналитики используется опубликованная веб-служба [Машинного обучения Azure] [azure-machine-learning]. С помощью **действия выполнения пакета** в конвейере Фабрики данных Azure вы можете вызывать веб-службу Студии машинного обучения Azure, чтобы создавать прогнозы по данным в пакете.
+Фабрика данных Azure позволяет легко создавать конвейеры, в которых используется опубликованная [машинного обучения Azure](https://azure.microsoft.com/documentation/services/machine-learning) веб-службу для прогнозной аналитики. С помощью **действия выполнения пакета** в конвейере Фабрики данных Azure вы можете вызывать веб-службу Студии машинного обучения Azure, чтобы создавать прогнозы по данным в пакете.
 
 Со временем прогнозные модели в оценивающих экспериментах Студии машинного обучения Azure потребуют повторного обучения с помощью новых входных наборов данных. Чтобы повторно обучить модель из конвейера Фабрики данных, выполните следующие действия:
 
@@ -124,7 +124,7 @@ ms.locfileid: "56446041"
 }
 ```
 
-| Свойство          | ОПИСАНИЕ                              | Обязательно |
+| Свойство          | ОПИСАНИЕ                              | Обязательно для заполнения |
 | :---------------- | :--------------------------------------- | :------- |
 | name              | Имя действия в конвейере.     | Yes      |
 | description       | Описание действия.  | Нет        |
@@ -217,7 +217,7 @@ ms.locfileid: "56446041"
 
 Когда повторное обучение будет завершено, обновите веб-службу оценки (прогнозный эксперимент, опубликованный в виде веб-службы) на основании обученной заново модели, используя **действие обновления ресурса Студии машинного обучения Azure**. Дополнительные сведения см. в статье [Updating Azure Machine Learning models using Update Resource Activity](update-machine-learning-models.md) (Обновление моделей машинного обучения Azure с помощью действия "Обновить ресурс").
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами:
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sujayt
-ms.openlocfilehash: fdeef8be1cfaabde326f68a1207f7c38d037a502
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 62a2da72a2659b95e4da41de67da4c609b8f049e
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313302"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57835588"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "56313302"
 
 4. Если такой сертификат не найден, скачайте его.  
 
-    ``# wget http://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem -O Baltimore_CyberTrust_Root.pem``
+    ``# wget https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem -O Baltimore_CyberTrust_Root.pem``
 
 5. Проверьте, есть ли на компьютере сертификат DigiCert_Global_Root_CA.
 
@@ -158,12 +158,12 @@ ms.locfileid: "56313302"
 - **Возможная причина** </br>
   - Не удается подключиться к конечным точкам восстановления сайта из-за сбоя разрешения DNS.
   - Это чаще наблюдается во время повторной защиты, когда вы выполнили отработку отказа виртуальной машины, но DNS-сервер недоступен из региона аварийного восстановления.
-  
+
 - **Способы устранения:**
    - Если вы используете настраиваемый DNS-сервер, обеспечьте его доступность из региона аварийного восстановления. Чтобы проверить, есть ли у вас настраиваемый DNS-сервер, выберите "Виртуальная машина", затем щелкните сеть аварийного восстановления и выберите "DNS-серверы". Попробуйте получить доступ к DNS-серверу с виртуальной машины. Если он недоступен, обеспечьте его доступность, выполнив отработку отказа DNS-сервера или обеспечив видимость между сетью аварийного восстановления и DNS-сервером.
-  
+
     ![com-error](./media/azure-to-azure-troubleshoot-errors/custom_dns.png)
- 
+
 
 ### <a name="issue-2-site-recovery-configuration-failed-151196"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151196)
 - **Возможная причина** </br>
@@ -172,8 +172,10 @@ ms.locfileid: "56313302"
 - **Способы устранения:**
   - Обеспечьте доступ Azure Site Recovery для выполнения проверки подлинности диапазонов IP-адресов Office 365.
     Если вы используете правила группы безопасности сети Azure (NSG) или прокси-сервер брандмауэра для управления исходящим сетевым подключением на виртуальной машине, разрешите обмен данными с диапазонами IP-адресов Office 365. Создайте [тег службы AAD](../virtual-network/security-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
-        - При добавлении новых адресов в AAD необходимо создать новые правила NSG.
+      - При добавлении новых адресов в AAD необходимо создать новые правила NSG.
 
+> [!NOTE]
+> Если виртуальные машины размещены за **стандартный** внутренней подсистемы балансировки нагрузки, то оно не будет доступа к IP-адресов Office 365 т. е. Login.micorsoftonline.com по умолчанию. Либо измените его, чтобы **основные** внутренний тип подсистемы балансировки нагрузки или создайте out привязку, как упоминалось в [статье](https://aka.ms/lboutboundrulescli).
 
 ### <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 - **Возможная причина** </br>
@@ -181,24 +183,24 @@ ms.locfileid: "56313302"
 
 - **Способы устранения:**
   - Обеспечение доступа Azure Site Recovery к [диапазонам IP-адресов Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges) зависит от региона. Обеспечьте доступ к нужным диапазонам IP-адресов с виртуальной машины.
-    
+
 
 ### <a name="issue-4-a2a-replication-failed-when-the-network-traffic-goes-through-on-premise-proxy-server-151072"></a>Проблема 4. Во время прохождения сетевого трафика через локальный прокси-сервер репликация A2A завершилась ошибкой (151072)
- - **Возможная причина** </br>
-   - Пользовательские настройки прокси-сервера недействительны, а агент службы Mobility Service ASR не смог автоматически определить параметры прокси-сервера из Internet Explorer
+- **Возможная причина** </br>
+  - Пользовательские настройки прокси-сервера недействительны, а агент службы Mobility Service ASR не смог автоматически определить параметры прокси-сервера из Internet Explorer
 
 
- - **Способы устранения:**
-   1.   Агент службы Mobility Service обнаруживает настройки прокси-сервера из Internet Explorer в ОС Windows и в каталоге /etc/environment в ОС Linux.
-   2.  Если вы предпочитаете устанавливать прокси-сервер только для службы Mobility Service ASR, данные прокси-сервера можно внести в файл ProxyInfo.conf, расположенный по адресу:</br>
-       - ``/usr/local/InMage/config/`` в ***Linux***
-       - ``C:\ProgramData\Microsoft Azure Site Recovery\Config`` в ***Windows***
-   3.   Файл ProxyInfo.conf должен содержать параметры прокси-сервера в таком формате INI.</br>
-                   *[proxy]*</br>
-                   *Address=http://1.2.3.4*</br>
-                   *Port=567*</br>
-   4. Агент службы Mobility Service ASR поддерживает только ***прокси-серверы, которые не прошли проверку подлинности***.
- 
+- **Способы устранения:**
+  1. Агент службы Mobility Service обнаруживает настройки прокси-сервера из Internet Explorer в ОС Windows и в каталоге /etc/environment в ОС Linux.
+  2. Если вы предпочитаете устанавливать прокси-сервер только для службы Mobility Service ASR, данные прокси-сервера можно внести в файл ProxyInfo.conf, расположенный по адресу:</br>
+     - ``/usr/local/InMage/config/`` в ***Linux***
+     - ``C:\ProgramData\Microsoft Azure Site Recovery\Config`` в ***Windows***
+  3. Файл ProxyInfo.conf должен содержать параметры прокси-сервера в таком формате INI.</br>
+                *[proxy]*</br>
+                *Address=http://1.2.3.4*</br>
+                *Port=567*</br>
+  4. Агент службы Mobility Service ASR поддерживает только ***прокси-серверы, которые не прошли проверку подлинности***.
+
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
 Чтобы внести [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-адресов](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges) в список разрешений, следуйте указаниям в [документации по настройке сети](site-recovery-azure-to-azure-networking-guidance.md).
@@ -279,6 +281,7 @@ ms.locfileid: "56313302"
 
 
 ## <a name="comvolume-shadow-copy-service-error-error-code-151025"></a>Ошибка модели COM+ или службы теневого копирования томов (код ошибки — 151025)
+
 **Код ошибки** | **Возможные причины** | **рекомендации**;
 --- | --- | ---
 151025<br></br>**Сообщение**. Не удалось установить расширение Site Recovery. | - Служба системных приложений COM+ отключена.</br></br>- Отключена служба теневого копирования томов (VSS).| Настройте службу системных приложений COM+ и службу теневого копирования томов для автоматического режима запуска или запуска вручную.
@@ -302,31 +305,31 @@ ms.locfileid: "56313302"
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
-*linux   /boot/vmlinuz-3.12.49-11-default **root=/dev/sda2**  ${extra_cmdline} **resume=/dev/sda1** splash=silent quiet showopts*
+  *linux   /boot/vmlinuz-3.12.49-11-default **root=/dev/sda2**  ${extra_cmdline} **resume=/dev/sda1** splash=silent quiet showopts*
 
 
 - Следующая строка из файла GRUB **/boot/grub/menu.lst**
-*kernel /boot/vmlinuz-3.0.101-63-default **root=/dev/sda2** **resume=/dev/sda1** splash=silent crashkernel=256M-:128M showopts vga=0x314*
+  *kernel /boot/vmlinuz-3.0.101-63-default **root=/dev/sda2** **resume=/dev/sda1** splash=silent crashkernel=256M-:128M showopts vga=0x314*
 
 Если вы заметили строки, выделенные полужирным шрифтом, GRUB содержит фактические имена устройств для параметров "root" и "resume" вместо UUID.
- 
+
 **Как исправить:**<br>
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
 1. Найдите UUID устройства, выполнив команду "blkid <device name>". Например: <br>
-```
-blkid /dev/sda1 
-```<br>
-```/dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap" ```<br>
-```blkid /dev/sda2```<br> 
-```/dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3" 
-```<br>
+   ```
+   blkid /dev/sda1 
+   ```<br>
+   ```/dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap" ```<br>
+   ```blkid /dev/sda2```<br> 
+   ```/dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3" 
+   ```<br>
 
 
 
 1. Now replace the device name with its UUID in the format like "root=UUID=<UUID>". For example, if we replace the device names with UUID for root and resume parameter mentioned above in the files "/boot/grub2/grub.cfg", "/boot/grub2/grub.cfg" or "/etc/default/grub: then the lines in the files looks like. <br>
-*kernel /boot/vmlinuz-3.0.101-63-default **root=UUID=62927e85-f7ba-40bc-9993-cc1feeb191e4** **resume=UUID=6f614b44-433b-431b-9ca1-4dd2f6f74f6b** splash=silent crashkernel=256M-:128M showopts vga=0x314*
+   *kernel /boot/vmlinuz-3.0.101-63-default **root=UUID=62927e85-f7ba-40bc-9993-cc1feeb191e4** **resume=UUID=6f614b44-433b-431b-9ca1-4dd2f6f74f6b** splash=silent crashkernel=256M-:128M showopts vga=0x314*
 1. Restart the protection again
 
 ## Enable protection failed as device mentioned in the GRUB configuration doesn't exist(error code 151124)
@@ -336,14 +339,14 @@ The GRUB configuration files ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/bo
 Few examples: </br>
 
 1. The following line is from the GRUB file **"/boot/grub2/grub.cfg"** on RHEL7. </br>
-*linux16 /vmlinuz-3.10.0-957.el7.x86_64 root=/dev/mapper/rhel_mup--rhel7u6-root ro crashkernel=128M@64M **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet LANG=en_US.UTF-8*</br>
-Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
+   *linux16 /vmlinuz-3.10.0-957.el7.x86_64 root=/dev/mapper/rhel_mup--rhel7u6-root ro crashkernel=128M\@64M **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet LANG=en_US.UTF-8*</br>
+   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
 1. The following line is from the GRUB file **"/etc/default/grub"** on RHEL7 </br>
- *GRUB_CMDLINE_LINUX="crashkernel=auto **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet"*</br>
-Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
+   *GRUB_CMDLINE_LINUX="crashkernel=auto **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet"*</br>
+   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
 1. The following line is from the GRUB file **"/boot/grub/menu.lst"** on RHEL6 </br>
-*kernel /vmlinuz-2.6.32-754.el6.x86_64 ro root=UUID=36dd8b45-e90d-40d6-81ac-ad0d0725d69e rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=rootvg/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_LVM_LV=rootvg/lv_swap rd_NO_DM rhgb quiet* </br>
- Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg".<br>
+   *kernel /vmlinuz-2.6.32-754.el6.x86_64 ro root=UUID=36dd8b45-e90d-40d6-81ac-ad0d0725d69e rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=rootvg/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_LVM_LV=rootvg/lv_swap rd_NO_DM rhgb quiet* </br>
+   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg".<br>
 
 **How to Fix:**<br>
 

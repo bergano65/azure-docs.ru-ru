@@ -1,21 +1,21 @@
 ---
-title: Интерпретация результатов модели в Студии машинного обучения
+title: Интерпретация результатов модели
 titleSuffix: Azure Machine Learning Studio
 description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: article
-author: ericlicoding
+ms.topic: conceptual
+author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 11/29/2017
-ms.openlocfilehash: 0940cb9e42588990e2109d02fda462f343443876
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.openlocfilehash: c46f22fb5c906aaffa48f39a0c643ca2a48573f9
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56456084"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57877281"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio"></a>Интерпретация результатов модели в Студии машинного обучения Azure
 В этой статье объясняется, как визуализировать и интерпретировать результаты прогнозирования в студии машинного обучения Azure. Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
@@ -52,7 +52,7 @@ ms.locfileid: "56456084"
 ### <a name="two-class-classification"></a>Двуклассовая классификация
 **Пример эксперимента**
 
-Пример проблемы с двухклассовой классификацией — классификация цветов ириса. Задача — классификация цветов ириса по их признакам. Набор данных Iris в Студии машинного обучения Azure — это часть популярного набора [Ирисы Фишера](http://en.wikipedia.org/wiki/Iris_flower_data_set), которая содержит экземпляры только двух видов цветов (классы 0 и 1). Для каждого цветка можно выделить четыре признака: длина наружной доли околоцветника, ширина наружной доли околоцветника, длина внутренней доли околоцветника и ширина внутренней доли околоцветника.
+Пример проблемы с двухклассовой классификацией — классификация цветов ириса. Задача — классификация цветов ириса по их признакам. Набор данных Iris в Студии машинного обучения Azure — это часть популярного набора [Ирисы Фишера](https://en.wikipedia.org/wiki/Iris_flower_data_set), которая содержит экземпляры только двух видов цветов (классы 0 и 1). Для каждого цветка можно выделить четыре признака: длина наружной доли околоцветника, ширина наружной доли околоцветника, длина внутренней доли околоцветника и ширина внутренней доли околоцветника.
 
 ![Снимок экрана для эксперимента Iris](./media/interpret-model-results/1.png)
 

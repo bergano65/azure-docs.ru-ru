@@ -12,12 +12,12 @@ ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 3c5f087ed44c252737e7f45fde12a4b509637499
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: 8417b849ad7589ce6a770eb805c38a13e3c672dd
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55892887"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57448770"
 ---
 # <a name="azure-sql-database-data-discovery--classification"></a>Обнаружение и классификация данных в Базе данных SQL Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "55892887"
 Служба обнаружения и классификации данных входит в состав предложения [Расширенная защита данных](sql-database-advanced-data-security.md) (ADS), которое представляет собой унифицированный пакет расширенных возможностей безопасности SQL. Доступ к этой службе можно получить на центральном портале SQL ADS. Там же можете управлять ею.
 
 > [!NOTE]
-> Этот документ относится только к Базе данных SQL Azure. Указания для SQL Server (локального) приведены в разделе [Обнаружение и классификация данных SQL](https://go.microsoft.com/fwlink/?linkid=866999).
+> Этот документ относится только к Базе данных SQL Azure. SQL Server (на локальном компьютере), см. в разделе [SQL данных обнаружения и классификации](https://go.microsoft.com/fwlink/?linkid=866999).
 
 ## <a id="subheading-1"></a>Что такое обнаружение и классификация данных?
 
@@ -144,7 +144,7 @@ ms.locfileid: "55892887"
 - [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
 - [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
-- [List Recommended By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase). Получение списка меток конфиденциальности для конкретной базы данных.
+- [Список рекомендуется по базе данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) -возвращает метки рекомендуемые чувствительности заданной базы данных.
 
 ## <a id="subheading-5"></a>Дальнейшие действия
 

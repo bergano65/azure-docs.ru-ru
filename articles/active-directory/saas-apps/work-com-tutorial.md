@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Work.com | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Work.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Work.com.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e5d097afa3af111a7de8341b90d8c6c05ac0347
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 6a37a811c7944334571b4043d8ba937ffadc1e71
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205755"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57891575"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workcom"></a>Руководство. Интеграция Azure Active Directory с Work.com
+# <a name="tutorial-azure-active-directory-integration-with-workcom"></a>Руководство по Интеграция Azure Active Directory с Work.com
 
 В этом руководстве описано, как интегрировать Work.com с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56205755"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Work.com, вам потребуется:
 
@@ -159,7 +159,7 @@ ms.locfileid: "56205755"
     
     a. Установите флажок **SAML включен**.
     
-    б) Нажмите кнопку **Создать**.
+    2. Нажмите кнопку **Создать**.
 
 1. В разделе **Параметры единого входа SAML** сделайте следующее:
     
@@ -170,11 +170,11 @@ ms.locfileid: "56205755"
     > [!NOTE]
     > При вводе значения в поле **Имя** текстовое поле **Имя API** заполняется автоматически.
     
-    б) В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    2. В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
     
     c. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **Browse** (Обзор).
     
-    4.3. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-work.com`.
+    d. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-work.com`.
     
     д. В поле **SAML Identity Type** (Тип удостоверения SAML) выберите значение **Assertion contains the Federation ID from the User object** (Проверочное утверждение содержит идентификатор федерации из объекта User).
     
@@ -229,11 +229,11 @@ ms.locfileid: "56205755"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-workcom-test-user"></a>Создание тестового пользователя Work.com
 Чтобы пользователи Azure Active Directory могли входить систему, их необходимо подготовить для Work.com. В случае с Work.com подготовка выполняется вручную.
@@ -258,13 +258,13 @@ ms.locfileid: "56205755"
    
     a. В текстовое поле **First Name** (Имя) введите **имя пользователя** (**Britta**).
     
-    б) В текстовое поле **Last Name** (Фамилия) введите **фамилию** (**Simon**).
+    2. В текстовое поле **Last Name** (Фамилия) введите **фамилию** (**Simon**).
     
     c. В текстовое поле **Alias** (Альтернативное имя) введите **имя** пользователя (**BrittaS**).
     
-    4.3. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты пользователя** (**Brittasimon@contoso.com**).
+    d. В **электронной почты** введите **адрес электронной почты** пользователя **Brittasimon\@contoso.com**.
     
-    д. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя (**Brittasimon@contoso.com**).
+    д. В **имя пользователя** текстовом поле введите имя пользователя, например **Brittasimon\@contoso.com**.
     
     Е. В текстовое поле **Nick Name** (Псевдоним) укажите **псевдоним** пользователя (**Simon**).
     

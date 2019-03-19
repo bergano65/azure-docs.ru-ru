@@ -14,16 +14,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: cc786b97c38c115fb288a5b9a0f73f566777e7df
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 5fadf23cc1fc2e1a6092c48033580d398fc689a0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734425"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58012807"
 ---
 # <a name="how-to-install-and-configure-mongodb-on-a-linux-vm"></a>Как установить и настроить MongoDB на виртуальной машине Linux
 
-[MongoDB](http://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье показано, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI. Изучив представленные примеры, вы узнаете, как:
+[MongoDB](https://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье показано, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI. Изучив представленные примеры, вы узнаете, как:
 
 * [установить и настроить базовый экземпляр MongoDB вручную](#manually-install-and-configure-mongodb-on-a-vm);
 * [создать базовый экземпляр MongoDB на основе шаблона Resource Manager](#create-basic-mongodb-instance-on-centos-using-a-template);
@@ -210,7 +210,7 @@ az group deployment show \
     --output tsv
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этих примерах подключение к экземпляру MongoDB выполняется локально с помощью виртуальной машины. Чтобы подключится к экземпляру MongoDB из другой виртуальной машины или сети, [создайте соответствующие правила группы безопасности сети](nsg-quickstart.md).
 
 В этих примерах в целях разработки развертывается основная среда MongoDB. Примените необходимые параметры конфигурации безопасности для среды. Дополнительные сведения о безопасности MongoDB см. на [этой странице](https://docs.mongodb.com/manual/security/).

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SugarCRM | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SugarCRM | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SugarCRM.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a00c9cb0ce1bd8a6f36070e81df1185ef23a307
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 450fcbcdfab8e90728fbbbd0068123768f3cef4a
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201777"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57993304"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sugar-crm"></a>Руководство по Интеграция Azure Active Directory с SugarCRM
+# <a name="tutorial-azure-active-directory-integration-with-sugar-crm"></a>Руководство. Интеграция Azure Active Directory с SugarCRM
 
 В этом руководстве описано, как интегрировать SugarCRM с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56201777"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением SugarCRM, вам потребуется:
 
@@ -114,6 +114,7 @@ ms.locfileid: "56201777"
     ![Настройка единого входа](./media/sugarcrm-tutorial/tutorial_sugarcrm_url.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<companyname>.sugarondemand.com` |
@@ -154,11 +155,11 @@ ms.locfileid: "56201777"
  
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
   
-    б) В текстовое поле **SLO URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    2. В текстовое поле **SLO URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
   
     c. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена и вставьте весь сертификат в текстовое поле **Сертификат X.509** .
   
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -189,11 +190,11 @@ ms.locfileid: "56201777"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-sugar-crm-test-user"></a>Создание тестового пользователя SugarCRM
 
@@ -231,7 +232,7 @@ ms.locfileid: "56201777"
 
     a. Введите пароль в соответствующее текстовое поле.
 
-    б) Выберите команду **Сохранить**.
+    2. Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователей SugarCRM или API, предоставляемые SugarCRM для подготовки учетных записей пользователей AAD. 

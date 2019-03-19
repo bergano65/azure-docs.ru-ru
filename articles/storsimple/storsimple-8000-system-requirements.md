@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
-ms.openlocfilehash: 1a9cdf31c5924d22d968cd99383417ba371cd1c3
-ms.sourcegitcommit: 9cc3d9b9c36e4c973dd9c9028361af1ec5d29910
-ms.translationtype: HT
+ms.openlocfilehash: f05e3e85d36ffc23a193a6771a0271c71b2f8544
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2018
-ms.locfileid: "28011067"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58013635"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>Программное обеспечение StorSimple серии 8000, высокий уровень доступности и требования к сети
 
@@ -61,7 +61,7 @@ ms.locfileid: "28011067"
 
 Устройство StorSimple является защищенным. Однако для разрешения использования iSCSI, облака и трафика управления необходимо открыть порты. В следующей таблице перечислены порты, которые необходимо открыть в брандмауэре. В этой таблице значение *входящий* относится к *направлению*, из которого клиент запрашивает доступ к вашему устройству. Значение *исходящий* указывает на *направление*, в котором устройство StorSimple отправляет данные за пределами развертывания, например в Интернет.
 
-| Порт № <sup>1, 2</sup> | Входящий или исходящий | Область порта | Обязательно | Заметки |
+| Порт № <sup>1, 2</sup> | Входящий или исходящий | Область порта | Обязательно для заполнения | Примечания |
 | --- | --- | --- | --- | --- |
 | TCP 80 (HTTP)<sup>3</sup> |Исходящий |WAN |Нет  |<ul><li>Исходящий порт используется для доступа к Интернету и извлечения обновлений.</li><li>Пользователи могут настраивать исходящий веб-прокси.</li><li>Чтобы разрешить выполнение обновлений системы, этот порт также должен быть открыт для фиксированных IP-адресов контроллера.</li></ul> |
 | TCP 443 (HTTPS)<sup>3</sup> |Исходящий |WAN |Yes |<ul><li>Исходящий порт используется для доступа к данным в облаке.</li><li>Пользователи могут настраивать исходящий веб-прокси.</li><li>Чтобы разрешить выполнение обновлений системы, этот порт также должен быть открыт для фиксированных IP-адресов контроллера.</li><li>Этот порт также используется обоими контроллерами для сборки мусора.</li></ul> |
@@ -98,9 +98,9 @@ ms.locfileid: "28011067"
 | --- | --- | --- |
 | `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*`<br>`https://login.windows.net` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
 | `https://*.backup.windowsazure.com` |Регистрация устройства |Только DATA 0 |
-| `http://crl.microsoft.com/pki/*`<br>`http://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
+| `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
 | `https://*.core.windows.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Учетные записи хранения Azure и мониторинг |Сетевые интерфейсы с поддержкой облака |
-| `http://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`http://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`http://download.microsoft.com`<br>`http://wustat.windows.com`<br>`http://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт<br> |Только статические IP-адреса контроллеров |
+| `https://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`https://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`https://download.microsoft.com`<br>`http://wustat.windows.com`<br>`https://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт<br> |Только статические IP-адреса контроллеров |
 | `http://*.deploy.akamaitechnologies.com` |CDN Akamai |Только статические IP-адреса контроллеров |
 | `https://*.partners.extranet.microsoft.com/*`<br>`https://dcupload.microsoft.com/`<br>`https://*.support.microsoft.com/` |Вспомогательный пакет |Сетевые интерфейсы с поддержкой облака |
 
@@ -110,9 +110,9 @@ ms.locfileid: "28011067"
 | --- | --- | --- |
 | `https://*.storsimple.windowsazure.us/*`<br>`https://*.accesscontrol.usgovcloudapi.net/*`<br>`https://*.servicebus.usgovcloudapi.net/*`<br>`https://login.microsoftonline.us` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
 | `https://*.backup.windowsazure.us` |Регистрация устройства |Только DATA 0 |
-| `http://crl.microsoft.com/pki/*`<br>`http://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
+| `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
 | `https://*.core.usgovcloudapi.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Учетные записи хранения Azure и мониторинг |Сетевые интерфейсы с поддержкой облака |
-| `http://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`http://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`http://download.microsoft.com`<br>`http://wustat.windows.com`<br>`http://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт<br> |Только статические IP-адреса контроллеров |
+| `https://*.windowsupdate.microsoft.com`<br>`https://*.windowsupdate.microsoft.com`<br>`https://*.update.microsoft.com`<br> `https://*.update.microsoft.com`<br>`http://*.windowsupdate.com`<br>`https://download.microsoft.com`<br>`http://wustat.windows.com`<br>`https://ntservicepack.microsoft.com` |Серверы Центра обновления Майкрософт<br> |Только статические IP-адреса контроллеров |
 | `http://*.deploy.akamaitechnologies.com` |CDN Akamai |Только статические IP-адреса контроллеров |
 | `https://*.partners.extranet.microsoft.com/*`<br>`https://dcupload.microsoft.com/`<br>`https://*.support.microsoft.com/` |Вспомогательный пакет |Сетевые интерфейсы с поддержкой облака |
 
@@ -155,7 +155,7 @@ ms.locfileid: "28011067"
 * Кроме того, при сбое виртуального IP-адреса на устройстве StorSimple выдается предупреждение. Дополнительные сведения см. в статье [Краткий справочник по сбоям](storsimple-8000-manage-alerts.md).
 * С точки зрения повторных попыток iSCSI имеет приоритет над облаком.
   
-    Рассмотрим следующий пример: устройство StorSimple имеет два сетевых интерфейса — "Данные 0" и "Данные 1". Для интерфейса "Данные 0" включена поддержка облака, а для интерфейса "Данные 1" включена поддержка как облака, так и iSCSI. Никакие другие сетевые интерфейсы на этом устройстве не имеют включенной поддержки облака или iSCSI.
+    Рассмотрим следующий пример. Устройство StorSimple имеет два сетевых интерфейса, Data 0 и Data 1. Для интерфейса "Данные 0" включена поддержка облака, а для интерфейса "Данные 1" включена поддержка как облака, так и iSCSI. Никакие другие сетевые интерфейсы на этом устройстве не имеют включенной поддержки облака или iSCSI.
   
     В случае сбоя интерфейса "Данные 1", учитывая, что он является последним сетевым интерфейсом iSCSI, это приведет к отработке отказа контроллера на интерфейс "Данные 1" на другом контроллере.
 
@@ -240,9 +240,9 @@ ms.locfileid: "28011067"
 Внимательно ознакомьтесь с этими рекомендациями, чтобы обеспечить высокую доступность узлов, подключенных к устройству StorSimple.
 
 * Настройте StorSimple с помощью [конфигураций кластера двухузлового файлового сервера][1]. При удалении одиночных точек сбоя и создании избыточности на стороне узла все решение становится высокодоступным.
-* Используйте постоянно доступные общие папки в Windows Server 2012 (SMB 3.0) для обеспечения высокой доступности во время отработки отказа контроллеров хранилища. Дополнительные сведения о настройке кластеров для файловых серверов и постоянно доступных общих папок в Windows Server 2012 см. в этом [видео](http://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares).
+* Используйте постоянно доступные общие папки в Windows Server 2012 (SMB 3.0) для обеспечения высокой доступности во время отработки отказа контроллеров хранилища. Дополнительные сведения о настройке кластеров для файловых серверов и постоянно доступных общих папок в Windows Server 2012 см. в этом [видео](https://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте о системных ограничениях StorSimple](storsimple-8000-limits.md).
 * [Узнайте о развертывании решения StorSimple](storsimple-8000-deployment-walkthrough-u2.md).

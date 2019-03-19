@@ -12,18 +12,18 @@ ms.author: jovanpop
 ms.reviewer: carlrab, srbozovi, bonova
 manager: craigg
 ms.date: 02/18/2019
-ms.openlocfilehash: 640182b50492ed21cd604423fe1cef7301095941
-ms.sourcegitcommit: 4bf542eeb2dcdf60dcdccb331e0a336a39ce7ab3
-ms.translationtype: HT
+ms.openlocfilehash: 9e1001816e9a4cf62d2e6c84c72aae84428148d0
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56408805"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57997917"
 ---
 # <a name="quickstart-configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure
 
 В этом кратком руководстве показано, как настроить виртуальную машину Azure для подключения к Управляемому экземпляру Базы данных SQL Azure с помощью SQL Server Management Studio (SSMS). Краткое руководство по подключению с локального клиентского компьютера с использованием подключения "точка — сеть" см. в [этой статье](sql-database-managed-instance-configure-p2s.md) 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В качестве начальной точки используются ресурсы, созданные в кратком руководстве [Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 
@@ -70,7 +70,7 @@ ms.locfileid: "56408805"
 
 1. Убедитесь, что вы вошли на портал Azure в другой вкладке браузера. Затем нажмите следующую кнопку, чтобы создать клиентскую виртуальную машину и установить SQL Server Management Studio:
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjovanpop-msft%2Fazure-quickstart-templates%2Fsql-win-vm-w-tools%2F201-vm-win-vnet-sql-tools%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjovanpop-msft%2Fazure-quickstart-templates%2Fsql-win-vm-w-tools%2F201-vm-win-vnet-sql-tools%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
 2. Заполните форму, используя сведения из следующей таблицы:
 
@@ -84,7 +84,7 @@ ms.locfileid: "56408805"
    |**Пароль**|Любой допустимый пароль|Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).<br>Используйте этот пароль каждый раз при [подключении к виртуальной машине](#connect-to-virtual-machine).|
    | **Размер виртуальной машины** | Любой допустимый размер | Размера по умолчанию в этом шаблоне **Standard_B2s** достаточно для работы с этим руководством. |
    | **Местоположение.**|[resourceGroup().location].| Не меняйте это значение. |
-   | **Имя виртуальной сети**|Виртуальная сеть, в которой вы создали Управляемый экземпляр.|
+   | **Имя виртуальной сети**|Виртуальная сеть, в которой вы создали управляемый экземпляр.|
    | **Имя подсети**|Имя подсети, созданной при выполнении предыдущей процедуры| Не выбирайте подсеть, в которой создан Управляемый экземпляр.|
    | **artifacts Location** (Расположение артефактов) | [deployment().properties.templateLink.uri] | Не меняйте это значение. |
    | **artifacts Location Sas token** (Маркер SAS расположения артефактов) | Не указывайте. | Не меняйте это значение. |
@@ -140,7 +140,7 @@ ms.locfileid: "56408805"
 
 После подключения можно просмотреть системные и пользовательские базы данных на узле "Базы данных" и различные объекты на узлах "Безопасность", "Объекты сервера", "Репликация", "Управление", "Агент SQL Server" и "Профилировщик XEvent".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Краткое руководство по подключению с локального клиентского компьютера с помощью подключения "точка — сеть" см. в [этой статье](sql-database-managed-instance-configure-p2s.md).
 - Обзор вариантов подключения для приложений см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md).

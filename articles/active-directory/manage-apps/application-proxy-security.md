@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef9dbe1bb0ed9e5aad545453c409b0959bdd3fd4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 7bb9fc806779565581fa7667749402f5608edd80
+ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207234"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57438080"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD
 
@@ -69,7 +69,7 @@ ms.locfileid: "56207234"
 
 Получите новейшую систему безопасности.
 
-Являясь частью Azure Active Directory, прокси приложения может использовать [защиту идентификации Azure AD](../active-directory-identityprotection.md) с данными из Microsoft Security Response Center и Digital Crimes Unit. Вместе мы в упреждающем режиме выявляем скомпрометированные учетные записи и обеспечиваем защиту от входов, представляющих высокий уровень риска. Мы учитываем множество факторов, чтобы определить, какие попытки входа связаны с высоким риском. К этим факторам относятся помеченные флагами зараженные устройства, анонимизация сетей и нетипичные или маловероятные расположения.
+Являясь частью Azure Active Directory, прокси приложения может использовать [защиту идентификации Azure AD](../active-directory-identityprotection.md) с данными из Microsoft Security Response Center и Digital Crimes Unit. Вместе мы в упреждающем режиме выявляем скомпрометированные учетные записи и обеспечиваем защиту от входов, представляющих высокий уровень риска. Мы учитываем множество факторов, чтобы определить, какие попытки входа в систему, высоким уровнем риска. К этим факторам относятся помеченные флагами зараженные устройства, анонимизация сетей и нетипичные или маловероятные расположения.
 
 Многие из этих отчетов и событий уже сейчас можно использовать в API для интеграции с системами управления сведениями о безопасности и событиями (SIEM).
 
@@ -182,7 +182,7 @@ ms.locfileid: "56207234"
 На этом этапе приложение может выполнять определенную обработку. Если вы настроили прокси приложения для преобразования заголовков или URL-адресов в приложении, то при необходимости эта обработка выполняется на данном этапе.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Аспекты топологии сети при использовании прокси приложения Azure AD](application-proxy-network-topology.md)
 

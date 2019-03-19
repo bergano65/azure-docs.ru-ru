@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: jingwang
-ms.openlocfilehash: e1a928711a596c159ac920f11c123b73b72d3aa2
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: e21223bf3c50a98e039d0f19c51116c4a3cfbcc0
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56313421"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57875144"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "56313421"
 
 Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | columnDelimiter |Знак, используемый для разделения столбцов в файле. Вы можете использовать редкие непечатаемые символы, которые не содержатся в ваших данных. Например, укажите "\u0001", что соответствует символу начала заголовка (SOH). |Допускается только один знак. Значение **по умолчанию** — **запятая (,)**. <br/><br/>Чтобы использовать символ Юникода, см. соответствующие коды в статье о [символах Юникода](https://en.wikipedia.org/wiki/List_of_Unicode_characters). |Нет  |
 | rowDelimiter |Знак, используемый для разделения строк в файле. |Допускается только один знак. **По умолчанию** используется одно из следующих значений: **для чтения — [\r\n, \r, \n]**, для записи — **\r\n**. |Нет  |
@@ -88,7 +88,7 @@ ms.locfileid: "56313421"
 
 Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | filePattern |Шаблон данных, хранящихся в каждом JSON-файле. Допустимые значения: **setOfObjects** и **arrayOfObjects**. Значение **по умолчанию** — **setOfObjects**. Подробные сведения об этих шаблонах см. в разделе [Шаблоны файлов JSON](#json-file-patterns). |Нет  |
 | jsonNodeReference | Для итерации и извлечения данных из объектов в поле массива с таким же шаблоном укажите путь JSON этого массива. Это свойство поддерживается только в том случае, если данные копируются **из** JSON-файлов. | Нет  |
@@ -439,7 +439,7 @@ ms.locfileid: "56313421"
 
 | Тип промежуточных данных фабрики данных | Тип-примитив Parquet | Исходный тип Parquet (десериализация) | Исходный тип Parquet (сериализация) |
 |:--- |:--- |:--- |:--- |
-| Логическое | Логическое | Недоступно | Недоступно |
+| Логическое | Логическое | Н/Д | Н/Д |
 | SByte | Int32 | Int8 | Int8 |
 | Byte | Int32 | UInt8 | Int16 |
 | Int16 | Int32 | Int16 | Int16 |
@@ -448,17 +448,17 @@ ms.locfileid: "56313421"
 | UInt32 | Int64 | UInt32 | Int64 |
 | Int64 | Int64 | Int64 | Int64 |
 | UInt64 | Binary или Int64 | UInt64 | Decimal |
-| Single | Float | Недоступно | Недоступно |
-| Double | Double | Недоступно | Недоступно |
+| Single | Float | Н/Д | Н/Д |
+| Double | Double | Н/Д | Н/Д |
 | Decimal | Binary | Decimal | Decimal |
 | Строка | Binary | Utf8 | Utf8 |
-| DateTime | Int96 | Недоступно | Недоступно |
-| TimeSpan | Int96 | Недоступно | Недоступно |
-| DateTimeOffset | Int96 | Недоступно | Недоступно |
-| ByteArray | Binary | Недоступно | Недоступно |
+| DateTime | Int96 | Н/Д | Н/Д |
+| TimeSpan | Int96 | Н/Д | Н/Д |
+| DateTimeOffset | Int96 | Н/Д | Н/Д |
+| ByteArray | Binary | Н/Д | Н/Д |
 | Guid | Binary | Utf8 | Utf8 |
 | Char | Binary | Utf8 | Utf8 |
-| CharArray | Не поддерживается | Недоступно | Недоступно |
+| CharArray | Не поддерживается | Н/Д | Н/Д |
 
 ## <a name="orc-format"></a>Формат ORC
 
@@ -524,7 +524,7 @@ ms.locfileid: "56313421"
 
 Обратите внимание на следующие моменты.
 
-* [Сложные типы данных](http://avro.apache.org/docs/current/spec.html#schema_complex) (записи, перечисления, массивы, сопоставления, объединения и фиксированные данные) не поддерживаются.
+* [Сложные типы данных](https://avro.apache.org/docs/current/spec.html#schema_complex) (записи, перечисления, массивы, сопоставления, объединения и фиксированные данные) не поддерживаются.
 
 ## <a name="compression-support"></a>Поддержка сжатия
 
@@ -574,7 +574,15 @@ ms.locfileid: "56313421"
 > [!NOTE]
 > Параметры сжатия для данных в форматах **AvroFormat**, **OrcFormat** или **ParquetFormat** не поддерживаются. Для чтения данных в этих форматах фабрика данных выявляет и использует в метаданных кодек сжатия. При записи в файл в одном из этих форматов фабрика данных выбирает кодек сжатия по умолчанию для этого формата. Например, ZLIB для OrcFormat и SNAPPY для ParquetFormat.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="unsupported-file-types-and-compression-formats"></a>Неподдерживаемые типы файлов и форматов сжатия
+
+Функции расширения фабрики данных Azure можно использовать для преобразования файлов, которые не поддерживаются. Два варианта включения функций Azure и пользовательские задачи с помощью пакетной службы Azure.
+
+Вы увидите пример, использующий функцию Azure для [Извлеките содержимое tar-файл](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction). Дополнительные сведения см. в разделе [действия "функции Azure"](https://docs.microsoft.com/azure/data-factory/control-flow-azure-function-activity).
+
+Можно также создать эту функцию, с помощью действия пользовательского dotnet. Дополнительные сведения недоступны [здесь](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-using-dotnet-custom-activity)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены статьи для файловых хранилищ данных, поддерживаемых фабрикой данных Azure.
 

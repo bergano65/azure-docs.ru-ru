@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 03/14/2019
 ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: 94baa1235388ce99d013f8267f8410dcc206a51d
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 336552c142e504ae7296314512f00688e30d032e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998354"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57894365"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure 
 
@@ -28,7 +28,7 @@ ms.locfileid: "55998354"
 
 Этот документ предназначен для инженеров, работающих в подсистеме DRM OTT или с веб-решениями для потоковой передачи или с несколькими экранами, а также для всех читателей, заинтересованных в подсистеме DRM. Предполагается, что читатели знакомы по крайней мере с одной из технологий DRM на рынке, например PlayReady, Widevine, FairPlay или Adobe Access.
 
-В этом обсуждении DRM мы также рассмотрим общее шифрование (CENC) с несколькими подсистемами DRM. Основной тенденцией в отрасли интерактивной потоковой передачи и OTT является использование CENC с несколькими собственными DRM на различных клиентских платформах. Это переход от предыдущей тенденции использования единого DRM и клиентского пакета SDK для различных клиентских платформ. При использовании CENC с несколькими собственными DRM и PlayReady, и Widevine шифруются посредством спецификации [стандартного шифрования (ISO/IEC 23001-7 CENC)](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=65271/).
+В этом обсуждении DRM мы также рассмотрим общее шифрование (CENC) с несколькими подсистемами DRM. Основной тенденцией в отрасли интерактивной потоковой передачи и OTT является использование CENC с несколькими собственными DRM на различных клиентских платформах. Это переход от предыдущей тенденции использования единого DRM и клиентского пакета SDK для различных клиентских платформ. При использовании CENC с несколькими собственными DRM и PlayReady, и Widevine шифруются посредством спецификации [стандартного шифрования (ISO/IEC 23001-7 CENC)](https://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=65271/).
 
 Ниже приведены преимущества CENC с несколькими DRM:
 
@@ -156,7 +156,7 @@ ms.locfileid: "55998354"
 | **Управление ключами** |Не требуется для справочной реализации |
 | **Управление содержимым** |Консольное приложение C# |
 
-Другими словами в Azure AD используются поставщик удостоверений и служба маркеров безопасности. Для проигрывателя используется [API Проигрывателя мультимедиа Azure](http://amp.azure.net/libs/amp/latest/docs/). Службы мультимедиа и Проигрыватель мультимедиа поддерживают DASH и CENC с несколькими DRM.
+Другими словами в Azure AD используются поставщик удостоверений и служба маркеров безопасности. Для проигрывателя используется [API Проигрывателя мультимедиа Azure](https://amp.azure.net/libs/amp/latest/docs/). Службы мультимедиа и Проигрыватель мультимедиа поддерживают DASH и CENC с несколькими DRM.
 
 Следующая схема показывает общую структуру и поток с описанным выше сопоставлением технологии:
 
@@ -208,7 +208,7 @@ ms.locfileid: "55998354"
    * Install-Package Microsoft.Owin.Host.SystemWeb
    * Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 
-8. Создание проигрывателя с помощью [API Проигрывателя мультимедиа Azure](http://amp.azure.net/libs/amp/latest/docs/). [API ProtectionInfo Проигрывателя мультимедиа Azure](http://amp.azure.net/libs/amp/latest/docs/) позволяет указать, какие технологии DRM следует использовать на разных платформах DRM.
+8. Создание проигрывателя с помощью [API Проигрывателя мультимедиа Azure](https://amp.azure.net/libs/amp/latest/docs/). [API ProtectionInfo Проигрывателя мультимедиа Azure](https://amp.azure.net/libs/amp/latest/docs/) позволяет указать, какие технологии DRM следует использовать на разных платформах DRM.
 
 9. Сопоставление показано в тестовой матрице.
 

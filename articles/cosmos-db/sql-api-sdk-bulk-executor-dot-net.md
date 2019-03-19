@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 76a40c7e9f32deea798441ce53be7c7ef262e2bd
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 4f2d8b3246901f139695998224dfe036cccb9833
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770675"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57855790"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для .NET: информация о скачивании 
 
@@ -86,7 +86,7 @@ ms.locfileid: "55770675"
 
 * Добавлена поддержка операции BulkImport и BulkUpdate для учетных записей API Azure Cosmos DB SQL.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о библиотеке Java Bulk Executor см. в следующей статье:
 

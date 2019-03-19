@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 7574cc7c-e5a1-4b7c-97f6-0cffb1a5d536
 ms.date: 10/15/2017
-ms.openlocfilehash: 3abe7bae5506b721d4baf1e18da390b3e67977d8
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: 5a1cae376ab9db2b0c4b5e0e5514bf7745593433
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242952"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57894586"
 ---
 # <a name="create-and-deploy-logic-apps-with-azure-resource-manager-templates"></a>Создание и развертывание приложений логики с помощью шаблонов Azure Resource Manager
 
@@ -82,7 +82,7 @@ Azure Logic Apps предоставляет шаблоны Azure Resource Manage
 | Параметр | ОПИСАНИЕ | Пример определения JSON | 
 | --------- | ----------- | ----------------------- | 
 | `logicAppName` | Определяет имя приложения логики, которое создает этот шаблон. | "logicAppName": { "type": "string", "metadata": { "description": "myExampleLogicAppName" } } |
-| `testUri` | Определяет расположение для проверки связи. | "testUri": { "type": "string", "defaultValue": "http://azure.microsoft.com/status/feed/"} | 
+| `testUri` | Определяет расположение для проверки связи. | "testUri": { "type": "string", "defaultValue": "https://azure.microsoft.com/status/feed/"} | 
 ||||
 
 Узнайте больше о [REST API для определения и свойств рабочих процессов Logic Apps](https://docs.microsoft.com/rest/api/logic/workflows) и [создании определений приложений логики в формате JSON](logic-apps-author-definitions.md).
@@ -125,7 +125,7 @@ azure group deployment create --template-uri https://raw.githubusercontent.com/A
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Мониторинг приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)

@@ -2,18 +2,18 @@
 title: Azure Site Recovery. Часто задаваемые вопросы | Документация Майкрософт
 description: В этой статье приводятся ответы на распространенные вопросы об использовании Azure Site Recovery.
 services: site-recovery
-author: rayne-wiselman
-manager: carmonm
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 12/27/2018
-ms.author: raynew
-ms.openlocfilehash: 1300ac9b6ba0eee8698e268fb9cc613955deb74e
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.date: 3/3/2019
+ms.author: mayg
+ms.openlocfilehash: 1abd18e294ef73e989191d189ea599bca2b4d903
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321929"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881084"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 Данная статья содержит часто задаваемые вопросы об Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
@@ -88,10 +88,10 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 ## <a name="replication"></a>Репликация
 
 ### <a name="can-i-replicate-over-a-site-to-site-vpn-to-azure"></a>Можно выполнить репликацию через VPN-подключение типа "сеть — сеть" в Azure?
-Azure Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Репликация не выполняется через VPN-подключение типа "сеть — сеть". Вы можете создать такое подключение с помощью виртуальной сети Azure. Это никак не повлияет на репликацию Site Recovery.
+Azure Site Recovery реплицирует данные в учетную запись хранилища Azure или управляемых дисков через общедоступную конечную точку. Репликация не выполняется через VPN-подключение типа "сеть — сеть". Вы можете создать такое подключение с помощью виртуальной сети Azure. Это никак не повлияет на репликацию Site Recovery.
 
 ### <a name="can-i-use-expressroute-to-replicate-virtual-machines-to-azure"></a>Можно ли использовать ExpressRoute для репликации виртуальных машин в Azure?
-Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure. Azure Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure. Репликация через частный пиринг не поддерживается. Ели вы защищаете виртуальные машины VMware или физические компьютеры, убедитесь, что [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) также выполняются для репликации. 
+Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure. Azure Site Recovery реплицирует данные в хранилище Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure. Репликация через частный пиринг не поддерживается. Ели вы защищаете виртуальные машины VMware или физические компьютеры, убедитесь, что [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) также выполняются для репликации. 
 
 ### <a name="are-there-any-prerequisites-for-replicating-virtual-machines-to-azure"></a>Существуют ли предварительные требования для репликации виртуальных машин в Azure?
 Виртуальные машины [VMware](vmware-physical-azure-support-matrix.md#replicated-machines) и [Hyper-V](hyper-v-azure-support-matrix.md#replicated-vms), которые необходимо реплицировать в Azure, должны соответствовать требованиям Azure.
@@ -111,18 +111,18 @@ Azure Site Recovery реплицирует данные в учетную зап
 * [Репликация виртуальных машин Hyper-V (без VMM) в Azure с помощью PowerShell (модель Resource Manager)](hyper-v-azure-powershell-resource-manager.md)
 * [Репликация из VMware в Azure с помощью PowerShell для Resource Manager](vmware-azure-disaster-recovery-powershell.md)
 
-### <a name="if-i-replicate-to-azure-what-kind-of-storage-account-do-i-need"></a>Какая учетная запись хранения требуется при репликации в Azure?
-Требуется учетная запись хранения LRS или GRS. Рекомендуется использовать учетную запись хранения GRS, чтобы обеспечить устойчивость данных в случае отключения электричества в регионе или при отсутствии возможности восстановления основного региона. Учетная запись должна находиться в том же регионе, что и хранилище служб восстановления. При развертывании Site Recovery на портале Azure хранилище класса Premium поддерживается для репликации виртуальных машин VMware, Hyper-V и физических серверов.
+### <a name="if-i-replicate-to-azure-what-kind-of-storage-account-or-managed-disk-do-i-need"></a>При репликации в Azure, укажите тип учетной записи хранения или управляемый диск необходимо?
+Необходимо, чтобы в хранилище LRS или GRS. Рекомендуется использовать учетную запись хранения GRS, чтобы обеспечить устойчивость данных в случае отключения электричества в регионе или при отсутствии возможности восстановления основного региона. Учетная запись должна находиться в том же регионе, что и хранилище служб восстановления. При развертывании Site Recovery на портале Azure хранилище класса Premium поддерживается для репликации виртуальных машин VMware, Hyper-V и физических серверов. Управляемые диски поддерживают только LRS.
 
 ### <a name="how-often-can-i-replicate-data"></a>Как часто можно реплицировать данные?
 * **Hyper-V**. Виртуальные машины Hyper-V можно реплицировать каждые 30 секунд (но не для хранилища класса Premium), 5 или 15 минут. При настройке репликации сети SAN репликация является синхронной.
 * **VMware и физические серверы.** Здесь частота репликации не имеет значения. Репликация является непрерывной.
 
 ### <a name="can-i-extend-replication-from-existing-recovery-site-to-another-tertiary-site"></a>Можно ли расширить репликацию с существующего сайта восстановления до сайта третьего уровня?
-Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).
+Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).
 
 ### <a name="can-i-do-an-offline-replication-the-first-time-i-replicate-to-azure"></a>Можно ли выполнить первую процедуру репликации в Azure в автономном режиме?
-Эта возможность не поддерживается. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).
+Эта возможность не поддерживается. Запросите эту функцию на [форуме отзывов и предложений](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).
 
 ### <a name="can-i-exclude-specific-disks-from-replication"></a>Можно ли исключить из репликации отдельные диски?
 Эта возможность поддерживается при репликации виртуальных машин VMware и Hyper-V в Azure с помощью портала Azure.
@@ -183,7 +183,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 № Azure выставляет счета только поставщику службы. Поставщики служб отвечают за создание специальных счетов для своих клиентов.
 
 ### <a name="if-im-replicating-to-azure-do-we-need-to-run-virtual-machines-in-azure-at-all-times"></a>Нужно ли всегда запускать виртуальные машины при репликации в Azure?
-Нет, данные реплицируются в учетную запись хранения Azure в вашей подписке. При тестовой отработке отказа (отработке аварийного восстановления) или фактической отработке отказа Site Recovery автоматически создает виртуальные машины в вашей подписке.
+Нет, данные реплицируются в службу хранилища Azure в вашей подписке. При тестовой отработке отказа (отработке аварийного восстановления) или фактической отработке отказа Site Recovery автоматически создает виртуальные машины в вашей подписке.
 
 ### <a name="do-you-ensure-tenant-level-isolation-when-i-replicate-to-azure"></a>Обеспечивается ли изоляция на уровне клиента при репликации в Azure?
 Да.
@@ -194,6 +194,6 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="do-you-support-single-azure-pack-and-single-vmm-server-deployments"></a>Поддерживаются ли отдельные развертывания Azure Pack или односерверные развертывания VMM?
 Да, можно выполнять репликацию виртуальных машин Hyper-V в Azure или между сайтами поставщиков служб.  Обратите внимание, что при репликации между сайтами поставщика услуг интеграция Runbook Azure недоступна.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь со статьей [Обзор Site Recovery](site-recovery-overview.md)
 * Ознакомьтесь с [архитектурой Site Recovery](site-recovery-components.md).  

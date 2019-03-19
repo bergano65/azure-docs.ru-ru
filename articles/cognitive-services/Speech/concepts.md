@@ -10,12 +10,13 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: b5e6853653bab96cd11196ba03fbeadbdc6b337f
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: c114c726bea34465972a282acac6b8acbbf9a80f
+ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816219"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56670440"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 
@@ -198,7 +199,7 @@ https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservic
 
 ### <a name="n-best-values"></a>N лучших значений
 
-Слушатели, не важно человек или компьютер, не могут наверняка знать, что они *точно* слышали то, что кто-то произнес. Конкретной интерпретации высказывания слушатель может присвоить только *вероятность*. 
+Слушатели, не важно человек или компьютер, не могут наверняка знать, что они *точно* слышали то, что кто-то произнес. Конкретной интерпретации высказывания слушатель может присвоить только *вероятность*.
 
 В обычных условиях, в разговоре с другими людьми, с которыми они часто взаимодействуют, люди имеют высокую вероятность распознавания произнесенных слов. Машинные распознаватели речи стремятся достичь аналогичных уровней точности и, при правильных условиях, [могут посоревноваться с людьми](https://blogs.microsoft.com/next/2016/10/18/historic-achievement-microsoft-researchers-reach-human-parity-conversational-speech-recognition/#sm.001ykosqs14zte8qyxj2k9o28oz5v).
 
@@ -308,7 +309,7 @@ https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservic
 
 | Значение параметра *ненормативная лексика* | ОПИСАНИЕ |
 | - | - |
-| `masked` | Скрывает ненормативную лексику звездочками. Поведение по умолчанию. | 
+| `masked` | Скрывает ненормативную лексику звездочками. Поведение по умолчанию. |
 | `removed` | Удаляет ненормативную лексику из всех результатов. |
 | `raw` | Распознает и возвращает ненормативную лексику во всех результатах. |
 
@@ -322,7 +323,7 @@ https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservic
 
 #### <a name="profanity-only-utterances"></a>Полностью ненормативная речь
 
-Если приложение настроено на удаление ненормативной лексики, возможна ситуация, когда пользователь употребляет *только* ненормативную лексику. В этом случае, если задан режим распознавания *диктовка* или *диалог*, служба возвращает *speech.result*. Если режим распознавания *интерактивный*, служба возвращает *speech.result* и код состояния *NoMatch*. 
+Если приложение настроено на удаление ненормативной лексики, возможна ситуация, когда пользователь употребляет *только* ненормативную лексику. В этом случае, если задан режим распознавания *диктовка* или *диалог*, служба возвращает *speech.result*. Если режим распознавания *интерактивный*, служба возвращает *speech.result* и код состояния *NoMatch*.
 
 ### <a name="profanity-value-raw"></a>Значение ненормативной лексики `Raw`
 

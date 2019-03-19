@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 252aacfeb85f23699c6a2e2ac1f457f9e2b59b0e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c00e62e237fe263f54926c8e74fb6211a2e5a4e4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997191"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57993050"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---docker"></a>Локальное развертывание акселератора решений для удаленного мониторинга Docker
 
@@ -23,7 +23,7 @@ ms.locfileid: "55997191"
 
 Если вы хотите запустить акселератор решений для удаленного мониторинга в IDE на локальном компьютере, см. статью [Локальное развертывание акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy-local.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для развертывания служб Azure, используемых акселератором решений для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -96,7 +96,7 @@ docker rmi <list_of_images>
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 
-Для доступа к панели мониторинга решения для удаленного мониторинга перейдите по адресу [http://localhost:8080](http://localhost:8080) в браузере. Теперь можно использовать веб-Интерфейс и локальные микрослужбы.
+Чтобы получить доступ к панели мониторинга решения для удаленного мониторинга, перейдите к `http://localhost:8080` в браузере. Теперь можно использовать веб-Интерфейс и локальные микрослужбы.
 
 ## <a name="clean-up"></a>Очистка
 
@@ -104,6 +104,6 @@ docker rmi <list_of_images>
 
 Воспользуйтесь командой `docker-compose down --rmi all`, чтобы удалить образы Docker и освободить место на локальном компьютере. Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули решение для удаленного мониторинга, [изучите возможности панели мониторинга решения](quickstart-remote-monitoring-deploy.md).

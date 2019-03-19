@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b5c4779605922bf6d523a9bc6e65e4d9a27f32a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 8fa78ec2b5623dfd010a8fe5709916a47e221a9e
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56163722"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57902201"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Руководство. Интеграция Azure Active Directory с TalentLMS
 
@@ -34,7 +34,7 @@ ms.locfileid: "56163722"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с TalentLMS, вам потребуется:
 
@@ -146,11 +146,11 @@ ms.locfileid: "56163722"
 
     a. Из списка **Тип интеграции единого входа** выберите **SAML 2.0**.
 
-    б) В текстовое поле **Identity Provider (IDP)** (Поставщик удостоверений (IdP)) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    2. В текстовое поле **Identity Provider (IDP)** (Поставщик удостоверений (IdP)) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
  
     c. Вставьте значение **Отпечаток** с портала Azure в текстовое поле **Certificate Fingerprint** (Отпечаток сертификата).    
 
-    4.3.  В текстовое поле **Remote sign-in URL** (URL-адрес удаленного входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    d.  В текстовое поле **Remote sign-in URL** (URL-адрес удаленного входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
  
     д. В текстовое поле **Remote sign-out URL** (URL-адрес удаленного выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -195,11 +195,11 @@ ms.locfileid: "56163722"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-talentlms-test-user"></a>Создание тестового пользователя TalentLMS
 
@@ -217,11 +217,11 @@ ms.locfileid: "56163722"
 
     a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
-    б) В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    2. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
  
-    c. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    c. В **адрес электронной почты** текстовом поле введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    4.3. Нажмите кнопку **Add User**(Добавить пользователя).
+    d. Нажмите кнопку **Add User**(Добавить пользователя).
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетной записи пользователя TalentLMS или API-интерфейсы, предоставляемые TalentLMS для подготовки учетных записей пользователя AAD.

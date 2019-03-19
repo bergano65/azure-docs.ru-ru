@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/18/2018
 ms.author: alkohli
-ms.openlocfilehash: 9d1229084410b6fe7c500a22f8e1e1aed1b8107d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: 88b903d68e4398b4e30b0b7435279c29bee6cd6b
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227354"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58005223"
 ---
 # <a name="install-update-11-on-your-storsimple-virtual-array"></a>Установка обновления 1.1 для виртуального массива StorSimple
 
@@ -66,7 +66,7 @@ ms.locfileid: "51227354"
 
 #### <a name="to-download-the-update-or-the-hotfix"></a>Загрузка обновления или исправления
 
-1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
+1. Запустите Internet Explorer и перейдите по адресу [https://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
 
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить**, когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 
@@ -125,6 +125,6 @@ ms.locfileid: "51227354"
 6. Повторите шаги 2–4 для установки исправлений системы безопасности Windows с помощью файла `Windows8.1-KB4284815-x64`. Виртуальный массив перезапускается после установки, и вам потребуется войти в локальной веб-интерфейс.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).

@@ -11,19 +11,23 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 12/19/2018
-ms.openlocfilehash: cdd709fa446ffe769c8c57aeb44fe592b12e92d4
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.date: 03/12/2019
+ms.openlocfilehash: 0d0452cba099bbc568f2b9e926258eb16060eaf4
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416122"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57855926"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
 Рекомендации по настройке базы данных SQL создает функция [автоматической настройки](sql-database-automatic-tuning.md) службы "База данных SQL Azure". Это решение постоянно отслеживает и анализирует рабочие нагрузки баз данных SQL, предоставляя для каждой отдельной базы данных специализированные рекомендации по настройке, связанные с созданием индексов, удалением индексов и оптимизацией планов выполнения запросов.
 
-Рекомендации по автоматической настройке базы данных SQL можно просмотреть на [портале Azure](sql-database-advisor-portal.md), а также получить с помощью вызовов [REST API](https://docs.microsoft.com/rest/api/sql/databaserecommendedactions/listbydatabaseadvisor) либо с помощью команд [T-SQL](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/get-azurermsqldatabaserecommendedaction). Эта статья основана на использовании сценария PowerShell для получения рекомендаций по автоматической настройке.
+Рекомендации по автоматической настройке базы данных SQL можно просмотреть на [портале Azure](sql-database-advisor-portal.md), а также получить с помощью вызовов [REST API](https://docs.microsoft.com/rest/api/sql/databaserecommendedactions/listbydatabaseadvisor) либо с помощью команд [T-SQL](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaserecommendedaction). Эта статья основана на использовании сценария PowerShell для получения рекомендаций по автоматической настройке.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
 ## <a name="automate-email-notifications-for-automatic-tuning-recommendations"></a>Автоматизация уведомлений по электронной почте о рекомендациях по автоматической настройке
 
@@ -55,7 +59,7 @@ ms.locfileid: "56416122"
 
 ## <a name="update-azure-automation-modules"></a>Обновление модулей службы автоматизации Azure
 
-Для получения рекомендаций по автоматической настройке сценарий PowerShell использует команды [Get-AzureRmResource](https://docs.microsoft.com/powershell/module/AzureRM.Resources/Get-AzureRmResource) и [Get-AzureRmSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Get-AzureRmSqlDatabaseRecommendedAction), требующие обновления модулей Azure до версии 4 и более поздней версии.
+Для получения рекомендаций по автоматической настройке сценарий PowerShell использует [Get-AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) команды для обновления модулей Azure до версии 4 и выше является обязательным.
 
 Вот как можно обновить модули Azure PowerShell.
 
@@ -63,8 +67,6 @@ ms.locfileid: "56416122"
 - Вверху области "Модули" щелкните **Обновить модули Azure** и подождите, пока не появится сообщение "Модули Azure обновлены". Процесс создания может занять несколько минут.
 
 ![Обновление модулей службы автоматизации Azure](./media/sql-database-automatic-tuning-email-notifications/howto-email-02.png)
-
-Необходимо использовать модули AzureRM.Resources и AzureRM.Sql версии 4 и более поздней версии.
 
 ## <a name="create-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -85,7 +87,7 @@ ms.locfileid: "56416122"
 - В области **Изменение Runbook PowerShell** выберите **Модули Runbook** в дереве меню, а затем разворачивайте представление, пока не увидите имя своего runbook (в этом примере —  **AutomaticTuningEmailAutomation**). Выберите этот runbook.
 - В первой строке области "Изменение PowerShell Runbook" (начинающейся с цифры 1) вставьте приведенный ниже код сценария PowerShell, предварительно скопировав его в буфер обмена. Этот сценарий PowerShell предоставляется "как есть" и дает возможность приступить к работе. Измените его в соответствии со своими потребностями.
 
-В заголовке предоставленного сценария PowerShell необходимо заменить `<SUBSCRIPTION_ID_WITH_DATABASES>` своим идентификатором подписки Azure. Чтобы узнать, как получить идентификатор подписки Azure, прочитайте раздел [Getting your Azure Subscription GUID (new portal)](https://blogs.msdn.microsoft.com/mschray/2016/03/18/getting-your-azure-subscription-guid-new-portal/) (Получение GUID подписки Azure на новом портале).
+В заголовке предоставленного сценария PowerShell необходимо заменить `<SUBSCRIPTION_ID_WITH_DATABASES>` своим идентификатором подписки Azure. Чтобы узнать, как получить идентификатор подписки Azure, прочитайте раздел [Getting your Azure Subscription GUID (new portal)](https://blogs.msdn.microsoft.com/mschray/20../../getting-your-azure-subscription-guid-new-portal/) (Получение GUID подписки Azure на новом портале).
 
 В случае, если используется несколько подписок, их можно добавить в свойство $subscriptions в заголовке сценария, разделив запятыми.
 
@@ -104,7 +106,7 @@ $subscriptions = ("<SUBSCRIPTION_ID_WITH_DATABASES>", "<SECOND_SUBSCRIPTION_ID_W
 
 # Get credentials
 $Conn = Get-AutomationConnection -Name AzureRunAsConnection
-Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 
 # Define the resource types
 $resourceTypes = ("Microsoft.Sql/servers/databases")
@@ -113,8 +115,8 @@ $results = @()
 
 # Loop through all subscriptions
 foreach($subscriptionId in $subscriptions) {
-    Select-AzureRmSubscription -SubscriptionId $subscriptionId
-    $rgs = Get-AzureRmResourceGroup
+    Select-AzSubscription -SubscriptionId $subscriptionId
+    $rgs = Get-AzResourceGroup
 
     # Loop through all resource groups
     foreach($rg in $rgs) {
@@ -122,7 +124,7 @@ foreach($subscriptionId in $subscriptions) {
 
         # Loop through all resource types
         foreach($resourceType in $resourceTypes) {
-            $resources = Get-AzureRmResource -ResourceGroupName $rgname -ResourceType $resourceType
+            $resources = Get-AzResource -ResourceGroupName $rgname -ResourceType $resourceType
 
             # Loop through all databases
             # Extract resource groups, servers and databases
@@ -151,7 +153,7 @@ foreach($subscriptionId in $subscriptions) {
 
                 # Loop through all Automatic tuning recommendation types
                 foreach ($advisor in $advisors) {
-                    $recs = Get-AzureRmSqlDatabaseRecommendedAction -ResourceGroupName $ResourceGroupName -ServerName $ServerName  -DatabaseName $DatabaseName -AdvisorName $advisor
+                    $recs = Get-AzSqlDatabaseRecommendedAction -ResourceGroupName $ResourceGroupName -ServerName $ServerName  -DatabaseName $DatabaseName -AdvisorName $advisor
                     foreach ($r in $recs) {
                         if ($r.State.CurrentValue -eq "Active") {
                             $object = New-Object -TypeName PSObject
@@ -252,7 +254,7 @@ Write-Output $table
 
 Можно дополнительно настроить решение для создания уведомлений по электронной почте на основании определенного события настройки, отправляемых нескольким получателям, для нескольких подписок или баз данных. Это может зависеть от ваших конкретных сценариев.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о том, как автоматическая настройка может помочь повысить производительность базы данных, ознакомившись с разделом [Автоматическая настройка в базе данных SQL Azure](sql-database-automatic-tuning.md).
 - Дополнительные сведения о том, как включить автоматическую настройку в базе данных SQL Azure, чтобы управлять рабочей нагрузкой, см. в статье [Включение автоматической настройки](sql-database-automatic-tuning-enable.md).

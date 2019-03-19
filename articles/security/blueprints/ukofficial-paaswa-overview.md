@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 222957bb79a88ec7b4c6e9afd6d86fe2776dbfd3
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.openlocfilehash: 7ac210d9b30a05fd5dbfd46c41c3e62a1d610357
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301805"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57891109"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -57,9 +57,8 @@ ms.locfileid: "56301805"
 - Приложение API
 - Azure DNS
 - Key Vault
-- Azure Monitor
+- Azure Monitor (журналы)
 - Application Insights
-- Log Analytics
 - Azure Resource Manager
 - Центр безопасности Azure
 - Базы данных SQL Azure
@@ -169,11 +168,11 @@ ms.locfileid: "56301805"
 
 ### <a name="monitoring-logging-and-audit"></a>Мониторинг, ведение журналов и аудит
 
-#### <a name="log-analytics"></a>Log Analytics
+#### <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-[Log Analytics](https://azure.microsoft.com/services/log-analytics/) — это служба в Azure, которая помогает собирать и анализировать данные, формируемые ресурсами в облачных и локальных средах.
+[Журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/) — это служба в Azure, которая помогает собирать и анализировать данные, создаваемые ресурсами в облачных и локальных средах.
 
-#### <a name="log-analytics-in-this-blueprint"></a>Log Analytics в рамках этой схемы реализует следующее:
+#### <a name="azure-monitor-logs-in-this-blueprint"></a>Журналы Azure Monitor в рамках этой схемы
 
 - Оценка SQL
 - диагностика Key Vault;
@@ -220,7 +219,7 @@ ms.locfileid: "56301805"
 
 Эта схема проверена центром национальной кибербезопасности Великобритании (NCSC) и полностью соответствует 14 принципам облачной безопасности NCSC.
 
-Шаблоны автоматизации протестированы командой архитекторов облачных решений Azure для обслуживания клиентов в Великобритании и партнером корпорации Microsoft [Ampliphae](http://www.ampliphae.com/).
+Шаблоны автоматизации протестированы командой архитекторов облачных решений Azure для обслуживания клиентов в Великобритании и партнером корпорации Microsoft [Ampliphae](https://www.ampliphae.com/).
 
 
 ## <a name="deploy-the-solution"></a>Развертывание решения

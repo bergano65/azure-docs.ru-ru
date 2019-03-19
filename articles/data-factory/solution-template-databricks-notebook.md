@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: 3d7fd9b3e7ab8e5f193fd3b34a804b9ed0780d66
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 884a13df23fd0cc1103b6a73fad26f2099e3bfd7
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105694"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58074700"
 ---
 # <a name="transform-data-by-using-databricks-in-azure-data-factory"></a>Преобразование данных с помощью Databricks в Фабрике данных Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "56105694"
 
 ![1](media/solution-template-Databricks-notebook/Databricks-tutorial-image01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 1.  Создайте **учетную запись хранения больших двоичных объектов** и контейнер с именем `sinkdata` для использования в качестве **приемника**. Сохраните **имя учетной записи хранения**, **имя контейнера** и **ключ доступа**, так как они понадобятся позже в шаблоне.
 
@@ -54,9 +54,9 @@ ms.locfileid: "56105694"
 
     try:  
       dbutils.fs.mount(  
-        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
-        mount_point = "/mnt/Data Factorydata",  
-        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
+        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
+        mount_point = "/mnt/Data Factorydata",  
+        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
 
     except Exception as e:  
       # The error message has a long stack track. This code tries to print just the relevant line indicating what failed.
@@ -151,6 +151,6 @@ ms.locfileid: "56105694"
 
 ![19](media/solution-template-Databricks-notebook/Databricks-tutorial-image19.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)

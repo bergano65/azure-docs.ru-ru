@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/16/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c8581510f16896df74f814e501648374d984945e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: 30b187676f0c1fb03b7124d93b3991b0e32d61ae
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039339"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57848955"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "54039339"
 
 Следите за тем, что вы загружаете в рабочие приложения-функции. Память усредняется для каждой функции в приложении.
 
-При наличии общей сборки, указанной в нескольких функциях .Net, поместите ее в общую папку. Создайте ссылку на сборку с помощью оператора, аналогичного следующему, если вы используете скрипты C# (CSX-файлы): 
+При наличии общей сборки, указанной в нескольких функциях .NET, поместите его в общую папку. Создайте ссылку на сборку с помощью оператора, аналогичного следующему, если вы используете скрипты C# (CSX-файлы): 
 
     #r "..\Shared\MyAssembly.dll". 
 
@@ -116,7 +116,7 @@ ms.locfileid: "54039339"
 
 Другие параметры конфигурации узла см. в [документации по конфигурации узлов](functions-host-json.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, carlrab
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: 4e4de6d487aaad8a0d036928fe59b47f25157bf6
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
-ms.translationtype: HT
+ms.date: 02/28/2019
+ms.openlocfilehash: 96160745fa8702fc6f931904098c28d8968de2c1
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55963851"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58010234"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-azure-sql-databases"></a>Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов
 
@@ -201,7 +201,21 @@ ms.locfileid: "55963851"
 
 Дополнительные сведения см. в статье [Создание оповещений для базы данных SQL Azure с помощью портала Azure](sql-database-insights-alerts-portal.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="customer-case-studies"></a>Примеры реальных клиентов
+
+- [SnelStart](https://azure.microsoft.com/resources/videos/azure-sql-database-case-study-snelstart/)
+
+  SnelStart позволяют пулов эластичных баз данных с базой данных SQL Azure быстро расширять свои бизнес-службы со скоростью 1000 новых баз данных SQL Azure в месяц.
+
+- [Umbraco](https://azure.microsoft.com/resources/videos/azure-sql-database-case-study-umbraco/)
+
+  Umbraco использует пулы эластичных баз данных с базой данных SQL Azure, чтобы быстро подготавливать и масштабировать службы для тысяч клиентов в облаке.
+
+- [Daxko/CSI](https://customers.microsoft.com/story/csi-used-azure-to-accelerate-its-development-cycle-and-to-enhance-its-customer-services)
+
+  Daxko/CSI использует пулы эластичных баз данных с базой данных SQL Azure для ускорения своего цикла разработки и его клиентом услуг и повышения производительности.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы масштабировать эластичные пулы, см. разделы [Масштабирование эластичных пулов](sql-database-elastic-pool.md) и [Масштабирование эластичного пула — пример кода](scripts/sql-database-monitor-and-scale-pool-powershell.md)
 - Мы рекомендуем просмотреть [видеокурс о возможностях эластичной базы данных SQL Azure на сайте Microsoft Virtual Academy](https://mva.microsoft.com/training-courses/elastic-database-capabilities-with-azure-sql-db-16554).

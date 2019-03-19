@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: f0050a91ca8ed380c838c96cf1e485a80a0c9297
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.openlocfilehash: c15dc83929aeaf6811f4d19bfca462abfacf4014
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445401"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57892461"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
 Делегирование позволяет использовать ваш существующий веб-сайт для обработки входа и регистрации разработчика и подписки на продукты вместо применения встроенной функции на портале разработчика. В результате этого веб-сайт будет владеть пользовательскими данными и проверять эти шаги в соответствии с вашими настройками.
@@ -47,7 +47,7 @@ ms.locfileid: "52445401"
 
 1. Получите запрос в следующей форме:
    
-   > *http://www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl={URL исходной страницы}&salt={строка}&sig={строка}*
+   > *http:\//www.yourwebsite.com/apimdelegation?operation=SignIn & returnUrl = {URL-адрес исходной страницы} & salt = {строка} & sig = {строка}*
    > 
    > 
    
@@ -104,7 +104,7 @@ ms.locfileid: "52445401"
 
 1. Получите запрос в следующей форме:
    
-   > *http://www.yourwebsite.com/apimdelegation?operation={operation}&productId={product для подписки}&userId={пользователь, выполняющий запрос}&salt={строка}&sig={строка}*
+   > *http:\//www.yourwebsite.com/apimdelegation?operation= {операция} & productId = {product подписаться на} & userId = {пользователь, выполняющий запрос} & salt = {строка} & sig = {строка}*
    > 
    > 
    
@@ -120,7 +120,7 @@ ms.locfileid: "52445401"
    * **sig**– вычисленный хэш безопасности, который будет сравниваться с вашим вычисленным хэшем.
 2. Убедитесь, что запрос поступает из службы управления Azure API (это необязательный шаг, но мы настоятельно рекомендуем его выполнять для обеспечения безопасности)
    
-   * Вычислите хэш HMAC-SHA512 строки на основании параметров запроса **productId**, **userId и **salt**:
+   * Вычисления HMAC-SHA512 строки на основе **productId**, **userId**, и **salt** параметры запроса:
      
      > HMAC(**salt** + '\n' + **productId** + '\n' + **userId**)
      > 
@@ -166,7 +166,7 @@ var digest = hmac.update(salt + '\n' + returnUrl).digest();
 var signature = digest.toString('base64');
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию о делегировании см. в следующем видео.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Delegating-User-Authentication-and-Product-Subscription-to-a-3rd-Party-Site/player]

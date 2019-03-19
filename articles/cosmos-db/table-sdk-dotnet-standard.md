@@ -8,16 +8,16 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/18/2018
-ms.openlocfilehash: ce7cc489b107ce4bd95270b9a7f8cb560a2d2398
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 38b283ed666b39b4e090bd95051a4454a9b47e62
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55249652"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57975667"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
-
+> 
 > * [.NET](table-sdk-dotnet.md)
 > * [.NET Standard](table-sdk-dotnet-standard.md)
 > * [Java](table-sdk-java.md)
@@ -27,9 +27,20 @@ ms.locfileid: "55249652"
 |   |   |
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
+|**Пример**|[Пример .NET API таблицы Cosmos DB](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
+|**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
+* Выпуск общедоступной версии
+
+### <a name="a-name0110-preview0110-preview"></a><a name="0.11.0-preview"/>0.11.0-Preview
+* Как могут настраиваться CloudTableClient были внесены изменения. Теперь принимает объект TableClientConfiguration во время построения. TableClientConfiguration предоставляют разные свойства для настройки поведения клиента в зависимости от того, является ли целевая конечная точка API таблиц Cosmos DB или API таблиц хранилища Azure.
+* Добавлена поддержка TableQuery результатов в отсортированном порядке по пользовательского столбца. Эта функция поддерживается только в конечных точках таблиц Cosmos DB.
+* Добавлена поддержка для предоставления RequestCharges на различными типами результатов. Эта функция поддерживается только в конечных точках таблиц Cosmos DB.
 
 ### <a name="a-name0101-preview0101-preview"></a><a name="0.10.1-preview"/>0.10.1-preview
 * Добавлена поддержка для маркера SAS, операций TablePermissions, ServiceProperties и ServiceStats относительно конечных точек таблицы службы хранилища Azure. 
@@ -51,6 +62,8 @@ ms.locfileid: "55249652"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.0.0](#1.0.0) |13 марта 2019 г. |--- |
+| [0.11.0-Preview](#0.11.0-preview) |5 марта 2019 г. |--- |
 | [0.10.1-preview](#0.10.1-preview) |22 января 2019 г. |--- |
 | [0.10.0-preview](#0.10.0-preview) |18 декабря 2018 г. |--- |
 | [0.9.1-preview](#0.9.1-preview) |18 октября 2018 г. |--- |

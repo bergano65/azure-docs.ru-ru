@@ -11,16 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c47b45db95d428e9817220099368c14a31b4a528
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ab1f54ee8c3ebb5ae41d28b70f1cffcb244af39f
+ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192104"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58076009"
 ---
 # <a name="getting-started-with-azure-multi-factor-authentication-and-active-directory-federation-services"></a>Приступая к работе со службой Многофакторной идентификации Azure и службами федерации Active Directory
 
-<center>![Облако](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
+<center>
+
+![Облако](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
 
 Если в организации создана федерация локальной службы Active Directory со службой Azure Active Directory с помощью служб федерации Active Directory, доступны два варианта использования Многофакторной идентификации Azure.
 
@@ -30,7 +32,7 @@ ms.locfileid: "56192104"
 В следующей таблице перечислены возможности проверки для защиты ресурсов с помощью Многофакторной идентификации Azure и служб федерации Active Directory.
 
 | Проверка для браузерных приложений | Проверка для небраузерных приложений |
-|:--- |:--- |:--- |
+|:--- |:--- |
 | Защита ресурсов Azure AD с помощью службы Многофакторной идентификации Azure |<li>Первый этап проверки выполняется локально с помощью служб федерации Active Directory.</li> <li>Второй этап выполняется с использованием телефона для облачной проверки подлинности.</li> |
 | Защита ресурсов Azure AD с помощью служб федерации Active Directory |<li>Первый этап проверки выполняется локально с помощью служб федерации Active Directory.</li><li>Второй этап выполняется локально путем обработки утверждения.</li> |
 

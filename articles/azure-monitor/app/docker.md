@@ -10,16 +10,19 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 11/20/2018
+ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: 3ea7d6562965debda2c146fedab2ea9ab19f6cc8
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.openlocfilehash: 115e2d6b041ecc3f38a2a6438d90777da9660221
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077459"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "57996472"
 ---
-# <a name="monitor-docker-applications-in-application-insights"></a>Мониторинг приложений Docker в Application Insights
+# <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений Docker в Application Insights (не рекомендуется)
+
+> [!NOTE]
+> Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
 
 События жизненного цикла и счетчики производительности из контейнеров [Docker](https://www.docker.com/) можно выводить в виде диаграмм в Application Insights. Установите образ [Application Insights](https://hub.docker.com/r/microsoft/applicationinsights/) в контейнер в узле. Он будет отображать счетчики производительности для этого узла, а также для других образов.
 
@@ -29,10 +32,7 @@ ms.locfileid: "54077459"
 
 * Сведения о телеметрии жизненного цикла для всех контейнеров, запущенных на узле, — запуск, остановка и т. д.
 * Счетчики производительности для всех контейнеров. ЦП, память, использование сети и многое другое.
-* Если вы [установили пакет SDK для Application Insights для Java](../../azure-monitor/app/java-live.md) в приложениях, выполняющихся в контейнерах, у всех данных телеметрии этих приложений будут дополнительные свойства, идентифицирующие контейнер и хост-компьютер. Например, если имеются экземпляры приложения, запущенные на нескольких узлах, вы легко сможете отфильтровать данные телеметрии приложения по узлу.
-
-> [!NOTE]
-> Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
+* Если вы [установили пакет SDK для Application Insights для Java](../../azure-monitor/app/java-get-started.md) в приложениях, выполняющихся в контейнерах, у всех данных телеметрии этих приложений будут дополнительные свойства, идентифицирующие контейнер и хост-компьютер. Например, если имеются экземпляры приложения, запущенные на нескольких узлах, вы легко сможете отфильтровать данные телеметрии приложения по узлу.
 
 ## <a name="set-up-your-application-insights-resource"></a>Настройка ресурса Application Insights
 
@@ -40,7 +40,7 @@ ms.locfileid: "54077459"
    
     *Какой ресурс использовать?* Если приложения, которые выполняются на узле, были созданы другим разработчиком, вам потребуется [создать новый ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). Там вы можете просматривать и анализировать данные телеметрии. (Выберите тип приложения "Общее".)
    
-    Но если разработчиком приложений являетесь вы, мы надеемся, что вы [добавили пакет SDK для Application Insights](../../azure-monitor/app/java-live.md) в каждое из них. Если все они действительно являются компонентами одного бизнес-приложения, вы можете настроить их на отправку данных телеметрии в один ресурс, а затем использовать этот ресурс для отображения данных о производительности и жизненном цикле Docker. 
+    Но если разработчиком приложений являетесь вы, мы надеемся, что вы [добавили пакет SDK для Application Insights](../../azure-monitor/app/java-get-started.md) в каждое из них. Если все они действительно являются компонентами одного бизнес-приложения, вы можете настроить их на отправку данных телеметрии в один ресурс, а затем использовать этот ресурс для отображения данных о производительности и жизненном цикле Docker. 
    
     Третий сценарий — вы разработали большинство приложений, но используете отдельные ресурсы для отображения их телеметрии. В этом случае, возможно, вам потребуется создать отдельный ресурс для данных Docker.
 
@@ -105,7 +105,7 @@ ms.locfileid: "54077459"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Application Insights для Java](../../azure-monitor/app/java-get-started.md)
 * [Application Insights для Node.js](../../azure-monitor/app/nodejs.md)

@@ -9,12 +9,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: kefre
-ms.openlocfilehash: 7b85faf2e1803b40f3f2f0e49c5672b96e7961f5
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.openlocfilehash: 0f96ee13e6020bc69508f8ced45741fe7dec396a
+ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55224358"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56732885"
 ---
 # <a name="use-the-anomaly-finder-api-with-java"></a>Использование API средства для поиска аномалий с Java
 
@@ -22,7 +22,7 @@ ms.locfileid: "55224358"
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и Java для получения результатов обнаружения аномалий в данных временных рядов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -118,7 +118,7 @@ public class Main {
 Успешный ответ будет возвращен в формате JSON. Пример ответа приведен ниже.
 [!INCLUDE [Response](../includes/response.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение Java](../tutorials/java-tutorial.md)

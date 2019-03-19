@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: tomfitz
-ms.openlocfilehash: b8a6d58ad79b591548542d69e69b71ec61af79af
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
-ms.translationtype: HT
+ms.openlocfilehash: 0711743d46aaac08f8572917d91e452ee919134c
+ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220131"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56816913"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-portal"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure
 
-В этой статье показано, как использовать [портал Azure](https://portal.azure.com) и [Azure Resource Manager](resource-group-overview.md) для развертывания ресурсов Azure. Сведения об управлении ресурсами см. в статье [Управление ресурсами Azure через портал](resource-group-portal.md).
+В этой статье показано, как использовать [портал Azure](https://portal.azure.com) и [Azure Resource Manager](resource-group-overview.md) для развертывания ресурсов Azure. Дополнительные сведения об управлении ресурсами, см. в разделе [управление ресурсами Azure с помощью портала Azure](manage-resources-portal.md).
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
@@ -133,8 +133,8 @@ ms.locfileid: "47220131"
 
    ![Развертывание сохраненного шаблона](./media/resource-group-template-deploy-portal/deploy-saved-template.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-* Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](resource-group-audit.md).
-* Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](resource-manager-deployment-operations.md).
-* Чтобы извлечь шаблон из развернутой службы или группы ресурсов, ознакомьтесь со статьей [Экспорт шаблона Azure Resource Manager из существующих ресурсов](resource-manager-export-template.md).
-* Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](deployment-manager-overview.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](./resource-group-audit.md).
+* Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](./resource-manager-deployment-operations.md).
+* Чтобы экспортировать шаблон из развернутой службы или группу ресурсов, см. в разделе [шаблонов Azure Resource Manager, экспортируйте](./manage-resource-groups-portal.md#export-resource-groups-to-templates).
+* Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](./deployment-manager-overview.md).

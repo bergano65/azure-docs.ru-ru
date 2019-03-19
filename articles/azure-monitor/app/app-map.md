@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 12/17/2018
+ms.date: 03/14/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f2bd1d863a7900b50712eb23c1088c6b271befa3
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 777bf38fbc8a90335af79bbd0fb2ce74310bd991
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755903"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58006801"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -42,13 +42,13 @@ ms.locfileid: "55755903"
 
 Если все компоненты представляют собой роли в одном ресурсе Application Insights, этот шаг обнаружения не требуется. При начальной загрузке такого приложения загрузятся и все его компоненты.
 
-![Снимок экрана со схемой приложения](media/app-map/001.png)
+![Снимок экрана со схемой приложения](media/app-map/app-map-001.png)
 
 Одной из ключевых задач этого интерфейса является возможность визуализировать сложные топологии с сотнями компонентов.
 
 Щелкните любой компонент, чтобы просмотреть соответствующие данные аналитики и перейти к интерфейсу для рассмотрения производительности и сбоев этого компонента.
 
-![Всплывающий элемент](media/app-map/application-map-001.png)
+![Всплывающий элемент](media/app-map/application-map-002.png)
 
 ### <a name="investigate-failures"></a>Анализ сбоев
 
@@ -208,6 +208,6 @@ appInsights.context.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Корреляция данных телеметрии в Application Insights](https://docs.microsoft.com/azure/application-insights/application-insights-correlation)

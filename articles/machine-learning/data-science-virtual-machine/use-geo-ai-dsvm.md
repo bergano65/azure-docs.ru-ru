@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: gokuma
-ms.openlocfilehash: 11026d642a5136ffcf0caa5815934115b6becf89
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 6e6737e928ece820ea9119d8dfe1d7cf22477646
+ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238465"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57880115"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
 
@@ -30,7 +30,7 @@ ms.locfileid: "55238465"
 
 ## <a name="configuration-details"></a>Сведения о конфигурации
 
-Библиотека Python [arcpy](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm), которая используется в качестве интерфейса к ArcGIS, установлена в глобальной корневой среде conda виртуальной машины для обработки и анализа данных, находящейся в папке ```c:\anaconda```. 
+Библиотека Python [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm), которая используется в качестве интерфейса к ArcGIS, установлена в глобальной корневой среде conda виртуальной машины для обработки и анализа данных, находящейся в папке ```c:\anaconda```. 
 
 - Если вы запускаете Python из командной строки, выполните команду ```activate```, чтобы активировать корневую среду conda для Python. 
 - Если вы используете интегрированную среду разработки или записную книжку Jupyter, можно выбрать среду или ядро, чтобы убедиться, что вы находитесь в нужной среде conda. 
@@ -43,14 +43,14 @@ R-мост к ArcGIS устанавливается в качестве библ
 Кроме примеров на основе платформ машинного обучения и глубокого обучения из базовой виртуальной машины для обработки и анализа данных, доступны также примеры геопространственных решений в составе виртуальной машины для обработки и анализа геоданных средствами ИИ. Эти примеры помогут вам начать разработку приложений ИИ с использованием геопространственных данных и программного обеспечения ArcGIS. 
 
 
-1. [Начало работы с геопространственными данными с помощью Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb). Вводный пример, в котором показано, как работать с геопространственными данными с помощью интерфейса Python для ArcGIS, предоставленного библиотекой [arcpy](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm). В примере также показано, как можно объединить традиционное машинное обучение с геопространственными данными и визуализировать результат на карте в ArcGIS. 
+1. [Начало работы с геопространственными данными с помощью Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb). Вводный пример, в котором показано, как работать с геопространственными данными с помощью интерфейса Python для ArcGIS, предоставленного библиотекой [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm). В примере также показано, как можно объединить традиционное машинное обучение с геопространственными данными и визуализировать результат на карте в ArcGIS. 
 
 2. [Начало работы с геопространственными данными с помощью R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb). Пример, демонстрирующий способы работы с геопространственными данными с помощью интерфейса R для ArcGIS, предоставленного библиотекой [arcgisbinding](https://github.com/R-ArcGIS/r-bridge). 
 
 3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примеры меток покрытия земли — "лес" или "вода". Модель возвращает такую метку для каждого пикселя в изображении. Модель создана на основе платформы глубокого обучения Microsoft [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) с открытым исходным кодом. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры использования виртуальной машины для обработки и анализа данных см. здесь:
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 10/25/2018
 ms.author: troyhop
-ms.openlocfilehash: 7e680e3cd8a3d7056141814c5e7d4539b72073b4
-ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
-ms.translationtype: HT
+ms.openlocfilehash: a97afe64992db6b48558561ba958b513c8416494
+ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50756960"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56592831"
 ---
 # <a name="create-an-advanced-device-model"></a>Создание расширенной модели устройства
 
@@ -22,7 +22,7 @@ ms.locfileid: "50756960"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом практическом руководстве, требуется развернутый в подписке Azure экземпляр симулятора устройств.
 
@@ -165,7 +165,7 @@ ms.locfileid: "50756960"
 * Логическое
 * Целое число 
 * Double
-* Datetime
+* DateTime
 
 ### <a name="supported-methods"></a>Поддерживаемые методы
 
@@ -514,6 +514,6 @@ function main(context, state) {
 
 ![Сохранить](media/iot-accelerators-device-simulation-advanced-device/validated.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом практическом руководстве вы познакомились с файлами модели устройства, которые используются симулятором устройств, и научились создавать расширенную модель устройства. Теперь вы можете перейти к руководству [Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств](about-iot-accelerators.md)
+В этом практическом руководстве вы познакомились с файлами модели устройства, которые используются симулятором устройств, и научились создавать расширенную модель устройства. Теперь вы можете перейти к руководству [Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств](https://docs.microsoft.com/azure/iot-accelerators/iot-accelerators-device-simulation-time-series-insights)

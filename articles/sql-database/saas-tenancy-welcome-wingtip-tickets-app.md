@@ -13,12 +13,12 @@ ms.author: sstein
 ms.reviewer: billgib
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: b27877e25dd3bdd4711d1c036e2f203e1b8c0e7b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: a21b9f45d70151c2a2c2ae8ac6328a3eeb609b29
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55462148"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56883340"
 ---
 # <a name="the-wingtip-tickets-saas-application"></a>SaaS-приложение Wingtip Tickets
 
@@ -52,7 +52,7 @@ ms.locfileid: "55462148"
 
 Изучите [руководства][docs-tutorials-for-wingtip-mt] и код на сайте GitHub […/Microsoft/WingtipTicketsSaaS-MultiTenantDb][github-code-for-wingtip-mt].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 #### <a name="conceptual-descriptions"></a>Основные описания
 
@@ -61,7 +61,7 @@ ms.locfileid: "55462148"
 #### <a name="tutorials-and-code"></a>Руководства и код
 
 - Однотенантное автономное приложение:
-    - [Руководства по автономному приложению][docs-tutorials-for-wingtip-sa].
+    - [Руководства по отдельному приложению][docs-tutorials-for-wingtip-sa].
     - [Код для автономного приложения на сайте GitHub][github-code-for-wingtip-sa].
 
 - Однотенантная база данных
